@@ -1,6 +1,25 @@
 #!/usr/bin/env python3
 """TEST (not research): does the formula's own M_i constructor reproduce D?
 
+SCOPED 2026-08-25 (bean qou-1jw9), AFTER this file merged to main. The
+commit that landed it said "the formula is NOT exact at n=3." That is too
+strong and should not be cited. What is established:
+
+  - no reading of M_i reproduces D (residuals 54 % .. 2653 %), AND
+  - no construction reproduces the published Z=1..20 table
+    (wedderburn_table_binding_recast.py part 2), AND
+  - that table has no producer: its witness `atom-mass-complete-wedderburn`
+    never existed in git history (a "phantom witness", per
+    docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md); the 20
+    values survive only as a hardcoded dict at
+    computations/_deprecated/feynman_qou_comparison.py:218.
+
+So the defensible claim is that thm:wedderburn-mass-formula is currently
+UNFALSIFIABLE AS WRITTEN -- its M_i prose does not determine a unique
+construction, and nothing in the corpus can adjudicate between candidates.
+Weaker than "the formula is false"; stronger than "this probe failed".
+The measurement below is unchanged and still stands as measured.
+
 thm:wedderburn-mass-formula states its own domain:  the three invariants
 Phi_1/Phi_2/Phi_3 are the three EXTREMAL Wedderburn blocks, so the formula
 is exact only where the extremal blocks exhaust the partitions of n.  That

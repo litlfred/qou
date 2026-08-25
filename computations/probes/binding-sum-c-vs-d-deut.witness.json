@@ -1,0 +1,254 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:00:45.625063+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "assertions": [
+    {
+      "name": "deuteron_no_gt2_row_block_survives_under_D",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "convention D annihilates every ell(lambda) > 2 Wedderburn block, so the D binding sum is the two-row partial sum of the C one"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "binding-sum-c-vs-d-deut",
+  "scriptFile": "binding_sum_C_vs_D_per_isotope_probe.py",
+  "scriptHash": "0dec337c8c24",
+  "scriptCommitSha": "57c2ef2eabf25c04a84400387960b4224e73ba4e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_sum_C_vs_D_per_isotope_probe.py"
+  },
+  "description": "Binding sum sum_lambda y_lambda chi^lambda Delta_lambda under the binding channel's current convention C (z = 1/(q^1/2+q^-1/2), N_eff = 2.5995) vs the mass channel's settled convention D (z = q^3/(q^2+1), N = 2), on the same canonical atomic braid and the same characters, at the EXPERIMENTAL (proton) q_0. Measurement only: no production value changed, nothing tuned, AME2020 used as an output comparison target only.",
+  "contentBlock": "def:two-row-stratum",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946",
+    "atoms": [
+      "deuteron"
+    ],
+    "two_row_only": false
+  },
+  "data": {
+    "deuteron": {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "n_strands": 6,
+      "n_partitions": 11,
+      "n_two_row": 4,
+      "n_zeroed_under_D": 7,
+      "surviving_gt2_row_under_D": [],
+      "tr_M_C": "0.3883571411977909894164935",
+      "tr_M_D": "0.5751722439177718708265353",
+      "tr_M_D_over_C": "1.48103944257",
+      "binding_sum_C": "-0.7437809980307148515038684",
+      "binding_sum_D": "-0.7174454216383730021071579",
+      "binding_D_over_C": "0.96459229738",
+      "two_row_share_of_C_binding_sum": "0.737871293214",
+      "B_MeV_C": "0.380071309536856",
+      "B_MeV_D": "0.366613857634553",
+      "B_AME2020_MeV": "2.224566",
+      "rel_err_C": "-0.8291481082",
+      "rel_err_D": "-0.8351975812",
+      "two_row_only": false,
+      "totals_are_two_row_partial": false,
+      "by_partition": [
+        {
+          "partition": [
+            6
+          ],
+          "ell": 1,
+          "f_lambda": 1,
+          "Delta_lambda": 1,
+          "y_C": "0.059187721091631744405",
+          "y_D": "0.11532422490206616611",
+          "y_D_is_zero": false,
+          "chi_lambda": "1.5598701995641515927",
+          "binding_term_C": "0.092325162310950953503"
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "ell": 2,
+          "f_lambda": 5,
+          "Delta_lambda": -5,
+          "y_C": "0.058960683545933113663",
+          "y_D": "0.078952962475926678988",
+          "y_D_is_zero": false,
+          "chi_lambda": "3.2163173422358811759",
+          "binding_term_C": "-0.94818134499433221207"
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "ell": 2,
+          "f_lambda": 9,
+          "Delta_lambda": 9,
+          "y_C": "0.040284387901256377685",
+          "y_D": "0.046032434692020426937",
+          "y_D_is_zero": false,
+          "chi_lambda": "1.6743952620342553432",
+          "binding_term_C": "0.60706789412232382358"
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "ell": 3,
+          "f_lambda": 10,
+          "Delta_lambda": -10,
+          "y_C": "0.010133462518969929046",
+          "y_D": "2.1882430220530458851e-72",
+          "y_D_is_zero": true,
+          "chi_lambda": "-0.46980588637769473837",
+          "binding_term_C": "0.047607603407998147976"
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "ell": 2,
+          "f_lambda": 5,
+          "Delta_lambda": -5,
+          "y_C": "0.014120874264455370427",
+          "y_D": "0.015123810098023319304",
+          "y_D_is_zero": false,
+          "chi_lambda": "4.2494020229176567667",
+          "binding_term_C": "-0.30002635832371264821"
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "ell": 3,
+          "f_lambda": 16,
+          "Delta_lambda": 16,
+          "y_C": "0.0073184535563346705545",
+          "y_D": "1.3703092182621318229e-72",
+          "y_D_is_zero": true,
+          "chi_lambda": "-1.972272446151549689",
+          "binding_term_C": "-0.2309437487615790216"
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "ell": 4,
+          "f_lambda": 10,
+          "Delta_lambda": 10,
+          "y_C": "-0.00068530900662131581164",
+          "y_D": "-4.1916820947593563976e-73",
+          "y_D_is_zero": true,
+          "chi_lambda": "-0.49012565232303073667",
+          "binding_term_C": "0.0033588752391312060253"
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "ell": 3,
+          "f_lambda": 5,
+          "Delta_lambda": 5,
+          "y_C": "0.00077318662796804570963",
+          "y_D": "1.0474412565153791258e-73",
+          "y_D_is_zero": true,
+          "chi_lambda": "-3.4972944065129530522",
+          "binding_term_C": "-0.013520306345916289239"
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "ell": 4,
+          "f_lambda": 9,
+          "Delta_lambda": -9,
+          "y_C": "-0.0003420518274728770439",
+          "y_D": "-1.8587797025702328711e-73",
+          "y_D_is_zero": true,
+          "chi_lambda": "-0.81965494850448376186",
+          "binding_term_C": "-0.0025232802572983103775"
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 5,
+          "f_lambda": 5,
+          "Delta_lambda": 5,
+          "y_C": "0.000098635603835396889775",
+          "y_D": "1.0035786392303910032e-73",
+          "y_D_is_zero": true,
+          "chi_lambda": "2.1552553374487206415",
+          "binding_term_C": "0.0010629245581435832381"
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 6,
+          "f_lambda": 1,
+          "Delta_lambda": -1,
+          "y_C": "-0.000012437991483744833722",
+          "y_D": "-1.922401931755372579e-74",
+          "y_D_is_zero": true,
+          "chi_lambda": "-0.67687668343293797886",
+          "binding_term_C": "-8.4189864240843303622e-6"
+        }
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
