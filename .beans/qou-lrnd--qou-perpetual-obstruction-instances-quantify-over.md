@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T19:05:00Z
+updated_at: 2026-08-25T19:30:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -476,3 +476,66 @@ canonical coefficients beyond index 14 — `_deprecated/` has T (19) and ³He (2
 enough for `p = 7`, but they are the superseded dataset and must not be used.
 So the next step is **generating canonical coefficients further out**, not more
 Lean.
+
+
+---
+
+# 2026-08-25 (fourth pass) — the coefficient ceiling is PERMANENT; retracting my own next step
+
+Last pass I wrote that the next step was "generating canonical coefficients
+further out". **For the nucleons that is impossible, not expensive**, and the
+producer says so in its own docstring.
+
+## Why there are no more coefficients
+
+`cyclotomic_expansion` terminates when the running remainder hits zero — *"if p
+has finite degree this happens at some `m_max ~ sqrt(2*deg p)`"*. `tr_M` is a
+Laurent polynomial of finite degree, so the Habiro expansion is **finite**. All
+three atoms returned FEWER than `max_m=20` (9, 9, 14), so none was truncated by
+the cap: **all three terminated naturally**. The proton's Habiro element *has*
+nine coefficients. There is nothing to generate.
+
+## The reachability table is therefore fixed for good
+
+Evaluating the orbit at prime `p` needs `2p+1` coefficients:
+
+    proton, neutron    9 coeffs   ->  p in {2, 3}        <- PERMANENT CEILING
+    deuteron          14 coeffs   ->  p in {2, 3, 5}
+    T, 3He         ~19-20 coeffs  ->  p in {2, 3, 5, 7}
+
+So **"is the p=3 unit isolated?" is UNANSWERABLE for the nucleons by this
+method** — permanently, not pending compute. It is answerable only up to `p=7`,
+only for T and ³He, and those two need a container with **numpy** (absent here).
+
+That is a much narrower question than the one I posed, and it changes what a
+positive answer could even mean: no amount of work makes the *nucleon* norm
+route testable past `p=3`, where it is already known to fail.
+
+## A destructive producer defect, found by walking into it
+
+Running the producer with `HABIRO_WITH_A3=1` here (no numpy) made every atom
+raise — and **it wrote the witness anyway**, replacing all three atoms with
+error stubs: `n_coeffs` 9/9/14 → **0/0/0**, 32 exact coefficients destroyed in
+the file backing `def:habiro-ring` and calibrating α_M for the deuteron.
+Recovered from git (byte-identical to a backup taken first).
+
+The merge-preserve guard read `if _label not in results and "error" not in
+_entry`. A *failing* atom IS in `results`, carrying an `error`, so the good
+prior lost to the stub. Its own comment — "freshly computed cases always win" —
+is right; a failed case was never computed, and that is the case it did not
+distinguish. Fixed in `001866f43b` and **tested by reproducing** the loss, not
+by inspection.
+
+Not fixed, and recorded rather than left silent: a failed atom is still written
+as an error stub, so a degraded run adds empty atoms to the witness. Harmless
+to consumers but it misrepresents scope.
+
+## What is actually next
+
+Not more Lean, and not "generate coefficients". Either:
+
+1. **Run the A3 atoms in a numpy container** — the one remaining measurement
+   that can move this, reaching `p=7` for T and ³He; or
+2. **Accept the exception set.** The `for-all p` form is refuted at `p=3` and
+   cannot be rescued for the nucleons. If the framework wants a perpetual
+   obstruction it needs a different invariant, not more primes of this one.
