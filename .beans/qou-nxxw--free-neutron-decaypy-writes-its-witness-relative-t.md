@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-25T02:06:23Z
-updated_at: 2026-08-25T02:19:19Z
+updated_at: 2026-08-25T02:27:34Z
 ---
 
 ## What
@@ -106,3 +106,49 @@ or their 17-digit truncations. It is some other value -- which is precisely
 the case the branch exists to handle.
 
 **No sweep is needed.** Do not open one off the original paragraph.
+
+
+## CORRECTION 2 (2026-08-25) — the "measured at ZERO" above is WRONG. It is 16.
+
+The section immediately above states the CWD-write class is size 1 and that no
+sweep is needed. Both are wrong. `computations/audits/cwd_relative_witness_write_audit.py`
+(landed, commit `a94c99a75a5`) reports:
+
+    scanned 3897 .py files under 4 roots
+    producers writing a CWD-relative witness: 16
+
+All 16 are the ROOT-RELATIVE form -- `open("computations/x.witness.json", "w")`
+-- which works from the repo root, the normal case, and orphans from anywhere
+else. The BARE form, the severe one that orphans on EVERY invocation, is
+genuinely 0 now that this bean's fix landed. So the earlier claim was right
+about the severe class and wrong about the class as a whole.
+
+**How the zero happened.** The scratchpad version had RELATIVE roots
+(`Path("computations")`). Several runs executed from the scratchpad directory,
+where that path does not exist, so `rglob` yielded an empty set and the scan
+reported 0 having opened nothing. The selftests passed throughout -- they run
+on synthetic source strings, so they prove the matcher works and say nothing
+about whether the corpus was reached. Correction 1 above literally warns that
+"a 0 could just mean the widening did nothing" and adds selftests for it; they
+could not catch this, because it was not the matcher that was empty, it was the
+input.
+
+The script now refuses to report a zero it cannot back (`sys.exit(2)` on an
+empty file set) and prints the file count beside every result.
+
+**Unaffected:** the `chi-*-at-qca0128e8` finding in Correction 1 stands. Those
+are not this defect -- `HERE /`-based, hash tag deliberately quarantines a
+non-anchor cache. That file is also the standing blind spot: LITERAL targets
+only, so an f-string name is invisible.
+
+## Open: the 16
+
+    charm_composite_volume_probe                     charm_mass_tower_probe
+    deltalambda/wlambda_covariance_epic_A2_*  (x4)   hecke/hecke_engine
+    markov/hecke_regular_nf_table                    neutrino_mass_volume_exclusion
+    probes/aomega_bps_sector_nondegeneracy           probes/cgz_cyclic_qdilog_unit_probe
+    probes/gswz_coleman_li2_full_precision_probe     probes/gswz_epsm_5adic_cyclic_qdilog_probe
+    probes/gswz_epsm_global_symbols_probe            probes/habiro_tail_membership_gate_probe
+    probes/zeta4_zeta8_habiro_gluing_probe
+
+One line each, four clusters, each wanting re-run evidence. Own branch.
