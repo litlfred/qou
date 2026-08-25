@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T19:20:26Z
+updated_at: 2026-08-25T19:38:50Z
 ---
 
 ## The defect
@@ -280,3 +280,39 @@ HeckeJucysMurphyCommutation (263) + HeckeJucysMurphyAdjacentNormalForm (210) =
 ~1035 lines. NOT attempted. Both headline results (the dim>1 IsJMWeight witness
 and the twist) landed WITHOUT it, so whether it is worth porting is a genuine
 open judgement call, not an obvious yes.
+
+
+## jmRaw_comm PORTED — every item of this bean is now done (2026-08-25, PR #5791)
+
+    jmRawB_comm              L_i L_k = L_k L_i for all i, k < n
+    stdTwoBelow3_jmRaw_comm  ...on the 2-DIMENSIONAL (2,1) rep of H_3(q)
+    jmRaw_comm_of_below      recovers the unbounded theorem via the downcast
+
+634 lines / 35 decls / 3 files, all sorry-free.
+
+### CORRECTION to my own scoping, twice over
+I said "~1035 lines across three files". The chain is LINEAR and has FIVE files
+(1305 lines) -- it also includes HeckeJucysMurphyReduction (115) and
+HeckeAdditiveJucysMurphy (155). But the port needed only 634, because jmRaw_comm
+is NOT proved directly: HeckeTranspositionExpansion identifies L_k = 1 + A_k and
+does the work on the ADDITIVE side. HeckeJucysMurphyCommutation and
+HeckeJucysMurphyReduction are an EARLIER, SUPERSEDED route (the one that stayed
+conditional on the adjacent case) and are not on the path at all.
+
+Surface larger than I said; work smaller. Trace the actual proof before quoting
+either number.
+
+### The bound findings
+- FINAL BOUND IS THE NATURAL ONE: i < n and k < n, exactly the well-formedness
+  condition for L_i. No slack -- the sign the bounds are right.
+- sigma_comm_transpB_far bounds a DIFFERENT index than its statement's i (it is m,
+  the outside generator, that must exist). A uniform i < n would be silently wrong.
+- sigma_comm_partialSumB_ne is the only lemma needing TWO bounds; it splits on
+  j < m vs j > m and the branches constrain different indices.
+- SIX lemmas across the whole port need NO bound at all, including the sum
+  expansion A_k = d.sum T_(i,k) -- the conceptual heart of Jucys's argument does
+  not touch the Hecke presentation.
+
+### THIS BEAN IS COMPLETE pending the merge of #5791
+#5766 obstruction proved; #5778 bounded class + dim>1 IsJMWeight witness; #5786
+theta tie-in; #5791 JM commutativity. Close on merge.
