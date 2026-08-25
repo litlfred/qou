@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:52:08.566510+00:00",
-  "commitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "computedAt": "2026-08-25T22:51:27.868948+00:00",
+  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -28,16 +28,15 @@
   "environment": {
     "python": "3.11.15",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py",
-      "--strict"
+      "computations/audits/witness_provenance_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -55,14 +54,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2765,
-      "prov_ok": 2342,
+      "total_scanned": 2771,
+      "prov_ok": 2348,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965280289330922242314647377938517179023508137432188065099458"
+      "completeness_ratio": "0.965355467340310357271743053049440635149765427643450018044027"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -680,6 +679,10 @@
         },
         {
           "witness": "atom-vhyp-closure-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-word-braid-letter-census.witness.json",
           "missing_fields": []
         },
         {
@@ -2627,6 +2630,10 @@
           "missing_fields": []
         },
         {
+          "witness": "threerow-isospin-parity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "threerow-qcross-trend.witness.json",
           "missing_fields": []
         },
@@ -4280,6 +4287,22 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-conjugacy-floor-search.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-dehornoy-floor.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-floor-conjugacy-bound.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-length-cap.witness.json",
           "missing_fields": []
         },
         {

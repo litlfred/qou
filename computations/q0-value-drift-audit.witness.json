@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 228,
       "canonical": 170,
-      "proton-pin": 1680,
+      "proton-pin": 1682,
       "unknown": 25
     },
     "stale_total": 228,
@@ -2234,7 +2234,7 @@
       {
         "file": "computations/bar-parity-involution-atlas.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -6405,6 +6405,20 @@
       },
       {
         "file": "computations/deltalambda/threerow-crossing-a-dependence.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/deltalambda/threerow-isospin-parity.witness.json",
+        "field": "parameters.q0",
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/deltalambda/threerow-isospin-parity.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
