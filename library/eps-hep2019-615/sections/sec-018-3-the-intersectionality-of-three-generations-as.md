@@ -7,6 +7,7 @@ section_number: 3
 pages: 4-5
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
+doc_brief: "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1"
 ---
 The three Fano planes in Figure 1 share a common complex quaternionic line of intersection.
 This reﬂects the fact that the three generations in the sedenion model are not independent of one

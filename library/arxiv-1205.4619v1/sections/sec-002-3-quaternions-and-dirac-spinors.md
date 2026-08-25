@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-9
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
 ---
 Let us deﬁne the free particle quaternion Dirac equation [26 ] for a particle of mass m as
 (iγµ∂µ −m)ψ =0. (26)

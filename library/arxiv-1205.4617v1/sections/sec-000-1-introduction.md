@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-3
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
+doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
 ---
 In spite of all the successes of the Standard Model (SM) of ele mentary particles,
 it leaves many unresolved questions to be considered as the c omplete theory of

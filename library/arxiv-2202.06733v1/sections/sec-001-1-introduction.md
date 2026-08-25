@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
+doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
 ---
 Geometric algebra may be a very good way of understanding where the symmetries underlying the standard model of particle
 physicscomefrom.Itisworthwhileseekingtounderstandthis,sinceitmayexposeanunderlyinggeometriccontentwhichcan

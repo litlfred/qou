@@ -7,6 +7,7 @@ section_number: 3.6
 pages: 16-16
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 the fermionic projector (3.6) encodes geometric structures giving rise to a mathemati-
 cally concise setting of a Lorentzian quantum geometry [43]. One important structure

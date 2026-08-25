@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 3-4
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 on the group SU(3) × SU(2)× U(1) with particle multiplets falling into irreducible
 representations of these Lie groups. Despite its undeniable success, the standard model

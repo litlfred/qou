@@ -7,6 +7,7 @@ section_number: 5
 pages: 9-12
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
 ---
 A very useful concept in group representation theory is that of Casimir operators [16, 29] although there
 is no general agreement [15] on a unique deﬁnition of Casimir operator[8, 9]. Nonetheless, there exists

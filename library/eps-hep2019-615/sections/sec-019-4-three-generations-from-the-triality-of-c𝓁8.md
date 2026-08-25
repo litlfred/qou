@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-5
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
+doc_brief: "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1"
 ---
 It was mentioned earlier that (C⊗ H⊗ O)L∼= (C⊗ S)L∼= C𝓁(8). Unlike the smaller algebra
 C𝓁(6) associated with C⊗ O, this larger algebra admits a triality automorphism associated with

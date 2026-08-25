@@ -7,6 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
+doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
 ---
 1. Lasenby Anthony, Lasenby Joan, Matsantonis Charalampos. Reconstructing a Rotor from Initial and Final Frames using
 Characteristic Multivectors: with applications in Orthogonal Transformations.Mathematical Methods in the Applied

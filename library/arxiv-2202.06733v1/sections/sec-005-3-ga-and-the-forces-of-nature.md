@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-6
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
+doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
 ---
 As expressed in the talk at GAME2020 (https://www.youtube.com/watch?v=m7v2IUJtC3g&t=7s), a particularly interesting
 question for someone working with GA in Physics, is whether the Spacetime Algebra (STA), is suﬃcient for representing and

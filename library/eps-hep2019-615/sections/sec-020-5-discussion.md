@@ -7,6 +7,7 @@ section_number: 5
 pages: 5-5
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
+doc_brief: "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1"
 ---
 A considerable amount of the SM structure for a single generation of fermions can be realised
 starting from C⊗ O and its left adjoint algebra (C⊗ O)L∼= C𝓁(6). Since describing a single gener-

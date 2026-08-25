@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-11
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
+doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
 ---
 Grand Uniﬁed Theories [19] are based on the mathematical sym metry group
 SU (5). The gauge group of the Glashow - Salam - Weinberg theory SU (2)×U (1)

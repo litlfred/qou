@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 22-30
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 system description of the standard model, the chiral symmetry is broken by hand via
 the ansatz (3.16). This procedure is not quite satisfying. Instead, within the context of

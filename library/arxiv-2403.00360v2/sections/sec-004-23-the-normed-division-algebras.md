@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 6-7
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 where division is always well-defined, except by zero. A normed division algebra has
 the additional property that it is also a normed vector space, with the norm defined

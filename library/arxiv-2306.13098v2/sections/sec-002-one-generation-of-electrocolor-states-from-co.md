@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
 ---
 Let e1 :=Li1,...,e 6 :=Li6 be a generating basis (over C6) for Cℓ(6) associated with the left multiplication
 algebra of the complex octonions, satisfying e2

@@ -7,6 +7,7 @@ section_number: null
 pages: 8-9
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
 ---
 Schafer [37] showed that for CD algebras An with n≥ 4 (A0 = R), the derivation algebra der(An) consists
 of derivations of the form a +bu→aD + (bD)u, where a,b∈ An−1, u is the new anticommuting imaginary

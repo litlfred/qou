@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 21-22
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 Section 4.3 we saw that describing the interactions of the standard model in the setting
 of causal fermion systems naturally leads to the exceptional Jordan algebra. More-

@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 19-21
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 plain and compare how the three generations of elementary particles (like e, µ and τ)
 come up in the different approaches.
