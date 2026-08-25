@@ -1,11 +1,11 @@
 ---
 # qou-owzq
 title: Does the Sym2 parity exclusion survive root-of-unity truncation?
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T16:45:18Z
-updated_at: 2026-08-25T17:58:15Z
+updated_at: 2026-08-25T19:47:22Z
 parent: qou-8lxd
 ---
 
@@ -75,3 +75,52 @@ Two consequences for this bean:
 
 So: still open, still generic-q-only, and now with a corpus-verified reason that the
 nearby three-row results are not a substitute for doing it.
+
+## ANSWERED 2026-08-25 — the exclusion DOES extend. Ingredient (c) verified.
+
+Computed, not argued. computations/eightfold/su2k_frobenius_schur_indicator_probe.py
+evaluates the Frobenius-Schur indicator directly from the modular data of the
+TRUNCATED category via Bantay's formula:
+
+    nu_2(X_c) = (1/D^2) sum_{a,b} N_{ab}^c d_a d_b (theta_a/theta_b)^2
+
+with SU(2)_k data: d_c = sin(pi(c+1)/(k+2))/sin(pi/(k+2)), theta_c = exp(2 pi i h_c),
+h_c = c(c+2)/(4(k+2)), Verlinde fusion with the level truncation
+c <= min(a+b, 2k-a-b).
+
+RESULT: nu_2(V_c) = (-1)^c for every simple of every SU(2)_k with k = 1..12.
+
+THE AGREEMENT IS EXACT, AND THAT CLAIM IS EARNED RATHER THAN ASSUMED. First run
+gave worst residual 1.5e-60 at mp.dps=60 -- i.e. AT the arithmetic floor, which
+AGENTS.md correctly forbids reporting as 'exact'. So the probe now re-runs the
+whole comparison at four precisions:
+
+    mp.dps= 40  worst = 1.03348e-40   floor ~1e-40
+    mp.dps= 60  worst = 6.22354e-61   floor ~1e-60
+    mp.dps= 90  worst = 4.92769e-91   floor ~1e-90
+    mp.dps=120  worst = 1.2596e-120   floor ~1e-120
+
+The residual tracks the floor across all four, so it is roundoff and the identity
+is exact. Had it plateaued at a fixed size, that size would have been a real
+deviation and the answer would be the opposite one.
+
+CONSEQUENCE: all three ingredients of the parity argument hold in the truncated
+category --
+  (a) distinct simples pairwise non-isomorphic  -- holds
+  (b) cross terms killed by self-duality        -- holds (simples still self-dual)
+  (c) FS type still (-1)^{2j}                   -- COMPUTED, holds
+so the multiplicity count carries over verbatim: a gate-passing object is a sum of
+pairwise distinct even-dimensional simples, hence has even vector-space dimension,
+hence is never 3-dimensional. The Sym^2 parity exclusion proved for generic q in
+PR #5764 EXTENDS to root-of-unity truncation.
+
+WHAT THIS CLOSES: the escape route. Root-of-unity truncation is the eightfold
+chapter's own candidate truncation mechanism (§8 item 5), and it does NOT supply a
+3-dimensional gate-passing object. The N=3 problem is not solved by truncating.
+
+SCOPE: (a)-(c) are the ingredients of the MULTIPLICITY COUNT. The count itself is
+the model, cited not formalised (Mathlib has no SU(2) rep type), exactly as in the
+generic-q file. k = 1..12 is finite; the pattern is uniform and structural but no
+all-k proof is given here. Probe emits no witness by design; precision discipline
+was applied in full regardless (scripts/precision-gates.sh --changed: all blocking
+gates green).
