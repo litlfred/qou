@@ -342,6 +342,60 @@ def _is_full_precision_shadow(value, companion) -> bool:
     return False
 
 
+# ── wall-clock carve-out (bean qou-ywee) ──────────────────────────────────
+#
+# A DURATION IS NOT A MEASUREMENT. This gate exists to catch a value a double
+# cannot hold. `elapsed_sec: 0.001` is how long the producer ran; there is no
+# mpf to carry it from, no precision to lose, and nothing for this gate to say.
+# Counting it made a stopwatch reading indistinguishable from a dropped digit
+# — and it is not hypothetical: `sigma1cubed-seifert-surface-term` was reported
+# as a NEW dirty witness on the strength of one `elapsed_sec`, the only one of
+# 31 witnesses carrying that field whose value did not happen to land on an
+# integer.
+#
+# EXACT NAMES ONLY — NEVER A PATTERN. This list was built by enumerating the
+# corpus, and the enumeration is why it is a frozenset rather than a regex.
+# The obvious guard, matching /time|elapsed|wall|_sec$/, also matches:
+#
+#     y_times_chi (177 fields)   y_times_chi_abs (93)   E0_times_f_MeV
+#     rho_q_times_Vol            m_e_times_hbar_q2      V_kash_times_sum
+#     Delta_lambda_D_times_h_minus_1                    bracket_2_q_times_3_q
+#
+# `_times_` is MULTIPLICATION. `y_times_chi` is the Frobenius pairing
+# y_λ·χ_λ — the framework's central object — and a pattern-based carve-out
+# would have silently excused 177 instances of it from the precision gate.
+# `time_speedup` is a ratio, not a duration, and is likewise excluded.
+#
+# Counted and REPORTED as its own bucket, like the other three carve-outs. A
+# carve-out that cannot be seen is indistinguishable from a hole.
+WALL_CLOCK_FIELDS = frozenset({
+    "actual_optimised_sec", "atlas_elapsed", "budget_sec", "call_secs",
+    "canonical_time_sec", "catalogue_lookup_ms", "catalogue_secs",
+    "chi_compute_time_seconds", "combiner_seconds", "compute_sec",
+    "compute_seconds", "compute_time_s", "compute_time_sec",
+    "compute_time_sec_so_far", "compute_time_seconds", "computation_time_s",
+    "content_time_sec", "dense_wall_sec", "direct_compute_ms",
+    "durationMs", "durationSeconds", "eigenvalue_time_seconds",
+    "eigs_runtime_seconds", "elapsed_eval_sec", "elapsed_peel_sec",
+    "elapsed_reduce_sec", "elapsed_s", "elapsed_sec", "elapsed_seconds",
+    "elapsed_trace_sec", "estimated_naive_sec", "free_chi_wall_sec",
+    "hutch_wall_sec", "kahler_time_sec", "markov_peel_compute_seconds",
+    "matrix_build_time_seconds", "mpfr_secs", "naive_time_ms",
+    "numerical_secs", "path_A_compute_seconds", "path_B_compute_seconds",
+    "precompute_secs", "rerun_seconds", "runtime_s", "rust_secs",
+    "rust_wall_sec", "scalar_time_sec", "single_trace_seconds",
+    "solve_time_s", "start_time_monotonic", "strat_time_ms",
+    "sweep_wall_seconds", "symbolic_secs", "time_canonical_sec",
+    "time_sec", "time_total_sec", "time_tower_sec", "timing_seconds",
+    "total_call_secs", "total_compute_seconds", "total_precompute_secs",
+    "total_rust_secs", "total_wall_sec", "wall_s", "wall_sec",
+    "wall_seconds", "wall_seconds_3He", "wall_seconds_D",
+    "wall_seconds_closed", "wall_seconds_empirical", "wall_time_s",
+    "wallSeconds", "wallclock_ms", "walltime_s", "walltime_sec",
+    "walltime_sec_when_killed", "word_product_time_seconds",
+})
+
+
 def count_raw_floats(obj) -> int:
     """Number of JSON numbers parsed as float (i.e. non-integer literals).
 
@@ -378,8 +432,13 @@ def count_integral(obj) -> int:
     return _count(obj)[2]
 
 
-def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int]:
-    """(counted, carved_out, integral) — one traversal, all three numbers.
+def count_wall_clock(obj) -> int:
+    """How many f64 the wall-clock carve-out excused. Reported, never silent."""
+    return _count(obj)[3]
+
+
+def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int, int]:
+    """(counted, carved_out, integral, wall_clock) — one traversal, all four.
 
     INTEGRAL IS NOT A PRECISION FINDING, and separating it is the point.
     This gate exists to catch a value that a double cannot hold. A float whose
@@ -420,43 +479,53 @@ def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int]:
     NOT agree, every float underneath counts, integral or not.
     """
     if isinstance(obj, dict):
-        total = carved = integral = 0
+        total = carved = integral = wall = 0
         for k, v in obj.items():
+            if k in WALL_CLOCK_FIELDS:
+                # A duration, not a measurement. Excused and counted; see
+                # WALL_CLOCK_FIELDS for why this is an exact-name test.
+                t, _c, _i, w = _count(v, integral_is_exact)
+                wall += t + w
+                continue
             if k.endswith("_str"):
-                t, c, i = _count(v, integral_is_exact)
+                t, c, i, w = _count(v, integral_is_exact)
                 total += t
                 carved += c
                 integral += i
+                wall += w
                 continue
             companion = obj.get(f"{k}_str")
             if companion is not None and _is_full_precision_shadow(v, companion):
                 continue  # shadowed at full precision — not raw float64
             if k in LP_DUAL_F64_FIELDS:
-                t, _c, i = _count(v, integral_is_exact)
+                t, _c, i, w = _count(v, integral_is_exact)
                 carved += t
                 integral += i
+                wall += w
                 continue  # carve-out: solver output, f64 by construction
             # A companion that is present but does NOT agree proves the float
             # differs from the true value, so integrality excuses nothing
             # underneath it.
-            t, c, i = _count(v, integral_is_exact and companion is None)
+            t, c, i, w = _count(v, integral_is_exact and companion is None)
             total += t
             carved += c
             integral += i
-        return total, carved, integral
+            wall += w
+        return total, carved, integral, wall
     if isinstance(obj, list):
-        total = carved = integral = 0
+        total = carved = integral = wall = 0
         for v in obj:
-            t, c, i = _count(v, integral_is_exact)
+            t, c, i, w = _count(v, integral_is_exact)
             total += t
             carved += c
             integral += i
-        return total, carved, integral
+            wall += w
+        return total, carved, integral, wall
     if isinstance(obj, float):
         if obj.is_integer():
-            return (0, 0, 1) if integral_is_exact else (1, 0, 1)
-        return 1, 0, 0
-    return 0, 0, 0
+            return (0, 0, 1, 0) if integral_is_exact else (1, 0, 1, 0)
+        return 1, 0, 0, 0
+    return 0, 0, 0, 0
 
 
 CARVED: dict[str, int] = {}
@@ -470,6 +539,7 @@ CARVED_DEPRECATED: dict[str, int] = {}
 #: invisible: whether such a field was MEANT to be an integer is asked by
 #: `witness_integer_field_audit`, and this is the number that feeds it.
 INTEGRAL: dict[str, int] = {}
+WALL: dict[str, int] = {}
 
 
 def scan(scan_root: Path | None = None) -> dict[str, int]:
@@ -493,7 +563,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n, carved, integral = _count(d)
+        n, carved, integral, wall = _count(d)
         rel = p.relative_to(ROOT).as_posix()
         # An explicit float64-integrator declaration moves this file's REMAINING
         # count into the integrator carve-out. Applied at witness level, not
@@ -515,6 +585,8 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             CARVED[rel] = carved
         if integral:
             INTEGRAL[rel] = integral
+        if wall:
+            WALL[rel] = wall
     return found
 
 
@@ -599,6 +671,25 @@ def self_test() -> int:
         ({"y_star": [0.5], "a_K_via_lp_dual": 1.5, "tolerance": 1e-9}, 2),
         # A same-named key nested anywhere is still solver output.
         ({"per_atom": [{"lp_dual": {"y_star": [0.5, 0.25]}}]}, 0),
+
+        # ── wall-clock carve-out (qou-ywee) ───────────────────────────
+        # A duration is not a measurement: nothing to carry as mpf.
+        ({"elapsed_sec": 0.001}, 0),
+        ({"elapsed_reduce_sec": 1.5, "elapsed_trace_sec": 2.25}, 0),
+        ({"walltime_sec": 72.2, "durationMs": 27.5}, 0),
+        # ...and it excuses NOTHING else in the same witness.
+        ({"elapsed_sec": 0.001, "tr_M": 0.5751722439}, 1),
+        # THE TRAP THIS LIST EXISTS FOR. `_times_` is MULTIPLICATION, and a
+        # pattern-based guard on /time|elapsed|wall|_sec$/ matches all of
+        # these. `y_times_chi` is the Frobenius pairing y_λ·χ_λ, 177 fields
+        # corpus-wide. If any of these ever returns 0, the carve-out has
+        # stopped being a list of durations and started eating physics.
+        ({"y_times_chi": 0.123}, 1),
+        ({"y_times_chi_abs": 0.123, "E0_times_f_MeV": 938.272}, 2),
+        ({"rho_q_times_Vol": 2.0299, "m_e_times_hbar_q2": 0.00501}, 2),
+        ({"Delta_lambda_D_times_h_minus_1": -1.585}, 1),
+        # A ratio is not a duration either.
+        ({"time_speedup": 1.37}, 1),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -702,6 +793,11 @@ def main() -> int:
               f"field(s) in {len(INTEGRAL)} witness(es)  [NOT a precision "
               f"finding — exact in binary64. Whether any of them was MEANT to "
               f"be an integer is `witness_integer_field_audit`'s question]")
+    if WALL:
+        print(f"  wall-clock carve-out excused   : {sum(WALL.values()):,} "
+              f"field(s) in {len(WALL)} witness(es)  [NOT a precision finding "
+              f"— a duration is not a measurement. EXACT field names only; a "
+              f"pattern would swallow y_times_chi, see WALL_CLOCK_FIELDS]")
     if prior:
         print(f"  baseline files / fields        : {len(prior)} / {base_total:,}")
         print(f"  drained since baseline         : {len(drained)} file(s), "
@@ -715,6 +811,9 @@ def main() -> int:
             # makes this legible, so the caveat is printed instead.
             print(f"      of which ~{sum(INTEGRAL.values()):,} is the "
                   f"2026-08-24 integral-float reclassification, not draining")
+            if WALL:
+                print(f"      and ~{sum(WALL.values()):,} is the 2026-08-25 "
+                      f"wall-clock reclassification, also not draining")
     print(f"  NEW dirty witnesses            : {len(new_files)}")
     print(f"  REGRESSED (count increased)    : {len(grew)}")
 
@@ -781,6 +880,9 @@ def main() -> int:
             # than only visible in console output.
             "lp_dual_carved_out_fields": sum(CARVED.values()),
             "lp_dual_carved_out_by_file": dict(sorted(CARVED.items())),
+            "wall_clock_carved_out_fields": sum(WALL.values()),
+            "wall_clock_carved_out_by_file": dict(sorted(WALL.items())),
+            "wall_clock_carved_out_field_names": sorted(WALL_CLOCK_FIELDS),
             "lp_dual_carved_out_field_names": sorted(LP_DUAL_F64_FIELDS),
             # The float64-integrator carve-out, recorded on the SAME terms as
             # the LP-dual one above. Console output is not auditability: a
