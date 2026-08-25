@@ -287,3 +287,82 @@ in the meson sector. That is a statement about **applicability**, not about
 whether Obstruction A is soluble: it stays open, with one fewer route worth
 importing. A tool for Obstruction A has to work on **short** braids, and none
 of the three papers ingested today is one.
+
+---
+
+## 🛑 RETRACTION of Addendum 2 — "load-bearing" was a word-level fact dressed as a framework-level one
+
+Addendum 2 concluded that the framework's short braid vocabulary is
+**load-bearing**, that Ito's Theorem 2 "cannot apply to *any* meson braid this
+framework admits", and that the closed-3-braid literature "structurally cannot"
+be supplied. **All three overreach and are withdrawn.** Raised by the author
+with one pointer: *"we have the Gröbner NF."*
+
+### The defect
+
+The **Gröbner–Shirshov normal form lives in `H₃(q)`** — a linear combination of
+algebra basis elements with `q`-coefficients. It is not a braid word and has no
+crossing number. What Addendum 2 capped at 14 was the *braid word*
+`𝔐 = (σ₀σ₁)²σ₁σ₀`, which is a **chosen presentation**.
+
+Three steps, and the third is unlicensed:
+
+1. The mass law reads `Vol(K)`, a **link invariant**. Every braid word whose
+   closure is that link gives the same volume; the corpus's canonical word is
+   one representative among infinitely many.
+2. Braid words are not length-canonical — Markov stabilisation and conjugation
+   change them freely, and Ito states explicitly that `[β]_D` depends on
+   *which `Bₙ`* the braid is regarded as living in, so even the strand count is
+   a presentation choice.
+3. So *"no word of ≤ 14 crossings reaches floor 3"* is a statement about
+   **presentations**, and Addendum 2 drew a **framework-level** conclusion from
+   it.
+
+### This is the mirror of an error the corpus had already diagnosed
+
+[`2026-08-24-meson-braid-obstruction-a-measured.md`](2026-08-24-meson-braid-obstruction-a-measured.md)
+caught `lepton-meson-parallel` reading normal-form coefficients
+(`σ⁻¹ = σ − h`) as geometric crossings:
+
+> *"Negative crossings in a normal-form **coefficient** are algebra, not
+> geometry, and volume sees only the geometry. The construction conflates the
+> two."*
+
+Addendum 2 conflated them the other way — treating a **presentation's** crossing
+count as a constraint on the **geometry**. The warning was one file away and
+quoted approvingly elsewhere in this very document.
+
+**And the caveat was already written.** Addendum 1 says *"these are statements
+about these WORDS, not about the link types they close to."* Addendum 2 then
+concluded "load-bearing" and "structurally cannot supply one" regardless. A
+caveat that does not constrain the conclusion drawn two sections later is
+decoration.
+
+### What the measurements still support
+
+| claim | status |
+|---|---|
+| Corpus **canonical words** have floors 0–1, against Ito's required 3 | **stands** — computed, validated |
+| Floor 3 unreached at length ≤ 14 in the search run | **stands**, as a search result |
+| Meson crossing number = sum of constituent windings, capped at 14 | **stands** as the corpus's stated construction for *that word* |
+| The framework **cannot supply** a qualifying braid | **RETRACTED** — presentation-level evidence, link-level claim |
+| The literature is **structurally inapplicable** | **RETRACTED** — same defect |
+| Short vocabulary is **load-bearing** vs incidental | **UNDECIDED** — the probe cannot distinguish them |
+
+The conjugation check run at retraction time (conjugates of `𝔐`, conjugator
+length ≤ 6, ~4 k samples) found no floor above 1. That is **weak evidence, not
+a defence**: it is a small search over one move, and conjugation is only one of
+the presentation changes available.
+
+### What would actually settle it
+
+Not a word-length argument. The question is at the **link** level: for the
+target link types, does *any* braid representative — any strand count, any
+Markov class — satisfy `[β]_D ≥ 3`? Malyutin's supremum of the floor over a
+conjugacy class is a conjugacy invariant and is the right object; it is not
+computed here.
+
+What survives untouched, and is the corpus's finding rather than mine: the
+framework assigns `T(2,n)` **torus** links, and torus links have `Vol = 0`.
+That is genuinely link-level, and it is Obstruction A as the 2026-08-24 audit
+already stated it.
