@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:08:52Z
-updated_at: 2026-08-25T11:36:08Z
+updated_at: 2026-08-25T18:32:39Z
 ---
 
 ## Map (measured 2026-08-25 by git merge-tree against origin/main)
@@ -168,3 +168,41 @@ current main, 11 files, run-validate exit 0. Draft; not merged.
 resolving anything.** `merge-tree origin/main <head>` answers a question about main;
 if the base is not main, it is answering the wrong question, and it will do so
 silently and produce a plausible-looking resolution.
+
+
+## Closed out 2026-08-25T18:52Z — the seventh landed, and the red it exposed is fixed
+
+The correction above says six of seven reached `main`. That is now resolved: **#4925's
+content reached `main` via the retarget PR #5761**, merged as `41389ea6bf`. All seven
+are on `main`; only the route differed.
+
+Two things came out of the merge that were not visible when the correction was written.
+
+**#5761's own "run-validate exit 0" had gone stale, and re-verifying it found `main`
+broken.** Against the moved `main` the merged tree gave 36 issues / 9 errors — but
+pristine `origin/main` gave *the identical* 36 and 9, so none of it was the branch's.
+All nine were one cascade: `lean.validation: "lean_direct_exit_0"` is not a member of
+`LeanValidation`, so `gauge-coupling-uniqueness` was rejected on import,
+`cor:gauge-coupling-uniqueness` never registered as a label, and eight consumers failed
+to resolve. Landed via #5745; only occurrence in a chapter of 68. Fixed to `leanok` in
+#5761. Confirmed on a pristine worktree at the merged tip: **`✓ Valid — 24 issue(s)`,
+0 errors.** Recorded on `qou-mln9`, whose own diagnosis item 2 is this exact class.
+
+**A Phase-0 collision that a file-level check found and a prose-level one would not.**
+`qbeta_route76_ptolemy_singular_probe.py` was in both #5761 and the live sibling #5772,
+and both independently corrected the *same* G6 claim to the *same* conclusion. Stood
+down in #5772's favour — it keeps the original claim text under a
+`[HEADLINE SUPERSEDED]` marker rather than overwriting it, names the error class
+(scope-(a)-stated-as-(b)), retains `beats_route_75_reach` for consumer compatibility
+with explicit scope keys, and separates 11a1 (still walled) from 10_100 (rescued).
+#5761 still lands its independent evidence for the same correction: gate G7c's probe
+and witness, neither of which was on `main`.
+
+**Method note worth keeping, alongside the `base.ref` one above.** Rebase was
+*infeasible* on #5761's branch and the failure was loud but misleading: `git rebase
+origin/main` reported 3423 conflicted files on commit **1 of 22928**, while the
+merge-base was only five hours old and the net diff was 13 files. The branch had been
+built by repeated merge-of-main, and a linear replay flattens every merged-in commit.
+The number to trust is `git diff --name-only origin/main...HEAD`, not the rebase's
+commit count. Merged with `merge_method: "merge"` on that measured ground; #5762 and
+#5760 rebased normally.
