@@ -87,3 +87,69 @@ The Dehornoy floor of the corpus's carriers is **not computed here** — the
 none of those rows licenses a conclusion about its closure via Theorem 2.
 Computing `[β]_D` for the candidate set is the next step, and it is
 mechanical.
+
+---
+
+## Addendum — the corpus's braids are far below the hypothesis, and that is the pattern
+
+Definition 1, quoted from the source:
+
+> **Definition 1.** Dehornoy floor `[β]_D` of a braid `β ∈ Bₙ` is the minimal
+> non-negative integer `m` satisfying `β ∈ (Δ^{−2m−2}, Δ^{2m+2})`.
+
+In `B₃`, `Δ² = (σ₁σ₂)³` — 6 crossings, exponent sum 6, and it generates the
+centre. Ito supplies his own calibration: **`(σ₁σ₂)⁴ ∈ B₃` has `[β]_D = 1`**
+(and `0` in `B₄` — the floor depends on the ambient `Bₙ`, which he flags).
+
+So **Theorem 2's `[β]_D ≥ 3` requires `β` to lie outside `(Δ^{−8}, Δ^{8})`** —
+to dominate `Δ⁸ = (σ₁σ₂)¹²`, a braid of **24 crossings**.
+
+Against that:
+
+| braid | crossings | exponent sum |
+|---|---:|---:|
+| `Δ² = (σ₁σ₂)³` (the unit of the scale) | 6 | 6 |
+| `(σ₁σ₂)⁴` — Ito's example, floor **1** | 8 | 8 |
+| `𝔐 = (σ₁σ₂)²σ₂σ₁` — corpus meson | 6 | 6 |
+| `(σ₁σ₂⁻¹)²` — muon carrier | 4 | 0 |
+| `(σ₁σ₂⁻¹)³` — proton carrier | 6 | 0 |
+
+**What is rigorous here:** the requirement itself — `[β]_D ≥ 3` means clearing
+a 24-crossing braid — read straight off Definition 1.
+
+**What is indicative and NOT computed:** the corpus braids' actual floors. The
+Dehornoy floor is **not** a function of the exponent sum — `σ₁σ₂⁻¹ > 1` with
+exponent sum `0` — so the table above is a scale comparison, not a
+calculation. A rigorous `[β]_D` needs handle reduction, which was not run.
+Nothing below depends on the exact values.
+
+### The pattern, which does not depend on the exact floors
+
+This is the **second** hypothesis from this literature that the corpus's braids
+fail, and the two are independent:
+
+| source | hypothesis | why the corpus fails it |
+|---|---|---|
+| Giambrone, Thm 1.2 | every negative exponent `rᵢ ≤ −3` | corpus words use single `±1` crossings |
+| Ito, Thm 2 | `[β]_D ≥ 3` (clears 24 crossings) | corpus words are 4–6 crossings |
+
+Two different papers, two unrelated conditions, one cause: **the closed-3-braid
+geometric literature is built for *complex* braids — long syllables, high
+Dehornoy floor — and the framework's carriers are short words close to the
+identity.** That is a property of the corpus's braid vocabulary, not a run of
+bad luck in the reading.
+
+### What that gives Obstruction A, constructively
+
+It is a **lower bound on any certifiable candidate**. A braid whose closure the
+literature can certify hyperbolic — rather than merely measure in SnapPy — must
+be *substantially longer* than anything the framework currently writes down:
+≥ 3 same-sign crossings per negative syllable (Giambrone), or clearing ~24
+crossings (Ito).
+
+That is a real constraint on the search and it points the same way as the
+2026-08-24 audit's own measurement, which found the pion target bracketed only
+by braids longer than the corpus's. It does not derive a braid. Obstruction A
+remains open, and the honest next step is unchanged and mechanical: run handle
+reduction to get the actual floors, rather than reasoning from exponent sums as
+this addendum does.
