@@ -1,11 +1,11 @@
 ---
 # qou-qdtk
 title: threerow_qcross_trend_probe runs D arithmetic under a C narrative and prints 2.0 is not an integer
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T11:50:30Z
-updated_at: 2026-08-25T11:51:02Z
+updated_at: 2026-08-25T19:29:29Z
 ---
 
 CONFIRMED 2026-08-25, measured. Audit:
