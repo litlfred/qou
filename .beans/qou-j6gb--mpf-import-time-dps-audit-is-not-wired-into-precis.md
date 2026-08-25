@@ -763,3 +763,53 @@ attempt to diff the current dirty set against `raw-float64-baseline.json`
 reported 0 current dirty, which is obviously wrong. Stating that rather than
 guessing. Whoever picks this up needs those five names first; `REGRESSED: 0`
 says nothing got worse, so this is 5 additions someone made without draining.
+
+
+---
+
+## The five ARE named by the audit itself — my predecessor's blocker was not real
+
+Picked up 2026-08-25 from the handoff above ("Whoever picks this up needs those
+five names first"). That handoff states:
+
+> The audit has no flag that lists them and my attempt to diff the current dirty
+> set against `raw-float64-baseline.json` (1409 entries) failed.
+
+**Both halves are wrong, and the second follows from the first.** The audit
+prints the NEW set unconditionally at `witness_raw_float64_audit.py:722-728`,
+under the heading `NEW witnesses carrying raw float64 — fix AT THE PRODUCER`,
+one line per file with its field count. No flag is needed; a plain
+`--strict` run emits it. The custom baseline-differ that returned "0 current
+dirty, which is obviously wrong" was written to reconstruct output the tool
+already produces.
+
+Recorded because the failure mode is reusable, not to score a point: the
+predecessor reached for a reimplementation before reading the reporting code
+of the tool it was reimplementing. Same shape as the `y_lambda_at` and
+`qbeta_h_frame_rungs_probe` corrections elsewhere in this corpus — **read at
+the body**.
+
+## The five, measured on clean main (exit 1, `NEW dirty witnesses: 5`)
+
+    42  computations/deltalambda/deuteron-interface-handle-curvature.witness.json
+    28  computations/qbeta/birkhoff-barodd-pythagoras-bridge.witness.json
+    21  computations/qbeta/a3-branching-asymmetry-vs-required.witness.json
+     4  computations/deltalambda/yekutieli-trefoil-surface2form-discretization.witness.json
+     1  computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json
+
+96 raw float64 fields total. `REGRESSED: 0` — nothing baselined got worse, so
+this is five additions that were never drained, exactly as the handoff inferred.
+
+Four of the five carry a producer and all four were computed 2026-08-09, each
+declaring its arithmetic in its own `engine` string:
+
+    deuteron-interface-handle-curvature   "python+numpy (H6 Hoefsmit seminormal, pure-python builder)"
+    birkhoff-barodd-pythagoras-bridge     "python-complex (structural demonstration; no precision needed)"
+    a3-branching-asymmetry-vs-required    "python-float (0 free params; structural)"
+    yekutieli-trefoil-surface2form-...    "python (pure 2x2 matrices; structural validation)"
+
+That is the pre-directive probe class: all four predate the 2026-08-18 owner
+directive "PROBES ARE NOT EXEMPT ... Never compute in `float`", and
+"no precision needed" / "structural" is the exact reasoning that directive
+names and bans. The fifth (`sigma1cubed-seifert-surface-term`, 1 field,
+2026-08-02) carries no `scriptFile` and needs separate handling.
