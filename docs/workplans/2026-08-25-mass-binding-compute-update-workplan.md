@@ -84,23 +84,41 @@ non-comparison; 4 unjustified.**
 
 ---
 
-## Tier 2 — R1 convention C: 14 actionable sites, plus surfaces no detector walks
+## Tier 2 — R1 convention C: 11 actionable sites, plus surfaces no detector walks
 
-**Corrected counts** (AGENTS.md says 26; `--list --json` says **14**, and the
+**Corrected counts** (AGENTS.md says 26; `--list --json` said **14**, and the
 `tools/pyhecke/regime_scanner.py:94` site it calls "the last unexplained one" is
 **closed**). `_li_2_q_util.py` is **migrated** — AGENTS.md's "lines 302 and 312,
 load-bearing" is stale; only a historical comment survives at 330.
 
+> **RE-MEASURED after rebasing onto `main` @ `5483aa95f` — now 11 actionable, not 14.**
+> Five commits landed on `main` during this session and closed three of the fourteen:
+> `a97d415bd` migrated `pauli_young` (a stale convention-C hand-copy), `b837f3a51`
+> migrated `mirror_split eps_bonds` (a superseded convention-C *expansion*), and
+> `3a58ca57b` registered `markov_reduction_h3_to_h4_verify::z` as **blocked on C by
+> design** — which moves it out of the actionable set **without fixing it**. Deliberate
+> C-named comparisons rose 47 → 49. **This count decays fast — re-run the detector rather
+> than quoting any figure in this document.**
+
 | # | Item | Count |
 |---|---|---|
 | 2.1 | **Live producers first:** `lepton_tower_core.py:126` (`markov_z`), `qbeta/qbeta_prearchimedean_z_recursion.py:103` | 2 |
-| 2.2 | Probes / exploratory (**not exempt** — AGENTS.md 2026-08-18: a probe conclusion is an *argument* nothing re-derives) | 12 |
+| 2.2 | Probes / exploratory (**not exempt** — AGENTS.md 2026-08-18: a probe conclusion is an *argument* nothing re-derives). Two of the original twelve landed on `main` this session; one more is now registry-blocked rather than fixed | 12 → **9** |
 | 2.3 | **`scripts/sync-qou-mass-vendor.py --apply`** — closes the 1 generated-mirror site **+ 23 drifted + 3 missing in one move**. Never hand-edit `_internal/`. Drifted includes all 21 `canonical-isotope-witness-Z*`; missing includes `closed_form_tau_M`, `y_lambda_wenzl_bridge`. | 1 command |
 | 2.4 | **NEW DETECTOR BLINDNESS #14 — the Lean `⁻¹` spelling.** The 2026-08-19 Lean audit greped `Real.sqrt q + 1 / Real.sqrt q` and `√q + 1/√q`; the corpus also spells it `Real.sqrt q + (Real.sqrt q)⁻¹` — **13 hits in 9 files**, structurally invisible. Missed site: `QBetaCategoricalPrecisionLadder.lean:43`. | +1 site |
 | 2.5 | **NEW DETECTOR BLINDNESS #15 — scope.** That audit walked `lean/QOU` only. **8 content-block sibling `.lean` files outside it carry a C shape** and were never in scope (`mass-theory/markov-trace-ratio-exact.lean`, `nuclear-interactions/q-beta-cos-resummation.lean`, …). | 8 files, **UNMEASURED** |
 | 2.6 | 2 failing content blocks: `deuteron-fusion-frame` (`ts:35`), `interface-knot-markov-z-proof` (`md:56` ×2) + its Lean sibling `:118` | 2 |
 | 2.7 | **NEW SURFACE — `computations/braid-registry/*.json`: 269 files, 268 carrying `z_markov = 0.4993200830735895` (C) and ZERO carrying z_D.** Worse, every one records `q = 1.11` — a *rounded* q that is neither pin, so it is off on **both R1 and R2**. Producer is `_deprecated/braid-registry.py`; **no runtime loader found**. **Recommend: move the directory under `_deprecated/`** (every detector skips it) rather than regenerate 268 files from a dead engine. | 268, disposition |
 | 2.8 | Triage the **43 unexplained** z_C-carrying live artifacts (63 total, 20 self-evidently deliberate). Mass/binding-relevant: `alpha-k-jones-markov-h3/h4`, `confinement-operator-selection`, `hadron-knot-table`, `free-neutron-decay`, `beta-decay-matrix`, `deuteron-fpn-wlambda-wiring`, +5 under `deltalambda/`. **A floor, not a total** — beans `qou-mhij`/`qou-bvk7`/`qou-u5z0` record C propagating into payload that never *equals* `z_C`. | 43 |
+
+**C-specialised closed forms — migrating `z` does NOT migrate the file.** The detector's
+own note: `h·z+1` and `(q·z+1)/(q²+1)` are *rational* under D, so **a square root
+surviving in one of them is `z_C` showing through**. Now **2** such bindings (was 4 —
+`mirror_split_milnor_one_third_probe`'s three closed at `b837f3a51`):
+`computations/probes/qbeta_5two_categorical_markov_volume_probe.py:133`
+(`ocneanu_weights ← sqrt(_q)`), and the generated mirror
+`qou-mass/src/qou_mass/_internal/_li_2_q_util.py:749`
+(`borromean_markov_trace_h2 ← sqrt(q)`) which item 2.3 closes.
 
 The structural/symbolic detector is down to **2 witnesses** (`derived-chi-catalogue`,
 `y-lambda-macdonald-telescope`) from the 14 tranche H3 was scoped against.
@@ -126,8 +144,37 @@ Fresh `q0_anchor_consistency_audit.py`:
 Q0_OK 970   Q0_FLIP 0   Q0_ANCHOR_MISSING 1638   Q0_AMBIGUOUS_NO_REASON 14
 ```
 
-- **`Q0_FLIP = 0`** — no witness self-contradicts its stamp. The `qou-m9xp` class is
-  genuinely closed.
+- **`Q0_FLIP = 0`** — no witness self-contradicts its stamp. But this is **weaker than
+  "computed at the anchor it claims"**, and the distinction matters for how the sweep is
+  scored. The audit's own docstring defines the verdict as *"anchor ∈ {muon,proton} and
+  `q0Value` matches that anchor's pin"* — it compares the two **recorded stamp fields to
+  each other**, never against the constants the producer actually consumed. A producer
+  that copies `constants.q_0` out of an **input witness** inherits whatever pin that input
+  carried, is stamped from the manifest, and reports `Q0_OK` either way.
+
+  > Verified from the primary source (`q0_anchor_consistency_audit.py` lines 12–13, 241 ff),
+  > not from the sibling report that raised it. **The instance PR #5500 named
+  > (`parabolic_cylinder_channel_mixing_probe`) is CLOSED on the current tree** — measured
+  > this session, its witness stamps `proton` and its payload `constants.q_0 =
+  > 1.1099785827513808076` is the proton value, and the stem is listed under
+  > `physical_proton`. So cite the **mechanism**, which is live and general, not that
+  > example, which is fixed. This is the AGENTS.md "a sibling's bean is not a primary
+  > source" rule applied in both directions: the warning was right, its example was stale.
+
+  Two consequences for sequencing:
+
+  1. **`Q0_FLIP → 0` is not evidence a migration completed.** Report `Q0_ANCHOR_MISSING`
+     beside it, always.
+  2. **Regenerating can shrink the audited population rather than fix it.** PR #5500
+     measured **seven** producers that stop emitting `q0Anchor`/`q0Value` when re-run —
+     and those two fields *define* the muon-anchored set, so for those a re-run converts a
+     `Q0_FLIP` into a `Q0_ANCHOR_MISSING`, which the audit's own docs call **"not a
+     failure"**. Four such transitions already happened on `main` while #5500 was
+     measuring. ⚠ UNVERIFIED here — I did not re-run those seven.
+
+  The `qou-m9xp` class (a witness disagreeing with its own stamp) **is** closed. The
+  broader claim — that every stamped witness was computed at its stamped pin — is **not
+  established by this audit and cannot be**.
 - **`Q0_ANCHOR_MISSING = 1638` IS the R2 backlog.** AGENTS.md rule 4 — *"Say which pin
   you used"* — is unmet for **53 %** of the corpus.
 
@@ -139,6 +186,16 @@ Q0_OK 970   Q0_FLIP 0   Q0_ANCHOR_MISSING 1638   Q0_AMBIGUOUS_NO_REASON 14
 | 3.4 | 14 `AMBIGUOUS_NO_REASON` + 3 `INDEPENDENT_NO_REASON` need one line each. |
 | 3.5 | Manifest hygiene: `alpha_high_precision` (`ideal_muon`) and `binding_k_enumerator` (`physical_proton`) resolve **only** to `_deprecated/` files. |
 | 3.6 | **⚠ 1600 witnesses carry no q₀ literal at all** — neither text method nor the canonical audit can say which pin they used. Neither clean nor dirty. **Unmeasurable until 3.1 lands**, which is why 3.1 outranks the 264. |
+
+> **The muon-witness population is contested and both figures are moving.** PR #5500
+> reports **56** muon-anchored witnesses carrying the old value where it earlier said 53,
+> and its own author says *"53 should be re-measured before you act on it — `main` has
+> moved several hundred commits since that count."* My independent measure over a
+> different population (all `computations/**/*.witness.json`, three muon families) gives
+> **264 live muon-bearing**. These are **not the same quantity** — #5500 counts witnesses
+> stamped `muon` under its A→C re-pin; mine counts any witness carrying any muon literal —
+> so they do not reconcile directly and neither supersedes the other. Do not merge the two
+> numbers.
 
 **Constraints on any sweep** (the 2026-08-19 authorisation carries four, each bought by
 a failure): never re-pin an anchor-defining witness; the muon anchor keeps its
