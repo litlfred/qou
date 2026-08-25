@@ -3,8 +3,9 @@
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
 status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-08-10T02:36:03Z
+updated_at: 2026-08-25T11:06:04Z
 ---
 
 
@@ -679,3 +680,41 @@ seeing an empty `git diff` on the producer, "my drain never touched this file"
 (it had; the change was already committed, so the working tree was clean). Both
 were resolved the same way: compare the two artefacts directly and count. A
 witness diff is cheap and answers the question that guessing does not.
+
+
+## Re-measured 2026-08-25 — WIRED, and 288 -> 22
+
+The finding above says the audit "is **not** in `scripts/precision-gates.sh`'s
+`GATES` array" and reports 288 findings / 185 proven lossy / 91 files. Both
+halves have moved:
+
+**It IS wired now.** Running `scripts/precision-gates.sh` on clean detached
+`origin/main` (1259c7fdefb) reports it as a gating section and the run exits 1:
+
+    RED: import-time dps ratchet  raw-float64 ratchet
+
+**And the backlog has drained by an order of magnitude:**
+
+    2026-08-10   288 findings   185 proven lossy   91 files
+    2026-08-25    22 findings     2 proven lossy   12 files
+
+So the residue is 2 proven-lossy (literal arg) and 20 position-risky (expr arg,
+not statically provable). The remaining files:
+
+    computations/borromean_binding_recompute.py                     (3, expr)
+    computations/probes/one_loop_cusp_normalisation_tension_probe.py (3, expr)
+    computations/substrate/q_parameter.py                            (3, expr)
+    computations/probes/chirality_weighted_3body_cluster_probe.py    (2, expr)
+    ... 8 more files
+
+**Worth stating plainly for anyone reading the gate output: main is RED and has
+been.** That is not a regression and not a surprise — it is this gate being
+correctly wired over a backlog that was never fully drained. Verified
+byte-identical on clean main and on an unrelated feature branch, so a red here
+does not indicate anything about the branch under test.
+
+Consequence for the merge discipline in AGENTS.md §"Phase-4 verification
+gate": with CI dispatch-only, `precision-gates.sh` IS the gate, and it cannot
+currently be used as a pass/fail signal on trunk. Until this residue is drained,
+an agent verifying a branch must compare its gate output against clean main
+rather than requiring exit 0 -- which is what I did for PRs #5751 and #5752.
