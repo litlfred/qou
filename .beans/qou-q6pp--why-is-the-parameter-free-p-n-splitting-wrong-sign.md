@@ -130,3 +130,54 @@ bracket in the full non-commutative formula. thm:wedderburn-mass-formula writes
 reading, not a verified identification, and every magnitude above scales
 linearly with it. The SIGN results (Phi_1 flipping, Phi_2 monotone) are
 alpha-independent and survive regardless.
+
+## The Phi_1 localisation is NOT established either — same error, one level down
+
+atom_gen_chains(Z, N) returns EXACTLY TWO chains (g0, g1), for generators sigma_0
+and sigma_1, for every (Z, N). It accumulates every nucleon's crossings into
+those two. Read the body: the returns are unconditional.
+
+thm:wedderburn-mass-formula sums over the generators i of the atomic braid
+A in H_{A+Z}(q). That algebra has A+Z-1 generators:
+
+    H-1  (A=1, Z=1)  H_2  -> 1 generator      atom_gen_chains gives 2
+    D    (A=2, Z=1)  H_3  -> 2 generators                          2
+    T    (A=3, Z=1)  H_4  -> 3 generators                          2
+    4He  (A=4, Z=2)  H_6  -> 5 generators                          2
+
+So my Phi_1 is a sum of exactly TWO logs regardless of A, while the chains
+inside them grow. That is trivially non-extensive — and "Phi_1 is not extensive"
+was precisely the defect I reported. The finding may be an artifact of the input,
+not a property of the formula.
+
+Worse, it is the SAME MISTAKE AS THE RETRACTION, one level down. atom_gen_chains
+is documented as feeding atom_V_full for "the mass-tower formula" — it is built
+for the TOWER construction, not for the Phi formula. I substituted a helper from
+a neighbouring construction because it had a plausible name and the right
+arity-ish shape, exactly as I earlier substituted nucleon chains into an atomic
+formula.
+
+## What this leaves standing
+
+- The RETRACTION stands. It rests on the formula's own algebra (m_n - m_p is an
+  input) and on nucleon_gen_chains being quark-level. Neither depends on how
+  M_i is built.
+- The alpha* EXCISION stands. Independent ground entirely.
+- Phi_3 = w*ln q with INTEGER w survives as algebra ABOUT THE CHAINS GIVEN
+  (4, 6, 6, 12, 12) — but whether those are the formula's chains is exactly
+  what is now in doubt.
+- The per-term decomposition, the "Phi_1 flips sign", the "Phi_2 well-behaved",
+  and the chirality magnitude bound are ALL CONDITIONAL on the input being
+  right, and it probably is not. Do not cite them.
+
+## What is actually needed
+
+A verified constructor for the formula's M_i: for generator i, the 2x2 transfer
+matrix from chaining the crossing matrices of all strands j > i, over the atomic
+braid in H_{A+Z}(q), giving A+Z-1 of them. I did not find one and did not write
+one. Until that exists, no number computed from Phi_1/Phi_2/Phi_3 on atomic
+braids should be trusted, including mine.
+
+STOPPING HERE rather than building further on an unverified input. Three
+inference layers in this session rested on a substituted object; two are already
+retracted.
