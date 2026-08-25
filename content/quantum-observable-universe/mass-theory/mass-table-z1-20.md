@@ -35,8 +35,11 @@ $q_{0}$ times it. Under the published $h_{\mathrm{A}}^{2}
 = 0.0437073$ the same invariants reproduce **none** of the twenty
 quoted values, while agreeing with AME2020 equally well (mean
 $0.075\%$, max $0.191\%$, against $0.074\%$ and $0.192\%$). So the
-table does not discriminate between the two coefficients, and the
-computation that produced these rows is not the one stated above.
+table does not discriminate between the two coefficients on accuracy, and
+the computation that produced these rows is not the one stated above.
+Which coefficient is *correct* is settled separately and does not rest on
+the table: $h_{\mathrm{A}}^{2} = q^{2} + q^{-2} - 2 = [3]_{q} - 3$ is an
+exact construction, while $0.0499$ has none.
 
 The live mass-prediction
 pipelines give substantially larger errors than these figures: nucleons
