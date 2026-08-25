@@ -396,6 +396,73 @@ gate claim carries a timestamp whether or not you write one down — so write
 one down, and re-measure before repeating it.
 
 
+
+=== TAKEOVER 2026-08-25T16:1xZ (stalled-claim policy, AGENTS.md work-plan §2) ===
+
+Taken over from branch claude/phantom-witness-and-groundstate-2026-08-25
+(PR #5758), last commit 1d7bede2f6 at 12:37:25Z -- 3h35m stale at pickup,
+no in-flight CI (auto-triggers disabled repo-wide), so presumed abandoned.
+NOT force-pushed; continued from that tip on claude/stalled-agent-recovery-iwjb5y.
+
+TWO CORRECTIONS TO THE HANDOFF, both measured:
+
+1. Vol_B3 IS NOT MISLABELLED.  The recovery audit called the field
+   'mislabelled: this is exactly 8G, not a volume'.  Wrong, and inverted:
+   Vol(Borromean) = 2*V_oct = 8G is an identity (V_oct = 4G), and the corpus's
+   own binding_link_volumes.py:112 sets VOL_B3 = 8*catalan under the comment
+   'Vol(L6a4) = 8G = Vol(Borromean)'.  A closed-form value was read as a
+   substitute for the quantity it is the closed form OF.
+
+2. THE 'AUTHORING CALL' IS DECIDABLE, AND IS NOW DECIDED.  The audit left
+   'either the published h_A^2 is wrong or beta3 is undocumented' open on the
+   ground that the artifact cannot distinguish them.  Derivability does, and
+   needs no artifact:
+
+     h_A^2 = (q - 1/q)^2 = [3]_q - 3   exact (3e-51), PROVED IN LEAN sorry-free
+     0.0499                            no construction; 16 pre-declared
+                                       candidates, closest 63.7 % off against
+                                       a 0.1 % window for a 3-digit literal
+
+   Sharper consequence, with no q in it at all: since beta2 = -2[3]_q and
+   beta3 = [3]_q - 3, the pair must satisfy 2*b3 + b2 + 6 = 0.  The recorded
+   (-6.087415, 0.0499) gives +0.012385.  So the witness's two numbers are
+   MUTUALLY INCONSISTENT AS A PAIR -- any q, any pin, either convention.
+
+   Lean: QOU/Mass/WedderburnMassFormulaCoefficients.lean, generic Field R, no
+   archimedean construct, no substrate q0.  lean-direct exit 0 against the real
+   import cone; #print axioms on all four decls = propext/Classical.choice/
+   Quot.sound, no sorryAx.
+   Probe: computations/wedderburn_beta3_provenance_probe.py.
+
+3. PRECISION DEFECT SEPARATED FROM FIT.  The published digits 0.043707282 are
+   (q-1/q)^2 at a 5-decimal-ROUNDED q = 1.10998 (2.05e-9), not at either pin
+   (2.4e-5 off).  mu-p gap is 1.2e-8 in q and cannot explain it.  Rounded input
+   != fit; the construction is exact.  Re-publishing at unrounded q0 is an
+   authoring change, left to the author.
+
+NOT DONE, deliberately (owner 2026-08-25, 'no fitting!!!'): beta3 not
+reconstructed, published formula not adjusted, table not re-derived, no
+tolerance touched.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; only CAL-1/2/3
+admissible; sign agreement is one bit.
+
+
+=== RETRACTION carried into this bean, 2026-08-25 ===
+
+Item 1 above still reads 'ITS WITNESS NEVER EXISTED'.  THAT IS FALSE and is
+retracted.  atom-mass-complete-wedderburn.witness.json was added 2026-04-10 in
+1359fe23ac under folio-assistant/computations/ and left the tree with the
+platform code in the miga migration.  All three 'lost' witnesses recover the
+same way; it is a repo-split class, not three accidents.  The searches that
+missed it (mine and the 2026-07-12 audit's) looked under computations/ only --
+search by BASENAME across all refs, and note a shallow clone can manufacture
+false 'never existed' verdicts but never false 'exists' ones.
+
+So the table DOES have a producer.  What section 3a establishes is that the
+producer is not the published formula -- which is the stronger finding, not a
+weaker one.
+
 TAKEOVER 2026-08-25T16:20Z. Prior session (session_01Y49zmah825kkwu2aB8CbAY) stalled on
 branch claude/phantom-witness-and-groundstate-2026-08-25 at 1d7bede2f (last commit
 12:37:25Z, >3h idle, PR #5758 draft, no reviews, no in-flight CI). Continuing from that

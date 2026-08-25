@@ -1,11 +1,11 @@
 ---
 # qou-t1kv
-title: 'GAP: HeckeGenerators is H_infinity — no finite-dim rep can instantiate it, so IsJMWeight cannot be discharged at dim > 1'
+title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T10:52:59Z
+updated_at: 2026-08-25T17:48:28Z
 ---
 
 ## The defect
@@ -117,3 +117,70 @@ failing to line up — not an afternoon.
 
 Whether that is worth it for one `dim = 2` witness at `n = 3` is now a genuine question, and
 I do not think the answer is obviously yes. `sv8b` may be the better use of the same effort.
+
+
+---
+
+## The Schur cascade is now MACHINE-CHECKED (2026-08-25, PR #5766)
+
+The caveat above — *"This argument is reasoning, not machine-checked ... It should be
+Lean-proved before anyone relies on it"* — is discharged. New library file
+`QOU/BraidKnot/HeckeStableScalarCascade.lean`, 13 declarations, no `sorry`:
+
+    sigma_eq_of_succ_scalar   sigma (i+1) = algebraMap s  ->  sigma i = THAT SAME s
+    sigma_eq_of_le_of_scalar  downward propagation to every i <= j
+    sigma_scalar_of_schur     Schur on {sigma 0, sigma 1}  ->  sigma 1 is scalar
+    stdTwo_no_stable_extension   no HeckeGenerators restricts to the seminormal pair
+
+`far` puts `sigma 3` in the centralizer of `sigma 0` and `sigma 1` (0+1<3, 1+1<3), Schur
+makes it scalar, and the braid relation cascades down. **The obstruction is Schur, not
+finite-dimensionality** — the retraction above stands and nothing in the proof leans on it.
+
+Non-vacuity is carried, not assumed: the 2x2 Young seminormal pair is PROVED to satisfy
+the Hecke and braid relations over any field with q != 0, and restated in the class's own
+`algebraMap` vocabulary (`stdTwo_hecke0_algebraMap` / `stdTwo_hecke1_algebraMap`) so the
+claim is literally the relation `HeckeGenerators.hecke` demands, not a `smul` lookalike.
+Their joint centralizer is proved to be exactly the scalars.
+
+Verified: `lean`-direct exit 0 against a cone built FROM SOURCE (8 QOU modules), and
+`#print axioms` on all 13 declarations = [propext, Classical.choice, Quot.sound] — no
+`sorryAx`. The container's root Mathlib cache is restored (oleans=6990, traces=0), the
+state that yields phantom `sorryAx`, so `lake build` was never run.
+
+### What this settles, and what it does NOT
+
+SETTLED: the bounded-index class variant is not merely the tidier route to a `dim > 1`
+witness — it is the ONLY one. This is a scope-(b) structural exclusion with a proved
+invariant, so no cheaper instantiation exists to be found and nobody should look for one.
+
+STILL OPEN — this bean stays open for it: the bounded-index refactor itself (~700 lines
+across eight files, bounds threaded through `run_push` / `delta_pow_run`). The revised
+"about a day, with real risk" estimate above is UNCHANGED; proving the exclusion does not
+shrink the refactor, it only removes the possibility of avoiding it.
+
+The cost question above — *"whether that is worth it for one dim=2 witness at n=3"* — is
+now a cleaner decision: the alternative of finding some other instantiation is provably
+empty, so the choice is the refactor or no `dim > 1` witness at all.
+
+
+## SHARPNESS — the exclusion does NOT reach reducible reps (2026-08-25, #5766 d9deb89ac)
+
+Raised from sibling PR #5764 (Sym2 gate), where an irrep-level exclusion was being read as
+covering arbitrary objects. Answered with a proof, not a caveat:
+
+    constGenerators                  any Hecke-quadratic unit gives an instance
+    existsNonscalar_heckeGenerators  a HeckeGenerators on 2x2 matrices with
+                                     NON-SCALAR generators: diag(q, -q^-1)
+
+The load-bearing hypothesis of `sigma_scalar_of_schur` is the CENTRALIZER CONDITION, not
+"irreducible" and not "dim > 1". A reducible rep has a non-scalar idempotent in its
+centralizer, fails the hypothesis, and the cascade never reaches it. Needs q^2 != -1; at
+q^2 = -1 the two Hecke eigenvalues collide and the diagonal is scalar.
+
+**This directly re-refutes the claim this bean's title used to make.** `dim > 1` instances
+DO exist, now by explicit construction in matrix form — so the retracted "no finite-dim rep
+can instantiate it" is refuted a second time, and from the opposite direction (the first
+refutation was `scalarGenerators`, dimension 1; this one is dimension 2 and non-scalar).
+What H_infinity cannot host is an IRREDUCIBLE action, not a big one.
+
+All 23 declarations re-checked: [propext, Classical.choice, Quot.sound], no sorryAx.
