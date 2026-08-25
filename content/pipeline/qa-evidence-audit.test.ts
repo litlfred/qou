@@ -100,7 +100,34 @@ describe("qa-evidence-audit", () => {
     expect(out.total_agent_fail_warn).toBe(0);
   });
 
-  test("--strict fails on a live hit and passes without one", () => {
+  // The distinction the audit exists to make. Its first cut counted an empty
+  // `evidence` as "this verdict says nothing", which measured 1302 such
+  // entries corpus-wide. Every one of them turned out to record a substantive
+  // reason under `notes` — citing file:line, e.g. "...braid.lean:22:28:
+  // error(...)". The truly-silent count is ZERO. Reporting a schema-key
+  // mismatch as an accountability void is a far more serious claim, and false.
+  test("a reason under `notes` is misfiled, not silent", () => {
+    const out = audit(
+      { ...FAIL, notes: "b.lean:22:28: error(lean.unknownIdentifier)" },
+      "match",
+    );
+    expect(out.empty_evidence).toBe(1);
+    expect(out.by_accountability).toMatchObject({ misfiled: 1, silent: 0 });
+    expect(out.live_silent).toBe(0);
+  });
+
+  test("`referee_argument` also counts as misfiled, not silent", () => {
+    const out = audit({ ...FAIL, referee_argument: "open-objection: b.md:4" }, "match");
+    expect(out.by_accountability).toMatchObject({ misfiled: 1, silent: 0 });
+  });
+
+  test("no reason under any key is silent", () => {
+    const out = audit(FAIL, "match");
+    expect(out.by_accountability).toMatchObject({ misfiled: 0, silent: 1 });
+    expect(out.live_silent).toBe(1);
+  });
+
+  test("--strict ignores a misfiled reason and fires only on a silent one", () => {
     const root = mkdtempSync(join(tmpdir(), "qa-ev-strict-"));
     const run = () =>
       spawnSync("bun", ["run", AUDIT, "--root", root, "--strict"], {
@@ -110,20 +137,31 @@ describe("qa-evidence-audit", () => {
     mkdirSync(join(root, "ch"), { recursive: true });
     const md = "# b\n";
     writeFileSync(join(root, "ch", "b.md"), md);
-    writeFileSync(
-      join(root, "ch", "b.qa.json"),
-      JSON.stringify({
-        criteria: {
-          c: [
-            {
-              reviewer: { kind: "agent", id: "t" },
-              result: "fail",
-              field_hash: { md: sha12(md) },
-            },
-          ],
-        },
-      }),
-    );
+    const write = (extra: Record<string, unknown>) =>
+      writeFileSync(
+        join(root, "ch", "b.qa.json"),
+        JSON.stringify({
+          criteria: {
+            c: [
+              {
+                reviewer: { kind: "agent", id: "t" },
+                result: "fail",
+                field_hash: { md: sha12(md) },
+                ...extra,
+              },
+            ],
+          },
+        }),
+      );
+
+    // A live verdict whose reason sits in `notes` is misfiled, not silent —
+    // that is a key migration, and failing the gate on 1302 of them would
+    // make it unusable on arrival.
+    write({ notes: "b.md:1 — the claim outruns the Lean" });
+    expect(run()).toBe(0);
+
+    // No reason under any key: this is what the gate is for.
+    write({});
     expect(run()).toBe(1);
   });
 });

@@ -65,6 +65,13 @@ function hasEvidence(ev: unknown): boolean {
   return false;
 }
 
+/**
+ * Keys other than `evidence` under which a verdict's reasoning is known to be
+ * filed. `notes` is schema-blessed for a different purpose ("fix applied / fix
+ * proposed / scope note") but the drain writer uses it as the reason field.
+ */
+const REASON_KEYS = ["notes", "referee_argument", "rationale", "reason"];
+
 type Bucket = "live" | "stale" | "unhashed";
 interface Hit {
   block: string;
@@ -74,6 +81,8 @@ interface Hit {
   severity?: string;
   reviewer?: string;
   bucket: Bucket;
+  /** `silent` = no reason under any key; `misfiled` = reason present, wrong key. */
+  accountability: "silent" | "misfiled";
 }
 
 const hits: Hit[] = [];
@@ -121,6 +130,16 @@ for (const rel of new Glob("**/*.qa.json").scanSync(root)) {
       totalFailWarn++;
       if (hasEvidence(e.evidence)) continue;
 
+      // The `evidence` key is empty — but that is NOT the same as the verdict
+      // being unaccountable. One writer family (reviewer id
+      // `local/qa-agent-drain`) files its reasoning under `notes` and
+      // `referee_argument` instead, and that prose is substantive: it cites
+      // file:line, e.g. "...molecular-braid.lean:22:28: error(...)". Counting
+      // those as evidence-free would report a schema-key mismatch as an
+      // accountability void, which is a far more serious claim and a false
+      // one. Only an entry with no reason under ANY key is truly silent.
+      const misfiled = REASON_KEYS.some((k) => hasEvidence((e as any)[k]));
+
       const bucket: Bucket = !e.field_hash
         ? "unhashed"
         : e === winner
@@ -134,6 +153,7 @@ for (const rel of new Glob("**/*.qa.json").scanSync(root)) {
         severity: e.severity,
         reviewer: e.reviewer?.id,
         bucket,
+        accountability: misfiled ? "misfiled" : "silent",
       });
     }
   }
@@ -141,6 +161,8 @@ for (const rel of new Glob("**/*.qa.json").scanSync(root)) {
 
 const of = (b: Bucket) => hits.filter((h) => h.bucket === b);
 const live = of("live");
+const silent = hits.filter((h) => h.accountability === "silent");
+const liveSilent = live.filter((h) => h.accountability === "silent");
 
 if (has("json")) {
   console.log(
@@ -154,6 +176,11 @@ if (has("json")) {
           stale: of("stale").length,
           unhashed: of("unhashed").length,
         },
+        by_accountability: {
+          misfiled: hits.length - silent.length,
+          silent: silent.length,
+        },
+        live_silent: liveSilent.length,
         live_blocks: [...new Set(live.map((h) => h.qaPath))].length,
         hits,
       },
@@ -168,20 +195,29 @@ if (has("json")) {
     return [...c].sort((a, b) => b[1] - a[1]);
   };
   console.log(
-    `agent fail/warn entries: ${totalFailWarn}\n` +
-      `  with empty evidence  : ${hits.length}\n` +
-      `    live (actionable)  : ${live.length} ` +
-      `across ${new Set(live.map((h) => h.qaPath)).size} blocks\n` +
-      `    stale (superseded) : ${of("stale").length}\n` +
+    `agent fail/warn entries    : ${totalFailWarn}\n` +
+      `  with an empty \`evidence\`: ${hits.length}\n` +
+      `    misfiled (reason under notes/referee_argument): ` +
+      `${hits.length - silent.length}\n` +
+      `    SILENT   (no reason under any key)           : ${silent.length}\n` +
+      `\n  by hash bucket:\n` +
+      `    live (still applies): ${live.length} ` +
+      `across ${new Set(live.map((h) => h.qaPath)).size} blocks ` +
+      `(${liveSilent.length} silent)\n` +
+      `    stale (superseded)  : ${of("stale").length}\n` +
       `    unhashed (no anchor): ${of("unhashed").length}`,
   );
-  if (live.length) {
-    console.log("\nlive, by criterion:");
-    for (const [c, n] of tally(live)) console.log(`  ${c.padEnd(40)} ${n}`);
+  if (liveSilent.length) {
+    console.log("\nlive AND silent — the actionable set, by criterion:");
+    for (const [c, n] of tally(liveSilent)) {
+      console.log(`  ${c.padEnd(40)} ${n}`);
+    }
   }
 }
 
-// Only `live` is a present-tense defect: a block carrying an unexplained
-// failure today. Stale entries are history, and unhashed ones need the
-// separate writer fix rather than re-adjudication.
-if (has("strict") && live.length > 0) process.exit(1);
+// The gate is `live AND silent`: a block carrying a failure TODAY whose
+// reason is nowhere under any key. A misfiled reason is a schema-conformance
+// problem — real, but it is a key migration, not a re-adjudication, and
+// failing the gate on it would conflate the two and make the gate unusable.
+// Stale and unhashed entries are not present-tense defects either.
+if (has("strict") && liveSilent.length > 0) process.exit(1);
