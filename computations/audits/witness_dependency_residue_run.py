@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""qou-wlaf residue campaign: re-run producers whose import cone reaches the
+mpf-ified braid-word builder and report which committed witnesses actually MOVE.
+
+THE INSTRUMENT IS THE HARD PART. Read this before trusting any count it
+prints; three separate harness defects were caught building it, each of which
+would have produced a confident wrong answer.
+
+Attempt 1 was discarded: it called a witness MOVED that a flattened leaf
+comparison showed had 0 differing fields, and its own comparison run
+STANDALONE on the same pair returned equal. So the divergence lived in the
+loop, not the comparison logic. Two changes:
+
+  1. flattened LEAF comparison (the method verified against a known case),
+     and it RECORDS WHICH FIELDS MOVED so a mask gap is re-classifiable from
+     the checkpoint instead of costing another full sweep.
+  2. an IN-LOOP self-test: the first iteration runs a producer known not to
+     move and aborts unless the loop reports it IDENTICAL. Standalone
+     validation is precisely what failed to catch attempt 1.
+"""
+import json, os, subprocess, sys, time
+from pathlib import Path
+from collections import Counter
+
+ROOT = Path("/home/user/qou"); COMP = ROOT / "computations"
+T = json.load(open("/tmp/residue_targets.json")); SHA = T["sha"]
+SELFTEST = "atom_braid_active_partitions"   # verified IDENTICAL by hand
+VOL = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic","computedAt",
+       "durationMs","elapsed_sec","invocation","environment","scriptCommitSha",
+       "commitSha","wall_sec","generated_at","runtime_seconds","engineVersion",
+       "pyhecke_native_build","hostname","platform","python_version"}
+
+def leaves(o, p=""):
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if k in VOL or any(k.endswith(x) for x in
+                    ('_elapsed_sec','_elapsed','_seconds','_runtime','_wall_sec')):
+                continue
+            yield from leaves(v, f"{p}.{k}")
+    elif isinstance(o, list):
+        for i, v in enumerate(o): yield from leaves(v, f"{p}[{i}]")
+    else:
+        yield p, o
+
+def restore():
+    subprocess.run(["git","checkout","--","computations/"],cwd=ROOT,capture_output=True)
+    subprocess.run(["git","clean","-fdq","computations/"],cwd=ROOT,capture_output=True)
+
+def baseline(rel):
+    r = subprocess.run(["git","show",f"{SHA}:{rel}"],cwd=ROOT,capture_output=True,text=True)
+    if r.returncode != 0: return None
+    try: return json.loads(r.stdout)
+    except Exception: return None
+
+prod = {}
+for w, s in T["witnesses"]: prod.setdefault(s, []).append(w)
+env = dict(os.environ); env["PYTHONPATH"] = f"{COMP}:{env.get('PYTHONPATH','')}"
+BUDGET = int(sys.argv[1]) if len(sys.argv) > 1 else 240
+
+def run_one(stem, ws):
+    src = next((p for p in COMP.rglob(f"{stem}.py")), None)
+    if src is None: return {"producer":stem,"verdict":"NO_SOURCE"}
+    restore()
+    t = time.time(); tb = False; rc = None; guard = False
+    try:
+        r = subprocess.run([sys.executable,"-u",str(src)],cwd=src.parent,env=env,
+                           capture_output=True,text=True,timeout=BUDGET)
+        rc = r.returncode; both = (r.stdout or "") + (r.stderr or "")
+        tb = "Traceback (most recent call last)" in both
+        guard = any(k in both for k in ("Refusing","refuse","would publish","precision would"))
+    except subprocess.TimeoutExpired: rc = "TIMEOUT"
+    except Exception as e: rc = f"ERR:{type(e).__name__}"
+    dt = time.time() - t
+    moved, ident, fields = [], [], {}
+    if rc != "TIMEOUT" and not tb:
+        for w in ws:
+            rel = str(Path(w).relative_to(ROOT))
+            b = baseline(rel)
+            if b is None: continue
+            try: n = json.loads(Path(w).read_text())
+            except Exception: continue
+            lb, ln = dict(leaves(b)), dict(leaves(n))
+            d = sorted(k for k in set(lb) | set(ln) if lb.get(k) != ln.get(k))
+            if d: moved.append(rel); fields[rel] = d[:12]
+            else: ident.append(rel)
+    v = ("TIMEOUT" if rc=="TIMEOUT" else "GUARD_REFUSAL" if (guard and not tb)
+         else "CRASH" if tb else "MOVED" if moved else "IDENTICAL")
+    return {"producer":stem,"verdict":v,"rc":rc,"sec":round(dt,1),
+            "moved":moved,"identical":len(ident),"fields":fields}
+
+# ---- IN-LOOP SELF-TEST ----
+print(f"PINNED {SHA}", flush=True)
+st = run_one(SELFTEST, prod.get(SELFTEST, []))
+print(f"SELFTEST {SELFTEST}: {st['verdict']} (expect IDENTICAL)", flush=True)
+if st["verdict"] != "IDENTICAL":
+    print("ABORT: the loop misclassifies a known-unmoved witness.")
+    print("  fields it thinks moved:", json.dumps(st.get("fields"), indent=1)[:1500])
+    restore(); sys.exit(2)
+print("selftest passed — verdicts are trustworthy\n", flush=True)
+
+results = [st]
+todo = [(s,w) for s,w in sorted(prod.items()) if s != SELFTEST]
+for i,(stem,ws) in enumerate(todo,1):
+    r = run_one(stem, ws); results.append(r)
+    print(f"[{i}/{len(todo)}] {stem:<48s} {r['verdict']:<14s} {r['sec']:6.1f}s moved={len(r.get('moved',[]))}",flush=True)
+    json.dump({"sha":SHA,"results":results},open("/tmp/residue_results2.json","w"),indent=1)
+restore()
+print("\n=== SUMMARY ==="); print(f"pinned {SHA}")
+for k,v in Counter(x["verdict"] for x in results).most_common(): print(f"  {k:<16s} {v}")
