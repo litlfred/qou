@@ -2,8 +2,8 @@
   "witness_schema": "qou-probe/v1",
   "name": "sigma1cubed-seifert-surface-term",
   "description": "\u03c3\u2081\u00b3 deuteron NA-Stokes surface term: EMPIRICAL tessellation-independence check + value vs C_knot=5.853. Verdict: the surface state-sum is tessellation-INDEPENDENT (topological invariant, no per-cell DOF, not a fit) but at archimedean q\u2080 it is DEGENERATE (torus-knot Vol=0) and does NOT reproduce 5.853; the character-channel surface-ordering correction is identically 0 by trace cyclicity. The 5.853 content is fibre-level (root-of-unity WRT); the open wall is the fibre\u2192archimedean \u03c4-transfer, NOT a missing discretization. Honest negative.",
-  "computed_at": "2026-08-02T19:54:47Z",
-  "elapsed_sec": 0.001,
+  "computed_at": "2026-08-25T16:36:08Z",
+  "elapsed_sec": "0.001",
   "data": {
     "conventions": {
       "q0": "1.1099785827513808076",
@@ -54,5 +54,5 @@
     "audit_only": true,
     "nothing_wired": true
   },
-  "scriptHash": "43f251c9b5df495e"
+  "scriptHash": "1b10dfa45f7d70e3"
 }
