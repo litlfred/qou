@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-25T13:01:19Z
+updated_at: 2026-08-25T13:12:05Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -146,3 +146,51 @@ Block re-scoped per AGENTS.md §"Before declaring refuted": the observation
 stands, only the localisation onto Coulomb goes.
 
 **Still open, unchanged:** $E_{\mathrm{EM}}$ itself. No magnitude here.
+
+
+
+---
+
+**2026-08-25, third pass — co-Casimir settled, and the enumeration is short a
+term.**
+
+**The co-Casimir sector is invariant, by arity.** By
+`thm:frobenius-codim-universal`, $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$
+— a sum over the Wedderburn blocks of $H_n(R,q)$, a function of $(n,q)$ alone
+that takes **no braid word as an argument at all**. A generator sign flip cannot
+move it. Both mirror isobars are $A = 3$, hence the same $n$, so it cancels
+between them exactly.
+
+Proved through a new general lemma rather than as a one-off:
+`split_comp_eq_zero` (a sector factoring through an involution-invariant of the
+state contributes zero) plus `factoringSector` to package it for the `List`.
+That is the useful form — a sector is usually invariant **by arity**, because it
+never sees what the involution moves, rather than by computation. Both depend on
+`propext` alone.
+
+**The enumeration omits a term of the mass formula.**
+`thm:knot-mass-formula-unified` carries **three** terms — descended trace, brane
+tower, Frobenius co-Casimir. The remark names four sectors (trace tower,
+co-Casimir, chirality, shell correction), overlapping those only partly: the
+**brane tower** is a term of the formula and is **absent from the list**, with no
+invariance result. That is exactly the case
+`omitted_sector_breaks_localisation` proves fatal — now found in the corpus
+rather than constructed as a counterexample.
+
+**Not over-claiming:** I have not shown the brane tower is non-invariant. Its
+status is "no result", like chirality. What changed is that it is now known to
+be *missing from a list that has to be exhaustive*.
+
+**Sector audit, complete as far as it goes:**
+
+| sector | sign-flip status |
+|---|---|
+| Frobenius co-Casimir | **invariant** (arity) |
+| descended trace | **not invariant** at the substrate |
+| brane tower | in the formula, absent from the list, **no result** |
+| shell correction | invariant at $q \to 0$ **only** |
+| chirality | **no result** |
+
+**Still open, unchanged:** $E_{\mathrm{EM}}$ itself. Three passes on this bean
+have sharpened *where* it must live and *why* it is needed; none has produced a
+magnitude.
