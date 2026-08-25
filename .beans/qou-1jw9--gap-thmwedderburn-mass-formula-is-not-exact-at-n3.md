@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T11:47:33Z
+updated_at: 2026-08-25T12:37:25Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -343,3 +343,54 @@ authoring decision; the co calibration needs an owner one.
 
 SWEEP NOW FULLY TRIAGED: 144 cited, 137 resolve, 3 REMOVED (all recovered
 above), 4 NEVER EXISTED (all corrupt-with-space, targets unknown, recorded).
+
+
+=== 🟧 OWNER DIRECTIVE 2026-08-25: "no fitting!!!" (commits 41fa123648, d8bff83024) ===
+
+Put to the owner as the one item I said was not mine to decide. Read straight
+it settles that item AND the other two of the same kind. ALL THREE recovered
+witnesses carry a fit, and none is admissible:
+
+  co-molecular-binding   calibration_factor = 0.23879110765149733
+                         = 4.478/18.753 exactly — the ratio making the
+                         uncalibrated result equal H2's MEASURED bond energy.
+                         A fourth calibration, on a molecular observable.
+  mass-qvalue-by-level   7 assertion TOLERANCES each ~10% above its own
+                         discrepancy, so they cannot fail. Q(3H->3He) passes
+                         at 13017% error. A bound fitted to a miss is a fit.
+  atom-mass-complete-    beta3 = 0.0499 vs published h_A^2 = 0.043707282,
+  wedderburn             14.2% apart, no derivation, beside "fitted": 0.
+
+CONSEQUENCE: none is live (all lost in miga), so nothing to un-wire. What it
+means is that RECOVERING THEM CANNOT REHABILITATE THE CITING CLAIMS. Both
+citing blocks are now scoped in-tree:
+  molecular-construction/co-triple-bond-energy.md
+  mass-theory/unified-iterative-correction-proof.md
+
+DOES NOT FOLLOW: reconstructing beta3, re-deriving the CO scale from
+CAL-1/2/3, or adjusting any tolerance. "No fitting" forbids the fit; it does
+not license a replacement invented by an agent.
+
+STILL OPEN, untouched by the directive: the published formula and the
+computation that made the table DISAGREE — h_A^2 vs beta3. Which is wrong is
+an authoring question.
+
+=== GATE CLAIM CORRECTED — mine went stale within the hour ===
+
+I recorded (commit + PR #5758 body) that BOTH `import-time dps ratchet` and
+`raw-float64 ratchet` are red on clean main. True at ~11:00Z, STALE by 12:20Z:
+a sibling landed 0b72b8fcca "import-time dps gate GREEN" / fee0eb8fb1.
+
+Re-measured after merging origin/main:
+                            main (0b72b8fcca)   this branch
+  mpf_import_time_dps_audit rc=0, lossy 0       rc=0, lossy 0
+  precision-gates.sh        RED: raw-float64    RED: raw-float64
+
+CORRECT STATEMENT: ONE gate red (raw-float64), identical on main and branch.
+import-time dps is GREEN on both.
+
+LESSON WORTH KEEPING: "red on main, not mine" is the claim that lets a branch
+merge past a red gate. When half of it silently goes stale the next reader
+either dismisses a real red as inherited, or re-investigates a fixed one. A
+gate claim carries a timestamp whether or not you write one down — so write
+one down, and re-measure before repeating it.
