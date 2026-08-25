@@ -263,7 +263,11 @@ def main() -> int:
     w.add_data("pattern_rows", [{"iso": a, "n": b, "class": c, "predicted_below": d,
                                  "observed_below": e, "consistent": f} for a, b, c, d, e, f in rows])
     w.add_data("verdict", verdict)
-    w.add_assertion("isospin_pattern_survives_fixed_n_control", holds, holds)
+    # Was an add_assertion(name, X, X) -- computed and expected the SAME expression,
+    # so it read as a check while being `x == x`: tautologically true, unable to fail,
+    # and rendered as "passed": true for the QA pipeline. It is a RECORDED FINDING
+    # with no independent expectation, so it belongs in add_data. Bean qou-ploj.
+    w.add_data("isospin_pattern_survives_fixed_n_control", holds)
     w.add_caveat(
         "CONFOUND. Across {D,T,³He,⁴He} (and ⁶Li,⁷Li) isospin and strand count move "
         "together: Z=N ⟺ A even ⟺ n ∈ {6,12,18}. Any claim that the crossing side is set "

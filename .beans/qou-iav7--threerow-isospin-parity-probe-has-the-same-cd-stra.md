@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T19:29:30Z
-updated_at: 2026-08-25T19:30:09Z
+updated_at: 2026-08-25T21:28:53Z
 ---
 
 FOUND 2026-08-25 while draining `qou-qdtk` (PR for that is in flight). Not previously
@@ -62,3 +62,32 @@ convention-independent and worth keeping.
 
 `qou-qdtk`'s PR rewrites one probe; this is a second full rewrite with a different
 thesis, so it is recorded rather than bundled. Scope-(a), about this probe.
+
+
+## CORRECTION 2026-08-25 — "emits no witness" was the right observation, wrong reason
+
+This bean says the probe **emits no witness**, and infers from that its conclusions
+live only in prose. The observation stands — `find computations -name "*isospin-parity*"`
+returns nothing — but the reason I gave was wrong, and the difference matters.
+
+The probe **does** build one: `WitnessBuilder("threerow-isospin-parity", ...)` at line
+241, `w.save()` at line 297. It is not witness-less by design. **It never gets there.**
+Measured: the ⁴He leg reports `ETA 1248s` at grid point 2 of 26, and the file's own
+cost table gives `Sum_lam (dim V_lam)^2 = n!` exactly, i.e. n=18 at ~14 years per grid
+point.
+
+So it is an **unfinishable** probe whose witness is absent because the run never
+completes — not a probe that chose to record nothing. Practical consequences for
+whoever takes this:
+
+- Its conclusions still reach beans and docs unverified, so the "grep for where its
+  conclusions landed first" instruction above is unchanged.
+- But there is no stale committed witness to correct, and there never was one to go
+  stale. Do not go looking for it.
+- Any repair must decide what the probe is FOR at a runtime it can actually reach.
+  Re-running it to regenerate a record is not an available option.
+
+Related: its one self-fulfilling assertion (`isospin_pattern_survives_fixed_n_control`,
+`add_assertion(name, holds, holds)`) is fixed in the `qou-ploj` PR — patched by AST and
+verified well-formed, but **not executed**, because the probe cannot be run to
+completion here. Flagged rather than claimed as verified.

@@ -232,9 +232,13 @@ def main() -> int:
     w.add_assertion("canonical_mstar_physical",
                     1 if canonical_mstar < INV_SQRT5 else 0, 1,
                     source="required m* below writhe cap 1/sqrt5 (det>0)")
-    w.add_assertion("derived_lead_found", 1 if matched else 0,
-                    1 if matched else 0,
-                    source="whether m* matches a derived constant to <0.1% "
+    # Was an add_assertion(name, X, X) -- computed and expected the SAME expression,
+    # so it read as a check while being `x == x`: tautologically true, unable to fail,
+    # and rendered as "passed": true for the QA pipeline. It is a RECORDED FINDING
+    # with no independent expectation, so it belongs in add_data. Bean qou-ploj.
+    w.add_data("derived_lead_found", 1 if matched else 0)
+    w.add_data("derived_lead_found_source",
+               "whether m* matches a derived constant to <0.1% "
                            "(expected 0 = scope-(a) fit-needed)")
     out = w.save()
     print(f"witness -> {out}")
