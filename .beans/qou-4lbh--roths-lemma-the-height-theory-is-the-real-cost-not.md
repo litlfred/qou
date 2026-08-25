@@ -3862,3 +3862,685 @@ stack the induction cannot produce. Kept until the recursion confirms nothing ne
 
 So the chain is now: two proved halves, a proved descent, a proved base case, and a proved
 step-arithmetic, with (1) the one genuinely unformalised link.
+
+### ⚠⚠ Correction twenty-one — the Wronskian is built from the wrong derivative
+
+**Read from §7 (doc pp. 85–86), verbatim.** Mahler bounds the auxiliary polynomial by a
+*majorant*: `A ≪ a(1+x₁)^{r₁}…(1+x_m)^{r_m}`, differentiates it, and gets
+
+    A_{j₁…j_m} ≪ a·binom(r₁,j₁)…binom(r_m,j_m)·(1+x₁)^{r₁−j₁}…(1+x_m)^{r_m−j_m}
+    binom(r,j) ≤ Σ_j binom(r,j) = 2^r,   so   A_{j₁…j_m} ≪ 2^{r₁+…+r_m}·a·∏(1+x_h)^{r_h}
+    Δ_{μν}A   ≪ 2^{r₁+…+r_m}·a·∏(1+x_h)^{r_h}
+    W = Σ± Δ_{μ₁1}A…Δ_{μ_n n}A  (n! terms),  so  W ≪ n!·{2^{Σr_h}·a·∏(1+x_h)^{r_h}}^n
+
+**The binomial with no `j!` is the tell.** For an *ordinary* derivative the coefficient of
+`x^{i−j}` in `∂^j x^i` is `i!/(i−j)! = j!·binom(i,j)`; Mahler's factor is `binom(r_h,j_h)` alone.
+So `A_{j₁…j_m}` — and hence `Δ_{μν}` — is the **divided (Hasse) derivative** `(1/j!)∂^j`, not
+`∂^j`.
+
+**This arc uses ordinary partials.** `mvWronskianMatrix D f i j = pderivList (D i) (f j)`, and
+`pderivList` is a fold of `MvPolynomial.pderiv`. The module note defending that choice
+(`MvGenWronskian.lean`) argues *characteristic*: ordinary partials are fine over number fields,
+and the converse of the dependence criterion needs characteristic zero. **That is true and it is
+about the wrong obligation.** The choice is free for the dependence argument and free for the
+index (`index_C_mul` — scaling does not move the index). It is *not* free for the **height**,
+which is the one place it bites.
+
+**Size of the gap (my derivation, not read from the page).** For the operator-family
+determinant the entry `(i,j)` is `∂^{Dx i ⊞ Dy j}P`, whose ratio to Mahler's `Δ_{μν}P` is
+`(∏_h (Dx i).count h !)·(∏_k (Dy j).count k !)` — a product of a **row** factor and a **column**
+factor. So
+
+    det(arc) = (∏_i (Dx i)!)·(∏_j (Dy j)!)·det(Mahler)
+
+— a single scalar, so the two Wronskians differ by an integer constant and the index is
+unaffected. The height is not. With bounded order (`|Dx i| ≤ i`, `|Dy j| ≤ j`) the constant is up
+to `(∏_{i<n} i!)²`, i.e. `2^{Θ(n² log n)}`.
+
+**And §12's budget has no slack.** §12 spends exactly `2^{(2m+1)ρ₁}`: `2^{2n·Σr_h} ≤ 2^{2mρ₁}`
+plus `n! ≤ 2^{ρ₁}`. Clause 3 is calibrated to that with **equality** at the floor —
+`H₁ = 2^{(1/t)(m−1)m(2m+1)}` makes `H₁^{ρ₁t/(m(m−1))} = 2^{(2m+1)ρ₁}` exactly. An extra
+`2^{Θ(n² log n)}` against a budget of `(2m+1)·n·r₁` fails once `n log₂ n` outgrows
+`2(2m+1)r₁`; since `n ≤ r_m+1` and `r_m` shrinks with `t`, that needs `r₁` large, but `r₁` is
+unbounded — Roth's lemma is *applied* at large degrees. So the ordinary-partial Wronskian
+breaks §12's height estimate.
+
+**This is why `abs_coeff_det_sepFamily_le` does not fit §12.** Its bound is
+`n!·(S·(d^{2n}·B))^n`, carrying `d^{2n²}`; §12's is `2^{2n·Σr_h}·n!·a^n`. The `d^{2n²}` is not a
+loose estimate to be sharpened — it is the factorials, and they are really there.
+
+**The fix, and it is available.** Define the multivariate divided derivative on monomials,
+
+    hasseList l (monomial i c) = (∏_h binom(i_h, l_h)) • monomial (i − l) c,   l_h = l.count h
+
+prove `pderivList l = (∏_h (l.count h)!) • hasseList l`, and take the height bound on the
+divided version: `binom(i_h,l_h) ≤ 2^{i_h} ≤ 2^{d_h}` gives `|coeff| ≤ 2^{Σ_h d_h}·B`, hence
+`n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n` using `S ≤ ∏(d_h+1) ≤ 2^{Σd_h}` — **§12's `b` exactly.**
+
+⚠ Mathlib has `Polynomial.hasseDeriv` (univariate) and no multivariate analogue. This arc's own
+inventory table lists "Hasse derivative, `MvPolynomial.pderiv` | **present**", which conflates
+the two — `pderiv` is present, Hasse is not.
+
+⚠ Note the shape: correction 21 is *not* another missing hypothesis. It is the first time this
+arc has found a **construction** that is the wrong object rather than a **statement** that is too
+strong. It was invisible for the same reason the others were — every theorem about
+`mvGenWronskian` is true; none of them is about the height budget.
+
+### First stone of correction 21's repair
+
+`coeff_pderiv_iterate` and `abs_coeff_pderiv_iterate_le` in `WronskianHeight.lean`:
+
+    coeff n (∂ⱼ^k g) = (n_j+1)(n_j+2)⋯(n_j+k) · coeff (n + k·eⱼ) g
+                     = k! · binom(n_j+k, k) · coeff (n + k·eⱼ) g
+    ⟹  |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B        (degreeOf j g ≤ d, |coeff · g| ≤ B)
+
+via `Nat.ascFactorial_eq_factorial_mul_choose` and `Nat.choose_le_two_pow`. The `2^d` is §7's
+`2^{r_h}`; the `k!` is the **entire** discrepancy with Mahler's divided derivative, and it is now
+*visible* rather than buried inside `d^k`.
+
+Compare `abs_coeff_pderivList_le`'s `d^k·B`. Neither dominates the other for all `k` — at `k = 1`
+the crude bound `d` beats `2^d`; at `k ≈ d` the sharp one wins, `(2d/e)^d` against `d^d` — but
+only the sharp form separates the factorial, and separating it is what lets the divided
+derivative be recovered by dividing it out.
+
+⚠ **Second self-duplication of the session.** The first draft re-proved `coeff_pderiv` from
+scratch; the arc already had it in `MvGenWronskian.lean:253`, sixty lines of near-identical
+proof. (The first was `map_pUnitAlgEquiv` = `pUnitAlgEquiv_map`.) Both type-checked. The `beans`
+rule "check before you create" is stated for beans and applies verbatim to lemmas — and the
+failure mode is the same one correction 17 named: nothing mechanical objects to redundancy.
+
+**Remaining for correction 21:** lift the one-variable bound to `pderivList` (a product over the
+variables, giving `∏_h (l.count h)! · 2^{Σ_h d_h} · B`), then to the determinant, where the row
+and column factorials factor out of every permutation term uniformly and give
+`det = C · (integral polynomial)` with `C = (∏_i (Dx i)!)(∏_j (Dy j)!)`. The quotient is the
+object §12 measures, and its height bound is `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n` — §12's `b`.
+
+### Correction 21's repair, entry level — done
+
+`WronskianHeight.lean` now carries the whole per-entry story:
+
+    listIdx, listFactor                  the multi-index and the integer ∂^l multiplies by
+    coeff_pderivList                     coeff n (∂^l g) = listFactor l n · coeff (n + t) g
+    listFactor_eq_prod                   listFactor l n = ∏_h ∏_{i<t_h} (n_h + 1 + i)
+    listFactor_eq_factorial_mul          = (∏_h t_h!) · (∏_h binom(n_h+t_h, t_h))
+    listFac_dvd_listFactor               ∏_h t_h!  ∣  listFactor l n
+    listFactor_le                        listFactor l n ≤ (∏_h t_h!) · 2^{Σ_h d_h}
+    listFac_dvd_coeff_pderivList         ∏_h t_h!  ∣  coeff n (∂^l g)
+    abs_coeff_pderivList_le'             |coeff n (∂^l g)| ≤ (∏_h t_h!) · 2^{Σ_h d_h} · B
+
+`listFactor_eq_factorial_mul` is correction 21 in one equation: the left factor is the entire
+discrepancy with Mahler's divided derivative, the right is what §7 bounds by `2^{Σ r_h}`. The
+divisibility says `∂^l = Fac(l)·Δ^l` **coefficientwise**, i.e. that `Δ` is integral — which is
+what will let `det` be divided by `(∏_i (Dx i)!)(∏_j (Dy j)!)` and stay in `ℤ[x]`.
+
+⚠ One thing worth recording because it looked like it would be the hard part and was not: **the
+interleaving is invisible.** `listFactor` is defined by the order the list applies `∂`, but
+applying `∂ⱼ` when `n` has already been shifted by `e_h` for `h ≠ j` still sees the same `n_j`,
+so each variable's factors are consecutive regardless of interleaving. That is why a *list*
+factor equals a *multiset* one, and why `pderiv` commutativity is never needed.
+
+⚠ `listFactor_eq_prod` takes any `Finset s` containing the list's variables rather than requiring
+`Fintype σ`. Cheaper for callers and it keeps the lemmas usable at `σ ⊕ Unit`.
+
+**Next, and it is now bookkeeping rather than mathematics:** the determinant. Each permutation
+term picks one entry per row and column, so `∏_i Fac(Dx i ⊞ Dy σ(i)) = (∏_i Fac(Dx i))·(∏_j Fac(Dy j))`
+independently of `σ` — the constant factors out of the whole determinant uniformly. Divide it
+out and the height bound becomes `n!·(S·2^{Σd}·B)^n ≤ n!·2^{2nΣd}·B^n`, which is §12's `b`.
+
+### Correction 21 at the determinant: the constant divides, so Mahler's `W` is integral
+
+    listIdx_append                  listIdx (l₁ ++ l₂) = listIdx l₁ + listIdx l₂
+    listFac_mul_dvd_listFac_append  Fac(l₁)·Fac(l₂) ∣ Fac(l₁ ++ l₂)
+    C_dvd_det_of_dvd_entries        C(a i · b j) ∣ M i j  ⟹  C((∏a)(∏b)) ∣ det M
+    C_listFac_dvd_det_sepFamily     (∏_i Fac(Dx i))(∏_j Fac(Dy j)) ∣ det (∂^{Dx i ⊞ Dy j} P)
+
+`C_dvd_det_of_dvd_entries` is the structural fact that makes the whole repair possible: the
+discrepancy between `∂^l` and Mahler's `Δ^l` is a **row factor times a column factor**, and a
+determinant is exactly the shape that turns such a thing into a single scalar — every
+permutation term picks one entry per row and one per column, so `∏_i a_i·b_{σ(i)}` is `(∏a)(∏b)`
+independently of `σ`.
+
+⚠ `Fac(l₁)·Fac(l₂) ∣ Fac(l₁ ++ l₂)` needs **no disjointness** of the two lists' variables —
+`m!·n! ∣ (m+n)!` per variable. Using divisibility rather than the equality that *would* need
+disjointness makes the lemma cheaper and the hypothesis stack shorter. (The `x` and `y` lists
+here *are* disjointly supported, so equality holds; it simply is not needed.)
+
+So the quotient `det / C` is an integral polynomial, its index is unchanged (`index_C_mul`), and
+its height is smaller by the `2^{Θ(n² log n)}` correction 21 identified. **That quotient is
+Mahler's `W`.**
+
+**What is left of correction 21:** the height bound on the quotient. `abs_coeff_det_le` assumes a
+*uniform* per-entry bound and gives `n!·(S·B)^n`; here the per-entry bound is `a_i·b_j·2^{Σd}·B`,
+and the product over a permutation is `C·(2^{Σd}B)^n` — so a variant of `abs_coeff_det_le` taking
+factorised per-entry bounds gives `n!·S^{n−1}·C·(2^{Σd}B)^n`, and dividing by `C` leaves
+`n!·S^{n−1}·(2^{Σd}B)^n`, which is §12's `b`. One lemma, and it is the same expansion
+`abs_coeff_det_le` already does.
+
+### Correction 21's repair — both sides of the determinant now match
+
+    abs_coeff_prod_le'   |coeff n (∏ Fᵢ)| ≤ S^{#s}·∏ βᵢ           per-factor bounds
+    abs_coeff_det_le'    |coeff n (det M)| ≤ (#ι)!·S^{#ι}·(∏aᵢ)(∏bⱼ)   when |coeff (M i j)| ≤ aᵢbⱼ
+
+The size mirror of `C_dvd_det_of_dvd_entries`, and true for the same reason: a permutation term
+picks one entry per row and one per column, so `∏_i a_{p i}·b_i` is `(∏a)(∏b)` independently of
+`p`. **Together the two say a determinant whose entries carry a factorised row/column constant is
+*that constant* times something both integral and small** — which is exactly the relationship
+between this arc's `mvGenWronskian` and Mahler's `W`.
+
+⚠ `abs_coeff_prod_le'` needs **no `1 ≤ S`**, unlike the uniform `abs_coeff_prod_le`: the empty
+product is `1` and the bound is `S^0·1 = 1`, so nothing forces `S` up. A first draft carried
+`1 ≤ S`, copied from the uniform version's signature without checking whether the general proof
+uses it. The linter caught it. **Sixth unused hypothesis this arc has acquired by transcribing a
+proof *route* rather than the proof** — and the only one of this arc's recurring failure modes
+that a mechanical check reliably catches.
+
+**Correction 21's repair is now structurally complete.** Instantiating `a i = Fac(Dx i)`,
+`b j = Fac(Dy j)`, `S ≥ #supp`, and the entry bound `Fac(Dx i)·Fac(Dy j)·2^{Σd}·B` from
+`abs_coeff_pderivList_le'` gives
+
+    |coeff n (det)| ≤ n!·S^n·C·(2^{Σd}B)^n,    C ∣ det
+
+so the quotient `det/C` — Mahler's `W` — is integral with `|coeff| ≤ n!·S^n·(2^{Σd}B)^n`. With
+`S ≤ ∏(d_h+1) ≤ 2^{Σd}` that is `n!·2^{2nΣd}·B^n`: **§12's `b`, exactly.**
+
+What is left is assembly: instantiate the two lemmas at the separated family, define the
+quotient, and carry it into `abs_coeff_det_sepFamily_le`'s place in the chain. No new
+mathematics — but the arc has mis-predicted "no new mathematics" four times, so that is a
+prediction, not a result.
+
+### ✅ Correction 21's repair is complete — §12's `b` is proved
+
+`exists_divided_wronskian`:
+
+    det (∂^{Dx i ⊞ Dy j} P) = C·W,   W integral,
+    |coeff n W| ≤ r! · S^r · (2^{Σ_h d_h}·B)^r
+
+With `S ≤ ∏_h (d_h+1) ≤ 2^{Σ_h d_h}` that is `r!·2^{2r·Σ_h d_h}·B^r` — **§12's
+`b = 2^{2n(r₁+…+r_m)}·n!·a^n`, exactly.** `W` *is* Mahler's `W`: the same determinant built from
+divided derivatives. Its index is the determinant's (`index_C_mul`), so nothing the index
+calculus proves is lost, and its height is smaller by the `C ≈ 2^{Θ(r² log r)}` that §12's budget
+has no room for.
+
+The last piece was `listFac_append_map` — `Fac` splits across the `x`/`y` join as an **equality**,
+because the two lists live in disjoint variables. `listFac_mul_dvd_listFac_append` gave only
+divisibility and needed no disjointness; the divisibility side of the argument was happy with
+that, the *size* side needs the equality, and the separated family supplies it. Two lemmas for
+what looked like one because the two directions genuinely need different inputs.
+
+**The full chain, all `#print axioms`-clean:**
+
+    coeff_pderiv_iterate, coeff_pderivList        exact coefficient formulas
+    listFactor_eq_factorial_mul                   ∂^l = Fac(l)·Δ^l, in one equation
+    listFac_dvd_coeff_pderivList                  Δ^l is integral
+    abs_coeff_pderivList_le'                      |coeff (∂^l g)| ≤ Fac(l)·2^{Σd}·B
+    C_dvd_det_of_dvd_entries + abs_coeff_det_le'  row×column constants survive a determinant
+    C_listFac_dvd_det_sepFamily                   C ∣ det
+    exists_divided_wronskian                      det = C·W with §12's bound on W
+
+**What this unblocks.** `hres`'s remaining input was "a uniform `B` and `E` from §12's estimate".
+The `B` is now proved. What is left for `hres` is the `E` — the arithmetic
+`b ≤ 2^{(2m+1)ρ₁}·a^n ≤ H₁^{ρ₁t/(m−1)}`, which is `height_descend_pq` plus the clause-3
+calibration this arc already has (`rothGammaFull_descend` carries exactly that shape,
+`hb : b ≤ 2^c * a^r` with `hc : c ≤ (2n+3)·(r·d₁)`).
+
+So the pieces of the induction step are: this theorem for `b`, `rothGammaFull_descend` for
+`Γ_{m−1}`, `index_rescaled_wronskian_le_theta` / `..._right_theta` for the two halves,
+`rothLemmaTheta_one` for the base, `rothBound_succ_of_lemma4` for the arithmetic. **Every one is
+proved.** What is not written is the recursion that composes them.
+
+### Correction 22 — `RothLemma4` checked against 20, and it was defective
+
+Correction twenty's *first* half (`K₁ ≥ 2`) is fixed for free by `RothGammaFull`'s new `two_le`.
+The second half is not, and it bites at `n = 0` — arity `1`, where §13's Lemma 4 does not apply
+at all (it assumes `m ≥ 2`), but where the `def`'s `Fin (n+1)` admits it.
+
+At `n = 0` the sub-problem lives on `Fin 0`, where `idxWeight` sums over an empty support, so
+every index is `0` and `IsRothTheta b ρ H' Θ'` forces `Θ' = 0` (and `b ≥ 1`, else `R(b;ρ)` is
+empty and attainment fails). Then `w = Θ' + t = t` or `w² = t`. With `q = 0`, Lean's `ℚ` makes
+`t = p/0 = 0`, so `w = 0` and the conclusion demands `Θ ≤ 0`. But
+
+    σ = Unit, n = 0, p = 1, q = 0, F = 0, a = 100, r ≡ 1, H ≡ 2
+
+satisfies every clause — growth vacuous, height `2 ≤ 2`, floorExp `0 ≤ 0`, floor `2⁰ = 1 ≤ 2`,
+heightBound `100⁰ = 1 ≤ 2¹`, two_le `2 ≤ 2`, degPos `1 ≠ 0` — while `Θ = 1`, attained at
+`A = 2x − 1`, `κ = 1/2` (height `max(1,2) = 2`), whose translate is `2x`.
+
+Fixed the same way: carry §14's `0 < t ≤ 1`. With `q ≥ p ≥ 1` the `n = 0` case then asks only
+`Θ ≤ 3t`, which `rothLemmaTheta_one`'s `Θ ≤ t` supplies.
+
+### ⚠⚠ Correction 23 — `rothConstant_chain` / `rothBound_chain` were vacuous
+
+`hsq` read `∀ n, sq (n+1)^2 = sq n` — for **every** `n`. Iterating, `sq 1 = sq(k+1)^{2^k}` for
+every `k`, so `sq 1` is a `2^k`-th power **in `ℚ`** for every `k`. With `sq 1 = a/b` in lowest
+terms, `a` and `b` are then `2^k`-th powers for every `k`, so every prime exponent in them is
+divisible by every `2^k` and hence zero: `sq 1 = 1` (or `0`, forcing `sq ≡ 0` and `t ≤ 0`).
+
+At `sq 1 = 1` the whole sequence is `1` and the conclusion is `Θ n ≤ c_n` — **no `t` in it at
+all**, not §14's `Θ_m ≤ c_m·t^{2^{−(m−1)}}`. So the only instance was the constant one the
+witness exhibits, and the witness's own note — "the interesting instances have `sq n = s^{2^{m−n}}`"
+— describes a sequence undefined for `n > m`, which therefore never satisfied `hsq`.
+
+**Fixed** by bounding the ranges to `n < M`: only `M` successive square roots are needed, so
+`sq 1 = t` may be any `2^{M−1}`-th power of a rational.
+
+⚠ The arithmetic above is elementary but **not formalised**. A Lean witness needs irrationality
+of `√2` (`Mathlib.Data.Real.Irrational`), whose `.olean` is not in this project's built Mathlib
+closure — importing it means compiling that module. Recorded as an argument, not a theorem.
+
+⚠ The perfect-power restriction is an artifact of the **root-free rational encoding**, not of
+§14: over `ℝ` every `t ≥ 0` has its roots. Removing it means proving the step in `ℝ` and
+transferring back — the inequalities are all field-generic, so it should go through, but it is
+not done.
+
+### §14's recursion, one step — proved
+
+`rothLemmaTheta_succ`: `RothLemma4` at arity `n+1` plus `RothLemmaTheta` at `n` gives
+`RothLemmaTheta` at `n+1`. Four lines — Lemma 4 hands over a sub-problem with `Γ_n` and its `Θ'`,
+the induction hypothesis turns that into a `RothBound`, and `rothBound_succ_of_lemma4` does §14's
+arithmetic.
+
+`s` appears as an explicit hypothesis so correction 23's restriction is **visible at every use**
+rather than buried. Iterating from `1` to `m` needs such an `s` at every level, i.e. `t` a
+`2^{m−1}`-th power in `ℚ`.
+
+**With `rothLemmaTheta_one` as base, the §14 induction is now complete modulo `RothLemma4`
+itself** — which is §13, and is the last unproved link.
+
+### §14's recursion, iterated — `rothLemmaTheta_iterate`
+
+`RothLemma4` at every arity from `1` to `M−1`, plus the base case, gives `RothLemmaTheta` at
+every `m ≤ M`. The square-root sequence `s` with `s 0 = t` and `s(n+1)² = s n` supplies the `s`
+each `rothLemmaTheta_succ` needs, via `s n ^ {2^n} = t`.
+
+**⚠ I reproduced correction 23's own defect, one commit after fixing it.** The first draft of
+`rothLemmaTheta_iterate` left `hsq` unbounded — `∀ n, s (n+1)^2 = s n` — which is exactly the
+vacuous form I had just removed from `rothConstant_chain`. Nothing objected: it type-checks, the
+theorem is true, and the hypothesis is simply unsatisfiable for any non-constant `s`.
+
+That says something about the failure mode worth keeping: **the unbounded form is what one writes
+by default.** It reads more natural, it is what the mathematics "means", and only asking *is this
+hypothesis satisfiable?* exposes it. The arc's five missing-clause corrections are the mirror
+image — there the default was to write too few hypotheses; here it was to write one too strong to
+hold.
+
+Then the bound was still one too loose. Reaching arity `M` needs `M − 1` successive roots, not
+`M`: the last step is `M−1 → M` and needs `s_{M−1}` with `t = s_{M−1}^{2^{M−1}}`. Corrected to
+`∀ n, n + 1 < M → …`, and only then does a witness exist —
+`rothLemmaTheta_iterate_seq_witness` at `M = 3`, `t = 1/16 = (1/2)^{2²}`, sequence
+`1/16, 1/4, 1/2`. **One more root would need `√(1/2)`.** The witness sits exactly at the
+boundary, which is the concrete shape of correction 23's restriction.
+
+**⚠ `hbase` is a hypothesis, and that is a real gap.** `rothLemmaTheta_one` proves
+`RothLemmaTheta Unit 1 p q F`; the iteration needs it at `Fin 1`. Those are different
+propositions — the schema quantifies over `σ → ℕ` data and `MvPolynomial σ ℤ` — and transporting
+needs `index`, `InRothPolySet` and `InRothFracSet` carried along `MvPolynomial.rename` for a type
+equivalence, which this arc does not have. Stated as a hypothesis so the gap is visible at the
+use site rather than hidden. The `m = 1` chain is `Unit`-specific throughout (`pUnitAlgEquiv`),
+so the fix is a `rename` transport for `index`, or a `Fin 1` copy of the base case.
+
+**Where Roth's lemma now stands.** §14's induction is complete — base (`rothLemmaTheta_one`),
+step (`rothLemmaTheta_succ`), iteration (`rothLemmaTheta_iterate`) — modulo two things:
+`RothLemma4` itself, which is §13 and the last piece of real mathematics; and the `Fin 1`/`Unit`
+transport, which is bookkeeping.
+
+### ✅ The transport gap is closed — `rothLemmaTheta_iterate` is now unconditional
+
+    InRothPolySet.rename_equiv   degrees via degreeOf_rename_of_injective,
+                                 coefficients via coeff_rename_mapDomain
+    InRothFracSet.rename_equiv   pointwise
+    IsRothTheta.rename_equiv     both clauses, via index_rename_equiv
+    RothGammaFull.rename_equiv   every clause is stated through o.symm j, so the
+                                 equivalence composes into the ordering
+    RothLemmaTheta.rename_equiv  the schema
+    rothLemmaTheta_one_fin       the base case at Fin 1, via finOneEquiv
+
+`rothLemmaTheta_iterate` no longer takes `hbase`; it uses `rothLemmaTheta_one_fin` directly.
+
+⚠ Worth recording that carrying the gap as an explicit hypothesis for one turn was the right
+call, and that "the variable type is incidental" — true — still cost **four** transport lemmas.
+`RothIndex`'s own docstring had predicted the shape correctly: *"The height side is free —
+Mathlib's `coeff_rename_mapDomain` already matches coefficients across a renaming."* It was.
+
+### Where Roth's lemma stands
+
+**§14's induction is complete and unconditional except for `RothLemma4`:**
+
+    rothLemmaTheta_one / _one_fin   Θ₁ ≤ t, at Unit and at Fin 1
+    rothLemmaTheta_succ             Lemma4 at n+1  +  Theta at n  ⟹  Theta at n+1
+    rothLemmaTheta_iterate          Lemma4 at 1..M−1              ⟹  Theta at every m ≤ M
+
+**Everything the induction step consumes is proved:**
+
+    exists_divided_wronskian          §12's b (correction 21's repair, end to end)
+    rothGammaFull_descend             Γ_{m−1} for the descended system
+    index_rescaled_wronskian_le_theta the x half of hres, from the induction hypothesis
+    ..._right_theta                   the y half, from the base case
+    rothBound_succ_of_lemma4          §14's arithmetic
+    exists_sepW_ne_zero_le_degreeOf   the separated representation, now with degree bounds
+
+**What is left is `RothLemma4` — §13 — and nothing else.** It is not a gap in the scaffolding; it
+is the remaining chapter of mathematics: the recursive inequality
+`Θ_m ≤ Ψ_m + 2·max(Ψ_m/n, √(Ψ_m/r_m))` and the construction of the descended system that
+realises it.
+
+⚠ And correction 23's encoding restriction stands: `rothLemmaTheta_iterate` needs `t` to be a
+`2^{M−1}`-th power in `ℚ`. That is an artifact of the root-free encoding, not of §14 — removing
+it means proving `rothBound_succ_of_lemma4` in `ℝ` and transferring back.
+
+### §13 read in full (doc pp. 93–95) — the argument, verbatim
+
+**The per-entry index bound.** `Δ_{μν}A = A_{j_{μ1}…j_{μ,m−1} j_{νm}}`, so property (C) gives
+
+    J(Δ_{μν}A) ≥ max(0, J(A) − Σ_{h<m} j_{μh}/r_h − j_{νm}/r_m)
+
+and then, using `r₁ ≥ r₂ ≥ … ≥ r_m` and `μ−1 ≤ n−1 ≤ r_m ≤ t·r_{m−1}`,
+
+    ≥ max(0, J(A) − (1/r_{m−1})Σ_{h<m} j_{μh} − j_{νm}/r_m)
+    ≥ max(0, J(A) − (μ−1)/r_{m−1} − (ν−1)/r_m)
+    ≥ max(0, J(A) − t − (ν−1)/r_m)
+
+**Summed by properties (A) and (B):**   `J(W) ≥ Σ_{ν=1}^{n} max(0, J(A) − t − (ν−1)/r_m)`.
+
+**The case split.** `N := ⌊{J(A)−t}·r_m⌋ + 1`, so `N−1 ≤ {J(A)−t}r_m < N`.
+
+- `n ≤ N`: every term is non-negative, so `J(W) ≥ n{J(A)−t} − n(n−1)/(2r_m)`, giving (1).
+- `n > N` (assuming `J(A) ≥ t`, so `N ≥ 1`): the terms vanish past `N`, so
+
+      J(W) ≥ Σ_{ν=1}^{N} {J(A)−t−(ν−1)/r_m} = N{J(A)−t} − N(N−1)/(2r_m)
+           ≥ N{J(A)−t} − (N/2){J(A)−t} = (N/2){J(A)−t} > (r_m/2){J(A)−t}²
+
+  Solving for `J(A)`:
+
+      (2):  J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2√((1/n)·J(W))    if n > N
+
+  the second step because `n ≤ r_m + 1` gives `r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ n/4`.  ⚠ "In the
+  case `J(A) < t` so far excluded this estimate is still valid."
+
+**Both cases together:**
+
+    J(A) ≤ t + 2·max( (1/n)J(W),  √((1/n)J(W)) )
+
+and since `J(W) ≤ n·Φ_m` (§12),
+
+    J(A) ≤ t + 2·max(Φ_m, √Φ_m),      Φ_m = Θ_{m−1}(b;ρ;H) + Θ₁(b;ρ_m;H_m)
+
+with `A` chosen so that `J(A) = Θ_m(a; r; H)`.  **That is Lemma 4.**
+
+⚠ This confirms correction 15 from the source's own page: display (2) really does carry *both*
+`√((2/r_m)J(W))` and `2√((1/n)J(W))`, joined by `n ≤ r_m + 1`.
+
+### ⚠ An open question about the arc's §13, deliberately not answered
+
+**§13's leading term is `t`, once.**  `index_le_of_rothGrowth_of_factor_bound` /
+`..._of_rescaled_bounds` conclude
+
+    θ ≤ 2/ω + 2·max(εU + εV, q)
+
+and with §11's `ω = 1/t` that leading term is **`2t`, not `t`**.  A factor of two there is not
+free: `rothConstant_step_lemma4` consumes `θ ≤ s + 2w` and yields `c_{m+1} = 2c_m + 3`; a `2s`
+leading term would need `c_{m+1} ≥ 2c_m + 4` and would move `c_m = 2^{m+1} − 3`, which correction
+eleven pinned against §14.
+
+**I have not read the arc's derivation of the `2/ω`,** only its statement — and this arc's own
+history says that is exactly when to stop. Correction 14 was made by reading one display without
+the derivation; correction 17 by reading a label without the theorem. The `2/ω` may be genuine
+slack, or the arc's `ω` may not be `1/t` at that point, or `hθt : 2/ω ≤ θ` may be doing something
+I am misreading.
+
+**Resolving it is the first thing the next attempt at §13 should do**, before any assembly is
+built on top of `index_le_of_rothGrowth_of_rescaled_bounds`.
+
+### What `RothLemma4` still needs
+
+Its arithmetic core exists (`RothRecursionArith`'s `sq_le_two_mul_max_of_sum_le` and friends are
+exactly the two-case analysis above), and `index_le_of_rothGrowth_of_rescaled_bounds` is §13's
+conclusion given `hres` — which the two `Θ`-form halves now supply. What is missing:
+
+1. the `2t` / `t` question above;
+2. the assembly: split `σ ≃ Fin (n+1)` into `σ' ⊕ Unit`, take `IsRothTheta`'s realising pair,
+   feed it through, and package the descended system (`rothGammaFull_descend` + `exists_isRothTheta`)
+   into `RothLemma4`'s existential.
+
+(2) is plumbing of a size this arc has done before; (1) is not plumbing.
+
+## Correction 24 — the `2t` was the arc's, not the source's
+
+The question above is **answered, and the answer is that the arc was wrong**. The `2` was pure
+slack, introduced in two places, neither of them in Mahler:
+
+1. **`cost_sepW_le`** bounded `(Dx i).length ≤ (i : ℕ)` by `r`, via `le_of_lt i.isLt`. But
+   `i : Fin r` gives `i ≤ r - 1`. One unit, thrown away for nothing.
+2. **`exists_degree_floor`** then had to carry the numerator `d + 1` (from `r ≤ d + 1`) and
+   bounded `(d+1)/⌈ωd⌉ ≤ 2/ω` — the factor `2` being `1 + 1/d ≤ 2`, the crude estimate at
+   `d = 1`, in a regime where `d` is large.
+
+§13's row term is `Σ_{h<m} j_{μh}/r_h ≤ (μ-1)/r_{m-1}`, numerator **`μ - 1`**. With `μ ≤ n` and
+`n ≤ r_m + 1` that is `≤ r_m/r_{m-1} ≤ t`. The `+1` in `n ≤ r_m + 1` cancels against the `-1` in
+`μ - 1`; the arc kept the first and dropped the second, and paid a factor of two for it.
+
+Fixed: `cost_sepW_le`'s numerator is `r - 1`; `exists_degree_floor` concludes `dl/D₁ ≤ 1/ω`;
+`exists_index_le_of_separated_le_degreeOf`'s row cost is `d/D₁`; and
+
+    exists_index_le_of_rothGrowth
+    index_le_of_rothGrowth_of_factor_bound
+    index_le_of_rothGrowth_of_rescaled_bounds
+    index_le_of_rothGrowth_split          (RothVariableSplit)
+
+all now read `θ ≤ 1/ω + 2·max(…)`, i.e. **`t` under `ω = 1/t`** — §13's own leading term.
+`rothGrowth_row_cost_le` likewise. All seven `#print axioms` clean; every module rebuilt with
+the `.olean` deleted.
+
+`rothConstant_step_lemma4`'s `θ ≤ s + 2w ⟹ c_{m+1} = 2c_m + 3` is therefore **fed the shape it
+was written for**, and `rothConstant m = 2^{m+1} - 3` stands as correction 11 pinned it.
+
+### What found it, and what did not
+
+Not a build, not `#print axioms`, not a witness — every one of these statements was *true* at
+`2/ω`, just weaker than needed, and a weaker true theorem is invisible to all three. What found
+it was reading §13 line by line and **comparing its row term against the arc's, symbol by
+symbol**. The `2` had survived eleven commits, one docstring that reasoned *from* it (and drew a
+false conclusion, retracted separately), and correction 17's own re-read of the same file.
+
+⚠ The retraction is worth its own note. A previous pass had already caught that
+`exists_index_le_of_rothGrowth`'s docstring drew a bad conclusion from the `2/ω` ("so `ω ≥ 2/ε`
+is what `ω(m, ε)` has to be") and rewrote the paragraph — correctly — while leaving the `2`
+itself unexamined. **Correcting an inference from a premise is not checking the premise.**
+
+## Correction 25 — `RothLemma4`'s `w` demanded a rational square root
+
+`RothLemma4` encoded `max(Ψ, √Ψ)` root-free as
+
+    (w = Θ' + t  ∨  w² = Θ' + t) ∧ Θ ≤ t + 2w.
+
+The admissible `w` under that are `Ψ` and — **only when `Ψ` is a square in `ℚ`** — `±√Ψ`. So
+whenever the `√` branch is the operative one, which is exactly the regime §14 runs in (`Ψ < 1`,
+so `√Ψ > Ψ`), the `def` demands a rational square root of `Θ' + t`. Nothing produces one:
+`Θ'` is an infimum over a finite set of indices and `t = p/q`.
+
+With `≤` the admissible `w` are exactly `w ≤ max(Ψ, √Ψ)`, so the existential says **precisely**
+`Θ ≤ t + 2·max(Ψ, √Ψ)` — the `≤` form is the faithful encoding and the `=` form was an
+over-strengthening.
+
+`lemma4_le_encoding_needed` (proved) makes it concrete at `Ψ = 1/2`, `t = 0`, `Θ = 7/5`:
+
+* §13's second branch `(Θ − t)² ≤ 4Ψ` holds — `49/25 ≤ 2` — so this is a situation §13
+  genuinely produces, the literal shape `index_le_or_sq_of_det_bound` returns;
+* no rational `w` satisfies the `=` form (first disjunct gives `1 < 7/5`; second needs
+  `w² = 1/2`, refuted by `not_isSquare_half` — elementary, `(w²).den = w.den²` and
+  `(1/2).den = 2`, no irrationality import);
+* `w = 7/10` satisfies the `≤` form, with `Θ = t + 2w` exactly.
+
+Relaxed: `rothConstant_step_lemma4`, `rothConstant_step_perturbed`, `rothConstant_chain`,
+`rothBound_chain`, `radicand_weaken` (`S/n ≤ w²`, with `0 ≤ S` now assumed rather than derived
+from the equality), `rothBound_succ_of_lemma4`, and the `RothLemma4` def itself. All rebuilt
+with the `.olean` deleted; all `#print axioms` clean.
+
+### The consumers never wanted the equality
+
+`rothConstant_step_lemma4` used `rw [h]` in both branches, and in both the rewrite was in the
+`≤` direction only; `radicand_weaken` used `S/n = w²` only as `S/n ≤ w²`. So every theorem that
+consumed the disjunction got **stronger** here (weaker hypothesis) and the only thing that
+changed on the other side is that `RothLemma4` is now provable in principle.
+
+⚠ Same shape as correction 9 and correction 10: **a hypothesis nobody has had to discharge is
+indistinguishable from an unsatisfiable one.** Four instances now. The pattern is specific
+enough to act on: whenever this arc writes a `def` or hypothesis that some *later* step must
+produce, the production is the test, and until it is written the statement is untested no
+matter how many theorems consume it. `rothBound_succ_of_lemma4_witness` consumed the `=` form
+happily for eleven commits — because its `Ψ = 1/8` … no: because it took the *first* disjunct,
+where the equality costs nothing.
+
+## Correction 26 — correction 21 was never propagated to its consumers
+
+Correction 21 established that §12's budget covers the **divided** Wronskian `W`, not the
+determinant: `det = C c · W` with `c = ∏_i ∏_h (listIdx …)!` of size `2^{Θ(r² log r)}`, and
+§11's clause `b ≤ 2^{c'}·a^r` has no room for that factor. `WronskianHeight`'s
+`exists_divided_wronskian` proves exactly that, and it is the arc's only height bound on the
+Wronskian.
+
+But the two `Θ`-form halves of `hres` — `index_rescaled_wronskian_le_theta` and
+`..._right_theta` — take `hB` as a bound on the **determinant**'s coefficients, because they
+were written against `exists_integral_wronskian_factors`, which factors `det`.
+
+**So the arc's only available height bound and the arc's only usable induction-hypothesis
+halves do not compose.** Both are true; both are green; both have witnesses. Nothing in the
+project objected, because nothing had ever put them next to each other.
+
+Fixed with `exists_integral_wronskian_factors_div` (`SeparatedGauss`) and the two `_div` halves
+(`RothInductionHypothesis`). The work is small — `exists_integral_separated_factorization` was
+already stated for an arbitrary integral `W` whose map is a separated product, and
+
+    map W = C c⁻¹ · (renₗ Wx · renᵣ Wy) = renₗ Wx · renᵣ (C c⁻¹ · Wy)
+
+is that shape, with the constant parked on the `y` side so the `x` half keeps its exact
+`C l · Wx`. The `y` half's constant is `l⁻¹·c⁻¹ ≠ 0`, and `index_C_mul` is indifferent.
+
+The originals are kept — they are true, and a caller holding a determinant bound can use them.
+What they cannot be is the induction's `hres`.
+
+### What found it
+
+Not a build, not `#print axioms`, not a witness. **Writing the assembly and discovering that
+`hB`'s `b` had to be two different numbers at once.** That is the third distinct time in this
+arc that the composition — not the components — was the test, and it is the strongest argument
+for pushing the assembly through even where the pieces all look finished: an unexercised
+interface between two green theorems is exactly as untested as an undischarged hypothesis.
+
+⚠ Note the shape of the failure. Correction 21 was **correct and complete in the module where
+it landed.** The defect is that a correction to a lemma is not a correction to its consumers,
+and the arc had no mechanism that would notice. A green build after a correction says the
+corrected file still compiles, not that anything downstream now means what it did before.
+
+## Lemma 4 is proved, and §14 runs
+
+`rothLemma4_of_one_le : 1 ≤ n → RothLemma4 σ n p q F` — no `sorry`, standard axioms, no
+hypothesis beyond `0 < p ≤ q`, `1 ≤ n` and `Γ_{n+1}` itself.
+
+The assembly, in the order it uses things:
+
+* `IsRothTheta`'s **attainment** clause gives the realising pair `(A, κ)` — which is why §9's
+  finiteness had to be *proved*; an inequality-only `Θ` would have had nothing to hand over;
+* `exists_family_index_le_w_of_rothGrowth_split` runs §13 on `map A` and returns the separated
+  representation, fixing the length `rr` — the whole reason the family had to be exposed;
+* `exists_divided_wronskian_budget` bounds the divided Wronskian at that `rr` in §11's currency;
+* `rothGammaFull_descend` turns `Γ_{n+1}` into `Γ_n`;
+* `exists_isRothTheta` names `Θ'` and `Θ₁`; `isRothTheta_right_le_t` gives `Θ₁ ≤ t`;
+* the two `_div` halves (correction 26) bound the Wronskians; `factor_bound_of_rescaled` turns
+  that into §13's `J(W) ≤ n·Φ`;
+* §13 returns `w` with `Φ = Θ' + Θ₁ ≤ Θ' + t = Ψ`.
+
+Then `rothLemmaTheta_of_seq` discharges `rothLemmaTheta_iterate`'s `h4` at every arity, and
+`rothLemmaTheta_three` is **Roth's Lemma with no hypothesis at all** beyond `m ≤ 3`: at
+`t = 1/16 = (1/2)^{2²}` the ladder `1/16, 1/4, 1/2` lives in `ℚ`.
+
+### Three things the assembly needed that no component knew about
+
+1. **`Θ ≤ t` is a separate case.** §13's inequality needs `t ≤ θ` — there is nothing to bound
+   otherwise — and the assembly cannot discharge it. It does not need to: at `Θ ≤ t` the
+   conclusion holds with `w := 0`. ⚠ That branch is **unavailable** under correction 25's old
+   `=` encoding, which admits `w = 0` only when `Ψ = 0`. So correction 25 was not merely
+   tidying: without it this case has no witness either.
+2. **`1 ≤ a`** is nowhere in `RothGammaFull`; it comes from `InRothPolySet`'s non-vanishing.
+   Three lemmas wanted it and none of them could have stated it.
+3. **`Fintype σ`** — `exists_divided_wronskian_budget` sums over the variables, and `σ` is
+   finite only *because* `o : σ ≃ Fin (n+1)` exists. It is derived inside the proof, not
+   assumed.
+
+### What is still open
+
+Correction 23's encoding restriction, unchanged: `rothLemmaTheta_of_seq` needs `t` to be a
+`2^{M−1}`-th power in `ℚ`. Removing it means proving `rothBound_succ_of_lemma4` in `ℝ` and
+transferring back; the inequalities are field-generic, so this is transport work, not
+mathematics. `rothLemmaTheta_three` is an instance where the restriction is satisfied.
+
+⚠ The stale-prose paragraph in `RothVariableSplit` has now been wrong **three times** in three
+directions: "neither is proved" (correction 17), "`RothLemma4` is not proved at any arity", and
+each time the build had no opinion. A docstring naming what is open is a claim about the whole
+file and ages the moment anything below it lands.
+
+## Correction 23 is closed — Roth's Lemma at every arity, no hypotheses
+
+`rothLemmaTheta_all : ∀ m, 1 ≤ m → RothLemmaTheta (Fin m) m p q F`, for every `p q F`. And
+`index_le_rothBound`, which says what that means on the index: under `Γ_m` with `t = p/q`, every
+`A ∈ R(a;r)` has index at most `c_m·t^{2^{−(m−1)}}` at every `κ ∈ Q(H)`, with
+`c_m = 2^{m+1} − 3`.
+
+### Why the ladder could not simply be dropped
+
+Correction 23 called the perfect-power restriction "an artifact of the root-free encoding".
+That was right, but it understated the situation: **a root-free reformulation of the argument
+does not exist at this constant.** Running §14's step on powers directly needs
+`(a+b)^K ≤ 2^{K−1}(a^K + b^K)`, which turns `Θ ≤ 2Θ_n + 3t` into
+
+    Θ^K ≤ 2^{K−1}(2^K·c_n^K + 3^K)·t,     K = 2^n
+
+against a target of `(2c_n+3)^K ≈ 2^K c_n^K`. That is short by `≈ 2^{K−1}` once `c_n` is large,
+and `c_n = 2^{n+1}−3` is large. The root is not a convenience; it is what stops the constant
+compounding. I checked this before reaching for `ℝ`, and it is the reason the answer is `ℝ` and
+not a cleverer `ℚ` argument.
+
+### The fix
+
+* `rothConstant_step_lemma4` was **already field-generic** — its proof is `nlinarith` and
+  `le_of_pow_le_pow_left₀`. Generalising it from `ℚ` to
+  `[Field K] [LinearOrder K] [IsStrictOrderedRing K]` cost one edit and broke no caller.
+* `Real.sqrt^[n]` supplies the `2^n`-th root (`sqrtIter_pow`, `_nonneg`, `_le_one`).
+  `Real.rpow` would be one line but is not in this project's built Mathlib closure;
+  `Mathlib.RingTheory.Real.Irrational` is, and carries `Real.sqrt`.
+* `rothBound_succ_of_lemma4'` runs the step in `ℝ` at `u = t^{2^{−n}}` and casts back. Both
+  endpoints are rational, so the excursion is invisible in the statement.
+
+New module `QOU/Mathlib/RothRealLadder.lean`, registered in `QOU.lean`. All five
+`#print axioms` clean.
+
+⚠ The `ℝ`-free route is **kept**, not replaced: `rothLemmaTheta_of_seq` and
+`rothLemmaTheta_three` still stand in `RothVariableSplit`, and a reader who wants Roth's Lemma
+without an analysis import can have it at any `t` that is a `2^{M−1}`-th power.
+
+## Arc status — Roth's Lemma is proved
+
+**`MvPolynomial.index_le_rothBound`** (`QOU/Mathlib/RothRealLadder.lean`): if
+`a; r₁,…,r_m; H₁,…,H_m` has property `Γ_m` with `t = p/q`, then every `A ∈ R(a;r)` has index at
+most `c_m·t^{2^{−(m−1)}}` at every `κ ∈ Q(H)`, `c_m = 2^{m+1} − 3`. Every arity `m ≥ 1`, every
+`p, q, F`. No `sorry`; `[propext, Classical.choice, Quot.sound]`.
+
+Non-vacuous where it matters: `index_le_rothBound_witness` at `m = 2`, where clause 3 forces
+`H ≥ 1024` — the one hypothesis every earlier witness in this arc dodged.
+
+Twenty-six corrections. What the last six say about how the arc failed:
+
+* **24** (`2t` vs `t`) — a weaker true theorem is invisible to a build, to `#print axioms`, and
+  to every witness. Only reading the source's step symbol-by-symbol found it.
+* **25** (`w² = Ψ`) — a hypothesis nobody has had to *discharge* is indistinguishable from an
+  unsatisfiable one. Four instances now (9, 10, 22, 25).
+* **26** (correction 21 unpropagated) — a correction to a lemma is not a correction to its
+  consumers, and a green build after one says only that the corrected file still compiles.
+* The **assembly itself** found 24, 25 and 26. Three separate defects that only appeared when
+  two green theorems had to meet. An unexercised interface is exactly as untested as an
+  undischarged hypothesis, and this arc now has three data points saying the composition is the
+  experiment, not the components.
+* **Correction 23's closure** needed a *negative* result first: I checked that a root-free
+  reformulation loses a factor `2^{2^n}` before reaching for `ℝ`. "It's just an encoding
+  artifact" was true about the restriction and false about the remedy.
+* The status paragraph in `RothVariableSplit` was wrong **three times in one session**, in three
+  directions. Prose that names what is open is a claim about the whole file.

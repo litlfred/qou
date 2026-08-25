@@ -1209,6 +1209,7 @@ import QOU.Mathlib.RothOperatorFamily
 -- of index, RothGrowth and degreeOf across it.  Connects Roth's lemma's STATEMENT (one degree
 -- vector, one ordering) to the split form every operator-family result is written for.
 import QOU.Mathlib.RothVariableSplit
+import QOU.Mathlib.RothRealLadder
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
