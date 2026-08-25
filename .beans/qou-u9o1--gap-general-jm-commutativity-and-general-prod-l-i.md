@@ -1,11 +1,11 @@
 ---
 # qou-u9o1
 title: 'GAP: general JM commutativity and general prod L_i = Delta^2 (adjacent case is the blocker)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T09:25:03Z
+updated_at: 2026-08-25T10:48:31Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -895,3 +895,16 @@ hypothesis is satisfiable. **The general-lambda twist REMAINS CONDITIONAL.**
 What is left is the genuine remaining item: construct the seminormal representation — the
 standard-tableau basis with `L_k` diagonal — and prove the eigenvalues are the contents.
 That is a Wenzl/Hoefsmit-scale construction, larger than everything in this bean so far.
+
+
+## 2026-08-25 — MERGED as 0916b28b55. This bean's two titled items are DONE.
+
+`jmRaw_comm` (commutativity, all i,k) and `jmProd_eq_delta_pow` (`prod L_i = Delta^2`,
+all n) are both on main, sorry-free. Closing this bean; the successor items are:
+
+- **`qou-t1kv`** — `HeckeGenerators` is H_∞, so no finite-dimensional rep can instantiate
+  it and `IsJMWeight` cannot be discharged at `dim > 1`. Structural, not mathematical;
+  a bounded-index class variant fixes it and lets the corpus's existing `stdRep3`
+  (2-dim (2,1)-rep of H_3, relations already proved) close the gap at n = 3.
+- **`sv8b`** (HIGH, pre-existing) — the classical seminormal base vector, brick 5 of the
+  Okounkov–Vershik tower. The general-lambda twist stays CONDITIONAL until that side lands.
