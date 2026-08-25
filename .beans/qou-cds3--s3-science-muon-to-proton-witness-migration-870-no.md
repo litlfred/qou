@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T08:32:01Z
+updated_at: 2026-08-25T09:17:15Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -147,3 +147,49 @@ producer.
 The lesson for whoever drains the remaining 48-by-hand: **read the producer,
 not the witness.** Both of these looked like live stamp/payload contradictions
 from the witness alone, and both had been fixed upstream a day earlier.
+
+
+## The 46-by-hand residue, discriminated by SOURCE — and re-run decides nothing
+
+Applying the lesson above (read the producer, not the witness) mechanically:
+
+    residue examined                                          46
+      BOTH reads the pin table AND hardcodes a muon literal   21
+      READS the pin table — witness could be stale            14
+      neither signal                                           5
+      HARDCODES a muon literal — deliberate comparison         5
+      no scriptFile — cannot reach the producer                1
+
+The 14 are the only ones a re-run can settle, so all 14 were re-run (zero
+untracked witnesses verified first; the tree restored afterwards).
+
+**7 of 14 moved. NONE of the moves is a value.** Every one is environment:
+
+    mpmath              1.4.1  -> 1.3.0        (this container is OLDER)
+    pyhecke_native_build 30fd920c... -> b843d058...
+    clarabel            (absent) -> 0.11.1
+
+Four of the seven have literally zero non-environment lines. Two more are my
+own filter leaking the `invocation` block. The seventh,
+`deuteron-from-scratch-ledger`, moves LP duality numbers
+(`duality_gap 43938.59 -> 43926.64`, ~0.03 %) — and `clarabel 0.11.1` is in the
+same environment diff, so that is a SOLVER VERSION difference, not q0 staleness.
+
+**Nothing was committed.** Committing any of them would write this container's
+older mpmath and its clarabel over a record made with newer ones — the same
+provenance degradation that excluded `atomic_tr_m_helium4` from PR #5736.
+
+## Net result for this bean
+
+    both-pin population                    105 (bean said 69, from 2026-08-15)
+    deliberate comparisons / audits         57
+    stale witnesses, fixed and committed     2   (he3 pair, PR #5752)
+    residue re-run, zero stale values       14
+    residue still needing a human read      30
+    CONFIRMED DEFECTS                        0
+
+The bean's "a defect either way" premise is measured false. What remains is 30
+files that need eyes, and the useful thing learned is that **re-running them in
+a container older than the one that wrote them cannot decide anything** — the
+environment delta swamps the signal. A future drain needs an environment
+matching the recorded one, or it should compare only non-environment fields.
