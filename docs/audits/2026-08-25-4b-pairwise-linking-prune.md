@@ -70,8 +70,35 @@ identity, so the zeros are not an artifact of components having been merged.
 
 - **Nothing against `μ̄₁₂₃`.** The Milnor triple linking number is precisely the
   first invariant that is *nonzero* on Borromean rings. This file points at it
-  rather than away from it — and the corpus already carries `μ̄₁₂₃` (Lean,
-  sorry-free) for the `sin²θ_W` front (#4597), so the object is in hand.
+  rather than away from it.
+
+  > **🛑 RETRACTED, same day, by the author of the sentence.** This bullet first
+  > read *"the corpus already carries `μ̄₁₂₃` (Lean, sorry-free) for the
+  > `sin²θ_W` front (#4597), so the object is in hand."* **It does not, and the
+  > object is not in hand.** What the corpus carries is
+  > `electroweak-triplet-charge-spin-from-involution.lean`'s
+  >
+  > ```lean
+  > def evenTwistTripleLinking (_k : ℕ) : ℤ := 0
+  > ```
+  >
+  > which is defined **only** for the even-twist carrier `T(2,2k)` — a
+  > **two**-component link — and is `0` *by definition*, because a 2-component
+  > link has no triple. Its docstring says exactly that. It is correct, and it
+  > is contentless for a 3-component question. The corpus's other Milnor
+  > material (`QOU/KnotTheory/Vassiliev/MilnorVassilievBridge.lean`) is
+  > **honest conjecture classes**, not computation.
+  >
+  > So there is **no computable `μ̄₁₂₃` for ≥ 3 components in the corpus.** That
+  > is the actual missing object for 4-B, and it is a bigger gap than this file
+  > originally implied.
+  >
+  > How the error happened, since it is the one AGENTS.md warns about by name:
+  > I topic-grepped "Milnor", found several hits including a sorry-free Lean
+  > file, and inferred availability — without the **arity** check
+  > (§"Grep the claim SHAPE, not only the topic"). One look at the signature
+  > settles it: `ℕ → ℤ` on a 2-component family cannot answer a 3-component
+  > question.
 - **It does not prove `conj:brunnian-property-of-borromean`.** That every
   2-component sublink is the *unlink* is strictly stronger: vanishing linking
   number is necessary, not sufficient. The conjecture stands open, and the
@@ -82,9 +109,20 @@ identity, so the zeros are not an artifact of components having been merged.
 
 ## Next
 
-Attack `E_EM` through `μ̄₁₂₃` rather than pairwise linking. Two things make this
-concrete rather than a hope: the invariant is already formalised in the corpus,
-and it is the *unique* first-order candidate left once pairwise linking is
-excluded on a Brunnian carrier. What is still missing is the map from a triple
-linking number to an energy — the same gap as everywhere else on this surface,
-but now with only one candidate input instead of a class.
+Attack `E_EM` through `μ̄₁₂₃` rather than pairwise linking. What makes that a
+direction rather than a hope is the prune itself: `μ̄₁₂₃` is the *unique*
+first-order candidate left once pairwise linking is excluded on a Brunnian
+carrier.
+
+**Two objects are missing, not one** — corrected after the retraction above:
+
+1. **A computable `μ̄₁₂₃` for ≥ 3 components.** The corpus has a name and a
+   conjecture class, not a computation. Tractable: for a closed braid with
+   vanishing pairwise linking, `μ̄₁₂₃` has no indeterminacy and is the degree-2
+   Magnus coefficient of a longitude word — a finite computation of the same
+   shape as `crossSum` above.
+2. **The map from a triple linking number to an energy.** The same gap as
+   everywhere on this surface, and untouched by any of the above.
+
+Do not report 4-B as "one object away". It is two, and only the first is
+currently tractable.
