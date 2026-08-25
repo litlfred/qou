@@ -721,6 +721,50 @@ theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
       ≤ (r.factorial : ℤ) * S ^ r * ((∏ i, ax i) * ((∏ j, ay j) * K ^ r)) := hdet
     _ = ((∏ i, ax i) * ∏ j, ay j) * ((r.factorial : ℤ) * S ^ r * K ^ r) := by ring
 
+/-! ### The support bound the budget consumes
+
+`exists_divided_wronskian` takes `S` as an upper bound on `P.support.card`, and `height_budget`
+wants that same `S` below `2^{Σd}`.  Both are met by `S := 2^{Σd}` itself, and the reason is
+elementary: a monomial in the support has every exponent at most the corresponding `degreeOf`,
+so the support injects into `∏ (d h + 1)` boxes, and `k + 1 ≤ 2^k`. -/
+
+/-- **A polynomial's support is bounded by the box its degrees cut out.** -/
+theorem card_support_le_prod_succ [Fintype σ] [DecidableEq σ]
+    {P : MvPolynomial σ ℤ} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
+    P.support.card ≤ ∏ h, (d h + 1) := by
+  classical
+  have hinj : Function.Injective (fun n : σ →₀ ℕ => (fun h => n h : σ → ℕ)) :=
+    fun a b hab => Finsupp.ext (fun h => congrFun hab h)
+  have hsub : P.support.image (fun n : σ →₀ ℕ => (fun h => n h : σ → ℕ))
+      ⊆ Fintype.piFinset (fun h : σ => Finset.range (d h + 1)) := by
+    intro f hf
+    simp only [Finset.mem_image] at hf
+    obtain ⟨n, hn, rfl⟩ := hf
+    rw [Fintype.mem_piFinset]
+    intro h
+    rw [Finset.mem_range]
+    exact Nat.lt_succ_of_le (le_trans (monomial_le_degreeOf h hn) (hd h))
+  calc P.support.card
+      = (P.support.image (fun n : σ →₀ ℕ => (fun h => n h : σ → ℕ))).card :=
+        (Finset.card_image_of_injective _ hinj).symm
+    _ ≤ (Fintype.piFinset (fun h : σ => Finset.range (d h + 1))).card :=
+        Finset.card_le_card hsub
+    _ = ∏ h, (d h + 1) := by rw [Fintype.card_piFinset]; simp
+
+/-- **The box, in the budget's currency.**  `∏ (d h + 1) ≤ 2^{Σ d h}`, term by term. -/
+theorem prod_succ_le_two_pow_sum [Fintype σ] (d : σ → ℕ) :
+    ∏ h, (d h + 1) ≤ 2 ^ (∑ h, d h) := by
+  classical
+  rw [← Finset.prod_pow_eq_pow_sum]
+  exact Finset.prod_le_prod' (fun h _ => Nat.lt_two_pow_self)
+
+/-- **`S := 2^{Σd}` serves both lemmas** — `exists_divided_wronskian`'s `hS` and
+`height_budget`'s `hS`, with `hS1 : 1 ≤ S` free. -/
+theorem card_support_le_two_pow_sum [Fintype σ] [DecidableEq σ]
+    {P : MvPolynomial σ ℤ} {d : σ → ℕ} (hd : ∀ h, degreeOf h P ≤ d h) :
+    ((P.support.card : ℕ) : ℤ) ≤ 2 ^ (∑ h, d h) := by
+  exact_mod_cast le_trans (card_support_le_prod_succ hd) (prod_succ_le_two_pow_sum d)
+
 /-- **§12's budget closes** — and by exactly one factor of `r₀·d_first`.
 
 `exists_divided_wronskian` gives `|coeff W| ≤ r₀!·S^{r₀}·(2^{Σd}·a)^{r₀}`.  §11's clause 4 wants
@@ -774,6 +818,48 @@ theorem height_budget {n r₀ sd dfirst dlast : ℕ} {S a : ℤ}
         rw [← pow_add, ← mul_assoc, ← pow_add, add_assoc]
     _ ≤ (2 : ℤ) ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
         refine mul_le_mul_of_nonneg_right (pow_le_pow_right₀ (by norm_num) hexp) (by positivity)
+
+/-- **§12's height estimate and §11's clause 4, joined.**
+
+Everything §13's descent needs from the height theory, in the shape `rothGammaFull_descend`
+consumes it: an integral `W` with `det = C c · W`, `c > 0`, and
+
+    |coeff W| ≤ 2^{(2n+3)·(r₀·d_first)} · a^{r₀}
+
+which is `b ≤ 2^{c'}·a^{r₀}` with `c' = (2n+3)·(r₀·d_first)` — clause 4 exactly.
+
+The three inputs are the degree bound, the height bound `a`, and the ordering facts
+`r₀ ≤ d_last + 1` (Mahler's `n ≤ r_m + 1`), `Σd ≤ (n+1)·d_first` and `d_last ≤ d_first`.  `S` is
+taken to be `2^{Σd}` itself, which `card_support_le_two_pow_sum` supplies and `height_budget`
+accepts with `le_rfl`.
+
+⚠ `c > 0` rather than `c ≠ 0` — it is a product of factorials, and the sign is free.  The
+consumers only need non-vanishing (`index_C_mul`), but positivity is what the proof produces
+and there is no reason to weaken it. -/
+theorem exists_divided_wronskian_budget {τ : Type*} [Fintype σ] [Fintype τ]
+    [DecidableEq σ] [DecidableEq τ] [DecidableEq (σ ⊕ τ)]
+    {r₀ n dfirst dlast : ℕ} {a : ℤ} {d : (σ ⊕ τ) → ℕ}
+    (ha : 1 ≤ a) (Dx : Fin r₀ → List σ) (Dy : Fin r₀ → List τ)
+    (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hdeg : ∀ h, degreeOf h P ≤ d h) (hB : ∀ m, |coeff m P| ≤ a)
+    (hr₀ : r₀ ≤ dlast + 1) (hsum : ∑ h, d h ≤ (n + 1) * dfirst) (hdf : dlast ≤ dfirst) :
+    ∃ (W : MvPolynomial (σ ⊕ τ) ℤ) (c : ℤ), 0 < c ∧
+      (Matrix.of fun i j =>
+          pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det = C c * W ∧
+      ∀ m, |coeff m W| ≤ 2 ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
+  classical
+  have ha0 : (0 : ℤ) ≤ a := le_trans zero_le_one ha
+  obtain ⟨W, hW, hWB⟩ := exists_divided_wronskian (Finset.univ : Finset (σ ⊕ τ))
+    (S := 2 ^ (∑ h, d h)) ha0 Dx Dy P
+    (fun i h _ => Finset.mem_univ h) (fun j h _ => Finset.mem_univ h)
+    (card_support_le_two_pow_sum hdeg) hdeg hB
+  refine ⟨W, _, ?_, hW, fun m => le_trans (hWB m) ?_⟩
+  · exact mul_pos
+      (Finset.prod_pos fun i _ => by
+        exact_mod_cast Finset.prod_pos fun h _ => Nat.factorial_pos _)
+      (Finset.prod_pos fun j _ => by
+        exact_mod_cast Finset.prod_pos fun h _ => Nat.factorial_pos _)
+  · exact height_budget hr₀ hsum hdf (one_le_pow₀ (by norm_num)) le_rfl ha
 
 /-- **§7's coefficient bound in one variable, sharp.**
 
