@@ -299,7 +299,9 @@ def load_q_50dps(
                 from q_parameter import Q_MP
             q = Q_MP
             qi = mpf(1) / q
-            return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+            # Markov parameter, convention D: z = q^3/(q^2 + 1).
+            # (owner ruling 2026-08-15; C's 1/(sqrt(q)+sqrt(1/q)) excised)
+            return q, qi, q ** 3 / (q ** 2 + 1)
         if anchor != "muon":
             raise ValueError(
                 f"load_q_50dps: anchor must be 'proton' or 'muon', got {anchor!r}"
@@ -309,7 +311,10 @@ def load_q_50dps(
         d = _json.load(fh)
     q = mpf(d["derived_50_digit"]["q"])
     qi = mpf(1) / q
-    z = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # Markov parameter, convention D: z = q^3/(q^2 + 1) (owner ruling
+    # 2026-08-15). Was C's 1/(sqrt(q) + sqrt(1/q)). No square root is
+    # needed under D; a surviving one would be z_C showing through.
+    z = q ** 3 / (q ** 2 + 1)
     return q, qi, z
 
 
