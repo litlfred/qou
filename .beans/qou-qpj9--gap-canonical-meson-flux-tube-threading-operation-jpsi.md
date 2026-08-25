@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-25T18:32:04Z
+updated_at: 2026-08-25T18:38:25Z
 ---
 
 ## The wall
@@ -157,3 +157,37 @@ NEXT, and the better lead: Cor 1.1 bounds volume by the colored Jones stable
 penultimate coefficient — and this framework computes colored Jones AS MARKOV
 TRACES (J_L(q) = tr_M(rho(beta_L))). A bridge from machinery the corpus
 already has to a volume bound, with no braid word in between. Not attempted.
+
+## SELF-CORRECTION, same day — the family excludes the corpus's own carriers
+
+My addendum scoped its windows as 'CONDITIONAL on the target braid lying in
+Giambrone's family' — correct, and written before the numbers — but did not
+say HOW RESTRICTIVE that family is. It is very.
+
+Lemma 2.1(1) requires EVERY negative exponent r_i <= -3. The corpus builds
+braids from single crossings:
+
+  figure-eight (s1 s2^-1)^2   MUON,   Vol 2.0299   neg exps -1,-1      OUT
+  Borromean    (s1 s2^-1)^3   PROTON, Vol 7.3277   neg exps -1,-1,-1   OUT
+  meson M = (s0 s1)^2 s1 s0                        none (positive)     OUT
+  trefoil s1^3                                     none (positive)     OUT
+
+So the family contains NEITHER of the framework's two load-bearing hyperbolic
+carriers. The syllable windows stay valid for their family, but that family
+holds none of the corpus's anchor manifolds, so 'the heavy end IS bounded'
+oversells it. Correct reading: 'IF a candidate lies in this family, THEN...'
+
+CAVEAT ON THE CAVEAT (softens it): Lemma 2.1 constrains a DIAGRAM, not a link
+type. A different word for the same link might satisfy it. Not settled here,
+and not settleable by inspecting the canonical words. So: 'the corpus's
+CANONICAL WORDS are outside', not 'these links are outside'.
+
+WHAT IT IS GENUINELY EVIDENCE FOR, and this is worth more than the windows:
+a structural mismatch between the framework's braid vocabulary (single
+crossings, +-1 exponents) and the hypotheses of the closed-3-braid volume
+literature (>= 3 same-sign crossings per syllable). That tells you which
+theorems can apply before more of that literature gets imported.
+
+RETAINED: Consequence 1 (positivity => outside the A-adequate family) is
+unaffected — it is a statement about positive words and M is positive. The
+v8 = 4*Catalan fix and its tie to the corpus Borromean volume stand.

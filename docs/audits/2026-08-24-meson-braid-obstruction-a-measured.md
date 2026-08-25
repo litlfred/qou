@@ -829,3 +829,47 @@ coefficient** — and this framework computes colored Jones *as Markov traces*
 (`J_L(q) = tr_M(ρ(β_L))`). That is a bridge from machinery the corpus already
 has to a volume bound, without going through a braid word at all. Not attempted
 here.
+
+### Correction to the addendum above, same day — how narrow the family actually is
+
+The addendum states its bounds are *"CONDITIONAL on the target braid lying in
+Giambrone's family (nice + Lemma 2.1 + A-adequate)"*. That scoping is correct
+and was written before the numbers. What it does **not** say is how restrictive
+that family is, and the answer materially weakens the framing *"the heavy end
+IS bounded"*.
+
+**Lemma 2.1(1) requires every negative exponent to satisfy `rᵢ ≤ −3`.** The
+corpus's canonical words are built from single crossings, `±1`:
+
+| braid | negative exponents | in the family? |
+|---|---|---|
+| figure-eight `(σ₁σ₂⁻¹)²` — **muon**, `Vol = 2.0299` | `−1, −1` | **no** |
+| Borromean `(σ₁σ₂⁻¹)³` — **proton**, `Vol = 7.3277` | `−1, −1, −1` | **no** |
+| meson `𝔐 = (σ₀σ₁)²σ₁σ₀` | none | no (positive) |
+| trefoil `σ₁³` | none | no (positive) |
+
+**So the family excludes both of the framework's load-bearing hyperbolic
+carriers.** The syllable windows remain valid *for the family they are stated
+for*, but that family currently contains none of the corpus's own anchor
+manifolds, so their physical relevance is an open question rather than an
+assumption. Read the windows as *"if a candidate lies in this family, then…"*
+— not as a bound on the corpus's candidate space.
+
+**One caveat on the caveat**, in the direction that softens it: Lemma 2.1 is a
+condition on a **diagram**, not on a link type. A different braid word for the
+same link could in principle satisfy it. Whether `4₁` or the Borromean admit
+such a word is not settled here and cannot be settled by inspecting the
+canonical ones. So the honest statement is *"the corpus's canonical words are
+outside the family"*, not *"these links are outside it"*.
+
+**What this is genuinely evidence for.** There is a structural mismatch between
+the framework's braid vocabulary — single crossings, `±1` exponents — and the
+hypothesis of the closed-3-braid volume literature, which wants `≥ 3` same-sign
+crossings per syllable. That is worth knowing before more of that literature is
+imported: it tells you which theorems can apply and which cannot, and it is a
+better use of the reading than the windows were.
+
+**Retained.** Consequence 1 is unaffected: positivity excluding a braid from
+the A-adequate family is a statement about *positive* words, and `𝔐` is
+positive. The `v₈ = 4·Catalan` correction and its tie to the corpus Borromean
+volume stand. The prior document's own results are untouched throughout.
