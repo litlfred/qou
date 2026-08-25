@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1006.1099v3",
  "source_sha256": "76c1c4173cdee9d8",
  "brief": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces.",
- "extended": "**FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH**\n\n70 pp, 32 sections.\n\n**Abstract.** There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces. W e investigate symplectic aspects of this relationship, with a view to applications in low-dimen sional topology.\n\n**Outline.** 1 Introduction; 1.1 Two contexts; 1.2 The theorem; 1.3 Entropy; 1.4 Representation varieties; 1.5 Instanton Floer homology; 1.7 Homological Mirror Symmetry; 1.8 Another birational motivation; 1.9 Outline of proof; 2 The representation variety; 2.2 Monodromy and degenerations; 2.3 Fibred 3-manifolds; 2.4 Faithfulness; 3 The Fukaya category; 3.1 Floer and quantum cohomology; 3.2 Higher order products; 3.3 Twisting and generation; 3.5 Grading and deformations",
+ "extended": "**FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH**\n\n70 pp, 32 sections.\n\n**Abstract.** There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces. W e investigate symplectic aspects of this relationship, with a view to applications in low-dimen sional topology.\n\n**Outline.** 1 Introduction; 1.1 Two contexts; 1.2 The theorem; 1.3 Entropy; 1.4 Representation varieties; 1.5 Instanton Floer homology; 1.7 Homological Mirror Symmetry; 1.8 Another birational motivation; 1.9 Outline of proof; 2 The representation variety; 2.2 Monodromy and degenerations; 2.3 Fibred 3-manifolds; 2.4 Faithfulness; 3 The Fukaya category; 3.1 Floer and quantum cohomology; 3.2 Higher order products; 3.3 Twisting and generation; 3.5 Grading and deformations\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: There is a C-linear equivalence of Z2-graded split-closed triangulated categories\n- Theorem 1.4: A diﬀeomorphism φ∈ ˜Γ hyp\n- Theorem 1.5: Forg≥ 2, ˆρ : ˆΓ(Σ g)−→π0 Symp M(Σ g) does not factor through the symplectic\n- Theorem 1.6: If φ∈ Symp M(Σ g) represents a class in im(ˆρ) then φ ﬁxes a point of M(Σ g).\n- Theorem 2.13: The eigenvalues of quantum cap-product ∗h by the generator h ∈\n- Theorem 2.16: Let k > 1. Suppose that V ⊂ M is an Sk-ﬁbred co-",
  "tokens": {
   "brief": 48,
-  "extended": 205
+  "extended": 334
  },
  "sections": [
   {
@@ -174,7 +174,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

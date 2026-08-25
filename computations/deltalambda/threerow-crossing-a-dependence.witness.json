@@ -1,52 +1,15 @@
 {
   "engine": "mpmath+f64-seminormal",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:28:59.204884+00:00",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
-  "assertions": [
-    {
-      "name": "D_sign_at_q0",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    },
-    {
-      "name": "D_sign_at_qlo",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    },
-    {
-      "name": "T_sign_at_q0",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    },
-    {
-      "name": "T_sign_at_qlo",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    },
-    {
-      "name": "3He_sign_at_q0",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    },
-    {
-      "name": "3He_sign_at_qlo",
-      "computed": 0,
-      "expected": 0,
-      "passed": true
-    }
-  ],
+  "computedAt": "2026-08-25T21:24:40.722831+00:00",
+  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 16,
   "computation": "threerow-crossing-a-dependence",
   "scriptFile": "threerow_crossing_a_dependence_probe.py",
-  "scriptHash": "cc20432358a2",
-  "scriptCommitSha": "6974ca884df1d0029469c97c90dddf96e87c8218",
+  "scriptHash": "d617a226d798",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -69,10 +32,10 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/threerow_crossing_a_dependence_probe.py"
   },
-  "description": "UNIT 2 of bean qou-prjo follow-up to #4829. Determines whether the deuteron \u22653-row sign crossing of F_K(q)=\u03a3_{\u03bb\u22a23A,\u2113(\u03bb)\u22653} y_\u03bb(q)\u00b7\u03c7^\u03bb(\u03b2_K;q)\u00b7\u0394_\u03bb is SPECIAL to n=6 or A-DEPENDENT with the n=9 crossing lying ABOVE the substrate q\u2080. Sweeps a DIAGNOSTIC RAY q \u2208 (1, 4.0]; every q > q\u2080 field is prefixed 'diagnostic_' and is a STRUCTURAL diagnostic of the analytic object, NOT a physical claim (the substrate modulus is q\u2080 \u2248 1.10998, experimental proton anchor). \u0394_\u03bb=(\u22121)^{n(\u03bb)}\u00b7dim (PROVED value-only); y_\u03bb via live schur_principal_mpmath (proton anchor, NOT the muon cache); \u03c7^\u03bb via the q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure. 0 free parameters; AME not used.",
+  "description": "UNIT 2 of bean qou-prjo follow-up to #4829. Determines whether the deuteron ≥3-row sign crossing of F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ is SPECIAL to n=6 or A-DEPENDENT with the n=9 crossing lying ABOVE the substrate q₀. Sweeps a DIAGNOSTIC RAY q ∈ (1, 4.0]; every q > q₀ field is prefixed 'diagnostic_' and is a STRUCTURAL diagnostic of the analytic object, NOT a physical claim (the substrate modulus is q₀ ≈ 1.10998, experimental proton anchor). Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (proton anchor, NOT the muon cache); χ^λ via the q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure. 0 free parameters; AME not used.",
   "parameters": {
     "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
-    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_\u03bb",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_λ",
     "q_lo_combinatorial_surrogate": "1.0001",
     "diagnostic_ray_max_q": "4.0",
     "diagnostic_ray_npts": 25,
@@ -682,13 +645,19 @@
       }
     },
     "verdict": "A_DEPENDENT_crossing_above_q0",
-    "verdict_text": "A-DEPENDENT. The n=9 crossing EXISTS but lies ABOVE q\u2080 \u2014 the deuteron is NOT special; q\u2080 sits between the n=6 and n=9 crossings."
+    "verdict_text": "A-DEPENDENT. The n=9 crossing EXISTS but lies ABOVE q₀ — the deuteron is NOT special; q₀ sits between the n=6 and n=9 crossings.",
+    "D_sign_at_q0_measured": 0,
+    "D_sign_at_qlo_measured": 0,
+    "T_sign_at_q0_measured": 0,
+    "T_sign_at_qlo_measured": 0,
+    "3He_sign_at_q0_measured": 0,
+    "3He_sign_at_qlo_measured": 0
   },
   "caveats": [
-    "BEYOND-SUBSTRATE DIAGNOSTIC. Every 'diagnostic_' field reports F_K at q > q\u2080. The substrate modulus is q\u2080 \u2248 1.10998 (experimental proton anchor); q > q\u2080 is NOT a physical regime and no value on the ray is a prediction. The ray exists solely to distinguish 'the object has no zero' from 'the zero is above q\u2080', which are different structural statements about the same analytic function.",
-    "\u03c7^\u03bb(\u03b2_K;q) is f64-precision (pure-Python Hoefsmit seminormal; no mpfr Rust kernel in this sandbox \u2014 disk quota, documented, not a proof gap). y_\u03bb(q) is full 50-dps mpmath. Decisive for a SIGN question away from a crossing (|F| = O(1)\u2013O(10\u00b9) at the sampled points); a located crossing q carries only f64 resolution.",
-    "value_only object: F_K is NOT a binding energy (\u0394_\u03bb is value-only). This probe tests only the SIGN structure of the \u22653-row trace weighting. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo).",
-    "Scope: a LOCATED crossing is a positive existence statement (bracketed sign change of a continuous function). 'No crossing' statements are scope-(a) \u2014 about the swept interval only \u2014 never scope-(b); no invariant is proved to forbid a zero anywhere."
+    "BEYOND-SUBSTRATE DIAGNOSTIC. Every 'diagnostic_' field reports F_K at q > q₀. The substrate modulus is q₀ ≈ 1.10998 (experimental proton anchor); q > q₀ is NOT a physical regime and no value on the ray is a prediction. The ray exists solely to distinguish 'the object has no zero' from 'the zero is above q₀', which are different structural statements about the same analytic function.",
+    "χ^λ(β_K;q) is f64-precision (pure-Python Hoefsmit seminormal; no mpfr Rust kernel in this sandbox — disk quota, documented, not a proof gap). y_λ(q) is full 50-dps mpmath. Decisive for a SIGN question away from a crossing (|F| = O(1)–O(10¹) at the sampled points); a located crossing q carries only f64 resolution.",
+    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only). This probe tests only the SIGN structure of the ≥3-row trace weighting. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo).",
+    "Scope: a LOCATED crossing is a positive existence statement (bracketed sign change of a continuous function). 'No crossing' statements are scope-(a) — about the swept interval only — never scope-(b); no invariant is proved to forbid a zero anywhere."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

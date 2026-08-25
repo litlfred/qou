@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2311.14221v2",
  "source_sha256": "5aa4126bbb6df6eb",
  "brief": "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact",
- "extended": "**FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS**\n\n*SIMON LENTNER AND MART ÍN MOMBELLI*\n\n48 pp, 28 sections.\n\n**Abstract.** The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact faithful monoidal functor of tensor categories, one would like to realize B as category of representations of a braided Hopf alge- bra H(F ) in C. We prove that this is the case iﬀ B has the additional structure of a monoidal C-module category compatible with F , which equivalently means that F admits a monoidal section. For Hopf alge- bras, this reduces to a version of the Radford projection the orem. The Hopf algebra is constructed through the relative coend for m odule cate- gories. We expect this basic result to have a wide range of app lications, in particular in the absence of ﬁbre functors, and we give som e applica- tions. One particular motivation was the logarithmic Kazhd an-Lusztig conjecture.\n\n**Outline.** Introduction; Background; Our approach; Acknowledgments; 1 Preliminaries; 2 Representations of tensor categories; 2.1 Finite tensor categories; 2.2 Module categories over tensor categories; 2.3 The internal Hom; 3 The (co)end for module categories; 3.1 Existence of (co)ends; 4 Hopf algebras in braided tensor categories; 4.2 Yetter-Drinfeld modules; 5 Monoidal module categories; 5.1 Sections of monoidal functors; 5.2 Some natural module transformations; 6 Fiber functors and reconstruction results; 6.1 Coalgebras constructed from a coend",
+ "extended": "**FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS**\n\n*SIMON LENTNER AND MART ÍN MOMBELLI*\n\n48 pp, 28 sections.\n\n**Abstract.** The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact faithful monoidal functor of tensor categories, one would like to realize B as category of representations of a braided Hopf alge- bra H(F ) in C. We prove that this is the case iﬀ B has the additional structure of a monoidal C-module category compatible with F , which equivalently means that F admits a monoidal section. For Hopf alge- bras, this reduces to a version of the Radford projection the orem. The Hopf algebra is constructed through the relative coend for m odule cate- gories. We expect this basic result to have a wide range of app lications, in particular in the absence of ﬁbre functors, and we give som e applica- tions. One particular motivation was the logarithmic Kazhd an-Lusztig conjecture.\n\n**Outline.** Introduction; Background; Our approach; Acknowledgments; 1 Preliminaries; 2 Representations of tensor categories; 2.1 Finite tensor categories; 2.2 Module categories over tensor categories; 2.3 The internal Hom; 3 The (co)end for module categories; 3.1 Existence of (co)ends; 4 Hopf algebras in braided tensor categories; 4.2 Yetter-Drinfeld modules; 5 Monoidal module categories; 5.1 Sections of monoidal functors; 5.2 Some natural module transformations; 6 Fiber functors and reconstruction results; 6.1 Coalgebras constructed from a coend\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.3: If H is a Hopf algebra in a braided tensor category C, then\n- Theorem 4.5: LetH be a Hopf algebra in C. The Yetter-Drinfeld modules\n- Theorem 6.7: LetC be a tensor category, and B be a right C-module cat-\n- Theorem 6.11: Assume (C,σ ) is a braided tensor category,B is a monoidal\n- Theorem 6.17: LetC be a tensor category, and B be a monoidal right C-\n- Proposition 3.3: AssumeM,N are left C-module categories, and S, ~S :",
  "tokens": {
   "brief": 48,
-  "extended": 385
+  "extended": 506
  },
  "sections": [
   {
@@ -154,7 +154,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

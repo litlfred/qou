@@ -3,10 +3,10 @@
  "doc_id": "arxiv-2607.10525v1",
  "source_sha256": "b893cb4c87ea1d66",
  "brief": "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC.",
- "extended": "**FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES**\n\n*CÉSAR GALINDO, CLAUDIA GALLEGO, AND YIBY MORALES*\n\n34 pp, 11 sections.\n\n**Abstract.** LetGbe a finite group acting on a finite tensor categoryC. We classify fiber functors on the equivariantizationCG in terms of equivariant exact module categories overC, indexed by subgroups ofG. The data are a subgroupH⊆G and anH-equivariantC-module categoryMwhose underlyingC-module category is indecomposable, exact, and semisimple; they give a fiber functor precisely whenH acts transitively on the simple objects ofMand the stabilizer cocycle of one, hence every, simple object is non-degenerate. Through Tannaka–Krein reconstruction this describes realizations ofC G as the representation category of a finite-dimensional Hopf algebra, with no semisimplicity hypothesis onC. As applications, for odd primespwe determine the fiber functors onRep(Hp), whereHp denotes Nikshych’s semisimple Hopf algebra of dimension4p2 [Nik08]: there is one equivalence class if p≡3 (mod 4)and two ifp≡1 (mod 4).\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Finite tensor categories and their module ; 2.2 Equivariant tensor categories and their mo; 3.1 The correspondence between fiber functors ; 3.2 Rank-one equivariantizations; 3.3 Classification of fiber functors; 4.1 Tambara–Yamagami categories and fiber func; 5 Fiber functors on gaugings; 5.1 First reductions for small radical gauging; References",
+ "extended": "**FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES**\n\n*CÉSAR GALINDO, CLAUDIA GALLEGO, AND YIBY MORALES*\n\n34 pp, 11 sections.\n\n**Abstract.** LetGbe a finite group acting on a finite tensor categoryC. We classify fiber functors on the equivariantizationCG in terms of equivariant exact module categories overC, indexed by subgroups ofG. The data are a subgroupH⊆G and anH-equivariantC-module categoryMwhose underlyingC-module category is indecomposable, exact, and semisimple; they give a fiber functor precisely whenH acts transitively on the simple objects ofMand the stabilizer cocycle of one, hence every, simple object is non-degenerate. Through Tannaka–Krein reconstruction this describes realizations ofC G as the representation category of a finite-dimensional Hopf algebra, with no semisimplicity hypothesis onC. As applications, for odd primespwe determine the fiber functors onRep(Hp), whereHp denotes Nikshych’s semisimple Hopf algebra of dimension4p2 [Nik08]: there is one equivalence class if p≡3 (mod 4)and two ifp≡1 (mod 4).\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Finite tensor categories and their module ; 2.2 Equivariant tensor categories and their mo; 3.1 The correspondence between fiber functors ; 3.2 Rank-one equivariantizations; 3.3 Classification of fiber functors; 4.1 Tambara–Yamagami categories and fiber func; 5 Fiber functors on gaugings; 5.1 First reductions for small radical gauging; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: LetGbe a finite group acting on a finite tensor categoryC. Fiber\n- Theorem 1.1: Here and throughout,Cn denotes the cyclic group of ordern.\n- Theorem 1.2: Letpbe an odd prime, and letH p be Nikshych’s semisimple Hopf\n- Theorem 2.4: LetGbe a finite group acting on a finite tensor categoryC. Let\n- Theorem 3.6: LetGact on a finite tensor categoryC. Fiber functors onC G are in\n- Theorem 4.4: Letpbe an odd prime, and letH p be Nikshych’s semisimple Hopf",
  "tokens": {
   "brief": 31,
-  "extended": 364
+  "extended": 493
  },
  "sections": [
   {
@@ -69,7 +69,8 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

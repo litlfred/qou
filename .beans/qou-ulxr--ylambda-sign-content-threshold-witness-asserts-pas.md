@@ -1,11 +1,11 @@
 ---
 # qou-ulxr
 title: ylambda-sign-content-threshold witness asserts PASS on main; the producer now returns FAIL
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T12:15:31Z
-updated_at: 2026-08-25T18:59:52Z
+updated_at: 2026-08-25T19:18:19Z
 ---
 
 CONFIRMED 2026-08-25, measured on main. Audit:

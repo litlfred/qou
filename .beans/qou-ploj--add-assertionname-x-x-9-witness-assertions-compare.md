@@ -1,11 +1,11 @@
 ---
 # qou-ploj
 title: 'add_assertion(name, X, X): 9 witness assertions compare a value to itself and can never fail'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T19:47:06Z
-updated_at: 2026-08-25T19:47:54Z
+updated_at: 2026-08-25T21:28:54Z
 ---
 
 FOUND 2026-08-25 while draining the two state-2 records of
@@ -98,3 +98,40 @@ The tool exits 1 on any MEASURED hit and has a `--selftest` that fails if the kn
 instance stops being detected or if a genuine two-sided assertion is flagged. Wiring
 it into `scripts/precision-gates.sh` or `check-sidecars.sh` would stop the class
 recurring, but that is a policy call, not mine to make.
+
+
+## DRAINED 2026-08-25 — 13 -> 0 MEASURED, and one probe had NOTHING BUT tautologies
+
+All 9 remaining call sites fixed. The audit now reports `MEASURED: 0`, exit 0.
+`--selftest` OK.
+
+**Uniform disposition: demote to `add_data`.** In every case the quantity is a
+recorded finding with no independent expectation — "did we find a violator?", "is the
+verdict robust?", "does the pattern survive the control?" — so inventing an `expected`
+would have fabricated an expectation the author never had. Two of the sites say so in
+their own trailing comments: `# RAW, not a target` and `# report RAW (not a target)`,
+in `su2_spinor_multiplicity_resolution`. The author knew it was not a check and used
+`add_assertion` anyway, because that is the prominent slot and there is no equally
+visible "record a finding" equivalent. That is the API shape driving the misuse.
+
+**`threerow-crossing-a-dependence` had NO other assertions.** Its six (3 isotopes x 2
+endpoints, from a 2-site loop) were its entire assertion set, under the comment
+*"Falsifiable assertions: the SIGNS at the two physical endpoints, per isotope."*
+Removing them leaves the witness with **zero** assertions. That is honest — it was
+checking nothing before — but it means this witness has never verified anything, and
+whoever wants a real gate there has to write the first one.
+
+**One site is patched but NOT executed**: `threerow_isospin_parity_probe` cannot be run
+to completion (see `qou-iav7` — ETA 1248 s on the ⁴He leg alone). The edit is
+AST-verified well-formed and `add_data(key, value)` matches the signature, but no run
+confirms it. Stated rather than glossed.
+
+**A mistake worth recording.** My first patch of `su2_spinor_multiplicity_resolution`
+broke it: the original `add_assertion` calls carried `tolerance=0, source="..."` on
+lines below the ones I had read, and `add_data(key, value)` takes neither. It raised
+`TypeError` on run. Caught only because I ran all seven probes rather than trusting the
+AST edit — the source text is now preserved in a companion `_source` data key. An
+AST-level edit that type-checks can still be wrong about the callee's signature.
+
+LITERAL (17) deliberately untouched — several are intentional provenance statements
+(`no_h4_fit_performed`) where the right move is `add_parameter`, not deletion.
