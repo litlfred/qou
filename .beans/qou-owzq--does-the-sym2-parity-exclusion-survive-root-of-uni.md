@@ -76,7 +76,22 @@ Two consequences for this bean:
 So: still open, still generic-q-only, and now with a corpus-verified reason that the
 nearby three-row results are not a substitute for doing it.
 
-## ANSWERED 2026-08-25 — the exclusion DOES extend. Ingredient (c) verified.
+## 2026-08-25 — ingredient (c) COMPUTED at k = 1..12. NOT Lean-proved. Read the split below.
+
+**Answering the owner's question 'lean proved?' directly: NO.** The FS result
+below is a numerical probe over finitely many levels, not machine-checked
+mathematics. What IS Lean-proved is a different half, and the two must not be
+conflated:
+
+| | status |
+|---|---|
+| CONSEQUENCE: parity-split multiplicity count ⇒ even dimension ⇒ never 3 | **Lean-proved, sorry-free** (Sym2GateMultiplicity, PR #5764) — and CATEGORY-AGNOSTIC: `sym2SingletCount` is defined over an arbitrary `S : Finset ℕ`, `m : ℕ → ℕ` with the split keyed only on `Even j`, so it never mentions generic-q vs truncated and applies to both |
+| PREMISE: the FS split follows the parity of the index | **NOT Lean-proved in either case.** Cited literature for generic q; numerically computed at k = 1..12 here for truncated. Mathlib has no SU(2) representation type to state it in |
+
+So the truncated case is now in the SAME epistemic position as the generic-q
+case, no better: a Lean-proved consequence resting on a modelling premise that
+is supplied from outside Lean. The probe moved the premise from *unverified* to
+*computed at finite k*. It did not make anything proved.
 
 Computed, not argued. computations/eightfold/su2k_frobenius_schur_indicator_probe.py
 evaluates the Frobenius-Schur indicator directly from the modular data of the
