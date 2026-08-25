@@ -84,7 +84,17 @@ ATOMS = [
     # 24.5 s + cancel 18.1 s, deg_u(p) = 180, a_0..a_18, reconstruction
     # exact. That is the whole atom in well under a minute.
     (2, 2, "helium-4", None),
+    # A=5. Measured: tr_M 325 s + cancel 84 s, deg_u(p) = 216, a_0..a_20,
+    # reconstruction exact. Correct but ~7 minutes, so it is behind
+    # `--max-a 5` rather than in the default run.
+    (2, 3, "helium-5", None),
 ]
+
+#: Default ceiling. A<=4 is the whole set in about a minute; A=5 adds
+#: seven. `tr_M` scales ~13x per nucleon (A=3 1.8 s, A=4 24.6 s, A=5
+#: 325 s), so A=6 is an hour-plus and must be run under the AGENTS.md
+#: long-compute logging discipline, not casually.
+DEFAULT_MAX_A = 4
 
 
 def _sym(text: str):
@@ -157,7 +167,15 @@ def assert_routes_agree(w: WitnessBuilder) -> None:
         )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--max-a", type=int, default=DEFAULT_MAX_A,
+                    help=f"largest A to compute (default {DEFAULT_MAX_A}; "
+                         "A=5 adds ~7 min, A=6 is an hour-plus)")
+    args = ap.parse_args(argv)
+
     started = time.monotonic()
     w = WitnessBuilder("habiro-coefficients-via-peel", engine="sympy",
                        output_dir=_HERE, start_time=started)
@@ -175,6 +193,10 @@ def main() -> int:
 
     results = {}
     for Z, N, label, ref_key in ATOMS:
+        if Z + N > args.max_a:
+            print(f"{label:10s} A={Z+N} SKIPPED (--max-a {args.max_a})",
+                  flush=True)
+            continue
         r = habiro_via_peel(Z, N)
         results[label] = r
         print(f"{label:10s} A={r['A']} n={r['n_strands']} "
@@ -206,6 +228,7 @@ def main() -> int:
 
     assert_routes_agree(w)
 
+    w.add_parameter("max_a", args.max_a)
     w.add_data("results", results)
     w.add_data("method",
                "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial "
