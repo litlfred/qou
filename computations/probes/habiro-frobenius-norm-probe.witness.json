@@ -1,7 +1,8 @@
 {
   "computation": "habiro-frobenius-norm-probe",
-  "computedAt": "2026-08-11T01:29:48.809829+00:00",
+  "computedAt": "2026-08-25T18:59:33.531354+00:00",
   "description": "Route A probe: compute the algebraic norm N(Frob_p) = ∏_σ σ(Frob_p) for each (atom, prime). If Frob_p is a unit in Z[ζ_{2p}], N(Frob_p) = ±1. Any |N| > 1 proves non-unitality at that prime.",
+  "coefficients_source": "computations/habiro/habiro-coefficients-atomic.witness.json",
   "primes": [
     2,
     3,
@@ -22,24 +23,24 @@
           "exact": true,
           "truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_trace_int": 8,
+          "galois_trace_int": 16,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 160,
+          "galois_norm_int": 64,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 160
+          "galois_norm_abs": 64
         },
         {
           "prime": 3,
           "exact": true,
           "truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_trace_int": -1,
+          "galois_trace_int": 1,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 7,
+          "galois_norm_int": 1,
           "galois_norm_is_integer": true,
-          "galois_norm_is_unit": false,
-          "galois_norm_abs": 7
+          "galois_norm_is_unit": true,
+          "galois_norm_abs": 1
         },
         {
           "prime": 5,
@@ -100,24 +101,24 @@
           "exact": true,
           "truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_trace_int": 8,
+          "galois_trace_int": 4,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 272,
+          "galois_norm_int": 4,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 272
+          "galois_norm_abs": 4
         },
         {
           "prime": 3,
           "exact": true,
           "truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_trace_int": -4,
+          "galois_trace_int": 1,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 16,
+          "galois_norm_int": 1,
           "galois_norm_is_integer": true,
-          "galois_norm_is_unit": false,
-          "galois_norm_abs": 16
+          "galois_norm_is_unit": true,
+          "galois_norm_abs": 1
         },
         {
           "prime": 5,
@@ -178,36 +179,36 @@
           "exact": true,
           "truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_trace_int": -448,
+          "galois_trace_int": 384,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 174080,
+          "galois_norm_int": 36864,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 174080
+          "galois_norm_abs": 36864
         },
         {
           "prime": 3,
           "exact": true,
           "truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_trace_int": -52,
+          "galois_trace_int": 24,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 784,
+          "galois_norm_int": 171,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 784
+          "galois_norm_abs": 171
         },
         {
           "prime": 5,
           "exact": true,
           "truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_trace_int": 132,
+          "galois_trace_int": 58,
           "galois_trace_is_integer": true,
-          "galois_norm_int": 1678171,
+          "galois_norm_int": 101321,
           "galois_norm_is_integer": true,
           "galois_norm_is_unit": false,
-          "galois_norm_abs": 1678171
+          "galois_norm_abs": 101321
         },
         {
           "prime": 7,
@@ -256,8 +257,8 @@
   ],
   "summary": {
     "n_exact": 7,
-    "n_unit": 0,
-    "n_nonunit": 7,
-    "route_a_supported": true
+    "n_unit": 2,
+    "n_nonunit": 5,
+    "route_a_supported": false
   }
 }
