@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T11:27:47Z
+updated_at: 2026-08-25T11:38:59Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -240,3 +240,54 @@ phantom.
 
 The pn-splitting Phi_n finding is UNAFFECTED: that block's numbers are
 quark-level and appear nowhere in this atomic-mass witness.
+
+
+=== TRIAGE OF THE 3 "NEVER EXISTED" (commit 7ba6da945a) — the sweep was wrong ===
+
+My own sweep under-reported the corruption it found, in the same direction as
+the mistake it was written to prevent.
+
+Its regex was [A-Za-z0-9_.-]+\.witness\.json — no space. So a citation reading
+`he4-sdp-compositional-canonical evaluation.witness.json` was captured as just
+`evaluation.witness.json` and reported as a missing witness with a plausible
+name. It is not a missing witness; it is a CORRUPT citation — a hyphen
+replaced by a space inside a filename. The truncation also collided two
+distinct citations onto one name, so the real count is 4, not 3.
+
+  'adjacent-vs-full-canonical evaluation.witness.json'
+      mass-theory/markov-pair-z2.md
+  'atomic-tr-m-mpfr-exact representation.witness.json'
+      mass-theory/six-term-mass-formula-complete-table-data.md
+  'canonical evaluation-phiq-pair-knot-markov-trace.witness.json'
+      mass-theory/spin-involution-lp-dual-invariance-proof.md
+  'he4-sdp-compositional-canonical evaluation.witness.json'
+      mass-theory/he4-channel-active-set.md
+
+TWO of the four sit inside MARKDOWN LINK TARGETS, where an unescaped space
+truncates the URL — those links are broken in the rendered page as well as
+pointing at nothing.
+
+NOT FIXED, DELIBERATELY. Each was checked BOTH as written AND with the space
+repaired to a hyphen; none resolves either way, so the intended target is
+UNKNOWN. Nearby files exist with related stems —
+  adjacent-vs-full-probe.witness.json
+  he4-sdp-compositional-probe.witness.json
+  atomic-tr-m-mpfr-50dps.witness.json
+  (nothing at all for the phiq-pair one)
+— but mapping a citation onto a nearby filename is GUESSING, and guessing a
+provenance citation is precisely the failure this line of work is about. DO
+NOT wire them to the nearby candidates without an authoring decision.
+
+Introducing commit UNDETERMINED: `git log -S` across all refs does not
+complete in 2 min on this repo. Not pursued.
+
+The audit now matches internal spaces, reports CORRUPT as its own class, and
+states in its output that both spellings were checked — so the next reader is
+not invited to guess either.
+
+STILL OPEN from the sweep: the 3 REMOVED citations
+(atom-mass-complete-wedderburn — recovered and analysed above;
+co-molecular-binding, cited by molecular-construction/co-triple-bond-energy.md;
+mass-qvalue-by-level, cited by mass-theory/unified-iterative-correction-proof.md).
+The latter two are NOT triaged. Recover each with a basename search before
+saying anything about it.
