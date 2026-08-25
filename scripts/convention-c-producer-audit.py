@@ -778,6 +778,18 @@ def is_c_form_reciprocal(node: ast.AST, half_vars: set):
     return None
 
 
+def _area_of(path: str) -> str:
+    """The area label a blocked/declared site is reported under.
+
+    Kept deliberately coarse — it names where to LOOK, not what the site is.
+    """
+    for pfx in ("tools/pyhecke/", "computations/probes/", "computations/qbeta/",
+                "computations/deltalambda/", "qou-mass/", "tools/"):
+        if path.startswith(pfx):
+            return pfx.rstrip("/")
+    return path.split("/", 1)[0] if "/" in path else path
+
+
 def classify(path: str, blocked_files=(), declared_files=()) -> str:
     """Bucket a site. `blocked_files` comes from the registry, not from here.
 
@@ -793,7 +805,15 @@ def classify(path: str, blocked_files=(), declared_files=()) -> str:
     registry means a site is only excused while a row actually excuses it.
     """
     if path in blocked_files:
-        return "tools/pyhecke — BLOCKED on C by design (registry)"
+        # The bucket name carries the AREA, not a fixed "tools/pyhecke" — a
+        # blocked row is keyed on a file path and nothing restricts it to that
+        # package. It read "tools/pyhecke — BLOCKED on C by design" for every
+        # blocked file until 2026-08-25, when the first non-pyhecke row landed
+        # (computations/probes/markov_reduction_h3_to_h4_verify.py, bean
+        # qou-ze9n) and the summary line filed a computations/ probe under a
+        # tools/ heading. Harmless to the count, but the count is not what a
+        # reader uses to go find the site.
+        return f"{_area_of(path)} — BLOCKED on C by design (registry)"
     if path in declared_files:
         return ("tools/pyhecke — DECLARED C in evaluators.z, R10-waived "
                 "(open defect, still actionable)")
