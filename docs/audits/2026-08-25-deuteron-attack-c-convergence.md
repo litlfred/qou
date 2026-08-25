@@ -140,3 +140,97 @@ no-derivation findings are corpus-state facts, each with the grep that establish
 **Not claimed:** that the braid word IS wrong — only that it is what remains after the
 interface scalar and α are eliminated, and that it carries an undocumented convention
 (the hard-coded `['p']*Z + ['n']*N` ordering, worth 3–6 % of `B_sym`; `qou-h7mh`).
+
+---
+
+# Follow-up the same session — the braid-word freedom at A = 2 is now CLOSED
+
+Owner: *"go"*. Continuing into the braid word, which is where the three lines pointed.
+
+## The deuteron is topology-blind, so two of the freedoms are trivially absent
+
+`atom_braid_word_3A` builds a **linear chain**: nucleon `k` occupies strands
+`3k … 3k+2`; intra-nucleon crossings sit at generators `3k` and `3k+1`; the bond to
+`k+1` is the **single bridge generator `σ_{3k+2}`**, joining nucleon `k`'s last quark to
+`k+1`'s first.
+
+| A | chain bonds `A−1` | complete graph `C(A,2)` |
+|---|---|---|
+| **2** | **1** | **1** ← identical |
+| 3 | 2 | 3 |
+| 4 | 3 | 6 |
+| 7 | 6 | 21 |
+
+**At A = 2 every topology is the same one bond.** So the two live topology positions —
+`2026-06-20-chirality-forces-complete-graph-topology.md` ("chirality forces the complete
+graph", RMS 6.19 vs the chain's 10.07) and bean `qou-v0yw` ("the graph itself is NOT
+derivable; the ad-hoc chain undercounts coordination ~1 bond/nucleon vs data ~3") —
+**cannot be adjudicated by the deuteron and cannot fix it either.** The chirality audit's
+own table shows every model giving the *same* A = 2 value. Ordering is likewise vacuous
+at A = 2: `['p']*Z + ['n']*N` has one arrangement.
+
+## The bridge crossing count: no principled value lands (NEW)
+
+Iterated the actual p-n element `(σ − h·t)` under the Hecke relation `σ² = hσ + 1`, so
+`(σ − ht)^m = a_m σ + b_m` and `μ_m = a_m z + b_m`. Pre-specified sweep, convention D,
+proton pin, 50 dps. Required `μ = 0.587715064111`.
+
+| m | μ_m | B (MeV) | B_AME/B |
+|---|---|---|---|
+| **1 (production)** | 0.50822979 | 2.832825 | **0.7853** |
+| 2 | 1.0109996 | −0.046131 | — |
+| 3 | 0.51392837 | 2.786150 | 0.7984 |
+| 4 | 1.0221203 | −0.091923 | — |
+| 5 | 0.51969082 | 2.739476 | 0.8120 |
+| 6 | 1.0333632 | −0.137716 | — |
+| 7 | 0.52551784 | 2.692802 | 0.8261 |
+
+**Two structural facts, neither of them a fit:**
+
+1. **Parity decides bound vs unbound.** Even `m` gives `μ > 1` ⇒ `−ln μ < 0` ⇒ **negative
+   binding**. This is `stacked_crossing_gt_one` (`qou-kj4v`) generalised: the convex
+   decomposition `μ₊ + μ₋ = 1` is left only by stacking, and stacking to an even power
+   overshoots past 1.
+2. **Odd `m` creeps the wrong-slow way.** `μ` rises ≈ 0.0058 per step of 2, so reaching
+   0.5877 needs **m ≈ 29**. A 29-crossing p–n bond is not a principled number, and tuning
+   `m` is precisely what `qou-h7mh` forbids and `content_keyed_interface_refuted` closes.
+
+And the parity handle **cannot** be repurposed to split ³S₁ from ¹S₀: `qou-kj4v` records
+that the naive braid-topology argument **runs backwards** — identical nucleons ⇒ `π₁ = B_n`
+so `σ` already closes, distinguishable ⇒ `P_n` so only `σ²` closes, predicting `σ²` for pn
+and `σ` for pp/nn, i.e. **binding pp and unbinding the deuteron.**
+
+## Where ²H stands: every braid-word freedom is eliminated
+
+| candidate | status at A = 2 | established by |
+|---|---|---|
+| interface **element** | ✗ no principled element lands (closest 4.25 %, derived one 13.5 % off) | Line 1, this session |
+| bridge **crossing count** | ✗ no small integer lands; even ⇒ unbound; odd needs m ≈ 29 | this section, new |
+| **topology** (chain vs complete) | ✗ vacuous — one bond either way | this section, new |
+| nucleon **ordering** | ✗ vacuous — one arrangement | this section, new |
+| crossing **multiplicity** tuning | ✗ forbidden (content-keyed) | `qou-kj4v`, `qou-h7mh` |
+| **α** | ✗ pinned by β-decay; per-channel α is a fit signature | 2026-08-09 audit |
+| any **flavour-only μ** | ✗ `μ(³S₁) = μ(¹S₀)` exactly | Line 2 |
+
+**Two things remain, and only two:**
+
+1. **The functional form `B = −α·ln|tr_M|` — posited.** Five-path corpus-grep finds no
+   derivation, **nothing in Lean**, and the only statement in `content/` is a row in a
+   **notation table**; the dashboard's cited definition (`standard-part-functor.md`) does
+   not contain it. Cheapest honest action in the whole ²H thread: derive it or mark it
+   posited.
+2. **A space index on the interface** (`qou-vbyi`) — the only route past the exact
+   flavour-only degeneracy, and the only way ³S₁–³D₁ tensor mixing gets somewhere to live.
+
+## What this is and is not
+
+**Not a resolution of the deuteron.** It is an elimination: the 27 % over-bind is *not*
+attributable to any remaining freedom in the braid word at A = 2, so the defect is in the
+functional form or outside the word entirely.
+
+**Scope.** The crossing-count result is scope **(a)** — a negative over `m = 1…7` plus a
+linear extrapolation, at this q₀ under convention D; it does not exclude some large or
+non-integer structure, it says no *principled small* one works. The topology-vacuity and
+ordering-vacuity results are **combinatorial facts about A = 2**, not claims about A ≥ 3,
+where the chain-vs-complete-graph question is live and contested. The parity fact is
+structural (`μ₊ + μ₋ = 1`), the backwards-assignment is quoted from `qou-kj4v`.
