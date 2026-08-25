@@ -1,11 +1,11 @@
 ---
 # qou-hhm3
 title: 'Wall-clock timing fields are not precision loss: split elapsed_sec out of the raw-float64 ratchet (same argument as qou-xt5l integral floats)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T16:41:59Z
-updated_at: 2026-08-25T18:03:16Z
+updated_at: 2026-08-25T19:01:40Z
 ---
 
 ## Found 2026-08-25 draining the 5 NEW raw-float64 witnesses on main
@@ -129,3 +129,57 @@ gate flag less, so it needs its own PR with a self-test proving a genuine float6
 the same witness still fires. Note this is NOT the `--rebaseline`/baseline-widening move the
 directive bans (no baseline file is touched); it is a reclassification, the same shape
 `qou-xt5l` already landed for integral floats. But it deserves the same scrutiny.
+
+
+## CLOSED 2026-08-25 — carve-out landed, with the self-test this bean asked for
+
+`VOLATILE_TIMING_FIELDS` in `witness_raw_float64_audit.py`, reported on its own
+line, never silent. Declared by NAME (eight of them), never by a `*_sec`
+pattern -- the caution this bean was filed with, and it earned its keep: the
+self-test now proves `half_life_sec`, `lifetime_seconds` and `tau_sec` are
+STILL FLAGGED. A suffix rule would have silenced all three, and precision is
+the entire point in those.
+
+Self-test 30 -> 36 cases. The requirement this bean set -- "a self-test proving
+a genuine float64 finding in the same witness still fires" -- is case
+`{"elapsed_sec": 0.001, "mass_mev": 938.2720881} -> 1`. Also covered: all four
+JSON types the field actually occurs as (53 str / 34 float / 16 null / 3 int),
+none of which may throw.
+
+MEASURED against main, every headline, so the change is fully accounted:
+
+                              main        with carve-out
+  witnesses carrying f64      1288   ->   1278
+  total raw float64 fields  258,324  ->  258,236   (-88)
+  f64-integrator carve-out     65/3  ->     65/3   unchanged
+  deprecated-f64 carve-out     97/1  ->     97/1   unchanged
+  LP-dual carve-out           429/21 ->   429/21   unchanged
+  integral-valued floats  224,823/836 -> 224,823/836  unchanged
+  volatile-timing              --    ->    88/31   NEW
+  NEW dirty / REGRESSED         0/0  ->      0/0
+
+## Corrections to this bean's own numbers
+
+**"24 files / 14 with floats" was the `elapsed_sec`-only measure.** With all
+eight declared names the carve-out covers **31 witnesses / 88 fields**. Only
+four names occur at all: `elapsed_sec` 33 occurrences in 13 files, `wall_sec`
+36/7, `elapsed_seconds` 16/6, `wall_seconds` 5/5. The other four are
+forward-looking and unexercised by the corpus -- said explicitly in the source
+comment so eight names are not read as eight measured cases.
+
+So BOTH earlier figures were narrow: #5763's "exactly 4 witnesses" and my "24".
+Mine was closer and still not the number that matters, which is per-name.
+
+**An accounting bug I introduced and caught here:** the first version dropped
+the integral count under a timing field, so an integral-valued timer vanished
+from both buckets (visible as a 90-vs-88 gap). Fixed to `integral += i`,
+matching the LP-dual carve-out; the diff above shows integral-valued unchanged
+at 224,823 either way.
+
+## Why this was safe to do now, when it was not before
+
+The ratchet was ALREADY green (NEW 0) before this change, so it cannot be the
+banned "make a red green by widening" move -- and no baseline file is touched,
+so it is not a `--rebaseline` either. It is a reclassification, exactly the
+shape `qou-xt5l` landed. I deferred it on 2026-08-25 while the ratchet was red
+for precisely this reason; #5763 draining the five is what made the moment.
