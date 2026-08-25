@@ -66,6 +66,15 @@ from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf, _chi_lambda_of_word_mpf,
 )
 
+# RAISE PRECISION AT MODULE SCOPE, before any mpf is built.
+# `set_compute_dps()` was called only inside main() (below), while
+# UPSTREAM_C3_ABS builds two mpf at module scope -- so both were constructed at
+# mpmath's default 15 dps and carry 15-dps binary precision for the rest of the
+# run. `mpf_import_time_dps_audit` proves this statically (literal arg), and
+# these two were the ONLY "proven lossy" sites left on main and the only NEW
+# file the audit's baseline had not seen. Bean qou-j6gb.
+set_compute_dps()
+
 T0 = time.time()
 # The upstream probe's recorded c_3 values (|chi| variant).  This probe must
 # reproduce them in convention C before its D numbers mean anything:
