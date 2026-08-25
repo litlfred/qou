@@ -76,10 +76,25 @@ so the discrepancy is not merely nonzero on a sample — it **is** `[3]_q`.
 
 | declaration | statement |
 |---|---|
-| `QOU.Eightfold.OcneanuTwoThreeNotProportional.laurent_identity` | the division-free Laurent core, no `q²−1` denominator |
-| `…​.qb_two_four_sub_one_five` | `[2]_q[4]_q − [1]_q[5]_q = [3]_q` |
+| `QOU.Eightfold.OcneanuTwoThreeNotProportional.qb_shift_identity` | `[n+1]_q[n+3]_q − [n]_q[n+4]_q = [3]_q` for **every** `n` |
+| `…​.qb_two_four_sub_one_five` | `[2]_q[4]_q − [1]_q[5]_q = [3]_q` (the `n = 1` case) |
 | `…​.ratio_eq_iff_qb_three_eq_zero` | the two ratios are equal **iff** `[3]_q = 0` |
-| `QOU.Archimedean.OcneanuTwoThreeSubstrate.ocneanu_ratio_N2_ne_N3` | at real `q > 1` they differ |
+| `QOU.Archimedean.OcneanuTwoThreeSubstrate.qb_pos` | every `[m]_q` is positive at `q > 1` |
+| `…​.ocneanu_ratio_N2_ne_N3` | at real `q > 1` the `N=2` and `N=3` ratios differ |
+| `…​.ocneanu_ratio_adjacent_ne` | **and so do the ratios at `N` and `N+1`, for every `N`** |
+
+### The exclusion is stronger than it was recorded
+
+Proving it generalised it. The right-hand side of `qb_shift_identity` **does not
+depend on `n`**: the cross-product discrepancy between the weight ratios at `N`
+and `N+1` is `[3]_q` at *every* `N`, not just at `N = 2`.
+
+So the recorded reason — *"the `N=2` and `N=3` traces are not proportional"* — is
+the first case of a fact that holds all the way up. No re-tuning to an adjacent
+`N` reproduces the weighting, and each one misses by the same amount. The row
+could be restated at that width; it is left as-is here because widening an
+exclusion is a change to the prune, not an audit finding, and belongs in the
+cheat sheet with the author's eyes on it.
 
 Stated as an `iff` on purpose: it says exactly what would have to hold for the
 traces to be proportional, rather than asserting they are not. The archimedean

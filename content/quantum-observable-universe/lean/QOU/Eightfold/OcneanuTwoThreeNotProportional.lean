@@ -63,14 +63,6 @@ theorem sub_inv_ne_zero (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) : q - q⁻¹ 
   intro h
   exact hq2 (by field_simp at h; linear_combination h)
 
-/-- The division-free core: a Laurent identity in `q` alone, with no
-`q² − 1` denominator anywhere. Everything below is derived from it. -/
-theorem laurent_identity (q : R) (hq : q ≠ 0) :
-    (q ^ 2 - (q ^ 2)⁻¹) * (q ^ 4 - (q ^ 4)⁻¹)
-      - (q ^ 1 - (q ^ 1)⁻¹) * (q ^ 5 - (q ^ 5)⁻¹)
-      = (q ^ 3 - (q ^ 3)⁻¹) * (q - q⁻¹) := by
-  field_simp; ring
-
 /-- `[2]_q = q + q⁻¹` — the convention-fixing case (AGENTS.md §7aa). -/
 theorem qb_two_eq (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
     qb q 2 = q + q⁻¹ := by
@@ -92,17 +84,33 @@ theorem qb_five_eq (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
     qb q 5 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := by
   rw [qb, div_eq_iff (sub_inv_ne_zero q hq hq2)]; field_simp; ring
 
+/-- **The general shift identity.** `[n+1]_q [n+3]_q − [n]_q [n+4]_q = [3]_q`
+for **every** `n` — the right-hand side does not depend on `n`.
+
+This is the statement the exclusion actually wants. Comparing the Ocneanu weight
+ratio at `N` and at `N+1` reduces to this cross-product difference, and it is
+`[3]_q` at every `N`. So re-tuning does not fail to reproduce the `N = 2`
+weighting *only* at `N = 3`: **every** adjacent pair of `N` re-weights, and
+always by the same amount. -/
+theorem qb_shift_identity (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
+    qb q (n + 1) * qb q (n + 3) - qb q n * qb q (n + 4) = qb q 3 := by
+  have hd : q - q⁻¹ ≠ 0 := sub_inv_ne_zero q hq hq2
+  have hpn : q ^ n ≠ 0 := pow_ne_zero _ hq
+  have e1 : q ^ (n + 1) = q ^ n * q ^ 1 := pow_add q n 1
+  have e3 : q ^ (n + 3) = q ^ n * q ^ 3 := pow_add q n 3
+  have e4 : q ^ (n + 4) = q ^ n * q ^ 4 := pow_add q n 4
+  simp only [qb, e1, e3, e4, div_mul_div_comm, div_sub_div_same]
+  rw [div_eq_div_iff (mul_ne_zero hd hd) hd]
+  field_simp
+  ring
+
 /-- **The identity.** `[2]_q [4]_q − [1]_q [5]_q = [3]_q`.
 
 This is what replaces *"differs at every `q` tested"*: the discrepancy between
 the two weight ratios is not merely nonzero on a sample, it is exactly `[3]_q`. -/
 theorem qb_two_four_sub_one_five (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
-    qb q 2 * qb q 4 - qb q 1 * qb q 5 = qb q 3 := by
-  have hd : q - q⁻¹ ≠ 0 := sub_inv_ne_zero q hq hq2
-  have key := laurent_identity q hq
-  simp only [qb, div_mul_div_comm, div_sub_div_same]
-  rw [div_eq_div_iff (mul_ne_zero hd hd) hd]
-  linear_combination (q - q⁻¹) * key
+    qb q 2 * qb q 4 - qb q 1 * qb q 5 = qb q 3 :=
+  qb_shift_identity q hq hq2 1
 
 /-- **The gate.** The `N=2` and `N=3` Ocneanu weight ratios are equal **iff**
 `[3]_q = 0`.
