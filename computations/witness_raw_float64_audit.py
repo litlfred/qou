@@ -201,6 +201,22 @@ def _ephemeral_timing_fields() -> frozenset[str]:
         _s.path.insert(0, str(_P(__file__).resolve().parents[1]
                               / "tools" / "qou-substrate" / "python"))
         from qou_substrate.witness import _EPHEMERAL_META_FIELDS as _M
+        # THIS IS A SUBSTRING TEST OVER THAT SET, NOT THE SET ITSELF, and the
+        # difference is a trap worth naming here (bean qou-hhm3 / #5793).
+        # Measured on main: the mask holds 9 names, this carves 5. So ADDING A
+        # NAME TO _EPHEMERAL_META_FIELDS DOES NOT CARVE IT HERE unless the name
+        # happens to contain "dur" or "elapsed" -- `wall_sec` contains neither.
+        #
+        # That matters because it fails SILENTLY. Broadening the filter is the
+        # dangerous move and the self-test below warns about it loudly (a /time/
+        # test excuses `y_times_chi`, the Frobenius pairing, 177 fields). This
+        # is the quiet one: extend the mask expecting these counts to drop, and
+        # nothing happens, with no error and no diff to explain it. An agent
+        # did exactly that and had to retract the prescription.
+        #
+        # Widening coverage therefore needs BOTH halves -- the name declared in
+        # the mask AND reachable by whatever selects from it here -- which is
+        # the open question on qou-ywee, not a one-sided edit.
         return frozenset(n for n in _M if "dur" in n.lower() or "elapsed" in n.lower())
     except Exception:
         # Never let provenance-import failure silently widen the gate: an empty

@@ -1,46 +1,46 @@
 {
-  "engine": "mpmath50+sympy-exact+f64-seminormal",
+  "engine": "mpmath50",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T18:11:26.126480+00:00",
-  "commitSha": "4c1fea6a639adf9785c2a37b075f00f82ebc6f2c",
+  "computedAt": "2026-08-25T19:27:32.175959+00:00",
+  "commitSha": "9d73d6eb518e6d5664f5b7b9341a5edcb48219de",
   "assertions": [
     {
-      "name": "q_cross_sequence_monotone",
-      "computed": false,
-      "expected": false,
+      "name": "wenzl_level_is_constant_two",
+      "computed": 1,
+      "expected": 1,
       "passed": true
     },
     {
-      "name": "crossings_exist_for_all_n",
-      "computed": false,
-      "expected": false,
+      "name": "no_pole_on_positive_reals",
+      "computed": 1,
+      "expected": 1,
       "passed": true
     },
     {
-      "name": "q0_position_informative",
-      "computed": false,
-      "expected": false,
+      "name": "three_row_stratum_is_structural_zero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "reported_crossings_are_n_independent",
+      "computed": 1,
+      "expected": 1,
       "passed": true
     },
     {
       "name": "dual_cauchy_identity_holds",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "q0_on_real_level_branch",
-      "computed": true,
-      "expected": true,
+      "computed": 1,
+      "expected": 1,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 57,
+  "durationMs": 7,
   "computation": "threerow-qcross-trend",
   "scriptFile": "threerow_qcross_trend_probe.py",
-  "scriptHash": "f3c4c9f26a0a",
-  "scriptCommitSha": "c3b8f322cc3956bb4891858d95d6b0c7eb3bd839",
+  "scriptHash": "57ef57881ba2",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,497 +52,129 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
-  "description": "Bean qou-prjo. Asks whether q_cross(n) \u2014 the q at which the \u0394_\u03bb-weighted \u22653-row archimedean trace changes sign \u2014 is a STRUCTURED SEQUENCE, and whether q\u2080's position in it is DERIVED or COINCIDENTAL. Establishes three branch-geometry facts first: (BG-1) the y_\u03bb normaliser is the closed form Z=((1\u2212Q^r)/(1\u2212Q))^n by dual Cauchy, and is positive on (1,q*), so it can neither create nor destroy a crossing; (BG-2) the Wenzl level eigenvalue Q^r=u\u00b3/(\u2212u\u2076\u2212u\u2074+u\u00b3+u\u00b2+1) (u=\u221aq) has a POLE at q*=1.278449576579693\u2026, above which the effective level r is COMPLEX \u2014 so the real-level branch is (1,q*) and the previously-reported n=9 crossings at q\u22481.43/1.46 lie OFF it; (BG-3) at integer level r=k every \u03bb with \u2113(\u03bb)>k has s_\u03bb=0, giving the level-integer ladder q_k (explicit integer polynomial) which increases and accumulates at q*, with q\u2080 strictly inside (q_2,q_3)=(1,1.15416\u2026). On the real-level branch the crossing set is computed for the character-free G_n (n=3..N) and the character-dressed F_K (D,T,\u00b3He,\u2074He, including the n=12 \u2074He leg left open by #4829). Crossings are shown EXACTLY ALGEBRAIC (irreducible integer minimal polynomial in u=\u221aq, certified real-root isolation). A GENERICITY GATE then measures the width of the interval around q\u2080 that reproduces the same sign pattern, in absolute terms, as a fraction of the branch, in bits, and by counting systematically-generated natural constants inside it. \u0394_\u03bb=(\u22121)^{n(\u03bb)}\u00b7dim is the PROVED value-only weight; free_parameters=0; AME never used; experimental proton anchor; layer-pure; live y_\u03bb closed form, NOT the muon cache.",
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_qcross_trend_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_qcross_trend_probe.py"
+  },
+  "description": "Records why the q_cross(n) trend question is convention-C-only. The probe straddled two conventions inside one computation: _D_wenzl / U_STAR / Q_STAR and the level-integer ladder were convention C hardcoded in the file, while level_r() read the corpus's convention-D _wenzl_constants. Under D, Q^r = Q^2 exactly, so the level is the constant 2, there is no pole (the live function is regular at C's q*), no real-level branch and no ladder; and the l(lam) >= 3 stratum is a structural zero, so the crossings previously reported were round-off, shown by their n-independence. BG-1, the dual-Cauchy normaliser identity, is convention-independent and is re-verified. Supersedes the 2026-08-09 C-frame witness.",
   "parameters": {
-    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
-    "q0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR); live closed-form y_\u03bb",
-    "free_parameters": 0,
-    "q_star_real_level_branch_end": "1.27844957657969315917801065461",
-    "u_star": "1.13068544546204058723181368553",
-    "wenzl_pole_polynomial_in_u": "-u^6 - u^4 + u^3 + u^2 + 1",
-    "level_ladder_polynomial_in_u": "sum_{j<k} u^(4j+3) - u^(4k) - u^(4k+2)",
-    "n_max_character_free": 23,
-    "chi_precision": "f64 Hoefsmit seminormal (sparse kernel, = dense to 1.4e-15)"
+    "q0": "1.10997858275138080759166909561",
+    "Q": "1.23205245416676393126980451354",
+    "QR_live": "1.51795324981834593754711018278",
+    "wenzl_level_r": "2 (convention D)",
+    "q_star_conventionC_pole": "1.27844957657969315917801065461"
   },
   "data": {
-    "branch_geometry": {
-      "dual_cauchy_max_rel_err": "1.2411912205493411732718737168343968752493027875811e-50",
-      "level_at_q0": "2.5995155364001770161807405265030437515276756971465",
-      "level_ladder_q_k": {
-        "2": "1.0",
-        "3": "1.1541606522644864209",
-        "4": "1.215893600279657749",
-        "5": "1.2447353701734829923",
-        "6": "1.2594921691964569114",
-        "7": "1.2674921899345854866",
-        "8": "1.2719988648820315754",
-        "9": "1.2746045669042258256",
-        "10": "1.2761382894000475474"
+    "by_n": [
+      {
+        "n": 3,
+        "partitions": 3,
+        "ell_ge_3": 1,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "5.05404e-43",
+        "is_structural_zero": true
       },
-      "level_r_at_1p45_complex": "(0.81182756249040668901606775314750300313240937916378 + 4.2275306595638279829582348086175644060495676410038j)",
-      "s_lambda_vanishing_at_r3": {
-        "(3, 2, 1)": "47.511338695648892834437133134314127244294782869787",
-        "(4, 1, 1)": "63.081719825812357682303279594823270488683692407261",
-        "(3, 1, 1, 1)": "8.6878637757818861238251226088075533064634681165895e-50",
-        "(2, 2, 1, 1)": "4.5031501748305974641349521496955159175141194676578e-50",
-        "(1, 1, 1, 1, 1, 1)": "6.8154775820406852181095707919844249526236726237917e-52"
+      {
+        "n": 4,
+        "partitions": 5,
+        "ell_ge_3": 2,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.19263e-43",
+        "is_structural_zero": true
       },
-      "q0_between_q2_and_q3": true
-    },
-    "character_free_crossings": {
-      "3": {
-        "n_partitions_l_ge_3": 1,
-        "S_at_lo": "-0.0000013333484167737228565849910383830004048386002431508",
-        "S_at_q0": "-0.6801102432778012954099611805453885910121166566701",
-        "S_at_hi": "-3744983887965.782710961363935140709131335918094516",
-        "crossings": [],
-        "n_crossings": 0
+      {
+        "n": 5,
+        "partitions": 7,
+        "ell_ge_3": 4,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.94277e-43",
+        "is_structural_zero": true
       },
-      "4": {
-        "n_partitions_l_ge_3": 2,
-        "S_at_lo": "-0.0000093334589177156460431978099418701120292850213719232",
-        "S_at_q0": "-6.6456214998547617794538349968411909282709001241714",
-        "S_at_hi": "-362351188392013768.76651771973862750935365472135715",
-        "crossings": [],
-        "n_crossings": 0
+      {
+        "n": 6,
+        "partitions": 11,
+        "ell_ge_3": 7,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.15324e-43",
+        "is_structural_zero": true
       },
-      "5": {
-        "n_partitions_l_ge_3": 4,
-        "S_at_lo": "-0.000021866983902867332212838617099417741476649511850475",
-        "S_at_q0": "-18.862625186539051095019966463440548008603196235874",
-        "S_at_hi": "-7143275271950633514973.1305707127386741763642945646",
-        "crossings": [],
-        "n_crossings": 0
+      {
+        "n": 7,
+        "partitions": 15,
+        "ell_ge_3": 11,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "6.72799e-44",
+        "is_structural_zero": true
       },
-      "6": {
-        "n_partitions_l_ge_3": 7,
-        "S_at_lo": "-0.000002933265803978120502287905214641295682450172333465",
-        "S_at_q0": "14.625387821751689406099992424750763466468804542211",
-        "S_at_hi": "256139669185408299653824153.96052309161625299589601",
-        "crossings": [
-          "1.0244472398757877468486303364983920355604027758508"
-        ],
-        "n_crossings": 1
+      {
+        "n": 8,
+        "partitions": 22,
+        "ell_ge_3": 17,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.87604e-44",
+        "is_structural_zero": true
       },
-      "7": {
-        "n_partitions_l_ge_3": 11,
-        "S_at_lo": "0.000087430501275553513079189604363416550486823629279033",
-        "S_at_q0": "199.43858002136836575057143024544480949630671318748",
-        "S_at_hi": "11233165946073400462467748139435.781097889296214798",
-        "crossings": [],
-        "n_crossings": 0
+      {
+        "n": 9,
+        "partitions": 30,
+        "ell_ge_3": 25,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "2.21223e-44",
+        "is_structural_zero": true
       },
-      "8": {
-        "n_partitions_l_ge_3": 17,
-        "S_at_lo": "0.00013901262193658535129926392998034235141434336318043",
-        "S_at_q0": "327.69216364763351739488036943408420129699148452606",
-        "S_at_hi": "-37291979157186448129684417205169108.125109585588353",
-        "crossings": [
-          "1.2603704290564396371664044314510192862369593756199"
-        ],
-        "n_crossings": 1
+      {
+        "n": 10,
+        "partitions": 42,
+        "ell_ge_3": 36,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "1.25369e-44",
+        "is_structural_zero": true
       },
-      "9": {
-        "n_partitions_l_ge_3": 25,
-        "S_at_lo": "-0.00015744495557539584659036701830699208433774844469788",
-        "S_at_q0": "-612.56790383899712551812064150145770977546396247929",
-        "S_at_hi": "-8800177484179516605301597409980614869787.9760462717",
-        "crossings": [],
-        "n_crossings": 0
+      {
+        "n": 11,
+        "partitions": 56,
+        "ell_ge_3": 50,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "7.06611e-45",
+        "is_structural_zero": true
       },
-      "10": {
-        "n_partitions_l_ge_3": 36,
-        "S_at_lo": "-0.00070403047927474886114396214710653241906795398994757",
-        "S_at_q0": "-2817.4377906543631220042283571650165913261253398065",
-        "S_at_hi": "-59594086200791954999366530689835145844622942.463853",
-        "crossings": [],
-        "n_crossings": 0
-      },
-      "11": {
-        "n_partitions_l_ge_3": 50,
-        "S_at_lo": "-0.000019668722812373890057650323257256046508190700825538",
-        "S_at_q0": "-750.70677264311556325626703407169048508058185547011",
-        "S_at_hi": "6387425069312956321825096027712641276699571625690.5",
-        "crossings": [
-          "1.1396583594908700392515624350581525248356195290037"
-        ],
-        "n_crossings": 1
-      },
-      "12": {
-        "n_partitions_l_ge_3": 70,
-        "S_at_lo": "0.0033016448742683194517979924318680015569470064876901",
-        "S_at_q0": "14398.244872871379537940400562998874506667816105346",
-        "S_at_hi": "1.2611683998577401252073904777174617462173470600887e+53",
-        "crossings": [],
-        "n_crossings": 0
-      },
-      "13": {
-        "n_partitions_l_ge_3": 94,
-        "S_at_lo": "0.003903980215206423234891232179515015199969960800957",
-        "S_at_q0": "22532.290753188556604329188029459712033531842226167",
-        "S_at_hi": "-3.0320937887597343736418299797354068728079161822807e+57",
-        "crossings": [
-          "1.1598422404894902572018522067103035622391178440243"
-        ],
-        "n_crossings": 1
-      },
-      "14": {
-        "n_partitions_l_ge_3": 127,
-        "S_at_lo": "-0.012687041837595717322642615579351715558313675632808",
-        "S_at_q0": "-65354.930910292859626045738901445562563720246251003",
-        "S_at_hi": "-1.0832793012396987890021950670640721716306691848731e+62",
-        "crossings": [],
-        "n_crossings": 0
-      },
-      "15": {
-        "n_partitions_l_ge_3": 168,
-        "S_at_lo": "-0.037058765467571544416703171243706467298095227204267",
-        "S_at_q0": "-240413.62118084766992644222602410527104352555507258",
-        "S_at_hi": "1.6871986851094190381736210707869009294001300607862e+66",
-        "crossings": [
-          "1.1557812246251721694681036672567766217713826463791"
-        ],
-        "n_crossings": 1
-      },
-      "16": {
-        "n_partitions_l_ge_3": 222,
-        "S_at_lo": "0.027510099085091659316088086755583881114869802474001",
-        "S_at_q0": "321014.28861723418074115829726196489525675161285209",
-        "S_at_hi": "9.993235562886877404809243553876778867031558428072e+70",
-        "crossings": [],
-        "n_crossings": 0
-      },
-      "17": {
-        "n_partitions_l_ge_3": 288,
-        "S_at_lo": "0.2546466473681451834822368389616280631981297489108",
-        "S_at_q0": "2829610.6361570266965605429994098104947973056958949",
-        "S_at_hi": "-7.0672288258114040636203713574852429255711971193867e+74",
-        "crossings": [
-          "1.163273596212569232015287602748837391348627818901"
-        ],
-        "n_crossings": 1
-      },
-      "18": {
-        "n_partitions_l_ge_3": 375,
-        "S_at_lo": "0.1210225807609014842009249542334920396879035412192",
-        "S_at_q0": "-458557.04833727889801732002850293565056114927353882",
-        "S_at_hi": "-8.8711162673805176883746953936598041507328190948646e+79",
-        "crossings": [
-          "1.1001807293709847183827646029713263717503108783341"
-        ],
-        "n_crossings": 1
-      },
-      "19": {
-        "n_partitions_l_ge_3": 480,
-        "S_at_lo": "-1.5386915171894586574729536489533271070840635211132",
-        "S_at_q0": "-34233300.131631621152466606604787319563206967775363",
-        "S_at_hi": "1.3035431430443276768283424093853334648398050048345e+83",
-        "crossings": [
-          "1.1697162940414634686844664871754553964028543867797"
-        ],
-        "n_crossings": 1
-      },
-      "20": {
-        "n_partitions_l_ge_3": 616,
-        "S_at_lo": "-2.4833455397387994045365456882728636424740581384661",
-        "S_at_q0": "-29820305.159068784001795260750559290984509793495913",
-        "S_at_hi": "8.4300574447876543564284301656137424377409083173894e+88",
-        "crossings": [
-          "1.151195517466359105347556755128759471459668673348"
-        ],
-        "n_crossings": 1
-      },
-      "21": {
-        "n_partitions_l_ge_3": 781,
-        "S_at_lo": "8.6934262760141116017734358825760503137818480641972",
-        "S_at_q0": "392053452.7700090322455625513937892239619384822793",
-        "S_at_hi": "5.28611798134511724564600459198151686407813351299e+92",
-        "crossings": [
-          "1.1645402444474035843935555344962242827484491757086",
-          "1.2295977088537172909777949915996866716948982608747"
-        ],
-        "n_crossings": 2
-      },
-      "22": {
-        "n_partitions_l_ge_3": 990,
-        "S_at_lo": "28.728648539784716750084976220722220455075134168895",
-        "S_at_q0": "668936388.01982639788723235371223261439214442612469",
-        "S_at_hi": "-7.3834980865650959933370774681164499626185963003461e+97",
-        "crossings": [
-          "1.1638186990919712719399427930564021306779531318778"
-        ],
-        "n_crossings": 1
-      },
-      "23": {
-        "n_partitions_l_ge_3": 1243,
-        "S_at_lo": "-39.451998238436468713903086361684974612616072961291",
-        "S_at_q0": "-4424759832.533626387989285094075298792400487385024",
-        "S_at_hi": "-9.9971832831271974285110746894979306095251818608703e+101",
-        "crossings": [
-          "1.1559588535894546114547405720320745041365762483679",
-          "1.2201937747018406495530495538626007254946426790671"
-        ],
-        "n_crossings": 2
+      {
+        "n": 12,
+        "partitions": 77,
+        "ell_ge_3": 70,
+        "max_abs_G_contribution": "0.0",
+        "noise_floor": "3.96576e-45",
+        "is_structural_zero": true
       }
-    },
-    "character_free_first_crossing_sequence": [
-      [
-        6,
-        "1.0244472398757877468486303364983920355604027758508"
-      ],
-      [
-        8,
-        "1.2603704290564396371664044314510192862369593756199"
-      ],
-      [
-        11,
-        "1.1396583594908700392515624350581525248356195290037"
-      ],
-      [
-        13,
-        "1.1598422404894902572018522067103035622391178440243"
-      ],
-      [
-        15,
-        "1.1557812246251721694681036672567766217713826463791"
-      ],
-      [
-        17,
-        "1.163273596212569232015287602748837391348627818901"
-      ],
-      [
-        18,
-        "1.1001807293709847183827646029713263717503108783341"
-      ],
-      [
-        19,
-        "1.1697162940414634686844664871754553964028543867797"
-      ],
-      [
-        20,
-        "1.151195517466359105347556755128759471459668673348"
-      ],
-      [
-        21,
-        "1.1645402444474035843935555344962242827484491757086"
-      ],
-      [
-        22,
-        "1.1638186990919712719399427930564021306779531318778"
-      ],
-      [
-        23,
-        "1.1559588535894546114547405720320745041365762483679"
-      ]
     ],
-    "isotope_crossings": {
-      "D": {
-        "n_strands": 6,
-        "grid_points": 90,
-        "F_at_lo": "8.0624042080633339e-7",
-        "F_at_q0": "-0.19496635114594531",
-        "F_at_hi": "-7.4277910858931763",
-        "sign_at_q0": -1,
-        "crossings_on_real_level_branch": [
-          "1.0536500613654133"
-        ],
-        "n_crossings": 1
+    "convention_c_record": {
+      "convention": "C",
+      "computed_at": "2026-08-09T18:11:26Z",
+      "level_at_q0": "2.5995",
+      "q_star_real_level_branch_end": "1.27844957657969...",
+      "assertions_as_committed": {
+        "q_cross_sequence_monotone": false,
+        "crossings_exist_for_all_n": false,
+        "q0_position_informative": false,
+        "dual_cauchy_identity_holds": true,
+        "q0_on_real_level_branch": true
       },
-      "T": {
-        "n_strands": 9,
-        "grid_points": 90,
-        "F_at_lo": "-4.0554506658138749e-6",
-        "F_at_q0": "-2.3181589081699387",
-        "F_at_hi": "-46.952590474990095",
-        "sign_at_q0": -1,
-        "crossings_on_real_level_branch": [],
-        "n_crossings": 0
-      },
-      "3He": {
-        "n_strands": 9,
-        "grid_points": 90,
-        "F_at_lo": "-4.0554494095688752e-6",
-        "F_at_q0": "-2.8064582609621732",
-        "F_at_hi": "-82.069844809276518",
-        "sign_at_q0": -1,
-        "crossings_on_real_level_branch": [],
-        "n_crossings": 0
-      },
-      "4He": {
-        "n_strands": 12,
-        "grid_points": 26,
-        "F_at_lo": "1.1827454307918582e-5",
-        "F_at_q0": "-5.9468803530794048",
-        "F_at_hi": "288.69997385270223",
-        "sign_at_q0": -1,
-        "crossings_on_real_level_branch": [
-          "1.0209228748148062",
-          "1.2078931268496681"
-        ],
-        "n_crossings": 2
-      }
-    },
-    "exact_algebraic": {
-      "6": {
-        "numerator_degree": 72,
-        "roots_u_gt_1": [
-          {
-            "irreducible_degree": 54,
-            "multiplicity": 1,
-            "u_lo": "73922217297062/73034857582165",
-            "u_hi": "357089913187185/352803418339702",
-            "q_cross": "1.0244472398757877468482312235511065774519181886502",
-            "on_real_level_branch": true
-          },
-          {
-            "irreducible_degree": 54,
-            "multiplicity": 1,
-            "u_lo": "530524488434146/259558119619723",
-            "u_hi": "81958104918295/40097850455454",
-            "q_cross": "4.177742152083630690797409561720803319505175825131",
-            "on_real_level_branch": false
-          }
-        ]
-      },
-      "8": {
-        "numerator_degree": 128,
-        "roots_u_gt_1": [
-          {
-            "irreducible_degree": 110,
-            "multiplicity": 1,
-            "u_lo": "352305999242305/313813003876768",
-            "u_hi": "362280079947917/322697315338591",
-            "q_cross": "1.2603704290564396371661292161127372236859401978791",
-            "on_real_level_branch": true
-          },
-          {
-            "irreducible_degree": 110,
-            "multiplicity": 1,
-            "u_lo": "353785500993941/156858965069543",
-            "u_hi": "225458414835362/99962190417465",
-            "q_cross": "5.0869956984628802150027382006629734029048239141436",
-            "on_real_level_branch": false
-          }
-        ]
-      },
-      "11": {
-        "numerator_degree": 242,
-        "roots_u_gt_1": [
-          {
-            "irreducible_degree": 224,
-            "multiplicity": 1,
-            "u_lo": "238867824696429/223753745748664",
-            "u_hi": "57449124114208/53814098767259",
-            "q_cross": "1.1396583594908700392511387192936198749142382624574",
-            "on_real_level_branch": true
-          },
-          {
-            "irreducible_degree": 224,
-            "multiplicity": 1,
-            "u_lo": "184589000426417/118873110212003",
-            "u_hi": "288111134608513/185540127410114",
-            "q_cross": "2.4112619030033868786380527103182558229932262064046",
-            "on_real_level_branch": false
-          }
-        ]
-      }
-    },
-    "genericity": {
-      "isotope_sign_window": [
-        "1.0536500613654133",
-        "1.2078931268496681"
-      ],
-      "isotope_window_width": "0.15424306548425483",
-      "character_free_sign_window": [
-        "1.1001807293709847183827646029713263717503108783341",
-        "1.1396583594908700392515624350581525248356195290037"
-      ],
-      "character_free_window_width": "0.03947763011988532086879783208682615308530865066959",
-      "real_level_branch_width": "0.27844957657969315917801065460567296770799331330165",
-      "window_fraction_of_branch": "0.55393535655138615",
-      "information_bits": "0.85221046919814816",
-      "natural_constants_in_window": {
-        "rationals_den_le_12": [
-          "6/5=1.200000",
-          "7/6=1.166667",
-          "8/7=1.142857",
-          "9/8=1.125000",
-          "10/9=1.111111",
-          "11/10=1.100000",
-          "12/11=1.090909",
-          "13/11=1.181818",
-          "13/12=1.083333"
-        ],
-        "radicals_a_root_b": [
-          "2^(1/4)=1.189207",
-          "2^(1/5)=1.148698",
-          "2^(1/6)=1.122462",
-          "2^(1/7)=1.104090",
-          "2^(1/8)=1.090508",
-          "2^(1/9)=1.080060",
-          "2^(1/10)=1.071773",
-          "2^(1/11)=1.065041",
-          "2^(1/12)=1.059463",
-          "3^(1/6)=1.200937",
-          "3^(1/7)=1.169931",
-          "3^(1/8)=1.147203",
-          "3^(1/9)=1.129831",
-          "3^(1/10)=1.116123",
-          "3^(1/11)=1.105032",
-          "3^(1/12)=1.095873",
-          "4^(1/8)=1.189207",
-          "4^(1/9)=1.166529",
-          "4^(1/10)=1.148698",
-          "4^(1/11)=1.134313",
-          "4^(1/12)=1.122462",
-          "5^(1/9)=1.195813",
-          "5^(1/10)=1.174619",
-          "5^(1/11)=1.157558",
-          "5^(1/12)=1.143530",
-          "6^(1/10)=1.196231",
-          "6^(1/11)=1.176904",
-          "6^(1/12)=1.161037",
-          "7^(1/11)=1.193513",
-          "7^(1/12)=1.176047",
-          "8^(1/12)=1.189207",
-          "9^(1/12)=1.200937"
-        ],
-        "named_combos": [
-          "e*2/5=1.087313",
-          "phi*2/3=1.078689",
-          "sqrt2*3/4=1.060660",
-          "sqrt2*4/5=1.131371",
-          "sqrt2*5/6=1.178511",
-          "sqrt3*2/3=1.154701",
-          "sqrt5*1/2=1.118034",
-          "ln2*5/3=1.155245",
-          "ln3*1/1=1.098612",
-          "gamma*2/1=1.154431",
-          "zeta3*1/1=1.202057",
-          "Catalan*5/4=1.144957",
-          "Catalan*6/5=1.099159"
-        ]
-      },
-      "natural_constants_count": 54
-    },
-    "verdict": {
-      "monotone": false,
-      "sporadic_existence": true,
-      "exactly_algebraic": true,
-      "closed_form_in_radicals": false,
-      "q0_position": "coincidental"
+      "note": "Correct for convention C. Under D `q0_on_real_level_branch` asserts a structure that does not exist -- there is no pole, so no branch to be on or off. The three False results remain False under D but for an entirely different reason: the object is identically zero, so there are no crossings at all. Green, but vacuous. Do not read these as live."
     }
   },
   "caveats": [
-    "\ud83d\uded1 GENERICITY / ANTI-NUMEROLOGY. 'q\u2080 lies between two crossings' is NOT a result: the interval around q\u2080 reproducing the same isotope sign-vector has width 0.1542 = 55.4% of the real-level branch, i.e. only 0.85 bits of constraint, and contains 54 systematically-generated 'natural' constants. q\u2080's position is therefore reported as COINCIDENTAL, not derived. No q was ever solved for to produce a sign pattern (free_parameters=0); the anchor is an input throughout.",
-    "CORRECTION TO THE PRIOR A-DEPENDENCE READ. The n=9 crossings previously located at q\u22481.4285/1.4617 lie ABOVE the Wenzl pole q*=1.27845, where the effective level r=log(Q^r)/log(Q) is COMPLEX (r(1.45)=0.81+4.23i) and the principal specialisation s_\u03bb(1,Q,\u2026,Q^{r\u22121}) has no real level. They are therefore NOT comparable to the deuteron crossing at q=1.0537 as members of one monotone trend; this probe sweeps only the real-level branch (1,q*).",
-    "Scope-(a) throughout. A LOCATED crossing is a positive existence statement (bracketed sign change of a continuous function). 'No crossing for this n' is a statement about the SWEPT INTERVAL AND GRID only \u2014 a grid can miss an even number of zeros between adjacent points. No invariant is proved to forbid a zero anywhere, so NO scope-(b) exclusion is claimed.",
-    "value_only object: F_K and G_n are NOT binding energies (\u0394_\u03bb is value-only, and this probe tests only the SIGN structure of the \u22653-row weighting). The extensive super-pairwise binding MAGNITUDE remains OPEN \u2014 bean qou-prjo is NOT closed.",
-    "PRECISION SPLIT. Branch geometry, level ladder and S_n are 50-dps mpmath; the exact-algebraic section is EXACT sympy rational arithmetic with certified VAS/Sturm root isolation (no floating point). \u03c7^\u03bb is f64 (pure-Python Hoefsmit seminormal via the sparse kernel, exact-equal to the dense path to 1.4e-15), so the isotope crossing q values carry f64 resolution only."
+    "RETIRED AS A LIVE PROBE. This witness no longer reports a q_cross trend. Under convention D the l(lam) >= 3 stratum is a structural zero, so G_n and F_K vanish identically there and the crossings the previous sweep reported were round-off sign flips -- demonstrated by their being IDENTICAL across n, which an n-dependent object cannot be.",
+    "The superseded witness asserted `q0_on_real_level_branch: True`. Under D there is no pole, hence no branch to be on or off, so that assertion named a structure that does not exist. Its three False results stay False under D but for a different reason -- no crossings at all, rather than an unstructured sequence of them. Green, but vacuous.",
+    "Scope-(a), about this probe. The Q^r = u^3/D(u) family is a legitimate object and is NOT refuted; the finding is that this file was not computing it -- its branch geometry was convention C hardcoded while its level function read convention D from the corpus. Re-pinning to C and registering an off-canon comparison was the alternative disposition, not taken: C is excised by owner ruling (2026-08-15) and the question concerns a stratum carrying no weight in the canonical convention."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

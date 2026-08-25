@@ -475,3 +475,76 @@ PR #5780.
 state-2 records (`threerow-sign-crossing`, `threerow-4he-completion`), whose re-run
 assertions all pass because they check internal consistency rather than whether the object
 is nonzero. A naive regeneration there still lands a green witness with vacuous content.
+
+---
+
+## State 2 resolved 2026-08-25 — the defect was a layer below what this audit recorded
+
+`threerow-sign-crossing` and `threerow-4he-completion` are drained (PR #5794). This
+audit flagged them as records *"whose re-run assertions all pass, because they check
+internal consistency rather than whether the object is nonzero"*. The assertions do
+all pass. **That diagnosis was not right, and the truth is worse.**
+
+### `add_assertion(name, X, X)` — a check that compares a value to itself
+
+`threerow_sign_crossing_probe` carried, under a comment calling them *"the headline
+falsifiable fact"*:
+
+```python
+w.add_assertion("D_sign_qlo", iso_rows["D"]["sign_qlo"], iso_rows["D"]["sign_qlo"])
+w.add_assertion("D_sign_q0",  iso_rows["D"]["sign_q0"],  iso_rows["D"]["sign_q0"])
+```
+
+`computed` and `expected` are the **same expression**. The assertion is `x == x`:
+tautologically true, unable to fail, and rendering as `"passed": true` — which the QA
+pipeline reads as evidence. It is not checking internal consistency; it is not
+checking anything.
+
+| assertion | committed (C) | re-run (D) |
+|---|---|---|
+| `D_sign_qlo` | `1/1 True` | `0/0 True` |
+| `D_sign_q0` | `-1/-1 True` | `0/0 True` |
+
+The deuteron object went from `F(q₀) = -0.19496…` to identically zero and the asserted
+sign inverted `±1 → 0`. Both passed, both times. `threerow_4he_completion_probe` had
+the identical pair (`F(q₀) = -5.9468…` → 0).
+
+This is the compute-side twin of the Lean rule AGENTS.md already states under §"No
+trivial trues, no tautologies, no laundering" — *"Tautological conclusions are banned:
+`X = X` … any proposition that is provable without using any hypothesis about the
+mathematical objects in question."* Nothing was checking for it on the compute side.
+
+### The fix
+
+A sign is a **measurement** and now lives in `add_data`. In its place a real
+assertion — `three_row_object_is_structural_zero`, `max|F| < 1e-30`, with the
+tolerance chosen once and justified rather than fitted: the C-era values were O(1)
+(`|F(q₀)|` 0.19 … 5.9) and f64 χ noise on an O(1) product is ~1e-16, so any threshold
+below 1e-16 cannot be met by a genuinely non-vanishing object. Measured: `7.50e-49`
+(D), `3.788e-48` (T), `3.788e-48` (³He). **On the committed C data that assertion
+fails**, which is what makes it a check.
+
+### Corpus scale
+
+[`computations/audits/self_fulfilling_assertion_audit.py`](../../computations/audits/self_fulfilling_assertion_audit.py)
+(AST-level, `--selftest` included) over 3199 files and 3532 `add_assertion` calls:
+**13 MEASURED** (both slots derived from the computation — the dangerous class) and
+**17 LITERAL** (same constant twice; documentary flags). Fixing these two leaves 9,
+recorded in bean `qou-ploj`.
+
+Several of the 9 are load-bearing and overlap work already in flight:
+`mu3_abs_choice_robustness` is the **fifth C-frame instance** identified by layer 3
+above; `mu3_door_budget` and `mu3_frechet_perblock` are in the μ₃-door cone;
+`threerow_crossing_a_dependence` is UNIT-2, which `qou-qdtk` shows is receiving a
+C-frame correction about crossings above a `q*` that does not exist under D; and
+`threerow_isospin_parity` is `qou-iav7`. Read `qou-ploj`, `qou-iav7` and `qou-qdtk`
+together rather than fixing file-by-file.
+
+### Lesson for this audit's own method
+
+Layers 1–3 key on **convention provenance** — how a value was spelled, when it was
+computed, whether it still reproduces. None of them can see an assertion that is
+structurally incapable of failing, because such an assertion is *green in every
+convention*. It took re-running a probe and reading the two arguments side by side.
+A fourth layer keyed on assertion **shape** rather than value is what the audit tool
+above now provides.

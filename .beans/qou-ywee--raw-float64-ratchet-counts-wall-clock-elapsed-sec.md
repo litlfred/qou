@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-25T16:55:44Z
-updated_at: 2026-08-25T19:49:04Z
+updated_at: 2026-08-25T21:04:17Z
 ---
 
 ## CLOSED 2026-08-25 (PR #5783)
@@ -61,3 +61,51 @@ from the gate — including `y_times_chi` (177) and `y_times_chi_abs` (93), the
 Frobenius pairing y_λ·χ_λ. `_times_` is MULTIPLICATION. The gate would stay
 green while excusing the framework's central object. I wrote that regex first
 and the corpus caught it.
+
+
+## CORRECTION 2026-08-25 (from qou-hhm3 / #5793) — the open follow-up above is a NO-OP as written
+
+The "FOLLOW-UP, properly scoped" section says:
+
+  > **The right home is `_EPHEMERAL_META_FIELDS` itself, not a second list in
+  > the audit.**
+
+The *architectural* half of that is right and this correction does not dispute
+it — a shared reserved-names mask beats a hand-kept list, which is exactly why
+your implementation beat the sibling's 73-name frozenset. But as an
+INSTRUCTION to the next agent it does not work, and it fails silently.
+
+`_ephemeral_timing_fields()` does not consume the mask. It filters it:
+
+    frozenset(n for n in _M if "dur" in n.lower() or "elapsed" in n.lower())
+
+Measured on main `ac458da7a0`:
+
+    _EPHEMERAL_META_FIELDS : 9 names
+    what the audit CARVES  : 5 names
+
+None of the ~411 undeclared fields this bean lists would be carved by adding
+them to the mask: `walltime_sec` (99), `rust_secs` (46), `time_sec` (42),
+`compute_time_sec` (38), `wall_sec` (36), `solve_time_s` (33) — not one
+contains "dur" or "elapsed". An agent following this section would add ~70
+names, re-run the audit, see the counts unchanged, and get no error and no
+diff explaining why.
+
+I know because I wrote the same prescription on `qou-hhm3` for `wall_sec`, was
+about to implement it, and caught it only by reading `_ephemeral_timing_fields`
+before editing. Retracted in #5793.
+
+**So widening coverage needs BOTH halves**: the name declared in the mask AND
+reachable by whatever selects from it here. Choosing how the second half works
+is the actual open question — and it is not "broaden the substring test", which
+this bean's own guard section already refutes with the `y_times_chi` measurement
+(84 names matched, 19 physics, 361 real fields excused).
+
+One option, offered not urged: drop the substring logic and have the audit carve
+an explicit adjudicated subset of the mask. A name is then carved iff it is
+listed, `y_times_chi` can never match by accident, and the silent-no-op above
+becomes impossible because the audit's list is the thing you edit. That is a
+design change, it is yours to make or reject, and nothing here is blocked on it.
+
+The trap is now noted in `witness_raw_float64_audit.py` beside the filter, so
+it is visible where someone would hit it rather than only in this bean.
