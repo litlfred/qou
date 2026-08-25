@@ -649,3 +649,50 @@ not merely the verdicts; this session's snapshot/restore cycles have been adding
 and removing untracked witnesses all along. The gate says attribute the movement
 before claiming it, and I cannot attribute this cleanly to main either. Restored
 rather than committed. All blocking precision gates were green.
+
+## Read-only sweep: does any OTHER producer share the c3even shape?
+
+Bounded, no runs, no writes. The c3even shape is: **a D-form producer gating on a
+constant that is its own C-era answer.**
+
+**First detector was noise, and the noise is the lesson.** Keying on "a producer
+constant matches a value in its own committed witness" with `|c| > 1` and a 2e-3
+relative tolerance produced ~20 hits, of which I can defend **zero**: `2.0`
+matched a deuterium mass number, `10.0` a tolerance field, `3.0` an `A=3`, and
+`2.0` vs `2.00272236446` passed at 0.14 %. Small round numbers match everything.
+
+Tightened to the actual signature — non-round, ≥5 significant figures, relative
+match < 1e-4, not a q₀ anchor — **13 survive, and most are legitimate**:
+
+| class | examples | verdict |
+|---|---|---|
+| experimental inputs | `0.78233341` (Q_β CODATA), `0.15648` (Q_exp), `14899.169` / `18622.835` (AME) | correct by design |
+| deliberate historical records | `-2.0097` (`c3_muon_hopf_on_record`), `-2.069342577115168` (`c3_proton_on_record`) | AGENTS.md says keep and scope, do not correct |
+| search targets | `1.22035866` (`phase_5g_constit_factor_search/target`) | by design |
+
+**One survivor has the c3even shape** —
+[`probes/qbeta_ck_qholonomic_recurrence_test.py`](computations/probes/qbeta_ck_qholonomic_recurrence_test.py):
+
+```python
+z = q**3 / (q**2 + 1)                                   # line 210 — convention D
+...
+gate("muon_c3_matches_N3_witness",
+     abs(c3_mu - mp.mpf("-2.021615577060006120530024970029644566094740817719")) < mp.mpf("1e-12"),
+```
+
+A **D-form** producer gating at **1e-12** on a **C-frame** `c_3` constant.
+
+**NOT confirmed, and the gap is specific.** `c3_mu` is read from an anchors
+structure (`anchors["muon"]["c_emp"][3]`), not computed from that `z`. So the gate
+may never touch the migrated parameter, in which case a C constant against a
+C-era witness passes consistently and there is no defect. Establishing which
+needs the same decisive test used for c3even — evaluate under both `z` forms and
+see which reproduces — and that sits in `qou-cds1`, not here.
+
+By contrast `qbeta_ck_basis_constrained_pslq.py` is **clean**: its `c3_*_on_record`
+constants are written *into* the witness as records (`mp.nstr(...)` in the output
+dict), not compared against. That is the legitimate case.
+
+**Result: 1 further candidate, 0 further confirmed.** Reported as a count rather
+than a list of alarms, because the first detector's 20 hits were the alarm and
+they were all mine.
