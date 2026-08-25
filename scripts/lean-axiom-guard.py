@@ -59,11 +59,16 @@ declarations to 11 / 34 and the figures above no longer describe it:
     law-of-sines module.  Their cone is 33 modules, of which 30 needed
     building: 260 s wall, all 30 exit 0.  One batch run then verified all 27 of
     those entries `clean`, with no regression and no promotion.
-  * 5 remain unverifiable here — `OVTopAssembly`, `RSKBurnsideDischarge`,
+  * 5 remained unverifiable at that point — `OVTopAssembly`, `RSKBurnsideDischarge`,
     `SYTEncodingBridgeTwo`, `PlancherelNormalisation`,
-    `YoungDiagramTailFirstInstance`.  Their union needs 70 module builds
-    (21 absent oleans + 49 present-but-older-than-source).  These carry the
-    ORIGINAL seven entries, four of which are recorded `sorryAx` by design.
+    `YoungDiagramTailFirstInstance` — needing 70 module builds
+    (21 absent oleans + 49 present-but-older-than-source).
+
+SUPERSEDED THE SAME DAY: those 70 were built (753 s, 70/70 exit 0) and the whole
+registry now runs.  **Every entry is verifiable, and the full gate is rc=0.**  The
+four `sorryAx` rows turned out to be stale — see the RSK block below.  Note what the
+cost estimate was worth: the build was quoted as the reason not to bother, and it
+took under 13 minutes and overturned the registry.
 
 Count both criteria.  An olean that merely EXISTS is not enough — 49 of the 70
 above are present and stale, and a verdict read off a stale olean is the axiom
@@ -93,13 +98,40 @@ QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagr
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux | sorryAx-free-expected-clean-alias
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_le_numSYT | clean
 
-# --- known-BAD: the RSK identity and everything reindexed from it ---
-# The real gap is upstream (RegularRepBlockTrace's sorry on the specialised
-# lemma, plus the Specht-core cone: 16 of 23 modules carry sorry).
-QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | sorryAx
-QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+# --- the RSK identity: WAS known-BAD, MEASURED CLEAN 2026-08-25 ---
+# These four were recorded `sorryAx` with the note "the real gap is upstream
+# (RegularRepBlockTrace's sorry ... plus the Specht-core cone: 16 of 23 modules carry
+# sorry)".  That is now STALE.  All four are sorry-free, and — measured, not assumed —
+# so are their UNCONDITIONAL forms.
+#
+# What changed: the in-repo Robinson–Schensted development (40 `QOU.Mathlib.Schensted*`
+# source files, 5 sorry tokens between them, landed via PR #5745) and the keystone
+# instance below.  Nobody noticed because the gate could not run: verifying these needs
+# a 70-module lean-direct build, so the registry kept asserting a gap that had closed.
+#
+# HOW THIS WAS MEASURED, because "clean" alone would NOT have been sufficient evidence.
+# All four now carry an instance binder `[SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]`,
+# so each proves an IMPLICATION.  `#print axioms` cannot see an undischarged instance
+# hypothesis — a declaration can go `sorryAx` -> `clean` with ZERO new mathematics purely
+# by moving its obligation into a class binder, which is the §3b-cond pattern and is
+# exactly what "conditional-proved ≠ premise-established" warns about.  So `clean` here
+# was treated as a RED FLAG and checked three ways:
+#   1. the instance `instSnIsotypicSpechtSplit` is itself sorry-free   -> yes;
+#   2. each theorem COMPOSED with that ambient instance is sorry-free  -> yes, all four;
+#   3. the composition elaborated with EXIT 0 — a declaration that fails to elaborate
+#      reports `sorryAx` from error recovery, which is not a finding.  (One draft of this
+#      check did exactly that and would have been misread as a defect.)
+QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | clean
+QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | clean
+
+# --- the keystone instance: THE load-bearing entry for the four above ---
+# Pinning the four theorems is NOT enough on its own.  They are conditional, so they stay
+# `clean` even if this instance is weakened or acquires a `sorry` — the gate would keep
+# reporting green while the mathematics silently reverted to assumed.  This entry is what
+# makes the four above mean anything: it is the only place a regression can be caught.
+QOU.BraidKnot.SnIsotypicSpechtSplitInstance | QOU.BraidKnot.SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplit | clean
 
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an
