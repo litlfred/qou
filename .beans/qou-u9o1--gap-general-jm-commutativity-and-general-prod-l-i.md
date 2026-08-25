@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:33:48Z
+updated_at: 2026-08-25T06:39:42Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -306,3 +306,41 @@ multiplication table). Whoever does it: **keep a control case whose answer is kn
 per the harness bug recorded above.
 
 Do not record either candidate as established without that measurement.
+
+
+## Both leads above are REFUTED — measured in H_4, same session
+
+`computations/hecke/jm_adjacent_h4_structure_probe.py`. Regular representation of
+H_4(q) (24-dim, FAITHFUL — an irrep can hide nothing here), exact Fractions at q=2,
+k=1 so u=s_1, v=s_2 and the true JM element is L_1 = s_0^2.
+
+**CONTROL passes**: N = s_0^2, the real JM element, gives True — adjacent
+commutativity at k=1 is a theorem and the harness reproduces it.
+
+    True :  1,  s_0^2 (JM),  s_2^2,  s_0 s_2
+    False:  s_0,  s_2,  s_1,  s_1^2,  (s_0 s_2)^2,  s_0^3,  s_0^4
+
+### What died
+
+* **Lead 1, "palindrome with a square centre"** — `s_1^2` is exactly that and FAILS.
+* **"is a square"** — `(s_0 s_2)^2` and `s_0^4` are squares and FAIL.
+* **"commutes with v"** — `s_0` and `s_2` both commute with v and both FAIL. This is an
+  INDEPENDENT confirmation of the earlier H_3 2-dim-irrep refutation, by a different
+  computation in a different algebra.
+
+Lead 2 (the recursion) is untouched by this — it is a statement about how to run an
+induction, not a property of N testable this way. It remains the only surviving route.
+
+### NOT claimed
+
+The True set {1, s_0^2, s_2^2, s_0 s_2} is small and suggestive. **Twelve points at one
+q in one algebra is not a characterisation**, and fitting one would be the numerology
+this repo forbids. Widen q and n before proposing anything.
+
+### The harness bug recurred — third time, same class
+
+An earlier version built the LEFT form uncancelled and the RIGHT form cancelled, and
+reported False for every case INCLUDING the theorem. That is now twice in this session
+(the H_3 script did the same). Both times the known-answer control was the only thing
+that caught it. **A probe testing a claimed identity without a control case measures
+itself.**
