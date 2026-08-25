@@ -1,7 +1,7 @@
 # §4-A asks a symmetric-theory question of a non-symmetric category
 
-**Bean:** `qou-tzfm`. **Date:** 2026-08-25. **Status:** finding, two tiers —
-read the tier split in §3 before citing this.
+**Bean:** `qou-tzfm`. **Date:** 2026-08-25. **Status:** finding. The tier split in §3 was
+sharpened after a better citation turned up; read §3 before citing this.
 
 ## The claim
 
@@ -64,24 +64,39 @@ sources above; QOU is explicitly non-symmetric; the general reconstruction
 target in the non-symmetric case is a Hopf algebra in `C`. Each of these is a
 quotation, given above.
 
-**Tier 2, standard but NOT yet discharged against a source in this corpus.** The
-step that would turn Tier 1 into a conclusion about `Aut^⊗`:
+**Tier 2, now largely discharged — and the argument no longer needs the step I
+originally flagged.** The first draft of this file leaned on *"an affine group
+scheme is `Spec` of a commutative Hopf algebra, and the coend Hopf algebra is
+commutative iff the category is symmetric"*, marked as standard-but-uncited.
+A better citation is on the shelf, and it makes that detour unnecessary.
 
-> An affine group scheme is `Spec` of a **commutative** Hopf algebra. The coend
-> Hopf algebra of a fibre functor is commutative iff the category is symmetric.
-> Hence for non-symmetric `C` there is no classical band, and `Aut^⊗(τ)` — which
-> is still a perfectly good affine group scheme — classifies only a symmetric
-> shadow of `C`, not `C`.
+Tonini (`arxiv-1409.4073v1`, Introduction) states the chain §4-A relies on, and
+attributes both halves:
 
-I believe this is standard (Deligne–Milne; Ulbrich; Schauenburg), but **I have
-not cited a line for it from the ingested sections**, and it is doing real work,
-so it is flagged rather than asserted. Discharging it is the next task
-(`arxiv-2311.14221v2` §6.3–6.4 is the place, and Schauenburg92 is in its
-reference list).
+> *"If `G` is an affine group scheme over a field `k` ... if `F : Rep G_k →
+> Vect_k` is the forgetful functor then **`G` is canonically isomorphic to the
+> sheaf of automorphisms of `F`** (opportunely defined, see [DM82, Proposition
+> 2.8]). More generally one can recover **the stack `BG` of `G`-torsors by
+> looking at fiber functors** ... is an equivalence of categories (see [DM82,
+> Theorem 3.2])."*
+
+Both are theorems **about `Rep G_k`** — Deligne–Milne 2.8 and 3.2 — and
+`Rep G_k` is symmetric. That is the whole of what is needed:
+
+- *"`Aut^⊗` of the fibre functor is the band"* is the **conclusion** of a
+  theorem whose **hypothesis** is that the category is `Rep G`.
+- So reading `thm:su2-emergence`'s `Aut^⊗(τ) = SU(2)` as "the band is `SU(2)`,
+  therefore not `SU(3)`" **assumes what §4-A is asking**. It is circular, not
+  merely unlicensed.
+
+What remains genuinely open, and is now a smaller question: what the
+non-symmetric analogue of the band *is*, if anything. Lentner–Mombelli's answer
+is the reconstructed Hopf algebra in `C` (their Theorem 4.3 and §6.4), which is
+not a group scheme and carries no `H¹` classification of the classical shape.
 
 ## 4. What follows, and what does not
 
-**If Tier 2 holds**, then `thm:su2-emergence`'s `Aut^⊗(τ) = SU(2)` is not a
+`thm:su2-emergence`'s `Aut^⊗(τ) = SU(2)` is not a
 constraint that `SU(3)` must contradict — the two live in different places.
 Colour `SU(3)`, if the framework has it at all, would have to appear in the
 **reconstructed Hopf algebra**, which `Aut^⊗` does not see. The search has been
@@ -103,9 +118,9 @@ aimed at an invariant that cannot carry the answer either way.
 
 ## 5. Next
 
-1. **Discharge Tier 2** against `arxiv-2311.14221v2` §6.3–6.4. Cheap, and it
-   decides whether §1–2 amount to a re-posing or merely a caution.
-2. If it holds, **re-pose §4-A in the cheat sheet** as: *what is the
+1. ~~Discharge Tier 2~~ — **done**, via Tonini's attribution to [DM82, 2.8/3.2]
+   (§3). The re-posing stands without the commutativity detour.
+2. **Re-pose §4-A in the cheat sheet** as: *what is the
    reconstructed Hopf algebra `H = End^⊗(τ)` of a QOU, and does it contain an
    `SU(3)`-like sub-object?* — and record that `H¹(base, Aut^⊗)` was the wrong
    invariant, with this file as the reason.
