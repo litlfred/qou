@@ -144,5 +144,226 @@ def main() -> int:
     return 0
 
 
+
+
+# ---------------------------------------------------------------------------
+#  SECOND DETECTOR — COMPUTED targets.
+#
+#  The scan above is LITERAL-only and says so. This closes that gap: a target
+#  built by an f-string, an os.path.join, or a name is invisible to it. The
+#  question is the same one, asked of an expression instead of a string: does
+#  the path ROOT in __file__ / a dir constant (safe), or in nothing (the
+#  defect)?
+#
+#  MEASURED on main 2026-08-25: 756 computed-target writes, 746 rooted safely,
+#  and exactly ONE real defect --
+#  `computations/substrate/lever1_habiro_element_fit.py`, an
+#  `os.path.join("computations", "substrate", ...)` with no root at all. The
+#  remaining nine are pytest `tmp_path` fixtures and WitnessBuilder's own
+#  `self._output_dir`, both correct.
+#
+#  FOUR WAYS THIS ANALYSIS LIED BEFORE IT WAS RIGHT, all found by reading the
+#  flagged code rather than trusting the count:
+#    162  -- judged the root by NAME, so `os.path.join(_here, ...)` read as
+#            unrooted although `_here = os.path.dirname(__file__)`.
+#     34  -- followed a single chain, which stops the moment an assignment is
+#            not a bare Name: `_COMPUTATIONS = HERE.parent` ends it and HERE is
+#            never examined. Needs a fixpoint.
+#     12  -- kept only the LAST assignment, so `root = os.path.dirname(root)`
+#            hid the `__file__` origin two lines above; and a single-pass
+#            visitor had not yet seen `def _here()` declared BELOW its use.
+#      0  -- an edit removed the `hits.append` and the scan reported nothing at
+#            all, which is the same "the harness is empty" failure the file
+#            count above exists to catch.
+# ---------------------------------------------------------------------------
+
+def mentions_witness(node) -> bool:
+    """Does this expression involve a '.witness.json' anywhere in it?"""
+    for n in ast.walk(node):
+        if isinstance(n, ast.Constant) and isinstance(n.value, str) and ".witness.json" in n.value:
+            return True
+        if isinstance(n, ast.JoinedStr):
+            for v in n.values:
+                if isinstance(v, ast.Constant) and isinstance(v.value, str) \
+                   and ".witness.json" in v.value:
+                    return True
+    return False
+
+
+# Roots that are legitimately NOT __file__-derived. Reported separately rather
+# than left under "not rooted", because a standing list of known-fine entries
+# invites the next agent to re-litigate them -- the same defect the
+# no-free-parameter certificate had with A_omega (fixed 2026-08-25).
+BY_DESIGN = {
+    "tmp_path": "pytest fixture -- a per-test temp dir is the correct target",
+    "self":     "WitnessBuilder's own writer; `_output_dir` is supplied by the "
+                "caller, so this IS the API that makes other producers safe",
+}
+
+SAFE_ROOTS = {"HERE", "_HERE", "_HERE_W", "OUT_DIR", "WITNESS_DIR", "_OUT", "REPO", "ROOT", "_REPO"}
+
+def roots_in(node):
+    """Return the set of base Names / __file__ tokens the expression starts from."""
+    out = set()
+    for n in ast.walk(node):
+        if isinstance(n, ast.Name):
+            out.add(n.id)
+        if isinstance(n, ast.Attribute) and n.attr == "__file__":
+            out.add("__file__")
+        if isinstance(n, ast.Constant) and n.value == "__file__":
+            out.add("__file__")
+    return out
+
+class ComputedScan(ast.NodeVisitor):
+    def __init__(self, src):
+        self.src = src
+        self.assigned = {}   # name -> LIST of value nodes (all assignments)
+        self.funcs = {}      # name -> FunctionDef, for `_here()` style roots
+        self.hits = []
+    def visit_Assign(self, node):
+        for t in node.targets:
+            if isinstance(t, ast.Name):
+                self.assigned.setdefault(t.id, []).append(node.value)
+        self.generic_visit(node)
+    def _check(self, expr, lineno, why):
+        # resolve one level of indirection
+        target = expr
+        if isinstance(expr, ast.Name) and self.assigned.get(expr.id):
+            # `assigned` maps to a LIST now (all assignments, so a
+            # reassignment cannot hide a __file__ origin). Resolve to the one
+            # that actually names a witness, else the last.
+            cands = self.assigned[expr.id]
+            target = next((c for c in cands if mentions_witness(c)), cands[-1])
+        if not mentions_witness(target):
+            return
+        if isinstance(target, ast.Constant):
+            return                       # the landed audit's territory
+        # FIXPOINT expansion. A single-chain walk stops the moment an
+        # assignment is not a bare Name -- `_COMPUTATIONS = HERE.parent` ends
+        # it, and HERE never gets examined. Expand every root name through its
+        # assignment (and through a def, for `_here()` style roots) until the
+        # set stops growing, then ask once whether __file__ appears anywhere.
+        # Measured cost of not doing this: 162 flagged, then 34, both wrong.
+        seen, frontier = set(), set(roots_in(target))
+        found = "__file__" in frontier
+        while frontier and not found:
+            nm = frontier.pop()
+            if nm in seen:
+                continue
+            seen.add(nm)
+            if nm in SAFE_ROOTS:
+                found = True; break
+            srcs = list(self.assigned.get(nm, []))
+            fn = self.funcs.get(nm)
+            if fn is not None:
+                srcs.append(fn)
+            if not srcs:
+                continue
+            if any("__file__" in ast.unparse(x) for x in srcs):
+                found = True; break
+            for x in srcs:
+                frontier |= roots_in(x)
+        safe = found
+        self.hits.append((lineno, why, ast.unparse(target)[:90], sorted(seen)[:5], safe))
+
+    def visit_Call(self, node):
+        f = node.func
+        if isinstance(f, ast.Name) and f.id == "open" and node.args:
+            mode = node.args[1].value if len(node.args) > 1 and isinstance(node.args[1], ast.Constant) else "r"
+            if "w" in str(mode) or "a" in str(mode):
+                self._check(node.args[0], node.lineno, f"open(...,{mode!r})")
+        if isinstance(f, ast.Attribute):
+            if f.attr in ("write_text", "write_bytes"):
+                self._check(f.value, node.lineno, f".{f.attr}()")
+            if f.attr == "open" and node.args and isinstance(node.args[0], ast.Constant) \
+               and ("w" in str(node.args[0].value) or "a" in str(node.args[0].value)):
+                self._check(f.value, node.lineno, f".open({node.args[0].value!r})")
+        self.generic_visit(node)
+
+
+def scan_computed(files):
+    """(safe, unrooted_rows) over every COMPUTED-target witness write."""
+    safe_n, rows, by_design = 0, [], []
+    for q in files:
+        if "_deprecated" in q.parts:
+            continue
+        try:
+            tree = ast.parse(q.read_text(errors="ignore"))
+        except SyntaxError:
+            continue
+        sc = ComputedScan("")
+        # PRE-PASS: a def or assignment can appear AFTER the write that uses it.
+        for n in ast.walk(tree):
+            if isinstance(n, ast.FunctionDef):
+                sc.funcs[n.name] = n
+            elif isinstance(n, ast.Assign):
+                for t in n.targets:
+                    if isinstance(t, ast.Name):
+                        sc.assigned.setdefault(t.id, []).append(n.value)
+        sc.visit(tree)
+        for ln, why, expr, r, safe in sc.hits:
+            if safe:
+                safe_n += 1
+            elif set(r) & set(BY_DESIGN):
+                by_design.append((q, ln, why, expr, sorted(set(r) & set(BY_DESIGN))[0]))
+            else:
+                rows.append((q, ln, why, expr, r))
+    return safe_n, rows, by_design
+
+
+_C_POS = ('import os\nout = os.path.join("computations", "x.witness.json")\n'
+          'open(out, "w")\n')
+_C_NEG_CHAIN = ('import os\nHERE = os.path.dirname(__file__)\n'
+                '_C = HERE\nopen(os.path.join(_C, "x.witness.json"), "w")\n')
+_C_NEG_REASSIGN = ('import os\nroot = os.path.dirname(os.path.abspath(__file__))\n'
+                   'root = os.path.dirname(root)\n'
+                   'open(os.path.join(root, "x.witness.json"), "w")\n')
+_C_NEG_LATEDEF = ('import os\nopen(os.path.join(_here(), "x.witness.json"), "w")\n'
+                  'def _here():\n    return os.path.dirname(os.path.abspath(__file__))\n')
+
+
+def _selftest_computed() -> list[str]:
+    """Each case is a shape that produced a WRONG answer before it was fixed."""
+    import tempfile, os as _os
+    bad = []
+    cases = [("bare join, no root", _C_POS, True),
+             ("chain through a non-Name assignment", _C_NEG_CHAIN, False),
+             ("root REASSIGNED after a __file__ origin", _C_NEG_REASSIGN, False),
+             ("def appears BELOW its use", _C_NEG_LATEDEF, False)]
+    with tempfile.TemporaryDirectory() as td:
+        for name, src, want_flag in cases:
+            f = pathlib.Path(td) / (name.replace(" ", "_").replace(",", "") + ".py")
+            f.write_text(src)
+            _, rows, _ = scan_computed([f])
+            got = bool(rows)
+            if got != want_flag:
+                bad.append(f"{name}: expected flag={want_flag}, got {got}")
+    return bad
+
+
 if __name__ == "__main__":
+    _bad = _selftest_computed()
+    if _bad:
+        print("COMPUTED-TARGET SELFTEST FAILED:")
+        for b in _bad:
+            print("  ", b)
+        sys.exit(1)
+    print("computed-target selftest: 4/4 ok\n")
+    _files = [q for R in ROOTS if R.exists() for q in R.rglob("*.py")]
+    if not _files:
+        print("REFUSING to report: scanned 0 files.")
+        sys.exit(2)
+    _safe, _rows, _bd = scan_computed(_files)
+    print(f"COMPUTED-target witness writes : {_safe + len(_rows) + len(_bd)}")
+    print(f"  rooted in __file__ / a dir const (SAFE) : {_safe}")
+    print(f"  by design, not __file__-rooted          : {len(_bd)}")
+    print(f"  ACTIONABLE                              : {len(_rows)}")
+    if _bd:
+        print("\n  by design (do NOT re-litigate):")
+        for _q, _ln, _why, _expr, _k in _bd:
+            print(f"    {_q.name}:{_ln}  {_expr}")
+            print(f"        {_k} -- {BY_DESIGN[_k]}")
+    for _q, _ln, _why, _expr, _r in _rows:
+        print(f"    {_q}:{_ln}  {_why}")
+        print(f"        {_expr}")
     sys.exit(main())
