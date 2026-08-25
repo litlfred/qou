@@ -25,22 +25,36 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
-import math
 import os
 
-Q0 = 1.1099785955573347
-LNQ = math.log(Q0)
-MU3 = 0.4708
-C3 = 0.297
+from mpmath import mp, mpf
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+# BEFORE any mpf is built: an mpf constructed at the default dps carries
+# float64-grade precision for the whole run, and fmt() then renders it to the
+# full serialization width so it READS as measured. (bean qou-j6gb)
+set_compute_dps()
+
+Q0 = mpf("1.1099785955573347")
+LNQ = mp.log(Q0)
+MU3 = mpf("0.4708")
+C3 = mpf("0.297")
 R_STAR = MU3 / C3
-X_REQ = math.sqrt(R_STAR - 1.0)          # r* = 1 + x²  ⇒  x = √(r*−1)
+X_REQ = mp.sqrt(R_STAR - 1)              # r* = 1 + x²  ⇒  x = √(r*−1)
 
 
-def qint(k: int) -> float:
-    return (Q0 ** k - Q0 ** (-k)) / (Q0 - 1.0 / Q0)
+def qint(k: int) -> mpf:
+    return (Q0 ** k - Q0 ** (-k)) / (Q0 - 1 / Q0)
 
 
-def sym_wedderburn_x() -> float:
+def sym_wedderburn_x() -> mpf:
     """Symmetric weight d_q²/[n]! : (3) and (1³) have identical hooks (3,2,1) ⇒ equal ⇒ x=0."""
     d = qint(3) * qint(2) * qint(1)           # same for (3) and (1,1,1)
     y3 = d * d
@@ -48,7 +62,7 @@ def sym_wedderburn_x() -> float:
     return (y3 - y111) / (y3 + y111)
 
 
-def content_x(c: float) -> float:
+def content_x(c: int) -> mpf:
     """Content weight y_(3)=q^{+c}, y_(1³)=q^{-c} ⇒ x = tanh(c·ln q)."""
     a, b = Q0 ** c, Q0 ** (-c)
     return (a - b) / (a + b)
@@ -64,35 +78,44 @@ def main() -> None:
     ]:
         rows.append({
             "weight": label, "x": x, "x2": x * x,
-            "r_star_1_plus_x2": 1.0 + x * x,
-            "abs_err_vs_rstar": abs((1.0 + x * x) - R_STAR),
+            "r_star_1_plus_x2": 1 + x * x,
+            "abs_err_vs_rstar": abs((1 + x * x) - R_STAR),
         })
 
-    c_needed = math.atanh(X_REQ) / LNQ         # content that WOULD give x=0.765
+    c_needed = mp.atanh(X_REQ) / LNQ           # content that WOULD give x=0.765
+    # Take the max over the mpf values BEFORE serializing: fmt() returns a
+    # string, and max() over strings is lexicographic ("0.9" > "0.10").
     max_branching_x2 = max(r["x2"] for r in rows)
+    rows_out = [
+        {k: (fmt(v) if k != "weight" else v) for k, v in r.items()}
+        for r in rows
+    ]
 
     witness = {
         "computation": "a3-branching-asymmetry-vs-required",
         "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
         "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "engine": "python-float (0 free params; structural)",
+        "engine": f"python-mpmath dps={mp.dps} (0 free params; structural)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0, "mu3_MeV": MU3, "c3_single_trace_MeV": C3, "r_star": R_STAR,
+            "q0": fmt(Q0), "mu3_MeV": fmt(MU3), "c3_single_trace_MeV": fmt(C3),
+            "r_star": fmt(R_STAR),
             "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
-            "chi_(3)_borr": 1.0, "chi_(1,1,1)_borr": 1.0,
+            "chi_(3)_borr": fmt(mpf(1)), "chi_(1,1,1)_borr": fmt(mpf(1)),
             "note_equal_characters": "both 1-dim characters = 1 on the Borromean braid (A3OffBlockDerivation Part 1)",
         },
         "results": {
-            "x_required": X_REQ, "x2_required": R_STAR - 1.0,
-            "branching_rows": rows,
-            "max_branching_x2": max_branching_x2,
-            "content_c_that_would_be_needed": c_needed,
-            "branching_supplies_required": max_branching_x2 >= (R_STAR - 1.0) - 1e-3,
+            "x_required": fmt(X_REQ), "x2_required": fmt(R_STAR - 1),
+            "branching_rows": rows_out,
+            "max_branching_x2": fmt(max_branching_x2),
+            "content_c_that_would_be_needed": fmt(c_needed),
+            "branching_supplies_required": bool(
+                max_branching_x2 >= (R_STAR - 1) - mpf("1e-3")
+            ),
         },
         "verdict": (
             f"scope-(a): BARE H₃ (content c=3) gives x²≈0.09, r*≈1.09 — ~6× short in x² of the "
-            f"required x²={R_STAR-1.0:.3f}; symmetric weight gives x=0, r*=1. BUT the CABLED "
+            f"required x²={R_STAR - 1:.3f}; symmetric weight gives x=0, r*=1. BUT the CABLED "
             f"content c≈9 (the H₉ strand scale at which c₃ is actually computed) gives "
             f"x²≈0.54, r*≈1.54 — only ~3% short of 1.585 (exact needs c≈{c_needed:.1f}). So the "
             f"Pythagorean transverse leg 2x is NOT the bare-branching slope; it lives at the "
