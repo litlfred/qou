@@ -87,3 +87,46 @@ than quoted, leaving two sentences without their subjects. Restored above.
 Second time this session — the same trap also mangled a phrase in qou-l1gv.
 Write bean bodies through a heredoc or a file, never as a shell argument
 containing backticks.
+
+## The defect is localised to Phi_1 — measured
+
+Per-term decomposition with the correct atomic chains (alpha = m_e*8G):
+
+    atom     a*Phi_1   a*(-2[3]Phi_2)   a*h^2 Phi_3     total    -B_AME
+    H-1     -6.97252        -0.49542        +0.06830   -7.39964   -0.0000
+    D       -2.08525        -1.23855        +0.10246   -3.22134   -2.2246
+    T       +3.39845        -1.98168        +0.10246   +1.51923   -8.4818
+    4He     +9.19178        -2.97252        +0.20491   +6.42417  -28.2957
+
+1. PHI_1 IS THE WHOLE PROBLEM. It alone flips sign with A (-6.97 -> +9.19) and
+   it dominates every row. Phi_1/L (L = total chain length) runs
+   -0.155, -0.023, +0.025, +0.045, +0.047 for H-1/D/T/3He/4He: it is NOT
+   extensive, crosses zero between D and T, and saturates near +0.047. A binding
+   term must be monotone negative and grow with A. Phi_1 does the opposite.
+
+2. PHI_2 IS WELL-BEHAVED: -0.495, -1.239, -1.982, -2.973 — monotone negative,
+   roughly linear in A. Shaped like a binding term.
+
+3. PHI_3 IS TINY AND INTEGER-QUANTISED. In units of h^2*ln q the weight w is
+   EXACTLY 4, 6, 6, 12, 12 for H-1, D, T, 3He, 4He — i.e. w = 6Z once N >= 1,
+   with the bare proton at 4.
+
+## The defensible version of what I wrongly claimed
+
+My retracted commit argued chirality cannot be what alpha* was absorbing, via an
+invalid test. There IS a valid magnitude argument for the same conclusion, and
+it needs no splitting test: Phi_3 contributes 0.07-0.20 MeV against deficits of
+5-35 MeV. It is 1-3 % of the total and cannot close a gap two orders of
+magnitude larger. That constrains MAGNITUDE only — scope-(a). It does not
+exclude chirality from the formula, and it says nothing about what alpha*
+absorbed in the 2-term frame, which remains open.
+
+## Assumption that needs checking before anyone builds on this
+
+alpha = m_e*8G is taken from cor:commutative-chirality-vanishes, which states it
+for the COMMUTATIVE (q -> 1) reduction. I assumed the same alpha multiplies the
+bracket in the full non-commutative formula. thm:wedderburn-mass-formula writes
+"alpha" without redefining it, so this is the natural reading — but it is a
+reading, not a verified identification, and every magnitude above scales
+linearly with it. The SIGN results (Phi_1 flipping, Phi_2 monotone) are
+alpha-independent and survive regardless.
