@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-25T02:06:23Z
-updated_at: 2026-08-25T02:06:53Z
+updated_at: 2026-08-25T02:19:19Z
 ---
 
 ## What
@@ -62,3 +62,47 @@ attributed them to someone's cleanup. Same shape: producers writing witnesses
 into the cwd. Worth a sweep of write paths, not just read paths. A grep for
 cwd-relative `.witness.json` opens finds 5 live files, but 4 are audits READING
 by name; `free-neutron-decay.py` is the only confirmed writer so far.
+
+
+## CORRECTION 2026-08-25 — the "likely wider class" is measured at ZERO, and my
+## `chi-*` speculation was wrong
+
+The section above says the seven untracked `chi-*-at-qca0128e8-50dps.witness.json`
+files are "same shape" as this defect and suggests a sweep. **Both claims are
+now measured and both are wrong.**
+
+**The CWD-write class is size 1.** An AST scan in WRITE CONTEXT ONLY -- across
+`computations/`, `tools/`, `scripts/` and `qou-mass/` -- finds **0** producers
+writing a witness to a caller-relative path. `free-neutron-decay.py` was the
+only one and it is fixed here.
+
+The scan is worth trusting only because of what it pins. A first version
+excluded any target containing `/`, which silently drops
+`Path("computations/x.witness.json")` -- equally cwd-relative, and it orphans
+from any cwd but the root. Widened, and three cases are now selftested: the
+bare form, the directory-prefixed form, and `open(literal, "w")`, plus a
+negative pinning the fixed form. Without those, a "0" could just mean the
+widening did nothing. Remaining blind spot, stated: literal string targets
+only, so an f-string or computed name is invisible.
+
+**And that blind spot is exactly what the `chi-*` files were.** They are NOT a
+cwd defect. `chi_at_q0_via_hoefsmit_mpfr.py:232` does:
+
+    _anchor = anchor_of_q0(q_str)
+    if _anchor is None:
+        _tag = sha256(q_str)[:8]
+        out_path = HERE / f"chi-{atom}-h{n}-at-q{_tag}-50dps.witness.json"
+    else:
+        out_path = HERE / f"chi-{atom}-h{n}-at-q0-50dps.witness.json"
+
+`HERE /`, not cwd-relative. The hash name is DELIBERATE: when q0 matches no
+known anchor the cache is quarantined under a tagged filename so it cannot
+contaminate the canonical `-at-q0-` file, and the comment above it records
+that decision being checked before rather than after. So those seven were a
+scratch run at a non-anchor q0, correctly isolated by design.
+
+Which q0? Not identified. `ca0128e8` matches none of anchor A, proton, B, C,
+or their 17-digit truncations. It is some other value -- which is precisely
+the case the branch exists to handle.
+
+**No sweep is needed.** Do not open one off the original paragraph.
