@@ -1,6 +1,6 @@
 {
   "schema": "trace-convention-registry/v1",
-  "updated": "2026-08-23",
+  "updated": "2026-08-25",
   "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
   "bean": "qou-n1dj",
   "meta": {
@@ -451,7 +451,19 @@
       "must_error_with": "must be 'disputed' or 'agreed-migration-pending'"
     }
   ],
-  "blocked_migrations": [],
+  "blocked_migrations": [
+    {
+      "file": "computations/probes/markov_reduction_h3_to_h4_verify.py",
+      "symbol": "z",
+      "stays": "C",
+      "bean": "qou-ze9n",
+      "registered_on": "2026-08-25",
+      "reason": "This probe is the evidence QOU/Machinery/MarkovTraceOnHecke.lean:283 cites for keystone ingredient 2 (the Ind_{H3}^{H4} Markov stabilisation). It is kept verbatim -- convention C AND float64 -- as the historical record of what that Lean docstring points at. Its own docstring has declared both facts since 2026-08-22. The conclusion does not depend on the convention: z is an INPUT to the y_lambda weight solve, not an output, so the Ocneanu trace is a one-parameter family in z and the reduction holds in either frame.",
+      "superseded_by": "computations/probes/markov_reduction_h3_to_h4_conventions.py -- re-runs the same over-determination test at 50 dps under BOTH conventions, worst residual ~1e-51 against a 1e-30 tolerance. New work uses the companion; this file is not a production path.",
+      "why_the_detector_keeps_listing_it": "scripts/convention-c-producer-audit.py decides 'deliberate' from the VARIABLE NAME (the DELIBERATE regex matches _c/_C/zc/z_c). This file's variable is plain `z`, so a docstring declaration -- however explicit -- is structurally invisible to it, and it was handed to the probe drain (PR #5739) and again to this one as actionable work. This row is the intended channel, per the 2026-08-25 note on bean qou-ze9n.",
+      "owner_decision_required": false
+    }
+  ],
   "intra_module_split_waivers": [],
   "intra_module_split_waivers_note": "EMPTY as of 2026-08-16 (bean qou-cds2). R10 fails a module whose registered z-carrying symbols disagree with each other, because a caller imports a MODULE, not a registry entry. `pyhecke.gram` was the only entry: its float64 `z` was convention D while its 50-dps mpmath path (z_mp, tr_m_mp, tr_m_mp_strings, gram_matrix_mp) was still C -- and the risk ran the unintuitive way, with the NO-FLOAT64 path carrying the wrong convention, so the more precise answer was the incorrect one. The mpmath path is now D and the split is closed, so this list is empty rather than waived. Keep it that way: a waiver was always meant to be a visible open defect (it downgrades to a WARNING, counted in the summary line), never an approved design.",
   "resolved_migrations": [
