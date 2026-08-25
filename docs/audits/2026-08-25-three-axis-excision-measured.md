@@ -104,71 +104,52 @@ which R3 permits:
 inside a `if pn_convention == ...` **dispatch branch** — that is the alternative
 being *implemented*, not selected, and is not a defect.
 
-## Axis A — drained
+## Axis A — SUPERSEDED by a sibling, and rightly
 
-Four of the five were real and are fixed at the producer. The fifth was not a
-defect.
+**This branch's axis-A work did not land and should not.** While it was open, a
+sibling drained the same four float64 witnesses on `main` (`147aeb66c`,
+`e1114b1b2`) and migrated the same `pauli_young` stale convention-C hand-copy
+(`a97d415bd`). The merge took **theirs** on all ten conflicting files.
 
-| witness | fields | what it actually was |
-|---|---|---|
-| `deuteron-interface-handle-curvature` | 42 | float64 **by allocation** — built via `hecke_characters.build_seminormal_matrices`, which resolves `q` through `float(q)`, then cast to numpy `dtype=complex` |
-| `birkhoff-barodd-pythagoras-bridge` | 28 | Python `1j` complex arithmetic — the class the ratchet's own guard misses (`qou-f64j`) |
-| `a3-branching-asymmetry-vs-required` | 21 | `math.log` / `math.sqrt` / `math.atanh` on float literals |
-| `yekutieli-trefoil-surface2form-discretization` | 4 | `math.sqrt` on float matrix literals |
-| `sigma1cubed-seifert-surface-term` | 1 | **false positive** — see below |
+That was not a coin toss. Their versions are better on the mathematics, and the
+differences are worth recording because they are instructive:
 
-All four also hardcoded `Q0 = 1.1099785955573347`, which is the **muon** value
-(proton is `...5827513808`); one of them, `birkhoff`, labelled that literal
-`# proton-pinned substrate modulus`. All four now take the pin from `q_at()`.
+- **`F_q(1)` exactly, not as a limit.** They evaluate at the exact classical
+  Young form. This branch used an `ε = 1e-30` offset — a better approximation to
+  the limit than the `1e-7` it replaced, but still an approximation. Theirs
+  removes the limit entirely.
+- **They carried the ninths further.** Both branches independently found
+  `lim_{q→1} ‖dF_q‖²/h⁴` to be exact ninths. They verified `4k/9`, `k ∈ {0..4}`
+  to **22 digits** and found it **conjugation-symmetric** — `(5,1) ↔ (2,1⁴)`
+  both 4/9, `(3,2,1)` alone 16/9. This branch observed the ninths and stopped.
+- **Cleaner separation of concerns.** They fixed precision and *kept* the muon
+  pin, labelling it `"muon (ideal CAL-2)"`. This branch changed pin and
+  precision in one commit, conflating two movements in one diff.
+- **A defect this branch could not have hit.** `58db04f28` fixes `fmt()`-padding
+  a 17-digit `q0` **literal**, which appends digits wrong from the 18th. This
+  branch read `q0` from `q_at()`, which computes rather than pads — verified,
+  all 60 serialized digits survive independent recomputation at 110 dps — so the
+  bug was structurally absent rather than avoided by care.
 
-Three findings came out of the rewrites that are worth more than the drain:
+Also dropped: this branch's `young_seminormal.seminormal_sigma_symmetric`. Main
+added `hecke_characters.build_seminormal_matrices_mp`, the same object placed
+better — beside the float64 twin it replaces, where all 64 of that builder's
+callers can find it. Keeping both would leave two copies of one dispatch, the
+`qou-4e5k` failure mode this document cites three times.
 
-1. **A symbol collision in `birkhoff`.** `H_LIT = 0.10997859555733469` was
-   commented as "the `h` reading", but it is `q − 1`, not the `h = q − q⁻¹`
-   defined on the line directly above it (0.10998 vs 0.20906, a factor of ~1.9).
-   Two different quantities named `h` in one file. The longitudinal scan now
-   tests **both**, so the negative it reports is stronger: 0 of 6 readings land
-   `r*`, where before it was 0 of 4 with the ambiguity unresolved.
+### What axis A is still worth for
 
-2. **A wrong claim in `deuteron`, pre-existing.** The witness carried
-   `dFq_scales_as_h_squared: True` with the coefficient quoted in a side comment
-   as *"1.77 (measured, constant ratio)"*. The ratio is **not** constant across
-   partitions — that same witness's own rows run 0.435 to 1.751, a factor of 4,
-   and 1.77 is the `(3,2,1)` block alone. The `h²` claim is nonetheless **true**
-   in its correct reading, which is per-λ `h`-dependence rather than constancy
-   across λ, so it is now *derived* that way: the fitted exponent of `‖dF_q‖²`
-   in `h` is 4 to within 8e-5 for all nine non-singlet blocks. The two facts are
-   now separate witness fields instead of one conflated boolean.
+Two findings survive as *measurements*, independent of whose code landed:
 
-3. **A structure the old arithmetic could not see.** The `q → 1` limiting
-   coefficients of `‖dF_q‖²/h⁴` read as exact ninths — 4/9, 8/9, 12/9, 16/9
-   across the eleven H₆ blocks. Recorded as an *observation*, not a derivation.
-   Under binary64 the `q → 1` offset had to be `1e-7` (the seminormal diagonal
-   is 0/0 at `q = 1` and both parts are O(ε), so a smaller offset was destroyed
-   by cancellation), which capped the limit at ~6 figures: 16/9 read as 1.7506.
-
-Supporting change: [`young_seminormal.seminormal_sigma_symmetric`](../../computations/young_seminormal.py)
-— the symmetric-gauge mpmath counterpart of the float64 builder, verified
-entry-for-entry against it on (3,1), (2,2), (3,2,1), (4,2). The symmetric gauge
-is required rather than incidental: the deuteron probe reports **Frobenius
-norms**, which are not gauge-invariant, so the module's existing
-non-symmetric `seminormal_sigma` would have silently shifted every magnitude.
-
-### The fifth is a detector false positive
-
-`sigma1cubed-seifert-surface-term`'s single raw float64 is
-`elapsed_sec: 0.001` — a **wall-clock timing**, written by the producer as
-`round(time.perf_counter() - t0, 3)`. It is not a mathematical quantity and has
-no precision content, so there is nothing to carry as `mpf` and nothing to fix.
-
-It is not baselined either. The audit carries three documented carve-outs
-(LP-dual, float64-integrator, deprecated-f64), each counted and reported, but
-has no notion of a diagnostic/wall-clock field. 31 witnesses in `computations/`
-carry an `elapsed_sec`; this is the one whose value did not happen to round to
-an integer, which is the only reason it surfaced. So the headline "5 NEW dirty
-witnesses" is really **4 defects and 1 false positive**. Tracked as its own bug
-rather than fixed here — converting 31 producers, or adding a fourth carve-out,
-is a wider decision than this drain.
+1. **The "5 NEW dirty witnesses" headline was 4 defects and 1 false positive.**
+   `sigma1cubed-seifert-surface-term`'s single raw float64 is
+   `elapsed_sec: 0.001` — a wall-clock timing with no precision content and
+   nothing to carry as `mpf`. It is neither fixed nor baselined. The audit
+   carries three documented carve-outs but has no notion of a diagnostic field;
+   31 witnesses in `computations/` hold an `elapsed_sec` and this is the one
+   whose value did not round to an integer. Tracked as `qou-ywee`.
+2. **The headline 258,420 raw float64 fields is not a drain target.** 224,863 of
+   them are integral-valued floats reclassified on 2026-08-24, exact in binary64.
 
 ## Axis C — drained
 
@@ -263,7 +244,28 @@ rather than holding a second copy), the `pauli_young` deuteron block above, and
   audit's own second-tier note says these are the work the `z` migration does
   not finish.
 
-So the honest floor for a *mechanical* convention-C drain is 11, and the
+### Independently corroborated, from a different direction
+
+A sibling reached the same negative while this branch was open, and measured it
+rather than deriving it. Bean `qou-lp5d` records that of 8 assigned B4 sites,
+**5 are blocked for one reason**: the probe's own *subject* — the property it
+asserts and concludes about — is an analytic feature `z_C` has and `z_D` does
+not. Symbolically, with no float anywhere:
+
+| property | `z_C = √q/(q+1)` | `z_D = q³/(q²+1)` |
+|---|---|---|
+| bar involution `q → 1/q` | **bar-EVEN** | **neither** |
+| order of `(z − ½)` at `q = 1` | **2** | 1 |
+
+So substituting `z_D` does not move a value — it *falsifies the probe's own
+committed assertions* and desynchronises it from a sorry-free Lean companion.
+That is a stronger statement than this branch's route (the Lean
+mutual-exclusivity above), and the two agree. Their bean also makes the
+structural point this section is arguing: the "B4" label reads as a work item,
+so every future drain will pick these up, re-derive the blocker, and put them
+back. The audit now carries a **blocked-by-design** bucket for exactly that.
+
+So the honest floor for a *mechanical* convention-C drain is real, and the
 detector's "actionable" count overstates the drainable surface — the same shape
 as axis A, where "5 new dirty witnesses" was really 4 defects and 1 false
 positive. Both counts are useful as alarms and neither is a work queue.
@@ -272,8 +274,7 @@ positive. Both counts are useful as alarms and neither is a work queue.
 
 | axis | metric | before | after |
 |---|---|---|---|
-| A | NEW dirty witnesses | 5 | **1** (the `elapsed_sec` false positive) |
-| A | raw float64 fields | 258,420 | **258,325** (−95 = 42+28+21+4) |
-| B | actionable convention-C sites | 14 | **11** (floor: 9 Lean-blocked, 2 adjudicated/re-derive) |
+| A | *(superseded — landed on `main` by a sibling, see above)* | — | — |
+| B | actionable convention-C sites | 14 | **9** on the merged tree (3 by this branch, the rest by `main`) |
 | C | `test_ctype_consumer_coverage` | **RED** (2 failures) | **PASS** (6 baselined, 0 unadjudicated) |
 | C | off-canon `pn_convention` baseline entries | 8 | **6** |
