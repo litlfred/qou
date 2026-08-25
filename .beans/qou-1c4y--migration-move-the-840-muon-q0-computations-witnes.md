@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T21:15:00Z
+updated_at: 2026-08-25T21:23:27Z
 ---
 
 
@@ -837,3 +837,50 @@ established why. Two very different cases: the producer never reads q₀ (wants
 discards it (a real gap). Nothing here distinguishes them, and the split
 decides how much of the 1458 is work versus bookkeeping. That is the next
 measurement, and it is not this bean's Step 2.
+
+
+## 2026-08-25 (later still) — the 1458 split, MEASURED
+
+The previous entry left this open and said the split "decides how much of the
+1458 is work versus bookkeeping". Measured now, with
+[`computations/audits/no_q0_recorded_producer_split.py`](computations/audits/no_q0_recorded_producer_split.py)
+(pure static inspection; no arithmetic, so NO-FLOAT64 is vacuous):
+
+    population (unstamped AND recording no q0)   1458
+      READS q0, file-local                        478
+      READS q0, via one-hop import cone           105   -> 583 read but do not record
+      NO q0 read anywhere                         742   -> candidates for "independent"
+      producer unresolved                         133
+
+**The actionable number is 583.** Those producers read a q₀ and do not record
+it, so `_q0_anchor_from_payload` has nothing to match and `build()` falls
+through to the manifest answer. Have them record the q₀ they used and
+payload-first stamps them correctly on the next run — no new mechanism, and no
+number moves.
+
+The 742 are *candidates* for `q0Anchor: "independent"`, not confirmed ones.
+Two reasons to treat the figure as an **upper bound**: the cone walk is
+**one hop**, so a producer reading q₀ two modules deep is still counted as not
+reading; and `independent` is a producer-declared claim about intent, which a
+static scan cannot make on the producer's behalf.
+
+### The harness error, recorded because it was large and nearly shipped
+
+The first run reported **536** "reads q0 via import cone" and **302** "no read".
+Almost every cone hit was attributed to `_path_bridge`. It is a path resolver
+(`witness_path`) and reads no q₀ — the regex had matched
+`from q_parameter import Q` inside its **usage docstring** and a `#` comment.
+
+Normalising each module through `ast.unparse` with docstrings stripped moved
+**431 files** from "reads via cone" to "no read". Two lines of prose in one
+helper, inverting the majority verdict of the whole population. Any future
+scan of this kind must measure **code**, not file text — the same lesson
+`witness_staleness_triage.py` already encodes for a different question.
+
+Three hand-verifications of the corrected classifier, one per bucket:
+
+    aj_figure_eight_certificate.py   claimed no-read   -> ZERO q0 tokens present  OK
+    a5_so3_branching_probe.py        claimed no-read   -> no q0 read tokens       OK
+                                     (this was the _path_bridge false positive)
+    binding_canonical.py             claimed reads     -> `from q_parameter import
+                                       Q_MP as q0`, `Q_50_DIGIT_STR` in live code OK
