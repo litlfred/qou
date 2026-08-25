@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T08:24:13Z
+updated_at: 2026-08-25T11:10:20Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -126,3 +126,56 @@ TWO SEPARATE DEFECTS FOUND, both actionable, neither fixed here:
 STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; no closing the
 residual with any parameter (only CAL-1/2/3 admissible); sign agreement is
 one bit and is not partial success.
+
+
+=== BOTH DEFECTS FIXED (commit a060ad07ed) — and defect 1 was bigger than reported ===
+
+DEFECT 1 (phantom witness) — fixed, and the fix exposed a third problem.
+Corpus-grepped first: neutron-proton-mass-splitting-proof.md was the ONLY
+live block citing the phantom without a caveat. mass-table-z1-20.md and
+wedderburn-mass-formula-proof.md were already scoped.
+
+With no witness, the only check is re-derivation from the block's own rules
+(computations/pn_splitting_proof_provenance_probe.py). It does NOT confirm
+the block:
+
+  THE READING IS PINNED, BY THE PROTON. Convention C + suffix-inclusive
+  Phi_1 gives Phi_p = -0.8785233 vs the quoted -0.8785 — exact at the quoted
+  precision, and the only one of 8 readings that lands.
+
+  THE NEUTRON DOES NOT FOLLOW. Same reading gives Phi_n = -1.2677888, not
+  the quoted -1.2261. Because the reading is pinned by its partner, this is
+  NOT reading ambiguity.
+
+  source                      |dPhi|      dm MeV    vs CODATA
+  as stated in the block      0.3476      1.3016     +0.63 %
+  re-derived, convention C    0.3892655   1.4576     +12.7 %
+  re-derived, convention D    0.3354835   1.2562     -2.87 %
+
+So the block's headline +0.63 % agreement is NOT REPRODUCIBLE. It is also
+convention C throughout (excised by the owner ruling of 2026-08-15); under
+D its own construction gives -2.87 %.
+
+Scope (a): 8 readings, not exhaustive. NO replacement value proposed. The
+block now carries a provenance-and-scope note saying the +0.63 % cannot
+currently be checked and must not be cited as a confirmed prediction.
+
+DEFECT 2 (exponential ground-state rule) — recorded, NOT "fixed" by
+invention. def:atomic-braid clause 1 ranges over C(A,Z) arrangements: 924
+for C-12, 1.4e11 for Ca-40. Clause 2 is already greedy/polynomial; the
+asymmetry is unexplained. I did not substitute a polynomial rule — that
+would be inventing mathematics the corpus has not derived. The definition
+stands with the cost recorded, plus the note that any computation quoting a
+ground-state ordering for A >~ 14 is using an unstated restriction and
+should say which.
+
+GATE NOTE, worth carrying forward: precision-gates --changed exits 1 here on
+`import-time dps ratchet` + `raw-float64 ratchet`. Those are RED ON CLEAN
+MAIN — verified by stashing the whole change and re-running, which
+reproduces the identical two reds. Do not attribute them to a branch that
+touches computations/, and do NOT widen a baseline to clear them.
+
+NEW OPEN ITEM: the pn-splitting proof's +0.63 % needs either a derivation
+that reproduces Phi_n from the pinned reading, or retraction of the figure.
+Under the canonical convention D the same construction gives -2.87 %. That
+is a question about the block's numbers, NOT a licence to fit Phi_n.
