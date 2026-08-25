@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T18:35:00Z
+updated_at: 2026-08-25T19:05:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -400,3 +400,79 @@ non-unit may individually be small — but one embedding is not an orbit.
 So the next concrete step is a producer that emits the **full conjugate orbit**
 per prime, not a single embedding. That is a compute task, not a Lean one, and
 it is what would turn the hypothesis into a theorem.
+
+
+---
+
+# 2026-08-25 (third pass) — the archimedean route is REFUTED at p=3. Frob_3 is a unit.
+
+Built the conjugate-orbit producer this bean called for
+(`habiro_frobenius_conjugate_orbit_probe.py`). It answers the question and the
+answer is **no**.
+
+## Two corrections to this bean's own framing, before the result
+
+1. **The orbit producer already existed.** `habiro_frobenius_norm_probe.py`
+   computes the full orbit product and has a committed witness (#5745). This
+   bean's *"the data as recorded is one embedding, not the orbit"* is true of
+   `habiro-frobenius-probe.witness.json` — the **trace** probe — and false of
+   the norm probe. My previous pass recommended building it from scratch; that
+   was wrong and the corpus-grep caught it before any code was written.
+2. **That producer preferred DEPRECATED coefficients.** It read
+   `WITNESS_FAST if WITNESS_FAST.exists() else WITNESS_SYMBOLIC`, and
+   `_deprecated/habiro-coefficients-atomic-fast.witness.json` exists. The two
+   datasets disagree at `a₀` itself — neutron **8 vs 2**, deuteron **96 vs
+   192** — and 2 / 192 are the values *this bean* corrected the corpus to on
+   2026-08-23. Fixed to canonical-only; the source path is now recorded in the
+   witness.
+
+Also: **the committed norm witness reproduces from nothing on `main`.** All 7
+of its exact rows differ from a recomputation against *either* dataset, and it
+reports `route_a_supported: true`, `n_unit: 0`.
+
+## The result
+
+Canonical coefficients, exact integer arithmetic:
+
+    atom        p=2                    p=3
+    proton      N = 64    (= 8^2)      N = 1     <-- UNIT
+    neutron     N = 4     (= 2^2)      N = 1     <-- UNIT
+    deuteron    N = 36864 (= 192^2)    N = 171
+
+A unit of `O` has norm `±1`. So **`Frob_3` is a unit for both nucleons**, and
+`not_isUnit_of_natAbs_norm_ne_one`'s hypothesis `1 < |N(frob p)|` is **false**
+there. The no-exception-set form — `∀ p, ¬IsUnit (frob p)`, which is what
+`habiro_frobenius_not_unit` and `frobenius_not_unit_of_norm_bound` assert — has
+an explicit counterexample at the smallest odd prime.
+
+## Scope: (a) not (b)
+
+A **counterexample to the ∀-form**, not a structural exclusion of the norm
+route. One prime is not a positive density, so the **almost-every-prime form is
+untouched and is NOT refuted**. What dies is the version with no exception set —
+which is, however, the form the Lean carries.
+
+## Three independent checks
+
+1. orbit product vs **resultant** `Res(Φ_2p, f)` — no shared code path, agree on
+   every row; the probe **raises** on disagreement rather than reporting it;
+2. at `p=2` the representative collapses to a rational integer equal to the
+   **collapse constant** (8 / 2 / 192) and the norm is exactly its square,
+   forced by degree 2 — corroboration from a different witness;
+3. the pre-existing probe, with **only** its input source corrected, flips its
+   own verdict from "Route A SUPPORTED" to **"Route A BLOCKED — found unit
+   Frobenius"**.
+
+## What is still open
+
+Exactness is bounded by **data**, not method: evaluating at `p` needs `2p+1`
+coefficients. With 9/9/14 this reaches `p ≤ 3` for the nucleons, `p ≤ 5` for the
+deuteron. The honest open question is now narrower and sharper than "does the
+norm route work":
+
+**Is `p = 3` an isolated exception, or do units recur?** That decides between
+"drop perpetuity, keep an exception set" and "the norm route is dead". It needs
+canonical coefficients beyond index 14 — `_deprecated/` has T (19) and ³He (20),
+enough for `p = 7`, but they are the superseded dataset and must not be used.
+So the next step is **generating canonical coefficients further out**, not more
+Lean.
