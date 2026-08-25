@@ -1,11 +1,11 @@
 ---
 # qou-hhm3
 title: 'Wall-clock timing fields are not precision loss: split elapsed_sec out of the raw-float64 ratchet (same argument as qou-xt5l integral floats)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T16:41:59Z
-updated_at: 2026-08-25T19:40:35Z
+updated_at: 2026-08-25T19:51:32Z
 ---
 
 ## Found 2026-08-25 draining the 5 NEW raw-float64 witnesses on main
@@ -241,3 +241,60 @@ argued against for `*_sec` in the first place.
 NOT started here deliberately: it is a third scope item on a PR that already
 carries two, and I have collided twice today by starting work without
 re-checking. Left as a clean pickup with the measurement done.
+
+
+## RETRACTION 2026-08-25 — my prescription above is WRONG, and the axis has an owner
+
+The section above says the `wall_sec` fix "belongs at the single source
+(`_EPHEMERAL_META_FIELDS`)". **That would not work.** Measured on main
+(`ac458da7a0`):
+
+    _EPHEMERAL_META_FIELDS  : 9 names
+       commitSha, computedAt, durationMs, durationSeconds, duration_sec,
+       elapsed_sec, elapsed_seconds, environment, scriptCommitSha
+
+    what the audit CARVES   : 5 names
+       durationMs, durationSeconds, duration_sec, elapsed_sec, elapsed_seconds
+
+The audit does not consume the mask whole. `_ephemeral_timing_fields()` filters
+it:
+
+    frozenset(n for n in _M if "dur" in n.lower() or "elapsed" in n.lower())
+
+`wall_sec` contains neither substring, so adding it to the mask leaves the
+ratchet counting it exactly as before. It would improve witness-comparison
+stripping — a real but different benefit — and do nothing for the gate. I told
+the owner "the fix belongs at the mask" and that was a code-read I did not
+finish.
+
+## The axis is owned, and measured far better than mine
+
+Bean `qou-ywee` / PR #5783 (`raw-float64 ratchet counts wall-clock elapsed_sec`)
+covers this: **453 fields across 97 witnesses**, 40 of them dirty ONLY because
+of timings. My 48-occurrence `wall_sec` finding is a slice of a family they have
+already enumerated: `walltime_sec` 99, `rust_secs` 46, `time_sec` 42,
+`compute_time_sec` 38, `wall_sec` 36, `solve_time_s` 33 — ~495 timing-shaped
+fields under names the mask does not declare.
+
+**And they explicitly warn against the obvious next step**, with a measurement I
+did not have. Broadening the filter to `/time|wall|_sec|elapsed|dur/` matches 84
+distinct names, 19 of which are physics or ratios, and would remove **361 REAL
+float64 fields** from the gate. The trap they name:
+
+    `_times_` is MULTIPLICATION. `y_times_chi` is the Frobenius pairing
+    y_lambda . chi_lambda -- 177 fields, the framework's central object.
+
+A `/time/` substring test excuses every one of them, silently, and the gate
+stays green while doing it. They wrote that regex first and the corpus caught
+it; those names are now self-test cases that must still count.
+
+So the remaining work is neither "add two names to the mask" nor "broaden the
+filter". It is a per-name adjudication of ~495 fields against a corpus where
+timing-shaped names and physics names overlap, and it belongs to `qou-ywee`.
+
+## What this bean keeps
+
+Nothing actionable. The carve-out landed via `d9df357d69`; the residue is
+`qou-ywee`'s. Closing rather than leaving a wrong prescription live — a stale
+instruction in a bean is exactly the failure mode this corpus keeps re-finding,
+and this one was mine.
