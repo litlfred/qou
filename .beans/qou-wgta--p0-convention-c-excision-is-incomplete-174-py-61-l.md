@@ -1,10 +1,11 @@
 ---
 # qou-wgta
 title: 'P0: convention-C excision is INCOMPLETE -- 174 py + 61 lean + tools/ Rust core + a shipped package still on C, incl. 3 hybrids and the registry itself'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-08-09T12:42:32Z
+updated_at: 2026-08-25T21:39:48Z
 ---
 
 

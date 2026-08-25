@@ -377,6 +377,53 @@ def _file_of_module(repo: pathlib.Path, mod: str):
     return None
 
 
+def rederivation_blocked_files(repo: pathlib.Path):
+    """Files the registry records as PENDING the qou-cds1 ladder re-derivation.
+
+    A third way the registry accounts for a convention-C site, alongside
+    `blocked_migrations` (stays C permanently, by design) and the `evaluators.z`
+    + `intra_module_split_waivers` pair (declared, R9-asserted). These sites
+    must NOT stay on C -- but a z_D substitution changes what the site ASSERTS
+    rather than the coordinate it asserts it in, so the migration is carried by
+    the re-derivation, not by a sweep.
+
+    Measured, per row: `z_C` is bar-EVEN and `z_D` is bar-NEITHER, so every
+    bar-parity result stated for `z` has no D-frame statement to migrate TO;
+    `ord_{q=1}(z - 1/2)` is 2 under C and 1 under D, so the even-order premise
+    of the T3 exclusion is simply false under D; the ladder phase `(z-1)h/2`
+    moves 22.6 % at the proton pin.
+
+    Like `declared_c_files`, this ACCOUNTS FOR a site without EXCUSING it:
+    these stay in the actionable count and only the label changes. A registry
+    row that shrinks the headline number would be a way to make the inventory
+    smaller without making the corpus better -- which is the failure this whole
+    detector exists to prevent.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        rows = json.loads(reg.read_text()).get("blocked_on_rederivation", [])
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out: dict[str, list] = {}
+    for r in rows:
+        f, sym = r.get("file", ""), r.get("symbol", "")
+        if not f or not sym:
+            continue
+        # VERIFY THE PREMISE, exactly as blocked_symbols does: a row asserting
+        # a site is still C is a liability the moment the site moves to D.
+        try:
+            src = (repo / f).read_text()
+        except OSError:
+            src = ""
+        if src and _defines_convention_d(src, sym):
+            print(f"  REGISTRY STALE: {f}::{sym} is registered under "
+                  f"blocked_on_rederivation but the file defines it as "
+                  f"convention D. Drop the row; the site has migrated.")
+            continue
+        out.setdefault(f, []).append(sym)
+    return {f: sorted(set(v)) for f, v in out.items()}
+
+
 def blocked_symbols(repo: pathlib.Path):
     """The (module, symbol) pairs the registry deliberately leaves on C.
 
@@ -790,7 +837,8 @@ def _area_of(path: str) -> str:
     return path.split("/", 1)[0] if "/" in path else path
 
 
-def classify(path: str, blocked_files=(), declared_files=()) -> str:
+def classify(path: str, blocked_files=(), declared_files=(),
+             rederivation_files=()) -> str:
     """Bucket a site. `blocked_files` comes from the registry, not from here.
 
     This used to label EVERY site under `tools/pyhecke/` "BLOCKED on C by
@@ -817,6 +865,12 @@ def classify(path: str, blocked_files=(), declared_files=()) -> str:
     if path in declared_files:
         return ("tools/pyhecke — DECLARED C in evaluators.z, R10-waived "
                 "(open defect, still actionable)")
+    if path in rederivation_files:
+        # NOT excused. The row records WHY a z-swap is invalid here so the next
+        # drain does not re-derive that from scratch; it does not claim the site
+        # is finished. See `blocked_on_rederivation_note` in the registry.
+        return (f"{_area_of(path)} — BLOCKED on the qou-cds1 re-derivation "
+                "(registry, still actionable)")
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — C with NO registry row (unexplained)"
     # computations/from_scratch/README.md declares the whole directory
@@ -837,7 +891,7 @@ def classify(path: str, blocked_files=(), declared_files=()) -> str:
     return "computations — live producers"
 
 
-def scan(roots=ROOTS, blocked_files=(), declared_files=()):
+def scan(roots=ROOTS, blocked_files=(), declared_files=(), rederivation_files=()):
     """Yield (path, lineno, target_name, source, bucket, deliberate)."""
     for r in roots:
         base = pathlib.Path(r)
@@ -867,7 +921,8 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
-                       classify(sp, blocked_files, declared_files),
+                       classify(sp, blocked_files, declared_files,
+                                rederivation_files),
                        bool(DELIBERATE(nm)))
 
             # RETURNED, not assigned. The scan above keys off an assignment
@@ -919,7 +974,9 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                     yield (sp, r.lineno, f"{fn.name}() -> return",
                            ast.unparse(val),
                            "convention dispatcher (returns C and D) — labelled comparison"
-                           if dispatcher else classify(sp, blocked_files, declared_files),
+                           if dispatcher else classify(sp, blocked_files,
+                                                      declared_files,
+                                                      rederivation_files),
                            bool(DELIBERATE(fn.name)) or dispatcher)
 
 
@@ -1137,6 +1194,28 @@ def selftest() -> int:
                   blocked_files={"tools/pyhecke/python/pyhecke/gram.py"},
                   declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
          .startswith("tools/pyhecke — BLOCKED")),
+        # blocked_on_rederivation: the third accounting channel. It must label
+        # WITHOUT excusing -- a row that shrank the headline count would let the
+        # inventory get smaller while the corpus stayed the same.
+        ("a re-derivation-blocked site is labelled as such",
+         "BLOCKED on the qou-cds1 re-derivation" in
+         classify("computations/qbeta/p.py",
+                  rederivation_files={"computations/qbeta/p.py"})),
+        ("a re-derivation-blocked site stays ACTIONABLE",
+         "still actionable" in
+         classify("computations/qbeta/p.py",
+                  rederivation_files={"computations/qbeta/p.py"})
+         and not any(e in classify("computations/qbeta/p.py",
+                                   rederivation_files={"computations/qbeta/p.py"})
+                     for e in ("BLOCKED on C by design", "DEPRECATED for production"))),
+        ("a permanent blocked_migrations row still outranks a re-derivation row",
+         classify("computations/probes/m.py",
+                  blocked_files={"computations/probes/m.py"},
+                  rederivation_files={"computations/probes/m.py"})
+         .endswith("BLOCKED on C by design (registry)")),
+        # The live registry must actually carry the seven qbeta-cone rows.
+        ("the live registry records the qbeta-cone re-derivation blocks",
+         len(rederivation_blocked_files(pathlib.Path("."))) == 7),
         # declared_c_files reads the LIVE registry: a C evaluator whose module
         # is NOT waived must not be silently treated as declared.
         ("an unwaived C evaluator does not count as declared",
@@ -1280,8 +1359,10 @@ def main() -> int:
                          pathlib.Path("docs/coordination/trace-convention-registry.json")
                          .read_text()).get("blocked_migrations", [])}
     declared_files = declared_c_files(pathlib.Path("."))
+    rederivation_files = rederivation_blocked_files(pathlib.Path("."))
     rows = list(scan(blocked_files=blocked_files,
-                     declared_files=set(declared_files)))
+                     declared_files=set(declared_files),
+                     rederivation_files=set(rederivation_files)))
     live = [r for r in rows if not r[5]]
     deliberate = [r for r in rows if r[5]]
 
