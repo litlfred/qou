@@ -65,6 +65,17 @@ the `Sym²` gate has even dimension, and `3` is odd.
 and not a restatement: a 3-dimensional object that the irrep criterion cannot
 reach, and which the multiplicity criterion excludes.
 
+## Why the count has no cross terms
+
+`Sym²(⨁_i m_i V_i)` also contains the mixed pieces `(V_i ⊗ V_j)^{m_i m_j}` for
+`i ≠ j`, and each contributes `dim Hom(1, V_i ⊗ V_j) = [V_j ≅ V_i^*]` singlets.
+For `SU(2)` every irrep is **self-dual**, so `V_i^* ≅ V_i`, and distinct
+summands are by definition non-isomorphic — hence `V_j ≇ V_i^*` and the mixed
+pieces contribute **nothing**.  The two-term count above is therefore complete
+for `SU(2)`, and it is self-duality that makes it so.  Over a group with a
+non-self-dual irrep the cross terms would have to be carried, and the parity
+conclusion would not follow.
+
 ## Scope
 
 This is the **combinatorial / multiplicity shadow** of the Frobenius–Schur
@@ -75,9 +86,25 @@ is formalised is the consequence: given that count, the gate forces even
 dimension.  The count itself is the model, stated as a definition and labelled
 as such.
 
-Nothing here bears on whether a genuinely **multi-fibre** (groupoid-level)
-construction can supply `N = 3`; that remains open (`qou-8pl3` Route A). The
-result excludes the single-fibre tensor category and nothing beyond it.
+**Two boundaries, stated so the exclusion is not read wider than it is.**
+
+1. **Multi-fibre structure is untouched.**  Nothing here bears on whether a
+   genuinely groupoid-level construction can supply `N = 3`; that remains open
+   (`qou-8pl3` Route A).  The result excludes the single-fibre tensor category
+   and nothing beyond it — and in that respect it *sharpens* Route A rather
+   than competing with it, since the requirement "not a subobject of any
+   `V^{⊗n}`" is now proved for arbitrary subobjects and not merely for
+   summands.
+2. **Generic `q` only; root-of-unity truncation is NOT covered.**  The count
+   uses the classical fusion data, which the Drinfeld–Jimbo quantisation
+   preserves at generic `q` (same fusion rules, same orthogonal/symplectic
+   type), so it applies to the framework's fibre as long as `q` is generic.  At
+   a **root of unity** the category is truncated to the tilting quotient and is
+   a different category; whether the same parity argument survives there is
+   *not* settled by this file.  That matters, because root-of-unity truncation
+   is the chapter's own candidate mechanism (§8, *Truncation mechanism*), so
+   this is a live escape route from the exclusion and is named here rather than
+   silently closed.
 
 ## Base ring (§7c)
 
