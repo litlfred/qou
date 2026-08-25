@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-25T18:38:25Z
+updated_at: 2026-08-25T21:20:17Z
 ---
 
 ## The wall
@@ -191,3 +191,34 @@ theorems can apply before more of that literature gets imported.
 RETAINED: Consequence 1 (positivity => outside the A-adequate family) is
 unaffected — it is a statement about positive words and M is positive. The
 v8 = 4*Catalan fix and its tie to the corpus Borromean volume stand.
+
+2026-08-25T21:0xZ — LINK LEVEL, the question the retraction named.
+
+Searched the conjugacy class (Markov-I orbit; the closure and hence Vol(K)
+depend only on it) for a representative meeting Ito Thm 2's [beta]_D >= 3.
+
+CONTROL: 4_1 figure-eight is genuinely hyperbolic (Vol 2.0299, the muon
+carrier) and IS a knot, so Thm 2 applies by hypothesis if the floor condition
+is reachable at all. Result: floor 0 as written, 0 across all 118097
+freely-reduced conjugators of length <= 10 in B_3. Positive control
+(Delta^6 s1 s2^-1) reaches 3; raising control (Ito's own pair, searched from
+the low side) goes 0 -> 1. So the null is about the class, not the search.
+
+READING: the earlier negative was aimed at the wrong target. Ito's threshold
+sits at 18 crossings and small hyperbolic knots live below it -- a statement
+about the THEOREM'S DOMAIN, which is measurable, unlike the retracted claim
+about the framework's capacity.
+
+ALSO corrects a lead that landed on main as b437d3bb7e: 'small floor is the
+regime where closures tend to be torus or composite'. Ito Prop 4 and Remark 4
+(Menasco-Nakamura) give composite => small floor; that lead uses the converse,
+and 4_1 refutes it. Their primary conclusion is untouched (monotonicity), and
+Prop 4 read forwards supports it. Pointer added to their doc.
+
+SCOPE (a): a search. Class supremum not computed; no Malyutin bound invoked
+(not in library/, so path 5 cannot support citing it); B_3 rests on Ito's one
+stated example that stabilisation lowers the floor; Borromean row is a LINK,
+excluded by Thm 2's hypothesis.
+
+Obstruction A unchanged. PR #5782 (rebased; the library ingest is gone from it
+-- main landed a better ingest of the same 7 docs).

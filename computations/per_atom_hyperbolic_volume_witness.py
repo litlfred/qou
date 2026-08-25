@@ -7,9 +7,32 @@ using SnapPy.  These volumes are the input to the per-knot
 m_avg closure.
 
 The atlas knots are MARKOV-REDUCED minimal braids in S³ — distinct
-from the `atom_braid_word_3A(Z, N)` Hecke-algebra braid words which
-carry intra-block g₀/g₁ generators.  Same Markov class, different
-topological realization.
+from what `atom_braid_word_3A(Z, N)` returns, which carries intra-block
+g₀/g₁ generators.
+
+CORRECTED 2026-08-25 (bean qou-qpj9).  This used to end "Same Markov
+class, different topological realization."  THAT CANNOT HOLD, and it was
+the only stated bridge between the two objects.  `atom_braid_word_3A`
+does not return a braid word — it returns an element of H_n(q) OUTSIDE
+the image of rho : B_n -> H_n(q), because 2A+1 of its letters are
+genuine weight-1 AVERAGES over crossing sign (measured:
+computations/atom_word_braid_letter_census_probe.py; the misnomer is
+flagged in that function's own docstring, PR #5765).  An element outside
+im(rho) is not a braid, so it has no Markov class for the atlas knot to
+share.  What it has is 2^(2A+1) branch closures whose classes generally
+differ — 32 for 2H, all measured non-hyperbolic
+(docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md).
+
+NO NUMBER MOVES.  The volumes below are computed from the ATLAS knots
+directly and never from the atom element, so this corrects the stated
+justification, not a value.  What the assignment actually rests on is
+per-entry and is recorded in ATLAS: "principled-derivation" for p and n,
+"manual-historical-volume-match" for D, T and 3He — and that last is an
+ADMITTED FIT, the knot having been chosen for volume proximity to
+B_AME (docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md, and
+mass_table_ppb.py L11-22).  The correction cuts the other way from a
+reprieve: it removes the one principle that was offered in place of the
+fit.
 
 Ref: docs/audits/2026-06-02-subgoal-1-phase-b-per-atom-trM-comparison.md
 Ref: docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md
