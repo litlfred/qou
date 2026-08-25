@@ -132,13 +132,16 @@ def self_test() -> int:
         fails.append(f"corpus read as {r['total']} witnesses — glob is wrong")
     if r["with_provenance"] == 0:
         fails.append("ZERO witnesses have provenance — the #5775 false zero")
-    # 3. a known-attributable witness is actually attributed.
-    prods = _producers()
-    known = "computations/probes/higgs-h6-correction-probe.witness.json"
-    if Path(known).exists():
-        kind, _p = attribute(known, prods)
-        if kind != "verified":
-            fails.append(f"known-attributable witness came back {kind!r}")
+    # 3. attribution actually attributes something — the false-zero guard.
+    #
+    # Deliberately NOT pinned to a named witness. Writing a witness filename
+    # into this source makes the provenance audit read this script as a
+    # CONSUMER of that witness, which moved one file from
+    # `prov_exempt_no_reader` to `prov_missing` on the first run here — a
+    # finding manufactured by the test rather than found by it. Same class as
+    # the byproduct witnesses #5763 caught before they landed.
+    if not r["buckets"]["verified"]:
+        fails.append("ZERO witnesses attributed — the method is not working")
     if fails:
         print("SELF-TEST FAILED:")
         for f in fails:
@@ -146,7 +149,8 @@ def self_test() -> int:
         return 1
     print(f"SELF-TEST PASSED — provenance read in both shapes, corpus reads "
           f"{r['total']} witnesses with {r['with_provenance']} carrying "
-          f"provenance, and a known-attributable witness verifies.")
+          f"provenance, and {len(r['buckets']['verified'])} of the remainder "
+          f"attribute (non-zero, so the method is live).")
     return 0
 
 
