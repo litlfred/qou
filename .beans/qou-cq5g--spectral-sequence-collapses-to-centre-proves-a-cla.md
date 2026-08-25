@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T21:17:48Z
+updated_at: 2026-08-25T22:52:32Z
 ---
 
 `QOU.WedderburnMass.spectral_sequence_collapses_to_centre`
@@ -42,3 +42,48 @@ of `J^bullet` are excluded (`2026-08-16-three-gb-filtrations-one-name.md`). Ther
 is no spectral sequence here yet to collapse.
 
 Analysis: `docs/audits/2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md` §2.
+
+
+## THIS WAS FOUND IN JUNE AND CLOSED ON A MISREADING (2026-08-25)
+
+My original entry said this was a new finding, "not in the vacuity review
+ledger", with "no agent verdict ever recorded". **That framing was too narrow and
+the real story is worse.**
+
+**1. It was found on 2026-06-07.** `docs/audits/2026-06-12-qa-drain-r5r6-findings.md`
+§2.3 carries the row verbatim: *"Lean only proves `e*e=e` idempotency"*.
+
+**2. It was closed as stale, and the section is headed "Superseded by `main`
+(do NOT re-file)".** So the record actively instructed future agents not to look
+again. Two and a half months.
+
+**3. The dismissal's evidence is all TRUE and all IRRELEVANT.** It reads:
+*"Developed: now `class SemisimpleAlgebra`, `class WhiteheadHH`, real
+`innerDerivation`, `theorem spectral_sequence_collapses_to_centre`,
+`wedderburnWeight`/`plancherelWeight`. Finding is stale."* Every one of those
+additions happened. **None changes what the theorem proves** — conclusion still
+`e*e = e`, body still `I.e_idem i`, `[WhiteheadHH R A]` still never used.
+
+**The failure mode, named:** scaffolding was added AROUND a vacuous theorem and
+the theorem was given an impressive name; the drain then read the presence of a
+well-named theorem as answering the complaint that the theorem is trivial. A
+declaration's NAME AND NEIGHBOURS ARE NOT ITS CONTENT — only its type and body
+are. This is the repo's own "Axiomatization is NOT a Proof" / "sorry-free !=
+derived" rule, failing from the inside of a QA drain.
+
+**4. A machine signal agreed with the finding the whole time.**
+`docs/audits/lean-triviality.json` carries the declaration with
+`"closed": false`, last checked `2026-08-07`. The audit never accepted the
+staleness verdict. So the correct statement is not "no verdict was ever
+recorded" — it is that a HUMAN-READABLE verdict said stale while the MACHINE
+verdict said open, and the human-readable one carried a do-not-re-file marker.
+
+**Correction landed** in the June audit doc: the row is struck through with the
+live Lean quoted beneath it, and marked "Do re-file." The other §2.3 rows are
+explicitly left alone — each was assessed on its own evidence.
+
+**Consequence for the disposition options above:** unchanged in substance, but
+this is no longer routine hygiene. A rename touching `spectral-sequence-collapse.ts`
+(`lean.ref`), `definition-index.md`, and a docstring cross-reference in
+`phi-q-categorical-truncation.lean` is a 3-source-file change with a 2.5-month
+history behind it, so it is worth the owner's eye rather than a silent drain.
