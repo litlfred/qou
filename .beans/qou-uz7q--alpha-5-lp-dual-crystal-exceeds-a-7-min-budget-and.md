@@ -513,3 +513,46 @@ slow producers.
   no `scriptHash` has drifted. Applying the change to the two probes is a
   proposal, not something this bean has done — and it would pay the drift, so it
   should ride with the re-run that regenerates their witnesses.
+
+## Scaling, with `series` timed apart from extraction — and a flaw in my own test
+
+The previous section left the N=9 timing open. A first attempt burned 90+ minutes
+with no output, and I could not attribute it: **that harness printed only after
+`nsimplify` of every coefficient**, so a slow extraction and a slow `series` were
+indistinguishable in it. Re-run with `series` printed immediately and extraction
+timed on its own line:
+
+| N | `sp.series` | extract + `simplify` |
+|---|---|---|
+| 5 | 56.2 s | — |
+| 6 | **365.8 s** | **0.0 s** |
+| 7 | **365.1 s** | **0.0 s** |
+| 8 | **1386.8 s** | **0.0 s** |
+
+**Extraction is free at every order.** So the 90-minute silence was `series`
+itself; the harness flaw was real but did not change the answer. Worth recording
+both facts — the instrument was wrong, and it happened not to matter.
+
+### N=6 and N=7 are identical because MY truncation was too generous
+
+365.8 s vs 365.1 s is not a coincidence. `cos_poly` used `range(n//2 + 2)`, so:
+
+| N | cos degrees |
+|---|---|
+| 5 | 0..6 |
+| 6, 7 | 0..8 |
+| 8, 9 | 0..10 |
+
+N=6 and N=7 expand the **same** polynomial, as do N=8 and N=9. The apparent
+"scaling" is partly an artifact of my formula rather than a property of the
+problem.
+
+**And the generosity is not free.** `series(..., 0, N)` needs terms through
+`s^(N-1)`, and `alpha_eff = O(s)`, so the `cos` truncation needs degree **≥ N-1**
+— no more. At N=9 that is degree **8**, not the degree **10** my harness used —
+and degree 10 is the same expression that made N=8 cost 1387 s, while degree 8
+is the one that ran in **365 s**. So the N=9 number I was about to report would
+have measured my own over-truncation.
+
+Re-running N=9 at the minimal sufficient degree, with the ground-truth residual
+check attached so a cheaper truncation cannot pass by being wrong.
