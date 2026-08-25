@@ -4737,7 +4737,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-math-0401068v1/0401068v1 (1).pdf"
+    "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -9360,7 +9360,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-1810.11563v1/1810.11563v1 (1).pdf"
+    "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -9403,7 +9403,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
-    "rationale": "Written-up lecture series on quantum complexity and black hole interiors: the complexity/entropy analogy and a second law of complexity, the relation between non-increasing complexity and firewalls, and the thermodynamics of complexity with 'uncomplexity' as a computational resource. Same programme as the complexity-equals-action upload in this slice, in pedagogical form. Same judgement: the corpus's information-theory chapter shares the subject matter (horizons, computation, information loss) but has none of the machinery — no holographic dual, no complexity measure on states, no relative-complexity metric — and grep finds no corpus mention of complexity growth, uncomplexity, or firewalls. Note also that this file is byte-identical (md5 d6b2d238...) to uploads/1810.11563v1 (1).pdf, so the upload directory carries it twice. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim the complexity programme is irrelevant to the folio's horizon blocks.",
+    "rationale": "Written-up lecture series on quantum complexity and black hole interiors: the complexity/entropy analogy and a second law of complexity, the relation between non-increasing complexity and firewalls, and the thermodynamics of complexity with 'uncomplexity' as a computational resource. Same programme as the complexity-equals-action upload in this slice, in pedagogical form. Same judgement: the corpus's information-theory chapter shares the subject matter (horizons, computation, information loss) but has none of the machinery — no holographic dual, no complexity measure on states, no relative-complexity metric — and grep finds no corpus mention of complexity growth, uncomplexity, or firewalls. Note also that this file is byte-identical (md5 d6b2d238...) to uploads/1810.11563v1.pdf, so the upload directory carries it twice. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim the complexity programme is irrelevant to the folio's horizon blocks.",
     "keyResults": [],
     "proposedActions": [
      {
@@ -10683,7 +10683,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2304.12545v1/2304.12545v1 (1).pdf"
+    "file": "library/arxiv-2304.12545v1/2304.12545v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -10895,7 +10895,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2402.04839v2/2402.04839v2 (1).pdf"
+    "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -11292,7 +11292,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf"
+    "file": "library/arxiv-2506.10206v2/2506.10206v2.pdf"
    },
    "id": "hakimoglu-brown2025",
    "status": "unreviewed",
@@ -11342,7 +11342,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, MSC codes and subject match the registered entry). This PDF is byte-identical (sha256 prefix d0631a9abd9b) to library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf, which the registered entry's note names — a duplicate upload of one document under two filenames. MISCITED CLAIM, two parts. (1) content/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean:124-127 describes the three classical dilogarithm functional equations (Euler reflection, duplication, Landen) as 'analytically proved in' this source. The document does NOT prove them: it states them as known background in §1 as its equations (5), (6) and (7), introduced as fundamental functional equations 'that are to arise in our work', and then USES them to derive its new results. The attribution inverts the dependency. (2) The registered entry's note credits the source with supplying the analytic backing for the golden-ratio value Li2(phi^-2) = pi^2/15 - ln^2 phi, on which the 4_1 real-q Habiro-tail action A_0 = pi^2/5 rests. I searched the full text: the expression pi^2/15 does not occur anywhere, and the document's actual golden-ratio result (its Example 4, from Theorem 3) is pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0. The Li2(phi^-2) evaluation is a classical Landen/Euler result, not a result of this document. So the reference is credited with the specific evaluation a downstream action value depends on and does not contain it. The reference is still legitimately supporting (it is a genuine source of dilogarithm ladder machinery over several quadratic fields), and one site is accurate: QOU/MassTheory/RogersDilogInflection.lean:38 cites it for the Rogers L-function at its eq. (4), which is indeed there.",
+    "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, MSC codes and subject match the registered entry). This PDF is byte-identical (sha256 prefix d0631a9abd9b) to library/arxiv-2506.10206v2/2506.10206v2.pdf, which the registered entry's note names — a duplicate upload of one document under two filenames. MISCITED CLAIM, two parts. (1) content/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean:124-127 describes the three classical dilogarithm functional equations (Euler reflection, duplication, Landen) as 'analytically proved in' this source. The document does NOT prove them: it states them as known background in §1 as its equations (5), (6) and (7), introduced as fundamental functional equations 'that are to arise in our work', and then USES them to derive its new results. The attribution inverts the dependency. (2) The registered entry's note credits the source with supplying the analytic backing for the golden-ratio value Li2(phi^-2) = pi^2/15 - ln^2 phi, on which the 4_1 real-q Habiro-tail action A_0 = pi^2/5 rests. I searched the full text: the expression pi^2/15 does not occur anywhere, and the document's actual golden-ratio result (its Example 4, from Theorem 3) is pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0. The Li2(phi^-2) evaluation is a classical Landen/Euler result, not a result of this document. So the reference is credited with the specific evaluation a downstream action value depends on and does not contain it. The reference is still legitimately supporting (it is a genuine source of dilogarithm ladder machinery over several quadratic fields), and one site is accurate: QOU/MassTheory/RogersDilogInflection.lean:38 cites it for the Rogers L-function at its eq. (4), which is indeed there.",
     "keyResults": [
      {
       "locator": "eq. (4), §1",
@@ -11966,7 +11966,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-hep-th-9308100v1/9308100v1 (1).pdf"
+    "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -13299,7 +13299,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2209.06973v1/On_the_geometry_of_two_state_models_for_the_colore.pdf"
+    "file": "library/arxiv-2209.06973v1/2209.06973v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
