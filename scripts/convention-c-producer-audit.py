@@ -425,8 +425,20 @@ _Q_LIKE = re.compile(r"^_?[qQ][A-Za-z0-9_]{0,6}$")
 #: A binding that names a Markov trace or a Wedderburn weight -- the
 #: quantities that are rational in q under convention D, so a half-integer
 #: power in one is z_C showing through.
+#: `bond` / `f_pp` / `f_pn` / `f_nn` added 2026-08-25 (bean `qou-l7j1`). Per-bond
+#: energies are Wedderburn weights by another name, and they are where the
+#: half-integer power actually surfaced: `mirror_split_milnor_one_third_probe.py`
+#: writes `f_nn` and `f_pn` with `q0 ** mpf("1.5")` two lines under an
+#: unlabelled `z = sqrt(q0)/(q0+1)`.
+#:
+#: MEASURED before adding, because over-breadth is this scanner's whole risk
+#: (its first version returned 50 sites, nearly all legitimate square roots).
+#: Corpus-wide the widening adds exactly THREE bindings, all in that one file,
+#: all genuine -- 3/3. It buys the bean's own named instance and nothing else,
+#: and all three land in the second tier rather than the actionable count.
 TRACE_OR_WEIGHT = re.compile(
-    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census",
+    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census"
+    r"|bond|^f_(pp|pn|nn|np)$",
     re.I)
 
 
@@ -1213,6 +1225,15 @@ def selftest() -> int:
                      "W2 = (q0 ** 1.5 + q0 + 1) / d\n") == (1, 0)),
         ("a file on neither convention is still not scanned at all",
          _cf_pending("W2 = (q0 ** 1.5 + q0 + 1) / d\n") == (0, 0)),
+        # Per-bond energies are Wedderburn weights by another name. Measured at
+        # 3/3 corpus-wide before adding; `f_pp`/`f_pn`/`f_nn` only, not any
+        # `f_xx`, so an unrelated two-letter f-name is still left alone.
+        ("a per-bond weight with a half-power is a trace/weight binding",
+         _cf("f_nn = (q ** 1.5 - q ** 3 + 1) / (q * (q + 1))\n") == 1),
+        ("`bond` in the name is enough",
+         _cf("eps_bond = mp.sqrt(q)\n") == 1),
+        ("an unrelated two-letter f-name is NOT a bond weight",
+         _cf("f_ab = mp.sqrt(q)\n") == 0),
     ]
     for name, ok in checks:
         print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
