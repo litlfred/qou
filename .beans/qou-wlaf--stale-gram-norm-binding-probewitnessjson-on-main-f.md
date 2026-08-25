@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T17:06:03Z
+updated_at: 2026-08-25T18:11:13Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -128,3 +128,46 @@ pass of this measurement returned **0** — it looked for `d["witness"]
 tree. Caught only by asserting the known positive was detected. Any re-run of
 this measurement must self-test against `gram-norm-binding-probe.witness.json`
 before its count is trusted.
+
+
+---
+
+## A SECOND instance of this class, and it points the other way (2026-08-25)
+
+Raised by the sibling on [#5763](https://github.com/litlfred/qou/pull/5763),
+who asked twice for it to be folded in here. It belongs: same shape as the
+gram-norm case — a committed witness disagreeing with a fresh recompute of its
+own producer — but with the sign reversed, and on a more consequential file.
+
+`computations/witness-raw-float64-audit.witness.json` is the witness that
+**reports the raw-float64 gate itself**. Its committed copy on `main` recorded
+
+    dirty_witnesses: 1288    total_fields: 258324
+
+while the live audit on that same tree reported **1293 / 258420, NEW 5** —
+the difference being exactly the five undrained witnesses (1293−5 = 1288).
+So the committed witness was recording the **drained** state while the tree
+was still undrained.
+
+**That is the dangerous direction.** A stale witness that *overstates* a
+problem costs one wasted pass. One that *understates* it hides a live gate
+failure: anyone reading that file instead of running the audit would have
+concluded the ratchet was clean when it was red.
+
+**Re-measured here after #5763's drain merged (`6137e6244`):** `dirty_witnesses`
+is now **1288 live**, so the count dimension has resolved — not because the
+witness was corrected, but because the **tree caught up to what the witness
+already claimed**. Worth stating plainly, since "it agrees now" is a much
+weaker fact than "it was right all along". `total_fields` still does not
+reproduce: committed **258324** vs live **258188**, a 136-field gap in the
+overstating direction now. The file is closer to correct than it was and is
+still not a reproduction of the current tree.
+
+**Why this matters for the method, not just the file.** The gram-norm instance
+was found because its own recorded assertion contradicted a fresh recompute.
+This one has **no `environment` block and no assertions at all** — keys are
+`schema`, `name`, `description`, `data` — so the self-contradiction test that
+caught gram-norm cannot see it. It was caught only because a human-directed
+agent happened to run the audit and compare. Any systematic sweep for this
+class needs a producer re-run and a field diff, which is the same conclusion
+the ≤106 measurement above reached from the other direction.

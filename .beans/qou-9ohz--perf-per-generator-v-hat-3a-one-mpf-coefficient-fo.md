@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-25T16:51:11Z
+updated_at: 2026-08-25T18:12:13Z
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -152,3 +152,44 @@ raw-float64 drain of 248 -> 148 for the regenerated witness. That 148 came from
 a three-isotope run without `--with-4he`, compared against a four-isotope
 baseline. The like-for-like figure is **248, flat** — ratchet-neutral, not
 draining. See `qou-wlaf`.
+
+
+---
+
+## The "deeper item" is now PARTLY answerable — measured 2026-08-25
+
+Both notes above end by saying the real item, that the seminormal path is
+float64 at all, is untouched by either fix. As of `a7aacec54` on `main` that is
+no longer quite true: `hecke_characters.build_seminormal_matrices_mp(shape, q)`
+now exists as an exact-arithmetic twin returning `mp.matrix` (landed via
+[#5763](https://github.com/litlfred/qou/pull/5763), diagnosed as bean
+`qou-8xb1`). It is **additive** — the float64 builder is untouched, so nothing
+existing changed behaviour.
+
+Measured here, at 50 dps, for what it would cost the *gram-norm* consumer,
+which is matmul-bound rather than construction-bound:
+
+    lam=(3,2,1)    d=16    construct 0.00 s   one matmul  f64 0.15 ms   mp    4.5 ms    29x
+    lam=(4,3,1,1)  d=216   construct 0.42 s   one matmul  f64 12.3 ms   mp 6883.8 ms   561x
+
+Consistent with the 642x-at-d=162 figure `qou-d8gq` recorded, and the ratio
+clearly **grows with dimension** rather than sitting at a constant.
+
+Consequence for `gram_norm_binding_probe`, which runs 2x(word length) matmuls
+per lambda:
+
+  * **Up to 3H / 3He (d <= 216): viable.** 0.45 s x ~561 is roughly 4 minutes
+    for a genuinely multiprecision run. That is a real option and would retire
+    the float64 caveat for the light isotopes.
+  * **4He (d up to 7700): not viable.** 418 s x 561 is ~65 hours, and since the
+    ratio grows with d that is a **lower bound**, not an estimate. Do not quote
+    65 h as the cost; quote it as "at least tens of hours".
+
+So the honest status is no longer "open" and not "closed": the exact route
+exists, it is affordable for the small-dimension consumers, and it is out of
+reach for the one this probe most wanted it for. Recording the numbers so the
+next agent does not have to re-derive them before deciding.
+
+Not doing the upgrade on PR #5775 — that probe declares itself float64 and
+audit-only, the change would move every number it reports, and it belongs in a
+scoped PR against `qou-8xb1` rather than riding on a perf fix.
