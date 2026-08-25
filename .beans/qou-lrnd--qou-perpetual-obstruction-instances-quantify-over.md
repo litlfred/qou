@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T19:30:00Z
+updated_at: 2026-08-25T19:50:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -539,3 +539,57 @@ Not more Lean, and not "generate coefficients". Either:
 2. **Accept the exception set.** The `for-all p` form is refuted at `p=3` and
    cannot be rescued for the nucleons. If the framework wants a perpetual
    obstruction it needs a different invariant, not more primes of this one.
+
+
+---
+
+# 2026-08-25 (fifth pass) — Frob_3 IS zeta_6. The refutation is an identity, not an estimate.
+
+Sharpened the p=3 refutation while an A3 compute ran. The sharpening is itself
+the strongest available check on it.
+
+## The prediction, and why it is a real test
+
+`N(Frob_3) = 1` forces `Frob_3` to be a **unit of `Z[zeta_6]`** — the Eisenstein
+integers, whose unit group is *exactly* the six roots of unity. So the norm
+result is not a soft number: it constrains the element to **six specific values
+out of an infinite ring**. A mis-computed norm would almost certainly land
+outside the six.
+
+## The result
+
+    proton     Frob_3 = u = zeta_6,   order exactly 6
+    neutron    Frob_3 = u = zeta_6,   order exactly 6
+    deuteron   Frob_3 = 15 - 6u,      no finite order (non-unit, N = 171)
+
+Not merely a unit — the **primitive** 6th root of unity (order exactly 6, not a
+proper divisor), and **the same element for both nucleons**, whose coefficient
+sequences are entirely different (`a_0` = 8 vs 2, every `a_1..a_8` distinct).
+
+Tested by the **defining property**, not by list membership: the check powers
+the element up and reports its multiplicative order. An srepr comparison against
+a hand-built set of roots of unity would pass on a representation artifact and
+say nothing about the algebra. The deuteron is the control — same loop, no
+order returned.
+
+## Why this changes the standing of the refutation
+
+"N = 1" reads as a near-miss a sharper estimate might overturn. **"Frob_3 =
+zeta_6 exactly, order 6" cannot be overturned by any estimate** — it is an
+identity. The archimedean hypothesis is not unproved at `p=3`; it is *false*
+there, by exact computation.
+
+It also says the failure is **structural, not accidental**: the Frobenius at
+`p=3` is torsion in the unit group, and it is the *same* torsion element for two
+different nucleons. That is a fact worth explaining in its own right, and it is
+not explained here.
+
+Scope unchanged, still **(a)**: a counterexample to the `for-all p` form, not to
+the almost-every-prime form.
+
+## Open question this raises (new, and possibly more interesting than the bean)
+
+Why do two atoms with different Habiro coefficients collapse to the *same*
+primitive root of unity at `q = zeta_6`? If that is forced by the structure
+rather than coincidental, it is a statement about the Habiro element at roots of
+unity that nothing in the corpus currently makes. Not pursued here.
