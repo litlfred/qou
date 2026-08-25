@@ -32,4 +32,41 @@ $$
 This prediction compares to the CODATA value $\Delta m = 1.2934$ MeV,
 an error of $0.63\%$. $\square$
 
-**Witness**: `atom-mass-complete-wedderburn.witness.json`.
+> **Provenance and scope (2026-08-25).** This proof cites no live witness
+> and its stated agreement is not currently reproducible.
+>
+> The witness named here until now,
+> `atom-mass-complete-wedderburn.witness.json`, **never existed in the
+> repository's history** — see
+> [`docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md),
+> which records it as a phantom witness. It is in any case an *atomic*-mass
+> witness cited for a *quark*-level computation, so it would be the wrong
+> artifact even if it existed.
+>
+> Re-deriving the two $\Phi$ values from the crossing rules stated above
+> ([`computations/pn_splitting_proof_provenance_probe.py`](https://github.com/litlfred/qou/blob/main/computations/pn_splitting_proof_provenance_probe.py))
+> pins the reading and then fails to confirm the result. Convention C with
+> the suffix-inclusive $\Phi_1$ reproduces
+> $\Phi_{\mathfrak{p}} = -0.8785233$ against the $-0.8785$ quoted above —
+> exact at the quoted precision, and the only one of eight readings that
+> lands. The same reading gives $\Phi_{\mathfrak{n}} = -1.2677888$, not the
+> $-1.2261$ quoted. Because the reading is pinned by the proton, this is not
+> reading ambiguity.
+>
+> Consequently:
+>
+> | source | $\lvert\Delta\Phi\rvert$ | $\Delta m$ (MeV) | vs CODATA |
+> |:---|:---|:---|:---|
+> | as stated above | $0.3476$ | $1.3016$ | $+0.63\%$ |
+> | re-derived, convention C | $0.3892655$ | $1.4576$ | $+12.7\%$ |
+> | re-derived, convention D | $0.3354835$ | $1.2562$ | $-2.87\%$ |
+>
+> The derivation is also **convention C** throughout, which the owner ruling
+> of 2026-08-15 excised in favour of convention D
+> ($z = q^3/(q^2 + 1)$); under D the block's own construction gives
+> $-2.87\%$, not $+0.63\%$.
+>
+> Scope (a): eight readings were tried, which is not an exhaustive
+> exclusion, and no replacement value is proposed here. What is established
+> is that the $+0.63\%$ figure **cannot currently be checked** and should
+> not be cited as a confirmed prediction.
