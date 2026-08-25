@@ -165,6 +165,42 @@ PR #5615. Fixed here, along with the "≈constant" wording and a trend block tha
 puts per-`A` statistics into the witness so no consumer has to take a mean on
 trust.
 
+### What the rescale actually is — the pion IS the nuclear length scale
+
+Traced, because "the witness is stale" is the uninteresting half. The factor
+`1.178176504688906` decomposes exactly into two **de-empiricisations** in
+[`coulomb_energy.py`](../computations/coulomb_energy.py), neither a regression:
+
+| change | factor | what it removes |
+|---|---|---|
+| `r₀ = 1.2 fm` → `λ̄_π = ℏc/m_π` (CAL-3 derived) | `1.1781808` | the empirical saturation length |
+| `α_EM` CODATA → framework-derived | `3.6` ppm | an experimental input from a *predicted* observable |
+
+`R0_FM = LAMBDA_BAR_PI_FM`, with `R0_FM_EMPIRICAL = 1.2` retained "for
+comparison; NOT the default". The α residual is the module's own figure — its
+comment states *"derived 1/α_EM = 137.035935094 vs CODATA 137.035999177, i.e.
+468 ppb apart, shifting E_C by 3.6 ppm"*, which is the residual measured here to
+the digit.
+
+**And this is the owner's meson/pion pointer, already realised in the corpus.**
+The nuclear Coulomb radius is the **pion Compton wavelength**. The consequence is
+not cosmetic:
+
+| length scale | chain mean `split/ΔE_C` | reading |
+|---|---:|---|
+| empirical `r₀ = 1.2 fm` | `0.838` | ~19 % over-prediction, excused as "the known uniform-sphere over-estimate" |
+| derived `λ̄_π = ℏc/m_π` | **`0.987`** | ~1.3 %, **with no empirical length constant anywhere** |
+
+Removing the fitted length made the agreement *better* by an order of magnitude
+in the residual. The witness's "over-estimate" narrative was an artifact of
+`r₀ = 1.2`, and there is now essentially nothing for it to explain.
+
+**Do not over-read it.** The model is still a classical uniform-sphere Coulomb
+energy compared against AME binding differences; what is derived is the *length
+scale*, not the mechanism. And the `A`-trend survives at `r = 0.830` — the
+*level* improved dramatically, the *structure* did not go away. Whatever produces
+that trend is still open.
+
 **The witness is deliberately NOT regenerated on this branch.** Regenerating
 moves every number by the factor above, and that is an upstream `coulomb_energy`
 change this branch has not audited. Baking it into an SM-front PR would
