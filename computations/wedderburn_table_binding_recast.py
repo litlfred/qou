@@ -19,14 +19,23 @@ TWO MEASUREMENTS, both reported.  Neither is a closure attempt.
 
 PROVENANCE OF THE PUBLISHED TABLE -- read before drawing any conclusion from
 a disagreement with it.  mass-table-z1-20.md states its own backing witness
-`atom-mass-complete-wedderburn` is absent; it is worse than absent -- it never
-existed in git history (docs/audits/2026-07-12-exposition-drain-needs-owner-
-ledger.md calls it a "phantom witness").  The 20 published values survive only
-as a hardcoded dict, computations/_deprecated/feynman_qou_comparison.py:218,
-headed with a comment citing that phantom witness.  So the table is NOT an
-independent check on any constructor, and a constructor disagreeing with it is
-not thereby refuted.  What the disagreement shows is that nothing in the corpus
-can validate anything else here.
+`atom-mass-complete-wedderburn` is absent from the tree, which is true.
+
+CORRECTED 2026-08-25: this docstring previously went further and said the
+witness "never existed in git history".  THAT IS FALSE.  It was added
+2026-04-10 in commit 1359fe23ac at
+folio-assistant/computations/atom-mass-complete-wedderburn.witness.json and
+left the tree with the platform code in the miga migration.  Retrieve it:
+  git show 1359fe23ac:folio-assistant/computations/atom-mass-complete-wedderburn.witness.json
+
+Recovered, it reproduces the published table exactly (all 20 rows, mean
+0.074 pct) -- so the table DOES have a producer.  But its own parameter block
+does not match the published formula: beta3 = 0.0499 against h_A^2 =
+0.0437073 (a 14.2 pct departure, with "fitted": 0 recorded beside it), and the
+nucleon masses fed in are not CODATA (-44 and -36 ppm).  So a constructor
+disagreeing with the table is still not thereby refuted -- the table was
+produced by a computation that DIFFERS FROM THE FORMULA AS PUBLISHED.
+Full account: docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md.
 
 H-1 CAVEAT.  The published masses carry 3 decimals (+/- 0.5 keV) while
 hydrogen's binding is 13.598 eV -- 37x finer.  A binding read off that column
@@ -157,8 +166,10 @@ def part2_constructor():
     print("  ANY atom -- mine/true swings over four orders of magnitude while")
     print("  pub/true sits in a smooth 0.78-1.28 band. Per the provenance note in")
     print("  this file's docstring, that does NOT refute the constructor: the")
-    print("  published numbers are a hardcoded dict citing a witness that never")
-    print("  existed. It shows there is nothing here able to validate anything.")
+    print("  published numbers come from a witness that was RECOVERED "
+          "(1359fe23ac)")
+    print("  and whose own beta3 = 0.0499 does not match the published "
+          "h_A^2 = 0.0437073.")
 
 
 def main() -> int:

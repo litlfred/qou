@@ -36,12 +36,15 @@ an error of $0.63\%$. $\square$
 > and its stated agreement is not currently reproducible.
 >
 > The witness named here until now,
-> `atom-mass-complete-wedderburn.witness.json`, **never existed in the
-> repository's history** — see
-> [`docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md),
-> which records it as a phantom witness. It is in any case an *atomic*-mass
-> witness cited for a *quark*-level computation, so it would be the wrong
-> artifact even if it existed.
+> `atom-mass-complete-wedderburn.witness.json`, is absent from
+> `computations/`. It was **not**, however, never produced: it was added on
+> 2026-04-10 in commit `1359fe23ac` under `folio-assistant/computations/` and
+> left the tree with the platform code in the miga migration
+> ([recovery and analysis](https://github.com/litlfred/qou/blob/main/docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md)).
+> It is nonetheless the **wrong artifact** for this block: it is an
+> *atomic*-mass witness of 20 atom rows, cited by a *quark*-level
+> computation, and the recovered file contains no quark $\Phi$ values at
+> all. So this block has no usable witness either way.
 >
 > Re-deriving the two $\Phi$ values from the crossing rules stated above
 > ([`computations/pn_splitting_proof_provenance_probe.py`](https://github.com/litlfred/qou/blob/main/computations/pn_splitting_proof_provenance_probe.py))

@@ -2,11 +2,16 @@
 """Provenance probe for observations/neutron-proton-mass-splitting-proof.md.
 
 That block cites `atom-mass-complete-wedderburn.witness.json` as its witness.
-The witness never existed in git history (a "phantom witness", per
-docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md), and it is an
-ATOMIC-mass witness cited for a QUARK-level computation, so even had it
-existed it would be the wrong artifact.  With no witness, the only way to
-check the block is to re-derive its numbers from its own stated rules.
+CORRECTED 2026-08-25: an earlier version of this docstring said the witness
+"never existed in git history".  THAT IS FALSE -- it was added 2026-04-10 in
+commit 1359fe23ac under folio-assistant/computations/ and left with the
+platform code in the miga migration.  See docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md.
+
+It remains the WRONG ARTIFACT for this block regardless: it is an ATOMIC-mass
+witness carrying 20 atom rows, cited by a QUARK-level computation, and the
+recovered file contains no quark Phi values at all.  So the block still has no
+usable witness, and the only way to check it is to re-derive its numbers from
+its own stated rules.
 
 The block states:
     uu -> sigma            (c=1, d=0)
@@ -38,8 +43,9 @@ RESULT (measured, this file):
 
 SCOPE (a), not (b): these eight readings do not reproduce the published
 Phi_n.  Some further reading might.  What is established is that the
-published number cannot be checked -- its witness never existed and the
-reading that pins its partner does not yield it.  Nothing here proposes a
+published number cannot be checked -- no witness carries quark Phi values
+(the cited one is atomic-mass and carries none) and the reading that pins its
+partner does not yield it.  Nothing here proposes a
 replacement value or a correction; the numbers are reported as measured.
 """
 from __future__ import annotations
