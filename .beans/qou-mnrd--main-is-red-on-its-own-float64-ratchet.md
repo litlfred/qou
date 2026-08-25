@@ -1,6 +1,6 @@
 ---
 # qou-mnrd
-title: 'main is RED on its own raw-float64 ratchet — 18 NEW + 2 REGRESSED (was 3 when opened)'
+title: main is RED on its own raw-float64 ratchet — 5 NEW + 0 REGRESSED (was 18+2; 3 when opened)
 status: in-progress
 type: task
 priority: high
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-10T02:10:00Z
+updated_at: 2026-08-25T16:32:02Z
 ---
 
 ## The finding
@@ -1792,3 +1792,51 @@ drain, which this ratchet cannot distinguish) and
 
 Still genuinely uncovered: `docs/audits/scripts/`, where the ratchet runs
 ADVISORY only and carries 6 dirty witnesses — tracked as `qou-irzg`.
+
+
+## Re-measured 2026-08-25 on `main` @ 5483aa95f — 5 NEW, 0 REGRESSED
+
+Measured while merge-verifying #5754 (the gate was run in full on bare `main`
+and on the rebased branch, then diffed). The headline count above was 15 days
+stale, and stale in the **good** direction — 18 NEW + 2 REGRESSED at the
+2026-08-10 update, against **5 NEW + 0 REGRESSED** now. The REGRESSED tier is
+empty, which is the tier that matters most: nothing is getting worse, there is
+just an undrained residue.
+
+None of the three witnesses named in the original finding is still dirty. The
+current five are all different files:
+
+     42  computations/deltalambda/deuteron-interface-handle-curvature.witness.json
+     28  computations/qbeta/birkhoff-barodd-pythagoras-bridge.witness.json
+     21  computations/qbeta/a3-branching-asymmetry-vs-required.witness.json
+      4  computations/deltalambda/yekutieli-trefoil-surface2form-discretization.witness.json
+      1  computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json
+
+So this bean is not one standing defect being carried — it is a **revolving
+door**. Every file in the original finding drained; five different ones took
+their place, from the same two directories (`deltalambda/`, `qbeta/`). The
+open item is the absence of enforcement, not any particular producer: CI is
+`workflow_dispatch`-only under the 2026-06-30 Actions-billing directive, so
+nothing runs the ratchet on a push and each new dirty witness lands the same
+way the last three did.
+
+`sigma1cubed-seifert-surface-term` is referenced by bean `qou-3q7t`; the other
+four appear in no bean.
+
+### Do not conflate this with the laundering tier
+
+Recorded because it happened during the #5754 verification and reached a PR
+comment before it was caught. The `precision-gates.sh` output carries two
+float64 gates and only one of them gates:
+
+  * **`raw-float64 ratchet` — BLOCKING.** This bean. The 5 above.
+  * **`f64-into-mpmath` — ADVISORY, never gating.** This is where the three
+    laundered `mpf(str(<f64>))` sites live (`a_operator_categorical.py:628`,
+    `canonical_tr_m_via_branching.py:670`,
+    `wlambda_normalisation_census.py:91`, all reading `q_parameter.Q`), plus
+    the 202-site `F64_CAST` tier. Real defects — the wider class is bean
+    `qou-840k` — but they are **not** what makes `main` exit 1.
+
+Describing the laundered sites as "the blocking red" is wrong in both
+directions: it assigns the blocker to files that are not blocking, and it
+hides the five witnesses that are.
