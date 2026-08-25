@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T21:23:27Z
+updated_at: 2026-08-25T21:30:17Z
 ---
 
 
@@ -884,3 +884,22 @@ Three hand-verifications of the corrected classifier, one per bucket:
                                      (this was the _path_bridge false positive)
     binding_canonical.py             claimed reads     -> `from q_parameter import
                                        Q_MP as q0`, `Q_50_DIGIT_STR` in live code OK
+
+
+### Directional correction (same day) — it churns BOTH ways, not one-way growth
+
+The entry above says the unstamped population "grows with ordinary merges" and
+"is being refilled upstream". Measured across three points in one evening:
+
+    committed 19:04 UTC   Q0_ANCHOR_MISSING 1641   Q0_OK 969
+    my run    ~20:05 UTC                    1645        970
+    regen     21:24 UTC                     1644        971
+
+So it grew by 4, then **drained by 1** as sibling PRs landed correctly-stamped
+witnesses. "Refills on ordinary merges" is right; "not a backlog being worked
+down" is too strong — it is being worked down *and* refilled at the same time,
+and over this window the two were within a few files of each other.
+
+What survives unchanged is the operational point: the number has a shelf life
+of **hours**, so quote it with a timestamp or re-run the audit. What does not
+survive is any claim about the trend from a two-point sample — including mine.
