@@ -50,6 +50,26 @@ Measured 2026-08-15: four of the five registry oleans were already present and
 exactly one — `QOU.BraidsAndKnots.PlancherelNormalisation` — was missing.
 Building that single module took 329 s and made the gate run clean on all seven
 declarations. The diagnosis, not the difficulty, was the blocker.
+
+RE-MEASURED 2026-08-25, because the registry has since grown from 5 modules / 7
+declarations to 11 / 34 and the figures above no longer describe it:
+
+  * 6 of 11 registry modules are fully verifiable from a restored olean cache
+    plus a small lean-direct build — every entry #5761 added, and the
+    law-of-sines module.  Their cone is 33 modules, of which 30 needed
+    building: 260 s wall, all 30 exit 0.  One batch run then verified all 27 of
+    those entries `clean`, with no regression and no promotion.
+  * 5 remain unverifiable here — `OVTopAssembly`, `RSKBurnsideDischarge`,
+    `SYTEncodingBridgeTwo`, `PlancherelNormalisation`,
+    `YoungDiagramTailFirstInstance`.  Their union needs 70 module builds
+    (21 absent oleans + 49 present-but-older-than-source).  These carry the
+    ORIGINAL seven entries, four of which are recorded `sorryAx` by design.
+
+Count both criteria.  An olean that merely EXISTS is not enough — 49 of the 70
+above are present and stale, and a verdict read off a stale olean is the axiom
+status of an old snapshot, which the staleness check exists to refuse.  Counting
+only absent oleans undercounts this backlog by more than 3x (21 vs 70), an error
+made while writing this very paragraph.
 """
 
 from __future__ import annotations
@@ -120,6 +140,40 @@ QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTran
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule | clean
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_sum_V | clean
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds | clean
+# --- the REST of that law-of-sines module: support lemmas (bean qou-29hy) ---
+# The two entries above (`norm_eq_sin_div_sin`, `log_sin_sub_log_sin`) are the
+# ones the exposition blocks cite.  These seven are the rest of the module, and
+# they are pinned for a DIFFERENT reason, so they are listed separately rather
+# than folded into the block above.
+#
+# Disposition (owner call, 2026-08-25): `QOU.Knot.IdealTetLawOfSines` stays a
+# SUPPORT module and does NOT get its own content block.  The law of sines
+# already has paper presence -- a `## The law of sines` section in
+# `mass-theory/ideal-tetrahedron-relabelling-invariance.md`, and the identity
+# stated outright in `mass-theory/kummer-bloch-wigner-identity.md` -- so a block
+# would duplicate live prose.  It is reached through `QOU.Knot.KummerRadial`,
+# which imports it (`KummerRadial.lean:41`) and names
+# `IdealTetLawOfSines.log_sin_sub_log_sin` as the step that makes the two sides'
+# derivatives agree.
+#
+# Because no block will ever cite these seven, no `lean.ref` will ever point at
+# them, and the module has no `.qa.json` sidecar, they are invisible to every
+# per-block checker AND to the manifest.  A `sorry` reaching them would surface
+# in the two cited declarations only if it happened to lie on their path; these
+# seven close that gap.  `lean.ref` is singular and both neighbouring blocks
+# correctly point at their own claims, so the manifest cannot be the mechanism.
+#
+# Measured 2026-08-25 by `#print axioms` (not by grep), against a lean-direct
+# build of the 3-module cone (ClausenFunctionMathlibFiller ->
+# BlochWignerLobachevsky -> IdealTetLawOfSines): all nine declarations in the
+# module return [propext, Classical.choice, Quot.sound] -- zero sorryAx.
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.one_sub_ne_zero | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.ne_zero_of_im_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂ | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃ | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_eq | clean
 """
 
 
@@ -266,6 +320,67 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
     return problems
 
 
+def parse_axiom_output(out: str) -> dict[str, set[str]]:
+    """Parse `#print axioms` output into {decl: set-of-axioms}.
+
+    Factored out of `run_axiom_check` so `--selftest` can exercise it without Lean.
+    """
+    found: dict[str, set[str]] = {}
+    for m in re.finditer(r"^'([^\n]+)' depends on axioms: \[([^\]]*)\]", out, re.M):
+        found[m.group(1)] = {a.strip() for a in m.group(2).split(",") if a.strip()}
+    # A declaration proved without any axiom prints a different sentence.
+    for m in re.finditer(r"^'([^\n]+)' does not depend on any axioms", out, re.M):
+        found[m.group(1)] = set()
+    return found
+
+
+# The shapes the parser must handle.  PRIMED is the regression case: it is what a
+# Mathlib-style primed lemma actually prints, and the pre-2026-08-25 regex scored 0 on
+# it while scoring 1 on every other row here — which is exactly why the gap survived.
+_SELFTEST_CASES = [
+    ("primed",
+     "'QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE'' depends "
+     "on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+     "QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE'",
+     {"propext", "Classical.choice", "Quot.sound"}),
+    ("plain",
+     "'QOU.Knot.Rivin.cot_quadratic_pos' depends on axioms: [propext, Classical.choice]\n",
+     "QOU.Knot.Rivin.cot_quadratic_pos", {"propext", "Classical.choice"}),
+    ("wrapped",
+     "'QOU.A.b' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+     "QOU.A.b", {"propext", "Classical.choice", "Quot.sound"}),
+    ("sorry",
+     "'QOU.Bad.thing' depends on axioms: [propext, sorryAx]\n",
+     "QOU.Bad.thing", {"propext", "sorryAx"}),
+    ("axiom-free",
+     "'QOU.Foo.bar' does not depend on any axioms\n",
+     "QOU.Foo.bar", set()),
+]
+
+
+def selftest() -> int:
+    """Fail loudly if the parser stops seeing any known output shape."""
+    bad = 0
+    for label, raw, decl, axs in _SELFTEST_CASES:
+        got = parse_axiom_output(raw)
+        if decl not in got:
+            print(f"  [FAIL] {label}: parser did not see {decl!r}")
+            bad += 1
+        elif got[decl] != axs:
+            print(f"  [FAIL] {label}: axioms {sorted(got[decl])} != {sorted(axs)}")
+            bad += 1
+        else:
+            print(f"  [ok  ] {label}")
+    # A run that parses nothing must never look like a pass.
+    if parse_axiom_output("some unrelated lean output\n"):
+        print("  [FAIL] parser invented a verdict from unrelated output")
+        bad += 1
+    else:
+        print("  [ok  ] unrelated output yields no verdicts")
+    print("axiom-guard selftest: " + ("PASS" if not bad else f"{bad} FAILURE(S)"))
+    return 0 if not bad else 1
+
+
 def run_axiom_check(entries: list[tuple[str, str, str]]) -> dict[str, set[str]]:
     """Return {decl: set-of-axioms}. One lean invocation for the whole batch."""
     modules = sorted({m for m, _, _ in entries})
@@ -301,16 +416,26 @@ def run_axiom_check(entries: list[tuple[str, str, str]]) -> dict[str, set[str]]:
         sys.exit(2)
 
     # `#print axioms X` prints: 'X' depends on axioms: [a, b,\n c]
-    found: dict[str, set[str]] = {}
-    for m in re.finditer(
-        r"'([^']+)' depends on axioms: \[([^\]]*)\]", out, re.S
-    ):
-        decl = m.group(1)
-        axs = {a.strip() for a in m.group(2).split(",") if a.strip()}
-        found[decl] = axs
-    # A declaration proved without any axiom prints a different sentence.
-    for m in re.finditer(r"'([^']+)' does not depend on any axioms", out):
-        found[m.group(1)] = set()
+    #
+    # THE NAME MAY ITSELF CONTAIN A PRIME, and Lean does not escape it.  A Mathlib-style
+    # primed lemma prints as
+    #
+    #     'QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE''
+    #       depends on axioms: [...]
+    #
+    # i.e. TWO closing quotes.  The obvious `'([^']+)'` stops at the prime, then demands
+    # a space where the second quote is, and matches nothing at all — so a primed
+    # declaration is UNVERIFIABLE BY THIS GATE, which is the one thing the gate must not
+    # be.  Worse, it fails quietly in the single-entry case: `found` ends up empty and
+    # the exit-2 "no output parsed" path looks like an environment problem rather than a
+    # declaration the gate cannot see.  (Caught 2026-08-25 verifying #5761's entries;
+    # one of the eighteen is primed.)
+    #
+    # Fix: keep the name greedy but confine it to ONE LINE (`[^\n]+`, no re.S), so it
+    # backtracks to the last quote that is actually followed by " depends on axioms:".
+    # The axiom list keeps `[^\]]*`, which spans the newlines Lean wraps it across —
+    # a character class matches "\n" regardless of re.S.
+    found = parse_axiom_output(out)
     if not found:
         print("axiom-guard: no `#print axioms` output parsed. Raw:", file=sys.stderr)
         print(out[:2000], file=sys.stderr)
@@ -328,7 +453,17 @@ def main() -> int:
         help="print the modules this gate needs built (space-separated) and exit; "
              "feed to `lake build` — the gate does NOT need the QOU root",
     )
+    ap.add_argument(
+        "--selftest",
+        action="store_true",
+        help="exercise the `#print axioms` parser on every known output shape and exit; "
+             "needs no Lean, no oleans and no repo root",
+    )
     args = ap.parse_args()
+
+    # Before LEAN_ROOT, so the selftest runs from anywhere.
+    if args.selftest:
+        return selftest()
 
     if not LEAN_ROOT.is_dir():
         print(f"axiom-guard: run from the repo root (missing {LEAN_ROOT})", file=sys.stderr)

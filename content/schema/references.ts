@@ -8003,6 +8003,23 @@ export const references: Reference[] = [
     note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra $\\mathfrak{g}_2$: $\\mathrm{Der}(\\mathbb{O})\\cong\\mathfrak{g}_2$, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound $\\dim\\mathrm{Der}(\\mathbb{O})\\le 14$ (the lower bound and the rank-nullity reduction are machine-verified there).",
   }),
 
+  // ── Günaydin–Gürsey 1973 — quark structure and octonions ──────
+  ref({
+    id: "gunaydin-gursey1973",
+    type: "article-journal",
+    title: "Quark structure and octonions",
+    author: [
+      { family: "Günaydin", given: "Murat" },
+      { family: "Gürsey", given: "Feza" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    volume: "14",
+    issue: "11",
+    page: "1651-1667",
+    issued: { "date-parts": [[1973]] },
+    note: "The source of the decomposition the colour-algebra section depends on: fixing one imaginary unit reduces $\\mathrm{Aut}(\\mathbb{O}) = G_2$ to the stabilizer $\\mathrm{SU}(3)$, under which $\\mathrm{Im}(\\mathbb{O})$ splits as $\\mathbb{R}\\oplus\\mathbb{C}^3$ with the quark triplet and antitriplet as complex-conjugate (NOT self-dual) summands. That non-self-duality is the input the $\\mathrm{Sym}^2$ gate consumes: a self-dual 3 would carry a singlet in $\\mathrm{Sym}^2$ and fail. Added 2026-08-25 — the corpus named 'the Günaydin–Gürsey decomposition' in 7+ places (color-su3-from-g2.md, schur-weyl-eightfold.md, sm-colour-stabilizer-action.md, OctonionSU3Stabilizer.lean, OctonionSU3BracketClosure.lean, ColourComplexStructure.lean) with NO bibliography entry, and OctonionSU3Stabilizer.lean backed it with '-- Ref: [manuscript]' pointing at the corpus's own audit doc. NO DOI RECORDED: api.crossref.org is blocked by the sandbox proxy (403), so the DOI could not be verified from a primary source and is deliberately omitted rather than written from memory. The volume/issue/page above are corroborated by three independent in-repo bibliographies that cite this work: library/arxiv-2306.13098v2 ref [7], library/arxiv-2202.06733v1 ref [69], and library/arxiv-1205.4619v1 ref [7]. Accessible modern restatement: library/arxiv-2403.00360v2 §2.3.",
+  }),
+
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
   ref({
     id: "murasugi1996",

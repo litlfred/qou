@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T17:48:28Z
+updated_at: 2026-08-25T19:20:26Z
 ---
 
 ## The defect
@@ -184,3 +184,99 @@ refutation was `scalarGenerators`, dimension 1; this one is dimension 2 and non-
 What H_infinity cannot host is an IRREDUCIBLE action, not a big one.
 
 All 23 declarations re-checked: [propext, Classical.choice, Quot.sound], no sorryAx.
+
+
+## BOUNDED CLASS BUILT + JM SPECTRAL HALF HAS ITS FIRST INSTANCE (2026-08-25, PR #5778)
+
+    HeckeGeneratorsBelow R A q n   relations only for i + 1 < n
+    stdTwoBelow3                   the 2-dim (2,1) rep AS AN INSTANCE at n = 3
+    stdTwoBelow3_jm_content        L_k act on e0 = (1,0) by q^(2c), c = 0, 1, -1
+
+At n = 3 the bounded class collapses to two Hecke-quadratic generators plus one
+braid relation; far-commutation is VACUOUS (needs i+1 < j with j+1 < 3). All three
+obligations were already proved by #5766, so the instance assumes nothing new. The
+two results are exactly complementary: the unbounded class CANNOT admit this pair,
+the bounded class DOES.
+
+**The prize did not require the full port.** The eigenvalues q^0, q^2, q^-2 are
+q^(2c) for the contents of (0,0), (0,1), (1,0) — the SYT [[1,2],[3]] on (2,1).
+`HeckeJucysMurphyElements.lean` records the spectral half as "Untouched here. It
+needs Young's seminormal form, which the corpus does not carry." It now has one
+instance. ONE TABLEAU AT ONE n — not Young's theorem; the general-n statement is
+exactly as open as before.
+
+### Side finding: three fields of the UNBOUNDED class are redundant
+`hecke_mul_sub_eq_one` / `sub_mul_hecke_eq_one` derive sigma^-1 = sigma - (q-q^-1)
+from the Hecke relation alone (scalars are central; no invertibility hypothesis).
+So `HeckeGenerators.sigma_inv` / `mul_sigma_inv` / `sigma_inv_mul` are derivable
+data, not axioms. NOT changed in #5778 — removing them touches every downstream
+instance. Worth a separate scoped pass.
+
+### STILL OPEN — the ~1-day estimate is UNCHANGED
+The full port (jmRaw_comm, jmProd_eq_delta_pow, fullTwist_smul_eq_theta_sq
+re-proved on the bounded class, ~700 lines / 8 files) is NOT done. #5778 took the
+minimum path to the dim>1 content-spectrum realisation, which turned out not to
+need the general theory ported first. That port remains this bean's actual scope.
+
+
+## THE PORT IS SUBSTANTIALLY DONE (2026-08-25, PR #5778, 4 files / 780 lines / 63 decls)
+
+The dim>1 IsJMWeight witness THIS BEAN EXISTS FOR now exists:
+
+    stdTwoBelow3_isJMWeight   e0 = (1,0) is a JM weight vector of the 2-dim (2,1)
+                              rep of H_3(q), eigenvalues q^(2c), c = 0, 1, -1
+    stdTwoBelow3_jmProd_eq_fullTwist   L_0 L_1 L_2 = (s0 s1)^3 on that same rep
+
+Ported: HeckeGeneratorsBelow; the downcast + JM basics; delta/run/push law/power
+identity/jmProd_eq_delta_pow; IsJMWeightB + jmProdB_smul_of_weight +
+fullTwistB_smul_of_weight; HeckeGeneratorsBelow.map (transport along an AlgEquiv).
+
+Architecture: the port GENERALIZES rather than forks. HeckeGenerators.toBelow
+downcasts at every n and the *_toBelow lemmas show the constructions agree, so each
+ported result RECOVERS its unbounded counterpart instead of copying it.
+
+### CORRECTION to this bean's own estimate
+"~700 lines across eight files" is wrong. Measured: the original cone is 1577
+lines / 81 declarations across SIX files. The bounds claim was right though --
+they are NOT uniform, and two of eight lemmas need no bound at all (they use no
+Hecke/braid/far relation). The load-bearing arithmetic is that run_push's
+induction reaches p+1 = m and braids there, needing m+2 < n, so both big
+inductions carry m+1 < n, NOT the m < n a naive reading suggests.
+
+### STILL OPEN -- this bean stays open
+1. jmRaw_comm (JM commutativity). Its machinery is HeckeTranspositionExpansion
+   (562 lines) + HeckeJucysMurphyCommutation (263) + AdjacentNormalForm (210).
+   NOT attempted.
+2. The theta / content-sum tie-in: prod_jmEigen, fullTwist_smul_eq_theta_sq,
+   twist_scalar_eq_theta_sq. fullTwistB_smul_of_weight is the key half; the
+   specialization to theta_lambda^2 is not ported.
+
+### Side finding, unchanged and still unactioned
+HeckeGenerators.sigma_inv / mul_sigma_inv / sigma_inv_mul are DERIVABLE from the
+Hecke relation (hecke_mul_sub_eq_one). Removing them touches every downstream
+instance -- wants its own scoped pass, not a rider on this one.
+
+
+## THETA TIE-IN DONE (2026-08-25, PR #5786) -- only jmRaw_comm remains
+
+    fullTwistB_smul_eq_theta_sq   twist acts by theta_lambda^2
+    twistB_scalar_eq_theta_sq     that scalar is PINNED
+    stdTwo_fullTwist_eq_one       (s0 s1)^3 = 1, direct matrix computation
+    stdTwoBelow3_twist_eq_theta_sq   the routes agree
+
+prod_jmEigen NEEDED NO PORT AT ALL -- it mentions no HeckeGenerators, being a
+statement about the eigenvalue function and the combinatorics of `cells`. Only the
+two theorems touching a presentation moved. Check what a lemma quantifies over
+before assuming it needs redoing.
+
+FALSIFIABILITY: c((2,1)) = 0+1-1 = 0, so theta^2 = 1 -- the full twist of B_3 is
+PREDICTED to act trivially. Confirmed by an independent route: (s0 s1)^3 = 1 from
+the matrices alone, no JM input. Same check HeckeSeminormalWeight runs for the
+one-row block, now on a 2-dim block the unbounded class cannot host.
+
+### REMAINING SCOPE OF THIS BEAN IS NOW EXACTLY ONE ITEM
+jmRaw_comm (JM commutativity). Machinery: HeckeTranspositionExpansion (562) +
+HeckeJucysMurphyCommutation (263) + HeckeJucysMurphyAdjacentNormalForm (210) =
+~1035 lines. NOT attempted. Both headline results (the dim>1 IsJMWeight witness
+and the twist) landed WITHOUT it, so whether it is worth porting is a genuine
+open judgement call, not an obvious yes.

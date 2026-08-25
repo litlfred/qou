@@ -727,3 +727,149 @@ would invert the table above. I built one throwaway script that way and it
 reported the pion braid as hyperbolic with volume 4.0597664256 — caught only
 because it contradicted a result already merged. The probe now asserts both
 controls against their exact known volumes before printing anything else.
+
+---
+
+## Addendum 2026-08-25 — the tool is in the library, and the heavy end IS bounded
+
+Probe: [`meson_braid_syllable_bound_probe.py`](../../computations/meson/meson_braid_syllable_bound_probe.py)
+(witness `meson-braid-syllable-bound.witness.json`, 3 assertions, all passed).
+Bean `qou-qpj9`.
+
+This document's §Literature records two things. One is a caveat that has now
+been discharged; the other is wrong.
+
+> *"These are search-result summaries, **not read papers** — I did not fetch
+> the FKP theorem statements, so the exact volume-bound constants are not
+> quoted here and **must be checked before use**."*
+
+> *"The corpus library (332 documents) … carries the volume-conjecture line …
+> but **nothing on the classification or volumes of closed 3-braids**, which is
+> exactly the tool Obstruction A needs."*
+
+**The library does carry it.** [`library/arxiv-1406.7337v4/`](../../library/arxiv-1406.7337v4/)
+is Giambrone, *Semi-Adequate Closed Braids and Volume* — **the same arXiv id
+this section links** as an external web-search result it could not fetch —
+sectioned and greppable. The checking-before-use is done here from the ingested
+copy.
+
+### What the paper says, read rather than summarised
+
+| result | statement |
+|---|---|
+| **Thm 1.2** | for a certain A-adequate closed **3-braid** diagram, `v₈·(s−1) ≤ vol(S³∖K) < 4v₈·s` |
+| **Thm 3.1** | `s = t₋(D) = #{negative syllables in β}` — read **off the original braid word** |
+| **Lem 2.1(1)** | every negative exponent satisfies `rᵢ ≤ −3` |
+| **Cor 1.1** | volume also bounded by the stable penultimate coefficient `β′_K` of the **colored Jones polynomial** |
+
+`v₈ = 4·Catalan = 3.66386237671…` is the regular ideal **octahedron**, and
+`2·v₈ = 7.32772475342` is this corpus's own `Vol(Borromean) = 8G` — verified as
+an assertion, because the first draft of the probe wrote `v₈ = 8·Catalan` and
+that assertion is what caught it. Right constant, wrong coefficient: the same
+trap AGENTS.md flags for `Λ` vs `Cl₂`.
+
+### Consequence 1 — this document's diagnosis becomes structural
+
+Sublemma 2.1's own proof:
+
+> *"Condition (2a), Condition (2b), and Condition (2c) of Lemma 2.1 imply that
+> **β cannot be positive**. Because positive syllables of β are cyclically
+> neighbored by negative syllables…"*
+
+— and per Prop. 2.1 that neighbouring **is** Stoimenow's classification of
+A-adequate closed 3-braid diagrams. So a fully positive 3-braid word is
+*structurally excluded* from the family, with `s = 0`.
+
+The corpus braid `𝔐 = (σ₀σ₁)²σ₁σ₀` is entirely positive: `s = 0`. This
+document's *"length is not the culprit; positivity is"* was an empirical
+diagnosis from SnapPy; it is now a structural one, and **`s` is the dial**.
+
+*Scoping this correctly:* a positive braid is **outside** the theorem's family,
+so Theorem 1.2 does not *apply* to `𝔐` and does not "predict" its measured
+`Vol = 0` — it *excludes* it. Exclusion from the hyperbolic family and a
+measured zero agree, which is the point, but they are not the same statement.
+
+### Consequence 2 — the heavy end is bounded
+
+> *"the J/ψ and D⁰ targets (59.50, 35.83) lie far above anything reachable at
+> these braid lengths, so **the candidate space is not even bounded yet** at the
+> heavy end."*
+
+Inverting Thm 1.2 bounds it, and Lem 2.1(1) converts syllables into crossings
+(`≥ 3` each):
+
+| meson | `Vol·ρ` | `s` window | ≥ negative crossings |
+|---|---:|:---:|---:|
+| π± | 2.681 | **[1, 1]** | 3 |
+| K± | 9.484 | [1, 3] | 3 |
+| η | 10.525 | [1, 3] | 3 |
+| D⁰ | 35.827 | [3, 10] | 9 |
+| η_c | 57.326 | [4, 16] | 12 |
+| J/ψ | 59.497 | **[5, 17]** | 15 |
+
+The pion window is a **single value**: any A-adequate closed-3-braid candidate
+for the pion has *exactly one* negative syllable, hence at least 3 negative
+crossings — against a current corpus braid with zero and 6 positive crossings.
+
+### Scope
+
+**(a) necessary conditions on a candidate space.** No braid is derived,
+proposed, or mass-checked; Obstruction A — a canonical, parameter-free
+operation fixing the braid — is untouched and open. A candidate falling outside
+Giambrone's family is not excluded by these numbers, merely uncovered by them.
+
+Nothing else in this document is disturbed: its SnapPy measurement, the T(2,5)
+identification, the axis-trap method note and the chiral-limit refutation all
+stand.
+
+### The one worth chasing next
+
+**Cor. 1.1 bounds the volume by the colored Jones stable penultimate
+coefficient** — and this framework computes colored Jones *as Markov traces*
+(`J_L(q) = tr_M(ρ(β_L))`). That is a bridge from machinery the corpus already
+has to a volume bound, without going through a braid word at all. Not attempted
+here.
+
+### Correction to the addendum above, same day — how narrow the family actually is
+
+The addendum states its bounds are *"CONDITIONAL on the target braid lying in
+Giambrone's family (nice + Lemma 2.1 + A-adequate)"*. That scoping is correct
+and was written before the numbers. What it does **not** say is how restrictive
+that family is, and the answer materially weakens the framing *"the heavy end
+IS bounded"*.
+
+**Lemma 2.1(1) requires every negative exponent to satisfy `rᵢ ≤ −3`.** The
+corpus's canonical words are built from single crossings, `±1`:
+
+| braid | negative exponents | in the family? |
+|---|---|---|
+| figure-eight `(σ₁σ₂⁻¹)²` — **muon**, `Vol = 2.0299` | `−1, −1` | **no** |
+| Borromean `(σ₁σ₂⁻¹)³` — **proton**, `Vol = 7.3277` | `−1, −1, −1` | **no** |
+| meson `𝔐 = (σ₀σ₁)²σ₁σ₀` | none | no (positive) |
+| trefoil `σ₁³` | none | no (positive) |
+
+**So the family excludes both of the framework's load-bearing hyperbolic
+carriers.** The syllable windows remain valid *for the family they are stated
+for*, but that family currently contains none of the corpus's own anchor
+manifolds, so their physical relevance is an open question rather than an
+assumption. Read the windows as *"if a candidate lies in this family, then…"*
+— not as a bound on the corpus's candidate space.
+
+**One caveat on the caveat**, in the direction that softens it: Lemma 2.1 is a
+condition on a **diagram**, not on a link type. A different braid word for the
+same link could in principle satisfy it. Whether `4₁` or the Borromean admit
+such a word is not settled here and cannot be settled by inspecting the
+canonical ones. So the honest statement is *"the corpus's canonical words are
+outside the family"*, not *"these links are outside it"*.
+
+**What this is genuinely evidence for.** There is a structural mismatch between
+the framework's braid vocabulary — single crossings, `±1` exponents — and the
+hypothesis of the closed-3-braid volume literature, which wants `≥ 3` same-sign
+crossings per syllable. That is worth knowing before more of that literature is
+imported: it tells you which theorems can apply and which cannot, and it is a
+better use of the reading than the windows were.
+
+**Retained.** Consequence 1 is unaffected: positivity excluding a braid from
+the A-adequate family is a statement about *positive* words, and `𝔐` is
+positive. The `v₈ = 4·Catalan` correction and its tie to the corpus Borromean
+volume stand. The prior document's own results are untouched throughout.

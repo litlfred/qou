@@ -394,3 +394,84 @@ they stated.
 
 Reproduce: `dim_q` by the `q`-hook-length formula and `wenzlWeight` by the
 bialternant in `r = 2` variables, both at `mpf(Q_50_DIGIT_STR)`, `mp.dps = 40`.
+
+---
+
+## State 3 resolved 2026-08-25 — the rule is C-only for a reason sharper than the numbers
+
+`ylambda-sign-content-threshold` (bean `qou-ulxr`) is drained. The bean offered two
+dispositions — retire, or restate the rule for the two-row stratum. **The second was
+measured before choosing, and it does not exist.** Two independent reasons, either
+sufficient alone.
+
+### 1. Under D the threshold lands exactly ON the content lattice
+
+This is the reason the audit did not have, and it is logically *prior* to the
+`y_λ = 0` argument: it says the parity is undefined on `ℓ(λ) ≥ 3` before one asks what
+`y_λ` is there.
+
+Convention D pins the Wenzl level at `r = 2`, so `Q^r = Q²` and
+
+```
+c* = −log_Q(Q^r) = −2   EXACTLY
+```
+
+`−2` is an **attainable content** — row 3, column 1 of every diagram with `ℓ(λ) ≥ 3`.
+There the test factor is `Q²·Q^{−2} = 1` exactly, so the cell is neither above nor below
+the threshold. Measured margins:
+
+| n | min \|Q^r·Q^c − 1\| | witness λ | `hnd` |
+|---|---|---|---|
+| 2 | 0.232052 | — | holds |
+| 3 | **0.0** | (1,1,1) | UNSAT |
+| 6 | **0.0** | (4,1,1) | UNSAT |
+| 9 | **0.0** | (7,1,1) | UNSAT |
+| 12 | **0.0** | (10,1,1) | UNSAT |
+
+Zero, not small. That is exactly `hnd : ∀ x ∈ cells, QR * val x ≠ 1`, the hypothesis of
+`QOU.MassTheory.YLambdaSignThreshold.wenzl_sign` — whose own docstring says that without
+it *"the parity is genuinely undefined, not merely hard to prove."* The Lean anticipated
+this failure mode precisely.
+
+Under C, `c* ≈ −2.5995` sits strictly between two lattice points, `hnd` holds everywhere,
+and the rule is well-posed. **The convention moved the threshold onto the lattice.** No
+numerical drift is involved, which is why dating the record against the code switch (layer
+3 above) was necessary but not sufficient to explain it.
+
+### 2. Where it stays well-posed, it is vacuous
+
+D forces `y_λ = 0` for `ℓ(λ) ≥ 3`, leaving the two-row stratum. A cell at row `i`, column
+`j` has content `j − i`, so for `ℓ(λ) ≤ 2` the minimum content is `−1`, while a
+below-threshold cell needs `c ≤ −3`. Unreachable **by construction, for every n** —
+measured 0 deep cells on the surviving stratum at every `n = 2..12`, every surviving block
+positive (distinct signs `{1}` at n = 6, 9, 12). At n = 12, 58 of the 70 annihilated
+blocks have `P(λ) > 0` and none of the 7 survivors does: the rule's whole discriminating
+power required `ℓ(λ) ≥ 4`, exactly the annihilated stratum.
+
+### Disposition
+
+The probe is now a **retirement record**, not deleted — the numbers were right for the
+convention they were taken in. It asserts the four facts true under D
+(`threshold_is_on_content_lattice`, `hnd_fails_on_three_row_stratum`,
+`no_deep_cells_on_surviving_stratum`, `surviving_stratum_sign_is_constant`) and keeps the
+C-frame measurement in `convention_c_record`, labelled not-live.
+
+**The Lean is untouched and is not refuted.** `wenzl_sign` is generic in `Q` and `QR`,
+sorry-free and correct; under D its premise is unsatisfiable on that stratum.
+Conditional-proved is not premise-established. Two docstring scope corrections were made
+with no proof change: the file's `c* ≈ −2.5995` / `margin 8.0e-2` figures are C-frame (D
+gives `−2` and `0.0`), and `shallow_of_no_deep_cells`'s *"every `ℓ(λ) ≤ 3` block carries a
+positive weight"* reads `ℓ(λ) ≤ 2` under D — those `ℓ = 3` blocks are zero, and fail `hnd`
+regardless.
+
+Scope-(a), about this rule under this convention. No claim that a two-row sign rule is
+impossible; only that *this* threshold parity has no content there, the sign being constant.
+
+PR #5780.
+
+### Still open from this audit
+
+`qou-qdtk` (`threerow_qcross_trend_probe` — D arithmetic under a C narrative) and the two
+state-2 records (`threerow-sign-crossing`, `threerow-4he-completion`), whose re-run
+assertions all pass because they check internal consistency rather than whether the object
+is nonzero. A naive regeneration there still lands a green witness with vacuous content.

@@ -174,49 +174,45 @@ def _output_name(scan_root: Path | None) -> str:
 #
 # Every excused field is COUNTED and REPORTED as `carved_out`. A carve-out that
 # cannot be seen is indistinguishable from a hole.
+#: Runtime timing METADATA — not payload numbers, and not a precision finding.
+#: Sourced from ``qou_substrate.witness._EPHEMERAL_META_FIELDS`` rather than
+#: re-typed, because that module already declares these names reserved
+#: ("the masked names are reserved for runtime-metadata semantics across the
+#: witness corpus") and strips them RECURSIVELY, by name, for comparison. A
+#: hand-copied list here could drift from the mask it is supposed to mirror;
+#: `test_ephemeral_mask_sync` already guards the one other copy.
+#:
+#: Only the DURATION names are carved out. `environment`, `commitSha`,
+#: `computedAt`, `scriptCommitSha` are also in that mask but carry no floats,
+#: and carving a whole subtree would be a much broader excuse than this needs.
+#:
+#: WHY THIS IS NOT BASELINE-WIDENING. These fields are wall-clock seconds. No
+#: value is being hidden and no producer is excused from carrying `mpf`: a
+#: duration is not a measurement of the physics and re-running changes it. The
+#: gate was ALREADY GREEN when this was added (NEW 0 / REGRESSED 0), so it
+#: turns no red green — it removes false positives from a passing gate's
+#: reported backlog, which is what makes a future NEW trustworthy. Same shape
+#: as the 2026-08-24 integral-float reclassification, and reported the same
+#: way: as a reclassification, never as draining.
+def _ephemeral_timing_fields() -> frozenset[str]:
+    try:
+        import sys as _s
+        from pathlib import Path as _P
+        _s.path.insert(0, str(_P(__file__).resolve().parents[1]
+                              / "tools" / "qou-substrate" / "python"))
+        from qou_substrate.witness import _EPHEMERAL_META_FIELDS as _M
+        return frozenset(n for n in _M if "dur" in n.lower() or "elapsed" in n.lower())
+    except Exception:
+        # Never let provenance-import failure silently widen the gate: an empty
+        # set carves out nothing, so the audit stays STRICTER, not looser.
+        return frozenset()
+
+
+EPHEMERAL_TIMING_FIELDS = _ephemeral_timing_fields()
+
 LP_DUAL_F64_FIELDS = frozenset({
     "x_star", "y_star", "y0_star", "u_lambda_star",
     "primal_obj", "dual_obj", "duality_gap",
-})
-
-# ── volatile-timing carve-out (bean qou-hhm3) ────────────────────────────
-#
-# A wall-clock duration has NO mpf source to have lost digits from. This gate
-# asks one question -- did a value lose digits a double cannot hold? -- and a
-# timer answers no, the same way an integral float answers no. `time.
-# perf_counter()` returns a float; there is no higher-precision original that
-# was truncated, so there is nothing here for this gate to say.
-#
-# Identical in shape to the integral-float split (`qou-xt5l`), which was
-# accepted for the same reason: counting these made a runtime-metadata detail
-# indistinguishable from a dropped digit. The corpus already treats them as
-# non-data elsewhere -- qou-substrate's `_EPHEMERAL_META_FIELDS` strips them by
-# name when comparing witnesses, precisely because they change every run.
-#
-# DECLARED BY NAME, NEVER BY PATTERN. A `*_sec` suffix rule would be wrong and
-# dangerous: a lifetime, a decay time, a half-life are physical quantities
-# measured in seconds where precision is the whole point. Only names that can
-# ONLY mean "how long this run took" belong here. When in doubt, leave it out
-# and let the gate flag it.
-#
-# Every excused field is COUNTED and REPORTED on its own line. A carve-out that
-# cannot be seen is indistinguishable from a hole -- the same rule the three
-# carve-outs above are written under.
-# MEASURED 2026-08-25: only four of the eight below occur in this corpus --
-# elapsed_sec (33 float occurrences / 13 files), wall_sec (36 / 7),
-# elapsed_seconds (16 / 6), wall_seconds (5 / 5). The other four are
-# forward-looking and currently unexercised, so the self-test rather than the
-# corpus is what holds them honest. Said explicitly so a reader does not read
-# eight names as eight measured cases.
-VOLATILE_TIMING_FIELDS = frozenset({
-    "elapsed_sec",
-    "elapsed_seconds",
-    "wall_sec",
-    "wall_seconds",
-    "runtime_sec",
-    "runtime_seconds",
-    "duration_sec",
-    "duration_seconds",
 })
 
 # ── float64-integrator carve-out (qou-7kq3, owner-approved 2026-08-15) ──
@@ -418,15 +414,6 @@ def count_integral(obj) -> int:
     return _count(obj)[2]
 
 
-def count_timing(obj) -> int:
-    """How many floats sit under a declared volatile-timing field.
-
-    Not a precision finding — a wall-clock duration has no mpf source it could
-    have been truncated from. See `VOLATILE_TIMING_FIELDS`. Bean `qou-hhm3`.
-    """
-    return _count(obj)[3]
-
-
 def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int, int]:
     """(counted, carved_out, integral) — one traversal, all three numbers.
 
@@ -469,47 +456,46 @@ def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int, int]:
     NOT agree, every float underneath counts, integral or not.
     """
     if isinstance(obj, dict):
-        total = carved = integral = timing = 0
+        total = carved = integral = ephemeral = 0
         for k, v in obj.items():
             if k.endswith("_str"):
-                t, c, i, w = _count(v, integral_is_exact)
+                t, c, i, e = _count(v, integral_is_exact)
                 total += t
                 carved += c
                 integral += i
-                timing += w
+                ephemeral += e
                 continue
             companion = obj.get(f"{k}_str")
             if companion is not None and _is_full_precision_shadow(v, companion):
                 continue  # shadowed at full precision — not raw float64
-            if k in VOLATILE_TIMING_FIELDS:
-                t, _c, i, _w = _count(v, integral_is_exact)
-                timing += t
-                integral += i
-                continue  # carve-out: wall-clock, no mpf source to have lost
+            if k in EPHEMERAL_TIMING_FIELDS:
+                t, _c, _i, _e = _count(v, integral_is_exact)
+                ephemeral += t
+                continue  # carve-out: wall-clock duration, not a payload number
             if k in LP_DUAL_F64_FIELDS:
-                t, _c, i, w = _count(v, integral_is_exact)
+                t, _c, i, e = _count(v, integral_is_exact)
                 carved += t
                 integral += i
-                timing += w
+                ephemeral += e
                 continue  # carve-out: solver output, f64 by construction
             # A companion that is present but does NOT agree proves the float
             # differs from the true value, so integrality excuses nothing
             # underneath it.
-            t, c, i, w = _count(v, integral_is_exact and companion is None)
+            t, c, i, e = _count(v, integral_is_exact and companion is None)
             total += t
             carved += c
             integral += i
-            timing += w
-        return total, carved, integral, timing
+            ephemeral += e
+        return total, carved, integral, ephemeral
     if isinstance(obj, list):
-        total = carved = integral = timing = 0
+        total = carved = integral = ephemeral = 0
         for v in obj:
-            t, c, i, w = _count(v, integral_is_exact)
+            t, c, i, e = _count(v, integral_is_exact)
             total += t
             carved += c
             integral += i
-            timing += w
-        return total, carved, integral, timing
+            ephemeral += e
+        return total, carved, integral, ephemeral
     if isinstance(obj, float):
         if obj.is_integer():
             return (0, 0, 1, 0) if integral_is_exact else (1, 0, 1, 0)
@@ -522,15 +508,16 @@ CARVED: dict[str, int] = {}
 #: `CARVED` so the two excuses can never be read as one number.
 CARVED_INTEGRATOR: dict[str, int] = {}
 CARVED_DEPRECATED: dict[str, int] = {}
-#: Per-file tally for the volatile-timing carve-out (bean qou-hhm3), kept
-#: SEPARATE from the others so the excuses can never be read as one number.
-CARVED_TIMING: dict[str, int] = {}
 #: Per-file tally of floats holding an exactly-integral value (`0.0`, `54.0`).
 #: NOT a precision finding and NOT counted as raw float64 — see `_count`. Kept
 #: as its own dict so removing them from the headline cannot make them
 #: invisible: whether such a field was MEANT to be an integer is asked by
 #: `witness_integer_field_audit`, and this is the number that feeds it.
 INTEGRAL: dict[str, int] = {}
+#: Per-file tally of raw floats under a runtime-duration field. Its own dict
+#: for the same reason as `INTEGRAL`: an excuse that cannot be seen cannot be
+#: audited.
+EPHEMERAL: dict[str, int] = {}
 
 
 def scan(scan_root: Path | None = None) -> dict[str, int]:
@@ -554,13 +541,15 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n, carved, integral, timing = _count(d)
+        n, carved, integral, ephemeral = _count(d)
         rel = p.relative_to(ROOT).as_posix()
         # An explicit float64-integrator declaration moves this file's REMAINING
         # count into the integrator carve-out. Applied at witness level, not
         # field level, because an integrator's output has no fixed field names —
         # which is exactly why it needs a producer's on-the-record claim rather
         # than a name list.
+        if ephemeral:
+            EPHEMERAL[rel] = ephemeral
         if n and _declares_f64_integrator(d):
             CARVED_INTEGRATOR[rel] = n
             n = 0
@@ -576,8 +565,6 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             CARVED[rel] = carved
         if integral:
             INTEGRAL[rel] = integral
-        if timing:
-            CARVED_TIMING[rel] = timing
     return found
 
 
@@ -662,33 +649,21 @@ def self_test() -> int:
         ({"y_star": [0.5], "a_K_via_lp_dual": 1.5, "tolerance": 1e-9}, 2),
         # A same-named key nested anywhere is still solver output.
         ({"per_atom": [{"lp_dual": {"y_star": [0.5, 0.25]}}]}, 0),
-        # ── volatile-timing carve-out (bean qou-hhm3) ──────────────────────
-        # A wall-clock duration has no mpf source it could have lost digits
-        # from, so it is not a precision finding.
-        ({"elapsed_sec": 0.001}, 0),
-        ({"elapsed_seconds": 12.5}, 0),
-        ({"meta": {"runtime_sec": 0.75}}, 0),             # nested
-        # The types this field actually appears as corpus-wide: 53 str, 34
-        # float, 16 null, 3 int. None of them may throw.
-        ({"elapsed_sec": None}, 0),
-        ({"elapsed_sec": 3}, 0),
-        ({"elapsed_sec": "0.001"}, 0),
-        # THE CASE THIS CARVE-OUT MUST NOT BREAK: a real float64 finding in
-        # the SAME witness still fires. A carve-out that silences its
-        # neighbours is a hole, not an exemption.
-        # Synthetic value ON PURPOSE. An earlier draft used 938.2720881 here
-        # because it "looked like a real witness field", and that is a stale
-        # CODATA proton mass -- it tripped the codata_corpus_literal_scan gate,
-        # correctly. A fixture that only needs A FLOAT TO EXIST must never
-        # carry a physical constant.
-        ({"elapsed_sec": 0.001, "some_measured_value": 7.7777777}, 1),
-        ({"elapsed_sec": 0.001, "rows": [{"y_lambda": 30.7796994}]}, 1),
-        # DECLARED BY NAME, NOT BY A *_sec PATTERN. These are physical
-        # quantities measured in seconds, where precision is the whole point,
-        # and they MUST still be flagged. This is why the rule is a name list.
-        ({"half_life_sec": 8.8e-06}, 1),
-        ({"lifetime_seconds": 1.2e-08}, 1),
-        ({"tau_sec": 878.4}, 1),
+        # ── runtime-duration carve-out ────────────────────────────────
+        # Wall-clock durations are runtime metadata, not payload numbers.
+        ({"elapsed_sec": 4315.281763076782}, 0),
+        ({"elapsed_seconds": 0.0006499290466308594}, 0),
+        ({"durationMs": 12.5, "duration_sec": 0.75}, 0),
+        # Nested anywhere, matching the by-NAME recursive strip the
+        # qou_substrate mask performs.
+        ({"data": {"sweep": [{"elapsed_sec": 0.54}, {"elapsed_sec": 0.40}]}}, 0),
+        # ...and NOTHING else in the same witness is excused. This is the
+        # discrimination that keeps the carve-out narrow — the identical float
+        # under a payload name still counts, so a producer cannot launder a
+        # measurement by naming it after a timer.
+        ({"elapsed_sec": 0.54, "tau": 0.54, "E0_MeV": 4.185981357642159}, 2),
+        # A near-miss name is NOT carved: only the reserved names are.
+        ({"elapsed": 0.54, "seconds": 0.54, "elapsed_ms": 0.54}, 3),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -701,11 +676,7 @@ def self_test() -> int:
           "plain/exponent/nested/negative form; strings, ints and bools not "
           "flagged; an f64 with a >17-digit *_str companion treated as a "
           "shadow, and one with a same-precision *_str still counted (the "
-          "laundering guard); declared volatile-timing fields carved out in "
-          "every JSON type they occur as, WITHOUT silencing a real float64 "
-          "in the same witness, and physical *_sec quantities (half_life_sec, "
-          "lifetime_seconds, tau_sec) still flagged — the carve-out is a name "
-          "list, not a suffix rule.")
+          "laundering guard).")
     return 0
 
 
@@ -787,18 +758,18 @@ def main() -> int:
               f"i.e. exploratory and retired rather than rewritten]")
         for _f, _n in sorted(CARVED_DEPRECATED.items(), key=lambda t: -t[1]):
             print(f"      {_n:6,d}  {_f}")
+    if EPHEMERAL:
+        print(f"  runtime-duration carve-out     : {sum(EPHEMERAL.values()):,} field(s) "
+              f"in {len(EPHEMERAL)} witness(es)  [NOT a precision finding — wall-clock "
+              f"durations, names reserved as runtime metadata by qou_substrate's "
+              f"_EPHEMERAL_META_FIELDS and stripped by name for comparison. A "
+              f"RECLASSIFICATION, not draining.]")
+        for _f, _n in sorted(EPHEMERAL.items(), key=lambda kv: -kv[1])[:5]:
+            print(f"      {_n:6,d}  {_f}")
     if CARVED:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
               f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
               f"LP_DUAL_F64_FIELDS]")
-    if CARVED_TIMING:
-        print(f"  volatile-timing carve-out      : "
-              f"{sum(CARVED_TIMING.values()):,} field(s) in "
-              f"{len(CARVED_TIMING)} witness(es)  [NOT a precision finding — a "
-              f"wall-clock duration has no mpf source it could have lost "
-              f"digits from. Declared by name in VOLATILE_TIMING_FIELDS, never "
-              f"by a *_sec pattern: a lifetime or a decay time is seconds too. "
-              f"Bean qou-hhm3]")
     if INTEGRAL:
         print(f"  integral-valued floats         : {sum(INTEGRAL.values()):,} "
               f"field(s) in {len(INTEGRAL)} witness(es)  [NOT a precision "
@@ -884,6 +855,10 @@ def main() -> int:
             "lp_dual_carved_out_fields": sum(CARVED.values()),
             "lp_dual_carved_out_by_file": dict(sorted(CARVED.items())),
             "lp_dual_carved_out_field_names": sorted(LP_DUAL_F64_FIELDS),
+            "ephemeral_duration_carved_out_fields": sum(EPHEMERAL.values()),
+            "ephemeral_duration_carved_out_by_file": dict(
+                sorted(EPHEMERAL.items(), key=lambda kv: -kv[1])),
+            "ephemeral_duration_field_names": sorted(EPHEMERAL_TIMING_FIELDS),
             # The float64-integrator carve-out, recorded on the SAME terms as
             # the LP-dual one above. Console output is not auditability: a
             # reviewer reading the committed artifact must be able to see what
