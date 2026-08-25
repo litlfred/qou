@@ -1,11 +1,11 @@
 ---
 # qou-zsu6
 title: 'Agent QA verdicts assert a failure with empty evidence: 275 live, 304 permanently unanchored'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T06:14:19Z
-updated_at: 2026-08-25T06:29:54Z
+updated_at: 2026-08-25T07:42:00Z
 ---
 
 ## Measured (re-run: `bun run content/pipeline/qa-evidence-audit.ts`)
@@ -107,3 +107,8 @@ that path records its reasoning correctly, just under the wrong key.
 - `qa-evidence-audit.ts` now separates `misfiled` from `silent`; `--strict`
   gates on live-AND-silent (currently 0). Gating on `live` alone would have
   failed on 261 well-evidenced verdicts and been switched off within a day.
+
+
+CLOSED by the qou-lqh3 migration: qa-evidence-audit now reports 0 empty-evidence
+agent fail/warn entries, --strict exits 0. Schema conditional locking it in:
+litlfred/folio-assistant#133.
