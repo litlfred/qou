@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-25T16:38:19Z
-updated_at: 2026-08-25T19:00:58Z
+updated_at: 2026-08-25T19:24:33Z
 ---
 
 ## Found 2026-08-25 while draining the 5 NEW raw-float64 witnesses on main
@@ -178,3 +178,51 @@ dim ~162+. Whoever drains a specific probe should decide for that probe.
 64/~53 not 102/65; the #1861 comment documents line 381 in `chi_lambda_braid`,
 NOT line 168 in the builder, whose coercion has no recorded rationale at all;
 and the 642x is matmul, not construction.
+
+
+## REOPENED then re-closed 2026-08-25 — owner asked "still float? if so, fix"
+
+It was. The first pass only made the builder REFUSE an `mpf`; the caller still
+could not get exact arithmetic through it. Now it DISPATCHES on the operand:
+
+    mpf / mpc  in  ->  exact `mp.matrix`  (delegates to the `_mp` twin)
+    float/str/None ->  float64 `ndarray`  (unchanged, byte-identical facade)
+
+Same shape `qou-d8gq` landed for the pyhecke twin: the decision follows the
+value, not a flag. `sparse=True` + `mpf` refuses -- scipy.sparse has no dtype
+for `mpf`, the su4_1111 boundary.
+
+## The default stays float64, and this is the finding worth keeping
+
+Flipping `q=None` to the mpf substrate constant looks like the obvious "fix it"
+and is a FALSE one. Measured on `mp.matrix`:
+
+    np.trace(sigma)             -> float64   silently re-truncated
+    np.abs(sigma)**2            -> float64   silently re-truncated
+    np.eye(d) @ sigma           -> float64   silently re-truncated
+    np.sum(np.abs(sigma)**2)    -> float64   silently re-truncated
+    sigma @ sigma  (mpmath @)   -> mpf       preserved
+
+Only mpmath's own operator preserves precision. numpy accepts `mp.matrix`
+happily and hands back float64 -- it does NOT raise, which is what makes this
+dangerous. So flipping the default would leave the ~64 q=None callers producing
+float64 results while LOOKING exact: strictly worse than the honest float64
+they get today, because the loss would no longer be visible anywhere.
+
+The fourth line is not a toy. `np.sum(np.abs(M)**2)` is exactly what the
+deuteron probe's `fro2()` computes -- the probe that started this whole bean.
+Had the default been flipped, that probe would have "adopted mpf" and gone on
+emitting float64 Frobenius norms.
+
+**Generalisation worth carrying:** exactness must be CARRIED by the consumer,
+not merely handed to it. Handing a consumer exact inputs is necessary and not
+sufficient; every operation in its chain has to preserve them. This is why
+per-consumer opt-in is the right shape and why "make the library exact" is not,
+by itself, a fix.
+
+Construction cost measured here: dim 9 6.0x, dim 16 7.1x, dim 162 33.0x
+(consistent with #5763). Plus qou-d8gq's 642x for mpf matmul at dim 162.
+
+Also corrected the `_mp` docstring, which still claimed the float64 builder
+"cannot be made otherwise without moving numbers for its 64 live callers".
+It has been, and without moving them.
