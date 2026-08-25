@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T18:43:09Z
+updated_at: 2026-08-25T19:06:14Z
 ---
 
 ## The defect
@@ -217,3 +217,41 @@ The full port (jmRaw_comm, jmProd_eq_delta_pow, fullTwist_smul_eq_theta_sq
 re-proved on the bounded class, ~700 lines / 8 files) is NOT done. #5778 took the
 minimum path to the dim>1 content-spectrum realisation, which turned out not to
 need the general theory ported first. That port remains this bean's actual scope.
+
+
+## THE PORT IS SUBSTANTIALLY DONE (2026-08-25, PR #5778, 4 files / 780 lines / 63 decls)
+
+The dim>1 IsJMWeight witness THIS BEAN EXISTS FOR now exists:
+
+    stdTwoBelow3_isJMWeight   e0 = (1,0) is a JM weight vector of the 2-dim (2,1)
+                              rep of H_3(q), eigenvalues q^(2c), c = 0, 1, -1
+    stdTwoBelow3_jmProd_eq_fullTwist   L_0 L_1 L_2 = (s0 s1)^3 on that same rep
+
+Ported: HeckeGeneratorsBelow; the downcast + JM basics; delta/run/push law/power
+identity/jmProd_eq_delta_pow; IsJMWeightB + jmProdB_smul_of_weight +
+fullTwistB_smul_of_weight; HeckeGeneratorsBelow.map (transport along an AlgEquiv).
+
+Architecture: the port GENERALIZES rather than forks. HeckeGenerators.toBelow
+downcasts at every n and the *_toBelow lemmas show the constructions agree, so each
+ported result RECOVERS its unbounded counterpart instead of copying it.
+
+### CORRECTION to this bean's own estimate
+"~700 lines across eight files" is wrong. Measured: the original cone is 1577
+lines / 81 declarations across SIX files. The bounds claim was right though --
+they are NOT uniform, and two of eight lemmas need no bound at all (they use no
+Hecke/braid/far relation). The load-bearing arithmetic is that run_push's
+induction reaches p+1 = m and braids there, needing m+2 < n, so both big
+inductions carry m+1 < n, NOT the m < n a naive reading suggests.
+
+### STILL OPEN -- this bean stays open
+1. jmRaw_comm (JM commutativity). Its machinery is HeckeTranspositionExpansion
+   (562 lines) + HeckeJucysMurphyCommutation (263) + AdjacentNormalForm (210).
+   NOT attempted.
+2. The theta / content-sum tie-in: prod_jmEigen, fullTwist_smul_eq_theta_sq,
+   twist_scalar_eq_theta_sq. fullTwistB_smul_of_weight is the key half; the
+   specialization to theta_lambda^2 is not ported.
+
+### Side finding, unchanged and still unactioned
+HeckeGenerators.sigma_inv / mul_sigma_inv / sigma_inv_mul are DERIVABLE from the
+Hecke relation (hecke_mul_sub_eq_one). Removing them touches every downstream
+instance -- wants its own scoped pass, not a rider on this one.
