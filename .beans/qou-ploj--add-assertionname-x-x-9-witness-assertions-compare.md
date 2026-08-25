@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T19:47:06Z
-updated_at: 2026-08-25T21:28:54Z
+updated_at: 2026-08-25T22:24:32Z
 ---
 
 FOUND 2026-08-25 while draining the two state-2 records of
@@ -135,3 +135,56 @@ AST-level edit that type-checks can still be wrong about the callee's signature.
 
 LITERAL (17) deliberately untouched — several are intentional provenance statements
 (`no_h4_fit_performed`) where the right move is `add_parameter`, not deletion.
+
+
+## LITERAL class drained 2026-08-25 — 17 -> 0, but it was NOT one class
+
+The 17 split three ways on reading, and the split is the finding.
+
+**A — 12 discipline declarations the code cannot verify about itself** → `add_parameter`.
+`no_h4_fit_performed` appears in **three separate files**; `su2`'s carried
+`source="discipline: no spin/content chosen to produce h^4"`, saying outright that it is
+a discipline statement. Others: `cross_ratio_is_forced_selector` (commented
+`# documented: free`), `verdict_code_ii` (a verdict label), `lo_routed_through_canonical_facade`,
+`alpha_derived_not_fit`, `pair_gen_not_wired`, `canonical_tau_kernel_evaluated_zero_fit`,
+`scan_completed`, `tjon_identity_is_lean_backed`.
+
+These were honest statements wearing a machine-verified badge. Under the anti-laundering
+rules, **"no fit was performed" rendering as `"passed": true` is the worst possible place
+for that badge to sit** — it is exactly the claim a reader most needs to know was asserted
+rather than checked. The statements are unchanged; only the badge is gone.
+
+**B — 5 where the code could check, and `source=` claimed a check it never ran.**
+`detG_closed_form_ok` carried `source="...verified to 40dps"`;
+`n_integer_ranks_that_are_bar_invariant` carried `source="sympy exact"`. The source string
+laundered the literal.
+
+**C — and within B, a distinct and more interesting shape: the verification EXISTS as a
+bare `assert` in the body, and only its conclusion reached the witness as a literal.**
+`b4` line 142 really does `assert abs(detG(m_probe) - (1-6m²+5m⁴)) < 1e-40`; `qbeta` lines
+253/256 really do `assert alpha[0] == 0` and `assert simp(R[0]-1) == 0`. So these were
+*verified claims whose evidence never reached the witness* — delete the `assert` and the
+witness would still have said "passed". Fixed by carrying the measured quantity through:
+`detG_closed_form_max_deviation`, `alpha_eff_at_q1`, `R_minus_1_at_q1`. All still pass,
+which is right — they were true — but they would now fail if the math moved.
+
+**One NOT converted, deliberately.** `n_distinct_involutions_behind_the_four_gradings`:
+I could not establish from the file what the "four gradings" are indexed over, and
+fabricating a count I do not understand would be worse than recording the claim honestly.
+Left as a parameter with the original `source` text quoted and the gap stated. A real
+check is available to someone who knows the intended indexing.
+
+**A second witness with a wholly vacuous assertion set.** `convention-frame-staleness-audit`
+now has **zero** assertions — its only one was `scan_completed`, a reached-this-line flag
+that can never be false because no witness is written unless the scan completes. That is
+the same shape as `threerow-crossing-a-dependence` in the MEASURED drain: two witnesses
+whose entire assertion set was structurally incapable of failing.
+
+**The su2 mistake did not recur, because I checked for it.** Before running anything I
+AST-scanned all 12 files for `add_parameter`/`add_data` calls with stray kwargs or wrong
+arity — and found one: `bar_parity` had inherited a `source=` kwarg that
+`add_parameter(key, value)` does not accept. Caught before execution rather than by a
+`TypeError`, which is the improvement over last time.
+
+Verified: audit MEASURED 0 / LITERAL 0, exit 0, `--selftest` OK; all 12 producers re-run
+to completion, rc=0, every witness emitted.
