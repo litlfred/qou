@@ -363,11 +363,6 @@ EQUALITY_TEST_BASELINE: dict[str, str] = {
     # "fixing" it would break a deliberate convention in the file AGENTS.md
     # names as the p/n asymmetry mechanism.
     "closed_form_tau_M.py::interface_factor": "own InterfaceKind vocabulary; label/value split is documented",
-    # Same vocabulary, same reason: this dispatches on the InterfaceKind
-    # returned by `canonical_interface_kinds(...)` (positive/negative/
-    # averaged), not on a ctype. Its `averaged` is the InterfaceKind label,
-    # whose δ-aware factor is applied at the value layer.
-    "_habiro_coefficient_extract.py::_interface_product_symbolic": "InterfaceKind vocabulary, not ctype",
     # Same file, SECOND site — a tally over the InterfaceKind values returned
     # by `canonical_interface_kinds`, not over ctypes. It stayed invisible
     # until the per-file `break` was removed, which is precisely why that
@@ -592,14 +587,6 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
     # re-running rather than re-reading once S4 lands.
     "closed_form_tau_M_verification_phase5q.py::main":
         "self-consistency check within the legacy frame; re-run, do not re-read (qou-cds4)",
-    # Declares chi_lambda_braid in its own docstring ("the production
-    # chi_lambda_braid convention") and owns 27 committed
-    # habiro-coefficients-*.witness.json. Not an accident — a file that was
-    # correct pre-migration and never revisited. S4 owns the decision.
-    "_habiro_coefficient_extract.py::_interface_product_symbolic":
-        "declared in-file; 27 committed witnesses; S4 tranche owns it (qou-cds4)",
-    "_habiro_coefficient_extract.py::analyse_atom":
-        "same file, same declared convention (qou-cds4)",
     # NOT YET ADJUDICATED. Listed so the ratchet can hold, flagged so nobody
     # mistakes silence for approval. Neither has been read.
     # ADJUDICATED 2026-08-21: deliberate AND COUPLED. Its in-file comment says
