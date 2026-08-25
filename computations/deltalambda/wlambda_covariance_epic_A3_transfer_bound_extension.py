@@ -158,8 +158,10 @@ def main() -> int:
         w.add_data("kernel_nonpositive_all_n", bool(all_kernel_neg))
         w.add_data("main_term_negative_all_n", bool(all_main_neg))
         w.add_data("transfer_ratio_in_0_2_all_n", bool(all_bound))
-        w.add_data("transfer_ratio_range", [float(r_lo), float(r_hi)])
-        w.add_data("remainder_over_main_max", float(max_rem))
+        # NO-FLOAT64: r_lo/r_hi/max_rem are mpf; serialize the digits, do not
+        # round-trip them through binary64 on the way into the witness.
+        w.add_data("transfer_ratio_range", [mp.nstr(r_lo, 20), mp.nstr(r_hi, 20)])
+        w.add_data("remainder_over_main_max", mp.nstr(max_rem, 20))
         w.add_data("prior_window_n_le_14", True)
         w.add_data("a2_pointwise_route_failed_at_n_29", True)
         w.add_assertion(
