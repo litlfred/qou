@@ -409,3 +409,107 @@ If the `cos` node is what summons `trigsimp` → `factor`, then expanding
 **Not yet verified** — a route comparison at low orders is in flight. Recording
 the reasoning separately from the result, because the whole point of this section
 is that this bean previously recorded a plausible mechanism as if measured.
+
+## The fix is MEASURED and VALIDATED — expand `cos` before `series`
+
+The previous section recorded this as a candidate. It is now measured, and
+validated against ground truth rather than against itself.
+
+### Route comparison (per-route SIGALRM cap of 420 s)
+
+| order N | A — live `cos` (what the probe does) | B — `cos` expanded first |
+|---|---|---|
+| 3 | **> 420 s CAPPED** | **4.53 s** |
+| 4 | **> 420 s CAPPED** | **55.44 s** |
+| 5 | **> 420 s CAPPED** | **56.19 s** |
+
+**A cannot finish at N=3 — the lowest order tested — while the probe needs N=9.**
+So the cost is not driven by series order; it is the trig node summoning
+`trigsimp` → `factor`, exactly as the profile attributed. The ratio is ≥ 93× at
+N=3 and unbounded from below, because A never completed at any order.
+
+### Why B is not merely faster but CORRECT
+
+**A produced no series at any order, so there was nothing to compare B against.**
+Comparing B to A was therefore impossible, and a speedup on a different quantity
+would be worthless. Validated instead against the **true function**, which is a
+stronger test than A would have been:
+
+evaluate `F(s) = log(Rq(1+s)/R1)` numerically with the **live `cos`** at 60 dps
+(mpmath throughout, no float64 — the probe's own `Rq`, unexpanded), and check that
+`|F(s) − P_N(s)|` decays like `s^N`:
+
+```
+  s=1e-2:  8.5558041e-10
+  s=1e-3:  8.4936691e-15   -> falls 5.003 decades per decade (expect 5)
+  s=1e-4:  8.4875754e-20   -> falls 5.000 decades per decade (expect 5)
+```
+
+Exactly the required order. `R(1) = 1.0` numerically also matches the probe's
+own exact `R(q=1) exact = 1`. B is the correct order-N expansion of the same
+function.
+
+**Why the truncation is exact rather than an approximation:** `alpha_eff(q=1) = 0`
+(verified symbolically), so `alpha_eff = O(s)` and a `cos` polynomial carried to
+degree ≥ N contributes nothing beyond `O(s^N)`. No accuracy is traded for the
+speed.
+
+### Coefficients (N=5), exact
+
+```
+c[0] = 0
+c[1] = 0
+c[2] = 9/8
+c[3] = -37/8 + sqrt(3)/8
+c[4] = -887/192 - 9*sqrt(3)/16
+```
+
+The `sqrt(3)` is `sqrt(q**4+q**2+1)` at `q=1`, as expected.
+
+> **Notation collision — do NOT conflate.** `9/8` here is the `s²` coefficient of
+> `log(R(1+s)/R(1))`. AGENTS.md separately discusses `c̃₂ = c₂ − 1/8 = −9/8` for
+> the *normalised* `Φ(u)/Φ(0)` model. Different object, different variable,
+> opposite sign. This bean asserts **no** relationship between them; it is flagged
+> only because the corpus already carries a documented history of confusing
+> quantities that differ by normalisation.
+
+### It is a class, not one producer
+
+`c4even` is structurally identical (`Rq = Qb_over_me / (QA_over_me *
+sp.cos(alpha_eff))` at line 101, `sp.series(sp.log(Rq...))` at line 108), so one
+change covers both TIMEOUT qbeta probes — and neither needs `KC` touched, which
+this bean establishes is not a tuning knob.
+
+Corpus-wide, an AST pass (resolving each `series()` call's first argument through
+local bindings, rather than grepping for files that merely contain both) finds
+**13 sites in 9 files** where a trig node reaches the expanded expression:
+
+```
+qbeta/qbeta_c3even_exact_sseries_probe.py:110   cos   <- measured TIMEOUT
+qbeta/qbeta_c4even_exact_sseries_probe.py:108   cos   <- measured TIMEOUT
+qbeta/qbeta_eigenphase_taylor_in_u.py:128,129,160
+qbeta/qbeta_h_frame_rungs_probe.py:76,86
+qbeta/qbeta_crossing_weight_hecke_probe.py:247,248
+qbeta/qbeta_h4_route_a_gate_probe.py:176
+qbeta/_h4_g_linear_response.py:40   qbeta/_h4_route_ladder_scan.py:34
+probes/qbeta_phib_saddle_fluctuation_transseries_probe.py:243   sin
+```
+
+**Two caveats, both load-bearing.** The detector binds names *last-write-wins over
+the whole file* — the identical flaw that produced three wrong upstreams in
+`inherited_q0_pin_audit.py` before it was made scope-aware — so an attribution
+can be wrong where a name is rebound. And reaching a trig node does **not** imply
+slowness: cost depends on whether `factor` receives a large algebraic input.
+These are **13 candidates for one mechanism, of which 2 are measured**, not 13
+slow producers.
+
+### Still open
+
+- **The N=9 timing** — the order the probe actually needs. B at N=5 is 56 s; N=9
+  is running and is the number that decides whether this makes the probes
+  tractable or merely faster. Do not quote a speedup for the real probe until it
+  lands.
+- **No producer has been edited.** Everything above was measured from outside, so
+  no `scriptHash` has drifted. Applying the change to the two probes is a
+  proposal, not something this bean has done — and it would pay the drift, so it
+  should ride with the re-run that regenerates their witnesses.
