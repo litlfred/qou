@@ -1,12 +1,14 @@
 {
  "computation": "yekutieli-trefoil-surface2form-discretization",
  "scriptFile": "yekutieli_trefoil_surface2form_discretization_probe.py",
- "computedAt": "2026-08-09T02:08:48.880643+00:00",
- "engine": "python (pure 2x2 matrices; 0 free params; structural validation)",
+ "computedAt": "2026-08-25T16:31:25.809307+00:00",
+ "engine": "mpmath mpf (pure 2x2 matrices; 0 free params; structural validation)",
  "free_parameters": 0,
  "inputs": {
-  "q0": 1.1099785955573347,
-  "h": 0.20906032199559366,
+  "q0": "1.10997859555733470000000000000000000000000000000000000000000",
+  "q0_pin": "muon (ideal CAL-2)",
+  "h": "0.209060321995593642930382259776440357718948216440892097990755",
+  "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
   "seifert_matrix_trefoil": [
    [
     -1,
@@ -25,10 +27,10 @@
  "results": {
   "abelian_surface2form_is_zero": true,
   "abelian_note": "deuteron \u03c3\u2081\u00b3 trefoil in H\u2082 (commuting handles) \u21d2 0 (matches Lean commutator_zero)",
-  "nonabelian_surface2form_fro_norm": 3.5215371941716573,
+  "nonabelian_surface2form_fro_norm": "3.52153719417165682470309074070851690782929279331802188986005",
   "nonabelian_equals_single_commutator": true,
   "skew_only_validated": true,
-  "nonabelian_over_h2_ratio": 80.5729101384641
+  "nonabelian_over_h2_ratio": "80.5729101384640899357457195003169032951934927446885676808968"
  },
  "verdict": "The canonical discretization surface2Form(V,A)=\u2211V_ij[A_i,A_j] is BUILT and validated: skew-only \u21d2 trefoil term = single germ curvature [A_a,A_b] (Lean-confirmed, MATCH). Abelian handles (deuteron's own H\u2082 trefoil) give EXACTLY 0 (reproduces commutator_zero) \u2014 the isolated-trefoil transverse term is null. A non-abelian germ (reduced Burau B\u2083) gives a nonzero term (\u2016\u00b7\u2016=3.5215); the magnitude is convention-dependent (this toy has O(1) increments \u2014 canonical small q-germ increments \u03b4q~h would scale as h\u00b2). The point is the DICHOTOMY: abelian\u21d20, non-abelian\u21d2\u22600. So the deuteron transverse datum requires NON-ABELIAN interface handles, not the isolated \u03c3\u2081\u00b3 trefoil \u2014 the discretization exists; the canonical interface holonomy is the remaining input.",
  "scope": "scope-(a): builds + validates the discretization (the qou-prjo 'missing' object) and quantifies the abelian(0)/non-abelian(O(h\u00b2)) dichotomy. Does NOT close the deuteron number (reduced-Burau is a toy germ, not the canonical pn-interface holonomy). No fit; nothing wired.",
