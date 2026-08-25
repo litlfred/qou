@@ -896,5 +896,19 @@
       "owner_decision_required": false
     }
   ],
-  "blocked_on_rederivation_note": "Sites that must NOT stay on convention C but cannot be migrated by substituting z_D, because the substitution changes the site's asserted RESULT rather than its coordinate. Distinct from `blocked_migrations`, whose rows say `stays: C` permanently by design -- these are PENDING the qou-cds1 ladder re-derivation. Recorded so a drain agent stops re-litigating them from scratch (the failure mode the markov_reduction_h3_to_h4_verify row names in its `why_the_detector_keeps_listing_it` field), and DELIBERATELY LEFT IN the audit's actionable count: a declaration accounts for a site without excusing it, exactly as `intra_module_split_waivers` does. Shrinking the number without changing the corpus is the thing this registry exists to prevent. Every `evidence` field is a measurement, not a judgement."
+  "blocked_on_rederivation_note": "Sites that must NOT stay on convention C but cannot be migrated by substituting z_D, because the substitution changes the site's asserted RESULT rather than its coordinate. Distinct from `blocked_migrations`, whose rows say `stays: C` permanently by design -- these are PENDING the qou-cds1 ladder re-derivation. Recorded so a drain agent stops re-litigating them from scratch (the failure mode the markov_reduction_h3_to_h4_verify row names in its `why_the_detector_keeps_listing_it` field), and DELIBERATELY LEFT IN the audit's actionable count: a declaration accounts for a site without excusing it, exactly as `intra_module_split_waivers` does. Shrinking the number without changing the corpus is the thing this registry exists to prevent. Every `evidence` field is a measurement, not a judgement.",
+  "closed_form_measured_clear": [
+    {
+      "file": "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+      "symbol": "ocneanu_weights",
+      "line": 133,
+      "half_power_site_line": 162,
+      "verdict": "detector false positive -- MEASURED, not argued",
+      "verified_on": "2026-08-25",
+      "evidence": "The function's z is already convention D (`z = q ** 3 / (q ** 2 + 1)`, line 146, with an in-source note recording the C spelling it replaced). The half-power the closed-form scanner sees is at line 162, `Wq = {k: sp.simplify(v.subs(t, sp.sqrt(_q))) for k, v in Wt.items()}` -- a BACK-substitution undoing the working coordinate the function opens with (`t = sp.symbols('t', positive=True)`, `q = t ** 2`, 'in t=sqrt q for clean algebra'), not a convention-C closed form. Executed and measured: ocneanu_weights() returns W_(3) = (q^4+1)/(q^2+1)^2, W_(2,1) = q^2/(q^2+1)^2, W_(1^3) = 0, held_out_ok = True. All three are exact rational functions of q with ZERO half-integer q powers -- sympy `is_rational_function(q)` True for each.",
+      "why_not_suppressed": "The scanner is static and cannot evaluate; the discriminator here is the ANSWER, not the source. A rule that skipped every `.subs(t, sqrt(q))` would also skip a genuinely C-derived closed form back-substituted the same way, which is exactly how the previous four blind spots were created (docs/audits/2026-08-15-detector-blindness-taxonomy.md). So the site KEEPS its place in the report and this row only labels it, in the same accounting-without-excusing sense as `blocked_on_rederivation`. Re-verify by running the function, not by reading it.",
+      "action": "none -- nothing to migrate at this site"
+    }
+  ],
+  "closed_form_measured_clear_note": "Closed-form sites the scan_closed_forms half-power fingerprint reports in a convention-D file that have been EXECUTED and measured to be clear. The scanner is static; a half-integer power of q in the source is a shape, and the discriminator is whether the quantity the function RETURNS carries one. A row here records that measurement so the next drain does not repeat it -- it does NOT remove the site from the report, for the same reason `blocked_on_rederivation` rows stay in the actionable count: a channel that shrank the headline number would let the inventory improve while the corpus stood still. Every `evidence` field must name the measured return value."
 }
