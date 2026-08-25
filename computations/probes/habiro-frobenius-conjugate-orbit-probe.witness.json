@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T19:40:37.202944+00:00",
-  "commitSha": "62a481513ae52c3bd98a1336e25ee288e90f9e5b",
+  "computedAt": "2026-08-25T19:48:41.832022+00:00",
+  "commitSha": "d3f894e6a95920b304e5c42a82960766a1412778",
   "assertions": [
     {
       "name": "norm_routes_agree",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 730,
   "computation": "habiro-frobenius-conjugate-orbit-probe",
   "scriptFile": "habiro_frobenius_conjugate_orbit_probe.py",
-  "scriptHash": "2aaaccb823fb",
-  "scriptCommitSha": "19e6bb4e41ec4d78bcb97ea17b3463b8e0e364a5",
+  "scriptHash": "c1d2d8e8d677",
+  "scriptCommitSha": "21f8545193c9209fdf039329ad1734be67f03e78",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -457,9 +457,27 @@
       "checked": true,
       "n_mismatch": 0,
       "mismatches": []
-    }
+    },
+    "trM_congruence_at_zeta6": [
+      {
+        "atom_label": "p (proton, A=1)",
+        "trM_degree": 44,
+        "phi6_divides_trM_minus_zeta": true
+      },
+      {
+        "atom_label": "n (neutron, A=1)",
+        "trM_degree": 36,
+        "phi6_divides_trM_minus_zeta": true
+      },
+      {
+        "atom_label": "D (deuteron, A=2)",
+        "trM_degree": 100,
+        "phi6_divides_trM_minus_zeta": false
+      }
+    ]
   },
   "caveats": [
+    "The two A=1 atoms share a value at zeta_6 (both tr_M == u mod Phi_6) while the A=2 atom does not, so this is NOT a universal evaluation of tr_M at a 6th root of unity. Whether the A=1 agreement is forced or coincidental is OPEN; no mechanism is claimed here.",
     "Exactness is bounded by DATA, not method: evaluating at p needs 2p+1 Habiro coefficients. With 9/9/14 available this reaches p<=3 for the nucleons and p<=5 for the deuteron. Nothing here speaks to larger primes.",
     "A unit at one prime refutes the no-exception-set form (for-all p) but NOT the almost-every-prime form; one prime is not a positive density."
   ]

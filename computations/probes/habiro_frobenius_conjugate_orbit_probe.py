@@ -175,6 +175,37 @@ def analyse(coeffs: list[dict], p: int) -> dict[str, Any]:
     }
 
 
+def trM_congruence_observation(atoms: dict) -> list[dict[str, Any]]:
+    """Why do two DIFFERENT atoms give the same root of unity at zeta_6?
+
+    Stated exactly: `tr_M(zeta_6) = zeta_6` is the divisibility
+    `Phi_6 | (tr_M - u)`. This records it per atom rather than leaving the
+    coincidence as prose.
+
+    It is NOT a blanket degeneracy of tr_M at a 6th root of unity -- the
+    deuteron is the counterexample and is included here for exactly that
+    reason. Recorded as an observation; no mechanism is claimed.
+    """
+    phi6 = sp.Poly(sp.cyclotomic_poly(6, u), u)
+    out = []
+    for label, rec in atoms.items():
+        total = sp.Integer(0)
+        for c in rec.get("habiro_coefficients", []):
+            a = sp.sympify(c.get("a_m_str", c.get("a_m", "0")), locals={"check_q": u})
+            poch = sp.Integer(1)
+            for i in range(1, c["m"] + 1):
+                poch *= (1 - u**i)
+            total += a * poch
+        poly = sp.Poly(sp.expand(total), u)
+        _, rem = sp.div(sp.Poly(poly.as_expr() - u, u), phi6)
+        out.append({
+            "atom_label": label,
+            "trM_degree": int(poly.degree()),
+            "phi6_divides_trM_minus_zeta": bool(rem.is_zero),
+        })
+    return out
+
+
 def main() -> int:
     if not COEFFS.exists():
         print(f"ERROR: canonical coefficients missing at {COEFFS}")
@@ -259,6 +290,7 @@ def main() -> int:
     wb.add_data("atoms", results)
     wb.add_data("units_found", units)
     wb.add_data("reproduction_of_committed_witness", repro)
+    wb.add_data("trM_congruence_at_zeta6", trM_congruence_observation(atoms))
     # Assertions carry (name, computed, EXPECTED) -- the third argument is a value
     # to compare against, not a description.
     wb.add_assertion("norm_routes_agree", True, True)
@@ -291,6 +323,11 @@ def main() -> int:
             _u3[y["atom_label"]] = [r3["representative"], r3["unit_multiplicative_order"]]
     wb.add_assertion("p3_units_are_primitive_6th_root_of_unity", _u3,
                      {"p (proton, A=1)": ["u", 6], "n (neutron, A=1)": ["u", 6]})
+    wb.add_caveat(
+        "The two A=1 atoms share a value at zeta_6 (both tr_M == u mod Phi_6) while "
+        "the A=2 atom does not, so this is NOT a universal evaluation of tr_M at a "
+        "6th root of unity. Whether the A=1 agreement is forced or coincidental is "
+        "OPEN; no mechanism is claimed here.")
     wb.add_caveat(
         "Exactness is bounded by DATA, not method: evaluating at p needs 2p+1 Habiro "
         "coefficients. With 9/9/14 available this reaches p<=3 for the nucleons and "
