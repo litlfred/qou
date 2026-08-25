@@ -72,6 +72,7 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 
@@ -251,44 +252,56 @@ def save_ckpt(state: Path, ck: dict) -> None:
 # ── the check itself ────────────────────────────────────────────────────────
 
 def run_producer(prod: Path, timeout: int, log_dir: Path | None):
-    """Run at the proton pin with progress logging. (rc|None, tail, seconds)."""
+    """Run at the proton pin with LIVE logging. (rc|None, tail, seconds).
+
+    The producer's stdout goes STRAIGHT TO A FILE, not through a pipe this
+    process drains at the end. The first version read the pipe only after the
+    process exited, so `--log-dir` held an empty file for the whole run —
+    measured: 0 bytes at 4 minutes into a 7200 s budget.
+
+    That is not merely unhelpful, it is the exact signature AGENTS.md tells
+    agents to read as a crash ("ends silently with 0-byte output ... assume it
+    crashed"). A logging option that manufactures the symptom of the failure it
+    exists to diagnose is worse than no logging, so the file is written as the
+    producer writes it and can be tailed mid-run.
+
+    A pipe would also deadlock a producer verbose enough to fill the OS buffer
+    while nobody is reading — which a two-hour run is a good candidate for.
+    """
     env = dict(os.environ)
     env["QOU_Q0_ANCHOR"] = "physical"
-    log = None
     if log_dir:
         log_dir.mkdir(parents=True, exist_ok=True)
-        log = open(log_dir / f"{prod.stem}.log", "wb")
+        log_path = log_dir / f"{prod.stem}.log"
+    else:
+        log_path = Path(tempfile.gettempdir()) / f"ppc-{prod.stem}-{os.getpid()}.log"
     t0 = time.monotonic()
-    proc = subprocess.Popen([sys.executable, "-u", prod.name], cwd=prod.parent,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            env=env)
-    tail: list[bytes] = []
-    next_tick = t0 + PROGRESS_EVERY
-    try:
+    with open(log_path, "wb") as sink:
+        proc = subprocess.Popen([sys.executable, "-u", prod.name], cwd=prod.parent,
+                                stdout=sink, stderr=subprocess.STDOUT, env=env)
+        next_tick = t0 + PROGRESS_EVERY
         while True:
             rc = proc.poll()
             if rc is not None:
                 break
             now = time.monotonic()
             if now >= next_tick:
+                size = log_path.stat().st_size if log_path.exists() else 0
                 print(f"      … {prod.stem}: {now - t0:6.0f}s elapsed "
-                      f"(budget {timeout}s)", flush=True)
+                      f"(budget {timeout}s, {size} B logged)", flush=True)
                 next_tick = now + PROGRESS_EVERY
             if now - t0 > timeout:
                 proc.kill()
                 proc.wait()
                 return None, "", now - t0
             time.sleep(0.5)
-        out = proc.stdout.read() if proc.stdout else b""
-        if log:
-            log.write(out)
-        tail = out
-        return rc, tail.decode(errors="replace")[-400:], time.monotonic() - t0
-    finally:
-        if proc.stdout:
-            proc.stdout.close()
-        if log:
-            log.close()
+    try:
+        tail = log_path.read_bytes()[-400:].decode(errors="replace")
+    except OSError:
+        tail = ""
+    if not log_dir:
+        log_path.unlink(missing_ok=True)
+    return rc, tail, time.monotonic() - t0
 
 
 def check(prod: Path, timeout: int, state: Path, log_dir: Path | None):
