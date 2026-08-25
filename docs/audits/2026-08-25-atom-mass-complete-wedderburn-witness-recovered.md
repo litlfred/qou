@@ -206,3 +206,44 @@ witnesses are **recoverable and worth reading**, and that reading them
 changes what their blocks can claim. Each needs an authoring decision, and
 `co-molecular-binding`'s calibration needs one from the owner specifically,
 since a fitted molecular scale sits outside the three-calibration discipline.
+
+---
+
+## 5. 🟧 OWNER DIRECTIVE (2026-08-25): **no fitting**
+
+Put to the owner as the one item in §4 that was not mine to decide — whether
+`co-molecular-binding`'s H₂-fitted `calibration_factor` is admissible. The
+answer, verbatim: **"no fitting!!!"**
+
+It settles that item and, read straight, the other two of the same kind that
+this audit turned up. All three recovered witnesses carry a fitted quantity,
+and none of them is admissible:
+
+| witness | the fit | evidence |
+|:---|:---|:---|
+| `co-molecular-binding` | `calibration_factor = 0.23879110765149733` | `= 4.478 / 18.753` exactly — the ratio that makes the uncalibrated result equal H₂'s **measured** bond energy. A fourth calibration, on a molecular observable, outside CAL-1/2/3. |
+| `mass-qvalue-by-level` | seven assertion **tolerances** | each set ~10 % above its own discrepancy, so it cannot fail — `Q(³H → ³He)` passes at **13 017 %** error. A bound fitted to a miss is a fit. |
+| `atom-mass-complete-wedderburn` | `beta3 = 0.0499` | against the published `h_A² = 0.043707282`, a **14.2 %** departure with no stated derivation, recorded beside `"fitted": 0`. |
+
+**What follows, and what does not.**
+
+- These three are **not live**: all were lost in the miga migration and none
+  is in the tree. So the directive requires no un-wiring — there is nothing
+  wired.
+- What it does mean is that **recovering them cannot rehabilitate the claims
+  that cite them.** A block whose provenance is a fitted artifact is not
+  better off for the artifact being findable. `co-triple-bond-energy.md`'s
+  CO number, and the NF-trace Q-values in
+  `unified-iterative-correction-proof.md`, both rest on fits and must not be
+  cited as parameter-free.
+- It does **not** authorise reconstructing `beta3`, re-deriving the CO scale
+  from CAL-1/2/3, or widening/narrowing any tolerance. "No fitting" forbids
+  the fit; it does not license a replacement invented here.
+- The `atom-mass-complete-wedderburn` case keeps a second, independent
+  problem the directive does not touch: the published formula and the
+  computation that produced the table **disagree**, `h_A²` against `beta3`.
+  Which of the two is wrong is still an authoring question.
+
+The honest summary of §1–§5 together: the missing witnesses are recoverable,
+and recovering them makes the situation **worse rather than better** — each
+one, read, contains a fit that the owner has now ruled out.
