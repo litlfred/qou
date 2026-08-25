@@ -234,6 +234,101 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     return sigmas, dim, syts
 
 
+def build_seminormal_matrices_mp(shape, q):
+    """Exact-arithmetic twin of `build_seminormal_matrices` (mpmath, no float64).
+
+    WHY THIS EXISTS
+    ---------------
+    `build_seminormal_matrices` above is float64 all the way down and cannot be
+    made otherwise without moving numbers for its 64 live callers: it coerces
+    its argument (`q_local = float(q)`), so an `mpf` handed to it is silently
+    downcast; it computes the axial-distance entries in float; it even reaches
+    for `mp.sqrt` and then throws the precision away (`b = float(mp.sqrt(...))`);
+    and it returns `np.zeros((dim, dim))`, i.e. float64 storage.
+
+    That makes it a library-level float64 entry point, which is why draining a
+    probe that calls it is not a probe-local fix. Per AGENTS.md ("a float64
+    input poisons the whole result") the honest options are an exact route or
+    an unanswered question — so this is the exact route, added ALONGSIDE rather
+    than in place of the float64 builder. Nothing above is modified and no
+    existing caller changes behaviour; drains of the other 63 can adopt this
+    incrementally.
+
+    THE q -> 1 LIMIT IS EXACT HERE, NOT A FINITE DIFFERENCE
+    -------------------------------------------------------
+    Callers wanting the classical (q = 1) rep have been passing `q = 1 + 1e-7`,
+    because `a = h/(1 - q^-2rho)` is 0/0 at q = 1. In float64 that ratio is
+    formed from two quantities of size ~1e-7 each carrying ~1e-16 of absolute
+    error, so it retains only ~9 significant digits.
+
+    The limit is elementary and needs no epsilon. With q = 1 + eps:
+    h = q - 1/q ~ 2*eps and 1 - q^(-2*rho) ~ 2*rho*eps, so
+
+        a -> 1/rho,   a' -> -1/rho,   b^2 = a*a' + 1 -> 1 - 1/rho^2,
+
+    which is exactly Young's classical seminormal form. `q=1` is therefore
+    handled as its own branch and is exact, not approached.
+
+    Returns (sigmas, dim, syts) with sigmas a list of `mp.matrix`, matching the
+    float64 builder's shape and index conventions exactly.
+    """
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], dim, syts
+
+    q_local = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
+    exact_one = (q_local == 1)
+    h_local = None if exact_one else q_local - 1 / q_local
+
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+    sigmas = []
+
+    for k in range(1, n):
+        M = mp.zeros(dim, dim)
+        processed = set()
+
+        for i in range(dim):
+            if i in processed:
+                continue
+
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+
+            if exact_one:
+                a = mp.mpf(1) / rho
+                a_prime = -a
+            else:
+                a = h_local / (1 - q_local ** (-2 * rho))
+                a_prime = h_local / (1 - q_local ** (2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k] = ci_k1
+            swap_map[k + 1] = ci_k
+
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
+
+            if j is None:
+                M[i, i] = a
+                processed.add(i)
+            else:
+                b = mp.sqrt(abs(a * a_prime + 1))
+                M[i, i] = a
+                M[j, j] = a_prime
+                M[i, j] = b
+                M[j, i] = b
+                processed.add(i)
+                processed.add(j)
+
+        sigmas.append(M)
+
+    return sigmas, dim, syts
+
+
 # ══════════════════════════════════════════════════════════════
 # §3  NUCLEAR BRAID CHARACTER
 # ══════════════════════════════════════════════════════════════

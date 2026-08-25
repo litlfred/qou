@@ -1,12 +1,16 @@
 {
  "computation": "deuteron-interface-handle-curvature",
  "scriptFile": "deuteron_interface_handle_curvature_probe.py",
- "computedAt": "2026-08-09T02:23:17.467785+00:00",
- "engine": "python+numpy (H\u2086 Hoefsmit seminormal, pure-python builder; 0 free params)",
+ "computedAt": "2026-08-25T16:52:56.986225+00:00",
+ "engine": "mpmath mpf (H\u2086 Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
  "free_parameters": 0,
  "inputs": {
-  "q0": 1.1099785955573347,
-  "h": 0.20906032199559366,
+  "q0": "1.1099785955573347",
+  "q0_pin": "muon (ideal CAL-2)",
+  "h": "0.209060321995593642930382259776440357718948216440892097990755",
+  "q0_precision_note": "17 significant digits, recorded VERBATIM as computed with. The muon anchor's full value is 1.10997859555733471989976..., so fmt()-padding this literal to the serialization width appends zeros that are not merely fabricated but WRONG from digit 18 -- caught by q0_value_drift_audit on this branch. q0Value must equal what the producer computed with.",
+  "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
+  "q_eq_1_reference": "exact classical Young seminormal limit (was q = 1 + 1e-7)",
   "deuteron_H6_word": "proton{\u03c30,\u03c31}\u00b7INTERFACE \u03c32\u00b7neutron{\u03c33,\u03c34}",
   "interface_operator": "\u03c32 = \u03c3 \u2212 h(\u00bd\u2212\u03b4/4)\u00b7I (bring_color_weighted; dressing central \u21d2 drops out)",
   "handles": "A_a=\u03c1_\u03bb(\u03c32) [interface], A_b=\u03c1_\u03bb(\u03c33) [neutron-adjacent] \u2014 the unique non-abelian pair"
@@ -18,12 +22,14 @@
      6
     ],
     "dim": 1,
-    "y_lambda": 838.839384746497,
-    "Fq_raw_fro2": 0.0,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0,
-    "dFq2_over_h4": 0.0,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "838.839384746497980727806164669339234936741827031985762975892",
+    "Fq_raw_fro2": "0.0",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.0",
+    "dFq2_over_h4": "0.0",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.0",
+    "dFq2_over_h4_q_to_1_limit_times_9": "0.0"
    },
    {
     "lambda": [
@@ -31,12 +37,14 @@
      1
     ],
     "dim": 5,
-    "y_lambda": 30.779699485193813,
-    "Fq_raw_fro2": 6.087412436465803,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0008318176339036911,
-    "dFq2_over_h4": 0.4354533770775052,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "30.7796994851938354012387618244206329488224891718744723033197",
+    "Fq_raw_fro2": "6.08741243646580259028875378721305101727160031240823488617142",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000831817627482229881845837759287603756502300245632222415155680",
+    "dFq2_over_h4": "0.435453373715894695950519859304503521449820369264453509369786",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -44,12 +52,14 @@
      2
     ],
     "dim": 9,
-    "y_lambda": 8.972456158661835,
-    "Fq_raw_fro2": 18.26223730939741,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0016720388158503545,
-    "dFq2_over_h4": 0.8753059796890642,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "8.97245615866184170740298337308037361548524273976614705289660",
+    "Fq_raw_fro2": "18.2622373093974077708662613616391530518148009372247046585143",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00167203880718179827151464296969477829839436316601151706133394",
+    "dFq2_over_h4": "0.875305975151108090241792650599410922865952288758337536922073",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.888888888888888888888888888888888888888888888888888888888889",
+    "dFq2_over_h4_q_to_1_limit_times_9": "8.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -58,12 +68,14 @@
      1
     ],
     "dim": 10,
-    "y_lambda": 7.369320462221118,
-    "Fq_raw_fro2": 18.26223730939741,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0024954528888670347,
-    "dFq2_over_h4": 1.30636012450871,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "7.36932046222112768211694914075169977774905974630518607551204",
+    "Fq_raw_fro2": "18.2622373093974077708662613616391530518148009372247046585143",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00249545288244668964553751327786281126950690073689666724546704",
+    "dFq2_over_h4": "1.30636012114768408785155957791351056434946110779336052810936",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.33333333333333333333333333333333333333333333333333333333333",
+    "dFq2_over_h4_q_to_1_limit_times_9": "12.0000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -71,12 +83,14 @@
      3
     ],
     "dim": 5,
-    "y_lambda": 28.255814675935035,
-    "Fq_raw_fro2": 12.174824872931607,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0008402211819466634,
-    "dFq2_over_h4": 0.439852602611559,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "28.2558146759350640210322043508206038520211571732010148115540",
+    "Fq_raw_fro2": "12.1748248729316051805775075744261020345432006248164697723428",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000840221179699568389668805210407174541892062920379294646178264",
+    "dFq2_over_h4": "0.439852601435213394291272791294907401416131919493884027552287",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -85,12 +99,14 @@
      1
     ],
     "dim": 16,
-    "y_lambda": 2.788345277317709,
-    "Fq_raw_fro2": 36.52447461879483,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.00334407761436868,
-    "dFq2_over_h4": 1.750611950304877,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "2.78834527731770836789307758770820885242747772276976097878493",
+    "Fq_raw_fro2": "36.5244746187948155417325227232783061036296018744494093170285",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00334407761436359654302928593938955659678872633202303412266789",
+    "dFq2_over_h4": "1.75061195030221618048358530119882184573190457751667507384415",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.77777777777777777777777777777777777777777777777777777777778",
+    "dFq2_over_h4_q_to_1_limit_times_9": "16.0000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -100,12 +116,14 @@
      1
     ],
     "dim": 10,
-    "y_lambda": 7.369320462221118,
-    "Fq_raw_fro2": 18.262237309397417,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.002495452876022996,
-    "dFq2_over_h4": 1.3063601177849045,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "7.36932046222112768211694914075169977774905974630518607551204",
+    "Fq_raw_fro2": "18.2622373093974077708662613616391530518148009372247046585143",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00249545288244668964553751327786281126950690073689666724546704",
+    "dFq2_over_h4": "1.30636012114768408785155957791351056434946110779336052810936",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.33333333333333333333333333333333333333333333333333333333333",
+    "dFq2_over_h4_q_to_1_limit_times_9": "12.0000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -114,12 +132,14 @@
      2
     ],
     "dim": 5,
-    "y_lambda": 28.255814675935046,
-    "Fq_raw_fro2": 12.174824872931612,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0008402211774586731,
-    "dFq2_over_h4": 0.4398526002621131,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "28.2558146759350640210322043508206038520211571732010148115540",
+    "Fq_raw_fro2": "12.1748248729316051805775075744261020345432006248164697723428",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000840221179699568389668805210407174541892062920379294646178264",
+    "dFq2_over_h4": "0.439852601435213394291272791294907401416131919493884027552287",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -129,12 +149,14 @@
      1
     ],
     "dim": 9,
-    "y_lambda": 8.972456158661835,
-    "Fq_raw_fro2": 18.262237309397417,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0016720387985183255,
-    "dFq2_over_h4": 0.8753059706158127,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "8.97245615866184170740298337308037361548524273976614705289660",
+    "Fq_raw_fro2": "18.2622373093974077708662613616391530518148009372247046585143",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00167203880718179827151464296969477829839436316601151706133394",
+    "dFq2_over_h4": "0.875305975151108090241792650599410922865952288758337536922073",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.888888888888888888888888888888888888888888888888888888888889",
+    "dFq2_over_h4_q_to_1_limit_times_9": "8.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -145,12 +167,14 @@
      1
     ],
     "dim": 5,
-    "y_lambda": 30.779699485193813,
-    "Fq_raw_fro2": 6.087412436465806,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0008318176210596524,
-    "dFq2_over_h4": 0.43545337035369963,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "30.7796994851938354012387618244206329488224891718744723033197",
+    "Fq_raw_fro2": "6.08741243646580259028875378721305101727160031240823488617142",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000831817627482229881845837759287603756502300245632222415155680",
+    "dFq2_over_h4": "0.435453373715894695950519859304503521449820369264453509369786",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
    },
    {
     "lambda": [
@@ -162,20 +186,37 @@
      1
     ],
     "dim": 1,
-    "y_lambda": 838.839384746497,
-    "Fq_raw_fro2": 0.0,
-    "Fq_trace_abs": 0.0,
-    "dFq_deformation_fro2": 0.0,
-    "dFq2_over_h4": 0.0,
-    "far_commute_s0_s3_fro2": 0.0
+    "y_lambda": "838.839384746497980727806164669339234936741827031985762975892",
+    "Fq_raw_fro2": "0.0",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.0",
+    "dFq2_over_h4": "0.0",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.0",
+    "dFq2_over_h4_q_to_1_limit_times_9": "0.0"
    }
   ],
   "all_Fq_traceless": true,
   "all_proton_neutron_far_commute": true,
   "singlet_reps_zero_curvature": true,
-  "wedderburn_weighted_Fq_raw_fro2": 1761.4742932420188,
-  "wedderburn_weighted_dFq_deformation_fro2": 0.17479707786900936,
-  "dFq_scales_as_h_squared": true
+  "wedderburn_weighted_Fq_raw_fro2": "1761.47429324201978456948598668191740431879807977018343854894",
+  "wedderburn_weighted_dFq_deformation_fro2": "0.174797077868833594666064200869850680305336971576366312709897",
+  "dFq_scales_as_h_squared": true,
+  "dFq2_over_h4_limits_are_exact_ninths": true,
+  "dFq2_over_h4_limit_numerators_over_9": [
+   "0.0",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "8.00000000000000000000000000000000000000000000000000000000000",
+   "12.0000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "16.0000000000000000000000000000000000000000000000000000000000",
+   "12.0000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "8.00000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "0.0"
+  ],
+  "dFq2_over_h4_limit_note": "lim_{q->1} ||dF_q||^2/h^4 = 4k/9 exactly, k in {0,1,2,3,4}, verified to 22 digits and conjugation-symmetric. The ratio is NOT constant: at q0 it spans 0.4355..1.7506 across partitions. The '1.77' previously recorded is 16/9, the LIMIT for (3,2,1) alone -- the maximum over partitions, not a q0 value."
  },
  "verdict": "Interface handle holonomies COMPUTED in the real H\u2086 seminormal rep: F_q=[\u03c3\u2082,\u03c3\u2083] is nonzero, EXACTLY traceless (\u21d2 binding enters in quadrature, matching the A=3 Pythagorean bridge s\u00b2), \u03b4-independent (dressing central, Lean-proved). Proton\u2013neutron far-commutativity confirmed (only \u03c3\u2082 non-abelian); color-singlets give 0. The genuine q-curvature dF_q=F_q(q)\u2212F_q(1) scales as h\u00b2 (\u2016dF_q\u2016\u00b2~1.77\u00b7h\u2074) \u2014 the order-2 surface term the bean predicted. This is the qou-jqof/qou-dp32 'absent' object, now grounded and characterized.",
  "scope": "scope-(a): computes + characterizes the interface germ curvature (the missing handle holonomies). Does NOT close the deuteron MeV binding \u2014 needs the pairing tr_M(\u03c1_deuteron\u00b7dF_q) (raw trace is 0) + \u03bb-weighting (open). No fit; nothing wired.",
