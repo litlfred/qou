@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:46:58Z
+updated_at: 2026-08-25T06:50:27Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -377,3 +377,49 @@ commuting with u = s_2 (adjacent). And it does **not** apply to the case that ma
 `N = L_k` never commutes with `s_k`, because the hook word ends in `s_{k-1}`, which is
 adjacent to `s_k`. That is precisely why the real case is hard, and why this lemma
 explains the easy rows without touching the hard one.
+
+
+## Lead 2 (the recursion) is REFUTED in its naive form — all recorded leads now dead
+
+`computations/hecke/jm_adjacent_induction_step_probe.py`. H_5 regular rep (faithful),
+exact Fractions, q=2, k=2 — so u=s_2, v=s_3, w=s_1, which is exactly the recursion's
+geometry (w adjacent to u, far from v).
+
+The obvious inductive step, given `L_k = w L_{k-1} w`, is
+
+    "the identity holds for N"  =>  "it holds for w N w"
+
+**It is FALSE:**
+
+    N = 1      works;  wNw = s_1^2        works
+    N = s_0    works;  wNw = s_1 s_0 s_1  FAILS
+    N = s_0^2  works;  wNw = s_1 s_0^2 s_1 works   (= L_2, the CONTROL)
+    N = s_3^2  works;  wNw = s_1 s_3^2 s_1 FAILS
+
+So "satisfies the identity" is not preserved by N |-> wNw. **An induction whose
+hypothesis is just the conclusion cannot work; the invariant must be strengthened.**
+
+### Status of all leads
+
+| lead | status |
+|---|---|
+| commutes with v | REFUTED (twice, two algebras) |
+| palindrome, square centre | REFUTED (s_1^2) |
+| is a square | REFUTED ((s_0s_2)^2, s_0^4) |
+| commutes with BOTH u and v | PROVED SUFFICIENT, measured NOT necessary, and provably inapplicable to L_k |
+| the recursion / induction on k | REFUTED in its naive form (this probe) |
+
+Every lead recorded in this bean has now been tested. None survives as stated.
+
+### NOT claimed
+
+The step succeeded exactly for N = 1 = L_0 and N = s_0^2 = L_1 — both genuine JM
+elements — and failed for the two non-JM inputs. That hints the invariant is "N is a
+JM element" rather than "N satisfies the identity". **That is TWO points.** It is a
+direction, not evidence; do not fit a characterisation to it. Widen first.
+
+### Honest overall position
+
+Adjacent commutativity at k >= 2 is verified numerically (k=1, k=2, three values of q)
+but every proof route this session proposed has been measured and failed. The problem
+is well-posed and well-isolated — one word identity, one unknown — and genuinely open.
