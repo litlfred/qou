@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T22:00:00Z
+updated_at: 2026-08-26T00:20:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -731,3 +731,82 @@ mathematics: the same arithmetic in exact integers is `O(dim^2 * k)` per
 evaluation point with no expression swell.
 
 **Not claimed:** any A=3 timing. That needs the port and a measurement.
+
+## 2026-08-25 — THE A=3 DOOR IS OPEN. It was a routing choice, not a wall.
+
+**A=3 Habiro coefficients now computed for helium-3 AND tritium, in
+seconds.** Producer:
+`computations/habiro/habiro_coefficients_a3_via_peel.py`, witness
+`habiro-coefficients-a3-via-peel.witness.json`, 16 assertions all passed.
+
+    helium-3   n=9  deg_u(p)=144   a_0..a_16   trace 2.1 s  cancel 2.6 s
+    tritium    n=9  deg_u(p)=136   a_0..a_16   trace 4.4 s  cancel 5.7 s
+
+### What was actually wrong
+
+`habiro_coefficients_atomic.py` gets `tr_M` from `markov_trace_symbolic`,
+which sums `y_λ · χ^λ` over every partition of `3A` — 30 partitions at
+A=3, irreps to dim 216. I measured that at 4.31 s/dim², i.e. **18.1
+days**, and that measurement is what closed the door.
+
+`markov_peel.tr_M_atomic` reaches the *same object* by reducing the braid
+word in the Hecke NF basis (256 terms at A=3) and tracing by recursive
+ascent — no partition sum at all. **1.8 s.**
+
+Deuteron, both routes, same machine: **0.23 s vs 39.74 s** (173×). At A=3
+that ratio is what separates 2 seconds from 18 days.
+
+They are not merely close. `sp.cancel(peel − partition_sum) == 0`
+**exactly**, proton and deuteron — a symbolic identity, asserted in the
+witness.
+
+### My Rust work solved a problem that did not need solving
+
+`seminormal_exact.rs` (exact BigRational χ via the asymmetric gauge) plus
+the A=3 cost benches were built to feed an interpolation route: ~157
+evaluation points at ~25 s each, ~66 min. All of that is **unnecessary**
+for A=3. The measurement was sound and the code is correct and tested;
+the *motivation* is gone. Keeping it — it is a genuine exact-arithmetic
+capability with no square root — but it should not be described as the
+route that opened A=3. It didn't.
+
+Root cause of the detour: I measured the cost of the route the producer
+happened to use, then optimised *that route*, instead of first asking
+whether it was the right one. Five separate things I was about to build
+this session already existed. The corpus-grep discipline is written for
+declaring items open; it applies just as much before starting to build.
+
+### Two traps, both caught only by validating on the deuteron first
+
+**1. `to_u_polynomial` does not cancel, and the peel returns an
+UNREDUCED fraction.** Without `sp.cancel` the deuteron comes out with
+`deg_u(p) = 108` instead of 100 and denominator `192·u⁴⁶(u⁴+1)⁵` instead
+of `(u⁴+1)³` — a spurious `(q²+1)²`. Every `a_m` is then wrong, **and
+`reconstruction_matches` still reports True**, because reconstruction
+only checks `p = Σ a_m (u;u)_m`, which holds for the wrong `p` too. A
+self-consistent wrong answer. I had already printed the bad A=3
+coefficients before catching it.
+
+**2. sympy symbol assumptions, second occurrence this session.**
+`sp.sympify("u**100 + …")` mints a bare `Symbol('u')`; my `Symbol('u',
+positive=True)` is a *different symbol*, so the difference never
+simplifies to zero and the comparison reports a mismatch that is not
+there. I briefly believed the peel disagreed with the committed
+deuteron. It does not — `p_in_u`, `denom_in_u` and **all 14 `a_m` are
+identical**. Parse with `locals={'u': U}`. The producer's `_sym()` helper
+exists exactly for this and says why.
+
+### What is NOT established
+
+The A=3 values have **no independent second computation** — there is
+none, because the partition route *is* the 18-day path. Their warrant is
+that the same code path reproduces every committed A≤2 value exactly
+(p_in_u, denom, and every a_m, for proton / neutron / deuteron) and that
+the two routes are symbolically identical wherever both can run. Recorded
+as a caveat in the witness rather than left implicit.
+
+### Next
+
+A=4 (⁴He) is the obvious follow-on — the peel witness already lists it as
+covered numerically, and tritium at 4.4 s suggests headroom. Cost is not
+yet measured, so do not assume it.
