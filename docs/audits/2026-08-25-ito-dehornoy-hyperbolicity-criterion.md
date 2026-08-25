@@ -699,3 +699,52 @@ Isolated, not propagated: corpus-grep finds this the **only** live instance of t
 claim. **(a)** — a documentation defect in a stated justification. It is *not* a
 claim that the atlas assignment is wrong, that any volume is wrong, or that the
 binding numbers move; none of that follows, and none is asserted.
+
+---
+
+## Addendum 7 — my suspicion was wrong, and the real defect is next door (2026-08-25)
+
+Addendum 6 ended by asking whether `p`/`n`'s `"principled-derivation"` tag rests on
+a real derivation or on the bridge claim I had just removed. **It rests on a real
+one.** From
+[`recursive-atom-knot-atlas-interpretation.md`](../../content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-interpretation.md):
+
+> *"For `principled-derivation` entries (electron, proton, neutron) the hyperbolic
+> volume of the Markov closure is computed from the **σ-braid word** at ≥ 50 decimal
+> digits via `hp_volume_of_link_closure(braid_word, digits=50)`…"*
+
+That braid word comes from `def:confined-particle` — the GB-NF particle registry's
+canonical `T_w` — and **is** a braid, so its Markov closure has a genuine volume.
+Nothing there routes through the atom Hecke element. So the worry is answered in the
+corpus's favour: **three of six atlas entries are an admitted fit, not six.**
+Recorded as a negative because it was my suspicion and it failed.
+
+### What the same page does show
+
+That block names its provenance chain and asserts the guarantee that makes the atlas
+trustworthy:
+
+> *"…[`witness_staleness_tracker.py`] marks the affected entries stale and the atlas
+> is recomputed from the sources above; **no entry is maintained by hand**."*
+> …and *"The atlas is auto-rendered by [`recursive_atom_knot_atlas_render.py`]."*
+
+**Both producers are deprecated.** Neither exists at the path the block links
+(`computations/<name>.py`); both sit in `computations/_deprecated/`. Meanwhile the
+live producer,
+[`per_atom_hyperbolic_volume_witness.py`](../../computations/per_atom_hyperbolic_volume_witness.py),
+carries a **hand-written `ATLAS` dict** with hardcoded knot names and braid words.
+
+So the guarantee is **unenforced**: the auto-render is retired, the staleness tracker
+that would flag drift is retired, and what actually emits the committed
+`per-atom-hyperbolic-volume.witness.json` is exactly the hand-maintained table the
+sentence promises does not exist. Two dead links in a published content block, and
+the sentence between them no longer describes the pipeline.
+
+### Scope
+
+**(a)**, and deliberately narrow. This says **nothing** about whether any atlas
+volume is *wrong* — the values may well be correct, and the `p`/`n` derivation above
+is sound. What is established is that the block's stated freshness mechanism no
+longer runs, so nothing currently detects drift between the registry's `T_w` and the
+hardcoded words. **Not fixed here**: repairing the content block needs a sidecar
+refresh and the render-QA gate, which would widen a docs-and-probes PR. Beaned.
