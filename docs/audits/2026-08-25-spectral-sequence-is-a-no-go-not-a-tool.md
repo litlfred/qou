@@ -172,8 +172,8 @@ Hochschild–Kostant–Rosenberg.
 **This does not contradict the corpus.** Finite $H_n(q)$ at generic $q$ is
 semisimple and its higher $HH$ genuinely vanishes; Solleveld's algebra is
 affine. What it establishes is the *scope* of the corpus's no-go: the vanishing
-is a property of finiteness, not of Hecke algebras. Higher Hochschild degrees
-exist as soon as one leaves the finite algebra — and the corpus has an
+is a property of finiteness, not of Hecke algebras. Higher Hochschild **homology**
+survives once one leaves the finite algebra — and the corpus has an
 inductive-limit tower to leave it into
 ([`markov-trace-inductive-limit`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.md),
 whose Lean already names *"the infinite-dim affine Hecke algebra"* as open R&D).
@@ -185,11 +185,58 @@ form degree over a partition index is the shape the body-order series wants. It
 is a shape match, not an identification, and the specialization has to be
 exhibited rather than asserted.
 
-Two further gates before anyone spends a week on this. Solleveld's isomorphism is
-of $HH_\bullet$ for the affine algebra with **unequal parameters not roots of
-unity**, and the corpus evaluates at a single real $q_0 \approx 1.10998$; and the
-2021 correction noted in the abstract touches the families-of-representations
-construction, not the $HH$ computation, but should be read before citing.
+### The gates, checked 2026-08-25
+
+Three, not the two this note first listed. **(i) and (ii) pass; (iii) is mine and
+is unresolved.**
+
+**(i) Parameter regime — passes.** Solleveld's §1.1 defines *equal* parameters
+($q(s)$ constant on $S_{\mathrm{aff}}$) and *positive* parameters
+($q(s) \in \mathbb{R}_{>0}$). "Possibly unequal" in the abstract is a
+*generalisation*; equal is the special case. The corpus sits at a single real
+$q_0 \approx 1.10998$ — positive, and not a root of unity. Nothing here excludes
+it.
+
+**A convention trap sits inside that gate, and it is the expensive kind.**
+Solleveld's Hecke relation (§1.1, eq. 2) is
+
+$$
+  \bigl(N_s - q(s)^{1/2}\bigr)\bigl(N_s + q(s)^{-1/2}\bigr) = 0 ,
+$$
+
+against the corpus's $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ (AGENTS.md §7a). So
+**Solleveld's $q$ is the corpus's $q^2$** — his $q^{1/2}$ is our $q$. At the
+substrate anchor that is $q_{\mathrm{Sol}} = q_0^2 \approx 1.23206$, not
+$1.10998$. He notes himself that the literature also defines the algebra via
+$q(s)^{1/2} N_s$. Any numeric transfer that skips this is off by a square root,
+which is the same shape as the convention-C/D confusion the corpus has spent
+months draining.
+
+**(ii) The 2022 correction — does not block, with a hedge.** It lands in §2.1 and
+§2.2 (pages 16–22), on the construction of families of representations, and it
+does reach §3.1, which picks its families *"as in Corollary 2.5"*. But Solleveld
+supplies the repair in the same note: families satisfying Lemma 2.3 can be found
+when the parameters are of *"geometric type"* (via [AMS, §3.3]), and *"for most
+positive-valued $q$ one can use the technique with parameter deformations from
+[Sol4, proof of Lemma 6.4]"* — after which *"the remainder of the paper is valid
+without further changes."* The corpus is positive-valued, so it is inside the
+rescued regime. Two hedges to carry: **"most"** is not "all", and **"geometric
+type" is undefined in this paper** — it occurs exactly once, in the correction
+itself, pointing outward to [AMS]. *(My own reading, not read off the page: type-A
+equal-parameter affine Hecke algebras are the Kazhdan–Lusztig / Steinberg-variety
+case and should be geometric type — which would make the first bullet apply
+directly and the deformation unnecessary. Confirm against [AMS §3.3] before
+relying on it.)*
+
+**(iii) Homology is not cohomology — OPEN, and this one is a gate on my own §1.**
+`prop:spectral-sequence-collapse` is about $\mathrm{HH}^k$ (**co**homology).
+Solleveld computes $\mathrm{HH}_*$ (**homology**). For a separable
+finite-dimensional algebra both vanish above degree $0$, so §1 is unaffected —
+but non-vanishing of $\mathrm{HH}_*$ does **not** formally imply non-vanishing
+of $\mathrm{HH}^*$ for an infinite-dimensional algebra. Whatever relates them
+here (a duality, smoothness, the Schwartz completion of §3.3) has to be supplied,
+not assumed. Until it is, Solleveld bounds the *scope* of the corpus's claim
+rather than contradicting its dual.
 
 `arxiv-0911.4494v2` (Webster–Williamson, *The geometry of Markov traces*) is the
 other cohomological source and is **already scoped** in the 2026-08-21 lead
