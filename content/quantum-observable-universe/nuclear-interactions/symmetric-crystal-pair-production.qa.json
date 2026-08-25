@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/SymmetricCrystalPairProduction.lean"
   },
   "source_hashes": {
-    "ts": "4ec73eb5f097",
     "md": "fa99ad292a6f",
-    "lean": "4afaebe64100"
+    "ts": "4ec73eb5f097",
+    "lean": "4afaebe64100",
+    "lean_statement": "9d13952d9792"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -309,31 +310,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "fa99ad292a6f",
-          "ts": "4ec73eb5f097",
-          "lean": "4afaebe64100",
-          "lean_statement": "9d13952d9792"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1173,7 +1154,8 @@
         "reviewed_at": "2026-07-07T14:26:57.204690Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap."
       }
     ],
     "da-citation-misuse": [
@@ -1300,7 +1282,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic and physical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
+        "referee_argument": "The conjectured algebraic and physical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are unproven, and the sibling Lean file is missing entirely, preventing formal verification.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1626,7 +1609,367 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.354Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.394Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.438Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 311 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.481Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.525Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.569Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.636Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.709Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.761Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.505Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.814Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097",
+          "lean": "4afaebe64100",
+          "lean_statement": "9d13952d9792"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T06:11:07.814Z"
 }

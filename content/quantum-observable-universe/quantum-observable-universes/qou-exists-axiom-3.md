@@ -5,4 +5,4 @@ $$
   c_i(\mathrm{Ad}(A)) := c_i(\tau(\mathrm{Ad}(A))) = 0 \quad \text{for } i \in \{1, 2\}.
 $$
 
-This vanishing is precisely Axiom 3 of the quantum observable universe framework. It ensures that the categorical formulation is free of the standard topological obstructions that would otherwise manifest as anomalies. In the event that $c_2(\mathrm{Ad}(P)) \neq 0$, the construction dynamically shifts, replacing the base category with the modular tensor category $\mathbf{Rep}_k(\widehat{\mathfrak{g}})$ at level $k = \langle c_2, [M] \rangle$, thereby absorbing the non-vanishing anomaly into the ribbon twist.
+It ensures that the categorical formulation is free of the standard topological obstructions that would otherwise manifest as anomalies. In the event that $c_2(\mathrm{Ad}(P)) \neq 0$, one replaces the base category with the modular tensor category $\mathbf{Rep}_k(\widehat{\mathfrak{g}})$ at level $k = \langle c_2, [M] \rangle$, thereby absorbing the non-vanishing anomaly into the ribbon twist.

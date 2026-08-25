@@ -63,6 +63,22 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
+# `c3_habiro` was called at line ~131 and never defined or imported -- the
+# producer died with NameError before computing anything, and had been doing
+# so long enough that nothing noticed. Two candidates exist under similar
+# names, so the choice was TESTED rather than guessed:
+#
+#     probes/xq_habiro_target_slope_probe.c3_habiro       -2.06934806247249333
+#     probes/qbeta_c3_habiro_3rung_...c3_habiro_3rung     -2.06934806247249333
+#
+# Identical to 18 digits -- the same function under two names, so no wrong
+# number was reachable either way. Taking the 3rung one because this file's
+# own witness key is `c3_habiro_3rung`, i.e. it records that intent already.
+sys.path.insert(0, str(HERE / "probes"))
+from qbeta_c3_habiro_3rung_crossanchor_rigidity_probe import (  # noqa: E402
+    c3_habiro_3rung as c3_habiro,
+)
+
 # CODATA targets (MeV) + 1σ experimental.
 Q_BETA_CODATA = "0.78233341"
 Q_BETA_SIGMA = "6.1e-7"

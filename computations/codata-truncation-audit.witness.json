@@ -1,0 +1,260 @@
+{
+  "engine": "python-stdlib",
+  "computedAt": "2026-08-11T10:11:07.424997+00:00",
+  "computation": "codata-truncation-audit",
+  "scriptFile": "codata_truncation_audit.py",
+  "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
+  "min_shared_digits": 6,
+  "truncated_total": 30,
+  "truncated_files": 28,
+  "by_constant": {
+    "m_e": 12,
+    "m_p": 3,
+    "q0": 11,
+    "m_n": 3,
+    "u_MeV": 1
+  },
+  "exact_duplicates": 148,
+  "findings": [
+    {
+      "file": "computations/a4_interface_trace_integration_all.py",
+      "line": 30,
+      "constant": "m_e",
+      "literal": "0.510998950",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/alpha/alpha_k_jones_markov_h12.py",
+      "line": 215,
+      "constant": "m_e",
+      "literal": "0.510998950",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/audits/braid_encoding_audit.py",
+      "line": 341,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/audits/hardcoded_literal_audit.py",
+      "line": 292,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/build_markov_trace_assembly_deuteron_chain.py",
+      "line": 241,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/build_markov_trace_assembly_neutron_chain.py",
+      "line": 241,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/compute_audit_scan.py",
+      "line": 65,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/compute_audit_scan.py",
+      "line": 68,
+      "constant": "m_n",
+      "literal": "939.565421",
+      "canonical": "939.56542194",
+      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/compute_audit_scan.py",
+      "line": 69,
+      "constant": "m_n",
+      "literal": "939.56542",
+      "canonical": "939.56542194",
+      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
+      "line": 60,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/derive_q_values.py",
+      "line": 199,
+      "constant": "u_MeV",
+      "literal": "931.494",
+      "canonical": "931.49410372",
+      "use_instead": "codata_constants.U_MEV"
+    },
+    {
+      "file": "computations/gen_q0_anchor_manifest.py",
+      "line": 27,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/jpsi_boundstate_mass_probe.py",
+      "line": 90,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/knot-volumes.py",
+      "line": 155,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
+      "line": 89,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/murakami_deformed_vc_q0.py",
+      "line": 49,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/neutrino_mass_volume_exclusion.py",
+      "line": 33,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/per_atom_audit_witnesses.py",
+      "line": 72,
+      "constant": "m_e",
+      "literal": "0.510998950",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/phase5/phase2b2_dim_v21_categorical_bridge.py",
+      "line": 178,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
+      "line": 169,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/probes/he4_nu_sdp_binding_arbiter.py",
+      "line": 17,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 208,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "line": 59,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 81,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+      "line": 87,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+      "line": 76,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_ohtsuki_kappa_vs_ck_direct_comparison.py",
+      "line": 233,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.10997858275138",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/run_jones_markov_atlas_all_atoms.py",
+      "line": 85,
+      "constant": "m_e",
+      "literal": "0.510998950",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/sweeps/paper_six_term_isotope_sweep.py",
+      "line": 1326,
+      "constant": "m_n",
+      "literal": "939.565",
+      "canonical": "939.56542194",
+      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/test_betti_binding.py",
+      "line": 13,
+      "constant": "m_e",
+      "literal": "0.510998950",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    }
+  ]
+}

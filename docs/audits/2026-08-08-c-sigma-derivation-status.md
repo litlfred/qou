@@ -61,7 +61,7 @@ measured value to ~17 digits.
 ### Independent confirmation of step 3 on a second manifold
 
 `k` is calibrated on `4_1` alone, which was the chain's thinnest point. Ohtsuki's
-asymptotic expansion of the Kashaev invariant of `5_2` (`uploads/ki52.pdf`,
+asymptotic expansion of the Kashaev invariant of `5_2` (`library/ki52/ki52.pdf`,
 Theorem 1.1) is a **rigorous theorem**, and its 1-loop constant satisfies
 
 ```
@@ -90,7 +90,7 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 >   well, and nothing in the corpus excludes it. That is the load-bearing part.
 >
 > **AMENDED AGAIN, same day — the FORM is in the literature; the CONSTANT is
-> not.** `uploads/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
+> not.** `library/arxiv-0903.2472v1/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
 > downloaded and cited nowhere in the repository. Read. Its eq (2.3) is
 >
 > ```

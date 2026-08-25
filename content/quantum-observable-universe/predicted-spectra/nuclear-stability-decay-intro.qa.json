@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/nuclear-stability-decay-intro.md"
   },
   "source_hashes": {
-    "ts": "0467123ec1a9",
-    "md": "117ea3634275"
+    "md": "117ea3634275",
+    "ts": "0467123ec1a9"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -280,30 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "117ea3634275",
-          "ts": "0467123ec1a9"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1360,7 +1341,377 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.029Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.069Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 153 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.109Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 153 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.148Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.187Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.230Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.390Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "severity": "major",
+        "evidence": "Paragraph 2 said the same thing twice in consecutive sentences: 'Parity non-conservation follows directly from the Skein relation at $q \\neq 1$. It is an automatic structural consequence.' 'Follows directly from' and 'is an automatic structural consequence' assert one fact; the second sentence names no mechanism, no scope and no consequence the first did not. It is the restatement construction, sitting mid-paragraph rather than at block end.",
+        "notes": "FIXED inline (one sentence, pure prose, no math, no claim lost). before -> 'Parity non-conservation follows directly from the Skein relation at $q \\neq 1$. It is an automatic structural consequence. Nuclear spin-parity assignments tie to ...' ; after -> 'Parity non-conservation follows directly from the Skein relation at $q \\neq 1$. Nuclear spin-parity assignments tie to ...'. Math delimiters re-checked after the edit: balanced. TWO OBSERVATIONS not fixed. (1) 'A numerical witness verifies this' (of the lepton-tower continuant) is unbacked as far as I can trace: the block it points at, rem:lepton-tower-witness, is titled a numerical witness and claims recurrence residuals bounded by 1e-12, but its .ts carries no computation/witness field and I found no computations/*.witness.json for it. I did independently recompute that block's tower values at 40 dps and they are correct, so the numbers are sound — it is the word 'witness' that has nothing behind it. (2) Register: the intro is built almost entirely from very short flat declaratives ('The lepton tower follows.' 'Transition rates follow.' 'A numerical witness verifies this.'), and 'This yields the universality of leptonic tau decays' does not follow from the continuant sentence before it. Reads as sweep-flattened prose rather than a drafted intro."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.271Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.310Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.120Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5476b4de96d2",
+          "ts": "0467123ec1a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:33:53.350Z",
+        "reviewed_sha": "3d8588ba9e38238f3fb544fb0c94919cf4ad2fba",
+        "evidence": "Full read of the three-paragraph chapter intro, after the fix recorded under trap-thesis-restatement. Checked its claims for scope honesty: 'The shell correction takes a conjectured Skein-polynomial form' correctly labels a conjecture as such. The three-item list (q-deformed transition amplitude, hadron q-self-correction, Skein--Coulomb enhancement) is a substantive enumeration matching three distinct downstream results, not a reflex triple. No negation-contrast, no pivot, no em-dash, no closing aphorism, no meta-commentary, no performed warmth, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "117ea3634275",
+          "ts": "0467123ec1a9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:33:53.390Z"
 }

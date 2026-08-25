@@ -1,7 +1,7 @@
 ---
 # ptlm
 title: 'Read the uploaded Ptolemy papers: verify the novelty assessment, and price the Ptolemy route past the Gröbner ceiling'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -17,9 +17,9 @@ parent: m015
 Two primary sources were uploaded to the repo at
 [`765457e`](https://github.com/litlfred/qou/commit/765457e64bf8b1e862decd2e91171c8a7df1e605):
 
-- `uploads/1207.6711v1.pdf` — Garoufalidis–Goerner–Zickert, *Gluing equations for
+- `library/arxiv-1207.6711v1/1207.6711v1.pdf` — Garoufalidis–Goerner–Zickert, *Gluing equations for
   PGL(n,ℂ)-representations of 3-manifolds*
-- `uploads/1507.03238v3.pdf` — *Triangulation independent Ptolemy varieties*
+- `library/arxiv-1507.03238v3/1507.03238v3.pdf` — *Triangulation independent Ptolemy varieties*
 
 ⚠ **They are on `main`, not on the Route 75 branch** — fetch before reading.
 
@@ -316,3 +316,119 @@ algorithm), not the decomposition. A longer `finduni` budget is the wrong direct
 
 Confound found and removed mid-run: a background `lake build` (SessionStart hook) was
 competing during both original 11a1 timeouts. Re-measured clean — negative holds.
+---
+**2026-08-10 — `finduni` is the right tool, and the 600s "ceiling" was mostly my choice
+of algorithm.**
+
+Full primary decomposition is overkill when all you want is the **field**. The Ptolemy
+ideals here are **zero-dimensional** (`dim(std(I)) = 0` in every case checked), and for a
+zero-dimensional ideal Singular's `finduni` returns the univariate generator per variable
+directly. Measured:
+
+| manifold | vars | `minAssGTZ` | `finduni` |
+|---|---|---|---|
+| 6₁ | 5 | ran | **2.0s**, quartic |
+| 7₂ | 5 | ran | **0.0s**, quintic |
+| 8₂ | 7 | (not attempted) | **0.0s**, **degree 8** |
+
+`finduni` needs `option(redSB)` — it errors with *"The ideal G has to be reduced"*
+otherwise, which is easy to misread as the ideal being unsuitable rather than the basis
+being unreduced.
+
+So the earlier "Ptolemy times out at 600s" figure was substantially **a property of
+`minAssGTZ`**, not of the Ptolemy route. That tempers the previous entry's reach table in
+the *other* direction from the one before it.
+
+**⚠ 10₁₀₀ and 11a1 remain UNMEASURED under `finduni`.** Two attempts were lost to the
+same avoidable mistake: a `nohup`-ed job whose parent shell exited, reporting the
+wrapper's exit 0 while python had been killed — the trap already recorded in this lane
+for `lake` wrappers, repeated here. Re-running under harness-tracked background. Until it
+returns, **no claim either way** about whether the Ptolemy route reaches 14 tetrahedra.
+
+---
+**2026-08-10 — correcting the previous entry: the job was NOT killed. It is still running.**
+
+The entry above says two `finduni` attempts "were lost … reporting the wrapper's exit 0
+while python had been killed". **Half of that is right and the conclusion is wrong.**
+
+Checked with `ps`: the process is alive and has been the whole time —
+
+    2406  python3 finduni_reach.py
+    2410  Singular -q --no-warn …    21:12 CPU
+
+It had already written 6₁, 7₂ and 8₂ to its log and was working on **10₁₀₀**, which had
+consumed **over twenty minutes of CPU** in `finduni` alone.
+
+- **Right:** the harness's "completed (exit code 0)" was the *wrapper's* exit status, not
+  python's — `nohup … &` plus `echo` returns immediately while the child runs detached.
+  That part of the standing lesson holds and is worth keeping.
+- **Wrong:** inferring from that that the work had been *lost*. It had not. An empty
+  output file plus a wrapper's exit code is **not** evidence the job died, any more than
+  it is evidence the job succeeded. It is evidence of nothing, and I read it as a
+  diagnosis twice.
+
+The correct move on an empty log from a detached job is to **look for the process**
+before concluding anything about it. `ps` answers in one call what I guessed at twice.
+
+**Consequence for the reach question.** 10₁₀₀ under `finduni` is genuinely expensive —
+20+ minutes of CPU without returning, against 0.0s for 8₂ at degree 8. So the earlier
+suggestion that `finduni` simply dissolves the ceiling is **not** supported: it moves it
+(degree 8 is now instant where `minAssGTZ` struggled), but 14 tetrahedra remains hard by
+this route. Awaiting the timeout to record the number honestly rather than guessing a
+third time.
+
+---
+**2026-08-10 — 10₁₀₀ MEASURED under `finduni`: still a timeout. The ceiling is real.**
+
+    10_100: 15 Ptolemy variables -> finduni TIMEOUT after 1500s
+
+Measured, not inferred. So switching `minAssGTZ` → `finduni` **moves** the ceiling
+without **rescuing** 14 tetrahedra:
+
+| manifold | `minAssGTZ` | `finduni` | Route 75 |
+|---|---|---|---|
+| 6₁, 7₂ | ran | 2.0s / 0.0s | exact |
+| 8₂ (degree 8) | not attempted | **0.0s** | exact |
+| 10₁₀₀ (14 tets) | timeout 600s | **timeout 1500s** | **exact, 7.2s** |
+| 11a1 (17 tets) | timeout 600s | stopped, not measured | identification fails |
+
+**G6's conclusion stands and is now properly evidenced:** the Ptolemy route is strictly
+more rigorous and strictly less far-reaching than Route 75. Recorded in the probe.
+
+11a1 was stopped rather than measured — Route 75 fails on it too, so neither route reaches
+it and the number would not change any decision. Said here rather than left implied.
+
+**Standing recommendation, unchanged:** use both. Route 76 where rigour matters and the
+manifold is small; Route 75 for reach; G5's field agreement makes them mutually checking.
+
+---
+**2026-08-15 — all three deliverables are met. Setting completed.**
+
+Checked this bean's own "What to produce" list rather than assuming, since the entries
+below were written across several sessions:
+
+| deliverable | status |
+|---|---|
+| 1. verdict on the novelty assessment | **CONFIRMED** against both primary sources; G7's quote is real and cited correctly, so no correction to `m015` or the probe docstring |
+| 2. priced plan + can it run without Sage/Magma | **yes** — Magma is proprietary and unnecessary; the step both papers use it for is primary decomposition, which is Singular's `minAssGTZ`. `apt-get install singular`, no network, no Sage |
+| 3. if it runs: extend Route 75 or open a Route 76 | **Route 76 opened** — `computations/probes/qbeta_route76_ptolemy_singular_probe.py`, 6 gates, with the monomial map recorded in the docstring |
+
+The reach question is measured rather than argued: `finduni` **moves** the ceiling (degree
+8 goes from struggling to instant) without **rescuing** 14 tetrahedra — `10₁₀₀` times out
+at 600 s under `minAssGTZ` and again at 1500 s under `finduni`, against 7.2 s exact for
+Route 75. So G6's conclusion stands with evidence behind it: **the Ptolemy route is
+strictly more rigorous and strictly less far-reaching.**
+
+Standing recommendation, unchanged: use both. Route 76 where rigour matters and the
+manifold is small; Route 75 for reach; G5's field agreement (`nfisisom` on four cases,
+different minimal polynomials, matching discriminants) makes them mutually checking.
+
+### The two lessons this bean produced, kept because both nearly cost a false record
+
+- **A PDF grep proves nothing about a PDF.** Searching both papers for `[Gg]r[oö]bner`
+  returned **zero hits** — the extractor renders it `Gr¨ obner`. I nearly recorded a
+  misattributed citation on that. Search a diacritic-free substring (`bner`,
+  `impractical`) before concluding a source lacks a phrase.
+- **An empty log from a detached job is evidence of nothing.** Not that it died, not that
+  it succeeded. `ps` answers in one call what I guessed at twice — and the job was alive
+  with 21 minutes of CPU while I was writing that it had been killed.

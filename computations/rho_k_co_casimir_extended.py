@@ -39,6 +39,27 @@ patch to flip the `canonical_status` field for matching atoms.
 """
 from __future__ import annotations
 
+# ── BLAS thread pinning — must precede ANY import that loads numpy ────────
+# This producer fans out over partitions with `multiprocessing.Pool`, and each
+# worker calls into scipy-openblas, which by default spawns one thread per core.
+# Four workers x four BLAS threads on a four-core box is 16 runnable threads
+# competing for 4 cores: the per-worker matrix products are already the whole
+# cost, so the extra threads buy nothing and the context switching is pure loss.
+#
+# Measured on the ⁴He leg (bean qou-mnrd), 4 partitions of dim ≈ 2100 through a
+# 4-worker pool:
+#     BLAS threads unset : 25.4 s
+#     BLAS threads = 1   : 18.6 s      1.37x
+#
+# `setdefault`, so an operator who deliberately exports a value keeps it.
+# It must run before numpy is first imported — OpenBLAS reads these at library
+# load, and a fork inherits the already-loaded library, so setting them inside
+# the worker is too late.
+import os  # noqa: E402
+for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS",
+           "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_v, "1")
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import argparse
@@ -74,20 +95,79 @@ Q_SYM = sp.Symbol("q", positive=True)
 Q_MP = mp.mpf(Q_50_DIGIT_STR)
 
 
+# ── Worker cap (memory-bound, see the note at the call site) ─────
+_WORKER_OVERRIDE: int | None = None
+
+
+def _worker_cap() -> int:
+    """Workers to use: CLI --workers, else $RHO_K_WORKERS, else cpu_count().
+
+    Deliberately a cap and not a fixed number, so the default behaviour is
+    exactly what it was before (cpu_count()) and only an explicit request
+    lowers it.
+    """
+    if _WORKER_OVERRIDE is not None:
+        return max(1, _WORKER_OVERRIDE)
+    env = os.environ.get("RHO_K_WORKERS")
+    if env:
+        try:
+            return max(1, int(env))
+        except ValueError:
+            print(f"  RHO_K_WORKERS={env!r} is not an integer — ignoring.")
+    return multi.cpu_count()
+
+
 # ── Multiprocessing worker (top-level so Pool can pickle) ────────
+
+
+def _lambda_cost_proxy(lam: tuple[int, ...]) -> int:
+    """Scheduling weight for one partition: its Specht dimension (# SYT).
+
+    Only the ORDER matters — this decides which λ a free worker takes next, so
+    a monotone proxy for cost is enough and an exact model would be wasted. The
+    Hoefsmit kernel builds dim x dim matrices, and measured cost tracks
+    ~dim^2.4 on this path, so dimension ranks the work correctly.
+
+    Hook-length formula. Cheap (integer arithmetic on a partition of ≤ 12) next
+    to the χ^λ it is scheduling.
+    """
+    import math
+    n = sum(lam)
+    conj = [sum(1 for r in lam if r > j) for j in range(lam[0])] if lam else []
+    prod = 1
+    for i, r in enumerate(lam):
+        for j in range(r):
+            prod *= (r - j) + (conj[j] - i) - 1
+    return math.factorial(n) // prod if prod else 1
 
 
 def _chi_worker(args):
     """Pool worker: chi_numpy for one partition (10-50× faster than
     chi_numeric, validated against mpmath at 1e-14 relative tolerance
     per docs/audits/2026-05-19-cocasimir-compute-bottleneck.md).
-    Falls back to chi_numeric if numpy import unavailable."""
+
+    NO SILENT FALLBACK (owner directive 2026-08-15): if the numpy fast path
+    is unavailable, refuse loudly rather than silently dropping to the slow
+    mpmath chi_numeric path (the ct80/#2747 silent-degradation class — a slow
+    run that also looks like a correct one). The slow path stays available as
+    an EXPLICIT opt-in via QOU_ALLOW_SLOW_CHI_FALLBACK=1. Mirrors
+    pyhecke.gram._native_ok()'s loud-refusal philosophy. See
+    docs/pyhecke-native-setup.md."""
     lam, crossings, q_str, dps = args
     mp.mp.dps = dps
     try:
         from hoefsmit_numpy import chi_numpy as _chi  # noqa: E402
         return _chi(lam, crossings, float(mp.mpf(q_str)))
-    except ImportError:
+    except ImportError as e:
+        import os
+        if os.environ.get("QOU_ALLOW_SLOW_CHI_FALLBACK") != "1":
+            raise RuntimeError(
+                "chi_numpy (numpy fast path) is unavailable: " + repr(e) + ". "
+                "Refusing to silently fall back to the slow mpmath chi_numeric "
+                "path. Fix the numpy/hoefsmit_numpy import, or set "
+                "QOU_ALLOW_SLOW_CHI_FALLBACK=1 to explicitly permit the slow "
+                "path. See docs/pyhecke-native-setup.md."
+            ) from e
         from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
         return _chi(lam, crossings, mp.mpf(q_str))
 
@@ -262,18 +342,108 @@ def compute_co_casimir_for_atom(
     crossings = atom_canonical_crossings(Z, N)
     print(f"  braid crossings: {len(crossings)}")
 
-    # Parallel per-λ Hoefsmit χ^λ — embarrassingly parallel. The
-    # 4-core box ships ~4× wall speedup on top of the ~200× chi_numeric
-    # vs chi_lambda_symbolic gain. Partition input is (lam, crossings,
+    # Parallel per-λ Hoefsmit χ^λ. Partition input is (lam, crossings,
     # q_str_50dps, dps) so the worker is self-contained.
-    n_workers = min(multi.cpu_count(), len(parts))
+    # WORKER COUNT IS MEMORY-BOUND, NOT CPU-BOUND, at n >= 12. Each worker holds
+    # one partition's Hoefsmit generators DENSE: the largest partition of 12 is
+    # dim 7700, so 11 generators occupy 7700^2 * 8 B * 11 = 5.22 GB. Four
+    # workers want ~20 GB, and on a 16 GB box the run does not merely slow down
+    # — it HANGS, workers parked in futex_do_wait with khugepaged thrashing
+    # (bean qou-5qwb; the underlying dense-storage issue is qou-bk0q).
+    # `cpu_count()` cannot see any of that.
+    #
+    # Two mechanisms, deliberately kept distinct (rebase resolution, qou-mnrd
+    # x qou-5qwb — both arcs hit this independently and neither is redundant):
+    #
+    #   1. `_worker_cap()` — EXPLICIT operator control via `--workers` /
+    #      $RHO_K_WORKERS. Authoritative: if someone asks for N, they get N.
+    #      That is qou-5qwb's design and it is not overridden below.
+    #   2. the MemAvailable-derived ceiling — applies only when NOTHING explicit
+    #      was requested, so the *default* stops being a number that OOMs. An
+    #      operator who has to know to pass `--workers 1` has to know the box
+    #      first; a default derived from /proc/meminfo does not.
+    #
+    # PEAK IS 268 BYTES PER dim², MEASURED. The generator storage above (5.22 GB)
+    # is not the process peak — intermediates in the braid-word chain roughly
+    # triple it. A single SERIAL process on (5,3,2,1,1) peaks at 15.9 GiB:
+    #     Out of memory: Killed process 26199 anon-rss:15884144kB
+    # An earlier estimate of 84 B/dim² came from `ps` on a worker the kernel was
+    # about to kill, i.e. one still growing. Read the peak off the OOM line's
+    # anon-rss, never off `ps` mid-flight.
+    _explicit_workers = _WORKER_OVERRIDE is not None or os.environ.get("RHO_K_WORKERS")
+    _peak_bytes = 268 * max(_lambda_cost_proxy(l) for l in parts) ** 2
+    try:
+        _avail = next(int(l.split()[1]) * 1024 for l in
+                      open("/proc/meminfo") if l.startswith("MemAvailable:"))
+    except Exception:  # noqa: BLE001 — non-Linux or unreadable: defer to _worker_cap
+        _avail = 0
+    _mem_cap = int(_avail * 0.60 / _peak_bytes) if _avail else multi.cpu_count()
+    if _avail and not _explicit_workers:
+        print(f"  worker cap: cores={multi.cpu_count()} "
+              f"mem={_avail / 2**30:.1f}GiB avail / "
+              f"{_peak_bytes / 2**30:.1f}GiB peak-per-worker -> {_mem_cap}",
+              flush=True)
+
+    if _avail and not _explicit_workers and _mem_cap < 1:
+        # REFUSE rather than attempt. Not even one process fits, so running
+        # anyway means an OOM kill partway through the χ fan-out — i.e. AFTER
+        # the incremental save has already replaced the committed witness.
+        # `_carry_forward` makes that non-destructive now, but knowingly
+        # starting a computation that cannot finish still burns 20 minutes to
+        # end in SIGKILL. Record the reason instead; the committed entry for
+        # this atom is carried forward untouched.
+        #
+        # Only when nothing explicit was asked for: `--workers 1` on a box the
+        # operator knows better than /proc/meminfo does must still run.
+        print(f"  SKIP {label}: needs ~{_peak_bytes / 2**30:.1f}GiB for the "
+              f"largest λ (dim {max(_lambda_cost_proxy(l) for l in parts)}), "
+              f"{_avail / 2**30:.1f}GiB available — pass --workers N to force",
+              flush=True)
+        return {
+            "label": label, "Z": Z, "N": N, "A": A, "n_strands": n,
+            "abs_tr_M_at_q0": str(abs_tr_M),
+            "rho_K_LO": str(rho_K_LO),
+            "status": "skip_insufficient_memory",
+            "required_bytes_estimate": int(_peak_bytes),
+            "available_bytes": int(_avail),
+        }
+
+    n_workers = min(_worker_cap(), len(parts))
+    if not _explicit_workers and _avail:
+        n_workers = min(n_workers, max(1, _mem_cap))
     print(f"  computing per-λ χ^λ via {n_workers} workers (numeric path) …", flush=True)
-    pool_args = [(lam, crossings, Q_50_DIGIT_STR, mp.mp.dps) for lam in parts]
+    # Largest λ FIRST, and chunksize=1 (bean qou-mnrd). Per-λ cost is steeply
+    # superlinear in the partition's dimension — measured ~dim^2.4 on this
+    # kernel (dim 1925 → 7.1 s, dim 3520 → 30.4 s), so the single largest
+    # partition of 12 (dim 7700) costs ≈ 200 s while the smallest cost
+    # milliseconds. Two consequences the previous call got wrong:
+    #
+    #   * `pool.map`'s default chunksize splits the list into ~4 contiguous
+    #     blocks, so whichever worker draws the block holding the big λ runs
+    #     alone while the others finish and idle. Observed on the ⁴He leg:
+    #     worker CPU 11m51s / 4m35s / 1m35s / 0m00s over 2h05m wall.
+    #   * feeding them in enumeration order leaves a 200 s task to be picked up
+    #     last, so the whole run waits on one straggler at the end.
+    #
+    # Longest-processing-time-first with chunksize=1 is the standard remedy for
+    # both. `pool.map` returns in INPUT order, so the results are reordered back
+    # to `parts` order below — the per-λ loop indexes `chi_values[i]` against
+    # `parts[i]` and would silently mismatch otherwise.
+    order = sorted(range(len(parts)), key=lambda i: -_lambda_cost_proxy(parts[i]))
+    pool_args = [(parts[i], crossings, Q_50_DIGIT_STR, mp.mp.dps) for i in order]
     if n_workers > 1:
         with multi.Pool(n_workers) as pool:
-            chi_values = pool.map(_chi_worker, pool_args)
+            _out = pool.map(_chi_worker, pool_args, chunksize=1)
+        chi_values = [None] * len(parts)
+        for slot, val in zip(order, _out):
+            chi_values[slot] = val
     else:
-        chi_values = [_chi_worker(a) for a in pool_args]
+        # Single worker: same reordering, so the un-permute below is the only
+        # place that knows about `order` and the two branches cannot diverge.
+        _out = [_chi_worker(a) for a in pool_args]
+        chi_values = [None] * len(parts)
+        for slot, val in zip(order, _out):
+            chi_values[slot] = val
 
     per_lambda: list[dict] = []
     sum_contributions = mp.mpf(0)
@@ -351,7 +521,7 @@ def compute_co_casimir_for_atom(
         "err_ppm": str(err_ppm) if err_ppm is not None else None,
         "n_partitions": len(parts),
         "per_lambda": per_lambda,
-        "compute_wall_sec": round(t1 - t0, 2),
+        "compute_wall_sec": f"{t1 - t0:.2f}",
         "status": "ok",
     }
 
@@ -390,10 +560,20 @@ def main(argv: list[str] | None = None) -> int:
         help="Comma-separated atom labels (default: p,n,D,T,3He,4He)."
     )
     parser.add_argument(
+        "--workers", type=int, default=None,
+        help="Cap the per-lambda worker pool (default: cpu_count()). Each "
+             "worker holds one partition's DENSE Hoefsmit generators — 5.22 GB "
+             "at the dim-7700 partition of n=12 — so the default can exceed "
+             "RAM and hang rather than slow down. Also settable as "
+             "$RHO_K_WORKERS.")
+    parser.add_argument(
         "--max-A", type=int, default=4,
         help="Skip atoms with A > this (default 4; ⁴He included; ⁵/⁶Li skipped)."
     )
     args = parser.parse_args(argv)
+    if args.workers is not None:
+        global _WORKER_OVERRIDE
+        _WORKER_OVERRIDE = args.workers
 
     if args.atoms:
         wanted = {s.strip().lower() for s in args.atoms.split(",")}
@@ -408,7 +588,69 @@ def main(argv: list[str] | None = None) -> int:
 
     # Incremental save: write witness after each atom so an interrupt
     # doesn't lose completed work.
+    #
+    # ...which is exactly what it USED to do (bean qou-mnrd). The write was a
+    # plain overwrite of `per_atom` with whatever this run had reached, so any
+    # atom the run had not got to yet VANISHED from the committed witness. On a
+    # 16 GiB box the ⁴He leg OOMs (a single process peaks at 15.9 GiB at
+    # n=12, dim 7700), and each attempt left a 5-atom witness where a 6-atom one
+    # had been — `durationMs` 2,552,837 -> 806. Three times in one session.
+    #
+    # So the "incremental" save loses committed work precisely when the run
+    # fails, which is the only time it matters. Same defect, same fix, as
+    # `ground_state_ordering_argmin_sweep.py` earlier in this arc: **carry
+    # forward what is already on disk and this run did not recompute**, and say
+    # which. A producer that can only ever be run to completion on a big enough
+    # machine is not a safe producer.
+    def _carry_forward(results_so_far: list[dict]) -> list[dict]:
+        out_path = HERE / "rho-k-co-casimir-extended.witness.json"
+        if not out_path.exists():
+            return results_so_far
+        try:
+            prior = json.loads(out_path.read_text())["data"]["per_atom"]
+        except Exception:  # noqa: BLE001 — unreadable/absent: nothing to preserve
+            return results_so_far
+        # A DID-NOT-COMPUTE RESULT MUST NOT DISPLACE A COMPUTED ONE. The first
+        # version of this keyed purely on label, so the `skip_insufficient_memory`
+        # stub counted as "this run has helium-4" and overwrote the committed
+        # entry — 77 `per_lambda` rows and a real `compute_wall_sec` replaced by
+        # a five-field stub. Quieter than dropping the atom outright and just as
+        # much data gone, which is the failure mode this function exists to stop.
+        _NON_RESULT = {"skip_insufficient_memory", "skip_chi"}
+        computed = {r.get("label") for r in results_so_far
+                    if r.get("status") not in _NON_RESULT}
+        prior_by_label = {p.get("label"): p for p in prior}
+
+        kept: list[dict] = []
+        for r in results_so_far:
+            lbl = r.get("label")
+            if r.get("status") in _NON_RESULT and lbl in prior_by_label:
+                # Keep the committed result, but say why it was not recomputed —
+                # a preserved value that silently looks fresh is its own trap.
+                p = dict(prior_by_label[lbl])
+                p["not_recomputed_this_run"] = r.get("status")
+                if "required_bytes_estimate" in r:
+                    p["not_recomputed_required_bytes"] = r["required_bytes_estimate"]
+                    p["not_recomputed_available_bytes"] = r.get("available_bytes")
+                print(f"  PRESERVING committed {lbl}: this run returned "
+                      f"{r.get('status')}, keeping the stored result", flush=True)
+                kept.append(p)
+            else:
+                kept.append(r)
+
+        carried = [p for p in prior
+                   if p.get("label") not in {k.get("label") for k in kept}]
+        if carried:
+            print(f"  carrying forward {len(carried)} atom(s) this run did not "
+                  f"reach: {', '.join(str(c.get('label')) for c in carried)}",
+                  flush=True)
+        # Preserve the committed ordering: prior order first, then anything new.
+        order = {p.get("label"): i for i, p in enumerate(prior)}
+        merged = kept + carried
+        return sorted(merged, key=lambda r: order.get(r.get("label"), 10**6))
+
     def _save_incremental(results_so_far: list[dict]) -> Path:
+        results_so_far = _carry_forward(results_so_far)
         b = (
             WitnessBuilder(
                 "rho-k-co-casimir-extended",
@@ -458,6 +700,15 @@ def main(argv: list[str] | None = None) -> int:
         results.append(compute_co_casimir_for_atom(Z, N, label))
         # Save after each atom so interrupts don't lose work.
         _save_incremental(results)
+
+    # Route the FINAL write through the same merge as the incremental ones.
+    # Missing this was a real bug: `_save_incremental` preserved the committed
+    # ⁴He block correctly on every intermediate save, and then the final
+    # `builder.save()` below — a separate WitnessBuilder that never consulted
+    # what was on disk — overwrote it with the skip stub anyway. A guard applied
+    # on all but the last write is not a guard. `_carry_forward` reads the file,
+    # so it must run BEFORE this builder replaces it.
+    results = _carry_forward(results)
 
     # Emit witness
     builder = (

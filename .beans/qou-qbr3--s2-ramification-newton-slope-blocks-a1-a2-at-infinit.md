@@ -47,7 +47,7 @@ solution in `Q(q)` -- adjoining `sqrt(q-1)` is genuinely forced. Axioms
 
 ### CORRECTION to my own earlier reading -- what RSZ actually says
 
-Read from `uploads/0903.0853v3.pdf` p.39 (extracted directly; the sandbox has no
+Read from `library/arxiv-0903.0853v3/0903.0853v3.pdf` p.39 (extracted directly; the sandbox has no
 pdftotext, so this was pulled from the FlateDecode streams):
 
   "We must also choose d-th roots B1, B2 of A1, A2. ... a necessary condition for

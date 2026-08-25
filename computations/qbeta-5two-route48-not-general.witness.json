@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 50,
+  "dps": 70,
   "follows": "Route 47 (the closed form)",
   "gates": [
     {
@@ -62,10 +62,10 @@
       "claim": "two exact values turned up by falsifying the general form, neither predicted and neither explained: the Rogers-L Galois sum over X^3-X^2+1 is exactly pi^2/6, and P(c^5) = 2*P(w) exactly. Gated here rather than left in scrollback",
       "sum_L_over_X3-X2+1": "1.64493406684822643647241516665",
       "pi_sq_over_6": "1.64493406684822643647241516665",
-      "residual_a": "8.01829413028e-51",
+      "residual_a": "0.0",
       "P_c5": "4.31453554913312849070941603132",
       "two_P_w": "4.31453554913312849070941603132",
-      "residual_b": "0.0",
+      "residual_b": "7.24454326306e-71",
       "pass": true
     },
     {

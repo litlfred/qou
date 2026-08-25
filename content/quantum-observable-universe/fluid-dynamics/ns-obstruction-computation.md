@@ -49,7 +49,7 @@ $$
   \frac{1}{(T^* - t)^{(n+1)/2}}.
 $$
 
-The magnitude $|j^n v|$ strictly dictates the jet correction $\delta_n|_\Sigma$; the correction operates nonzeroly whenever the corresponding $n$-th jet mathematically diverges. For the anti-parallel pair, $|j^n v| \to \infty$ applies universally to all $n \geq 1$ as $t \to T^*$.
+The magnitude $|j^n v|$ strictly dictates the jet correction $\delta_n|_\Sigma$; the correction is nonzero whenever the corresponding $n$-th jet diverges. For the anti-parallel pair, $|j^n v| \to \infty$ applies universally to all $n \geq 1$ as $t \to T^*$.
 
 **(c) The total obstruction.**
 
@@ -62,7 +62,7 @@ The topological and analytic components map exactly into mathematically compleme
 Consequently:
 
 - If the Reeb field fundamentally **lacks a zero** at $p$ ($\deg_p(\xi) = 0$): the topological component cleanly vanishes, but the analytic component $\delta_n|_\Sigma \neq 0$ stubbornly persists. The surviving obstruction becomes **purely analytic** while the contact structure avoids degeneracy. This explicitly describes the **NS-singular** (blowup) condition.
-- If the Reeb field **possesses a zero** at $p$ ($\deg_p(\xi) \neq 0$): both isolated terms avoid zero. Because they occupy strictly complementary subgroups, they possess no mechanism to mathematically cancel. The aggregate obstruction persists nonzeroly. This similarly enforces the **NS-singular** condition.
+- If the Reeb field **possesses a zero** at $p$ ($\deg_p(\xi) \neq 0$): both isolated terms avoid zero. Because they occupy strictly complementary subgroups, they possess no mechanism to mathematically cancel. The aggregate obstruction remains nonzero. This similarly enforces the **NS-singular** condition.
 
 **(d) Result.**
 

@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1011.1343v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
+  "file": "1011.1343v1.pdf"
+ },
+ "provenance": {
+  "title": "Institut f\u00fcr Kernphysik, Institute for Advanced Simulatio n and JCHP",
+  "authors": "Forschungszentrum J\u00fclich, D-52425 J\u00fclich, Germany",
+  "arxiv": {
+   "id": "1011.1343",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "5 Nov 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-endomorphism/topological-mass-categorical-proof.md"
   },
   "source_hashes": {
-    "ts": "a78b8b254cb7",
-    "md": "b01a65915d0b"
+    "md": "b01a65915d0b",
+    "ts": "a78b8b254cb7"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -788,30 +788,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b01a65915d0b",
-          "ts": "a78b8b254cb7"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:01.977Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1340,377 @@
         "reviewed_at": "2026-08-09T13:00:59.271Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:02.959Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:02.999Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.039Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.229Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'We assemble the decomposition from three lemmas' -- and exactly three are cited (eigenspace, descended, transient).",
+        "notes": "Substantive count. Minor manifest gap: the .ts uses[] lists thm:topological-mass, lem:...-cat-descended and lem:...-cat-transient but NOT lem:topological-mass-cat-eigenspace, which the .md cites first and leans on hardest."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.076Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.113Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.273Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'Combining yields the claimed decomposition' is a proof closer, the permitted 'This completes the proof' form.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.152Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.314Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "'the descent involution gives an **orthogonal Frobenius-norm split** m(rho) = ||tr(tau_n(alpha))|| + ||tr(alpha - tau_n(alpha))||' -- asserted as following from the eigenspace lemma.",
+        "notes": "REPORT ONLY, not fixed (math). THE CITED LEMMA SAYS THE OPPOSITE. lem:topological-mass-cat-eigenspace states m(rho)^2 = ||tr(tau_n(alpha))||^2 + ||tr(alpha - tau_n(alpha))||^2 and appends an explicit italic warning against exactly this reading: '(Orthogonal components add **in quadrature**, not linearly. The descended and transient traces are orthogonal, so the masses combine by the Pythagorean law, not additively.)' Its proof block repeats the point: 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)'. So this assembly proof derives a LINEAR sum from a lemma whose whole point is that the sum is quadratic, and the conclusion it hands on -- m(rho) = m(rho_0) + sum_i tr_trans(rho, p_i) -- inherits the error. Proposed: restate as m(rho)^2 = m(rho_0)^2 + ||sum_i tr_trans(rho,p_i)||^2, and propagate to prop:topological-decomposition-mass, which carries the same linear form. This looks like a corrected lemma whose three consumers were never updated: the same defect is in topological-mass-conjecture.md and in the last line of topological-mass-cat-transient-proof.md."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.002Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.189Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Six-sentence assembly proof: cite eigenspace lemma, cite descended lemma, cite transient lemma, combine. No negation-contrast, no pivot, no em-dash, no closer beyond 'Combining yields the claimed decomposition. $\\square$', no emphasis-narration, no warmth; every sentence parses aloud.",
+        "notes": "n/a"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b01a65915d0b",
+          "ts": "a78b8b254cb7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:19:03.314Z"
 }

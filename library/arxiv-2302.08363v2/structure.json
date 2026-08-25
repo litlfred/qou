@@ -1,0 +1,281 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2302.08363v2",
+ "source": {
+  "file": "2302.08363v2.pdf",
+  "sha256": "c2244e03b17048fb95c7aebc7d093ef2c83b41e07ca0db4ec8ec11f0162d7655",
+  "bytes": 1170692,
+  "pages": 35
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2302.08363",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "5 Mar 2025"
+  },
+  "doi": null,
+  "title": "On the structure of trans-series in quantum field theory",
+  "authors_raw": "Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb",
+  "abstract": "Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence. Our results indicate that, in these examples, the Borel resummed trans-series leads to a well defined function, and there are no further divergences. arXiv:2302.08363v2 [hep-th] 5 Mar 2025",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20250306014034Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP On the structure of trans-series in quantum field theory",
+  "title_lines": [
+   "On the structure of trans-series in",
+   "quantum field theory"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Trans-series and their structure",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The large N sigma model, revisited",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Complex Chern–Simons theory",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Integrable models",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The free energy of integrable models",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Bosonic models",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Trans-series computation",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Numerical analysis",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Gross–Neveu model",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Summary of the recursive problem",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Leading orders in alpha",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Numerical analysis",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Large N solution",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions and open problems",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5921,
+   "n_words": 952
+  },
+  {
+   "id": "sec-001-trans-series-and-their-structure",
+   "number": null,
+   "title": "Trans-series and their structure",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4303,
+   "n_words": 722
+  },
+  {
+   "id": "sec-002-the-large-n-sigma-model-revisited",
+   "number": null,
+   "title": "The large N sigma model, revisited",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 9663,
+   "n_words": 1786
+  },
+  {
+   "id": "sec-003-complex-chernsimons-theory",
+   "number": null,
+   "title": "Complex Chern–Simons theory",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4589,
+   "n_words": 798
+  },
+  {
+   "id": "sec-004-integrable-models",
+   "number": null,
+   "title": "Integrable models",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-the-free-energy-of-integrable-models",
+   "number": null,
+   "title": "The free energy of integrable models",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5003,
+   "n_words": 807
+  },
+  {
+   "id": "sec-006-bosonic-models",
+   "number": null,
+   "title": "Bosonic models",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 20,
+   "n_chars": 13631,
+   "n_words": 2621
+  },
+  {
+   "id": "sec-007-numerical-analysis",
+   "number": null,
+   "title": "Numerical analysis",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 6358,
+   "n_words": 1306
+  },
+  {
+   "id": "sec-008-the-grossneveu-model",
+   "number": null,
+   "title": "The Gross–Neveu model",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3372,
+   "n_words": 667
+  },
+  {
+   "id": "sec-009-summary-of-the-recursive-problem",
+   "number": null,
+   "title": "Summary of the recursive problem",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 6110,
+   "n_words": 1225
+  },
+  {
+   "id": "sec-010-numerical-analysis",
+   "number": null,
+   "title": "Numerical analysis",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3526,
+   "n_words": 639
+  },
+  {
+   "id": "sec-011-large-n-solution",
+   "number": null,
+   "title": "Large N solution",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1872,
+   "n_words": 348
+  },
+  {
+   "id": "sec-012-conclusions-and-open-problems",
+   "number": null,
+   "title": "Conclusions and open problems",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 35,
+   "n_chars": 11960,
+   "n_words": 1956
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 13,
+  "chars_total": 76308
+ }
+}

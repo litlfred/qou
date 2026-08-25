@@ -22,4 +22,4 @@ $$
   \ell_P(q) =  \hbar_q \cdot t_P =  1
 $$
 
-This identity holds over any field. The Planck length strictly equals $1$. The parameter $q$ varies only the number of discrete operations $t_P(q)$ composing that unit displacement.
+This identity holds over any field. The Planck length equals $1$. The parameter $q$ varies only the number of discrete operations $t_P(q)$ composing that unit displacement.

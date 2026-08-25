@@ -6,6 +6,8 @@
 
 **Highlight to Claude** — referenced from AGENTS.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
+> **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** Every "absolute nucleon/atom mass" entry below (`m_p ≈ 938.27 MeV`, `m_n ≈ 939.56 MeV`, the Step-9a "absolute mass identity") is retained for the compute map but is **no longer a framework prediction** — it is an `m_e`-scaled *realization of the dimensionless ratio* (`m_p/m_e`), since m_e (CAL-1) sets the MeV scale by fiat. The predictive content is the ratio / binding / Q-value / splitting; the `canonical_mass.py` facade and the muon-anchored form still stand as the correct *ratio realization*. Read "absolute mass" below as "the `m_e`-scaled ratio, rendered in MeV". Full ruling: [`audits/2026-08-11-excise-absolute-mass-notion.md`](audits/2026-08-11-excise-absolute-mass-notion.md).
+
 ---
 
 ## 0. This is the PRIMARY coordination document for the canonical chain
@@ -373,7 +375,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 | Result | Reference |
 |---|---|
-| Hecke algebra of type A | `[iwahori1964]`, `[geck-pfeiffer2000]` |
+| Hecke algebra of type A | `[iwahori1964]`, `[geckpfeiffer2000]` |
 | Iwahori-Hecke quadratic relation as Yang-Baxter | `[jimbo1986]` |
 | Markov trace uniqueness + Jones polynomial | `[jones1987]` |
 | Wenzl Markov-trace closed form + disjoint multiplicativity | `[wenzl1988]` §1.7 |
@@ -676,6 +678,31 @@ A=4); (iii) **reconciling** the pairwise (2-body) and whole-nucleus (4-body)
 decompositions into one additive many-body series. The Δ_λ gate is dissolved —
 it was never a per-block density — but the many-body series is not yet a closed
 single form; the 4-body ⁴He piece (magic-A) is its most-derived member at +5.87 %.
+
+> **⚠ CURRENCY (2026-08-10) — item (ii) is NOT independently open; it is gated on
+> `conj:s5-so3-fiber-action`. Do not open a scale-rule probe.** The list above
+> predates the **GAP-A-4 final retrospective (2026-06-05)**, which closed that
+> axis. Four transplant routes for the per-atom multiplier `λ(K)` were tested and
+> **all refuted** — Phase-4 carrier (−56 % to +106 358 %), `Vol(K)` convention
+> choice (best swing +132 %), additive `S(K)` under uniform `λ` (100× swing),
+> bar-symmetric q-Pochhammer (−98 %). Per-knot `Vol(K)` as a **standalone** fix is
+> closed **negatively**. And `ρ·A` is not free-standing: the binding generating
+> function `G(x;q) = Σ Bₙxⁿ` satisfies a fibre-level q-difference equation whose
+> τ-image at real `q₀` is named as fixing **both** the per-order terms **and** the
+> scale rule `ρ·A`. Mass-side and binding-side reach this independently, so the
+> framework's open derivation math on this axis is **one categorical conjecture**.
+> Re-running a scale-rule probe repeats R1–R4.
+>
+> Items (i) and (iii) survive as genuinely open, but **downstream of** that
+> conjecture rather than independent of it.
+>
+> Read first: [`2026-06-05-gap-a4-final-retrospective.md`](audits/2026-06-05-gap-a4-final-retrospective.md)
+> §2–§5; ledger [`s5-so3-keystone.md`](coordination/s5-so3-keystone.md).
+> History: this staleness was caught when an agent (PR #4939 follow-up) read this
+> passage, called (ii) "bookkeeping, not mechanism" in a delivered analysis, and
+> was about to probe it — exactly the already-closed-but-declared-open pattern the
+> AGENTS.md corpus-grep checklist exists to prevent, reaching a reader through the
+> designated coordination hub.
 
 ### 9.4 Lean formalization debt (tracked — verification, NOT a compute gate)
 

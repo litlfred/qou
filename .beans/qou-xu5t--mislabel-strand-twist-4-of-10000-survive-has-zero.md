@@ -1,10 +1,11 @@
 ---
 # qou-xu5t
 title: 'MISLABEL: strand-twist ''4 of 10,000 survive'' has zero selectivity - forced by 1x2x2x1 composition counts'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:03:41Z
-updated_at: 2026-08-08T13:03:41Z
+updated_at: 2026-08-14T18:49:15Z
 ---
 
 Found by the SM/eightfold epistemic accounting,
@@ -73,5 +74,3 @@ normalisation `Q_twist = T/3` fixes `totalTwist = 3Q` per flavour; the
 residual freedom is the number of twist multisets realising each `T`
 (`1 × 2 × 2 × 1 = 4`), a composition count rather than a selectivity result."
 Drop or requalify "uniquely determined".
-
-

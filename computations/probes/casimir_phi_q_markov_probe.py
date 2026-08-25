@@ -66,8 +66,9 @@ from mpmath import mp, mpf, pi as mp_pi, sqrt as mp_sqrt  # noqa: E402
 from _phi_q_util import phi_q  # noqa: E402
 from q_parameter import Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 def _q_int(n: int, q: "mpf") -> "mpf":

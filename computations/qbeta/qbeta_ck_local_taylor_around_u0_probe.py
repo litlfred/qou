@@ -71,7 +71,7 @@ os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
-mp.mp.dps = 50
+set_compute_dps()
 import sympy as sp  # noqa: E402
 
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
@@ -254,7 +254,7 @@ def main() -> int:
 
     # Substrate chain (PR #1786)
     h_qq = q - 1 / q
-    z_qq = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_qq = q**3 / (q**2 + 1)
     alpha = (z_qq - 1) * h_qq / 2
     b_sub = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     hbar = (q - 1) / q

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean"
   },
   "source_hashes": {
-    "ts": "e0b6d2941f92",
     "md": "58b98d7eeac7",
-    "lean": "d6d5b52ec403"
+    "ts": "e0b6d2941f92",
+    "lean": "d6d5b52ec403",
+    "lean_statement": "37b25925656b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -298,31 +299,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "58b98d7eeac7",
-          "ts": "e0b6d2941f92",
-          "lean": "d6d5b52ec403",
-          "lean_statement": "37b25925656b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1154,7 +1135,8 @@
         "reviewed_at": "2026-06-28T10:58:38.743Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1252,7 +1234,8 @@
         "reviewed_at": "2026-06-28T10:58:38.761Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1416,7 +1399,8 @@
         "reviewed_at": "2026-06-28T10:58:38.793Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1450,7 +1434,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1783,7 +1768,374 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not at the Hecke-element level.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.675Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two contrasts, both substantive: 'at the topological level, not at the Hecke-element level' (states why the GB filtration is N/A) and 'expressed through distinct dualities: Poincare-Lefschetz is the topological-cohomological route, the Bloch group the K-theoretic one' (the block's actual comparison)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.748Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; the sections are statement, comparison, invariants, open items, cross-references."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "6 stylistic spaced dashes in 264 words (2.27/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.832Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Six spaced em-dashes, all list-item glosses in 'Structural invariants' / 'What remains open' / 'Cross-references' (e.g. 'GB filtration: N/A -- ...', 'K-theoretic regulator route to the same 8G'). Conventional in an annotated list, and none substitutes for sentence structure."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 264 words)"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.887Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The recurring threes are mathematical: three cusps, three meridian classes, Z^3, and three independent routes to 8G. Not reflex triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:27.956Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a cross-reference list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.027Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The two ARE the same number' performs emphasis typographically (all-caps) rather than placing it in the argument; scholarly register in this corpus uses bold or restructuring, not shouting.",
+        "notes": "FIXED inline (case change only, no math, no meaning change): 'The two ARE the same number' -> 'The two are the same number'. The sentence's own continuation ('but expressed through distinct dualities') already carries the contrast, so no emphasis marker is needed. $$ count re-checked even."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.099Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.211Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.307Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No unqualified maximum-strength claims; 'partial in Mathlib' and 'partial Mathlib infrastructure exists' are hedged accurately."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.854Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "572c1379affd",
+          "ts": "e0b6d2941f92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:05:28.372Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the topological-cohomological route' and 'manifold-with-cusps Poincare-Lefschetz' are compound-heavy but are names of things, and the surrounding sentences are short."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "58b98d7eeac7",
+          "ts": "e0b6d2941f92",
+          "lean": "d6d5b52ec403",
+          "lean_statement": "37b25925656b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T22:05:28.372Z"
 }

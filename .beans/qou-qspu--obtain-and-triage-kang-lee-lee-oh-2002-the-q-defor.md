@@ -20,15 +20,15 @@ Bokut-Shiao as a theorem about Coxeter GROUPS -- W = sgp<S | (ss')^m = 1>, q = 1
 group-level GS basis lifts to the q-deformation is exactly the load-bearing
 question, and it is currently assumed rather than checked.
 
-Two independent bibliographies in the batch (uploads/1808.05026v1.pdf intro and
-uploads/fd58d8e1...pdf intro) say the same thing in the same words: "The cases
+Two independent bibliographies in the batch (library/arxiv-1808.05026v1/1808.05026v1.pdf intro and
+library/fd58d8e1...pdf intro) say the same thing in the same words: "The cases
 for Hecke algebras and Temperley-Lieb algebras of type A were calculated in
 [Kang-Lee-Lee-Oh]." Both papers quote its Prop. 6.2 verbatim for the
 Temperley-Lieb half. So this is the paper that treats the deformed, type-A case
 the folio actually computes with.
 
 WORK:
-1. Obtain the paper (J. Algebra 252 (2002) 258-292); add it to uploads/ and
+1. Obtain the paper (J. Algebra 252 (2002) 258-292); add it to library/ and
    reseed the source ledger.
 2. Triage it under the paper-relevance-triage skill.
 3. If its section 6 does state the GS basis for H_n(q) of type A, create the

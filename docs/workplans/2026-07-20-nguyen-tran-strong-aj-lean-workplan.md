@@ -1,7 +1,7 @@
 # Nguyen–Tran strong-AJ (4₁) → Lean brick decomposition — NT-T1 workplan
 
 Bean `qou-a9xy` (epic `qou-iiz4`), branch `claude/qlift-borel-kernel-derivation-2026-07-20`.
-Source read in full: `uploads/2006.02042v1.pdf` (11 pp; text extracted via pdfminer —
+Source read in full: `library/arxiv-2006.02042v1/2006.02042v1.pdf` (11 pp; text extracted via pdfminer —
 the PDF was absent from the worktree at session start and arXiv is proxy-blocked in
 this sandbox; it was checked out from `origin/main` mid-session and then read directly).
 

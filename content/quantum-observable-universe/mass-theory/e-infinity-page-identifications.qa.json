@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean"
   },
   "source_hashes": {
-    "ts": "bbcde03edc29",
     "md": "c723f521151c",
-    "lean": "86338a0f8feb"
+    "ts": "bbcde03edc29",
+    "lean": "86338a0f8feb",
+    "lean_statement": "027ed181ae59"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1179,31 +1180,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "c723f521151c",
-          "ts": "bbcde03edc29",
-          "lean": "86338a0f8feb",
-          "lean_statement": "027ed181ae59"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2145,7 +2126,371 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:02.993Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (prop:e-infinity-page-identifications, 1 display + 2 italic prose paras). No 'not X but Y' / 'X, not Y' construction. Closing 'without requiring speculative contour assumptions' denies a method alternative but states no positive-by-negative claim; judged scope statement, not negation-contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.036Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No setup-then-reframe; both prose paragraphs are flat assertions of term-to-page assignments."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.114Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes (spaced or unspaced) in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.195Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Enumeration is Term 1 / Terms 2-3 / Term 6 keyed to E_inf^{0,*}, E_inf^{1,*}, E_inf^{2,*} pages - content-driven, not a reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.232Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Final sentence is a technical assignment of Term 6 to elliptic-curve residues; no quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.282Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No 'note the framing' / 'we emphasize' constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.322Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Block does not close by restating its opening claim; the last sentence adds the l>=3 stratum assignment."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.380Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Institutional register throughout; no personal or affective vocabulary."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.460Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "minor",
+        "evidence": "De-hedging intensifier flood: 'correlate strictly', 'descends directly', 'mapping cleanly', 'mapping explicitly', 'aggregates all deeper-strata residues', 'without requiring speculative contour assumptions' - six unqualified intensifiers across four sentences, none carrying content (the assignments are exact or they are not; 'cleanly'/'directly' add nothing).",
+        "notes": "STRUCTURAL - not fixed inline (spans 4 sentences and is math-adjacent). Proposed: 'correlate strictly to' -> 'are identified with'; 'descends directly to the identity base mapping cleanly to' -> 'descends to the identity base and maps to'; 'mapping explicitly to' -> 'mapping to'; drop 'without requiring speculative contour assumptions' (a claim about method, not about the identification). Fix together with the term-count defect recorded on trap-nonspeakable."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.604Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:38:03.545Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "minor",
+        "evidence": "Stacked participial/noun chains that stall aloud: 'Terms 2 and 3 isolate single-generator and pair-tower functional limits mapping explicitly to E_inf^{1,*} and E_inf^{2,*}'; and 'Term 6 aggregates all deeper-strata residues spanning l>=3 mapping to the algebraic elliptic-curve residues without requiring speculative contour assumptions' - three unpunctuated post-modifiers on one verb.",
+        "notes": "STRUCTURAL. Proposed: 'Terms 2 and 3 isolate the single-generator and pair-tower functional limits; they map to E_inf^{1,*} and E_inf^{2,*} respectively.' / 'Term 6 aggregates the deeper-strata residues (l >= 3), which map to the elliptic-curve residues.' RIGOR (reported separately, not part of this criterion): the block says 'six-term categorical mass formula' but the display shows THREE summands, and the prose identifies only Terms 1, 2, 3 and 6 - Terms 4 and 5 are never assigned to a page. Also the index l in 'spanning l >= 3' is undefined here and collides with l = ln q used in the sibling block prop:eigenvalue-product-expansion."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "c723f521151c",
+          "ts": "bbcde03edc29",
+          "lean": "86338a0f8feb",
+          "lean_statement": "027ed181ae59"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:38:03.545Z"
 }

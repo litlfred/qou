@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots-table-data.md"
   },
   "source_hashes": {
-    "ts": "b3e929933fc9",
-    "md": "dc846abbda72"
+    "md": "dc846abbda72",
+    "ts": "b3e929933fc9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -292,30 +292,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "dc846abbda72",
-          "ts": "b3e929933fc9"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:01.977Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -883,7 +864,206 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.231Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full table read. Only negations are \"(chiral, not hyperbolic)\" and \"(torus, not hyperbolic)\" in the Vol column.",
+        "notes": "False-positive class \"substantive mathematical contrast\": each negation states the reason the volume entry is 0 (the knot is not hyperbolic). Load-bearing, not manufactured emphasis."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.271Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Pure data table, 12 rows, no connective prose; no setup-then-reframe construction anywhere.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.310Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Zero spaced em-dashes in the file (grep -o \" — \" = 0).",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.352Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Row groupings follow Seifert genus g=0..4; no reflex three-item list.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.391Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "File ends on the T(3,5)=10_124 data row; no closing line of any kind.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.431Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No narration of emphasis; the only annotations are parenthetical knot-type facts.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.472Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Table-data block with no prose sentences; nothing to restate.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.514Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No personal register.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.557Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "No maximum-strength claims; the checkmark on the 4_1 row marks a verified volume, not an unqualified superlative.",
+        "notes": "No change."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "dc846abbda72",
+          "ts": "b3e929933fc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:39.598Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Cells are terse noun phrases as a table requires; column headers are readable aloud.",
+        "notes": "No change."
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:10:39.598Z"
 }

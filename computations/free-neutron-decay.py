@@ -518,7 +518,19 @@ witness = {
     },
 }
 
-out = Path("free-neutron-decay.witness.json")
+# Write beside THIS FILE, not into the caller's cwd. As a bare relative path
+# a run from the repo root -- how producers are normally invoked -- created an
+# untracked orphan at ./free-neutron-decay.witness.json and left the tracked
+# computations/ copy untouched. That makes a re-run look like a REPRODUCTION:
+# diffing the committed file after such a run compares it against itself.
+# Measured (bean qou-nxxw): it cost three runs to notice the committed witness
+# was stale by the full 11.5 ppb mu-p tension.
+#
+# `scriptFile` likewise: this producer wrote none, so a downstream provenance
+# backfill guessed `derived_masses.py` -- which only READS this witness. Any
+# tool resolving producer-from-witness therefore re-ran the wrong script.
+witness["scriptFile"] = Path(__file__).name
+out = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"
 with open(out, "w") as f:
     json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness: {out} (commit: {SHA[:8]})")

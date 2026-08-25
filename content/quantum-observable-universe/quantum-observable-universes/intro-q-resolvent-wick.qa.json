@@ -136,7 +136,187 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.369Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.412Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.451Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.493Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.535Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.575Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.615Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.656Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.697Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:52.737Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. Math checked: R_q(s) = (s + Delta_q-hat)^{-1} is the correct Laplace transform of the heat semigroup, int_0^inf e^{-st} e^{-t Delta} dt = (s+Delta)^{-1}, for a positive Delta_q -- so the sign convention is right. No trap construction of any of the ten kinds.",
+        "notes": "No trap. Plain declarative roadmap prose."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:55.787039Z"
+  "updated_at": "2026-08-22T03:32:52.737Z"
 }

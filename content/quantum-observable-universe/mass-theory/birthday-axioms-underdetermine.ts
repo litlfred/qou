@@ -16,6 +16,6 @@ export default theorem({
     ref: "qou:QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le",
     validation: "leanok",
   },
-  uses: ["thm:ideal-tetrahedron-volume-well-defined"],
+  uses: ["prop:ideal-tetrahedron-relabelling-invariance"],
   cites: ["conway1976", "robinson1966"],
 });

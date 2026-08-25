@@ -67,7 +67,13 @@ class WenzlAOperator (R : Type u) [CommRing R] (q : R)
   lrWeight : ℕ → R
   /-- **The convergence recursion** (the conjecture's content): for every
       atomic level `A ≥ 2`, the combiner value at `A+1` equals the
-      LR-weighted value at `A`.  Bottoms out at A=2 (deuteron), verified
+      LR-weighted combiner.
+
+      **Gap Analysis:** The in-repo RSK infrastructure (`QOU.Mathlib.RSK_substrate_proved`) provides
+      the classical Burnside identity, but this convergence requires universal extracts for H_9+
+      which are not covered by standard RSK. This remains an open research-grade gap.
+
+      Bottoms out at A=2 (deuteron), verified
       numerically at 0.72 ppb (Phase A). -/
   branching_recursion : ∀ A : ℕ, 2 ≤ A →
     combinerValue (A + 1) = lrWeight A * combinerValue A

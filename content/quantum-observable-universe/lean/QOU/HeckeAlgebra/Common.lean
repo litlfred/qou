@@ -101,7 +101,7 @@ theorem frobeniusInner_symm {n : ℕ} (x y : HeckeElement n) :
     These properties are stated as separate axioms below; the
     bare `markovTrace` axiom only fixes the *type* of the trace. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Markov trace H_n(q) → ℝ)
-axiom markovTrace : (n : ℕ) → HeckeElement n → ℝ
+opaque markovTrace : (n : ℕ) → HeckeElement n → ℝ
 
 /-- The Markov trace is linear in its argument: this is the only
     structural property of `markovTrace` used by the

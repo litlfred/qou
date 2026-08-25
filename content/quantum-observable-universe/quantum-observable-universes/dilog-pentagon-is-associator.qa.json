@@ -337,31 +337,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "2aa0cf36e316",
-          "ts": "dbf7beb79a93",
-          "lean": "191f29154baa",
-          "lean_statement": "7eea4804eb89"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1313,12 +1293,379 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not a self-assuming projection.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.001Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Three negative constructions present, each falling in a documented false-positive class: (a) 'does not merely constrain Li_2^q - being a solution ... is equivalent' is a strengthening and IS the block's mathematical content (constrains vs characterises); (b) 'a genuine equivalence, not a self-assuming projection' is load-bearing disambiguation against the section-3b-cond degeneracy rule; (c) 'Two things remain genuinely open and are not discharged here' is temporal/scope status. No manufactured negation-contrast.",
+        "notes": "Concentration noted (3 in ~450 words) but each is substantive; no edit."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.042Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No setup-then-reframe. The 'This is the precise sense in which...' sentence names the strength of an already-stated iff and then adds new content (uniqueness of the level-2 primitive naming Li_2^q); the Scope boundary section states genuine open items rather than pivoting."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (3 in 284 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.084Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes doing sentence-structure work in ~450 words: (1) 'Fix the monoidal argument operations - the product ..., the complement ..., and division.' introduces an enumeration; (2) 'does not merely constrain Li_2^q - being a solution of the pentagon is equivalent to being a q-dilogarithm.' substitutes for a colon; (3) 'reads the datum's five-term field - a genuine equivalence, not a self-assuming projection.' appends an afterthought clause. Two of the three dodge the colon-vs-full-stop choice.",
+        "notes": "NOT FIXED (structural / math-adjacent: dash 1 sits inside the italicised formal Proposition statement, dash 2 inside a bolded interpretive claim). PROPOSED: (1) '...argument operations: the product x,y -> xy, the complement x -> 1-x, and division.'; (2) '...does not merely constrain Li_2^q: being a solution of the pentagon is equivalent to being a q-dilogarithm.'; (3) split into two sentences - '...reads the datum's five-term field. This is a genuine equivalence rather than a self-assuming projection.'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 284 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.124Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "One three-item list ('the product, the complement, and division'). Substantive: all three operations appear in the five-term relation as printed (xy, 1-y and 1-x, and the two quotients), so the count is set by the mathematics."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.164Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Block ends on the Scope boundary paragraph, which names two specific undischarged items (categorical-to-scalar descent; the analytic q != 1 five-term as the QRogersAnalyticContinuation conjecture class). Concrete scope statement, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.203Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'This is the precise sense in which...' and 'which this proposition records as one law' narrate the result's scope rather than announcing emphasis; both carry mathematical content (which reading of 'forced' is meant; that two formalised guises are one law). No 'we emphasize' / 'note the framing' construction."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.246Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The italicised 'being a solution of the pentagon is equivalent to being a q-dilogarithm' does echo the displayed iff, but it is mid-block and the sentence containing it adds new content (with prop:q-dilogarithm-exists, the pentagon axiom names Li_2^q). No block-final restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.298Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No personal register; institutional throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.343Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'the precise sense', 'genuine equivalence', 'honest conjecture class', 'sorry-free and axiom-free' are all scoped and checkable (the last is a #print axioms claim), not maximum-strength inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.923Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:35.385Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Noun chains stay short ('the additive twist associator', 'the classical shuffle-associator identification'); every sentence parses aloud.",
+        "notes": "MATH VERIFIED (not a trap): the displayed five-term relation f(y)+f(x) = f(xy)+f(x(1-y)/(1-xy))+f(y(1-x)/(1-xy)) is the classical Rogers/Abel five-term identity - recomputed with mpmath at 60 dps for (x,y) = (0.3,0.4), (0.11,0.77), (0.9,0.05) using L(x) = Li_2(x) + log(x)log(1-x)/2; residual 3.1e-61, i.e. exact. The Faddeev-Kashaev operator pentagon Phi(P)Phi(Q) = Phi(Q)Phi(P+Q)Phi(P) is also as published. uses[] carries no conj: label, so no section-3b propagation violation."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2aa0cf36e316",
+          "ts": "dbf7beb79a93",
+          "lean": "191f29154baa",
+          "lean_statement": "7eea4804eb89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
   "source_hashes": {
-    "ts": "dbf7beb79a93",
     "md": "2aa0cf36e316",
-    "lean": "191f29154baa"
+    "ts": "dbf7beb79a93",
+    "lean": "191f29154baa",
+    "lean_statement": "7eea4804eb89"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T00:54:35.385Z"
 }

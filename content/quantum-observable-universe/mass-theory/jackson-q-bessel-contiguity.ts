@@ -5,7 +5,7 @@ export default proof({
   of: "prop:jackson-q-bessel-contiguity-recurrence",
   lean: {
     ref: "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",
-    validation: "not_checked",
+    validation: "validated",
   },
   computation: {
     engine: "sympy",

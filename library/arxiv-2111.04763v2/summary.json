@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2111.04763v2",
+ "source_sha256": "760a7f9794e8baaa",
+ "brief": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat",
+ "extended": "**RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION**\n\n*STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER*\n\n59 pp, 16 sections.\n\n**Abstract.** Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals.\n\n**Outline.** 1 Introduction; 1.1 Resurgence of Chern–Simons perturbation th; 1.2 A summary of our results; 1.3 Challenges; 1.4 Illustration with the two simplest hyperbo; Acknowledgements; 2.4 Borel resummation and Stokes constants; 2.5 The Andersen–Kashaev state-integral; 2.6 A new state-integral; 3.3 Borel resummation and Stokes constants; 4.2 The Habiro polynomials and the descendant ; 4.4 Borel resummation and Stokes constants; 4.5 (x,q)-series; 4.6 x-version of Borel resummation and Stokes ; 4.7 An analytic extension of the Kashaev invar; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: The matrixJ m(q)is a fundamental solution to the linearq-difference equation\n- Theorem 7: The descendant state-integral(76)can be expressed in terms of the series (6),\n- Theorem 10: W S,λ,µ(τ)extends to a holomorphic function onC ′ and equals to the matrix\n- Theorem 11: The matrixJ m(x,q)is a fundamental solution to the linearq-difference equa-\n- Theorem 17: The matrixJ m(q)is a fundamental solution to the linearq-difference equation",
+ "tokens": {
+  "brief": 49,
+  "extended": 477
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
+   "title": "Resurgence of Chern–Simons perturbation theory",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-12-a-summary-of-our-results",
+   "title": "A summary of our results",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-13-challenges",
+   "title": "Challenges",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
+   "title": "Illustration with the two simplest hyperbolic knots",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "6-12"
+  },
+  {
+   "id": "sec-006-24-borel-resummation-and-stokes-constants",
+   "title": "Borel resummation and Stokes constants",
+   "pages": "12-18"
+  },
+  {
+   "id": "sec-007-25-the-andersenkashaev-state-integral",
+   "title": "The Andersen–Kashaev state-integral",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-008-26-a-new-state-integral",
+   "title": "A new state-integral",
+   "pages": "19-27"
+  },
+  {
+   "id": "sec-009-33-borel-resummation-and-stokes-constants",
+   "title": "Borel resummation and Stokes constants",
+   "pages": "27-37"
+  },
+  {
+   "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+   "title": "The Habiro polynomials and the descendant Kashaev invariants",
+   "pages": "37-42"
+  },
+  {
+   "id": "sec-011-44-borel-resummation-and-stokes-constants",
+   "title": "Borel resummation and Stokes constants",
+   "pages": "42-47"
+  },
+  {
+   "id": "sec-012-45-xq-series",
+   "title": "(x,q)-series",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+   "title": "x-version of Borel resummation and Stokes constants",
+   "pages": "48-52"
+  },
+  {
+   "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+   "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+   "pages": "52-56"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "56-59"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:42:11.239379+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:45:00.041818+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "complex_analytic_framing_supported",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "qbeta-c3-complex-singularity-probe",
   "scriptFile": "qbeta_c3_complex_singularity_probe.py",
-  "scriptHash": "3ddb6c2ba6bc",
-  "scriptCommitSha": "a2ddbd04658a8877f2c0366de03f2c19ca9be286",
+  "scriptHash": "9d4221a6855c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_complex_singularity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_complex_singularity_probe.py"
   },
   "description": "Tests the complex-analytic/root-of-unity framing for c_3 after the real-q falsification. From published anchors (c_3 swing 2.88% over Δq=1.28e-8), the nearest-singularity distance b≈|c_3|/|dc_3/dq|≈4.444e-7. Complex-analytic framing SUPPORTED (b≪1); root-of-unity mechanism REFUTED (nearest RoU ~2.47e+5× farther). Singularity is near-real at q₀, consistent with the residue-A simple pole at u_substrate. Feasibility/geometry probe — NOT a closure; the categorical c_3 element remains open. Diagnostic-only.",
   "data": {

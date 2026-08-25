@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/frobenius-s-classification.lean"
   },
   "source_hashes": {
-    "ts": "f01f27d7f7ae",
     "md": "071b31e6925d",
-    "lean": "0a6ba6a168a3"
+    "ts": "d6bb7b63699f",
+    "lean": "0a6ba6a168a3",
+    "lean_statement": "a365dbeb361b"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -995,31 +996,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "071b31e6925d",
-          "ts": "f01f27d7f7ae",
-          "lean": "0a6ba6a168a3",
-          "lean_statement": "a365dbeb361b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1965,7 +1946,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.136Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'cannot capture chirality' states an impossibility directly; no assert-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.174Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'Consequently, any S-symmetric ansatz ... necessarily lives in the 2-dimensional S-invariant subspace' is a derived corollary of the parity table, not a reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.213Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.253Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Three functionals and three terms — the objects the proposition classifies."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.295Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closing sentence is the block's mathematical payload (a parity obstruction), not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.336Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No narration of emphasis; 'Term by term' is a structural cue."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.372Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'Exactly one of the three terms is S-anti-invariant' restates the display above it, but as the explicit premise of the 'Consequently' that follows — transitional, not a closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.411Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.449Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'exactly', 'necessarily', 'regardless of the mixing parameter' are all precise and licensed by the parity argument.",
+        "notes": "SCOPE NOTE (AGENTS.md refuted/ruled-out rule): 'cannot capture chirality regardless of the mixing parameter' is a scope-(b) structural exclusion and it is correctly licensed — the invariant cited is the S-parity decomposition proved in the sibling proof, which is exactly what (b) requires. No re-scoping needed. VERIFIED: the three Wedderburn weights close, W_sym + W_alt + W_std = (2q^2 + (q^2+1)^2)/D = (q^4+4q^2+1)/D = 1."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.769Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:04.489Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Statement prose is short; the parity bookkeeping is carried by the display.",
+        "notes": "Render note: the aligned environment is inside $$...$$, i.e. in math mode, so it satisfies render-math-mode-envelope."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "071b31e6925d",
+          "ts": "d6bb7b63699f",
+          "lean": "0a6ba6a168a3",
+          "lean_statement": "a365dbeb361b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:56:04.489Z"
 }

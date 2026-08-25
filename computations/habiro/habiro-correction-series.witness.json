@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T00:29:15.206439+00:00",
-  "commitSha": "c53d5c134854f8a6234085e756b21410ff48ffa5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:08:35.888853+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "S_near_1_plus_hsq",
@@ -14,24 +14,40 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 30,
   "computation": "habiro-correction-series",
   "scriptFile": "habiro_h9_correction_series.py",
-  "scriptHash": "4db602ea1b60",
-  "scriptCommitSha": "ed6047e7c191f7bac7440b088c746ad3bc524e57",
+  "scriptHash": "c005f54a6867",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Habiro correction series S = 1 + c₂·ℏ² + c₄·ℏ⁴ + ... Product form: S ≈ (1+ℏ²)(1 + c_next·ℏ²) with c_next ≈ -0.032537. Best algebraic match: c_next ≈ −1/30 (miss 0.000796).",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_h9_correction_series.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_h9_correction_series.py"
+  },
+  "description": "Habiro correction series S = 1 + c₂·ℏ² + c₄·ℏ⁴ + ... Product form: S ≈ (1+ℏ²)(1 + c_next·ℏ²) with c_next ≈ -0.032569. Best algebraic match: c_next ≈ −1/30 (miss 0.000764).",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
   "data": {
-    "S_exact": "1.009494628571926663503605",
-    "c2_approx": 0.9671433485147867,
-    "c_next_after_1_plus_hsq": -0.03253722739021761,
+    "S_exact": "1.009494309259837381739023",
+    "c2_approx": 0.9671110255528366,
+    "c_next_after_1_plus_hsq": -0.032569236182882766,
     "best_algebraic_match": "-1/30",
-    "miss_vs_neg_1_over_30": 0.0007961059431157219
+    "miss_vs_neg_1_over_30": 0.000764097150450564
   }
 }

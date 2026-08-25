@@ -70,8 +70,9 @@ from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 from q_parameter import Q  # noqa: E402
 from _precision import json_safe_float  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 # ── Partition utilities ────────────────────────────────────────────

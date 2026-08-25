@@ -94,7 +94,7 @@ BANNED_SYMBOLS = [
         "purged_by": "PR #985 (NEGATIVE) / PR #1027 (production revert)",
         "canonical_replacement": (
             "canonical_mass.proton_neutron_mass_mev() for absolute mass "
-            "(λ_A excised as density 2026-06-24); vol_density_per_block "
+            "(λ_A excised as density 2026-06-24); per_knot_density_per_block "
             "for binding/trace ratios"
         ),
     },
@@ -108,8 +108,8 @@ BANNED_SYMBOLS = [
         "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
         "canonical_replacement": (
             "canonical_mass.proton_neutron_mass_mev() for absolute mass "
-            "(the former vol_density_borromean route was excised as a fit "
-            "2026-06-24); vol_density_per_block for binding/trace ratios"
+            "(the former per_knot_density_borromean route was excised as a fit "
+            "2026-06-24); per_knot_density_per_block for binding/trace ratios"
         ),
     },
 ]
@@ -162,12 +162,12 @@ def _symbol_banned(name: str) -> dict | None:
                 "production'. Any `lambda_scale_*` symbol is banned; for "
                 "absolute mass use canonical_mass.py (λ_A/VolDensity "
                 "excised as density 2026-06-24), for binding ratios "
-                "vol_density_per_block."
+                "per_knot_density_per_block."
             ),
             "purged_by": "PR #1080 / #1089 (lambda-scale family)",
             "canonical_replacement": (
                 "canonical_mass.proton_neutron_mass_mev() for absolute mass; "
-                "vol_density_per_block for binding/trace ratios"
+                "per_knot_density_per_block for binding/trace ratios"
             ),
         }
     return None

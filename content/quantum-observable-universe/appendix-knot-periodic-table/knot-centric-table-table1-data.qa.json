@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/appendix-knot-periodic-table/knot-centric-table-table1-data.md"
   },
   "source_hashes": {
-    "ts": "a70006f3e98f",
-    "md": "350e4e16a4cf"
+    "md": "350e4e16a4cf",
+    "ts": "a70006f3e98f"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -304,30 +304,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T12:59:50.164Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "350e4e16a4cf",
-          "ts": "a70006f3e98f"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:31:39.010Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -895,7 +876,206 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.231Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.271Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.310Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.349Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.390Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.431Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.471Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.511Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.553Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.594Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:16:56.594Z"
 }

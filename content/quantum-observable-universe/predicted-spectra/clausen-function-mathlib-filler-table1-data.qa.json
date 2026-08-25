@@ -299,30 +299,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "e82d6745b7a8",
-          "ts": "4459a8749682"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -890,12 +871,371 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.442Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.026Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.545Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.085Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.586Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.157Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.628Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.197Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.669Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.234Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.712Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.275Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.753Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.314Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.794Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.354Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.877Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.393Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:36.928Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences carrying a trap.",
+        "notes": "Table-only block. Verified the two volume carriers against the corpus convention: Vol_figure_8 = 2 Cl_2(pi/3) and Vol_Borromean = 8 Cl_2(pi/4) are stated with the Cl_2 coefficient (not the Lambda coefficient), so this block does not carry the Lambda-vs-Cl_2 swap. Recomputed 2*Cl_2(pi/3) = 2.0298832128; 8*Cl_2(pi/4) = 7.3277247539 (mpmath clsin, 40 dps), both correct. Status cells ('unconditional, no longer opaque') are a sec4d status leak, not a trap."
+      },
+      {
+        "field_hash": {
+          "md": "e82d6745b7a8",
+          "ts": "4459a8749682"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:37:07.433Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 7-row definition/content/status table for the Clausen-function Mathlib filler. No prose sentences; none of the ten constructions present. (This entry SUPERSEDES my earlier agent:i00 entry on this block, whose note asserted an unrecomputed identity; see notes.)",
+        "notes": "RETRACTION of my own earlier note: I wrote that '8 Cl_2(pi/4) = 7.3277' without computing it. Recomputed (mpmath clsin, 30 dps): Cl_2(pi/4) = 0.9818721511, so 8*Cl_2(pi/4) = 7.8549772084 -- 7.20 percent ABOVE Vol(Borromean) = 7.3277247534. The correct identity is Vol_Borromean = 8*Cl_2(pi/2) = 8G = 16*Lambda(pi/4). DEFECT (reported, not fixed -- math): row 5 of this table states 'Vol_Borromean | 8 Cl_2(pi/4) carrier', which contradicts (a) its OWN Lean carrier, ClausenFunctionMathlibFiller.lean:139 'noncomputable def Vol_Borromean : Real := 8 * Cl_2 (Real.pi / 2)', proved against 7.3277247534 by CatalanValueBounds.abs_Vol_Borromean_sub_lt, and (b) row 3 of this same table, which correctly gives Catalan_constant = Cl_2(pi/2). Rows Vol_figure_8 = 2 Cl_2(pi/3) (Lean line 130) and Catalan_constant = Cl_2(pi/2) (Lean line 121) both check out; only the pi/4 argument is wrong. This is the AGENTS.md Lambda-vs-Cl_2 argument-swap class."
+      }
     ]
   },
   "label": "tbl:clausen-function-mathlib-filler-table1-data",
   "source_hashes": {
-    "ts": "4459a8749682",
-    "md": "e82d6745b7a8"
+    "md": "e82d6745b7a8",
+    "ts": "4459a8749682"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:37:07.433Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T04:18:32.383866+00:00",
-  "commitSha": "db820b522903b01865f0a0ca672cf9ab32f904df",
+  "computedAt": "2026-08-21T14:51:14.992964+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "q3_is_exact_balancing",
@@ -12,9 +12,9 @@
     },
     {
       "name": "li2q_tower_wrong_scale_for_correction",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "F_Bor_alone_subpercent",
@@ -29,12 +29,12 @@
       "passed": true
     }
   ],
-  "allPassed": true,
-  "durationMs": 25,
+  "allPassed": false,
+  "durationMs": 20,
   "computation": "li2q-fbor-expansion-probe",
   "scriptFile": "li2q_fbor_expansion_probe.py",
-  "scriptHash": "489a68ace842",
-  "scriptCommitSha": "74394ac441fd87a73f33dcf6754a87a32f22a558",
+  "scriptHash": "7d3b072c18ce",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,7 @@
   "description": "Reframing probe for bean ovud: proves the F_Bor `/q^3` is the EXACT q-factorial balancing [3]_q!/q^3 = 1+2q^-2+2q^-4+q^-6 (not a fit), locates the genuine approximation layer (the habiro_ratio {46,4,29} at u^4/u^5/u^6), measures layer sizes, and reports the Li_2^q u-expansion coefficients as the target for a follow-up against the habiro_ratio (NOT the exact /q^3).",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "convention": "wenzl-schur"
   },
   "data": {
@@ -63,37 +63,34 @@
       "is_exact": true
     },
     "step23_layer_sizes": {
-      "trM_borromean": "0.99856216319741255575768689907",
-      "qfact3_over_q3": "4.4755737424663707495078667843",
-      "F_Bor": "4.46913859782675858137078848338",
-      "u": "0.0085172363404849214399331129023",
-      "habiro_ratio": "1.0000002422447144406619337925",
-      "habiro_ratio_minus_1": "0.000000242244714440661933792496857101",
-      "m_p_F_Bor_only_mev": "938.271860868979810321390560663",
-      "m_p_full_mev": "938.272088160378814235888817352",
-      "err_F_Bor_only_ppb": "-242.244252022",
-      "err_full_ppb": "0.000403736017163"
+      "trM_borromean": "0.998562163836787265951213135147",
+      "qfact3_over_q3": "4.47557387774006744602869060636",
+      "F_Bor": "4.46913873576752252938907513085",
+      "u": "0.00851723455015614218925557360331",
+      "habiro_ratio": "1.00000024224451072768935729581",
+      "habiro_ratio_minus_1": "0.000000242244510727689357295813643745",
+      "m_p_F_Bor_only_mev": "938.272089427324263727356670417",
+      "m_p_full_mev": "938.272316718587496496317272131",
+      "err_F_Bor_only_ppb": "1.3507001644",
+      "err_full_ppb": "243.595211219"
     },
     "step4_li2q_u_coefficients": {
       "a_1": "1.0",
-      "a_2": "-0.248645272504222281",
-      "a_3": "0.109515606774578336",
-      "a_4": "-0.0608319508660140015",
-      "a_5": "0.0383109372486596873",
-      "a_6": "-0.0260902324947668682",
-      "a_7": "0.0187345222686398554",
-      "a_8": "-0.0139732093918851465"
+      "a_2": "-0.248645272802457778",
+      "a_3": "0.109515607123607728",
+      "a_4": "-0.0608319512277150833",
+      "a_5": "0.0383109376108203079",
+      "a_6": "-0.0260902328516978689",
+      "a_7": "0.0187345226170161618",
+      "a_8": "-0.0139732097294919747"
     },
     "step5_scale_check": {
-      "proton_per_gen_full_vols": [
-        "0.9890073159508121",
-        "0.9710701586540191"
-      ],
-      "sum_neg_li2q_tower": "1.61830533031129964356350982413",
-      "habiro_ratio_lead_46_u4": "0.000000242076496551670299884480906613",
+      "proton_per_gen_full_vols": [],
+      "sum_neg_li2q_tower": "0.0",
+      "habiro_ratio_lead_46_u4": "0.000000242076293013168099946964070046",
       "verdict": "Li_2^q brane-tower (terms 2/3) is O(1) on the O(1) proton volumes — WRONG scale for the O(1e-7) habiro_ratio correction. The +242 ppb closer is the term-6 Habiro residue tail; its {46,4,29} are a CODATA-anchored near-match with no derivation trail. Deriving them is the same open Habiro-element problem as the Q_beta c_k ladder (beans kehn / s5bb keystone)."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T20:39:23.759010+00:00",
-  "commitSha": "7292483aeb7f40c5753a50898cd38843f8684f15",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:02:03.184821+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "g2_reproduces_corpus",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-r-is-binding-residual",
   "scriptFile": "deuteron_r_is_binding_residual_probe.py",
-  "scriptHash": "512ea0cd9f53",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a23ce89db98f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_r_is_binding_residual_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_r_is_binding_residual_probe.py"
   },
   "description": "Decisive reframing of the g₂ chase: the bar-even coefficient g₂ = (E_AME/E⁺ − 1)/h² (#4158 Magnus definition; E⁺=E_rot/(1−t), all pure theory except the MEASURED E_AME) is an AFFINE image of the deuteron binding, with amplification E_AME/(E⁺·h²) ≈ 23.9 (Lean-proved, BindingResidualAmplification). Reproduces the corpus g₂ = 1.00865 exactly. So r = g₂−1 ≈ +0.87% is the binding residual magnified ~24× by 1/h²: deriving r ≡ predicting B(deuteron) to ~36 ppm (~2540× tighter than the current −9.21% accuracy; finer than the tabulated E_rot's 1e-4 MeV precision, which already moves r by 2.3%). r is NOT a separable special-function puzzle — it IS the Δ_λ deuteron-binding closure viewed through a 1/h² magnifier, which quantifies the §2e entropy warning and explains why every amplitude gives the derived leading g₂≈1 but never the residual. Recommendation: pause the g₂/r chase. scope-(a), audit-only, nothing wired; no fit, no AME inversion.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

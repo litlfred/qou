@@ -2,28 +2,28 @@
   "probe": "qbeta_5two_route21_cut_avoidance_proved",
   "bean": "qou-trns",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoCutAvoidance.lean (xy_neg, eliminant, quintic_pos)",
   "gates": [
     {
       "gate": "G1",
       "claim": "on |x| = 1 the GGM cubic in y has REAL coefficients: its roots coincide with those of Y^3 - 2c Y^2 + (1+2c) Y - 1, c = cos(phi). This is the observation that removes the complex analysis from the whole question",
       "n_points": 49,
-      "worst": "4.5917748e-41",
+      "worst": "3.6222716e-71",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "hre and him as stated in Lean's `xy_neg` really are the real and imaginary parts of P(t*(c - i*s)) -- i.e. the hypotheses are the substitution they claim to be, not a transcription of something else",
       "n_checks": 69,
-      "worst": "2.3073383e-40",
+      "worst": "1.8211974e-70",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "the Bezout cofactors are right: A*I + B*II = t^3 (t-1)^4 (t^5 - t^3 + 1) with A = -t^4 (t-1)^4 (2c^2 t^2 + c - t^2), B = -t^3 (t-1)^4 (2c t^2 + 1). Lean checks this by `linear_combination`, so the resultant is verified, not trusted",
       "n_points": 5,
-      "worst": "1.0532429e-35",
+      "worst": "1.186946e-66",
       "pass": true
     },
     {

@@ -2,7 +2,7 @@
   "probe": "qbeta_5two_route34_landen_closed",
   "bean": "qou-rstq",
   "cross_ref": "qou-trns",
-  "dps": 50,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/MathlibExt/ComplexDilogarithmLanden.lean"
   ],
@@ -17,8 +17,8 @@
       "gate": "G1",
       "claim": "landenCombo_ofReal_eq_zero AS STATED: Li2(t) + Li2(t/(t-1)) + log(1-t)^2/2 = 0 for every real t < 0. 200 points from -0.05 to -10. This is the Lean theorem's exact content, not a nearby identity",
       "n_points": 200,
-      "worst_abs": "1.069105884e-50",
-      "at_t": "-8.2",
+      "worst_abs": "7.244543263e-71",
+      "at_t": "-8.45",
       "pass": true
     },
     {
@@ -27,35 +27,35 @@
       "per_decade": [
         {
           "t": "-0.1",
-          "abs_combo": "1.357263329e-52"
+          "abs_combo": "1.414949856e-72"
         },
         {
           "t": "-0.01",
-          "abs_combo": "1.199024696e-53"
+          "abs_combo": "1.823958799e-74"
         },
         {
           "t": "-0.001",
-          "abs_combo": "1.006834088e-55"
+          "abs_combo": "1.468148654e-75"
         },
         {
           "t": "-0.0001",
-          "abs_combo": "2.014265585e-56"
+          "abs_combo": "3.753359818e-76"
         },
         {
           "t": "-1.0e-5",
-          "abs_combo": "7.798993897e-57"
+          "abs_combo": "5.361656452e-77"
         },
         {
           "t": "-1.0e-6",
-          "abs_combo": "3.02664613e-57"
+          "abs_combo": "1.056355413e-77"
         },
         {
           "t": "-1.0e-7",
-          "abs_combo": "2.773541392e-60"
+          "abs_combo": "4.642151725e-79"
         },
         {
           "t": "-1.0e-8",
-          "abs_combo": "8.390458512e-60"
+          "abs_combo": "1.52503376e-80"
         }
       ],
       "pass": true
@@ -67,7 +67,7 @@
       "Li2_half": "0.5822405264650125059",
       "Li2_half_closed_form": "0.5822405264650125059",
       "log_term": "0.24022650695910071233",
-      "sum": "0.0",
+      "sum": "4.527839539e-72",
       "each_piece_nonzero": true,
       "half_matches_closed_form": true,
       "pass": true
@@ -92,17 +92,17 @@
         {
           "t": "3.0",
           "abs_combo": "2.54761240984",
-          "combo": "(0.0 - 2.54761240984j)"
+          "combo": "(7.24454326306e-71 - 2.54761240984j)"
         },
         {
           "t": "5.0",
           "abs_combo": "1.40205228301",
-          "combo": "(-5.34552942018e-51 - 1.40205228301j)"
+          "combo": "(3.62227163153e-71 - 1.40205228301j)"
         },
         {
           "t": "2.24698",
           "abs_combo": "3.69993198383",
-          "combo": "(-1.06910588404e-50 - 3.69993198383j)"
+          "combo": "(0.0 - 3.69993198383j)"
         }
       ],
       "all_nonzero": true,
@@ -112,8 +112,8 @@
       "gate": "G6",
       "claim": "CHECKED OFF THE CONFIGURATION IT WILL BE USED ON: the identity also holds at complex points off the real axis, where the Lean theorem says nothing. If it held ONLY on the negative reals that would signal the real-restriction had smuggled something in; it does not",
       "n_points": 120,
-      "worst_abs": "5.387129498e-51",
-      "at_z": "(-4.0 + 1.0j)",
+      "worst_abs": "3.650460941e-71",
+      "at_z": "(-3.5 + 1.0j)",
       "pass": true
     },
     {

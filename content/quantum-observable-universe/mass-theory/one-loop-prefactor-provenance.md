@@ -4,7 +4,7 @@ $$
   c_\sigma \;=\; k \cdot |\tau_{\mathrm{DG}}|^{\,p}.
 $$
 
-Then the two factors have different provenance, and conflating them is the error this block exists to prevent.
+Then the two factors have different provenance.
 
 - **The form is literature.** Dimofte–Gukov–Lenells–Zagier expand the perturbative $\mathrm{SL}(2,\mathbb{C})$ Chern–Simons partition function as $Z^{(\rho)}(M;\hbar) = \exp\big(S_0/\hbar - \tfrac{1}{2}\delta^{(\rho)}\log\hbar + \sum_{n\ge 0} S_{n+1}\hbar^n\big)$ and identify the one-loop coefficient with the Ray–Singer torsion of $M$ twisted by the flat bundle $E_\rho$: $S_1^{(\rho)} = \tfrac{1}{2}\log\big(T(M;E_\rho)/2\big)$. The statement is for a **general** $3$-manifold with a flat $G_\mathbb{C}$ bundle — no restriction to knots, to two-bridge knots, or to cusp number. So the dependence $c_\sigma \propto (\text{torsion})^{-1/2}$ is not an assumption of this corpus; it is a cited result. What it is *not* is a theorem: it is a one-loop saddle-point/Feynman-diagram derivation.
 

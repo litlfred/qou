@@ -475,6 +475,8 @@ export default chapter({
         "q-resolvent-unique",
         "q-resolvent-unique-proof",
         "laplace-fourier-wick-rotation",
+        "q-exp-entire",
+        "beta-eq-ln-q-dictionary",
       ],
     }),
 

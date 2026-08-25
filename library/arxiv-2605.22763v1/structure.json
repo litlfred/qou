@@ -1,0 +1,288 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2605.22763v1",
+ "source": {
+  "file": "2605.22763v1.pdf",
+  "sha256": "1fe6b92bb5eb0b454cd26149d7756c41cd9c48208b85c1fa447770f583e84566",
+  "bytes": 2067520,
+  "pages": 59
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2605.22763",
+   "version": "1",
+   "primary_class": "cs.AI",
+   "stamp_date": "21 May 2026"
+  },
+  "doi": null,
+  "title": "Advancing mathematics research with AI-driven formal proof search",
+  "authors_raw": "Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós",
+  "abstract": null,
+  "docinfo": {
+   "Author": "George Tsoukalas; Anton Kovsharov; Sergey Shirobokov; Anja Surina; Moritz Firsching; Gergely Bérczi; Francisco J. R. Ruiz; Arun Suggala; Adam Zsolt Wagner; Eric Wieser; Lei Yu; Aja Huang; Miklós Z. Horváth; Andrew Ferrauiolo; Henryk Michalewski; Codrut Grosu; Thomas Hubert; Matej Balog; Pushmeet Kohli; Swarat Chaudhuri",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Advancing Mathematics Research with AI-Driven Formal Proof Search"
+  },
+  "title_lines": [
+   "2026-5-22",
+   "Advancing Mathematics Research with",
+   "AI-Driven Formal Proof Search",
+   "George Tsoukalas1†",
+   "Anton Kovsharov1†",
+   "Sergey Shirobokov1†",
+   "Anja Surina1, Moritz Firsching1, Gergely"
+  ],
+  "title_prev": "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "AlphaProof Nexus",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Systematic Evaluation on Open Problems",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Deployment in Mathematics Research",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Impact of Agent Architecture and Model",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Materials and Methods",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Further Details on AlphaProof Nexus Agents",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Prompts",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Supplementary Text",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Related Work",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Selection of Erdős and OEIS Problems",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Details on Comparisons across Agent Architectures and Models",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Deformalized Lean Proofs",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3073,
+   "n_words": 418
+  },
+  {
+   "id": "sec-001-alphaproof-nexus",
+   "number": null,
+   "title": "AlphaProof Nexus",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7080,
+   "n_words": 1015
+  },
+  {
+   "id": "sec-002-systematic-evaluation-on-open-problems",
+   "number": null,
+   "title": "Systematic Evaluation on Open Problems",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5565,
+   "n_words": 830
+  },
+  {
+   "id": "sec-003-deployment-in-mathematics-research",
+   "number": null,
+   "title": "Deployment in Mathematics Research",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 6514,
+   "n_words": 942
+  },
+  {
+   "id": "sec-004-impact-of-agent-architecture-and-model",
+   "number": null,
+   "title": "Impact of Agent Architecture and Model",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 5075,
+   "n_words": 846
+  },
+  {
+   "id": "sec-005-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 18,
+   "n_chars": 18553,
+   "n_words": 2442
+  },
+  {
+   "id": "sec-006-materials-and-methods",
+   "number": null,
+   "title": "Materials and Methods",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-further-details-on-alphaproof-nexus-agents",
+   "number": null,
+   "title": "Further Details on AlphaProof Nexus Agents",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 14147,
+   "n_words": 2050
+  },
+  {
+   "id": "sec-008-prompts",
+   "number": null,
+   "title": "Prompts",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 241,
+   "n_words": 43
+  },
+  {
+   "id": "sec-009-supplementary-text",
+   "number": null,
+   "title": "Supplementary Text",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-related-work",
+   "number": null,
+   "title": "Related Work",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 15620,
+   "n_words": 3656
+  },
+  {
+   "id": "sec-011-selection-of-erdős-and-oeis-problems",
+   "number": null,
+   "title": "Selection of Erdős and OEIS Problems",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 991,
+   "n_words": 156
+  },
+  {
+   "id": "sec-012-details-on-comparisons-across-agent-architecture",
+   "number": null,
+   "title": "Details on Comparisons across Agent Architectures and Models",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 6377,
+   "n_words": 1017
+  },
+  {
+   "id": "sec-013-deformalized-lean-proofs",
+   "number": null,
+   "title": "Deformalized Lean Proofs",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 59,
+   "n_chars": 68351,
+   "n_words": 10605
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 151587
+ }
+}

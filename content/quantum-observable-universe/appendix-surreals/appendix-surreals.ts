@@ -107,6 +107,8 @@ export default chapter({
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
+        "hyperreal-limit-transfer",
+        "birthday-axioms-do-not-pin-the-birthday",
       ],
     },
     {
@@ -161,7 +163,7 @@ export default chapter({
         "spectral-normal-form",
         "kashaev-surreal",
         // ε^ω = the perpetual obstruction as a single surreal grade
-        // (narrowing of conj:motivic-perpetual-obstruction).
+        // (narrowing of thm:motivic-perpetual-obstruction).
         "perpetual-obstruction-depth-omega",
       ],
     },
@@ -217,8 +219,13 @@ export default chapter({
             "q-collatz-conjecture",
             "two-q-adic-valuation",
             "collatz-contact-boundary-defn",
-            "collatz-parity-to-divisor",
+            // Swapped 2026-08-15: `collatz-parity-to-divisor` declares
+            // `interprets: "prop:collatz-contact-boundary"` and was listed
+            // immediately BEFORE it, so the remark interpreted a result the
+            // reader had not met yet. Adjacent, one section — a listing-order
+            // slip rather than a structural question.
             "collatz-contact-boundary",
+            "collatz-parity-to-divisor",
             "collatz-no-cycles",
             "collatz-no-cycles-proof",
             "collatz-three-forms",

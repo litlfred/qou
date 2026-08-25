@@ -1,1 +1,1 @@
-Even verifying the smallest case ($p = 2, n = 3$) of the [modular Hecke $\leftrightarrow$ nimber correspondence](#conj:on-p-modular-hecke) would be the first explicit connection between Hecke combinatorics and nim-arithmetic, opening a door to a much larger program.
+Even verifying the smallest case ($p = 2, n = 3$) of the [modular Hecke $\leftrightarrow$ nimber correspondence](#conj:on-p-modular-hecke) would be the first explicit connection between Hecke combinatorics and nim-arithmetic, and the entry point to a larger program.

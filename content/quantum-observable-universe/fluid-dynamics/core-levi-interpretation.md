@@ -17,4 +17,4 @@ If the Levi form **degenerates** (driving $\kappa \to 0$ or $\infty$): Vorticity
 **The root-of-unity constraint.**
 Evaluating at $q = e^{i\pi/\kappa}$, the explicit [truncation](#prop:root-of-unity-truncation) back to $(\kappa-1)/2$ modes restricts the core aspect ratio beneath $1 + C(\kappa-1)$. Sending $\kappa \to \infty$ ($q \to 1$) diverges this bound, but restricts the divergence exclusively to a linear rate. Biot--Savart stretching propels collision dynamics at $\sim 1/(T^*-t)$. The terminal outcome depends entirely on whether the representation-theoretic bound $O(\kappa)$ outpaces the dynamical rate $O(1/(T^*-t))$.
 
-The overarching contact-geometric test: **does executing a finite-dimensional approximation over $\mathrm{SU}_q(2)$ correctly preserve Levi form non-degeneracy straight through the infinite-dimensional limit?**
+The contact-geometric test: **does a finite-dimensional approximation over $\mathrm{SU}_q(2)$ preserve Levi form non-degeneracy in the infinite-dimensional limit?**

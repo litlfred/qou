@@ -12,8 +12,23 @@ Also verifies:
 Framework-independent algebraic facts, not QOU derivations.
 """
 
-from itertools import permutations
-from collections import Counter
+import sys
+import time
+from pathlib import Path
+
+# Captured at import, because this module does its whole computation at import
+# time (no main()). Without it, `wrap_legacy` measures only the witness build
+# and records durationMs ~0 — which the shape guard correctly flags as the
+# signature of an interrupted partial write.
+_T0 = time.monotonic()
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules live in substrate/
+
+from itertools import permutations  # noqa: E402
+from collections import Counter  # noqa: E402
+
+from witness_base import WitnessBuilder  # noqa: E402
 
 def compose(p, q):
     """Compose permutations (p ∘ q)(i) = p[q[i]]."""
@@ -180,3 +195,69 @@ print(f"  3̄-dim: color antitriplet (conjugate of SU(3))")
 print(f"  6-dim: Sym²(3) (no singlet → complex type)")
 print(f"  7-dim: Im(O) (imaginary octonions)")
 print(f"  8-dim: adjoint of SU(3) (gluon octet)")
+
+
+# ── Witness emission ────────────────────────────────────────────────
+#
+# `psl27-irrep-verification.witness.json` already existed and named THIS
+# script as its `scriptFile`, but the script never wrote it — the claim was
+# false, and re-running the named producer regenerated nothing. Caught by
+# `witness_provenance_audit.py` (verdict NOT_A_PRODUCER) once that audit was
+# wired into precision-gates.sh; bean qou-w9s3.
+#
+# The four assertions below are the ones the committed witness already
+# carried, computed here rather than transcribed, so the file is now derived
+# from the code that claims it. Every label — `engine`, each `source`, each
+# `unit` — is reproduced VERBATIM from that witness: the point of this change
+# is that the payload stops being hand-maintained, not that it gets reworded.
+# The only additions are `precisionMetadata` and `environment`, which
+# WitnessBuilder stamps on every witness it writes.
+_witness = {
+    "computation": "psl27-irrep-verification",
+    "assertions": [
+        {
+            "name": "GL3F2_order",
+            "computed": len(GL3F2_mats),
+            "expected": 168,
+            "passed": len(GL3F2_mats) == 168,
+            "unit": "count",
+            "source": "Exact enumeration of GL(3,F₂) matrices",
+        },
+        {
+            "name": "conjugacy_classes",
+            "computed": len(conj_classes),
+            "expected": 6,
+            "passed": len(conj_classes) == 6,
+            "unit": "count",
+            "source": "Conjugacy class enumeration",
+        },
+        {
+            "name": "sum_d_squared",
+            "computed": sum_d_sq,
+            "expected": 168,
+            "passed": sum_d_sq == 168,
+            "unit": "count",
+            "source": "1²+3²+3²+6²+7²+8² = 168 = |G|",
+        },
+        {
+            "name": "irrep_dims",
+            "computed": list(irrep_dims),
+            "expected": [1, 3, 3, 6, 7, 8],
+            "passed": list(irrep_dims) == [1, 3, 3, 6, 7, 8],
+            "unit": "list",
+            "source": "Standard representation theory",
+        },
+    ],
+}
+_witness["allPassed"] = all(a["passed"] for a in _witness["assertions"])
+
+_out = (WitnessBuilder.wrap_legacy(
+    "psl27-irrep-verification", _witness,
+    script_path=__file__,
+    engine="python-exact",
+    start_time=_T0,
+    )
+    .save())
+print(f"\nWitness written to {_out}")
+print(f"All passed: {_witness['allPassed']} "
+      f"({len(_witness['assertions'])} assertions)")

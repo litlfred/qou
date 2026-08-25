@@ -13,7 +13,7 @@ experimental_constants.py:55,58,71 states 'CODATA 2022' in its header and commen
 - row 'neutron-proton mass difference energy equivalent in MeV' — Delta_np = 1.29333251(38) MeV in the 2022 adjustment.
   Use here: The L2 Delta_pn accuracy target is currently scored against the 2018 value 1.2933321(5) hardcoded in experimental_constants.py; re-score against 1.29333251.
 
-Source: `uploads/codata-2022-constants.txt` (`codata2022`)
+Source: `library/codata-2022-constants.txt` (`codata2022`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

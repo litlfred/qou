@@ -1,0 +1,118 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "pjm-v161-n1-p02-p",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a93e922eab1ee67c4e275d97302f3523f4d5c6567797f2963b10cf08f9fa814c",
+  "file": "pjm-v161-n1-p02-p.pdf"
+ },
+ "provenance": {
+  "title": "Paci\ufb01c Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+  "authors": "JOAN BIRMAN AND WILLIAM W. M ENASCO",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "lemma": 5,
+   "corollary": 2
+  },
+  "formalization_candidates": 7
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "s 4.4 and 4.5 imply that the only surgeries which are possible",
+   "section_file": "sections/sec-007-4-the-non-standard-foliation-of-the-digons-we-ha.md",
+   "section_title": "The non-standard foliation of the digons. We have shown that A'",
+   "pages": "28-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.6",
+   "name": null,
+   "statement": "the leaf 12 bounds a degenerately foliated region T on",
+   "section_file": "sections/sec-007-4-the-non-standard-foliation-of-the-digons-we-ha.md",
+   "section_title": "The non-standard foliation of the digons. We have shown that A'",
+   "pages": "28-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.5",
+   "name": null,
+   "statement": ", and the name 23 cannot occur by Lemma 5.6, so pq can",
+   "section_file": "sections/sec-010-l-thus-going-to-figure-54c-we-conclude-that-the.md",
+   "section_title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
+   "pages": "46-53",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.3",
+   "name": null,
+   "statement": "we know we may find a fiber of FT which satisfies the",
+   "section_file": "sections/sec-010-l-thus-going-to-figure-54c-we-conclude-that-the.md",
+   "section_title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
+   "pages": "46-53",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.9",
+   "name": null,
+   "statement": "there cannot be more than three singularities of type",
+   "section_file": "sections/sec-011-6-the-classification-theorem-all-of-the-pieces-a.md",
+   "section_title": "The Classification Theorem. All of the pieces are in place, and",
+   "pages": "53-58",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.5",
+   "name": null,
+   "statement": ", and so also of the Classification Theorem. D",
+   "section_file": "sections/sec-015-64-it-is-not-difficult-to-see-that-region-which.md",
+   "section_title": "It is not difficult to see that region which is foliated by the pair",
+   "pages": "79-80",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "7.3",
+   "name": null,
+   "statement": "is true for every braid index.",
+   "section_file": "sections/sec-018-3-seifert-circles-then-3-3-only-if-the-algebraic.md",
+   "section_title": "Seifert circles. Then 3 = 3' only if the algebraic crossing numbers",
+   "pages": "85-87",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean"
   },
   "source_hashes": {
-    "ts": "fd641b09e49a",
     "md": "85dcd4fae4b7",
-    "lean": "055594e72b13"
+    "ts": "fd641b09e49a",
+    "lean": "055594e72b13",
+    "lean_statement": "9303d604ebe7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -266,31 +267,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "85dcd4fae4b7",
-          "ts": "fd641b09e49a",
-          "lean": "055594e72b13",
-          "lean_statement": "9303d604ebe7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1426,7 +1407,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "result": "pass",
@@ -1584,7 +1566,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative."
       },
       {
         "result": "pass",
@@ -1777,7 +1760,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
       },
       {
         "result": "pass",
@@ -2038,7 +2022,378 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.478Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'an output of R, not a fitted constant' and 'R cannot be fixed by fitting the B_n; it must be derived' are the block's substantive derived-vs-fitted content (false-positive class: substantive mathematical contrast), not manufactured emphasis."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.514Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (3 in 218 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.550Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 218 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.585Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.620Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Ends on a cross-reference to the Q_beta precision ladder -- bookkeeping, not an aphorism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.656Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.689Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.722Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.758Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 229-word conditional proposition (q-difference kernel R, depth-d recurrence, archimedean confluent image)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.352Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.793Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Reads aloud cleanly.",
+        "notes": "RIGOR (not a trap): the precision-floor / c_k information-bound argument matches the corpus framing; no numeric claims to recheck."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a",
+          "lean": "055594e72b13",
+          "lean_statement": "9303d604ebe7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:01:28.793Z"
 }

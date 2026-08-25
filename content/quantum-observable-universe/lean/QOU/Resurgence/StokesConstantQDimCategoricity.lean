@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Coeff
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.Resurgence.StokesConstantQDimCategoricity
@@ -46,7 +47,8 @@ open Finset
 /-- The **quantum integer** `[n]_q = ∑_{i<n} qⁱ = 1 + q + ⋯ + q^{n-1}`.  Mirrors
 the corpus `QOU.MathlibExt.qInt` (`QIntegerFactorial.lean`); reproduced locally
 so this refutation verifies against Mathlib alone. -/
-def qInt {K : Type*} [Field K] (q : K) (n : ℕ) : K := ∑ i ∈ range n, q ^ i
+noncomputable abbrev qInt {K : Type*} [Field K] (q : K) (n : ℕ) : K :=
+  QOU.QInteger.qIntGeo q n
 
 /-! ## 1. The `q = 1` vacuity engine — every integer is a `q=1` quantum integer -/
 

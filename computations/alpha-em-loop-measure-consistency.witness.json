@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-14T02:17:20.320797+00:00",
-  "commitSha": "22a2c94da1661e6d988ef8637c8ccfb163ba17aa",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:53:43.911907+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "measures_differ",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 5,
   "computation": "alpha-em-loop-measure-consistency",
   "scriptFile": "alpha_em_loop_measure_consistency_probe.py",
-  "scriptHash": "46548dc953a3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "57f01e841105",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_loop_measure_consistency_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_loop_measure_consistency_probe.py"
   },
   "description": "Per-loop measure consistency for the alpha_EM graph ladder. The ONLY proved measure principle (heat-kernel: one constant mode 1/Vol per harmonic generator, #1444/photon-ir) gives per-mode 1/Area = 1/(12pi), NOT the self-energy's 1/(pi b1) = 1/(8pi) -- phase-4's 'same measure' consistency claim conflates a mode-count*1/Area with a per-loop 1/(pi b1). Propagating each candidate consistently through the theta-graph ladder: the 1.3-sigma theta-graph hit uses the UNDERIVED 1/(8pi) (mu_A); the proved 1/Area (mu_B) gives a materially different residual. So the candidate is contingent on the undecided per-loop measure -- closing alpha_EM to <= sigma_a genuinely requires DERIVING 1/(8pi), which the zero-mode argument does not supply. Nothing wired; window falsify-only; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

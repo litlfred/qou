@@ -143,11 +143,11 @@ class MassFormula where
       ratio (≈ 1836.15267) to within the Q_β residual band.  This is the
       conjectural content; consumers see it as a hypothesis. -/
   proton_matches_codata :
-    |proton_mass_over_me - 1836.15267343| ≤ qbeta_residual * 1836.15267343
+    |proton_mass_over_me - 1836.152673426| ≤ qbeta_residual * 1836.152673426
   /-- The predicted neutron mass matches the CODATA neutron/electron
       mass ratio (≈ 1838.68366) to within the Q_β residual band. -/
   neutron_matches_codata :
-    |neutron_mass_over_me - 1838.68366173| ≤ qbeta_residual * 1838.68366173
+    |neutron_mass_over_me - 1838.68366200| ≤ qbeta_residual * 1838.68366200
 
 end Borromean
 end QOU

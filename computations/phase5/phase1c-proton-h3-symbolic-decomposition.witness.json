@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-07T12:27:19.873141+00:00",
-  "commitSha": "b5a37c77afe6a8cc3bf08d3d16953926e033dd10",
+  "computedAt": "2026-08-23T09:16:37.594228+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "lean_form_match",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 20,
   "computation": "phase1c-proton-h3-symbolic-decomposition",
   "scriptFile": "phase1c_proton_h3_symbolic_decomposition.py",
-  "scriptHash": "19172388c7a7",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "34918adfd4ff",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase1c_proton_h3_symbolic_decomposition.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase1c_proton_h3_symbolic_decomposition.py"
   },
   "description": "Exact symbolic per-partition decomposition of the proton Borromean Markov trace at H₃. Computes y_λ · χ^λ(β_Bor) as rational functions of q for all 3 partitions: (3), (2,1), (1,1,1). Cross-checks against Lean-proved closed form.",
   "contentBlock": "prop:proton-mass-substrate-identity",

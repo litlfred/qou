@@ -10,10 +10,27 @@ def test_package_importable():
 
 
 def test_substrate_constants_have_expected_values():
-    """q_0 from CODATA 2022 + SnapPy 3.3.2 — values must be bit-stable."""
+    """q_0 from CODATA 2022 + SnapPy 3.3.2 — values must be bit-stable.
+
+    `MASS_RATIO_MU_E` is asserted against the NIST table rather than a
+    literal. It read ``== 206.7682830`` until 2026-08-15 — the CODATA-**2018**
+    value — so this test was pinning the very edition straddle it looked like
+    it was guarding against. A test that transcribes a constant cannot detect
+    a mis-transcription; it can only freeze one.
+
+    `VOL_FIGURE_EIGHT` was the SAME defect, one line down, and survived that
+    fix: it read ``== 2.029883212819307`` until 2026-08-21, freezing a literal
+    that is not even the correctly-rounded f64 of 2·Cl₂(π/3)
+    (``2.0298832128193074``). Now asserted against the computation, exactly as
+    the mass ratio is asserted against the table.
+    """
+    import mpmath as mp
+
     from qou_substrate import Q, HBAR_Q, HBAR_Q_SQ, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E
-    assert VOL_FIGURE_EIGHT == 2.029883212819307
-    assert MASS_RATIO_MU_E == 206.7682830
+    from qou_substrate.codata import codata
+    with mp.workdps(60):
+        assert VOL_FIGURE_EIGHT == float(2 * mp.clsin(2, mp.pi / 3))
+    assert MASS_RATIO_MU_E == float(codata("muon-electron mass ratio").value)
     # Internal identities — these ARE definitional and must hold to f64.
     assert abs(HBAR_Q - HBAR_Q_SQ**0.5) < 1e-15
     assert abs(Q - 1.0 / (1.0 - HBAR_Q)) < 1e-15

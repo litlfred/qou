@@ -1,5 +1,6 @@
 import _path_bridge, sympy as sp, mpmath as mp
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_MP as Q
 from markov.markov_peel import word_to_element
 from markov.markov_trace_canonical import tr_M_element
@@ -7,7 +8,7 @@ from hecke_symbolic import q as qsym, HA as H_SYMB, z_markov as Z_SYMB
 
 q0 = sp.Float(str(Q), 50)
 h0 = q0 - 1/q0
-z0 = 1/(sp.sqrt(q0) + 1/sp.sqrt(q0))
+z0 = q0**3 / (q0**2 + 1)
 print("q0 =", q0, " h0 =", sp.N(h0, 25), " z0 =", sp.N(z0, 25))
 
 

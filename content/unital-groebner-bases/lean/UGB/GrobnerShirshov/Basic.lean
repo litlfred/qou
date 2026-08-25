@@ -1,5 +1,6 @@
 import Mathlib.Order.WellFounded
 import Mathlib.Data.Finset.Insert
+import Mathlib.Tactic.NoncommRing
 import UGB.GrobnerShirshov.Elem
 
 /-!
@@ -354,6 +355,35 @@ theorem MultiStepReduction.head {G : Type u} {k : Type v} [Ring k] [DecidableEq 
   | refl => exact MultiStepReduction.step (MultiStepReduction.refl f) hstep
   | step _ hlast ih => exact MultiStepReduction.step ih hlast
 
+/-- Runs compose. -/
+theorem MultiStepReduction.trans {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g h : AlgElement G k}
+    (h₁ : MultiStepReduction ord sys f g)
+    (h₂ : MultiStepReduction ord sys g h) :
+    MultiStepReduction ord sys f h := by
+  induction h₂ with
+  | refl => exact h₁
+  | step _ hlast ih => exact MultiStepReduction.step ih hlast
+
+/-- **Head decomposition**: a run is either empty, or a first step followed by a
+    run.
+
+    `MultiStepReduction` is generated at the *tail* — `step` appends a step to a
+    run — so this is the dual view, and it is the one Newman's lemma needs: the
+    induction there is on the source of the fork, so the first step has to be the
+    one exposed. -/
+theorem MultiStepReduction.cases_head {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g : AlgElement G k} (h : MultiStepReduction ord sys f g) :
+    g = f ∨ ∃ a, SingleStepReduction ord sys f a ∧ MultiStepReduction ord sys a g := by
+  induction h with
+  | refl => exact Or.inl rfl
+  | step _ hlast ih =>
+    rcases ih with rfl | ⟨a, hfa, hag⟩
+    · exact Or.inr ⟨_, hlast, MultiStepReduction.refl _⟩
+    · exact Or.inr ⟨a, hfa, MultiStepReduction.step hag hlast⟩
+
 /-- An element is in **normal form** with respect to a rewriting system
     if no leading monomial of any rule divides (appears as a subword of)
     any monomial actually occurring in the element.
@@ -375,6 +405,35 @@ theorem not_singleStep_of_isNormalForm {G : Type u} {k : Type v} [Ring k]
     ¬ SingleStepReduction ord sys f g := by
   rintro ⟨r, hr, a, b, c, hne, -, -⟩
   exact hnf r hr _ hne ⟨a, b, rfl⟩
+
+/-- **The converse, with the hypothesis it actually needs**: if every rule has a
+    *unit* leading coefficient, then an element not in normal form admits a step.
+
+    The hypothesis is not cosmetic bookkeeping. `isNormalForm` is a condition on
+    **monomials** — no rule's leading monomial is an infix of one carrying a
+    non-zero coefficient — whereas taking a step additionally requires solving
+
+    `c · lc(r) = f.coeff (a ++ lm(r) ++ b)`
+
+    for `c`. When `lc(r)` is not invertible those two conditions come apart, and
+    an element can be **stuck**: reducible-looking (so not in normal form), yet
+    with no reduction available (so unable to reach one). That is not a gap in
+    this proof — it is a true statement about the reduction relation, and
+    `NormalFormExistsRefutation` exhibits it concretely over `ℤ`. -/
+theorem exists_singleStep_of_not_isNormalForm {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
+    {f : AlgElement G k} (hnf : ¬ isNormalForm ord sys f) :
+    ∃ g, SingleStepReduction ord sys f g := by
+  rw [isNormalForm] at hnf
+  push_neg at hnf
+  obtain ⟨r, hr, m, hm, a, b, hab⟩ := hnf
+  subst hab
+  obtain ⟨u, hu⟩ := hlc r hr
+  refine ⟨AlgElement.sub f (AlgElement.smul (f.coeff (a ++ r.lm ord ++ b) * ↑u⁻¹)
+      (AlgElement.contextMul a r.relation b)),
+    ⟨r, hr, a, b, f.coeff (a ++ r.lm ord ++ b) * ↑u⁻¹, hm, ?_, fun _ => rfl⟩⟩
+  rw [← hu, mul_assoc, Units.inv_mul, mul_one]
 
 /-- An element `f` **reduces to normal form** `nf` if `f →* nf` and
     `nf` is in normal form. -/
@@ -451,6 +510,41 @@ noncomputable def OverlapComposition.spoly {G : Type u} {k : Type v} [Ring k]
     (AlgElement.smul (oc.rule₁.lc ord)
       (AlgElement.contextMul oc.left oc.rule₂.relation []))
 
+/-- **A rule composed with itself over its whole leading monomial is vacuous.**
+
+`OverlapComposition` places no condition on `left` or `right`, so `left = right =
+[]` — the two rules leading on the *same* word — is a legal composition, and it
+is legal in particular when the two rules are the same rule. Then the two halves
+of the S-polynomial are literally the same element and it is zero.
+
+Worth having explicitly rather than as an aside: in any completeness proof the
+degenerate shapes are as much a proof obligation as the genuine overlaps, and
+this discharges every one of them whose two rules coincide. What it does *not*
+cover is two **distinct** rules leading on the same word — see
+`UGB.GrobnerShirshov.Hecke.DegenerateYbBs`, where that case is inhabited. -/
+theorem OverlapComposition.spoly_isZero_of_self {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (oc : OverlapComposition G k ord)
+    (hrule : oc.rule₁ = oc.rule₂) (hleft : oc.left = []) (hright : oc.right = []) :
+    oc.spoly.isZero := by
+  intro m
+  simp only [OverlapComposition.spoly, hrule, hleft, hright, AlgElement.sub_coeff,
+    AlgElement.smul_coeff, AlgElement.contextMul_nil_nil_coeff, sub_self]
+
+/-- An element that is zero is in normal form: `isNormalForm` only constrains
+monomials with a non-zero coefficient, of which there are none. -/
+theorem isNormalForm_of_isZero {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f : AlgElement G k}
+    (hf : f.isZero) : isNormalForm ord sys f :=
+  fun _ _ m hm => absurd (hf m) hm
+
+/-- …so an element that is zero reduces to zero, in no steps. This is the
+Gröbner–Shirshov obligation for a composition whose S-polynomial vanishes
+outright. -/
+theorem reducesToNF_self_of_isZero {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f : AlgElement G k}
+    (hf : f.isZero) : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero :=
+  ⟨f, ⟨MultiStepReduction.refl f, isNormalForm_of_isZero hf⟩, hf⟩
+
 /-- **Inclusion composition**: when the leading monomial of one rule
     entirely contains that of another as a subword.
 
@@ -478,6 +572,39 @@ noncomputable def InclusionComposition.spoly {G : Type u} {k : Type v} [Ring k]
     (AlgElement.smul (ic.inner.lc ord) ic.outer.relation)
     (AlgElement.smul (ic.outer.lc ord)
       (AlgElement.contextMul ic.left ic.inner.relation ic.right))
+
+/-- **An inclusion whose two contexts are empty is vacuous once the relations are
+proportional by the two leading coefficients.**
+
+With `left = right = []` the S-polynomial is `lc(inner) • outer − lc(outer) •
+inner`, so it vanishes exactly when the hypothesis below holds coefficient by
+coefficient. Both ways a shared leading monomial arises in practice satisfy it:
+the two rules are the same rule, or they are negatives of each other with
+leading coefficients of opposite sign. -/
+theorem InclusionComposition.spoly_isZero_of_scaled {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (ic : InclusionComposition G k ord)
+    (hleft : ic.left = []) (hright : ic.right = [])
+    (h : ∀ m, ic.inner.lc ord * ic.outer.relation.coeff m
+            = ic.outer.lc ord * ic.inner.relation.coeff m) :
+    ic.spoly.isZero := by
+  intro m
+  simp only [InclusionComposition.spoly, hleft, hright, AlgElement.sub_coeff,
+    AlgElement.smul_coeff, AlgElement.contextMul_nil_nil_coeff]
+  rw [h m, sub_self]
+
+/-- **A rule included in itself is vacuous.** Unlike the overlap case this needs
+no hypothesis on the contexts: `decomposition` says `lm = left ++ lm ++ right`,
+and lengths force both contexts empty. -/
+theorem InclusionComposition.spoly_isZero_of_self {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (ic : InclusionComposition G k ord)
+    (hrule : ic.inner = ic.outer) : ic.spoly.isZero := by
+  have hlen := congrArg List.length ic.decomposition
+  rw [hrule] at hlen
+  simp only [List.length_append] at hlen
+  refine ic.spoly_isZero_of_scaled (List.eq_nil_of_length_eq_zero (by omega))
+    (List.eq_nil_of_length_eq_zero (by omega)) ?_
+  intro m
+  rw [hrule]
 
 /-! ### §4.1  The leading terms of an S-polynomial cancel
 
@@ -634,56 +761,110 @@ theorem isGrobnerShirshovBasis_of_single_letter_rule {G : Type u} {k : Type v}
     exact ⟨ic.spoly, ⟨MultiStepReduction.refl _,
       fun r' _ m hm => absurd (hzero m) hm⟩, hzero⟩
 
-/-! ## §6  Existence of Normal Forms -/
+/-! ## §6  Existence of Normal Forms
 
-/-- **Existence of normal forms**: given a GS basis and any element `f`,
-    there exists a normal form reachable from `f`.
+**The `normal_form_exists` axiom that used to stand here was FALSE, and is
+gone** (bean qou-lzoo). `NormalFormExistsRefutation.normal_form_exists_false`
+proves its negation at `G = SU2Gen`, `k = ℤ`, sorry-free and depending on no
+framework axiom. The counterexample is the one-rule system with relation `2·K`:
+it *is* a Gröbner–Shirshov basis, and the element `K` is **stuck** — not in
+normal form, because `isNormalForm` is a condition on monomials and the rule's
+leading monomial occurs; yet admitting no step, because a step must also solve
+`c · lc(r) = 1` with `lc(r) = 2`, and `2` is not a unit in `ℤ`.
 
-    Justification: the admissible order `ord` is well-founded, and each
-    single-step reduction eliminates the monomial it targets while changing
-    only strictly smaller ones.  By well-founded induction on the
-    Dershowitz–Manna multiset ordering, iterated reduction terminates in a
-    normal form.
+The error was to read termination as "the stuck element is in normal form".
+Termination gives only "no infinite reduction sequence"; the two coincide
+exactly when every rule has an invertible leading coefficient — the hypothesis
+Bergman 1978 Thm 1.2 carries and the axiom dropped. `hgs` was a red herring: the
+counterexample satisfies it, so no confluence hypothesis could have rescued it.
 
-    This is axiomatised at the abstract level because the constructive
-    proof requires the multiset-order machinery on `AlgElement` supports.
+`normal_form_exists` is now a **theorem** with that hypothesis, and `reduce` is
+built from it, so nothing in the development rests on the false statement. -/
 
-    Reference: Bergman 1978, Theorem 1.2 (existence part). -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction)
-axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+/-- **Termination**: every sequence of single-step reductions is finite.
+
+    Each `SingleStepReduction` strictly decreases the multiset of monomials in
+    the support under the Dershowitz–Manna ordering, which inherits
+    well-foundedness from `ord.wf`.
+
+    Axiomatised because the proof requires a `Multiset (Monomial G)`
+    representation of `AlgElement` support, a proof that a step strictly
+    decreases it, and the Dershowitz–Manna theorem — components that need
+    subtraction and support extraction not available at this level.
+
+    Lives here rather than in `CompositionLemma` because it is stated purely in
+    this file's vocabulary and `normal_form_exists` below needs it.
+
+    Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §2 Thm 1.1 (reduction is well-founded / terminating)
+axiom reduction_well_founded {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k) :
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
+
+/-- **Existence of normal forms** — the repaired statement, and a theorem.
+
+    Two differences from the axiom this replaces, and both matter:
+
+    1. It carries `hlc`: every rule has a **unit leading coefficient**. Without
+       it the statement is false (see the section note).
+    2. It does **not** take `hgs`. Existence of normal forms is pure termination
+       — reduce until stuck — and has nothing to do with confluence. The axiom's
+       `hgs` argument was never used by the content, and carrying it obscured
+       that the real missing hypothesis was elsewhere.
+
+    Proof: well-founded induction on `reduction_well_founded`. At `x`, either `x`
+    is already normal (done, in zero steps), or
+    `exists_singleStep_of_not_isNormalForm` produces a step `x → y`, and the
+    induction hypothesis applies at `y` precisely because `x → y`.
+
+    Reference: Bergman 1978, Theorem 1.2 (existence part), where the rules are
+    monic — which is what `hlc` restores. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction, monic rules)
+theorem normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf
+    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf := by
+  induction (reduction_well_founded ord sys f) with
+  | intro x _ ih =>
+    by_cases hnf : isNormalForm ord sys x
+    · exact ⟨x, MultiStepReduction.refl x, hnf⟩
+    · obtain ⟨y, hxy⟩ := exists_singleStep_of_not_isNormalForm hlc hnf
+      obtain ⟨nf, hred, hnorm⟩ := ih y hxy
+      exact ⟨nf, MultiStepReduction.head hxy hred, hnorm⟩
 
-/-- **Reduction function**: given a GS basis, select *the* normal form
-    of each element.  Well-defined by normal_form_exists (existence)
-    and normal_form_unique (uniqueness, proved in CompositionLemma.lean). -/
+/-- **Reduction function**: select *the* normal form of each element.
+
+    Takes `hlc` (unit leading coefficients) rather than `hgs`: what makes the
+    choice possible is existence, which is termination plus invertibility.
+    Well-definedness of the *value* — that the choice does not matter — is
+    `normal_form_unique`, and that is where `hgs` is genuinely needed. -/
 noncomputable def reduce {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     AlgElement G k → AlgElement G k :=
-  fun f => (normal_form_exists ord sys hgs f).choose
+  fun f => (normal_form_exists ord sys hlc f).choose
 
 /-- The reduction function produces normal forms. -/
 theorem reduce_is_normal {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    isNormalForm ord sys (reduce ord sys hgs f) :=
-  (normal_form_exists ord sys hgs f).choose_spec.is_normal
+    isNormalForm ord sys (reduce ord sys hlc f) :=
+  (normal_form_exists ord sys hlc f).choose_spec.is_normal
 
 /-- The reduction function witnesses multi-step reduction. -/
 theorem reduce_reduces {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    MultiStepReduction ord sys f (reduce ord sys hgs f) :=
-  (normal_form_exists ord sys hgs f).choose_spec.reduces
+    MultiStepReduction ord sys f (reduce ord sys hlc f) :=
+  (normal_form_exists ord sys hlc f).choose_spec.reduces
 
 /-! ## §7  Algebras without quasi-zeros  (bean qou-k6ks)
 
@@ -736,5 +917,158 @@ theorem noQuasiZerosFree_of_generator {G : Type u} {k : Type v} [Ring k]
   intro f hf m
   have h := hf [g] [] (by rintro ⟨h1, -⟩; exact List.cons_ne_nil g [] h1) ([g] ++ m ++ [])
   rwa [AlgElement.contextMul_coeff_middle] at h
+
+/-- **`NoQuasiZerosFree` says exactly `Nonempty G` — and therefore carries no
+    algebraic content in this development** (bean qou-k6ks).
+
+    The hypothesis is threaded through `local_confluence` and its consequences to
+    record the manuscript's standing assumption. This equivalence measures what
+    that threading actually buys, and the answer is: nothing beyond "the
+    generating set is non-empty".
+
+    * `←` is `noQuasiZerosFree_of_generator`: one generator gives an injective
+      context, which is all the condition asks.
+    * `→` is the degenerate direction. With `G` empty every monomial is `[]`, so
+      *no* non-trivial context exists, the premise `¬(a = [] ∧ b = [])` is never
+      satisfiable, and the condition degenerates to "every element is zero" —
+      false for non-trivial `k`. So the property fails precisely when there is
+      no generator.
+
+    The reason it cannot do real work here is structural and worth stating:
+    Leitner–Pawloski's `A` is the **quotient** `R⟨X⟩/I`, and a quasi-zero is a
+    phenomenon of the quotient. This development's Gröbner–Shirshov framework
+    works entirely in the free algebra, where — as this theorem shows — the
+    condition is automatic. `Quotient.lean` now supplies `QuotAlg`, but only as a
+    `Submodule` quotient; there is no ring structure on it yet, so the chapter's
+    `NoQuasiZeros` cannot even be *stated* there. That, not the threading, is the
+    missing piece. -/
+theorem noQuasiZerosFree_iff_nonempty {G : Type u} {k : Type v} [Ring k]
+    [Nontrivial k] [DecidableEq G] [DecidableEq k] :
+    NoQuasiZerosFree G k ↔ Nonempty G := by
+  constructor
+  · intro h
+    by_contra hemp
+    rw [not_nonempty_iff] at hemp
+    have hnil : ∀ m : Monomial G, m = [] := by
+      intro m
+      cases m with
+      | nil => rfl
+      | cons g _ => exact (hemp.false g).elim
+    have hzero := h (AlgElement.singleton ([] : Monomial G))
+      (fun a b hab => absurd ⟨hnil a, hnil b⟩ hab)
+    have h0 := hzero ([] : Monomial G)
+    rw [AlgElement.singleton_coeff_self] at h0
+    exact one_ne_zero h0
+  · rintro ⟨g⟩
+    exact noQuasiZerosFree_of_generator g
+
+/-! ## §6  Reduction respects `CoeffEq`, and negation
+
+Two facts the family theorems keep needing, and one obstacle worth recording.
+
+`AlgElement` is a representation: `CoeffEq` is the equality that means anything.
+But `MultiStepReduction.refl` is **syntactic**, so a coefficientwise-equal source
+cannot simply be substituted into a chain — `MultiStepReduction f' f` does not
+follow from `CoeffEq f' f`. The way through is `congr_source` below, whose
+conclusion is a *disjunction*: either the chain restarts at `f'`, or `f'` was
+already coefficientwise the chain's endpoint. The `refl` case lands in the second
+disjunct, which is exactly what the syntactic constructor costs.
+
+With that, negating a rule of a composition — the `§4j` situation, where the
+Yang–Baxter and Bokut–Shiao relations at `j = i − 1` are exact negatives with
+opposite leading coefficients — carries a resolution across for free. -/
+
+/-- A step only reads its source through `coeff`, so the source may be replaced
+by any coefficientwise-equal element. -/
+theorem SingleStepReduction.of_coeffEq_left {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g f' : AlgElement G k} (hs : SingleStepReduction ord sys f g)
+    (hf : AlgElement.CoeffEq f' f) : SingleStepReduction ord sys f' g := by
+  obtain ⟨r, hr, a, b, c, hne, hc, hg⟩ := hs.exists_witness
+  refine ⟨r, hr, a, b, c, ?_, ?_, ?_⟩
+  · rw [hf]; exact hne
+  · rw [hf]; exact hc
+  · intro m
+    rw [hg m]
+    simp only [AlgElement.sub_coeff, hf m]
+
+/-- Negating a step negates both ends: run the same rule with `-c`. -/
+theorem SingleStepReduction.neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f g : AlgElement G k}
+    (hs : SingleStepReduction ord sys f g) :
+    SingleStepReduction ord sys (AlgElement.neg f) (AlgElement.neg g) := by
+  obtain ⟨r, hr, a, b, c, hne, hc, hg⟩ := hs.exists_witness
+  refine ⟨r, hr, a, b, -c, ?_, ?_, ?_⟩
+  · simpa using hne
+  · show -c * r.lc ord = -(f.coeff _)
+    rw [neg_mul, hc]
+  · intro m
+    simp only [AlgElement.neg_coeff]
+    rw [hg m]
+    simp only [AlgElement.sub_coeff, AlgElement.smul_coeff, AlgElement.neg_coeff]
+    noncomm_ring
+
+theorem MultiStepReduction.neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f g : AlgElement G k}
+    (hm : MultiStepReduction ord sys f g) :
+    MultiStepReduction ord sys (AlgElement.neg f) (AlgElement.neg g) := by
+  induction hm with
+  | refl => exact MultiStepReduction.refl _
+  | step _ hlast ih => exact ih.step hlast.neg
+
+/-- **The source of a chain may be replaced up to `CoeffEq`** — or the
+replacement was already the endpoint. The disjunction is forced by `refl` being
+a syntactic constructor; it is not a weakness of the proof. -/
+theorem MultiStepReduction.congr_source {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f nf f' : AlgElement G k} (hm : MultiStepReduction ord sys f nf)
+    (hf : AlgElement.CoeffEq f' f) :
+    MultiStepReduction ord sys f' nf ∨ AlgElement.CoeffEq f' nf := by
+  induction hm with
+  | refl => exact Or.inr hf
+  | step _ hlast ih =>
+    rcases ih with hm' | hce
+    · exact Or.inl (hm'.step hlast)
+    · exact Or.inl ((MultiStepReduction.refl _).step (hlast.of_coeffEq_left hce))
+
+/-- Reducing to zero transfers along `CoeffEq`. -/
+theorem reducesToZero_congr {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f f' : AlgElement G k}
+    (h : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero)
+    (hf : AlgElement.CoeffEq f' f) :
+    ∃ nf, ReducesToNF ord sys f' nf ∧ nf.isZero := by
+  obtain ⟨nf, ⟨hred, hnorm⟩, hzero⟩ := h
+  rcases hred.congr_source hf with hm | hce
+  · exact ⟨nf, ⟨hm, hnorm⟩, hzero⟩
+  · exact reducesToNF_self_of_isZero (fun m => (hce m).trans (hzero m))
+
+/-- …and along negation. -/
+theorem reducesToZero_neg {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f f' : AlgElement G k}
+    (h : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero)
+    (hf : ∀ m, f'.coeff m = -(f.coeff m)) :
+    ∃ nf, ReducesToNF ord sys f' nf ∧ nf.isZero := by
+  obtain ⟨nf, ⟨hred, hnorm⟩, hzero⟩ := h
+  refine reducesToZero_congr (f := AlgElement.neg f) ⟨AlgElement.neg nf, ⟨hred.neg, ?_⟩, ?_⟩ hf
+  · intro r hr m hm
+    exact hnorm r hr m (by simpa using hm)
+  · intro m; simp [hzero m]
+
+/-- **Negating either rule of an overlap composition negates its S-polynomial.**
+
+`spoly = lc₂ • (rule₁ · right) − lc₁ • (left · rule₂)`, and negating a rule flips
+both its relation and its leading coefficient — so the two occurrences of the
+sign cancel in one term and reinforce in the other, giving `−spoly` either way.
+-/
+theorem OverlapComposition.spoly_coeff_neg_rule₁ {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (oc oc' : OverlapComposition G k ord)
+    (hrel : ∀ w, oc'.rule₁.relation.coeff w = -(oc.rule₁.relation.coeff w))
+    (hlc : oc'.rule₁.lc ord = -(oc.rule₁.lc ord))
+    (hr₂ : oc'.rule₂ = oc.rule₂) (hl : oc'.left = oc.left) (hr : oc'.right = oc.right)
+    (m : Monomial G) :
+    oc'.spoly.coeff m = -(oc.spoly.coeff m) := by
+  simp only [OverlapComposition.spoly, AlgElement.sub_coeff, AlgElement.smul_coeff]
+  rw [hr₂, hl, hr, hlc, AlgElement.contextMul_coeff_neg [] oc.right hrel m]
+  noncomm_ring
 
 end UGB.GrobnerShirshov

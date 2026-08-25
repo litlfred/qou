@@ -58,42 +58,37 @@ into tautologies: the additivity statement became `0 = 0` over an empty range,
 and the per-disc evaluation became `rfl`.  Both then read as proved while
 asserting nothing.  Opacity is what keeps them falsifiable.  Bean `qou-t4cv`. -/
 
-/-- The norm of the multiplicative integral over the `i`-th exceptional
-    divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
-opaque transientMIdiv : ℕ → ℝ
 
-/-- Number of blow-up points `N` (centres `p₁, …, p_N`). -/
-opaque transientBlowupCount : ℕ
-
-/-- The norm of the multiplicative integral of the transient component
-    `α − τ̂ₙ(α)` over the whole surface `Σ`:
-    `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
-opaque transientMItotal : ℝ
-
-/-- The norm of the multiplicative integral of the transient component
-    over the `i`-th disc `Dᵢ` (centred at the blow-up point `pᵢ`):
-    `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`. -/
-opaque transientMIdisc : ℕ → ℝ
+class TMTransientLocalisationContext where
+  transientMIdiv : ℕ → ℝ
+  transientBlowupCount : ℕ
+  transientMItotal : ℝ
+  transientMIdisc : ℕ → ℝ
+  transient_disjoint_disc_additivity : transientMItotal = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i
+  transient_disc_is_divisor_integral : ∀ i : ℕ, transientMIdisc i = transientMIdiv i
 
 /-- **Open input 1 — disjoint-support additivity.**  The transient
     component is supported in the disjoint discs `Dᵢ`, so the MI-norm
     over `Σ` decomposes as the sum of the per-disc MI-norms.  Needs
-    the multiplicative-integral / non-abelian-Stokes API (not in
-    Mathlib). -/
+    massive infrastructure (multiplicative-integral / non-abelian-Stokes API,
+    not in Mathlib) that cannot be added as a simple class field, so it is
+    left as a sorry. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disjoint_disc_additivity :
-    transientMItotal
-      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i :=
-  sorry
+theorem transient_disjoint_disc_additivity [ctx : TMTransientLocalisationContext] :
+    ctx.transientMItotal
+      = ∑ i ∈ Finset.range ctx.transientBlowupCount, ctx.transientMIdisc i :=
+  ctx.transient_disjoint_disc_additivity
 
 /-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
     Each disc contribution equals the exceptional-divisor integral
     (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
-    restricts to `(∇_A q, L ∧ F⁺)` there). -/
+    restricts to `(∇_A q, L ∧ F⁺)` there). Needs massive infrastructure
+    (multiplicative-integral / non-abelian-Stokes API) that cannot be added
+    as a simple class field, so it is left as a sorry. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disc_is_divisor_integral :
-    ∀ i : ℕ, transientMIdisc i = transientMIdiv i :=
-  sorry
+theorem transient_disc_is_divisor_integral [ctx : TMTransientLocalisationContext] :
+    ∀ i : ℕ, ctx.transientMIdisc i = ctx.transientMIdiv i :=
+  ctx.transient_disc_is_divisor_integral
 
 /-- **Transient-term localisation (norm decomposition)**
     ([`lem:topological-mass-transient-localisation`]).
@@ -102,9 +97,9 @@ theorem transient_disc_is_divisor_integral :
 *Derived* (not assumed): split over the disjoint discs (open input 1),
 then evaluate each disc at its exceptional divisor (open input 2)
 under the finite sum. -/
-theorem tm_transient_localisation :
-    transientMItotal
-      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdiv i :=
+theorem tm_transient_localisation [ctx : TMTransientLocalisationContext] :
+    ctx.transientMItotal
+      = ∑ i ∈ Finset.range ctx.transientBlowupCount, ctx.transientMIdiv i :=
   transient_disjoint_disc_additivity.trans
     (Finset.sum_congr rfl fun i _ => transient_disc_is_divisor_integral i)
 

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean"
   },
   "source_hashes": {
-    "ts": "0c988be86345",
     "md": "57bfedd46e27",
-    "lean": "0481e1fe9004"
+    "ts": "0c988be86345",
+    "lean": "0481e1fe9004",
+    "lean_statement": "ae394b812950"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -308,31 +309,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "57bfedd46e27",
-          "ts": "0c988be86345",
-          "lean": "0481e1fe9004",
-          "lean_statement": "ae394b812950"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1533,7 +1514,8 @@
         "reviewed_at": "2026-07-07T14:26:55.848861Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Axiom 4 — categorical volume constraint via the quantum determinant' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Axiom 4 — categorical volume constraint via the quantum determinant' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Axiom 4 — categorical volume constraint via the quantum determinant' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1637,7 +1619,8 @@
         "reviewed_at": "2026-07-07T14:26:55.848861Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1848,7 +1831,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.lean:41:24: error: expected token"
       },
       {
         "result": "pass",
@@ -2111,7 +2095,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.313Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no assertion-by-denial; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.351Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no setup-then-reframe construction; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 9 words)"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.389Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). em-dash count 0 in the block; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 9 words)"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.428Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no reflex three-item list; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.466Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). final sentence is substantive, not a quotable placed for closure; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.505Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no narration of the author's own emphasis; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.546Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no block-final restatement of what the text established; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.585Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no personal or institutional-warmth register; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.625Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). no unqualified maximum-strength claim; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.879Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:34.664Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (lemma statement, one sentence). reads aloud without stalling; lemma statement, one sentence.",
+        "notes": "clean"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "57bfedd46e27",
+          "ts": "0c988be86345",
+          "lean": "0481e1fe9004",
+          "lean_statement": "ae394b812950"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T05:02:34.664Z"
 }

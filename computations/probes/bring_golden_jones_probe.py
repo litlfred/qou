@@ -16,7 +16,7 @@ written into the paper as one thing:
      `|2I| = 120 = |S_5| = |Aut(Bring)|`, and the corpus already states
      `P(V)/A_5 = S^2(2,3,5)` in `klein-bring-icosahedral-bridge`.
   3. QUANTUM DIMENSION — this file. At a fifth root of unity the Markov trace
-     on the Hecke algebra (Jones, Bull. AMS 12 (1985) 103-111, `uploads/`)
+     on the Hecke algebra (Jones, Bull. AMS 12 (1985) 103-111, `library/`)
      produces the golden ratio directly as a quantum dimension, and the Bring
      knots' own Jones polynomials evaluate to golden-ratio algebraic integers.
 
@@ -197,7 +197,7 @@ def main() -> int:
         "lr_modulus_identification_sigma235.py already builds for Sigma(2,3,5) "
         "(D_E8hat^2 = 2 D_MTC^2 = 10 + 2 sqrt5, sum marks^2 = 120 = |2I|). "
         "Mechanism (2), the branched cover to Sigma(2,3,5), is NOT blocked "
-        "after all: hikami2005brieskorn is already in uploads/ and restates "
+        "after all: hikami2005brieskorn is already in library/ and restates "
         "Lawrence-Zagier's Poincare-sphere theorem (his Thm 10) plus the "
         "general Brieskorn case, with the S-matrix identified as the "
         "Reidemeister torsion in his section 6. VERDICT ON THE THREE "

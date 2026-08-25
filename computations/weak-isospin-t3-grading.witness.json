@@ -1,0 +1,110 @@
+{
+  "schema": "witness/v1",
+  "name": "weak-isospin-t3-grading",
+  "description": "Weak-isospin T3 = sign(writhe)/2 grading orthogonal to the generation winding n. Resolves the winding_content_not_injective degeneracy (charm n=5 = strange n=5) named by the meson-fluxtube audit (qou-qpj9). T3 is the sign-half of the signed writhe kappa = +-n whose magnitude is the generation. Gell-Mann-Nishijima Q = T3 + Y/2 is a checked theorem (derive-then-check), not a fit. All facts proved in Lean, sorry-free.",
+  "bean": "qou-tdrd",
+  "epic": "qou-20sx",
+  "serves": [
+    "qou-qpj9",
+    "qou-jsx5"
+  ],
+  "provenance": {
+    "engine": "lean4",
+    "toolchain": "leanprover/lean4:v4.24.0",
+    "producer": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/WeakIsospinT3Grading.lean",
+    "scriptCommitSha": "6c1e282bc63e361c7434e56c3c9fd21d005d37d2",
+    "scriptHash": "ea71e8fdf55f",
+    "verification": "lean-direct",
+    "leanExitCode": 0,
+    "sorryFree": true,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "derivation": {
+    "object": "signedWrithe kappa : Quark -> Z  (= +-n, the net signed crossing of the canonical T(2,n)=sigma_1^{+-n} braid)",
+    "grading": "T3 = sign(kappa)/2 in {+1/2,-1/2}",
+    "generation": "genWinding = |kappa| = n in {3,5,7}",
+    "orthogonality": "sign(kappa) and |kappa| are independent data of the integer kappa; T3 (sign) is orthogonal to generation (magnitude) by construction",
+    "sign_convention": "up-type = positive crossing, inherited from the strong-isospin bowtie_K orientation (pp = sigma_g positive, nn = sigma_g^-1)"
+  },
+  "quarks": [
+    {
+      "flavor": "up",
+      "signedWrithe": 3,
+      "genWinding": 3,
+      "T3": "1/2",
+      "emCharge": "2/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "upType",
+      "gmn_check": true
+    },
+    {
+      "flavor": "down",
+      "signedWrithe": -3,
+      "genWinding": 3,
+      "T3": "-1/2",
+      "emCharge": "-1/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "downType",
+      "gmn_check": true
+    },
+    {
+      "flavor": "charm",
+      "signedWrithe": 5,
+      "genWinding": 5,
+      "T3": "1/2",
+      "emCharge": "2/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "upType",
+      "gmn_check": true
+    },
+    {
+      "flavor": "strange",
+      "signedWrithe": -5,
+      "genWinding": 5,
+      "T3": "-1/2",
+      "emCharge": "-1/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "downType",
+      "gmn_check": true
+    },
+    {
+      "flavor": "top",
+      "signedWrithe": 7,
+      "genWinding": 7,
+      "T3": "1/2",
+      "emCharge": "2/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "upType",
+      "gmn_check": true
+    },
+    {
+      "flavor": "bottom",
+      "signedWrithe": -7,
+      "genWinding": 7,
+      "T3": "-1/2",
+      "emCharge": "-1/3",
+      "hyperchargeLeft": "1/3",
+      "weakType": "downType",
+      "gmn_check": true
+    }
+  ],
+  "key_results": {
+    "charm_strange_same_generation": true,
+    "charm_strange_differ_T3": true,
+    "T3_valued_pm_half": true,
+    "gellMannNishijima_all_six": true,
+    "partner_flips_T3_same_generation": true
+  },
+  "open_remainder": {
+    "conjecture_class": "CanonicalWeakIsospinFromBowtie",
+    "instance_provided": false,
+    "open_1": "the sign is FORCED by the bowtie_K orientation (not merely consistent) — physical openness, decidable over the finite toy",
+    "open_2": "lift of the Z/2 to the SU(2)_L gauge action on H_n(q) reps; combined with the generation tower reproduces quark masses / CKM",
+    "reduces_to": "open SU(3)-flavour / CKM sector"
+  },
+  "anti_fit_statement": "T3 = sign(signedWrithe)/2 is defined from topology; GMN is a checked theorem, not a definition. The one convention (up=positive) is inherited from the existing corpus bowtie_K datum. The open primary is a content-bearing class with NO instance; no anchor-inverted grading wired to production."
+}

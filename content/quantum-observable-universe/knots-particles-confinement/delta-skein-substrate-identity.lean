@@ -61,8 +61,13 @@ def deltaMassOverMe (q_beta m_e : ℝ) : ℝ :=
 
     Ref: [manuscript] Borromean baryon mass formula, common-scale
     Skein-difference identity. -/
+-- Dropped the unused hypothesis `h_me : m_e ≠ 0` (2026-08-22; vacuity ledger,
+-- `proof-no-unused-hypothesis-rfl`).  The right-hand side is the definitional
+-- unfolding of `deltaMassOverMe`, so the identity holds for every `m_e` (the
+-- `m_e = 0` case degenerates to `0 = 0` under Lean's junk division) and the
+-- `rfl` proof never consumed `h_me`.
 theorem delta_skein_eq_mass_splitting
-    {q_beta m_e : ℝ} (h_me : m_e ≠ 0) :
+    {q_beta m_e : ℝ} :
     deltaMassOverMe q_beta m_e = (q_beta + m_e) / m_e := by
   rfl
 

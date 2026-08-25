@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/tau_leptonic_universality.lean"
   },
   "source_hashes": {
-    "ts": "918f09b9addb",
     "md": "9cc6e666b9eb",
-    "lean": "3ec12d1ee694"
+    "ts": "918f09b9addb",
+    "lean": "3ec12d1ee694",
+    "lean_statement": "df4dba527482"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -931,31 +932,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "9cc6e666b9eb",
-          "ts": "918f09b9addb",
-          "lean": "3ec12d1ee694",
-          "lean_statement": "df4dba527482"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1943,7 +1924,372 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "2 negation-contrast construction(s): \", not the daughter channel.\"; \", not the vertex operator.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.778Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.819Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 166 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.860Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 166 words)"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.900Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.940Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:31.980Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.022Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.061Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proposition, ~1.85kB). Phase-space factor f(x) = 1-8x+8x^3-x^4-12x^2 ln x is the standard leptonic form and reproduces the witnessed f values to 8 digits."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.098Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'The matter-element ratio evaluates exactly to 1' is offered as a result one line after |M_e|^2 and |M_mu|^2 are DEFINED to be the same quantity - the 'exactly' dresses a tautology as a computation. 'the unique cross-family mediator on the Bring surface' asserts uniqueness that nothing in the block establishes, and the sibling rem:unmapped-torus-knots actively disputes the weak-mediator reading of T_{3,5}.",
+        "notes": "proposed: 'The matter-element ratio is 1 by construction in this model' and 'a cross-family mediator'. Not applied - both edits change what the block claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.191Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "32195040807b",
+          "ts": "918f09b9addb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.136Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "One garbled clause found and repaired; the rest reads aloud cleanly.",
+        "notes": "fix applied: 'Kinematics exclusively break universality.' -> 'Universality is broken only by kinematics.' (the original scopes 'exclusively' onto the object, saying kinematics break nothing else - the opposite of the intended sense)"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "9cc6e666b9eb",
+          "ts": "918f09b9addb",
+          "lean": "3ec12d1ee694",
+          "lean_statement": "df4dba527482"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T06:33:32.136Z"
 }

@@ -5,6 +5,10 @@ export default proposition({
   lean: { ref: "qou:QOU.Observations.strangelet_crossing_energy", validation: "not_checked" },
   title:
     "Crossing energy of strange quark matter is purely strong",
+  // Clause 1 asserts this charge vanishes per baryon-number unit.
+  // def:crossing-energy, which clause 2 reduces at Q = 0, is NOT listed:
+  // it is reached through def:coulomb-charge.
+  uses: ["def:coulomb-charge"],
   tags: [
     "strangelet",
     "strange-quark-matter",

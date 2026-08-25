@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T20:52:26.110307+00:00",
-  "commitSha": "e081a29271b2b64456b0368ae340260547a28045",
+  "computedAt": "2026-08-23T17:38:55.419213+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "all_77_y_lambda_computed",
@@ -15,7 +15,7 @@
     },
     {
       "name": "markov_normalization_holds",
-      "computed": "0.9999999999999999",
+      "computed": "1.0000000000000002",
       "expected": "1.0",
       "passed": true,
       "tolerance": "1e-6",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 22,
   "computation": "alpha-k-jones-markov-h12",
   "scriptFile": "alpha_k_jones_markov_h12.py",
-  "scriptHash": "b03ebb8556a5",
-  "scriptCommitSha": "15464a05b3bf7cc342051f4cba3ff444c5584158",
+  "scriptHash": "629b948b9bab",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,18 +42,25 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_k_jones_markov_h12.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_k_jones_markov_h12.py"
   },
   "description": "Jones-Markov weights y_λ at H_12(q) — full 77-partition atlas. Extends sibling alpha_k_jones_markov_h4.py to the algebra needed for 4He per the H_3-vs-H_{3A} legacy bug audit (commit c70707397). Builds 77 cycle-type representative braids, computes 77×77 q-Hecke character matrix via pyhecke_native.chi_lambda_braid, solves linear system from Markov-axiom RHS tr_M(rep) = z^{n-r}. Cross-checks tr_M(β_⁴He) via Σ y_λ · χ_λ vs the multiplicative formula tr_M(β_𝓑_3)^4 on 4 disjoint Borromean copies.",
   "parameters": {
-    "q_0_f64": "1.1099785955573347",
-    "z_mark_f64": "0.4993203340335613",
+    "q_0_f64": "1.1099785827513808",
+    "z_mark_f64": "0.6126880371464652",
     "n_partitions": 77,
-    "chi_matrix_condition_number": "7984.908701444466",
-    "sum_y_dim_check": "0.9999999999999999",
-    "elapsed_seconds": "428.14",
-    "tr_M_he4_via_y_lambda": "0.993482477474801",
-    "tr_M_he4_multiplicative": "0.9942610451517598"
+    "chi_matrix_condition_number": "7984.908312037897",
+    "sum_y_dim_check": "1.0000000000000002",
+    "elapsed_seconds": "330.13",
+    "tr_M_he4_via_y_lambda": "0.9942610476982464",
+    "tr_M_he4_multiplicative": "0.9942610476982431"
   },
   "data": {
     "y_lambda_table": [
@@ -62,7 +69,7 @@
           12
         ],
         "dim_S_lambda": 1,
-        "y_lambda": "0.0006565744607726468"
+        "y_lambda": "0.003965758016123073"
       },
       {
         "partition": [
@@ -70,7 +77,7 @@
           1
         ],
         "dim_S_lambda": 11,
-        "y_lambda": "0.0007670122284205277"
+        "y_lambda": "0.003100348549414107"
       },
       {
         "partition": [
@@ -78,7 +85,7 @@
           2
         ],
         "dim_S_lambda": 54,
-        "y_lambda": "0.0007121291176787437"
+        "y_lambda": "0.0023704435629293787"
       },
       {
         "partition": [
@@ -87,7 +94,7 @@
           1
         ],
         "dim_S_lambda": 55,
-        "y_lambda": "0.00016439510077246753"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -95,7 +102,7 @@
           3
         ],
         "dim_S_lambda": 154,
-        "y_lambda": "0.0005870537935871052"
+        "y_lambda": "0.0017441416771205775"
       },
       {
         "partition": [
@@ -104,7 +111,7 @@
           1
         ],
         "dim_S_lambda": 320,
-        "y_lambda": "0.00019785600928200683"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -114,7 +121,7 @@
           1
         ],
         "dim_S_lambda": 165,
-        "y_lambda": "-1.531018279466405e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -122,7 +129,7 @@
           4
         ],
         "dim_S_lambda": 275,
-        "y_lambda": "0.00043096777103170965"
+        "y_lambda": "0.0011940696111622734"
       },
       {
         "partition": [
@@ -131,7 +138,7 @@
           1
         ],
         "dim_S_lambda": 891,
-        "y_lambda": "0.00017559289435009257"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -140,7 +147,7 @@
           2
         ],
         "dim_S_lambda": 616,
-        "y_lambda": "5.298025469925635e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -150,7 +157,7 @@
           1
         ],
         "dim_S_lambda": 945,
-        "y_lambda": "-1.999635124913742e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -161,7 +168,7 @@
           1
         ],
         "dim_S_lambda": 330,
-        "y_lambda": "3.6319588893257193e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -169,7 +176,7 @@
           5
         ],
         "dim_S_lambda": 297,
-        "y_lambda": "0.0002617832038120465"
+        "y_lambda": "0.000696185800631777"
       },
       {
         "partition": [
@@ -178,7 +185,7 @@
           1
         ],
         "dim_S_lambda": 1408,
-        "y_lambda": "0.00012698792640443904"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -187,7 +194,7 @@
           2
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "5.874237486742131e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -197,7 +204,7 @@
           1
         ],
         "dim_S_lambda": 2376,
-        "y_lambda": "-1.7836038203954452e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -207,7 +214,7 @@
           1
         ],
         "dim_S_lambda": 2079,
-        "y_lambda": "-6.809099438837569e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -218,7 +225,7 @@
           1
         ],
         "dim_S_lambda": 1728,
-        "y_lambda": "4.8263092009268524e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -230,7 +237,7 @@
           1
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "-1.1400957462754167e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -238,7 +245,7 @@
           6
         ],
         "dim_S_lambda": 132,
-        "y_lambda": "8.766526021610034e-05"
+        "y_lambda": "0.00022872963188107334"
       },
       {
         "partition": [
@@ -247,7 +254,7 @@
           1
         ],
         "dim_S_lambda": 1155,
-        "y_lambda": "6.597007548502511e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -256,7 +263,7 @@
           2
         ],
         "dim_S_lambda": 2673,
-        "y_lambda": "4.203075056920366e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -266,7 +273,7 @@
           1
         ],
         "dim_S_lambda": 3080,
-        "y_lambda": "-1.1912789846373223e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -275,7 +282,7 @@
           3
         ],
         "dim_S_lambda": 1650,
-        "y_lambda": "1.4393230618134943e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -285,7 +292,7 @@
           1
         ],
         "dim_S_lambda": 5632,
-        "y_lambda": "-7.3674397188080875e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -296,7 +303,7 @@
           1
         ],
         "dim_S_lambda": 3696,
-        "y_lambda": "4.1224358330497975e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -306,7 +313,7 @@
           2
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "-4.0799753997431597e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -317,7 +324,7 @@
           1
         ],
         "dim_S_lambda": 3564,
-        "y_lambda": "1.7338780969186373e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -329,7 +336,7 @@
           1
         ],
         "dim_S_lambda": 2100,
-        "y_lambda": "-1.480157786256254e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -342,7 +349,7 @@
           1
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "4.039196941127355e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -351,7 +358,7 @@
           2
         ],
         "dim_S_lambda": 1320,
-        "y_lambda": "1.5009072152212136e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -361,7 +368,7 @@
           1
         ],
         "dim_S_lambda": 1485,
-        "y_lambda": "-4.153197073854162e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -370,7 +377,7 @@
           3
         ],
         "dim_S_lambda": 2112,
-        "y_lambda": "1.0839651171824067e-05"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -380,7 +387,7 @@
           1
         ],
         "dim_S_lambda": 5775,
-        "y_lambda": "-4.444330448019154e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -391,7 +398,7 @@
           1
         ],
         "dim_S_lambda": 3520,
-        "y_lambda": "2.3095309505149214e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -401,7 +408,7 @@
           1
         ],
         "dim_S_lambda": 4158,
-        "y_lambda": "-1.7747677838768797e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -411,7 +418,7 @@
           2
         ],
         "dim_S_lambda": 4455,
-        "y_lambda": "-4.3055749304706933e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -422,7 +429,7 @@
           1
         ],
         "dim_S_lambda": 7700,
-        "y_lambda": "1.708014719469829e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -434,7 +441,7 @@
           1
         ],
         "dim_S_lambda": 3564,
-        "y_lambda": "-1.145179592819769e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -445,7 +452,7 @@
           1
         ],
         "dim_S_lambda": 3520,
-        "y_lambda": "1.264580860079609e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -457,7 +464,7 @@
           1
         ],
         "dim_S_lambda": 3696,
-        "y_lambda": "-5.178468304348301e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -470,7 +477,7 @@
           1
         ],
         "dim_S_lambda": 1728,
-        "y_lambda": "4.925156944388292e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -484,7 +491,7 @@
           1
         ],
         "dim_S_lambda": 330,
-        "y_lambda": "-1.4962978949414324e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -493,7 +500,7 @@
           4
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "1.2570950457686912e-06"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -503,7 +510,7 @@
           1
         ],
         "dim_S_lambda": 2970,
-        "y_lambda": "-8.66815866590673e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -513,7 +520,7 @@
           2
         ],
         "dim_S_lambda": 2640,
-        "y_lambda": "-1.744527075387952e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -524,7 +531,7 @@
           1
         ],
         "dim_S_lambda": 4455,
-        "y_lambda": "6.756480545452282e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -536,7 +543,7 @@
           1
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "-4.228652167272774e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -546,7 +553,7 @@
           2
         ],
         "dim_S_lambda": 2970,
-        "y_lambda": "-1.0883121577653245e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -557,7 +564,7 @@
           1
         ],
         "dim_S_lambda": 4158,
-        "y_lambda": "3.49669332188399e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -568,7 +575,7 @@
           1
         ],
         "dim_S_lambda": 5775,
-        "y_lambda": "1.0993829021335707e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -580,7 +587,7 @@
           1
         ],
         "dim_S_lambda": 5632,
-        "y_lambda": "-4.181035234131829e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -593,7 +600,7 @@
           1
         ],
         "dim_S_lambda": 2079,
-        "y_lambda": "3.139167050943027e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -604,7 +611,7 @@
           2
         ],
         "dim_S_lambda": 1485,
-        "y_lambda": "-3.030050176453356e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -616,7 +623,7 @@
           1
         ],
         "dim_S_lambda": 3080,
-        "y_lambda": "-3.7017197363357136e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -629,7 +636,7 @@
           1
         ],
         "dim_S_lambda": 2376,
-        "y_lambda": "1.5639235621685045e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -643,7 +650,7 @@
           1
         ],
         "dim_S_lambda": 945,
-        "y_lambda": "-1.623094870190843e-07"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -658,7 +665,7 @@
           1
         ],
         "dim_S_lambda": 165,
-        "y_lambda": "5.4838169378337095e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -668,7 +675,7 @@
           3
         ],
         "dim_S_lambda": 462,
-        "y_lambda": "-4.654996814711056e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -679,7 +686,7 @@
           1
         ],
         "dim_S_lambda": 2112,
-        "y_lambda": "1.8133698805893393e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -691,7 +698,7 @@
           1
         ],
         "dim_S_lambda": 1650,
-        "y_lambda": "-5.524003892344806e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -702,7 +709,7 @@
           2
         ],
         "dim_S_lambda": 1320,
-        "y_lambda": "-1.6980614096232183e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -714,7 +721,7 @@
           1
         ],
         "dim_S_lambda": 2673,
-        "y_lambda": "-2.025300481691151e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -727,7 +734,7 @@
           1
         ],
         "dim_S_lambda": 1925,
-        "y_lambda": "7.987316536358265e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -741,7 +748,7 @@
           1
         ],
         "dim_S_lambda": 616,
-        "y_lambda": "-6.668673528409485e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -753,7 +760,7 @@
           1
         ],
         "dim_S_lambda": 1155,
-        "y_lambda": "9.375489412347327e-10"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -766,7 +773,7 @@
           1
         ],
         "dim_S_lambda": 1408,
-        "y_lambda": "9.454414628042041e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -780,7 +787,7 @@
           1
         ],
         "dim_S_lambda": 891,
-        "y_lambda": "-4.203632397098774e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -795,7 +802,7 @@
           1
         ],
         "dim_S_lambda": 320,
-        "y_lambda": "4.792700312247304e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -811,7 +818,7 @@
           1
         ],
         "dim_S_lambda": 55,
-        "y_lambda": "-1.872507200344754e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -823,7 +830,7 @@
           2
         ],
         "dim_S_lambda": 132,
-        "y_lambda": "-3.0818897167940295e-11"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -836,7 +843,7 @@
           1
         ],
         "dim_S_lambda": 297,
-        "y_lambda": "-1.6548897469729214e-10"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -850,7 +857,7 @@
           1
         ],
         "dim_S_lambda": 275,
-        "y_lambda": "-1.6263568514027788e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -865,7 +872,7 @@
           1
         ],
         "dim_S_lambda": 154,
-        "y_lambda": "7.786310969764938e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -881,7 +888,7 @@
           1
         ],
         "dim_S_lambda": 54,
-        "y_lambda": "-1.0184037688935989e-08"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -898,7 +905,7 @@
           1
         ],
         "dim_S_lambda": 11,
-        "y_lambda": "5.405173816926669e-09"
+        "y_lambda": "0.0"
       },
       {
         "partition": [
@@ -916,24 +923,31 @@
           1
         ],
         "dim_S_lambda": 1,
-        "y_lambda": "-1.0300788542451447e-09"
+        "y_lambda": "0.0"
       }
     ],
+    "dead_block_solve_residue": {
+      "n_dead_blocks": 70,
+      "max_abs_residue": "9.163718683397107e-18",
+      "note": "ell(lambda) >= 3 blocks are exactly 0 under convention D (Schur-Weyl, two-dimensional fibre). The table above reports that exact 0; this is the numerical residue the 77x77 solve left in those entries, kept as a conditioning diagnostic."
+    },
     "candidate_B_4He_MeV": {
       "B_prod (2·m_e·A·8G, ν=2)": "29.95567723908384",
-      "m_e·A·8G·tr_M(β_⁴He)_H12": "14.880220218960261",
-      "2·m_e·A·8G·tr_M(β_⁴He)_H12": "29.760440437920522"
+      "m_e·A·8G·tr_M(β_⁴He)_H12": "14.891881518121007",
+      "2·m_e·A·8G·tr_M(β_⁴He)_H12": "29.783763036242014"
     },
     "B_4He_AME_MeV": "28.2956912",
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

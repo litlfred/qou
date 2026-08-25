@@ -36,7 +36,43 @@ import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
-IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)", re.M)
+IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)")
+
+
+def qou_imports(text: str) -> list[str]:
+    """QOU modules imported by `text`, read from the header only.
+
+    Lean requires every `import` to precede all other content, so the header is
+    exactly the leading run of imports, comments and blank lines — and stopping
+    there is not merely an optimisation.  Scanning the whole file (which this
+    did, via `re.M`) treats an `import` line written flush-left inside a
+    docstring as a real dependency.  A module whose docstring *documents* an
+    import cycle then appears to have one, and `topo` aborts the entire build
+    with a bogus `IMPORT CYCLE`.  Observed 2026-08-23 on `QOU/GroundRingCore.lean`,
+    whose docstring quotes the two-line import that demonstrates bean `qou-kfcl`.
+    """
+    out: list[str] = []
+    in_block_comment = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        if in_block_comment:
+            if "-/" in stripped:
+                in_block_comment = False
+            continue
+        if stripped.startswith("/-"):
+            if "-/" not in stripped:
+                in_block_comment = True
+            continue
+        if not stripped or stripped.startswith("--"):
+            continue
+        m = IMPORT_RE.match(line)
+        if m:
+            out.append(m.group(1))
+            continue
+        if stripped.startswith("import "):
+            continue  # a non-QOU import; still part of the header
+        break  # first real declaration — the header is over
+    return out
 
 # Extra `lean` flags, e.g. the package's `moreLeanArgs = ["-s", "65536"]`.
 EXTRA_ARGS = os.environ.get("LEAN_CONE_EXTRA_ARGS", "").split()
@@ -64,7 +100,7 @@ def scan(leandir: Path) -> dict[str, dict]:
             continue
         mods[module_of(leandir, p)] = {
             "src": p,
-            "imports": sorted(set(IMPORT_RE.findall(text))),
+            "imports": sorted(set(qou_imports(text))),
         }
     return mods
 

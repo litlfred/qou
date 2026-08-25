@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/molecular-construction/ilp-covalent-bond.lean"
   },
   "source_hashes": {
-    "ts": "9b5ace9adce8",
     "md": "f1e8759c89df",
-    "lean": "f8aa3cc42cf3"
+    "ts": "9b5ace9adce8",
+    "lean": "f8aa3cc42cf3",
+    "lean_statement": "2e1ba3628894"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1189,31 +1190,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:19.074Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "f1e8759c89df",
-          "ts": "9b5ace9adce8",
-          "lean": "f8aa3cc42cf3",
-          "lean_statement": "2e1ba3628894"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:26.228Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2141,7 +2122,379 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.374Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Section header 'Knots, not links' and 'Links are excluded because the covalent bond is a single topological structure'. This is substantive mathematical contrast - the section's whole content is that the LP dual space is single-component closures - so it falls in the documented false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.418Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.467Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Two unspaced em-dashes used where a comma and a colon belong: 'the universal ILP--the same LP that derives' and 'the knot operator space--single-component braid closures'.",
+        "notes": "FIXED: 'the universal ILP--the same LP that derives' -> 'the universal ILP, the same LP that derives'; 'the knot operator space--single-component braid closures.' -> 'the knot operator space: single-component braid closures.'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 213 words)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.508Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.553Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked: it advances or scopes the argument rather than supplying a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.596Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.639Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.680Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.722Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'The scale E_mol derives from q_0 alone, requiring no fitted parameters.' An unqualified no-free-parameter claim in a block whose two quoted accuracies (D_0(H2), D_0(C-C)) are measured against the experimental table computations/molecular-experimental-refs.witness.json, and whose sibling carbon-chains-benzene-intro.md explicitly says the molecular energy scale 'is an input here, not derived from the substrate calibration'.",
+        "notes": "STRUCTURAL - not fixed (it is a provenance claim, not a register tic). Proposed: state which quantity is derived from q_0 and which is an input, matching the hedge already used in carbon-chains-benzene-intro.md."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.531Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "707a36db887d",
+          "ts": "9b5ace9adce8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:00:52.764Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "f1e8759c89df",
+          "ts": "9b5ace9adce8",
+          "lean": "f8aa3cc42cf3",
+          "lean_statement": "2e1ba3628894"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T07:00:52.764Z"
 }

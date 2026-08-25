@@ -12,7 +12,7 @@ $$
   \hbar_{q_0}^{-2} \approx 102.25.
 $$
 
-Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the mass predictions:
+Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the dimensionless mass ratios $\mathfrak{m}(K)/m_e$; rendered against the $m_e$ scale they read in MeV as follows (the proton and neutron MeV entries are the ratio $\mathfrak{m}(K)/m_e$ rendered against the $m_e$ unit, not independent absolute-mass predictions):
 
 | **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|
@@ -21,4 +21,4 @@ Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the mass predictions:
 | Proton | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
 | Neutron | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
 
-The fibre functor $\tau$ maps the categorical Frobenius form to the Webster inner product. Specializing $z \mapsto q_0$ recovers the numerical predictions while preserving the algebraic structure.
+The fibre functor $\tau$ maps the categorical Frobenius form to the Webster inner product. Specializing $z \mapsto q_0$ recovers the numerical values while preserving the algebraic structure.

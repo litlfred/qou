@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:31:27.714070+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-23T08:57:03.214624+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46,
+  "durationMs": 62,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "d8065d2cf27b",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "6299fd8cba8f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,21 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_n_unknot_construction.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_n_unknot_construction.py"
   },
   "description": "Sub-problem 1 attempt for conj:casimir-epsilon-vacuum. n-stability selection uniquely picks the bare disjoint-unknot count (no y_λ); the geometric n³ degeneracy + ζ(-3) derives π²/720. Conditional on the free-field ↔ disjoint-unknot identification, ξ_k = 0 at leading order.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
-    "h2_substrate": 0.04370621823290131,
-    "delta_quantum_dim": 2.002722364462702
+    "substrate_q": 1.1099785827513808,
+    "h2_substrate": 0.04370620853252199,
+    "delta_quantum_dim": 2.002722363860533
   },
   "data": {
     "selection_principle": {
@@ -64,50 +71,50 @@
         {
           "n": 2,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.031143903233575174,
-          "wenzl_unnorm_relh2": -3.057648108387679e-50,
+          "jones_unlink_relh2": 0.031143903256988844,
+          "wenzl_unnorm_relh2": 6.115297574035459e-50,
           "normalized_trace": 1.0
         },
         {
           "n": 3,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.0623301989948468,
-          "wenzl_unnorm_relh2": -0.9435616633396195,
+          "jones_unlink_relh2": 0.06233019903232908,
+          "wenzl_unnorm_relh2": 0.08243262891601154,
           "normalized_trace": 1.0
         },
         {
           "n": 4,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.09355894498777033,
-          "wenzl_unnorm_relh2": -2.2325209054109525,
+          "jones_unlink_relh2": 0.09355894502995066,
+          "wenzl_unnorm_relh2": 0.16516224756400746,
           "normalized_trace": 1.0
         },
         {
           "n": 5,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.1248301989948468,
-          "wenzl_unnorm_relh2": -3.7874509217211707,
+          "jones_unlink_relh2": 0.12483019903232907,
+          "wenzl_unnorm_relh2": 0.3306214848599993,
           "normalized_trace": 1.0
         },
         {
           "n": 6,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.15614401887722976,
-          "wenzl_unnorm_relh2": -5.506072281270486,
+          "jones_unlink_relh2": 0.15614401890059232,
+          "wenzl_unnorm_relh2": 0.4972686810839288,
           "normalized_trace": 1.0
         },
         {
           "n": 7,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.18750046257483236,
-          "wenzl_unnorm_relh2": -7.202604410842226,
+          "jones_unlink_relh2": 0.18750046257462785,
+          "wenzl_unnorm_relh2": 0.7477798349366065,
           "normalized_trace": 1.0
         },
         {
           "n": 8,
           "count_relh2": 0.0,
-          "jones_unlink_relh2": 0.21889958810643448,
-          "wenzl_unnorm_relh2": -8.909903457782573,
+          "jones_unlink_relh2": 0.21889958807318993,
+          "wenzl_unnorm_relh2": 1.0009754648658136,
           "normalized_trace": 1.0
         }
       ],
@@ -187,6 +194,6 @@
   "caveats": [
     "Conditional construction. Identifies the trace functional (bare count) and the selection principle (n-stability); does NOT build the full Yekutieli-homotopy lift. ξ_k=0 holds conditional on the free-field ↔ disjoint-unknot identification, which is a modeling statement. The per-level n³ degeneracy and the π²/6 k_⊥ factor are transported from standard free-field mode counting, not derived from the substrate."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

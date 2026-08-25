@@ -82,9 +82,9 @@ $k = 5, 6$ above; the Markov-trace decomposition by Wenzl
 $S_3$, with the long-element coefficient governing the
 sign-character extraction).
 
-The sign agreement at $k = 5, 6$ is therefore not a coincidence
-but the **leading manifestation of the long-element character
-extraction** in the $c_k$ chain. $\square$
+The sign agreement at $k = 5, 6$ is therefore the **leading
+manifestation of the long-element character extraction** in the
+$c_k$ chain. $\square$
 
 ## Open: magnitude closure
 

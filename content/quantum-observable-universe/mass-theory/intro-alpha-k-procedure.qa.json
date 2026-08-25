@@ -136,7 +136,177 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:11.639Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:11.837Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:11.888Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:11.937Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Roadmap triple 'We first define ... We then specialise ... Finally, we tabulate' maps onto three real subsections; substantive enumeration, not a reflex list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:11.990Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:12.074Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:12.120Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:12.267Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:12.334Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:12.391Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose, no title). Category absent."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.855881Z"
+  "updated_at": "2026-08-21T21:07:12.391Z"
 }

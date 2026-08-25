@@ -1,0 +1,69 @@
+22 SYLVIE CORTEEL AND OLIVIER MALLET
+
+The new peaks introduced after the uplift have total major index ( and they increase the abscissa
+of each of the old peaks by n1 — nz. Since they are NES peaks, they also give a factor a"'~"?. Altogether,
+the two operations introduce a factor
+
+ny —n2+1
+2)
+
+gee ane x q(t 2 tt tne(m=na) gmiane = g(™S qm,
+
+If i = 1, we add an extra SE step at the beginning of the path, which introduces a factor q™
+
+Transforming the jth peak from the right into a NESE peak increases the major index of the path by
+j —1 because the j — 1 rightmost peaks are shifted by 1 to the right. We do that if there is a part j — 1
+in A; altogether, the major index of the path increases precisely by the size of A, which is a partition into
+distinct parts in [0,n  — 1]. Since we transform a NES peak into a NESE peak for each part of A, this step
+introduces a factor (—1/a)n,.
+
+Finally, when we move the jth peak of relative height one from the right b; times, we increase the
+abscissa of the path by b;. Altogether, the major index of the path increases precisely by the size of
+
+b = (bi, b2,...,0ny—n2), which is a partition into nj — nz nonnegative parts. Such partitions are counted by
+1
+GQny—n oO
+
+The multiple series in Proposition can be re-expressed as (2), which is the generating function for
+overpartitions with i — 1 successive Durfee squares followed by k — i successive Durfee rectangles, the first
+one being a generalized Durfee square/rectangle.
+
+7. NEW PARTITION THEOREMS
+We first prove Corollary [4 and then extract its combinatorial information.
+7.1. Proof of Corollary [1.4. We recall here the Jacobi Triple Product identity (JTP) given in equation
+(Ey:
+oe ntl
+(-1/2,-24,4:d)00 = S> 2q"F).
+
+n=—0co
+
+and the result of Theorem
+
+Fii(a.q) = Cit we yrange ym 1) (£1/4)n
+i (a, .
+noe Eagn
+We first prove (L3). Using Theorem [L5, we get
+= 1 << y(™ ;
+Exi(0,¢q) = Da > (—1)rg2h+9( Pt)-ni,
+q oa n=—0o
+We substitute q > q?*t!, 2 = —q7 in (i) ) and get
+Qk+1—i g2k+1, -2k+1
+Ex(0,q) = (a PP x0
+(Q)oo
+Second we prove (1.4). Using Theorem S we get
+
+Ena(l/ad 2) = —ET Cates ae y” gikCe )-n@i-d
+
+n=—0o
+We substitute q — q**, 2 > —q7?"*+1 in and get
+
+(Pa )oo (G4 gg 00
+
+Exi(1/a@) (Goo
+
+Third we prove (5). Using Theorem [L.5 1.3, we get
+
+= (P41) ni 2
+Exa(l.q) = te ye yg n-ne)
+
+n=—0o

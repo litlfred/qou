@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean"
   },
   "source_hashes": {
-    "ts": "4a2b2a2b559d",
     "md": "0da341932b94",
-    "lean": "917004351dfa"
+    "ts": "b1e79b4eb295",
+    "lean": "917004351dfa",
+    "lean_statement": "2892b5f5982d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -298,31 +299,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "0da341932b94",
-          "ts": "4a2b2a2b559d",
-          "lean": "917004351dfa",
-          "lean_statement": "2892b5f5982d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:31.140Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -609,22 +590,21 @@
       {
         "field_hash": {
           "md": "0da341932b94",
-          "ts": "4a2b2a2b559d",
+          "ts": "b1e79b4eb295",
           "lean": "917004351dfa",
-          "lean_statement": "2892b5f5982d"
+          "lean_statement": "2892b5f5982d",
+          "graph": "a912dadc58e9"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:0: forward ref: uses rem:planck-reynolds (manifest pos 15) which appears after this block (pos 6) in the chapter"
+        "reviewed_at": "2026-08-15T22:22:40.631Z",
+        "reviewed_sha": "efbb7f79761ed21ce5535e5dae6ed1fd8efbb3e2"
       }
     ],
     "detangler-section-band": [
@@ -691,31 +671,32 @@
       {
         "field_hash": {
           "md": "0da341932b94",
-          "ts": "4a2b2a2b559d",
+          "ts": "b1e79b4eb295",
           "lean": "917004351dfa",
-          "lean_statement": "2892b5f5982d"
+          "lean_statement": "2892b5f5982d",
+          "graph": "a912dadc58e9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "bb579f7e1778",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-15T22:22:40.631Z",
+        "reviewed_sha": "efbb7f79761ed21ce5535e5dae6ed1fd8efbb3e2",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
           "tanglement_score": 0,
           "out_degree": 1,
           "in_degree": 7,
-          "cone_size": 95,
-          "depth": 28,
-          "pagerank": 0.001725,
-          "edge_span_max": 9,
-          "edge_span_mean": 9,
+          "cone_size": 51,
+          "depth": 18,
+          "pagerank": 0.001526,
+          "edge_span_max": 4,
+          "edge_span_mean": 4,
           "worst_target": ""
         }
       }
@@ -724,24 +705,25 @@
       {
         "field_hash": {
           "md": "0da341932b94",
-          "ts": "4a2b2a2b559d",
+          "ts": "b1e79b4eb295",
           "lean": "917004351dfa",
-          "lean_statement": "2892b5f5982d"
+          "lean_statement": "2892b5f5982d",
+          "graph": "a912dadc58e9"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "7d1408341441",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-15T22:22:40.631Z",
+        "reviewed_sha": "efbb7f79761ed21ce5535e5dae6ed1fd8efbb3e2",
         "metrics": {
-          "graph_energy": 9,
-          "fwd_edge_count": 1,
-          "worst_span": 9
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
         }
       }
     ],
@@ -769,20 +751,21 @@
       {
         "field_hash": {
           "md": "0da341932b94",
-          "ts": "4a2b2a2b559d",
+          "ts": "b1e79b4eb295",
           "lean": "917004351dfa",
-          "lean_statement": "2892b5f5982d"
+          "lean_statement": "2892b5f5982d",
+          "graph": "a912dadc58e9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-15T22:22:40.631Z",
+        "reviewed_sha": "efbb7f79761ed21ce5535e5dae6ed1fd8efbb3e2"
       }
     ],
     "bib-cite-resolves": [
@@ -1139,7 +1122,8 @@
         "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1240,7 +1224,8 @@
         "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1445,7 +1430,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize"
       },
       {
         "result": "pass",
@@ -1856,7 +1842,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not an independent physical constant.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:26.831Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "'it is an induced parameter, not an independent physical constant' - the derived-vs-postulated status of nu_q is the point being defined.",
+        "notes": "Substantive contrast; kept."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:26.873Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no rhetorical-pivot constructions found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (2 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:26.922Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no em-dash constructions found."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:26.961Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no triples constructions found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.017Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no closing-aphorism constructions found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.062Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no meta-commentary constructions found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.116Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no thesis-restatement constructions found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.169Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no performed-warmth constructions found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.234Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no superlative constructions found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.663Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.279Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no nonspeakable constructions found."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "0da341932b94",
+          "ts": "25ce27395f60",
+          "lean": "917004351dfa",
+          "lean_statement": "2892b5f5982d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-15T22:22:40.631Z"
 }

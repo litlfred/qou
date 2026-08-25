@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:18:56.273443+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T17:51:30.935152+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "gaussian_identification_exact",
@@ -62,7 +62,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14977,
+  "durationMs": 12295,
   "computation": "ksel3-modular-double",
   "scriptFile": "ksel3_modular_double_probe.py",
   "scriptHash": "c4ff260d0fbf",
@@ -80,7 +80,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ksel3_modular_double_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ksel3_modular_double_probe.py"
   },
   "description": "Kernel selection principle 3 — Faddeev modular-double covariance of the (REP) kernel family (bean qou-q5zq; audit-only, scope-(a), NO FIT, nothing wired). STRUCTURAL FINDING (exact): in t = ln s the u-translate atomic B-factor (rep_jackson_identification R4) is the lattice sampling on ln u + Lℤ (L = ln q̃) of ONE Gaussian g(t) = exp(−(t+L/2)²/(2L)) — exactly the Attack-B log-normal a.c. B-factor (σ² = ln q/2 = L, μ̂ = −ln q/4 = −L/2). Poisson/Jacobi transform: dual nome Q_d = e^(−4π²/L); because σ² = lattice step, EVERY dual mode carries the same normalized moment ladder q^(k(k−1)/4) — the moment functional is blind to the dual-mode sector, which IS the R4 indeterminacy continuum. DUAL-PAIR VERDICT: exact — the atomic and a.c. realizations are one object in dual frames (a.c. = zero dual mode = circle/Haar average of the atomic family; verified moment-wise and against a non-moment test function). SELECTION VERDICT (honest-graded): measure-level self-duality EMPTY at the substrate (base L ↦ 4π²/L, ratio ~1.45e4; self-dual locus q₀ = e^(4π)); dual-coefficient REALITY ⟺ the R4 bar-reflection σ-invariance (re-derives the σ pair {u ≡ 1, u ≡ q̃^(1/2)}, adds NO new cut; symmetrized continuum survives); dual-coefficient POSITIVITY / θ₃ shape-self-duality picks the UNIQUE atomic member u ≡ q̃^(±1/2) (NOT the Attack-B u = 1, which is θ₂ ↦ θ₄); modular INERTNESS (no dual modes) picks the log-normal a.c. member. Distinct covariance notions pick distinct objects ⇒ modular-double covariance is a symmetry-normalization, not a derivation. REGIME MAP (both q₀ pins): real q₀ > 1 ⇒ b² = ±i·ln q₀/2π (b on e^(∓iπ/4) rays — NOT the unitary |q| = 1 / real-b regime); the double acts as the real involution ln q ↦ 4π²/ln q. EXACT resonances: q̃_F = e^(−4π²/ln q₀) = (q̃_W8b)⁵ (the W8b level-5 cusp variable) = the kernel's first dual amplitude at base √q₀ (recorded, not physically interpreted); dual corrections at the substrate ~ 10^(−164.3) — below any corpus precision floor. Nothing here proves or refutes the conjecture.",
   "auditOnly": "docs/audits/2026-08-01-ksel3-modular-double-covariance.md",
@@ -107,11 +114,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   }

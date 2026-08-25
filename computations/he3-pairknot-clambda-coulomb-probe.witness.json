@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:33:26.166970+00:00",
-  "commitSha": "c55192aa2f0360c12fbb8248bbf384b9a7bf81f9",
+  "computedAt": "2026-08-21T14:49:25.028342+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "Tritium_has_zero_ZZ1_coulomb",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 17,
   "computation": "he3-pairknot-clambda-coulomb-probe",
   "scriptFile": "he3_pairknot_clambda_coulomb_probe.py",
-  "scriptHash": "4505afe355fc",
-  "scriptCommitSha": "ad971a8b8761a3af6c6eb2ad1dc8621b3744b495",
+  "scriptHash": "c3e01b320fa4",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,13 +60,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-06-22-he3-pairknot-clambda-coulomb-probe.md",
   "data": {
-    "q_0": "1.1099785955573347",
-    "E0_MeV": 4.185980827582892,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "E0_MeV": 4.185981363294476,
     "h6_block_classification": [
       {
         "partition": [
@@ -212,19 +214,19 @@
       ]
     ],
     "C_lambda_charge_blocks": {
-      "[3, 1, 1, 1]": 0.014184504736043362,
-      "[2, 2, 2]": 0.003699421241137427,
-      "[2, 2, 1, 1]": 0.011650116662524492,
-      "[2, 1, 1, 1, 1]": 0.003396074774806677,
-      "[1, 1, 1, 1, 1, 1]": 0.0001246128435294994
+      "[3, 1, 1, 1]": 0.014184503233824254,
+      "[2, 2, 2]": 0.003699420815700113,
+      "[2, 2, 1, 1]": 0.011650115394493408,
+      "[2, 1, 1, 1, 1]": 0.003396074447381883,
+      "[1, 1, 1, 1, 1, 1]": 0.0001246128338712145
     },
-    "sum_C_lambda_charge": 0.03305473025804146,
+    "sum_C_lambda_charge": 0.03305472672527087,
     "C_lambda_formula": "C_λ = w̃_λ·h/2, w̃_λ = dim_q(λ)²/[6]_q!, h=q−q⁻¹ (prop:wedderburn-weight-canonical)",
-    "B_charge_he3_clambda_ZZ1_MeV": 0.03378186495440036,
-    "fraction_covered_clambda_ZZ1": 0.04422867891385226,
-    "B_pp_strong_MeV": 2.2860880888652635,
-    "coulomb_strong_ratio_tanh_ln_q0": 0.10396372146482967,
-    "derived_pp_coulomb_MeV": 0.23767022531485302,
+    "B_charge_he3_clambda_ZZ1_MeV": 0.03378186134391623,
+    "fraction_covered_clambda_ZZ1": 0.04422867418685027,
+    "B_pp_strong_MeV": 2.128360945757083,
+    "coulomb_strong_ratio_tanh_ln_q0": 0.10396371005241015,
+    "derived_pp_coulomb_MeV": 0.2212723002515628,
     "ame_split_MeV": 0.7638,
     "skein_coulomb_empirical_aC_MeV": 0.9665456164447848,
     "isotope_structure": [
@@ -261,10 +263,10 @@
         "skein_coulomb_MeV_empirical_aC": 0.8781649717767266
       }
     ],
-    "fraction_covered_derived": 0.31116813997755044,
+    "fraction_covered_derived": 0.28969926715313277,
     "three_parameter_free_estimates_MeV": {
-      "C_lambda_ZZ1_m_e": 0.03378186495440036,
-      "derived_tanh_B_pp": 0.23767022531485302,
+      "C_lambda_ZZ1_m_e": 0.03378186134391623,
+      "derived_tanh_B_pp": 0.2212723002515628,
       "skein_aC_ZZ1_over_A13": 0.9665456164447848,
       "ame_split": 0.7638
     },
@@ -275,6 +277,6 @@
     },
     "verdict": "C_λ q-integer products computed explicitly (prop:wedderburn-weight-canonical, no fit): Σ_charge C_λ = 0.0331. The bare C_λ·Z(Z−1)·m_e shadow-price ansatz gives 0.034 MeV (~4.4%, 22.6× short) — DECISIVELY insufficient, ruling out S_λ=Z(Z−1) at the m_e scale. The Z(Z−1)/A^{1/3} structure is correct (c(λ)<0 blocks carry it; T=0, ³He nonzero). Three parameter-free estimates span the split: C_λ·Z(Z−1) 4%, derived tanh·B_pp 31%, Skein-a_C 127%. The charge-type S_λ normalisation (the categorical two-like-charge brane-pairing invariant, ~22× the bare C_λ·Z(Z−1)) is OPEN; closing by fit to 0.764 MeV is forbidden (CAL-4 / Δ_λ gate)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

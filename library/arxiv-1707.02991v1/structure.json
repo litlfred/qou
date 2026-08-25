@@ -1,0 +1,150 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1707.02991v1",
+ "source": {
+  "file": "1707.02991v1.pdf",
+  "sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
+  "bytes": 414008,
+  "pages": 6
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1707.02991",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "10 Jul 2017"
+  },
+  "doi": null,
+  "title": "BPS states, knots and quivers",
+  "authors_raw": "Piotr Kucharski 1, Markus Reineke 2, Marko Stoˇ sić3,4, and Piotr Su lkowski 1,5",
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20170712001538Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  },
+  "title_lines": [
+   "BPS states, knots and quivers"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "BPS states, knots and quivers",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Knot invariants, knot homologies, and LMOV conjecture",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Moduli of quiver representations",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Knot invariants from quiver representation theory",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Example – trefoil knot",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-bps-states-knots-and-quivers",
+   "number": null,
+   "title": "BPS states, knots and quivers",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 10660,
+   "n_words": 1704
+  },
+  {
+   "id": "sec-001-moduli-of-quiver-representations",
+   "number": null,
+   "title": "Moduli of quiver representations",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1575,
+   "n_words": 279
+  },
+  {
+   "id": "sec-002-knot-invariants-from-quiver-representation-theor",
+   "number": null,
+   "title": "Knot invariants from quiver representation theory",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5688,
+   "n_words": 929
+  },
+  {
+   "id": "sec-003-example-trefoil-knot",
+   "number": null,
+   "title": "Example – trefoil knot",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1903,
+   "n_words": 328
+  },
+  {
+   "id": "sec-004-summary",
+   "number": null,
+   "title": "Summary",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 6116,
+   "n_words": 925
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 5,
+  "chars_total": 25942
+ }
+}

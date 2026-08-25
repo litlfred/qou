@@ -65,7 +65,7 @@ def eval_habiro_poly(coeffs, u):
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)

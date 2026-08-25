@@ -41,7 +41,7 @@ anchors are established, but the equality of the full binding to the complete
 jet-order filtration — and the $q$-difference origin of the scale rule — are
 not yet proved.
 
-**Scope note on the weight $w_n(K)$.** A derive-or-refute of the
+**Scope note on the weight $w_n(K)$.** A derive-or-refute probe of the
 weight kernel establishes what does *not* close.
 Body-order weights $w_n$ (shared across knots $K$) are **admissible**: the raw
 $^{3}\mathrm{H}$/$^{3}\mathrm{He}$ binding split ($0.76\ \text{MeV}$, $9.9\%$) is

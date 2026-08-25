@@ -8,4 +8,4 @@ The green and blue sectors follow analogous equations with rate multipliers $k^{
 
 The flow accumulates the color-twist factor $q t$ linearly. A strand at $\psi = 0$ on the south foundry arrives at $\psi = q\pi$ on the north foundry. Sequential flows compose additively: $\phi^q_{t_1} \circ \phi^q_{t_2} = \phi^q_{t_1 + t_2}$. A braid word acts as a concatenation of partial flows. This realizes the Heisenberg commutator $[\hat X,\hat P]_q = J\hbar_q$.
 
-Uniform-vortex 3-cycle generators apply $k = +1$ or $k = -1$ to all sectors simultaneously. The signed-rate machine links the algebraic Hecke generator $\sigma_i$ to the explicit ODE on color-sector coordinates.
+Uniform-vortex 3-cycle generators apply $k = +1$ or $k = -1$ to all sectors simultaneously.

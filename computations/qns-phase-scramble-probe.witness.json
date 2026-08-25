@@ -1,0 +1,71 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-16T02:32:46.686056+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "assertions": [
+    {
+      "name": "phase decorrelation does NOT amplify the tail: the scramble ratio s_n = sup|u_n|(scrambled)/sup|u_n|(coherent) <= 1 on every excited tail rung, at both cadences (every-step and 0.1-eddy) and every eps — the coherent evolution is the in-model worst case, so the SF arc's fully-coherent real-amplitude models are CONSERVATIVE with respect to sweeping/decorrelation, and SF10's cross-model amplification is attributable to triad structure, not phase coherence",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max s_n per (cadence, eps) over tail rungs excited in both runs; deterministic hash phases, moduli untouched"
+    },
+    {
+      "name": "the modulus damped-forced form (rung_equilibrium_forced instance) holds on the SCRAMBLED runs too: r_n <= 1 on every excited empty-start rung — the Lean-backed route is phase-insensitive, as the triangle bound predicts",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max r_n per (cadence, eps) on scrambled runs"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42854,
+  "computation": "qns-phase-scramble-probe",
+  "scriptFile": "qns_phase_scramble_probe.py",
+  "scriptHash": "702724f55f20",
+  "scriptCommitSha": "69e6123f1614192675ebca40909ff2bf370baf3c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "SF11 (bean qou-ougq): isolates the phase effect from SF10's triad-structure confound by comparing the complex Sabra q-shell against itself with deterministically hash-scrambled phases (moduli untouched, energy preserved by the scramble) at two cadences. s_n <= 1 means decorrelation weakens tail excitation and the coherent model is the worst case. Scope (a); float64 complex RK2 exploratory tier; sweeping in full NS also advects structures spatially, which no shell model represents — the residual caveat, now narrowed to spatial advection only.",
+  "data": {
+    "full_eps1e-01_max_scramble_ratio": "0.026761290178480727",
+    "full_eps1e-01_max_modulus_ratio": "0.058193924889303084",
+    "full_eps1e-01_n_compared": 4,
+    "partial_eps1e-01_max_scramble_ratio": "0.2488604187340058",
+    "partial_eps1e-01_max_modulus_ratio": "0.2565609497547745",
+    "partial_eps1e-01_n_compared": 6,
+    "full_eps1e-02_max_scramble_ratio": "0.01962450471657222",
+    "full_eps1e-02_max_modulus_ratio": "0.013193016198606149",
+    "full_eps1e-02_n_compared": 5,
+    "partial_eps1e-02_max_scramble_ratio": "0.14819472763682223",
+    "partial_eps1e-02_max_modulus_ratio": "0.39835205005363766",
+    "partial_eps1e-02_n_compared": 7,
+    "full_eps3e-03_max_scramble_ratio": "0.011061887428346549",
+    "full_eps3e-03_max_modulus_ratio": "0.0028987356068852542",
+    "full_eps3e-03_n_compared": 5,
+    "partial_eps3e-03_max_scramble_ratio": "0.1442648724691411",
+    "partial_eps3e-03_max_modulus_ratio": "0.03688701630526168",
+    "partial_eps3e-03_n_compared": 7,
+    "tier": "exploratory",
+    "delta": "0.5",
+    "cadences_eddy": {
+      "full": "0.0",
+      "partial": "0.1"
+    },
+    "n_cap": 400,
+    "n_data": 4
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Sabra/DN shell model: the only q here is the shell-spacing ratio q = 1 + eps swept over EPS_SWEEP, not the substrate modulus. eps = 1e-1 gives q = 1.1, adjacent to q0 = 1.10998 — coincidence, and the reason this needs stating rather than inferring. Import cone reaches no q_parameter and no qou_substrate.constants."
+}

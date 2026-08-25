@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
   },
   "source_hashes": {
-    "ts": "8836d62e2abb",
     "md": "c0201d60037f",
-    "lean": "1e07bfaf5a27"
+    "ts": "8836d62e2abb",
+    "lean": "1e07bfaf5a27",
+    "lean_statement": "033c878823e9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -296,31 +297,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "c0201d60037f",
-          "ts": "8836d62e2abb",
-          "lean": "1e07bfaf5a27",
-          "lean_statement": "033c878823e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1587,7 +1568,8 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "field_hash": {
@@ -1900,7 +1882,8 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2279,7 +2262,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist"
       },
       {
         "field_hash": {
@@ -2624,7 +2608,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.754Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.813Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.881Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.943Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:42.981Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "severity": "major",
+        "evidence": "Block-final line: 'This structure bridges the categorical operator traces to the empirical magic-shell mass phenomenology.' A quotable significance closer that neither the statement nor the proof establishes — the proof shows integrality and termination of a cyclotomic expansion, nothing about magic-shell phenomenology.",
+        "notes": "proposed (structural, not applied — it deletes a claim): drop the sentence, or migrate it to authorNotes per AGENTS.md 4d if the author wants the significance recorded. Same treatment as the novelty-closer template."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.018Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.053Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.105Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.144Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Read in full (corollary, 11 lines: one statement + a three-sentence commentary paragraph). Minor: the commentary calls the block 'This proposition' while the .ts declares kind=corollary."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.553Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:43.193Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "'the empirical magic-shell mass phenomenology' is a four-noun chain, but it is the only one in the block and each term is defined elsewhere in the chapter."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb",
+          "lean": "1e07bfaf5a27",
+          "lean_statement": "033c878823e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:21:43.193Z"
 }

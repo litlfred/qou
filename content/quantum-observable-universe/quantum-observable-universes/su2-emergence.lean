@@ -5,6 +5,11 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
+-- Supplies `LaurentPolynomial` / `LaurentPolynomial.T` for the `R_q` ground-ring
+-- declarations below.  Its absence made this file fail to elaborate with three
+-- `unknownIdentifier` errors; nothing caught it, because content-block `.lean`
+-- siblings have no CI (workflow_dispatch-only) and no `.qa.json` compile gate.
+import Mathlib.Algebra.Polynomial.Laurent
 
 
 /-!
@@ -51,21 +56,58 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     object has categorical dimension 2, the volume form forces determinant 1,
     and adjoint vanishing forces the gauge group to be rank 1.
 
-    This packages the three constraints that together force SU(2).
-    The actual theorem (`su2_emergence`) proves the conclusion from
-    these hypotheses. -/
+    **Scope warning — only one of the three fields constrains the QOU.**
+    The narrative above describes three constraints "that together force
+    SU(2)"; the type delivers one:
+
+    * `fund_dim_two` is an arithmetic fact about the *literal*
+      `{ twice_j := 1 }` and is discharged by `decide`.  It never mentions
+      `qou`, so it does **not** say that this QOU's fundamental object has
+      dimension 2 — the intended tie to `qou.fundamentalObj` is missing.
+    * `volume_nondeg` is a genuine constraint on `qou.volumeForm`.
+    * `adjoint_trivial` carries the default value `qou.adjoint_vanishing`,
+      so every QOU satisfies it automatically; it restates a QOU axiom
+      rather than adding a hypothesis.
+
+    The encoding gap in `fund_dim_two` is structural, not a typo: tying it
+    to `qou.fundamentalObj` needs the spin indexing that `SpinDecomposition`
+    supplies, and that is the *conclusion* `su2_emergence` produces — so the
+    hypothesis cannot reference it without circularity.  Restructuring is
+    tracked as a bean; it is deliberately not done inline, because this is
+    the most depended-upon declaration on the critical path.
+
+    Consequently `su2_emergence` should be read as "volume non-degeneracy
+    (plus the QOU axioms) yields a spin decomposition", not as a
+    three-legged derivation. -/
 structure RankOneGaugeData (k : Type*) [Field k] where
   /-- The underlying QOU. -/
   qou : QuantumObservableUniverse.{u, v} k
   /-- The fundamental representation V has categorical dimension 2,
       encoded as: the spin label for V is j = 1/2 (twice_j = 1). -/
   fund_dim_two : ({ twice_j := 1 : SpinLabels }).cat_dim = 2
-  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate (epimorphism). -/
+  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate (epimorphism).
+
+      **No longer a hypothesis** (bean `qou-n1dj`, 2026-08-22).  Condition
+      (iii) of `QuantumObservableUniverse` is now the isomorphism
+      `volumeIso : exteriorSquare ≅ (𝟙_ C)`, and an isomorphism is epi, so
+      this field carries a default value and every QOU satisfies it.
+
+      Read this together with the scope warning above.  `volume_nondeg` was
+      the *one* field of the three that constrained the QOU; with it
+      discharged, `RankOneGaugeData` adds nothing to
+      `QuantumObservableUniverse`.  The content did not disappear — it moved
+      upstream into the framework axiom, which is where the corpus states it —
+      but a reader told "one of three constrains" should now be told "none of
+      the three, because the axiom already does". -/
   volume_nondeg :
     letI := qou.catInst
     letI := qou.monInst
     ∀ (f g : (𝟙_ qou.C) ⟶ (𝟙_ qou.C)),
-      qou.volumeForm ≫ f = qou.volumeForm ≫ g → f = g
+      qou.volumeIso.hom ≫ f = qou.volumeIso.hom ≫ g → f = g := by
+    letI := qou.catInst
+    letI := qou.monInst
+    intro f g h
+    exact (CategoryTheory.cancel_epi qou.volumeIso.hom).mp h
   /-- Adjoint vanishing: Hom(𝟙, Ad(A)) is trivial. -/
   adjoint_trivial :
     letI := qou.catInst
@@ -117,7 +159,7 @@ structure SpinDecomposition (C : Type u) [CategoryTheory.Category.{v} C]
     LaTeX: `\label{thm:su2-emergence}`
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
--- Ref: [deligne2007] Catégories tannakiennes — see content/schema/references.ts
+-- Ref: [deligne1990] Catégories tannakiennes — see content/schema/references.ts
 axiom su2_emergence {k : Type*} [Field k]
     (data : RankOneGaugeData.{u, v} k) :
     letI := data.qou.catInst

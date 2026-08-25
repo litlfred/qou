@@ -408,7 +408,10 @@ fn build_and_eval(z: usize, n: usize, threshold: usize) -> (f64, f64, f64, f64) 
 
     // Actually: just evaluate the polynomial at t₀ = √q₀ as a float
     // using the exact mod-p coefficients interpreted as signed integers.
-    let q0: f64 = 1.1099785955541805;
+    // Certificate anchor. Read from `gram::Q_0` (PROTON pin since
+    // 2026-08-15) instead of a local literal — this copy is why the
+    // 2026-08-15 re-pin did not reach the emitted certificates.
+    let q0: f64 = hecke_engine::gram::Q_0;
     let t0 = q0.sqrt();
     let half_p = P / 2;
     let divisor = 2.0_f64.powi(pn_count as i32);
@@ -460,9 +463,25 @@ fn main() {
     eprintln!("  {} words, {:.2}s", nw, elapsed);
 
     // Write certificate
+    // `name` ("4He") is schema-optional but every committed certificate has
+    // it — the emitter had stopped writing it, so a regeneration would have
+    // silently STRIPPED it from all 53. `pyhecke.certificate` reads it via
+    // `.get`, so the loss would have degraded to None rather than failing.
+    // Restored here so regenerating preserves data instead of eroding it.
     let cert = serde_json::json!({
-        "isotope": { "z": z, "n": n, "a": a, "symbol": sym(z) },
+        "isotope": {
+            "z": z, "n": n, "a": a, "symbol": sym(z),
+            "name": format!("{}{}", a, {
+                let s = sym(z);
+                let mut c = s.chars();
+                match c.next() {
+                    Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+                    None => String::new(),
+                }
+            }),
+        },
         "engine": { "name": "hecke-crt", "version": "0.10.1" },
+        "generation": hecke_engine::provenance::Generation::capture(hecke_engine::gram::Q_0),
         "f_pauli_f64": fp,
         "tr_alt_f64": ta,
         "net_f64": nt,

@@ -294,30 +294,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T12:59:53.423Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "80e73db52633",
-          "ts": "2b9b784f09cf"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:31:42.624Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -885,13 +866,212 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.547Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.588Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.629Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.669Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.708Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.746Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.785Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.824Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.864Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "80e73db52633",
+          "ts": "2b9b784f09cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:43.912Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:bring-brane. No constructions from the ten categories; 'The Bring brane is not a calibration input - it is a mathematical constant fixed by the rigid-monoidal premise' is substantive contrast serving the three-calibration discipline, not manufactured negation. VERIFIED the geometry: Bring's curve has genus 4 and chi = 2 - 2g = -6, so the block's chi = -6 and g = 4 are mutually consistent, and Aut = S_5 (order 120) is correct for Bring's curve.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The pseudocode calls S_5 'the small simple group acting on Bring's coordinate ring'. S_5 is NOT simple - it has A_5 as a normal subgroup of index 2; A_5 is the smallest non-abelian simple group, which looks like the source of the phrasing. (2) The block writes the Bring surface as \\mathcal{E}_q, but notation-register table 6 assigns \\mathcal{E}_q to the Descartes ELLIPTIC CURVE ('Never E_q for a curve'), and a genus-4 surface is not elliptic. This is corpus-wide - content/quantum-observable-universe/brings-surface/ uses \\mathcal{E}_q throughout - so it is a register-level collision rather than a defect introduced by this block."
+      }
     ]
   },
   "source_hashes": {
-    "ts": "2b9b784f09cf",
-    "md": "80e73db52633"
+    "md": "80e73db52633",
+    "ts": "2b9b784f09cf"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z",
+  "updated_at": "2026-08-22T04:26:43.912Z",
   "$schema": "block-qa/v1",
   "label": "alg:bring-brane",
   "kind": "algorithm",

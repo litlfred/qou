@@ -108,7 +108,8 @@ class HasHe4ChannelActiveSet where
   cost_ordering : tTp < tHe3n ∧ tHe3n < tDD
   /-- Strong duality: Σ t_i x_i = n_target · y0_star (LP duality
       gap = 0).  Proved as a rational identity at the witnessed
-      values; not axiomatised. -/
+      values; not axiomatised.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality :
     tDD * xDD + tTp * xTp + tHe3n * xHe3n = n_target * y0_star
 

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/torus-knot-zero-volume-via-reeb.md"
   },
   "source_hashes": {
-    "ts": "6ea8d30b77ee",
-    "md": "b1e30e130b46"
+    "md": "b1e30e130b46",
+    "ts": "6ea8d30b77ee"
   },
   "criteria": {
     "voice-status-leak": [
@@ -268,30 +268,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b1e30e130b46",
-          "ts": "6ea8d30b77ee"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -903,7 +884,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
@@ -1256,7 +1238,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
@@ -1444,7 +1427,368 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.553Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.621Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.689Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.762Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'maintains parallel strands, aligns with the Hopf fibre, and closes onto the Heegaard torus' - three distinct geometric conditions.",
+        "notes": "Substantive, though 'guaranteeing' overstates what a three-item description establishes."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.845Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.913Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.969Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.042Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.110Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (107w, rem). The stated conclusion is correct - torus-knot complements are Seifert-fibered and carry no hyperbolic structure, so V_hyp(T_{m,n}) = 0."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.491Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.185Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "BRAID-CLOSURE ERROR for the report, computed: 'The 3-cycle braid words sigma_1 sigma_2 and sigma_2 sigma_1 ... The trajectory completes a T_{2,3} torus knot (trefoil).' The closure of (sigma_1 ... sigma_{m-1})^p is T_{m,p}, so the closure of sigma_1 sigma_2 in B_3 is T_{3,1} - the UNKNOT, not the trefoil. The trefoil is the closure of (sigma_1 sigma_2)^2 = T_{3,2}, or of sigma_1^3 in B_2 = T_{2,3}. This is the recurring mislabelled-braid-word class. The block's CONCLUSION survives untouched, since the unknot also has zero hyperbolic volume; only the knot identification is wrong."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b1e30e130b46",
+          "ts": "6ea8d30b77ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:32:43.185Z"
 }

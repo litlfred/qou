@@ -4,6 +4,7 @@ import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.HeckeAlgebra.Hoefsmit
 import QOU.HeckeAlgebra.Wedderburn
+import QOU.HeckeAlgebra.JonesMarkovWenzl
 
 /-!
 # QOU.HeckeAlgebra.MarkovTrace — extended Markov-trace structure
@@ -66,8 +67,8 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit QOU.HeckeAlgebra.Wedderburn
     `λ` at parameter `q`.  Axiomatised; concrete Wenzl 1988 §3
     formula is deferred to the next round of Lean port. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (Jones-Markov coefficients y_λ)
-axiom JonesMarkovCoefficient :
-    ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
+noncomputable def JonesMarkovCoefficient {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : ℝ :=
+    QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q
 
 /-- The Jones-Markov coefficients `y_λ(q)` are real-valued and
     sum to 1 across partitions: `Σ_{λ ⊢ n} y_λ(q) = 1` (the
@@ -75,10 +76,11 @@ axiom JonesMarkovCoefficient :
 
     Stated against an explicit `Finset` of partitions
     (`partitions_as_finset n`) since `Nat.Partition n` is a
-    proposition, not a `Finset`.  Concrete enumeration of
-    partitions as a Finset is a deferred Mathlib-API task. -/
--- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; Mathlib-API task)
-axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
+    proposition, not a `Finset`.  CLOSED: Mathlib provides
+    `Fintype (Nat.Partition n)` in `Combinatorics.Enumerative.Partition`,
+    so we can use `Finset.univ`. -/
+-- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
+def partitions_as_finset (n : ℕ) : Finset (Nat.Partition n) := Finset.univ
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation Σ_λ y_λ = 1)
 axiom JonesMarkovCoefficient_sum_eq_one :
@@ -92,7 +94,7 @@ axiom JonesMarkovCoefficient_sum_eq_one :
     Concrete instance comes from the matrix algebra under
     `wedderburnEmbed`. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Iwahori-Hecke algebra multiplication)
-axiom heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
+opaque heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
 
 /-- Notation for Hecke-algebra multiplication. -/
 scoped infixl:70 " *_h " => heckeMul
@@ -111,7 +113,7 @@ axiom MarkovTrace_cyclic :
     (which requires the Hecke generator `σ_n` to be expressible
     as a `HeckeElement (n + 1)` — the natural inclusion). -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (stabilisation by generator σ_n)
-axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
+opaque heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
 /-- **Markov axiom** for the Markov trace: stabilisation scales
     the trace by *the* Markov parameter
@@ -149,8 +151,9 @@ axiom MarkovTrace_markov_axiom :
     `wenzlBridge` below relates this trace to the block-trace
     sum form. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (categorical Markov trace on Wedderburn blocks)
-axiom markovTraceOnWedderburn :
-    ∀ {n : ℕ}, WedderburnDecomposition n → ℝ
+noncomputable def markovTraceOnWedderburn {n : ℕ} (x : WedderburnDecomposition n) : ℝ :=
+    ∑ lam ∈ partitions_as_finset n,
+      JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
 
 /-- **Wenzl bridge** (categorical identity): the Markov trace
     of an element via its Wedderburn decomposition equals the
@@ -175,11 +178,10 @@ axiom markovTraceOnWedderburn :
     `Wedderburn.lean`), so `q_0` is the only `q` the statement can
     honestly mean.  Bean `qou-ck1f`. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Wenzl bridge: tr_M = Σ_λ y_λ·χ^λ)
-axiom wenzlBridge :
-    ∀ {n : ℕ} (x : WedderburnDecomposition n),
+@[simp] theorem wenzlBridge {n : ℕ} (x : WedderburnDecomposition n) :
     markovTraceOnWedderburn x =
       ∑ lam ∈ partitions_as_finset n,
-        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
+        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace := rfl
 
 /-- **Trace of an additive sum** distributes.
 

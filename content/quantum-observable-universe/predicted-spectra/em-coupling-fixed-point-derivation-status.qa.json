@@ -302,30 +302,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "24a8d26bbcab",
-          "ts": "3f5b7ed01096"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -949,11 +930,374 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.516Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Full read. Two negation constructions, both substantive: the heading '## Genuine derivation, not projection' uses the corpus's own technical distinction (AGENTS.md 3b-cond item 5, self-assuming projection vs derivation), and 'No fabricated instance attempts to close the primary conjecture' is a factual status statement about an uninhabited class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.554Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No setup-then-reframe construction anywhere; the four sections are declarative status prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.591Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No spaced em-dashes in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.629Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "The single triple is the numbered list of three actual terms in the fixed-point equation (tree term, zero-mode shift, O(alpha^2) normalization), each with a distinct Lean reference. Substantive enumeration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.666Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Block ends 'The class remains uninhabited. No fabricated instance attempts to close the primary conjecture.' - status facts about the Lean state, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.705Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.744Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "severity": "minor",
+        "evidence": "Section '## Genuine derivation, not projection' ends with 'The proof is a genuine derivation.' - a section-final sentence restating the section heading verbatim after the two preceding sentences have already shown the composition (lemma establishes the equivalence; theorem composes it with the b3_normalization field).",
+        "notes": "Structural, NOT edited: in an epistemic-status block this sentence is an auditable status claim, so deleting it is a meaning change rather than a pure register fix. Proposed fix (author call): delete 'The proof is a genuine derivation.' and let the heading plus the composition sentence carry it; or, if the verdict sentence is wanted, replace the heading with a neutral noun phrase such as '## Derivation status of the main theorem' so the claim is stated once."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.785Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Institutional register; no personal or warm register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.823Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "'the single open input' and 'The sole open element' are factual counts (exactly one open item is enumerated), not inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.198Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.861Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "severity": "minor",
+        "evidence": "Two abstract-noun-subject sentences that stall aloud in a short block: 'The conjectural $B_3(\\mathbb{C})$ Bloch-class content supplies its exact form.' (five-word noun pile as subject) and 'CODATA-consistency provides the empirical foundation of the conjecture.' (nominalised subject and object, no agent). Adjacent in the same paragraph, so concentration is the tell.",
+        "notes": "Structural (the second sentence also carries an epistemic claim - see notes flagged to the batch summary). Proposed fix: 'The exact form of that correction is conjectured to be a Bloch class in $B_3(\\mathbb{C})$.' and 'The conjecture is supported empirically by consistency with CODATA, not derived from it.' The second rewrite also states the fit/derivation status the current nominalisation leaves ambiguous."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
   "source_hashes": {
-    "ts": "3f5b7ed01096",
-    "md": "24a8d26bbcab"
+    "md": "24a8d26bbcab",
+    "ts": "3f5b7ed01096"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:23:50.861Z"
 }

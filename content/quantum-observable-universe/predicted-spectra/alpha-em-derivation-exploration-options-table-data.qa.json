@@ -300,30 +300,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1e2235893be7",
-          "ts": "8eab48a36e2b"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -891,11 +872,216 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.622Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      },
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:04.046Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block - no prose. NUMERIC AUDIT recorded here (see notes).",
+        "notes": "NUMERIC CHECK, no defect found in this table: row 4 asserts g=4 in 2g/(4pi(g-1)); recomputed with mpmath dps=40, 2*4/(4*pi*3) = 0.212206590789194 = 2/(3pi) exactly, and Vol(S2)/(3 Vol(S3)) = 4pi/(6pi^2) = 0.212206590789194 also exactly. All three forms agree. The table is a qualitative source map with no numerics of its own; every block reference resolves to a real label in the corpus."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.661Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.699Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.742Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.780Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.819Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.859Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.902Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.939Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.992Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
     ]
   },
   "source_hashes": {
-    "ts": "8eab48a36e2b",
-    "md": "1e2235893be7"
+    "md": "1e2235893be7",
+    "ts": "8eab48a36e2b"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:25:04.046Z"
 }

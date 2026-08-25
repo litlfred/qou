@@ -5,7 +5,7 @@ critical value IS Vol(5_2).
 Beans `qou-thmb` (the Picard-Lefschetz / volume route) and `qou-xblo` (the sum
 rule lane whose cubic this turns out to be).
 
-SOURCE (ingested this session, uploads/10.4171-qt-83.pdf, blob 632e54ac)
+SOURCE (ingested this session, library/104171-qt-83/10.4171-qt-83.pdf, blob 632e54ac)
 -----------------------------------------------------------------------
 T. Ohtsuki, "On the asymptotic expansion of the Kashaev invariant of the 5_2
 knot", Quantum Topol. 7 (2016) 669-735, DOI 10.4171/QT/83.  67 pages.
@@ -153,7 +153,7 @@ def main() -> int:
         "beans": ["qou-thmb", "qou-xblo"], "dps": mp.dps,
         "source": {
             "ref": "Ohtsuki, Quantum Topol. 7 (2016) 669-735, DOI 10.4171/QT/83",
-            "file": "uploads/10.4171-qt-83.pdf", "blob": "632e54acc09336ae9dbfc1207bef99a13a5f72a4",
+            "file": "library/104171-qt-83/10.4171-qt-83.pdf", "blob": "632e54acc09336ae9dbfc1207bef99a13a5f72a4",
             "settles": "the 5_2 volume conjecture IS a published theorem -- bean qou-thmb "
                        "recorded this as unverified memory; it is now verified from the paper.",
         },

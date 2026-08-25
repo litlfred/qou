@@ -1,10 +1,11 @@
 ---
 # qou-j6il
 title: 'TRAP (critical): installed pyhecke_native .so is STALE and returns convention C -- any producer run silently reintroduces C'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T22:00:28Z
-updated_at: 2026-08-09T22:00:28Z
+updated_at: 2026-08-10T00:48:34Z
 ---
 
 

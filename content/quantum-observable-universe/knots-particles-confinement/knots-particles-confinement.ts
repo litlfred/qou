@@ -20,7 +20,23 @@ export default chapter({
   title: "Knots, Particles, and Confinement",
   label: "chap:knots-particles-confinement",
   sections: [
-    // ── §1. Nucleon derivation from pair production ──────────────
+    // ── §1. Interactions are pairwise ────────────────────────────
+    // Scope-fixing opener: the braiding is a binary datum, so every
+    // many-body interaction is a word in two-strand crossings, and
+    // Yang-Baxter (Reidemeister III) makes that word well defined.
+    // Everything downstream in this chapter is a two-strand operator.
+    section({
+      title: "Interactions are pairwise",
+      label: "sec:interactions-are-pairwise",
+      blocks: [
+        "interactions-are-pairwise-intro",
+        "pairwise-interaction-decomposition",
+        "pairwise-interaction-decomposition-proof",
+        "two-particle-sufficiency",
+      ],
+    }),
+
+    // ── §2. Nucleon derivation from pair production ──────────────
     // Defines quarks, quark-antiquark production, nucleon construction.
     section({
       title: "Nucleon derivation from pair production",
@@ -44,7 +60,7 @@ export default chapter({
       ],
     }),
 
-    // ── §2. Hadron algebra and knot factorisation ────────────────
+    // ── §3. Hadron algebra and knot factorisation ────────────────
     section({
       title: "Hadron Algebra and Knot Factorisation",
       label: "sec:hadron-algebra",
@@ -64,7 +80,7 @@ export default chapter({
       ],
     }),
 
-    // ── §3. Skein generation and particle correspondence ─────────
+    // ── §4. Skein generation and particle correspondence ─────────
     section({
       title: "Skein Generation and Particle Correspondence",
       label: "sec:skein-particle-generation",
@@ -95,7 +111,7 @@ export default chapter({
       ],
     }),
 
-    // ── §4. Borromean baryons and Reidemeister invariance ─────────
+    // ── §5. Borromean baryons and Reidemeister invariance ─────────
     section({
       title: "Borromean Baryons and Reidemeister Invariance",
       label: "sec:borromean-reidemeister",
@@ -121,7 +137,7 @@ export default chapter({
       ],
     }),
 
-    // ── §5. Confinement level and the cemetery group ──────────────
+    // ── §6. Confinement level and the cemetery group ──────────────
     section({
       title: "Confinement level and the cemetery group",
       label: "sec:confinement-level",
@@ -143,7 +159,7 @@ export default chapter({
       ],
     }),
 
-    // ── §6. Lepton–meson structural parallel ─────────────────────
+    // ── §7. Lepton–meson structural parallel ─────────────────────
     section({
       title: "Lepton–meson structural parallel",
       label: "sec:lepton-meson-structural-parallel",
@@ -156,7 +172,7 @@ export default chapter({
       ],
     }),
 
-    // ── §7. Electroweak and Higgs torus-link triplet ─────────────
+    // ── §8. Electroweak and Higgs torus-link triplet ─────────────
     section({
       title: "Electroweak and Higgs sector as an even-twist torus-link triplet",
       label: "sec:electroweak-higgs-torus-link-triplet",
@@ -189,7 +205,7 @@ export default chapter({
       ],
     }),
 
-    // ── §8. Confined particles and shells ─────────────────────────
+    // ── §9. Confined particles and shells ─────────────────────────
     section({
       title: "Confined particles and shells",
       label: "sec:confined-particles-shells",
@@ -216,7 +232,7 @@ export default chapter({
       ],
     }),
 
-    // ── §9. Atom and isotope knots ────────────────────────────────
+    // ── §10. Atom and isotope knots ────────────────────────────────
     section({
       title: "Atom and isotope knots",
       label: "sec:atom-isotope-knots",
@@ -249,7 +265,7 @@ export default chapter({
       ],
     }),
 
-    // ── §10. Magic shells and the κ coupling ──────────────────────
+    // ── §11. Magic shells and the κ coupling ──────────────────────
     section({
       title: "Magic shells and the $\\\\kappa$ coupling",
       label: "sec:magic-shells",
@@ -271,7 +287,7 @@ export default chapter({
       ],
     }),
 
-    // ── §11. Categorical proton, neutron, and meson ───────────────
+    // ── §12. Categorical proton, neutron, and meson ───────────────
     // The definitional blocks from the former orphan-reconnect section.
     // Structural definitions of composite hadrons: their categorical
     // construction and Reidemeister-invariant properties.

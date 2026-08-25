@@ -1,0 +1,736 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1207.6711v1",
+ "source": {
+  "file": "1207.6711v1.pdf",
+  "sha256": "320c4301ac66fff15d69ef60bc2e445788ba75b3189a1f5581211e805b5e6188",
+  "bytes": 984156,
+  "pages": 47
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1207.6711",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "28 Jul 2012"
+  },
+  "doi": null,
+  "title": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS",
+  "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
+  "abstract": "In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨ uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X -coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20211120190911Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF",
+   "3-MANIFOLDS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Thurston's gluing equations",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Our main results",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Computations and applications",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Overview of the Paper",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgement",
+   "page": 6,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Concrete triangulations",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Face pairing permutations",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "Thurston's gluing equations",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Symplectic properties of the gluing equations",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Generalized gluing equations",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Simplex coordinates",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetries of a simplex",
+   "page": 9,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Shape assignments",
+   "page": 9,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Gluing equations for oriented triangulations",
+   "page": 10,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "The pullback of a shape assignment under a symmetry",
+   "page": 13,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Gluing equations for general concrete triangulations",
+   "page": 14,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 1,
+   "title": "Review of Ptolemy coordinates",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Ptolemy assignments for ordered triangulations",
+   "page": 14,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The pullback of a Ptolemy assignment under a symmetry",
+   "page": 15,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Ptolemy assignments for general concrete triangulations",
+   "page": 16,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "From Ptolemy coordinates to shapes",
+   "page": 17,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Proof for edge equations",
+   "page": 18,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof for face equations",
+   "page": 19,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof for internal equations",
+   "page": 19,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Symplectic properties and quantum topology",
+   "page": 20,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Applications in quantum topology",
+   "page": 23,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 1,
+   "title": "Decorations",
+   "page": 25,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Generic decorations, Ptolemy coordinates and shapes",
+   "page": 26,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 1,
+   "title": "The natural cocycle of a generic decoration",
+   "page": 28,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Truncated and doubly truncated simplices",
+   "page": 28,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Cocycles",
+   "page": 29,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "The natural cocycle of a generic decoration",
+   "page": 29,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 1,
+   "title": "Explicit formulas for the natural cocycles",
+   "page": 31,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Diamond and ratio coordinates",
+   "page": 31,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "X-coordinates",
+   "page": 33,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "From natural (SL(n,C),N)-cocycles to natural (PGL(n,C),B,H)-cocycles.",
+   "page": 36,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 1,
+   "title": "From shape assignments to cocycles",
+   "page": 39,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "Duality",
+   "page": 41,
+   "source": "outline",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "The cusp equations",
+   "page": 41,
+   "source": "outline",
+   "number": "13"
+  },
+  {
+   "level": 2,
+   "title": "Simplifying the cusp equations",
+   "page": 42,
+   "source": "outline",
+   "number": "13.1"
+  },
+  {
+   "level": 1,
+   "title": "Example: the figure-eight knot",
+   "page": 43,
+   "source": "outline",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6012,
+   "n_words": 956
+  },
+  {
+   "id": "sec-001-12-our-main-results",
+   "number": "1.2",
+   "title": "Our main results",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3142,
+   "n_words": 557
+  },
+  {
+   "id": "sec-002-13-computations-and-applications",
+   "number": "1.3",
+   "title": "Computations and applications",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1991,
+   "n_words": 326
+  },
+  {
+   "id": "sec-003-14-overview-of-the-paper",
+   "number": "1.4",
+   "title": "Overview of the Paper",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 92,
+   "n_words": 16
+  },
+  {
+   "id": "sec-004-2-concrete-triangulations",
+   "number": "2",
+   "title": "Concrete triangulations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3073,
+   "n_words": 514
+  },
+  {
+   "id": "sec-005-15-acknowledgement",
+   "number": "1.5",
+   "title": "Acknowledgement",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2794,
+   "n_words": 448
+  },
+  {
+   "id": "sec-006-21-face-pairing-permutations",
+   "number": "2.1",
+   "title": "Face pairing permutations",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2389,
+   "n_words": 456
+  },
+  {
+   "id": "sec-007-31-symplectic-properties-of-the-gluing-equations",
+   "number": "3.1",
+   "title": "Symplectic properties of the gluing equations",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 368,
+   "n_words": 63
+  },
+  {
+   "id": "sec-008-4-generalized-gluing-equations",
+   "number": "4",
+   "title": "Generalized gluing equations",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 441,
+   "n_words": 71
+  },
+  {
+   "id": "sec-009-41-simplex-coordinates",
+   "number": "4.1",
+   "title": "Simplex coordinates",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 801,
+   "n_words": 170
+  },
+  {
+   "id": "sec-010-42-symmetries-of-a-simplex",
+   "number": "4.2",
+   "title": "Symmetries of a simplex",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 288,
+   "n_words": 53
+  },
+  {
+   "id": "sec-011-43-shape-assignments",
+   "number": "4.3",
+   "title": "Shape assignments",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1504,
+   "n_words": 297
+  },
+  {
+   "id": "sec-012-44-gluing-equations-for-oriented-triangulations",
+   "number": "4.4",
+   "title": "Gluing equations for oriented triangulations",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 3366,
+   "n_words": 654
+  },
+  {
+   "id": "sec-013-45-the-pullback-of-a-shape-assignment-under-a-sy",
+   "number": "4.5",
+   "title": "The pullback of a shape assignment under a symmetry",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1517,
+   "n_words": 288
+  },
+  {
+   "id": "sec-014-46-gluing-equations-for-general-concrete-triangu",
+   "number": "4.6",
+   "title": "Gluing equations for general concrete triangulations",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1144,
+   "n_words": 198
+  },
+  {
+   "id": "sec-015-5-review-of-ptolemy-coordinates",
+   "number": "5",
+   "title": "Review of Ptolemy coordinates",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 414,
+   "n_words": 61
+  },
+  {
+   "id": "sec-016-51-ptolemy-assignments-for-ordered-triangulation",
+   "number": "5.1",
+   "title": "Ptolemy assignments for ordered triangulations",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1291,
+   "n_words": 218
+  },
+  {
+   "id": "sec-017-52-the-pullback-of-a-ptolemy-assignment-under-a",
+   "number": "5.2",
+   "title": "The pullback of a Ptolemy assignment under a symmetry",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2080,
+   "n_words": 358
+  },
+  {
+   "id": "sec-018-53-ptolemy-assignments-for-general-concrete-tria",
+   "number": "5.3",
+   "title": "Ptolemy assignments for general concrete triangulations",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1588,
+   "n_words": 276
+  },
+  {
+   "id": "sec-019-6-from-ptolemy-coordinates-to-shapes",
+   "number": "6",
+   "title": "From Ptolemy coordinates to shapes",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1992,
+   "n_words": 342
+  },
+  {
+   "id": "sec-020-61-proof-for-edge-equations",
+   "number": "6.1",
+   "title": "Proof for edge equations",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1720,
+   "n_words": 302
+  },
+  {
+   "id": "sec-021-62-proof-for-face-equations",
+   "number": "6.2",
+   "title": "Proof for face equations",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1528,
+   "n_words": 240
+  },
+  {
+   "id": "sec-022-63-proof-for-internal-equations",
+   "number": "6.3",
+   "title": "Proof for internal equations",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 633,
+   "n_words": 108
+  },
+  {
+   "id": "sec-023-7-symplectic-properties-and-quantum-topology",
+   "number": "7",
+   "title": "Symplectic properties and quantum topology",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 7502,
+   "n_words": 1511
+  },
+  {
+   "id": "sec-024-71-applications-in-quantum-topology",
+   "number": "7.1",
+   "title": "Applications in quantum topology",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 4035,
+   "n_words": 738
+  },
+  {
+   "id": "sec-025-8-decorations",
+   "number": "8",
+   "title": "Decorations",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1670,
+   "n_words": 294
+  },
+  {
+   "id": "sec-026-81-generic-decorations-ptolemy-coordinates-and-s",
+   "number": "8.1",
+   "title": "Generic decorations, Ptolemy coordinates and shapes",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 4288,
+   "n_words": 758
+  },
+  {
+   "id": "sec-027-9-the-natural-cocycle-of-a-generic-decoration",
+   "number": "9",
+   "title": "The natural cocycle of a generic decoration",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-028-92-cocycles",
+   "number": "9.2",
+   "title": "Cocycles",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 433,
+   "n_words": 67
+  },
+  {
+   "id": "sec-029-91-truncated-and-doubly-truncated-simplices",
+   "number": "9.1",
+   "title": "Truncated and doubly truncated simplices",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 7738,
+   "n_words": 1392
+  },
+  {
+   "id": "sec-030-10-explicit-formulas-for-the-natural-cocycles",
+   "number": "10",
+   "title": "Explicit formulas for the natural cocycles",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 455,
+   "n_words": 96
+  },
+  {
+   "id": "sec-031-101-diamond-and-ratio-coordinates",
+   "number": "10.1",
+   "title": "Diamond and ratio coordinates",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3579,
+   "n_words": 576
+  },
+  {
+   "id": "sec-032-102-x-coordinates",
+   "number": "10.2",
+   "title": "X-coordinates",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 39,
+   "n_chars": 9162,
+   "n_words": 1570
+  },
+  {
+   "id": "sec-033-11-from-shape-assignments-to-cocycles",
+   "number": "11",
+   "title": "From shape assignments to cocycles",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 4255,
+   "n_words": 816
+  },
+  {
+   "id": "sec-034-12-duality",
+   "number": "12",
+   "title": "Duality",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 1487,
+   "n_words": 251
+  },
+  {
+   "id": "sec-035-13-the-cusp-equations",
+   "number": "13",
+   "title": "The cusp equations",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1384,
+   "n_words": 264
+  },
+  {
+   "id": "sec-036-131-simplifying-the-cusp-equations",
+   "number": "13.1",
+   "title": "Simplifying the cusp equations",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1196,
+   "n_words": 212
+  },
+  {
+   "id": "sec-037-14-example-the-figure-eight-knot",
+   "number": "14",
+   "title": "Example: the figure-eight knot",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 4341,
+   "n_words": 762
+  },
+  {
+   "id": "sec-038-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 5435,
+   "n_words": 721
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 43,
+  "sections": 39,
+  "chars_total": 97128
+ }
+}

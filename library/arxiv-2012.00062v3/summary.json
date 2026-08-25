@@ -1,0 +1,117 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2012.00062v3",
+ "source_sha256": "2aacb7fa43f5e0da",
+ "brief": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional",
+ "extended": "**PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY**\n\n*STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO*\n\n68 pp, 19 sections.\n\n**Abstract.** The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional state-integral which is a holomorphic function of a complexiﬁed Planck’s constantτ in the complex cut plane and an entire function of a complex parameteru. This gives rise to a vector of factorially divergent perturbative formal power series whose Stokes rays form a peacock-like pattern in the complex plane. We conjecture that these perturbative series are resurgent, their trans-series involve two non-perturbative variables, their Stokes automorphism satisﬁes a unique factorization prop- erty and that it is given explicitly in terms of a fundamental matrix solution to a (dual) linear q-diﬀerence equation. We further conjecture that a distinguished entry of the Stokes automorphism matrix is the 3D-index of Dimofte–Gaiotto–Gukov.\n\n**Outline.** 1 Introduction; 1.1 Chern–Simons theory with compact and compl; 1.3 A q-holonomic module of the partition func; 1.4 Perturbative series and their resurgence; 1.5 Disclaimers; 1.6 Further directions; Acknowledgements; 2 Borel resummation and Stokes automorphisms; 4 Holonomic and elliptic functions inside and ; 5 The 41 knot; 5.1 Asymptotic series; 5.2 Holomorphic blocks; 5.5 The Borel resummations of the asymptotic s; 6 The 52 knot; 6.1 Asymptotic series; 6.2 Holomorphic blocks; 6.5 The Borel resummations of the asymptotic s; 7 One-dimensional state-integrals and their de\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The above statements hold for the41 and 52 knots.\n- Theorem 2: For the41 and 52 knots, Equations(4), (6) and (8) can be expanded in Taylor\n- Theorem 6: Conjecture 5 holds for the41 and 52 knots.\n- Theorem 9: Wm(q) is a fundamental solution of the linearq-diﬀerence equation(49) that\n- Theorem 11: Wm(q) is a fundamental solution of the linearq-diﬀerence equation(86) that\n- Theorem 14: (a) The descendant state-integral can be expressed in terms of the descendant",
+ "tokens": {
+  "brief": 46,
+  "extended": 532
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
+   "title": "Chern–Simons theory with compact and complex gauge group",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-13-a-q-holonomic-module-of-the-partition-functio",
+   "title": "A q-holonomic module of the partition function and its descendants",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-14-perturbative-series-and-their-resurgence",
+   "title": "Perturbative series and their resurgence",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-15-disclaimers",
+   "title": "Disclaimers",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-16-further-directions",
+   "title": "Further directions",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-2-borel-resummation-and-stokes-automorphisms",
+   "title": "Borel resummation and Stokes automorphisms",
+   "pages": "9-24"
+  },
+  {
+   "id": "sec-008-4-holonomic-and-elliptic-functions-inside-and-ou",
+   "title": "Holonomic and elliptic functions inside and outside the unit disk",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-009-5-the-41-knot",
+   "title": "The 41 knot",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-010-51-asymptotic-series",
+   "title": "Asymptotic series",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-011-52-holomorphic-blocks",
+   "title": "Holomorphic blocks",
+   "pages": "27-39"
+  },
+  {
+   "id": "sec-012-55-the-borel-resummations-of-the-asymptotic-seri",
+   "title": "The Borel resummations of the asymptotic series",
+   "pages": "39-45"
+  },
+  {
+   "id": "sec-013-6-the-52-knot",
+   "title": "The 52 knot",
+   "pages": "45-45"
+  },
+  {
+   "id": "sec-014-61-asymptotic-series",
+   "title": "Asymptotic series",
+   "pages": "45-47"
+  },
+  {
+   "id": "sec-015-62-holomorphic-blocks",
+   "title": "Holomorphic blocks",
+   "pages": "47-60"
+  },
+  {
+   "id": "sec-016-65-the-borel-resummations-of-the-asymptotic-seri",
+   "title": "The Borel resummations of the asymptotic series",
+   "pages": "60-62"
+  },
+  {
+   "id": "sec-017-7-one-dimensional-state-integrals-and-their-desc",
+   "title": "One-dimensional state-integrals and their descendants",
+   "pages": "62-65"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "References",
+   "pages": "65-68"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

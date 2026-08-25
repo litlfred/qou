@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/q-geometric-langlands/q-local-system.lean"
   },
   "source_hashes": {
-    "ts": "251d1459e7c4",
     "md": "9a8136e2f888",
-    "lean": "032b1d009ea2"
+    "ts": "6f158ba2c092",
+    "lean": "032b1d009ea2",
+    "lean_statement": "daa332bbc90e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -287,7 +288,7 @@
       {
         "field_hash": {
           "md": "9a8136e2f888",
-          "ts": "251d1459e7c4",
+          "ts": "d25f6cd46131",
           "lean": "032b1d009ea2",
           "lean_statement": "daa332bbc90e"
         },
@@ -296,31 +297,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:43.449Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "9a8136e2f888",
-          "ts": "251d1459e7c4",
-          "lean": "032b1d009ea2",
-          "lean_statement": "daa332bbc90e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:57.491Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -607,22 +588,21 @@
       {
         "field_hash": {
           "md": "9a8136e2f888",
-          "ts": "251d1459e7c4",
+          "ts": "6f158ba2c092",
           "lean": "032b1d009ea2",
-          "lean_statement": "daa332bbc90e"
+          "lean_statement": "daa332bbc90e",
+          "graph": "19b84f7f82ae"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:43.449Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-local-system.ts:0: forward ref: uses def:q-flat-connection (manifest pos 4) which appears after this block (pos 2) in the chapter"
+        "reviewed_at": "2026-08-11T10:02:57.912Z",
+        "reviewed_sha": "39490dabcf043a0181f459d9657edd2ace8eb615"
       }
     ],
     "detangler-section-band": [
@@ -767,22 +747,21 @@
       {
         "field_hash": {
           "md": "9a8136e2f888",
-          "ts": "251d1459e7c4",
+          "ts": "6f158ba2c092",
           "lean": "032b1d009ea2",
-          "lean_statement": "daa332bbc90e"
+          "lean_statement": "daa332bbc90e",
+          "graph": "19b84f7f82ae"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:43.449Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/q-geometric-langlands/q-local-system.ts:0: uses[] dependency cycle: def:q-local-system -> def:q-flat-connection -> def:q-local-system"
+        "reviewed_at": "2026-08-11T10:02:57.912Z",
+        "reviewed_sha": "39490dabcf043a0181f459d9657edd2ace8eb615"
       }
     ],
     "bib-cite-resolves": [
@@ -1798,11 +1777,11 @@
       {
         "field_hash": {
           "md": "9a8136e2f888",
-          "ts": "251d1459e7c4",
+          "ts": "6f158ba2c092",
           "lean": "032b1d009ea2",
           "lean_statement": "daa332bbc90e"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-uses.ts",
@@ -1811,12 +1790,12 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:43.449Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-11T10:02:57.912Z",
+        "reviewed_sha": "39490dabcf043a0181f459d9657edd2ace8eb615",
         "metrics": {
           "uses_count": 2,
           "broken_edges": 0,
-          "redundant_edges": 1
+          "redundant_edges": 0
         }
       }
     ],
@@ -1868,7 +1847,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.547Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.586Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.624Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 169 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.663Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.700Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.777Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.816Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.852Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.910Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:52.891Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition: functor from Pi_1(X) to Rep(G_q) + q-monodromy condition + Kummer lifting); all ten judged. Two structural defects reported: ANOMALY 1 (the q-monodromy condition is self-contradictory - a null-homotopic loop IS the identity morphism of the fundamental groupoid, so functoriality forces L_q(varrho) = id and hence Omega_q = 0 for q != 1) and ANOMALY 25 (varrho is used here for a loop, in yekutieli-quantum-li.md for a prime orbit, while rho is the Reeb eigenvalue - three meanings in one chapter)."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "9a8136e2f888",
+          "ts": "6f158ba2c092",
+          "lean": "032b1d009ea2",
+          "lean_statement": "daa332bbc90e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T06:35:52.891Z"
 }

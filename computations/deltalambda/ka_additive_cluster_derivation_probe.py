@@ -86,8 +86,30 @@ MU = {
     "3He": mp.mpf("3.2918285794896933"),
     "4He": mp.mpf("9.313340597451814"),
 }
-# cached deuteron joint pair trace (GATE-A reference for the producer path)
-TR_D_CACHED = mp.mpf("0.38835720735922143663882816968153229794820994065468")
+# Cached deuteron joint pair trace — the GATE-A reference for the producer
+# path. This is a REGRESSION GUARD, not a recorded result: its only use is
+# GATE A below, asserting that the producer still reproduces it. A guard must
+# therefore track the producer.
+#
+# REFRESHED 2026-08-23 (bean `qou-8chw`). Was
+# 0.38835720735922143663882816968153229794820994065468, and GATE A was FAILING
+# ON MAIN at rel = 4.81e-01 (the probe exited 1). The old value is CONVENTION
+# C: recombining the transfer's chi with the live convention-C weights
+# (schur_principal_mpmath.y_lambda_at_q0_mpmath_convention_C_HISTORICAL) gives
+# 0.3883571411977910 at the proton pin, matching it to ~7 digits. The corpus
+# moved to convention D on 2026-08-09, so the producer moved and the guard did
+# not.
+#
+# Refreshing is right HERE and would be wrong for the gap_a3 pair. Those two
+# files carry C-frame constants as *recorded inputs to a conclusion*, so they
+# get scoped (see the label in gap_a3_deuteron_A_D_overshoot.py). This one is
+# a gate on a live producer, so it gets the live value.
+#
+# The new figure is agreed by four independent paths at the proton pin: this
+# chi-cache/Hoefsmit route, the fine-Bratteli transfer, the markov-peel
+# arbiter, and (since qou-zck8 regenerated its extract off float64) the
+# operator-valued branching combiner.
+TR_D_CACHED = mp.mpf("0.5751722439177718708265353439858617251768310907401")
 
 # bond multisets (all C(A,2) pairs, by nucleon type)
 BONDS = {

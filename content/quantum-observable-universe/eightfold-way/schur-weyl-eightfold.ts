@@ -17,9 +17,10 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:schur-weyl-eightfold",
   title: "Eightfold-way multiplets via quantum Schur--Weyl duality",
-  md: "schur-weyl-eightfold.md",
+  // Immediate neighbours only. rem:hecke-algebra-from-braiding was also
+  // listed here, but prop:a2-from-three-strands already uses it, so the
+  // direct edge was transitively redundant (uses-editorial-hygiene warn).
   uses: [
-    "rem:hecke-algebra-from-braiding",
     "prop:a2-from-three-strands",
   ],
   // Lean backs the OBSTRUCTION half of this block, not the affirmative half.

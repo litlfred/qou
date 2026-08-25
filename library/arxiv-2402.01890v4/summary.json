@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2402.01890v4",
+ "source_sha256": "e1eeb2865f0b53e1",
+ "brief": "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated",
+ "extended": "**On the spherical partition algebra**\n\n*Katherine Ormeño Bast´ ıas∗1, Paul Martin †2, and Steen Ryom-Hansen ‡3*\n\n27 pp, 7 sections.\n\n**Abstract.** For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group Sk. We determine a basis for SP k, and this provides a combinatorial interpretation of the dimension of SP k involving bipartite partitions of k. For t ∈ C we consider the specialized algebra SP k(t). For t = n ∈ N, we describe the structure of SP k(n) by giving the permutation module decomposition of thekth symmetric power of the defining module for the symmetric group algebra CSn. In general, we show that SP k(t) is quasi-hereditary over C for all t ∈ C , except t = 0. We determine the decomposition numbers for SP k(t) for every specialization t ∈ C except t = 0, (which includes semisimple and non-semisimple cases).\n\n**Outline.** Introduction; Basic notation; Bipartite partitions; The partition algebra and the spherical partit; Rank of the Spherical Partition Algebra; Schur-Weyl duality for SP k(n); Cellularity of SP k(t)\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: The map F : BiPark→SP k given by b7→ ekN(b)ek is injective. Moreover, the image of F , that is\n- Theorem 3: a) There is an isomorphism of CSn-modules\n- Theorem 3: , but, as we shall now see, it allows us to determine exactly when [ SkVn :S(λ)]̸= 0.\n- Theorem 5.4: in [20], and Maschke’s Theorem for CSn. It induces a homomorphism\n- Theorem 6: a) The algebra homomorphism Υsph is surjective for all k,n and it is an isomorphism if n≥ 2k.\n- Theorem 8: Suppose that t /∈{ 0, 1, 2,..., 2k− 2}. Then SPk(t) is a semisimple algebra.",
+ "tokens": {
+  "brief": 49,
+  "extended": 447
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-basic-notation",
+   "title": "Basic notation",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-bipartite-partitions",
+   "title": "Bipartite partitions",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-the-partition-algebra-and-the-spherical-partitio",
+   "title": "The partition algebra and the spherical partition algebra",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-rank-of-the-spherical-partition-algebra",
+   "title": "Rank of the Spherical Partition Algebra",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-schur-weyl-duality-for-sp-kn",
+   "title": "Schur-Weyl duality for SP k(n)",
+   "pages": "9-15"
+  },
+  {
+   "id": "sec-006-cellularity-of-sp-kt",
+   "title": "Cellularity of SP k(t)",
+   "pages": "15-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

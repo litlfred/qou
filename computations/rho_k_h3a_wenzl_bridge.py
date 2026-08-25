@@ -232,7 +232,7 @@ def main() -> int:
     # (i=0), b = Δρ · |tr_M(β_D)|.  For cycle-type variants,
     # |tr_M(w_μ)| = |z^{n-ℓ(μ)}| (Wenzl-bridge identity).
     q_mp = Q_MP
-    z_markov = 1 / (mp.sqrt(q_mp) + 1 / mp.sqrt(q_mp))
+    z_markov = q_mp**3 / (q_mp**2 + 1)
 
     def b_for_variant(
         var: dict,

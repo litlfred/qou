@@ -5,7 +5,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 (Addendum 3).
 
 CONTEXT. GSWZ Definition 1.1 (arXiv:2412.04241v2, uploaded at
-uploads/2412.04241v2.pdf) realizes Habiro-ring elements as collections
+library/arxiv-2412.04241v2/2412.04241v2.pdf) realizes Habiro-ring elements as collections
 f_m(x) in Z[zeta_m][[x]] glued by f_m(x + zeta_pm - zeta_m) =
 phi_p f_pm(x) p-adically. The corpus holds evaluations of Habiro
 elements at zeta_4 = i (the alpha_EM modular zero, which is the
@@ -41,6 +41,9 @@ import json
 import sys
 
 import sympy as sp
+
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
 
 z8 = sp.exp(sp.I * sp.pi / 4)  # zeta_8, exact
 z4 = z8**2  # zeta_4 = i
@@ -112,7 +115,7 @@ witness = {
     "order": N,
     "scope": "scope-(a): classical-Habiro (K=Q, trivial Frobenius) harness; number-field twist test stays on qou-1hlh",
 }
-with open("computations/probes/zeta4_zeta8_habiro_gluing.witness.json", "w") as f:
+with open(_HERE_W / "zeta4_zeta8_habiro_gluing.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

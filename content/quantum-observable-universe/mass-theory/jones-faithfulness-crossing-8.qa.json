@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/jones-faithfulness-crossing-8.md"
   },
   "source_hashes": {
-    "ts": "60807d57ac3a",
-    "md": "bf816b06b78f"
+    "md": "bf816b06b78f",
+    "ts": "60807d57ac3a"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -792,30 +792,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "bf816b06b78f",
-          "ts": "60807d57ac3a"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1429,7 +1410,369 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.153Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.214Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'Jones-faithfulness strictly fails ... However, Ruberman's theorem forces their volumes to match' is a genuine mathematical however (Ruberman 1987: mutation preserves hyperbolic volume), not a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.260Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 79 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.318Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.364Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.415Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.466Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.522Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the two-paragraph remark (kind remark, interprets rem:knot-exhaustiveness). Category absent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.587Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'Jones-faithfulness STRICTLY fails for Bring-embeddable knots at crossing 11' ('strictly fails' is not a scale - failure is binary), and 'The open challenge remains locating non-mutant Jones-coincident pairs above 11 crossings to construct a DEFINITIVE falsification target.' Also 'proved that distinct prime knots up to 10 crossings possess unique Jones polynomials' upgrades a computer census to a theorem: Hoste-Thistlethwaite-Weeks (1998) is an enumeration of the first 1,701,936 knots, not a Jones-faithfulness theorem, and the .ts title correspondingly reads 'theorem at crossing <= 10'.",
+        "notes": "proposed: 'strictly fails' -> 'fails'; 'a definitive falsification target' -> 'a falsification target'; 'The Hoste-Thistlethwaite-Weeks enumeration proved that' -> 'The Hoste-Thistlethwaite-Weeks census found no two distinct prime knots up to 10 crossings sharing a Jones polynomial'. Flagged not fixed: the third edit changes an attributed theorem into an attributed computation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.386Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:51.645Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Prose reads aloud.",
+        "notes": "SEPARATE (non-trap) findings. (1) GENUS ERROR: 'Since both the Conway and KT knots are Bring-embeddable (genus 3)'. Under the Seifert-genus reading this is false for the Kinoshita-Terasaka knot, whose genus is 2 (Gabai) against the Conway knot's 3 - genus is exactly what mutation fails to preserve for this pair, which is the standard reason the pair is interesting. Under the Bring-surface reading it contradicts the rest of the corpus: grepped content/ for Bring+genus and every other mention says genus 4 ('Bring's surface has genus 4', 'genus-4 Bring', 'Bring surface Sigma_4', 9 mentions); this block is the only '(genus 3)'. Either way the parenthetical is wrong. (2) STALE LABEL: the block's label is rem:jones-faithfulness-crossing-8 and the filename is jones-faithfulness-crossing-8.md, but the title, the authorNotes and the body all say crossing <= 10 - the '8' is two revisions stale."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "bf816b06b78f",
+          "ts": "60807d57ac3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T21:18:51.645Z"
 }

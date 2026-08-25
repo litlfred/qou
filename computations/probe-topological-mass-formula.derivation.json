@@ -1,0 +1,56 @@
+{
+  "target": "the Step-3 combine behind prop:topological-mass-formula and its algebraic twin -- that baseline + exceptional reassembles to Vol(K)/hbar_q^2, and that the Q(q)-side restatement mass_alg = Phi_1/hbar_sq is the same identity",
+  "target_value": "Vol(K) + Vol(K)(1/hbar_q^2 - 1) = Vol(K)/hbar_q^2, exact in Q(q) for ALL q and not merely at q_0; verified symbolically and, at the proton pin, numerically to <= 1e-25 across the sample knots",
+  "content_block": "prop:topological-mass-formula",
+  "description": "Derivation chain for probe-topological-mass-formula.witness.json and probe-topological-mass-formula-algebraic.witness.json. One producer emits both -- the second is the Q(q)-side subset of the first's assertions -- so one chain drains the pair.\n\nBE CLEAR ABOUT WHAT IS AND IS NOT PROVED HERE. The combine is the ring identity a + a(x - 1) = a x. It is true by expansion, for every a and every x, and it would be dishonest to present the probe as evidence FOR the mass formula. What the probe establishes is narrower and still worth having: that the Lean theorem ArchimedeanMassFormula is that identity and no more, that the Q(q) and archimedean statements coincide rather than being two claims, and that the numerical evaluation at q_0 does not silently disagree with the symbolic one -- which is the failure mode a 50-dps pipeline actually has.\n\nTwo consequences of it being volume-agnostic, both recorded on the steps: the sample knot volumes are multiplicative test INPUTS carrying no weight in the result, and no absolute mass is computed anywhere in this chain.",
+  "steps": [
+    {
+      "name": "The substrate q-deformation scale hbar_q",
+      "operation": "hbar_q = 1 - 1/q is the deformation scale of the substrate parameter, and 1/hbar_q^2 = c_q^2 is the factor the archimedean functor applies. Its definition is upstream of this chain -- here it is an input, and the identity below does not depend on its value.",
+      "inputs": ["Hecke.Energy"],
+      "output_name": "hbar_q",
+      "output_value": "hbar_q = 1 - 1/q; at the proton pin hbar_q^2 is recorded in the witness as hbar_q_sq_at_q0",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "manuscript:three-calibration-discipline"
+    },
+    {
+      "name": "Baseline / exceptional decomposition of the topological core",
+      "operation": "The Step-3 combine splits the topological core into a baseline term Vol(K) and an exceptional (transient) term Vol(K)(1/hbar_q^2 - 1). This SPLIT is the modelling content -- it is where the claim lives, and it is stated by the proposition, not established by this probe.",
+      "inputs": ["hbar_q"],
+      "output_name": "baseline_exceptional_split",
+      "output_value": "baseline = Vol(K); exceptional = Vol(K)(1/hbar_q^2 - 1)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:topological-mass-formula",
+      "notes": "The probe does not test whether this split is the RIGHT decomposition of a physical mass -- only that, given it, the recombination is exact. Those are different questions and the second is the easy one."
+    },
+    {
+      "name": "The combine is a ring identity in Q(q) -- exact for all q",
+      "operation": "Expand: Vol + Vol(1/hbar^2 - 1) = Vol/hbar^2. Verified SYMBOLICALLY in Q(q), so it is a property of the expression and not a coincidence at the substrate anchor. The Q(q)-side twin, mass_alg = Phi_1/hbar_sq given Phi_1 = mass_alg . hbar_sq, is the same one-line cancellation, which is why the archimedean form is exactly the tau_arch specialisation of the algebraic form rather than a second claim.",
+      "inputs": ["baseline_exceptional_split"],
+      "output_name": "combine_identity",
+      "output_value": "symbolic_combine_exact and symbolic_algebraic_exact both true in Q(q)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:topological-mass-formula",
+      "notes": "Stated plainly because the corpus's own derive-then-check standard asks for it: a statement true by expansion is notation, not a theorem. Its worth is that it PINS the Lean theorem's content -- ArchimedeanMassFormula asserts this identity and nothing stronger -- and that it holds for all q, which is what rules out the reading that the mass formula is a q_0 numerical accident."
+    },
+    {
+      "name": "Numerical evaluation at the proton pin, and what the sample volumes are for",
+      "operation": "Evaluate both sides at q_0 = Q_50_DIGIT_STR (proton pin, the 2026-08-07 compute default) at COMPUTE_DPS + 15, over several hyperbolic-knot volumes, and record the maximum residual.",
+      "inputs": ["combine_identity"],
+      "output_name": "combine_at_q0",
+      "output_value": "max_numerical_residual <= 1e-25 across the sample knots; 4 assertions, all passed",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:topological-mass-formula",
+      "notes": "script: computations/probe_topological_mass_formula.py -- the frontier step.\n\nThe identity is VOLUME-AGNOSTIC, so the knot volumes are multiplicative test inputs, not evidence. Vol(4_1) comes from qou_substrate; the others are SnapPy reference constants used only to exercise the arithmetic on more than one magnitude. A residual of 1e-25 here measures the mpmath pipeline, not the mathematics -- the symbolic step already settled the mathematics, and this step's real job is to catch a precision-plumbing disagreement between the two routes.\n\nGUARDRAIL, per the 2026-08-11 owner ruling excising absolute mass. This is the BARE topological core m(K) = Vol(K)/hbar_q^2: dimensionless, no m_e, no rho, no lambda_scale, no Geom_full. NO absolute nucleon mass is computed in this chain, and this expression is NOT the canonical absolute mass -- that is the muon-anchored Hecke energy via canonical_mass.py. Reading Vol(K)/hbar_q^2 with K = the Borromean rings as an absolute m_p is the specific trap the canonical-mass guardrail doc exists to close."
+    }
+  ]
+}

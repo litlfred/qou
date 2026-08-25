@@ -34,8 +34,9 @@ compute, not two.
 > admissible band $[2.9072, 5.1780]$ MeV; under D the band is $[2.0507, 3.7978]$
 > and AME sits inside it. ${}^2$H itself improves $+74.85\% \to +27.36\%$.
 >
-> The mass channel was already on D in production, so $m_p$ and $m_n$ are
-> **unchanged** (verified: $938.27208943$, $939.56542276$).
+> The mass channel was already on D in production, so the $m_e$-scaled
+> renderings of $m_p$ and $m_n$ are **unchanged** (verified: $938.27208943$,
+> $939.56542276$).
 >
 > Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
 > $\mathbb{Z}$-Laurent identity remains proven for C in the
@@ -151,7 +152,7 @@ independent data:
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
   ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
-  normalised by $\sum_\lambda w_\lambda = 1$; at $q = 1$ it is
+  normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$, measured in `docs/audits/scripts/wlambda_normalisation_census.py`); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition
   ($\tfrac12, \tfrac14, 0$).

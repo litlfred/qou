@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T20:38:10.027400+00:00",
-  "commitSha": "b7b7c9589868347730a4c853969c0e7ca27377f4",
+  "computedAt": "2026-08-23T21:27:35.673411+00:00",
+  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
-  "scriptHash": "8a602c238718",
-  "scriptCommitSha": "4e3cfd3121dfc9eca5cba5906667f4b87c7f45e0",
+  "scriptHash": "4ef22dbfca2a",
+  "scriptCommitSha": "53d6e54d3249a3d0c4d164e3fd01b12bceae16ca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,13 +21,21 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/compute_audit_scan.py"
+    ],
+    "reproduce": "python3 -u computations/compute_audit_scan.py"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1287,
+    "files_scanned": 1392,
     "patterns": [
       "P15",
       "P16",
@@ -38,11 +46,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 282,
-      "P16": 613,
+      "P15": 291,
+      "P16": 640,
       "P21": 25,
-      "P30": 154,
-      "P31": 3
+      "P30": 179,
+      "P31": 12
     },
     "top_files": [
       {
@@ -579,16 +587,16 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
-        "pattern": "P16",
-        "file": "alpha_em_channel_split_loop_measure_probe.py",
-        "line": 86,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+        "pattern": "P30",
+        "file": "alpha_5_lp_dual_crystal_closed_form.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_channel_split_loop_measure_probe.py",
-        "line": 95,
+        "line": 87,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -602,7 +610,14 @@
       {
         "pattern": "P16",
         "file": "alpha_em_channel_split_loop_measure_probe.py",
-        "line": 98,
+        "line": 97,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_channel_split_loop_measure_probe.py",
+        "line": 99,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -658,49 +673,42 @@
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase2_emfermionloop.py",
-        "line": 165,
+        "line": 171,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3_schwinger_derivation.py",
-        "line": 150,
+        "line": 156,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3_schwinger_derivation.py",
-        "line": 287,
+        "line": 293,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3_schwinger_derivation.py",
-        "line": 289,
+        "line": 295,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 83,
+        "line": 84,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 93,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 116,
+        "line": 94,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -714,191 +722,191 @@
       {
         "pattern": "P15",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 152,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 160,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 166,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 171,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 113,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 115,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
         "line": 118,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 153,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 161,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 167,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 172,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 114,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 120,
+        "line": 116,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 120,
+        "line": 119,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 132,
+        "line": 121,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 136,
+        "line": 121,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 146,
+        "line": 133,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 137,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 147,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 156,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 163,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 169,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 173,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 212,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
+        "line": 215,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
+        "line": 133,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
         "line": 155,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 162,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 168,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 172,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 211,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_phase3b_exact_vertex_moments.py",
-        "line": 214,
+        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
+        "line": 156,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-        "line": 127,
+        "line": 222,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-        "line": 149,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-        "line": 150,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-        "line": 216,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_rt_shadow_world_symbolic_phase1.py",
-        "line": 217,
+        "line": 223,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",
         "file": "alpha_em_theta_graph_two_loop_probe.py",
-        "line": 60,
+        "line": 61,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "alpha_em_theta_graph_two_loop_probe.py",
-        "line": 66,
+        "line": 67,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "alpha_em_theta_graph_two_loop_probe.py",
-        "line": 78,
+        "line": 79,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P16",
-        "file": "alpha_em_theta_graph_two_loop_probe.py",
-        "line": 89,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
@@ -918,6 +926,13 @@
         "pattern": "P16",
         "file": "alpha_em_theta_graph_two_loop_probe.py",
         "line": 92,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "alpha_em_theta_graph_two_loop_probe.py",
+        "line": 93,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -980,42 +995,42 @@
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 142,
+        "line": 199,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 171,
+        "line": 228,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 221,
+        "line": 278,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 234,
+        "line": 291,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 255,
+        "line": 312,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "atom_nf_symbolic_D.py",
-        "line": 258,
+        "line": 315,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -1442,7 +1457,7 @@
       {
         "pattern": "P16",
         "file": "binomial_pattern_chebyshev_derivation.py",
-        "line": 96,
+        "line": 97,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -1952,7 +1967,21 @@
       },
       {
         "pattern": "P30",
+        "file": "charm_composite_volume_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "charm_frobenius_block_projection_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "charm_mass_tower_probe.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -1973,9 +2002,44 @@
       },
       {
         "pattern": "P31",
-        "file": "codata_registry_triangulation_probe.py",
-        "line": 105,
+        "file": "codata_corpus_literal_scan.py",
+        "line": 88,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "codata_corpus_literal_scan.py",
+        "line": 167,
         "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "codata_registry_triangulation_probe.py",
+        "line": 14,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "codata_table_vintage_audit.py",
+        "line": 9,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P30",
+        "file": "codata_truncation_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "codata_truncation_audit.py",
+        "line": 132,
+        "snippet": "CODATA literal \"0.51099895\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
@@ -2226,21 +2290,21 @@
       {
         "pattern": "P16",
         "file": "crossing_energy_channel_basis_probe.py",
-        "line": 235,
+        "line": 237,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crossing_energy_channel_basis_probe.py",
-        "line": 236,
+        "line": 238,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crossing_energy_channel_basis_probe.py",
-        "line": 290,
+        "line": 292,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -2261,56 +2325,49 @@
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 146,
+        "line": 148,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 147,
+        "line": 149,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 181,
+        "line": 183,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 289,
+        "line": 291,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 292,
+        "line": 294,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "crystal_yekutieli_probes_abcd.py",
-        "line": 303,
+        "line": 305,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "d_u_closed_form_proof.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P15",
         "file": "delta_lambda_alexander_phase4.py",
-        "line": 162,
+        "line": 189,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -2320,6 +2377,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "delta_lambda_k_star_variance_phase5d_5b.py",
+        "line": 220,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
@@ -2443,42 +2507,42 @@
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 257,
+        "line": 262,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 261,
+        "line": 266,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 263,
+        "line": 268,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 425,
+        "line": 430,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 432,
+        "line": 437,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "derived_chi_catalogue_build.py",
-        "line": 438,
+        "line": 443,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -2967,13 +3031,6 @@
       },
       {
         "pattern": "P30",
-        "file": "e_hartree_round24_molecular_reuse.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
         "file": "e_hartree_round25_em_channel_induction.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -3031,42 +3088,42 @@
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 106,
+        "line": 107,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 114,
+        "line": 115,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 119,
+        "line": 120,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 162,
+        "line": 170,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 181,
+        "line": 189,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "frobenius_partition_sum.py",
-        "line": 193,
+        "line": 201,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -3076,6 +3133,20 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "gap_a3_cross_atom_overshoot_probe.py",
+        "line": 38,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "gap_a3_deuteron_plambda_flat_baseline_probe.py",
+        "line": 47,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
@@ -3386,6 +3457,118 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 223,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 224,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 240,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 249,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 256,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 278,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 340,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "h4_cyclicity_generator_route_check.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 183,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 225,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 230,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 203,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 216,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 230,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "h4_markov_character_decomposition.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "h4_markov_weights_closed_form.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P15",
         "file": "habiro_borromean_colored_jones.py",
         "line": 67,
@@ -3606,6 +3789,34 @@
         "pattern": "P16",
         "file": "hecke_conjugation_duality_sign_probe.py",
         "line": 231,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "hecke_prefix_schedule_check.py",
+        "line": 123,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "hecke_tail_assembly_fit.py",
+        "line": 99,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "hecke_tail_assembly_fit.py",
+        "line": 108,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "hecke_tail_assembly_fit.py",
+        "line": 158,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -4354,37 +4565,30 @@
       {
         "pattern": "P16",
         "file": "inter_nucleon_linked_channel.py",
-        "line": 88,
+        "line": 105,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "inter_nucleon_linked_channel.py",
-        "line": 89,
+        "line": 106,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "inter_nucleon_linked_channel.py",
-        "line": 100,
+        "line": 117,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "inter_nucleon_linked_channel.py",
-        "line": 190,
+        "line": 222,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "iterative_knot_builder.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P21",
@@ -4420,6 +4624,20 @@
         "line": 106,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "jet_algebraic_independence_probe.py",
+        "line": 133,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "jet_algebraic_independence_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
@@ -4618,6 +4836,13 @@
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
+        "pattern": "P31",
+        "file": "knot-volumes.py",
+        "line": 154,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
         "pattern": "P16",
         "file": "knot_factor_skein_verification.py",
         "line": 55,
@@ -4641,28 +4866,28 @@
       {
         "pattern": "P15",
         "file": "lambda_scale_all_c_i_family_a.py",
-        "line": 105,
+        "line": 113,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "lambda_scale_all_c_i_family_a.py",
-        "line": 90,
+        "line": 98,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "lambda_scale_all_c_i_family_a.py",
-        "line": 96,
+        "line": 104,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "lambda_scale_all_c_i_family_a.py",
-        "line": 121,
+        "line": 129,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -4802,7 +5027,7 @@
       {
         "pattern": "P15",
         "file": "lepton_t2n_torus_tower.py",
-        "line": 110,
+        "line": 139,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -4914,42 +5139,42 @@
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 52,
+        "line": 54,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 58,
+        "line": 60,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 79,
+        "line": 81,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 82,
+        "line": 84,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 99,
+        "line": 101,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "lever1_habiro_cofactor_root_classification.py",
-        "line": 100,
+        "line": 102,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -5110,21 +5335,21 @@
       {
         "pattern": "P16",
         "file": "lever1_saddle_action_jet_residue_probe.py",
-        "line": 182,
+        "line": 184,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "lever1_saddle_action_jet_residue_probe.py",
-        "line": 187,
+        "line": 189,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "lever1_saddle_action_jet_residue_probe.py",
-        "line": 192,
+        "line": 194,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -5144,6 +5369,20 @@
       },
       {
         "pattern": "P30",
+        "file": "logsine_sharp_constant_check.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "logsine_smooth_defect_constant.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "lp-duality-check.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -5159,14 +5398,14 @@
       {
         "pattern": "P16",
         "file": "lr_modulus_bare_amplitude_exact.py",
-        "line": 91,
+        "line": 92,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",
         "file": "lw2_c2_independent_hopf_test_attempt.py",
-        "line": 129,
+        "line": 135,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -5187,7 +5426,7 @@
       {
         "pattern": "P31",
         "file": "m_tau_complex_volume_search.py",
-        "line": 88,
+        "line": 83,
         "snippet": "CODATA literal \"206.7682830\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -5271,28 +5510,28 @@
       {
         "pattern": "P16",
         "file": "markov_z_fibre_rank_bar_covariance_probe.py",
-        "line": 124,
+        "line": 132,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_fibre_rank_bar_covariance_probe.py",
-        "line": 128,
+        "line": 136,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_fibre_rank_bar_covariance_probe.py",
-        "line": 131,
+        "line": 139,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_fibre_rank_bar_covariance_probe.py",
-        "line": 135,
+        "line": 143,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -5320,77 +5559,77 @@
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 102,
+        "line": 107,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 105,
+        "line": 110,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 120,
+        "line": 125,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 121,
+        "line": 126,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 123,
+        "line": 128,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 124,
+        "line": 129,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 134,
+        "line": 139,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 135,
+        "line": 140,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 136,
+        "line": 141,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 152,
+        "line": 157,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "markov_z_full_bar_condition_probe.py",
-        "line": 155,
+        "line": 160,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -5435,6 +5674,13 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P30",
+        "file": "meson_fluxtube_topology_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P21",
@@ -5551,27 +5797,41 @@
       {
         "pattern": "P16",
         "file": "mirror_isospin_coulomb_split.py",
-        "line": 61,
+        "line": 81,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "mirror_isospin_coulomb_split.py",
-        "line": 65,
+        "line": 85,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "mirror_isospin_coulomb_split.py",
-        "line": 68,
+        "line": 88,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P30",
         "file": "mpf_float_source_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "mpf_mixed_arithmetic_audit.py",
+        "line": 95,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "mpf_mixed_arithmetic_audit.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -5670,28 +5930,28 @@
       {
         "pattern": "P15",
         "file": "ocneanu_cancellation_derivation.py",
-        "line": 128,
+        "line": 134,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "ocneanu_cancellation_derivation.py",
-        "line": 143,
+        "line": 149,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "ocneanu_cancellation_derivation.py",
-        "line": 239,
+        "line": 250,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "ocneanu_cancellation_derivation.py",
-        "line": 242,
+        "line": 253,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -5873,35 +6133,14 @@
       {
         "pattern": "P16",
         "file": "per_irrep_pole_atom_crystal.py",
-        "line": 315,
+        "line": 333,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "per_irrep_pole_proton_h3.py",
-        "line": 90,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "per_irrep_pole_proton_h3.py",
-        "line": 132,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "per_irrep_pole_proton_h3.py",
-        "line": 144,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "per_irrep_pole_proton_h3.py",
-        "line": 178,
+        "line": 69,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -5915,14 +6154,14 @@
       {
         "pattern": "P16",
         "file": "pm_qm_pythagorean_identity.py",
-        "line": 88,
+        "line": 89,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "pm_qm_pythagorean_identity.py",
-        "line": 95,
+        "line": 96,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6139,28 +6378,28 @@
       {
         "pattern": "P15",
         "file": "probe3qrv_zpin.py",
-        "line": 80,
+        "line": 84,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe3qrv_zpin.py",
-        "line": 80,
+        "line": 84,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe3qrv_zpin.py",
-        "line": 86,
+        "line": 90,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe3qrv_zpin.py",
-        "line": 88,
+        "line": 92,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -6188,21 +6427,21 @@
       {
         "pattern": "P16",
         "file": "probe3qrv_zpin.py",
-        "line": 73,
+        "line": 77,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe3qrv_zpin.py",
-        "line": 83,
+        "line": 87,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe3qrv_zpin.py",
-        "line": 88,
+        "line": 92,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6216,28 +6455,21 @@
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 109,
+        "line": 115,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 131,
+        "line": 137,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 152,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_9b_alphak_structure.py",
-        "line": 154,
+        "line": 158,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6251,35 +6483,14 @@
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 161,
+        "line": 166,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 162,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_9b_alphak_structure.py",
-        "line": 163,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_9b_alphak_structure.py",
-        "line": 164,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_9b_alphak_structure.py",
-        "line": 165,
+        "line": 167,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6293,7 +6504,21 @@
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
+        "line": 169,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_9b_alphak_structure.py",
         "line": 170,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_9b_alphak_structure.py",
+        "line": 171,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6307,28 +6532,42 @@
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 175,
+        "line": 176,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 188,
+        "line": 180,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 189,
+        "line": 181,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_9b_alphak_structure.py",
-        "line": 190,
+        "line": 194,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_9b_alphak_structure.py",
+        "line": 195,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_9b_alphak_structure.py",
+        "line": 196,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6377,6 +6616,48 @@
       {
         "pattern": "P30",
         "file": "probe_isospin_mirror_v9_generalization.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_coulomb_reconciliation.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_excess_convention_resolution.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_mirror_split_shell_test.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_normaliser_index_rule.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_provenance.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_kappa_shell8_excess_convention.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -6510,34 +6791,62 @@
       {
         "pattern": "P16",
         "file": "probe_topological_mass_formula.py",
-        "line": 106,
+        "line": 112,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_topological_mass_formula.py",
-        "line": 107,
+        "line": 113,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_topological_mass_formula.py",
-        "line": 108,
+        "line": 114,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "probe_topological_mass_formula.py",
-        "line": 147,
+        "line": 153,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P30",
         "file": "producer_repad_sweep.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "q0_migration_tolerance_triage.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "q0_provenance_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "q0_provenance_audit.py",
+        "line": 47,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P30",
+        "file": "q0_repin_sweep.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -6559,28 +6868,28 @@
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 127,
+        "line": 132,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 128,
+        "line": 133,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 129,
+        "line": 134,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "q_beta_form_a_n1_extension.py",
-        "line": 142,
+        "line": 147,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -6739,23 +7048,100 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
+        "pattern": "P30",
+        "file": "qserre_gs_basis_check.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "regenerate_chi_atom_conventionD.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_orphans_conventionD.py",
+        "line": 86,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_orphans_conventionD.py",
+        "line": 100,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "regenerate_y_lambda_orphans_conventionD.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 98,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 121,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 147,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 148,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 165,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "regenerate_y_lambda_symbolic_convention_d.py",
+        "line": 166,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 127,
+        "line": 128,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 136,
+        "line": 137,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "rho_k_h3a_co_casimir.py",
-        "line": 151,
+        "line": 152,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -6797,14 +7183,14 @@
       {
         "pattern": "P16",
         "file": "rosso_jones_three_strand_delta_q.py",
-        "line": 116,
+        "line": 167,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "rosso_jones_three_strand_delta_q.py",
-        "line": 138,
+        "line": 189,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -7070,7 +7456,7 @@
       {
         "pattern": "P15",
         "file": "sigma_all_symbolic_decay.py",
-        "line": 69,
+        "line": 70,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -7461,6 +7847,20 @@
       },
       {
         "pattern": "P30",
+        "file": "witness_assertion_slack_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "witness_failed_assertion_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "witness_float64_padding_audit.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -7503,7 +7903,21 @@
       },
       {
         "pattern": "P30",
+        "file": "witness_producer_executes_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
         "file": "witness_raw_float64_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "witness_shape_guard.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -7511,7 +7925,7 @@
       {
         "pattern": "P15",
         "file": "y_lambda_cyclotomic_factor.py",
-        "line": 142,
+        "line": 147,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -7532,21 +7946,77 @@
       {
         "pattern": "P15",
         "file": "y_lambda_macdonald_telescope.py",
-        "line": 142,
+        "line": 143,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "y_lambda_macdonald_telescope.py",
-        "line": 166,
+        "line": 167,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "y_lambda_pole_order_cache.py",
-        "line": 56,
+        "line": 57,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P15",
+        "file": "y_lambda_su_n.py",
+        "line": 215,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "y_lambda_su_n.py",
+        "line": 232,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "y_lambda_su_n.py",
+        "line": 245,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "y_lambda_su_n.py",
+        "line": 248,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_su_n.py",
+        "line": 358,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_su_n.py",
+        "line": 362,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_su_n.py",
+        "line": 366,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_su_n.py",
+        "line": 368,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -7588,112 +8058,140 @@
       {
         "pattern": "P15",
         "file": "y_lambda_wenzl_bridge.py",
-        "line": 188,
+        "line": 236,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 81,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 88,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 114,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 120,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 128,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 151,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 154,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 158,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 161,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
-        "line": 335,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "yekutieli_volume_join.py",
+        "file": "y_lambda_wenzl_bridge.py",
         "line": 345,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
+        "pattern": "P16",
+        "file": "y_lambda_wenzl_bridge_extended.py",
+        "line": 125,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_wenzl_bridge_extended.py",
+        "line": 126,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_wenzl_bridge_extended.py",
+        "line": 135,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
         "pattern": "P15",
         "file": "yekutieli_volume_join.py",
-        "line": 376,
+        "line": 82,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "yekutieli_volume_join.py",
-        "line": 386,
+        "line": 89,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "yekutieli_volume_join.py",
-        "line": 386,
+        "line": 115,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 121,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 129,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 152,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 155,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 159,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 162,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 336,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 346,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 377,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 387,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "yekutieli_volume_join.py",
+        "line": 387,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "yekutieli_volume_join.py",
-        "line": 274,
+        "line": 275,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -7710,6 +8208,6 @@
     "Static scanner: false positives are possible (e.g. sp.simplify on a single small Symbol is fine). Verify each finding by reading the cited line before acting.",
     "Correctness antipatterns P1–P14 (with the exception of P11/P14 detected here) require semantic reasoning and are NOT covered by this scanner."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate value. This is a STATIC SOURCE SCANNER: itsonly mention of q0 is advice text inside a string literal('numerical evalf at q0'), and an AST check finds zero q0identifiers used as code. Proved empirically: underQOU_Q0_ANCHOR=muon vs =proton the emitted witness is byte-identical except for the q0Anchor/q0Value pair itself. Beanqou-o922 class (ii)."
 }

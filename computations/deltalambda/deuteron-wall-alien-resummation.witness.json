@@ -2,9 +2,9 @@
  "computation": "deuteron-wall-alien-resummation",
  "description": "LEADING-term test of the deuteron-wall closure via the m=1 level-1/2 alien term of the Gevrey-1/2 binding period (derived \u03c9\u2080=1/\u221a2, A_\u03c9=4\u221a2 e^-3/8, scale m_e, no tuning): ceiling m_e\u00b7A_\u03c9=1.987 MeV < B_D=2.225 MeV, so the LEADING term undershoots (~0.21 MeV at substrate). NOT a refutation: the full alien-calculus trans-series \u03a3_m S_m A_\u03c9^m e^{-m\u03c9\u2080/\u221ax} \u03a6_m (dualized entanglement energy of the 2-nucleon bipartition) is unbounded by A_\u03c9 and OPEN. Scope-(a); no fit.",
  "audit_only": true,
- "computedAt": "2026-07-18T13:27:42.275654+00:00",
+ "computedAt": "2026-08-23T09:02:03.392200+00:00",
  "engine": "mpmath",
- "engineVersion": "mpmath 1.3.0",
+ "engineVersion": "mpmath 1.4.1",
  "derived_constants": {
   "omega0": "1/sqrt(2)",
   "A_omega": "4*sqrt(2)*e^(-3/8)",
@@ -26,9 +26,11 @@
   }
  ],
  "allPassed": true,
- "scriptHash": "35b2eebe66bc",
- "scriptCommitSha": "f654f7c4710adc8047faf5d5055dae4dd9abc1e0",
- "commitSha": "9efbe6e6cd42038e00c9812bca049c17ea010730",
+ "scriptHash": "c449a745165b",
+ "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+ "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
  "durationMs": 0,
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "scriptFile": "deuteron_wall_alien_resummation_probe.py"
 }

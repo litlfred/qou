@@ -113,3 +113,108 @@ The 5₂ saddle sum rule; Kummer's identity and the ideal-tetrahedron law of sin
 concavity; the volume functor and `rotate_angles`/`volume_rotate`; the ℝ* limit transfer
 and the two-valued-birthday defect (beans `hypr`, `bday`). Each needs a manifest entry as
 well as a file — see the trap above.
+
+---
+**2026-08-10 — re-validated against a platform 144 commits newer. Delta still zero, and
+several checks I relied on were broken at the old baseline.**
+
+The blocks were first validated against folio-assistant `c9ae256`. The platform was **144
+commits behind**, and the gap includes fixes to the very machinery those checks used:
+
+| platform commit | what it fixed |
+|---|---|
+| `5ebe888` | *"the content validator had never validated anything"* |
+| `91c7eb5` | *"The citation check could never fire"* |
+| `cbe5fa9` | Zod silently stripping declared fields — **including `lean`** |
+| `6c50eca` | 461 blocks invisible to QA |
+| `8db9a93` | report manifest fields the schema silently strips |
+
+**`91c7eb5` explains an anomaly recorded earlier in this bean.** A deliberate bogus
+citation key produced no error, and that was logged as "either citations aren't checked,
+or my block isn't being read". The real answer is now known: the citation check *could
+never fire*. On the new platform it is not fixed so much as **disclosed** —
+
+    ℹ [(bibliography)]: no reference registry configured — cites-resolve did not run,
+      so cites[] entries were NOT validated against references
+
+which is the right behaviour: a check that did not run now says so instead of passing
+silently. `cites[]` in these blocks is still unvalidated, and that is now visible.
+
+**Re-validated on `29b03f7`.** Corpus baseline moved **4 → 40 issues** — entirely from
+`8db9a93` newly reporting pre-existing blocks with undeclared fields (`authorNotes`,
+`chapter`, `is_mathematics`, `proofOf`, `computation`, `probe`, `consumers`). **None of
+the 40 is from this arc's blocks**, and the positive control still fires: removing `lean`
+from one block moves 40 → 41 with the expected warning, back to 40 on revert. So the
+blocks are genuinely read, and `lean` is not among the stripped fields.
+
+**qou main merged**: +1008 commits since the branch base, clean merge, and of this arc's
+files only `mass-theory.ts` was touched upstream — resolved without conflict, all three
+block registrations intact. Post-merge baseline 42, delta from this arc still zero.
+
+**Lesson for the remaining blocks.** A validator's issue count is only comparable against
+the *same platform SHA*; `run-validate.ts` prints it for exactly this reason (its own
+docstring records two agents disagreeing over a baseline that was a function of two
+inputs). Quote the platform SHA with any baseline, and re-run the positive control after
+a platform bump rather than assuming the previous run still means what it did.
+
+---
+**2026-08-15 (later) — two more blocks, for the work this arc produced *after* the original
+eight.**
+
+The arc kept going after this bean's first pass, adding ~215 Lean declarations with no
+paper presence — the exact gap this bean exists to close. Two blocks, both registered and
+both positive-controlled:
+
+| block | chapter | covers |
+|---|---|---|
+| `diophantine-birthday-trajectory` | `appendix-surreals-archimedean` | the birthday/trajectory separation |
+| `gluing-certification-mechanical-reach` | `mass-theory` | degrees 2–14, 2–14 tetrahedra |
+
+**Baseline unchanged at 42 issues** on both, so neither adds a defect; the positive control
+moves 42 → 43 for each, naming the block, so both are genuinely read.
+
+### ⚠ The first block was written into the wrong chapter
+
+`conj:diophantine-birthday` lives in **`appendix-surreals-archimedean/`**, not
+`appendix-surreals/` where I first put its commentary. Caught by grepping for the label
+before wiring `uses[]` — had I trusted the directory name, the block would have sat in a
+chapter that never mentions the conjecture it is about, and `uses: ["conj:…"]` would have
+pointed across chapters for no reason.
+
+**Related, and not fixed:** `DiophantineBirthday.lean`'s own docstring links to
+`../../../quantum-observable-universe/appendix-surreals/diophantine-birthday.md`, which
+**does not exist** — the file is in `appendix-surreals-archimedean/`. A dead doc link in
+the Lean source, of the same family as the two dead `lean.ref`s this bean caught earlier,
+and equally invisible to every checker.
+
+### The untracked-file trap, avoided deliberately this time
+
+This bean already records a positive control run on an **untracked** file, where
+`git checkout --` could not revert it and silently left a block without its `lean.ref`.
+Both controls here reverted from an explicit `/tmp` backup instead, and the revert was
+verified by grepping the restored ref back. Worth stating as the rule: **a positive control
+on a new file needs a real backup, because the usual revert is a no-op on something git has
+never seen.**
+
+---
+**2026-08-16 — a third block, and it changed the Lean it cites.**
+
+`appendix-surreals/birthday-axioms-do-not-pin-the-birthday.{md,ts}`, registered beside
+`hyperreal-limit-transfer`. Covers the `BirthdayFaithful` result, which had **no paper
+presence**: the six axioms admit a two-valued model, so they bound birthday only from
+above; `birthday(n) ≤ n` is already a theorem while the matching `≥` is unobtainable; the
+fix is an opt-in mixin rather than a change to the carrier; and the independence is proved
+rather than asserted.
+
+**Writing the block improved the theorem.** Wiring `lean.ref` meant reading the cited
+statement, which turned out to be weaker than its name — its two conjuncts were not linked
+to the same structure (see `qou-bday` for the full account). A stronger
+`birthdayFaithful_independent_witnessed` was added and the block cites **that**.
+
+Recording it here because it is an argument for this bean's whole premise: writing the
+exposition is not transcription. Citing a result forces someone to read what it actually
+says, which is a different act from proving it, and it caught something two prior passes
+over that file did not.
+
+Verified as before: ref resolves by `#check`; baseline unchanged at 42; positive control
+42 → 43 on removing the `lean` field, reverted from an explicit backup.

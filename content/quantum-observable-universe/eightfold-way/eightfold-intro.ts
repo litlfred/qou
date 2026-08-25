@@ -15,5 +15,4 @@ import { prose } from "../../schema/builders";
 export default prose({
   label: "prose:eightfold-intro",
   title: "Introduction",
-  md: "eightfold-intro.md",
 });

@@ -1,0 +1,76 @@
+{
+  "engine": "rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-18T21:39:16.410263+00:00",
+  "commitSha": "ef606abbd858428dacfc2f9167b1dfedcbee47ca",
+  "assertions": [
+    {
+      "name": "strong_duality_gap_small",
+      "computed": "0.000000000000000382144017996802900000000000000000000000000000000000192080652",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "clarabel-MPFR on 50-dps string Gram"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "atom-dual-q0-mpfr-demo",
+  "scriptFile": "atom_dual_q0_mpfr_demo.py",
+  "scriptHash": "a811c3c7208b",
+  "scriptCommitSha": "e73a450346f0f91e0ccd74e4ee8ecb8fd6411059",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "End-to-end no-float64 LP dual on the H_3(q) atomic Gram: 50-dps mpmath Gram/trace strings -> clarabel-MPFR. Consumer of gram_matrix_mp. Degenerate H_3 dual (y0~0); pipeline demo.",
+  "auditOnly": "docs/audits/2026-06-16-gram-q-approximation-audit.md",
+  "data": {
+    "dual": {
+      "active_set": [
+        0
+      ],
+      "dual_obj_str": "-6.617584414762339209252677635680114030945338718238926e-19",
+      "duality_gap_str": "3.821440179968029224438901934222023711889883301921198e-16",
+      "feasible": true,
+      "precision_bits": 167,
+      "primal_obj_str": "3.814822595553266885229649256586343597858937963202956e-16",
+      "status": "Solved",
+      "x_star_str": [
+        "-265025.0078198542315217567698768518942130310351172790",
+        "225670.7875541601078038030961296655385047255283559332",
+        "225670.7875541601078038030961296655385047255283557903",
+        "-185680.7828620745590819575348487056354847961865266644",
+        "-185680.7828620745590819575348487056354847961865266111",
+        "185045.9984356831340780656473096731325710203893156713"
+      ],
+      "y0_star_str": "-6.617584414762339209252677635680114030945338718238926e-19",
+      "y_star_str": [
+        "1.000000000000000000197520683389830430717854621669529",
+        "2.724853865980273613847487828212356534339141091404590e-19",
+        "2.724853865980273613847487828212356534339141091276924e-19",
+        "9.765570879689679557865679466208640550900922296753500e-20",
+        "9.765570879689679557865679466208640550900922297010304e-20",
+        "1.041831159481674832564946427040461807053546017804697e-19"
+      ],
+      "_inputs_float64_free": true,
+      "_t_str_sample": [
+        "1.0",
+        "0.6126880371464652515958298639458992480263083915450870141",
+        "0.6126880371464652515958298639458992480263083915450870141"
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

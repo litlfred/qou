@@ -1,4 +1,33 @@
-# Correction: the D-ladder generating function is super-exponentially DIVERGENT (radius → 0), not convergent — the "radius 0.143" was a finite-n shadow
+# ~~Correction: the D-ladder generating function is super-exponentially DIVERGENT (radius → 0), not convergent — the "radius 0.143" was a finite-n shadow~~
+
+> ## 🛑 SUPERSEDED 2026-08-09 — this document's conclusion is REVERSED
+>
+> **`D(ũ)` is CONVERGENT, and `ρ ≈ 0.1428` is its real radius — not a finite-n
+> shadow.** See
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md),
+> which names this document as the one it corrects.
+>
+> **What this document got wrong, and why it looked right.** Its central
+> argument is §"No singularity at ρ": *a convergent series with radius 0.143
+> must have a singularity of `log R(q(ũ))` at `|ũ| = 0.143`; a full search
+> found none.* The search was **not full** — it omitted a **`Q_b` zero**, the
+> real root `q*_ρ ≈ 1.48989` of the irreducible degree-12 factor of the `Δ_net`
+> numerator, whose image is `ũ(q*_ρ) = 0.142799996644689…`. The singularity was
+> there; the search did not look where it lives. The root-test and
+> Domb–Sykes evidence is consistent with the true behaviour
+> `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))`, whose `1/k` factor makes
+> `|d_k|^{1/k}` approach `1/ρ` far too slowly to plateau by `k = 27`.
+>
+> **What still stands** (this document's scope-(a) discipline was right, and
+> protects exactly these): the exact `ℚ(√3)` `d_k`; the parity structure; the
+> 3-smooth Ohtsuki–Habiro denominators; the 2-adic parity grading; and the
+> **non-holonomicity** of `D` — a convergent analytic function need not be
+> holonomic, and KC22's closed form `φ(w)log(1−w/ρ) + ψ(w)` is exactly such an
+> element.
+>
+> Read the 2026-08-09 correction before relying on anything below. Banner added
+> 2026-08-14 (`qou-arvu`); the text below is preserved verbatim as the record of
+> what was concluded on 2026-07-12.
 
 **Date:** 2026-07-12 · **Branch:** `claude/dladder-convergence-search-2026-07-12` ·
 **Corrects:** [`2026-07-12-bar-odd-s-deformed-rung-followup.md`](2026-07-12-bar-odd-s-deformed-rung-followup.md)

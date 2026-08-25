@@ -20,5 +20,3 @@ The left trefoil $T_{2,3}$ represents the electron generator. Its mirror image $
    Positive crossings ($+q$) become negative ($-q^{-1}$) and vice versa.
 3. **Coulomb charge reversal.** The antisymmetric component of the crossing energy determines the Coulomb channel. This reverses sign: $Q(\mathfrak{H}^{\sigma}) = -Q(\mathfrak{H})$. The antiproton specifically carries $Q(\mathfrak{p}^{\sigma}) = -1$.
 4. **Topological mass invariance.** The mirror operation preserves the knot type and its hyperbolic volume. The topological mass of a particle equals that of its antiparticle: $m_{\mathrm{topological}}(\mathfrak{H}^{\sigma}) = m_{\mathrm{topological}}(\mathfrak{H})$.
-
-Formal knot-theoretic mirror swapping models the physical properties of antiparticles.

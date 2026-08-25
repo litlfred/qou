@@ -371,21 +371,37 @@ theorem chebyshev_sl2_cube {R : Type*} [CommRing R]
   simp only [smul_eq_mul, Fintype.card_fin, Nat.cast_ofNat]
   ring
 
-/-- Convergence bound for the BW formula at Hecke level k:
-    MAE(k) ≤ C₀ × [2]_q^{-2(k-3)}
-    where C₀ ≈ 0.035% is the k=3 mass MAE.
+/-- The BW convergence-bound **envelope** `C₀ · [2]_q^{-2(k-3)}` is
+    non-negative for `q > 1`, `C₀ > 0`.
 
-    This follows from Plancherel concentration: the dominant ~10
-    partitions capture all but O(r^{-k}) of the Markov trace. -/
-theorem convergence_bound (q : ℝ) (hq : q > 1) (C₀ : ℝ) (hC : C₀ > 0)
-    (k : ℕ) (hk : k ≥ 3) :
-    -- The bound is: MAE(k) ≤ C₀ × (q + 1/q)^{-2·(k-3)}
-    -- Each level gains a factor [2]_q² ≈ 4.04 in precision.
-    -- Ultimate floor at k ≈ 13 from substrate parameter uncertainty.
-    C₀ * (q + 1/q) ^ ((-2 : ℤ) * ((k : ℤ) - 3)) ≥ 0 := by
-  -- Ref: [manuscript] §5.13
-  -- C₀ > 0 and (q + 1/q) > 0 for q > 1; integer power of a positive
-  -- real is positive, so the product is positive (hence ≥ 0).
+    **This is not the convergence bound.** It says nothing about MAE(k)
+    — no error quantity appears in the statement. It establishes only
+    that the expression proposed as an upper bound is itself
+    non-negative, which follows from `positivity`.
+
+    The claim the manuscript makes, `MAE(k) ≤ C₀ · [2]_q^{-2(k-3)}` with
+    `C₀ ≈ 0.035%` the k=3 mass MAE, is **not formalised here and does not
+    follow from this**: MAE(k) is a numerical quantity of the mass table
+    with no definition in scope, so there is nothing for the inequality
+    to constrain. Stating it would need MAE defined first.
+
+    Renamed 2026-08-23 (bean `qou-lo1t`). It was `convergence_bound`,
+    under a docstring asserting the MAE inequality and three inline
+    comments elaborating a bound the statement never makes. The name and
+    the docstring were the whole of the claim.
+
+    For a convergence bound that *is* stated over the quantities it
+    bounds, see `QOU.Archimedean.SkewSYT.ConvergenceBound` — the
+    Kerov–Vershik `|f_k - f_inf| ≤ C_q / (k-3)`, carried as a class with
+    a proved reflexivity instance. It is a different bound (`1/(k-3)`,
+    not exponential in `k`), so it is not this one restated. -/
+-- Ref: [manuscript] §5.13
+theorem convergence_bound_envelope_nonneg
+    (q : ℝ) (hq : q > 1) (C₀ : ℝ) (hC : C₀ > 0)
+    (_k : ℕ) :
+    C₀ * (q + 1/q) ^ ((-2 : ℤ) * ((_k : ℤ) - 3)) ≥ 0 := by
+  -- `C₀ > 0` and `q + 1/q > 0` for `q > 1`; an integer power of a
+  -- positive real is positive, so the product is positive.
   have hq_pos : q > 0 := lt_trans zero_lt_one hq
   have h_sum_pos : q + 1/q > 0 := by
     have hinv : (1 : ℝ) / q > 0 := by positivity

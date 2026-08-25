@@ -45,7 +45,7 @@ $$
 
 ## CDF–LHC discrepancy
 
-CDF~II collided protons with antiprotons. $W$ bosons were produced via valence quark--antiquark annihilation. This compact two-body vertex concentrates gauge-field curvature.
+CDF II collided protons with antiprotons. $W$ bosons were produced via valence quark--antiquark annihilation. This compact two-body vertex concentrates gauge-field curvature.
 
 At the LHC, protons lack valence antiquarks. Production requires sea antiquarks ($x \sim 0.01$--$0.05$). The effective topological charge is suppressed by $x^2$:
 
@@ -87,6 +87,6 @@ See [Table 7](#tbl:w-boson-mass-discrepancy-table7-data).
 
 ## Experimental tests
 
-1. **CDF vs.\ LHC $W$ mass.** The $pp^{\sigma}$-vs-$pp$ split is the cleanest test.
-2. **Higgs $\gamma\gamma$ vs.\ $4\ell$ across runs.** Tests decay-vertex topology dependence.
+1. **CDF versus LHC $W$ mass.** The $pp^{\sigma}$-vs-$pp$ split is the cleanest test.
+2. **Higgs $\gamma\gamma$ versus $4\ell$ across runs.** Tests decay-vertex topology dependence.
 3. **Half-life measurements in high fields.** Shifts would be $\approx 0.5\%$.

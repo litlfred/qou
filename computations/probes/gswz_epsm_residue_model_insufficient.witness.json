@@ -1,0 +1,37 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_residue_model_insufficient_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_residue_model_insufficient_probe.py",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "corrects PR #5006 Addendum 24 (this repo); shift law QOU.Machinery.CyclicQuantumDilog (#4964); CGZ arXiv:1712.04887v3; GSWZ arXiv:2412.04241v2 eqn (270)",
+ "checks": {
+  "m3_probe_green": true,
+  "symbol_count_is_23": true,
+  "relations_are_exact_in_the_field": true,
+  "collisions_are_the_generic_case": true,
+  "xi_symbols_have_distinct_residues": true,
+  "per_element_implies_residue_merged": true
+ },
+ "result": {
+  "symbols_built": 310,
+  "distinct_residues": 23,
+  "distinct_elements_sharing_a_residue": 180,
+  "collision_fraction": "0.581",
+  "xi_symbol_residues": {
+   "z1": [
+    3,
+    1
+   ],
+   "z2": [
+    1,
+    4
+   ]
+  }
+ },
+ "scope": "NEGATIVE about my own merged claim. Addendum 24 answered the per-factor existence question with a lattice computation that merges symbols by RESIDUE; the product U is indexed by distinct FIELD ELEMENTS, and 50% of built symbols are distinct elements sharing a residue, so the model is not a harmless approximation and the existence claim is NOT established. Unaffected: the criterion correction itself (a derivation), every merged per-m verdict on xi (whose two symbols have distinct residues, checked), the Lean, and the alpha-order result. OPEN: whether a per-ELEMENT representative exists at any m >= 3 -- strictly harder, not answered here."
+}

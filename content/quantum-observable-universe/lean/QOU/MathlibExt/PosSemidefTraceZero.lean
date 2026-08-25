@@ -231,7 +231,7 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero_diagonal
     and the duality-gap measure `tr(S · Φ) = 0`, then `S · Φ = 0`.
     This is the bridge identity used in SDP-uniqueness arguments. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5.2 ("Complementary slackness")
---      — Verified against the local PDF (uploads/boyd-vandenberghe-2004-…):
+--      — Verified against the local PDF (library/boyd-vandenberghe-2004-…):
 --      §5.5.2 is Complementary slackness; §5.5.3 is KKT optimality. The
 --      `tr(S·Φ)=0 ⟹ S·Φ=0` bridge identity is the complementary-slackness
 --      formulation specialised to the SDP cone.

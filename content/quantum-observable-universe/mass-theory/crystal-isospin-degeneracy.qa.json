@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean"
   },
   "source_hashes": {
-    "ts": "02426d0b9faf",
     "md": "7eee52fd90e3",
-    "lean": "b7ae537e26ef"
+    "ts": "02426d0b9faf",
+    "lean": "b7ae537e26ef",
+    "lean_statement": "d5ca4dd856a6"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -800,38 +801,18 @@
           "md": "7eee52fd90e3",
           "ts": "02426d0b9faf",
           "lean": "b7ae537e26ef",
-          "lean_statement": "d5ca4dd856a6"
+          "lean_statement": "bf2a0a8c2cb4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "7eee52fd90e3",
-          "ts": "02426d0b9faf",
-          "lean": "b7ae537e26ef",
-          "lean_statement": "d5ca4dd856a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1775,7 +1756,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.843Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'cannot distinguish between proton and neutron structures inside the bare Hecke algebra' is the proved content of the statement above it."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.878Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.912Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.947Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:38.980Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:39.013Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:39.047Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:39.081Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:39.114Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "De-hedged triple in the consequence paragraph: 'completely masks generator inversions'; 'cannot distinguish between proton and neutron structures'; 'must originate strictly outside the crystal limit'. 'strictly' modifies nothing in 'strictly outside', and the sentence is a structural-exclusion claim carrying it.",
+        "notes": "Proposed: drop 'strictly' ('must originate outside the crystal limit or via an asymmetric interface protocol'). Not applied: the sentence is a scope-(b)-shaped exclusion whose wording the author should own; its own proof block adds a caveat that the physical 3H/3He pair is NOT covered."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.849Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:56:39.193Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 83 w: read in full (sign-flip invariance of the crystal-limit shell sum, plus a three-sentence consequence paragraph)."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7eee52fd90e3",
+          "ts": "02426d0b9faf",
+          "lean": "b7ae537e26ef",
+          "lean_statement": "d5ca4dd856a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T14:56:39.193Z"
 }

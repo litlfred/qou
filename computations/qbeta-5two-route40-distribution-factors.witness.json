@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route40_distribution_factors",
   "bean": "qou-0yqu",
-  "dps": 50,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/QBeta/FiveTwoSaddleSumRule.lean section 7d (12 theorems, sorry-free, standard axioms)"
   ],
@@ -17,7 +17,7 @@
     {
       "gate": "G2",
       "claim": "the integral route agrees with an INDEPENDENT computation (mpmath `polylog` at the roots) on all eight polynomials in play, and the hypothesis it needs -- no root in [1,inf), Li2's cut -- is verified two ways that must agree. The negative controls X^3-X-1 and X^4-X-1 DO have such a root and must be rejected, so the screen is not decoration",
-      "worst_cross_check_residual": "2.67276471009e-51",
+      "worst_cross_check_residual": "8.15011117094e-71",
       "screen_consistent_and_clean": true,
       "negative_controls_rejected": {
         "X^3-X-1 (plastic)": true,
@@ -105,8 +105,8 @@
       "gate": "G6",
       "claim": "both reflections close in elementary terms with PRINCIPAL logs and no branch correction: C_2 + C_3 = pi^2/2 - sum log y log(1-y) over the y-orbit, and C_1 + C_5 = the same over the c-orbit. `1-c^3 = c^2` and `1-c = c^5` are why these two land inside the tower instead of introducing fresh orbits",
       "residuals": {
-        "y-orbit: C_2 + C_3": "0.0",
-        "c-orbit: C_1 + C_5": "1.069105884e-50"
+        "y-orbit: C_2 + C_3": "7.244543263e-71",
+        "c-orbit: C_1 + C_5": "0.0"
       },
       "pass": true
     },

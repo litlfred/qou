@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1208.2521v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8d0281aa84043865a2268ae04a97c395a9e97d630c05f973c6a43a0d850ddae8",
+  "file": "1208.2521v1.pdf"
+ },
+ "provenance": {
+  "title": "1. Introduction Several possible q-analogues of the Bessel function (1.1) J\u03b1 (x) := (\u22121)k (x/ 2)\u03b1 +2k k! \u0393( \u03b1 + k + 1) have been considered in the literature. Best known are two re lated q-Bessel func-",
+  "authors": null,
+  "arxiv": {
+   "id": "1208.2521",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "13 Aug 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "proposition": 5,
+   "remark": 5,
+   "lemma": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
+   "name": null,
+   "statement": "The series in (2.2) de\ufb01nes an entire analytic function in z, w ,",
+   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
+   "section_title": "Symmetry and orthogonality for q-Bessel functions",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.2",
+   "name": null,
+   "statement": "Formula (2.3) is a limit case of Heine\u2019s transformation form ula",
+   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
+   "section_title": "Symmetry and orthogonality for q-Bessel functions",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.3",
+   "name": null,
+   "statement": "For w := q1\u2212 n (n = 1, 2, . . . ) we interpret the left-hand side of (2.2)",
+   "section_file": "sections/sec-003-2-symmetry-and-orthogonality-for-q-bessel-functi.md",
+   "section_title": "Symmetry and orthogonality for q-Bessel functions",
+   "pages": "4-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.4",
+   "name": null,
+   "statement": "Because of (2.6), the behaviour of the two equal sides of (2.3 ) as",
+   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.5",
+   "name": null,
+   "statement": "For z, t \u2208 C such that 0 < |t| < |z|\u2212 1 there is the absolutely",
+   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.6",
+   "name": null,
+   "statement": "For |z| < 1 and n, m \u2208 Z we have",
+   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.7",
+   "name": null,
+   "statement": "Analogous to Proposition 2.5 there are the two generating fu nctions",
+   "section_file": "sections/sec-004-6-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "6-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": null,
+   "statement": "For |sxy| < 1 and x2, y 2 \u2044= q\u2212 l (l = 0, 1, 2, . . . ), we have",
+   "section_file": "sections/sec-009-12-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "12-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.3",
+   "name": null,
+   "statement": "Analogous to (4.2) we have",
+   "section_file": "sections/sec-010-14-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "14-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "A.1. For 0 < a < q \u2212 1, 0 \u2264 b < q \u2212 1 we have",
+   "section_file": "sections/sec-011-16-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "16-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "B.1. Formula (B.3) is valid for integer n if c, qb/a, q/a, q n+1/a, q \u2212 nc/b, c/b",
+   "section_file": "sections/sec-012-18-tom-h-koornwinder-and-ren-e-f-sw-arttouw.md",
+   "section_title": "TOM H. KOORNWINDER AND REN \u00b4E F. SW ARTTOUW",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

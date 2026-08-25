@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
-    "ts": "85d83eb3f640",
     "md": "7afd312bcbd0",
-    "lean": "a9ad5d15d76d"
+    "ts": "85d83eb3f640",
+    "lean": "a9ad5d15d76d",
+    "lean_statement": "921c663d55ba"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -331,31 +332,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "7afd312bcbd0",
-          "ts": "85d83eb3f640",
-          "lean": "a9ad5d15d76d",
-          "lean_statement": "921c663d55ba"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1780,7 +1761,367 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:23.814Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:23.855Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:23.894Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:23.933Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:23.972Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.011Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.050Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.089Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.129Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.108Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.167Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read: one italic lead sentence + two italic bullets. No negation-contrast, pivot, em-dash, triple, aphorism, meta-commentary, restatement, warmth, superlative or non-speakable chain in the prose. NOTE (outside the trap axis, reported separately): both bullets reduce to the evaluations Cl_2(0)=0 and Li_2(0)=0 - the alternating five-term sum Cl_2(0)-Cl_2(0)+Cl_2(0)-Cl_2(0)+Cl_2(0) collapses to a single Cl_2(0), and log Phi_n(0;q)=log 1=0 - so the block's title claim of closing 'parts of substantive Mathlib gaps 2+3' rests on two tautologies."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7afd312bcbd0",
+          "ts": "85d83eb3f640",
+          "lean": "a9ad5d15d76d",
+          "lean_statement": "921c663d55ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:28:24.167Z"
 }

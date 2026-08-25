@@ -13,13 +13,14 @@ recipe for β_D).
 Build order:
   1. Proton intra-nucleon word at (σ_0, σ_1) — references
      `atomic-braid-recipe-p.derivation.json`.
-  2. Inter-nucleon mixed crossing at σ_2: (p, n) → averaged
-     interface, contributing 1× (c=1, d=−h/2) at gen 2.
+  2. Inter-nucleon mixed crossing at σ_2: (p, n) → colour-weighted
+     averaged interface, contributing 1× (c=1, d=−h(1/2 − δ/4)) at
+     gen 2 — ctype `averaged_weighted`, NOT `averaged` (−h/2).
   3. Neutron intra-nucleon word at (σ_3, σ_4) — references
      `atomic-braid-recipe-n.derivation.json`.
 
 Total: 11 (proton) + 1 (inter) + 11 (neutron) = 23 entries.
-Type breakdown {σ: 11, σ^{-1}: 7, averaged: 5}.
+Type breakdown {σ: 11, σ^{-1}: 7, averaged: 4, averaged_weighted: 1}.
 
 Trust profile: {axiom: 1, derived: 3, computational: 1} —
 fully-trusted, zero SCRIPT_CITED (with axiom = inter-nucleon mixed-
@@ -87,10 +88,12 @@ def build() -> DerivationChain:
             "By the inter-nucleon coupling axiom, adjacent nucleons k "
             "and k+1 of opposite flavour (p, n) contribute a mixed-"
             "flavour crossing at gen 3k+2.  Per the operator-valued "
-            "interface rule, mixed (p, n) flavours yield an averaged "
-            "crossing: 1× (c=1, d=−h/2) at gen 2, with multiplicity "
-            "m_pn = 1 (default).  Contributes 1 averaged entry to "
-            "the σ-word."
+            "interface rule, mixed (p, n) flavours yield a COLOUR-"
+            "WEIGHTED averaged crossing: 1× (c=1, d=−h(1/2 − δ/4)) at "
+            "gen 2, δ = flavor_split_leading(q₀), with multiplicity "
+            "m_pn = 1 (default).  Contributes 1 `averaged_weighted` "
+            "entry to the σ-word — the colour-blind −h/2 form is a "
+            "DIFFERENT ctype and is not what this bond carries."
         ),
         inputs=[FirstPrinciple.HECKE_ENERGY.value,
                 FirstPrinciple.FROBENIUS_PAIRING.value],
@@ -98,7 +101,10 @@ def build() -> DerivationChain:
         output_value={
             "gen": 2,
             "count": 1,
-            "type": "averaged",
+            # The p-n bond is the colour-weighted interface. This field read
+            # "averaged" (the colour-blind ctype) — a structured-data error,
+            # not just a prose one, and it is what the step-4 merge summed.
+            "type": "averaged_weighted",
         },
         trust_basis=TrustBasis.AXIOM,
         lean_ref="qou:STUB:InterNucleonMixedCoupling",
@@ -142,9 +148,14 @@ def build() -> DerivationChain:
             "β_n[at (σ_3, σ_4)]\n"
             "Total entries: 11 + 1 + 11 = 23.\n"
             "Type breakdown after merging:\n"
-            "  σ:        6 (proton) + 0 + 5 (neutron)        = 11\n"
-            "  σ^{-1}:   3 (proton) + 0 + 4 (neutron)        = 7\n"
-            "  averaged: 2 (proton) + 1 (inter) + 2 (neutron) = 5\n"
+            "  σ:                 6 (proton) + 0 + 5 (neutron) = 11\n"
+            "  σ^{-1}:            3 (proton) + 0 + 4 (neutron) = 7\n"
+            "  averaged:          2 (proton) + 0 + 2 (neutron) = 4\n"
+            "  averaged_weighted: 0          + 1 (inter) + 0   = 1\n"
+            "The inter crossing is `averaged_weighted`, so it does NOT "
+            "join the intra-nucleon `averaged` column: the old "
+            "'averaged … = 5' line folded the colour-weighted p-n "
+            "interface into the colour-blind bucket.\n"
             "Matches `canonical_braid_crossings.atom_canonical_"
             "crossings(Z=1, N=1, include_inter=True)`."
         ),
@@ -153,7 +164,16 @@ def build() -> DerivationChain:
         output_name="beta_D_canonical",
         output_value={
             "total":          23,
-            "type_breakdown": {"sigma": 11, "sigma_inv": 7, "averaged": 5},
+            # 11 = 6(p) + 5(n); 7 = 3(p) + 4(n); 4 = 2(p) + 2(n) intra.
+            # The 23rd crossing is the ONE p-n interface, and it is
+            # `averaged_weighted` (colour-weighted, d = -h(1/2 - δ/4)), not
+            # `averaged` (colour-blind, d = -h/2). This literal read
+            # `"averaged": 5` and claimed DERIVED provenance against
+            # `atom_canonical_crossings(Z=1, N=1)` -- a match that stopped
+            # holding when that function learned to distinguish the two
+            # interfaces (qou-gdtb). p and n are unaffected: no p-n bond.
+            "type_breakdown": {"sigma": 11, "sigma_inv": 7,
+                               "averaged": 4, "averaged_weighted": 1},
         },
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-braid recipe; "
@@ -179,8 +199,8 @@ def build() -> DerivationChain:
         notes=(
             "Cross-check: `len(atom_canonical_crossings(Z=1, N=1, "
             "include_inter=True)) == 23`.  Type breakdown from the "
-            "actual call: {sigma: 11, sigma_inv: 7, averaged: 5} — "
-            "matches step 4 derivation."
+            "actual call: {sigma: 11, sigma_inv: 7, averaged: 4, "
+            "averaged_weighted: 1} — matches step 4 derivation."
         ),
     ))
 
@@ -195,8 +215,9 @@ def build() -> DerivationChain:
             "by composing the per-nucleon recipe chains "
             "(`atomic-braid-recipe-{p,n}.derivation.json`) with a "
             "single inter-nucleon mixed-flavour crossing at σ_2 "
-            "(averaged interface, AXIOM).  Type breakdown {σ: 11, "
-            "σ^{-1}: 7, averaged: 5} matches the canonical encoding "
+            "(colour-weighted averaged interface, AXIOM).  Type "
+            "breakdown {σ: 11, σ^{-1}: 7, averaged: 4, "
+            "averaged_weighted: 1} matches the canonical encoding "
             "from `canonical_braid_crossings.atom_canonical_crossings"
             "(Z=1, N=1, include_inter=True)`.  Trust profile is "
             "{axiom: 1, mathlib-cited: 0, derived: 3, script-cited: 0, "

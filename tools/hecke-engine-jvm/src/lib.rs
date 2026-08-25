@@ -58,8 +58,12 @@ pub fn hecke_h(q: f64) -> f64 {
 }
 
 /// Markov-trace weights on the NF basis (length-6 vector).
+///
+/// Convention D (qou-m7py, 2026-08-15): the production Markov trace
+/// `h·z² + z`, matching `pyhecke.gram.TR_M`. The legacy `z³` weights are
+/// `hecke_engine::gram::trace_weights`.
 pub fn trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix flattened to a length-36 row-major vector.
@@ -160,18 +164,20 @@ mod tests {
 
     #[test]
     fn trace_weights_shape() {
-        // 6 NF-basis Markov-trace weights: [1, z, z, z², z², z³]
-        // where z = q³/(q² + 1) (trace convention D; C excised
-        // 2026-08-09). NOT a probability —
-        // it's a Markov-trace tuple. Just verify the shape + the
-        // first element is identically 1.0.
+        // 6 NF-basis Markov-trace weights: [1, z, z, z², z², h·z² + z]
+        // where z = q³/(q² + 1) and h = q − 1/q (trace convention D,
+        // qou-m7py 2026-08-15; the legacy z³ tuple is
+        // hecke_engine::gram::trace_weights). NOT a probability —
+        // it's a Markov-trace tuple. Verify the shape, the first
+        // element is identically 1.0, and the σ₀σ₁σ₀ weight is h·z² + z.
         let w = trace_weights(Q_SUBSTRATE);
         assert_eq!(w.len(), 6);
         assert!((w[0] - 1.0).abs() < 1e-12);
-        // w[1] == w[2] == markov_z(q); w[3] == w[4] == z²; w[5] == z³
+        // w[1] == w[2] == markov_z(q); w[3] == w[4] == z²; w[5] == h·z² + z
         let z = markov_z(Q_SUBSTRATE);
+        let h = hecke_h(Q_SUBSTRATE);
         assert!((w[1] - z).abs() < 1e-12);
-        assert!((w[5] - z * z * z).abs() < 1e-12);
+        assert!((w[5] - (h * z * z + z)).abs() < 1e-12);
     }
 
     #[test]

@@ -5,7 +5,7 @@ construction**. Taking the coupling to be $\mathrm{select}$ itself and the const
 be reflexivity exhibits a witness, so the class constrains nothing as a mathematical
 object.
 
-That is worth saying plainly, because the opposite was previously asserted. A class
+The opposite was previously asserted. A class
 whose only field is pinned to a definition already in scope cannot fail to be
 satisfiable, and an argument that leaned on its non-vacuity would be leaning on
 nothing.

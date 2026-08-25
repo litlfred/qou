@@ -1,0 +1,164 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1101.1563v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0c45b250fc4a2a49a5eeb67715789dd99b191e1c6df32e428af5fbf43fc87791",
+  "file": "1101.1563v1.pdf"
+ },
+ "provenance": {
+  "title": "Gr\u00a8 obner-Shirshov bases for categories\u2217 L. A. Bokut \u2020",
+  "authors": "School of Mathematical Sciences, South China Normal Univer sity",
+  "arxiv": {
+   "id": "1101.1563",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "8 Jan 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 10,
+  "by_kind": {
+   "remark": 3,
+   "corollary": 2,
+   "lemma": 2,
+   "theorem": 3
+  },
+  "formalization_candidates": 7
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "that Shirshov\u2019s approach was a most universal as we under stand now since Lie",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": null,
+   "name": null,
+   "statement": "The set of all irreducible NLSW\u2019s [ u] such that u does not contain any",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.2",
+   "name": null,
+   "statement": "Let a1s1b1, a 2s2b2 be monic S-words. If S is a Gr\u00a8 obner-Shirshov basis in",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3",
+   "name": null,
+   "statement": "Let S \u2282 kC (X) be a subset of monic polynomials and Irr (S) = {u \u2208",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.4",
+   "name": "Composition-Diamond lemma for categories",
+   "statement": "Let S \u2282 kC (X) be a nonempty",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "If the category in Theorem 4.4 has only one object, then Theorem 4 .4 is exact",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "Let X, S be de\ufb01ned as the above, the generating set and the relation se t",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.2",
+   "name": "Maclane [58], Lemma VIII. 5.1",
+   "statement": "In the category C(X|S), each morphism",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.4",
+   "name": null,
+   "statement": "Let Y , S be de\ufb01ned as the above, the generating set and the relation se t",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "According to Loday [51], the uniqueness property in Theorem 5.4 (2) was",
+   "section_file": "sections/sec-002-4-composition-diamond-lemma-for-categories.md",
+   "section_title": "Composition-Diamond lemma for categories",
+   "pages": "8-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

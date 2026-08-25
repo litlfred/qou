@@ -15,7 +15,7 @@ conj:borromean-quark makes the same Brunnian / triple-invariant assertion unsour
 - abstract (integral formula) — When all pairwise linking numbers vanish the triple linking number is given by an integral formula, invariant under orientation-preserving rigid motions of the 3-sphere and expressible as the helicity of a related vector field on the 3-torus.
   Use here: A geometric/analytic representative for the triple linking invariant, in the same helicity register the framework already uses for linking weights.
 
-Source: `uploads/1101.3374v1.pdf` (`dgkmsv2013`)
+Source: `library/arxiv-1101.3374v1/1101.3374v1.pdf` (`dgkmsv2013`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-proof.md"
   },
   "source_hashes": {
-    "ts": "5aba3af4decd",
-    "md": "1fc678bb9e37"
+    "md": "e1b167737c5d",
+    "ts": "5aba3af4decd"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -447,7 +447,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -776,30 +777,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1fc678bb9e37",
-          "ts": "5aba3af4decd"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1341,394 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.197Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'the simple convention ",
+        "notes": "V_shell| = prod |V_i| does NOT respect the Hecke-algebra structure ... while the canonical Markov trace does' - the contrast is the content (it explains why an earlier 1.326x ratio was an artifact).|False-positive class: substantive mathematical contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.237Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "11 stylistic spaced dashes in 644 words (1.71/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.286Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "12 spaced em-dashes in 854 words (1.4 pct), several appending afterthoughts rather than punctuating: 'The equality is algebraic - it follows from the Hoefsmit seminormal form ...'; 'was a product-volume artifact - the simple convention ... does NOT respect ...'; 'proton/neutron distinction enters only through the inter-nucleon crossings, which are outside ...'.",
+        "notes": "STRUCTURAL (spans 4 paragraphs). Proposed: convert the two appending dashes to full stops or colons; keep the genuine parentheticals."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 644 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.347Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.400Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.457Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.510Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Block-final closer restates the thesis after the substantive claim: 'This is the operator-level signature of Z=2/N=2 closed-shell structure in the substrate algebra; the spin-involution corollary gives the structural symmetry that pins it down.'",
+        "notes": "NOT FIXED (math-adjacent, and the surrounding paragraph carries sweep damage - see trap-nonspeakable). Proposed: drop the clause after the semicolon."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.558Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (854w, prf). Steps 1-5 recomputed symbolically and check out."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.629Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'to machine precision', 'EXACTLY at magic-shell atoms', 'does NOT' - claims are precise rather than inflated.",
+        "notes": "REGISTER NOTE (clarity-grad-style, not trap): two all-caps emphasis words (EXACTLY, NOT) in a proof block; lowercase with italics if kept."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.320Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "3 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.704Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Sweep damage renders a sentence ungrammatical: 'Operator-level signature. The / the canonical formalism / (per prop:operator-selection-lp) confirms that ...' reads 'The the canonical formalism confirms'. Two further standalone 'in the canonical formalism' lines stand in for a script name (3 occurrences in this block).",
+        "notes": "NOT FIXED - the original script name is unrecoverable from the block. Proposed: restore the producer name and cite its witness. See also the dead witness path in the report."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "1fc678bb9e37",
+          "ts": "5aba3af4decd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "e1b167737c5d",
+          "ts": "5aba3af4decd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "a9b97ea341b2",
+          "script_commit_sha": "3c2848a5f7fd8883290c754251f18e6d4bc4f03b"
+        },
+        "reviewed_at": "2026-08-18T20:54:17.430Z",
+        "reviewed_sha": "4d55d6b9c937999705442bdeaf8788e53d1118b5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:16:41.704Z"
 }

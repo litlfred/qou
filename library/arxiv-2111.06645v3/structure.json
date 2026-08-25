@@ -1,0 +1,777 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2111.06645v3",
+ "source": {
+  "file": "2111.06645v3.pdf",
+  "sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
+  "bytes": 1560237,
+  "pages": 87
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2111.06645",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "24 Jun 2024"
+  },
+  "doi": "10.3842/SIGMA.2024.055",
+  "title": "Knots, Perturbative Series and Quantum Modularity",
+  "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
+  "abstract": "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (σ0,σ 1) entry, whereσ0 is the trivial andσ1 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2πiα as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte–Garoufalidis; (c) the columns of Φ are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle Wγ in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series Φ(h) to actual functions. The two invariants Φ and Wγ are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (−2, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240625010158Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "Knots, Perturbative Series and Quantum Modularity"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Part 0: Introduction and overview",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Part I: The main story",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The original quantum modularity conjecture",
+   "page": 9,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A collection of formal power series",
+   "page": 11,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The indexing set P_K",
+   "page": 11,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Four constructions of the power series Phi^{(K,s)}_a(h)",
+   "page": 12,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Interrelations among the power series Phi_a^{(s)}(h)",
+   "page": 15,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The generalized quantum modularity conjecture",
+   "page": 15,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Lifting the QMC from constant terms to power series",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Quadratic relations",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of the coefficients",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Refining the quantum modularity conjecture",
+   "page": 22,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Improving the quantum modularity conjecture: optimal truncation",
+   "page": 22,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "New elements of the Habiro ring",
+   "page": 23,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Smoothed optimal truncation",
+   "page": 25,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Strengthening the generalized quantum modularity conjecture",
+   "page": 27,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "The refined quantum modularity conjecture",
+   "page": 28,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "The matrix-valued cocycle associated to a knot",
+   "page": 30,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The Habiro-like matrix and the perturbative matrix",
+   "page": 31,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Smoothness",
+   "page": 34,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "``Functions near Q''",
+   "page": 37,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Analyticity",
+   "page": 40,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "The non-hyperbolic case",
+   "page": 42,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Part II. Complements",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Half-symplectic matrices and their perturbative series",
+   "page": 43,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Half-symplectic matrices and the Bloch group",
+   "page": 43,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
+   "page": 47,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Nahm sums and the perturbative definition of the Phi-series",
+   "page": 49,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Two q-holonomic modules",
+   "page": 51,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Descendant Habiro-like functions",
+   "page": 52,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "The J-matrix for the 5_2 knot",
+   "page": 54,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "State-sums",
+   "page": 55,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "The q-holonomic module of formal power series",
+   "page": 57,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the modularity conjecture for the 4_1 knot",
+   "page": 58,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "The case of a=0",
+   "page": 59,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "The general case",
+   "page": 60,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "Arithmetic aspects",
+   "page": 63,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic number theory aspects",
+   "page": 63,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Denominators and integrality properties",
+   "page": 65,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 1,
+   "title": "Numerical aspects",
+   "page": 71,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Computing the power series Phi_a^{(K,s)}(h)",
+   "page": 71,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Optimal truncation and smoothed optimal truncation",
+   "page": 74,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 1,
+   "title": "A Numerical data for five sample knots",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 The figure eight knot",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 The sister of the figure eight knot",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 The 5_2 knot",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.4 The (-2,3,7) pretzel knot",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.5 The 6_1 knot",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 84,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-part-0-introduction-and-overview",
+   "number": null,
+   "title": "Part 0: Introduction and overview",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 29596,
+   "n_words": 4975
+  },
+  {
+   "id": "sec-001-part-i-the-main-story",
+   "number": null,
+   "title": "Part I: The main story",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-1-the-original-quantum-modularity-conjecture",
+   "number": "1",
+   "title": "The original quantum modularity conjecture",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 7519,
+   "n_words": 1398
+  },
+  {
+   "id": "sec-003-2-a-collection-of-formal-power-series",
+   "number": "2",
+   "title": "A collection of formal power series",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 12888,
+   "n_words": 2382
+  },
+  {
+   "id": "sec-004-31-the-generalized-quantum-modularity-conjecture",
+   "number": "3.1",
+   "title": "The generalized quantum modularity conjecture",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 4652,
+   "n_words": 839
+  },
+  {
+   "id": "sec-005-32-lifting-the-qmc-from-constant-terms-to-power",
+   "number": "3.2",
+   "title": "Lifting the QMC from constant terms to power series",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4711,
+   "n_words": 863
+  },
+  {
+   "id": "sec-006-33-quadratic-relations",
+   "number": "3.3",
+   "title": "Quadratic relations",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5010,
+   "n_words": 930
+  },
+  {
+   "id": "sec-007-34-asymptotics-of-the-coefficients",
+   "number": "3.4",
+   "title": "Asymptotics of the coefficients",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 7734,
+   "n_words": 1452
+  },
+  {
+   "id": "sec-008-4-refining-the-quantum-modularity-conjecture",
+   "number": "4",
+   "title": "Refining the quantum modularity conjecture",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 524,
+   "n_words": 86
+  },
+  {
+   "id": "sec-009-41-improving-the-quantum-modularity-conjecture-o",
+   "number": "4.1",
+   "title": "Improving the quantum modularity conjecture: optimal truncation",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 5454,
+   "n_words": 981
+  },
+  {
+   "id": "sec-010-42-new-elements-of-the-habiro-ring",
+   "number": "4.2",
+   "title": "New elements of the Habiro ring",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 6789,
+   "n_words": 1269
+  },
+  {
+   "id": "sec-011-43-smoothed-optimal-truncation",
+   "number": "4.3",
+   "title": "Smoothed optimal truncation",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4452,
+   "n_words": 824
+  },
+  {
+   "id": "sec-012-44-strengthening-the-generalized-quantum-modular",
+   "number": "4.4",
+   "title": "Strengthening the generalized quantum modularity conjecture",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3989,
+   "n_words": 709
+  },
+  {
+   "id": "sec-013-45-the-refined-quantum-modularity-conjecture",
+   "number": "4.5",
+   "title": "The refined quantum modularity conjecture",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 6275,
+   "n_words": 1080
+  },
+  {
+   "id": "sec-014-5-the-matrix-valued-cocycle-associated-to-a-knot",
+   "number": "5",
+   "title": "The matrix-valued cocycle associated to a knot",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2562,
+   "n_words": 421
+  },
+  {
+   "id": "sec-015-51-the-habiro-like-matrix-and-the-perturbative-m",
+   "number": "5.1",
+   "title": "The Habiro-like matrix and the perturbative matrix",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 9606,
+   "n_words": 1699
+  },
+  {
+   "id": "sec-016-52-smoothness",
+   "number": "5.2",
+   "title": "Smoothness",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 40,
+   "n_chars": 24316,
+   "n_words": 4404
+  },
+  {
+   "id": "sec-017-54-analyticity",
+   "number": "5.4",
+   "title": "Analyticity",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 9556,
+   "n_words": 1666
+  },
+  {
+   "id": "sec-018-55-the-non-hyperbolic-case",
+   "number": "5.5",
+   "title": "The non-hyperbolic case",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1983,
+   "n_words": 324
+  },
+  {
+   "id": "sec-019-part-ii-complements",
+   "number": null,
+   "title": "Part II. Complements",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-020-6-half-symplectic-matrices-and-their-perturbativ",
+   "number": "6",
+   "title": "Half-symplectic matrices and their perturbative series",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 907,
+   "n_words": 160
+  },
+  {
+   "id": "sec-021-61-half-symplectic-matrices-and-the-bloch-group",
+   "number": "6.1",
+   "title": "Half-symplectic matrices and the Bloch group",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 47,
+   "n_chars": 15523,
+   "n_words": 2922
+  },
+  {
+   "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
+   "number": "6.2",
+   "title": "Ideal triangulations and the Neumann–Zagier equations",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 8425,
+   "n_words": 1433
+  },
+  {
+   "id": "sec-023-63-nahm-sums-and-the-perturbative-definition-of",
+   "number": "6.3",
+   "title": "Nahm sums and the perturbative definition of the Phi-series",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 51,
+   "n_chars": 8497,
+   "n_words": 1583
+  },
+  {
+   "id": "sec-024-7-two-q-holonomic-modules",
+   "number": "7",
+   "title": "Two q-holonomic modules",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 1837,
+   "n_words": 317
+  },
+  {
+   "id": "sec-025-71-descendant-habiro-like-functions",
+   "number": "7.1",
+   "title": "Descendant Habiro-like functions",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 55,
+   "n_chars": 9378,
+   "n_words": 1739
+  },
+  {
+   "id": "sec-026-73-state-sums",
+   "number": "7.3",
+   "title": "State-sums",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 5573,
+   "n_words": 988
+  },
+  {
+   "id": "sec-027-74-the-q-holonomic-module-of-formal-power-series",
+   "number": "7.4",
+   "title": "The q-holonomic module of formal power series",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 4642,
+   "n_words": 789
+  },
+  {
+   "id": "sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1",
+   "number": "8",
+   "title": "Proof of the modularity conjecture for the 4_1 knot",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 5393,
+   "n_words": 1126
+  },
+  {
+   "id": "sec-029-82-the-general-case",
+   "number": "8.2",
+   "title": "The general case",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 6398,
+   "n_words": 1310
+  },
+  {
+   "id": "sec-030-9-arithmetic-aspects",
+   "number": "9",
+   "title": "Arithmetic aspects",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 228,
+   "n_words": 36
+  },
+  {
+   "id": "sec-031-91-algebraic-number-theory-aspects",
+   "number": "9.1",
+   "title": "Algebraic number theory aspects",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 5968,
+   "n_words": 1124
+  },
+  {
+   "id": "sec-032-92-denominators-and-integrality-properties",
+   "number": "9.2",
+   "title": "Denominators and integrality properties",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 71,
+   "n_chars": 18983,
+   "n_words": 3688
+  },
+  {
+   "id": "sec-033-10-numerical-aspects",
+   "number": "10",
+   "title": "Numerical aspects",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 74,
+   "n_chars": 11700,
+   "n_words": 2022
+  },
+  {
+   "id": "sec-034-102-optimal-truncation-and-smoothed-optimal-trun",
+   "number": "10.2",
+   "title": "Optimal truncation and smoothed optimal truncation",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 2808,
+   "n_words": 483
+  },
+  {
+   "id": "sec-035-a-numerical-data-for-five-sample-knots",
+   "number": null,
+   "title": "A Numerical data for five sample knots",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 2339,
+   "n_words": 419
+  },
+  {
+   "id": "sec-036-a1-the-figure-eight-knot",
+   "number": null,
+   "title": "A.1 The figure eight knot",
+   "level": 2,
+   "page_start": 75,
+   "page_end": 77,
+   "n_chars": 5810,
+   "n_words": 912
+  },
+  {
+   "id": "sec-037-a2-the-sister-of-the-figure-eight-knot",
+   "number": null,
+   "title": "A.2 The sister of the figure eight knot",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 84,
+   "n_chars": 16896,
+   "n_words": 2866
+  },
+  {
+   "id": "sec-038-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 84,
+   "page_end": 87,
+   "n_chars": 12461,
+   "n_words": 1730
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 49,
+  "sections": 39,
+  "chars_total": 291382
+ }
+}

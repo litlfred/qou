@@ -2,7 +2,7 @@
 The algebraic layer of the deformed 5₂ saddle curve (A_ω, 5₂ lane).
 
 Port of `DeformedSaddleCurve.lean` (4₁) to GGM §6.1's 5₂ data
-(`uploads/2012.00062v3.pdf`, eqs 230–233; probe
+(`library/arxiv-2012.00062v3/2012.00062v3.pdf`, eqs 230–233; probe
 `computations/probes/qbeta_g3_5two_saddle_exact_predictions.py`). The
 state-integral saddle equation (232), exponentiated with (x, y) =
 (e^u, −e^v), gives the curve (233) y² = (1−y)(1−xy)(1−x⁻¹y); clearing

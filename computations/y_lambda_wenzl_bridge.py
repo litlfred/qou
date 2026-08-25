@@ -67,6 +67,7 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q_50_DIGIT_STR as Q0_50DPS
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 
@@ -591,7 +592,24 @@ def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
         print(f"n={n} ({len(parts)} partitions, dps={dps})...", flush=True)
         rows = []
         for p in parts:
-            y_num = y_lambda_wenzl_bridge_numeric(p, Q0_FLOAT, dps)
+            # q₀ at FULL precision, not `Q0_FLOAT`.
+            #
+            # `Q0_FLOAT` is `q_parameter.Q`, a Python float — 16 digits fed
+            # into a `dps`=100 computation. Smooth entries survive that (λ=(3)
+            # and (2,1) agree with the exact values to 16 digits either way),
+            # but the ≥3-row weights are supposed to CANCEL to zero, and a
+            # cancellation cannot be cleaner than its input:
+            #
+            #     y₍₁³₎ with f64 q₀      -1.38063146771e-102
+            #     y₍₁³₎ with 50-dps q₀    0.0     (exactly)
+            #
+            # Both are zero at 100 dps, so this is a hygiene fix rather than a
+            # convention one — but it is the same shape of defect
+            # `regenerate_y_lambda_mpfr`'s docstring records for its own
+            # predecessor (`q_str = str(Q0_FLOAT)` truncating a claimed 50 dps
+            # past digit ~14), and an exact zero is worth having when the
+            # structural audit's whole test is "is this weight zero".
+            y_num = y_lambda_wenzl_bridge_numeric(p, mp.mpf(Q0_50DPS), dps)
             entry = {
                 "partition": p,
                 "depth": max(0, len(p) - 1),

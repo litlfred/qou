@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0709.3157v1",
+ "source_sha256": "22a0d9a93c9dcb8d",
+ "brief": "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi",
+ "extended": "**V . Mateu**\n\n*Departament de Física Teòrica, IFIC, Universitat de València-CSIC*\n\n7 pp, 7 sections.\n\n**Abstract.** The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi σ μν q j. Whereas only four new terms show up at O(p4), we ﬁnd around a hundred of them at O(p6). So it becomes essential to ensure that this set o operators i s indeed minimal and non– redundant (i.e., it is a basis). We discuss two phenomenological applications in the context of vector meson resonances and the radiative pion decay.\n\n**Outline.** Introduction; QCD in the presence of external sources; Chiral building blocks; The chiral Lagrangian; Two comments on tensor sources; Tensor sources in the Resonance chiral theory ; Conclusions",
+ "tokens": {
+  "brief": 49,
+  "extended": 211
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-qcd-in-the-presence-of-external-sources",
+   "title": "QCD in the presence of external sources",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-chiral-building-blocks",
+   "title": "Chiral building blocks",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-the-chiral-lagrangian",
+   "title": "The chiral Lagrangian",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-two-comments-on-tensor-sources",
+   "title": "Two comments on tensor sources",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-tensor-sources-in-the-resonance-chiral-theory-an",
+   "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-conclusions",
+   "title": "Conclusions",
+   "pages": "6-7"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -300,30 +300,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "2cea5f17ff6b",
-          "ts": "6732ee48ca4f"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -891,11 +872,210 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.779Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.838Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.890Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.962Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.037Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.085Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.149Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.223Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.292Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2cea5f17ff6b",
+          "ts": "6732ee48ca4f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.377Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 8 rows. RECOMPUTED EVERY CELL. Dimensions are right for both n: (3),(2,1),(1^3) -> 1,2,1 and (4),(3,1),(2,2),(2,1,1),(1^4) -> 1,3,2,3,1. Weights are exactly the Plancherel measure d_lambda^2/n!: 1/6, 4/6, 1/6 at n=3 and 1/24, 9/24, 4/24, 9/24, 1/24 at n=4 -- all eight correct, and each block sums to exactly 1 (6/6 and 24/24), the independent invariant. The depth column equals (number of rows of lambda) - 1 in all eight rows: 0,1,2 and 0,1,1,2,3, consistent with the GB-filtration convention used by the frobenius-partition-sum producer.",
+        "notes": "One notation note: the column is headed dim V_lambda, but the values are the CLASSICAL S_n irreducible dimensions d_lambda, not quantum dimensions -- elsewhere in this chapter V_lambda denotes the Wedderburn block and dim_q(lambda) is the q-dimension (e.g. dim_q((2,1)) = [2]_q = 2.0109, against the 2 printed here). At q_0 the two differ in the second digit, so the header invites a real misreading. Proposed fix: head the column d_lambda or 'classical dimension'."
+      }
     ]
   },
   "source_hashes": {
-    "ts": "6732ee48ca4f",
-    "md": "2cea5f17ff6b"
+    "md": "2cea5f17ff6b",
+    "ts": "6732ee48ca4f"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:28:10.377Z"
 }

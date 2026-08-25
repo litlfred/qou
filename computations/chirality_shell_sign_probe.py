@@ -32,6 +32,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # (name, Z, N, empirical net first-order coeff or None if unknown)
 ISO = [("D", 1, 1, 1), ("3H", 1, 2, 0), ("3He", 2, 1, 0), ("4He", 2, 2, 0),
@@ -62,7 +63,7 @@ def trace_weighted_sign(Z: int, N: int) -> float:
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     print("\n  CHIRALITY SIGNS FROM THE SHELL (Wedderburn transpose-parity δ_sign)")
     print("  candidates: ⟨sgn⟩ = trace-weighted δ_sign;  ZN mod 2 = pairing parity\n")
     print("| iso | A | Z·N | empirical net | ⟨sgn⟩ (trace-weighted) | ZN mod 2 |")

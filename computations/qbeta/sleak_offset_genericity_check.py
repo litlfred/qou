@@ -9,7 +9,15 @@ the flip is a restatement of "c_3 differs between anchors" -- not evidence
 about Vol(4_1).
 """
 from mpmath import mp, mpf
-mp.dps = 30
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 c3_mu = mpf('-2.02020024')
 c3_p = mpf('-2.06934258')
 lo, hi = -c3_mu, -c3_p

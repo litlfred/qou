@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+ "source_sha256": "fcc45aebd34e25dc",
+ "brief": "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an in nite family of knots with the property that the rst coe\u000ecient of the n-colored Jones polynomial grows linearly with n.",
+ "extended": "**COLORED JONES POLYNOMIALS WITHOUT TAILS**\n\n*CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN*\n\n5 pp, 7 sections.\n\n**Abstract.** We exhibit an in nite family of knots with the property that the rst coe\u000ecient of the n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail seen in the colored Jones polynomials of alternating knots does not generalize naively.\n\n**Outline.** 2 Colored Jones polynomial; 1 Introduction; 2 C. LEE AND R. V AN DER VEEN; 2 Ok = (−1)k[k + 1] = (−1)kv2k +lot; 4 C. LEE AND R. V AN DER VEEN; 3 The lack of tail; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: If u≤−3 then C(5;−3; 5;u ) is a Manx knot.",
+ "tokens": {
+  "brief": 44,
+  "extended": 174
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-colored-jones-polynomial",
+   "title": "Colored Jones polynomial",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-c-lee-and-r-v-an-der-veen",
+   "title": "C. LEE AND R. V AN DER VEEN",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-2-ok-1kk-1-1kv2k-lot",
+   "title": "Ok = (−1)k[k + 1] = (−1)kv2k +lot",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-004-4-c-lee-and-r-v-an-der-veen",
+   "title": "C. LEE AND R. V AN DER VEEN",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-3-the-lack-of-tail",
+   "title": "The lack of tail",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "4-5"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

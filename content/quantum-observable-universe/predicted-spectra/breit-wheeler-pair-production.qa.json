@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean"
   },
   "source_hashes": {
-    "ts": "2025c9dcb011",
     "md": "30c15e768181",
-    "lean": "beb49a6f910a"
+    "ts": "2025c9dcb011",
+    "lean": "beb49a6f910a",
+    "lean_statement": "3080f3afdc35"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "30c15e768181",
-          "ts": "2025c9dcb011",
-          "lean": "beb49a6f910a",
-          "lean_statement": "3080f3afdc35"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1883,7 +1864,383 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.870Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.946Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.022Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.093Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.519Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The three braid words (photon, electron, positron) are the definition's content. BRAID-WORD FINDING in notes.",
+        "notes": "STANDING-TRAP FINDING, structural, never fix math inline: 'e^- = sigma_0 sigma_1 sigma_0 (trefoil)' is WRONG. Computed the closure's component count from the induced permutation: sigma_1 sigma_2 sigma_1 in B_3 induces the transposition (1 3), so its closure has TWO components and cannot be a knot, let alone the trefoil. Markov-reducing confirms it: sigma_1 sigma_2 sigma_1 is conjugate to sigma_1^2 sigma_2, which destabilises to sigma_1^2 in B_2, i.e. the HOPF LINK. The trefoil as a 3-braid is (sigma_1 sigma_2)^2, whose closure has one component (computed), or sigma_1^3 in B_2. The same error propagates to e^+ = sigma_0^{-1} sigma_1^{-1} sigma_0^{-1}, labelled 'mirror trefoil', which is the negative Hopf link. This matters beyond nomenclature: the electron is T_{2,3} (a knot) throughout the rest of this chapter - def:antineutrino-knot, prop:antiparticle-crossing-reversal and rem:beta-decay-skein-properties all use 'electron trefoil T_{2,3} = sigma_1^3' - so this definition contradicts its own chapter. Proposed fix: e^- = (sigma_0 sigma_1)^2, or sigma_0^3 in the 2-strand realisation. Secondary: the generator indexing starts at sigma_0, whereas H_3(q) elsewhere in the corpus uses sigma_1, sigma_2."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.177Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.240Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.282Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.362Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.415Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.228Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:04.469Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the definition: the gamma-gamma identity, the three braid words, the archimedean banner. All ten categories judged; the braid words' closures computed."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "30c15e768181",
+          "ts": "2025c9dcb011",
+          "lean": "beb49a6f910a",
+          "lean_statement": "3080f3afdc35"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:41:04.519Z"
 }

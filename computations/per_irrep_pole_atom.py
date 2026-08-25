@@ -63,7 +63,9 @@ if str(HERE) not in sys.path:
 
 import sympy as sp  # noqa: E402
 
-from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    CTYPES, atom_canonical_crossings, convention_fingerprint, convention_label,
+)
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
 from witness_base import WitnessBuilder  # noqa: E402
@@ -88,13 +90,26 @@ ATOMS = {
     "lithium-7": (3, 4),
     "beryllium-8": (4, 4),
     "beryllium-9": (4, 5),
+    # UNBOUND channels.  These are two-nucleon systems that do NOT bind
+    # (no bound ²He, no bound ²n), carried here so the χ producers can
+    # build their per-irrep traces: |tr_M(β)| is defined by the braid,
+    # not by whether the nucleus is bound.  A sweep that treats every
+    # ATOMS row as a bound nucleus — a mass table, a binding-energy
+    # comparison against AME — must exclude these two, or it will emit
+    # rows that look like predictions for states nature does not have.
+    "diproton":  (2, 0),
+    "dineutron": (0, 2),
 }
+
+#: Subset of `ATOMS` that are not bound states.  Iterate
+#: `set(ATOMS) - UNBOUND_CHANNELS` in any binding/mass sweep.
+UNBOUND_CHANNELS = frozenset({"diproton", "dineutron"})
 
 ATOM_ALIASES = {
     "p": "proton", "n": "neutron", "D": "deuteron", "T": "tritium",
     "3He": "helium-3", "4He": "helium-4", "5Li": "lithium-5",
     "6Li": "lithium-6", "7Li": "lithium-7", "8Be": "beryllium-8",
-    "9Be": "beryllium-9",
+    "9Be": "beryllium-9", "2p": "diproton", "2n": "dineutron",
 }
 
 
@@ -161,7 +176,14 @@ def _write_chi_cache(
         "n_partitions": len(out_str),
         "n_partitions_total": len(parts_of(n)),
         "partial": partial,
-        "compute_time_sec_so_far": elapsed,
+        # DERIVED from the word this run built, never hand-set. `convention`
+        # is for readers; `convention_fingerprint` is what the next run's
+        # resume check compares, and is the reason a stale-convention cache
+        # can no longer look complete.
+        "convention": convention_label(atom_canonical_crossings(Z, N)),
+        "convention_fingerprint": convention_fingerprint(
+            atom_canonical_crossings(Z, N)),
+        "compute_time_sec_so_far": f"{elapsed:.3f}",
         "workers": workers_eff,
         "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
         "chi_lambda_symbolic": [
@@ -170,7 +192,12 @@ def _write_chi_cache(
                                  key=lambda kv: tuple(-x for x in kv[0]))
         ],
     }
-    cache_path.write_text(json.dumps(cache_payload, indent=2))
+    # ensure_ascii=False to match WitnessBuilder.save(). Without it this
+    # writer escapes the χ/λ/β in its own description to χλβ on
+    # every regeneration, so a cache rebuild shows up as a spurious text diff
+    # against the WitnessBuilder-written files beside it.
+    cache_path.write_text(json.dumps(cache_payload, indent=2,
+                                     ensure_ascii=False))
 
 
 def load_or_build_chi_atom(
@@ -189,13 +216,30 @@ def load_or_build_chi_atom(
     cache_path = HERE / f"chi-{atom_name}-h{n}.witness.json"
     cached_str: dict[tuple, str] = {}
     cached_was_partial = False
+    crossings = atom_canonical_crossings(Z, N)
+    from canonical_braid_crossings import (  # noqa: E402
+        convention_fingerprint, convention_label,
+    )
+    want = convention_fingerprint(crossings)
     if cache_path.exists():
         d = json.loads(cache_path.read_text())
-        for entry in d["chi_lambda_symbolic"]:
-            lam = tuple(entry["partition"])
-            cached_str[lam] = entry["chi_q_symbolic"]
-        cached_was_partial = bool(d.get("partial", False))
-    crossings = atom_canonical_crossings(Z, N)
+        # Resume keyed on partition coverage ALONE was the defect: a cache
+        # written before the colour-weighted p-n interface landed looked
+        # "complete" forever, so this producer kept serving colour-BLIND chi
+        # while building the weighted word. Nothing was wrong with the word.
+        # Compare the ctype multiset instead, and drop the whole cache on a
+        # mismatch rather than resuming into a mixed one -- half-weighted
+        # entries would be worse than either convention consistently applied.
+        got = d.get("convention_fingerprint")
+        if got != want:
+            print(f"  chi cache for {atom_name} is a different crossing "
+                  f"convention ({got or 'untagged'} != {want}) — discarding "
+                  f"{len(d.get('chi_lambda_symbolic', []))} cached partitions")
+        else:
+            for entry in d["chi_lambda_symbolic"]:
+                lam = tuple(entry["partition"])
+                cached_str[lam] = entry["chi_q_symbolic"]
+            cached_was_partial = bool(d.get("partial", False))
     shapes = parts_of(n)
     missing = [sh for sh in shapes if sh not in cached_str]
     workers_eff = workers if workers else max(1, os.cpu_count() or 1)
@@ -380,9 +424,17 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     crossings = atom_canonical_crossings(Z, N)
     per_gen: dict[int, dict[str, int]] = {}
     for gen_idx, ctype in crossings:
-        slot = per_gen.setdefault(int(gen_idx),
-                                   {"sigma": 0, "sigma_inv": 0, "averaged": 0})
-        slot[ctype] = slot.get(ctype, 0) + 1
+        # Seed from the canonical vocabulary, not a hand-written triple: the
+        # `.get(ctype, 0)` below is silent, so a ctype the seed does not know
+        # (`averaged_weighted`, added for the colour-weighted p-n interface)
+        # was counted into a key no downstream reader looks for.
+        slot = per_gen.setdefault(int(gen_idx), {c: 0 for c in CTYPES})
+        if ctype not in slot:
+            raise ValueError(
+                f"ctype {ctype!r} is not in canonical_braid_crossings.CTYPES "
+                f"{CTYPES}; per-generator counts would silently drop it"
+            )
+        slot[ctype] += 1
     # KLR-canonical-basis enrichment per gen (PR #608 cemetery infra).
     # σ_g^k pure-power sub-words are by construction *cemetery* — they
     # close to identity / unknots.  We tag each generator with its net
@@ -393,11 +445,20 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     for g in sorted(per_gen):
         slot = per_gen[g]
         net_power = slot.get("sigma", 0) - slot.get("sigma_inv", 0)
-        avg_count = slot.get("averaged", 0)
+        # BOTH averaged kinds are mixed / off-Markov crossings. Counting only
+        # `averaged` would mark a generator that carries the colour-weighted
+        # p-n interface and nothing else as `is_pure_power_in_cemetery=True`,
+        # which is exactly the silent projection the CTYPES seed above closed
+        # — reintroduced one field later. Broken out so a reader can still see
+        # which kind of interface the generator carries.
+        avg_count = (slot.get("averaged", 0)
+                     + slot.get("averaged_weighted", 0))
         klr_per_gen.append({
             "gen_idx": g,
             "net_signed_power": net_power,
             "averaged_count": avg_count,
+            "averaged_blind_count": slot.get("averaged", 0),
+            "averaged_weighted_count": slot.get("averaged_weighted", 0),
             # Cemetery class label: the *signed-power projection* of
             # this generator's sub-word, ignoring averaged crossings.
             # If averaged_count > 0, this label is a projection only.

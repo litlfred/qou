@@ -74,19 +74,19 @@ from _precision import json_safe_float  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q_50_DIGIT_STR, MASS_RATIO_MU_E_STR  # type: ignore
 
-try:
-    from _precision import set_compute_dps, fmt  # type: ignore
-    set_compute_dps(50)
-except ImportError:
-    mp.mp.dps = 50
-
-    def fmt(x, dps: int = 15) -> str:  # type: ignore
-        return mp.nstr(mp.mpf(x), n=dps, strip_zeros=False)
+from _precision import set_compute_dps, fmt  # type: ignore
+set_compute_dps(50)
 
 import snappy  # noqa: E402
 
 # ── targets & substrate ─────────────────────────────────────────────────────
 TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)   # CODATA 206.7682830
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TARGET_TAU_OVER_E = mp.mpf("3477.23")            # PDG 2024 m_tau/m_e (4 sig figs)
 SIGMA_EXP_TAU = mp.mpf("5e-5")                   # ~ rel. exp. precision of m_tau/m_e
 
@@ -387,7 +387,7 @@ def main() -> None:
     print(f"[m_tau_complex_volume] hbar_q = {fmt(HBAR_Q, 30)}")
 
     # muon sanity: Vol(4_1)/hbar_q^2 = m_mu/m_e, AND CS(4_1)=0 (amphichiral).
-    # Use the canonical high-precision Vol(4_1) = 2*Im(Li_2(e^{i pi/3})) = 2*Lambda(pi/3)
+    # Use the canonical high-precision Vol(4_1) = 2*Im(Li_2(e^{i pi/3})) = 2*Cl_2(pi/3)
     # (Bloch-Wigner form), NOT SnapPy's platform-dependent float, and keep the gate
     # at 1e-6 to match the real-volume probe.
     vol41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
@@ -502,7 +502,7 @@ def main() -> None:
             "refuted_real_search": "computations/m_tau_knot_prediction.py",
             "entropy_precedent": "PR #1805 (PSLQ entropy bound)",
         },
-        "duration_sec": round(time.time() - started, 3),
+        "duration_sec": f"{time.time() - started:.3f}",
     }
 
     wpath = Path(__file__).resolve().parent / "m-tau-complex-volume-search.witness.json"

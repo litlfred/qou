@@ -14,7 +14,7 @@ export default algorithm({
     },
   ],
   label: "alg:mass-identity",
-  title: "Mass identity $m_p = 2\\,(m_\\mu F_{\\mathrm{Bor}} - 6 m_e) \\cdot R_{\\mathrm{s5bb}}$ (muon-anchored Hecke energy)",
+  title: "Nucleon mass ratio $m_p = 2\\,(m_\\mu F_{\\mathrm{Bor}} - 6 m_e) \\cdot R_{\\mathrm{s5bb}}$ (muon-anchored Hecke energy)",
   uses: [
     "prop:mass-identity-exists",
     "prop:mass-identity-unique",

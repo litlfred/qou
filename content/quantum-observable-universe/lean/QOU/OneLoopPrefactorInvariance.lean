@@ -237,7 +237,7 @@ mechanisms — `k = 2^{−1/2}` by the Gaussian saddle above, the keystone's `�
 the 2:1 fold `D²_{Ê₈} = 2 D²_MTC` proved below. They share `ℚ(√5)` by cyclotomy,
 not by mechanism.
 
--- Ref: [hikami2005brieskorn] math-ph/0405028, uploads/0405028v2.pdf
+-- Ref: [hikami2005brieskorn] math-ph/0405028, library/arxiv-math-ph-0405028v2/0405028v2.pdf
 -- Ref: [manuscript] computations/lr_modulus_identification_sigma235.py
 -- Ref: [manuscript] computations/probes/bring_golden_jones_probe.py
 -/

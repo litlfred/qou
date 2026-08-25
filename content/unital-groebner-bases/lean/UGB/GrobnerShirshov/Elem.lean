@@ -303,6 +303,47 @@ theorem contextMul_shape [DecidableEq G] {a b m : Monomial G}
     show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0) = 0
     exact if_neg hs
 
+/-- `contextMul` sends a coefficientwise negation to a coefficientwise negation.
+
+The transfer lemma of §6 runs on this: a rule and its negative give
+S-polynomials that are negatives of each other, and the two halves of an
+S-polynomial are context-multiplications. -/
+theorem contextMul_coeff_neg [DecidableEq G] (a b : Monomial G)
+    {f g : AlgElement G k} (h : ∀ w, f.coeff w = -(g.coeff w)) (m : Monomial G) :
+    (contextMul a f b).coeff m = -((contextMul a g b).coeff m) := by
+  show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0)
+     = -(if a ++ excise a m b ++ b = m then g.coeff (excise a m b) else 0)
+  split_ifs
+  · exact h _
+  · rw [neg_zero]
+
+/-- **Sliding a single generator across an element that commutes with it.**
+
+If every monomial of `f` commutes with `x` *as a word* — `w ++ [x] = [x] ++ w` —
+then multiplying on the right by `x` and multiplying on the left by `x` give the
+same element.
+
+This is the shape of a rule composed with itself over `xxx` when its relation is
+a polynomial in the one generator `x`: the two halves of the S-polynomial are
+this element slid past the same letter, so the S-polynomial vanishes outright
+rather than merely reducing to zero. -/
+theorem contextMul_gen_comm [DecidableEq G] (x : G) (f : AlgElement G k)
+    (hf : ∀ w : Monomial G, f.coeff w ≠ 0 → w ++ [x] = [x] ++ w) (m : Monomial G) :
+    (contextMul [] f [x]).coeff m = (contextMul [x] f []).coeff m := by
+  by_cases hL : (contextMul [] f [x]).coeff m = 0
+  · by_cases hR : (contextMul [x] f []).coeff m = 0
+    · rw [hL, hR]
+    · exfalso
+      obtain ⟨w, hm, hw⟩ := contextMul_shape hR
+      have hcomm := hf w hw
+      rw [show m = [] ++ w ++ [x] by rw [hm]; simp [hcomm], contextMul_coeff_middle] at hL
+      exact hw hL
+  · obtain ⟨w, hm, hw⟩ := contextMul_shape hL
+    have hcomm := hf w hw
+    rw [hm, contextMul_coeff_middle,
+      show ([] ++ w ++ [x] : Monomial G) = [x] ++ w ++ [] by simp [hcomm],
+      contextMul_coeff_middle]
+
 @[simp] theorem contextMul_nil_nil_coeff [DecidableEq G] (f : AlgElement G k)
     (m : Monomial G) : (contextMul [] f []).coeff m = f.coeff m := by
   have := contextMul_coeff_middle ([] : Monomial G) ([] : Monomial G) m f
@@ -407,6 +448,81 @@ theorem ofTerms_coeff [DecidableEq G] (terms : List (Monomial G × k))
     (m : Monomial G) :
     (ofTerms terms).coeff m = ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum :=
   rfl
+
+/-- `contextMul` sees only the coefficient function, so it respects `CoeffEq`.
+
+Needed because `ofTerms` is a *representation*: the same element written with its
+terms in a different order is a different value of `AlgElement` (different
+`support`, different `coeff` term), so a rule can only be matched against a
+normal form up to coefficients. -/
+theorem contextMul_coeff_congr [DecidableEq G] (a b : Monomial G)
+    {f g : AlgElement G k} (h : ∀ w, f.coeff w = g.coeff w) (m : Monomial G) :
+    (contextMul a f b).coeff m = (contextMul a g b).coeff m := by
+  show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0)
+     = (if a ++ excise a m b ++ b = m then g.coeff (excise a m b) else 0)
+  rw [h]
+
+/-- **A relation in context is the same terms, in context.**
+
+`contextMul` is defined through `excise`, so reading a coefficient off it is a
+case split on whether the monomial has the shape `a ++ _ ++ b`. That split is the
+same every time; this does it once, for a relation given by an explicit term
+list. Every rule in a finite presentation is such a list, and every S-polynomial
+is two context-multiplications of them, so this is the lemma that keeps a
+composition's proof to word identities plus `split_ifs`.
+
+The shape case split is the outer `by_cases`; the induction on `L` inside it only
+has to push `List.filter` through `List.map`, because `w ↦ a ++ w ++ b` is
+injective and append-cancellation is `simp`. -/
+theorem contextMul_ofTerms_coeff [DecidableEq G] (a b : Monomial G)
+    (L : List (Monomial G × k)) (m : Monomial G) :
+    (contextMul a (ofTerms L) b).coeff m
+      = (ofTerms (L.map (fun p => (a ++ p.1 ++ b, p.2)))).coeff m := by
+  by_cases hs : ∃ w : Monomial G, m = a ++ w ++ b
+  · obtain ⟨w, rfl⟩ := hs
+    rw [contextMul_coeff_middle, ofTerms_coeff, ofTerms_coeff]
+    induction L with
+    | nil => rfl
+    | cons p t ih =>
+      simp only [List.map_cons, List.filter_cons, decide_eq_true_eq,
+        List.append_cancel_left_eq, List.append_cancel_right_eq]
+      split_ifs
+      · simp only [List.map_cons, List.sum_cons, ih]
+      · exact ih
+  · rw [contextMul_coeff_of_not_shape _ (fun w hw => hs ⟨w, hw⟩), ofTerms_coeff]
+    induction L with
+    | nil => rfl
+    | cons p t ih =>
+      rw [List.map_cons, List.filter_cons,
+        if_neg (by simpa using (fun h => hs ⟨p.1, h.symm⟩ : ¬ (a ++ p.1 ++ b = m)))]
+      exact ih
+
+/-- **A two-term relation in context is the same two terms, in context.**
+
+Every rule in a two-term presentation — braid, far-commutation, Bokut–Shiao —
+has this shape, and an S-polynomial is built out of exactly two such
+context-multiplications. Computing one from the `excise` definition each time is
+the same case split every time; this does it once.
+
+The proof is the only place the shape condition has to be reasoned about: on the
+shape `a ++ w ++ b` both sides reduce to append-cancellation, and off it both
+sides are zero because a matching term would exhibit the missing `w`. -/
+theorem contextMul_ofTerms_pair_coeff [DecidableEq G] (a b w₁ w₂ : Monomial G)
+    (c₁ c₂ : k) (m : Monomial G) :
+    (contextMul a (ofTerms [(w₁, c₁), (w₂, c₂)]) b).coeff m
+      = (ofTerms [(a ++ w₁ ++ b, c₁), (a ++ w₂ ++ b, c₂)]).coeff m := by
+  by_cases hs : ∃ w : Monomial G, m = a ++ w ++ b
+  · obtain ⟨w, rfl⟩ := hs
+    rw [contextMul_coeff_middle, ofTerms_coeff, ofTerms_coeff]
+    simp only [List.filter_cons, List.filter_nil, decide_eq_true_eq,
+      List.append_assoc, List.append_cancel_left_eq, List.append_cancel_right_eq]
+    split_ifs <;> rfl
+  · rw [contextMul_coeff_of_not_shape _ (fun w hw => hs ⟨w, hw⟩), ofTerms_coeff]
+    have h₁ : ¬ (a ++ w₁ ++ b = m) := fun h => hs ⟨w₁, h.symm⟩
+    have h₂ : ¬ (a ++ w₂ ++ b = m) := fun h => hs ⟨w₂, h.symm⟩
+    rw [List.filter_cons, if_neg (by simpa using h₁), List.filter_cons,
+      if_neg (by simpa using h₂), List.filter_nil]
+    rfl
 
 end AlgElement
 

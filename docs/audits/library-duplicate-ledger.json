@@ -1,0 +1,161 @@
+{
+ "_schema": "library-duplicate-ledger/v1",
+ "_note": "Agent verdicts on the pairs proposed by scripts/library-find-duplicates.py. The detector CANNOT decide these on its own: measured over this library, same-work pairs score 0.248-1.000 on char-gram Jaccard and known-different pairs (a paper and its sequel; a same-author series reusing its setup sections) score 0.159-0.435. Those ranges OVERLAP, so no threshold separates them and every pair needs a reading. scripts/library-resolve-duplicates.py acts only on verdict 'same-work'; anything 'needs-agent' is left alone.",
+ "_verdicts": {
+  "same-work": "one work, held more than once (preprint/published, two ingests of one file, arXiv version bump)",
+  "different-work": "genuinely distinct papers that share text - usually a sequel or a same-author series",
+  "needs-agent": "proposed by the detector, not yet read"
+ },
+ "adjudicated": [
+  {
+   "docs": ["1-s20-0040938385900047-main", "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds", "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co"],
+   "verdict": "same-work",
+   "score": 1.0,
+   "why": "Neumann-Zagier, Volumes of hyperbolic three-manifolds (Topology 24, 1985), held three times: the Elsevier PDF and two re-ingests of the same scan."
+  },
+  {
+   "docs": ["arxiv-2304.12545v1", "hyperbolicandneumann", "celebratio-mathematica-neumann-hyperbolic-3-manifolds"],
+   "verdict": "same-work",
+   "score": 1.0,
+   "why": "Garoufalidis-Zagier, 'Hyperbolic 3-manifolds, the Bloch group and the work of Walter Neumann'. Two ingests of the arXiv PDF plus the Celebratio Mathematica version (27pp vs 19pp - same text, different house style)."
+  },
+  {
+   "docs": ["milnor-1982-hyperbolic-geometry-the-first-150-years", "milnor-hyperbolic"],
+   "verdict": "same-work",
+   "score": 1.0,
+   "why": "Milnor, 'Hyperbolic geometry: the first 150 years' (Bull. AMS 6, 1982). Identical extracted text."
+  },
+  {
+   "docs": ["zagier-the-dilogarithm-function", "zagier-the-dilogarithm-function-copy-b"],
+   "verdict": "same-work",
+   "score": 0.997,
+   "why": "Zagier, 'The Dilogarithm Function' (MPI). The directory name records the second as a copy."
+  },
+  {
+   "docs": ["arxiv-1206.6004v2", "sigma12-065"],
+   "verdict": "same-work",
+   "score": 0.996,
+   "why": "Braden-Northover, \"Bring's curve: its period matrix and the vector of Riemann constants\", SIGMA 8 (2012) 065 - arXiv preprint and the SIGMA published version, same DOI."
+  },
+  {
+   "docs": ["arxiv-1710.04865v2", "cjdoubletwistfinal"],
+   "verdict": "same-work",
+   "score": 0.961,
+   "why": "Lovejoy-Osburn, 'The colored Jones polynomial and Kontsevich-Zagier series for double twist knots'. Same 24pp."
+  },
+  {
+   "docs": ["arxiv-1303.5278v1", "topologicalinvariance3dindex"],
+   "verdict": "same-work",
+   "score": 0.923,
+   "why": "Garoufalidis-Hodgson-Rubinstein-Segerman, '1-efficient triangulations and the index of a cusped hyperbolic 3-manifold'. Same 60pp."
+  },
+  {
+   "docs": ["arxiv-1304.2705v1", "stateintegralsqseries"],
+   "verdict": "same-work",
+   "score": 0.881,
+   "why": "Garoufalidis-Kashaev, 'From state integrals to q-series'. Same 16pp."
+  },
+  {
+   "docs": ["0310280v4", "gt-v10-n3-p07-p"],
+   "verdict": "same-work",
+   "score": 0.792,
+   "why": "Birman-Wrinkle/Menasco, 'Stabilization in the braid groups II'. arXiv v4 and the Geometry & Topology published version, same 28pp."
+  },
+  {
+   "docs": ["arxiv-2203.17029v1", "modularqholonomicmodules"],
+   "verdict": "same-work",
+   "score": 0.763,
+   "why": "Garoufalidis-Wheeler, 'Modular q-holonomic modules'. 65pp vs 66pp - same text, one carries an extra page."
+  },
+  {
+   "docs": ["0306345v1", "agt-v3-n1-p17-p"],
+   "verdict": "same-work",
+   "score": 0.738,
+   "why": "Masbaum, 'Skein-theoretical derivation of some formulas of Habiro'. arXiv and AGT published version, same 20pp, both dated 16 June 2003."
+  },
+  {
+   "docs": ["arxiv-0901.1612v1", "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"],
+   "verdict": "same-work",
+   "score": 0.664,
+   "why": "DeTurck-Gluck-Komendarczyk-Melvin-Shonkwiler, 'Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links'. arXiv 23pp and the Bol. Soc. Bras. Mat. version 33pp."
+  },
+  {
+   "docs": ["arxiv-2208.13692v1", "s40879-023-00706-0"],
+   "verdict": "same-work",
+   "score": 0.661,
+   "why": "Braden-Disney-Hogg, \"Bring's curve: old and new\". arXiv 38pp and the European J. Math published version 46pp."
+  },
+  {
+   "docs": ["arxiv-2109.00379v1", "s40687-023-00400-3"],
+   "verdict": "same-work",
+   "score": 0.658,
+   "why": "Garoufalidis-Yoon, 'Twisted Neumann-Zagier matrices'. arXiv and the Res. Math. Sci. published version, both 23pp."
+  },
+  {
+   "docs": ["agt-v7-n2-p13-s", "arxiv-math-0611504v1"],
+   "verdict": "same-work",
+   "score": 0.49,
+   "why": "Baseilhac-Benedetti, 'Quantum hyperbolic geometry'. arXiv math/0611504 40pp and the AGT 7 (2007) 845-917 published version 73pp - the published version is longer, which is why the score is mid-band."
+  },
+  {
+   "docs": ["arxiv-0808.1533v1", "arxiv-0808.1533v3"],
+   "verdict": "same-work",
+   "score": 0.469,
+   "why": "Komendarczyk, arXiv:0808.1533 - same identifier, v1 and v3. Retitled between versions ('On the third order helicity of magnetic fields on invariant domains in S3' -> '...via link maps'), which is why the heads diverge; one arXiv id is one work."
+  },
+  {
+   "docs": ["arxiv-1808.05026v1", "fd58d8e182edda805fed0946606c5ab82f81"],
+   "verdict": "same-work",
+   "score": 0.465,
+   "why": "Lee, 'Groebner-Shirshov bases for Temperley-Lieb algebras of types B and D'. arXiv 9pp and the Palestine J. Math. 7 (Special Issue I, 2018) 11-17 published version 7pp."
+  },
+  {
+   "docs": ["104171-qt-83", "ki52"],
+   "verdict": "same-work",
+   "score": 0.274,
+   "why": "Ohtsuki, 'On the asymptotic expansion of the Kashaev invariant of the 5_2 knot'. Preprint 52pp and the Quantum Topology 7 (2016) 669-735 published version 67pp. Low score is the length difference, not a doubt."
+  },
+  {
+   "docs": ["pjm-v154-n1-p09-s", "the-period-matrix-of-bring-s-curve-1hik02mwva"],
+   "verdict": "same-work",
+   "score": 0.248,
+   "why": "Riera-Rodriguez, \"The period matrix of Bring's curve\", Pacific J. Math. 154 (1992) 1. The second copy extracted only 2 sections of 22pp against the first's 8 of 25pp, so it agrees on less text - the shortfall is extraction quality, not identity."
+  },
+  {
+   "docs": ["arxiv-1203.3404v1", "arxiv-1404.2541v1"],
+   "verdict": "different-work",
+   "score": 0.435,
+   "why": "Both Morita on the Ramanujan q-difference equation, but distinct papers: 'On local solutions of the Ramanujan equation and their connection formulae' vs 'The Stokes phenomenon for the Ramanujan's q-difference equation and its higher order extension'. Shared setup sections, different results. This is the highest-scoring different-work pair and the reason no threshold can be trusted alone."
+  },
+  {
+   "docs": ["arxiv-1704.01735v4", "arxiv-2009.03688v6"],
+   "verdict": "different-work",
+   "score": 0.314,
+   "why": "Both Lei Yang: 'Modular curves, invariant theory and E8' (39pp) vs 'E8-singularity, invariant theory and modular forms' (48pp). Heavily overlapping exposition, distinct papers."
+  },
+  {
+   "docs": ["arxiv-1104.0755v2", "arxiv-1203.3404v1"],
+   "verdict": "different-work",
+   "score": 0.313,
+   "why": "Morita: 'A connection formula between the Ramanujan function and the q-Airy function' (12pp) vs 'On local solutions of the Ramanujan equation' (19pp)."
+  },
+  {
+   "docs": ["arxiv-1104.0755v2", "arxiv-1404.2541v1"],
+   "verdict": "different-work",
+   "score": 0.257,
+   "why": "Morita, two further distinct papers in the same series."
+  },
+  {
+   "docs": ["arxiv-1404.0331v1", "arxiv-2006.02042v1"],
+   "verdict": "different-work",
+   "score": 0.203,
+   "why": "'The strong AJ conjecture for cables of torus knots' (Tran) vs 'The strong AJ conjecture for the figure eight knot' (Nguyen-Tran). Same conjecture, different knots, shared preliminaries."
+  },
+  {
+   "docs": ["arxiv-1808.05026v1", "arxiv-1809.08419v1"],
+   "verdict": "different-work",
+   "score": 0.159,
+   "why": "'Groebner-Shirshov bases for Temperley-Lieb algebras of types B and D' vs 'Groebner-Shirshov bases for non-crystallographic Coxeter groups'. Same authors and method, different objects."
+  }
+ ]
+}

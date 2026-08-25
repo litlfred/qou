@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/markov-pair-z2-proof.md"
   },
   "source_hashes": {
-    "ts": "edcd8685b319",
-    "md": "c29aed8be7cb"
+    "md": "c29aed8be7cb",
+    "ts": "edcd8685b319"
   },
   "criteria": {
     "fit-section-chapter": [
@@ -581,30 +581,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "c29aed8be7cb",
-          "ts": "edcd8685b319"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1164,7 +1145,367 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not a length-3 word:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.395Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.472Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 307 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.540Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 307 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.612Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.698Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.757Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "'The naive worry is that … The proof above sidesteps that concern because …' names an objection and answers it, which is ordinary mathematical exposition rather than narrating one's own emphasis. It would only be meta-commentary if it announced the importance of the answer instead of giving it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.807Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.859Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.907Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.447Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.971Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T21:22:37.971Z"
 }

@@ -273,6 +273,69 @@ surface the duplicates in step 6) saves a full review cycle.
   free disk before doing it — the root copy is a second full Mathlib build tree
   — and see AGENTS.md's RESTORE → build → SEED note.
 
+- **🛑 If the root cache was RESTORED from `lake-cache/*`, do NOT run this step
+  at all — it will DESTROY the cache.** This is not the cold-cache case above;
+  it is worse, and it looks like the opposite.
+
+  Measured 2026-08-15 on PR #5106 (bean `qou-r13s`), running the very command
+  this section prescribes:
+
+  | | before | during (10 min) | after kill |
+  |---|---|---|---|
+  | root `mathlib` oleans | **6990** | — | **334** |
+  | oleans written | — | 536 | — |
+  | …under `mathlib`/`aesop`/`batteries` | — | **520** | — |
+  | …under `QOU`/`UGB`/`Fred2005` | — | **0** | — |
+
+  Oleans restored by `tar` carry no `.trace` files, so **Lake treats them as
+  stale, rebuilds them from source, and evicts them as it goes** (AGENTS.md
+  records the mechanism for the *seeding* direction as bean `02kc`; it fires
+  identically on an ordinary consumer build of named library targets). Ten
+  minutes produced zero paper-library progress and cost the session its cache;
+  recovery is a fresh 1.6 GB fetch + extract.
+
+  **A high olean count is not a validity check for the cache — the traces
+  are.** 6990 reads as fully populated, which is exactly why the run above
+  proceeded. Check for traces, not oleans:
+
+  ```bash
+  # oleans present but traces sparse ⇒ RESTORED; do not `lake build` at the root
+  o=$(find .lake/packages/mathlib -name '*.olean' | wc -l)
+  t=$(find .lake/packages/mathlib -name '*.trace' | wc -l)
+  echo "oleans=$o traces=$t"; [ "$o" -gt 100 ] && [ "$t" -lt "$((o / 10))" ] \
+    && echo "RESTORED CACHE — use lean-direct, NOT lake build"
+  ```
+
+  **Treat that as a strong hint, not a proof, and know its calibration.**
+  Measured on the tree that produced this section: the restored root reports
+  `oleans=6991 traces=333` (ratio 0.048, trips the check) — and those 333
+  traces are themselves debris from the aborted rebuild, so a *pristine*
+  restore sits nearer zero. The control available here, a genuinely
+  lake-built `QOU` library tree, reports `oleans=951 traces=310` (ratio 0.33)
+  and clears the 0.1 threshold by 3.3×. That margin is real but modest, and
+  the control is a **paper library, not a lake-built Mathlib** — no built
+  Mathlib tree existed in this sandbox to calibrate against. If you have one,
+  measure it and tighten this threshold. Until then: when the check trips,
+  believe it; when it does not, you still have not proved the cache is built.
+
+  On a restored cache the gate is **`lean`-direct against the real import
+  cone**, per AGENTS.md §"QA is agent-owned; CI is a backup" — which is the
+  sanctioned verification path anyway, not a fallback. It verified the changed
+  file on #5106 in **2.4 s** against the same cone the aborted `lake build`
+  was 50 minutes into not reaching:
+
+  ```bash
+  LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+  for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
+           LeanSearchClient; do
+    LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
+  done
+  LEAN_PATH="$LP" lean path/to/Changed.lean      # exit 0 = checks, sorry-free
+  ```
+
+  Then `#print axioms` on the new declarations to confirm no `sorryAx`. Say in
+  the PR that this is what you ran and why.
+
 - **If the root cache is cold and `cache get` will not fetch, build per-paper
   instead.** Measured in a sandbox with 9.2 GB free: the per-paper Mathlib build
   tree is 3.3 GB, so the root workspace wants a second one, and `lake exe cache
@@ -299,6 +362,145 @@ surface the duplicates in step 6) saves a full review cycle.
 - Run `proof-simplifier` on any proofs that changed on this branch.
 - The Lean build must be green and the audit must report 100%
   coverage before continuing.
+
+## 4a. Mirror-drift gate (BLOCKING on growth)
+
+```sh
+bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 35
+```
+
+A green Lean build does not mean the checkers looked at the code it compiled.
+Content-block `.lean` siblings compile standalone and cannot import one another,
+so a sibling needing a library type **restates it**. That is deliberate. What is
+not deliberate is the two copies drifting — because a co-located `<block>.lean`
+wins **candidate 1** of `lean.ref` resolution, before any Lake-tree candidate,
+so every checker aimed at that block audits the sibling's copy and never sees
+the declaration `lake build` just compiled.
+
+Measured 2026-08-23 (bean `qou-u87j`), all columns with the current parser:
+
+| | `main` @797db0ebf7 | `qou-u87j` branch | after merging `main` |
+|---|---|---|---|
+| same-FQN pairs | 141 | 148 | 141 |
+| faithful mirrors | 91 | 111 | 106 |
+| **drifted** | **43** | **37** | **35** |
+| drifted **and** crossing the §7c wall | 7 | **0** | **0** |
+| §7c regime-only | 7 | **0** | **0** |
+
+The middle column is the branch *before* it took `main`; the right column is
+what is on disk. Pair count drops back to 141 because the merge brought in
+`main`'s deletion of 11 content siblings that had shadowed the library —
+`main` had been draining this same population from the other end.
+
+Every drifted pair masks a `lean.ref`, in all three columns. `pairs = faithful
++ regime-only + drifted`; the two 7s on `main` are different sets —
+`regimeOnly` is same-fields-opposite-wall and is *excluded* from `drifted`,
+while `driftedRegime` is the subset of `drifted` that also crosses. Equal by
+coincidence, and easy to double-count.
+
+- **`--baseline 35` fires on growth only** (exit 3). A gate that failed on the
+  whole backlog would just teach everyone to pass `--warn-only`; this one stops
+  the 106 faithful mirrors becoming the next 35.
+- **If you touched a mirrored declaration, resync both copies in the same
+  change.** The checker names the file and line on each side and prints the
+  field-level diff; `--tsv` gives one row per pair.
+- **Lower the baseline when you drain some.** It is a ratchet, like the
+  float64 ones in §4b — leaving it at 35 after fixing five means the next five
+  regressions go unnoticed.
+- **The two §7c counters are at 0 and should stay there.** They are the reason
+  this gate was built; what is left under `qou-u87j` is plain field drift with
+  no wall component. If either goes non-zero, that is a regression, not backlog.
+- `--max 0` is the end state once the backlog is gone.
+
+Worked example of why it is not cosmetic — `QOU.CRManifoldData`: the library
+copy carries `n_pos : 0 < n` and the two siblings do not; the siblings carry
+`contact_nondeg` and `reeb_preserves_contact` and the library does not. Each
+side has an anti-vacuity condition the other lacks, so whichever one a reader
+or a checker reaches, it is not the one the other half of the corpus means.
+
+### The §7c line in the same output — read it, it is not gated
+
+The checker also reports a **`regime`** count: pairs that agree on every field
+name and parent and still sit on **opposite sides of the substrate→archimedean
+wall**, judged by the corpus's own `ARCHIMEDEAN_TYPE_RE` on field *types*. On
+`main` that is **7 regime-only pairs across 5 files**, plus **10** of the 46
+drifted pairs crossing the wall as well — 17 §7c disagreements in total.
+
+**No baseline flag covers this yet**, deliberately: the fix is a wall split, not
+a field resync, and folding it into the drift number would make that number move
+for two unrelated reasons. Treat the line as a read-and-judge item. If your
+change adds one, fix it rather than let it ride.
+
+Why it needs a check of its own: **`check-wall-side` and `check-base-ring` PASS
+on every one of these files.** They fire on a file that *mixes* regimes, so a
+declaration **wholly** on the wrong side passes both. Passing the wall gate
+means "not mixed", not "on the right side of the wall" — bean `qou-6ome`.
+
+Direction is per-case and all three shapes occur:
+
+| shape | example | how to spot it |
+|---|---|---|
+| the **library** never migrated | `QOU.SubstrateParameter` (`qou-6ome`) | the block defines the categorical form; the siblings already split |
+| the **sibling** over-generalised | `QOU.QReebFlow` | the sibling's own docstring records the divergence and leaves it standing |
+| the sibling over-generalised **and lost content** | Möbius energy | conditions commented out with "(archimedean; not meaningful over `R_q`)" |
+
+**The block's `.md` adjudicates, not the field diff.** The diff cannot tell you
+which side is behind — `QOU.SubstrateParameter` reads as "sibling is missing
+three fields" when in fact the siblings are correct and the library never made
+the split.
+
+This lives here rather than in `.github/workflows/` for the reason §4b gives:
+the CI copy does not run.
+
+### Duplicate declarations — run it in the same breath
+
+```sh
+bun run <folio-assistant>/scripts/check-duplicate-decls.ts --package qou --baseline 57
+```
+
+Same family of defect — the library disagreeing with itself — and the same kind
+of blind spot. Lean's environment is flat, so two modules declaring the same
+fully-qualified name **cannot both be imported by anything**. Not a shadowing
+warning, not a use-site ambiguity; the import fails:
+
+```
+error: import QOU.CategoricalDqSquared failed, environment already contains
+       'QOU.q_param' from QOU.BraidKnot.CasimirShared
+```
+
+Measured 2026-08-23 (bean `qou-kfcl`) — the earlier text labelled the
+right-hand column "main", which it never was:
+
+| | `main` @797db0ebf7 | `qou-kfcl` branch | after merging `main` |
+|---|---|---|---|
+| declarations scanned | 34 138 | 33 793 | 34 136 |
+| **duplicated FQNs** | **66** | **56** | **57** |
+| un-importable module pairs | 65 | 61 | 62 |
+| modules involved | 72 | 64 | 66 |
+
+The worst was `QOU.R_q` — `RatFunc ℚ` in one module and `LaurentPolynomial ℤ`
+in the other, the same name for two different rings. That one is resolved:
+`QOU/GroundRingCore.lean` is the canonical minimal module (one Mathlib import),
+and no `R_q`, `q_param` or `q_inv_param` appears in the report any more.
+
+**The baseline went 56 → 57, which is a ratchet loosening and needs its
+reason.** The merge brought in exactly one new duplicate and nothing was lost:
+`QOU.Mathlib.Schensted.wordOfPerm_injective`, a `theorem` declared at both
+`QOU/Mathlib/SchenstedPermInjective.lean:42` and
+`QOU/Mathlib/SchenstedRSKPairInjective.lean:68`, which arrived with `main`'s
+RSK–Burnside work. Set-differenced against the pre-merge list rather than
+inferred from the totals — 57 new, 0 gone. Lower it back to 56 when that pair
+is resolved.
+
+- **A green Lean build says nothing about this.** `lean-direct-cone.sh --all`
+  compiles each module against its own cone, and no *existing* module imports
+  both halves of any colliding pair — 2029/2040 modules, `err=0`, on the very
+  commit with 64 un-importable pairs. The error is only reachable by writing a
+  new module, which is how it was found: it blocked a `qou-u87j` fix.
+- **Ratchet, like the drift gate.** Lower `--baseline` as pairs are resolved.
+- **Verify before acting** on any individual finding by writing the two-line
+  import. Two earlier counts of this population (38, then 80) were wrong;
+  the compile has never been.
 
 ## 4b. Precision gates (BLOCKING)
 

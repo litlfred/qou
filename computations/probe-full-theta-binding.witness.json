@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:34:29.656067+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:17:38.374534+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "full_theta_does_not_close_A3plus_absolute_one_param",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "best component |Δθ.re| worst |err| = 185.7% with one global scale; full-order θ_λ (incl. growth) does not close A≥3 absolute binding to 5% — the gate stands."
+      "source": "best component |Δθ.re| worst |err| = 266.2% with one global scale; full-order θ_λ (incl. growth) does not close A≥3 absolute binding to 5% — the gate stands."
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "probe-full-theta-binding",
   "scriptFile": "probe_full_theta_binding.py",
-  "scriptHash": "1a7608f5536c",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "522e471ecd76",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,92 +30,100 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_full_theta_binding.py"
+    ],
+    "reproduce": "python3 -u computations/probe_full_theta_binding.py"
   },
   "description": "EXPLORATORY: full-order per-block θ_λ = arccos(χ^λ/d_λ) ∈ ℂ (Re=rotation phase, Im=growth/volume). Tests which component of Σ_λ y_λ |Δθ_λ| reproduces ABSOLUTE binding D/T/³He/⁴He (1 global scale). Carries the growth (Im) channels the rotation-only probe excluded. Δ_λ / A≥3-absolute remains open.",
   "data": {
     "components": {
       "abs": {
-        "global_scale": 50.018864245276646,
-        "worst_err": 1.98815516651701,
+        "global_scale": 57.17152963368355,
+        "worst_err": 2.8724717724945346,
         "per_isotope": {
           "D": {
-            "S": 0.13289683970416885,
-            "B_pred": 6.647348983789113,
-            "err": 1.98815516651701
+            "S": 0.15067936559930725,
+            "B_pred": 8.614569815545432,
+            "err": 2.8724717724945346
           },
           "T": {
-            "S": 0.03345134246242743,
-            "B_pred": 1.6731981574504158,
-            "err": -0.8027306813325207
+            "S": 0.05889336048092229,
+            "B_pred": 3.3670235039622565,
+            "err": -0.6030294262479148
           },
           "3He": {
-            "S": 0.03386179975159459,
-            "B_pred": 1.6937287648757522,
-            "err": -0.78054822947969
+            "S": 0.05716768633672638,
+            "B_pred": 3.2683640734892783,
+            "err": -0.5765270700324854
           },
           "4He": {
-            "S": 0.005568898078180691,
-            "B_pred": 0.278549956968302,
-            "err": -0.990155736486017
+            "S": 0.014837110875422499,
+            "B_pred": 0.8482603240924659,
+            "err": -0.9700215420971213
           }
         },
-        "t_he3_diff_err": -1.0268796930717072
+        "t_he3_diff_err": -0.8708301632385993
       },
       "re": {
-        "global_scale": 52.35359264744559,
-        "worst_err": 1.8574609924284322,
+        "global_scale": 60.319191876757955,
+        "worst_err": 2.6619228122202903,
         "per_isotope": {
           "D": {
-            "S": 0.12141690417276256,
-            "B_pred": 6.3566111415747475,
-            "err": 1.8574609924284322
+            "S": 0.13505137356147298,
+            "B_pred": 8.146189715074204,
+            "err": 2.6619228122202903
           },
           "T": {
-            "S": 0.02980243648461372,
-            "B_pred": 1.5602646196168368,
-            "err": -0.8160454952198879
+            "S": 0.049976245517544426,
+            "B_pred": 3.014526742652727,
+            "err": -0.6445886376457941
           },
           "3He": {
-            "S": 0.02627858499647492,
-            "B_pred": 1.3757783342567234,
-            "err": -0.8217441909488568
+            "S": 0.039978732835674075,
+            "B_pred": 2.4114848569046683,
+            "err": -0.6875505497661741
           },
           "4He": {
-            "S": 0.004589384816184428,
-            "B_pred": 0.24027078316889147,
-            "err": -0.9915085648191473
+            "S": 0.011385534417699229,
+            "B_pred": 0.6867662351606314,
+            "err": -0.9757289217883576
           }
         },
-        "t_he3_diff_err": -0.7584613731253008
+        "t_he3_diff_err": -0.21046754913410307
       },
       "im": {
-        "global_scale": 213.18530647474665,
-        "worst_err": 2.5777915164111667,
+        "global_scale": 188.8448755072794,
+        "worst_err": 3.24159755056088,
         "per_isotope": {
           "D": {
-            "S": 0.037333877318593875,
-            "B_pred": 7.959034078055027,
-            "err": 2.5777915164111667
+            "S": 0.04996542542991486,
+            "B_pred": 9.435714544980526,
+            "err": 3.24159755056088
           },
           "T": {
-            "S": 0.011407694953164066,
-            "B_pred": 2.431952944760702,
-            "err": -0.7132738293380945
+            "S": 0.025012512919637395,
+            "B_pred": 4.723484888433141,
+            "err": -0.4431032322572026
           },
           "3He": {
-            "S": 0.017242749785295452,
-            "B_pred": 3.6759008974455827,
-            "err": -0.5237236463532543
+            "S": 0.0361817638991937,
+            "B_pred": 6.83274069917701,
+            "err": -0.11470060907268595
           },
           "4He": {
-            "S": 0.00271967861468608,
-            "B_pred": 0.5797955189846664,
-            "err": -0.9795093851916798
+            "S": 0.008795809825826704,
+            "B_pred": 1.661043611543949,
+            "err": -0.9412968819014483
           }
         },
-        "t_he3_diff_err": -2.628638572285223
+        "t_he3_diff_err": -3.7615426873606705
       }
     },
     "best_component": "re"

@@ -53,6 +53,7 @@ import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from hecke_core import E_HARTREE_EV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 NMAX = 7
 NOBLE = [2, 10, 18, 36, 54, 86]
@@ -86,7 +87,7 @@ def closures(energy, nmax=NMAX, gap_factor=mp.mpf("1.6")):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q = mp.mpf(str(Q0))
     Ry = mp.mpf(str(E_HARTREE_EV)) / 2
     EH = mp.mpf(str(E_HARTREE_EV))

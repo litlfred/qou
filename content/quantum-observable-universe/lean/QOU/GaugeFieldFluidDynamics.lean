@@ -2,6 +2,8 @@ import QOU.Basic
 import QOU.QuantumObservableUniverse
 import Mathlib.Data.Real.Basic
 import QOU.MathlibExt.QIntegerCanonical
+import QOU.FluidDynamics.observability_q_independent
+import QOU.GaugeFieldFluidDynamics.QArithmetic
 
 /-!
 # Gauge Field Fluid Dynamics
@@ -18,24 +20,11 @@ namespace QOU.GaugeFieldFluidDynamics
 -- §1  Core algebraic tools: q-integers
 -- ════════════════════════════════════════════════════════════════
 
-/-- The q-integer [k]_q = (q^k - q^{-k})/(q - q^{-1}). -/
--- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
--- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
--- call sites are unchanged; the DEFINITION now has a single home.  Proofs that
--- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
--- reduces through the alias and leaves the follow-up tactic nothing to act on.
--- See QOU/MathlibExt/QIntegerCanonical.lean.
-noncomputable abbrev qInteger {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
-  QOU.QInteger.qIntBal q k
-
-/-- [0]_q = 0 for all q. -/
-theorem qInteger_zero {R : Type*} [Field R] (q : R) : qInteger q 0 = 0 := by
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp
-
-/-- [1]_q = 1 for q ≠ q⁻¹. -/
-theorem qInteger_one {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qInteger q 1 = 1 := by
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp [pow_one]; exact div_self hq
+-- ════════════════════════════════════════════════════════════════
+-- §1b  Archimedean facts about the q-integers  (§7c: ordering / ℝ)
+-- ════════════════════════════════════════════════════════════════
+-- The generic q-arithmetic these refer to now lives in
+-- QOU.GaugeFieldFluidDynamics.QArithmetic (bean qou-q7cm).
 
 /-- q^k > q^{-k} when q > 1 and k ≥ 1. -/
 theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -70,87 +59,6 @@ theorem qInteger_ne_zero (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     qInteger q k ≠ 0 :=
   ne_of_gt (qInteger_pos q k hq hk)
 
-/-- `[2]_q = q + q⁻¹` for `q ≠ q⁻¹` — closed form of the second
-    q-integer.  Used by the Markov-parameter substitution
-    `z = 1/[2]_{q^{1/2}}`. -/
-theorem qInteger_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qInteger q 2 = q + q⁻¹ := by
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
-  rw [pow_two, pow_two, div_eq_iff hq]
-  ring
-
-/-- `[3]_q = q² + 1 + q⁻²` for `q ≠ q⁻¹`.  Closed form of the
-    third q-integer; uses the factorisation `q³ - q⁻³ =
-    (q - q⁻¹)(q² + 1 + q⁻²)`. -/
-theorem qInteger_three {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qInteger q 3 = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
-  have hq0 : q ≠ 0 := by rintro rfl; simp at hq
-  have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
-  rw [div_eq_iff hq]
-  linear_combination (q - q⁻¹) * hqq
-
-/-- **Recursion for q-integers**: `[n+1]_q = q · [n]_q + q⁻ⁿ`
-    for `q ≠ q⁻¹`.  Equivalently expanded as a sum of monomials,
-    `[n]_q = q^(n-1) + q^(n-3) + … + q^(-(n-1))` (n terms).
-
-    Algebraic proof: using `qInteger q (n + 1) = (q^(n+1)
-    − q⁻^(n+1))/(q − q⁻¹)`, one rearranges the numerator
-    `q^(n+1) − q⁻^(n+1) = q · (q^n − q⁻^n) + q⁻ⁿ · (q − q⁻¹)`
-    which yields the recursion after dividing by `q − q⁻¹`. -/
-theorem qInteger_succ {R : Type*} [Field R] (q : R) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (_hq0 : q ≠ 0) :
-    qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
-  rw [div_eq_iff hq, add_mul, mul_assoc, div_mul_cancel₀ _ hq]
-  ring
-
-/-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
-noncomputable def qFactorial {R : Type*} [Field R] (q : R) : ℕ → R
-  | 0     => 1
-  | n + 1 => qInteger q (n + 1) * qFactorial q n
-
-/-- **q-binomial coefficient** `[n choose k]_q := [n]_q!
-    / ([k]_q! · [n−k]_q!)`.  Note: this is the ratio definition;
-    when `q − q⁻¹ ≠ 0` and the denominator is non-zero (always
-    true at generic `q`) the result is a well-defined rational.
-
-    **DEPRECATED duplicate (bean `5ldf` consolidation, 2026-06-26).** Bit-for-bit
-    the canonical balanced q-binomial `QOU.MathlibExt.QPartitionCombinatorics.qBinom`
-    (the local `qInteger` ≡ that module's `qBracket`; verified). New code should use
-    the canonical one; kept here for the existing local consumers
-    (`WenzlBridgeConcrete`, `GroundRingAnnotations`). -/
-noncomputable def qBinomial {R : Type*} [Field R] (q : R) (n k : ℕ) : R :=
-  qFactorial q n / (qFactorial q k * qFactorial q (n - k))
-
-/-- `[n choose 0]_q = 1` whenever `[n]_q!` is non-zero. -/
-theorem qBinomial_zero {R : Type*} [Field R] (q : R) (n : ℕ)
-    (hfact : qFactorial q n ≠ 0) : qBinomial q n 0 = 1 := by
-  have h0 : qFactorial q 0 = 1 := rfl
-  unfold qBinomial
-  rw [Nat.sub_zero, h0, one_mul, div_self hfact]
-
-/-- `[n choose n]_q = 1` whenever `[n]_q!` is non-zero. -/
-theorem qBinomial_self {R : Type*} [Field R] (q : R) (n : ℕ)
-    (hfact : qFactorial q n ≠ 0) : qBinomial q n n = 1 := by
-  have h0 : qFactorial q 0 = 1 := rfl
-  unfold qBinomial
-  rw [Nat.sub_self, h0, mul_one, div_self hfact]
-
-/-- `[0]_q! = 1` by convention. -/
-theorem qFactorial_zero {R : Type*} [Field R] (q : R) : qFactorial q 0 = 1 := rfl
-
-/-- `[1]_q! = [1]_q = 1` (for `q ≠ q⁻¹`). -/
-theorem qFactorial_one {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qFactorial q 1 = 1 := by
-  show qInteger q 1 * qFactorial q 0 = 1
-  rw [qInteger_one q hq, qFactorial_zero, mul_one]
-
-/-- `[2]_q! = [2]_q · [1]_q = q + q⁻¹` (for `q ≠ q⁻¹`). -/
-theorem qFactorial_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qFactorial q 2 = q + q⁻¹ := by
-  show qInteger q 2 * qFactorial q 1 = q + q⁻¹
-  rw [qInteger_two q hq, qFactorial_one q hq, mul_one]
-
 /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})` — but we
     parametrise by the substituted variable `s := q^{1/2}` so the
     result is purely rational arithmetic.  The Jones-Markov trace
@@ -166,90 +74,20 @@ theorem markovParameter_pos (s : ℝ) (hs : s > 0) :
   have hs_inv_pos : s⁻¹ > 0 := inv_pos.mpr hs
   linarith
 
-/-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q` over a partition
-    `λ` represented as the list of its hook lengths.  The `dim_q(λ)`
-    formula is `[n]_q! / H_q(λ)`. -/
-noncomputable def qHookProduct {R : Type*} [Field R] (q : R) : List ℕ → R
-  | []        => 1
-  | h :: rest => qInteger q h * qHookProduct q rest
-
-/-- The empty partition has hook product `1`. -/
-theorem qHookProduct_nil {R : Type*} [Field R] (q : R) : qHookProduct q [] = 1 := rfl
-
-/-- The hook product distributes over `cons`. -/
-theorem qHookProduct_cons {R : Type*} [Field R] (q : R) (h : ℕ) (rest : List ℕ) :
-    qHookProduct q (h :: rest) = qInteger q h * qHookProduct q rest := rfl
-
-/-- Hook lengths for the row partition `[n]` are `n, n-1, …, 1`. -/
-def hooksRow : ℕ → List ℕ
-  | 0     => []
-  | n + 1 => (n + 1) :: hooksRow n
-
-/-- For `λ = [2]` (single row of length 2), hook lengths are `[2, 1]`. -/
-theorem hooksRow_two : hooksRow 2 = [2, 1] := rfl
-
-/-- For `λ = [3]` (single row of length 3), hook lengths are `[3, 2, 1]`. -/
-theorem hooksRow_three : hooksRow 3 = [3, 2, 1] := rfl
-
-/-- Hook product for the row partition `[2]` equals `[2]_q · [1]_q
-    = (q + q⁻¹) · 1`.  At `q = q_0 ≈ 1.11` this gives a positive
-    value; the genuine Wenzl-bridge `dim_q([2])` is then
-    `[2]_q!/H_q([2]) = (q+q⁻¹)/(q+q⁻¹) = 1`. -/
-theorem qHookProduct_row_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qHookProduct q (hooksRow 2) = q + q⁻¹ := by
-  show qInteger q 2 * (qInteger q 1 * 1) = q + q⁻¹
-  rw [qInteger_two q hq, qInteger_one q hq]; ring
-
-/-- Hook product for the row partition `[3]` equals `[3]_q!`. -/
-theorem qHookProduct_row_three {R : Type*} [Field R] (q : R) :
-    qHookProduct q (hooksRow 3) =
-      qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
-
-/-- Hook lengths for the L-shape partition `[2, 1]` of `n = 3`.
-    Cells: (1,1)→3, (1,2)→1, (2,1)→1.  Returned in row-major order. -/
-def hooksLshape21 : List ℕ := [3, 1, 1]
-
-/-- Hook product for `λ = [2, 1]` is `[3]_q · [1]_q · [1]_q = [3]_q`
-    (since `[1]_q = 1` whenever `q ≠ q⁻¹`). -/
-theorem qHookProduct_lshape21 {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
-    qHookProduct q hooksLshape21 = qInteger q 3 := by
-  show qInteger q 3 * (qInteger q 1 * (qInteger q 1 * 1)) = qInteger q 3
-  rw [qInteger_one q hq]; ring
-
-/-- Hook lengths for the column partition `[1, 1, 1]` of `n = 3`.
-    Cells: (1,1)→3, (2,1)→2, (3,1)→1.  Same multiset as `hooksRow 3`. -/
-def hooksCol3 : List ℕ := [3, 2, 1]
-
-/-- Hook product for the column `[1,1,1]` equals `[3]_q!`. -/
-theorem qHookProduct_col3 {R : Type*} [Field R] (q : R) :
-    qHookProduct q hooksCol3 =
-      qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
-
-/-- The standard-Young-tableaux dimensions `(d_[3], d_[2,1], d_[1,1,1])
-    = (1, 2, 1)` for the three partitions of `n = 3`. -/
-def syt3_dims : List ℕ := [1, 2, 1]
-
-/-- Sum of `(d_λ)²` over partitions of `n = 3` equals `n! = 6`
-    (Burnside / RSK identity).  `1² + 2² + 1² = 6`. -/
-theorem syt3_squares_sum_eq_six :
-    (syt3_dims.map (fun d => d ^ 2)).sum = 6 := by
-  show (1 ^ 2 + (2 ^ 2 + (1 ^ 2 + 0))) = 6
-  norm_num
-
 -- ════════════════════════════════════════════════════════════════
 -- §2  Brane fluid data and viscosity
 -- ════════════════════════════════════════════════════════════════
 
 /-- Brane fluid: viscosity determined by substrate parameter. -/
 structure BraneFluidData (M : Type*) where
-  substrate : SubstrateParameter M
+  substrate : ArchimedeanSubstrateField M
   viscosity : M → ℝ
   viscosity_nonneg : ∀ p, 0 ≤ viscosity p
   viscosity_monotone : ∀ p₁ p₂,
     substrate.field p₁ ≤ substrate.field p₂ → viscosity p₂ ≤ viscosity p₁
 
 /-- ℏ_q > 0 when q > 1. -/
-theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
+theorem quantumPlanckConstant_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 := by
   unfold quantumPlanckConstant
@@ -262,11 +100,11 @@ theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- Re_q = 2/(q-1). -/
 noncomputable def planckReynoldsNumber {M : Type*}
-    (sp : SubstrateParameter M) (p : M) : ℝ :=
+    (sp : ArchimedeanSubstrateField M) (p : M) : ℝ :=
   2 / (sp.field p - 1)
 
 /-- Re_q > 0 when q > 1. -/
-theorem planckReynolds_pos {M : Type*} (sp : SubstrateParameter M)
+theorem planckReynolds_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     planckReynoldsNumber sp p > 0 := by
   unfold planckReynoldsNumber
@@ -274,7 +112,7 @@ theorem planckReynolds_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- Re_q → ∞ as q → 1: the denominator vanishes. -/
 theorem planckReynolds_denom_zero {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hq : sp.field p = 1) :
+    (sp : ArchimedeanSubstrateField M) (p : M) (hq : sp.field p = 1) :
     sp.field p - 1 = 0 := by linarith
 
 -- ════════════════════════════════════════════════════════════════
@@ -620,7 +458,7 @@ theorem quantum_peter_weyl_completeness :
 
 /-- q-BKM is trivial for q > 1: ℏ_q > 0 gives finite vorticity.
     Ref: [beale-kato-majda1984] https://doi.org/10.1007/BF01212349 -/
-theorem q_bkm_trivial {M : Type*} (sp : SubstrateParameter M)
+theorem q_bkm_trivial {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 :=
   quantumPlanckConstant_pos sp p hq
@@ -735,42 +573,20 @@ theorem topological_obstruction_nonzero (κ : ℕ) (hκ : κ ≥ 4) :
 -- §15  Observability is q-independent (the key structural theorem)
 -- ════════════════════════════════════════════════════════════════
 
-/-- **Observability data** for a QOU: the vanishing of Hom(1, Ad(A)).
-
-    The Hom space is computed in the underlying monoidal category `C`;
-    the substrate parameter enters only through the differential `d_q`,
-    never through the objects, morphisms, or Hom spaces.  This is
-    captured *structurally*: the rank is a single `ℕ` with **no**
-    substrate-section argument — q-independence is then provable by
-    `rfl` rather than assumed (md: "the morphism space in the underlying
-    monoidal category is the same for all q").
-
-    LaTeX: `\label{thm:observability-q-independent}` -/
-structure ObservabilityData (C : Type*) where
-  /-- The rank of Hom(1, Ad(A)), computed in `C` (no substrate-section
-      argument — `q` cannot enter). -/
-  hom_rank : ℕ
-  /-- Observability: rank = 0. -/
-  observable : hom_rank = 0
-
-/-- The Hom-rank "as seen at substrate section `q`".  By construction the
-    section is **not consumed**: `Hom(1, Ad(A))` involves no differential,
-    so the assignment is the constant function of `q`.  Generic section
-    type `R` per §7c — no `ℝ`, no ordering. -/
-def ObservabilityData.homRankAt {C R : Type*}
-    (obs : ObservabilityData C) (_q : R) : ℕ :=
-  obs.hom_rank
-
-/-- Observability is a base property, independent of the substrate
-    section ([`thm:observability-q-independent`]): for any two sections
-    `q₁ q₂` the Hom-rank agrees — *derived* by `rfl`, formalising the
-    md's proof that `q` does not appear in the construction — and the
-    observability axiom holds at every section. -/
--- Ref: [manuscript] Ch 5 §8 Observability is q-independent
-theorem observability_q_independent (C : Type*) {R : Type*}
-    (obs : ObservabilityData C) (q₁ q₂ : R) :
-    obs.homRankAt q₁ = obs.homRankAt q₂ ∧ obs.homRankAt q₁ = 0 :=
-  ⟨rfl, obs.observable⟩
+/-! **§7c split (2026-08-09).**  `ObservabilityData`,
+    `ObservabilityData.homRankAt` and `observability_q_independent` are
+    entirely **pre-archimedean** — the substrate section is a bare
+    `{R : Type*}` with no typeclass, and the Hom-rank is an `ℕ` that
+    carries no section argument, so `q`-independence is *derived* by
+    `rfl`.  They used to sit here, inside a module whose body is
+    genuinely archimedean (`Real.exp` enstrophy bounds, `Real.pi` vortex
+    separation, Sobolev exponents), which made this file a mixed
+    substrate/archimedean placement.  Per §7c the generic half now lives
+    in [`QOU.FluidDynamics.observability_q_independent`], imported above;
+    the analytic half stays here and consumes it.  `ObservabilityData` is
+    re-exported so the pre-existing `QOU.GaugeFieldFluidDynamics.*` name
+    keeps resolving for `NSSingularityDescartes` below. -/
+export QOU.FluidDynamics (ObservabilityData)
 
 -- ════════════════════════════════════════════════════════════════
 -- §16  NS-singularity of the Descartes universe (main theorem)
@@ -813,7 +629,16 @@ structure NSSingularityDescartes (C : Type*) where
     The angular part is fixed by SU_q(2) matrix coefficients;
     only the 5 radial functions R_j(r) are free.
 
-    LaTeX: `\label{prop:leray-profile}` -/
+    This is the *data* the proposition is stated over, not the
+    proposition. The LaTeX label for `prop:leray-profile` was carried
+    here — written out in full, it would register this docstring as a
+    second owner, so it is named indirectly — and has been moved to
+    `QOU.FluidDynamics.leray_profile`
+    (`QOU/FluidDynamics/leray_profile.lean`) — the declaration
+    `fluid-dynamics/leray-profile.ts` actually references, and whose own
+    docstring already named the block in prose. Bean `qou-szd6`: the
+    label sat on a superseded carrier while the block pointed elsewhere,
+    so nothing connected the block to its real formalisation. -/
 structure TruncatedLerayProfile where
   /-- Number of active spins (j = 0, 1/2, 1, 3/2, 2). -/
   num_spins : ℕ := 5

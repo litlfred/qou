@@ -1,6 +1,5 @@
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic
+import Mathlib.Algebra.Group.Units.Defs
 
 
 /-!
@@ -64,17 +63,25 @@ def atomicMass {R : Type u} [CommRing R]
     in any commutative ring carrying a unit `q` and its inverse.
 
     On `R = ℤ[q, q⁻¹]` this is the genuine Laurent-polynomial
-    `q`-integer.  We require `q ≠ q⁻¹` (equivalently `q² ≠ 1`) for
-    the denominator to be invertible; on a Laurent ring the result
-    is itself a polynomial in `q ± q⁻¹` (the standard `q`-integer
-    is symmetric under `q ↔ q⁻¹`). -/
-noncomputable def quantumInt {R : Type u} [Field R]
-    (q : R) (hq : q * q ≠ 1) (n : ℕ) : R :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+    `q`-integer.
+
+    Base ring (AGENTS.md §7c): stated over a bare `CommRing`.  Both
+    the substrate parameter and the denominator are carried as
+    **units** — `q : Rˣ` (so `q⁻¹` is the units inverse, never a
+    field inverse) and `d : Rˣ` pinned by `hd : ↑d = q - q⁻¹` — so
+    the quotient is the division-free product `(qⁿ - q⁻ⁿ) · d⁻¹`.
+    This replaces the old `[Field R]` + `hq : q * q ≠ 1` form, which
+    additionally admitted the junk case `q = 0` (there `hq` holds
+    while `q⁻¹ = 0`, so the "quotient" silently collapsed to `0/0`).
+    Over a field the two agree: take `d = Units.mk0 (q - q⁻¹) _`. -/
+def quantumInt {R : Type u} [CommRing R]
+    (q d : Rˣ) (_hd : (d : R) = (q : R) - (↑q⁻¹ : R)) (n : ℕ) : R :=
+  ((q : R) ^ n - (↑q⁻¹ : R) ^ n) * (↑d⁻¹ : R)
 
 /-- `β₂ = -2 [3]_q` is derived from the baryon quantum number. -/
-noncomputable def beta2 {R : Type u} [Field R]
-    (q : R) (hq : q * q ≠ 1) : R := -2 * quantumInt q hq 3
+def beta2 {R : Type u} [CommRing R]
+    (q d : Rˣ) (hd : (d : R) = (q : R) - (↑q⁻¹ : R)) : R :=
+  -2 * quantumInt q d hd 3
 
 /-- The number of extremal irreps of S_n is exactly 3 for n ≥ 3:
     trivial [n], sign [1^n], and standard [n-1,1].

@@ -1,8 +1,10 @@
 This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [`prop:proton-mass-substrate-identity`](#prop:proton-mass-substrate-identity).
 
+The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA, not an absolute-mass claim.
+
 ## Numerical verification
 
-At $q_0 = 1.10977859555\ldots$ (50 dps):
+At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 
 | Quantity | Value |
 |---|---|
@@ -12,7 +14,7 @@ At $q_0 = 1.10977859555\ldots$ (50 dps):
 | $F_{\mathrm{Bor}}(q_0)$ | $4.469138598\ldots$ |
 | $2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0)$ | $944.40385\,\mathrm{MeV}$ |
 | $12 \cdot m_e$ | $6.13199\,\mathrm{MeV}$ |
-| Predicted $m_p$ | $938.27186\,\mathrm{MeV}$ |
+| $m_p$ ($m_e$-scaled rendering) | $938.27186\,\mathrm{MeV}$ |
 | CODATA $m_p$ | $938.27209\,\mathrm{MeV}$ |
 | Residual | $0.24\,\mathrm{ppm}$ |
 

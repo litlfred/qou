@@ -1,7 +1,10 @@
 {
   "computation": "chi-diproton-h6-at-q0-50dps",
-  "description": "Numerical χ^λ_q(β_atomic(2, 0)) = diproton per partition λ ⊢ 6, evaluated at q = q_0 at 50 dps via the Hoefsmit seminormal basis. Built incrementally — each completed partition is persisted immediately, so a SIGTERM/timeout mid-loop preserves work done so far. Re-running picks up cached partitions and computes the remaining ones.",
+  "description": "Numerical χ^λ_q(β_atomic(2, 0)) = diproton per partition λ ⊢ 6, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-diproton-h6.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
   "convention": "averaged-crossings",
+  "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "n_partitions_total": 11,
+  "partial": false,
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 6,
@@ -9,20 +12,18 @@
   "Z": 2,
   "N": 0,
   "n_partitions": 11,
-  "n_partitions_total": 11,
-  "partial": false,
-  "compute_time_sec_so_far": 0.0,
-  "tr_M_at_q0": "0.56666722952713993195884312999437258954394669039994",
+  "compute_time_sec": "0.01",
+  "tr_M_at_q0": "0.80431557826254455458611307884444216838771916428372",
   "by_partition": [
     {
       "partition": [
         6
       ],
       "dim": 1,
-      "y_lambda": "0.059187716931123886279274910065865313963221848453768",
+      "y_lambda": "0.11532422490206616611036906989019053151376047733152",
       "chi_lambda": "2.1214920102621287173408535072244749855017800202601",
-      "contribution": "0.12556626857503584538311937287722508916472977431567",
-      "compute_time_sec": 0.0
+      "contribution": "0.24465942171940619504638748122060410264855420017472",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -30,10 +31,10 @@
         1
       ],
       "dim": 5,
-      "y_lambda": "0.058960681400925408999435505551708352915528761690283",
+      "y_lambda": "0.078952962475926678987719631392210998525081319853836",
       "chi_lambda": "4.2211832743528417330737536848035373675574918323873",
-      "contribution": "0.2488838421740330135987381881035457018989257353449",
-      "compute_time_sec": 0.0
+      "contribution": "0.33327492466398922510464237153796309082946213809436",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -41,10 +42,10 @@
         2
       ],
       "dim": 9,
-      "y_lambda": "0.040284386965704782087048708251229316127730552320351",
+      "y_lambda": "0.046032434692020426936520153786581544499316813480771",
       "chi_lambda": "3.3394913298849520779166339217052545062446750007542",
-      "contribution": "0.13452936100170149210643189469026321633801802523888",
-      "compute_time_sec": 0.0
+      "contribution": "0.15372491654749749997765231028532353500756849857241",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -53,10 +54,10 @@
         1
       ],
       "dim": 10,
-      "y_lambda": "0.01013346349231267188297419174969234061386045821056",
+      "y_lambda": "2.1882430220530458850737320955717386917219739741721e-72",
       "chi_lambda": "-0.1057055506051025338150664115850839940029235559304",
-      "contribution": "-0.001071163337991616188880192084699997051383493218983",
-      "compute_time_sec": 0.0
+      "contribution": "-2.3130943350389074170439195479928131401579777828227e-73",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -64,10 +65,10 @@
         3
       ],
       "dim": 5,
-      "y_lambda": "0.014120874004911360835530924939105603706885065737978",
+      "y_lambda": "0.015123810098023319304470277813904115073396320414472",
       "chi_lambda": "4.8041012721488620583418560396763026977616952433666",
-      "contribution": "0.06783810877084846520718221264093853586526212391918",
-      "compute_time_sec": 0.0
+      "contribution": "0.072656315331651634457430915800551439902134327442221",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -76,10 +77,10 @@
         1
       ],
       "dim": 16,
-      "y_lambda": "0.0073184543524818241984046722951847307413082998737295",
+      "y_lambda": "1.3703092182621318229007962639066432075475684371789e-72",
       "chi_lambda": "-1.0644186646322959266844684748910039812960157311018",
-      "contribution": "-0.0077898994090411172742492489347004990072862643158037",
-      "compute_time_sec": 0.0
+      "contribution": "-1.4585827082359036937292743762117928334125855697903e-72",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -89,10 +90,10 @@
         1
       ],
       "dim": 10,
-      "y_lambda": "-0.0006853088854846304522345988647663718590751126104543",
+      "y_lambda": "-4.1916820947593563976118886380887169329250240854007e-73",
       "chi_lambda": "-0.98236679372368166551366650910130672363253735997942",
-      "contribution": "0.00067322469254388614379067449086781618992545544328716",
-      "compute_time_sec": 0.0
+      "contribution": "4.1177692997377145307052894211020154716663332779027e-73",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -101,10 +102,10 @@
         2
       ],
       "dim": 5,
-      "y_lambda": "0.00077318673693221832328258199363165247576143503418166",
+      "y_lambda": "1.0474412565153791258078406803659801289904526826416e-73",
       "chi_lambda": "-3.0539097064686263496401693971146194791133345191674",
-      "contribution": "-0.0023612424808301058797024623516422698744481899869807",
-      "compute_time_sec": 0.0
+      "contribution": "-3.198791020228010623077674164445880149159062548781e-73",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -114,10 +115,10 @@
         1
       ],
       "dim": 9,
-      "y_lambda": "-0.0003420517708714601248854448254948833092197849715709",
+      "y_lambda": "-1.8587797025702328711207485577747608031186150503838e-73",
       "chi_lambda": "-0.6674737520280549552346791208716320475980916930456",
-      "contribution": "0.00022831057889141404639541796133070973459379824931628",
-      "compute_time_sec": 0.0
+      "contribution": "1.2406866622681453593474365389385377110895557265012e-73",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -128,10 +129,10 @@
         1
       ],
       "dim": 5,
-      "y_lambda": "0.000098635576102972796038864338743147420376957934630479",
+      "y_lambda": "1.0035786392303910032156304049141653556459411533758e-73",
       "chi_lambda": "1.6656833796861985514161839894266773918621343936271",
-      "contribution": "0.00016429563976049496829105407407650752057011912941762",
-      "compute_time_sec": 0.0
+      "contribution": "1.6716442595741538541995305418208674130240775662276e-73",
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -143,10 +144,19 @@
         1
       ],
       "dim": 1,
-      "y_lambda": "-0.000012437986973190192054350585634371331366110558878693",
+      "y_lambda": "-1.9224019317553725790272252750538468151777878563354e-74",
       "chi_lambda": "-0.49230813646601610975738936419432857727255239048413",
-      "contribution": "0.0000061233221881598477262185271677787650396062810571482",
-      "compute_time_sec": 0.0
+      "contribution": "9.4641411256115695199313501435555982651325950356327e-75",
+      "compute_time_sec": "0.00"
     }
-  ]
+  ],
+  "scriptHash": "c36a8a393fcd",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
+  "engine": "python+mpmath",
+  "computedAt": "2026-08-16T03:19:42.213012+00:00",
+  "durationMs": 0,
+  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

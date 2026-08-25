@@ -54,11 +54,11 @@ fn qou_hecke_h(q: f64) -> f64 {
 
 /// Markov-trace weights on the NF basis (length-6 numeric vector).
 /// @param q substrate parameter (numeric)
-/// @return [1, z, z, z^2, z^2, z^3]
+/// @return [1, z, z, z^2, z^2, h*z^2 + z] (convention D, qou-m7py 2026-08-15)
 /// @export
 #[extendr]
 fn qou_trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix G_ij = tr_M(b_i * b_j), returned as a 6x6 R matrix.

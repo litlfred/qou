@@ -75,7 +75,7 @@ universe u v w x
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QLocalSystem (M : Type u) where
   /-- The underlying substrate parameter family. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The representation type at each point (fibre of the local system). -/
   fibreAt : M → Type v
   /-- The monodromy endomorphism acting on the fibre at each point. -/
@@ -107,7 +107,7 @@ structure QLocalSystem (M : Type u) where
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QFlatConnection (M : Type u) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The intrinsic q-curvature `F_q` at each point, determined by the
       Yekutieli class: `F_q = HKR⁻¹(κ₀)`.  This is the *minimal*
       curvature compatible with `d_q² ≠ 0`. -/
@@ -142,7 +142,7 @@ structure QFlatConnection (M : Type u) where
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QHeckeOperator (M : Type u) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The Hecke algebra governing the operators. -/
   hecke : QOU.PathIntegrals.HeckeAlgebra
   /-- Consistency: the Hecke parameter matches the substrate at
@@ -207,7 +207,7 @@ structure QLanglandsDual (M : Type u) where
   /-- The original quantum gauge group. -/
   gaugeGroup : QuantumGaugeGroup.{u, w} M
   /-- The dual substrate: `q ↦ q⁻¹`. -/
-  dualSubstrate : SubstrateParameter M
+  dualSubstrate : ArchimedeanSubstrateField M
   /-- The substrate inversion: dual parameter is `q⁻¹`. -/
   substrate_inverted : ∀ (p : M),
     dualSubstrate.field p = (gaugeGroup.field p)⁻¹
@@ -381,7 +381,13 @@ theorem kummer_no_universal_lift :
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands` -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
+-- Renamed 2026-08-09 (`q_gl_kummer_filtration` → `…_arithmetic`): same
+-- duplicate fully-qualified-name clash, here with the §3b carrier
+-- `QOU/QGeometricLanglands/q_gl_kummer_filtration.lean`.  The suffix states
+-- what this declaration actually is — the ℤ-arithmetic core (divisibility +
+-- cofinite persistence), not the categorical filtration claim, which is the
+-- carrier's job.  Statement unchanged.
+theorem q_gl_kummer_filtration_arithmetic (χ : ℤ) (hχ : χ ≠ 0) :
     -- (1) Divisibility criterion at every level
     (∀ (n : ℕ), n ≥ 1 → ((↑n : ℤ) ∣ χ ↔ χ % ↑n = 0))
     -- (2) Cofinitely many levels carry the obstruction
@@ -441,7 +447,17 @@ class QGeometricLanglandsConjecture (M : Type u) where
     uses: `conj:q-geometric-langlands`, `rem:fibre-functor-rigidity`,
           `def:q-hecke-eigensheaf`, `def:q-langlands-dual` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_gl_fiber_functor {M : Type u}
+-- Renamed 2026-08-09 (`q_gl_fiber_functor` → `…_of_conjecture`).  Two
+-- declarations carried the *identical* fully-qualified name
+-- `QOU.QGeometricLanglands.q_gl_fiber_functor`: this conditional theorem and
+-- the §3b class axiomatisation in
+-- `QOU/QGeometricLanglands/q_gl_fiber_functor.lean`.  Importing both would
+-- have been a hard "already declared" error, and the clash made the content
+-- block's `lean.ref` resolve here rather than to its own §3b carrier.  The
+-- name now states the hypothesis (Mathlib `_of_` style, AGENTS.md
+-- §"Conditional lemmas wear their hypothesis in the name"); the statement is
+-- unchanged.
+theorem q_gl_fiber_functor_of_conjecture {M : Type u}
     [QGeometricLanglandsConjecture.{u, v, w, x} M] [FibreFunctorRigidity.{u, v} M]
     (es : QHeckeEigensheaf.{u, v} M) :
     QGeometricLanglandsConjecture.langlandsFunctor es = es.eigenvalue :=
@@ -455,7 +471,12 @@ theorem q_gl_fiber_functor {M : Type u}
     uses: `def:q-oper`, `def:q-hecke-eigensheaf`,
           `conj:q-geometric-langlands` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_oper_hecke {M : Type u}
+-- Renamed 2026-08-09 (`q_oper_hecke` → `…_of_conjecture`): same duplicate
+-- fully-qualified-name clash as `q_gl_fiber_functor_of_conjecture` above, with
+-- the §3b carrier `QOU/QGeometricLanglands/q_oper_hecke.lean`.  Statement
+-- unchanged; the name now carries the `[QGeometricLanglandsConjecture]`
+-- hypothesis.
+theorem q_oper_hecke_of_conjecture {M : Type u}
     [QGeometricLanglandsConjecture.{u, v, w, x} M]
     (op op' : QOper.{u, w, x} M) (es es' : QHeckeEigensheaf.{u, v} M)
     (h : QGeometricLanglandsConjecture.langlandsFunctor es =
@@ -472,7 +493,15 @@ theorem q_oper_hecke {M : Type u}
     uses: `conj:q-geometric-langlands`, `def:q-local-system`,
           `def:q-hecke-operator` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
-theorem q_gl_classical_limit {M : Type*} (ls : QLocalSystem M)
+-- Renamed 2026-08-09 (`q_gl_classical_limit` → `…_at_substrate`): same
+-- duplicate fully-qualified-name clash with the §3b carrier
+-- `QOU/QGeometricLanglands/q_gl_classical_limit.lean`, which states the
+-- classical limit generically over `(R : Type*) [Ring R]`.  This declaration
+-- is that carrier's **archimedean realisation** — it evaluates the ℝ-valued
+-- substrate section `ls.sp.field` at the classical value `q = 1`, so §7c puts
+-- it on the archimedean side and the generic claim in the carrier.  Statement
+-- unchanged.
+theorem q_gl_classical_limit_at_substrate {M : Type*} (ls : QLocalSystem M)
     (p : M) (h : ls.sp.field p = 1) :
     -- At q = 1, the q-holonomy residue vanishes (classical local system)
     ls.holonomyResidue p = 0 := by

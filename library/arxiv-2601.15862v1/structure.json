@@ -1,0 +1,101 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2601.15862v1",
+ "source": {
+  "file": "2601.15862v1.pdf",
+  "sha256": "e37fa9b4515f58d167754cb63ea6fc117e6394ae4b480dd9b9283b61922721b2",
+  "bytes": 509880,
+  "pages": 16
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2601.15862",
+   "version": "1",
+   "primary_class": "math.DG",
+   "stamp_date": "22 Jan 2026"
+  },
+  "doi": null,
+  "title": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED",
+  "authors_raw": "GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER",
+  "abstract": "We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´ echet smooth manifolds to theCahiers toposofformal smooth sets(a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.",
+  "docinfo": {
+   "Author": "Grigorios Giotopoulos; Igor Khavkine; Hisham Sati; Urs Schreiber",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Synthetic Differential Jet Bundles are Reduced"
+  },
+  "title_lines": [
+   "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Statement and Proof",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Background",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-statement-and-proof",
+   "number": "2",
+   "title": "Statement and Proof",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 14,
+   "n_chars": 24083,
+   "n_words": 3896
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5614,
+   "n_words": 720
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 3,
+  "chars_total": 29697
+ }
+}

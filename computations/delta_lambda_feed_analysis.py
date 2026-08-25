@@ -40,13 +40,15 @@ from pathlib import Path
 
 import numpy as np
 
-_ROOT = Path(__file__).resolve().parents[2]
+_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402  canonical registry (P31)
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 M_E_MEV = float(_M_E_MEV)  # registry value is mpf; this analysis is float/numpy
 HERE = Path(__file__).parent
@@ -64,7 +66,7 @@ def main() -> int:
     rows_in = src["data"]["rows"]
     yw = src["data"]["markov_weights_y_lambda"]
     import mpmath as mp
-    mp.mp.dps = 30
+    set_compute_dps()
     # only the alt-channel weight enters the dominant-channel Δ scale.
     log_y_alt = float(mp.log10(abs(mp.mpf(yw["(1,1,1)"]))))
 

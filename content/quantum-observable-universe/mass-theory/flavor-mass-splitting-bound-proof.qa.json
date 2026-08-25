@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound-proof.md"
   },
   "source_hashes": {
-    "ts": "02960f71be2f",
-    "md": "646af3b54120"
+    "md": "646af3b54120",
+    "ts": "02960f71be2f"
   },
   "criteria": {
     "fit-section-chapter": [
@@ -595,30 +595,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "646af3b54120",
-          "ts": "02960f71be2f"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1178,7 +1159,367 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.165Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "The bound is NOT tight and rather than as an artefact of the closed-form algebra are substantive: the first is an honest statement of the slack (quantified in the same paragraph), the second distinguishes a derived constant from an algebraic accident."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.907Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 231 words)"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.942Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 231 words)"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.198Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Two ingredients: is accurate - exactly two follow (positivity, upper bound). The tightening options list has TWO items. No reflex three."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.978Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.236Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "The out-of-scope section states what the theorem does not assert, which is scope, not emphasis-narration.",
+        "notes": "SS4d NOTE: but this requires further development and is not committed in this revision is author-tracking status prose and belongs in authorNotes (kind: status). RIGOR: THE ALGEBRA IS CORRECT AND I CHECKED IT. hbar_q^2 h_q [2]_q = ((q-1)^2/q^2)(q-q^{-1})(q+q^{-1}) = (q-1)^2(q^4-1)/q^4, and (q-1)^2(1-q^{-4})/3 = (q-1)^2(q^4-1)/(3q^4), so the ratio is exactly 1/3 as claimed and the strict inequality follows for q > 1. The Skein adjustment (q^{1/2}+q^{-1/2})/(q+q^{-1}) = 0.99594 < 1 at q_0, as stated. The Tightness claim also verifies numerically: (1/3)(q^{1/2}+q^{-1/2})/(q+q^{-1}) = 0.3319783, and the realised splitting 1.286429856 MeV over the bound 3.875042037 MeV is 0.3319783 - agreement to 7 figures. CAVEAT: that half-power adjustment factor is 1/z_C/(q+q^{-1}), i.e. it inherits the convention-C leak recorded on prop:flavor-dressed-mass-from-substrate-split; under the canonical convention D the realised-splitting fraction changes. TWO MINOR DEFECTS: (a) four cross-references are written as relative .md paths (flavor-dressed-mass-from-substrate-split.md, ../observations/flavor-split-substrate.md, hecke-convergence-bound.md, ../observations/dressed-quark-numerology-at-q0.md) rather than the chapter's #label anchors, so they will not resolve as hyperrefs; (b) the slack-ratio display ends in a comma and the next sentence begins capitalised."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.014Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.051Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.095Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.375Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:47.130Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of prf:flavor-mass-splitting-bound (positivity, upper bound with the slack-ratio computation, Tightness section, out-of-scope section). No construction of this category present."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "646af3b54120",
+          "ts": "02960f71be2f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:10:47.236Z"
 }

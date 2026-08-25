@@ -100,6 +100,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -264,7 +265,7 @@ def probe_level_k(
     log(f"  S_{expected_M}   divisible by Φ_{n}? {at_divisible}   (expect True)")
 
     # Numeric verification at u = ζ_n
-    mp.mp.dps = 50
+    set_compute_dps()
     zeta_n = mp.exp(mp.mpc(0, 1) * mp.pi / n)  # e^(iπ/n) for primitive 2n-th root
     # Actually we need primitive n-th root: ζ_n = e^(2πi/n)
     zeta_n = mp.exp(mp.mpc(0, 1) * 2 * mp.pi / n)

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/hyperbolic-knot-positive-volume-via-reeb.md"
   },
   "source_hashes": {
-    "ts": "7d32b6f62f07",
-    "md": "0d656e613877"
+    "md": "0d656e613877",
+    "ts": "7d32b6f62f07"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -595,30 +595,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "0d656e613877",
-          "ts": "7d32b6f62f07"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1232,7 +1213,368 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.248Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "\"Its complement is not Seifert-fibered\" and \"non-torus Reeb-flow trajectories\" are substantive geometric claims (their TRUTH is a separate matter, see notes), not manufactured emphasis."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.326Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 135 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.382Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 135 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.421Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "The three worked trajectories (Garside, Borromean, figure-eight) are the block content, not a reflex list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.476Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "severity": "minor",
+        "evidence": "The final line \"The trajectory pattern determines the JSJ verdict\" is short and quotable, but it states the operative criterion the preceding paragraph sets up."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.532Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.565Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "The closing paragraph adds the JSJ-grading rule rather than restating."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.654Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.689Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "\"minimal hyperbolic volume\" for 4_1 is a correct and standard claim (Cao-Meyerhoff)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.596Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:36:28.760Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Short declaratives throughout; reads aloud.",
+        "notes": "VERIFIED AGAINST THE GEOMETRY, with one confirmed error and three confirmations. ERROR: \"The Garside element Delta_3 ... form[s] non-torus Reeb-flow trajectories with positive hyperbolic volume ... Its complement is not Seifert-fibered, and its JSJ decomposition contains a hyperbolic piece with a strictly positive Bloch-Wigner sum.\" Delta_3 = sigma_1 sigma_2 sigma_1. Conjugating by sigma_1 gives sigma_1^2 sigma_2, in which sigma_2 occurs exactly once at the right end, so Markov destabilisation reduces it to sigma_1^2 in B_2 and the closure is the HOPF LINK T(2,2). Its underlying permutation s1 s2 s1 = (1 3) has 2 cycles, confirming 2 components. The Hopf link IS a torus link, IS Seifert-fibered, has volume 0 and a JSJ decomposition with no hyperbolic piece -- which is exactly what the sibling block rem:hopf-link-non-magic states in this same chapter. Every clause quoted above is therefore false for Delta_3. CONFIRMED CORRECT: (a) the Borromean braid is (sigma_1 sigma_2^{-1})^3, whose permutation (s1 s2)^3 is the identity, giving 3 components as required; (b) its volume 8G = 7.3277247534 equals 2 x V_oct with V_oct = 4G = 3.6638623767, so \"8G, derived from two regular ideal octahedra\" is exactly right; (c) Vol(4_1) = 2 v_3 = 2.0298832128 with v_3 = Cl_2(pi/3) = 1.0149416064 -- the right value under the right name. SECOND ERROR: the Borromean rings complement is NOT \"the Gieseking-Meyerhoff manifold\". The Gieseking manifold is the non-orientable cusped hyperbolic 3-manifold of volume v_3 = 1.0149, the smallest of all; the Borromean complement has volume 7.3277 and is standardly just called the Borromean rings complement (6^3_2). THIRD NOTE: the block gives the figure-eight braid word as sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}, which corroborates the separate finding on prf:hoefsmit-seminormal-form, where the same knot is assigned the commutator sigma_1 sigma_2^{-1} sigma_1^{-1} sigma_2."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "0d656e613877",
+          "ts": "7d32b6f62f07"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:36:28.760Z"
 }

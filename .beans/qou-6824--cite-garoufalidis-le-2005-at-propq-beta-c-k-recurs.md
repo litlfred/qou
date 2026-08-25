@@ -13,7 +13,7 @@ The recurrence-minimality assumption used by computations/probes/qlift_routeC_ho
 - Abstract / Thm 1 — The colored Jones function of a knot is q-holonomic: it satisfies a finite set of linear q-difference recursions with polynomial coefficients.
   Use here: Supplies the existence-and-minimality frame the q-lift Route C probe already assumes when it certifies an order-2 inhomogeneous recurrence; a content block stating that recursion should carry it.
 
-Source: `uploads/0309214v3.pdf` (`garoufalidis-le-2005`)
+Source: `library/0309214v3/0309214v3.pdf` (`garoufalidis-le-2005`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,0 +1,282 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2411.03801v2",
+ "source": {
+  "file": "2411.03801v2.pdf",
+  "sha256": "a7f1f6fa74cb0949e8e9b3aa8a175a534182b79d37dabdfb0bf024fd744b9444",
+  "bytes": 541142,
+  "pages": 24
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2411.03801",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "13 Nov 2024"
+  },
+  "doi": null,
+  "title": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS",
+  "authors_raw": "STAVROS GAROUFALIDIS AND SEOKBEOM YOON",
+  "abstract": "Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241114011546Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Two invariants from the asymptotics of the Kashaev invariant",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The 1-loop invariant",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Essential open diagrams and their potential",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Ohtsuki–Takata invariant",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "From planar diagrams to ideal triangulations",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Octahedral decomposition",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorem",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Flattening of the collapsed triangulation",
+   "page": 14,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Variable reduction",
+   "page": 17,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Further discussion on collapsing",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Braid closures",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1852,
+   "n_words": 279
+  },
+  {
+   "id": "sec-001-21-the-1-loop-invariant",
+   "number": "2.1",
+   "title": "The 1-loop invariant",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4306,
+   "n_words": 674
+  },
+  {
+   "id": "sec-002-2-two-invariants-from-the-asymptotics-of-the-kas",
+   "number": "2",
+   "title": "Two invariants from the asymptotics of the Kashaev invariant",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5153,
+   "n_words": 976
+  },
+  {
+   "id": "sec-003-22-essential-open-diagrams-and-their-potential",
+   "number": "2.2",
+   "title": "Essential open diagrams and their potential",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4379,
+   "n_words": 814
+  },
+  {
+   "id": "sec-004-23-the-ohtsukitakata-invariant",
+   "number": "2.3",
+   "title": "The Ohtsuki–Takata invariant",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2136,
+   "n_words": 405
+  },
+  {
+   "id": "sec-005-3-from-planar-diagrams-to-ideal-triangulations",
+   "number": "3",
+   "title": "From planar diagrams to ideal triangulations",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 931,
+   "n_words": 148
+  },
+  {
+   "id": "sec-006-31-octahedral-decomposition",
+   "number": "3.1",
+   "title": "Octahedral decomposition",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3612,
+   "n_words": 649
+  },
+  {
+   "id": "sec-007-32-collapsing-the-octahedral-decomposition-to-an",
+   "number": "3.2",
+   "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5839,
+   "n_words": 1049
+  },
+  {
+   "id": "sec-008-4-proof-of-the-main-theorem",
+   "number": "4",
+   "title": "Proof of the main theorem",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 399,
+   "n_words": 73
+  },
+  {
+   "id": "sec-009-41-flattening-of-the-collapsed-triangulation",
+   "number": "4.1",
+   "title": "Flattening of the collapsed triangulation",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 6183,
+   "n_words": 1198
+  },
+  {
+   "id": "sec-010-42-variable-reduction",
+   "number": "4.2",
+   "title": "Variable reduction",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 5927,
+   "n_words": 1132
+  },
+  {
+   "id": "sec-011-appendix-a-further-discussion-on-collapsing",
+   "number": null,
+   "title": "Appendix A. Further discussion on collapsing",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2704,
+   "n_words": 462
+  },
+  {
+   "id": "sec-012-appendix-b-braid-closures",
+   "number": null,
+   "title": "Appendix B. Braid closures",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3294,
+   "n_words": 649
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3580,
+   "n_words": 511
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 50295
+ }
+}

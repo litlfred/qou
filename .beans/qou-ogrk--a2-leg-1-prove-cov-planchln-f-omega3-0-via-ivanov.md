@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-25T03:30:08Z
-updated_at: 2026-07-25T17:22:08Z
+updated_at: 2026-08-21T15:28:59Z
 parent: qou-v8t7
 ---
 
@@ -26,3 +26,7 @@ SURVIVING STRUCTURE (2026-07-25, after pointwise-route correction). Moment skele
 
 
 PROVED SUB-RESULT (2026-07-25). Executed the even-k proof lead: even hook-power moments M_{2j}=Cov(Sum h^{2j}, Sum h^2)>0 for all n>=3, PROVED with manifest certificates. Exact polys (interp-verified): M_2=n(n-1)(n-2)/3=|C3|; M_4=n(n-1)(n-2)/3*5(n-8/3); M_6=n(n-1)(n-2)/3*7(3n-8)^2 (perfect square). Cofactors manifestly positive (constant/linear-past-root/perfect-square) => theorem. First proved positivity in the epic beyond k<=7 decide. Settles EVEN half of moment skeleton; odd-k empirical; does NOT prove A2 (ln concave). Lean-ready (M_6 = positivity one-liner). Audit: 2026-07-25-covariance-kernel-A2-even-moment-positivity-proved.md
+
+
+
+M_1 REFORMULATION (2026-08-21). M_1 = Cov_Planch(Sum(i+j), Sum c^2) -- antidiagonal vs diagonal spread (transpose-even, = 2Cov(n_lam,Sc2) = Cov(Sum h,Sum h^2), n<=17). rho ~ 0.85-0.92 near-perfect; Var(Sum c^2)=|C3| exact; no closed form. Route = Kerov CLT integral (open). Audit: 2026-08-21-covariance-kernel-M1-antidiagonal-reformulation.md

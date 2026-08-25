@@ -63,11 +63,12 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE / "hecke"))
 
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps, json_safe_float  # noqa: E402
+set_compute_dps()
 
 # Experimental (proton) substrate q_0 -- the standing default for new compute.
 from q_parameter import Q as Q0  # noqa: E402
-from _precision import json_safe_float  # noqa: E402
 
 
 def f64_json(o):

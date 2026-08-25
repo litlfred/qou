@@ -25,7 +25,8 @@ test (Workplan 2 Phase 2+ candidate D): is y_0^* · m_e the
 structurally-derived E_0 in MeV?
 
 **RESULT: NO.** This script wires the real H_3(q) Gram matrix +
-Markov-trace cost vector through scipy.linprog (loaded from
+Markov-trace cost vector through the canonical operator-selection LP
+(clarabel-MPFR; was scipy.linprog until 2026-08-23) (loaded from
 [`gram-matrix-dual.witness.json`](gram-matrix-dual.witness.json),
 no fitting). The findings:
 
@@ -63,7 +64,7 @@ E_0 as the MeV scale".
 
 **No fitting** — all inputs (t_i, G_ij, n_target choices) are
 loaded from substrate witnesses; the LP is solved by scipy
-linprog with no parameter tuning; the negative finding is honest
+the canonical LP with no parameter tuning; the negative finding is honest
 exposure.
 """
 from __future__ import annotations
@@ -75,15 +76,33 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from scipy.optimize import linprog
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
 from witness_base import WitnessBuilder  # noqa: E402
+from lp_dual_solver import (  # noqa: E402
+    provenance as _provenance,
+    solve_operator_selection_lp as _canonical_lp,
+)
 
 GRAM_WITNESS = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
+# `beta-decay-energy-scale.witness.json` was moved to `_deprecated/` while NINE
+# live scripts still read it (this one, `derived_masses`, `meson_mass_from_hecke`,
+# `derivation_chain`, `q_beta_predicted`, `derive_m_e_hecke_path_a`, two probes,
+# and an audit). The deprecation criteria in `_deprecated/README.md` require
+# that nothing live consume the witness, so that move was out of policy — and
+# it is the same situation the README already documents for
+# `hecke_core_legacy.py`, which was moved BACK OUT for exactly this reason.
+#
+# `_path_bridge.witness_path` now falls back to `_deprecated/` as a LAST
+# resort, so this resolves without a local workaround. Verified 2026-08-23:
+# the live and deprecated copies' `nucleon_nf` payloads are identical, so the
+# fallback changes no number — it only lets this script run at all. Without it
+# the producer could not execute, which is why its witness sat frozen at
+# 2026-05-11 carrying a maximally-violated duality certificate for three
+# months. Bean `qou/ftuv`.
 BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
 OUT = _pb.witness_path("e-0-lp-dual-h3.witness.json", HERE)
 
@@ -117,65 +136,72 @@ def solve_operator_selection_lp(t, G, n_target, M_bound=1e3, cone=False):
         min   t^T x
         s.t.  Σ x_i = n_target           (eq; dual var y_0)
               G x ≥ 0                     (ineq; dual vars y_i ≥ 0)
-              x_i ≥ -M
+              x_i ≥ -M   (or x_i ≥ 0 when `cone`)
 
-    Dual:
-        max   n_target · y_0 - M Σ s_i
-        s.t.  y_0 + G^T y - s = t        (with s ≥ 0 for boundedness)
-              y ≥ 0
+    **REWRITTEN 2026-08-23 (bean `qou/ftuv`) to delegate to the canonical
+    solver.** This function used to be a local `scipy.optimize.linprog`
+    reimplementation carrying the *same name* as
+    `pyhecke.lp_dual_solver.solve_operator_selection_lp` — so a reader, or a
+    grep-based audit looking for producers on the canonical path, would find
+    this and conclude the canonical solver was in use. It was not.
 
-    With M large the slacks s_i = 0 at optimality and the dual
-    becomes max n_target · y_0 s.t. y_0 + G^T y ≤ t, y ≥ 0.
+    The reimplementation also had a SIGN ERROR. It took
+    ``y_0_star = -eq_marg[0]`` where the canonical solver takes
+    ``+eq_marginals[0]``, and in `cone` mode that flipped the shadow price:
 
-    scipy.optimize.linprog uses Ax_ub @ x ≤ b_ub form, so we negate
-    the Gx ≥ 0 constraint: -G @ x ≤ 0.
+        local      primal_obj +0.3753866308623884   y_0_star -0.3753866308623884
+                   dual_obj   -0.3753866308623884   duality_gap 0.7507732617247768
+        canonical  primal_obj +0.3753866308623884   y_0_star +0.3753866308623884
+                   dual_obj   +0.3753866308623884   duality_gap 0.0
+
+    Its own strong-duality check therefore reported a gap equal to TWICE the
+    objective — maximally violated — and it recorded that instead of failing.
+    Every `results_per_target_cone` entry in the committed witness carries
+    `y_0_star = -0.12449094312996863` with `duality_gap ≈ 2 × primal_obj`, in
+    a witness whose entire purpose is the LP-dual certificate, and the file
+    emits no assertion that would have caught it. `E_0` is derived downstream
+    as `y_0_star · m_e`, so the sign flip propagated into an energy.
+
+    Both modes are expressible by the canonical solver, which is why the
+    reimplementation was never needed:
+
+        cone=False  →  M_bound = M_bound   (x_i ≥ -M, the prop's form)
+        cone=True   →  M_bound = 0.0       (x_i ≥ 0)
+
+    The return shape is kept verbatim so callers are unaffected, including the
+    `y_0_star` spelling (the canonical dataclass uses `y0_star`).
     """
-    d = len(t)
-    A_eq = np.ones((1, d))
-    b_eq = np.array([n_target], dtype=float)
-    A_ub = -G                       # G @ x ≥ 0  →  -G @ x ≤ 0
-    b_ub = np.zeros(d, dtype=float)
-    bounds = [(0, None)] * d if cone else [(-M_bound, None)] * d
-
-    res = linprog(
-        c=t, A_eq=A_eq, b_eq=b_eq, A_ub=A_ub, b_ub=b_ub,
-        bounds=bounds, method="highs",
+    res = _canonical_lp(
+        np.asarray(t, dtype=float),
+        np.asarray(G, dtype=float),
+        float(n_target),
+        M_bound=0.0 if cone else float(M_bound),
+        # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+        # whether the Rust binary happens to be built.
+        backend="clarabel",
     )
-    if not res.success:
-        return {"feasible": False, "status": res.message}
+    if not res.feasible:
+        return {"feasible": False, "status": "infeasible"}
 
-    x_star = np.asarray(res.x)
-    primal_obj = float(t @ x_star)
-
-    # Dual variables from highs marginals (sign convention: linprog
-    # reports the dual of the equality constraint as the marginal of
-    # b_eq — i.e. the y_0^* of the prop, modulo sign).
-    eq_marg = res.eqlin.marginals if res.eqlin is not None else None
-    ub_marg = res.ineqlin.marginals if res.ineqlin is not None else None
-    y_0_star = float(-eq_marg[0]) if eq_marg is not None else float("nan")
-    # For ineqlin -G @ x ≤ 0, marginal is the dual; since the original
-    # is G @ x ≥ 0 the dual y_i^* on that constraint is the negation.
-    y_star = (-np.asarray(ub_marg)).tolist() if ub_marg is not None else []
-
-    # Verify strong duality: primal_obj should equal n_target · y_0_star
-    dual_obj_recovered = n_target * y_0_star
-    duality_gap = abs(primal_obj - dual_obj_recovered)
-
-    active_set = [i for i, y in enumerate(y_star) if y > 1e-9]
-    Gx = (G @ x_star).tolist()
-
-    return {
+    x_star = np.asarray(res.x_star, dtype=float)
+    out = {
         "feasible": True,
         "x_star": [float(v) for v in x_star.tolist()],
-        "y_0_star": float(y_0_star),
-        "y_star": [float(v) for v in y_star],
-        "active_set": active_set,
-        "primal_obj": float(primal_obj),
-        "dual_obj": float(dual_obj_recovered),
-        "duality_gap": float(duality_gap),
-        "Gx_at_optimum": [float(v) for v in Gx],
+        "y_0_star": float(res.y0_star),
+        "y_star": [float(v) for v in res.y_star],
+        "active_set": list(res.active_set),
+        "primal_obj": float(res.primal_obj),
+        "dual_obj": float(res.dual_obj),
+        "duality_gap": float(res.duality_gap),
+        "Gx_at_optimum": [float(v) for v in (np.asarray(G, float) @ x_star).tolist()],
         "n_target": float(n_target),
     }
+    # Solver provenance and the full-precision decimals behind the f64 above.
+    prov = dict(_provenance(res))
+    if "y0_star_str" in prov:
+        prov["y_0_star_str"] = prov.pop("y0_star_str")   # match the local spelling
+    out.update(prov)
+    return out
 
 
 def main() -> int:
@@ -256,7 +282,9 @@ def main() -> int:
         "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md",
         "no_fitting_assertion": (
             "All inputs (t_i, G_ij, n_target choices) loaded from "
-            "substrate witnesses; LP solved by scipy linprog with "
+            "substrate witnesses; LP solved by the canonical "
+            "`solve_operator_selection_lp` on the clarabel-MPFR backend "
+            "(was scipy linprog, with a sign error on y_0_star — bean qou/ftuv) with "
             "no parameter tuning; y_0^* read directly from the "
             "dual marginal of the equality constraint."
         ),

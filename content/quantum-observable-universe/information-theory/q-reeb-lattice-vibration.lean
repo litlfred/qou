@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 /-
   q-Reeb Lattice Vibration
   Formalizing the discrete computational dynamics of the slit lattice boundary

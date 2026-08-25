@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T14:51:25.036689+00:00",
+  "commitSha": "4d32aec60d92f77e4173909a108af1e49ef3522d",
+  "assertions": [
+    {
+      "name": "alpha_required_is_convention_independent_by_construction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "b = sqrt(d1*d2+1) with d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1)); u = b*hbar^2; Q_A = m_e|q^2-2q-1|(q+1)/(2q^3). None reads z, so cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) is the same target in both frames — which is what makes the C/D comparison fair rather than a comparison of two different targets."
+    },
+    {
+      "name": "D_frame_phase_residual_is_COMPARABLE_to_C_not_orders_worse",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|gap_D/gap_C| = 0.89532612 at the proton anchor — the D-frame asserted phase is slightly CLOSER to alpha_required than the C-frame one. This probe was written expecting 'orders larger'; that assertion failed and the expectation is retracted."
+    },
+    {
+      "name": "the_c3_gap_is_1_over_u_cubed_amplification_not_a_large_phase_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "cos(alpha_eff) differs C->D by 0.0006011538 relative; divided by u^3 that is 972.94833, against an actual |c_3(D)-c_3(C)| = 972.36255 — agreement to 0.06024 %. So c_3 = -974 is the ladder's own 1/u^3 = 1.6e6 amplifier acting on a 0.06 % cos difference, not evidence that D breaks the physics."
+    },
+    {
+      "name": "RETRACTED_neither_asserted_phase_reproduces_CODATA_at_N2",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "RETRACTED 2026-08-18. This asserted that both frames leave ~0.1 rad for c_3 because both gaps exceed 0.01. The gaps were measured against the PRINCIPAL arccos branch only, but cos is EVEN — the C phase sits on the NEGATIVE branch, with a true residual of 2.26e-5 rad (~5017x smaller). C DOES reproduce CODATA at N=2 to that residual, which under 1/u^3 amplification is exactly c_3 = -2.069. Kept as a recorded retraction rather than deleted, so the corpus shows the correction. Superseded by qbeta_eigenphase_branch_and_barodd_projection_probe.py."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-alpha-required-c-vs-d",
+  "scriptFile": "qbeta_alpha_required_c_vs_d_probe.py",
+  "scriptHash": "7d1f1541a999",
+  "scriptCommitSha": "ed7d0f12365a729e764922cc305f9cd15ef5c8bb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-cds1. Scores both Markov conventions against the phase the N=2 Q_beta ladder actually requires. alpha_required is convention-INDEPENDENT because b and u are built from the Hoefsmit couplings (d1 = q^3/(q^2+1), d2 = -1/(q(q^2+1))) and not from z — note d1 is numerically identical to z_D while being a different object, a coincidence this probe explicitly does not read as 'the Gram already uses D'. So the phase is the only convention-dependent input to the N=1 rung, and one fixed target scores both frames at both anchors. Records the residual each frame's asserted phase leaves for the c_3 rung to absorb, and that residual's cross-anchor drift. DERIVES NOTHING: proposes no phase, wires no value, settles no convention — alpha is asserted in both frames (probe_q_beta_operator_valued_N3.py:70) and derived in neither, which is precisely what cds1 is open on.",
+  "data": {
+    "anchors": [
+      {
+        "anchor": "proton",
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "u": "0.00851723455015614218925557360330920296919422161162716337301758",
+        "alpha_required": "0.0608759180691391034575945937400280582797018011794287575432049",
+        "alpha_C": "-0.0523361202682288387988645268899341706130483170063913394628427",
+        "alpha_D": "-0.0404857773406427649188472790652144472881373382539078948727488",
+        "gap_C": "0.113212038337367942256459120629962228892750118185820097006048",
+        "gap_D": "0.101361695409781868376441872805242505567839139433336652415954"
+      },
+      {
+        "anchor": "muon",
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "alpha_required": "0.0608753863159408665700477988009054565888373192625082601237550",
+        "alpha_C": "-0.0523361261306329914387156968056517003995486652718903362771579",
+        "alpha_D": "-0.0404857804531149677547457030413503104416742328894548552388957",
+        "gap_C": "0.113211512446573858008763495606557156988385984534398596400913",
+        "gap_D": "0.101361166769055834324793501842255767030511552151963115362651"
+      }
+    ],
+    "gap_ratio_D_over_C_proton": "0.895326123426269708771329795592810272806344013721732600598343",
+    "gap_C_cross_anchor_drift": "0.000000525890794084247695625023405071904364133651421500605135000000",
+    "gap_D_cross_anchor_drift": "0.000000528640726034051648370962986738537327587281373537053303000000"
+  },
+  "q0Anchor": "ambiguous"
+}

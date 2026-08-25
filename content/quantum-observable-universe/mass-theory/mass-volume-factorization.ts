@@ -16,8 +16,12 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.MassVolumeFactorization",
     validation: "not_checked",
   },
+  // `rem:frobenius-packing-density` removed 2026-08-15 to break an editorial
+  // cycle. That remark declares `interprets: "conj:mass-volume-factorization"`
+  // — it exists to interpret this conjecture — so requiring it here made the
+  // conjecture a prerequisite of its own interpretation. `interprets` carries
+  // the relation in the direction that is true.
   uses: [
-    "rem:frobenius-packing-density",
     "prop:thurston-volume-additivity",
   ],
   cites: ["thurston1978", "murakami-murakami2001"],

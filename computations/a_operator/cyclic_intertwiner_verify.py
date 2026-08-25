@@ -32,6 +32,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401,E402
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 del _sys, _Path, _bridge
 
 import sys
@@ -48,6 +49,12 @@ import a_operator_categorical as aoa  # noqa: E402
 from lr_coefficients import partitions_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 EXACT = mp.mpf("1e-25")
 
 
@@ -57,7 +64,11 @@ def _idcheck(lam, n_inner, n_block, q_str, h, rho_in, rho_bl, p_in, p_bl,
     mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
     if dim == 0:
         return None, 0
-    I_if = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    # Colour-weighted p-n interface, the SAME shift the combiner on the RHS
+    # uses (a_operator_gauge_align._d_pn).  Was the colour-blind -h/2 here,
+    # which 3dcf933c5d moved on the RHS but missed on this side: the two legs
+    # of a gauge-invariant identity were then built with different interfaces.
+    I_if = mats[n_inner - 1] + g._d_pn(h) * mp.eye(dim)
 
     def fac(br):
         return [(mp.mpf(1), mp.mpf(0) if s > 0 else -h, gg) for (s, gg) in br]

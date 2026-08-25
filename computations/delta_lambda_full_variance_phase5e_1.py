@@ -58,6 +58,8 @@ set_q(Q0_STR)
 
 import pyhecke_native
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # ATOMS with (Z, N, n_strands, B_AME)
@@ -89,7 +91,7 @@ KNOT_TO_PARTICLE = {
 # α_k weights per binding_depth_stratified_rust.py
 def alpha_k(k: int) -> mp.mpf:
     Q0 = mp.mpf(str(Q0_STR))
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     M_E_MEV = mp.mpf("0.51099894999999995")
     if k in (0, 1, 3):
@@ -122,7 +124,7 @@ def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
     if cached is not None:
         return cached
     if not K_word:
-        value = float(dim_q(lam))
+        value = float(dim_q(lam, Q0_PROTON))
     else:
         word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
         try:
@@ -140,7 +142,7 @@ def phi_k_with_K(by_partition: list, n_strands: int, k: int,
     use_FR_projector=False → original (Plancherel-weighted, no K).
     use_FR_projector=True  → FR weight w̃_λ^(K_k*) replaces Plancherel.
     """
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     parts_at_k = []
     for p in by_partition:
         shape = tuple(p["partition"])
@@ -152,7 +154,7 @@ def phi_k_with_K(by_partition: list, n_strands: int, k: int,
         weights_raw = {}
         Z_norm = mp.mpf(0)
         for shape, _ in parts_at_k:
-            dq = mp.mpf(str(dim_q(shape)))
+            dq = mp.mpf(str(dim_q(shape, Q0_PROTON)))
             chi_K = mp.mpf(str(chi_K_at_lambda(K_word, shape)))
             w_raw = dq * dq * chi_K
             weights_raw[shape] = w_raw
@@ -164,13 +166,13 @@ def phi_k_with_K(by_partition: list, n_strands: int, k: int,
         # Original Plancherel weight dim_q²/[n]_q!
         weights = {}
         for shape, _ in parts_at_k:
-            dq = mp.mpf(str(dim_q(shape)))
+            dq = mp.mpf(str(dim_q(shape, Q0_PROTON)))
             weights[shape] = dq * dq / qfact
 
     total = mp.mpf(0)
     for shape, entry in parts_at_k:
         chi = mp.mpf(str(entry["chi_lambda"]))
-        dq = mp.mpf(str(dim_q(shape)))
+        dq = mp.mpf(str(dim_q(shape, Q0_PROTON)))
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -201,7 +203,7 @@ def compute_B_with_K_k_star(atom_witness: dict, n_strands: int,
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     builder = WitnessBuilder("delta-lambda-full-variance-phase5e-1")
     builder.set_description(
         "Phase 5e.1: variance test of K_k* candidate knots using the "

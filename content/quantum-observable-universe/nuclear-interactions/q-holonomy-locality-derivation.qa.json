@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/nuclear-interactions/q-holonomy-locality-derivation.md"
   },
   "source_hashes": {
-    "ts": "86bf1e5a2bf1",
-    "md": "7df10b7e2587"
+    "md": "7df10b7e2587",
+    "ts": "86bf1e5a2bf1"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -280,30 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "7df10b7e2587",
-          "ts": "86bf1e5a2bf1"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1234,7 +1215,386 @@
         "reviewed_at": "2026-08-09T13:01:26.287Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.253Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.292Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (2 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.334Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.374Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.414Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Block-final sentence: 'Exponential scaling is the empirical signature of KZ flatness at the substrate.'",
+        "notes": "A quotable one-line summary placed as the closer, asserting an inference (observed exponential scaling <= KZ flatness) that the block has not established in either direction and that its own preceding sentences do not support. PROPOSED: delete, or restate as the conditional it is."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.454Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.495Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.536Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (6 sections incl. a Claim + Proof sketch) + .ts. Bib key kohno1987 present.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.575Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Proof sketch: 'By flatness, closed loops encircling separated subsets have commuting holonomies. ... The scalar obstruction requires non-abelian monodromy, **which flatness rules out**.' Also 'Flatness is **equivalent to** semisimplicity of the braided tensor category' and 'Each crossing multiplies mass by $\\approx 94$'.",
+        "notes": "THE PROOF SKETCH CONTRADICTS THE BLOCK'S OWN SETUP. Two paragraphs earlier the block states, correctly, that 'The monodromy representation coincides with the quantum-group R-matrix representation' -- which is the braid group's KZ monodromy and is famously NON-ABELIAN; that non-abelian-ness is the entire reason the construction is interesting. Flatness of a connection on a non-simply-connected configuration space says nothing about whether its monodromy is abelian, so 'flatness rules out non-abelian monodromy' is false and it is the load-bearing step of the sketch. Relatedly, 'flatness is equivalent to semisimplicity' is also wrong: the KZ connection is flat at every q, while semisimplicity fails at roots of unity -- these are different conditions, and the block needs the second, not the first. Third: 'Each crossing multiplies mass by ~94' is a factor-of-94-per-crossing claim with no source, no witness and no derivation in the block; the .ts declares no computation field."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.484Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:08.614Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'**Corollary --- exponential mass scaling.** Combining locality with the crossing-graded expansion, we find that at the homogeneous fixed point, $\\mathfrak{m}(\\mathcal{K}; q_0) = \\mathfrak{m}_{\\mathrm{GB}}(\\mathcal{K}) \\cdot (1 + \\xi(q_0))^{c(\\mathcal{K})}$.'",
+        "notes": "Four stacked qualifiers before the verb arrives. Also NOTATION COLLISION caught here: the block writes $\\Phi_q(z_c)$ using $z$ for crossing POSITIONS, while $z$ is the Markov--Jones parameter in five sibling blocks of this same chapter. And a kind mismatch: this is a `remark` containing a '**Claim.**' with a '**Proof sketch.** ... $\\square$', i.e. a QED'd argument inside a block kind that per AGENTS.md Sec.3a makes no logical claims. PROPOSED: promote the Claim to a proposition or restate it as a reported result."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T05:56:08.614Z"
 }

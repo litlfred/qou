@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.lean"
   },
   "source_hashes": {
-    "ts": "221545be3a9d",
     "md": "55271b9d1d83",
-    "lean": "9ec23d1e64a1"
+    "ts": "221545be3a9d",
+    "lean": "9ec23d1e64a1",
+    "lean_statement": "b7e03585a836"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -789,31 +790,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "55271b9d1d83",
-          "ts": "221545be3a9d",
-          "lean": "9ec23d1e64a1",
-          "lean_statement": "b7e03585a836"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1752,7 +1733,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.637Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.677Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.717Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.757Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.795Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.832Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.873Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.911Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.948Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.363Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:58:27.992Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Full read (proposition, 64 words): one four-sentence statement, no rhetorical construction of any kind, every clause carrying a distinct mathematical assertion (non-degeneracy, Frobenius property, self-duality, primal/dual coincidence, Obs_tau).",
+        "notes": "RIGOR FLAG (same as the sibling proof): the opening premise 'The Markov trace tau on H_n(R,q) is a non-degenerate symmetric bilinear pairing' is false at n=3 under the canonical convention D — y_{(1^3)} = 0, det G = 0, corank 1 (prop:frobenius-gram-matrix, this chapter; reproduced independently). The proposition needs the pairing read on H_n/rad tr_M, or an explicit convention-C scope."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "55271b9d1d83",
+          "ts": "221545be3a9d",
+          "lean": "9ec23d1e64a1",
+          "lean_statement": "b7e03585a836"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:58:27.992Z"
 }

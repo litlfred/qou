@@ -1,0 +1,233 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2401.04019v1",
+ "source": {
+  "file": "2401.04019v1.pdf",
+  "sha256": "1a29e52a816396404032a27d93864e411e2f1cd775b4c0ac7a7bbe7cc2c52fcf",
+  "bytes": 248056,
+  "pages": 21
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2401.04019",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "8 Jan 2024"
+  },
+  "doi": null,
+  "title": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+  "authors_raw": "CRISTINA BALLANTINE AND BROOKE FEIGON",
+  "abstract": "The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated theta series identities. In particular, Yee proved a truncated ve rsion of the Jacobi Triple Product (JTP) identity. Recently, Merca conjecture d a stronger form of the truncated JTP identity. In this article we prove the ﬁr st three cases of the conjecture and several related truncated identities. W e prove combinato- rially an identity related to the JTP identity which in parti cular cases reduces to identities conjectured by Merca and proved analytically by Krattenthaler, Merca and Radu. Moreover, we introduce a new combinatorial i nterpretation for the number of distinct 5-regular partitions of n.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240108215106-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "TRUNCA TED THETA SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+  "title_lines": [
+   "TRUNCATED THETA SERIES RELATED TO THE JACOBI",
+   "TRIPLE PRODUCT IDENTITY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries and notation",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.1 and applications",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorems 1.2, 1.3, and 1.4",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.2",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.3",
+   "page": 13,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.4",
+   "page": 13,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Distinct 5-regular partitions.",
+   "page": 16,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 18,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 7466,
+   "n_words": 1390
+  },
+  {
+   "id": "sec-001-2-preliminaries-and-notation",
+   "number": "2",
+   "title": "Preliminaries and notation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3269,
+   "n_words": 702
+  },
+  {
+   "id": "sec-002-3-proof-of-theorem-11-and-applications",
+   "number": "3",
+   "title": "Proof of Theorem 1.1 and applications",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 11273,
+   "n_words": 2404
+  },
+  {
+   "id": "sec-003-4-proof-of-theorems-12-13-and-14",
+   "number": "4",
+   "title": "Proof of Theorems 1.2, 1.3, and 1.4",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-41-proof-of-theorem-12",
+   "number": "4.1",
+   "title": "Proof of Theorem 1.2",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2300,
+   "n_words": 422
+  },
+  {
+   "id": "sec-005-42-proof-of-theorem-13",
+   "number": "4.2",
+   "title": "Proof of Theorem 1.3",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 627,
+   "n_words": 102
+  },
+  {
+   "id": "sec-006-43-proof-of-theorem-14",
+   "number": "4.3",
+   "title": "Proof of Theorem 1.4",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 420,
+   "n_words": 83
+  },
+  {
+   "id": "sec-007-5-combinatorial-proof-of-an-identity-related-to",
+   "number": "5",
+   "title": "Combinatorial proof of an identity related to the Jacobi Triple Product",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 6507,
+   "n_words": 1263
+  },
+  {
+   "id": "sec-008-6-distinct-5-regular-partitions",
+   "number": "6",
+   "title": "Distinct 5-regular partitions.",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2694,
+   "n_words": 442
+  },
+  {
+   "id": "sec-009-7-concluding-remarks",
+   "number": "7",
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4535,
+   "n_words": 863
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3428,
+   "n_words": 572
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 42519
+ }
+}

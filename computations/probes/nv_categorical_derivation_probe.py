@@ -87,10 +87,10 @@ def main() -> int:
         ("|A_5| = 60",        60),
         ("|PSL(2,7)| = 168",  168),
         ("Mathieu M_11 = 7920", 7920),
-        ("[5]_q! ≈ 192.0",   float(qint(1)*qint(2)*qint(3)*qint(4)*qint(5))),
+        ("[5]_q! ≈ 192.0",   qint(1)*qint(2)*qint(3)*qint(4)*qint(5)),
         ("|S_4|·5 = 120",    120),       # alias
         ("|GL(2,F_3)|=48",   48),
-        ("|S_5|·[2]_q = 241.4", float(120 * qint(2))),
+        ("|S_5|·[2]_q = 241.4", 120 * qint(2)),
     ]
     rows_pass1 = []
     for name, factor in factor_candidates:
@@ -99,12 +99,14 @@ def main() -> int:
         frac = L_exact - L_floor
         rows_pass1.append({
             "factor_name": name,
-            "factor_value": float(factor),
+            "factor_value": (factor if isinstance(factor, int)
+                             else mpmath.nstr(factor, 14)),
             "L_exact": mpmath.nstr(L_exact, 14),
             "L_floor": L_floor,
             "L_frac": mpmath.nstr(frac, 12),
         })
-        print(f"  {name:<30}  {factor:>10}  {mpmath.nstr(L_exact, 16):>22}  "
+        fac_disp = factor if isinstance(factor, int) else mpmath.nstr(factor, 10)
+        print(f"  {name:<30}  {fac_disp:>10}  {mpmath.nstr(L_exact, 16):>22}  "
               f"{mpmath.nstr(frac, 8):>12}")
 
     # Pass 2: focus on factor=120 (the existing best candidate); refine L

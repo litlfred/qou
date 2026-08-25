@@ -7,14 +7,82 @@
     "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md"
   },
   "source_hashes": {
-    "ts": "44b4cd4c5bb3",
-    "md": "ec1825b1b1bd"
+    "md": "ec1825b1b1bd",
+    "ts": "44b4cd4c5bb3"
   },
   "criteria": {
-    "da-overclaim": [],
-    "da-false-claim": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT; one found, and it is a scope error on a PROVED result. The block wrote the pairwise cumulant as 'proved-capped at rho_A <= C(A,2)' -- general A -- citing exchangeDet_pow_two_le_four. That file contains EXACTLY ONE theorem, a single-variable polynomial inequality (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], and its own header scopes itself 'The cap (this file, A=4)'. No general-A cap exists anywhere in QOU/MassTheory. Corrected to state the A=4 cap as proved, to say what the file's header asserts versus what it proves, and to note that a general-A cap would be a stronger result not currently in the corpus. The EXCLUSION SURVIVES INTACT: it is run at the deuteron and 4He, where A=4 is all that is needed -- a scope correction, not a refutation.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "Both headline claims checked against the Lean, not taken on trust. (1) VALUE: 'PROVED, sorry-free, general-n' via QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional -- CONFIRMED. The theorem takes an arbitrary sorted partition list with no n<=5 hypothesis and its file carries no sorry; it is a composition of two imported results, which its own docstring states ('cosmetic bundle'). (2) CAP: see da-overclaim -- the scope was wrong and is corrected in this pass. rho_4~13>6 is consistent with rho_strong[4]=13.0316 and C(4,2)=6. Cited paths resolve.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "Claims are traceable to named declarations that exist and can be re-checked independently: dtEuler_eq_deltaLambda_unconditional (BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean) and exchangeDet_pow_two_le_four (MassTheory/BindingSaturationCapA4.lean), both sorry-free, the latter carrying its Bernstein certificate inline in the docstring. The witness contract names computations/delta-lambda-witness.json and its consumer binding_K_direct.py. CAUTION for a re-checker: `grep -c sorry` on BindingSaturationCapA4.lean returns 1 and the file is nonetheless sorry-free -- the hit is the phrase 'proved sorry-free' in its own docstring.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ec1825b1b1bd",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "notes": "The block's epistemic bookkeeping is its strongest feature and is unusually careful: it separates a proved VALUE from an open MAGNITUDE, names the six refuted ansatze with what each was refuted on, and states why a per-block weight cannot supply an extensive term (intensive/extensive mismatch) rather than merely asserting the ansatze failed. A referee's fair objections: (i) the exclusion rests on the pairwise-cumulant cap, which is proved only at A=4 -- now said plainly rather than implied for general A; (ii) 'Both are substrate-derived -- not fitted' is asserted rather than argued in this block, and a reader must follow the citation to judge it; (iii) the open magnitude has no candidate construction here, only a shape (additive, extensive, super-pairwise), so the block closes a question about what Delta_lambda IS without opening a route to what is missing. None of these is a defect in what the block claims.",
+        "reviewed_at": "2026-08-15T22:10:49.442266Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
@@ -313,11 +381,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T12:59:53.423Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -332,11 +400,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T11:31:42.624Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -904,7 +972,187 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.278Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.316Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.357Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.395Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.433Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.473Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.510Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.547Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.586Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cec0404c96a5",
+          "ts": "44b4cd4c5bb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.624Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:delta-lambda-closure. No constructions from the ten categories: 'What remains open is NOT the value - it is the many-body binding MAGNITUDE' is the block's central distinction, the documented substantive-contrast class, and the Notes summary is this appendix's template slot rather than manufactured restatement. VERIFIED THREE WAYS: both cited Lean theorems exist (QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional, QOU.MassTheory.exchangeDet_pow_two_le_four); the determinant inequality the block quotes, (1-m^2)^6 <= (1+3m)(1-m)^3 on [0,1], I checked at 40 dps over a 10001-point grid and it holds with equality only at m = 0; and the block's own careful correction - that the file proves the A = 4 instance, not the general-A cap rho_A <= C(A,2) - is accurate.",
+        "notes": "NOT A TRAP, reported separately: the cited witness computations/delta-lambda-witness.json has allPassed = true with an EMPTY assertions array - the documented vacuous-witness pattern. It does carry delta_lambda_by_partition and delta_lambda_per_atom data, so the values are there; what is absent is any check on them."
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:27:24.624Z"
 }

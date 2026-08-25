@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Mass/LinearChainBondCount.lean"
   },
   "source_hashes": {
-    "ts": "65e8ba66b6ce",
     "md": "f3bcc031a07c",
-    "lean": "771c008882df"
+    "ts": "65e8ba66b6ce",
+    "lean": "771c008882df",
+    "lean_statement": "32ea54c247b7"
   },
   "criteria": {
     "voice-status-leak": [
@@ -266,31 +267,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "f3bcc031a07c",
-          "ts": "65e8ba66b6ce",
-          "lean": "771c008882df",
-          "lean_statement": "32ea54c247b7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1713,7 +1694,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.507Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.594Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (3 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.671Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Two spaced em-dashes, both true parentheticals ('with **no fitted constant** — the count is …'; 'B(K) = … — which reproduces the tritium binding … — is an *empirical* consequence'). Density is low and neither substitutes for sentence structure.",
+        "notes": "note for the render axis, not a trap: 'the θ_λ residue' carries bare U+03B8 and U+03BB in PROSE, outside any $…$ or code span. Greek is not declared in LaTeX's utf8.def and is not transliterated in prose, so this aborts pdflatex. Proposed: '$\\theta_\\lambda$'. Not fixed inline because it is a math edit."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.751Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.836Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:46.929Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:47.000Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:47.056Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:47.118Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.634Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:14:47.182Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. Combinatorial identity checked directly: sum_{n=2}^{A}(A-n+1)(n-1) equals 4 at A=3 and 10 at A=4, matching C(A+1,3) = (A-1)A(A+1)/6 = 4 and 10 — the stated tetrahedral-number identity is right. The Scope paragraph is a model of honest hedging (empirical magnitude separated from the combinatorial claim, ~3%% mirror-pair residual and the deuteron Vol=0 exception both stated). All ten trap categories clean."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "f3bcc031a07c",
+          "ts": "65e8ba66b6ce",
+          "lean": "771c008882df",
+          "lean_statement": "32ea54c247b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T21:14:47.182Z"
 }

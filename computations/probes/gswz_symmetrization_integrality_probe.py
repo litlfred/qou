@@ -8,7 +8,7 @@ WHAT THIS CHECKS (exact rational arithmetic, sympy):
 
 1. U3 — the bar-even symmetrization integrality of the 4_1 Kashaev
    asymptotic series, from the printed GSWZ data (arXiv:2412.04241 v2,
-   eqns (1)-(2), uploaded at uploads/2412.04241v2.pdf). The inner
+   eqns (1)-(2), uploaded at library/arxiv-2412.04241v2/2412.04241v2.pdf). The inner
    series B(h) = 1 + b1 h + b2 h^2 + b3 h^3 + ... has coefficients with
    wild denominators (24*3*sqrt(-3), 1152*(3 sqrt(-3))^2, ...), yet the
    bar-even symmetrization B(h)B(-h):
@@ -36,6 +36,7 @@ independent recomputation of Phi(h) from formal Gaussian integration
 """
 
 import json
+import pathlib
 import sys
 from fractions import Fraction
 
@@ -105,14 +106,14 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_symmetrization_integrality_probe",
     "beans": ["qou-c0aw", "qou-1hlh"],
-    "source": "GSWZ arXiv:2412.04241v2 eqns (1)-(2); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 eqns (1)-(2); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "checks": checks,
     "h2_coefficient": str(c2),
     "gate_demo_perturbation": str(delta),
     "gate_demo_broken_denominator_support": sorted(denom_primes(c2f)),
     "scope": "scope-(a): verifies printed GSWZ data + symmetrization structure at supported orders; independent Phi recomputation not claimed",
 }
-with open("computations/probes/gswz_symmetrization_integrality.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_symmetrization_integrality.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

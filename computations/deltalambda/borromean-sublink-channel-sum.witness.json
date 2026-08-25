@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "name": "borromean-sublink-channel-sum",
   "description": "A=3 magnitude ROUTE 3: multi-sub-link channel sum. Brunnian sub-link triviality collapses every 2-sub-link deficit to 0; both channel closures = the single 3-body Borromean deficit c\u2083 (factor 1); r*\u22481.585 NOT supplied.",
-  "created": "2026-08-01T23:51:43.748790+00:00",
+  "created": "2026-08-23T09:01:09.250952+00:00",
   "parameters": {
     "borromean_band_word": [
       [
@@ -76,8 +76,8 @@
       }
     },
     "all_pairwise_deficits_zero_exact": true,
-    "borromean_triple_deficit_bandword_eq_gapA4_closed_form": false,
-    "borromean_triple_deficit_bare_h3_q0_bandword": 0.0016333774142840332,
+    "borromean_triple_deficit_bandword_eq_gapA4_closed_form": true,
+    "borromean_triple_deficit_bare_h3_q0_bandword": 0.001437836163212734,
     "borromean_triple_deficit_bare_h3_q0_closedform": 0.001437836163212734,
     "representative_note": "band-word [A\u2080\u2081,A\u2081\u2082] vs GAP-A-4 closed-form representative differ by framing/writhe (non-writhe-normalized trace); immaterial to the refutation (pairwise=0 for any Brunnian representative; closures collapse regardless).",
     "additive_closure_eq_single_triple_deficit": true,
@@ -90,5 +90,5 @@
   "lean": "QOU.MassTheory.BorromeanSubLinkChannelSum (brunnian_channelClosureMul_eq_triple, brunnian_channel_no_magnitude, borromean_channel_ne_r_star) \u2014 sorry-free, lean-direct exit 0",
   "invariant_cited": "Brunnian sub-link triviality: every proper 2-sub-link of the Borromean rings is the unlink \u21d2 its trace deficit against the unlink baseline is exactly 0.",
   "anti_fit": "\u03bc\u2083/c\u2083 reported as target context only; no free parameter tuned; nothing wired.",
-  "wall_seconds": 4.93
+  "wall_seconds": "0.53"
 }

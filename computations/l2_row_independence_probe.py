@@ -67,6 +67,12 @@ import codata_2022_source as CS  # noqa: E402
 COMPUTE_DPS = set_compute_dps()
 _UPSTREAM: list = []
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 #: The dashboard serializes pred_MeV / codata_MeV to ~12 significant figures,
 #: so an exact identity appears as a residual at that granularity (~1e-9 MeV
 #: on a ~1e3 MeV quantity), not as a bitwise zero. Score against that.

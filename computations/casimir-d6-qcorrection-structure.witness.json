@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:31:27.234618+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-23T08:57:02.039076+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "jones_4_1_leading_h2_coefficient_is_three_quarters",
@@ -14,19 +14,19 @@
     },
     {
       "name": "jones_identity_h_form",
-      "computed": "1.03280934911382554940058128104",
-      "expected": "1.03280934911382554940058128104",
+      "computed": "1.03280934182539968964952735759",
+      "expected": "1.03280934182539968964952735759",
       "passed": true,
       "tolerance": 1e-40,
       "source": "J_{4_1} = h² + 3 − √(h²+4)"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 12,
   "computation": "casimir-d6-qcorrection-structure",
   "scriptFile": "casimir_d6_qcorrection_structure.py",
-  "scriptHash": "072fb5ed3c8b",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "a729d61d6ff0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,13 +40,20 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_d6_qcorrection_structure.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_d6_qcorrection_structure.py"
   },
   "description": "First Casimir q-correction structure for conj:casimir-epsilon-vacuum: torus closures contribute Vol=0; the first hyperbolic mode is 4_1 (the substrate-defining knot); its q-weight is J_{4_1}(q)=1+(3/4)h²+O(h⁴), exact leading 3/4. Absolute 1/d-power awaits the interacting mode-sum.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
-    "h2_substrate": 0.04370621823290131,
+    "substrate_q": 1.1099785827513808,
+    "h2_substrate": 0.04370620853252199,
     "Vol_4_1": 2.0298832128193074
   },
   "data": {
@@ -106,10 +113,10 @@
     },
     "first_qcorrection_weight": {
       "knot": "figure-8 4_1",
-      "jones_J_4_1_at_q0": "1.0328093491138255494",
+      "jones_J_4_1_at_q0": "1.0328093418253996896",
       "jones_classical": "1",
-      "relative_deviation_at_q0": "0.03280934911",
-      "relative_h2_coefficient_at_q0": "0.750679204",
+      "relative_deviation_at_q0": "0.03280934183",
+      "relative_h2_coefficient_at_q0": "0.7506792039",
       "leading_h2_coefficient_exact": "3/4",
       "identity_J_eq_h2_plus_3_minus_sqrt_h2_plus_4": true,
       "expansion": "J_{4_1}(q) = 1 + (3/4) h^2 + O(h^4)",
@@ -127,6 +134,6 @@
   "caveats": [
     "Structural probe. Gives the q-weight (J_{4_1}) and the identification of the first hyperbolic mode (4_1 = substrate-defining knot); does NOT claim a numerical 1/d⁶ Casimir coefficient — that awaits the interacting-mode mode-sum (open)."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

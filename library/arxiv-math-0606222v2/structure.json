@@ -1,0 +1,376 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0606222v2",
+ "source": {
+  "file": "0606222v2.pdf",
+  "sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
+  "bytes": 476388,
+  "pages": 41,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0606222",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Nov 2006"
+  },
+  "doi": null,
+  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "authors_raw": "URI ONN AND JASPER V. STOKMAN",
+  "title_lines": [
+   "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN",
+   "DEGENERATIONS"
+  ],
+  "abstract": "We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the general linear group GLd(F) over a local \ufb01eld F and MF is a closed subgroup of KF such that KF/MF re- alizes the Grassmannian of n-dimensional F-subspaces of Fd. We explore the fact that (KF,MF) is a Gelfand pair whose associated zonal spherical functions ident ify with vari- ous degenerations of the multivariable little q-Jacobi polynomials. As a result, we are led to consider generalized dimensions de\ufb01ned in terms of evaluations an d quadratic norms of multivariable little q-Jacobi polynomials, which interpolate between the various classi- cal dimensions. The generalized dimensions themselves are shown to have representation theoretic interpretations as the quantum dimensions of irreducible spherical quantum rep- resentations associated to quantum complex Grassmannians.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181029073622-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Multivariable little q-Jacobi polynomials",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "CQG algebras and quantum dimensions",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Grassmannians over local fields",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Grassmann representation over local fields",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Irreducible constituents and dimension formulas: the Archimedean case",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
+   "page": 14,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The standard quantum complex Grassmannian",
+   "page": 16,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The CQG algebra of quantum representative functions on K",
+   "page": 16,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The quantum Grassmann representation",
+   "page": 19,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Quantum dimension formulas",
+   "page": 20,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Evaluation formulas",
+   "page": 21,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Macdonald-Koornwinder polynomials",
+   "page": 22,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Multivariable little q-Jacobi polynomials",
+   "page": 24,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Multivariable big q-Jacobi polynomials",
+   "page": 27,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Generalized dimension formulas",
+   "page": 29,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Generalized quantum dimensions",
+   "page": 30,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalized p-adic dimensions",
+   "page": 32,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "The one-parameter family of quantum complex Grassmannians",
+   "page": 35,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9969,
+   "n_words": 1694
+  },
+  {
+   "id": "sec-001-2-multivariable-little-q-jacobi-polynomials",
+   "number": "2",
+   "title": "Multivariable little q-Jacobi polynomials",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4439,
+   "n_words": 784
+  },
+  {
+   "id": "sec-002-3-cqg-algebras-and-quantum-dimensions",
+   "number": "3",
+   "title": "CQG algebras and quantum dimensions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 8325,
+   "n_words": 1543
+  },
+  {
+   "id": "sec-003-4-grassmannians-over-local-fields",
+   "number": "4",
+   "title": "Grassmannians over local fields",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3998,
+   "n_words": 761
+  },
+  {
+   "id": "sec-004-42-irreducible-constituents-and-dimension-formul",
+   "number": "4.2",
+   "title": "Irreducible constituents and dimension formulas: the Archimedean case",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5249,
+   "n_words": 995
+  },
+  {
+   "id": "sec-005-43-irreducible-constituents-and-dimension-formul",
+   "number": "4.3",
+   "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6380,
+   "n_words": 1238
+  },
+  {
+   "id": "sec-006-5-the-standard-quantum-complex-grassmannian",
+   "number": "5",
+   "title": "The standard quantum complex Grassmannian",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-51-the-cqg-algebra-of-quantum-representative-fun",
+   "number": "5.1",
+   "title": "The CQG algebra of quantum representative functions on K",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 5075,
+   "n_words": 932
+  },
+  {
+   "id": "sec-008-52-the-quantum-grassmann-representation",
+   "number": "5.2",
+   "title": "The quantum Grassmann representation",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3016,
+   "n_words": 564
+  },
+  {
+   "id": "sec-009-53-quantum-dimension-formulas",
+   "number": "5.3",
+   "title": "Quantum dimension formulas",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3056,
+   "n_words": 557
+  },
+  {
+   "id": "sec-010-6-evaluation-formulas",
+   "number": "6",
+   "title": "Evaluation formulas",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 179,
+   "n_words": 23
+  },
+  {
+   "id": "sec-011-61-macdonald-koornwinder-polynomials",
+   "number": "6.1",
+   "title": "Macdonald-Koornwinder polynomials",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 4510,
+   "n_words": 818
+  },
+  {
+   "id": "sec-012-62-multivariable-little-q-jacobi-polynomials",
+   "number": "6.2",
+   "title": "Multivariable little q-Jacobi polynomials",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 5497,
+   "n_words": 1140
+  },
+  {
+   "id": "sec-013-63-multivariable-big-q-jacobi-polynomials",
+   "number": "6.3",
+   "title": "Multivariable big q-Jacobi polynomials",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 4752,
+   "n_words": 952
+  },
+  {
+   "id": "sec-014-7-generalized-dimension-formulas",
+   "number": "7",
+   "title": "Generalized dimension formulas",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 848,
+   "n_words": 138
+  },
+  {
+   "id": "sec-015-71-generalized-quantum-dimensions",
+   "number": "7.1",
+   "title": "Generalized quantum dimensions",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2546,
+   "n_words": 441
+  },
+  {
+   "id": "sec-016-72-generalized-p-adic-dimensions",
+   "number": "7.2",
+   "title": "Generalized p-adic dimensions",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 5528,
+   "n_words": 1165
+  },
+  {
+   "id": "sec-017-8-the-one-parameter-family-of-quantum-complex-gr",
+   "number": "8",
+   "title": "The one-parameter family of quantum complex Grassmannians",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 40,
+   "n_chars": 11163,
+   "n_words": 2041
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 4527,
+   "n_words": 658
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 19,
+  "chars_total": 89057
+ }
+}

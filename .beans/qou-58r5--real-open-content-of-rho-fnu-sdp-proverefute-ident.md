@@ -30,3 +30,18 @@ Audit: 2026-08-02-rho-f-cap-no-derived-origin.md. Agent-B adversarial survey (ve
 => BREAKS nu_SDP in Z_{>0} at A=4. RE-SCOPE conj:kashaev-density-equals-sdp-multiplicity
 to census-knot/linear-chain atoms (rho_F=A-1 exact); doubly-magic prefactor is empirical
 (~1.89), an effective binding coefficient, not an integer count. scope-(a). Nothing wired.
+
+## 2026-08-21 (arc bk-crossing-coordination item 2) — CPT alt-block mechanism REFUTED under canonical convention
+
+Complementary to the 2026-08-02 re-scope. The corpus's one *positive* candidate mechanism for
+ρ_F(⁴He)=2 — the CPT alt-block-doubling in `frobenius-packing-density.md` ("closed shell populates
+the alternating antiparticle channel ⇒ CPT doubling ⇒ 2m_e") — is **refuted under the canonical
+colour-weighted convention-D**. The ⁴He H₁₂ decomposition (`chi-helium-4-h12-at-q0-50dps`,
+convention `colour-weighted-averaged-crossing`) has EXACT two-row dominance: the 7 nonzero y_λ
+blocks all have ≤2 rows; all 70 zero-weight blocks have >2 rows, and the alternating channel `[1¹²]`
+has `y=0` exactly. So there is nothing to double — the CPT "derivation" is a convention-C-frame
+over-claim, and the authoritative "not closed" status is confirmed. Any ρ_F derivation must live
+inside the two-row stratum. Probe `computations/he4_rho_F_cpt_mechanism_refuted.py`; audit
+`docs/audits/2026-08-21-he4-rho-F-cpt-mechanism-refuted.md`. Recommend re-scoping
+`frobenius-packing-density.md`'s "derives … without tuning" claim (owner call — content edit with
+sidecar).

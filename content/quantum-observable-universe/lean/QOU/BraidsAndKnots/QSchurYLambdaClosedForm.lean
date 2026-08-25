@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsAndKnots.QSchurYLambdaClosedForm
@@ -81,7 +82,12 @@ confirms this numerically against `pn.trace_weights_n_q_schur(2, q)`.
 
 -- Ref: [wenzl1988] Wenzl, "Hecke algebra traces of the symmetric group", Invent. Math. 92 (1988)
 -- Ref: [jones1987] Jones, "Hecke algebra representations of braid groups and link polynomials", Ann. Math. 126 (1987)
--- Ref: [lusztig1990] Lusztig, "Canonical bases arising from quantized enveloping algebras", J. Amer. Math. Soc. 3 (1990)
+-- Ref: [blm1990] Beilinson, Lusztig, MacPherson, "A geometric setting for the
+--   quantum deformation of GL_n", Duke Math. J. 61 (1990) — the q-Schur source.
+-- Ref: [lusztig1990] Lusztig, "Canonical bases arising from quantized enveloping
+--   algebras", J. Amer. Math. Soc. 3 (1990). Retained for the canonical-basis
+--   material only. It is NOT the source of the q-Schur weight identity below;
+--   see bean qou-2joi.
 -/
 
 namespace QOU.BraidsAndKnots
@@ -119,6 +125,21 @@ where
 noncomputable def qBracket (k : ℕ) (q : ℝ) : ℝ :=
   if _h : q - q⁻¹ = 0 then 0
   else (q ^ (k : ℤ) - q ^ (-(k : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket, and the guard is redundant.**
+
+This site guards the singular locus `q − q⁻¹ = 0` and returns `0` there — which
+is exactly what the *unguarded* `qIntBal` already returns, since Lean's
+`x / 0 = 0`.  So unlike the sites that guard to `n`, this one is not a
+classical extension at all: it agrees with the plain canonical bracket
+everywhere, and needs no hypothesis. -/
+theorem qBracket_eq_canonical (k : ℕ) (q : ℝ) :
+    qBracket k q = QOU.QInteger.qIntBal q k := by
+  unfold qBracket
+  split_ifs with h
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, h]
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 /-- q-factorial `[n]_q! = Π_{k=1}^{n} [k]_q`. At `n = 0` returns 1. -/
 noncomputable def qFactorial : ℕ → ℝ → ℝ
@@ -160,9 +181,27 @@ class QSchurYLambdaClosedFormClaim where
   qSchurWeight : List ℕ → ℝ → ℝ
   /-- **The conjecture**: the closed form `ySchurClosedForm` agrees
       with the q-Schur weight `qSchurWeight` at every partition and
-      every valid q. Equivalent to the Lusztig 1990 / BLM identity
-      `y_λ^{qSchur}(q) = q^{c(λ)} / [n]_q!`. Any instance of this
-      class commits to this extensional identification. -/
+      every valid q, i.e. `y_λ^{qSchur}(q) = q^{c(λ)} / [n]_q!`. Any
+      instance of this class commits to that extensional identification.
+
+      **Provenance corrected 2026-08-24 (bean `qou-2joi`).** This read
+      "the Lusztig 1990 / BLM identity" and carried a single
+      `-- Ref: [lusztig1990]`. That key is *Canonical bases arising from
+      quantized enveloping algebras* (JAMS 3), which is not where a
+      q-Schur Markov-trace weight identity lives; the q-Schur source is
+      BLM, now `[blm1990]`. Two further cautions before anyone treats
+      this as settled-in-the-literature rather than open here:
+
+      * `blm1990` is **UNVERIFIED** — added from recall because the
+        bibliography had zero q-Schur entries, and neither paper is in
+        `library/`, so nothing in this repo can check the identity as
+        stated. `lusztig1990` has no entry in
+        `content/bib-qa-verifications.json` either.
+      * The corpus asserts **two different DOIs** for `lusztig1990`:
+        `10.2307/1990961` in `content/schema/references.ts`, and
+        `10.2307/2152736` in `QOU/OptionE/CrystalDeltaLambdaScaffold.lean`
+        and `QOU/IwahoriHecke/TypeA.lean`. Not resolved here — guessing
+        which is right is exactly what produced the discrepancy. -/
   closed_form_holds : ∀ lam q, ySchurClosedForm lam q = qSchurWeight lam q
 
 /-! ## q-bracket and q-factorial closed-form values

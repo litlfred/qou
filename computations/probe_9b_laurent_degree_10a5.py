@@ -99,7 +99,7 @@ _D_PN_F64 = -_H_F64 * (0.5 - float(flavor_split_leading(_Q0_MP)) / 4)
 # Exact symbolic building blocks (all rational in q except √q inside z).
 S = sp.Symbol("s", positive=True)          # s = √q
 DELTA_SYM = (q_sym - 1) ** 2 * (1 - q_sym ** -4) / 3   # proven leading δ(q)
-Z_SYM = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))       # Markov z(q)
+Z_SYM = q_sym**3 / (q_sym**2 + 1)       # Markov z(q)
 H_Q = q_sym - 1 / q_sym                                  # Hecke h(q)
 F_SYM = {
     "positive": Z_SYM,                                    # p-p interface
@@ -435,7 +435,7 @@ def main() -> int:
 
     # (iv) exponent dictionary of structural constants (q₀-units).
     h0 = q0 - 1 / q0
-    z0 = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    z0 = q0**3 / (q0**2 + 1)
     dictionary = {
         "log_q0_z": float(logq(z0)),
         "log_q0_h": float(logq(h0)),

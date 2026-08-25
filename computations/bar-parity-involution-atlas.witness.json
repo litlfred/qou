@@ -129,5 +129,8 @@
     "This is a statement about which involution each label is computed against, not a claim that any block is wrong. Every parity assertion checked here is true against the half its own block uses.",
     "DISCREPANCY FLAGGED, NOT EDITED. eigenbasis-structural-lemmas.md:2 states 'the bar involution q -> q^{-1} swaps the seminormal eigenvalues q <-> -q^{-1}'. Computed here, neither half nor the full involution produces that swap: the coefficient half sends {q, -1/q} to the spectrum of sigma^{-1}, and the full involution FIXES both idempotents pointwise. The standard operation that does exchange the symmetric and alternating channels is the Iwahori-Matsumoto involution, not the bar involution. Scope (a): this tests the eigenvalue-swap sentence only. It does not test the conjugate-character identity chi_lambda(1/q) = eps * chi_{lambda'}(q) that the block draws from it, which may hold on other grounds. Author's call.",
     "Grading D is verified on the sym/alt Hecke block only, where electroweak-triplet-charge-spin-from-involution-proof.md:3 states the spin involution acts as the eigenvalue swap. The spin involution of def:spin-involution is defined on a general Frobenius *-algebra; that it coincides with the bar involution elsewhere is not checked here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

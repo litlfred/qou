@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T19:37:06.625692+00:00",
-  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:54:17.259991+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "dim_H_n_eq_factorial_n2",
@@ -126,7 +126,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n2",
-      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -134,7 +134,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n3",
-      "computed": "6.6819117752304891153513411678787046970379922002626e-51",
+      "computed": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -142,7 +142,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n4",
-      "computed": "4.0091470651382934692108047007272228182227953201576e-51",
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -150,7 +150,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n5",
-      "computed": "4.0091470651382934692108047007272228182227953201576e-51",
+      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -158,7 +158,7 @@
     },
     {
       "name": "bar_invariant_planch_total_n6",
-      "computed": "9.3546764853226847614918776350301865758531890803677e-51",
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -166,11 +166,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 16,
   "computation": "brundan-kleshchev-audit",
   "scriptFile": "brundan_kleshchev_audit.py",
-  "scriptHash": "5de5e544f5a4",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "742488c12937",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -180,8 +180,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/brundan_kleshchev_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/brundan_kleshchev_audit.py"
   },
   "description": "Empirical-evidence dossier for the Brundan–Kleshchev isomorphism H_n(R, q) ≅ R_α^Λ.  Collects necessary structural consequences (dimension matches, centre dimension via partition count, Jucys-Murphy content separation, q-dimension bar-invariance) and reports them as the empirical input feeding `CrystalGraphRealization`'s class-axiomatised instance in `thm:confinement-grading-correspondence-conditional`.",
   "auditOnly": "docs/audits/brundan-kleshchev-audit.md",

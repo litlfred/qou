@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-unique.lean"
   },
   "source_hashes": {
-    "ts": "02d616051db9",
     "md": "1b7d454db72a",
-    "lean": "f4f0364b9fa0"
+    "ts": "02d616051db9",
+    "lean": "f4f0364b9fa0",
+    "lean_statement": "46c68834c945"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1b7d454db72a",
-          "ts": "02d616051db9",
-          "lean": "f4f0364b9fa0",
-          "lean_statement": "46c68834c945"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2008,7 +1989,367 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.238Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.280Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.316Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 93 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.354Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.391Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.429Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.464Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.499Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.535Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.024Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:10.571Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, one setup sentence, a display, a three-item numbered characterisation, and a bold 'Archimedean specialisation.' banner paragraph. trap-triples PASSES -- the three conditions are the substance of the uniqueness claim (horizontal action, vertical action, R-linearity). trap-meta-commentary considered on the banner and PASSED: the wording is a repo-wide structural device, present in 140 content files, not a drafting tic. OUT-OF-SCOPE observations reported to the caller: (i) the banner is MISAPPLIED here -- it declares 'What follows sits on the archimedean side of the substrate wall ... real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter q_0', yet the block contains no real, no q_0, no numeric and no transcendental, its three conditions are purely categorical, and its proof uses only \\pi_H+\\pi_V=\\mathrm{id}; the .ts carries no archimedean tag and it is the ONLY block in this categorical chapter carrying the banner. (ii) the banner is also positioned last, so nothing follows what it announces."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "1b7d454db72a",
+          "ts": "02d616051db9",
+          "lean": "f4f0364b9fa0",
+          "lean_statement": "46c68834c945"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:00:10.571Z"
 }

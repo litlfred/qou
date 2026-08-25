@@ -300,30 +300,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "ac8bb7ec30d4",
-          "ts": "a494403e591e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -891,11 +872,210 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.597Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.651Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.708Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.763Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.818Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.866Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.919Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:29.973Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.071Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ac8bb7ec30d4",
+          "ts": "a494403e591e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.155Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 8 coefficient rows with S-eigenvalues. RECOMPUTED every row symbolically under the bar involution q->q^{-1} (sympy, ratio bar(e)/e): W_sym=W_alt=q^2/D -> ratio 1 (+1 correct); W_std=(q^2+1)^2/D -> 1 (+1 correct); [3]_q=q^2+1+q^{-2} -> 1 (+1 correct); h_A=q-q^{-1} -> -1 (-1 correct); h_A^2 -> +1 correct. INDEPENDENT INVARIANT: W_sym+W_std+W_alt = (q^2+(q^2+1)^2+q^2)/D = (q^4+4q^2+1)/D = 1 exactly, so D=q^4+4q^2+1 and all three weights are mutually confirmed; at q=1 they give 1/6, 4/6, 1/6 = dim_lambda^2/|S_3|, the correct Plancherel limit. Vol(B_3)=8G checked: G=Cl_2(pi/2)=0.915965594177, 8G=7.32772475342 -- this is the CORRECT value, not the live 8*Cl_2(pi/4)=7.85497720840 corpus error. alpha=m_e*8G=3.7445 MeV.",
+        "notes": "TWO FINDINGS. (1) CONVENTION C, load-bearing. Row 'z = (q^{1/2}+q^{-1/2})^{-1}' is exactly convention C: it equals sqrt(q)/(q+1) = 0.499320334184 at the proton pin, against canonical convention D z=q^3/(q^2+1)=0.612688037146. The S-eigenvalue +1 assigned to it DEPENDS on C: bar(z_C)/z_C = 1, but bar(z_D)/z_D = q^{-4}, so under D this row is simply false. And z is not inert -- it appears inside Phi_1 = sum log|z a_i + b_i| in table1, so the parent's Phi_1 = +1 classification, hence its 'exactly one of the three terms is S-anti-invariant' conclusion, rests on it. Proposed fix: re-derive the parent under D, or scope the whole prop:frobenius-s-classification result as convention-C-conditional (per the 2026-08-15 R1 ruling). (2) D is only PROJECTIVELY S-invariant: bar(D)/D = q^{-4}, not 1, so the '+1' in the D row is true only in the 'palindromic' sense its own parenthetical states. Harmless because D occurs solely as the common denominator of the invariant ratios, but the column header claims more than the row delivers."
+      }
     ]
   },
   "source_hashes": {
-    "ts": "a494403e591e",
-    "md": "ac8bb7ec30d4"
+    "md": "ac8bb7ec30d4",
+    "ts": "a494403e591e"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:16:30.155Z"
 }

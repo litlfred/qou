@@ -60,8 +60,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (H_num)
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 TWO_PI_I = 2j * mp.pi
 V51_PRINTED = mp.mpc("2.821", "1.379")     # GGM eq 21, 4 digits

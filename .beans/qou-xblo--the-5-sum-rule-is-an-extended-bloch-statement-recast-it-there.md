@@ -314,7 +314,7 @@ kind that was overlooked.
 ## Route 49 — Neumann's actual definitions OVERTURN this bean's own target
 
 Probe `computations/probes/qbeta_5two_route49_neumann_kernel_probe.py`
-(6 gates, all pass, dps 45). Source: **`uploads/0307092v2.pdf`** — W D Neumann,
+(6 gates, all pass, dps 45). Source: **`library/0307092v2/0307092v2.pdf`** — W D Neumann,
 *Extended Bloch group and the Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004)
 413–474.
 

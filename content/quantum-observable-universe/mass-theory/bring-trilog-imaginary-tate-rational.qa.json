@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/BringTrilogImaginaryTateRational.lean"
   },
   "source_hashes": {
-    "ts": "3b7a19a32f4e",
     "md": "4177355afe36",
-    "lean": "74cb11ecb0e4"
+    "ts": "3b7a19a32f4e",
+    "lean": "74cb11ecb0e4",
+    "lean_statement": "b453f56fa4fb"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -806,31 +807,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4177355afe36",
-          "ts": "3b7a19a32f4e",
-          "lean": "74cb11ecb0e4",
-          "lean_statement": "b453f56fa4fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1768,7 +1749,379 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.914Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.950Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:38.984Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.019Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.053Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'The real part Cl_3(2pi/5) stands alone as the genuinely new depth-3 period.' is a quotable-sounding closer, and it sits in tension with the sentence immediately before it, which says the 2-dimensional regulator image is generated by TWO real parts, Cl_3(2pi/5) and Cl_3(4pi/5).",
+        "notes": "proposed (structural, NOT applied): reconcile the two sentences -- either the image needs both real parts, in which case neither 'stands alone', or say which one is redundant and why."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.089Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.123Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.157Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.192Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 88-word proposition; the Tate-rationality statement and the Borel rank checked."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.558Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "94a144b3d10d",
+          "ts": "3b7a19a32f4e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:39.226Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "FIX APPLIED -- one agreement error repaired.",
+        "notes": "fix applied: 'The Borel-predicted 2-dimensional regulator image generates entirely from the real parts' -> '... is generated entirely by the real parts' (grammar only). RIGOR (not a trap): the Borel rank is right -- for Q(zeta_5) (r_1 = 0, r_2 = 2) the rank of K_5 is r_1 + r_2 = 2, matching '2-dimensional regulator image'. DEFECT: 'Because 4pi^3/125 lies in (2pi i)^3 . Q, it is Tate-rational' is false as written -- (2pi i)^3 = -8i pi^3, so (2pi i)^3 . Q is purely IMAGINARY, and 4pi^3/125 is real. The Tate object is i*S_3(2pi/5) = Li_3(zeta_5) - Li_3(zeta_5-bar) over 2, which does lie in (2pi i)^3 . Q (it equals (2pi i)^3 * (-1/125)). Proposed: state the Tate-rationality of Li_3(zeta_5) - conj, or of i*S_3, rather than of the real number 4pi^3/125."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "4177355afe36",
+          "ts": "3b7a19a32f4e",
+          "lean": "74cb11ecb0e4",
+          "lean_statement": "b453f56fa4fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:01:39.226Z"
 }

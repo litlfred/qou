@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/quantum-observable-universes/adjoint-trace.md"
   },
   "source_hashes": {
-    "ts": "fd1a5b8715ac",
-    "md": "b3beca985bc4"
+    "md": "b3beca985bc4",
+    "ts": "fd1a5b8715ac"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -280,30 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b3beca985bc4",
-          "ts": "fd1a5b8715ac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1234,7 +1215,382 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.024Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of remark 'Adjoint trace and the categorical inner product'. No assert-by-denial construction anywhere; all claims stated positively (cyclic, non-degenerate, recovers Killing form)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.067Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No setup-then-reframe. Three sentences, each advancing definition -> properties -> archimedean limit."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.115Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.167Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No reflex three-item list; two properties (cyclicity, non-degeneracy) then a limit statement."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.209Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Block ends on a displayed identity tr_Ad(f)=tr(ad f)=-2 tr_{C^2}(f), not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.291Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No narration of emphasis; 'We define' is standard mathematical register."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.338Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Final sentence introduces new content (archimedean limit), does not restate the opening."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.438Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Institutional register throughout; no personal/affective language."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.545Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No unqualified maximum-strength claims; 'canonical sesquilinear form' is a technical use of 'canonical', not inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.981Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:49:54.588Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Sentences are long but clause-structured and read aloud cleanly; no noun-chain pileups."
+      },
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:07:56.743Z",
+        "reviewed_sha": "d729ce611f0d3df628d4c213f7075dee5ecf6c32",
+        "evidence": "Re-recorded to carry a math finding surfaced by recomputation after the first pass; trap verdict unchanged (sentences are clause-structured and read aloud).",
+        "notes": "MATH FINDING to report (not edited): the closing claim 'the adjoint trace recovers the Killing form on su(2): tr_Ad(f) = tr(ad(f)) = -2 tr_{C^2}(f)' does not say what it means to say. Computed symbolically (sympy, gl(2) basis): tr(ad X) = 0 for every X in su(2) - ad is traceless on any perfect Lie algebra - and tr_{C^2}(X) = 0 too, so the displayed chain is 0 = 0 = 0, vacuously true on su(2) and false off it (f = id gives tr(ad f) = 0 but -2 tr(f) = -4). The Killing form is moreover a BILINEAR form, not a linear functional: B(X,Y) = tr(ad X ad Y), and on su(2) the computed ratio B(X,X)/tr(X^2) is exactly 4 (tr(ad^2) = -8 against tr(X^2) = -2 on each of the three standard generators), so the normalisation is +4 tr(XY), not -2 tr(X). The sentence above it is fine; what should presumably be claimed is that the induced pairing <f,g>_Ad, not the trace of a single endomorphism, recovers the Killing form, with coefficient 4."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b3beca985bc4",
+          "ts": "fd1a5b8715ac"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:07:56.743Z"
 }

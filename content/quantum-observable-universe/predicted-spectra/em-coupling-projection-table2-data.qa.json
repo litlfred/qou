@@ -299,30 +299,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "8a357d486ed2",
-          "ts": "da691453e591"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -890,12 +871,211 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.314Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.352Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.392Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.431Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.470Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.510Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.550Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.589Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.629Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8a357d486ed2",
+          "ts": "da691453e591"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:31.668Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full: a 4x2 structural analogy table (mass vs coupling) with no numerics to recompute. Signs check out against the computed values: delta_CS = +0.00155 > 0, so the 'Positive (increases 1/alpha)' row is correct, and it is consistent with rem:em-coupling-projection-interpretation.",
+        "notes": "One incompleteness worth an author look: the 'Divisor correction' cell gives the coupling correction as (CS_1 + CS_2) * hbar_q^2, but the actual delta_CS defined in prop:em-coupling-projection's discussion and in rem:em-coupling-chern-simons is (CS_1 + CS_2) * ([2]_q/2) * hbar_q^2 / (q[9]_q[10]_q). The [2]_q/2 factor and the normalisation are dropped. Acceptable as a schematic analogy, but a reader who takes the cell literally gets a number 1.005x too large before normalisation. Proposed fix: write the cell as '(CS_1+CS_2)*([2]_q/2)*hbar_q^2 (force-carrier blow-up centres, normalised by the base term)'."
+      }
     ]
   },
   "label": "tbl:em-coupling-projection-table2-data",
   "source_hashes": {
-    "ts": "da691453e591",
-    "md": "8a357d486ed2"
+    "md": "8a357d486ed2",
+    "ts": "da691453e591"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:30:31.668Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance-proof.md"
   },
   "source_hashes": {
-    "ts": "b7cd430a5b82",
-    "md": "59e90a8c9411"
+    "md": "5b67c6864bec",
+    "ts": "b7cd430a5b82"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -447,7 +447,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -776,30 +777,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "59e90a8c9411",
-          "ts": "b7cd430a5b82"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1341,374 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not on the trace functional.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.857Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'the fold acts on the index set of the tower, not on the trace functional' and 'a quantity that does not appear in the definition of Delta_cat' are the load-bearing distinctions of Step 2; substantive."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.915Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three numbered proof steps plus three falsifiable predictions; no reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (5 in 598 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:18.973Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes, each a genuine appositive ('any two evaluation routes ... -- seminormal-form evaluation, recursive Markov peeling, or the Wenzl bridge -- return the same value'; 'The conventions differ only in how the divergent tower -- a quantity that does not appear in the definition of Delta_cat -- is regularized'). Acceptable density for a proof of this length."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 598 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.029Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Threes here are counted objects: three trace axioms M1-M3, three evaluation routes, three falsifiable predictions, six convention families. Substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.091Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on prediction 3's magic-shell decomposition formula."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.147Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The proof factors into three steps' is a proof roadmap, standard usage."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.219Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The Step 3 close restates the proposition, which is what a proof's last line should do."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.277Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.339Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Typographic shouting in falsifiable prediction 1: 'the resulting Delta_cat should be ATOM-DEPENDENT but CONVENTION-INDEPENDENT'.",
+        "notes": "FIXED inline (case change only, no math, no meaning change): now 'should be atom-dependent but convention-independent'. $$ count re-checked even. SEPARATE, NOT fixed (reported to the coordinating session): prediction 2 reads 'vary by orders of magnitude across the six canonical evaluation families', where Step 2 calls the same six objects 'brane-tower convention families'. 'canonical evaluation families' fits the chapter's confirmed 'canonical'-for-'numerical' token substitution; restoring the original word is a sweep-repair task, not a trap fix."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.586Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8553302ee2bd",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:11:19.400Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Dense but navigable; the six-item case list is enumerated rather than run together."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "5b67c6864bec",
+          "ts": "b7cd430a5b82"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T22:11:19.400Z"
 }

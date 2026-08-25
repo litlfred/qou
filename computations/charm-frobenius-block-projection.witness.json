@@ -1,13 +1,13 @@
 {
   "engine": "mpmath+snappy",
   "engineVersion": "mpmath 1.4.1; snappy 3.3.2",
-  "computedAt": "2026-08-09T23:49:59.119276+00:00",
-  "durationMs": 1145,
+  "computedAt": "2026-08-23T08:57:05.923148+00:00",
+  "durationMs": 1890,
   "computation": "charm-frobenius-block-projection",
   "scriptFile": "charm_frobenius_block_projection_probe.py",
-  "scriptHash": "672a518eeacd",
-  "scriptCommitSha": "a570a65844db70e62c89a100674fde40a53f36dd",
-  "commitSha": "7cf2fb901d1ae4c3785ac7ff728b22df6240e0cd",
+  "scriptHash": "9676f78031f0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "hecke_resid_(3,)",
@@ -135,7 +135,7 @@
           1
         ],
         "vol": "9.802001165794124",
-        "chern_simons": "-0.14232109876142504",
+        "chern_simons": "-0.14232109876142482",
         "components": 3,
         "block_frac_re": {
           "(3,)": "0.5534234463348039",
@@ -143,7 +143,7 @@
           "(1, 1, 1)": "0.0"
         },
         "charm_block_proj_re": "4.377343899642574",
-        "charm_block_proj_im": "-0.06355726579872122"
+        "charm_block_proj_im": "-0.0635572657987211"
       },
       "k=2 (winding 7 on strand1)": {
         "word": [
@@ -158,16 +158,16 @@
           1,
           1
         ],
-        "vol": "10.448618163634748",
-        "chern_simons": "-0.21323378701260273",
+        "vol": "10.448618163634746",
+        "chern_simons": "-0.2132337870126032",
         "components": 3,
         "block_frac_re": {
           "(3,)": "0.5897236745145122",
           "(2, 1)": "0.41027632548548776",
           "(1, 1, 1)": "0.0"
         },
-        "charm_block_proj_re": "4.28682066657699",
-        "charm_block_proj_im": "-0.08748477460488577"
+        "charm_block_proj_re": "4.286820666576989",
+        "charm_block_proj_im": "-0.08748477460488596"
       },
       "k=3 (winding 9 on strand1)": {
         "word": [
@@ -184,16 +184,16 @@
           1,
           1
         ],
-        "vol": "10.684477168690778",
-        "chern_simons": "0.24797973246763136",
+        "vol": "10.684477168690782",
+        "chern_simons": "0.24797973246763094",
         "components": 3,
         "block_frac_re": {
           "(3,)": "0.6163570218053254",
           "(2, 1)": "0.38364297819467463",
           "(1, 1, 1)": "0.0"
         },
-        "charm_block_proj_re": "4.099024641449535",
-        "charm_block_proj_im": "0.09513568309580074"
+        "charm_block_proj_re": "4.099024641449536",
+        "charm_block_proj_im": "0.09513568309580059"
       },
       "k=4 (winding 11 on strand1)": {
         "word": [
@@ -212,20 +212,23 @@
           1,
           1
         ],
-        "vol": "10.794664454363982",
-        "chern_simons": "0.22397763498608347",
+        "vol": "10.794664454363987",
+        "chern_simons": "0.22397763498608325",
         "components": 3,
         "block_frac_re": {
           "(3,)": "0.6352573116956504",
           "(2, 1)": "0.36474268830434964",
           "(1, 1, 1)": "0.0"
         },
-        "charm_block_proj_re": "3.937274932428124",
-        "charm_block_proj_im": "0.08169420470487444"
+        "charm_block_proj_re": "3.937274932428126",
+        "charm_block_proj_im": "0.08169420470487436"
       }
     }
   },
   "snappy_error": null,
   "verdict": "Reading (A) [PARAMETER-FREE, scale-free]: the H_3 Wedderburn-block ratio y_[2,1]\u03c7_[2,1] / y_[3]\u03c7_[3] on the Borromean baryon predicts m_charm/m_light = 0.9758, vs observed ~372 (current) \u2014 a 381x UNDERSHOOT. The block projection is O(1), not O(100): the charm/light hierarchy is NOT the Frobenius block ratio of the proton braid. Scope-(a) negative, no knob. Reading (B) needs a tuned twist count (=FIT) to move the number and is NOT canonical. m_c stays OPEN.",
-  "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is O(100). No parameter-free block projection reproduces m_c."
+  "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is O(100). No parameter-free block projection reproduces m_c.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

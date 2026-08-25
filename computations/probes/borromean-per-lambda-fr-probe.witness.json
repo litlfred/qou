@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T16:45:52.945518+00:00",
-  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
+  "computedAt": "2026-08-24T10:27:11.904323+00:00",
+  "commitSha": "1c768a5ad3dddbb5c86fe78fdc53ce98a6faef2d",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
-      "computed": 6.165558495071314,
-      "expected": 6.17,
+      "computed": 7.162229445453156,
+      "expected": 7.16,
       "passed": true,
       "tolerance": 0.5,
       "unit": "max/min |net/target|",
-      "source": "2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md (6.17x)"
+      "source": "borromean_binding_recompute.py (z = q^3/(q^2+1), convention D) gives 7.162229445453156; this mirror now reproduces it. The old 6.17 reference was the C-frame straddle recorded in 2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md. Referenced against the PRODUCER, not its committed witness, which is 17-23% stale (bean qou-5t68)."
     },
     {
       "name": "wedderburn_lift_consistent_to_2em4",
-      "computed": 0.00019582292049379708,
+      "computed": 9.987438477423559e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.0005,
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "d2084dd62ebc",
-  "scriptCommitSha": "edc01cf0cba4cf8e4ede80a7ea80fde8aed8cd9e",
+  "scriptHash": "ce596ada2659",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,482 +37,492 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 6.17×). No fitted parameters (Δ_λ gate honored). Audit-only.",
+  "invocation": {
+    "argv": [
+      "computations/probes/borromean_per_lambda_fr_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/borromean_per_lambda_fr_probe.py"
+  },
+  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 7.16x, convention D). No fitted parameters (Δ_λ gate honored). Audit-only.",
   "parameters": {
-    "tau_closed_form": "0.998562163197412556751240951251923033958099346313578128164690",
-    "channel_fraction_21": "0.561142447619034023480286665258449693199599208281248462911518"
+    "tau_closed_form": "0.998562163836787265951213135146650202094025880059411134127535",
+    "channel_fraction_21": "0.493868038658694878822238240951401409387786270582777369606794"
   },
   "data": {
-    "wedderburn_lift_mismatch_rel": 0.00019582292049379708,
+    "wedderburn_lift_mismatch_rel": 9.987438477423559e-51,
     "wedderburn_lift_note": "y-lambda-at-q0 × proved chi closed forms reproduce the Lean closed-form tau to 1.96e-4 relative only — convention gap flagged; fractions normalized so baseline tau is exact.",
     "results": {
       "baseline": {
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.480295937516178,
-            "net_over_target": 1.1149537180915967
+            "B_tower": 2.063076949816325,
+            "net_over_target": 0.9274035735470695
           },
           "3H": {
             "A": 3,
-            "B_tower": 4.919025491475729,
-            "net_over_target": 0.5799492221629917
+            "B_tower": 4.741966424926435,
+            "net_over_target": 0.559074097994574
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.300242950437091,
-            "net_over_target": 0.5571664465902033
+            "B_tower": 3.94272358063608,
+            "net_over_target": 0.5108439947764165
           },
           "4He": {
             "A": 4,
-            "B_tower": 6.387362312165436,
-            "net_over_target": 0.22573636301795813
+            "B_tower": 6.475459552758949,
+            "net_over_target": 0.22884981575659816
           },
           "6Li": {
             "A": 6,
-            "B_tower": 10.51481132572877,
-            "net_over_target": 0.3286436822745505
+            "B_tower": 11.487453061658872,
+            "net_over_target": 0.3590439007594813
           },
           "7Li": {
             "A": 7,
-            "B_tower": 13.43374848138595,
-            "net_over_target": 0.3423087868413659
+            "B_tower": 15.049168650906994,
+            "net_over_target": 0.38347172205889146
           },
           "12C": {
             "A": 12,
-            "B_tower": 32.64154831230646,
-            "net_over_target": 0.35417682611491896
+            "B_tower": 37.55866561603116,
+            "net_over_target": 0.40752996315380674
           },
           "16O": {
             "A": 16,
-            "B_tower": 56.092227337216826,
-            "net_over_target": 0.4395288110486434
+            "B_tower": 65.09570286743161,
+            "net_over_target": 0.5100784590651205
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 685.1145641713874,
-            "net_over_target": 1.3917907506518736
+            "B_tower": 806.8411704090365,
+            "net_over_target": 1.639074888998437
           }
         },
-        "spread": 6.165558495071314
+        "spread": 7.162229445453156
       },
       "w_chirality_1_minus_h2::both": {
-        "tau_weighted": "0.974072012465274519486230877519727910657568546601087372220751",
+        "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.3643269986030826,
-            "net_over_target": 1.0628228422277366
+            "B_tower": 1.979457592917592,
+            "net_over_target": 0.8898146264103682
           },
           "3H": {
             "A": 3,
-            "B_tower": 4.611391891421787,
-            "net_over_target": 0.5436794635753086
+            "B_tower": 4.490040801727197,
+            "net_over_target": 0.5293722658998813
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.031481075644225,
-            "net_over_target": 0.5223439724920731
+            "B_tower": 3.7340069639777598,
+            "net_over_target": 0.48380136090941006
           },
           "4He": {
             "A": 4,
-            "B_tower": 5.926369848028297,
-            "net_over_target": 0.20944438564964674
+            "B_tower": 6.08341652111121,
+            "net_over_target": 0.2149945866674106
           },
           "6Li": {
             "A": 6,
-            "B_tower": 9.702695710938201,
-            "net_over_target": 0.3032607573879801
+            "B_tower": 10.750371520830393,
+            "net_over_target": 0.33600618907731933
           },
           "7Li": {
             "A": 7,
-            "B_tower": 12.419651756792824,
-            "net_over_target": 0.3164683283858372
+            "B_tower": 14.1085091125666,
+            "net_over_target": 0.35950253536120813
           },
           "12C": {
             "A": 12,
-            "B_tower": 30.495380031736737,
-            "net_over_target": 0.33088984650696585
+            "B_tower": 35.50820352430052,
+            "net_over_target": 0.38528144268627995
           },
           "16O": {
             "A": 16,
-            "B_tower": 52.77087232165807,
-            "net_over_target": 0.4135032583052529
+            "B_tower": 61.87764176148707,
+            "net_over_target": 0.4848622991990775
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 656.2241573810969,
-            "net_over_target": 1.333100710976644
+            "B_tower": 777.5798838298622,
+            "net_over_target": 1.5796314175808877
           }
         },
-        "spread": 6.364938868338162,
+        "spread": 7.347307865125574,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chirality_1_minus_h2::atom_only": {
-        "tau_weighted": "0.974072012465274519486230877519727910657568546601087372220751",
+        "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 2.601806741678122,
-            "net_over_target": 1.1695757979972434
+            "B_tower": 2.204451717351873,
+            "net_over_target": 0.9909549910710385
           },
           "3H": {
             "A": 3,
-            "B_tower": 5.016358167080505,
-            "net_over_target": 0.5914246677783586
+            "B_tower": 4.8943993134223085,
+            "net_over_target": 0.5770458152114161
           },
           "3He": {
             "A": 3,
-            "B_tower": 4.4364473513029425,
-            "net_over_target": 0.5748139430026236
+            "B_tower": 4.138365475672871,
+            "net_over_target": 0.5361925857091085
           },
           "4He": {
             "A": 4,
-            "B_tower": 6.5314158061601795,
-            "net_over_target": 0.23082737089024813
+            "B_tower": 6.71178428648815,
+            "net_over_target": 0.23720179005772898
           },
           "6Li": {
             "A": 6,
-            "B_tower": 10.805955553669833,
-            "net_over_target": 0.3377434852267352
+            "B_tower": 11.960885484309134,
+            "net_over_target": 0.37384117765471453
           },
           "7Li": {
             "A": 7,
-            "B_tower": 13.82117889582956,
-            "net_over_target": 0.3521810004932295
+            "B_tower": 15.677253800449321,
+            "net_over_target": 0.39947612067263794
           },
           "12C": {
             "A": 12,
-            "B_tower": 33.88235733407254,
-            "net_over_target": 0.36764021323550417
+            "B_tower": 39.54145861898885,
+            "net_over_target": 0.4290442407827775
           },
           "16O": {
             "A": 16,
-            "B_tower": 58.34262778647598,
-            "net_over_target": 0.45716255249199556
+            "B_tower": 68.6930250664196,
+            "net_over_target": 0.5382664420377812
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 713.4167086727525,
-            "net_over_target": 1.44928575221888
+            "B_tower": 852.2965843353114,
+            "net_over_target": 1.7314162695179958
           }
         },
-        "spread": 6.27865641162622,
+        "spread": 7.299338968296202,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::both": {
-        "tau_weighted": "0.145813663296813468503949943459979373422314586218811445972184",
+        "tau_weighted": "0.248048226013233453968940667090380815266293429958297985044525",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 0.05558370650432753,
-            "net_over_target": 0.024986236236944136
+            "B_tower": 0.13630622178587706,
+            "net_over_target": 0.06127298217944615
           },
           "3H": {
             "A": 3,
-            "B_tower": 0.048784915468845884,
-            "net_over_target": 0.005751703020948672
+            "B_tower": 0.1776483535803755,
+            "net_over_target": 0.02094460064417482
           },
           "3He": {
             "A": 3,
-            "B_tower": 0.04281047765309689,
-            "net_over_target": 0.005546793980182176
+            "B_tower": 0.14956062052541924,
+            "net_over_target": 0.01937801199802065
           },
           "4He": {
             "A": 4,
-            "B_tower": 0.07251213575997872,
-            "net_over_target": 0.0025626581053569118
+            "B_tower": 0.25266355904963933,
+            "net_over_target": 0.008929406239944862
           },
           "6Li": {
             "A": 6,
-            "B_tower": 0.1792416232099617,
-            "net_over_target": 0.005602252407939101
+            "B_tower": 0.6089353239075934,
+            "net_over_target": 0.019032462011596512
           },
           "7Li": {
             "A": 7,
-            "B_tower": 0.2592039153769901,
-            "net_over_target": 0.006604841376937524
+            "B_tower": 0.8872621466538427,
+            "net_over_target": 0.022608554079464844
           },
           "12C": {
             "A": 12,
-            "B_tower": 0.7968035024851068,
-            "net_over_target": 0.008645709230680948
+            "B_tower": 2.7110146885697377,
+            "net_over_target": 0.029415840473062067
           },
           "16O": {
             "A": 16,
-            "B_tower": 1.4520934503294585,
-            "net_over_target": 0.011378348445995178
+            "B_tower": 4.943593317296785,
+            "net_over_target": 0.038737126268790584
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 18.984759526951034,
-            "net_over_target": 0.03856699900244799
+            "B_tower": 64.94889987422852,
+            "net_over_target": 0.13194184277675453
           }
         },
-        "spread": 15.049607640530967,
+        "spread": 14.776104841834282,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::atom_only": {
-        "tau_weighted": "0.145813663296813468503949943459979373422314586218811445972184",
+        "tau_weighted": "0.248048226013233453968940667090380815266293429958297985044525",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 4.975358593198738,
-            "net_over_target": 2.236545437348533
+            "B_tower": 5.247638063801956,
+            "net_over_target": 2.3589417222100404
           },
           "3H": {
             "A": 3,
-            "B_tower": 6.708228910462856,
-            "net_over_target": 0.7908948927904581
+            "B_tower": 7.866515621049408,
+            "net_over_target": 0.9274559815692182
           },
           "3He": {
             "A": 3,
-            "B_tower": 6.702254472647107,
-            "net_over_target": 0.8683861241580598
+            "B_tower": 7.838427887994452,
+            "net_over_target": 1.015595877615127
           },
           "4He": {
             "A": 4,
-            "B_tower": 9.241519538716531,
-            "net_over_target": 0.32660539788951237
+            "B_tower": 11.56837939976886,
+            "net_over_target": 0.4088391677331322
           },
           "6Li": {
             "A": 6,
-            "B_tower": 16.85155431219974,
-            "net_over_target": 0.5267005455114108
+            "B_tower": 22.681969776561104,
+            "net_over_target": 0.7089319853385438
           },
           "7Li": {
             "A": 7,
-            "B_tower": 21.93452598244313,
-            "net_over_target": 0.5589192762834796
+            "B_tower": 30.124667183095838,
+            "net_over_target": 0.7676143625685605
           },
           "12C": {
             "A": 12,
-            "B_tower": 60.00949001689567,
-            "net_over_target": 0.651132431207189
+            "B_tower": 85.69098795374902,
+            "net_over_target": 0.9297892933794494
           },
           "16O": {
             "A": 16,
-            "B_tower": 105.72164632257373,
-            "net_over_target": 0.8284161944739712
+            "B_tower": 152.42639478926438,
+            "net_over_target": 1.1943863749854204
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 1308.4751332437033,
-            "net_over_target": 2.6581300167062194
+            "B_tower": 1909.0092906748548,
+            "net_over_target": 3.878098076754795
           }
         },
-        "spread": 8.13865917061616,
+        "spread": 9.485632451160367,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::both": {
-        "tau_weighted": "0.730639430385304885512150664476071895979858292756983071396481",
+        "tau_weighted": "0.762760226994628152406176739390563736054408965541311919568238",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 1.3538800403171745,
-            "net_over_target": 0.6086022082966819
+            "B_tower": 1.2340432842341098,
+            "net_over_target": 0.55473265396735
           },
           "3H": {
             "A": 3,
-            "B_tower": 2.206990316623337,
-            "net_over_target": 0.2602024160405339
+            "B_tower": 2.4381636298596283,
+            "net_over_target": 0.2874575671733261
           },
           "3He": {
             "A": 3,
-            "B_tower": 1.9307899359994467,
-            "net_over_target": 0.2501652534872693
+            "B_tower": 2.0326375931039156,
+            "net_over_target": 0.2633612747019931
           },
           "4He": {
             "A": 4,
-            "B_tower": 2.622663714706441,
-            "net_over_target": 0.09268780123047225
+            "B_tower": 3.1144904477815496,
+            "net_over_target": 0.11006949535293081
           },
           "6Li": {
             "A": 6,
-            "B_tower": 4.473215022024145,
-            "net_over_target": 0.13981171995418173
+            "B_tower": 5.65789326121789,
+            "net_over_target": 0.17683920497300384
           },
           "7Li": {
             "A": 7,
-            "B_tower": 6.03455274155532,
-            "net_over_target": 0.15376798448729967
+            "B_tower": 7.7311100939226325,
+            "net_over_target": 0.19699839704864452
           },
           "12C": {
             "A": 12,
-            "B_tower": 17.196787771259014,
-            "net_over_target": 0.18659359090206093
+            "B_tower": 21.867295144552116,
+            "net_over_target": 0.2372708891108478
           },
           "16O": {
             "A": 16,
-            "B_tower": 31.195276283382064,
-            "net_over_target": 0.24444068895213145
+            "B_tower": 39.64053462936517,
+            "net_over_target": 0.3106162454600426
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 407.9880211812702,
-            "net_over_target": 0.8288160607760835
+            "B_tower": 520.6954390744942,
+            "net_over_target": 1.0577779745304134
           }
         },
-        "spread": 8.94201879614337,
+        "spread": 9.6100919799688,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::atom_only": {
-        "tau_weighted": "0.730639430385304885512150664476071895979858292756983071396481",
+        "tau_weighted": "0.762760226994628152406176739390563736054408965541311919568238",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 3.653416708197807,
-            "net_over_target": 1.6423002114103729
+            "B_tower": 3.4549599500314923,
+            "net_over_target": 1.5530890422708052
           },
           "3H": {
             "A": 3,
-            "B_tower": 5.822850703321737,
-            "net_over_target": 0.6865095011226642
+            "B_tower": 6.1956193805926985,
+            "net_over_target": 0.7304586338939124
           },
           "3He": {
             "A": 3,
-            "B_tower": 5.546650322697847,
-            "net_over_target": 0.7186588028617881
+            "B_tower": 5.790093343836986,
+            "net_over_target": 0.7502008074877108
           },
           "4He": {
             "A": 4,
-            "B_tower": 7.752926917206845,
-            "net_over_target": 0.27399690819182304
+            "B_tower": 8.753803393172445,
+            "net_over_target": 0.30936897642167566
           },
           "6Li": {
             "A": 6,
-            "B_tower": 13.389446494672866,
-            "net_over_target": 0.41849129416712366
+            "B_tower": 16.219235705236013,
+            "net_over_target": 0.5069372317508691
           },
           "7Li": {
             "A": 7,
-            "B_tower": 17.27757203556236,
-            "net_over_target": 0.44025423963032917
+            "B_tower": 21.376348541820125,
+            "net_over_target": 0.5446962139113778
           },
           "12C": {
             "A": 12,
-            "B_tower": 44.98766251197082,
-            "net_over_target": 0.48813822709542537
+            "B_tower": 57.65643911550337,
+            "net_over_target": 0.6256006735844121
           },
           "16O": {
             "A": 16,
-            "B_tower": 78.48279913935939,
-            "net_over_target": 0.614977386904453
+            "B_tower": 101.56205586201153,
+            "net_over_target": 0.79582237646441
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 966.5633220364703,
-            "net_over_target": 1.963545897110984
+            "B_tower": 1267.42465277511,
+            "net_over_target": 2.5747371332180338
           }
         },
-        "spread": 7.166306766265849,
+        "spread": 8.322544694037514,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::both": {
-        "tau_weighted": "-0.146599220247432240000150417048066887856457267050274366739965",
+        "tau_weighted": "-0.00930777447746389524967736905971064512776433783320898221733133",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 0.05618328246431071,
-            "net_over_target": 0.025255760302903392
+            "B_tower": 0.0001931837475535075,
+            "net_over_target": 8.684082183569947e-05
           },
           "3H": {
             "A": 3,
-            "B_tower": 0.02681543158294941,
-            "net_over_target": 0.003161518214419924
+            "B_tower": 0.00018409286183260228,
+            "net_over_target": 2.170440307955123e-05
           },
           "3He": {
             "A": 3,
-            "B_tower": 0.023522702782352252,
-            "net_over_target": 0.0030477489003519083
+            "B_tower": 0.0001560655524647876,
+            "net_over_target": 2.022083177721489e-05
           },
           "4He": {
             "A": 4,
-            "B_tower": 0.07330885925457335,
-            "net_over_target": 0.002590815184165203
+            "B_tower": 0.0003448341655362748,
+            "net_over_target": 1.2186816179854596e-05
           },
           "6Li": {
             "A": 6,
-            "B_tower": 0.18116425196615163,
-            "net_over_target": 0.005662344764759152
+            "B_tower": 0.0008762486068248938,
+            "net_over_target": 2.7387421401488507e-05
           },
           "7Li": {
             "A": 7,
-            "B_tower": 0.26197131120119715,
-            "net_over_target": 0.006675358098953481
+            "B_tower": 0.0012779754512721115,
+            "net_over_target": 3.256441989696021e-05
           },
           "12C": {
             "A": 12,
-            "B_tower": 0.8053467931876235,
-            "net_over_target": 0.008738408129539665
+            "B_tower": 0.003906721263912006,
+            "net_over_target": 4.2389843904749775e-05
           },
           "16O": {
             "A": 16,
-            "B_tower": 1.4676628528669708,
-            "net_over_target": 0.011500347541251465
+            "B_tower": 0.007123827512328937,
+            "net_over_target": 5.5821057305957085e-05
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 19.1883276288332,
-            "net_over_target": 0.03898054181140874
+            "B_tower": 0.09357590141342327,
+            "net_over_target": 0.00019009678217632212
           }
         },
-        "spread": 15.045666726694293,
+        "spread": 15.598559900375081,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::atom_only": {
-        "tau_weighted": "-0.146599220247432240000150417048066887856457267050274366739965",
+        "tau_weighted": "-0.00930777447746389524967736905971064512776433783320898221733133",
         "rows": {
           "2H": {
             "A": 2,
-            "B_tower": 4.974759399034356,
-            "net_over_target": 2.236276084909039
+            "B_tower": 5.46382323838277,
+            "net_over_target": 2.4561222483518277
           },
           "3H": {
             "A": 3,
-            "B_tower": 6.711713692056266,
-            "net_over_target": 0.7913057457892906
+            "B_tower": 8.038259112646573,
+            "net_over_target": 0.9477044036471145
           },
           "3He": {
             "A": 3,
-            "B_tower": 6.708420963255669,
-            "net_over_target": 0.8691850933558246
+            "B_tower": 8.038231085337205,
+            "net_over_target": 1.0414836329731139
           },
           "4He": {
             "A": 4,
-            "B_tower": 9.240851826316302,
-            "net_over_target": 0.3265818002037379
+            "B_tower": 11.902544213970378,
+            "net_over_target": 0.42064891737935967
           },
           "6Li": {
             "A": 6,
-            "B_tower": 16.849917305708917,
-            "net_over_target": 0.5266493803668935
+            "B_tower": 23.501477629043972,
+            "net_over_target": 0.7345459569020528
           },
           "7Li": {
             "A": 7,
-            "B_tower": 21.93232369235131,
-            "net_over_target": 0.5588631591654132
+            "B_tower": 31.236153533434145,
+            "net_over_target": 0.7959364310293652
           },
           "12C": {
             "A": 12,
-            "B_tower": 60.00237671240316,
-            "net_over_target": 0.651055248360829
+            "B_tower": 89.26088460268677,
+            "net_over_target": 0.9685244248316045
           },
           "16O": {
             "A": 16,
-            "B_tower": 105.70874918843984,
-            "net_over_target": 0.8283151348031237
+            "B_tower": 158.90266055331503,
+            "net_over_target": 1.245133252519727
           },
           "56Fe": {
             "A": 56,
-            "B_tower": 1308.313380791636,
-            "net_over_target": 2.6578014212005105
+            "B_tower": 1990.6174024485567,
+            "net_over_target": 4.043882634673475
           }
         },
-        "spread": 8.138241076332001,
+        "spread": 9.613438826532207,
         "verdict": "FAIL (monotone rescale)"
       }
     },
@@ -526,6 +536,16 @@
       "w_chi_raw::both": "FAIL (monotone rescale)",
       "w_chi_raw::atom_only": "FAIL (monotone rescale)"
     },
-    "overall": "SCOPE-LIMITED NEGATIVE — no H_3-per-nucleon proxy of the FR-projector weight (4 structural candidates × 2 placements) flattens the U-shaped residual. Constrains the per-NUCLEON scalar proxy only; the per-partition weight at H_{3A} (where the depth strata are non-trivial) remains the open test — this probe sharpens its spec, it does not exclude the FR-projector ingredient."
+    "overall": "SCOPE-LIMITED NEGATIVE — no H_3-per-nucleon proxy of the FR-projector weight (4 structural candidates × 2 placements) flattens the U-shaped residual. Constrains the per-NUCLEON scalar proxy only; the per-partition weight at H_{3A} (where the depth strata are non-trivial) remains the open test — this probe sharpens its spec, it does not exclude the FR-projector ingredient.",
+    "upstream_witness_hashes": [
+      {
+        "path": "y-lambda-at-q0.witness.json",
+        "sha256": "e4f26334a3bc2c699e2ad3f6b6faae0adfbf5292b3dc3b83201b999070f8506e",
+        "size_bytes": 47239,
+        "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T19:03:52.564561+00:00"
+      }
+    ]
   }
 }

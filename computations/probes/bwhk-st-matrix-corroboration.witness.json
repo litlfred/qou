@@ -1,0 +1,268 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:20:56.053827+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "assertions": [
+    {
+      "name": "smatrix_vacuum_row_value_identified_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The WRT LR-amplitude/McKay value map d^WRT(lambda) (d((5))=[1], d((4,1))=[4], d((3,2))=[5], d((3,1,1))=[5]+1 as Chebyshev polynomials in t=q0+1/q0) equals the Hecke q-hook quantum dimension d_q(lambda)=[5]_q!/prod[h]_q at q0 for all four physical blocks (max |Delta d| < 1e-40), so the vacuum S-matrix rows S_0lambda=d/D coincide block-by-block. Two independent construction routes; corroborates the value identification."
+    },
+    {
+      "name": "tmatrix_twist_agrees_contentsum_eq_casimir_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The Hecke content-sum twist exponent 2c(lambda)=2*sum(j-i) equals the WRT sl-Casimir ribbon-eigenvalue exponent kappa_lambda=sum_i lambda_i(lambda_i-2i+1) exactly (integer equality) for all seven lambda|-5, so theta^Hecke_lambda=q^{2c}=q^{kappa}=theta^WRT_lambda to 40 dps. Independent formulas for the same ribbon twist."
+    },
+    {
+      "name": "twist_conjugation_antisymmetric_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "theta_lambda' * theta_lambda = 1 for all conjugate pairs (kappa_lambda'=-kappa_lambda), on both the Hecke content-sum and the WRT Casimir twist expressions, to 40 dps -- the ribbon signature of the bar involution q -> q^-1."
+    },
+    {
+      "name": "verlinde_vacuum_row_unitary_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Sum_lambda S_0lambda^2 = 1 to 40 dps (the shared vacuum S-matrix row is a unit vector) -- a genuine modular-data property of the S-row S_0lambda=d_q/D, D=sqrt(sum d_q^2)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "bwhk-st-matrix-corroboration",
+  "scriptFile": "bwhk_st_matrix_corroboration.py",
+  "scriptHash": "df17fb40e30d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bwhk_st_matrix_corroboration.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bwhk_st_matrix_corroboration.py"
+  },
+  "description": "Scope-(a) numerical corroboration of the BW-localization=Hecke MTC identification via its modular data (S-matrix vacuum row + T-matrix/ribbon twist) for the n=5 blocks lambda|-5 at the substrate q0~1.10998. Two INDEPENDENT construction routes are compared: (Hecke) q-hook quantum dimension d_q=[5]_q!/prod[h]_q, vacuum row S_0lambda=d_q/D (D=sqrt(sum d_q^2)), twist theta_lambda=q^{2c(lambda)} (content sum); (WRT/BW) the Lawrence-Rozansky/McKay amplitude value map d^WRT(lambda) (keystone_lr_amplitude_level7.py) and the ribbon eigenvalue theta=q^{kappa} with kappa the sl-Casimir sum_i lambda_i(lambda_i-2i+1). Assertions: (i) d^WRT=d^Hecke on the four McKay physical blocks (so the vacuum S-rows S_0lambda=d/D coincide) -- value identification; (ii) content-sum exponent 2c(lambda)=sl-Casimir kappa_lambda for all lambda|-5 (so theta agrees) -- twist agreement; (iii) theta_lambda'=theta_lambda^-1 (conjugation antisymmetry, the bar involution signature); (iv) Verlinde vacuum-row unitarity sum_lambda S_0lambda^2=1. All to 40 dps. This is EVIDENCE for the identification, NOT a proof: BW-localization=Hecke MTC is a physics claim (RT=WRT / gauge=categorical, Chern-Simons TQFT), owner-gated (beans bwse/bwhk), NOT number-crunchable. Does NOT close bwse/bwhk. No fit; zero free parameters; nothing wired; L2 unchanged (2/7).",
+  "data": {
+    "n": 5,
+    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "total_quantum_dimension_D": "11.35688711602823550323163157595047500870543717863287187288435852055819",
+    "value_rows": [
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "rows": 3,
+        "d_wrt_amplitude": "6.220441324676728546019236942591785116242614164918165774833098230547817",
+        "d_hecke_qhook": "6.220441324676728546019236942591785116242614164918165774833098230547818",
+        "abs_err_d": "8.693451915673643872808754519252280109455229950213572661999310294338081e-70",
+        "S0_hecke": "0.5477241484506504342942010051771446890061280020238453081811816742893797",
+        "S0_wrt": "0.5477241484506504342942010051771446890061280020238453081811816742893796",
+        "abs_err_S0": "8.150111170944041130758207361799012602614278078325224370624353400941951e-71"
+      },
+      {
+        "lambda": [
+          3,
+          2
+        ],
+        "rows": 2,
+        "d_wrt_amplitude": "5.220441324676728546019236942591785116242614164918165774833098230547817",
+        "d_hecke_qhook": "5.220441324676728546019236942591785116242614164918165774833098230547818",
+        "abs_err_d": "5.071180284142958925805106802897163397182217470957917386166264338363881e-70",
+        "S0_hecke": "0.4596718512160783794814233224912200265306543939473962392027212480087497",
+        "S0_wrt": "0.4596718512160783794814233224912200265306543939473962392027212480087496",
+        "abs_err_S0": "4.527839539413356183754559645443895890341265599069569094791307444967751e-71"
+      },
+      {
+        "lambda": [
+          4,
+          1
+        ],
+        "rows": 2,
+        "d_wrt_amplitude": "4.109682435643727830327739931395109654396675728119949427271795998683165",
+        "d_hecke_qhook": "4.109682435643727830327739931395109654396675728119949427271795998683165",
+        "abs_err_d": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+        "S0_hecke": "0.3618669793630015626601139797724590898446494661118044776726400896810044",
+        "S0_wrt": "0.3618669793630015626601139797724590898446494661118044776726400896810044",
+        "abs_err_S0": "4.527839539413356183754559645443895890341265599069569094791307444967751e-72"
+      },
+      {
+        "lambda": [
+          5
+        ],
+        "rows": 1,
+        "d_wrt_amplitude": "1.0",
+        "d_hecke_qhook": "1.0",
+        "abs_err_d": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+        "S0_hecke": "0.08805229723457205481277768268592466247547360807644906897846042628062996",
+        "S0_wrt": "0.08805229723457205481277768268592466247547360807644906897846042628062996",
+        "abs_err_S0": "2.263919769706678091877279822721947945170632799534784547395653722483875e-72"
+      }
+    ],
+    "max_value_err": "8.693451915673643872808754519252280109455229950213572661999310294338081e-70",
+    "max_twist_exp_err": 0,
+    "max_twist_err": "0.0",
+    "conj_pairs": 4,
+    "max_conj_err": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
+    "verlinde_vacuum_unitarity_err": "0.0",
+    "st_table": [
+      {
+        "lambda": [
+          5
+        ],
+        "rows": 1,
+        "conj": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "content_sum": 10,
+        "casimir_kappa": 20,
+        "d_q_hecke": "1.0",
+        "S0_row": "0.08805229723457205481277768268592466247547360807644906897846042628062996",
+        "theta_hecke": "8.059202749182983040873890759211627841145353922325176730634172770630607",
+        "theta_wrt": "8.059202749182983040873890759211627841145353922325176730634172770630607"
+      },
+      {
+        "lambda": [
+          4,
+          1
+        ],
+        "rows": 2,
+        "conj": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "content_sum": 5,
+        "casimir_kappa": 10,
+        "d_q_hecke": "4.109682435643727830327739931395109654396675728119949427271795998683165",
+        "S0_row": "0.3618669793630015626601139797724590898446494661118044776726400896810044",
+        "theta_hecke": "2.838873500031831823586517239006737124060710902897193472938819364062258",
+        "theta_wrt": "2.838873500031831823586517239006737124060710902897193472938819364062258"
+      },
+      {
+        "lambda": [
+          3,
+          2
+        ],
+        "rows": 2,
+        "conj": [
+          2,
+          2,
+          1
+        ],
+        "content_sum": 2,
+        "casimir_kappa": 4,
+        "d_q_hecke": "5.220441324676728546019236942591785116242614164918165774833098230547818",
+        "S0_row": "0.4596718512160783794814233224912200265306543939473962392027212480087497",
+        "theta_hecke": "1.517953319869570336597811810918072514892781477919075616675353712827",
+        "theta_wrt": "1.517953319869570336597811810918072514892781477919075616675353712827"
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "rows": 3,
+        "conj": [
+          3,
+          1,
+          1
+        ],
+        "content_sum": 0,
+        "casimir_kappa": 0,
+        "d_q_hecke": "6.220441324676728546019236942591785116242614164918165774833098230547818",
+        "S0_row": "0.5477241484506504342942010051771446890061280020238453081811816742893797",
+        "theta_hecke": "1.0",
+        "theta_wrt": "1.0"
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1
+        ],
+        "rows": 3,
+        "conj": [
+          3,
+          2
+        ],
+        "content_sum": -2,
+        "casimir_kappa": -4,
+        "d_q_hecke": "5.220441324676728546019236942591785116242614164918165774833098230547818",
+        "S0_row": "0.4596718512160783794814233224912200265306543939473962392027212480087497",
+        "theta_hecke": "0.6587817865742568992031800461301095696834909351144182671701809972682403",
+        "theta_wrt": "0.6587817865742568992031800461301095696834909351144182671701809972682403"
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "rows": 4,
+        "conj": [
+          4,
+          1
+        ],
+        "content_sum": -5,
+        "casimir_kappa": -10,
+        "d_q_hecke": "4.109682435643727830327739931395109654396675728119949427271795998683165",
+        "S0_row": "0.3618669793630015626601139797724590898446494661118044776726400896810044",
+        "theta_hecke": "0.3522523987027907949355845653175176593688668745057016822987526146290428",
+        "theta_wrt": "0.3522523987027907949355845653175176593688668745057016822987526146290428"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "rows": 5,
+        "conj": [
+          5
+        ],
+        "content_sum": -10,
+        "casimir_kappa": -20,
+        "d_q_hecke": "1.0",
+        "S0_row": "0.08805229723457205481277768268592466247547360807644906897846042628062996",
+        "theta_hecke": "0.1240817523918698901106867387759573297426657209089004112947568501491894",
+        "theta_wrt": "0.1240817523918698901106867387759573297426657209089004112947568501491894"
+      }
+    ],
+    "verdict": "PASS (scope-(a) corroboration). The WRT LR-amplitude/McKay value map and the Hecke q-hook quantum dimension give the same n=5 vacuum S-matrix row S_0lambda=d/D at q0, and the WRT sl-Casimir ribbon eigenvalue and the Hecke content-sum give the same twist theta_lambda=q^{2c(lambda)} (with theta_lambda'=theta_lambda^-1); Verlinde unitarity sum S_0lambda^2=1 holds. This is scope-(a) EVIDENCE for the BW-localization=Hecke MTC identification, not a proof: the identification (RT=WRT / gauge=categorical, Chern-Simons TQFT) is a physics claim, owner-gated (beans bwse/bwhk), and is NOT number-crunchable. Does NOT close bwse/bwhk. No fit; nothing wired; L2 unchanged (2/7)."
+  }
+}

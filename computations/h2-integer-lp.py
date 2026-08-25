@@ -26,7 +26,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
 from mpmath import mp  # noqa: F401
 
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # Wedderburn weights for H₃(q) — from the gluon branch fix
 # w_sym = w_alt = q²/(q⁴+4q²+1), w_std = (q²+1)²/(q⁴+4q²+1)
@@ -397,7 +397,12 @@ n_ord = len(orderings)
 
 # Canonical LP route (occupancy simplex; see routing note above).
 t_vec = np.array(phis, dtype=float)
-lp = solve_operator_selection_lp(t_vec, np.eye(n_ord), 1.0)
+# Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+# whether the Rust binary happens to be built, so the same script
+# yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+# makes a missing binary an error rather than a changed answer.
+# Bean `qou/ftuv`.
+lp = solve_operator_selection_lp(t_vec, np.eye(n_ord), 1.0, backend="clarabel")
 assert lp.feasible, "ordering-selection LP infeasible (should never happen)"
 
 DUAL_TOL = 1e-9

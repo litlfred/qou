@@ -90,7 +90,7 @@ class Kernel:
             self.qi = +(mp.mpf(1) / q)
             self.h = +(q - self.qi)
             self.c = +((q + self.qi) / 2)
-            self.z = +(mp.sqrt(q) / (q + 1))
+            self.z = +(q ** 3 / (q ** 2 + 1))   # convention D (was C: sqrt(q)/(q+1))
             self.two_q = +(q + self.qi)
             # readout coefficients
             self.cp = +((self.z + self.qi) / self.two_q)   # weight on μ₊

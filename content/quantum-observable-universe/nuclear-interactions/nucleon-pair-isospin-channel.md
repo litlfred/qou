@@ -47,8 +47,7 @@ normalised weights being $0$ on same-colour pairs and $1/6$ on each different-co
 pair, so the entire $I = 1$ sector is determined. Only the deuteron channel retains a
 parameter, the $A$-versus-$H$ mix inside $\mathrm{Sym}^2$.
 
-The charge-symmetry consequence deserves one caveat stated here rather than
-discovered later. It follows because the construction is organised by isospin and
+The charge-symmetry consequence carries one caveat. It follows because the construction is organised by isospin and
 $pp$, $nn$ are isospin conjugates, so *any* isospin-covariant weighting is
 charge-symmetric. The content of the observation is that the production
 $\sigma$-versus-$\sigma^{-1}$ assignment is not isospin-covariant, which is the

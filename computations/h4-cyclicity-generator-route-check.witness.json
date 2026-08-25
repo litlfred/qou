@@ -1,0 +1,25 @@
+{
+  "computation": {
+    "arithmetic": "exact (sympy over Q[z,h]); no floats, no substrate anchor",
+    "script": "computations/h4_cyclicity_generator_route_check.py",
+    "sources_read": [
+      "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4StabilizationRung.lean",
+      "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4AlgebraLaws.lean",
+      "content/quantum-observable-universe/lean/QOU/Machinery/H4GeneratorAction.lean"
+    ]
+  },
+  "description": "Independent symbolic re-derivation of the H4 generator-route cyclicity content: the 72 atomic identities tr(sigma_i . b_j) = tr(b_j . sigma_i), the word-tree single-term edge property the induction rests on, and a re-check of the committed H4GeneratorAction statements against the generator-action tables parsed out of the Lean sources.",
+  "q0Anchor": "proton",
+  "q0Note": "Recorded for layer identification only. This computation is exact in symbolic z and h and is evaluated at no substrate pin, so no result here depends on this value.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "results": {
+    "all_ok": true,
+    "cyclicity_identities_checked": 72,
+    "failures": [],
+    "hecke_presentation_rederived": true,
+    "lean_generator_statements_rechecked": 72,
+    "word_tree_edges_checked": 23
+  },
+  "schema": "witness/v1",
+  "scope": "Every statement checked here is already machine-checked by Lean, so this cannot make the theorem more true. It checks the layer Lean cannot see: that the committed statements are about the tables the modules claim to be about, computed by an independent implementation."
+}

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/JonquiereCyclotomicTateRationality.lean"
   },
   "source_hashes": {
-    "ts": "dff5a62a5e04",
     "md": "45f84eb99aa5",
-    "lean": "57cc54309857"
+    "ts": "dff5a62a5e04",
+    "lean": "57cc54309857",
+    "lean_statement": "096e065fe002"
   },
   "criteria": {
     "voice-status-leak": [
@@ -296,31 +297,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "45f84eb99aa5",
-          "ts": "dff5a62a5e04",
-          "lean": "57cc54309857",
-          "lean_statement": "096e065fe002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2156,7 +2137,8 @@
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
       },
       {
         "field_hash": {
@@ -2217,7 +2199,8 @@
         "reviewed_at": "2026-06-28T10:58:50.075Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality.lean is missing, leading to complete divergence."
       },
       {
         "field_hash": {
@@ -2536,7 +2519,370 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.551Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.642Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.687Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "One matched unspaced pair: 'The wrong-parity part-the imaginary part for odd n and real part for even n-evaluates as Tate-rational'. A true parenthetical gloss, correctly paired."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.762Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.831Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:03.935Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.022Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.095Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Full read of the proposition block (kind proposition, theorem-level tag). Category absent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.162Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "severity": "minor",
+        "evidence": "Four de-hedged tokens in two consecutive sentences: 'The GENUINELY new period content isolates PRECISELY to the right-parity part. This DICTATES why the depth-2 imaginary Im Li_2 and the depth-3 real Re Li_3 carry the TRUE periods.' 'Dictates' asserts an explanatory necessity the block only exhibits, and 'true periods' is doing rhetorical rather than technical work (the technical statement is 'the right-parity part is the part not killed by the Beilinson regulator').",
+        "notes": "proposed: 'The new period content is confined to the right-parity part. This is why the depth-2 imaginary part Im Li_2 and the depth-3 real part Re Li_3 carry the period content.'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.624Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:21:04.240Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Prose reads aloud.",
+        "notes": "RECOMPUTED (all correct): the stated identity Li_n(zeta_K) - (-1)^(n-1) Li_n(zeta_K^-1) = -(2 pi i)^n/n! B_n(1/K) verifies numerically at 40 dps for (n,K) = (2,2), (2,5), (4,3), (4,5), (5,5), (5,7) with residuals 0 to 2.6e-41. The parity assignment in the prose is also self-consistent: odd n -> imaginary part Tate-rational, even n -> real part Tate-rational, hence depth-2 IMAGINARY and depth-3 REAL carry the periods, exactly as written."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "45f84eb99aa5",
+          "ts": "dff5a62a5e04",
+          "lean": "57cc54309857",
+          "lean_statement": "096e065fe002"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T21:21:04.240Z"
 }

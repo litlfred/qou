@@ -50,6 +50,8 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from mass_at_3A_proper import per_generator_V_hat_3A
+from _precision import set_compute_dps  # noqa: E402
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
 
 
 # (Z, N, label, expected_interface_generators) — interface gens are at
@@ -63,7 +65,7 @@ ATOMS = [
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("v-hat-z-transfer-phase5d-4")
     builder.set_description(
         "Phase 5d.4: probe whether the Phase 5c.1 z-exactness finding "
@@ -88,10 +90,19 @@ def main() -> int:
     # 2026-08-08): two layers meeting inside one quantity, invisible because
     # each half is individually reasonable. Take q_0 from the same place the
     # V̂ side takes it, so the pair is single-layer by construction.
-    from q_parameter import Q as _Q_RUNTIME  # noqa: E402
-    q = mp.mpf(str(_Q_RUNTIME))
+    from q_parameter import Q_MP as _Q_RUNTIME  # noqa: E402
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+    # to 16. Read the high-precision name instead.
+    q = _Q_RUNTIME
     q_inv = mp.mpf(1) / q
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)), excised.
+    # Routed through the canonical helper rather than respelled inline: an
+    # inline copy is a second definition that a future convention audit has to
+    # find by its SHAPE, and shape-keyed detectors are exactly what missed the
+    # value-literal and return-form C sites on this branch.
+    z = markov_z(q)
     h = q - q_inv
     builder.add_parameter("q_0", str(q))
     builder.add_parameter("h", str(h))
@@ -122,9 +133,16 @@ def main() -> int:
                 "gen_idx_0based": g_idx,
                 "gen_sigma_1based": g_idx + 1,
                 "is_interface": is_interface,
-                "V_hat_full": float(full_val),
-                "V_hat_constit": float(constit_val),
-                "ratio_full_over_constit": float(full_val / constit_val) if constit_val != 0 else None,
+                # 50 dps, not float(): these are substrate quantities computed
+                # at mp.dps = 50 and were being truncated to f64 on the way out,
+                # discarding ~35 digits. The sibling producers already spell it
+                # this way — `hydrogen_qshuffle_compound` writes `str(...)` and
+                # `habiro_exact_mass_endomorphism` writes `mp.nstr(v, 50)`.
+                "V_hat_full": mp.nstr(full_val, 50, strip_zeros=False),
+                "V_hat_constit": mp.nstr(constit_val, 50, strip_zeros=False),
+                "ratio_full_over_constit": (
+                    mp.nstr(full_val / constit_val, 50, strip_zeros=False)
+                    if constit_val != 0 else None),
             }
             # Categorical match? (per the finding above)
             tags = []
@@ -149,23 +167,32 @@ def main() -> int:
 
     # Assertion: every interface generator's V̂_FULL matches the
     # flavor-selective rule {0, +h/2, -h/2}
-    h_half = float(h / 2)
+    # Compared at mp precision, matching the 50-dps rows above. The rule is
+    # `V̂ ∈ {0, ±h/2}` exactly, so the tolerance is guarding representation
+    # error, not a fit — keeping it at f64 width here would test the emitted
+    # string's first 16 digits and silently ignore the other 34.
+    h_half = h / 2
     flavor_rule_passes = 0
     flavor_rule_total = 0
-    ZERO_TOL = 1e-10
+    ZERO_TOL = mp.mpf("1e-10")
     for name, rows in per_atom.items():
         for r in rows:
             if r["is_interface"]:
                 flavor_rule_total += 1
-                vf = r["V_hat_full"]
+                vf = mp.mpf(r["V_hat_full"])
                 if abs(vf) < ZERO_TOL or abs(abs(vf) - h_half) < ZERO_TOL:
                     flavor_rule_passes += 1
 
     builder.add_assertion(
         "interface_v_hat_flavor_selective_rule",
-        computed=float(flavor_rule_passes),
-        expected=float(flavor_rule_total),
-        tolerance=0.0,
+        # Counts, so they are int -- not float64. `float()` here was
+        # gratuitous and put three raw float64 fields into the witness
+        # (.computed/.expected/.tolerance) that the raw-float64 gate flags.
+        # Fixed at the producer; this file was never in raw-float64-baseline.json
+        # and is not being added to it.
+        computed=flavor_rule_passes,
+        expected=flavor_rule_total,
+        tolerance=0,
         unit="count",
         source=(
             "Interface generator V̂_FULL ∈ {0, +h/2, -h/2}. "

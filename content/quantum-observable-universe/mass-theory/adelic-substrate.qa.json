@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/adelic-substrate.lean"
   },
   "source_hashes": {
-    "ts": "c848c199c1dd",
     "md": "afb7869f74f4",
-    "lean": "910a10f03d8f"
+    "ts": "80f8227a0e60",
+    "lean": "910a10f03d8f",
+    "lean_statement": "a3fdbe07ed18"
   },
   "criteria": {
     "voice-status-leak": [
@@ -289,7 +290,7 @@
       {
         "field_hash": {
           "md": "afb7869f74f4",
-          "ts": "c848c199c1dd",
+          "ts": "80f8227a0e60",
           "lean": "910a10f03d8f",
           "lean_statement": "a3fdbe07ed18"
         },
@@ -298,31 +299,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "afb7869f74f4",
-          "ts": "c848c199c1dd",
-          "lean": "910a10f03d8f",
-          "lean_statement": "a3fdbe07ed18"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1000,7 +981,22 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — Lean file exists"
+        "evidence": "adelic-substrate.lean:1 \u2014 Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60",
+          "lean": "910a10f03d8f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'adelic-substrate.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1126,7 +1122,8 @@
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Adelic substrate $\\\\mathbb{A}$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Adelic substrate $\\\\mathbb{A}$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1230,7 +1227,8 @@
         "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1405,7 +1403,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "evidence": "adelic-substrate.lean:1 \u2014 content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",
@@ -1441,7 +1439,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean contains compilation errors: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean contains compilation errors: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       },
       {
         "result": "pass",
@@ -1873,7 +1872,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.502Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no assert-by-denying / 'not X but Y' found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.555Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no setup-then-reframe pivot found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (2 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.615Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One spaced dash pair: 'The archimedean place inf - the R component - is the laboratory continuum'.",
+        "notes": "True parenthetical gloss of the symbol; not a structural substitute."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 122 words)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.729Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no compulsive three-item cadence found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.788Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no quotable closing line found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.841Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no narration of own emphasis found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.908Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no block-final restatement of what is already established found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.960Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no personal / warm register in institutional prose found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:24.004Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no unqualified maximum-strength claim found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.703Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:24.067Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (definition, adelic substrate A = R x prod' Q_p); no noun-chain syntax that stalls when read aloud found."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "afb7869f74f4",
+          "ts": "80f8227a0e60",
+          "lean": "910a10f03d8f",
+          "lean_statement": "a3fdbe07ed18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-19T21:22:24.067Z"
 }

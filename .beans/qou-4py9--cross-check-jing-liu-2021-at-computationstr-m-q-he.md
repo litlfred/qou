@@ -15,7 +15,7 @@ jing-liu-2021 is cited only in the .ts cites[] and none of its results is used. 
 - Thm 2.11 — Closed formula for the irreducible Hecke characters labelled by TWO-ROW partitions.
   Use here: Second independent cross-check family for the same chi^lambda_q compute (n>=4 two-row blocks).
 
-Source: `uploads/2104.06067v1.pdf` (`jing-liu-2021`)
+Source: `library/arxiv-2104.06067v1/2104.06067v1.pdf` (`jing-liu-2021`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

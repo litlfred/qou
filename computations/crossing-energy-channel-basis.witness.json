@@ -155,5 +155,8 @@
   "caveats": [
     "This is a structural (scope-b) exclusion of the e_- route only. It does not exclude an electromagnetic reading of either channel reached by some other, stated route; no such route is currently in the corpus. Physical relabelling remains an author call.",
     "notation-register-table3-data calls h = q - 1/q 'the Hecke-relation discriminant'. The discriminant of sigma^2 - h*sigma - 1 is h^2 + 4 = [2]_q^2, not h; h is the trace. Flagged, not edited here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

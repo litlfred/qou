@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:34:28.774114+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-08-23T09:17:31.177253+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "psd_dominant_pair_contributes_under_1pct_of_trace",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "|y_(4,4,4)·χ_(4,4,4) + y_(3,3,3,3)·χ_(3,3,3,3)| / |tr_M_partial| = 0.000307"
+      "source": "|y_(4,4,4)·χ_(4,4,4) + y_(3,3,3,3)·χ_(3,3,3,3)| / |tr_M_partial| = 0.000000"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "probe-1-project-4he-on-dominant",
   "scriptFile": "probe_1_project_4he_on_dominant.py",
-  "scriptHash": "f52fc08083b1",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "1c7c16311669",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +30,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_1_project_4he_on_dominant.py"
+    ],
+    "reproduce": "python3 -u computations/probe_1_project_4he_on_dominant.py"
   },
   "description": "Projects the Frobenius Markov-trace mass formula tr_M(T_w_⁴He) onto the PSD-dominant Wedderburn block (4,4,4) and its conjugate (3,3,3,3), and compares to the partial-sum trace over all evaluated blocks (26/77). Tests whether PSD-dominance and trace-dominance coincide — they appear to be ORTHOGONAL structural axes.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
   "auditOnly": "docs/audits/2026-05-25-dominant-partition-nucleon-structure.md",
   "data": {
-    "partial_tr_M_at_q0": "0.0497834624431837545466606809753",
+    "partial_tr_M_at_q0": "0.159943643649352027265770367951",
     "n_blocks_evaluated": 26,
     "n_blocks_total": 77,
     "top_10_trace_contributors": [
@@ -47,10 +55,10 @@
           9,
           3
         ],
-        "y_lambda": "0.000587053870088059943530075721566",
+        "y_lambda": "0.00174414167712058062479743519724",
         "chi_lambda": "27.1692381586661864147080880372",
-        "contribution": "0.0159498064083891803509031308556",
-        "abs_contribution_frac_of_partial_tr_M": 0.320383629937194,
+        "contribution": "0.0473870006081445181689858686903",
+        "abs_contribution_frac_of_partial_tr_M": 0.2962731092461047,
         "min_eig": -10.82123418510746
       },
       {
@@ -59,10 +67,10 @@
           8,
           4
         ],
-        "y_lambda": "0.000430967827793357335977879227579",
+        "y_lambda": "0.00119406961116227611775288513275",
         "chi_lambda": "30.0309336663212602031892972665",
-        "contribution": "0.0129423662487808781241111103784",
-        "abs_contribution_frac_of_partial_tr_M": 0.25997320422523,
+        "contribution": "0.0358590252857843342997170564065",
+        "abs_contribution_frac_of_partial_tr_M": 0.224197876624587,
         "min_eig": -13.507187523403122
       },
       {
@@ -71,84 +79,84 @@
           10,
           2
         ],
-        "y_lambda": "0.000712129211381594783117982270633",
+        "y_lambda": "0.00237044356292937986540937798786",
         "chi_lambda": "10.3948202642745131385471069052",
-        "contribution": "0.00740245515725122971305892491787",
-        "abs_contribution_frac_of_partial_tr_M": 0.14869305576524355,
+        "contribution": "0.0246403347832573949281195255447",
+        "abs_contribution_frac_of_partial_tr_M": 0.15405635523270272,
         "min_eig": -6.922835380603364
       },
       {
         "rank": 4,
         "partition": [
-          7,
-          5
+          11,
+          1
         ],
-        "y_lambda": "0.000261783238774027343296021482248",
-        "chi_lambda": "21.590720666057879094032467826",
-        "contribution": "0.00565208878342595644164361347836",
-        "abs_contribution_frac_of_partial_tr_M": 0.11353346083303269,
-        "min_eig": -15.233982933881752
+        "y_lambda": "0.00310034854941414499362627923685",
+        "chi_lambda": "7.35501862567754618321691495453",
+        "contribution": "0.0228031213270333985928694428677",
+        "abs_contribution_frac_of_partial_tr_M": 0.14256972522787578,
+        "min_eig": -3.3163351635904967
       },
       {
         "rank": 5,
         "partition": [
-          11,
-          1
+          7,
+          5
         ],
-        "y_lambda": "0.000767012335967353931622303256341",
-        "chi_lambda": "7.35501862567754618321691495453",
-        "contribution": "0.00564139001716433183976398763075",
-        "abs_contribution_frac_of_partial_tr_M": 0.11331855480326758,
-        "min_eig": -3.3163351635904967
+        "y_lambda": "0.000696185800631777497284906110284",
+        "chi_lambda": "21.590720666057879094032467826",
+        "contribution": "0.0150311531531165688703618167938",
+        "abs_contribution_frac_of_partial_tr_M": 0.09397780874662139,
+        "min_eig": -15.233982933881752
       },
       {
         "rank": 6,
         "partition": [
-          6,
-          6
+          12
         ],
-        "y_lambda": "0.0000876652720265709845948195505464",
-        "chi_lambda": "20.3240128753683100060932692835",
-        "contribution": "0.00178171011739069402988081367221",
-        "abs_contribution_frac_of_partial_tr_M": 0.03578919645101226,
-        "min_eig": -13.599826695251153
+        "y_lambda": "0.00396575801612310679845045466138",
+        "chi_lambda": "2.41424324675422630193111217523",
+        "contribution": "0.0095743045086866486955498882059",
+        "abs_contribution_frac_of_partial_tr_M": 0.05986048767074863,
+        "min_eig": 2.4142432467542263
       },
       {
         "rank": 7,
         "partition": [
-          12
+          6,
+          6
         ],
-        "y_lambda": "0.000656574571989824931463237164619",
-        "chi_lambda": "2.41424324675422630193111217523",
-        "contribution": "0.0015851307264169814328814216676",
-        "abs_contribution_frac_of_partial_tr_M": 0.03184050784386561,
-        "min_eig": 2.4142432467542263
+        "y_lambda": "0.000228729631881072123068852392076",
+        "chi_lambda": "20.3240128753683100060932692835",
+        "contribution": "0.00464870398332916371016676944182",
+        "abs_contribution_frac_of_partial_tr_M": 0.029064637251359736,
+        "min_eig": -13.599826695251153
       },
       {
         "rank": 8,
-        "partition": [
-          9,
-          2,
-          1
-        ],
-        "y_lambda": "0.000197856009786310102725966319269",
-        "chi_lambda": "-7.92030940731039885099309602601",
-        "contribution": "-0.00156708081560341024453935680034",
-        "abs_contribution_frac_of_partial_tr_M": 0.03147793943404135,
-        "min_eig": -11.41873352684113
-      },
-      {
-        "rank": 9,
         "partition": [
           10,
           1,
           1
         ],
-        "y_lambda": "0.00016439510272058522414884498184",
+        "y_lambda": "0.0",
         "chi_lambda": "2.00918586468680744096249046748",
-        "contribution": "0.00033030031660993555397342166181",
-        "abs_contribution_frac_of_partial_tr_M": 0.006634739738862008,
+        "contribution": "0.0",
+        "abs_contribution_frac_of_partial_tr_M": 0.0,
         "min_eig": -6.641420400212249
+      },
+      {
+        "rank": 9,
+        "partition": [
+          9,
+          2,
+          1
+        ],
+        "y_lambda": "0.0",
+        "chi_lambda": "-7.92030940731039885099309602601",
+        "contribution": "0.0",
+        "abs_contribution_frac_of_partial_tr_M": 0.0,
+        "min_eig": -11.41873352684113
       },
       {
         "rank": 10,
@@ -158,10 +166,10 @@
           1,
           1
         ],
-        "y_lambda": "-0.0000153101871954400827881849028773",
+        "y_lambda": "0.0",
         "chi_lambda": "-3.26440709222410817367393542909",
-        "contribution": "0.0000499786836640733344057940792217",
-        "abs_contribution_frac_of_partial_tr_M": 0.0010039214070558548,
+        "contribution": "0.0",
+        "abs_contribution_frac_of_partial_tr_M": 0.0,
         "min_eig": -10.466861165832446
       }
     ],
@@ -172,11 +180,11 @@
           4,
           4
         ],
-        "y_lambda": "0.00000125709498382799093465161008809",
+        "y_lambda": "0.0",
         "chi_lambda": "-12.0780966960499832080102970699",
-        "contribution": "-0.0000151833147707938643801989392181",
-        "abs_contribution_frac_of_partial_tr_M": 0.0003049871187268681,
-        "rank_by_abs_contrib": 12,
+        "contribution": "0.0",
+        "abs_contribution_frac_of_partial_tr_M": 0.0,
+        "rank_by_abs_contrib": 15,
         "min_eig": -19.835887443514437
       },
       {
@@ -186,19 +194,19 @@
           3,
           3
         ],
-        "y_lambda": "-0.00000000465499711246183089586713007487",
+        "y_lambda": "0.0",
         "chi_lambda": "23.4434272043199587395065179585",
-        "contribution": "-0.0000001091290859423185408443289366",
-        "abs_contribution_frac_of_partial_tr_M": 2.192075050361634e-06,
-        "rank_by_abs_contrib": 18,
+        "contribution": "0.0",
+        "abs_contribution_frac_of_partial_tr_M": 0.0,
+        "rank_by_abs_contrib": 17,
         "min_eig": -15.507158369349328
       }
     ],
     "mass_projection_MeV": {
       "m_e_x_A_x_8G_MeV_per_unit_tr_M": "14.97783863976644105287459552",
-      "contrib_4_4_4_MeV": "-0.000227413238653732886376923105695",
-      "contrib_3_3_3_3_MeV": "-0.00000163451784014925137783316247406",
-      "pair_contribution_MeV": "-0.000229047756493882137754756268169",
+      "contrib_4_4_4_MeV": "0.0",
+      "contrib_3_3_3_3_MeV": "0.0",
+      "pair_contribution_MeV": "0.0",
       "AME_B_4He_MeV": 28.2956624
     }
   },

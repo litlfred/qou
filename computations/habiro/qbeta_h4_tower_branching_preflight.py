@@ -60,8 +60,9 @@ os.environ.setdefault("QOU_COMPUTE_DPS", "70")
 
 from young_seminormal import seminormal_sigma, chi_young, standard_tableaux  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 Q = mp.mpf("1.1099785955573347198997632204832250266562084087801536866079811461")
 
 

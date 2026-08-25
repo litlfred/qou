@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean"
   },
   "source_hashes": {
-    "ts": "d43f3194825d",
     "md": "186e7281e7fa",
-    "lean": "77c0d28b93c5"
+    "ts": "d43f3194825d",
+    "lean": "77c0d28b93c5",
+    "lean_statement": "69f2217ae359"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "186e7281e7fa",
-          "ts": "d43f3194825d",
-          "lean": "77c0d28b93c5",
-          "lean_statement": "69f2217ae359"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-08T20:58:38.823Z",
-        "reviewed_sha": "9e3fac1b938e0da35b1aed9a5b9069cf0109ce40"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1514,7 +1495,8 @@
         "reviewed_at": "2026-07-07T14:26:56.370033Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Existence of the categorical proton' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Existence of the categorical proton' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1618,7 +1600,8 @@
         "reviewed_at": "2026-07-07T14:26:56.370033Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1829,7 +1812,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean fails compilation: content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:31:3: error: invalid {...} notation, expected type is not of the form (C ...)",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:31:3: error: invalid {...} notation, expected type is not of the form (C ...), invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:31:3: error: invalid {...} notation, expected type is not of the form (C ...), invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean fails compilation: content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:31:3: error: invalid {...} notation, expected type is not of the form (C ...)"
       },
       {
         "result": "pass",
@@ -2114,7 +2098,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:30.994Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.042Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.419Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "One unspaced em-dash: 'invokes these constructs—real-valued physical observables, ...'. It introduces an appositive enumeration (colon-equivalent), not an appended afterthought; single instance, no density.",
+        "notes": "Corpus-wide banner boilerplate; the same sentence appears with ' — ', ' --- ', ':' and '(...)' in sibling variants. Normalise at the banner-template level, not per block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.090Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.204Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.250Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.458Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Banner closer 'What follows therefore sits on the archimedean side of the substrate wall.' repeats the scope already given by 'What follows invokes these constructs—...'. Judged boilerplate bookkeeping rather than manufactured emphasis.",
+        "notes": "This exact 4-sentence banner variant is unique in the corpus (1/130 banner-bearing blocks); 23 blocks carry a tighter 3-sentence variant. Proposed: converge on the majority wording, which drops the redundant closer. Not fixed in isolation to avoid adding a 20th variant."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.302Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.342Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.261Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "290e67feddcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:31.381Z",
+        "reviewed_sha": "c89553933bdb17d728a43497564e0be1907ddd88",
+        "evidence": "Full read: 2 prose sentences + display math + 4-sentence 'Archimedean specialisation' banner."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "186e7281e7fa",
+          "ts": "d43f3194825d",
+          "lean": "77c0d28b93c5",
+          "lean_statement": "69f2217ae359"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:21:31.458Z"
 }

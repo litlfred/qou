@@ -5,7 +5,7 @@ Canonical D-hunt for an explicit Bloch class [Z] ∈ B(ℂ) realising the
 Bring zero-mode value `D[Z] = 2/(3π)` ≈ 0.21220659.
 
 Context: `prop:em-coupling-bring-zero-mode` claims the bare EM-coupling
-formula `1/α_EM = q · [9]_q · [10]_q + 2/(3π) + O(α)` matches CODATA
+formula `1/α_EM = q · [9]_q · [10]_q + 2/(3π) + αH(1−h²α) + Δ₂` matches CODATA
 1/α_EM to 4.18 ppm at q_0. The `2/(3π)` term is proved algebraically
 as `2g/(4π(g-1))` at g=4 (the `hodgeRatio_at_g4` Lean theorem,
 unconditional). The K-theoretic identification of the Bloch class

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T23:33:01.900992+00:00",
-  "commitSha": "b8ae67f6596d8052c24d3e64720d795f94ceff0d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:30:33.841183+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "conjugate_pair_identified",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-5two-phi-odd-oneloop-vanishing",
   "scriptFile": "qbeta_5two_phi_odd_oneloop_vanishing_probe.py",
-  "scriptHash": "b3b0ddce270b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "077d724521c7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_phi_odd_oneloop_vanishing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_phi_odd_oneloop_vanishing_probe.py"
   },
   "description": "Independent (classical saddle) attack on phi_odd: the 5_2 substrate conjugate pair sigma_1/sigma_2 has classical amplitude arg-sum EXACTLY -pi/2 for both the pair and its bar image, so the 1-loop bar-odd phase VANISHES -- phi_odd=-0.004145 is a purely 2-loop datum. The mechanism behind the geometric-route anchor-smooth nulls.",
   "auditOnly": "docs/audits/2026-07-18-5two-phi-odd-purely-2loop.md",

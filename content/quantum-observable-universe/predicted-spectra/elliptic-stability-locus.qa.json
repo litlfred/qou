@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean"
   },
   "source_hashes": {
-    "ts": "d411208b0265",
     "md": "d4482459e7a9",
-    "lean": "eccd56f5d7fc"
+    "ts": "d411208b0265",
+    "lean": "eccd56f5d7fc",
+    "lean_statement": "6defed202288"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -755,31 +756,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "d4482459e7a9",
-          "ts": "d411208b0265",
-          "lean": "eccd56f5d7fc",
-          "lean_statement": "6defed202288"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1403,7 +1384,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1495,7 +1477,373 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.787Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "One assert-by-denial: 'There is no approximation - the integer minimiser of a convex quadratic is determined exactly.' The exactness claim is the point of the paragraph, so substantive; the construction is noted under trap-em-dash instead."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.335Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "10 stylistic spaced dashes in 772 words (1.30/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.850Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "Six spaced em-dashes in one block. Two are true parentheticals ('the nuclear degeneracy locus - the curve in the (p,A)-plane where adjacent nuclei have equal energy - forms', 'The **degeneracy locus** - the set of (p,t) where ... - satisfies') and one is a legitimate double-question ('Whether ... - and whether ... - remains an open question'). Three are load-bearing: 'There is no approximation - the integer minimiser ...' dodges a colon; '... to multi-baryon nuclear structure - the same passage that takes the proton ... to a nucleus' appends an afterthought; and '... even-odd staggering is most pronounced - precisely where the degeneracy locus would intersect the stability curve' appends an unsupported claim to the end of a sentence, where it reads as established. Density is the tell.",
+        "notes": "Structural in the third case, because the appended clause is a substantive claim that the block's own arithmetic does not support (recomputed: the elimination gives p = 270.9, not the 67.8 the sentence rests on). Proposed: convert the three load-bearing dashes to full stops or colons, and either derive or drop the 'precisely where' clause."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 772 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.388Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.454Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.506Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.573Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.634Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.969Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "severity": "minor",
+        "evidence": "'This lies in the neighborhood of **erbium** ($Z = 68$), occupying the rare-earth region where shell effects peak and even-odd staggering is most pronounced - precisely where the degeneracy locus would intersect the stability curve.' Three unqualified intensifiers stacked ('peak', 'most pronounced', 'precisely where') on a number that does not survive recomputation: the block's own $p^2 = (1-c)/(4c^3)$ at $c \\approx 0.01497$ gives $p = 270.93$, not 67.8.",
+        "notes": "Structural - the sentence's force depends on an arithmetic error reported separately. Proposed: recompute p first; if the erbium neighbourhood survives, state it without the three intensifiers ('This lies near erbium (Z = 68), in the rare-earth region where even-odd staggering is largest.') and drop 'precisely where', which asserts an intersection the block has not shown."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.141Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:50:19.678Z",
+        "reviewed_sha": "90d4a1820fcb8841f6142c7d7b163fda78b8bd88",
+        "evidence": "Full read of remark block: two-cubics comparison, genus comparison, 3-part conjecture, coefficient matching with a 2-row table, physical interpretation, computational evidence, lattice-point section, open pairing lift, established-results list."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "d4482459e7a9",
+          "ts": "d411208b0265",
+          "lean": "eccd56f5d7fc",
+          "lean_statement": "6defed202288"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:50:19.969Z"
 }

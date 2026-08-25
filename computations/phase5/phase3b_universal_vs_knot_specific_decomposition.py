@@ -145,7 +145,7 @@ def main():
         y_sym = y_lambda_wenzl_bridge_symbolic(list(shape))
         chi = chi_sigma1[shape]
         sum_yz += y_sym * chi
-    z_target = 1 / (sqrt(q) + 1/sqrt(q))
+    z_target = q**3 / (q**2 + 1)
     diff = cancel(sum_yz - z_target)
     print(f"    Σ y_λ · χ^λ(σ₁) = {cancel(sum_yz)}")
     print(f"    z = {z_target}")
@@ -153,7 +153,7 @@ def main():
     print(f"    {'✓ Verified' if diff == 0 else '✗ Does not match — checking numerically...'}")
 
     if diff != 0:
-        mp.mp.dps = 50
+        set_compute_dps()
         q0 = mp.mpf(Q_50_DIGIT_STR)
         num = float(sum_yz.subs(q, float(q0)).evalf())
         z_num = float(z_target.subs(q, float(q0)).evalf())

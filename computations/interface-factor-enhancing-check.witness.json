@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T00:37:39.425302+00:00",
-  "commitSha": "74074440e60b2e843d7494aceb29387d5d6ce029",
+  "computedAt": "2026-08-23T09:23:44.206075+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 86,
+  "durationMs": 121,
   "computation": "interface-factor-enhancing-check",
   "scriptFile": "interface_factor_enhancing_check_probe.py",
-  "scriptHash": "fe0be64835ff",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "334e74b581b0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,36 +23,43 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/interface_factor_enhancing_check_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/interface_factor_enhancing_check_probe.py"
   },
   "description": "Checks whether any canonical pairwise interface factor exceeds 1 (would escape productModel_3body_nonpos). None does at q0; z<=1/2 for all q (AM-GM, Lean markovParam_le_half). Enhancing escape foreclosed.",
   "parameters": {
-    "q_0": "1.109978582751380807591669095610768879874",
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
     "free_parameters": 0
   },
   "data": {
     "factors": [
       {
         "factor": "positive (z)",
-        "value": "0.49932033418369445241",
+        "value": "0.6126880371464652516",
         "in_0_1": true,
         "enhances": false
       },
       {
         "factor": "negative (z-h)",
-        "value": "0.29026003538805513698",
+        "value": "0.40362773835082593616",
         "in_0_1": true,
         "enhances": false
       },
       {
         "factor": "averaged (z-h/2)",
-        "value": "0.3947901847858747947",
+        "value": "0.50815788774864559388",
         "in_0_1": true,
         "enhances": false
       },
       {
         "factor": "bring pn (z-h(1/2-d/4))",
-        "value": "0.3948620864139681634",
+        "value": "0.50822978937673896258",
         "in_0_1": true,
         "enhances": false
       }

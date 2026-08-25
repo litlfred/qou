@@ -7,7 +7,7 @@ $S_5$-equivariant Gauss--Manin data on that plane (the equivariance forces
 $M = \mathrm{id}_W \otimes B$, so all freedom lives in the $2\times 2$ block
 $B$: its normalisation and its $\mathrm{SL}_2$ trace $\tau$, since
 $\det B = 1$). That is $2$ data. The meson topology is the Hopf link, whose
-complement has $\operatorname{Vol} = 0$ (meson scale-independence); it carries
+complement has $\mathrm{Vol} = 0$ (meson scale-independence); it carries
 no hyperbolic-volume invariant, so its mass scale is a third datum independent
 of $(m_e, q_0)$. Total $2 + 1 = 3$ (`cohomology_data_count`).
 

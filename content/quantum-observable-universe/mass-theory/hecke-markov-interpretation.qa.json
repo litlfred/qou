@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/hecke-markov-interpretation.md"
   },
   "source_hashes": {
-    "ts": "8da9dac8e4dc",
-    "md": "d58f740bb806"
+    "md": "d58f740bb806",
+    "ts": "8da9dac8e4dc"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -985,30 +985,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "d58f740bb806",
-          "ts": "8da9dac8e4dc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1622,7 +1603,372 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not classical probabilities.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.709Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "\"The matrix contains probability amplitudes, not classical probabilities\" is the block's actual content (amplitude picture vs probability picture) — substantive mathematical contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.788Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "\"The memorylessness condition coexists with non-trivial correlations. Each step depends only on the current state. Yet the braid relations impose strict correlations...\" has pivot shape, but the tension is real and the section resolves it; judged substantive."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 405 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.824Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "One unspaced appositive dash (\"one iteration on the exceptional divisor—a single Planck step\"); a single appositive is normal punctuation, not a density tell."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 405 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.865Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "\"Two compatible pictures\" is a genuine pair; six sections, none a reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.917Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The standalone final line introduces the observables-as-expectations claim rather than offering a maxim."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:49.961Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:50.001Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Final line adds content (observables = expectations under the Mallows measure) rather than restating."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:50.040Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:50.089Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "Opening sentence is an unqualified universal: \"Every algebraic construction possesses a Markov chain counterpart.\" Nothing in the block supports quantification over ALL algebraic constructions — the body exhibits a dictionary for one algebra. Compounded by an intensifier flood in the same 500 words: \"genuine quantum deformation\", \"purely representation-theoretic\", \"determined solely by\", \"strictly bounds\", \"couple uniformly\", \"simultaneously\".",
+        "notes": "NOT fixed (narrowing an overclaim is a meaning change). Proposed fix: \"Every algebraic construction possesses a Markov chain counterpart.\" -> \"Each of the Hecke-algebraic constructions below has a Markov chain counterpart.\" Also flagged: the .ts title \"Markov chain **validation** of the algebraic framework\" claims validation for what the block delivers as an interpretation/dictionary; proposed \"Markov chain reading of the algebraic framework\"."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.377Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:16:50.142Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "Abstract noun-chains that parse on the page and stall aloud: \"This uniformity constitutes the representation-theoretic origin of the all-pairs coupling observed in the mass-tower.\" and \"The transition from amplitudes to probabilities mirrors the shift from generator indexing to cell indexing.\" Both are subject = abstract noun, verb = copula-equivalent, object = four-noun chain.",
+        "notes": "NOT fixed (each carries a technical claim whose rewording risks meaning drift). Proposed fix for the first: \"Because the L_k commute, they are simultaneously diagonalised on every SYT, which is where the mass-tower's all-pairs coupling comes from.\" Separate (non-trap) finding: that sentence is also a non-sequitur as written — [L_i, L_j] = 0 gives simultaneous diagonalisability, not \"all SYT cells couple uniformly\"; the inference from commutation to all-pairs coupling is asserted, not shown."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "d58f740bb806",
+          "ts": "8da9dac8e4dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:16:50.142Z"
 }

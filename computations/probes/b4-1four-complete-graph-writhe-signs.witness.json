@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T11:52:51.476985+00:00",
-  "commitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
+  "computedAt": "2026-08-24T21:06:55.577617+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "pp_sign_positive_from_convention",
@@ -18,17 +18,17 @@
     },
     {
       "name": "pn0_is_block_diagonal_(1-z2)^2",
-      "computed": "0.563519",
-      "expected": "0.563519",
+      "computed": "0.390142",
+      "expected": "0.390142",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "b4-1four-complete-graph-writhe-signs",
   "scriptFile": "b4_1four_complete_graph_writhe_signs.py",
   "scriptHash": "e82388c70cc3",
-  "scriptCommitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,16 +40,25 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b4_1four_complete_graph_writhe_signs.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b4_1four_complete_graph_writhe_signs.py"
   },
   "description": "[1⁴] complete-graph exchange matrix from read-off writhe signs: pp=+1, nn=−1 (derived from atom_braid_word_3A); pn sign open, enumerated over {−1,0,+1} at bond-factor magnitude z. −ln det(I+G) in MeV vs b₄=9.243. No fit; the pn sign needs the [1⁴] framing (open). audit-only.",
   "tier": "structural (enumeration of 3 discrete pn signs; derived pp/nn signs; no tuning)",
   "result": {
     "shell": "⁴He [1⁴] complete graph, 6 pairs (1 pp, 1 nn, 4 pn)",
     "constants": {
-      "q0": "1.10997859556",
-      "z_bond_factor": "0.499320334",
-      "E0_MeV": "4.1859808",
+      "q0": "1.10997858275",
+      "z_bond_factor": "0.6126880371",
+      "E0_MeV": "4.1859814",
       "b4_target_MeV": "9.243"
     },
     "derived_signs": {
@@ -60,7 +69,7 @@
     "enumeration": [
       {
         "w_pn": -1,
-        "det_I_plus_G": "-0.18512048",
+        "det_I_plus_G": "-0.54774417",
         "neg_log_det": null,
         "MeV": null,
         "ratio_to_b4": null,
@@ -68,15 +77,15 @@
       },
       {
         "w_pn": 0,
-        "det_I_plus_G": "0.56351927",
-        "neg_log_det": "0.57355375",
-        "MeV": "2.400885",
-        "ratio_to_b4": "0.259752",
-        "status": "0.260× of b₄ (=2.401 MeV)"
+        "det_I_plus_G": "0.39014186",
+        "neg_log_det": "0.94124486",
+        "MeV": "3.9400334",
+        "ratio_to_b4": "0.426272",
+        "status": "0.426× of b₄ (=3.940 MeV)"
       },
       {
         "w_pn": 1,
-        "det_I_plus_G": "-0.18512048",
+        "det_I_plus_G": "-0.54774417",
         "neg_log_det": null,
         "MeV": null,
         "ratio_to_b4": null,
@@ -84,7 +93,7 @@
       }
     ],
     "pn0_block_diagonal_check": {
-      "det_closed_form_(1-z^2)^2": "0.56351927",
+      "det_closed_form_(1-z^2)^2": "0.39014186",
       "note": "pn=0 ⇒ G block-diagonal (pp block ⊕ nn block); pn pairs contribute nothing."
     },
     "mixed_sign_physicality_ceiling": {
@@ -96,7 +105,7 @@
       ],
       "mu_min": "-2.236068",
       "g_ceiling_for_det_gt_0": "0.447214",
-      "z_bond_factor": "0.49932033",
+      "z_bond_factor": "0.61268804",
       "z_exceeds_ceiling": true,
       "note": "STRUCTURAL BOUND (not a fit): for pn=±1 the sign pattern's most-negative eigenvalue forces det(I+g·S) ≤ 0 once per-pair magnitude g ≥ 1/|μ_min|. The naive bond factor z EXCEEDS this ceiling ⇒ pn=±1 unphysical at z. The [1⁴] framing must supply a REDUCED (or non-uniform) per-pair magnitude below the ceiling — a sharper open than the sign alone."
     },
@@ -107,5 +116,7 @@
     "spec": "docs/design/2026-07-06-gap-a4-writhe-derivation-lit-review-and-framework.md",
     "status": "pp/nn signs derived; pn sign open (needs [1⁴] framing / #3407 Lk_R^{(k)})"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

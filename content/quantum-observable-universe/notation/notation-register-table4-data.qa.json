@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/notation/notation-register-table4-data.md"
   },
   "source_hashes": {
-    "ts": "8c89ca307c76",
-    "md": "4601598bc8d6"
+    "md": "4601598bc8d6",
+    "ts": "8c89ca307c76"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -306,30 +306,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:23.493Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "4601598bc8d6",
-          "ts": "8c89ca307c76"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:32.095Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -892,7 +873,206 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.177Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.216Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.255Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.296Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.336Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.375Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.414Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.454Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.495Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.534Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T07:10:24.534Z"
 }

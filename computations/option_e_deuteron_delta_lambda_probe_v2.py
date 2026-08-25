@@ -34,6 +34,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def young_contents(partition):
@@ -46,7 +48,7 @@ def young_contents(partition):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
 
     repo_root = Path(__file__).resolve().parent.parent
     chi_path = (

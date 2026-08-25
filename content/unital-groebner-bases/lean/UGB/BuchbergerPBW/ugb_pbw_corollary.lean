@@ -12,7 +12,7 @@ normal form. The conclusion is a concrete `isNormalForm` /
 `ReducesToNF` claim over real `SU2Gen` types — not a bare `Prop`.
 
 Content block
-[`cor:pbw-corollary`](../../../unital-groebner-bases/buchberger-and-pbw/pbw-corollary.md):
+[`cor:ugb-pbw`](../../../unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.md):
 *Poincaré–Birkhoff–Witt theorem over a commutative ring*.
 
 ## Manuscript statement
@@ -30,17 +30,36 @@ realisation** carried by `NormalForms.lean`, where the GS basis is the
 divided-power basis `{E_+^a K^b E_-^c}` (`PBWMonomial`). We state two
 concrete consequences:
 
-* every PBW monomial `m` is in normal form under the `q`-Serre system
-  (`pbw_monomials_are_normal_forms`) — the PBW monomials really are the
-  `S𝔤`-basis representatives; and
+* ~~every PBW monomial `m` is in normal form under the `q`-Serre system~~
+  — **withdrawn: this is false as it was stated**, see below; and
 * every element reduces to a *unique* normal form
   (`normal_form_unique` against `qSerre_is_gs_basis`).
 
 The `R`-linear bijection `U𝔤 ≅ S𝔤` itself is not assembled (raw
-`AlgElement` data type). The single `sorry` is the existence/termination
-half of `ReducesToNF`; the PBW-normality and uniqueness halves are
-discharged by `NormalForms.lean`'s `pbw_monomials_are_normal_forms` and
-`normal_form_unique`.
+`AlgElement` data type).
+
+## The PBW-normality half was withdrawn (bean qou-ix9e)
+
+It rested on the axiom `pbw_monomials_are_normal_forms`, which became
+checkable once `qSerreRewritingSystem` was built rather than axiomatised —
+and it fails. `PBWMonomial.toMonomial` lays the letters out as
+`E_+^a K^{b₊} K⁻¹^{b₋} E_-^c`, and three of its joins are leading monomials
+of the system: `[K,K⁻¹]`, `[K,E_-]`, `[E_+,E_-]`. So those words are
+*reducible*, not normal.
+`NormalForms.pbw_monomials_are_not_all_normal_forms` proves the negation at
+`⟨0,1,1,0⟩`, which is the word `[K,K⁻¹]` — rule 1's leading monomial exactly.
+
+The letter order `E_+ … K … E_-` is simply not this system's normal-form
+order: reading the orientations off the rules, reduction moves `E_-` left past
+`E_+` and moves `K` right past both, so normal words are `E_-^c E_+^a K^b`
+with `K` and `K⁻¹` never mixed. Establishing *that* is the genuine remaining
+content of Bokut–Malcolmson Thm 3.2 and is open, so this theorem no longer
+claims it rather than importing it from a false axiom.
+
+The existence/termination half is proved (`normal_form_exists`, bean
+qou-lzoo), and its unit-leading-coefficient hypothesis is now **discharged**
+by `qSerre_rules_monic` — the thing that was left hanging when the system was
+opaque.
 -/
 
 namespace UGB.BuchbergerPBW
@@ -53,22 +72,18 @@ variable {k : Type v} [Field k]
 
 /-- **PBW corollary — `U_q(su(2))` instance.**
 
-    With `qs` the `q`-Serre data: (1) every PBW monomial
-    `m = E_+^a K^b E_-^c` is in normal form under the `q`-Serre
-    rewriting system, and (2) every element reduces to a unique normal
-    form. So the PBW monomials are exactly the canonical representatives
-    of `U_q(su(2)) ≅ S𝔤` — the substantive content the former
-    `holds : Prop` lacked.
+    With `qs` the `q`-Serre data: every element reduces to a **unique** normal
+    form under the `q`-Serre rewriting system. Existence is
+    `normal_form_exists` (termination + monic rules, both discharged here);
+    uniqueness is `normal_form_unique` against `qSerre_is_gs_basis`.
 
-    The conclusion is a **concrete conjunction over real `SU2Gen`
-    types** (`isNormalForm` + `ReducesToNF` + uniqueness). -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts
+    The former first conjunct — "every PBW monomial is in normal form" — is
+    **gone, because it is false**; see the module docstring and
+    `NormalForms.pbw_monomials_are_not_all_normal_forms`. What survives is a
+    statement about `ReducesToNF` over real `SU2Gen` types, and it no longer
+    depends on any refuted claim. -/
+-- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/ugb-pbw-corollary.ts
 theorem ugb_pbw_corollary (qs : QSerreRelations k) :
-    (∀ m : PBWMonomial,
-       isNormalForm degLexOrder (qSerreRewritingSystem k qs)
-         ⟨fun w => if w = m.toMonomial then (1 : k) else 0,
-          {m.toMonomial},
-          fun w hw => by simp at hw; simp [hw]⟩) ∧
     (∀ f : AlgElement SU2Gen k,
        (∃ nf : AlgElement SU2Gen k,
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf) ∧
@@ -76,15 +91,17 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₁ →
           ReducesToNF degLexOrder (qSerreRewritingSystem k qs) f nf₂ →
           nf₁ = nf₂)) := by
-  refine ⟨?_, ?_⟩
-  · -- PBW monomials are normal forms: NormalForms.lean axiom.
-    intro m
-    exact pbw_monomials_are_normal_forms k qs m
   · intro f
     refine ⟨?_, ?_⟩
-    · -- Existence of the normal form (termination half). Remaining step.
-      -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
-      exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs) (qSerre_is_gs_basis k qs) f
+    · -- Existence of the normal form: proved, and its unit-leading-coefficient
+      -- hypothesis is now **discharged** rather than assumed.
+      --
+      -- bean qou-lzoo left it hanging on purpose: `qSerreRewritingSystem` was an
+      -- axiom, so its rules could not be inspected, and asserting monicity as a
+      -- fresh axiom would have been assuming the thing. The system is now built
+      -- (`NormalForms.lean` §3.1), so `qSerre_rules_monic` proves it outright.
+      exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs)
+        (qSerre_rules_monic k qs) f
     · -- Uniqueness against the q-Serre GS basis.
       intro nf₁ nf₂ h₁ h₂
       -- The "no quasi-zeros" hypothesis (Leitner–Pawloski) is discharged

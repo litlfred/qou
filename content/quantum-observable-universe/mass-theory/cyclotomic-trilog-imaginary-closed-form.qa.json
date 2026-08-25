@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean"
   },
   "source_hashes": {
-    "ts": "670927e9fc36",
     "md": "996f9a2686b1",
-    "lean": "77f3a1f1f706"
+    "ts": "670927e9fc36",
+    "lean": "77f3a1f1f706",
+    "lean_statement": "66b3ffd13818"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -806,31 +807,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "996f9a2686b1",
-          "ts": "670927e9fc36",
-          "lean": "77f3a1f1f706",
-          "lean_statement": "66b3ffd13818"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1774,7 +1755,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.642Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.676Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.712Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.746Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.782Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.816Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.852Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'This extends the zeta_5 result globally' is a scope statement about the generalisation, not a restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.895Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.940Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One appended vacuous intensifier found and removed; 'resides entirely within the real part' is a true statement of what the closed form leaves.",
+        "notes": "FIX APPLIED: 'This halves the depth-3 surface dimension for every cyclotomic field immediately.' -> '... for every cyclotomic field.' Separately reported: the statement is written for zeta_n at the principal angle only, but its consumer (the depth-3 synthesis proof) applies it at every Galois conjugate zeta_K^j, where the correct form is pi^3 j(K-j)(K-2j)/(3K^3)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.668Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3cd019c67061",
+          "ts": "670927e9fc36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:57.982Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proposition, 94 w: read in full. The closed form Im Li_3(zeta_n) = (n-1)(n-2) pi^3/(3n^3) is independently confirmed from the Glaisher evaluation sum_m sin(m theta)/m^3 = pi^2 theta/6 - pi theta^2/4 + theta^3/12 at theta = 2 pi/n. The stated asymptotic pi^3/(3n) is also correct."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "996f9a2686b1",
+          "ts": "670927e9fc36",
+          "lean": "77f3a1f1f706",
+          "lean_statement": "66b3ffd13818"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T14:58:57.982Z"
 }

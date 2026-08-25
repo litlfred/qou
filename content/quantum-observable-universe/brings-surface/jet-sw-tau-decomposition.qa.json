@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean"
   },
   "source_hashes": {
-    "ts": "374900420440",
     "md": "db6550773718",
-    "lean": "4b689fc4f5cb"
+    "ts": "374900420440",
+    "lean": "4b689fc4f5cb",
+    "lean_statement": "950b03d444c1"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:24.315Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "db6550773718",
-          "ts": "374900420440",
-          "lean": "4b689fc4f5cb",
-          "lean_statement": "950b03d444c1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:20.413Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1494,7 +1475,8 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "result": "pass",
@@ -1662,7 +1644,8 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof."
       },
       {
         "result": "pass",
@@ -1867,7 +1850,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs.",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:jet-sw-tau-decomposition' incomplete.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs."
       },
       {
         "result": "pass",
@@ -2135,7 +2119,369 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.885Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no assert-by-denial construction; contrasts present are technical content"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.926Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.962Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no load-bearing spaced-dash substitution; density ~0"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:01.998Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no reflex three-item lists; enumerations substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.034Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Closer: 'The jet tower travels intact through the filtration, and tau collapses it to the graded sum only at observation.'",
+        "notes": "pass-with-note: interpretive but content-bearing (observe-last principle); borderline register noted for clarity-stmt-pure, not a trap fail."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.071Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no narration of own emphasis ('we emphasize'/'note the framing' absent)"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.107Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Consequently, the Seiberg--Witten differential is the jet-graded decomposition ...' verbalises the displayed identity.",
+        "notes": "pass-with-note: standard mathematical verbalisation of the display, not a redundant closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.141Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no personal register in institutional prose"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.178Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); no unqualified maximum-strength claims"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:58.940Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:02.216Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "full-block agent read (proposition); prose parses aloud; noun-chain density normal for technical register"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "db6550773718",
+          "ts": "374900420440",
+          "lean": "4b689fc4f5cb",
+          "lean_statement": "950b03d444c1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

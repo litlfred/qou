@@ -102,16 +102,17 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     ca.gauge = ca.gauge ≫ 𝟙 (𝟙_ C) → ca.gauge = ca.gauge := by
   simp [CategoryTheory.Category.comp_id]
 
-/-- **Categorical transport equation**: the state is critical iff
-    `D_∇ ψ = 0`, i.e. the covariant derivative of the state vanishes.
-    Encoded: at a critical state, the matter term factors through the unit. -/
+/-- **Categorical transport equation**, as a predicate on the action data:
+    the state is critical iff the covariant derivative `D_∇ ψ = 0`, i.e. the
+    matter term factors through the unit — `ca.matter = fh.unit ≫ fh.counit`.
+    Named (§3b), not asserted: the previous
+    `(h_critical : P) : P := h_critical` was self-assuming and stated
+    nothing about the action. -/
 -- Ref: [manuscript] §1
-theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
+def variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
-    (ca : CategoricalAction C fh)
-    (h_critical : ca.matter = fh.unit ≫ fh.counit) :
-    ca.matter = fh.unit ≫ fh.counit :=
-  h_critical
+    (ca : CategoricalAction C fh) : Prop :=
+  ca.matter = fh.unit ≫ fh.counit
 
 end QOU

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.md"
   },
   "source_hashes": {
-    "ts": "c789bc9601ed",
-    "md": "12bd069e5a6e"
+    "md": "12bd069e5a6e",
+    "ts": "c789bc9601ed"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -280,30 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "12bd069e5a6e",
-          "ts": "c789bc9601ed"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:01.977Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1300,7 +1281,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1447,7 +1429,379 @@
         "reviewed_at": "2026-08-09T13:00:59.271Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \"not the involutive reading itself, but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.743Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read. 'not a relation internal to the U(1) phase'; 'The discrete color charge is not a function of the continuous phase'; section header 'Color is not the phase'; 'We claim not the involutive reading itself, but its realization...'",
+        "notes": "All are substantive mathematical contrast (false-positive class): the S_2/S_3 orthogonality and the novelty-attribution scope ARE the block's content."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.787Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "'The two remain nonetheless faces of one substrate' after establishing sector independence.",
+        "notes": "Not a manufactured pivot: the follow-on is the concrete group fact S_2xS_3 < S_5 properly, with off-block generators named."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 826 words)"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.831Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "3 dash constructions: two true appositive parentheticals (structural content--...--is generic; character involution--bar-involution--sorts) and one appended tail (H^1(Bring)=2W forms such a structure--the Hodge-theoretic home).",
+        "notes": "Density low for a block of this length; ranges/parentheticals permitted. No fix."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (2 in 826 words)"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.876Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "'real, quaternionic, or complex' (Frobenius-Schur trichotomy); 'mass, electromagnetism, and color'; 'modulus, spacetime phase, color grading'. Antecedent list is FOUR items.",
+        "notes": "All substantive enumerations tied to actual structure (FS indicator; the three table rows)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.923Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Final line is a scope/novelty claim carrying math (Im(q_0)=0 at the archimedean level renders the two parts separately real observable shadows).",
+        "notes": "Substantive, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:41.969Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "'We write the trace scalar in polar form'; 'We then have:'; 'Read against this work, two of our identifications...'; 'Our contribution forms the group-theoretic statement...'",
+        "notes": "Standard mathematical/attribution register; no narration of own emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:42.013Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "severity": "major",
+        "evidence": "Section 'Color is not the phase' closed with 'Mass, electromagnetism, and color form one trace object read on its modulus, its spacetime phase, and its color grading.' -- restates the three table rows and the section header 'Three readings of one trace' verbatim in content, adding nothing.",
+        "notes": "FIXED: sentence deleted. before -> '...not a relation internal to the U(1) phase. Mass, electromagnetism, and color form one trace object read on its modulus, its spacetime phase, and its color grading.' after -> '...not a relation internal to the U(1) phase.' Math delimiters re-checked: $$ count 2 (balanced)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:42.058Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "No personal/institutional warmth register anywhere in the block.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:42.104Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Checked every strength-bearing phrase: 'structurally barred', 'makes this non-coincidence sharp', 'properly contains', 'The individual ingredients form classical results'.",
+        "notes": "Each is a qualified or provable claim: S_5 > S_2xS_3 properly (120 vs 12, verified); a continuous map from connected U(1) into finite mu_5 is constant, so the 'barred' claim is a theorem not an inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.974Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "354f6d710180",
+          "ts": "c789bc9601ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:42.151Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "severity": "minor",
+        "evidence": "Copula flood: 'forms' substituted for 'is/is due to' throughout the literature section, producing sentences that do not parse aloud -- 'The complexified continuation of the phase forms Witten \\cite{witten2011}' and 'The quantum dilogarithm controlling the asymptotics forms Faddeev-Kashaev \\cite{faddeev1994}' have no predicate noun; also 'the bar-involution structure of the root-of-unity asymptotics forms the quantum-modularity of Zagier'.",
+        "notes": "PROPOSED (not applied -- 15 'forms' occurrences, beyond the 2-sentence inline budget and looks like a corpus-wide de-hedging sweep artifact): restore the copula, e.g. 'forms Witten \\cite{witten2011}' -> 'is due to Witten \\cite{witten2011}'; 'forms Faddeev-Kashaev' -> 'is due to Faddeev-Kashaev'; 'The individual ingredients form classical results' -> 'are classical results'."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "12bd069e5a6e",
+          "ts": "c789bc9601ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:45:42.151Z"
 }

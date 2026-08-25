@@ -21,7 +21,7 @@ The bond energies B0 themselves were ALREADY per-block Hecke traces at H_6
 
 the density base cancels ALGEBRAICALLY in the ratio: the color weight is
 (1 + δ·asym + δ²·sym) regardless of whether the base is the fitted global
-λ_A or the canonical per-knot tr_M(K) (`vol_density_per_block`).  This rerun
+λ_A or the canonical per-knot tr_M(K) (`per_knot_density_per_block`).  This rerun
 verifies that cancellation numerically: it computes the T−³He color split
 under (a) the pre-swap λ_A-normalized weights and (b) the per-knot /
 base-free weights (the form committed in 2af340cd), on identical per-block

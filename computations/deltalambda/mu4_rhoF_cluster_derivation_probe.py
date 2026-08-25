@@ -20,7 +20,7 @@ What ρ_F is (no dedicated function — computed from primitives)
 -------------------------------------------------------------
 ρ_F is the interface-product binding `B = E₀·τ_vac·(1 − ∏ᵢ fᵢ)` with the
 categorically-DERIVED per-bond factors (interface_factor, Lean-proved exact):
-    pp/nn positive bond  f = z            (Markov z = 1/(√q+1/√q))
+    pp/nn positive bond  f = z            (Markov z = q³/(q²+1), convention D)
     nn negative bond     f = z − h        (h = q − 1/q)
     pn averaged bond     f = z − h/2      (bar-symmetric / charge)
 Its connected k-body CLUSTER integral is the Ursell part
@@ -57,8 +57,16 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 sys.path.insert(0, str(COMP))
@@ -70,8 +78,10 @@ E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale
 
 
 def markov_z(q):
-    t = mp.sqrt(q)
-    return 1 / (t + 1 / t)
+    # Convention D: z = q^3/(q^2+1). Was a PRIVATE re-derivation of
+    # convention C, `1/(t + 1/t)` with t = sqrt(q), which shadowed the library
+    # function and so survived the gram.py migration untouched.
+    return q ** 3 / (q ** 2 + 1)
 
 
 def hecke_h(q):

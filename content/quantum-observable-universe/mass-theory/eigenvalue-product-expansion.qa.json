@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/eigenvalue-product-expansion.lean"
   },
   "source_hashes": {
-    "ts": "850baeabc0b6",
     "md": "7b8cdf0b3d65",
-    "lean": "8ea25d00eea6"
+    "ts": "850baeabc0b6",
+    "lean": "8ea25d00eea6",
+    "lean_statement": "00d4ac99d308"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -317,31 +318,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "7b8cdf0b3d65",
-          "ts": "850baeabc0b6",
-          "lean": "8ea25d00eea6",
-          "lean_statement": "00d4ac99d308"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1775,7 +1756,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.872Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.913Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.948Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.229Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Closing sentence enumerates FOUR terms (pn crossing count, pp-vs-nn excess, linear isospin correction, quadratic isospin term), matching the four summands of the displayed expansion; not a reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.987Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.033Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.069Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.108Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.149Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.378Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.275Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Two short declarative sentences close the block; both read aloud cleanly.",
+        "notes": "RIGOR (reported, not fixed): T-DEFINITION DEFECT. The block defines the isospin variable as T = |Z - N|/2 (absolute value) but the first display carries q^{(Z-N)(A-1)/2} and the second carries +l.T.A - l.T. With T = |Z-N|/2 the two displays disagree for every neutron-rich nucleus (N > Z), where (Z-N)(A-1)/2 = -|T|(A-1). The sibling proof prf:eigenvalue-product-expansion states T = (Z-N)/2 and labels it 'signed isospin'. Proposed fix: change the statement to T = (Z-N)/2 (signed). Algebra otherwise verified exact: n_pp-n_nn = (Z-N)(A-1)/2, ZN = A^2/4 - T^2, so ln|Lambda_sym| = l.T(A-1) + l_2(A^2/4 - T^2) expands to exactly the four displayed terms."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6",
+          "lean": "8ea25d00eea6",
+          "lean_statement": "00d4ac99d308"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:39:02.275Z"
 }

@@ -1,0 +1,284 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-0503213v2",
+ "source": {
+  "file": "0503213v2.pdf",
+  "sha256": "637a9e53b9b307764b6768995994562f83dfd41ca25d2767671dfc4223558845",
+  "bytes": 217539,
+  "pages": 6
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/0503213",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Oct 2006"
+  },
+  "doi": null,
+  "title": "A topological model of composite preons",
+  "authors_raw": "Centre for the Subatomic Structure of Matter, Department of Physics",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.62",
+   "CreationDate": "D:20080201213035-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "A topological model of composite preons",
+   "Sundance O. Bilson-Thompson ∗"
+  ],
+  "title_prev": "A topological model of composite preons Sundance O. Bilson-Thompson ∗"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "THE HELON MODEL",
+   "page": 1,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "PHENOMENOLOGY OF THE HELON",
+   "page": 2,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "H+ 0",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "H− 0",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "H+ + H− 0",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "N (H+) + 1",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "N (H− ) − 1",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "N (H0)",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "N (H− )",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(β + Ω) . (5)",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "UNRESOL VED ISSUES",
+   "page": 5,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "DISCUSSION",
+   "page": 6,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "ACKNOWLEDGEMENTS",
+   "page": 6,
+   "source": "inferred",
+   "number": "VI"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 3298,
+   "n_words": 528
+  },
+  {
+   "id": "sec-001-ii-the-helon-model",
+   "number": "II",
+   "title": "THE HELON MODEL",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5465,
+   "n_words": 952
+  },
+  {
+   "id": "sec-002-iii-phenomenology-of-the-helon",
+   "number": "III",
+   "title": "PHENOMENOLOGY OF THE HELON",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7316,
+   "n_words": 1254
+  },
+  {
+   "id": "sec-003-0-h-0",
+   "number": "0",
+   "title": "H+ 0",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 23,
+   "n_words": 11
+  },
+  {
+   "id": "sec-004-0-h-0",
+   "number": "0",
+   "title": "H− 0",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 28,
+   "n_words": 13
+  },
+  {
+   "id": "sec-005-0-h-h-0",
+   "number": "0",
+   "title": "H+ + H− 0",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2308,
+   "n_words": 427
+  },
+  {
+   "id": "sec-006-3-n-h0",
+   "number": "3",
+   "title": "N (H0)",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-3-n-h",
+   "number": "3",
+   "title": "N (H− )",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 96,
+   "n_words": 21
+  },
+  {
+   "id": "sec-008-3-n-h-1",
+   "number": "3",
+   "title": "N (H+) + 1",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-3-n-h-1",
+   "number": "3",
+   "title": "N (H− ) − 1",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 389,
+   "n_words": 102
+  },
+  {
+   "id": "sec-010-2-β-ω-5",
+   "number": "2",
+   "title": "(β + Ω) . (5)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3268,
+   "n_words": 616
+  },
+  {
+   "id": "sec-011-iv-unresol-ved-issues",
+   "number": "IV",
+   "title": "UNRESOL VED ISSUES",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1835,
+   "n_words": 315
+  },
+  {
+   "id": "sec-012-v-discussion",
+   "number": "V",
+   "title": "DISCUSSION",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 3870,
+   "n_words": 618
+  },
+  {
+   "id": "sec-013-vi-acknowledgements",
+   "number": "VI",
+   "title": "ACKNOWLEDGEMENTS",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1464,
+   "n_words": 251
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 29360
+ }
+}

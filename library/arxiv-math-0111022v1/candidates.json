@@ -1,0 +1,111 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0111022v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
+  "file": "0111022v1.pdf"
+ },
+ "provenance": {
+  "title": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr\u00a8 odinger Institute for Mathematical Physics Boltzmanngasse 9",
+  "authors": "A-1090 Vienna, Austria",
+  "arxiv": {
+   "id": "math/0111022",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "2 Nov 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "lemma": 3,
+   "remark": 2,
+   "conjecture": 1
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "The rational linear span of the Lin1,...,n m (z1,...,z m;q) forms an",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "For the ordered de\ufb01nition of the q-deformed multiple polyloga-",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "There is a q-deformation \u2206 q of the coproduct \u2206 of Z which turns",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": null,
+   "statement": "The commutators for the full algebra of q-deformed multiple poly-",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2",
+   "name": null,
+   "statement": "The Hopf algebra of Connes and Kreimer is supposed to be re-",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "7",
+   "name": null,
+   "statement": "By the arguments given in the introductory section and by",
+   "section_file": "sections/sec-001-1-motivation.md",
+   "section_title": "Motivation",
+   "pages": "1-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

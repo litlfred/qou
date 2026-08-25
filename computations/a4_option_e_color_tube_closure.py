@@ -10,17 +10,23 @@ import sys
 from pathlib import Path
 import json
 from mpmath import mp, mpf
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
-def set_compute_dps():
-    mp.dps = 50
 
 def fmt(x):
     return f"{float(x):.6f}"
 
 # Deuteron physical constants
 Q0_STR = "1.1099785955573347198997632204832250266562084087802"
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 M_E_MEV = mpf("0.51099895069")
 B_4HE_AME = mpf("28.29566") # MeV
 

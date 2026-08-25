@@ -45,5 +45,5 @@ This holds over real $q > 0$ (the substrate-anchor regime). Both identities are 
 
 ## Cross-references
 
-- $\operatorname{def:coulomb-charge}$ — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
-- $\operatorname{prop:coulomb-strong-ratio-q-rational}$ — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.
+- [`def:coulomb-charge`](#def:coulomb-charge) — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
+- [`prop:coulomb-strong-ratio-q-rational`](#prop:coulomb-strong-ratio-q-rational) — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.

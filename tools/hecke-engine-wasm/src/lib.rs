@@ -168,9 +168,12 @@ pub fn qou_hecke_h(q: f64) -> f64 {
 /// Markov-trace weights on the NF basis as a JSON array of 6 floats.
 /// JSON-string return to avoid pulling in `serde-wasm-bindgen`
 /// for a single small array; browser consumers `JSON.parse()` once.
+///
+/// Convention D (qou-m7py, 2026-08-15): the production Markov trace
+/// `h·z² + z`, matching `pyhecke.gram.TR_M`.
 #[wasm_bindgen]
 pub fn qou_trace_weights(q: f64) -> String {
-    let w = hecke_engine::gram::trace_weights(q);
+    let w = hecke_engine::gram::trace_weights_markov(q);
     serde_json::to_string(&w.to_vec())
         .expect("infallible serialisation of Vec<f64>")
 }

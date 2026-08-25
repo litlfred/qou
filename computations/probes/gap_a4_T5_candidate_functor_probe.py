@@ -267,7 +267,7 @@ def test_f3_wenzl_ratio(q_0: mp.mpf) -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T5-candidate-functor-probe", engine="mpmath")
     w.set_audit_only("docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md")
     w.set_description(

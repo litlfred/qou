@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/GBSpectralSequence.lean"
   },
   "source_hashes": {
-    "ts": "3fded86d4015",
     "md": "836fcf8c712d",
-    "lean": "4858d58de7a7"
+    "ts": "3fded86d4015",
+    "lean": "4858d58de7a7",
+    "lean_statement": "7afe1c300a38"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -814,7 +815,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1190,31 +1192,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "836fcf8c712d",
-          "ts": "3fded86d4015",
-          "lean": "4858d58de7a7",
-          "lean_statement": "7afe1c300a38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:01.977Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2140,7 +2122,380 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.398Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Read in full (definition + proposition + proof). The only near-miss is \"Complex numbers appear only as a derived embedding R -> C\", which is a scope restriction, not assertion-by-denial.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.444Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "\"The physics application uses the archimedean realisation. The derivation is ring-agnostic.\" is a two-beat setup-then-generalise, but the second clause is a substantive mathematical scope claim the surrounding paragraph supports (the base ring R is left generic throughout), not a reframe that carries the paragraph's weight rhetorically.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 394 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.487Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "One spaced em-dash: \"induced by three Groebner-Shirshov rewriting rules - the Hecke relation, far commutativity, and Yang-Baxter\". Load-bearing apposition naming the three rules that the display then writes out.",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 394 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.531Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Three triples in one block: the three GS rules; the three realisations (archimedean / p-adic / finite-field); the three convergence conditions (bounded below / exhaustive / finite-dimensional). Each is a genuine enumeration - the GS rewriting system has exactly three rules and the filtered-spectral-sequence convergence hypotheses are the classical three - so none is a reflex list.",
+        "notes": "No change. Density noted only."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.571Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Closes on \"The total Hochschild cohomology equals the sum over pages. Pairing this with the Markov-trace cocycle tr_M yields the six-term mass decomposition.\" - a mathematical assertion, not a quotable line.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.615Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "\"To obtain d o d = 0, we pass to the Hochschild cochain complex\" and \"We equip the complex with the standard Hochschild differential\" are ordinary first-person-plural proof moves, not narration of emphasis.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.657Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "The final sentence asserts the six-term decomposition, which the proof does not in fact derive (it derives convergence). That makes it an unsupported step rather than a restatement of something established - flagged as a proof gap below, not as trap 7.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.701Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "No personal register.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.744Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "\"The identity d o d = 0 is a classical theorem for any associative R-algebra. It holds verbatim for H_n(R,q).\" The unqualified \"verbatim\" carries a real equivocation: the definition asserts d o d = 0 for d = d_H + d_F + d_YB, the sum of the three REWRITING rules, whereas the classical theorem cited is about the HOCHSCHILD differential, a different operator introduced two paragraphs later. Nothing in the block connects the two, so \"verbatim\" transfers a result about d_Hochschild onto d_GS.",
+        "notes": "STRUCTURAL, not edited. Proposed: either prove d_GS o d_GS = 0 directly, or restate the definition to say the filtered differential algebra structure is carried by the Hochschild differential on C^bullet, with the three GS rules defining the filtration rather than the differential. Related substantive items for the coordinating session, all in this block: (1) \"Each rule lowers filtration degree\" is false for d_F and d_YB as written - sigma_i sigma_j -> sigma_j sigma_i and the Yang-Baxter move both preserve word length; only the Hecke relation lowers it. (2) The convergence conditions are mislabelled: \"Bounded below: J^0 = H_n(R,q)\" is exhaustiveness, and \"Exhaustive: intersect_l J^l = 0\" is separatedness/Hausdorff. (3) The proposition types tr_M as H_n(R,q) -> C while its own proof says Markov-trace values live in R and that \"complex numbers appear only as a derived embedding\"; the arrow should land in R. (4) The convergence display switches to E_infty^{p,q}, using q as a cohomological bidegree in a block where q is the Hecke parameter - a live symbol collision against the notation register; the block uses E_r^{l,*} everywhere else."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.996Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8f613823419a",
+          "ts": "6b57525c354b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:15:57.790Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "severity": "minor",
+        "evidence": "Systematic copular substitution across the block - \"is\" replaced by \"forms\"/\"provides\"/\"constitutes\" about eight times: \"R forms the categorical base ring\", \"This forms the target of the fibre functor\", \"tr_M forms a d-closed linear functional\", \"The Markov trace forms a cyclic 0-cochain\", \"J^bullet provides an ideal-filtration\", \"These provide the classical convergence conditions\", plus the nominalisation \"This filtration maintains compatibility with the Hochschild differential\".",
+        "notes": "STRUCTURAL (block-wide, ~8 sites; a partial fix would leave the register inconsistent), not edited. Proposed: restore the plain copula throughout - \"R is the categorical base ring\", \"tr_M is a d-closed linear functional\", \"This filtration is compatible with the Hochschild differential ..., so (C^bullet, d, F^bullet) is a filtered Hochschild complex\". This matches the known \"is -> forms/provides\" sweep-damage class."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "836fcf8c712d",
+          "ts": "3fded86d4015",
+          "lean": "4858d58de7a7",
+          "lean_statement": "7afe1c300a38"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:15:57.790Z"
 }

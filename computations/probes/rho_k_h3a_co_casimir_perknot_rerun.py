@@ -6,8 +6,8 @@
 Protocol: docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md §Next item 1.
 Question: is the co-Casimir refutation (residual −2.30 MeV, "wrong sign",
 rescaler ≈ −30) an artifact of the fitted global λ_A density
-(`vol_density_borromean`, p=n-degenerate, ≈ 2.533), or robust under the
-canonical PER-KNOT density `vol_density_per_block(Vol(𝓑₃), tr_M(K), q₀)`
+(`per_knot_density_borromean`, p=n-degenerate, ≈ 2.533), or robust under the
+canonical PER-KNOT density `per_knot_density_per_block(Vol(𝓑₃), tr_M(K), q₀)`
 with p ≠ n-distinct Markov traces (tr_M(p) ≈ 1.0653, tr_M(n) ≈ 0.9232,
 loaded from the chi-{atom}-h3-at-q0-50dps chi-cache witnesses)?
 
@@ -21,8 +21,8 @@ residual M(D) − M_pred).  This rerun therefore holds the sum fixed
 across three densities, like-for-like:
 
   1. CODATA (the parent script's actual baseline — measured-equivalent),
-  2. global λ_A     : m_p = m_n = m_e · vol_density_borromean(q₀)  ≈ 966,
-  3. per-knot tr_M  : m_N = m_e · vol_density_per_block(8G, tr_M(N), q₀)
+  2. global λ_A     : m_p = m_n = m_e · per_knot_density_borromean(q₀)  ≈ 966,
+  3. per-knot tr_M  : m_N = m_e · per_knot_density_per_block(8G, tr_M(N), q₀)
                       (proton ≈ 406, neutron ≈ 352 — p ≠ n distinct).
 
 Same q₀ (canonical muon-q₀, q_parameter.Q_MP = the computations/-layer
@@ -67,7 +67,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from _li_2_q_util import vol_density_per_block, vol_density_borromean  # noqa: E402
+from _li_2_q_util import per_knot_density_per_block, per_knot_density_borromean  # noqa: E402
 
 VOL_B3 = 8 * mp.catalan  # Vol(𝓑₃), Adams 1985 — same constant the density routines use
 
@@ -150,9 +150,9 @@ def main() -> int:
         warnings.simplefilter("ignore", DeprecationWarning)  # λ_A route is
         # deprecated-for-absolute-mass by design; this rerun uses it ONLY as
         # the refutation-era baseline under audit, not as production mass.
-        m_lambdaA = M_E_MEV * vol_density_borromean(Q_MP)
-    m_p_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_p, Q_MP)
-    m_n_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_n, Q_MP)
+        m_lambdaA = M_E_MEV * per_knot_density_borromean(Q_MP)
+    m_p_pk = M_E_MEV * per_knot_density_per_block(VOL_B3, tr_p, Q_MP)
+    m_n_pk = M_E_MEV * per_knot_density_per_block(VOL_B3, tr_n, Q_MP)
 
     rep_codata = closure_report("CODATA baseline (parent script, reproduction)",
                                 M_P_MEV, m_n_derived_3input, abs_tr_M, sum_contrib)

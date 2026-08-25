@@ -1,78 +1,81 @@
 {
- "schema": "witness/v1",
- "engine": "mpmath",
- "scriptFile": "c3_w2_c1_connection_matrix.py",
- "commitSha": "unknown",
- "description": "Bean qou-wgnx. Obtains the C1 connection matrix P = Y0^-1 Y_inf and REFUTES the 2026-08-07 degeneracy negative. That negative rested on three wrong premises: (a) the 0-side basis is degenerate \u2014 impossible, since p is real so theta_p has real coefficients and the exponents are a conjugate pair, forcing |e_t1(z)| = |e_t2(z)| exactly on the real axis (measured ratio 1.0; scale-invariant conditioning 0.59..0.72, not 1e-18); (b) the bases share no domain \u2014 but h entire in 1/z means it converges for every z != 0, so they overlap on 0 < |z| < 1 and match directly with no propagation; (c) |det|/max^2 measures conditioning \u2014 it does not, because the Casoratian obeys W(pz) = -(q-1)W(z)/(p^4z^2-1) exactly and so decays analytically while the columns stay independent. Also: P(pz) = P(z) is AUTOMATIC for any two fundamental matrices and was never evidence. RESULT: P = [[c+, c-], [conj c+, conj c-]], elliptic per entry to 1e-27..1e-59; c- has simple poles exactly at z in T p^Z. LIMIT STATED: c+ is NOT an exact constant \u2014 its z-variation is precision-independent and grows with q \u2014 so 'connection constant' is a q->1 statement, and the asymptotic law is not identified. Stokes multipliers remain OPEN.",
- "computation": {
-  "script": "computations/qbeta/c3_w2_c1_connection_matrix.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "76d6374ff9a1"
- },
- "results": {
-  "q": "1.1099785827513808075916690956",
-  "dps": 160,
-  "n_terms_zero_side": 900,
-  "n_terms_inf_side": 80,
-  "operator": "(p^4 z^2 - 1) tau^2 - (p^2-1) tau - (p^2-1)",
-  "zero_side_indicial": "t^2 + (q-1) t + (q-1) = 0",
-  "connection_matrix_structure": "[[c+, c-], [conj c+, conj c-]]",
-  "c_minus_pole_divisor": "z in T p^Z (zeros of theta_p(-z/T))",
-  "e_ratio_max_dev_from_one": "0.0",
-  "min_sin_angle_Y0": "0.591959882142",
-  "casoratian_max_rel_err": "6.302e-47",
-  "conj_structure_max_dev": "0.0",
-  "ellipticity_max_rel": "2.0517e-27",
-  "arg_c_plus_convergence_delta": "1.3846e-38",
-  "c_plus": "(1.3437808891456747632065e-24 + 4.27199237340076914235691e-24j)",
-  "arg_c_plus": "1.26603946254300268722379",
-  "c_plus_z_spread_at_substrate": "2.0339e-27",
-  "c_minus_pole_ratio_min": "5.24024e+160",
-  "c_minus_times_theta_limit": "1.18458089381e-18",
-  "c_plus_spread_by_q": {
-   "1.35": "3.14011e-23",
-   "1.8": "1.15178e-10",
-   "2.5": "6.89869e-6",
-   "3.4": "0.00252667"
-  }
- },
- "checks": [
-  {
-   "name": "conjugate_pair_forces_equal_magnitudes",
-   "detail": "|e_t1(z)| = |e_t2(z)| on the real axis \u2014 refutes the '~17 orders of magnitude apart' diagnosis",
-   "passed": true
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_c1_connection_matrix.py",
+  "commitSha": "unknown",
+  "description": "Bean qou-wgnx. Obtains the C1 connection matrix P = Y0^-1 Y_inf and REFUTES the 2026-08-07 degeneracy negative. That negative rested on three wrong premises: (a) the 0-side basis is degenerate \u2014 impossible, since p is real so theta_p has real coefficients and the exponents are a conjugate pair, forcing |e_t1(z)| = |e_t2(z)| exactly on the real axis (measured ratio 1.0; scale-invariant conditioning 0.59..0.72, not 1e-18); (b) the bases share no domain \u2014 but h entire in 1/z means it converges for every z != 0, so they overlap on 0 < |z| < 1 and match directly with no propagation; (c) |det|/max^2 measures conditioning \u2014 it does not, because the Casoratian obeys W(pz) = -(q-1)W(z)/(p^4z^2-1) exactly and so decays analytically while the columns stay independent. Also: P(pz) = P(z) is AUTOMATIC for any two fundamental matrices and was never evidence. RESULT: P = [[c+, c-], [conj c+, conj c-]], elliptic per entry to 1e-27..1e-59; c- has simple poles exactly at z in T p^Z. LIMIT STATED: c+ is NOT an exact constant \u2014 its z-variation is precision-independent and grows with q \u2014 so 'connection constant' is a q->1 statement, and the asymptotic law is not identified. Stokes multipliers remain OPEN.",
+  "computation": {
+    "script": "computations/qbeta/c3_w2_c1_connection_matrix.py",
+    "scriptCommitSha": "unknown",
+    "scriptHash": "76d6374ff9a1"
   },
-  {
-   "name": "zero_side_basis_well_conditioned",
-   "detail": "scale-invariant |sin(angle)| between columns is O(1), not 1e-18",
-   "passed": true
+  "results": {
+    "q": "1.1099785827513808075916690956",
+    "dps": 160,
+    "n_terms_zero_side": 900,
+    "n_terms_inf_side": 80,
+    "operator": "(p^4 z^2 - 1) tau^2 - (p^2-1) tau - (p^2-1)",
+    "zero_side_indicial": "t^2 + (q-1) t + (q-1) = 0",
+    "connection_matrix_structure": "[[c+, c-], [conj c+, conj c-]]",
+    "c_minus_pole_divisor": "z in T p^Z (zeros of theta_p(-z/T))",
+    "e_ratio_max_dev_from_one": "0.0",
+    "min_sin_angle_Y0": "0.591959882142",
+    "casoratian_max_rel_err": "6.302e-47",
+    "conj_structure_max_dev": "0.0",
+    "ellipticity_max_rel": "2.0517e-27",
+    "arg_c_plus_convergence_delta": "1.3846e-38",
+    "c_plus": "(1.3437808891456747632065e-24 + 4.27199237340076914235691e-24j)",
+    "arg_c_plus": "1.26603946254300268722379",
+    "c_plus_z_spread_at_substrate": "2.0339e-27",
+    "c_minus_pole_ratio_min": "5.24024e+160",
+    "c_minus_times_theta_limit": "1.18458089381e-18",
+    "c_plus_spread_by_q": {
+      "1.35": "3.14011e-23",
+      "1.8": "1.15178e-10",
+      "2.5": "6.89869e-6",
+      "3.4": "0.00252667"
+    }
   },
-  {
-   "name": "casoratian_identity",
-   "detail": "W(pz) = -(q-1) W(z)/(p^4 z^2 - 1) \u2014 explains the apparent determinant decay analytically",
-   "passed": true
-  },
-  {
-   "name": "connection_matrix_conjugate_structure",
-   "detail": "P[1,j] = conj P[0,j]",
-   "passed": true
-  },
-  {
-   "name": "connection_matrix_elliptic_per_entry",
-   "detail": "P(pz) = P(z) entrywise \u2014 a correctness check, NOT a result",
-   "passed": true
-  },
-  {
-   "name": "c_minus_has_simple_poles_at_T_p_k",
-   "detail": "|c-| blows up at z = T p^k and c- * theta_p(-z/T) stays finite",
-   "passed": true
-  },
-  {
-   "name": "c_plus_not_exactly_constant",
-   "detail": "z-variation grows with q and is precision-independent \u2014 recorded as a LIMIT, not a result",
-   "passed": true
-  }
- ],
- "verdict": "The connection matrix P = Y0^-1 Y_inf IS OBTAINED, and the 2026-08-07 'basis is degenerate' negative is REFUTED on all three of its premises. The 0-side basis was never degenerate: conjugate exponents plus real theta coefficients force |e_t1| = |e_t2| exactly, and the scale-invariant conditioning is 0.59..0.72. The bases overlap on the punctured disc, so no propagation was ever needed. P has exact conjugate structure and is elliptic per entry to 1e-27..1e-59, with c- carrying simple poles precisely on z in T p^Z. NOT CLAIMED: c+ is not an exact constant (its z-variation is real and grows with q), the asymptotic law behind that variation is not identified, and the STOKES MULTIPLIERS ARE STILL NOT EXTRACTED \u2014 obtaining the connection matrix is a prerequisite for them, not the same thing. Nothing wired to production.",
- "durationMs": 17137
+  "checks": [
+    {
+      "name": "conjugate_pair_forces_equal_magnitudes",
+      "detail": "|e_t1(z)| = |e_t2(z)| on the real axis \u2014 refutes the '~17 orders of magnitude apart' diagnosis",
+      "passed": true
+    },
+    {
+      "name": "zero_side_basis_well_conditioned",
+      "detail": "scale-invariant |sin(angle)| between columns is O(1), not 1e-18",
+      "passed": true
+    },
+    {
+      "name": "casoratian_identity",
+      "detail": "W(pz) = -(q-1) W(z)/(p^4 z^2 - 1) \u2014 explains the apparent determinant decay analytically",
+      "passed": true
+    },
+    {
+      "name": "connection_matrix_conjugate_structure",
+      "detail": "P[1,j] = conj P[0,j]",
+      "passed": true
+    },
+    {
+      "name": "connection_matrix_elliptic_per_entry",
+      "detail": "P(pz) = P(z) entrywise \u2014 a correctness check, NOT a result",
+      "passed": true
+    },
+    {
+      "name": "c_minus_has_simple_poles_at_T_p_k",
+      "detail": "|c-| blows up at z = T p^k and c- * theta_p(-z/T) stays finite",
+      "passed": true
+    },
+    {
+      "name": "c_plus_not_exactly_constant",
+      "detail": "z-variation grows with q and is precision-independent \u2014 recorded as a LIMIT, not a result",
+      "passed": true
+    }
+  ],
+  "verdict": "The connection matrix P = Y0^-1 Y_inf IS OBTAINED, and the 2026-08-07 'basis is degenerate' negative is REFUTED on all three of its premises. The 0-side basis was never degenerate: conjugate exponents plus real theta coefficients force |e_t1| = |e_t2| exactly, and the scale-invariant conditioning is 0.59..0.72. The bases overlap on the punctured disc, so no propagation was ever needed. P has exact conjugate structure and is elliptic per entry to 1e-27..1e-59, with c- carrying simple poles precisely on z in T p^Z. NOT CLAIMED: c+ is not an exact constant (its z-variation is real and grows with q), the asymptotic law behind that variation is not identified, and the STOKES MULTIPLIERS ARE STILL NOT EXTRACTED \u2014 obtaining the connection matrix is a prerequisite for them, not the same thing. Nothing wired to production.",
+  "durationMs": 17137,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

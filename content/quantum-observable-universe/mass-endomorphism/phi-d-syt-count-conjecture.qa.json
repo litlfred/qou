@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.lean"
   },
   "source_hashes": {
-    "ts": "f23b46c7122d",
     "md": "6028044ebe58",
-    "lean": "d14a24192f9f"
+    "ts": "f23b46c7122d",
+    "lean": "d14a24192f9f",
+    "lean_statement": "bdb4fbdf1521"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -463,7 +464,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -839,31 +841,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "6028044ebe58",
-          "ts": "f23b46c7122d",
-          "lean": "d14a24192f9f",
-          "lean_statement": "bdb4fbdf1521"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:01.977Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1519,7 +1501,379 @@
         "reviewed_at": "2026-08-09T13:00:59.271Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.148Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "No denial-of-opposite construction; the block states the conjecture positively and tables its verification.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.189Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "n=3 verification -> multiplicity formula -> n=4 prediction -> significance -> Lean table. No reframe.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 294 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.230Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "One em-dash, in the .ts title only ('-- verified at n=3'); zero in the .md body.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 294 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.273Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "'(f_lambda, H(lambda), c(lambda))' and the three n=3 rows (exhaustive: 3 partitions of 3). The isotope list is FOUR items (B_3, B_6, B_9, B_12).",
+        "notes": "Substantive enumerations."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.315Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "Block does not end on a closer -- it ends on a Lean-theorem table plus a boilerplate banner (see trap-thesis-restatement).",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.358Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "'We verify this for each representation:' -- ordinary derivation narration.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.401Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "severity": "major",
+        "evidence": "The block's FINAL paragraph is a dangling boilerplate banner with nothing after it: '**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, physical observables, and numerical evaluation at the substrate parameter q_0. Generic categorical or q-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.' Nothing follows it, and nothing in this block is archimedean -- the whole content is exact cyclotomic/combinatorial data over Z[q] (hook lengths, SYT counts, Phi_d factors); q_0 never appears.",
+        "notes": "PROPOSED (not applied -- boilerplate placement is a structural/pipeline question, and the audit brief asks that this class be REPORTED): delete the trailing banner. This is the SIXTH recorded instance of the dangling 'Archimedean specialisation.' banner-with-nothing-after-it that the batch brief flags; here it is additionally false, not merely orphaned."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.444Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "None.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.486Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "severity": "minor",
+        "evidence": "'Combined with the Wenzl-bridge y_lambda weights and the precision-ladder c_k extraction, this **closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids**.' Unqualified 'every order' / 'arbitrary' on a conjecture the same block marks n>=4 OPEN, and against a c_k ladder AGENTS.md records as NOT closed (c_2 structural not proved; c_3 = -2 a 3.47% near-match; c_4..c_7 never computed by the canonical producer per QOU.QBeta.greedy_later_rungs_vanish; the whole ladder convention-C-frame pending re-derivation under D).",
+        "notes": "PROPOSED (not applied -- scope claim): 'this closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids' -> 'this would supply the per-order per-block input for multi-baryon typed braids'. The leading 'If the conjecture holds at all n' hedges the antecedent but not the word 'closes'. VERIFIED-CORRECT and not to be re-flagged: every hook length, SYT count and cyclotomic polynomial in both tables recomputed and right -- n=3 H = 6,3,6 -> f = 1,2,1 -> d = 4,8,4 -> Phi_4 = q^2+1, Phi_8 = q^4+1; n=4 H = 24,8,12,8,24 -> f = 1,3,2,3,1 (sum of squares 24 = 4! confirms) -> d = 4,12,8,12,4 -> Phi_12 = q^4-q^2+1 correct; the multiplicity identity m*phi(d) = 4 checks (2*2, 1*4, 2*2) and is consistent with numerator degree 6 minus deg(q^2-1) = 2."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.011Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:57:25.529Z",
+        "reviewed_sha": "f6f768c44d526eb7a4c1101f2b06b173aa2b9f47",
+        "evidence": "Heaviest: 'a structural prediction for the per-irrep contribution to tr_M as a function of purely combinatorial partition data'.",
+        "notes": "Parses aloud; no fix."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "6028044ebe58",
+          "ts": "f23b46c7122d",
+          "lean": "d14a24192f9f",
+          "lean_statement": "bdb4fbdf1521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:57:25.529Z"
 }

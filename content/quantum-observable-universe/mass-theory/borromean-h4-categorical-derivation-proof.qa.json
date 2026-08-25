@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-proof.md"
   },
   "source_hashes": {
-    "ts": "b8c3012a5546",
-    "md": "5d37d71e22da"
+    "md": "5d37d71e22da",
+    "ts": "b8c3012a5546"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -447,7 +447,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -776,30 +777,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "5d37d71e22da",
-          "ts": "b8c3012a5546"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1341,378 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.247Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'(this is *not* R-check(q -> q^{-1}), which is the universal R-matrix not the braided form)' is load-bearing disambiguation of two genuinely different objects."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.284Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "4 stylistic spaced dashes in 319 words (1.25/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.319Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One appositive ('the Jones-normalised trace is chiral -- not invariant under the sign-twist automorphism')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 319 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.353Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.388Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.424Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.459Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.494Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.530Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 634-word two-step proof; the 8x8 R-matrix trace was independently recomputed at 40 dps."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.747Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.564Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Proof prose is direct.",
+        "notes": "RIGOR (not a trap). VERIFIED INDEPENDENTLY: building sigma_1 = R-check (x) I, sigma_2 = I (x) R-check as 8x8 matrices with R-check as printed and sigma_1^{-1} = sigma_1 - (q-q^{-1})I, I computed tr(F(beta_Bor)) at q_0 = 7.988371625959928176538357891712807408996, which equals 8 - 6h^4 - 2h^6 to all 40 digits carried; hence chi^{(2,1)} = 2 - 3h^4 - h^6 exactly as claimed. The printed R-check satisfies (R-q)(R+q^{-1}) = 0 (middle block has trace q-q^{-1} and determinant -1). Schur-Weyl dimensions 4*1 + 2*2 = 8 correct. PRESENTATION GAP: Step 2 as displayed BACK-SOLVES y_{(2,1)}(q=1) = 1/4 from the closed form's known h^4 coefficient -3/4, then Combining Steps 1 and 2 presents (-3)*(1/4) = -3/4 as the derivation -- circular as written. The independent route exists (y_{(2,1)} = 1/[2]_q^2 from prop:h3-markov-wenzl-weights) and is cited two paragraphs later; proposed: derive from the cited weight first and use the closed form as the check."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "5d37d71e22da",
+          "ts": "b8c3012a5546"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:01:34.564Z"
 }

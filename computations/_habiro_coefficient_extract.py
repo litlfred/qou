@@ -70,9 +70,19 @@ from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
     reconstruct,
+    str_in_u,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q_CANONICAL_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise working precision BEFORE any mpf is built from a decimal string.
+# Idempotent, and deliberately at module scope: `mp.mpf("1.10997…")` parsed
+# at the default 15 dps keeps 15 digits and pads the rest from binary64,
+# and that is true of the *compliant-looking* string form too — the timing
+# is what decides, not the argument type (bean qou-j6gb).
+set_compute_dps()
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -103,6 +113,7 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
     ("⁵He (helium-5, A=5)",  "helium-5",    2, 3, 112),
     ("⁶Li (lithium-6, A=6)", "lithium-6",   3, 3, 128),
     ("⁶Be (beryllium-6, A=6)","beryllium-6", 4, 2, 128),
+    ("⁶He (helium-6, A=6)",  "helium-6",    2, 4, 128),
     ("⁷Li (lithium-7, A=7)", "lithium-7",   3, 4, 144),
     ("⁷Be (beryllium-7, A=7)","beryllium-7", 4, 3, 144),
     ("⁸Be (beryllium-8, A=8)","beryllium-8", 4, 4, 160),
@@ -113,6 +124,16 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
     ("¹⁰Be (beryllium-10, A=10)","beryllium-10", 4, 6, 192),
     ("¹⁰B (boron-10, A=10)", "boron-10",    5, 5, 192),
     ("¹⁰C (carbon-10, A=10)","carbon-10",   6, 4, 192),
+    # A=12 / A=14.  These five (with ⁶He above) have committed witnesses
+    # written by THIS producer but had been dropped from the list, so a run
+    # regenerated 20 of the 25 committed atoms and left the rest on whatever
+    # convention they were last built under.  That is how a silently
+    # mixed-convention mass table arises; see
+    # docs/audits/2026-08-23-habiro-mass-table-convention-c-attribution.md.
+    ("¹²B (boron-12, A=12)", "boron-12",    5, 7, 224),
+    ("¹²N (nitrogen-12, A=12)","nitrogen-12", 7, 5, 224),
+    ("¹⁴C (carbon-14, A=14)","carbon-14",   6, 8, 256),
+    ("¹⁴O (oxygen-14, A=14)","oxygen-14",   8, 6, 256),
 ]
 
 
@@ -122,8 +143,13 @@ ATOMS: list[tuple[str, str, int, int, int]] = [
 
 
 def _markov_z_q(q: sp.Symbol) -> sp.Expr:
-    """z(q) = 1 / (q^{1/2} + q^{-1/2})."""
-    return 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    """z(q) = q^3 / (q^2 + 1) -- the production Markov parameter.
+
+    Was 1/(q^{1/2} + q^{-1/2}), convention C, excised by the owner ruling of
+    2026-08-09. Nothing flagged it: the audit keyed off an assignment TARGET
+    and this computes straight into its return, so it had no name to match.
+    """
+    return q**3 / (q**2 + 1)
 
 
 def _hecke_h_q(q: sp.Symbol) -> sp.Expr:
@@ -208,14 +234,16 @@ def analyse_atom(label: str, Z: int, N: int, q,
     print(f"  reconstruction matches Σ a_m·(u;u)_m: {recon_matches}")
 
     # Numerical check at q₀ (50-dps mpmath).
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q0_mp
     u0 = mp.sqrt(q0)
     try:
-        tr_M_at_q0 = float(mp.mpf(str(sp.N(
+        tr_M_at_q0_mp = mp.mpf(str(sp.N(
             tr_M_q.subs(q, sp.Rational(str(q0))), 30
-        ))))
+        )))
+        tr_M_at_q0 = float(tr_M_at_q0_mp)
     except Exception:
+        tr_M_at_q0_mp = mp.mpf('nan')
         tr_M_at_q0 = float('nan')
     check_error = None
     try:
@@ -235,11 +263,17 @@ def analyse_atom(label: str, Z: int, N: int, q,
             denom_expr.subs(u, sp.Rational(str(u0))), 30
         )))
         u0_shift = u0 ** shift if shift else mp.mpf(1)
-        tr_M_via_u = float(p_in_u_at_u0 / (u0_shift * denom_at_u0))
-        if tr_M_at_q0 != 0 and not mp.isnan(tr_M_at_q0):
-            rel_err = abs(tr_M_at_q0 - tr_M_via_u) / abs(tr_M_at_q0)
+        tr_M_via_u_mp = p_in_u_at_u0 / (u0_shift * denom_at_u0)
+        tr_M_via_u = float(tr_M_via_u_mp)
+        # Carry the residual as mpmath.mpf.  Computing it from the two float64
+        # casts instead would floor the diagnostic at ~1e-16 and report the
+        # arithmetic rather than the agreement (AGENTS.md, NO-FLOAT64).
+        if tr_M_at_q0_mp != 0 and not mp.isnan(tr_M_at_q0_mp):
+            rel_err_mp = (abs(tr_M_at_q0_mp - tr_M_via_u_mp)
+                          / abs(tr_M_at_q0_mp))
         else:
-            rel_err = 0.0
+            rel_err_mp = mp.mpf(0)
+        rel_err = float(rel_err_mp)
     except Exception as exc:
         # Record WHY, and as null rather than NaN.
         #
@@ -260,6 +294,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
         print(f"  numerical check FAILED: {exc}")
         tr_M_via_u = None
         rel_err = None
+        rel_err_mp = None
         check_error = f"{type(exc).__name__}: {exc}"
     _fmt = lambda v, f: (f"{v:{f}}" if v is not None else "n/a")   # noqa: E731
     print(f"  tr_M @ q_0 = {_fmt(tr_M_at_q0, '+.6e')}, "
@@ -274,7 +309,10 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "tr_M_in_q": str(tr_M_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        # `u` here IS the canonical symbol, so this is already normalised —
+        # routed through str_in_u anyway so the invariant is stated at every
+        # serialization site rather than held in someone's head (bean qou-0ndb).
+        "p_in_u": str_in_u(p_u, u),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "n_nonzero": n_nonzero,
@@ -284,6 +322,10 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "tr_M_at_q0_via_u_poly": tr_M_via_u,
         "tr_M_at_q0_check_error": check_error,
         "tr_M_at_q0_rel_err": rel_err,
+        # The same residual before the float64 cast.  The summary reads THIS
+        # one, so the mass-table summary carries no raw float64 at all.
+        "tr_M_at_q0_rel_err_exact": (
+            mp.nstr(rel_err_mp, 30) if rel_err_mp is not None else None),
     }
 
 
@@ -299,7 +341,10 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         "description": description,
         "reference_blocks": reference_blocks,
         "parameters": {
-            "q_0": q0_float,
+            # The canonical 50-digit string, not the float64 cast: this witness
+            # is the one place the whole table is summarised, so a float64 here
+            # is a float64 in the table's own header.
+            "q_0": _Q_CANONICAL_STR,
             "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
             "generator": "_habiro_coefficient_extract.py",
@@ -364,22 +409,30 @@ def mirror_pair_diff(x: dict, y: dict, u: sp.Symbol) -> dict:
 
     Returns dict with phi_1 / phi_2 / phi_4 / phi_8 multiplicities,
     plus the full factored form (truncated for storage)."""
-    by_m_x = {entry["m"]: entry["a_m"] for entry in x["habiro_coefficients"]}
-    by_m_y = {entry["m"]: entry["a_m"] for entry in y["habiro_coefficients"]}
-    m_max = max(
-        max(by_m_x.keys()) if by_m_x else -1,
-        max(by_m_y.keys()) if by_m_y else -1,
-    )
+    # Difference the TRACES over a common denominator, not the a_m.
+    #
+    # p_X(u) = u^{shift_X}·denom_X(u)·tr_X(u²) by construction, so
+    # Σ Δa_m·(u;u)_m = p_X − p_Y = denom_X·tr_X − denom_Y·tr_Y, which is
+    # proportional to (tr_X − tr_Y) ONLY when denom_X == denom_Y. Under
+    # convention C the mirror partners happened to share a denominator and the
+    # coefficient shortcut was silently valid. Under D they do not — all seven
+    # canonical pairs differ — so the old form subtracted two differently
+    # normalised objects and destroyed the cyclotomic structure, reporting
+    # Φ_1 = Φ_2 = Φ_4 = Φ_8 = 0 on every pair. Φ_1 = 0 was the tell: at q = 1
+    # the mirror halves coincide, so (u−1) MUST divide a true difference.
+    #
+    # Differencing the traces is correct in both conventions and is what the
+    # Φ_k multiplicity is defined on (bean qou-0ndb).
+    q_local = sp.Symbol('q', positive=True, real=True)
 
-    delta_coeffs = []
-    for m in range(m_max + 1):
-        a_x = _coeff_to_sympy(by_m_x.get(m, "0"), u)
-        a_y = _coeff_to_sympy(by_m_y.get(m, "0"), u)
-        delta = sp.expand(a_x - a_y)
-        delta_coeffs.append({"m": m, "a_m": str(delta), "integral": True,
-                             "deg_a_m": 0})
+    def _num_den(entry):
+        tr = sp.sympify(entry["tr_M_in_q"], locals={"q": q_local})
+        tr_u = sp.powsimp(sp.expand(tr.subs(q_local, u ** 2)), force=True)
+        return sp.fraction(sp.together(tr_u))
 
-    diff_expr = sp.expand(reconstruct(delta_coeffs, u))
+    nx, dx = _num_den(x)
+    ny, dy = _num_den(y)
+    diff_expr = sp.expand(sp.expand(nx * dy) - sp.expand(ny * dx))
     if diff_expr == 0:
         return {
             "diff_zero": True,
@@ -437,7 +490,17 @@ def main() -> int:
     print("=" * 80)
 
     q0_float = float(_Q_CANONICAL)
-    q0_mp = mp.mpf(str(_Q_CANONICAL))
+    # `mp.mpf(str(_Q_CANONICAL))` — the previous form — round-tripped q₀
+    # through whatever `mp.dps` happened to be in force. At the default 15
+    # that kept 15 digits, and analyse_atom then raised dps to 50 and did
+    # `sp.Rational(str(q0))`, minting an exact rational from a value whose
+    # last 34 digits were the binary64 expansion:
+    #     1.1099785827513799496557567181298509240150451660156   (was)
+    #     1.1099785827513808075916690956107688798744991218736   (is)
+    # 7.7e-16 relative — small, but it anchored tr_M_at_q0 in all 20
+    # per-atom witnesses. Source the digits from the canonical 50-digit
+    # string instead, so the value cannot depend on ambient dps.
+    q0_mp = mp.mpf(_Q_CANONICAL_STR)
     print(f"q_0 = {q0_float:.16f}")
     print(f"Plan: {len(ATOMS)} canonical atoms")
 
@@ -581,7 +644,7 @@ def main() -> int:
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": q0_float,
+            "q_0": _Q_CANONICAL_STR,
             "pn_convention": "chi_lambda_braid (legacy production marshalling)",
             "generator": "_habiro_coefficient_extract.py",
         },
@@ -609,7 +672,7 @@ def main() -> int:
                     if (Z, N) in results
                     and "error" not in results[(Z, N)] else None),
                 "tr_M_at_q0_rel_err": (
-                    results[(Z, N)].get("tr_M_at_q0_rel_err")
+                    results[(Z, N)].get("tr_M_at_q0_rel_err_exact")
                     if (Z, N) in results
                     and "error" not in results[(Z, N)] else None),
                 "interface_kinds": (results[(Z, N)].get("interface_kinds")

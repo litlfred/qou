@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1bb681323fa9",
     "ts": "c939833a5924",
-    "lean": "6d83c154e99c",
+    "lean": "342971b58dd5",
     "lean_statement": "6cc9669d3231"
   },
   "criteria": {
@@ -331,26 +331,6 @@
           "version": "v1",
           "script_hash": "14c0eb8908a2",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
-        },
-        "reviewed_at": "2026-08-09T18:41:56.794Z",
-        "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "1bb681323fa9",
-          "ts": "c939833a5924",
-          "lean": "6d83c154e99c",
-          "lean_statement": "6cc9669d3231"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
         "reviewed_at": "2026-08-09T18:41:56.794Z",
         "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8"
@@ -853,7 +833,368 @@
         "reviewed_at": "2026-08-09T18:41:56.794Z",
         "reviewed_sha": "25003edd6e0c0ebc2016675c7ac88fad64b506d8"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.238Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'Two consequences make the exclusion structural rather than aesthetic' considered: the paragraph's whole content is that the exclusion is forced (mixed-symmetry block lost; isospin weights degenerate to 1 and 0), so the contrast IS the claim -> false-positive class 'substantive mathematical contrast'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.272Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.304Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One spaced '---': '...before any inverse structure is imposed --- which is what makes it safe to reuse over a coefficient ring where q is not invertible.' Appends a clause but carries real scope content; single instance in 351 w, no density.",
+        "notes": "Optional: '. This is what makes it safe...' if the chapter drains dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 301 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.338Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.372Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.409Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.481Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.518Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.553Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.858Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.588Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924",
+          "lean": "342971b58dd5",
+          "lean_statement": "6cc9669d3231"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T18:49:31.633Z"
+  "updated_at": "2026-08-21T14:55:32.588Z"
 }

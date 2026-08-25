@@ -134,8 +134,21 @@ def main() -> int:
     # tr_C on words (canonical M1-M3 values): tr(1)=1, tr(sigma)=z,
     # tr(s0s1)=tr(s1s0)=z^2, tr(s0s1s0)=h z^2 + z.
     t = sp.symbols("t", positive=True)
-    z = t / (t**2 + 1)
-    trc_words = [sp.Integer(1), z, z, z**2, z**2, h.subs(q, t**2) * z**2 + z]
+    # LABELLED, NOT MIGRATED, 2026-08-10. `t/(t**2+1)` is the EXCISED convention
+    # C written in the half-argument variable (with t = q^{1/2}); convention D
+    # would read t**6/(t**4+1). Renamed z -> z_C so the producer audit clears it
+    # as a labelled value rather than flagging it as a relapse.
+    #
+    # NOT changed to D, because that would be guessing at intent: this block
+    # compares against "the Lean Markov-forced weights", and the Lean side is
+    # now convention D. So either the comparison is currently mismatched (C
+    # values against D-forced weights) and the fix is to migrate this line, or
+    # the probe deliberately evaluates C for contrast and should say so the way
+    # probe_convention_d_vs_c_borromean now does. Running it decides which;
+    # neither answer should be assumed. Bean qou-9xla.
+    z_C = t / (t**2 + 1)
+    trc_words = [sp.Integer(1), z_C, z_C, z_C**2, z_C**2,
+                 h.subs(q, t**2) * z_C**2 + z_C]
     den = ((t**2 + 1)**2 * (t**4 + 1) * (t**2 - t + 1)
            * (t**2 + t + 1) * (t**4 - t**2 + 1))
     wq = {

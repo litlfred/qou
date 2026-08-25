@@ -335,31 +335,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "df5ff5ddf639",
-          "ts": "0f827d0fbef1",
-          "lean": "859019747108",
-          "lean_statement": "4c0d67b5ff1e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1081,12 +1061,380 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.105Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'does not reproduce the GGM resurgent-Stokes spectrum {3,4} and does not license A_omega = 3' and the closing 'It is not the open-HOMFLY bridge.'",
+        "notes": "False-positive class: load-bearing disambiguation. The block exists to separate two published bridges that identify different BPS spaces, and the exclusion is the non-degeneracy result itself, stated directly rather than narrated."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.157Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "6 stylistic spaced dashes in 344 words (1.74/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.202Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "6 spaced em-dashes in 452 words; two append rather than punctuate and the appended content repeats: '... BPS degeneracies\" - proved by Garoufalidis-Gu-Marino for the figure-eight'; '... conditional on it downstream (thm:aomega-fourone-dt-count) - a theorem for 4_1, conjectural in general'; and 'the general statement is open - it is a theorem for 4_1' says the same thing again eight lines later.",
+        "notes": "STRUCTURAL. Proposed: comma for the attribution dash; keep 'a theorem for 4_1, conjectural in general' once (in the adoption sentence) and drop the repeat in the Lean section."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 344 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.260Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.342Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.395Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.452Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Section closes on the adoption decision, which is new content rather than a restatement.",
+        "notes": "NOTE: 'a theorem for 4_1, conjectural in general' is stated twice (adoption paragraph and Lean section) - see trap-em-dash notes."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.505Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.551Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.589Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.601Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Duplicated citation token made the sentence ungrammatical: 'The first equality is [garoufalidis-gu-marino2023peacock] peacock Conjecture 3(d)'. The key legitimately ends in 'peacock' (references.ts:5572); the bare repeat was a copy artifact.",
+        "notes": "FIXED: removed the stray word - '...2023peacock`] peacock Conjecture 3(d)' -> '...2023peacock`] Conjecture 3(d)'."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "df5ff5ddf639",
+          "ts": "0f827d0fbef1",
+          "lean": "859019747108",
+          "lean_statement": "4c0d67b5ff1e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
   "source_hashes": {
-    "ts": "0f827d0fbef1",
     "md": "df5ff5ddf639",
-    "lean": "859019747108"
+    "ts": "0f827d0fbef1",
+    "lean": "859019747108",
+    "lean_statement": "4c0d67b5ff1e"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:20:36.601Z"
 }

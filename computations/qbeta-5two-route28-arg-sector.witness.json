@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route28_arg_sector",
   "bean": "qou-trns",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/QBeta/FiveTwoArgSector.lean",
   "supersedes": "qbeta_5two_route27_branch_by_argument (its three obligations are now one, and that one is proved)",
   "gates": [
@@ -9,8 +9,8 @@
       "gate": "G1",
       "claim": "the two hypotheses of Lean's `sa_lt_cb` really do hold on the arc: with y_2 = a + b i the upper member of the conjugate pair and R = |y_2|^2, 2 c R = 1 + 2 a R  and  2 a (R-1) = R^2 - R - 1. These are e_1 = 2c with the real root written 1/R, and e_2 - e_1 = 1 cleared of denominators",
       "n_complex_pair_points": 536,
-      "worst_residual_h1": "2.066298664e-40",
-      "worst_residual_h2": "4.132597327e-40",
+      "worst_residual_h1": "4.165612376e-70",
+      "worst_residual_h2": "9.508463033e-70",
       "R_range": [
         "1.28213804893",
         "2.32470341226"
@@ -55,7 +55,7 @@
         "k_nonzero": 0
       },
       "n_points": 699,
-      "worst_abs_k": "1.096205487e-41",
+      "worst_abs_k": "8.647536531e-72",
       "pass": true
     },
     {

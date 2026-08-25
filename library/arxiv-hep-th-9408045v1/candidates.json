@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9408045v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a9786c0f44a4e659f489f2928f53c5ba3f1cf53f057f9b018ed14697c32c74ce",
+  "file": "9408045v1.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": {
+   "id": "hep-th/9408045",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "8 Aug 1994"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula-proof.md"
   },
   "source_hashes": {
-    "ts": "654bc1c47ae1",
-    "md": "53f545939464"
+    "md": "53f545939464",
+    "ts": "654bc1c47ae1"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -776,30 +776,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "53f545939464",
-          "ts": "654bc1c47ae1"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1340,369 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.048Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "\"The argument is structural, not case-by-case\" does not appear here; the one denial, \"a further identification, not stated there and assumed here\", is an honest gap disclosure with an audit-doc citation."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.089Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.129Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.167Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.205Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Ends on an empirical share of the He-4 binding, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.243Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"Future work should reference $\\mathfrak{m}^{(k)}$ uniformly\" is a directive to later authors sitting in the proof body; AGENTS 4d puts that kind of note in authorNotes. Recorded pass on the trap axis and flagged for one-voice."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.283Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The historical-labelling and chirality sections both add material."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.323Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.367Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "SWEEP DAMAGE on the one empirical claim: \"empirically it accounts for $\\sim 3\\%$ of the binding energy of $^4$He (**the formal derivation witness**)\". \"the formal derivation\" stands where a script or witness name belongs - the documented token-substitution class - so the 3% figure is left with no traceable source, and the .ts carries no computation or witness field to supply one. Two further findings: the alpha_k coefficients of the statement block never appear in this proof, so the decomposition it proves is sum_k m^(k) rather than the weighted sum stated; and the proof correctly flags, with an audit-doc citation, that the word-depth to partition-depth identification is assumed rather than established - which means the depth-indexed decomposition the block proves is itself conditional and the statement block does not say so.",
+        "notes": "Reported, not edited. Route: restore the producer name behind \"the formal derivation witness\" and add the computation/witness to the .ts; reconcile alpha_k between statement and proof; carry the word-depth/partition-depth caveat up into the statement block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.667Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5303f522b2b6",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.408Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Reads aloud cleanly."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "53f545939464",
+          "ts": "654bc1c47ae1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T05:19:46.408Z"
 }

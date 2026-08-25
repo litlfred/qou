@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T20:47:30.301201+00:00",
-  "commitSha": "857d6fc4644dfaabc2a53e2a93a65dbb6a0227d3",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:46:13.011948+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "kappa_tower_tightens_scale_stays_anchor_blind",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "qbeta-c3-phib-kappa-tower-scale",
   "scriptFile": "qbeta_c3_phib_kappa_tower_scale_probe.py",
-  "scriptHash": "a15a2864ef42",
-  "scriptCommitSha": "857d6fc4644dfaabc2a53e2a93a65dbb6a0227d3",
+  "scriptHash": "799d6202818f",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_kappa_tower_scale_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_kappa_tower_scale_probe.py"
   },
   "description": "Joint tightening (coordination with #3628): extend the merged #3654 finite-b state-integral S-scale using #3628's exact Ohtsuki tower κ₁..κ₄ (κ₁=11√3π/108, κ₂=2π²/27, κ₃=1081√3π³/21870, κ₄=98π⁴/729). At the substrate 2πb²=i·t, so Im 𝔙_b (bar-odd S) is fed ONLY by odd rungs (t·κ₁−t³·κ₃) and Re 𝔙_b by even rungs — the state-integral realization of #3628's √3-parity alternation (odd→√3→Im, even→rational→Re). The κ-tower tightens the S scale 0.0578→0.0548 (−5.21%), still smooth + anchor-blind. Exact anchor-dependent S is the 1/u³ ladder representation of this smooth object (merged #3636), not Im 𝔙_b; the tower refines the scale, not the sign-flip. κ values cited from #3628. Scope-(a); C14; no c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -54,11 +63,11 @@
       },
       {
         "anchor": "muon",
-        "t": "0.10434073185379584233",
-        "Im_V_lead_kappa1": "0.057827352336156303313",
-        "Im_V_full_kappa1_4": "0.054811925524284007693",
+        "t": "0.10434073193357978749",
+        "Im_V_lead_kappa1": "0.057827352380373879954",
+        "Im_V_full_kappa1_4": "0.05481192556158436294",
         "shift_pct": "-5.21453",
-        "Re_corr_even": "-0.0064072010682350401533"
+        "Re_corr_even": "-0.00640720107565996162"
       }
     ],
     "conclusion": {

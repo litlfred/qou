@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/glossary/glossary-q-bit.md"
   },
   "source_hashes": {
-    "ts": "e51c37cb5d16",
-    "md": "ac450fbe784c"
+    "md": "946a7ff8e278",
+    "ts": "e51c37cb5d16"
   },
   "criteria": {
     "voice-status-leak": [
@@ -268,30 +268,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:38.575Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "ac450fbe784c",
-          "ts": "e51c37cb5d16"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:37.146Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1232,7 +1213,386 @@
         "reviewed_at": "2026-08-09T13:00:38.575Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:36.857Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None post-fix."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:36.894Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'Wheeler asserts...; the QOU refines this' is a substantive refinement claim, not a reframe device."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 179 words)"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:36.933Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "No spaced-dash constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 179 words)"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:36.971Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "No reflex triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.009Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Fixed: quotable closer removed.",
+        "notes": "fix applied: 'The substrate parameter q controls non-commutativity, and the q-bit is the indivisible unit of q-deformed information from which observable physics is built.' -> 'The substrate parameter q controls non-commutativity.' (tail restated the block-opening definition as a slogan)"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.063Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.164Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Post-fix the final paragraph no longer restates the opening definition."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.206Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.317Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'indivisible unit' sweep removed with the closer fix."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.070Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:16:37.357Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Readable; eta_q values re-verified by mpmath: q=1 -> 1.000 OK, q0 -> 0.8921 OK.",
+        "notes": "NUMERIC MISMATCH flagged, not edited: table gives eta at q=phi^2 as 0.327, but (2q-1)/q^3 at phi^2=2.61803 evaluates to 0.2361 (mpmath, 30 dps). 0.327 matches no nearby variant (q=phi gives 0.5279). Row needs correction or the 'golden threshold' q needs restating."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ac450fbe784c",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "946a7ff8e278",
+          "ts": "e51c37cb5d16"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:05.917Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-19T12:58:05.917Z"
 }

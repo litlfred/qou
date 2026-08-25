@@ -75,12 +75,26 @@ def main() -> int:
     print(f"  β_⁴He: {len(beta_full)} generators")
     print()
 
-    from char_fast import _compiled_sigmas
+    # d(lambda) by the hook-length formula, NOT by building the rep.
+    #
+    # This asked `_compiled_sigmas(lam, "double")` for all 77 partitions of 12
+    # and kept only `d`, discarding the matrices. That is the whole reason this
+    # producer could not be run: building and lambdifying every H_12 irrep to
+    # read 77 integers costs `c * sum_lambda d(lambda)^2`, and by Burnside that
+    # sum is exactly 12! = 479,001,600. Measured c gives **67 h** before PR
+    # #5517 and **18.5 h** after it — for numbers the hook-length formula
+    # returns instantly. Bean `qou-pag7`.
+    #
+    # `partition_dimension` is the corpus's own hook-length implementation
+    # (`pyhecke.wedderburn`), already used for this purpose in
+    # `chi_at_q0_via_hoefsmit_mpfr`. Verified equal to the discarded `d` on all
+    # 66 partitions of n <= 8 and on six H_12 shapes: zero mismatches.
+    #
+    # This also makes `--max-dim` filter BEFORE any rep is built, so only the
+    # selected shapes cost anything.
+    from pyhecke.wedderburn import partition_dimension
     parts_12 = partitions_of(12)
-    dims = []
-    for lam in parts_12:
-        _, d = _compiled_sigmas(lam, "double")
-        dims.append((lam, d))
+    dims = [(lam, partition_dimension(tuple(lam))) for lam in parts_12]
 
     if args.all:
         targets = dims

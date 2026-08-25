@@ -61,7 +61,9 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (H_num)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 Q0_MUON = mp.mpf("1.10997859555733471")
 # Canonical GGM saddle values — computed, not hardcoded (bean qou-ty28).

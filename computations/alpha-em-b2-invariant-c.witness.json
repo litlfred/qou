@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-25T12:16:03.542705+00:00",
-  "commitSha": "e801fdca859eff66669c490b61d9c7d7c5e17a84",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:53:36.527983+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "no_convention_free_single_c",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 20,
   "computation": "alpha-em-b2-invariant-c",
   "scriptFile": "alpha_em_b2_invariant_c_probe.py",
-  "scriptHash": "2f75cb6aac4e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "882e7ad678a3",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_b2_invariant_c_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_b2_invariant_c_probe.py"
   },
   "description": "Route C: whether the B2 scalar |c| is a convention-free invariant. Derived NO — the non-proportional (Markov, Hodge) pair has an invariant SPECTRUM (up to scale), not a single scalar; a single c rescales under independent normalizations. The intrinsic scale-invariant scalars are the q-deformation shape (spectral condition, CV; ~alpha scale scope-(a), no ID); the geometric-mean c is basis-invariant but scale-covariant. |c| stays tau-gated. Nothing wired; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

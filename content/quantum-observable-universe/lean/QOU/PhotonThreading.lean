@@ -68,7 +68,7 @@ def BraidWord.crossings (β : BraidWord) : ℕ := β.generators.length
     no reduction path to choose.  Gauge invariance is built in.
 
     Label: `def:crossing-energy` -/
-noncomputable def crossingEnergy {M : Type*} (sp : SubstrateParameter M)
+noncomputable def crossingEnergy {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hp : HeckeParams) (β : BraidWord) : ℝ :=
   let q := sp.field p
   let skeinWeight := |q - q⁻¹|
@@ -78,7 +78,7 @@ noncomputable def crossingEnergy {M : Type*} (sp : SubstrateParameter M)
     `m_H = (q - 1)² · E_H = E_H / c_q²`
 
     Label: `prop:photon-threading-mass` -/
-noncomputable def categoricalMass {M : Type*} (sp : SubstrateParameter M)
+noncomputable def categoricalMass {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hp : HeckeParams) (β : BraidWord) : ℝ :=
   let q := sp.field p
   (q - 1) ^ 2 * crossingEnergy sp p hp β
@@ -97,7 +97,7 @@ noncomputable def categoricalMass {M : Type*} (sp : SubstrateParameter M)
     `rfl`-equal for distinct `BraidWord` records, only for ones agreeing
     on the data `crossingEnergy` reads). -/
 theorem crossing_energy_gauge_invariant {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (sp : ArchimedeanSubstrateField M) (p : M) (hp : HeckeParams)
     (β₁ β₂ : BraidWord)
     (hn : β₁.nStrands = β₂.nStrands)
     (hg : β₁.generators = β₂.generators) :
@@ -110,7 +110,7 @@ theorem crossing_energy_gauge_invariant {M : Type*}
     number of strands (the strand count enters via the `B_{n+1}`
     photon-augmentation embedding). -/
 theorem mass_gauge_invariant {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (sp : ArchimedeanSubstrateField M) (p : M) (hp : HeckeParams)
     (β₁ β₂ : BraidWord) (h : β₁.generators = β₂.generators)
     (hn : β₁.nStrands = β₂.nStrands) :
     categoricalMass sp p hp β₁ = categoricalMass sp p hp β₂ := by
@@ -120,14 +120,14 @@ theorem mass_gauge_invariant {M : Type*}
 /-! ## Key properties -/
 
 /-- The crossing energy is non-negative. -/
-theorem crossingEnergy_nonneg {M : Type*} (sp : SubstrateParameter M)
+theorem crossingEnergy_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hp : HeckeParams) (β : BraidWord) :
     0 ≤ crossingEnergy sp p hp β := by
   unfold crossingEnergy
   exact mul_nonneg (heckeCost_nonneg _) (abs_nonneg _)
 
 /-- The categorical mass is non-negative. -/
-theorem categoricalMass_nonneg {M : Type*} (sp : SubstrateParameter M)
+theorem categoricalMass_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hp : HeckeParams) (β : BraidWord) :
     0 ≤ categoricalMass sp p hp β := by
   unfold categoricalMass
@@ -135,7 +135,7 @@ theorem categoricalMass_nonneg {M : Type*} (sp : SubstrateParameter M)
 
 /-- Mass equals crossing energy divided by c_q².
     `m_H = E_H / c_q²`, where `c_q = 1/(q-1)`. -/
-theorem mass_eq_energy_div_cq_sq {M : Type*} (sp : SubstrateParameter M)
+theorem mass_eq_energy_div_cq_sq {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hp : HeckeParams) (β : BraidWord)
     (hq : sp.field p > 1) :
     categoricalMass sp p hp β =
@@ -171,7 +171,7 @@ theorem nontrivial_has_generators (β : BraidWord)
     We state this as a hypothesis `hcost` — the GS engine (Bokut–Shiao
     axiom) provides it for any specific braid word. -/
 theorem crossingEnergy_pos_of_nontrivial {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (sp : ArchimedeanSubstrateField M) (p : M) (hp : HeckeParams)
     (β : BraidWord) (hq : sp.field p > 1)
     (hcost : 0 < heckeCost (augmentedBraidElement (n := β.nStrands) hp β.generators)) :
     0 < crossingEnergy sp p hp β := by
@@ -186,7 +186,7 @@ theorem crossingEnergy_pos_of_nontrivial {M : Type*}
 
 /-- Non-trivial braid has positive categorical mass when `q > 1`. -/
 theorem categoricalMass_pos_of_nontrivial {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (sp : ArchimedeanSubstrateField M) (p : M) (hp : HeckeParams)
     (β : BraidWord) (hq : sp.field p > 1)
     (hcost : 0 < heckeCost (augmentedBraidElement (n := β.nStrands) hp β.generators)) :
     0 < categoricalMass sp p hp β := by

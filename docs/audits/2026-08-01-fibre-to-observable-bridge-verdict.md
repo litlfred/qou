@@ -65,13 +65,13 @@ evaluated at the real substrate direction `t = log q₀`. The parity split is th
 
 ### 1b. Median resummation — the rigorous "recover the value from the asymptotics" map
 
-McSpirit–Rolen ([`uploads/2505.00799v2.pdf`](../../uploads/2505.00799v2.pdf),
+McSpirit–Rolen ([`library/arxiv-2505.00799v2/2505.00799v2.pdf`](../../library/arxiv-2505.00799v2/2505.00799v2.pdf),
 *Quantum modular forms and resurgence*, 2025) prove **median-resummation-type
 results** showing Zagier's holomorphic quantum modular forms **can be recovered
 from their (divergent) asymptotics**. This is the literature-established sense in
 which the resurgent/Stokes data of a fibre series *determines a real-analytic
 value* — the honest name for "a bridge." Wheeler et al.
-([`uploads/2304.07001v3.pdf`](../../uploads/2304.07001v3.pdf), *Resurgence,
+([`library/arxiv-2304.07001v3/2304.07001v3.pdf`](../../library/arxiv-2304.07001v3/2304.07001v3.pdf), *Resurgence,
 Habiro elements and strange identities*, 2025) supply the fibre-side half: they
 prove resurgence of the **Borel transform** of the formal series attached to
 **Habiro-ring elements** arising from **radial limits of partial theta series via
@@ -297,9 +297,9 @@ session budget note). The open pieces are **precisely beaned** (below).
 - [`2026-08-01-arrow-a-stateintegral-saddle-not-index-series.md`](2026-08-01-arrow-a-stateintegral-saddle-not-index-series.md)
   — the volume-route resummation is the state-integral saddle (shared geometric
   datum), sibling of the odd-face question.
-- Papers: [`uploads/2505.00799v2.pdf`](../../uploads/2505.00799v2.pdf)
+- Papers: [`library/arxiv-2505.00799v2/2505.00799v2.pdf`](../../library/arxiv-2505.00799v2/2505.00799v2.pdf)
   (McSpirit–Rolen, median resummation);
-  [`uploads/2304.07001v3.pdf`](../../uploads/2304.07001v3.pdf) (Wheeler et al.,
+  [`library/arxiv-2304.07001v3/2304.07001v3.pdf`](../../library/arxiv-2304.07001v3/2304.07001v3.pdf) (Wheeler et al.,
   Habiro elements ↔ resurgence ↔ strange identities).
 
 -- Ref: [manuscript] docs/audits/2026-07-07-c3-even-solved-s-complex-volume-rigidity.md

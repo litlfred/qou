@@ -15,7 +15,7 @@
 
 Garoufalidis–Gu–Mariño, *The resurgent structure of quantum knot
 invariants* ([arXiv:2007.10190v2](https://arxiv.org/abs/2007.10190),
-CMP 2021; `uploads/2007.10190v2.pdf`), §3 (the equation `x⁻²(1−x)³ = 1`
+CMP 2021; `library/arxiv-2007.10190v2/2007.10190v2.pdf`), §3 (the equation `x⁻²(1−x)³ = 1`
 and the 5₂ knot), eqs (22)–(29). Registered as
 `garoufalidis-gu-mariño2021`. The Stokes automorphism of the 5₂
 resurgent structure is a **pair of `3×3` matrices `S⁺(q), S⁻(q)` of
@@ -124,7 +124,7 @@ noted rather than force-updated.
 
 ## Cross-references
 
-- GGM 2007.10190 §3, eqs (22)–(29) (`uploads/2007.10190v2.pdf`); printed
+- GGM 2007.10190 §3, eqs (22)–(29) (`library/arxiv-2007.10190v2/2007.10190v2.pdf`); printed
   `Ind^rot_{5₂}`, p.19.
 - Corpus 5₂ chain: `qbeta_g3_5two_analytic_hm_tower.py` (#4011),
   `qbeta_g3_5two_stokes_sandwich.py` (#4013),

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean"
   },
   "source_hashes": {
+    "md": "46dec389e979",
     "ts": "237a00971d67",
-    "md": "28e85e1d863b",
-    "lean": "f6a8fd3d6816"
+    "lean": "d99fe13263f8",
+    "lean_statement": "452d0b06c9f8"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -311,7 +312,7 @@
         "field_hash": {
           "md": "28e85e1d863b",
           "ts": "237a00971d67",
-          "lean": "f6a8fd3d6816",
+          "lean": "d99fe13263f8",
           "lean_statement": "452d0b06c9f8"
         },
         "result": "pass",
@@ -319,31 +320,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:27.630Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "28e85e1d863b",
-          "ts": "237a00971d67",
-          "lean": "f6a8fd3d6816",
-          "lean_statement": "452d0b06c9f8"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:24.113Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1544,7 +1525,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1775,7 +1757,388 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.299Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no negation-contrast construction present in context."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.345Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no rhetorical-pivot construction present in context."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (3 in 1650 words)"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.391Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no load-bearing em-dash construction present in context."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 1650 words)"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.434Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no compulsive-triple construction present in context."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.476Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no closing-aphorism construction present in context."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.519Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no meta-commentary construction present in context."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.561Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no thesis-restatement construction present in context."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.609Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no performed-warmth construction present in context."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.651Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Agent full-block read; no superlative-inflation construction present in context."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.131Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:37.694Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Long relation catalogue; prose parses cleanly.",
+        "notes": "fixes applied (sweep damage): 'Poincar'e' -> 'Poincare (accented)' at 2 sites (+1 in table3 sibling); 'the singular language' -> 'the single language'. Flags (not edited): (1) summary dictionary uses T <-> L+, T^-1 <-> L- while the intro uses sigma_i <-> L+ (AGENTS.md 7a: generator is sigma_i, never T); (2) C-4 states tr_M(id)=[n]_q! (positive for q>1) while C-4b states tr_M(id)=-6 - sign tension unexplained in-block; (3) intro says '12 cohomological (C-1 through C-10)' - labels vs count mismatch (table3 has 12 rows via sub-items)."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "d36e8de9dbd5",
+          "ts": "237a00971d67",
+          "lean": "d99fe13263f8",
+          "lean_statement": "452d0b06c9f8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "46dec389e979",
+          "ts": "237a00971d67",
+          "lean": "d99fe13263f8",
+          "lean_statement": "452d0b06c9f8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:02.163Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-19T12:58:02.163Z"
 }

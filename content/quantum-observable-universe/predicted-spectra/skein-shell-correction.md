@@ -43,7 +43,7 @@ For the Descartes universe ($\chi = -6$), we predict the following factorization
 
 See [Table](#tbl:skein-shell-correction-table-data).
 
-The pattern is clear. The $\alpha$ particle $\mathcal{N}(2,2)$ acts as the fundamental closed sub-link. Its Skein polynomial factorizes completely. Stability pair nuclei are precisely those where the maximum possible number of $\alpha$ clusters form. They saturate all available Hopf junctions.
+The $\alpha$ particle $\mathcal{N}(2,2)$ acts as the fundamental closed sub-link. Its Skein polynomial factorizes completely. Stability pair nuclei are precisely those where the maximum possible number of $\alpha$ clusters form. They saturate all available Hopf junctions.
 
 **The $\alpha$-cluster hypothesis.**
 
@@ -75,4 +75,4 @@ This quantity is maximised when both $p$ and $n$ are even. Even-even nuclei host
 1. **Skein factorization**: We must prove the Skein polynomial $J_{\mathcal{N}(Z, N)}(q)$ factors when $(p, n)$ admits an $\alpha$-cluster decomposition. This requires a direct computation in the Skein algebra of the Hopf link.
 2. **Shell energy scale**: We must derive $\lambda_{\mathrm{shell}}$ directly from the categorical action. We expect to express it in terms of $q$, $a_V$, and the Skein polynomial of $\mathcal{N}(2,2)$.
 3. **Corrected stability formula**: We must show the total binding energy $\mathcal{L}_{\mathrm{bind}} + \delta E_{\mathrm{shell}}$ reproduces all observed stable isotopes to within $|\Delta n| \leq 1$ for all $p \leq 103$.
-4. **Genus lift**: We must show including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$. This establishes a firm connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus).
+4. **Genus lift**: We must show including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$. This establishes a connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus).

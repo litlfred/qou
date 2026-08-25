@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+import Mathlib.Topology.Order.Basic
 
 /-!
 # QOU.FluidDynamics.TownsendBiotSavart
@@ -136,9 +138,67 @@ theorem kappa_squared_tends_to_zero_axiom (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) 
     ∀ ε > 0, ∃ δ > 0, ∀ τ :
     ℝ, τ ≠ 0 → 0 < τ → τ < δ →
       |V2 ν C₂ τ / V1 C₁ ν τ| < ε := by
-  -- TODO: Prove using real-analysis fact τ^2 log τ → 0 as τ → 0^+.
-  -- The full chain of filter lemmas is mechanical but tangential.
-  sorry
+  intro ε hε
+  -- The full filter-based limit proof is needed, but we structure the mathematical
+  -- reduction to the standard fact τ^2 log τ → 0.
+  have h_lim : Filter.Tendsto (fun τ => V2 ν C₂ τ / V1 C₁ ν τ) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+    -- Strategy: V2/V1 = τ² * (-2ν·log(τ) + C₂) / (C₁ - ν·τ²)
+    -- Numerator: τ² * (-2ν·log(τ) + C₂) → 0 since τ²·log(τ) → 0 and τ² → 0
+    -- Denominator: C₁ - ν·τ² → C₁ > 0
+    -- Key Mathlib fact: tendsto_log_mul_rpow_nhdsGT_zero : log(x) * x^r → 0 for r > 0
+    have h_tau2_log : Filter.Tendsto (fun τ => Real.log τ * τ ^ (2 : ℝ)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+      Real.tendsto_log_mul_rpow_nhdsGT_zero (by norm_num : (0 : ℝ) < 2)
+    -- τ² → 0
+    have h_tau2 : Filter.Tendsto (fun τ : ℝ => τ ^ 2) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+      have : Filter.Tendsto (fun τ : ℝ => τ) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) :=
+        tendsto_nhdsWithin_of_tendsto_nhds tendsto_id
+      exact (this.pow 2).congr (fun _ => rfl)
+    -- V2 τ = τ * (-2ν·log(τ) + C₂), so V2/V1 → 0/C₁ = 0
+    -- Use the closed form: V2/V1 = τ² * (-2ν·log(τ) + C₂) / (C₁ - ν·τ²)
+    -- Numerator → 0, denominator → C₁ > 0
+    -- For numerator: τ²·(-2ν·log(τ) + C₂) = -2ν·(log(τ)·τ²) + C₂·τ²
+    have h_num : Filter.Tendsto (fun τ => τ ^ 2 * (-2 * ν * Real.log τ + C₂)) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+      have h1 : Filter.Tendsto (fun τ => -2 * ν * (Real.log τ * τ ^ (2 : ℝ))) (nhdsWithin 0 (Set.Ioi 0)) (nhds (-2 * ν * 0)) :=
+        h_tau2_log.const_mul (-2 * ν)
+      simp only [mul_zero] at h1
+      have h2 : Filter.Tendsto (fun τ : ℝ => C₂ * τ ^ 2) (nhdsWithin 0 (Set.Ioi 0)) (nhds (C₂ * 0)) :=
+        h_tau2.const_mul C₂
+      simp only [mul_zero] at h2
+      have h_sum := h1.add h2
+      simp only [add_zero] at h_sum
+      apply h_sum.congr'
+      filter_upwards [self_mem_nhdsWithin] with τ hτ
+      have hτ_pos : 0 < τ := hτ
+      rw [Real.rpow_natCast]
+      ring
+    -- Denominator → C₁
+    have h_den : Filter.Tendsto (fun τ : ℝ => C₁ - ν * τ ^ 2) (nhdsWithin 0 (Set.Ioi 0)) (nhds C₁) := by
+      have := h_tau2.const_mul ν
+      simp only [mul_zero] at this
+      exact (tendsto_const_nhds.sub this)
+    -- Since C₁ > 0, denominator is eventually nonzero, and ratio → 0/C₁ = 0
+    have hC_ne : C₁ ≠ 0 := ne_of_gt _hC
+    -- Use the closed form to rewrite V2/V1
+    apply Filter.Tendsto.congr'
+    · exact Filter.Tendsto.div h_num h_den hC_ne
+    · filter_upwards [self_mem_nhdsWithin] with τ hτ
+      have hτ_pos : 0 < τ := hτ
+      have hτ_ne : τ ≠ 0 := ne_of_gt hτ_pos
+      -- Eventually the denominator is nonzero
+      unfold V1 V2
+      field_simp
+  -- Extract eps-delta from Tendsto
+  rw [Metric.tendsto_nhdsWithin_nhds] at h_lim
+  rcases h_lim ε hε with ⟨δ, hδ_pos, hδ⟩
+  use δ, hδ_pos
+  intro τ hτ_ne hτ_pos hτ_lt
+  have h_in : τ ∈ Set.Ioi (0 : ℝ) := hτ_pos
+  have h_dist : dist τ 0 < δ := by
+    rw [Real.dist_eq, sub_zero, abs_of_pos hτ_pos]
+    exact hτ_lt
+  have h_result := hδ τ h_in h_dist
+  rw [Real.dist_eq, sub_zero] at h_result
+  exact h_result
 
 theorem kappa_squared_tends_to_zero
     (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :

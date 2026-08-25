@@ -3,7 +3,7 @@
 arithmetic fingerprints used by `QOU/QBeta/SixOneShapeDiscriminant.lean`.
 
 The GGM state-integral saddle curve is worked explicitly only for 4₁ and 5₂
-(`uploads/2012.00062v3.pdf` §§5–6); 6-crossing knots appear there only as q-series.
+(`library/arxiv-2012.00062v3/2012.00062v3.pdf` §§5–6); 6-crossing knots appear there only as q-series.
 The faithful 6-crossing datum is therefore taken from the hyperbolic geometry: the
 shape parameter `z` of the knot's ideal triangulation generates the shape field,
 whose minimal polynomial and discriminant are the arithmetic fingerprint (the

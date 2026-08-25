@@ -79,7 +79,7 @@ Kill it fast on the controls if it does not separate 5₂ from them.
 
 * parent: `qou-0yqu`; ledger `docs/coordination/1ppq-qbeta.md`
 * `QOU/QBeta/FiveTwoSaddleCurve.lean` — `u0_cubic_discriminant`, sorry-free
-* Zagier, *The Dilogarithm Function* §II.1 B — `uploads/zagier-the-dilogarithm-function.pdf`
+* Zagier, *The Dilogarithm Function* §II.1 B — `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`
 * PR #4658
 
 ---

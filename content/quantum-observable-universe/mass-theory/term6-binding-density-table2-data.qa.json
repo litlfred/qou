@@ -300,30 +300,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "52b8f3986cb0",
-          "ts": "3648acfc1d6e"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -891,11 +872,200 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:40.954Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.012Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.065Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.110Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.151Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.202Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.262Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.314Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.366Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "52b8f3986cb0",
+          "ts": "3648acfc1d6e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:41.411Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Pure-data table (extracted from rem:term6-binding-density); ten trap categories n/a. Read and checked: shell labels are correct - 4He (2,2), 16O (8,8), 40Ca (20,20), 56Ni (28,28) are all doubly magic; 32S (16,16) is labelled only 'near-exact', consistent. FLAGS for the report: the seven residuals in MeV carry no witness path, no q_0 pin and no AME reference, so none is reproducible from the block; and 4He is reported as a '+2.62 magic outlier' while the other three doubly-magic entries are 'on trend', which is an honest but unexplained split."
+      }
     ]
   },
   "source_hashes": {
-    "ts": "3648acfc1d6e",
-    "md": "52b8f3986cb0"
+    "md": "52b8f3986cb0",
+    "ts": "3648acfc1d6e"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:20:41.411Z"
 }

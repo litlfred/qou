@@ -8,6 +8,27 @@ THE OBSERVATION. The Frobenius Gram of the H_3(q) normal-form basis at q₀,
     {−0.855067, 0.101797, 0.855067, 0.855067, 0.855067, 3.47695}
 
 — signature **(5,1)**: exactly ONE negative direction. The Gram is LORENTZIAN.
+
+    ⚠ TWO CORRECTIONS, both landed after this header was written.
+
+    (1) CONVENTION. This ran on convention C, because `pyhecke.gram`'s mpmath
+        path was still C until 2026-08-19 (bean qou-cds2) while the float64
+        path had been D since 08-15. Under D the Gram is SINGULAR, so the
+        inertia is (4,1,1) — four positive, one negative, one NULL — not
+        (5,1). `signature()` below now returns the null count so it cannot be
+        dropped: "(4,1)" for a 6x6 matrix reads as a claim about six
+        eigenvalues while describing five.
+
+    (2) THE INTERPRETATION IS WITHDRAWN, though the measurement stands.
+        `QOU.QBeta.GramSignature` (in-file retraction, commit 748ba9b1): the
+        Lorentzian signature is a property of the BILINEAR form tr(a·b). The
+        Hecke *-structure T_w* = T_{w⁻¹} gives tr(a·b*), which is POSITIVE —
+        (6,0,0) under C and (5,0,1) under D. So "the framework's natural
+        object is a causal structure, not a metric space" is retracted; the
+        `*` flips exactly the sign of the antisymmetric direction, which is
+        what a `*`-structure is for. The eigenvalue arithmetic below is
+        retained (it explains both signatures from one block decomposition),
+        but do not cite this probe as evidence for a causal structure.
 The ±0.855067 pair is a hyperbolic (boost) plane.
 
 WHY THAT IS WORTH TESTING RATHER THAN ADMIRING. The T4/T5 channel is
@@ -113,10 +134,20 @@ def _sym(M):
 
 
 def signature(M):
+    """Full INERTIA (pos, neg, zero) — the zero count is not optional here.
+
+    Under convention D this Gram is singular (rank 5 of 6; the radical is the
+    q-antisymmetriser), so `pos + neg = 5` and a two-number "(4,1)" silently
+    drops a direction — it reads as a claim about all six eigenvalues when it
+    describes only five. Returning the null count makes the degeneracy
+    impossible to omit downstream. Under C the zero count is 0 and the triple
+    degenerates to the old pair.
+    """
     ev, _ = mp.eigsy(_sym(M))
     ev = [ev[i] for i in range(M.rows)]
     return (sum(1 for v in ev if v > EPS),
-            sum(1 for v in ev if v < -EPS), ev)
+            sum(1 for v in ev if v < -EPS),
+            sum(1 for v in ev if abs(v) <= EPS), ev)
 
 
 def main() -> int:
@@ -127,10 +158,10 @@ def main() -> int:
 
     G = _sym(mp.matrix(_gram.gram_matrix_mp()))
     d = G.rows
-    pos, neg, ev = signature(G)
+    pos, neg, nul, ev = signature(G)
     print("\n  G at q₀: eigenvalues "
           f"[{', '.join(mp.nstr(v, 8) for v in ev)}]")
-    print(f"           signature ({pos}, {neg})")
+    print(f"           inertia ({pos}, {neg}, {nul})   [pos, neg, NULL]")
 
     # ---- C0 CONTROL: is the signature robust in q? ----
     print("\n[C0] control — signature across q (is (5,1) structural or an "
@@ -140,7 +171,7 @@ def main() -> int:
         q = mp.mpf(qs)
         try:
             Gq = gram_at_q(q)
-            p_, n_, _e = signature(Gq)
+            p_, n_, z_, _e = signature(Gq)
         except Exception as exc:                       # noqa: BLE001
             print(f"     q={qs}: rebuild failed ({type(exc).__name__})")
             sig_const = False
@@ -148,7 +179,7 @@ def main() -> int:
         sig_rows.append({"q": qs, "pos": p_, "neg": n_})
         same = (p_, n_) == (pos, neg)
         sig_const = sig_const and same
-        print(f"     q={qs:>8}: signature ({p_}, {n_})   same as q₀: {same}")
+        print(f"     q={qs:>8}: inertia ({p_}, {n_}, {z_})   same as q₀: {same}")
     # The crude "identical everywhere" test misdescribes the data: (5,1) holds
     # on a BROAD interval containing q0 and fails only near the classical limit
     # q -> 1. What matters is whether q0 sits inside a stable region, and where
@@ -159,7 +190,7 @@ def main() -> int:
         qs_stable and min(qs_stable) <= Q0 <= max(qs_stable)
         and all((r["pos"], r["neg"]) == (pos, neg)
                 for r in sig_rows if mp.mpf(r["q"]) >= min(qs_stable)))
-    print(f"\n     ({pos},{neg}) holds for every tested q >= "
+    print(f"\n     inertia ({pos},{neg},{nul}) holds for every tested q >= "
           f"{mp.nstr(min(qs_stable), 8) if qs_stable else 'n/a'}; q₀ = "
           f"{mp.nstr(Q0, 12)} is inside that region: {sig_stable_around_q0}")
 
@@ -323,7 +354,7 @@ def main() -> int:
         f"{neg}), exactly one negative direction, with a +/-0.855067 hyperbolic "
         "pair. "
         + (f"THE SIGNATURE IS STABLE ON THE WHOLE RANGE, NOT A SINGLE-POINT "
-           f"ACCIDENT: ({pos},{neg}) holds at every tested q from 1.02 to 2.5, "
+           f"ACCIDENT: inertia ({pos},{neg},{nul}) holds at every tested q from 1.02 to 2.5, "
            f"an interval containing q0 = 1.1102, and the negative eigenvalue "
            f"never approaches zero — it runs -0.855 at q0 down to exactly -3/4 "
            f"at q = 1. CORRECTION to the previous version of this witness, "
@@ -415,7 +446,7 @@ def main() -> int:
             "the classical-limit degeneracy."),
     })
     wb.add_data("signature_note",
-                f"({pos},{neg}) holds at every tested q in [1.05, 2.5], an "
+                f"inertia ({pos},{neg},{nul}) holds at every tested q in [1.05, 2.5], an "
                 f"interval containing q0 = 1.1102; it becomes (4,2) only near "
                 f"the classical limit q -> 1, with the transition (an "
                 f"lambda_min stays below -0.7 across [1, 2.5] and reaches "
@@ -454,8 +485,8 @@ def main() -> int:
     wb.add_assertion("gram_is_lorentzian_at_q0",
                      computed="1" if neg == 1 else "0", expected="1",
                      tolerance="0.5",
-                     source=f"G has exactly one negative eigenvalue at q0 "
-                            f"(signature ({pos}, {neg}))")
+                     source=f"G has exactly one negative eigenvalue at q0, and under convention D also exactly one NULL direction (the radical) "
+                            f"(inertia ({pos}, {neg}, {nul}))")
     wb.add_assertion("timelike_direction_is_bar_odd_L_commutator",
                      computed="1" if antisym else "0", expected="1",
                      tolerance="0.5",
@@ -464,7 +495,7 @@ def main() -> int:
     wb.add_assertion("signature_stable_around_q0",
                      computed="1" if sig_stable_around_q0 else "0", expected="1",
                      tolerance="0.5",
-                     source=f"({pos},{neg}) holds at every tested q >= 1.05, an "
+                     source=f"inertia ({pos},{neg},{nul}) holds at every tested q >= 1.05, an "
                             f"interval containing q0; transition at "
                             f"lambda_min -> -3/4 at q = 1 with no crossing")
     wb.save()

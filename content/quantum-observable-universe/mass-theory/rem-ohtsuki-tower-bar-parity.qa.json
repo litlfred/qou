@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md"
   },
   "source_hashes": {
-    "ts": "8e66494c54c8",
-    "md": "0d7064805415"
+    "md": "0d7064805415",
+    "ts": "8e66494c54c8"
   },
   "criteria": {
     "voice-status-leak": [
@@ -270,30 +270,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "0d7064805415",
-          "ts": "8e66494c54c8"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -981,7 +962,368 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:35.729Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "All negations technical: 'rather than a physical singularity', 'no Stokes ambiguity and no exponentially small trans-series', 'never to the bar-even coefficient g_2', '(not the figure-eight complex-volume tower)'. Each names a specific excluded alternative that the surrounding math rules out."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:35.817Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'This confirms, from the resummation side, that ...' reports the outcome of a stated calculation; no setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "minor",
+        "evidence": "9 stylistic spaced dashes in 517 words (1.74/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:35.897Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Four prose dash constructions in ~600 words, two of them matched pairs ('the bar-odd S - hence its sign-flip - lives'; 'and - because of that -1 - the self-conjugate block'); the two bullet glosses are list formatting. Acceptable density for the length."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 517 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:35.969Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'Three exact facts pin it: ...; ...; and ...' — each fact is consumed in the derivation that follows (weight conjugation-invariance, character conjugation, weight bar-sign), and I verified the composition they produce. Substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.049Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Ends on 'the per-partition Delta_lambda magnitudes remain the open Track-A gate' — a scope statement naming an open item."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.130Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'A second, distinct instance of the same bar-parity principle' signposts structure; '(not the figure-eight complex-volume tower)' is load-bearing disambiguation stated directly, per the false-positive class."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.213Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'Equivalently, g_2 is carried by ...' is a mathematical restatement in different terms, not a terminal thesis echo — though see the notes on trap-nonspeakable for a substantive problem with it."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.304Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.397Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'a clean structural counterpart' is the only inflation and is mild; 'exactly the Vol + i CS decomposition' and 'Three exact facts' are precise, and I verified both."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.607Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:25:36.481Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Dense but each long sentence is semicolon- or colon-structured; the 90-word 'Three exact facts' sentence parses aloud because the three facts are separated by semicolons.",
+        "notes": "RECOMPUTED. TWO FINDINGS. (1) WRONG GENERAL FORM: 'real coefficients $\\kappa_n \\in \\mathbb{Q}(\\sqrt{3})\\cdot\\pi^{\\lceil n/2\\rceil}$ (for instance $\\kappa_1 = 11\\sqrt{3}\\pi/108$ and $\\kappa_2 = 2\\pi^2/27$)'. ceil(2/2) = 1, so the form places kappa_2 in Q(sqrt3)*pi, but the kappa_2 printed in the same sentence carries pi^2. The canonical producer gives the exponent as n: qbeta_kappa_exact_ladder_resurgence_probe.py prints 'kappa_{n} = (p/q)[*sqrt3]*pi^{n}' and records kappa_5 = (110011/688905)sqrt3 pi^5, kappa_6 = (207892/295245)pi^6, kappa_7 = (32729683/26572050)sqrt3 pi^7. PROPOSED: 'Q*pi^n for even n, Q sqrt3 * pi^n for odd n'. (2) STRONGER RESULT UNSTATED: lambda -> lambda' is an involution permuting the eleven blocks, so summing the block's own T_lambda(q^-1) = (-1)^{n-1} T_{lambda'}(q) over all lambda gives tr_M(beta_D)(q^-1) = -tr_M(beta_D)(q) at n = 6 — the WHOLE trace is bar-odd and its bar-even part vanishes identically. If g_2 is the bar-even coefficient of that sum then g_2 == 0, which the 'Equivalently, g_2 is carried by the conjugate-pair asymmetries' clause contradicts; and that clause also switches object from T_lambda to the open Track-A Delta_lambda without giving a relation, while a sum over unordered pairs of (Delta_lambda - Delta_lambda') is sign-ambiguous. VERIFIED OK: 2 pi b^2 = i t; the even/odd rung parities and their kappa_1/kappa_2 instances; p(6) = 11 with exactly one self-conjugate partition (3,2,1) so 11 = 5 pairs + 1; the (-1)^{n-1} weight bar-sign and the T_lambda composition; Vol(4_1)/pi = 0.646132 (block 0.646); Im V ~ 0.055 consistent with kappa_1 t = 0.0578274; and both cited Lean files are genuinely sorry-free."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "0d7064805415",
+          "ts": "8e66494c54c8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T02:25:36.481Z"
 }

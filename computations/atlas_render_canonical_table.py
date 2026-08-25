@@ -132,7 +132,14 @@ def render_table(witness_data: dict) -> str:
             m_pred = _fmt_number(row.get("prediction_MeV_50dps"))
             err_ppm = row.get("err_ppm")
             if err_ppm is not None:
-                m_err = f"{_fmt_number(err_ppm * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
+                # `float()` because err_ppm is a decimal STRING now — the
+                # precision port (bean qou-3wqg) took the whole chain
+                # mass_table_ppb -> canonical_mass_table_extended to mpmath, so
+                # these serialize via `_precision.fmt`. Every other read here
+                # goes through `_fmt_number`, which already coerces strings
+                # ("Strings are coerced to float"); this is the one site doing
+                # arithmetic BEFORE formatting, hence the one that needed it.
+                m_err = f"{_fmt_number(float(err_ppm) * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
         else:
             # For D and up, the prediction is binding energy.
             b_pred = _fmt_number(row.get("prediction_MeV_50dps"))

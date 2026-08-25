@@ -55,6 +55,7 @@ sys.path[:0] = [
     str(Path(__file__).resolve().parent.parent / "hecke"),
 ]
 import _path_bridge  # noqa: F401,E402
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 
 import numpy as np  # noqa: E402
 import scipy.sparse as sp  # noqa: E402
@@ -66,6 +67,13 @@ from hecke_characters import build_seminormal_matrices  # noqa: E402
 # Column-batch width. Memory is dim·B·8 bytes (dim=7700, B=256 → 15.8 MB).
 BATCH = 256
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def chi_atom_sparse(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf,
                     batch: int = BATCH) -> mp.mpf:

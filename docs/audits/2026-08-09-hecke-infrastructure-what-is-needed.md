@@ -14,7 +14,7 @@
 | `n = 2` | `InstanceH2.instHeckeAlgebraH2`, on `AdjoinRoot(X² − hX − 1)` | `2 = 2!` | `MarkovTraceH2.markovTraceH2` — but `cyclic` free (commutative) and `trace_prod_gen` vacuous | `contextH2` |
 | `n = 3` | `InstanceOnH3A.instHeckeAlgebraH3A`, on the tree's `H3A` | `6 = 3!` | `MarkovTraceOnH3A.markovTraceH3A` — **both fields carry content** | `contextH3` |
 | `n = 4` | `InstanceOnH4A.instHeckeAlgebraH4A`, on the tree's `H4A` | `24 = 4!` | **open** — see below | — |
-| `n ≥ 5` | needs a *proved* GS basis (qou-auq3) | — | — | — |
+| `n ≥ 5` | GS basis now **proved** for the *completed* system (qou-auq3, 2026-08-24) | — | — | — |
 
 All axiom-clean (`propext, Classical.choice, Quot.sound`). Before this work the
 class `QOU.Hecke.HeckeAlgebra` had **no instance anywhere in the tree**, so every
@@ -97,7 +97,17 @@ reduction, which Mathlib at rev `f897ebcf` does not have (`find Mathlib -iname
   instance is exactly this S-polynomial. Nothing `q`-deformed is at fault — the
   same overlap obstructs the Coxeter presentation of `S₄`. (Their general
   *conjecture* for arbitrary Coxeter groups was separately disproved by
-  Chen–Liu.) The completion is what qou-auq3 now needs.
+  Chen–Liu.) The completion is what qou-auq3 needed.
+* **The completion is built and proved** (2026-08-24).
+  `HeckeCompletion.lean` adjoins the Bokut–Shiao family and proves
+  `heckeCompleted_isGrobnerShirshovBasis` for every `n` and every
+  `HeckeParams` — `[propext, Classical.choice, Quot.sound]`, no hypothesis, no
+  `sorry`. The last obligation was a single composition, the longest
+  Bokut–Shiao word overlapping *itself* in its shared trailing `σᵢ`; it is
+  discharged by `deep_selfOverlap_resolves`. Normal-form uniqueness at general
+  `n` follows (`heckeCompleted_normalForm_unique`), modulo the two Diamond-Lemma
+  axioms `local_confluence` and `reduction_well_founded` that
+  `normal_form_unique` carries.
 * Two defects remain before the axiom can be *proved*: `leadingMonomial` ignores
   its order argument (`hf.choose`, an arbitrary support element), and
   `SingleStepReduction` never requires `f − g` to lie in the ideal despite its

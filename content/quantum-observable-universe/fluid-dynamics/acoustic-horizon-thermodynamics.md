@@ -13,7 +13,7 @@ where $n$ points strictly outward from $\Sigma$. Tracking Unruh's acoustic black
 $$
   T_H
   = 
-  \frac{\hbar_q\kappa_H}{2\pic_s}.
+  \frac{\hbar_q\kappa_H}{2\pi c_s}.
 $$
 
 Applying the brane fluid identity $\hbar_q = (q-1)/q$ produces:
@@ -42,9 +42,9 @@ Evaluated for spherically symmetric inflow operating at velocity $v_r = -\Gamma_
 $$
   r_H
   = 
-  \left(\frac{\Gamma_q}{4\pic_s}\right)^{1/2}
+  \left(\frac{\Gamma_q}{4\pi c_s}\right)^{1/2}
   = 
-  \left(\frac{[j]_q[j+1]_q}{4\pic_q}\right)^{1/2}
+  \left(\frac{[j]_q[j+1]_q}{4\pi c_q}\right)^{1/2}
   \cdot (1 + O(\hbar_q)).
 $$
 

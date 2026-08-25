@@ -35,7 +35,7 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of prop:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h² (the Taylor O(h²) remainder).",
+  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h\u00b2) of prop:q-beta-spectral-bridge. Form A is the NF-counit |\u0394(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h\u00b2 (the Taylor O(h\u00b2) remainder).",
   "contentBlock": "prop:q-beta-spectral-bridge",
   "parameters": {
     "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
@@ -54,5 +54,8 @@
     "Q_beta_form_a_MeV": "0.7836458038973215495988764817067477910980670825826358648183381566111344",
     "Q_beta_form_b_MeV": "0.832395283254006132744313021851514294436313004460123556768282443603997",
     "Q_beta_agreement_MeV": "0.04874947935668458314543654014476650333824592187748769194994428699286255"
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

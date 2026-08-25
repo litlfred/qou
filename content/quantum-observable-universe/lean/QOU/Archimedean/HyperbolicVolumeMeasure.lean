@@ -44,14 +44,28 @@
 
   WHAT IS *NOT* HERE -- read before citing.
 
-  * **H2 is PARTLY done: dilation invariance is proved** (`hypVolume_smul`),
-    which is the substantive half -- `λ³` from Lebesgue against `1/λ³` from the
-    density, cancelling exactly, with the exponent forced by
-    `finrank ℝ (Fin 3 → ℝ) = 3` rather than chosen.  **Still missing from H2:**
-    horizontal translation, and the full isometry group of `H³` (the Möbius
-    action of `PSL₂(ℂ)` on the boundary).  So the measure is not yet known to be
-    invariant under all hyperbolic isometries, only under dilation.  **No
-    metric, no geodesics, no isometry group** is defined here at all.
+  * **H2 is PARTLY done.**  Proved: **dilation** (`hypVolume_smul`) -- `λ³` from
+    Lebesgue against `1/λ³` from the density, cancelling exactly, the exponent
+    forced by `finrank ℝ (Fin 3 → ℝ) = 3` rather than chosen -- and **horizontal
+    translation** (`hypVolume_add_left`), where the `v 2 = 0` hypothesis is
+    essential rather than technical, since a *vertical* translation genuinely
+    is not an isometry.  Together these are the boundary's similarity group.
+    **Still missing:** the rest of the isometry group of `H³`, i.e. the Möbius
+    action of `PSL₂(ℂ)` -- in particular inversion, which is the generator that
+    makes the group act transitively and is not reachable from these two.  So
+    the measure is **not** yet known invariant under all hyperbolic isometries.
+    **No metric, no geodesics, no isometry group** is defined here at all.
+
+    **Cross-ref (T2 metric backfill).**  A genuine metric now DOES exist:
+    `QOU.Archimedean.HyperbolicMetric.dH` derives the hyperbolic *distance* as an
+    infimum of path lengths, and `HyperbolicIsometryInversion.dH_boundaryInversion`
+    proves the boundary INVERSION is a `dH`-isometry (the transitive generator).
+    This does NOT transfer to `hypVolume` for free -- the volume's invariance under
+    inversion is a separate change-of-variables computation on this measure, still
+    to be done -- but the isometry itself is no longer missing, only its action on
+    THIS measure.  (`dH`, the two isometries, and geodesics live in the
+    `EuclideanSpace ℝ (Fin 3)` carrier, which -- unlike this `Fin 3 → ℝ` -- carries
+    the inner product the metric needs.)
   * **No ideal tetrahedron** (H3), and **no `Vol = Λ-sum`** (H4 = `qou-idvt`
     T2).  In particular this file does NOT connect to
     `IdealTetrahedronVolumeConcavity.volChart`, which remains DEFINED as the
@@ -226,6 +240,44 @@ theorem hypVolume_smul {r : ℝ} (hr : 0 < r) {s : Set (Fin 3 → ℝ)}
   have htop : ENNReal.ofReal (1 / r ^ 3) ≠ ⊤ := ENNReal.ofReal_ne_top
   rw [hypVolume_apply hrs, hypVolume_apply hs]
   exact (ENNReal.mul_right_inj hne htop).mp key
+
+/-! ### H2 — horizontal translation invariance
+
+The other generator of the boundary's similarity group, and the easier one: a
+translation `(x,y,z) ↦ (x+a, y+b, z)` leaves `z` alone, so the density does not
+see it at all, and Lebesgue is translation-invariant.  Note this is `H³`'s
+horizontal translation only -- moving the whole picture VERTICALLY is not an
+isometry and is not claimed. -/
+
+/-- A translation that fixes the height leaves the density unchanged. -/
+theorem hypDensity_add_left {v : Fin 3 → ℝ} (hv : v 2 = 0) (p : Fin 3 → ℝ) :
+    hypDensity (v + p) = hypDensity p := by
+  unfold hypDensity
+  have h : (v + p) 2 = p 2 := by simp [hv]
+  rw [h]
+
+/-- **H2 (horizontal translation) — `hypVolume` is invariant under `p ↦ v + p`
+whenever `v` has zero height.**
+
+The `v 2 = 0` hypothesis is essential and not a technicality: a *vertical*
+translation genuinely changes hyperbolic volume (it is not an isometry of `H³`),
+so the density's dependence on `z` is exactly what must be protected here. -/
+theorem hypVolume_add_left {v : Fin 3 → ℝ} (hv : v 2 = 0) {s : Set (Fin 3 → ℝ)}
+    (hs : MeasurableSet s) :
+    hypVolume ((fun p : Fin 3 → ℝ => v + p) ⁻¹' s) = hypVolume s := by
+  have hT : Measurable (fun p : Fin 3 → ℝ => v + p) := measurable_const_add v
+  have hmap : Measure.map (fun p : Fin 3 → ℝ => v + p) volume = volume :=
+    (measurePreserving_add_left volume v).map_eq
+  have key : ∫⁻ y in s, hypDensity y ∂(Measure.map (fun p : Fin 3 → ℝ => v + p) volume)
+      = ∫⁻ x in (fun p : Fin 3 → ℝ => v + p) ⁻¹' s, hypDensity (v + x) ∂volume :=
+    setLIntegral_map hs measurable_hypDensity hT
+  rw [hmap] at key
+  have hdens : ∫⁻ x in (fun p : Fin 3 → ℝ => v + p) ⁻¹' s, hypDensity (v + x) ∂volume
+      = ∫⁻ x in (fun p : Fin 3 → ℝ => v + p) ⁻¹' s, hypDensity x ∂volume :=
+    lintegral_congr fun x => hypDensity_add_left hv x
+  rw [hdens] at key
+  rw [hypVolume_apply (hs.preimage hT), hypVolume_apply hs]
+  exact key.symm
 
 /-! ### H4 step 1 — the vertical integral
 

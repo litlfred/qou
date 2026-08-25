@@ -12,6 +12,7 @@ violation.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 #!/usr/bin/env python3
 """
 Q-value from INVERSE Markov trace — vortex tube resistance.
@@ -53,13 +54,26 @@ from experimental_constants import (
     Q_TRITIUM_MEV as _Q_TRITIUM_MEV, Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
 )
 
+# THE dps RULE APPLIES HERE TOO, and this block was on the wrong side of it.
+# The rule is stated 100 lines below ("Precision must be raised BEFORE the
+# module-scope constants") but `set_compute_dps()` was called there, while
+# these five constants are built up here -- at mpmath's default dps=15. An
+# `mpf` created at dps 15 holds ~53 bits, so printing it later at dps 50
+# reveals the binary64 expansion rather than the value: `Q_TRITIUM_MEV` went
+# into the witness as
+#     0.01861000000000000154098955817971727810800075531005859375
+# instead of 0.01861 -- 40 fabricated digits, flagged by
+# `witness_float64_padding_audit` as NEW fake precision. Raising dps
+# afterwards cannot recover what was never stored. Bean `qou-xt5l`.
+set_compute_dps()
+
 M_E_MEV = mp.mpf(repr(_M_E_MEV))
 M_P_MEV = mp.mpf(repr(_M_P_MEV))
 M_N_MEV = mp.mpf(repr(_M_N_MEV))
 Q_TRITIUM_MEV = mp.mpf(repr(_Q_TRITIUM_MEV))
 Q_NEUTRON_MEV = mp.mpf(repr(_Q_NEUTRON_MEV))
 
-z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+z = q**3 / (q**2 + 1)
 ln_q = LN_Q
 
 print("INVERSE MARKOV TRACE Q-VALUES")
@@ -147,6 +161,12 @@ def find_gs_quark(Z, N):
 # ══════════════════════════════════════════════════════════════
 #  Q-VALUE COMPUTATIONS
 # ══════════════════════════════════════════════════════════════
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 decays = [
     (0, 1, 1, 0, Q_NEUTRON_MEV,  'n→p'),

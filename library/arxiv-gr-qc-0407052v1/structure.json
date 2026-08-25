@@ -1,0 +1,79 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-gr-qc-0407052v1",
+ "source": {
+  "file": "0407052v1.pdf",
+  "sha256": "4624ea2fb4d318ad118e333446e66a3af77c744d7192cbffe0742915ad33d4ff",
+  "bytes": 113224,
+  "pages": 10
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "gr-qc/0407052",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "14 Jul 2004"
+  },
+  "doi": null,
+  "title": "Black hole entropy in loop quantum gravity",
+  "authors_raw": "Institute of Theoretical Physics, Warsaw University",
+  "abstract": "We calculate the black hole entropy in Loop Quantum Gravity a s a function of the horizon area and provide the exact formula fo r the leading and sub-leading terms. By comparison with the Beken stein– Hawking formula we uniquely ﬁx the value of the ’quantum of ar ea’ in the theory. The Bekenstein–Hawking formula gives the leading term in th e entropy of the black hole in the form S = 1 4 A l2 P (1) where lP is the Planck length and A is the black hole horizon area. According to the common belief, the entropy is always connected with th e logarithm of the number of microscopic states realizing a given macrosco pic state. The fact that the entropy in (1) is proportional to the area (and not as is usual to the volume) has led to the formulation of the so called holographic principle. It was however diﬃcult to ﬁnd the microscopic states that cou ld account for such an entropy. The problem was attacked in two diﬀerent approaches – in stri ng theory [1]-[5] and in Loop Quantum Gravity [6]-[10] (see also the re view [11]). The latter approach is based on a quantum theory of geometry. The basic ge- ometric operators were introduced in [12, 13] and a detailed description of the quantum horizon geometry was introduced using the U(1) Chern-Simons theory in [10] where one can ﬁnd the detailed discussion of th e states on the horizon of the black hole (see also [14]). However, the proce dure introduced in [10] for state counting contained a spurious constraint o n admissible se- quences and the number of the relevant horizon states is unde restimated. The correct method of counting was proposed in [14] but that a nalysis pro- vides only lower and upper bounds on the number of states. The purpose of this paper is to rectify this situation. We will provide th e correct value 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241202162800-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:gr-qc/0407052v1  14 Jul 2004"
+  },
+  "title_lines": [
+   "Black hole entropy in Loop Quantum Gravity",
+   "Krzysztof A. Meissner"
+  ],
+  "title_prev": "Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 13369,
+   "n_words": 2873
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1195,
+   "n_words": 180
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 14564
+ }
+}

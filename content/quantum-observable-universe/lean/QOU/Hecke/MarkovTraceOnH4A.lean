@@ -133,14 +133,21 @@ theorem traceMap_s0_mul_s2 (z : K) :
 
 /-- **A Markov trace on `H₄(q)`**, for any Markov parameter `z`.
 
-Every field carries content. `cyclic` is `H4Bridge.trM4_cyclic` — a theorem, not
-a consequence of commutativity, since `H₄(q)` is noncommutative — and
-`trace_prod_gen` must deliver all three ordered pairs, including the
-far-commuting one. -/
+Every field carries content. `cyclic` is `QOU.Machinery.H4.trM4_cyclic` — a
+theorem, not a consequence of commutativity, since `H₄(q)` is noncommutative —
+and `trace_prod_gen` must deliver all three ordered pairs, including the
+far-commuting one.
+
+Previously this was `H4Bridge.trM4_cyclic`, which transported the ASCII
+`trM_cyclic` across the basis relabelling and so depended on `gram_symm`'s 576
+computed entries. `H4.trM4_cyclic` proves the same statement directly from the
+three generators, so that dependency — and the Gram chain behind it — is gone.
+Note the argument order differs: `(z, h, …)` here, against the bridge's
+`(h, z, …)`. -/
 def markovTraceH4A (z : K) : MarkovTrace 4 q (H4A K (q - q⁻¹)) where
   trace := traceMap K q z
   normalised := traceMap_one K q z
-  cyclic := fun x y => trM4_cyclic (q - q⁻¹) z x.v y.v
+  cyclic := fun x y => QOU.Machinery.H4.trM4_cyclic z (q - q⁻¹) x.v y.v
   z_param := z
   trace_gen := by
     intro i

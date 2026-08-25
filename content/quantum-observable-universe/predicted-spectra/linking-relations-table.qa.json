@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/linking-relations-table.md"
   },
   "source_hashes": {
-    "ts": "321ffbc04528",
-    "md": "abfc83c28125"
+    "md": "abfc83c28125",
+    "ts": "321ffbc04528"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -280,30 +280,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "abfc83c28125",
-          "ts": "321ffbc04528"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1422,7 +1403,376 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.872Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "One denial: 'This operation does not produce a physical composite. It is a mathematical operation arising in the Skein resolution tree.' That is a scope statement fencing off a physical reading of the connected sum, and it is immediately followed by what the operation IS for — the same load-bearing-disambiguation class as the mass-ratio disclaimer in rem:lepton-tower-witness.",
+        "notes": "pass (scope disclaimer)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.564Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.602Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.910Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'Three operations construct every particle ...: Hopf linking, Skein crossing change, and color-tube linking.' Substantive: the three are distinct operations with distinct symbols, and the count is honest even though the block goes on to present FIVE tables — table 4 (connected sum) is explicitly disclaimed as non-physical and table 5 (L_0 smoothing) is a decay, so neither is a construction operation. The enumeration matches the claim rather than padding it.",
+        "notes": "pass. SEPARATE CONSISTENCY FINDING, not fixed inline, on the FIVE data-table siblings this block points at: the corpus carries two incompatible heavy-quark dictionaries and table 1 follows the one its own parent does not. rem:knot-formula-table (which this block declares in uses[]) fixes s = T_{2,5}^sigma, c = T_{2,5}, b = T_{2,7}^sigma; observations/building-block-knots-table1-data.md instead reads T_{2,5} as 'b / s' and T_{2,7} as 'c'. Detail in the entries on the individual table blocks."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.641Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.678Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.716Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.755Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.795Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.271Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:02.834Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the parent remark (five operation sections, each a short paragraph plus a table pointer). Checked its mathematical assertions: the Hopf link's linking number is indeed always +-1; Seifert genus IS additive under connected sum (Schubert); hyperbolic volume IS additive under connected sum via the JSJ/prime decomposition, as stated. The 'seven torus knot generators' count is corroborated elsewhere in the chapter (unmapped-torus-knots.md: 'five of the seven ... Two remain unassigned'). All five 'See [Table N](#tbl:...)' pointers carry live anchors, unlike the sibling lepton-tower-witness block. No em-dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "abfc83c28125",
+          "ts": "321ffbc04528"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:13:02.910Z"
 }

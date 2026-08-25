@@ -1,0 +1,163 @@
+{
+  "engine": "python+sympy(exact over Q(q))",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T08:35:41.070415+00:00",
+  "commitSha": "9e354a93168c2dc5e8fb6943a74144c185903147",
+  "assertions": [
+    {
+      "name": "transcription_matches_lean_closed_form",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "GRAM reproduces QOU.Machinery.H3.gramMatrix_det exactly"
+    },
+    {
+      "name": "quadratic_zeros_have_corank_one",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "both quadratic zeros drop exactly one dimension"
+    },
+    {
+      "name": "quadratic_blocks_are_one_dimensional",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "sign (1^3) at z_D, trivial (3) at the other -- NOT (2,1), which is dim 2"
+    },
+    {
+      "name": "zD_radical_is_the_antisymmetriser",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "matches GramMatrixH3Symbolic.gramRadicalD exactly"
+    },
+    {
+      "name": "quintic_zeros_have_corank_five",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "the quintic factor's zeros are a far larger degeneracy than the prose suggests"
+    },
+    {
+      "name": "docstring_2_1_attribution_holds",
+      "computed": "1",
+      "expected": false,
+      "passed": true,
+      "value": false,
+      "note": "EXPECTED FALSE -- this is the defect being recorded"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "h3-gram-degeneracy-block-identification",
+  "scriptFile": "h3_gram_degeneracy_block_identification_probe.py",
+  "scriptHash": "fb50aa120fd9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/h3_gram_degeneracy_block_identification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h3_gram_degeneracy_block_identification_probe.py"
+  },
+  "description": "Corank and Wedderburn-block identification at each of the four degeneracy points excluded by QOU.Machinery.H3.gramMatrix_det_ne_zero. The theorem is true; its docstring misattributes the two quadratic zeros to the (2,1) block, which has dimension 2 and would therefore cost corank 4. Measured corank is 1 at each, and the radicals are the q-antisymmetriser (sign, at z_D) and the q-symmetriser (trivial).",
+  "lean": "content/quantum-observable-universe/lean/QOU/Machinery/HeckeH3GramNondegeneracy.lean",
+  "general_determinant": "-(z^2 - h z - 1)^5 * ((h^2+4) z^2 - (h^3+4h) z - 1)",
+  "hecke_specialisation": "h = q - 1/q",
+  "points": [
+    {
+      "point": "z_eq_q",
+      "z": "q",
+      "det_factor": "quintic",
+      "corank": 5,
+      "null_vector": [
+        "-q",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "block": "unidentified",
+      "block_dim": null
+    },
+    {
+      "point": "z_eq_neg_inv_q",
+      "z": "-1/q",
+      "det_factor": "quintic",
+      "corank": 5,
+      "null_vector": [
+        "1/q",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "block": "unidentified",
+      "block_dim": null
+    },
+    {
+      "point": "z_D",
+      "z": "q**3/(q**2 + 1)",
+      "det_factor": "quadratic",
+      "corank": 1,
+      "null_vector": [
+        "-q**3",
+        "q**2",
+        "q**2",
+        "-q",
+        "-q",
+        "1"
+      ],
+      "block": "sign (1^3)",
+      "block_dim": 1
+    },
+    {
+      "point": "z_eq_neg_inv_q_q2p1",
+      "z": "-1/(q*(q**2 + 1))",
+      "det_factor": "quadratic",
+      "corank": 1,
+      "null_vector": [
+        "q**(-3)",
+        "q**(-2)",
+        "q**(-2)",
+        "1/q",
+        "1/q",
+        "1"
+      ],
+      "block": "trivial (3)",
+      "block_dim": 1
+    }
+  ],
+  "context": {
+    "bean": "qou-zf9n",
+    "affects": [
+      "QOU.Machinery.H3.gramMatrix_det_ne_zero (docstring only; theorem is true)",
+      "QOU.Interactions.GramMatrixH3Symbolic.gramRadicalD (confirmed independently)"
+    ],
+    "scope": "(b) structural: the corank of an explicit matrix over Q(q) and the dimension of an S_3 irrep are both exact invariants, so 'dim 2 cannot produce corank 1' is a proved exclusion, not a probe result.",
+    "arithmetic": "exact over Q(q); no float64 anywhere"
+  }
+}

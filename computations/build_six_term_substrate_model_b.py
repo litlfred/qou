@@ -114,6 +114,7 @@ from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
     M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 _CODATA = {
     (1, 0):   M_P_MEV_VALIDATION,    # proton
     (0, 1):   M_N_MEV_VALIDATION,    # neutron
@@ -162,7 +163,7 @@ def six_term_model_b(Z: int, N: int, t1: mp.mpf, *,
     # equivalent for n_canon.  For non-multiple-of-3 n_canon we
     # compute directly using hecke_characters helpers.
     from hecke_characters import partitions_of, dim_q  # noqa: E402
-    t4_raw = sum(mp.mpf(1) / mp.mpf(str(dim_q(lam)))
+    t4_raw = sum(mp.mpf(1) / mp.mpf(str(dim_q(lam, Q0_PROTON)))
                  for lam in partitions_of(n_canon))
     t4 = mp.mpf(M_E_MEV) * t4_raw
 

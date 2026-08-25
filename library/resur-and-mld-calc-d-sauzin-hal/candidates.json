@@ -1,0 +1,66 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "resur-and-mld-calc-d-sauzin-hal",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b33f24cc76102f330b4a4584b109dd290564aab1ceb7cd619b6ebcdfb5bd3e6e",
+  "file": "Resur_and_Mld_Calc_D_SAUZIN_HAL.pdf"
+ },
+ "provenance": {
+  "title": "HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not",
+  "authors": "The documents may come from teaching and research",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "example": 2,
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s of divergent simple \u2126-resurgent series. The",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": "[\u00b4Eca81]",
+   "statement": "For each\u03c9\u2208 \u2126+, the operator",
+   "section_file": "sections/sec-001-alien-operators-alien-derivations.md",
+   "section_title": "Alien operators. Alien derivations",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s are singular germs with a simple singularity,",
+   "section_file": "sections/sec-003-examples-from-mathematical-physics.md",
+   "section_title": "Examples from mathematical physics.",
+   "pages": "9-11",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

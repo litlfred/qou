@@ -41,6 +41,9 @@ import sys
 import time
 from fractions import Fraction
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 N_MAX = 30
 ALPHA_GRID = [a / 100 for a in range(2, 101, 2)] + [a / 20 for a in range(21, 121)]
 # 0.02..1.00 step .02, then 1.05..6.00 step .05
@@ -181,10 +184,9 @@ def main():
         "attack": "qou-ogrk (A2), fractional-moment interpolation angle",
         "verdict": verdict,
         "per_n": results,
-        "runtime_s": time.time() - t0,
+        "runtime_s": f"{time.time() - t0:.3f}",
     }
-    path = ("computations/deltalambda/"
-            "wlambda-covariance-epic-A2-fractional-moment-family.witness.json")
+    path = (_HERE_W / "wlambda-covariance-epic-A2-fractional-moment-family.witness.json")
     with open(path, "w") as fh:
         json.dump(out, fh, indent=1, default=str)
     print(f"\nverdict: FMP {'HOLDS' if fmp_holds else 'FAILS'} on window; "

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md"
   },
   "source_hashes": {
-    "ts": "8def6f04f1dc",
-    "md": "b76d5a979fe7"
+    "md": "95554310cbb3",
+    "ts": "8def6f04f1dc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -268,30 +268,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T12:59:47.002Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b76d5a979fe7",
-          "ts": "8def6f04f1dc"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:31:36.450Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1002,7 +983,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that T_{2,3} being the unique lowest-crossing operator that unconditionally produces the electron channel 'confirms T_{2,3} as the universal pair-production operator' is a speculative physical overclaim.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The claim that T_{2,3} being the unique lowest-crossing operator that unconditionally produces the electron channel 'confirms T_{2,3} as the universal pair-production operator' is a speculative physical overclaim."
       },
       {
         "result": "pass",
@@ -1152,7 +1134,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The basis elements like L+, L-, e- are not mathematically defined in this block.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The basis elements like L+, L-, e- are not mathematically defined in this block."
       },
       {
         "result": "pass",
@@ -1212,7 +1195,8 @@
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Interpreting Hecke multiplication of basis elements as physical 'pair-production' and 'opening the electron channel' is physically speculative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Interpreting Hecke multiplication of basis elements as physical 'pair-production' and 'opening the electron channel' is physically speculative."
       },
       {
         "result": "pass",
@@ -1274,7 +1258,8 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "major",
         "verdict": "survivable-objection",
-        "referee_argument": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim."
+        "referee_argument": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim.",
+        "evidence": "The markdown text references a witness file `knot-operator-table.witness.json` that does not exist in the repository, and the physical interpretation of Hecke multiplication as universal pair-production is a speculative overclaim."
       },
       {
         "result": "pass",
@@ -1434,7 +1419,387 @@
         "reviewed_at": "2026-08-09T12:59:47.002Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.284Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'In contrast, under the identity operator ... only 19/36 pairs'",
+        "notes": "contrast of two measured counts (36/36 vs 19/36); substantive; pass"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.329Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no rhetorical pivot construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (4 in 357 words)"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.375Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "2 spaced em-dashes",
+        "notes": "both functional elaborations; low density; pass"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 357 words)"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.458Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no triples construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.580Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no closing aphorism construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.624Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no meta commentary construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.665Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no thesis restatement construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.706Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no performed warmth construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.749Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'universal pair-production operator'; 'unique lowest-crossing operator'",
+        "notes": "claims proved by enumeration over all 36 pairs in the tables; not unqualified inflation; pass"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.133Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:00.789Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no nonspeakable construction present"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b76d5a979fe7",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "95554310cbb3",
+          "ts": "8def6f04f1dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:49:42.852Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-19T12:49:42.852Z"
 }

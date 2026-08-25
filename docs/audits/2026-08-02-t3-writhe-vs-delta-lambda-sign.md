@@ -36,7 +36,7 @@ choice — it is the Frobenius/Wedderburn structure of `H_n(q)`.
 
 **Chiral-EFT template (what the QCD-side literature contributes).** The task's
 uploaded review (Hammer–König–van Kolck, *Nuclear EFT*,
-[arXiv:1906.12122](../../uploads/1906.12122v2.pdf) p.12) states the guiding
+[arXiv:1906.12122](../../library/arxiv-1906.12122v2/1906.12122v2.pdf) p.12) states the guiding
 fact plainly: *"The Pauli principle dictates that only isospin-triplet `(0,1)`
 and isospin-singlet `(1,0)` are allowed combinations."* The two-nucleon
 isospin operator `τ₁·τ₂` has eigenvalue `+1` in the symmetric (triplet)
@@ -147,8 +147,8 @@ isospin wavefunction — the Young row/column sign. This is what justified
 aggregating the crossing sign over the *column antisymmetrizer* rather than
 picking an ad-hoc map, and it is why the correct statistic is a pairwise
 antisymmetry **count** parity, not a net orientation. (Meißner
-[1011.1343](../../uploads/1011.1343v1.pdf) and Kievsky–Girlanda
-[s00601-022-01745-1](../../uploads/s00601-022-01745-1.pdf) corroborate the same
+[1011.1343](../../library/arxiv-1011.1343v1/1011.1343v1.pdf) and Kievsky–Girlanda
+[s00601-022-01745-1](../../library/s00601-022-01745-1/s00601-022-01745-1.pdf) corroborate the same
 Pauli-principle spin-isospin correlation; no additional sign structure beyond
 the exchange symmetry was found.)
 

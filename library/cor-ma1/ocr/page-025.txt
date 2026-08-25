@@ -1,0 +1,58 @@
+24 SYLVIE CORTEEL AND OLIVIER MALLET
+
+e The number of paths that use four kinds of unitary steps with special (k,i)-conditions where n is
+twice the sum of the x-coordinates of the peaks minus the number of South steps.
+
+Remark. The first two parts of the theorem are the Andrews’ generalization of the Gordon-Gollnitz iden-
+tities. The interpretation in terms of successive ranks and Durfee dissection is new to our knowledge.
+
+7.3. Superpartitions. We give new partition theorems related to Gordon’s theorems for overpartitions
+which are the combinatorial interpretation of the case i = k of equation (1.5) and i = 1 of equation (L-4). We
+now interpret combinatorially equations (3) and are overpartitions where the first
+occurrence of a part can be overlined and the part 0 can appear. Let By,;(n) be the number of overpartitions
+of n of the form (Ay, A2,..., As), where Ag — Avyk—1 > Lif Avy e—1 is overlined and Ay — Avy-n~—1 > 2 otherwise
+and at most 7 — 1 parts are equal to 1.
+
+Theorem 7.2. For 1 <i < k-—1, the number of overpartitions counted by By i(n) plus the number of
+overpartitions counted by Byi+1(n) is equal to the number of superpartitions where the non-overlined parts
+are not congruent to 0, +i modulo 2k.
+
+Proof. Theorem [1.4 tells us that By,i(n) + Bgiti(n) is the coefficient of g” of Exi(1,q) + Ex iti, q)-
+Thanks to equation (L:3), we know that €;,i(1,¢) + €:,i41(1, 9) =
+
+(-4) 2(k-i) 2(k-i-1)
+= EE yoo + (a PS Joc
+(d) oo = =
+(-4) 2(k-i) 2(k-i)-1
+= 7 * = IP PP 0 — YE (HG Pg) 00
+Vow j=0 j=l
+_ (Ves ( Pht Ph, Ph).
+(d)oo
+The coefficient of g” in that last equation is the number of superpartitions where the non-overlined parts
+are not congruent to 0, +i modulo 2k. Oo
+
+Theorem 7.3. For 2 <i<k-—1, the number of superpartitions of n of the form (A1,A2,---,As), where
+Ne—Aczr—1 = 1 if Aj ts overlined and Ay— Ap4K—-1 = 2 otherwise and where the number of non-overlined ones
+plus the number of 0 is at most i—1 is equal to the number of overpartitions of n where the non-overlined
+parts are not congruent to 0,+i modulo 2k plus the number of overpartitions of n where the non-overlined
+parts are not congruent to 0,+(i— 1) modulo 2k.
+
+Proof. We interpret combinatorially the coefficient of g” in equation ( This is the number of over-
+partitions of n where the non-overlined parts are not congruent to 0,+? modulo 2k plus the number of
+overpartitions of n where the non-overlined parts are not congruent to 0, +(i—1) modulo 2k. Note that this
+is the interpretation of €;,;(1/q,q). This implies that all the overlined parts in Theorem are decreased
+by one and the result follows. O
+
+8. CONCLUSION
+
+We showed in this work how the combinatorial interpretation of the Andrews-Gordon identities can be
+generalized to the case of overpartitions, when the combinatorial statistics (successive ranks, generalized
+Durfee square, length of the multiplicity sequence) are defined properly. There exist other generalizations of
+the Rogers-Ramanujan identities, see for exampl It was shown that the combinatorial interpretation
+in terms of lattice paths can also be done for these identities Bl iq. Our work can also be extended
+in that direction and the results are presented in bd. Recently Lovejoy and the second author have shown
+how to generalize the results presented in this paper and in the paper to overpartition pairs. This work
+appears in [Bl]. Finally there exists an extension of the concept of successive ranks for partitions due to
+Andrews, Baxter, Bressoud, Burge, Forrester and Viennot fa and our goal now is to extend that notion to
+overpartitions.
+

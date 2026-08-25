@@ -1,0 +1,696 @@
+{
+  "schema": "qou-audit-probe/v1",
+  "bean": "qou-5r17",
+  "question": "Where does the corpus claim something is derived / not assumed / forced, about something that is actually assumed?",
+  "method": "Predicative + contrastive claim detection over content .md, cross-referenced against blocks whose kind is definition or conjecture. Tiering is heuristic; every row is an agent-judged candidate, not a finding.",
+  "counts": {
+    "total": 134,
+    "tier1": 3,
+    "tier2": 76,
+    "tier3": 55
+  },
+  "tier1": [
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting-table-data.md",
+      "sentence": "| Symbol | Depth | Algebraic input | Where it appears | $q$-rational pre-image | Archimedean accident | |---|---|---|---|---|---| | $\\zeta_n = e^{2\\pi i / n}$ | **0** | $\\overline{\\mathbb{Q}}^\\times$ | `rem:figure-8-archimedean-illustration` ($\\zeta_6$), `conj:bring-trilog-depth-3-witness` ($\\zeta_5$) | itself (algebraic by def) | none \u2014 depth 0 | | $\\log\\alpha$, $\\alpha \\in \\overline{\\mathbb{Q}}^",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:bring-trilog-depth-3-witness",
+        "prop:explicit-central-idempotent",
+        "prop:quantum-dilogarithm-stratified",
+        "prop:vol-through-tau",
+        "rem:bring-embeddable-knots",
+        "rem:figure-8-archimedean-illustration",
+        "rem:rh-surreal-bound"
+      ],
+      "assumed_labels_in_sentence": [
+        "conj:bring-figure-eight-depth-2-witness",
+        "conj:bring-trilog-depth-3-witness"
+      ],
+      "tier": 1
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md",
+      "sentence": "Let $N(n)$ denote the binding normalizer forced by the normalization bridge \u2014 the unique strip $N(n) = (n-1)!$ making the binding generating function the carrier of the proved depth-2 confluent kernel (the normalization leg of [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol)).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "conj:qdifference-kernel-prolongation-symbol"
+      ],
+      "assumed_labels_in_sentence": [
+        "conj:qdifference-kernel-prolongation-symbol"
+      ],
+      "tier": 1
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/schwinger-measure-unit.md",
+      "sentence": "It is conditionally forced by the computational-time identification [`conj:schwinger-measure-computational-time`](#conj:schwinger-measure-computational-time), through the moment identity $n \\cdot N(n) = n!$ for the binding normalizer $N(n)$, and, separately, by the framework premises P1 (substrate scale-freedom) and P2 (proper time as computational time) stated there.",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "conj:schwinger-measure-computational-time"
+      ],
+      "assumed_labels_in_sentence": [
+        "conj:schwinger-measure-computational-time"
+      ],
+      "tier": 1
+    }
+  ],
+  "tier2": [
+    {
+      "file": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md",
+      "sentence": "**LP/SDP dual emission contract.** Every operator-selection compute must emit primal and dual variables, enforced by `lp_dual_witness_validator.py`.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-qvalues/qvalue-derivation-chain.md",
+      "sentence": "The weights are the quantum dimensions $d_\\lambda(q)$, forced by Schur orthogonality \u2014 no fitting freedom.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.md",
+      "sentence": "$$ The coefficient $3/4$ is forced by the identity.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction-proof.md",
+      "sentence": "Compatibility with sums is forced by the eigenvalue convention: $\\sigma_i$'s $q$-eigenspace + $-q^{-1}$-eigenspace decomposition matches Conway's $\\{L \\mid R\\}$ pairing $L < x < R$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/q-bsd-rank-zero.md",
+      "sentence": "This vanishing is forced by the QOU axioms, not by arithmetic accident.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/surreal-bounds-graded-mikusinski.md",
+      "sentence": "The inequality direction is enforced by [`lem:surreal-squeeze`](#lem:surreal-squeeze).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "lem:surreal-squeeze"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting.md",
+      "sentence": "We record which periods appear, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting.md",
+      "sentence": "A single Jones-coincident pair yields a non-trivial post-archimedean equality forced by $q$-rational structure\u2014exactly the wall-crossing prediction the correspondence makes explicit.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/transcendental-accounting.md",
+      "sentence": "**Open question: post-archimedean structure forced by Bring's $S_5$.** Because Bring's curve has $S_5$ symmetry, the cyclotomic field $\\mathbb{Q}(\\zeta_5)$ acts on the Bring-natural depth-3 grouplikes.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/enveloping-algebra.md",
+      "sentence": "In the $q$-deformed setting, the analogous basis consists of the ordered monomials $\\{E^{(a)}K^{s}F^{(b)}\\}$ in the Lusztig divided-power generators, with ordering enforced by the Groebner--Shirshov resolution of the $q$-Serre relations.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/hecke-algebra-from-braiding.md",
+      "sentence": "The per-crossing weights $q$ and $-q^{-1}$ are exactly the eigenvalues of $\\sigma$ on $S^{2} V \\oplus \\Lambda^{2} V$, forced by the categorical volume constraint.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-toroidal-ladder-locus.md",
+      "sentence": "The half-integer degree shift \u2014 the signature of the toroidal harmonic family $P^\\mu_{\\nu - 1/2}$ \u2014 is forced by the Hoefsmit mixing structure, not imposed.*",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace-stabilisation.md",
+      "sentence": "Stabilisation by $\\sigma_n^{-1}$ is forced by the Hecke quadratic relation: $\\mathrm{tr}_M(x \\sigma_n^{-1}) = z_{-}\\,\\mathrm{tr}_M(x)$ with $z_{-} = z - (q - q^{-1})$ ([Markov axioms](#rem:markov-axioms-primitive)).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:markov-axioms-primitive"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md",
+      "sentence": "The selection is forced rather than stipulated: see [`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:markov-axioms-primitive"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/brings-surface/brings-surface-example.md",
+      "sentence": "**Genus 4.** The Euler characteristic $\\chi(A) = -6$ is forced by the lifting obstructions.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/brings-surface/chi-minus-six-chain.md",
+      "sentence": "The value $\\chi(A) = -6$ is derived, not assumed.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/brings-surface/genus-filtration-ideal.md",
+      "sentence": "The genus of the moduli surface is not assumed; it is determined by the Iwahori--Hecke algebra.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/eightfold-way/eightfold-open-problems.md",
+      "sentence": "The derivation gap is therefore the entire content: whether the twist multisets are forced by the categorical braid words (not just consistent with them) is the open content of the hypercharge conjecture, and nothing else in the battery constrains anything.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/fluid-dynamics-intro.md",
+      "sentence": "We then characterise the discrete vortex spectrum and helicity conservation forced by the braided monoidal structure.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/gravity-spacetime/einstein-nonsymmetric-metric-comparison.md",
+      "sentence": "| | Non-symmetric field theory | QOU | |---|---|---| | Carrier of the decomposition | metric $g_{\\mu\\nu}$ on spacetime | braiding $c_{V,V}$ on $\\mathbf{C}$ | | Symmetric part | gravitation | strong binding, $\\cosh\\lambda$ | | Antisymmetric part | electromagnetism (intended) | Coulomb interaction, $\\sinh\\lambda$ | | Origin of the decomposition | postulated | forced by the Hecke quadratic | | Behavi",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/big-bang-state-jet-horizon.md",
+      "sentence": "**Existence is not assumed.** Whether any affine chart in the descended universe admits a big bang state is a dynamical question, not an axiom.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/gravitational-constant-properties.md",
+      "sentence": "In the QOU, this is not postulated but **derived** from the codimension-$2$ structure of the exceptional divisors in the brane tower.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/operational-entropy-properties.md",
+      "sentence": "Gravitational self-consistency forces this formula, without fitting ([operational entropy is forced by self-consistency](#rem:operational-entropy-self-consistency)).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:operational-entropy-self-consistency"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md",
+      "sentence": "The Geck--Pfeiffer criterion enters as the cited class `SchurElementCriterion`, and `semisimple_of_substrate` discharges semisimplicity at every rank with the Schur leg computed rather than assumed.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/qou-p-neq-np.md",
+      "sentence": "It is strictly weaker than abstract $\\mathrm{P} \\neq \\mathrm{NP}$ \u2014 a general Turing machine is not bandwidth-limited \u2014 but it is *derived*, not assumed.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/stat-mech-computational-horizon.md",
+      "sentence": "It is an unavoidable approximation, enforced by the computational horizon, designed to extract the accessible degree-$0$ truth while discarding the uncomputable exponential remainder.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/swampland-connections-intro.md",
+      "sentence": "Three structures forced by the axioms serve as categorical counterparts to Swampland criteria: 1.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/introduction/intro.md",
+      "sentence": "We take this unreasonableness not as a mystery, but as a principle to be axiomatised: the observable universe *is* the mathematical structure forced by its own observations.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/introduction/intro.md",
+      "sentence": "Symmetries are not imposed by hand.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/introduction/intro.md",
+      "sentence": "The uncertainty principle is not postulated; it appears as the geometric signature of unresolved degrees of freedom.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/cemetery-group.md",
+      "sentence": "It is defined as the kernel of $\\tau$ rather than postulated.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof.md",
+      "sentence": "Neutrality is forced by bar-parity: a singlet carrier realises the bar-even part, a doublet the bar-odd part.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-slot.md",
+      "sentence": "The sector membership $A_+ / A_-$ of each carrier is forced by its spin.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/intro-confined-particles-shells.md",
+      "sentence": "The shell structure is forced by the categorical Frobenius positivity condition.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/AUDIT-REPORT.md",
+      "sentence": "| Kind | Missing | Severity | |------|---------|----------| | `definition` | **20** | **CRITICAL** -- enforced by type system | | `theorem` | **8** | Expected | | `proposition` | **78** | Expected |",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md",
+      "sentence": "This implies the Casoratian $W_k$ of the two ladders maintains a constant sign pattern forced by the recurrence parameters.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.md",
+      "sentence": "with $a$-independent $C$ whose shift laws $C(\\nu, \\mu+1)/C(\\nu,\\mu) = 1/(\\nu+\\mu+\\tfrac{1}{2})$ and $C(\\nu+1, \\mu)/C(\\nu,\\mu) = -1/(\\nu+\\mu+\\tfrac{1}{2})$ carry a single $\\Gamma(\\nu+\\mu+\\tfrac{1}{2})$ with an alternating $\\nu$-sign \\cite{whipple1917}; - the constant's full Gamma structure is a symbolic-exact structural identity, grid-verified (not one-point): solving the two shift recurrences forc",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "prop:hoefsmit-toroidal-ladder-locus"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
+      "sentence": "The channel is carried explicitly as the class `SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity $S = \\mathrm{Im}\\,\\mathfrak{V}(u(q_0))$), and the composition with the argument-identification map is derived, not assumed: `phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$ forces a substrate point with vanishing deformed Chern\u2013Sim",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.md",
+      "sentence": "The pp and nn transfer matrices are unimodular: $\\det T_{pp} = \\det T_{nn} = -1$ (forced by the Hecke eigenvalues $q \\cdot (-q^{-1}) = -1$).",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md",
+      "sentence": "The figure-8 knot $4_1$ is the smallest hyperbolic knot [`thurston1978`] and serves as the cleanest illustration of the dual existence forced by [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness): *algebraic / motivic in the substrate, transcendental in the laboratory*.",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "prop:archimedean-functor-uniqueness"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md",
+      "sentence": "The transcendence of $\\mathrm{Cl}_2(\\pi/3)$ is conjectural in number theory but the *form* of the answer is forced by Bloch-Suslin pentagon-uniqueness: any archimedean realization of the substrate's pentagon-coherent class must factor through $D$, and the figure-8's three ideal-tetrahedron triangulation pins down the specific shape parameter $z = e^{i\\pi/3}$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/finite-connes-forces-trivial-kernel.md",
+      "sentence": "Deleting the radical is observationally free --- no trace value moves, because the deleted block already contributed zero --- and that is established by [the branching identity](#prop:branching-identity-isospin-weights) rather than assumed here.",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "prop:branching-identity-isospin-weights"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.md",
+      "sentence": "**Bounds side.** The splitting respects the categorical bound enforced by the substrate factors $\\hbar_q$, $h_q$, and $[2]_q$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal-proof.md",
+      "sentence": "The element is therefore **forced by the structure**, not ad-hoc.*",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.md",
+      "sentence": "*~~At $q = q_0$, $\\det G \\neq 0$ (generically), confirming the Frobenius property.~~ **Retracted 2026-08-09 \u2014 this is the convention-C reading.** Under the production convention D, $\\det G = 0$ at $q = q_0$ and at every generic $q$: the vanishing is forced by the pin $z(q^2+1) = q^3$, not by a coincidence at a special point, so \"generically\" does not rescue it.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+      "sentence": "So $y_{(1^3)} = 0$ is stated, not assumed, and D follows.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/joint-galois-braid-action.md",
+      "sentence": "**Symmetry-organised period generation.** Periods at depth $n$ for knot $K$ generate a $G_{\\mathrm{mot}} \\rtimes B_{n_K}$-module; the irreducible decomposition predicts which periods are independent vs forced by $q$-rational structure.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula-context.md",
+      "sentence": "[`rem:strutinsky-from-graded-trace`](../observations/strutinsky-from-graded-trace.md) makes the regime split forced by the filtered-algebra structure: the decomposition",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:strutinsky-from-graded-trace"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/markov-pair-z2.md",
+      "sentence": "Sorry-free; every hypothesis is `IsConventionD` plus $q \\neq 0$, and $q^2+1 \\neq 0$ is *derived* rather than assumed (`q_sq_add_one_ne_zero`) \u2014 in a general field it can vanish, so assuming it would have been a hidden hypothesis.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection-proof.md",
+      "sentence": "The framework does not get to choose $z$: it is forced by the mass fibre.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
+      "sentence": "- $\\mathrm{tr}_M(x \\sigma_{n-1}) = z \\cdot \\mathrm{tr}_M(x)$ for $x \\in H_{n-1}$, with $z = q^{3}/(q^{2}+1)$ (**convention D**; the value is derived in Step 3b of the proof, not stipulated).",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md",
+      "sentence": "$$ *The $q$-integer indices are forced by the $\\alpha_{\\text{shift}} = k \\cdot (p - 1)$ formula (`prop:alpha-shift-torus-knot`).*",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "prop:alpha-shift-torus-knot"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md",
+      "sentence": "- **And $k = 2^{-1/2}$ is forced by the saddle condition, before any manifold is named.** Laplace's method on a state-sum whose logarithm expands as $-(2N/\\pi)\\Lambda(\\theta) + \\log(2N\\sin\\theta)$ produces three quantities: the saddle condition $\\Lambda'(\\theta) = -\\log(2\\sin\\theta) = 0$, i.e.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.md",
+      "sentence": "Within the rational class forced by Step 1, these finite-order signatures are therefore *decisive*: flatness of $c_k \\rho^k$ together with convergence of the ratio identifies a unique simple dominant pole at $u = \\rho$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.md",
+      "sentence": "If this follows from a categorical theorem, then $c_4$ is forced by $c_3$ and $c_8$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.md",
+      "sentence": "This is forced by the precision-floor obstruction (the $c_k$ information bound makes term data unable to fix $R$ beyond low order), and it is the same fibre-level / root-of-unity singularity structure that governs the $\\mathfrak{Q}_\\beta$ ladder.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou-proof.md",
+      "sentence": "The trace is *forced*, not assumed: every step is dictated by the QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/measurement-observation/observation-braid.md",
+      "sentence": "The crossing type is not forced by the existing braid.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/models-of-qous/models-of-qous-intro.md",
+      "sentence": "This chapter separates the universal features forced by the axioms from the model-dependent features fixed by the ground ring and fibre geometry.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/molecular-construction/benzene-symmetric-projector.md",
+      "sentence": "The partition $\\lambda = (2,2,2)$ is forced by the assembly of three two-carbon units.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/notation/notation-register-table3-data.md",
+      "sentence": "The selection is forced, not stipulated \u2014 see [`rem:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:markov-axioms-primitive"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/confinement-nucleon-unit.md",
+      "sentence": "Confinement at $\\mathrm{tr}_M \\approx 1$ is topological, forced by the braid group realizability constraint $B_3$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.md",
+      "sentence": "**Deconfinement mechanism.** Color confinement in QOU is enforced by the $S_5$-invariance of the Skein module on Bring's surface ([chromaticity](#rem:q-chromaticity)).",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "rem:q-chromaticity"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.md",
+      "sentence": "Its appearance as the deconfinement boundary is forced by the $S_5$ symmetry of Bring's surface.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/strutinsky-from-graded-trace.md",
+      "sentence": "*Strutinsky's method is forced by the filtered-algebra structure.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/torus-hopf-stability-proof.md",
+      "sentence": "*Proof.* The torus knot generators $T_{m,n} \\in \\mathcal{G}$ have meridional winding $m \\in \\{2, 3\\}$, forced by the genus-4 bound.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/q-geometric-langlands/geometric-rh-exposition.md",
+      "sentence": "The Frobenius eigenvalues are $\\alpha = q^{1/2} e^{i\\phi}$, with $|\\alpha| = q^{1/2}$ by construction --- the critical-line property is visibly forced by the compactness of the gauge group.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/algebraic-substrate-intro.md",
+      "sentence": "The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as a graded ring equipped with the Reeb derivation\u2014the differential operator forced by the categorical volume constraint.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+      "sentence": "The deformation parameter $q$ is not imposed externally.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md",
+      "sentence": "None of these structures are imposed externally; each is forced by the QOU axioms.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.md",
+      "sentence": "This is the precise sense in which the $q$-dilogarithm is **forced by the rigid-monoidal axioms** of $\\mathbf{C}$: the pentagon coherence of the associator $\\alpha$ does not merely *constrain* $\\mathrm{Li}_2^q$ \u2014 *being a solution of the pentagon is equivalent to being a $q$-dilogarithm.* Together with the uniqueness of the level-2 primitive ([`prop:q-dilogarithm-exists`](q-dilogarithm-exists.md))",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "prop:q-dilogarithm-exists"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat-proof.md",
+      "sentence": "Quantum flatness sets $B = F_A$, so $B$ inherits the tracelessness forced by the determinant constraint $\\det(g_V) = 1$ of [$\\mathrm{SU}(2)$ emergence](#thm:su2-emergence): $B$ is $\\mathrm{Ad}(P)$-valued with $\\mathrm{tr}B = 0$, i.e.",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "thm:su2-emergence"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-pentagon-associator.md",
+      "sentence": "The $q$-dilogarithm is not imported into the framework; it is **forced by the monoidal axioms of the substrate category** $\\mathbf{C}$.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md",
+      "sentence": "Once the blocks exist and are non-degenerate, the **co-Casimir trace** $$ \\mathrm{tr}_M(C_{\\dim_q}) \\;=\\; \\sum_{\\lambda \\in \\widehat{A}} \\frac{1}{\\dim_q(\\lambda)} $$ follows by linearity of the trace over the central idempotents; it is proved as [Frobenius co-Casimir universal](#thm:frobenius-codim-universal) and is not assumed here.",
+      "contrastive": true,
+      "labels_in_sentence": [
+        "thm:frobenius-codim-universal"
+      ],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-universes/tannaka-krein-overview.md",
+      "sentence": "**Origin of $q$.** The deformation parameter $q$ is not imposed.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md",
+      "sentence": "The non-degeneracy is forced by the Frobenius co-Casimir construction.",
+      "contrastive": true,
+      "labels_in_sentence": [],
+      "assumed_labels_in_sentence": [],
+      "tier": 2
+    }
+  ]
+}

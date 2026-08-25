@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
   },
   "source_hashes": {
-    "ts": "ea773e908ce2",
     "md": "194cac5235e0",
-    "lean": "67894ace6ffa"
+    "ts": "ea773e908ce2",
+    "lean": "67894ace6ffa",
+    "lean_statement": "ff55cfbee63d"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -446,7 +447,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -811,31 +813,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "194cac5235e0",
-          "ts": "ea773e908ce2",
-          "lean": "67894ace6ffa",
-          "lean_statement": "ff55cfbee63d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:31.140Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1784,7 +1766,374 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \"not merely as well-posed, but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.580Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'not merely as well-posed, but absolutely finite-dimensional' is a genuine strengthening; wording covered under trap-superlative",
+        "notes": "pass-with-note: substantive strengthening"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.623Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no setup-then-reframe pivots"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (4 in 944 words)"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.776Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: spaced-dash density low; none load-bearing"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 944 words)"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.825Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no reflex three-item lists"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.873Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no quotable-sounding closer"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.925Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no narration of own emphasis"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.973Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'This establishes the boxed equivalence stated above.' is a cross-reference closer to the displayed statement",
+        "notes": "pass-with-note: cross-reference closer class"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.017Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.080Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "pervasive maximal adverbs, ~40 sites: 'rigorously demands', 'forcibly', 'flawlessly approaches', 'effortlessly can', 'definitively blows up', 'perfectly equating', 'completely outlaws', 'absolutely finite-dimensional'",
+        "notes": "proposed: block-wide adverb strip, meaning unchanged: 'rigorously demands'->'requires', 'flawlessly holds'->'holds', 'mechanically guarantees'->'guarantees', delete filler 'cleanly/strictly/exactly/safely' where non-mathematical; structural (>2 sentences), not edited"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.133Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "adverb-stacked chains stall aloud, e.g. 'The strict mathematical sequence traversing these rigidly finite-dimensional systems flawlessly approaches the pure infinite-dimensional classical baseline.'",
+        "notes": "proposed: same rewrite as trap-superlative; short declaratives ('As kappa->inf these finite-dimensional systems approach the classical limit.')"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2",
+          "lean": "67894ace6ffa",
+          "lean_statement": "ff55cfbee63d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-15T21:15:41.696Z"
 }

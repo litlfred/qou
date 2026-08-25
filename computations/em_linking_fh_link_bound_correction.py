@@ -83,6 +83,12 @@ from em_linking_borromean_acn_probe import (  # noqa: E402
 
 N_COMPONENTS = 3
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Per-pair Gauss ACN for the golden-ratio Borromean realisation, from
 # em-linking-borromean-acn.witness.json (recomputed below as a check).
 # 8 significant digits is all these carry, and nothing derived from them is
@@ -248,7 +254,7 @@ def main() -> None:
     })
     wb.add_data("residual_gap", (
         "Freedman-He, Ann. of Math. 134 (1991) 189-229 is not in the "
-        "corpus or in uploads/ (201 PDFs scanned by title metadata, no "
+        "corpus or in library/ (201 PDFs scanned by title metadata, no "
         "match), so FH's own definition of the minimisation domain for "
         "ac(L_k, L) is not directly verified. Both corrections rest on "
         "Komendarczyk's statement of it, which is unambiguous on the "

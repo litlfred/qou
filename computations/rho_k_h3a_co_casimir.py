@@ -112,6 +112,7 @@ set_compute_dps()
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of, hook_lengths  # noqa: E402
+from live_channels import partition_channels  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -231,13 +232,43 @@ def main() -> int:
         dim_q_at_q0[lam] = d_q_q0
         delta_B_table[lam] = mp.mpf(1) / d_q_q0
 
-    # Cross-check Σ_λ 1/dim_q(λ) against the Frobenius co-Casimir trace
-    # for n=6 (= 2 + 2/[3]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q) at the
-    # Lean theorem ``hecke_n5_frobenius_codim`` for n=5; for n=6 the
-    # closed form is established in frobenius-partition-sum.witness.json).
-    sigma_inv_dim_q = sum(delta_B_table.values(), mp.mpf(0))
-    print(f"    Σ_λ 1/dim_q(λ)      = {mp.nstr(sigma_inv_dim_q, 20)}")
-    print(f"    (= τ(C_dim_q^{{H_6}}), per Frobenius theorem)")
+    # Cross-check Σ_λ 1/dim_q(λ) against the Frobenius co-Casimir trace.
+    #
+    # THE SUM RUNS OVER LIVE CHANNELS ONLY. Corrected 2026-08-10; it previously
+    # summed all 11 partitions of 6 and reported 3.2021340012 as
+    # τ(C_dim_q^{H_6}). Under the production trace convention the correct value
+    # is 1.4785106335 — the old figure overstates it by 116.6 %.
+    #
+    # Why: the co-Casimir is C_dim_q = Σ_λ [1/(dim_q(λ)·τ(p_λ))]·p_λ, and the
+    # derivation at the head of this file cancels τ(p_λ) to reach
+    # tr_M(C_dim_q·1_λ) = 1/dim_q(λ). That cancellation needs τ(p_λ) ≠ 0. Under
+    # convention D, τ(p_λ) = y_λ = 0 for every λ with ℓ(λ) ≥ 3, so for those
+    # blocks the term is 1/0 — the co-Casimir has no λ-component there at all —
+    # and the "cancellation" is 0/0 rather than 1/dim_q.
+    #
+    # It doubles rather than merely inflates because dim_q(λ) = dim_q(λ'), so
+    # every dead block mirrors a live one: [1^6] mirrors [6] (both 1.0),
+    # [2,1,1,1,1] mirrors [5,1], and so on. Summing all 11 double-counts the
+    # spectrum, which is why the wrong answer looked so unremarkable.
+    #
+    # Step 3 below is unaffected: it weights by y_λ χ^λ, so dead blocks
+    # contribute zero on their own. Only this unweighted sum was exposed.
+    #
+    # Lean: MarkovGramDegenerate.wedderburnGram_det_ne_zero_iff_all_live —
+    # summing/inverting over all blocks asserts every channel is live, which D
+    # denies for every n ≥ 3.
+    occam_rows_early = {tuple(r["partition"]): r for r in occam["data"]["per_lambda"]}
+    _weights = {lam: mp.mpf(occam_rows_early[lam]["y_lambda_at_q0"])
+                for lam in parts if lam in occam_rows_early}
+    live_parts, dead_parts = partition_channels(parts, _weights)
+    sigma_inv_dim_q = sum((delta_B_table[lam] for lam in live_parts), mp.mpf(0))
+    print(f"    live channels        = {len(live_parts)} of {len(parts)} blocks "
+          f"(dead: {[list(d) for d in dead_parts]})")
+    print(f"    Σ_λ live 1/dim_q(λ) = {mp.nstr(sigma_inv_dim_q, 20)}")
+    print(f"    (= τ(C_dim_q^{{H_6}}), per Frobenius theorem, on H_6/rad ≅ TL_6)")
+    _all_blocks = sum(delta_B_table.values(), mp.mpf(0))
+    print(f"    [all 11 blocks would give {mp.nstr(_all_blocks, 20)} — the "
+          f"pre-2026-08-10 value, wrong under convention D]")
 
     # ── Step 3: assemble per-λ contributions  Σ_λ y_λ χ^λ Δ_λ^B  ─────
     occam_rows = {tuple(r["partition"]): r for r in occam["data"]["per_lambda"]}

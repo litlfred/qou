@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
-    "ts": "2469a091c744",
     "md": "716a0ef36c2c",
-    "lean": "497df1c0b6e2"
+    "ts": "2469a091c744",
+    "lean": "d5c985f182ba",
+    "lean_statement": "2bcc33e0498f"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:26.287Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "716a0ef36c2c",
-          "ts": "2469a091c744",
-          "lean": "497df1c0b6e2",
-          "lean_statement": "f1dec469627c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:35.560Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1638,7 +1619,8 @@
         "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1849,7 +1831,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation."
       },
       {
         "result": "pass",
@@ -2118,7 +2101,393 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.442Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.484Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.528Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.569Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Substantive three-item enumeration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.612Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Block ends on the Archimedean-specialisation scope paragraph, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.652Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.695Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|No block-final restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.738Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.780Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|'stronger result than uniqueness' and 'the unique energy-changing generator' are precise claims, not inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.356Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.822Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read: lead sentence, Theorem with display-math energy functional E(xi)=sum_w ",
+        "notes": "c_w(q)| l(w), a 3-item bolded conclusion list, and the standard Archimedean-specialisation paragraph. The triple is substantive (three distinct claims: which moves change energy, path-independence, per-step size). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; zero em-dashes.|Sentences are short and speakable."
+      },
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:56.872Z",
+        "reviewed_sha": "unknown",
+        "evidence": "Numeric recheck of clause 3 under the block's own definition E(xi)=sum_w |c_w| l(w).",
+        "notes": "MATH FINDING (report, not fixed). Clause 3 says a Hecke step 'changes energy by |c|.|q-q^{-1}|' and that 'Every Hecke step increases the total weight'. Recomputed: replacing sigma_i^2 inside a term c.w of length l gives c(q-q^{-1})w' with l(w')=l-1 plus c.w'' with l(w'')=l-2, so Delta E = |c|[(q-q^{-1})(l-1) - 2], NOT |c|.|q-q^{-1}|. The two agree only at l = 2 + 2/(q-q^{-1}) = 11.57 at the proton pin (q-q^{-1} = 0.2090602987956394). Worse, Delta E < 0 for every l below the breakeven l = 1 + 2/(q-q^{-1}) = 10.5666, e.g. Delta E = -1.791|c| for the shortest case l=2 (w = sigma_i^2 alone), so the monotonicity claim 'Every Hecke step increases the total weight' fails for all short words. Either the energy functional's length weighting or clause 3's per-step formula needs restating; as written they are inconsistent."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "716a0ef36c2c",
+          "ts": "2469a091c744",
+          "lean": "d5c985f182ba",
+          "lean_statement": "2bcc33e0498f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T03:01:56.872Z"
 }

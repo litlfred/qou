@@ -54,6 +54,7 @@ from hecke_characters import (
 )
 # F6 (PR follow-up #582): wire numerical-q Hoefsmit through BlockCache.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 _BLOCK_CACHE = BlockCache(Q0_FLOAT, HA)
 
 # ──────────────────────────────────────────────────────────────────────
@@ -148,10 +149,10 @@ def wedderburn_decompose(
 ) -> Dict[Tuple[int, ...], Dict[str, float]]:
     """Full per-λ Wedderburn data: χ, dim_q, f^λ, w_λ, trM contribution."""
     chis = delta_q(word, n, use_cache=use_cache)
-    nfac = qfac(n)
+    nfac = qfac(n, Q0_PROTON)
     out = {}
     for shape, chi in chis.items():
-        d_q = dim_q(list(shape))
+        d_q = dim_q(list(shape), Q0_PROTON)
         f_lam = len(standard_young_tableaux(list(shape)))
         w_lam = d_q*d_q / nfac
         out[shape] = {

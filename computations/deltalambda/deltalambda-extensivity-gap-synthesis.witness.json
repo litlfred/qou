@@ -1,107 +1,101 @@
 {
-  "computation": "deltalambda-extensivity-gap-synthesis",
-  "description": "Δ_λ gate opened for all (2026-07-13): synthesis reproducing the parameter-free base B_base=m_e·|Σ y_λ χ^λ sgn·dim| (sign+magnitude closed) and quantifying the per-isotope extensivity multiplier μ_ext=B_AME/B_base that GAP-A-3's jet-tower level-selection k(A) must supply. μ_ext non-monotone in A/bonds ⇒ not fit-closable; the closure is a DERIVED k(A). Anti-fit synthesis; no wiring; scope-(a).",
-  "audit_only": true,
-  "engine": "python3/mpmath",
-  "engineVersion": "50dps",
-  "rows": {
-    "D": {
-      "A": 2,
-      "Z": 1,
-      "N": 1,
-      "bonds_C_A_2": 1,
-      "tree_A_minus_1": 1,
-      "B_base_MeV": 0.3800712502056555,
-      "B_AME_MeV": 2.22452,
-      "err_pct": -82.91446018891017,
-      "mu_ext_target": 5.852902577599116,
-      "dominant_lambda": [
-        5,
-        1
-      ],
-      "dominant_term": -0.9481814672855324,
-      "top3_block_share": 0.8258053671394926
-    },
-    "T": {
-      "A": 3,
-      "Z": 1,
-      "N": 2,
-      "bonds_C_A_2": 3,
-      "tree_A_minus_1": 2,
-      "B_base_MeV": 1.9085327610510177,
-      "B_AME_MeV": 8.4818,
-      "err_pct": -77.49849370356507,
-      "mu_ext_target": 4.444146924325849,
-      "dominant_lambda": [
-        6,
-        3
-      ],
-      "dominant_term": -2.175156273885609,
-      "top3_block_share": 0.6346904062679589
-    },
-    "3He": {
-      "A": 3,
-      "Z": 2,
-      "N": 1,
-      "bonds_C_A_2": 3,
-      "tree_A_minus_1": 2,
-      "B_base_MeV": 2.344605684539159,
-      "B_AME_MeV": 7.71804,
-      "err_pct": -69.62174743148313,
-      "mu_ext_target": 3.2918285794896933,
-      "dominant_lambda": [
-        6,
-        3
-      ],
-      "dominant_term": -3.436841694881065,
-      "top3_block_share": 0.6645890812437377
-    },
-    "4He": {
-      "A": 4,
-      "Z": 2,
-      "N": 2,
-      "bonds_C_A_2": 6,
-      "tree_A_minus_1": 3,
-      "B_base_MeV": 3.038186964593764,
-      "B_AME_MeV": 28.29567,
-      "err_pct": -89.26271417289725,
-      "mu_ext_target": 9.313340597451814,
-      "dominant_lambda": [
-        8,
-        4
-      ],
-      "dominant_term": 3.5871995560668744,
-      "top3_block_share": 0.35846114016037356
-    }
+ "computation": "deltalambda-extensivity-gap-synthesis",
+ "description": "\u0394_\u03bb gate opened for all (2026-07-13): synthesis reproducing the parameter-free base B_base=m_e\u00b7|\u03a3 y_\u03bb \u03c7^\u03bb sgn\u00b7dim| (sign+magnitude closed) and quantifying the per-isotope extensivity multiplier \u03bc_ext=B_AME/B_base that GAP-A-3's jet-tower level-selection k(A) must supply. \u03bc_ext non-monotone in A/bonds \u21d2 not fit-closable; the closure is a DERIVED k(A). Anti-fit synthesis; no wiring; scope-(a).",
+ "audit_only": true,
+ "engine": "python3/mpmath",
+ "engineVersion": "50dps",
+ "rows": {
+  "D": {
+   "A": 2,
+   "Z": 1,
+   "N": 1,
+   "bonds_C_A_2": 1,
+   "tree_A_minus_1": 1,
+   "B_base_MeV": 0.3666138140785936,
+   "B_AME_MeV": 2.22452,
+   "err_pct": -83.51941928692061,
+   "mu_ext_target": 6.067747353140145,
+   "dominant_lambda": [
+    5,
+    1
+   ],
+   "dominant_term": -1.2696890759185817,
+   "top3_block_share": 0.9270102587694954
   },
-  "extensivity_multipliers_target": {
-    "D": 5.852902577599116,
-    "T": 4.444146924325849,
-    "3He": 3.2918285794896933,
-    "4He": 9.313340597451814
+  "T": {
+   "A": 3,
+   "Z": 1,
+   "N": 2,
+   "bonds_C_A_2": 3,
+   "tree_A_minus_1": 2,
+   "B_base_MeV": 1.2647941324365348,
+   "B_AME_MeV": 8.4818,
+   "err_pct": -85.088140106622,
+   "mu_ext_target": 6.706071591003053,
+   "dominant_lambda": [
+    6,
+    3
+   ],
+   "dominant_term": -3.7308026472875144,
+   "top3_block_share": 0.9109373908895816
   },
-  "open_gap": "GAP-A-3 jet-tower level-selection rule k(A) (derived, not fit)",
-  "closed_upstream": {
-    "sign": "ρ-grading g_ρ, sgn=(-1)^n(λ) (sign-pivotal capstone)",
-    "magnitude_base": "|Δ_λ|=dim(λ)=tr_{V_λ}(g_ρ), classical q=1 (magnitude-graded-trace)"
+  "3He": {
+   "A": 3,
+   "Z": 2,
+   "N": 1,
+   "bonds_C_A_2": 3,
+   "tree_A_minus_1": 2,
+   "B_base_MeV": 1.5733613345103694,
+   "B_AME_MeV": 7.71804,
+   "err_pct": -79.614496238548,
+   "mu_ext_target": 4.905446594314495,
+   "dominant_lambda": [
+    6,
+    3
+   ],
+   "dominant_term": -5.894830751937366,
+   "top3_block_share": 0.9113467016509721
   },
-  "verdict": "Under the opened Δ_λ gate, the honesty-safe synthesis: the fully parameter-free base B_base=m_e·|Σ y_λ χ^λ sgn·dim| (sign=ρ-grading CLOSED, magnitude=classical dim CLOSED) undershoots AME by 70–89% because a fixed-H_{3A} braid is not extensive. The exact per-isotope extensivity multiplier k(A) must supply is μ_ext(K)=B_AME/B_base = 5.85/4.44/3.29/9.31 (D/T/³He/⁴He). μ_ext is non-monotone in A/bonds (⁴He doubly-magic largest), so it is NOT fit-closable from 4 points — the honest closure is a DERIVED jet-tower level-selection rule k(A) (GAP-A-3, open). This connects the full-evaluation undershoot to the jet-tower extensivity and sharpens the target; it fits nothing and wires nothing. Scope-(a).",
-  "scope": "(a) — synthesis of parameter-free base + target statement; no fit; no wiring",
-  "assertions": [
-    {
-      "label": "base reproduces full-evaluation undershoot (70-89%)",
-      "passed": true
-    },
-    {
-      "label": "mu_ext non-monotone in A (not fit-closable)",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
-  "scriptHash": "44b756dbe794",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:17.146991+00:00",
-  "durationMs": 0,
-  "scriptFile": "deltalambda_extensivity_gap_synthesis_probe.py"
+  "4He": {
+   "A": 4,
+   "Z": 2,
+   "N": 2,
+   "bonds_C_A_2": 6,
+   "tree_A_minus_1": 3,
+   "B_base_MeV": 0.09756895913453323,
+   "B_AME_MeV": 28.29567,
+   "err_pct": -99.6551806013622,
+   "mu_ext_target": 290.00688590911824,
+   "dominant_lambda": [
+    8,
+    4
+   ],
+   "dominant_term": 9.938947284912086,
+   "top3_block_share": 0.9075492991695122
+  }
+ },
+ "extensivity_multipliers_target": {
+  "D": 6.067747353140145,
+  "T": 6.706071591003053,
+  "3He": 4.905446594314495,
+  "4He": 290.00688590911824
+ },
+ "open_gap": "GAP-A-3 jet-tower level-selection rule k(A) (derived, not fit)",
+ "closed_upstream": {
+  "sign": "\u03c1-grading g_\u03c1, sgn=(-1)^n(\u03bb) (sign-pivotal capstone)",
+  "magnitude_base": "|\u0394_\u03bb|=dim(\u03bb)=tr_{V_\u03bb}(g_\u03c1), classical q=1 (magnitude-graded-trace)"
+ },
+ "verdict": "Under the opened \u0394_\u03bb gate, the honesty-safe synthesis: the fully parameter-free base B_base=m_e\u00b7|\u03a3 y_\u03bb \u03c7^\u03bb sgn\u00b7dim| (sign=\u03c1-grading CLOSED, magnitude=classical dim CLOSED) undershoots AME by 70\u201389% because a fixed-H_{3A} braid is not extensive. The exact per-isotope extensivity multiplier k(A) must supply is \u03bc_ext(K)=B_AME/B_base = 6.07/6.71/4.91/290.01 (D/T/\u00b3He/\u2074He). \u03bc_ext is non-monotone in A/bonds (\u2074He doubly-magic largest), so it is NOT fit-closable from 4 points \u2014 the honest closure is a DERIVED jet-tower level-selection rule k(A) (GAP-A-3, open). This connects the full-evaluation undershoot to the jet-tower extensivity and sharpens the target; it fits nothing and wires nothing. Scope-(a).",
+ "scope": "(a) \u2014 synthesis of parameter-free base + target statement; no fit; no wiring",
+ "assertions": [
+  {
+   "label": "base reproduces full-evaluation undershoot (70-89%)",
+   "passed": false
+  },
+  {
+   "label": "mu_ext non-monotone in A (not fit-closable)",
+   "passed": true
+  }
+ ],
+ "allPassed": false
 }

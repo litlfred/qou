@@ -101,10 +101,9 @@ def _q_0_50dps() -> mp.mpf:
 def derive_m_e_hecke() -> dict:
     """Closed-form Path A derivation of T1+T4 for the electron at H_2."""
     q = _q_0_50dps()
-    sqrt_q = mp.sqrt(q)
 
     # T1(e) = z = 1 / (q^{1/2} + q^{-1/2})
-    z = 1 / (sqrt_q + 1 / sqrt_q)
+    z = q**3 / (q**2 + 1)
 
     # [2]_q = q + q^{-1}
     bracket_2_q = q + 1 / q

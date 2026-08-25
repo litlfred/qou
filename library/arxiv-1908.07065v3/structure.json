@@ -1,0 +1,319 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1908.07065v3",
+ "source": {
+  "file": "1908.07065v3.pdf",
+  "sha256": "c43e413aed71aef141585a5ccace94def4cd6e215f3467c5393633b38fcae402",
+  "bytes": 1002227,
+  "pages": 47
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1908.07065",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "20 Jul 2020"
+  },
+  "doi": null,
+  "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "authors_raw": "Alba Grassia, Jie Gu b and Marcos Mariñob",
+  "abstract": "We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´ e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20200721010638Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "title_lines": [
+   "Non-perturbative approaches to the quantum",
+   "Seiberg–Witten curve"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The all-orders WKB method",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quantum periods from TBA equations",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "TBA equations for the modified Mathieu equation",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Strong coupling region",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Weak coupling region",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2.2"
+  },
+  {
+   "level": 2,
+   "title": "Solving the TBA equations in the strong coupling region",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Quantum periods from instanton calculus",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Review of instanton calculus",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Comparison to Borel resummation",
+   "page": 25,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "The Fredholm determinant from topological string theory",
+   "page": 29,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "A closed formula and its derivation",
+   "page": 30,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Tests of our formula",
+   "page": 31,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparison to Zamolodchikov's TBA equation",
+   "page": 33,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "On the modified Mathieu operator and Painlevé III3",
+   "page": 36,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 37,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "A The four dimensional SU(N) spectral determinant",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3845,
+   "n_words": 604
+  },
+  {
+   "id": "sec-001-2-the-all-orders-wkb-method",
+   "number": "2",
+   "title": "The all-orders WKB method",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 11183,
+   "n_words": 2110
+  },
+  {
+   "id": "sec-002-3-quantum-periods-from-tba-equations",
+   "number": "3",
+   "title": "Quantum periods from TBA equations",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 179,
+   "n_words": 33
+  },
+  {
+   "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
+   "number": "3.1",
+   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5272,
+   "n_words": 962
+  },
+  {
+   "id": "sec-004-321-strong-coupling-region",
+   "number": "3.2.1",
+   "title": "Strong coupling region",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 6443,
+   "n_words": 1185
+  },
+  {
+   "id": "sec-005-322-weak-coupling-region",
+   "number": "3.2.2",
+   "title": "Weak coupling region",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5841,
+   "n_words": 1089
+  },
+  {
+   "id": "sec-006-33-solving-the-tba-equations-in-the-strong-coupl",
+   "number": "3.3",
+   "title": "Solving the TBA equations in the strong coupling region",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5412,
+   "n_words": 1021
+  },
+  {
+   "id": "sec-007-4-quantum-periods-from-instanton-calculus",
+   "number": "4",
+   "title": "Quantum periods from instanton calculus",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 491,
+   "n_words": 90
+  },
+  {
+   "id": "sec-008-41-review-of-instanton-calculus",
+   "number": "4.1",
+   "title": "Review of instanton calculus",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 8246,
+   "n_words": 1694
+  },
+  {
+   "id": "sec-009-42-comparison-to-borel-resummation",
+   "number": "4.2",
+   "title": "Comparison to Borel resummation",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 7917,
+   "n_words": 1456
+  },
+  {
+   "id": "sec-010-5-the-fredholm-determinant-from-topological-stri",
+   "number": "5",
+   "title": "The Fredholm determinant from topological string theory",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2192,
+   "n_words": 380
+  },
+  {
+   "id": "sec-011-51-a-closed-formula-and-its-derivation",
+   "number": "5.1",
+   "title": "A closed formula and its derivation",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2948,
+   "n_words": 572
+  },
+  {
+   "id": "sec-012-52-tests-of-our-formula",
+   "number": "5.2",
+   "title": "Tests of our formula",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 37,
+   "n_chars": 11665,
+   "n_words": 2253
+  },
+  {
+   "id": "sec-013-7-conclusions",
+   "number": "7",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 47,
+   "n_chars": 29051,
+   "n_words": 4848
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "sections": 14,
+  "chars_total": 100685
+ }
+}

@@ -1,0 +1,250 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0008040v1",
+ "source": {
+  "file": "0008040v1.pdf",
+  "sha256": "a72319b55dbaf20b9d65278e1fcf0722e3a2a403c4fb2b559de68f2734882967",
+  "bytes": 244778,
+  "pages": 21
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0008040",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "4 Aug 2000"
+  },
+  "doi": null,
+  "title": "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
+  "authors_raw": "Department of Mathematics and Computer Science, University of Leicester, University Road",
+  "abstract": "Let U be the quantum group associated to a Lie algebra g of type An. The negative part U − of U has a canonical basis B deﬁned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning v ectors of the cones deﬁned by Lusztig [12], when regarded as monomials in K ashiwara’s root operators, can be described using a remarkable rectangle co mbinatorics. We use this to calculate the Lusztig parameters of the correspo nding canonical basis elements, conjecturing that translates of these vect ors span the simplicial regions of linearity of Lusztig’s piecewise-linear functi on [9, §2].",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210920153317-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0008040v1  [math.QA]  4 Aug 2000"
+  },
+  "title_lines": [
+   "Rectangle diagrams for the Lusztig cones of quantized envel oping",
+   "algebras of type A",
+   "Robert Marsh"
+  ],
+  "title_prev": "Rectangle diagrams for the Lusztig cones of quantized envel oping algebras of type A Robert Marsh"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Parametrizations of the canonical basis",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(B) is a Q(v)-basis of U −, called the canonical",
+   "page": 4,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Lusztig cones and their spanning vectors",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Canonical basis elements corresponding to spanning vecto rs",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Rectangles",
+   "page": 9,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "F4F1F (2)",
+   "page": 10,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "F3F1. Similarly, there is",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A Reparametrization",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 20,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 710,
+   "n_words": 115
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6545,
+   "n_words": 1311
+  },
+  {
+   "id": "sec-002-2-parametrizations-of-the-canonical-basis",
+   "number": "2",
+   "title": "Parametrizations of the canonical basis",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2183,
+   "n_words": 482
+  },
+  {
+   "id": "sec-003-1-b-is-a-qv-basis-of-u-called-the-canonical",
+   "number": "1",
+   "title": "(B) is a Q(v)-basis of U −, called the canonical",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5825,
+   "n_words": 1937
+  },
+  {
+   "id": "sec-004-3-the-lusztig-cones-and-their-spanning-vectors",
+   "number": "3",
+   "title": "The Lusztig cones and their spanning vectors",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 10458,
+   "n_words": 1751
+  },
+  {
+   "id": "sec-005-4-canonical-basis-elements-corresponding-to-span",
+   "number": "4",
+   "title": "Canonical basis elements corresponding to spanning vecto rs",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4961,
+   "n_words": 744
+  },
+  {
+   "id": "sec-006-5-rectangles",
+   "number": "5",
+   "title": "Rectangles",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 6254,
+   "n_words": 835
+  },
+  {
+   "id": "sec-007-3-f4f1f-2",
+   "number": "3",
+   "title": "F4F1F (2)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-2-f3f1-similarly-there-is",
+   "number": "2",
+   "title": "F3F1. Similarly, there is",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 12380,
+   "n_words": 1252
+  },
+  {
+   "id": "sec-009-6-a-reparametrization",
+   "number": "6",
+   "title": "A Reparametrization",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 20,
+   "n_chars": 26724,
+   "n_words": 5561
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 622,
+   "n_words": 108
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2602,
+   "n_words": 404
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 12,
+  "chars_total": 79264
+ }
+}

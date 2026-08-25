@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route38_hej_pair_wrap",
   "bean": "qou-glbl",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/QBeta/FiveTwoRootLabelling.lean (Ypair, the four sign facts)",
     "QOU/QBeta/FiveTwoEnvelopeWiring.lean (dVdy, exists_int_dVdy_mul)"
@@ -11,8 +11,8 @@
       "gate": "G1",
       "claim": "the quantity to be proved zero, re-measured on the LEAN labelling (`otherRoots` reproduced branch-for-branch, not read off polyroots): S = arg(1-y) + arg(1-xy) + arg(1-y/x) - 2 arg(-y) vanishes identically at both pair branches, at all 800 checks. Also re-checks that each sampled y IS a root of the curve, so the labelling has not drifted from the polynomial",
       "checks": 800,
-      "worst_abs_S": "9.1835496158e-41",
-      "worst_curve_residual": "4.14692179754e-40",
+      "worst_abs_S": "7.24454326306e-71",
+      "worst_curve_residual": "3.48739186499e-70",
       "pass": true
     },
     {
@@ -136,7 +136,7 @@
       "claim": "REGIME 3 -- complex pair, Re y <= 0 but cos phi > 0, where NEITHER Im-sign argument applies. The missing pi/2 comes from an identity instead: Re(xy) + Re(y/x) = 2*cos(phi)*Re(y) <= 0 here, so at least one of the two factors has Re <= 0 and hence |arg| < pi/2. WHICH one is not determined and does not need to be -- either sub-case lands inside (-2pi, 2pi)",
       "checks_in_regime": 40,
       "clause_failures": 0,
-      "identity_residual_Re_xy_plus_Re_y_over_x": "9.1835496158e-41",
+      "identity_residual_Re_xy_plus_Re_y_over_x": "7.24454326306e-71",
       "bound": "(-2pi, 2pi)",
       "pass": true
     },
@@ -174,7 +174,7 @@
       "gate": "G14",
       "claim": "THE SECOND BRANCH IS FREE. `Ypair.2 = conj Ypair.1` (proved), and on |x| = 1 conjugation swaps x*y with y/x, so S(conj y) = -S(y) and k = 0 for one branch iff for the other. This is why only Im y > 0 is analysed above. It matters: an earlier draft mirrored each inequality separately with a sign factor and FAILED -- Im(x*y) for one branch pairs with Im(y/x) for the OTHER, not with itself",
       "conjugate_pairs_checked": 307,
-      "worst_residual": "9.1835496158e-41",
+      "worst_residual": "7.24454326306e-71",
       "pass": true
     },
     {

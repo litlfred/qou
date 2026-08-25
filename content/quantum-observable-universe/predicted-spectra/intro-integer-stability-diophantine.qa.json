@@ -136,7 +136,187 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.146Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.186Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.226Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.265Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "'We state the integer-stability mechanism, construct the valley, and prove its stability against substrate-parameter perturbations.' Three distinct pieces of work that correspond to three actual downstream blocks, not a reflex three-beat list.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.304Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.345Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.385Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.425Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.464Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:32.506Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a three-sentence roadmap paragraph. Judged all ten categories; nothing present.",
+        "notes": "Notation NOTE (positive): this block uses (Z, N) for the proton and neutron counts, which is what the notation register prescribes -- worth recording, because the proposition it introduces (prop:integer-stability) and prop:hadron-q-self-correction both switch to (p, n) for the same quantities. The divergence is in those blocks, not this one."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:56.304480Z"
+  "updated_at": "2026-08-22T03:41:32.506Z"
 }

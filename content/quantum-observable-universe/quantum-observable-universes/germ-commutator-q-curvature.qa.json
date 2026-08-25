@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/germ-commutator-q-curvature.lean"
   },
   "source_hashes": {
-    "ts": "01d9c8ff0d10",
     "md": "b873fe4d9f79",
-    "lean": "c68c25e563db"
+    "ts": "01d9c8ff0d10",
+    "lean": "c68c25e563db",
+    "lean_statement": "171e526c9db1"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -308,31 +309,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "b873fe4d9f79",
-          "ts": "01d9c8ff0d10",
-          "lean": "c68c25e563db",
-          "lean_statement": "171e526c9db1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2081,7 +2062,372 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.218Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "'over a commutative ring the parallelogram would close and F_q would vanish identically' is a substantive contrapositive establishing that non-commutativity is what makes the commutator non-trivial - false-positive class 1. No manufactured negation."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.261Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "No setup-then-reframe; the closing paragraph separates what is unconditional from what is a narrative bridge, which is an epistemic scope statement."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (2 in 214 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.302Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "severity": "minor",
+        "evidence": "Two spaced em-dashes in ~250 words: 'F_q = 0 - the boson / q-flat case.' (an appositive gloss inside numbered item 1) and 'the curvature of the q-connection - the kinematic half of how the substrate parameter q evolves locally at a point.' (the block's final clause). The first is a true parenthetical; the second appends the block's closing framing rather than punctuating a parenthesis.",
+        "notes": "If tightened, the second becomes a colon or its own sentence: '...to the curvature of the q-connection. This is the kinematic half of how q evolves locally at a point.'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 214 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.343Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "'Two structural consequences follow' followed by exactly two items. No triple anywhere."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.384Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "severity": "minor",
+        "evidence": "The block ends 'Together these promote the parallelogram's delta-q(p) to the curvature of the q-connection - the kinematic half of how the substrate parameter q evolves locally at a point.' The trailing appositive is quotable-sounding and names a 'kinematic half' whose complementary 'dynamic half' appears nowhere in the block. Recorded as pass because it is a genuine forward pointer to the local-q programme (the .ts authorNotes cite docs/scope/2026-06-16-local-q-evolution-routes.md, Route 2a), not an empty flourish - but it reads as one without that context.",
+        "notes": "If kept, make the pointer explicit ('the kinematic half of the local-q evolution; the dynamical half is Route 2b') so the phrase carries its own reference."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.431Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "'This is the formal core of the two-observer parallelogram' is a cross-reference to rem:two-observer-parallelogram, not narration of emphasis. The italic *is* in 'the local disagreement between two observers *is* the q-curvature' places emphasis rather than announcing it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.472Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "The final paragraph is not a restatement: it draws the epistemic line between the unconditional identity [delta q_1, delta q_2] = F_q and the (narrative) identification of F_q with (q-1) F_q^intr. That distinction is new information and good practice."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.514Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.557Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "'exactly what makes', 'necessarily disagree', 'unconditional (structural)' are each scoped to a stated hypothesis."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.855Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:39.608Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Sentences are long but clause-structured; all parse aloud.",
+        "notes": "CHECKS (not traps): section 3b clean - uses[] is def:observation, def:q-flat-connection, rem:two-observer-parallelogram with no conj: label, and the .ts authorNotes records that the def:q-flat-connection cone is conjecture-free, so the provable kind is warranted. The antisymmetry claim in item 2 follows from the commutator; the epistemic split in the closing paragraph matches the .ts authorNotes. COSMETIC: a stray hard line break splits 'The germ / algebra's non-commutativity' mid-phrase in the source."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b873fe4d9f79",
+          "ts": "01d9c8ff0d10",
+          "lean": "c68c25e563db",
+          "lean_statement": "171e526c9db1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:10:39.608Z"
 }

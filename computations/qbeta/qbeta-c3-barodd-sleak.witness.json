@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T11:58:25.826724+00:00",
-  "commitSha": "927287d637874470f9a340816bf4e2ea3c31b228",
+  "computedAt": "2026-08-24T13:34:16.931092+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "S_sign_flips_across_anchors_at_central_values",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 7,
   "computation": "qbeta-c3-barodd-sleak",
   "scriptFile": "qbeta_c3_barodd_sleak_probe.py",
   "scriptHash": "68a3ddeddf09",
-  "scriptCommitSha": "7e561a701c0524772d071e6dc6887e6e6f790038",
+  "scriptCommitSha": "494add1a3066dcdb4e0132942107abf99ae77ae7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,23 +44,33 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_sleak_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_sleak_probe.py"
   },
   "description": "CANONICAL SOURCE for the bar-odd S-leak anchor values S = c_3 + Vol(4_1), which QOU/QBeta/SLeakZeroCrossing.lean, MonodromyDatumRigidity.lean and CompleteStructureExclusion.lean cite and which at least four Python probes had hand-copied as bare 6-digit literals. This probe previously emitted NO witness, so there was nothing to read instead — the copies were the only carrier. It also computed in float64 despite 12-digit string inputs. Both fixed: mpmath throughout, and the values are published here with the digit count the c_3 + Vol(4_1) cancellation actually supports. Derives nothing new; it is the same computation, sourced.",
   "data": {
     "upstream": "qbeta-c3-keystone-anchor-blind.witness.json",
     "Vol_4_1": "2.02988321282",
     "c3": {
-      "muon": "-2.02020023502",
+      "muon": "-2.01986031187",
       "proton": "-2.06934257712"
     },
     "S_leak": {
-      "muon": "0.0096829778",
+      "muon": "0.0100229009",
       "proton": "-0.0394593643"
     },
     "S_leak_claim_odd_part": {
-      "muon": "0.00827542529",
+      "muon": "0.0082754253",
       "proton": "0.0082754236"
     },
     "cal3_uncertainty_propagation": {
@@ -73,11 +83,11 @@
         "proton": "1.262"
       },
       "S_uncertainty_over_value": {
-        "muon": "130.3",
+        "muon": "125.9",
         "proton": "31.98"
       },
-      "difference_S_muon_minus_S_proton": "0.0491423421",
-      "difference_uncertainty": "7.573e-7",
+      "difference_S_muon_minus_S_proton": "0.04948226525",
+      "difference_uncertainty": "7.625e-7",
       "difference_uncertainty_relative": "1.541e-5",
       "swing_resolved": true,
       "sign_flip_resolved": false,
@@ -88,7 +98,7 @@
       "input_sig_digits": 12,
       "WARNING_arithmetic_not_uncertainty": "the digit count below is ARITHMETIC precision from the 12-digit upstream strings. It is NOT the uncertainty — see cal3_uncertainty_propagation, which is ~11 orders of magnitude larger. Do not cite these digits as accuracy.",
       "decades_lost_to_cancellation": {
-        "muon": "2.319",
+        "muon": "2.304",
         "proton": "1.72"
       },
       "reported_sig_digits": 9,
@@ -97,8 +107,8 @@
     "sign_flip": {
       "S_muon_positive": true,
       "S_proton_negative": true,
-      "ratio_S_proton_over_S_muon": "-4.07513",
-      "linear_interp_zero_fraction": "0.197039",
+      "ratio_S_proton_over_S_muon": "-3.93692",
+      "linear_interp_zero_fraction": "0.202555",
       "scope": "the zero-crossing is an INFERENCE from continuity (IVT), and the fraction is a linear-interpolation estimate of its location, not a computed q*"
     }
   }

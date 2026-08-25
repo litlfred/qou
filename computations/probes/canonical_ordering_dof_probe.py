@@ -75,8 +75,9 @@ from closed_form_tau_M import markov_z, hecke_h, closed_form_ratio  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from atom_orbit_reduction import interface_multiset  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 HERE = Path(__file__).resolve().parent
@@ -561,21 +562,70 @@ def part6_crosscheck(results: dict, assertions: dict) -> None:
     #  (b) PR #4850 part B, y_lambda_at_q0_mpmath x Hoefsmit chi on
     #      atom_braid_word_3A's word, whose pn default is bring_color_weighted.
     # Each is compared against the closed form under ITS OWN convention.
-    meas = [
-        ("wenzl_bridge_strict", "strict_averaged",
-         [("T_npn_over_pnn", "0.141523950364895566", "0.104052096421142611", "nn"),
-          ("He3_pnp_over_ppn", "0.163302542562242877", "0.206540800248201915", "pp")]),
-        ("pr4850_y_lambda_chi", "bring_color_weighted",
-         [("T_npn_over_pnn", "1.415755179229e-01", "1.040710573547e-01", "nn"),
-          ("He3_pnp_over_ppn", "1.633620457246e-01", "2.065784335107e-01", "pp")]),
-    ]
+    #
+    # MEASURED LIVE (2026-08-10, bean qou-xy5f).  These were eight decimals
+    # hardcoded from full-trace runs.  They were taken under the OLD Markov
+    # parameter z = 1/(q^{1/2}+q^{-1/2}); when the closed form migrated to
+    # z = q^3/(q^2+1) with the rest of the producer layer, the readings did
+    # not, and this assertion failed by 8.0% / 4.7% with both sources still
+    # agreeing with EACH OTHER to ~1e-4 — a convention shift, not a pipeline
+    # error.  qou-eea0 pass 2 regenerated the y_λ tables they depend on, and
+    # retaking them closes it: 1.2589766 vs the closed form's 1.2589766.
+    #
+    # Computed rather than re-pasted.  A hardcoded reading cannot tell you it
+    # has gone stale — it just drifts from the formula it is supposed to be
+    # checking, and reads as a broken closed form.  Recomputing costs a few
+    # seconds of H_9 trace and removes the failure mode permanently.
+    #
+    # PROTON anchor throughout: Q0 here is q_parameter.Q_50_DIGIT_STR, so the
+    # trace must be handed the PROTON y_λ cache.  tr_M_via_wenzl_bridge_mpfr
+    # defaults to the muon/ideal one, which would put an ideal-layer y_λ and
+    # an experimental-layer q₀ inside a single number — the straddle
+    # AGENTS.md §"q₀ anchor convention" forbids, and an 11.5 ppb error here.
+    from atom_orbit_reduction import atom_braid_word_ordered
+    from tr_m_wenzl_bridge_mpfr import (tr_M_via_wenzl_bridge_mpfr,
+                                        _Y_LAMBDA_BY_ANCHOR)
+    from schur_principal_mpmath import y_lambda_at_q0_mpmath
+
+    RATIOS = [("T_npn_over_pnn", "npn", "pnn", "nn"),
+              ("He3_pnp_over_ppn", "pnp", "ppn", "pp")]
+    ORDERINGS = ("npn", "pnn", "pnp", "ppn")
+    N_STRANDS = 9
+    y_proton = _Y_LAMBDA_BY_ANCHOR["proton"]
+
+    # Two evaluators over the same words. They share χ_λ and differ in where
+    # y_λ comes from: a regenerated witness cache vs the live closed form.
+    # That is the pair worth cross-checking — a stale cache served past its
+    # gate is exactly what put the eight readings out of date (qou-toi3).
+    breakdown = {
+        o: tr_M_via_wenzl_bridge_mpfr(
+            atom_braid_word_ordered(o), N_STRANDS, mp.nstr(Q0, 50),
+            dps=50, y_lambda_path=y_proton, return_breakdown=True)
+        for o in ORDERINGS
+    }
+    y_closed = y_lambda_at_q0_mpmath(N_STRANDS, Q0)
+    tr_cached = {o: mp.mpf(breakdown[o]["tr_M"]) for o in ORDERINGS}
+    tr_closed = {
+        o: sum((y_closed.get(tuple(r["partition"]), mp.mpf(0))
+                * mp.mpf(r["chi_lambda"])
+                for r in breakdown[o]["by_partition"]), mp.mpf(0))
+        for o in ORDERINGS
+    }
+
+    meas = [("wenzl_bridge_y_cache", tr_cached),
+            ("wenzl_bridge_y_closed_form", tr_closed)]
     out = []
     ok = True
-    for src, conv, items in meas:
-        f = interface_factors(Q0, conv)
+    # Both evaluators use atom_braid_word_ordered, whose p-n interface is the
+    # averaged crossing σ − h/2 — so strict_averaged is the matching closed
+    # form for both. (The old second row claimed bring_color_weighted; no
+    # ordering-aware colour-weighted word builder exists to have produced it.)
+    conv = "strict_averaged"
+    f = interface_factors(Q0, conv)
+    for src, tr in meas:
         print(f"\n  {src}  (convention: {conv})")
-        for label, num, den, denom_kind in items:
-            measured = mp.mpf(num) / mp.mpf(den)
+        for label, num_o, den_o, denom_kind in RATIOS:
+            measured = tr[num_o] / tr[den_o]
             predicted = f["pn"] / f[denom_kind]
             rel = abs(measured / predicted - 1)
             print(f"    {label:20s} measured {mp.nstr(measured, 14)}  "

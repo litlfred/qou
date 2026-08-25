@@ -9,7 +9,7 @@
   namespace.  Kept standalone here to satisfy the content-block
   sibling-.lean convention without forcing a cross-file Lake import.
 
-  Substrate model: ground field `R` is the algebra `A`, trace
+  Substrate model: ground ring `R` is the algebra `A`, trace
   `τ = id`, Frobenius inner product `⟨X, Y⟩ := X * Y`.  Reduces
   the H_n(R, q)-level Lagrangian / completing-the-square proof to
   trivial ring arithmetic.  Full H_n(R, q) lift deferred to a
@@ -24,7 +24,6 @@
 -/
 
 import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 
 namespace QOU.QBeta.MarkovFrobeniusCollapse
@@ -61,7 +60,7 @@ theorem completing_the_square {R : Type u} [CommRing R] (X S : R) :
        so `τ_M((X - S·1)²) ≥ 0` ⇒ `‖X‖²_τ ≥ S²`.
     4. Equality iff `τ_M((X - S·1)²) = 0` iff (by non-degeneracy of
        `τ_M`) `X - S · 1 = 0` iff `X = S · 1`. -/
-theorem t_beta_collapse {R : Type u} [Field R]
+theorem t_beta_collapse {R : Type u} [CommRing R]
     (S X : R) (h_constraint : X = S) :
     X * X = S * S := by
   rw [h_constraint]
@@ -69,7 +68,7 @@ theorem t_beta_collapse {R : Type u} [Field R]
 /-- **Min-norm value corollary.**  Substituting `X = S` into `X²` gives
     the minimum `S²`.  Lifts to `‖T_β‖²_τ_M = S²` at the Hecke-algebra
     level. -/
-theorem min_norm_value {R : Type u} [Field R] (S : R) :
+theorem min_norm_value {R : Type u} [CommRing R] (S : R) :
     (S : R) * S = S * S := rfl
 
 end QOU.QBeta.MarkovFrobeniusCollapse

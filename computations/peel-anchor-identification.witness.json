@@ -1,0 +1,70 @@
+{
+  "computation": "peel-anchor-identification",
+  "description": "The peel's tr_M is an exact integer-coefficient rational function of q -- no anchor enters it -- so both q0 pins can be evaluated from one expression. Doing so identifies bean qou-8x1l's 'peel (proton, symbolic)' as the MUON evaluation, and shows the anchor-matched bridge agreeing with peel(proton) to all recorded digits. The 8.71e-8 residual was a mislabelled readout, not a defect in the weights.",
+  "scriptFile": "markov/peel_anchor_identification_probe.py",
+  "q0Anchor": "ambiguous",
+  "q0_pins": {
+    "proton": "1.1099785827513808075916690956",
+    "muon": "1.109978595557334719899763"
+  },
+  "peel_deuteron": {
+    "exact_in_q": true,
+    "n_float_atoms": 0,
+    "numerator_degree": 50,
+    "denominator_factored": "192*q**23*(q**2 + 1)**3",
+    "convention": "D",
+    "convention_evidence": "(q^2 + 1) divides the denominator: z = q^3/(q^2+1) once per Markov peel. Convention C's z = 1/(q^(1/2) + q^(-1/2)) would leave half-integer powers of q.",
+    "at_q0": {
+      "proton": "0.57517224391777187082653534391293600752563481955729",
+      "muon": "0.57517233101788385191979029706322537046780249602243"
+    },
+    "elapsed_sec": "23.08"
+  },
+  "bean_qou_8x1l_numbers": {
+    "bridge_proton_y_proton_chi": {
+      "value": "0.575172243917771870826535",
+      "nearest_anchor": "proton",
+      "rel_vs_proton": "5.9793e-25",
+      "rel_vs_muon": "1.51433e-7"
+    },
+    "bridge_muon_y_proton_chi": {
+      "value": "0.575172395398020063703615",
+      "nearest_anchor": "muon",
+      "rel_vs_proton": "2.63365e-7",
+      "rel_vs_muon": "1.11932e-7"
+    },
+    "peel_labelled_proton": {
+      "value": "0.575172331017883851919791796687",
+      "nearest_anchor": "muon",
+      "rel_vs_proton": "1.51433e-7",
+      "rel_vs_muon": "2.60726e-24"
+    }
+  },
+  "assertions": [
+    {
+      "name": "peel_is_exact_rational_function_of_q",
+      "passed": true,
+      "note": "refutes the bean's recorded obstacle that the word's numeric d values pin the expression to one anchor"
+    },
+    {
+      "name": "peel_denominator_is_convention_D",
+      "passed": true
+    },
+    {
+      "name": "anchor_matched_bridge_equals_peel_at_proton",
+      "passed": true
+    },
+    {
+      "name": "bean_peel_labelled_proton_is_the_muon_evaluation",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "e949e2e83084",
+  "scriptCommitSha": "34ad79db2fc18948693a25a5f4a98ddca1952755",
+  "commitSha": "6f02c976b1f679c9f9ce886aaed5312fa5f6edcc",
+  "engine": "sympy",
+  "computedAt": "2026-08-16T02:34:29.881131+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.12"
+}

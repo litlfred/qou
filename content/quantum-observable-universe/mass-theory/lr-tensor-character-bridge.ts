@@ -15,7 +15,7 @@ export default corollary({
     "prop:wenzl-bridge-applicability-qou",
     "def:canonical-braid-interface-composition",
   ],
-  cites: ["wenzl1988", "macdonald1995", "geck-pfeiffer2000", "ram1991"],
+  cites: ["wenzl1988", "macdonald1995", "geckpfeiffer2000", "ram1991"],
   authorNotes: [
     {
       kind: "status",

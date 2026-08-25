@@ -545,30 +545,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:00:44.975Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "960cdb8385b9",
-          "ts": "e2530c368aae"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:32:44.792Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1136,6 +1117,195 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.178Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.216Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.254Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.292Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.331Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.370Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.407Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.445Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.484Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "960cdb8385b9",
+          "ts": "e2530c368aae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:51.522Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
     ]
   },
   "$schema": "block-qa/v1",
@@ -1146,8 +1316,8 @@
     "md": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-table1-data.md"
   },
   "source_hashes": {
-    "ts": "e2530c368aae",
-    "md": "960cdb8385b9"
+    "md": "960cdb8385b9",
+    "ts": "e2530c368aae"
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T07:01:51.522Z"
 }

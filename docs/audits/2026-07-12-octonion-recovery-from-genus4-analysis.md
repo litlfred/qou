@@ -5,7 +5,7 @@
 **Question (owner):** QOU sits on Bring's genus-4 surface `Σ₄` with the bar
 involution and `S₅ = Aut(Σ₄)` symmetry (three distinguished colour `S₃`
 sub-sectors). Can the **octonions `𝕆`** be recovered from this data — the way
-Szangolies' "Standard Model Symmetry and Qubit Entanglement" (`uploads/5S032X.pdf`)
+Szangolies' "Standard Model Symmetry and Qubit Entanglement" (`library/5s032x/5S032X.pdf`)
 gets the SM gauge group from a preferred *imaginary* direction in `𝕆`?
 
 **Verdict.** The *direct* route — an `S₅`-equivariant octonion structure on

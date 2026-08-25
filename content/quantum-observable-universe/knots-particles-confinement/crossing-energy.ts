@@ -7,5 +7,13 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.CrossingEnergy",
     validation: "not_checked",
   },
-  uses: ["prop:nuclear-groebner-reduction"],
+  // The energy is DEFINED as a sum over the crossings of β — one term per
+  // two-strand event, with no irreducible many-body remainder. That the sum
+  // exhausts the interaction is prop:pairwise-interaction-decomposition;
+  // without it, "sum over crossings" would be an assumption rather than a
+  // consequence of the braiding being binary.
+  uses: [
+    "prop:nuclear-groebner-reduction",
+    "prop:pairwise-interaction-decomposition",
+  ],
 });

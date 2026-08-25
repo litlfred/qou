@@ -1,6 +1,6 @@
-How much energy does it cost to convert an electron into a positron?
-The answer depends on what "convert" means — and the QOU framework
-reveals three distinct energy scales.
+The energy cost of converting an electron into a positron depends on
+what "convert" means. The QOU framework distinguishes three energy
+scales.
 
 **Standard physics: conversion is forbidden; only pair creation is possible.**
 An isolated electron cannot become a positron — lepton number
@@ -31,7 +31,7 @@ The positron is the mirror $T_{2,3}^{\sigma}$ with $3$ negative crossings:
 $$
   \mathfrak{E}_{\mathrm{cross}}(e^+)
   =  -3q^{-1}
-   \approx  -3 \times 0.9010
+   \approx  -3 \times 0.9009
   =  -2.703
   \quad (\text{in Skein units}).
 $$
@@ -100,7 +100,7 @@ $$
 2. **Direct chirality reversal (forbidden in observable sector).**
    Flipping all 3 crossings of $T_{2,3}$ to produce $T_{2,3}^{\sigma}$
    while keeping the same knot would require a topological transition
-   through the unknot — but the trefoil is
+   through the unknot, but the trefoil is
    [topologically stable](#rem:trefoil-vortex-chirality-flip).  In the
    observable sector ($q$ real, $\theta = 0$), no finite energy can
    accomplish this: the trefoil and its mirror are in different
@@ -124,7 +124,7 @@ The energy to "convert" an electron to a positron is either:
 - **$2m_e \approx 1.022$ MeV** (create a new pair at the exceptional divisor),
   or
 - **$0$** (in the pre-observable complex-$q$ sector, chirality
-  rotation is free — but inaccessible to measurement).
+  rotation is free but inaccessible to measurement).
 
 The crossing energy gap $3(q + q^{-1})$ in Skein units sets the
 *algebraic* distance between the two chiralities. Its physical

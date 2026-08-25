@@ -33,6 +33,12 @@ This is the framework's HARDEST honesty test — if it solves α from q_0
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import sys
 import time
 from pathlib import Path

@@ -33,9 +33,9 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 This skill imports external mathematical papers into the content object
 system. It handles three input formats:
 
-1. **PDF upload** — stored in `uploads/<paper-id>/`, OCR/text-extracted
-2. **LaTeX source upload** — stored in `uploads/<paper-id>/`, parsed directly
-3. **arXiv reference** — fetched via arXiv API, source downloaded to `uploads/`
+1. **PDF upload** — stored in `library/<paper-id>/`, OCR/text-extracted
+2. **LaTeX source upload** — stored in `library/<paper-id>/`, parsed directly
+3. **arXiv reference** — fetched via arXiv API, source downloaded to `library/`
 
 The output is a new paper directory under `content/` with properly typed
 content objects (.ts + .md triples), ready for formalization.
@@ -53,9 +53,9 @@ content objects (.ts + .md triples), ready for formalization.
 
 | Source | Action |
 |--------|--------|
-| PDF file | Store in `uploads/<paper-id>/original.pdf` |
-| LaTeX file(s) | Store in `uploads/<paper-id>/` preserving structure |
-| arXiv ID | Fetch metadata via API, download source tarball to `uploads/<paper-id>/` |
+| PDF file | Store in `library/<paper-id>/original.pdf` |
+| LaTeX file(s) | Store in `library/<paper-id>/` preserving structure |
+| arXiv ID | Fetch metadata via API, download source tarball to `library/<paper-id>/` |
 
 **Preferred fetch path (added 2026-05-22):** when the session
 network allows `arxiv.org`, use the `paper-search-mcp` MCP server
@@ -64,7 +64,7 @@ rather than raw `curl` / `WebFetch`:
 | Tool | Use for |
 |------|---------|
 | `paper-search-mcp.search_arxiv(query=…)` | resolve an author/title to an arxiv ID + canonical metadata (title, authors, year, abstract, primary category) — feeds `import-meta.json` |
-| `paper-search-mcp.download_arxiv(arxiv_id, output_dir="uploads/<paper-id>/")` | fetch the PDF to `uploads/` with the canonical arxiv-id-named filename — single call, no shell |
+| `paper-search-mcp.download_arxiv(arxiv_id, output_dir="library/<paper-id>/")` | fetch the PDF to `library/` with the canonical arxiv-id-named filename — single call, no shell |
 | `paper-search-mcp.read_arxiv_paper(arxiv_id)` | parsed text body for downstream environment extraction (Phase 2) — useful when PDF OCR is brittle |
 | `openalex-paper-search.get_work(doi=…)` | metadata-only path for papers without an arxiv preprint (paywalled or pre-arxiv era) — fills the same `import-meta.json` shape |
 
@@ -75,8 +75,8 @@ the actual fetch onto `scripts/upload-bib-papers.sh` running on a
 normal-network machine (handoff documented in
 [`bib-qa.md §Batch intake pipeline`](bib-qa.md#batch-intake-pipeline)).
 
-All uploads are committed to the repo under `uploads/` for reprocessing.
-Metadata is stored in `uploads/<paper-id>/import-meta.json`:
+All uploads are committed to the repo under `library/` for reprocessing.
+Metadata is stored in `library/<paper-id>/import-meta.json`:
 
 ```json
 {
@@ -320,7 +320,7 @@ ref({
 ## File Organization
 
 ```
-uploads/
+library/
   <paper-id>/
     import-meta.json          ← source metadata
     original.pdf              ← uploaded PDF (if applicable)
@@ -342,7 +342,7 @@ content/
 
 Before completing an import:
 
-- [ ] Source files stored in `uploads/<paper-id>/` with `import-meta.json`
+- [ ] Source files stored in `library/<paper-id>/` with `import-meta.json`
 - [ ] User has reviewed and confirmed extracted blocks
 - [ ] All `.ts` manifests use correct builders and label prefixes
 - [ ] All `.md` files follow project markdown conventions

@@ -1,74 +1,30 @@
-## The summand is not concave; the constrained sum is
+## Concavity of the volume functional
 
-An ideal tetrahedron with dihedral angles $\alpha, \beta, \gamma$ satisfying $\alpha + \beta + \gamma = \pi$ has volume
-
-$$
-  \Lambda(\alpha) + \Lambda(\beta) + \Lambda(\gamma),
-$$
-
-where $\Lambda$ is the Lobachevsky function. Rivin's theorem is that the total volume is *strictly concave* on the space of angle structures.
-
-The obvious route to that conclusion does not exist. Differentiating twice gives
-
-$$
-  \Lambda''(\theta) \;=\; -\cot\theta ,
-$$
-
-so $\Lambda$ is concave on $(0, \pi/2)$ and **convex** on $(\pi/2, \pi)$. Any argument that proves concavity of the sum by proving it termwise is therefore not merely incomplete but false at the second step, and a tetrahedron with an obtuse dihedral angle is not an edge case — it is generic.
-
-What rescues the statement is the constraint. Concavity holds for the sum *on the simplex* $\alpha + \beta + \gamma = \pi$, and the constraint is doing the work, not decoration.
+Casson and Rivin's approach to hyperbolic structures replaces the search for shape parameters with a *maximisation*: an angle structure assigns three positive dihedral angles summing to $\pi$ to each tetrahedron, subject to the linear condition that angles around each edge sum to $2\pi$; the hyperbolic structure is the critical point of the total volume on that polytope. The argument needs the volume functional to be concave, or the critical point carries no information.
 
 **Theorem.**
-*Let $\alpha, \beta, \gamma > 0$ with $\alpha + \beta + \gamma = \pi$, and let $(u, v, w) \neq 0$ satisfy $u + v + w = 0$. Then $\Lambda(\alpha + tu) + \Lambda(\beta + tv) + \Lambda(\gamma + tw)$ is strictly concave in $t$ on the region where all three angles stay positive.*
-
-Strict concavity on a convex set is exactly strict concavity along every segment, so the line formulation is Rivin's theorem for a single tetrahedron rather than a weakening of it. The tangency condition $u + v + w = 0$ is what keeps the angles summing to $\pi$ along the whole line,
+*Let $\alpha + \beta + \gamma = \pi$ and let $(u,v,w)$ be a nonzero tangent direction with $u + v + w = 0$. Then*
 
 $$
-  (\alpha + tu) + (\beta + tv) + (\gamma + tw) \;=\; \pi + t\,(u + v + w) \;=\; \pi ,
+  t \;\longmapsto\; \Lambda(\alpha + tu) + \Lambda(\beta + tv) + \Lambda(\gamma + tw)
 $$
 
-so the constraint that makes the result true at the basepoint is available at every point of the line.
+*is strictly concave.*
 
-## The Hessian, and why no case split is needed
+Strict concavity on a convex set is exactly strict concavity along every segment, so this is Rivin's theorem for a single tetrahedron.
 
-The Hessian of $\Lambda(\alpha) + \Lambda(\beta) + \Lambda(\gamma)$ is $\mathrm{diag}(-\cot\alpha, -\cot\beta, -\cot\gamma)$. Restricted to the tangent space $\{u + v + w = 0\}$, negative definiteness of the Hessian is precisely the positivity of
+## The Hessian is computed, not assumed
 
-$$
-  Q \;=\; \cot\alpha\;u^2 + \cot\beta\;v^2 + \cot\gamma\;w^2 .
-$$
-
-At most one of three angles summing to $\pi$ can exceed $\pi/2$, so at most one of the three cotangents is negative — but which one is not known in advance, and a proof by cases on that would need three branches plus the boundary.
-
-None is required, because $Q$ is a sum of squares after clearing denominators. Writing $a = \cot\alpha$, $b = \cot\beta$ and $w = -(u + v)$,
+The proof is via the second derivative, and both derivatives of the Lobachevsky function are established rather than quoted:
 
 $$
-  (a + b)\,Q \;=\; (a\,u - b\,v)^2 + (u + v)^2 ,
+  \Lambda'(t) \;=\; -\log\lvert 2\sin t\rvert ,
+  \qquad
+  \Lambda''(t) \;=\; -\cot t .
 $$
 
-an identity in $\alpha, \beta, u, v$ alone once $\gamma = \pi - \alpha - \beta$ is substituted. The prefactor is positive:
+So along the line the second derivative is $-(u^2\cot\alpha + v^2\cot\beta + w^2\cot\gamma)$, and strict negativity is a statement about that quadratic form. The quadratic form **is** the Hessian, derived, rather than a form asserted to be one. With $\alpha + \beta + \gamma = \pi$ and all three angles in $(0,\pi)$, at most one cotangent is negative, and the constraint $u+v+w=0$ is what forces the combination negative.
 
-$$
-  a + b \;=\; \frac{\cos\alpha\,\sin\beta + \sin\alpha\,\cos\beta}{\sin\alpha\,\sin\beta} \;=\; \frac{\sin\gamma}{\sin\alpha\,\sin\beta} \;>\; 0 ,
-$$
+## What is not claimed
 
-since all three angles lie in $(0, \pi)$ and so have positive sines. The right-hand side vanishes only when $a\,u = b\,v$ and $u = -v$ simultaneously, which for positive $a + b$ forces $u = v = 0$. Hence $Q > 0$ for every nonzero tangent vector, with no case analysis on which angle is obtuse: the identity absorbs it.
-
-The formalization states the identity in the equivalent denominator-free form
-
-$$
-  Q\,\sin\alpha\,\sin\beta\,\sin\gamma \;=\; (\cos\alpha\,\sin\beta\;u - \sin\alpha\,\cos\beta\;v)^2 + (\sin\alpha\,\sin\beta)^2\,(u + v)^2 ,
-$$
-
-which is the previous line multiplied through by $(\sin\alpha\,\sin\beta)^2$. In that form the proof is `field_simp; ring` — no analysis at all.
-
-## What is proved here, and what is not
-
-The analytic input is the second derivative $\Lambda'' = -\cot$, which is what makes $Q$ a statement about the Hessian rather than about a quadratic form merely asserted to be one. Mathlib has neither the Clausen nor the Lobachevsky function, so both come from the corpus.
-
-Three limits are worth stating plainly.
-
-This is **concavity for a single tetrahedron**. Rivin's theorem for a triangulation is the sum over its tetrahedra, on the space of angle structures cut out by the edge conditions; that assembly is not carried out here.
-
-This is **not new mathematics**. The concavity is Rivin's, the volume formula Thurston's and Milnor's. What the corpus adds is a machine-checked proof of the one-tetrahedron case, and the observation — recorded here because it is the trap the formalization was built to avoid — that the termwise route is unavailable.
-
-And as elsewhere in this arc, nothing here establishes that any given triangulation is a triangulation *of* a knot complement. That is Thurston hyperbolisation together with Mostow rigidity, which needs a theory of hyperbolic $3$-manifolds that neither Mathlib nor this corpus has. No volume conjecture is touched.
+This is concavity for **one** tetrahedron along **one** line. Rivin's full theorem — that the total volume over an angle-structure polytope has a unique critical point, and that the critical point is the complete hyperbolic structure — additionally needs the polytope itself, a compactness argument, and the identification of the critical point with a geometric structure. None of that is established here, and the angle-structure polytope for $5_2$ is not built.

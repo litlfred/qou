@@ -115,7 +115,7 @@ def test_assertion_with_numeric_values():
         {
             "name": "alpha_em_inv",
             "computed": 137.036,
-            "expected": 137.035999084,
+            "expected": 137.035999084,  # noqa: P31 - test expectation, not a constant
             "tolerance": 0.001,
             "source": "CODATA 2022",
         }

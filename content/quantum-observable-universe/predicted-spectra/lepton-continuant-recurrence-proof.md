@@ -25,8 +25,6 @@ At the substrate parameter $q_0 \approx 1.1100$, the continuant yields the follo
 
 The recurrence is exact in $\mathbb{Z}[q^{\pm 1}]$. The decimal values are evaluations at $q = q_0$.
 
-The recurrence relations underlying this lepton tower are elementary identities in $\mathbb{Z}[q^{\pm 1}]$. The Morgan-Voyce sequences $\{a_n\}$ and $\{b_n\}$ satisfy a standard induction over $n$ via the quadratic Hecke relation.
-
 ## Structural content
 
 Each additional factor of $\sigma_0^2$ in $T_{2,n+2}$ applies the Hecke relation once. This adds exactly $(q - q^{-1}) b_n$ to the $\sigma_0$ coefficient and shifts the identity coefficient by $b_n$. The lepton generations form a discrete tower indexed by odd $n$. The inter-generation spacing is controlled by $h = q - q^{-1}$.

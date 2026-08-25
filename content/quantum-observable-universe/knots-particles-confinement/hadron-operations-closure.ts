@@ -10,5 +10,9 @@ export default proposition({
   },
   uses: [
     "def:hadron",
+    // Closure is stated for the *binary* braiding. No separate closure
+    // clause is needed for many-body interactions, because every such
+    // interaction is a word in binary crossings.
+    "prop:pairwise-interaction-decomposition",
   ],
 });

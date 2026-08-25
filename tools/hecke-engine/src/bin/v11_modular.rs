@@ -398,6 +398,7 @@ fn main() {
     let cert = serde_json::json!({
         "isotope": {"z": z, "n": n, "a": a, "symbol": sym},
         "engine": {"name": "hecke-modular", "version": "0.11.0"},
+        "generation": hecke_engine::provenance::Generation::capture(hecke_engine::gram::Q_0),
         "f_pauli_f64": fp, "tr_alt_f64": alt_f, "net_f64": net_f, "l1_norm_f64": l1_norm,
         "elapsed_seconds": elapsed,
     });

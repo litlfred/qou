@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-18T03:34:03.258281+00:00",
-  "commitSha": "9506223ee62ff1bdf609840940f3aaead262019e",
+  "computedAt": "2026-08-23T09:08:44.611911+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "h4_seminormal_relations_hold",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 17,
   "computation": "qbeta-h4-tower-branching-preflight",
   "scriptFile": "qbeta_h4_tower_branching_preflight.py",
-  "scriptHash": "6dd96a0a7332",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "406bf0ab956c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,8 +35,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/qbeta_h4_tower_branching_preflight.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/qbeta_h4_tower_branching_preflight.py"
   },
   "description": "Formalize-first preflight for the Q_β c_4 H₄-tower (Stage C): validates the H₄ Hoefsmit seminormal reps (Hecke+braid relations) and the H₃⊂H₄ branching map χ^μ(w)=Σ_{λ↗μ}χ^λ(w) on the σ₃-free decay words, demonstrating that the tower adds a new DOF only along σ₃ (level-4). Localizes the c_4 content to the OPEN σ₃-lift; no c_4 fabricated, no fit.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -140,7 +151,7 @@
           0
         ]
       ],
-      "max_rel_error": "5.62287e-52",
+      "max_rel_error": "7.6204e-72",
       "branching_holds": true,
       "identity": "chi^mu_{H4}(w) = sum_{lambda -> mu} chi^lambda_{H3}(w)"
     },

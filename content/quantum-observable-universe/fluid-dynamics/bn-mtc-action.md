@@ -10,4 +10,4 @@ $$
    \otimes\, \mathrm{id}_{\mathbf{V}^{\otimes (n - i - 1)}},
 $$
 
-governing the pure Artin braid group $B_n$ (see [def:braid-group](#def:braid-group)) mapped exactly onto the strict tensor power of $\mathbf{V}$. This active representation fundamentally refuses to factor cleanly straight through the basic symmetric-group quotient tracing $B_n \twoheadrightarrow S_n$.
+governing the Artin braid group $B_n$ (see [def:braid-group](#def:braid-group)) mapped onto the tensor power of $\mathbf{V}$. This representation does not factor through the symmetric-group quotient $B_n \twoheadrightarrow S_n$.

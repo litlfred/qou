@@ -1,0 +1,131 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1301.4504v4",
+ "source_sha256": "201acc5bb1d4b6a0",
+ "brief": "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue",
+ "extended": "**Quantum Computation vs. Firewalls**\n\n66 pp, 22 sections.\n\n**Abstract.** In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue against the smoothness of black hole horizons. We argue that the quantum computations required to do these experiments would take a time which is exponential in the entropy of the black hole under study, and we show that for a wide variety of black holes this prevents the experiments from being done. We interpret our results as motivating a broader type of nonlocality than is usually considered in the context of black hole thought experiments, and claim that once this type of nonlocality is allowed there may be no need for ﬁrewalls. Our results do not threaten the unitarity of of black hole evaporation or the ability of advanced civilizations to test it. arXiv:1301.4504v4 [hep-th] 6 Apr 2013\n\n**Outline.** 1 Introduction; 2 The Firewall Argument; 2.1 A Quantum Black Hole from the Outside; 2.2 A Quantum Black Hole from the Inside; 2.3 A Way Out?; 3 The AMPS Experiment as a Quantum Computation; 3.1 Quantum Computing is Hard; 3.2 Implementing a General Unitary Transformat; 3.4 Two Counting Arguments; 4 Quantum Coding and Error Correction; 4.1 Review of Error Correcting Codes; 4.2 Computational Complexity, Stabilizer Codes; 4.4 Error Correction and Zero-Knowledge Proofs; 5 More General Black Holes; 5.1 Schwarzschild in a Box; 5.2 Reissner-Nordstrom; 5.3 Near Extremal AdS Throat; 5.3.1 The Brane Setup",
+ "tokens": {
+  "brief": 49,
+  "extended": 388
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-001-2-the-firewall-argument",
+   "title": "The Firewall Argument",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-002-21-a-quantum-black-hole-from-the-outside",
+   "title": "A Quantum Black Hole from the Outside",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-003-22-a-quantum-black-hole-from-the-inside",
+   "title": "A Quantum Black Hole from the Inside",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-004-23-a-way-out",
+   "title": "A Way Out?",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-005-3-the-amps-experiment-as-a-quantum-computation",
+   "title": "The AMPS Experiment as a Quantum Computation",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-006-31-quantum-computing-is-hard",
+   "title": "Quantum Computing is Hard",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-007-32-implementing-a-general-unitary-transformation",
+   "title": "Implementing a General Unitary Transformation with Quantum Gates",
+   "pages": "19-26"
+  },
+  {
+   "id": "sec-008-34-two-counting-arguments",
+   "title": "Two Counting Arguments",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-009-4-quantum-coding-and-error-correction",
+   "title": "Quantum Coding and Error Correction",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-010-41-review-of-error-correcting-codes",
+   "title": "Review of Error Correcting Codes",
+   "pages": "27-32"
+  },
+  {
+   "id": "sec-011-42-computational-complexity-stabilizer-codes-and",
+   "title": "Computational Complexity, Stabilizer Codes, and NP-Hardness",
+   "pages": "32-37"
+  },
+  {
+   "id": "sec-012-44-error-correction-and-zero-knowledge-proofs",
+   "title": "Error Correction and Zero-Knowledge Proofs",
+   "pages": "37-41"
+  },
+  {
+   "id": "sec-013-5-more-general-black-holes",
+   "title": "More General Black Holes",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-014-51-schwarzschild-in-a-box",
+   "title": "Schwarzschild in a Box",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-015-52-reissner-nordstrom",
+   "title": "Reissner-Nordstrom",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-016-53-near-extremal-ads-throat",
+   "title": "Near Extremal AdS Throat",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-017-531-the-brane-setup",
+   "title": "The Brane Setup",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-018-532-hawking-page-transition-for-toroidal-black-h",
+   "title": "Hawking-Page Transition for Toroidal Black Holes",
+   "pages": "48-50"
+  },
+  {
+   "id": "sec-019-533-time-scales",
+   "title": "Time Scales",
+   "pages": "50-56"
+  },
+  {
+   "id": "sec-020-6-the-structure-of-the-hilbert-space",
+   "title": "The Structure of the Hilbert Space",
+   "pages": "56-59"
+  },
+  {
+   "id": "sec-021-a-the-absorption-probability-for-a-nambu-goto-st",
+   "title": "A The Absorption Probability for a Nambu-Goto String",
+   "pages": "59-66"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

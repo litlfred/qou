@@ -71,7 +71,7 @@
 
   -- Ref: [rivin1994] Euclidean structures on simplicial surfaces and hyperbolic
   --      volume, Ann. of Math. 139 (1994)
-  -- Ref: [futer-gueritaud2011] From angled triangulations to hyperbolic
+  -- Ref: [futer-gueritaud-angled] From angled triangulations to hyperbolic
   --      structures, https://arxiv.org/abs/1004.0440
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic

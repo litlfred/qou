@@ -60,7 +60,16 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import markov_z, morgan_voyce_b  # noqa: E402
+
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 M_E = mpf("0.51099895000")
 M_MU = mpf("105.6583755")
@@ -69,11 +78,6 @@ M_TAU = mpf("1776.86")
 WINDINGS = (3, 5, 7)          # T(2,3), T(2,5), T(2,7) -> e, mu, tau
 
 
-def morgan_voyce_b(n_max: int, h):
-    b = [mpf(0), mpf(1)]
-    for _ in range(2, n_max + 1):
-        b.append(h * b[-1] + b[-2])
-    return b
 
 
 def bend(v3, v5, v7):
@@ -87,7 +91,7 @@ def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     b = morgan_voyce_b(12, h)
 

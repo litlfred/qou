@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean"
   },
   "source_hashes": {
-    "ts": "e28b8f279605",
     "md": "d3401cbc8c80",
-    "lean": "e5477ade4e22"
+    "ts": "e28b8f279605",
+    "lean": "e5477ade4e22",
+    "lean_statement": "b78070f7d0b3"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "d3401cbc8c80",
-          "ts": "e28b8f279605",
-          "lean": "e5477ade4e22",
-          "lean_statement": "b78070f7d0b3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1030,7 +1011,23 @@
         "reviewed_at": "2026-07-07T14:26:56.351900Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605",
+          "lean": "e5477ade4e22"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'lepton-number-categorical.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-false-claim": [
@@ -1260,7 +1257,8 @@
         "reviewed_at": "2026-07-07T14:26:56.351900Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1435,7 +1433,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "lepton-number-categorical.lean:1 — content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
+        "evidence": "lepton-number-categorical.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
       },
       {
         "result": "pass",
@@ -1471,7 +1469,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation."
       },
       {
         "result": "pass",
@@ -1870,7 +1869,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.606Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No negation-contrast construction in either sentence.",
+        "notes": "pass. MATH/CONSISTENCY FINDING, not fixed inline (it is the definition's operative word). The block's headline sentence defines lepton number as 'the count of Skein SMOOTHINGS applied to the nuclear normal form', but the formal Definition two lines later counts 'a sequence of $k$ Skein CROSSING CHANGES' and sets L = k. Those are different operations in the same skein triple L_+ - L_- = (q-q^{-1})L_0: a crossing change exchanges L_+ and L_-, a smoothing replaces the crossing by L_0. Everything downstream counts smoothings \u2014 the Lean sibling's docstring ('lepton number counts Skein smoothings'), its SkeinSmoothing structure, and the whole of rem:lepton-number-categorical-properties (each L_0^{pm} carries one lepton-antilepton pair). So 'crossing changes' in the Definition line is the outlier and should read 'smoothings'. TWO further observations on the Lean sibling (predicted-spectra/lepton-number-categorical.lean, which does exist and does declare QOU.Archimedean.LeptonNumber, so the definition-block Lean requirement is met): (i) 'structure LeptonNumber where L : Int' is a one-field wrapper on Int \u2014 it carries neither the normal form, the smoothing sequence, nor k, so it does not formalise the .md's L = k; (ii) 'lepton_number_conservation' sums (s.charged + s.neutral) over a list of SkeinSmoothing, but pair_conservation : charged + neutral = 0 is a FIELD of that structure, so the summand is identically zero by hypothesis and the theorem is 'a sum of zeros is zero'. The conservation is assumed in the carrier rather than derived \u2014 the self-assuming-projection shape of AGENTS.md 3b-cond item 5. The induction is real, so this is an observation, not a vacuity call."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.245Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.285Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.322Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.361Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.399Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.444Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.484Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.526Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.159Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:04.567Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence definition block plus its .ts (kind definition, lean.ref qou:QOU.Archimedean.LeptonNumber) and its Lean sibling. The defined term is bolded once at the canonical site and the statement is a single tight 'Let ... Let ... The lepton number of this transition is L = k.' No trap construction of any of the ten classes: no contrast, no pivot, no dash, no triple, no closer, no meta-commentary, no warmth, no superlative, nothing non-speakable.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605",
+          "lean": "e5477ade4e22",
+          "lean_statement": "b78070f7d0b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:10:04.606Z"
 }

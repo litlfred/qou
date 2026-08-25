@@ -10,7 +10,8 @@ Usage:
     python3 computations/knot-volumes.py
 
 Output:
-    computations/knot-volumes.witness.json
+    computations/substrate/knot-volumes.witness.json
+    (NOT beside this script — see the `output_dir` note at the write site)
 
 Dependencies:
     pip install snappy
@@ -24,6 +25,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from codata_table import codata  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:
@@ -73,7 +75,7 @@ KNOT_REGISTRY = [
         "manifold": "4_1",
         "expected": 2.02988321281931,
         "tolerance": 1e-10,
-        "source": "OEIS A091518, 3·Cl₂(π/3)",
+        "source": "OEIS A091518, 2·Cl₂(π/3) = 6Λ(π/3)",
         "unit": "volume",
         "particle": "higgs",
     },
@@ -144,10 +146,23 @@ LINK_REGISTRY = [
 
 MASS_ASSERTIONS = [
     {
+        # READ from the NIST table (`qou_substrate/data/allascii.txt`), never
+        # transcribed — the same row `qou_substrate.constants` reads for
+        # `MASS_RATIO_MU_E`, so this assertion checks that the production
+        # registry still agrees with the authoritative table.
+        #
+        # It was the hand-typed literal `206.7682830` until 2026-08-23. That is
+        # the CODATA-**2018** value; the registry moved to the table lookup and
+        # picked up the 2022 value `206.7682827`, 3.0e-7 away — three times the
+        # 1e-7 tolerance below. So this producer had been FAILING (exit 1) on
+        # `main` since that switch, while its committed witness still recorded
+        # `allPassed: true` from the last run under the old literal. The same
+        # edition straddle `codata_table_vintage_audit.py` was written to catch,
+        # one file over. Bean qou-bdkx.
         "name": "m_μ/m_e (CODATA 2022)",
-        "expected": 206.7682830,  # noqa: P31 — test-expected value (CAL-2 anchor cross-check, not a prediction input)
+        "expected": float(codata("muon-electron mass ratio").value),
         "tolerance": 0.0000001,
-        "source": "CODATA 2022",
+        "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)",
         "unit": "dimensionless",
     },
     {
@@ -257,15 +272,58 @@ def main():
         "assertions": assertions,
         "allPassed": all_passed,
         "durationMs": duration_ms,
+        # This producer reads NO substrate q₀ — no `q_parameter.Q` / `Q_MP` /
+        # `q_at`, no q₀ literal. Its one registry import is the CODATA
+        # `MASS_RATIO_MU_E`. The q₀-shaped number in `assertions[9].computed`
+        # is an OUTPUT, not a pin that was read: q derived forward from
+        # SnapPy's Vol(4₁) and m_μ/m_e, which is the CAL-2 ideal-layer
+        # definition, evaluated as that assertion's own subject.
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no substrate q₀: no q_parameter.Q / Q_MP / q_at import and "
+            "no q₀ literal; the only registry value consumed is the CODATA "
+            "muon-electron mass ratio. The 1.10997… in assertions[9] is an "
+            "OUTPUT — q derived forward from Vol(4₁) and m_μ/m_e, i.e. the "
+            "CAL-2 definition run as that assertion's subject, checked against "
+            "its own expected 1.10997 ± 1e-3. It is therefore in the muon "
+            "basin BY CONSTRUCTION and cannot track the proton pin: there is "
+            "nothing here for a re-pin to change. Distinguish from the "
+            "z2bn-tau-derivation-probe case (bean qou-bdkx), where an "
+            "`independent` declaration was FALSE because the producer "
+            "hardcoded a q₀ and consumed it five times — the check is whether "
+            "q₀ is an input, not whether a q₀-shaped number appears."
+        ),
     }
 
     # Per Copilot review (#581): preserve the SnapPy engine metadata
     # rather than overriding to "python".
+    #
+    # `output_dir` is REQUIRED here and is not cosmetic. Without it,
+    # `WitnessBuilder` defaults the output directory to the caller's own
+    # (`caller_file.parent` — witness.py:690), i.e. `computations/`. But this
+    # witness is consumed from `computations/substrate/`: three content blocks
+    # cite that path as their `witness:` (`knot-volumes-verification`,
+    # `local-substrate-q-proof`, `terminal-resolution-proof`), and
+    # `raw-float64-baseline.json` keys its entry on it.
+    #
+    # The split is an artefact of the Phase-6 reorg (see the `_path_bridge`
+    # import at the top of this file): substrate modules moved into
+    # `substrate/` and this witness went with them, while the script that
+    # writes it stayed here. From then on every run emitted an UNTRACKED
+    # `computations/knot-volumes.witness.json` while the cited copy sat frozen
+    # at 2026-04-07 — which is how it kept a `Vol(4_1) = 3·Cl₂(π/3)` source
+    # string long after this file was corrected.
+    #
+    # Do not "simplify" this by dropping the argument: that silently
+    # disconnects the producer from its consumers again, and the symptom
+    # (a witness that never refreshes) is invisible until someone diffs a
+    # value against its own source. Bean qou-zdz5.
     out_path = (WitnessBuilder.wrap_legacy(
         "knot-volumes", witness,
         script_path=__file__,
         engine="snappea",
         engine_version=f"snappy {snappy.__version__}",
+        output_dir=Path(__file__).resolve().parent / "substrate",
         )
         .save())
     print(f"\nWitness written to {out_path}")

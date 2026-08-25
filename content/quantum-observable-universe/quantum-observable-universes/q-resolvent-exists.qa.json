@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean"
   },
   "source_hashes": {
-    "ts": "c43ef745ceb9",
     "md": "ef93d3dcdd77",
-    "lean": "d8f0c2c79080"
+    "ts": "c43ef745ceb9",
+    "lean": "d8f0c2c79080",
+    "lean_statement": "573c5f84f86a"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -308,31 +309,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "ef93d3dcdd77",
-          "ts": "c43ef745ceb9",
-          "lean": "d8f0c2c79080",
-          "lean_statement": "573c5f84f86a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2027,7 +2008,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.247Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is one-sentence existence proposition; no negation-contrast construction present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.284Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is one-sentence existence proposition; sentences assert directly.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.319Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is one-sentence existence proposition; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.354Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is one-sentence existence proposition; no three-item enumeration present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.391Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is one-sentence existence proposition; the closer is mathematical content.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.428Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is one-sentence existence proposition; none present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.465Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is one-sentence existence proposition; it does not.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.504Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is one-sentence existence proposition; register is institutional throughout.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.542Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is one-sentence existence proposition; no superlative inflation.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.825Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:18.579Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is one-sentence existence proposition; sentences are speakable.",
+        "notes": "Pass. Noted: 'exists as an endomorphism of $\\mathrm{End}_{\\mathbf{C}}(A)$' is one type level too high - the proof places R_q(s) in End(...), i.e. it is an element of End(A), not an endomorphism of it."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ef93d3dcdd77",
+          "ts": "c43ef745ceb9",
+          "lean": "d8f0c2c79080",
+          "lean_statement": "573c5f84f86a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:41:18.579Z"
 }

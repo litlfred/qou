@@ -15,7 +15,7 @@ Withdraw the crossover-bracketing sentence: the β_{Δd=5} vs β_{Δd=10} contra
 - p. 5, interpretation of β_d̄ — The authors interpret the negativity of β_d̄ as WEAKLY supporting nonadditivity, conditional on the L* axis being nearly perceptually uniform — an assumption they say 'may not be appropriate'.
   Use here: Downgrades the block's 'proved' to 'reported evidence for'.
 
-Source: `uploads/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf` (`bujack2022`)
+Source: `library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf` (`bujack2022`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

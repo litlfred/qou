@@ -7,7 +7,7 @@ $$
   \;\approx\; 136.823 \quad \text{at}\;\; q = q_0.
 $$
 
-This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
+This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
 
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
@@ -56,7 +56,7 @@ A natural ansatz deforms the Gram matrix by a framing correction $\mathcal{A}$ i
 
 Both sub-cases live in the multiplicative $q$-rational family. The 100-dps PSLQ scan over the 54-element basis ruled out this family. Any Gram deformation preserving block-diagonal structure on $V_{(2)} \oplus V_{(1,1)}$ cannot close the gap.
 
-Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of substrate pentagon data, not an external import. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
+Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of substrate pentagon data. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
 
 ## Implications
 
@@ -82,7 +82,7 @@ $$
 | Bare $q[9]_q[10]_q$ | 136.823220 | $-1.55 \times 10^{-3}$ |
 | $+ 2/(3\pi)$ | 137.035426 | $-4.2 \times 10^{-6}$ |
 | $+ \alpha/(4\pi)$ | 137.036007 | $+5.7 \times 10^{-8}$ |
-| CODATA | $137.035999084(21)$ | — |
+| CODATA 2022 | $137.035999177(21)$ | — |
 
 The first correction is derived ([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)). It is the photon infrared zero-mode on the 2-surface $M_{\text{Bring}}$. The harmonic $1$-form sector $b_1(M_g) = 2g$ normalises by the Gauss–Bonnet area $4\pi(g-1)$:
 

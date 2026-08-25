@@ -209,9 +209,10 @@ instance unknot : MostowRigidity Unknot where
     cusped hyperbolic 3-manifold (Cao–Meyerhoff 2001), with
     hyperbolic volume
 
-    `Vol(4_1) = 2 · Λ(π/3) ≈ 2.02988...`
+    `Vol(4_1) = 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.02988...`
 
-    where `Λ` is the Lobachevsky function.  The class field
+    where `Cl₂` is the Clausen function and `Λ` the Lobachevsky
+    function, `Λ(θ) = Cl₂(2θ)/2`.  The class field
     stores the 15-significant-digit truncation
     `2.02988321281930` (kept in lock-step with the canonical
     50-dps witness via `:leanval[Vol_4_1]{precision=15}`); the

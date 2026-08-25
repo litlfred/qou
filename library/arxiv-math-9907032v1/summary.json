@@ -1,0 +1,112 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9907032v1",
+ "source_sha256": "1850f32a2375c8ce",
+ "brief": "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities.",
+ "extended": "**Combinatorial optimization in geometry 1** — Igor Rivin. arXiv:math/9907032v1 [math.GT], 6 Jul 1999.\n\nExtends and unifies earlier results, generalising the framework of ideal polyhedra in H³ to that of singular Euclidean structures on surfaces, possibly with an infinite number of singularities. The method is variational: geometric structures are characterised as optima of a combinatorial/convex problem.\n\n**Why it may bear here.** A variational characterisation of ideal hyperbolic structures is the same shape as the LP/SDP optimisation this corpus uses for operator selection, and the ideal-polyhedron setting is where hyperbolic volume comes from. Structural resemblance, not an established connection.",
+ "tokens": {
+  "brief": 48,
+  "extended": 177
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-1-background",
+   "title": "BACKGROUND",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-2-necessary-conditions-on-dihedral-angles",
+   "title": "NECESSARY CONDITIONS ON DIHEDRAL ANGLES",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-3-sufficiency-of-conditions-21-and-22",
+   "title": "SUFFICIENCY OF CONDITIONS 2.1 AND 2.2",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-l-if-the-feasible-region-of-l-is-empty-the-progr",
+   "title": "If the feasible region of L is empty, the program is said to be infeasible. Now",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-4-dihedral-angles-of-delaunay-triangulations",
+   "title": "DIHEDRAL ANGLES OF DELAUNAY TRIANGULATIONS",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-41-some-corollaries-and-reﬁnements",
+   "title": "Some corollaries and reﬁnements",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-007-5-a-network-flow-approach",
+   "title": "A NETWORK FLOW APPROACH",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-008-3-a-triangle-cannot-have-all-angles-greater-than",
+   "title": "(a triangle cannot have all angles greater than π/3), we get",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-009-6-delaunay-triangulations-of-infinite-sets-of-po",
+   "title": "DELAUNAY TRIANGULATIONS OF INFINITE SETS OF POINTS",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-010-22-when-f-t-no-longer-exists-since-the-new-inequ",
+   "title": "(when F = T ) no longer exists. Since the new inequalities require u to be",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-011-61-remarks-and-corollaries",
+   "title": "Remarks and Corollaries",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-012-7-delaunay-cells-in-moduli-space",
+   "title": "DELAUNAY CELLS IN MODULI SPACE",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-013-8-computational-complexity",
+   "title": "COMPUTATIONAL COMPLEXITY",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-014-9-some-applications-to-combinatorial-geometry",
+   "title": "SOME APPLICATIONS TO COMBINATORIAL GEOMETRY",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-015-10-linear-hyperbolic-structures-on-3-manifolds",
+   "title": "LINEAR HYPERBOLIC STRUCTURES ON 3-MANIFOLDS",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-016-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "26-27"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

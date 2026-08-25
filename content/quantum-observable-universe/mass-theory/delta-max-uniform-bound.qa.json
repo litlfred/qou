@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean"
   },
   "source_hashes": {
-    "ts": "ddcf7d5aaffd",
     "md": "2f9dea22624c",
-    "lean": "63d52427f180"
+    "ts": "d4f61456bafb",
+    "lean": "63d52427f180",
+    "lean_statement": "84af74c3ed85"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -771,7 +772,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1147,31 +1149,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "2f9dea22624c",
-          "ts": "ddcf7d5aaffd",
-          "lean": "63d52427f180",
-          "lean_statement": "84af74c3ed85"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1725,20 +1707,21 @@
       {
         "field_hash": {
           "md": "2f9dea22624c",
-          "ts": "ddcf7d5aaffd",
+          "ts": "d4f61456bafb",
           "lean": "63d52427f180",
-          "lean_statement": "84af74c3ed85"
+          "lean_statement": "84af74c3ed85",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:15:40.954Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "detangler-section-band": [
@@ -1883,20 +1866,21 @@
       {
         "field_hash": {
           "md": "2f9dea22624c",
-          "ts": "ddcf7d5aaffd",
+          "ts": "d4f61456bafb",
           "lean": "63d52427f180",
-          "lean_statement": "84af74c3ed85"
+          "lean_statement": "84af74c3ed85",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:15:40.954Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -2044,7 +2028,7 @@
       {
         "field_hash": {
           "md": "2f9dea22624c",
-          "ts": "ddcf7d5aaffd",
+          "ts": "d4f61456bafb",
           "lean": "63d52427f180",
           "lean_statement": "84af74c3ed85"
         },
@@ -2057,10 +2041,10 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-11T10:15:40.954Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c",
         "metrics": {
-          "uses_count": 1,
+          "uses_count": 2,
           "broken_edges": 0,
           "redundant_edges": 0
         }
@@ -2114,7 +2098,367 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.005Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the 5.9 kB proposition (statement, 4-step proof, scale section, corollary, 2 open items). The two negations are load-bearing mathematics: 'the baseline V^(1) is not a single braid product' (why Step 2 fails at higher rank) and 'the qualitative bound survives ..., but the prefactor degrades' (what does and does not carry over). Neither is assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.057Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Structure is Statement -> Steps 1-4 -> numeric instantiation -> corollary -> open items; every paragraph pays off its own setup. No second-clause reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (4 in 557 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.110Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Four spaced em-dashes, all of them step-header labels ('*Step 1 — Operator-norm control of the Markov trace.*'), i.e. a heading convention rather than a substitute for sentence structure. Compound-name double hyphens (Jones--Wenzl, Cauchy--Schwarz, Hilbert--Schmidt, Kassel--Turaev) are LaTeX en-dashes, not the flagged construction. Body sentences use commas and full stops."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (1 in 557 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.162Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the deuteron, tritium, and 3He' names the three isotopes actually evaluated; the numbered open-items list has two entries. No reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.215Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Ends on 'A sharp constant would require a specific representation-theoretic analysis of the jet prolongation map on the Jones--Wenzl filtration' — a concrete statement of what the missing work is, not a cadence line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.257Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No emphasis narration. Bolded 'net' and 'sub-ppm binding precision' place emphasis directly rather than announcing it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.294Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Proof closes with 'The right-hand side is independent of n; set Delta_max(varrho) equal to it.' — the definitional step that discharges the statement, which the skill explicitly admits alongside 'This completes the proof'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.336Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No personal or affective register anywhere in the block."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.374Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Claims are hedged where they should be ('empirically within a factor of 2', 'worst-case bound', 'The qualitative bound survives'). 'sub-ppm' is a measured magnitude, not an intensifier."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.743Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:43:04.420Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Longest chain is 'a specific representation-theoretic analysis of the jet prolongation map on the Jones--Wenzl filtration'; it is nested but parses aloud in one breath group per prepositional phrase. Proof steps are short declaratives."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2f9dea22624c",
+          "ts": "d4f61456bafb",
+          "lean": "63d52427f180",
+          "lean_statement": "84af74c3ed85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T15:43:04.420Z"
 }

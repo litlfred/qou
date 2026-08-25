@@ -1118,7 +1118,7 @@ theorem knot_invariant_convergence
     `n`-th harmonic number. The full proof reduces to summing the
     `O(1/(k-3))` per-level bound; the harmonic bound is the
     closed-form result. -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 class CumulativeErrorHarmonic (K : ℕ) (_hK : K ≥ 4)
     (C_q : ℝ) (cumError harmK_minus_3 : ℝ) : Prop where
   /-- `|cumError| ≤ H_{K-3} · C_q`. -/
@@ -1170,7 +1170,7 @@ instance branchingAtK3_refl (μ : Partition) (x : ℝ) :
     The rigorous statement is the O(1/(k-3)) `ConvergenceBound`
     typeclass above; this class records the heuristic exponent at
     a chosen `k`. -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 class SquaredToLinearTransition (k : ℕ) (_hk : 4 ≤ k)
     (α_k effective_exp : ℝ) : Prop where
   /-- Effective exponent agreement at level `k`. -/

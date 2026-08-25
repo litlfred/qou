@@ -1435,3 +1435,360 @@ scripts read, so someone should decide whether it is expected for A=14.
 Branch rebased onto `origin/main` (35 commits, zero file overlap, clean) and all
 blocking precision gates re-run green on the integrated tree: ratchet 0 NEW /
 0 REGRESSED, drained_files 19, total_fields 540,024.
+
+## Fresh measurement 2026-08-10 (agent-4912 session, off PR #4935)
+
+Re-measured on `origin/main` @ `86c58229a3` while running
+`precision-gates.sh --changed` for an unrelated one-witness metadata refresh.
+**The composition has changed and the count is well down** from this bean's
+title figure (18 NEW + 2 REGRESSED):
+
+```
+witnesses carrying raw float64 : 1577
+total raw float64 fields       : 540,512
+baseline files / fields        : 1582 / 540,334
+drained since baseline         : 21 file(s), -178 field(s)
+
+NEW dirty witnesses            : 1
+      25  computations/kappa-shell8-excess-convention.witness.json
+REGRESSED (count increased)    : 1
+     395 -> 867  computations/a-K-via-lp-dual-full.witness.json
+```
+
+Notes:
+
+- **None of the three qbeta witnesses this bean opened on are still NEW** —
+  they have been drained. The drain counter (`21 file(s), -178 field(s)`)
+  corroborates.
+- The surviving REGRESSED entry is `a-K-via-lp-dual-full`, which is
+  **`qou-ftuv`'s** scope (LP-dual witnesses carry raw float64 by construction;
+  draining needs the shared contract changed). Not independently actionable
+  here.
+- The surviving NEW entry is `kappa-shell8-excess-convention` (25 fields),
+  adjacent to `qou-o16k`.
+- Confirmed inherited, not branch damage, by the same test this bean used:
+  both files are byte-identical to `origin/main` (`git diff origin/main -- <f>`
+  empty) and neither is touched by the measuring branch.
+
+So the remaining red is **two known-owned items**, not a broad regression.
+Nothing was baselined, `--rebaseline` was not run, and no number was
+hand-edited to reach this reading.
+
+---
+
+## 2026-08-15 — the ratchet's one remaining red, and a regeneration that does NOT work here
+
+Re-measured on `main` at `ebc21d1ae` (main moved 1021 commits since the last
+entry):
+
+    NEW dirty witnesses : 0
+    REGRESSED           : 1     rho-k-co-casimir-extended.witness.json  3 -> 4
+    drained since baseline : 14 file(s)  (incl. binding-k-enumerator 2210 -> 0)
+
+**The one red is timing metadata, not physics.** All four fields are
+`per_atom[i].compute_wall_sec` — `0.34`, `9.28`, `9.45`, `2533.2`. The producer
+was ALREADY fixed by `29b209ce9` ("float64: four timing fields serialised as
+strings"), changing `round(t1-t0, 2)` to `f"{t1-t0:.2f}"`. Only the witness was
+never regenerated, so this is the second half of someone else's change, and it
+is what holds `/prepare-merge` §4b red for every PR.
+
+### The regeneration is not viable in this container
+
+Attempted and abandoned. `rho_k_co_casimir_extended.py` with its default
+`--max-A 4` (the 6 committed atoms):
+
+    elapsed 2h05m, still on the helium-4 leg
+    worker CPU: 11m51s / 4m35s / 1m35s / 0m00s  (9.9% / 3.7% / 1.3% / 0%)
+    parent CPU: 1 second
+
+The committed witness records `compute_wall_sec = 2533.2` for helium-4 — 42
+minutes on whatever host produced it. Three hours in and not finished, with
+workers averaging under 5% CPU, says the bottleneck here is not arithmetic. Four
+workers at 10/4/1/0 percent is a distribution problem or contention, not a busy
+machine. Whoever picks this up should not simply "run it for longer" without
+finding out why the workers idle.
+
+### INCIDENT — I gutted the witness, exactly as `witness_shape_guard` predicts
+
+The producer **saves incrementally** (writes the witness after each atom, so an
+interrupt does not lose completed work). Two hours in, the on-disk witness was
+therefore 5 atoms, not 6, with `durationMs` 2,552,837 -> 7,738.
+
+I then ran `git add -A` for an unrelated bean commit and swept it in:
+
+    6f7ac1001   rho-k-co-casimir-extended.witness.json | 1551 +----------------
+                                                          1415 deletions
+
+Caught by diffing against `origin/main` rather than by noticing at commit time.
+The commit was local-only, so the fix was to restore from `origin/main` and
+amend; the gutted copy never reached the remote. `witness_shape_guard.py` — the
+gate written for the *original* rho-k gutting incident — reports
+"OK — no witness lost content" after the restore, and would have caught it at
+`/prepare-merge` had it got that far.
+
+**This is the SECOND time this arc that a git operation during a background
+write has damaged the tree.** The first was `git stash` mid-run (recorded
+above). Same root cause, different verb. The rule that actually generalises:
+
+> An incremental-save producer means the working tree is a moving target for as
+> long as it runs. Do not run `git add -A`, `git stash`, `git checkout` or
+> `git commit` while one is in flight — stage explicit paths, or wait.
+
+`git add -A` is the worst offender because it is the habit, not the exception.
+
+### Bean status
+
+Stays open. The red is real, the fix is known (regenerate the witness with the
+already-fixed producer), and the blocker is compute rather than diagnosis.
+
+## Bottleneck analysis of the ⁴He leg — measured, and one hypothesis killed
+
+Asked directly why ⁴He is slow and whether it uses `pyhecke_native`.
+
+**It does not use pyhecke_native, and it cannot.** `_chi_worker` calls
+`hoefsmit_numpy.chi_numpy` — a numpy f64 kernel. The wheel does export exactly
+the right-shaped function, `chi_lambda_all_partitions_f64` ("χ^λ for every
+partition λ ⊢ n_strands ... rayon-parallel"), which would replace the entire
+Python pool with one Rust call. It takes a word of `(sign, gen_1based)` with
+`sign ∈ {1, -1, 0}`, and the canonical atomic braids use **four** crossing kinds:
+
+    proton     n=11   sigma 6   sigma_inv 3    averaged 2
+    deuteron   n=23   sigma 11  sigma_inv 7    averaged 4   averaged_weighted 1
+    helium-3   n=35   sigma 18  sigma_inv 10   averaged 6   averaged_weighted 1
+    helium-4   n=47   sigma 23  sigma_inv 15   averaged 8   averaged_weighted 1
+
+`averaged_weighted` has no sign encoding, and `canonical_braid_crossings.py`
+already says so in as many words: *"⚠ Lossy for `averaged_weighted`, by
+construction. A sign cannot [express it]"*. One crossing out of 47 — but it is
+an interface crossing, so it carries physics. **The native kernel is not a
+drop-in here without extending the Rust word encoding.**
+
+### What the cost actually is
+
+Measured `chi_numpy` on the ⁴He braid:
+
+    dim 1925 →  7.1 s        dim 3520 → 30.4 s     ⇒  cost ~ dim^2.4
+    largest λ of 12 is (5,3,2,1,1), dim 7700       ⇒  ≈ 200 s for that one λ
+    77 partitions, total dimension 140,152; the top 8 carry 31% of it
+
+So ~20 minutes of single-core work, irreducibly, on this kernel.
+
+### Hypothesis killed: it is NOT memory
+
+Dense f64 at dim 7700 is 474 MB, and four workers holding one each is 1.9 GB —
+which looks alarming and is not the problem. The box has **16 GB with 15 GB
+free and no cgroup limit**. Checked before theorising.
+
+### What it actually is — two compounding scheduling faults
+
+**1. BLAS oversubscription.** numpy is built on scipy-openblas, which defaults
+to one thread per core, and the producer forks four workers: 4 x 4 = 16 runnable
+threads on 4 cores. Measured, 4 partitions of dim ≈ 2100 through a 4-worker pool:
+
+    BLAS threads unset : 25.4 s
+    BLAS threads = 1   : 18.6 s        1.37x
+
+**2. Load imbalance.** `pool.map`'s default chunksize splits 77 λ into ~4
+contiguous blocks, and cost varies by three orders of magnitude across them.
+Observed worker CPU on the abandoned run: **11m51s / 4m35s / 1m35s / 0m00s** over
+2h05m wall — one worker carrying the run, one never scheduled any real work.
+
+### Applied
+
+  * BLAS thread pinning via `os.environ.setdefault` at the TOP of the module,
+    before anything loads numpy — OpenBLAS reads these at library load and a
+    fork inherits the loaded library, so setting them inside the worker is too
+    late. `setdefault`, so a deliberate operator export still wins.
+  * Longest-processing-time-first ordering (Specht dimension as the proxy) with
+    `chunksize=1`, then un-permuting back to `parts` order.
+
+**The un-permute is the risk this introduces** — the per-λ loop indexes
+`chi_values[i]` against `parts[i]`, so a reordering bug would silently pair the
+wrong χ with the wrong λ. Verified on n=6 (11 partitions, non-trivial
+permutation): **11/11 identical** to the un-reordered path.
+
+### Honest accounting of the speedup
+
+The 1.37x from thread pinning is measured. The LPT/chunksize gain is **not** —
+by construction it only shows on the heterogeneous full set, and measuring it
+means running the 20-minute job. The imbalance it targets is evidenced by the
+worker-CPU spread above, not by a before/after. Do not quote a combined figure.
+
+### Remaining options, if this is still too slow
+
+  * **Extend the native kernel** to encode `averaged_weighted` — much the
+    biggest win (Rust + rayon over partitions) and a real cross-language change.
+  * **Sparse path.** `threerow_chi_sparse.chi_atom_sparse` already exists and was
+    written for precisely this shape: keep the Hoefsmit matrices CSR and
+    accumulate the trace column-batch by column-batch, O(L·dim²) instead of
+    O(L·dim³), memory O(dim·B). Its docstring calls the dense identity at
+    dim 7700 out by name.
+  * **The chi cache.** `chi-helium-4-h12-at-q0-50dps.witness.json` exists but is
+    flagged `partial`; this producer never consults it, unlike
+    `habiro_coefficients_atomic`, which takes an `atom_cache_label`.
+
+## The ⁴He leg CANNOT run on a 16 GiB box — and three corrections to my own analysis
+
+**Correction 1: it IS memory.** I wrote "Hypothesis killed: it is NOT memory"
+above, on the strength of `free -m` showing 15 GiB available. That measured the
+idle state, not the peak, and it was wrong.
+
+**Correction 2: my load-balancing fix caused an OOM.** Longest-processing-time
+ordering is right for balance, but it also puts the four LARGEST partitions in
+flight at once. The previous block-chunked schedule never hit the ceiling only
+because it happened to stagger them. First OOM:
+
+    Killed process 23356  anon-rss:5263136kB          (4 workers, ~5 GiB each)
+
+**Correction 3: the peak is 3x what I first recorded.** I took 5.0 GiB from
+`ps` on a worker that was *about to be killed*, i.e. one that had not finished
+growing, and built a `84 bytes/dim²` model on it. A single SERIAL process on
+(5,3,2,1,1), dim 7700, actually peaks at **15.9 GiB**:
+
+    Killed process 26199  anon-rss:15884144kB          (1 worker)
+
+≈ **268 bytes/dim²**, ~33 dense dim×dim f64 matrices resident at once. Read the
+peak off the OOM line's `anon-rss`, never off `ps` mid-flight.
+
+So ⁴He at n=12 does not fit at ANY worker count on 16 GiB. This is an
+environmental limit, not a scheduling one. The committed witness's
+`compute_wall_sec = 2533.2` was produced on a larger machine.
+
+## What the producer does now
+
+  * **BLAS threads pinned** at module scope before numpy loads (measured 1.37x;
+    worker state went `Sl`→`R`, ~14% → ~97% utilisation).
+  * **Worker count derived from `MemAvailable`** and the largest λ scheduled —
+    adaptive, so n=9 legs still use all 4 cores (0.0 GiB/worker) and only n=12
+    is capped.
+  * **Refuses rather than attempts** when not even one process fits, recording
+    `skip_insufficient_memory` with the required/available bytes.
+  * **Carry-forward on BOTH write paths.** The incremental save used to
+    overwrite `per_atom` with whatever the run had reached, so an interrupt
+    destroyed committed atoms — the `ground-state` defect again, and the reason
+    this witness was gutted three times today. Now a run preserves atoms it did
+    not reach, and a `skip_*` result does NOT displace a committed one.
+
+That last one took three attempts to get right, and the two failures are worth
+recording because they are both plausible-looking half-fixes:
+
+    keyed on label only    -> the skip STUB counted as "have it" and overwrote
+                              the committed entry: 77 per_lambda rows replaced
+                              by a 5-field stub. Quieter than dropping the atom,
+                              exactly as much data gone.
+    guarded only the       -> `_save_incremental` preserved ⁴He correctly on
+    incremental saves         every intermediate write, then the FINAL
+                              `builder.save()` — a separate WitnessBuilder that
+                              never read the disk — overwrote it anyway.
+                              A guard applied on all but the last write is not
+                              a guard.
+
+## Why the regenerated witness is NOT committed
+
+With ⁴He preserved and the other three timings drained, the ratchet goes GREEN
+(rho-k 4 → 1 raw float64 against a baseline of 3, i.e. a drain; 0 NEW,
+0 REGRESSED). It would have closed the one red holding §4b for everyone.
+
+**The witness shape guard flagged it, correctly, and I did not override it.**
+`durationMs` collapses 2,552,837 → 794: the file would carry ⁴He's real 77-row
+`per_lambda` block, computed over 2533 s, while advertising a 794 ms run. The
+content is intact — that part the guard's heuristic misreads — but the result is
+a hybrid that reads as a complete fresh run and is not one. `--accept` exists for
+intended shrinks and would have made it green in one flag.
+
+Publishing that to close a gate is the same move as widening a baseline. The red
+is honest; the hybrid would not be.
+
+## What is actually needed
+
+Run `rho_k_co_casimir_extended.py` on a host with **≥ 24 GiB** free (15.9 GiB
+peak plus headroom). The producer is now safe to run anywhere: on a small box it
+skips ⁴He and preserves the committed block rather than destroying it. On a big
+one it recomputes everything and the ratchet closes.
+
+Cheaper alternative, if a big box is not available: port this producer to
+`threerow_chi_sparse.chi_atom_sparse`, which keeps the Hoefsmit matrices CSR and
+accumulates the trace column-batch by column-batch — O(dim·B) memory instead of
+O(dim²). Its docstring calls out the dense identity at dim 7700 by name; it was
+written for exactly this wall.
+
+---
+
+## 2026-08-15 (later) — regeneration is not merely SLOW, it restates the science
+
+Appended rather than filed separately: the entry above already establishes the
+red (rho-k 3 → 4, all `per_atom[i].compute_wall_sec`, producer fixed by
+`29b209ce9`, witness never regenerated) and that regeneration was abandoned on
+**performance** grounds — 2h05m, workers at 9.9/3.7/1.3/0.0 % CPU. This adds a
+second, independent reason not to run it as hygiene, found while draining the
+last gating red after `qou-pgdw` / PR #5141 landed.
+
+**Two recorded upstream witnesses have drifted** since the committed rho-k was
+computed:
+
+- `canonical-mass-table-extended` — `86b861f6…` → `aa62e686…`
+- `y-lambda-wenzl-bridge-symbolic` — `f289cd26…` → `690a3f6e…`
+
+So a re-run does not merely refresh timing metadata; it **restates the Δ_λ
+science**. Measured on three of the four atoms (~20 s by skipping ⁴He):
+
+| atom | `abs_tr_M_at_q0` | `rho_K_pred_co_casimir` |
+|---|---|---|
+| deuteron | 0.38829 → 0.57509 | 9464.88 → 6390.44 |
+| tritium | 0.10407 → 0.22931 | 52978.84 → 24044.14 |
+| helium-3 | 0.20658 → 0.40377 | 26677.80 → 13649.10 |
+
+`err_ppm` moves only in the 5th significant figure (67.5614 → 67.5677,
+8.0768 → 8.0775, 12.7705 → 12.7716). Intermediates restated ~2× while the
+conclusion holds — the signature of an upstream **normalization / convention
+change** (the convention-D cascade), not a numerical error.
+
+**Consequence for ownership.** Even on a big box where the ⁴He leg completes,
+this must not land as a float64-drain commit: it would hide a ~2× intermediate
+restatement behind a hygiene banner, and it would pass every gate while doing
+so. The refresh belongs to the **Δ_λ / convention-D arc**, where that shift
+gets reviewed as science.
+
+**Two measurement notes**, both corrections to first readings:
+
+- The fast and slow chi paths agree **exactly at 60 digits**. An initial read of
+  `6390.4406431251356` as float64-degraded was the console table's truncation,
+  not the witness.
+- `--atoms <subset>` overwrites the **whole** witness with only that subset —
+  the same gutting mode this bean's incident note describes, reachable without
+  any git operation at all. Reproduced locally and restored each time. Any
+  refresh must be a single FULL run, and must confirm **both** gates afterwards:
+  raw-float64 → 0 **and** shape intact (6 `per_atom` entries, `durationMs`
+  ≈ 2.5e6). A zero with a small `durationMs` is a partial write, not a drain.
+
+No carve-out is proposed: `F64_INTEGRATOR_TIER` would be wrong here, since
+these are wall-clock diagnostics rather than integrator output.
+
+---
+
+## Cross-check from another session: the stated RED condition no longer holds
+
+Not changing this bean's status — it is not mine — but the headline is stale
+enough to mislead a reader deciding whether to act.
+
+Measured on `main` @ `7a781b494b7`, 2026-08-19:
+
+    witnesses carrying raw float64 : 1539
+    baseline files / fields        : 1572 / 536,570
+    drained since baseline         : 48 file(s), +4,264 field(s)
+    NEW dirty witnesses            : 0
+    REGRESSED (count increased)    : 0
+
+So `--strict` is green: the "18 NEW + 2 REGRESSED" in the title is no longer
+the state of the tree. The three witnesses named in §"The finding"
+(`qborel-growth-budget-probe`, `cauchymul-order-cancellation-witness`,
+`c3-w2-c1-pole-divisor`) are no longer reported.
+
+Two gates that did not exist when this was opened now cover adjacent holes and
+are worth knowing about before re-opening it: `witness_shape_guard.py`
+(blocking — a gutted witness scores zero raw floats and reads as a perfect
+drain, which this ratchet cannot distinguish) and
+`numpy_mpmath_dtype_leak_audit.py` (blocking, green).
+
+Still genuinely uncovered: `docs/audits/scripts/`, where the ratchet runs
+ADVISORY only and carries 6 dirty witnesses — tracked as `qou-irzg`.

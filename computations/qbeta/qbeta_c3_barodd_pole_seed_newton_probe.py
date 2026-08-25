@@ -43,8 +43,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)
 PISQ6 = mp.pi ** 2 / 6
 Q0 = mp.mpf("1.10997859555733471")            # muon-canonical (computations layer)

@@ -15,7 +15,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:a2-from-three-strands",
   title: "The $A_2$ root system from the Hecke algebra $H_3(q)$",
-  md: "a2-from-three-strands.md",
   uses: [
     "def:braid-group",
     "rem:hecke-algebra-from-braiding",

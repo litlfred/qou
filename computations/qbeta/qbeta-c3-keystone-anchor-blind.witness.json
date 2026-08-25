@@ -3,12 +3,12 @@
   "description": "Re-scope: c_3 = -Vol(4_1)+u-(10/3)u^2 is a muon-anchor near-match (0.07% muon / 2.3% proton), anchor-blind vs a 2.4%-swinging c_3; fails the section-8 cross-anchor guard. Structural pieces (-Vol(4_1), 10/3 writhe ratio) kept; the 'exact/PROVEN' tier is corrected.",
   "auditOnly": true,
   "tier": "measurement-exact (high-precision anchor comparison; measures an existing fit)",
-  "computedAt": "2026-07-11T04:27:19.915280+00:00",
-  "commitSha": "3fdea065ee1361816d5af2f730172672c60d73bf",
+  "computedAt": "2026-08-23T09:45:02.290521+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath+sympy",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_c3_keystone_anchor_blind_probe.py",
-  "scriptHash": "e5c7af0c09c8",
+  "scriptHash": "719076522eec",
   "assertions": [
     {
       "name": "writhe_ratio_10_3_is_exact_identity",
@@ -23,12 +23,12 @@
     {
       "name": "actual_c3_swings_across_anchors",
       "passed": true,
-      "detail": "c3(proton)=-2.06934258  c3(muon)=-2.02020024  swing=2.433%"
+      "detail": "c3(proton)=-2.06934258  c3(muon)=-2.01986031  swing=2.450%"
     },
     {
       "name": "muon_near_match",
       "passed": true,
-      "detail": "muon miss = 0.0697% (near-match)"
+      "detail": "muon miss = 0.0865% (near-match)"
     },
     {
       "name": "proton_fails",
@@ -44,14 +44,14 @@
   "allPassed": true,
   "result": {
     "claim_proton": "-2.02160778922",
-    "claim_muon": "-2.02160778753",
+    "claim_muon": "-2.02160778752",
     "c3_proton": "-2.06934257712",
-    "c3_muon": "-2.02020023502",
+    "c3_muon": "-2.01986031187",
     "miss_proton_pct": -2.306761018014797,
-    "miss_muon_pct": 0.06967391069366922,
-    "c3_swing_pct": 2.432548083205011,
+    "miss_muon_pct": 0.08651467791515559,
+    "c3_swing_pct": 2.449786500099764,
     "Vol_4_1": "2.02988321282",
-    "verdict": "RE-SCOPE (scope-(a)): c_3 = -Vol(4_1) + u - (10/3)u^2 is a MUON-anchor near-match (muon 0.070%, proton -2.307%), NOT an exact derivation of c_3. The formula is anchor-blind (~-2.021608 at both anchors) while the actual c_3 SWINGS 2.43% (proton -2.069343 vs muon -2.0202). It fails the registry section-8 cross-anchor guard (2.3% > 1%) and contradicts the live registry section 3 (c_3 EMPIRICAL, REFUTED as real-q). Structural pieces are REAL and kept: -Vol(4_1) is the solved bar-even part (#3474/#3487); 10/3 = lim [10]_q/[3]_q is an exact writhe-ratio identity. What is over-claimed is the TIER: the anchor-swinging part (CAL-2 S-leak) is Subgoal-2, not captured by an anchor-blind real formula. Corrects docs/audits/2026-07-08-qbeta-keystone-derivation.md ('PROVEN/exact theorem'). No c_k wired; nothing changed in production."
+    "verdict": "RE-SCOPE (scope-(a)): c_3 = -Vol(4_1) + u - (10/3)u^2 is a MUON-anchor near-match (muon 0.087%, proton -2.307%), NOT an exact derivation of c_3. The formula is anchor-blind (~-2.021608 at both anchors) while the actual c_3 SWINGS 2.45% (proton -2.069343 vs muon -2.01986). It fails the registry section-8 cross-anchor guard (2.3% > 1%) and contradicts the live registry section 3 (c_3 EMPIRICAL, REFUTED as real-q). Structural pieces are REAL and kept: -Vol(4_1) is the solved bar-even part (#3474/#3487); 10/3 = lim [10]_q/[3]_q is an exact writhe-ratio identity. What is over-claimed is the TIER: the anchor-swinging part (CAL-2 S-leak) is Subgoal-2, not captured by an anchor-blind real formula. Corrects docs/audits/2026-07-08-qbeta-keystone-derivation.md ('PROVEN/exact theorem'). No c_k wired; nothing changed in production."
   },
   "context": {
     "corrects": "docs/audits/2026-07-08-qbeta-keystone-derivation.md (commit e21a9426)",

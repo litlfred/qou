@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0006051v1",
+ "source_sha256": "10483e75bd3655ea",
+ "brief": "Finite and p-adic polylogarithms — 8 sections: AMNON BESSER; Introduction; The proof",
+ "extended": "**Finite and p-adic polylogarithms**\n\n8 pp, 8 sections.\n\n**Outline.** 2 AMNON BESSER; 1 Introduction; 2 The proof; 4 AMNON BESSER; 3 Another proof of the main result; 6 AMNON BESSER; 8 AMNON BESSER; References\n\n**Extracted claims (proposals, not verified).**\n- Proposition 2.3: Let α be a root of unity in X. Set ~Lin(α ) = p− n Lin(α ). Then\n- Proposition 3.1: We deﬁne a sequence of functions fk(z, S ) inductively as fol-\n- Corollary 2.2: Let α ∈ X be a root of unity. Then we have Lin(α ) ∈ pnW and\n- Lemma 2.4: In the situation above we have vp(ak) ≥ − vp(k!), where vp is the\n- Lemma 3.2: Suppose z ∈ X and w ∈ W . Then\n- Lemma 3.3: If z, S ∈ X and z ≡ S (mod p) then pk|Dfk(z, S ).",
+ "tokens": {
+  "brief": 21,
+  "extended": 172
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-amnon-besser",
+   "title": "AMNON BESSER",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-the-proof",
+   "title": "The proof",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-4-amnon-besser",
+   "title": "AMNON BESSER",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-3-another-proof-of-the-main-result",
+   "title": "Another proof of the main result",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-6-amnon-besser",
+   "title": "AMNON BESSER",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-006-8-amnon-besser",
+   "title": "AMNON BESSER",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "8-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean"
   },
   "source_hashes": {
-    "ts": "cd313a47df13",
     "md": "3757e00e2e2c",
-    "lean": "c26f60d80eda"
+    "ts": "cd313a47df13",
+    "lean": "c26f60d80eda",
+    "lean_statement": "8d1615e231cc"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -308,31 +309,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "3757e00e2e2c",
-          "ts": "cd313a47df13",
-          "lean": "c26f60d80eda",
-          "lean_statement": "8d1615e231cc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1028,8 +1009,23 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-harmonic-form.lean:1 — Lean file exists",
+        "evidence": "q-harmonic-form.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.md."
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13",
+          "lean": "c26f60d80eda"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:28:18.207046+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'pass' verdict is grounded on 'q-harmonic-form.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. "
       }
     ],
     "da-false-claim": [
@@ -1155,7 +1151,8 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Particle ($q$-harmonic form)' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Particle ($q$-harmonic form)' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Particle ($q$-harmonic form)' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1259,7 +1256,8 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1433,7 +1431,7 @@
         "reviewed_at": "2026-07-07T14:26:55.995253Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-harmonic-form.lean:1 — content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "q-harmonic-form.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation, indicating a reproducibility failure."
       },
       {
@@ -1470,7 +1468,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-harmonic-form.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",
@@ -1870,7 +1869,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.704Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is definition of a particle as a q-harmonic form; no negation-contrast construction present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.739Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is definition of a particle as a q-harmonic form; sentences assert directly.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.775Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is definition of a particle as a q-harmonic form; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 31 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.813Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is definition of a particle as a q-harmonic form; no three-item enumeration present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.850Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is definition of a particle as a q-harmonic form; the closer is mathematical content.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.890Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is definition of a particle as a q-harmonic form; none present.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.926Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is definition of a particle as a q-harmonic form; it does not.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:08.963Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is definition of a particle as a q-harmonic form; register is institutional throughout.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.000Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is definition of a particle as a q-harmonic form; no superlative inflation.",
+        "notes": "No fix needed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.949Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:09.037Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is definition of a particle as a q-harmonic form; sentences are speakable.",
+        "notes": "Pass. Noted: the block opens 'Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe' but never uses tau, which AGENTS.md section 7 reserves for the case where the fibre functor is explicitly used; the sibling def:q-heat-equation and prop:q-heat-equation-exists use the 4-tuple $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ for the same object."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "3757e00e2e2c",
+          "ts": "cd313a47df13",
+          "lean": "c26f60d80eda",
+          "lean_statement": "8d1615e231cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:41:09.037Z"
 }

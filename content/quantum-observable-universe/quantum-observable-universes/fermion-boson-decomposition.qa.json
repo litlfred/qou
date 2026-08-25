@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/quantum-observable-universes/fermion-boson-decomposition.lean"
   },
   "source_hashes": {
-    "ts": "b5dac427a138",
     "md": "56ef97f98c9e",
-    "lean": "df7a75470e88"
+    "ts": "b5dac427a138",
+    "lean": "df7a75470e88",
+    "lean_statement": "829a48c0db02"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,31 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:47.990Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "56ef97f98c9e",
-          "ts": "b5dac427a138",
-          "lean": "df7a75470e88",
-          "lean_statement": "829a48c0db02"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:34:03.087Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1783,7 +1764,377 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:13.997Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.045Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.085Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.139Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.181Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.234Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.277Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.317Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.358Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.826Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:14.398Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition. Checked exactness: ker(pi_V) = Omega^k_H(A), so the kernel of pi_V restricted to H_q^k is exactly H_q^k intersect Omega^k_H(A) = H_{q,H}^k and the displayed short exact sequence is right; the splitting via pi_H gives the stated direct sum. No trap in any of the ten categories - 'purely horizontal: alpha_V = 0' is a parenthetical gloss, not negation-contrast, and the block has no dash, triple, aphorism, meta-commentary, closer, warmth, or superlative.",
+        "notes": "Separate flags (not traps): (1) NOTATION COLLISION - this block writes the harmonic-form space as mathcal{H}_q^k, but notation-collisions.md line 24 registers mathcal{H}_q as the SHUFFLE HOPF ALGEBRA and enumerates only three readings of the letter H (shuffle mathcal{H}_q, Hamiltonian hat-H_q, Hecke/hook-length H_n(q) or H_q(lambda)); harmonic forms are an unregistered fourth. The collision is live inside this same chapter - dilog-pentagon-is-associator.md uses mathcal{H}_q for the shuffle algebra. Either register the harmonic reading in notation-collisions.md or rename (e.g. mathrm{Harm}_q^k). (2) 'A fermion is a particle with alpha_V != 0' defines a set that is not a subspace, yet the next sentence assigns fermions to the summand H_{q,V}^k; the tight statement is that a fermion is an element with non-zero image under pi_V, identified with its class in H_{q,V}^k."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "56ef97f98c9e",
+          "ts": "b5dac427a138",
+          "lean": "df7a75470e88",
+          "lean_statement": "829a48c0db02"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T01:01:14.398Z"
 }

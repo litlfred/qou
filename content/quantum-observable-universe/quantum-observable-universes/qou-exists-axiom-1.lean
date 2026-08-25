@@ -16,7 +16,7 @@ multiplication, comultiplication, unit, counit, antipode, and the
 snake identities that *already* realise non-degeneracy of the
 Frobenius pairing (rigid duality `A ≅ A^∨`).  This sibling
 records the structural existence claim: every
-`QuantumObservableUniverse k` exhibits a `FrobeniusHopfData` on
+`QuantumObservableUniverse R` exhibits a `FrobeniusHopfData` on
 its underlying category, so the Haar-state / Frobenius pairing is
 intrinsic.
 
@@ -32,7 +32,7 @@ namespace QOU.QuantumObservableUniverse
 
 /-- **Axiom 1 — Frobenius pairing (existence form).**
 
-    Any `QuantumObservableUniverse k` carries `frobHopf` — the
+    Any `QuantumObservableUniverse R` carries `frobHopf` — the
     `FrobeniusHopfData` whose snake identities encode the
     non-degenerate Haar-state Frobenius pairing on `A`. -/
 -- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 1
@@ -40,12 +40,12 @@ namespace QOU.QuantumObservableUniverse
 -- NOTE: `def`, not `theorem` — `FrobeniusHopfData` is a `Type _`
 -- (data, not a proposition).  Per Copilot review on PR #794.
 def exists_axiom_1_frobenius_data
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
     @QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst :=
   Q.frobHopf
 
 lemma exists_axiom_1_frobenius
-    {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
+    {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
     Nonempty (@QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst) :=
   ⟨exists_axiom_1_frobenius_data Q⟩
 

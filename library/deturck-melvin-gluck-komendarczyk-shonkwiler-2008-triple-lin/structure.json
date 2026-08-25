@@ -1,0 +1,199 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+ "source": {
+  "file": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-linking-numbers.pdf",
+  "sha256": "db149864ce367da232063a37eb32a3471983a25da83a5c56f7dd4d1672062acf",
+  "bytes": 1088841,
+  "pages": 33
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.21711/231766362008/rmc3411",
+  "title": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links",
+  "authors_raw": "AND INTEGRAL FORMULAS FOR",
+  "abstract": "Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such linkL we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p, q and r of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-defined modulo twice the greatest common divisor of p, q and r.",
+  "docinfo": {
+   "Producer": "MiKTeX pdfTeX-1.40.23",
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210808061506-03'00'"
+  },
+  "title_prev": "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
+  "title_lines": [
+   "Matemática Contemporânea, Vol. 34, 251–283",
+   "© 2008, Sociedade Brasileira de Matemática",
+   "TRIPLE LINKING NUMBERS",
+   "AMBIGUOUS HOPF INVARIANTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Statement of results",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Background and motivation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Explicit formula for the characteristic map gL",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "An asymmetric version of the characteristic map",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the topological proof of Theorem A",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the algebraic proof of Theorem A",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Sketch of the proof of Theorem B",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The fundamental solution of the Laplacian on the 3-torus",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Completing the proof of Theorem B",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-statement-of-results",
+   "number": null,
+   "title": "Statement of results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4014,
+   "n_words": 722
+  },
+  {
+   "id": "sec-001-background-and-motivation",
+   "number": null,
+   "title": "Background and motivation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 3686,
+   "n_words": 619
+  },
+  {
+   "id": "sec-002-explicit-formula-for-the-characteristic-map-gl",
+   "number": null,
+   "title": "Explicit formula for the characteristic map gL",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1459,
+   "n_words": 298
+  },
+  {
+   "id": "sec-003-an-asymmetric-version-of-the-characteristic-map",
+   "number": null,
+   "title": "An asymmetric version of the characteristic map",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1958,
+   "n_words": 363
+  },
+  {
+   "id": "sec-004-sketch-of-the-topological-proof-of-theorem-a",
+   "number": null,
+   "title": "Sketch of the topological proof of Theorem A",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 17,
+   "n_chars": 10220,
+   "n_words": 1901
+  },
+  {
+   "id": "sec-005-sketch-of-the-algebraic-proof-of-theorem-a",
+   "number": null,
+   "title": "Sketch of the algebraic proof of Theorem A",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 9043,
+   "n_words": 1632
+  },
+  {
+   "id": "sec-006-sketch-of-the-proof-of-theorem-b",
+   "number": null,
+   "title": "Sketch of the proof of Theorem B",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3665,
+   "n_words": 674
+  },
+  {
+   "id": "sec-007-the-fundamental-solution-of-the-laplacian-on-the",
+   "number": null,
+   "title": "The fundamental solution of the Laplacian on the 3-torus",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1867,
+   "n_words": 320
+  },
+  {
+   "id": "sec-008-completing-the-proof-of-theorem-b",
+   "number": null,
+   "title": "Completing the proof of Theorem B",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 33,
+   "n_chars": 10478,
+   "n_words": 1681
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 46390
+ },
+ "duplicate_copies": [
+  "arxiv-0901.1612v1"
+ ]
+}

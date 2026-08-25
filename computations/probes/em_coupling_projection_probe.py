@@ -62,6 +62,12 @@ CODATA_ALPHA_INV = "137.035999206"
 C_S = 9   # crossing number of T_{2,9}  -> dim_q = [9]_q
 C_W = 10  # crossing number of T_{3,5}  -> dim_q = [10]_q
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Verification tolerance on the relative error vs CODATA. The .md hand-check
 # is ~0.2 %; we require < 0.5 % (5e-3), an honest archimedean-agreement gate
 # that leaves headroom for the CODATA/rounding but rejects any order-of-

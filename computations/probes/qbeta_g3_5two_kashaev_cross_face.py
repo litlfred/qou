@@ -54,8 +54,9 @@ sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 45
+set_compute_dps()
 
 VOL41 = 2 * mp.im(mp.polylog(2, mp.e ** (mp.mpc(0, 1) * mp.pi / 3)))
 

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/metallic-character-knot-interpretation.md"
   },
   "source_hashes": {
-    "ts": "54b6ab26d956",
-    "md": "85dcfba1650f"
+    "md": "85dcfba1650f",
+    "ts": "54b6ab26d956"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -355,30 +355,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:38.623Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "85dcfba1650f",
-          "ts": "54b6ab26d956"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1232,7 +1213,377 @@
         "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.250Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.293Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 340 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.335Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 340 words)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.633Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "Three three-item lists in one remark, one of them degenerate. The degenerate one is 'They lack residual sub-links, open linking sites, and delocalisation.' — the preceding sentence has just said 'Noble gases have R = empty', so item 1 restates it verbatim and items 2 and 3 are its immediate consequences (no residual implies no open sites implies no delocalisation). It is one fact written as three. The other two lists (variable oxidation states / catalysis / magnetism; lattice defects / thermal fluctuations / phonons) are substantive and would pass alone; it is the concentration plus the degenerate one that makes this the reflex pattern.",
+        "notes": "flagged, not fixed. Proposed: 'Noble gases have R = empty, hence no open linking sites and no delocalisation.' TWO MATH FINDINGS, neither fixed inline. (1) THE BLOCK CONTRADICTS ITSELF ON THE NOBLE-GAS CONDITION. The classification table's last row reads '|R| = 2n^2 | Noble gas (no residual)' — i.e. the residual is FULL at capacity — while the 'Residual linking number' section three paragraphs later opens 'Noble gases have R = empty'. Those cannot both hold. The same split runs through lambda(R): the display says lambda(R) = 0 iff noble gas, but the closing sentence says metallic character 'weakens as lambda(R) approaches the closure threshold 2n^2', which treats lambda as growing toward the noble-gas end. Either lambda counts filled sites (then lambda = 2n^2 for a noble gas, contradicting the display) or it counts open ones (then the table's last row should be |R| = 0). The parent proposition's condition 1, |R| < 2n^2 for metallic character, sides with the table, so the 'R = empty' paragraph is the outlier. lambda is also introduced twice under two names, 'residual index' in Strategy and 'residual linking number' later, and collides with the partition lambda |- n used throughout the corpus. (2) THE 2n^2 CRITERION DOES NOT CHARACTERISE NOBLE GASES BEYOND NEON. Shell capacity 2n^2 gives 2, 8, 18, 32 for n = 1..4, but argon closes at 3s^2 3p^6 = 8 electrons in shell n = 3, not 18; krypton closes at 8 in n = 4, not 32. So '|R| = 2n^2 -> noble gas' is satisfied by He and Ne and by no other noble gas, and the halogen row '|R| = 2n^2 - 1' likewise works for F (8-1 = 7) and fails for Cl (18-1 = 17 against chlorine's 7 valence electrons). The rows encode the octet rule while the header says 2n^2. Lesser note: Cu sits in the 'approx half-filled d' row but is 3d^10 4s^1, a filled d-shell."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.379Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.422Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.464Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.506Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.548Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.222Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:20:35.590Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "85dcfba1650f",
+          "ts": "54b6ab26d956"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-22T04:20:35.633Z"
 }

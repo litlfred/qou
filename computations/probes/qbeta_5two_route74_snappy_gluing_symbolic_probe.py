@@ -43,12 +43,20 @@ warnings.filterwarnings("ignore")
 
 import sympy as sp
 from mpmath import fabs, im, mp, mpc, mpf, nstr, polyroots
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 MINPOLY_COEFFS = [1, -2, 3, -1]          # y^3 - 2y^2 + 3y - 1
 
 
 def main() -> int:
-    mp.dps = 40
+    set_compute_dps()
     gates = []
     y = sp.symbols("y")
     minpoly = y ** 3 - 2 * y ** 2 + 3 * y - 1

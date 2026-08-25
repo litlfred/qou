@@ -13,7 +13,7 @@ The Lean sub-claim states 'at level k >= 3' where the cited source states 'k >= 
 - p. 5 (main text, near the level-k discussion) — The braid matrices for SU(2) Chern-Simons at level k have been shown to be universal for quantum computation for k >= 3, k != 4 (attributed to refs [8],[9] of the survey).
   Use here: Restore the k != 4 exception to the QuantumUniversalityHolds docstring, and cite the primary source (Freedman-Larsen-Wang CMP 227 (2002)) alongside the survey.
 
-Source: `uploads/freedman2003.pdf` (`freedman2003`)
+Source: `library/freedman2003.pdf` (`freedman2003`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

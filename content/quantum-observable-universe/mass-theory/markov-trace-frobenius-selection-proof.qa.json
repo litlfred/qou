@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection-proof.md"
   },
   "source_hashes": {
-    "ts": "3345c35cc5a5",
-    "md": "a93c86460bac"
+    "md": "b6fadf0c5384",
+    "ts": "3345c35cc5a5"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -447,7 +447,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -776,30 +777,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "block has no .lean sibling"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "a93c86460bac",
-          "ts": "3345c35cc5a5"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1359,7 +1341,371 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.524Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. Denials present ('the radical is not an obstruction to determining tau, it is a set of blocks tau ignores'; 'The framework does not get to choose z: it is forced by the mass fibre'; 'false rather than unprovable') are all substantive mathematical contrasts — the forced-vs-free status of z IS the content of Step 3b, and false-vs-unprovable is a real logical distinction.",
+        "notes": "Register note only: the anthropomorphic 'does not get to choose' is colloquial for a proof block; 'The parameter z is not free: Step 3b forces it' would be flatter. Not a trap fix."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.577Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Steps 1-3 fix the trace given z. The framework does not get to choose z...' reads pivot-shaped, but the first clause substantively summarises Steps 1-3 rather than throat-clearing, so the second clause does not carry everything."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (14 in 1224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.633Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "12 spaced em-dashes in 1585 words (~1/132). Most are true parentheticals in dense math prose ('— a two-sided ideal, on which tau itself vanishes —', '— the one place faithfulness is used —'). One is a classic appended afterthought: 'which is why it is untouched by the degeneracy convention D introduces — and equally why it cannot, by itself, select z.'",
+        "notes": "Proposed: replace that dash with a comma ('..., and equally why it cannot, by itself, select z.'). Other 11 instances keep."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (2 in 1224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.727Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The two triples are substantive: M1/M2/M3 is the definition of a Markov trace, and the closing 'What is not claimed: (a) non-degeneracy on H_n, (b) non-degeneracy selects it, (c) the antecedent is established' is an exhaustive scope list, each item a distinct real caveat."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.784Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a scope disclaimer naming an open bean (qou-n1dj), not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.837Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'This is the statement that matters below: the radical is not an obstruction to determining tau, it is a set of blocks tau ignores.' announces its own importance rather than placing the emphasis. ('Note what this induction does not use' and 'Note also that' are standard mathematical prose and pass.)",
+        "notes": "Proposed (not applied — proof-block signposting is math-adjacent): 'The radical is therefore not an obstruction to determining tau; it is a set of blocks tau ignores. Step 3 uses this.' Keeps the forward pointer without the value judgement."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.892Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Step 4 combines the prior steps into the selection conclusion — that is the proof's terminal deduction, not a restatement of an already-established thesis."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:40.945Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:41.002Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No unqualified maximum-strength claims; 'sharply', 'exactly', 'load-bearing' are each discharged by the surrounding derivation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.567Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:41.091Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Long but speakable; noun chains ('framing ratio', 'negative-crossing loop value') are defined terms."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b6fadf0c5384",
+          "ts": "3345c35cc5a5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T21:29:41.091Z"
 }

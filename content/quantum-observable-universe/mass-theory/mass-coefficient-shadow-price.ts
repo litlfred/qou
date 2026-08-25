@@ -49,6 +49,37 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-08-22",
+      body:
+        "**The Frobenius shadow prices are fine at $H_3$; the *net-constraint* " +
+        "one is identically zero, and that is what the $a_K$ extraction " +
+        "divides by.** Two separate things, and an earlier note in bean " +
+        "`qou/8na1` conflated them — corrected there. (i) The " +
+        "partition-indexed LP (`a-K-via-lp-dual-full.witness.json`, proton) " +
+        "gives $y^*_{[3]} = y^*_{[2,1]} = 1.0$, $y^*_{[1,1,1]} = 0$, so " +
+        "$c_\\lambda = y^*_\\lambda m_e$ is **not** contradicted and the " +
+        "factorisation $u^*_\\lambda = C_\\lambda S_\\lambda$ is satisfiable " +
+        "with $S_\\lambda$ a unit on both nonzero blocks. (ii) The " +
+        "net-constraint dual $y_0^*$ is **exactly zero** — forced in " +
+        "$\\mathbb{Q}(q)$ by the trace-form radical (Lean: " +
+        "`y_0_eq_zero_of_radical`), confirmed by both committed f64 solves — " +
+        "so the dual objective $n_{\\mathrm{target}} \\cdot y_0^*$ vanishes " +
+        "for every target, and every extraction routing $a_K$ through it " +
+        "($a_K^{\\mathrm{dual\\_ratio}}$, $a_K^{\\chi\\text{-active}}$) is " +
+        "undefined. Both scripts return `null` and record why; the guard is " +
+        "firing on a structural identity, not on noise. **The open question " +
+        "is whether $a_K$ is recoverable from this LP at all**, not whether " +
+        "the coefficients vanish. Second, independent thread: " +
+        "`aK_via_lp_dual_full.py` reports that *\"under convention D the " +
+        "$\\ell(\\lambda) \\ge 3$ blocks vanish identically, so this LP needs " +
+        "re-posing on the two-row quotient\"* — which is why $[1,1,1]$ is " +
+        "zero above, and nobody has re-posed it. `validation` left at " +
+        "`validated`: the Lean is a §3b conditional carrier whose `factor` " +
+        "field is a hypothesis, its three theorems are sorry-free " +
+        "consequences, and nothing here shows the class uninhabited.",
+    },
+    {
       kind: "note",
       date: "2026-06-22",
       body:

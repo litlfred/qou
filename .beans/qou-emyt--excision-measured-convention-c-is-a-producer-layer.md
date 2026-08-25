@@ -318,3 +318,39 @@ parameter `[2]_√q = 2.0027…`; the production TL loop value is
 the prefactor and `z²` move, so the second equality cannot be assumed. Editing
 the prefactor to quiet the detector would ship an unchecked formula, which is the
 same failure mode as the relabelling loophole. Needs a derivation. See `qou-98g5`.
+
+---
+
+## RETRACTION: the "stale q₀" in `frobenius-gram-matrix-context` was not stale
+
+An earlier entry on this bean reported:
+
+> **Stale q₀ (separate defect, not convention-related):**
+> `frobenius-gram-matrix-context` carries `1.109978595554181`; canonical q₀ is
+> `1.1099785827513808…`. Diverges at the 9th significant digit.
+
+**That was wrong.** There are two *legitimate, documented* pinnings of q₀:
+
+| pinning | value | derivation |
+|---|---|---|
+| proton | `1.1099785827513808075916690956107688798744991218736` | the registry's `meta.q0.value`, citing `computations/substrate/q_parameter.py` |
+| muon | `1.10997859555418057528159407960950937799328227995870` | `Vol(4₁)/(m_μ/m_e)`, i.e. `HBAR_Q_SQ = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E` |
+
+`computations/substrate/q_parameter.py` supports selecting between them
+explicitly — *"When muon is selected, we re-derive the ENTIRE q-family (f64 +
+`_MP` + `Q_50_DIGIT_STR`)"* — and `qou-mass`'s own `q_parameter.py` is the
+muon-pinned family. `1.109978595554181` is the muon q₀ to the digits quoted, not
+a stale copy of the proton one.
+
+I inferred "stale" from a digit-9 mismatch against the registry without checking
+whether a second pinning existed. It did. Nothing to fix in that block on this
+count.
+
+**Consequence for verification:** a convention-D `z` must be checked against the
+q₀ of *its own* module. Under the muon pinning `z_D = 0.6126880505455892`, not
+the registry's `0.6126880371464652`; both are correct convention D. Checking a
+muon-pinned module against the proton-pinned registry value would report a false
+failure at 2.2e-8. The R9 evaluator and the two `pyhecke_native` gates all use
+the proton-pinned registry value and all run against proton-pinned code, so they
+are unaffected — but any future gate placed on muon-pinned code must not reuse
+that constant blindly.

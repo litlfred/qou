@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/habiro-ring.lean"
   },
   "source_hashes": {
-    "ts": "6f3a097e1f87",
     "md": "5a8d3320e12f",
-    "lean": "4e4c83a98b3c"
+    "ts": "6f3a097e1f87",
+    "lean": "4e4c83a98b3c",
+    "lean_statement": "aebb62f655d2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -297,31 +298,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "5a8d3320e12f",
-          "ts": "6f3a097e1f87",
-          "lean": "4e4c83a98b3c",
-          "lean_statement": "aebb62f655d2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1217,7 +1198,8 @@
         "reviewed_at": "2026-07-07T14:26:56.821708Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1422,7 +1404,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-ring.lean:43:62: error: unknown tactic"
       },
       {
         "result": "pass",
@@ -1854,7 +1837,367 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:35.785Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:35.827Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:35.872Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:35.917Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:35.957Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The final line under '**Application to QOU.**' — 'evaluates as a finite sum precisely because its components belong to a generalized Habiro ring where the truncation depth connects to the physical shell structure' — is a significance closer, but it sits under an explicit Application heading that licenses one and makes a specific (if unsupported) claim rather than a quotable generality. Two substantive problems reported separately instead: 'a generalized Habiro ring' is undefined (the block defines THE Habiro ring), and the truncation-depth-to-shell-structure link is asserted, not derived — the same bridging template as the cor:habiro-expansion-atomic closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:36.000Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:36.045Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:36.088Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:36.140Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.610Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:36.206Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (definition, 14 lines). VERIFIED (not traps): the inverse-limit definition lim_n Z[q]/((q;q)_n) with (q;q)_n = prod_{k=1}^n (1-q^k) is Habiro's, the element form sum c_n(q)(q;q)_n with c_n in Z[q] is correct, and the root-of-unity truncation remark is right. Minor notation drift: the .md writes the ring as $\\widehat{Z[q]}_q$ while the .ts title and every sibling block in the chapter write $\\widehat{Z[q]}$."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "5a8d3320e12f",
+          "ts": "6f3a097e1f87",
+          "lean": "4e4c83a98b3c",
+          "lean_statement": "aebb62f655d2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:27:36.206Z"
 }

@@ -1,7 +1,7 @@
 -- Classical limit: recovery of the symmetric path integral
 -- See QOU/FeynmanPathIntegrals.lean §3 for the full formalization
 --
--- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
+-- Ref: [chari1994guide] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

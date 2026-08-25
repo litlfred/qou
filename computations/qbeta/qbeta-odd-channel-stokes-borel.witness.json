@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T23:16:37.698782+00:00",
-  "commitSha": "925b655653bff8ebb6c5232c19c6e75846ac0370",
+  "computedAt": "2026-08-15T00:32:25.746589+00:00",
+  "commitSha": "342b42433c0ad23aded4da17002ddf9119a6220f",
   "assertions": [
     {
       "name": "odd_over_determination_zero",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 22,
   "computation": "qbeta-odd-channel-stokes-borel",
   "scriptFile": "qbeta_odd_channel_stokes_borel_probe.py",
-  "scriptHash": "5f961fc384ca",
-  "scriptCommitSha": "8f55e553fcfb0f90809776745bff2b98a6f71b7a",
+  "scriptHash": "89059ee9c2d2",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,11 +43,10 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Odd-channel Q_β D-ladder divergence class. The bar-odd d_k∈ℚ(√3) have a DRIFTING effective Gevrey order (C: ~0.08→0.05 as the tail lengthens) and a slowly-rising root test — NOT q-Gevrey-1 in any base>1. A fixed-order Borel–Leroy gives an s-DEPENDENT pole (0.147→0.165→0.249 for s=0.02→0.10→0.30); the stable-window band ~0.147–0.165 brackets 1/(2π) and Vol(4₁)/(4π) but the ~12% s-systematic is consistent-not-identified. Scope-(a) NEGATIVE: the even-channel plain-Borel method (Vol/π) does not transfer to the odd channel; the G3 monodromy datum (#3805) needs the true q-Borel/alien chain. No fit; no c_k wired; comparison-only.",
+  "description": "Odd-channel Q_β D-ladder growth class. RE-SCOPED 2026-08-14: this was headed 'divergence class', but D(ũ) is CONVERGENT (ρ=0.142799996644689…, κ=0; 2026-08-09 correction). Every measurement stands and two now read as corroboration: the bar-odd d_k∈ℚ(√3) have a DRIFTING effective Gevrey order (C: ~0.08→0.05 as the tail lengthens — a fixed Gevrey-s would hold C constant; a drift toward 0 is what a convergent ladder does to this diagnostic) and a slowly-rising root test — NOT q-Gevrey-1 in any base>1. A fixed-order Borel–Leroy gives an s-DEPENDENT pole (0.147→0.165→0.249 for s=0.02→0.10→0.30); the small-s end 0.147 sits ≈3% from ρ and trends toward it as s→0 (CONSISTENCY with the 2026-08-09 radius, NOT a derivation of ρ). The stable-window band ~0.147–0.165 brackets 1/(2π) and Vol(4₁)/(4π) but the ~12% s-systematic is consistent-not-identified. Scope-(a) NEGATIVE, UNAFFECTED by the re-scope: the even-channel plain-Borel method (Vol/π) does not transfer to the odd channel; the G3 monodromy datum (#3805) needs the true q-Borel/alien chain. No fit; no c_k wired; comparison-only.",
   "contentBlock": "conj:faddeev-phi-b-quasiperiod",
   "data": {
     "ORD": 44,

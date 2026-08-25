@@ -1,10 +1,11 @@
 ---
 # qou-b4lo
 title: 'MISLABEL: RowCapObstruction tiered ''proved'' while Sym2Gate/WeylInvariance get the arithmetic-vs-rep-theory caveat'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:03:35Z
-updated_at: 2026-08-08T13:03:35Z
+updated_at: 2026-08-15T04:42:03Z
 ---
 
 Found by the SM/eightfold epistemic accounting,
@@ -68,3 +69,15 @@ cited, not formalised here." Retier the ledger row from `proved` to
 (observing a decuplet ⇒ `N = 3`); the framework needs `N = 3` *supplied*,
 which is the open half the ledger correctly records at row :18. Worth saying
 so if the paragraph is rewritten.
+
+---
+
+**Update (2026-08-08, post-commit).** The colour-row Lean cone was rebuilt with
+`scripts/lean-direct-cone.sh QOU.MathlibExt.OctonionColourActionBaseModule -k -j4`:
+`done: ok=9 in 923s`, `err=0`, `blocked=0`. So the audit's total is **20 Lean
+files verified green and sorry-free, zero red** across both chapters' citation
+graph. This does not change this bean: `RowCapObstruction.lean` was already
+green and sorry-free from the start — the finding was never about compilation,
+it is about the tier word "proved" attached to a ℕ-arithmetic instance of a
+standard fact while two sibling files get an explicit caveat for the same
+construction.

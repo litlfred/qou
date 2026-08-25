@@ -9,7 +9,7 @@ End-of-day summary of the bibliography verification + cleanup work on
 | Metric | Count |
 |---|--:|
 | Total refs in `content/schema/references.ts` | 246 |
-| Local PDFs in `uploads/` (on `claude/upload-bib-papers-2026-05-19`) | 38 |
+| Local PDFs in `library/` (on `claude/upload-bib-papers-2026-05-19`) | 38 |
 | Verification entries in `content/bib-qa-verifications.json` | 117 (48% of refs tracked) |
 | `-- Ref:` lines upgraded from bare URL to specific citation | 654 |
 | `validate-bib --cross-check` warnings | 12 (was 149 at start) |
@@ -47,7 +47,7 @@ End-of-day summary of the bibliography verification + cleanup work on
 | `.claude/skills/local/editor.md` | New "Bibliography workflow" section pointing at tools |
 | `.claude/skills/local/integration-watcher.md` | New §0c (sibling coord), §0d (multiSelect+🟡), §0b (5-min idle trigger) |
 | `AGENTS.md` | New rules: multiSelect/🟡 for AskUserQuestion, sibling coord at workplan start, structured branch names, 5-min idle trigger with backlog priority order |
-| `.gitignore` | Whitelist `uploads/*` for intake files (was blocked by `*.pdf` global rule) |
+| `.gitignore` | Whitelist `library/*` for intake files (was blocked by `*.pdf` global rule) |
 
 ## Rendered-bibliography verification marker
 
@@ -98,7 +98,7 @@ human decision:
 ### Uncited orphans (PDFs verified-correct but no QOU citations)
 
 `gromov1982`, `bilsonthompson2005`, `finster2021/2022/2024`,
-`dappiaggi2024` — each has a correct PDF in uploads/ and verified
+`dappiaggi2024` — each has a correct PDF in library/ and verified
 bib metadata, but no `-- Ref:` or `\cite{}` consumer in content/.
 Decision pending: keep as forward-ref / remove / find a use site.
 
@@ -106,9 +106,9 @@ Decision pending: keep as forward-ref / remove / find a use site.
 
 | Ref id | Symptom | Fix path |
 |---|---|---|
-| `zink2002` | uploads/zink2002.pdf is the Astérisque volume PRELIMINARY PAGES, not Zink's chapter | Update `references.ts` URL to the chapter's `/item/AST_2002__278__<startpage>_0.pdf` (need volume TOC consultation) |
+| `zink2002` | library/zink2002.pdf is the Astérisque volume PRELIMINARY PAGES, not Zink's chapter | Update `references.ts` URL to the chapter's `/item/AST_2002__278__<startpage>_0.pdf` (need volume TOC consultation) |
 | `blitvic2012` | arXiv:1205.4003 is "Two-Parameter Non-Commutative CLT" not "The (q,t)-Gaussian process" | Decide whether bib title or URL is wrong |
-| `margolus1998` | URL fix queued in commit `87b9771ac` (cond-mat → quant-ph); re-fetch needed | `rm uploads/margolus1998.pdf && bash scripts/upload-bib-papers.sh` |
+| `margolus1998` | URL fix queued in commit `87b9771ac` (cond-mat → quant-ph); re-fetch needed | `rm library/margolus1998.pdf && bash scripts/upload-bib-papers.sh` |
 | `heisenberg1958`, `weil1948` | archive.org `/download/<id>/<id>.pdf` guess pattern returned 401/503 | Need `archive.org/metadata/<id>` lookup to find real filename |
 | `turaev2010` | URL `q-alg/9409028` returned 404 on user's last run — may be wrong category | Verify the actual arxiv id (maybe `q-alg/9409025` or different) |
 
@@ -134,7 +134,7 @@ comment per the "make too much noise" qualifier.
 git checkout claude/detangler-bib-followup-batch-2026-05-19 && git pull
 
 # Re-fetch the corrected margolus paper
-rm -f uploads/margolus1998.pdf
+rm -f library/margolus1998.pdf
 bash scripts/upload-bib-papers.sh
 
 # Regen references.bib + bib-qa.json with current verification status

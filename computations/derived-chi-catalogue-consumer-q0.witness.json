@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:27:13.254687+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-21T15:10:57.704437+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "consumer_q0_wire_in_agrees_with_rust",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 384,
+  "durationMs": 508,
   "computation": "derived-chi-catalogue-consumer-q0",
   "scriptFile": "derived_chi_catalogue_consumer_q0.py",
   "scriptHash": "9135e9d71d35",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,6 +27,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -34,7 +35,7 @@
   "description": "Consumer-side wire-in of the mpfr matrix-M backend (PR #1993). Provides chi_lambda_at_q0(K, λ, A, q_0) with three-path routing: catalogue → mpfr fallback. Benchmarks the path selection on tr_M-style aggregation across deuteron/³H/³He/⁴He. NO f64 in compute path.",
   "data": {
     "dps": 50,
-    "q_0_substrate_str": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_substrate_str": "1.1099785827513808075916690956107688798744991218736",
     "isotopes": [
       {
         "label": "D",
@@ -45,10 +46,10 @@
         "n_cells_catalogue": 10,
         "n_partitions_rust": 10,
         "n_partitions_mpfr": 10,
-        "catalogue_secs": 0.0011208790000409863,
-        "rust_secs": 0.09280949499998314,
-        "mpfr_secs": 0.039851597999927435,
-        "speedup_mpfr_vs_rust": 2.328877627445508,
+        "catalogue_secs": 0.001042033999965497,
+        "rust_secs": 0.09879484099974434,
+        "mpfr_secs": 0.06495816799997556,
+        "speedup_mpfr_vs_rust": 1.52089943484523,
         "agree_catalogue_vs_rust": true,
         "agree_mpfr_vs_rust": true
       },
@@ -61,10 +62,10 @@
         "n_cells_catalogue": 4,
         "n_partitions_rust": 4,
         "n_partitions_mpfr": 4,
-        "catalogue_secs": 0.00029749200007245236,
-        "rust_secs": 0.014003888000047482,
-        "mpfr_secs": 0.020086816999992152,
-        "speedup_mpfr_vs_rust": 0.6971680978650302,
+        "catalogue_secs": 0.00030958699971961323,
+        "rust_secs": 0.02938680099987323,
+        "mpfr_secs": 0.038432433000252786,
+        "speedup_mpfr_vs_rust": 0.7646354577572526,
         "agree_catalogue_vs_rust": true,
         "agree_mpfr_vs_rust": true
       },
@@ -77,10 +78,10 @@
         "n_cells_catalogue": 4,
         "n_partitions_rust": 4,
         "n_partitions_mpfr": 4,
-        "catalogue_secs": 0.0003373669999291451,
-        "rust_secs": 0.016076592999979766,
-        "mpfr_secs": 0.02041600399991239,
-        "speedup_mpfr_vs_rust": 0.7874505216617685,
+        "catalogue_secs": 0.0005324150001797534,
+        "rust_secs": 0.032937780000338535,
+        "mpfr_secs": 0.034553003999917564,
+        "speedup_mpfr_vs_rust": 0.9532537315834281,
         "agree_catalogue_vs_rust": true,
         "agree_mpfr_vs_rust": true
       },
@@ -93,15 +94,15 @@
         "n_cells_catalogue": 4,
         "n_partitions_rust": 4,
         "n_partitions_mpfr": 4,
-        "catalogue_secs": 0.0003368290000480556,
-        "rust_secs": 0.07525664199999937,
-        "mpfr_secs": 0.06861300599996412,
-        "speedup_mpfr_vs_rust": 1.0968276480998185,
+        "catalogue_secs": 0.0003208250000170665,
+        "rust_secs": 0.10636726799975804,
+        "mpfr_secs": 0.05851010900005349,
+        "speedup_mpfr_vs_rust": 1.8179297529536442,
         "agree_catalogue_vs_rust": true,
         "agree_mpfr_vs_rust": true
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

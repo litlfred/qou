@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T22:06:38.813847+00:00",
-  "commitSha": "1bd143b2d52b798673fb3105a87a69ffa2c20225",
+  "computedAt": "2026-08-23T09:57:27.000854+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "lin_ladder_geometric_ratio_matches_r_within_15pct",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "qlommel-delta-lambda-lin-vs-sym-ladder",
   "scriptFile": "qlommel_delta_lambda_lin_vs_sym_ladder.py",
-  "scriptHash": "7b16b3a55482",
-  "scriptCommitSha": "e78da252937536654435bb990c698381c8606d9f",
+  "scriptHash": "0459f1b45c89",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1"
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qlommel_delta_lambda_lin_vs_sym_ladder.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qlommel_delta_lambda_lin_vs_sym_ladder.py"
   },
   "description": "EXPLORATORY derive-or-refute (no fit): which binding ladder the 2nd-kind q-Lommel order coefficient b=q0^10+q0^-10=2cosh(10η) governs. Reads the recorded Δ_λ^lin (B_AME/B_lin) and Δ_λ^sym (B_AME/B_sym, exact log-trace) from binding-single-pipeline-comparison.witness.json. Finding: the geometric first-kind ratio r=q0^10 is carried by Δ_λ^lin (D→T within ~8%) and ABSENT from Δ_λ^sym (D→T ~40% below r; Δ_λ^sym≈1 on A=3) — B_sym (m_symbolic) already realizes the exponential, so the 2nd-kind correction belongs to the LINEAR binding (m_qCLT), not on top of B_sym. The interior-b test is data-limited (one interior point; ⁴He magic-contaminates sym) and is reported, NOT used as the discriminator. Not a closure: the linear match is the open-keystone near-match (10A−5 from Bring crossings, #2316).",
   "parameters": {

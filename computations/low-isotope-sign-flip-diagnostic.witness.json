@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:04:48.132913+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-23T21:16:01.913022+00:00",
+  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
   "scriptHash": "b5dcefa9b59f",
@@ -31,9 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/low_isotope_sign_flip_diagnostic.py"
+    ],
+    "reproduce": "python3 -u computations/low_isotope_sign_flip_diagnostic.py"
   },
   "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot VolDensity refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
   "parameters": {
@@ -49,8 +56,8 @@
         "N": 0,
         "A": 1,
         "atom_label": "p",
-        "err_pct": 2.8896082178470994,
-        "err_MeV": 27.11238736523694,
+        "err_pct": -2.851767032995154e-10,
+        "err_MeV": -2.675733412615955e-09,
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
@@ -63,8 +70,8 @@
         "N": 1,
         "A": 1,
         "atom_label": "n",
-        "err_pct": 2.8895649496700706,
-        "err_MeV": 27.14935307056612,
+        "err_pct": 8.775678797490492e-08,
+        "err_MeV": 8.245324352174066e-07,
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
@@ -116,26 +123,26 @@
       }
     ],
     "linear_fit_err_pct_vs_n_inter": {
-      "slope": -2.2258574201552164,
-      "intercept_pct": 2.9749020958945795,
-      "R_squared": 0.8285027814754085
+      "slope": -0.7810641501438265,
+      "intercept_pct": 0.3742742098740777,
+      "R_squared": 0.26528719463905365
     },
     "linear_fit_err_pct_vs_signed_h_weight": {
-      "slope": 9.710716309181485,
-      "intercept_pct": 1.7641074149420353,
-      "R_squared": 0.2584498703255101
+      "slope": 0.496193877122594,
+      "intercept_pct": -0.35492271440800294,
+      "R_squared": 0.0017547699041416728
     },
     "klr_positivity_check": {
       "trace_level_violations": [],
       "prediction_error_sign_flips": [
         {
           "atom": "p",
-          "err_pct": 2.8896082178470994,
-          "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
+          "err_pct": -2.851767032995154e-10,
+          "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
           "atom": "n",
-          "err_pct": 2.8895649496700706,
+          "err_pct": 8.775678797490492e-08,
           "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
         },
         {
@@ -154,26 +161,26 @@
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         }
       ],
-      "n_under_predictions": 2,
-      "n_over_predictions": 3
+      "n_under_predictions": 3,
+      "n_over_predictions": 2
     },
-    "verdict": "STRONG correlation between err_pct and inter-nucleon channel counts/weights — the per-isotope error is dominated by the channel-assignment layer, NOT by a single-knot VolDensity(𝓑₃) refinement.  This FALSIFIES the PR #1063 framing for the low-isotope cluster.  R&D should redirect to the categorical backing of the pp/pn/nn channel assignment (no `prop:` block currently formalises the rule).",
+    "verdict": "WEAK correlation between err_pct and inter-nucleon channel counts/weights.  Sign-flips are NOT explained by simple linear channel models.  More complex predictor (per-channel ratio, closure-topology dependence, or non-linear weighting) required.  PR #1063 framing not directly falsified by this diagnostic; needs deeper investigation.",
     "upstream_witness_hashes": [
       {
         "path": "low-isotope-mass-table.witness.json",
-        "sha256": "7a55099e21e0e1cdc935ace3fd060a9b67f42b78c2840ed8e0c1ab3fc52df603",
-        "size_bytes": 22572,
-        "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
-        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-        "computedAt": "2026-06-29T17:20:51.143157+00:00"
+        "sha256": "1ffe5632f51a7950050662003877a9c8dbf5670dce94651ed344e9f315c4b6ef",
+        "size_bytes": 23102,
+        "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-15T21:36:26.010824+00:00"
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
   },

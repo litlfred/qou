@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean"
   },
   "source_hashes": {
-    "ts": "82b179c13c5d",
     "md": "63f6940db8ee",
-    "lean": "1112d2bac8dd"
+    "ts": "82b179c13c5d",
+    "lean": "1112d2bac8dd",
+    "lean_statement": "b2a4aa5d14b4"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1017,31 +1018,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "wall-base-ring-minimal": [
-      {
-        "field_hash": {
-          "md": "63f6940db8ee",
-          "ts": "82b179c13c5d",
-          "lean": "1112d2bac8dd",
-          "lean_statement": "b2a4aa5d14b4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -1754,7 +1735,368 @@
           "decl_claimants": 1
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:06.697Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Conjecture block read in full. 'This separates the isospin-invariant substrate background from the structural isospin violation' is a positive decomposition claim, not assert-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:06.778Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe; the h-divergence -> Cesaro-regularisation sequence is a genuine argument step."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:06.880Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:06.958Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No three-item list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.040Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Body closes on the archimedean-wall banner (stock corpus template), not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.097Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.163Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'This separates the isospin-invariant substrate background from the structural isospin violation' introduces the background/violation split, which the statement does not name; informative rather than restating."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.380Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.452Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'This residue resolves precisely to the substrate flavor split' is the strongest phrasing; read as an exact formal identity it is the conjecture's content, with the 305 ppm parenthetical scoping formula-vs-CODATA separately.",
+        "notes": "Watch item: in a CONJECTURE block 'resolves precisely' asserts exactness for an unproved identity; 'resolves to' would carry the same content without the intensifier. Not fixed (statement text, math-adjacent)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.559Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:37:07.493Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'isospin-Z/2-anti-symmetric residue' and 'operator-valued bowtie_K interface' stall aloud, but both are established terms of art in this chapter, not syntax written for the eye."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "63f6940db8ee",
+          "ts": "82b179c13c5d",
+          "lean": "1112d2bac8dd",
+          "lean_statement": "b2a4aa5d14b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-21T16:37:07.493Z"
 }

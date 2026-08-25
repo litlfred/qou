@@ -28,6 +28,7 @@ import mpmath as mp  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # AME2020 total binding (MeV)
 B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION),
@@ -55,7 +56,7 @@ def _tr_atom(Z, N, trp, trn, Lb):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q0 = mp.mpf(str(Q0)); qi = mp.mpf(1) / q0
     E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
     s0, si = _sub(q0), _sub(qi)

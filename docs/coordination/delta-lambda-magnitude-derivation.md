@@ -142,3 +142,23 @@ Rationale: T4 is the fastest falsification — if the integer 3 doesn't reproduc
 |S|, the entire chain is scope-(a) and T1/T2/T5 are moot for this route. T3
 sharpens the smooth prefactor needed for T4. T2/T1 are the Lean rigidity tasks,
 longer but decoupled from the probe. T5 is conditional on all others.
+
+---
+
+## Session 2026-08-09 · PR #4346 (`z-c-k-f-map-keystone`) — H₆ interface handles + skew-only Lean
+
+Extension of the qou-prjo surface-term cluster (#4798, #4619, #4818, #4796 item #4),
+from a distinct route. **No §6 inconsistency** with #4798's scope-(a) "NEGATIVE"
+(natural scalar extractions gauge-unpinned c₂∈0…897); we agree curvature nonzero,
+raw trace null, magnitude open.
+
+| Artifact | Novelty vs siblings |
+|---|---|
+| `QOU/QBeta/YekutieliTrefoilDiscretization.lean` (sorry-free): `surface2Form=ΣV_ij⁅A_i,A_j⁆`; **skew-only survives ⇒ = corpus germ F_q**; `=0 ⇔ commute`; **central color dressing drops out** | NOVEL — #4798 has no Lean; #4619 Lean is abelian shadow + cell count |
+| `deuteron_interface_handle_curvature_probe.py`: `A_a=ρ(σ₂),A_b=ρ(σ₃)` in **real H₆ Hoefsmit seminormal**; F_q nonzero, `tr=0` (concrete in H₆), singlets→0, `dF_q~h²` | NOVEL — fills the "H₆ interface handles not in corpus" gap #4619/#4796 name; #4798 used 2-dim Hecke on σ₁ |
+| A=3 bridge `BirkhoffBarOddPythagorasBridge.lean` (`E²=−1`; `|factor|²=fs²+s²`); `A3BranchingModulusReflection.lean` (`(1+x²)²=(1−x²)²+(2x)²`, lift=2−factor_sa) | Addresses the `option-e.md` named-open phase→real-amplitude bridge |
+
+**Open (deliberately, no fit):** the deuteron MeV binding via the operator-valued
+quadrature pairing `tr_M(ρ·dF_q)` — the channel *past* #4798's negative scalar route.
+**Hedges carried:** `r*≈1.585` is a C-convention number (#4766, moves 22–26%);
+`C_knot=5.853` may be a normalization artifact pending the fibre→τ-transfer check (#4796).
