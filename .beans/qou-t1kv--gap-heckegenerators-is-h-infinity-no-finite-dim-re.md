@@ -1,11 +1,11 @@
 ---
 # qou-t1kv
 title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T19:38:50Z
+updated_at: 2026-08-25T19:42:33Z
 ---
 
 ## The defect
