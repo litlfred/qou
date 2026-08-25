@@ -5,8 +5,8 @@
   "data": {
     "counts": {
       "STALE": 228,
-      "canonical": 169,
-      "proton-pin": 1678,
+      "canonical": 170,
+      "proton-pin": 1680,
       "unknown": 25
     },
     "stale_total": 228,
@@ -5825,7 +5825,7 @@
       {
         "file": "computations/deltalambda/b4-nonsaturating-mstar-diagnostic.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -6245,9 +6245,9 @@
       {
         "file": "computations/deltalambda/mu3-abs-choice-robustness.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513808076",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889980326
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/mu3-door-budget.witness.json",
@@ -6273,9 +6273,9 @@
       {
         "file": "computations/deltalambda/mu3-frechet-perblock.witness.json",
         "field": "q0Value",
-        "value": "1.1099785827513804319",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.537118228455322
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/mu3-target-frame-robustness.witness.json",
@@ -6412,15 +6412,22 @@
       },
       {
         "file": "computations/deltalambda/threerow-qcross-trend.witness.json",
-        "field": "q0Value",
+        "field": "parameters.q0",
         "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/deltalambda/threerow-qcross-trend.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/deltalambda/threerow-sign-crossing.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -10835,6 +10842,13 @@
         "ppb_vs_canonical": -1.792806032488518e-08
       },
       {
+        "file": "computations/probes/gram-norm-binding-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
         "file": "computations/probes/gram-qtrace-hutchinson-probe.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808",
@@ -12364,6 +12378,13 @@
         "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
         "field": "data.q0",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
