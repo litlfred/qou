@@ -258,3 +258,77 @@ room to spare is a genuine certificate — it says `𝓑₃` is robustly compati
 with the Frobenius structure rather than marginally so. That is a
 **verification** result and it stands. What does not stand is reading it as a
 **selection principle**, and nothing in the LP form can be repaired into one.
+
+
+# CORRECTION to my own blast radius: the mass formula does not depend on this
+
+I wrote above that `prop:mass-coefficient-shadow-price` is *"the most serious,
+because it reaches the mass formula"*. **Measured, that is wrong in the way that
+matters**, and the correction is worth more than the original claim.
+
+## The six-term formula does not cite it
+
+`thm:six-term-mass-formula-complete` declares
+
+```
+uses: ["prop:terms-2-6-higher-operations",
+       "prop:chirality-writhe-ribbon-derivation"]
+```
+
+The coefficients come from the **chirality / writhe / ribbon** route —
+`a_K(β) = 1 + w(β)·h + O(h²)` from the Kauffman ribbon-twist evaluation — and
+that route touches nothing in this audit. The shadow-price proposition is a
+**parallel interpretive claim about the same numbers**, not the derivation the
+formula runs on.
+
+## The coefficients are computed in closed form, never by solving an LP
+
+`prop:wigner-2-coefficient` gives, for self-conjugate `λ`, `C_λ = w_λ · h/2`,
+and [`shadow_price_c_321_q0.py`](../../computations/shadow_price_c_321_q0.py)
+evaluates the `k = 6` case algebraically:
+
+$$C_{[3,2,1]} \;=\; \frac{[2]_q\,[4]_q\,[6]_q\,h}{2\,[3]_q^{3}\,[5]_q} \;=\; 0.03748823722039044429504997$$
+
+at the proton pin, 50 dps. **No LP is solved anywhere in that derivation.**
+
+## So the identification fails and the numbers survive
+
+| | |
+|---|---|
+| closed-form coefficient | `0.0374882372204` — derived, fixed |
+| LP dual at `𝓑₃` | `0` — forced, since every constraint is strictly slack |
+| LP dual at the LP's optimum | solver-dependent (six vertices, mirror pairs) |
+
+A nonzero derived constant cannot equal a dual variable that complementary
+slackness pins to zero. **The identification is false; the coefficient is
+untouched.** "Shadow price" is an interpretation attached to a number obtained
+another way, and it is the interpretation that fails.
+
+## Revised blast radius
+
+**Interpretive claims that fail** — `prop:mass-coefficient-shadow-price` and its
+proof block, plus the five blocks citing it in `uses[]`
+(`prop:wigner-2-coefficient`, `prop:unified-iterative-correction`,
+`rem:sdp-regime-switch-interpretation`,
+`rem:markov-trace-axiomatic-closed-form-interpretation`,
+`rem:confinement-frobenius-reciprocity-interpretation`). What they lose is the
+*reading* of their constants as LP duals. `prop:wigner-2-coefficient`'s closed
+form stands on its own derivation.
+
+**Untouched** — the six-term mass formula and its actual derivation chain, every
+numerical coefficient, and the chirality/writhe/ribbon route.
+
+**An undeclared-dependency defect, separately.** `mass-coefficient-shadow-price.ts`
+names `operator-selection-lp` only in a **comment**
+(`operator-selection-lp → shadow prices → mass coefficients`) and not in
+`uses[]`, so the manifest never recorded the dependency its prose asserts. That
+is why the block did not surface in a `uses[]`-based sweep, and it is a defect
+independent of everything else here.
+
+## And the promised measurement is moot
+
+I said the open item was whether the **nuclear** LP instance is also
+relative-interior. It does not arise: the mass coefficients are not read off any
+LP solution, so there is no nuclear-instance optimum whose geometry could matter
+to them. The question was well-posed only under the assumption this correction
+removes.
