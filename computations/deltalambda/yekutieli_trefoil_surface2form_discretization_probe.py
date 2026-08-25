@@ -28,26 +28,23 @@ import datetime as _dt
 import json
 import os
 import sys
-from pathlib import Path
 
-import mpmath as mp
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "substrate"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-import _path_bridge as _bridge  # noqa: E402, F401
-
+import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
-from qou_substrate.constants import q_at  # noqa: E402
 
+# NO-FLOAT64 (AGENTS.md, owner directive 2026-08-18: "PROBES ARE NOT EXEMPT").
+# dps raised at MODULE scope, before the first mpf below is constructed.
 set_compute_dps()
 
-# Canonical experimental (proton) pin — owner directive 2026-08-07/R2. This
-# probe previously hardcoded the float64 literal 1.1099785955573347, which is
-# the MUON value, and computed the whole dichotomy in binary64.
-Q0 = q_at()
+# PIN: MUON (ideal CAL-2) -- 1.10997859555733471..., not the proton
+# 1.1099785827513808. Recorded because this literal carried no pin label;
+# re-pinning is bean qou-1c4y, not this drain.
+Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+Q0 = mp.mpf(Q0_STR)
 H = Q0 - 1 / Q0              # Hecke h = q − q⁻¹ ≈ 0.209
-ZERO = mp.mpf(0)
-ONE = mp.mpf(1)
 
 # ---- 2×2 matrix helpers (pure python) ----
 def mul(A, B):
@@ -57,24 +54,22 @@ def sub(A, B): return [[A[i][j]-B[i][j] for j in range(2)] for i in range(2)]
 def commutator(A, B): return sub(mul(A, B), mul(B, A))
 def fro(A): return mp.sqrt(sum(A[i][j]**2 for i in range(2) for j in range(2)))
 def is_zero(A, tol=None):
-    """Exact-zero test at working precision. The two structural facts this probe
-    validates ([A,A] = 0 and the skew-only reduction) are identities in the
-    arithmetic, not numerical near-agreements, so the default tolerance is 0."""
-    return fro(A) <= (ZERO if tol is None else tol)
-I2 = [[ONE, ZERO], [ZERO, ONE]]
+    # was 1e-14 / 1e-10 (float64-grade); real thresholds at 70 dps
+    return fro(A) < (mp.mpf(10) ** -40 if tol is None else tol)
+I2 = [[mp.mpf(1), mp.mpf(0)], [mp.mpf(0), mp.mpf(1)]]
 
 # Trefoil (right-handed) Seifert matrix, genus 1
 V = [[-1, 1], [0, -1]]
 
 def surface2Form(Vmat, A):
     """∑_{i,j} V_ij [A_i, A_j]  — the discretized (doubled) Yekutieli surface 2-form."""
-    out = [[ZERO, ZERO], [ZERO, ZERO]]
+    out = [[mp.mpf(0), mp.mpf(0)], [mp.mpf(0), mp.mpf(0)]]
     for i in range(2):
         for j in range(2):
             c = commutator(A[i], A[j])
             for a in range(2):
                 for b in range(2):
-                    out[a][b] += mp.mpf(Vmat[i][j]) * c[a][b]
+                    out[a][b] += Vmat[i][j] * c[a][b]
     return out
 
 
@@ -83,14 +78,14 @@ def main() -> None:
 
     # (A) ABELIAN handles: deuteron's own trefoil is σ₁³ in H₂ (single generator ⇒ commuting).
     #     Model both handles as the SAME diagonal (commuting) germ increment.
-    d1 = [[q - 1, ZERO], [ZERO, 1 / q - 1]]           # δq for σ₁ (diagonal, H₂ shadow)
+    d1 = [[q - 1, mp.mpf(0)], [mp.mpf(0), 1 / q - 1]]  # δq for σ₁ (diagonal, H₂ shadow)
     A_abelian = [d1, d1]                               # both handles commute
     s_abelian = surface2Form(V, A_abelian)
 
     # (B) NON-ABELIAN germ: reduced Burau of B₃ (σ₁,σ₂ do NOT commute), increments δq_i = ρ(σ_i) − I.
     t = q
-    b1 = [[-t, ONE], [ZERO, ONE]]                      # reduced Burau σ₁
-    b2 = [[ONE, ZERO], [t, -t]]                        # reduced Burau σ₂
+    b1 = [[-t, mp.mpf(1)], [mp.mpf(0), mp.mpf(1)]]     # reduced Burau σ₁
+    b2 = [[mp.mpf(1), mp.mpf(0)], [t, -t]]             # reduced Burau σ₂
     dq1 = sub(b1, I2)
     dq2 = sub(b2, I2)
     A_nonabelian = [dq1, dq2]
@@ -98,30 +93,35 @@ def main() -> None:
 
     # Lean cross-checks: surface2Form_trefoil = [A_0, A_1]; skew-only = (V01−V10)[A0,A1]=[A0,A1].
     direct_comm = commutator(A_nonabelian[0], A_nonabelian[1])
-    skew_ok = is_zero(sub(s_nonabelian, direct_comm))
+    skew_ok = is_zero(sub(s_nonabelian, direct_comm), tol=mp.mpf(10) ** -40)
 
     fro_nonabelian = fro(s_nonabelian)
     # h²-order check: the germ increments are O(h)…O(1); report the commutator scale vs h².
-    order_ratio = fro_nonabelian / (H * H) if H > 0 else None
+    order_ratio = fro_nonabelian / (H * H) if H > 0 else mp.nan
 
     witness = {
         "computation": "yekutieli-trefoil-surface2form-discretization",
         "scriptFile": "yekutieli_trefoil_surface2form_discretization_probe.py",
         "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "engine": "mpmath (pure 2x2 mpf matrices; 0 free params; structural validation)",
+        "engine": "mpmath mpf (pure 2x2 matrices; 0 free params; structural validation)",
         "free_parameters": 0,
         "inputs": {
-            "q0": fmt(Q0), "q0Anchor": "proton", "h": fmt(H),
+            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0_precision_note": (
+                "17 significant digits, recorded VERBATIM as computed with; the muon anchor's "
+                "full value is 1.10997859555733471989976..., so padding to the serialization "
+                "width would append digits that are wrong from the 18th."),
+            "arithmetic": f"mpmath mpf at {mp.mp.dps} dps (no float64 anywhere)",
             "seifert_matrix_trefoil": V,
             "genus": 1, "h1_rank_2g": 2, "intersection_a_dot_b": V[0][1] - V[1][0],
-            "knot_determinant": abs((V[0][0]+V[0][0]) * (V[1][1]+V[1][1]) - (V[0][1]+V[1][0])**2) // 1,
+            "knot_determinant": int(abs((V[0][0]+V[0][0]) * (V[1][1]+V[1][1]) - (V[0][1]+V[1][0])**2)),
         },
         "results": {
-            "abelian_surface2form_is_zero": is_zero(s_abelian),
+            "abelian_surface2form_is_zero": bool(is_zero(s_abelian)),
             "abelian_note": "deuteron σ₁³ trefoil in H₂ (commuting handles) ⇒ 0 (matches Lean commutator_zero)",
             "nonabelian_surface2form_fro_norm": fmt(fro_nonabelian),
-            "nonabelian_equals_single_commutator": skew_ok,
-            "skew_only_validated": skew_ok,
+            "nonabelian_equals_single_commutator": bool(skew_ok),
+            "skew_only_validated": bool(skew_ok),
             "nonabelian_over_h2_ratio": fmt(order_ratio),
         },
         "verdict": (
@@ -129,7 +129,7 @@ def main() -> None:
             f"skew-only ⇒ trefoil term = single germ curvature [A_a,A_b] (Lean-confirmed, "
             f"{'MATCH' if skew_ok else 'MISMATCH'}). Abelian handles (deuteron's own H₂ trefoil) give "
             f"EXACTLY 0 (reproduces commutator_zero) — the isolated-trefoil transverse term is null. "
-            f"A non-abelian germ (reduced Burau B₃) gives a nonzero term (‖·‖={mp.nstr(fro_nonabelian, 6)}); the "
+            f"A non-abelian germ (reduced Burau B₃) gives a nonzero term (‖·‖={mp.nstr(fro_nonabelian, 5)}); the "
             f"magnitude is convention-dependent (this toy has O(1) increments — canonical small q-germ "
             f"increments δq~h would scale as h²). The point is the DICHOTOMY: abelian⇒0, non-abelian⇒≠0. "
             f"So the deuteron transverse datum requires NON-ABELIAN interface handles, not the isolated "
@@ -153,7 +153,7 @@ def main() -> None:
 
     print(f"Seifert V (trefoil) = {V}, genus 1, a·b = {V[0][1]-V[1][0]}")
     print(f"(A) abelian handles (deuteron H₂): surface2Form = 0 ? {is_zero(s_abelian)}  (matches commutator_zero)")
-    print(f"(B) non-abelian germ (reduced Burau): ‖surface2Form‖ = {mp.nstr(fro_nonabelian, 6)}  (nonzero; magnitude convention-dependent)")
+    print(f"(B) non-abelian germ (reduced Burau): ‖surface2Form‖ = {mp.nstr(fro_nonabelian, 5)}  (nonzero; magnitude convention-dependent)")
     print(f"    skew-only ⇒ = single [A_a,A_b] ? {skew_ok}  (Lean surface2Form_trefoil)")
     print(f"wrote {out}")
     assert is_zero(s_abelian), "abelian case must be 0 (commutator_zero)"

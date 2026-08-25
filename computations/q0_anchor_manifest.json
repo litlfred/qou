@@ -1,6 +1,4 @@
 {
- "_schema": "q0-anchor-manifest/v1",
- "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
  "ideal_muon": [
   "alpha_5_lp_dual_crystal",
   "alpha_high_precision",
@@ -470,6 +468,7 @@
   "path4_rho_K_at_h3A",
   "path_b_evacuation",
   "path_b_open_questions",
+  "pauli_young_spin_isospin_delta_lambda_probe",
   "pentagon_multipair_borromean_h4_probe",
   "pentagon_reduction_li2q",
   "pentagon_to_borromean_h4_probe",
@@ -582,6 +581,7 @@
   "qbeta_signed_vs_abs_tower_diagnostic",
   "qbeta_singularity_cross_anchor_probe",
   "qbeta_symbolic_chain_alpha_b",
+  "qbeta_z_convention_analytic_separation_probe",
   "qm_channel_contribution_probe",
   "r5_full_canonical_knot_solver",
   "reading_a_redistribution_hypotheses_50dps",
@@ -707,5 +707,7 @@
   "qbeta_habiro_integrality_kill_test",
   "tau_dictionary_fricke_spin_probe",
   "tau_dictionary_hauptmodul_validator"
- ]
+ ],
+ "_schema": "q0-anchor-manifest/v1",
+ "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

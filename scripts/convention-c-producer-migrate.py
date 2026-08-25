@@ -239,27 +239,60 @@ def _file_has_c_reference(tree: ast.AST) -> bool:
     return _file_c_reference(tree) is not None
 
 
+def _additive_terms(node: ast.AST):
+    """Flatten a `+`/`-` chain into its terms; anything else yields itself."""
+    if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub)):
+        yield from _additive_terms(node.left)
+        yield from _additive_terms(node.right)
+    else:
+        yield node
+
+
 def _ladder_phase_targets(tree: ast.AST) -> set:
-    """G2: names `N` used as `(N - 1) * <anything> / 2` — the ladder phase."""
+    """G2: names `N` used as `(N - 1) * <anything> / 2` — the ladder phase.
+
+    The numerator is split into ADDITIVE TERMS before each is shape-tested.
+    This used to require the numerator to be a `Mult` outright, which made it
+    blind to the phase carrying a shift:
+
+        ((z - 1) * h - u) / 2          <- numerator is a Sub, so it bailed
+                                          before ever looking at (z - 1) * h
+
+    That is the same quantity — `(z-1)*h/2 - u/2` — and it is not a corner
+    case: PR #5748 establishes that the convention-D ladder target is `z_D -
+    h/2`, i.e. the phase is EXPECTED to carry a shift, so the unshifted form
+    the matcher required is the one that will get rarer.
+
+    Measured cost of the gap: `computations/qbeta/qbeta_eta_singularity_probe.py`
+    binds `aq = ((zq - 1) * hq - utq) / 2` at :182 (the numeric twin of the
+    symbolic `alpha` assembled at :126) and was triaged B4 — "emits a committed
+    witness, value change" — rather than B2. B4 is a work item and B2 is a
+    refusal, so the site was handed to the 2026-08-25 drain as migratable when
+    it is exactly the class that must be re-derived, not substituted
+    (bean `qou-cds1`).
+
+    Widening only: a bare `Mult` numerator is a single additive term, so every
+    site the old shape matched still matches.
+    """
     hits = set()
     for node in ast.walk(tree):
-        # match  X / 2  where X is a Mult
+        # match  X / 2  for any numerator X
         if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
             continue
         if not (isinstance(node.right, ast.Constant) and node.right.value == 2):
             continue
-        mult = node.left
-        if not (isinstance(mult, ast.BinOp) and isinstance(mult.op, ast.Mult)):
-            continue
-        for side in (mult.left, mult.right):
-            inner = side
-            while isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Mult):
-                inner = inner.left
-            if (isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Sub)
-                    and isinstance(inner.left, ast.Name)
-                    and isinstance(inner.right, ast.Constant)
-                    and inner.right.value == 1):
-                hits.add(inner.left.id)
+        for term in _additive_terms(node.left):
+            if not (isinstance(term, ast.BinOp) and isinstance(term.op, ast.Mult)):
+                continue
+            for side in (term.left, term.right):
+                inner = side
+                while isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Mult):
+                    inner = inner.left
+                if (isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Sub)
+                        and isinstance(inner.left, ast.Name)
+                        and isinstance(inner.right, ast.Constant)
+                        and inner.right.value == 1):
+                    hits.add(inner.left.id)
     return hits
 
 
