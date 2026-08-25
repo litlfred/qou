@@ -1,7 +1,7 @@
 ---
 # qou-26f2
 title: 266 witness assertions compare an expression to itself and pass by construction
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-24T23:58:15Z
 updated_at: 2026-08-24T23:58:15Z
@@ -90,3 +90,56 @@ different expressions that happen to evaluate to the same thing by
 construction — `expected=len(xs)` beside `computed=len(list(xs))` — is not
 counted and is just as vacuous. Re-run the census rather than quoting this
 number after the corpus moves.
+
+
+---
+
+## Drain started 2026-08-25 — triaged by IMPACT, not by count
+
+Draining 266 sites in file order would spend most of the effort on probe
+scripts nothing cites. Cross-referenced the 195 files against every content
+block's `computation.script` instead:
+
+    195 files carry tautologies
+     14 of them back a content block at all
+     10 of those back a block claiming `status: "verified"`
+
+**Those 10 are the drain.** Everywhere else the tautology is a defect in a
+probe; here it is a defect in a *claim*, because `verified` on the block rests
+on `allPassed: true` from an assertion that cannot fail.
+
+| taut | block | producer |
+|---|---|---|
+| 4 | `conj:schwinger-measure-computational-time` | `probes/r2core_schwinger_measure_explore_probe.py` |
+| 3 | `thm:topological-mass` | `mass-from-q-symbolic.py` |
+| 2 | `prop:confinement-nf-partial-proof` | `shift_from_nf_basis.py` |
+| 1 | `conj:staircase-ew-residual` | `staircase_ew_residual_conjecture.py` |
+| 1 | `prop:t-beta-markov-frobenius-collapse` | `qbeta/qbeta_markov_trace_norm_probe.py` |
+| 1 | `rem:knot-operator-basis-table` | `photon_operator_table.py` |
+| 1 | `rem:per-observable-100x-status-dashboard` | `per_observable_100x_status.py` |
+| 1 | `conj:flavor-split-habiro-derivation` | `mn_flavor_split_h4_plancherel.py` |
+| 1 | `rem:hecke-operations` | `basis_knot_tables.py` |
+| 1 | `prop:bar-involution-invariance` | `audits/brundan_kleshchev_audit.py` |
+
+Progress is checked off below as each lands. The remaining ~250 sites stay open
+and are *not* urgent by the same argument: no block's status depends on them.
+
+- [ ] `conj:schwinger-measure-computational-time` (4)
+- [ ] `thm:topological-mass` (3)
+- [ ] `prop:confinement-nf-partial-proof` (2)
+- [ ] `conj:staircase-ew-residual`
+- [ ] `prop:t-beta-markov-frobenius-collapse`
+- [ ] `rem:knot-operator-basis-table`
+- [ ] `rem:per-observable-100x-status-dashboard`
+- [ ] `conj:flavor-split-habiro-derivation`
+- [ ] `rem:hecke-operations`
+- [ ] `prop:bar-involution-invariance`
+- [ ] the ~250 with no block dependency — bulk, low priority
+
+## Checker landed
+
+`assertions_are_falsifiable` is live in folio-assistant
+(`content/pipeline/qa-checkers-python.ts`, registered `critical` in the
+criteria registry and the script sweep). 202 hits corpus-wide, 98% precision /
+75% recall against the AST census; it under-reports by design. So this bean's
+backlog is now machine-visible and regressions are caught at the gate.
