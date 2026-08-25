@@ -154,7 +154,7 @@ def _load_canonical_t1() -> dict:
     global _T1_CACHE
     if _T1_CACHE is not None:
         return _T1_CACHE
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
     d = json.loads(path.read_text())

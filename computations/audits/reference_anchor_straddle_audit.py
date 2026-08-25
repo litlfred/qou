@@ -70,6 +70,57 @@ _ANCHOR_SOURCES = {
 _AUDIT_TOOLING = re.compile(r"(_audit|_guard|_validator|audits/)")
 
 
+
+def _names_actually_loaded(src: str) -> set:
+    """Witness names that FLOW INTO A LOAD, not ones merely mentioned.
+
+    The regex that finds `"*.witness.json"` cannot tell a load from a comment or
+    a provenance string. Measured on the 11 candidates: one
+    (`markov_trace_axiomatic_multi_atom`) names the reference five times -- in
+    comments and in a `"canonical_witness":` dict value -- and never loads it. A
+    detector that calls that a straddle is reporting on prose.
+
+    A line-local check is not enough either: `for legacy_name in ["x.json"]:`
+    followed by `HERE / legacy_name` is a real load whose string is on a
+    different line from the call. So this walks the AST and counts a name as
+    loaded when it is a call ARGUMENT, or is bound to a variable that is used
+    anywhere outside a plain dict value. Both known-real cases
+    (`binding_K_direct`, `rho_k_h3a_residual_decomposition`) bind first and load
+    later; the selftest pins all three.
+    """
+    import ast as _ast
+    try:
+        tree = _ast.parse(src)
+    except SyntaxError:
+        return set()
+    lit = lambda n: (isinstance(n, _ast.Constant) and isinstance(n.value, str)
+                     and n.value.endswith(".witness.json"))
+    loaded, bound = set(), {}
+    for node in _ast.walk(tree):
+        if isinstance(node, _ast.Call):
+            for a in list(node.args) + [k.value for k in node.keywords]:
+                if lit(a):
+                    loaded.add(a.value)
+                # a list/tuple of names iterated then joined to a path
+                if isinstance(a, (_ast.List, _ast.Tuple)):
+                    loaded |= {e.value for e in a.elts if lit(e)}
+        elif isinstance(node, _ast.Assign) and lit(node.value):
+            for t in node.targets:
+                if isinstance(t, _ast.Name):
+                    bound[t.id] = node.value.value
+        elif isinstance(node, (_ast.For,)) and isinstance(node.iter, (_ast.List, _ast.Tuple)):
+            names = {e.value for e in node.iter.elts if lit(e)}
+            if names and isinstance(node.target, _ast.Name):
+                loaded |= names          # iterated -> used in the body
+    # a bound constant counts as loaded if its name is referenced anywhere else
+    for var, val in bound.items():
+        uses = sum(1 for n in _ast.walk(tree)
+                   if isinstance(n, _ast.Name) and n.id == var)
+        if uses > 1:
+            loaded.add(val)
+    return loaded
+
+
 def _witness_anchor(name: str) -> tuple[str | None, Path | None]:
     """The q0Anchor a referenced witness declares, and where it lives."""
     hits = list(ROOT.rglob(name))
@@ -107,8 +158,9 @@ def scan():
             continue
         if _AUDIT_TOOLING.search(str(py)):
             continue                         # reads witnesses as data, not as a reference
+        _loaded = _names_actually_loaded(src)
         refs = sorted(r for r in set(_REF_CALL.findall(src))
-                      if r not in _ANCHOR_SOURCES)
+                      if r not in _ANCHOR_SOURCES and r in _loaded)
         if not refs:
             continue
         # A producer naming BOTH pins of one reference is comparing them on
@@ -169,8 +221,13 @@ def main(argv) -> int:
         # in bean qou-cq2n failed.
         ok = True
         names = {p.stem for p, *_ in straddles}
+        # markov_trace_axiomatic_multi_atom NAMES the reference five times and
+        # never loads it -- it must not be reported. binding_K_direct and
+        # rho_k_h3a_residual_decomposition bind the name first and load later --
+        # a line-local check misses both, so they pin the other direction.
         for stem, want_absent in (("tr_m_q_hecke_seminormal", True),
-                                  ("markov_peel_atomic_witness", True)):
+                                  ("markov_peel_atomic_witness", True),
+                                  ("markov_trace_axiomatic_multi_atom", True)):
             good = (stem not in names) == want_absent
             ok &= good
             print(f"  selftest {stem} not-a-straddle: {'OK' if good else 'FAIL'}")
