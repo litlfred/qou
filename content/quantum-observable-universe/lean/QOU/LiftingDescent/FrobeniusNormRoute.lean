@@ -33,11 +33,37 @@ than as prose.
 **What is proved and what is assumed.**  The transfer is proved outright and
 needs nothing about number fields.  The *archimedean estimate* — that the norm
 of the QOU Frobenius is bounded away from `±1` — is an explicit hypothesis and
-is **not** established here; it is the open work, and it is genuinely open:
+is **not** established here.
+
+🛑 **MEASURED 2026-08-25, later the same day: that hypothesis is FALSE at
+`p = 3`.**  This paragraph originally called the estimate "genuinely open" and
+pointed at the orbit as the missing ingredient.  The orbit was then computed
+exactly, in `habiro_frobenius_conjugate_orbit_probe.py`, and the norms are
+
+    atom        p = 2                 p = 3
+    proton      N = 64    (= 8²)      N = 1     ← UNIT
+    neutron     N = 4     (= 2²)      N = 1     ← UNIT
+    deuteron    N = 36864 (= 192²)    N = 171
+
+A unit of `O` has norm `±1`, so `Frob_3` **is** a unit for both nucleons and
+`1 < |N(frob p)|` fails there.  Three independent checks: orbit product versus
+`Res(Φ_2p, f)` with no shared code path; the `p = 2` representative collapsing
+to the collapse constant with `N = C²`, forced by degree 2; and
+`habiro_frobenius_norm_probe.py` flipping its own verdict from "Route A
+SUPPORTED" to "Route A BLOCKED" once its input was corrected from the
+`_deprecated/` coefficients to the canonical ones.
+
+**Scope — (a), not (b).**  This is a *counterexample to the `∀ p` form*, not a
+structural exclusion of the norm route.  One prime is not a positive density,
+so the **almost-every-prime form is untouched and is not refuted**.  What dies
+is the no-exception-set version — which is the form the corpus's Lean carries.
+Whether `p = 3` is isolated is undecided and needs canonical Habiro
+coefficients past index 14 (bean `qou-lrnd`).
+
+The original observation about the *trace* witness stands and is unrelated:
 `habiro-frobenius-probe.witness.json` records `abs_frob` at **one** embedding
-per prime, frequently `< 1` (proton at `p = 11`: `0.046`), whereas the bound
-required is on the product over the **whole** embedding orbit.  A single small
-conjugate is no obstacle; a missing orbit is.
+per prime, frequently `< 1` (proton at `p = 11`: `0.046`), which is not an
+orbit.
 
 Ref: [yekutieli2010] — obstruction theory
 -/
@@ -74,8 +100,13 @@ theorem not_isUnit_of_algebraNorm {S : Type*} [CommRing S] [Algebra ℤ S]
     fixed constant `C` could only ever give non-unitness at the primes dividing
     `C` — finitely many, "the complement of what perpetual means" (`qou-lrnd`).
     A norm bound holding at every prime gives the obstruction at every prime.
-    The cost is that the hypothesis is now an archimedean estimate over the
-    full embedding orbit, which is not supplied here. -/
+
+    🛑 **The hypothesis has NO valid instantiation at the QOU Frobenius**
+    (measured 2026-08-25; see the file header).  `N(Frob_3) = 1` for both
+    nucleons, so `∀ p, 1 < |N (frob p)|` is false and this theorem, while true,
+    cannot be applied to that family as stated.  It is kept because the
+    implication is correct and is the form a caller with a genuine norm bound
+    wants — but do not read it as a route the QOU Frobenius takes. -/
 theorem frobenius_not_unit_of_norm_bound {M : Type*} [Monoid M]
     (N : M →* ℤ) (frob : Nat.Primes → M)
     (h : ∀ p : Nat.Primes, 1 < (N (frob p)).natAbs) :

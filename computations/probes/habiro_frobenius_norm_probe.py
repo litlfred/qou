@@ -262,7 +262,18 @@ def main() -> int:
             "route_a_supported": not any_unit_found,
         },
     }
-    WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    # P30: this wrote the payload with a raw `write_text(json.dumps(...))`, so
+    # the emitted witness carried NO engine / scriptFile / commitSha / scriptHash.
+    # That is why the previously committed copy could not be traced to an input:
+    # it recorded neither its coefficient source nor its own script hash, and it
+    # reproduces from neither dataset on `main`. `wrap_legacy` preserves every
+    # original top-level key verbatim and adds the provenance block.
+    sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
+    from qou_substrate.witness import WitnessBuilder
+    WitnessBuilder.wrap_legacy(
+        "habiro-frobenius-norm-probe", out, script_path=Path(__file__),
+        output_dir=HERE,
+    ).save()
     print(f"\nWrote: {WITNESS_OUT.name}")
     return 0
 
