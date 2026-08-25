@@ -680,7 +680,10 @@ def _print_provenance() -> None:
         ("B_sym", "DERIVED", "exact log-ratio α·ln(tr_free/tr_atom)"),
         ("B_qCLT_fac", "DERIVED", "colour-weighted q-CLT (A→∞ approximation)"),
         ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
-        ("E_C", "DERIVED", "standard uniform-sphere Coulomb, r₀=1.2 fm"),
+        ("E_C", "DERIVED*", "uniform-sphere Coulomb at the CAL-3 length "
+         "R = λ̄_π·A^(1/3), λ̄_π = ℏc/m_π = 1.41382 fm (NOT the empirical "
+         "r₀ = 1.2 fm); α_EM is DERIVED, and *conditional on an open "
+         "Witten-κ sorry — see the legend"),
         ("B_lin / B_tetra / m_can⁰", "EXPLORATORY", "comparison only"),
     ):
         print(f"| `{col}` | `{tag}` | {note} |")
@@ -783,7 +786,7 @@ def _print_legend() -> None:
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
 | `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon — DEPRECATED 2026-08-08 postdiction near-match, NOT derived** (no basis in the derivation chain; the surprisal form was chosen because it lands near 8 and `W_free` is unnormalised so `ln(1/W)` is not a probability — red-team `docs/audits/2026-08-22-avol-binding-redteam.md`) (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
-| `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (standard uniform-sphere; r₀=1.2 fm, α_EM·ℏc=1.43996 MeV·fm — not fit). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
+| `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (uniform sphere). **Both inputs corrected here 2026-08-25 — the legend had described a superseded configuration.** The length is the **CAL-3** radius `R = λ̄_π·A^(1/3)` with `λ̄_π = ℏc/m_π = 1.41382 fm`; `coulomb_energy.R0_FM = LAMBDA_BAR_PI_FM`, and `R0_FM_EMPIRICAL = 1.2` is retained *for comparison only, not as the default*. And `α_EM·ℏc = 1.4399652199 MeV·fm` is no longer the CODATA literal `1.43996` — it is **derived** via `meson_em_sinh_closed_form._alpha_em_inv_derived(q₀)`. So "not fit" understates it in one direction and overstates it in another: it is derived rather than fitted, but that derivation is **conditional on an open Witten-κ Gram-determinant `sorry`**, so `E_C` is tagged `DERIVED*` rather than `DERIVED`. Two weak steps remain named in the module itself: `A^(1/3)` is a saturation assumption (solving `R = λ̄_π·A^x` gives x = 0.97/0.43/0.53/0.31 at A = 2,3,3,4, not ⅓), and coefficient-exactly-1 is a selection among four mass scales, measured at 0.985 ± 0.069 (bean `qou-usft`). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
@@ -814,9 +817,19 @@ is what q₀ and the mass scale are actually pinned to here.
 
 This dashboard's q₀ is the **experimental (proton) pin**, m_p/m_e,
 q₀ = 1.1099785827513808… — per the 2026-08-07 owner directive that all compute
-defaults to it, and now declared explicitly as `physical_proton` in
-`q0_anchor_manifest.json` rather than relying on the "not listed ⇒ proton"
-default.
+defaults to it.
+
+CORRECTED 2026-08-25 (PR #5765): this sentence previously claimed the stem was
+"now declared explicitly as `physical_proton` in `q0_anchor_manifest.json` rather
+than relying on the 'not listed ⇒ proton' default". **That is false, and it was
+load-bearing.** Measured: `mass_binding_dashboard` does not appear in that manifest
+at all — nor do `canonical_mass`, `borromean_binding_recompute` or `coulomb_energy`.
+(`tr_m_atom_via_transfer` IS listed, under `physical_proton`.) So the resolution is
+correct but is obtained **by exactly the default the sentence denied relying on**.
+That matters because the explicit declaration is what would protect these numbers if
+anyone drove `ideal_muon` differently — a protection the dashboard claimed and did
+not have. Either add the four stems to the manifest or say plainly that they resolve
+by default; do not claim the former while doing the latter.
 
 CORRECTED 2026-08-08: this paragraph previously claimed the canonical 3-CAL
 (muon-anchored) value and that the proton re-pin was "not used here". The code
