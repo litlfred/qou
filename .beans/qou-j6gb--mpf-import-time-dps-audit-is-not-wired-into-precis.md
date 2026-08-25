@@ -894,3 +894,85 @@ container without scipy/sympy/clarabel, would also record a degraded environment
 block as corpus provenance (measured: those three are DROPPED and mpmath is
 downgraded 1.3.0 -> 1.4.1). I did not attribute each count individually; only
 established that the bulk cannot be this branch's.
+
+
+## Sibling review (#5772, #5774, #5775) — three corrections and one new finding
+
+### NEW: main's raw-float64 audit witness was stale in the UNDERSTATING direction
+
+Found while answering a sibling's warning that this branch might commit a
+regenerated audit witness carrying a degraded environment block. It does not,
+and the reason turned out to be more interesting than the warning.
+
+`computations/witness-raw-float64-audit.witness.json` on `origin/main` records
+
+    dirty_witnesses: 1288    total_fields: 258324
+
+while the live audit on that same tree reports **1293 / 258420, NEW 5**. The
+difference is exactly the five files and 96 fields drained here (1293-5=1288,
+258420-96=258324). So the committed witness was already recording the DRAINED
+state while the tree was undrained — last written by PR #5745, whereas the five
+dirty witnesses date from 2026-08-09.
+
+**Consequence: anyone reading that witness instead of running the audit would
+have concluded the ratchet was clean.** A stale witness that overstates a
+problem wastes a pass; one that understates it hides a live gate failure, and
+this is the second kind. It is also why the file does not appear in this
+branch's diff — the drain made reality match what the witness already claimed.
+
+That witness has **no `environment` block at all** (keys: schema, name,
+description, data), so it is structurally immune to the container-package
+hazard the siblings flagged. The hazard is real for the other three
+(`q0-anchor-consistency`, `witness-provenance`, `q0-value-drift`), which this
+branch hit and reverted.
+
+### CONFIRMED: the float64 coercion is deliberate, which is why ADDITIVE was right
+
+A sibling reported the coercion as intentional. Verified on main at
+`hecke_characters.py:378`:
+
+    # Normalize q_value to float ONCE here ... so callers passing mpmath / str
+    # / numeric types don't break NumPy dtype handling further down
+    # (per Copilot review on PR #1861).
+
+Precisely: that rationale is attached to `q_f` in the fallback path at 379, not
+to line 168 inside `build_seminormal_matrices` itself; both coerce, only 378 is
+documented. Either way, converting the builder IN PLACE would break the numpy
+dtype handling this comment protects, so a separate function returning
+`mp.matrix` rather than `np.ndarray` sidesteps it entirely.
+
+### CORRECTED: "642x slower" is MATMUL, not construction — and my adoption advice was too broad
+
+A sibling cited `qou-d8gq`'s 642x figure as the cost of going mpf. That number
+is for mpf **matrix multiplication** at dim=162. This bean's builder only
+CONSTRUCTS. Measured here, construction vs the float64 builder:
+
+    dim  16   0.7x      dim  35  21.5x
+    dim 162   9.8x      dim 168  32.4x
+
+So ~10-30x for construction, not 642x. The two costs are separate and both are
+real: a consumer that constructs and then multiplies large matrices still
+inherits the matmul cost, which is the trade `qou-d8gq` measured.
+
+**My "the other 63 can adopt it incrementally" was therefore too broad.** It is
+right for small dims — the deuteron use is dim <= 16, where the cost is nil —
+and needs the matmul trade weighed for anything at dim ~162+. Restated in the
+PR rather than left standing.
+
+### Blast radius: 64 vs 102 is a definitional difference, not a disagreement
+
+Measured three ways under `computations/`, excluding `_deprecated`:
+
+    64   files naming build_seminormal_matrices directly   <- the figure used here
+    133  files importing hecke_characters at all
+    55   of the 64 direct callers that emit a witness
+
+A sibling reported 102 consumers / 65 emitting. Neither is wrong; they count
+different sets. Stating which definition is in use rather than adopting or
+dismissing the other number.
+
+### Not counted as drains
+
+Per #5775, `gram-norm-binding-probe.witness.json` is ratchet-NEUTRAL (248
+against a 248 baseline, REGRESSED 0), not a drain. It was never in this bean's
+five and is not counted here.
