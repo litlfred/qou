@@ -1,28 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:52:48.906151+00:00",
-  "commitSha": "0ec585b9a39cc9cfd3d7be897a4d03d6610e6f7b",
+  "computedAt": "2026-08-25T18:53:21.191223+00:00",
+  "commitSha": "075df2f2fdbb99206396b65d24ac68587a331250",
   "assertions": [
     {
-      "name": "rule_holds_all_partitions",
+      "name": "threshold_is_on_content_lattice",
       "computed": 1,
       "expected": 1,
       "passed": true
     },
     {
-      "name": "no_threshold_degeneracy",
+      "name": "hnd_fails_on_three_row_stratum",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "no_deep_cells_on_surviving_stratum",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "surviving_stratum_sign_is_constant",
       "computed": 1,
       "expected": 1,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "ylambda-sign-content-threshold",
   "scriptFile": "ylambda_sign_content_threshold_probe.py",
-  "scriptHash": "1e445fd71d2c",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "c500e3f9b488",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,134 +48,184 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
-  "description": "Verifies that sign(y_\u03bb) equals sign(Z)\u00b7(\u22121)^P(\u03bb), where P(\u03bb) counts cells of \u03bb whose content lies below c* = \u2212log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1\u2212Q^h is negative (fixed sign (\u22121)^|\u03bb|), and a numerator factor 1\u2212Q^r\u00b7Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n\u22654' of weight-factor-audit \u00a7W3 with a combinatorial rule, which is what makes the \u03bc\u2083 door budget of PR #4657 computable.",
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/ylambda_sign_content_threshold_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/ylambda_sign_content_threshold_probe.py"
+  },
+  "description": "Records why the sign(y_λ) content-threshold parity is a convention-C phenomenon and cannot be carried into D. Under D the Wenzl level is r = 2, so Q^r = Q² and c* = −log_Q(Q^r) = −2 EXACTLY — an attainable content (row 3, col 1), present in every λ with ℓ(λ) ≥ 3, where the test factor is exactly 1 and the above/below split is undefined. That is `wenzl_sign`'s `hnd` hypothesis failing outright. On the surviving two-row stratum the minimum content is −1 while a below-threshold cell needs ≤ −3, so P(λ) ≡ 0 and the rule is the constant +1. Swept n = 2..12. Supersedes the 2026-08-08 C-frame witness, whose green assertions this replaces.",
   "parameters": {
     "q0": "1.10997858275138080759166909561",
     "Q": "1.23205245416676393126980451354",
-    "QR": "1.7202517512138449354614135061",
-    "c_star": "-2.5995155364001770161807405265"
+    "QR": "1.51795324981834593754711018278",
+    "c_star": "-2.0",
+    "wenzl_level_r": "2 (convention D)",
+    "surviving_rows": "2"
   },
   "data": {
     "by_n": [
       {
         "n": 2,
         "n_partitions": 2,
-        "n_matches": 2,
-        "n_negative_y": 0,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.39624879232698723866",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 2,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 0,
+        "min_threshold_margin": "0.23205245416676393127",
+        "hnd_satisfiable": true
       },
       {
         "n": 3,
         "n_partitions": 3,
-        "n_matches": 3,
-        "n_negative_y": 0,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.13327057432085483472",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 2,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 1,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 4,
         "n_partitions": 5,
-        "n_matches": 5,
-        "n_negative_y": 1,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 3,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 2,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 5,
         "n_partitions": 7,
-        "n_matches": 7,
-        "n_negative_y": 1,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 3,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 4,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 6,
         "n_partitions": 11,
-        "n_matches": 11,
-        "n_negative_y": 3,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 4,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 7,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 7,
         "n_partitions": 15,
-        "n_matches": 15,
-        "n_negative_y": 4,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 4,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 11,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 8,
         "n_partitions": 22,
-        "n_matches": 22,
-        "n_negative_y": 8,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 5,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 17,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 9,
         "n_partitions": 30,
-        "n_matches": 30,
-        "n_negative_y": 10,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 5,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 25,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 10,
         "n_partitions": 42,
-        "n_matches": 42,
-        "n_negative_y": 18,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 6,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 36,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 11,
         "n_partitions": 56,
-        "n_matches": 56,
-        "n_negative_y": 22,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 6,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 50,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       },
       {
         "n": 12,
         "n_partitions": 77,
-        "n_matches": 77,
-        "n_negative_y": 36,
-        "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239328307",
-        "all_match": true,
-        "mismatches": []
+        "n_surviving_two_row": 7,
+        "deep_cells_on_surviving_stratum": 0,
+        "surviving_signs": [
+          1
+        ],
+        "n_annihilated_three_row_plus": 70,
+        "min_threshold_margin": "0.0",
+        "hnd_satisfiable": false
       }
-    ]
+    ],
+    "convention_c_record": {
+      "convention": "C",
+      "computed_at": "2026-08-08T21:52:48Z",
+      "wenzl_level_r": "2.5995 (approx)",
+      "c_star": "-2.5995 (approx) — strictly between lattice points, so hnd holds",
+      "rule_holds_all_partitions": true,
+      "no_threshold_degeneracy": true,
+      "n_negative_y_by_n_2_to_9": [
+        0,
+        0,
+        1,
+        1,
+        3,
+        4,
+        8,
+        10
+      ],
+      "note": "correct for convention C. Superseded as a live rule by this probe under D; see the module docstring for the two reasons."
+    }
   },
   "caveats": [
-    "The threshold c* = \u2212log_Q(Q^r) is q-dependent; the concrete cut 'content \u2264 \u22123' is specific to q\u2080. The PARITY RULE itself is q-independent for q > 1 \u2014 only the location of the cut moves.",
-    "sign(Z) is inferred per n from one block and then required to be consistent across all blocks; the probe verifies consistency, it does not independently derive sign(Z)."
+    "RETIRED AS A LIVE RULE. This witness no longer asserts sign(y_λ) = sign(Z)·(−1)^P. That rule is correct under convention C and is preserved in `convention_c_record`; under D it is undefined on ℓ(λ) ≥ 3 (threshold exactly on the content lattice) and vacuous on ℓ(λ) ≤ 2 (no cell can reach it). Do not read the C numbers as live.",
+    "Scope-(a), about this rule under this convention. `QOU.MassTheory.YLambdaSignThreshold.wenzl_sign` is generic in Q and QR, remains sorry-free and correct, and is NOT refuted here — under D its hypothesis `hnd` is simply unsatisfiable on the ℓ(λ) ≥ 3 stratum. Conditional-proved is not premise-established. Nor is a two-row sign rule shown impossible; this threshold parity merely has no content there, the sign being constant."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }
