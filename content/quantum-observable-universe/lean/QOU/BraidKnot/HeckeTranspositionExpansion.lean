@@ -98,4 +98,83 @@ theorem addJM_eq_transp_sum (H : HeckeGenerators R A q) (d : R) (k : ℕ) :
             rw [Finset.mul_sum, Finset.sum_mul]
         _ = _ := by rw [← smul_add]
 
+/-! ## The pair-swap law — `σ_j` fixes `T_(j,i) + T_(j+1,i)`
+
+This is the mechanism behind Mathas 3.24(i)'s hard half.  For `i > j+1` the sum `Σ_{l<i} T_(l,i)`
+has **exactly two** terms `σ_j` can disturb — `l = j` and `l = j+1` — and `σ_j` preserves *their
+sum* while fixing every other term individually.
+
+Measured first ([`jm_partial_sum_centrality_probe.py`] and a companion sweep at `n = 6`, `q ∈ {2,3}`,
+exact rationals): the pair commutes in every case, while each term **alone** does not.  So this is a
+genuine pair phenomenon, not term-by-term commutation. -/
+
+/-- **Pair-swap law**: for `i > j+1`, `σ_j` commutes with `T_(j,i) + T_(j+1,i)`.
+
+Base case `i = j+2`, with `u = σ_j`, `v = σ_{j+1}`: the claim is `u(vuv + v) = (vuv + v)u`.  One
+braid move turns `uvu` into `vuv` on each side, leaving `vuv² + uv = v²uv + vu`, and the **Hecke
+relation** `v² = hv + 1` expands both to `h·vuv + uv + vu`.  Braid alone is not enough — the Hecke
+relation is what makes the leftover terms cancel.
+
+Step `i → i+1`: both transpositions gain the same outer conjugation by `σ_i`, and `σ_j` commutes
+with `σ_i` because `i > j+1`. -/
+theorem sigma_comm_transp_pair (H : HeckeGenerators R A q) (j : ℕ) :
+    ∀ i : ℕ, j + 1 < i →
+      H.σ j * (transp H j i + transp H (j + 1) i)
+        = (transp H j i + transp H (j + 1) i) * H.σ j := by
+  intro i
+  induction i with
+  | zero => intro h; omega
+  | succ m ih =>
+      intro hm
+      rcases Nat.lt_or_ge (j + 1) m with hlt | hge
+      · -- inductive step: m > j+1, both transpositions conjugate by σ_m
+        have hfar : H.σ j * H.σ m = H.σ m * H.σ j := H.far j m (by omega)
+        have hjm : j ≠ m := by omega
+        have hj1m : j + 1 ≠ m := by omega
+        have hih := ih hlt
+        rw [transp_succ H j m hjm, transp_succ H (j + 1) m hj1m]
+        calc H.σ j * (H.σ m * transp H j m * H.σ m + H.σ m * transp H (j + 1) m * H.σ m)
+            = (H.σ j * H.σ m) * (transp H j m + transp H (j + 1) m) * H.σ m := by
+              noncomm_ring
+          _ = (H.σ m * H.σ j) * (transp H j m + transp H (j + 1) m) * H.σ m := by rw [hfar]
+          _ = H.σ m * (H.σ j * (transp H j m + transp H (j + 1) m)) * H.σ m := by noncomm_ring
+          _ = H.σ m * ((transp H j m + transp H (j + 1) m) * H.σ j) * H.σ m := by rw [hih]
+          _ = H.σ m * (transp H j m + transp H (j + 1) m) * (H.σ j * H.σ m) := by noncomm_ring
+          _ = H.σ m * (transp H j m + transp H (j + 1) m) * (H.σ m * H.σ j) := by rw [hfar]
+          _ = _ := by noncomm_ring
+      · -- base case: m = j+1, so the index is i = j+2
+        have hmeq : m = j + 1 := by omega
+        subst hmeq
+        have hb : H.σ j * H.σ (j + 1) * H.σ j
+            = H.σ (j + 1) * H.σ j * H.σ (j + 1) := H.braid j
+        have hh : H.σ (j + 1) * H.σ (j + 1) = (q - q⁻¹) • H.σ (j + 1) + 1 := hecke_smul H (j + 1)
+        have hj : j ≠ j + 1 := by omega
+        rw [transp_succ H j (j + 1) hj, transp_self, transp_self]
+        calc H.σ j * (H.σ (j + 1) * H.σ j * H.σ (j + 1) + H.σ (j + 1))
+            = (H.σ j * H.σ (j + 1) * H.σ j) * H.σ (j + 1)
+                + H.σ j * H.σ (j + 1) := by noncomm_ring
+          _ = (H.σ (j + 1) * H.σ j * H.σ (j + 1)) * H.σ (j + 1)
+                + H.σ j * H.σ (j + 1) := by rw [hb]
+          _ = H.σ (j + 1) * H.σ j * (H.σ (j + 1) * H.σ (j + 1))
+                + H.σ j * H.σ (j + 1) := by noncomm_ring
+          _ = H.σ (j + 1) * H.σ j * ((q - q⁻¹) • H.σ (j + 1) + 1)
+                + H.σ j * H.σ (j + 1) := by rw [hh]
+          _ = (q - q⁻¹) • (H.σ (j + 1) * H.σ j * H.σ (j + 1))
+                + H.σ (j + 1) * H.σ j + H.σ j * H.σ (j + 1) := by
+              simp only [mul_add, mul_one, mul_smul_comm]
+          _ = (q - q⁻¹) • (H.σ j * H.σ (j + 1) * H.σ j)
+                + H.σ (j + 1) * H.σ j + H.σ j * H.σ (j + 1) := by rw [hb]
+          _ = ((q - q⁻¹) • H.σ (j + 1) + 1) * H.σ j * H.σ (j + 1)
+                + H.σ (j + 1) * H.σ j := by
+              simp only [add_mul, one_mul, smul_mul_assoc]
+              rw [← hb]
+              noncomm_ring
+          _ = (H.σ (j + 1) * H.σ (j + 1)) * H.σ j * H.σ (j + 1)
+                + H.σ (j + 1) * H.σ j := by rw [← hh]
+          _ = H.σ (j + 1) * (H.σ (j + 1) * H.σ j * H.σ (j + 1))
+                + H.σ (j + 1) * H.σ j := by noncomm_ring
+          _ = H.σ (j + 1) * (H.σ j * H.σ (j + 1) * H.σ j)
+                + H.σ (j + 1) * H.σ j := by rw [← hb]
+          _ = _ := by noncomm_ring
+
 end QOU.BraidKnot.Hecke
