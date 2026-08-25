@@ -26,6 +26,9 @@ import json
 
 import snappy
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 def main():
     v41 = float(snappy.Manifold("4_1").volume())          # min hyperbolic knot vol
@@ -67,7 +70,7 @@ def main():
         ),
         "scope": "(b) structural: proved minimum-volume invariant, density O(1).",
     }
-    with open("computations/neutrino-mass-volume-exclusion.witness.json", "w") as f:
+    with open(_HERE_W / "neutrino-mass-volume-exclusion.witness.json", "w") as f:
         json.dump(witness, f, indent=2)
     print("wrote computations/neutrino-mass-volume-exclusion.witness.json")
 

@@ -46,6 +46,9 @@ import sys
 import sympy as sp
 from sympy.utilities.iterables import partitions
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 q = sp.symbols("q")
 
 
@@ -172,7 +175,7 @@ witness = {
     "zeta_fibre_values": fibres,
     "scope": "scope-(a): gate exercised on the corpus binding Habiro tails; classical-ring membership automatic for Z[q,1/q]; twisted test queued (qou-9p9y)",
 }
-with open("computations/probes/habiro_tail_membership_gate.witness.json", "w") as f:
+with open(_HERE_W / "habiro_tail_membership_gate.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

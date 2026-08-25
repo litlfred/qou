@@ -54,7 +54,11 @@ def is_bare_witness_str(node):
 
 class Scan(ast.NodeVisitor):
     def __init__(self):
-        self.bare = {}          # name -> lineno, for `x = Path("bare.witness.json")`
+        # name -> (lineno, target, node). The NODE matters: a target can be an
+        # implicit concatenation spanning two source lines, so a line-based
+        # match misses it. Measured: 7 of 16 sites, in two apparent classes
+        # that were really one -- the literal is not on the line the call is on.
+        self.bare = {}
         self.hits = []
 
     def visit_Assign(self, node):
@@ -67,9 +71,10 @@ class Scan(ast.NodeVisitor):
         elif is_bare_witness_str(v):
             tgt = v.value
         if tgt:
+            lit_node = v.args[0] if isinstance(v, ast.Call) else v
             for t in node.targets:
                 if isinstance(t, ast.Name):
-                    self.bare[t.id] = (node.lineno, tgt)
+                    self.bare[t.id] = (node.lineno, tgt, lit_node)
         self.generic_visit(node)
 
     def visit_Call(self, node):
@@ -77,8 +82,8 @@ class Scan(ast.NodeVisitor):
         # open(X, "w") / X.open("w") / X.write_text(...) / json.dump(_, open(X,"w"))
         def flag(name, lineno, why):
             if name in self.bare:
-                ln, tgt = self.bare[name]
-                self.hits.append((lineno, tgt, why))
+                ln, tgt, lit_node = self.bare[name]
+                self.hits.append((lineno, tgt, why, lit_node))
         if isinstance(f, ast.Name) and f.id == "open" and node.args:
             mode = node.args[1].value if len(node.args) > 1 and isinstance(node.args[1], ast.Constant) else \
                    next((k.value.value for k in node.keywords if k.arg == "mode"
@@ -87,7 +92,8 @@ class Scan(ast.NodeVisitor):
                 if isinstance(node.args[0], ast.Name):
                     flag(node.args[0].id, node.lineno, f"open(..., {mode!r})")
                 elif is_bare_witness_str(node.args[0]):
-                    self.hits.append((node.lineno, node.args[0].value, f"open(literal, {mode!r})"))
+                    self.hits.append((node.lineno, node.args[0].value,
+                                      f"open(literal, {mode!r})", node.args[0]))
         if isinstance(f, ast.Attribute):
             base = f.value
             if f.attr in ("write_text", "write_bytes") and isinstance(base, ast.Name):
@@ -103,34 +109,40 @@ def scan(path):
     except SyntaxError: return []
     s = Scan(); s.visit(tree); return s.hits
 
-# --- selftest: the known positive (pre-fix free-neutron-decay) and its fix ---
-POS = 'from pathlib import Path\nout = Path("free-neutron-decay.witness.json")\nwith out.open("w") as f:\n    pass\n'
-NEG = 'from pathlib import Path\nout = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"\nwith out.open("w") as f:\n    pass\n'
-class T:
-    def __init__(self, s): self.s = s
-    def read_text(self, **k): return self.s
-DIRPOS = ('from pathlib import Path\n'
-          'out = Path("computations/x.witness.json")\n'
-          'out.write_text("{}")\n')
-LITPOS = 'import json\njson.dump({}, open("x.witness.json", "w"))\n'
-if not scan(T(POS)): print("SELFTEST FAILED: known positive not detected"); sys.exit(1)
-if not scan(T(DIRPOS)): print("SELFTEST FAILED: dir-prefixed relative not detected"); sys.exit(1)
-if not scan(T(LITPOS)): print("SELFTEST FAILED: open(literal,'w') not detected"); sys.exit(1)
-if scan(T(NEG)):     print("SELFTEST FAILED: fixed form flagged"); sys.exit(1)
-print("selftest: known positive detected, fixed form clean\n")
+def main() -> int:
+    # --- selftest: the known positive (pre-fix free-neutron-decay) and its fix ---
+    POS = 'from pathlib import Path\nout = Path("free-neutron-decay.witness.json")\nwith out.open("w") as f:\n    pass\n'
+    NEG = 'from pathlib import Path\nout = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"\nwith out.open("w") as f:\n    pass\n'
+    class T:
+        def __init__(self, s): self.s = s
+        def read_text(self, **k): return self.s
+    DIRPOS = ('from pathlib import Path\n'
+              'out = Path("computations/x.witness.json")\n'
+              'out.write_text("{}")\n')
+    LITPOS = 'import json\njson.dump({}, open("x.witness.json", "w"))\n'
+    if not scan(T(POS)): print("SELFTEST FAILED: known positive not detected"); sys.exit(1)
+    if not scan(T(DIRPOS)): print("SELFTEST FAILED: dir-prefixed relative not detected"); sys.exit(1)
+    if not scan(T(LITPOS)): print("SELFTEST FAILED: open(literal,'w') not detected"); sys.exit(1)
+    if scan(T(NEG)):     print("SELFTEST FAILED: fixed form flagged"); sys.exit(1)
+    print("selftest: known positive detected, fixed form clean\n")
 
-n = 0
-files = [q for R in ROOTS if R.exists() for q in R.rglob("*.py")]
-if not files:
-    print("REFUSING to report: scanned 0 files. Roots:", [str(r) for r in ROOTS])
-    sys.exit(2)
-for p in sorted(files):
-    if "_deprecated" in p.parts: continue
-    h = scan(p)
-    if h:
-        n += 1
-        print(f"  {p}")
-        for ln, tgt, why in h:
-            print(f"      line {ln}: {why} -> {tgt}")
-print(f"\nscanned {len(files)} .py files under {len([r for r in ROOTS if r.exists()])} roots")
-print(f"producers writing a CWD-relative witness: {n}")
+    n = 0
+    files = [q for R in ROOTS if R.exists() for q in R.rglob("*.py")]
+    if not files:
+        print("REFUSING to report: scanned 0 files. Roots:", [str(r) for r in ROOTS])
+        return 2
+    for p in sorted(files):
+        if "_deprecated" in p.parts: continue
+        h = scan(p)
+        if h:
+            n += 1
+            print(f"  {p}")
+            for ln, tgt, why, _node in h:
+                print(f"      line {ln}: {why} -> {tgt}")
+    print(f"\nscanned {len(files)} .py files under {len([r for r in ROOTS if r.exists()])} roots")
+    print(f"producers writing a CWD-relative witness: {n}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

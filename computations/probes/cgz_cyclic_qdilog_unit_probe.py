@@ -56,6 +56,9 @@ m — queued as the next increment on qou-9p9y.
 import json
 import sys
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 checks = {}
 detail = {}
 
@@ -216,7 +219,7 @@ witness = {
         "5_2 symbols is the next increment"
     ),
 }
-with open("computations/probes/cgz_cyclic_qdilog_unit.witness.json", "w") as f:
+with open(_HERE_W / "cgz_cyclic_qdilog_unit.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

@@ -435,6 +435,9 @@ print(f"{npass}/{len(checks)} checks pass")
 
 import subprocess
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 _sha = subprocess.run(
     ["git", "rev-parse", "HEAD"], capture_output=True, text=True
 ).stdout.strip()
@@ -469,7 +472,7 @@ witness = {
     ),
 }
 with open(
-    "computations/probes/gswz_epsm_global_symbols.witness.json", "w"
+    _HERE_W / "gswz_epsm_global_symbols.witness.json", "w"
 ) as f:
     json.dump(witness, f, indent=1)
 

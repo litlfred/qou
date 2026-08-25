@@ -26,6 +26,9 @@ import sys
 import time
 from fractions import Fraction
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 N_MAX = 25
 
 
@@ -123,8 +126,7 @@ def main():
         "epic": "qou-x631", "attack": "qou-ogrk (A2), TAIL sub-target",
         "verdict": verdict, "per_n": rows, "runtime_s": f"{time.time() - t0:.3f}",
     }
-    path = ("computations/deltalambda/"
-            "wlambda-covariance-epic-A2-tail-second-instance.witness.json")
+    path = (_HERE_W / "wlambda-covariance-epic-A2-tail-second-instance.witness.json")
     with open(path, "w") as fh:
         json.dump(out, fh, indent=1, default=str)
     print(f"\nall_ok={all_ok} onset_ok={onset_ok}  witness -> {path} "
