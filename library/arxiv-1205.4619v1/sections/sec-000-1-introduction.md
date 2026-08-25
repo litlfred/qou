@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
 ---
 Division algebras, speciﬁcally quaternions and octonions , Jordan and related algebras, are described [1]
 in a conceited manner in uniﬁed theories of basic interactio ns. Quaternions were discovered by Hamilton

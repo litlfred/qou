@@ -7,6 +7,7 @@ section_number: null
 pages: 11-13
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
 ---
 Having constructed one generation of electrocolor states, we now proceed to apply ψ to the ladder operators
 eqns. (59)-(61), and subsequently the basis states of the minimal left ideals, in order to generate two

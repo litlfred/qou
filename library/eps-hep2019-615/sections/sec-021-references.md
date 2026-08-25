@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
+doc_brief: "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1"
 ---
 [1] G. M. Dixon, Division Algebras:: Octonions Quaternions Complex Numbers and the Algebraic
 Design of Physics, vol. 290. Springer Science & Business Media, 2013.

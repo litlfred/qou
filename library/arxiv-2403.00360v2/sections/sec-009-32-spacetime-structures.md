@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 11-12
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 with all structures therein. The structures are the causal and metric structures, spinors
 and interacting fields (for details see [39, Chapter 1]). All these spacetime structures

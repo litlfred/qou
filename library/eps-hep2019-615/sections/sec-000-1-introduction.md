@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
+doc_brief: "PoS(EPS-HEP2019)615 — 22 sections: Introduction; Three generations from complex sed; (−e5 + ie4), α2≡ 1"
 ---
 The establishment of the Standard Model (SM) as a description of the structure of particles
 and their interactions has been one of the great achievements in theoretical physics. However,

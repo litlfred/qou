@@ -7,6 +7,7 @@ section_number: 4
 pages: 11-14
 source_pdf: 1205.4617v1.pdf
 source_sha256: dd00cf2cee521bf5
+doc_brief: "Quaternion Octonion Reformulation of Grand Unified Theories — In this paper, Grand Uniﬁed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n"
 ---
 We have already shown earlier [8] that the quaternion and oct onion gauge the-
 ories contain the magnetic monopole. As such, the reformula tion of grand uni-

@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
 ---
 Despite its great practical success in colliders and other experiments, there are several unexplained features
 of the Standard Model of particle physics (SM) which lack a deeper theoretical motivation. These include,

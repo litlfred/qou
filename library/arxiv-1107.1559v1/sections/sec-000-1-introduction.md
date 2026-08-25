@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-9
 source_pdf: 1107.1559v1.pdf
 source_sha256: b9f867ae7120eda6
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU (2) group, we have derived the relations for diﬀerent components of isospin with quark sta tes."
 ---
 According to celebrated Hurwitz theorem [1] there exits fou r - division algebra consisting of
 R (real numbers), C (complex numbers), H (quaternions) and O (octonions). All four algebras are

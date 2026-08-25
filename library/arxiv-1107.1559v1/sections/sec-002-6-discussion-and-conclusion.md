@@ -7,6 +7,7 @@ section_number: 6
 pages: 11-12
 source_pdf: 1107.1559v1.pdf
 source_sha256: b9f867ae7120eda6
+doc_brief: "Quaternion-Octonion SU (3) Flavor Symmetry — Starting with the quaternionic formulation of isospin SU (2) group, we have derived the relations for diﬀerent components of isospin with quark sta tes."
 ---
 In the foregoing analysis, we have described the resemblanc e between real Lie algebra SU (2) and
 the quaternion formalism of isospin SU ((2) group by using the isomorphism between quaternion

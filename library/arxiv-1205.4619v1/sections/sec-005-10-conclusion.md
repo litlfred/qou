@@ -7,6 +7,7 @@ section_number: 10
 pages: 16-17
 source_pdf: 1205.4619v1.pdf
 source_sha256: 8c76e30a52dca571
+doc_brief: "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of"
 ---
 The foregoing analysis provides a fundamental representation of quaternions and the split octonion algebra
 in order to investigate the ﬂavor SU (2) andSU (3) symmetries. Instead of Pauli Spin matrices for SU (2)

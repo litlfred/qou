@@ -7,6 +7,7 @@ section_number: 6
 pages: 18-19
 source_pdf: 2202.06733v1.pdf
 source_sha256: e670632090447f14
+doc_brief: "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are"
 ---
 Sofar,inparticleterms,wehaveonlyconsideredalimitedsegmentoftheStandardModel,andthereismuchstilltodointerms
 of having a complete version expressible in the STA. An interesting feature concerning this is that recently, following Furey’s
