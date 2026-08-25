@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
 title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T16:37:08Z
+updated_at: 2026-08-25T18:17:41Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -462,3 +462,35 @@ false 'never existed' verdicts but never false 'exists' ones.
 So the table DOES have a producer.  What section 3a establishes is that the
 producer is not the published formula -- which is the stronger finding, not a
 weaker one.
+
+
+
+=== STATUS 2026-08-25T18:2xZ — coefficient sub-question CLOSED on main; PARENT GAP STILL OPEN ===
+
+Merged to main as dc72e4494 (PR #5771, rebase-merge; #5758 closed as superseded,
+branch retained per rule 9).  On main now:
+  computations/wedderburn_beta3_provenance_probe.py
+  content/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean
+
+UNCLAIMING deliberately (status -> todo).  I am no longer working this, and a
+bean left at in-progress reads as an ACTIVE CLAIM -- which is what triggered
+this very takeover.  Do not infer from the merge that the bean is done.
+
+WHAT IS CLOSED: only the third-coefficient question.  h_A^2 = [3]_q - 3 exactly
+(Lean, sorry-free); 0.0499 has no construction; the recorded pair violates
+2*b3 + b2 + 6 = 0 by 0.012385, so it is inconsistent for any q.
+
+WHAT IS STILL OPEN -- the bean's actual title.  thm:wedderburn-mass-formula
+remains UNFALSIFIABLE AS WRITTEN: its M_i prose still does not determine a
+unique construction, no reading reproduces D (54 % .. 2653 %), and the
+published table still has no producer that is the published formula.  The
+coefficient result NARROWS this (the correction term carries one q-integer
+DOF, not two); it does not close it.
+
+CHEAPEST NEXT STEP, if anyone picks this up: what the _deprecated/ producer's
+0.0499 actually was.  That is script archaeology on next_partition_levels.py's
+history, not physics -- and it is the only lead that does not require deciding
+the M_i reading first.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; only CAL-1/2/3
+admissible; no fitting (owner, 2026-08-25); sign agreement is one bit.
