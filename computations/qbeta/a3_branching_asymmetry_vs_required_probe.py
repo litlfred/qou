@@ -25,22 +25,42 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
-import math
 import os
+import sys
+from pathlib import Path
 
-Q0 = 1.1099785955573347
-LNQ = math.log(Q0)
-MU3 = 0.4708
-C3 = 0.297
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+from qou_substrate.constants import q_at  # noqa: E402
+
+set_compute_dps()
+
+# Canonical experimental (proton) pin — owner directive 2026-08-07/R2. This
+# probe previously hardcoded the float64 literal 1.1099785955573347, which is
+# the MUON value (proton is ...5827513808), and ran the whole comparison in
+# binary64 via `math`.
+Q0 = q_at()
+LNQ = mp.log(Q0)
+
+# Empirical inputs, carried as exact decimal strings rather than float
+# literals. Their SIGNIFICANCE is unchanged — mu3 is quoted to 4 figures and
+# c3 to 3 — but the arithmetic downstream of them is no longer binary64.
+MU3 = mp.mpf("0.4708")                   # AME residual 3-body moment (#4320)
+C3 = mp.mpf("0.297")                     # single-trace Borromean H₉ deficit (#4364)
 R_STAR = MU3 / C3
-X_REQ = math.sqrt(R_STAR - 1.0)          # r* = 1 + x²  ⇒  x = √(r*−1)
+X_REQ = mp.sqrt(R_STAR - 1)              # r* = 1 + x²  ⇒  x = √(r*−1)
 
 
-def qint(k: int) -> float:
-    return (Q0 ** k - Q0 ** (-k)) / (Q0 - 1.0 / Q0)
+def qint(k: int):
+    return (Q0 ** k - Q0 ** (-k)) / (Q0 - 1 / Q0)
 
 
-def sym_wedderburn_x() -> float:
+def sym_wedderburn_x():
     """Symmetric weight d_q²/[n]! : (3) and (1³) have identical hooks (3,2,1) ⇒ equal ⇒ x=0."""
     d = qint(3) * qint(2) * qint(1)           # same for (3) and (1,1,1)
     y3 = d * d
@@ -48,53 +68,56 @@ def sym_wedderburn_x() -> float:
     return (y3 - y111) / (y3 + y111)
 
 
-def content_x(c: float) -> float:
+def content_x(c):
     """Content weight y_(3)=q^{+c}, y_(1³)=q^{-c} ⇒ x = tanh(c·ln q)."""
-    a, b = Q0 ** c, Q0 ** (-c)
+    a, b = Q0 ** mp.mpf(c), Q0 ** (-mp.mpf(c))
     return (a - b) / (a + b)
 
 
 def main() -> None:
-    rows = []
-    for label, x in [
+    labelled = [
         ("symmetric Wedderburn d_q²/[n]!", sym_wedderburn_x()),
         ("content c=3 (bare H₃)", content_x(3)),
         ("content c=6", content_x(6)),
         ("content c=9 (≈H₉ cabling scale)", content_x(9)),
-    ]:
+    ]
+    rows = []
+    for label, x in labelled:
         rows.append({
-            "weight": label, "x": x, "x2": x * x,
-            "r_star_1_plus_x2": 1.0 + x * x,
-            "abs_err_vs_rstar": abs((1.0 + x * x) - R_STAR),
+            "weight": label, "x": fmt(x), "x2": fmt(x * x),
+            "r_star_1_plus_x2": fmt(1 + x * x),
+            "abs_err_vs_rstar": fmt(abs((1 + x * x) - R_STAR)),
         })
 
-    c_needed = math.atanh(X_REQ) / LNQ         # content that WOULD give x=0.765
-    max_branching_x2 = max(r["x2"] for r in rows)
+    c_needed = mp.atanh(X_REQ) / LNQ           # content that WOULD give x=0.765
+    x2_values = [x * x for _, x in labelled]
+    max_branching_x2 = max(x2_values)
 
     witness = {
         "computation": "a3-branching-asymmetry-vs-required",
         "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
         "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "engine": "python-float (0 free params; structural)",
+        "engine": "mpmath (0 free params; structural)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0, "mu3_MeV": MU3, "c3_single_trace_MeV": C3, "r_star": R_STAR,
+            "q0": fmt(Q0), "q0Anchor": "proton", "mu3_MeV": fmt(MU3),
+            "c3_single_trace_MeV": fmt(C3), "r_star": fmt(R_STAR),
             "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
-            "chi_(3)_borr": 1.0, "chi_(1,1,1)_borr": 1.0,
+            "chi_(3)_borr": 1, "chi_(1,1,1)_borr": 1,
             "note_equal_characters": "both 1-dim characters = 1 on the Borromean braid (A3OffBlockDerivation Part 1)",
         },
         "results": {
-            "x_required": X_REQ, "x2_required": R_STAR - 1.0,
+            "x_required": fmt(X_REQ), "x2_required": fmt(R_STAR - 1),
             "branching_rows": rows,
-            "max_branching_x2": max_branching_x2,
-            "content_c_that_would_be_needed": c_needed,
-            "branching_supplies_required": max_branching_x2 >= (R_STAR - 1.0) - 1e-3,
+            "max_branching_x2": fmt(max_branching_x2),
+            "content_c_that_would_be_needed": fmt(c_needed),
+            "branching_supplies_required": bool(max_branching_x2 >= (R_STAR - 1) - mp.mpf("1e-3")),
         },
         "verdict": (
             f"scope-(a): BARE H₃ (content c=3) gives x²≈0.09, r*≈1.09 — ~6× short in x² of the "
-            f"required x²={R_STAR-1.0:.3f}; symmetric weight gives x=0, r*=1. BUT the CABLED "
+            f"required x²={mp.nstr(R_STAR - 1, 4)}; symmetric weight gives x=0, r*=1. BUT the CABLED "
             f"content c≈9 (the H₉ strand scale at which c₃ is actually computed) gives "
-            f"x²≈0.54, r*≈1.54 — only ~3% short of 1.585 (exact needs c≈{c_needed:.1f}). So the "
+            f"x²≈0.54, r*≈1.54 — only ~3% short of 1.585 (exact needs c≈{mp.nstr(c_needed, 4)}). So the "
             f"Pythagorean transverse leg 2x is NOT the bare-branching slope; it lives at the "
             f"CABLED/transverse (H₉ Birkhoff/Stokes surface-curvature, qou-prjo) level, where it "
             f"NEARLY closes. A near-miss lead, not a closure — the 9→9.66 residual is the open "
@@ -114,13 +137,13 @@ def main() -> None:
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 
-    print(f"r* = {R_STAR:.4f}  ⇒  required x = {X_REQ:.4f}, x² = {R_STAR-1.0:.4f}")
-    for r in rows:
-        print(f"  {r['weight']:34s}: x²={r['x2']:.4f}  r*=1+x²={r['r_star_1_plus_x2']:.4f}")
-    print(f"bare H₃ (c=3): ~6x short in x²;  cabled c≈9: r*=1.54 (~3% short);  needs c≈{c_needed:.1f}")
+    print(f"r* = {mp.nstr(R_STAR, 6)}  ⇒  required x = {mp.nstr(X_REQ, 6)}, x² = {mp.nstr(R_STAR - 1, 6)}")
+    for (label, x) in labelled:
+        print(f"  {label:34s}: x²={mp.nstr(x * x, 6)}  r*=1+x²={mp.nstr(1 + x * x, 6)}")
+    print(f"bare H₃ (c=3): ~6x short in x²;  cabled c≈9: r*=1.54 (~3% short);  needs c≈{mp.nstr(c_needed, 4)}")
     print(f"wrote {out}")
     assert not witness["results"]["branching_supplies_required"], "unexpected: branching supplied r*"
-    assert abs(content_x(3) ** 2 - 0.0919) < 1e-3, "content c=3 x² drift"
+    assert abs(content_x(3) ** 2 - mp.mpf("0.0919")) < mp.mpf("1e-3"), "content c=3 x² drift"
     print("ALL ASSERTIONS PASS")
 
 
