@@ -38,7 +38,7 @@ doc.
 | Step | What | Status | Owner gap / active PR |
 |---|---|---|---|
 | 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
-| 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | ✅ proved | — (settled) |
+| 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | 🟡 **algebra proved, GEOMETRY ASSERTED** | the curvature 2-form is *defined* to be the Hecke quadratic (see §2a below) |
 | 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
 | 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
 | 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
@@ -187,6 +187,61 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 |---|---|---|---|---|
 | **1. Cat action** | $\rho_n: B_n \to \mathrm{Aut}_\mathbf{C}(V^{\otimes n})$ via R-matrix | `prop:braid-action-tensor` | `substrate/hecke_core.py` (σ_i seminormal matrices) | — |
 | **2. Non-abelian Stokes** | Hecke quadratic $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ as curvature 2-form | ⚠ `prop:hecke-spectral-sequence` **DOES NOT EXIST** (0 `label:` declarations in `content/`; the only hits are two Lean docstrings and this file) — [yekutieli2015] | `substrate/hecke_core.py`, `hecke/hecke_character_symbolic.py` (Hoefsmit + Hecke) | — |
+
+> ### §2a — what Step 2 actually proves, and what it assumes
+>
+> **Downgraded from "✅ proved" 2026-08-25** (PR #5765). The distinction matters because
+> this is the **only bridge from the categorical/geometric substrate to `H_n(q)`**, and
+> steps 3–11 and every number in the framework ride on it.
+>
+> **What is proved.** `QOU.Mass.HeckeStokes.stokes_curvature_factors`
+> ([`HeckeStokesEigenvalues.lean:38`](../content/quantum-observable-universe/lean/QOU/Mass/HeckeStokesEigenvalues.lean))
+> is real and useful — but it is a **factorisation identity over a generic field**:
+>
+> ```lean
+> theorem stokes_curvature_factors (q : K) (hq : q ≠ 0) (X : K) :
+>     X ^ 2 - (q - q⁻¹) * X - 1 = (X - q) * (X + q⁻¹) := by
+>   field_simp
+>   ring
+> ```
+>
+> It establishes that the polynomial's roots are `λ₊ = q` and `λ₋ = −q⁻¹`, which is what
+> the downstream bar-evenness of `τ` is inherited from
+> (`quantum_dim_is_eigenvalue_gap`). That part is sound and is not in question.
+>
+> **What is assumed.** That the polynomial *is the curvature 2-form*. There is no
+> connection, no curvature form, no surface and no multiplicative integral in that file.
+> The interpretation lives in a **docstring** in
+> [`NaStokesKeystone.lean:22`](../content/quantum-observable-universe/lean/QOU/Mass/NaStokesKeystone.lean):
+>
+> > *"The abelianised Cartan connection on the exceptional divisor `S_c` **has** curvature
+> > 2-form `F(σ) = σ² − (q − q⁻¹)σ − 1`. Flatness `F = 0` derives the Hecke quadratic."*
+>
+> The 2-form is **stipulated** to be the Hecke quadratic, so setting it to zero recovers
+> it **tautologically**. Nothing computes a curvature that *turns out* to be this
+> polynomial. The appendix's own Step-2 block is consistent with this: the braiding obeys
+> the Hecke relation because `def:categorical-action` says so.
+>
+> **And the citation does not resolve.** Both Lean files attribute the geometry to
+> `prop:hecke-spectral-sequence`; corpus-grep finds **0 `label:` declarations** for it in
+> `content/` — the only occurrences are those two docstrings and this document. The
+> 2026-07-05 currency audit cleared "all 14 §2 step-table paper labels" by **stem**-grep;
+> two of its fourteen do not resolve by label, so it is not clearance.
+>
+> This is AGENTS.md §"Derive-then-check" item 8 verbatim: *if it is true by unfolding or
+> by `ring`, it is notation, not a theorem.*
+>
+> **Scope (a).** The current formalisation does not derive the geometry→algebra step. This
+> does **not** exclude a genuine Yekutieli derivation existing or being found — no
+> invariant forbids it. To close it, Step 2 needs either a real multiplicative-integral
+> construction whose curvature is *computed* to be `σ² − (q−q⁻¹)σ − 1`, or an honest
+> restatement as a §3b conjecture class with the geometric step as its hypothesis.
+>
+> **In fairness to `NaStokesKeystone.lean`:** that file is explicit that its *own* open
+> core is the geometric `period = lw` equality, and it states the τ assembly is
+> conditional on it. What was wrong was this document's status column, not that file's
+> self-description.
+
 | **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke/hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
 | **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
 | **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
