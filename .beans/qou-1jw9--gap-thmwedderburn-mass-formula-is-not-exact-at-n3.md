@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T16:20:59Z
+updated_at: 2026-08-25T16:45:54Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -407,3 +407,29 @@ ruling that is an authoring call, but it is premature to ask it until the measur
 done: does the published formula, evaluated with h_A^2, reproduce the published table at
 all? The producer with beta3 does (20 rows, mean 0.074 %). If h_A^2 does not, the call is
 settled by measurement rather than by preference.
+
+
+RESOLVED the '#5758 Left open' item by measurement, PR #5773.
+
+beta3 = 0.0499 reproduces 20/20 published M_pred to 0.00049 MeV; the published
+h_A^2 = 0.0437073 reproduces 0/20 at the 3 dp the table quotes. Published
+summary figures are beta3's too (0.0740 % / 0.1917 % vs h_A^2's 0.0746 % /
+0.1909 %). So: the table is NOT the published formula's output -- confirmed.
+
+The OTHER branch of the disjunction is NOT supported and must not be quoted as
+if it were: on accuracy the two coefficients are indistinguishable, h_A^2 being
+marginally BETTER on the worst row. Phi_3 enters ~50x more weakly than Phi_1, so
+a 14.2 % coefficient change moves the table < 1 part in 30 000. The table
+carries NO evidence about which coefficient is correct. Scope (a).
+
+Foreclosed for beta3: not h_A^2 at either pin (both 0.0437062, flat to 13
+digits); ratio 1.1416862 = q0^1.26992, not an integer/half-integer power; 3 sig
+figs where alpha has 6 and beta2 has 7.
+
+NOT DONE, deliberately: regenerating the 20 published values under h_A^2. It is
+the option that would make the block's own 'zero fitted parameters' claim true
+and costs 0.0006 pp of mean accuracy, but changing twenty published numbers is
+the author's call. Replacement values are already in the probe's results block.
+
+Probe: computations/audits/wedderburn_beta3_vs_hA2_discrimination.py
+Audit:  docs/audits/2026-08-25-wedderburn-table-is-not-the-published-formula.md
