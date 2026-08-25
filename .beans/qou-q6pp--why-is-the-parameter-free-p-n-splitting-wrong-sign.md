@@ -233,3 +233,52 @@ one of the three the formula already has. So the spec itself points at the
 partition sum rather than chirality as the deficit, which is independent support
 for the conclusion I reached by an invalid route and retracted. Still not proof:
 the retraction stands, and this is the source's framing, not a measurement.
+
+## TERMINUS — this converges on a documented open problem, not a defect
+
+Followed the spec's own pointer: "the full partition sum gives the exact Markov
+trace". That sum is implemented — binding_K_direct.py:
+
+    Binding(K) = m_e * sum_lambda y_lambda(q) * chi^lambda(beta_K) * Delta_lambda(K)
+
+It runs, and emits NO binding prediction for any atom. Every row is
+status = delta_lambda_value_present, carrying |tr_M| and B_codata and nothing
+else. Its own comment says why:
+
+  "Proved per-partition VALUE present; binding NOT computable from it alone
+   (needs y_lambda*chi^lambda + the open extensive magnitude term). Emit the raw
+   Sigma Delta_lambda as a labelled DIAGNOSTIC only — never a binding prediction
+   (anti-laundering)."
+
+That is the Delta_lambda many-body MAGNITUDE — AGENTS.md's Track A blocker. The
+per-partition value is proved (signed Springer dimension, sorry-free, PR #4580);
+the extensive term is open, and six ansaetze have already failed on the deuteron.
+
+## So the chain closes
+
+  1. "wrong-sign parameter-free p-n splitting"
+       -> my test was invalid: correction vs a leading term the formula CONSUMES,
+          and quark-level chains in an atomic formula.            RETRACTED
+  2. -> "Phi_1 is not extensive"
+       -> my input was invalid: two chains where the formula wants A+Z-1.
+                                                                  RETRACTED
+  3. -> the formula is EXPLICITLY leading-order, exact only where the three
+        extremal blocks exhaust the partitions, i.e. n = 3 alone. D (n=3) is the
+        only atom whose sign is right.
+  4. -> the exact route is the Delta_lambda partition sum,
+  5. -> which deliberately emits nothing, because the many-body magnitude is a
+        known open problem.
+
+CONCLUSION. The wrong sign at A >= 3 is NOT a defect to fix. It is a
+leading-order formula evaluated outside its stated domain, and the exact
+replacement is blocked on the documented Delta_lambda magnitude gap. Nothing
+here is new mathematics; what is new is the route in, and two of my own claims
+retracted along the way.
+
+DO NOT build the M_i constructor as a research project. It would only re-measure
+a leading-order formula whose limits the source already states. If it is built
+at all, build it as a TEST: D (n = 3) should come out exact, not 45 % high. That
+is a falsifiable check on the implementation, not a path to the binding.
+
+AND DO NOT propose a seventh Delta_lambda ansatz. AGENTS.md names that
+explicitly, and arriving here by a fresh route is not a licence to retry it.
