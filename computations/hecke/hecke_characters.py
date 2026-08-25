@@ -39,7 +39,25 @@ import math
 import numpy as np
 import sys
 from pathlib import Path
-from mpmath import mp
+from mpmath import mp, mpf as _mpf_type, mpc as _mpc_type
+
+
+class SeminormalPrecisionLoss(ValueError):
+    """Raised when `build_seminormal_matrices` is handed an mpmath `q`.
+
+    A REFUSAL, NOT A CRASH. The float64 builder would truncate the argument to
+    a double without saying so, which is the defect bean `qou-8xb1` records --
+    the caller asked for precision, got a double, and got no signal. Refusing
+    turns a silently wrong number into a visible error naming the exact twin,
+    `build_seminormal_matrices_mp`.
+
+    Subclasses `ValueError` to match the corpus idiom for a domain guard
+    (cf. `habiro_coefficients_atomic.AmDifferenceInvalid`), which AGENTS.md
+    cites as the reason a traceback is not by itself evidence of a defect: an
+    exception type the corpus defines for exactly this case is the guard
+    working, not the producer failing.
+    """
+
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
@@ -163,6 +181,32 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
 
     if dim == 0:
         return [], dim, syts
+
+    # GUARD (bean qou-8xb1): refuse an mpmath q rather than silently downcast
+    # it. This builder is float64 all the way down -- it coerces q on the next
+    # line, computes the axial-distance entries in float, reaches for mp.sqrt
+    # and throws the precision away, and returns np.zeros(). So an `mpf` handed
+    # in came back as a double with NO signal: measured at shape (3,2,1),
+    # dim 16, passing q as mpf produced output BIT-IDENTICAL to passing the f64
+    # value. A caller that asked for precision got none and could not tell.
+    #
+    # Deliberately NARROW. `str`, `Fraction` and plain numerics stay accepted,
+    # because the #1861 rationale below records that callers legitimately pass
+    # them and coercing those is the documented intent. Only the mpmath types
+    # are refused -- for those, and only those, the downcast is always a defect,
+    # since carrying more than a double is their entire purpose.
+    #
+    # Zero callers passed an mpf when this landed, so nothing changes today;
+    # the guard exists so the next one gets an error instead of a wrong number.
+    if isinstance(q, (_mpf_type, _mpc_type)):
+        raise SeminormalPrecisionLoss(
+            f"build_seminormal_matrices() was handed q as {type(q).__name__}, "
+            f"which it would silently truncate to float64 (it coerces q, "
+            f"computes in float, and returns np.zeros()). Use "
+            f"build_seminormal_matrices_mp(shape, q) for the exact mpmath "
+            f"twin, or pass float(q) explicitly if float64 is genuinely what "
+            f"you want. See bean qou-8xb1."
+        )
 
     # Resolve q (override or module default).  Derive amplitude h locally.
     q_local = float(q0) if q is None else float(q)
