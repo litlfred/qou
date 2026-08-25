@@ -94,7 +94,7 @@ axiom JonesMarkovCoefficient_sum_eq_one :
     Concrete instance comes from the matrix algebra under
     `wedderburnEmbed`. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Iwahori-Hecke algebra multiplication)
-axiom heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
+opaque heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
 
 /-- Notation for Hecke-algebra multiplication. -/
 scoped infixl:70 " *_h " => heckeMul
@@ -113,7 +113,7 @@ axiom MarkovTrace_cyclic :
     (which requires the Hecke generator `σ_n` to be expressible
     as a `HeckeElement (n + 1)` — the natural inclusion). -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (stabilisation by generator σ_n)
-axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
+opaque heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
 /-- **Markov axiom** for the Markov trace: stabilisation scales
     the trace by *the* Markov parameter

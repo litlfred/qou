@@ -151,7 +151,7 @@ type-level interface here; concrete construction is open work. -/
     with `T_i² = (q - 1) T_i + q` (relation in `R[q, q⁻¹]`,
     integer-coefficient when `R = ℤ`). -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (Iwahori-Hecke algebra over ℤ[q,q⁻¹])
-axiom heckeFormalMul :
+opaque heckeFormalMul :
     ∀ {R : Type*} [CommRing R] {n : ℕ},
       HeckeFormalElement R n → HeckeFormalElement R n → HeckeFormalElement R n
 
@@ -167,7 +167,7 @@ noncomputable def heckeFormalOne
     Axiomatised at the type level; concrete construction
     pending Mathlib Iwahori-Hecke port. -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (T-form generators T_i)
-axiom heckeFormalGenerator :
+opaque heckeFormalGenerator :
     ∀ {R : Type*} [CommRing R] {n : ℕ} (_i : Fin (n - 1)),
       HeckeFormalElement R n
 
