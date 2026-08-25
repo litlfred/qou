@@ -39,9 +39,16 @@ It is the input Jucys's argument needs: conjugating a transposition by `σ_j` **
 pair, so `σ_j` fixes the sum `Σ_{i<k} T_(i,k)` whenever `j` and `j+1` both miss `k` — which is
 3.24(i), and in turn feeds the centrality of the partial sums and the telescoping.
 
-**Not proved here**: the conjugation-permutation law itself, hence not 3.24(i), centrality, or
-commutativity.  This file provides the object and its expansion only.  `JucysMurphySpectrum` remains
-untouched and the general-`λ` twist remains conditional.
+**What the file grew into.**  Those steps are now all here, in order: the pair-swap law
+(`sigma_comm_transp_pair`), Mathas 3.24(i) (`sigma_comm_addJM`), Jucys's centrality
+(`sigma_comm_partialSum_ne`), the telescoping (`addJM_comm`), and — via the identification
+`L_k = 1 + A_k` at `d = q − q⁻¹` — **commutativity of the multiplicative family itself**
+(`jmRaw_comm`).  The paragraph above was written when only the expansion existed; it is kept because
+the sequence it lays out is the one that worked.
+
+**Still not proved here**: `∏Lᵢ = Δ²` beyond `n = 3`, and the spectral half of
+`JucysMurphySpectrum` (the seminormal representation).  The general-`λ` twist therefore remains
+conditional — commutativity was a necessary step toward it, not a sufficient one.
 
 Refs:
 - [wenzl1988] Hecke algebra representations.
@@ -539,5 +546,17 @@ theorem jmRaw_comm (H : HeckeGenerators R A q) (i k : ℕ) :
           + addJM H (q - q⁻¹) k * addJM H (q - q⁻¹) i := by
         rw [addJM_comm]; abel
     _ = _ := by noncomm_ring
+
+/-- **The adjacent case**, `[L_k, L_{k+1}] = 0` — the one case `HeckeJucysMurphyReduction` could not
+close, and the reason its `jmRaw_comm_all_of_all_adjacent` had to take a hypothesis. -/
+theorem jmRaw_comm_adjacent (H : HeckeGenerators R A q) (i : ℕ) :
+    jmRaw H i * jmRaw H (i + 1) = jmRaw H (i + 1) * jmRaw H i := jmRaw_comm H i (i + 1)
+
+/-- **`HeckeJucysMurphyReduction`'s residual hypothesis, discharged.**  That file reduced full
+commutativity to the adjacent pairs and stated the remainder as an assumption; `jmRaw_comm_adjacent`
+supplies it, so the reduction now stands unconditionally. -/
+theorem jmRaw_comm_all (H : HeckeGenerators R A q) :
+    ∀ i j : ℕ, i ≤ j → jmRaw H i * jmRaw H j = jmRaw H j * jmRaw H i :=
+  jmRaw_comm_all_of_all_adjacent H (jmRaw_comm_adjacent H)
 
 end QOU.BraidKnot.Hecke
