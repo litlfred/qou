@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
-title: 'GAP: thm:wedderburn-mass-formula is not exact at n=3, its own claimed exactness point'
+title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T08:20:18Z
+updated_at: 2026-08-25T08:24:13Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
