@@ -71,10 +71,25 @@ The consequences are visible in its own output:
   `r = 2.5995 ∉ ℤ` was the real and interesting claim; under D it inverts.
 - Its headline object `G_n(q) = Σ_{ℓ(λ)≥3} y_λ Δ_λ` is identically zero, so the
   "is `q_cross(n)` a structured sequence in `n`?" question has no content. The
-  measured crossing list is **identical for every n from 3 to 21** —
+  measured crossing list is **identical for every n from 3 to 23** —
   `1.000007 1.000032 1.000178 1.000188 1.001887 1.009783 1.092527 1.103019 1.107539 1.222267` —
-  with one spurious extra root at n = 11 and n = 18. An n-dependent object does
-  not produce an n-independent answer; a bisect-on-sign-change over round-off does.
+  with one spurious extra root at n = 11 and n = 18. Its own summary line reads
+  `first-crossing sequence: [(3, 1.000007), (4, 1.000007), …, (23, 1.000007)]`,
+  i.e. twenty-one identical entries, followed by `MONOTONE INCREASING? False`.
+  An n-dependent object does not produce an n-independent answer; a
+  bisect-on-sign-change over round-off does.
+- **The probe says so itself in section 2.** Its character-dressed object prints
+
+  ```
+  D    n= 6  F(q₀)=+0.00000e+00  crossings=3  1.000042 1.148084 1.225963
+  T    n= 9  F(q₀)=+0.00000e+00  crossings=3  1.000042 1.148084 1.225963
+  3He  n= 9  F(q₀)=+0.00000e+00  crossings=3  1.000042 1.148084 1.225963
+  ```
+
+  `F(q₀)` is **exactly zero** at the substrate anchor for all three isotopes, and
+  the three "crossings" are again identical across isotopes and across `n`. The
+  ⁴He leg was killed after 52 s of a 1308 s ETA; it was printing
+  `f=+0.0000e+00` too.
 
 **Scope, stated:** this is a scope-(a) finding about *this probe*. It does not
 refute the general-`r` mathematics the probe describes — the `Q^r = u³/D(u)`
