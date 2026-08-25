@@ -45,7 +45,7 @@ doc.
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
 | 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean: **0 sorries**; `SkewSYT.lean` C1 + C2 **PROVED 2026-07-02** — C2's over-quantified `removeCorner` spec re-scoped to the witnessed row and proved, C1 `skewCorners_nonempty` proved via lex-max cell; all three `PartitionHelpers` fields now theorems ⇒ default instance **unconditional**, `Fact` crutches dropped) | residual: q-Plancherel `ConvergenceBound` (research-grade), commented-out `saturatedChainsCount` section, and the `conj:` classical-limit statement itself |
-| 9a. Mass identity `m_p` | **absolute**: muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` via the [`canonical_mass.py`](../computations/canonical_mass.py) facade (owner ruling 2026-06-24; [guardrail](canonical-mass-formula-guardrail.md)); per-knot `VolDensity(K, q₀)` retained for **binding ratios** only | 🟢 absolute nucleon mass settled ($m_p \approx 938.27$ MeV, $m_n \approx 939.56$ MeV — CODATA). 🟡 per-knot density wire-up still open on the **binding side**: 64 of 65 atom-touching scripts use uniform `vol_density_borromean(q)` ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)). The old +2.89–3.86% "absolute-mass gap" was the **λ_A fit artifact** ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)) | per-knot density wire-up (binding side; same object as the 9b ρ/Δ_λ leg per the [flip decision](audits/2026-06-13-step9a-flip-decision-package.md)); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
+| 9a. Mass identity `m_p` | **absolute**: muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` via the [`canonical_mass.py`](../computations/canonical_mass.py) facade (owner ruling 2026-06-24; [guardrail](canonical-mass-formula-guardrail.md)); per-knot `VolDensity(K, q₀)` retained for **binding ratios** only | 🟠 **`m_p` is an ANCHOR ROUND-TRIP, not a prediction** — `q₀` is pinned by solving exactly this form against `m_p/m_e`, so the identity reproduces CODATA **to ~40 digits by construction** (recomputed 2026-08-25: `938.2720881603789027000…`). The live witness marks it `NOT SCORED` / *"the framework content cancels"*, and `mba-step09a` says so in its own text; only this status column said "settled". The genuine 9a **predictions** are `m_μ` (211.2 ppb, **970.2×** the L2 target) and `m_n` (**176.7×**). $m_n \approx 939.56$ MeV is the real one. 🟡 per-knot density wire-up still open on the **binding side**: 64 of 65 atom-touching scripts use uniform `vol_density_borromean(q)` ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)). The old +2.89–3.86% "absolute-mass gap" was the **λ_A fit artifact** ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)) | per-knot density wire-up (binding side; same object as the 9b ρ/Δ_λ leg per the [flip decision](audits/2026-06-13-step9a-flip-decision-package.md)); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
 | 9b. Per-isotope binding `B(K)` | **bond-count × hyperbolic volume** (the honest derived core): $B = m_e\sum_n (n-1)\,\mathrm{Vol}_n(K)$ — `M_n=(n−1)` **Lean-proved sorry-free** (`LinearChainBondCount.lean`); ³H **−0.16 %**, ³He −2.97 %, zero fit; deuteron derived via the θ_λ scalar-trace collapse `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) — the "two deuteron derivations" are two contractions of the ONE q-Reeb phase θ_λ ([ledger](coordination/binding-scale-is-hyperbolic-volume.md), #3748). Scale conditional on `conj:kashaev-volume-conjecture`. | 🟡 partial. **The prior "NA-Stokes CKRecursion closure (sub-1ppq / 3.4 keV)" claim was ADVERSARIALLY REFUTED as presented** ([review](audits/2026-07-13-na-stokes-ck-recursion-binding-adversarial-review.md), #3723): the "SU(4) differential 1.4947 m_e" IS the measured ³H–³He split relabeled (its Lean self-marked vacuous); `r_res=2.596` ≠ the advertised invariant 5/2; `c_3=10/3` collides with canonical `c_3≈−2`. Block rewritten to honest status (#3723). Open: A≥3 per-rep θ_λ magnitude; ⁴He `Vol₄=8.05` falsifiable prediction; mirror Coulomb residual (31 % derived; pairwise EM route provably empty — Borromean). **Keystone `R(q,x)` status (2026-07-20):** the bounded-depth kernel on the raw OGF is **excluded** (Lean `QOU.Mass.QDifferenceConfluentObstruction`, sorry-free — `R(1,x)=1` forced, first-order relation fails Gevrey-1/2 growth); re-targeted on the **q-Borel carrier**, where the classical fibre is **proved** (`normalized_classical_kernel_exists`: `(n+2)·b_{n+2}=b_{n+1}+b_n`, depth 2 exact). Open: the q-lift (`[n+2]_q` relation) + prolongation-symbol identification — `conj:qdifference-kernel-prolongation-symbol` stays a conjecture. **Update (2026-07-20):** the q-lift exists exactly on the `[n]_q!`-normalized carrier (`c(q)=1`, probe-verified to 1e-45 incl. q₀ — [`qlift_kernel_candidate_crosscheck_probe`](../computations/probes/qlift_kernel_candidate_crosscheck_probe.witness.json); Lean brick in progress) and is DISTINCT from the GGM eq-49 carrier up to **arbitrary diagonal gauge, including every formal q-Borel/q-Laplace coefficient weight** (invariant `I_m = −[m]_q` vs `1/((2−q^m)(2−q^{m−1}))`; [gauge prune](audits/2026-07-20-qlift-ggm-gauge-prune.md) + [Route D](audits/2026-07-20-qlift-routeD-qborel-transform.md)) — identification open only via non-diagonal routes (Stokes matrix / analytic q-Borel–Laplace summation). | `universal-binding-architecture.md` (resolved); [`binding-scale-is-hyperbolic-volume.md`](coordination/binding-scale-is-hyperbolic-volume.md) |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `ck-dk-canonical-registry.md` (rung tiers) + `1ppq-qbeta.md` ledger |
@@ -552,9 +552,30 @@ compute has already established:
   step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
   (`knot-volumes.py`, `Li_2^q` / compact-q-dilog `Φ_q`, §4 context-sorting).
 
-So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
-infrastructure, summed over the partition** — exactly the `density × volume`
-shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
+> **🛑 RETRACTED 2026-08-25 (PR #5765): `Δ_λ` is NOT the q-Reeb phase density.**
+> The per-partition value is **proved**, sorry-free and general-n:
+>
+> `Δ_λ = (−1)^{n(λ)} · dim V_λ` — the **signed Springer dimension**; sign = jet-order
+> valuation parity, magnitude = Wedderburn dimension.
+> [`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaGeneralNUnconditional.lean)
+> (PR #4580), wired to [`computations/delta-lambda-witness.json`](../computations/delta-lambda-witness.json).
+>
+> An identification of the **same symbol** with a different object is a
+> contradiction, not a second reading, so the sentence this note replaces is
+> withdrawn rather than qualified.
+>
+> **What survives, and it is the paragraph above:** the q-Reeb phase `θ_λ` is a
+> defensible *per-block structural object*, and the text above is already correct
+> that its **magnitude closure is NOT categorically derived** (best structural
+> combination ≈ 2.52 %; the published 0.11 % relied on a fitted `(1+q)/2`, a CAL-4
+> antipattern, and is stale besides). Keep it as the per-block phase it is; do not
+> read it as `Δ_λ`.
+>
+> **And the proof does not close the gate.** The witness's own caveat: *"VALUE ONLY —
+> the binding total additionally needs the `y_λ·χ^λ` weighting and a separate
+> super-pairwise [extensive term]."* The **magnitude** leg is open; six ansätze failed
+> on the deuteron because they tried to force an extensive quantity into a per-block
+> weight. See [`2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
 
 > **Guiding principle — preserve information until observation.** The
 > archimedean functor `τ` (step 9) *is* the observation; it is the **only**
