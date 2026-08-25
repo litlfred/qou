@@ -651,9 +651,19 @@ if __name__ == "__main__":
         try:
             _prior = json.loads(_out_path.read_text()).get("results", {})
             for _label, _entry in _prior.items():
-                if _label not in results and "error" not in _entry:
+                # A FAILED case was not computed, so it must not win. The guard
+                # was `_label not in results`, but a failing atom IS in `results`
+                # -- carrying an `error` -- so a good prior entry lost to the
+                # error record. Measured 2026-08-25: one run in a container
+                # without numpy replaced ALL THREE atoms (32 exact coefficients)
+                # with error stubs, `n_coeffs` 9/9/14 -> 0/0/0. Recovered only
+                # because the file was tracked. See bean `qou-lrnd`.
+                _fresh = results.get(_label)
+                _fresh_failed = _fresh is None or "error" in _fresh
+                if _fresh_failed and "error" not in _entry:
                     results[_label] = _entry
-                    print(f"  [merge-preserve] kept prior witness entry: {_label}")
+                    _why = "not recomputed" if _fresh is None else "recompute FAILED"
+                    print(f"  [merge-preserve] kept prior witness entry: {_label} ({_why})")
         except (json.JSONDecodeError, OSError):
             pass  # corrupt/unreadable prior — fall back to a fresh write
 
