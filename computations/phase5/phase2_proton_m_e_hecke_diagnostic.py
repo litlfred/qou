@@ -71,7 +71,13 @@ from derivation_chain import M_HECKE_PIPELINE_AT_Q0, TR_M_AT_Q0
 from witness_base import WitnessBuilder
 
 ASSEMBLY_DIR = Path(__file__).parent
-SIX_TERM_WITNESS = ASSEMBLY_DIR / "mass-formula-6term-mpfr-50dps.witness.json"
+# `witness_path` and not `ASSEMBLY_DIR / ...`: the six-term witness is emitted
+# into `computations/`, not into this cluster, so the bare-join looked for it
+# beside this script and reported "missing input" on a file that exists. That
+# is the idiom the Phase-6 helper exists to replace (see its docstring).
+import _path_bridge as _pb  # noqa: E402
+SIX_TERM_WITNESS = _pb.witness_path(
+    "mass-formula-6term-mpfr-50dps.witness.json", ASSEMBLY_DIR)
 
 
 def six_term_sum(atom_record: dict) -> tuple[mp.mpf, dict[str, mp.mpf]]:
@@ -110,9 +116,9 @@ def categorical_ratio_for_atom(atom_label: str, tr_M_q0: mp.mpf) -> mp.mpf | Non
 
     Electron's |tr_M(β_e)| at H_2 (zero-crossings) = z = 1/(√q + 1/√q).
     """
-    from q_parameter import Q as Q0
+    from q_parameter import Q_MP as Q0
     q = mp.mpf(str(Q0))
-    z_electron = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_electron = q**3 / (q**2 + 1)
     rho_atom = {"proton": 1, "neutron": 1, "deuteron": 1}.get(atom_label, 1)
     rho_e = 1
     return (rho_atom * tr_M_q0) / (rho_e * z_electron)
@@ -138,7 +144,7 @@ def main() -> int:
         print(f"missing input: {SIX_TERM_WITNESS}")
         return 1
 
-    six_term = json.loads(SIX_TERM_WITNESS.read_text())
+    six_term = w.add_upstream(SIX_TERM_WITNESS)
     atoms = six_term["data"]["results"]
 
     print("=" * 90)

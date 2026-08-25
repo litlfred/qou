@@ -1,0 +1,51 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ojm27-03-04",
+ "source_sha256": "b357cc8378dae3fd",
+ "brief": "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553).",
+ "extended": "**Hyperbolic 3-manifolds with totally geodesic boundary** — Michihiko Fujii. Osaka Journal of Mathematics 27(3), 1990, 539–553. DOI 10.18910/11468.\n\n**Why it may bear here.** Geodesic-boundary hyperbolic 3-manifolds are the setting of the Frigerio deformation result (frigerio2006) also held, and of the fundamental-shadow-link complements this corpus uses. Distinct from fujii1992 (Kodai Math. J. 15, 244–257), a different paper by the same author also in the library.",
+ "tokens": {
+  "brief": 24,
+  "extended": 117
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-1-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-00-b-c",
+   "title": "(b) (c)",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-003-2-a--fold-branched-covering-of-the-whitehead-lin",
+   "title": "A £-fold branched covering of the Whitehead link complement",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-004-3-infinitely-many-mutually-non-isometric-hyperbo",
+   "title": "Infinitely many mutually non-isometric hyperbolic 3-manifolds",
+   "pages": "11-16"
+  },
+  {
+   "id": "sec-005-references",
+   "title": "References",
+   "pages": "16-17"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

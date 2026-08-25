@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T02:00:45.396051+00:00",
-  "commitSha": "717857f60379890f63f42b19b55f67b2f8a38069",
+  "computedAt": "2026-08-23T09:58:18.488970+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "symmetrized-binding-closure",
   "scriptFile": "symmetrized_binding_closure.py",
-  "scriptHash": "8fc3d4f6160e",
-  "scriptCommitSha": "7e06dd586c68959b5f77dcbe3de1725f3a834c85",
+  "scriptHash": "375987e236ef",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,35 +21,53 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/symmetrized_binding_closure.py"
+    ],
+    "reproduce": "python3 -u computations/symmetrized_binding_closure.py"
   },
   "description": "Task 2 — wires the block-swap symmetrization shift ΔB=scale·log(S_free/S_atom) (task 1) into the ⁴He log-ratio binding and tests closure. RESULT: the shift is O(0.3–1.5 MeV), a few %% of the O(20–26 MeV) AME gap, and sign-only points the wrong way — so the identical-nucleon symmetrization is a real but SUB-DOMINANT correction; the binding form/convention is the dominant gate, not the symmetrization. Sign-only convention (self-consistent); averaged is the slow refinement, verdict convention-robust.",
   "data": {
-    "S_atom": 0.5352578780993531,
-    "S_free": 0.37422067424389205,
+    "S_atom": 0.5352578968316513,
+    "S_free": 0.37422067813386156,
     "rows": [
       {
         "scale": "Q_beta",
-        "scale_MeV": 0.78233340931,
-        "B_log_naive_MeV": 1.6300091127547895,
-        "B_log_sym_MeV": 1.3500096507612596,
-        "symmetrization_shift_MeV": -0.2799994619935301,
-        "gap_to_AME_naive_MeV": 26.665664887245214,
-        "gap_to_AME_sym_MeV": 26.945664349238744,
-        "shift_over_gap": 0.010500374289465408
+        "scale_MeV": 0.78233355931,
+        "B_log_naive_MeV": 1.6300093745272526,
+        "B_log_sym_MeV": 1.3500098396013693,
+        "symmetrization_shift_MeV": -0.2799995349258833,
+        "gap_to_AME_naive_MeV": 26.665664625472747,
+        "gap_to_AME_sym_MeV": 26.945664160398632,
+        "shift_over_gap": 0.010500377127611883
       },
       {
         "scale": "E_0",
         "scale_MeV": 4.185981363294476,
-        "B_log_naive_MeV": 8.721585562873516,
-        "B_log_sym_MeV": 7.223410340277388,
-        "symmetrization_shift_MeV": -1.498175222596128,
-        "gap_to_AME_naive_MeV": 19.574088437126484,
-        "gap_to_AME_sym_MeV": 21.072263659722612,
-        "shift_over_gap": 0.0765386969313225
+        "B_log_naive_MeV": 8.721585291297306,
+        "B_log_sym_MeV": 7.223409965718011,
+        "symmetrization_shift_MeV": -1.4981753255792953,
+        "gap_to_AME_naive_MeV": 19.574088708702693,
+        "gap_to_AME_sym_MeV": 21.07226403428199,
+        "shift_over_gap": 0.07653870113060245
       }
     ],
-    "verdict": "Symmetrization does NOT close the ⁴He gate: the shift scale·log(S_free/S_atom) is O(0.3–1.5 MeV) — only a few %% of the O(20–26 MeV) gap to AME — and (sign-only) it points the WRONG way (S_free<S_atom ⇒ negative shift, deepening the under-prediction). The binding-form / trace-convention is the dominant gap, NOT the identical-particle symmetrization. The symmetrization is a real but sub-dominant O(1 MeV) correction; the averaged-convention sign/magnitude is the slow-path refinement, but the order-of-magnitude verdict (shift ≪ gap) is convention-robust."
+    "verdict": "Symmetrization does NOT close the ⁴He gate: the shift scale·log(S_free/S_atom) is O(0.3–1.5 MeV) — only a few %% of the O(20–26 MeV) gap to AME — and (sign-only) it points the WRONG way (S_free<S_atom ⇒ negative shift, deepening the under-prediction). The binding-form / trace-convention is the dominant gap, NOT the identical-particle symmetrization. The symmetrization is a real but sub-dominant O(1 MeV) correction; the averaged-convention sign/magnitude is the slow-path refinement, but the order-of-magnitude verdict (shift ≪ gap) is convention-robust.",
+    "upstream_witness_hashes": [
+      {
+        "path": "block-swap-binding.witness.json",
+        "sha256": "1510e96ae752ec84bf5817f188fd0fe5763df3d4279c0d707ce565aa5e024e59",
+        "size_bytes": 2344,
+        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+        "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+        "computedAt": "2026-06-22T14:26:20.228718+00:00"
+      }
+    ]
   }
 }

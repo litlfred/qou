@@ -15,7 +15,7 @@ The knot $4_1$ is amphichiral: $4_1 \cong \overline{4_1}$. Its dominant cell in 
 
 ## A chiral example: trefoil
 
-The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the exact same chirality structure at depth $3$. See [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness) for a Bring-natural depth-$3$ witness.
+The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the same chirality structure at depth $3$. See [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness) for a Bring-natural depth-$3$ witness.
 
 ## Compatibility with the depth filtration
 
@@ -38,7 +38,7 @@ This categorifies the amphichirality construction introduced in the figure-$8$ b
 
 ## Falsifiability
 
-We propose a clean test using a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$. We verify three points:
+We propose a test using a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$. We verify three points:
 
 1. The dominant cell of $5_2$ in $H_4(q)$ (or $H_5(q)$) forms a chiral pair, rather than a self-conjugate cell.
 2. The depth-$2$ pairing produces the real $\mathrm{Vol}(5_2)$.

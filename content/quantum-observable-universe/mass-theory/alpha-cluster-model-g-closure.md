@@ -11,7 +11,7 @@ gate).**
 > \cdot \alpha$ pairs activate, via the proved gate
 > [`prop:alpha-cluster-activation-gate`](#prop:alpha-cluster-activation-gate) —
 > **not** the absolute cluster base. It is recorded here for its structural
-> content and its audit trail, and must not be cited as an ab-initio prediction.
+> content alone, and must not be cited as an ab-initio prediction.
 
 Applying the activation gate to the light $\alpha$-conjugate (and
 $\alpha + \text{light-remainder}$) isotopes, with cluster decompositions
@@ -52,14 +52,15 @@ closure):
 | $\bar\mu$ sign-rep obstruction (coupling through $\lvert\bar\mu\rvert$ only) | proved-Lean |
 | Milnor-indeterminacy gate (Hopf spectator $\Rightarrow$ inactive; $\alpha$-only activation) | proved-Lean (+ literature `milnor1954`) |
 | W-plane annihilation on $\mathrm{Vol}=0$ bond channels | proved-Lean |
-| CAL-3 bond-channel class selection | conditional (§3b-cond, on the `BindingVolumeLedger` class) |
+| CAL-3 bond-channel class selection | conditional (on the `BindingVolumeLedger` class) |
 | $\alpha\cdot\alpha$ activation applied to specific isotopes ($^8\mathrm{Be}\approx 0$, $k\ge 3$) | conditional on the Brunnian arrangement model |
 | $b = 0.78\ \mathrm{MeV/nucleon}$ | **empirical** (calibrated on 3 one-bond composites) |
 | $\binom{k}{2}$ saturation counting | **data-selected** |
 | $g = 2.4155 \approx 3b$ ($-2.9\%$) | **guarded near-match** |
 | $^{11}\mathrm{B} / {}^{14}\mathrm{N} / {}^{19}\mathrm{F}$ mixed multi-bond | **open** ($-58/-33/-10\%$ deficit) |
 
-Witnesses (audit-only, not wired to any production dashboard):
+Numerical verification (checks only; no result elsewhere in this paper
+depends on them):
 [`alpha-activation-brunnian.witness.json`](../../../computations/deltalambda/alpha-activation-brunnian.witness.json)
 (9/9), building on
 [`alpha-cluster-volume-additivity.witness.json`](../../../computations/deltalambda/alpha-cluster-volume-additivity.witness.json)

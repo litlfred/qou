@@ -93,6 +93,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of as _partitions_of,
     y_lambda_wenzl_bridge_numeric,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 def y_lambda_h2_q_schur_mpf(q: Any) -> tuple[Any, Any]:
@@ -290,7 +291,7 @@ def markov_trace_for_knot(
 def _self_test() -> int:
     """Quick sanity checks on the common infra."""
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     q_str = "1.10997859561220225731080831999100762523924148"
     q_mpf = mp.mpf(q_str)
     q_f64 = float(q_mpf)

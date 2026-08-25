@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Habiro's cyclotomic formula for the colored Jones of the Borromean
 rings — first corpus transcription.  Bean n920 (was deferred on PDF
-access; source landed 2026-07-06 as uploads/0508100v6.pdf).
+access; source landed 2026-07-06 as library/arxiv-math-0508100v6/0508100v6.pdf).
 
 Source (do NOT cite from memory — this is the verified transcription):
   Garoufalidis-Le, "Asymptotics of the colored Jones function of a
@@ -192,7 +192,7 @@ def main() -> int:
         "computation": "habiro-borromean-colored-jones",
         "audit_only": True,
         "source": {
-            "pdf": "uploads/0508100v6.pdf",
+            "pdf": "library/arxiv-math-0508100v6/0508100v6.pdf",
             "location": "Appendix A, p. 26 (Theorem A.1 proof)",
             "references": ["garoufalidis-le-2011", "habiro2000"],
         },

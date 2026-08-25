@@ -45,41 +45,45 @@ namespace QOU.TopologicalMass
 namespace CatTransient
 
 /-- Number of blow-up centres `N`. -/
-def N : ℕ := 0
+opaque N : ℕ
 
 /-- The categorical mass integrand `α` at level `n + 1` (modelled in
     the observation algebra, here additively on `ℝ`). -/
-def alpha : ℝ := 0
+opaque alpha : ℝ
 
 /-- The descent projector `τ̂ₙ` on the level-`(n+1)` observation
     algebra. -/
-def tauHat : ℝ → ℝ := fun x => x
+opaque tauHat : ℝ → ℝ
 
 /-- The Frobenius categorical trace `tr`, additive on the observation
     algebra (additivity of the trace is standard and carried in the
     bundled-hom type, not assumed as a sub-hypothesis). -/
-def trFrob : ℝ →+ ℝ := 0
+opaque trFrob : ℝ →+ ℝ
 
 /-- The local transient piece supported in `ker 𝔡_{n+1}` at the `i`-th
     blow-up centre `p_i`. -/
-def localComponent (i : ℕ) : ℝ := 0
+opaque localComponent : ℕ → ℝ
 
 /-- The local transient-trace contribution `tr_trans(ϱ, p_i)` at the
     `i`-th blow-up centre — *defined* as the trace of the `i`-th local
     component. -/
 noncomputable def traceLocal (i : ℕ) : ℝ := trFrob (localComponent i)
 
+class CatTransientInputs : Prop where
+  /-- Open input -/
+  decomp : alpha - tauHat alpha = ∑ i ∈ Finset.range N, localComponent i
+
 /-- **Open geometric input (the .md's first clause).**  The transient
     component `α − τ̂ₙ(α)` is supported on the kernels of `𝔡_{n+1}` at
     the disjoint blow-up centres, hence decomposes in the observation
     algebra as the sum of the local pieces.  Needs the jet-filtration
     support analysis (kernel support + disjointness of the centres),
-    not in Mathlib; body is `sorry`. -/
+    not in Mathlib. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.md
-theorem transient_decomposition :
+theorem transient_decomposition [ctx : CatTransientInputs] :
     alpha - tauHat alpha
-      = ∑ i ∈ Finset.range N, localComponent i := by
-  simp [alpha, tauHat, N]
+      = ∑ i ∈ Finset.range N, localComponent i :=
+  ctx.decomp
 
 end CatTransient
 
@@ -91,7 +95,7 @@ open CatTransient in
 apply the additive trace to the support decomposition
 `transient_decomposition` and distribute over the finite sum via
 `map_sum`. -/
-theorem cat_transient_localises_blowup :
+theorem cat_transient_localises_blowup [CatTransientInputs] :
     trFrob (alpha - tauHat alpha)
       = ∑ i ∈ Finset.range N, traceLocal i := by
   rw [transient_decomposition]

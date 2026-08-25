@@ -20,7 +20,7 @@ degree: the identity term of $\gamma$ leaves $\beta_m$ at level $n$
 of the tower, while each generator term couples one further strand
 and lands at level $n + 1$. Support is therefore tracked in the
 Wedderburn labels of the tower algebra $\bigoplus_m H_m(q)$, one
-label set per level. At level $n + 1$ the corpus writes
+label set per level. At level $n + 1$ we write
 $\lambda + \square := (\lambda_1 + 1, \lambda_2) \vdash n+1$ and
 $\lambda - \square := (\lambda_1, \lambda_2 + 1) \vdash n+1$; the
 name of the latter comes from the two-row $\mathrm{SU}_q(2)$

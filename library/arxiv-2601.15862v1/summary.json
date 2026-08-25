@@ -1,0 +1,37 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2601.15862v1",
+ "source_sha256": "e37fa9b4515f58d1",
+ "brief": "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED — We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a",
+ "extended": "**SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED**\n\n*GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER*\n\n16 pp, 3 sections.\n\n**Abstract.** We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´ echet smooth manifolds to theCahiers toposofformal smooth sets(a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.\n\n**Outline.** 1 Introduction; 2 Statement and Proof; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: For E Σ a finite-dimensional surjective submersion of smooth\n- Proposition 2.4: Passage to haloed smooth sets preserves the projective limit in-\n- Proposition: A.2(cf. [KMS93,§35]).The functor which forms (plain)R-algebras\n- Definition: A.1. (i)We write CrtSp for the category whose objects are the\n- Definition: A.3.The category ofinfinitesimally thickened points(haloed points)\n- Definition: A.6. (i)The category offormal Cartesian spacesis the full sub-",
+ "tokens": {
+  "brief": 48,
+  "extended": 312
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-2-statement-and-proof",
+   "title": "Statement and Proof",
+   "pages": "1-14"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "14-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

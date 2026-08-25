@@ -2,6 +2,15 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:p-vs-np-surreal-bound",
+  uses: [
+    "conj:p-vs-np-qou",
+    "def:q-from-epsilon",
+    "def:reeb-epsilon",
+    "lem:surreal-squeeze",
+    "prop:surreal-rate-calculus",
+    "rem:calculus-up-to-epsilon",
+    "rem:conway-normal-form",
+  ],
   title:
     "Surreal bound for P vs NP: Reeb-period transfinite exceeds classical-budget standard",
   interprets: "conj:p-vs-np-qou",

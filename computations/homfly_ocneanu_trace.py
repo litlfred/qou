@@ -79,6 +79,7 @@ if str(HERE) not in sys.path:
 
 import _path_bridge  # noqa: F401, E402 — substrate modules moved to substrate/ subdir
 from hecke_characters import chi_lambda_braid_mpf, partitions_of  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _chi(shape, word, s):
@@ -286,7 +287,7 @@ if __name__ == "__main__":
     # Smoke test: print proton/neutron framed + unframed values.
     from q_parameter import Q_50_DIGIT_STR as Q
     q0 = mp.mpf(Q)
-    mp.mp.dps = 40
+    set_compute_dps()
     for label, word in [("proton (σ₁σ₂⁻¹)³", [1, -2, 1, -2, 1, -2]),
                         ("neutron (σ₁⁻¹σ₂)³", [-1, 2, -1, 2, -1, 2]),
                         ("figure-8", [1, -2, 1, -2])]:

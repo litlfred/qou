@@ -72,12 +72,18 @@ from habiro_coefficients_atomic import (  # noqa: E402
     cyclotomic_expansion,
     reconstruct,
 )
-from q_parameter import Q as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _markov_z_q(q: sp.Symbol) -> sp.Expr:
-    """z(q) = 1 / (q^{1/2} + q^{-1/2}) as a symbolic expression in q."""
-    return 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    """z(q) = q^3 / (q^2 + 1) -- the production Markov parameter.
+
+    Was 1/(q^{1/2} + q^{-1/2}), convention C, excised by the owner ruling of
+    2026-08-09. Nothing flagged it: the audit keyed off an assignment TARGET
+    and this computes straight into its return, so it had no name to match.
+    """
+    return q**3 / (q**2 + 1)
 
 
 def _hecke_h_q(q: sp.Symbol) -> sp.Expr:
@@ -164,14 +170,14 @@ def analyse_helium(label: str, Z: int, N: int, q,
     print(f"    elapsed: {time.perf_counter() - t0:.2f} s")
 
     # Numerical check at q₀ via mpmath (50 dps).
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q0_mp
     u0 = mp.sqrt(q0)
     # Evaluate tr_M_q at q₀ symbolically (then to float).
     tr_M_at_q0 = float(mp.mpf(str(sp.N(tr_M_q.subs(q, sp.Rational(str(q0))), 30))))
     # And via the p(u) / denom reconstruction.
     p_in_u_at_u0_mpf = mp.mpf(str(sp.N(p_u.subs(u, sp.Rational(str(u0))), 30)))
-    denom_expr = sp.sympify(denom, locals={"check_q": u})
+    denom_expr = sp.sympify(denom, locals={"u": u, "check_q": u})
     denom_at_u0_mpf = mp.mpf(str(sp.N(denom_expr.subs(u, sp.Rational(str(u0))), 30)))
     if shift:
         u0_shift = u0 ** shift

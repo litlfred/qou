@@ -13,5 +13,11 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.HeckeMassElement",
     validation: "not_checked",
   },
-  uses: ["rem:hecke-algebra-from-braiding"],
+  uses: [
+    // The mass integrand this definition builds.
+    "def:mass-identity",
+    "rem:hecke-algebra-from-braiding",
+    // Fixes tr_M : H_n(R, q) -> k in the setup sentence.
+    "thm:jones-markov-trace",
+  ],
 });

@@ -3,7 +3,7 @@ The bar involution swaps $L_+ \leftrightarrow L_-$ and $q
 \leftrightarrow q^{-1}$ while fixing $L_0$.  Direct substitution
 gives both equalities above. $\square$
 
-**Refactoring corollary (case-split collapse).**
+**Corollary (case-split collapse).**
 
 Any proof in the braid--knot framework that establishes a property
 $\Phi(L_+)$ for the positive crossing automatically establishes
@@ -12,19 +12,12 @@ formulated $\overline{\,\cdot\,}$-equivariantly (i.e., $\Phi(\overline{x})
 = \overline{\Phi(x)}$ on the relevant target).  The bar involution
 transports the proof verbatim.
 
-Concretely, several existing case-split arguments in
-`braids-and-knots/` can be collapsed using this principle:
-
-| Block | Current structure | Simplification |
-|-------|-------------------|----------------|
-| `commutative-crossing-energy` | separate positive/negative crossing computations | one computation + bar-apply |
-| `phase-scoped-applicability` | per-crossing-sign Slater feasibility | one feasibility check + bar-apply |
-| Jones-polynomial state-sum decomposition | $L_+$ and $L_-$ contributions enumerated | bar-equivariant sum |
-
-In each case, the bar-antisymmetry of (S) means the contributions
-from $L_+$ and $L_-$ enter the analysis as **bar-paired** terms,
-not independent ones.  The case-split is bookkeeping, not new
-content.
+Wherever the corollary applies — a pair of positive/negative
+crossing computations, a per-crossing-sign feasibility check, an
+enumeration of $L_+$ and $L_-$ contributions to a state sum — the
+bar-antisymmetry of (S) means those contributions enter the
+analysis as **bar-paired** terms, not independent ones.  The
+case-split is pure bookkeeping.
 
 **Connection to substrate bar T-duality.**
 

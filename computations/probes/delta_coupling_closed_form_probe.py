@@ -93,7 +93,12 @@ set_compute_dps()
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP as Q0  # noqa: E402
 from derived_masses import e_0_full_mev  # noqa: E402
 
@@ -119,7 +124,7 @@ def _load_delta_cat() -> dict[str, mp.mpf]:
             f"canonical Δ_cat witness missing: {_MSEI_PATH.name}.  "
             f"Run probe_magic_shell_empirical_instantiation.py first."
         )
-    msei = json.loads(_MSEI_PATH.read_text())
+    msei = record_upstream(_MSEI_PATH, _UPSTREAM_RECORDS)
     per_atom = msei["data"]["per_atom_delta_cat"]
     out: dict[str, mp.mpf] = {}
     for atom, row in per_atom.items():
@@ -362,6 +367,7 @@ def main() -> int:
         print("  (none — single-anchor matches only)")
 
     builder = WitnessBuilder("delta-coupling-closed-form-probe", engine="mpmath")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "P3.A diagnostic probe: which closed form `f` reproduces the "
         "canonical magic-shell cross-coupling residuals Δ_coupling(Z,N) "

@@ -54,7 +54,7 @@ theorem prod_insertionSort_eq {α : Type*} [CommMonoid α]
     TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
     Mathlib has `List.foldl_assoc` for `init = 1`; this is the
     `init ≠ 1` generalisation. -/
-theorem foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
+theorem List.foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = init * xs.prod := by
   induction xs generalizing init with
@@ -64,7 +64,7 @@ theorem foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
 
 /-- Companion for `foldr`: `List.foldr (· * ·) init xs = xs.prod * init`.
     Also `Monoid`-level — no commutativity required. -/
-theorem foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
+theorem List.foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldr (· * ·) init = xs.prod * init := by
   induction xs with
@@ -98,7 +98,7 @@ Under those hypotheses, foldl and foldr agree. -/
 
 /-- `Commute init xs.prod` follows from `init` commuting with
     every element of `xs`. -/
-theorem commute_init_prod {α : Type*} [Monoid α]
+theorem List.commute_init_prod {α : Type*} [Monoid α]
     (init : α) (xs : List α) (h : ∀ x ∈ xs, Commute init x) :
     Commute init xs.prod := by
   induction xs with
@@ -182,12 +182,12 @@ where Mathlib's existing `Real.sqrt`-based numerics apply. -/
     (present in the pinned v4.24).  A named `Real.rpow_one_div_two` is
     **not** in the pinned Mathlib (probed 2026-06-26 — `unknown constant`),
     so this local convenience wrapper stays until/unless one lands upstream. -/
-theorem rpow_half_eq_sqrt (x : ℝ) :
+theorem Real.rpow_half_eq_sqrt (x : ℝ) :
     x ^ (1/2 : ℝ) = Real.sqrt x :=
   (Real.sqrt_eq_rpow x).symm
 
 /-- For `x > 0`, `x^(-(1/2) : ℝ) = 1 / Real.sqrt x`. -/
-theorem rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
+theorem Real.rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
     x ^ (-(1/2 : ℝ)) = 1 / Real.sqrt x := by
   rw [Real.rpow_neg hx.le, Real.rpow_half_eq_sqrt x, one_div]
 
@@ -216,7 +216,7 @@ theorem sqrt_mul_half_denom (x : ℝ) (hx : 0 < x) :
 /-- **Bracketing helper**: if `a > 0` and `a^2 < x`, then
     `a < Real.sqrt x`. Lifted from `Real.sqrt_lt_sqrt` with the
     `Real.sqrt_sq` simplification baked in. -/
-theorem lt_sqrt_of_sq_lt (a x : ℝ) (ha : 0 ≤ a) (hsq : a^2 < x) :
+theorem Real.lt_sqrt_of_sq_lt (a x : ℝ) (ha : 0 ≤ a) (hsq : a^2 < x) :
     a < Real.sqrt x := by
   have hax : a = Real.sqrt (a^2) := by
     rw [Real.sqrt_sq ha]
@@ -225,7 +225,7 @@ theorem lt_sqrt_of_sq_lt (a x : ℝ) (ha : 0 ≤ a) (hsq : a^2 < x) :
 
 /-- **Bracketing helper**: if `0 ≤ x` and `x < a^2`, then
     `Real.sqrt x < a` (assuming `0 ≤ a`). -/
-theorem sqrt_lt_of_lt_sq (a x : ℝ) (ha : 0 ≤ a) (hx : 0 ≤ x)
+theorem Real.sqrt_lt_of_lt_sq (a x : ℝ) (ha : 0 ≤ a) (hx : 0 ≤ x)
     (hsq : x < a^2) :
     Real.sqrt x < a := by
   have hax : a = Real.sqrt (a^2) := by

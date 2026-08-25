@@ -30,8 +30,7 @@ $\mathtt{def:universal-ilp-algorithm}$).*
               x ≥ 0.
 2. Solve via Clarabel (default) or a sibling SDP backend.
 3. Recover dual variables y_0*, y*.
-4. Emit the LP-dual witness (per AGENTS.md "LP/SDP duals —
-   first-class infra").
+4. Emit the LP-dual witness.
 ```
 
 ### Correctness conditions
@@ -63,12 +62,11 @@ solver helpers are exposed as
 [`confinement-operator-selection.witness.json`](../../../computations/confinement-operator-selection.witness.json).
 **Must emit all of** `y0_star`, `y_star`, `active_set`,
 `primal_obj`, `dual_obj`, `duality_gap` — enforced in CI by
-[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
-(see AGENTS.md "LP/SDP duals — first-class infra").*
+[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py).*
 
 ### Notes
 
 *The active dual variables $y^*_i > 0$ name the "most receptive
 sub-braids" — they are the structural identifiers of the
 saturated Wedderburn blocks. Solving only the primal loses this
-information; the dual emission is **required**, not optional.*
+information; the dual emission is **required**.*

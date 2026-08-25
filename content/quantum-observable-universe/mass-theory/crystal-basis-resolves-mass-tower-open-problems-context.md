@@ -1,6 +1,6 @@
-The chirality factor average reduces to an integer multiplicity sum on a Type-B folded crystal. The folded Demazure components strictly evaluate the matter-antimatter imbalance.
+The chirality factor average reduces to an integer multiplicity sum on a Type-B folded crystal. The folded Demazure components evaluate the matter-antimatter imbalance.
 
-The Term 7 shell correction reduces to enumerating crystal vertices at depth 6. The Demazure sub-crystal structure structurally determines the negative binding-enhancing sign.
+The Term 7 shell correction reduces to enumerating crystal vertices at depth 6. The Demazure sub-crystal structure determines the negative binding-enhancing sign.
 
 The Habiro convergence divergence reduces to the Kazhdan-Lusztig classical-limit functor. The functor maps the divergent Hecke trace to a finite integer sum over the symmetric group. This canonically regularises the evaluation at the pole.
 

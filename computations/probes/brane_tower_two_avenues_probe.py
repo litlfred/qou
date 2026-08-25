@@ -165,7 +165,7 @@ def tr_M_global_at_q(chains, q_val: mp.mpf) -> mp.mpf:
     prod = mp.mpf(1)
     qi_val = 1 / q_val
     h_q = q_val - qi_val
-    z_q = 1 / (mp.sqrt(q_val) + 1 / mp.sqrt(q_val))
+    z_q = q_val**3 / (q_val**2 + 1)
     for ch in chains:
         if not ch:
             continue

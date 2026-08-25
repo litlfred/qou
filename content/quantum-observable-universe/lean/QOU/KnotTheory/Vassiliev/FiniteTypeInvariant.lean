@@ -121,7 +121,7 @@ variable {S}
 
 /-- Order is monotone: an order-`≤ m` invariant is also order-`≤ m'` for
 `m ≤ m'` (vanishing on `> m` double points implies vanishing on `> m'`). -/
-theorem mono {m m' : ℕ} (hmm : m ≤ m') {v : K → R}
+theorem IsFiniteType.mono {m m' : ℕ} (hmm : m ≤ m') {v : K → R}
     (hv : S.IsFiniteType m v) : S.IsFiniteType m' v := by
   intro k hk s
   exact hv (lt_of_le_of_lt hmm hk) s
@@ -131,14 +131,14 @@ theorem isFiniteType_zero (m : ℕ) : S.IsFiniteType m (0 : K → R) := by
   intro k _ s; simp
 
 /-- Finite-type invariants of order `≤ m` are closed under addition. -/
-theorem add {m : ℕ} {v w : K → R} (hv : S.IsFiniteType m v)
+theorem IsFiniteType.add {m : ℕ} {v w : K → R} (hv : S.IsFiniteType m v)
     (hw : S.IsFiniteType m w) : S.IsFiniteType m (v + w) := by
   intro k hk s
   rw [S.vExt_add, hv hk s, hw hk s, add_zero]
 
 /-- Finite-type invariants of order `≤ m` are closed under scalar
 multiplication. -/
-theorem smul {m : ℕ} (r : R) {v : K → R}
+theorem IsFiniteType.smul {m : ℕ} (r : R) {v : K → R}
     (hv : S.IsFiniteType m v) : S.IsFiniteType m (r • v) := by
   intro k hk s
   rw [S.vExt_smul, hv hk s, mul_zero]

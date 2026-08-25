@@ -41,7 +41,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
 try:
@@ -60,7 +65,7 @@ def main():
     p_n = 30
 
     # Load the A=3 H₉ chi-cache (proton at H₉ = A=3)
-    cache = json.loads((_pb.witness_path("chi-tritium-h9-at-q0-50dps.witness.json", HERE)).read_text())
+    cache = record_upstream(_pb.witness_path("chi-tritium-h9-at-q0-50dps.witness.json", HERE), _UPSTREAM_RECORDS)
     data = cache.get("data", cache)
     by_part = data["by_partition"]
     # Keep substrate values at mpmath precision (flagged by
@@ -83,7 +88,7 @@ def main():
     print("=" * 70)
     print()
     print(f"  Partitions: {d}  (p(9) = {p_n})")
-    print(f"  tr_M(A=3) = {tr_M:.10f}")
+    print(f"  tr_M(A=3) = {mp.nstr(tr_M, 11)}")  # display only; mpf has no %f
     print()
 
     # ---------------------------------------------------------------
@@ -95,15 +100,20 @@ def main():
     G = np.diag([abs(c) for c in contribs])
     n_target = tr_M
 
-    result = solve_operator_selection_lp(t_vec, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    result = solve_operator_selection_lp(t_vec, G, n_target, backend="clarabel")
     rd = result.to_dict()
 
     y_star = rd["y_star"]
     y0_star = rd["y0_star"]
     active = rd.get("active_set", rd.get("active_constraints", []))
 
-    print(f"  LP solved. Duality gap: {rd['duality_gap']:.2e}")
-    print(f"  y0* (net shadow price): {y0_star:.10f}")
+    print(f"  LP solved. Duality gap: {float(rd['duality_gap']):.2e}")
+    print(f"  y0* (net shadow price): {float(y0_star):.10f}")
     print(f"  Active blocks: {len(active)} of {d}")
     print()
 
@@ -111,8 +121,8 @@ def main():
     print(f"  {'Partition':<18s} {'y*[λ]':>14s} {'χ_λ':>10s} {'contrib':>12s}")
     print(f"  {'─'*18} {'─'*14} {'─'*10} {'─'*12}")
     for i in active:
-        print(f"  {str(list(partitions[i])):<18s} {y_star[i]:>14.6f} "
-              f"{chi_lams[i]:>10.4f} {contribs[i]:>12.6f}")
+        print(f"  {str(list(partitions[i])):<18s} {float(y_star[i]):>14.6f} "
+              f"{float(chi_lams[i]):>10.4f} {float(contribs[i]):>12.6f}")
     print()
 
     # ---------------------------------------------------------------
@@ -129,12 +139,12 @@ def main():
     sum_y = sum(y_star)
     n_active = len(active)
     print(f"  Number of active blocks: {n_active}")
-    print(f"  Σ y*[λ] = {sum_y:.10f}")
-    print(f"  y0* = {y0_star:.10f}")
+    print(f"  Σ y*[λ] = {float(sum_y):.10f}")
+    print(f"  y0* = {float(y0_star):.10f}")
     print()
     print(f"  Correction targets:")
-    print(f"    1/p(n) = 1/30 = {1/30:.10f}")
-    print(f"    1/1260 = {1/1260:.10f}")
+    print(f"    1/p(n) = 1/30 = {float(1/30):.10f}")
+    print(f"    1/1260 = {float(1/1260):.10f}")
     print(f"    ℏ² = {float(eps):.10f}")
     print()
 
@@ -160,7 +170,7 @@ def main():
                 matches.append((partitions[i], name, y))
     if matches:
         for lam, name, y in matches:
-            print(f"    λ={list(lam)}: y*={y:.6f} ≈ {name}")
+            print(f"    λ={list(lam)}: y*={float(y):.6f} ≈ {name}")
     else:
         print(f"    No shadow price matches 1/30, 1/1260, ℏ², or 1/p(n)².")
     print()
@@ -200,6 +210,7 @@ def main():
     # Build witness with FULL LP dual fields (per AGENTS.md LP/SDP rule)
     w = WitnessBuilder("habiro-correction-shadow-price-test", engine="python",
                        start_time=_t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Tests whether the proton Habiro correction coefficients (1/30, "
         "1/1260) are LP/SDP shadow prices. Operator-selection LP at H₉ "
@@ -208,8 +219,26 @@ def main():
     )
     w.set_audit_only("docs/audits/2026-05-28-habiro-product-correction-7ppm.md")
     # Required LP-dual fields
+    # THE SHADOW PRICES ARE THE DELIVERABLE, so they ship with their full
+    # precision, not just the f64 view. `solve_operator_selection_lp` already
+    # returns a 50-dps companion for every dual it computes; reading only
+    # `rd["y_star"]` and handing that to `add_data` threw those digits away at
+    # the last step and put 34 raw float64 fields into the witness — for
+    # quantities whose whole argument is that they are ALGEBRAIC and can be
+    # compared against a transcendental. Bean `qou/ftuv`.
+    #
+    # `backend` rides along because a clarabel answer and a scipy-HiGHS answer
+    # to this LP are not interchangeable, and a witness that does not say
+    # which one produced it cannot be re-checked.
     w.add_data("y0_star", y0_star)
     w.add_data("y_star", y_star)
+    for _k in ("y0_star_str", "y_star_str", "primal_obj_str",
+               "dual_obj_str", "duality_gap_str"):
+        _v = rd.get(_k)
+        if _v is not None:
+            w.add_data(_k, _v)
+    if rd.get("backend") is not None:
+        w.add_data("backend", rd["backend"])
     w.add_data("active_set", active)
     w.add_data("primal_obj", rd["primal_obj"])
     w.add_data("dual_obj", rd["dual_obj"])

@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2607.03827v1",
+ "source_sha256": "965d69603381942a",
+ "brief": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS — The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical",
+ "extended": "**AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS**\n\n*PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP*\n\n32 pp, 9 sections.\n\n**Abstract.** The theory of affine cellular algebrasAis extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property betweenA and ˆA, about constructing ˆAfrom cell modules ofA, about existence of an embeddingA→ ˆAand about a faithful functor from torsionlessˆA-modules toA-modules as well as about the embedding being weakly spectrum preserving (in the sense of Baum and Nistor) and about non-zero endomorphisms of cell modules being injective, while there are no non-zero homomorphisms between non-isomorphic cell modules.\n\n**Outline.** 1 Introduction; 2 Determinants for affine Cellular Algebras; 3 Homomorphisms between affine cell ideals.; 4 The asymptotic algebra of an affine cellular; 5 Properties of the embedding into the asympto; 6 Examples and methods; 6.1 An explicit example; 6.3 Gram determinants and Jucys Murphy element; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 291
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-2-determinants-for-affine-cellular-algebras",
+   "title": "Determinants for affine Cellular Algebras",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
+   "title": "Homomorphisms between affine cell ideals.",
+   "pages": "7-13"
+  },
+  {
+   "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
+   "title": "The asymptotic algebra of an affine cellular algebra",
+   "pages": "13-17"
+  },
+  {
+   "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
+   "title": "Properties of the embedding into the asymptotic algebra",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-005-6-examples-and-methods",
+   "title": "Examples and methods",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-006-61-an-explicit-example",
+   "title": "An explicit example",
+   "pages": "22-29"
+  },
+  {
+   "id": "sec-007-63-gram-determinants-and-jucys-murphy-elements",
+   "title": "Gram determinants and Jucys Murphy elements",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "31-32"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

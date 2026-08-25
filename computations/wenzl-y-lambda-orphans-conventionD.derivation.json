@@ -1,0 +1,57 @@
+{
+  "target": "the Jones-Markov weights y_lambda under the canonical convention D, at H_9 and H_12",
+  "target_value": "y_lambda = [n - 2k + 1]_q / [2]_q^n for lambda = (n-k, k) with l(lambda) <= 2, and y_lambda = 0 exactly for l(lambda) >= 3; 30 weights at n = 9 and 77 at n = 12",
+  "content_block": "prop:categorical-mass-markov",
+  "description": "Derivation chain for wenzl-y-lambda-h9.witness.json and wenzl-y-lambda-h12.witness.json. One producer, two levels, one chain.\n\nThese two were PRODUCERLESS until 2026-08-10 -- convention-C weight tables that nothing in the tree wrote, read by six live nuclear consumers (tritium and 3He at H_9, 4He at H_12). That is the worst form of the propagation hazard: a convention-D consumer reading convention-C weights, with nothing in the witness saying which convention produced them. Bean qou-rohl; closed by writing the producer this chain backs.\n\nWhat makes convention D derivable rather than conventional is the vanishing: at z_D the three-strand antisymmetriser lies in the radical, so every l(lambda) >= 3 weight is exactly zero -- a structural signature no numerical fit produces, and the reason the rewrite could be verified before it was written.",
+  "steps": [
+    {
+      "name": "Hecke relation and the balanced q-integer",
+      "operation": "The Iwahori-Hecke algebra H_n(q) is the braid-group algebra of B_n modulo (sigma_i - q)(sigma_i + q^{-1}) = 0, and [m]_q = (q^m - q^{-m})/(q - q^{-1}) is the balanced q-integer the weights are written in.",
+      "inputs": ["Hecke.Energy"],
+      "output_name": "hecke_relation",
+      "output_value": "sigma_i^2 = (q - q^{-1}) sigma_i + 1;  [m]_q = (q^m - q^{-m})/(q - q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Markov trace, its parameter z, and the Wedderburn weights",
+      "operation": "A Markov trace on the tower of Hecke algebras is fixed by its parameter z; on the Wedderburn decomposition it is tr_M = sum over lambda of y_lambda chi^lambda, so choosing z IS choosing the weight family y_lambda. Uniqueness of the trace satisfying the Markov axioms is the Finite-Jones input.",
+      "inputs": ["hecke_relation", "Wedderburn", "FiniteJones"],
+      "output_name": "markov_weights",
+      "output_value": "tr_M = sum over lambda |- n of y_lambda chi^lambda, with y_lambda determined by z",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HeckeWedderburn",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Convention D: z = q^3/(q^2+1), and the three-strand antisymmetriser in the radical",
+      "operation": "Convention D fixes z_D = q^3/(q^2+1). It is characterised, not chosen: it is the unique non-trivial Markov trace on H_3(q) whose radical contains the three-strand antisymmetriser. Because the antisymmetriser is in the radical, every partition with three or more rows carries weight EXACTLY zero, and the surviving two-row weights are y_lambda = [n - 2k + 1]_q / [2]_q^n for lambda = (n-k, k).",
+      "inputs": ["markov_weights"],
+      "output_name": "y_lambda_closed_form_D",
+      "output_value": "y_{(n-k,k)} = [n-2k+1]_q / [2]_q^n;  y_lambda = 0 for l(lambda) >= 3",
+      "trust_basis": "lean-proven",
+      "jet_order": 0,
+      "gb_filtration_level": 1,
+      "lean_ref": "qou:STUB:MarkovWeight",
+      "citation": "manuscript:convention-d-markov-parameter",
+      "notes": "The uniqueness is Lean, sorry-free (bean qou-u2jg), pinned in QOU/QBeta/TemperleyLiebTower.lean. Convention C (z = sqrt(q)/(q+1)) is EXCISED as of the 2026-08-15 owner ruling, and the two are distinguishable without any anchor or source read: under D the Markov peel's deuteron denominator factors as 192 q^23 (q^2+1)^3, one (q^2+1) per peel, which C's half-integer powers cannot produce."
+    },
+    {
+      "name": "Rewrite in place, gated on the trace normalisation",
+      "operation": "Recompute every y_lambda from the closed form and write it back into each file's own schema, leaving all other fields alone. Nothing is written unless, for every n touched, sum over lambda of dim_lambda . y_lambda = 1 holds on the rewritten values AND every l(lambda) >= 3 weight is exactly zero.",
+      "inputs": ["y_lambda_closed_form_D"],
+      "output_name": "y_lambda_h9_h12",
+      "output_value": "30 weights at n = 9, 77 at n = 12; normalisation and vanishing gates pass on both",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:convention-d-markov-parameter",
+      "notes": "script: computations/regenerate_y_lambda_orphans_conventionD.py -- the frontier step.\n\nWHY A REWRITER RATHER THAN ONE CANONICAL EMITTER. The orphan files agree on the mathematics and on almost nothing else: the weight field is variously y_lambda, y_lambda_numeric, y_lambda_float, y_lambda_symbolic, y_lambda_simplified_factored; the table sits under data or under tables_by_n; values are strings in some and floats in others. Six live consumers read those exact names. Emitting one canonical shape would migrate the convention and break every reader in the same commit, so the schema is preserved and only the numbers move. That is a deliberate trade, not an oversight.\n\nOPEN, AND NOT FIXED BY THIS CHAIN: the q_0 these two files record, 1.10997859555418057528159407960950937799328227995870, is a 17-significant-digit ancestor padded to 50 digits with float64 noise -- it matches neither the frozen muon literal nor what q_muon_at() derives today. It predates the convention-D regeneration, which honoured each file's own pin so that only the convention moved and no layer was straddled. So the CONVENTION is now derived and the ANCHOR is still inherited. Both entries are currently suppressed in q0-drift-baseline.json; when corrected those lines should be REMOVED, never re-baselined. Bean qou-5op4 carries the measurement and the close condition.\n\nScale, so this is not mis-filed: 2.84e-12 relative is 0.00284 ppb -- about 4000x SMALLER than the 11.5 ppb mu-p substrate tension, and about 2840x LARGER than the 1 ppQ L1 compute-precision target. A precision defect, not a physics one."
+    }
+  ]
+}

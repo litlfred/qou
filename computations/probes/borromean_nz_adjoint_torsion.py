@@ -17,9 +17,18 @@ monomial — a different matrix, not a normalisation of this one. Consequences:
   * The exp(2c₀) = 1/|det J_NZ| relation calibrated on 4_1 inherits the factor 2.
 
 USE `computations/one_loop_torsion.py` instead. It is triangulation-invariant
-(verified to 30 digits over ~20 retriangulations of 4_1, 5_2, 6_2) and carries
-the DG unit test. It is ONE-CUSPED ONLY and raises for c ≥ 2, so it cannot yet
-replace the 𝓑₃ (c=3) computation here — that needs DG Sec 4.5.
+(verified over 25 retriangulations each of 13 manifolds) and carries the DG unit
+test. It now covers ANY cusp number, including 𝓑₃ at c = 3, where it gives
+|τ| = 8 rather than the 64 here. The multi-cusp case is DERIVED in
+`docs/audits/2026-08-07-one-loop-multicusp-derivation.md` — it is not in DG at
+all, and in particular not their Sec 4.5, which is the character-variety
+generalization at one cusp (PR #4708).
+
+CAVEAT before repointing this probe's calibration: the overall constant at
+c ≥ 2 is inherited from c = 1 and is NOT pinned. Neither invariance nor the
+change-of-curve law can see a factor depending only on c — which is exactly the
+shape of the `2^{(c−1)/2}` per-cusp factor this chain wanted. Swapping 64 → 8
+here does not settle c_σ.
 
 Bean qou-fl4t; audit docs/audits/2026-08-07-one-loop-fix-impact-analysis.md.
 Jones-side 1-loop measurement.
@@ -70,7 +79,7 @@ inputs; the torsion is computed, not tuned); nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/audits/2026-07-25-borromean-jones-asymptotics-volume-and-1loop.md
 
-THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], uploads/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
+THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], library/arxiv-2411.03801v2/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
 """
 from __future__ import annotations
 
@@ -82,8 +91,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # ── SnapPy gluing_equations('rect') rows: (a[·], b[·], sign);
 #    equation Π_j z_j^{a_j} (1−z_j)^{b_j} = (−1)^sign.  First N rows are edges,

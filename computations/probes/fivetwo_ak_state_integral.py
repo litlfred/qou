@@ -72,8 +72,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (corpus H_num)
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # 5₂ Neumann–Zagier data (FW eq (6) / §1.1)
 A_52, B_52 = 2, 3

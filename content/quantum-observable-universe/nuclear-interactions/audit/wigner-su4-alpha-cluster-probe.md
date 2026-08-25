@@ -1,9 +1,9 @@
 **Remark (Numerical Probe: SU(4) Alpha-Cluster Capacity and AME Residuals).**
 *We numerically investigate the capacity of the SU(4) alpha-cluster. We link the Plancherel weight to the magic $A\cdot 8G$ closure and AME residuals.*
 
-## Connection to the L3 (nuclear-shell binding) layer
+## Connection to nuclear-shell binding
 
-According to [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../../../docs/audits/-magic-shell-gs-filtration-exploitation.md), the framework's L3 nuclear-shell-binding gap relies on the hard-coded `magic A·8G` rule for $^{4}\!\mathrm{He}$ and the α-cluster recursion for $A \geq 8$. This conjecture identifies the magic A$\cdot$8G closure as the SU(4) supermultiplet structure:
+The framework's nuclear-shell-binding gap relies on the hard-coded `magic A·8G` rule for $^{4}\!\mathrm{He}$ and the α-cluster recursion for $A \geq 8$. This conjecture identifies the magic A$\cdot$8G closure as the SU(4) supermultiplet structure:
 
 | A | SU(4) supermultiplet | Framework rule |
 |---|----------------------|----------------|
@@ -29,9 +29,9 @@ $$
 
 The factor of 2 arises from the doubly-saturated isospin $\times$ spin closure (both SU(2)_S and SU(2)_I supermultiplets). The factor of 4 counts the $A=4$ nucleons. The $8G$ factor scales the Borromean hyperbolic volume.
 
-## Unlocking of L3 wiring
+## Classification of shell closures
 
-The prototype script [`prototype_gs_nf_shell_binding.py`](../../../../computations/prototype_gs_nf_shell_binding.py) (PR [#1162](https://github.com/litlfred/qou/pull/1162)) uses ε_shell values derived from AME residuals. It does so because the framework lacks a categorical formula determining which $(Z, N)$ saturates which shell. This conjecture provides that classification:
+The prototype script [`prototype_gs_nf_shell_binding.py`](../../../../computations/prototype_gs_nf_shell_binding.py) uses ε_shell values derived from AME residuals. It does so because the framework lacks a categorical formula determining which $(Z, N)$ saturates which shell. This conjecture provides that classification:
 
 - **s-shell closure** at $A = 4$: SU(4) totally-antisymmetric $\mathbf{1}$.
 - **p-shell closure** at $A = 16$ ($^{16}\!\mathrm{O}$): 12 p-shell nucleons fill the next SU(4) supermultiplet.
@@ -43,4 +43,4 @@ The α-cluster recursion in `mass_table_ppb.py` derives directly from this class
 
 1. **Verify magic A$\cdot$8G constant formula numerically**: At $q = q_0$, the dynamic capacity $E_{gate} = E_0 \ln(1/W_\lambda)$ derived from the SU(4) spin-flavor conjugate partition $\lambda$ precisely dictates the binding gap. The required fractional occupancy $c_\lambda$ scales from 0.24 ($^2H$) to 0.9435 ($^4He$, where $\lambda = (3,3,3,3)$). This formally supersedes the empirical $A \cdot 8G$ approximation with the categorical Plancherel weight.
 2. **Derive α-cluster recursion**: Show that $c_{\alpha\alpha} = m_e \cdot \mathrm{Vol}(7^2_1)$ in `mass_table_ppb.py` arises as the product of two SU(4)-singlet quadruplets under categorical multiplication.
-3. **Connect to L3 prototype**: Replace ε_shell empirical estimates in [`prototype_gs_nf_shell_binding.py`](../../../../computations/prototype_gs_nf_shell_binding.py) with categorical SU(4)-singlet projection coefficients (via $c_\lambda$).
+3. **Connect to the shell-binding prototype**: Replace ε_shell empirical estimates in [`prototype_gs_nf_shell_binding.py`](../../../../computations/prototype_gs_nf_shell_binding.py) with categorical SU(4)-singlet projection coefficients (via $c_\lambda$).

@@ -85,7 +85,13 @@ HERE = Path(__file__).resolve().parent
 WITNESS = HERE / "awzero-asymptotics.witness.json"
 
 Q_MUON = "1.10997859555733471"      # computations/ layer canonical q₀ (muon pin)
-Q_PROTON = "1.10997861"             # proton-pinned spot value (package layer)
+Q_PROTON = "1.10997858275138081"    # proton pin (package layer), 17 dp like Q_MUON
+# Was "1.10997861", commented "proton-pinned spot value" — but that literal is
+# +24.5 ppb from the proton pin, i.e. 2.1x the ~11.5 ppb mu-p substrate tension
+# this very probe measures. A muon-vs-proton comparison run against it was
+# comparing the muon pin to a point 2 tensions past proton, so the quantity it
+# reported as the mu-p difference was wrong by more than the difference itself.
+# The comparison is deliberate and correct; only the proton value was not.
 
 t0 = time.time()
 results: dict = {}

@@ -52,7 +52,12 @@ from pathlib import Path  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 HERE = Path(__file__).resolve().parent
 COMPUTATIONS = HERE.parent
@@ -61,7 +66,7 @@ SOURCE = COMPUTATIONS / "delta-lambda-canonical-residual.witness.json"
 
 def main() -> int:
     set_compute_dps()
-    src = json.loads(SOURCE.read_text())["data"]
+    src = record_upstream(SOURCE, _UPSTREAM_RECORDS)["data"]
     q0 = mp.mpf(repr(src["q0"]))
     lnq0 = mp.log(q0)
 
@@ -69,6 +74,7 @@ def main() -> int:
         return mp.log(mp.mpf(repr(x))) / lnq0
 
     w = WitnessBuilder("h1-exponent-location", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "H1 location test (9b work-plan step 1): decomposes the "
         "witnessed Δ_λ ≈ q₀^(10A−5) exponent as ord(B_AME) − "

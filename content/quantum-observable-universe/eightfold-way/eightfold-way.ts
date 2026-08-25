@@ -63,6 +63,10 @@ export default chapter({
       blocks: [
         "meson-octet-decomposition",
         "meson-mass-splitting",
+        // The vector nonet. Placed after the GMO null result it contrasts
+        // with, so both uses[] edges run backward. Takes this section from
+        // 2 to 3 blocks, into the detangler 3-18 band.
+        "vector-meson-nonet",
       ],
     }),
 
@@ -77,6 +81,21 @@ export default chapter({
       blocks: [
         "schur-weyl-eightfold",
         "borromean-decuplet-derivation",
+        // The equal-spacing / Omega-minus null result. Placed after the
+        // decuplet block it interprets, so the edge runs backward. Takes
+        // this section from 2 to 3 blocks, into the detangler 3-18 band.
+        "decuplet-equal-spacing",
+        // U-spin / Coleman–Glashow, the third null result. Placed after
+        // both blocks it uses, so every uses[] edge runs backward. Takes
+        // this section 3 -> 4, still inside the band. Also gives the
+        // baryon octet its first real content (qou-7lio).
+        "u-spin-coleman-glashow",
+        // The octet itself: decomposition, weight table, and the weight-map
+        // degeneracy — the one CONTENT-BEARING result of the family (a
+        // weight-only mass formula is structurally impossible, refuted at
+        // 77 MeV). Last, so all four uses[] edges run backward. 4 -> 5
+        // blocks, inside the band. Closes qou-wd07.
+        "baryon-octet-decomposition",
       ],
     }),
 

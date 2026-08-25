@@ -27,6 +27,12 @@ variant, so a near-miss isn't mistaken for a refutation of the whole q-involutio
 
 No fit; sympy symbolic in q + mpmath 50-dps at q0; (a)/(b)-scoped verdict per AGENTS.md.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
@@ -111,7 +117,8 @@ W_laurent = {m: bool(is_laurent_poly_in_q(Wm[m])) for m in range(2, MMAX + 1)}
 W_first_nonlaurent = next((m for m in range(2, MMAX + 1) if not W_laurent[m]), None)
 
 # Numeric eval at q0 (proton-pinned package q0) for residual magnitudes
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 
 

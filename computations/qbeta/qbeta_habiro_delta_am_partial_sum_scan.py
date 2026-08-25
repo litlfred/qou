@@ -94,7 +94,12 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def log(msg: str) -> None:
@@ -118,7 +123,7 @@ def parse_coeffs(habiro_entries: list[dict], u: sp.Symbol) -> dict[int, sp.Poly]
 def load_atomic(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
     path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     log(f"Loading atomic witness: {path.name}")
-    data = json.loads(path.read_text())
+    data = record_upstream(path, _UPSTREAM_RECORDS)
     return {
         "p": parse_coeffs(
             data["results"]["p (proton, A=1)"]["habiro_coefficients"], u
@@ -360,6 +365,7 @@ def main() -> int:
         engine="python+sympy",
         start_time=t0,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Δa_m partial-sum cyclotomic scan: for each atomic-step pair "
         "(D−n), (³He−D), (⁴He−³He), compute S_M = Σ_{m=0..M} Δa_m·(u;u)_m "

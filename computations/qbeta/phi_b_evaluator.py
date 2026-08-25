@@ -49,7 +49,7 @@ mechanically instead of by memory — the anti-self-deception design):
                                   at b = e^{iπ/6}, independent of any product
                                   transcription.
 
-LITERATURE VERIFICATION (uploads/0604094v1.pdf — Hikami, arXiv:math/0604094,
+LITERATURE VERIFICATION (library/arxiv-math-0604094v1/0604094v1.pdf — Hikami, arXiv:math/0604094,
 "Generalized volume conjecture and the A-polynomials"): with the variable map
 γ = πb², φ = 2πbz, this evaluator IS Hikami's Faddeev integral Φ_γ(φ),
 eq (2.1) (same contour ℝ+i0 above the origin), and the battery results match

@@ -1,9 +1,7 @@
-# Ground-state ordering: eigenvalue derivation and verification
+# Ground-state ordering: the eigenvalue heuristic and what the sweep found
 
-The nuclear ground state is the nucleon ordering that minimises
-the quantum dilogarithm volume $\Phi_q = \sum_i \log|\hat{V}_i|$
-of the transfer matrix chain.  The ordering is determined by
-the **eigenvalue structure** of the three typed transfer matrices.
+This remark records the eigenvalue argument that originally motivated
+the interleaving rule, and the exhaustive search that refuted it.
 
 ## Transfer matrix eigenvalues
 
@@ -22,69 +20,66 @@ $\lambda_\pm(T_{nn}) = \lambda_\mp(T_{pp})$.  The mixed matrix
 $T_{pn}$ has **zero trace** and equal-magnitude eigenvalues
 $\pm\sqrt{1 + h^2/4} \approx \pm 1.005$.
 
-## Minimisation of $\Phi_q$ under interleaving
-
-The vertex volume at generator $i$ is
-$\hat{V}_i = z \cdot a_i + b_i$, where $(a_i, b_i)$ is the
-chain-reduced transfer matrix state.  The chain at generator $i$
-multiplies transfer matrices for all crossings with strands
-$j > i$.
+## The heuristic
 
 Each $T_{pp}$ contributes dominant eigenvalue $+q \approx 1.110$
 (growth).  Each $T_{nn}$ contributes $+q^{-1} \approx 0.901$
 (decay).  The interleaved arrangement alternates growth and
-decay factors, producing destructive interference that drives
-$|\hat{V}_i|$ below $1$ at most generators.
+decay factors, which suggests destructive interference driving
+$|\hat{V}_i|$ below $1$ at most generators, whereas a sorted chain
+front-loads pure growth.  Since $T_{pn}$ has zero trace, its
+contributions were expected to average to zero over many chain
+steps, making the mixed crossings neutral spacers between the
+binding $T_{nn}$ and anti-binding $T_{pp}$ contributions.
 
-In contrast:
-- **Sorted** (all protons first): generators $0, \ldots, Z-2$
-  see only $T_{pp}$ crossings (pure growth), producing
-  $|\hat{V}_i| > 1$ (no binding).  Generators $Z, \ldots, A-2$
-  see only $T_{nn}$ (pure decay), but the accumulated growth
-  from early generators limits the total binding.
+**The exhaustive sweep below refutes this heuristic.**
 
-- **Interleaved**: every generator sees a mix of $T_{pp}$, $T_{pn}$,
-  $T_{nn}$ crossings.  The alternating $q$ and $q^{-1}$ eigenvalues
-  cancel partially at each step, keeping $|\hat{V}_i|$ close to
-  (and often below) $1$ throughout the chain.
+## What the exhaustive sweep found
 
-The $T_{pn}$ matrix has zero trace, meaning its contributions
-average to zero over many chain steps.  The interleaved
-arrangement maximises the fraction of $T_{pn}$ crossings,
-which act as **neutral spacers** between the binding $T_{nn}$
-and anti-binding $T_{pp}$ contributions.
+$\Phi_q$ was evaluated over **every** $\binom{A}{Z}$ arrangement for
+each $(Z, N)$ with $Z \leq N$ and $A \leq 16$, at the experimental
+substrate anchor, on both the bare-nucleon chain and the chain with the
+electron tail appended.
 
-## Verified ground states
+The interleaved, tail-packed arrangement is the minimiser in a minority
+of cases and the strict maximiser in a comparable number.  At $A = 5$,
+$Z = 1$ it is the strict worst of all five arrangements on both
+readouts, while the sorted arrangement — which the rule reserves for
+$A \leq 3$ — is the minimiser.  The excess neutrons of the minimising
+arrangement head-pack rather than tail-pack.  Full tallies and the
+Lean-proved counterexample are in
+[the proposition](#prop:ground-state-ordering).
 
-Exhaustive search over all $\binom{A}{Z}$ orderings confirms
-the derived rule for $A \leq 14$:
+## Why the heuristic failed
 
-See [Table 2](#tbl:ground-state-ordering-table2-data).
+The transfer factors are $T(d) = S + d\,\mathbf{1}$ for a single fixed
+matrix $S$, so they all **commute**: the chain product at a position
+depends on the crossing coefficients only as a multiset, and there is no
+"alternation" for the readout to see.  What looks like a growth/decay
+interference pattern at the level of individual matrices is, at the level
+of the readout, a product of eigenfactors whose ordering is immaterial.
+The only thing that varies between arrangements is *which multiset* sits
+at *which position* — and the resulting $\Phi_q$ is not extremised by
+alternation.
 
-The sorted ordering (protons first) is optimal only for
-$A \leq 3$, where the chain is too short for eigenvalue
-cancellation to develop.  For $A \geq 4$, interleaving
-dominates by factors of $2\text{--}10\times$ in $|\Phi_q|$.
+This also explains an exact degeneracy the heuristic cannot account for:
+at $A = 3$, $Z = 2$ the arrangements $ppn$ and $pnp$ have *identical*
+$\Phi_q$ on the bare chain.
 
 ## Connection to the Gram matrix
 
 The transfer matrix eigenvalues are the Gram matrix entries
 in disguise: $\lambda_+(T_{pp}) = q$ and $\lambda_+(T_{nn}) = q^{-1}$
 are the braiding eigenvalues from the Hecke relation
-$(T - q)(T + q^{-1}) = 0$.  The ground-state ordering maximises
-the destructive interference between these eigenvalues,
-which is equivalent to minimising the Frobenius norm
-$\|\mathrm{NF}(\mathcal{N})\|_F$ of the nuclear configuration
-in the Gram matrix inner product.
+$(T - q)(T + q^{-1}) = 0$.  That identification is unaffected by the
+refutation; only the claim that a particular arrangement extremises
+$\Phi_q$ has been withdrawn.
 
 ## Scalability
 
-For $A > 14$, exhaustive search over $\binom{A}{Z}$ orderings is
-infeasible.  The derived rule provides an $O(A)$ construction:
-interleave protons at odd positions $1, 3, \ldots, 2Z-1$ and
-pack excess neutrons at positions $2Z, \ldots, A-1$.  This
-matches the exhaustive ground state for all verified cases
-($A \leq 14$, except $A \leq 3$ where sorting wins).
-
-For $A \leq 3$: use sorted (protons first).
-For $A \geq 4$: use interleaved + tail packing.
+For $A > 16$ exhaustive search over $\binom{A}{Z}$ arrangements was not
+attempted, and no closed-form rule for the minimiser is available.  The
+sweep's minimising family — an interleaved block at an interior offset,
+with the excess neutrons split between a head run and a four-neutron
+tail — is an empirical description over $A \leq 16$, not a derived
+construction.

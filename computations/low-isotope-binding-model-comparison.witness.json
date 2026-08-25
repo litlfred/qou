@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:41:56.036627+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T09:14:14.856666+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "B_depth_beats_B_lin_on_DT3He",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 40,
   "computation": "low-isotope-binding-model-comparison",
   "scriptFile": "low_isotope_binding_model_comparison.py",
-  "scriptHash": "52d13592a0da",
-  "scriptCommitSha": "ee7b1ee9e6a6026bdf76024f33d8ca2953b9ef38",
+  "scriptHash": "316fb4f37d9a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/low_isotope_binding_model_comparison.py"
+    ],
+    "reproduce": "python3 -u computations/low_isotope_binding_model_comparison.py"
   },
   "description": "Fresh side-by-side of the best low-isotope binding models vs AME 2020. B_lin (linear-truncation) undershoots -79..-97.5% (it is the linearization of B_sym; deficit = Δ_λ ≈ q₀^(10A−5)). B_depth (tower) undershoots -66..-73% (⁴He deferred, H_12 RAM). B_magic best on ⁴He (+5.9%). B_lin·q₀^(10A−5) is the Δ_λ-law near-match (q₀^5/site; exponent not yet derived — open keystone). No fit; NOT wired.",
   "parameters": {
@@ -44,14 +52,14 @@
         "N": 1,
         "A": 2,
         "B_AME_MeV": "2.22457",
-        "B_lin_MeV": "0.46562",
-        "err_lin_pct": "-79.069",
+        "B_lin_MeV": "0.435404",
+        "err_lin_pct": "-80.427",
         "B_depth_MeV": "0.606879",
         "err_depth_pct": "-72.7",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
-        "B_lin_x_q0_10A5_MeV": "2.22716",
-        "err_dlaw_pct": "0.11624"
+        "B_lin_x_q0_10A5_MeV": "2.08262",
+        "err_dlaw_pct": "-6.3807"
       },
       {
         "atom": "T",
@@ -59,14 +67,14 @@
         "N": 2,
         "A": 3,
         "B_AME_MeV": "8.4818",
-        "B_lin_MeV": "0.62896",
-        "err_lin_pct": "-92.585",
+        "B_lin_MeV": "0.695132",
+        "err_lin_pct": "-91.804",
         "B_depth_MeV": "2.80777",
         "err_depth_pct": "-66.9",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
-        "B_lin_x_q0_10A5_MeV": "8.54059",
-        "err_dlaw_pct": "0.69316"
+        "B_lin_x_q0_10A5_MeV": "9.43913",
+        "err_dlaw_pct": "11.287"
       },
       {
         "atom": "3He",
@@ -74,14 +82,14 @@
         "N": 1,
         "A": 3,
         "B_AME_MeV": "7.71804",
-        "B_lin_MeV": "0.65808",
-        "err_lin_pct": "-91.473",
+        "B_lin_MeV": "0.698552",
+        "err_lin_pct": "-90.949",
         "B_depth_MeV": "2.65298",
         "err_depth_pct": "-65.6",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
-        "B_lin_x_q0_10A5_MeV": "8.93601",
-        "err_dlaw_pct": "15.781"
+        "B_lin_x_q0_10A5_MeV": "9.48558",
+        "err_dlaw_pct": "22.901"
       },
       {
         "atom": "4He",
@@ -89,14 +97,14 @@
         "N": 2,
         "A": 4,
         "B_AME_MeV": "28.2957",
-        "B_lin_MeV": "0.71346",
-        "err_lin_pct": "-97.479",
+        "B_lin_MeV": "0.876064",
+        "err_lin_pct": "-96.904",
         "B_depth_MeV": "deferred",
         "err_depth_pct": "  —",
         "B_magic_MeV": "29.9557",
         "err_magic_pct": "+5.87",
-        "B_lin_x_q0_10A5_MeV": "27.503",
-        "err_dlaw_pct": "-2.8013"
+        "B_lin_x_q0_10A5_MeV": "33.7712",
+        "err_dlaw_pct": "19.351"
       }
     ],
     "summary": {

@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T22:35:00Z
+updated_at: 2026-08-07T23:55:00Z
 ---
 
 ## Why
@@ -176,9 +176,75 @@ bounded product search.
 
 ---
 
+## 2026-08-07 (third pass) — full coset enumerated. A candidate appeared, then died.
+
+The previous pass was inconclusive because the flattening search was a box on
+the exponents. That is now fixed: `sympy` installed, and the coset is
+enumerated properly as *particular solution + integer kernel* via
+`gauss_jordan_solve`, keeping only integral members. That yields **12-25
+genuine flattenings per triangulation** (params in `[-2,2]`), not a truncated
+box.
+
+### Result: no placement is invariant
+
+Six placements of the monomial tested over **26** three-tetrahedron geometric
+retriangulations of `5_2` (controls as before). All give `common = 0` — i.e.
+no value is reachable in every triangulation:
+
+    detJ / prod z''^f'' z'^f'      union=71  common=0
+    detJ / prod z''^f'' z'^-f'     union=50  common=0
+    detJ / prod z^f z'^f' z''^f''  union=60  common=0
+    detJ / prod z''^f''            union=49  common=0
+    detJ / prod z'^f'              union=45  common=0
+    detJ / prod z^f                union=51  common=0
+
+### The candidate that had to be killed — and how
+
+`detJ / prod z'^f'` looked like a HIT at 14 triangulations: `common = 2`, then
+`common = 1` on a re-run, with the surviving value `1.753071635790291`.
+
+It passed a **null control** — replacing the flattenings with random integer
+vectors of the same count and range gave a nonempty common set in **0/12**
+trials, so it was not an artifact of set size.
+
+It failed the **sample-size check**: at 26 triangulations `common = 0`.
+
+Two things worth carrying forward:
+
+1. The `common` statistic ("some flattening in each triangulation agrees") is
+   WEAK, because each triangulation offers ~25 choices. A null control is
+   necessary but NOT sufficient to validate it — the drift `2 -> 1 -> 0` as
+   triangulations were added is what actually exposed it. Any future candidate
+   must be re-tested at increasing sample size, not just against a null.
+2. The value it converged on, `1.7530716357902911`, is exactly the SMALLEST
+   observed `|det J|` rung for `5_2` — not an independent quantity. That
+   should have raised suspicion immediately. (It is close to but distinct from
+   `rho^2 = 1.7548776662`, so the plastic connection does not extend here.)
+
+### Where this leaves the repair
+
+Stronger negative than before, but STILL not a proof that no flattening-based
+correction exists. Remaining bounds, stated honestly:
+
+  * coset params restricted to `[-2,2]`;
+  * only 3-tetrahedron triangulations of `5_2`;
+  * only six placements, all of the form `prod (shape)^(flattening)`.
+
+The DG 1-loop invariant also carries a global `1/2` and a SIGN that this test
+ignores by taking `abs`. If the correct correction involves the flattening
+non-monomially, or the determinant itself needs the `A D_z'' + B D_z'` form
+rather than the `A - B z/(1-z)` form used by
+`whitehead_c_sigma_torsion.py`, none of these placements would find it.
+
+**Next: stop searching placements and get the DG formula itself right** — the
+determinant's construction, not just its correction. That is a literature task
+(Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253), not a search task.
+
+---
+
 ## 2026-08-07 (fourth pass) — DG 1202.6268 obtained. The formula is in hand and the root cause is confirmed.
 
-`uploads/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
+`library/arxiv-1202.6268v2/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
 gluing equations"). Four results, all from the source rather than inference.
 
 ### 1. My searched flattening convention was RIGHT — Definition 2.1
@@ -296,3 +362,224 @@ And: the sqrt(3) calibration target may itself be wrong. This repo's
 value-validated Porti probe gives |T_mu(4_1)| = 3; DG give sqrt(3)/2. sqrt(3) is
 neither. one_loop_vs_nu_sdp_probe.py explicitly warns "Do NOT read the tau
 values here as the adjoint torsion" — which is what the c_sigma script did.
+
+---
+
+## 2026-08-07 (sixth pass) — CORRECTION: the multi-cusp formula is NOT in DG.
+
+Earlier passes of this bean, and PR #4706's audit, said the multi-cusp case is
+"DG Section 4.5". **Wrong.** Section 4.5 is the CHARACTER-VARIETY
+generalization — still one cusp, deformed representations with meridian
+eigenvalue m. The multi-cusp formula is not in the paper.
+
+DG list it in Section 1.9 among extensions, and say:
+
+    "The generalization to multiple cusps is also quite straightforward, but
+     left out mainly for simplicity of exposition."
+
+So there is nothing to implement from this source. It must be DERIVED, and
+"straightforward" is the authors' judgement, not a recipe. The one-cusped
+derivation uses an identity that is specifically one-cusped:
+
+    "For a one-cusped manifold, every edge begins and ends at the cusp, which
+     implies sum_I G_Ii = sum_I G'_Ii = sum_I G''_Ii = 2"
+
+That fails for c >= 2. It is what makes the N edge equations dependent in the
+way the construction needs, so the extension is not a matter of adding rows.
+
+LEAD. DG identify tau via Yamaguchi [Yam08] as tau_M = (1/c_M) dtau_M(t)/dt|_1
+with c_M the CUSP SHAPE. Dubois-Huynh-Yamaguchi (library/arxiv-0706.2213v3/0706.2213v3.pdf,
+Sec 5.3) independently express the torsion at holonomy via the cusp shape.
+Cusp shape is per-cusp, so that is where a genuine c-dependence would enter —
+and the place to look before inventing one. Note this is also the honest
+setting in which to ask whether anything like 2^{(c-1)/2} exists at all.
+
+Status unchanged: c=1 is fixed and trusted (computations/one_loop_torsion.py,
+PR #4707). c>=2 is open and now correctly characterised as a derivation task,
+not an implementation task.
+
+---
+
+## 2026-08-07 (seventh pass) — DERIVED. c >= 2 implemented and validated.
+
+And the blocker asserted in the sixth pass above is WITHDRAWN.
+
+That pass said the identity `sum_I G_Ii = sum_I G'_Ii = sum_I G''_Ii = 2`
+"fails for c >= 2". **It does not.** Measured directly on 13 manifolds
+(`probes/one_loop_multicusp_derivation_probe.py`, section A): it holds at every
+cusp number. It is not a cusp statement at all — each tetrahedron has six edges
+in three opposite pairs, one pair per shape type, each glued into exactly one
+edge class, so the column sum is 2 with no reference to cusps. I turned a
+quoted sentence into a structural obstruction without testing the sentence.
+
+THE DERIVATION
+
+  1. Because zeta + zeta' + zeta'' = 0, the identity forces the N specialised
+     edge rows to SUM TO ZERO — at every c. Their rank is exactly N - c.
+     So: N - c edge rows + c peripheral rows.
+  2. The non-obvious part is WHICH N - c rows. An independent SUBSET spans the
+     right complex subspace but can generate a proper SUBLATTICE of the edge
+     lattice (index 2 observed), doubling the determinant. A Hermite-normal-form
+     BASIS of the lattice generated by all N edge rows fixes it. The lattice
+     lives in Z^{2N}, in Neumann-Zagier coordinates (a,b) = (G-G'', G'-G'').
+  3. The flattening was never the c >= 2 problem: its kernel moves the monomial
+     only by a phase (~1e-70), so |tau| is flattening-independent either way.
+
+VALIDATION — not self-consistency
+
+  * Triangulation invariance: 1 value on all 13 manifolds, 25 randomisations
+    each. The subset variant gives 2 values (ratio exactly 2) on L5a1, L6a4,
+    L7a1 — which is how the lattice effect was found.
+  * CHANGE-OF-CURVE LAW, per cusp: swapping cusp k's meridian row for its
+    longitude row multiplies tau by conj(cusp shape of cusp k). SnapPy computes
+    cusp shapes from the cusp cross-section, independently of all of this.
+    Holds to ~1e-59 at c = 1, 2, 3. This is the check with content at c >= 2,
+    because it tests each cusp separately.
+  * Independent presentations agree: L5a1 = 5^2_1 = m129 = sqrt(2);
+    L6a4 = t12067 = 8; L6a2 = m203 = sqrt(3).
+
+VALUES: |tau(L5a1)| = sqrt(2), |tau(m125)| = 2 sqrt(2), |tau(L6a2)| = sqrt(3),
+|tau(L6a1)| = sqrt(7), |tau(L6a4)| = 8, |tau(s776)| = sqrt(14).
+The old claims were |tau(L5a1)| = 2^{5/2} and |tau(L6a4)| = 2^6.
+
+STILL NOT SETTLED — and it is exactly what this arc wanted
+
+The overall constant at c >= 2. The 1/2 is DG's, pinned at c = 1. Invariance
+cannot see a factor depending only on c, and the change-of-curve law is a ratio,
+so `2^{alpha(c-1)} * 1/2` passes every test above. That is the shape of the
+per-cusp factor 2^{(c-1)/2}. So this derivation does NOT revive it, and
+c_sigma = 2^{-3/4} stays at IDENTIFICATION (bean qou-pn5j). Pinning it needs an
+external multi-cusp reference value; nothing in library/ has one —
+Garoufalidis-Yoon prove 1-loop = adjoint torsion for TWO-BRIDGE knots.
+
+Do NOT close this bean by declaring c_sigma derived. Step 3 of "Do" above is
+still open, and is now open for a sharper reason than when it was written.
+
+Audit: docs/audits/2026-08-07-one-loop-multicusp-derivation.md
+
+<!-- 2026-08-07T23:55:00Z branch claude/dg-scope-correction — derived, implemented, validated -->
+
+---
+
+## 2026-08-08 (eighth pass) — step 3 done: the per-cusp factor DISSOLVES.
+
+Step 3 of "Do" above said: re-derive the per-cusp factor against the corrected
+torsion; it may survive, vanish, or change form. **It vanishes.**
+
+Against the corrected invariant (|tau(4_1)| = sqrt(3)/2, |tau(L5a1)| = sqrt(2),
+|tau(L6a4)| = 8), the quantity
+
+    k_c := c_sigma * |tau_DG|^{1/2}
+
+is the SAME constant 2^{-1/2} at c = 1 and c = 2, to 17 digits. A per-cusp
+factor would require k to move by sqrt(2); measured k_2/k_1 = 0.999999999999999995.
+So the law is c_sigma = 2^{-1/2} |tau_DG|^{-1/2}, with no c-dependence, and
+calibrating on 4_1 ALONE predicts c_sigma(L5a1) = 2^{-3/4} to 17 digits with
+nothing adjustable.
+
+NOT CIRCULAR: the c_sigma values are colored-Jones/Kashaev extractions with no
+determinant anywhere (whitehead-c-sigma-fig8-calib and -hiprec witnesses), and
+the fig8 witness states they use the same c_sigma definition, so c=1 and c=2 are
+directly comparable.
+
+WHY THE OLD FIT LOOKED RIGHT. On the DEFAULT triangulations of 4_1, L5a1, L6a4 —
+and not in general — |tau_old| = 2^c |tau_DG|, so
+2^{(c-1)/2}|tau_old|^{-1/2} = 2^{-1/2}|tau_DG|^{-1/2} identically. The per-cusp
+factor was exactly the c-dependence needed to undo that 2^c: a reparametrization,
+not a Gaussian-integration factor. Measured over 13 manifolds the 2^c relation
+holds on 5 and fails on 8, including 5_2/6_2/7_4 at c=1 where no per-cusp factor
+could be responsible.
+
+ALSO CLOSES the normalization caveat the seventh pass left open, for c=1 vs 2:
+invariance and the change-of-curve law are blind to a constant depending only on
+c, but the Jones side is not. Under the prefactor form c_sigma ~ |tau|^{-1/2},
+k_1 = k_2 says the DG normalization carries no extra c-dependence.
+
+c=3 is SUPPORTING ONLY: k_3/k_1 = 1.0035 (0.35%), but that tower's witness flags
+an unresolved normalization+cusp offset and returns p = 1.4993 vs 3/2.
+
+Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md
+Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
+
+<!-- 2026-08-08T00:40:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (ninth pass) — the algebra is now Lean, sorry-free.
+
+`content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean`.
+Nine theorems, `#print axioms` = [propext, Classical.choice, Quot.sound] on every
+one, zero sorries, wired into QOU.lean.
+
+  zeta_sum_eq_zero              zeta + zeta' + zeta'' = 0
+  zetaPP_eq                     zeta'' = -zeta - zeta'
+  nz_pair_reduction             the row depends only on (G-G'', G'-G'')
+  edge_rows_sum_zero            column sums 2  =>  specialised edge rows sum to 0
+  edge_rows_hypotheses_satisfiable   non-vacuity witness
+  det_basis_change              det(U B) = det(U) det(B) over Z -> C
+  det_basis_change_unimodular   unimodular change fixes det up to sign
+  det_sublattice_index          index-k sublattice scales det by k
+  percusp_factor_absorbs        2^{(c-1)/2}(2^c t)^{-1/2} = 2^{-1/2} t^{-1/2}
+
+WHY THESE. Almost all the evidence for the multi-cusp derivation is measurement.
+These four steps were not measurements — they were algebra asserted in prose, and
+one of them (the cusp-freeness of the edge-row degeneracy) is exactly where the
+sixth pass went wrong by reading a quoted sentence as a hypothesis.
+`edge_rows_sum_zero` has NO cusp number in its statement or proof, which makes
+that claim checkable rather than asserted.
+
+`percusp_factor_absorbs` is the sharpest of them: it proves the two c_sigma laws
+are the SAME FUNCTION wherever |tau_old| = 2^c|tau|, so agreement at c = 1,2,3 on
+that data confirmed nothing. The dissolution result is that k_1 = k_2 against the
+CORRECTED invariant, where the identity does not apply.
+
+NOT formalised: that the construction computes the adjoint torsion, or that it is
+a topological invariant. Shapes are free complex numbers in the Lean file; no
+gluing equation is imposed. Those stay numerical (and at c=1 a Garoufalidis-Yoon
+theorem).
+
+<!-- 2026-08-08T01:20:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (tenth pass) — downstream chain reconciled; the framing sweep EXPLAINED.
+
+Items 3 and 4 of the impact analysis's change table, closed.
+
+`probes/borromean_cusp_framing_factor.py` — its framing sweep is CONFIRMED
+EXACTLY and is now explained rather than observed. It is the CHANGE-OF-CURVE
+LAW: replacing cusp k's meridian row by that cusp's longitude row multiplies tau
+by conj(cusp shape of cusp k), and every Borromean cusp shape has modulus exactly
+2. Recomputed with the corrected invariant:
+
+    0 longitudes  |tau| =  8   2^c|tau| =  64      <- all-meridian
+    1 longitude   |tau| = 16   2^c|tau| = 128  (x3)
+    2 longitudes  |tau| = 32   2^c|tau| = 256  (x3)
+    3 longitudes  |tau| = 64   2^c|tau| = 512
+
+reproducing that file's observed {64,128,256,512} exactly. All-meridian is the
+unique minimum because every cusp shape has modulus > 1.
+
+What does NOT survive there: `exp(2c0)|det J_NZ| = 2^{c-1}` is stated in a
+non-invariant quantity, so it is not a well-posed statement about the link; and
+the 2^{c-1} is just 2^c/2, not a "reduced-vs-Kashaev normalization, one Gaussian
+meridian integration per extra cusp". Its DECISIVE THIRD DATA POINT — the 2-cusp
+Whitehead Kashaev tower — already existed in the corpus and PASSES
+(c_sigma(L5a1) = 2^{-3/4} to 20 digits => exp(2c0) = 1/(2 sqrt 2), its exact
+prediction) — and passes equally for the c-free law, which is the point.
+
+`probes/borromean_jones_1loop_torsion.py` — the bounded follow-up it names
+("compute tau(B3) from the octahedral NZ data") is delivered: |tau_DG(L6a4)| = 8.
+Predicted exp(2c0) = 1/16 = 0.0625 vs measured 0.06294 (0.7%). Recorded as
+SUPPORTING, not a match: its two fits bracket the prediction (spread 0.0093 vs
+deviation 0.0035) and its own witness flags a normalization+cusp offset.
+
+`probes/jones_1loop_c0_calibration_fig8.py` — not superseded; it is the anchor.
+Added the normalization note: its |tau_adj| = 1/sqrt(3) is 1/T with T = 2|tau_DG|,
+so its relation reads exp(2c0) = 1/(2|tau_DG|), which carries no per-cusp factor.
+
+STILL OPEN on this bean: item 5, draining float64 from
+whitehead_c_sigma_torsion.py and borromean_nz_adjoint_torsion.py (bean qou-t0rf's
+class) — independent of everything above.
+
+<!-- 2026-08-08T01:50:00Z branch claude/dg-scope-correction -->

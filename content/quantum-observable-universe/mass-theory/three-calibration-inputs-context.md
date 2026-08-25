@@ -40,8 +40,7 @@ $H_3(R, q)$ ([three parameters from Wedderburn](#prop:three-parameters-wedderbur
 
 - $q_0$ is a canonical constant *only* via CAL-2; downstream compute
   must carry $q_0$ symbolically as long as possible and substitute
-  the CAL-2 exact algebraic values at the final reporting step
-  ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)).
+  the CAL-2 exact algebraic values at the final reporting step.
 - $\mathfrak{E}_0$ has two framework-derived forms and one CODATA
   cross-check, all related by the brane-tower correction $1/(1-\hbar_q^2)$:
     - $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV

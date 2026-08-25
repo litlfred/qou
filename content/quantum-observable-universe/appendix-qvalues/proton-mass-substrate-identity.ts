@@ -46,7 +46,7 @@ export default proposition({
   cites: [
     "adams1985hyperbolic",
     "wenzl1988c",
-    "chlouveraki2016hdr",
+    "chlouveraki2016-hdr",
   ],
   computation: {
     engine: "python",

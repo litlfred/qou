@@ -81,8 +81,14 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _li_2_q_util import load_q_50dps, li_2_q  # noqa: E402
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
     classical_dim,
@@ -96,6 +102,12 @@ ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821),
        ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
        ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619),
        ("56Fe", 26, 30, 492.254)]
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 TOL_EXACT = mp.mpf("1e-40")
 TOL_CROSS = mp.mpf("1e-25")
@@ -190,7 +202,11 @@ def chi21_seminormal_direct(q, qi):
 
 def make_tower(q, qi):
     h = q - qi
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15). Was z_C = 1/(sqrt q + sqrt(1/q)).
+    # This is a LOCAL z beside this file's own load_q_50dps() call at the
+    # bottom, so converting only the helper would have left z_D and z_C in
+    # one file — the straddle this excision exists to remove.
+    z = _markov_z(q)
     z2 = z * z
     f_pp = z
     f_pn = z
@@ -356,8 +372,7 @@ def main() -> int:
         print(line)
 
     # cross-check the scalar Jones baseline against the committed witness
-    committed = json.loads(
-        (HERE / "borromean-binding-recompute.witness.json").read_text())
+    committed = record_upstream(HERE / "borromean-binding-recompute.witness.json", _UPSTREAM_RECORDS)
     max_base_dev = mp.mpf(0)
     for row in committed["isotopes"]:
         mine = rows[row["iso"]]["scalar_jones"]["B_tower"]
@@ -390,6 +405,7 @@ def main() -> int:
 
     # ── witness ──
     wb = WitnessBuilder("probe-9b-perlambda-brane-tower", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "PROBE 4 (bean v292): per-λ collapse-last rerun of the single-"
         "pipeline Borromean brane tower. Structural: the pipeline τ is "

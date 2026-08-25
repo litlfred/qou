@@ -16,7 +16,7 @@ Each axiom is translated into knot coordinates below.
 
 ### QU-1: Rigid braided monoidal structure
 
-The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. We write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$ (AGENTS.md §7a). Three families of relations encode rigidity and braiding:
+The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke representation $\rho_n\colon B_n \to H_n(R, q)$. We write $\sigma_i$ both for the braid generator in $B_n$ and for its image $\rho_n(\sigma_i)$ in $H_n(R, q)$. Three families of relations encode rigidity and braiding:
 
 **(QU-1a) Hecke relation** (quadratic):
 
@@ -246,7 +246,7 @@ $$
   \beta = \varnothing  \text{(empty braid)}.
 $$
 
-Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible.
+Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)).
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 
@@ -386,7 +386,7 @@ $$
 
 Thus $d_q^2 = 0$ if and only if $q = 1$ (classical limit) or $\mathrm{wr}(\alpha) = 0$ (horizontal forms). For generic $q \neq 1$ and non-horizontal $\alpha$, $d_q^2 \neq 0$: the $q$-deformed complex is **not** a cochain complex. The obstruction evaluates to writhe $\times$ curvature.
 
-### C-3: Hodge star and Poincar'e duality
+### C-3: Hodge star and Poincaré duality
 
 The categorical Hodge star ([categorical Hodge star](#def:categorical-hodge-star)) $\star\colon \Omega^k(A) \to \Omega^{n-k}(A)$ satisfies $\star^2 = \mathrm{id}$. In knot coordinates, $\star$ acts on modes via the antipode:
 
@@ -399,7 +399,7 @@ $$
   \qquad\text{where } (\cdot)^* \text{ is Frobenius conjugation.}
 $$
 
-**Poincar'e duality** in knot coordinates demands that for all braid words $\beta, \beta'$:
+**Poincaré duality** in knot coordinates demands that for all braid words $\beta, \beta'$:
 
 $$
   \mathrm{tr}_M\!\bigl(
@@ -641,4 +641,4 @@ See [Table 2](#tbl:vertex-algebra-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-relations-table3-data).
 
-These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the singular language of braid words and the Markov trace.
+These **26 relations** (14 structural + 12 cohomological), coupled with the Hecke--Skein dictionary $T \leftrightarrow L_+$, $T^{-1} \leftrightarrow L_-$, $1 \leftrightarrow L_0$, supply a complete presentation of the QOU vertex algebra in knot coordinates. They encode both algebraic structure and cohomological topology using the single language of braid words and the Markov trace.

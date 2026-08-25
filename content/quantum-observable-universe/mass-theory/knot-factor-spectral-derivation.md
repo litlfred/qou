@@ -11,4 +11,4 @@ $$
          {\chi_\lambda(\mathbf{1})^2}.
 $$
 
-*The Plancherel weights $w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ sum to $1$. The identity holds exactly in $R$.*
+*The $q$-deformed Wedderburn weights $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ do not sum to $1$ away from $q = 1$; only $w_\lambda(1)$ does. The identity holds exactly in $R$.*

@@ -8,7 +8,7 @@ the Borromean volume Vol(𝓑₃) that the keystone audit
   Definition A (PRODUCTION):
       Vol(𝓑₃) = 8·G = 7.32772          (G = Catalan)
     classical SnapPy hyperbolic volume, used in
-    `_li_2_q_util.vol_density_borromean` as Geom_leading = Vol/ℏ_q².
+    `_li_2_q_util.per_knot_density_borromean` as Geom_leading = Vol/ℏ_q².
     Provenance: `topological-mass-formula.md` Step 1 —
       Re tr(τ̂ⁿ_desc · Hol) = Vol(K)   (Chern–Simons / volume correspondence).
     This is a POST-τ REAL NUMBER (an archimedean volume in ℝ).
@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _precision import COMPUTE_DPS  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     load_q_50dps,
-    vol_density_borromean,
+    per_knot_density_borromean,
 )
 from codata_constants import (  # noqa: E402
     M_E_MEV,
@@ -107,7 +107,7 @@ def main() -> None:
     # --- Raw m_avg readings (no fit) at each chain stage --------------------
     geom_leading_A = vol_8G / hbar_q**2
     m_avg_A_bare = M_E * geom_leading_A
-    m_avg_A_prod = M_E * vol_density_borromean(q, qi)
+    m_avg_A_prod = M_E * per_knot_density_borromean(q, qi)
     m_avg_B_wrongstage = M_E * (ln_trM_norm / hbar_q**2)  # negative — category error
 
     readings = {
@@ -163,7 +163,7 @@ def main() -> None:
             "value": mp.nstr(vol_8G, 20),
             "chain_stage": "POST-τ (archimedean ℝ). topological-mass-formula "
                            "Step 1: Re tr(τ̂_desc·Hol)=Vol(K), CS/volume corr.",
-            "provenance": "_li_2_q_util.vol_density_borromean vol_b3=8*mp.catalan; "
+            "provenance": "_li_2_q_util.per_knot_density_borromean vol_b3=8*mp.catalan; "
                           "Adams 1985 SnapPy table.",
         },
         "definition_B_vol_through_tau": {

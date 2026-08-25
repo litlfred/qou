@@ -76,7 +76,11 @@ from markov.markov_trace_canonical import tr_M_element  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q as _Q0_F64  # noqa: E402
+# 50-dps source. `_H_F64` below is DELIBERATELY f64 (it feeds an f64 kernel),
+# but it should be the correctly-rounded f64, and the delta on the next line
+# was being evaluated at ~17 digits before the float cast. Alias renamed:
+# a name saying F64 over an mpf is the label problem this sweep is about.
+from q_parameter import Q_MP as _Q0_MP  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -89,13 +93,13 @@ from qou_substrate.precision import COMPUTE_DPS  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS + 15
 
-_H_F64 = float(_Q0_F64 - 1 / _Q0_F64)
-_D_PN_F64 = -_H_F64 * (0.5 - float(flavor_split_leading(mp.mpf(str(_Q0_F64)))) / 4)
+_H_F64 = float(_Q0_MP - 1 / _Q0_MP)
+_D_PN_F64 = -_H_F64 * (0.5 - float(flavor_split_leading(_Q0_MP)) / 4)
 
 # Exact symbolic building blocks (all rational in q except √q inside z).
 S = sp.Symbol("s", positive=True)          # s = √q
 DELTA_SYM = (q_sym - 1) ** 2 * (1 - q_sym ** -4) / 3   # proven leading δ(q)
-Z_SYM = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))       # Markov z(q)
+Z_SYM = q_sym**3 / (q_sym**2 + 1)       # Markov z(q)
 H_Q = q_sym - 1 / q_sym                                  # Hecke h(q)
 F_SYM = {
     "positive": Z_SYM,                                    # p-p interface
@@ -431,7 +435,7 @@ def main() -> int:
 
     # (iv) exponent dictionary of structural constants (q₀-units).
     h0 = q0 - 1 / q0
-    z0 = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    z0 = q0**3 / (q0**2 + 1)
     dictionary = {
         "log_q0_z": float(logq(z0)),
         "log_q0_h": float(logq(h0)),

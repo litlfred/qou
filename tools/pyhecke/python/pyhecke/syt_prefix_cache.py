@@ -28,6 +28,37 @@ from __future__ import annotations
 import math
 
 
+def _sqrt_for(x):
+    """Square root in x's OWN arithmetic — never narrower.
+
+    `math.sqrt` returns a Python float whatever it is given. That silently
+    truncated the off-diagonal `b` on the mpf path: with `q = mpf(Q_50_DIGIT_STR)`
+    the diagonal entries `a`, `a'` carried 50 digits while `b` came back a float
+    with relative error 1.36e-17 against `mp.sqrt(a*a' + 1)`. The seminormal
+    matrices were therefore mixed-precision — 50-digit diagonal, 17-digit
+    off-diagonal — which is exactly the shape the NO-FLOAT64 directive forbids,
+    and it survived the earlier dtype fix in this file because that fix
+    addressed the numpy ALLOCATION and not the value being stored.
+
+    Dispatches on the operand rather than on a flag, matching `_value_dtype`
+    below: an f64 `q` still takes the `math.sqrt` branch and is bit-identical.
+    """
+    # sympy first: an Expr is not a numbers.Real, and sympy.sqrt keeps the
+    # radical exact rather than evaluating it.
+    if type(x).__module__.startswith("sympy"):
+        import sympy
+        return sympy.sqrt(x)
+    if type(x).__module__.startswith("mpmath"):
+        import mpmath
+        return mpmath.sqrt(x)
+    return math.sqrt(x)
+
+
+def _is_symbolic(x) -> bool:
+    """True for a sympy expression — no float comparison is meaningful on one."""
+    return type(x).__module__.startswith("sympy")
+
+
 class BlockCache:
     """Cache of Hoefsmit block values keyed by content distance ρ.
 
@@ -51,15 +82,50 @@ class BlockCache:
         self.misses += 1
         q = self.q
         h = self.h
-        denom_a = 1.0 - q ** (-2 * rho)
-        a = h / denom_a if abs(denom_a) > 1e-15 else 0.0
-        denom_ap = 1.0 - q ** (2 * rho)
-        a_prime = h / denom_ap if abs(denom_ap) > 1e-15 else 0.0
-        b_sq = a * a_prime + 1.0
-        b = math.sqrt(abs(b_sq))
+        symbolic = _is_symbolic(q)
+
+        # The `abs(denom) > 1e-15` guard is a NUMERIC degeneracy test and is
+        # meaningless on a sympy expression (`abs(1 - q**-2) > 1e-15` is an
+        # unevaluated Relational, and `bool()` of it raises). Symbolically the
+        # denominator vanishes only at rho == 0, which cannot occur: rho is the
+        # content distance between the cells holding k and k+1, and two distinct
+        # cells of an SYT never share a content along this pairing. So the
+        # symbolic branch divides unguarded and stays exact.
+        denom_a = 1 - q ** (-2 * rho)
+        denom_ap = 1 - q ** (2 * rho)
+        if symbolic:
+            a = h / denom_a
+            a_prime = h / denom_ap
+            b = _sqrt_for(a * a_prime + 1)
+        else:
+            a = h / denom_a if abs(denom_a) > 1e-15 else 0.0
+            a_prime = h / denom_ap if abs(denom_ap) > 1e-15 else 0.0
+            b_sq = a * a_prime + 1
+            # `abs()` before the root is defensive, not cosmetic: b_sq is 0 at
+            # |rho| = 1 and positive beyond, so a negative value here means a
+            # degenerate q, and rounding can put it a hair below zero.
+            b = _sqrt_for(abs(b_sq))
         entry = (a, a_prime, b)
         self._by_rho[rho] = entry
         return entry
+
+
+def _value_dtype(vals):
+    """float64 if every entry is a plain float/int, else object.
+
+    The seminormal entries inherit their type from `q`: an f64 `q` yields
+    Python floats and a `dtype=object` array would only cost speed for no
+    precision, while an mpf `q` yields mpf entries that a float64 array
+    silently truncates to 53 bits. Deciding from the values rather than from a
+    flag keeps both callers correct without a new argument.
+    """
+    import numbers
+    for v in vals:
+        if not isinstance(v, (float, int, numbers.Integral)):
+            return object
+        if isinstance(v, numbers.Real) and type(v) not in (float, int, bool):
+            return object
+    return float
 
 
 def build_seminormal_matrices_cached(shape, *, cache: BlockCache,
@@ -133,7 +199,24 @@ def build_seminormal_matrices_cached(shape, *, cache: BlockCache,
             M = sp_sparse.csr_matrix(
                 (vals, (rows, cols)), shape=(dim, dim))
         else:
-            M = np.zeros((dim, dim))
+            # `np.zeros((dim, dim))` is float64, and `M[r, c] = v` with an mpf
+            # `v` DOWNCASTS IT SILENTLY. That made the seminormal matrices f64
+            # no matter what `q_val` was handed in: callers passing
+            # `q_parameter.Q_MP` got the same 53-bit rep as callers passing the
+            # f64 `Q`, and the extra digits were destroyed at this assignment.
+            #
+            # Downstream the damage compounds. `mass_at_3A_proper` multiplies
+            # these against an mpf braid word (`c * sigmas[i] + d * I`), which
+            # promotes the RESULT to dtype=object — so the computation pays
+            # full mpmath cost (measured 642x at dim=162, bean qou-5qwb's
+            # failure mode) while carrying only float64 information. Worst of
+            # both: laundered precision AND the slow path.
+            #
+            # Fixed at the allocation, not by casting the braid word down —
+            # that would be the direction the NO-FLOAT64 directive forbids.
+            # An f64 `q` still allocates float64 and still hits BLAS, so
+            # existing f64 callers are bit-identical and no slower.
+            M = np.zeros((dim, dim), dtype=_value_dtype(vals))
             for r, c, v in zip(rows, cols, vals):
                 M[r, c] = v
         sigmas.append(M)

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T04:35:21.804877+00:00",
-  "commitSha": "c9a3de1c0ea844f8e2701f98d040ed0266d66b05",
+  "computedAt": "2026-08-21T14:57:18.689883+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "c4_required_not_integer_46",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 3,
   "computation": "mp-habiro-c4-keystone-probe",
   "scriptFile": "mp_habiro_c4_keystone_probe.py",
-  "scriptHash": "6324ffda805a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7b8ebb89a9e9",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,16 +46,16 @@
   "description": "Characterizes the m_p term-6 Habiro residue coefficient c_4 (the real target behind the production habiro_ratio {46,4,29}): required c_4 = 46.03 (q-dependent, NOT integer 46); {4,29} below the extraction floor (cosmetic); cross-anchor swing 3.8e-5; no clean 1-2 factor categorical hit. Derivation gated on the s5bb keystone (same open Habiro-element as Q_beta c_k). Nothing wired.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
-    "q_0_proton_pin": "1.1099785955573347198997632204832250266562084087802",
-    "q_0_muon_pin": "1.1099785955578216095504061280387756112786212705795"
+    "q_0_proton_pin": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_muon_pin": "1.1099785956402395794419872035934418974995948072366"
   },
   "data": {
     "required_c4": {
-      "proton_pin": "46.0318884779905886212508236937",
-      "muon_pin": "46.0336386381281855768216268001",
-      "cross_anchor_swing_rel": "-3.8020602575e-5",
+      "proton_pin": "0.000541901158935659220337946635171",
+      "muon_pin": "46.3305146226422049409963204396",
+      "cross_anchor_swing_rel": "-85495.2456874",
       "production_integer": 46,
-      "diff_from_46": "0.0318884779906"
+      "diff_from_46": "-45.9994580988"
     },
     "extraction_floor": {
       "proton_0.06ppb": {
@@ -64,21 +64,21 @@
         "sigma_c6": "157.166"
       },
       "formula_0.0004ppb": {
-        "sigma_c4": "7.6009e-5",
-        "sigma_c5": "0.00892414",
-        "sigma_c6": "1.04777"
+        "sigma_c4": "7.60091e-5",
+        "sigma_c5": "0.00892415",
+        "sigma_c6": "1.04778"
       }
     },
     "easy_class_scan": {
-      "[3]_q!^2": "37.4614910259",
-      "[5]_q!/[2]_q": "65.3007568212",
-      "[7]_q*[6]_q": "48.7113468004",
-      "2*[3]_q!*[2]_q^2": "49.4996491877",
-      "trM*[3]_q!^2/q^3": "27.353717212",
-      "target/[7]_q": "6.03669807831"
+      "[3]_q!^2": "37.4614906972",
+      "[5]_q!/[2]_q": "65.3007556075",
+      "[7]_q*[6]_q": "48.7113452282",
+      "2*[3]_q!*[2]_q^2": "49.4996488518",
+      "trM*[3]_q!^2/q^3": "27.3537179363",
+      "target/[7]_q": "7.10658166279e-5"
     },
     "verdict": "{46,4,29} is a rounded-integer fit; only c_4 (=46.03) is data-determined and it is q-dependent, not the integer 46. {4,29} are below the extraction floor. No 1-2 factor categorical object hits 46.03. Deriving it is the term-6 Habiro residue = the s5bb keystone, shared with the Q_beta c_k ladder. Nothing wired."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

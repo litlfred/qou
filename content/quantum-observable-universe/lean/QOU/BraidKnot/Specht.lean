@@ -32,20 +32,18 @@ The whole *definitional* foundation is verified, `sorry`-free:
 * `polytabloid` and `SpechtSubmodule μ` (the latter is a `Submodule` *by
   construction*, being a `Submodule.span`).
 
-## What is stated with `sorry` + `-- Ref:` (the genuine theorems)
+## The two deep theorems — proved, one layer up
 
-* `specht_isSimple` — `S^μ` is irreducible over a char-0 field
-  (`-- Ref: [james1984representation]`).
-* `specht_finrank_eq_numSYT` — `dim S^μ = #SYT(μ)` (the standard-basis theorem)
-  (`-- Ref: [sagan2001]`, Thm 2.5.2 / the standard polytabloid basis).
+This module used to carry `specht_isSimple` and `specht_finrank_eq_numSYT` as
+honest `sorry` stubs.  **Both are now proved** and the stubs have been removed;
+see §6 for where each lives and why the proofs cannot be written here.  This
+module is `sorry`-free.
 
-Both are textbook-famous theorems whose Lean proofs are out of scope for one
-brick; they are honestly stubbed per AGENTS.md §1.
+* `S^μ` is simple in char 0 → `SpechtIrreducible.specht_isSimple`
+* `dim_k S^μ = #SYT(μ)` → `SpechtStandardBasis.specht_finrank_eq_numSYT`
+  (equivalently `SpechtFinrankWired.specht_finrank_eq_numSYT_wired`)
 
-This module is intentionally **not** imported by the `QOU.BraidKnot` umbrella:
-it carries two honest `sorry` targets (the deep theorems above), so wiring it
-into the CI build would taint the umbrella's sorry-free surface.  It is verified
-to compile standalone via `lean`-direct against the pinned v4.24.0 oleans.
+Both report `[propext, Classical.choice, Quot.sound]` under `#print axioms`.
 
 ## Conventions
 
@@ -300,31 +298,44 @@ theorem polytabloid_mem_specht {μ : YoungDiagram} (t : Tableau μ) :
     polytabloid (k := k) t ∈ SpechtSubmodule (k := k) μ :=
   Submodule.subset_span ⟨t, rfl⟩
 
-/-! ## 6. The deep theorems (stated, `sorry` + `-- Ref:`) -/
+/-! ## 6. The deep theorems — proved, one layer up
 
-/-- **Standard basis theorem.** The dimension of the Specht module `S^μ` equals
-the number of standard Young tableaux of shape `μ`:
-`dim_k S^μ = #SYT(μ) = f^μ`.  The standard polytabloids `{e_t : t ∈ SYT(μ)}` form
-a `k`-basis. -/
-theorem specht_finrank_eq_numSYT {k : Type} [Field k] (μ : YoungDiagram) :
-    Module.finrank k (SpechtSubmodule (k := k) μ) = QOU.BraidKnot.numSYT μ := by
-  -- Ref: [sagan2001] Thm 2.5.2 (the standard polytabloids form a basis of S^μ);
-  -- brick-2 target.
-  sorry
+This section used to declare `specht_finrank_eq_numSYT` and `specht_isSimple` as
+brick-2 targets carrying a bare `sorry`.  **Both are now proved**, and the two
+stubs have been removed rather than left in place.
 
-/-- **Irreducibility (char 0).** Over a field of characteristic zero, the Specht
-module `S^μ` is a simple `MonoidAlgebra k (Perm (Fin n))`-module — the
-irreducible representation of `S_n` indexed by `μ`.  We phrase simplicity as: the
-only `S_n`-stable `k`-submodules of `S^μ` are `0` and `S^μ` (stated here at the
-level of the representation `Mtab.rep` restricted to `S^μ`). -/
-theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
-    (hμ : μ.card ≠ 0) :  -- nonempty diagram; ℕ-nonemptiness, not ring ordering (§7c-clean)
-    ∀ N : Submodule k (Mtab (k := k) μ),
-      N ≤ SpechtSubmodule (k := k) μ →
-      (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
-      N = ⊥ ∨ N = SpechtSubmodule (k := k) μ := by
-  -- Ref: [james1984representation] (Specht modules are irreducible in char 0,
-  -- via the standard-basis / Garnir / James submodule theorem); brick-2 target.
-  sorry
+| Statement | Proved as | Axioms |
+|---|---|---|
+| `dim_k S^μ = #SYT(μ)` | `SpechtStandardBasis.specht_finrank_eq_numSYT` (and `SpechtFinrankWired.specht_finrank_eq_numSYT_wired`) | `propext, Classical.choice, Quot.sound` |
+| `S^μ` is simple (char 0) | `SpechtIrreducible.specht_isSimple` | `propext, Classical.choice, Quot.sound` |
+
+### Why the proofs cannot live here
+
+Both run through machinery that *imports this file*: the standard polytabloid
+basis (`SpechtStandardBasisCore` → `SpechtTriangularCore` → `SpechtStandardBasis`)
+and the `M^μ` bilinear form with James's submodule theorem
+(`SpechtIrreducible`).  Brick 2 cannot import its own consumers.  The repo's
+convention for that situation is the `…Wired` pattern — see
+`SpechtFinrankWired`, which restates and proves the dimension identity.
+
+### Why they were deleted rather than left as documented stubs
+
+A `sorry`-backed duplicate of a proved theorem is not merely noise: it
+**typechecks and is usable**.  Anything that wrote `exact
+Specht.specht_isSimple …` would have obtained a `sorryAx`-tainted proof of a
+statement that is in fact available cleanly one module up — a silent
+downgrade with no error anywhere.  Nothing consumed either stub (checked), so
+removing them costs nothing and closes that hole.
+
+### One genuine generalization left open
+
+The deleted `specht_finrank_eq_numSYT` was stated over `[Field k]` with **no**
+`CharZero`, whereas the proved version carries `[Field k] [CharZero k]`.  That
+extra hypothesis is inherited from `standardBasis` and is very likely
+removable — the standard polytabloids are a basis over any field — but that
+needs the `CharZero` uses inside `standardBasis`'s inputs traced and
+discharged, which is a real task and not an annotation change.  Tracked as a
+bean; do **not** re-add a `sorry` here to represent it.
+-/
 
 end QOU.BraidKnot.Specht

@@ -1,6 +1,9 @@
-# Piece A: Corner-Removal Induction
+# Corner-removal induction for hook lengths
 
-This file provides the narrative counterpart to the corner-removal induction route for Piece A.
+Removing a corner from a Young diagram changes the hook lengths in a
+controlled way: only the corner's own row and column are affected, and each
+is affected by a single arm or leg term. The lemmas below isolate those two
+contributions, which is what makes the induction on diagram size go through.
 
 **Lemma (Lean: `colLen_corner`).** For a corner $(r,s)$ where $s = \lambda_r - 1$, the column length of $s$ is exactly $r + 1$.
 *Proof.* This follows since row $r$ reaches column $s$, but row $r+1$ is strictly shorter. Thus the column length is $r+1$. □

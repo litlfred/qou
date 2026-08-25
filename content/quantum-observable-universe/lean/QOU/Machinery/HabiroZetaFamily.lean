@@ -2,7 +2,7 @@
 # ζ-indexed families, archimedean layer — the structure the bracket inhabits
 
 Completes the Lean half of bean qou-zt3h (T4 of the Habiro attack
-plan). The GSWZ picture (arXiv:2412.04241, `uploads/2412.04241v2.pdf`)
+plan). The GSWZ picture (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`)
 organizes a Habiro-module element as a family of fibres over the roots
 of unity with arithmetic transition edges. The ARCHIMEDEAN layer of
 that picture — the only layer visible to `ℂ`-analysis — carries exactly
@@ -59,7 +59,7 @@ structure ZetaFamily where
 conjugation is the bar involution `q ↦ q⁻¹`, so conjugation
 equivariance forces `F(z⁻¹) = conj (F z)` — the family-level form of
 the ζ₄ bar edge realized by `rho_compat` for the τ-assignment. -/
-theorem bar_edge (F : ZetaFamily) {z : ℂ}
+theorem ZetaFamily.bar_edge (F : ZetaFamily) {z : ℂ}
     (hz : Complex.normSq z = 1) :
     F.toFun z⁻¹ = (starRingEnd ℂ) (F.toFun z) := by
   rw [← F.conj_equivariant z, Complex.inv_def, hz]

@@ -1,0 +1,47 @@
+266 M. Geck and R. Rouquier
+
+Assume in addition KH semisimple and split. Given P a projective
+kH-module, J. Miiller suggested considering the map 7(P) : Z(KH) >
+K defined by
+
+1
+wP)=  (e(lPl).x) ms
+xélrr(K H) x
+where w, is the one dimensional representation of Z(KH) acting (as
+multiplication by scalars) on a simple K H-module with character x.
+
+Proposition 4.4 The map W(P) restricts to a map Z(H) — O and
+1, @U(P) =7(P). In particular,
+
+wrn= x CPD co,
+
+x€ fr K H) &
+
+Proof. Let ©’ be an henselisation of O; we have KO’ = O, where the
+intersection is taken in the field of fractions of O’, since ©’ is faithfully
+flat over O. Hence, to prove the proposition, we can assume that O is
+henselian. There exists an idempotent e of M,,(H) such that keH" ~ P.
+Then, 7(eH”) is the restriction to Z(H) of Tr(e)*. We have wy(x*) =
+6y,x'Cy for x, x’ € Irr( KH), hence
+
+=e (Tr(e)) wy = UP)
+
+fy
+
+and l, @¥(P) = lk @n(eH") = 7(P). o
+
+Note that if H = OG is a group algebra with its usual symmetrizing
+form, K having characteristic zero and k characteristic p > 0, then
+the integrality property above is equivalent to the statement that the
+dimension of a projective kG-module is divisible by the order of a Sylow
+p-subgroup of G.
+
+When 4 is an Iwahori-Hecke algebra associated to a Weyl group,
+with equal parameters and k has characteristic zero, this result was
+proven in [Ge4, Proposition 2.1] using algebraic groups.
+
+5. Iwahori-Hecke algebras
+
+We fix a finite Weyl group W with a corresponding set S C W of simple
+reflections. Let {us}ses be a set of indeterminates such that u. = uz
+whenever s,¢ € S are conjugate in W, and A = Z[us, u;'|ses be the ring

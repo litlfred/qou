@@ -6,6 +6,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.FluidDynamics.surreal_enstrophy_finite_modes — the surreal enstrophy at
@@ -80,11 +81,11 @@ def IsFinite (x : K) : Prop := ∃ n : ℕ, |x| < (n : K)
 theorem infinitesimal_zero : Infinitesimal (0 : K) := by
   intro n; simp
 
-theorem neg {x : K} (h : Infinitesimal x) : Infinitesimal (-x) := by
+theorem Infinitesimal.neg {x : K} (h : Infinitesimal x) : Infinitesimal (-x) := by
   intro n; simpa using h n
 
 /-- Closure of infinitesimals under addition (via the `2n` trick). -/
-theorem add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
+theorem Infinitesimal.add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
     Infinitesimal (x + y) := by
   intro n
   have hx2 := hx (2 * n)
@@ -106,7 +107,7 @@ theorem add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
     _ = 1 := by norm_num
 
 /-- An infinitesimal times a finite element is infinitesimal. -/
-theorem mul_finite {x y : K} (hx : Infinitesimal x)
+theorem Infinitesimal.mul_finite {x y : K} (hx : Infinitesimal x)
     (hy : IsFinite y) : Infinitesimal (x * y) := by
   intro n
   obtain ⟨m, hm⟩ := hy
@@ -135,13 +136,13 @@ theorem isFinite_one : IsFinite (1 : K) := by
   simpa using isFinite_natCast (K := K) 1
 
 /-- Every infinitesimal is finite. -/
-theorem isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
+theorem Infinitesimal.isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
   refine ⟨1, ?_⟩
   have := h 1
   simpa using this
 
 /-- Finites are closed under addition. -/
-theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x + y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -153,11 +154,11 @@ theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
   exact lt_of_le_of_lt this hsum
 
 /-- Finites are closed under negation. -/
-theorem neg {x : K} (h : IsFinite x) : IsFinite (-x) := by
+theorem IsFinite.neg {x : K} (h : IsFinite x) : IsFinite (-x) := by
   obtain ⟨n, hn⟩ := h; exact ⟨n, by simpa using hn⟩
 
 /-- Finites are closed under multiplication. -/
-theorem mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x * y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -190,6 +191,14 @@ theorem infinitesimal_sum {ι : Type*} (s : Finset ι) (f : ι → K)
     eigenvalue datum of the q-NS tower whose `q → 1` degeneration to `k` is
     Obstruction 1 of `conj:regularity-breakdown`. -/
 def qInt (q : K) (k : ℕ) : K := ∑ j ∈ range k, q ^ j
+
+/-- **Bridge to the canonical geometric q-integer.**  This site is the
+geometric form `∑_{j<k} q^j`, not the balanced one — so it ties to `qIntGeo`,
+and tying it to `qIntBal` would be exactly the mis-consolidation
+`QIntegerCanonical` warns about.  Unconditional: `qIntGeo` asks only for a
+`CommRing`, which `K` has as a `Field`, and neither side divides. -/
+theorem qInt_eq_canonical_geo (q : K) (k : ℕ) :
+    qInt q k = QOU.QInteger.qIntGeo q k := rfl
 
 /-- `[k]_1 = k`. -/
 theorem qInt_one (k : ℕ) : qInt (1 : K) k = (k : K) := by
@@ -858,7 +867,7 @@ theorem discrete_gronwall {G : K} (Ω : ℕ → K) (hG : 0 ≤ G)
         _ = G ^ (n + 1) * Ω 0 := by rw [pow_succ]; ring
 
 /-- Finites are closed under powers. -/
-theorem pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
+theorem IsFinite.pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
   induction n with
   | zero => simpa using isFinite_one
   | succ n ih => rw [pow_succ]; exact ih.mul h

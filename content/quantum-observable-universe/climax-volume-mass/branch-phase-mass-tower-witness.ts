@@ -30,4 +30,10 @@ export default remark({
     ],
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "The rejected Wedderburn pair-generator extension was recorded in\n`computations/_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json`;\nthat witness is deprecated. The rejection itself (it worsens the fit\nto ~4.7% MAE) stays in the prose.",
+    },
+  ],
 });

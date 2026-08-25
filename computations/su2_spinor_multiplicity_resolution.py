@@ -75,19 +75,29 @@ START = time.monotonic()
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
-# Canonical substrate q0 (proton-anchored). FALSIFICATION / reference only.
-try:
-    from q_parameter import Q as Q0  # type: ignore
-    Q0 = mp.mpf(str(Q0))
-except Exception:  # pragma: no cover - shim fallback
-    Q0 = mp.mpf("1.10997859561220225731080831999100762523924148")
-
-# Compute precision: match the keystone audit (60 dps) so precisionMetadata aligns.
+# Compute precision: match the keystone audit (60 dps) so precisionMetadata
+# aligns. This MUST precede the Q0 block below: both branches there build an
+# mpf, and at mpmath's default 15 dps each is frozen at 53 bits — the literal
+# loses 29 of its 45 digits, and `mp.mpf(str(Q0))` silently downcasts the
+# canonical q0 it has just imported.
 try:
     from _precision import set_compute_dps  # type: ignore
     set_compute_dps(60)
 except Exception:  # pragma: no cover
     mp.mp.dps = 60
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
+# Canonical substrate q0 (proton-anchored). FALSIFICATION / reference only.
+try:
+    from q_parameter import Q_MP as Q0  # type: ignore
+    Q0 = mp.mpf(str(Q0))
+except Exception:  # pragma: no cover - shim fallback
+    Q0 = mp.mpf("1.10997859561220225731080831999100762523924148")
 
 # Borromean h^4 falsification reference (NOT a fit target).
 H4_BORROMEAN = Fraction(-3, 4)

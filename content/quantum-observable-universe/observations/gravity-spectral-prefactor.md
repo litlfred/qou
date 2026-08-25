@@ -18,4 +18,4 @@ $$
 
 *the limiting ratio of the deep-tower mass to the Plancherel-weighted character residue.*
 
-**Archimedean specialisation (§7c).** This block operates on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical and $q$-deformation identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows operates on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical and $q$-deformation identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

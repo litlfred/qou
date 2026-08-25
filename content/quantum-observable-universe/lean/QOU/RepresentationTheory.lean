@@ -117,12 +117,12 @@ structure CategoricalHadron (C : Type u) [CategoryTheory.Category.{v} C]
   constituent_spins : Fin valence → ℕ
 
 /-- A categorical baryon has valence 3. -/
-def isBaryon {C : Type u} [CategoryTheory.Category.{v} C]
+def CategoricalHadron.isBaryon {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (h : CategoricalHadron C) : Prop :=
   h.valence = 3
 
 /-- A categorical meson has valence 2. -/
-def isMeson {C : Type u} [CategoryTheory.Category.{v} C]
+def CategoricalHadron.isMeson {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (h : CategoricalHadron C) : Prop :=
   h.valence = 2
 
@@ -131,13 +131,13 @@ theorem meson_or_baryon_or_exotic
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (h : CategoricalHadron C) :
     h.isMeson ∨ h.isBaryon ∨ h.valence ≥ 4 := by
-  unfold isMeson isBaryon
+  unfold CategoricalHadron.isMeson CategoricalHadron.isBaryon
   have hv := h.valence_ge
   omega
 
 /-- The total tensor power needed to embed a categorical hadron into
     `V^⊗N` via the Pawlowski–Leitner embedding: `N = 2(j₁ + ⋯ + jₙ)`. -/
-def totalTensorPower {C : Type u}
+def CategoricalHadron.totalTensorPower {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     (h : CategoricalHadron C) : ℕ :=
   2 * (Finset.univ.sum h.constituent_spins)

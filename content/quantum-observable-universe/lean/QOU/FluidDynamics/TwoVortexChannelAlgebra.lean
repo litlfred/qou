@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 
@@ -23,9 +23,9 @@ Everything is **proved sorry-free** from the class fields:
 * `hecke_relation` — the model satisfies `σ² = (q − u)·σ + 1`, i.e. the abstract channel
   data reproduces the Hecke/skein relation of AGENTS.md §7a with `u` in the `q⁻¹` slot;
 * `eigenvalue_ratio` — the per-crossing suppression of the antisymmetric channel:
-  `(−q⁻¹)/q = −(q²)⁻¹`, the algebraic decay rate `q⁻²` (at `q₀ > 1`) by which a
-  crossing disturbance is damped — the fibre-level content of "the disturbance decays
-  fast enough not to disrupt the soliton";
+  `(−q⁻¹)/q = −(q²)⁻¹`, stated division-free as `−u²·q = −u`, the algebraic decay rate
+  `q⁻²` (at `q₀ > 1`) by which a crossing disturbance is damped — the fibre-level
+  content of "the disturbance decays fast enough not to disrupt the soliton";
 * `trivial_model` — non-vacuity witness.
 
 No archimedean claim is made here: that `q⁻² < 1` requires `q > 1` is an ordering
@@ -87,19 +87,24 @@ theorem hecke_relation [inst : TwoVortexChannels σ e_plus e_minus q u] :
 
 /-- **Per-crossing suppression ratio.** The ratio of the antisymmetric to the symmetric
 channel eigenvalue is `(−q⁻¹)/q = −(q²)⁻¹`: each crossing damps the antisymmetric
-disturbance by `q⁻²` relative to the symmetric carrier. (Holds without a `q ≠ 0`
-hypothesis under the `GroupWithZero` convention `0⁻¹ = 0`. That the ratio is a *decay* —
-`q⁻² < 1` — is the archimedean statement `q > 1`, made only past the wall, §7c.) -/
-theorem eigenvalue_ratio {K : Type*} [Field K] (q : K) :
-    (-q⁻¹) / q = -(q ^ 2)⁻¹ := by
-  rw [div_eq_mul_inv, sq, mul_inv, neg_mul]
+disturbance by `q⁻²` relative to the symmetric carrier.
+
+Stated **division-free** (§7c, the R[h] pattern) in the file's own idiom, with `u` the
+ring-level witness of `q⁻¹`: the ratio `r = −u²` is characterised by `r · q = −u`,
+which is the cleared form of `(−q⁻¹)/q = −(q²)⁻¹`. No field is needed — `q · u = 1` is
+the only input, so the statement lives over the same `CommRing` as the rest of the file
+rather than importing a `Field` (and its `0⁻¹ = 0` junk convention) for one lemma.
+That the ratio is a *decay* — `q⁻² < 1` — is the archimedean statement `q > 1`, made
+only past the wall, §7c. -/
+theorem eigenvalue_ratio (h : q * u = 1) : -(u ^ 2) * q = -u := by
+  linear_combination (-u) * h
 
 /-- **The bundled channel-algebra proposition** — the Lean face of
 `prop:two-vortex-channel-algebra`: from the four channel hypotheses (partition,
 orthogonality, inverse witness, spectral form), *all* ring-level conclusions follow —
 derived idempotency of both channels, the spectral square, and the Hecke relation.
-(The eigenvalue-ratio identity is the companion field-level lemma `eigenvalue_ratio`
-above, because it needs no channel data.) -/
+(The eigenvalue-ratio identity is the companion lemma `eigenvalue_ratio` above, kept
+separate because it needs only the inverse witness, no channel data.) -/
 theorem channel_algebra [inst : TwoVortexChannels σ e_plus e_minus q u] :
     e_plus * e_plus = e_plus ∧ e_minus * e_minus = e_minus ∧
     σ ^ 2 = q ^ 2 * e_plus + u ^ 2 * e_minus ∧

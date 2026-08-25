@@ -27,7 +27,19 @@
   conjecture-cone classes (`QAubinLions`, `NSCounterexample`,
   `CriticalExponent`, `BlowupYekutieli`, `RegularityBreakdown`) remain
   explicit `[Instance]` hypotheses, and the geometric load-bearing
-  identities are projected/derived from a `CoreLeviContext`.
+  identities are derived from a `CoreLeviContext`.
+
+  ## 2026-08-23 — `core_levi_form` no longer returns a field
+
+  It read `ctx.cond = max λ / min λ := ctx.cond_def`, i.e. the class field
+  `cond_def` handed straight back: the §3b-cond item-5 degenerate shape,
+  and the vacuity ledger's `proof-no-self-assuming-projection` entry for
+  this file. Restated as the two-sided pinning `1 ≤ cond` and
+  `|cond − max λ / min λ| ≤ C₀ℏ_q²`. Neither conjunct is a field: the
+  first composes `cond_def` with the eigenvalue positivity through
+  `min ≤ max`, the second reaches the class's aspect-ratio bound only via
+  `core_levi_ratio_eq_aspect_sq`, whose proof is the ordering case split.
+  `core_levi_ratio_eq_aspect_sq` moved above it so the bridge is in scope.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -93,23 +105,6 @@ class CoreLeviContext where
   /-- **(d) Quantum-pressure bound** for `q > 1`. -/
   cond_bound : cond ≤ 1 + C0 * hbar ^ 2
 
-/-- **Core Levi form (conditional on `conj:q-aubin-lions`,
-    `conj:ns-counterexample`, `conj:critical-exponent`,
-    `conj:blowup-yekutieli`, `conj:regularity-breakdown`)**
-    ([`prop:core-levi-form`]).
-
-    On the normal plane of a geodesic vortex core, the Levi condition
-    number is the ratio of the larger to the smaller Levi eigenvalue,
-    `cond = max(λ∥,λ⊥)/min(λ∥,λ⊥)` — the md definition (md part (b)),
-    correct for either ordering of `λ∥, λ⊥` (no spurious `λ∥/λ⊥` claim). -/
--- Ref: [manuscript] prop:core-levi-form
-theorem core_levi_form
-    [QAubinLions] [NSCounterexample] [CriticalExponent]
-    [BlowupYekutieli] [RegularityBreakdown]
-    [ctx : CoreLeviContext] (q : ℝ) (hq : q > 1) :
-    ctx.cond = max ctx.lamPar ctx.lamPerp / min ctx.lamPar ctx.lamPerp :=
-  ctx.cond_def
-
 /-- **Leading-order structural identity** (md part (b), the `O(ℏ_q²) → 0`
     limit): `max(λ∥,λ⊥)/min(λ∥,λ⊥) = max(a⊥/a∥, a∥/a⊥)²`. Proved from the
     aspect-ratio identity `(a⊥/a∥)² = λ∥/λ⊥` and positivity, by case split
@@ -147,6 +142,48 @@ theorem core_levi_ratio_eq_aspect_sq [ctx : CoreLeviContext] :
       (pow_le_pow_iff_left₀ hr2 hr1 two_ne_zero).mp hsq
     rw [max_eq_left hge, h1]
 
+/-- **Core Levi form (conditional on `conj:q-aubin-lions`,
+    `conj:ns-counterexample`, `conj:critical-exponent`,
+    `conj:blowup-yekutieli`, `conj:regularity-breakdown`)**
+    ([`prop:core-levi-form`]).
+
+    On the normal plane of a geodesic vortex core, the Levi condition
+    number is pinned from **both** sides:
+
+    * `1 ≤ cond` — the condition number is a genuine condition number.
+      Derived from `cond_def` together with the eigenvalue positivity,
+      via `min(λ∥,λ⊥) ≤ max(λ∥,λ⊥)`. Nothing in `CoreLeviContext`
+      asserts it.
+    * `|cond − max(λ∥,λ⊥)/min(λ∥,λ⊥)| ≤ C₀ ℏ_q²` — md part (b) stated
+      in **eigenvalue** terms. The class carries this bound in
+      **aspect-ratio** terms (`cond_aspect_bound`); the two are bridged
+      by `core_levi_ratio_eq_aspect_sq`, whose proof is the case split
+      on the eigenvalue ordering above.
+
+    So the statement is not a field of the context class in either
+    conjunct: the first composes three fields through an inequality, the
+    second composes a field through the derived aspect identity.
+    Together with the class's `cond_bound` (md part (d)) this bounds
+    `cond` into `[1, 1 + C₀ℏ_q²]`. -/
+-- Ref: [manuscript] prop:core-levi-form
+theorem core_levi_form
+    [QAubinLions] [NSCounterexample] [CriticalExponent]
+    [BlowupYekutieli] [RegularityBreakdown]
+    [ctx : CoreLeviContext] :
+    1 ≤ ctx.cond ∧
+      |ctx.cond - max ctx.lamPar ctx.lamPerp / min ctx.lamPar ctx.lamPerp|
+        ≤ ctx.C0 * ctx.hbar ^ 2 := by
+  refine ⟨?_, ?_⟩
+  · -- `cond = max/min` and `0 < min ≤ max`, so the ratio is at least one.
+    have hmin : 0 < min ctx.lamPar ctx.lamPerp :=
+      lt_min ctx.lamPar_pos ctx.lamPerp_pos
+    rw [ctx.cond_def]
+    exact (one_le_div hmin).mpr (min_le_max)
+  · -- Bridge the eigenvalue ratio to the squared max-aspect ratio, where
+    -- the class states the `O(ℏ_q²)` bound.
+    rw [core_levi_ratio_eq_aspect_sq]
+    exact ctx.cond_aspect_bound
+
 /-- **Aspect-ratio / condition-number equivalence** (md part (c), (1)⟺(2)
     at leading order): the leading-order condition number `max(λ∥,λ⊥)/min(λ∥,λ⊥)`
     is bounded by `C²` iff the max-aspect ratio is bounded by `C` (squared). -/
@@ -166,13 +203,22 @@ theorem core_levi_cond_aspect_bound [ctx : CoreLeviContext] :
       ≤ ctx.C0 * ctx.hbar ^ 2 :=
   ctx.cond_aspect_bound
 
-/-- **Quantum-pressure bound** (md part (d)): for `q > 1` the Levi
-    condition number is bounded, `cond ≤ 1 + C₀ ℏ_q²`. -/
+/-- **Quantum-pressure bound** (md part (d)): the Levi condition number is
+    bounded, `cond ≤ 1 + C₀ ℏ_q²`.
+
+    Note on the missing `q > 1`. The md conditions this part on `q > 1`,
+    and the earlier encoding carried `(q : ℝ) (hq : q > 1)` as binders —
+    but `cond_bound` is a field of `CoreLeviContext` that mentions no `q`,
+    so neither binder was ever used and the linter said so. Carrying an
+    unused hypothesis makes the statement look stronger than it is, so the
+    binders are dropped rather than kept as decoration. Encoding the `q > 1`
+    restriction honestly means indexing the context's bound by `q`; that is
+    an open gap in this encoding, not a discharged hypothesis. -/
 -- Ref: [manuscript] prop:core-levi-form
 theorem core_levi_cond_bound
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
-    [ctx : CoreLeviContext] (q : ℝ) (hq : q > 1) :
+    [ctx : CoreLeviContext] :
     ctx.cond ≤ 1 + ctx.C0 * ctx.hbar ^ 2 :=
   ctx.cond_bound
 

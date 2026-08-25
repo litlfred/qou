@@ -93,7 +93,7 @@ script source for reproducibility.*
 trivially). The numerical mode at $q = q_0$ meets L1 to
 $10^{-50}$ by the precision discipline of `qou-substrate`. The
 per-observable L2 target inherits the calibration floor of the
-downstream mass identity (step 9a).*
+downstream nucleon mass ratio (step 9a).*
 
 *Edge cases: the identity braid $1 \in B_n$ has
 $\mathrm{tr}_M(1) = 1$; closure of any braid containing a full

@@ -81,11 +81,13 @@
   "allPassed": true,
   "verdict": "JACOBI-ANGER + J/I PROVED (numeric, <1e-40). The n=3 bar-odd character spectra are PURE ODD-ORDER (the sinh(x sinh η) structure), but each finite 2–3-order block does NOT match a single-x Bessel profile (over-determination fails) — confirming the Bessel object is the brane-tower / SU_q(2)→E_q(2) contraction limit, not the n=3 trace. No fit; nothing wired; c_3 cal-anchored.",
   "scriptHash": "0aabd5d70bd4",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptCommitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "engine": "sympy",
-  "computedAt": "2026-07-18T17:47:09.001797+00:00",
+  "computedAt": "2026-08-24T13:33:33.125348+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_reeb_tower_jacobi_anger.py"
 }

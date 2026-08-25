@@ -4,7 +4,7 @@ export default remark({
   label: "rem:braid-group-n-strand",
   interprets: "prop:categorical-chain-convergence-mechanisms",
   title:
-    "$n$-strand braid group, Markov closure, and Hecke quadratic quotient: axiomatic scaffolding generalising the 2-strand $\\mathbf{B}_2$ foundation and 3-strand typed-$\\mathbf{B}_3$ infrastructure",
+    "$n$-strand braid group, Markov closure, and Hecke quadratic quotient: axiomatic framework generalising the 2-strand $\\mathbf{B}_2$ foundation and 3-strand typed-$\\mathbf{B}_3$ infrastructure",
   uses: [
     "rem:markov-axioms-primitive",
     "rem:typed-b3-sub-braid-extraction",

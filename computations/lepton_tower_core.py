@@ -32,7 +32,30 @@ Definitions, and where each is proved:
 
 from __future__ import annotations
 
-from mpmath import mpf
+import sys
+from pathlib import Path
+
+sys.path[:0] = [str(Path(__file__).resolve().parent),
+                str(Path(__file__).resolve().parent / "substrate")]
+
+from mpmath import mpf  # noqa: E402
+
+from _precision import set_compute_dps  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below.  The
+# docstring says precision is the caller's business, and for the FUNCTIONS
+# that is true -- they read whatever mpmath context is active when called.
+# The CONSTANTS are different: `mpf("...")` binds at IMPORT time, when mp.dps
+# is still mpmath's default 15 (~binary64), and a literal rounded there cannot
+# be recovered by raising dps afterwards.  Measured, at dps 15:
+#
+#     mpf("0.51099895000")  ->  0.5109989499999999518209393
+#     mpf("105.6583755")    ->  105.6583755000000053314579
+#     mpf("1776.86")        ->  1776.859999999999899955583
+#
+# i.e. exactly the float64-padded values the padding audit exists to catch.
+# Idempotent.  Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # Corpus generation assignment: the lepton of generation k is T(2, 2k+1),
 # so the charged leptons e, mu, tau sit at windings 3, 5, 7.

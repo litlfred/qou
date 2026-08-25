@@ -8,7 +8,13 @@
 
 ## Header count
 
-- **Total real cited sorries:** **80** across **69** files.
+- **Total real cited sorries:** **80** across **69** files — *as measured 2026-08-01*.
+  **This total is a snapshot and is now known to be at least one high.** The
+  `instance:QouPNeqNp` row was retired 2026-08-19 (its `sorry` was removed by PR #4687;
+  see the warning below), so that file now contributes **0**. The other 68 files have
+  **not** been re-measured here, so the header is deliberately left at its original
+  value rather than decremented to a number nobody has checked — re-run the cataloguing
+  pass for a current count.
 - **Uncited real sorries (review failures):** **0** — every real `sorry` carries a `-- Ref:` within its enclosing declaration.
 - **Unresolved citation keys:** **0** — all 14 external keys resolve in [`content/schema/references.ts`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/schema/references.ts); `[manuscript]` is the internal chapter/section convention (resolved inline via the `.md`/`.ts` path in the Ref line).
 - **Tractability split:**
@@ -21,6 +27,23 @@ comment/docstring-stripped (`/- … -/` then `-- …`) before matching `\bsorry\
 only real code sorries are counted. For each, the enclosing declaration and the
 nearest `-- Ref:[key]` inside that declaration were extracted and the key resolved
 against `references.ts`.
+
+> **⚠ One row is retired and must not be actioned — `instance:QouPNeqNp` (2026-08-19, bean `qou-2yrn`).**
+> The `sorry` this row indexed was an `instance : QouPNeqNp … := sorry` discharging the
+> conjecture's `faithful` field. It was **deliberately removed** by PR #4687 (bean `qou-ex7j`)
+> together with a named `axiom conj_qou_p_neq_np_faithful`, because the instance made
+> `qou_implies_p_neq_np_at_chi` *look unconditional* — its dependence visible only under
+> `#print axioms`. That is the "Axiomatization is NOT a Proof" pattern (AGENTS.md).
+>
+> The carrier is now **instance-free by design**: `class QouPNeqNp` has no instance anywhere in
+> the corpus (verified 2026-08-19 across `content/`, `computations/`, `docs/`), and every
+> downstream result carries `[QouPNeqNp …]` explicitly in its signature.
+>
+> **Supplying the instance would re-launder the conjecture into a proof.** This catalog's normal
+> instruction — "prove the `sorry`" — is therefore *wrong* for this row, which is why it is struck
+> through rather than deleted: a later cataloguing pass must not regenerate it as actionable. The
+> conjecture itself remains open and is tracked by `cj2b6`, which carries the do-not-fabricate
+> warning.
 
 **Tracking beans.** One `--type task` bean per file (multi-sorry files enumerate each
 sorry in the body), all children of milestone **`qou-k1mq`**, tagged
@@ -83,7 +106,7 @@ open conjecture. They are marked tier **B** with reason *§3b conjecture-instanc
 | [`QOU/FluidDynamics/q_ns_wellposedness.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean#L109) | `q_ns_wellposedness` | 109 | B (infra-blocked/open) | manuscript | `[manuscript]` quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md<br>`[manuscript]` thm:q-ns-wellposedness, | `qou-t28w` |
 | [`QOU/FluidDynamics/q_turbulence_spectrum.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean#L139) | `finite_cascade_depth` | 139 | P (repo-infra) | manuscript | `[manuscript]` quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md | `qou-6x9g` |
 | [`QOU/HadronicMass/pair_skein_mass_formula.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean#L64) | `pair_skein_mass_formula` | 64 | P (repo-infra) | jones1987, manuscript | [`[jones1987]` Hecke algebra representations of braid groups and link polynomials](https://doi.org/10.2307/1971403)<br>`[manuscript]` quantum-observable-universe/observations/pair-skein-mass-formula.md | `qou-o3so` |
-| [`QOU/Information/QouPNeqNp.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean#L111) | `instance:QouPNeqNp` | 111 | B (infra-blocked/open) | manuscript | `[manuscript]` quantum-observable-universe/information-theory/qou-p-neq-np.ts | `qou-b7j7` |
+| ~~[`QOU/Information/QouPNeqNp.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean#L111)~~ **NO LONGER LIVE — DO NOT PROVE (2026-08-19)** | ~~`instance:QouPNeqNp`~~ | ~~111~~ | B (infra-blocked/open) | manuscript | `[manuscript]` quantum-observable-universe/information-theory/qou-p-neq-np.ts | ~~`qou-b7j7`~~ → `cj2b6` |
 | [`QOU/Information/ReebTuringClassical.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Information/ReebTuringClassical.lean#L34) | `ReebTuringClassical` | 34 | **T** (tractable now) | cardona2021 | [`[cardona2021]` Constructing Turing complete Euler flows in dimension 3](https://doi.org/10.1073/pnas.2026818118) | `qou-6y21` |
 | [`QOU/Interactions/ConfinementSDP.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean#L144) | `ConfinementSDP` | 144 | B (infra-blocked/open) | boyd-vandenberghe-2004, manuscript | `[manuscript]` particle-interactions/confinement-sdp<br>`[boyd-vandenberghe-2004]` Convex Optimization (no DOI/URL) | `qou-apcl` |
 | [`QOU/Interactions/nucleon_ordering_factorization.lean`](https://github.com/litlfred/qou/blob/claude/cited-sorry-formalization-catalog-2026-08-01/content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean#L89) | `nucleon_ordering_factorization` | 89 | P (repo-infra) | jones1987, manuscript | `[manuscript]` quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md<br>[`[jones1987]` Hecke algebra representations of braid groups and link polynomials](https://doi.org/10.2307/1971403) | `qou-q6h7` |

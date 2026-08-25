@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T11:22:47.570705+00:00",
-  "commitSha": "1dd2a27e80ccda67179aa0c360ccf28bccff94fb",
+  "computedAt": "2026-08-15T10:26:02.725899+00:00",
+  "commitSha": "7295600067b0defd6d8f8b5356a9fea913b48561",
   "assertions": [
     {
       "name": "Lock formula implies beta = 1 on the ladder (branch B) to within 0.01",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 16,
   "computation": "qns-levi-lock-scaling-probe",
   "scriptFile": "qns_levi_lock_scaling_probe.py",
-  "scriptHash": "a1ed157a1313",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f43425a9d9dc",
+  "scriptCommitSha": "ff92e214435373f69f93b57a6f186937b0ae1795",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,27 +33,29 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Ladder scaling of the hyperbolic-overlap Levi lock (rem:hyperbolic-overlap-saturation): kappa^2_lock = pi*nu_q/Gamma with nu_q=(q-1)/(2q). At every fixed q>1 the lock is strictly positive (contact non-degeneracy survives — the block's pro-branch-A reading). But on the ladder eps->0 the lock vanishes linearly, so C_L = 1/kappa^2 ~ (2Gamma/pi) eps^{-1}, i.e. growth exponent beta = 1 — BRANCH B (regular classical limit) of conj:levi-degeneracy — IF the lock formula is the correct uniform asymptotic. Recorded as an in-model TENSION FLAG (the corpus argues branch A; its own formula's nu-scaling points to B in the limit), not a resolution. Exploratory tier; float64 exact formula.",
   "data": {
-    "eps_1e-01_kappa2_lock": 0.14279966607226344,
-    "eps_1e-01_C_L": 7.00281749604339,
-    "eps_1e-02_kappa2_lock": 0.015552438879157405,
-    "eps_1e-02_C_L": 64.29859700912566,
-    "eps_1e-03_kappa2_lock": 0.0015692270996950286,
-    "eps_1e-03_C_L": 637.2563921400191,
-    "eps_1e-04_kappa2_lock": 0.00015706392628684368,
-    "eps_1e-04_C_L": 6366.8343434488825,
-    "eps_1e-05_kappa2_lock": 1.570780618998997e-05,
-    "eps_1e-05_C_L": 63662.61385611344,
-    "eps_1e-06_kappa2_lock": 1.5707947558709165e-06,
-    "eps_1e-06_C_L": 636620.4090397264,
-    "eps_1e-07_kappa2_lock": 1.5707961706324159e-07,
-    "eps_1e-07_C_L": 6366198.356578572,
-    "eps_1e-08_kappa2_lock": 1.5707963015404646e-08,
-    "eps_1e-08_C_L": 63661978.26028173,
-    "beta_fit": 0.9962774355467895,
+    "eps_1e-01_kappa2_lock": "0.14279966607226344",
+    "eps_1e-01_C_L": "7.00281749604339",
+    "eps_1e-02_kappa2_lock": "0.015552438879157405",
+    "eps_1e-02_C_L": "64.29859700912566",
+    "eps_1e-03_kappa2_lock": "0.0015692270996950286",
+    "eps_1e-03_C_L": "637.2563921400191",
+    "eps_1e-04_kappa2_lock": "0.00015706392628684368",
+    "eps_1e-04_C_L": "6366.8343434488825",
+    "eps_1e-05_kappa2_lock": "1.570780618998997e-05",
+    "eps_1e-05_C_L": "63662.61385611344",
+    "eps_1e-06_kappa2_lock": "1.5707947558709165e-06",
+    "eps_1e-06_C_L": "636620.4090397264",
+    "eps_1e-07_kappa2_lock": "1.5707961706324159e-07",
+    "eps_1e-07_C_L": "6366198.356578572",
+    "eps_1e-08_kappa2_lock": "1.5707963015404646e-08",
+    "eps_1e-08_C_L": "63661978.26028173",
+    "beta_fit": "0.9962774355467895",
     "tier": "exploratory",
     "finding": "beta_fit=0.99628: the corpus lock formula implies branch B on the ladder; positive lock at fixed q is consistent with branch-A reading at fixed q. Tension flagged, conj:levi-degeneracy NOT resolved."
   }

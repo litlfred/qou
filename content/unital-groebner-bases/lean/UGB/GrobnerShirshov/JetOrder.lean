@@ -200,18 +200,25 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
 
 /-! ### Ordering extends through the jet tower -/
 
-/-- **Compatibility lemma**: when a deg-lex comparison has already
-    been established for two descended monomials, it is preserved
-    unchanged by the jet embedding (which maps level-`n` generators
-    to the first `numGens` indices at level `n+1`).
+/-- **Jet-embedding order compatibility.** The jet embedding sends each
+    level-`n` generator to the *same* index among the first `numGens`
+    indices at level `n+1`, so a **descended** monomial's ℕ-valued index
+    list is left unchanged by the embedding `φ` (`φ a = a`). A deg-lex
+    comparison of two descended monomials therefore carries over verbatim
+    to their images.
 
-    The substantive content is that the embedding is order-preserving;
-    this lemma records the formal consequence for reuse at call sites.
+    Stated with the embedding `φ` and its fixed-point property on descended
+    monomials (`φ a = a`, `φ b = b`) as explicit hypotheses, and the
+    preserved comparison **derived** by rewriting — not the old
+    self-assuming `(hab : degLexNat a b) : degLexNat a b := hab`, which
+    named the embedding nowhere and asserted nothing about it.
 
     Reference: [manuscript] §3/ordering-jet-compatibility. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
-    degLexNat a b := hab
+theorem ordering_extends {φ : List ℕ → List ℕ} {a b : List ℕ}
+    (hφa : φ a = a) (hφb : φ b = b) (hab : degLexNat a b) :
+    degLexNat (φ a) (φ b) := by
+  rw [hφa, hφb]; exact hab
 
 /-- **Well-foundedness at each level**: within the alphabet
     `{0, …, n-1}`, deg-lex has no infinite descending chains. -/
@@ -230,7 +237,7 @@ theorem wellfounded_at_level (n : ℕ) :
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
-    (hw : ∀ g ∈ w, g < n) :
+    (_hw : ∀ g ∈ w, g < n) :
     Acc degLexNat w :=
   degLexNat_wf.apply w
 
@@ -309,7 +316,7 @@ axiom descended_gs_inherited
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
     (h_desc_gs : IsGrobnerShirshovBasis G k ord jss.descended)
-    (oc : OverlapComposition G k)
+    (oc : OverlapComposition G k ord)
     (h₁ : oc.rule₁ ∈ jss.descended.rules)
     (h₂ : oc.rule₂ ∈ jss.descended.rules) :
     ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero
@@ -336,11 +343,11 @@ axiom jet_stratified_gs_criterion
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
     (h_desc_gs : IsGrobnerShirshovBasis G k ord jss.descended)
-    (h_new_overlap : ∀ (oc : OverlapComposition G k),
+    (h_new_overlap : ∀ (oc : OverlapComposition G k ord),
       oc.rule₁ ∈ jss.full.rules → oc.rule₂ ∈ jss.full.rules →
       ¬(oc.rule₁ ∈ jss.descended.rules ∧ oc.rule₂ ∈ jss.descended.rules) →
       ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero)
-    (h_new_inclusion : ∀ (ic : InclusionComposition G k),
+    (h_new_inclusion : ∀ (ic : InclusionComposition G k ord),
       ic.inner ∈ jss.full.rules → ic.outer ∈ jss.full.rules →
       ¬(ic.inner ∈ jss.descended.rules ∧ ic.outer ∈ jss.descended.rules) →
       ∃ nf, ReducesToNF ord jss.full ic.spoly nf ∧ nf.isZero) :
@@ -419,7 +426,7 @@ structure JetReductionConfig (G : Type u) (k : Type v) [Ring k] [DecidableEq G] 
     - Savings:         `m choose 2 ≈ O(m²)` pairs skipped -/
 def spolyCountNaive (m k : ℕ) : ℕ := (m + k) * (m + k - 1) / 2
 def spolyCountStratified (m k : ℕ) : ℕ := m * k + k * (k - 1) / 2
-def spolySavings (m k : ℕ) : ℕ := m * (m - 1) / 2
+def spolySavings (m _k : ℕ) : ℕ := m * (m - 1) / 2
 
 /-! ## §7  Correctness of the Combined Algorithm -/
 
@@ -438,13 +445,13 @@ def spolySavings (m k : ℕ) : ℕ := m * (m - 1) / 2
 theorem jet_stratified_correct
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (cfg : JetReductionConfig G k)
-    (h_new_resolved : ∀ (oc : OverlapComposition G k),
+    (h_new_resolved : ∀ (oc : OverlapComposition G k cfg.ord),
       oc.rule₁ ∈ cfg.system.full.rules →
       oc.rule₂ ∈ cfg.system.full.rules →
       ¬(oc.rule₁ ∈ cfg.system.descended.rules ∧
         oc.rule₂ ∈ cfg.system.descended.rules) →
       ∃ nf, ReducesToNF cfg.ord cfg.system.full oc.spoly nf ∧ nf.isZero)
-    (h_inc_resolved : ∀ (ic : InclusionComposition G k),
+    (h_inc_resolved : ∀ (ic : InclusionComposition G k cfg.ord),
       ic.inner ∈ cfg.system.full.rules →
       ic.outer ∈ cfg.system.full.rules →
       ¬(ic.inner ∈ cfg.system.descended.rules ∧

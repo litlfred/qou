@@ -39,7 +39,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import Q_BETA_MEV  # noqa: E402
@@ -94,7 +99,7 @@ def habiro_sum(atom_data, u_val):
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)
@@ -107,7 +112,7 @@ def main():
 
     # Load Habiro coefficients
     hab_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
-    hab = json.loads(hab_path.read_text())
+    hab = record_upstream(hab_path, _UPSTREAM_RECORDS)
 
     p_data = hab["results"]["p (proton, A=1)"]
     n_data = hab["results"]["n (neutron, A=1)"]
@@ -174,6 +179,7 @@ def main():
 
     # Build witness
     wb = WitnessBuilder("habiro-exact-qbeta", start_time=t0)
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.data["q_0"] = Q_50_DIGIT_STR
     wb.data["tr_M_proton_habiro_sum"] = fmt(tr_M_p, 40)
     wb.data["tr_M_neutron_habiro_sum"] = fmt(tr_M_n, 40)

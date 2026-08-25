@@ -49,7 +49,8 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0
+from q_parameter import Q_MP as Q0
+from _precision import set_compute_dps  # noqa: E402
 
 PHASE3_WITNESS = _pb.witness_path("delta-lambda-jsj-phase3.witness.json", HERE)
 EMP_WITNESS = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)
@@ -66,7 +67,7 @@ ZN = {
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("delta-lambda-z4N-phase4")
     builder.set_description(
         "Phase 4 of the closed-forms-first-principles workplan: tests "
@@ -79,7 +80,7 @@ def main() -> int:
     )
 
     q = mp.mpf(str(Q0))
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     inv_z = mp.sqrt(q) + 1 / mp.sqrt(q)
     builder.add_parameter("q0", str(q))
     builder.add_parameter("z", str(z))
@@ -87,11 +88,11 @@ def main() -> int:
     builder.add_parameter("inv_z_to_4", str(inv_z ** 4))
 
     # Load Phase 3 Vol_hyp
-    p3 = json.loads(PHASE3_WITNESS.read_text())["data"]["jsj_volumes"]
+    p3 = builder.add_upstream(PHASE3_WITNESS)["data"]["jsj_volumes"]
     vol_hyp = {a: mp.mpf(str(p3[a]["hyperbolic_volume"])) for a in ("D", "T", "3He", "4He")}
 
     # Load empirical |Δ_λ*|
-    emp_data = json.loads(EMP_WITNESS.read_text())["data"]["per_atom"]
+    emp_data = builder.add_upstream(EMP_WITNESS)["data"]["per_atom"]
     empirical = {a: mp.mpf(str(emp_data[a]["a_single_block"]["best_abs_delta"]))
                  for a in ("D", "T", "3He", "4He")}
 

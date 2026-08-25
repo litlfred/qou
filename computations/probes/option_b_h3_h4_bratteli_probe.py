@@ -55,7 +55,12 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 HERE = Path(__file__).resolve().parent
@@ -231,7 +236,7 @@ def b1_verdict(q: sp.Expr) -> dict:
 def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:
     """Load y_λ(q_0) for partitions of `n` from y-lambda-at-q0."""
     path = COMPUTE_DIR / "y-lambda-at-q0.witness.json"
-    raw = json.loads(path.read_text())["data"]["by_n"]
+    raw = record_upstream(path, _UPSTREAM_RECORDS)["data"]["by_n"]
     return {
         tuple(row["partition"]): mp.mpf(row["y_at_q0_50dps"])
         for row in raw[str(n)]
@@ -359,6 +364,7 @@ def b3_verdict(q: sp.Expr) -> dict:
 
 def main() -> int:
     w = WitnessBuilder("option-b-h3-h4-bratteli-probe", engine="sympy+mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only("docs/audits/2026-06-04-option-b-h3-h4-bratteli-scoping.md")
     w.set_description(
         "Option B probe (PR #1762 §5 / sibling #1816 Option A): H₃ ⊂ H₄ "

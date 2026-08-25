@@ -1,0 +1,56 @@
+{
+  "engine": "lean",
+  "engineVersion": "Lean 4.24.0",
+  "computedAt": "2026-08-02T00:00:00+00:00",
+  "commitSha": "141c13a40b37e8d77b69365ee78925f2526361d2",
+  "computation": "mu3-submodularity-vacuous-deuteron",
+  "scriptFile": "content/quantum-observable-universe/lean/QOU/MassTheory/DeuteronFirstOrderCluster.lean",
+  "scriptCommitSha": "141c13a40b37e8d77b69365ee78925f2526361d2",
+  "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "audit_only": true,
+  "auditOnly": true,
+  "tier": "scope-(b) structural negative (proved algebraic identity: second mixed difference vanishes identically on single-bond configs); Mathlib-free lean-direct exit 0, sorry-free; no fit, nothing wired",
+  "allPassed": true,
+  "description": "The owner-suggested mu3 cluster-modularity / submodularity door (Mu3ClusterModularity, main 0e9bfc67; c3 = -E0*Delta^2 g; mu3>0 <=> Delta^2 g < 0) is asked whether it supplies the deuteron binding magnitude the DT count (Delta_lambda=(-1)^{n(lambda)}*dim V_lambda, #4601, B_D=0.380 MeV, -82.9%) does not. Answer: NO, and for a structural reason. Delta^2 g is the SECOND mixed finite difference over TWO interface bonds (connected 3-body, A>=3 Ursell content). The deuteron (A=2) is a SINGLE-bond configuration: the second bond is absent (g_b=g_empty, g_ab=g_a), so Delta^2 g = g_a - g_a - g_empty + g_empty = 0 identically, hence c3 = -E0*Delta^2 g = 0 for EVERY E0. The mu3 submodularity door does not exist below A=3; it contributes exactly zero to the deuteron. This is not 'door shut' (supermodular) but 'door absent'. Complements PR #4615 (per-pair uniform z / Gram determinant, which fails at every A): neither the per-pair amplitude nor the beyond-pairwise cluster hierarchy supplies the 5.853x deficit; it lives entirely in the bare FIRST-order per-bond amplitude Delta^1 g (the fitted C_knot=5.853). No numerical probe is run and this is the honest call, not a gap: a single-bond config has no second interface to construct Delta^2 g from, so any A=2 'measurement' of Delta^2 g would be a fabricated (non-derived) word; the algebraic identity IS the result. Anti-fit: mu3, z, B_AME enter only as diagnostics; nothing inverted or wired.",
+  "derive_then_check_locked": {
+    "B_D_target_MeV": "2.224",
+    "B_D_target_source": "AME2020 deuteron binding energy",
+    "first_order_DT_derived_MeV": "0.38",
+    "first_order_DT_source": "#4601 Delta_lambda=(-1)^{n(lambda)}*dim V_lambda",
+    "deficit_factor": "5.853",
+    "mu3_second_order_contribution_at_A2": 0,
+    "mu3_zero_is_exact": true
+  },
+  "lean_theorems": [
+    "QOU.MassTheory.DeuteronFirstOrderCluster.secondDiff_single_bond_vanishes",
+    "QOU.MassTheory.DeuteronFirstOrderCluster.cluster3_single_bond_vanishes",
+    "QOU.MassTheory.DeuteronFirstOrderCluster.total_change_decomp",
+    "QOU.MassTheory.DeuteronFirstOrderCluster.deuteron_content_is_first_order",
+    "QOU.MassTheory.DeuteronFirstOrderCluster.nonzero_cluster_needs_second_bond"
+  ],
+  "assertions": [
+    {
+      "name": "secondDiff_vanishes_single_bond",
+      "value": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cluster3_vanishes_all_E0",
+      "value": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "lean_direct_exit0_sorry_free_mathlib_free",
+      "value": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "siblings": {
+    "4615": "per-pair uniform z / K2-K4 Gram determinant (kills per-pair amplitude mechanism at every A)",
+    "4601": "DT-count Delta_lambda=(-1)^{n(lambda)}*dim V_lambda -> B_D=0.380 MeV (-82.9%)",
+    "mu3_door": "Mu3ClusterModularity main 0e9bfc67 (c3=-E0*Delta^2 g)"
+  }
+}

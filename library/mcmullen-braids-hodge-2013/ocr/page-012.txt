@@ -1,0 +1,49 @@
+270 C. McMullen
+
+leaf through f(x), arranging the critical point and value both to be equal to C3, and of course
+sending x to f(x). Now map the region outside the leaf through f(x) conformally by degree 6
+to the region outside the leaf through f?(x), arranging that co is both the critical point and critical
+value for this map. Finally map the annulus Aq between the bouquet and L, smoothly to the
+annulus A,, so that the map fits together with that already defined and creates a branch point
+at x.
+
+Fig. A.1. Leaves of the canonical foliation for f(x)
+
+This defines a smooth branched cover of the sphere. We claim its iterates are uniformly quasicon-
+formal. Indeed, the map is conformal except on the annulus Ao; but under iteration the points
+in Ag never return to there (they tend to 00), so the dilatation of the iterates is bounded by that
+of the original map.
+
+By constructing an invariant Beltrami differential and using the measurable Riemann mapping
+theorem as in [Sul2, Theorem 9], we conclude that this smooth map is quasiconformally conjugate
+to a rational map f(z) with properties (1) and (2). 0
+
+Our next task is to produce closed loops in X with prescribed monodromy. Let Mod(f) denote
+the group of isotopy classes of quasiconformal maps ¢ such that $(f(z))=f(@(z)) on the entire
+Riemann sphere. (This group is discussed in more detail in [Mc2, §2].) Since the attractor is topologi-
+cally characterized, #(A)= A for [@] in Mod(f).
+
+Proposition A.3. The monodromy group of (X, f) contains the image of Mod(f) in Mod(A).
+
+Proof. The argument, which is very general, comes from [Sul2]. Let : denote the Beltrami differential
+of @ and for each t in [0,1] form the map f=, 'efo¢,, where ¢, is the unique quasiconformal
+map with dilatation ty agreeing with ¢ at oo and two other points. This exhibits a path in X
+connecting f to a polynomial conjugate to f by a Mébius transformation M. By connecting M
+by a path to the identity, we obtain a loop with the desired monodromy. [
+
+Proposition A.4. The monodromy group G contains a element of order 3, fixing co and cyclically permut-
+ing the three finite points of the attractor.
+
+Proof. By the preceding, it is enough to construct a map in Mod(f) with this property. Begin with
+a quasiconformal map ¢ of Ao to itself which is the identity on the outer boundary and cyclically
+permutes the inner petals, fixing x. The map on the petals is determined by requiring ¢ to commute
+with f on the boundary of Ag.
+
+An appropriately chosen ¢ can be extended to a map commuting with f on the whole Riemann
+sphere. The requirement is that ¢ respect the rigid structure on each leaf of the foliation in Ao.
+Then the dynamics can be used push ¢ forward to the successive annuli A, filling in a neighborhood
+of infinity. On the remainder of the basin of oo f is a covering, and can be used to pull @ back.
+Finally we fill ¢ in conformally on the remainder of the sphere. This is possible because the dynamics
+is conformally the same on the immediate basin of each c;, and the pre-images of the immediate
+basins are all disks.
+

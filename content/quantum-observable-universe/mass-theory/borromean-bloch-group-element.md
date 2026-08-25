@@ -1,4 +1,4 @@
-**Conjecture (D16 K-theoretic / Bloch-group closure).**
+**Conjecture (K-theoretic / Bloch-group closure).**
 *The Borromean rings complement $\mathbf{S}^3 \setminus \mathcal{B}_3$
 defines a non-trivial element $[\mathcal{B}_3] \in K_3(\mathbb{C})$
 (equivalently, an element of the Bloch group $B(\mathbb{C})$) whose
@@ -33,11 +33,22 @@ $$
   \mathrm{Im}\,\mathrm{Li}_2(z) + \log|z| \cdot \arg(1 - z).
 $$
 
-For an ideal tetrahedron with cross-ratio $z$, the hyperbolic volume
-is $\Lambda(\theta) = D(e^{i\theta})/2 = \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta})$
-— the **Lobachevsky function**.  So hyperbolic volume IS a regulator
-evaluation, per
-[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).
+For an ideal tetrahedron with cross-ratio $z = e^{i\theta}$ on the unit
+circle, $\log|z| = 0$, so the regulator collapses to the **Clausen
+function**
+
+$$
+  D(e^{i\theta}) \;=\; \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta}) \;=\; \mathrm{Cl}_2(\theta),
+  \qquad
+  \Lambda(\theta) \;=\; \tfrac{1}{2}\mathrm{Cl}_2(2\theta),
+$$
+
+where $\Lambda$ is the **Lobachevsky function**.  So hyperbolic volume
+IS a regulator evaluation, per
+[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).  The two
+normalisations differ by both an argument doubling and a factor $2$;
+keeping one function's coefficient while writing the other's name is
+a recurring slip.
 
 ## The Borromean Bloch-group element
 
@@ -45,24 +56,30 @@ Per
 [`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
-- The Borromean complement decomposes into 8 ideal octahedra, each
-  with cross-ratio $\zeta = e^{i\pi/3}$ (the regular ideal
-  octahedron, $\theta = \pi/3$).
-- Each octahedron contributes Bloch-group element $8 \cdot
-  [\zeta]_2 + \ldots$ via the Lobachevsky decomposition.
+- The Borromean complement decomposes into **two** regular ideal
+  octahedra (Thurston), each of volume $4G = 4\,\mathrm{Cl}_2(\pi/2)
+  \approx 3.66386$.
+- In the Bloch group each octahedron is $4 \cdot [i]$, so the
+  cross-ratio carried by the class is the **fourth** root of unity
+  $\zeta_4 = i = e^{i\pi/2}$ — not the sixth root $e^{i\pi/3}$, which
+  is the figure-eight parameter.
 - The total Bloch-group element is
 
 $$
   [\mathcal{B}_3]_{B(\mathbb{C})}
   \;=\;
-  8 \cdot [e^{i\pi/3}]
+  8 \cdot [i]
   \;\in\;
   B(\mathbb{C}),
 $$
 
-with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
-8G$ (Catalan's constant; see
-[`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).
+with regulator $r_2[\mathcal{B}_3] = 8 \cdot D(i) = 8\,\mathrm{Cl}_2(\pi/2)
+= 8G$ (Catalan's constant; see
+[`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).  This is
+the $\zeta_4$ row of the
+[transcendental-accounting table](../appendix-surreals/transcendental-accounting-table-data.md);
+the figure-eight sits in the $\zeta_6$ row with
+$\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
 ## The conjectural content — $h^4$ as the next-order regulator term
 
@@ -94,18 +111,16 @@ $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 
 ## Significance
 
-Per
-[`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
-§3 (Cluster C of the duality tracker), four candidate routes for
-deriving $h^4 = -3/4$ categorically:
+Four candidate routes are open for deriving $h^4 = -3/4$
+categorically:
 
 1. **Direct Borromean Markov trace** — already done
 2. **Pachner-Pentagon state-sum** —
-   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15, sibling)
-3. **K-theoretic / Bloch group regulator** (this conjecture, D16)
+   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+3. **K-theoretic / Bloch group regulator** (this conjecture)
 4. **DIM-master Pentagon** — research-grade
 
-Closing D16 ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
+Closing this conjecture ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
 — the deepest connection to motivic / arithmetic structure.  It
 also closes the loop:
 
@@ -114,9 +129,8 @@ also closes the loop:
 - $r_2^{(2)}$ at order $h^4$ = $-6G$ (the Markov-trace coefficient),
 - $r_2^{(k)}$ at higher orders — the full Markov-trace closed form.
 
-## Diagnostics
+## Structural invariants
 
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
 - **GB filtration level**: N/A — the Bloch group lives at the
   decategorified level (image of $K_3(\mathbb{C})$ in $\mathbb{R}$);
@@ -137,9 +151,9 @@ class BorromeanBlochGroupElement
     (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
   /-- The Bloch-group element of the Borromean complement. -/
   borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [e^(iπ/3)]. -/
+  /-- It equals 8 · [i], the ζ₄ (octahedral) class. -/
   borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol (Complex.exp (Complex.I * π / 3))
+    borromean_bloch_class = 8 • bloch_symbol Complex.I
   /-- The Beilinson regulator of the class equals 8G. -/
   regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
   /-- The order-h² regulator correction equals -6G. -/
@@ -149,31 +163,27 @@ class BorromeanBlochGroupElement
     markov_trace_h4_coefficient borromean_complement = -3/4
 ```
 
-## Open R&D
+## What remains open
 
-1. **Compute prototype**: at $q = q_0$, canonical evaluate both
+1. **Compute prototype**: at $q = q_0$, numerically evaluate both
    sides of the conjectural identity
    $r_2^{(2)}[\mathcal{B}_3] = -6G$.  The left side requires
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
    [`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form).
-2. **D16 to closed** requires the Lean class instance + the
+2. Closing the conjecture needs an instance of the class above, and the
    `borromean_h4_coefficient_from_regulator` proof (which would
    import a Bloch-Suslin lemma from Mathlib once available; per
    `lean_loogle` search, $K_3$ formalisation is currently partial in
    Mathlib).
-3. **Cross-validate against D15**: the Pachner-Pentagon state-sum
+3. **Cross-validation.** The Pachner–Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.
 
 ## Cross-references
 
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D16
-  + §2 Cluster C (Pentagon validation D15-D18)
-- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
-  — Pentagon literatures + 4 candidate routes for $h^4 = -3/4$
-- Sibling Cluster C item:
-  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)
+- The sibling pentagon-validation conjecture:
+  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
 - The quantum Bloch group:
   [`def:quantum-bloch-group`](#def:quantum-bloch-group)
 - The motivic-period framing:

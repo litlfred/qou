@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Tests whether the Reading-A h⁴ residual (assuming c_2 = -G exact) matches the fine-structure constant α at q_0. EXPLORATORY — no structural derivation, just a numerical near-coincidence to flag for follow-up.",
+  "description": "Tests whether the Reading-A h\u2074 residual (assuming c_2 = -G exact) matches the fine-structure constant \u03b1 at q_0. EXPLORATORY \u2014 no structural derivation, just a numerical near-coincidence to flag for follow-up.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -49,6 +49,9 @@
       "reading_a_plus_alpha_h4": "0.16614831",
       "improvement_ppm": "5.6666308"
     },
-    "interpretation": "c_4_implied = -0.0075113144 matches -α = -0.0072973526 to 2.932%. NEAR but not exact. Without a categorical derivation linking α to the substrate stack, this is a SUGGESTIVE COINCIDENCE, not a proof. Possible follow-ups: (1) compute c_4 at other baryon predictions (m_n, m_He) to see if the same -α coefficient appears; (2) search for substrate-derivations of α (e.g. via Yekutieli q-deformation evaluation); (3) check if a clean h⁴+h⁶+... rational series fits the residual exactly with structural coefficients."
-  }
+    "interpretation": "c_4_implied = -0.0075113144 matches -\u03b1 = -0.0072973526 to 2.932%. NEAR but not exact. Without a categorical derivation linking \u03b1 to the substrate stack, this is a SUGGESTIVE COINCIDENCE, not a proof. Possible follow-ups: (1) compute c_4 at other baryon predictions (m_n, m_He) to see if the same -\u03b1 coefficient appears; (2) search for substrate-derivations of \u03b1 (e.g. via Yekutieli q-deformation evaluation); (3) check if a clean h\u2074+h\u2076+... rational series fits the residual exactly with structural coefficients."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -16,4 +16,18 @@ export default conjecture({
   ],
   uses: ["conj:single-volume-irrationality"],
   cites: ["borel1986", "borel1974"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module `lean/QOU/Archimedean/BorelZagierQouVolumes.lean` " +
+        "states ℚ-linear independence of the hyperbolic volumes `vol(4₁)`, `vol(5₂)`, `vol(𝓑)` — a transcendence statement about real numbers. " +
+        "The `ℝ` is therefore forced by the statement itself rather than " +
+        "chosen, so the block sits on the archimedean side of the §7c wall " +
+        "by construction.",
+    },
+  ],
+
 });

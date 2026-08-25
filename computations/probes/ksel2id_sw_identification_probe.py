@@ -103,7 +103,18 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, exp as mexp, quad as mquad, qp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 TOL_30 = mpf("1e-30")   # Euler / Jackson moment identity
 TOL_Q = mpf("1e-20")    # quadrature cross-checks (dps 40 working)
@@ -111,7 +122,7 @@ N_SYM = 12              # symbolic identity depth
 
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
 
@@ -368,7 +379,7 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
         closed = _p ** sp.Rational(-k * (k + 1), 2) * qpoch(_p, k)
         assert sp.simplify(prod_ratio - closed) == 0, k
     # numeric quadrature cross-check of the recurrence at 3 points
-    mp.dps = 40
+    set_compute_dps()
     worst_q = mpf(0)
     pts = [mpf(5) / 6, 1 / mpf(Q0_MUON_STR), 1 / mpf(Q0_PROTON_STR)]
     quad_tbl = {}
@@ -440,6 +451,7 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
 def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("ksel2id-sw-identification", engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "KSel-2-ID (bean qou-0ms0; audit-only, scope-(a), NO FIT, "
         "nothing wired): literature identification of the balanced "

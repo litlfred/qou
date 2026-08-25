@@ -57,7 +57,7 @@ def main():
     import time
     _t0 = time.perf_counter()
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     hbar_q = (q - 1) / q
     eps = hbar_q**2  # ℏ² = ((q-1)/q)²

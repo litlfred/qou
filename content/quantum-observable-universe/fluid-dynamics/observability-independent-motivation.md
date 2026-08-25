@@ -36,4 +36,4 @@ $$
   \text{Observability} \Longrightarrow \text{NS singular}
 $$
 
-The converse fails. NS blowup could trigger without observability via entirely unrelated mechanics. Conversely, NS regularity fits perfectly within a QPU. The argument holds that if the physical universe operates as a rigorous QOU, NS blows up. The observability axiom encodes a massive architectural measurement principle spanning gauge theory, geometry, and physics; the NS blowup merely drops out as a downstream theorem.
+The converse fails. NS blowup could trigger without observability via entirely unrelated mechanics. Conversely, NS regularity fits perfectly within a QPU. The argument holds that if the physical universe operates as a rigorous QOU, NS blows up. The observability axiom encodes a measurement principle spanning gauge theory, geometry, and physics; the NS blowup is a downstream theorem.

@@ -17,4 +17,4 @@ $$
 
 *The character matrix is invertible at generic $q$. The system has a unique solution $y_\lambda \in R(\!(z)\!)$.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

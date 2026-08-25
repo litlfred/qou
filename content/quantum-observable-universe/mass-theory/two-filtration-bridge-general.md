@@ -22,13 +22,13 @@ $$
 $$
 ### Corollaries
 
-**Generalises round 9**: the small-cases bridge verification
+**Generalisation**: the small-cases bridge verification
 at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
-**Corollary for B1**:
-- For each self-conjugate cell, B1's depth-2 row is theorem-level
+**Corollary for the depth correspondence**:
+- For each self-conjugate cell, its depth-2 row is theorem-level
  (combining Bloch–Suslin + per-knot VC where available).
-- For each chiral pair, B1's depth-3 row is conditional on the CS
+- For each chiral pair, its depth-3 row is conditional on the CS
  computation per knot.
 
 **Combined with

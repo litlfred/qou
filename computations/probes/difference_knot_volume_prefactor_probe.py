@@ -46,7 +46,7 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from difference_knot_binding_probe import _difference_braid  # noqa: E402
-from q_parameter import Q as Q0, HA as HBAR_Q  # noqa: E402  (ℏ_q = q − q⁻¹? see below)
+from q_parameter import Q_MP as Q0, HA_MP as HBAR_Q  # noqa: E402  (ℏ_q = q − q⁻¹? see below)
 from codata_constants import (  # noqa: E402
     M_E_MEV,
     AME_B_DEUTERON_MEV_VALIDATION as B_D,

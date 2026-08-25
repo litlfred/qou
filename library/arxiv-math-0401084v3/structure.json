@@ -1,0 +1,147 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0401084v3",
+ "source": {
+  "file": "0401084v3.pdf",
+  "sha256": "f56bbd4cee4f3418d4741504d48a78a4a9ec5e1154d88bde650832c13192651d",
+  "bytes": 224478,
+  "pages": 17
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0401084",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "9 Mar 2006"
+  },
+  "doi": null,
+  "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
+  "authors_raw": "FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES",
+  "abstract": "W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtain ed by Dehn surgeries along it.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220524025808-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "THE COLORED JONES POLYNOMIALS OF THE",
+  "title_lines": [
+   "THE COLORED JONES POLYNOMIALS OF THE"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Main result",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Limits of the colored Jones polynomials",
+   "page": 4,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorem",
+   "page": 14,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix. Optimistic limit",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3379,
+   "n_words": 594
+  },
+  {
+   "id": "sec-001-2-main-result",
+   "number": "2",
+   "title": "Main result",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4100,
+   "n_words": 927
+  },
+  {
+   "id": "sec-002-3-limits-of-the-colored-jones-polynomials",
+   "number": "3",
+   "title": "Limits of the colored Jones polynomials",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 14,
+   "n_chars": 15194,
+   "n_words": 4249
+  },
+  {
+   "id": "sec-003-4-proof-of-the-main-theorem",
+   "number": "4",
+   "title": "Proof of the main theorem",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1435,
+   "n_words": 415
+  },
+  {
+   "id": "sec-004-appendix-optimistic-limit",
+   "number": null,
+   "title": "Appendix. Optimistic limit",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2312,
+   "n_words": 563
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3957,
+   "n_words": 623
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 6,
+  "chars_total": 30377
+ }
+}

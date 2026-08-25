@@ -48,7 +48,7 @@ variable {n : ℕ}
 /-- **Frobenius inner product** on `Matrix (Fin n) (Fin n) ℝ`,
     defined as `tr(A^T · B) = Σ_{ij} A_ij B_ij`.  The standard
     choice in matrix analysis. -/
-def frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
+def Matrix.frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
   (A.transpose * B).trace
 
 /-- **Symmetry** of the Frobenius inner product. -/
@@ -66,7 +66,7 @@ theorem frobeniusInner_symm (A B : Matrix (Fin n) (Fin n) ℝ) :
         rw [Matrix.transpose_transpose]
 
 /-- **Non-negativity on the diagonal**: `⟨A, A⟩_F = Σ A_ij² ≥ 0`. -/
-theorem frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
+theorem Matrix.frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
     0 ≤ Matrix.frobeniusInner A A := by
   unfold Matrix.frobeniusInner Matrix.trace
   apply Finset.sum_nonneg
@@ -79,7 +79,7 @@ theorem frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
   exact mul_self_nonneg (A k i)
 
 /-- **Non-degeneracy**: `⟨A, A⟩_F = 0` iff `A = 0`. -/
-theorem frobeniusInner_self_eq_zero_iff
+theorem Matrix.frobeniusInner_self_eq_zero_iff
     (A : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A A = 0 ↔ A = 0 := by
   refine ⟨?_, ?_⟩

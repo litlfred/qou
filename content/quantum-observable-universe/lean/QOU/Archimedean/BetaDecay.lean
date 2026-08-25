@@ -42,7 +42,7 @@ structure BetaDecayOp where
   /-- Daughter nuclear configuration. -/
   daughter : NuclearConfig
   /-- The daughter differs by exactly one nucleon: n → p. -/
-  is_beta_minus : ∃ k,
+  is_beta_minus : ∃ k : ℕ,
     parent.length = daughter.length ∧
     parent[k]! = NucleonType.neutron ∧
     daughter[k]! = NucleonType.proton ∧

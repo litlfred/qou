@@ -82,7 +82,8 @@ def cost_table():
         wlen = len(atom_braid_word_3A(Z, N))
         ops = 2 * wlen * sumsq                            # ≈2 nonzeros/row per gen
         print(f" {A:>2} {n_in:>4} {len(parts):>5} {d_max:>8} {sumsq:>12.3g} {wlen:>4}"
-              f" {ops:>10.2e} {_fmt(ops*T_MPMATH):>9} {_fmt(ops*T_RUST):>9}"
+              # float64-intentional: per-op cost-model timings, not physics.
+        f" {ops:>10.2e} {_fmt(ops*T_MPMATH):>9} {_fmt(ops*T_RUST):>9}"
               f" {_fmt(ops*T_FLOAT):>9}")
     print("\n READING: the cost is Σd²=n_inner! — dominated by d_max². Rust is a"
           " ~7× constant\n factor; it does NOT change the asymptotic, so the"

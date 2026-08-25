@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:28:30.205057+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-21T15:07:25.298316+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "coulomb_charge_pp_eq_writhe_half",
@@ -73,19 +73,19 @@
     },
     {
       "name": "twist_H2_sym_eq_q_squared",
-      "computed": "1.232052482595433244",
-      "expected": "1.232052482595433244",
+      "computed": "1.2320524541667639313",
+      "expected": "1.2320524541667639313",
       "passed": true,
       "tolerance": "0.000000000000001",
       "source": "theta_1 = q^2"
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 26,
   "computation": "u1-hypercharge-assignment",
   "scriptFile": "u1_hypercharge_assignment.py",
-  "scriptHash": "c39c2af77b8e",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "72352830e062",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,13 +95,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY derivation of the U(1) -> quantum-number map for the framing phase q^{w.c}. Engine: python+mpmath (mpmath for the q0 numerics; sympy for the symbolic twist expressions). Q1: c=1/2 is STRUCTURALLY FIXED by def:coulomb-charge (Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: the writhe ladder is tested against (Q,I_3,Y) by sign+ratio (scale-free); the p/n same-Y falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} eigenvalue ladder per Wedderburn block. RAW @ 70 dps (canonical COMPUTE_DPS); q0 is the proton-pinned q_parameter.Q_MP; PDG values are falsification references only; NO tuning.",
   "auditOnly": "docs/audits/2026-06-02-u1-hypercharge-assignment.md",
   "parameters": {
-    "q0": "1.10997859555733471989976322048322502665620840878015405145269",
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
     "dps": 70,
     "c_coulomb_from_def_coulomb_charge": "1/2"
   },
@@ -166,7 +168,7 @@
         "(1,1)": "1"
       },
       "H2_twist_q0": {
-        "(2)": "1.23205248259543324398873743062",
+        "(2)": "1.23205245416676393126980451354",
         "(1,1)": "1"
       },
       "H3_blocks_spin": {
@@ -178,8 +180,8 @@
         "(2,1)": "q**(3/4)"
       },
       "H3_twist_q0": {
-        "(3)": "1.47886920410901492595051441901",
-        "(2,1)": "1.08139897367263195690408831846"
+        "(3)": "1.47886914012693462213944586221",
+        "(2,1)": "1.08139896431546135937998913637"
       },
       "excluded_block": "(1,1,1) (Hecke SIGN irrep) is omitted from the H_3 spin/twist ladder: 3 spin-1/2 strands carry NO SU(2) singlet, so the sign irrep has no spin-j object and no theta_j eigenvalue. It is NOT a j=0 channel.",
       "note": "theta_j grows monotonically with j (q>1); it is a SPIN ladder (j(j+1) Casimir), NOT an additive charge ladder. No sign change, no half-integer charge structure -- it does not encode Q/Y."
@@ -189,6 +191,6 @@
     "VERDICT (a, partial): c is DERIVED = 1/2 from def:coulomb-charge (NOT a fit), resolving the linked-channel audit's open coupling. The writhe ladder matches I_3 (sign+ratio, p:+ / n:-, scale-free) and is FALSIFIED as a Y map by the proton/neutron same-Y test. It also does NOT match Q (neutron Q=0 but writhe(n) != 0). So writhe -> I_3 (third isospin component), NOT -> Y and NOT -> Q directly.",
     "VERDICT (b, the precise residual obstruction): Gell-Mann-Nishijima Y = 2(Q - I_3) requires Q (the Coulomb charge, = writhe/2) AND I_3 TOGETHER. Writhe alone gives I_3 (its sign/ratio). The Coulomb charge def gives Q = writhe/2 -- but that is the SAME writhe datum, so on the single inter-nucleon writhe the framework supplies only ONE integer per nucleon, which cannot independently fix both Q and I_3. The MISSING OBJECT is a SECOND, independent crossing invariant (a baryon-number / color-trace charge B distinct from the inter-nucleon writhe) so that Y = B (the baryon Y=+1 common to p,n) is carried by the color-tube trace while I_3 = writhe/2-of-inter-nucleon-arc carries the p/n split. Until that second invariant is derived, Y itself is UNDEFINED -- but it is NOT a free-c problem (c is fixed); it is a missing-second-charge problem. NO FIT was performed."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -13,7 +13,7 @@ export default proposition({
     "kassel1995",
   ],
   lean: {
-    ref: "qou:QOU.Mass.meson_kaon_pion_ratio",
+    ref: "qou:QOU.Mass.seifert_ratio_T25_T23",
   },
   tags: [
     "meson",

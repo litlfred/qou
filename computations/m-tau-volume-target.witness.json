@@ -38,7 +38,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "bool",
-      "source": "Reach check: the k=3 target lies strictly between Vol(6_1) and Vol(6_2), inside the searched census — that refutation is real."
+      "source": "Reach check: the k=3 target lies strictly between Vol(6_1) and Vol(6_2), inside the searched census \u2014 that refutation is real."
     }
   ],
   "allPassed": true,
@@ -72,7 +72,7 @@
     },
     "verdicts": {
       "1": "unreachable by any tabulated prime knot (target ~344)",
-      "2": "beyond the 25-knot low-crossing census: needs Vol ~ 34, i.e. roughly >= 15-17 crossings or a link/composite — the k=2 identity was never actually tested",
+      "2": "beyond the 25-knot low-crossing census: needs Vol ~ 34, i.e. roughly >= 15-17 crossings or a link/composite \u2014 the k=2 identity was never actually tested",
       "3": "inside the low-crossing census (between 6_1 = 3.164 and 6_2 = 4.401): the census refutation is REAL for k = 3"
     },
     "census_landmarks_vol": {
@@ -86,5 +86,8 @@
       "16-crossing max (approx)": 25.0,
       "weaving W(5,4) (approx)": 30.0
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808076",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.inputs.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

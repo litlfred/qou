@@ -128,7 +128,7 @@ def IsInfinitesimal (x : K) : Prop :=
   ∀ ε : ℝ, 0 < ε → |x| < (ofReal ε : K)
 
 /-- An infinitesimal is finite. -/
-theorem isFinite {x : K} (hx : IsInfinitesimal x) :
+theorem IsInfinitesimal.isFinite {x : K} (hx : IsInfinitesimal x) :
     IsFinite x := by
   refine ⟨1, ?_⟩
   have h : |x| < ((ofReal (1 : ℝ) : K)) := hx 1 one_pos
@@ -175,14 +175,14 @@ theorem ofReal_isInfinitesimal_iff_eq_zero (r : ℝ) :
     exact zero_isInfinitesimal
 
 /-- Negation of an infinitesimal is infinitesimal. -/
-theorem neg {x : K} (hx : IsInfinitesimal x) :
+theorem IsInfinitesimal.neg {x : K} (hx : IsInfinitesimal x) :
     IsInfinitesimal (-x) := by
   intro ε hε
   rw [abs_neg]
   exact hx ε hε
 
 /-- Sum of two infinitesimals is infinitesimal. -/
-theorem add {x y : K}
+theorem IsInfinitesimal.add {x y : K}
     (hx : IsInfinitesimal x) (hy : IsInfinitesimal y) :
     IsInfinitesimal (x + y) := by
   intro ε hε
@@ -200,7 +200,7 @@ theorem add {x y : K}
   exact lt_of_le_of_lt hsum hlt
 
 /-- Sum of two finite surreals is finite. -/
-theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x + y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -210,7 +210,7 @@ theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     _ = ((n + m : ℕ) : K)             := by push_cast; ring
 
 /-- Product of two finite surreals is finite. -/
-theorem mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x * y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -225,7 +225,7 @@ theorem mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     _ = ((n * m : ℕ) : K)             := by push_cast; ring
 
 /-- Finite × infinitesimal is infinitesimal. -/
-theorem mul_finite {x y : K}
+theorem IsInfinitesimal.mul_finite {x y : K}
     (hx : IsInfinitesimal x) (hy : IsFinite y) :
     IsInfinitesimal (x * y) := by
   obtain ⟨n, hn⟩ := hy
@@ -402,19 +402,19 @@ theorem one_isFinite : IsFinite (1 : K) := by
   simp
 
 /-- Negation preserves finiteness (using the same bound). -/
-theorem neg {x : K} (hx : IsFinite x) : IsFinite (-x) := by
+theorem IsFinite.neg {x : K} (hx : IsFinite x) : IsFinite (-x) := by
   obtain ⟨n, hn⟩ := hx
   refine ⟨n, ?_⟩
   rwa [abs_neg]
 
 /-- Subtraction of finite surreals is finite. -/
-theorem sub {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.sub {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x - y) := by
   rw [sub_eq_add_neg]
   exact hx.add hy.neg
 
 /-- Subtraction of infinitesimals is infinitesimal. -/
-theorem sub {x y : K}
+theorem IsInfinitesimal.sub {x y : K}
     (hx : IsInfinitesimal x) (hy : IsInfinitesimal y) :
     IsInfinitesimal (x - y) := by
   rw [sub_eq_add_neg]

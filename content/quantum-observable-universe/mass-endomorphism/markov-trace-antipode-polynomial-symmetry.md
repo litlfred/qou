@@ -40,7 +40,7 @@ $$
   q^{2 \mathrm{shift}(K)} \cdot p_K(1/q) \;=\; (-1)^{\ell(\mathcal{B}_K)} \cdot p_K(q),
 $$
 
-where $\ell(\mathcal{B}_K)$ is the parity of crossings under the Hecke-algebra antipode action. The $\mathrm{shift}(K)$ is the GS-filtration shift exponent ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)). It equals $18Z + 21N + 1$ for atomic braids per the integer-LP closure.
+where $\ell(\mathcal{B}_K)$ is the parity of crossings under the Hecke-algebra antipode action. The $\mathrm{shift}(K)$ is the GS-filtration shift exponent. It equals $18Z + 21N + 1$ for atomic braids per the integer-LP closure.
 
 This conjecture is testable via the $A \geq 2$ extension and via the polynomial structure of the neutron's closed form $\mathrm{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 

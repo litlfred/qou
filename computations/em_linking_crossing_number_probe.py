@@ -55,7 +55,12 @@ import pathlib
 
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, sqrt  # noqa: E402
 
@@ -68,7 +73,7 @@ Z_OF_A = {3: 2, 7: 4, 11: 6, 13: 7}
 
 
 def load_rows() -> list[dict]:
-    w = json.loads(SCOPING.read_text())
+    w = record_upstream(SCOPING, _UPSTREAM_RECORDS)
     return [{"A": int(r["A"]), "pair": r["pair"],
              "n_pairs": int(r["delta_proton_pairs"]),
              "kappa": mpf(str(r["residual_factor_kappa"]))}
@@ -112,10 +117,10 @@ def main() -> None:
             "C_implied": {str(r["A"]): mp.nstr(c, 8)
                           for r, c in zip(rows, c_impl)},
             "mean": mp.nstr(mean, 8),
-            "rel_scatter": float(rel_sd),
+            "rel_scatter": mp.nstr(rel_sd, 8),
         }
 
-    ranked = sorted(results.items(), key=lambda kv: kv[1]["rel_scatter"])
+    ranked = sorted(results.items(), key=lambda kv: mpf(kv[1]["rel_scatter"]))
     best_label, best = ranked[0]
     fh = results["FH: Vol ~ A (nuclear volume)"]
     fh_wins = best_label.startswith("FH")
@@ -129,6 +134,7 @@ def main() -> None:
     locality_ok = abs(r_pairs) < mpf("0.95")
 
     wb = WitnessBuilder("em-linking-crossing-number", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "EXPLORATORY test of the Freedman-He asymptotic-crossing-number "
         "template for the open two-like-charge EM-linking invariant "
@@ -158,11 +164,11 @@ def main() -> None:
     wb.add_data("verdict", (
         f"The Freedman-He volume proxy (Vol ~ A) gives the most "
         f"constant implied crossing number, C = "
-        f"{fh['mean']} +/- {fh['rel_scatter']*100:.1f}%, versus "
-        f"{results['alt: no volume factor']['rel_scatter']*100:.1f}% "
+        f"{fh['mean']} +/- {mpf(fh['rel_scatter'])*100}%, versus "
+        f"{mpf(results['alt: no volume factor']['rel_scatter'])*100}% "
         f"with no volume factor. So a SINGLE constant per-pair "
         f"crossing number, times the template's Vol^(-1/3), reproduces "
-        f"the whole kappa(A) profile to ~{fh['rel_scatter']*100:.0f}% "
+        f"the whole kappa(A) profile to ~{mpf(fh['rel_scatter'])*100}% "
         f"-- and the residual shows no significant correlation with "
         f"the proton-pair count, as pair-locality requires. This is a "
         f"CONSISTENCY result on four points, not a derivation: the "
@@ -185,8 +191,8 @@ def main() -> None:
     wb.add_data("failed_prediction_recorded", (
         "The first version of this probe asserted that the Freedman-He "
         "proxy (Vol ~ A) would be the MOST constant reading. It is "
-        f"NOT: Vol ~ Z scores {results['alt: Vol ~ Z (proton content)']['rel_scatter']*100:.2f}% "
-        f"against A's {fh['rel_scatter']*100:.2f}%. That assertion "
+        f"NOT: Vol ~ Z scores {mpf(results['alt: Vol ~ Z (proton content)']['rel_scatter'])*100}% "
+        f"against A's {mpf(fh['rel_scatter'])*100}%. That assertion "
         "failed and is recorded here rather than quietly dropped. The "
         "honest reading is that a volume factor of SOME kind is doing "
         "real work (both proxies ~5-6% vs 17% with none), but four "
@@ -196,9 +202,9 @@ def main() -> None:
         "the whole nucleus. Which volume enters the template is now an "
         "explicit open sub-question, not a settled input."))
     wb.set_audit_only("docs/audits/2026-08-01-em-linking-reads-round1.md")
-    no_vol = results["alt: no volume factor"]["rel_scatter"]
-    vol_helps = (fh["rel_scatter"] < no_vol / 2
-                 and best["rel_scatter"] < no_vol / 2)
+    no_vol = mpf(results["alt: no volume factor"]["rel_scatter"])
+    vol_helps = (mpf(fh["rel_scatter"]) < no_vol / 2
+                 and mpf(best["rel_scatter"]) < no_vol / 2)
     wb.add_assertion(
         name="volume_factor_more_than_halves_scatter",
         computed=int(vol_helps), expected=1, tolerance=0, unit="bool",
@@ -217,10 +223,10 @@ def main() -> None:
     print("implied per-pair crossing number C = kappa * (volume proxy)^(1/3):")
     for label, res in ranked:
         vals = ", ".join(f"{k}:{v}" for k, v in res["C_implied"].items())
-        print(f"  {res['rel_scatter']*100:6.2f}%  {label}")
+        print(f"  {mp.nstr(mpf(res['rel_scatter'])*100, 4)}%  {label}")
         print(f"           {vals}")
     print(f"\nFreedman-He mean C = {fh['mean']}  "
-          f"(+/- {fh['rel_scatter']*100:.1f}%)")
+          f"(+/- {mpf(fh['rel_scatter'])*100}%)")
     print(f"pair-locality: r(C, n_pairs) = {mp.nstr(r_pairs,4)}  "
           f"consistent = {locality_ok}")
     print(f"witness -> {out}")

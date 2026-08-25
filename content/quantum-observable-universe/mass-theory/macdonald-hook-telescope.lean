@@ -35,19 +35,38 @@
                     Invent. Math. 92.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
-open BigOperators
+/-! ### Base ring (AGENTS.md §7c)
+
+Generic `[CommRing R]` — the telescope is **Laurent algebra in `Q` and `X`**,
+not field algebra.  No ordering, no radical, no `Real.*` construct appears.
+
+The two geometric denominators are carried as **units** rather than as field
+divisions, which is the `CommRing` form of the side conditions the statements
+already had to assume:
+
+* `u : Rˣ` with `↑u = 1 − Q` — replaces the old hypothesis `Q ≠ 1`;
+* `v : Rˣ` with `↑v = 1 − X` — needed to invert the telescope factor
+  `Z_n = ((1 − X)/(1 − Q))^n` when dividing by it.
+
+Over a field "nonzero" and "unit" coincide, so no generality is lost
+(`Units.mk0` recovers the field instance), and the quotients below are
+correspondingly stated in their division-free (multiplicative) form. -/
+
+variable {R : Type*} [CommRing R]
 
 /-! ## Telescope identity
 
-For the purposes of this stub we state the telescope as an identity
-in `ℝ` parametrised by `Q` and `X`; the full categorical statement
-(over `ℚ(Q, X)` via the Frobenius identity for the regular `S_n`-
-representation) lives in a follow-up file. -/
+The telescope is stated as an identity over a generic commutative ring `R`,
+parametrised by `Q` and `X`. The full categorical statement (over
+`ℚ(Q, X)` via the Frobenius identity for the regular `S_n`-
+representation) still lives in a follow-up file; instantiate at
+`R := ℤ[Q^{±1}, X^{±1}]`, at `ℚ(Q, X)`, at `ℝ` for the archimedean
+evaluation, or anywhere else. -/
 
 /-- The Wenzl-bridge normalisation `Z_n = Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q)`,
     abstractly. The sum is encoded by the value `Z_n` on the right of
@@ -56,11 +75,11 @@ representation) lives in a follow-up file. -/
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
 -- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
-axiom wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
+axiom wenzlNormalizationOfShape {R : Type*} [CommRing R] (n : ℕ) (Q X : R) : R
 
-/-- The right-hand side of the telescope: a single geometric ratio. -/
-noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
-  ((1 - X) / (1 - Q)) ^ n
+/-- The right-hand side of the telescope: a single geometric ratio
+    `((1 − X)/(1 − Q))^n`, with `1 − Q` carried as the unit `u`. -/
+def telescopeRHS (n : ℕ) (X : R) (u : Rˣ) : R := ((1 - X) * (↑u⁻¹ : R)) ^ n
 
 /-- **External axiom (Stanley EC2 Cor. 7.12.5; Macdonald I.3 ex. 1).**
 
@@ -78,12 +97,14 @@ noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
     Hoefsmit-matrix witness with max absolute deviation `≈ 2.5 ·
     10⁻⁵¹` over 191 samples in `y-lambda-mpfr-witness.json`.
 
-    The axiom IS the conjectural input — see §3b-cond audit doc. -/
+    The axiom IS the conjectural input — see §3b-cond audit doc.
+    §7c: the old hypothesis `Q ≠ 1` is now the unit witness
+    `↑u = 1 − Q`, so the axiom is stated over `CommRing`. -/
 -- Ref: [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5
 -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, I.3 ex. 1
-axiom wenzlNormalizationOfShape_eq_telescope :
-    ∀ (n : ℕ) (Q X : ℝ), Q ≠ 1 →
-      wenzlNormalizationOfShape n Q X = telescopeRHS n Q X
+axiom wenzlNormalizationOfShape_eq_telescope {R : Type*} [CommRing R] :
+    ∀ (n : ℕ) (Q X : R) (u : Rˣ), (u : R) = 1 - Q →
+      wenzlNormalizationOfShape n Q X = telescopeRHS n X u
 
 /-- **Macdonald hook-content telescope**:
 
@@ -100,9 +121,9 @@ axiom wenzlNormalizationOfShape_eq_telescope :
     samples. -/
 -- Ref: [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5
 theorem macdonald_hook_telescope
-    (n : ℕ) (Q X : ℝ) (hQ : Q ≠ 1) :
-    wenzlNormalizationOfShape n Q X = telescopeRHS n Q X :=
-  wenzlNormalizationOfShape_eq_telescope n Q X hQ
+    (n : ℕ) (Q X : R) (u : Rˣ) (hu : (u : R) = 1 - Q) :
+    wenzlNormalizationOfShape n Q X = telescopeRHS n X u :=
+  wenzlNormalizationOfShape_eq_telescope n Q X u hu
 
 /-! ## Closed form for y_λ derived from the telescope
 
@@ -113,13 +134,18 @@ single geometric factor, giving the canonical hook-content form. -/
 /-- Per-partition Wenzl Schur element value, abstracted (full
     definition in `y-lambda-closed-form-wenzl-bridge.lean`). -/
 -- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
-axiom wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
+axiom wenzlSchurElementValue {R : Type*} [CommRing R] (Q X : R)
+    (lamHookContent : R → R → R) : R
 
 /-- The clean closed form for `y_λ`: numerator is the Schur
-    principal-specialisation product, denominator is the telescope. -/
-noncomputable def yLambdaClosedForm (n : ℕ) (Q X : ℝ)
-    (lamHookContent : ℝ → ℝ → ℝ) : ℝ :=
-  wenzlSchurElementValue Q X lamHookContent / telescopeRHS n Q X
+    principal-specialisation product, denominator is the telescope.
+
+    §7c: dividing by `Z_n = ((1 − X)/(1 − Q))^n` is multiplication by the
+    unit `((1 − Q)/(1 − X))^n = (↑v⁻¹ · ↑u)^n`, so the closed form is a
+    ring element with no field division. -/
+noncomputable def yLambdaClosedForm (n : ℕ) (Q X : R) (u v : Rˣ)
+    (lamHookContent : R → R → R) : R :=
+  wenzlSchurElementValue Q X lamHookContent * ((↑v⁻¹ : R) * (u : R)) ^ n
 
 /-- **Closed-form $y_\lambda$ via the telescope**.
 
@@ -130,16 +156,25 @@ noncomputable def yLambdaClosedForm (n : ℕ) (Q X : ℝ)
       y_λ = Q^{n(λ)} · (1 − Q)^n / (1 − X)^n
               · ∏_{x ∈ λ} (1 − X · Q^{c(x)}) / (1 − Q^{h(x)}).
 
+    Stated division-free (§7c, the R[h] pattern) as
+    `y_λ · Z_n = s_{λ,X}(Q)`; since `Z_n` is a unit this is equivalent to
+    the quotient form `s_{λ,X}(Q) / Z_n = y_λ` quoted above.
+
     This is `O(n)` per partition (one cell scan for contents and
     hook lengths) — no `sympy.simplify`, no manual algebra. -/
 theorem y_lambda_closed_form_via_telescope
-    (n : ℕ) (Q X : ℝ) (hQ : Q ≠ 1)
-    (lamHookContent : ℝ → ℝ → ℝ) :
-    wenzlSchurElementValue Q X lamHookContent
-        / wenzlNormalizationOfShape n Q X
-      = yLambdaClosedForm n Q X lamHookContent := by
-  unfold yLambdaClosedForm
-  rw [macdonald_hook_telescope n Q X hQ]
+    (n : ℕ) (Q X : R) (u v : Rˣ)
+    (hu : (u : R) = 1 - Q) (hv : (v : R) = 1 - X)
+    (lamHookContent : R → R → R) :
+    yLambdaClosedForm n Q X u v lamHookContent * wenzlNormalizationOfShape n Q X
+      = wenzlSchurElementValue Q X lamHookContent := by
+  have h1 : ((↑v⁻¹ : R) * (u : R)) * ((v : R) * (↑u⁻¹ : R)) = 1 := by
+    calc ((↑v⁻¹ : R) * (u : R)) * ((v : R) * (↑u⁻¹ : R))
+        = ((↑v⁻¹ : R) * (v : R)) * ((u : R) * (↑u⁻¹ : R)) := by ring
+      _ = 1 := by rw [Units.inv_mul, Units.mul_inv, mul_one]
+  rw [macdonald_hook_telescope n Q X u hu]
+  unfold yLambdaClosedForm telescopeRHS
+  rw [← hv, mul_assoc, ← mul_pow, h1, one_pow, mul_one]
 
 /-! ## Empirical witness pointer -/
 

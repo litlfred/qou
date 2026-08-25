@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:23:20.681757+00:00",
-  "commitSha": "a44c02887b6c337fa3b5a1b474add39130069138",
+  "computedAt": "2026-08-24T13:26:33.749969+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "d1_direct_gate_scan_completed",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 19,
   "computation": "qbeta-c3-phib-lever-phase-scan",
   "scriptFile": "qbeta_c3_phib_lever_phase_scan.py",
   "scriptHash": "e800b7fdf236",
-  "scriptCommitSha": "a44c02887b6c337fa3b5a1b474add39130069138",
+  "scriptCommitSha": "62d1c1372b2833bec3edded2a5e38d1622ca5098",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_lever_phase_scan.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_lever_phase_scan.py"
   },
   "description": "Round-2 m-plane scan over the u_ladder^3-lever phase-law class (S_cand = (sqrt3/2)|U|^2 sin(2 kappa/u^3)): direct cross-anchor gate over canonical (|U|, kappa) pairs + required-kappa stability measurement per |U| law. NZ-leading tier; exploratory; no fit; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -51,58 +60,58 @@
         {
           "U": "2t",
           "kappa": "-hbar_q^2",
-          "err_muon": 0.46525045110704405,
+          "err_muon": 0.41523460806165474,
           "err_proton": 1.37136538320924,
           "max_err": 1.37136538320924
         },
         {
           "U": "h",
           "kappa": "-hbar_q^2",
-          "err_muon": 0.4705755640089625,
+          "err_muon": 0.4203779499910011,
           "err_proton": 1.3727150242580506,
           "max_err": 1.3727150242580506
         },
         {
           "U": "2t",
           "kappa": "+1",
-          "err_muon": 1.5400644052840993,
+          "err_muon": 1.4134109130097028,
           "err_proton": 1.3637614301495489,
-          "max_err": 1.5400644052840993
+          "max_err": 1.4134109130097028
         },
         {
           "U": "h",
           "kappa": "+1",
-          "err_muon": 1.5492956802010003,
+          "err_muon": 1.4221818951994516,
           "err_proton": 1.365083436400808,
-          "max_err": 1.5492956802010003
+          "max_err": 1.4221818951994516
         },
         {
           "U": "2t",
           "kappa": "+u^2",
-          "err_muon": 1.798043288069589,
+          "err_muon": 1.7031495353071013,
           "err_proton": 1.6865820292243234,
-          "max_err": 1.798043288069589
+          "max_err": 1.7031495353071013
         },
         {
           "U": "h",
           "kappa": "+u^2",
-          "err_muon": 1.8082121273981613,
+          "err_muon": 1.7129735053167667,
           "err_proton": 1.6890772518054078,
-          "max_err": 1.8082121273981613
+          "max_err": 1.7129735053167667
         },
         {
           "U": "2t",
           "kappa": "-u",
-          "err_muon": 2.0060525218783694,
+          "err_muon": 1.9042950772999068,
           "err_proton": 1.7305670219755975,
-          "max_err": 2.0060525218783694
+          "max_err": 1.9042950772999068
         },
         {
           "U": "h",
           "kappa": "-u",
-          "err_muon": 2.016977322519792,
+          "err_muon": 1.9148500641276596,
           "err_proton": 1.7332220977751907,
-          "max_err": 2.016977322519792
+          "max_err": 1.9148500641276596
         }
       ]
     },
@@ -119,45 +128,45 @@
       {
         "U": "3t",
         "feasible": true,
-        "kappa_req_muon": "3.53298006446e-8",
+        "kappa_req_muon": "3.65757887082e-8",
         "kappa_req_proton": "-1.49417316816e-7",
-        "rel_spread": 5.229214829672788,
+        "rel_spread": 5.085142715792846,
         "branch_spacing_pi_u3_muon": "1.9410913e-6",
         "branch_spacing_pi_u3_proton": "1.9410901e-6"
       },
       {
         "U": "sqrt(t)",
         "feasible": true,
-        "kappa_req_muon": "3.31684519115e-8",
+        "kappa_req_muon": "3.43375740372e-8",
         "kappa_req_proton": "-1.39609625679e-7",
-        "rel_spread": 5.209108886104475,
+        "rel_spread": 5.065797587440058,
         "branch_spacing_pi_u3_muon": "1.9410913e-6",
         "branch_spacing_pi_u3_proton": "1.9410901e-6"
       },
       {
         "U": "z_markov",
         "feasible": true,
-        "kappa_req_muon": "1.38589898567e-8",
+        "kappa_req_muon": "1.43458569823e-8",
         "kappa_req_proton": "-5.6777252169e-8",
-        "rel_spread": 5.096781421735942,
+        "rel_spread": 4.957745587399153,
         "branch_spacing_pi_u3_muon": "1.9410913e-6",
         "branch_spacing_pi_u3_proton": "1.9410901e-6"
       },
       {
         "U": "1/2",
         "feasible": true,
-        "kappa_req_muon": "1.38213123547e-8",
+        "kappa_req_muon": "1.43068540027e-8",
         "kappa_req_proton": "-5.66212456549e-8",
-        "rel_spread": 5.096662039149299,
+        "rel_spread": 4.957630772243985,
         "branch_spacing_pi_u3_muon": "1.9410913e-6",
         "branch_spacing_pi_u3_proton": "1.9410901e-6"
       },
       {
         "U": "2h",
         "feasible": true,
-        "kappa_req_muon": "1.97714121824e-8",
+        "kappa_req_muon": "2.04664920478e-8",
         "kappa_req_proton": "-8.14565505701e-8",
-        "rel_spread": 5.119915654906533,
+        "rel_spread": 4.979995711026729,
         "branch_spacing_pi_u3_muon": "1.9410913e-6",
         "branch_spacing_pi_u3_proton": "1.9410901e-6"
       }

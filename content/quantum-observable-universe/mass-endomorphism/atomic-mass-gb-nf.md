@@ -11,4 +11,4 @@ $$
 
 *where $\mathrm{tr}_M$ provides the canonical Jones–Markov trace ([categorical mass = Markov](#prop:categorical-mass-markov)) and $\rho_K$ provides a positive scalar—the **categorical density** of the atomic braid class.*
 
-**Archimedean specialisation (§7c).** This block operates on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluations at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities it employs hold over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows operates on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluations at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities it employs hold over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:b1-torus-knot-rows-theorem",
   title:
-    "B1 keystone is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê)",
+    "The depth correspondence is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê)",
   lean: {
     ref: "qou:QOU.AppendixSurreals.B1TorusKnotRowsTheorem.b1_torus_knot_rows",
     validation: "not_checked",

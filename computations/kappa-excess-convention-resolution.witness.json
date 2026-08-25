@@ -1,0 +1,165 @@
+{
+  "engine": "python-stdlib",
+  "engineVersion": "3",
+  "computedAt": "2026-08-10T17:56:04.143059+00:00",
+  "computation": "kappa-excess-convention-resolution",
+  "scriptFile": "probe_kappa_excess_convention_resolution.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "Resolves the excess convention to C1 on corpus evidence (the difference occurs only in kappa's block; C2's counts occur only in a sum, in a different term) plus a categorical-layer argument. With the index already resolved to the nucleon's Borromean strand count, kappa's magic-shell contribution becomes a single number at every single-magic mirror pair.",
+  "parameters": {
+    "q_0": "1.10997858275138080000000000000000000000000000000000000000000",
+    "q_0_pin": "proton (experimental layer), m_p/m_e",
+    "m_e_MeV": "0.510998950000000000000000000000000000000000000000000000000000",
+    "magic_anchors": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "excess_convention": "C1 (def:canonical-braid-interface-composition)"
+  },
+  "data": {
+    "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970",
+    "kappa_is_shell_independent": true,
+    "single_magic_mirror_pairs": [
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "shell": 2,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "shell": 2,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 8,
+        "N": 7,
+        "A": 15,
+        "shell": 8,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 7,
+        "N": 8,
+        "A": 15,
+        "shell": 8,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 20,
+        "N": 19,
+        "A": 39,
+        "shell": 20,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 19,
+        "N": 20,
+        "A": 39,
+        "shell": 20,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 28,
+        "N": 27,
+        "A": 55,
+        "shell": 28,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 27,
+        "N": 28,
+        "A": 55,
+        "shell": 28,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 50,
+        "N": 49,
+        "A": 99,
+        "shell": 50,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 49,
+        "N": 50,
+        "A": 99,
+        "shell": 50,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 82,
+        "N": 81,
+        "A": 163,
+        "shell": 82,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 81,
+        "N": 82,
+        "A": 163,
+        "shell": 82,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 126,
+        "N": 125,
+        "A": 251,
+        "shell": 126,
+        "excess_C1": 1,
+        "kappa_term_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+      },
+      {
+        "Z": 125,
+        "N": 126,
+        "A": 251,
+        "shell": 126,
+        "excess_C1": -1,
+        "kappa_term_MeV": "1.07042412344526659292470694082205348394497366208071650200970"
+      }
+    ],
+    "prediction": "At every single-magic mirror pair (m, m-1) / (m-1, m), the magic-shell coupling contributes -+1.0704241 MeV, independent of the shell.",
+    "still_blocked": "TESTING this against AME still needs the binding decomposition that isolates the magic-shell term from Coulomb and pairing. That decomposition is not in the tree (see probe_kappa_shell8_excess_convention.py). The prediction is stated; it is not claimed to be verified."
+  },
+  "assertions": [
+    {
+      "name": "C1_excess_is_unit_at_every_single_magic_mirror_pair",
+      "passed": true,
+      "detail": "under C1 the excess is exactly +-1 at (m, m-1) and (m-1, m) for EVERY declared magic m -- (m-1) - (m-2) = 1 identically, so the count does not grow with the shell"
+    },
+    {
+      "name": "kappa_term_is_shell_independent",
+      "passed": true,
+      "detail": "combining the resolved index (shell-independent kappa) with C1 gives the same magic-shell contribution at every shell"
+    },
+    {
+      "name": "prediction_is_a_single_number",
+      "passed": true,
+      "detail": "the 224x undetermined band collapses to |kappa| MeV per single-magic mirror pair, at every shell"
+    }
+  ],
+  "allPassed": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080000000000000000000000000000000000000000000",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

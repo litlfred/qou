@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:34:31.776097+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-08-23T09:16:38.928705+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "tr_M_h2_is_zero",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 20,
   "computation": "phase1d-f-bor-exact-h-expansion",
   "scriptFile": "phase1d_f_bor_exact_h_expansion.py",
-  "scriptHash": "e648bb8d965a",
-  "scriptCommitSha": "4906a99a3699d3a2f59cb77746220461a6564257",
+  "scriptHash": "914452cea61b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase1d_f_bor_exact_h_expansion.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase1d_f_bor_exact_h_expansion.py"
   },
   "description": "Exact h-expansion of F_Bor(q) = |tr_M(β_Bor)|·[3]_q!/q³ — the categorical observable in the proton substrate identity m_p = 2·m_μ·F_Bor − 12·m_e. All coefficients are exact rationals. Phase 1c proved h²(tr_M) = 0; this shows F_Bor's h² = 19/2 comes entirely from [3]_q! (11/4) and q³ (9/8) via division.",
   "contentBlock": "prop:proton-mass-substrate-identity",

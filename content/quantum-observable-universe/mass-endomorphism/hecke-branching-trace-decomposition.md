@@ -9,7 +9,7 @@ $$
 \bigl(\rho_\mu(\beta_1) \otimes \rho_\nu(\beta_2)\bigr)\Bigr),
 $$
 
-*where $A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu,\nu}}$ constructs the operator-valued coefficient encoding the multiplicities given by the Littlewood–Richardson coefficients $c^\lambda_{\mu,\nu}$, and $\rho_\lambda, \rho_\mu, \rho_\nu$ construct the Hoefsmit seminormal representations of $H_\bullet(q)$.*
+*where $A^\lambda_{\mu,\nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu,\nu}}$ is the operator-valued coefficient encoding the multiplicities given by the Littlewood–Richardson coefficients $c^\lambda_{\mu,\nu}$, and $\rho_\lambda, \rho_\mu, \rho_\nu$ are the Hoefsmit seminormal representations of $H_\bullet(q)$.*
 
 ## Corollary (the case used downstream)
 
@@ -27,4 +27,4 @@ $$
 $$
 provides the standard scalar-vs-traceless decomposition of an operator under the Hilbert–Schmidt inner product. No further hypothesis remains needed.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

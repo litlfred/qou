@@ -15,4 +15,4 @@ This exact factorisation governs atomic assembly. Adding a proton inserts a posi
 
 The structural interface identity completely determines the trace scaling. The empirical single-block extraction correction operates independently at a different structural level.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

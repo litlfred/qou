@@ -7,7 +7,8 @@
       "binding_K_direct",
       "canonical_mass",
       "meson_mass_from_hecke",
-      "per_observable_100x_status"
+      "per_observable_100x_status",
+      "qbeta_t4_stokes3_crux_probe"
     ],
     "modules_in_closure": [
       "_path_bridge",
@@ -19,9 +20,11 @@
       "derived_masses",
       "experimental_constants",
       "m_p_substrate_identity_50dps",
+      "meson_em_sinh_closed_form",
       "meson_mass_from_hecke",
       "per_observable_100x_status",
       "q_parameter",
+      "qbeta_t4_stokes3_crux_probe",
       "qou_substrate",
       "witness_base"
     ],
@@ -41,25 +44,53 @@
       },
       "meson_mass_from_hecke": {
         "description": "meson ratios (m_K/m_pi)",
-        "modules": 6,
+        "modules": 8,
         "unresolved": [],
         "untraceable": []
       },
       "per_observable_100x_status": {
         "description": "the L2 dashboard \u2014 all seven scored observables",
-        "modules": 8,
+        "modules": 9,
         "unresolved": [],
         "untraceable": []
+      },
+      "qbeta_t4_stokes3_crux_probe": {
+        "description": "theta channel \u2014 the T4 inversion",
+        "modules": 2,
+        "unresolved": [],
+        "untraceable": [
+          {
+            "adjudicated_free": "A_omega = 3 is the GGM literature value of a Stokes datum, imported rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5 channel has two anchor equations in three unknowns, so A_omega is a genuine free parameter pinned only by a one-sided A >= 2.05; ratio_attained constructs an admissible A for every target ratio. It is NOT a rep dimension, group order, exponent or index, so the small-int whitelist must not wave it through.",
+            "module": "qbeta_t4_stokes3_crux_probe",
+            "line": 60,
+            "value": 3,
+            "assigned_to": "A_omega",
+            "class": "UNTRACEABLE",
+            "verdict": null,
+            "source": "A_omega = 3"
+          }
+        ]
       }
     },
     "counts": {
-      "modules": 14,
+      "modules": 16,
       "unresolved_imports": 0,
-      "unit_or_structural_floats": 25,
+      "unit_or_structural_floats": 26,
       "adjudicated_legit": 0,
-      "untraceable": 0
+      "untraceable": 1
     },
-    "untraceable": [],
+    "untraceable": [
+      {
+        "adjudicated_free": "A_omega = 3 is the GGM literature value of a Stokes datum, imported rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5 channel has two anchor equations in three unknowns, so A_omega is a genuine free parameter pinned only by a one-sided A >= 2.05; ratio_attained constructs an admissible A for every target ratio. It is NOT a rep dimension, group order, exponent or index, so the small-int whitelist must not wave it through.",
+        "module": "qbeta_t4_stokes3_crux_probe",
+        "line": 60,
+        "value": 3,
+        "assigned_to": "A_omega",
+        "class": "UNTRACEABLE",
+        "verdict": null,
+        "source": "A_omega = 3"
+      }
+    ],
     "adjudicated": []
   }
 }

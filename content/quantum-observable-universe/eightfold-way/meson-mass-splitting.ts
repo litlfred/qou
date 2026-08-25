@@ -14,12 +14,17 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:meson-mass-splitting",
   title: "Meson mass splitting from q-deformed dynamics",
-  md: "meson-mass-splitting.md",
   interprets: "prop:meson-octet-decomposition",
   // Lean backs the NEGATIVE result: GMO is an identity of the first-order
   // octet ansatz and therefore cannot discriminate between mechanisms. It does
   // NOT back any derivation of the splitting — see bean qou-8pl2.
-  lean: { ref: "qou:QOU.Eightfold.GellMannOkuboIdentity" },
+  // The ref now names a DECLARATION, not the module. `gmo_cannot_discriminate`
+  // is the negative result stated above: two different breaking parameter sets
+  // (a,b,c) and (a',b',c') both satisfy GMO, so the relation cannot select
+  // between mechanisms.
+  lean: {
+    ref: "qou:QOU.Eightfold.GellMannOkuboIdentity.gmo_cannot_discriminate",
+  },
   uses: [
     "prop:a2-from-three-strands",
     "rem:q-deformation-weight-lattice",

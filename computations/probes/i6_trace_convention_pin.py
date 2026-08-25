@@ -12,7 +12,7 @@ q₀ = 1.10997859555733471:
 
   (B) chi-cache convention — the dim-λ-NORMALISED per-block trace consumed by
       the per-knot density / binding path:
-          tr_M(K) = Σ_λ y_λ · χ^λ(β_K) / dim λ      (_li_2_q_util.vol_density_per_block)
+          tr_M(K) = Σ_λ y_λ · χ^λ(β_K) / dim λ      (_li_2_q_util.per_knot_density_per_block)
       ⇒ tr_M(p) ≈ 1.0653, tr_M(n) ≈ 0.9232  (excision ledger precision;
         docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md).
 
@@ -24,7 +24,7 @@ showed convention freedom is a hidden DOF spanning 0.41→5.62 on the ⁴He ceil
 PIN (this gate's ruling, compute-checked below):
   • (B) the dim-λ-normalised chi-cache tr_M(K) is CANONICAL for ρ(K)/binding —
     it is p≠n distinct (15.4% asymmetric), which is the binding signal, and is
-    the object `vol_density_per_block` already consumes.
+    the object `per_knot_density_per_block` already consumes.
   • (A) the F_Bor unnormalised+[3]_q!/q³ convention is reserved for the
     muon-anchored ABSOLUTE-mass facade (canonical_mass.py), where the framing
     normalisation is part of the dimensionless dressing factor.
@@ -128,7 +128,7 @@ def main() -> int:
             "axis": "GAP-A-4 per-knot density ρ(K) — trace-convention gate (I-6)",
             "scoping_note": "docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md §I-6",
             "lean": "qou:QOU.MassTheory.TraceConventionGate",
-            "facade": "computations/canonical_mass.py (F_Bor); _li_2_q_util.vol_density_per_block (chi-cache)",
+            "facade": "computations/canonical_mass.py (F_Bor); _li_2_q_util.per_knot_density_per_block (chi-cache)",
         },
     }
     wb = WitnessBuilder.wrap_legacy(

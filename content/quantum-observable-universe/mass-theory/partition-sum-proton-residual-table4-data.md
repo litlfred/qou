@@ -1,3 +1,5 @@
+*Entries are $m_e$-scaled realizations of the dimensionless proton-mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction. The residual is the quantity of interest.*
+
 | quantity | value |
 |---|---|
 | $\mathfrak{m}^{\mathrm{tower, raw}}_{\mathfrak{p}}$ | $955.49\;\mathrm{MeV}$ |

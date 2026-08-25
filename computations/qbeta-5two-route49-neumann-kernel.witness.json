@@ -1,0 +1,104 @@
+{
+  "probe": "qbeta_5two_route49_neumann_kernel",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 70,
+  "source": "library/0307092v2/0307092v2.pdf -- Neumann, Extended Bloch group and the Cheeger-Chern-Simons class, Geometry & Topology 8 (2004) 413-474",
+  "overturns": "Route 43's target ('show sum_sigma [y; eps, 0] is torsion in B-hat(C)') -- the element is not in ker nu, and the admissible flattenings give a non-torsion value.",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "Neumann's convention, read from the paper rather than reconstructed: R(z;p,q) = R(z) + (pi i/2)(p log(1-z) + q log z) - pi^2/6, valued in C/pi^2 Z. Routes 43-47 used a MINUS sign on the correction and omitted the -pi^2/6 per term. This gate exists so the sign is fixed in the record",
+      "source": "library/0307092v2/0307092v2.pdf, Prop 2.5",
+      "sign_on_correction": "+",
+      "constant_per_term": "-pi^2/6",
+      "valued_in": "C / pi^2 Z",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "ROUTE 43's ELEMENT IS NOT IN THE EXTENDED BLOCH GROUP. B-hat(C) = ker nu, and expanding nu = 0 requires X = sum(q log y + p log(1-y)) in Q*pi*i. For the eps flattening the ratio Im(X)/pi is 0.8961794846..., with no rational found at maxcoeff 1e4. So the element Route 43 proposed to show torsion is not an element of the group at all",
+      "checks": {
+        "p=+eps,q=0": {
+          "Im(X)/pi": "-0.8961794846282209807181",
+          "in_Q_pi_i": false
+        },
+        "p=-eps,q=0": {
+          "Im(X)/pi": "0.8961794846282209807181",
+          "in_Q_pi_i": false
+        },
+        "p=0,q=+eps": {
+          "Im(X)/pi": "0.6557307730576685289229",
+          "in_Q_pi_i": false
+        }
+      },
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the kernel condition forces 3q + 2p = 0 at EVERY root -- (p,q) in Z*(3,-2) -- derived from the branch relation and confirmed by search over [-4,4]^4. That is EXACTLY the null direction Route 44 found empirically and could only describe as a torsor; it is now derived from Neumann's kernel",
+      "admissible_p1_q1": [
+        [
+          -3,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          -2
+        ]
+      ],
+      "admissible_p3_q3": [
+        [
+          -3,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          -2
+        ]
+      ],
+      "all_satisfy_3q_plus_2p_eq_0": true,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "for an admissible flattening the correction is pi^2 * k * eps, which is ZERO in C/pi^2 Z, so R is flattening-independent -- checked by shifting along the admissible direction and comparing mod pi^2. Its value is exactly -(2 pi/3) arg(y_1)",
+      "R_at_zero_flattening": "(-2.15726777456656424535470801566 + 0.0j)",
+      "minus_two_pi_over_3_arg_y1": "-2.15726777456656424535470801566",
+      "residual": "3.62227163153e-71",
+      "shift_along_admissible_mod_pi_sq": "5.4334074473e-71",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "R(xi) is NOT torsion in C/pi^2 Z: arg(y_1)/pi = 0.327865386528834... and PSLQ finds no rational at maxcoeff 1e8. So the second half of Route 43's target -- 'show it is torsion' -- is false as well as inapplicable",
+      "arg_y1_over_pi": "0.3278653865288342644614383",
+      "rational_relation_found": null,
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "THE TARGET, CORRECTED. Neumann's R o lambda = i(vol + i cs). R(xi) is REAL, so the volume part vanishes -- consistent with Route 42's sum_sigma D = 0 -- and the sum rule is the Chern-Simons EVALUATION cs(xi) = (2 pi/3) arg(y_1) mod pi^2. An evaluation, not a torsion statement, and in the paper's own normalisation rather than my reconstruction",
+      "R_xi": "(-2.157267774566564245354708 + 0.0j)",
+      "cs_xi": "2.157267774566564245354708",
+      "vol_part": "0.0",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "condition": "B-hat(C) = ker nu forces 3q + 2p = 0 at every root -- Route 44's empirical null direction, now derived.",
+    "value": "R(xi) = -(2 pi/3) arg(y_1) exactly, flattening-independent mod pi^2, and not torsion.",
+    "target": "the sum rule is the Chern-Simons evaluation cs(xi) = (2 pi/3) arg(y_1) mod pi^2, the volume part vanishing.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

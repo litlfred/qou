@@ -455,7 +455,7 @@ theorem reaches_of_descent_of_forward {α : Type*} (f : α → α) (target : α)
 
 /-- The domain of the (partial) Skein-Collatz map: `P` is `q`-even (`[2]_q ∣ P`)
     or `q`-odd (`[2]_q ∣ P + 1`). -/
-def inDomain {Skein : Type u} [CommRing Skein] [QCollatz Skein]
+def QCollatz.inDomain {Skein : Type u} [CommRing Skein] [QCollatz Skein]
     (P : Skein) : Prop :=
   QCollatz.qi2 ∣ P ∨ QCollatz.qi2 ∣ (P + 1)
 
@@ -463,13 +463,13 @@ def inDomain {Skein : Type u} [CommRing Skein] [QCollatz Skein]
     in the domain. This is the well-posed cone for the conjecture — the naive
     positive cone is ill-posed (`C_q` undefined on almost all of it; see
     `pos_domain_stable` and `qcollatz_domain_not_forward_invariant`). -/
-def domainStable {Skein : Type u} [CommRing Skein] [QCollatz Skein]
+def QCollatz.domainStable {Skein : Type u} [CommRing Skein] [QCollatz Skein]
     (P : Skein) : Prop :=
   ∀ k : ℕ, QCollatz.inDomain (QCollatz.C^[k] P)
 
 /-- **The domain-stable cone is forward-invariant**: `C` maps `D∞` into `D∞`
     (unlike the ambient domain, which is not forward-invariant). -/
-theorem domainStable_forward {Skein : Type u} [CommRing Skein]
+theorem QCollatz.domainStable_forward {Skein : Type u} [CommRing Skein]
     [QCollatz Skein] (P : Skein) (h : QCollatz.domainStable P) :
     QCollatz.domainStable (QCollatz.C P) := by
   intro k

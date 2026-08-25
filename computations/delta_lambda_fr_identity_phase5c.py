@@ -51,13 +51,23 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp
 
-from witness_base import WitnessBuilder
-from q_parameter import Q as Q0_FLOAT
-from q_mpmath import set_q, qint
-set_q(Q0_FLOAT)
+from witness_base import WitnessBuilder, record_upstream
 
-mp.mp.dps = 50
-Q0 = mp.mpf(str(Q0_FLOAT))
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+# 50-dps source. `set_q` does `mp.mpf(str(...))` internally, so a STRING
+# input gives the full 50 digits where the f64 `Q` gave 17. Alias renamed
+# from Q0_STR: it is no longer a float, and a name that says otherwise is
+# the label problem this sweep exists to remove.
+from q_parameter import Q_50_DIGIT_STR as Q0_STR
+from q_mpmath import set_q, qint
+from _precision import set_compute_dps  # noqa: E402
+set_q(Q0_STR)
+
+set_compute_dps()
+Q0 = mp.mpf(str(Q0_STR))
 
 # Per-(Z, N) atoms to test
 ATOMS = [
@@ -69,15 +79,26 @@ ATOMS = [
 
 
 def load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
-    """Load cached Jones-Markov weights y_λ at q_0 from the canonical witness."""
-    path = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
-    w = json.loads(path.read_text())
-    by_n = {}
-    for n_str, entries in w["data"]["by_n"].items():
-        n = int(n_str)
-        by_n[n] = {tuple(e["partition"]): mp.mpf(e["y_at_q0_50dps"])
-                   for e in entries}
-    return by_n
+    """Jones-Markov weights y_λ at THIS producer's q_0, computed live.
+
+    🛑 Was: read `y-lambda-at-q0.witness.json`. That witness is **muon-built**
+    (`q0Anchor: "muon"`), while this producer sets `q` from `q_parameter.Q`,
+    which resolves **proton** for this stem. `compute_tr_M_decomposition` then
+    forms `τ_M(β) = Σ_λ y_λ · χ_λ(β)` — muon-built `y_λ` against
+    proton-evaluated `χ_λ`, a layer straddle inside one quantity.
+
+    That is the exact defect AGENTS.md §q₀-anchor documents for the μ₃ Fréchet
+    probe ("took `y_λ` from the muon-built cache while evaluating `χ_λ` at the
+    proton `q₀` — an 11.54 ppb layer separation"), and it was invisible here
+    because the witness is stamped `proton` and so looked layer-clean.
+
+    Fix is the one that section prescribes: call the live closed form at the
+    producer's own `q₀` instead of the cached witness, so both factors come
+    from the same layer by construction and the quantity cannot straddle
+    whatever the pin resolves to.
+    """
+    from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
+    return {n: y_lambda_at_q0_mpmath(n, Q0) for n in range(2, 13)}
 
 
 def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
@@ -150,6 +171,7 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-fr-identity-phase5c")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Phase 5c.1 of the Δ_λ thread: numerical test of the "
         "Frobenius-reciprocity identity predicted by the Phase 5b "
@@ -276,7 +298,7 @@ def main() -> int:
     # τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) should equal z exactly per the
     # Markov axiom (prop:interface-knot-markov-z). This is the
     # categorical content of the Phase 5c.1 finding.
-    z_markov = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_markov = Q0**3 / (Q0**2 + 1)
     h_hecke = Q0 - 1 / Q0
     z_minus_h = z_markov - h_hecke
     # Per Markov axiom + Hecke skein σ⁻¹ = σ - h·1:

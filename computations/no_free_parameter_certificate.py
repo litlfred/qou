@@ -55,6 +55,14 @@ ENTRY_POINTS = {
     "per_observable_100x_status": "the L2 dashboard — all seven scored observables",
     "meson_mass_from_hecke":      "meson ratios (m_K/m_pi)",
     "binding_K_direct":           "per-isotope binding",
+    # theta/Q_beta channel (bean qou-skum). The T4/T5 channel
+    # S_K = A_omega * kappa * (ln^2 q0 - theta_K^2) is a prediction path that
+    # the mass-path-only scope did not reach, and PR #4513 proves in Lean
+    # (AfreeThetaConstraint.ratio_attained, sorry-free) that A_omega is a
+    # genuine FREE PARAMETER there: two anchor equations in three unknowns,
+    # pinned only by a one-sided A >= 2.05. Every corpus theta is inverted
+    # through it. Bringing it in scope is the point of qou-skum.
+    "qbeta_t4_stokes3_crux_probe": "theta channel — the T4 inversion",
 }
 ENTRY_MODULES = sorted(ENTRY_POINTS)
 
@@ -63,6 +71,12 @@ CALIBRATION_MODULES = {
     "codata_constants",
     "codata_2022_source",
     "codata_masses",
+    # A tagged reference-constants module (CODATA / PDG / SnapPy values, each
+    # carrying its uncertainty) — calibration inputs by construction, exactly
+    # like the codata_* modules. It was never added; it only became visible
+    # once the bare-assignment gap below was closed, since every entry in it is
+    # a plain `NAME = <literal>`.
+    "experimental_constants",
 }
 
 # Integers with a stated structural identification in the canonical formula
@@ -71,9 +85,32 @@ STRUCTURAL_INTS = {
     0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 24, 50, 65, 100, 1000,
 }
 
+# Literals that LOOK structural (small ints inside STRUCTURAL_INTS) but are
+# adjudicated FREE PARAMETERS: a value imported from the literature or fitted,
+# carrying no structural identification. The STRUCTURAL_INTS whitelist exists
+# for rep dimensions, group orders, exponents and indices; a physical channel
+# coefficient is none of those, so the whitelist must not cover it.
+#
+# Keyed by the assigned name (lowercased). Each entry states WHY.
+ADJUDICATED_FREE = {
+    "a_omega": (
+        "A_omega = 3 is the GGM literature value of a Stokes datum, imported "
+        "rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves "
+        "(sorry-free) that the T4/T5 channel has two anchor equations in three "
+        "unknowns, so A_omega is a genuine free parameter pinned only by a "
+        "one-sided A >= 2.05; ratio_attained constructs an admissible A for "
+        "every target ratio. It is NOT a rep dimension, group order, exponent "
+        "or index, so the small-int whitelist must not wave it through."),
+}
+
 # Bare integers beyond this are no longer waved through as "an index or
 # exponent": indices and exponents are small, so a large one is a candidate.
 MAX_STRUCTURAL_INT = 64
+
+
+def _wrap(text: str, width: int) -> list[str]:
+    import textwrap
+    return textwrap.wrap(text, width) or [""]
 
 # Names whose assigned literals are precision / tolerance knobs.
 PRECISION_NAMES = (
@@ -87,6 +124,7 @@ PRECISION_NAMES = (
 # `import q_parameter` resolves into the substrate package.
 SEARCH_ROOTS = [
     HERE,
+    HERE / "qbeta",
     HERE / "substrate",
     HERE.parent / "tools" / "qou-substrate" / "python" / "qou_substrate",
 ]
@@ -263,6 +301,18 @@ def audit_module(mod: str) -> list[dict]:
                 for a in n.args:
                     if isinstance(a, ast.Constant) and isinstance(a.value, (int, float)):
                         precision_arg.add(id(a))
+        # A bare numeric assignment `X = 1.234` IS a value in arithmetic
+        # position — it is the commonest way to type a magic constant, and it
+        # flows into every downstream use of `X`. The comment above always
+        # claimed this case was covered; no code path implemented it, so
+        # `q0 = 1.11020` was invisible while `S = +0.00968298` (a UnaryOp) was
+        # caught. Identical values, opposite verdicts, purely on a redundant
+        # leading sign.
+        if isinstance(n, (ast.Assign, ast.AnnAssign)):
+            v = n.value
+            if isinstance(v, ast.Constant) and isinstance(v.value, (int, float)) \
+                    and not isinstance(v.value, bool):
+                arith.add(id(v))
         if isinstance(n, (ast.BinOp, ast.UnaryOp)):
             # `"=" * 92` is a BinOp but it is string repetition, not
             # arithmetic on a physical value. Skip when a side is a string.
@@ -284,6 +334,14 @@ def audit_module(mod: str) -> list[dict]:
         name = _enclosing_assign_name(tree, n)
         lo = name.lower()
 
+        # Initialised BEFORE the chain. Putting it mid-chain (which I did)
+        # TERMINATES the elif, so everything after it runs unconditionally and
+        # overwrites `cls` for every literal already classified tolerance /
+        # precision / calibration. Caught by the witness diff: per-entry-point
+        # `untraceable` lists changed under an edit that should only have
+        # changed REPORTING.
+        adjudicated_free_reason = None
+
         if id(n) in threshold:
             cls = "tolerance"           # pass/fail threshold, never an output value
         elif id(n) in precision_arg:
@@ -297,6 +355,13 @@ def audit_module(mod: str) -> list[dict]:
             # string repetition): cannot flow into a predicted value, so its
             # magnitude is irrelevant. This MUST precede the magnitude rules.
             cls = "non_arithmetic"
+        elif lo in ADJUDICATED_FREE:
+            # adjudicated a free parameter — the small-int whitelist below
+            # would otherwise hide it. Stays UNTRACEABLE on purpose: the gate
+            # must keep failing on a known free parameter. But it is NOT an
+            # unreviewed candidate, and the report separates the two below.
+            cls = "UNTRACEABLE"
+            adjudicated_free_reason = ADJUDICATED_FREE[lo]
         elif isinstance(val, int) and val in STRUCTURAL_INTS:
             cls = "structural"
         elif isinstance(val, int):
@@ -313,6 +378,10 @@ def audit_module(mod: str) -> list[dict]:
 
         if cls in ("UNTRACEABLE", "unit_conversion", "structural_float", "adjudicated"):
             findings.append({
+                # only present when there IS a recorded verdict -- a null on
+                # every finding is noise in a 2000-line witness
+                **({"adjudicated_free": adjudicated_free_reason}
+                   if adjudicated_free_reason else {}),
                 "module": mod,
                 "line": n.lineno,
                 "value": val,
@@ -405,14 +474,30 @@ def main() -> int:
             print(f"      {u}")
         print("    A green result below does NOT cover these. Resolve them before")
         print("    treating this run as a certificate.")
-    if untraceable:
+    # An ADJUDICATED_FREE literal is UNTRACEABLE on purpose and its verdict is
+    # already recorded. Printing it under "agent verdict required" invites an
+    # agent to re-derive a settled result -- measured: a session spent several
+    # turns re-establishing that A_omega = 3 is a free parameter, which
+    # ADJUDICATED_FREE states in this same file, with a sorry-free Lean proof
+    # behind it. The gate is unchanged; only the reporting separates them.
+    known_free = [f for f in untraceable if f.get("adjudicated_free")]
+    unreviewed = [f for f in untraceable if not f.get("adjudicated_free")]
+    if known_free:
+        print("\n  KNOWN FREE PARAMETERS (adjudicated — do NOT re-litigate; the")
+        print("  gate fails on these BY DESIGN until the parameter is eliminated):")
+        for f in known_free:
+            tgt = f["assigned_to"] or "-"
+            print(f"    {f['module']}.py:{f['line']:<5} {f['value']!r:<24} -> {tgt}")
+            for line in _wrap(f["adjudicated_free"], 68):
+                print(f"        {line}")
+    if unreviewed:
         print("\n  untraceable literals (agent verdict required — high-recall candidates):")
-        for f in untraceable[:40]:
+        for f in unreviewed[:40]:
             tgt = f["assigned_to"] or "-"
             print(f"    {f['module']}.py:{f['line']:<5} {f['value']!r:<24} -> {tgt}")
             print(f"        {f['source']}")
-        if len(untraceable) > 40:
-            print(f"    ... and {len(untraceable) - 40} more")
+        if len(unreviewed) > 40:
+            print(f"    ... and {len(unreviewed) - 40} more")
     else:
         print("\n  ✓ no untraceable literals in the canonical prediction path")
 

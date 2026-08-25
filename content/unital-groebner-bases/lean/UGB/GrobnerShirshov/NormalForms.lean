@@ -52,13 +52,39 @@ inductive SU2Gen where
 
 open SU2Gen
 
-/-- Numeric rank of each generator for the lexicographic order.
-    `E_- < K_inv < K < E_+` (ascending). -/
+/-- Numeric rank of each generator for the lexicographic order:
+    `E_- < E_+ < K_inv < K` (ascending).
+
+    **Corrected twice, both times because the rules constrain it and nothing
+    was checking.**
+
+    * qou-ix9e: originally `K = 2 < E_+ = 3`, which made rule 3's leading
+      monomial `[E_+, K]` — its own right-hand side — so the system rewrote in
+      the direction opposite to the one its docstring claimed.
+    * qou-18s7: the five-rule system turned out not to be a Gröbner–Shirshov
+      basis at all (see §3), and completing it adds the two `K⁻¹` commutation
+      rules, which impose two further constraints that the previous ranking
+      violated.
+
+    The five orientation constraints, one per non-inverse rule:
+
+    | rule | needs |
+    |---|---|
+    | 3 `K·E_+ → q²·E_+·K` | `rank K > rank E_+` |
+    | 4 `K·E_- → q⁻²·E_-·K` | `rank K > rank E_-` |
+    | 5 `E_+·E_- → E_-·E_+ + …` | `rank E_+ > rank E_-` |
+    | 6 `K⁻¹·E_+ → q⁻²·E_+·K⁻¹` | `rank K_inv > rank E_+` |
+    | 7 `K⁻¹·E_- → q²·E_-·K⁻¹` | `rank K_inv > rank E_-` |
+
+    Rules 1 and 2 constrain nothing: their leading monomials beat `[]` on
+    length. This ranking satisfies all five, and `qSerre_lm_1 … qSerre_lm_7`
+    prove every leading monomial outright, so the orientation is checked rather
+    than asserted. -/
 def SU2Gen.rank : SU2Gen → ℕ
   | E_minus => 0
-  | K_inv   => 1
-  | K       => 2
-  | E_plus  => 3
+  | E_plus  => 1
+  | K_inv   => 2
+  | K       => 3
 
 theorem SU2Gen.rank_injective : ∀ a b : SU2Gen, a.rank = b.rank → a = b := by
   intro a b
@@ -326,34 +352,267 @@ structure QSerreRelations (k : Type v) [Field k] where
 
 /-! ## §3  GS Basis for `U_q(su(2))` -/
 
-/-- The rewriting system derived from the `q`-Serre relations.
+/-! ### §3.1  The rewriting system, built rather than axiomatised
 
-    The four oriented relations, with leading monomials under deg-lex:
-    1. `K · K⁻¹ → 1`  (lm = [K, K_inv])
-    2. `K⁻¹ · K → 1`  (lm = [K_inv, K])
-    3. `K · E_+ → q² · E_+ · K`  (lm = [K, E_plus])
-    4. `K · E_- → q⁻² · E_- · K`  (lm = [K, E_minus])
-    5. `E_+ · E_- → E_- · E_+ + (K − K⁻¹)/(q − q⁻¹)`  (lm = [E_plus, E_minus])
+The five oriented relations, with their leading monomials under deg-lex:
 
-    The concrete `RewritingSystem` requires instantiating `AlgElement`
-    with specific coefficient maps.  We axiomatise the construction
-    and state the GS property as an axiom verified by the six
-    S-polynomial computations of Bokut–Malcolmson 1996. -/
+1. `K · K⁻¹ → 1`                                    (lm = `[K, K_inv]`)
+2. `K⁻¹ · K → 1`                                    (lm = `[K_inv, K]`)
+3. `K · E_+ → q² · E_+ · K`                         (lm = `[K, E_plus]`)
+4. `K · E_- → q⁻² · E_- · K`                        (lm = `[K, E_minus]`)
+5. `E_+ · E_- → E_- · E_+ + (K − K⁻¹)/(q − q⁻¹)`    (lm = `[E_plus, E_minus]`)
+
+**`qSerreRewritingSystem` was an axiom.** It is now built, because an opaque
+system cannot be asked whether its rules are monic — and `ugb_pbw_corollary`
+needs exactly that in order to *discharge* the unit-leading-coefficient
+hypothesis of `normal_form_exists` rather than assume it (beans qou-lzoo,
+qou-ix9e).
+
+Building it also made the leading monomials checkable, and the check failed
+against the old generator ranking: see the correction note on `SU2Gen.rank`.
+`qSerre_lm_1 … qSerre_lm_5` now prove all five outright. -/
+
+section QSerreConstruction
+
+variable {k : Type v} [Field k]
+
+/-- A two-term algebra element `c₁·m₁ + c₂·m₂`. -/
+def two (m₁ : Monomial SU2Gen) (c₁ : k) (m₂ : Monomial SU2Gen) (c₂ : k) :
+    AlgElement SU2Gen k where
+  coeff := fun w => if w = m₁ then c₁ else if w = m₂ then c₂ else 0
+  support := {m₁, m₂}
+  support_spec := by
+    intro w hw
+    simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at hw
+    rw [if_neg hw.1, if_neg hw.2]
+
+/-- A four-term algebra element. -/
+def four (m₁ : Monomial SU2Gen) (c₁ : k) (m₂ : Monomial SU2Gen) (c₂ : k)
+    (m₃ : Monomial SU2Gen) (c₃ : k) (m₄ : Monomial SU2Gen) (c₄ : k) :
+    AlgElement SU2Gen k where
+  coeff := fun w => if w = m₁ then c₁ else if w = m₂ then c₂ else
+                    if w = m₃ then c₃ else if w = m₄ then c₄ else 0
+  support := {m₁, m₂, m₃, m₄}
+  support_spec := by
+    intro w hw
+    simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at hw
+    rw [if_neg hw.1, if_neg hw.2.1, if_neg hw.2.2.1, if_neg hw.2.2.2]
+
+theorem two_support_nonempty (m₁ : Monomial SU2Gen) (c₁ : k) (m₂ : Monomial SU2Gen)
+    (c₂ : k) : (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k).support.Nonempty :=
+  ⟨m₁, by simp [two]⟩
+
+theorem four_support_nonempty (m₁ : Monomial SU2Gen) (c₁ : k) (m₂ : Monomial SU2Gen)
+    (c₂ : k) (m₃ : Monomial SU2Gen) (c₃ : k) (m₄ : Monomial SU2Gen) (c₄ : k) :
+    (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k).support.Nonempty :=
+  ⟨m₁, by simp [four]⟩
+
+/-- The leading monomial of a two-term element is `m₁`, provided `m₂` is below
+it. Maximality is finite: the support has two elements. -/
+theorem two_lm {m₁ m₂ : Monomial SU2Gen} (c₁ c₂ : k) (hlt : degLexLt m₂ m₁) :
+    leadingMonomial degLexOrder (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k)
+      (two_support_nonempty m₁ c₁ m₂ c₂) = m₁ := by
+  apply leadingMonomial_eq_of_max
+  · show m₁ ∈ ({m₁, m₂} : Finset (Monomial SU2Gen)); simp
+  · intro m hm hne
+    have hm' : m = m₁ ∨ m = m₂ := by
+      have : m ∈ ({m₁, m₂} : Finset (Monomial SU2Gen)) := hm
+      simpa using this
+    rcases hm' with rfl | rfl
+    · exact absurd rfl hne
+    · exact hlt
+
+/-- Likewise for four terms. -/
+theorem four_lm {m₁ m₂ m₃ m₄ : Monomial SU2Gen} (c₁ c₂ c₃ c₄ : k)
+    (h₂ : degLexLt m₂ m₁) (h₃ : degLexLt m₃ m₁) (h₄ : degLexLt m₄ m₁) :
+    leadingMonomial degLexOrder (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k)
+      (four_support_nonempty m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄) = m₁ := by
+  apply leadingMonomial_eq_of_max
+  · show m₁ ∈ ({m₁, m₂, m₃, m₄} : Finset (Monomial SU2Gen)); simp
+  · intro m hm hne
+    have hm' : m = m₁ ∨ m = m₂ ∨ m = m₃ ∨ m = m₄ := by
+      have : m ∈ ({m₁, m₂, m₃, m₄} : Finset (Monomial SU2Gen)) := hm
+      simpa using this
+    rcases hm' with rfl | rfl | rfl | rfl
+    · exact absurd rfl hne
+    · exact h₂
+    · exact h₃
+    · exact h₄
+
+/-- **Rule 1**: `K·K⁻¹ → 1`, i.e. the relation `K·K⁻¹ − 1`. -/
+def qSerreRule1 : ReductionRule SU2Gen k :=
+  ⟨two [K, K_inv] 1 [] (-1), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 2**: `K⁻¹·K → 1`. -/
+def qSerreRule2 : ReductionRule SU2Gen k :=
+  ⟨two [K_inv, K] 1 [] (-1), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 3**: `K·E_+ → q²·E_+·K`. -/
+def qSerreRule3 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K, E_plus] 1 [E_plus, K] (-(qs.q ^ 2)), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 4**: `K·E_- → q⁻²·E_-·K`. -/
+def qSerreRule4 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K, E_minus] 1 [E_minus, K] (-(qs.q ^ 2)⁻¹), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 5**: `E_+·E_- → E_-·E_+ + (K − K⁻¹)/(q − q⁻¹)`. -/
+def qSerreRule5 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨four [E_plus, E_minus] 1 [E_minus, E_plus] (-1)
+        [K] (-(qs.q - qs.q⁻¹)⁻¹) [K_inv] ((qs.q - qs.q⁻¹)⁻¹),
+   four_support_nonempty _ _ _ _ _ _ _ _⟩
+
+/-- **Rule 6**: `K⁻¹·E_+ → q⁻²·E_+·K⁻¹`.
+
+    One of the two rules the original five were missing; without it the system
+    is not confluent — see the completion note in §3. -/
+def qSerreRule6 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K_inv, E_plus] 1 [E_plus, K_inv] (-(qs.q ^ 2)⁻¹), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 7**: `K⁻¹·E_- → q²·E_-·K⁻¹`. The other missing rule. -/
+def qSerreRule7 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K_inv, E_minus] 1 [E_minus, K_inv] (-(qs.q ^ 2)), two_support_nonempty _ _ _ _⟩
+
+@[simp] theorem qSerre_lm_1 : (qSerreRule1 (k := k)).lm degLexOrder = [K, K_inv] :=
+  two_lm _ _ (Or.inl (by simp))
+
+@[simp] theorem qSerre_lm_2 : (qSerreRule2 (k := k)).lm degLexOrder = [K_inv, K] :=
+  two_lm _ _ (Or.inl (by simp))
+
+@[simp] theorem qSerre_lm_3 (qs : QSerreRelations k) :
+    (qSerreRule3 qs).lm degLexOrder = [K, E_plus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+
+@[simp] theorem qSerre_lm_4 (qs : QSerreRelations k) :
+    (qSerreRule4 qs).lm degLexOrder = [K, E_minus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+
+@[simp] theorem qSerre_lm_5 (qs : QSerreRelations k) :
+    (qSerreRule5 qs).lm degLexOrder = [E_plus, E_minus] :=
+  four_lm _ _ _ _
+    (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+    (Or.inl (by simp)) (Or.inl (by simp))
+
+@[simp] theorem qSerre_lm_6 (qs : QSerreRelations k) :
+    (qSerreRule6 qs).lm degLexOrder = [K_inv, E_plus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+
+@[simp] theorem qSerre_lm_7 (qs : QSerreRelations k) :
+    (qSerreRule7 qs).lm degLexOrder = [K_inv, E_minus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+
+/-- The leading coefficient of a two-term element is `c₁`. -/
+theorem two_lc {m₁ m₂ : Monomial SU2Gen} (c₁ c₂ : k) (hlt : degLexLt m₂ m₁) :
+    (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k).coeff
+      (leadingMonomial degLexOrder (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k)
+        (two_support_nonempty m₁ c₁ m₂ c₂)) = c₁ := by
+  rw [two_lm c₁ c₂ hlt]
+  simp [two]
+
+/-- Likewise for four terms. -/
+theorem four_lc {m₁ m₂ m₃ m₄ : Monomial SU2Gen} (c₁ c₂ c₃ c₄ : k)
+    (h₂ : degLexLt m₂ m₁) (h₃ : degLexLt m₃ m₁) (h₄ : degLexLt m₄ m₁) :
+    (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k).coeff
+      (leadingMonomial degLexOrder (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k)
+        (four_support_nonempty m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄)) = c₁ := by
+  rw [four_lm c₁ c₂ c₃ c₄ h₂ h₃ h₄]
+  simp [four]
+
+/-- **Every q-Serre rule is monic** — each relation is written with coefficient
+`1` on its leading monomial. This is the fact `ugb_pbw_corollary` needs, and the
+reason the system had to be built rather than axiomatised. -/
+theorem qSerre_rule_lc_eq_one (qs : QSerreRelations k) :
+    (qSerreRule1 (k := k)).lc degLexOrder = 1 ∧
+    (qSerreRule2 (k := k)).lc degLexOrder = 1 ∧
+    (qSerreRule3 qs).lc degLexOrder = 1 ∧
+    (qSerreRule4 qs).lc degLexOrder = 1 ∧
+    (qSerreRule5 qs).lc degLexOrder = 1 ∧
+    (qSerreRule6 qs).lc degLexOrder = 1 ∧
+    (qSerreRule7 qs).lc degLexOrder = 1 :=
+  ⟨two_lc _ _ (Or.inl (by simp)),
+   two_lc _ _ (Or.inl (by simp)),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
+   four_lc _ _ _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+     (Or.inl (by simp)) (Or.inl (by simp)),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)⟩
+
+/-- The seven rules — the five of the original presentation, **plus the two
+`K⁻¹` commutation rules it was missing**. See the completion note in §3. -/
+def qSerreRules (qs : QSerreRelations k) : List (ReductionRule SU2Gen k) :=
+  [qSerreRule1, qSerreRule2, qSerreRule3 qs, qSerreRule4 qs, qSerreRule5 qs,
+   qSerreRule6 qs, qSerreRule7 qs]
+
+end QSerreConstruction
+
+/-- The rewriting system derived from the `q`-Serre relations — **a definition,
+not an axiom**. -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre rewriting system for U_q(su(2)))
-axiom qSerreRewritingSystem (k : Type v) [Field k]
-    (qs : QSerreRelations k) : RewritingSystem SU2Gen k
+def qSerreRewritingSystem (k : Type v) [Field k]
+    (qs : QSerreRelations k) : RewritingSystem SU2Gen k :=
+  ⟨qSerreRules qs, by simp [qSerreRules]⟩
+
+/-- **The q-Serre rules have unit leading coefficients.**
+
+Discharges the hypothesis `ugb_pbw_corollary` had to carry while the system was
+opaque (bean qou-lzoo left it hanging deliberately rather than assert a monicity
+axiom; this proves it instead). -/
+theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
+    ∀ r ∈ (qSerreRewritingSystem k qs).rules, IsUnit (r.lc degLexOrder) := by
+  obtain ⟨h1, h2, h3, h4, h5, h6, h7⟩ := qSerre_rule_lc_eq_one qs
+  intro r hr
+  simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
+    or_false] at hr
+  rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
+  · rw [h1]; exact isUnit_one
+  · rw [h2]; exact isUnit_one
+  · rw [h3]; exact isUnit_one
+  · rw [h4]; exact isUnit_one
+  · rw [h5]; exact isUnit_one
+  · rw [h6]; exact isUnit_one
+  · rw [h7]; exact isUnit_one
 
 /-- **Theorem** (Bokut–Malcolmson 1996):
     The `q`-Serre relations form a Gröbner–Shirshov basis for
     `U_q(su(2))` under the deg-lex order.
 
-    The six S-polynomial computations are:
-    - (1,3): `K·K⁻¹` vs `K·E_+`  → overlap at `K` → reduces to 0
-    - (1,4): `K·K⁻¹` vs `K·E_-`  → overlap at `K` → reduces to 0
-    - (2,3): `K⁻¹·K` vs `K·E_+`  → no overlap
-    - (3,4): `K·E_+` vs `K·E_-`  → overlap at `K` → reduces to 0
-    - (3,5): `K·E_+` vs `E_+·E_-` → overlap at `E_+` → reduces to 0
-    - (4,5): `K·E_-` vs `E_+·E_-` → no overlap (wrong orientation)
+    **The overlap analysis this docstring used to carry was wrong, and the
+    five-rule system it described was not a Gröbner–Shirshov basis** (bean
+    qou-18s7). It listed six "S-polynomial computations", of which three —
+    `(1,3)`, `(1,4)`, `(3,4)` — are not ambiguities at all: those pairs share a
+    *first* letter, and an overlap requires a proper **suffix** of one leading
+    word to equal a proper **prefix** of the other. It also recorded `(2,3)` as
+    "no overlap", when `[K⁻¹,K]` followed by `[K,E_+]` overlaps at `K` and is in
+    fact one of the two ambiguities that **fail**.
+
+    The real analysis, computed exactly over `ℚ(q)` by
+    `computations/qserre_gs_basis_check.py`:
+
+    * the **five**-rule system has exactly **5** overlap ambiguities, and two of
+      them do not resolve — both decisively, with each pair of reducts genuinely
+      irreducible:
+
+      | ambiguity | word | one way | the other |
+      |---|---|---|---|
+      | R2/R3 | `K⁻¹ K E_+` | `E_+` | `q²·K⁻¹ E_+ K` |
+      | R2/R4 | `K⁻¹ K E_-` | `E_-` | `q⁻²·K⁻¹ E_- K` |
+
+      Both are instances of the same gap: nothing rewrites `K⁻¹` past `E_±`, so
+      `K⁻¹ E_± K` is stuck.
+
+    * adding the two missing rules (6 and 7, the `K⁻¹` commutation rules) gives
+      **8** ambiguities, and **all 8 resolve**.
+
+    So this axiom is now stated of the **completed seven-rule system**, where the
+    critical-pair check passes. That check is a symbolic computation, not a Lean
+    proof: the axiom records a verified-but-not-formalised claim, which is a
+    materially better position than the unverified one it was in, and materially
+    worse than a theorem. Formalising the eight resolutions is the way to remove
+    it.
+
+    History worth keeping: this is the third claim in this file to be examined by
+    making it checkable, and the second to be found false — see
+    `pbw_monomials_are_not_all_normal_forms` for the other.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996). -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))
@@ -383,27 +642,65 @@ def PBWMonomial.toMonomial (m : PBWMonomial) : Monomial SU2Gen :=
   List.replicate m.b_neg K_inv ++
   List.replicate m.c E_minus
 
-/-- **PBW normal form property**: every PBW monomial is in normal form
-    under the `q`-Serre rewriting system.
+/-- The `PBWMonomial` with `b₊ = b₋ = 1` and `a = c = 0` is the word `[K, K⁻¹]`. -/
+theorem pbw_word_K_Kinv :
+    (⟨0, 1, 1, 0⟩ : PBWMonomial).toMonomial = [K, K_inv] := by
+  simp [PBWMonomial.toMonomial]
 
-    Axiomatised because the proof requires case analysis matching
-    `List.isInfix` against `List.replicate` concatenations, for which
-    Mathlib lacks dedicated lemmas.
+/-- The element of `k⟨SU2Gen⟩` supported on a single PBW word. -/
+def pbwElement (k : Type v) [Field k] (m : PBWMonomial) : AlgElement SU2Gen k :=
+  ⟨fun w => if w = m.toMonomial then (1 : k) else 0,
+   {m.toMonomial},
+   fun w hw => by simp at hw; simp [hw]⟩
 
-    The argument: the PBW word `E_+^a ++ K^{b_+} ++ K_inv^{b_-} ++ E_-^c`
-    contains no forbidden subword `[K,K_inv]`, `[K_inv,K]`, `[K,E_+]`,
-    `[K,E_-]`, or `[E_+,E_-]` because generators appear in canonical
-    order with each block homogeneous.
+/-- **⚠ The PBW normal-form claim, as it was stated, is FALSE.**
+
+    This used to be an axiom:
+
+    > every `PBWMonomial` is in normal form under the `q`-Serre system
+
+    with `PBWMonomial.toMonomial m = E_+^a ++ K^{b₊} ++ K⁻¹^{b₋} ++ E_-^c`. Once
+    `qSerreRewritingSystem` became a definition (§3.1) the claim became
+    checkable, and it fails. `⟨a,b₊,b₋,c⟩ = ⟨0,1,1,0⟩` is the word `[K, K⁻¹]`,
+    which is *exactly* rule 1's leading monomial, so it is reducible.
+
+    The axiom's own justification is where it went wrong. It argued that the PBW
+    word "contains no forbidden subword … because generators appear in canonical
+    order with each block homogeneous" — but the `K` block is immediately
+    followed by the `K⁻¹` block, which produces `[K, K⁻¹]` whenever both are
+    non-empty. Homogeneity within blocks says nothing about the joins between
+    them, and there are three bad joins, not one:
+
+    | join | when | is the lm of |
+    |---|---|---|
+    | `[K, K⁻¹]` | `b₊ ≥ 1` and `b₋ ≥ 1` | rule 1 |
+    | `[K, E_-]` | `b₊ ≥ 1` and `c ≥ 1` | rule 4 |
+    | `[E_+, E_-]` | `a ≥ 1`, `b₊ = b₋ = 0`, `c ≥ 1` | rule 5 |
+
+    So the letter order `E_+ … K … E_- ` is not the normal-form order for this
+    system at all. Reading the rules' orientations off §3.1, reduction moves
+    `E_-` left past `E_+` (rule 5) and moves `K` right past both (rules 3, 4), so
+    the normal words are `E_-^c E_+^a K^b` — with `K` and `K⁻¹` never mixed.
+
+    Nothing downstream is left resting on the false claim: `ugb_pbw_corollary`
+    now takes normality as an explicit hypothesis rather than importing it from
+    here. Establishing it for the corrected shape is open, and is the genuine
+    remaining content of Bokut–Malcolmson Thm 3.2.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996), Theorem 3.2. -/
--- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (PBW monomials E_+^a K^b E_-^c are GS normal forms)
-axiom pbw_monomials_are_normal_forms (k : Type v) [Field k]
-    (qs : QSerreRelations k)
-    (m : PBWMonomial) :
-    isNormalForm degLexOrder (qSerreRewritingSystem k qs)
-      ⟨fun w => if w = m.toMonomial then (1 : k) else 0,
-       {m.toMonomial},
-       fun w hw => by simp at hw; simp [hw]⟩
+-- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (PBW monomials as GS normal forms — shape corrected)
+theorem pbw_monomials_are_not_all_normal_forms (k : Type v) [Field k]
+    (qs : QSerreRelations k) :
+    ¬ (∀ m : PBWMonomial,
+        isNormalForm degLexOrder (qSerreRewritingSystem k qs) (pbwElement k m)) := by
+  intro h
+  refine h ⟨0, 1, 1, 0⟩ qSerreRule1
+    (by simp [qSerreRewritingSystem, qSerreRules]) [K, K_inv] ?_ ?_
+  · show (if ([K, K_inv] : Monomial SU2Gen)
+      = (⟨0, 1, 1, 0⟩ : PBWMonomial).toMonomial then (1 : k) else 0) ≠ 0
+    rw [pbw_word_K_Kinv]
+    simp
+  · rw [qSerre_lm_1]
 
 /-! ## §5  Distribution Algebra GS Basis -/
 

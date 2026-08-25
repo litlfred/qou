@@ -287,8 +287,40 @@ KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
 # Authoritative source: experimental_constants.Q_NEUTRON_MEV (computed
 # from CODATA mass constituents, not hardcoded). Audited by
 # `e0_calibration_audit.py`.
-E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV
-E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR
+#
+# NAME WARNING — this constant is Q_beta(n), NOT the hadronic scale E_0.
+#
+# `prop:three-calibration-inputs` and its context note give
+#     E_0 = m_e / (q_0 (q_0 - 1))            ~ 4.186 MeV   (CAL-1 + CAL-2)
+#     Q_beta(n) = |Delta(net)| * E_0         ~ 0.782 MeV   (CAL-2 proxy)
+#     Delta(net) = h (2 - h) / 2,  h = hbar_q
+# and state outright that "E_0 != Q_beta(n) ... they differ by the
+# dimensionless factor 1/|Delta(net)| ~ 5.31". Measured here: 5.3417 from the
+# closed form, 5.3506 from the two numbers. `e0_calibration_audit.py` agrees —
+# it defines "E_0 = Q_beta(n) / |Delta(net)|". This binding drops that division.
+#
+# The value is RIGHT (it is Q_beta); only the name is wrong, and the name is
+# load-bearing: `mass_at_3A_proper.binding_3A(E_0=E_0_CALIBRATION_MEV)` scales
+# every binding by a quantity ~5.34x too small, which is most of why that path
+# reports -85% on the deuteron.
+#
+# `binding_canonical.py` already documents this exact trap in its own
+# "Naming note (2026-05-17)": *"Earlier revisions misnamed this parameter
+# `E_0`; the value used here is correct ... only the name was wrong."* The
+# rename never reached here.
+#
+# NOT renamed in place: ~25 modules import `E_0_CALIBRATION_MEV`, and swapping
+# the binding would silently change every one of their published numbers. The
+# truthful name is added alongside; migration is per-caller and belongs with
+# the scale decision (bean qou-2tuv), not with a constants-file edit.
+Q_BETA_N_MEV     = _Q_NEUTRON_MEV
+Q_BETA_N_MEV_ERR = _Q_NEUTRON_MEV_ERR
+
+#: DEPRECATED ALIAS of `Q_BETA_N_MEV`. Misnomer — see the note above. New code
+#: should import `Q_BETA_N_MEV` when it wants the beta-decay Q-value, and build
+#: the hadronic scale as `m_e / (q_0 * (q_0 - 1))` when it wants E_0.
+E_0_CALIBRATION_MEV     = Q_BETA_N_MEV
+E_0_CALIBRATION_MEV_ERR = Q_BETA_N_MEV_ERR
 
 
 __all__ = [
@@ -307,7 +339,8 @@ __all__ = [
     # Energy scales
     "E_HARTREE_EV", "TWO_Q", "E_MOL", "KAPPA",
     # E_0
-    "E_0_CALIBRATION_MEV", "E_0_CALIBRATION_MEV_ERR",
+    "Q_BETA_N_MEV", "Q_BETA_N_MEV_ERR",
+    "E_0_CALIBRATION_MEV", "E_0_CALIBRATION_MEV_ERR",  # deprecated aliases
     # Mass constants (re-exported for one-stop convenience)
     "M_E_MEV", "M_P_MEV", "M_N_MEV",
 ]

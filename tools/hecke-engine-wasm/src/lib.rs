@@ -151,7 +151,9 @@ pub fn qou_lr_coefficient(lambda_json: &str, mu_json: &str, nu_json: &str) -> Re
 // > double precision can still serialise the braid word and POST
 // it to a server-side endpoint backed by the native crate.
 
-/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+/// Markov parameter `z = q^3 / (q^2 + 1)` — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 #[wasm_bindgen]
 pub fn qou_markov_z(q: f64) -> f64 {
     hecke_engine::gram::markov_z(q)
@@ -166,9 +168,12 @@ pub fn qou_hecke_h(q: f64) -> f64 {
 /// Markov-trace weights on the NF basis as a JSON array of 6 floats.
 /// JSON-string return to avoid pulling in `serde-wasm-bindgen`
 /// for a single small array; browser consumers `JSON.parse()` once.
+///
+/// Convention D (qou-m7py, 2026-08-15): the production Markov trace
+/// `h·z² + z`, matching `pyhecke.gram.TR_M`.
 #[wasm_bindgen]
 pub fn qou_trace_weights(q: f64) -> String {
-    let w = hecke_engine::gram::trace_weights(q);
+    let w = hecke_engine::gram::trace_weights_markov(q);
     serde_json::to_string(&w.to_vec())
         .expect("infallible serialisation of Vec<f64>")
 }

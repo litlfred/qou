@@ -66,13 +66,14 @@ const Q0 = 1.10998  # substrate q_0
 
     @testset "tr_m_atomic_mpfr: 3-strand single crossing returns z" begin
         # Single positive σ_1 on 3 strands at 20-dps. Markov-Ocneanu-Wenzl
-        # trace of a single Hecke generator is z = 1/(q^{1/2}+q^{-1/2}),
-        # so the string should start with "4.99…" at q_0 ≈ 1.10998.
+        # trace of a single Hecke generator is z = q^3/(q^2+1) (trace
+        # convention D), so the string should start with "6.12…" at
+        # q_0 ≈ 1.10998. Was "4.99…" (convention C) until 2026-08-09.
         # n=3 chosen over n=2 because B_2 trips an upstream edge case
         # in tr_m_word_lq's recursion.
         s = tr_m_atomic_mpfr([(Int8(1), Int32(1))], 3, "1.10998", 20)
         @test !isempty(s)
         @test isa(s, String)
-        @test startswith(s, "4.99")
+        @test startswith(s, "6.12")
     end
 end

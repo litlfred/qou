@@ -42,7 +42,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-_AVG_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀)
+_AVG_COLOR_DELTA = None  # cached δ = flavor_split_leading(q₀)
 
 
 def _avg_color_delta():
@@ -72,8 +72,23 @@ def _avg_color_delta():
         import mpmath as _mp
         # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
         from _li_2_q_util import flavor_split_leading
-        from q_parameter import Q as _Q0
-        _AVG_COLOR_DELTA = flavor_split_leading(_mp.mpf(str(_Q0)))  # mp.mpf
+        # 50-dps source, NOT the float64 `q_parameter.Q`.
+        #
+        # This read `Q` and laundered it through `mpf(str(...))`, so δ was
+        # evaluated at ~17 good digits and this accessor reached only ~5e-16 —
+        # the cap the docstring above warns about. With 16 live consumers that
+        # was the single widest f64 leak in the braid pipeline: δ enters the
+        # colour-weighted crossing as −h·(½ − δ/4), and a 1e-16 error in δ
+        # lands at ~7e-20 on a χ result that is otherwise exact to ~1e-50.
+        #
+        # `flavor_split_leading` takes q as an argument and is exact at
+        # whatever precision it is handed, so the fix is to hand it the right
+        # thing. Built at >= 60 dps because an mpf keeps the precision it was
+        # CREATED at, and this cache is populated on first call — under
+        # whatever ambient dps that caller happens to have.
+        from q_parameter import Q_50_DIGIT_STR as _Q50
+        with _mp.workdps(max(_mp.mp.dps, 60)):
+            _AVG_COLOR_DELTA = flavor_split_leading(_mp.mpf(str(_Q50)))
     return _AVG_COLOR_DELTA
 
 
@@ -104,9 +119,17 @@ def classify_crossing(
     # "averaged" p-n interface: color-blind −h/2, OR color-weighted
     # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
     delta = float(_avg_color_delta())                # float-context comparison
-    if (abs(d - (-h_val / 2.0)) < 1e-9
-            or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
+    if abs(d - (-h_val / 2.0)) < 1e-9:
         return "averaged"
+    if abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9:
+        # DISTINCT from "averaged". Both used to return it, and every consumer
+        # maps that label to -h/2, so the colour-weighted p-n interface was
+        # silently replaced by the colour-blind one: 6.879e-4 on the crossing,
+        # 7e-5..3.9e-4 per chi^lambda, and the whole residual Schur-Weyl
+        # failure in rho_k_h3a_refinement after the convention-D migration.
+        # This is the proton-neutron colour asymmetry (bring_color_weighted);
+        # collapsing it into "averaged" de-asymmetrises the nucleus.
+        return "averaged_weighted"
     raise ValueError(
         f"Unrecognised crossing (c, d)=({c}, {d}); expected d ∈ "
         f"{{0, -h, -h/2, -h·(1/2-δ/4)}} with h≈{h_val:.6f}, "
@@ -149,4 +172,163 @@ def atom_canonical_crossings(
     return out
 
 
-__all__ = ["atom_canonical_crossings", "classify_crossing"]
+def d_for_ctype(ctype: str, h_val, *, delta=None):
+    """The Hecke shift `d` a ctype denotes, in the caller's numeric type.
+
+    Consumers used to hardcode `{"sigma": 0, "sigma_inv": -h, "averaged": -h/2}`
+    inline. That is how the colour-weighted interface got lost: a private
+    lookup cannot know about a label it predates, and there were at least two
+    such lookups plus two validators with their own `{0, -h, -h/2}` vocabulary.
+    Centralised here so a new crossing type is a one-line change with one
+    place to audit.
+
+    `h_val` is passed in rather than recomputed so the caller's precision
+    (mpmath mpf, sympy expression, float) carries through unchanged -- do not
+    coerce it.
+
+    `delta` overrides the substrate flavour split used by
+    `averaged_weighted`. It exists for **q-symbolic callers**, and skipping it
+    there is a layer straddle: the default `_avg_color_delta()` is evaluated
+    at the numeric `q_parameter.Q`, so passing a sympy `h_val` and taking the
+    default silently bakes a q0-pinned constant into an otherwise
+    q-symbolic expression -- an ideal/experimental mix inside one quantity,
+    which AGENTS.md rules out regardless of its size. δ has a closed form, so
+    symbolic callers have no excuse:
+
+        from _li_2_q_util import flavor_split_leading
+        d_for_ctype(ctype, h_sym, delta=flavor_split_leading(q_sym))
+
+    Numeric callers should leave it None and get the cached q0 value.
+    """
+    if ctype == "sigma":
+        return 0 * h_val
+    if ctype == "sigma_inv":
+        return -h_val
+    if ctype == "averaged":
+        return -h_val / 2
+    if ctype == "averaged_weighted":
+        # -h(1/2 - delta/4), written so h_val's type drives the arithmetic.
+        d = _avg_color_delta() if delta is None else delta
+        # Honour the "caller's type carries through" contract above. The other
+        # three ctypes return whatever `h_val` is; this one used to return an
+        # `mpf` REGARDLESS, because the cached δ is an mpf and mpmath wins the
+        # promotion. So the single ctype this whole arc is about was the one
+        # that broke the function's own documented contract.
+        #
+        # It was not free. Downstream numpy code builds `sigma + d*eye` in a
+        # float64 array; one mpf promotes the array to dtype=object and the
+        # per-matmul cost jumps, measured on tritium where the first
+        # averaged_weighted crossing lands at index 11 of 35. Three call sites
+        # now carry a `float(d_for_ctype(...))` workaround for this
+        # (hoefsmit_numpy, and the two numpy dtype audits), and
+        # numpy_mpmath_dtype_leak_audit exists partly to police it.
+        #
+        # Downcast ONLY for a plain-float caller, who has already declared
+        # float precision by passing one. mpf and sympy callers are untouched,
+        # so nothing that wanted 50 dps loses a digit.
+        if isinstance(h_val, float):
+            d = float(d)
+        return -h_val * (1 - d / 2) / 2
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+#: Every ctype `classify_crossing` can return. The one place to read when
+#: asking "have I covered them all?" — see `sign_for_ctype` and
+#: `test_ctype_consumer_coverage.py`.
+CTYPES: tuple[str, ...] = (
+    "sigma", "sigma_inv", "averaged", "averaged_weighted",
+)
+
+
+def sign_for_ctype(ctype: str) -> int:
+    """The `sign ∈ {-1, 0, +1}` wire encoding of a ctype.
+
+    ⚠ **Lossy for `averaged_weighted`, by construction.** A sign cannot
+    carry a magnitude, so both averaged interfaces collapse onto `0` — the
+    colour-blind projection. The p-n colour weighting `-h(1/2 - δ/4)` is
+    *not* representable in this format at all; consumers that need it must
+    take `d_for_ctype` instead, which is exact.
+
+    This is not a new loss: every sign-format consumer already behaved this
+    way, because before `averaged_weighted` existed `classify_crossing`
+    returned `averaged` for both. Centralising it here makes the projection
+    explicit and auditable rather than an omission in four private tables.
+    The representational gap itself stays open under bean `qou-gdtb`.
+    """
+    if ctype == "sigma":
+        return 1
+    if ctype == "sigma_inv":
+        return -1
+    if ctype in ("averaged", "averaged_weighted"):
+        return 0
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+def convention_fingerprint(crossings) -> str:
+    """A stable label for the crossing convention a WORD ACTUALLY USES.
+
+    `"sigma:11+sigma_inv:7+averaged:4+averaged_weighted:1"` — the ctype
+    multiset, in `CTYPES` order, from the word itself rather than from a
+    hand-written tag.
+
+    This exists because the symbolic-χ caches keyed on nothing but the file's
+    existence. `per_irrep_pole_deuteron_h6` is literally
+    `if CHI_CACHE.exists(): return d`, and `per_irrep_pole_atom` resumes on
+    partition coverage alone. Neither has any notion of which word produced
+    the cached entries, so when the colour-weighted p-n interface landed, the
+    caches written before it kept being served — and nine committed witnesses
+    with a p-n bond still carry colour-BLIND χ while their producers build the
+    weighted word. The producers were never wrong; the caches simply could not
+    tell that the question had changed.
+
+    A convention tag hand-set by an auditing pass cannot close that: it
+    records what someone concluded about the stored data, not what the current
+    builder would emit. Deriving the fingerprint from `crossings` makes the
+    two directly comparable, which is the whole point — see
+    `convention_label` for the human-facing name.
+    """
+    from collections import Counter
+    counts = Counter(ct for _, ct in crossings)
+    unknown = set(counts) - set(CTYPES)
+    if unknown:
+        raise ValueError(f"unknown ctype(s) in word: {sorted(unknown)}")
+    return "+".join(f"{ct}:{counts[ct]}" for ct in CTYPES if counts.get(ct))
+
+
+def convention_label(crossings) -> str:
+    """The human-facing convention name for a word, derived not declared.
+
+    Matches the strings already in the corpus' `convention` witness field, so
+    a regenerated witness stays comparable with the ones already tagged:
+
+      `colour-weighted-averaged-crossing`  the word carries the colour-weighted
+                                           p-n interface (every canonical
+                                           Z>=1,N>=1 word has exactly one)
+      `averaged-crossings`                 averaged crossings, none weighted —
+                                           correct for a free word
+                                           (`include_inter=False`), a
+                                           dineutron/diproton, or a single
+                                           nucleon, all of which have no p-n
+                                           bond to weight
+      `sign-only-crossings`                no averaged crossing of either kind
+
+    Note the corpus also contains `bring_color_weighted-averaged-crossings`,
+    a second spelling of the first. Do not add a third: read this function.
+    """
+    counts = {ct: 0 for ct in CTYPES}
+    for _, ct in crossings:
+        if ct not in counts:
+            raise ValueError(f"unknown ctype {ct!r}")
+        counts[ct] += 1
+    if counts["averaged_weighted"]:
+        return "colour-weighted-averaged-crossing"
+    if counts["averaged"]:
+        return "averaged-crossings"
+    return "sign-only-crossings"
+
+
+__all__ = [
+    "atom_canonical_crossings", "classify_crossing", "d_for_ctype",
+    "sign_for_ctype", "CTYPES",
+    "convention_fingerprint", "convention_label",
+]

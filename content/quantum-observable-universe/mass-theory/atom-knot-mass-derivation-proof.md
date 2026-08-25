@@ -1,7 +1,7 @@
 **Proof.** After the pre-Archimedean / post-Archimedean simplification
 (Yekutieli at finite slices replaces any geometric-leg construction
 with finite-categorical Markov trace), the proof is a single
-categorical pipeline pre-Archimedean, terminated by the Archimedean
+pre-Archimedean categorical pipeline, terminated by the Archimedean
 realization functor. We treat the algebraic content first and then
 the functor.
 
@@ -15,7 +15,7 @@ The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
 sequence of reductions; both certificate components verified for
 small cases by the canonical formalism
-and locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
+and locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,
 restricted to finite slicing depth = filtration grade $\leq k$):
@@ -52,7 +52,7 @@ exact; the spectral-sequence collapse at $E_2$ guarantees no higher
 analytic content (asymptotic at roots of unity, volume conjecture,
 Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$
 is read off as the multiplicity of $T_w$'s SDP solution in the
-Wedderburn decomposition (renamed from $\rho$ in to
+Wedderburn decomposition (renamed from $\rho$ to
 disambiguate from the categorical density $\rho_K$ of
 [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Hoefsmit
 irrep $\rho_\lambda$).
@@ -100,7 +100,7 @@ $\nu_{\mathrm{SDP}} \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ via the volu
 conjecture, which is the conventional way of writing the same
 identity. $\square$
 
-### Methodology gating
+### Methodological preconditions
 
 The proof above presumes the joint-tower SDP is constructively in
 place (step 1 of the algorithm). Within the present implementation:

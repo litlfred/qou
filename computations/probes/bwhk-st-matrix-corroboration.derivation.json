@@ -1,0 +1,99 @@
+{
+  "target": "n=5 modular data (vacuum S-matrix row S_{0λ} and ribbon twist θ_λ)",
+  "target_value": "S_{0λ} = d_q(λ) / sqrt(Σ_μ d_q(μ)²)  and  θ_λ = q^{2c(λ)},  for every λ ⊢ 5",
+  "target_tolerance": 0.0,
+  "content_block": "prop:keystone-verlinde-s-matrix-bridge",
+  "description": "Derivation chain for the BW-localization = Hecke MTC modular-data corroboration (bean qou-dt14 / bwhk, PR #4969). Establishes the two modular-data objects the probe compares — the vacuum S-matrix row S_{0λ} = d_q(λ)/D and the ribbon twist θ_λ = q^{2c(λ)} — from the Hecke first principles (Hecke.Energy → Schur → Wedderburn), then hands the cross-route comparison against the WRT / Lawrence–Rozansky McKay value map to the script frontier. Trust profile: one AXIOM entrypoint (the per-crossing Hecke energy), one MATHLIB_CITED combinatorial step (q-hook dimension), three DERIVED algebraic steps, one SCRIPT_CITED frontier (the numerical cross-route agreement). Symbolic chain — no COMPUTATIONAL leaf, so the target is the identity, not a number. Scope-(a): the chain derives the modular data; it does NOT derive the physics identification BW-localization = Hecke MTC, which remains the open input (beans bwse / bwhk).",
+  "steps": [
+    {
+      "name": "q-integer [k]_q := (q^k − q^{-k})/(q − q^{-1})",
+      "operation": "Define the balanced q-integer [k]_q := (q^k − q^{-k}) / (q − q^{-1}). The (q − q^{-1}) denominator is the per-crossing Hecke energy scale — the AXIOM entrypoint of every Hecke-side chain.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "q_integer",
+      "output_value": "[k]_q := (q^k − q^{-k}) / (q − q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "q-hook-length dimension d_q(λ) for λ ⊢ 5",
+      "operation": "Apply the q-deformed hook-length formula d_q(λ) := [n]_q! / ∏_{x ∈ λ} [h_x]_q, with n = 5 and h_x the hook lengths of the Young diagram of λ. This is the Hecke-side quantum dimension of the Wedderburn block V_λ, defined for ALL rows (no ≤2-row truncation).",
+      "inputs": [
+        "q_integer",
+        "Schur"
+      ],
+      "output_name": "d_q",
+      "output_value": "d_q(λ) = [5]_q! / ∏_{x ∈ λ} [h_x]_q",
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:QHookDimension",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Total quantum dimension D",
+      "operation": "Sum the squared block dimensions over the seven blocks λ ⊢ 5 and take the positive square root: D := sqrt(Σ_{λ ⊢ 5} d_q(λ)²). Pure algebra on the previous step; the Wedderburn decomposition supplies the block set.",
+      "inputs": [
+        "d_q",
+        "Wedderburn"
+      ],
+      "output_name": "D_total",
+      "output_value": "D = sqrt(Σ_{λ ⊢ 5} d_q(λ)²)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "D ≠ 0 because every d_q(λ) > 0 for real q > 1 (sum of positive squares); the positivity is the corpus lemma sum_qDimSq_pos."
+    },
+    {
+      "name": "Vacuum S-matrix row S_{0λ} = d_q(λ)/D",
+      "operation": "Form the normalised quantum-dimension vector S_{0λ} := d_q(λ)/D. In any modular tensor category the vacuum row of the S-matrix is exactly the quantum dimension divided by the total dimension; here it is the Hecke-side realisation of that structural identity. The Verlinde measure is its square, μ(λ) = S_{0λ}², and Σ_λ S_{0λ}² = 1 follows by construction from the definition of D.",
+      "inputs": [
+        "d_q",
+        "D_total"
+      ],
+      "output_name": "S0_row",
+      "output_value": "S_{0λ} = d_q(λ) / sqrt(Σ_μ d_q(μ)²)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.BraidKnot.Keystone.VerlindeModularData.verlindeMeasure_eq_plancherel",
+      "citation": "bakalovkirillov2001",
+      "notes": "Sorry-free in Lean: verlindeMeasure_eq_plancherel proves μ(λ) = S_{0λ}² = d_q(λ)²/Σ d_q², i.e. the localization measure IS the Hecke Plancherel measure, from the published modular-data identity alone."
+    },
+    {
+      "name": "Ribbon twist θ_λ = q^{2c(λ)} from the content sum",
+      "operation": "Define the content sum c(λ) := Σ_{(i,j) ∈ λ} (j − i) over the cells of λ, and the ribbon twist eigenvalue θ_λ := q^{2c(λ)}. This is the T-matrix companion of the S-row: exact representation theory, not a choice. Conjugation acts antisymmetrically, c(λ') = −c(λ), hence θ_{λ'} = θ_λ^{-1}.",
+      "inputs": [
+        "q_integer",
+        "Wedderburn"
+      ],
+      "output_name": "theta_hecke",
+      "output_value": "θ_λ = q^{2c(λ)},  c(λ) = Σ_{(i,j) ∈ λ} (j − i)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:QOU.BraidKnot.Keystone.theta",
+      "citation": "bakalovkirillov2001",
+      "notes": "Sorry-free in Lean (KeystoneModularTwist): theta_conjugate proves θ_{λ'} = θ_λ^{-1} from contentSum_conjugate, the conjugation-antisymmetry of the content sum."
+    },
+    {
+      "name": "Cross-route agreement with the WRT / Lawrence–Rozansky McKay value map",
+      "operation": "Compare the Hecke-side modular data just derived against the independent WRT / Lawrence–Rozansky route at the substrate anchor: (i) the McKay/Chebyshev amplitude value map d^{WRT}(λ) in the fold variable t = q + q^{-1} against d_q(λ), so the vacuum S-rows coincide block-by-block; (ii) the sl-Casimir ribbon exponent κ_λ = Σ_i λ_i(λ_i − 2i + 1) against the content-sum exponent 2c(λ); (iii) the conjugation antisymmetry θ_λ·θ_{λ'} = 1 on both expressions; (iv) Verlinde unitarity Σ_λ S_{0λ}² = 1. All four hold to 40 dps.",
+      "inputs": [
+        "S0_row",
+        "theta_hecke"
+      ],
+      "output_name": "modular_data_agreement",
+      "output_value": "d^{WRT}(λ) = d_q(λ) and κ_λ = 2c(λ) for all λ ⊢ 5",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "bakalovkirillov2001",
+      "notes": "script: computations/probes/bwhk_st_matrix_corroboration.py — the frontier step. The comparison is EVIDENCE for the BW-localization = Hecke MTC identification, not a derivation of it: that identification (RT = WRT / gauge = categorical, Chern–Simons TQFT) is a physics claim, owner-gated (beans bwse / bwhk), and is not number-crunchable. The two routes are genuinely independent constructions — q-hook combinatorics vs the McKay/Chebyshev value map, and content sum vs sl-Casimir — which is what makes the agreement informative rather than a relabelling."
+    }
+  ]
+}

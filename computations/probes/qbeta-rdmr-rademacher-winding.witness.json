@@ -1,0 +1,93 @@
+{
+  "engine": "python-exact+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T08:38:26.300855+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "assertions": [
+    {
+      "name": "map_and_formula_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sigma1 sigma2^-1 maps to RL and Phi(RL) agrees between the Dedekind-sum formula and the RL-word count"
+    },
+    {
+      "name": "three_methods_agree",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Dedekind-sum Phi == RL-word count == n*Phi(RL) for both knots"
+    },
+    {
+      "name": "phi_vanishes_for_both",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Phi = 0 for (RL)^2 and (RL)^3 — the refutation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-rdmr-rademacher-winding",
+  "scriptFile": "qbeta_rdmr_rademacher_winding_probe.py",
+  "scriptHash": "60d0cff536ea",
+  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-rdmr: tests whether the Rademacher symbol of the canonical 3-braid word supplies theta_K. Both corpus knots are (sigma1 sigma2^-1)^n closures (4_1 n=2, Borromean n=3) mapping to (RL)^n in SL(2,Z); an RL-balanced word has Rademacher Phi = 0, confirmed by the Dedekind-sum formula, the RL-word count, and homogeneity. Phi vanishes for BOTH knots, so it predicts theta = 0 against targets 0.0589/0.2032 and cannot distinguish the anchors. Scope-(a) refutation of the symbol as the theta source; the Ghys word->winding programme is NOT refuted. Method discipline: predicts from the braid word alone, then compares; the T4 theta values are A_omega-conditioned and were never fitted to.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "knot_anchor_assignment": "electron->3_1, muon->4_1 (sigma1 sigma2^-1)^2, proton->B_3 (sigma1 sigma2^-1)^3 (qbeta_t3_multiknot_binding_probe.py)",
+    "results": {
+      "muon (4_1)": {
+        "n": 2,
+        "matrix": "((5, 3), (3, 2))",
+        "trace": 7,
+        "phi": "0",
+        "rl_count": 0,
+        "homogeneity": "0",
+        "three_methods_agree": true
+      },
+      "proton (B_3)": {
+        "n": 3,
+        "matrix": "((13, 8), (8, 5))",
+        "trace": 18,
+        "phi": "0",
+        "rl_count": 0,
+        "homogeneity": "0",
+        "three_methods_agree": true
+      }
+    },
+    "comparison_only": {
+      "muon (4_1)": {
+        "phi": "0",
+        "theta_pred": "0.0",
+        "theta_T4": "0.0585920168401",
+        "matches": false
+      },
+      "proton (B_3)": {
+        "phi": "0",
+        "theta_pred": "0.0",
+        "theta_T4": "0.203132507018",
+        "matches": false
+      }
+    },
+    "phi_distinguishes_anchors": false,
+    "method_note": "the gate earned its keep: the first run had sigma2^-1 bound to L^-1 rather than L (i.e. to sigma2), which sent sigma1 sigma2^-1 to ((0,1),(-1,1)) instead of RL and produced a spurious Phi = -2 for 4_1 that the RL-count and homogeneity cross-checks contradicted. A single-method computation would have reported that -2 as a signal.",
+    "no_fit_note": "T4 theta values are A_omega-conditioned (circularity note); used for comparison only, never as a fit target",
+    "verdict": "SCOPE-(a) REFUTATION of the naive Rademacher route. Both canonical words are (σ₁σ₂⁻¹)ⁿ — 4₁ at n=2, Borromean at n=3 — whose SL(2,ℤ) image is (RL)ⁿ. An RL-balanced word has Rademacher Φ = n − n = 0, confirmed three independent ways (Dedekind-sum formula, RL-word count, and homogeneity Φ(Aⁿ)=n·Φ(RL) with Φ(RL)=0). So Φ VANISHES for both knots: it predicts ϑ = 0 where the targets are 0.0589 and 0.2032, and it cannot even DISTINGUISH the two anchors, which is the minimum any word→ϑ map must do. The braid word does carry independent information (the binary precondition passed: the two anchors are two different words), but the Rademacher symbol is not the functional that extracts it — it is blind to the (RL)ⁿ family by construction. SCOPE: this refutes the symbol as the ϑ source, NOT the Ghys word→winding programme; a different quasimorphism (or the full linking datum rather than its Rademacher shadow) is not excluded. Nothing fitted; the T4 values were used for comparison only and are themselves A_ω-conditioned."
+  }
+}

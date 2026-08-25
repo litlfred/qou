@@ -1,0 +1,197 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T17:14:08.394310+00:00",
+  "commitSha": "a7d17d3427a4c4c0a957e1778230efa0046a5971",
+  "assertions": [
+    {
+      "name": "twisted_framings_match_closed_form",
+      "computed": "25",
+      "expected": "25",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|tau_DG| under mu - a*lambda against 2^{2n-2} sqrt(n^2+m^2), a in {0,1,-1,2,-2}, on every cusp of L5a1 and L6a4"
+    },
+    {
+      "name": "legacy_curve_spelling_unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "curves=[0,0] vs [(1,0),(1,0)] and [1,0] vs [(0,1),(1,0)]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 45,
+  "computation": "one-loop-twisted-framing",
+  "scriptFile": "one_loop_twisted_framing_probe.py",
+  "scriptHash": "d7bd6a63708e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Confirms the a-dependence of |tau_DG| = 2^{2n-2} sqrt(n^2+m^2) (m = 4a-c+d) by reframing the a=0 complement with meridian mu - a*lambda, at two cusp numbers and every framing tested. This is the phase-driven half of the closed form derived in qou-vdvS, which had only ever been checked at a = 0. Required extending one_loop_torsion.one_loop to general (p,q) peripheral curves; the legacy 0/1 spelling is checked to agree and the module self-test stays green. Nothing fitted — predictions printed before measurement.",
+  "auditOnly": "docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md",
+  "data": {
+    "what_was_extended": {
+      "function": "computations/one_loop_torsion.py::_curve_row",
+      "why_it_is_sound": "the log-form gluing equation of a peripheral curve is LINEAR in its homology class, so the row of p*mu + q*lambda is p*mer + q*lon of the two rows SnapPy returns; nz_pair is linear too",
+      "legacy_spelling_agrees": true,
+      "self_test_still_green": "checked by running one_loop_torsion.py directly"
+    },
+    "why_reframing_is_the_only_access": {
+      "volume_is_a_independent": "Vol(W_{a,b,c,d}) = 8(c+d) Lambda(pi/4)",
+      "consequence": "by Thurston-Jorgensen the chains cannot be infinitely many distinct manifolds — they are one complement reframed",
+      "census_scan": "OrientableCuspedCensus(cusps=2) at octahedral volume returns only m129 (|tau| = sqrt2) and m125 (|tau| = sqrt8; 8 = 1+m^2 has no integer solution, so m125 is not in the family). No manifold carries the a != 0 values"
+    },
+    "families": {
+      "L5a1": {
+        "label": "W_{a,1,1,0} (Whitehead)",
+        "cusps": 2,
+        "framings": {
+          "cusp_0": {
+            "0": {
+              "tau_sq": "2.0",
+              "matches": true
+            },
+            "1": {
+              "tau_sq": "10.0",
+              "matches": true
+            },
+            "-1": {
+              "tau_sq": "26.0",
+              "matches": true
+            },
+            "2": {
+              "tau_sq": "50.0",
+              "matches": true
+            },
+            "-2": {
+              "tau_sq": "82.0",
+              "matches": true
+            }
+          },
+          "cusp_1": {
+            "0": {
+              "tau_sq": "2.0",
+              "matches": true
+            },
+            "1": {
+              "tau_sq": "10.0",
+              "matches": true
+            },
+            "-1": {
+              "tau_sq": "26.0",
+              "matches": true
+            },
+            "2": {
+              "tau_sq": "50.0",
+              "matches": true
+            },
+            "-2": {
+              "tau_sq": "82.0",
+              "matches": true
+            }
+          }
+        }
+      },
+      "L6a4": {
+        "label": "W_{a,1,1,1} (Borromean)",
+        "cusps": 3,
+        "framings": {
+          "cusp_0": {
+            "0": {
+              "tau_sq": "64.0",
+              "matches": true
+            },
+            "1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "-1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            },
+            "-2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            }
+          },
+          "cusp_1": {
+            "0": {
+              "tau_sq": "64.0",
+              "matches": true
+            },
+            "1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "-1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            },
+            "-2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            }
+          },
+          "cusp_2": {
+            "0": {
+              "tau_sq": "64.0",
+              "matches": true
+            },
+            "1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "-1": {
+              "tau_sq": "320.0",
+              "matches": true
+            },
+            "2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            },
+            "-2": {
+              "tau_sq": "1088.0",
+              "matches": true
+            }
+          }
+        }
+      }
+    },
+    "predicted": {
+      "L5a1": {
+        "a_0": "2.0",
+        "a_1": "10.0",
+        "a_-1": "26.0",
+        "a_2": "50.0",
+        "a_-2": "82.0"
+      },
+      "L6a4": {
+        "a_0": "64.0",
+        "a_1": "320.0",
+        "a_-1": "320.0",
+        "a_2": "1088.0",
+        "a_-2": "1088.0"
+      }
+    }
+  }
+}

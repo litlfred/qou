@@ -100,17 +100,20 @@ noncomputable def F_Bor {R : Type*} [Field R] [LinearOrder R]
     the mass formula" is the open structural step. -/
 def bar_pair_factor_two_categorical : ℕ := 2
 
-/-- **Ocneanu cancellation reciprocal (categorical).**
+/-- **The categorical integer 12 of the F_Bor substrate identity.**
 
-    The integer 12 in the F_Bor-based substrate identity is the
-    inverse of the leading-pole coefficient −1/12 of
-    `tr_M(β_Bor, q) ~ −1/(12 · q^10)` as q → 0.
+    `12 = mult · bind = 2 · 6 = dim V_{(2,1)} · |S_3|` — a categorical count
+    (trace-dominant irrep dimension times the symmetric-group order).
 
-    Verified to 200 dps in PR #546's Hoefsmit symbolic work;
-    the symbolic identity itself awaits PR #546's 2×2 bug fix
-    for full categorical proof.
-
-    Ref: docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md
+    HISTORICAL / REFUTED PROVENANCE: an earlier reading identified 12 as the
+    inverse of an Ocneanu leading-pole coefficient −1/12, claiming
+    `tr_M(β_Bor, q) ~ −1/(12 · q^10)` as q → 0. This is **refuted for β_Bor**:
+    its Markov trace has a q^(-4) pole of coefficient 1, not q^(-10)·(−1/12)
+    (the −1/12·q^(-10) pole belongs to the measured no-interface braid, a
+    different word). Retracted 2026-05-25; re-confirmed in the 2026-08-22 F_Bor
+    red-team (docs/audits/2026-08-22-mp-fbor-massformula-redteam.md). The −1/12
+    provenance is NOT part of the derivation; only the categorical count `2 · 6`
+    is. (Name retained for reference stability; the "ocneanu" in it is historical.)
     -/
 def ocneanu_factor_twelve_categorical : ℕ := 12
 

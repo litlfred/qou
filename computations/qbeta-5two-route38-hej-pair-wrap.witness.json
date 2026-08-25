@@ -1,0 +1,202 @@
+{
+  "probe": "qbeta_5two_route38_hej_pair_wrap",
+  "bean": "qou-glbl",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoRootLabelling.lean (Ypair, the four sign facts)",
+    "QOU/QBeta/FiveTwoEnvelopeWiring.lean (dVdy, exists_int_dVdy_mul)"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the quantity to be proved zero, re-measured on the LEAN labelling (`otherRoots` reproduced branch-for-branch, not read off polyroots): S = arg(1-y) + arg(1-xy) + arg(1-y/x) - 2 arg(-y) vanishes identically at both pair branches, at all 800 checks. Also re-checks that each sampled y IS a root of the curve, so the labelling has not drifted from the polynomial",
+      "checks": 800,
+      "worst_abs_S": "7.24454326306e-71",
+      "worst_curve_residual": "3.48739186499e-70",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "WHERE THE WRAPS ARE. `S = 0` is three `log_mul` splits holding at once, and they do NOT: the split (iii) `2 log(-y) = log(y^2)` needs 2 arg(-y) in (-pi,pi], i.e. Re y <= 0, and Re y reaches +0.7848 at the pair. So a proof that performs the three splits unconditionally is proving something false. The wraps CANCEL -- n1 + n2 - n3 = 0 at every check -- which is a different theorem and needs the cancellation argued, not assumed. Every n3 != 0 occurs at Re y > 0, which is the shape a case split can key on",
+      "n1_values": [
+        0
+      ],
+      "n2_values": [
+        -1,
+        0,
+        1
+      ],
+      "n3_values": [
+        -1,
+        0,
+        1
+      ],
+      "cancellation_holds_at": 800,
+      "checks": 800,
+      "n3_nonzero_only_where_Re_y_positive": true,
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE TREE'S SIGN FACTS ARE NOT UNIFORM, and a grouping argument must not assume they are. `im_mul_Ypair_fst_neg` and `im_div_Ypair_snd_pos` carry `cos phi < 0` as a hypothesis; only the `snd`/`fst` pair is unconditional. Measured: the `fst` multiplicative sign genuinely FAILS on part of the arc, and every failure is at cos phi > 0 -- so the hypothesis is exactly right rather than an artefact of how the lemma was proved",
+      "holds_vs_fails": {
+        "fst_mul_neg": [
+          219,
+          181
+        ],
+        "snd_mul_neg": [
+          400,
+          0
+        ],
+        "fst_div_pos": [
+          400,
+          0
+        ],
+        "snd_div_pos": [
+          219,
+          181
+        ]
+      },
+      "fst_mul_failures_all_at_cos_positive": true,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "split (i) -- log(1-xy) + log(1-y/x) = log of the product -- is legitimate at EVERY check, with the sum staying inside (-pi, pi]. That is the one of the three splits that costs nothing, and it is what turns the open obligation from four correlated arguments into two",
+      "checks_legitimate": 800,
+      "checks": 800,
+      "worst_abs_sum": "2.81541453455",
+      "margin_to_pi": "0.326178119037",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the surviving obligation as an inequality: |arg(1-xy) + arg(1-y/x) - 2 arg(-y)| < 3*pi/2 would pin k = 0 given the already-proved |arg(1-y)| < pi/2. Measured max is under pi/2, so there is a factor of three in hand -- but S = 0 means grouping 2 is EXACTLY -arg(1-y), so the two maxima must agree, and a proof that produced a different bound for them would be proving the wrong thing",
+      "max_abs_grouping2": "1.40769001196",
+      "max_abs_arg_one_sub_y": "1.40769001196",
+      "the_two_agree": true,
+      "attained_at_phi": "0.00783439564486",
+      "needed_bound_3pi_over_2": "4.71238898038",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the region a case split would have to key on. `Re y = cos phi - t/2` at the pair (`re_Ypair_eq`, proved), so Re y > 0 is exactly cos phi > t/2 -- an explicit, checkable condition on phi rather than on the root. Every one of these points has the pair GENUINELY COMPLEX, so it cannot be dodged by restricting to the real branch of `otherRoots`",
+      "checks_with_Re_y_positive": 320,
+      "of_which_complex_pair": 320,
+      "checks": 800,
+      "min_cos_phi_with_Re_y_positive": "0.311995853368",
+      "max_cos_phi_with_Re_y_nonpositive": "0.304543025009",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "ON `Re y <= 0` ALL THREE SPLITS ARE LEGITIMATE, so on that part of the arc `k = 0` follows from three `Complex.log_mul` applications and the saddle identity, with no bounding argument at all. That is the half of the obligation that is now an assembly of already-available lemmas; the residue is `Re y > 0`",
+      "checks_with_Re_y_nonpositive": 480,
+      "all_three_splits_legitimate": 480,
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "the endpoint, evaluated EXACTLY at x = mpc(-1,0) rather than exp(i*pi) -- which returns -1 + 4.1e-43j and has already produced one false pass in this lane (Route 36 G7). At phi = pi the discriminant is POSITIVE, so the pair is real and both roots are NEGATIVE; arg(-y) = 0 there, and the (iii) split is trivial",
+      "pairDisc_at_pi": "2.86293666046",
+      "both_roots_negative": true,
+      "branches": [
+        {
+          "y": "-0.5549581320873712",
+          "arg_neg_y": "0.0",
+          "S": "0.0"
+        },
+        {
+          "y": "-2.246979603717467",
+          "arg_neg_y": "0.0",
+          "S": "6.28318530718"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "REGIME 1 -- complex pair, Re y > 0. `Re y = cos phi - t/2` with t > 0, so Re y > 0 FORCES cos phi > 0; then Im(xy) = cos(phi)*Im y + sin(phi)*Re y has both terms positive, so arg(1-xy) < 0. This is precisely the region where the tree's `im_mul_Ypair_fst_neg` FAILS (G3) -- and the failure is what supplies the bound. The missing hypothesis is not a gap to fill, it is the other half of a case split",
+      "checks_in_regime": 160,
+      "clause_failures": 0,
+      "bound": "(-3pi/2, 2pi)",
+      "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "REGIME 2 -- complex pair, Re y <= 0 and cos phi <= 0. Both terms of Im(xy) = cos(phi)*Im y + sin(phi)*Re y are now <= 0, so arg(1-xy) lands on the OTHER side from regime 1. The upper end of the interval is 2pi and is reached only if arg(1-y) = 0, which the strict Im y > 0 forbids -- so the bound is strict for a reason, not by rounding",
+      "checks_in_regime": 107,
+      "clause_failures": 0,
+      "bound": "(-3pi/2, 2pi)",
+      "pass": true
+    },
+    {
+      "gate": "G11",
+      "claim": "REGIME 3 -- complex pair, Re y <= 0 but cos phi > 0, where NEITHER Im-sign argument applies. The missing pi/2 comes from an identity instead: Re(xy) + Re(y/x) = 2*cos(phi)*Re(y) <= 0 here, so at least one of the two factors has Re <= 0 and hence |arg| < pi/2. WHICH one is not determined and does not need to be -- either sub-case lands inside (-2pi, 2pi)",
+      "checks_in_regime": 40,
+      "clause_failures": 0,
+      "identity_residual_Re_xy_plus_Re_y_over_x": "7.24454326306e-71",
+      "bound": "(-2pi, 2pi)",
+      "pass": true
+    },
+    {
+      "gate": "G12",
+      "claim": "REGIME 4 -- the REAL pair, past the discriminant crossing. Both roots are NEGATIVE there (sum 2c - t < 0, product pairGamma > 0), so arg(1-y) = 0 and arg(-y) = 0 outright and the whole quantity collapses to B, inside (-pi, pi) by the two Im signs. This regime is the one that needs sin phi > 0, and it is exactly the one that breaks at phi = pi -- where VSide breaks too (G15)",
+      "checks_in_regime": 186,
+      "clause_failures": 0,
+      "both_real_roots_negative": true,
+      "bound": "(-pi, pi)",
+      "pass": true
+    },
+    {
+      "gate": "G13",
+      "claim": "THE ARITHMETIC OF THE BOUND, not its conclusion -- and the first draft of this gate got that wrong. It checked that A + arg(1-xy) + arg(1-y/x) - C lies inside the regime interval, which is VACUOUS: the total is identically 0 (G1), so any interval containing 0 passes and the gate reported a slack of exactly pi everywhere. What is actually load-bearing is that each of the FOUR COMPONENTS lies in the interval the argument claims for it, and that the four claimed intervals SUM to something inside (-2pi, 2pi). Both are now checked, the sum computed rather than asserted",
+      "analysed_samples": 493,
+      "component_interval_failures": {},
+      "widest_summed_interval": [
+        "-6.28318530718",
+        "6.28318530718"
+      ],
+      "slack_of_summed_lower_bound_above_minus_2pi": "0.0",
+      "where_lower_is_tightest": [
+        "1.261337699",
+        "cplx_re_nonpos_c_pos"
+      ],
+      "slack_of_summed_upper_bound_below_2pi": "0.0",
+      "where_upper_is_tightest": [
+        "0.007834395645",
+        "cplx_re_pos"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G14",
+      "claim": "THE SECOND BRANCH IS FREE. `Ypair.2 = conj Ypair.1` (proved), and on |x| = 1 conjugation swaps x*y with y/x, so S(conj y) = -S(y) and k = 0 for one branch iff for the other. This is why only Im y > 0 is analysed above. It matters: an earlier draft mirrored each inequality separately with a sign factor and FAILED -- Im(x*y) for one branch pairs with Im(y/x) for the OTHER, not with itself",
+      "conjugate_pairs_checked": 307,
+      "worst_residual": "7.24454326306e-71",
+      "pass": true
+    },
+    {
+      "gate": "G15",
+      "claim": "\u26a0 `S = 0` FAILS AT phi = pi, on Ypair.2, where it is 2*pi -- so k = \u00b11 there and `he_j` is FALSE at the endpoint. G1 samples the OPEN interval and structurally cannot see this, the SECOND time in this lane an endpoint has been hidden that way (Route 36 G7 was the first). Benign for the same reason: `envelopeS_total` needs the derivative only on `Ico 0 pi`. And the cause is identical to VSide's endpoint failure -- x*y = 2.2469796 lands ON Li2's cut, so arg(1-xy) and arg(1-y/x) are both pi instead of cancelling. Evaluated at x = mpc(-1,0) exactly; exp(i*pi) returns -1 + 4.1e-43j and would report a clean 0",
+      "S_at_pi_branch_1": "0.0",
+      "S_at_pi_branch_2": "6.28318530718",
+      "two_pi": "6.28318530718",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "S = 0 at both pair branches on the OPEN arc, but NOT because the three log_mul splits all hold -- split (iii) fails wherever Re y > 0. The wraps cancel: n1 + n2 - n3 = 0 at every check.",
+    "route": "a FOUR-REGIME interval argument pins k = 0 without ever needing the splits to be individually legitimate. Writing A = arg(1-y), a1 = arg(1-xy), a2 = arg(1-y/x), C = 2 arg(-y), the quantity A + a1 + a2 - C is 2*pi*k, and in each regime the four components sit in intervals whose sum is strictly inside (-2pi, 2pi). Regimes 1 and 2 split on the sign of Im(xy), which is forced by cos phi; regime 3 has neither sign and uses the identity Re(xy) + Re(y/x) = 2 cos(phi) Re(y) <= 0 instead; regime 4 is the real pair, where A = C = 0 outright. Only Im y > 0 is analysed; the other branch is the conjugate (G14).",
+    "regime_sizes": {
+      "cplx_Re_y_pos": 160,
+      "cplx_Re_y_nonpos_cos_nonpos": 107,
+      "cplx_Re_y_nonpos_cos_pos": 40,
+      "real_pair": 186
+    },
+    "trap": "the tree's four sign facts are NOT uniform -- two carry `cos phi < 0` and the `fst` multiplicative one measurably fails without it (G3). The failure region is regime 1, where the OPPOSITE sign is what supplies the bound.",
+    "endpoint": "S = 2*pi at Ypair.2 when phi = pi, so `he_j` is FALSE there (G15) -- the same endpoint, and the same cause, as VSide's failure. `envelopeS_total` needs the derivative only on `Ico 0 pi`.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

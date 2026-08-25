@@ -279,7 +279,7 @@ theorem row3_deuteron_formula :
   rfl
 
 theorem row3_deuteron_value :
-    deuteron_topological = 1875.61351137 := by
+    deuteron_topological = 1875.61351137 := by  -- noqa: P31 - COMPUTED topological value, not CODATA (302 ppb off, deliberately)
   unfold deuteron_topological proton_topological neutron_topological
   unfold proton_quarks neutron_quarks
   unfold proton_mass_MeV neutron_mass_MeV binding_energy_QOU
@@ -489,7 +489,7 @@ theorem mass_sum_rule :
     on the udd vs uud color-exchange configurations.
     NIST CODATA 2022: m_n/m_p = 1.001 378 419 31(49). -/
 theorem nucleon_mass_ratio_approx :
-    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 := by
+    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 := by  -- noqa: P31 - deliberate 8-digit round of CODATA-2022 1.00137841931; 1.9e-8 in, tolerance 1e-6
   unfold neutron_mass_MeV proton_mass_MeV
   norm_num
 
@@ -545,7 +545,7 @@ noncomputable def borromean_mass_ratio : ℝ :=
 
 | Link           | Lean Declaration     | Volume                       | Exact Form               |
 |----------------|----------------------|------------------------------|--------------------------|
-| Figure-eight 4₁| `vol_figure_eight`   | 2.02988321281931 (OEIS A091518)| 3 · Cl₂(π/3)           |
+| Figure-eight 4₁| `vol_figure_eight`   | 2.02988321281931 (OEIS A091518)| 2 · Cl₂(π/3) = 6 · Λ(π/3)|
 | Borromean 6₂³  | `vol_borromean`      | 7.32772475341775             | 8 · G (Catalan const)    |
 | Hopf L2a1      | `vol_hopf_link`      | 0                            | torus link               |
 

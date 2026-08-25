@@ -18,10 +18,9 @@ $\mathrm{tr}_M(\rho(\beta_1)) = \mathrm{tr}_M(\rho(\beta_2))$.
 Hence $\hat{V}(T_1) = \hat{V}(T_2)$ and $\mathcal{T}(T_1) = \mathcal{T}(T_2)$.
 
 The specific sequence of crossings within $\mathcal{S}_p$ does not matter:
-all that matters is the isotopy class of the resulting link.  This
-is the content of "what happens in the exceptional divisor stays in
-the exceptional divisor" --- the blow-down map $\pi$ collapses
-$\mathcal{S}_p$ to $p$, erasing the internal history.
+all that matters is the isotopy class of the resulting link.  The
+blow-down map $\pi$ collapses $\mathcal{S}_p$ to $p$, erasing the
+internal history.
 
 **(3) Well-definedness.**
 Independence from the braid representative is the link invariance

@@ -40,10 +40,12 @@ from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     Z, N = 2, 2
     n = 3 * (Z + N)          # 12
     atom = "helium-4"
@@ -72,7 +74,9 @@ def main() -> int:
             "y_lambda": str(y_lam),
             "chi_lambda": mp.nstr(chi, 50),
             "contribution": mp.nstr(contrib, 50),
-            "compute_time_sec": round(time.time() - t1, 4),
+            # wall clock, not a measurement — string keeps raw float64 out
+            # of the witness and stops per-run jitter rewriting the file
+            "compute_time_sec": f"{time.time() - t1:.4f}",
         })
         if (i + 1) % 15 == 0:
             print(f"   [{i+1}/{len(shapes)}] {time.time()-t0:.1f}s", flush=True)
@@ -101,7 +105,7 @@ def main() -> int:
         "n_skipped_max_dim": 0,
         "tr_M_partial": False,
         "partial": False,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }

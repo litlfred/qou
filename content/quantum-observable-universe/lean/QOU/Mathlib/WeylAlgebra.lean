@@ -18,15 +18,9 @@ instance : Algebra K (WeylAlgebra K) := RingQuot.instAlgebra (weylRel K)
 
 namespace WeylAlgebra
 
-<<<<<<< Updated upstream
-/-- The position generator `x`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
-def X : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X)
-/-- The momentum generator `∂`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
-=======
 /-- The position generator `x`, defined via `mkAlgHom` so `liftAlgHom_mkAlgHom_apply` fires. -/
 def X : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X)
 /-- The momentum generator `∂`, defined via `mkAlgHom` so `liftAlgHom_mkAlgHom_apply` fires. -/
->>>>>>> Stashed changes
 def D : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D)
 
 /-- The commutation relation `[∂, x] = 1`. -/
@@ -123,7 +117,6 @@ lemma FourierLaplace_sq_X : FourierLaplace K (FourierLaplace K (X K)) = -(X K) :
 lemma FourierLaplace_sq_D : FourierLaplace K (FourierLaplace K (D K)) = -(D K) := by
   rw [FourierLaplace_D, FourierLaplace_X]
 
-<<<<<<< Updated upstream
 /-- FL⁴ on X = X. Chain: FL(X)=−D, FL(−D)=−X, FL(−X)=D, FL(D)=X. -/
 lemma FourierLaplace_four_X :
     FourierLaplace K (FourierLaplace K (FourierLaplace K (FourierLaplace K (X K)))) = X K := by
@@ -140,16 +133,5 @@ lemma FourierLaplace_four_D :
   -- now: FL(−(X K)) = D K
   rw [map_neg, FourierLaplace_X]
   simp
-=======
-/-- FL⁴ on X: `FL⁴(x) = FL²(−x) = −FL²(x) = −(−x) = x`. -/
-lemma FourierLaplace_four_X :
-    FourierLaplace K (FourierLaplace K (FourierLaplace K (FourierLaplace K (X K)))) = X K := by
-  rw [FourierLaplace_sq_X, map_neg, FourierLaplace_sq_X, neg_neg]
-
-/-- FL⁴ on D: `FL⁴(∂) = FL²(−∂) = −FL²(∂) = −(−∂) = ∂`. -/
-lemma FourierLaplace_four_D :
-    FourierLaplace K (FourierLaplace K (FourierLaplace K (FourierLaplace K (D K)))) = D K := by
-  rw [FourierLaplace_sq_D, map_neg, FourierLaplace_sq_D, neg_neg]
->>>>>>> Stashed changes
 
 end WeylAlgebra

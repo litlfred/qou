@@ -7,7 +7,7 @@ an element of the **commutative** Laurent polynomial ring
 $\mathbb{Z}[q^{\pm 1/2}, z]$ — the coefficients $a_i, b_i$ are
 polynomials in $q^{\pm 1/2}$ and $z$ is a single transcendental
 parameter (the Markov parameter, eliminated by
-$z = 1/(q^{1/2} + q^{-1/2})$ at the end of every Markov peel,
+$z = q^{3}/(q^{2}+1)$ (**convention D**) at the end of every Markov peel,
 [`thm:jones-markov-trace`](#thm:jones-markov-trace)).
 
 Two elements of a commutative ring commute. Hence
@@ -54,7 +54,7 @@ Markov-trace factorization
    an explicit $q$-grading separating levels).
 
 Step 4 is the categorical content of "ascension". The operator
-pentagon was a heuristic prompt; the rigorous version uses the
+pentagon is a heuristic; the rigorous version uses the
 brane-tower's $q$-graded jet ascension, not a non-commutative
 operator identity on $\hat V$'s.
 
@@ -82,8 +82,7 @@ $\widehat V_j$ onto a single level (level $n$, say); in this
 projection the q-grading collapses, the operators become scalars,
 and the pentagon collapses to a tautology.
 
-The audit gap is therefore resolved as follows: the pentagon
+The apparent tension is therefore resolved as follows: the pentagon
 identity is a feature of the **operator lift** (between adjacent
 jet levels), not of the scalar $\hat V_i$'s within a single jet
-level. The level-internal pair commutation is trivial; the
-inter-level pentagon governs the ascension.
+level.

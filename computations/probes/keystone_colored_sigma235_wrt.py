@@ -11,7 +11,27 @@ CLOSED-manifold invariant Ψ(1/q₀) = 2.3296 — ONE number — and its verdict
     "the λ-family needs the WRT TQFT with λ-COLORED insertions (colored Σ(2,3,5) invariants /
      S-matrix), not the bare closed-manifold number."
 
-This probe takes that step. The Lawrence–Zagier/Hikami false theta Ψ(q) = Σ χ(n) q^{n²/120} of
+NORMALISATION (corrected 2026-08-09). Two series are in play and they are NOT the same object:
+
+    Ψ_LZ(q) = Σ χ(n) q^{n²/120}              (Lawrence–Zagier/Hikami false theta)
+    S_JL(q) = Σ χ(n) q^{(n²−1)/120}          (Jacoby–Lawrence, library/04procbryden/04procbryden.pdf p.55)
+
+They differ by exactly one universal factor, Ψ_LZ = q^{1/120}·S_JL — not by any n-dependent
+reindexing, because (n²−1)/120 is an INTEGER on the whole support of χ. That integrality is
+proved sorry-free in QOU/MathlibExt/Sigma235FalseThetaExponent.lean
+(`sigma235_sq_eq_120_mul_add_one`: n² = 120m+1 on the eight support residues mod 60), which
+also records the four low exponents 0,1,3,7 that p.55 prints.
+
+The Ohtsuki series itself is the AFFINE image of S_JL, not S_JL and not Ψ_LZ:
+
+    q(q−1)·Z_∞(Σ(2,3,5))(q) = 1 − ½·S_JL(q)
+
+so at 1/q₀ the closed-manifold quantity is ≈ −0.1658, while Ψ_LZ(1/q₀) ≈ 2.3296 and
+S_JL(1/q₀) ≈ 2.3316. An earlier revision of this docstring called Ψ_LZ(1/q₀) "the CLOSED-manifold
+invariant"; that identification was wrong — it omits both the q^{−1/120} twist and the affine
+wrapper (which flips the sign). All three are now emitted separately so no consumer has to guess.
+
+This probe takes that step. The false theta of
 Σ(2,3,5) has support on the residues n ≡ 30·(1 ± 1/2 ± 1/3 ± 1/5) (mod 60) = {1,11,19,29} — the
 ρ-shift of the SU(2) WRT surgery presentation (P = p₁p₂p₃ = 30 = Coxeter number h(E₈)). A Wilson
 line on the order-5 EXCEPTIONAL FIBRE (the icosahedral / A₅ fibre — the keystone's own fibre)
@@ -41,12 +61,17 @@ sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf, nstr  # noqa: E402
+from _precision import str_at_true_precision  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
-Q0 = mpf("1.1099785955541805")
-INV = 1 / Q0  # bar image, inside the unit disk where Ψ converges
+set_compute_dps()
+# Experimental (proton) pin — the default for all compute per the 2026-08-07 owner directive.
+# This file previously carried the muon pin 1.1099785955541805 (−11.5 ppb); it was moved here
+# rather than left straddling, since the whole quantity must sit on one layer.
+Q0 = mpf("1.1099785827513808")
+INV = 1 / Q0  # bar image, inside the unit disk where the false theta converges
 
 P = 30  # = p1*p2*p3 = 2*3*5 = Coxeter number of E8 AND of H4 (600-cell)
 E8_EXPONENTS = (1, 7, 11, 13, 17, 19, 23, 29)
@@ -67,7 +92,7 @@ def colored_support(alpha):
         for s3 in (-1, 1):
             for s5 in (-1, 1):
                 val = P * (1 + s2 * mpf(1) / 2 + s3 * mpf(1) / 3 + s5 * mpf(alpha) / 5)
-                r = int(round(float(val))) % 60
+                r = int(mp.nint(val)) % 60      # round in mpmath, not via f64
                 if r == 0:
                     continue
                 # canonical positive rep in 1..59; fold 60−r≡−r into the +set via |·|
@@ -92,8 +117,26 @@ def chi_of(support):
 
 
 def false_theta(chi, q, nterms=4000):
+    """Ψ_LZ(q) = Σ χ(n) q^{n²/120} — the Lawrence–Zagier/Hikami normalisation."""
     terms = [chi(n) * q ** (mpf(n * n) / 120) for n in range(nterms) if chi(n)]
     return mp.fsum(terms)
+
+
+def false_theta_jl(chi, q, nterms=4000):
+    """S_JL(q) = Σ χ(n) q^{(n²−1)/120} — Jacoby–Lawrence p.55.
+
+    Exponents are integers on the whole support (Lean:
+    `QOU.MathlibExt.sigma235_sq_eq_120_mul_add_one`), so this differs from `false_theta`
+    by the single factor q^{1/120} and by nothing else."""
+    terms = [chi(n) * q ** (mpf(n * n - 1) / 120) for n in range(nterms) if chi(n)]
+    return mp.fsum(terms)
+
+
+def ohtsuki_series_affine(chi, q, nterms=4000):
+    """q(q−1)·Z_∞(Σ(2,3,5))(q) = 1 − ½·S_JL(q) — the closed-manifold quantity itself.
+
+    This, NOT Ψ_LZ, is the Ohtsuki-series side of Jacoby–Lawrence p.55."""
+    return 1 - false_theta_jl(chi, q, nterms) / 2
 
 
 # ---- W_λ / d_q machinery (n=5) -------------------------------------------------
@@ -130,8 +173,19 @@ def run():
     for alpha in (1, 2, 3, 4):
         supp = colored_support(alpha)
         union |= set(supp)
-        psi = false_theta(chi_of(supp), INV)
-        colors[alpha] = {"support": supp, "psi_at_inv_q0": float(psi)}
+        chi = chi_of(supp)
+        psi = false_theta(chi, INV)              # Ψ_LZ, exponent n²/120
+        s_jl = false_theta_jl(chi, INV)          # S_JL, exponent (n²−1)/120
+        ohtsuki = ohtsuki_series_affine(chi, INV)  # 1 − ½ S_JL
+        colors[alpha] = {
+            "support": supp,
+            "psi_lz_at_inv_q0": str_at_true_precision(psi),
+            "s_jl_at_inv_q0": str_at_true_precision(s_jl),
+            "ohtsuki_affine_at_inv_q0": str_at_true_precision(ohtsuki),
+            # sanity: the two normalisations must differ by exactly q^{1/120}
+            "psi_over_s_jl": str_at_true_precision(psi / s_jl),
+            "q_pow_1_over_120": str_at_true_precision(INV ** (mpf(1) / 120)),
+        }
     e8_generated = sorted(union) == sorted(E8_EXPONENTS)
     # the two lowest colours cover the E8 exponents?
     two_color_union = sorted(set(colored_support(1)) | set(colored_support(2)))
@@ -140,17 +194,22 @@ def run():
     # Value-screen: is the naive exponent quantum dimension [e]_q the value map d_q?
     # Assign each conjugation class its dual-pair smallest exponent (monotone order) and compare.
     def qint_local(m):
-        return float((Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1)))
+        return (Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1))
     value_screen = []
+    ratios = []
     for e, lam in zip((1, 7, 11, 13), [(5,), (4, 1), (3, 2), (3, 1, 1)]):
-        tgt = float(d_q(lam))
-        value_screen.append({"exponent": e, "lambda": list(lam), "d_q": tgt,
-                             "qint_e": qint_local(e), "ratio_target_over_qint": tgt / qint_local(e)})
-    qint_refuted = not all(abs(v["ratio_target_over_qint"] - value_screen[0]["ratio_target_over_qint"])
-                           < 1e-6 for v in value_screen)
+        tgt = d_q(lam)
+        ratio = tgt / qint_local(e)
+        ratios.append(ratio)
+        value_screen.append({"exponent": e, "lambda": list(lam),
+                             "d_q": str_at_true_precision(tgt),
+                             "qint_e": str_at_true_precision(qint_local(e)),
+                             "ratio_target_over_qint": str_at_true_precision(ratio)})
+    # the refutation is decided on the mpf ratios, not on their f64 shadows
+    qint_refuted = not all(abs(r - ratios[0]) < mpf("1e-6") for r in ratios)
 
     D2 = mp.fsum(d_q(l) ** 2 for l in PARTS5)
-    bwS0 = {repr(l): float(d_q(l) / mp.sqrt(D2)) for l in PARTS5}
+    bwS0 = {repr(l): str_at_true_precision(d_q(l) / mp.sqrt(D2)) for l in PARTS5}
 
     # E8 exponents pair under e <-> h - e = 30 - e: 4 dual pairs.
     e8_pairs = sorted({tuple(sorted((e, P - e))) for e in E8_EXPONENTS})
@@ -165,14 +224,15 @@ def run():
             continue
         seen.add(key)
         bw_classes.append({"reps": sorted([list(l), list(conj(l))]),
-                           "bwS0": float(d_q(l) / mp.sqrt(D2))})
+                           "bwS0": str_at_true_precision(d_q(l) / mp.sqrt(D2))})
     return {
-        "q0": float(Q0), "inv_q0": float(INV), "P": P, "E8_exponents": list(E8_EXPONENTS),
+        "q0": str_at_true_precision(Q0), "inv_q0": str_at_true_precision(INV),
+        "P": P, "E8_exponents": list(E8_EXPONENTS),
         "colors": colors, "union_support": sorted(union),
         "two_color_union": two_color_union,
         "e8_exponents_generated": e8_generated,
-        "D2": float(D2), "bwS0_n5": bwS0,
-        "d_q_n5": {repr(l): float(d_q(l)) for l in PARTS5},
+        "D2": str_at_true_precision(D2), "bwS0_n5": bwS0,
+        "d_q_n5": {repr(l): str_at_true_precision(d_q(l)) for l in PARTS5},
         "e8_dual_pairs": [list(p) for p in e8_pairs],
         "bwS0_conjugation_classes": bw_classes,
         "count_match_4_to_4": len(e8_pairs) == len(bw_classes),
@@ -185,14 +245,21 @@ def run():
 
 def report(res):
     print("# λ-coloured Σ(2,3,5) WRT — the residual keystone frontier (colored insertions)\n")
-    print(f"q₀ = {res['q0']:.10f}   1/q₀ = {res['inv_q0']:.10f}   P = {res['P']} = h(E₈)\n")
+    print(f"q₀ = {float(mpf(res['q0'])):.10f}   1/q₀ = {float(mpf(res['inv_q0'])):.10f}"
+          f"   P = {res['P']} = h(E₈)\n")
     print("Colouring the order-5 (icosahedral / A₅) fibre by SU(2) colour α shifts 1/5 → α/5:\n")
-    print("| colour α | support R(α) mod 60 | Ψ^{(α)}(1/q₀) |")
-    print("|--:|---|--:|")
+    print("| colour α | support R(α) mod 60 | Ψ_LZ(1/q₀) | S_JL(1/q₀) | 1−½S_JL |")
+    print("|--:|---|--:|--:|--:|")
     for a, d in res["colors"].items():
-        print(f"| {a} | {{{', '.join(map(str, d['support']))}}} | {d['psi_at_inv_q0']:.6f} |")
-    print(f"\n- α=1 support = {{1,11,19,29}} = the **bare** Σ(2,3,5) false-theta support "
-          f"(reproduces `keystone_habiro_wrt_s3_2i_probe`, Ψ≈2.330). ✓ validates the colour formula.")
+        print(f"| {a} | {{{', '.join(map(str, d['support']))}}} | "
+              f"{float(mpf(d['psi_lz_at_inv_q0'])):.6f} | "
+              f"{float(mpf(d['s_jl_at_inv_q0'])):.6f} | "
+              f"{float(mpf(d['ohtsuki_affine_at_inv_q0'])):.6f} |")
+    print("\n  Ψ_LZ = q^{1/120}·S_JL exactly (integrality of (n²−1)/120 on the support is Lean-proved:")
+    print("  QOU.MathlibExt.sigma235_sq_eq_120_mul_add_one). The Ohtsuki series of Jacoby–Lawrence")
+    print("  p.55 is the LAST column, 1 − ½S_JL — not Ψ_LZ, which is neither the invariant nor S_JL.")
+    print(f"\n- α=1 support = {{1,11,19,29}} = the **bare** Σ(2,3,5) false-theta support. "
+          f"✓ validates the colour formula.")
     print(f"- α=2 support = {set(res['colors'][2]['support'])} = the **complementary** four E₈ exponents.")
     print(f"- α=1 ∪ α=2 = {res['two_color_union']}")
     print(f"- E₈ exponents = {res['E8_exponents']}")
@@ -212,7 +279,8 @@ def report(res):
     print("| λ | d_q | bwS0 = d_q/D |")
     print("|---|--:|--:|")
     for l in PARTS5:
-        print(f"| {l} | {res['d_q_n5'][repr(l)]:.6f} | {res['bwS0_n5'][repr(l)]:.6f} |")
+        print(f"| {l} | {float(mpf(res['d_q_n5'][repr(l)])):.6f} | "
+              f"{float(mpf(res['bwS0_n5'][repr(l)])):.6f} |")
     print("\n## The colour↔block correspondence (E₈ dual pairs ↔ bwS0 conjugation classes)\n")
     print(f"E₈ exponents pair under e ↔ h−e = 30−e into **{len(res['e8_dual_pairs'])} dual pairs**; "
           f"the n=5 bwS0 family collapses under conjugation λ↔λ′ into "
@@ -225,7 +293,8 @@ def report(res):
     for i, c in enumerate(cls):
         pp = pairs_sorted[i] if i < len(pairs_sorted) else ["—"]
         reps = " ~ ".join("(" + ",".join(map(str, r)) + ")" for r in c["reps"])
-        print(f"| {{{pp[0]}, {pp[1] if len(pp) > 1 else ''}}} | ↔ | {reps} | {c['bwS0']:.6f} |")
+        print(f"| {{{pp[0]}, {pp[1] if len(pp) > 1 else ''}}} | ↔ | {reps} | "
+              f"{float(mpf(c['bwS0'])):.6f} |")
     print(f"\n- **Count match: 4 E₈ dual pairs ↔ 4 bwS0 conjugation classes — {res['count_match_4_to_4']}.**")
     print("  The pairing is structural (both are the icosahedral/E₈ data): the Coxeter involution")
     print("  e↔h−e on the colored-fibre exponents mirrors the transpose involution λ↔λ′ on the W_λ")
@@ -243,8 +312,9 @@ def report(res):
     print("  | exponent e | λ | target d_q | [e]_q | d_q/[e]_q |")
     print("  |--:|---|--:|--:|--:|")
     for v in res["value_screen_qint"]:
-        print(f"  | {v['exponent']} | {tuple(v['lambda'])} | {v['d_q']:.4f} | {v['qint_e']:.4f} "
-              f"| {v['ratio_target_over_qint']:.4f} |")
+        print(f"  | {v['exponent']} | {tuple(v['lambda'])} | "
+              f"{float(mpf(v['d_q'])):.4f} | {float(mpf(v['qint_e'])):.4f} "
+              f"| {float(mpf(v['ratio_target_over_qint'])):.4f} |")
     print("  The ratio d_q/[e]_q is non-constant (1.000, 0.539, 0.385, 0.359), so NO global")
     print("  normalisation makes the colored exponent's quantum dimension equal d_q. The value map")
     print("  is therefore NOT the exponent-label q-dimension; it needs the genuine colored")

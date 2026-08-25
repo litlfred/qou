@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T21:52:34.211620+00:00",
-  "commitSha": "9d2bd8e854449e89f30f6d1b18e6d73091051d30",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-09T13:55:31.237297+00:00",
+  "commitSha": "f884620c6840951a00564d8681c30453c68160d2",
   "assertions": [
     {
       "name": "extracted_theta_all_real",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "em-linking-sk-theta-extraction",
   "scriptFile": "em_linking_sk_form_theta_extraction.py",
-  "scriptHash": "cb1a54a36da4",
-  "scriptCommitSha": "30268f147e2a037ddfbfc57f0c3fa232981a1094",
+  "scriptHash": "a300dc21a067",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY test of the owner's lead (bean qou-ed61): is the per-pair Coulomb unit S_K-shaped, S_K = A_omega * cuspModulus * (ln^2 q0 - theta_K^2)? A_omega = 3 is the exact q-independent Stokes symmetry constant and cuspModulus = sqrt3/4 is proved, so the knot-dependence sits entirely in theta_K -- the OPEN G3 datum. Inverts the extended mirror series to the implied theta_K per pair and checks the S_K form for consistency (reality, boost-dominance, smoothness). Does NOT derive theta_K; the normalisation theta_3 is a declared free choice and the whole one-parameter family is reported.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -58,147 +60,147 @@
           {
             "A": 3,
             "theta": "0.0",
-            "theta_over_ln_q0": 0.0
+            "theta_over_ln_q0": "0.0"
           },
           {
             "A": 7,
             "theta": "0.055446827",
-            "theta_over_ln_q0": 0.5314016096047078
+            "theta_over_ln_q0": "0.53140161"
           },
           {
             "A": 11,
             "theta": "0.054835803",
-            "theta_over_ln_q0": 0.5255455638450296
+            "theta_over_ln_q0": "0.52554556"
           },
           {
             "A": 13,
             "theta": "0.061261818",
-            "theta_over_ln_q0": 0.5871324051183731
+            "theta_over_ln_q0": "0.58713241"
           },
           {
             "A": 15,
             "theta": "0.060706804",
-            "theta_over_ln_q0": 0.5818131572215627
+            "theta_over_ln_q0": "0.58181316"
           },
           {
             "A": 17,
             "theta": "0.067633832",
-            "theta_over_ln_q0": 0.6482016973493321
+            "theta_over_ln_q0": "0.6482017"
           },
           {
             "A": 19,
             "theta": "0.067208837",
-            "theta_over_ln_q0": 0.6441285554732723
+            "theta_over_ln_q0": "0.64412856"
           },
           {
             "A": 21,
             "theta": "0.068671759",
-            "theta_over_ln_q0": 0.658149178072404
+            "theta_over_ln_q0": "0.65814918"
           },
           {
             "A": 23,
             "theta": "0.067947714",
-            "theta_over_ln_q0": 0.6512099345114106
+            "theta_over_ln_q0": "0.65120993"
           },
           {
             "A": 25,
             "theta": "0.069837805",
-            "theta_over_ln_q0": 0.6693245467497726
+            "theta_over_ln_q0": "0.66932455"
           },
           {
             "A": 27,
             "theta": "0.068937422",
-            "theta_over_ln_q0": 0.6606952860321952
+            "theta_over_ln_q0": "0.66069529"
           },
           {
             "A": 29,
             "theta": "0.071121861",
-            "theta_over_ln_q0": 0.6816309166808198
+            "theta_over_ln_q0": "0.68163092"
           },
           {
             "A": 31,
             "theta": "0.070807971",
-            "theta_over_ln_q0": 0.6786226012652128
+            "theta_over_ln_q0": "0.6786226"
           },
           {
             "A": 33,
             "theta": "0.072225108",
-            "theta_over_ln_q0": 0.6922044174908218
+            "theta_over_ln_q0": "0.69220442"
           },
           {
             "A": 35,
             "theta": "0.072306779",
-            "theta_over_ln_q0": 0.6929871511571226
+            "theta_over_ln_q0": "0.69298715"
           },
           {
             "A": 37,
             "theta": "0.073478703",
-            "theta_over_ln_q0": 0.7042188604601956
+            "theta_over_ln_q0": "0.70421886"
           },
           {
             "A": 39,
             "theta": "0.073519448",
-            "theta_over_ln_q0": 0.7046093599134319
+            "theta_over_ln_q0": "0.70460936"
           },
           {
             "A": 41,
             "theta": "0.075497214",
-            "theta_over_ln_q0": 0.7235642420350902
+            "theta_over_ln_q0": "0.72356424"
           },
           {
             "A": 43,
             "theta": "0.075438215",
-            "theta_over_ln_q0": 0.7229987956991567
+            "theta_over_ln_q0": "0.7229988"
           },
           {
             "A": 45,
             "theta": "0.075923028",
-            "theta_over_ln_q0": 0.727645236181182
+            "theta_over_ln_q0": "0.72764524"
           },
           {
             "A": 47,
             "theta": "0.076082945",
-            "theta_over_ln_q0": 0.7291778823723938
+            "theta_over_ln_q0": "0.72917788"
           },
           {
             "A": 49,
             "theta": "0.076430379",
-            "theta_over_ln_q0": 0.7325076770358471
+            "theta_over_ln_q0": "0.73250768"
           },
           {
             "A": 51,
             "theta": "0.076476369",
-            "theta_over_ln_q0": 0.7329484475577062
+            "theta_over_ln_q0": "0.73294845"
           },
           {
             "A": 53,
             "theta": "0.076903112",
-            "theta_over_ln_q0": 0.7370383431250321
+            "theta_over_ln_q0": "0.73703834"
           },
           {
             "A": 55,
             "theta": "0.076706989",
-            "theta_over_ln_q0": 0.735158706825101
+            "theta_over_ln_q0": "0.73515871"
           },
           {
             "A": 57,
             "theta": "0.077598015",
-            "theta_over_ln_q0": 0.7436982886552536
+            "theta_over_ln_q0": "0.74369829"
           },
           {
             "A": 59,
             "theta": "0.07751403",
-            "theta_over_ln_q0": 0.7428933773697013
+            "theta_over_ln_q0": "0.74289338"
           },
           {
             "A": 61,
             "theta": "0.078339572",
-            "theta_over_ln_q0": 0.7508053591606186
+            "theta_over_ln_q0": "0.75080536"
           },
           {
             "A": 63,
             "theta": "0.078109079",
-            "theta_over_ln_q0": 0.7485963192119941
+            "theta_over_ln_q0": "0.74859632"
           }
         ]
       },
@@ -209,147 +211,147 @@
           {
             "A": 3,
             "theta": "0.02608518",
-            "theta_over_ln_q0": 0.25
+            "theta_over_ln_q0": "0.25"
           },
           {
             "A": 7,
             "theta": "0.059687857",
-            "theta_over_ln_q0": 0.5720475865453151
+            "theta_over_ln_q0": "0.57204759"
           },
           {
             "A": 11,
             "theta": "0.059156289",
-            "theta_over_ln_q0": 0.5669530456284415
+            "theta_over_ln_q0": "0.56695305"
           },
           {
             "A": 13,
             "theta": "0.064798795",
-            "theta_over_ln_q0": 0.6210307418468348
+            "theta_over_ln_q0": "0.62103074"
           },
           {
             "A": 15,
             "theta": "0.064307234",
-            "theta_over_ln_q0": 0.6163196334260049
+            "theta_over_ln_q0": "0.61631963"
           },
           {
             "A": 17,
             "theta": "0.070490254",
-            "theta_over_ln_q0": 0.6755776050304254
+            "theta_over_ln_q0": "0.67557761"
           },
           {
             "A": 19,
             "theta": "0.070108132",
-            "theta_over_ln_q0": 0.6719153564457202
+            "theta_over_ln_q0": "0.67191536"
           },
           {
             "A": 21,
             "theta": "0.071424849",
-            "theta_over_ln_q0": 0.6845347466053456
+            "theta_over_ln_q0": "0.68453475"
           },
           {
             "A": 23,
             "theta": "0.070772683",
-            "theta_over_ln_q0": 0.6782844020991183
+            "theta_over_ln_q0": "0.6782844"
           },
           {
             "A": 25,
             "theta": "0.072477053",
-            "theta_over_ln_q0": 0.694619060764011
+            "theta_over_ln_q0": "0.69461906"
           },
           {
             "A": 27,
             "theta": "0.071664369",
-            "theta_over_ln_q0": 0.6868303063156077
+            "theta_over_ln_q0": "0.68683031"
           },
           {
             "A": 29,
             "theta": "0.073638378",
-            "theta_over_ln_q0": 0.705749185202639
+            "theta_over_ln_q0": "0.70574919"
           },
           {
             "A": 31,
             "theta": "0.073354242",
-            "theta_over_ln_q0": 0.7030260274440173
+            "theta_over_ln_q0": "0.70302603"
           },
           {
             "A": 33,
             "theta": "0.074638285",
-            "theta_over_ln_q0": 0.7153322800413769
+            "theta_over_ln_q0": "0.71533228"
           },
           {
             "A": 35,
             "theta": "0.074712382",
-            "theta_over_ln_q0": 0.7160424164737453
+            "theta_over_ln_q0": "0.71604242"
           },
           {
             "A": 37,
             "theta": "0.075776721",
-            "theta_over_ln_q0": 0.726243031438936
+            "theta_over_ln_q0": "0.72624303"
           },
           {
             "A": 39,
             "theta": "0.075813762",
-            "theta_over_ln_q0": 0.7265980341273744
+            "theta_over_ln_q0": "0.72659803"
           },
           {
             "A": 41,
             "theta": "0.077614603",
-            "theta_over_ln_q0": 0.7438572689567711
+            "theta_over_ln_q0": "0.74385727"
           },
           {
             "A": 43,
             "theta": "0.077560803",
-            "theta_over_ln_q0": 0.7433416475087542
+            "theta_over_ln_q0": "0.74334165"
           },
           {
             "A": 45,
             "theta": "0.078003036",
-            "theta_over_ln_q0": 0.7475800060051065
+            "theta_over_ln_q0": "0.74758001"
           },
           {
             "A": 47,
             "theta": "0.078148978",
-            "theta_over_ln_q0": 0.7489787114012457
+            "theta_over_ln_q0": "0.74897871"
           },
           {
             "A": 49,
             "theta": "0.078466166",
-            "theta_over_ln_q0": 0.7520186356462015
+            "theta_over_ln_q0": "0.75201864"
           },
           {
             "A": 51,
             "theta": "0.078508165",
-            "theta_over_ln_q0": 0.7524211504228688
+            "theta_over_ln_q0": "0.75242115"
           },
           {
             "A": 53,
             "theta": "0.078898002",
-            "theta_over_ln_q0": 0.756157340957695
+            "theta_over_ln_q0": "0.75615734"
           },
           {
             "A": 55,
             "theta": "0.078718811",
-            "theta_over_ln_q0": 0.7544399770405579
+            "theta_over_ln_q0": "0.75443998"
           },
           {
             "A": 57,
             "theta": "0.079533313",
-            "theta_over_ln_q0": 0.7622461531647475
+            "theta_over_ln_q0": "0.76224615"
           },
           {
             "A": 59,
             "theta": "0.079456497",
-            "theta_over_ln_q0": 0.7615099536486876
+            "theta_over_ln_q0": "0.76150995"
           },
           {
             "A": 61,
             "theta": "0.080211951",
-            "theta_over_ln_q0": 0.7687502158603187
+            "theta_over_ln_q0": "0.76875022"
           },
           {
             "A": 63,
             "theta": "0.080000941",
-            "theta_over_ln_q0": 0.7667278989750123
+            "theta_over_ln_q0": "0.7667279"
           }
         ]
       },
@@ -360,147 +362,147 @@
           {
             "A": 3,
             "theta": "0.05217036",
-            "theta_over_ln_q0": 0.5
+            "theta_over_ln_q0": "0.5"
           },
           {
             "A": 7,
             "theta": "0.070904932",
-            "theta_over_ln_q0": 0.6795518766200678
+            "theta_over_ln_q0": "0.67955188"
           },
           {
             "A": 11,
             "theta": "0.070547646",
-            "theta_over_ln_q0": 0.6761276541880923
+            "theta_over_ln_q0": "0.67612765"
           },
           {
             "A": 13,
             "theta": "0.074407689",
-            "theta_over_ln_q0": 0.7131222516897534
+            "theta_over_ln_q0": "0.71312225"
           },
           {
             "A": 15,
             "theta": "0.074065738",
-            "theta_over_ln_q0": 0.7098449918377195
+            "theta_over_ln_q0": "0.70984499"
           },
           {
             "A": 17,
             "theta": "0.07843786",
-            "theta_over_ln_q0": 0.7517473513986707
+            "theta_over_ln_q0": "0.75174735"
           },
           {
             "A": 19,
             "theta": "0.078163402",
-            "theta_over_ln_q0": 0.7491169447970479
+            "theta_over_ln_q0": "0.74911694"
           },
           {
             "A": 21,
             "theta": "0.079111342",
-            "theta_over_ln_q0": 0.7582019885545248
+            "theta_over_ln_q0": "0.75820199"
           },
           {
             "A": 23,
             "theta": "0.078641054",
-            "theta_over_ln_q0": 0.7536947552588957
+            "theta_over_ln_q0": "0.75369476"
           },
           {
             "A": 25,
             "theta": "0.079873248",
-            "theta_over_ln_q0": 0.7655040899050386
+            "theta_over_ln_q0": "0.76550409"
           },
           {
             "A": 27,
             "theta": "0.079284441",
-            "theta_over_ln_q0": 0.7598609713223026
+            "theta_over_ln_q0": "0.75986097"
           },
           {
             "A": 29,
             "theta": "0.080718559",
-            "theta_over_ln_q0": 0.7736055389740634
+            "theta_over_ln_q0": "0.77360554"
           },
           {
             "A": 31,
             "theta": "0.080511323",
-            "theta_over_ln_q0": 0.7716193855852592
+            "theta_over_ln_q0": "0.77161939"
           },
           {
             "A": 33,
             "theta": "0.081449961",
-            "theta_over_ln_q0": 0.7806152808492516
+            "theta_over_ln_q0": "0.78061528"
           },
           {
             "A": 35,
             "theta": "0.081504289",
-            "theta_over_ln_q0": 0.7811359636783142
+            "theta_over_ln_q0": "0.78113596"
           },
           {
             "A": 37,
             "theta": "0.082286611",
-            "theta_over_ln_q0": 0.7886337252304725
+            "theta_over_ln_q0": "0.78863373"
           },
           {
             "A": 39,
             "theta": "0.082313902",
-            "theta_over_ln_q0": 0.7888952798427762
+            "theta_over_ln_q0": "0.78889528"
           },
           {
             "A": 41,
             "theta": "0.083645792",
-            "theta_over_ln_q0": 0.8016600958410371
+            "theta_over_ln_q0": "0.8016601"
           },
           {
             "A": 43,
             "theta": "0.083605859",
-            "theta_over_ln_q0": 0.8012773826440025
+            "theta_over_ln_q0": "0.80127738"
           },
           {
             "A": 45,
             "theta": "0.083934356",
-            "theta_over_ln_q0": 0.8044256909764109
+            "theta_over_ln_q0": "0.80442569"
           },
           {
             "A": 47,
             "theta": "0.08404289",
-            "theta_over_ln_q0": 0.8054658826454516
+            "theta_over_ln_q0": "0.80546588"
           },
           {
             "A": 49,
             "theta": "0.084278992",
-            "theta_over_ln_q0": 0.8077286813573847
+            "theta_over_ln_q0": "0.80772868"
           },
           {
             "A": 51,
             "theta": "0.084310277",
-            "theta_over_ln_q0": 0.8080285082117701
+            "theta_over_ln_q0": "0.80802851"
           },
           {
             "A": 53,
             "theta": "0.084600904",
-            "theta_over_ln_q0": 0.810813874713161
+            "theta_over_ln_q0": "0.81081387"
           },
           {
             "A": 55,
             "theta": "0.084467261",
-            "theta_over_ln_q0": 0.8095330401938923
+            "theta_over_ln_q0": "0.80953304"
           },
           {
             "A": 57,
             "theta": "0.085075469",
-            "theta_over_ln_q0": 0.815362102633894
+            "theta_over_ln_q0": "0.8153621"
           },
           {
             "A": 59,
             "theta": "0.085018028",
-            "theta_over_ln_q0": 0.8148115902494398
+            "theta_over_ln_q0": "0.81481159"
           },
           {
             "A": 61,
             "theta": "0.08558366",
-            "theta_over_ln_q0": 0.8202325984184177
+            "theta_over_ln_q0": "0.8202326"
           },
           {
             "A": 63,
             "theta": "0.085425509",
-            "theta_over_ln_q0": 0.8187168844315532
+            "theta_over_ln_q0": "0.81871688"
           }
         ]
       }
@@ -509,23 +511,23 @@
       "monotone_increasing": false,
       "monotone_within_5pct": true,
       "theta_max": "0.078339572",
-      "theta_max_over_ln_q0": 0.7508053592126165,
+      "theta_max_over_ln_q0": "0.75080536",
       "power_law_scan": {
         "theta ~ A^(1/6)": {
           "coefficient": "0.039982453",
-          "rel_scatter": 0.023321587186767103
+          "rel_scatter": "0.023321587"
         },
         "theta ~ A^(1/4)": {
           "coefficient": "0.030033107",
-          "rel_scatter": 0.053699187175961796
+          "rel_scatter": "0.053699187"
         },
         "theta ~ A^(1/3)": {
           "coefficient": "0.022610851",
-          "rel_scatter": 0.10025383627361818
+          "rel_scatter": "0.10025384"
         },
         "theta ~ A^(1/2)": {
           "coefficient": "0.012907985",
-          "rel_scatter": 0.2034201467412241
+          "rel_scatter": "0.20342015"
         }
       },
       "best_power_law": "theta ~ A^(1/6)"
@@ -537,6 +539,16 @@
       "verdict": "The S_K form itself is NOT falsified: theta stays real, stays boost-dominated, stays monotone within tolerance, and the A^(1/6) description IMPROVED (2.80% -> 2.33%). What is falsified is my claim that this was a sharp discriminator. Under theta ~ A^(1/6), reaching the wall needs A ~ (1/0.75)^6 * 63 ~ 350 -- far beyond the last bound mirror pair. The wall is UNREACHABLE in this series, so the test cannot discriminate, and the two readings are degenerate over the whole accessible range. I proposed it as cheap and decisive; it is cheap and indecisive, and that is recorded rather than restated as a success.",
       "what_the_extension_DID_settle": "Not this, but something else: H_coth's scatter IMPROVED with the extension (4.25% -> 3.50% on bound pairs) while its rivals did not (H_FH_Z 4.52% -> 4.39%, H_FH_A 5.50%). The three are no longer statistically tied. Combined with the round-5 withdrawal of the H_FH warrant, coth-saturation is now the only reading with both the best fit and a structural story -- though 'best of three' is not the same as derived."
     },
-    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive."
+    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "2f63bcf2281c7d9c3977c6cc427071c931dc978c8fef05490c8eeaf138322b8a",
+        "size_bytes": 10565,
+        "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-08T11:16:56.186917+00:00"
+      }
+    ]
   }
 }

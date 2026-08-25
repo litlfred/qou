@@ -1,14 +1,23 @@
 name: lean-content-siblings
 
 # Two gates for content-block `.lean` siblings (content/<paper>/<chapter>/*.lean),
-# which live OUTSIDE the CI-built `lake build QOU` target (the qou lakefile globs
-# srcDir="." = the lean/ tree only). They are never compile-checked by the
-# library build and accumulate latent breakage: a type-erroring `:= trivial`
+# which live OUTSIDE the CI-built `lake build QOU` target. They are never
+# compile-checked by the library build and accumulate latent breakage: a
+# type-erroring `:= trivial`
 # value (trivial : True cannot inhabit a data type), an `import` after a `/-!`
 # module docstring (illegal Lean-4 import order), or — the class this gate's
 # compile job catches — a sibling that *never compiled standalone at all* (bad
 # imports, orphaned bodies, renamed Mathlib modules). None of these is caught by
 # the vacuity audit (which keys on a True *conclusion*) nor by the library build.
+#
+# NOTE (bean qou-orph, 2026-08-08): this header used to explain the exclusion as
+# "the qou lakefile globs srcDir='.' = the lean/ tree only", which reads as
+# though everything INSIDE lean/ is covered by `lake build`. It is not. `globs`
+# is unset, so Lake's default target is the single module `QOU` plus its
+# transitive import closure — 47% of the modules under lean/QOU/ are imported by
+# nothing and are never compiled either. That is a separate problem with its own
+# gate (.github/workflows/lean-orphan-gate.yml); this workflow remains only about
+# siblings outside the lean/ tree.
 #
 # Jobs:
 #   gate — bun-only, no Lean toolchain:

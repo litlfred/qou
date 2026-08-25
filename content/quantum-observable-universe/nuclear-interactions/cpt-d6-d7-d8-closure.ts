@@ -3,9 +3,9 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:cpt-d6-d7-d8-closure",
   title:
-    "CPT closure: D6 + D7 + D8 jointly imply $C \\cdot P \\cdot T$ preserves the Markov trace",
+    "CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace",
   lean: {
-    ref: "qou:QOU.ParticleInteractions.CPTD6D7D8Closure",
+    ref: "qou:QOU.ParticleInteractions.CPTClosure",
     validation: "not_checked",
   },
   uses: [

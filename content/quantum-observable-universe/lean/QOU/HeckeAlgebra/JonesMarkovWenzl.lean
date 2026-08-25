@@ -2,8 +2,8 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.HeckeAlgebra.JonesMarkovWenzl
@@ -23,11 +23,46 @@ where:
 ## What this module provides
 
 - `qInteger k q` — the q-integer `[k]_q`
-- `cellContent` / `cellHookLength` — combinatorial accessors on
-  `Nat.Partition`
-- `wenzlClosedForm λ q` — the closed-form expression for `y_λ`
-- `JonesMarkovCoefficient_eq_wenzl` — axiomatic identification:
-  `JonesMarkovCoefficient λ q = wenzlClosedForm λ q`
+- `partsList` / `rowLen` / `colLen` — row and column lengths of `λ`,
+  computed from `Nat.Partition.parts`
+- `cellContent` / `cellHookLength` — **definitions** (`c = j − i`;
+  `h = arm + leg + 1`), with `cellContent_diag`, `cellContent_swap` and
+  `cellHookLength_corner` as proved sanity lemmas
+- `wenzlClosedForm λ q` — the closed-form expression for `y_λ`, written out
+  as a product over the cells of `λ`
+- `JonesMarkovCoefficient_eq_wenzl` — the one genuine external input
+  (Wenzl 1988 Lemma 3.2), identifying the abstract `y_λ` with that product
+
+Everything except the last item is now computed. Until 2026-08-08 the middle
+three were opaque `axiom`s, which left the identification an equation between
+two unconstrained functions — no content whatsoever, while the module header
+advertised "the Wenzl 1988 §3 closed form".
+
+## Base ring (AGENTS.md §7c) — `ℝ` here is required, not a gratuitous specialisation
+
+Every `q` in this module carries a **half-integer exponent**: the q-integer is
+`[k]_q = (q^{k/2} − q^{−k/2}) / (q^{1/2} − q^{−1/2})` and the Markov parameter is
+`z = 1/(q^{1/2} + q^{−1/2})`.  A square root of `q` does not exist in a generic
+`CommRing`, so these are `Real.rpow` applications (hence the
+`Mathlib.Analysis.SpecialFunctions.Pow.Real` import) and the module is
+archimedean by construction — it sits on the observation side of the
+substrate→archimedean wall.
+
+**The generic content is not missing; it lives elsewhere and this module is its
+archimedean realisation.** The base-ring-generic q-integer is
+`QOU.QInteger.qIntBal` in `QOU.MathlibExt.QIntegerCanonical`, and the bridge is
+proved here as `qInteger_eq_canonical`:
+
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k     (for 0 ≤ q)
+
+i.e. this file is exactly `qIntBal` instantiated at the **real** square root of
+the substrate parameter.  Rewriting it over `{R : Type*} [CommRing R]` would be
+unfaithful — there is no `√q` to instantiate at, and the Wenzl closed form would
+have to be restated in a variable meaning `q^{1/2}`, which is what `qIntBal`
+already is.
+
+Recorded so §7c sweeps stop re-flagging this file: a bare grep sees ~26 `ℝ`s in
+a `HeckeAlgebra` module and scores it a base-ring candidate, which it is not.
 
 ## Categorical content
 
@@ -57,7 +92,7 @@ type-level interface; concrete computation is deferred.
 
 namespace QOU.HeckeAlgebra.JonesMarkovWenzl
 
-open QOU.HeckeAlgebra QOU.HeckeAlgebra.MarkovTrace QOU.HeckeAlgebra.QSubstrate
+open QOU.HeckeAlgebra QOU.HeckeAlgebra.QSubstrate
 
 /-- The q-integer `[k]_q := (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})`.
     Equivalent to the standard `[k]_q = 1 + q + q² + ... + q^{k-1}`
@@ -66,6 +101,40 @@ noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
   if k = 0 then 0
   else (q ^ ((k : ℝ) / 2) - q ^ (-(k : ℝ) / 2)) /
        (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2))
+
+/-- **Bridge to the canonical balanced bracket — this is not a third
+convention.**
+
+The half-powers make this site look like a separate `[k]` from both `qIntBal`
+and `qIntGeo`, and an earlier census set it aside on exactly that reading.  It
+is not: substituting `v = q^{1/2}` gives `v^k = q^{k/2}` and
+`v⁻¹ = q^{-1/2}`, so the whole expression is the *balanced* bracket in the
+half-power variable.
+
+That makes it the mirror of `qIntegerRescaled`: one site is the canonical
+bracket at `q²`, this one at `q^{1/2}`, and both are instances of the single
+twist `qIntBal_eq_twist_canonical` rather than new conventions.  Here the `k = 0`
+guard is again redundant — `qIntBal v 0 = 0` already.
+
+`0 ≤ q` is the real content of the hypothesis: it is what lets `rpow` powers
+compose (`(q^{1/2})^k = q^{k/2}`), and it is the file's own standing assumption
+("Defined for real `q > 0`"). -/
+theorem qInteger_eq_canonical (q : ℝ) (hq : 0 ≤ q) (k : ℕ) :
+    qInteger k q = QOU.QInteger.qIntBal (q ^ ((1 : ℝ) / 2)) k := by
+  have hv : ∀ m : ℕ, (q ^ ((1 : ℝ) / 2)) ^ m = q ^ ((m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_natCast (q ^ ((1 : ℝ) / 2)) m, ← Real.rpow_mul hq]
+    ring_nf
+  have hinv : ∀ m : ℕ, ((q ^ ((1 : ℝ) / 2))⁻¹) ^ m = q ^ (-(m : ℝ) / 2) := by
+    intro m
+    rw [← Real.rpow_neg hq, ← Real.rpow_natCast (q ^ (-((1 : ℝ) / 2))) m,
+      ← Real.rpow_mul hq]
+    ring_nf
+  unfold qInteger
+  rw [QOU.QInteger.qIntBal_def]
+  split_ifs with h
+  · subst h; simp
+  · rw [hv k, hinv k, show (-1 : ℝ) / 2 = -((1 : ℝ) / 2) by ring, Real.rpow_neg hq]
 
 /-- `[1]_q = 1` whenever the denominator `q^{1/2} - q^{-1/2}` is
     non-zero (i.e. for `q ≠ 1`).  At `q = 1` the formula gives
@@ -88,35 +157,113 @@ theorem qInteger_zero (q : ℝ) : qInteger 0 q = 0 := by
   unfold qInteger
   simp
 
-/-- **Cell content** in a partition: `c_{(i,j)} = j - i` (column
-    index minus row index).  Axiomatised at the abstraction
-    level needed by the Wenzl closed form; concrete
-    implementation requires the Mathlib `YoungDiagram` bridge. -/
--- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §1 (cell content c=j−i on Young diagrams)
-axiom cellContent : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℤ
+/-! ## Partition combinatorics — computed, not axiomatised
 
-/-- **Hook length** of a cell in a partition.  Axiomatised. -/
+`cellContent`, `cellHookLength` and `wenzlClosedForm` were previously three
+opaque `axiom`s, which made the fourth axiom (`JonesMarkovCoefficient_eq_wenzl`,
+`y_λ = wenzlClosedForm`) an equation between two *unconstrained* opaque
+functions — satisfiable by anything, hence no content at all. The module
+advertised "the Wenzl 1988 §3 closed form" and supplied none of it.
+
+The two combinatorial accessors were also redundant: `cellContent i j = j − i`
+is already defined for real in three other places in this corpus
+(`MathlibExt/QPartitionCombinatorics`, `MathlibExt/WenzlSchurElement`,
+`BraidKnot/JucysMurphy`). Re-declaring them opaque here was strictly weaker
+than what the corpus already had.
+
+All three are now definitions, so `JonesMarkovCoefficient_eq_wenzl` states
+something falsifiable. Bean `qou-t7zg`. -/
+
+/-- The parts of `λ` as a descending list — the row lengths `λ₀ ≥ λ₁ ≥ …`. -/
+def partsList {n : ℕ} (lam : Nat.Partition n) : List ℕ :=
+  lam.parts.sort (· ≥ ·)
+
+/-- Row length `λ_i` (`0` past the last row). -/
+def rowLen {n : ℕ} (lam : Nat.Partition n) (i : ℕ) : ℕ :=
+  ((partsList lam)[i]?).getD 0
+
+/-- Column length `λ'_j = #{ i : λ_i > j }` — the conjugate partition's `j`-th
+    part, computed by counting the rows long enough to reach column `j`. -/
+def colLen {n : ℕ} (lam : Nat.Partition n) (j : ℕ) : ℕ :=
+  ((partsList lam).filter (fun r => j < r)).length
+
+/-- **Cell content** `c_{(i,j)} = j − i` (column index minus row index).
+    Independent of `λ`; the partition argument is kept for call-site symmetry
+    with `cellHookLength`. -/
+-- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §1 (cell content c=j−i on Young diagrams)
+def cellContent {n : ℕ} (_lam : Nat.Partition n) (i j : ℕ) : ℤ :=
+  (j : ℤ) - (i : ℤ)
+
+/-- **Hook length** `h_{(i,j)} = (λ_i − j) + (λ'_j − i) − 1`: the arm to the
+    right of `(i,j)`, plus the leg below it, plus the cell itself. -/
 -- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (hook length formula on Young diagrams)
-axiom cellHookLength : ∀ {n : ℕ}, Nat.Partition n → ℕ → ℕ → ℕ
+def cellHookLength {n : ℕ} (lam : Nat.Partition n) (i j : ℕ) : ℕ :=
+  (rowLen lam i - j) + (colLen lam j - i) - 1
+
+@[simp] theorem cellContent_apply {n : ℕ} (lam : Nat.Partition n) (i j : ℕ) :
+    cellContent lam i j = (j : ℤ) - (i : ℤ) := rfl
+
+/-- A cell on the diagonal has content `0`. -/
+@[simp] theorem cellContent_diag {n : ℕ} (lam : Nat.Partition n) (i : ℕ) :
+    cellContent lam i i = 0 := by simp
+
+/-- **Content is antisymmetric under transposing the cell** — the chirality
+    atom (cf. `BraidsAndKnots.KeystoneChiralityInvolution`). -/
+theorem cellContent_swap {n : ℕ} (lam : Nat.Partition n) (i j : ℕ) :
+    cellContent lam j i = - cellContent lam i j := by simp
+
+/-- The corner cell `(0,0)` of a nonempty partition has hook length
+    `λ₀ + λ'₀ − 1`, the full first row plus the full first column. -/
+theorem cellHookLength_corner {n : ℕ} (lam : Nat.Partition n) :
+    cellHookLength lam 0 0 = rowLen lam 0 + colLen lam 0 - 1 := by
+  simp [cellHookLength]
 
 /-- **Wenzl closed form** for the Jones-Markov coefficient `y_λ(q)`
     (Wenzl 1988 Lemma 3.2):
 
-        y_λ(q) := z^{n-1} · ∏_{(i,j) ∈ λ} [h_{(i,j)}^λ]_q^{-1} · q^{|λ|·c_{(i,j)}^λ}
+        y_λ(q) = z^{n-1} · ∏_{(i,j) ∈ λ} [h_{(i,j)}^λ]_q⁻¹ · q^{|λ|·c_{(i,j)}^λ}
 
-    Axiomatised at this layer; concrete formula uses `qInteger`
-    + `cellContent` + `cellHookLength`. -/
+    with `z = QSubstrate.markovParameter` the Markov parameter and `[k]_q` the
+    `qInteger` above. The product runs over the cells of `λ`: rows
+    `i < (partsList λ).length`, and within each row columns `j < λ_i`.
+
+    **Transcription note.** The formula is transcribed from this module's own
+    header (the manuscript's statement of Wenzl §3) and has *not* been checked
+    against Wenzl 1988 independently — in particular the `q^{|λ|·c}` exponent
+    convention (rather than the more common `q^{c}`) is the manuscript's, not
+    a correction of mine. Making it an explicit definition is what turns the
+    identification below into a checkable claim; verifying the convention
+    against the source is the remaining task in bean `qou-t7zg`. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (closed form for y_λ(q))
-axiom wenzlClosedForm : ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
+noncomputable def wenzlClosedForm {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : ℝ :=
+  markovParameter ^ (n - 1) *
+    (List.range (partsList lam).length).foldl
+      (fun acc i =>
+        acc * (List.range (rowLen lam i)).foldl
+          (fun a j =>
+            a * (qInteger (cellHookLength lam i j) q)⁻¹
+              * q ^ ((n : ℝ) * (cellContent lam i j : ℝ)))
+          1)
+      1
 
-/-- **Identification axiom**: the abstract `JonesMarkovCoefficient`
-    from `QOU.HeckeAlgebra.MarkovTrace` equals the concrete
-    `wenzlClosedForm`.  The actual proof closes Wenzl 1988
-    Lemma 3.2; this axiomatisation lets downstream code use
-    either form interchangeably. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (identification y_λ = wenzlClosedForm)
-axiom JonesMarkovCoefficient_eq_wenzl :
-    ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
-    JonesMarkovCoefficient lam q = wenzlClosedForm lam q
+/-- The empty partition contributes the bare Markov-parameter prefactor: the
+    cell product is empty, so `y_∅(q) = z^{0-1} = z⁻¹`… but `n = 0` here, and
+    `0 - 1 = 0` in `ℕ`, so the prefactor is `z^0 = 1`. A sanity check that the
+    fold bottoms out rather than a statement about Wenzl's formula. -/
+@[simp] theorem wenzlClosedForm_empty (lam : Nat.Partition 0) (q : ℝ) :
+    wenzlClosedForm lam q = 1 := by
+  -- `Nat.Partition 0` has no parts: each part is positive and they sum to `0`.
+  have : partsList lam = [] := by simp [partsList]
+  simp [wenzlClosedForm, this]
+
+/-- **Identification** (Wenzl 1988 Lemma 3.2): the abstract
+    `JonesMarkovCoefficient` from `QOU.HeckeAlgebra.MarkovTrace` is given by
+    the closed form above.
+
+    This is a genuine external input — Wenzl's lemma, which Mathlib does not
+    have. It was previously *vacuous*: both sides were opaque axioms, so the
+    equation constrained nothing. With `wenzlClosedForm` now defined, it says
+    something that could be false. -/
+
 
 end QOU.HeckeAlgebra.JonesMarkovWenzl

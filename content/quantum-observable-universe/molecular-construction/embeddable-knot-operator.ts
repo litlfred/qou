@@ -10,7 +10,7 @@ export default definition({
   ],
   label: "def:embeddable-knot-operator",
   lean: {
-    ref: "qou:QOU.Molecular.EmbeddableKnotOperator",
+    ref: "qou:QOU.Molecular.embeddableBinding",
     validation: "not_checked",
   },
   title: "Embeddable knot operator with geometric overlap weight",

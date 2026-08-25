@@ -242,7 +242,9 @@ if __name__ == "__main__":
     # Self-test: cross-validate symbolic vs numerical at q_0 for proton.
     import numpy as np
     from hecke_characters import build_seminormal_matrices
-    from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
+    from canonical_braid_crossings import (
+        atom_canonical_crossings as atomic_braid_to_crossings, d_for_ctype,
+    )
     from q_parameter import Q as q_num
 
     proton = atomic_braid_to_crossings(1, 0, include_inter=False)
@@ -256,12 +258,14 @@ if __name__ == "__main__":
         h_num = q_num - 1.0 / q_num
         for k_gen, ctype in proton:
             s_i = sigmas_num[k_gen]
-            if ctype == 'sigma':
-                step = s_i
-            elif ctype == 'sigma_inv':
-                step = s_i - h_num * np.eye(dim_num)
-            elif ctype == 'averaged':
-                step = s_i - (h_num / 2) * np.eye(dim_num)
+            # `d_for_ctype` rather than a private if/elif: the chain this
+            # replaces had no `else`, so an unrecognised ctype left `step`
+            # holding the PREVIOUS crossing and applied it twice, silently.
+            # Latent rather than live -- this self-test runs on the proton
+            # (1, 0), which has no p-n interface and so never sees
+            # `averaged_weighted` -- but a private copy that happens not to
+            # be reached is the same defect one caller away.
+            step = s_i + float(d_for_ctype(ctype, h_num)) * np.eye(dim_num)
             M = M @ step
         num = float(np.real(np.trace(M)))
         match = "✓" if abs(sym_at_q0 - num) < 1e-6 else "✗"

@@ -185,20 +185,42 @@ theorem riemann_hurwitz_check :
     (2) Fake-flatness F_A = B forces 2-form datum into Cartan subalgebra on E_c
     (3) MI integral reduces to classical contour integral of lam_SW^(n)
 
+    **RESTATED 2026-08-08 (bean `qou-kyst`) — was vacuous.** The previous form
+    took `fake_flat_abelian : ∀ k, mi_integral k = sw_period k` as a hypothesis
+    and returned `fake_flat_abelian n`: the hypothesis WAS the conclusion, so
+    steps (1)-(3) were assumed, not derived, and a reader could discharge it by
+    supplying the very statement it claimed to prove.
+
+    It is now carried the way this corpus carries its other open content-bearing
+    claims (§3b-tax, as for `QDifferenceKernelIsProlongationSymbol`): a **class
+    with no instance**. `MISWAbelianisation` names the abelianisation as a
+    typeclass field; `mi_sw_abelianisation` derives the conclusion from it. The
+    open state is now visible in the *type* rather than hidden in a hypothesis
+    that happens to be the goal, and it can no longer be discharged by
+    restatement — an instance must exhibit the abelianisation.
+
+    Mathlib cannot support a real instance: (1) needs principal bundles and
+    classifying spaces over `S²`, (2) nonabelian gauge theory and Lie-algebra
+    valued 2-forms, (3) Yekutieli's nonabelian multiplicative integration. None
+    exists. So the honest state is "no instance", and that is what this is.
+
     LaTeX: `\label{prop:mi-sw-abelianisation}` -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
+class MISWAbelianisation (sw_period mi_integral : ℕ → ℝ) : Prop where
+  /-- Fake-flatness `F_A = B` forces the 2-form datum into the Cartan
+  subalgebra on the exceptional divisor, so the nonabelian MI integral reduces
+  to the classical contour integral of `λ_SW^(n)`. **No instance is provided**;
+  see the note above. -/
+  abelianises : ∀ k, mi_integral k = sw_period k
+
 theorem mi_sw_abelianisation
     (_bs : BringsSurface)
     (n : ℕ)  -- vertical degree (jet level)
     (sw_period : ℕ → ℝ)  -- |a_D^(n)| for each jet level
     (mi_integral : ℕ → ℝ)  -- ‖MI∫_{E_c}(∇_A q, L ∧ F⁺)‖_{Jⁿ}
-    -- Fake-flatness forces abelianisation on the exceptional divisor.
-    -- The placeholder `_bundle_trivial : True` previously here is
-    -- redundant — the SU(2)-bundle triviality over CP¹ ≅ S² is
-    -- subsumed by the `fake_flat_abelian` hypothesis.
-    (fake_flat_abelian : ∀ k, mi_integral k = sw_period k)
-    : mi_integral n = sw_period n := by
-  exact fake_flat_abelian n
+    [K : MISWAbelianisation sw_period mi_integral]
+    : mi_integral n = sw_period n :=
+  K.abelianises n
 
 /-! ## §9  Bring's Surface is a QOU -/
 

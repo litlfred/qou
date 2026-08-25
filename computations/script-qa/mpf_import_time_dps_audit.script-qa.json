@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/mpf_import_time_dps_audit.py",
+  "language": "python",
+  "source_hash": "212d1134945f",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
+  "criteria": {
+    "resume-cache-unvalidated": [
+      {
+        "field_hash": {
+          "py": "212d1134945f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "major",
+        "evidence": "line 355: loads its own prior output when the file exists | reuses those entries to SKIP recomputation with NO q\u2080/hash guard \u2014 a stale cache is served back on every re-run"
+      }
+    ]
+  }
+}

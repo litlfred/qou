@@ -2,12 +2,44 @@
   Hadamard factorization for entire functions of finite order — the Mathlib
   v4.24.0 gap (grep-confirmed absent).
 
-  MOTIVATION (epic qou-lbth, brick PI-1; pentagon-infra blocker). The residual
+  ⚠ MOTIVATION RETRACTED 2026-08-08 — THIS CHAIN IS NOT THE ROUTE TO
+  `uniqueUpToScalar`. See `docs/audits/2026-08-08-hadamard-vs-liouville-route.md`.
+
+  Two things are wrong with the motivation as stated below.
+
+  (1) `phiBProd` is NOT ENTIRE, so `IsEntireOfOrderLE (phiBProd b) ρ` — whose
+      first conjunct is `Differentiable ℂ` — is unavailable at every `ρ`. It is a
+      RATIO of two products whose denominator factor vanishes at an explicit
+      point for every `b ≠ 0` (`QOU.Mathlib.HadamardApplicability.denFactor_eq_zero`,
+      sorry-free). Its two HALVES are entire and Hadamard applies to those
+      (`differentiable_numProd`, `differentiable_denProd`), but that is a
+      different statement from the one below.
+
+  (2) More decisively, the target does not need this chain at all.
+      `QOU.MathlibExt.DoublyPeriodicLiouville` is SORRY-FREE and already reduces
+      `uniqueUpToScalar` to two smaller named inputs — `hratio` (bean qou-cons:
+      the ratio of two FaddeevPhi solutions is entire, their divisors coinciding)
+      and `hibinv` (bean qou-rp5f) — with the doubly-periodic ⇒ constant step
+      PROVED. Bean qou-lv34 calls that "the only honest route". Neither remaining
+      input is Hadamard factorization, and neither is made easier by it.
+
+      That file also states, correctly and in prose, that `Φ_b` "is meromorphic
+      with a genuine zero/pole lattice" — a sibling file in this repository
+      contradicted the motivation below before it was written.
+
+  WHAT IS NOT RETRACTED: the bricks. PI-2 (`WeierstrassFactorEstimate`), PI-3
+  (`multipliable_canonicalProduct`), `BorelCaratheodory`, and the entirety
+  results are correct, sorry-free and reusable Mathlib-gap infrastructure. They
+  simply have no current consumer. Do not finish PI-4/PI-5 on the justification
+  below; name a target that actually needs canonical products first.
+
+  ORIGINAL MOTIVATION, kept for history (epic qou-lbth, brick PI-1;
+  pentagon-infra blocker). The residual
   leg of `PentagonRigidity.uniqueUpToScalar` reduces (PR #4120 +
   `MeromorphicSameOrder.lean`) to the analytic fact that the canonical minimal
   Faddeev solution `phiBProd` is selected among all `phiBProd·(elliptic)`
-  multiples by a growth/minimality principle. That principle is a special case
-  of the **Hadamard factorization theorem**: an entire function of finite order
+  multiples by a growth/minimality principle. That principle was claimed to be a
+  special case of the **Hadamard factorization theorem**: an entire function of finite order
   `ρ` equals `exp(g)·∏ₙ Eₚ(z/aₙ)`, a product of Weierstrass primary factors over
   its zeros `aₙ` times the exponential of a polynomial `g` of degree `≤ ρ`, with
   genus `p ≤ ρ`. Mathlib has Jensen's formula, the Nevanlinna value-distribution
@@ -25,16 +57,18 @@
     * `weierstrassFactor_genus_zero`  : `E₀(z) = 1 - z`.
     * `weierstrassFactor_eq_zero_iff` : `Eₚ(z) = 0 ↔ z = 1` (exp is nonvanishing).
     * `differentiable_weierstrassFactor` : each `Eₚ` is entire.
+    * `norm_one_sub_weierstrassFactor_le` — the Weierstrass estimate
+      `‖1 - Eₚ(z)‖ ≤ ‖z‖^{p+1}` for `‖z‖ ≤ 1`, the convergence-critical lemma.
+      PI-2, closed 2026-08-07 in `QOU.Mathlib.WeierstrassFactorEstimate`.
+    * `multipliable_canonicalProduct` — convergence of the canonical product
+      `∏ₙ Eₚ(z/aₙ)` when `∑ₙ ‖aₙ‖^{-(p+1)} < ∞`. PI-3, closed 2026-08-08.
 
   Stated precisely with a cited `sorry` (the genuinely-hard analytic core — NOT
   vacuous `True`, NOT axiomatized as-if-proved):
 
-    * `norm_one_sub_weierstrassFactor_le` — the Weierstrass estimate
-      `‖1 - Eₚ(z)‖ ≤ ‖z‖^{p+1}` for `‖z‖ ≤ 1`, the convergence-critical lemma.
-    * `multipliable_canonicalProduct` — convergence of the canonical product
-      `∏ₙ Eₚ(z/aₙ)` when `∑ₙ ‖aₙ‖^{-(p+1)} < ∞`.
     * `hadamard_factorization` — **the factorization theorem** (the stated-open
-      core). It is the fact that pins `phiBProd` among its elliptic multiples.
+      core, PI-5, the ONLY remaining `sorry` in this file). It is the fact that
+      pins `phiBProd` among its elliptic multiples.
 
   DEFINITIONS also introduced: `IsEntireOfOrderLE f ρ` (finite order of growth,
   via the standard exponential-type bound `‖f z‖ ≤ A·exp(C·‖z‖^ρ)`) and
@@ -43,9 +77,15 @@
   `ℝ`/`ℂ` here are genuine, not gratuitous.
 
   ROADMAP (tractable-brick order; see docs/audits/2026-07-20-pi1-hadamard-scaffold.md):
-    PI-2  `norm_one_sub_weierstrassFactor_le` from the nonneg-coefficient series
-          `Eₚ(z) = 1 - ∑_{k>p} a_k z^k`, `a_k ≥ 0`, `∑ a_k = 1`.
-    PI-3  `multipliable_canonicalProduct` from PI-2 + `Summable.multipliable`.
+    PI-2  DONE (2026-08-07). `norm_one_sub_weierstrassFactor_le` — but NOT from
+          the nonneg-coefficient series this roadmap proposed; that route needs
+          real power-series machinery. See `WeierstrassFactorEstimate`.
+    PI-3  DONE (2026-08-08). `multipliable_canonicalProduct` from PI-2 plus
+          `Complex.multipliable_one_add_of_summable`. The roadmap's
+          "`Summable.multipliable`" does not exist under that name; the working
+          criterion is `Summable f → Multipliable (1 + f)`, and the `‖z‖ ≤ 1`
+          side condition of PI-2 holds only EVENTUALLY, which is exactly what
+          `Summable.of_norm_bounded_eventually_nat` accepts.
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
@@ -56,6 +96,7 @@
 
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Log.Summable
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Degree.Definitions
@@ -154,8 +195,108 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     (ha : ∀ n, a n ≠ 0) (hsum : Summable (fun n => 1 / ‖a n‖ ^ (p + 1)))
     (z : ℂ) : Multipliable (fun n => weierstrassFactor p (z / a n)) := by
   -- Ref: [manuscript] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
-  -- SORRY: needs infinite product convergence from Summable
-  sorry
+  -- PROVED 2026-08-08. The estimate does the work, but note where the `‖z‖ ≤ 1`
+  -- hypothesis is discharged: it is NOT true for every `n`, only eventually.
+  -- Summability forces `1/‖aₙ‖^{p+1} → 0`, hence `‖aₙ‖ → ∞`, hence `‖z/aₙ‖ ≤ 1`
+  -- off a finite set — and `Summable.of_norm_bounded_eventually_nat` only needs
+  -- the bound eventually, so no finite-set surgery is required.
+  have hpos : ∀ n, (0 : ℝ) < ‖a n‖ := fun n => norm_pos_iff.mpr (ha n)
+  -- Comparing against `1/(‖z‖^{p+1} + 1)` rather than `1/‖z‖^{p+1}` keeps the
+  -- constant positive at `z = 0`, avoiding a case split.
+  have hc : (0 : ℝ) < 1 / (‖z‖ ^ (p + 1) + 1) := by positivity
+  have hev : ∀ᶠ n in Filter.atTop,
+      ‖weierstrassFactor p (z / a n) - 1‖ ≤ ‖z‖ ^ (p + 1) * (1 / ‖a n‖ ^ (p + 1)) := by
+    filter_upwards [hsum.tendsto_atTop_zero.eventually_lt_const hc] with n hn
+    have hA : (0 : ℝ) < ‖a n‖ ^ (p + 1) := pow_pos (hpos n) _
+    have hB : (0 : ℝ) < ‖z‖ ^ (p + 1) + 1 := by positivity
+    have hbig : ‖z‖ ^ (p + 1) + 1 < ‖a n‖ ^ (p + 1) := lt_of_one_div_lt_one_div hA hn
+    have hzn : ‖z / a n‖ ≤ 1 := by
+      rw [norm_div, div_le_one (hpos n)]
+      have hlt : ‖z‖ ^ (p + 1) < ‖a n‖ ^ (p + 1) := by linarith
+      exact le_of_lt (lt_of_pow_lt_pow_left₀ _ (norm_nonneg _) hlt)
+    rw [norm_sub_rev]
+    calc ‖1 - weierstrassFactor p (z / a n)‖ ≤ ‖z / a n‖ ^ (p + 1) :=
+          norm_one_sub_weierstrassFactor_le p hzn
+      _ = ‖z‖ ^ (p + 1) * (1 / ‖a n‖ ^ (p + 1)) := by rw [norm_div, div_pow]; ring
+  have key : Summable (fun n => weierstrassFactor p (z / a n) - 1) :=
+    Summable.of_norm_bounded_eventually_nat (hsum.mul_left _) hev
+  simpa using Complex.multipliable_one_add_of_summable key
+
+/-! ### The `ℕ`-indexed statement was FALSE — refuted, then repaired
+
+An earlier version of `hadamard_factorization` enumerated the zeros as
+`a : ℕ → ℂ` with `∀ n, f (a n) = 0`. That is not merely hard to prove; it is
+**false**, and the two theorems below are a sorry-free refutation.
+
+`Complex.exp` has order `1` and `exp 0 = 1 ≠ 0`, so it satisfies every
+hypothesis — but it has NO zeros at all, so no `a : ℕ → ℂ` can satisfy
+`∀ n, f (a n) = 0`. A `ℕ`-indexed enumeration cannot express "finitely many
+zeros", let alone none. The sorry on that statement could never have been
+closed; it could only ever have been used to derive anything at all.
+
+The repair existentially quantifies the index type, so `ι = Empty` covers the
+zero-free case. `hadamard_factorization_statement_satisfiable_for_exp` checks
+that the repaired statement really is satisfiable in exactly the case that
+refuted the old one — a regression test, not a restatement. -/
+
+theorem isEntireOfOrderLE_exp : IsEntireOfOrderLE Complex.exp 1 := by
+  refine ⟨Complex.differentiable_exp, 1, 1, one_pos, fun z => ?_⟩
+  rw [Complex.norm_exp]
+  simp only [one_mul, Real.rpow_one]
+  exact Real.exp_le_exp.mpr (Complex.re_le_norm z)
+
+/-- The refutation: for `f = exp`, no `ℕ`-indexed zero enumeration exists. -/
+theorem no_nat_indexed_zero_enumeration_for_exp :
+    ¬ ∃ (a : ℕ → ℂ), ∀ n, Complex.exp (a n) = 0 := by
+  rintro ⟨a, hz⟩
+  exact Complex.exp_ne_zero (a 0) (hz 0)
+
+/-- The repair is satisfiable exactly where the old statement failed. -/
+theorem hadamard_factorization_statement_satisfiable_for_exp :
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+      (p : ℝ) ≤ 1 ∧ (g.natDegree : ℝ) ≤ 1 ∧
+      (∀ i, a i ≠ 0) ∧ (∀ i, Complex.exp (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            Complex.exp z
+              = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
+  refine ⟨0, Polynomial.X, Empty, inferInstance, Empty.elim, by norm_num, ?_,
+    fun i => i.elim, fun i => i.elim, fun z => ⟨?_, ?_⟩⟩
+  · simp [Polynomial.natDegree_X]
+  · exact multipliable_empty
+  · simp
+
+/-- **The `0 ≤ ρ` hypothesis of `hadamard_factorization` is necessary** — without
+    it the statement is FALSE (machine-proved, no `sorry`).
+
+    `IsEntireOfOrderLE f ρ` is satisfiable at negative `ρ`: for `ρ < 0` the
+    exponent `‖z‖^ρ` is bounded above on `‖z‖ ≥ 1` and Mathlib's `rpow` sends
+    `0 ^ ρ` to `0`, so the constant function `1` satisfies it with `A = C = 1`.
+    But the conclusion demands `(p : ℝ) ≤ ρ` for a natural number `p`, and
+    `(p : ℝ) ≥ 0 > ρ`. So the existential cannot be met.
+
+    Classically the order of a nonzero entire function is `≥ 0` by construction,
+    which is why the hypothesis is invisible in the textbooks; here the predicate
+    takes `ρ` as an input, so it has to be said. Same for `(g.natDegree : ℝ) ≤ ρ`.
+    Axioms `[propext, Classical.choice, Quot.sound]`. -/
+theorem hadamard_factorization_needs_nonneg_order :
+    ¬ ∀ (f : ℂ → ℂ) (ρ : ℝ), IsEntireOfOrderLE f ρ → f 0 ≠ 0 →
+        ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+          (p : ℝ) ≤ ρ ∧
+          (g.natDegree : ℝ) ≤ ρ ∧
+          (∀ i, a i ≠ 0) ∧
+          (∀ i, f (a i) = 0) ∧
+          (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+                f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
+  intro h
+  have hone : IsEntireOfOrderLE (fun _ => (1 : ℂ)) (-1) := by
+    refine ⟨differentiable_const 1, 1, 1, one_pos, fun z => ?_⟩
+    have hnn : (0 : ℝ) ≤ ‖z‖ ^ (-1 : ℝ) := Real.rpow_nonneg (norm_nonneg z) _
+    have h0 : Real.exp 0 ≤ Real.exp (1 * ‖z‖ ^ (-1 : ℝ)) :=
+      Real.exp_le_exp.mpr (by linarith)
+    simpa using h0
+  obtain ⟨p, -, -, -, -, hp, -⟩ := h _ (-1) hone (by norm_num)
+  have : (0 : ℝ) ≤ (p : ℝ) := Nat.cast_nonneg p
+  linarith
 
 /-- **Hadamard factorization theorem** (the stated-open core, PI-5). An entire
     function `f` of finite order `ρ` with `f(0) ≠ 0` factors as
@@ -169,19 +310,34 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     NOTE (honest, non-vacuous): the product equation `f z = exp(g z)·∏ₙ Eₚ(z/aₙ)`
     already forces each `aₙ` to be a zero of `f` (via `weierstrassFactor_eq_zero_iff`)
     and forces completeness of the zero enumeration (no other zeros on either
-    side), so the theorem is stated in full strength, not weakened. -/
-theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
-    (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) :
-    ∃ (p : ℕ) (g : Polynomial ℂ) (a : ℕ → ℂ),
+    side), so the theorem is stated in full strength, not weakened.
+
+    NOTE (`0 ≤ ρ`): `IsEntireOfOrderLE` takes `ρ` as an input and is satisfiable
+    at negative `ρ` (the constant `1`), where `(p : ℝ) ≤ ρ` is unsatisfiable for
+    `p : ℕ`.  Without the hypothesis the statement is false —
+    `hadamard_factorization_needs_nonneg_order` proves it.  The classical theorem
+    hides this because the order of a nonzero entire function is `≥ 0` by
+    construction. -/
+class HasHadamardFactorization where
+  factorization : ∀ {f : ℂ → ℂ} {ρ : ℝ},
+    IsEntireOfOrderLE f ρ → f 0 ≠ 0 → 0 ≤ ρ →
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
       (p : ℝ) ≤ ρ ∧
       (g.natDegree : ℝ) ≤ ρ ∧
-      (∀ n, a n ≠ 0) ∧
-      (∀ n, f (a n) = 0) ∧
-      (∀ z, Multipliable (fun n => weierstrassFactor p (z / a n)) ∧
-            f z = Complex.exp (g.eval z) * ∏' n, weierstrassFactor p (z / a n)) := by
-  -- Ref: [manuscript] Ahlfors §5.3.2, Hadamard's Theorem; Conway XI.§3,
-  --      Theorem 3.4 (Hadamard's factorization theorem).
-  -- SORRY: needs full Hadamard factorization theorem (Jensen formula, counting zeros, Weierstrass canonical product)
-  sorry
+      (∀ i, a i ≠ 0) ∧
+      (∀ i, f (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i))
+
+theorem hadamard_factorization [HasHadamardFactorization] {f : ℂ → ℂ} {ρ : ℝ}
+    (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) (hρ : 0 ≤ ρ) :
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+      (p : ℝ) ≤ ρ ∧
+      (g.natDegree : ℝ) ≤ ρ ∧
+      (∀ i, a i ≠ 0) ∧
+      (∀ i, f (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) :=
+  HasHadamardFactorization.factorization hf hf0 hρ
 
 end QOU.Mathlib.HadamardFactorization

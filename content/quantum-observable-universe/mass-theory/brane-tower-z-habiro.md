@@ -8,7 +8,7 @@ $$
 
 where $z_i = |\hat{V}_i^{\mathrm{full}}|$ are the per-generator additive Wedderburn traced-volume magnitudes, and $\Phi_q$ is the quantum dilogarithm.
 
-For low isotopes $\{D, T, {}^3\mathrm{He}\}$, the per-generator volumes satisfy $z_i \in [0.85, 1.0]$—just below the first pole of $\Phi_q$ at $z = q_0 \approx 1.11$. Canonical evaluations $\Phi_q(0.989) \approx 6.7 \times 10^5$ and $\Phi_q(1) \approx 9 \times 10^5$ show each summand is enormous; the analytic brane tower dominates the mass formula by orders of magnitude beyond the empirical binding.
+For low isotopes $\{D, T, {}^3\mathrm{He}\}$, the per-generator volumes satisfy $z_i \in [0.85, 1.0]$—just below the first pole of $\Phi_q$ at $z = q_0 \approx 1.11$. Numerical evaluations $\Phi_q(0.989) \approx 6.7 \times 10^5$ and $\Phi_q(1) \approx 9 \times 10^5$ show each summand is enormous; the analytic brane tower dominates the mass formula by orders of magnitude beyond the empirical binding.
 
 Two regularizations exist but neither uniformly closes the gap:
 1. **Yekutieli truncation** at GB filtration depth $k_{\max}$ (empirical, not structural).
@@ -40,7 +40,7 @@ If true, the conjecture:
 
 The level-selection rule $n_\star$ forms the open part. A correct $n_\star$ must be a structural invariant of $\mathfrak{H}$, reproduce the empirical $B(\mathfrak{H})$ across atoms, and be derivable without external calibration.
 
-**Empirical observation.** A uniform-depth canonical evaluation sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ across $\{D, T, {}^3\mathrm{He}\}$ shows:
+**Empirical observation.** A uniform-depth numerical evaluation sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ across $\{D, T, {}^3\mathrm{He}\}$ shows:
 1. The absolute formula overshoots at every uniform $k$.
 2. The subtractive form has a sign-flip at $k = 2$.
 3. ${}^3\mathrm{He}$ overshoots at every $k \geq 2$ in subtractive form.
@@ -77,4 +77,4 @@ At the canonical Markov-trace operator-volume level, the two magic-shell sub-bra
 
 No probed choice recovers the light-isotope binding uniformly; the ${}^3\mathrm{He}$ gap represents a structural deficit at $A=3$, not an operator-volume choice.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs (real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$). Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs (real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$). Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -58,7 +58,7 @@ The exponential-remainder bound dampens the eigenfunction (conj:archimedean-rema
 
 ## Provenance
 
-We derived this proposition during the cycle-6/7 audit ([`docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md)) and verified it numerically at 50 decimal places via [`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/computations/q_beta_spectral_bridge_witness.py) ([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-spectral-bridge.witness.json)):
+We verified this proposition numerically at 50 decimal places via [`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/computations/q_beta_spectral_bridge_witness.py) ([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-spectral-bridge.witness.json)):
 
 See [Table](#tbl:q-beta-spectral-bridge-table-data).
 

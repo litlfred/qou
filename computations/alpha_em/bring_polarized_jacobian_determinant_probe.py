@@ -42,8 +42,16 @@ import subprocess
 import sys
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 
 
 def eta(tau):
@@ -173,7 +181,7 @@ def main():
         },
         "context": {
             "source": "Braden–Disney-Hogg arXiv:2208.13692 Thm 2.12 (τ_B=τ₀M) + Prop 4.6 "
-                      "(Jac≅E_{5τ₀}³×E_{τ₀}, non-symplectic to the product); PDF uploads/2208.13692v1.pdf",
+                      "(Jac≅E_{5τ₀}³×E_{τ₀}, non-symplectic to the product); PDF library/arxiv-2208.13692v1/2208.13692v1.pdf",
             "sharpens": "#3864 — replaces the naive per-factor product with the polarized-Jacobian "
                         "determinant; shows they differ only via the integer-lattice theta-factor",
             "not_interpreted": "8.226≈b₁=8 is a coincidence to resist (Prop 4.6 non-product polarization; "

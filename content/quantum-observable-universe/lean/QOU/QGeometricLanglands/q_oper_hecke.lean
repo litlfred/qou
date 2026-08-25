@@ -39,10 +39,18 @@ class q_oper_hecke where
       that eigensheaf irreducible. -/
   oper_irreducible : ∀ op : QOper, IsIrreducible (toEigensheaf op)
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts
-axiom q_oper_hecke_conjecture : q_oper_hecke
-noncomputable instance : q_oper_hecke := q_oper_hecke_conjecture
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the class fields above, which
+-- is exactly the open conjecture; supplying one asserts it.
+--
+-- History: this file previously carried
+--     axiom q_oper_hecke_conjecture : q_oper_hecke
+--     noncomputable instance : q_oper_hecke := q_oper_hecke_conjecture
+-- so every downstream `[q_oper_hecke]` resolved for free and the assumption was
+-- invisible outside `#print axioms`.  (The removed comment also described it
+-- as a `sorry` representing the open conjecture — it was an `axiom`, which is
+-- strictly stronger: a `sorry` at least shows up as `sorryAx`.)  Removed, not
+-- completed.  Downstream results must take `[q_oper_hecke]` as an explicit
+-- hypothesis.
 
 end QOU.QGeometricLanglands

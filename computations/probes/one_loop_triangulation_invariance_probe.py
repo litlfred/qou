@@ -102,7 +102,7 @@ def _shapes(M):
     """Tetrahedra shapes as mpc via decimal strings — never through float()."""
     out = []
     for s in M.tetrahedra_shapes("rect", bits_prec=BITS):
-        out.append(mp.mpc(mp.mpf(str(s.real())), mp.mpf(str(s.imag()))))
+        out.append(mp.mpc(mp.mpf(str(s.real()).replace(' ', '')), mp.mpf(str(s.imag()).replace(' ', ''))))
     return out
 
 

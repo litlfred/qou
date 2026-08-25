@@ -21,6 +21,13 @@ from pathlib import Path
 from mpmath import mp
 
 # ── q parameter (canonical source) ───────────────────────────
+# `mp` here is the mpmath CONTEXT (`from mpmath import mp`), so `mp.dps`
+# is the correct spelling. Raised before the fallback below: that branch
+# reconstructs q0 from a 16-digit literal and binds module-level q0/qi0/HA
+# used throughout, so at the default 15 dps the whole module would run
+# off a 53-bit q0 whenever q_parameter is unavailable.
+mp.dps = 50
+
 try:
     from q_parameter import Q as q0, Q_INV as qi0, HA
 except ImportError:
@@ -29,8 +36,9 @@ except ImportError:
     qi0 = mp.mpf(1) / q0; HA = q0 - qi0
 # z, NF_BASIS, NF_NAMES, TR_M moved to pyhecke.gram via M2b inversion.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z, NF_BASIS, NF_NAMES  # noqa: E402
+from pyhecke.gram import safe_inverse as _pg_safe_inverse  # noqa: E402
 
 print(f"q₀  = {q0:.10f}")
 print(f"HA  = q−q⁻¹ = {HA:.10f}")
@@ -169,7 +177,44 @@ print("\n" + "=" * 72)
 print("  2. INVERSE GRAM MATRIX  G⁻¹")
 print("=" * 72)
 
-G_inv = np.linalg.inv(G)
+# Under convention D the Markov Gram is SINGULAR, so there is no G^-1 and
+# `safe_inverse` refuses (it exists because np.linalg.inv does NOT raise here
+# -- it returns inverted rounding noise, entries ~7.6e15).
+#
+# What replaces it is the inverse on the quotient H_3(q)/rad. That is NOT a
+# drop-in: dualisation against a degenerate form is well-defined only for
+# vectors ORTHOGONAL TO THE RADICAL, because generalized inverses differ
+# precisely by radical terms. So this script now also emits the radical and,
+# below, the overlap of each observable with it -- a reader can then see
+# whether the quantity they care about survived the convention change or was
+# only ever defined against a form that no longer exists.
+#
+# The radical is exactly the sign-representation vector (sigma_i -> -1/q),
+# verified to machine precision: it is the (1^3) channel, the direction the
+# Markov trace cannot see.
+from pyhecke.gram import G_PINV as _G_PINV, RADICAL as _RADICAL  # noqa: E402
+from _precision import fmt as _fmt  # noqa: E402
+G_inv = _G_PINV
+_rad_hat = _RADICAL / np.linalg.norm(_RADICAL)
+
+# The radical in CLOSED FORM at full working precision. `pyhecke.RADICAL`
+# computes (-1/q)^len(w) in float64; the same expression in mpmath costs
+# nothing and is exact, so the witness carries the exact value rather than a
+# 16-digit shadow of it. `_rad_hat` above stays f64 -- it only ever feeds the
+# numpy overlap printout below.
+# The comment above says this line makes the witness carry "the exact value
+# rather than a 16-digit shadow of it". It did NOT: `q0` is the f64 constant,
+# so `mp.mpf(str(q0))` laundered ~16 significant digits into a value that only
+# LOOKS 50-digit. Read the high-precision name; fall back visibly rather than
+# silently if the package is unavailable.
+try:
+    from q_parameter import Q_MP as _q0_exact  # noqa: E402
+except Exception:  # pragma: no cover - degraded path, and it says so
+    # No str() round-trip here: on THIS branch `q0` was built with mpmath
+    # above, so it is already an mpf and re-parsing it would launder nothing
+    # while looking exactly like the defect this line replaced.
+    _q0_exact = q0
+_radical_exact = [_fmt((-1 / _q0_exact) ** len(w)) for w in NF_BASIS]
 
 hdr = f"  {'G⁻¹':6s}"
 for name in NF_NAMES:
@@ -454,7 +499,20 @@ witness = {
     "parameters": {"q0": q0, "HA": HA, "z": z},
     "markov_trace_basis": dict(zip(NF_NAMES, TR_M_BASIS)),
     "gram_matrix": G.tolist(),
-    "gram_inverse": G_inv.tolist(),
+    # RENAMED from `gram_inverse`: this is the inverse on H_3(q)/rad, a
+    # DIFFERENT object from the G^-1 older witnesses hold (they differ by
+    # 73% relative). A consumer keyed on the old name now fails loudly
+    # rather than silently receiving a different matrix.
+    "gram_quotient_inverse": G_inv.tolist(),
+    # Emitted at mpmath precision, NOT as f64, because the radical is EXACT in
+    # closed form -- v_w = (-1/q)^len(w), the q-antisymmetriser. `pyhecke`'s
+    # `RADICAL` evaluates that same expression in float64, which is fine for a
+    # numpy consumer but would put six gratuitous raw-float64 fields into the
+    # witness. The NO-FLOAT64 baseline for this file is 124; adding them would
+    # have made it 130, and widening the baseline to absorb a value that has a
+    # closed form is exactly the move AGENTS.md forbids.
+    "gram_radical": _radical_exact,
+    "radical_is_sign_representation": True,
     "gram_determinant": float(np.linalg.det(G)),
     "gram_eigenvalues": np.linalg.eigvals(G).real.tolist(),
     "particles": {

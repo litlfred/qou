@@ -197,7 +197,7 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
           (qMomentum q ss - List.foldl (fun (acc : ℝ) (s : ℤ) => acc + (s : ℝ)) (0 : ℝ) ss)|
         ≤ |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - (s : ℝ)| +
           |qMomentum q ss - List.foldl (fun (acc : ℝ) (s : ℤ) => acc + (s : ℝ)) (0 : ℝ) ss| :=
-        abs_add _ _
+        abs_add_le _ _
       _ < ε / 2 + ε / 2 := add_lt_add h_head h_tail
       _ = ε := by ring
 

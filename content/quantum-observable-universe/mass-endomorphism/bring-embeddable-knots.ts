@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:bring-embeddable-knots",
   title:
-    "Bring-embeddable knots: genus-bounded table and per-knot B1 witness targets",
+    "Bring-embeddable knots: genus-bounded table and per-knot witness targets for the depth correspondence",
   interprets: "rem:knot-exhaustiveness",
   uses: [
     "rem:knot-exhaustiveness",

@@ -94,7 +94,7 @@ theorem qPrefactor_pos {q : ℝ} (hq : 1 < q) : 0 < qPrefactor q := by
   · have : 0 < q := by linarith
     positivity
   · apply pow_pos
-    rw [sub_pos, div_lt_iff (by linarith : (0 : ℝ) < q)]
+    rw [sub_pos, div_lt_iff₀ (by linarith : (0 : ℝ) < q)]
     nlinarith
 
 /-- Half-life: t_{1/2} = ln 2 / Γ_β.

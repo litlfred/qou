@@ -7,7 +7,7 @@ wired. **Read before further B1 / A_ω / (m,ℓ) work.**
 Companion to the already-in-corpus
 [`2026-07-26-extended-matrix-trivial-connection-row.md`](2026-07-26-extended-matrix-trivial-connection-row.md)
 (which framed the Habiro tail as the trivial-connection row of the GGMW
-extended matrix). The owner uploaded the three source PDFs to `uploads/`
+extended matrix). The owner uploaded the three source PDFs to `library/`
 (commit 2a7b6b9): `2410.20973v1`, `2505.00799v2`, `2601.05136v2`.
 
 ## The paper

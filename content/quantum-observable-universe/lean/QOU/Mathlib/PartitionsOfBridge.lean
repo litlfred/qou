@@ -1,5 +1,6 @@
 import QOU.Mathlib.PartitionListBridge
 import QOU.Mathlib.IdentityIHLFBridge
+import QOU.Mathlib.SchenstedRSKBurnside
 
 /-!
 # QOU.Mathlib.PartitionsOfBridge — `partitionsOf n` enumerates `Nat.Partition n`; RSK/Burnside `n ≤ 12`
@@ -217,5 +218,24 @@ theorem rskBurnsideHolds_le12 : ∀ n ∈ List.range 13, QOU.Mathlib.RSKBurnside
 /-- The concrete top instance, for downstream `uses`: `Σ_{p ⊢ 12} dimSYT(p)² = 12!`. -/
 example : QOU.Mathlib.RSKBurnsideHolds 12 :=
   rskBurnsideHolds_le12 12 (by simp)
+
+/-! ## The same identity in list-model form, for **every** `n` -/
+
+/-- **`Σ_{λ ⊢ n} dimHLF(λ)² = n!` for every `n`** — the list-model dimension certificate that
+`dim_validated_le12` establishes by `decide` at `n ≤ 12`, now available at every `n`.
+
+This is `rskBurnsideHolds_le12` run backwards: that theorem transports the `decide`-verified list
+identity *up* to the abstract `Nat.Partition` index; this one transports the Robinson–Schensted
+theorem (`QOU.Mathlib.rskBurnsideHolds`) *down* to the list index, through the same two bridges —
+`rskBurnsideHolds_iff_dimHLF` for the hook-length identification and `sum_map_partitionsOf` for the
+enumeration.
+
+Consumers that were capped at `n ≤ 12` only because `dim_validated_le12` was a finite check can use
+this instead; `dim_validated_le12` remains the cheaper route inside its range. -/
+theorem sum_map_dimHLF_sq (n : ℕ) :
+    ((partitionsOf n).map (fun l => (dimHLF l) ^ 2)).sum = n.factorial := by
+  rw [sum_map_partitionsOf n (fun l => (dimHLF l) ^ 2)]
+  have h := QOU.Mathlib.rskBurnsideHolds n
+  rwa [QOU.Mathlib.rskBurnsideHolds_iff_dimHLF] at h
 
 end QOU.Mathlib.PartitionsOfBridge

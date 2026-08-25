@@ -65,8 +65,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 sys.path.insert(0, str(COMP))
@@ -76,7 +84,7 @@ Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale (MeV)
 H = Q0 - 1 / Q0
-Z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))          # Markov z (for the g-channel)
+Z = Q0**3 / (Q0**2 + 1)          # Markov z (for the g-channel)
 
 
 def tau_borromean(h):

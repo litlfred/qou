@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T10:51:30.006262+00:00",
-  "commitSha": "214083dd13f85093ad4db12b635879041a45d4b8",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-23T21:12:09.272728+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "pole_is_negative_of_magnitude",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "qbeta-c3-pole-sign-complexification",
   "scriptFile": "qbeta_c3_pole_sign_complexification_probe.py",
   "scriptHash": "59e2ccc05ad1",
-  "scriptCommitSha": "2c983e46cda5f19b167d9d0d913ede6cfa688c48",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,13 +51,25 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_pole_sign_complexification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_pole_sign_complexification_probe.py"
   },
   "description": "Tests the one derived candidate the Φ_q pole's own sign opens: prior pole-seed probes used the pole MAGNITUDE q0^-(2k+1), but the actual pole of Φ_q is x_k = −q0^-(2k+1) (phase π). Principal-branch complexification m² := x_k ⇒ u_k = iπ − (2k+1)·log q0 is tested against the diagonal-crossing gate (corrected NZ leading form Im 𝔙 = (√3/4)(Re²u−Im²u)). RESULT: for every fixed k the sign is identical at both anchors (anchor-blind; boundary (2k+1)=π/log q0≈30.113 crossed by no odd integer between the anchors) ⇒ family excluded scope-(a); the near-k=15 magnitude dip is flagged as a numerological trap and NOT used (C14). Reality invariance (Lean NewtonRealityInvariance, sorry-free) upgrades the real-seed exclusion to scope-(b): real seeds of EITHER sign have all-real Newton iterates and cannot reach the cusp e^{iπ/3}. u(q0) stays OPEN; no c_k wired; nothing fitted.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "anchors": {
-      "q_muon": "1.10997859555418057528159407961",
+      "q_muon": "1.10997859564273904668179512938",
       "q_proton": "1.10997858275138080759166909561",
       "S_muon": "0.00968298",
       "S_proton": "-0.03945936"
@@ -71,121 +83,121 @@
       },
       {
         "k": 1,
-        "ImV_lead_muon": "-4.23123623026",
+        "ImV_lead_muon": "-4.23123623019",
         "ImV_lead_proton": "-4.23123623964",
         "same_sign": true
       },
       {
         "k": 2,
-        "ImV_lead_muon": "-4.15580896258",
+        "ImV_lead_muon": "-4.1558089624",
         "ImV_lead_proton": "-4.15580898864",
         "same_sign": true
       },
       {
         "k": 3,
-        "ImV_lead_muon": "-4.04266806108",
+        "ImV_lead_muon": "-4.04266806072",
         "ImV_lead_proton": "-4.04266811215",
         "same_sign": true
       },
       {
         "k": 4,
-        "ImV_lead_muon": "-3.89181352573",
+        "ImV_lead_muon": "-3.89181352515",
         "ImV_lead_proton": "-3.89181361015",
         "same_sign": true
       },
       {
         "k": 5,
-        "ImV_lead_muon": "-3.70324535655",
+        "ImV_lead_muon": "-3.70324535567",
         "ImV_lead_proton": "-3.70324548266",
         "same_sign": true
       },
       {
         "k": 6,
-        "ImV_lead_muon": "-3.47696355353",
+        "ImV_lead_muon": "-3.47696355231",
         "ImV_lead_proton": "-3.47696372967",
         "same_sign": true
       },
       {
         "k": 7,
-        "ImV_lead_muon": "-3.21296811667",
+        "ImV_lead_muon": "-3.21296811505",
         "ImV_lead_proton": "-3.21296835118",
         "same_sign": true
       },
       {
         "k": 8,
-        "ImV_lead_muon": "-2.91125904598",
+        "ImV_lead_muon": "-2.9112590439",
         "ImV_lead_proton": "-2.91125934719",
         "same_sign": true
       },
       {
         "k": 9,
-        "ImV_lead_muon": "-2.57183634145",
+        "ImV_lead_muon": "-2.57183633885",
         "ImV_lead_proton": "-2.57183671771",
         "same_sign": true
       },
       {
         "k": 10,
-        "ImV_lead_muon": "-2.19470000309",
+        "ImV_lead_muon": "-2.19469999991",
         "ImV_lead_proton": "-2.19470046273",
         "same_sign": true
       },
       {
         "k": 11,
-        "ImV_lead_muon": "-1.77985003089",
+        "ImV_lead_muon": "-1.77985002708",
         "ImV_lead_proton": "-1.77985058224",
         "same_sign": true
       },
       {
         "k": 12,
-        "ImV_lead_muon": "-1.32728642485",
+        "ImV_lead_muon": "-1.32728642035",
         "ImV_lead_proton": "-1.32728707626",
         "same_sign": true
       },
       {
         "k": 13,
-        "ImV_lead_muon": "-0.83700918498",
+        "ImV_lead_muon": "-0.837009179724",
         "ImV_lead_proton": "-0.837009944785",
         "same_sign": true
       },
       {
         "k": 14,
-        "ImV_lead_muon": "-0.30901831127",
+        "ImV_lead_muon": "-0.309018305207",
         "ImV_lead_proton": "-0.309019187808",
         "same_sign": true
       },
       {
         "k": 15,
-        "ImV_lead_muon": "0.256686196276",
+        "ImV_lead_muon": "0.256686203204",
         "ImV_lead_proton": "0.256685194667",
         "same_sign": true
       },
       {
         "k": 16,
-        "ImV_lead_muon": "0.860104337659",
+        "ImV_lead_muon": "0.86010434551",
         "ImV_lead_proton": "0.860103202641",
         "same_sign": true
       },
       {
         "k": 17,
-        "ImV_lead_muon": "1.50123611288",
+        "ImV_lead_muon": "1.50123612171",
         "ImV_lead_proton": "1.50123483611",
         "same_sign": true
       },
       {
         "k": 18,
-        "ImV_lead_muon": "2.18008152193",
+        "ImV_lead_muon": "2.1800815318",
         "ImV_lead_proton": "2.18008009508",
         "same_sign": true
       },
       {
         "k": 19,
-        "ImV_lead_muon": "2.89664056482",
+        "ImV_lead_muon": "2.89664057579",
         "ImV_lead_proton": "2.89663897955",
         "same_sign": true
       }
     ],
     "sign_boundary": {
-      "pi_over_logq_muon": "30.108976597862575856",
+      "pi_over_logq_muon": "30.108976574839803318",
       "pi_over_logq_proton": "30.108979926239599038",
       "odd_integer_between_anchors": null
     },

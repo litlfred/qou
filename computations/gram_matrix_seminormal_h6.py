@@ -67,10 +67,15 @@ from hecke_character_symbolic import (  # noqa: E402
     _hoefsmit_build,
     q_character_on_braid_word,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q0_MP = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q0_MP = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 Q0_F64 = float(Q0_MP)
 
 
@@ -211,6 +216,7 @@ def main() -> None:
     # Witness builder created up front so durationMs measures the
     # actual per-block symbolic compute, not just JSON assembly.
     w = WitnessBuilder(name="option-e-phase1-gram-h6", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Option E Phase 1: per-block Hoefsmit-seminormal σ_k matrices "
         "and longest-word matrix ρ_λ(w_0) for each partition λ ⊢ n "

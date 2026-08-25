@@ -41,7 +41,7 @@ $$
   \;=\; \beta(3).
 $$
 
-So $\beta(3) = \pi^3/32$ is a **corollary of Theorem A**.  Classical
-result, derived constructively. $\square$
+So $\beta(3) = \pi^3/32$, a classical result, is a **corollary of
+Theorem A**. $\square$
 
 The numerical verification, the $N=5$ instance, the analytic-number-theory bridge, the Catalan-constant instance, and cross-references are recorded in the [details note](#rem:cyclotomic-l-value-decomposition-details).

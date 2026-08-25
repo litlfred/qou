@@ -49,7 +49,7 @@ variable {n : ℕ}
 
 /-- **PSD diagonal entries are non-negative**.  Mathlib's standard
     fact, restated here for direct use. -/
-theorem PosSemidef.diag_nonneg
+theorem Matrix.PosSemidef.diag_nonneg
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef) (i : Fin n) :
     0 ≤ C i i := by
   -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
@@ -78,7 +78,7 @@ theorem PosSemidef.diag_nonneg
     6. Therefore `D · U^T B U = 0`, hence `A · B = U D (U^T B U) U^T
        = 0`. -/
 -- Ref: [horn-johnson-2013] Thm 7.7.4
-theorem PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
+theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
     {A B : Matrix (Fin n) (Fin n) ℝ}
     (hA : A.PosSemidef) (hB : B.PosSemidef) :
     (A * B).trace = 0 ↔ A * B = 0 := by
@@ -203,7 +203,7 @@ theorem PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
     This is the foundation for the general spectral argument:
     diagonalise `A = U D Uᵀ`, then the general case reduces to
     this diagonal case via cyclicity of trace. -/
-theorem PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero_diagonal
+theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero_diagonal
     {a b : Fin n → ℝ}
     (ha : ∀ i, 0 ≤ a i) (hb : ∀ i, 0 ≤ b i) :
     (Matrix.diagonal a * Matrix.diagonal b).trace = 0 ↔
@@ -231,11 +231,11 @@ theorem PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero_diagonal
     and the duality-gap measure `tr(S · Φ) = 0`, then `S · Φ = 0`.
     This is the bridge identity used in SDP-uniqueness arguments. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5.2 ("Complementary slackness")
---      — Verified against the local PDF (uploads/boyd-vandenberghe-2004-…):
+--      — Verified against the local PDF (library/boyd-vandenberghe-2004-…):
 --      §5.5.2 is Complementary slackness; §5.5.3 is KKT optimality. The
 --      `tr(S·Φ)=0 ⟹ S·Φ=0` bridge identity is the complementary-slackness
 --      formulation specialised to the SDP cone.
-theorem PosSemidef.complementary_slackness
+theorem Matrix.PosSemidef.complementary_slackness
     {S Φ : Matrix (Fin n) (Fin n) ℝ}
     (hS : S.PosSemidef) (hΦ : Φ.PosSemidef)
     (h_gap : (S * Φ).trace = 0) : S * Φ = 0 :=
@@ -246,7 +246,7 @@ theorem PosSemidef.complementary_slackness
     Combined with primal feasibility (`Φ` PSD with prescribed trace
     constraints) this pins `Φ` down to a low-dimensional subspace
     — the linear-algebraic core of SDP-optimum uniqueness. -/
-theorem PosSemidef.kernel_containment_of_product_zero
+theorem Matrix.PosSemidef.kernel_containment_of_product_zero
     {S Φ : Matrix (Fin n) (Fin n) ℝ}
     (h_prod : S * Φ = 0) (j : Fin n) :
     S *ᵥ (fun i => Φ i j) = 0 := by

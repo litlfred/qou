@@ -58,8 +58,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 with mp.workdps(50):
     PI = +mp.pi
     S3 = +mp.sqrt(3)

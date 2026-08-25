@@ -43,7 +43,7 @@ shapes differ). However:
 
 1. The Q$_\beta$ ladder $c_k$ — which `CKRecursion` ultimately
    describes — is conjectured to be expressible in the $z$-basis via
-   the open f-map (cf. 1ppQ-Q$_\beta$ ledger). If the f-map identifies
+   the open f-map. If the f-map identifies
    the Habiro element $F(q)$ whose Taylor coefficients are the $c_k$,
    and if $F(q)$'s $q$-difference equation has constant Laurent
    coefficients in $\xi$, then the resulting `CKRecursion ℝ` instance
@@ -57,9 +57,9 @@ shapes differ). However:
    the f-map. The $z$-recursion is a structural input to the f-map
    derivation, not a substitute for the ladder $c_k$ recursion.
 
-## Claims not established by this block
+## Claims not established here
 
 - **A concrete `CKRecursion ℝ` instance.** That would require the
-  open f-map identification (the 1ppQ-Q$_\beta$ keystone).
+  open f-map identification.
 - **A formula for the $c_k$ in terms of the $a_n$.** Open, contingent
   on the f-map.

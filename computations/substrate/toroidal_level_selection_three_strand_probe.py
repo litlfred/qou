@@ -96,7 +96,8 @@ annihilator_ok = sp.simplify(sp.expand_trig(
 cos_flow_id = sp.simplify(2 * sp.cos(2 * sp.pi / 3) + 1) == 0
 
 # ------------------------------------- (3) compact-locus elementary family
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 half = mp.mpf(1) / 2
 tol = mp.mpf("1e-40")
 CPTS = [(mp.mpf("1"), mp.mpf("0.9")), (mp.mpf("2.4"), mp.mpf("2.0944")),

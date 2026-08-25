@@ -1,0 +1,343 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "candetgl",
+ "source": {
+  "file": "candetgl.pdf",
+  "sha256": "d788af715428b8b2cafabe8caf6e8c0df32f5c04a12006778221c189a7701efc",
+  "bytes": 508755,
+  "pages": 31
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1063/1.1329659",
+  "title": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics",
+  "authors_raw": "Jason Cantarella, Dennis DeTurck, and Herman Gluck",
+  "abstract": null,
+  "docinfo": {
+   "CreationDate": "D:20140510062442Z",
+   "Producer": "iText 2.1.7 by 1T3XT"
+  },
+  "title_lines": [
+   "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma",
+   "physics"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 2,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "PRELIMINARIES",
+   "page": 3,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "Fuller,9 Bauer, Crick, and",
+   "page": 4,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "The Hodge decomposition theorem",
+   "page": 5,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "FK˜ﬂuxless knots",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "HK˜harmonic knots",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "CG˜curly gradients",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "HG˜harmonic gradients",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "GG˜grounded gradients",
+   "page": 8,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "STANDARD INFORMATION ABOUT THE BIOT–SAVART OPERATOR",
+   "page": 8,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 12,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "PROOF OF THEOREM A",
+   "page": 13,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Corollary to Theorem A",
+   "page": 15,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "PROOF OF THEOREM B",
+   "page": 16,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "PROOF OF THEOREM C",
+   "page": 21,
+   "source": "inferred",
+   "number": "VI"
+  },
+  {
+   "level": 1,
+   "title": "PROOF OF THEOREM D",
+   "page": 23,
+   "source": "inferred",
+   "number": "VII"
+  },
+  {
+   "level": 1,
+   "title": "Proof of 2",
+   "page": 25,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 29,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3816,
+   "n_words": 632
+  },
+  {
+   "id": "sec-001-ii-preliminaries",
+   "number": "II",
+   "title": "PRELIMINARIES",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2084,
+   "n_words": 354
+  },
+  {
+   "id": "sec-002-8-fuller9-bauer-crick-and",
+   "number": "8",
+   "title": "Fuller,9 Bauer, Crick, and",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2455,
+   "n_words": 390
+  },
+  {
+   "id": "sec-003-c-the-hodge-decomposition-theorem",
+   "number": "C",
+   "title": "The Hodge decomposition theorem",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5933,
+   "n_words": 1032
+  },
+  {
+   "id": "sec-004-1-fkﬂuxless-knots",
+   "number": "1",
+   "title": "FK˜ﬂuxless knots",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 368,
+   "n_words": 68
+  },
+  {
+   "id": "sec-005-2-hkharmonic-knots",
+   "number": "2",
+   "title": "HK˜harmonic knots",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 346,
+   "n_words": 60
+  },
+  {
+   "id": "sec-006-3-cgcurly-gradients",
+   "number": "3",
+   "title": "CG˜curly gradients",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 275,
+   "n_words": 51
+  },
+  {
+   "id": "sec-007-4-hgharmonic-gradients",
+   "number": "4",
+   "title": "HG˜harmonic gradients",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 795,
+   "n_words": 130
+  },
+  {
+   "id": "sec-008-5-gggrounded-gradients",
+   "number": "5",
+   "title": "GG˜grounded gradients",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 377,
+   "n_words": 65
+  },
+  {
+   "id": "sec-009-iii-standard-information-about-the-biotsavart-op",
+   "number": "III",
+   "title": "STANDARD INFORMATION ABOUT THE BIOT–SAVART OPERATOR",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 8284,
+   "n_words": 1404
+  },
+  {
+   "id": "sec-010-c-examples",
+   "number": "C",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2457,
+   "n_words": 421
+  },
+  {
+   "id": "sec-011-iv-proof-of-theorem-a",
+   "number": "IV",
+   "title": "PROOF OF THEOREM A",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5176,
+   "n_words": 944
+  },
+  {
+   "id": "sec-012-v-proof-of-theorem-b",
+   "number": "V",
+   "title": "PROOF OF THEOREM B",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 397,
+   "n_words": 83
+  },
+  {
+   "id": "sec-013-c-proof-of-corollary-to-theorem-a",
+   "number": "C",
+   "title": "Proof of Corollary to Theorem A",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 12550,
+   "n_words": 2251
+  },
+  {
+   "id": "sec-014-vi-proof-of-theorem-c",
+   "number": "VI",
+   "title": "PROOF OF THEOREM C",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3412,
+   "n_words": 604
+  },
+  {
+   "id": "sec-015-vii-proof-of-theorem-d",
+   "number": "VII",
+   "title": "PROOF OF THEOREM D",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3347,
+   "n_words": 572
+  },
+  {
+   "id": "sec-016-c-proof-of-2",
+   "number": "C",
+   "title": "Proof of 2",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 8396,
+   "n_words": 1423
+  },
+  {
+   "id": "sec-017-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 8981,
+   "n_words": 1392
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 18,
+  "chars_total": 69449
+ }
+}

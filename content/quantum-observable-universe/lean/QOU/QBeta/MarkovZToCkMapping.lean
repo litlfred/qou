@@ -35,7 +35,11 @@ namespace QOU.QBeta
 /-- The abstract f-map from the Markov $a_n$ coefficients to the Q_β ladder 
     $c_k$ coefficients. It is parametrised by $q$ since the categorical 
     derivation (e.g. Hexagon equations) introduces $q$-dependent weights. -/
-axiom qBetaFMap : ℝ → (ℕ → ℝ) → (ℕ → ℝ)
+-- `opaque`, not `axiom`: this names a constant with an unspecified value, it
+-- does not assert anything. An `axiom` producing DATA still lands in
+-- `#print axioms` for every downstream result, which buries the axioms that
+-- are genuine assumptions among ones that are merely unspecified constants.
+opaque qBetaFMap : ℝ → (ℕ → ℝ) → (ℕ → ℝ)
 
 /-- 
   **Z to C_k Mapping Class** (§3b-cond open f-map)

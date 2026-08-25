@@ -4,9 +4,9 @@
   "caveats": [
     "STRUCTURE is derived (\u03b1 = filled [1^4] via the proved SU(4) gate); the per-\u03b1 SCALE (~29.8 MeV) is still EMPIRICAL, not yet substrate-derived. This localizes the magnitude gap to 'derive the per-\u03b1 binding scale'."
   ],
-  "commitSha": "7b9f8128b4a50e973e32ef143a8785630043caf5",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "computation": "alpha-cluster-binding-scaling",
-  "computedAt": "2026-08-02T19:09:25.017670+00:00",
+  "computedAt": "2026-08-08T13:00:16.792989+00:00",
   "contentBlock": "alg:delta-lambda-closure",
   "data": {
     "alpha_conjugate": [
@@ -65,17 +65,29 @@
         "frac_of_alpha": 0.75,
         "iso": "3He"
       }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
+        "computedAt": "2026-07-18T23:59:56.849702+00:00",
+        "path": "ame-2020-binding-energies.witness.json",
+        "scriptCommitSha": "unknown",
+        "sha256": "804f9ce72c6230d8bea6dab0e35fba853d1b29de25b9caeb02f34f8365adb8c8",
+        "size_bytes": 3071
+      }
     ]
   },
   "description": "0-fit \u03b1-cluster (Wigner SU(4) [1^4] supermultiplet) scaling test. B/n_\u03b1 is constant to CV~5% across \u03b1-conjugate nuclei (\u2074He\u2192\u00b9\u2076O) \u2014 the extensive binding term is the \u03b1-cluster volume term; the sub-\u03b1 nuclei trace partial [1^4] filling. Categorical origin: the proved SU(4) gate dim[1^A]=C(4,A) (present A\u22644, vanishes A>4).",
-  "durationMs": 13,
+  "durationMs": 6,
   "engine": "exact",
   "engineVersion": "python 3.11.15",
   "environment": {
-    "mpmath": "1.3.0",
+    "clarabel": "0.11.1",
+    "mpmath": "1.4.1",
     "numpy": "2.4.6",
     "pyhecke_native": "0.9.0",
     "python": "3.11.15",
+    "scipy": "1.17.1",
     "sympy": "1.14.0"
   },
   "parameters": {
@@ -90,7 +102,7 @@
     "output_dps": 60,
     "truncation_bound": "1e-60"
   },
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "scriptFile": "alpha_cluster_binding_scaling_probe.py",
-  "scriptHash": "992fdc1ee4fe"
+  "scriptHash": "0a49378d0674"
 }

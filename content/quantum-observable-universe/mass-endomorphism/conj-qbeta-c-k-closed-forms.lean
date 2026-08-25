@@ -113,8 +113,19 @@ theorem qbeta_c_k_closed_forms_of_instance (q : ℝ) :
     forms.** That the empirical closed forms recorded above arise from the
     categorical Markov trace (Khovanov–Rozansky polynomial at finite `q`, or
     a KLR canonical-basis Markov-trace formula) rather than being fitted is
-    open research-grade work. Stated as a conjecture carrier so the `sorry`
-    is honest "open", not a masked triviality. -/
+    open research-grade work.
+
+    **Correction (2026-08-09): this docstring previously said the content is
+    "stated as a conjecture carrier so the `sorry` is honest 'open'". There
+    is no `sorry` here.** The body is
+    `⟨inst.c_4_closed_form q, inst.c_5_closed_form q⟩` — both conjuncts
+    projected verbatim from the `QBetaCKClosedForms` instance argument. The
+    openness is real and is carried by that class having no instance; but the
+    prose and the code disagreed about the mechanism, which is the
+    `proof-docstring-sorry-mismatch` defect (a reader auditing the prose
+    records a queued gap, a reader running `#print axioms` records a proof).
+    The honest description: this is a conditional restatement of the class
+    fields, open because nothing inhabits the class. -/
 -- Ref: [manuscript] prop:qbeta-c-k-closed-forms
 -- Ref: [khovanov-rozansky2008] doi:10.4064/fm199-1-1
 theorem qbeta_c_k_closed_forms_derived

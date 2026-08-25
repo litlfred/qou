@@ -86,6 +86,7 @@ from qou_substrate.constants import q_at  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
 
 from _awpk_fast_index import eval_I41_at  # noqa: E402
+from qbeta_t4_anchors import theta_t4  # noqa: E402
 from qbeta_g3_fourone_index_assembly_corrected import e2_window_for  # noqa: E402
 
 set_compute_dps()
@@ -263,8 +264,11 @@ def main() -> int:
     # WINDOW TRUNCATION at near-boundary points, not an algebra failure
     # (the algebra is machine-checked in QOU.QBeta.WindingGFTransform;
     # this numerical A2 is the transcription sanity cross-check).
+    # Third point sits on the proton T4 sheet. It is a SAMPLE POINT for the
+    # residual check — nothing here depends on its exact value — but it was
+    # typed as the stale 8-digit 0.20323503, so it is now derived (qou-vbw1).
     pts = [mp.mpf("0.78"), mp.mpf("0.85") * mp.e ** (1j * mp.mpf("0.7")),
-           mp.mpf("0.8") * mp.e ** (2j * mp.mpf("0.20323503"))]
+           mp.mpf("0.8") * mp.e ** (2j * theta_t4("proton"))]
     for m in (-1, 0, 1, 2):
         for w in pts:
             # inner argument stays inside annulus: |w/qh| = |w|·1.054 ≤ 0.97 ✓

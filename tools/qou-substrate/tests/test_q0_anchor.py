@@ -12,7 +12,11 @@ import qou_substrate.witness as w  # noqa: E402
 def test_env_override_muon():
     a, v = w.resolve_q0_anchor("whatever.py", env={"QOU_Q0_ANCHOR": "muon"})
     assert a == "muon"
-    assert v is None or v.startswith("1.109978595557")  # muon pin
+    # The muon pin as the COMPUTE path actually uses it. Do NOT "correct" this
+    # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
+    # computes with the witness string, so a derived label would disagree with
+    # the number the witness reports. See _q0_value_for_anchor's note.
+    assert v is None or v.startswith("1.109978595557")
 
 
 def test_env_override_proton():
@@ -49,12 +53,61 @@ def test_explicit_anchor_overrides_resolution():
     assert payload["q0Anchor"] == "proton"
 
 
-if __name__ == "__main__":
-    for name, fn in sorted(globals().items()):
-        if name.startswith("test_") and callable(fn):
-            fn()
-            print(f"ok  {name}")
-    print("all q0-anchor tests passed")
+def test_stamp_does_not_overwrite_a_declared_anchor():
+    """A `q0Anchor` the producer already wrote WINS over manifest resolution.
+
+    `build()` has always had this guard (`if "q0Anchor" not in witness`);
+    `stamp_staleness_metadata` did not, so the two writers of one field
+    disagreed and this path silently relabelled explicit declarations.
+
+    The case that caught it is `"ambiguous"` — a producer that evaluates at
+    BOTH pins on purpose, which is not resolvable from the manifest and can
+    only be declared. `markov/peel_anchor_identification_probe.py` declares it
+    and got `"proton"` stamped over it from the running script's manifest
+    entry. A witness asserting a pin its contents do not carry is precisely
+    what this field exists to prevent, so the relabel defeated the mechanism
+    while looking like it was applying it.
+    """
+    payload = {"q0Anchor": "ambiguous", "result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+    )
+    assert payload["q0Anchor"] == "ambiguous"
+    # No `q0Value` is invented alongside a declaration that has none: an
+    # ambiguous payload spans both pins, so asserting either one is wrong.
+    assert "q0Value" not in payload
+
+
+def test_stamp_still_fills_in_an_undeclared_anchor():
+    """The guard must not turn the stamper into a no-op.
+
+    Most producers never touch `q0Anchor` and rely on the stamper to resolve
+    it. Guarding the overwrite is only correct if THIS path is untouched —
+    otherwise the fix trades a rare mislabel for a mass regression to
+    Q0_ANCHOR_MISSING.
+    """
+    payload = {"result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+    )
+    assert payload["q0Anchor"] in ("muon", "proton")
+
+
+def test_explicit_kwarg_still_wins_on_an_undeclared_payload():
+    """`q0_anchor=` is the same declaration, one call frame out.
+
+    The guard keys on the PAYLOAD, so an explicit argument must keep beating
+    manifest resolution when the payload itself declares nothing.
+    """
+    payload = {"result": 1.0}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+        q0_anchor="muon", q0_value="1.10997859555",
+    )
+    assert payload["q0Anchor"] == "muon"
+    assert payload["q0Value"] == "1.10997859555"
+
+
 
 
 def test_save_carries_forward_a_recorded_pin(tmp_path):
@@ -113,3 +166,316 @@ def test_save_does_not_invent_a_pin(tmp_path):
 
     got = json.loads(out.read_text())
     assert "q0Anchor" not in got, "rebuild invented a pin that was never recorded"
+
+
+def test_stamp_records_independent_without_a_value():
+    """`independent` states the compute never reads q₀, so it carries no value.
+
+    A `q0Value` next to this label is a contradiction the consistency audit
+    reports as Q0_FLIP, so the stamp must not manufacture one.
+    """
+    payload = {}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python",
+        q0_anchor="independent",
+    )
+    assert payload["q0Anchor"] == "independent"
+    assert "q0Value" not in payload
+
+
+def _tmpdir():
+    import tempfile
+    return tempfile.TemporaryDirectory()
+
+
+def test_save_carries_forward_independent():
+    """An independence declaration survives a rebuild, like any recorded pin.
+
+    Fixture-free on purpose: the direct-run path at the bottom of this file
+    skips anything taking a pytest fixture, and this invariant is worth having
+    under both runners.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "qfree_producer.py"
+        script.write_text("# a producer that never reads q0\n")
+        out = tmp / "qfree.witness.json"
+        out.write_text(json.dumps({
+            "computation": "qfree",
+            "scriptFile": "qfree_producer.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="qfree", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert got["q0Anchor"] == "independent", "independence claim was dropped"
+        assert "q0Value" not in got
+
+
+def test_save_drops_independent_when_payload_gains_a_q0():
+    """The mirror of the muon/proton payload-evidence check.
+
+    If a producer acquires a q₀ dependency, a carried-forward `independent`
+    would vouch for layer-freedom that no longer holds — strictly worse than
+    dropping it, since Q0_ANCHOR_MISSING is a tolerated state.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "now_uses_q0.py"
+        script.write_text("# this producer grew a q0 dependency\n")
+        out = tmp / "grew.witness.json"
+        out.write_text(json.dumps({
+            "computation": "grew",
+            "scriptFile": "now_uses_q0.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="grew", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert got.get("q0Anchor") != "independent", (
+            "a stale independence claim survived onto a witness that now "
+            "records a proton q0")
+        # TIGHTENED 2026-08-24 (bean qou-aj91). This asserted `"q0Anchor" not
+        # in got` — correct when the only two outcomes were "keep the stale
+        # label" or "keep none". `build()` now reads the pin off the payload,
+        # so the third and best outcome exists: the stale claim is gone AND
+        # the witness carries the pin its own numbers show. Asserting the
+        # exact label is STRICTER than asserting absence, not looser.
+        assert got.get("q0Anchor") == "proton"
+        assert got["q0Value"].startswith("1.10997858275")
+
+
+def test_save_carries_forward_the_reason_with_the_anchor():
+    """`q0AnchorReason` rides with the anchor it explains.
+
+    The token alone is a thin record — a reader who finds only `"independent"`
+    has to re-derive the import cone to check it, which is the work the
+    declaration exists to save (bean `qou-mw1p`).
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "qfree_with_reason.py"
+        script.write_text("# a producer that never reads q0\n")
+        out = tmp / "reasoned.witness.json"
+        out.write_text(json.dumps({
+            "computation": "reasoned",
+            "scriptFile": "qfree_with_reason.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+            "q0AnchorReason": "free parameter u; no substrate value read",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="reasoned", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.save()
+
+        got = json.loads(out.read_text())
+        assert got["q0Anchor"] == "independent"
+        assert got.get("q0AnchorReason") == (
+            "free parameter u; no substrate value read"
+        ), "the reason was dropped while its anchor survived"
+
+
+def test_save_drops_the_reason_with_the_anchor():
+    """A reason must not outlive the anchor it explains.
+
+    Left behind, it would explain a label that is no longer on the witness —
+    worse than no reason at all, because it reads as provenance for a claim
+    nothing is making.
+    """
+    import json
+    from pathlib import Path as _P
+
+    with _tmpdir() as d:
+        tmp = _P(d)
+        script = tmp / "grew_a_dep.py"
+        script.write_text("# this producer grew a q0 dependency\n")
+        out = tmp / "orphan.witness.json"
+        out.write_text(json.dumps({
+            "computation": "orphan",
+            "scriptFile": "grew_a_dep.py",
+            "allPassed": True,
+            "assertions": [],
+            "q0Anchor": "independent",
+            "q0AnchorReason": "no substrate value read",
+        }) + "\n")
+
+        b = w.WitnessBuilder(name="orphan", _script_path=str(script),
+                             output_dir=str(tmp))
+        b.add_data("q0", "1.1099785827513808075916690956107688798744991218736")
+        b.save()
+
+        got = json.loads(out.read_text())
+        # See the note in test_save_drops_independent_when_payload_gains_a_q0:
+        # the witness now carries the pin its payload shows, not none.
+        assert got.get("q0Anchor") == "proton"
+        assert "q0AnchorReason" not in got, (
+            "the reason outlived the anchor it explains — it now reads as "
+            "provenance for a claim the witness no longer makes")
+
+
+# RETRACTED 2026-08-15. Two tests stood here asserting the muon label must
+# equal `q_muon_at()`, on the premise that re-running `q_pinning_50_digit.py`
+# would flip the label to a proton value. That premise is FALSE — the producer
+# is manifest-tagged `ideal_muon`, so `q_at` returns the witness string and the
+# producer is a fixed point. The tests encoded the wrong invariant and would
+# have failed correct code.
+#
+# The real defect is that the muon 50-dps constant is CIRCULAR (its producer
+# reads, via `q_at`, the witness it writes). A test for that belongs with a fix
+# that gives the muon anchor a real derivation and moves the label and the
+# computed value together — not here.
+
+
+# NOTE: this MUST stay at the end of the file. It enumerates `globals()`, so
+# any test defined BELOW it is invisible to the direct-run path — which is how
+# two tests added on 2026-08-15 silently never ran that way (pytest collects
+# them regardless, since it imports the whole module first).
+if __name__ == "__main__":
+    import inspect
+    ran = skipped = 0
+    for name, fn in sorted(globals().items()):
+        if not (name.startswith("test_") and callable(fn)):
+            continue
+        # This runner cannot supply pytest fixtures. Skip loudly rather than
+        # crash: moving this block to the end (2026-08-15) exposed a test
+        # taking `tmp_path`, which the old placement had hidden by never
+        # reaching it at all.
+        if inspect.signature(fn).parameters:
+            print(f"skip {name}  (needs pytest fixtures: "
+                  f"{', '.join(inspect.signature(fn).parameters)})")
+            skipped += 1
+            continue
+        fn()
+        print(f"ok   {name}")
+        ran += 1
+    print(f"q0-anchor: {ran} passed, {skipped} skipped "
+          f"(run under pytest for full coverage)")
+
+
+# ── payload-first anchor resolution (bean qou-aj91) ──────────────────
+#
+# `q0Anchor`/`q0Value` answer "at which pin was this payload computed?".
+# Resolving them from the manifest answers a different question — what the
+# producer was CONFIGURED to do — and the two diverge for the 85 producers
+# that read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`
+# directly: that string IS the muon anchor's definition, 67 of the 85 are
+# absent from the manifest, and the manifest's runtime default is proton.
+
+_MUON = "1.10997859555733471989976322048322502665620840878015368660798114614493"
+_PROTON = "1.1099785827513808075916690956107688798744991218736"
+# A REAL path (the stamper hashes the file) whose stem is absent from
+# `q0_anchor_manifest.json`, so it resolves to the runtime default, proton.
+_UNLISTED = __file__
+
+
+def test_payload_evidence_beats_the_manifest_default():
+    """An unlisted producer defaults to proton — unless its payload says muon."""
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "muon"
+    assert payload["q0Value"].startswith("1.109978595557")
+
+
+def test_payload_evidence_is_read_before_serialisation():
+    """The commonest producer idiom stamps BEFORE `json.dump(..., default=str)`.
+
+    At that moment `parameters.q0` is still an `mpmath.mpf`, so a check keyed
+    on `isinstance(v, str)` reads the evidence as absent on exactly the
+    witnesses that carry it — and fails silently, falling back to the manifest.
+    Measured on `meson_mass_from_hecke`, whose committed witness reads as muon
+    while a live re-run stamped proton.
+    """
+    mpmath = __import__("mpmath")
+    mpmath.mp.dps = 60
+    payload = {"parameters": {"q0": mpmath.mpf(_MUON)}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "muon"
+
+
+def test_low_precision_value_contributes_no_evidence():
+    """`str(mpf)` at dps 15 is `1.10998` — it distinguishes neither pin.
+
+    Such a value must fall through to the manifest rather than be guessed at:
+    the two pins agree to 8 significant figures.
+    """
+    assert w._q0_anchor_from_payload({"parameters": {"q0": 1.10998}}) is None
+
+
+def test_a_payload_carrying_both_pins_asserts_neither():
+    both = {"a": {"q0": _MUON}, "b": {"q_0": _PROTON}}
+    assert w._q0_anchor_from_payload(both) is None
+
+
+def test_a_declared_payload_anchor_still_wins_over_evidence():
+    """A producer that states its own pin is never overruled — including a
+    cross-anchor probe declaring `ambiguous` over a payload that happens to
+    record one readable q₀."""
+    payload = {"q0Anchor": "ambiguous", "parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "ambiguous"
+
+
+def test_explicit_kwarg_still_wins_over_payload_evidence():
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+        q0_anchor="proton", q0_value=_PROTON,
+    )
+    assert payload["q0Anchor"] == "proton"
+
+
+def test_resolver_requires_a_declaration_when_there_is_no_evidence():
+    """`build()`'s rule is unchanged for the no-evidence case: without a
+    positive declaration nothing is stamped, because Q0_ANCHOR_MISSING is a
+    tolerated, visible state while a defaulted pin is a silent claim."""
+    a, v = w.resolve_q0_anchor_payload_first(
+        {"nothing": "here"}, _UNLISTED, require_declared=True, env={},
+    )
+    assert (a, v) == (None, None)
+
+
+def test_evidence_outranks_the_declaration_requirement():
+    """A recorded q₀ IS a positive declaration — a stronger one than a manifest
+    entry, since the producer made it by computing rather than by being listed."""
+    a, _ = w.resolve_q0_anchor_payload_first(
+        {"parameters": {"q0": _MUON}}, _UNLISTED, require_declared=True, env={},
+    )
+    assert a == "muon"
+
+
+def test_payload_evidence_does_not_move_any_value():
+    """The whole point: this changes the STAMP, never the numbers."""
+    payload = {"parameters": {"q0": _MUON}, "result": 3.14159, "note": "keep me"}
+    before = dict(payload["parameters"]), payload["result"], payload["note"]
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert (dict(payload["parameters"]), payload["result"], payload["note"]) == before

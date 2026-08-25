@@ -108,7 +108,7 @@ def gradedEuler (l : List ℕ) : ℤ := gradedEulerAux 0 l
     ONE degree `n(λ)` (a-function `= dim_ℂ 𝓑_λ`), zero elsewhere: the
     coefficient list is `n(λ)` zeros followed by `dim V_λ`.  This is the graded
     object whose Euler characteristic is `Δ_λ` (PR #4553, `DeltaLambdaDTIndex`). -/
-def singleCoeffs (p : PartitionOf5) : List ℕ :=
+def PartitionOf5.singleCoeffs (p : PartitionOf5) : List ℕ :=
   List.replicate p.nStat 0 ++ [p.dim]
 
 /-- **The full fake-degree object `H_λ`.**  Graded dimensions `= coefficients of
@@ -117,7 +117,7 @@ def singleCoeffs (p : PartitionOf5) : List ℕ :=
     algebra = graded `H^*(𝓑_λ)`).  Position `i` is the coefficient of `q^i`.
     Hard-coded table (n=5) whose shape matches that polynomial; separately
     verified `f_λ(1) = dim V_λ` by `fakeTotalDim_eq_dim`, below. -/
-def fakeCoeffs : PartitionOf5 → List ℕ
+def PartitionOf5.fakeCoeffs : PartitionOf5 → List ℕ
   | .five         => [1]                              -- f = 1                    (q^0)
   | .fourOne      => [0, 1, 1, 1, 1]                  -- f = q[4]_q               (q^1..q^4)
   | .threeTwo     => [0, 0, 1, 1, 1, 1, 1]            -- f = q²[5]_q              (q^2..q^6)
@@ -129,7 +129,7 @@ def fakeCoeffs : PartitionOf5 → List ℕ
 /-! ## Both objects carry the SAME ungraded Wedderburn dimension -/
 
 /-- The single-degree object totals to `dim V_λ`. -/
-theorem singleTotalDim_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.singleTotalDim_eq_dim (p : PartitionOf5) :
     (p.singleCoeffs).sum = p.dim := by
   cases p <;> decide
 
@@ -137,12 +137,12 @@ theorem singleTotalDim_eq_dim (p : PartitionOf5) :
     dim V_λ` (the number of standard Young tableaux).  Hence the ungraded datum
     `dim V_λ` — everything the confinement SDP / `T_w` / `tr_M` read — is SHARED
     between `G_λ` and `H_λ`. -/
-theorem fakeTotalDim_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.fakeTotalDim_eq_dim (p : PartitionOf5) :
     (p.fakeCoeffs).sum = p.dim := by
   cases p <;> decide
 
 /-- The two objects carry the same ungraded dimension, block by block. -/
-theorem same_ungraded_dim (p : PartitionOf5) :
+theorem PartitionOf5.same_ungraded_dim (p : PartitionOf5) :
     (p.singleCoeffs).sum = (p.fakeCoeffs).sum := by
   rw [p.singleTotalDim_eq_dim, p.fakeTotalDim_eq_dim]
 
@@ -150,7 +150,7 @@ theorem same_ungraded_dim (p : PartitionOf5) :
 
 /-- **The single-degree object realizes `Δ_λ`.**  Its Euler characteristic is
     `(-1)^{n(λ)}·dim V_λ = Δ_λ` (the collapse of PR #4553's `dtEuler`). -/
-theorem single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
+theorem PartitionOf5.single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
     gradedEuler p.singleCoeffs = p.deltaLambda := by
   cases p <;> decide
 
@@ -162,7 +162,7 @@ theorem single_gradedEuler_eq_deltaLambda (p : PartitionOf5) :
     `f(-1)=0≠-2` observation to the entire `n=5` anchor.  The two dim-1 blocks
     `(5)`, `(1⁵)` are trivially single-degree monomials, so they agree — hence the
     `dim ≠ 1` hypothesis.) -/
-theorem fake_gradedEuler_ne_deltaLambda (p : PartitionOf5)
+theorem PartitionOf5.fake_gradedEuler_ne_deltaLambda (p : PartitionOf5)
     (h : p.dim ≠ 1) : gradedEuler p.fakeCoeffs ≠ p.deltaLambda := by
   revert h; cases p <;> decide
 

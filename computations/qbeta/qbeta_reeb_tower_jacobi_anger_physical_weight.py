@@ -37,12 +37,13 @@ from fractions import Fraction as Fr  # noqa: E402
 from mpmath import mp, mpf, besselj, findroot  # noqa: E402
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 try:
     from qou_substrate.constants import q_at, q_muon_at
 except Exception:  # pragma: no cover
     from substrate.qou_substrate.constants import q_at, q_muon_at  # type: ignore
 
-mp.dps = 50
+set_compute_dps()
 
 # Per-block bar-odd sinh-order coefficients at n=3 (rational, anchor-independent).
 BAR_ODD_COEFFS = {

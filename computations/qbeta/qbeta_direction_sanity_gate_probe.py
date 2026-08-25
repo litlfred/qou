@@ -58,7 +58,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 def main() -> int:
     # Substrate constants (PR #1727 / PR #1786 chain) — defined inside main()
     # per Gemini review (avoid module-level magic constants).
-    Q0_PIN = "1.1099785955573347198997632204832250266562084087802"
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    Q0_PIN = Q_50_DIGIT_STR
     Q_BETA_CODATA_MEV = "0.78233410277840137760143636388"
     M_E_MEV = "0.51099895069"
     # Direction-sanity threshold (10× order-of-magnitude check)
@@ -99,7 +100,7 @@ def main() -> int:
 
     # Substrate chain (PR #1786)
     h_q = q - 1 / q
-    z_q = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_q = q**3 / (q**2 + 1)
     alpha = (z_q - 1) * h_q / 2
     b_q = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     hbar_q = (q - 1) / q
@@ -138,7 +139,7 @@ def main() -> int:
     # (b) FAILING: PR #1850 z(q_0) pattern — a candidate predicting
     # F(q_0) = z(q_0)^(-k) or similar that gives a wildly wrong magnitude
     # vs. target. Construct a deliberate order-of-magnitude failure.
-    z_q0 = 1 / (mp.sqrt(Q0_mp) + 1 / mp.sqrt(Q0_mp))
+    z_q0 = Q0_mp**3 / (Q0_mp**2 + 1)
     print(f"    Candidate (b): PR #1850 z(q_0) obstruction pattern")
     print(f"      z(q_0) = 1/(√q_0 + 1/√q_0) = {mp.nstr(z_q0, 12)}")
     print(f"      hypothetical F_candidate(q_0) = 1/z(q_0)^5 ~ wild scaling")

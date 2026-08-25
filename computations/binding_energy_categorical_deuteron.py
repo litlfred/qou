@@ -34,7 +34,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _precision import set_compute_dps, fmt  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
@@ -43,7 +48,7 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     m_e = mp.mpf(M_E_MEV)
 
@@ -55,7 +60,7 @@ def main():
     # ── Load precomputed sums from interface-closure witness ────
     closure_path = _pb.witness_path("deuteron-binding-interface-closure.witness.json", HERE)
     if closure_path.exists():
-        closure = json.loads(closure_path.read_text())
+        closure = record_upstream(closure_path, _UPSTREAM_RECORDS)
         d = closure.get("data", {})
         sum_with = d.get("sum_with_interface", 0)
         sum_no = d.get("sum_no_interface", 0)
@@ -85,6 +90,7 @@ def main():
 
         # Build witness
         wb = WitnessBuilder("binding-energy-categorical-deuteron", start_time=t0)
+        wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
         wb.data["formula"] = "B(K) = m_e × |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0) · f^λ|"
         wb.data["sum_with_interface"] = str(sum_with)
         wb.data["sum_without_interface"] = str(sum_no)

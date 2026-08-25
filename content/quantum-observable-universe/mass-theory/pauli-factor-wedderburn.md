@@ -13,4 +13,4 @@ $$
 
 *This is the alternating-block trace divided by the symmetric-block trace. $F_{\mathrm{Pauli}}$ vanishes when $\beta_\mathcal{K}$ has no alternating-block content (bosonic). It is a unit when $\beta_\mathcal{K}$ saturates the alternating block (fully fermionic).*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

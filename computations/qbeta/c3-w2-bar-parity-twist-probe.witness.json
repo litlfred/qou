@@ -1,0 +1,82 @@
+{
+  "schema": "witness/v1",
+  "engine": "mpmath",
+  "scriptFile": "c3_w2_bar_parity_twist_probe.py",
+  "scriptSha256": "5550cb0109c3717d702a7a2c2a07e17071396431d25822435af8f35af51714be",
+  "commitSha": "f52ed928ef8c743e73b919551636c0f1421f8392",
+  "description": "Tests the scalar-combination reading of the positive half of conj:c1-ggm-bar-parity-faces \u2014 that the diagonal Z/2 character (-1)^m is the WHOLE difference. The twist maps the Stokes carrier's recurrence y_{m+2} - (2-q^{m+1})y_{m+1} + y_m = 0 to the sign-flipped one (verified to 1e-50 relative, and proved in Lean as barTwist_recursion), and it inverts EVERY consecutive-pair sign, not only the alternating ones. Since the carrier's solution is flip-free below m+1 = log2/log q, the twisted sequence acquires flips exactly there \u2014 measured \u2014 and doorV_parity_no_identity needs only one flip. So the twist relocates the parity obstruction rather than removing it. The scalar reading of 'sole residual' is therefore excluded; the module-level reading, where the comparison is up to a gauge, is untouched and remains the conjecture's content.",
+  "computation": {
+    "dps": 80,
+    "q": "1.1099785827513808075916690956",
+    "terms": 30,
+    "carrier": "y_{m+2} - (2 - q^{m+1}) y_{m+1} + y_m = 0",
+    "twist": "z_m = (-1)^m y_m"
+  },
+  "results": {
+    "twistedRecursionRelResidual": "1.3177e-79",
+    "signInversionRelErr": "0.0",
+    "untwistedFlips": [
+      1,
+      4,
+      6,
+      8,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "twistedFlips": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      9,
+      13
+    ],
+    "signChangeThreshold": "6.6431129",
+    "mWhereBothClear": []
+  },
+  "checks": [
+    {
+      "name": "twist_maps_solutions_to_solutions",
+      "detail": "z_m = (-1)^m y_m satisfies the sign-flipped recurrence to relative 1.3177e-79; Lean barTwist_recursion proves it in general",
+      "passed": true
+    },
+    {
+      "name": "twist_inverts_every_consecutive_pair_sign",
+      "detail": "z_m z_(m+1) = -(y_m y_(m+1)) identically; Lean barTwist_consecutive_product",
+      "passed": true
+    },
+    {
+      "name": "twisted_sequence_still_has_sign_flips",
+      "detail": "the twisted sequence flips at m = [0, 2, 3, 5, 7, 9, 13], so doorV_parity_no_identity fires on it too. The twist relocates the obstruction rather than removing it.",
+      "passed": true
+    },
+    {
+      "name": "obstruction_fires_on_one_of_the_two",
+      "detail": "no m at which both the target and its twist are flip-free \u2014 the pointwise content of Lean obstruction_fires_on_one_of",
+      "passed": true
+    }
+  ],
+  "verdict": "The bar-parity twist RELOCATES the parity obstruction, it does not remove it. Proved in Lean (obstruction_fires_on_one_of, twist_clears_only_if_everywhere_alternating) and measured here: the twisted sequence still flips, at exactly the indices where the untwisted one did not. Consequence: 'the diagonal Z/2 character is the sole residual' cannot be read as 'applying the character makes the target a non-negative combination of the squares'. It must be read at the MODULE level, up to a gauge. This does not refute the conjecture \u2014 it removes one reading of it, and the block has been amended to say which. Deliberately NOT reported: a scalar fit against a prose-reconstructed f_+/f_-, which would not be trustworthy. Nothing wired to production.",
+  "durationMs": 7,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): computation.q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

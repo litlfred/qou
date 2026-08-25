@@ -36,15 +36,15 @@ def symbolMap
 
 /-- The Markov trace on the associated graded algebra.  Concrete
     model: returns 0. -/
-def gradedTrace
+def GradedTraceResidueSplit.gradedTrace
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The total residue contribution.  Concrete model: returns 0. -/
-def gbResidue
+def GradedTraceResidueSplit.gbResidue
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The full Markov trace.  Concrete model: returns 0. -/
-def markovTrace
+def GradedTraceResidueSplit.markovTrace
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- **Graded-trace residue split.**  Polymorphic in the ground field `R`.
@@ -81,6 +81,8 @@ theorem level_zero_pure_descended
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
 theorem strutinsky_analogue
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
+    -- The split exists and is canonical; the physics interpretation
+    -- is developed in the Physical Observations chapter.
     S.total = S.smooth + S.oscillating :=
   S.split_identity
 

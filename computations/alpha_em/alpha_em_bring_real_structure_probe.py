@@ -17,7 +17,7 @@ type — no obstruction), while the Hecke channel-swap `q ↦ −q⁻¹` (holomo
 
 THIS probe grounds B2's target on the CONCRETE genus-4 Bring arithmetic, using the
 newly-registered period-matrix literature (`[riera-rodriguez-1992]`,
-`[braden-northover-2012]`, `uploads/` intake):
+`[braden-northover-2012]`, `library/` intake):
 
   `Jac(Bring) ~ E_{5τ₀}³ × E_τ₀`  (isogeny of the period matrix `Z = τ₀·C`),
   with the two j-invariants (Braden–Northover convention, authoritative):

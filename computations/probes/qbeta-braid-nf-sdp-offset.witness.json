@@ -1,0 +1,151 @@
+{
+  "engine": "pyhecke+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-16T11:12:09.083808+00:00",
+  "commitSha": "172db58562df57100bd1572f88a8498fffcd0455",
+  "assertions": [
+    {
+      "name": "G0_sigma_inverse_correct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sigma_g * sigma_g^-1 = 1 in NF for both generators, verifying sigma^-1 = sigma - h*I from the Hecke relation"
+    },
+    {
+      "name": "G1_solve_consistent",
+      "computed": "0",
+      "expected": "1",
+      "passed": false,
+      "tolerance": "0.5",
+      "source": "G x* = nf to < 1e-40 for both anchors (the float64 version of this gate could only ask for 1e-6)"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 9,
+  "computation": "qbeta-braid-nf-sdp-offset",
+  "scriptFile": "qbeta_braid_nf_sdp_offset_probe.py",
+  "scriptHash": "d4bdd964d1d8",
+  "scriptCommitSha": "c9559926089d25f13c00a66ae0b7c382feef2b9a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Owner proposal: the interaction IS an SDP solution carrying the knot's magnitude, angle, and offset from the lattice saddle. Takes the fix named by two prior exclusions (angle-structure offset vanishes at the symmetric point; canonical confinement LP is homogeneous) by putting the braid's own operator content into the program: the Frobenius-demand LP G x = nf with nf the normal-form vector of the braid word in H_3(q). Both anchors are 3-braids ((s1 s2^-1)^2 for 4_1, ^3 for Borromean) so both live in the same 6-dim NF space. Measures the offset from the symmetric point (the lattice saddle per SymmetricOptimum) and tests the magnitude reading against the A_omega-free curve. Metric fixed in advance (Euclidean in NF coords). Nothing fitted; nothing wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "program": "min t.x s.t. 1^T x = n_target, G x = nf (Frobenius vector demand)",
+    "braid_words": {
+      "muon (4_1)": "(s1 s2^-1)^2",
+      "proton (B_3)": "(s1 s2^-1)^3"
+    },
+    "nf_basis": [
+      "γ",
+      "σ₀",
+      "σ₁",
+      "L₊",
+      "L₋",
+      "e⁻"
+    ],
+    "anchors": {
+      "muon (4₁)": {
+        "reps": 2,
+        "nf": [
+          "0.043706208532521989402",
+          "0.0091372330150335676328",
+          "-0.20906029879563931543",
+          "1.0",
+          "-0.043706208532521989402",
+          "0.0"
+        ],
+        "x_star": [
+          "1.0329722558639195312e+61",
+          "-9.306235921268135109e+60",
+          "-9.306235921268135109e+60",
+          "8.3841580962761672708e+60",
+          "8.3841580962761672708e+60",
+          "-7.5534413245107610809e+60"
+        ],
+        "G1_resid": "2.127e-10",
+        "net": "9.3212558414449855496e+59",
+        "offset_norm": "2.1849784948792808173e+61",
+        "tr_M": "0.28019564227269498143"
+      },
+      "proton (𝔹₃)": {
+        "reps": 3,
+        "nf": [
+          "0.99808976733571170205",
+          "-0.0095365868265988693696",
+          "0.0091372330150335676328",
+          "-0.043706208532521989402",
+          "0.045616441196810287352",
+          "0.0"
+        ],
+        "x_star": [
+          "1.0329722558639195312e+61",
+          "-9.306235921268135109e+60",
+          "-9.306235921268135109e+60",
+          "8.3841580962761672708e+60",
+          "8.3841580962761672708e+60",
+          "-7.5534413245107610809e+60"
+        ],
+        "G1_resid": "1.313e-10",
+        "net": "9.3212558414449855496e+59",
+        "offset_norm": "2.1849784948792808173e+61",
+        "tr_M": "0.99856216383678726595"
+      }
+    },
+    "offset_separation_rad": "0.0",
+    "homogeneity_broken": false,
+    "readings_tested": {
+      "offset_magnitude": {
+        "theta_mu": "2.1849784948793e+61",
+        "theta_p": "2.1849784948793e+61",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false
+      },
+      "angle_to_t": {
+        "theta_mu": "1.5872544326746",
+        "theta_p": "1.5872544326746",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false
+      },
+      "angle_to_sym": {
+        "theta_mu": "1.5707963267949",
+        "theta_p": "1.5707963267949",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false,
+        "vacuous_by_construction": true,
+        "why": "offset is orthogonal to the all-ones direction by construction (1^T offset = 0), so this angle is pi/2 identically and carries no information about any knot"
+      }
+    },
+    "readings_declared_together": [
+      "offset_magnitude",
+      "angle_to_t (the angle of incidence onto the objective)",
+      "angle_to_sym (angle to the lattice-saddle direction)"
+    ],
+    "pairwise_separation_not_a_candidate": "the angle BETWEEN the two anchors' offsets is one number for the pair, not one per knot, so it cannot serve as theta_K; reported only as the homogeneity-broken diagnostic",
+    "a_free_target_r": "-0.2453912075613999",
+    "metric_fixed_in_advance": "Euclidean in NF coordinates, identical for both anchors, chosen before any value was computed",
+    "untried_not_excluded": [
+      "a G-induced (Frobenius) metric rather than Euclidean",
+      "the offset components rather than its norm",
+      "an angle to a canonical reference rather than the pairwise separation"
+    ],
+    "verdict": "HOMOGENEITY SURVIVED — the two offsets are parallel, so the direction carries no knot information and this collapses to the previously excluded case. BUT NONE OF THE THREE DECLARED READINGS SUPPLIES ϑ: all fail the A-free curve's necessary straddling condition. WHAT IS ESTABLISHED EITHER WAY: the machinery now exists to put the braid's own operator content into the SDP — nf_of_word/hm reduces the braid word through the Grobner-Shirshov tables, G x = nf pins x* = G^-1 nf uniquely, and the offset from the symmetric point (the lattice saddle, per SymmetricOptimum) is computable per knot. Gates: sigma inverse verified against the Hecke relation, and G x* = nf to 2.13e-10. One of the three, 'angle_to_sym', turned out VACUOUS BY CONSTRUCTION — the offset is orthogonal to the all-ones direction by definition (1^T offset = 0), so that angle is pi/2 identically for every knot; it is recorded as an artifact rather than a measurement. So two substantive readings were tested, not three. SCOPE (a): the readings tested use a metric fixed in advance (Euclidean in NF coordinates). Untried and NOT excluded: a G-induced (Frobenius) metric, which is the geometrically natural one here since G is the Frobenius form the program is written in; and the offset's individual COMPONENTS (per-Wedderburn-channel) rather than any scalar summary of it. Nothing fitted; nothing wired; the S values formed the test only."
+  }
+}

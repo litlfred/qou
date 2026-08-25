@@ -1,9 +1,0 @@
----
-# qou-5ug7
-title: Prove YoungTableauStandard.branching_two_one
-status: todo
-type: task
-created_at: 2026-08-04T10:42:35Z
-updated_at: 2026-08-04T10:42:35Z
----
-

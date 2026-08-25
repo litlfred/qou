@@ -1,0 +1,385 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "revmodphys97025002pdf",
+ "source_sha256": "e7fa786c5b666407",
+ "brief": "CODATA recommended values of the fundamental physical constants: 2022 * — 73 sections: CODATA recommended values of the f; Contents; I. Introduction",
+ "extended": "**CODATA recommended values of the fundamental physical constants: 2022 ***\n\n*Peter J. Mohr , † David B. Newell , ‡ and Barry N. Taylor §*\n\n62 pp, 73 sections.\n\n**Outline.** CODATA recommended values of the fundamental p; Contents; I. Introduction; A. Background; B. Overview of the 2022 adjustment; 1 Relative atomic masses; 2 Ionization and binding energies; 3 Hydrogen and deuterium transition energies; 4 Muonic atoms and ions, radius of proton, deu; 5 Electron magnetic-moment anomaly; 6 Atom recoil; 7 Muon magnetic-moment anomaly; 9 Helion g-factor and magnetic-shielding corre; 10 Electroweak quantities; 11 Newtonian constant of gravitation; 12 Least-squares adjustment; A. Atomic Mass Data Center input; C. Frequency-ratio mass determinations",
+ "tokens": {
+  "brief": 37,
+  "extended": 188
+ },
+ "sections": [
+  {
+   "id": "sec-000-codata-recommended-values-of-the-fundamental-phy",
+   "title": "CODATA recommended values of the fundamental physical constants: 2022*",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-contents",
+   "title": "Contents",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-i-introduction",
+   "title": "I. Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-a-background",
+   "title": "A. Background",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-004-b-overview-of-the-2022-adjustment",
+   "title": "B. Overview of the 2022 adjustment",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-005-1-relative-atomic-masses",
+   "title": "Relative atomic masses",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-2-ionization-and-binding-energies",
+   "title": "Ionization and binding energies",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-007-3-hydrogen-and-deuterium-transition-energies",
+   "title": "Hydrogen and deuterium transition energies",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-008-4-muonic-atoms-and-ions-radius-of-proton-deutero",
+   "title": "Muonic atoms and ions, radius of proton, deuteron, and &alpha; particle",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-009-5-electron-magnetic-moment-anomaly",
+   "title": "Electron magnetic-moment anomaly",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-010-6-atom-recoil",
+   "title": "Atom recoil",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-011-7-muon-magnetic-moment-anomaly",
+   "title": "Muon magnetic-moment anomaly",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-012-9-helion-g-factor-and-magnetic-shielding-correct",
+   "title": "Helion g-factor and magnetic-shielding corrections",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-013-10-electroweak-quantities",
+   "title": "Electroweak quantities",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-014-11-newtonian-constant-of-gravitation",
+   "title": "Newtonian constant of gravitation",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-015-12-least-squares-adjustment",
+   "title": "Least-squares adjustment",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-016-a-atomic-mass-data-center-input",
+   "title": "A. Atomic Mass Data Center input",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-017-c-frequency-ratio-mass-determinations",
+   "title": "C. Frequency-ratio mass determinations",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-018-d-mass-ratios-from-frequency-measurements-in-hd",
+   "title": "D. Mass ratios from frequency measurements in HD+",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-019-a-theory-of-hydrogen-and-deuterium-energy-levels",
+   "title": "A. Theory of hydrogen and deuterium energy levels",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-020-1-dirac-eigenvalue-and-mass-corrections",
+   "title": "Dirac eigenvalue and mass corrections",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-021-2-relativistic-recoil",
+   "title": "Relativistic recoil",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-022-3-self-energy",
+   "title": "Self-energy",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-023-4-vacuum-polarization",
+   "title": "Vacuum polarization",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-024-5-two-photon-corrections",
+   "title": "Two-photon corrections",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-025-6-three-photon-corrections",
+   "title": "Three-photon corrections",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-026-7-finite-nuclear-size-and-polarizability",
+   "title": "Finite nuclear size and polarizability",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-027-8-radiative-recoil-corrections",
+   "title": "Radiative-recoil corrections",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-028-9-nucleus-self-energy",
+   "title": "Nucleus self-energy",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-029-b-total-theoretical-energies-and-uncertainties",
+   "title": "B. Total theoretical energies and uncertainties",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-030-c-experimentally-determined-transition-energies",
+   "title": "C. Experimentally determined transition energies in hydrogen and deuterium",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-031-iv-muonic-atoms-and-muonic-ions",
+   "title": "IV. Muonic Atoms and Muonic Ions",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-032-a-theory-and-experiment",
+   "title": "A. Theory and experiment",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-033-v-electron-magnetic-moment-anomaly",
+   "title": "V. Electron Magnetic-Moment Anomaly",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-034-vi-atom-recoil-measurements",
+   "title": "VI. Atom-Recoil Measurements",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-035-vii-muon-magnetic-moment-anomaly",
+   "title": "VII. Muon Magnetic-Moment Anomaly",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-036-a-theory-of-the-muon-anomaly",
+   "title": "A. Theory of the muon anomaly",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-037-b-2006-measurement-of-the-muon-anomaly-at-brookh",
+   "title": "B. 2006 Measurement of the muon anomaly at Brookhaven National Laboratory",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-038-c-2021-measurement-of-the-muon-anomaly-at-the-fe",
+   "title": "C. 2021 Measurement of the muon anomaly at the Fermi National Accelerator Laboratory",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-039-d-comparison-of-experiment-and-theory",
+   "title": "D. Comparison of experiment and theory",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-040-a-theory-of-the-bound-electron-g-factor",
+   "title": "A. Theory of the bound-electron g-factor",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-041-b-measurements-of-precession-and-cyclotron-frequ",
+   "title": "B. Measurements of precession and cyclotron frequencies of C125+ and Si2813+",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-042-ix-electron-to-muon-mass-ratio-and-muon-to-proto",
+   "title": "IX. Electron-to-Muon Mass Ratio and Muon-to-Proton Magnetic-Moment Ratio",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-043-a-theory-of-the-muonium-ground-state-hyperfine-s",
+   "title": "A. Theory of the muonium ground-state hyperfine splitting",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-044-b-measurements-of-muonium-transition-energies",
+   "title": "B. Measurements of muonium transition energies",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-045-c-analysis-of-the-muonium-hyperfine-splitting-an",
+   "title": "C. Analysis of the muonium hyperfine splitting and mass ratio m&mu;/me",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-046-a-definitions-of-bound-state-and-free-g-factors",
+   "title": "A. Definitions of bound-state and free g-factors",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-047-b-theoretical-ratios-of-g-factors-in-h-d-he3-and",
+   "title": "B. Theoretical ratios of g-factors in H, D, He3, and muonium",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-048-c-theoretical-ratios-of-nuclear-g-factors-in-hd",
+   "title": "C. Theoretical ratios of nuclear g-factors in HD and HT",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-049-d-ratio-measurements-in-atoms-and-molecules",
+   "title": "D. Ratio measurements in atoms and molecules",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-050-xi-magnetic-moments",
+   "title": "XI. Magnetic Moments",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-051-a-proton-magnetic-moment-in-nuclear-magnetons",
+   "title": "A. Proton magnetic moment in nuclear magnetons",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-052-xii-electroweak-quantities",
+   "title": "XII. Electroweak Quantities",
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-053-xiii-lattice-spacings-of-silicon-crystals",
+   "title": "XIII. Lattice Spacings of Silicon Crystals",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-054-xiv-newtonian-constant-of-gravitation",
+   "title": "XIV. Newtonian Constant of Gravitation",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-055-xv-the-2022-codata-recommended-values",
+   "title": "XV. The 2022 CODATA Recommended Values",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-056-a-calculational-details",
+   "title": "A. Calculational details",
+   "pages": "41-52"
+  },
+  {
+   "id": "sec-057-b-tables-of-recommended-values",
+   "title": "B. Tables of recommended values",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-058-xvi-summary-and-conclusion",
+   "title": "XVI. Summary and Conclusion",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-059-a-comparison-of-2022-and-2018-codata-recommended",
+   "title": "A. Comparison of 2022 and 2018 CODATA recommended values",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-060-b-notable-features-of-the-codata-2022-adjustment",
+   "title": "B. Notable features of the CODATA 2022 adjustment",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-061-1-impact-on-metrology-and-chemistry",
+   "title": "Impact on metrology and chemistry",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-062-2-importance-of-theory",
+   "title": "Importance of theory",
+   "pages": "54-55"
+  },
+  {
+   "id": "sec-063-3-lack-of-data",
+   "title": "Lack of data",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-064-4-decreased-and-increased-uncertainties",
+   "title": "Decreased and increased uncertainties",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-065-5-changes-in-recommended-values-of-constants",
+   "title": "Changes in recommended values of constants",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-066-6-post-closing-date-results",
+   "title": "Post-closing-date results",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-067-c-suggestions-for-future-work",
+   "title": "C. Suggestions for future work",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-068-2-newtonian-constant-of-gravitation-g",
+   "title": "Newtonian constant of gravitation G",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-069-3-transition-frequencies-of-h-and-d",
+   "title": "Transition frequencies of H and D",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-070-list-of-symbols-and-abbreviations",
+   "title": "List of Symbols and Abbreviations",
+   "pages": "56-59"
+  },
+  {
+   "id": "sec-071-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-072-references",
+   "title": "References",
+   "pages": "59-62"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

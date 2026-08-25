@@ -41,7 +41,7 @@ anchors are established, but the equality of the full binding to the complete
 jet-order filtration — and the $q$-difference origin of the scale rule — are
 not yet proved.
 
-**Scope note on the weight $w_n(K)$.** A derive-or-refute of the
+**Scope note on the weight $w_n(K)$.** A derive-or-refute probe of the
 weight kernel establishes what does *not* close.
 Body-order weights $w_n$ (shared across knots $K$) are **admissible**: the raw
 $^{3}\mathrm{H}$/$^{3}\mathrm{He}$ binding split ($0.76\ \text{MeV}$, $9.9\%$) is
@@ -69,5 +69,4 @@ amplifying body-order weight overshoots ($\sim{+}920\%$ at ${}^{6}$Li,
 $\sim{+}2\times10^{6}\%$ at ${}^{12}$C). The series must therefore be a **few-body
 truncation** (fixed small $n_{\max}$, a $2$–$3$-body cluster count $\times$
 A-multiplicity, matching nuclear $2$-/$3$-body force dominance), not a sum to $A$;
-the na-Stokes period remains the correct *light*-nucleus ($A\leq 4$) kernel. See
-[`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md).
+the na-Stokes period remains the correct *light*-nucleus ($A\leq 4$) kernel.

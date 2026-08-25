@@ -8,4 +8,4 @@ These corollaries replace empirical per-isotope fits with derived expressions:
 | Odd-odd $Z = N$ (${}^6\mathrm{Li},\ {}^{14}\mathrm{N}$) | Asymmetric | $1 - \delta_{\mathrm{Wigner}}$ | Last-neutron breaking $\Rightarrow$ residual on standard irrep |
 
 **Practical computation.**
-The Hoefsmit pipeline produces $\chi_\lambda(\beta_\mathcal{K})$ for any braid word. The knot factor is then a single q-deformed Wedderburn-weighted sum. It is bounded by Wedderburn completeness without truncation. Implementation replaces per-isotope hand-fits with direct evaluation of the spectral form.
+The Hoefsmit pipeline produces $\chi_\lambda(\beta_\mathcal{K})$ for any braid word. The knot factor is then a single q-deformed Wedderburn-weighted sum. It is bounded by Wedderburn completeness without truncation.

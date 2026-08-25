@@ -34,16 +34,16 @@
       "x": 0.2499218994064355
     }
   },
-  "continuum_saddle_value": "3.663862376708876060218414059729536443097",
+  "continuum_saddle_value": "3.663862376708876060218414059729536443096597497126688537065992478487052",
   "vol_4G": 3.663862376708876,
   "exact_match_40dps": true,
   "continuum_integral": "2\u03c0 \u222b_0^{1/2} [log2 + 2 log sin(\u03c0(u+1/4)) \u2212 log sin(\u03c0 u)] du",
   "lean_target": "whitehead_vc_of_saddle_value hsaddle: nseq\u2192N/2, kseq\u2192N/4; Riemann sum \u2192 integral = 4G via QOU.Knot.Clausen",
-  "timestamp": "2026-08-01T23:57:49+00:00",
+  "timestamp": "2026-08-23T10:00:04+00:00",
   "engine": "python+numpy+mpmath",
   "engineVersion": "3.11.15",
   "scriptFile": "whitehead_saddle.py",
-  "commitSha": "22b4ef563d16f4939470ea9d162a0c3d88275845",
-  "computedAt": "2026-08-01T23:57:49+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T10:00:04+00:00",
   "auditOnly": true
 }

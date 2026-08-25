@@ -103,8 +103,9 @@ import mpmath as mp  # noqa: E402
 mp.mp.dps = 80
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 S_TARGET = "0.186893691885"  # per audit doc (12 digits)
 
 
@@ -383,7 +384,35 @@ def main() -> int:
                     "Q_A(q) and α(q), not Q_β/E_0."),
         )
 
-    builder.save()
+    # q0 anchor: `independent`, declared rather than inherited.
+
+    # Measured, not assumed -- see the reason (bean qou-o922).
+
+    builder.save({"q0Anchor": "independent",
+
+            "q0AnchorReason": (
+
+                'Reads no substrate value. PROVED by running this producer under'
+
+                'QOU_Q0_ANCHOR=muon and =proton and diffing the emitted witness:'
+
+                'the only non-ephemeral leaves that differ are q0Anchor and'
+
+                'q0Value THEMSELVES -- every substantive field is byte-identical,'
+
+                'so the pin changes the label and nothing else. Its previous'
+
+                '`muon` label was therefore a false claim that this producer'
+
+                'computed at that anchor. `independent` is the honest'
+
+                'disposition; a q0_anchor_manifest entry would be the WRONG fix,'
+
+                'promoting a false claim into a declared one. Bean qou-o922,'
+
+                'class (ii).'
+
+            )})
     print(f"\n  Witness: qbeta-habiro-f-from-shape-collapse.witness.json")
     return 0
 

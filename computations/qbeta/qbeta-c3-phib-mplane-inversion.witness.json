@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:11:13.327626+00:00",
-  "commitSha": "67a335b7ee18350a8c13de7cc177eab8486f2977",
+  "computedAt": "2026-08-24T13:26:35.327761+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "newton_solver_recovers_vol41",
-      "computed": 4.1282603944519646e-18,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -42,15 +42,15 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.1,
-      "source": "required 5.314e+7 >= 100x smooth 1633.0 — smooth substrate phase laws cannot carry the anchor swing; the u_ladder^3-lever class can (one-sided lower bound)"
+      "source": "required 5.308e+7 >= 100x smooth 1633.0 — smooth substrate phase laws cannot carry the anchor swing; the u_ladder^3-lever class can (one-sided lower bound)"
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 16,
   "computation": "qbeta-c3-phib-mplane-inversion",
   "scriptFile": "qbeta_c3_phib_mplane_inversion_probe.py",
   "scriptHash": "b4b2b22872b4",
-  "scriptCommitSha": "67a335b7ee18350a8c13de7cc177eab8486f2977",
+  "scriptCommitSha": "1800525fdaf98834724f92b213aa228206a564c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,9 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_mplane_inversion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_mplane_inversion_probe.py"
   },
   "description": "Invert S = Im V (NZ leading) on the m-plane: per-anchor feasibility floor |u|_min = sqrt(2|S|/sqrt(3)); canonical substrate u-candidates all fail the cross-anchor gate (b-aligned t*e^{i pi/4} is a muon-only near-match); required phase-accumulation rate |dphi/dq| matches the u_ladder^3-lever class (~1e7..1e9), excluding smooth substrate phase laws (~1e3). Exploratory; NZ-leading tier; no fit; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -74,9 +83,9 @@
         "u_min_over_t": "2.04576571391"
       },
       "muon": {
-        "S": "0.0096829777980520786601",
-        "u_min": "0.10573996253321198674",
-        "u_min_over_t": "1.01341020572"
+        "S": "0.010022900945301786549",
+        "u_min": "0.10757996615384242632",
+        "u_min_over_t": "1.03104477188"
       }
     },
     "M2_candidates": [
@@ -88,7 +97,7 @@
       },
       {
         "candidate": "t*e^(i pi/4) (b-aligned)",
-        "rel_err_muon": 0.026290397877426482,
+        "rel_err_muon": 0.05931341385336362,
         "rel_err_proton": 1.2389396419034047,
         "cross_anchor_pass": false
       },
@@ -100,19 +109,19 @@
       },
       {
         "candidate": "hbar_q^2 * e^(i pi/4)",
-        "rel_err_muon": 0.9913802244625712,
+        "rel_err_muon": 0.9916725610827833,
         "rel_err_proton": 1.0021152155293958,
         "cross_anchor_pass": false
       },
       {
         "candidate": "h * e^(i pi/4)",
-        "rel_err_muon": 2.908993295284063,
+        "rel_err_muon": 2.776421173433554,
         "rel_err_proton": 1.9592320496717908,
         "cross_anchor_pass": false
       },
       {
         "candidate": "u_ladder * e^(i pi/4)",
-        "rel_err_muon": 0.9935118767321074,
+        "rel_err_muon": 0.9937319191240612,
         "rel_err_proton": 1.0015921271989596,
         "cross_anchor_pass": false
       }
@@ -121,25 +130,25 @@
       "rows": [
         {
           "u_mod_over_proton_floor": 1.05,
-          "phi_muon": "0.1122284836",
+          "phi_muon": "0.1162395311",
           "phi_proton": "-0.5680874102",
-          "required_dphi_dq_lower_bound": "53138056.0"
+          "required_dphi_dq_lower_bound": "53084161.0"
         },
         {
           "u_mod_over_proton_floor": 1.5,
-          "phi_muon": "0.05464004939",
+          "phi_muon": "0.05656628492",
           "phi_proton": "-0.2302769958",
-          "required_dphi_dq_lower_bound": "22254276.0"
+          "required_dphi_dq_lower_bound": "22250819.0"
         },
         {
           "u_mod_over_proton_floor": 3.0,
-          "phi_muon": "0.01363452999",
+          "phi_muon": "0.01411329828",
           "phi_proton": "-0.05567050717",
-          "required_dphi_dq_lower_bound": "5413272.0"
+          "required_dphi_dq_lower_bound": "5413223.7"
         }
       ],
       "rate_smooth_2pi2_over_t": "1633.45615183",
-      "rate_ladder_lever_1_over_u3": "79698047.9991",
+      "rate_ladder_lever_1_over_u3": "79698048.0219",
       "note": "required rate is a LOWER bound (arcsin principal branch; mod-π ambiguity only raises it)"
     },
     "verdict": "m-plane inversion (NZ-leading tier): each anchor's S is reachable only above |u|_min = sqrt(2|S|/sqrt3) (proton floor ~2x t kills anchor-blind |u| = O(t) laws); every canonical substrate u-candidate fails the cross-anchor gate (b-aligned t*e^{i pi/4} is a muon-only near-match, the #3524 class); the required phase-accumulation rate |dphi/dq| >= ~1e7 excludes smooth substrate phase laws (~1e3) and matches the u_ladder^3-lever class (~8e7) — quantitative support for #3543's 'near-singular / root-of-unity phase accumulation' and #3540's r = S*u^3 lever identification. Scope-(a); no fit; nothing wired."

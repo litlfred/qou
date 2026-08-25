@@ -1,0 +1,125 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T05:44:46.405494+00:00",
+  "commitSha": "8345871d519c51603387ffd431a4a36bf84511fe",
+  "assertions": [
+    {
+      "name": "mp_path_and_f64_path_are_now_the_same_convention",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|z - z_mp()| = 4.10029e-18 (float64 epsilon scale) while the pre-migration mp value differed from the f64 one by 22.7044 %. Both halves are asserted: the gap is closed now, AND it was genuinely open before -- so this cannot pass by the two paths having always agreed."
+    },
+    {
+      "name": "gram_matrix_mp_agrees_with_G_as_its_docstring_claims",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |G_f64 - gram_matrix_mp()| = 2.08297e-16, against the docstring's '~1e-15'. Pre-migration this was 0.172 -- the claim was false while the module straddled conventions, and is restored by the migration rather than merely re-asserted."
+    },
+    {
+      "name": "lu_solve_fails_SILENTLY_on_the_singular_D_gram_at_every_precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "swept 20/50/120 dps: lu_solve RETURNED at every precision with max|x| = 6.46904e+20, 2.9117e+50, 1.47013e+120 and a visibly nonzero residual (~1e-3), never raising. This is why the convention swap could not be one line -- and why 'it would raise, so we would notice' is the wrong lesson."
+    },
+    {
+      "name": "quotient_solve_is_sane_where_lu_solve_is_not",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "gram_quotient_solve_mp on the identity NF: max|x| = 0.901221 (lu_solve gave 2.9117e+50), residual against the reachable part 1.67048e-51, minimum-norm (x . radical = 1.46167e-51), and it returns the radical component 0.472689 rather than hiding it. gram_inverse_mp() raises: True."
+    },
+    {
+      "name": "sdp_probe_premise_G_invertible_is_FALSE_under_D_for_both_anchors",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "qbeta_braid_nf_sdp_offset_probe states 'Since G is invertible (rank 6), G x = nf fixes x* uniquely'. Under D both anchors carry a radical component of 46.18 % (muon) and 47.26 % (proton) of their NF norm, so G x = nf is UNSATISFIABLE for both. The question is ill-posed under D, not merely harder; this probe deliberately does not re-solve it on the quotient and report an angle."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "gram-mp-path-convention-d-migration",
+  "scriptFile": "gram_mp_path_convention_d_migration_probe.py",
+  "scriptHash": "4780f438e3f8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "pyhecke.gram carried a convention straddle inside one module: the float64 z moved to convention D on 2026-08-15 while the mpmath mirror (z_mp, tr_m_mp, gram_matrix_mp) stayed on C, 22.70 % apart, with both docstrings asserting lockstep and gram_matrix_mp claiming a ~1e-15 agreement with G whose true gap was 0.172. The C spelling was the detector-blind 1/(sqrt(q)+1/sqrt(q)) = sqrt(q)/(q+1) catalogued in PR #5124. Migrated to D, float64-free. It is NOT a one-line swap: under D the mp Gram is exactly singular and mp.lu_solve does not raise -- swept 20..120 dps it returned max|x| ~ 10^dps with residual ~1e-3 at every precision, the mpmath analogue of the numpy behaviour that blocked this migration originally. Adds the float64-free quotient API mirroring the f64 side: radical_mp (the proved q-antisymmetriser), gram_quotient_solve_mp (minimum-norm solve on H_3(q)/rad, returning the unreachable radical component rather than hiding it), and gram_inverse_mp (raises, like gram_inverse). SEPARATE FINDING, not repaired: qbeta_braid_nf_sdp_offset_probe assumes G is invertible (rank 6); under D both its anchors carry a 47 % radical component, so G x = nf is UNSATISFIABLE and its question is ill-posed -- re-solving on the quotient and reporting an angle would launder that. NOT RUN: the 19 witness-emitting downstream producers whose committed values are C-frame and all move; that is a scoped bulk sweep. No value wired, no tier moved.",
+  "data": {
+    "convention": "D (z = q^3/(q^2+1))",
+    "z": {
+      "float64_module_z": "0.6126880371464652",
+      "z_mp_after": "0.612688037146465251595829863945899248026308391545085404591497",
+      "z_mp_before_convention_C": "0.499320334183694452413442720000000000000000000000000000000000",
+      "lockstep_abs_gap": "0.00000000000000000410028840211517335464805064008024165459149650879810852283438",
+      "pre_migration_split_pct": "22.7044034063039118433815148068536162480579266658453565253318"
+    },
+    "gram_f64_vs_mp_max_abs_diff": "0.000000000000000208297372091705191287090817682777364543028596358310325384330",
+    "gram_f64_vs_mp_max_abs_diff_pre_migration": "0.17218519",
+    "radical_mp_residual": {
+      "60": "4.53616142882729656131205223892304687311130524238548832913591e-62",
+      "120": "1.70302447724299903623428284778476135352396157313844501180987e-121"
+    },
+    "radical_mp_types": [
+      "mpf"
+    ],
+    "lu_solve_sweep": {
+      "20": {
+        "max_abs_x": "6.46904e+20",
+        "residual": "0.00132077"
+      },
+      "50": {
+        "max_abs_x": "2.9117e+50",
+        "residual": "0.000436621"
+      },
+      "120": {
+        "max_abs_x": "1.47013e+120",
+        "residual": "0.000246855"
+      }
+    },
+    "quotient_solve": {
+      "max_abs_x": "0.901221217301803949773466647248095253376896478168771027676362",
+      "residual_vs_b_perp": "1.67047794380762227883783529196967617425949805006565543622621e-51",
+      "min_norm_dot_radical": "1.46166820083166949398310588047346665247706079380744850669793e-51",
+      "radical_component": "0.472689151192812853984865241644359994998208876766597159932747"
+    },
+    "sdp_probe_anchors_radical_fraction": {
+      "muon_4_1": {
+        "radical_component": "0.472689151192812853984865241644359994998208876766597159932747",
+        "nf_norm": "1.02352829120072182044022960174867893970707729980222824332414",
+        "relative": "0.461823239529892830900578347965287642565586118144984265197171"
+      },
+      "proton_B_3": {
+        "radical_component": "0.472689151192812853984865241644359994998208876766597159932747",
+        "nf_norm": "1.00017434057642057931735583238104408708153588428043520907641",
+        "relative": "0.472606756658436761657485141647028918489805428593441149119629"
+      }
+    },
+    "downstream_witness_producers_not_regenerated": 19,
+    "closes_cds2": false
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

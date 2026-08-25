@@ -52,11 +52,18 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 # Q_β(n) free-neutron β-decay Q-value (binding_canonical.py scale) and the
 # canonical energy scale E_0 = m_e/(q₀(q₀−1)). The binding-scale identity is
@@ -102,12 +109,12 @@ def frob(p, Z, fermionic=False):
 
 def main() -> int:
     t0 = time.monotonic()
-    sym = json.loads((HERE / "symmetrized-constituent-general.witness.json").read_text(encoding="utf-8"))
+    sym = record_upstream(HERE / "symmetrized-constituent-general.witness.json", _UPSTREAM_RECORDS)
     pp = {int(k): mp.mpf(v) for k, v in sym["data"]["proton_power_sums"].items()}
     pn = {int(k): mp.mpf(v) for k, v in sym["data"]["neutron_power_sums"].items()}
     tau_p, tau_n = pp[1], pn[1]
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text(encoding="utf-8"))
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     tr = {(r["Z"], r["N"]): r for r in bc["data"]["results"]}
 
     from b_over_a_v5_unified import AME_BA_MEV  # canonical AME 2020 dict
@@ -159,6 +166,7 @@ def main() -> int:
     print(" " + "-" * 98)
 
     w = WitnessBuilder("symmetrized-binding-probe", engine="mpmath", start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Wires the Frobenius symmetrized constituent (h_Z/e_Z) into the canonical "
         "linear binding B=scale·(tr_free−tr_atom) for D/T/³He/⁴He. KEY STRUCTURAL "

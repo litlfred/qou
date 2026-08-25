@@ -47,7 +47,7 @@ structure TorusKnot where
 
 /-- Crossing number of `T_{p, q}` for `gcd(p, q) = 1`:
     `c(T_{p, q}) = min(p (q - 1), q (p - 1))`. -/
-def crossingNumber (T : TorusKnot) : ℕ :=
+def TorusKnot.crossingNumber (T : TorusKnot) : ℕ :=
   Nat.min (T.p * (T.q - 1)) (T.q * (T.p - 1))
 
 /-- The six torus knots that embed on Bring's surface (per

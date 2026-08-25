@@ -33,4 +33,4 @@ $$
   \mathcal{H}_c \neq \varnothing.
 $$
 
-The proposition ensures that such $E_d$ exist whenever the system meets arithmetic non-triviality. The computational horizon represents a necessary feature of any Turing-complete resolution system equipped with $\mathbb{N}$-embedding. It is a direct consequence of the system's expressive power, not a contingent property of specific NP-complete links.
+The proposition ensures that such $E_d$ exist whenever the system meets arithmetic non-triviality. The computational horizon is therefore a necessary feature of any Turing-complete resolution system equipped with $\mathbb{N}$-embedding: it follows from the system's expressive power alone, independent of any specific NP-complete link.

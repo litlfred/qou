@@ -1,0 +1,127 @@
+{
+  "schema": "qou-audit-probe/v1",
+  "question": "Is the C(n,2) in QOU.Braiding.card_allPairs_le_length the same object as the C(A,2) in QOU.MassTheory.exchangeDet_pow_two_le_four?",
+  "verdict": {
+    "same_object": false,
+    "scope": "(a) scope-limited negative",
+    "summary": "Not the same object. The shared C(n,2) is |E(K_n)| in both places, so the vocabulary is genuinely shared -- but that is what 'pairwise' MEANS, not evidence of common content. The bounds run in opposite directions on different quantities (lower bound on a word length vs upper bound on a log-det ratio), and no bridge exists because word length does not control any trace-derived magnitude.",
+    "trap_recorded": "The tempting inference 'the braiding has no n-ary generator, so the extensive term cannot be super-pairwise' is a CATEGORY ERROR of the kind AGENTS.md names: a Markov trace of a word in 2-strand letters is already a many-body object. prop:pairwise-interaction-decomposition forbids a super-pairwise GENERATOR, not a super-pairwise VALUE. The saturation cap's conclusion stands untouched."
+  },
+  "dps": 50,
+  "small_m_limit": [
+    {
+      "A": 2,
+      "C_A_2": 1,
+      "rho_at_m": {
+        "1e-3": "1.0",
+        "1e-6": "1.0",
+        "1e-9": "1.0",
+        "1e-12": "1.0"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "0.0"
+    },
+    {
+      "A": 3,
+      "C_A_2": 3,
+      "rho_at_m": {
+        "1e-3": "2.9980029950084851929",
+        "1e-6": "2.999998000002999995",
+        "1e-9": "2.999999998000000003",
+        "1e-12": "2.999999999998"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "2.0e-12"
+    },
+    {
+      "A": 4,
+      "C_A_2": 6,
+      "rho_at_m": {
+        "1e-3": "5.9920179561107134221",
+        "1e-6": "5.999992000017999956",
+        "1e-9": "5.999999992000000018",
+        "1e-12": "5.999999999992"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "8.0e-12"
+    },
+    {
+      "A": 5,
+      "C_A_2": 10,
+      "rho_at_m": {
+        "1e-3": "9.9800598066477714838",
+        "1e-6": "9.999980000059999806",
+        "1e-9": "9.99999998000000006",
+        "1e-12": "9.99999999998"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "2.0e-11"
+    },
+    {
+      "A": 6,
+      "C_A_2": 15,
+      "rho_at_m": {
+        "1e-3": "14.960149398514202635",
+        "1e-6": "14.999960000149999396",
+        "1e-9": "14.99999996000000015",
+        "1e-12": "14.99999999996"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "4.0e-11"
+    },
+    {
+      "A": 7,
+      "C_A_2": 21,
+      "rho_at_m": {
+        "1e-3": "20.930313488573497776",
+        "1e-6": "20.999930000314998481",
+        "1e-9": "20.999999930000000315",
+        "1e-12": "20.99999999993"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "7.0e-11"
+    },
+    {
+      "A": 8,
+      "C_A_2": 28,
+      "rho_at_m": {
+        "1e-3": "27.888584715190747681",
+        "1e-6": "27.999888000587996696",
+        "1e-9": "27.999999888000000588",
+        "1e-12": "27.999999999888"
+      },
+      "abs_err_vs_C_A_2_at_1e-12": "1.12e-10"
+    }
+  ],
+  "sup_over_unit_interval": [
+    {
+      "A": 2,
+      "C_A_2": 1,
+      "max_rho_on_grid": "1.0",
+      "argmax_m": "0.001",
+      "exceeds_cap": false
+    },
+    {
+      "A": 4,
+      "C_A_2": 6,
+      "max_rho_on_grid": "5.9920179561107134221",
+      "argmax_m": "0.001",
+      "exceeds_cap": false
+    },
+    {
+      "A": 6,
+      "C_A_2": 15,
+      "max_rho_on_grid": "14.960149398514202635",
+      "argmax_m": "0.001",
+      "exceeds_cap": false
+    },
+    {
+      "A": 8,
+      "C_A_2": 28,
+      "max_rho_on_grid": "27.888584715190747681",
+      "argmax_m": "0.001",
+      "exceeds_cap": false
+    }
+  ],
+  "length_does_not_control_magnitude": {
+    "word": "sigma_1 * sigma_1^{-1}",
+    "length": 2,
+    "net_permutation": "identity",
+    "crossed_pairs": 0,
+    "point": "Word length is not monotone in anything the binding reads. The Markov trace of a length-2 word here equals that of the empty word, so a LOWER bound on letters induces no lower bound on a trace-derived magnitude. The crossing bound therefore cannot constrain rho_A from below, which is the only direction that would interact with an UPPER cap."
+  }
+}

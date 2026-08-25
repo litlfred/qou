@@ -1,11 +1,11 @@
 {
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "vol_density_borromean_q_locality_probe",
-  "computedAt": "2026-07-18T17:52:20.765834+00:00",
-  "description": "q-locality discipline test applied to canonical `vol_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
+  "computedAt": "2026-08-23T09:41:07.685113+00:00",
+  "description": "q-locality discipline test applied to canonical `per_knot_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "historical_baselines": {
     "bare_replace_5_2_minus_G_h2": "-1.7e7 ppm/q (PR #951)",
     "faddeev_x_bring_1_over_1_minus_hq_q010": "-1.5e7 ppm/q",
@@ -16,8 +16,8 @@
     "yekutieli_purged_5_2_plus_3_4_minus_G_h2": "-1.69e7 ppm/q (PR #951)"
   },
   "parameters": {
-    "M_E_MEV": "0.51099895",
-    "M_P_CODATA_MEV": "938.27208816",
+    "M_E_MEV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_CODATA_MEV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 50,
     "precision": "mpfr",
@@ -28,40 +28,42 @@
     ],
     "tolerance_ppm_per_q": 100000.0
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "results": {
-    "gap_at_q0": 0.07282738470360979,
-    "gap_ppm_at_q0": 29605.20232102139,
-    "lambda_p_codata_at_q0": 2.459952271695782,
+    "gap_at_q0": 0.07282738469560113,
+    "gap_ppm_at_q0": 29605.202317669387,
+    "lambda_p_codata_at_q0": 2.4599522717037905,
     "linking_weight_at_q0": 2.5327796563993914,
-    "m_p_codata_MeV": 938.27208816,
-    "m_p_pred_MeV": 966.049823162144,
-    "relative_error": 0.02960520232102139,
-    "relative_error_pct": 2.960520232102139,
+    "m_p_codata_MeV": 938.27208943,
+    "m_p_pred_MeV": 966.0498244665976,
+    "relative_error": 0.029605202317669388,
+    "relative_error_pct": 2.960520231766939,
     "slopes_by_delta": [
       {
-        "abs_slope_ppm_per_q": 15688021.913010633,
+        "abs_slope_ppm_per_q": 15688021.913062437,
         "delta": 0.001,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -15688021.913010633
+        "slope_ppm_per_q": -15688021.913062437
       },
       {
-        "abs_slope_ppm_per_q": 15677742.229412392,
+        "abs_slope_ppm_per_q": 15677742.229464164,
         "delta": 0.01,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -15677742.229412392
+        "slope_ppm_per_q": -15677742.229464164
       },
       {
-        "abs_slope_ppm_per_q": 15427458.954983607,
+        "abs_slope_ppm_per_q": 15427458.955034558,
         "delta": 0.05,
         "pass_q_locality": false,
-        "slope_ppm_per_q": -15427458.954983607
+        "slope_ppm_per_q": -15427458.955034558
       }
     ],
     "vol_density_at_q0": 1890.5123448142976
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "vol_density_borromean_q_locality_probe.py",
-  "scriptHash": "a8203a9530ad",
+  "scriptHash": "066902eb3f3e",
   "status": "exploratory",
   "tags": [
     "q-locality",
@@ -73,6 +75,6 @@
   "verdict": {
     "all_deltas_pass": false,
     "interpretation": "FAIL \u2014 VolDensity's linking weight does NOT track \u03bb_p_codata locally; slope dominated by \u210f_q\u00b2 prefactor as in all prior bare-polynomial probes. Production Family A linking weight (5/2 + 3h\u00b2/4) is not structurally q-local with respect to the CODATA target near q_0. Closure requires refinement of VolDensity at higher h\u00b2 orders (S_4\u2193S_3 bijection + S_5\u2194SO(3) fiber action \u2014 see docs/audits/2026-05-24-family-a-gap-audit.md).",
-    "max_abs_slope_ppm_per_q": 15688021.913010633
+    "max_abs_slope_ppm_per_q": 15688021.913062437
   }
 }

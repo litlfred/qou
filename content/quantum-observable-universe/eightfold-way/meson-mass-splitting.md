@@ -4,14 +4,14 @@ masses split through the quantum dimension and crossing-energy
 formulas of the Hecke algebra.*
 
 The meson octet decomposition ($\mathbf{3} \otimes \bar{\mathbf{3}} =
-\mathbf{8} \oplus \mathbf{1}$) determines \emph{which} states exist.
+\mathbf{8} \oplus \mathbf{1}$) determines *which* states exist.
 The mass splitting of these states is a separate, $q$-dependent
 phenomenon governed by the Markov trace and the crossing energy.
 
 **$q$-independent structure.**
 The weight lattice and the state assignments (which meson sits at
 which $(I_3, Y)$) are $q$-independent
-(Remark~\ref{rem:q-deformation-weight-lattice}).
+([Remark](#rem:q-deformation-weight-lattice)).
 The hexagonal pattern itself --- $\pi^\pm$ at $(\pm 1, 0)$,
 $K^\pm$ at $(\pm 1/2, \pm 1)$, $\pi^0$ and $\eta$ at the origin
 --- is determined entirely by the Cartan matrix $A_2$, which the
@@ -20,22 +20,21 @@ Hecke relation encodes independently of $q$.
 **$q$-dependent dynamics.**
 Within the hexagonal pattern, the physical masses are governed by
 three $q$-dependent ingredients:
-\begin{enumerate}
-\item \textbf{Quantum dimensions:} $\dim_q(V_\lambda) = \prod_{\alpha > 0}
-  [\langle \lambda + \rho, \alpha^\vee \rangle]_q /
-  [\langle \rho, \alpha^\vee \rangle]_q$.
-  At $q = 1$ these reduce to the classical dimensions (all integer);
-  at $q \neq 1$ they split.
-\item \textbf{Crossing energy:}
-  $\mathfrak{E}_\times(q) = \tfrac{1}{2}(q - q^{-1})$, the
-  energy cost per crossing in the Hecke algebra.  This governs
-  the mass contribution from each braid crossing in the meson's
-  knot representative.
-\item \textbf{Markov trace weights:}
-  $\tau_q(\beta)$ assigns a $q$-dependent amplitude to each braid
-  $\beta$, producing the mass endomorphism via the Frobenius
-  integral.
-\end{enumerate}
+
+1. **Quantum dimensions:** $\dim_q(V_\lambda) = \prod_{\alpha > 0}
+   [\langle \lambda + \rho, \alpha^\vee \rangle]_q /
+   [\langle \rho, \alpha^\vee \rangle]_q$.
+   At $q = 1$ these reduce to the classical dimensions (all integer);
+   at $q \neq 1$ they split.
+2. **Crossing energy:**
+   $\mathfrak{E}_\times(q) = \tfrac{1}{2}(q - q^{-1})$, the
+   energy cost per crossing in the Hecke algebra.  This governs
+   the mass contribution from each braid crossing in the meson's
+   knot representative.
+3. **Markov trace weights:**
+   $\tau_q(\beta)$ assigns a $q$-dependent amplitude to each braid
+   $\beta$, producing the mass endomorphism via the Frobenius
+   integral.
 
 **The Gell-Mann--Okubo mass formula.**
 In standard SU(3) flavour physics, the meson masses obey the
@@ -43,10 +42,10 @@ Gell-Mann--Okubo relation
 $$
   4 m_K^2 = 3 m_\eta^2 + m_\pi^2.
 $$
-\textbf{Gell-Mann--Okubo cannot test this, and the question was
-mis-posed.}
+
+**Gell-Mann--Okubo cannot test this, and the question was mis-posed.**
 Earlier drafts treated the relation as something the framework should
-\emph{derive}, and compared its $\approx 6\%$ experimental deviation
+*derive*, and compared its $\approx 6\%$ experimental deviation
 against a $\approx 3.3\%$ figure from the $q$-deformation of the adjoint
 quantum dimension.  Both moves are withdrawn.
 
@@ -55,7 +54,7 @@ singlet plus an octet piece transforming like $\lambda_8$, so that
 $$
   m^2(I, Y) \;=\; a \;+\; b\,Y \;+\; c\left(I(I+1) - \tfrac{Y^2}{4}\right)
 $$
-for \emph{some} constants $a, b, c$.  Evaluated on the pseudoscalar octet
+for *some* constants $a, b, c$.  Evaluated on the pseudoscalar octet
 --- $\pi$ at $(I,Y) = (1,0)$, $K$ at $(\tfrac12, \pm 1)$, $\eta$ at
 $(0,0)$ --- the Gell-Mann--Okubo combination collapses identically:
 $$
@@ -63,32 +62,33 @@ $$
   \qquad\text{for \emph{all} } a, b, c .
 $$
 This is proved sorry-free over any commutative ring in
-\texttt{QOU/Eightfold/GellMannOkuboIdentity.lean}
-(\texttt{gmo\_identity}), together with the sharper consequence
-\texttt{gmo\_cannot\_discriminate}: two arbitrarily different breaking
-patterns give the \emph{same} value of the combination, namely zero.  In
+`QOU/Eightfold/GellMannOkuboIdentity.lean`
+(`gmo_identity`), together with the sharper consequence
+`gmo_cannot_discriminate`: two arbitrarily different breaking
+patterns give the *same* value of the combination, namely zero.  In
 particular $b$ --- the entire hypercharge dependence, which is the whole
 content of a breaking mechanism --- cancels
-(\texttt{gmo\_independent\_of\_breaking\_strength}).
+(`gmo_independent_of_breaking_strength`).
 
 Two consequences.  First, if the QOU crossing-energy splitting is
 first-order octet then it reproduces Gell-Mann--Okubo automatically and
-exactly, and doing so is \textbf{not evidence} for the framework: every
+exactly, and doing so is **not evidence** for the framework: every
 first-order octet model reproduces it equally well.  Second, the only
-testable content is the $\approx 6\%$ \emph{deviation}, which measures
+testable content is the $\approx 6\%$ *deviation*, which measures
 the failure of first-order breaking --- second-order terms and
 $\eta$--$\eta'$ singlet mixing.  The framework has derived no
 second-order term, so it currently predicts deviation $0$.
 
 The $\approx 3.3\%$ figure is not a competing prediction.  It is the
-$q$-deformation of $\dim_q$ of the adjoint, a \emph{dimension} rather
+$q$-deformation of $\dim_q$ of the adjoint, a *dimension* rather
 than a mass splitting, and not a quantity that can appear on either side
 of the relation.  Comparing the two numbers was a category error, and the
 comparison is withdrawn.
 
 **Conditional on $N = 3$ and on $Y$.**
-Mass splittings between isospin multiplets (e.g.\ $\pi$ vs.\ $K$)
-depend on the hypercharge $Y$, which is open
-(\S\ref{sec:flavor-representations}).  Within an isospin multiplet
-(e.g.\ $K^+$ vs.\ $K^0$), the splitting is purely electromagnetic
-and arises from the writhe difference, which is derived.
+Mass splittings between isospin multiplets (for example $\pi$ against
+$K$) depend on the hypercharge $Y$, which is open
+([the flavour-representations section](#sec:flavor-representations)).
+Within an isospin multiplet (for example $K^+$ against $K^0$), the
+splitting is purely electromagnetic and arises from the writhe
+difference, which is derived.

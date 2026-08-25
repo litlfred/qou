@@ -39,7 +39,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 # z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
 # bootstrap for dev mode; the installed-pyhecke path is preferred.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
 from witness_base import WitnessBuilder
@@ -162,7 +162,12 @@ print()
 # their cardinality is the categorical signature of bond order.
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
-_lp = solve_operator_selection_lp(np.asarray(TR_M, dtype=float), G, n_target=1.0)
+# Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+# whether the Rust binary happens to be built, so the same script
+# yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+# makes a missing binary an error rather than a changed answer.
+# Bean `qou/ftuv`.
+_lp = solve_operator_selection_lp(np.asarray(TR_M, dtype=float), G, n_target=1.0, backend="clarabel")
 print("--- Operator-selection LP dual (unit net) ---")
 print(f"  primal_obj  = {_lp.primal_obj:.6f}   dual_obj = {_lp.dual_obj:.6f}")
 print(f"  duality_gap = {_lp.duality_gap:.2e}   (strong duality)")

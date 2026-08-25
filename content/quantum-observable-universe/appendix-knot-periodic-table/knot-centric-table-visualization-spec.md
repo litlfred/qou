@@ -1,7 +1,7 @@
 Where the static appendix table freezes the periodic structure at
 the observed substrate value, an interactive rendering lets a reader
 watch the row and shell structure deform continuously as $q$ slides
-from $1$ to $q_0$ — seeing the equal-width rows and absent magic
+from $1$ to $q_0$: the equal-width rows and absent magic
 shells at $q = 1$ reorganize into the observed table with its
 magic-receptive shells.
 

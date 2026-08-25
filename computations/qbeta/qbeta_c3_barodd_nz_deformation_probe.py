@@ -15,7 +15,7 @@ Chain of facts (each computed or cited, none fitted):
   3. Neumann–Zagier: near the complete structure, with complex meridian
      deformation u (log-holonomy), the complex volume obeys
          CVol(u) = CVol(0) − (τ/4)·u² + O(u³),   v(u)=τ·u+…,  τ = cusp shape.
-     For 4₁ the cusp modulus is ∝ √−3 (tied to the π/3 angle of Vol(4₁)=2Λ(π/3),
+     For 4₁ the cusp modulus is ∝ √−3 (tied to the π/3 angle of Vol(4₁)=2·Cl₂(π/3),
      a corpus-structural link, NOT a fit). S is the bar-ODD projection of the
      deformation phase.
   4. FALSIFIABLE consistency check (no fit): IF S(q₀)=Im[−(τ/4)u(q₀)²] with a
@@ -41,8 +41,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}
 # substrate anchors (50-dps proton; muon differs at ~1e-8) — for the ratio test
@@ -66,7 +67,7 @@ def main() -> int:
     wb = WitnessBuilder("qbeta-c3-barodd-nz-deformation-gap", engine="mpmath")
     wb.set_description(
         "Sharpens the z(q₀) gap for the c₃ bar-ODD S via the Neumann–Zagier "
-        "complex-volume deformation of 4₁. Computes Vol(4₁)=2Λ(π/3), notes "
+        "complex-volume deformation of 4₁. Computes Vol(4₁)=2·Cl₂(π/3), notes "
         "CS(4₁)=0 (amphichiral ⇒ S is a deformation phase, not the knot's own "
         "CS), and shows a SMOOTH real-scaling deformation u(q₀) cannot produce "
         "the measured S(proton)/S(muon)=−4.08 (anchors differ at ~1e-8) — so "
@@ -75,7 +76,7 @@ def main() -> int:
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
-    # ---- 1. Vol(4₁) = 2 Λ(π/3) (bar-even part, solved) ----
+    # ---- 1. Vol(4₁) = 2·Cl₂(π/3) (bar-even part, solved) ----
     z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)          # complete shape e^{iπ/3}
     vol = 2 * bloch_wigner(z0)
     lam_pi3 = mp.im(mp.polylog(2, z0))               # Λ(π/3) = D(e^{iπ/3}) (|z0|=1 ⇒ log term 0)
@@ -95,7 +96,7 @@ def main() -> int:
     # ---- 3. NZ leading form + cusp modulus ∝ √−3 (the π/3 link) ----
     tau = mp.sqrt(mp.mpc(-3))                          # 4₁ cusp modulus factor √−3
     print(f"\n[3] NZ leading: CVol(u) = CVol(0) − (τ/4)u² + O(u³), τ ∝ √−3 = {mp.nstr(tau,8)}")
-    print("    (√−3 ↔ the π/3 angle of Vol(4₁)=2Λ(π/3) — corpus-structural, NOT fitted)")
+    print("    (√−3 ↔ the π/3 angle of Vol(4₁)=2·Cl₂(π/3) — corpus-structural, NOT fitted)")
 
     # ---- 4. Falsifiable check: a SMOOTH real u(q₀) cannot give the ratio ----
     print("\n[4] Falsifiable (no fit) — smooth real-scaling u(q₀) ⇒ ratio (u_p/u_m)²:")

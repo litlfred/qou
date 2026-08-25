@@ -47,7 +47,36 @@ transcription (Garoufalidis–Le arXiv:math/0508100 v6 App A).
 
 -- Ref: [manuscript] docs/audits/2026-07-24-borromean-index-bridge-invariant.md
 
-THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], uploads/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
+THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], library/arxiv-2411.03801v2/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
+
+⚠ FOLLOW-UP DELIVERED 2026-08-08 (bean qou-fl4t).  The bounded follow-up named
+above — "computing tau(B3) from the octahedral Neumann-Zagier data" — now exists:
+`computations/one_loop_torsion.py` computes the triangulation-invariant
+Dimofte-Garoufalidis 1-loop invariant at any cusp number, and gives
+
+    |tau_DG(B3)| = |tau_DG(L6a4)| = 8       (audit
+    docs/audits/2026-08-07-one-loop-multicusp-derivation.md)
+
+The comparison this file asks for, in the c-free law
+`exp(2 c_0) = 1/(2 |tau_DG|)` established in
+docs/audits/2026-08-08-per-cusp-factor-dissolves.md:
+
+    predicted   exp(2 c_0) = 1/16 = 0.0625
+    measured    exp(2 c_0) = 0.06294           (this probe, NMAX=56)
+    agreement   0.7%,  i.e. c_0 = -1.38281 measured vs -1.38629 predicted
+
+READ THAT AS SUPPORTING, NOT AS A MATCH.  The two fits here bracket the
+prediction (vol-fixed c_0 = -1.38281, free-slope c_0 = -1.37347, spread 0.0093
+against a 0.0035 deviation), and this tower's own witness note flags an
+unresolved normalization+cusp offset against the 1-cusp anchor, with p = 1.4993
+against the exact 3/2.  The decisive comparison is at c = 2, where the corpus
+has 20 digits: whitehead_c_sigma_hiprec.py gives c_sigma(L5a1) = 2^{-3/4}, and
+the same law predicts it from the 4_1 calibration alone to ~17 digits with
+nothing fitted.
+
+NOTE the normalization: |det J_NZ| in this file's relation is 2|tau_DG|, not
+|tau_DG|.  `exp(2c_0) = 1/|det J_NZ|` at c = 1 is `1/sqrt(3)`, and
+|tau_DG(4_1)| = sqrt(3)/2 — DG's own normalization, a factor 2 apart.
 """
 from __future__ import annotations
 

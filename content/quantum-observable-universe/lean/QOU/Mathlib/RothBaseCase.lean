@@ -1,0 +1,459 @@
+/-
+  **The `m = 1` case of Roth's lemma, in terms of `index`.**
+
+  Bean `qou-4lbh`.
+
+  ⚠ Not Mathlib-only: it imports `QOU/Mathlib/RothIndex.lean` and
+  `QOU/Mathlib/RothHeightBound.lean`.  Both are Mathlib-only, so the three lift together.
+
+  ═══ ⚠ WHAT WAS ACTUALLY MISSING ═══
+
+  Bean `qou-4lbh` recorded the `m = 1` base case as **complete**, citing
+  `pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero`, and added:
+
+  > With Roth's hypothesis `H(P) ≤ q^{εd}` this gives `q^{θd} ≤ q^{εd}`, i.e. the index `θ ≤ ε`.
+
+  That last step was **prose, not Lean.**  What was proved is a statement about *Taylor
+  coefficients*: "if every coefficient of the translate below `k` vanishes, then `q^k ≤ |lead P|`."
+  The induction does not consume that — it consumes a bound on `index`.  Nothing anywhere
+  connected the two, because `index` lives on `MvPolynomial` and the height bound lives on
+  `Polynomial`.
+
+  This module is that connection, ending in `index_le_of_abs_leadingCoeff_le`:
+
+      |lead P| ≤ q^e,  q ≥ 2,  gcd(p,q) = 1,  P ≠ 0,  d ≠ 0
+        ⟹  index_d(P; p/q)  ≤  e/d
+
+  With `e = εd` that reads `index ≤ ε`, which *is* the base case.  The gap was narrow but
+  real: an arc can accumulate a correct height statement and a correct index calculus and
+  still have no theorem relating them.
+
+  ═══ THE TRANSFER ═══
+
+  One variable is `MvPolynomial Unit`, and `MvPolynomial.pUnitAlgEquiv` carries it to `R[X]`.
+  Two facts make the dictionary work: coefficients correspond along `n ↦ Finsupp.single () n`,
+  and `translate` corresponds to `Polynomial.taylor`.  Everything else is bookkeeping.
+
+  ⚠ **Universe trap.**  `pUnitAlgEquiv` is stated for `PUnit.{u+1}`, so a statement written
+  with an unannotated `PUnit` gets an auto-bound universe and will not unify with `index`
+  elsewhere — the error is an inscrutable `index.{u_2, 0}` vs `index.{0, 0}` mismatch.  Every
+  statement below pins `Unit`.
+-/
+import QOU.Mathlib.RothIndex
+import QOU.Mathlib.RothHeightBound
+
+open Polynomial
+
+namespace MvPolynomial
+
+variable {R : Type*} [CommRing R]
+
+/-! ### The one-variable dictionary -/
+
+/-- Coefficients correspond along `n ↦ Finsupp.single () n`. -/
+theorem coeff_pUnitAlgEquiv (Q : MvPolynomial Unit R) (n : ℕ) :
+    (pUnitAlgEquiv R Q).coeff n = MvPolynomial.coeff (Finsupp.single () n) Q := by
+  classical
+  induction Q using MvPolynomial.induction_on' with
+  | monomial s r =>
+      rw [pUnitAlgEquiv_monomial, Polynomial.coeff_monomial, MvPolynomial.coeff_monomial]
+      by_cases h : s () = n
+      · have hs : s = Finsupp.single () n := by
+          refine Finsupp.ext fun u => ?_
+          cases u
+          rw [Finsupp.single_eq_same, h]
+        rw [if_pos h, if_pos hs]
+      · have hs : ¬ (s = Finsupp.single () n) := by
+          intro hcon
+          exact h (by rw [hcon, Finsupp.single_eq_same])
+        rw [if_neg h, if_neg hs]
+  | add p q hp hq => rw [map_add, Polynomial.coeff_add, MvPolynomial.coeff_add, hp, hq]
+
+/-- **`translate` is `Polynomial.taylor`** under the one-variable dictionary.  Both are
+"substitute `X + α` for `X`", so this is really a naturality statement. -/
+theorem pUnitAlgEquiv_translate (α : R) (Q : MvPolynomial Unit R) :
+    pUnitAlgEquiv R (translate (fun _ => α) Q) = taylor α (pUnitAlgEquiv R Q) := by
+  induction Q using MvPolynomial.induction_on with
+  | C a => simp [translate, taylor_apply]
+  | add p q hp hq => simp only [translate_add, map_add, hp, hq]
+  | mul_X p i hp =>
+      rw [translate_mul, translate_X, map_mul, hp, map_mul, taylor_mul]
+      cases i
+      simp [taylor_apply]
+
+/-! ### From a lower bound on the index to vanishing Taylor coefficients -/
+
+/-- A lower bound `k/d` on the index kills every Taylor coefficient below `k` — the hypothesis
+`pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero` asks for.
+
+In one variable every multi-index is `Finsupp.single () n`, so `idxWeight` is just `n/d`, and
+`index ≥ k/d` says exactly that no `n < k` occurs in the support of the translate. -/
+theorem taylor_coeff_eq_zero_of_le_index {d : ℕ} (hd : d ≠ 0) (α : R)
+    (Q : MvPolynomial Unit R) (k n : ℕ)
+    (h : (((k : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ) ≤ index (fun _ => d) (fun _ => α) Q)
+    (hn : n < k) :
+    (taylor α (pUnitAlgEquiv R Q)).coeff n = 0 := by
+  classical
+  by_contra hne
+  rw [← pUnitAlgEquiv_translate, coeff_pUnitAlgEquiv] at hne
+  have hmem : Finsupp.single () n ∈ (translate (fun _ => α) Q).support :=
+    mem_support_iff.mpr hne
+  have hw := (le_index_iff _ _ _ _).mp h _ hmem
+  rw [idxWeight_single] at hw
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hw' : (k : ℚ) / (d : ℚ) ≤ (n : ℚ) / (d : ℚ) := by exact_mod_cast hw
+  have hkn : (k : ℚ) ≤ (n : ℚ) := by
+    have h2 := mul_le_mul_of_nonneg_right hw' hdQ.le
+    rwa [div_mul_cancel₀ _ hdQ.ne', div_mul_cancel₀ _ hdQ.ne'] at h2
+  have : k ≤ n := by exact_mod_cast hkn
+  omega
+
+/-- The height bound of `RothHeightBound.lean`, restated against `index`. -/
+theorem pow_le_abs_leadingCoeff_of_le_index {p q : ℤ} (hq : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) (k : ℕ)
+    (h : (((k : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)
+        ≤ index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+            (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)) :
+    q ^ k ≤ |P.leadingCoeff| := by
+  refine pow_le_abs_leadingCoeff_of_taylor_coeff_eq_zero hq hco hP k ?_
+  intro n hn
+  have := taylor_coeff_eq_zero_of_le_index hd ((p : ℚ) / (q : ℚ))
+    (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ) k n h hn
+  rwa [AlgEquiv.apply_symm_apply] at this
+
+/-! ### The base case -/
+
+/-- **The one-variable index is literally `n₀/d` for a natural `n₀`.**
+
+`translate` is invertible, so a non-zero polynomial has a non-zero translate and the support is
+non-empty; an infimum over a finite non-empty set is attained; and in one variable every
+support element is `Finsupp.single () n`.
+
+⚠ No hypothesis on `d`: `idxWeight` reads `n/d` in `ℚ`, where `n/0 = 0`, so the identity
+holds at `d = 0` too.  The consumers need `d ≠ 0`; this does not.
+
+Extracted because **three** consumers need it — the `q^j` half, the `H^j` half, and the
+powered form — and it had been written out twice verbatim. -/
+theorem exists_index_eq_div {d : ℕ} {P : ℤ[X]} (hP : P ≠ 0) (α : ℚ) :
+    ∃ n₀ : ℕ,
+      index (fun _ : Unit => d) (fun _ : Unit => α)
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ) := by
+  classical
+  set Q : MvPolynomial Unit ℚ := (pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ)) with hQdef
+  have hPQ : P.map (algebraMap ℤ ℚ) ≠ 0 :=
+    Polynomial.map_ne_zero_iff (algebraMap ℤ ℚ).injective_int |>.mpr hP
+  have hQ0 : Q ≠ 0 := fun h =>
+    hPQ ((pUnitAlgEquiv ℚ).symm.injective (h.trans (map_zero _).symm))
+  have htr : translate (fun _ : Unit => α) Q ≠ 0 := by
+    intro h0
+    apply hQ0
+    have hpt := pUnitAlgEquiv_translate α Q
+    rw [h0, map_zero] at hpt
+    have h2 := congrArg (taylor (-α)) hpt.symm
+    rw [taylor_taylor, neg_add_cancel, taylor_zero, map_zero] at h2
+    have h3 := congrArg (pUnitAlgEquiv ℚ).symm h2
+    rwa [AlgEquiv.symm_apply_apply, map_zero] at h3
+  obtain ⟨i₀, hi₀, hieq⟩ := Finset.exists_mem_eq_inf _ (support_nonempty.mpr htr)
+    (fun i => (idxWeight (fun _ : Unit => d) i : WithTop ℚ))
+  refine ⟨i₀ (), ?_⟩
+  have hsingle : i₀ = Finsupp.single () (i₀ ()) := by
+    refine Finsupp.ext fun u => ?_
+    cases u
+    rw [Finsupp.single_eq_same]
+  unfold index
+  rw [hieq, hsingle, idxWeight_single, Finsupp.single_eq_same]
+
+/-- **Every Taylor coefficient below the realised index vanishes.**
+
+The bridge both height halves consume: `exists_index_eq_div` says the index *is* `n₀/d`, so
+`taylor_coeff_eq_zero_of_le_index` applies at `k = n₀` with `le_of_eq`. -/
+theorem taylor_coeff_eq_zero_of_index_eq {p q : ℤ} {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} {n₀ : ℕ}
+    (hidx : index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)) :
+    ∀ n < n₀, (taylor ((p : ℚ) / (q : ℚ)) (P.map (algebraMap ℤ ℚ))).coeff n = 0 := by
+  intro n hn
+  have := taylor_coeff_eq_zero_of_le_index hd ((p : ℚ) / (q : ℚ))
+    (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ) n₀ n
+    (le_of_eq hidx.symm) hn
+  rwa [AlgEquiv.apply_symm_apply] at this
+
+/-- **The one-variable index is `n₀/d`, and `q^{n₀}` divides into the leading coefficient.**
+
+The `Q^j` half of §10, restated against `index`. -/
+theorem exists_index_eq_div_and_pow_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) :
+    ∃ n₀ : ℕ,
+      index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)
+      ∧ q ^ n₀ ≤ |P.leadingCoeff| := by
+  obtain ⟨n₀, hidx⟩ := exists_index_eq_div hP ((p : ℚ) / (q : ℚ))
+  exact ⟨n₀, hidx, pow_le_abs_leadingCoeff_of_le_index hq0 hco hd hP n₀ (le_of_eq hidx.symm)⟩
+
+/-- **The one-variable index is `n₀/d`, and `H^{n₀}` divides into the two extreme
+coefficients** — §10's `H^j ≤ |A|`, restated against `index`.
+
+`H = max(|p|, |q|)` is the height of the point.  This is the statement the module's previous
+⚠-block said was missing. -/
+theorem exists_index_eq_div_and_height_pow_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) :
+    ∃ n₀ : ℕ,
+      index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+        = (((n₀ : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)
+      ∧ max |p| |q| ^ n₀ ≤ max |P.trailingCoeff| |P.leadingCoeff| := by
+  obtain ⟨n₀, hidx⟩ := exists_index_eq_div hP ((p : ℚ) / (q : ℚ))
+  exact ⟨n₀, hidx, max_abs_pow_le_max_abs_trailingCoeff_leadingCoeff hq0 hco hP n₀
+    (taylor_coeff_eq_zero_of_index_eq hd hidx)⟩
+
+/-! ### §10's estimate, with `H` rather than `q`
+
+§10 bounds `Θ₁(a; r; H) ≤ log a / (r log H)` for `H ≥ 2`, where `H = max(|P|, |Q|)` is the
+**height** of the point `κ = P/Q`.  Its proof:
+
+> `A(x) = (Qx − P)^j·B(x)` with `B` integral, hence the **lowest** and the **highest** non-zero
+> coefficients of `A` are divisible by `P^j` and `Q^j` respectively.  It follows that
+> `H^j ≤ |A| ≤ a`.
+
+⚠⚠ **This block previously read "this module proves only the `Q^j` half … ⚠ Not attempted".**
+Both halves are now proved (`QOU.Mathlib.RothHeightBound`), and `index_le_of_abs_coeff_le`
+below is §10's estimate itself, stated against `index` with no logarithm in it: `a ≤ H^e`
+gives `index ≤ e/d`.
+
+⚠ **The recorded plan was wrong about the method, and cheaply so.**  It proposed reversing the
+polynomial (`x ↦ x^{deg}·A(1/x)`) to swap lowest with highest and `κ` with `1/κ`, reusing the
+leading-coefficient theorem at the reciprocal point.  That works, but it is unnecessary:
+`Polynomial.trailingCoeff` is multiplicative in a domain for exactly the reason
+`leadingCoeff` is, so the trailing half proves *directly*, in the same four lines, with no
+reversal and no reciprocal.  The reversal plan came from thinking about the *page* — where
+"lowest and highest … respectively" invites a symmetry argument — rather than about the
+available API.
+
+⚠ What the reversal plan did get right is that the halves are **not** symmetric: `q > 0` is
+free but `p ≠ 0` is not, and `κ = 0` has to be discharged separately.  See
+`RothHeightBound.max_abs_pow_le_max_abs_trailingCoeff_leadingCoeff`. -/
+
+/-- **§10's estimate, log-free: `a ≤ H^e ⟹ index ≤ e/d`.**
+
+`H = max(|p|, |q|)` and `a` bounds every coefficient of `P` — which is exactly
+`InRothPolySet`'s third clause at one variable.  Taking logarithms turns this into
+`index ≤ log a / (d log H)`, which is §10 as Mahler states it; the exponential form is kept
+because the recursion is sensitive to rounding (`RothLemmaStatement.two_sqrt_expands`) and a
+logarithm would introduce it.
+
+The proof is the same integrality contradiction as `index_le_of_abs_leadingCoeff_le`, run on
+`H` instead of `q`: the index *is* `n₀/d`, so `e < n₀` would force `H^{e+1} ≤ H^{n₀} ≤ a ≤ H^e`.
+
+⚠ `2 ≤ H` is not a convenience.  At `H = 1` the point is `0`, `±1`, or `∞`, the bound
+`log a / (d log H)` is infinite, and the estimate says nothing — the same reason
+`index_le_of_abs_leadingCoeff_le` needs `q ≥ 2`, one level up. -/
+theorem index_le_of_abs_coeff_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) (e : ℕ) {a : ℤ}
+    (hH : 2 ≤ max |p| |q|) (ha : ∀ n, |P.coeff n| ≤ a) (hae : a ≤ max |p| |q| ^ e) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((e : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ) := by
+  obtain ⟨n₀, hidx, hpow⟩ := exists_index_eq_div_and_height_pow_le hq0 hco hd hP
+  rw [hidx, WithTop.coe_le_coe]
+  by_contra hcon
+  push_neg at hcon
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hen : e < n₀ := by
+    have h2 := mul_lt_mul_of_pos_right hcon hdQ
+    rw [div_mul_cancel₀ _ hdQ.ne', div_mul_cancel₀ _ hdQ.ne'] at h2
+    exact_mod_cast h2
+  set H : ℤ := max |p| |q| with hHdef
+  have hchain : H ^ (e + 1) ≤ H ^ e :=
+    calc H ^ (e + 1) ≤ H ^ n₀ := pow_le_pow_right₀ (by omega) (by omega)
+      _ ≤ max |P.trailingCoeff| |P.leadingCoeff| := hpow
+      _ ≤ a := max_le (ha P.natTrailingDegree) (ha P.natDegree)
+      _ ≤ H ^ e := hae
+  have hpos : (0 : ℤ) < H ^ e := pow_pos (by omega) e
+  rw [pow_succ] at hchain
+  nlinarith
+
+/-- **§10's estimate with a *power* bound on both sides: `a^Q ≤ H^S ⟹ index ≤ S/(Q·d)`.**
+
+The shape `Γ₁`'s clause (i) actually delivers.  §11 states it as `b ≤ K₁^{s₁t}` with `t` a
+rational `0 < t ≤ 1`; writing `t = p/q` and clearing the exponent gives `b^q ≤ K₁^{s₁p}`, an
+inequality between integers with no root and no ceiling in it.  Going through
+`index_le_of_abs_coeff_le` instead would need an `e : ℕ` with `s₁p ≤ q·e`, and that rounding
+costs `1/d` — which `RothLemmaStatement.two_sqrt_expands` shows the recursion amplifies to `≈ 4`
+however small it starts.
+
+Same contradiction as the unpowered form, raised to the `Q`-th power:
+`H^{n₀Q} = (H^{n₀})^Q ≤ (max |trailing| |leading|)^Q ≤ a^Q ≤ H^S` against `S < n₀Q`. -/
+theorem index_le_of_pow_abs_coeff_le {p q : ℤ} (hq0 : 0 < q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) {Qe S : ℕ} (hQe : Qe ≠ 0) {a : ℤ}
+    (hH : 2 ≤ max |p| |q|) (ha : ∀ n, |P.coeff n| ≤ a)
+    (hae : a ^ Qe ≤ max |p| |q| ^ S) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((S : ℚ) / ((Qe : ℚ) * (d : ℚ)) : ℚ) : WithTop ℚ) := by
+  obtain ⟨n₀, hidx, hpow⟩ := exists_index_eq_div_and_height_pow_le hq0 hco hd hP
+  rw [hidx, WithTop.coe_le_coe]
+  by_contra hcon
+  push_neg at hcon
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hQQ : (0 : ℚ) < (Qe : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hQe
+  have hSn : S < n₀ * Qe := by
+    have h1 : (S : ℚ) < (n₀ : ℚ) * (Qe : ℚ) := by
+      rw [div_lt_div_iff₀ (mul_pos hQQ hdQ) hdQ] at hcon
+      nlinarith
+    exact_mod_cast h1
+  have hmax : max |P.trailingCoeff| |P.leadingCoeff| ≤ a :=
+    max_le (ha P.natTrailingDegree) (ha P.natDegree)
+  set Hgt : ℤ := max |p| |q| with hHdef
+  have hchain : Hgt ^ (S + 1) ≤ Hgt ^ S :=
+    calc Hgt ^ (S + 1) ≤ Hgt ^ (n₀ * Qe) := pow_le_pow_right₀ (by omega) (by omega)
+      _ = (Hgt ^ n₀) ^ Qe := by rw [← pow_mul]
+      _ ≤ (max |P.trailingCoeff| |P.leadingCoeff|) ^ Qe :=
+          pow_le_pow_left₀ (pow_nonneg (by omega) n₀) hpow _
+      _ ≤ a ^ Qe := pow_le_pow_left₀ (le_max_of_le_left (abs_nonneg _)) hmax Qe
+      _ ≤ Hgt ^ S := hae
+  have hpos : (0 : ℤ) < Hgt ^ S := pow_pos (by omega) S
+  rw [pow_succ] at hchain
+  nlinarith
+
+/-- **The base case with a *power* bound, and no rounding anywhere.**
+
+`|lead|^Q ≤ q^S` gives `index ≤ S/(Q·d)` directly.  ⚠ This is the shape `RothGammaFull`'s
+clause 4 produces (`b^{Mq} ≤ K₁^{s₁p}`), and taking it directly is the *only* route that keeps
+the recursion sound: going through `index_le_of_abs_leadingCoeff_le` requires an `e : ℕ` with
+`S ≤ Q·e`, whose rounding costs `1/d` — and `RothLemmaStatement.two_sqrt_expands` shows any
+positive perturbation is amplified to `≈ 4` by the recursion, however small.
+
+The proof is the same contradiction as the unpowered version, raised to the `Q`-th power:
+`q^{n₀Q} = (q^{n₀})^Q ≤ |lead|^Q ≤ q^S` against `S < n₀Q`. -/
+theorem index_le_of_pow_abs_leadingCoeff_le {p q : ℤ} (hq : 2 ≤ q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) {Qe S : ℕ} (hQe : Qe ≠ 0)
+    (hB : |P.leadingCoeff| ^ Qe ≤ q ^ S) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((S : ℚ) / ((Qe : ℚ) * (d : ℚ)) : ℚ) : WithTop ℚ) := by
+  have hq0 : (0 : ℤ) < q := by omega
+  obtain ⟨n₀, hidx, hpow⟩ := exists_index_eq_div_and_pow_le hq0 hco hd hP
+  rw [hidx, WithTop.coe_le_coe]
+  by_contra hcon
+  push_neg at hcon
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  have hQQ : (0 : ℚ) < (Qe : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hQe
+  have hSn : S < n₀ * Qe := by
+    have h1 : (S : ℚ) < (n₀ : ℚ) * (Qe : ℚ) := by
+      rw [div_lt_div_iff₀ (by positivity) hdQ] at hcon
+      nlinarith
+    exact_mod_cast h1
+  have habs : (0 : ℤ) ≤ |P.leadingCoeff| := abs_nonneg _
+  have hchain : q ^ (S + 1) ≤ q ^ S := by
+    calc q ^ (S + 1) ≤ q ^ (n₀ * Qe) := pow_le_pow_right₀ (by omega) (by omega)
+      _ = (q ^ n₀) ^ Qe := by rw [← pow_mul]
+      _ ≤ |P.leadingCoeff| ^ Qe := pow_le_pow_left₀ (by positivity) hpow _
+      _ ≤ q ^ S := hB
+  have hqe : (0 : ℤ) < q ^ S := pow_pos hq0 S
+  rw [pow_succ] at hchain
+  nlinarith
+
+/-- **The `m = 1` case of Roth's lemma.**
+
+    `|lead P| ≤ q^e`,  `q ≥ 2`,  `gcd(p,q) = 1`,  `P ≠ 0`,  `d ≠ 0`
+      ⟹  `index_d(P; p/q) ≤ e/d`.
+
+With Roth's hypothesis `H(P) ≤ q^{εd}` — so `e = εd` — this reads `index ≤ ε`, which is what
+the induction on the number of variables consumes.
+
+The proof is by contradiction on the *realised* index.  Because `index` is an infimum over a
+finite support, and in one variable every support element is `Finsupp.single () n`, the index
+is literally `n₀/d` for some natural `n₀`.  So `e/d < index` forces `e < n₀`, hence
+`(e+1)/d ≤ index`, hence `q^{e+1} ≤ |lead P| ≤ q^e` — impossible for `q ≥ 2`.
+
+⚠ That integrality step is why `q ≥ 2` rather than `q > 0`: with `q = 1` the powers do not
+separate and the argument gives nothing. -/
+theorem index_le_of_abs_leadingCoeff_le {p q : ℤ} (hq : 2 ≤ q) (hco : IsCoprime p q)
+    {d : ℕ} (hd : d ≠ 0) {P : ℤ[X]} (hP : P ≠ 0) (e : ℕ)
+    (hB : |P.leadingCoeff| ≤ q ^ e) :
+    index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+        (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      ≤ (((e : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ) := by
+  have hq0 : (0 : ℤ) < q := by omega
+  have hdQ : (0 : ℚ) < (d : ℚ) := by exact_mod_cast Nat.pos_of_ne_zero hd
+  obtain ⟨n₀, hidx⟩ := exists_index_eq_div hP ((p : ℚ) / (q : ℚ))
+  by_contra hcon
+  push_neg at hcon
+  rw [hidx] at hcon
+  have hlt : (e : ℚ) / (d : ℚ) < (n₀ : ℚ) / (d : ℚ) := by exact_mod_cast hcon
+  have hen : e < n₀ := by
+    have h2 := mul_lt_mul_of_pos_right hlt hdQ
+    rw [div_mul_cancel₀ _ hdQ.ne', div_mul_cancel₀ _ hdQ.ne'] at h2
+    exact_mod_cast h2
+  have hk : ((((e + 1 : ℕ) : ℚ) / (d : ℚ) : ℚ) : WithTop ℚ)
+      ≤ index (fun _ : Unit => d) (fun _ : Unit => ((p : ℚ) / (q : ℚ)))
+          (((pUnitAlgEquiv ℚ).symm (P.map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ) := by
+    rw [hidx, WithTop.coe_le_coe]
+    have hle : ((e + 1 : ℕ) : ℚ) ≤ (n₀ : ℚ) := by exact_mod_cast hen
+    gcongr
+  have hpow := pow_le_abs_leadingCoeff_of_le_index hq0 hco hd hP (e + 1) hk
+  have hchain : q ^ (e + 1) ≤ q ^ e := le_trans hpow hB
+  have hqe : (0 : ℤ) < q ^ e := pow_pos hq0 e
+  rw [pow_succ] at hchain
+  nlinarith
+
+/-! ### Validation
+
+The theorem has six hypotheses; this instantiates all of them and extracts a non-trivial
+conclusion rather than merely showing they are satisfiable.
+
+Take `P = 1`, `p/q = 1/2`, `d = 1`, `e = 0`: then `|lead P| = 1 ≤ 2⁰`, and the theorem gives
+`index ≤ 0`.  With `index_nonneg` that pins the index of a non-zero constant to exactly `0` —
+the right answer, since a non-zero constant vanishes to order zero everywhere. -/
+example :
+    index (fun _ : Unit => 1) (fun _ : Unit => ((1 : ℤ) : ℚ) / ((2 : ℤ) : ℚ))
+        (((pUnitAlgEquiv ℚ).symm ((1 : ℤ[X]).map (algebraMap ℤ ℚ))) : MvPolynomial Unit ℚ)
+      = 0 := by
+  refine le_antisymm ?_ (index_nonneg _ _ _)
+  have h := index_le_of_abs_leadingCoeff_le (p := 1) (q := 2) (by norm_num)
+    isCoprime_one_left (d := 1) (by norm_num) (P := 1) one_ne_zero 0 (by norm_num)
+  simpa using h
+
+/-! ### Validation of the `H`-form — a case the `q`-form cannot reach
+
+`index_le_of_abs_leadingCoeff_le` needs `q ≥ 2`; `index_le_of_abs_coeff_le` needs only
+`max(|p|, |q|) ≥ 2`.  The gap is exactly the points whose height sits in the numerator, and
+`κ = 3` is the smallest of them: `q = 1`, so the `q`-form does not apply at all.
+
+Take `P = X − 3`, `κ = 3/1`, `d = 1`, `e = 1`.  Then `H = 3`, every coefficient is at most `3`
+in absolute value, and `3 ≤ 3¹`, so the theorem gives `index ≤ 1`.  That is the true value —
+`X − 3` vanishes to order exactly `1` at `3` — so the bound is attained, not slack. -/
+example :
+    index (fun _ : Unit => 1) (fun _ : Unit => ((3 : ℤ) : ℚ) / ((1 : ℤ) : ℚ))
+        (((pUnitAlgEquiv ℚ).symm ((Polynomial.X - Polynomial.C 3 : ℤ[X]).map (algebraMap ℤ ℚ)))
+          : MvPolynomial Unit ℚ)
+      ≤ 1 := by
+  have h := index_le_of_abs_coeff_le (p := 3) (q := 1) (by norm_num) isCoprime_one_right
+    (d := 1) one_ne_zero (P := Polynomial.X - Polynomial.C 3)
+    (Polynomial.X_sub_C_ne_zero 3) 1 (a := 3) (by norm_num) ?_ (by norm_num)
+  · simpa using h
+  · intro n
+    simp only [Polynomial.coeff_sub, Polynomial.coeff_X, Polynomial.coeff_C]
+    split_ifs <;> norm_num
+
+/-! ### Next
+
+⚠ This is the base case only.  What remains for Roth's lemma is the **induction on the number
+of variables**: the parameter conditions (`dⱼ/dⱼ₊₁` growth, `ε`, the `qⱼ` hypotheses) and the
+step that feeds this theorem and the `m−1` case back into the `m` case.
+
+Everything that step needs from the index and height calculus is now proved —
+`index_separated` and `abs_coeff_le_of_mul_separated` split the separated Wronskian,
+`abs_coeff_mvGenWronskian_le` and `sum_index_le_index_mvGenWronskian_add` bound it, and this
+theorem terminates the recursion.  What is not written is the recursion itself.
+
+⚠ An earlier version of this paragraph named `index_det_ge` as the index bound.  **That was
+false when written:** `index_det_ge` bounds a determinant by the indices of its *entries*, and
+for a Wronskian the entries are `pderivList (D i) (f j)`, which nothing related back to
+`index (f j)`.  The composite that actually does is
+`sum_index_le_index_mvGenWronskian_add` in `QOU/Mathlib/WronskianIndex.lean`, written after
+this module and because of this error. -/
+
+end MvPolynomial

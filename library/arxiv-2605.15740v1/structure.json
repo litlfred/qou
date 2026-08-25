@@ -1,0 +1,232 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2605.15740v1",
+ "source": {
+  "file": "2605.15740v1.pdf",
+  "sha256": "aa7f99d6633113c6f5c4aebefa60212b207f86f5d398c43386115f472cc5ff07",
+  "bytes": 524384,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2605.15740",
+   "version": "1",
+   "primary_class": "math.NT",
+   "stamp_date": "15 May 2026"
+  },
+  "doi": null,
+  "title": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS",
+  "authors_raw": "JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER",
+  "abstract": "In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´ e homology sphere as the limiting value of the Eichler integral of a weight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently recast this result as an identity for aq-hypergeometric series at roots of unity. This motivated Hikami to prove analogousq-series identities involving the unified WRT invariants of certain Brieskorn homology spheres. Hikami also made several conjectures of a similar type forq- series with no apparent connection to quantum invariants. In this paper we use the Bailey pair machinery and a novel relation between incomplete quadratic Gauss sums with periodic coefficients to construct infinite families of identities betweenq-multisums at roots of unity and limiting values of Eichler integrals of weight 3/2 modular forms. These identities include all of Hikami’s results and conjectures as well as a generalization of the result of Lawrence and Zagier. 1.Introduction In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants and modular forms [23]. To state their result, letZ ζ(M) denote the Witten-Reshetikhin-Turaev (WRT) invariant of a closed and oriented 3-manifoldMat the root of unityζ. Next let p= (p 1,p 2,p 3) be a triple of pairwise coprime positive integers andP:=p 1p2p3. For any tripleℓ= (ℓ 1,ℓ 2,ℓ 3)∈Z 3 satisfying 0<ℓ j <p j, define the odd periodic function χℓ p(n) =    −ϵ1ϵ2ϵ3 ifn≡P  1 + 3X j=1 ϵjℓj pj   (mod 2P), 0 otherwise whereϵ= (ϵ 1,ϵ 2,ϵ 3)∈{±1} 3. Forq=e 2πiτ ,τ∈H, consider the Eichler integral eΦℓ p(τ) := ∞X n=0 χℓ p(n)q n2 4P (1.1) of the weight 3/2 modular form Φℓ p(τ) := ∞X n=0 nχℓ p(n)q n2 4P. Date: May 18, 2026. 2020Mathematics Subject Classification.11F27, 33D15, 57K16.",
+  "docinfo": {
+   "Author": "Jeremy Lovejoy; Robert Osburn; Matthias Storzer",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants"
+  },
+  "title_prev": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INV ARIANTS",
+  "title_lines": [
+   "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED",
+   "WITTEN-RESHETIKHIN-TURAEV INVARIANTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Bailey pairs and key identities",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries and auxiliary results",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "An arsenal of Bailey pairs",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The key results",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Incomplete quadratic Gauss sums",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Properties for incomplete quadratic Gauss sums",
+   "page": 13,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Relations between incomplete quadratic Gauss sums",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.2",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 9067,
+   "n_words": 1567
+  },
+  {
+   "id": "sec-001-2-bailey-pairs-and-key-identities",
+   "number": "2",
+   "title": "Bailey pairs and key identities",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-preliminaries-and-auxiliary-results",
+   "number": "2.1",
+   "title": "Preliminaries and auxiliary results",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3532,
+   "n_words": 567
+  },
+  {
+   "id": "sec-003-22-an-arsenal-of-bailey-pairs",
+   "number": "2.2",
+   "title": "An arsenal of Bailey pairs",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 2785,
+   "n_words": 530
+  },
+  {
+   "id": "sec-004-23-the-key-results",
+   "number": "2.3",
+   "title": "The key results",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 5317,
+   "n_words": 838
+  },
+  {
+   "id": "sec-005-3-incomplete-quadratic-gauss-sums",
+   "number": "3",
+   "title": "Incomplete quadratic Gauss sums",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-31-properties-for-incomplete-quadratic-gauss-sum",
+   "number": "3.1",
+   "title": "Properties for incomplete quadratic Gauss sums",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1971,
+   "n_words": 413
+  },
+  {
+   "id": "sec-007-32-relations-between-incomplete-quadratic-gauss",
+   "number": "3.2",
+   "title": "Relations between incomplete quadratic Gauss sums",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 21,
+   "n_chars": 8867,
+   "n_words": 1826
+  },
+  {
+   "id": "sec-008-4-proof-of-theorem-12",
+   "number": "4",
+   "title": "Proof of Theorem 1.2",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 7092,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 648,
+   "n_words": 101
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 5300,
+   "n_words": 718
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 44579
+ }
+}

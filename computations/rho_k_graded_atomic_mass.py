@@ -52,8 +52,9 @@ import _path_bridge  # noqa: F401,E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1 anchor
 from canonical_mass import proton_mass_mev, neutron_mass_mev  # noqa: E402
 from hecke_core import atom_per_generator_volumes  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 M_E = mp.mpf(str(M_E_MEV))
 M_P = mp.mpf(str(proton_mass_mev()))   # canonical muon-anchored facade

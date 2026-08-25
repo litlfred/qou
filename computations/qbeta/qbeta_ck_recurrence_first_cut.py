@@ -40,8 +40,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the canonical loaders from Step 1 of PR #1727.
 from qbeta_singularity_type_probe import load_R_q0, load_ck  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def hankel_det(seq: list[mp.mpf], size: int, offset: int = 0) -> mp.mpf:

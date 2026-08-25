@@ -1,0 +1,53 @@
+264 C. McMullen
+
+A good example to keep in mind is that of an expanding map f(z), and
+X the open component of Exp, containing f; Another example is the pair
+(Poly, T,), Where T, is any generally convergent algorithm. (If T, is not a stable
+family, then there exist attracting periodic cycles of arbitrarily high order for
+certain values of p; these persist locally so T, is not generally convergent.)
+
+As we move about in X, the periodic cycles of f move injectively; in particu-
+lar, the monodromy of the motion of A determines a homomorphism
+
+m1 (X, f) > Mod(A)
+
+whose image G records the braiding of the attractor. We refer to G as the
+monodromy group of the family (X, f).
+
+Theorem 2.1 (Controlled braiding). For any attractive family, the monodromy
+group G is either (a) finite, (b) reducible, or (c) fixes a point of A.
+
+Remark. There exists an attractive family of polynomials with |A|=4, such that
+G contains a pseudo-Anosov element which fixes infinity and cyclically permutes
+the three finite attractors (see the Appendix). Thus in case (c) G can be infinite
+irreducible.
+
+Proof of Theorem 1.2 (Location of failures). Let V be a tangled subset of Poly,.
+We begin by proving any purely iterative algorithm T, fails on V. We may
+assume that V meets neither the discriminant locus nor the (possibly empty)
+subvariety on which T, is undefined or represents a rational map of degree
+less than k. If T, does not fail on V, then (V, T,) is an attractive family, with
+attractor A contained in r, the roots of p.
+
+As before, let G,,, denote the topological monodromy of the roots over
+V, and let GoMod(A) record the braiding of the attractor. Since for each q
+in V, the attractor of T, is contained in the roots of gq, G is the image of G,.,
+induced by the inclusion Acr.
+
+Since V is tangled, G,,, is transitive, irreducible and infinite. Transitivity
+implies that A=r and G=G,,,. But then G violates all three possibilities enumer-
+ated in Theorem 2.1, a contradiction. Thus T, must fail on V, establishing part
+(a) of the theorem.
+
+Now suppose the family (V, T,) consists of expanding maps, varying only
+continuously with p, such that for each q in V the attractor of T, is contained
+in the roots of q. Let X denote the component of Exp, containing T,. The
+map T: V— Exp, induces a map
+
+n4(V; T,) +14 (X, T,)» Mod(A)
+
+exhibiting, as before, the image of G,,, under the inclusion Acr as a subgroup
+of G, the monodromy of the attractor in the attractive family (X, T,). Again
+it follows that A=r and G is transitive, irreducible and infinite, contradicting
+Theorem 2.1 and so establishing part (b). 0
+

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:42:07.703183+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T21:11:57.444922+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "cross_anchor_candidates_evaluated",
@@ -18,7 +18,7 @@
   "computation": "mn-dpn-xq-cross-anchor-probe",
   "scriptFile": "mn_dpn_xq_cross_anchor_probe.py",
   "scriptHash": "c52f131436ee",
-  "scriptCommitSha": "a2ddbd04658a8877f2c0366de03f2c19ca9be286",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,130 +26,138 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mn_dpn_xq_cross_anchor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mn_dpn_xq_cross_anchor_probe.py"
   },
   "description": "Cross-anchor verdict on X(q) refinement candidates (extension of PR #1645 single-anchor probe). Per AGENTS.md Im(q) fibre-vs-observable: tier by both q_proton AND q_muon.",
   "auditOnly": "docs/audits/2026-06-01-precision-residual-probes-workplan.md",
   "data": {
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
-    "q_muon": "1.109978595554180575281594079609509377993282279958686225466751689153746",
-    "delta_q": "-0.0000000128027997676899249839987404981187831580851074893939374489719466139291",
+    "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "delta_q": "-0.00000001289135823909012603376923287282556643915543282090123152981729611559406",
     "candidates": [
       {
         "name": "(a) bare",
         "factor_at_q_proton": "1.00000000000000000000000000000000000000000000000000000000000",
         "factor_at_q_muon": "1.00000000000000000000000000000000000000000000000000000000000",
-        "ppb_at_q_proton": -1277075.2400141393,
-        "ppb_at_q_muon": -1276753.75175264,
+        "ppb_at_q_proton": -1277073.889034101,
+        "ppb_at_q_muon": -1276750.176999836,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b1) 1 + α_em/π",
         "factor_at_q_proton": "1.00232281946550051220473618984068127777140364054514280472375",
         "factor_at_q_muon": "1.00232281946550051220473618984068127777140364054514280472375",
-        "ppb_at_q_proton": 1042777.8102599592,
-        "ppb_at_q_muon": 1043100.0452806505,
+        "ppb_at_q_proton": 1042779.1643780804,
+        "ppb_at_q_muon": 1043103.6283369598,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b2) 1 - α_em·G/(4π)",
         "factor_at_q_proton": "0.999468094322029103263314726224248773111502665444525085251374",
         "factor_at_q_muon": "0.999468094322029103263314726224248773111502665444525085251374",
-        "ppb_at_q_proton": -1808301.6344136766,
-        "ppb_at_q_muon": -1807980.3171536087,
+        "ppb_at_q_proton": -1808300.284152232,
+        "ppb_at_q_muon": -1807976.7443022362,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b3) 1 - h²·α_em",
         "factor_at_q_proton": "0.999681060386908785711899703764210463513392124706933989077357",
-        "factor_at_q_muon": "0.999681060316139132832007207307071584488483271822988583242575",
-        "ppb_at_q_proton": -1595607.5432224153,
-        "ppb_at_q_muon": -1595286.228175555,
+        "factor_at_q_muon": "0.999681060315649610796847540480388854612071304741248808483945",
+        "ppb_at_q_proton": -1595606.1926732578,
+        "ppb_at_q_muon": -1595282.6550517785,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(c1) 1 + h²/6",
         "factor_at_q_proton": "1.00728436808875366490033655594623138496136899345225101817266",
-        "factor_at_q_muon": "1.00728436970508534629304664804577082073343873368331352457670",
-        "ppb_at_q_proton": 5997990.162614229,
-        "ppb_at_q_muon": 5998315.606982585,
+        "factor_at_q_muon": "1.00728436971626570315464169331536989195502763905706709128633",
+        "ppb_at_q_proton": 5997991.523435303,
+        "ppb_at_q_muon": 5998319.218941293,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(c2) 1 - h²/[2]_q²",
         "factor_at_q_proton": "0.989191546992138393624882593519055448679297604500381274695887",
-        "factor_at_q_muon": "0.989191544619767776054787346262022375743232414542575261227112",
-        "ppb_at_q_proton": -12071725.040156549,
-        "ppb_at_q_muon": -12071409.396027502,
+        "factor_at_q_muon": "0.989191544603357808748145333219443380732359316094385897593627",
+        "ppb_at_q_proton": -12071723.703778515,
+        "ppb_at_q_muon": -12071405.87630127,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(d1) 1 + h²·G/(4π)",
         "factor_at_q_proton": "1.00318575541787539916534433872104733330698071957118012795223",
-        "factor_at_q_muon": "1.00318575612476408852611219499406560782457135548537017637158",
-        "ppb_at_q_proton": 1904611.72849635,
-        "ppb_at_q_muon": 1904934.9469269873,
+        "factor_at_q_muon": "1.00318575612965372095704292385513271484396412549783740364537",
+        "ppb_at_q_proton": 1904613.0837802805,
+        "ppb_at_q_muon": 1904938.5379514713,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(d2) 1 - ℏ_q²/24",
         "factor_at_q_proton": "0.999590950564405205257892955950851489462956279809358418909566",
-        "factor_at_q_muon": "0.999590950478605055356813274502439638237479871244916586250957",
-        "ppb_at_q_proton": -1685602.2887027944,
-        "ppb_at_q_muon": -1685281.0176364908,
+        "factor_at_q_muon": "0.999590950478011565606760408231978430555997741641892908255662",
+        "ppb_at_q_proton": -1685600.9382753735,
+        "ppb_at_q_muon": -1685277.44493867,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(e1) (3q²-1)/(2q²)",
         "factor_at_q_proton": "1.09417312281712097093389258892912393754073373110174684622367",
-        "factor_at_q_muon": "1.09417313217895955010177363671768818731823247889677149352779",
-        "ppb_at_q_proton": 92775781.41368228,
-        "ppb_at_q_muon": 92776142.52738313,
+        "factor_at_q_muon": "1.09417313224371648723013003090565929995204450789958245579764",
+        "ppb_at_q_proton": 92775782.89188832,
+        "ppb_at_q_muon": 92776146.50345586,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(f1) 1 + m_e/m_p",
-        "factor_at_q_proton": "1.00054461702222443312887305105401399495895241936107515638068",
-        "factor_at_q_muon": "1.00054461702222443312887305105401399495895241936107515638068",
-        "ppb_at_q_proton": -733153.7347040793,
-        "ppb_at_q_muon": -732832.0713546001,
+        "factor_at_q_proton": "1.00054461702148726570588680885984307712926913765886759827371",
+        "factor_at_q_muon": "1.00054461702148726570588680885984307712926913765886759827371",
+        "ppb_at_q_proton": -733152.3837245002,
+        "ppb_at_q_muon": -732828.4953911513,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(f2) 1 - α_em·ℏ_q",
         "factor_at_q_proton": "0.999276965784939801939684788144702145905066354397167701466345",
-        "factor_at_q_muon": "0.999276965709109797807720625852039980285235326722569409438368",
-        "ppb_at_q_proton": -1999186.0859806011,
-        "ppb_at_q_muon": -1998864.905899302,
+        "factor_at_q_muon": "0.999276965708585272758820604445668480310440764990220240918215",
+        "ppb_at_q_proton": -1999184.7359773673,
+        "ppb_at_q_muon": -1998861.3342550227,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g1) 1 + ℏ_q²·[2]_q/2",
         "factor_at_q_proton": "1.00987067474039067484511899869227946441545355441557835320739",
-        "factor_at_q_muon": "1.00987067682265009088536998559919251974019147143192277906434",
-        "ppb_at_q_proton": 8580993.90606335,
-        "ppb_at_q_muon": 8581320.647231795,
+        "factor_at_q_muon": "1.00987067683705332471819724768326436116976069679554676239745",
+        "ppb_at_q_proton": 8580995.270378472,
+        "ppb_at_q_muon": 8581324.271654673,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g2) bar-symmetric: (1+q⁻¹/2)/(1+q/2)",
         "factor_at_q_proton": "0.932777576040190981537873707940969765596340732253357299753565",
-        "factor_at_q_muon": "0.932777568858918112412276484788415287961190795113116754369323",
-        "ppb_at_q_proton": -68413651.10661036,
-        "ppb_at_q_muon": -68413358.40167321,
+        "factor_at_q_muon": "0.932777568809244404046574655100250185952399837846132639634888",
+        "ppb_at_q_proton": -68413649.84644647,
+        "ppb_at_q_muon": -68413355.11683428,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g3) [3]_q / 3",
         "factor_at_q_proton": "1.01456873617750732980067311189246276992273798690450203634532",
-        "factor_at_q_muon": "1.01456873941017069258609329609154164146687746736662704915340",
-        "ppb_at_q_proton": 13273055.565242598,
-        "ppb_at_q_muon": 13273384.965717811,
+        "factor_at_q_muon": "1.01456873943253140630928338663073978391005527811413418257266",
+        "ppb_at_q_proton": 13273056.935904708,
+        "ppb_at_q_muon": 13273388.61488242,
         "tier": "TIER 3 (refuted)"
       }
     ],
@@ -157,5 +165,7 @@
     "tier_15_count": 0,
     "verdict": "ALL CANDIDATES FAIL cross-anchor. The X(q) 0.10% residual is NOT a multiplicative-refinement problem — it needs a fibre-level Habiro element (per AGENTS.md Im(q) framing), not a q_0-evaluated correction. This rules out the ansatz family tested in PR #1645 + this probe.",
     "anti_pattern_guard": "Tier 2 results are anchor-coincidences and MUST NOT be wired. Only Tier 1 candidates merit structural derivation. Failure of all candidates at cross-anchor confirms that X(q) needs a fibre-level Habiro element (parallel α_EM PR #1511), not a multiplicative q_0-fit."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

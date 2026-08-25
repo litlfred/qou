@@ -1,0 +1,86 @@
+{
+  "engine": "python-exact-integer",
+  "engineVersion": "3.11.15",
+  "computedAt": "2026-08-23T09:14:01.230863+00:00",
+  "commitSha": "ad5fcb78d5d36f541bc3f16f1ee0ee81c6a23f40",
+  "assertions": [
+    {
+      "name": "1_k_exponent_unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "(1+u^b)^k carries k = 3A-1 in BOTH frames on all four atoms; only the base moves u^2 -> u^4. Zero free parameters, so this is not a fit."
+    },
+    {
+      "name": "2_prefactor_ratio_constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "new/old prefactor is the constant 6 on all four atoms; old is exactly 2^(2A+1). One free parameter, four ratios."
+    },
+    {
+      "name": "3_exponent_offset_additive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "detail": "2x2 interaction = 0, so the offset is additive in Z and N -- the same functional shape as the landed law. WEIGHT: 4 points against a 3-parameter additive model tests exactly ONE constraint. Weak alone; corroborative here."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 109,
+  "computation": "du-law-reparametrisation",
+  "scriptFile": "du_law_reparametrisation_probe.py",
+  "scriptHash": "b9a27d412721",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/du_law_reparametrisation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/du_law_reparametrisation_probe.py"
+  },
+  "description": "Bean qou-iayk. Tests the bean's blocking claim that the fresh Habiro D(u) exponents are IRREGULAR, against the recorded factorisations. Exact integer arithmetic; no floating point.",
+  "scope": "scope-(a) MEASUREMENT. Refutes 'irregular'. Does NOT establish that the fresh values are correct: reading (a) of the bean, a producer defect beyond the PR #5376 parser fix, is untested here and remains live. Wires nothing; regenerates no witness.",
+  "result": {
+    "fact1_k_unchanged_eq_3A_minus_1": true,
+    "fact1_base_u2_to_u4": true,
+    "fact1_free_parameters": 0,
+    "fact2_old_prefactor_is_2_pow_2A_plus_1": true,
+    "fact2_prefactor_ratio_constant": true,
+    "fact2_prefactor_ratio": "6",
+    "fact2_free_parameters": 1,
+    "fact3_interaction": 0,
+    "fact3_additive": true,
+    "fact3_closed_form": {
+      "coef_Z": 12,
+      "coef_N": 20,
+      "const": 14
+    },
+    "fact3_constraints_tested": 1,
+    "fact3_free_parameters": 3
+  },
+  "context": {
+    "beans": [
+      "qou-iayk",
+      "qou-3zby",
+      "qou-kcii"
+    ],
+    "refutes": "qou-iayk: 'An irregular offset is NOT explainable by a normalisation, and one atom (3He) matches exactly while its A=3 partner (T) is off by 5.'",
+    "note": "The producer d_u_closed_form_proof.py states in its own docstring that this law is NOT a test of witness correctness: the committed witness satisfies the law exactly and still FAILS the outer identity on all four atoms. So 'the old data fits the law 4-for-4' is not evidence the old values are right."
+  }
+}

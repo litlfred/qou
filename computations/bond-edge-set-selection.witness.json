@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:42:08.640370+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T12:56:54.989511+00:00",
+  "commitSha": "8e5667911022b907b6935bfc35e06e97204ef51e",
   "assertions": [
     {
       "name": "deuteron_not_closable_by_integer_edge_set",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1783129293618,
+  "durationMs": -1786192918226,
   "computation": "bond-edge-set-selection",
   "scriptFile": "bond_edge_set_selection_probe.py",
-  "scriptHash": "73c06fbf0b0f",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "6085e2acd0c9",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Edge-set selection refutation: with the DERIVED per-bond energies (f_bond = c·z+d; pp 2.907 / pn 3.890 / nn 5.178 MeV), EXACT enumeration of every static integer edge multiset per nucleus shows NO static bond graph closes D/T/³He/⁴He jointly — D needs a sub-unit bond (0.57 of its only pn bond; halo-loose), ⁴He needs MORE than the complete graph (1.20× over 1pp+4pn+1nn; doubly-magic many-body). The physical structure is fractional occupancy / shell weighting, not an edge-set choice — pointing at the per-nucleus volume route (#2078). T (chain 0.94×) and ³He (~1.1×) are individually close; the JOINT static closure is what fails. Formalize-first refutation of the static-graph class; no fit attempted.",
   "parameters": {
@@ -6701,6 +6702,16 @@
       "D_blocker": "single pn bond overshoots 1.75×; only smaller integer option is 0 bonds — needs occupancy ≈ 0.57 (halo).",
       "He4_blocker": "complete graph (1pp+4pn+1nn) under-binds 1.20× — needs a positive many-body/doubly-magic term beyond all pairwise bonds.",
       "conclusion": "The bond graph is NOT a static integer graph. The remaining structure is fractional bond occupancy / shell weighting (saturation, Pauli, magic) — i.e. the per-nucleus volume / shell route (#2078), not edge choice. Refutation recorded so the static-graph direction is not re-chased."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "3950fb614c34db7fbe3764ce44b0b25c51e8b3e16dd730e8387df0e21e77e497",
+        "size_bytes": 6231,
+        "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
+        "scriptCommitSha": "b2d94df75a85abb27b1790defaaa7ec7dccb5820",
+        "computedAt": "2026-06-29T17:13:41.851813+00:00"
+      }
+    ]
   }
 }

@@ -168,7 +168,7 @@ noncomputable def blockRep (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) :
     rw [smul_v, one_v]
     ext i j
     fin_cases i <;> fin_cases j
-    all_goals simp [blockOf, unitNF, Matrix.algebraMap_matrix_apply, Matrix.one_apply, algebraMap_self_apply]
+    all_goals simp [blockOf, unitNF, Matrix.algebraMap_matrix_apply, Matrix.one_apply, Algebra.algebraMap_self_apply]
 
 end H3A
 

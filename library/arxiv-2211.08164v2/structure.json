@@ -1,0 +1,233 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2211.08164v2",
+ "source": {
+  "file": "2211.08164v2.pdf",
+  "sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
+  "bytes": 164522,
+  "pages": 10
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2211.08164",
+   "version": "2",
+   "primary_class": "math.AG",
+   "stamp_date": "16 Apr 2024"
+  },
+  "doi": null,
+  "title": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "authors_raw": "SEBASTI ÁN REYES-CAROCCA AND PIETRO SPEZIALI",
+  "abstract": "In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorp hism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Rie mann sur- faces with automorphism group acting transitively on the Weierstra ss points, under the assumption that they are simple.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240416210726-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "INFINITELY MANY RIEMANN SURF ACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS",
+  "title_lines": [
+   "INFINITELY MANY RIEMANN SURFACES WITH A",
+   "TRANSITIVE ACTION ON THE WEIERSTRASS POINTS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and statement of the result",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A family of Riemann surfaces",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the main theorem",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Simple Weierstrass points",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Future directions and final comments",
+   "page": 7,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The action on C3",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Jacobian variety",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "New examples",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The case of positive characteristic",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgement",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-statement-of-the-result",
+   "number": "1",
+   "title": "Introduction and statement of the result",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3776,
+   "n_words": 593
+  },
+  {
+   "id": "sec-001-2-a-family-of-riemann-surfaces",
+   "number": "2",
+   "title": "A family of Riemann surfaces",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1393,
+   "n_words": 277
+  },
+  {
+   "id": "sec-002-3-proof-of-the-main-theorem",
+   "number": "3",
+   "title": "Proof of the main theorem",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 7342,
+   "n_words": 1418
+  },
+  {
+   "id": "sec-003-4-simple-weierstrass-points",
+   "number": "4",
+   "title": "Simple Weierstrass points",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2416,
+   "n_words": 478
+  },
+  {
+   "id": "sec-004-5-future-directions-and-final-comments",
+   "number": "5",
+   "title": "Future directions and final comments",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 35,
+   "n_words": 7
+  },
+  {
+   "id": "sec-005-the-action-on-c3",
+   "number": null,
+   "title": "The action on C3",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 438,
+   "n_words": 80
+  },
+  {
+   "id": "sec-006-the-jacobian-variety",
+   "number": null,
+   "title": "The Jacobian variety",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 585,
+   "n_words": 105
+  },
+  {
+   "id": "sec-007-new-examples",
+   "number": null,
+   "title": "New examples",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 382,
+   "n_words": 68
+  },
+  {
+   "id": "sec-008-the-case-of-positive-characteristic",
+   "number": null,
+   "title": "The case of positive characteristic",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1981,
+   "n_words": 332
+  },
+  {
+   "id": "sec-009-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 22,
+   "n_words": 3
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 5481,
+   "n_words": 867
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 23851
+ }
+}

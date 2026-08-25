@@ -1,0 +1,68 @@
+{
+  "engine": "python-stdlib",
+  "computedAt": "2026-08-10T19:26:56.568563+00:00",
+  "computation": "kappa-provenance",
+  "scriptFile": "probe_kappa_provenance.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "Locates the fit that produced the published kappa. It survives under computations/_deprecated/. The published value is the 3He arm alone; the T arm has the opposite sign; and the producing witness records hypothesis_supported=false. The fit was to Delta_coupling, not to binding energy as the content block states.",
+  "parameters": {
+    "published_kappa_MeV": "-1.0707907503265857",
+    "source_witness": "computations/_deprecated/interface-type-resolved-coupling-probe.witness.json",
+    "corroborating_witness": "computations/_deprecated/canonical-braid-interface-composition.witness.json"
+  },
+  "data": {
+    "anchors": {
+      "3He": {
+        "slope_MeV": "-1.0707907503265857",
+        "slope_in_h_E0_units": "-1.2235895570703044",
+        "excess": 1
+      },
+      "T": {
+        "slope_MeV": "0.20230947338869443",
+        "slope_in_h_E0_units": "0.23117846214052518",
+        "excess": -1
+      },
+      "4He": {
+        "residual_MeV": "0.022252911108739757",
+        "excess": 0
+      }
+    },
+    "original_verdict": {
+      "he3_slope": "-1.2235895570703044",
+      "t_slope": "0.23117846214052518",
+      "slope_consistent_to_5pct": false,
+      "he4_residual_small": true,
+      "hypothesis_supported": false,
+      "interpretation": "The interface-excess hypothesis predicts a single constant \u03ba (in units of h \u00b7 E_0) across all atoms. If \u00b3He and T give the same \u03ba to \u2264 5% AND \u2074He has residual \u2264 5% of base, the hypothesis is supported. The pp interface (\u03c3) and nn interface (\u03c3\u207b\u00b9) contribute opposite-sign u-pole corrections; doubly-magic atoms have balanced (pp = nn) counts and the corrections cancel."
+    },
+    "finding": "The conjecture's 0.034% agreement is with one arm of a two-arm measurement whose own probe recorded the single-kappa hypothesis as unsupported. The block reports the value as observed 'at the single-magic anchors' (plural); the anchors disagree in sign."
+  },
+  "assertions": [
+    {
+      "name": "published_kappa_is_the_3He_arm_alone",
+      "passed": true,
+      "detail": "the value the content block carries is exactly the 3He anchor's slope, to the last bit -- not a combination of the two single-magic anchors"
+    },
+    {
+      "name": "the_two_single_magic_anchors_disagree_in_sign",
+      "passed": true,
+      "detail": "3He gives -1.070791 MeV, T gives +0.202309 MeV -- opposite signs, ratio 5.3x"
+    },
+    {
+      "name": "the_producing_probe_recorded_its_hypothesis_as_unsupported",
+      "passed": true,
+      "detail": "the witness carries hypothesis_supported=false and slope_consistent_to_5pct=false -- the fit refuted itself at the time"
+    },
+    {
+      "name": "the_fit_was_to_delta_coupling_not_to_binding",
+      "passed": true,
+      "detail": "the probe's hypothesis is about Delta_coupling; the content block describes kappa as an atomic-BINDING coefficient -- different observables"
+    },
+    {
+      "name": "composition_sweep_uses_convention_C1",
+      "passed": true,
+      "detail": "n_pp = max(0, Z-1) and n_nn = max(0, N-1) hold on every swept row -- the same convention selected on corpus-structure grounds elsewhere"
+    }
+  ],
+  "allPassed": true
+}

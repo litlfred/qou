@@ -5,4 +5,4 @@
 - *P from Type-B Cartan folding*
 - *T from Markov-trace cyclicity*
 
-Type-B folding provides an alternative categorical realisation where the role of "P (braid mirror)" is replaced by "the Cartan-fold Z/2", and the bar-invariance emerges from the Type-B symmetric-crystal structure rather than from explicit $\sigma_{i} \leftrightarrow \sigma_{i}^{-1}$ braid manipulation. The D22 view is more compact but requires more category theory.
+Type-B folding provides an alternative categorical realisation where the role of "P (braid mirror)" is replaced by "the Cartan-fold Z/2", and the bar-invariance emerges from the Type-B symmetric-crystal structure rather than from explicit $\sigma_{i} \leftrightarrow \sigma_{i}^{-1}$ braid manipulation. The Type-B folding view is more compact but requires more category theory.

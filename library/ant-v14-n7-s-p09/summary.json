@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ant-v14-n7-s-p09",
+ "source_sha256": "c8fe963200a79d25",
+ "brief": "Galois action on the principal block and cyclic Sylow subgroups — 8 sections: Introduction; Blocks with normal defect group; Suppose that|D|= 2n. Since G/CD ac",
+ "extended": "**Galois action on the principal block and cyclic Sylow subgroups**\n\n*Noelia Rizo, A. A. Schaeffer Fryand Carolina Vallejo*\n\n28 pp, 8 sections.\n\n**Outline.** Introduction; 1 Blocks with normal defect group; 1 Suppose that|D|= 2n. Since G/CD acts transit; 2 Reducing to simple groups; 3 Simple groups; 1 Otherwise, let˙sα1∈ W induce; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. Let G be a ﬁnite group of order divisible by p, where p∈{ 2, 3}. Let P∈ Sylp(G) and let\n- Theorem: A provides more evidence of the elusive Alperin–McKay–Navarro conjecture. Since the latter\n- Theorem: C. Let S be a nonabelian simple group of order divisible by p≤ 3, P∈ Sylp(S) and X∈\n- Theorem: A to statements on ﬁnite simple groups, and in Section 3 we prove Theorem C thus completing\n- Theorem 2.1: ]. While the action of G on characters is not natural enough in global-local contexts, Navarro\n- Theorem 3.4: ]. We obtain the following as a consequence of this fact.",
+ "tokens": {
+  "brief": 39,
+  "extended": 248
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-1-blocks-with-normal-defect-group",
+   "title": "Blocks with normal defect group",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-002-1-suppose-thatd-2n-since-gcd-acts-transitively-o",
+   "title": "Suppose that|D|= 2n. Since G/CD acts transitively on the nontrivial",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-2-reducing-to-simple-groups",
+   "title": "Reducing to simple groups",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-3-simple-groups",
+   "title": "Simple groups",
+   "pages": "10-25"
+  },
+  {
+   "id": "sec-005-1-otherwise-letsα1-w-induce",
+   "title": "Otherwise, let˙sα1∈ W induce",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-006-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "25-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

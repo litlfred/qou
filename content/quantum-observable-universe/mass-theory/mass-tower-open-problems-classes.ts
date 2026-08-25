@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:mass-tower-open-problems-classes",
   title:
-    "§3b-cond Lean classes for the four remaining mass-tower open problems",
+    "Lean classes carrying the four remaining mass-tower open problems as hypotheses",
   interprets: "prop:em-coupling-bring-zero-mode",
   tags: [
     "mass-tower",

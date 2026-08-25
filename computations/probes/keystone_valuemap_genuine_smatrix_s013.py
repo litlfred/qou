@@ -3,7 +3,7 @@
 the false-theta level.
 
 Bean s013, step 3. The primary sources are now in-repo (owner upload, commit ece271823:
-`uploads/0405028v2.pdf` = Hikami, *On the quantum invariant for the Brieskorn homology
+`library/arxiv-math-ph-0405028v2/0405028v2.pdf` = Hikami, *On the quantum invariant for the Brieskorn homology
 spheres*, math-ph/0405028; also 1811.05376v4, 2205.01282v2, and Lawrence–Zagier 1999
 `fulltext.pdf`). This probe transcribes the genuine structure and MACHINE-VALIDATES every
 transcribed formula before drawing any conclusion:
@@ -56,15 +56,21 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
 from mpmath import mp, mpf, mpc, bernpoly, factorial  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 40
+set_compute_dps()
 PVEC = (2, 3, 5)
 P = 30
 TWO_P = 60
-Q0 = mpf("1.1099785955541805")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 I = mpc(0, 1)
 
 # the two independent triples for (2,3,5) (Hikami §5: D(2,3,5)=2)
@@ -260,7 +266,7 @@ def run():
 
 
 def report(res):
-    print("# s013 — the genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, now in uploads/)\n")
+    print("# s013 — the genuine Σ(2,3,5) S-matrix (Hikami math-ph/0405028, now in library/)\n")
 
     print("## (χ) Characters and the D=2 identification\n")
     print(f"- D(2,3,5) = (1·2·4)/4 = **{res['D_235']}** independent vector-valued components:"

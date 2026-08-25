@@ -26,7 +26,7 @@ is the requirement that the per-place surreal orders be **commensurable** — a
 single coherent birthday filtration spanning every prime and the archimedean
 place $v = \infty$ simultaneously. Without it the sum $\sum_v \ordw_v(f_v)$ does
 not even typecheck. This shared $\Gamma$ is the genuine additional structure the
-adelic lift exposes (formalised in Lean as a linearly ordered abelian group —
+adelic lift exposes (formalised in Lean as a linearly ordered abelian group:
 `AddCommGroup` $+$ `LinearOrder` $+$ `IsOrderedCancelAddMonoid`): it is what makes the two dual archimedean reductions of
 [adelic–Tate surreal squeeze](#rem:adelic-tate-squeeze) — the fibre functor
 $\tau_{\mathrm{arch}} = \pi_\infty$ across places, and the standard part
@@ -38,6 +38,6 @@ rigidity (e.g. the automorphic generalisation flagged in the outlook of
 **Downstream.** This proposition supplies the local–global skeleton consumed by
 [adelic–Tate surreal squeeze](#rem:adelic-tate-squeeze) and, through it, the
 leading-coefficient reduction of [BSD surreal bound](#rem:bsd-surreal-bound).
-The squeeze content is purely structural — it takes the per-place inequalities
+The squeeze content is purely structural: it takes the per-place inequalities
 as hypotheses and is therefore independent of the q-NS conjecture cone behind
 [surreal squeeze](#lem:surreal-squeeze).

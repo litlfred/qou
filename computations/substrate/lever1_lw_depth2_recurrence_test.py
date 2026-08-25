@@ -9,6 +9,12 @@ the prolonged periods of a fixed 2x2 M -- the audit fork (b).
 lw(c) = (1/(c+1)) Sum_{lam|-c+1} dim_q(lam),  dim_q = [n]_q!/prod[hook]_q, symmetric
 [k]_q = (q^k-q^-k)/(q-q^-1).  No fit; symbolic in q + 50-dps at q0.
 """
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
 import json, os, sys
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
 import sympy as sp
@@ -26,7 +32,8 @@ LW = {c: lw(c) for c in range(1, 7)}                 # lw(1..6)
 tau_seed = sp.cancel((LW[1] + LW[3]) / LW[2])        # solved from n=2,3,4
 tau_cf = sp.cancel(3*(3*q**4 + 8*q**2 + 3) / (4*q*(q+1)**2))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 def ev(e): return mp.mpf(str(sp.N(e.subs(q, q0), 40)))
 

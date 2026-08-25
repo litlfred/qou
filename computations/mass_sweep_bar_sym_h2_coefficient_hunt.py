@@ -70,12 +70,18 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
-mp.mp.dps = 50
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0 = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+q0 = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 h = q0 - 1 / q0
 h2 = h ** 2
 h4 = h ** 4
@@ -191,6 +197,7 @@ def main() -> int:
     print()
 
     w = WitnessBuilder("mass-sweep-bar-sym-h2-coefficient", engine="python+mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Bug-hunt: derive the bar-symmetric h² correction coefficient "
         "per KLR-violating atom in the mass-table sweep. Tests whether "

@@ -1,0 +1,112 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-24T19:30:37.837476+00:00",
+  "commitSha": "7da9e893d78d34819bf2aaa589a693a6565931e4",
+  "assertions": [
+    {
+      "name": "registry_triple_consistent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = |m_e*(m_p/m_e) - m_p| is inside the KNOWN_TRIPLE_RESIDUAL_PPB ceiling). Live residual is ~0.0029 ppb, about a quarter of m_p's last printed digit — the floor any same-edition triple can reach. The defect this guards against was 1.35 ppb, 27x the ceiling, and invisible to every float64/precision audit because nothing about it was imprecise."
+    },
+    {
+      "name": "ame_neutron_equals_its_definition",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = M_N_MEV_AME_DERIVED - (M_P + M_E + Q_BETA_AME) vanishes to the stored literal's last digit). It is a derived quantity; the old value outlived the 2018 proton it was built from, which is how a 1.5 ppb 'tension between two competing authoritative neutrons' was manufactured. Now 0.16 ppb."
+    },
+    {
+      "name": "m_p_row_reported_but_not_scored",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = the dashboard marks m_p is_anchor_roundtrip and leaves beats_100x None so it is excluded from the count). q_0 is pinned from m_p/m_e, so m_p_pred == m_e*MASS_RATIO_P_E identically and the residual is CODATA's own rounding. Scoring it would have flipped the headline to 3/7 on a tautology; the count correctly stays 2/7 (AGENTS.md q_0-anchor rule 1)."
+    },
+    {
+      "name": "fix_does_not_explain_mu_p_tension",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = the m_mu miss did NOT improve). It moved 963.6x -> 970.2x, i.e. worse. Recorded as measured rather than suppressed: a correction that degrades an observable is still the correct value. The mu-p substrate tension is genuine."
+    },
+    {
+      "name": "qbeta_miss_survives_the_fix",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = Q_beta still misses its 100x target). It does, at 164x. The fix reconciled Q_beta's two experimental determinations (1814 -> 194 ppb, 2.33 -> 0.25 sigma) but left the prediction's residual intact, so Q_beta remains one of the two genuine L2 levers."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "codata-registry-triangulation",
+  "scriptFile": "codata_registry_triangulation_probe.py",
+  "scriptHash": "853b259059ed",
+  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/codata_registry_triangulation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/codata_registry_triangulation_probe.py"
+  },
+  "description": "Regression guard for the CODATA registry vintage straddle fixed on 2026-08-09 (PR #4860). Seven mass literals labelled 'CODATA 2022' held CODATA-2018 values; the ~1.3 ppb straddle was 100% of the m_p row's reported L2 error and contaminated Q_beta's comparison target and the AME-derived neutron. Detected from internal inconsistency alone, then confirmed against RMP 97, 025002. This probe now asserts the corrected state. Audit-only; changes no prediction.",
+  "auditOnly": "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
+  "parameters": {
+    "compute_dps": 70,
+    "primary_source": "Mohr, Newell, Taylor & Tiesinga, Rev. Mod. Phys. 97, 025002 (2025) — library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf"
+  },
+  "data": {
+    "m_p_MeV": "938.27208943",
+    "triple_residual_ppb": "-0.0028517875",
+    "triple_residual_in_printed_units": "0.267575",
+    "triple_ceiling_ppb": "0.05",
+    "ame_neutron_definitional_residual_MeV": "-6.9e-10",
+    "ame_vs_direct_neutron_ppb": "-0.15964828",
+    "m_p_row_is_anchor_roundtrip": true,
+    "m_p_roundtrip_residual_ppb": "0.002852",
+    "m_mu_miss_now": "970.2",
+    "qbeta_miss_now": "164.0",
+    "qbeta_target_spread_ppb_now": "190.85213",
+    "historical_pre_fix": {
+      "stale_m_p_MeV": "938.27208816",
+      "triple_residual_ppb": "1.3507",
+      "m_p_dashboard_miss": "437.0",
+      "m_n_miss": "420.1",
+      "delta_pn_miss": "163.3",
+      "qbeta_target_spread_ppb": "1814.2",
+      "ame_vs_direct_neutron_ppb": "-1.511",
+      "m_mu_miss": "963.566"
+    }
+  },
+  "upstream": [
+    {
+      "path": "per-observable-100x-status.witness.json",
+      "sha256": "334ebf1737714619de98bc4d0c64cb1f3b9c7eef5a5a472243a46e5f12802fa1",
+      "size_bytes": 11832,
+      "commitSha": "b9b87e05051cb1a6607623dc2675a6e328778dca",
+      "scriptCommitSha": "4fe2715ad3aab1fc1b03986991d98c2bbae8ad7c",
+      "computedAt": "2026-08-22T19:24:38.835296+00:00"
+    }
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

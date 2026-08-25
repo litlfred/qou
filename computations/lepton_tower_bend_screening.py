@@ -65,6 +65,12 @@ from lepton_tower_core import markov_z, morgan_voyce_b  # noqa: E402
 
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 M_E = mpf("0.51099895000")
 M_MU = mpf("105.6583755")
 M_TAU = mpf("1776.86")
@@ -85,7 +91,7 @@ def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     b = morgan_voyce_b(12, h)
 

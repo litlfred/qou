@@ -40,7 +40,7 @@ print("=" * 70)
 
 # ── 1. Corrected Markov trace ───────────────────────────────────
 print("\n─── 1. Corrected Markov trace ───")
-z_val = 1.0 / (mp.sqrt(q0) + 1.0 / mp.sqrt(q0))
+z_val = q0**3 / (q0**2 + 1)
 tr_e_corrected = z_val ** 3
 tr_e_vertex_product = HA0 * z_val**2 + z_val  # WRONG (old)
 

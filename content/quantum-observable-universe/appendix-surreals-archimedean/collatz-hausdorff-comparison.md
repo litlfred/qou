@@ -22,7 +22,7 @@ $$
   \log_q\!\left(1 + \frac{q}{[3]_q}\right).
 $$
 
-At $q_0 = 1.109978595554181\ldots$ (50 dps): $|\Delta\Phi| \approx 2.76$ per
+At $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps): $|\Delta\Phi| \approx 2.76$ per
 cycle.  An orbit starting at $P$ with $\Phi_0 = \log_q |P|$
 reaches the fixed point $\Phi = 0$ (i.e., $P = 1$) after
 $\Phi_0 / |\Delta\Phi|$ cycles.

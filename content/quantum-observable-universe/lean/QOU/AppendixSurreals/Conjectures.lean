@@ -95,8 +95,13 @@ them acquire genuine mathematical content.
 - `QOU_StandardPart`   — constant `PUnit.unit` projection.
 - `QOU_FrobeniusPairing`,
   `QOU_ObservabilityNorm`,
-  `QOU_VacuumEnergy`   — identity `K → K` placeholders; deep
-                         categorical content stays in the prose.
+  `QOU_VacuumEnergy`   — `opaque K → K` constants (2026-08-08; they
+                         were identity placeholders, which made every
+                         conjecture kernel written over them provable
+                         by `rfl`). Deep categorical content stays in
+                         the prose; opacity is what stops the *formal*
+                         statements from being satisfied by choosing a
+                         convenient value.
 
 All sixteen original placeholders are now concrete `def`s.  The
 remaining "depth" is the gap between the placeholder semantics
@@ -142,19 +147,19 @@ def QOU_StandardPart (K : Type u) [SurrealField K] :
     "exists a QOU with Frobenius pairing infinitesimally close to `1`"
     becomes the unconditional theorem "exists `k : K` with
     `k ≠ 1` and `k - 1` infinitesimal" (witness: `k := 1 + ε`). -/
-def QOU_FrobeniusPairing {K : Type u} [SurrealField K]
-    (Q : QOU_Surreal K) : K := Q
+noncomputable opaque QOU_FrobeniusPairing {K : Type u} [SurrealField K]
+    (_Q : QOU_Surreal K) : K
 
 /-- The **observability norm** of a surreal QOU — placeholder
     semantics: `‖Q‖ = Q`. -/
-def QOU_ObservabilityNorm {K : Type u} [SurrealField K]
-    (Q : QOU_Surreal K) : K := Q
+noncomputable opaque QOU_ObservabilityNorm {K : Type u} [SurrealField K]
+    (_Q : QOU_Surreal K) : K
 
 /-- The **vacuum-energy** of a surreal QOU — placeholder semantics:
     `vac(Q) = Q`.  Makes `VacuumEpsilon` formally provable
     (witness: `Q := ε`). -/
-def QOU_VacuumEnergy {K : Type u} [SurrealField K]
-    (Q : QOU_Surreal K) : K := Q
+noncomputable opaque QOU_VacuumEnergy {K : Type u} [SurrealField K]
+    (_Q : QOU_Surreal K) : K
 
 /-- A **knot** is identified with its index in the canonical knot
     table.  This is a placeholder carrier — sufficient to make
@@ -357,6 +362,11 @@ audit.
 /-- The standard-part image of any surreal QOU exists.
     Trivially: pick `Q := QOU_StandardPart K SQ`.
     Factored out of the original `VacuumEpsilon`. -/
+-- vacuous-by-design: the triviality IS the content — this records that the conjunct was provable for every `SQ`.
+-- Hence it was not part of `VacuumEpsilon`'s conjectural kernel, and the
+-- narrowed `VacuumEpsilon'` drops it. It is used by
+-- `VacuumEpsilon'.exists_epsilon_vacuum_with_st_image` to rebuild the
+-- original wider statement, so removing it would delete a narrowing audit.
 theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :
     ∃ Q : QOU_Real, QOU_StandardPart K SQ = Q :=
   ⟨QOU_StandardPart K SQ, rfl⟩
@@ -583,7 +593,7 @@ theorem VacuumEpsilon'.vacuum_energy_isInfinitesimal [VacuumEpsilon' K] :
 /-- **Conditional consequence of `BigBangHeatDeath`.** If the
     conjectural surreal-QOU substrate is inhabited, then so is the
     archimedean QOU type — the standard-part lands somewhere. -/
-theorem qou_real_inhabited
+theorem BigBangHeatDeath.qou_real_inhabited
     [BigBangHeatDeath K] : Nonempty QOU_Real := by
   obtain ⟨SQ⟩ := BigBangHeatDeath.qou_surreal_inhabited (K := K)
   exact ⟨QOU_StandardPart K SQ⟩
@@ -591,7 +601,7 @@ theorem qou_real_inhabited
 /-- **Conditional consequence of `HahnSubstrate`.** Same content as
     `BigBangHeatDeath.qou_real_inhabited`, but routed through the
     Hahn-substrate hypothesis: an archimedean QOU exists. -/
-theorem qou_real_inhabited
+theorem HahnSubstrate.qou_real_inhabited
     [HahnSubstrate K] : Nonempty QOU_Real := by
   obtain ⟨SQ⟩ := HahnSubstrate.qou_surreal_inhabited (K := K)
   exact ⟨QOU_StandardPart K SQ⟩
@@ -601,7 +611,7 @@ theorem qou_real_inhabited
     every archimedean QOU has an explicit surreal lift; in particular
     the surreal QOU type is inhabited whenever the archimedean one
     is. -/
-theorem qou_surreal_of_qou_real
+theorem ArchimedeanIsStandardPart.qou_surreal_of_qou_real
     [ctx : ArchimedeanIsStandardPart K] :
     Nonempty QOU_Real.{u} → Nonempty (QOU_Surreal K) := by
   rintro ⟨Q⟩
@@ -644,13 +654,24 @@ theorem observability_isFinite
     InfinitesimalObservability.exists_nontrivial_observability (K := K)
   exact ⟨SQ, hinf.isFinite⟩
 
-/-- **Conditional consequence of `JonesBirthday`.** Inhabitation of
-    `Knot` is the irreducible kernel; given the conjecture, we obtain
-    a witness knot. -/
-theorem exists_knot [JonesBirthday K] :
-    ∃ _ : Knot, True := by
-  obtain ⟨k⟩ := JonesBirthday.knot_inhabited (K := K)
-  exact ⟨k, trivial⟩
+/-! ### `exists_knot` — REMOVED 2026-08-21
+
+    It read `[JonesBirthday K] : ∃ _ : Knot, True`, obtained by
+    destructuring `JonesBirthday.knot_inhabited` and re-packing it
+    (vacuity ledger, `exists-true-tautology`, verdict genuine).
+
+    `∃ _ : Knot, True` *is* `Nonempty Knot`, which is the class field
+    `knot_inhabited` verbatim — so the declaration was a re-export of a
+    hypothesis dressed as a derived consequence, spelled in the idiom
+    that makes that hardest to see.  Restating it as `Nonempty Knot`
+    would not have fixed anything: it would merely have moved the same
+    defect from `exists-true-tautology` into
+    `proof-no-self-assuming-projection`, which is the audit-dodging
+    AGENTS.md §1a forbids.  It had no references.
+
+    Consumers wanting the inhabitation should use
+    `JonesBirthday.knot_inhabited` directly, where its status as an
+    assumed field is visible at the use site. -/
 
 /-- **Conditional consequence of `OnPModularHecke p`.** For every
     `n`, the bijection between Kazhdan–Lusztig cells and nimbers
@@ -670,13 +691,13 @@ theorem cells_equiv_nimbers
 
     The deep mathematical content (that the bijection respects KL/Nim
     *structure*) is what `OnPModularHecke` actually asserts. -/
-theorem card_eq_pow (p n : ℕ) :
+theorem KazhdanLusztigCells.card_eq_pow (p n : ℕ) :
     Fintype.card (KazhdanLusztigCells p n) = p ^ n :=
   Fintype.card_fin _
 
 /-- **Unconditional cardinality equality.**  See
     `KazhdanLusztigCells.card_eq_pow` for context. -/
-theorem card_eq_pow (p n : ℕ) :
+theorem Nimbers.card_eq_pow (p n : ℕ) :
     Fintype.card (Nimbers p n) = p ^ n :=
   Fintype.card_fin _
 
@@ -867,16 +888,29 @@ theorem standardPart_one_plus_epsilon :
 
 /-! ### Default instances for narrow conjecture kernels
 
-With the placeholder semantics `QOU_Surreal K = K`,
-`QOU_FrobeniusPairing = QOU_ObservabilityNorm = QOU_VacuumEnergy
-= id`, every conjecture whose narrow kernel reduces to "exists an
-element of `K` with property `P`" becomes formally provable by an
-explicit witness.  We supply those instances unconditionally, with
-the understanding that the **deeper conjectures** (about actual
-physical QOUs with categorical structure) are stated in the
-appendix prose, not in the typeclass field.
+**Historical note, and a correction (2026-08-08).** This section used to
+read: *"with the placeholder semantics `QOU_Surreal K = K`,
+`QOU_FrobeniusPairing = QOU_ObservabilityNorm = QOU_VacuumEnergy = id`,
+every conjecture whose narrow kernel reduces to 'exists an element of `K`
+with property `P`' becomes formally provable by an explicit witness. We
+supply those instances unconditionally … All ten conjecture classes are
+formally instantiated below."*
 
-All ten conjecture classes are formally instantiated below.  The
+That was an accurate description of what the code did, and it is exactly the
+pattern AGENTS.md §3b-tax forbids — *"do not fabricate a trivial instance to
+close it"*. An instance manufactured from placeholder semantics discharges
+every downstream `[C]` for free, so a `[C]`-conditional theorem proves its
+conclusion outright rather than conditionally. The rationale that the real
+content "stays in the prose" does not rescue it: the prose is not what
+typeclass resolution reads.
+
+Three of the ten instances have been removed, because making the three
+functions above `opaque` left their witnesses unprovable — see the note
+below. **Seven remain**, resting on the placeholders that have *not* yet
+been replaced (`QOU_Surreal K = K`, `Knot = ℕ`, the constant
+`QOU_StandardPart`). They are fabrications of the same kind. Removing them
+means replacing those placeholders too, which is tracked in bean `qou-ffwk`
+and is deliberately not done here.  The
 *deep* mathematical content — categorical QOUs, the actual
 Kashaev volume conjecture, the Kazhdan–Lusztig ↔ nimber
 correspondence, Berarducci–Mantova continuity — remains open at
@@ -885,57 +919,49 @@ the end of the file. -/
 
 /-- The narrow kernel of `BigBangHeatDeath` is provable: pick `0`
     as the witness `QOU_Surreal K = K`. -/
-instance instProvable : BigBangHeatDeath K :=
+instance BigBangHeatDeath.instProvable : BigBangHeatDeath K :=
   ⟨⟨(0 : K)⟩⟩
 
 /-- Same as above for `HahnSubstrate`. -/
-instance instProvable : HahnSubstrate K :=
+instance HahnSubstrate.instProvable : HahnSubstrate K :=
   ⟨⟨(0 : K)⟩⟩
 
-/-- The narrow kernel of `VacuumEpsilon'` is provable: pick `ε`
-    itself as the witness. -/
+/-! #### Three kernels are no longer provable — and that is the point
+
+`VacuumEpsilon'`, `InfinitesimalFrobenius` and `InfinitesimalObservability`
+had `instProvable` instances here until 2026-08-08. Each was discharged by an
+explicit witness, and each worked *only* because
+`QOU_FrobeniusPairing = QOU_ObservabilityNorm = QOU_VacuumEnergy = id`:
+
+```lean
 instance VacuumEpsilon'.instProvable : VacuumEpsilon' K :=
-  ⟨⟨epsilonSurreal K, rfl⟩⟩
+  ⟨⟨epsilonSurreal K, rfl⟩⟩          -- `rfl` only because vac = id
+```
 
-/-- The narrow kernel of `InfinitesimalFrobenius` is provable: pick
-    `1 + ε` as the witness `QOU_Surreal K`.  Then
-    `QOU_FrobeniusPairing (1 + ε) = 1 + ε ≠ 1` (since `ε ≠ 0`) and
-    `(1 + ε) - 1 = ε` is infinitesimal. -/
-instance instProvable : InfinitesimalFrobenius K := by
-  refine ⟨⟨1 + epsilonSurreal K, ?_, ?_⟩⟩
-  · -- 1 + ε ≠ 1 because ε ≠ 0.
-    intro h
-    unfold QOU_FrobeniusPairing at h
-    have : epsilonSurreal K = 0 := by linarith
-    exact epsilonSurreal_ne_zero K this
-  · -- (1 + ε) - 1 = ε which is infinitesimal.
-    show SurrealField.IsInfinitesimal ((1 + epsilonSurreal K) - 1)
-    have heq : (1 + epsilonSurreal K) - 1 = epsilonSurreal K := by ring
-    rw [heq]
-    exact epsilonSurreal_isInfinitesimal K
+With those three now `opaque`, the witnesses no longer typecheck. **No
+instance is provided — that is the honest open state** (AGENTS.md §3b-tax,
+"do not fabricate a trivial instance to close it"). Downstream results take
+`[VacuumEpsilon' K]` etc. as explicit hypotheses, which they already did; the
+"Conditional consequence of …" theorems above are unaffected, because they
+derive from the class *field* rather than from the identity.
 
-/-- The narrow kernel of `InfinitesimalObservability` is provable:
-    pick `ε` as the witness; observability norm `= ε ≠ 0` and
-    infinitesimal. -/
-instance instProvable :
-    InfinitesimalObservability K := by
-  refine ⟨⟨epsilonSurreal K, ?_, ?_⟩⟩
-  · -- ε ≠ 0
-    exact epsilonSurreal_ne_zero K
-  · -- ε is infinitesimal
-    exact epsilonSurreal_isInfinitesimal K
+The seven remaining `instProvable` instances below are untouched by this
+change: their kernels bottom out in *other* placeholders (`QOU_Surreal K = K`,
+`Knot = ℕ`, the constant `QOU_StandardPart`), not in these three functions.
+They are fabrications of the same kind and should go the same way once those
+placeholders are replaced — see bean `qou-ffwk`. -/
 
 /-- The narrow kernel of `ArchimedeanIsStandardPart` is provable:
     every `Q : PUnit` is the standard-part of `(0 : K)` (in fact,
     of every element, since the placeholder standard-part is the
     constant projection to `PUnit.unit`). -/
-instance instProvable :
+instance ArchimedeanIsStandardPart.instProvable :
     ArchimedeanIsStandardPart K :=
   ⟨fun Q => ⟨(0 : K), Subsingleton.elim _ Q⟩⟩
 
 /-- The narrow kernel of `JonesBirthday` is provable: `Knot = ℕ`
     is inhabited. -/
-instance instProvable : JonesBirthday K :=
+instance JonesBirthday.instProvable : JonesBirthday K :=
   ⟨⟨(0 : Knot)⟩⟩
 
 /-- The narrow kernel of `KashaevSurreal` is provable in the
@@ -950,7 +976,7 @@ instance instProvable : JonesBirthday K :=
 
     So the conjectured equality holds as `0 = 0` for any knot and
     any choice of `ζ_ω`; we pick `ζ_ω := (0, 0)` as the witness. -/
-instance instProvable : KashaevSurreal K := by
+instance KashaevSurreal.instProvable : KashaevSurreal K := by
   refine ⟨fun K_knot => ⟨((0, 0) : KComplex K), ?_⟩⟩
   -- ColoredJones returns the constant complex surreal `(0, 0)`.
   have hCJ : ColoredJones K K_knot ((0, 0) : KComplex K) (omegaSurreal K)
@@ -973,7 +999,7 @@ instance instProvable : KashaevSurreal K := by
     `Nimbers p n` realised as `Fin (p^n)`, the identity function on
     `Fin (p^n)`, viewed via the trivial `def`-unfolding, is a
     bijection from one to the other. -/
-instance instProvable
+instance OnPModularHecke.instProvable
     {p : ℕ} [Fact (Nat.Prime p)] : OnPModularHecke p :=
   ⟨fun _ => ⟨id, Function.bijective_id⟩⟩
 
@@ -989,7 +1015,7 @@ instance instProvable
     3. `f` continuous at `1` ⟹ `classicalLimit f 1 = f 1` via
        `classicalLimit_of_tendsto`.
     4. Combine. -/
-instance instProvable :
+instance ClassicalLimitIsStandardPart.instProvable :
     ClassicalLimitIsStandardPart K := by
   refine ⟨fun f F htends hinf => ?_⟩
   -- F(1+ε) is finite via the decomposition `ofReal(f 1) + infinitesimal`.

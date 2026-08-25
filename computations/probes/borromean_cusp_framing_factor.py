@@ -36,6 +36,47 @@ first-principles derivation of "one factor 2 per extra cusp" is the multi-cusp
 saddle-point expansion (each additional cusp contributes a Gaussian meridian
 integration) — recorded as the mechanism, not claimed as proved here.
 
+⚠ REVISED 2026-08-08 — the SWEEP is confirmed and EXPLAINED; the 2^{c−1} LAW is
+a reparametrization.  See `docs/audits/2026-08-08-per-cusp-factor-dissolves.md`
+and `computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py`.
+
+WHAT SURVIVES, and is now understood rather than observed.  Point 1's framing
+sweep is exactly right, and it is the CHANGE-OF-CURVE LAW: replacing cusp k's
+meridian row by that cusp's longitude row multiplies the 1-loop invariant by
+conj(cusp shape of cusp k).  Every Borromean cusp shape has modulus exactly 2,
+so each longitude substitution doubles it.  Recomputed with the corrected,
+triangulation-invariant invariant (computations/one_loop_torsion.py):
+
+    0 longitudes  |tau| =  8      2^c|tau| =  64      <- all-meridian
+    1 longitude   |tau| = 16      2^c|tau| = 128      (x3)
+    2 longitudes  |tau| = 32      2^c|tau| = 256      (x3)
+    3 longitudes  |tau| = 64      2^c|tau| = 512
+
+reproducing {64, 128, 256, 512} exactly.  All-meridian is the unique minimum
+because every cusp shape has modulus > 1.  "No framing yields 16" also stands:
+16 = 2|tau_DG| is the normalization, not a framing.
+
+WHAT DOES NOT SURVIVE.  The law is stated in |det J_NZ|, which PR #4691 showed
+is NOT a topological invariant — retriangulate and it moves while exp(2 c_0)
+does not, so `exp(2c_0)|det J_NZ| = 2^{c-1}` is not a well-posed statement about
+the link.  Numerically it is right wherever |det J_NZ| = 2^c |tau_DG|, which
+holds on the DEFAULT triangulations of 4_1, L5a1 and L6a4 and fails on 8 of 13
+manifolds tested.  The well-posed form has no per-cusp factor at all:
+
+    exp(2 c_0) = 1 / (2 |tau_DG|)        equivalently   c_sigma = 2^{-1/2}|tau_DG|^{-1/2}
+
+so the 2^{c-1} here is just 2^c/2 — the determinant discrepancy over the
+universal 2 — and the proposed mechanism ("one Gaussian meridian integration per
+extra cusp") is displaced.  QOU.OneLoopEdgeLattice.percusp_factor_absorbs proves
+in Lean that the two readings are the same function on such data, so agreement
+at c = 1 and c = 3 could not have distinguished them.
+
+THE DECISIVE THIRD DATA POINT ALREADY EXISTED.  This file calls for the 2-cusp
+Whitehead Kashaev tower and predicts exp(2 c_0) = 1/(2 sqrt 2).  The corpus has
+it: whitehead_c_sigma_hiprec.py pins c_sigma(L5a1) = 2^{-3/4} to 20 digits, so
+exp(2 c_0) = c_sigma^2 = 2^{-3/2} = 1/(2 sqrt 2).  The prediction PASSES — and
+passes equally for the c-free law, which is the point.
+
 Discipline: audit-only; scope-(a); NO fit (framings/torsions are computed; the
 2^{c−1} law is read off two exact data points, not tuned); nothing wired; L2
 unchanged.  Self-contained: hardcoded SnapPy gluing integers + exact algebraic
@@ -54,8 +95,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # L6a4 gluing_equations('rect'): (a, b, sign), eqn Π z^a (1−z)^b = (−1)^sign.
 # 8 edges, then per cusp [meridian, longitude].  From SnapPy 3.3.2.

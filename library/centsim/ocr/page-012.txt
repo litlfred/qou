@@ -1,0 +1,49 @@
+262 M. Geck and R. Rouquier
+
+Ro(k'H) has finite cokernel, we get rank Ro(kH) = rank Ro(k'H); hence
+kH is quasicentral, by Proposition 2.9. Oo
+
+Assume O is noetherian and has Krull dimension 2. Let p be a height
+one prime ideal of O with O/p integrally closed (i.e., O/p is a discrete
+valuation ring) and k, = (O,)/p perfect. _
+
+For q a height one prime ideal of O, let k, be a finite separable exten-
+sion of ky = (O,)/q neutralizing for k,H and ©, a discrete valuation ring,
+(unramified) extension of O, with residue field k, and field of fractions
+
+Ky; let O, denote the completion of O, and K q its field of fractions.
+Here is now the crucial result:
+
+Theorem 3.3 Assume that KH is quasicentral and that the canonical
+
+map CF(A) — CF(kA) ts surjective.
+
+(1) The map 1, @do/p : k@ Ro(k,H) > k®Ro(kH) is an isomorphism
+if and only if the restriction of the bilinear form (-,-)= to Ko(O,) x
+CF(H) has values in O. ,
+
+(2) If for every height one prime ideal q # p of O, the algebra k,H
+is semisimple, then the two equivalent statements in (1) hold. In
+
+particular, the number of simple kH-modules is equal to the number
+of simple k, H -modules.
+
+Proof. Note that k,H is quasicentral since k, is perfect, by Lemma 3.2.
+Let q be a height one prime ideal of ©. Note that 0, NK = 0, (the
+intersection is taken in K. a). Since 6, is a complete discrete valuation
+ring, idempotents can be lifted from ky Af to 0, HH. Hence, the canonical
+
+map Ko(O,H) — Ko(k,H) is an isomorphism. We have the following
+commutative diagram:
+
+CF(H) “3 cr(kH) = Hom, (KH, k)
+
+fon
+
+CF((O/p)H) = CF((O/p)H) ih, Homo /,((O/p)H, O/»)
+We have
+CF((O/p)H) = im(to/p) + (m/p)CF((O/p)H)
+
+(note that CF((Q/p)H) is a direct summand of Homo,,((O/p)H, O/p)
+as O/p-modules since O/p is a discrete valuation ring); hence im(to/,) =
+CF((O/p)H) by Nakayama’s lemma. This proves that the canonical

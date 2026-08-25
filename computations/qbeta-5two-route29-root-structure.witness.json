@@ -1,0 +1,97 @@
+{
+  "probe": "qbeta_5two_route29_root_structure",
+  "bean": "qou-trns",
+  "dps": 70,
+  "pairs_with_lean": "QOU/QBeta/FiveTwoRootStructure.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE GATE THAT MATTERS: the deformed curve x y^3 - (x^2+1) y^2 + (x^2+x+1) y - x equals x * (y^3 - 2c y^2 + (2c+1) y - 1) with c = Re x, for every x on the unit circle and every y. Without this, every theorem downstream would be a correct statement about the WRONG polynomial. Lean: `curve_eq_unitCubic`, which rests on 2 Re(x) x = x^2 + 1, i.e. x conj(x) = 1",
+      "n_x": 701,
+      "n_y_per_x": 7,
+      "worst_residual": "5.840737506e-70",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "p(0) = -1 and p(1) = +1 IDENTICALLY IN c -- the 2c terms cancel at Y = 1, which is why the root in (0,1) costs nothing but IVT. Checked over c in [-2,2], wider than the arc's [-1,1]. Lean: `unitCubic_zero`, `unitCubic_one`, `exists_root_mem_Ioo`",
+      "worst_p0_residual": "0.0",
+      "worst_p1_residual": "3.622271632e-71",
+      "worst_root_residual": "1.739561732e-60",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the three relations the proof runs on: 2c t(t-1) = t^3+t-1 (`two_c_rel`), beta * t(1-t) = W with beta = t-2c and W = t^2+t-1 (`beta_rel` -- this is why beta and W share a sign on (0,1)), and t * gamma = 1 with gamma = t^2-2ct+2c+1 (`gamma_rel`)",
+      "worst_two_c_rel": "1.739561732e-60",
+      "worst_beta_rel": "1.739561732e-60",
+      "worst_gamma_rel": "1.739561732e-60",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "`two_fifths_lt`: c <= 1 forces the root above 2/5. The bound is not tight but it is the one the quartic argument needs; the true infimum over c <= 1 is attained at c = 1. Checked on c in [-10, 1], i.e. well beyond the arc",
+      "min_t_over_c_le_1": "0.43015970900194673409",
+      "attained_at_c": "1.0",
+      "t_at_c_eq_1": "0.43015970900194673409",
+      "bound": "0.4",
+      "margin": "0.0301597090019",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "`W_nonneg_of_disc_nonneg`, the step with content: whenever the quadratic factor has real roots (disc >= 0), W = t^2+t-1 >= 0. The proof rearranges disc >= 0 to W^2 >= 4t(1-t)^2, which W < 0 and t > 2/5 contradict",
+      "n_points_with_real_quadratic": 463,
+      "violations": 0,
+      "largest_c_with_real_quadratic": "-0.76",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the two sign conclusions, and a check that the CONSTRUCTED triple really is the curve's root multiset (compared against mpmath polyroots, independently computed): Im(x y_3) < 0 always, and Im(x y_2) < 0 whenever c < 0. These are `im_mul_otherRoots_snd_neg` and `im_mul_otherRoots_fst_neg`",
+      "violations": {
+        "snd_not_neg": 0,
+        "fst_not_neg_when_c_neg": 0,
+        "constructed_roots_wrong": 0
+      },
+      "n_points": 699,
+      "max_Im_x_y3": "-0.0100842591816276",
+      "max_Im_x_y2_when_c_neg": "-0.00249067188866734",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "ADVERSARIAL: the hypothesis `c <= 1` in `two_fifths_lt` and `W_nonneg_of_disc_nonneg` is load-bearing, not decoration. At c = 5 the root is t = 0.0999 < 2/5, W = -0.890 < 0, and yet disc >= 0 -- so the conclusion of `W_nonneg_of_disc_nonneg` is FALSE there. The two other roots are then both POSITIVE, which flips the sign of Im(x y) and would break the pinning. Dropping `c <= 1` does not weaken the theorem; it falsifies it",
+      "c": "5",
+      "t": "0.0998892711995316",
+      "t_below_two_fifths": true,
+      "W": "-0.890132862299695",
+      "W_negative": true,
+      "disc": "57.9678518244883",
+      "disc_nonneg": true,
+      "other_roots": [
+        "8.75688645549",
+        "1.14322427331"
+      ],
+      "both_other_roots_positive": true,
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "the two branches partition the arc at phi_0 = 137.9207 deg -- the SAME point at which the discriminant of the full cubic vanishes (Route 16). Below it the quadratic factor has complex roots and Route 28's `sa_lt_cb` carries the argument; above it the roots are real and negative and `sa_lt_cb` is not used",
+      "phi_0_over_pi": "0.766225949378",
+      "n_real_quadratic": 163,
+      "n_complex_quadratic": 536,
+      "predicted_split": "0.233774050622",
+      "observed_split": "0.233190271817",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "what_it_closes": "the two hypotheses FiveTwoArgSector stated but did not prove -- a real root in (0,1), and the sign of Im(x y) for the other two roots. Both are now theorems, and `exists_pinning_data` assembles them with the factorisation certifying the triple IS the root multiset.",
+    "cost": "one IVT (p(0) = -1 < 0 < 1 = p(1)) and real algebra. No continuity in phi, no root tracking, no base point.",
+    "load_bearing": "G7: `c <= 1` is not decoration -- at c = 5 the conclusion is false and both other roots turn positive.",
+    "still_open": "the envelope wiring above the pinning: instantiating the envelope theorem at V and summing over the three roots. Assembly of proved parts, checked numerically to 1e-31 by Route 26 G6, but not written.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

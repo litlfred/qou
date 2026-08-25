@@ -13,7 +13,7 @@ $$
      \mathcal{L}_{\mathrm{qCLT}}
      = \alpha \sum_i \ln\lvert V_i\rvert,
    $$
-   *where $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ is the rigid substrate scale (built from CAL-1 $\mathfrak{m}_e$ and CAL-2 $q_0$), and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is **intended** to replace the empirical Bethe-Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is **not a completed closure**: the per-isotope binding ($\Delta_\lambda$) gate is open, so its empirical accuracy against AME is not established here.*
+   *where $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ is the rigid substrate scale (built from CAL-1 $\mathfrak{m}_e$ and CAL-2 $q_0$), and $V_i$ are the two-nucleon sub-braid Markov traces for each bond type. This carries no empirical parameter beyond that calibration scale, and is **intended** to replace the empirical Bethe-Weizsäcker volume, surface, asymmetry, and pairing terms — but that replacement is **not a completed closure**: the per-isotope binding magnitude ($\Delta_\lambda$) is open, so its empirical accuracy against AME is not established here.*
 
 2. ***Coulomb Repulsion.** Each proton--proton crossing acquires a $q$-deformed wedge product asymmetry. The categorical difference between identical-chirality crossings (coefficient $q$) and mixed crossings evaluates directly to the electrostatic penalty. As mapped by the $\mathrm{U}(1)$ sub-action:*
    $$

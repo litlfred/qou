@@ -22,11 +22,13 @@ import sys
 from pathlib import Path
 import mpmath as mp
 
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 try:
-    from q_parameter import Q as Q0  # muon-canonical q₀ (computations layer)
+    from q_parameter import Q_MP as Q0  # muon-canonical q₀ (computations layer)
     q = mp.mpf(str(Q0))
 except Exception:
     q = mp.mpf("1.10997859555733471")

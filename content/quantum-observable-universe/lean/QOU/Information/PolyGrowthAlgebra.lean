@@ -55,7 +55,7 @@ theorem of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f) : PolyGrowth f := b
 
 /-- **Downward closed under domination (sorry-free).**  Bounding a smaller
     quantity by the same polynomial budget. -/
-theorem mono {f g : ℕ → ℕ} (hf : PolyGrowth f)
+theorem PolyGrowth.mono {f g : ℕ → ℕ} (hf : PolyGrowth f)
     (hle : ∀ n, g n ≤ f n) : PolyGrowth g := by
   obtain ⟨c, k, hb⟩ := hf
   exact ⟨c, k, fun n => (hle n).trans (hb n)⟩

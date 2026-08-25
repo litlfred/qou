@@ -33,7 +33,7 @@ computed at runtime by the SnapPea kernel (WASM); this Lean
 structure pins the schema so URL-embedded viewer state and the
 typed back-end agree on shape.
 
--- Ref: [thurston1979] W. Thurston, *The Geometry and Topology of
+-- Ref: [thurston1978] W. Thurston, *The Geometry and Topology of
         3-Manifolds*, Princeton Lecture Notes 1979, §4.
 -- Ref: [culler2024] SnapPea kernel — https://snappy.computop.org/
 -/

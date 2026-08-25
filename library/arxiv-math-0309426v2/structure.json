@@ -1,0 +1,833 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0309426v2",
+ "source": {
+  "file": "0309426v2.pdf",
+  "sha256": "f2aa01164d9f243c7c05ddb693e87b7dbbebfcd6830e0b527b58c07dab245b7b",
+  "bytes": 256993,
+  "pages": 20,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0309426",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "1 Jul 2004"
+  },
+  "doi": null,
+  "title": "ELEMENTARY DIVISORS OF SPECHT MODULES",
+  "authors_raw": "MATTHIAS K \u00dcNZER AND ANDREW MATHAS",
+  "title_lines": [
+   "ELEMENTARY DIVISORS OF SPECHT MODULES"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220524230513-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0309426v2  [math.RT]  1 Jul 2004"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and statement of main results",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Hecke algebra and permutation modules",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Specht modules",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "(Dipper\u2013James [2, Theorem 5.6] ) The Specht module S(\u03bb) is free as an R\u2013",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Diagonalizability and elementary divisors",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. Let A be an m \u00d7m matrix with coe\ufb03cients in R, and suppose that",
+   "page": 5,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "Elementary divisors for conjugate partitions",
+   "page": 5,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. Suppose that \u03bb is a partition. Then the Specht module S(\u03bb) is a pure",
+   "page": 5,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . The map M (\u03bb) \u2732\u03b4\u03bb",
+   "page": 5,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. We have x#",
+   "page": 6,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "(Dipper\u2013James [2, Lemma 4.1] ) Suppose that w \u2208 Sn. Then",
+   "page": 6,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Lemma (The Submodule Theorem) . If U is a pure submodule of M (\u03bb), then",
+   "page": 6,
+   "source": "inferred",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. We have Kern\u03b8\u03bb =S(\u03bb)\u22a5. This induces an isomorphism",
+   "page": 7,
+   "source": "inferred",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. We have z\u03bbT \u22121",
+   "page": 7,
+   "source": "inferred",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. The composition",
+   "page": 8,
+   "source": "inferred",
+   "number": "5.8"
+  },
+  {
+   "level": 1,
+   "title": "The elementary divisors for hook partitions",
+   "page": 9,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Proposition. Let\u03bb = (n \u2212k, 1k). The map",
+   "page": 10,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "(2n\u22123k\u22121)[k]!",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2n\u22123k\u22123)[k + 1]!",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . Suppose that \u03bb = (n \u2212k, 1k). Then [k]!",
+   "page": 11,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . The module S\u2032(\u03bb) is R\u2013free with basis {v\u2032",
+   "page": 11,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. Suppose that t is a standard \u03bb\u2013tableau. Then",
+   "page": 12,
+   "source": "inferred",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. Suppose that t is a standard \u03bb\u2013tableau and that n appears in the \ufb01rst",
+   "page": 13,
+   "source": "inferred",
+   "number": "6.6"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . Suppose that s and t are standard\u03bb\u2013tableaux which have n in their",
+   "page": 14,
+   "source": "inferred",
+   "number": "6.7"
+  },
+  {
+   "level": 2,
+   "title": "Lemma. Let (a+",
+   "page": 15,
+   "source": "inferred",
+   "number": "6.8"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . Suppose that t \u2044= t\u03bb is a standard (k|n \u2212k)\u2013tableau. Then",
+   "page": 15,
+   "source": "inferred",
+   "number": "6.9"
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . Suppose that t is a standard (n \u2212k, 1k)\u2013tableau and that n does",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.10"
+  },
+  {
+   "level": 2,
+   "title": "Proposition. Suppose that \u03bb = (n \u2212k, 1k), for some k with 0 \u2264k <n. Then",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.11"
+  },
+  {
+   "level": 2,
+   "title": "Corollary . Suppose that R is a \ufb01eld, that [k]!",
+   "page": 17,
+   "source": "inferred",
+   "number": "6.12"
+  },
+  {
+   "level": 1,
+   "title": "Some counterexamples",
+   "page": 17,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "(2 , 2) \u2732",
+   "page": 19,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(3 , 2) \u2732",
+   "page": 19,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(4 , 2) \u2732",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(5 , 2) \u2732",
+   "page": 19,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "(6 , 2) \u2732",
+   "page": 19,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(7 , 2) \u27321",
+   "page": 19,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-matthias-k-unzer-and-andrew-mathas",
+   "number": "2",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-introduction-and-statement-of-main-results",
+   "number": "1",
+   "title": "Introduction and statement of main results",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2048,
+   "n_words": 359
+  },
+  {
+   "id": "sec-002-2-the-hecke-algebra-and-permutation-modules",
+   "number": "2",
+   "title": "The Hecke algebra and permutation modules",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2672,
+   "n_words": 582
+  },
+  {
+   "id": "sec-003-3-specht-modules",
+   "number": "3",
+   "title": "Specht modules",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2928,
+   "n_words": 612
+  },
+  {
+   "id": "sec-004-4-matthias-k-unzer-and-andrew-mathas",
+   "number": "4",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 740,
+   "n_words": 157
+  },
+  {
+   "id": "sec-005-31-dipperjames-2-theorem-56-the-specht-module-s\u03bb",
+   "number": "3.1",
+   "title": "(Dipper\u2013James [2, Theorem 5.6] ) The Specht module S(\u03bb) is free as an R\u2013",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 600,
+   "n_words": 118
+  },
+  {
+   "id": "sec-006-4-diagonalizability-and-elementary-divisors",
+   "number": "4",
+   "title": "Diagonalizability and elementary divisors",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2750,
+   "n_words": 510
+  },
+  {
+   "id": "sec-007-41-lemma-let-a-be-an-m-m-matrix-with-coe\ufb03cients",
+   "number": "4.1",
+   "title": "Lemma. Let A be an m \u00d7m matrix with coe\ufb03cients in R, and suppose that",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 518,
+   "n_words": 119
+  },
+  {
+   "id": "sec-008-5-elementary-divisors-for-conjugate-partitions",
+   "number": "5",
+   "title": "Elementary divisors for conjugate partitions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 345,
+   "n_words": 70
+  },
+  {
+   "id": "sec-009-51-lemma-suppose-that-\u03bb-is-a-partition-then-the",
+   "number": "5.1",
+   "title": "Lemma. Suppose that \u03bb is a partition. Then the Specht module S(\u03bb) is a pure",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 255,
+   "n_words": 46
+  },
+  {
+   "id": "sec-010-52-corollary-the-map-m-\u03bb-\u03b4\u03bb",
+   "number": "5.2",
+   "title": "Corollary . The map M (\u03bb) \u2732\u03b4\u03bb",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 20,
+   "n_words": 3
+  },
+  {
+   "id": "sec-011-6-matthias-k-unzer-and-andrew-mathas",
+   "number": "6",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 522,
+   "n_words": 112
+  },
+  {
+   "id": "sec-012-53-lemma-we-have-x",
+   "number": "5.3",
+   "title": "Lemma. We have x#",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 794,
+   "n_words": 162
+  },
+  {
+   "id": "sec-013-54-dipperjames-2-lemma-41-suppose-that-w-sn-then",
+   "number": "5.4",
+   "title": "(Dipper\u2013James [2, Lemma 4.1] ) Suppose that w \u2208 Sn. Then",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 172,
+   "n_words": 36
+  },
+  {
+   "id": "sec-014-55-lemma-the-submodule-theorem-if-u-is-a-pure-su",
+   "number": "5.5",
+   "title": "Lemma (The Submodule Theorem) . If U is a pure submodule of M (\u03bb), then",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 695,
+   "n_words": 162
+  },
+  {
+   "id": "sec-015-56-lemma-we-have-kern\u03b8\u03bb-s\u03bb-this-induces-an-isomo",
+   "number": "5.6",
+   "title": "Lemma. We have Kern\u03b8\u03bb =S(\u03bb)\u22a5. This induces an isomorphism",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1082,
+   "n_words": 222
+  },
+  {
+   "id": "sec-016-57-lemma-we-have-z\u03bbt-1",
+   "number": "5.7",
+   "title": "Lemma. We have z\u03bbT \u22121",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 674,
+   "n_words": 140
+  },
+  {
+   "id": "sec-017-8-matthias-k-unzer-and-andrew-mathas",
+   "number": "8",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 56,
+   "n_words": 13
+  },
+  {
+   "id": "sec-018-58-lemma-the-composition",
+   "number": "5.8",
+   "title": "Lemma. The composition",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2077,
+   "n_words": 404
+  },
+  {
+   "id": "sec-019-6-the-elementary-divisors-for-hook-partitions",
+   "number": "6",
+   "title": "The elementary divisors for hook partitions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2153,
+   "n_words": 434
+  },
+  {
+   "id": "sec-020-10-matthias-k-unzer-and-andrew-mathas",
+   "number": "10",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 805,
+   "n_words": 157
+  },
+  {
+   "id": "sec-021-61-proposition-let\u03bb-n-k-1k-the-map",
+   "number": "6.1",
+   "title": "Proposition. Let\u03bb = (n \u2212k, 1k). The map",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 111,
+   "n_words": 22
+  },
+  {
+   "id": "sec-022-2-2n3k1k",
+   "number": "2",
+   "title": "(2n\u22123k\u22121)[k]!",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1132,
+   "n_words": 186
+  },
+  {
+   "id": "sec-023-2-2n3k3k-1",
+   "number": "2",
+   "title": "(2n\u22123k\u22123)[k + 1]!",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 292,
+   "n_words": 51
+  },
+  {
+   "id": "sec-024-62-corollary-suppose-that-\u03bb-n-k-1k-then-k",
+   "number": "6.2",
+   "title": "Corollary . Suppose that \u03bb = (n \u2212k, 1k). Then [k]!",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 394,
+   "n_words": 74
+  },
+  {
+   "id": "sec-025-63-corollary-the-module-s\u03bb-is-rfree-with-basis-v",
+   "number": "6.3",
+   "title": "Corollary . The module S\u2032(\u03bb) is R\u2013free with basis {v\u2032",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2230,
+   "n_words": 460
+  },
+  {
+   "id": "sec-026-12-matthias-k-unzer-and-andrew-mathas",
+   "number": "12",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 991,
+   "n_words": 221
+  },
+  {
+   "id": "sec-027-65-lemma-suppose-that-t-is-a-standard-\u03bbtableau-t",
+   "number": "6.5",
+   "title": "Lemma. Suppose that t is a standard \u03bb\u2013tableau. Then",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3377,
+   "n_words": 665
+  },
+  {
+   "id": "sec-028-14-matthias-k-unzer-and-andrew-mathas",
+   "number": "14",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1301,
+   "n_words": 266
+  },
+  {
+   "id": "sec-029-67-corollary-suppose-that-s-and-t-are-standard\u03bbt",
+   "number": "6.7",
+   "title": "Corollary . Suppose that s and t are standard\u03bb\u2013tableaux which have n in their",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 832,
+   "n_words": 158
+  },
+  {
+   "id": "sec-030-68-lemma-let-a",
+   "number": "6.8",
+   "title": "Lemma. Let (a+",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 907,
+   "n_words": 187
+  },
+  {
+   "id": "sec-031-69-corollary-suppose-that-t-t\u03bb-is-a-standard-kn",
+   "number": "6.9",
+   "title": "Corollary . Suppose that t \u2044= t\u03bb is a standard (k|n \u2212k)\u2013tableau. Then",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 765,
+   "n_words": 173
+  },
+  {
+   "id": "sec-032-16-matthias-k-unzer-and-andrew-mathas",
+   "number": "16",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 446,
+   "n_words": 85
+  },
+  {
+   "id": "sec-033-610-corollary-suppose-that-t-is-a-standard-n-k-1",
+   "number": "6.10",
+   "title": "Corollary . Suppose that t is a standard (n \u2212k, 1k)\u2013tableau and that n does",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1077,
+   "n_words": 225
+  },
+  {
+   "id": "sec-034-611-proposition-suppose-that-\u03bb-n-k-1k-for-some-k",
+   "number": "6.11",
+   "title": "Proposition. Suppose that \u03bb = (n \u2212k, 1k), for some k with 0 \u2264k <n. Then",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2304,
+   "n_words": 465
+  },
+  {
+   "id": "sec-035-612-corollary-suppose-that-r-is-a-\ufb01eld-that-k",
+   "number": "6.12",
+   "title": "Corollary . Suppose that R is a \ufb01eld, that [k]!",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 258,
+   "n_words": 70
+  },
+  {
+   "id": "sec-036-7-some-counterexamples",
+   "number": "7",
+   "title": "Some counterexamples",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3756,
+   "n_words": 751
+  },
+  {
+   "id": "sec-037-4-2-2",
+   "number": "4",
+   "title": "(2 , 2) \u2732",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 13,
+   "n_words": 7
+  },
+  {
+   "id": "sec-038-5-3-2",
+   "number": "5",
+   "title": "(3 , 2) \u2732",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 19,
+   "n_words": 10
+  },
+  {
+   "id": "sec-039-6-4-2",
+   "number": "6",
+   "title": "(4 , 2) \u2732",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 98,
+   "n_words": 46
+  },
+  {
+   "id": "sec-040-7-5-2",
+   "number": "7",
+   "title": "(5 , 2) \u2732",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 102,
+   "n_words": 47
+  },
+  {
+   "id": "sec-041-8-6-2",
+   "number": "8",
+   "title": "(6 , 2) \u2732",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 115,
+   "n_words": 54
+  },
+  {
+   "id": "sec-042-9-7-2-1",
+   "number": "9",
+   "title": "(7 , 2) \u27321",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 316,
+   "n_words": 77
+  },
+  {
+   "id": "sec-043-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 119,
+   "n_words": 21
+  },
+  {
+   "id": "sec-044-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 280,
+   "n_words": 49
+  },
+  {
+   "id": "sec-045-20-matthias-k-unzer-and-andrew-mathas",
+   "number": "20",
+   "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1566,
+   "n_words": 236
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 47,
+  "sections": 46,
+  "chars_total": 44707
+ }
+}

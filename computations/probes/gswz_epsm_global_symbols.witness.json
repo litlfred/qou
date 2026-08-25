@@ -1,0 +1,110 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_global_symbols_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_global_symbols_probe.py",
+ "commitSha": "ac7d5d5cd1e33069b29b69ddcd6fdf543b465d66",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "GSWZ arXiv:2412.04241v2 eqn (270) (library/arxiv-2412.04241v2/2412.04241v2.pdf); CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf)",
+ "place": "Q_25 place; unramified fields containing mu_{624m}",
+ "checks": {
+  "field_construction_all_m": true,
+  "one_minus_z1_alpha_squared_identity_holds": true,
+  "bloch_shadow_holds": true,
+  "root_difference_law_global": true,
+  "classes_are_F_collapse_not_eps_data": true
+ },
+ "fields": {
+  "m2": {
+   "N": 1248,
+   "d": 8,
+   "bloch_shadow": true
+  },
+  "m3": {
+   "N": 1872,
+   "d": 12,
+   "bloch_shadow": true
+  },
+  "m4": {
+   "N": 2496,
+   "d": 16,
+   "bloch_shadow": true
+  },
+  "m6": {
+   "N": 3744,
+   "d": 24,
+   "bloch_shadow": true
+  },
+  "m8": {
+   "N": 4992,
+   "d": 32,
+   "bloch_shadow": true
+  },
+  "m12": {
+   "N": 7488,
+   "d": 48,
+   "bloch_shadow": true
+  },
+  "m24": {
+   "N": 14976,
+   "d": 96,
+   "bloch_shadow": true
+  }
+ },
+ "xi_classes_F_level_all_collapsed": {
+  "m2": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 1248,
+   "d": 8
+  },
+  "m3": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 1872,
+   "d": 12
+  },
+  "m4": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 2496,
+   "d": 16
+  },
+  "m6": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 3744,
+   "d": 24
+  },
+  "m8": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 4992,
+   "d": 32
+  },
+  "m12": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 7488,
+   "d": 48
+  },
+  "m24": {
+   "xi_chi_dlog_zetaN": 0,
+   "z1_class": 0,
+   "z2_class": 0,
+   "N": 14976,
+   "d": 96
+  }
+ },
+ "structural_finding": "chi_m kills mu_624 in every constructed field (624m | 5^d-1 => (5^d-1)/m = 0 mod 624): the all-zero classes are Kummer-field collapse, NOT eps-triviality. The eps-invariant is the BASE-field class of the descended a (CGZ P(xi) = a*b^m); the Galois norm/transfer descent to Q_25(zeta_m) is the next increment (bean qou-y3xv).",
+ "scope": "scope-(a): global-symbol machinery built and law-verified in unramified fields to degree 96; the F-level class question is answered (structural collapse); the base-descent extraction of eps_m(xi) remains open and is precisely defined"
+}

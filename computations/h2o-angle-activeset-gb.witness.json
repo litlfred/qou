@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:42:33.462447+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T14:48:43.903895+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "the GB/active-set levers BRACKET the observed angle",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 25,
   "computation": "h2o-angle-activeset-gb",
   "scriptFile": "h2o_angle_activeset_gb.py",
   "scriptHash": "126c6f8c4b2c",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,53 +42,53 @@
   "description": "H₂O angle under higher-order-GB and active-set weightings (owner levers, no fit). Recomputes the trace-weighted VSEPR minimiser with bond/lone weights from (0) leading σ/e⁻, (1) GB quadratic L₊ dressing, (2) LP-selected inverse-trefoil bonding operator. Reports the resulting angle for each; weights are derived Markov traces.",
   "contentBlock": "prop:h2o-bond-angle-shift",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": 1.1099785827513808
   },
   "data": {
-    "tr_M_sigma": 0.49932033403356124,
-    "tr_M_e_minus": 0.5514434199212096,
-    "tr_M_L_plus": 0.24932079597938717,
-    "tr_M_inverse_trefoil": 0.27264649706813116,
+    "tr_M_sigma": 0.6126880371464652,
+    "tr_M_e_minus": 0.6911664783584446,
+    "tr_M_L_plus": 0.3753866308623884,
+    "tr_M_inverse_trefoil": 0.36956860635762306,
     "observed_deg": 104.5,
     "models": {
       "leading (σ vs e⁻)": {
-        "wH": 0.49932033403356124,
-        "wL": 0.5514434199212096,
-        "ratio": 1.1043880698120037,
-        "theta": 107.1896442389442
+        "wH": 0.6126880371464652,
+        "wL": 0.6911664783584446,
+        "ratio": 1.128088744114354,
+        "theta": 106.70642292077376
       },
       "GB+quadratic (＋L₊ to both)": {
-        "wH": 0.7486411300129484,
-        "wL": 0.8007642159005968,
-        "ratio": 1.0696235937327498,
-        "theta": 107.92074658978676
+        "wH": 0.9880746680088537,
+        "wL": 1.066553109220833,
+        "ratio": 1.0794256180761392,
+        "theta": 107.71184613066931
       },
       "GB quadratic on lone only": {
-        "wH": 0.49932033403356124,
-        "wL": 0.8007642159005968,
-        "ratio": 1.603708403845565,
-        "theta": 98.98744731745609
+        "wH": 0.6126880371464652,
+        "wL": 1.066553109220833,
+        "ratio": 1.740776781260819,
+        "theta": 97.2765463605291
       },
       "active-set (invTrefoil bond)": {
-        "wH": 0.27264649706813116,
-        "wL": 0.5514434199212096,
-        "ratio": 2.022558242453452,
-        "theta": 94.24512273573687
+        "wH": 0.36956860635762306,
+        "wL": 0.6911664783584446,
+        "ratio": 1.8701980267491083,
+        "theta": 95.81125155477118
       },
       "active-set + quadratic lone": {
-        "wH": 0.27264649706813116,
-        "wL": 0.8007642159005968,
-        "ratio": 2.9370053329549846,
-        "theta": 87.3112449974395
+        "wH": 0.36956860635762306,
+        "wL": 1.066553109220833,
+        "ratio": 2.8859407722222863,
+        "theta": 87.61689235035303
       }
     },
-    "theta_min_deg": 87.3112449974395,
-    "theta_max_deg": 107.92074658978676,
+    "theta_min_deg": 87.61689235035303,
+    "theta_max_deg": 107.71184613066931,
     "brackets_observed": true,
     "closest_model": "leading (σ vs e⁻)",
-    "closest_theta_deg": 107.1896442389442,
+    "closest_theta_deg": 106.70642292077376,
     "finding": "The owner's two levers — higher-order GB (the L₊ quadratic NF term) and active-set weighting (the LP-selected inverse-trefoil bonding operator) — both NARROW the trace-weighted VSEPR angle, and TOGETHER they BRACKET the observed 104.5°: leading σ/e⁻ gives 107.19° (+2.7°, too open), GB-quadratic-on-lone gives 98.99° (−5.5°, too narrow), and the inverse-trefoil active-set overshoots to 94.25°. So the 2.69° residual is a REAL higher-order / active-set effect that these levers capture — they overshoot rather than miss. No weight was tuned to 104.5°: a partial GB-truncation (a fraction of L₊ on the lone) would interpolate to observed, but selecting that fraction is the open, NON-FITTED question — the correct GB truncation order + active-set operator identity. This validates the mechanism the residual needs."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

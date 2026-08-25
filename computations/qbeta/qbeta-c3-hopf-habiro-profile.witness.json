@@ -1,7 +1,7 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-18T17:46:18.683107+00:00",
+  "computedAt": "2026-08-23T09:45:00.998560+00:00",
   "computation": "qbeta-c3-hopf-habiro-profile",
   "scriptFile": "qbeta_c3_hopf_habiro_profile_probe.py",
   "tier": "NEGATIVE/exploratory",
@@ -126,12 +126,12 @@
     "cross_anchor_rigidity": {
       "q0_proton": "1.10997858275",
       "q0_muon": "1.10997859555",
-      "empirical_residue_proton": "-0.069299999999999999999999999999999999999999999999998",
-      "empirical_residue_muon": "-0.0097",
-      "model_residue_proton": "-0.010896866706862229826659238754577672503294073130622",
-      "model_residue_muon": "-0.010896869117694293724437216243399298223521495905121",
-      "empirical_swing": "-0.059599999999999999999999999999999999999999999999998",
-      "model_swing": "0.0000000024108320638977779774888216257202274227744988020151",
+      "empirical_residue_proton": "-0.06930000000000000000000000000000000000000000000000000000000000000000001",
+      "empirical_residue_muon": "-0.009700000000000000000000000000000000000000000000000000000000000000000011",
+      "model_residue_proton": "-0.01089686670686222982665923875457767250329407313061960068706559914928233",
+      "model_residue_muon": "-0.01089686911769429372443721624339929822352149590511984355174352352852452",
+      "empirical_swing": "-0.05959999999999999999999999999999999999999999999999999999999999999999999",
+      "model_swing": "0.000000002410832063897777977488821625720227422774500242864677924379242181268661",
       "swing_ratio_model_over_empirical": -4.045020241439225e-08,
       "rigidity_factor": 24721755.153546486
     }
@@ -142,8 +142,10 @@
     "productionC3": "c_3 = -2 (proven J_Hopf(1), 112\u00d7 tightening)"
   },
   "allPassed": true,
-  "scriptHash": "e1330da928b2",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
-  "durationMs": 0
+  "scriptHash": "b14f677a1c53",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -20,7 +20,7 @@ binding-link registry recorded in binding_link_volumes.py):
   Whitehead L5a1       Vol = 3.663862   (= 4·Catalan)
   Borromean L6a4       Vol = 7.327725   (= 8·Catalan = 2·Vol(Whitehead))
   8_11                Vol = 8.286316
-  figure-8 4_1         Vol = 2.029883   (= 3·Cl₂(π/3))
+  figure-8 4_1         Vol = 2.029883   (= 2·Cl₂(π/3) = 6Λ(π/3))
 
 DISCIPLINE: no fit, no wiring, no tier change; the "refuted" verdict is
 classified (a) scope-limited vs (b) structural-with-cited-invariant per AGENTS.md

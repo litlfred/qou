@@ -45,8 +45,16 @@ import sys
 
 import mpmath as mp
 import numpy as np
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 20
+set_compute_dps()
 
 
 def _pts(n, R):
@@ -194,7 +202,7 @@ def main():
             "corrects": "#3864 2026-07-18 update — the per-factor product m(5τ₀)³·m(τ₀)≈8.226 is NOT "
                         "the T⁸ boson measure (genus-2 shows measure≠product by ×1.35); retracted",
             "structure_source": "Jac(Bring)≅E_5τ₀³×E_τ₀, period τ₀·M (Braden–Disney-Hogg Thm 2.12 + "
-                                "Prop 4.6; PDF uploads/2208.13692v1.pdf)",
+                                "Prop 4.6; PDF library/arxiv-2208.13692v1/2208.13692v1.pdf)",
             "deferred": "full genus-4 Epstein det'Δ at the thin Bring modulus (Im τ₀=0.187) — needs "
                         "Siegel reduction for numerical convergence",
             "scope_guard": "no q₀, no 8π manufactured, nothing wired, no tier change; scope-(a)",

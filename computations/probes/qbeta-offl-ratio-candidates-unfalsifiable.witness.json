@@ -1,0 +1,128 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T08:38:27.747958+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "assertions": [
+    {
+      "name": "ratio_map_is_bijection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "rho(A) monotone decreasing, ->1 as A->infinity and ->infinity as A->A_crit+, hence onto (1, infinity)"
+    },
+    {
+      "name": "inversion_roundtrip_exact",
+      "computed": "1.2796761219871603781e-69",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "A_forced_by_ratio inverts theta_pair on the U1 sample at full precision (relative error)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-offl-ratio-candidates-unfalsifiable",
+  "scriptFile": "qbeta_offl_ratio_candidates_unfalsifiable_probe.py",
+  "scriptHash": "7027b78746d5",
+  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-offl: a formalize-first design constraint on the cone-manifold route, derived before running any geometry. The channel has 2 anchor equations in 3 unknowns, so one extra scalar (a ratio theta_p/theta_mu) closes it with zero residual and cannot be tested. Established concretely: rho(A) is a monotone bijection from A in (A_crit, infinity) onto rho in (1, infinity), so every ratio above 1 is attained by exactly one A and no ratio candidate is refutable — it only names an A. Plausible geometric ratios moreover cluster into A in [2.5, 4], making a 'match near 3' near-guaranteed. Consequence: qou-offl must supply BOTH theta values absolutely, from a normalization fixed in advance. Derives no A_omega; endorses no candidate; wires nothing.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "counting_argument": "2 anchor equations, 3 unknowns (A_omega, theta_mu, theta_p); 1 extra scalar closes exactly (no residual), 2 extra scalars over-determine by 1 (testable residual)",
+    "U1_ratio_traverse": [
+      {
+        "A": "2.054003465",
+        "rho": "2252.804171"
+      },
+      {
+        "A": "2.058109414",
+        "rho": "50.38415243"
+      },
+      {
+        "A": "2.2",
+        "rho": "8.508825387"
+      },
+      {
+        "A": "2.6",
+        "rho": "4.482432571"
+      },
+      {
+        "A": "3.0",
+        "rho": "3.466897335"
+      },
+      {
+        "A": "4.0",
+        "rho": "2.5212685"
+      },
+      {
+        "A": "8.0",
+        "rho": "1.659266333"
+      },
+      {
+        "A": "50.0",
+        "rho": "1.103366591"
+      },
+      {
+        "A": "1000.0",
+        "rho": "1.005209317"
+      }
+    ],
+    "U1_monotone": true,
+    "U1_bijection_onto_gt1": true,
+    "U1_inversion_roundtrip_max_rel_err": "1.2796761e-69",
+    "U2_discriminator_table": [
+      {
+        "candidate": "Vol(𝔹₃)/Vol(4₁)",
+        "rho": "3.609924308",
+        "A_forced": "2.9204161"
+      },
+      {
+        "candidate": "2√3  (|cusp modulus| of 4₁)",
+        "rho": "3.464101615",
+        "A_forced": "3.0016664"
+      },
+      {
+        "candidate": "cusp count 3/1",
+        "rho": "3.0",
+        "A_forced": "3.3570408"
+      },
+      {
+        "candidate": "√(Vol ratio)",
+        "rho": "1.899980081",
+        "A_forced": "6.0481077"
+      },
+      {
+        "candidate": "crossing number 6/4",
+        "rho": "1.5",
+        "A_forced": "10.393454"
+      },
+      {
+        "candidate": "|disc| 4/3",
+        "rho": "1.333333333",
+        "A_forced": "15.456692"
+      }
+    ],
+    "U2_count_in_A_2p5_to_4": 3,
+    "U3_rho_band_for_A_2p5_to_4": [
+      "2.5212685",
+      "4.936899637"
+    ],
+    "design_constraint_for_offl": "supply BOTH theta values absolutely from a normalization fixed in advance; a ratio, or a single anchor, is untestable",
+    "scope": "negative design result about the SHAPE of an admissible route; no A_omega derived, no candidate endorsed, nothing wired",
+    "verdict": "RATIO-SHAPED CANDIDATES ARE UNFALSIFIABLE — a design constraint on qou-offl derived BEFORE running any geometry. The channel has two anchor equations in three unknowns, so one extra scalar closes the system with zero residual and nothing left to check. U1 makes this concrete: ρ(A) = ϑ_p/ϑ_μ is a monotone bijection from A ∈ (A_crit, ∞) onto ρ ∈ (1, ∞), so EVERY ratio above 1 is attained by exactly one A and no ratio candidate can ever be refuted — it can only NAME an A. U2 shows the practical damage: plausible parameter-free geometric ratios cluster, 3 of 6 landing in A ∈ [2.5, 4], so a 'match near 3' is close to guaranteed. U3 quantifies it — that whole A range is a mere ~2x band in ρ. CONSEQUENCE FOR qou-offl: the route must supply BOTH ϑ values ABSOLUTELY, from a normalization fixed in advance, not their ratio and not one anchor. Only then is the system over-determined by one and only then does the A-free curve produce a residual that can fail. SCOPE: this derives no value of A_omega, endorses no candidate, and wires nothing; the geometric ratios are illustrative inputs. It is a negative result about the SHAPE of an admissible route."
+  }
+}

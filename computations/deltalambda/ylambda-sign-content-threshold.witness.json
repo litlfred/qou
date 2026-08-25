@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-07T01:00:06.599014+00:00",
-  "commitSha": "b8df74f94a247770ef3bdc3a3cc0283bec03f11c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T21:52:48.906151+00:00",
+  "commitSha": "0ec585b9a39cc9cfd3d7be897a4d03d6610e6f7b",
   "assertions": [
     {
       "name": "rule_holds_all_partitions",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 3,
   "computation": "ylambda-sign-content-threshold",
   "scriptFile": "ylambda_sign_content_threshold_probe.py",
-  "scriptHash": "db54170d6c7f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1e445fd71d2c",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,15 +34,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Verifies that sign(y_λ) equals sign(Z)·(−1)^P(λ), where P(λ) counts cells of λ whose content lies below c* = −log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1−Q^h is negative (fixed sign (−1)^|λ|), and a numerator factor 1−Q^r·Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n≥4' of weight-factor-audit §W3 with a combinatorial rule, which is what makes the μ₃ door budget of PR #4657 computable.",
+  "description": "Verifies that sign(y_\u03bb) equals sign(Z)\u00b7(\u22121)^P(\u03bb), where P(\u03bb) counts cells of \u03bb whose content lies below c* = \u2212log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1\u2212Q^h is negative (fixed sign (\u22121)^|\u03bb|), and a numerator factor 1\u2212Q^r\u00b7Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n\u22654' of weight-factor-audit \u00a7W3 with a combinatorial rule, which is what makes the \u03bc\u2083 door budget of PR #4657 computable.",
   "parameters": {
-    "q0": "1.1099785827513808",
-    "Q": "1.23205245416676391441662430661",
-    "QR": "1.72025175121384485372937276144",
-    "c_star": "-2.59951553640017695890186155174"
+    "q0": "1.10997858275138080759166909561",
+    "Q": "1.23205245416676393126980451354",
+    "QR": "1.7202517512138449354614135061",
+    "c_star": "-2.5995155364001770161807405265"
   },
   "data": {
     "by_n": [
@@ -52,7 +53,7 @@
         "n_matches": 2,
         "n_negative_y": 0,
         "sign_Z": 1,
-        "min_threshold_margin": "0.39624879232698719142",
+        "min_threshold_margin": "0.39624879232698723866",
         "all_match": true,
         "mismatches": []
       },
@@ -62,7 +63,7 @@
         "n_matches": 3,
         "n_negative_y": 0,
         "sign_Z": 1,
-        "min_threshold_margin": "0.13327057432085481188",
+        "min_threshold_margin": "0.13327057432085483472",
         "all_match": true,
         "mismatches": []
       },
@@ -72,7 +73,7 @@
         "n_matches": 5,
         "n_negative_y": 1,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -82,7 +83,7 @@
         "n_matches": 7,
         "n_negative_y": 1,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -92,7 +93,7 @@
         "n_matches": 11,
         "n_negative_y": 3,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -102,7 +103,7 @@
         "n_matches": 15,
         "n_negative_y": 4,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -112,7 +113,7 @@
         "n_matches": 22,
         "n_negative_y": 8,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -122,7 +123,7 @@
         "n_matches": 30,
         "n_negative_y": 10,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -132,7 +133,7 @@
         "n_matches": 42,
         "n_negative_y": 18,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -142,7 +143,7 @@
         "n_matches": 56,
         "n_negative_y": 22,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       },
@@ -152,14 +153,17 @@
         "n_matches": 77,
         "n_negative_y": 36,
         "sign_Z": 1,
-        "min_threshold_margin": "0.080176683640239334262",
+        "min_threshold_margin": "0.080176683640239328307",
         "all_match": true,
         "mismatches": []
       }
     ]
   },
   "caveats": [
-    "The threshold c* = −log_Q(Q^r) is q-dependent; the concrete cut 'content ≤ −3' is specific to q₀. The PARITY RULE itself is q-independent for q > 1 — only the location of the cut moves.",
+    "The threshold c* = \u2212log_Q(Q^r) is q-dependent; the concrete cut 'content \u2264 \u22123' is specific to q\u2080. The PARITY RULE itself is q-independent for q > 1 \u2014 only the location of the cut moves.",
     "sign(Z) is inferred per n from one block and then required to be consistent across all blocks; the probe verifies consistency, it does not independently derive sign(Z)."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

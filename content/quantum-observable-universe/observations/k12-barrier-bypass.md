@@ -14,7 +14,7 @@ At $n \in \{2, 8\}$ (and partial coverage of $n = 20$ via branching-rule extrapo
 
 ## Limits of the matrix-evaluation programme
 
-At $n = 12$, the partition count exceeds memory budgets for exact-rational seminormal-form computation. At $n \geq 50$, the combinatorial explosion is unrecoverable on present hardware. Matrix-evaluation confirmation of the higher-magic ladder $\{50, 82, 126\}$ is not waiting on hardware; it uses the wrong tool. The seminormal form is a per-partition object. The saturated-shell content is a structural object. Adding compute scales the wrong axis.
+At $n = 12$, the partition count exceeds memory budgets for exact-rational seminormal-form computation. At $n \geq 50$, the combinatorial explosion is unrecoverable on present hardware. Matrix-evaluation confirmation of the higher-magic ladder $\{50, 82, 126\}$ would remain out of reach even with more hardware, because the method itself is mismatched to the target. The seminormal form is a per-partition object. The saturated-shell content is a structural object.
 
 ## Contribution of the homological / LR-fusion framework
 

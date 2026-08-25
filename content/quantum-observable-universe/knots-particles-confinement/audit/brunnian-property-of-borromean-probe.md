@@ -6,7 +6,7 @@ A proof of `borromean_brunnian` upgrades the [topological mechanism of color con
 
 - [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula): We invoke the formal property to justify why the volume contribution equals the full bare topological mass (with no residual sub-link binding to subtract).
 - [Borromean Bloch-group element](#conj:borromean-bloch-group-element): We pin the dilog identities to formal sub-link triviality.
-- Conditional-class hypotheses on downstream blocks citing this conjecture discharge automatically.
+- Conditional-class hypotheses on downstream results citing this conjecture discharge automatically.
 
 ## Path to formalisation
 

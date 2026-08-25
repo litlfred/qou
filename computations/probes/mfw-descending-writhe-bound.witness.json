@@ -1,0 +1,142 @@
+{
+  "engine": "exact-braid-word-enumeration",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-22T19:29:53.282361+00:00",
+  "commitSha": "73ff9fd8738ebf853d16de825665e55450f30570",
+  "assertions": [
+    {
+      "name": "descending_writhe_bound_holds",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "exhaustive over 1227 descending words"
+    },
+    {
+      "name": "descending_closures_are_unlinks",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "HOMFLY depends only on c; premise of the Bennequin route (lickorish1997)"
+    },
+    {
+      "name": "distinct_components_have_linking_number_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "descending traversal orders components; earlier passes over later"
+    },
+    {
+      "name": "bound_decomposes_over_closure_components",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "reduces |e| <= n - c to the single-component case"
+    },
+    {
+      "name": "no_strand_pair_crosses_more_than_once_net",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "mechanism supplied by the descending condition"
+    },
+    {
+      "name": "bound_is_tight_for_every_n_c",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "max|e| == n-c in every cell"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "mfw-descending-writhe-bound",
+  "scriptFile": "mfw_descending_writhe_bound_probe.py",
+  "scriptHash": "a580771fe572",
+  "scriptCommitSha": "36b172e032502d3bf234aca494c609beb8d7b7d6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mfw_descending_writhe_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mfw_descending_writhe_bound_probe.py"
+  },
+  "description": "Exhaustive measurement of the MFW skein-induction base case: every totally descending braid word of length <= 6 on 2-4 strands satisfies |writhe| <= n - components, and the bound is tight for every (n,c) reached. Supports but does NOT prove QOU.Knot.MFWSkeinInduction's `DescendingWrithe` hypothesis. Scope-(a); nothing wired. Bean qou-9ttb (closed); Lean residue qou-e6db.",
+  "data": {
+    "max_strands": 4,
+    "max_word_length": 6,
+    "descending_words": 1227,
+    "violations": [],
+    "max_abs_writhe_by_n_c": {
+      "n=2,c=1": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=2,c=2": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      },
+      "n=3,c=1": {
+        "max_abs_e": 2,
+        "n_minus_c": 2
+      },
+      "n=3,c=2": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=3,c=3": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      },
+      "n=4,c=1": {
+        "max_abs_e": 3,
+        "n_minus_c": 3
+      },
+      "n=4,c=2": {
+        "max_abs_e": 2,
+        "n_minus_c": 2
+      },
+      "n=4,c=3": {
+        "max_abs_e": 1,
+        "n_minus_c": 1
+      },
+      "n=4,c=4": {
+        "max_abs_e": 0,
+        "n_minus_c": 0
+      }
+    },
+    "max_net_crossings_per_strand_pair": 1,
+    "words_where_nonzero_pairs_exceed_n_minus_c": 298,
+    "unlink_homfly_by_component_count": {
+      "1": "1",
+      "2": "v^-1z^-1 - vz^-1",
+      "3": "v^-2z^-2 - 2z^-2 + v^2z^-2",
+      "4": "v^-3z^-3 - 3v^-1z^-3 + 3vz^-3 - v^3z^-3"
+    },
+    "cross_component_nonzero_linking": 0,
+    "per_component_bound_violations": 0,
+    "per_component_bound_tight": 1220
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure braid-word combinatorics; reads no q_0"
+}

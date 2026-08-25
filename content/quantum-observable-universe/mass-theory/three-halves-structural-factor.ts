@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Lepton-tower closure structural identities — muon (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q and tau [6]_q = [2]_q·[3]_q·(1+h²) — proved over generic [Field R] via field_simp; ring.",
+    "Lepton-tower closure structural identities — muon (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q and tau [6]_q = [2]_q·[3]_q·(1+h²) — proved over generic [CommRing R] with q : Units R, division-free.",
   uses: [
     "prop:lepton-bring-surface-h3-3channel",
   ],
@@ -26,6 +26,26 @@ export default proposition({
         "q_0 to ≤ 1e-40 via `tau_amphichiral_sdp_probe.py` witness (3 of 4 " +
         "assertions). Consumed (by docstring narrative) from " +
         "`conj-lepton-tower-h-n-plus-1-branching.lean`.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-08-09",
+      body:
+        "**Base ring minimised (AGENTS.md §7c).** The five identities were " +
+        "restated from `[Field R]` + `field_simp` to a generic " +
+        "`[CommRing R]` with the modulus carried as a unit `q : Units R`, so " +
+        "`↑q⁻¹` is a `Units` coercion rather than a ring inverse. They are " +
+        "Laurent identities in ℤ[q, q⁻¹]: each proof is now one " +
+        "`linear_combination` against `↑q * ↑q⁻¹ = 1`, valid in every " +
+        "characteristic with no ordering and no division. The two headline " +
+        "quotient presentations are the only declarations that still need a " +
+        "field — a quotient requires division — and they now live in a " +
+        "`RatioForm` section, derived from the cross-multiplied identities " +
+        "`three_halves_factor_cross_mul` / `bracket5_bracket3_cross_mul` by " +
+        "`div_eq_div_iff`. No statement was weakened: the cross-multiplied " +
+        "forms hold with no non-vanishing hypotheses at all, and " +
+        "`heckeH_mk0` records the bridge from the earlier " +
+        "`(q : K) (hq : q ≠ 0)` presentation via `Units.mk0`.",
     },
   ],
   tags: [

@@ -34,9 +34,16 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-mp.mp.dps = 40
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP as Q0  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import seminormal_matrices_mpfr  # noqa: E402
@@ -74,7 +81,7 @@ def main() -> int:
     contrib = {}
     cache = HERE / "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json"
     if cache.exists():
-        d = json.loads(cache.read_text(encoding="utf-8"))
+        d = record_upstream(cache, _UPSTREAM_RECORDS)
         bp = d.get("by_partition") or d.get("data", {}).get("by_partition", [])
         for e in bp:
             if e.get("chi_lambda") in (None, "skipped-max-dim"):
@@ -105,6 +112,7 @@ def main() -> int:
 
     w = WitnessBuilder("spectral-selector-validate", engine="python+mpmath",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Pins the (q,β)-spectral activation selector (per-partition-k-lambda-rule). "
         "FINDING: raw max|μ(ρ_λ(β_D))| picks [3,3], NOT the empirical deuteron "

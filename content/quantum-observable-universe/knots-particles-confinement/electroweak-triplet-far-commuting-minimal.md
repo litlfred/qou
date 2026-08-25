@@ -8,4 +8,4 @@ $$
 
 2. *(Enumeration.) The even-twist $2$-component torus links $T(2,2k)$ (braid $\sigma_1^{2k}$, Seifert genus $g = k-1$) with genus strictly between the trivial Hopf endpoint $g=0$ and the genus-$4$ Bring saturation ($1 \leq g \leq 3$) are exactly those with $k \in \{2,3,4\}$: the triplet $T(2,4), T(2,6), T(2,8)$.*
 
-This forms the mathematical core of the electroweak selection principle C1. Both halves rely on elementary $\mathbb{N}$-arithmetic.
+This forms the mathematical core of the electroweak selection principle. Both halves rely on elementary $\mathbb{N}$-arithmetic.

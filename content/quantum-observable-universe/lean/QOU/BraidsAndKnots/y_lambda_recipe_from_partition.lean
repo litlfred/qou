@@ -1,4 +1,3 @@
-import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -20,15 +19,23 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class YLambdaRecipeFromPartitionContext extends QOU.Shared.MarkovTraceContext where
-  /-- Jones-Markov coefficient `y_λ(q)` per partition `λ`. -/
-  y_lambda : ℕ → ℝ
+  /-- Jones-Markov coefficient `y_λ(q)` per partition `λ`, valued in the
+      inherited coefficient ring `R` of the parent Markov-trace context
+      (§7c: `y_λ(q)` is a q-rational in `√q`, not a real). -/
+  y_lambda : ℕ → R
   /-- Numerator and denominator of the q-rational representation. -/
-  num : ℕ → ℝ
-  denom : ℕ → ℝ
+  num : ℕ → R
+  denom : ℕ → R
   /-- Manuscript identity: `y_λ(q)` is a q-rational with non-vanishing
-      denominator and equals `num(λ) / denom(λ)`. -/
+      denominator and equals `num(λ) / denom(λ)`.
+
+      The quotient is written `num · denom⁻¹` through the parent's `invR`:
+      a generic `CommRing R` carries no `Div`, and at `R = ℝ` this is
+      definitionally what `num / denom` unfolds to, so the statement is
+      unchanged from the previous ℝ-specialised form. -/
   claim_y_lambda_recipe_from_partition :
-    ∀ lam : ℕ, denom lam ≠ 0 ∧ y_lambda lam = num lam / denom lam
+    haveI := ringR; haveI := invR;
+      ∀ lam : ℕ, denom lam ≠ 0 ∧ y_lambda lam = num lam * (denom lam)⁻¹
 /-- **Content statement** (from manuscript):
 
 **Proposition (recipe: $\lambda \mapsto y_\lambda(q)$ as q-rational).**
@@ -40,7 +47,9 @@ denominator.*
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
 def y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] :
-    ∀ lam : ℕ, ctx.denom lam ≠ 0 ∧ ctx.y_lambda lam = ctx.num lam / ctx.denom lam :=
+    haveI := ctx.ringR; haveI := ctx.invR;
+      ∀ lam : ℕ,
+        ctx.denom lam ≠ 0 ∧ ctx.y_lambda lam = ctx.num lam * (ctx.denom lam)⁻¹ :=
   ctx.claim_y_lambda_recipe_from_partition
 
 end QOU.BraidsAndKnots

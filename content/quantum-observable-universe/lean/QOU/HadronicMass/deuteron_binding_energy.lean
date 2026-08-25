@@ -8,6 +8,16 @@ import QOU.Shared.MarkovTraceClaim
 [`lem:deuteron-binding-energy`](../../../quantum-observable-universe/observations/deuteron-binding-energy.md): *Deuteron binding energy from Skein-polynomial smoothing*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## Base ring (§7c) — `ℝ` here is correct
+
+`DeuteronBindingEnergyContext` extends `QOU.Shared.MarkovTraceContext`, which
+supplies a generic coefficient ring `R`, but this block's fields stay at `ℝ`
+and that is the right call: `ΔE_exp = 2.2246` is a CODATA value in MeV and the
+precision sub-claim is `|ΔE_bind − ΔE_exp| < 0.001`, an absolute value and an
+order comparison.  Both are archimedean, so the block sits after the
+substrate→archimedean wall.  Reviewed under bean `qou-mtcx`; do not "port" it
+to `R` to reduce an `ℝ` count.
 -/
 
 namespace QOU.HadronicMass

@@ -1,12 +1,12 @@
 {
-  "description": "Whitehead c\u2080/factor from mpmath EXACT-ROOT values only (no float64). Reconstruction of a lost session.",
-  "computation": "whitehead_c0_run",
+  "description": "Whitehead c\u2080 / factor from mpmath EXACT-ROOT values only (float64 dropped per owner directive). Reconstruction of a lost session.",
+  "computation": "whitehead_c0_mpmath",
   "audit_only": true,
-  "precision": "mpmath dps=40 exact-root; no float64 in the c0 determination",
+  "precision": "mpmath dps=40, exact-root evaluation (no float64 in the c0 determination)",
   "whitehead_braid_word": "[1,-2,1,-2,1]",
-  "vol_4G": "3.663862376708876060218414",
+  "vol_4G": "3.66386237670887606021841405972953644309659749712668853706599",
   "p_fixed": 1.5,
-  "figure_eight_reference_c0_Nge8": -0.2725767350008177,
+  "figure_eight_reference_c0_2term": -0.28558290036540646,
   "figure_eight_target_minus_quarter_ln3": -0.27465307216702745,
   "whitehead_exact_values": {
     "6": 362.3920528929998,
@@ -14,15 +14,12 @@
     "10": 7062.35924065477,
     "12": 29287.27767465885
   },
-  "whitehead_c0_fits": {
-    "1-term-all": -0.5969743943908676,
-    "1-term-Nge8": -0.5539588900796764,
-    "2-term-all": -0.44369172371860216
-  },
   "whitehead_c0_mean": -0.531541669396382,
   "whitehead_c0_spread": 0.07664133533613274,
   "factor": 1.9678009716166576,
   "nearest_factor": 2,
-  "progress_note": "through N=12",
-  "timestamp": "2026-07-25T20:52:18+00:00"
+  "excludes_factor_1_and_4": true,
+  "verdict": "FACTOR 2: c0=-0.532\u00b10.077 (mpmath-only)",
+  "wall_seconds": "1293.943",
+  "timestamp": "2026-08-21T23:32:34+00:00"
 }

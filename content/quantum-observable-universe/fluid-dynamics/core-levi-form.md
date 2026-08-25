@@ -52,8 +52,8 @@ $$
    <  \infty.
 $$
 
-Conditions (1)--(5) uniformly hold. The [well-posedness theorem](#thm:q-ns-wellposedness) remains structurally inviolate.
+Conditions (1)--(5) uniformly hold. The [well-posedness theorem](#thm:q-ns-wellposedness) remains intact.
 
 *(e)* Evaluated at $q = 1$, $\hbar_q = 0$ and isotropic resistance zeroes out. The [vorticity lower bound](#prop:vorticity-lower-bound) and the [counter-example](#conj:ns-counterexample) trigger if and only if condition (3) holds rigidly at $q = 1$.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

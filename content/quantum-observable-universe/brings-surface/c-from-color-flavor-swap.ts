@@ -1,6 +1,26 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "Tracker/working-channel pointers pulled out of the published prose " +
+        "when this block was rewritten from a branch work plan into a paper " +
+        "section: this is D6 of the duality tracker (`docs/duality-tracker.md` " +
+        "§1, and §2 Cluster A for the D5 -> D6 + D7 + D8 CPT decomposition); " +
+        "D7 = `conj:p-from-braid-mirror`, D8 = `conj:t-from-trace-cyclicity` " +
+        "-- both now authored. Type-B folding for chirality/CPT is D22 " +
+        "(AGENTS.md §7b, `conj:type-b-folding-cpt`). Upstream " +
+        "`conj:inter-nucleon-channel-color-tube` landed in PR #1111; its own " +
+        "supplier class `conj:s5-so3-fiber-action` is PR #1081. The former " +
+        "`## Diagnostics` stanza was written against " +
+        "`.claude/skills/local/canonical-watcher.md` §Slot J; its content " +
+        "(GB filtration level, jet order, bar-symmetry status) is retained in " +
+        "the block as the `## Structural position` section.",
+    },
+  ],
   label: "conj:c-from-color-flavor-swap",
   title:
     "Charge conjugation $C$ as the color-sheet flavor-swap $u \\leftrightarrow \\bar u$, $d \\leftrightarrow \\bar d$",
@@ -16,7 +36,7 @@ export default conjecture({
   ],
   cites: [
     "kashiwara1991",
-    "khovanov-lauda2009",
+    "khovanovlauda2009",
     "wigner1937",
   ],
   tags: [
@@ -27,6 +47,5 @@ export default conjecture({
     "axiom-class",
     "open-problem",
     "conditional-on-class",
-    "non-scholarly-voice-exception",
   ],
 });

@@ -53,7 +53,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
@@ -72,7 +77,7 @@ def main():
 
     # Witness lives in the parent computations/ dir, not in this script's
     # qbeta/ subdirectory (path drifted in the Phase 4 subdir refactor).
-    w = json.loads((HERE.parent / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE.parent / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     Q_A = mpf(w["data"]["Q_A"])
     alpha = mpf(w["data"]["alpha"])
     b = mpf(w["data"]["hoefsmit_b"])
@@ -87,6 +92,7 @@ def main():
     residual_ppQ = float((Q_N4 - Q_codata) / Q_codata * 1e15)
 
     wb = WitnessBuilder("qbeta-1ppq-achieved", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Q_beta precision at N=4: 0.00 ppQ (below 1 ppQ target). "
         "c_4 extracted from residual (not independently derived). "

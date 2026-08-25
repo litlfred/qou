@@ -1,0 +1,86 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2302.08363v2",
+ "source_sha256": "c2244e03b17048fb",
+ "brief": "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically",
+ "extended": "**On the structure of trans-series in quantum field theory**\n\n*Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb*\n\n35 pp, 13 sections.\n\n**Abstract.** Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence.\n\n**Outline.** Introduction; Trans-series and their structure; The large N sigma model, revisited; Complex Chern–Simons theory; Integrable models; The free energy of integrable models; Bosonic models; Numerical analysis; The Gross–Neveu model; Summary of the recursive problem; Numerical analysis; Large N solution; Conclusions and open problems",
+ "tokens": {
+  "brief": 49,
+  "extended": 340
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-trans-series-and-their-structure",
+   "title": "Trans-series and their structure",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-the-large-n-sigma-model-revisited",
+   "title": "The large N sigma model, revisited",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-003-complex-chernsimons-theory",
+   "title": "Complex Chern–Simons theory",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-integrable-models",
+   "title": "Integrable models",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-the-free-energy-of-integrable-models",
+   "title": "The free energy of integrable models",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-006-bosonic-models",
+   "title": "Bosonic models",
+   "pages": "14-20"
+  },
+  {
+   "id": "sec-007-numerical-analysis",
+   "title": "Numerical analysis",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-008-the-grossneveu-model",
+   "title": "The Gross–Neveu model",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-009-summary-of-the-recursive-problem",
+   "title": "Summary of the recursive problem",
+   "pages": "25-29"
+  },
+  {
+   "id": "sec-010-numerical-analysis",
+   "title": "Numerical analysis",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-011-large-n-solution",
+   "title": "Large N solution",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-012-conclusions-and-open-problems",
+   "title": "Conclusions and open problems",
+   "pages": "31-35"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

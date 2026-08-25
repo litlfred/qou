@@ -11,13 +11,18 @@ cardinality theorem.  With the hook-length bridge (`IdentityIHLFBridge.dimSYT_eq
 enumeration bridge (`PartitionsOfBridge.rskBurnsideHolds_le12`) both proved, the identity is now a
 **theorem** for every `n ≤ 12`.  This file wires that in:
 
-* `RSK_substrate_proved_le12` — the axiom-free counterpart of `RSK_substrate_axiom` on `n ≤ 12`.
-  Downstream uses at specific `n ≤ 12` should cite this, not the axiom; the axiom's live range is
-  now `n ≥ 13` only.
-* `rskBijection_of_lt13` — the **first genuine `RSKBijection n` construction** (the class had no
-  non-vacuous instance): `dim := dimSYT` with the proved Burnside field.  Registered as instances
-  at the physically-used `n = 3` (deuteron `pn` channel), `n = 5` (the s5-so3 keystone), `n = 7`
-  (the defect-cubic sign flip), and `n = 12` (the `decide`-coverage top).
+* `RSK_substrate_proved_le12` — the `n ≤ 12` route, via the enumeration bridge.
+  **Corrected 2026-08-23:** this bullet used to call it "the axiom-free counterpart of
+  `RSK_substrate_axiom`" and say "the axiom's live range is now `n ≥ 13` only". There is no live
+  range, because there is no axiom: `RSKBridge.RSK_substrate_proved` proves the identity for every
+  `n` from the Robinson–Schensted correspondence. This bullet's route is retained as the cheaper
+  one at small `n`, not as the only one.
+* `rskBijection_of_lt13` — the first genuine `RSKBijection n` construction (the class had no
+  non-vacuous instance): `dim := dimSYT` with the proved Burnside field, at `n ≤ 12`.
+* `instRSKBijection` — **and now at every `n`** (2026-08-23), from
+  `QOU.Mathlib.rskBurnsideHolds`. This replaced the four hand-registered instances at the
+  physically-used `n = 3, 5, 7, 12`; see its docstring for why they are removed rather than kept
+  alongside.
 * `cohortWitness_of_lt13` — a concrete `CohortRSKWitness n` from the `partitionsOf` enumerator
   and `dim_validated_le12`.
 
@@ -44,17 +49,22 @@ noncomputable def rskBijection_of_lt13 (n : ℕ) (hn : n < 13) : RSKBijection n 
   dim := QOU.Mathlib.dimSYT
   n_factorial_eq_sum_squares := rskBurnsideHolds_le12 n (List.mem_range.mpr hn)
 
-/-- `n = 3` — the deuteron `pn` channel of the keystone's binding-side target. -/
-noncomputable instance : RSKBijection 3 := rskBijection_of_lt13 3 (by norm_num)
+/-- **`RSKBijection n` for every `n`** — `dim := dimSYT` with the Burnside field supplied by
+`QOU.Mathlib.rskBurnsideHolds`, the Robinson–Schensted proof.
 
-/-- `n = 5` — the s5-so3 keystone itself. -/
-noncomputable instance : RSKBijection 5 := rskBijection_of_lt13 5 (by norm_num)
+This supersedes the four hand-registered instances that stood here (`n = 3` the deuteron `pn`
+channel, `n = 5` the s5-so3 keystone, `n = 7` the defect-cubic sign flip, `n = 12` the top of the
+`decide`-verified coverage), each built from `rskBijection_of_lt13`. They are removed rather than
+kept alongside this one: the class carries **data** (`dim`), so two instances at the same `n` would
+be an ambiguity even though both supply `dimSYT`.
 
-/-- `n = 7` — the defect-cubic `144·C(n) = −n(n−1)(2n−13)` sign flip. -/
-noncomputable instance : RSKBijection 7 := rskBijection_of_lt13 7 (by norm_num)
+`rskBijection_of_lt13` itself is retained — at small `n` the enumeration route is cheaper and needs
+no RSK. -/
+noncomputable def rskBijection (n : ℕ) : RSKBijection n where
+  dim := QOU.Mathlib.dimSYT
+  n_factorial_eq_sum_squares := QOU.Mathlib.rskBurnsideHolds n
 
-/-- `n = 12` — the top of the `decide`-verified coverage. -/
-noncomputable instance : RSKBijection 12 := rskBijection_of_lt13 12 (by norm_num)
+noncomputable instance instRSKBijection (n : ℕ) : RSKBijection n := rskBijection n
 
 /-- A concrete `CohortRSKWitness` for every `n ≤ 12`: the cohort is the `partitionsOf n`
 enumeration with hook-length dimensions, its Burnside field the `decide`-verified

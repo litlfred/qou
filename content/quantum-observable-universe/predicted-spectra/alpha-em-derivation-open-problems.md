@@ -7,7 +7,7 @@ $$
   \;\approx\; 136.823 \quad \text{at}\;\; q = q_0.
 $$
 
-This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
+This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
 
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
@@ -15,7 +15,7 @@ This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The 
 | Form A (CS) | $\cdot(1+\delta_{CS}+\kappa\,\delta_{CS}^2)$ with $\kappa=1.722$ | $-4.0\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.888$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-## Audit failure of both prior attempts
+## Why both prior attempts fail
 
 **Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at $q_0$ requires $\kappa \approx 1.8878$. The discrepancy is $\sim 10\%$ and cannot be quadrature error. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
 
@@ -49,14 +49,14 @@ See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt 
 
 ## Insufficiency of block-diagonal Gram deformations
 
-A natural ansatz deforms the Gram matrix by a framing correction $\mathcal{A}$ induced by a chiral anomaly on Bring's surface, $G_n' = G_n \otimes \mathcal{A}$. There are two sub-cases:
+A natural ansatz deforms the Gram matrix by a framing correction $\mathcal{A}$ induced by a chiral anomaly on Bring's surface, $G_{\mathrm{CS},n}' = G_{\mathrm{CS},n} \otimes \mathcal{A}$. Every $G$ in this section is a **Chern--Simons** pairing Gram on Bring's surface, indexed by jet level $n$; none of them is the Markov--Gram $\mathrm{tr}_M(b_i b_j)$ of the $H_3(q)$ normal-form basis ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)), whose own determinants appear elsewhere in the corpus under the same glyph and whose $q$-dependence runs through the Markov parameter $z$, which never enters here. There are two sub-cases:
 
-1. **Scalar $\mathcal{A} \in R$.** For an $N \times N$ Gram matrix, $\det G_n' = \mathcal{A}^N \det G_n$. The determinant ratio $\kappa = \det G_n / \det G_{n-1}$ becomes $\kappa' = \mathcal{A}^{\dim G_n - \dim G_{n-1}} \cdot \kappa_{\text{Witten}}$. This is a fixed power of $\mathcal{A}$ multiplying the Witten value. The corrected $1/\alpha_{EM}$ takes the multiplicative form $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}^{\Delta\dim}\kappa_{\text{Witten}}\delta_{CS}^2)$.
-2. **Block-diagonal $2{\times}2$ $\mathcal{A}$**. This acts on the two Hecke eigenchannels $V_{(2)}, V_{(1,1)}$. The determinant of $G_n'$ factors as a product of per-channel scalar powers. Again, $\kappa'$ is a multiplicative perturbation of $\kappa_{\text{Witten}}$. This "old derivation" route yielded $\kappa \approx 1.722$. It agrees with the Wedderburn-block Plancherel sum but falls short of the CODATA value.
+1. **Scalar $\mathcal{A} \in R$.** For an $N \times N$ Gram matrix, $\det G_{\mathrm{CS},n}' = \mathcal{A}^N \det G_{\mathrm{CS},n}$. The determinant ratio $\kappa = \det G_{\mathrm{CS},n} / \det G_{\mathrm{CS},n-1}$ becomes $\kappa' = \mathcal{A}^{\dim G_{\mathrm{CS},n} - \dim G_{\mathrm{CS},n-1}} \cdot \kappa_{\text{Witten}}$. This is a fixed power of $\mathcal{A}$ multiplying the Witten value. The corrected $1/\alpha_{EM}$ takes the multiplicative form $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}^{\Delta\dim}\kappa_{\text{Witten}}\delta_{CS}^2)$.
+2. **Block-diagonal $2{\times}2$ $\mathcal{A}$**. This acts on the two Hecke eigenchannels $V_{(2)}, V_{(1,1)}$. The determinant of $G_{\mathrm{CS},n}'$ factors as a product of per-channel scalar powers. Again, $\kappa'$ is a multiplicative perturbation of $\kappa_{\text{Witten}}$. This "old derivation" route yielded $\kappa \approx 1.722$. It agrees with the Wedderburn-block Plancherel sum but falls short of the CODATA value.
 
 Both sub-cases live in the multiplicative $q$-rational family. The 100-dps PSLQ scan over the 54-element basis ruled out this family. Any Gram deformation preserving block-diagonal structure on $V_{(2)} \oplus V_{(1,1)}$ cannot close the gap.
 
-Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of substrate pentagon data, not an external import. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
+Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of substrate pentagon data. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
 
 ## Implications
 
@@ -82,7 +82,7 @@ $$
 | Bare $q[9]_q[10]_q$ | 136.823220 | $-1.55 \times 10^{-3}$ |
 | $+ 2/(3\pi)$ | 137.035426 | $-4.2 \times 10^{-6}$ |
 | $+ \alpha/(4\pi)$ | 137.036007 | $+5.7 \times 10^{-8}$ |
-| CODATA | $137.035999084(21)$ | — |
+| CODATA 2022 | $137.035999177(21)$ | — |
 
 The first correction is derived ([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)). It is the photon infrared zero-mode on the 2-surface $M_{\text{Bring}}$. The harmonic $1$-form sector $b_1(M_g) = 2g$ normalises by the Gauss–Bonnet area $4\pi(g-1)$:
 

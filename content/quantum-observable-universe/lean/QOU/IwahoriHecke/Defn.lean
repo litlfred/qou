@@ -75,7 +75,7 @@ resolve to `QOU.IwahoriHecke.IwahoriHecke`.
 Refs:
 - [bourbaki1968] Bourbaki, "Groupes et Algèbres de Lie" Ch IV-VI
 - [humphreys1990] Humphreys, "Reflection Groups and Coxeter Groups"
-- [geck-pfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
+- [geckpfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
   groups and Iwahori–Hecke algebras"
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/

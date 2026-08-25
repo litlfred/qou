@@ -37,7 +37,7 @@ $$
   \frac{m_n - m_p}{m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2}.
 $$
 
-At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps) and CAL-1 $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}\ldots\;\mathrm{MeV}$, we evaluate this:
+At the substrate parameter $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) and CAL-1 $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}\ldots\;\mathrm{MeV}$, we evaluate this:
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|

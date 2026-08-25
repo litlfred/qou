@@ -58,7 +58,7 @@ structure LevelMap (R : Type*) [CommRing R] where
   finite_support : ∀ n m, bound n < m → coeff n m = 0
 
 /-- `L` intertwines the two level gradings. -/
-def Intertwines (L : LevelMap R) (mas blk : ℕ → R) : Prop :=
+def LevelMap.Intertwines (L : LevelMap R) (mas blk : ℕ → R) : Prop :=
   ∀ n, mas n = ∑ m ∈ range (L.bound n + 1), L.coeff n m * blk m
 
 /-- **Conjecture (primary, OPEN).** The Masbaum cyclotomic grading of
@@ -106,7 +106,7 @@ theorem not_diagonal_of_crossMul_fail {mas blk : ℕ → R} {k : ℕ} (n : ℕ)
 /-- A diagonal scalar map *is* a level-mixing map (so the excluded
 family sits inside the conjectured one — the conjecture is a genuine
 weakening, not a different claim). -/
-def ofDiagonalScalar (r : R) (k : ℕ) : LevelMap R where
+def LevelMap.ofDiagonalScalar (r : R) (k : ℕ) : LevelMap R where
   coeff n m := if m = n + k then r else 0
   bound n := n + k
   finite_support := by

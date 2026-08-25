@@ -37,4 +37,4 @@ Here $\Phi$ is the quark-content functor. The right-vertical arrow lifts a bare 
 
 The discrete-category framing ensures compatibility with other categorical constructions. Sums over flavors in hadronic mass formulas become natural transformations of functors rather than ad-hoc weighted sums.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

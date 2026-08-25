@@ -191,3 +191,124 @@ self-interaction normalisation — open Archimedean-mass-functor work).
 ```bash
 python3 computations/probes/flavor_split_geometric_closure_probe.py
 ```
+
+---
+
+## CORRECTION 2026-08-09 — Part A's "CONSISTENT. No gaps found." is no longer true as written
+
+Part A certified that `δ = flavor_split_subleading(q)` was used "in every
+consumer". The **de-wire happened the same day** (`mass_at_3A_proper.py`:
+"DE-WIRED 2026-06-29: proven leading δ, not posited subleading"), moving the
+canonical path onto `flavor_split_leading`. The code moved; this audit and the
+docstrings did not.
+
+**The code is right and the prose was wrong.** `flavor_split_subleading` is
+explicitly POSITED — its own docstring says the `(1+ℏ_q³)` multiplier "has no
+derivation" and supplies only 76% of the gap — while `flavor_split_leading` is
+what `prop:flavor-split-substrate` actually proves. So the de-wire was correct
+and this is a documentation defect, not a numerical one.
+
+### Docstrings corrected 2026-08-09 (prose only, no numerical change)
+
+Every one of these named `flavor_split_subleading` while the code beside it
+called `flavor_split_leading`; **none of them had a real subleading call site**:
+
+```
+chi_cd_mpfr.py:20              closed_form_tau_M.py:64, 173, 273
+canonical_braid_crossings.py:45   mass_at_3A_proper.py:284
+markov/markov_peel.py:78       chi_monotone_transfer.py:40, 91
+tr_m_atom_via_transfer.py:90
+```
+
+### STILL SPLIT AT THE CODE LEVEL — not corrected here, needs an owner call
+
+These do call `flavor_split_subleading` at runtime, so they compute a p-n
+interface `d` that differs from the canonical path's:
+
+```
+tr_m_algebraic_q.py:162
+binding_bring_enhancement_compare.py:61
+probes/binding_color_vs_charge_tn3he_perknot_rerun.py:94, 119
+probes/interface_factor_enhancing_check_probe.py:36
+probes/bring_color_weighted_base_scale_probe.py:58
+```
+
+Measured size of the disagreement:
+
+```
+δ_leading     = 0.0013757108070271
+δ_subleading  = 0.0013770489659926
+d_leading     = -0.1044582477697263
+d_subleading  = -0.1044581778307480
+separation    = 6.9939e-08        effect on B(²H) = 7.4e-07 MeV
+```
+
+Left alone deliberately: several of these are *comparison* probes where using
+the other convention may be the point. Each needs reading before changing.
+
+### The whitelist tolerates both — and can tell them apart
+
+`chi_monotone_transfer.word_to_mpfr` re-identifies a crossing against **all**
+live δ conventions (`_color_weight_deltas`) and rebuilds `d` from whichever
+matches, with `_TOL = 1e-9`. The two candidates are separated by 6.99e-8 =
+**69.9 × _TOL**, so the match is unambiguous and no silent mis-identification is
+possible. That is why the split has not produced a visible failure.
+
+### Two further alignment findings, on the same question
+
+1. **Only the p-n bond is averaged at all.** `_X_PP = (1, 0)` is pure σ and
+   `_X_NN = (1, −h)` is pure σ⁻¹ — unaveraged. If averaging over an internal
+   degree of freedom is physically warranted it should apply to all three bonds.
+   Applying the averaged template uniformly makes `L_pp = L_pn = L_nn`, which
+   **satisfies charge independence and sends the ³H/³He mirror splitting to
+   exactly 0** (removing the 2.2708 MeV artifact, against nature's 0.7638 —
+   mostly Coulomb). It does not move the magnitude: `B(²H) = 3.890455`, +74.9%.
+2. **"Colour-weighted" is a misnomer.** δ is `Δm/M_N`, the neutron–proton mass
+   splitting — a **flavour** (isospin) quantity. No SU(3) colour averaging
+   appears anywhere in the trace. The `½` is a plain σ/σ⁻¹ midpoint and `δ/4` a
+   small isospin tilt on it. (This bullet originally called the trace "the
+   N = 2 (SU(2)/Temperley–Lieb) Ocneanu member". **CORRECTED 2026-08-09** — see bean `qou-qlma` and `computations/y_lambda_su_n.py`: this is convention **C** (full-Hecke Ocneanu), NOT Temperley–Lieb. TL/SU(2) is convention **D** at `z = q³/(q²+1) = 0.6126880`; `D ≠ C` is Lean-proved and they differ by 195.8 ppm on `β_Bor`. C has `y_(1³) = 0.0227 ≠ 0`, so it does not carry the N=2 row cap, and it matches **no integer N** (effective N = 2.5995).)
+
+### 2026-08-09 follow-up: the split is REAL and PRINCIPLED, not just drift
+
+The "STILL SPLIT AT THE CODE LEVEL" list above was worked through. Eight files
+were switched to `flavor_split_leading` and each verified to exit 0 afterwards:
+
+```
+tr_m_algebraic_q.py                                binding_bring_enhancement_compare.py
+binding_color_vs_charge_tn3he.py                   binding_combiner_markov_peel_fallback.py
+sweeps/mass_table_bring_phi_q_h4_sweep.py          probes/interface_factor_enhancing_check_probe.py
+probes/bring_color_weighted_base_scale_probe.py    probes/binding_color_vs_charge_tn3he_perknot_rerun.py
+```
+
+**Two files were deliberately NOT switched, and this is the substantive finding.**
+Both hid behind an aliased import (`from _li_2_q_util import
+flavor_split_subleading as _flavor_split`), which is why the first pass missed
+them — the same rename-evasion `f64_into_mpmath_audit` exists to catch.
+
+* `m_p_borromean_verification_50dps.py:347` carries a **regression gate**:
+  `substrate_flavor_split_ratio_within_1000ppm_of_codata`, `tolerance = 1000.0`
+  ppm, comment "current value ~305 ppm". Subleading gives 0.0305 % = 305 ppm and
+  passes; leading gives 0.128 % = **1280 ppm and would FAIL the gate**.
+* `atomic_mass_via_rho_k.py:121` derives `m_n = m_p·(1 + δ)` and says so
+  explicitly ("with (1+ℏ_q³) sub-leading correction"). Switching would move m_n
+  by ~0.1 %, i.e. ~1 MeV.
+
+**So the corpus is split for a reason, and the two halves are each right for
+their purpose:**
+
+| path | δ | why |
+|---|---|---|
+| trace / binding | `leading` | PROVENANCE — `prop:flavor-split-substrate` proves only the leading form; the subleading `(1+ℏ_q³)` is admittedly posited |
+| nucleon mass / flavour-split gate | `subleading` | ACCURACY — only it lands inside the 1000 ppm CODATA gate (305 vs 1280 ppm) |
+
+That is a genuine tension, not drift: the framework currently trades provenance
+against accuracy depending on which consumer is asking, and **nothing in the
+corpus states this**. It is also the sharpest available statement of what the
+posited `(1+ℏ_q³)` is buying — 4× on Δm/M_N, and a passing gate.
+
+Resolving it means deriving the subleading correction (the open
+Archimedean-mass-functor R&D that `flavor_split_subleading`'s own docstring
+already points to: "should be DERIVED from the 3-strand / 3-quark (spectator)
+categorical structure, not as an ℏ_q-power fit"). Until then the split should be
+DOCUMENTED where each side is used, not silently unified in either direction.

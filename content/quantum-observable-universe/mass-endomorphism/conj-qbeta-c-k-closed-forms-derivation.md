@@ -1,6 +1,6 @@
 ## Derivation paths
 
-Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-path.md`](../../../docs/audits/-qbeta-ladder-closure-path.md)):
+Three formal derivation paths stand open:
 
 1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
 2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The Hecke–KLR bridge supplies scaffolding ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)). We require the explicit per-block trace formula.
@@ -8,13 +8,14 @@ Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-pa
 
 ## Precision
 
-The baseline $\mathfrak{Q}_\beta$ categorical prediction achieves a $+6.02$ ppb residual at $N=3$ **against the muon-anchored (ideal-math) $q_0$**. This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin; under the **experimental (proton-pinned) $q_0$** — the operative L2 convention — $\mathfrak{Q}_\beta$ currently **misses the 7.8 ppb L2 target by $\approx 164\times$** (per the L2 dashboard). The higher-order corrections ($c_4$ to $c_7$) were tuned to the muon-anchored ladder; their proton-anchored precision is open, not established.
+The baseline $\mathfrak{Q}_\beta$ categorical prediction achieves a $+6.02$ ppb residual at $N=3$ **against the muon-anchored (ideal-math) $q_0$**. That figure is computed against the muon anchor; under the **experimental (proton-pinned) $q_0$** — the operative
+convention — $\mathfrak{Q}_\beta$ currently **misses the 7.8 ppb accuracy target by $\approx 164\times$**. The higher-order corrections ($c_4$ to $c_7$) were tuned to the muon-anchored ladder; their proton-anchored precision is open, not established.
 
 Under the three-calibration discipline, we flag these empirical fits as conditional inputs. Any prediction relying on them must declare this dependency explicitly.
 
 ## Evidence
 
-Direct SDP-$T_\beta$ extraction at 50 decimal places precisely reproduces the conjectured $c_k$:
+Direct SDP-$T_\beta$ extraction at 50 decimal places reproduces the conjectured $c_k$:
 
 ```text
 c_2 extracted = -1.0171   (vs framework -1)

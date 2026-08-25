@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-q-alg-9601025v2",
+ "source_sha256": "369b0a1a92ce67a8",
+ "brief": "The hyperbolic volume of knots from the quantum dilogarithm — The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N .",
+ "extended": "**The hyperbolic volume of knots from the quantum dilogarithm**\n\n*ENSLyon, 46 Allée d’Italie*\n\n8 pp, 10 sections.\n\n**Abstract.** The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N . By the analysis of particular examples it is argued that for a hyperbolic knot (link) the absolute value of this invariant grows exponentially at large N , the hyperbolic volume of the knot (link) complement being the growth rate. ENSLAPP-L-577/96 ∗ On leave of absence from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA † URA 14-36 du CNRS, associ´ ee ` a l’E.N.S. de Lyon, au LAPP d’Annecy et ` a l’Universit` e de Savoie 1\n\n**Outline.** Abstract; 1 Introduction; 2 The quantum invariant for three hyper-; 3 The classical limit; 3.1 Knot 41 (ﬁgure-eight knot); 3.2 Knot 52; 3.3 Knot 61; 4 Summary; 5 Acknowlegements; References",
+ "tokens": {
+  "brief": 45,
+  "extended": 234
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-the-quantum-invariant-for-three-hyper",
+   "title": "The quantum invariant for three hyper-",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-3-the-classical-limit",
+   "title": "The classical limit",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-31-knot-41-ﬁgure-eight-knot",
+   "title": "Knot 41 (ﬁgure-eight knot)",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-32-knot-52",
+   "title": "Knot 52",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-33-knot-61",
+   "title": "Knot 61",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-007-4-summary",
+   "title": "Summary",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-5-acknowlegements",
+   "title": "Acknowlegements",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "7-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

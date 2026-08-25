@@ -63,14 +63,19 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE / "hecke"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _constants():
     from q_parameter import Q as q0, HA as h
     from codata_constants import M_E_MEV as me
     q0, h, me = float(q0), float(h), float(me)
-    z = 1.0 / (q0 ** 0.5 + q0 ** (-0.5))
+    z = q0**3 / (q0**2 + 1)
     try:
         from canonical_braid_crossings import _avg_color_delta
         delta = float(_avg_color_delta())
@@ -93,22 +98,41 @@ def main() -> int:
     # Derived per-bond binding energy E_0·log(1/f)  [MeV].
     e_bond = {k: E0 * math.log(1.0 / v) for k, v in f.items()}
 
-    # Bar-conjugate factors  \check{f} = f(q→q⁻¹).  Under the bar involution
-    # z→z (z = 1/(q^½+q^{-½}) is bar-symmetric) and h→−h, so the inter-nucleon
-    # crossing's conditional expectation conjugates as c·z + d → c·z − d_h-part.
+    # Bar-conjugate factors  \check{f} = f(q→q⁻¹), and h→−h.
+    #
+    # CORRECTED 2026-08-24 (qou-cds1).  This block used to assert
+    # "z→z (z = 1/(q^½+q^{-½}) is bar-symmetric)" and set f_bar["pp"] = z.
+    # That is a **convention-C-only** fact.  `z` at the top of this function is
+    # convention D (`q**3/(q**2+1)`), and under D the bar involution does NOT
+    # fix z.  Proved symbolically (sympy, exact):
+    #
+    #     z_D - h  =  q^3/(q^2+1) - (q^2-1)/q  =  1/(q^3 + q)
+    #     bar(z_D) =  z_D(q -> 1/q)            =  1/(q^3 + q)
+    #     => bar(z_D) = z_D - h   EXACTLY, identically in q   (and z/(z-h) = q^4)
+    #
+    # Under C it is the other identity that holds: bar(z_C) = z_C, and
+    # z_C - h != bar(z_C).  The two conventions swap which one is true, so the
+    # old comment was correct when written and became wrong when `z` migrated.
+    #
+    # Consequence worth noting: under D the bar involution **exchanges the pp
+    # and nn channels** -- bar(f_pp) = bar(z) = z - h = f_nn, and
+    # bar(f_nn) = bar(z - h) = bar(z) + h = z = f_pp.  So the pp and nn
+    # bar-norms coincide, which they did not under C.
+    #
     # This is the archimedean NORM tr_M·\check{tr}_M (owner: use the bar product,
     # NOT |·|).  δ assumed bar-symmetric (tiny, 0.0014).
+    z_bar = z - h                      # = bar(z) = 1/(q^3+q) under convention D
     f_bar = {
-        "pp": z,                       # bar-symmetric
-        "nn": z + h,                   # z − (−h)
-        "pn": z + h * (0.5 - delta / 4.0),
+        "pp": z_bar,                   # bar(z)
+        "nn": z_bar + h,               # = z   (bar exchanges pp <-> nn under D)
+        "pn": z_bar + h * (0.5 - delta / 4.0),
     }
     # Bar-norm per-bond factor |f|²_bar = f·\check{f}, and the magnitude
     # |tr|_bar = sqrt(tr·\check{tr}) gives per-bond energy (E_0/2)·log(1/(f·f̄)).
     f_norm = {k: f[k] * f_bar[k] for k in f}
     e_bond_bar = {k: 0.5 * E0 * math.log(1.0 / v) for k, v in f_norm.items()}
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = {(r["Z"], r["N"]): r for r in bc["data"]["results"]
            if r.get("status") == "solved"}
 
@@ -177,6 +201,7 @@ def main() -> int:
 
     w = WitnessBuilder("derived-bond-graph-binding", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional "
         "expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, "

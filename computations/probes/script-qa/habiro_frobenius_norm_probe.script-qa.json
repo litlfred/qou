@@ -1,0 +1,66 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/probes/habiro_frobenius_norm_probe.py",
+  "language": "python",
+  "source_hash": "46a12504b1e6",
+  "updated_at": "2026-08-12T10:22:00.000Z",
+  "references": [
+    "conj:motivic-perpetual-obstruction",
+    "def:motivic-galois-character",
+    "habiro2004cyclotomic"
+  ],
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": { "ts": "46a12504b1e6" },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "283c8830-0d4e-4766-8876-74c7160d80f5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-12T10:22:00.000Z",
+        "evidence": "All arithmetic is exact sympy Poly over Z[u]/Phi_n(u). No float/mpmath used for computation, only for display."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": { "ts": "46a12504b1e6" },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "283c8830-0d4e-4766-8876-74c7160d80f5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-12T10:22:00.000Z",
+        "evidence": "Module docstring, function docstrings, inline comments on algorithm steps."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": { "ts": "46a12504b1e6" },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "283c8830-0d4e-4766-8876-74c7160d80f5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-12T10:22:00.000Z",
+        "evidence": "References conj:motivic-perpetual-obstruction, def:motivic-galois-character, habiro2004cyclotomic in docstring and sidecar."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": { "ts": "46a12504b1e6" },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "283c8830-0d4e-4766-8876-74c7160d80f5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-12T10:22:00.000Z",
+        "evidence": "No mpmath import, no mpf usage. Computation is pure sympy algebraic."
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0209324v1",
+ "source_sha256": "ae2ea5024a0a45e8",
+ "brief": "Cyclotomic completions of polynomial rings — The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which arises from",
+ "extended": "**Cyclotomic completions of polynomial rings**\n\n18 pp, 24 sections.\n\n**Abstract.** The main object of study in this paper is the completion Z[q]N = lim←− n Z[q]/ ((1− q)(1− q2)···(1− qn)) of the polynomial ring Z[q], which arises from the study of a new invariant of integral hom ology 3- spheres with values in Z[q]N announced by the author, which uniﬁes all the sl2 Witten-Reshetikhin-Turaev invariants at various roots of unity. We show that any element of Z[q]N is uniquely determined by its power series expansion in q− ζ for each root ζ of unity. We also show that any element of Z[q]N is uniquely determined by its values at the roots of unity. These results may be interpreted that Z[q]N behaves like a ring of “holomorphic functions deﬁned on the set of the roots of unity”.\n\n**Outline.** 2 KAZUO HABIRO; 1 Introduction; 4 KAZUO HABIRO; 2 Preliminaries; 6 KAZUO HABIRO; 3 Monic completions of polynomial rings; 3.1 Deﬁnitions and basic properties. For a rin; 3.2 Injectivity of the homomorphism ρR; 8 KAZUO HABIRO; 4 Injectivity of ρR; 10 KAZUO HABIRO; 5 Expansions at roots of unity; 12 KAZUO HABIRO; 6 V alues at roots of unity; 14 KAZUO HABIRO; 7 Remarks; 7.1 Units in Z[q]S. If R is a ring and S ⊂ MR ; 7.2 A localization of Z[q]N. In some applicati\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.2: states that if S′⊂ S⊂ N are subsets such that for any n∈ S\n- Theorem 3.4: If R is a ring and M0≺ M⊂M R, then the homomorphism\n- Theorem 3.4: Corollary 3.5. If R is a ring, and M ⊂M R is a ⇒R-connected subset,\n- Theorem 5.2: Let R be an integral domain of characteristic 0 and let Z⊂\n- Theorem 5.2: Theorem 5.4. Let R be an integral domain of characteristic 0, S⊂ N a\n- Theorem 6.1: Let R be a subring of the ﬁeld ¯Q of algebraic numbers,",
+ "tokens": {
+  "brief": 49,
+  "extended": 441
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-4-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-6-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-3-monic-completions-of-polynomial-rings",
+   "title": "Monic completions of polynomial rings",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-31-deﬁnitions-and-basic-properties-for-a-ring-r",
+   "title": "Deﬁnitions and basic properties. For a ring R letMR denote the",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-007-32-injectivity-of-the-homomorphism-ρr",
+   "title": "Injectivity of the homomorphism ρR",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-8-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-009-4-injectivity-of-ρr",
+   "title": "Injectivity of ρR",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-010-10-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-011-5-expansions-at-roots-of-unity",
+   "title": "Expansions at roots of unity",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-012-12-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-013-6-v-alues-at-roots-of-unity",
+   "title": "V alues at roots of unity",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-014-14-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-015-7-remarks",
+   "title": "Remarks",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-016-71-units-in-zqs-if-r-is-a-ring-and-s-mr-is-a-sub",
+   "title": "Units in Z[q]S. If R is a ring and S ⊂ MR is a subset consisting",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-017-72-a-localization-of-zqn-in-some-application-2-i",
+   "title": "A localization of Z[q]N. In some application [2], it will be natural",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-018-16-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-019-73-modules-we-can-deﬁne-cyclotomic-completions-a",
+   "title": "Modules. We can deﬁne cyclotomic completions also for any Z-modules",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-020-74-non-surjectivity-of-ρz",
+   "title": "Non-surjectivity of ρZ",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-021-75-the-ring-qqs-the-structure-of-qqs-for-s-n-is",
+   "title": "The ring Q[q]S. The structure of Q[q]S for S⊂ N is quite contrasting",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-023-18-kazuo-habiro",
+   "title": "KAZUO HABIRO",
+   "pages": "18-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

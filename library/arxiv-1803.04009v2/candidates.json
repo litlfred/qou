@@ -1,0 +1,110 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1803.04009v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8b34299b739cd2b0c5b91d5d0a684865020c3a5936671ef4ed089611a39645d0",
+  "file": "1803.04009v2.pdf"
+ },
+ "provenance": {
+  "title": "Prepared for submission to JHEP IPMU-18-0045",
+  "authors": "Symmetry enhancement and closing of knots in",
+  "arxiv": {
+   "id": "1803.04009",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Mar 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "example": 5,
+   "conjecture": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "N =S3\\41 =m004 with an ideal triangulation with 2 tetrahedraHere",
+   "section_file": "sections/sec-000-1-introduction-and-summary.md",
+   "section_title": "Introduction and Summary",
+   "pages": "2-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "N =S3\\41 =m004 with an ideal triangulation with 6 tetrahedraThe",
+   "section_file": "sections/sec-000-1-introduction-and-summary.md",
+   "section_title": "Introduction and Summary",
+   "pages": "2-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "N = S3\\41 = m004 and A = \u00b5 In the case, the merdian cycle\u00b5 is non-",
+   "section_file": "sections/sec-002-3-symmetry-enhancement.md",
+   "section_title": "Symmetry enhancement",
+   "pages": "27-41",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "As depicted in \ufb01gure 6, topologically(S3\\41)\u22125\u00b5+\u03bb = (S3\\52)5\u00b5+\u03bb. Combin-",
+   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
+   "section_title": "Small hyperbolic manifolds",
+   "pages": "41-51",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "the 3d index is topological invariant (A.22)",
+   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
+   "section_title": "Small hyperbolic manifolds",
+   "pages": "41-51",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "(S3\\41)\u22125\u00b5+\u03bb = (S3\\52)5\u00b5+\u03bb The indices for two knot complements are",
+   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
+   "section_title": "Small hyperbolic manifolds",
+   "pages": "41-51",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

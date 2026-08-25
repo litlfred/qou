@@ -93,7 +93,7 @@ structure CatHodgeInvolution {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- A morphism `f : Y ⟶ X` is **self-dual** w.r.t. a categorical Hodge
     involution if `f ≫ ⋆ = f`, i.e. `f` lands in the `+1`-eigenspace. -/
-def IsSelfDual {C : Type u} [CategoryTheory.Category.{v} C]
+def CatHodgeInvolution.IsSelfDual {C : Type u} [CategoryTheory.Category.{v} C]
     {X : C} (h : CatHodgeInvolution X) {Y : C} (f : Y ⟶ X) : Prop :=
   f ≫ h.star = f
 
@@ -106,7 +106,7 @@ structure HodgeInvolution (V : Type*) where
   star_sq : ∀ v, star (star v) = v
 
 /-- An element `v : V` is **self-dual** if `⋆(v) = v`. -/
-def IsSelfDual {V : Type*} (h : HodgeInvolution V)
+def HodgeInvolution.IsSelfDual {V : Type*} (h : HodgeInvolution V)
     (v : V) : Prop :=
   h.star v = v
 

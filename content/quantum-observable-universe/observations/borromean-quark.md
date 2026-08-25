@@ -66,4 +66,4 @@ $$
   +  \sum_k Q_k(q)\mathfrak{m}(\mathcal{L}_H).
 $$
 
-In the Borromean picture, $\mathfrak{m}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathfrak{m}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. The assertion that the vast majority of hadronic mass derives from Skein polynomials multiplying the Hopf link mass perfectly aligns with the Borromean volume contributing through the Skein resolution.
+In the Borromean picture, $\mathfrak{m}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathfrak{m}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. This is consistent with the Borromean volume entering the hadronic mass through the Skein resolution.

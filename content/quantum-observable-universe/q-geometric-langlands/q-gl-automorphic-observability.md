@@ -3,8 +3,8 @@ connects the $q$-Geometric Langlands correspondence to the
 observability axiom of the QOU
 ([quantum observable universe](#def:quantum-observable-universe)).
 Concretely, the correspondence is a dictionary between gauge
-configurations and matter content, and the burden of this section
-is that observability forces that dictionary to be unique.
+configurations and matter content, and observability forces that
+dictionary to be unique.
 
 The observability condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ constrains the adjoint representation and thereby the fibre functor $\tau$. Because $\tau$ uniquely determines $\mathbb{L}_q$, the automorphic--spectral duality follows from observability. Relaxing observability reintroduces adjoint cohomology. The obstruction classes $\kappa_n$ interact with this cohomology to produce additional obstructions to the equivalence ([fibre-functor rigidity](#rem:fibre-functor-rigidity)).
 
@@ -19,6 +19,6 @@ quantum-corrected gauge/matter duality, with the classical
 Langlands programme recovered in the semiclassical limit
 $\hbar_q \to 0$.
 
-**Uniqueness from observability.** Observability is exactly what makes the
-$q$-Langlands equivalence unique — there is one dual pairing
-between gauge and matter, and it is forced, not chosen.
+**Uniqueness from observability.** Observability is what makes the
+$q$-Langlands equivalence unique: it forces a single dual pairing
+between gauge and matter.

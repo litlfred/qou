@@ -39,14 +39,17 @@ class EllipticStabilityLocus : Prop where
   weierstrass_form : WeierstrassFormHolds
   integer_point_identification : IntegerPointIdentificationHolds
 
-axiom elliptic_stability_locus_weierstrass_form : WeierstrassFormHolds
-axiom elliptic_stability_locus_integer_point_identification : IntegerPointIdentificationHolds
-
--- Ref: [manuscript] conj:elliptic-stability-locus
-instance elliptic_stability_locus_conjecture : EllipticStabilityLocus where
-  -- Witness: computations/none
-  weierstrass_form := elliptic_stability_locus_weierstrass_form
-  -- Ref: [manuscript]
-  integer_point_identification := elliptic_stability_locus_integer_point_identification
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance elliptic_stability_locus_conjecture : EllipticStabilityLocus where
+--     axiom elliptic_stability_locus_weierstrass_form : WeierstrassFormHolds
+--     axiom elliptic_stability_locus_integer_point_identification : IntegerPointIdentificationHolds
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[EllipticStabilityLocus]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[EllipticStabilityLocus]` as an explicit hypothesis.
 
 end QOU.EllipticStabilityLocus

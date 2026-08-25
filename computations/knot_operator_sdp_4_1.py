@@ -43,7 +43,7 @@ from hecke_characters import build_seminormal_matrices  # noqa: E402
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q = float(mp.mpf(Q_50_DIGIT_STR))
     h = q - 1.0/q
 

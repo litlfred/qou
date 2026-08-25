@@ -50,7 +50,7 @@ along $q \to 1$, $n \to \infty$, and $n(1-q) \to \infty$. The file adds:
 
 ## Closed content
 
-The three class hooks provide named carrier infrastructure. The synthesis class `HasAllSubstantiveFillers F` provides a single hypothesis for downstream blocks. The consistency theorem confirms the synthesis is well-formed.
+The three class hooks provide named carrier infrastructure. The synthesis class `HasAllSubstantiveFillers F` provides a single hypothesis for downstream results. The consistency theorem confirms the synthesis is well-formed.
 
 ## Remaining content
 

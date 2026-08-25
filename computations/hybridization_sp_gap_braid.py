@@ -56,7 +56,7 @@ for _p in (str(_HERE),
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 from q_parameter import Q as q0
-from mass_at_3A_proper import _cached_seminormal
+from mass_at_3A_proper import _cached_seminormal, Q0_PROTON
 
 
 def is_palindrome(w):
@@ -80,7 +80,7 @@ def main() -> None:
     print(f"      p-electron chiral    {p_word}: palindrome={p_pal} ⇒ "
           f"NOT self-dual ⇒ ℓ≥1 (p), standard-block character")
     # the self-dual s on the symmetric (self-dual) block is real = q^3
-    sig, dim, _ = _cached_seminormal((3,))
+    sig, dim, _ = _cached_seminormal((3,), Q0_PROTON)
     Ms = np.eye(dim)
     for g in s_word:
         Ms = Ms @ sig[g]

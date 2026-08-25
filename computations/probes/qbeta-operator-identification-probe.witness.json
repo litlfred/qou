@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:34:09.884235+00:00",
-  "commitSha": "0c24a8509a2a2637cd425ce27e29b31ef3fdb081",
+  "computedAt": "2026-08-23T21:12:02.003676+00:00",
+  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
   "assertions": [
     {
       "name": "path_1_attempted",
@@ -14,14 +14,36 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 16,
   "computation": "qbeta-operator-identification-probe",
   "scriptFile": "qbeta_operator_identification_probe.py",
-  "scriptHash": "400e18c155e4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2a9abdb17a6d",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_operator_identification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_operator_identification_probe.py"
+  },
   "description": "Path 1 (operator-identification on V_(2,1) at H_3) for the Q_β precision-ladder. NEGATIVE RESULT: no candidate operator on V_(2,1) matches the empirical c_3..c_7 via Markov trace. Suggests the c_k come from multi-level Hecke embeddings or spectral-sequence stratification, not from V_(2,1) alone.",
   "parameters": {
-    "q_0": "1.1099785955541805753"
+    "q_0": "1.1099785955573347199"
   },
   "data": {
     "path_1_outcome": "negative — operator not identified on V_(2,1)",
@@ -29,6 +51,16 @@
       "Path 1-extended: search at higher Hecke levels H_n, n > 3",
       "Path 2: Khovanov-Rozansky bigraded polynomial at finite q",
       "Path 3: spectral sequence on Wedderburn-block stratification"
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+      }
     ]
   }
 }

@@ -43,10 +43,10 @@ structure Cell where
 deriving DecidableEq, Repr
 
 /-- Cell content `c(r, col) = col - r ∈ ℤ`. -/
-def content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
+def Cell.content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
 
 /-- The transpose of a cell: swap row and column. -/
-def transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
+def Cell.transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
 
 /-- The transpose involution is involutive: `(x.transpose).transpose = x`. -/
 @[simp] theorem Cell.transpose_transpose (x : Cell) :
@@ -73,11 +73,11 @@ structure PartitionWithCells where
 deriving Repr
 
 /-- The **content sum** of a partition is `Σ_{x ∈ λ} c(x)`. -/
-def content_sum (P : PartitionWithCells) : ℤ :=
+def PartitionWithCells.content_sum (P : PartitionWithCells) : ℤ :=
   (P.cells.map Cell.content).sum
 
 /-- The **transpose** of a partition: transpose every cell. -/
-def transpose (P : PartitionWithCells) :
+def PartitionWithCells.transpose (P : PartitionWithCells) :
     PartitionWithCells :=
   ⟨P.cells.map Cell.transpose⟩
 
@@ -89,10 +89,10 @@ def transpose (P : PartitionWithCells) :
     content, so the two list-sums sum to zero. -/
 -- Ref: [manuscript] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,
 -- bar-involution invariant by construction"
-theorem content_sum_plus_transpose_content_sum_eq_zero
+theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :
     P.content_sum + P.transpose.content_sum = 0 := by
-  unfold content_sum transpose
+  unfold PartitionWithCells.content_sum PartitionWithCells.transpose
   rw [List.map_map]
   rw [show (Cell.content ∘ Cell.transpose) =
         (fun x => -x.content) by

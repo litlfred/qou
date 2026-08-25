@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1911.04486v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "53a34938c0e63bad6df81120d02fdf2e66716b71c608f25c3ddf8ce0419db5ba",
+  "file": "1911.04486v4.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": {
+   "id": "1911.04486",
+   "version": "4",
+   "primary_class": "physics.class-ph",
+   "stamp_date": "14 Apr 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

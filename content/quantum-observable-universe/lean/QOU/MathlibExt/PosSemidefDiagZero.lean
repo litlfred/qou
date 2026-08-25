@@ -137,7 +137,7 @@ private theorem quadratic_form_two_index
     `i = j` case is `C_ii² ≤ C_ii²`.  Previously an `axiom` pending
     the Mathlib principal-submatrix-PSD API; now discharged. -/
 -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
-theorem PosSemidef.entry_sq_le_diag_mul
+theorem Matrix.PosSemidef.entry_sq_le_diag_mul
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     (i j : Fin n) :
     (C i j) ^ 2 ≤ C i i * C j j := by
@@ -161,7 +161,7 @@ theorem PosSemidef.entry_sq_le_diag_mul
     (canonical basis vectors).  PSD implies `v^T · C · v ≥ 0`.
     Expanding gives `2 t · C i j + t² · C j j ≥ 0` for all `t`.
     Discriminant ≤ 0 ⟹ `(C i j)² ≤ 0 · C j j = 0` ⟹ `C i j = 0`. -/
-theorem PosSemidef.entry_zero_of_diag_zero
+theorem Matrix.PosSemidef.entry_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) (j : Fin n) :
     C i j = 0 := by
@@ -190,14 +190,14 @@ theorem PosSemidef.entry_zero_of_diag_zero
 
 /-- **PSD row-zero from diagonal-zero**: if `C_ii = 0` and `C` is
     PSD, then the i-th row is zero. -/
-theorem PosSemidef.row_zero_of_diag_zero
+theorem Matrix.PosSemidef.row_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) : ∀ j : Fin n, C i j = 0 :=
   fun j => Matrix.PosSemidef.entry_zero_of_diag_zero hC h_diag j
 
 /-- **PSD col-zero from diagonal-zero**: by symmetry of PSD
     matrices, the i-th column is also zero. -/
-theorem PosSemidef.col_zero_of_diag_zero
+theorem Matrix.PosSemidef.col_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) : ∀ j : Fin n, C j i = 0 := by
   intro j

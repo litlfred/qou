@@ -6,4 +6,4 @@ Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with $\chi(A) = -6$ and fi
 2. $K$ admits a localized knot structure $(c, K) \in \mathrm{Hom}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}$ at some point $c$.
 3. The localized knot $(c, K)$ descends under $\tau$ to an observable morphism in $\mathbf{C}$: every generated particle interacts with every other generated particle via the categorical braiding.
 
-No generated knot is "dark"—the generation scheme is closed under observability.
+The generation scheme is thus closed under observability.

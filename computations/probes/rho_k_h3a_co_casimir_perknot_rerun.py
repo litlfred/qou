@@ -6,8 +6,8 @@
 Protocol: docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md §Next item 1.
 Question: is the co-Casimir refutation (residual −2.30 MeV, "wrong sign",
 rescaler ≈ −30) an artifact of the fitted global λ_A density
-(`vol_density_borromean`, p=n-degenerate, ≈ 2.533), or robust under the
-canonical PER-KNOT density `vol_density_per_block(Vol(𝓑₃), tr_M(K), q₀)`
+(`per_knot_density_borromean`, p=n-degenerate, ≈ 2.533), or robust under the
+canonical PER-KNOT density `per_knot_density_per_block(Vol(𝓑₃), tr_M(K), q₀)`
 with p ≠ n-distinct Markov traces (tr_M(p) ≈ 1.0653, tr_M(n) ≈ 0.9232,
 loaded from the chi-{atom}-h3-at-q0-50dps chi-cache witnesses)?
 
@@ -21,8 +21,8 @@ residual M(D) − M_pred).  This rerun therefore holds the sum fixed
 across three densities, like-for-like:
 
   1. CODATA (the parent script's actual baseline — measured-equivalent),
-  2. global λ_A     : m_p = m_n = m_e · vol_density_borromean(q₀)  ≈ 966,
-  3. per-knot tr_M  : m_N = m_e · vol_density_per_block(8G, tr_M(N), q₀)
+  2. global λ_A     : m_p = m_n = m_e · per_knot_density_borromean(q₀)  ≈ 966,
+  3. per-knot tr_M  : m_N = m_e · per_knot_density_per_block(8G, tr_M(N), q₀)
                       (proton ≈ 406, neutron ≈ 352 — p ≠ n distinct).
 
 Same q₀ (canonical muon-q₀, q_parameter.Q_MP = the computations/-layer
@@ -61,8 +61,13 @@ from codata_constants import M_E_MEV, M_P_MEV, M_D_MEV  # noqa: E402
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
-from _li_2_q_util import vol_density_per_block, vol_density_borromean  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+from _li_2_q_util import per_knot_density_per_block, per_knot_density_borromean  # noqa: E402
 
 VOL_B3 = 8 * mp.catalan  # Vol(𝓑₃), Adams 1985 — same constant the density routines use
 
@@ -127,8 +132,7 @@ def main() -> int:
     print(f"  Σ y_λ χ^λ Δ_λ^B (density-independent)       = {mp.nstr(sum_contrib, 12)}")
 
     # Cross-check against the parent's committed witness value.
-    parent_w = json.loads(
-        _pb.witness_path("rho-k-h3a-co-casimir.witness.json", _PARENT).read_text())
+    parent_w = record_upstream(_pb.witness_path("rho-k-h3a-co-casimir.witness.json", _PARENT), _UPSTREAM_RECORDS)
     parent_sum = mp.mpf(
         parent_w["data"]["co_casimir_prediction"]["sum_contributions_signed"])
     sum_match = abs(sum_contrib - parent_sum) < mp.mpf("1e-40")
@@ -146,9 +150,9 @@ def main() -> int:
         warnings.simplefilter("ignore", DeprecationWarning)  # λ_A route is
         # deprecated-for-absolute-mass by design; this rerun uses it ONLY as
         # the refutation-era baseline under audit, not as production mass.
-        m_lambdaA = M_E_MEV * vol_density_borromean(Q_MP)
-    m_p_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_p, Q_MP)
-    m_n_pk = M_E_MEV * vol_density_per_block(VOL_B3, tr_n, Q_MP)
+        m_lambdaA = M_E_MEV * per_knot_density_borromean(Q_MP)
+    m_p_pk = M_E_MEV * per_knot_density_per_block(VOL_B3, tr_p, Q_MP)
+    m_n_pk = M_E_MEV * per_knot_density_per_block(VOL_B3, tr_n, Q_MP)
 
     rep_codata = closure_report("CODATA baseline (parent script, reproduction)",
                                 M_P_MEV, m_n_derived_3input, abs_tr_M, sum_contrib)
@@ -176,6 +180,7 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
 
     wb = WitnessBuilder("rho-k-h3a-co-casimir-perknot-rerun", engine="python+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.data["audit"] = "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md"
     wb.data["bean"] = "x5az"
     wb.data["q_0_50dps"] = mp.nstr(Q_MP, 50)

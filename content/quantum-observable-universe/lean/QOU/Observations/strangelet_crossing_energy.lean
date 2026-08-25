@@ -9,6 +9,20 @@ import QOU.Shared.MarkovTraceClaim
 [`prop:strangelet-crossing-energy`](../../../quantum-observable-universe/observations/strangelet-crossing-energy.md): *QOU.Observations.strangelet_crossing_energy*.
 
 This module states the manuscript claim conditional on the §3b hypothesis class.
+
+## Base ring (§7c) — `ℝ` here is correct
+
+`StrangeletCrossingEnergyContext` extends `QOU.Shared.MarkovTraceContext`,
+which supplies a generic coefficient ring `R`, but this block's fields stay at
+`ℝ`: the binding-energy formulae are hypothesised under `0 < q_real`, and the
+conclusion `E_bind_udd < E_bind_uds` is derived by `inv_pos` + `linarith`.
+Ordering hypotheses and `linarith` are archimedean, so the block sits after the
+substrate→archimedean wall.  Reviewed under bean `qou-mtcx`; do not "port" it
+to `R` to reduce an `ℝ` count.
+
+The private `q_real : ℝ` is genuinely used, but nothing connects it to the
+inherited `q : R` — tying the two would need the archimedean evaluation
+functor, which the parent context does not carry.  Recorded as bean `qou-mt7r`.
 -/
 
 namespace QOU.Observations

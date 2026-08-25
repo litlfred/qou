@@ -109,7 +109,14 @@ theorem bar_even_kernel_implies_radius_of_convergence
   hK.pole_at_u_substrate
 
 /-- **§4(c) lifting**: from the bundle, both q=1 classical-limit
-    shadows hold. -/
+    shadows hold.
+
+    **Assumed, not derived here** — "from the bundle" means projected from
+    it: the body is `⟨hK.c2_shadow, hK.c3_shadow⟩`, both conjuncts carried
+    verbatim as `BarEvenKernel` fields. The lifting is the repackaging, not a
+    derivation of the shadows. `c2`/`c3` are arbitrary functions, so the
+    statement is genuinely conditional and may not be strengthened to a
+    global `axiom`. -/
 -- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1890] https://github.com/litlfred/qou/pull/1890 (Track A)
 def bar_even_kernel_implies_q_one_shadow

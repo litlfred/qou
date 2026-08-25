@@ -1,0 +1,106 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1004.1533v3",
+ "source_sha256": "95c1544431e6bf37",
+ "brief": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners.",
+ "extended": "**TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT**\n\n*BENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR*\n\n39 pp, 17 sections.\n\n**Abstract.** In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. W e demonstrate that this gives an extended TQFT which c onjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this stateme nt.\n\n**Outline.** Introduction; Acknowledgments; 1 Preliminaries I: spherical categories; 2 Preliminaries II: Drinfeld Center; 3 Polytope decompositions; 4 TV invariants from polytope decompositions; 5 Proof of independence of polytope decomposit; Invariance under M1; Invariance under M2; Invariance under M3; 6 Surfaces with boundary; 7 Extended combinatorial surfaces; 8 Invariants of extended 3-manifolds; 9 Some computations; 9.1 Cylinder over an annulus; 9.2 Sphere with n holes; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 248
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-1-preliminaries-i-spherical-categories",
+   "title": "Preliminaries I: spherical categories",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-003-2-preliminaries-ii-drinfeld-center",
+   "title": "Preliminaries II: Drinfeld Center",
+   "pages": "6-10"
+  },
+  {
+   "id": "sec-004-3-polytope-decompositions",
+   "title": "Polytope decompositions",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
+   "title": "TV invariants from polytope decompositions",
+   "pages": "15-20"
+  },
+  {
+   "id": "sec-006-5-proof-of-independence-of-polytope-decompositio",
+   "title": "Proof of independence of polytope decomposition",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-007-invariance-under-m1",
+   "title": "Invariance under M1",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-008-invariance-under-m2",
+   "title": "Invariance under M2",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-009-invariance-under-m3",
+   "title": "Invariance under M3",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-010-6-surfaces-with-boundary",
+   "title": "Surfaces with boundary",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-011-7-extended-combinatorial-surfaces",
+   "title": "Extended combinatorial surfaces",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-012-8-invariants-of-extended-3-manifolds",
+   "title": "Invariants of extended 3-manifolds",
+   "pages": "27-34"
+  },
+  {
+   "id": "sec-013-9-some-computations",
+   "title": "Some computations",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-014-91-cylinder-over-an-annulus",
+   "title": "Cylinder over an annulus",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-015-92-sphere-with-n-holes",
+   "title": "Sphere with n holes",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "38-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

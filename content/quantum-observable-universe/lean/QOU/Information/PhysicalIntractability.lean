@@ -121,11 +121,21 @@ theorem no_poly_bandwidth_decider (B : ℕ) (hB : 0 < B) (info steps : ℕ → �
   obtain ⟨n, hn1, hn⟩ := hinfo c k
   exact ⟨n, hn1, lt_of_lt_of_le hn (steps_lower_bound B hB info steps correct n)⟩
 
+namespace SuperPolynomial
+
 /-- **Super-polynomiality lifts through a lower bound (sorry-free).**  If
-    `g ≤ f` pointwise and `g` is super-polynomial, so is `f`. -/
+    `g ≤ f` pointwise and `g` is super-polynomial, so is `f`.
+
+    Lives in the `SuperPolynomial` namespace so that generalized field
+    notation (`hg.of_le hle`) resolves: dot notation looks up
+    `SuperPolynomial.of_le` on the head constant, and falls through to the
+    unfolded pi-type (`Function.of_le`, which does not exist) if the lemma
+    sits in the ambient `QOU.Information` namespace instead. -/
 theorem of_le {f g : ℕ → ℕ} (hg : SuperPolynomial g)
     (hle : ∀ n, g n ≤ f n) : SuperPolynomial f := fun c k =>
   (hg c k).imp fun n hn => ⟨hn.1, lt_of_lt_of_le hn.2 (hle n)⟩
+
+end SuperPolynomial
 
 /-- **Exponential information ⇒ physical intractability (sorry-free).**  The
     concrete QOU case: if deciding size-`n` instances requires (per bandwidth

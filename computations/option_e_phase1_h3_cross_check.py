@@ -49,7 +49,12 @@ from gram_matrix_seminormal_n import (  # noqa: E402
     gram_matrix_seminormal_block,
     partitions_of_descending,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Pull canonical NF-basis Gram + TR_M from pyhecke.gram
 from pyhecke.gram import G as NF_GRAM_AT_DEFAULT_Q  # noqa: E402
@@ -57,8 +62,28 @@ from pyhecke.gram import TR_M as NF_TR_M_AT_DEFAULT_Q  # noqa: E402
 from pyhecke.gram import NF_NAMES  # noqa: E402
 
 
+# Take q0 from `q_parameter`, NOT by reading the pin witness directly.
+#
+# This cross-check compares a q0-REASSEMBLED Gram matrix against the PUBLISHED
+# `pyhecke.gram` table. Both sides must sit on the same pin or the comparison
+# measures the pin gap instead of the reassembly.
+#
+# Reading `q-pinning-50-digit.witness.json` for the value BYPASSES THE MANIFEST
+# ENTIRELY: that witness is the muon anchor DEFINITION, so this producer took
+# the muon q0 no matter what any manifest said, while `pyhecke.gram` follows
+# the resolved pin. Under the old manifest both happened to be muon and the
+# check passed by coincidence. The 2026-08-19 proton migration moved
+# `pyhecke.gram` and left this line behind, and the check began failing at
+# ~1.6e-8 -- the order of the 11.5 ppb mu-p gap, which is the straddle
+# signature rather than a reassembly error.
+#
+# AGENTS.md: "move the WHOLE quantity to proton rather than leaving one input
+# on each layer." `q_parameter` is the accessor that respects the manifest;
+# the witness is still recorded as an upstream for provenance.
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q0_MP = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)   # provenance only — NOT the value
+from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
+Q0_MP = mp.mpf(_Q50)
 Q0_F64 = float(Q0_MP)
 
 # NF basis indexing: σ_1 = matrices[0], σ_2 = matrices[1] in Hoefsmit
@@ -90,6 +115,7 @@ def main() -> None:
     # Witness builder created up front so durationMs measures actual
     # solve/reassembly time, not just JSON serialisation.
     w = WitnessBuilder(name="option-e-phase1-h3-cross-check", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Option E Phase 1 cross-check: verify that the per-block "
         "Hoefsmit-seminormal data from `gram_matrix_seminormal_block` "

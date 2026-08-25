@@ -22,7 +22,6 @@ export default definition({
   },
   uses: [
     "prop:skein-generation",
-    "rem:knot-particle-dictionary",
     "rem:color-tube-interpretation",
   ],
 });

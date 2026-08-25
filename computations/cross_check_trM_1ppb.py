@@ -56,14 +56,29 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mpmath import mp, mpf, fabs, mpmathify
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).parent
 HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
-PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
+# This gate is muon-canonical (it refuses to run off the muon pin, see the
+# guard in main()), so it must read the MUON peel witness. That is the
+# `-muon` file: `markov_peel_atomic_witness` is tagged `physical_proton`, so
+# its base-name output is proton-built, and six non-anchor-aware consumers
+# depend on that base name — see `_witness_name()` there for why the layers
+# are NOT named the way the bridge witnesses are. Reading the base name here
+# is what made this gate red on `main` (mixed pin, audit 2026-07-18).
+PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m-muon.witness.json", HERE)
 # Third path landed via PR #681's Step 2 + this PR's combiner: the
 # canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
 # chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).
-CHICACHE_PATH = _pb.witness_path("canonical-tr-m-via-chi-cache.witness.json", HERE)
+# MUON companion, matching PEEL_PATH's convention two lines up. The
+# unsuffixed name is the PROTON cache -- this cross-check is declared
+# `ideal_muon` and its guard below refuses a proton-pinned cache, so it
+# must read the muon variant. Produced by
+# `QOU_Q0_ANCHOR=ideal python3 canonical_tr_m_via_chi_cache.py`; the
+# producer now derives its output name from the q0 in force (qou-wn6d).
+CHICACHE_PATH = _pb.witness_path(
+    "canonical-tr-m-via-chi-cache-muon.witness.json", HERE)
 # Fourth path (this PR): direct evaluation of the cyclotomic Habiro
 # series `tr_M = (1/denom) · Σ_m a_m(u) · (u;u)_m` at u_0 = q_0^{1/2}
 # using the coefficients in `habiro-coefficients-extended.witness.json`.
@@ -79,6 +94,15 @@ OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 # (mpfr 50 dps) and Habiro legs are SIGN-ONLY (color-blind): they match peel
 # at A=1 and diverge ~1.8e-4 at A≥2 by the color-weighting, which is expected
 # and reported informationally via TOLERANCE_PEEL, not gated.
+# MUST precede the mpf() literals below. They are parsed at module import, and
+# `mp.dps = args.dps` in main() runs long afterwards — so without this they are
+# built at mpmath's default 15 dps and later PRINT their binary64 expansion:
+#     str(TOLERANCE_PPQ) -> 0.000000000000001000000000000000077705399876661079238307
+# which is what the float64-padding ratchet flags. Built at full precision the
+# same literal serializes as 0.000000000000001. `set_compute_dps` is idempotent
+# and safe alongside the call in main().
+set_compute_dps(50)
+
 TOLERANCE_PPQ = mpf("1e-15")   # L1 gate on the color-weighted exact methods (1 part/quadrillion)
 TOLERANCE_PEEL = mpf("1e-12")  # color-blind-leg informational flag threshold (cb≠)
 TOLERANCE = TOLERANCE_PPQ      # back-compat alias
@@ -202,14 +226,64 @@ def main() -> int:
             f"muon q0 ({mp.nstr(_muon, 12)}). Set QOU_Q0_ANCHOR=ideal — else "
             "peel/chi-cache color-weighting is mixed-pin (audit "
             "2026-07-18-avg-color-delta-q0-pin-mismatch.md).")
-    _peel_q0 = peel.get("parameters", {}).get("q0")
-    if _peel_q0 is not None:
-        _pv = _peel_q0.get("value") if isinstance(_peel_q0, dict) else _peel_q0
-        if fabs(mpf(str(_pv)) - _muon) / _muon > mpf("1e-9"):
+    # (b) EVERY input witness's recorded q0 — not just peel's.
+    #
+    # This checked `peel` alone for a year, and the comment above already
+    # said what it should do ("the peel witness's recorded q0"): one of four
+    # inputs. The gate therefore enforced the pin at the RUNTIME layer, where
+    # it refuses to start off-muon, while silently accepting a committed
+    # INPUT at the other pin — false assurance, since the refusal makes the
+    # run look pin-uniform.
+    #
+    # Measured 2026-08-21 (bean qou-3zby), deuteron |tr_M| at the muon pin:
+    #
+    #   method       convention   pin       vs C@proton
+    #   Hoefsmit         D        muon        —
+    #   chi-cache        D        muon        —
+    #   markov_peel      C        muon      1.82e-04
+    #   Habiro           C       PROTON     2.71e-13   <- exact match
+    #
+    # Habiro IS the convention-C value at the PROTON pin, inside a gate that
+    # raises SystemExit if the RUNTIME pin is proton. It survived because
+    # `habiro-coefficients-extended.witness.json` records no q0 at all, so
+    # there was nothing to compare — and it is not alone: `atomic-tr-m-mpfr-
+    # 50dps` records none either. 1966 of 2681 corpus witnesses (73%) carry
+    # no `q0Anchor`, so "no recorded pin" is the normal case, not an oddity.
+    #
+    # So: verify every input that HAS a recorded q0, and NAME the ones that
+    # do not rather than skipping them silently. An unverifiable input is a
+    # reportable state, not a pass.
+    _pin_inputs = (
+        ("Hoefsmit", hoef),
+        ("markov_peel", peel),
+        ("chi-cache",
+         json.loads(CHICACHE_PATH.read_text()) if CHICACHE_PATH.exists() else None),
+        ("Habiro",
+         json.loads(HABIRO_EXT_PATH.read_text()) if HABIRO_EXT_PATH.exists() else None),
+    )
+    _unverifiable = []
+    for _name, _doc in _pin_inputs:
+        if not isinstance(_doc, dict):
+            continue
+        _rec = _doc.get("q0Value")
+        if _rec is None:
+            _pq = _doc.get("parameters", {}).get("q0")
+            _rec = _pq.get("value") if isinstance(_pq, dict) else _pq
+        if _rec is None:
+            _unverifiable.append(_name)
+            continue
+        if fabs(mpf(str(_rec)) - _muon) / _muon > mpf("1e-9"):
             raise SystemExit(
-                "peel witness was computed at a q0 that is NOT the muon pin "
-                f"({str(_pv)[:18]}… vs {mp.nstr(_muon, 12)}); regenerate it "
-                "under QOU_Q0_ANCHOR=ideal (mixed-pin, audit 2026-07-18).")
+                f"{_name} witness was computed at a q0 that is NOT the muon "
+                f"pin ({str(_rec)[:18]}… vs {mp.nstr(_muon, 12)}); regenerate "
+                "it under QOU_Q0_ANCHOR=ideal (mixed-pin, audit 2026-07-18).")
+    if _unverifiable:
+        print(f"⚠ q0-pin: {len(_unverifiable)} input(s) record no q0 and "
+              f"CANNOT be pin-verified — {', '.join(_unverifiable)}. The "
+              "runtime guard above does not cover them: it constrains this "
+              "process, not the committed witness. Habiro is measured at the "
+              "PROTON pin (bean qou-3zby); stamp these at their producers.",
+              file=sys.stderr)
     # ─────────────────────────────────────────────────────────────────────
 
     # Hoefsmit results: list of dicts, atom name in 'atom'

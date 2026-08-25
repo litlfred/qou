@@ -76,13 +76,13 @@ namespace QOU.BraidsAndKnots
     characteristic is the DT / Behrend-signed count. -/
 
 /-- Graded dimension of `G_λ`: `dim V_λ` concentrated in degree `n(λ)`. -/
-def gradedDim (p : PartitionOf5) (k : ℕ) : ℕ :=
+def PartitionOf5.gradedDim (p : PartitionOf5) (k : ℕ) : ℕ :=
   if k = p.nStat then p.dim else 0
 
 /-- The DT / 3d-index graded Euler characteristic
     `χ(G_λ) = Σ_{k=0}^{n(λ)} (-1)^k · dim (G_λ)_k` — a genuine finite
     alternating sum (the Behrend-weighted count of `𝓑_λ`). -/
-def dtEuler (p : PartitionOf5) : ℤ :=
+def PartitionOf5.dtEuler (p : PartitionOf5) : ℤ :=
   ((List.range (p.nStat + 1)).map
     (fun k => (-1 : ℤ) ^ k * (p.gradedDim k : ℤ))).sum
 

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:silver-ratio-beta-decay-null",
   lean: {
-    ref: "qou:QOU.ParticleInteractions.SilverRatioBetaDecayNull",
+    ref: "qou:QOU.ParticleInteractions.beta_decay_null_iff_h_zero_or_two",
     validation: "not_checked",
   },
   title:

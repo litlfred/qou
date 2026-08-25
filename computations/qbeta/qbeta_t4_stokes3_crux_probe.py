@@ -10,14 +10,51 @@ The linear route S_K = A_ω · κ · (ln²q₀ − ϑ²) is ALIVE.
 """
 import math
 import json
+import sys
+from pathlib import Path
 
-# Substrate
-q0 = 1.11020  # from NZ probe: u_test = 0.209 = 2·ln(q₀)
+# Substrate q₀ — read from the canonical constant, not typed.
+#
+# WAS: `q0 = 1.11020  # from NZ probe: u_test = 0.209 = 2·ln(q₀)`.
+# That literal is WRONG, and the cause is a UNIT CONFLATION rather than a typo.
+# The substrate quantity 0.20906 is `h = q₀ − q₀⁻¹`, not `2·ln q₀`. Solving
+# `2·ln q = 0.209060` yields q = 1.1101889, which matches the old literal to
+# 1.0e-5 relative — whereas the canonical q₀ = 1.1099785827513808 differs from
+# it by 2.0e-4, twenty times larger. Since h = 2·sinh(ln q₀) =
+# 2·ln q₀ + (ln q₀)³/3 + …, the two agree to second order and split at third,
+# which is exactly the observed gap.
+#
+# The literal was also flagged UNTRACEABLE by the no-free-parameter certificate
+# (bean qou-skum) — a bare magic number in arithmetic. Reading the package
+# constant fixes both defects at once.
+_SUB = Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"
+if _SUB.is_dir() and str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+from qou_substrate.constants import Q as _Q  # noqa: E402
+
+q0 = float(_Q)
 ln_q0 = math.log(q0)
 
-# Measured S values (bar-odd leak)
-S_muon = +0.00968298
-S_proton = -0.03945936
+# (The superseded literal 1.11020 is recorded in the comment above rather than
+# as a constant: a bare number kept only for documentation is itself an
+# untraceable literal, and the certificate rightly flagged it when it was one.)
+
+# Measured S values (bar-odd leak) — READ, not typed.
+#
+# These were bare literals, and the certificate flagged them. They are not
+# free parameters: they are S = c_3 + Vol(4_1) at the two anchors, computed by
+# `qbeta_c3_barodd_sleak_probe.py` from the anchor-blind keystone witness. But
+# that probe emitted NO witness of its own, so there was nothing to read and
+# four separate consumers hand-copied a 6-digit printout of it.
+#
+# It now emits `qbeta-c3-barodd-sleak.witness.json`, at the 9 significant
+# digits the c_3 + Vol(4_1) cancellation supports — the subtraction costs
+# ~2.3 decades at the muon anchor, so 12-digit inputs do not give 12-digit S.
+_SLEAK = json.loads(
+    (Path(__file__).resolve().parent
+     / "qbeta-c3-barodd-sleak.witness.json").read_text(encoding="utf-8"))
+S_muon = float(_SLEAK["data"]["S_leak"]["muon"])
+S_proton = float(_SLEAK["data"]["S_leak"]["proton"])
 
 # Formula: S_K = A_ω · κ · (ln²q₀ − ϑ_K²)
 A_omega = 3

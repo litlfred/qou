@@ -15,5 +15,5 @@ $$
 $$
 forms the quantum computation. The lift explores the Hilbert space; the descent collapses it to the observable.
 
-**Archimedean specialisation (§7c).**
-This block sits on the archimedean side of the substrate wall. It invokes real-analytic structures and numerical evaluation at the physical parameter $q_0$. Categorical identities drawn here remain valid over an abstract coefficient ring, but their archimedean realization is strictly specialized.
+**Archimedean specialisation.**
+What follows sits on the archimedean side of the substrate wall. It invokes real-analytic structures and numerical evaluation at the physical parameter $q_0$. Categorical identities drawn here remain valid over an abstract coefficient ring, but their archimedean realization is strictly specialized.

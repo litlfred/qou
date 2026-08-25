@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §co-molecular-braid
 -- Carbon monoxide CO as a molecular braid
 
+namespace QOU.Molecular
+
 /-- **Carbon monoxide CO** as a molecular braid with 42 strands.
 
     Triple bond (1 σ + 2 π pairs). Carbon and oxygen each retain
@@ -18,3 +20,5 @@ structure COBraid where
 -- Carbon: Z=6, N=6, so 6+6+6 = 18
 -- Oxygen: Z=8, N=8, so 8+8+8 = 24
 theorem co_strands : 18 + 24 = 42 := by decide
+
+end QOU.Molecular

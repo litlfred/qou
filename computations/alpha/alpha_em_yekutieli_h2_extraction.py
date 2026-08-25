@@ -77,7 +77,7 @@ def main():
     q = mpf(Q_50_DIGIT_STR)
     h = q - 1 / q
     qbra = lambda n: (q**n - q**(-n)) / (q - q**(-1))  # noqa: E731
-    z = 1 / (sqrt(q) + 1 / sqrt(q))                    # Markov z parameter
+    z = q**3 / (q**2 + 1)                    # Markov z parameter
 
     CODATA_alpha_inv = mpf("137.035999084")            # CODATA 2018
 

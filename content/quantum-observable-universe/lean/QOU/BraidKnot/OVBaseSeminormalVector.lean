@@ -330,4 +330,111 @@ theorem jm_polytabloid_split (s : Fin (Specht.nOf μ)) (t : Specht.Tableau μ) :
   simp only [Finset.filter_filter]
   rw [sameColumn_sum_polytabloid]
 
+/-! ### Toward the row collision (brick 3b, item (i))
+
+The one remaining debt for `seminormalVector_base_exists` is the **full-group
+annihilation** `∑_{σ ∈ S_{C∪{s}}} sgn σ · σ·e_t = 0`, which
+`colGarnir_single_column_of_annihilation` turns into the single-column relation.
+By `sum_sign_rep_polytabloid_eq_zero_of_family` + `mtab_sum_sign_smul_of_eq_zero`
+that reduces to a **row collision**: for every `ρ ∈ colStab t`, two distinct labels
+of `C ∪ {s}` share a row in `ρ • t`.
+
+The argument is generic in `t` — it needs only `c < c_s`, not column-superstandardness:
+
+* `ρ ∈ colStab t` preserves the column pattern (`colPattern_smul_of_mem_colStab`
+  below), so in `ρ • t` the column-`c` labels are still exactly `C`, filling column
+  `c` entirely — i.e. occupying rows `0, …, colLen c − 1`.
+* `s` stays in column `c_s`, hence sits at some row `r < colLen c_s`.
+* `colLen` is antitone and `c < c_s`, so `r < colLen c_s ≤ colLen c = |C|`.
+* Therefore the column-`c` label in row `r` shares that row with `s`, and the two are
+  distinct (different columns) — the antisymmetriser kills the tabloid.
+
+This block lands the first step; the remaining steps (column-`c` labels occupy exactly
+rows `0…colLen c − 1`; the `colLen` comparison; assembling the collision) are tracked on
+bean `sv8b`. -/
+
+omit [CommRing k] in
+/-- **A column-stabiliser element preserves the column pattern.** For `ρ ∈ colStab t`,
+`ρ • t` has literally the same column pattern as `t` — this is `mem_colStab` read
+through the equivariance `colPattern_smul`.
+
+First step of the brick-3b row collision: it is what makes "the column-`c` labels of
+`ρ • t` are still exactly the column-`c` labels of `t`" true, so the collision argument
+may reason about `C` in `t` while the tabloid lives over `ρ • t`. -/
+theorem colPattern_smul_of_mem_colStab {t : Specht.Tableau μ}
+    {ρ : Equiv.Perm (Fin (Specht.nOf μ))} (hρ : ρ ∈ Specht.colStab t) :
+    Specht.colPattern (ρ • t) = Specht.colPattern t := by
+  rw [Specht.colPattern_smul]
+  exact Specht.mem_colStab.mp hρ
+
+omit [CommRing k] in
+/-- **The column-`c` label set is `colStab`-invariant.** Immediate from
+`colPattern_smul_of_mem_colStab`: the labels sitting in column `c` of `ρ • t` are
+exactly those sitting in column `c` of `t`.
+
+This is the form the collision consumes — the Garnir set `C` is defined from `t`, but
+the tabloid-level vanishing must be checked in `ρ • t` for every `ρ ∈ colStab t`. -/
+theorem colLabels_smul_of_mem_colStab (c : ℕ) {t : Specht.Tableau μ}
+    {ρ : Equiv.Perm (Fin (Specht.nOf μ))} (hρ : ρ ∈ Specht.colStab t) :
+    Finset.univ.filter (fun l => Specht.colPattern (ρ • t) l = c)
+      = Finset.univ.filter (fun l => Specht.colPattern t l = c) := by
+  rw [colPattern_smul_of_mem_colStab hρ]
+
+omit [CommRing k] in
+/-- **The colliding label exists (steps 2–4 of the row collision, in one).** For any
+tableau `t`, if `s` sits in column `c'` and `c ≤ c'`, then some label `x` sits in
+column `c` *in the same row as `s`*.
+
+The bean's plan routed this through "the column-`c` labels occupy exactly rows
+`0 … colLen c − 1`". That intermediate is unnecessary: a tableau is an `Equiv` onto
+`μ.cells`, so it suffices to show the *cell* `(row s, c)` is in `μ` and then pull it
+back. Concretely, with `r = row s`:
+
+* `(r, c') ∈ μ` gives `r < colLen c'` (`mem_iff_lt_colLen`);
+* `colLen c' ≤ colLen c` since `c ≤ c'` (`colLen_anti`) — columns weakly shorten;
+* so `r < colLen c`, i.e. `(r, c) ∈ μ`;
+* `t.symm` on that cell is the required `x`.
+
+No column-superstandardness, no counting — this is generic in `t`. -/
+theorem exists_sameRow_earlier_col (t : Specht.Tableau μ) {c c' : ℕ} (hcc : c ≤ c')
+    {s : Fin (Specht.nOf μ)} (hs : Specht.colPattern t s = c') :
+    ∃ x : Fin (Specht.nOf μ),
+      Specht.colPattern t x = c ∧ Specht.rowPattern t x = Specht.rowPattern t s := by
+  classical
+  -- `colPattern`/`rowPattern` are the projections, but only *definitionally*; name the
+  -- projection form explicitly so `rw` has something to match.
+  have hs' : ((t s : ℕ × ℕ)).2 = c' := hs
+  have hcell : (((t s : ℕ × ℕ)).1, ((t s : ℕ × ℕ)).2) ∈ μ := by
+    have h := (t s).2
+    rw [YoungDiagram.mem_cells] at h
+    exact h
+  have hlt : ((t s : ℕ × ℕ)).1 < μ.colLen ((t s : ℕ × ℕ)).2 :=
+    YoungDiagram.mem_iff_lt_colLen.mp hcell
+  rw [hs'] at hlt
+  have hlt' : ((t s : ℕ × ℕ)).1 < μ.colLen c :=
+    lt_of_lt_of_le hlt (μ.colLen_anti c c' hcc)
+  have hmem : ((((t s : ℕ × ℕ)).1, c) : ℕ × ℕ) ∈ μ :=
+    YoungDiagram.mem_iff_lt_colLen.mpr hlt'
+  refine ⟨t.symm ⟨(((t s : ℕ × ℕ)).1, c), by rwa [YoungDiagram.mem_cells]⟩, ?_, ?_⟩ <;>
+    simp [Specht.colPattern, Specht.rowPattern]
+
+omit [CommRing k] in
+/-- **The row collision.** Strengthening of `exists_sameRow_earlier_col` to what the
+Garnir annihilation actually consumes: with `c < c'` strict, the colliding label `x`
+is *distinct* from `s` (their columns differ), so `swap x s` is a genuine same-row
+transposition of `C ∪ {s}`.
+
+This is the collision for `t` itself; the version needed inside
+`sum_sign_rep_polytabloid_eq_zero_of_family` is for `ρ • t` with `ρ ∈ colStab t`, which
+`colPattern_smul_of_mem_colStab` reduces to this one. -/
+theorem exists_collision_earlier_col (t : Specht.Tableau μ) {c c' : ℕ} (hcc : c < c')
+    {s : Fin (Specht.nOf μ)} (hs : Specht.colPattern t s = c') :
+    ∃ x : Fin (Specht.nOf μ), x ≠ s ∧
+      Specht.colPattern t x = c ∧ Specht.rowPattern t x = Specht.rowPattern t s := by
+  obtain ⟨x, hxc, hxr⟩ := exists_sameRow_earlier_col t (le_of_lt hcc) hs
+  refine ⟨x, ?_, hxc, hxr⟩
+  intro hxs
+  rw [hxs, hs] at hxc
+  exact absurd hxc (ne_of_gt hcc)
+
 end QOU.BraidKnot.OVBaseSeminormalVector

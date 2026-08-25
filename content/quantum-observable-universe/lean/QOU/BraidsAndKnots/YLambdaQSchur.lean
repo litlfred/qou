@@ -2,6 +2,7 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsAndKnots.YLambdaQSchur
@@ -81,8 +82,8 @@ namespace QOU.BraidsAndKnots
     `[0]_q = 0`, `[1]_q = 1`, `[2]_q = q + q⁻¹`, etc.
 
     Convention: `n : ℤ` so that `[-n]_q = -[n]_q`. -/
-noncomputable def qInt {R : Type*} [Field R] (q : R) (n : ℤ) : R :=
-  (q ^ n - q ^ (-n)) / (q - q⁻¹)
+noncomputable abbrev qInt {R : Type*} [Field R] (q : R) (n : ℤ) : R :=
+  QOU.QInteger.qIntBalZ q n
 
 /-- q-factorial `[n]_q! := [n]_q · [n−1]_q · … · [1]_q`.
 
@@ -180,7 +181,7 @@ of q-integers and q-factorials, then lifts to y_λ.
 theorem qInt_bar_inv {R : Type*} [Field R] (q : R) (_hq : q ≠ 0) (_h_neq : q - q⁻¹ ≠ 0)
     (n : ℤ) :
     qInt q⁻¹ n = qInt q n := by
-  unfold qInt
+  simp only [qInt, QOU.QInteger.qIntBalZ]
   have h1 : ((q⁻¹ : R))^n = q^(-n) := by
     rw [inv_zpow, ← zpow_neg]
   have h2 : ((q⁻¹ : R))^(-n) = q^n := by
@@ -225,7 +226,7 @@ theorem yLambdaQSchur_bar_mullineux {R : Type*} [Field R] (q : R) (_hq : q ≠ 0
 /-- `[0]_q = 0`. -/
 theorem qInt_zero {R : Type*} [Field R] (q : R) (_h_neq : q - q⁻¹ ≠ 0) :
     qInt q 0 = 0 := by
-  unfold qInt
+  simp only [qInt, QOU.QInteger.qIntBalZ]
   simp
 
 /-- `[1]_q = 1`. -/
@@ -237,7 +238,7 @@ theorem qInt_one {R : Type*} [Field R] (q : R) (_hq : q ≠ 0) (_h_neq : q - q�
 /-- **q-integer anti-symmetry**: `[-n]_q = -[n]_q`. -/
 theorem qInt_neg {R : Type*} [Field R] (q : R) (n : ℤ) :
     qInt q (-n) = -qInt q n := by
-  unfold qInt
+  simp only [qInt, QOU.QInteger.qIntBalZ]
   rw [neg_neg]
   ring
 
@@ -276,7 +277,7 @@ factorisation
 theorem qInt_two_eq_q_plus_q_inv {R : Type*} [Field R] (q : R) (_hq : q ≠ 0)
     (_h_neq : q - q⁻¹ ≠ 0) :
     qInt q 2 = q + q⁻¹ := by
-  unfold qInt
+  simp only [qInt, QOU.QInteger.qIntBalZ]
   field_simp [_hq, _h_neq, q_sq_sub_one_ne_zero q _hq _h_neq]
   ring
 
@@ -336,7 +337,7 @@ theorem yLambdaQSchur_selfconjugate_bar_sym {R : Type*} [Field R] (q : R) (_hq :
     factoring as a difference of cubes. -/
 theorem qInt_three {R : Type*} [Field R] (q : R) (_hq : q ≠ 0) (_h_neq : q - q⁻¹ ≠ 0) :
     qInt q 3 = q ^ 2 + 1 + q ^ (-2 : ℤ) := by
-  unfold qInt
+  simp only [qInt, QOU.QInteger.qIntBalZ]
   field_simp [_hq, _h_neq, q_sq_sub_one_ne_zero q _hq _h_neq]
   ring
 

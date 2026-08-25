@@ -40,7 +40,7 @@ $$
   \qquad \hat{V}_i(q) \in \mathbb{Z}[q^{\pm 1/2}],
 $$
 
-a finite product of Laurent polynomials living strictly in $\mathbb{Z}[q^{\pm 1/2}]$. This domain is categorical and discrete—devoid of $\pi$, $\zeta(3)$, or real-analytic transcendentals.
+a finite product of Laurent polynomials living strictly in $\mathbb{Z}[q^{\pm 1/2}]$. This domain is categorical and discrete: devoid of $\pi$, $\zeta(3)$, or real-analytic transcendentals.
 
 Transcendental numbers enter the framework exclusively at the boundary of observation. The functor $\tau_{\text{arch}}$ projects categorical data into physical spacetime by taking the absolute logarithm of the algebraic quantum volume. This functor converts the discrete Hecke algebra states into continuous observables.
 
@@ -72,7 +72,7 @@ the existing PSLQ ruling.
 
 **(c) Pins the figure-8 knot example.** The figure-8 knot $4_1$
 embeds smoothly into Bring's surface as the amphichiral mass
-mechanism. On the pre-archimedean side it has a completely rigorous
+mechanism. On the pre-archimedean side it has a rigorous
 motivic / algebraic representation via its Hecke normal form in
 $\mathbb{Z}[q^{\pm 1/2}]$. Once $\tau_{\text{arch}}$ maps this
 motivic state into the observable continuum, its hyperbolic volume

@@ -36,7 +36,12 @@ for p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, p)
 
 import _path_bridge  # noqa: F401, E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 AME = _COMP / "ame-2020-binding-energies.witness.json"
 
@@ -54,7 +59,7 @@ def _cv(vals):
 
 
 def main() -> int:
-    ame = json.loads(AME.read_text())
+    ame = record_upstream(AME, _UPSTREAM_RECORDS)
     data = ame.get("data", ame)
 
     def B(key):
@@ -82,6 +87,7 @@ def main() -> int:
                            "B_MeV": b, "B_per_A": b / A})
 
     w = WitnessBuilder("alpha-cluster-binding-scaling", engine="exact")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "0-fit α-cluster (Wigner SU(4) [1^4] supermultiplet) scaling test. "
         "B/n_α is constant to CV~5% across α-conjugate nuclei (⁴He→¹⁶O) — the "

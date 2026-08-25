@@ -1,0 +1,51 @@
+260 C. McMullen
+§1. Iterative root-finding algorithms
+
+We begin with some terminology of Smale’s [Sm].
+
+Definitions. A purely iterative algorithm is a mapping
+T: Poly,— Rat,
+
+associating to each degree d complex monic polynomial p(X)ePoly,(=C%) a
+degree k rational function T,(z)¢Rat,(~P?**'), such that the coefficients of
+T, are themselves rational functions of the coefficients of p. The algorithm is
+said to be generally convergent if there is an open dense set of full measure
+Uc Poly, x C such that under iteration,
+
+T; (z) > {a root of p}
+
+for all choices of polynomial and initial guess (p, z) in U.
+
+We call a generally convergent algorithm robust if the image of T is contained
+in Exp,, the open subset of Rat, consisting of expanding rational maps. Here
+a rational map is expanding if its dynamics satisfies Smale’s Axiom A. Equivalent-
+ly, Exp, consists of those rational maps whose critical points all tend toward
+attracting cycles under iteration. (See [Su11] for a discussion of these maps.)
+
+Robustness insures good global behavior: for any neighborhood U of the
+roots of p, the spherical area of the set of initial guesses which take more than
+n iterates to land in U tends to zero goemetrically fast (it is O(A4") for some
+A<1)
+
+Examples
+
+(1) Newton’s method is a purely iterative algorithm for each degree d, and
+it is generally convergent for d=2 but not 3 or more.
+(2) There exists a generally convergent algorithm for cubics; for
+
+p(X)=X*+aX+b
+take T,(z) to be Newton’s method applied to the rational function
+X34+aX+b
+"= 30X24 9bK —a2*
+
+Newton’s for quadratics and the above method for cubics are both robust.
+In [Mcl1] we classify generally convergent algorithms and answer a question
+of Smale’s by proving:
+
+Theorem 1.1. There is no generally convergent purely iterative algorithm for find-
+ing the roots of polynomials of degree 4 or more.
+
+The proof of Theorem 1.1 relies strongly upon the algebraic character of the
+family T,, and being a proof by contradiction it does not seem to reveal where
+algorithms for degrees 4 or more fail.
+

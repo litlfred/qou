@@ -20,12 +20,20 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 40
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 sys.path.insert(0, str(COMP))
 import closed_form_tau_M as C  # noqa: E402
-from _li_2_q_util import flavor_split_subleading  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 
@@ -33,7 +41,7 @@ Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 def main():
     z = C.markov_z(Q0)
     h = C.hecke_h(Q0)
-    delta = flavor_split_subleading(Q0)
+    delta = flavor_split_leading(Q0)
     facs = {
         "positive (z)": z,
         "negative (z-h)": z - h,

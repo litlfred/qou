@@ -1,4 +1,4 @@
-*The curvature-rank strictly stratifies the GB filtration:*
+*The curvature-rank stratifies the GB filtration:*
 
 $$
   J^{\,r}(q) / J^{\,r+1}(q)

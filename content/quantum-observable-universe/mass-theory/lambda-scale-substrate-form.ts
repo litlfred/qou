@@ -49,14 +49,14 @@ export default proposition({
   label: "prop:lambda-scale-substrate-form",
   lean: { ref: "qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm" },
   title:
-    "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$ (acknowledged-CAL-4)",
+    "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$",
   uses: [
     "conj:borromean-baryon-mass-formula",
     "prop:plancherel-weight-boundedness",
   ],
   cites: [
     "adams1985hyperbolic",
-    "milnor1982hyperbolic",
+    "milnor1982",
   ],
   tags: [
     "mass-formula",

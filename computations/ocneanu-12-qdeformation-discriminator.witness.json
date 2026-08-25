@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:54.718706+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:58:37.174847+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "qdeformation_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "ocneanu-12-qdeformation-discriminator",
   "scriptFile": "ocneanu_12_qdeformation_discriminator.py",
   "scriptHash": "935479042f0c",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,35 +28,37 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Step 2 of 2026-06-01 closed-route audit's next-steps: tests which (if any) of the 4 natural categorical candidates that hit integer 12 at q=1 has a q-deformation reaching the empirical k_required = 11.9996 at q_0 (32 ppm tighter than integer 12). Scans 12 q-deformation candidates at 50 dps.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99955517162342283144208",
-    "integer_12_ppm_off": "37.070406",
+    "k_required": "11.99960972984508386212587",
+    "integer_12_ppm_off": "32.523571",
     "best_candidates_within_100ppm": [
       [
         "(C) 4 · 3 (integer)",
         "12.0",
-        "37.070406"
+        "32.523571"
       ],
       [
         "(J) 12 · F_Bor / F_Bor_at_1",
         "12.0",
-        "37.070406"
+        "32.523571"
       ],
       [
         "(E') 12 · (1 − h²·something)",
-        "11.9985472053059384",
-        "-84.000307"
+        "11.998547205628379",
+        "-88.546564"
       ]
     ],
     "verdict": "NULL — no candidate q-deformation beats the 32 ppm match of integer 12. The empirical k = 11.9996 is best explained by the integer 12, with the 32 ppm residual coming from a non-tested correction (analogous to (α_em/π)·(3q²−1)/(2q²) for m_K/m_π)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

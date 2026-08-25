@@ -1,0 +1,156 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1001.2180v2",
+ "source_sha256": "f4225d7b024940aa",
+ "brief": "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure",
+ "extended": "**ASYMPTOTICS OF q-PLANCHEREL MEASURES**\n\n*V ALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT*\n\n27 pp, 27 sections.\n\n**Abstract.** In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The ﬁrst lines of such diagrams are typically of order n, so it does not ﬁt in the context of the work of P. Biane and P. Śniady. Using the theory of polynomial func tions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the ﬁrst- and se cond-order asymptotics of the length of the ﬁrst rows. Our method also works for other measures, for e xample those coming from Schur-W eyl representations.\n\n**Outline.** 1 Introduction; 1.1 Background; 1.2 Results; 1.4 Some open questions; 2 The q-Plancherel measure; 1.5 Outline of the paper; 1.3 Tools; 2.2 Link with representation of the Hecke alge; 2.3 Interpretation in the representation theor; 3.2 Normalized characters; 3.3 Normalized conjugacy classes in symmetric ; 3.4 Products of normalized characters; 3.5 Another product; 3.6 q-characters; 4 First order asymptotics; 4.1 Convergence of power sums; 4.2 Convergence of row lengths; 4.3 Link with the representation theory of the",
+ "tokens": {
+  "brief": 49,
+  "extended": 315
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-background",
+   "title": "Background",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-12-results",
+   "title": "Results",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-003-14-some-open-questions",
+   "title": "Some open questions",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-2-the-q-plancherel-measure",
+   "title": "The q-Plancherel measure",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-15-outline-of-the-paper",
+   "title": "Outline of the paper",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-006-13-tools",
+   "title": "Tools",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-007-22-link-with-representation-of-the-hecke-algebra",
+   "title": "Link with representation of the Hecke algebras",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-23-interpretation-in-the-representation-theory-o",
+   "title": "Interpretation in the representation theory of GLn(Fq)",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-009-32-normalized-characters",
+   "title": "Normalized characters",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-010-33-normalized-conjugacy-classes-in-symmetric-gro",
+   "title": "Normalized conjugacy classes in symmetric group algebras",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-011-34-products-of-normalized-characters",
+   "title": "Products of normalized characters",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-012-35-another-product",
+   "title": "Another product",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-013-36-q-characters",
+   "title": "q-characters",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-014-4-first-order-asymptotics",
+   "title": "First order asymptotics",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-015-41-convergence-of-power-sums",
+   "title": "Convergence of power sums",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-016-42-convergence-of-row-lengths",
+   "title": "Convergence of row lengths",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-017-43-link-with-the-representation-theory-of-the-in",
+   "title": "Link with the representation theory of the infinite symmetric group",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-018-5-second-order-asymptotics",
+   "title": "Second order asymptotics",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-019-51-bound-for-cumulants",
+   "title": "Bound for cumulants",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-020-52-computation-of-covariances",
+   "title": "Computation of covariances",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-021-53-fluctuations-of-rows",
+   "title": "Fluctuations of rows",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-022-6-schur-weyl-representations",
+   "title": "Schur-Weyl representations",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-023-61-decomposition-of-tensor-representations",
+   "title": "Decomposition of tensor representations",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-024-62-asymptotic-shape-of-the-diagrams",
+   "title": "Asymptotic shape of the diagrams",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-025-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-026-references",
+   "title": "References",
+   "pages": "26-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

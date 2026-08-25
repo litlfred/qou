@@ -23,7 +23,7 @@ family and proves its two archimedean vertical-edge facts:
   `computations/probes/gswz_frobenius_teichmuller_probe.py`.
 
 Honest scope: these are the ARCHIMEDEAN shadows of the GSWZ vertical
-edges (arXiv:2412.04241, `uploads/2412.04241v2.pdf`) — conjugation is
+edges (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`) — conjugation is
 the only continuous Galois automorphism of ℂ, and the p-adic Frobenius
 edges live compute-side, not in this Lean layer. The ζ-indexed FAMILY
 structure for the τ-assignment tower (fibre data beyond the bracket)

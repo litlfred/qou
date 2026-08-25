@@ -1,0 +1,116 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1912.13486v2",
+ "source": {
+  "file": "1912.13486v2.pdf",
+  "sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
+  "bytes": 1142020,
+  "pages": 21
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1912.13486",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Mar 2021"
+  },
+  "doi": null,
+  "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+  "authors_raw": "Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China",
+  "abstract": "We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2×qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210323011414Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_lines": [
+   "Index for a Model of 3d-3d Correspondence for",
+   "Plumbed 3-Manifolds",
+   "Hee-Joong Chung"
+  ],
+  "title_prev": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds Hee-Joong Chung"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Supersymmetric index on S2 q S1 and factorization",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Analysis on homological block and index of lens space theory",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Index for an effective description of T[M3]",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 16728,
+   "n_words": 2946
+  },
+  {
+   "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+   "number": "2.2",
+   "title": "Analysis on homological block and index of lens space theory",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 21,
+   "n_chars": 55710,
+   "n_words": 5714
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 2,
+  "chars_total": 72438
+ }
+}

@@ -11,5 +11,9 @@ export default remark({
     "rem:mass-energy-electron-check",
     "rem:mass-energy-pair-creation",
   ],
+  foreshadows: [
+    "rem:mass-energy-electron-check",
+    "rem:mass-energy-pair-creation",
+  ],
   cites: ["yekutieli2015"],
 });

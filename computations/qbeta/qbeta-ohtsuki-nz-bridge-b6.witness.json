@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-16T02:32:48.507427+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "assertions": [
+    {
+      "name": "a2_matches_proved",
+      "computed": "2.964591859e-20",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "4-point Richardson a2 vs proved i*sqrt(3)/4"
+    },
+    {
+      "name": "a4_matches_e1",
+      "computed": "4.220406391e-15",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "4-point Richardson a4 vs E1's i*sqrt(3)/24"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 815,
+  "computation": "qbeta-ohtsuki-nz-bridge-b6",
+  "scriptFile": "qbeta_ohtsuki_nz_bridge_b6_probe.py",
+  "scriptHash": "9a4a854ae5bb",
+  "scriptCommitSha": "0ed8abc241495a7467276f97ef5de98e38e6fb5c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "E1b parameter-free b6 test (follow-up to the E1 linear-bridge refutation): odd-series bridge u = c*b + c3*b^3, dof exactly consumed by the b2/b4 matches vs exact Ohtsuki rungs; order b6 (exact kappa3 = 1081*sqrt(3)*pi^3/21870) is then a zero-freedom test, run for tower normalization N in {1,2}. Geometric a2,a4,a6 from 4-point Richardson on the validated NZ longitude integral (a2 vs proved i*sqrt(3)/4, a4 vs E1's i*sqrt(3)/24). Free exact-form check: -(sqrt(3)/2)*i*log(cos u) predicts a6 = i*sqrt(3)/90 (C14-flagged observation). Verdict reported not asserted; no fit; nothing wired. Scope-(a). Beans qou-0n1r/qou-yh67.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "extraction": [
+      {
+        "h": "0.01",
+        "a2": "(0.0 + 0.433012701892j)",
+        "a4": "(0.0 + 0.0721687836529j)",
+        "a6": "(0.0 + 0.018443119526j)"
+      },
+      {
+        "h": "0.003162",
+        "a2": "(0.0 + 0.433012701892j)",
+        "a4": "(0.0 + 0.0721687836487j)",
+        "a6": "(0.0 + 0.0184431334586j)"
+      }
+    ],
+    "validations": {
+      "a2_err": "2.96459e-20",
+      "a4_err_vs_E1": "4.22041e-15"
+    },
+    "logcos_candidate": {
+      "a6_pred": "i*sqrt(3)/90",
+      "abs_err": "0.000801876",
+      "note": "C14-flagged observation; not used by the test"
+    },
+    "b6_test": {
+      "1": {
+        "c": "(2.00523064538336 - 2.00523064538336j)",
+        "c3": "(9.65381682736034 - 6.96617281215496j)",
+        "lhs_b6": "(61.1596584723806 - 58.0262339057831j)",
+        "rhs_b6": "658.456003064957",
+        "rel_residual": "0.911387"
+      },
+      "2": {
+        "c": "(1.41791218719365 - 1.41791218719365j)",
+        "c3": "(6.35116651581751 - 5.40094086153392j)",
+        "lhs_b6": "(60.1431113620709 - 29.0131169528915j)",
+        "rhs_b6": "658.456003064957",
+        "rel_residual": "0.909728"
+      }
+    },
+    "verdict": {
+      "text": "2-TERM ODD BRIDGE REFUTED at b6 (scope-(a)): residuals N=1: 0.9114, N=2: 0.9097 — neither within 5%"
+    }
+  },
+  "q0AnchorReason": "Same free-parameter-u construction as the b4 sibling: proved constants only, no substrate value read. Verified here by its own 4-module import cone rather than inherited from b4 — the expectation that b6 matches b4 was not the evidence for it (bean qou-kx04).",
+  "q0Anchor": "independent"
+}

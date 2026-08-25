@@ -37,7 +37,7 @@ choices**. Exactly two forced candidates exist:
 
 | candidate | why it is forced |
 |---|---|
-| **figure-eight 4₁** | q₀ is fixed by `Vol(4₁) = 2Λ(π/3) ≈ 2.02988`; the Kashaev/volume knot |
+| **figure-eight 4₁** | q₀ is fixed by `Vol(4₁) = 2·Cl₂(π/3) ≈ 2.02988`; the Kashaev/volume knot |
 | **Hopf link** | the canonical registry hint `c_3 = −2 = J_Hopf(q=1)` |
 
 Trefoil 3₁ (non-hyperbolic, `D(z)=0`) is a CONTROL. **No knot/root-of-unity

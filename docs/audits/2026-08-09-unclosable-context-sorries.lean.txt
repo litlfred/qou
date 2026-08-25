@@ -1,0 +1,333 @@
+import QOU.ParticleInteractions.mass_categorical_descent
+
+namespace QOU.ParticleInteractions
+
+/-- The class constrains none of its four real fields, so the descent
+    identity fails on an instance that simply picks bad numbers. -/
+theorem mass_categorical_descent_unconstrained_false :
+    ¬ ∀ ctx : MassCategoricalDescentContext, ctx.B = ctx.B_desc + ctx.B_trans := by
+  intro h
+  have := h { CategoricalObj := Unit, m_endo := id,
+              B := 0, B_desc := 1, B_trans := 0, B_BW := 0 }
+  norm_num at this
+
+end QOU.ParticleInteractions
+import QOU.Torsion.neutron_proton_splitting
+import QOU.FluidDynamics.q_turbulence_spectrum
+
+namespace RefuteProbe
+
+/-- Five bare reals, no relation between them: pick numbers that disagree. -/
+theorem np_splitting_unconstrained_false :
+    ¬ ∀ ctx : QOU.Torsion.NeutronProtonSplittingContext,
+        ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud| := by
+  intro h
+  have := h { α := 0, Φ_uud := 0, Φ_udd := 0, m_p := 0, m_n := 1 }
+  norm_num at this
+
+/-- `N_modes` is carried opaquely with nothing relating it to `q` or `Re_q`,
+    so the cascade-depth bound fails on an instance that picks it large. -/
+theorem cascade_depth_unconstrained_false :
+    ¬ ∀ ctx : QOU.FluidDynamics.QTurbulenceSpectrumContext,
+        (ctx.N_modes : ℝ)
+          ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
+  intro h
+  have := h { q := 2, q_gt_one := by norm_num,
+              Re_q := 2 / (2 - 1), Re_q_eq := rfl,
+              N_modes := 1000000, ε := 1, ε_pos := by norm_num,
+              C_q := 1, C_q_pos := by norm_num }
+  norm_num at this
+
+end RefuteProbe
+import QOU.BraidKnot.volume_perturbation
+import QOU.BraidsKnots.skein_mass_from_linking
+
+namespace RefuteProbe2
+
+/-- `Vol_41` and `δΦ` are unrelated fields: set the volume to 0 and the
+    perturbation to 1. -/
+theorem volume_perturbation_unconstrained_false :
+    ¬ ∀ ctx : QOU.BraidKnot.VolumePerturbationContext,
+        ∀ k : ℕ, 4 ≤ k →
+          ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41
+            * QOU.BraidKnot.qIntSym ctx.q ((k : ℤ) - 3) := by
+  intro h
+  have := h { q := 1, z := 1 / (Real.sqrt 1 + 1 / Real.sqrt 1), Vol_41 := 0,
+              δΦ := fun _ => 1, z_def := rfl } 4 (by norm_num)
+  norm_num at this
+
+/-- `mass`, `Q` and `n` are unrelated: take an empty sum and a nonzero mass. -/
+theorem skein_mass_unconstrained_false :
+    ¬ ∀ ctx : QOU.BraidsKnots.SkeinMassFromLinkingContext,
+        ctx.mass = ctx.Q * ctx.mass_Hopf +
+          (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
+  intro h
+  have := h { q := 1, Q := 0, mass_Hopf := 0, n := 0, Vol_K := fun _ => 0,
+              hbar_q := 1 - (1 : ℝ)⁻¹, hbar_q_def := rfl, mass := 1 }
+  norm_num at this
+
+end RefuteProbe2
+import QOU.ParticleInteractions.parity_regime_selection
+import QOU.ParticleInteractions.lp_dual_stability
+
+namespace RefuteProbe3
+
+/-- `sign_val` is a bare field; only `q_gt_one` and `A_eq` are hypotheses and
+    neither mentions it. At `A = 1`, `(-1)^(A-1) = 1` (ℕ subtraction), so a
+    context with `sign_val := 0` refutes the first conjunct. -/
+theorem parity_regime_unconstrained_false :
+    ¬ ∀ ctx : QOU.ParticleInteractions.ParityRegimeSelectionContext,
+        ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) := by
+  intro h
+  have := h { q := 2, q_gt_one := by norm_num, Z := 1, N := 0, A := 1,
+              A_eq := rfl, a := 0, b := 0, sign_val := 0, m_e := 0,
+              Q_value := 0, S_Delta := 0, Sigma_FP := 0 }
+  norm_num at this
+
+/-- Thirteen bare fields, no equations at all: the strict inequality in the
+    third conjunct fails on the all-zero context. -/
+theorem lp_dual_stability_unconstrained_false :
+    ¬ ∀ ctx : QOU.ParticleInteractions.LpDualStabilityContext,
+        (Finset.univ.sum fun j : Fin ctx.channels =>
+          ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 := by
+  intro h
+  have := h { q := 0, channels := 1, G := fun _ _ => 0, κ_G := 0,
+              y_star := fun _ => 0, t := fun _ => 0, t_norm := 0,
+              tr_M_x_star := 0, y_0_star := 0, n_target := 0,
+              x_star := fun _ => 0, x_partial := fun _ => 0, σ_0_idx := 0 }
+  norm_num at this
+
+end RefuteProbe3
+import QOU.ParticleInteractions.confinement_frobenius_reciprocity
+
+namespace RefuteProbe4
+
+/-- Twelve bare fields, no equations. The `0 < y_0_star` conjunct alone fails
+    on a context that sets it to zero. -/
+theorem confinement_frobenius_unconstrained_false :
+    ¬ ∀ ctx : QOU.ParticleInteractions.ConfinementFrobeniusReciprocityContext,
+        0 < ctx.y_0_star := by
+  intro h
+  have := h { d := 1, G := fun _ _ => 0, Ginv := fun _ _ => 0,
+              A_star := ∅, x_star := fun _ => 0, u_star := fun _ => 0,
+              y_0_star := 0, primal_obj := 0, dual_obj := 0,
+              Observable := Unit, pairing := fun _ _ => 0,
+              physExp := fun _ => 0 }
+  norm_num at this
+
+end RefuteProbe4
+import QOU.Molecular.shell_filling_rule
+import QOU.BraidsKnots.mobius_frobenius_kernel
+
+namespace RefuteProbe5
+
+open QOU.Molecular
+
+/-- The class bounds `occupancy ≤ capacity` but the theorem asserts *equality*
+    below `n_val`. An instance with empty shells satisfies every field. -/
+theorem shell_filling_inner_shells_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 0 } 1 (by norm_num)
+  norm_num at this
+
+/-- `ground` and `singly` are unrelated fields: make the ground state the one
+    with fewer singly-occupied orbitals. -/
+theorem shell_filling_hund_rule_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Bool, ground := false,
+              singly := fun b => if b then 1 else 0,
+              y_0 := 0, primal_obj := 0 } true
+  norm_num at this
+
+end RefuteProbe5
+import QOU.BraidsKnots.mobius_frobenius_kernel
+
+namespace RefuteProbe6
+open QOU.BraidsKnots
+
+/-- `K_FH` is a free field: take it identically zero. The limit is then `0`,
+    but the claimed limit is `1/‖γ s − γ t‖² = 1`. -/
+theorem mobius_frobenius_kernel_unconstrained_false :
+    ¬ ∀ (ctx : MobiusFrobeniusKernelContext ℝ) (s t : ℝ), ctx.γ s ≠ ctx.γ t →
+        Filter.Tendsto (fun q => ctx.K_FH q s t)
+          (nhdsWithin 1 {q : ℝ | q ≠ 1})
+          (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
+  intro h
+  haveI : (nhdsWithin (1 : ℝ) {q : ℝ | q ≠ 1}).NeBot := by
+    have hset : {q : ℝ | q ≠ 1} = ({1} : Set ℝ)ᶜ := rfl
+    rw [hset]; infer_instance
+  have ht := h { γ := id, K_FH := fun _ _ _ => 0 } 0 1 (by norm_num)
+  have : (0 : ℝ) = 1 / ‖(0 : ℝ) - 1‖ ^ 2 :=
+    tendsto_nhds_unique tendsto_const_nhds ht
+  norm_num at this
+
+end RefuteProbe6
+import QOU.Molecular.shell_filling_rule
+import QOU.ParticleInteractions.operator_selection_lp
+
+namespace RefuteProbe7
+open QOU.Molecular QOU.ParticleInteractions
+
+/-- `primal_obj`, `Z` and `y_0` are unrelated fields. -/
+theorem shell_filling_lp_strong_duality_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 1 }
+  norm_num at this
+
+/-- With `d = 0` the objective is an empty sum; `n_target * y_0_star` is not. -/
+theorem operator_selection_lp_unconstrained_false :
+    ¬ ∀ ctx : OperatorSelectionLpContext ℝ,
+        OperatorSelectionLpContext.objective ctx.x_star
+          = ctx.n_target * ctx.y_0_star := by
+  intro h
+  have := h { n := 0, d := 0, n_target := 1, t := fun i => i.elim0,
+              G := fun i => i.elim0, x_star := fun i => i.elim0,
+              y_0_star := 1 }
+  simp [OperatorSelectionLpContext.objective] at this
+
+end RefuteProbe7
+import QOU.AlgebraicSubstrate.qou_obstruction_reduction
+import QOU.ParticleInteractions.atomic_lp_stability
+
+namespace RefuteProbe8
+open QOU.AlgebraicSubstrate QOU.ParticleInteractions
+
+/-- `kappa0`, `chi_A` and `phi_1_image` are free fields; the surviving
+    hypotheses (`vdb_duality`, `drinfeld_rigidity`, `kappa_vanishes_def`)
+    mention none of them. -/
+theorem obstruction_trace_gap_unconstrained_false :
+    ¬ ∀ ctx : QouObstructionReductionContext,
+        ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+  intro h
+  have := h { hhCohDim := fun _ => 1, hhHomDim := fun _ => 1,
+              vdb_duality := fun _ _ => rfl, drinfeld_rigidity := rfl,
+              chi_A := 0, phi_1_image := 0, kappa0 := 1,
+              kappa_vanishes := fun n => (n : ℤ) ∣ 1,
+              kappa_vanishes_def := fun _ => Iff.rfl }
+  simp at this
+
+/-- No candidate exists at all when `Candidate := Empty`. -/
+theorem bare_is_lp_unstable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 := by
+  intro h
+  obtain ⟨X, _⟩ := h { Candidate := Empty, bareVolume := fun x => x.elim,
+                       dressedVolume := fun x => x.elim,
+                       normalised := fun _ => True }
+  exact X.elim
+
+/-- …and the opposite instance refutes its `¬∃` sibling: one candidate, both
+    predicates satisfied. -/
+theorem dressed_is_lp_stable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 := by
+  intro h
+  exact h { Candidate := Unit, bareVolume := fun _ => 0,
+            dressedVolume := fun _ => 0, normalised := fun _ => True }
+       ⟨(), trivial, rfl⟩
+
+end RefuteProbe8
+import QOU.BraidsKnots.nsi_q_deformed_kernel
+import QOU.ParticleInteractions.four_term_pair_nucleon
+
+namespace RefuteProbe9
+open QOU.BraidsKnots QOU.ParticleInteractions
+
+/-- `K_cat` is a free field. At `q = 0` the claimed right-hand side is the
+    Mathlib junk value `_ / 0 = 0` (since `ℏ_0 = 1 - 0⁻¹ = 1` makes the
+    denominator `r² - ℏ² = 0` at `r = 1`), so a kernel that is identically `1`
+    refutes it. -/
+theorem nsi_q_kernel_identification_unconstrained_false :
+    ¬ ∀ (ctx : NsiQDeformedKernelContext ℝ) (s t : ℝ), ctx.q ≠ 1 →
+        ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
+  intro h
+  have := h { q := 0, ϱ := id, K_cat := fun _ _ => 1 } 0 1 (by norm_num)
+  simp [qDeformedKernel, hbarQ] at this
+
+/-- `confinedNet` is a free field and `protonNetTarget = 0.999`. -/
+theorem four_term_pair_nucleon_unconstrained_false :
+    ¬ ∀ ctx : FourTermPairNucleonContext,
+        ∀ φ₀ φ₁ φ₀₁ : ℝ,
+          ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget := by
+  intro h
+  have := h { confinedNet := fun _ _ _ _ => 0,
+              protonFlavours := fun _ => true,
+              neutronFlavours := fun _ => false } 0 0 0
+  norm_num [protonNetTarget] at this
+
+end RefuteProbe9
+import QOU.WedderburnMass.confinement_categorical
+
+namespace InhabProbe
+open QOU.Hecke QOU.Shared
+
+/-- `Generator n` is `Fin (n-1)` with ℕ subtraction, so at `n = 0` it is empty:
+    `embed` is trivial and the three relations hold vacuously. Taking `A := R`
+    makes `spans` the statement `⊥ = ⊤` in `Subalgebra ℤ ℤ`, which is a
+    subsingleton. -/
+noncomputable instance degenerateInv : Inv ℤ := ⟨fun _ => 0⟩
+
+noncomputable instance degenerateHecke : HeckeAlgebra ℤ 0 0 ℤ where
+  embed := fun i => absurd i.idx.isLt (by omega)
+  quadratic := fun i => absurd i.idx.isLt (by omega)
+  braid := fun i _ _ => absurd i.idx.isLt (by omega)
+  farCommute := fun i _ _ => absurd i.idx.isLt (by omega)
+  spans := Subsingleton.elim _ _
+
+noncomputable instance degenerateMarkov : MarkovTrace 0 (0 : ℤ) ℤ where
+  trace := LinearMap.id
+  normalised := rfl
+  cyclic := fun x y => by simp [mul_comm]
+  z_param := 0
+  trace_gen := fun i => absurd i.idx.isLt (by omega)
+  trace_prod_gen := fun i _ _ => absurd i.idx.isLt (by omega)
+
+/-- **`MarkovTraceContext` IS inhabited.** -/
+noncomputable def witness : MarkovTraceContext where
+  R := ℤ; ringR := inferInstance; invR := degenerateInv
+  q := 0; n := 0; A := ℤ; ringA := inferInstance; algebraA := inferInstance
+  heckeInst := degenerateHecke; markovInst := degenerateMarkov
+
+
+
+open QOU.WedderburnMass in
+/-- A concrete `ConfinementCategoricalContext`, built on the witness above. -/
+noncomputable def ccWitness : ConfinementCategoricalContext.{0} :=
+  { toMarkovTraceContext := witness
+    n_blocks := 0
+    e_block := fun _ => (0 : ℤ)
+    E_infinity_00 := (1 : ℤ)
+    integral := fun _ => (0 : ℤ)
+    pi_centre := fun x => x
+    observable := fun _ => True }
+
+open QOU.WedderburnMass in
+/-- With the class inhabited, the free fields refute the first conjunct:
+    `n_blocks := 0` makes the sum empty while `E_infinity_00 := 1`. -/
+theorem confinement_categorical_unconstrained_false :
+    ¬ ∀ ctx : ConfinementCategoricalContext.{0},
+        haveI := ctx.ringR
+        ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum (fun lam => ctx.e_block lam) := by
+  intro h
+  have := h ccWitness
+  simp only [ccWitness, witness, Finset.range_zero, Finset.sum_empty] at this
+  exact absurd this (by decide)
+
+end InhabProbe

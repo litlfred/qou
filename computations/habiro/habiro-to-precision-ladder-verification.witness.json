@@ -1,35 +1,72 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:45:26.517110+00:00",
-  "commitSha": "aeb3b26142a6800e5d29e0e11ec3fe218d06f0de",
+  "computedAt": "2026-08-23T09:08:43.835209+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "habiro_sum_nonzero",
-      "computed": 136.07120636348176,
+      "computed": 354.7485347060082,
       "expected": 2.0,
       "passed": false,
       "tolerance": 1.0
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "habiro-to-precision-ladder-verification",
   "scriptFile": "habiro_to_precision_ladder_verification.py",
-  "scriptHash": "edab12a35349",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "32942d69e4cb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_to_precision_ladder_verification.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_to_precision_ladder_verification.py"
   },
   "data": {
-    "q_0": "1.10997859555418057528159407960950937799328227995870",
-    "u_0": "1.053555217135855948337607273654076908933",
-    "habiro_sum_proton": "136.0712063634817616514048508169837773395",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "u_0": "1.053555211059857464170468698670719182584",
+    "habiro_sum_proton": "354.7485347060081697155869717695221581070",
     "M_proton": 8,
     "all_integral": true,
-    "conclusion": "The Habiro expansion terminates at M=8 for the proton. All coefficients are integer polynomials in u. The precision-ladder c_k are the Taylor expansion of this FINITE, EXACT, INTEGER sum — no truncation error exists."
-  }
+    "conclusion": "The Habiro expansion terminates at M=8 for the proton. All coefficients are integer polynomials in u. The precision-ladder c_k are the Taylor expansion of this FINITE, EXACT, INTEGER sum \u2014 no truncation error exists.",
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "f1681ffc8fd5e6db1e068b62c6b830119e0c678cb3c2778e131913c8d4c3aaf2",
+        "size_bytes": 10289,
+        "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
+        "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+        "computedAt": "2026-08-18T16:04:42.256921+00:00"
+      },
+      {
+        "path": "m-p-substrate-identity-50dps.witness.json",
+        "sha256": "5c8ccec32dcf28cc19c6ae339bf49f6a5509bf8527fd6ba583e74141d57de338",
+        "size_bytes": 5562,
+        "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+        "scriptCommitSha": "fab11b31a6700c768c67e1412c61020addb65720",
+        "computedAt": "2026-08-08T13:04:48.908965+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

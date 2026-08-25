@@ -32,8 +32,38 @@ def chi_block_111(q: mpf) -> mpf:
     return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
 
 
+#: The variable the Q_β `c_k` rungs are currently expanded in.
+#:
+#: `"u"` — the committed frame, `u = b·ℏ_q²`.
+#: `"h"` — the migration target, `h = q − 1/q` (bean `qou-cwin`).
+#:
+#: The two are NOT interchangeable labels for one ladder: `u ∼ h²`, so the
+#: same function has different rungs in each, and `u → h` reversion needs
+#: `√u`. A `c_k` value is meaningless without knowing which frame it is in —
+#: which is the whole reason this constant exists rather than being implied.
+LADDER_FRAME = "u"
+
+
 def markov_parameter(q: mpf) -> mpf:
-    """The canonical Markov parameter z(q) = √q / (1 + q).
+    """The Q_β channel's **convention-C** Markov parameter z(q) = √q/(1 + q).
+
+    **NOT canonical.** This docstring read "the canonical Markov parameter"
+    until 2026-08-16; convention C was excised by owner ruling 2026-08-09 and
+    re-affirmed 2026-08-15, and the canonical parameter is D's q³/(q²+1).
+
+    The value is deliberately still C and this function is deliberately not
+    migrated: the registry records `channels.qbeta-decay` as
+    `agreed-migration-pending` — convention settled to D, code not yet moved —
+    and `evaluators.z` registers this symbol as C so that **R9 calls it and
+    asserts z_C numerically on every validator run**. Flipping it before the
+    ladder is re-derived would put the registry in contradiction with its own
+    evaluator, and the re-derivation is bean `qou-cds1`, not a z-swap:
+    `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) proves the C-frame
+    ladder and the two-row forcing are mutually exclusive.
+
+    So "C" here is a recorded, gated state — not drift. What was wrong was
+    calling it canonical, which is the label defect the C→D campaign kept
+    finding: a description that outlived the ruling it predates.
 
     Mirrors `markov_parameter` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
@@ -108,8 +138,27 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
 def substrate_ladder_quantities(q: mpf) -> dict:
     """Return the Q_β-ladder substrate quantities at substrate value `q`.
 
-    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`.
+    Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`, `ladder_frame`.
     Mirrors the opening block of `qbeta_ck_cache.py::main`.
+
+    `ladder_frame` names the variable the `c_k` rungs are expanded in. It is
+    currently `"u"`, and it is emitted so that every witness built from these
+    quantities can DECLARE its frame rather than leave a reader to infer it.
+
+    Why the field exists (bean `qou-cwin`, T0). The owner authorised
+    re-expressing the ladder in `h = q − 1/q` instead of `u = b·ℏ_q²`, which
+    changes every `c_k` number. The convention C→D campaign taught what
+    happens when artifacts do not declare their frame: PR #5210's own
+    impact tool could only report *"0 of 12 declare `markov_convention`, so
+    the count is a lower bound"* — a migration whose artifacts are silent
+    about their frame cannot be measured, only guessed at. Measured here
+    before any number moved: of 278 `c_k`-bearing witnesses under
+    `computations/qbeta/`, **0** declared a frame.
+
+    Adding this key is safe for the 102 in-repo consumers: none iterates the
+    returned dict (checked by resolving each `x = substrate_ladder_quantities(...)`
+    binding and searching for `x.items()` / `x.values()`), so a non-numeric
+    value cannot reach arithmetic or a numeric serializer.
 
     Precondition: `q > 0` and `q ≠ 1`. At `q = 1` the substrate degenerates
     (`hbar_q = 0` ⇒ `u = 0`), which makes downstream consumers like
@@ -121,12 +170,28 @@ def substrate_ladder_quantities(q: mpf) -> dict:
     hbar_q = (q - 1) / q
     b = mpsqrt((h ** 2 + 3) / (h ** 2 + 4))
     u = b * hbar_q ** 2
+    # DELIBERATELY convention C, exactly as `markov_parameter` above — see its
+    # docstring for the full reason. Restated HERE because this is a SECOND,
+    # independent inline spelling of the same value: a reader who arrives at
+    # this function alone sees a bare C `z` with no note, and the standing
+    # instruction is to migrate C to D. Doing that here would be WRONG.
+    # `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C-frame ladder and
+    # the mass channel's three-row forcing mutually exclusive, so substituting
+    # z_D into this ladder is not a valid move — the ladder must be RE-DERIVED
+    # (bean `qou-cds1`), which is research, not cleanup.
+    #
+    # Not replaced by a call to `markov_parameter(q)` either, tempting as that
+    # is for keeping one documented site: the two spellings are algebraically
+    # equal but NOT bit-equal — `1/(√q + 1/√q)` against `√q/(1+q)` differ by
+    # 1.6e-61 relative at 60 dps — and this is the one ladder that must not be
+    # perturbed by a substitution, however small.
     z = 1 / (sq + 1 / sq)
     alpha = (z - 1) * h / 2
     Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     return {
         "h": h, "hbar_q": hbar_q, "b": b, "u": u,
         "z": z, "alpha": alpha, "Q_A_over_me": Q_A_over_me,
+        "ladder_frame": LADDER_FRAME,
     }
 
 

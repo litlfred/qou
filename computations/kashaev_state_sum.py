@@ -65,7 +65,7 @@ if __name__ == "__main__":
     wit = {
         "description": "Kashaev quantum-dilog state sum [Kas95] equals the U_q(sl₂) R-matrix engine's reduced colored Jones of 4₁ to 40 digits — the [Kas95] cross-check (#2). VC→Vol(4₁) reused from the merged figure_eight_kashaev_volume.py.",
         "computation": "kashaev_state_sum", "audit_only": True,
-        "reference": "Kashaev 1995, q-alg/9504020 (uploads/9504020v1.pdf)",
+        "reference": "Kashaev 1995, q-alg/9504020 (library/arxiv-q-alg-9504020v1/9504020v1.pdf)",
         "reuses": "figure_eight_kashaev_volume.kashaev_4_1 (dps=60 VC leg)",
         "vol_4_1": str(VOL_4_1),
         "state_sum_vs_engine": {str(N): {"log_kashaev": str(ks), "log_engine": str(eng), "abs_diff": str(d)}

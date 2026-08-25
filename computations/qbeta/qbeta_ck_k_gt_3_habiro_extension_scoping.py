@@ -70,8 +70,9 @@ import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")
 M_E_MEV = mp.mpf("0.51099895069")
 
@@ -103,7 +104,7 @@ def main() -> int:
     # Substrate quantities (per probe_q_beta_operator_valued_N3.py
     # convention — the one used in c_2 = -1 STRUCTURAL).
     h = q - 1 / q                     # Hecke skein
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))  # Markov-Jones
+    z = q**3 / (q**2 + 1)  # Markov-Jones
     alpha = (z - 1) * h / 2           # eigenphase
     d1 = q ** 3 / (q ** 2 + 1)
     d2 = -1 / (q * (q ** 2 + 1))

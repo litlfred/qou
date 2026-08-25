@@ -1,5 +1,5 @@
 {
-  "description": "Recurrence-hunt pipeline validation on 4\u2081 via Takata's fast O(n\u00b2) 2-bridge colored Jones (uploads/KMJ-48-2-255.pdf). Fixes the N-reach wall for the knot case.",
+  "description": "Recurrence-hunt pipeline validation on 4\u2081 via Takata's fast O(n\u00b2) 2-bridge colored Jones (library/kmj-48-2-255/KMJ-48-2-255.pdf). Fixes the N-reach wall for the knot case.",
   "computation": "takata_fig8_recurrence_hunt",
   "audit_only": true,
   "takata_formula": "Corollary 5 eq(14), S(5,3)=4_1, p1=1; validated J(2)=q^2-q+1-q^-1+q^-2 (4_1 Jones)",

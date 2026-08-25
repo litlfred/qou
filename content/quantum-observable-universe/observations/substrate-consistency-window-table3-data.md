@@ -1,3 +1,5 @@
+*The QOU column is the $m_e$-scaled realization of the dimensionless mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction.*
+
 | Particle | QOU | Observed | Sig figs |
 |----------|-----|----------|----------|
 | $\mu^-$ | $105.658$ | $105.658$ | 6 |

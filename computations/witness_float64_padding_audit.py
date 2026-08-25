@@ -52,6 +52,8 @@ import re
 import sys
 from pathlib import Path
 
+from decimal import Decimal, InvalidOperation, localcontext
+
 from mpmath import mp, mpf
 
 mp.dps = 90
@@ -67,9 +69,58 @@ NUMSTR = re.compile(r"^-?\d+\.\d{20,}$")
 # zeros) a value makes no high-precision claim at all.
 MIN_SIG_FRAC = 17
 
-# Relative distance to the nearest binary64 below which the string IS that
-# double's expansion rather than independent information.
+# Cheap pre-filter only. A value further than this from the nearest binary64
+# cannot be that double's expansion, so it is rejected without the exact test
+# below. It is NOT the discriminator — see `is_double_expansion`.
 F64_GAP = mpf("1e-30")
+
+
+def is_double_expansion(t: str) -> bool:
+    """Is `t` the correctly-rounded rendering of its nearest binary64, at the
+    precision `t` actually shows?
+
+    This is what padding *literally is*: a value carrying 53 bits, printed at
+    50 dps, emits the double's dyadic tail. So the question is not "how close
+    is this to a double" but "are these the double's own digits".
+
+    The distinction matters because proximity alone cannot decide it. Class B
+    of the 2026-08-07 sweep is 9 producers whose flagged values are genuine
+    computations of quantities that are exactly integers — `tr_M(1)` landing
+    1.4e-51 short of 1 by rounding. That is *nearer* to a double than a real
+    padding case truncated at 50 dps (1.6e-50), so no threshold can order
+    them:
+
+        mpf(0.1) printed at 50 dps   rel. distance 1.56e-50   IS padding
+        tr_M(1), genuinely computed  rel. distance 1.37e-51   is NOT
+
+    Digits settle it where distance cannot. `mpf(0.1)` at 50 dps reproduces
+    0.10000000000000000555111512312578270211815834045410 — the double's exact
+    expansion, truncated. `tr_M(1)` prints 0.999…99863, and the nearest double
+    is 1.0, whose expansion is "1". Those are not the same digits, and no
+    amount of closeness makes them so.
+
+    Tolerance is exactly one half-ulp *of the shown precision*, so a value
+    whose last digit mpmath rounded still matches. The place value comes from
+    `Decimal.as_tuple().exponent` rather than from counting characters after
+    the ".", so exponent-notation strings get the right ulp too.
+    """
+    try:
+        d = float(mpf(t))
+    except Exception:
+        return False
+    if d == 0 or d != d or abs(d) == float("inf"):
+        return False
+    try:
+        dec = Decimal(t)
+    except InvalidOperation:
+        return False
+    exp = dec.as_tuple().exponent
+    if not isinstance(exp, int):
+        return False                  # NaN/Inf sentinels
+    with localcontext() as ctx:
+        ctx.prec = abs(exp) + 60
+        # Decimal(<float>) is the double's EXACT value, not a re-rounding.
+        return abs(dec - Decimal(d)) <= Decimal(1).scaleb(exp) / 2
 
 
 def is_f64_padded(s: str) -> bool:
@@ -85,9 +136,11 @@ def is_f64_padded(s: str) -> bool:
         return False
     if x == 0:
         return False
-    # float64-intentional: measuring the distance to the nearest double
-    # IS the discriminator here — the downcast is the point.
-    return abs(x - mpf(float(x))) / abs(x) < F64_GAP
+    # Cheap reject first: nowhere near a double, so not its expansion.
+    if abs(x - mpf(float(x))) / abs(x) >= F64_GAP:
+        return False
+    # Then the exact question, which proximity cannot answer.
+    return is_double_expansion(t)
 
 
 def real_digits(s: str) -> str:
@@ -145,6 +198,21 @@ def self_test() -> int:
         ("1.00000000000000000000000000000000000000000000000000000000000", False),
         ("-1.00000000000000000000000000000000000000000000000000000000000", False),
         ("2.00000000000000000000000000000000000000000000000000000000000", False),
+        # --- Class B: genuine computations of exactly-integer quantities.
+        # Each sits CLOSER to a double than a real 50-dps padding case does,
+        # so no distance threshold can reject them; only the digits can. These
+        # are the values three of the nine Class B producers actually emit.
+        ("0.99999999999999999999999999999999999999999999999863", False),   # tr_M(1)
+        ("-0.99999999999999999999999999999999999999999999999863", False),  # H_leading_ratio
+        ("1.0000000000000000000000000000000000000000000000001", False),    # f_leading_ratio
+        ("10.000000000000000000000000000000000000000000000323", False),    # h2, truth 10
+        # --- and the padding that must still be caught, including the shape
+        # the first (string-equality) draft of the discriminator wrongly
+        # cleared: mpmath rounds the last shown digit, so the tolerance has to
+        # be a half-ulp, not an exact match.
+        ("3477.23000000000001818989403545856475830078125", True),          # mpf built at 15 dps
+        ("0.000000001000000000000000062281591457779856418897068692786", True),
+        ("0.10000000000000000555111512312578270211815834045410", True),    # mpf(0.1) @50 dps
     ]
     bad = [(s, e, is_f64_padded(s)) for s, e in cases if is_f64_padded(s) != e]
     if bad:

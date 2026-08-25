@@ -54,7 +54,7 @@ The constancy exclusion is constructive about what survives: the carrier must be
 of **q-functions**, not S-matrix constants. In the uploaded literature:
 
 1. **Homological blocks Ẑ_b(q)** (GPPV; proved for negative-definite plumbed manifolds by
-   Murakami, `uploads/2205.01282v2.pdf` — "WRT invariants are radial limits of homological
+   Murakami, `library/arxiv-2205.01282v2/2205.01282v2.pdf` — "WRT invariants are radial limits of homological
    blocks"). For a ℤHS³ like Σ(2,3,5) there is **one** spin^c block, and its false-theta
    content is exactly the Φ̃ family already screened (rounds 2–3: channels refuted). Bare
    Ẑ does not supply a 4-dim λ-family.
@@ -63,7 +63,7 @@ of **q-functions**, not S-matrix constants. In the uploaded literature:
    colour variable x, giving a genuine q-function family with a tunable index set. This is
    the concrete surviving candidate — and it is **new corpus infrastructure** (no F_K
    object exists in-repo yet).
-3. **Andersen–Mistegård resurgence** (`uploads/1811.05376v4.pdf`) gives the general
+3. **Andersen–Mistegård resurgence** (`library/arxiv-1811.05376v4/1811.05376v4.pdf`) gives the general
    Seifert-fibered analytic machinery if more exceptional fibres are ever needed — but by
    the constancy exclusion, more fibres only enlarge a *constant* family, so this matters
    for route 2 only through its Borel-plane/Ẑ structure, not its S-data.

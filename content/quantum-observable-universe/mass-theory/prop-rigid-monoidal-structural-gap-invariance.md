@@ -10,4 +10,4 @@ The Markov trace $\tau$ is uniquely determined by the categorical axioms up to t
 
 The Type-B folding maps the stable matter fixed points into a symmetric Kashiwara crystal. The spin involution acts as the folded-crystal involution. The Markov trace and LP-dual operator selections are strictly spin-invariant. This rigidly unifies pair-knot selection at magic shells, substrate-binding symmetry, and convention independence.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

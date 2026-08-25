@@ -1,7 +1,8 @@
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys; sys.path.insert(0,'.')
 from mpmath import mp, mpf, fabs, catalan
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR
 from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
 from hecke_core import _PROTON_G0,_PROTON_G1,_NEUTRON_G0,_NEUTRON_G1, h as H
@@ -13,10 +14,13 @@ def block(nuc,k):
     g1=_PROTON_G1 if nuc=='p' else _NEUTRON_G1
     return [(float(c),float(d),3*k) for c,d in g0]+[(float(c),float(d),3*k+1) for c,d in g1]
 
-def cross(a,b):  # pp:(1,0) nn:(1,-h) pn:(1,-h/2)
+def cross(a,b):  # pp:(1,0) nn:(1,-h) pn:(1,-h(1/2-delta/4))
     if a=='p' and b=='p': return (1.0,0.0)
     if a=='n' and b=='n': return (1.0,-h)
-    return (1.0,-h/2)
+    # colour-WEIGHTED p-n interface (qou-gdtb). Was -h/2, the
+    # colour-blind value, which deletes the p/n asymmetry.
+    from canonical_braid_crossings import _avg_color_delta
+    return (1.0, -h * (0.5 - float(_avg_color_delta()) / 4))
 
 def trM(word,n): return fabs(mpf(str(tr_M_via_wenzl_bridge_mpfr(word,n,qs,dps=50))))
 

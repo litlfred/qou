@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:categorical-mass-markov",
   label: "rem:markov-trace-gibbs-free-energy",
   title:
-    "The Markov trace as a temperature state: binding as a free-energy difference",
+    "Binding as a free-energy difference: the Markov trace in the partition-function slot",
   tags: [
     "markov-trace",
     "gibbs-state",
@@ -13,5 +13,5 @@ export default remark({
     "channel-entropy",
   ],
   uses: ["prop:categorical-mass-markov"],
-  cites: ["jones1987"],
+  cites: ["jones1987", "orellana1998"],
 });

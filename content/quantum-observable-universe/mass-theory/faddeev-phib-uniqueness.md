@@ -46,5 +46,4 @@ product-norm bounds. The ratio's global boundedness is derived from comparabilit
 removable-singularity extension, and the two periodicity loci are dense because their complements
 are countable unions of the factor lattices. The remaining hypotheses — that the *second* solution
 is comparable, meromorphic, and continuous where finite — are the honest content of "the physical
-$\Phi_b$ is a bona-fide meromorphic function", not a mathematical gap. The full brick-by-brick
-chain is recorded in the keystone arc map.
+$\Phi_b$ is a bona-fide meromorphic function", not a mathematical gap.

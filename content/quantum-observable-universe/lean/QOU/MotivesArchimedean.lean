@@ -106,7 +106,7 @@ structure FibreFunctor (C : Type*) [Category C] (Arch : ArchimedeanCategory) whe
 /-- The archimedean restriction `τ_arch = π_∞ ∘ τ` of a fibre functor,
     derived from `τ.functor` and `Arch.archProj`. A plain function
     `C → ℝ` — the object-level archimedean evaluation, not a functor. -/
-def archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCategory}
+def FibreFunctor.archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (τ : FibreFunctor C Arch) : C → ℝ :=
   fun c => Arch.archProj (τ.functor.obj c)
 

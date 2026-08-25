@@ -8,6 +8,22 @@ import QOU.Shared.MarkovTraceClaim
 [`prop:toffoli-transfer-matrix`](../../../quantum-observable-universe/information-theory/toffoli-transfer-matrix.md): *QOU.Information.toffoli_transfer_matrix*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## Base ring (§7c) — `ℝ` here is correct
+
+`ToffoliTransferMatrixContext` extends `QOU.Shared.MarkovTraceContext`, which
+supplies a generic coefficient ring `R`, but this block's amplitudes stay at
+`ℝ`: sub-claim (vi) is the closed form
+`P_{7,7} = (q + Real.sqrt q − 1) / (q + 1)`, and a square root is an
+archimedean construct with no counterpart over a generic `CommRing`.  The whole
+family of amplitudes is stated at the same specialisation for coherence, so the
+block sits after the substrate→archimedean wall.  Reviewed under bean
+`qou-mtcx`; do not "port" it to `R` to reduce an `ℝ` count.
+
+The private `q_real : ℝ` is genuinely used (it is the argument of `Real.sqrt`),
+but nothing connects it to the inherited `q : R` — tying the two would need the
+archimedean evaluation functor, which the parent context does not carry.  That
+gap is recorded as bean `qou-mt7r`, not papered over here.
 -/
 
 

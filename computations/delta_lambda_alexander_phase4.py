@@ -43,12 +43,39 @@ sys.path.insert(0, str(HERE))
 import sympy as sp
 
 from witness_base import WitnessBuilder
+from _precision import json_safe_float
+
+
+def f64_json(o):
+    """Serialize an f64 result tree: floats become their repr strings.
+
+    Every numeric field here is f64-limited by construction — the Alexander
+    polynomial is evaluated with sympy `.evalf()` and then passed through
+    `complex()`, which caps at binary64. repr is exactly the digits that
+    produced, round-trips bit-exactly, and keeps raw float64 out of the
+    witness. Non-finite values (the `float('inf')` fallbacks below) go
+    through `json_safe_float` so they cannot become bare JSON tokens.
+    """
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        v = json_safe_float(o)
+        return v if isinstance(v, str) else repr(v)
+    if isinstance(o, dict):
+        return {k: f64_json(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [f64_json(v) for v in o]
+    return o
 from q_parameter import Q as Q0
 
 
 def load_atom_braids() -> dict:
     """Build canonical braid words for D, T, ³He, ⁴He."""
-    from probe_he4_jsj_topology import (
+    # Repointed 2026-08-09: these helpers moved to the live module
+    # `atom_braid_words` when `probe_he4_jsj_topology` was deprecated.
+    # `_path_bridge` skips `_deprecated/`, so the old import raised
+    # ImportError here at call time. Bodies are unchanged.
+    from atom_braid_words import (
         _proton_braid_word,
         _neutron_braid_word,
         he4_compositional_braids,
@@ -217,7 +244,7 @@ def main() -> int:
             except Exception as e:
                 atom_evals[name] = {"err": str(e)}
         evals[atom] = atom_evals
-    builder.add_data("evaluations", evals)
+    builder.add_data("evaluations", f64_json(evals))
     print("\n=== Evaluations ===")
     for atom, ev in evals.items():
         if ev is None:
@@ -232,15 +259,13 @@ def main() -> int:
 
     # 3. Load empirical |Δ_λ*| from Phase 1b tabulation
     try:
-        emp_w = json.loads(
-            (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-        )["data"]["per_atom"]
+        emp_w = builder.add_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE))["data"]["per_atom"]
         empirical = {a: float(emp_w[a]["a_single_block"]["best_abs_delta"])
                      for a in ("D", "T", "3He", "4He")}
     except Exception as e:
         print(f"\n  WARNING: empirical tabulation unavailable: {e}")
         empirical = None
-    builder.add_data("empirical_best_abs_delta", empirical)
+    builder.add_data("empirical_best_abs_delta", f64_json(empirical))
 
     if empirical:
         # 4. Test rel_std for each V(K) candidate
@@ -274,7 +299,7 @@ def main() -> int:
                           f"V = {evals[atom][name]['abs']:>10.4f}  "
                           f"ratio = {r if r else '—':>10}")
                 print(f"    rel_std = {rel_std:.4f} ({'PASS <0.05' if rel_std < 0.05 else 'PARTIAL <0.5' if rel_std < 0.5 else 'MISS'})")
-        builder.add_data("rel_std_per_evaluation", candidates)
+        builder.add_data("rel_std_per_evaluation", f64_json(candidates))
 
         # 5. Cross-Z and cross-N test (D vs T at Z=1; ³He vs ⁴He at Z=2)
         cross_tests = {}
@@ -288,14 +313,17 @@ def main() -> int:
                 "consistency": (abs(T_over_D - He4_over_He3) / max(T_over_D, He4_over_He3)
                                 if T_over_D and He4_over_He3 else None),
             }
-        builder.add_data("cross_z_n_consistency", cross_tests)
+        builder.add_data("cross_z_n_consistency", f64_json(cross_tests))
 
     # Assertions
     builder.add_assertion(
         "alexander_computable",
-        computed=1.0 if all(a is not None for a in alex_polys.values()) else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        # STRINGS: the documented add_assertion convention for keeping a
+        # value out of float64. This one is a BOOLEAN encoded as a float, so
+        # there is no measurement here at all.
+        computed="1.0" if all(a is not None for a in alex_polys.values()) else "0.0",
+        expected="1.0",
+        tolerance="0.0",
         unit="boolean",
         source="all 4 canonical braid closures admit Burau-derived Alexander polynomial",
     )
@@ -304,9 +332,9 @@ def main() -> int:
                    default=float("inf"))
         builder.add_assertion(
             "alexander_phase4_relstd_lower_than_vol_hyp_phase3",
-            computed=float(best),
-            expected=1.398,  # Phase 3 result
-            tolerance=10.0,
+            computed=repr(float(best)),
+            expected="1.398",  # Phase 3 result
+            tolerance="10.0",
             unit="rel_std",
             source="Phase 3 rel_std = 1.398; any lower means Alexander captures more structure",
         )

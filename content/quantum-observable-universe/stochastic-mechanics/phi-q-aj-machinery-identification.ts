@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:phi-q-aj-machinery-identification",
   title: "$\\Phi_q$ / $\\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery",
   lean: {
-    ref: "qou:QOU.BraidKnot.PhiQAJMachineryIdentification",
+    ref: "qou:QOU.BraidKnot.PhiQAJMachineryIdentification.phi_q_li2_q_unified_via_aj",
     validation: "not_checked",
   },
   uses: [

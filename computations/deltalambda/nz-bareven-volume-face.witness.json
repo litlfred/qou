@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-26T01:37:49.913773+00:00",
-  "commitSha": "79d880c00e603a332b9ba97dbaa38720a0b81e8d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:05:24.610950+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "pythagorean_quadrature",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "nz-bareven-volume-face",
   "scriptFile": "nz_bareven_volume_face_probe.py",
-  "scriptHash": "04fd21cac030",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cd375e9119aa",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/nz_bareven_volume_face_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/nz_bareven_volume_face_probe.py"
   },
   "description": "The arg(u) wall is a QUADRATURE effect: the c₃ front proved the NZ bar-odd/CS face nzImVolume=(√3/2)r²sin(2φ) is FROZEN on the real substrate ray φ=0. The μ₀ g₂ is the bar-even/Volume face = the cos partner nzReVolume=(√3/2)r²cos(2φ), MAXIMAL (cos 0=1) and STATIONARY (even in φ, zero phase-slope) at the SAME φ=0 — doubly anchor-smooth. Pythagorean nzRe²+nzIm²=(3/4)r⁴; at φ=0 all the energy is in the bar-even face (CS=0, Vol=peak). So the wall that kills c₃ LEAVES g₂ maximal — g₂ lives where c₃ dies. Corrects the prior 'r frozen like c₃'. Does NOT derive g₂'s value (=trefoil bar-even NZ coeff, #4319). scope-(a), audit-only, nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

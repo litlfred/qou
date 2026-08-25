@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-26T11:23:38.535924+00:00",
-  "commitSha": "356fe282a452614390de2329a78a6635f52f1a13",
+  "computedAt": "2026-08-23T09:02:21.248928+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "coloring_exact_minus_h2",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "g2-leading-exact-coloring-vs-complexvol",
   "scriptFile": "g2_leading_exact_coloring_vs_complexvol_probe.py",
-  "scriptHash": "1b2e86ba6e42",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0a9886079a60",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/g2_leading_exact_coloring_vs_complexvol_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/g2_leading_exact_coloring_vs_complexvol_probe.py"
   },
   "description": "g₂'s bar-even carrier is the REAL coloring (c+1=-h² exact, coefficient EXACTLY 1 — g₂_leading=1), NOT the complex-volume Re face: for the trefoil (A-poly l=-m⁶) the complex-volume u² term is purely imaginary (-3i/4·u², CS/bar-odd), so Re 𝔙 vanishes at the real substrate ray φ=0. Calibrates the #4319 quadrature schematic (nzReVolume=g₂ refined to the real coloring; the 'g₂ lives where c₃ dies' conclusion STANDS via the real coloring). Sharpens: g₂_leading=1 exact; r=0.00865 is entirely the shapes→e₂ nonlinearity (#4315 pinched-limit octahedral e₂). scope-(a), audit-only, nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

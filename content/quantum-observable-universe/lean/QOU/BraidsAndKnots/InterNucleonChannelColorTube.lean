@@ -56,7 +56,7 @@ inductive ColorSheet
   deriving DecidableEq, Repr
 
 /-- The three color sheets. -/
-def allList : List ColorSheet := [.r, .g, .b]
+def ColorSheet.allList : List ColorSheet := [.r, .g, .b]
 
 /-- Quark flavor including the antimatter conjugates (u, d, ū, d̄).
     The matter/antimatter doubling is what the D6 charge-conjugation
@@ -66,14 +66,14 @@ inductive QuarkFlavor
   deriving DecidableEq, Repr
 
 /-- Flavor conjugation u ↔ ū, d ↔ d̄ (the D6 C-action on a single sheet). -/
-def conj : QuarkFlavor → QuarkFlavor
+def QuarkFlavor.conj : QuarkFlavor → QuarkFlavor
   | .u => .ubar
   | .ubar => .u
   | .d => .dbar
   | .dbar => .d
 
 /-- Flavor conjugation is an involution. -/
-theorem conj_involutive (f : QuarkFlavor) : f.conj.conj = f := by
+theorem QuarkFlavor.conj_involutive (f : QuarkFlavor) : f.conj.conj = f := by
   cases f <;> rfl
 
 /-- A nucleon's color-sheet content: the flavor carried on each of the three
@@ -87,7 +87,7 @@ def proton : NucleonColorContent := (QuarkFlavor.u, QuarkFlavor.u, QuarkFlavor.d
 def neutron : NucleonColorContent := (QuarkFlavor.u, QuarkFlavor.d, QuarkFlavor.d)
 
 /-- The flavor a nucleon carries on a given color sheet. -/
-def flavorAt : NucleonColorContent → ColorSheet → QuarkFlavor
+def NucleonColorContent.flavorAt : NucleonColorContent → ColorSheet → QuarkFlavor
   | (f, _, _), .r => f
   | (_, f, _), .g => f
   | (_, _, f), .b => f

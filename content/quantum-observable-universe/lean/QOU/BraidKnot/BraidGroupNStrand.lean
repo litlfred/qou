@@ -210,7 +210,7 @@ noncomputable def markovZN_real (q : ℝ) (_hq : 0 < q) : ℝ :=
       - `markovZN_real (q : ℝ) (hq : 0 < q)` (Tier 5 archimedean shim)
     Do NOT migrate to `markovZN (Real.sqrt q)` — that still triggers
     the `q-usage-positivity-implicit` warning. -/
-@[deprecated (since := "2026-08-03") "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZN_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
@@ -248,7 +248,7 @@ The 2-strand case is fully discharged by `Braid2 ≃ ℤ` (via
 
     Conventional: positive `n : ℤ` produces `n` positive crossings of
     the single generator σ_0 in `Fin (2 − 1) = Fin 1`. -/
-def toBraidWord : Braid2 → BraidWord 2
+def Braid2.toBraidWord : Braid2 → BraidWord 2
   | (Int.ofNat k) => List.replicate k ⟨(0 : Fin 1), true⟩
   | (Int.negSucc k) => List.replicate (k + 1) ⟨(0 : Fin 1), false⟩
 

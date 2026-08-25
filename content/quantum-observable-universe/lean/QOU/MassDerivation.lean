@@ -97,7 +97,10 @@ theorem topological_mass_conjecture (tmf : TopologicalMassFormula) :
 /-! ## Section 2: Experimental & Topological Constants -/
 
 /-- The Hyperbolic Volume of the Figure-Eight Knot (4₁).
-    Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function (OEIS A091518).
+    Exact: `2 · Cl₂(π/3) = 6 · Λ(π/3)`, where `Cl₂` is the Clausen function
+    and `Λ` the Lobachevsky function, `Λ(θ) = Cl₂(2θ)/2` (OEIS A091518).
+    The complement decomposes into two regular ideal tetrahedra, each of
+    volume `Cl₂(π/3) = 3 · Λ(π/3) ≈ 1.01494`.
     Computed by SnapPy; value from Bloch-Wigner dilogarithm. -/
 noncomputable def vol_figure_eight : ℝ := 2.029883212819307250042408
 
@@ -158,7 +161,7 @@ lemma sqrt_substrate_q_bracket :
 
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
-    |experimental_mu_e_ratio - 206.7683| < 1e-4 := by
+    |experimental_mu_e_ratio - 206.7683| < 1e-4 := by  -- noqa: P31 - deliberate 7-digit round; the 1e-4 tolerance is 300x the edition delta
   -- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
   unfold experimental_mu_e_ratio
   norm_num

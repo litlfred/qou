@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-16T02:32:47.492919+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "assertions": [
+    {
+      "name": "a2_matches_proved",
+      "computed": "3.211511132e-25",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "Richardson a2 vs proved i*sqrt(3)/4 (method validation)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 602,
+  "computation": "qbeta-ohtsuki-nz-bridge-b4",
+  "scriptFile": "qbeta_ohtsuki_nz_bridge_b4_probe.py",
+  "scriptHash": "aa4a6fdf0c8a",
+  "scriptCommitSha": "69e6123f1614192675ebca40909ff2bf370baf3c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "E1 second equation for the OhtsukiNZBridgeScale lock (PR #5081): geometric a4 of the 4_1 complex volume V(u) (validated gluing Newton + Rogers dilog, 3-point Richardson, h-ladder stability, a2 validated against the proved i*sqrt(3)/4) vs the linear-bridge predictions a4 = -kappa2*kappaA^2/kappa1^2 for kappaA in {sqrt(3)/4, sqrt(3)/2} (exact Ohtsuki rungs kappa1 = 11*sqrt(3)*pi/108, kappa2 = 2*pi^2/27). The bridge also REQUIRES Im(a4) = 0. Verdict reported not asserted; nothing wired; no fit (all quantities derived or exact). Scope-(a). Beans qou-vfn2 / qou-yh67.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "extraction": [
+      {
+        "h": "0.001",
+        "a2": "(0.0 + 0.433012701892219j)",
+        "a4": "(0.0 + 0.0721687836483j)"
+      },
+      {
+        "h": "0.0001",
+        "a2": "(0.0 + 0.433012701892219j)",
+        "a4": "(0.0 + 0.0721687836487j)"
+      }
+    ],
+    "a2_validation": {
+      "a2_extracted": "(0.0 + 0.43301270189221932338j)",
+      "a2_proved": "i*sqrt(3)/4",
+      "abs_err": "3.21151e-25"
+    },
+    "geometric_a4": {
+      "a4": "(0.0 + 0.072168783648703176851j)",
+      "re": "0.0",
+      "im": "0.072168783648703176851"
+    },
+    "bridge_predictions": {
+      "kappa_pot": "-0.44628099173553719008",
+      "kappa_shape": "-1.7851239669421487603"
+    },
+    "verdict": {
+      "text": "LINEAR BRIDGE REFUTED at order b4 (scope-(a)): a4 is not real as the bridge requires",
+      "rel_pot": "1.0",
+      "rel_shape": "1.0",
+      "im_ratio": "1.0"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Taylor coefficients in a FREE parameter u against proved constants: pi, sqrt(3), the exact Ohtsuki rungs k1 = 11*sqrt(3)*pi/108 and k2 = 2*pi^2/27, and 4_1 geometry via t2.V41_integrated. No substrate value is read. The one non-trivial import, probes/sdeformed_channel_signflip_probe.py, imports only json/subprocess/datetime/pathlib/mpmath, so wedderburn_jones_markov.y_lambda_at — and its muon-cache straddle — is unreachable from here."
+}

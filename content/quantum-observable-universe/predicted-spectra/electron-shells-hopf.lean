@@ -37,14 +37,17 @@ class ElectronShellsHopf : Prop where
   shell_capacity : ShellCapacity2nSquaredHolds
   noble_gas_closure : NobleGasClosureHolds
 
-axiom electron_shells_hopf_shell_capacity : ShellCapacity2nSquaredHolds
-axiom electron_shells_hopf_noble_gas_closure : NobleGasClosureHolds
-
--- Ref: [manuscript] conj:electron-shells-hopf
-instance electron_shells_hopf_conjecture : ElectronShellsHopf where
-  -- Witness: computations/none
-  shell_capacity := electron_shells_hopf_shell_capacity
-  -- Ref: [manuscript]
-  noble_gas_closure := electron_shells_hopf_noble_gas_closure
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance electron_shells_hopf_conjecture : ElectronShellsHopf where
+--     axiom electron_shells_hopf_shell_capacity : ShellCapacity2nSquaredHolds
+--     axiom electron_shells_hopf_noble_gas_closure : NobleGasClosureHolds
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[ElectronShellsHopf]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[ElectronShellsHopf]` as an explicit hypothesis.
 
 end QOU.ElectronShellsHopf

@@ -128,8 +128,7 @@ def main() -> int:
     print("=" * 78)
 
     # ── 1. exact Δtr_M(u) ──────────────────────────────────────────
-    wit = json.loads(
-        (_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    wit = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     trM_p = habiro_trM(wit["results"]["p (proton, A=1)"])
     trM_n = habiro_trM(wit["results"]["n (neutron, A=1)"])
     dtrM = sp.cancel(trM_n - trM_p)
@@ -213,9 +212,7 @@ def main() -> int:
     cand_b = peel_ladder(a_even, "b: #1602 bar-even projection, even-in-ℏ")
 
     # numeric b
-    b_val = sp.Float(json.loads(
-        (Path(HERE).parent / "q-beta-operator-valued-N3.witness.json"
-         ).read_text())["data"]["hoefsmit_b"], 50)
+    b_val = sp.Float(builder.add_upstream(Path(HERE).parent / "q-beta-operator-valued-N3.witness.json")["data"]["hoefsmit_b"], 50)
     print(f"\n  Hoefsmit b = {b_val}")
     bridge_ck = cand_a.get("c_sym", {})
     bridge_ck_num = {k: sp.N(v.subs(b, b_val), 30) for k, v in bridge_ck.items()}

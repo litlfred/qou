@@ -1,6 +1,30 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T17:02:07.500330+00:00",
+  "commitSha": "92f516f0ea3013bced8152290830ea411e02b14b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 177,
   "computation": "d-u-closed-form-proof",
-  "computedAt": "2026-07-18T17:42:01.798511+00:00",
+  "scriptFile": "d_u_closed_form_proof.py",
+  "scriptHash": "35a9e797b0dd",
+  "scriptCommitSha": "60db563d0b6227d14a38fd319fbd55c610055f1b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Structural proof of D(u) = 2^(2A+1) · u^shift · (1+u²)^(3A−1) for atomic-braid Markov trace at q = u² in the canonical pppnnn ordering used by `atomic_braid_to_crossings`.  The 2^(2A+1) factor is proved by counting averaged crossings (each averaged crossing = (σ + σ⁻¹)/2, contributing a factor of 1/2): each nucleon has 2 averaged ud-pair couplings → 2A factors; canonical pppnnn ordering has exactly one mixed (p,n) inter-nucleon interface → +1 more, total 2A+1.  The (1+u²)^(3A−1) factor follows from the Markov/Ocneanu trace formula z^(n−1) at q = u²: with z = u/(1+u²) and n = 3A, clearing the denominator yields (1+u²)^(3A−1) in D(u).  The u^shift residual is left as an open structural question (depends on the Hecke-NF reduction; varies by 3 between T and ³He at A=3).",
   "reference_blocks": [
     "def:hecke-quadratic-relation",
@@ -202,11 +226,5 @@
     }
   ],
   "all_predictions_match": true,
-  "open_question_u_shift": "u^shift varies between isospin partners at the same A (T: 61, ³He: 58 at A=3; |ΔZ−ΔN|·1.5?).  Closed form for u^shift requires deeper Hecke-NF reduction analysis.",
-  "scriptHash": "b82e67ad7cf7",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
-  "engine": "python",
-  "durationMs": 0,
-  "scriptFile": "d_u_closed_form_proof.py"
+  "open_question_u_shift": "u^shift varies between isospin partners at the same A (T: 61, ³He: 58 at A=3; |ΔZ−ΔN|·1.5?).  Closed form for u^shift requires deeper Hecke-NF reduction analysis."
 }

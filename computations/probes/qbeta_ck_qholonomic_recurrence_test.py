@@ -207,7 +207,7 @@ def extract_empirical_ladder(q0):
 
     q = q0
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q = (q - 1) / q
     hq2 = hbar_q ** 2
     alpha = (z - 1) * h / 2

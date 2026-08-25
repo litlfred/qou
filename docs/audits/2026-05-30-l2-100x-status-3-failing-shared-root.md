@@ -4,6 +4,30 @@
 
 **Source.** [`computations/per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
 
+> **🛑 Refresh (2026-08-18) — the count is 1/5 scoreable, and this doc's
+> closure path is refuted.** Two corrections, both from
+> [`2026-08-18-mass-binding-accuracy-what-is-closeable.md`](2026-08-18-mass-binding-accuracy-what-is-closeable.md):
+>
+> 1. **`2/7` counts calibration inputs.** The table below marks `m_e` ✓ with
+>    "N/A (anchor)". `m_e` is the CAL-1 input that fixes the MeV unit; its
+>    error is *defined* zero, not measured. That is the same reasoning `m_p`
+>    is excluded for, only stronger. Scoreable count: **1/5** — `m_K/m_π`
+>    alone. Quote `beats_100x_scoreable` / `scoreable_total`.
+> 2. **"Extend the ladder to `k ≥ 3`" (the Closure path below) is refuted.**
+>    `QOU/QBeta/GreedyLadderTermination.lean` (sorry-free) proves the producer
+>    extracts **one** rung by inverting the target, after which the residual is
+>    *identically* zero — `greedy_later_rungs_vanish`: *"`c_4 … c_7` carry no
+>    information; they are not small, they are `0`."* And the one extracted
+>    rung `c₃` comes **from** experimental `Q_β`, so it is circular for
+>    predicting it. The 164× is therefore the **floor of the ladder's
+>    non-circular content**, not a truncation artifact; `m_n` and `Δ_pn`
+>    inherit it. The trio needs a *different* derivation of `Q_β`. The ladder
+>    is additionally convention-C-frame while D is canonical (`qou-cds1`), so
+>    the floor is itself C-conditional.
+>
+> The **shared-root analysis itself stands** — the trio is still one number
+> propagated three ways. Only the count and the closure path change.
+
 > **🛑 Refresh (2026-07-06, post the 2026-07-04 m_p de-fit).** The
 > shared-root analysis of the (Q_β, m_n, Δ_pn) trio below **stands** —
 > but the headline count and the m_p row are stale. **m_p no longer

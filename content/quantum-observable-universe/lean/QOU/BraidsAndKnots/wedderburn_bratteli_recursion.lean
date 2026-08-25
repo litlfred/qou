@@ -20,11 +20,17 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class WedderburnBratteliRecursionContext extends QOU.Shared.MarkovTraceContext where
-  /-- Real specialisation of `q`. -/
-  q_real : ℝ
-  /-- Jones-Markov weight `y_λ^{(n)}` indexed by partition and `n`. -/
-  y_lambda : ℕ → ℕ → ℝ
-  /-- Ratio of consecutive weights along a fixed-shape monotone path. -/
+  /-- Jones-Markov weight `y_λ^{(n)}` indexed by partition and `n`, valued in
+      the inherited coefficient ring `R` of the parent Markov-trace context
+      (§7c: `y_λ(q)` is a q-rational in `√q`). -/
+  y_lambda : ℕ → ℕ → R
+  /-- Ratio of consecutive weights along a fixed-shape monotone path.
+
+      This and the fields below stay at `ℝ` on purpose (§7c): the sub-claims
+      about them are order comparisons (`ratio (k+1) ≤ ratio k`,
+      `0 ≤ ratio k * q_content_sign k`) and an ε-N convergence statement with
+      an absolute value.  Ordering, `|·|` and limits are archimedean, so this
+      part of the block sits after the substrate→archimedean wall. -/
   ratio : ℕ → ℝ
   /-- Manuscript sub-claim (i) — Per-row monotonicity: ratios decrease
       along the fixed-shape path (`ratio k ≥ ratio (k+1)`). -/

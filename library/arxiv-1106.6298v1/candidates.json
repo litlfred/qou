@@ -1,0 +1,231 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1106.6298v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "23b0754067873a045774878d26073722bbc8d527e4209057d37b5bdf7f80b6d4",
+  "file": "1106.6298v1.pdf"
+ },
+ "provenance": {
+  "title": "ON THE UNIFICATION OF QUANTUM 3\u2013MANIFOLD INV ARIANTS",
+  "authors": "ANNA BELIAKOV A AND THANG LE",
+  "arxiv": {
+   "id": "1106.6298",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "30 Jun 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 15,
+  "by_kind": {
+   "theorem": 6,
+   "remark": 1,
+   "proposition": 3,
+   "lemma": 2,
+   "example": 2,
+   "conjecture": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "[Reshetikhin\u2013Turaev] FL(\u03be) is invariant under K1\u2013Move.",
+   "section_file": "sections/sec-006-14-evaluation-and-gauss-sums.md",
+   "section_title": "Evaluation and Gauss sums",
+   "pages": "7-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "If we drop the condition that the colors in the summation are odd, an d sum",
+   "section_file": "sections/sec-006-14-evaluation-and-gauss-sums.md",
+   "section_title": "Evaluation and Gauss sums",
+   "pages": "7-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "[Habiro] Suppose L is a link in S3 having zero linking matrix. Then there",
+   "section_file": "sections/sec-006-14-evaluation-and-gauss-sums.md",
+   "section_title": "Evaluation and Gauss sums",
+   "pages": "7-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "[Beliakova\u2013B\u00a8 uhler\u2013Le]Suppose the components of a framed oriented link",
+   "section_file": "sections/sec-007-2-main-results.md",
+   "section_title": "Main Results",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4",
+   "name": null,
+   "statement": "[Beliakova\u2013B\u00a8 uhler\u2013Le]Let p be an odd prime not dividing b and T the",
+   "section_file": "sections/sec-008-22-laplace-transform.md",
+   "section_title": "Laplace transform",
+   "pages": "10-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "[Beliakova\u2013B\u00a8 uhler\u2013Le]Suppose b = \u00b11 or b = \u00b1pl where p is a prime and",
+   "section_file": "sections/sec-009-21-strategy-of-the-proof.md",
+   "section_title": "Strategy of the proof",
+   "pages": "10-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "For every rational homology sphere M, there are lens spaces L(bi, ai) such",
+   "section_file": "sections/sec-010-24-diagonalization-using-lens-spaces.md",
+   "section_title": "Diagonalization using lens spaces",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Assume R = Z, S = N and S\u2032 = {1}, then we have that the map \u02c6Z[q] \u2192",
+   "section_file": "sections/sec-012-31-on-cyclotomic-polynomials.md",
+   "section_title": "On cyclotomic polynomials",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "of [8] shows that if R \u2282 Q, S is R\u2013connected, and there exists n \u2208 S that is",
+   "section_file": "sections/sec-012-31-on-cyclotomic-polynomials.md",
+   "section_title": "On cyclotomic polynomials",
+   "pages": "12-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "Consider again the case when R = Z, S = N and put T = {3n|n \u2208 N}, then",
+   "section_file": "sections/sec-012-31-on-cyclotomic-polynomials.md",
+   "section_title": "On cyclotomic polynomials",
+   "pages": "12-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8",
+   "name": null,
+   "statement": "For every prime p one has",
+   "section_file": "sections/sec-014-34-splitting-of-sp-and-evaluation.md",
+   "section_title": "Splitting of Sp and evaluation",
+   "pages": "14-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "9",
+   "name": null,
+   "statement": "[Beliakova\u2013B\u00a8 uhler\u2013Le]Suppose M is a rational homology 3\u2013sphere with",
+   "section_file": "sections/sec-015-35-on-the-ohtsuki-series-at-roots-of-unity.md",
+   "section_title": "On the Ohtsuki series at roots of unity",
+   "pages": "14-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "11",
+   "name": null,
+   "statement": "[Beliakova\u2013Le] Suppose f \u2208 Z[q\u00b1n, q\u00b11]. Then",
+   "section_file": "sections/sec-016-4-laplace-transform-andrews-identity-and-frobeni.md",
+   "section_title": "Laplace transform, Andrews identity and Frobenius maps",
+   "pages": "15-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "12",
+   "name": null,
+   "statement": "[Beliakova\u2013B\u00a8 uhler\u2013Le]The Frobenius endomorphism Fb : Z[1/b][q]Nb \u2192",
+   "section_file": "sections/sec-017-43-frobenius-isomorphism.md",
+   "section_title": "Frobenius isomorphism",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "For any M \u2208 M b, there exists an invariant I\u2032",
+   "section_file": "sections/sec-018-44-integrality.md",
+   "section_title": "Integrality",
+   "pages": "17-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

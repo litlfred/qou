@@ -1,0 +1,1037 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0006156v1",
+ "source": {
+  "file": "0006156v1.pdf",
+  "sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
+  "bytes": 236891,
+  "pages": 20
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0006156",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "20 Jun 2000"
+  },
+  "doi": null,
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
+  "authors_raw": "THEORY. I: ALGEBRAIC APPROACH AND DUALITY",
+  "abstract": "The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theo ry is self- dual: there are two exponential ﬁelds related by Hermitean c onjugation, satisfying two discrete quantum Liouville equations, and l iving in mu- tually commuting subalgebras of the quantum algebra of obse rvables.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022112929-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/0006156v1  20 Jun 2000"
+  },
+  "title_prev": "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE",
+  "title_lines": [
+   "STRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Recollecting the facts",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Liouville formula and M¨ obius-invariance.Liouville formula makes",
+   "page": 2,
+   "source": "inferred",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "( α ′′",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(φx −φt)2 + 1",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(φxx −φtx) +e−2φ.(3)",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Magri bracket. The canonical Poisson bracket",
+   "page": 3,
+   "source": "inferred",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "V olterra model. The ﬁrst such attempt [16] produced a viable lattice",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "(m+n)(δm+2,n −δm−2,n ),(5′)",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Bi-hamiltonity. Historically, the Magri bracket brought about the",
+   "page": 4,
+   "source": "inferred",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Quantization. Going quantum, bracket ↓ ought to become Weyl-style",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Proof. We just honestly start from n = 1:",
+   "page": 5,
+   "source": "inferred",
+   "number": "1.6"
+  },
+  {
+   "level": 1,
+   "title": "QbN =b2b3...b N,",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "It has to do with braids. Let us compile a list of what we know",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "Lattice Virasoro algebra. Now we look for a generalization of this",
+   "page": 6,
+   "source": "inferred",
+   "number": "1.8"
+  },
+  {
+   "level": 1,
+   "title": "Difference-difference Liouville equation",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Liouville formula. For aesthetical reason alone, its diﬀerence approx-",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "(j−k+1) −α 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j−k−1)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j+k+1) −β 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j+k−1)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j−k+1) −β 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j+k+1)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(j−k−1) −β 1",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Discrete Liouville equation. It not only ideologically justiﬁes the",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "(j−k)",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Poisson bracket. Two rows of χ’s make perfect Cauchy data",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Formal quantization",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Algebra of observables. In a virtual replay of subsection 1.5, we in-",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum lattice Liouville equation. We can only aﬀord a Heisen-",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Shift and evolution operators. If we guessed the equation right,",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Odd N or no condition (9). In these cases it all fails, and subsec-",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Chiral evolution operator. We deﬁne it as",
+   "page": 10,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "(H −P ) of the original",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of eqn (11). First, we recall the two identities satisﬁed by",
+   "page": 11,
+   "source": "inferred",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Dualization",
+   "page": 11,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Involution. The formal quantization of section 3 can be put in the",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Change of function ǫ. So, |τ | = 1, also, since c does not distinguish",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Unitarity. Replace ǫ byf in every factor of every shift-evolution op-",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Dual Liouville equation. Let us permute the factors in the l.h.s of",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Baxter equation. It reads",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions and comments",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Appendix: the non-compact quantum dilogarithm",
+   "page": 14,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "F unctional relations. Function (15) satisﬁes the ‘inversion’ relation",
+   "page": 15,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Analytic properties. We can perform the integration in (15) by the",
+   "page": 15,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 2,
+   "title": "Integral Ramanujan identity . Consider the following Fourier inte-",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "F ourier transformation of the QDL. Certain specializations of",
+   "page": 17,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Pentagon identity . Using formula (32) and commuta-",
+   "page": 17,
+   "source": "inferred",
+   "number": "6.5"
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "2",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 420,
+   "n_words": 68
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3858,
+   "n_words": 657
+  },
+  {
+   "id": "sec-002-1-recollecting-the-facts",
+   "number": "1",
+   "title": "Recollecting the facts",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 126,
+   "n_words": 22
+  },
+  {
+   "id": "sec-003-11-liouville-formula-and-m-obius-invarianceliouv",
+   "number": "1.1",
+   "title": "Liouville formula and M¨ obius-invariance.Liouville formula makes",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 951,
+   "n_words": 177
+  },
+  {
+   "id": "sec-004-2-α",
+   "number": "2",
+   "title": "( α ′′",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 83,
+   "n_words": 18
+  },
+  {
+   "id": "sec-005-4-φx-φt2-1",
+   "number": "4",
+   "title": "(φx −φt)2 + 1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-2-φxx-φtx-e2φ3",
+   "number": "2",
+   "title": "(φxx −φtx) +e−2φ.(3)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 84,
+   "n_words": 14
+  },
+  {
+   "id": "sec-007-12-magri-bracket-the-canonical-poisson-bracket",
+   "number": "1.2",
+   "title": "Magri bracket. The canonical Poisson bracket",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1175,
+   "n_words": 232
+  },
+  {
+   "id": "sec-008-4-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "4",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 141,
+   "n_words": 25
+  },
+  {
+   "id": "sec-009-13-v-olterra-model-the-ﬁrst-such-attempt-16-prod",
+   "number": "1.3",
+   "title": "V olterra model. The ﬁrst such attempt [16] produced a viable lattice",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 88,
+   "n_words": 19
+  },
+  {
+   "id": "sec-010-2-mnδm2n-δm2n-5",
+   "number": "2",
+   "title": "(m+n)(δm+2,n −δm−2,n ),(5′)",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 708,
+   "n_words": 129
+  },
+  {
+   "id": "sec-011-14-bi-hamiltonity-historically-the-magri-bracket",
+   "number": "1.4",
+   "title": "Bi-hamiltonity. Historically, the Magri bracket brought about the",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1012,
+   "n_words": 192
+  },
+  {
+   "id": "sec-012-15-quantization-going-quantum-bracket-ought-to-b",
+   "number": "1.5",
+   "title": "Quantization. Going quantum, bracket ↓ ought to become Weyl-style",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 952,
+   "n_words": 183
+  },
+  {
+   "id": "sec-013-16-proof-we-just-honestly-start-from-n-1",
+   "number": "1.6",
+   "title": "Proof. We just honestly start from n = 1:",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 490,
+   "n_words": 92
+  },
+  {
+   "id": "sec-014-1-qbn-b2b3b-n",
+   "number": "1",
+   "title": "QbN =b2b3...b N,",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 363,
+   "n_words": 76
+  },
+  {
+   "id": "sec-015-6-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "6",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 275,
+   "n_words": 50
+  },
+  {
+   "id": "sec-016-17-it-has-to-do-with-braids-let-us-compile-a-lis",
+   "number": "1.7",
+   "title": "It has to do with braids. Let us compile a list of what we know",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1245,
+   "n_words": 245
+  },
+  {
+   "id": "sec-017-18-lattice-virasoro-algebra-now-we-look-for-a-ge",
+   "number": "1.8",
+   "title": "Lattice Virasoro algebra. Now we look for a generalization of this",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1013,
+   "n_words": 171
+  },
+  {
+   "id": "sec-018-2-difference-difference-liouville-equation",
+   "number": "2",
+   "title": "Difference-difference Liouville equation",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-019-21-liouville-formula-for-aesthetical-reason-alon",
+   "number": "2.1",
+   "title": "Liouville formula. For aesthetical reason alone, its diﬀerence approx-",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 511,
+   "n_words": 106
+  },
+  {
+   "id": "sec-020-2-jk1-α-1",
+   "number": "2",
+   "title": "(j−k+1) −α 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-021-2-jk1",
+   "number": "2",
+   "title": "(j−k−1)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 7,
+   "n_words": 4
+  },
+  {
+   "id": "sec-022-2-jk1-β-1",
+   "number": "2",
+   "title": "(j+k+1) −β 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-2-jk1",
+   "number": "2",
+   "title": "(j+k−1)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 7,
+   "n_words": 4
+  },
+  {
+   "id": "sec-024-2-jk1-β-1",
+   "number": "2",
+   "title": "(j−k+1) −β 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 17,
+   "n_words": 6
+  },
+  {
+   "id": "sec-025-2-jk1-β-1",
+   "number": "2",
+   "title": "(j−k−1) −β 1",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 455,
+   "n_words": 133
+  },
+  {
+   "id": "sec-026-8-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "8",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-027-22-discrete-liouville-equation-it-not-only-ideol",
+   "number": "2.2",
+   "title": "Discrete Liouville equation. It not only ideologically justiﬁes the",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1281,
+   "n_words": 231
+  },
+  {
+   "id": "sec-028-2-jk",
+   "number": "2",
+   "title": "(j−k)",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 71,
+   "n_words": 19
+  },
+  {
+   "id": "sec-029-23-poisson-bracket-two-rows-of-χs-make-perfect-c",
+   "number": "2.3",
+   "title": "Poisson bracket. Two rows of χ’s make perfect Cauchy data",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 351,
+   "n_words": 69
+  },
+  {
+   "id": "sec-030-3-formal-quantization",
+   "number": "3",
+   "title": "Formal quantization",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-31-algebra-of-observables-in-a-virtual-replay-of",
+   "number": "3.1",
+   "title": "Algebra of observables. In a virtual replay of subsection 1.5, we in-",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 374,
+   "n_words": 65
+  },
+  {
+   "id": "sec-032-32-quantum-lattice-liouville-equation-we-can-onl",
+   "number": "3.2",
+   "title": "Quantum lattice Liouville equation. We can only aﬀord a Heisen-",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 489,
+   "n_words": 89
+  },
+  {
+   "id": "sec-033-33-shift-and-evolution-operators-if-we-guessed-t",
+   "number": "3.3",
+   "title": "Shift and evolution operators. If we guessed the equation right,",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1041,
+   "n_words": 193
+  },
+  {
+   "id": "sec-034-10-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "10",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 706,
+   "n_words": 125
+  },
+  {
+   "id": "sec-035-34-odd-n-or-no-condition-9-in-these-cases-it-all",
+   "number": "3.4",
+   "title": "Odd N or no condition (9). In these cases it all fails, and subsec-",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 231,
+   "n_words": 41
+  },
+  {
+   "id": "sec-036-35-chiral-evolution-operator-we-deﬁne-it-as",
+   "number": "3.5",
+   "title": "Chiral evolution operator. We deﬁne it as",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 201,
+   "n_words": 43
+  },
+  {
+   "id": "sec-037-2-h-p-of-the-original",
+   "number": "2",
+   "title": "(H −P ) of the original",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 805,
+   "n_words": 146
+  },
+  {
+   "id": "sec-038-36-proof-of-eqn-11-first-we-recall-the-two-ident",
+   "number": "3.6",
+   "title": "Proof of eqn (11). First, we recall the two identities satisﬁed by",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 829,
+   "n_words": 156
+  },
+  {
+   "id": "sec-039-4-dualization",
+   "number": "4",
+   "title": "Dualization",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-040-41-involution-the-formal-quantization-of-section",
+   "number": "4.1",
+   "title": "Involution. The formal quantization of section 3 can be put in the",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 796,
+   "n_words": 169
+  },
+  {
+   "id": "sec-041-12-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "12",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 130,
+   "n_words": 30
+  },
+  {
+   "id": "sec-042-42-change-of-function-ǫ-so-τ-1-also-since-c-does",
+   "number": "4.2",
+   "title": "Change of function ǫ. So, |τ | = 1, also, since c does not distinguish",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 694,
+   "n_words": 147
+  },
+  {
+   "id": "sec-043-43-unitarity-replace-ǫ-byf-in-every-factor-of-ev",
+   "number": "4.3",
+   "title": "Unitarity. Replace ǫ byf in every factor of every shift-evolution op-",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 671,
+   "n_words": 128
+  },
+  {
+   "id": "sec-044-44-dual-liouville-equation-let-us-permute-the-fa",
+   "number": "4.4",
+   "title": "Dual Liouville equation. Let us permute the factors in the l.h.s of",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1448,
+   "n_words": 299
+  },
+  {
+   "id": "sec-045-45-baxter-equation-it-reads",
+   "number": "4.5",
+   "title": "Baxter equation. It reads",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 729,
+   "n_words": 147
+  },
+  {
+   "id": "sec-046-14-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "14",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-047-5-conclusions-and-comments",
+   "number": "5",
+   "title": "Conclusions and comments",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2839,
+   "n_words": 512
+  },
+  {
+   "id": "sec-048-6-appendix-the-non-compact-quantum-dilogarithm",
+   "number": "6",
+   "title": "Appendix: the non-compact quantum dilogarithm",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 590,
+   "n_words": 111
+  },
+  {
+   "id": "sec-049-61-f-unctional-relations-function-15-satisﬁes-th",
+   "number": "6.1",
+   "title": "F unctional relations. Function (15) satisﬁes the ‘inversion’ relation",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 657,
+   "n_words": 116
+  },
+  {
+   "id": "sec-050-62-analytic-properties-we-can-perform-the-integr",
+   "number": "6.2",
+   "title": "Analytic properties. We can perform the integration in (15) by the",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 616,
+   "n_words": 107
+  },
+  {
+   "id": "sec-051-16-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "16",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 505,
+   "n_words": 95
+  },
+  {
+   "id": "sec-052-63-integral-ramanujan-identity-consider-the-foll",
+   "number": "6.3",
+   "title": "Integral Ramanujan identity . Consider the following Fourier inte-",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1802,
+   "n_words": 302
+  },
+  {
+   "id": "sec-053-64-f-ourier-transformation-of-the-qdl-certain-sp",
+   "number": "6.4",
+   "title": "F ourier transformation of the QDL. Certain specializations of",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 473,
+   "n_words": 87
+  },
+  {
+   "id": "sec-054-65-proof-of-the-pentagon-identity-using-formula",
+   "number": "6.5",
+   "title": "Proof of the Pentagon identity . Using formula (32) and commuta-",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 627,
+   "n_words": 115
+  },
+  {
+   "id": "sec-055-18-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "18",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 35,
+   "n_words": 7
+  },
+  {
+   "id": "sec-056-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 6972,
+   "n_words": 1079
+  },
+  {
+   "id": "sec-057-20-ld-f-addeev-rm-kashaev-and-ayu-volkov",
+   "number": "20",
+   "title": "L.D. F ADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 552,
+   "n_words": 70
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 59,
+  "sections": 58,
+  "chars_total": 40496
+ }
+}

@@ -29,4 +29,4 @@ $$
 
 *The coarsest level at which $k_{\max}(P, q, n) \le n$ is computationally sufficient. Unfolding to any deeper level is superfluous for trace-class invariants.*
 
-**Archimedean specialisation.** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

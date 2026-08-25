@@ -38,7 +38,7 @@ structure ConfinementLevel (R : Type u) [CommRing R] where
     nonempty (since `T_w ∈ J^0(q) = H_n(R, q)` trivially), so its
     minimum exists. -/
 -- Ref: [manuscript] braids-and-knots/confinement-level
-theorem exists (R : Type u) [CommRing R] :
+theorem ConfinementLevel.nonempty (R : Type u) [CommRing R] :
     Nonempty (ConfinementLevel R) :=
   ⟨{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }⟩
 

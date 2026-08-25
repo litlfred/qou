@@ -87,7 +87,7 @@ TARGETS = ["4_1", "5_2", "6_2", "L5a1", "L6a4"]
 
 
 def _shapes(M):
-    return [mp.mpc(mp.mpf(str(s.real())), mp.mpf(str(s.imag())))
+    return [mp.mpc(mp.mpf(str(s.real()).replace(' ', '')), mp.mpf(str(s.imag()).replace(' ', '')))
             for s in M.tetrahedra_shapes("rect", bits_prec=BITS)]
 
 

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-12T16:07:25.788070+00:00",
-  "commitSha": "28ef1495366ad0ff1ab8f728675d0d77ff1968c0",
+  "computedAt": "2026-08-23T09:12:32.457101+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "saddle_actions_computed_and_jet_exactness_exclusion",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 22,
   "computation": "lever1-saddle-action-jet-residue",
   "scriptFile": "lever1_saddle_action_jet_residue_probe.py",
-  "scriptHash": "d11a38488847",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a1af67f237f0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,29 +27,40 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_saddle_action_jet_residue_probe.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_saddle_action_jet_residue_probe.py"
   },
   "description": "Lever-1 (z2bn): (A) the three reciprocal-pair saddle actions of the q-free color cubic, continuity-tracked quadrature (conv <1e-3): the exact-WKB dictionary puts Borel singularities at ACTIONS between branch points, not at branch positions (corrects the external dialog's conflation); values reported against the measured level-1/2 datum 1/sqrt2 with NO identification asserted (numerology guard). (B) exact sympy: sheet expansions at infinity reproduce the Step-1 n=0 residues {0, +-5i/16} (sheet-sum 0), and the 1/z coefficient of X^(n) vanishes identically for n=1..4 on every sheet — the finite face of the EXACTNESS (b)-exclusion: lambda_SW^(n)=X^(n)dz=d(X^(n-1)) is exact for n>=1, so all residues and all closed-cycle periods vanish; the classical-jet rule cannot carry a_D^(n)=lw(n-1)!=0 (invariant: Stokes/exactness; independent of #2768's q-freeness exclusion; q-difference route and prop:sw-period-residue-sum untouched). No fit; no wiring.",
   "data": {
     "branch_pairs": [
       [
-        "(-0.974815532978038603071239093942 + 0.223012727584643770942226560641j)",
-        "(-0.974815532978038603071239093942 - 0.223012727584643770942226560641j)"
+        "(-0.9748155329780386030712390939418967983612799784563638047930658949575039 + 0.2230127275846437709422265606405869739665319111893604593059896083639343j)",
+        "(-0.9748155329780386030712390939418967983612799784563638047930658949575039 - 0.2230127275846437709422265606405869739665319111893604593059896083639343j)"
       ],
       [
-        "(0.105829586188268020990938731157 - 0.937138937838903436914878115252j)",
-        "(0.118985946789770582080300362785 + 1.05364074271210914502945935065j)"
+        "(0.1058295861882680209909387311570727599004692665665490827932180752509447 - 0.9371389378389034369148781152522105760335158103183223144055810512920329j)",
+        "(0.1189859467897705820803003627848240384608107118898147219998478197065592 + 1.053640742712109145029459350650498996145105945092223236371258229560317j)"
       ],
       [
-        "(0.105829586188268020990938731157 + 0.937138937838903436914878115252j)",
-        "(0.118985946789770582080300362785 - 1.05364074271210914502945935065j)"
+        "(0.1058295861882680209909387311570727599004692665665490827932180752509447 + 0.9371389378389034369148781152522105760335158103183223144055810512920329j)",
+        "(0.1189859467897705820803003627848240384608107118898147219998478197065592 - 1.053640742712109145029459350650498996145105945092223236371258229560317j)"
       ]
     ],
     "pair_actions": [
-      "(-0.42812785827472457164915290511 - 0.0326155252169251934210129476222j)",
-      "(-1.76033343458208224251704083567 - 1.77284151731080988024770922457j)",
-      "(-1.76033343458208224251704083567 + 1.77284151731080988024770922457j)"
+      "(-0.4281278582747245716491529051101779996073731352064505132393290216034733 - 0.03261552521692519342101294762227087773734138622391985022243952837608467j)",
+      "(-1.760333434582082242517040835672694628644360099803589601391963262790653 - 1.772841517310809880247709224573162878981684062295364670606306945109148j)",
+      "(-1.760333434582082242517040835672694628644360099803589601391963262790653 + 1.772841517310809880247709224573162878981684062295364670606306945109148j)"
     ],
     "pair_action_abs": [
       0.42936841466982467,

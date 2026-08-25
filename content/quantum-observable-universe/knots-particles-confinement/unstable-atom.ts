@@ -7,6 +7,11 @@ export default definition({
     validation: "not_checked",
   },
   cites: [],
+  uses: [
+    // Defined as the negation of this condition, so it carries no content of
+    // its own until the reader has the positive case.
+    "def:stable-atom",
+  ],
   tags: [
     "instability",
     "decay",

@@ -1,0 +1,44 @@
+{
+  "schema": "witness/v1",
+  "engine": "sympy",
+  "scriptFile": "c3_w2_c1_inf_recursion_derivation.py",
+  "scriptSha256": "08b8baadaea09e684e149c912d5d139fa1990dec450b8456f5c207388f55c4fc",
+  "commitSha": "d10c601506d68c6aa61afee6e306d8189ffeefc3",
+  "description": "Bean qou-slpd item 4 (remainder). Derives the C1 inf-side recursion c_{m+1} = c_m (1 + (q-1)q^m + (q-1)q^{2m}) from the operator L1 = (q^2 x - 1) sigma^2 - (q-1) sigma - (q-1), replacing the witness-sourced assertion that QOU.Mass.C1FormalSolutionGrowth built its growth chain on. Applies L1 symbolically to a truncated ansatz f = sum c_k x^{-k} with symbolic coefficients and checks that the coefficient of x^{-n} is exactly the four-term collection q^2 q^{-2(n+1)} c_{n+1} - q^{-2n} c_n - (q-1)q^{-n} c_n - (q-1) c_n for every n = 0..8 \u2014 the term-by-term reading that Lean's l1CoeffAt encodes and that would otherwise be inspection. Solving those coefficients for c_{n+1} returns the recursion. Also records the single leftover at x^{+1}, equal to q^2 c_0 and hence nonzero for c_0 = 1: the ansatz does not satisfy L1 f = 0 outright, which is the expected signature of a nonzero Newton slope, and every power above x^{+1} vanishes.",
+  "computation": {
+    "operator": "(q^2 x - 1) sigma^2 - (q-1) sigma - (q-1), sigma: x -> q x",
+    "ansatz": "f = sum_{k=0}^{N+1} c_k x^{-k}, symbolic c_k",
+    "truncation": 8,
+    "exactRange": "coefficients of x^-n exact for 0 <= n <= 8"
+  },
+  "results": {
+    "coefficient_match_all_n": true,
+    "recursion_recovered_all_n": true,
+    "obstruction": "c0*q**2",
+    "higher_powers_vanish": true
+  },
+  "checks": [
+    {
+      "name": "l1_coefficient_is_the_four_term_collection",
+      "detail": "symbolic, n = 0..8, symbolic c_k: coefficient of x^-n in L1 f equals q^2 q^{-2(n+1)} c_{n+1} - q^{-2n} c_n - (q-1) q^{-n} c_n - (q-1) c_n. This is what QOU.Mass.C1FormalSolutionGrowth.l1CoeffAt encodes.",
+      "passed": true
+    },
+    {
+      "name": "recursion_is_equivalent_to_vanishing_coefficients",
+      "detail": "solving coeff(x^-n) = 0 for c_{n+1} returns exactly c_n (1 + (q-1) q^n + (q-1) q^{2n}) for every n = 0..8. Lean proves the same equivalence in general as l1CoeffAt_eq_zero_iff.",
+      "passed": true
+    },
+    {
+      "name": "x_plus_one_obstruction_is_q_squared_c0",
+      "detail": "the ansatz leaves exactly one term outside the x^{-n} range, coeff = q^2 c_0, nonzero for c_0 = 1. Recorded rather than dropped; Lean carries it as l1Obstruction.",
+      "passed": true
+    },
+    {
+      "name": "no_leftovers_above_x_plus_one",
+      "detail": "x^2, x^3, x^4 coefficients are identically zero, so x^{+1} is the only obstruction.",
+      "passed": true
+    }
+  ],
+  "verdict": "The recursion is derived, not asserted. Coefficient of x^-n in L1 f = the four-term collection (symbolic, all n = 0..8), and Lean's l1CoeffAt_eq_zero_iff proves that collection vanishes iff the recursion holds \u2014 so recursion <=> L1 kills every x^{-n} coefficient. The one honest caveat, now recorded in both the script and Lean (l1Obstruction): the ansatz leaves q^2 c_0 at x^{+1}, so it is not a solution of L1 f = 0 outright. That is what a nonzero Newton slope forces, and it does not affect the growth chain, which only ever used the recursion. Nothing wired to production.",
+  "durationMs": 1626
+}

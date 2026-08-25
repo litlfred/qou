@@ -1,0 +1,62 @@
+{
+  "schema": "witness/v1-informal",
+  "description": "charm_composite_volume_probe: SnapPy complex-volume test of composite charmed-baryon braids vs heavy-baryon masses.",
+  "producer": "computations/charm_composite_volume_probe.py",
+  "consumes": [
+    "conj:complex-mass-constituent-functional"
+  ],
+  "precision": {
+    "engine": "snappy+mpmath",
+    "dps": 70,
+    "snappy_bits_prec": 230
+  },
+  "inputs": {
+    "proton_MeV": "938.272089429999999999999999999999999999999999999999459224910",
+    "Lambda_c_MeV": "2286.46000000000000000000000000000000000000000000000000000000",
+    "Lambda_b_MeV": "5619.60000000000000000000000000000000000000000000000000000000"
+  },
+  "results": {
+    "uniform_power_family": {
+      "3": {
+        "vol": "7.32772475341775212043682811945907288619319499425337707413198",
+        "components": 3
+      },
+      "5": {
+        "vol": "17.0857094829828612769009748404836548250383596094306290144362",
+        "components": 1
+      },
+      "7": {
+        "vol": "26.0544015072655349676603681235921943115993129893142224279008",
+        "components": 1
+      },
+      "9": {
+        "vol": "34.6759294687656303525465615789141986163177452556275279846600",
+        "components": 3
+      }
+    },
+    "three_component_candidates": {
+      "borromean.s1^2": {
+        "vol": "9.80200116579412274324745824943651411388608148110296691982394",
+        "components": 3,
+        "ratio_over_proton": "1.33765957314681257653711913495658589551319134340978101032499"
+      },
+      "borromean.s1^4": {
+        "vol": "10.4486181636347479764379320873225546181705508732283334656913",
+        "components": 3,
+        "ratio_over_proton": "1.42590210675713058511557882535086994143566111746478704522461"
+      },
+      "borromean.s1^2 s2^2": {
+        "vol": "11.0821666243736898531622019631543343987863681627958094884357",
+        "components": 3,
+        "ratio_over_proton": "1.51236120314219146185268278979091896949034201962847773207465"
+      },
+      "borromean.s1^2 s2^-2": {
+        "vol": "15.8637443096481553185412612773309578590047171861831894360490",
+        "components": 3,
+        "ratio_over_proton": "2.16489358477187419992366690911849993343042460809293426418696"
+      }
+    }
+  },
+  "verdict": "NO parameter-free composite-braid volume reproduces the charmed-baryon mass ratio. Near-coincidence Vol((s1s2^-1)^5)/Vol(Borromean)=2.332 vs Lambda_c/proton=2.437 (~4%) is DISQUALIFIED: (s1s2^-1)^5 is a KNOT (1 component), not a 3-quark baryon, and bottom (n=7) misses by ~40%. 3-component-correct candidates miss the charm ratio and closing the gap needs tuned twist count (=fit). Comparison also assumes mass~Vol (constant density), not the canonical absolute-mass law. m_c OPEN.",
+  "scope": "(a) scope-limited negative under mass~Vol; SnapPy now available for principled follow-up (variable-density / projection)."
+}

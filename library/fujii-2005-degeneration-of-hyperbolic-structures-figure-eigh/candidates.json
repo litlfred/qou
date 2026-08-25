@@ -1,0 +1,53 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "bca3996c7a667b189b9c46e2d745be632afdcc86ed6517a602c25da21db975cb",
+  "file": "fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf"
+ },
+ "provenance": {
+  "title": "Michihiko Fujii 1. Introduction",
+  "authors": "In this paper, we consider a hyperbolic structure on a manifold to be a",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "Let K be the \ufb01gure-eight knot in the 3-dimensional sphere",
+   "section_file": "sections/sec-009-44-theorem.md",
+   "section_title": "Theorem",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The correspondence in (iv) is not canonical, because it de-",
+   "section_file": "sections/sec-009-44-theorem.md",
+   "section_title": "Theorem",
+   "pages": "9-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

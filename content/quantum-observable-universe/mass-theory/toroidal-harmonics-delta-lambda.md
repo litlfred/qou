@@ -28,9 +28,9 @@ This explicit map establishes that the topological evaluation $B_{\text{sym}}$ i
 > The evaluation below anchors on the Fibonacci-anyon value
 > $q_0 = 1/\phi \approx 0.618$, which is **not** the substrate modulus
 > $q_0 \approx 1.110$. It is a numerical coincidence at an unrelated anchor,
-> not a parameter-free evaluation on the substrate, and it does **not** close
-> the $\Delta_\lambda$ gate (open per the three-calibration discipline; six
-> ansätze have failed). It is recorded as a candidate Bring/Fibonacci lead to
+> not a parameter-free evaluation on the substrate, and it does **not** determine
+> $\Delta_\lambda$, which stays open under the three-calibration discipline;
+> six ansätze have failed. It is recorded as a candidate Bring/Fibonacci lead to
 > be *derived or refuted*, not as a result.
 
 The toroidal ratio $P_{-1/2}/P_{1/2}$ drives the scaling gap $c_\lambda$. At the

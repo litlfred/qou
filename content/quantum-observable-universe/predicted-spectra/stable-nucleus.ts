@@ -16,5 +16,5 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.StableNucleus",
     validation: "not_checked",
   },
-  uses: ["prop:beta-stability"],
+  uses: ["def:categorical-neutron", "prop:beta-stability"],
 });

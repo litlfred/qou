@@ -25,6 +25,13 @@ from pathlib import Path
 from mpmath import mp
 
 # ── q parameter (canonical source) ───────────────────────────
+# `mp` here is the mpmath CONTEXT (`from mpmath import mp`), so `mp.dps`
+# is the correct spelling. Raised before the fallback below: that branch
+# reconstructs q0 from a 16-digit literal and binds module-level q0/qi0/HA
+# used throughout, so at the default 15 dps the whole module would run
+# off a 53-bit q0 whenever q_parameter is unavailable.
+mp.dps = 50
+
 try:
     from q_parameter import Q as q0, Q_INV as qi0, HA
 except ImportError:

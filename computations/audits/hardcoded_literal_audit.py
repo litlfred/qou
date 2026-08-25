@@ -64,13 +64,14 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 REPO_ROOT = HERE.parent.parent
 
 
 def _load_registry() -> dict[str, mp.mpf]:
     """Import codata_constants and extract MeV-magnitude constants."""
-    mp.mp.dps = 50
+    set_compute_dps()
     sys.path.insert(0, str(HERE))
     import codata_constants as cc  # noqa: E402
     registry: dict[str, mp.mpf] = {}

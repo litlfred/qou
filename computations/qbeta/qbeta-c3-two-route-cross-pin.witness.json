@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T21:11:50.975413+00:00",
-  "commitSha": "dd1234649f161e5328845f4287d891f81202a39b",
+  "computedAt": "2026-08-24T13:31:45.739420+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "local_qpRatio_anchor_blind",
-      "computed": 2.8083677114294837e-09,
+      "computed": 2.8277935209399292e-09,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-06,
@@ -14,7 +14,7 @@
     },
     {
       "name": "local_readout_matches_no_named_count",
-      "computed": 2.9999999971916322,
+      "computed": 2.9999999971722064,
       "expected": 3.0,
       "passed": true,
       "tolerance": 2.0,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "qbeta-c3-two-route-cross-pin",
   "scriptFile": "qbeta_c3_two_route_cross_pin_probe.py",
   "scriptHash": "595e5d569f9e",
-  "scriptCommitSha": "dd1234649f161e5328845f4287d891f81202a39b",
+  "scriptCommitSha": "93afd50fb270589a4451f633ff7bf0878b9bf7b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,18 +36,27 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_two_route_cross_pin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_two_route_cross_pin_probe.py"
   },
   "description": "Two-route cross-pin of the c₃ bar-odd A_ω datum. Route A = smooth ladder S = c3_target + Vol41 (the TARGET swing S_p/S_m ≈ -4.0751). Route B = the scale-invariant local Φ_b quasi-period readout qpRatio = Φ_b(z0+ib)/Φ_b(z0) at the substrate b-map (arg b = +π/4), validated evaluator. RESULT: the local qpRatio cross-anchor ratio is 1 - 3e-9 (anchor-BLIND) — it supplies neither the S swing nor any pre-named integer/count ratio. Scope-(a): the c₃ bar-odd swing is NOT in the local Φ_b monodromy but in the dual/large-arg (Stokes) monodromy — the 3d-index/GGM face owned by siblings #3805/#3826. Empirically confirms QOU.QBeta.MonodromyDatumRigidity (local readout solution/anchor-independent) and the non-perturbative phase law (c821747763). No fit; no c_k wired; consumes #3826 I_Δ(0,0) only as a cited reference.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
-    "S_swing_target_ratio": "-4.0751270031620453255",
+    "S_swing_target_ratio": "-3.936920509461592627",
     "local_qpRatio_cross_anchor": {
-      "re": "0.99999999719163228857",
-      "abs": "0.99999999719163228857",
-      "abs_minus_one": "2.80837e-9"
+      "re": "0.99999999717220647906",
+      "abs": "0.99999999717220647906",
+      "abs_minus_one": "2.82779e-9"
     },
     "pre_named_candidates": [
       {

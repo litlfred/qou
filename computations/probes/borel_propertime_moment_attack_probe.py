@@ -122,7 +122,12 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0             # sympy exact / integer comparisons
 N_MOMENTS = 8             # A1/E1/E2 symbolic range
@@ -133,7 +138,7 @@ N_LOGCONVEX = 40          # A6 raw-period log-convexity range
 # witness; proton from qou_substrate.constants Q_50_DIGIT_STR).
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 # (proton re-pin 2026-05-28; _solve_q_proton_f64 + mpmath refine):
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
@@ -432,6 +437,7 @@ def main() -> int:
     set_compute_dps(50)
     wb = WitnessBuilder("borel-propertime-moment-attack",
                         engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Attacks A + E on the conjecture 'binding Borel variable = loop "
         "proper time' (beans qou-7gu9 + qou-zfl0, epic qou-q04o; "

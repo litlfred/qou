@@ -48,15 +48,17 @@ namespace QOU.Information
       the degree-0 answer blocked and degree-≥1 witnesses leaking,
       `P ≠ NP` holds in the QOU.
 
-    No instance is provided — `transfer` is the open identification. -/
-class JetHorizonTransfer (chi : ℤ) where
+    No instance is provided — `transfer` is the open identification. The
+    `decisionCost` parameter names the QOU decision-cost family whose
+    non-poly-boundedness (`PNeqNPInQOU decisionCost`) the transfer targets. -/
+class JetHorizonTransfer {M : Type*} (decisionCost : M → ℕ → ℕ) (chi : ℤ) where
   /-- `Γ(𝓗, A₀) = 0`: degree-0 sections vanish on the jet horizon. -/
   degreeZeroBlocked : Prop
   /-- A nonzero universal obstruction forces degree-0 horizon opacity. -/
   opacity_of_obstruction : chi ≠ 0 → degreeZeroBlocked
   /-- **The conjectural bridge**: a blocked degree-0 answer (with
       degree-≥1 witnesses leaking) yields the QOU decision separation. -/
-  transfer : degreeZeroBlocked → PNeqNPInQOU
+  transfer : degreeZeroBlocked → PNeqNPInQOU decisionCost
 
 /-- **Given a QOU and the jet-horizon transfer, P ≠ NP in the QOU
     (conditional, sorry-free from the hypotheses).**  Composes the
@@ -65,8 +67,9 @@ class JetHorizonTransfer (chi : ℤ) where
     bridge.  The entire open content is the `[JetHorizonTransfer]`
     instance — the degree-graded NP-witness/P-answer identification —
     never a bare `P ≠ NP`. -/
-theorem qou_p_neq_np_of_jetHorizon [Q : QOUObstruction]
-    [T : JetHorizonTransfer Q.chi] : PNeqNPInQOU :=
+theorem qou_p_neq_np_of_jetHorizon {M : Type*} (decisionCost : M → ℕ → ℕ)
+    [Q : QOUObstruction] [T : JetHorizonTransfer decisionCost Q.chi] :
+    PNeqNPInQOU decisionCost :=
   T.transfer (T.opacity_of_obstruction chi_ne_zero)
 
 end QOU.Information

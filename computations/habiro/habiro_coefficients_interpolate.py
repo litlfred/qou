@@ -117,13 +117,16 @@ def chi_lambda_numerical(shape, q_val, crossings):
         return mp.mpc(0), 0
     q = mp.mpc(q_val)
     h = q - 1 / q
-    # "averaged" p-n interface is color-weighted by default (matches the
-    # canonical atom_braid_word_3A default + the Rust χ cache): σ − h·(1/2 −
-    # δ/4), δ = flavor_split_subleading(q₀). Was the color-blind −h/2.
-    from canonical_braid_crossings import _avg_color_delta
-    _delta = _avg_color_delta()
-    d_map = {"sigma": mp.mpc(0), "sigma_inv": -h,
-             "averaged": -h * (mp.mpf(1) / 2 - _delta / 4)}
+    # This built ONE averaged entry and gave it the COLOUR-WEIGHTED value,
+    # under the key `"averaged"` -- the colour-BLIND ctype. So the weighting
+    # landed on the intra-nucleon crossings (which are colour-blind, -h/2) and
+    # the actual p-n interface, once it started arriving as
+    # `averaged_weighted`, hit a KeyError. Inverted and crashing at once.
+    # It also reached into the private `_avg_color_delta` and its comment named
+    # `flavor_split_subleading` while that helper returns `leading`.
+    # `d_for_ctype` is the public map and gets both keys right.
+    from canonical_braid_crossings import CTYPES, d_for_ctype
+    d_map = {c: mp.mpc(d_for_ctype(c, h)) for c in CTYPES}
     M = [[mp.mpc(1 if i == j else 0) for j in range(dim)] for i in range(dim)]
     for gen_idx, cross_type in crossings:
         sigma = sigmas[gen_idx]

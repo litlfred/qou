@@ -30,9 +30,13 @@ $$
 This sum is intrinsically finite (over partitions $\lambda \vdash n$)
 and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \neq 0\}$.
 
-*Step 3 (curvature-rank stratification).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
-the centre $Z(A)$ admits a GB-depth filtration
+*Step 3 (curvature-rank stratification).*
+[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
+**words**. The grading of the centre by *partition* depth used below is a
+further step, not stated there and assumed here; see
+`docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`.
+Granting it, the centre $Z(A)$ admits a GB-depth filtration
 
 $$
   Z(A) \;=\; \bigoplus_{k = 0}^{k_\star(T_w)} Z^{(k)}(A),
@@ -56,8 +60,13 @@ projection
 
 *Step 4 ($\Phi_q$-product representation).* By
 [quantum dilogarithm = localized torsion volume](#cor:quantum-dilogarithm),
-the analytic representation of the curvature-rank-$k$ stratum on the
-$i$-th exceptional divisor is
+the transient trace contribution at $p_i$ evaluates to $\Phi_q(z_i)$.
+That identity is **unstratified** — it equates the whole transient
+trace with the whole dilogarithm and says nothing about levels. The
+level-by-level refinement this step needs is
+[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified),
+and with it the analytic representation of the curvature-rank-$k$
+stratum on the $i$-th exceptional divisor is
 
 $$
   \mathfrak{m}^{(k)}_{q,\mathcal{K}}\big|_{i\text{-th divisor}}

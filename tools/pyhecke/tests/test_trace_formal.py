@@ -71,20 +71,28 @@ def test_hecke_relation_symbolic():
 
 def test_trace_is_rational_in_s():
     """tr_M(σ₀) = z = s/(s²+1) — a genuine rational function in s, not a
-    Laurent polynomial (the Step-2 raison d'être)."""
+    Laurent polynomial (the Step-2 raison d'être).
+
+    **Convention D**: z = q³/(q²+1) = s⁶/(s⁴+1). Still a genuine rational
+    function in s, so the ℚ(s) coefficient ring is unchanged; only the
+    weight itself moved. (Convention C was s/(s²+1).)"""
     tr = nf_tr_formal(nf_of_word_formal((0,)))
-    assert sp.simplify(tr - s / (s ** 2 + 1)) == 0, tr
+    assert sp.simplify(tr - s ** 6 / (s ** 4 + 1)) == 0, tr
 
 
 def test_root_of_unity_eval_runs_and_is_finite():
     """eval_at_root_of_unity returns finite complex values; tr_M(σ₀) at
-    q=exp(2πi/N) equals z evaluated there (sanity, Step-3 hook)."""
+    q=exp(2πi/N) equals z evaluated there (sanity, Step-3 hook).
+
+    N=4 is excluded: it is the **convention-D pole** (see
+    `test_habiro_profile_skips_trace_pole`)."""
     tr_sigma0 = nf_tr_formal(nf_of_word_formal((0,)))
     for N in (3, 5, 7, 12):
         val = complex(eval_at_root_of_unity(tr_sigma0, N))
-        # s = exp(iπ/N); z = s/(s²+1)
+        # s = exp(iπ/N), q = s²; convention D: z = q³/(q²+1)
         sv = complex(sp.N(sp.exp(sp.I * sp.pi * sp.Rational(1, N))))
-        assert _close(val, sv / (sv ** 2 + 1)), (N, val)
+        qv = sv ** 2
+        assert _close(val, qv ** 3 / (qv ** 2 + 1)), (N, val)
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -110,23 +118,45 @@ def test_quantum_int_25_is_fibre_local_not_global():
 
 
 def test_habiro_profile_skips_trace_pole():
-    """habiro_profile of tr_M(σ₀)=z=s/(s²+1) over N=1..6 skips the pole
-    at N=2 (s=i ⇒ s²+1=0); every kept N carries z evaluated at ζ_N."""
+    """habiro_profile of tr_M(σ₀)=z over N=1..6 skips the trace pole;
+    every kept N carries z evaluated at ζ_N.
+
+    **The pole MOVED under convention D — N=2 → N=4.** This is a real
+    consequence of the convention change, not a re-pinning:
+
+    * C: z = 1/(q^½+q^−½) = s/(s²+1) blows up at s² = −1, i.e. **q = −1**
+      — the primitive *2nd* root of unity, so N=2.
+    * D: z = q³/(q²+1) blows up at q² = −1, i.e. **q = ±i** — a primitive
+      *4th* root of unity, so N=4.
+
+    Consequence for the Habiro / Q_β c_3 residue work this module exists
+    to serve: ζ_2 becomes an *accessible* evaluation point (z(−1) = −1/2,
+    finite), while ζ_4 becomes inaccessible. Any downstream analysis that
+    assumed N=2 was the excluded point must be re-checked."""
     z_expr = nf_tr_formal(nf_of_word_formal((0,)))
     prof = habiro_profile(z_expr, 6)
     kept_N = [N for N, _ in prof]
-    assert kept_N == [1, 3, 4, 5, 6], kept_N
+    assert kept_N == [1, 2, 3, 5, 6], kept_N
     for N, val in prof:
         sv = complex(sp.N(sp.exp(sp.I * sp.pi * sp.Rational(1, N))))
-        assert _close(val, sv / (sv ** 2 + 1)), (N, val)
+        qv = sv ** 2
+        assert _close(val, qv ** 3 / (qv ** 2 + 1)), (N, val)
+    # Pin the two endpoints of the relocation explicitly, computed by
+    # hand rather than read off the implementation:
+    #   z(q=−1) = (−1)³/((−1)²+1) = −1/2   (N=2, now FINITE)
+    assert _close(dict(prof)[2], -0.5), prof
 
 
 def test_habiro_profile_keep_degenerate_marks_none():
-    """skip_degenerate=False records the pole at N=2 as (2, None)."""
+    """skip_degenerate=False records the pole as (N, None).
+
+    Under convention D the pole sits at **N=4** (q = i ⇒ q²+1 = 0), not
+    at N=2 as under convention C — see
+    `test_habiro_profile_skips_trace_pole` for the derivation."""
     z_expr = nf_tr_formal(nf_of_word_formal((0,)))
     prof = dict(habiro_profile(z_expr, 4, skip_degenerate=False))
-    assert prof[2] is None, prof
-    assert prof[1] is not None and prof[3] is not None
+    assert prof[4] is None, prof
+    assert prof[1] is not None and prof[2] is not None and prof[3] is not None
 
 
 def test_habiro_profile_keeps_finite_zero():

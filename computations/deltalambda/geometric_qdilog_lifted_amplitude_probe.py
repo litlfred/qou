@@ -64,8 +64,16 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
 TWO_PI_I = 2 * mp.pi * mp.mpc(0, 1)
 
@@ -186,7 +194,7 @@ def main() -> int:
         "result": result,
         "context": {
             "axis": "Δ_λ binding — μ₀ −9% closure, the exact residual r = g₂ − 1",
-            "paper": "uploads/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
+            "paper": "library/arxiv-2509.02354v2/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
             "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch)",
             "builds_on": "#4345 (shape −h² from rep), #4339 (g₂_leading=1), #4347 (frontier: bare Li₂)",
             "q0_convention": "muon-canonical (computations/ layer)",

@@ -239,14 +239,14 @@ theorem deltaLambda_realization_is_cancellation_free
                            #4570 / #4574. -/
 
 /-- Both objects carry the ungraded Wedderburn dimension `dim V_λ` (`f_λ(1)=dim`). -/
-theorem single_sum_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.single_sum_eq_dim (p : PartitionOf5) :
     (p.singleCoeffs).sum = p.dim := by cases p <;> decide
 
-theorem fake_sum_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.fake_sum_eq_dim (p : PartitionOf5) :
     (p.fakeCoeffs).sum = p.dim := by cases p <;> decide
 
 /-- `G_λ` realizes `Δ_λ` (the #4553 single-degree collapse). -/
-theorem single_altSum_eq_deltaLambda (p : PartitionOf5) :
+theorem PartitionOf5.single_altSum_eq_deltaLambda (p : PartitionOf5) :
     altSum p.singleCoeffs = p.deltaLambda := by cases p <;> decide
 
 /-! ### `G_λ` is single-parity; `H_λ` is two-parity — the mechanism, on the anchor -/
@@ -264,13 +264,13 @@ theorem single_is_single_parity (p : PartitionOf5) :
     `V_λ` across a run of consecutive grades, hitting both parities.  (The two
     dim-1 blocks are single monomials `q^0`, `q^{10}` — vacuously single-parity —
     hence the `dim ≠ 1` hypothesis.) -/
-theorem fake_both_parity (p : PartitionOf5) (h : p.dim ≠ 1) :
+theorem PartitionOf5.fake_both_parity (p : PartitionOf5) (h : p.dim ≠ 1) :
     0 < (masses p.fakeCoeffs).1 ∧ 0 < (masses p.fakeCoeffs).2 := by
   revert h; cases p <;> decide
 
 /-- **`H_λ` strictly undershoots**: `|χ(H_λ)| < dim V_λ` on every non-trivial block
     — the cancellation, quantified. -/
-theorem fake_abs_altSum_lt_dim (p : PartitionOf5) (h : p.dim ≠ 1) :
+theorem PartitionOf5.fake_abs_altSum_lt_dim (p : PartitionOf5) (h : p.dim ≠ 1) :
     |altSum p.fakeCoeffs| < (p.dim : ℤ) := by
   have hb := p.fake_both_parity h
   have := abs_altSum_lt_sum_of_both_parity p.fakeCoeffs hb.1 hb.2
@@ -279,7 +279,7 @@ theorem fake_abs_altSum_lt_dim (p : PartitionOf5) (h : p.dim ≠ 1) :
 /-- **`H_λ` can never equal `Δ_λ`** — because it cancels below `dim = |Δ_λ|`.
     The honest coinvariant / jet-order TOWER does NOT realize the binding factor;
     the concentration is genuinely absent from it. -/
-theorem fake_cancels_ne_deltaLambda (p : PartitionOf5) (h : p.dim ≠ 1) :
+theorem PartitionOf5.fake_cancels_ne_deltaLambda (p : PartitionOf5) (h : p.dim ≠ 1) :
     altSum p.fakeCoeffs ≠ p.deltaLambda := by
   intro hbad
   have hlt := p.fake_abs_altSum_lt_dim h

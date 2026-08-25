@@ -57,13 +57,28 @@ sys.path.insert(0, str(HERE))
 # Centralised precision (COMPUTE 65 dps / SERIALIZE 50 dps defaults).
 from _precision import set_compute_dps, fmt  # noqa: E402
 
-from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings, d_for_ctype,
+)
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 # ----------------------------------------------------------------------------
-# Substrate constants (canonical; from the deuteron χ cache header).
+# Substrate constants.
 # ----------------------------------------------------------------------------
-Q0_STR = "1.1099785955573347198997632204832250266562084087802"
+# Q0_STR used to be a hardcoded literal here, commented "from the deuteron χ
+# cache header". It did not match that header: the literal was the MUON pin
+# (1.10997859555733471…) while the cache declares q0Anchor "proton" and
+# q0Value 1.10997858275138080…. Since `q` is hardcoded it also bypassed both
+# the q0_anchor_manifest and QOU_Q0_ANCHOR, so neither could correct it.
+#
+# That one-line mismatch WAS the whole 8.9e-7 "Δ_λ cross-check residual" this
+# script reports. The identity Σ_w ρ_w = χ^λ is exact — verified to 1e-49 when
+# both sides use the same q — so the residual was measuring the μ–p anchor
+# separation and nothing else. Kept as a named fallback only; `main` now takes
+# q FROM the cache header, which makes the comment true by construction and
+# means the cross-check can never again be run at two different anchors.
+Q0_STR_FALLBACK = "1.1099785827513808075916690956107688798744991218736"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.
@@ -240,13 +255,21 @@ def identity(n):
 
 
 def generator_word_matrices(lam, syts, syt_index, q, qi):
-    """Pre-build σ_g, σ_g⁻¹, and the interface (σ_g − h/2·1) for each generator
-    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate)."""
+    """Pre-build σ_g, σ_g⁻¹, and BOTH interfaces for each generator
+    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate).
+
+    Two interfaces, not one: the colour-blind `averaged` (σ_g − (h/2)·1) and
+    the colour-weighted `averaged_weighted` (σ_g − h(1/2 − δ/4)·1) that the
+    canonical word carries on the p-n bond. Building only the first is what
+    made this module raise on every Z≥1,N≥1 atom.
+    """
     n = sum(lam)
     h = q - qi
     sig: dict[int, list] = {}
     sig_inv: dict[int, list] = {}
     inter: dict[int, list] = {}
+    inter_w: dict[int, list] = {}
+    d_w = d_for_ctype("averaged_weighted", h)
     for g in range(1, n):
         S = seminormal_generator_matrix(lam, syts, syt_index, g, q, qi)
         sig[g] = S
@@ -258,7 +281,12 @@ def generator_word_matrices(lam, syts, syt_index, q, qi):
         Ig = [[S[i][j] - (h / 2 if i == j else mpf(0)) for j in range(len(S))]
               for i in range(len(S))]
         inter[g] = Ig
-    return sig, sig_inv, inter
+        # colour-weighted interface I^w_g = σ_g + d_w·1, d_w = −h(1/2 − δ/4).
+        # `d_for_ctype` returns the signed shift, so this ADDS it — matching
+        # `Ig` above, which subtracts the positive h/2.
+        inter_w[g] = [[S[i][j] + (d_w if i == j else mpf(0))
+                       for j in range(len(S))] for i in range(len(S))]
+    return sig, sig_inv, inter, inter_w
 
 
 def rho_lambda_of_word(lam, word, q, qi):
@@ -268,7 +296,8 @@ def rho_lambda_of_word(lam, word, q, qi):
     syts = standard_young_tableaux(lam)
     syt_index = {tuple(sorted(T.items())): i for i, T in enumerate(syts)}
     dim = len(syts)
-    sig, sig_inv, inter = generator_word_matrices(lam, syts, syt_index, q, qi)
+    sig, sig_inv, inter, inter_w = generator_word_matrices(
+        lam, syts, syt_index, q, qi)
     M = identity(dim)
     for (g0, ctype) in word:
         g = g0 + 1  # 1-indexed generator
@@ -278,6 +307,8 @@ def rho_lambda_of_word(lam, word, q, qi):
             G = sig_inv[g]
         elif ctype == "averaged":
             G = inter[g]
+        elif ctype == "averaged_weighted":
+            G = inter_w[g]
         else:
             raise ValueError(f"unknown ctype {ctype!r}")
         M = mat_mul(M, G)
@@ -290,6 +321,12 @@ def rho_lambda_of_word(lam, word, q, qi):
 def main() -> int:
     t0 = time.time()
     set_compute_dps()
+    # q comes from the χ cache this script cross-checks against, so both sides
+    # of `Σ_w ρ_w = χ^λ` are evaluated at one anchor by construction.
+    _cache_path0 = _pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)
+    _cache0 = json.loads(_cache_path0.read_text())
+    Q0_STR = str(_cache0.get("q0Value") or Q0_STR_FALLBACK)
+    Q0_ANCHOR = str(_cache0.get("q0Anchor") or "proton")
     q = mpf(Q0_STR)
     qi = mpf(1) / q
     m_e = mpf(M_E_MEV_STR)
@@ -399,6 +436,23 @@ def main() -> int:
         "n_partitions": len(parts),
         "braid_word_len": len(word),
         "q_0_50dps": Q0_STR,
+        # Recorded so a consumer can tell which layer this witness belongs to
+        # WITHOUT inferring it from the digits. Its absence is why a hardcoded
+        # muon q sat here against a proton cache without anything noticing.
+        #
+        # q0Value / q0AnchorReason follow the contract main's labelling pass
+        # (4101909790) introduced. That pass transcribed this witness's pin from
+        # `q_0_50dps` and correctly labelled it "muon" — a faithful reading of the
+        # hardcoded value that was here at the time. Emitting all three from the
+        # producer means the label now tracks the pin instead of being recovered
+        # from it afterwards, so it cannot go stale when the pin changes.
+        "q0Anchor": Q0_ANCHOR,
+        "q0Value": Q0_STR,
+        "q0AnchorReason": (
+            "read from the chi cache this script cross-checks against "
+            "(chi-deuteron-h6-at-q0-50dps.witness.json), so both sides of "
+            "Sum_w rho_w = chi^lambda are evaluated at one anchor by construction"
+        ),
         "m_e_MeV": M_E_MEV_STR,
         "dps": mp.dps,
         "parameter_free": True,

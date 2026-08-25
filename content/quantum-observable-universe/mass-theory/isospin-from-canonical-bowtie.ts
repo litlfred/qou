@@ -38,6 +38,5 @@ export default conjecture({
     "axiom-class",
     "open-problem",
     "conditional-on-class",
-    "non-scholarly-voice-exception",
   ],
 });

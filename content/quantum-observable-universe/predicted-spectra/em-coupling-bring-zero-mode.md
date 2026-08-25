@@ -23,14 +23,14 @@ $$
 
 ## Numerical match
 
-Evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) using 60 dps precision yields:
+Evaluation at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
 
 | Quantity | Value |
 |----------|------:|
 | $q\cdot[9]_q\cdot[10]_q$ | $136.823219654\ldots$ |
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
 | Sum | $137.035426245\ldots$ |
-| CODATA $1/\alpha$ | $137.035999084(21)$ |
+| CODATA-2022 $1/\alpha$ | $137.035999177(21)$ |
 | **Residual** (relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
 The second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$ brings the relative residual to $+5.7 \times 10^{-8}$. This approaches the CODATA standard deviation $\sigma_\alpha = 1.5 \times 10^{-10}$.
@@ -51,7 +51,7 @@ $$
 
 The $g = 4$ structure of Bring's surface appears in both main terms. The tree-level coefficient $[9]_q[10]_q$ derives from the unique pair of genus-$4$ torus knots $\{T_{2,9}, T_{3,5}\}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). The infrared shift $2g/(4\pi(g-1))$ emerges from the Hodge data of the same Bring's surface. This double appearance of $g = 4$ is structurally consistent. It matches the expectations for a categorical-Lagrangian quantum field theory with a UV completion on Bring's curve.
 
-> **Conditional theorem (§3b-cond).** Lean axiomatises the upstream conjectures as typeclasses [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean), [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean), and [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean). The Lean theorem [`QOU.Archimedean.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean) takes `BringZeroModeBlochClass` as an instance and concludes unconditionally. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ closes via `field_simp; ring`. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
+> **Conditional theorem.** Lean axiomatises the upstream conjectures as typeclasses [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean), [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean), and [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean). The Lean theorem [`QOU.Archimedean.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean) takes `BringZeroModeBlochClass` as an instance and concludes unconditionally. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ closes via `field_simp; ring`. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
 
 | Form | Type | Residual at $q_0$ | Structural status |
 |------|------|-------------------|-------------------|

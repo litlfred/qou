@@ -55,7 +55,7 @@ inductive NucleonPair
 
 /-- Total isospin of each channel: the triplet `I=1` is exchange-symmetric, the
 singlet `I=0` exchange-antisymmetric. -/
-def isospin : NucleonPair → ℕ
+def NucleonPair.isospin : NucleonPair → ℕ
   | .pp => 1 | .nn => 1 | .pnSym => 1 | .pnAlt => 0
 
 /-- Dimensions of the isospin summands of `I=½ ⊗ I=½`. -/
@@ -81,14 +81,39 @@ def select : NucleonPair → ColorSystem :=
 
 /-- **CONJECTURE (§3b-cond, no instance).** The two-nucleon interface carries
 definite antisymmetry under simultaneous exchange of color-sheet and flavor
-labels — the hypothesis the selection rule rests on. Content-bearing: it asserts
-that the induced coupling is exactly `select`, so it is not vacuously
-satisfiable. -/
+labels — the hypothesis the selection rule rests on.
+
+**Corrected 2026-08-09.** This docstring used to end "so it is not vacuously
+satisfiable". That is **false**, and `trivially_inhabited` below exhibits the
+one-line witness `⟨select, rfl⟩`. The class fixes its own field to a definition
+already in scope, so as a *mathematical* object it constrains nothing.
+
+What is genuinely open is the physics, and the distinction matters: the class
+does not assert "some coupling satisfies this"; it asserts "the coupling the
+**physical** interface induces is `select`". No Lean instance can establish
+that, and none is registered, so every consequence below remains conditional —
+just not for the reason previously given. -/
 class InterfaceExchangeAntisymmetry where
   /-- The interface's induced color system for each nucleon-pair channel. -/
   coupling : NucleonPair → ColorSystem
   /-- The exchange-antisymmetry constraint: the coupling is the selection rule. -/
   antisymmetry_forces_select : coupling = select
+
+/-- **The conjecture class is trivially inhabited** — the retraction, machine-
+verified rather than asserted.
+
+`⟨select, rfl⟩` witnesses it. So the four theorems below are not "conditional on
+an open mathematical hypothesis"; they are conditional on a *physical
+identification*, and as mathematics they are `rfl` on a two-line table.
+
+Deliberately a `theorem` about `Nonempty`, **not** an `instance`: registering an
+instance would let typeclass resolution discharge `[InterfaceExchangeAntisymmetry]`
+automatically and silently turn every conditional consequence below into an
+unconditional theorem about `select` — true, worthless, and easily misread as the
+physics having been proved. Stating inhabitation as a `Nonempty` fact records it
+without changing what anything downstream depends on. -/
+theorem trivially_inhabited : Nonempty InterfaceExchangeAntisymmetry :=
+  ⟨⟨select, rfl⟩⟩
 
 /-! ## Consequences (conditional on the class) -/
 

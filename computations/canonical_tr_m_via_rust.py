@@ -64,7 +64,14 @@ BIN_CANDIDATES = [
     Path(shutil.which("hecke-canonical-chi") or "/nonexistent"),
 ]
 
-CTYPE_TO_SIGN = {"sigma": 1, "sigma_inv": -1, "averaged": 0}
+from canonical_braid_crossings import CTYPES, sign_for_ctype  # noqa: E402
+
+# Derived from the canonical vocabulary, not hand-listed. The hand-listed
+# dict this replaces silently lost `averaged_weighted` when that ctype was
+# added, so `canonical_word_for` raised KeyError for every Z>=1,N>=1
+# nuclide -- deuteron, He-4, all of them (qou-8zjd). Building it from
+# `CTYPES` means a future ctype is covered here the moment it exists.
+CTYPE_TO_SIGN = {ct: sign_for_ctype(ct) for ct in CTYPES}
 
 # Atoms with cached y_λ(q_0). Coverage:
 #   - n=2..12 from `y-lambda-at-q0.witness.json` (symbolic-bridge eval).

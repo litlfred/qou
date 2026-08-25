@@ -35,15 +35,38 @@ from pathlib import Path
 # hyperbolic-geometry; sharing the constant guarantees consistency.
 if str(Path(__file__).parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).parent))
+
+import mpmath as mp  # noqa: E402
+
+# Bridge first — `_precision` and `knot_volumes` live in substrate/, and this
+# module is entered directly as well as imported by b_over_a_v5_unified.py
+# (which happens to bridge first). Standalone, without this, both fail.
+import _path_bridge  # noqa: F401, E402
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()  # before the constants are multiplied together, not after
+
 from magic_A_formula import M_E_MEV, VOL_BORROMEAN  # noqa: E402
 
 
 # Knot hyperbolic volumes (from SnapPy census; values in
 # binding_ladder_catalog.py:48 + d_inter_correction_test.py:57).
 # L6a4 (Borromean rings) shared with magic_A_formula via VOL_BORROMEAN.
+#
+# 6_2 and 8_11 were f64 literals duplicated from the census; they now come
+# from the canonical `knot_volumes` `_MPF` constants, matching the L6a4 that
+# magic_A_formula already re-exports. Mixing an mpf `M_E_MEV` with an f64
+# volume gives an mpf holding ~16 honest digits — the shape `fmt` would
+# then print at full width.
+from knot_volumes import (  # noqa: E402
+    VOL_6_2_MPF as _VOL_6_2,
+    VOL_8_11_MPF as _VOL_8_11,
+)
+
 KNOT_VOL = {
-    "6_2":  4.4008325161230461,
-    "8_11": 8.28631808635811,
+    "6_2":  _VOL_6_2,
+    "8_11": _VOL_8_11,
     "L6a4": VOL_BORROMEAN,        # = 8G (Borromean rings)
 }
 
@@ -72,11 +95,23 @@ FAMILY_1_REGISTRY: dict[tuple[int, int], dict] = {
 }
 
 
-AME_BA_MEV = {
-    (1, 1):  2.22452,
-    (1, 2):  8.48181,
-    (2, 1):  7.71804,
+AME_BA_MEV: dict[tuple[int, int], mp.mpf] = {
+    (1, 1):  mp.mpf("2.22452"),
+    (1, 2):  mp.mpf("8.48181"),
+    (2, 1):  mp.mpf("7.71804"),
 }
+
+
+def _mpf_default(o):
+    """`json.dumps(default=…)` hook: mpmath values at output precision.
+
+    `M_E_MEV` and the knot volumes are mpf, so every derived quantity is an
+    mpf that `json` cannot encode. Serialize with `_precision.fmt`, never
+    `float(...)`.
+    """
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 
 def is_family_1_atom(Z: int, N: int) -> bool:
@@ -119,7 +154,7 @@ def family_1_binding(Z: int, N: int) -> dict:
     if B_AME is not None:
         out["B_AME_MeV"] = B_AME
         out["err_MeV"] = B_pred - B_AME
-        out["err_pct"] = 100.0 * (B_pred - B_AME) / B_AME
+        out["err_pct"] = mp.mpf(100) * (B_pred - B_AME) / B_AME
     return out
 
 
@@ -159,7 +194,7 @@ def main() -> int:
         "constants": {"m_e_MeV": M_E_MEV},
         "knot_volumes": KNOT_VOL,
         "rows": rows,
-    }, indent=2, ensure_ascii=False) + "\n")
+    }, indent=2, ensure_ascii=False, default=_mpf_default) + "\n")
     print(f"Wrote: {out_path}")
     return 0
 

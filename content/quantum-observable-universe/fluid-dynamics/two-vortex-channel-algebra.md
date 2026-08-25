@@ -1,4 +1,4 @@
-*Lean sibling: generic commutative ring, no archimedean input (AGENTS.md §7c); library module `QOU.FluidDynamics.TwoVortexChannelAlgebra`.*
+*Lean sibling: generic commutative ring, no archimedean input; library module `QOU.FluidDynamics.TwoVortexChannelAlgebra`.*
 
 **Proposition (channel algebra of the two-vortex interaction).** *Let $R$ be a commutative ring carrying elements $e_+, e_-, \sigma, q, u$ satisfying*
 

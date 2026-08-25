@@ -1,7 +1,7 @@
 # Uploaded-papers sweep → binding / mass derivation gap-closing ideas (2026-07-18)
 
 **Tier:** coordination / survey (scope-(a); no fit; nothing wired). Twelve papers uploaded
-2026-07-18 (`uploads/`, 14:46 UTC batch) deep-read and mapped against the open binding /
+2026-07-18 (`library/`, 14:46 UTC batch) deep-read and mapped against the open binding /
 mass derivation gaps. Corpus-grep checklist run for every idea (greps over `docs/audits/`,
 `docs/coordination/`, `content/`, `computations/`); everything already tried or closed is
 cited, not re-proposed. The only computations run were one-line decisive checks (a

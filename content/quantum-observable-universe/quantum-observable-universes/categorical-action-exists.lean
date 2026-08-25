@@ -44,18 +44,26 @@ noncomputable def categoricalAction {A Ad : C} [ExactPairing A Ad]
     (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A) : (𝟙_ C) ⟶ (𝟙_ C) :=
   η_ A Ad ≫ (Φ ▷ Ad) ≫ swap ≫ ε_ A Ad
 
-/-- **Existence of the categorical action.**
+/-- **The categorical action of the identity is the bare pairing loop.**
 
-    For any Lagrangian endomorphism `Φ : A ⟶ A` with right dual `(A, Aᘁ)` and
-    transposition `swap`, the categorical action `𝒮_Φ : 𝟙 ⟶ 𝟙` exists as a
-    morphism in `C` and equals the categorical trace `tr(Φ) = categoricalAction Φ swap`.
+    For the identity endomorphism the whiskered factor drops out, so
+    `𝒮_{𝟙} = η_ ≫ swap ≫ ε_` — the categorical trace of `𝟙`, i.e. the
+    categorical dimension of `A` relative to `swap`.
 
-    The witness is literally the composite `η_ ≫ (Φ ▷ Aᘁ) ≫ swap ≫ ε_`, so
-    "exists" and "equals tr(Φ)" hold by construction. -/
+    **Why this statement and not "the action exists".** The previous form
+    was `∃ S : 𝟙 ⟶ 𝟙, S = categoricalAction Φ swap`, discharged by
+    `⟨categoricalAction Φ swap, rfl⟩`. Its own docstring conceded that
+    *"'exists' and 'equals tr(Φ)' hold by construction"* — which is the
+    point: `∃ S, S = e` is provable by `⟨e, rfl⟩` for any `e`, so it made
+    no claim about `categoricalAction`. Existence of a named composite is
+    not a theorem; the definition above already supplies it. This
+    replacement is falsifiable — it would fail if whiskering by `𝟙` did
+    not act as the identity. -/
 -- Ref: [kelly1982]
 theorem CategoricalAction.exists {A Ad : C} [ExactPairing A Ad]
-    (Φ : A ⟶ A) (swap : A ⊗ Ad ⟶ Ad ⊗ A) :
-    ∃ S : (𝟙_ C) ⟶ (𝟙_ C), S = categoricalAction Φ swap :=
-  ⟨categoricalAction Φ swap, rfl⟩
+    (swap : A ⊗ Ad ⟶ Ad ⊗ A) :
+    categoricalAction (𝟙 A) swap = η_ A Ad ≫ swap ≫ ε_ A Ad := by
+  unfold categoricalAction
+  simp
 
 end QOU

@@ -105,7 +105,5 @@ it is *conjectural*, not implied by the central-element theorem.
 the normalised quantity across $A \in \{2, 3, 4\}$ is
 $\approx 482\%$ at $q_0$, and the spread is uniformly bad
 across the entire physical regime $|q| \in (1, \varphi)$.
-See [`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](../../../docs/audits/2026-05-31-ck-exploratory-probes-removed.md)
-for the empirical-findings record. The structural framework
-(Murphy 1992 + LP-dual extraction) is intact; the simplest
-closed form is not.
+The structural framework (Murphy 1992 + LP-dual extraction) is
+intact; the simplest closed form is not.

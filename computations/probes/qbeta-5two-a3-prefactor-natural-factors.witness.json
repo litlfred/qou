@@ -3,12 +3,12 @@
   "description": "No natural 5\u2082 structural smooth factor (\u03c31 Vol, \u03c33 bar-even part, [3]_q, [5]_q, \u03c33/\u03c31 ratio, \u03c31\u2013\u03c33 saddle separation) supplies the N_odd zero-at-q* the A3 prefactor requires \u2014 all monotone, bounded from zero across the substrate window; the zero is representational, not geometric. scope-(a); supports #3927 A3 (distinct route).",
   "audit_only": true,
   "tier": "numerical (structural enumeration; A3 support)",
-  "computedAt": "2026-07-18T17:15:36.924681+00:00",
-  "commitSha": "b901147f15e794526625fb3bedab75a45b80449b",
+  "computedAt": "2026-08-23T09:26:13.338188+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_5two_a3_prefactor_natural_factors_probe.py",
-  "scriptHash": "982e78059530",
+  "scriptHash": "cd8e91ead5f4",
   "assertions": [
     {
       "name": "no_natural_5two_factor_zeros_near_substrate",

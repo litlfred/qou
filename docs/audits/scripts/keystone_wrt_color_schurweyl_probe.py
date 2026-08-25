@@ -30,9 +30,15 @@ DISCIPLINE: no fit; no component↔W_λ match is asserted (the counts forbid a n
 one, and forcing would be numerology). The deliverable is the anchored
 decomposition + the precise representation-theoretic obstruction.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, nstr
 
-mp.dps = 50
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 INV = 1 / Q0
 RESIDUES = [1, 11, 19, 29]

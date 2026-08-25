@@ -1,0 +1,43 @@
+{
+  "engine": "python (mpf 50 dps)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T15:21:56.018996+00:00",
+  "commitSha": "b07925c713c322bd1108daccf0168e2be6c392aa",
+  "assertions": [
+    {
+      "name": "volume_defect_route_overpredicts_by_inverse_hbar_q_sq",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "ΔVol/Vol = O(1) (1.65–3.0), not O(ℏ_q²), so B_pred=(m_e·lw/ℏ_q²)·ΔVol overpredicts binding by >50× (102–250×, ≈1/ℏ_q²). The volume-defect/mass-difference route is refuted (scope-a): binding is not a mass-scale volume defect. No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "binding-volume-defect-route-refuted",
+  "scriptFile": "binding_volume_defect_route_refuted.py",
+  "scriptHash": "e4c055fb63e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "qou-brng candidate route 1 (volume-defect / mass-difference) REFUTED (scope-a). If binding were B=(m_e·lw/ℏ_q²)·ΔVol with ΔVol=A·Vol(𝓑₃)−Vol_interface, the ℏ_q² suppression would need ΔVol/Vol~ℏ_q². Measured: ΔVol/Vol=1.65 (³H), 2.00 (³He), 3.00 (⁴He) — O(1), not O(ℏ_q²) — so B_pred=(m_e·lw/ℏ_q²)·O(1)~GeV, overpredicting binding by 102–250× (≈1/ℏ_q²). Binding is NOT a mass-scale hyperbolic-volume defect; the O(1/ℏ_q²) mass terms do not cancel to O(ℏ_q²) at the volume level. Consequence: the mass-difference/cancellation framing of Lane-4 Step 3 is refuted, and the saturated-fraction≈ℏ_q² coincidence loses its one candidate mechanism — on current evidence more likely numerology than a derived prediction. No fit; no wiring; q₀ proton-anchored.",
+  "parameters": {
+    "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
+  },
+  "data": {
+    "mass_prefactor_MeV_per_volunit": "131.834895138",
+    "overprediction_factor_3H": "212.89341",
+    "overprediction_factor_3He": "250.3355",
+    "overprediction_factor_4He": "102.42377"
+  }
+}

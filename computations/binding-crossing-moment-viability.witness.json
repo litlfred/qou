@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-26T11:29:28.472430+00:00",
-  "commitSha": "b7be88b3578b27344924af26fe0e3b2b346c9406",
+  "computedAt": "2026-08-15T20:47:54.684778+00:00",
+  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
   "assertions": [
     {
       "name": "crossing_moment_q_telephone_build_is_correct",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 15,
   "computation": "binding-crossing-moment-viability",
   "scriptFile": "binding_crossing_moment_viability.py",
   "scriptHash": "74084fa98cb8",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,11 +47,11 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "mu_q_definition": "μ_q(n)=μ_q(n−1)+[n−1]_q μ_q(n−2) (symmetric bracket) — crossing q-Hermite / Rogers–Szegő moment; the q-deformation of I(n) with the clean depth-2 kernel R(q,x).",
@@ -66,51 +66,51 @@
       },
       {
         "n": 3,
-        "mu_q": "4.010896869",
-        "T_q": "4.010896869",
+        "mu_q": "4.010896867",
+        "T_q": "4.010896867",
         "mu_over_T": "1.0",
-        "aD_mu": "1.336965623",
-        "aD_T": "1.336965623"
+        "aD_mu": "1.336965622",
+        "aD_T": "1.336965622"
       },
       {
         "n": 4,
-        "mu_q": "10.09830931",
-        "T_q": "10.13111865",
+        "mu_q": "10.09830928",
+        "T_q": "10.13111863",
         "mu_over_T": "0.99676153",
-        "aD_mu": "2.524577326",
-        "aD_T": "2.532779664"
+        "aD_mu": "2.524577321",
+        "aD_T": "2.532779656"
       },
       {
         "n": 5,
-        "mu_q": "26.58182172",
-        "T_q": "26.88068885",
+        "mu_q": "26.58182159",
+        "T_q": "26.88068865",
         "mu_over_T": "0.98888172",
-        "aD_mu": "5.316364344",
-        "aD_T": "5.376137769"
+        "aD_mu": "5.316364318",
+        "aD_T": "5.37613773"
       },
       {
         "n": 6,
-        "mu_q": "79.29945293",
-        "T_q": "81.35896397",
-        "mu_over_T": "0.97468612",
-        "aD_mu": "13.21657549",
-        "aD_T": "13.55982733"
+        "mu_q": "79.29945219",
+        "T_q": "81.35896275",
+        "mu_over_T": "0.97468613",
+        "aD_mu": "13.21657536",
+        "aD_T": "13.55982713"
       },
       {
         "n": 7,
-        "mu_q": "249.1064342",
-        "T_q": "261.5746585",
-        "mu_over_T": "0.95233397",
-        "aD_mu": "35.58663345",
-        "aD_T": "37.36780836"
+        "mu_q": "249.1064303",
+        "T_q": "261.5746517",
+        "mu_over_T": "0.95233398",
+        "aD_mu": "35.5866329",
+        "aD_T": "37.36780738"
       },
       {
         "n": 8,
-        "mu_q": "853.7918974",
-        "T_q": "926.6098325",
-        "mu_over_T": "0.92141467",
-        "aD_mu": "106.7239872",
-        "aD_T": "115.8262291"
+        "mu_q": "853.7918766",
+        "T_q": "926.6097936",
+        "mu_over_T": "0.92141469",
+        "aD_mu": "106.7239846",
+        "aD_T": "115.8262242"
       }
     ],
     "win_clean_kernel": "μ_q satisfies the depth-2 q-telephone by construction (μ_q is DEFINED by it; the residual 0.0 is a definition sanity-check, not a discovered identity). The substantive contrast: the quantum-dim period Σ_λ dim_q has NO such low-order kernel (sibling probe sw_period_qholonomic_kernel_search.py) ⇒ μ_q is the deformation that carries the clean R(q,x) (prop:binding-genfun-qdifference), Σ dim_q is not.",
@@ -121,6 +121,6 @@
     "killswitch_neutral": "The +5.87% magic-A ⁴He kill-switch is a separate mechanism (B=ρ_F·m_e·A·8G, 8G=Vol(Borromean)); μ_q's −0.32% a_D^(4) shift does not materially move it.",
     "verdict": "μ_q is coherent (clean kernel, bar-even, deuteron-exact). Trade-offs vs the quantum-dim selection rule: it decouples mass↔binding and runs smaller at higher body order (the high-isotope behaviour to watch). OWNER DIRECTIVE (2026-06-26): adopt μ_q and test EMPIRICALLY — wire m_sym,Hermite / B_sym,Hermite into the dashboards and judge by high-isotope oddities. The 'cost_divergence' rows are precisely those predictions. Framework tension (unification vs clean kernel) recorded for the record, not as a veto."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

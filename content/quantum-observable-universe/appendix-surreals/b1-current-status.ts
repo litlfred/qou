@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:b1-current-status",
   title:
-    "Canonical B1 current-status synthesis — what is theorem, what is open, after eleven rounds",
+    "The GS-depth / period-depth correspondence: what is theorem-level and what is open",
   interprets: "conj:gb-depth-period-correspondence",
   uses: [
     "conj:b1-hyperbolic-rows-theorem",

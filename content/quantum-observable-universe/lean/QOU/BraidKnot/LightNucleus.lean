@@ -26,13 +26,13 @@ inductive LightNucleus : Type where
 deriving DecidableEq, Repr
 
 /-- The atomic mass number `A` of a `LightNucleus`. -/
-def A : LightNucleus → ℕ
+def LightNucleus.A : LightNucleus → ℕ
   | .deuterium => 2
   | .tritium   => 3
   | .helium3   => 3
 
 /-- The atomic strand count `n_0 = 3 · A`. -/
-def n₀ (n : LightNucleus) : ℕ := 3 * n.A
+def LightNucleus.n₀ (n : LightNucleus) : ℕ := 3 * n.A
 
 /-- The number of constituents (nucleons). -/
 def numConstituents (n : LightNucleus) : ℕ := n.A

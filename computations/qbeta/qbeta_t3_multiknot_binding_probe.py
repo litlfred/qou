@@ -20,25 +20,51 @@ For 𝔹₃: τ_cusp ≈ -0.5 + i√3/2 (per-component), Vol = 7.32772
 
 import math
 import cmath
+import sys
+from pathlib import Path
+
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from qbeta_t4_anchors import theta_t4, q0 as _q0_canonical  # noqa: E402
 
 # =============================================================
-# Physical constants (CODATA 2018)
+# Physical constants -- READ from the registry, never typed, exactly as the
+# substrate q0 below already is (bean qou-vbw1). This block was honestly
+# labelled "(CODATA 2018)" and carried the 2018 values while the rest of the
+# corpus is on 2022; reading codata_constants removes both the transcription
+# and the edition question. Drain qou-7ot6-a.
 # =============================================================
-m_e = 0.51099895000   # MeV/c²
-m_mu = 105.6583745     # MeV/c²
-m_p = 938.27208816     # MeV/c²
-m_n = 939.56542052     # MeV/c²
+from codata_constants import (  # noqa: E402
+    M_E_MEV as _M_E_MEV,
+    M_MU_MEV_VALIDATION as _M_MU_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV,
+    M_N_MEV_VALIDATION as _M_N_MEV,
+)
 
-# Substrate
-q0 = 1.10997859
-ln_q0 = math.log(q0)
+m_e = float(_M_E_MEV)     # was 0.51099895000 (truncated)
+m_mu = float(_M_MU_MEV)   # was 105.6583745   (CODATA-2018)
+m_p = float(_M_P_MEV)     # was 938.27208816  (CODATA-2018)
+m_n = float(_M_N_MEV)     # was 939.56542052  (CODATA-2018)
+
+# Substrate — READ from the canonical constant, never typed (bean qou-vbw1).
+# The former literal `1.10997859` was an 8-digit truncation; the substrate
+# quantities below are carried in mpmath and narrowed to float only at the
+# print boundary. (The CODATA masses and the ratio prints further down remain
+# float64 display arithmetic — out of scope for this bean, worth its own pass.)
+mp.mp.dps = 50
+q0 = _q0_canonical()
+ln_q0 = mp.log(q0)
 
 print("=" * 70)
 print("T3 MULTI-KNOT BINDING PROBE")
 print("=" * 70)
-print(f"\nSubstrate q₀ = {q0}")
-print(f"ln q₀ = {ln_q0:.8f}")
-print(f"ln²q₀ = {ln_q0**2:.10f}")
+print(f"\nSubstrate q₀ = {mp.nstr(q0, 20)}  (canonical proton pin, read not typed)")
+print(f"ln q₀ = {mp.nstr(ln_q0, 10)}")
+print(f"ln²q₀ = {mp.nstr(ln_q0**2, 12)}")
 print()
 
 # =============================================================
@@ -52,14 +78,14 @@ print("─" * 70)
 # In the conventions: Im V₄₁(u) = (√3/4)(Re²u - Im²u)
 # cusp modulus κ₄₁ = √3/4
 tau_41 = complex(0, -math.sqrt(3))
-kappa_41 = math.sqrt(3) / 4
+kappa_41 = mp.sqrt(3) / 4
 Vol_41 = 2.0298832128
 
 # GGM Stokes constant for 4₁
 A_omega_41 = 3  # Integer, from Garoufalidis-Gu-Mariño
 
 print(f"  τ₄₁ = {tau_41}")
-print(f"  κ₄₁ = √3/4 = {kappa_41:.8f}")
+print(f"  κ₄₁ = √3/4 = {mp.nstr(kappa_41, 10)}")
 print(f"  Vol(4₁) = {Vol_41:.10f}")
 print(f"  A_ω(4₁) = {A_omega_41}")
 print()
@@ -69,23 +95,27 @@ print()
 # The binding formula: S = A_ω · κ · (ln²q₀ - ϑ²)
 # This is the NZ-deformation contribution to the mass correction.
 
-# From T4 probe (self-consistent values):
-theta_muon_T4 = 0.05894648  # T4-inverted
-theta_proton_T4 = 0.20323503  # T4-inverted
+# From the T4 inversion — DERIVED from the canonical q₀, not typed (qou-vbw1).
+# These are A_ω-CONDITIONED readings: they invert the channel at A_ω = 3, which
+# is imported from GGM and not derived here. Round-tripping them back through
+# the same channel (below) recovers the measured S by construction — that is a
+# consistency check, NOT evidence for A_ω = 3.
+theta_muon_T4 = theta_t4("muon")
+theta_proton_T4 = theta_t4("proton")
 
 S_muon_T4 = A_omega_41 * kappa_41 * (ln_q0**2 - theta_muon_T4**2)
 S_proton_T4 = A_omega_41 * kappa_41 * (ln_q0**2 - theta_proton_T4**2)
 
-print(f"  T4-inverted values:")
-print(f"    ϑ(muon)   = {theta_muon_T4:.8f} rad")
-print(f"    ϑ(proton) = {theta_proton_T4:.8f} rad")
-print(f"    S(muon)   = {S_muon_T4:+.8f}")
-print(f"    S(proton) = {S_proton_T4:+.8f}")
-print(f"    S(p)/S(μ) = {S_proton_T4/S_muon_T4:.4f}")
+print(f"  T4-inverted values (derived at canonical q₀; A_ω-conditioned):")
+print(f"    ϑ(muon)   = {mp.nstr(theta_muon_T4, 10)} rad")
+print(f"    ϑ(proton) = {mp.nstr(theta_proton_T4, 10)} rad")
+print(f"    S(muon)   = {mp.nstr(S_muon_T4, 10)}   [round-trip of the input]")
+print(f"    S(proton) = {mp.nstr(S_proton_T4, 10)}   [round-trip of the input]")
+print(f"    S(p)/S(μ) = {mp.nstr(S_proton_T4/S_muon_T4, 8)}")
 print()
 
 # Cusp lattice values (geodesic winding classes):
-print(f"  Cusp lattice unit: √3/2 · ln q₀ = {math.sqrt(3)/2*ln_q0:.8f}")
+print(f"  Cusp lattice unit: √3/2 · ln q₀ = {mp.nstr(mp.sqrt(3)/2*ln_q0, 10)}")
 print()
 print(f"  {'(m,ℓ)':<10} {'ϑ':>10} {'G':>6} {'S':>12} {'particle?':>15}")
 print(f"  {'-'*55}")
@@ -98,10 +128,11 @@ interesting = [
     (0, 2, ""),
 ]
 for m, ell, label in interesting:
-    theta_lat = ell * math.sqrt(3)/2 * ln_q0
+    theta_lat = ell * mp.sqrt(3)/2 * ln_q0
     G = (2*m + ell)**2 - 3*ell**2
-    S = A_omega_41 * (math.sqrt(3)/16) * ln_q0**2 * G
-    print(f"  ({m},{ell}){'':<5} {theta_lat:>10.6f} {G:>+6d} {S:>+12.8f} {label:>15}")
+    S = A_omega_41 * (mp.sqrt(3)/16) * ln_q0**2 * G
+    print(f"  ({m},{ell}){'':<5} {mp.nstr(theta_lat, 8):>10} {G:>+6d} "
+          f"{mp.nstr(S, 8):>13} {label:>15}")
 
 # =============================================================
 # 2. TREFOIL KNOT 3₁ (electron carrier)
@@ -144,7 +175,7 @@ A_omega_31_naive = 1
 print(f"  NAIVE computation (A_ω = 1, κ = 3/2):")
 for label, theta in [("ϑ = 0", 0), ("ϑ = ln q₀ / 2", ln_q0/2)]:
     S_naive = A_omega_31_naive * kappa_31 * (ln_q0**2 - theta**2)
-    print(f"    {label}: S = {S_naive:+.8f}")
+    print(f"    {label}: S = {mp.nstr(S_naive, 8)}")
 
 print()
 print("  CONCLUSION: The binding formula may not apply to torus knots.")
@@ -229,16 +260,16 @@ print(f"  Vol(𝔹₃)/Vol(4₁) ≈ {Vol_borr/Vol_41:.2f}")
 print()
 
 # Cusp modulus ratios
-print(f"  κ(3₁)/κ(4₁) = {kappa_31/kappa_41:.6f}")
-print(f"  κ(𝔹₃_sym)/κ(4₁) = {kappa_borr_total/kappa_41:.6f}")
+print(f"  κ(3₁)/κ(4₁) = {mp.nstr(kappa_31/kappa_41, 8)}")
+print(f"  κ(𝔹₃_sym)/κ(4₁) = {mp.nstr(kappa_borr_total/kappa_41, 8)}")
 print()
 
 # Key insight: κ ratio
 print("=" * 70)
 print("KEY OBSERVATION: κ(3₁) / κ(4₁) = (3/2) / (√3/4) = 2√3 ≈ 3.464")
-print(f"  Numerical: {kappa_31/kappa_41:.6f}")
+print(f"  Numerical: {mp.nstr(kappa_31/kappa_41, 8)}")
 print()
 print("If the electron's binding formula were S_e = A_e · κ₃₁ · (ln²q₀ − ϑ_e²)")
 print("then the RATIO of binding scales between electron and muon is:")
-print(f"  (A_e · κ₃₁) / (A_μ · κ₄₁) = A_e/{A_omega_41} × {kappa_31/kappa_41:.4f}")
+print(f"  (A_e · κ₃₁) / (A_μ · κ₄₁) = A_e/{A_omega_41} × {mp.nstr(kappa_31/kappa_41, 6)}")
 print("=" * 70)

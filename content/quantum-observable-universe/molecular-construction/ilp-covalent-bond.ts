@@ -26,4 +26,20 @@ export default proposition({
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The only `ℝ` in `ilp-covalent-bond.lean` is the **H₂ binding energy " +
+        "in eV**: `h2_binding_energy (q : ℝ) (hq : q > 1) : ∃ E : ℝ, E > 0 ∧ " +
+        "E < 5.0`, whose `5.0` bound brackets the 4.48 eV prediction recorded " +
+        "in the adjacent comment. A measured energy is the §7c \"experimental " +
+        "value → `ℝ`\" row, and the substrate hypothesis `q > 1` is an " +
+        "archimedean ordering, so the `ℝ` is forced by the statement rather " +
+        "than chosen. (That the energy bound is an `axiom` rather than a " +
+        "theorem is a separate §1a matter.)",
+    },
+  ],
 });

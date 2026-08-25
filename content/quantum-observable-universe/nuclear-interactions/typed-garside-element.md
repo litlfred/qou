@@ -25,4 +25,4 @@ $$
 The product contains $\binom{A}{2}$ factors. The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.
 
 **Archimedean specialisation.**
-This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

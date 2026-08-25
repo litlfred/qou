@@ -8,6 +8,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Feynman Path Integrals as a Special Case of Categorical Trace
@@ -29,7 +30,7 @@ the knot-type eigenbasis equals the Markov trace on the Hecke algebra.
   quantum mechanics", Reviews of Modern Physics 20 (1948), 367–387.
 - [jones1987] V.F.R. Jones, "Hecke algebra representations of braid groups
   and link polynomials", Annals of Mathematics 126 (1987), 335–388.
-- [chari1994] V. Chari & A. Pressley, *A Guide to Quantum Groups*, Ch. 10.
+- [chari1994guide] V. Chari & A. Pressley, *A Guide to Quantum Groups*, Ch. 10.
 -/
 
 
@@ -41,9 +42,8 @@ namespace QOU.FeynmanPathIntegrals
 
 /-- The quantum number `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)` for natural `n`.
     Uses `ℕ` exponent to avoid `rpow` complications. -/
-noncomputable def qNum (q : ℝ) (n : ℕ) : ℝ :=
-  if q = 1 then (n : ℝ)
-  else (q ^ n - (q⁻¹) ^ n) / (q - q⁻¹)
+noncomputable abbrev qNum (q : ℝ) (n : ℕ) : ℝ :=
+  QOU.QInteger.qIntBalCl q n
 
 /-- The quantum dimension `[2j+1]_q` for half-integer spin `j`,
     encoded as `dim_q(n) = [n]_q` for `n = 2j+1 : ℕ`. -/
@@ -51,16 +51,16 @@ noncomputable abbrev quantumDim (q : ℝ) (n : ℕ) : ℝ := qNum q n
 
 /-- At q = 1, the quantum number reduces to n. -/
 theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
-  unfold qNum; simp
+  simp only [qNum, QOU.QInteger.qIntBalCl]; simp
 
 /-- The quantum number `[n]_q` is positive for `q > 0`, `q ≠ 1`, `n ≥ 1`.
 
     Proof: when `q > 1`, both `qⁿ > q⁻ⁿ` and `q > q⁻¹`, so num/denom > 0.
     When `0 < q < 1`, both inequalities reverse, so neg/neg > 0. -/
--- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
+-- Ref: [chari1994guide] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     0 < qNum q n := by
-  unfold qNum
+  simp only [qNum, QOU.QInteger.qIntBalCl]
   simp only [hq1, ↓reduceIte]
   have hqi : 0 < q⁻¹ := inv_pos.mpr hq
   by_cases hq_gt : 1 < q
@@ -112,12 +112,12 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     Sorry retained with this diagnosis.
 
     LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
--- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
+-- Ref: [chari1994guide] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
   -- The `partitions_length` field is the exact statement.
-  -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+  -- Ref: [chari1994guide] https://doi.org/10.1017/CBO9780511623868
   decomp.partitions_length
 
 /-- **Trace collapse.**  Given the complete eigenbasis, the Feynman
@@ -285,7 +285,7 @@ theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
     the Hecke algebra degenerates to the symmetric group algebra.
 
     LaTeX: `\label{prop:feynman-classical-limit}` -/
--- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
+-- Ref: [chari1994guide] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 structure ClassicalLimitDegeneration where
   /-- Number of strands. -/
   n : ℕ

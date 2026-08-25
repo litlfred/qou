@@ -53,15 +53,14 @@ $\Phi_n$ has zero matrix entries on non-self-conjugate isotypical
 components, but the operator on the self-conjugate components is
 generically non-trivial. It is not the Plancherel-weighted
 character sum $\sum_{\lambda = \lambda'} w_\lambda \chi^\lambda$,
-which vanishes identically at certain atomic-braid cycle types
-(see [reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
+which vanishes identically at certain atomic-braid cycle types.
 The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
 algebra). It remains consistent with this reading.
 
 ## Discussion
 
-This remains conjectural under AGENTS.md §3b. The supporting evidence comprises:
+This remains conjectural. The supporting evidence comprises:
 
 1. Numerical verification at $n \in \{2, 8, 20\}$ via the
  matrix-evaluation programme.
@@ -76,7 +75,7 @@ This remains conjectural under AGENTS.md §3b. The supporting evidence comprises
 
 The downstream cone affects the higher-magic-number predictions
 $n \in \{50, 82, 126\}$ where matrix evaluation remains unavailable.
-Per §3b, any provable result quoting these higher-magic-number
-predictions transitively depends on this conjecture and must be
-typed `conjecture` until either the conjecture is proved or the
-prediction is demoted to a numerical empirical claim.
+Any result quoting these higher-magic-number predictions therefore
+depends on this conjecture, and stays conjectural until either the
+conjecture is proved or the prediction is demoted to a numerical
+empirical claim.

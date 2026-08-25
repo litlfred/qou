@@ -1,7 +1,7 @@
 {
   "description": "Door-v bar-parity GUARDRAIL: STRUCTURAL CONFIRMATION that a bar-even (mass/binding, cosh, non-negative-cone) quantity and a bar-odd (Q_beta/decay, sinh, (-1)^m alternating) quantity have OPPOSITE (-1)^m parity and cannot be gauge/transform-related. Verifies the parity relationship on model bar-even/bar-odd corpus objects and exposes check_parity_derivable() to FLAG any future compute that tries to derive a bar-odd observable from a bar-even one by a parity-preserving map. Adds NO new physical number.",
   "computation": "mpmath dps=50; bar-even sector = tensor-square carriers f+^2, f-^2 (real squares, pointwise >= 0) of the C1 kernel; bar-odd sector = growing GGM/eq-49 solution modelled by its (-1)^m sign character. Checks: (i) both squares classify bar-even (no consecutive flip); (ii) GGM classifies bar-odd (genuine flip); (iii) guardrail check_parity_derivable([f+^2,f-^2], GGM) returns violation=True (parity wall fires); (iv) negative control (bar-even target) returns violation=False. Sampled at q in {0.9,1.05,1.10998} to show q-independence. SIGN structure only \u2014 no magnitude, no fit, no data.",
-  "generated": "2026-07-20T12:01:37.319841+00:00",
+  "generated": "2026-08-23T09:07:31.151661+00:00",
   "framing": "structural-confirmation",
   "adds_new_number": false,
   "parameters": {

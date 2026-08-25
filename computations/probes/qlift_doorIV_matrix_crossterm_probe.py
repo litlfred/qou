@@ -473,7 +473,7 @@ def main():
                 "isoclinicity {1/2,1/2} vs {-1,+1}: no MODULE map; NON-module / "
                 "tensor routes are the surviving carve-out)",
             ],
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "scope-(a) vocabulary per AGENTS.md refuted-discipline; "
                           "pre-stated kill criterion + slope precondition GATE + "
                           "solver self-test; NON-module tensor realization by "

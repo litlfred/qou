@@ -1,1 +1,1 @@
-In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the banding sheaf rigorously specializes to $\mathcal{B} = \mathcal{O}_M^{\times}$, the sheaf of invertible holomorphic functions on $M$.
+In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the banding sheaf specializes to $\mathcal{B} = \mathcal{O}_M^{\times}$, the sheaf of invertible holomorphic functions on $M$.

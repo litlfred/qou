@@ -24,4 +24,4 @@ Determine if the critical exponent depends on the initial data or only on the ca
 Use the $q \to 1$ limit to construct an explicit counter-example to classical regularity. Track the maximum enstrophy for initial data that maximises the growth rate. The formation of an acoustic horizon provides a diagnostic for blowup.
 
 **Summary.**
-The classical Navier--Stokes problem asks whether regularity survives the $q \to 1$ degeneration. The categorical mechanisms fail at $q = 1$. The 3d Navier--Stokes blowup is a structural consequence of the degeneration of the categorical contact structure. The physical universe sits safely in the regular regime. The millennium problem asks about a mathematical limit that nature never reaches.
+The classical Navier--Stokes problem asks whether regularity survives the $q \to 1$ degeneration. The categorical mechanisms fail at $q = 1$. The 3d Navier--Stokes blowup is a structural consequence of the degeneration of the categorical contact structure. The physical universe lies in the regular regime; the millennium problem concerns a limit that the physical substrate does not attain.

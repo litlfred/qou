@@ -1,9 +1,9 @@
-> **SUPERSEDED by Habiro-ring identification .**
+> **Superseded by the Habiro-ring identification.**
 > The per-rung c_k coefficients below are the Taylor expansion of the
 > EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
 > `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was
 > useful when the closed form was unknown; now that the Habiro
-> identification is established, production uses the exact evaluation
+> identification is established, the exact evaluation is used
 > (no rung-by-rung truncation). See
 > [`prop:habiro-precision-ladder-equivalence`](../../braids-and-knots/habiro-precision-ladder-equivalence.md).
 >
@@ -26,9 +26,9 @@ The categorical primitives are **two**:
 - $c_4$: multiplicative Jones $\times$ Kashiwara mixing ($c_3 \cdot b^4$).
 - $c_5$: additive Jones$^2 \cdot$ integer + Kashiwara mixing ($c_3^2 \cdot 3 + b$).
 
-The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
+The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
 
-The KL decategorification (AGENTS.md §7b) governs the appearance of
+The KL decategorification governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
 classical limit of the Hecke / quantum-group representation theory, so
 Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
@@ -36,8 +36,8 @@ Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
 ## Truncation order and error estimate
 
 The ladder is a **convergent series**: $N$ is a *truncation order*
-chosen by the target precision, not a discrete "wire/don't-wire"
-canonicity gate. The ladder step is
+chosen by the target precision, not an all-or-nothing
+canonicity decision. The ladder step is
 
 $$
 u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852, \qquad
@@ -66,19 +66,20 @@ $$
 | $1$ ppQ ($10^{-15}$) | $7$ |
 
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
-provenance tier: $c_2 = -1$ is **proved** Taylor-exact (q$_0$-stable at
-compute precision); $c_k$ for $k \geq 3$ are at present **structural
+provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
+of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, hence trivially
+q$_0$-independent. It is not **proved**: the Lean re-reads the $N{=}2$ factor
+rather than deriving it. And it is Taylor-exact *for that series* — the
+normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
 $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
-derivation; both facts are reported, neither suppressed. The permanent
+derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
 ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
-Full discipline:
-[`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../../../docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
 
 ## canonical precision ladder
 
@@ -93,7 +94,7 @@ $q_0$, but the $N{=}4 \to N{=}5$ non-monotonicity (the residual ticks
 back up) is the signature that the $c_k{\geq}3$ are q$_0$-dependent
 near-matches rather than exact Taylor coefficients: a series with exact
 $c_k$ converges monotonically. Sub-ppb agreement at $q_0$ is therefore
-Subgoal-2 territory (research-grade) **conditional on** the Habiro-element
+still research-grade and **conditional on** the Habiro-element
 upgrade, not an unconditional derivation.
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction
@@ -120,16 +121,15 @@ CAL-2 substrate data alone.
 
 ## Open
 
-The audit ([`-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/-qbeta-all-ck-categorical-extension.md))
-reduced $c_4, c_5$ to closed forms in the two categorical primitives
+Extending the categorical treatment to all $c_k$ reduced
+$c_4, c_5$ to closed forms in the two categorical primitives
 $b$ (Hoefsmit Kashiwara) and $c_3 = -2$ (Hopf Jones at $q{=}1$), with
 sub-percent empirical match. The remaining open questions:
 
 1. **Why $c_4 = c_3 \cdot b^4$?** The multiplicative Jones $\times$
    Kashiwara mixing has no derived categorical proof yet. Suggested
    source: spectral-sequence stratification of the Wedderburn-block
-   cohomology of $H_n(q)$ — see
-   [`-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/-qbeta-n5-cohomological-breakdown.md).
+   cohomology of $H_n(q)$.
 
 2. **Why $c_5 = c_3^2 \cdot 3 + b$?** The Jones-squared $\times$
    3-fold-closure-factor + Kashiwara additive form is suggestive

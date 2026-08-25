@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:20:26.728174+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-14T16:38:18.825620+00:00",
+  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
   "assertions": [
     {
       "name": "z_markov_below_one_linking_weight_above_one",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1833,
+  "durationMs": 1555,
   "computation": "markov-stab-trace-axis-probe",
   "scriptFile": "markov_stab_trace_axis_probe.py",
-  "scriptHash": "314a6683754f",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "64bb471b945f",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "Markov-stabilization trace-level axis probe for the H₃→H₄ jump (PR #1762 chain; sibling #1841 Bratteli REFUTED, #1808 Option E lead). Formalize-first: records the z<1 direction obstruction, then tests M1 (identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ) and M2 (z^{±k}·linking_weight vs clean H₃ quantities) exactly. EXPLORATORY — no production code or witnesses changed.",
   "auditOnly": "docs/audits/2026-06-04-markov-stab-trace-axis-scope.md",
@@ -41,9 +42,9 @@
     "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
     "M1_identity_trace": {
       "verdict": "REFUTED",
-      "tr_M_identity_H4_at_q0": "1.0",
+      "tr_M_identity_H4_at_q0": "0.999999999999999999999999999999999999999999999999998",
       "linking_weight_at_q0": "2.5327796636746759826636838141577022737497563139135",
-      "relative_error": "0.6051768677938795044326435331368505471707764945991363920690542334611462",
+      "relative_error": "0.6051768677938795044326435331368505471707764945991366408076275233170584",
       "tr_M_identity_is_one": true,
       "note": "tr_M(1_{H₄}) = 1 (the normalized Markov trace), NOT the linking_weight 2.53. The linking_weight is not the H₄ identity trace.",
       "per_lambda": [
@@ -52,8 +53,8 @@
             4
           ],
           "f_lambda": 1,
-          "y_lambda_at_q0": "0.22752693019099215824816882117020367653587038236527",
-          "contribution": "0.22752693019099215824816882117020367653587038236527"
+          "y_lambda_at_q0": "0.31926258454593995102232848646119407306323993051996",
+          "contribution": "0.31926258454593995102232848646119407306323993051996"
         },
         {
           "partition": [
@@ -61,8 +62,8 @@
             1
           ],
           "f_lambda": 3,
-          "y_lambda_at_q0": "0.18786885614135069571958697621826035972913733562709",
-          "contribution": "0.56360656842405208715876092865478107918741200688127"
+          "y_lambda_at_q0": "0.18614164195799085216523021677927820259711126722985",
+          "contribution": "0.55842492587397255649569065033783460779133380168955"
         },
         {
           "partition": [
@@ -70,8 +71,8 @@
             2
           ],
           "f_lambda": 2,
-          "y_lambda_at_q0": "0.069473304641640549517786114948841150483773867868396",
-          "contribution": "0.138946609283281099035572229897682300967547735736792"
+          "y_lambda_at_q0": "0.061156244790043746240990431600485659572713133895244",
+          "contribution": "0.122312489580087492481980863200971319145426267790488"
         },
         {
           "partition": [
@@ -80,8 +81,8 @@
             1
           ],
           "f_lambda": 3,
-          "y_lambda_at_q0": "0.02358747319759933024486489529191409165602565576277",
-          "contribution": "0.07076241959279799073459468587574227496807696728831"
+          "y_lambda_at_q0": "0.0",
+          "contribution": "0.0"
         },
         {
           "partition": [
@@ -91,8 +92,8 @@
             1
           ],
           "f_lambda": 1,
-          "y_lambda_at_q0": "-0.00084252749112333517709666559840933165890709227164337",
-          "contribution": "-0.00084252749112333517709666559840933165890709227164337"
+          "y_lambda_at_q0": "0.0",
+          "contribution": "0.0"
         }
       ]
     },

@@ -76,3 +76,167 @@ is stable across `h = 10⁻³` and `10⁻⁴`). Empirical `24·C(n)` for `n = 2.
 - Manifold existence stays **owner-gated** (subgoal-2 differential geometry).
 - **No physical claim** and **no fit**: `q_0` anchors the table; the 210 ppb
   target is referenced only to note the bar-parity mismatch (it tunes nothing).
+
+## Addendum (2026-08-21) — the heat-kernel reading of `Z`, and what it is *not*
+
+Recorded while resolving the closed PR #2521, whose reconciliation reached the
+same conclusion as this note by a different route. That PR was closed as
+superseded (correctly — this note is broader: n = 2..7 with the sign change,
+which #2521 never computed), but it carried two pieces of framing that never
+landed anywhere on `main`. They belong here, with their epistemic status
+attached.
+
+### 1. `Z(n) = 1` is exactly the q-deformed RSK identity, and it fails
+
+This is pure algebra from the definition above, not a new claim. Since
+`W_λ = d_q(λ)²/[n]_q!`,
+
+```text
+  Z(n) = Σ_λ d_q(λ)² / [n]_q!        so       Z(n) = 1  ⟺  Σ_λ d_q(λ)² = [n]_q!
+```
+
+At `q → 1` that is the classical Burnside/RSK identity `Σ_λ (f^λ)² = n!`
+(`[5]_1! = 5! = 120`), which holds. So the measured `Z(n) ≠ 1` is precisely the
+statement that **this identity does not survive q-deformation** at the substrate
+anchor, and the `n = 7` sign change says the failure is not one-signed — a
+q-deformation defect that overshoots as readily as it undershoots.
+
+That is a sharper reading of the same numbers than "sub-normalized measure", and
+it does not require the heat-kernel picture at all.
+
+### 2. The heat-kernel normalizer: `Σ_λ d_q(λ)²`, not `[n]_q!`
+
+Under the Peter–Weyl decomposition `L²(G) ≅ ⊕_λ V_λ ⊗ V_λ*` the λ-isotypic
+component has dimension `d_λ²`, so the **trace** of the heat operator is
+
+```text
+  Z_heat(t) = Tr e^{-tΔ} = Σ_λ d_q(λ)² · exp(-μ_λ(q)·t)
+```
+
+whose `t → 0` value is `Z_heat(0) = Σ_λ d_q(λ)²`. At `q₀`, `n = 5` that is
+
+```text
+  Σ_λ d_q(λ)²  =  Z(5) · [5]_q!  =  0.982224 × 131.313  =  128.979
+```
+
+against `[5]_q! = 131.313`. On this reading `[n]_q!` is simply the wrong
+denominator and `Z_heat(0)` is the right one, which is the sense in which the
+"defect" is a normalizer artifact rather than a geometric quantity —
+`Z(5) = Z_heat(0)/[5]_q!` reproduces the precheck's `0.982224` exactly.
+
+**But note what that does and does not buy.** `d_q(λ)²/Z_heat(0)` sums to `1` **by
+construction** — dividing a positive family by its own sum always does. So
+"it normalizes to 1" is not evidence for the heat-kernel reading, for the
+S¹-equivariant index, or for anything else; it is what normalization means. The
+substantive question is not *whether* a normalizer exists but *which* one is
+canonical. This note's own temper stands: `Z(n)` **may** be a normalization
+artifact, and the sign change is the discriminating test.
+
+**Correction (2026-08-21) — the canonical-normalizer question is narrower than
+the sentence above first claimed.** This paragraph originally ended "…and that
+is exactly what remains open." That overstated it. The **owner ruling of
+2026-08-16**, in
+[`notation/notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md),
+already settles the measure question, and this note predates it by two months:
+
+> `w_λ(q) = dim_q²(λ)/[n]_q!` = q-deformed Wedderburn-block weight,
+> `Σ w_λ(q)` finite but **≠ 1 at q ≠ 1** … **Never write a normalisation claim
+> on bare `w_λ`** — `Σ_λ w_λ(1) = 1` is exact, `Σ_λ w_λ(q)` is not (0.987 at
+> `n = 3`, 1.051 at `n = 8`).
+
+Those are **this note's own numbers**: the register's 0.987 at `n = 3` is the
+table's `Z(3) = 0.987440`, and its 1.051 at `n = 8` continues the crossing the
+table records at `n = 7`. The register also quotes `≈ 1.51` at `n = 12`, and
+cites a per-partition census
+([`wlambda_normalisation_census.py`](scripts/wlambda_normalisation_census.py)).
+
+So `Σ W_λ ≠ 1` is **documented by-design behaviour of the `w_λ(q)` family**, not
+a defect awaiting explanation. The register names three distinct families and
+assigns the measure role away from `w_λ(q)` entirely — `y_λ` (Jones–Markov,
+normalised through `tr_M(𝟙) ≡ 1`, which the corpus itself calls *trivial*) and
+`w_λ(1) = (dim V_λ)²/n!` (classical Plancherel, `Σ = 1` exactly). Under that
+ruling the "geometric defect" reading of `1 − Z` is not merely disfavoured; it
+is a notation violation.
+
+What genuinely remains open is therefore narrower than "which normalizer is
+canonical": it is whether the **geometric-realization** target — the
+owner-gated S¹-equivariant index — should reproduce `w_λ(q)` as it stands or a
+normalised variant of it. The sign change stays the discriminating test for
+*that* question.
+
+Recorded rather than silently edited because the overstatement is instructive:
+the addendum's author corpus-grepped the **Lean** side thoroughly and never
+grepped the **notation register**, which is where the ruling lives. Bean
+`qou-sf1t`.
+
+**Related hazard from the same register entry.** It warns that `μ_λ(q)` — the
+q-Laplacian eigenvalue from the very `prop:q-heat-kernel-peter-weyl` this
+addendum discusses — "is NOT a Markov-trace ingredient. It does not multiply
+`χ^λ`, does not sum to anything normalised, and does not appear in the Frobenius
+expansion," and that symbol-similarity to `w_λ(q)` makes conflation tempting.
+Cite it alongside `Z_heat(t)`, whose exponent it is.
+
+### 3. Lean status of the above — none of it is proved
+
+Stated explicitly so no later reader cites this addendum as formalised.
+
+| assertion | Lean status |
+|---|---|
+| `Σ_λ d_q(λ)² = [n]_q!` fails at `q ≠ 1` | **not formalised** — numeric, from the table above |
+| `Z_heat(0) = Σ_λ d_q(λ)² = 128.979` | **not formalised** — numeric evaluation |
+| `d_q(λ)²/Z_heat(0)` is a probability measure | **not formalised**, and trivial by construction |
+| the Peter–Weyl heat-kernel series converges | **named conjecture, no proof term** |
+| `Z_q(k) = Σ_{λ⊢k} d_q(λ)²` | **axiomatised as an opaque class field** |
+
+Two of these deserve the detail:
+
+- **`QOU.qHeatKernelPeterWeyl`**
+  ([`q-heat-kernel-peter-weyl.lean`](../../content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean))
+  is a `def … : Prop` with **no instance and no proof term** — its own docstring
+  says so ("the honest open state", per AGENTS.md §3b Pattern C). It is a
+  primary conjecture carrier, not a theorem. **And it is a different series:** it
+  asserts `Summable (fun λ => dLambda λ * exp(-μ_λ t))` — `d_λ` to the **first**
+  power, the Peter–Weyl expansion of the *solution* `u(t,x)`. The trace `Z_heat(t)`
+  above carries `d_λ²`. Both are correct for their own object; they are not the
+  same sum, so **do not cite that carrier as backing for the trace**.
+- **`QOU.MathlibExt.QPlancherel`**
+  ([`QPlancherel.lean`](../../content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean))
+  is sorry-free, but `HasPartitionFunction.Z : ℕ → R` is an **opaque class field**
+  carrying only `Z_pos`. The identity `Z_q(k) = Σ_{λ⊢k} d_q(λ)²` appears in its
+  docstring, which itself records that `Z` is "stated as a class field rather
+  than constructed". So the identity is *documentation, not a theorem*, and
+  `measure_mul_partitionFunction : Z k * measure λ k = d_q(λ)²` reduces to
+  `Z · (d²/Z) = d²` — true for **any** positive `Z`, saying nothing about `Z`
+  being the sum. There is **no** `Σ_λ measure λ k = 1` theorem in the corpus.
+
+So the whole normalization story is currently numeric plus one unproved
+conjecture carrier. Formalising `Σ_λ d_q(λ)²` as a constructed finite sum (rather
+than an opaque field) and proving total mass `1` on the quotient is the smallest
+real Lean step available here; it would also let the `q ≠ 1` failure in §1 be
+stated as a theorem rather than a table.
+
+> **Update 2026-08-21 — the Lean step named above has been taken (PR #5372).**
+> `QPlancherel.lean` §3 now *constructs* the partition function as an explicit
+> `Finset` sum, `qPartitionFunctionOn s = Σ_{λ ∈ s} d_q(λ)²`, and proves
+> `sum_measureOn_eq_one` — total mass `1` for the measure normalised by it,
+> sorry-free and needing no ordering on the base ring. So the sentence above,
+> "there is **no** `Σ_λ measure λ k = 1` theorem in the corpus", is superseded
+> as of that merge, in the narrow sense that such a theorem now exists *for the
+> constructed sum*.
+>
+> **Everything else in this section stands, including its temper.** The new
+> theorem is subject to the same caveat this note already raises: normalising a
+> family by its own sum gives total mass one *by construction*, so it is
+> evidence about the constructed object only and **not** evidence that
+> `Σ_λ d_q(λ)²` is the canonical normaliser for `W_λ = d_q(λ)²/[n]_q!`. That
+> question is still open, and the `Z(n)` defect measured in §1 — with its sign
+> change at `n = 7` — is what keeps it open.
+>
+> The opaque-field critique also stands verbatim for §1's own `measure`:
+> `HasPartitionFunction.Z` remains an opaque class field carrying only `Z_pos`.
+> PR #5372 records why, with a witness rather than an assertion —
+> `badPartitionFunction` is a *lawful* instance (`Z = 2 > 0`) under which §1's
+> `measure` sums to `1/2`. The missing content is a **value** constraint, not a
+> sign constraint, which is why the bridging theorem
+> `sum_measure_eq_one_of_Z_eq_sum` must take `Z k = qPartitionFunctionOn s` as
+> a hypothesis instead of deriving it from `Z_pos`.

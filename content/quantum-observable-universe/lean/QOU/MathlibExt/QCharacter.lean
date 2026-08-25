@@ -28,7 +28,7 @@ Results (generic `CommRing`, then `Field` for the ratio):
 `e_{q,c}` (theta) and the ∞ slope-½ Stokes multipliers are NOT here — beaned (`qou-xufp`).
 §7c: generic `CommRing`; `Field` only for the ratio. Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] uploads/Equations_aux_q-differences.pdf (DRSZ, q-characters e_{q,c})
+-- Ref: [manuscript] library/equations-aux-q-differences/Equations_aux_q-differences.pdf (DRSZ, q-characters e_{q,c})
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
@@ -44,7 +44,7 @@ def QInvariant {R : Type*} [Mul R] (q : R) (h : R → R) : Prop := ∀ x, h (q *
 variable {R : Type*} [CommRing R]
 
 /-- **q-characters multiply**: `e_{q,c}·e_{q,d}` is a q-character with multiplier `c·d`. -/
-theorem mul {q c d : R} {f g : R → R} (hf : IsQChar q c f) (hg : IsQChar q d g) :
+theorem IsQChar.mul {q c d : R} {f g : R → R} (hf : IsQChar q c f) (hg : IsQChar q d g) :
     IsQChar q (c * d) (fun x => f x * g x) := by
   intro x
   show f (q * x) * g (q * x) = c * d * (f x * g x)
@@ -67,7 +67,7 @@ theorem c1_det_character {q lp lm : R} {ep em : R → R}
 two q-characters with the *same* nonzero multiplier `c`, their ratio `f/g` is `q`-invariant
 (elliptic). The connection matrix `P = (X^∞)⁻¹X^0` compares two solutions with matching
 exponents, so its entries are such ratios — elliptic, hence theta quotients, not constants. -/
-theorem ratio_qInvariant {K : Type*} [Field K] {q c : K} {f g : K → K}
+theorem IsQChar.ratio_qInvariant {K : Type*} [Field K] {q c : K} {f g : K → K}
     (hf : IsQChar q c f) (hg : IsQChar q c g) (hc : c ≠ 0) :
     QInvariant q (fun x => f x / g x) := by
   intro x

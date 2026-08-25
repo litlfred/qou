@@ -189,6 +189,9 @@ export default chapter({
         "archimedean-condition-genus-intro",
         "torus-knot-generators",
         "torus-knot-generators-table-data",
+        "cohomological-embedding",
+        "cohomological-embedding-table1-data",
+        "cohomological-embedding-table2-data",
         "torus-knot-generators-interpretation",
         "embeddability-closure",
         "embeddability-closure-spectral-filter",
@@ -266,9 +269,6 @@ export default chapter({
         "fivefold-sheets-golden-ratio",
         "fivefold-affine-charts-generations",
         "klein-bring-icosahedral-bridge",
-        "cohomological-embedding",
-        "cohomological-embedding-table1-data",
-        "cohomological-embedding-table2-data",
         "knot-basis-color-content",
         "trivial-knot-photon-interpretation",
         "trivial-knot-photon-interpretation-table5-data",
@@ -280,7 +280,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Bring fibres, the inter-nucleon channel, and charge conjugation",
       label: "sec:brings-surface-orphan-reconnect",
       blocks: [
         "brings-surface-orphan-reconnect-intro",

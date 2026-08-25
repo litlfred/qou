@@ -1,0 +1,153 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0305423v3",
+ "source": {
+  "file": "0305423v3.pdf",
+  "sha256": "e4554f9084ba49358ac816861a8c2409ea3715666a5fbcccfe659ab8c0009ada",
+  "bytes": 231113,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0305423",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "11 Nov 2003"
+  },
+  "doi": null,
+  "title": "Stein’s Method and Plancherel Measure of the Symmetric Group",
+  "authors_raw": "Running head: Stein’s Method and Plancherel Measure",
+  "abstract": "We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Ker ov’s central limit theorem for character ratios of random representatio ns of the symmet- ric group on transpositions is obtained; the proof gives an e rror term. The construction of an exchangeable pair needed for applying St ein’s method arises from the theory of harmonic functions on Bratelli dia grams. We also ﬁnd the spectrum of the Markov chain on partitions underlyin g the construc- tion of the exchangeable pair. This yields an intriguing met hod for studying the asymptotic decomposition of tensor powers of some repre sentations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions : 7/7/03, 11/8/03",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220303102546-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Stein’s Method and Plancherel Measure of the Symmetric Group"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Harmonic functions and exchangeable pairs",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Irreducible characters of the symmetric group",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Stein's method and Kerov's central limit theorem",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic multiplicities in tensor products of representations",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 8591,
+   "n_words": 1609
+  },
+  {
+   "id": "sec-001-2-harmonic-functions-and-exchangeable-pairs",
+   "number": "2",
+   "title": "Harmonic functions and exchangeable pairs",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 7395,
+   "n_words": 1444
+  },
+  {
+   "id": "sec-002-3-irreducible-characters-of-the-symmetric-group",
+   "number": "3",
+   "title": "Irreducible characters of the symmetric group",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 12119,
+   "n_words": 2606
+  },
+  {
+   "id": "sec-003-5-asymptotic-multiplicities-in-tensor-products-o",
+   "number": "5",
+   "title": "Asymptotic multiplicities in tensor products of representations",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 7377,
+   "n_words": 1496
+  },
+  {
+   "id": "sec-004-6-acknowledgements",
+   "number": "6",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 87,
+   "n_words": 12
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4245,
+   "n_words": 632
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 39814
+ }
+}

@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T08:37:23.836624+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "assertions": [
+    {
+      "name": "C0_T4_pair_lies_on_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "control: the T4 inversion must satisfy the A-free relation by construction"
+    },
+    {
+      "name": "T1_rdmr_off_curve",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "at theta_mu = 0 the curve forces theta_p = 0.23505919, not 0 — A-free refutation of the Rademacher route"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 36,
+  "computation": "qbeta-qnnq-afree-theta-constraint",
+  "scriptFile": "qbeta_qnnq_afree_theta_constraint_probe.py",
+  "scriptHash": "802172df954d",
+  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-qnnq: derives the A_omega-free constraint curve that any independent theta-route must satisfy. Eliminating A_omega between the two anchor equations of S_K = A_omega*kappa*(ln^2 q0 - theta^2) leaves (L - theta_mu^2)/(L - theta_p^2) = S_mu/S_p, an invariant built from measured S values alone (no A_omega, no q0). This is the falsifiable content the T4 chain carries despite being underdetermined by one. A route landing on the curve determines A_omega rather than importing it. First application: the qou-rdmr Rademacher prediction theta_mu = theta_p = 0 is OFF the curve, refuting it WITHOUT assuming A_omega = 3. Fixes no value of A_omega; wires nothing.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "r_invariant": "-0.24539120756139988079",
+    "r_is_free_of": [
+      "A_omega",
+      "q0"
+    ],
+    "constraint_curve": "theta_p^2 = L - (L - theta_mu^2)/r,  L = ln^2 q0",
+    "A_determination_if_on_curve": "A_omega = S_mu / (kappa * (L - theta_mu^2))",
+    "grids": {
+      "canonical q₀=1.1099786": {
+        "L": "0.01088698591679619",
+        "A_crit": "2.05400141133",
+        "curve_residual_at_T4_pair": "5.9490807e-18",
+        "theta_p_forced_at_theta_mu_zero": "0.235059186782"
+      }
+    },
+    "admissible_family_sample": [
+      {
+        "A": "2.10",
+        "theta_mu": "0.0154424582771",
+        "theta_p": "0.232982892175",
+        "ratio": "15.08716346"
+      },
+      {
+        "A": "2.50",
+        "theta_mu": "0.0440707628877",
+        "theta_p": "0.217572933302",
+        "ratio": "4.936899637"
+      },
+      {
+        "A": "3.00",
+        "theta_mu": "0.0585920168401",
+        "theta_p": "0.203132507018",
+        "ratio": "3.466897335"
+      },
+      {
+        "A": "4.00",
+        "theta_mu": "0.0727771585543",
+        "theta_p": "0.183490757355",
+        "ratio": "2.5212685"
+      },
+      {
+        "A": "6.00",
+        "theta_mu": "0.0846168137966",
+        "theta_p": "0.161477245029",
+        "ratio": "1.908335209"
+      },
+      {
+        "A": "10.00",
+        "theta_mu": "0.0930096633311",
+        "theta_p": "0.141420418483",
+        "ratio": "1.520491672"
+      }
+    ],
+    "T1_rdmr_on_curve": false,
+    "q0_note": "RESOLVED 2026-08-07: the T4 probe used to hardcode q0 = 1.11020 vs canonical substrate value is ~1.10998; r is q0-free but the curve is not, so both grids are reported",
+    "inputs_taken_as_given": {
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936",
+      "source": "bar-odd leak measurement via qbeta_t4_stokes3_crux_probe.py"
+    },
+    "verdict": "THE T4 CHAIN DOES CARRY ONE FALSIFIABLE, A-FREE STATEMENT. Eliminating A_ω between the two anchor equations leaves (ln²q₀ − ϑ_μ²)/(ln²q₀ − ϑ_p²) = S_μ/S_p = -0.2453912076, an invariant built from measured S values alone — no A_ω, no q₀. Any route supplying BOTH ϑ values is testable against this curve with no conditioning inherited, and a route that lands on it DETERMINES A_ω = S_μ/(κ(ln²q₀ − ϑ_μ²)) — which would be the arc's first genuine determination rather than a literature import. Control C0 passes (the T4 pair lies on the curve, as it must by construction). First application, T1: qou-rdmr's Rademacher prediction ϑ_μ = ϑ_p = 0 is OFF the curve — at ϑ_μ = 0 the curve forces ϑ_p = 0.23505919, so the Rademacher symbol is refuted WITHOUT assuming A_ω = 3, upgrading that scope-(a) result from a comparison against conditioned targets to an A-free one. SCOPE: this fixes no value of A_ω and wires nothing; it states in falsifiable form what an independent route (qou-offl, or any successor to qou-rdmr) must reproduce. The measured S values are taken as given."
+  }
+}

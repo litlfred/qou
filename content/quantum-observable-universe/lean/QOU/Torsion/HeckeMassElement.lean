@@ -102,7 +102,7 @@ noncomputable def HeckeMassElement.mass
 theorem mass_upper_bound {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) :
     Φ.mass ≤ ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
-  unfold mass
+  unfold HeckeMassElement.mass
   rw [Φ.decomposition]
   exact norm_add_le Φ.descendedComponent Φ.transientComponent
 
@@ -116,7 +116,7 @@ theorem mass_exact
     (h_desc : 0 ≤ Φ.descendedComponent)
     (h_trans : 0 ≤ Φ.transientComponent) :
     Φ.mass = ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
-  unfold mass
+  unfold HeckeMassElement.mass
   rw [Φ.decomposition,
       Real.norm_of_nonneg (add_nonneg h_desc h_trans),
       Real.norm_of_nonneg h_desc,

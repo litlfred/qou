@@ -172,10 +172,106 @@ def sigma_rel_ppb(codata: mpf, sigma: mpf) -> mpf:
 
 
 def load_witness(name: str) -> dict:
+    """Load a witness by basename.
+
+    Resolution is flat-first (``computations/<name>``), then a one-level
+    scan of the ``computations/`` subdirectories.  The subdirectory leg
+    matters: ``qbeta-ck-cache.witness.json`` lives under
+    ``computations/qbeta/``, so a flat-only lookup silently returned ``{}``
+    and sent the Q_β row down the legacy ``Q_N2`` fallback branch.  That
+    made the c_k *tier* auto-promotion mechanism dead code — a future agent
+    who proved a higher c_k Taylor-exact and set ``tier='derived'`` would
+    have seen the dashboard ignore it.  (Numerically a no-op at the time of
+    the fix: both branches yield the same Q_N2 value, because k=2 is the
+    only ``derived``-tier rung.)
+    """
     p = COMPUTE_DIR / name
-    if not p.exists():
-        return {}
-    return json.loads(p.read_text())
+    if p.exists():
+        return json.loads(p.read_text())
+    for sub in sorted(COMPUTE_DIR.iterdir()):
+        if sub.is_dir() and not sub.name.startswith((".", "_")):
+            cand = sub / name
+            if cand.exists():
+                return json.loads(cand.read_text())
+    return {}
+
+
+#: |dlnQ_β/dlnq| is O(1), so a pin mismatch of Δq/q propagates to Q_β almost
+#: undiminished. Recomputed symbolically below rather than hard-coded.
+_QBETA_L2_TARGET_PPB = mpf("7.797")
+
+
+def _qbeta_dln_dlnq(q0: mpf) -> mpf:
+    """d ln Q_β / d ln q at q0, from the base form
+    Q_β = m_e·|q²−2q−1|·(q+1)/(2q³).  Closed form, no fit."""
+    return q0 * ((2 * q0 - 2) / (q0 ** 2 - 2 * q0 - 1)
+                 + 1 / (q0 + 1) - 3 / q0)
+
+
+def _anchor_layer_check(cache: dict) -> dict:
+    """Compare the q₀ a cached Q_β prediction was BUILT at against the pin this
+    dashboard EVALUATES at, and size the resulting error.
+
+    Why this exists.  ``qbeta-ck-cache.witness.json`` is stamped
+    ``q0Anchor: "muon"``; this producer reads ``q_parameter.Q_50_DIGIT_STR``,
+    which is **proton**-pinned (AGENTS.md owner directive 2026-08-07: all
+    production compute defaults to the experimental anchor).  The cached field
+    consumed below is ``Q_pred_after_this_rung_MeV`` — a *prediction*, which
+    depends on q₀ even when the rung's own coefficient does not.  (The cache's
+    per-rung ``q0_dependent: False`` flag describes ``c_k``, **not** the
+    prediction; reading it as covering the prediction is the trap.)
+
+    That is the straddling hazard AGENTS.md §q₀-anchor names — "never straddle
+    the two layers inside one quantity" — and it is currently **silent**.
+
+    It is immaterial today only by accident: the sole DERIVED rung is k = 2, so
+    the residual is 1248 ppb and the ~30 ppb anchor error is 2.4 % of it.  But
+    the anchor error is **3.84× the entire L2 target**, so on the day a higher
+    c_k is proved Taylor-exact and the residual collapses, this term dominates
+    and the row's pass/fail verdict becomes an artefact of the layer mismatch —
+    firing on exactly the event the ladder exists to detect.  Same shape as the
+    dead-code ``load_witness`` bug that preceded it.
+
+    This does NOT regenerate the muon witness (a tracked migration, bean
+    ``tnjb``, explicitly not an idle-drain).  It makes the mismatch loud.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+    q_prod = mpf(Q_50_DIGIT_STR)
+    q_cache_raw = cache.get("q0Value")
+    anchor = cache.get("q0Anchor")
+    if q_cache_raw is None:
+        return {
+            "status": "unknown",
+            "detail": "cache carries no q0Value stamp; layer cannot be verified",
+        }
+    q_cache = mpf(str(q_cache_raw))
+    rel = (q_prod - q_cache) / q_cache
+    induced_ppb = abs(_qbeta_dln_dlnq(q_prod) * rel) * mpf(10) ** 9
+    matched = abs(rel) < mpf("1e-15")
+    return {
+        "status": "matched" if matched else "STRADDLE",
+        "cache_anchor": anchor,
+        "cache_q0": str(q_cache),
+        "producer_q0": str(q_prod),
+        "pin_diff_ppb": str(rel * mpf(10) ** 9),
+        "induced_qbeta_error_ppb": str(induced_ppb),
+        "l2_target_ppb": str(_QBETA_L2_TARGET_PPB),
+        "anchor_error_over_target": str(induced_ppb / _QBETA_L2_TARGET_PPB),
+        "anchor_alone_exceeds_l2_target": bool(induced_ppb
+                                               > _QBETA_L2_TARGET_PPB),
+        "material_today": False if matched else None,
+    }
+
+
+#: Observables whose "prediction" is a re-evaluation of the quantity that
+#: pinned q_0, so the framework content cancels and the residual is CODATA's
+#: own rounding. They are reported with their numbers but NOT scored — a
+#: calibration reproducing itself is not an accuracy result.
+#: AGENTS.md §"q_0 anchor convention" STRICT rule 1; the same treatment the
+#: m_p sourcing comment below has always called for ("treat it like m_e, not
+#: a precision win"), which until 2026-08-09 was documented but not enforced.
+ANCHOR_ROUNDTRIP_OBSERVABLES = {"m_p"}
 
 
 def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
@@ -195,6 +291,13 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     from qou_substrate.precision import OUTPUT_DPS
     truncation_ppb = mpf(10) ** (-OUTPUT_DPS) / abs(pred) * mpf("1e9") if pred != 0 else mpf(0)
 
+    # An anchor round-trip is reported but never scored. Leaving beats_* as
+    # None (rather than True like m_e, or False) keeps it out of the counts
+    # without asserting either "met" or "failed" about a tautology.
+    is_anchor_roundtrip = obs in ANCHOR_ROUNDTRIP_OBSERVABLES
+    if is_anchor_roundtrip:
+        beats_1x = beats_100x = None
+
     return {
         "obs": obs,
         "role": role,
@@ -204,7 +307,16 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "err_ppb": fmt(err_ppb, 4),
         "sigma_exp_ppb": fmt(sig_ppb, 4),
         "target_100x_ppb": fmt(target_ppb, 4),
-        "miss_factor": fmt(miss_factor, 4),
+        "miss_factor": ("N/A (anchor round-trip)" if is_anchor_roundtrip
+                        else fmt(miss_factor, 4)),
+        "roundtrip_residual_ppb": fmt(err_ppb, 4) if is_anchor_roundtrip else None,
+        "is_anchor_roundtrip": is_anchor_roundtrip,
+        "note": (
+            "NOT SCORED. q_0 is pinned from m_p/m_e, so this 'prediction' is "
+            "m_e x (m_p/m_e) re-evaluated through the identity that pinned it "
+            "— the framework content cancels and the residual is CODATA's own "
+            "rounding, not accuracy. Reported for round-trip auditing only."
+        ) if is_anchor_roundtrip else None,
         "beats_1x_experimental": beats_1x,
         "beats_100x_experimental": beats_100x,
         "source_witness": source_witness,
@@ -347,6 +459,7 @@ def main() -> dict:
     # Lean promotes it (tier='derived') and the dashboard auto-picks it up.
     ck_cache = load_witness("qbeta-ck-cache.witness.json")
     ck_data = ck_cache.get("data", {})
+    qbeta_anchor = _anchor_layer_check(ck_cache)
     if ck_data.get("rows"):
         # Find the deepest cumulative rung whose tier is "derived".
         # (Fallback to the legacy label for any cache lacking `tier`.)
@@ -363,6 +476,21 @@ def main() -> dict:
             Q_pred_str = last_derived_row["Q_pred_after_this_rung_MeV"]
             Q_pred = mpf(Q_pred_str)
             Q_beta_best = Q_pred
+            _anchor_note = ""
+            if qbeta_anchor.get("status") == "STRADDLE":
+                _anchor_note = (
+                    f" ⚠ ANCHOR STRADDLE: this prediction was built at the "
+                    f"{qbeta_anchor['cache_anchor']} q₀ "
+                    f"({qbeta_anchor['cache_q0'][:22]}…) but the dashboard "
+                    f"evaluates at the proton pin "
+                    f"({qbeta_anchor['producer_q0'][:22]}…). Induced Q_β error "
+                    f"≈ {float(qbeta_anchor['induced_qbeta_error_ppb']):.2f} ppb "
+                    f"= {float(qbeta_anchor['anchor_error_over_target']):.2f}× the "
+                    f"L2 target. Immaterial against today's 1248 ppb residual, "
+                    f"but it alone exceeds the target — so no 100× PASS can be "
+                    f"credited to this row until the layers agree "
+                    f"(AGENTS.md §q₀-anchor; migration bean tnjb)."
+                )
             rows.append(_row_for(
                 "Q_beta", Q_pred,
                 f"Q_N{k} from qbeta-ck-cache.witness.json (deepest DERIVED-tier "
@@ -372,8 +500,20 @@ def main() -> dict:
                 f"(extracted from CODATA Q_β, circular, q₀-dependent) — cached "
                 f"for downstream reuse but NOT credited as a prediction. See "
                 f"deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md "
-                f"and qbeta-scaling-bridge-investigation.witness.json.",
+                f"and qbeta-scaling-bridge-investigation.witness.json."
+                + _anchor_note,
             ))
+            # Guard with teeth: while the layers disagree by more than the
+            # entire L2 target, a 100× PASS on this row would be an artefact of
+            # the mismatch rather than a result. Can only ever turn a would-be
+            # PASS into a FAIL — today the row already misses by ~160×, so this
+            # is numerically a no-op. It arms correctly for the promotion event.
+            if qbeta_anchor.get("anchor_alone_exceeds_l2_target"):
+                _r = rows[-1]
+                if _r.get("beats_100x_experimental"):
+                    _r["beats_100x_experimental"] = False
+                    _r["suppressed_by_anchor_straddle"] = True
+                _r["anchor_layer"] = qbeta_anchor
         else:
             Q_beta_best = None
     else:
@@ -447,12 +587,28 @@ def main() -> dict:
         "note": "calibration anchor — err defined as 0",
     })
 
-    # ── m_K/m_π — derived sub-ppb closure (#1442 + #1448) ────────────
-    # Closed form: m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(3q² − 1)/(2q²)
+    # ── m_K/m_π — derived closure (#1442 + #1448) ────────────────────
+    # Closed form: m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(1 + log(1+ℏ_q))
     # - strong sector [3]_q·[4]_q: Lean-proved q-Clebsch–Gordan fusion
     #   (prop:meson-qcg-fusion-identity, QOU.BraidKnot.meson_qCG_3x4)
-    # - EM sinh-channel (3q²−1)/(2q²): Lean-proved ring identity
-    #   (prop:meson-em-sinh-closed-form, QOU.BraidKnot.meson_EM_closed_form)
+    # - EM sinh-channel: the FULL series `1 + log(1+ℏ_q)`.
+    #
+    #   🛑 DE-FITTED 2026-08-22 — this line used to carry the two-term
+    #   truncation `(3q²−1)/(2q²)`, which is exactly `1 + ℏ_q − ℏ_q²/2`
+    #   (Lean ring identity QOU.BraidKnot.meson_EM_closed_form — still
+    #   true, and still proved; it is the IDENTIFICATION of that
+    #   truncation as the physical factor that was wrong). The owner
+    #   directive of 2026-08-09 already ruled the full series canonical
+    #   (docs/precision-goals.md §L2) but no producer was updated, so
+    #   the truncation stayed live here for 13 days.
+    #
+    #   Why the truncation is a fit, measured at 70 dps: the error as a
+    #   function of stopping order is 479.1 / **23.4** / 53.5 / 51.3 /
+    #   51.49 / 51.474 / 51.4755 ppb for orders ℏ¹…ℏ⁷, converging to
+    #   51.4754 ppb = the untruncated `1 + log(1+ℏ_q)`. Order 2 is the
+    #   ONLY order below the limit — a non-monotonic dip. Every further
+    #   term walks away from the data. A stopping point that beats the
+    #   series it approximates was chosen against the data.
     # - α_em from prop:em-coupling-projection (q·[9]_q·[10]_q, CS-corrected
     #   to 137.035944, 399 ppb off CODATA)
     #
@@ -470,20 +626,37 @@ def main() -> dict:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     from mpmath import pi as _pi
     q0 = mpf(Q_50_DIGIT_STR)
-    _hbar_factor = (3 * q0 ** 2 - 1) / (2 * q0 ** 2)  # sinh-channel closed form
+    _hbar_q = 1 - 1 / q0
+    _hbar_factor = 1 + mp.log(1 + _hbar_q)  # sinh-channel, FULL series
     _qcg_strong = (q0 ** 2 + 1 + q0 ** -2) * (
         (q0 ** 4 - q0 ** -4) / (q0 - q0 ** -1)
     )  # [3]_q · [4]_q
     # CLASS-A acknowledged anchor: pending Witten-κ Gram-determinant sorry.
-    _alpha_em_inv = mpf("137.035944")  # CS-corrected α_em (Witten κ, 399 ppb)
+    # α_em is DERIVED, not copied. This line held the literal
+    # mpf("137.035944") -- the MUON-anchor evaluation from before the
+    # 2026-05-28 proton re-pin, and a TRUNCATED CS tower besides. At the
+    # current proton pin the exact resummation gives 137.0359350939756,
+    # i.e. the literal was 65.0 ppb off, and its stated "399 ppb vs CODATA"
+    # understated the real residual of 468 ppb. pyhecke.constants and
+    # meson_em_sinh_closed_form were both corrected; this consumer and
+    # meson_em_residual_alpha_em were not, so the fix never reached the
+    # dashboard. Effect on m_K/m_pi is 0.0066 ppb -- the L2 verdict is
+    # unchanged; the defect was in what the number CLAIMED, not what it did.
+    from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
+    _alpha_em_inv = alpha_em_inv_derived(q0)
     _mk_sq_over_mpi_sq = _qcg_strong + (1 / _alpha_em_inv) / _pi * _hbar_factor
     mk_pred = mp.sqrt(_mk_sq_over_mpi_sq)
     rows.append(_row_for(
         "m_K/m_pi", mk_pred,
-        "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces "
-        "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, "
-        "qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A "
-        "acknowledged anchor (CS ansatz conditional on Witten-κ class)",
+        "[3]_q·[4]_q + (α_em/π)·(1+log(1+ℏ_q)) — closed form. Strong core "
+        "Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4). EM factor is the "
+        "FULL series: the two-term truncation (3q²−1)/(2q²) was removed "
+        "2026-08-22 as a data-selected stopping point (owner directive "
+        "2026-08-09), costing 23.45 → 51.48 ppb — still inside the "
+        "263.6 ppb target at 5.1× margin. NOT parameter-free: α_em is a "
+        "CLASS-A acknowledged anchor (CS ansatz conditional on the open "
+        "Witten-κ sorry) and the (3,4) pair is scan-selected — see "
+        "docs/audits/2026-08-22-mK-mpi-l2-red-team.md",
     ))
 
     return {
@@ -498,13 +671,57 @@ def main() -> dict:
             "cal-3-q-beta.witness.json — no floating literals."
         ),
         "rows": rows,
+        "anchor_layer_qbeta": qbeta_anchor,
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
             "beats_100x_count": sum(1 for r in rows if r.get("beats_100x_experimental")),
+            # --- scoreable counts (added 2026-08-18) -------------------------
+            # `beats_100x_count` counts CALIBRATION INPUTS alongside
+            # predictions, and so overstates the accuracy result. m_e is a
+            # CAL-1 anchor whose err_ppb is not measured but DEFINED zero (it
+            # is the input that fixes the MeV unit, so its ratio to itself is 1
+            # by construction) -- yet it is scored True. That is the same
+            # reasoning m_p is EXCLUDED for as an anchor round-trip ("the
+            # framework content cancels"), only stronger: m_p at least carries
+            # a nonzero round-trip residual.
+            #
+            # The keys below score only genuine PREDICTIONS. Quote these.
+            # `beats_100x_count` is retained unchanged so existing consumers do
+            # not silently shift meaning.
+            "scoreable_total": _scoreable_total(rows),
+            "beats_100x_scoreable": _beats_100x_scoreable(rows),
+            "calibration_inputs": [
+                r["obs"] for r in rows if _is_calibration_input(r)
+            ],
         },
     }
 
+
+
+def _is_calibration_input(row: dict) -> bool:
+    """True for CAL anchors, whose "error" is definitional rather than measured.
+
+    Both anchors are inputs: `m_e` (CAL-1) fixes the MeV unit, and `m_p` is the
+    CAL-2 numerical pin for q_0. Neither is a prediction, so neither belongs in
+    an accuracy score. The dashboard already excludes `m_p` via
+    `is_anchor_roundtrip`; this catches `m_e` on the same grounds.
+    """
+    return "anchor" in (row.get("role") or "").lower()
+
+
+def _scoreable_total(rows: list) -> int:
+    """Number of genuine predictions (all rows that are not calibration inputs)."""
+    return sum(1 for r in rows if not _is_calibration_input(r))
+
+
+def _beats_100x_scoreable(rows: list) -> int:
+    """Genuine predictions meeting the L2 100x target."""
+    return sum(
+        1
+        for r in rows
+        if not _is_calibration_input(r) and r.get("beats_100x_experimental") is True
+    )
 
 if __name__ == "__main__":
     out = main()
@@ -529,10 +746,31 @@ if __name__ == "__main__":
             f"{('Y' if r['beats_100x_experimental'] else 'N'):>5}"
         )
     print("-" * 128)
-    print(f"Summary: {out['summary']['beats_100x_count']} / {out['summary']['total']} "
-          f"observables beat 100× experimental target.")
-    print(f"         {out['summary']['beats_1x_count']} / {out['summary']['total']} "
-          f"beat 1× experimental.")
+    print(f"HEADLINE: {out['summary']['beats_100x_scoreable']} / "
+          f"{out['summary']['scoreable_total']} SCOREABLE predictions beat the "
+          f"100× target.")
+    print(f"          calibration inputs, not scored: "
+          f"{out['summary']['calibration_inputs']}")
+    print(f"raw     : {out['summary']['beats_100x_count']} / {out['summary']['total']} "
+          f"counting calibration inputs — do NOT quote as an accuracy result.")
+    print(f"          {out['summary']['beats_1x_count']} / {out['summary']['total']} "
+          f"beat 1× experimental (same caveat).")
+    _al = out.get("anchor_layer_qbeta", {})
+    if _al.get("status") == "STRADDLE":
+        print()
+        print("⚠ Q_β ANCHOR-LAYER STRADDLE")
+        print(f"    cached prediction built at : {_al['cache_anchor']} q₀ "
+              f"= {_al['cache_q0'][:24]}…")
+        print(f"    dashboard evaluates at     : proton q₀ "
+              f"= {_al['producer_q0'][:24]}…")
+        print(f"    pin difference             : "
+              f"{float(_al['pin_diff_ppb']):.3f} ppb")
+        print(f"    induced Q_β error          : "
+              f"{float(_al['induced_qbeta_error_ppb']):.2f} ppb "
+              f"= {float(_al['anchor_error_over_target']):.2f}× the L2 target")
+        print("    => immaterial vs today's 1248 ppb residual, but it alone")
+        print("       exceeds the target, so no 100× PASS can be credited to")
+        print("       this row until the layers agree (bean tnjb).")
     print()
 
     # Emit witness via WitnessBuilder for reproducible staleness metadata.
@@ -545,6 +783,18 @@ if __name__ == "__main__":
     w.set_description(out["description"])
     w.add_data("rows", out["rows"])
     w.add_data("summary", out["summary"])
+    w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
+    if out["anchor_layer_qbeta"].get("status") == "STRADDLE":
+        w.add_caveat(
+            "Q_β row: the cached prediction is built at the muon q₀ while this "
+            "dashboard evaluates at the proton pin. Induced error ≈ 29.96 ppb "
+            "= 3.84× the 7.797 ppb L2 target — immaterial against today's "
+            "1248 ppb residual, but it alone exceeds the target, so a 100× "
+            "PASS is suppressed on this row until the layers agree. Fixing it "
+            "means regenerating qbeta-ck-cache at the proton pin (tracked "
+            "migration, bean tnjb) — deliberately NOT done here, per "
+            "AGENTS.md §q₀-anchor rule 4 'untouched muon witnesses: leave "
+            "them'.")
     w.add_assertion(
         "summary_total_observables",
         computed=out["summary"]["total"],

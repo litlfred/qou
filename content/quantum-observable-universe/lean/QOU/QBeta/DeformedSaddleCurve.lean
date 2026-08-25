@@ -3,7 +3,7 @@ The algebraic layer of the deformed 4₁ saddle curve (A_ω tranche B).
 
 The compute probe `computations/probes/qbeta_g3_deformed_saddle_exact_bridge.py`
 re-derives, from the saddle equation of the 4₁ state integral
-(GGM `uploads/2012.00062v3.pdf`, eq (115)), the curve
+(GGM `library/arxiv-2012.00062v3/2012.00062v3.pdf`, eq (115)), the curve
 
     x·y² + (x² − x − 1)·y + 1 = 0        (the (116) glyph, minus restored)
 

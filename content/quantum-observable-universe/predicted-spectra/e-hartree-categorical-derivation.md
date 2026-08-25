@@ -1,6 +1,8 @@
-> **SUPERSEDED-$\rho_q$ note.** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is a structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md). Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is
+> the structurally-wrong leading-order ansatz; the operator-valued form supersedes
+> it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
 
-The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. This block determines whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
+The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. We determine whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
 
 **Conjecture (corrected headline form).** *For a covalent diatomic with definite-parity ground state, the bound-state contribution on the EM Wedderburn channel $(2,2)$ of the molecular Markov trace carries the fine-structure scale exactly:*
 
@@ -16,7 +18,7 @@ $$
 
 *Here $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q) \in R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The categorical coefficient $C(q)$ is the EM-block Plancherel-square, not a free parameter. The archimedean evaluation of $\rho_{(2,2)}$ up to the CAL-1 energy unit $m_e c^{2}$ is $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$.*
 
-> **Historical framing.** The investigation opened from a weaker $J^{1}$-vanishing claim about the Markov-layer LP dual $y_{\mathrm{cov}} = c_2\,\alpha^{2} + O(\alpha^{4})$. The separated-atom point is a kink. Therefore $y_{\mathrm{cov}}$ is $O(\alpha)$, not $O(\alpha^{2})$. The $\alpha^{2}$ scaling is real but lives in the q-dimension layer, not the Markov layer. The trace-ratio above is the live statement. The investigation log retains the $y_{\mathrm{cov}}$ form.
+> **Historical framing.** The investigation opened from a weaker $J^{1}$-vanishing claim about the Markov-layer LP dual $y_{\mathrm{cov}} = c_2\,\alpha^{2} + O(\alpha^{4})$. The separated-atom point is a kink. Therefore $y_{\mathrm{cov}}$ is $O(\alpha)$, not $O(\alpha^{2})$. The $\alpha^{2}$ scaling is real but lives in the q-dimension layer, not the Markov layer. The trace-ratio above is the live statement; the $y_{\mathrm{cov}}$ form is superseded.
 
 ## Status: a conditional theorem
 
@@ -44,9 +46,9 @@ A covalent bond shares exactly two electrons via Pauli exclusion and singlet pai
 
 ### Mechanism B — quadratic-form structure of the Frobenius LP
 
-The molecular SDP is a quadratic program over the Frobenius Gram matrix ([`prop:operator-selection-lp § dual program`](#prop:operator-selection-lp)). A single perturbation $\varepsilon$ turns on the covalent constraint in the quadratic primal. The Legendre/Schur-complement dual is $y_{\mathrm{cov}}(\varepsilon) = \tfrac{1}{2}\varepsilon^{2}\,(G^{-1})_{\mathrm{cov,cov}} + O(\varepsilon^{4})$. If $\varepsilon \propto \alpha_{EM}$, this gives $y_{\mathrm{cov}} \propto \alpha_{EM}^{2}$ with no linear term.
+The molecular SDP is a quadratic program over the Frobenius Gram matrix (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)) ([`prop:operator-selection-lp § dual program`](#prop:operator-selection-lp)). A single perturbation $\varepsilon$ turns on the covalent constraint in the quadratic primal. The Legendre/Schur-complement dual is $y_{\mathrm{cov}}(\varepsilon) = \tfrac{1}{2}\varepsilon^{2}\,(G^{-1})_{\mathrm{cov,cov}} + O(\varepsilon^{4})$. If $\varepsilon \propto \alpha_{EM}$, this gives $y_{\mathrm{cov}} \propto \alpha_{EM}^{2}$ with no linear term.
 
-**Gap.** The bare separated-atom configuration must be a smooth interior point. The covalent constraint must be active at $\varepsilon = 0$ as an equality. In practice, the activation is a kink. The dual $y_{\mathrm{cov}}$ jumps non-smoothly. The linear coefficient is generically non-zero. A rigorous version requires the bare atoms to saturate the Frobenius-pairing equality. This is not verified. It is the source of the round-21 refutation of the $y_{\mathrm{cov}}$ form.
+**Gap.** The bare separated-atom configuration must be a smooth interior point. The covalent constraint must be active at $\varepsilon = 0$ as an equality. In practice, the activation is a kink. The dual $y_{\mathrm{cov}}$ jumps non-smoothly. The linear coefficient is generically non-zero. A rigorous version requires the bare atoms to saturate the Frobenius-pairing equality. This is not verified. It is the source of the refutation of the $y_{\mathrm{cov}}$ form.
 
 ### Mechanism C — parity / antipode invariance of the Markov trace
 
@@ -76,20 +78,18 @@ A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling requires thr
 2. **A proof that these contributions balance at a specific categorical length.** This must derive from Hecke structure, not transported dimensional analysis. It requires a symbolic $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$ tracking each crossing-type separately.
 3. **An independent derivation of the archimedean energy unit per $\Phi_1$.** This must derive from algebraic structure. It cannot assume a match with QED in the $q \to 1$ limit. This deepest layer requires a functorial uniqueness statement about $\rho_\infty$ verifiable without experimental Hartree values.
 
-## Non-claims of this block
+## Non-claims
 
-- This block does not claim a proof of $E_h \propto \alpha_{EM}^{2}$ from QOU principles. It claims only that this scaling is the expected leading behaviour. It identifies the open structural step.
-- This block does not introduce $\pi$, transcendentals, or PSLQ-fitted constants. The coefficient $c_2$ is conjecturally in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
-- This block does not override the existing usage of $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale.
+- We do not claim a proof of $E_h \propto \alpha_{EM}^{2}$ from QOU principles. It claims only that this scaling is the expected leading behaviour. It identifies the open structural step. - We do not introduce $\pi$, transcendentals, or PSLQ-fitted constants. The coefficient $c_2$ is conjecturally in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. - We do not override the existing usage of $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale.
 
 ## Honest reporting
 
-Three derivation mechanisms are recorded above. Each has an explicit identified gap. The operator-parity sharpening of Mechanism C and the virial-scaling Mechanism D are the two surviving lines of attack. Reporting the partial chain is the deliberate purpose of this block. Post-hoc numerical identifications are avoided.
+Three derivation mechanisms are recorded above. Each has an explicit identified gap. The operator-parity sharpening of Mechanism C and the virial-scaling Mechanism D are the two surviving lines of attack. Reporting the partial chain is deliberate. Post-hoc numerical identifications are avoided.
 
 ## Supporting data tables
 
-Tables 1–13 collect the intermediate symbolic computations of the investigation. Tables 10–13 support the rigorous results and mechanisms above. Tables 1–9 record per-round intermediate data. The investigation log preserves their narrative context.
+Tables 1–13 collect the intermediate symbolic computations of the investigation. Tables 10–13 support the rigorous results and mechanisms above. Tables 1–9 record the intermediate data of the successive attempts.
 
 ---
 
-**Investigation record.** The full round-by-round derivation log is preserved in [the e-Hartree investigation log](../../../docs/audits/2026-06-13-e-hartree-investigation-log.md). It records every candidate mechanism and how it was ruled out or sharpened. That document is the historical record. This block carries the distilled conditional theorem, the rigorous results, and the open closure programme.
+What follows carries the distilled conditional theorem, the rigorous results, and the open closure programme; the intermediate candidate mechanisms, and how each was ruled out or sharpened, are not reproduced here.

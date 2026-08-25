@@ -22,7 +22,7 @@ for a universal normalisation scale $\rho$ (energy per radian).
 
 ### The $\rho$-free mirror prediction (Lever 3)
 
-The absolute scale $\rho$ requires a complete resolution of the $\Delta_\lambda$ gate. However, the **ratio** of binding energies for the $A=3$ mirror pair ($^3\mathrm{H}$ and $^3\mathrm{He}$) is structurally independent of $\rho$:
+The absolute scale $\rho$ requires a complete determination of $\Delta_\lambda$. However, the **ratio** of binding energies for the $A=3$ mirror pair ($^3\mathrm{H}$ and $^3\mathrm{He}$) is structurally independent of $\rho$:
 
 $$
   \frac{B(^3\mathrm{H})}{B(^3\mathrm{He})} \;=\; \frac{\rho \cdot S(^3\mathrm{H})}{\rho \cdot S(^3\mathrm{He})} \;=\; \frac{S(^3\mathrm{H})}{S(^3\mathrm{He})}.
@@ -36,6 +36,6 @@ This constitutes a **1.67% genuine prediction** of the mirror asymmetry directly
 
 ### The absolute scale derivation
 
-Deriving the absolute scale $\rho \approx 18.5$ MeV/rad—or equivalently, the per-block gate $\rho_\lambda$—remains the central underdetermined problem of the $\Delta_\lambda$ closure. Crucially, **there are no empirical fits**; the absolute scale must be derived fundamentally from the substrate.
+Deriving the absolute scale $\rho \approx 18.5$ MeV/rad, or equivalently the per-block coefficient $\rho_\lambda$, remains the central underdetermined problem of the $\Delta_\lambda$ determination. Crucially, **there are no empirical fits**; the absolute scale must be derived fundamentally from the substrate.
 
 Isolating the symmetric strong (cosh) channel by removing the antisymmetric inter-nucleon (sinh) term pulls the Deuteron's phase sum up toward this $A=3$ universal scale, identifying the sinh channel as the carrier of the doubly-magic/anomaly deviations. A unified derivation of $\rho$ from the substrate remains an open foundational gate.

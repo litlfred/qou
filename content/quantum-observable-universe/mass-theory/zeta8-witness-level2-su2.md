@@ -21,8 +21,7 @@ length $\geq k + 2 = 4$ are negligible (Wenzl projector kernel).*
 ## Categorical content — universal Δa_m cancellation
 
 The three identities above produce the categorical structure observed
-empirically (audit
-[`docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-phi8-interference-2026-06-01/docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md)):
+empirically:
 
 - $(\zeta_8;\zeta_8)_7 = 8$ provides the natural integer normalisation
   in the universal cancellation
@@ -42,12 +41,10 @@ empirically (audit
   y_\lambda(\zeta_8) \cdot \chi^\lambda(\beta_K;\zeta_8) = 0$,
   forcing the empirical Δa_m interference.
 
-## Vindicates earlier hypothesis (a)
+## Relation to the earlier level-2 reading
 
-In [`docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-phi8-interpretation.md),
-the level-2 $\mathrm{SU}(2)$ hypothesis (a)
-was ruled out as "FALSE in naive form". This proposition shows the
-hypothesis is in fact correct — provided the categorical framing is the
+An earlier reading ruled the level-2 $\mathrm{SU}(2)$ hypothesis (a)
+out as "FALSE in naive form". The hypothesis holds provided the categorical framing is the
 **Wenzl annihilator forcing Δa_m interference** rather than "level-2
 truncation acting directly on $(\mathfrak{D} - \mathfrak{n})$" (which is
 indeed not how the truncation interacts with Habiro elements).

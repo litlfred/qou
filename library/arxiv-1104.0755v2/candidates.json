@@ -1,0 +1,97 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1104.0755v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "d2fbbea44598e8f41c6ce32d0699b2b7d03368c0e2e9020d1de58bad435842f3",
+  "file": "1104.0755v2.pdf"
+ },
+ "provenance": {
+  "title": "A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA\u2021",
+  "authors": null,
+  "arxiv": {
+   "id": "1104.0755",
+   "version": "2",
+   "primary_class": "math.CA",
+   "stamp_date": "1 Jul 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "lemma": 4,
+   "remark": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "For any k \u2208 Z,\u03b8 (x) satis\ufb01es",
+   "section_file": "sections/sec-001-2-standard-notations.md",
+   "section_title": "Standard notations",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 , one gets",
+   "section_file": "sections/sec-001-2-standard-notations.md",
+   "section_title": "Standard notations",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": null,
+   "statement": "We remark that another solution of the equation (4) is given b y",
+   "section_file": "sections/sec-002-31-the-ramanujan-function-aqx.md",
+   "section_title": "The Ramanujan function Aq(x)",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "For any entire function f ,",
+   "section_file": "sections/sec-005-41-the-q-borel-transformation-and-the-q-laplace.md",
+   "section_title": "The q-Borel transformation and the q-Laplace transformation",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "For any k \u2208 N, \u03bb \u2208 C\u2217, one can get;",
+   "section_file": "sections/sec-006-42-the-connection-formula-of-the-q-airy-function.md",
+   "section_title": "The connection formula of the q-Airy function",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

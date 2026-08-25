@@ -58,7 +58,7 @@ from kahler_lift import (build_V_hat_symbolic, q as q_sym,
                             HBAR_Q_SYM)
 
 # z(q) symbolic = 1/(q^{1/2} + q^{-1/2})
-z_sym = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))
+z_sym = q_sym**3 / (q_sym**2 + 1)
 
 
 def unified_lift(V_hat_sym: list[sp.Expr], *, order: int = 2) -> dict:

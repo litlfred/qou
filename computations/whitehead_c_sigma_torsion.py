@@ -54,9 +54,42 @@ diagnosis.  So the per-cusp factor 2^{(c-1)/2} below is not merely unproved, it
 is UNIDENTIFIABLE: no universal constant absorbs a manifold-dependent unit group.
 
 c_sigma = 2^{-3/4} therefore reverts to IDENTIFICATION (bean qou-pn5j, reopened).
+[RESOLVED 2026-08-08: back to DERIVATION, but NOT by this file's route -- see
+docs/audits/2026-08-08-c-sigma-derivation-status.md. The per-cusp factor below
+does not exist; the derivation runs through the triangulation-invariant
+computations/one_loop_torsion.py and carries the prefactor form as its one
+stated assumption.]
 Its NUMERICAL VALUE is unaffected — whitehead_c_sigma_hiprec.py pins it to ~20
 digits independently, with no SnapPy and no det J.  Repair = restore the
 flattening + the 1/2, then re-run the invariance probe.
+
+⚠⚠ SUPERSEDED 2026-08-08 — THE PER-CUSP FACTOR DISSOLVES ENTIRELY.
+(probes/one_loop_c_sigma_percusp_dissolution_probe.py; audit
+docs/audits/2026-08-08-per-cusp-factor-dissolves.md)
+
+The repair is done: `computations/one_loop_torsion.py` now computes the
+triangulation-invariant DG invariant at ANY cusp number, giving
+|tau(4_1)| = sqrt(3)/2, |tau(L5a1)| = sqrt(2), |tau(L6a4)| = 8 — NOT the
+sqrt(3), 2^{5/2}, 64 computed here.  Against those,
+
+    k_c := c_sigma * |tau_DG|^{1/2}   is the SAME constant 2^{-1/2}
+    at c = 1 and c = 2, to 17 digits.
+
+A per-cusp factor would require k to move by sqrt(2) between them; the measured
+ratio is 0.999999999999999995.  So the correct law has NO per-cusp factor:
+
+    c_sigma = 2^{-1/2} |tau_DG|^{-1/2}
+
+and calibrating it on 4_1 ALONE predicts c_sigma(L5a1) = 2^{-3/4} to 17 digits
+with nothing adjustable.
+
+WHY THE FIT ABOVE LOOKED LIKE IT WORKED.  On the DEFAULT triangulations of 4_1,
+L5a1 and L6a4 — and not in general — |tau_old| = 2^c |tau_DG|.  Substituting,
+2^{(c-1)/2} |tau_old|^{-1/2} = 2^{-1/2} |tau_DG|^{-1/2} identically.  The
+"standard per-cusp Gaussian-integration factor" claimed above was exactly the
+c-dependence needed to undo that 2^c.  It is a reparametrization, and the 2^c
+relation fails on 8 of the 13 manifolds tested — including 5_2, 6_2 and 7_4 at
+c = 1, where there is no per-cusp factor to blame.
 
 Audit-only; the derived tau is NOT wired to any production dashboard.
 -- Ref: Dimofte-Garoufalidis, "The quantum content of the gluing equations",
@@ -101,7 +134,7 @@ def one_loop_torsion(name: str):
     # across runs.  Both halves are needed: asking SnapPy for `bits_prec` is
     # useless if the value is then routed through a double.
     _bits = int(mp.mp.dps * 3.3219) + 16
-    z = [mp.mpc(mp.mpf(str(s.real())), mp.mpf(str(s.imag())))
+    z = [mp.mpc(mp.mpf(str(s.real()).replace(' ', '')), mp.mpf(str(s.imag()).replace(' ', '')))
          for s in M.tetrahedra_shapes('rect', bits_prec=_bits)]
     t = [z[j] / (1 - z[j]) for j in range(N)]           # z_j/(1-z_j)
 
@@ -121,6 +154,12 @@ def one_loop_torsion(name: str):
     det = mp.det(J)
     return abs(det), det, z
 
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
 
 if __name__ == "__main__":
     mp.mp.dps = int(sys.argv[1]) if len(sys.argv) > 1 else 40
@@ -166,7 +205,11 @@ if __name__ == "__main__":
     tauB, detB, zB = one_loop_torsion('L6a4')
     ncB = snappy.Manifold('L6a4').num_cusps()
     tauB_target = mp.mpf(64)                             # 2^6
-    digB = int(-mp.log10(abs(tauB - tauB_target) / tauB_target)) if tauB > 0 else 999
+    # Guard on the RELATIVE ERROR, not on tauB. Once the shape read stopped
+    # losing precision to SnapPy's spaced exponents this hit 64 exactly, and
+    # `tauB > 0` let log10(0) = -inf through into int() — a crash on success.
+    relB = abs(tauB - tauB_target) / tauB_target
+    digB = int(-mp.log10(relB)) if relB > 0 else 999
     # unified relation  exp(2 c0) = 2^{c-1}/|det J|  =>  c0 = (1/2) log(2^{c-1}/|det|)
     c0B_pred = mp.log(mp.power(2, ncB - 1) / tauB) / 2
     c0B_measured = mp.mpf("-1.3828105122579213")         # W1 Jones-side, NMAX=56 (borromean-jones-1loop-torsion.witness.json)
@@ -180,13 +223,19 @@ if __name__ == "__main__":
           f"(fit err; W1 p=1.4993 vs 3/2)")
 
     ok = dig41 >= 12 and digW >= 12 and dig_cs >= 12 and digB >= 12
-    print("\n  VERDICT:", "DERIVATION COMPLETE — |tau(L5a1)| = 4sqrt(2) = 2^5/2 from NZ"
-          " data (independent of c_sigma); c_sigma = 2^-3/4 follows via the 2-cusp"
-          " sqrt(2) factor." if ok else
-          "not clean at this precision; inspect formula/curve choice.")
+    print("\n  ARITHMETIC:", "internally consistent at this precision."
+          if ok else "not clean at this precision; inspect formula/curve choice.")
+    print("  VERDICT: SUPERSEDED. The numbers above reproduce, but |det J| is not a")
+    print("  topological invariant (PR #4691) and the per-cusp factor does not exist")
+    print("  (probes/one_loop_c_sigma_percusp_dissolution_probe.py). The invariant")
+    print("  values are |tau(4_1)|=sqrt(3)/2, |tau(L5a1)|=sqrt(2), |tau(L6a4)|=8, from")
+    print("  computations/one_loop_torsion.py; the law is c_sigma = 2^{-1/2}|tau|^{-1/2}.")
+    print("  c_sigma = 2^{-3/4} IS derived, but by that route, not this one --")
+    print("  docs/audits/2026-08-08-c-sigma-derivation-status.md.")
 
     wit = {
-        "description": "Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
+        "superseded": "2026-08-08: |det J| here is not a topological invariant (PR #4691) and the per-cusp factor 2^{(c-1)/2} does not exist. Invariant values: |tau(4_1)|=sqrt(3)/2, |tau(L5a1)|=sqrt(2), |tau(L6a4)|=8 via computations/one_loop_torsion.py; law is c_sigma = 2^{-1/2}|tau_DG|^{-1/2}. c_sigma=2^{-3/4} is DERIVED by that route (docs/audits/2026-08-08-c-sigma-derivation-status.md), not by this file. Values below are retained for history only.",
+        "description": "[SUPERSEDED] Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
         "computation": "whitehead_c_sigma_torsion", "audit_only": True,
         "dps": mp.mp.dps,
         "method": "1-loop invariant det(J), J_{kj}=A_{kj}-B_{kj} z_j/(1-z_j), (N-c indep edges)+(meridians)",

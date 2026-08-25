@@ -1,0 +1,67 @@
+name: lean-orphan-gate
+
+# Fails a PR that ADDS a `.lean` module under the QOU library tree which nothing
+# imports — i.e. a module outside `QOU.lean`'s umbrella.
+#
+# ⚠ CORRECTION 2026-08-15 (bean qou-kljb): the ORIGINAL rationale below — "so
+# such a module is never compiled by anything, ever" — NO LONGER HOLDS. The
+# lakefile now sets `globs = ["QOU", "QOU.+"]` (bean qou-rc7b), and `QOU.+` is
+# `Glob.andSubmodules`, so the library target covers the whole tree and an
+# unimported module IS compiled. Verified by direct experiment (throwaway
+# package, v4.24.0, globs set): `lake build` prints "✔ Built Lib.Orphan" for a
+# module nothing imports.
+#
+# The gate is still worth keeping, for the NARROWER reason that an unreferenced
+# module is invisible to everything that walks imports — blueprint, doc-gen,
+# dependency analysis, import-cone builds rooted at `QOU`. It is not invisible
+# to the compiler. Do not quote this gate as evidence about build coverage.
+#
+# HISTORICAL (pre-`globs`): the lakefile declared `[[lean_lib]] name = "QOU"`
+# with `srcDir = "."` and no `globs`. Lake's default glob is `Glob.one` of
+# `roots`, and `roots` defaults to the library name — so the target was the
+# single module `QOU`. `srcDir` sets where Lake LOOKS, not what it BUILDS. A
+# file nothing imported was not in the library, and was never compiled.
+#
+# Measured 2026-08-07: 756 of 1600 modules (47.3%) are orphaned. A 153-module
+# sample compiled 2026-08-08 was 94.8% green, so this is not mainly a story about
+# broken code — it is a story about UNCHECKED code. The eight failures were all
+# stale references (renamed Mathlib lemmas, deleted QOU declarations), i.e.
+# exactly what a gate catches the day it happens.
+#
+# DIFF-SCOPED on purpose. A whole-tree gate would block every PR on the ~750
+# module backlog — the same reason `lean-content-siblings.yml` diff-scopes its
+# gates. This one only stops the number GROWING; working the backlog is bean
+# qou-orph steps 2-3.
+#
+# Bean: qou-orph.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Runnable on demand, and locally:
+  #   bun run content/pipeline/lean-orphan-audit.ts --diff <changed .lean files>
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Compute changed .lean files
+        id: changed
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed .lean files: ${files:-<none>}"
+      - name: Fail on newly-orphaned library modules
+        if: steps.changed.outputs.files != ''
+        # Paths outside the library tree are ignored by the script, so passing
+        # the PR's whole .lean diff is safe.
+        run: |
+          bun run content/pipeline/lean-orphan-audit.ts --diff ${{ steps.changed.outputs.files }}
+      - name: Survey (informational, never fails)
+        run: bun run content/pipeline/lean-orphan-audit.ts

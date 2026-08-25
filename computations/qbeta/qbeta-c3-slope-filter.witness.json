@@ -1,0 +1,63 @@
+{
+  "computation": "qbeta-c3-slope-filter",
+  "description": "Option C answered affirmatively but not as posed. The 1/u^3 amplification is COMMON-MODE across the two anchors and cancels in the difference: dc_3/dQ_beta = 2.069e6 per MeV at each anchor, but d(swing)/dQ_beta = -1.241, a 1.67e6 cancellation. So the c_3 SLOPE is known to 15.41 ppm while its VALUE is 60.99% uncertain \u2014 39576x sharper. CRITICAL LIMITATION: c_3(q) is completely determined once Q_beta^exp is fixed, so dc_3/dq is a computation from the extractor, not a measurement; the sharpness comes from experiment CANCELLING. The slope therefore tests a candidate derived c_3(q) against the framework's own ladder shape \u2014 theory against theory \u2014 and does NOT lift the precision block. Its value is as a FIT-DETECTOR: a one-anchor fit passes the 61%-slack value check trivially but cannot pass the 15 ppm slope check by accident. Complements registry section 9e, which correctly calls the swing a non-independent derivation TARGET; this distinguishes that from its use as a test OBSERVABLE. Scope-(a); no claim about (H1).",
+  "audit_only": true,
+  "tier": "error propagation on committed values (no fit)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-24T13:34:20.896994+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_c3_slope_filter.py",
+  "scriptHash": "9a624fbc9655",
+  "assertions": [
+    {
+      "name": "amplification_cancels_in_the_difference",
+      "passed": true,
+      "detail": "1654986.1x cancellation"
+    },
+    {
+      "name": "slope_relative_sigma_below_100ppm",
+      "passed": true,
+      "detail": "15.4098 ppm"
+    },
+    {
+      "name": "value_relative_sigma_above_50pct",
+      "passed": true
+    },
+    {
+      "name": "slope_sharper_than_value_by_over_1e4",
+      "passed": true,
+      "detail": "39574.144x"
+    },
+    {
+      "name": "slope_is_internal_filter_not_experimental_test",
+      "passed": true,
+      "detail": "c_3(q) is determined once Q_beta^exp is fixed; the sharpness comes from experiment CANCELLING, so this tests theory against the framework's own ladder, not against nature"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "dc3_dQbeta_proton": "2068767.7903873",
+    "dc3_dQbeta_muon": "2068766.540366",
+    "d_swing_dQbeta": "-1.2500212511156",
+    "cancellation_factor": "1654986.09607",
+    "c3_proton": "-2.069342577115168",
+    "c3_muon": "-2.019860311874005",
+    "swing": "0.04948226524116237",
+    "dq_anchor_spread": "1.289135823909e-8",
+    "slope_dc3_dq": "3838405.87806478",
+    "sigma_c3_value": "1.26194835214",
+    "sigma_swing": "7.6251296318e-7",
+    "relative_sigma_value_pct": "60.983056",
+    "relative_sigma_slope_ppm": "15.409823",
+    "slope_sharper_by": "39574.14392"
+  },
+  "context": {
+    "axis": "front triage option C \u2014 an observable avoiding the 1/u^3 lever",
+    "limitation": "INTERNAL FILTER, NOT AN EXPERIMENTAL TEST. c_3(q) is determined once Q_beta^exp is fixed; dc_3/dq is a computation from the extractor. The sharpness comes from experiment cancelling out. Do not cite the 39576x as an experimental precision.",
+    "complements": "registry section 9e \u2014 the swing is correctly a non-independent derivation TARGET. This separates that from its use as a test OBSERVABLE against a proposed c_3(q) shape.",
+    "scope": "Scope-(a). No fit; no claim about (H1) either way."
+  }
+}

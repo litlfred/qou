@@ -1,0 +1,72 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1012.1039v2",
+ "source_sha256": "acb2575050db419d",
+ "brief": "SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS — Let M be a hyperbolic n–manifold whose cusps have torus cross- sections.",
+ "extended": "**SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS**\n\n*KOJI FUJIW ARA AND JASON FOX MANNING*\n\n22 pp, 10 sections.\n\n**Abstract.** Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of no npositively and negatively curved spaces as “2 π –ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These 2 π –ﬁllings are closed pseudomanifolds, and so have a fundamental class. W e show th at the simplicial volume of any such 2 π –ﬁlling is positive, and bounded above by Vol(M ) vn , where vn is the volume of a regular ideal hyperbolic n–simplex. This result gener- alizes the fact that hyperbolic Dehn ﬁlling of a 3–manifold d oes not increase hyperbolic volume.\n\n**Outline.** 1 Introduction; 1.1 Outline; 2 Simplicial volume and duality; 2.1 Gromov norms; 2.2 Symmetrization; 3 Main result; Appendix A. A proportionality theorem; Appendix B. (Anti)Symmetrization of chains; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.4: [FM10] LetM be an n–dimensional hyperbolic manifold as above.\n- Theorem 1.5: LetM be a compact n–manifold with boundary a union of (n − 1)–\n- Theorem 1.5: gives further information (an upper bound) on the simp licial vol-\n- Theorem: A.1. Let M be a manifold with boundary, so that the interior V of M\n- Proposition 2.3: LetM be a closed orientable aspherical n–dimensional pseudo-\n- Proposition 3.7: We can choose a ﬁnite cover ˜M",
+ "tokens": {
+  "brief": 32,
+  "extended": 376
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-11-outline",
+   "title": "Outline",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-2-simplicial-volume-and-duality",
+   "title": "Simplicial volume and duality",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-gromov-norms",
+   "title": "Gromov norms",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-22-symmetrization",
+   "title": "Symmetrization",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-005-3-main-result",
+   "title": "Main result",
+   "pages": "8-14"
+  },
+  {
+   "id": "sec-006-appendix-a-a-proportionality-theorem",
+   "title": "Appendix A. A proportionality theorem",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-007-appendix-b-antisymmetrization-of-chains",
+   "title": "Appendix B. (Anti)Symmetrization of chains",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-008-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "20-22"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

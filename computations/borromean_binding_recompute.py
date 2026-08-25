@@ -4,9 +4,23 @@
 Complete nuclear-binding recompute through ONE pipeline (no special-casing,
 no m_e·Vol(𝓑₃)): every nucleus AND every nucleon mass flows from the same
 Borromean H_3 trace τ that `F_Bor` (bean `ovud`) uses for the nucleon rest
-mass. Resolves the Li_2^q convergence wall (the atom-word proton trace
-1.0653 > 1 diverged the free pp pair; the Borromean τ = 0.9986 < 1 converges
-for ALL Z).
+mass. Sidesteps the Li_2^q SERIES wall (the atom-word proton trace 1.0653 > 1
+puts τ_p² = 1.13488 outside the series radius |z| < q₀ = 1.10998, by 2.2%;
+the Borromean τ = 0.9986 < 1 stays inside for ALL Z).
+
+CORRECTED 2026-08-09 (bean `qou-cw27`): this used to say the atom-word tower
+"diverged". It does not. That was the `li_2_q` GUARD, which hard-returned `inf`
+for |z| >= q, not the function. The q-product
+`Li_2^q(z) = -h*SUM_m ln(1 - z*q^{-1-2m})` continues it, matches the series to
+~1e-45, and is finite for every argument this tower takes (`g(x) = -Li_2^q(-x)`
+is only ever evaluated at x > 0, where every factor is 1 + x*q^{-1-2m} > 1).
+`li_2_q` now returns that continuation for z < 0. The divergence was also
+GEOMETRIC (ratio -> |z|/q), not factorial, so Borel resummation would have been
+the wrong tool.
+
+The Borromean route is still preferred here, but on MAGNITUDE grounds: with the
+continuation wired, the atom-word tower gives B(2H) = 2.4477 (+10.0%) yet
+3H -46.6%, 4He -78.0%, versus Borromean's 2.4803 / -42.0% / -77.4%.
 
 Pipeline (derived conventions, per docs/audits/2026-06-28-brane-tower-
 formalize-first-plan.md):
@@ -62,7 +76,12 @@ warnings.filterwarnings("ignore")
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+# 50-dps source. This was `from q_parameter import Q as Q0` — the float64 —
+# laundered below through `mp.mpf(str(Q0))`, so every quantity derived here
+# (E0, h, tau, the whole brane tower) carried ~17 good digits while being
+# computed at dps=50. This module produces the dashboard's canonical mass
+# m_can, so the cap reached the headline mass table.
+from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: E402
 from codata_constants import M_E_MEV as M_E  # noqa: E402
 from _li_2_q_util import li_2_q  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402
@@ -74,9 +93,22 @@ ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
 
 
 def _params(dps: int = 50):
+    """Substrate parameters for the single-pipeline binding.
+
+    CONVENTION-HYBRID BUG, fixed 2026-08-09 (bean qou-wgta item 1). `tau`
+    below is the Lean closed form (4+h²−3h⁴−h⁶)/(h²+4), which IS convention
+    D — while `z` was `1/(√q + √(1/q))`, which is convention C. `z` builds
+    f_pp / f_pn / f_nn, so this function's binding was tau(D) × bonds(C):
+    a number reproducible under NEITHER convention, while the docstring of
+    `borromean_binding` below declared D and the registry recorded this
+    channel as D/D/agreed. Registry:
+    docs/coordination/trace-convention-registry.md.
+    """
     mp.mp.dps = dps
     q = mp.mpf(str(Q0)); me = mp.mpf(str(M_E)); qi = 1 / q; h = q - qi
-    E0 = me / (q * (q - 1)); z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # z: convention D (SU(2)/Temperley-Lieb), q³/(q²+1). Was C's
+    # 1/(√q + √(1/q)) = 0.4993203342 against D's 0.6126880371 at the proton pin.
+    E0 = me / (q * (q - 1)); z = q**3 / (q**2 + 1)
     tau = (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)          # Borromean H_3 trace
     return q, qi, h, E0, z, tau
 
@@ -85,7 +117,13 @@ def borromean_binding(Z: int, N: int, dps: int = 50) -> dict:
     """Canonical single-pipeline binding (MeV) for nucleus (Z, N) — the
     convergent per-knot Borromean brane tower. Reusable production entry point
     (consumed by the dashboard's `m_can`). Returns B_can0 (level-0 E₀·Δtr) and
-    B_tower (+ n=0 Li₂^q pair correction). Pure Markov × m_e; zero AME/CODATA."""
+    B_tower (+ n=0 Li₂^q pair correction). Pure Markov × m_e; zero AME/CODATA.
+
+    TRACE CONVENTION: **convention D** (SU(2)/Temperley-Lieb, Jones weights,
+    y_(1^3) = 0; z = q^3/(q^2+1)); tau(beta_Bor) = 0.998562163836787266 at the
+    proton pin. NOT convention C (the full-Hecke Ocneanu z = 1/(q^1/2+q^-1/2)
+    trace used by `binding_canonical.py`), which differs by 195.8 ppm on
+    beta_Bor. Registry: docs/coordination/trace-convention-registry.md."""
     q, qi, h, E0, z, tau = _params(dps)
     z2 = z * z; f_pp = z; f_pn = z; f_nn = z - h
     A = Z + N

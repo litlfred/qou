@@ -35,10 +35,21 @@ from hecke_characters import chi_lambda_braid
 from mass_at_3A_proper import atom_braid_word_3A
 from q_parameter import Q
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 HA = 0.20906032198987945  # h = q − q⁻¹ at q_0
 H_HALF = HA / 2
+
+
+def _pn_weighted_d():
+    """-h(1/2 - delta/4): the colour-weighted p-n interface shift."""
+    from canonical_braid_crossings import _avg_color_delta
+    from hecke_core import h as _h
+    return -float(_h) * (0.5 - float(_avg_color_delta()) / 4)
+
+
+_D_PN_WEIGHTED = _pn_weighted_d()
 
 
 def all_partitions(n: int):
@@ -82,9 +93,13 @@ def expand_to_branches(atom_word):
             # σ_k - h: this is σ_k^{-1}. Single branch: append (-1, k+1).
             for coeff, word in branches:
                 new_branches.append((coeff, word + [(-1, k + 1)]))
-        elif abs(d + H_HALF) < 1e-12:
-            # σ_avg = σ_k - h/2: split into two branches
-            half_h = mp.mpf(HA) / 2
+        elif abs(d + H_HALF) < 1e-12 or abs(d - _D_PN_WEIGHTED) < 1e-9:
+            # σ_avg = σ_k + d: split into two branches. d is -h/2 for the
+            # colour-BLIND interface and -h(1/2 - delta/4) for the
+            # colour-WEIGHTED one; the identity coefficient below is the
+            # actual d, so both are exact. Hardcoding -h/2 here silently
+            # deleted the p-n colour asymmetry (qou-gdtb).
+            half_h = -mp.mpf(str(d))
             for coeff, word in branches:
                 # Branch A: σ_k (coeff · 1)
                 new_branches.append(
@@ -116,7 +131,7 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12):
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     q = float(Q)
 
     w = WitnessBuilder("atom-braid-active-partitions", engine="mpmath")

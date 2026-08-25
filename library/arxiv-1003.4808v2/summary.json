@@ -1,0 +1,90 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1003.4808v2",
+ "source_sha256": "72301d4bee491f86",
+ "brief": "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC",
+ "extended": "**Quantum Field Theory and the Volume Conjecture**\n\n*Tudor Dimofte and Sergei Gukov*\n\n32 pp, 14 sections.\n\n**Outline.** 1 Preliminaries; 2 The many dimensions of the volume conjecture; 2.1 Parametrized VC; 2.2 Quantum VC; 2.3 Groups and representations; 2.4 Links and 3-manifolds; 3 TQFT; 3.1 Cutting and gluing; 3.2 Quantization; 3.2.1 Methods; 3.2.2 Simple examples; 3.3 Chern-Simons theory; 3.3.1 Quantization of Chern-Simons theory; 3.3.2 Synthesis",
+ "tokens": {
+  "brief": 32,
+  "extended": 113
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-preliminaries",
+   "title": "Preliminaries",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-001-2-the-many-dimensions-of-the-volume-conjecture",
+   "title": "The many dimensions of the volume conjecture",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-21-parametrized-vc",
+   "title": "Parametrized VC",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-22-quantum-vc",
+   "title": "Quantum VC",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-23-groups-and-representations",
+   "title": "Groups and representations",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-005-24-links-and-3-manifolds",
+   "title": "Links and 3-manifolds",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-006-3-tqft",
+   "title": "TQFT",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-007-31-cutting-and-gluing",
+   "title": "Cutting and gluing",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-008-32-quantization",
+   "title": "Quantization",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-321-methods",
+   "title": "Methods",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-010-322-simple-examples",
+   "title": "Simple examples",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-011-33-chern-simons-theory",
+   "title": "Chern-Simons theory",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-012-331-quantization-of-chern-simons-theory",
+   "title": "Quantization of Chern-Simons theory",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-013-332-synthesis",
+   "title": "Synthesis",
+   "pages": "27-32"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:m-tau-knot-prediction",
   title:
-    "m_τ knot-prediction (forward-reference to falsification audit)",
+    "The $m_\\tau$ knot prediction and its falsification",
   interprets: "rem:calibration-inputs",
   uses: [
     "rem:calibration-inputs",

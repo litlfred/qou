@@ -49,7 +49,7 @@ export default chapter({
           ],
         },
         {
-          title: "The B1 theorem rows",
+          title: "Theorem-level rows of the depth correspondence",
           label: "sec:surreal-b1-theorem-rows",
           blocks: [
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
@@ -69,14 +69,13 @@ export default chapter({
           ],
         },
         {
-          title: "B1 status synthesis",
+          title: "Status of the depth correspondence",
           label: "sec:surreal-b1-status",
           blocks: [
             // Canonical B1 current-status synthesis (rounds 1-11).
             "b1-current-status",
             "b1-current-status-table1-data",
             "b1-current-status-table2-data",
-            "b1-current-status-table3-data",
             "calculus-up-to-epsilon",
             "calculus-up-to-epsilon-table-data",
           ],
@@ -91,11 +90,11 @@ export default chapter({
         "birthday-grading",
         "birthday-grading-archimedean",
         "birthday-grading-substrate",
+        "sign-sequence-of-braid",
+        "sign-sequence-of-braid-invariant",
         "hoefsmit-is-surreal-construction",
         "hoefsmit-is-surreal-construction-context",
         "hoefsmit-is-surreal-construction-proof",
-        "sign-sequence-of-braid",
-        "sign-sequence-of-braid-invariant",
         "jones-birthday",
       ],
     },
@@ -108,6 +107,8 @@ export default chapter({
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
+        "hyperreal-limit-transfer",
+        "birthday-axioms-do-not-pin-the-birthday",
       ],
     },
     {
@@ -162,7 +163,7 @@ export default chapter({
         "spectral-normal-form",
         "kashaev-surreal",
         // ε^ω = the perpetual obstruction as a single surreal grade
-        // (narrowing of conj:motivic-perpetual-obstruction).
+        // (narrowing of thm:motivic-perpetual-obstruction).
         "perpetual-obstruction-depth-omega",
       ],
     },
@@ -218,8 +219,13 @@ export default chapter({
             "q-collatz-conjecture",
             "two-q-adic-valuation",
             "collatz-contact-boundary-defn",
-            "collatz-parity-to-divisor",
+            // Swapped 2026-08-15: `collatz-parity-to-divisor` declares
+            // `interprets: "prop:collatz-contact-boundary"` and was listed
+            // immediately BEFORE it, so the remark interpreted a result the
+            // reader had not met yet. Adjacent, one section — a listing-order
+            // slip rather than a structural question.
             "collatz-contact-boundary",
+            "collatz-parity-to-divisor",
             "collatz-no-cycles",
             "collatz-no-cycles-proof",
             "collatz-three-forms",

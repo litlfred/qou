@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "rem:two-tier-scaling-pq",
     "rem:categorical-mass-positivity",
-    "prop:graded-hecke-energy-truncation-bound",
   ],
   cites: [
     "khovanovlauda2009",

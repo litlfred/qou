@@ -35,19 +35,24 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     qi = 1 / q0
     h = q0 - qi
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # Convention D (canonical, 2026-08-15 owner ruling): z = q^3/(q^2+1) = q^2/[2]_q.
+    # Convention C, 1/(sqrt q + 1/sqrt q), is excised. Under D no square root is
+    # needed, so a surviving mp.sqrt here would be z_C showing through.
+    z = q0**3 / (q0**2 + 1)
 
     two_q = q0 + qi
     three_q = q0**2 + 1 + qi**2

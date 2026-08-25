@@ -63,8 +63,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 B1 = 8  # dim H¹(M_Bring) = b₁ (proven Lean, PR #2114)
 
 

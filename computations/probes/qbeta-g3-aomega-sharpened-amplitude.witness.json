@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T14:01:57.965916+00:00",
-  "commitSha": "f96b32252c337cf934cab64a1c659c023e4a3281",
+  "computedAt": "2026-08-23T09:38:46.905125+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "u0_calibration_near_integer_3",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 19,
   "computation": "qbeta-g3-aomega-sharpened-amplitude",
   "scriptFile": "qbeta_g3_aomega_sharpened_amplitude.py",
-  "scriptHash": "172ebee8dfe1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "35012c8081f4",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_aomega_sharpened_amplitude.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_aomega_sharpened_amplitude.py"
   },
   "description": "A_omega: pole-pinned Stokes-amplitude extraction using the Lean-backed exact closed-form singularity; xi-frame phase-law test on the pole (exact) and the de-kinematized residue (the intrinsic odd-channel phase = first direct A_omega signature); capstone ingredient rows per the Seq-1 scope. Nothing wired.",
   "contentBlock": "conj:im-q-physical-role",
@@ -67,7 +75,7 @@
     },
     "exact_pole": {
       "zeta0": "(0.4490478569246342704 + 0.014914084038207308552j)",
-      "arg_minus_kinematic": "8.35239e-53"
+      "arg_minus_kinematic": "0.0"
     },
     "deformed": {
       "amps_by_order": [
@@ -98,6 +106,6 @@
       "amp_sin_over_u3": "1.03863410966e-6",
       "S_scale_ImVb": "0.0585499951473"
     },
-    "verdict": "Pole-pinned Stokes amplitudes with the Lean-backed exact singularity: u=0 calibration |2 pi i r| = 2.80662 (ratio 0.9355 to the proved integer 3, tail spread 0.0157) (True); the exact closed-form pole satisfies the xi-frame phase law EXACTLY (arg = arctan(t/pi) to 8.4e-53) (True) — the non-perturbative singularity POSITION carries no intrinsic odd phase, extending the perturbative phase law. Deformed pole-pinned amplitude |2 pi i r~|(u_sub) = 1.02389 (tail spread 0.106) (True). INTRINSIC odd-phase test: arg(r~) = 9.218e-9 rad from real (phase law predicts 0; u=0 floor 0.0) — the 4_1 non-perturbative datum (position AND amplitude) carries NO intrinsic odd phase: the full resurgent structure is phase-law-kinematic, so the bar-odd A_omega channel is NOT a 4_1 Stokes phase — direct-measurement confirmation of the #3813 non-amphichiral verdict (the odd channel must source from non-amphichiral geometry, the 5_2-class lane). Capstone ingredient rows recorded (N_odd remains O(1e-8) — no identification claimed). Scope-(a); no fit; no c_k wired."
+    "verdict": "Pole-pinned Stokes amplitudes with the Lean-backed exact singularity: u=0 calibration |2 pi i r| = 2.80662 (ratio 0.9355 to the proved integer 3, tail spread 0.0157) (True); the exact closed-form pole satisfies the xi-frame phase law EXACTLY (arg = arctan(t/pi) to 0.0) (True) — the non-perturbative singularity POSITION carries no intrinsic odd phase, extending the perturbative phase law. Deformed pole-pinned amplitude |2 pi i r~|(u_sub) = 1.02389 (tail spread 0.106) (True). INTRINSIC odd-phase test: arg(r~) = 9.218e-9 rad from real (phase law predicts 0; u=0 floor 0.0) — the 4_1 non-perturbative datum (position AND amplitude) carries NO intrinsic odd phase: the full resurgent structure is phase-law-kinematic, so the bar-odd A_omega channel is NOT a 4_1 Stokes phase — direct-measurement confirmation of the #3813 non-amphichiral verdict (the odd channel must source from non-amphichiral geometry, the 5_2-class lane). Capstone ingredient rows recorded (N_odd remains O(1e-8) — no identification claimed). Scope-(a); no fit; no c_k wired."
   }
 }

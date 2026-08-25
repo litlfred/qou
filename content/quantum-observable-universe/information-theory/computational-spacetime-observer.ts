@@ -29,6 +29,11 @@ export default remark({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing by meaning.** \`BringsObserver\` carries \`comp_time\` and \`spatial_coord\`, and \`computationalDistance\` is a distance between two observers. Coordinates of a spacetime point and a distance between them are real quantities; a generic commutative ring has no notion of either.`,
+    },
+    {
+      kind: "note",
       date: "2026-07-12",
       body:
         "Integrated from an orphan `.md` (no manifest) per the 2026-07-12 " +

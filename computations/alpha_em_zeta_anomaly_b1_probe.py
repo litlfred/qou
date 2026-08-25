@@ -55,8 +55,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 
 B1_JACOBIAN = 8        # b₁ = 2g of the genus-4 Bring surface = dim J(M)
 AREA_BRING = "12π"     # −2πχ = 4π(g−1) at g=4 (the metric-dependent area form)

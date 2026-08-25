@@ -157,9 +157,27 @@ def main() -> int:
     # total (26.59561 / 28.29566 = 0.9399185…), selected by name, numeric
     # tolerance 1e-5 (Copilot #3451).
     a = next(r for r in rows if r["option"] == "A_uniform_g")
-    dev = mp.fabs(mp.mpf(a["B4_ratio"]) - mp.mpf("0.9399185"))
-    wb.add_assertion("A_total_matches_uniform_probe",
-                     computed=str(bool(dev < mp.mpf("1e-5"))), expected="True")
+    if "B4_ratio" not in a:
+        # Option A came back UNPHYSICAL (some det <= 0), so there is no ratio to
+        # compare and this assertion has no subject. It used to index the key
+        # blind and die with KeyError -- a latent bug convention C never
+        # triggered, because under z_C option A was always physical. Under
+        # convention D (z_D = 0.6127 > z_C = 0.4993) the 4-body determinant
+        # crosses zero, which is the SAME ceiling wlambda_cumulant_specification
+        # refuses on for 3H. Report the refusal, do not crash and do not invent
+        # a number.
+        #
+        # NOTE the expected value below, 0.9399185, is a CONVENTION-C-FROZEN
+        # transcribed constant (26.59561 / 28.29566 from the uniform-g probe).
+        # It is not re-derivable under D while option A is unphysical, so it is
+        # left as the C-frame record rather than silently re-fitted.
+        wb.add_assertion("A_total_matches_uniform_probe",
+                         computed="UNPHYSICAL (option A det <= 0)",
+                         expected="True")
+    else:
+        dev = mp.fabs(mp.mpf(a["B4_ratio"]) - mp.mpf("0.9399185"))
+        wb.add_assertion("A_total_matches_uniform_probe",
+                         computed=str(bool(dev < mp.mpf("1e-5"))), expected="True")
     wb.save(extra={"auditOnly": True})
 
     print("=== [1⁴] per-pair-type magnitude profiles (type-aware Ursell) ===")

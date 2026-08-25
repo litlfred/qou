@@ -1,0 +1,484 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2111.06645",
+ "source": {
+  "file": "2304.09377v2.pdf",
+  "sha256": "76ae6c6058f4a9f9433feed2ef84207fb352b90102f6a49337e6f8ab95a591f1",
+  "bytes": 820230,
+  "pages": 39
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2111.06645",
+   "version": null,
+   "primary_class": null,
+   "stamp_date": null
+  },
+  "doi": "10.3842/SIGMA.2023.082",
+  "title": "Knots and Their Related q-Series",
+  "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
+  "abstract": "We discuss a matrix of periodic holomorphic functions in the upper and lower half-plane which can be obtained from a factorization of an Andersen–Kashaev state integral of a knot complement with remarkable analytic and asymptotic properties that defines a PSL 2(Z)-cocycle on the space of matrix-valued piecewise analytic functions on the real numbers. We identify the corresponding cocycle with the one coming from the Kashaev invariant of a knot (and its matrix-valued extension) via the refined quantum modularity conjecture of [arXiv:2111.06645] and also relate the matrix-valued invariant with the 3D- index of Dimofte–Gaiotto–Gukov. The cocycle also has an analytic extendability property that leads to the notion of a matrix-valued holomorphic quantum modular form. This is a tale of several independent discoveries, both empirical and theoretical, all illustrated by the three simplest hyperbolic knots.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20231102004826Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_lines": [
+   "Knots and Their Related q-Series"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "How the q-series arise",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The quantum modularity conjecture",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A q-series G_0(q)",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The index, the state integral and a second q-series G_1(q)",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic functions in C setminus R",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "q-series and perturbative series",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics of holomorphic functions in sectors",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "From divergent to convergent power series",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The asymptotics of G_0(q) and G_1(q) at roots of unity",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The quadratic relation",
+   "page": 12,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Higher level and weight spaces",
+   "page": 15,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "From vector-valued to matrix-valued q-series",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Descendant q-series",
+   "page": 18,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The asymptotics of the descendants",
+   "page": 19,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The case of the 5_2 knot",
+   "page": 20,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The matrix-valued cocycle of a knot",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "An equivariant state integral",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "A matrix-valued cocycle",
+   "page": 22,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The two cocycles agree",
+   "page": 23,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Matrix-valued holomorphic quantum modular forms",
+   "page": 24,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Final remarks",
+   "page": 26,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "A Complements and proofs",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 q-series identities",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 Asymptotics at roots of unity",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.4 The six q-series for the 5_2 knot",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.5 epsilon-deformation and the factorization of the state",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.6 The twelve q-series for the (-2,3,7) pretzel knot",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8390,
+   "n_words": 1429
+  },
+  {
+   "id": "sec-001-2-how-the-q-series-arise",
+   "number": "2",
+   "title": "How the q-series arise",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-the-quantum-modularity-conjecture",
+   "number": "2.1",
+   "title": "The quantum modularity conjecture",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4917,
+   "n_words": 895
+  },
+  {
+   "id": "sec-003-23-the-index-the-state-integral-and-a-second-q-s",
+   "number": "2.3",
+   "title": "The index, the state integral and a second q-series G_1(q)",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 7040,
+   "n_words": 1240
+  },
+  {
+   "id": "sec-004-3-q-series-and-perturbative-series",
+   "number": "3",
+   "title": "q-series and perturbative series",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1310,
+   "n_words": 204
+  },
+  {
+   "id": "sec-005-31-asymptotics-of-holomorphic-functions-in-secto",
+   "number": "3.1",
+   "title": "Asymptotics of holomorphic functions in sectors",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6991,
+   "n_words": 1240
+  },
+  {
+   "id": "sec-006-32-from-divergent-to-convergent-power-series",
+   "number": "3.2",
+   "title": "From divergent to convergent power series",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 5748,
+   "n_words": 1095
+  },
+  {
+   "id": "sec-007-34-the-quadratic-relation",
+   "number": "3.4",
+   "title": "The quadratic relation",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 6081,
+   "n_words": 1209
+  },
+  {
+   "id": "sec-008-35-higher-level-and-weight-spaces",
+   "number": "3.5",
+   "title": "Higher level and weight spaces",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 6801,
+   "n_words": 1378
+  },
+  {
+   "id": "sec-009-4-from-vector-valued-to-matrix-valued-q-series",
+   "number": "4",
+   "title": "From vector-valued to matrix-valued q-series",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1032,
+   "n_words": 193
+  },
+  {
+   "id": "sec-010-41-descendant-q-series",
+   "number": "4.1",
+   "title": "Descendant q-series",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1979,
+   "n_words": 384
+  },
+  {
+   "id": "sec-011-42-the-asymptotics-of-the-descendants",
+   "number": "4.2",
+   "title": "The asymptotics of the descendants",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3983,
+   "n_words": 850
+  },
+  {
+   "id": "sec-012-5-the-matrix-valued-cocycle-of-a-knot",
+   "number": "5",
+   "title": "The matrix-valued cocycle of a knot",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 557,
+   "n_words": 90
+  },
+  {
+   "id": "sec-013-51-an-equivariant-state-integral",
+   "number": "5.1",
+   "title": "An equivariant state integral",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1272,
+   "n_words": 215
+  },
+  {
+   "id": "sec-014-52-a-matrix-valued-cocycle",
+   "number": "5.2",
+   "title": "A matrix-valued cocycle",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1950,
+   "n_words": 345
+  },
+  {
+   "id": "sec-015-53-the-two-cocycles-agree",
+   "number": "5.3",
+   "title": "The two cocycles agree",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2580,
+   "n_words": 493
+  },
+  {
+   "id": "sec-016-54-matrix-valued-holomorphic-quantum-modular-for",
+   "number": "5.4",
+   "title": "Matrix-valued holomorphic quantum modular forms",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 6674,
+   "n_words": 1166
+  },
+  {
+   "id": "sec-017-6-final-remarks",
+   "number": "6",
+   "title": "Final remarks",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1960,
+   "n_words": 329
+  },
+  {
+   "id": "sec-018-a-complements-and-proofs",
+   "number": null,
+   "title": "A Complements and proofs",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 138,
+   "n_words": 26
+  },
+  {
+   "id": "sec-019-a1-q-series-identities",
+   "number": null,
+   "title": "A.1 q-series identities",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1017,
+   "n_words": 213
+  },
+  {
+   "id": "sec-020-a2-asymptotics-at-roots-of-unity",
+   "number": null,
+   "title": "A.2 Asymptotics at roots of unity",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2737,
+   "n_words": 537
+  },
+  {
+   "id": "sec-021-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn",
+   "number": null,
+   "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 37,
+   "n_chars": 17774,
+   "n_words": 3584
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 7824,
+   "n_words": 1098
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 23,
+  "chars_total": 98755
+ }
+}

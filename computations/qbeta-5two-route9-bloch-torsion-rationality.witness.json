@@ -3,12 +3,12 @@
   "bean": "qou-b7cy",
   "parent_bean": "qou-0yqu",
   "builds_on": "qou-8v3k (Route 8 transport to x = -1)",
-  "dps": 40,
+  "dps": 70,
   "gates": [
     {
       "gate": "G3",
       "claim": "w^3 - 2w^2 - w + 1 = 0 for w = 1+2cos(2 pi k/7)",
-      "worst": "9.1835496e-41",
+      "worst": "1.8111358e-71",
       "pass": true
     },
     {
@@ -24,7 +24,7 @@
     {
       "gate": "G2",
       "claim": "(1-w)^2 (1+w) = w^2  [ring identity via w^3 = 2w^2 + w - 1]",
-      "worst": "5.7397185e-41",
+      "worst": "1.8111358e-71",
       "consequence": "delta(2[w]+[-w]) = w ^ w^2 = 0, so xi lies in the Bloch group B(F)",
       "pass": true
     },
@@ -32,7 +32,7 @@
       "gate": "G4",
       "claim": "sum_k Re[2Li2(w)+Li2(-w)+log^2 w] = -pi^2/2 (Route 8 target)",
       "value": "-4.9348022005446793094172455",
-      "abs_err": "9.18355e-41",
+      "abs_err": "1.44891e-70",
       "pass": true
     },
     {
@@ -40,7 +40,7 @@
       "claim": "sum_k Re[2L(w)+L(-w)] = pi^2/2 exactly  (L = Rogers dilogarithm)",
       "value": "4.9348022005446793094172455",
       "over_pi_sq": "0.5",
-      "abs_err": "1.83671e-40",
+      "abs_err": "0.0",
       "note": "rationality is PROVED by Bloch torsion (G2 + F totally real); that the rational is 1/2 is VERIFIED here, not proved",
       "pass": true
     },
@@ -49,7 +49,7 @@
       "claim": "sum_k Re V = sum_k Re L(xi) - pi^2 exactly",
       "difference": "-9.869604401089358618834491",
       "over_pi_sq": "-1.0",
-      "abs_err": "0.0",
+      "abs_err": "1.44891e-70",
       "caveat": "the per-embedding formula V - L(xi) = i pi log[(1-w)/w] is FALSE (fails at two embeddings on branch grounds); only the SUM is exact",
       "pass": true
     },
@@ -63,7 +63,7 @@
           "value": "3.9948398766314070600044368",
           "claim": "17*pi^2/42",
           "over_L1": "17/7",
-          "abs_err": "4.59177e-41"
+          "abs_err": "3.62227e-71"
         },
         {
           "k": 2,
@@ -71,7 +71,7 @@
           "value": "1.1749529048915903117660108",
           "claim": "5*pi^2/42",
           "over_L1": "5/7",
-          "abs_err": "6.88766e-41"
+          "abs_err": "1.81114e-71"
         },
         {
           "k": 3,
@@ -79,7 +79,7 @@
           "value": "-0.23499058097831806235320217",
           "claim": "-1*pi^2/42",
           "over_L1": "-1/7",
-          "abs_err": "2.29589e-41"
+          "abs_err": "1.13196e-71"
         }
       ],
       "m": [
@@ -94,7 +94,7 @@
         42,
         42
       ],
-      "worst": "6.8876622e-41",
+      "worst": "3.6222716e-71",
       "note": "verified separately to 100 dps with residuals ~1e-101; denominators of 7 in units of L(1) are the signature of level-7 ladders. Bloch torsion (G2 + F totally real) PROVES each value is in pi^2 Q; the specific numerators 17, 5, -1 are verified, not derived.",
       "pass": true
     },

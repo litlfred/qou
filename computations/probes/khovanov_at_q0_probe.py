@@ -41,7 +41,12 @@ COMPUTE_DIR = THIS.parent.parent  # was: THIS.parent (pre-cluster-move)
 sys.path.insert(0, str(COMPUTE_DIR))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 from mpmath import mp, mpf  # noqa: E402
@@ -49,7 +54,7 @@ from mpmath import mp, mpf  # noqa: E402
 # Substrate q_0 at 50 dps
 import json
 Q_PIN = COMPUTE_DIR / "q-pinning-50-digit.witness.json"
-Q_0 = mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q_0 = mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 HBAR_Q = (Q_0 - mpf(1)) / Q_0
 B_SQ = (Q_0**4 + Q_0**2 + mpf(1)) / (Q_0**2 + mpf(1))**2  # b² = (q⁴+q²+1)/(q²+1)²
 
@@ -197,6 +202,7 @@ def main() -> None:
 
     # Save witness
     w = WitnessBuilder("khovanov-at-q0-probe", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Khovanov polynomials Kh(L)(q, t) evaluated at the substrate "
         "q_0 with t = −1 (Jones-decategorification limit). Tests "

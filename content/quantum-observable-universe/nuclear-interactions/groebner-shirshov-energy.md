@@ -13,4 +13,4 @@ where $\xi$ is the normal form and $\ell(w)$ is the word length. Then:
 2. **Energy is path-independent.** The total energy change is independent of the order of applied basis elements. This follows from confluence.
 3. **Each Hecke step has a definite energy.** Replacing $\sigma_i^2$ with $(q - q^{-1})\sigma_i + 1$ changes energy by $|c| \cdot |q - q^{-1}|$. Every Hecke step increases the total weight.
 
-**Archimedean specialisation (§7c).** The energy $|c|\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\mathbb{R}$. This block sits on the archimedean side of the substrate wall.
+**Archimedean specialisation.** The energy $|c|\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\mathbb{R}$. What follows sits on the archimedean side of the substrate wall.

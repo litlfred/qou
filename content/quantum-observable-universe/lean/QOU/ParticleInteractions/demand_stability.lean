@@ -8,30 +8,40 @@ import Mathlib.Data.Real.Basic
 [`prop:demand-stability`](../../../quantum-observable-universe/particle-interactions/demand-stability.md): *Demand profile determines nuclear and atomic stability*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## Base ring (§7c)
+
+`Z` and `N` are `ℕ`. The scalars are the demand magnitude `|dem|`, the Markov
+trace `tr_M` and the substrate parameter `q`, and the claim only ever compares
+them with `≤` or tests `= 0` -- no archimedean construct appears. So the
+scalars are a generic ordered commutative ring and the substrate evaluation is
+`R := ℝ`.
 -/
 
 namespace QOU.ParticleInteractions
 
+variable {R : Type*} [CommRing R] [PartialOrder R]
+
 /-- Abstract context for the `demand_stability` claim —
     manuscript-themed typed fields below. -/
-class DemandStabilityContext where
+class DemandStabilityContext (R : Type*) [CommRing R] [PartialOrder R] where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+  /-- Substrate parameter `q`. -/
+  q : R
   /-- The derived atom `𝓐(Z, N) : Type`. -/
   Atom : Type
   /-- Demand magnitude `|dem(𝓐(Z, N))| = Σ_{c_w < 0} |c_w|` of the
       atom at `(Z, N)`. -/
-  dem_mag : ℕ → ℕ → ℝ
+  dem_mag : ℕ → ℕ → R
   /-- Markov-trace `tr_M(𝓐(Z, N))`. -/
-  trM : ℕ → ℕ → ℝ
+  trM : ℕ → ℕ → R
 
 /-- The physical hypotheses carried by the Periodic Table Demand Conjecture.
     (Carried as quantified hypotheses, not directly as conclusion fields). -/
-class PeriodicTableDemandConjecture (ctx : DemandStabilityContext) : Prop where
+class PeriodicTableDemandConjecture (ctx : DemandStabilityContext R) : Prop where
   /-- Beta stability: for every single-nucleon exchange at fixed `A = Z + N`,
       `|dem(Z, N)|` is the minimum among neighbouring `(Z ± 1, N ∓ 1)`. -/
   is_beta_stable :
@@ -55,7 +65,7 @@ The derived atom $\mathcal{A}(Z, N)$ is:*
 
     The Lean encoding below states the manuscript claim conditional on the `PeriodicTableDemandConjecture` hypothesis class. It derives the required inequalities by extracting them from the hypothesis. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
-theorem demand_stability (ctx : DemandStabilityContext) [hc : PeriodicTableDemandConjecture ctx] :
+theorem demand_stability (ctx : DemandStabilityContext R) [hc : PeriodicTableDemandConjecture ctx] :
     (ctx.dem_mag ctx.Z ctx.N ≤ ctx.dem_mag (ctx.Z + 1) (ctx.N - 1) ∧
      ctx.dem_mag ctx.Z ctx.N ≤ ctx.dem_mag (ctx.Z - 1) (ctx.N + 1)) ∧
     ctx.dem_mag ctx.Z ctx.N = 0 ∧

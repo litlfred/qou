@@ -1,0 +1,107 @@
+{
+  "computation": "alpha-5-lp-dual-crystal-closed-form",
+  "bean": "qou/pin3",
+  "reads": "alpha-5-lp-dual-crystal.witness.json",
+  "conclusion": "The LP is NOT degenerate: G is diagonal and positive, so the primal is an argmin and the dual optimum is a unique point, not a face. pin3's 'solver landed on a different vertex' is ruled out. The observed diff is a solver-tolerance error in y0* amplified by 1/|w| ~ 1e+05 in the ht6 strata.",
+  "per_stratum": [
+    {
+      "stratum": "two_row",
+      "atom": "D",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": 0.4417132145646115,
+      "dual_amplification": 16.665198000317233
+    },
+    {
+      "stratum": "two_row",
+      "atom": "T",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": 0.5185904148732994,
+      "dual_amplification": 98.44473295801888
+    },
+    {
+      "stratum": "two_row",
+      "atom": "3He",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": 0.5185904148732994,
+      "dual_amplification": 63.73597866980685
+    },
+    {
+      "stratum": "ht6",
+      "atom": "D",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": null,
+      "dual_amplification": 118779.20001509144
+    },
+    {
+      "stratum": "ht6",
+      "atom": "T",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": 0.5188253298007277,
+      "dual_amplification": 449194.54584847525
+    },
+    {
+      "stratum": "ht6",
+      "atom": "3He",
+      "checks": {
+        "y0_is_min_t": true,
+        "x_star_is_all_on_argmin": true,
+        "y_star_is_scaled_residual": true,
+        "obj_is_n_target_times_min_t": true
+      },
+      "argmin_margin": 0.5188253298007277,
+      "dual_amplification": 287047.559418511
+    }
+  ],
+  "pin3_entries_as_y0_error": [
+    {
+      "atom": "3He",
+      "stratum": "ht6",
+      "index": 2,
+      "is_argmin": true,
+      "implied_y0_error": 7.228632773806091e-08,
+      "relative": 2.6948186651789388e-09
+    },
+    {
+      "atom": "T",
+      "stratum": "ht6",
+      "index": 2,
+      "is_argmin": true,
+      "implied_y0_error": 3.658861962090741e-09,
+      "relative": 1.3640158266836114e-10
+    },
+    {
+      "atom": "D",
+      "stratum": "ht6",
+      "index": 0,
+      "is_argmin": true,
+      "implied_y0_error": 8.200242816134866e-10,
+      "relative": 1.743094827102818e-09
+    }
+  ],
+  "all_passed": true
+}

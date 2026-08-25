@@ -19,7 +19,7 @@ This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho
 
 ### Calibrated form
 
-We present the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants (tracked under [Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)). The proton and neutron rows are tautological by construction.
+We present the calibrated form, where $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
 
 Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
@@ -71,7 +71,7 @@ The canonical values are rigorously evaluated via formal trace definitions.
 
 See [Table 4](#tbl:recomputed-low-isotope-mass-table-table4-data).
 
-## Path A categorical verification of the proton pole order
+## Categorical verification of the proton pole order
 
 $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) = 19 = 18 Z + 21 N + 1 \quad \text{at } (Z, N) = (1, 0).
@@ -81,14 +81,11 @@ $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_D)\bigr) = 40 = 18 (1) + 21 (1) + 1.
 $$
 
-These orders are rigorously exact, as lower-order poles cannot cancel a strict maximum. This closes the multi-nucleon Path A. The coefficient 18 is the per-proton additive contribution to the summed $u$-pole order. It is not the $q$-pole order of any individual representation (the maximum per-irrep order at $H_3$ is 11 for $\lambda = (2, 1)$).
+These orders are rigorously exact, as lower-order poles cannot cancel a strict maximum. This closes the multi-nucleon case. The coefficient 18 is the per-proton additive contribution to the summed $u$-pole order. It is not the $q$-pole order of any individual representation (the maximum per-irrep order at $H_3$ is 11 for $\lambda = (2, 1)$).
 
 ## Cross-references
 
 - [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
 - [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
 - [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
-- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): Path A categorical verification.
-- [`docs/audits/-q-hecke-character-gap-closure.md`](../../../docs/audits/-q-hecke-character-gap-closure.md): Full closure audit.
-- [`docs/audits/-per-irrep-pole-18-21-research-note.md`](../../../docs/audits/-per-irrep-pole-18-21-research-note.md): Path A audit and reading correction.
-- [`docs/audits/-rho-k-mass-table-audit.md`](../../../docs/audits/-rho-k-mass-table-audit.md): Pre-$q$-Hecke audit.
+- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): the categorical verification.

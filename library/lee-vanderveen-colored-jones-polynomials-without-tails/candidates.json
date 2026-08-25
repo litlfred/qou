@@ -1,0 +1,39 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "fcc45aebd34e25dca6e89084c6609f3715e13ab3dc689eb942bddd8595a352e6",
+  "file": "lee-vanderveen-colored-jones-polynomials-without-tails.pdf"
+ },
+ "provenance": {
+  "title": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+  "authors": "CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": null,
+   "statement": "If u\u2264\u22123 then C(5;\u22123; 5;u ) is a Manx knot.",
+   "section_file": "sections/sec-005-3-the-lack-of-tail.md",
+   "section_title": "The lack of tail",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

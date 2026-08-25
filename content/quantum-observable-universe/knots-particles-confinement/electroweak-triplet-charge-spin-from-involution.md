@@ -9,4 +9,4 @@ $$
   T_3(W^\pm) = \pm 1 \ (\text{charged}), \qquad T_3(Z) = 0 \ (\text{neutral}).
 $$
 
-*Charge and spin are not independent open conjectures: both follow from the one physics selection postulate through the corpus spin involution, collapsing the former C3 (charge) and C4 (spin) into proved consequences.*
+*Charge and spin are not independent open conjectures: both follow from the one physics selection postulate through the spin involution.*

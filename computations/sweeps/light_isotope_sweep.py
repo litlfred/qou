@@ -63,6 +63,7 @@ from chi_sym_alt_closed_form import (
 # F6 (PR #565 follow-up): BlockCache wiring for numerical-q Hoefsmit.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 M_E = M_E_MEV
@@ -89,7 +90,10 @@ def chi_lambda_numeric(shape, crossings):
         I = np.eye(dim)
         product = np.eye(dim)
 
-    d_for = {"sigma": 0.0, "sigma_inv": -H_VAL, "averaged": -H_VAL / 2}
+    # Private table replaced: KeyError on `averaged_weighted`, i.e. on every
+    # isotope in this sweep past the single nucleons.
+    from canonical_braid_crossings import CTYPES, d_for_ctype
+    d_for = {c: float(d_for_ctype(c, H_VAL)) for c in CTYPES}
     for gen_idx, cross_type in crossings:
         if gen_idx < 0 or gen_idx >= len(sigmas):
             raise IndexError(
@@ -121,7 +125,7 @@ def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
     """
     A = Z + N
     k = 3 * A
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     # Lazy-load Wenzl y_λ if requested
@@ -168,7 +172,7 @@ def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
             w = y               # for the breakdown
             contrib = y * chi   # canonical: NO /dim_classical
         else:  # plancherel (legacy)
-            d_q_val = dim_q(shape)
+            d_q_val = dim_q(shape, Q0_PROTON)
             w = float(d_q_val ** 2 / nfac)
             contrib = w * chi / d
         total += contrib

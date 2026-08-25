@@ -9,7 +9,7 @@ GGM Prop 21 is the structural reason). The bar-odd A_ω channel must
 source from NON-amphichiral geometry. 5₂ is GGM's worked non-amphichiral
 example: CS(5₂) ≠ 0, three saddles, complex Borel singularities.
 
-Exact side (GGM §6.1, uploads/2012.00062v3.pdf, glyph-extracted):
+Exact side (GGM §6.1, library/arxiv-2012.00062v3/2012.00062v3.pdf, glyph-extracted):
 
   * state integral (230): Z₅₂(u;τ) = ∫ Φ_b(v)Φ_b(v+u)Φ_b(v−u) e^{−2πiv²}
   * potential (231): V(u,v) = Li₂(−e^v) + Li₂(−e^{u+v}) + Li₂(−e^{−u+v}) + v²
@@ -55,10 +55,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
-VOL52 = mp.mpf("2.8281220883307827")     # printed (75) reference value scale
+# Vol(5_2) SnapPy census; the literal printed 17 digits, correct to 15 (qou-ckbv)
+VOL52 = mp.mpf("2.82812208833078316276389880928")
 PRINTED_XI1 = mp.mpc("0.78492", "1.30714")   # printed (73) root (5 digits)
 
 
@@ -215,7 +217,7 @@ def main() -> int:
         "the #3892 5_2 ladder. A nonzero intrinsic pole phase is "
         "predicted — the odd-channel carrier the 4_1 null excluded.")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75")
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 230-233 + 73/75")
     wb.add_data("curve", "x*y^3 - (x^2+1)*y^2 + (x^2+x+1)*y - x = 0 "
                          "[(232)-derived; Lean: FiveTwoSaddleCurve.lean]")
     wb.add_data("u0", {"xi1": mp.nstr(s1, 20),

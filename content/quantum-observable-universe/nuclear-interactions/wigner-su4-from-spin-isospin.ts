@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:wigner-su4-from-spin-isospin",
   title:
-    "Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3)",
+    "Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.WignerSu4FromSpinIsospin",
     validation: "not_checked",
@@ -16,7 +16,7 @@ export default conjecture({
     "wigner1937",
     "elliott1958",
     "kashiwara1991",
-    "khovanov-lauda2009",
+    "khovanovlauda2009",
   ],
   tags: [
     "wigner-su4",
@@ -29,6 +29,5 @@ export default conjecture({
     "axiom-class",
     "open-problem",
     "conditional-on-class",
-    "non-scholarly-voice-exception",
   ],
 });

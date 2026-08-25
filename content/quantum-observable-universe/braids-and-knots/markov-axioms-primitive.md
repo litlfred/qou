@@ -2,7 +2,7 @@ Let $R$ be a commutative ring and $q \in R^{\times}$ an invertible element with 
 
 1. **Normalisation:** $\mathrm{tr}_M(1) = 1$.
 2. **Cyclicity:** $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$ for all $x, y$.
-3. **Stabilisation by $\sigma_n$:** $\mathrm{tr}_M(x \sigma_n) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_n(R, q)$, where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov-trace loop value.
+3. **Stabilisation by $\sigma_n$:** $\mathrm{tr}_M(x \sigma_n) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_n(R, q)$, where $z = q^3/(q^2+1)$ is the Markov-trace loop value (**convention D**; see the selection note below).
 
 Stabilisation by $\sigma_n^{-1}$ — often listed as a fourth axiom — is not an independent condition. Substituting the Hecke quadratic relation $\sigma_n^{-1} = \sigma_n - (q - q^{-1})$ into axiom 3 and using linearity of the trace (with $x \cdot 1 = x$) forces
 $$
@@ -12,7 +12,40 @@ $$
 $$
 so the negative-crossing loop value $z_{-}$ differs from $z$ whenever $q \neq \pm 1$. No choice of trace parameter makes the two stabilisations scale by mutually inverse factors either: $z \cdot z_{-} = 1$ has the sole solutions $z = q$ and $z = -q^{-1}$, the one-dimensional characters of $H_n(R, q)$, both of which are degenerate. Link invariance of the Jones polynomial is instead restored by the writhe prefactor outside the trace ([Jones–Markov trace](#thm:jones-markov-trace)).
 
-Axioms 1–3 force $\mathrm{tr}_M$ to be the non-degenerate Jones-Markov trace. Because $\mathrm{tr}_M$ is compatible with the tower inclusions and evaluates disjoint generators by iterated application of axiom 3, the joint Markov trace of two braids acting on disjoint strand sets is strictly multiplicative:
+Axioms 1–2 with an unspecified stabilisation parameter admit a **one-parameter
+family**; axiom 3 selects one member of it. Which member is *not* free, and this
+is where an earlier version of this remark was weaker than the mathematics
+allows.
+
+**Selection note (owner ruling 2026-08-09 — convention C excised).** This remark
+previously fixed $z = 1/(q^{1/2}+q^{-1/2})$ and said so honestly: "a stipulation
+of this definition, not a consequence of it". That member is **convention C** of
+the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md).
+It is no longer the framework's trace, because the selection is now *forced*:
+
+- `lem:feynman-eigenbasis-decomposition` already writes the row cap
+  $\ell(\lambda) \leq 2$ into the mass channel's own decomposition — $V$ is the
+  fundamental of $\mathrm{SU}_q(2)$, and the summand count $\lfloor n/2 \rfloor + 1$
+  is the two-row count and no other. So $y_{(1^3)} = 0$ is a restatement of the
+  decomposition the mass chapter uses, not an extra assumption.
+- Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`
+  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean),
+  sorry-free) shows the faithful normalised Markov trace is **unique** and equals
+  $z = q^3/(q^2+1)$ — **convention D**. The competing root $z = q$ is real but
+  degenerate ($y_{(2,1)} = 0$, not faithful on $\mathrm{TL}_3$), which is why the
+  faithfulness hypothesis is load-bearing (`markovWeights_degenerate_root`).
+
+So the loop value is a **consequence** of the fibre being two-dimensional, not a
+stipulation. Full forcing argument:
+[`2026-08-08-mass-fibre-dimension-forces-convention-d.md`](../../../docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md);
+the D-vs-C analysis it rests on:
+[`2026-08-08-borromean-trace-convention-forcing.md`](../../../docs/audits/2026-08-08-borromean-trace-convention-forcing.md).
+
+Convention D has $y_{(1^3)} = 0$, so it **is** the trace whose braid closure is
+the Jones polynomial — the "Jones–Markov" name is now accurate, where under C it
+was not.
+
+ Because $\mathrm{tr}_M$ is compatible with the tower inclusions and evaluates disjoint generators by iterated application of axiom 3, the joint Markov trace of two braids acting on disjoint strand sets is strictly multiplicative:
 $$
   \mathrm{tr}_M(K_1 \sqcup K_2) \;=\; \mathrm{tr}_M(K_1) \cdot \mathrm{tr}_M(K_2).
 $$
