@@ -129,11 +129,11 @@ and are *not* urgent by the same argument: no block's status depends on them.
 - [ ] `prop:confinement-nf-partial-proof` (2)
 - [ ] `conj:staircase-ew-residual`
 - [ ] `prop:t-beta-markov-frobenius-collapse`
-- [ ] `rem:knot-operator-basis-table`
+- [x] `rem:knot-operator-basis-table`
 - [ ] `rem:per-observable-100x-status-dashboard`
 - [ ] `conj:flavor-split-habiro-derivation`
-- [ ] `rem:hecke-operations`
-- [ ] `prop:bar-involution-invariance`
+- [x] `rem:hecke-operations`
+- [x] `prop:bar-involution-invariance`
 - [ ] the ~250 with no block dependency — bulk, low priority
 
 ## Checker landed
@@ -143,3 +143,42 @@ and are *not* urgent by the same argument: no block's status depends on them.
 criteria registry and the script sweep). 202 hits corpus-wide, 98% precision /
 75% recall against the AST census; it under-reports by design. So this bean's
 backlog is now machine-visible and regressions are caught at the gate.
+
+
+## Batch 1 landed 2026-08-25 — 3 blocks, 6 assertions
+
+- **`prop:bar-involution-invariance`** (`audits/brundan_kleshchev_audit.py`, 5
+  assertions). Read `computed=pn, expected=pn` for `pn = len(partitions_of(n))`.
+  Now `expected=KNOWN_P_N[n]` — p(2..6) = 2, 3, 5, 7, 11, independent of the
+  enumerator, so it can fail. **Test 1 in the same file already had the right
+  shape** (`computed=burnside, expected=dim_hecke`, two routes to n!); the fix
+  was to follow the file's own template. The comment states what is now checked
+  and what is not: the identification of p(n) with dim Z(H_n) is
+  Brundan-Kleshchev's theorem, cited, not computed.
+- **`rem:knot-operator-basis-table`** (`photon_operator_table.py`) and
+  **`rem:hecke-operations`** (`basis_knot_tables.py`). Both looped
+  `computed=data[...], expected=data[...]` over the e⁻ pair counts. Now literal
+  expected tables. `photon_operator_table.py` already had a correct
+  `expected=36` for `T_{2,3}` immediately below the bad loop.
+
+**These two are regression pins, not derivations, and are labelled as such** in
+the source. Pinning the H₃ table's output catches a change in the table, the
+basis order, or the NF reduction; it does not independently derive the counts.
+That is strictly more than a tautology checks, and the distinction is written
+down rather than left for a reader to assume.
+
+Worth recording: the two scripts compute the same quantity by different routes
+and **agree** where they overlap — γ 19, σ₀/σ₁ 24, e⁻ 36. Noted in
+`basis_knot_tables.py`, since that mutual check is the nearest thing to an
+independent derivation available today.
+
+### Witnesses deliberately NOT regenerated
+
+Running the producers here rewrites the witness `environment` block, and this
+container is missing `clarabel`, `scipy` and `pyhecke_native` and carries
+mpmath 1.3.0 against the recorded 1.4.1. `WitnessBuilder` says so directly:
+*"install it and re-run rather than committing the weaker record; the numbers
+can be identical while the provenance silently degrades."* Each producer was
+run to confirm the new assertions pass, then its witness reverted with
+`git checkout`. **Script fixes only in these commits.** The witnesses want
+regenerating in a properly provisioned environment.
