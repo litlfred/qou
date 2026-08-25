@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""qou-wlaf residue campaign: re-run producers whose import cone reaches the
-mpf-ified braid-word builder and report which committed witnesses actually MOVE.
-
-THE INSTRUMENT IS THE HARD PART. Read this before trusting any count it
-prints; three separate harness defects were caught building it, each of which
-would have produced a confident wrong answer.
+"""qou-wlaf residue campaign, attempt 2.
 
 Attempt 1 was discarded: it called a witness MOVED that a flattened leaf
 comparison showed had 0 differing fields, and its own comparison run
@@ -24,6 +19,16 @@ from collections import Counter
 
 ROOT = Path("/home/user/qou"); COMP = ROOT / "computations"
 T = json.load(open("/tmp/residue_targets.json")); SHA = T["sha"]
+# targets were collected against /home/user/qou; remap onto the worktree so the
+# sweep can never touch the session's tree (the reason attempt 2 was stopped)
+# RUN THIS IN A `git worktree`, never in the session tree: an earlier attempt
+# dirtied it, transiently including witness-raw-float64-audit.witness.json —
+# the audit witness commit b28296c0d already had to revert once for being
+# swept in. Remap the collected absolute paths onto the worktree root.
+_WT = os.environ.get("RESIDUE_WORKTREE")
+if _WT:
+    ROOT = Path(_WT); COMP = ROOT / "computations"
+    T["witnesses"] = [[w.replace("/home/user/qou", _WT), s] for w, s in T["witnesses"]]
 SELFTEST = "atom_braid_active_partitions"   # verified IDENTICAL by hand
 VOL = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic","computedAt",
        "durationMs","elapsed_sec","invocation","environment","scriptCommitSha",
@@ -98,12 +103,26 @@ if st["verdict"] != "IDENTICAL":
     restore(); sys.exit(2)
 print("selftest passed — verdicts are trustworthy\n", flush=True)
 
-results = [st]
-todo = [(s,w) for s,w in sorted(prod.items()) if s != SELFTEST]
+# RESUME: containers get reprovisioned mid-sweep (three times this session),
+# so a run that cannot resume loses everything each reset. Load prior verdicts
+# and skip those producers; a TIMEOUT is NOT kept, since it says nothing about
+# the witness and deserves a fresh attempt.
+prior, done = [], set()
+try:
+    _p = json.load(open("/tmp/residue_results3.json"))["results"]
+    prior = [r for r in _p if r.get("verdict") not in ("TIMEOUT", None)]
+    done = {r["producer"] for r in prior}
+    print(f"RESUME: {len(prior)} prior verdicts kept, {len(_p)-len(prior)} timeouts retried",
+          flush=True)
+except Exception:
+    pass
+
+results = prior + [st] if st["producer"] not in done else list(prior)
+todo = [(s,w) for s,w in sorted(prod.items()) if s != SELFTEST and s not in done]
 for i,(stem,ws) in enumerate(todo,1):
     r = run_one(stem, ws); results.append(r)
     print(f"[{i}/{len(todo)}] {stem:<48s} {r['verdict']:<14s} {r['sec']:6.1f}s moved={len(r.get('moved',[]))}",flush=True)
-    json.dump({"sha":SHA,"results":results},open("/tmp/residue_results2.json","w"),indent=1)
+    json.dump({"sha":SHA,"results":results},open("/tmp/residue_results3.json","w"),indent=1)
 restore()
 print("\n=== SUMMARY ==="); print(f"pinned {SHA}")
 for k,v in Counter(x["verdict"] for x in results).most_common(): print(f"  {k:<16s} {v}")
