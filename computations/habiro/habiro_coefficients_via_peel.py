@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""A = 3 Habiro coefficients via the Markov-peel route (bean `qou-lrnd`).
+"""Atomic Habiro coefficients via the Markov-peel route (bean `qou-lrnd`).
+
+Covers A = 1 through A = 4 (proton, neutron, deuteron, helium-3,
+tritium, helium-4). A = 3 is what motivated it -- see below -- but the
+same route reaches A = 4 in well under a minute, so the scope is "every
+atom the peel can carry", not "A = 3".
 
 # Why this exists
 
@@ -74,6 +79,11 @@ ATOMS = [
     (1, 1, "deuteron", "D"),
     (2, 1, "helium-3", None),
     (1, 2, "tritium", None),
+    # A=4. AGENTS.md flags `A >= 4` as long-compute, so this was measured
+    # before being added rather than assumed from the A=3 timings: tr_M
+    # 24.5 s + cancel 18.1 s, deg_u(p) = 180, a_0..a_18, reconstruction
+    # exact. That is the whole atom in well under a minute.
+    (2, 2, "helium-4", None),
 ]
 
 
@@ -149,13 +159,14 @@ def assert_routes_agree(w: WitnessBuilder) -> None:
 
 def main() -> int:
     started = time.monotonic()
-    w = WitnessBuilder("habiro-coefficients-a3-via-peel", engine="sympy",
+    w = WitnessBuilder("habiro-coefficients-via-peel", engine="sympy",
                        output_dir=_HERE, start_time=started)
     w.set_description(
-        "A=3 Habiro cyclotomic coefficients (helium-3, tritium) obtained via "
-        "markov_peel.tr_M_atomic instead of the Wedderburn partition sum. The "
-        "partition route was measured at ~18.1 days for A=3; this one takes "
-        "seconds. Gated on exact reproduction of the committed A<=2 values."
+        "Atomic Habiro cyclotomic coefficients for A=1..4 (through helium-4) "
+        "obtained via markov_peel.tr_M_atomic instead of the Wedderburn "
+        "partition sum. The partition route was measured at ~18.1 days for "
+        "A=3; this one does A=3 in seconds and A=4 in under a minute. Gated "
+        "on exact reproduction of every committed A<=2 value."
     )
     w.set_content_block("prop:markov-pair-z2")
 
@@ -200,7 +211,7 @@ def main() -> int:
                "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial "
                "+ cyclotomic_expansion")
     w.add_caveat(
-        "The A=3 coefficients are NOT cross-checked against an independent "
+        "The A>=3 coefficients are NOT cross-checked against an independent "
         "second computation -- there is none: the partition-sum route is the "
         "18-day path this producer exists to avoid. Their warrant is that the "
         "SAME code path reproduces every committed A<=2 value exactly, and "
