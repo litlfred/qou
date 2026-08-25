@@ -106,6 +106,54 @@ def triage():
     return rows
 
 
+# The convention-D ruling is 2026-08-09.  The CODE followed five days later:
+# `_wenzl_constants` switched C -> D in e54ffbca0a, 2026-08-14T22:04:12Z.  So a
+# witness stamped 2026-08-12 POST-DATES THE RULING AND IS STILL CONVENTION C.
+# Dating against the ruling instead of against this commit mis-classifies every
+# witness in that five-day window.
+D_SWITCH_COMMIT = "e54ffbca0a"
+D_SWITCH_UTC = "2026-08-14T22:04:12"
+
+
+def date_witnesses():
+    """Layer 3: date each flagged file's sibling witnesses against the code switch.
+
+    Cheap, needs no compute, and is orthogonal to both the source scan and the
+    re-run: provenance says which convention a COMMITTED NUMBER was produced under,
+    without re-deriving it.  Verified against the three confirmed instances --
+    threerow-sign-crossing (2026-08-09T16:30), threerow-4he-completion
+    (2026-08-09T17:23) and ylambda-sign-content-threshold (2026-08-08T21:52) all
+    land pre-switch, and mu3-frechet-perblock (2026-08-24T12:09) lands post-switch,
+    which is exactly why its record already reads zero.
+    """
+    import json
+    out = []
+    for r in triage():
+        if not r["score"]:
+            continue
+        src = ROOT / r["path"]
+        # sibling witnesses: same directory, stem-derived names
+        stem = src.stem.replace("_probe", "").replace("_", "-")
+        for w in sorted(src.parent.glob("*.witness.json")):
+            if stem not in w.stem and w.stem not in stem:
+                continue
+            try:
+                d = json.loads(w.read_text())
+            except Exception:
+                continue
+            t = str(d.get("computedAt", ""))
+            if not t:
+                continue
+            out.append({
+                "producer": r["path"],
+                "witness": w.relative_to(ROOT).as_posix(),
+                "computedAt": t[:19],
+                "convention": "C (pre-switch)" if t < D_SWITCH_UTC else "D (post-switch)",
+                "all_passed": d.get("allPassed"),
+            })
+    return out
+
+
 def measure(ns=(6, 9, 12)):
     sys.path[:0] = [str(ROOT / "computations"), str(ROOT / "computations" / "substrate")]
     import _path_bridge  # noqa: F401
@@ -154,6 +202,9 @@ def measure(ns=(6, 9, 12)):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--measure", action="store_true")
+    ap.add_argument("--dates", action="store_true",
+                    help="layer 3: date each flagged producer's witnesses against "
+                         "the C->D code switch (e54ffbca0a, 2026-08-14T22:04:12Z)")
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
 
@@ -178,6 +229,27 @@ def main() -> int:
                   f"y_lambda at n=9 — convention D should leave none")
             return 1
         print("SELFTEST OK")
+        return 0
+
+    if a.dates:
+        rows = date_witnesses()
+        pre = [r for r in rows if r["convention"].startswith("C")]
+        print("=" * 92)
+        print(" LAYER 3 — witness provenance against the C->D CODE switch")
+        print("=" * 92)
+        print(f"  The ruling is 2026-08-09; the code switched {D_SWITCH_UTC}Z"
+              f" ({D_SWITCH_COMMIT}).")
+        print("  A witness stamped inside that five-day window post-dates the ruling")
+        print("  and is STILL convention C. Date against the commit, not the ruling.")
+        print()
+        print(f"  witnesses of flagged producers : {len(rows)}")
+        print(f"  computed BEFORE the switch (C) : {len(pre)}")
+        print()
+        for r in sorted(rows, key=lambda r: r["computedAt"]):
+            mark = "  <-- C-frame record" if r["convention"].startswith("C") else ""
+            ap_ = "" if r["all_passed"] is None else f"  allPassed={r['all_passed']}"
+            print(f"  {r['computedAt']}  {r['convention']:<16}{ap_}"
+                  f"  {r['witness']}{mark}")
         return 0
 
     if a.measure:

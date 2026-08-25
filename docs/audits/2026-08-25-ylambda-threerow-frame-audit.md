@@ -214,6 +214,51 @@ partitions of 9 have `y_λ = 0` and none is negative.
 This one is not merely stale bookkeeping. A passing assertion is what the QA
 pipeline reads as evidence.
 
+## Layer 3 — provenance dating, and the trap in it
+
+There is a third, cheap discriminator that needs no compute and is orthogonal to
+both the source scan and the re-run: **when was the committed number produced?**
+
+**The trap: the ruling date is not the code date.** The convention-D ruling is
+**2026-08-09**. `_wenzl_constants` actually switched C → D in **`e54ffbca0a`,
+2026-08-14T22:04:12Z** — five days later. A witness stamped 2026-08-12 post-dates
+the ruling and is **still convention C**. Dating against the ruling mis-classifies
+everything in that window.
+
+Dating the flagged producers' witnesses against the commit:
+
+| computedAt | convention | allPassed | witness |
+|---|---|---|---|
+| 2026-08-08T21:52:44 | **C** | true | `mu3-abs-choice-robustness` |
+| 2026-08-08T21:52:48 | **C** | true | `ylambda-sign-content-threshold` |
+| 2026-08-09T16:30:28 | **C** | true | `threerow-sign-crossing` |
+| 2026-08-09T17:23:01 | **C** | true | `threerow-4he-completion` |
+| 2026-08-09T18:11:26 | **C** | true | `threerow-qcross-trend` |
+| 2026-08-15T00:37:38 | D | true | `probe-1b-li6-orthogonality` |
+| 2026-08-15T12:54:12 | D | true | `gap10-tjon-correlation` |
+| 2026-08-24T12:09:19 | D | **false** | `mu3-frechet-perblock` |
+| 2026-08-24T14:28:59 | D | true | `threerow-crossing-a-dependence` |
+| 2026-08-24T14:56:24 | D | true | `delta-lambda-closure-tl-support` |
+| 2026-08-25T09:46:33 | D | true | `mu3-door-budget` |
+
+**Five committed convention-C records, every one carrying `allPassed: true`.**
+
+This corroborates the classification independently of any re-run, and it turned up
+a fifth instance the source scan had ranked low: **`mu3-abs-choice-robustness`**.
+Its committed `c3_MeV = -1.7687752752067383763` (T) and `-1.4054244334325435014`
+(³He) are *exactly* the convention-C values PR #4673 measured at its pre-rebase
+merge-base and could no longer reproduce on `main` — where the same quantity is
+`-1.3723` / `-1.0338`. Two independent branches, same numbers, same conclusion.
+
+That probe's thesis is *"is the μ₃ door verdict an artifact of `abs()`?"*, answered
+`verdict_robust_to_abs: true` off `n_negative_raw_chi = 8`. Under D the |χ|-vs-signed
+choice contributes **exactly zero** (#4673, measured), so the verdict would become
+*trivially* true rather than measured — a different claim wearing the same word.
+
+**Coverage caveat:** layer 3 matches witnesses to producers by filename stem, and
+only 11 of the 27 flagged producers had a match. Absence from this table is not
+evidence of cleanliness.
+
 ## Not done
 
 Of the 27 flagged, **4 are now confirmed** (`threerow_qcross_trend_probe`,
