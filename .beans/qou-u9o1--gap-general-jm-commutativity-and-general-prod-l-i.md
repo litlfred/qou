@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:39:42Z
+updated_at: 2026-08-25T06:46:58Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -344,3 +344,36 @@ reported False for every case INCLUDING the theorem. That is now twice in this s
 (the H_3 script did the same). Both times the known-answer control was the only thing
 that caught it. **A probe testing a claimed identity without a control case measures
 itself.**
+
+
+## Widened q and n — the k=1 pattern was an ARTIFACT, and the flip is now PROVED
+
+`computations/hecke/jm_adjacent_widen_q_and_n.py`. Regular reps of H_4 and H_5
+(faithful), exact Fractions, q in {2, 3, 5/2}, (n,k) in {(4,1), (5,2)}.
+
+**CONTROL passes at k=2 as well** — N = L_2 = s_1 s_0 s_0 s_1 gives True. Adjacent
+commutativity is now numerically verified at k=1 AND k=2; Lean has only the k=0 shape,
+so k=2 is a genuinely new checked case.
+
+1. **q-INDEPENDENT.** Identical at all three q. Structural, not arithmetic.
+2. **k-DEPENDENT — this kills the k=1 "True set".**
+
+       N = s_0     : FALSE at k=1,  TRUE at k=2
+       N = s_0 s_j : TRUE  at k=1,  FALSE at k=2
+
+   The set {1, s_0^2, s_2^2, s_0 s_2} recorded last turn is an ARTIFACT of k=1. It was
+   explicitly not claimed as a characterisation; that restraint was correct.
+
+3. **The flip has a PROVED explanation** — `jmRaw_adjacent_of_comm`, sorry-free:
+   if N commutes with BOTH u = s_k and v = s_{k+1}, both normal forms collapse to
+   N^2 (uvu)^2 and the identity follows from `braid_cube_eq` ((uv)^3 = (uvu)(uv)u,
+   both sides being (uvu)^2). At k=2, s_0 commutes with s_2 and s_3; at k=1 it does
+   not commute with s_1. Exactly the flip.
+
+### The limit of that lemma, measured not guessed
+
+**Sufficient, NOT necessary**: at k=2, N = s_3^2 satisfies the identity while NOT
+commuting with u = s_2 (adjacent). And it does **not** apply to the case that matters —
+`N = L_k` never commutes with `s_k`, because the hook word ends in `s_{k-1}`, which is
+adjacent to `s_k`. That is precisely why the real case is hard, and why this lemma
+explains the easy rows without touching the hard one.
