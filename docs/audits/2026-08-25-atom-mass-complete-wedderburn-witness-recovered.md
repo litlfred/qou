@@ -66,7 +66,7 @@ against which the recorded parameters check as follows:
 | `alpha` | `3.74446` | `m_e · 8G = 3.74446` | matches |
 | `beta2` | `−6.087415` | `−2[3]_q = −6.0874146` | matches |
 | `beta3` | `0.0499` | `h_A² = 0.043707282` | **mismatch, ratio 1.1417 — a 14.2 % departure** |
-| `Vol_B3` | `7.327724753417752` | — | **mislabelled: this is exactly `8G`, not a volume** |
+| `Vol_B3` | `7.327724753417752` | `8G = Vol(𝓑₃)` | matches to 1.6e-17 — **correctly labelled**, see the correction below |
 | `m_p` | `938.230457` | CODATA `938.27208816` | **−0.0416 MeV (−44 ppm)** |
 | `m_n` | `939.532005` | CODATA `939.56542052` | **−0.0334 MeV (−36 ppm)** |
 | `fitted` | `0` | — | asserts zero fitted parameters |
@@ -86,9 +86,25 @@ not negligible against what the table reports: `1H`'s entire quoted
 `Δ = 0.127 MeV`, so roughly a third of the light-atom discrepancy is already
 present in the inputs before any Φ is computed.
 
-**A field is mislabelled.** `Vol_B3` reads as the Borromean volume and holds
-`8·Catalan` to sixteen digits. This matters beyond tidiness: an agent reading
-the witness for a volume gets a Catalan constant.
+**A field was called mislabelled. It is not — CORRECTED 2026-08-25.** This
+section read *"`Vol_B3` … holds `8·Catalan` to sixteen digits … an agent reading
+the witness for a volume gets a Catalan constant."* That is wrong, and it
+inverts the fact: the Borromean rings complement is two ideal octahedra, and
+`V_oct = 4G`, so
+
+$$\mathrm{Vol}(\mathcal{B}_3) \;=\; 2\,V_{\mathrm{oct}} \;=\; 8G \;=\; 7.3277247534177521\ldots$$
+
+is an identity, not a coincidence. The corpus says so in its own canonical
+link-volume module: [`computations/binding_link_volumes.py:112`](../../computations/binding_link_volumes.py)
+sets `VOL_B3 = 8 * catalan` under the comment *"Vol(L6a4) = 8G =
+Vol(Borromean)"*. An agent reading this witness for a volume gets **the
+volume**. `Vol_B3` is the one recorded parameter that needed no comment at all.
+
+Recorded rather than silently deleted because the failure mode generalises: a
+closed-form value was read as a *substitution for* the quantity it is the closed
+form *of*. The check that would have caught it — grep the corpus for the
+constant before calling a field mislabelled — is the same corpus-grep discipline
+this document's §1 invokes for the file itself.
 
 ## 3. What this does and does not settle
 
@@ -98,12 +114,70 @@ the witness for a volume gets a Catalan constant.
 - It **does** establish that the published formula and the producing
   computation disagree in their third coefficient by 14.2 %.
 - It **does not** license reconstructing `beta3`, fitting it, or adjusting
-  the published formula to match. Which of the two is correct is an authoring
-  question about published content.
+  the published formula to match. **But which of the two is *derivable* is a
+  measurement, and it has now been made — see §3a.**
 - It **does not** revive the witness as a certificate. Restoring the file
   verbatim into `computations/` would imply it certifies the current formula,
   which it demonstrably does not. It is recorded here, with its commit, so
   anyone can retrieve it.
+
+## 3a. Which coefficient is derivable — MEASURED 2026-08-25
+
+§3 left the choice open on the ground that *"the artifact cannot distinguish the
+two"*. The artifact is not the only evidence: **derivability** distinguishes
+them, and it needs no artifact at all.
+
+**`h_A²` is derived, and it is a q-integer.** The identity
+
+$$h_A^2 \;=\; (q - q^{-1})^2 \;=\; q^2 + q^{-2} - 2 \;=\; [3]_q - 3$$
+
+is exact — verified symbolically to 3e-51, and **proved in Lean**, sorry-free
+over a generic `Field R` with no archimedean construct and no substrate value of
+`q`:
+[`QOU/Mass/WedderburnMassFormulaCoefficients.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean).
+
+That makes the finding sharper than "the recorded `beta3` disagrees with the
+published `h_A²`". Because `β₂ = −2[3]_q` and `β₃ = [3]_q − 3`, the two
+coefficients satisfy **one linear relation with no `q` in it**:
+
+$$2\beta_3 + \beta_2 + 6 \;=\; 0 .$$
+
+The recorded pair `(−6.087415, 0.0499)` evaluates it to `+0.012385`, not `0`. So
+the witness's two numbers are **mutually inconsistent as a pair** — for *any*
+`q`, under *any* pin, in *either* trace convention, and regardless of which one a
+reader prefers. The same `β₂` forces `β₃ = 0.0437073`.
+
+**`0.0499` has no construction.** Its one surviving producer,
+`computations/_deprecated/next_partition_levels.py`, hardcodes it as
+`BETA3 = 0.0499` under the comment *"(from Wedderburn weights)"* — while the
+sibling coefficients in the same block, `BETA4` and `BETA5`, are genuinely
+computed from `wedderburn_weight()`. That comment is therefore checkable, and it
+fails: of **16 pre-declared candidates** (exactly the forms `BETA4`/`BETA5` use,
+applied at `n = 3`), the closest misses by **63.7 %** against the **0.1 %**
+window a 3-significant-figure literal allows.
+[`computations/wedderburn_beta3_provenance_probe.py`](../../computations/wedderburn_beta3_provenance_probe.py).
+
+**A precision defect is not a fit — keep them apart.** The published *digits*
+`0.043707282` are `(q − q⁻¹)²` at a **five-decimal-rounded** `q = 1.10998`,
+agreeing to 2.05e-9. At either real pin the value is `0.04370621`, which is
+2.4e-5 away; the μ–p gap is 1.2e-8 in `q` and cannot account for that. So the
+published number carries a 2.4e-5 rounding defect while the published
+*construction* is exact. Re-publishing it at an unrounded `q₀` is an authoring
+change and is left to the author.
+
+**Verdict.** One coefficient has an exact construction and a Lean proof; the
+other has three significant figures, a comment its own file contradicts, and
+`"fitted": 0` beside it. The published formula is the derivable one, and the
+table was not its output.
+
+**Scope (a), not (b):** the pre-declared set does not reach `0.0499`; some other
+construction might. Nothing is excluded. What is established is the asymmetry —
+and, independently of it, the q-free inconsistency of the recorded pair.
+
+**Still not done, deliberately:** no reconstruction of `beta3`, no adjustment of
+the published formula, no re-derivation of the table. Owner directive
+2026-08-25 (*"no fitting!!!"*) forbids the fit; it does not license a
+replacement invented here.
 
 The separate measurement that `Φ_n` in
 `observations/neutron-proton-mass-splitting-proof.md` is not reproducible

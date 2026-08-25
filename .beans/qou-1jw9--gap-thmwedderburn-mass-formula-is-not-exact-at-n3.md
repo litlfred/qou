@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
 title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T12:37:25Z
+updated_at: 2026-08-25T16:36:44Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -394,3 +394,55 @@ merge past a red gate. When half of it silently goes stale the next reader
 either dismisses a real red as inherited, or re-investigates a fixed one. A
 gate claim carries a timestamp whether or not you write one down — so write
 one down, and re-measure before repeating it.
+
+
+
+=== TAKEOVER 2026-08-25T16:1xZ (stalled-claim policy, AGENTS.md work-plan §2) ===
+
+Taken over from branch claude/phantom-witness-and-groundstate-2026-08-25
+(PR #5758), last commit 1d7bede2f6 at 12:37:25Z -- 3h35m stale at pickup,
+no in-flight CI (auto-triggers disabled repo-wide), so presumed abandoned.
+NOT force-pushed; continued from that tip on claude/stalled-agent-recovery-iwjb5y.
+
+TWO CORRECTIONS TO THE HANDOFF, both measured:
+
+1. Vol_B3 IS NOT MISLABELLED.  The recovery audit called the field
+   'mislabelled: this is exactly 8G, not a volume'.  Wrong, and inverted:
+   Vol(Borromean) = 2*V_oct = 8G is an identity (V_oct = 4G), and the corpus's
+   own binding_link_volumes.py:112 sets VOL_B3 = 8*catalan under the comment
+   'Vol(L6a4) = 8G = Vol(Borromean)'.  A closed-form value was read as a
+   substitute for the quantity it is the closed form OF.
+
+2. THE 'AUTHORING CALL' IS DECIDABLE, AND IS NOW DECIDED.  The audit left
+   'either the published h_A^2 is wrong or beta3 is undocumented' open on the
+   ground that the artifact cannot distinguish them.  Derivability does, and
+   needs no artifact:
+
+     h_A^2 = (q - 1/q)^2 = [3]_q - 3   exact (3e-51), PROVED IN LEAN sorry-free
+     0.0499                            no construction; 16 pre-declared
+                                       candidates, closest 63.7 % off against
+                                       a 0.1 % window for a 3-digit literal
+
+   Sharper consequence, with no q in it at all: since beta2 = -2[3]_q and
+   beta3 = [3]_q - 3, the pair must satisfy 2*b3 + b2 + 6 = 0.  The recorded
+   (-6.087415, 0.0499) gives +0.012385.  So the witness's two numbers are
+   MUTUALLY INCONSISTENT AS A PAIR -- any q, any pin, either convention.
+
+   Lean: QOU/Mass/WedderburnMassFormulaCoefficients.lean, generic Field R, no
+   archimedean construct, no substrate q0.  lean-direct exit 0 against the real
+   import cone; #print axioms on all four decls = propext/Classical.choice/
+   Quot.sound, no sorryAx.
+   Probe: computations/wedderburn_beta3_provenance_probe.py.
+
+3. PRECISION DEFECT SEPARATED FROM FIT.  The published digits 0.043707282 are
+   (q-1/q)^2 at a 5-decimal-ROUNDED q = 1.10998 (2.05e-9), not at either pin
+   (2.4e-5 off).  mu-p gap is 1.2e-8 in q and cannot explain it.  Rounded input
+   != fit; the construction is exact.  Re-publishing at unrounded q0 is an
+   authoring change, left to the author.
+
+NOT DONE, deliberately (owner 2026-08-25, 'no fitting!!!'): beta3 not
+reconstructed, published formula not adjusted, table not re-derived, no
+tolerance touched.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; only CAL-1/2/3
+admissible; sign agreement is one bit.
