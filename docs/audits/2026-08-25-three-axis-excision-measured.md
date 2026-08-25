@@ -169,3 +169,111 @@ an integer, which is the only reason it surfaced. So the headline "5 NEW dirty
 witnesses" is really **4 defects and 1 false positive**. Tracked as its own bug
 rather than fixed here — converting 31 producers, or adding a fourth carve-out,
 is a wider decision than this drain.
+
+## Axis C — drained
+
+`bring_color_weighted` is canonical (R3). The measured surface separated into
+two genuinely different problems, and only one of them was the `pn_convention=`
+line the detector points at.
+
+### `binding_canonical.py` — the convention line was the symptom
+
+The file bean `qou-cds4` says to read first, because a file named *canonical*
+assigning a non-canonical convention is either a naming defect or a real one. It
+was a real one. Its local `_factor_from` had **no branch at all** for the
+colour-weighted interface `d = −h(1/2 − δ/4)`. That value sits 7.190163e-05 from
+the colour-blind `−h/2`, outside the 1e-6 windows for both `±h` and `±h/2`, so it
+missed every branch and fell through to `sp.nsimplify(d_f)` — freezing a `q₀`
+float into a rational and destroying the q-dependence the symbolic path exists to
+carry. The in-code comment justified `strict_averaged` as *matching the symbolic
+path's literal σ − h/2 factor*, which is true but circular: that path could only
+produce σ − h/2.
+
+This is the sibling of bean `qou-4e5k`, already fixed in
+`atom_nf_symbolic_D._factor_from`, where the same crossing was *swallowed* rather
+than missed (a 1e-3 window matched it to `−h/2` silently).
+
+Verified two ways rather than asserted:
+
+| check | before | after |
+|---|---|---|
+| deuteron closed form | `0.575090871629810…` — the value `qou-4e5k` names as the colour-blind error | `0.575172243917771…` — that bean's bridge/peel value |
+| `B(D)`, closed form vs this file's own default transfer path | 0.43546714 vs 0.43540348 — **disagree by 1.5e-4** | 0.43540348 vs 0.43540348 — **agree to 15 figures** |
+
+### The label trap — the class behind two red tests
+
+`test_ctype_consumer_coverage` was **red on main** with two Part-D failures,
+both the same defect. `canonical_interface_kinds()` defaults to
+`bring_color_weighted` but deliberately labels the p-n interface `"averaged"` —
+the label vocabulary cannot carry δ, and the real factor lives in
+`closed_form_ratio`. So a consumer that asks for canonical kinds and applies its
+own `{positive, negative, averaged}` dispatch gets `z − h/2`, the colour-blind
+factor, **while believing it is canonical**. No equality test against
+`"averaged_weighted"` can catch it, because that label was never emitted
+anywhere; it fails by returning a slightly smaller number.
+
+`probes/binding_closed_form_C_vs_D_probe.py` was doing exactly this — pricing
+every p-n interface blind, in a probe whose whole purpose is comparing
+conventions. Fixed at the class: `canonical_interface_kinds` gains an **opt-in**
+`weighted_labels` flag emitting `"averaged_weighted"`, opt-in precisely so the
+label-only consumers that depend on `"averaged"` keep working.
+
+### A stale C-frame number that had already propagated
+
+`signed_crossing_feasibility_probe` migrated its `z` to D earlier, and its
+computed `deuteron_pn_bond_count_needed` duly reads `0.78518842…`. The `"note"`
+string **one key above it in the same witness dict** still said *"Deuteron needs
+0.572 pn bonds"* — the C-frame value, retyped rather than interpolated, so the
+migration could not reach it.
+
+It did not stay local. `pauli_young_spin_isospin_delta_lambda_probe` adopted
+0.572 as its deuteron cross-check **target** and, being itself still in C,
+reproduced it to 0.015 % — a self-consistent C-frame loop reading as
+confirmation. Under canonical D the quantity is 0.7852, a 37 % miss.
+
+And the cross-check was never one: `signed_crossing_feasibility_probe` computes
+the *same expression* `(B_D/E₀)/L_pn`, so agreement between the two is **by
+construction**, not evidence. The field is now named `reference_*` and says so.
+
+## Axis B — drained to its floor, which is not zero
+
+14 → 11 actionable. The three fixed were the one genuine live producer
+(`lepton_tower_core.markov_z`, which returned C while its docstring called it
+"the canonical Markov parameter" — now delegating to the canonical definition
+rather than holding a second copy), the `pauli_young` deuteron block above, and
+`probes/probe_alpha.py`.
+
+**The remaining 11 are not a queue.** They split as:
+
+- **9 in the qbeta / decay cone, where a z-swap is FORBIDDEN.**
+  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) makes the C-frame
+  ladder and the mass channel's two-row forcing *mutually exclusive*: if the
+  decay channel's decomposition kills the third row its trace parameter is
+  `z_D` and the existing ladder is not that trace. So substituting `z_D` into
+  these is not a cheap fix, it is an invalid one. They need the S1
+  re-derivation (bean `qou-cds1`), which is science, not migration.
+- **1 already adjudicated.** `probes/markov_reduction_h3_to_h4_verify.py`
+  documents in its own header that it is *deliberately* left in C and float64
+  "as the historical record of what the Lean docstring cites", with a live
+  both-conventions companion (`markov_reduction_h3_to_h4_conventions.py`,
+  worst residuals ~1e-51). The detector's actionable flag is a false negative.
+- **1 needing re-derivation, not substitution.**
+  `deltalambda/mirror_split_milnor_one_third_probe.py` carries three
+  C-specialised closed forms (`sqrt(q0)`, `q0**1.5`) alongside its `z`; the
+  audit's own second-tier note says these are the work the `z` migration does
+  not finish.
+
+So the honest floor for a *mechanical* convention-C drain is 11, and the
+detector's "actionable" count overstates the drainable surface — the same shape
+as axis A, where "5 new dirty witnesses" was really 4 defects and 1 false
+positive. Both counts are useful as alarms and neither is a work queue.
+
+## Final state
+
+| axis | metric | before | after |
+|---|---|---|---|
+| A | NEW dirty witnesses | 5 | **1** (the `elapsed_sec` false positive) |
+| A | raw float64 fields | 258,420 | **258,325** (−95 = 42+28+21+4) |
+| B | actionable convention-C sites | 14 | **11** (floor: 9 Lean-blocked, 2 adjudicated/re-derive) |
+| C | `test_ctype_consumer_coverage` | **RED** (2 failures) | **PASS** (6 baselined, 0 unadjudicated) |
+| C | off-canon `pn_convention` baseline entries | 8 | **6** |
