@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T10:48:07Z
+updated_at: 2026-08-25T10:52:59Z
 ---
 
 ## The defect
@@ -66,3 +66,54 @@ infrastructure, and three honestly-stubbed `sorry` + `-- Ref:` cores. `sv8b` has
 division of labour agreed on PR #4702. Building a second one from scratch would duplicate
 mechanical, settled work — which the AGENTS.md overlap rule permits only for open-outcome
 research, not for this.
+
+
+---
+
+## RETRACTED, same day, by me — "no finite-dim rep can instantiate it" is FALSE
+
+The claim above is wrong and machine-refuted. Two counterexamples, the first of which was
+already merged and axiom-checked **in the very file this bean cites**:
+
+1. **`scalarGenerators : HeckeGenerators R R q`** (HeckeSeminormalWeight.lean). `A = R` is a
+   finite-dimensional algebra — dimension 1. So a finite-dimensional instance not only can
+   exist, one already shipped.
+2. **Constant-σ, in ANY ring.** Take any `X` with `X * X = algebraMap (q − q⁻¹) * X + 1` and
+   set `σ i = X` for every `i`. Braid degenerates to `X³ = X³` and far to `X² = X²`, both
+   `rfl`. Verified: `constGenerators` compiles, `lean`-direct **exit 0**. So
+   `Matrix (Fin 2) (Fin 2) R` carries an instance too.
+
+I reasoned "H_∞ has no finite-dim reps" and did not check it against the instance I had
+written myself an hour earlier. The estimate that followed from it — "hours, not
+Wenzl-scale" — is retracted with it.
+
+## The ACTUAL obstruction, stated correctly
+
+It is not finite-dimensionality. It is that **`stdRep3` specifically does not extend to
+H_∞**, and the mechanism is Schur, not dimension:
+
+- `σ_0`, `σ_1` in the (2,1) rep are irreducible on `R²`, so together they generate all of
+  `M_2(R)`.
+- `far` forces `σ_3` to commute with **both** `σ_0` and `σ_1` (`0+1 < 3`, `1+1 < 3`), so by
+  Schur `σ_3` is **scalar**, say `s`.
+- `braid` at `i = 2` then gives `s·σ_2² = s²·σ_2`, so `σ_2² = s·σ_2`; with the Hecke
+  relation that forces `σ_2` scalar too, say `t`.
+- `braid` at `i = 1` then gives `t·σ_1² = t²·σ_1`, forcing **`σ_1` scalar** — contradicting
+  2-dimensionality.
+
+So the cascade runs downward from `σ_3` and kills the rep. That IS a real obstruction and it
+does block using `stdRep3`. **This argument is reasoning, not machine-checked** — unlike the
+refutation above. It should be Lean-proved before anyone relies on it, and it is a good
+candidate for the formalize-first rule: prove the exclusion, then stop searching for the
+instance.
+
+## Revised estimate — NOT hours
+
+The bounded-index class variant is still the right fix, but the cost was understated. Bounds
+must be threaded through every lemma in the chain (~700 lines across eight files), and the
+inductions in `run_push` / `delta_pow_run` carry indices up to `b + j + 1`, so the bound
+bookkeeping is not mechanical. Call it a day of careful work with real risk of the bounds
+failing to line up — not an afternoon.
+
+Whether that is worth it for one `dim = 2` witness at `n = 3` is now a genuine question, and
+I do not think the answer is obviously yes. `sv8b` may be the better use of the same effort.
