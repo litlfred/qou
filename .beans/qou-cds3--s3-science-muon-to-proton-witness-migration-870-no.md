@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-25T08:22:10Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -54,3 +54,58 @@ needing its own scoped sign-off; do the 69-witness straddle triage now.
 Standing posture until then: new/touched code uses proton; untouched muon
 witnesses stay as recorded; never mix within one quantity; every new witness
 records its q₀.
+
+
+## Re-measured 2026-08-25 — 105 both-pin, not 69, and ZERO unpaired straddles
+
+The 69 above is from 2026-08-15; the corpus has grown. Re-measured on main
+`2c53783e3d3` over `computations/**/*.witness.json`:
+
+    both-pin witnesses                              105
+      DELIBERATE — every site names its own layer    30
+      DELIBERATE — computed-at sites layer-PAIRED    19
+      ABOUT — audits reporting the pins as data       8
+      residue needing a human read                   48
+      UNPAIRED computed-at straddles                  0
+
+**The bucket that would be the real defect class is EMPTY.** A witness carrying
+both pins is overwhelmingly a deliberate comparison: `/data/muon_anchor/q0`
+beside `/data/proton_anchor/q0`, or `/anchors[1]/q` beside `/anchors[0]/q`.
+The bean's framing -- "a defect either way" -- does not survive measurement.
+
+**My first classifier said 19 straddles and was wrong.** It required EVERY
+mention of a pin to name its layer, so a plain `q0Value` provenance stamp --
+which names nothing -- kicked 19 genuine paired comparisons into the straddle
+bucket. Testing for PAIRING (is each muon computed-at site matched by a proton
+sibling, by name or by index?) absorbed all 19. Five iterations of the
+classifier plateaued at ~48 residue, which is the signal that the rest needs
+reading rather than more regex.
+
+## TWO confirmed, and they are NOT the same defect
+
+Both are stamped `proton` while their `parameters.q_0_50dps` is muon-family.
+Cross-confirmed from an independent direction: both also appear in the
+stamp-vs-payload scan recorded on `qou-khac`.
+
+  he3-brane-tower-structural-gap    q_0_50dps = 1.1099785955573347...  = A
+      the CANONICAL muon anchor. A plain mis-stamp; the honest label is `muon`.
+
+  he3-tower-charge-asymmetry        q_0_50dps = 1.1099785955541805...  = B
+      the CODATA-2018-derived value, which is NEITHER anchor. Same class as
+      `meson_mass_from_hecke` (PR #5742), whose honest label is `ambiguous`
+      plus a reason naming the value.
+
+Neither is fixed here -- each needs its producer read, which is separate work.
+
+## The bean's "specific trap" note is STALE — do not act on it
+
+The section above tells the reader to check every `y_lambda_at(n, q)` call site
+because it "returns the cached muon-built witness". **That was corrected on
+2026-08-23** (beans `qou-c1ya` / `qou-vu19`, and AGENTS.md carries the
+correction): the live `y_lambda_at` is five statements, reads no witness, and
+its whole call cone is cache-free. The gate and the cache load moved into
+`_y_lambda_at_convention_C_HISTORICAL`, which is dead code.
+
+Measured cost of following the stale wording: promoting `y_lambda_at` to a
+muon identifier reclassified **56 producers** from `proton` to `BOTH`, hiding
+56 clean files behind an association the code no longer has.
