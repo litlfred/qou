@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T16:53:11Z
+updated_at: 2026-08-24T18:09:12Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1228,3 +1228,256 @@ triage. Two carry extra hazards already known: `q_pinning_50_digit.py:115`
 writes into the ANCHOR-DEFINING witness (AGENTS rule 1 — never re-pin), and the
 qou-mass `_internal/` copy is GENERATED (sync via scripts/sync-qou-mass-vendor.py,
 never hand-edit).
+
+
+## z_bar de-escalated (2026-08-24): it is not a choice, and the comment is a false claim under D
+
+I had flagged `computations/convergence_safe_vhat_tower.py:198` as **needing a
+bar-symmetry decision** before conversion. That escalation was **unnecessary** —
+the site is mechanically determined. Recording the resolution so the next agent
+does not re-escalate it.
+
+Read in context, `z_bar` is not a free constant. The surrounding code builds the
+**bar image** of V̂ by evaluating `_std_vhat` with every argument mapped under
+q ↔ q⁻¹:
+
+    _std_vhat(pg0, qi, q, z_bar, qi - q)
+                   ^^^^^^  ^^^^^  ^^^^^^^
+                   q<->qi         h -> -h
+
+so `z_bar` must be **`z` evaluated at q⁻¹**, whatever `z` is. There is nothing to
+decide.
+
+Measured at the proton pin (50 dps):
+
+| | z | z(q⁻¹) | equal? |
+|---|---|---|---|
+| convention C | 0.499320334183694452 | 0.499320334183694452 | **yes** |
+| convention D | 0.612688037146465252 | 0.403627738350825936 | **no** |
+
+Under D, `z(q⁻¹) = q⁻³/(q⁻²+1) = 1/(q³+q)` — verified to 18 digits against the
+closed form — and `z(q⁻¹)/z = q⁻⁴` **exactly** (0.658781816976030318 both ways).
+
+So the conversion is:
+
+    z_bar = qi**3 / (qi**2 + 1)          # = 1/(q**3 + q)
+
+**and the trailing comment `# = z (bar-symmetric)` MUST be deleted, not
+carried.** It is true only in convention C. Left in place under D it would
+assert an equality that is false by 34 %, in a file whose whole purpose is the
+bar image — precisely the stale-comment failure mode this branch keeps finding
+(the `borromean_per_lambda_fr_probe` "mirror of" docstring; the
+`hecke_core_symbolic` `ℚ[q^{±1/2}]` notes; the `alpha_high_precision` bracket).
+
+**Not yet converted** — the producer emits a witness, so it needs the
+baseline→convert→diff treatment, and the CPU is currently saturated by the
+`delta_lambda_v_hat_z_transfer_phase5d_4` measurement (job bgc281s54). Running a
+second producer concurrently risks pushing that one into its 2400 s timeout and
+manufacturing a spurious abort. Queued behind it.
+
+
+## delta_lambda_v_hat_z_transfer_phase5d_4 — measured: the baseline exceeds 40 MINUTES
+
+Attempted the conversion via `scripts/convention-c-convert-one.sh` with a
+**2400 s (40 min) per-run** ceiling. Result:
+
+    baseline exit=124
+    !! baseline did NOT complete (exit 124; 124 = timeout).
+    !! Refusing to convert ... Tree untouched.
+
+**The guard worked**, and this is the case it was added for (a0a55a6150). Before
+that guard the harness would have printed "BASELINE moved: 0" — which reads as
+*stability* but actually means *the killed producer never wrote* — then
+converted and diffed against a non-baseline, producing a clean-looking
+single-cause attribution that was worth nothing. Tree verified untouched
+afterwards.
+
+So this site's cost is **> 40 min per run**, i.e. > 80 min for a measurement,
+not the ">15 min" I had recorded. Re-launched standalone with a 3 h ceiling and
+a teed log to get the true figure.
+
+## And it violates the long-compute logging discipline
+
+    grep -cE "print\(|log\(" -> 7      (all terminal output)
+    progress / elapsed / ETA lines -> 0
+
+AGENTS.md §5 requires any script expected to run > 5 min to emit periodic
+progress lines with wall elapsed + ETA. This one runs 40+ minutes in total
+silence, which is exactly why a 40-minute burn produced **zero** information
+about how far through it was — I could not tell "slow but progressing" from
+"hung". **Add progress logging before attempting this site again**; measuring it
+blind is how the budget gets spent twice.
+
+Incidentally, `/usr/bin/time` is **not installed** in this container — a first
+re-launch using it exited 127 instantly. Use bash's `SECONDS` builtin.
+
+
+### Correction to the >40 min figure
+
+The bean records this site as "> 40 min per run", from the harness aborting at a
+2400 s ceiling. **Measured longer:** the standalone baseline launched 13:31 was
+still running at 14:45 — **> 74 minutes** and counting, on a 3 h ceiling. So a
+full measurement is > 2.5 h, not the ~80 min implied. The producer prints
+`gen 2/3/4` within its first minutes and then emits nothing for the remaining
+70+, which is the AGENTS §5 logging gap doing real damage: there is no way to
+distinguish "slow but progressing" from "hung" for over an hour.
+
+
+## 🛑 CORRECTION: `bar(z_D) = z − h` is ALREADY IN THE CORPUS — I re-derived it, I did not find it
+
+In `d81293cdc9` I presented `bar(z_D) = z_D − h` as something I "proved
+symbolically", framing it as the discovery behind the
+`derived_bond_graph_binding` fix. **It is established corpus, and in a stronger
+form than mine.**
+
+[`computations/markov_z_full_bar_condition_probe.py`](../computations/markov_z_full_bar_condition_probe.py),
+on `main` since at least 2026-08-16 (`29cff89c49`):
+
+> the bar-partner of `z` is `z - h`, and the correct covariance condition on the
+> Markov parameter is `bar(z) = z - h` … **Result: convention D satisfies it;
+> convention C does not** … `bar(z) = z - h` is an **identity of the whole fibre
+> family**, verified for symbolic `N` (equivalently `z_N = h/(1-q^(-2N))`).
+
+Mine was the single point `z_D = q³/(q²+1)`; theirs is the whole one-parameter
+family for symbolic rank. Three further qbeta probes tabulate the same pair
+(`qbeta_d_frame_eigenphase_bar_parity_probe.py:24-25` writes both branches out
+explicitly as "bar-EVEN — convention C" vs "full-bar — convention D").
+
+**What is actually mine, and survives:** the *defect* —
+`derived_bond_graph_binding.py` running convention-D `z` through
+convention-C bar logic — and its measurement (per-bond pp 2.0507 → 2.9242 MeV;
+the corrected value landing within 0.6 % of the old self-consistent C figure
+while the mixed-frame one sat 30 % away). That was unflagged and the fix stands.
+I have not checked whether the pp↔nn exchange consequence is also known, so I am
+not claiming it either.
+
+**Why I missed it:** the AGENTS corpus-grep checklist reads as gating
+*"is this open?"* declarations, and I was doing what felt like a derivation, so
+I never ran it. That is the wrong reading — a derivation presented as new is a
+claim about corpus status just as much as "X is open" is. One
+`grep -rn "bar(z)" computations/` would have found it in seconds.
+
+Found only because I later scanned for the *bug shape* (asserts z bar-symmetry
+AND already carries a D expression) and four of the six hits turned out to be
+files documenting the identity correctly. The scan I wrote to find more bugs
+found my own over-claim instead.
+
+
+### Self-audit of my other claims on this branch (same discipline, applied to myself)
+
+Having found that `bar(z_D) = z − h` was established corpus, I greped my two
+remaining structural claims. Result: **no prior statement, but neither is
+independent** — both are one-step corollaries of that established identity, so
+"absent from the corpus" here probably means "nobody bothered writing it down",
+not "new insight".
+
+**1. `z_D/(z_D − h) = q⁴`.** Searched `computations/`, `docs/`, `content/` and
+the Lean tree for `q^4` / `q**4` / `q^{-4}` / "fourth power" near z, markov or
+bar. Only my own two commits. The other hits are `ℏ_q**4` — a **different
+quantity**, ℏ_q not q — and `q-beta-bar-even-kernel-invariant.lean:100-102`,
+which is about a Q_β correction being bar-even iff `q⁴ = 1`: adjacent territory,
+different statement.
+
+But given `bar(z) = z − h` (corpus) it is immediate: `z/(z−h) = z/bar(z)`, and
+`bar(z_D) = q⁻⁴·z_D`, so the ratio is `q⁴` in one line.
+
+**2. pp↔nn exchange under bar.** Only my own commits; the other "exchange" hits
+are the Slater antisymmetrizer / exchange-determinant family, unrelated. Also
+immediate from the same identity: `f_pp = z`, `f_nn = z − h = bar(z)`, so bar
+swaps them by inspection.
+
+**Net:** one retracted novelty claim (`bar(z_D) = z − h`), two corollaries that
+are unstated in the corpus but follow in one step from it. The load-bearing
+contribution of that commit remains the *defect* in
+`derived_bond_graph_binding.py` and its measurement, not the mathematics.
+
+
+## Re-audit of the "0 fields moved" verdicts — 1 frozen, 3 genuinely safe
+
+`compound_shift_nf` showed **0 fields moved** under the `hecke_core_symbolic`
+conversion and I read that as convention-INDEPENDENT. It was convention-FROZEN
+(transcribed constants, fixed in `35930672e3`). Since that inference was
+backwards once, I re-checked the other three zero-movement importers from
+`a24fdac8a1`:
+
+| importer | why it did not move | verdict |
+|---|---|---|
+| `crystal_shift_nf_atomic` | **0** z references at all | genuinely independent |
+| `canonical_ordering_dof_probe` | `z = markov_z(q)` — the canonical helper, already D | independent **of my change** |
+| `hecke_channel_binding_probe` | `from closed_form_tau_M import markov_z`, `z = markov_z(Q0)` | independent **of my change** |
+| `compound_shift_nf` | transcribed integers, cannot move | **FROZEN — was the defect** |
+
+So one in four. The other three are safe for two different reasons, and the
+distinction matters: `crystal_shift_nf_atomic` does not use z; the other two use
+it but obtain it from a **canonical helper** that is already convention D, so
+migrating `hecke_core_symbolic` correctly leaves them alone.
+
+## The structural remedy is already in the corpus, and it is better than mine
+
+`hecke_channel_binding_probe.py:61-68` carries a prior agent's rationale:
+
+> Convention D via the canonical helper. This was `mp.sqrt(Q0)/(Q0+1)` —
+> convention C, excised by the 2026-08-09 ruling. Note the witness
+> `_provenance` already CLAIMED `z=q^3/(q^2+1)`, so the file **documented D
+> while computing C**. Calling `markov_z` rather than re-spelling z inline is
+> deliberate: **every convention detector keys on how z is WRITTEN, and an
+> inline spelling is how a site goes blind** (this one was missed by two
+> independent detectors).
+
+That is the same "documents D, computes C" defect I found in
+`derived_bond_graph_binding`, hit earlier by someone else, and their fix is
+structural where mine was local: **route through `markov_z(q)` so there is no
+spelling for a detector to miss.**
+
+Worth adopting as the campaign's end state. Every detector on this branch —
+mine, the sibling's witness-layer one, the value-literal one — exists only
+because z is re-spelled at each site. A site that calls the helper needs no
+detector at all. Converting an inline spelling to `markov_z(q)` is strictly
+better than converting it to a D spelling, and costs the same edit.
+
+
+## Independent numerical confirmation that convention D is FORCED, not stipulated
+
+`closed_form_tau_M.markov_z`'s docstring asserts the selection is forced: the
+row cap `ell(λ) ≤ 2` gives `y_(1³) = 0`, and given that,
+`markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) makes the faithful
+normalised Markov trace unique and equal to `q³/(q²+1)`.
+
+Checked it numerically rather than taking it on the docstring's word, by
+solving the three H_3(q) normalised-trace equations at both conventions
+(`ocneanu_param_from_fibre_dimension.markov_weights(q, z)`, which is
+parameterised by z so both frames go through one code path):
+
+    q0 = 1.109978582751381
+
+    convention C   z = 0.49932033418369
+        y_(3)   = 0.4153957953606134
+        y_(2,1) = 0.2809296310310197
+        y_(1^3) = 0.02274494257734718      <-- NONZERO
+        sum = 1.0
+
+    convention D   z = 0.61268803714647
+        y_(3)   = 0.5054042265039308
+        y_(2,1) = 0.2472978867480346
+        y_(1^3) = 0.0                      <-- EXACTLY ZERO
+        sum = 1.0
+
+So D is not a preference among conventions: it is the **unique** z at which the
+three-row weight vanishes, and C fails that condition by 0.0227. The Lean
+theorem and the owner ruling agree with the arithmetic.
+
+Worth having explicitly, because most of this branch's work is mechanical
+excision and it is easy to lose sight of *why* D is canonical. It is not
+"because the ruling says so" — the ruling follows the mathematics.
+
+## What this did NOT settle: `TRM_L6A4 = 0.998367` (qou-5pgl)
+
+None of the six weights above is `0.998367`, so that constant is **not** a
+`y_λ`. It is a *trace value* — the `_deprecated` tables list it as the λ=[3]
+entry for p / n / ³He, one of them annotated *"(registry; convention TBD)"*.
+Weights and traces are different objects and I should not have implied the
+weight solve would answer it.
+
+`qou-5pgl`'s question therefore stands open: is `0.998367` convention-C, and
+what is its D value? That needs the trace machinery, not the weight solve.
+Recording the negative so the next attempt does not repeat this route.

@@ -54,6 +54,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import li_2_q, load_q_50dps  # noqa: E402
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z
 from _phi_q_util import phi_q  # noqa: E402
 
 
@@ -195,7 +196,15 @@ def main():
         "proton": {"g0": _std_vhat(pg0, q, qi, z, h), "g1": _std_vhat(pg1, q, qi, z, h)},
         "neutron": {"g0": _std_vhat(ng0, q, qi, z, h), "g1": _std_vhat(ng1, q, qi, z, h)},
     }
-    z_bar = mp.mpf(1) / (mp.sqrt(qi) + mp.sqrt(q))  # = z (bar-symmetric)
+    # The bar image substitutes q -> 1/q, so z_bar is the Markov parameter AT
+    # 1/q. Under convention C that happened to equal z itself, and the old
+    # comment here said so ("= z (bar-symmetric)") — true for C, FALSE for D.
+    # Under D, verified numerically at q_0 to 25 digits with difference exactly
+    # 0.0:  markov_z(1/q) = z - h = 1/(q^3 + q) = 0.4036277383508259361649837,
+    # and z/(z-h) = q^4 exactly. So bar is NOT a symmetry of z_D; it exchanges
+    # the channels. Same failure mode as derived_bond_graph_binding: not a
+    # stale constant but a stale FACT still driving live logic.
+    z_bar = _markov_z(qi)
     vhat_bar = {
         "proton": {
             "g0": _std_vhat(pg0, qi, q, z_bar, qi - q),

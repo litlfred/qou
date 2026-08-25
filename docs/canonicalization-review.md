@@ -20,6 +20,28 @@ The seven named "empirical / fitted" constants in the pipeline are largely
    ($H_A^2 \Phi_3$) that the symmetrised 2-term blend drops. This
    eliminates `α* ≈ 0.305807` and `α₄ ≈ 0.8272` as free parameters.
 
+   > **🛑 DONE, AND THE PREMISE IS REFUTED (2026-08-25).** The term was
+   > implemented canonically per `thm:wedderburn-mass-formula` — see
+   > `alpha/alpha_blend_tower.py` (`Phi_1`/`Phi_2`/`Phi_3`). It does **not**
+   > eliminate α\* by explaining it. Measured, parameter-free p–n splitting:
+   > **−0.6240 MeV** with the chirality term against **+1.2933 MeV** (CODATA),
+   > i.e. **−148.2 %, wrong sign** — and **−143.0 %** *without* it. The term
+   > moves the answer the **wrong way**. §3.1's claim that α\* "is absorbing
+   > what the chirality term should contribute" is therefore **false as
+   > measured**.
+   >
+   > α\* was nevertheless **excised** (owner directive 2026-08-25), on the
+   > independent ground that it is a **fit**: it was determined by normalising
+   > the scale on CODATA `M_p` and root-finding on CODATA `M_n` — two inputs,
+   > neither of them CAL-1/2/3, both quantities the framework is meant to
+   > derive. Producer retired to `computations/_deprecated/`.
+   >
+   > What the nucleon channel is actually missing is **open**.
+   >
+   > Verified analytically: `Φ₂ = 2 ln(1 + h²/4)` (p/n-identical, so it cancels
+   > in any p–n difference) and **`Φ₃ = w · ln q` with integer `w`** (6 proton,
+   > 2 neutron).
+
 The R5-full SDP-as-solver (replacing historical knot guesses with derived
 canonical $T_w$) is a downstream improvement, not a precondition for
 either fix above.
@@ -133,7 +155,7 @@ not been wired.
 
 | # | Constant                       | Family    | Root cause     | Eliminated by |
 |---|--------------------------------|-----------|----------------|---------------|
-| 1 | `α* ≈ 0.305807` (Frobenius-antipode blend)   | universal | 2-term blend drops chirality | Fix 2 |
+| 1 | `α* ≈ 0.305807` (Frobenius-antipode blend)   | universal | ~~2-term blend drops chirality~~ **REFUTED 2026-08-25 — restoring chirality moves the p–n splitting the wrong way (−143.0 % → −148.2 %)**; α\* is a **fit** to CODATA `M_p`+`M_n` | **EXCISED** (not by Fix 2) |
 | 2 | `c_αα = m_e · Vol(7²₁)`                      | 3         | volume-as-input              | Fix 1 |
 | 3 | `Vol(6₂)`, `Vol(8₁₁)`, `Vol(L6a4)`           | 1         | volume-as-input              | Fix 1 |
 | 4 | `Vol(K11a259)`, `Vol(L11a62)`, `ρ=5`         | 4         | volume-as-input + R5.6 gap   | Fix 1 + R5.6 |

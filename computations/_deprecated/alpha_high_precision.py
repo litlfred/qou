@@ -1,4 +1,35 @@
 #!/usr/bin/env python3
+# ══════════════════════════════════════════════════════════════════════
+# DEPRECATED — alpha* EXCISED (owner directive 2026-08-25; corpus B2)
+# ══════════════════════════════════════════════════════════════════════
+#
+# WHY: alpha* is a FIT, and only CAL-1/2/3 are admissible inputs.
+#
+# This producer determined alpha* by bisecting err_n_mp: it normalises the
+# energy scale on CODATA M_p (E0 = M_P_MEV / mp_v) and then root-finds alpha so
+# the CODATA M_n comes out. Two experimental inputs, neither of them CAL-1
+# (m_e), CAL-2 (D_beta, proxy m_mu/m_e) or CAL-3 (D_pi, proxy m_pi) — and both
+# are quantities the framework is supposed to DERIVE. That makes alpha* a
+# fourth calibration in disguise.
+#
+# The published value it emitted, alpha_star = 0.3058074307438076264762191, is
+# retired with it. It was also incoherent: this file computed with z_D imported
+# at line 49 and z_C locally at line 88, two Markov parameters 22.7044 % apart
+# inside one error functional, so the number was alpha* in NO convention. See
+# 1504b3bd52.
+#
+# canonicalization-review.md §3.1 held that alpha* was absorbing the chirality
+# term h_A^2*Phi_3. MEASURED AND REFUTED (ec7546ac7a): implementing the
+# canonical term changes the parameter-free p-n splitting from -143.0 % to
+# -148.2 % — the wrong way, and the sign was already wrong. So alpha* was not
+# standing in for chirality; what the nucleon channel is missing is still open.
+#
+# The canonical replacement is thm:wedderburn-mass-formula, implemented in
+# alpha/alpha_blend_tower.py with NO free parameter. Note its alpha = m_e * 8G
+# is a DIFFERENT OBJECT that merely shares the glyph.
+#
+# DO NOT re-run this to "get alpha*". There is no derived alpha* to get.
+# ══════════════════════════════════════════════════════════════════════
 """
 HIGH-PRECISION α* determination: pin down the optimal blend
 parameter to many significant digits, then test candidate
@@ -42,11 +73,23 @@ set_compute_dps()
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                           h as H_A_F, z as Z_MARKOV)
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z, full precision
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_P_MEV, M_N_MEV
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
-z_m = mp.mpf(str(float(Z_MARKOV)))
+# Convention D at FULL precision, from the canonical helper.
+#
+# Was `z_m = mp.mpf(str(float(Z_MARKOV)))`. Two separate defects, and the
+# second is not what an earlier note on bean qou-l1gv claimed:
+#   * `hecke_core.z` is a Python FLOAT, not an mpf — measured,
+#     type(Z_MARKOV) is float and it equals float(z_D) to 6.7e-18 (f64
+#     epsilon). So the truncation to 16 digits happens UPSTREAM, and
+#     `z_m = Z_MARKOV` would have recovered nothing. The mpf(str(float(...)))
+#     round-trip is a no-op dressed as a conversion.
+#   * it is z_D, so it disagreed with `zv` below (z_C) by 22.7044 % inside
+#     one error functional.
+z_m = _markov_z(Q0)
 h_f = float(H_A_F)
 hQ = Q0 - QI
 D = Q0**4 + 4*Q0**2 + 1
@@ -85,7 +128,12 @@ def sym_alt(chain):
 
 
 def std_za_b(chain):
-    zv = mp.mpf(1)/(mp.sqrt(Q0)+mp.sqrt(QI))
+    # Was z_C = 1/(sqrt q + sqrt(1/q)) = 0.4993203, while z_m above is z_D =
+    # 0.6126880 — both feeding the SAME error functional whose root is alpha*.
+    # That is why alpha* read 0.350886: not 'alpha* in convention C', but
+    # alpha* in NO convention. Convention D throughout, per the 2026-08-15
+    # owner ruling.
+    zv = _markov_z(Q0)
     a = mp.mpf(0); b = mp.mpf(1)
     for c, d in chain:
         cm, dm = mp.mpf(c), mp.mpf(d)

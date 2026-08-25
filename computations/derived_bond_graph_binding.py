@@ -98,15 +98,34 @@ def main() -> int:
     # Derived per-bond binding energy E_0·log(1/f)  [MeV].
     e_bond = {k: E0 * math.log(1.0 / v) for k, v in f.items()}
 
-    # Bar-conjugate factors  \check{f} = f(q→q⁻¹).  Under the bar involution
-    # z→z (z = 1/(q^½+q^{-½}) is bar-symmetric) and h→−h, so the inter-nucleon
-    # crossing's conditional expectation conjugates as c·z + d → c·z − d_h-part.
+    # Bar-conjugate factors  \check{f} = f(q→q⁻¹), and h→−h.
+    #
+    # CORRECTED 2026-08-24 (qou-cds1).  This block used to assert
+    # "z→z (z = 1/(q^½+q^{-½}) is bar-symmetric)" and set f_bar["pp"] = z.
+    # That is a **convention-C-only** fact.  `z` at the top of this function is
+    # convention D (`q**3/(q**2+1)`), and under D the bar involution does NOT
+    # fix z.  Proved symbolically (sympy, exact):
+    #
+    #     z_D - h  =  q^3/(q^2+1) - (q^2-1)/q  =  1/(q^3 + q)
+    #     bar(z_D) =  z_D(q -> 1/q)            =  1/(q^3 + q)
+    #     => bar(z_D) = z_D - h   EXACTLY, identically in q   (and z/(z-h) = q^4)
+    #
+    # Under C it is the other identity that holds: bar(z_C) = z_C, and
+    # z_C - h != bar(z_C).  The two conventions swap which one is true, so the
+    # old comment was correct when written and became wrong when `z` migrated.
+    #
+    # Consequence worth noting: under D the bar involution **exchanges the pp
+    # and nn channels** -- bar(f_pp) = bar(z) = z - h = f_nn, and
+    # bar(f_nn) = bar(z - h) = bar(z) + h = z = f_pp.  So the pp and nn
+    # bar-norms coincide, which they did not under C.
+    #
     # This is the archimedean NORM tr_M·\check{tr}_M (owner: use the bar product,
     # NOT |·|).  δ assumed bar-symmetric (tiny, 0.0014).
+    z_bar = z - h                      # = bar(z) = 1/(q^3+q) under convention D
     f_bar = {
-        "pp": z,                       # bar-symmetric
-        "nn": z + h,                   # z − (−h)
-        "pn": z + h * (0.5 - delta / 4.0),
+        "pp": z_bar,                   # bar(z)
+        "nn": z_bar + h,               # = z   (bar exchanges pp <-> nn under D)
+        "pn": z_bar + h * (0.5 - delta / 4.0),
     }
     # Bar-norm per-bond factor |f|²_bar = f·\check{f}, and the magnitude
     # |tr|_bar = sqrt(tr·\check{tr}) gives per-bond energy (E_0/2)·log(1/(f·f̄)).

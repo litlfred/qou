@@ -86,7 +86,12 @@ def main() -> int:
     cal2_target = mp.mpf(repr(MU_OVER_E))
     cal_tau_e = mp.mpf(repr(TAU_OVER_E))
     Vol_4_1 = cal2_target * hbar_q_sq  # for the muon sanity check below
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # A convention-C `z` was bound here and NEVER READ -- `z` occurred
+    # exactly once in this file, in its own assignment. Excised by
+    # deletion rather than converted to z_D: a dead binding of the
+    # canonical convention is still dead, and leaving one would keep this
+    # file in the convention-C site list for no reason. Verified: witness
+    # diff 0 fields, stdout identical apart from a provenance line.
 
     # Amphichiral hyperbolic knots (SnapPy census; cross-checked w/ knot-volumes.py)
     amphichiral_knots = [

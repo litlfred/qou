@@ -253,6 +253,22 @@ def li_2_q_negative_continuation(
     return -h * total
 
 
+def _markov_z(q):
+    """Canonical convention-D Markov parameter, via the single definition.
+
+    Deliberately NOT respelled inline as `q**3/(q**2+1)`. An inline copy is a
+    second definition that a future convention audit has to find by its SHAPE,
+    and shape-keyed detectors are exactly what missed the value-literal and
+    return-form C sites on this branch — including site A below, which was a
+    `return` expression and therefore invisible to an assignment-keyed scan.
+
+    Imported inside the function, mirroring closed_form_tau_M's own idiom, so
+    no module-level import cycle is introduced.
+    """
+    from closed_form_tau_M import markov_z
+    return markov_z(q)
+
+
 def load_q_50dps(
     path: Path | None = None,
     anchor: str = "proton",
@@ -299,7 +315,7 @@ def load_q_50dps(
                 from q_parameter import Q_MP
             q = Q_MP
             qi = mpf(1) / q
-            return q, qi, mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+            return q, qi, _markov_z(q)
         if anchor != "muon":
             raise ValueError(
                 f"load_q_50dps: anchor must be 'proton' or 'muon', got {anchor!r}"
@@ -309,7 +325,10 @@ def load_q_50dps(
         d = _json.load(fh)
     q = mpf(d["derived_50_digit"]["q"])
     qi = mpf(1) / q
-    z = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1) = 0.6126880.  Was z_C = 1/(sqrt q + sqrt(1/q))
+    #   = sqrt(q)/(q+1) = 0.4993203, excised.
+    z = _markov_z(q)
     return q, qi, z
 
 

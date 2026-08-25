@@ -164,7 +164,9 @@ def main() -> int:
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
     h_f = float(h)
 
     print(f"=== Substrate: q_0 = {float(q0):.10f}, ℏ_q = {float(hbar_q):.6f}, "
