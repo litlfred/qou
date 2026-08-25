@@ -688,12 +688,12 @@ An unlisted producer resolves proton by default, so the default is now right.
 ~150 — I did exactly that before running the partition script, and it hid
 almost two thirds of the population. Do not prefix-grep this.
 
-### The real blocker is not the 424 — it is the 1641 unstamped
+### The real blocker is not the 424 — it is the ~1645 unstamped
 
 `computations/audits/q0_anchor_consistency_audit.py`, live:
 
     Q0_OK                970
-    Q0_ANCHOR_MISSING   1641
+    Q0_ANCHOR_MISSING   1645
     Q0_AUDIT_EXEMPT       80
     Q0_INDEPENDENT        49
     Q0_FLIP                0
@@ -736,3 +736,26 @@ anchor-defining witness directly (7, `qou-aj91` mechanism 5), plus 1 behind
 
 Method note: all four audits write witnesses as a side effect;
 `computations/` was restored after each run, so this entry changed no numbers.
+
+### Re-verified 2026-08-25 on a 31-commit-newer `main` (pre-merge rebase)
+
+Every figure above reproduced **except one, and the exception is the point**:
+
+    ideal_muon / physical_proton / ambiguous   35 / 651 / 17   unchanged
+    muon-family partition  144 / 261 / 5 / 14 = 424            unchanged
+    at-risk (asserts muon, resolves proton)    35 vs baseline 40  unchanged
+    Q0_OK                                      970             unchanged
+    Q0_ANCHOR_MISSING                          1641 -> 1645    +4
+
+**Four more unstamped witnesses landed in 31 commits, in one afternoon.** The
+unstamped population is not a fixed backlog being worked down — it grows with
+ordinary merges, because nothing gates a new witness on carrying its pin. That
+is a stronger argument for stamping-before-regeneration than the static count
+was: regeneration drains a set that is being refilled upstream of it.
+
+The figures above are stamped to a commit for exactly this reason. Re-run the
+three audits rather than quoting them; on this corpus the shelf life is hours.
+
+Sibling interaction: PR #5755 migrates `aoperator_a5_crosscheck` off
+`ideal_muon`. It is still listed on `main`, so 35 is right today and becomes 34
+when that lands. It is **not** one of `qou-bypn`'s 13 — that list is unaffected.
