@@ -326,3 +326,160 @@ mod tests {
         }
     }
 }
+
+#[cfg(test)]
+mod a3_bench {
+    //! Cost measurement for the A = 3 exact-rational route (bean `qou-lrnd`).
+    //!
+    //! Run with `cargo test --release --lib a3_bench -- --ignored --nocapture`.
+    use super::*;
+    use std::time::Instant;
+
+    /// All partitions of `n`, weakly decreasing.
+    fn partitions(n: usize) -> Vec<Vec<usize>> {
+        fn go(n: usize, max: usize, cur: &mut Vec<usize>, out: &mut Vec<Vec<usize>>) {
+            if n == 0 {
+                out.push(cur.clone());
+                return;
+            }
+            for part in (1..=max.min(n)).rev() {
+                cur.push(part);
+                go(n - part, part, cur, out);
+                cur.pop();
+            }
+        }
+        let mut out = Vec::new();
+        go(n, n, &mut Vec::new(), &mut out);
+        out
+    }
+
+    /// The A = 3 (Z=2, N=1) canonical crossing list, transcribed from
+    /// `canonical_braid_crossings.atom_canonical_crossings(2, 1, True)`.
+    /// `(gen0, kind)` — gen is 0-based as in the Python.
+    const A3_CROSSINGS: &[(u32, &str)] = &[
+        (0, "sigma"),
+        (0, "sigma"),
+        (0, "sigma"),
+        (0, "sigma"),
+        (0, "averaged"),
+        (0, "sigma"),
+        (0, "sigma"),
+        (1, "sigma_inv"),
+        (1, "sigma_inv"),
+        (1, "sigma_inv"),
+        (1, "averaged"),
+        (2, "sigma"),
+        (3, "sigma"),
+        (3, "sigma"),
+        (3, "sigma"),
+        (3, "sigma"),
+        (3, "averaged"),
+        (3, "sigma"),
+        (3, "sigma"),
+        (4, "sigma_inv"),
+        (4, "sigma_inv"),
+        (4, "sigma_inv"),
+        (4, "averaged"),
+        (5, "averaged_weighted"),
+        (6, "sigma"),
+        (6, "sigma"),
+        (6, "sigma"),
+        (6, "averaged"),
+        (6, "averaged"),
+        (6, "sigma"),
+        (6, "sigma"),
+        (7, "sigma_inv"),
+        (7, "sigma_inv"),
+        (7, "sigma_inv"),
+        (7, "sigma_inv"),
+    ];
+
+    fn build_factors(q: &BigRational) -> Vec<(BigRational, BigRational, u32)> {
+        let one = BigRational::one();
+        let h = q.clone() - one.clone() / q.clone();
+        let qm1 = q.clone() - one.clone();
+        let qi = one.clone() / q.clone();
+        let qi4 = qi.clone() * qi.clone() * qi.clone() * qi.clone();
+        let three = BigRational::from_integer(3.into());
+        let delta = qm1.clone() * qm1 * (one.clone() - qi4) / three;
+        let half = BigRational::new(1.into(), 2.into());
+        let quarter = BigRational::new(1.into(), 4.into());
+
+        A3_CROSSINGS
+            .iter()
+            .map(|&(g, kind)| {
+                let d = match kind {
+                    "sigma" => BigRational::zero(),
+                    "sigma_inv" => -h.clone(),
+                    "averaged" => -(h.clone() * half.clone()),
+                    "averaged_weighted" => {
+                        -(h.clone() * (half.clone() - delta.clone() * quarter.clone()))
+                    }
+                    other => panic!("unknown crossing kind {other}"),
+                };
+                (one.clone(), d, g + 1)
+            })
+            .collect()
+    }
+
+    /// Does the cost depend on the HEIGHT of the sampled `q`?
+    ///
+    /// Interpolation needs ~157 distinct rational points, and exact rational
+    /// arithmetic grows with numerator/denominator size, so a cost that scales
+    /// with height would change the plan. Measured on the worst n=9 shape
+    /// only (`[4,3,1,1]`, dim 216) — ~1/8 the full-partition cost and
+    /// representative of it.
+    #[test]
+    #[ignore = "cost measurement, not a correctness gate"]
+    fn a3_cost_vs_q_height() {
+        let shape = vec![4usize, 3, 1, 1];
+        for (num, den) in [
+            (11i64, 10i64),
+            (3, 2),
+            (101, 100),
+            (157, 1),
+            (1_000_003, 999_983),
+        ] {
+            let q = BigRational::new(num.into(), den.into());
+            let factors = build_factors(&q);
+            let t = Instant::now();
+            let _ = chi_q_atomic_exact(&shape, &factors, &q);
+            println!("HEIGHT q={num}/{den}: {:.3} s", t.elapsed().as_secs_f64());
+        }
+    }
+
+    #[test]
+    #[ignore = "cost measurement, not a correctness gate"]
+    fn time_one_a3_evaluation_point() {
+        let q = BigRational::new(11.into(), 10.into());
+        let factors = build_factors(&q);
+        let shapes = partitions(9);
+        assert_eq!(shapes.len(), 30, "p(9) = 30");
+        println!(
+            "A=3: n=9, {} factors, {} partitions",
+            factors.len(),
+            shapes.len()
+        );
+
+        let t0 = Instant::now();
+        let mut worst = (0f64, Vec::new(), 0usize);
+        let mut total_dim = 0usize;
+        for shape in &shapes {
+            let ts = Instant::now();
+            let (dim, _) = seminormal_blocks_exact(shape, &q);
+            let _chi = chi_q_atomic_exact(shape, &factors, &q);
+            let el = ts.elapsed().as_secs_f64();
+            total_dim += dim;
+            if el > worst.0 {
+                worst = (el, shape.clone(), dim);
+            }
+        }
+        let total = t0.elapsed().as_secs_f64();
+        println!("ALL 30 PARTITIONS: {total:.3} s   (sum of dims = {total_dim})");
+        println!(
+            "worst shape: {:?} dim={} at {:.3} s",
+            worst.1, worst.2, worst.0
+        );
+        println!("=> one evaluation point costs {total:.3} s");
+    }
+}
