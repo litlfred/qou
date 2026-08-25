@@ -149,3 +149,112 @@ evidence that this particular program is mis-specified.
   as `≈ 1` in the first place**, which would make the agreement circular. It
   needs the author's intent, not more arithmetic.
 - Convention D is untouched by all of this. Defect 1 holds in every convention.
+
+
+# What is derivable, and what the blast radius is
+
+Added after the above, answering the two questions it left open. Probe:
+[`computations/meson/operator_selection_what_selects_b3.py`](../../computations/meson/operator_selection_what_selects_b3.py).
+
+## Derivable: **no linear objective can select `𝓑₃`** — the LP form itself cannot do it
+
+At `NF(𝓑₃)` **all six** Frobenius positivity constraints are strictly slack:
+
+| constraint | slack |
+|---|---|
+| `(Gx)₀` | `+0.998562164` |
+| `(Gx)₁` | `+0.605509828` |
+| `(Gx)₂` | `+0.619565652` |
+| `(Gx)₃` | `+0.342488875` |
+| `(Gx)₄` | `+0.409722223` |
+| `(Gx)₅` | `+0.691166478` |
+
+Zero of six active, and the boundedness constraints are slack for any sane `M`.
+So with only `Σx = n_target` active, `𝓑₃` lies in the **relative interior** of
+the feasible polyhedron inside that hyperplane.
+
+A linear functional on a polyhedron attains its extrema on a **face**. If a
+relative-interior point is a minimiser, the functional is constant on the whole
+polyhedron — i.e. the objective vector is parallel to the equality normal, and
+then *every* feasible point is equally optimal. Therefore
+
+> **no linear objective selects `𝓑₃` as a unique minimiser** — not this
+> objective, any objective.
+
+**This refutes the hypothesis floated above.** Replacing `Σx = n_target` by
+`t·x = n_target` swaps which hyperplane is the equality and leaves every
+Frobenius slack untouched, so `𝓑₃` remains relative-interior. The `≈ 1`
+coincidence was a red herring, as flagged.
+
+### Two natural non-linear principles also fail
+
+- **Minimum norm.** `argmin ‖x‖₂` on the hyperplane is the uniform point
+  `(n/6)·𝟙`, which is feasible (min slack `0.610975`) and is not `𝓑₃`.
+- **Maximum minimum-slack** (most robustly feasible). `𝓑₃` scores `0.342489`;
+  the uniform point scores `0.610975` and beats it. So `𝓑₃` is not that either.
+
+`𝓑₃` is not distinguished by the feasible geometry **at all**. Whatever selects
+it is topological or physical — it is not an optimum of this constraint set.
+
+## `rem:b3-local-minimum` — both of its claims are false
+
+The block says: *"The confinement LP … admits a global minimum at
+`tr_M = 0`. The Borromean solution `𝓑₃` is a local minimum at a vertex of the
+LP feasible polytope."* The first sentence is **right**, and is a fourth
+independent place the corpus already recorded defect 1 without drawing the
+consequence. The second is wrong twice:
+
+- **"at a vertex"** — zero of six Frobenius constraints are active. A vertex in
+  `ℝ⁶` needs six active constraints; `𝓑₃` has one, the equality.
+- **"a local minimum"** — exhibited constructively. Take `d` = the component of
+  `−t` orthogonal to `𝟙`, so `Σd = 0` and the net constraint is preserved. Then
+  `t·d = −0.268780394 < 0`, and stepping `s = 0.5`:
+
+  | | |
+  |---|---|
+  | feasible | yes, min slack `+0.447890` (better than `𝓑₃`'s) |
+  | `Σx` | `+0.999600646`, unchanged |
+  | `tr_M(𝓑₃)` | `+0.998562164` |
+  | `tr_M(new)` | `+0.864171967` |
+
+  Strictly lower, strictly feasible, same net. Not a local minimum.
+
+## Blast radius, in real terms
+
+25 content blocks reference `prop:operator-selection-lp` or `prop:confinement-lp`.
+The line that matters is whether a block depends on the **optimum / dual
+variables** or only on the **Gram-and-trace data or feasibility**.
+
+**Affected — these read the optimum or its duals:**
+
+- **`prop:mass-coefficient-shadow-price`** — the most serious, because it reaches
+  the mass formula. It asserts that *each coefficient of the six-term mass
+  formula is the shadow price of the corresponding partition's Frobenius
+  positivity constraint*. At `𝓑₃` every constraint is slack, so complementary
+  slackness forces **every `yᵢ* = 0`**; at the actual optimum the active set is
+  solver-dependent. Either way the coefficients are not well-defined by this
+  route. *Scope note: measured at `n = 3`. The vacuous-objective defect is
+  general-`n`, but whether the nuclear instance's solution is also
+  relative-interior is **not** measured here.*
+- **`prop:he4-channel-active-set`** — "active demand channels" are the tight
+  constraints. Nothing is tight at `𝓑₃`.
+- **`prop:knot-operator-lp-selection`** — selection by LP.
+- **`rem:b3-local-minimum`** — falsified above.
+
+**Unaffected — these use the data, not the optimum:**
+
+- the Gram matrix and the Markov traces themselves, which are correct and were
+  re-derived from the structure constants in the sibling probe;
+- **`alg:lp-sdp-dual-emission`** and **`alg:witness-json-pipeline`** — an
+  infrastructure contract about *emitting* dual fields, orthogonal to whether a
+  particular program's duals mean anything;
+- any claim that `𝓑₃` **satisfies** the Frobenius structure, which is true and
+  now quantified: strictly, with min slack `0.342489`.
+
+## The constructive residue
+
+The LP is not worthless; it is mis-cast. `𝓑₃` being *strictly* feasible with
+room to spare is a genuine certificate — it says `𝓑₃` is robustly compatible
+with the Frobenius structure rather than marginally so. That is a
+**verification** result and it stands. What does not stand is reading it as a
+**selection principle**, and nothing in the LP form can be repaired into one.
