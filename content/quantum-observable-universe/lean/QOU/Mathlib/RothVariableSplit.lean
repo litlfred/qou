@@ -253,6 +253,62 @@ theorem rothGammaFull_descend {n : ℕ} (o : σ ≃ Fin (n + 1)) (p q F : ℕ)
   two_le := fun j => by simpa [splitLeft] using hg.two_le _
   degPos := fun k => Nat.mul_ne_zero hr (hg.degPos _)
 
+/-- **§13's `Θ₁ ≤ t` for the split-off variable** — the `y` side of `Φ_m ≤ Ψ_m`.
+
+§13 needs `Φ_m = Θ_{m−1} + Θ₁ ≤ Θ_{m−1} + t = Ψ_m`, i.e. `Θ₁ ≤ t` for the *one-variable*
+system carrying the split-off degree.  `isRothTheta_le_of_gamma_one` turns §11's case (i) into
+exactly that, so all this has to do is produce case (i)'s clause `b^q ≤ K_M^{(r₀·d_M)·p}` for
+the **last** variable, where `rothGammaFull_descend` produced it for the first.
+
+That direction is the easy one, and for a reason worth naming: clause 2 says the *first*
+variable's `K^d` is the **smallest**, so the last variable's clause is implied by the first's.
+Raising `K_1^{d_1} ≤ K_M^{d_M}` to `r₀·p` and prefixing `b^q ≤ b^{n·q}` closes it.
+
+⚠ `1 ≤ n` is used twice and both times essentially: for `q ≤ n·q`, and because at `n = 0` the
+descended system has no first variable to read clause 4 off.  §13 assumes `m ≥ 2`, which is
+`n ≥ 1` here — the same hypothesis correction 22 had to add to `RothLemma4` for a different
+reason. -/
+theorem isRothTheta_right_le_t {n : ℕ} (hn : 1 ≤ n) (o : σ ≃ Fin (n + 1)) {p q F : ℕ}
+    (hq : q ≠ 0) {d H : σ → ℕ} {a b : ℤ} {r₀ : ℕ} (hr₀ : r₀ ≠ 0) (hb1 : 1 ≤ b)
+    (hg : RothGammaFull o p q F d (fun j => (H j : ℤ)) a)
+    (hdesc : RothGammaFull (Equiv.refl (Fin n)) p q F (fun k => r₀ * splitLeft o d k)
+        (splitLeft o (fun j => (H j : ℤ))) b)
+    {Θ₁ : ℚ}
+    (hΘ₁ : IsRothTheta b (fun _ : Unit => r₀ * splitRight o d ()) (splitRight o H) Θ₁) :
+    Θ₁ ≤ (p : ℚ) / (q : ℚ) := by
+  classical
+  have hn0 : 0 < n := hn
+  have hHB := hdesc.heightBound (⟨0, hn0⟩ : Fin n) rfl
+  simp only [Equiv.refl_symm, Equiv.refl_apply, splitLeft_apply] at hHB
+  have hht := hg.height ((⟨0, hn0⟩ : Fin n).castSucc) (Fin.last n) rfl
+  have hL0 : (0 : ℤ) ≤ (H (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) : ℤ)
+      ^ d (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) :=
+    pow_nonneg (by exact_mod_cast Nat.zero_le _) _
+  have hstep1 : b ^ q ≤ b ^ (n * q) :=
+    pow_le_pow_right₀ hb1 (Nat.le_mul_of_pos_left q hn0)
+  have hstep2 : ((H (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) : ℤ))
+        ^ (r₀ * d (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) * p)
+      ≤ ((H (o.symm (Fin.last n)) : ℤ)) ^ (r₀ * d (o.symm (Fin.last n)) * p) := by
+    calc ((H (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) : ℤ))
+          ^ (r₀ * d (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) * p)
+        = ((H (o.symm ((⟨0, hn0⟩ : Fin n).castSucc)) : ℤ)
+            ^ d (o.symm ((⟨0, hn0⟩ : Fin n).castSucc))) ^ (r₀ * p) := by
+          rw [← pow_mul]; congr 1; ring
+      _ ≤ ((H (o.symm (Fin.last n)) : ℤ) ^ d (o.symm (Fin.last n))) ^ (r₀ * p) :=
+          pow_le_pow_left₀ hL0 hht _
+      _ = ((H (o.symm (Fin.last n)) : ℤ)) ^ (r₀ * d (o.symm (Fin.last n)) * p) := by
+          rw [← pow_mul]; congr 1; ring
+  have hclause : b ^ q
+      ≤ ((splitRight o H () : ℕ) : ℤ) ^ ((r₀ * splitRight o d ()) * p) := by
+    rw [splitRight_unit, splitRight_unit]
+    exact le_trans hstep1 (le_trans hHB hstep2)
+  refine isRothTheta_le_of_gamma_one hΘ₁ ?_ hq ?_ hclause
+  · exact Nat.mul_ne_zero hr₀ (by rw [splitRight_unit]; exact hg.degPos _)
+  · have := hg.two_le (o.symm (Fin.last n))
+    rw [splitRight_unit]
+    exact_mod_cast this
+
+
 /-! ### Lemma 4 and Roth's Lemma, in `Θ_m` form
 
 Every statement in this arc so far bounds the index of one polynomial.  With `Θ_m` characterised
