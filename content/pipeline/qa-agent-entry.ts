@@ -14,6 +14,7 @@
  *     --result  pass|fail|warn|n/a             (required)
  *     [--severity critical|major|minor]
  *     [--evidence "<what was found / why the verdict>"]
+ *                                              (REQUIRED for fail|warn)
  *     [--notes    "<fix applied / fix proposed / scope note>"]
  *     [--id       <reviewer id>]               (default: agent:session)
  *
@@ -44,13 +45,36 @@ const reviewerId = arg("id") ?? "agent:session";
 if (!blockMd || !criterion || !result) {
   console.error(
     "usage: qa-agent-entry.ts --block <block.md> --criterion <id> " +
-      "--result pass|fail|warn|n/a [--severity ...] [--evidence ...] " +
+      "--result pass|fail|warn|n/a [--severity ...] " +
+      "[--evidence ...] (required for fail|warn) " +
       "[--notes ...] [--id ...]",
   );
   process.exit(2);
 }
 if (!["pass", "fail", "warn", "n/a"].includes(result)) {
   console.error(`invalid --result: ${result}`);
+  process.exit(2);
+}
+// A verdict that asserts a violation must say what it found. The block-qa/v1
+// schema already states this on `result` ("fail = violated (evidence must cite
+// file:line + verbatim quote)") but never enforced it, so 1302 fail/warn
+// entries carry an empty evidence string and assert a failure that is nowhere
+// on record. This is the agent-side counterpart of the rule already pinned for
+// script checkers: a checker that cannot read its evidence has not verified
+// anything.
+//
+// The bar is deliberately NON-EMPTY, not quote-shaped. Some legitimate
+// evidence is a bare `file.lean:1` pointer, and demanding a verbatim quote
+// would push authors toward inventing one.
+//
+// `pass` and `n/a` are exempt on purpose: a verdict that found nothing has
+// nothing to quote, and requiring evidence there would push the sweep toward
+// empty ceremony from the other side.
+if ((result === "fail" || result === "warn") && !evidence?.trim()) {
+  console.error(
+    `--result ${result} requires --evidence: a verdict that asserts a ` +
+      `violation must cite what it found (file:line + quote where possible).`,
+  );
   process.exit(2);
 }
 if (!existsSync(blockMd)) {
@@ -97,7 +121,7 @@ const entry: any = {
   reviewed_sha: reviewedSha,
 };
 if (severity) entry.severity = severity;
-if (evidence) entry.evidence = evidence;
+if (evidence?.trim()) entry.evidence = evidence;
 if (notes) entry.notes = notes;
 
 doc.criteria[criterion].push(entry);
