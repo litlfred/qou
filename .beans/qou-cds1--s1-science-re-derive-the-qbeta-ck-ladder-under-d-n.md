@@ -1542,3 +1542,83 @@ spelling catalogued in `qou-l7j1`, benign here.
 **`qbeta_h_frame_rungs_probe.py:73`** was never called deliberate. It is a real
 C defect, deferred to this bean's re-derivation because swapping it is the
 banned substitution — a different disposition from "leave it, it is fine".
+
+> **Cross-reference to the section above (added on resolving the rebase conflict).**
+> `main`'s *"the two qbeta C sites in the probe drain"* entry covers
+> `qbeta_h_frame_rungs_probe.py:73`, which is **one of the 13 sites** the AST pass
+> below flags, and reaches the same verdict independently: a real C defect the
+> drain cannot fix, closing only when this bean's re-derivation lands. The two
+> records are complementary — that one covers producers *still on C*, this one
+> covers producers *already moved to D with a C witness and a C gate*.
+---
+
+## A sub-class the "Live C sites" list does not cover (2026-08-25, bean `qou-uz7q`)
+
+That list tracks producers **still computing in C**. There is a second, opposite
+failure mode, and it is worse because it is invisible:
+
+> **already swapped to D, with the witness AND the gate threshold left at C.**
+
+Such a producer computes D numbers, compares them to a C answer, and **fails its
+own gate** — while the corpus reads it as passing, because the committed witness
+still says `allPassed: true`.
+
+### Measured instance: `qbeta_c3even_exact_sseries_probe`
+
+`70d1ade383` ("excise C tiers 2+3: 176 producer sites to convention D") swapped
+this probe's `z` on 2026-08-09 and did not regenerate its witness. Re-running it
+today flips `allPassed` `true` → `false`.
+
+Attribution by decisive test — numeric Taylor of `log(R(1+s)/R(1))` with the
+**live `cos`**, mpmath 60 dps, under each `z`:
+
+| probe source | `[s^3]` | matches |
+|---|---|---|
+| **D** — today's `z = q**3/(q**2+1)` | −4.4084936490538903383 | the re-run, `\|diff\| = 0.0` |
+| **C** — witness-era `z = 1/(sqrt(q)+1/sqrt(q))` | −3.9084936490538903383 | the committed, `\|diff\| = 3.1e-61` |
+
+The gate threshold confirms it independently: `c_2^even ≈ −8.006` **is** the C
+value — the committed C witness carries `−8.00641005870925` exactly. A correctly
+migrated D producer *must* fail a C-calibrated gate.
+
+This is candidate **33** of `convention-frame-staleness-audit` (73 suspects over
+139 D-form producers), promoted **suspect → confirmed** by that audit's own
+decisive-test method.
+
+### 🛑 Do NOT connect these numbers to (H1) — normalisation unestablished
+
+The probe reports `c3_even` **+86.66 (C) → +78.59 (D)**, a 9.3 % move. It is
+tempting to read that against this bean's table (`c₃`: −2.069 → −974.43, a 500×
+move) or against (H1) `c₃^even = −Vol(4₁) ≈ −2.03`. **Do not.** Those are three
+different objects, and `+86.66` cannot be the same normalisation as `−2.03`.
+Nothing here establishes which normalisation the probe's `c3_even` is in, so
+nothing here bears on (H1) either way. Recorded because AGENTS.md names *"a
+quantity differing only by normalisation, mistaken for a discrepancy"* as the
+exact error class this section could otherwise commit.
+
+### The D numbers were NOT landed
+
+Per this bean's own load-bearing constraint — `decayLadder_zC_threeRow_ne_zero`,
+so the C→D move **is not a z-swap** — `70d1ade383` performed exactly that
+substitution on this probe. Its D output is correct arithmetic from a move the
+ruling names invalid. The committed C witness was **restored**; nothing landed.
+The re-derivation this bean owns is what would produce a landable number.
+
+### What is now unblocked
+
+Both exact-`s`-series probes were **TIMEOUT / UNMEASURED** (> 1800 s censored),
+so no D-frame number could be obtained from them at all. Profiling showed the
+cost was `sympy`'s `trigsimp` → `polys.factor` fired by a live `cos` node inside
+`sp.series` — **3 `factor()` calls = 97.8 % of a 1200 s run** — not the probe's
+own `simplify`. Expanding `cos(alpha_eff)` to a finite Taylor polynomial first
+(exact: `alpha_eff(q=1) = 0`) gives **370 s at the probe's own order 9**, against
+a live-`cos` route that cannot finish **order 3** in 420 s.
+
+So the re-derivation now has a working experimental instrument on this axis where
+it previously had none. Validated value-neutral twice: the residual against the
+live-`cos` function falls at `s^N` (9.002 decades/decade at N=9), and the numeric
+Taylor above reproduces the D value the fixed probe emits.
+
+**Still not started, and still needs the owner's go:** the actual D-frame
+re-derivation. Nothing above is a re-derivation — it is one confirmed staleness
+instance plus a faster instrument.
