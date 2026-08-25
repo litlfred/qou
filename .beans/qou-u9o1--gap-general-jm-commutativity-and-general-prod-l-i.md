@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T08:15:58Z
+updated_at: 2026-08-25T08:20:52Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -710,3 +710,52 @@ different proof ingredients.
 Both ingredients for the assembly now exist. The next step splits `SUM_{l<i} T_(l,i)` into
 the two exceptional terms plus the rest, applying one lemma to each part. It is Finset
 bookkeeping over a proved case analysis — no new mathematics.
+
+
+## 3.24(i) AND Jucys's centrality are both PROVED
+
+`HeckeTranspositionExpansion.lean` is now 15 declarations, all sorry-free, axioms clean.
+
+    sigma_comm_transp_below     sigma_j commutes with T_(l,i) for l > j+1     [braid]
+    sigma_comm_addJM            3.24(i) for i > j+1                          <-- ASSEMBLED
+    sigma_comm_addJM_small      3.24(i) for i < j                            [braid]
+    partialSum                  S_m = SUM_{i<=m} A_i
+    sigma_comm_partialSum       j < m
+    sigma_comm_partialSum_above j > m
+    sigma_comm_partialSum_ne    **sigma_j commutes with S_m for every j != m**
+
+### 3.24(i)'s assembly, and why the SUM was essential
+
+Splitting `SUM_{l<i} T_(l,i)` on l:
+
+    l < j          sigma_comm_transp_disjoint   braid
+    l in {j,j+1}   sigma_comm_transp_pair       braid + HECKE   <-- AS A PAIR
+    l > j+1        sigma_comm_transp_below      braid
+
+The middle row cannot be done term by term — **neither T_(j,i) nor T_(j+1,i) commutes with
+sigma_j alone** (measured, H_6). Only their sum does. So the expansion into a SUM was a
+necessary ingredient, not a convenience: this is precisely where a term-by-term approach
+had to fail, and it explains in retrospect why all five earlier "property of N" leads died.
+
+### Centrality, and why the exception is at j = m exactly
+
+Split `range(m+1)` the same way. For j < m the pair {j, j+1} is INSIDE the sum, so
+`addJM_sigma_comm_add` covers it and every other index commutes alone. For j > m every index
+is below j. At j = m the cutoff SPLITS the pair — which is exactly the measured exception,
+now explained rather than observed.
+
+### Chain status
+
+    expansion                      DONE
+    pair-swap / disjoint / below   DONE
+    3.24(i)                        DONE  sigma_comm_addJM (+ _small)
+    partial-sum centrality         DONE  sigma_comm_partialSum_ne
+    telescoping => commutativity   NEXT
+
+### What telescoping still needs
+
+`A_m = S_m - S_{m-1}`, and for i < m both S_m and S_{m-1} must commute with A_i. Centrality
+gives commutation with GENERATORS; lifting that to commutation with A_i needs "commutes with
+every letter => commutes with the word", an induction over `transp`. Every letter of A_i has
+index <= i-1 <= m-2, so it misses both m and m-1 and the hypotheses are available. That is
+the one remaining step, and it is structural bookkeeping, not new mathematics.

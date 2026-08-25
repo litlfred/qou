@@ -272,4 +272,141 @@ theorem sigma_comm_transp_disjoint (H : HeckeGenerators R A q) (j l : ℕ) (hl :
         subst this
         exact sigma_comm_transp_base H j l hl
 
+/-- `σ_j` commutes with `T_(l,i)` when `j + 1 < l` — every letter of `T_(l,i)` has index in
+`[l, i−1]`, all at distance `≥ 2` above `j`. -/
+theorem sigma_comm_transp_below (H : HeckeGenerators R A q) (j l : ℕ) (hjl : j + 1 < l) :
+    ∀ i : ℕ, l < i → H.σ j * transp H l i = transp H l i * H.σ j := by
+  intro i
+  induction i with
+  | zero => intro h; omega
+  | succ m ih =>
+      intro hm
+      rcases Nat.eq_or_lt_of_le (Nat.lt_succ_iff.mp hm) with heq | hlt
+      · subst heq
+        rw [transp_self]
+        exact H.far j l (by omega)
+      · have hlm : l ≠ m := by omega
+        have hfar : H.σ j * H.σ m = H.σ m * H.σ j := H.far j m (by omega)
+        have hih := ih hlt
+        rw [transp_succ H l m hlm]
+        calc H.σ j * (H.σ m * transp H l m * H.σ m)
+            = (H.σ j * H.σ m) * transp H l m * H.σ m := by noncomm_ring
+          _ = (H.σ m * H.σ j) * transp H l m * H.σ m := by rw [hfar]
+          _ = H.σ m * (H.σ j * transp H l m) * H.σ m := by noncomm_ring
+          _ = H.σ m * (transp H l m * H.σ j) * H.σ m := by rw [hih]
+          _ = H.σ m * transp H l m * (H.σ j * H.σ m) := by noncomm_ring
+          _ = H.σ m * transp H l m * (H.σ m * H.σ j) := by rw [hfar]
+          _ = _ := by noncomm_ring
+
+/-! ## Mathas 3.24(i), assembled -/
+
+/-- **Mathas 3.24(i)** (the `i > j+1` case): `σ_j` commutes with `A_i`.
+
+Assembled from the three commutation lemmas by splitting `Σ_{l<i} T_(l,i)` on `l`:
+
+| `l` | lemma | ingredient |
+|---|---|---|
+| `l < j` | `sigma_comm_transp_disjoint` | braid |
+| `l ∈ {j, j+1}` | `sigma_comm_transp_pair` — **as a pair** | braid + Hecke |
+| `l > j+1` | `sigma_comm_transp_below` | braid |
+
+The middle row is the one that cannot be done term-by-term: neither `T_(j,i)` nor `T_(j+1,i)`
+commutes with `σ_j` alone (measured), only their sum does.  That is why the expansion into a **sum**
+was the necessary ingredient rather than a convenience. -/
+theorem sigma_comm_addJM (H : HeckeGenerators R A q) (d : R) (j i : ℕ) (h : j + 1 < i) :
+    H.σ j * addJM H d i = addJM H d i * H.σ j := by
+  have hne : j ≠ j + 1 := by omega
+  have hsub : ({j, j + 1} : Finset ℕ) ⊆ Finset.range i := by
+    intro x hx
+    simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with rfl | rfl <;> simp [Finset.mem_range] <;> omega
+  have hpair : ∑ l ∈ ({j, j + 1} : Finset ℕ), transp H l i
+      = transp H j i + transp H (j + 1) i := Finset.sum_pair hne
+  have hrest : H.σ j * (∑ l ∈ Finset.range i \ {j, j + 1}, transp H l i)
+      = (∑ l ∈ Finset.range i \ {j, j + 1}, transp H l i) * H.σ j := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun l hl => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hl
+    obtain ⟨hli, hlj, hlj1⟩ := hl
+    rcases Nat.lt_or_ge l j with hlt | hge
+    · exact sigma_comm_transp_disjoint H j l hlt i h
+    · exact sigma_comm_transp_below H j l (by omega) i hli
+  rw [addJM_eq_transp_sum, ← Finset.sum_sdiff hsub, hpair]
+  rw [mul_smul_comm, smul_mul_assoc, mul_add, add_mul, hrest,
+    sigma_comm_transp_pair H j i h]
+
+/-- **3.24(i), the easy direction**: `σ_j` commutes with `A_i` when `i < j`.  Every letter of every
+`T_(l,i)` has index `≤ i−1 ≤ j−2`, so `sigma_comm_transp_far` applies term by term. -/
+theorem sigma_comm_addJM_small (H : HeckeGenerators R A q) (d : R) (j i : ℕ) (h : i < j) :
+    H.σ j * addJM H d i = addJM H d i * H.σ j := by
+  rw [addJM_eq_transp_sum, mul_smul_comm, smul_mul_assoc]
+  congr 1
+  rw [Finset.mul_sum, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun l hl => ?_
+  exact sigma_comm_transp_far H l i j (Finset.mem_range.mp hl) h
+
+/-! ## Partial-sum centrality — Jucys's route
+
+`S_m := Σ_{i ≤ m} A_i`.  Measured in
+[`jm_partial_sum_centrality_probe.py`](../../../../../computations/hecke/jm_partial_sum_centrality_probe.py):
+`S_m` commutes with `σ_j` for **every `j ≠ m`**, at three values of `q` and three of `d`.
+
+The exception at `j = m` is not an accident: the summation cutoff **splits the pair**
+`(A_m, A_{m+1})`, and that pair is exactly what `addJM_sigma_comm_add` handles.  Every other index
+commutes with `σ_j` on its own. -/
+
+/-- Partial sum `S_m = Σ_{i ≤ m} A_i` (the `i = 0` term is `0`). -/
+def partialSum (H : HeckeGenerators R A q) (d : R) (m : ℕ) : A :=
+  ∑ i ∈ Finset.range (m + 1), addJM H d i
+
+/-- **Centrality below the cutoff**: for `j < m`, `σ_j` commutes with `S_m`.
+
+Split `range (m+1)` into `{j, j+1}` and the rest.  The pair is `addJM_sigma_comm_add`; each other
+index is `sigma_comm_addJM_small` (below `j`) or `sigma_comm_addJM` (above `j+1`). -/
+theorem sigma_comm_partialSum (H : HeckeGenerators R A q) (d : R) (j m : ℕ) (h : j < m) :
+    H.σ j * partialSum H d m = partialSum H d m * H.σ j := by
+  have hne : j ≠ j + 1 := by omega
+  have hsub : ({j, j + 1} : Finset ℕ) ⊆ Finset.range (m + 1) := by
+    intro x hx
+    simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with rfl | rfl <;> simp only [Finset.mem_range] <;> omega
+  have hpair : ∑ i ∈ ({j, j + 1} : Finset ℕ), addJM H d i
+      = addJM H d j + addJM H d (j + 1) := Finset.sum_pair hne
+  have hrest : H.σ j * (∑ i ∈ Finset.range (m + 1) \ {j, j + 1}, addJM H d i)
+      = (∑ i ∈ Finset.range (m + 1) \ {j, j + 1}, addJM H d i) * H.σ j := by
+    rw [Finset.mul_sum, Finset.sum_mul]
+    refine Finset.sum_congr rfl fun i hi => ?_
+    simp only [Finset.mem_sdiff, Finset.mem_range, Finset.mem_insert,
+      Finset.mem_singleton, not_or] at hi
+    obtain ⟨_, hij, hij1⟩ := hi
+    rcases Nat.lt_or_ge i j with hlt | hge
+    · exact sigma_comm_addJM_small H d j i hlt
+    · exact sigma_comm_addJM H d j i (by omega)
+  unfold partialSum
+  rw [← Finset.sum_sdiff hsub, hpair, mul_add, add_mul, hrest, addJM_sigma_comm_add]
+
+/-- **Centrality above the cutoff**: for `j > m`, `σ_j` commutes with `S_m` — every index in the sum
+is below `j`, so `sigma_comm_addJM_small` applies term by term. -/
+theorem sigma_comm_partialSum_above (H : HeckeGenerators R A q) (d : R) (j m : ℕ) (h : m < j) :
+    H.σ j * partialSum H d m = partialSum H d m * H.σ j := by
+  unfold partialSum
+  rw [Finset.mul_sum, Finset.sum_mul]
+  refine Finset.sum_congr rfl fun i hi => ?_
+  exact sigma_comm_addJM_small H d j i (by
+    have := Finset.mem_range.mp hi
+    omega)
+
+/-- **Jucys's centrality property**: `σ_j` commutes with `S_m` for every `j ≠ m`.
+
+This is the statement the measurement found, now proved.  It is the input to the telescoping
+argument `A_m = S_m − S_{m−1}`, which yields commutativity **without ever using** the product half
+of 3.24(iii) — the step that `HeckeAdditiveJucysMurphy.addJM_sigma_prod_swap` showed is entangled
+with the conclusion. -/
+theorem sigma_comm_partialSum_ne (H : HeckeGenerators R A q) (d : R) (j m : ℕ) (h : j ≠ m) :
+    H.σ j * partialSum H d m = partialSum H d m * H.σ j := by
+  rcases Nat.lt_or_ge j m with hlt | hge
+  · exact sigma_comm_partialSum H d j m hlt
+  · exact sigma_comm_partialSum_above H d j m (by omega)
+
 end QOU.BraidKnot.Hecke
