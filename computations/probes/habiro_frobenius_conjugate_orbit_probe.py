@@ -143,6 +143,22 @@ def analyse(coeffs: list[dict], p: int) -> dict[str, Any]:
             f"norm routes disagree at p={p}: orbit={norm_orbit} resultant={norm_res}")
 
     rep_const = int(rep.all_coeffs()[0]) if rep.degree() == 0 else None
+
+    # When the norm is +-1 the element is a UNIT, and in a cyclotomic ring of
+    # small degree the unit group is finite, so the refutation makes a sharp
+    # falsifiable prediction: the element must have finite multiplicative
+    # order. Tested by the DEFINING property (powering up), not by comparing
+    # against a hand-listed set of roots of unity -- a string/srepr comparison
+    # would pass on a representation artifact.
+    unit_order = None
+    if abs(norm_res) == 1:
+        cur = reduce_mod(sp.Integer(1), n)
+        for e in range(1, 4 * n + 1):
+            cur = reduce_mod(sp.expand(cur.as_expr() * rep.as_expr()), n)
+            if cur.as_expr() == 1:
+                unit_order = e
+                break
+
     return {
         "prime": p,
         "exact": True,
@@ -153,6 +169,8 @@ def analyse(coeffs: list[dict], p: int) -> dict[str, Any]:
         "galois_norm": norm_res,
         "galois_norm_abs": abs(norm_res),
         "is_unit": abs(norm_res) == 1,
+        "representative": str(rep.as_expr()),
+        "unit_multiplicative_order": unit_order,
         "norm_cross_check": "orbit-product == resultant",
     }
 
@@ -183,7 +201,11 @@ def main() -> int:
                 print(f"    p={p:>3}  not exact -- needs {row['coefficients_needed']} "
                       f"coefficients, has {row['coefficients_available']}")
                 continue
-            flag = "  <== UNIT (norm route FAILS here)" if row["is_unit"] else ""
+            flag = ""
+            if row["is_unit"]:
+                _o = row["unit_multiplicative_order"]
+                flag = (f"  <== UNIT, = {row['representative']}, order {_o}"
+                        "  (norm route FAILS here)")
             const = row["representative_is_rational_integer"]
             print(f"    p={p:>3}  orbit={row['orbit_size']}  N={row['galois_norm']:<12}"
                   f"  |N|={row['galois_norm_abs']:<12}"
@@ -260,6 +282,15 @@ def main() -> int:
                      guard, expected_guard)
     wb.add_assertion("units_found_at_p3_for_both_nucleons",
                      sorted(units), ["n (neutron, A=1) @ p=3", "p (proton, A=1) @ p=3"])
+    # The sharp form: both nucleon units are the SAME element, and it is a
+    # PRIMITIVE 6th root of unity (order exactly 6, not a proper divisor).
+    _u3 = {}
+    for y in results:
+        r3 = next((x for x in y["rows"] if x["prime"] == 3 and x["exact"]), None)
+        if r3 and r3["is_unit"]:
+            _u3[y["atom_label"]] = [r3["representative"], r3["unit_multiplicative_order"]]
+    wb.add_assertion("p3_units_are_primitive_6th_root_of_unity", _u3,
+                     {"p (proton, A=1)": ["u", 6], "n (neutron, A=1)": ["u", 6]})
     wb.add_caveat(
         "Exactness is bounded by DATA, not method: evaluating at p needs 2p+1 Habiro "
         "coefficients. With 9/9/14 available this reaches p<=3 for the nucleons and "
