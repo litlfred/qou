@@ -282,7 +282,12 @@ def main() -> int:
         "rho_strong": {str(a): fmt(RHO_STRONG[a]) for a in (2, 3, 4)},
         "results": results, "scores": scores, "verdict": verdict})
     wb.add_assertion("three_mass_numbers_measured", str(len(results) >= 3), "True")
-    wb.add_assertion("tjon_identity_is_lean_backed", "True", "True")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    wb.add_parameter("tjon_identity_is_lean_backed", "True (a claim about the LEAN CORPUS, not verified from this probe; the declarations are named in data.tjon_correlation.lean)")
     wb.save()
     print("\nwitness → gap10-tjon-correlation.witness.json")
     print("STRUCTURAL ASSERTIONS PASS")
