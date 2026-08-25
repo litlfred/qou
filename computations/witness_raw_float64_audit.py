@@ -179,6 +179,46 @@ LP_DUAL_F64_FIELDS = frozenset({
     "primal_obj", "dual_obj", "duality_gap",
 })
 
+# ── volatile-timing carve-out (bean qou-hhm3) ────────────────────────────
+#
+# A wall-clock duration has NO mpf source to have lost digits from. This gate
+# asks one question -- did a value lose digits a double cannot hold? -- and a
+# timer answers no, the same way an integral float answers no. `time.
+# perf_counter()` returns a float; there is no higher-precision original that
+# was truncated, so there is nothing here for this gate to say.
+#
+# Identical in shape to the integral-float split (`qou-xt5l`), which was
+# accepted for the same reason: counting these made a runtime-metadata detail
+# indistinguishable from a dropped digit. The corpus already treats them as
+# non-data elsewhere -- qou-substrate's `_EPHEMERAL_META_FIELDS` strips them by
+# name when comparing witnesses, precisely because they change every run.
+#
+# DECLARED BY NAME, NEVER BY PATTERN. A `*_sec` suffix rule would be wrong and
+# dangerous: a lifetime, a decay time, a half-life are physical quantities
+# measured in seconds where precision is the whole point. Only names that can
+# ONLY mean "how long this run took" belong here. When in doubt, leave it out
+# and let the gate flag it.
+#
+# Every excused field is COUNTED and REPORTED on its own line. A carve-out that
+# cannot be seen is indistinguishable from a hole -- the same rule the three
+# carve-outs above are written under.
+# MEASURED 2026-08-25: only four of the eight below occur in this corpus --
+# elapsed_sec (33 float occurrences / 13 files), wall_sec (36 / 7),
+# elapsed_seconds (16 / 6), wall_seconds (5 / 5). The other four are
+# forward-looking and currently unexercised, so the self-test rather than the
+# corpus is what holds them honest. Said explicitly so a reader does not read
+# eight names as eight measured cases.
+VOLATILE_TIMING_FIELDS = frozenset({
+    "elapsed_sec",
+    "elapsed_seconds",
+    "wall_sec",
+    "wall_seconds",
+    "runtime_sec",
+    "runtime_seconds",
+    "duration_sec",
+    "duration_seconds",
+})
+
 # ── float64-integrator carve-out (qou-7kq3, owner-approved 2026-08-15) ──
 #
 # The sibling of the LP-dual carve-out, for the same reason: output that is
@@ -378,7 +418,16 @@ def count_integral(obj) -> int:
     return _count(obj)[2]
 
 
-def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int]:
+def count_timing(obj) -> int:
+    """How many floats sit under a declared volatile-timing field.
+
+    Not a precision finding — a wall-clock duration has no mpf source it could
+    have been truncated from. See `VOLATILE_TIMING_FIELDS`. Bean `qou-hhm3`.
+    """
+    return _count(obj)[3]
+
+
+def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int, int]:
     """(counted, carved_out, integral) — one traversal, all three numbers.
 
     INTEGRAL IS NOT A PRECISION FINDING, and separating it is the point.
@@ -420,43 +469,52 @@ def _count(obj, integral_is_exact: bool = True) -> tuple[int, int, int]:
     NOT agree, every float underneath counts, integral or not.
     """
     if isinstance(obj, dict):
-        total = carved = integral = 0
+        total = carved = integral = timing = 0
         for k, v in obj.items():
             if k.endswith("_str"):
-                t, c, i = _count(v, integral_is_exact)
+                t, c, i, w = _count(v, integral_is_exact)
                 total += t
                 carved += c
                 integral += i
+                timing += w
                 continue
             companion = obj.get(f"{k}_str")
             if companion is not None and _is_full_precision_shadow(v, companion):
                 continue  # shadowed at full precision — not raw float64
+            if k in VOLATILE_TIMING_FIELDS:
+                t, _c, i, _w = _count(v, integral_is_exact)
+                timing += t
+                integral += i
+                continue  # carve-out: wall-clock, no mpf source to have lost
             if k in LP_DUAL_F64_FIELDS:
-                t, _c, i = _count(v, integral_is_exact)
+                t, _c, i, w = _count(v, integral_is_exact)
                 carved += t
                 integral += i
+                timing += w
                 continue  # carve-out: solver output, f64 by construction
             # A companion that is present but does NOT agree proves the float
             # differs from the true value, so integrality excuses nothing
             # underneath it.
-            t, c, i = _count(v, integral_is_exact and companion is None)
+            t, c, i, w = _count(v, integral_is_exact and companion is None)
             total += t
             carved += c
             integral += i
-        return total, carved, integral
+            timing += w
+        return total, carved, integral, timing
     if isinstance(obj, list):
-        total = carved = integral = 0
+        total = carved = integral = timing = 0
         for v in obj:
-            t, c, i = _count(v, integral_is_exact)
+            t, c, i, w = _count(v, integral_is_exact)
             total += t
             carved += c
             integral += i
-        return total, carved, integral
+            timing += w
+        return total, carved, integral, timing
     if isinstance(obj, float):
         if obj.is_integer():
-            return (0, 0, 1) if integral_is_exact else (1, 0, 1)
-        return 1, 0, 0
-    return 0, 0, 0
+            return (0, 0, 1, 0) if integral_is_exact else (1, 0, 1, 0)
+        return 1, 0, 0, 0
+    return 0, 0, 0, 0
 
 
 CARVED: dict[str, int] = {}
@@ -464,6 +522,9 @@ CARVED: dict[str, int] = {}
 #: `CARVED` so the two excuses can never be read as one number.
 CARVED_INTEGRATOR: dict[str, int] = {}
 CARVED_DEPRECATED: dict[str, int] = {}
+#: Per-file tally for the volatile-timing carve-out (bean qou-hhm3), kept
+#: SEPARATE from the others so the excuses can never be read as one number.
+CARVED_TIMING: dict[str, int] = {}
 #: Per-file tally of floats holding an exactly-integral value (`0.0`, `54.0`).
 #: NOT a precision finding and NOT counted as raw float64 — see `_count`. Kept
 #: as its own dict so removing them from the headline cannot make them
@@ -493,7 +554,7 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n, carved, integral = _count(d)
+        n, carved, integral, timing = _count(d)
         rel = p.relative_to(ROOT).as_posix()
         # An explicit float64-integrator declaration moves this file's REMAINING
         # count into the integrator carve-out. Applied at witness level, not
@@ -515,6 +576,8 @@ def scan(scan_root: Path | None = None) -> dict[str, int]:
             CARVED[rel] = carved
         if integral:
             INTEGRAL[rel] = integral
+        if timing:
+            CARVED_TIMING[rel] = timing
     return found
 
 
@@ -599,6 +662,28 @@ def self_test() -> int:
         ({"y_star": [0.5], "a_K_via_lp_dual": 1.5, "tolerance": 1e-9}, 2),
         # A same-named key nested anywhere is still solver output.
         ({"per_atom": [{"lp_dual": {"y_star": [0.5, 0.25]}}]}, 0),
+        # ── volatile-timing carve-out (bean qou-hhm3) ──────────────────────
+        # A wall-clock duration has no mpf source it could have lost digits
+        # from, so it is not a precision finding.
+        ({"elapsed_sec": 0.001}, 0),
+        ({"elapsed_seconds": 12.5}, 0),
+        ({"meta": {"runtime_sec": 0.75}}, 0),             # nested
+        # The types this field actually appears as corpus-wide: 53 str, 34
+        # float, 16 null, 3 int. None of them may throw.
+        ({"elapsed_sec": None}, 0),
+        ({"elapsed_sec": 3}, 0),
+        ({"elapsed_sec": "0.001"}, 0),
+        # THE CASE THIS CARVE-OUT MUST NOT BREAK: a real float64 finding in
+        # the SAME witness still fires. A carve-out that silences its
+        # neighbours is a hole, not an exemption.
+        ({"elapsed_sec": 0.001, "mass_mev": 938.2720881}, 1),
+        ({"elapsed_sec": 0.001, "rows": [{"y_lambda": 30.7796994}]}, 1),
+        # DECLARED BY NAME, NOT BY A *_sec PATTERN. These are physical
+        # quantities measured in seconds, where precision is the whole point,
+        # and they MUST still be flagged. This is why the rule is a name list.
+        ({"half_life_sec": 8.8e-06}, 1),
+        ({"lifetime_seconds": 1.2e-08}, 1),
+        ({"tau_sec": 878.4}, 1),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -611,7 +696,11 @@ def self_test() -> int:
           "plain/exponent/nested/negative form; strings, ints and bools not "
           "flagged; an f64 with a >17-digit *_str companion treated as a "
           "shadow, and one with a same-precision *_str still counted (the "
-          "laundering guard).")
+          "laundering guard); declared volatile-timing fields carved out in "
+          "every JSON type they occur as, WITHOUT silencing a real float64 "
+          "in the same witness, and physical *_sec quantities (half_life_sec, "
+          "lifetime_seconds, tau_sec) still flagged — the carve-out is a name "
+          "list, not a suffix rule.")
     return 0
 
 
@@ -697,6 +786,14 @@ def main() -> int:
         print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
               f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
               f"LP_DUAL_F64_FIELDS]")
+    if CARVED_TIMING:
+        print(f"  volatile-timing carve-out      : "
+              f"{sum(CARVED_TIMING.values()):,} field(s) in "
+              f"{len(CARVED_TIMING)} witness(es)  [NOT a precision finding — a "
+              f"wall-clock duration has no mpf source it could have lost "
+              f"digits from. Declared by name in VOLATILE_TIMING_FIELDS, never "
+              f"by a *_sec pattern: a lifetime or a decay time is seconds too. "
+              f"Bean qou-hhm3]")
     if INTEGRAL:
         print(f"  integral-valued floats         : {sum(INTEGRAL.values()):,} "
               f"field(s) in {len(INTEGRAL)} witness(es)  [NOT a precision "
