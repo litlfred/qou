@@ -513,3 +513,57 @@ about the **closure** `β̂`, is the generalisation, and `[β]_D ≥ 3` is load-
 inside its proof (*"Our assumption `[β]_D ≥ 3` and theorem 1 shows `T` is
 circular-foliated"*). The mapping-torus fact costs nothing; the closure
 statement costs the hypothesis this addendum could not reach.
+
+---
+
+## Addendum 4 — Obstruction A is two statements, not one (2026-08-25)
+
+Reading the construction rather than importing another paper, per the note this
+document ends Addendum 3 on. `mass_at_3A_proper.atom_braid_word_3A`'s docstring
+(landed today, [PR #5765](https://github.com/litlfred/qou/pull/5765)) already
+carries the decisive fact, and it is stronger than the framing everything above
+used:
+
+> *"the returned object lies in `H_n(q)` and is **NOT** in the image of
+> `rho : B_n -> H_n(q)`. … there is **NO SINGLE LINK** behind it. … So **NO
+> TOPOLOGICAL quantity may be read off it** — not a volume, not a crossing
+> number, not a genus."*
+
+Confirmed by measurement, not taken on trust
+([`computations/atom_word_braid_letter_census_probe.py`](../../computations/atom_word_braid_letter_census_probe.py),
+3 assertions):
+
+| isotope | letters | `σ` | `σ⁻¹` | averaged | `2A+1` | braid gens | branch closures |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| ²H | 23 | 11 | 7 | **5** | 5 | 18 | **32** |
+| ³He | 35 | 18 | 10 | **7** | 7 | 28 | 128 |
+| ⁴He | 47 | 23 | 15 | **9** | 9 | 38 | 512 |
+
+The averaged count is `2A+1` exactly at every `A`, and `2⁵ = 32` matches the
+SnapPy sweep's 32/32. So the docstring's substance holds.
+
+**So the question this document has been asking is malformed for the atom
+object.** "Is the short `±1` braid vocabulary forced?" presupposes a braid word;
+there is none, and no length to argue about. Obstruction A therefore splits:
+
+1. **The atom object is not a link at all** — an `H_n(q)` element outside
+   `im(ρ)`, because of `2A+1` genuinely averaged letters. Nothing topological
+   applies, and no hyperbolicity literature can, whatever its hypotheses.
+2. **The knot-dictionary carriers *are* links** — `4₁`, the Borromean rings —
+   and for them `Vol(K)` is exactly what the mass law reads. Addendum 3 answers
+   the question for these: they are below the reach of Ito's criterion, as is
+   any genuinely hyperbolic knot at that size.
+
+These had been running together. Only (2) is a statement about scale; (1) is a
+statement about *kind*, and it is the stronger of the two.
+
+### One correction to that docstring
+
+It also said *"Only the `d == 0` letters are braid generators."* Measurably
+wrong, and it points the conclusion at the wrong objects: under the module's own
+`σ⁻¹ = σ − h`, a `d = −h` letter **is** a braid generator, so ²H has 18 of them,
+not 11. The letters outside `im(ρ)` are the **averaged** ones — genuine weight-1
+sums of two monomials. Under a `d == 0` rule the figure-eight `(σ₁σ₂⁻¹)²` — the
+muon carrier, a hyperbolic **link** the mass law reads `Vol` from — would read as
+"not a braid word", i.e. conclusion (1) would leak onto exactly the objects
+conclusion (2) is about. Fixed at the docstring, with the census as its witness.
