@@ -101,7 +101,25 @@ non-comparison; 4 unjustified.**
 
 ---
 
-## Tier 2 — R1 convention C: 11 is a FLOOR, not a queue
+## Tier 2 — R1 convention C: now **9**, and it is a FLOOR, not a queue
+
+> **RE-MEASURED AGAIN 2026-08-25 after a second rebase — 11 → 9 actionable.**
+> Independently confirmed by [#5767](https://github.com/litlfred/qou/pull/5767), which
+> reports the same 9 on the merged tree. `main`'s audit has grown a
+> **`BLOCKED on C by design (registry)`** bucket, which formalises the floor/queue
+> distinction we both arrived at separately. Deliberate C-named comparisons: 50.
+> **Item 2.7 (the 269-file `braid-registry` surface) is DONE** — #5767 took it and
+> retired the directory to `computations/_deprecated/braid-registry/` with a README;
+> confirmed present on this tree after rebase.
+>
+> Two details from #5767 worth keeping, neither of which I had:
+> - **That `z` is not even convention C at a real anchor.** `z_C` at the proton pin is
+>   `0.49932033418369445`; the registry recorded `0.4993200830735895`. It is C evaluated
+>   at the **rounded `q = 1.11`** — neither pin.
+> - **A false negative in the `deliberate` flag.**
+>   `probes/markov_reduction_h3_to_h4_verify.py` declares in its own header that it is
+>   deliberately left in C as the historical record a Lean docstring cites, with a live
+>   both-conventions companion — and still counts as actionable.
 
 > **🛑 RE-SCOPED 2026-08-25.** I listed the 11 as a drain queue. [#5767](https://github.com/litlfred/qou/pull/5767)
 > independently measured **the same 11** and gives the reason it is a **floor**:
