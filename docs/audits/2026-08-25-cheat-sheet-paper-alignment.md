@@ -55,8 +55,32 @@ genuine Yekutieli derivation existing.
 
 ## G2 — Step 9a is an anchor round-trip presented as settled
 
-Recomputed: `2·(m_μ·F_Bor − 6·m_e) = 938.2720881603789027000000000000000000000000000 MeV`
-— CODATA to **~40 digits**. That is the inverted solve, not a prediction.
+> **🛑 CORRECTED 2026-08-25, same day — the "~40 digits" in this section was WRONG, and
+> it was mine.** I reported `2·(m_μ·F_Bor − 6·m_e) = 938.2720881603789027…` as matching
+> CODATA to ~40 digits. Measured at 80 dps against `codata_constants.M_P_MEV_VALIDATION =
+> 938.27208943`, that value is **−1.35 ppb away** — it is not the CODATA match, it is the
+> **de-fitted documented-pin round-trip** AGENTS.md already records as "+1.35 ppb". I
+> computed a real number and then described it as something it is not.
+>
+> **What is actually true, and it makes the point better:**
+>
+> | quantity | value | vs CODATA |
+> |---|---|---|
+> | committed witness `m_p_MeV` | `938.2720894273242637274` | **−0.00285 ppb (2.85 ppq)** |
+> | de-fitted round-trip | `938.2720881603789027` | −1.35 ppb |
+> | `m_p,can/m_e` (the **ratio**) | `1836.152673426000032` | ~**1.7e-17** vs the anchor `1836.152673426` |
+>
+> **And no MeV figure here can be verified past ~11 digits regardless of working
+> precision, because CODATA only *quotes* 11** — `m_e = 0.51099895069`,
+> `m_p = 938.27208943`. A "40-digit agreement" against an 11-digit quote is not a
+> measurable claim. The round-trip is real and tight (1.7e-17 in the ratio, where `m_e`
+> cancels); the MeV number then inherits the 11-digit quote. Nothing about the
+> anchor-round-trip conclusion changes — only the digit count, which was unverifiable as
+> stated.
+
+Recomputed: the *ratio* `m_p,can/m_e = 1836.152673426000032` against the CODATA anchor
+`1836.152673426` — agreement to ~1.7e-17 relative, because `q₀` was solved from exactly
+that ratio. That is the inverted solve, not a prediction.
 
 `mba-step09a` says so honestly (*"q₀ is pinned by solving exactly this form against
 m_p/m_e … so the identity round-trips m_p by construction"*), and the live witness marks
