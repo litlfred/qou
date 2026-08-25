@@ -232,7 +232,14 @@ def main() -> int:
             "component generates Route 75's shape field (disc 75015471937637449). The "
             "`caveat` key below -- 'a different engine setting may well do better' -- was "
             "exactly right; the headline above it was not. 11a1 (17 tets) is UNAFFECTED: "
-            "there the Groebner basis itself is the wall, not the decomposition"),
+            "there the Groebner basis itself is the wall, not the decomposition. "
+            "CONFIRMED INDEPENDENTLY by gate G7c of qbeta_route76_strategy_matrix_probe.py "
+            "(67.0 s to the same shape field, reached without reference to the above), "
+            "which localises the misattribution further: the 600s wall is the primary "
+            "DECOMPOSITION rather than the Groebner basis (GB alone lands dim 0 in 87.6 s), "
+            "and it is CLASS-SPECIFIC -- minAssGTZ finished class 0 in 312 s, inside this "
+            "gate's own 600 s budget. So this gate did not measure an unreachable manifold; "
+            "it measured a slower CLASS and recorded the result against the MANIFOLD"),
         "claim": "MEASURED REACH OF THESE TWO SETTINGS. [HEADLINE SUPERSEDED -- see "
                  "SCOPE_CORRECTED; the measurements stand, the method-level conclusion "
                  "does not.] Garoufalidis-Goerner-"
