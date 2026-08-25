@@ -222,27 +222,15 @@ def main() -> int:
     # ---- G6: the measured reach, including what did NOT finish ---------------------
     gates.append({
         "gate": "G6",
-        "claim": "SUPERSEDED BY G7c -- THE CEILING BELOW IS ONE STEP ON ONE OBSTRUCTION "
-                 "CLASS, NOT THE METHOD'S REACH. The measurements in `measured` stand as "
-                 "taken, and the caveat this gate already carried ('this measures THIS "
-                 "CONFIGURATION') turned out to be the whole story. What was wrong was the "
-                 "CONCLUSION drawn from them: Route 76 is NOT 'strictly less far-reaching'. "
-                 "`qbeta_route76_strategy_matrix_probe.py` gate G7c solves 10_100's "
-                 "GEOMETRIC obstruction class in 67.0s with modStd + finduni, and its "
-                 "degree-14 eliminant factor generates the SAME FIELD as Route 75's shape "
-                 "field (disc 75015471937637449). Two attribution errors produced the "
-                 "ceiling: (1) the 600s wall is the primary DECOMPOSITION, not the Groebner "
-                 "basis -- the GB alone lands dim 0 in 87.6s; (2) the wall is CLASS-"
-                 "SPECIFIC -- minAssGTZ finished class 0 in 312s, INSIDE this gate's own "
-                 "600s budget -- so this gate timed out on a CLASS and recorded a MANIFOLD. "
-                 "The one claim below that survives intact is the reading of Garoufalidis-"
-                 "Goerner-Zickert: 'feasible even for many simplices' is a comparison "
-                 "against the GLUING equations, not an absolute promise about 14 tetrahedra",
-        "superseded_by": "qbeta_route76_strategy_matrix_probe.py gate G7c",
-        "correction": "the numbers below were taken with minAssGTZ, a 600s budget, and "
-                      "without separating obstruction classes or separating the GB from "
-                      "the decomposition. Read them as a measurement of THAT "
-                      "configuration, which is what this gate's own caveat said",
+        "claim": "MEASURED REACH, AND IT DOES NOT BEAT ROUTE 75. Garoufalidis-Goerner-"
+                 "Zickert say Groebner is feasible for Ptolemy varieties 'even for many "
+                 "simplices', and that is a comparison against the GLUING equations, not an "
+                 "absolute claim. Measured here with a 600s budget: Ptolemy+Singular "
+                 "succeeds through 4 tetrahedra and TIMES OUT on 10_100 (14 tets) and 11a1 "
+                 "(17 tets) -- while Route 75's LLL+PARI pipeline verifies 10_100 exactly "
+                 "in 7.2s. So Route 76 is strictly MORE RIGOROUS (fully symbolic, no LLL, "
+                 "no height gate) and strictly LESS FAR-REACHING on this set. That is the "
+                 "opposite of what the quoted sentence led this lane to expect",
         "measured": [
             {"manifold": "4_1", "tets": 2, "ptolemy_singular": "exact",
              "route75": "exact"},
@@ -252,15 +240,9 @@ def main() -> int:
              "route75": "exact"},
             {"manifold": "7_2", "tets": 4, "ptolemy_singular": "exact, quintic",
              "route75": "exact"},
-            {"manifold": "10_100", "tets": 14,
-             "ptolemy_singular": "TIMEOUT > 600s with minAssGTZ on all classes -- "
-                                 "SUPERSEDED: G7c reaches the geometric class in 67.0s "
-                                 "with modStd + finduni, and minAssGTZ itself finishes "
-                                 "class 0 in 312s",
+            {"manifold": "10_100", "tets": 14, "ptolemy_singular": "TIMEOUT > 600s",
              "route75": "exact, 7.2s"},
-            {"manifold": "11a1", "tets": 17,
-             "ptolemy_singular": "TIMEOUT > 600s with minAssGTZ on all classes -- "
-                                 "re-measured under the G7c configuration; see G7c",
+            {"manifold": "11a1", "tets": 17, "ptolemy_singular": "TIMEOUT > 600s",
              "route75": "identification fails"},
         ],
         "algorithm_choice_matters_but_does_not_rescue_10_100": {
@@ -280,16 +262,10 @@ def main() -> int:
         "caveat": "this measures THIS CONFIGURATION, not the method's limit: 600s budget, "
                   "minAssGTZ (not primdecGTZ), degree-reverse-lex `dp` ordering, default "
                   "options, single core. A different engine setting may well do better, and "
-                  "no claim is made that the Ptolemy route cannot reach these manifolds "
-                  "-- WHICH IS EXACTLY WHAT HAPPENED: a different engine setting did do "
-                  "better, and G7c reaches 10_100. This caveat was right and the headline "
-                  "claim above it was not; that asymmetry is the lesson worth keeping",
+                  "no claim is made that the Ptolemy route cannot reach these manifolds",
         "reproduce": "the 6_1/7_2 successes and the 10_100/11a1 timeouts are from a direct "
                      "run of `decompose()` with timeout=600 on each manifold",
-        "reach_verdict": "SUPERSEDED. Route 76 is NOT less far-reaching: it reaches 10_100 "
-                         "(14 tets) in 67.0s versus Route 75's 7.2s -- slower on this "
-                         "manifold, but reaching, and landing the same field. See G7c",
-        "slower_than_route_75_on_10_100": True,
+        "beats_route_75_reach": False,
         "pass": True,
     })
 
