@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-24T18:13:35Z
+updated_at: 2026-08-25T19:40:40Z
 ---
 
 
@@ -656,3 +656,106 @@ keep-on-muon set is therefore:
 The two silent ones are the strongest argument for the WitnessBuilder fix
 proposed in qou-aj91: make `.q0Value` report the anchor the PAYLOAD used, and
 the silent class stops being silent.
+
+
+## 2026-08-25 — re-measured end to end. Not done; the blocker moved.
+
+Asked directly: "has all pinning moved from muon to proton, except where
+explicitly indicated as muon?" Answer: **no**, and the residue is not where the
+earlier entries in this bean expected.
+
+### Declaration side — essentially migrated
+
+    manifest physical_proton   651
+    manifest ideal_muon         35
+    manifest ambiguous          17
+    Q0_FLIP                      0   (no witness contradicts its own stamp)
+
+An unlisted producer resolves proton by default, so the default is now right.
+
+### Payload side — 424 witnesses still carry a muon-family q0
+
+`computations/audits/q0_muon_population_partition.py`, live:
+
+    current muon  1.109978595557334...   144
+    OLD muon      1.109978595554180...   261   <- superseded pin, stale on its own terms
+    both (comparison)                      5
+    rounded / low-precision               14
+    TOTAL                                424
+
+**The 261 dominate and are a different defect from the 144.** A grep for the
+13-digit prefix `1.109978595557` matches only the current value and reports
+~150 — I did exactly that before running the partition script, and it hid
+almost two thirds of the population. Do not prefix-grep this.
+
+### The real blocker is not the 424 — it is the ~1645 unstamped
+
+`computations/audits/q0_anchor_consistency_audit.py`, live:
+
+    Q0_OK                970
+    Q0_ANCHOR_MISSING   1645
+    Q0_AUDIT_EXEMPT       80
+    Q0_INDEPENDENT        49
+    Q0_FLIP                0
+
+For a **majority** of the corpus nothing records which pin was used, so nothing
+can verify it. `Q0_FLIP = 0` is therefore much weaker than it reads: it says no
+*stamped* witness contradicts itself, over a set that is 35 % of the whole.
+
+This inverts the sequencing in Step 2 above. Regenerating witnesses before they
+are stamped produces files that are migrated and still unverifiable — and per
+`undeclared_muon_pin_flip_risk_audit.py` the regeneration itself *drops* the
+stamp for an unlisted producer, so a re-run can move the pin and delete the
+evidence in one step. **Stamping (definition-of-done item 2) should come before
+regeneration (item 1), not after it.** That is a judgement, not a finding.
+
+### At-risk set, draining
+
+`undeclared_muon_pin_flip_risk_audit.py`: **35** witnesses assert
+`q0Anchor: muon` from a producer that would now resolve proton, against a
+baseline of 40. Assertion 2 still holds — zero witnesses carry the muon
+`q0Value` with no `q0Anchor`, so `q0Value` remains the correct discriminator.
+
+### Code side still straddles
+
+`q0_producer_pin_classifier.py`, of 146 undeclared producers carrying pinned
+witnesses: 68 proton, 27 muon, 41 none, **9 BOTH** (straddle candidates, never
+auto-proposed), 1 missing-producer. Three disagree with their own witness:
+`alpha_em_channel_swap_involution_probe` and `gram_matrix_seminormal_h6`
+(code muon, witness proton), `rho_k_h3a_residual_decomposition` (code proton,
+witness muon).
+
+### The keep-on-muon carve-out is mostly undocumented
+
+Of the 35 `ideal_muon` stems this bean justifies 7 (3 refuse / 2 straddle /
+1 anchor / 1 both-pins). **13 of the rest carry no anchor rationale in their own
+source at all** — split into those the manifest actually re-pins (5, via
+`q_parameter`) and those where it is decorative because they read the
+anchor-defining witness directly (7, `qou-aj91` mechanism 5), plus 1 behind
+`qou-dkm2`. Broken out with the two measured false positives in **`qou-bypn`**.
+
+Method note: all four audits write witnesses as a side effect;
+`computations/` was restored after each run, so this entry changed no numbers.
+
+### Re-verified 2026-08-25 on a 31-commit-newer `main` (pre-merge rebase)
+
+Every figure above reproduced **except one, and the exception is the point**:
+
+    ideal_muon / physical_proton / ambiguous   35 / 651 / 17   unchanged
+    muon-family partition  144 / 261 / 5 / 14 = 424            unchanged
+    at-risk (asserts muon, resolves proton)    35 vs baseline 40  unchanged
+    Q0_OK                                      970             unchanged
+    Q0_ANCHOR_MISSING                          1641 -> 1645    +4
+
+**Four more unstamped witnesses landed in 31 commits, in one afternoon.** The
+unstamped population is not a fixed backlog being worked down — it grows with
+ordinary merges, because nothing gates a new witness on carrying its pin. That
+is a stronger argument for stamping-before-regeneration than the static count
+was: regeneration drains a set that is being refilled upstream of it.
+
+The figures above are stamped to a commit for exactly this reason. Re-run the
+three audits rather than quoting them; on this corpus the shelf life is hours.
+
+Sibling interaction: PR #5755 migrates `aoperator_a5_crosscheck` off
+`ideal_muon`. It is still listed on `main`, so 35 is right today and becomes 34
+when that lands. It is **not** one of `qou-bypn`'s 13 — that list is unaffected.

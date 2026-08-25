@@ -1,11 +1,11 @@
 ---
 # qou-t1kv
 title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T19:06:14Z
+updated_at: 2026-08-25T19:42:33Z
 ---
 
 ## The defect
@@ -255,3 +255,64 @@ inductions carry m+1 < n, NOT the m < n a naive reading suggests.
 HeckeGenerators.sigma_inv / mul_sigma_inv / sigma_inv_mul are DERIVABLE from the
 Hecke relation (hecke_mul_sub_eq_one). Removing them touches every downstream
 instance -- wants its own scoped pass, not a rider on this one.
+
+
+## THETA TIE-IN DONE (2026-08-25, PR #5786) -- only jmRaw_comm remains
+
+    fullTwistB_smul_eq_theta_sq   twist acts by theta_lambda^2
+    twistB_scalar_eq_theta_sq     that scalar is PINNED
+    stdTwo_fullTwist_eq_one       (s0 s1)^3 = 1, direct matrix computation
+    stdTwoBelow3_twist_eq_theta_sq   the routes agree
+
+prod_jmEigen NEEDED NO PORT AT ALL -- it mentions no HeckeGenerators, being a
+statement about the eigenvalue function and the combinatorics of `cells`. Only the
+two theorems touching a presentation moved. Check what a lemma quantifies over
+before assuming it needs redoing.
+
+FALSIFIABILITY: c((2,1)) = 0+1-1 = 0, so theta^2 = 1 -- the full twist of B_3 is
+PREDICTED to act trivially. Confirmed by an independent route: (s0 s1)^3 = 1 from
+the matrices alone, no JM input. Same check HeckeSeminormalWeight runs for the
+one-row block, now on a 2-dim block the unbounded class cannot host.
+
+### REMAINING SCOPE OF THIS BEAN IS NOW EXACTLY ONE ITEM
+jmRaw_comm (JM commutativity). Machinery: HeckeTranspositionExpansion (562) +
+HeckeJucysMurphyCommutation (263) + HeckeJucysMurphyAdjacentNormalForm (210) =
+~1035 lines. NOT attempted. Both headline results (the dim>1 IsJMWeight witness
+and the twist) landed WITHOUT it, so whether it is worth porting is a genuine
+open judgement call, not an obvious yes.
+
+
+## jmRaw_comm PORTED — every item of this bean is now done (2026-08-25, PR #5791)
+
+    jmRawB_comm              L_i L_k = L_k L_i for all i, k < n
+    stdTwoBelow3_jmRaw_comm  ...on the 2-DIMENSIONAL (2,1) rep of H_3(q)
+    jmRaw_comm_of_below      recovers the unbounded theorem via the downcast
+
+634 lines / 35 decls / 3 files, all sorry-free.
+
+### CORRECTION to my own scoping, twice over
+I said "~1035 lines across three files". The chain is LINEAR and has FIVE files
+(1305 lines) -- it also includes HeckeJucysMurphyReduction (115) and
+HeckeAdditiveJucysMurphy (155). But the port needed only 634, because jmRaw_comm
+is NOT proved directly: HeckeTranspositionExpansion identifies L_k = 1 + A_k and
+does the work on the ADDITIVE side. HeckeJucysMurphyCommutation and
+HeckeJucysMurphyReduction are an EARLIER, SUPERSEDED route (the one that stayed
+conditional on the adjacent case) and are not on the path at all.
+
+Surface larger than I said; work smaller. Trace the actual proof before quoting
+either number.
+
+### The bound findings
+- FINAL BOUND IS THE NATURAL ONE: i < n and k < n, exactly the well-formedness
+  condition for L_i. No slack -- the sign the bounds are right.
+- sigma_comm_transpB_far bounds a DIFFERENT index than its statement's i (it is m,
+  the outside generator, that must exist). A uniform i < n would be silently wrong.
+- sigma_comm_partialSumB_ne is the only lemma needing TWO bounds; it splits on
+  j < m vs j > m and the branches constrain different indices.
+- SIX lemmas across the whole port need NO bound at all, including the sum
+  expansion A_k = d.sum T_(i,k) -- the conceptual heart of Jucys's argument does
+  not touch the Hecke presentation.
+
+### THIS BEAN IS COMPLETE pending the merge of #5791
+#5766 obstruction proved; #5778 bounded class + dim>1 IsJMWeight witness; #5786
+theta tie-in; #5791 JM commutativity. Close on merge.

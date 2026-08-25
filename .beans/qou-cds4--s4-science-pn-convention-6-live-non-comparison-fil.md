@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T17:21:49Z
+updated_at: 2026-08-25T19:40:39Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -235,3 +235,32 @@ tightened to 1e-9. Verified two ways: the deuteron closed form moves off the
 colour-blind value `qou-4e5k` names as wrong onto that bean's bridge/peel value,
 and this file's closed-form and transfer paths now agree to 15 figures where
 they disagreed by 1.5e-4.
+
+
+## Item-2 adjudication 2026-08-25 (PR #5783): 6 -> 5 baselined
+
+`binding_combiner_markov_peel_fallback` MIGRATED to canonical. Its stated
+blocker — *'a numeric δ cannot be represented as an exact polynomial in the
+formal symbol q, so the exact-symbolic trace path can only carry the
+colour-blind averaged crossing'* — is refuted twice:
+
+1. δ(q) = (q−1)²(1−q⁻⁴)/3, so the weighted shift is the exact RATIONAL function
+   (q²−1)(−6q⁴+(q−1)²(q⁴−1))/(12q⁵), evaluating at q₀ to −0.10445824776972629,
+   matching the numeric route to 15 digits. The claim demands a POLYNOMIAL; the
+   requirement is rational, and the path already carries h = q − 1/q.
+2. `markov_peel` has carried it all along via `word_to_element` /
+   `crossing_from_cd` (qou-8zjd).
+
+Verified by prediction stated in advance: D |tr_atom| 0.57509087 -> 0.57517224,
+the qou-4e5k peel value; and B(D), B(4He) now match `binding_canonical`'s
+#5767 values exactly. Two paths that disagreed, agreeing, neither tuned.
+
+**Remaining 5, adjudicated:**
+- `binding_bring_enhancement_compare` — LEGITIMATE, verified: computes BOTH
+  conventions and reports the delta.
+- `closed_form_tau_M_verification_phase5q` — LEGITIMATE: its slow path is
+  *bound* to chi_lambda_braid via `marshal_to_chi_lambda_braid`, so pinning the
+  closed form there is what preserves the verification.
+- `_habiro_coefficient_extract` ×2 and `atomic_tr_m_helium4_canonical` — THIS
+  BEAN'S TRANCHE, still open. The ⁴He one is a ~17 % move in tr_M(⁴He) and is
+  coupled to the Phase-5q slow path; not a rename.
