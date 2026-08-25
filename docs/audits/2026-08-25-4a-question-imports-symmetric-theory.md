@@ -20,9 +20,9 @@ mis-posed, and re-posing it changes what an agent should go and read.
 This does **not** re-open any excluded route, and it is **not** an exclusion.
 See §4.
 
-## 1. QOU is non-symmetric, by its own definition
+## 1. QOU is non-symmetric — now proved, not just asserted
 
-Not an inference — the corpus says it in as many words:
+The corpus already said so in prose:
 
 - [`qou-definition-intro.md`](../content/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md):
   *"the **non-symmetric braiding** provides a canonical well-ordering on the
@@ -33,6 +33,33 @@ Not an inference — the corpus says it in as many words:
 
 The non-symmetry is not incidental. It is load-bearing: it is what the arrow of
 time is derived from.
+
+**As of this branch it is also a theorem**, which matters because the whole
+argument below turns on it. Prose can be revised; a proof cannot be revised by
+inattention.
+
+| declaration | statement |
+|---|---|
+| `QOU.Eightfold.HeckeBraidingNonSymmetric.hecke_rel_iff_factored` | the AGENTS.md §7a convention `(σ − q)(σ + q⁻¹) = 0` and the quadratic `σ² = (q − q⁻¹)σ + 1` are the same relation (needs `q ≠ 0`) |
+| `QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff` | **the gate** — an element satisfying the Hecke relation has `σ² = 1` **iff** `q² = 1`. Both directions, so it is not a one-sided bound |
+| `QOU.Archimedean.HeckeBraidingSubstrateNonSymmetric.q_gt_one_double_braiding_ne_one` | at any real `q > 1` the double braiding is not the identity |
+
+Symmetry of a braiding is triviality of the double braiding. So the substrate's
+non-symmetry is **forced** by the Hecke relation together with `q₀ ≈ 1.10998 > 1`
+— it is a consequence, not a stipulation, and it would fail only at `q² = 1`.
+
+Verified `lean`-direct against the real Mathlib import cone, exit 0 on both
+files, zero `sorry`, and `#print axioms` on all three declarations gives only
+`propext`, `Classical.choice`, `Quot.sound`. Split across two files per §7c —
+the gate is wall-side over a generic field and mentions no ordering; `ℝ` enters
+only in the archimedean file.
+
+**Scope, stated plainly.** These theorems are about an element `σ` of an algebra
+satisfying the Hecke relation. That the QOU braiding *is* such a `σ` is the
+corpus's Hecke–Skein convention (AGENTS.md §7a), consumed as a hypothesis and
+**not** established here. And nothing in them excludes `SU(3)` from the
+framework — they establish the hypothesis under which the symmetric machinery
+does not apply, and stop there.
 
 ## 2. The band machinery is the symmetric theory
 
