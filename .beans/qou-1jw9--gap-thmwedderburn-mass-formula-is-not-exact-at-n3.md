@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T16:36:44Z
+updated_at: 2026-08-25T16:37:08Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -446,3 +446,19 @@ tolerance touched.
 
 STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; only CAL-1/2/3
 admissible; sign agreement is one bit.
+
+
+=== RETRACTION carried into this bean, 2026-08-25 ===
+
+Item 1 above still reads 'ITS WITNESS NEVER EXISTED'.  THAT IS FALSE and is
+retracted.  atom-mass-complete-wedderburn.witness.json was added 2026-04-10 in
+1359fe23ac under folio-assistant/computations/ and left the tree with the
+platform code in the miga migration.  All three 'lost' witnesses recover the
+same way; it is a repo-split class, not three accidents.  The searches that
+missed it (mine and the 2026-07-12 audit's) looked under computations/ only --
+search by BASENAME across all refs, and note a shallow clone can manufacture
+false 'never existed' verdicts but never false 'exists' ones.
+
+So the table DOES have a producer.  What section 3a establishes is that the
+producer is not the published formula -- which is the stronger finding, not a
+weaker one.
