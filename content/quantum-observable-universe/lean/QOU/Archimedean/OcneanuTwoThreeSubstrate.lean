@@ -50,6 +50,17 @@ theorem qb_pos (hq : 1 < q) {m : ℕ} (hm : m ≠ 0) : 0 < qb q m := by
       rw [inv_lt_one_iff₀]; right; exact hq
     linarith
 
+/-- **Positivity of the canonical balanced `q`-integer at `q > 1`.**
+
+Stated on `QOU.QInteger.qIntBal` rather than on the local `qb`, at the request
+of the agent working bean `qou-qint` (PR #5746): the canonical module is generic
+over a field and so carries no ordering — correctly, per §7c — which leaves
+positivity genuinely absent from it. This is the right side of the wall for it,
+and `qIntBal` is the right object to say it about. -/
+theorem qIntBal_pos (hq : 1 < q) {m : ℕ} (hm : m ≠ 0) :
+    0 < QOU.QInteger.qIntBal q m := by
+  rw [← qb_eq_canonical]; exact qb_pos hq hm
+
 /-- **The exclusion, proved.** At any real `q > 1` — the substrate sits at
 `q₀ ≈ 1.10998` — the `N = 2` and `N = 3` Ocneanu weight ratios are different.
 

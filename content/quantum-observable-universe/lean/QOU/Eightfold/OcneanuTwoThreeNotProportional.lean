@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.Eightfold.OcneanuTwoThreeNotProportional — the `N=2` and `N=3` weight ratios differ
@@ -52,8 +53,22 @@ namespace QOU.Eightfold.OcneanuTwoThreeNotProportional
 variable {R : Type*} [Field R]
 
 /-- The balanced `q`-integer `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`, the convention in
-which `[2]_q = q + q⁻¹` (AGENTS.md §7aa). -/
+which `[2]_q = q + q⁻¹` (AGENTS.md §7aa).
+
+> **This duplicates the canonical `QOU.QInteger.qIntBal`** and is kept only so
+> the proofs below can `simp [qb]` down to the literal body, exactly as
+> `QOU.BraidKnot.AJTrefoil.qInt` is kept for the same reason. The consolidation
+> is the equation `qb_eq_canonical` immediately below: same function, one
+> canonical meaning, no proof touched. Flagged on PR #5746 by the agent working
+> bean `qou-qint`, which is actively bridging duplicate `q`-integer definitions
+> — this file was written without checking for one, and would otherwise have
+> been another. -/
 noncomputable def qb (q : R) (n : ℕ) : R := (q ^ n - (q ^ n)⁻¹) / (q - q⁻¹)
+
+/-- **The consolidation.** `qb` is the canonical balanced `q`-integer. The two
+bodies differ only by `q⁻¹ ^ n` versus `(q ^ n)⁻¹`, which `inv_pow` identifies. -/
+theorem qb_eq_canonical (q : R) (n : ℕ) : qb q n = QOU.QInteger.qIntBal q n := by
+  simp [qb, inv_pow]
 
 /-- The `q`-bracket denominator is nonzero exactly when `q² ≠ 1` — which is, by
 `QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff`, exactly

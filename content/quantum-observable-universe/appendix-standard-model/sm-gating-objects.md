@@ -1,7 +1,7 @@
 The Standard Model's open parameters are not independent problems. Tracing each
-blocker backwards, they funnel into **three** missing objects. This is the most
-useful structural fact about the framework's Standard-Model surface, and it is
-what determines where effort is worth spending.
+blocker backwards, they funnel into **three** missing objects. Closing any one
+of them would move a whole family of parameters at once, which is what makes the
+grouping worth stating rather than listing the parameters individually.
 
 ## A three-dimensional flavour object
 
