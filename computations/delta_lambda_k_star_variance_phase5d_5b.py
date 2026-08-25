@@ -126,7 +126,15 @@ def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
     word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
     try:
         return float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
-    except Exception:
+    except ImportError:
+        # An absent dependency is an ENVIRONMENT failure, never a vanishing
+        # character. Swallowing it here silently zeroes every weight, which
+        # drives Z_norm -> 0, B_pred -> 0 and the variance -> inf while the
+        # run still reports "all assertions passed". Fail loudly instead.
+        raise
+    except Exception as exc:  # genuine numerical failure at this (λ, word)
+        print(f"  WARN: chi_lambda_braid failed at lam={lam}: "
+              f"{type(exc).__name__}: {exc} -> treating as 0")
         return 0.0
 
 
@@ -205,7 +213,10 @@ def main() -> int:
         chi_dict = {}
         for entry in d.get("atom", {}).get("by_partition", []):
             lam = tuple(entry["partition"])
-            chi_dict[str(list(lam))] = entry["chi_lambda"]
+            # `chi_lambda` is serialised as a 50-dps decimal STRING (the repo's
+            # serialization discipline); parse it with mpf, not float, so the
+            # full precision survives the read.
+            chi_dict[str(list(lam))] = mp.mpf(str(entry["chi_lambda"]))
         chi_data[atom] = {"Z": Z, "N": N, "n": n, "B_AME": B_AME, "chi": chi_dict,
                           "n_partitions": len(chi_dict)}
         print(f"  {atom}: H_{n}, {len(chi_dict)} partitions loaded")
