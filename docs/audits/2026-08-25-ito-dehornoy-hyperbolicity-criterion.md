@@ -217,3 +217,73 @@ currently uses satisfies Ito's hypothesis, maximum floor 1 against a required
 about the mass law. And since the floor is **not** a conjugacy invariant —
 Ito's own example, reproduced above — these are statements about *these words*,
 not about the link types they close to. Obstruction A is untouched.
+
+---
+
+## Addendum 2 — the short-word vocabulary is load-bearing
+
+Probe: [`meson_braid_length_cap_probe.py`](../../computations/meson/meson_braid_length_cap_probe.py)
+(witness `meson-braid-length-cap.witness.json`, 3 assertions, all passed).
+
+The addenda above leave one question: two independent hypotheses from this
+literature are unreachable by the corpus's braid words — is that because nobody
+has written a long enough candidate, or because the framework forbids one?
+
+**It forbids one.** Crossing number here is not a free parameter; it is a
+**quantum number**.
+
+`QOU/ParticleInteractions/WeakIsospinT3Grading.lean` (sorry-free) fixes
+`signedWrithe` at `up 3, charm 5, top 7` and defines
+`genWinding = |signedWrithe|`, noting it *"reproduces the corpus `T(2,n)`
+indices `{3,5,7}`"*. And
+[`lepton-meson-torus-knot-dictionary-proof.md`](../../content/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof.md)
+gives a meson's crossing number as the **sum of its two constituent windings**:
+
+> `K`: `ūs = 3 + 5 = 8` crossings · `η, φ`: `ss̄ = 5 + 5 = 10` crossings
+
+That arithmetic reproduces the written braid: `𝔐 = (σ₀σ₁)²σ₁σ₀` is 6 crossings,
+and the pion is `ūd = 3 + 3 = 6`. `T(2,9)` is the **gluon** — the genus-4
+saturating force carrier — not a quark generation, so 9 is unavailable as a
+constituent.
+
+**So a meson braid is capped at `t̄t = 7 + 7 = 14` crossings.**
+
+### Which floors are reachable at that length
+
+| word length | words tested | max floor found | mode |
+|---:|---:|---:|---|
+| 5 | 1 024 | 1 | exhaustive |
+| 7 | 16 384 | 1 | exhaustive |
+| 10 | 40 000 | 2 | sampled |
+| **14** — the meson cap | 40 000 | **2** | sampled |
+| 18 = `Δ⁶` | — | **3** | the threshold |
+
+**Floor 3 is not reachable at the cap.** So Ito's Theorem 2 cannot apply to
+*any* meson braid this framework admits — not for want of a candidate, but
+because the crossing number is bounded by the winding sum. The same ceiling is
+why Giambrone's family excludes the corpus's carriers.
+
+### Scope, and what would overturn it
+
+**(a) — on a search plus a corpus premise.** Claimed: no `B₃` word of length
+≤ 14 was *found* with floor 3, exhaustively to length 7 and by 40 000-word
+sampling beyond; and the corpus's own arithmetic caps a meson at 14 crossings.
+
+**Not claimed:** that no such word *exists* — beyond length 7 this is sampling,
+not enumeration. That the cap is a theorem — *"crossing number = sum of
+constituent windings"* is the corpus's stated construction, taken as given and
+not re-derived here. And the floor is not a conjugacy invariant, so this is
+about **words**.
+
+**What would overturn it:** a meson whose braid is not the winding sum; a
+fourth generation winding above 7; or an exhaustive search at lengths 8–14
+turning up a floor-3 word.
+
+### What it settles for the front
+
+The closed-3-braid geometric literature is built for **complex** braids — long
+syllables, high Dehornoy floor. This framework structurally cannot supply one
+in the meson sector. That is a statement about **applicability**, not about
+whether Obstruction A is soluble: it stays open, with one fewer route worth
+importing. A tool for Obstruction A has to work on **short** braids, and none
+of the three papers ingested today is one.
