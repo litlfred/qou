@@ -82,6 +82,18 @@ Three candidate innocent explanations, all foreclosed:
   seven — computed precision. `beta3` carries **three**, the precision of a
   typed constant.
 
+## Convention-independence
+
+Worth stating explicitly, because `main` is mid-migration from the Markov
+convention C to D and a future reader will ask which frame this was measured in:
+**neither**. The comparison holds `Φ₁`, `Φ₂` and `Φ₃` fixed at the producer's
+recorded values and varies only the third coefficient, so whatever convention
+those invariants were computed under is common to both sides and cancels exactly.
+The probe contains no Markov parameter at all — its only occurrence of the word
+"convention" is a comment naming the `q₀` anchor. The 20/20-versus-0/20 result is
+therefore unaffected by the convention-D cascade, and re-deriving the table under
+D would not change it.
+
 ## What this settles, and what it leaves to the author
 
 **Settled.** The published block states *"All quantities are derived from `q₀`
