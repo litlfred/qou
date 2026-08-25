@@ -1,11 +1,11 @@
 ---
 # qou-nxxw
 title: free-neutron-decay.py writes its witness relative to CWD, so re-runs silently orphan at the repo root
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-25T02:06:23Z
-updated_at: 2026-08-25T02:27:34Z
+updated_at: 2026-08-25T02:40:52Z
 ---
 
 ## What
@@ -152,3 +152,25 @@ only, so an f-string name is invisible.
     probes/zeta4_zeta8_habiro_gluing_probe
 
 One line each, four clusters, each wanting re-run evidence. Own branch.
+
+
+## CLOSED 2026-08-25 — all 17 sites fixed, audit reports 0
+
+    bare-name form (orphans on EVERY run)   1  -> 0   free-neutron-decay.py
+    root-relative form (orphans off-root)  16  -> 0   sweep 0ac393f5440
+    audit                                             computations/audits/cwd_relative_witness_write_audit.py
+
+Behaviour-preserving by construction: from the repo root old and new paths
+resolve to the same file. Verified end to end on `neutrino_mass_volume_exclusion`
+-- from the root, witness byte-identical; from /tmp/cwdtest, zero files created
+there and the tracked witness untouched.
+
+Two traps, both caught by tooling rather than by inspection:
+`hecke/hecke_engine.py` needed `_HERE_W.parent /` (its target is one level UP),
+and a line-based edit silently did 9 of 16 because seven targets are split
+across source lines. Fixed with exact AST-span replacement.
+
+Standing blind spot, unchanged and stated in the audit docstring: LITERAL
+targets only, so an f-string name is invisible. The one known instance is
+correct anyway (`chi_at_q0_via_hoefsmit_mpfr.py`, `HERE /`-based, hash tag
+deliberately quarantines a non-anchor cache).
