@@ -27,19 +27,30 @@ level-`r` Markov parameter is *definitionally* `q · z_D`.  So every statement p
 `r` specialises back to a statement about the object PR #5575 proved things about, rather than to a
 lookalike.
 
-## What is NOT here
+## Branching at general `r` — proved downstream, not here
 
-**Branching at general `r`.**  The two-row branching identity of `OcneanuWeightBranching` rests on
+**Status corrected 2026-08-24 (bean `qou-4a68`).**  This section previously recorded general-`r`
+branching as an open item on bean `qou-j7ln`.  It is **proved, sorry-free**, in the files that
+import this one:
+
+* `BranchingGenericity.sum_schurPrincipal_addCellOrSelf` — the identity itself,
+  `∑_{s addable to μ} s_{μ+s}(1, …, Q^{r−1}) = [r]_Q · s_μ(1, …, Q^{r−1})`;
+* `AddableCellIndexing.sum_addable_wenzlWeight` — the same for the normalised weight, in the
+  addable-cell subtype indexing the corner exchange hands over;
+* `WenzlNormalisation.sum_addable_wenzlWeight_all` — with the row-count hypothesis removed.
+
+The pessimism this section used to record was about a *route*, and the route was avoidable.  That identity is Pieri's rule
+at the principal specialisation — Orellana's Lemma 5.1 `[orellana1998]`, proved there by the
+Littlewood–Richardson rule on the integer-level lattice `Q = −q^{r₁+m}` followed by rational
+continuation — and neither half is in Mathlib.  The proof that landed does not go through either:
+it works directly from `schurPrincipal_addCell_eq`'s per-row β-factor form, with the four
+non-vanishing side conditions all derived from the single `hgen`.  So "not in Mathlib" was true and
+"therefore open here" did not follow.
+
+What remains true is the reading of the two-row case: `OcneanuWeightBranching` rests on
 `schurPrincipal_twoRow`, a closed form that exists because the hook-content product *telescopes* for
-a two-row diagram.  At general `r` there is no such telescoping and the identity
-
-`∑_{s addable to μ} s_{μ+s}(1, …, Q^{r−1}) = [r]_Q · s_μ(1, …, Q^{r−1})`
-
-is **Pieri's rule at the principal specialisation** — Orellana's Lemma 5.1 `[orellana1998]`, proved
-there by the Littlewood–Richardson rule on the integer-level lattice `Q = −q^{r₁+m}` followed by
-rational continuation.  Neither half is in Mathlib.  It is not stated here as a `sorry`, because a
-`sorry` in this file would be indistinguishable from a proved lemma to every consumer; it is tracked
-as an open item on bean `qou-j7ln`.
+a two-row diagram, and there is no such telescoping at general `r`.  The general-`r` proof replaces
+the telescoping with the β-factor identity rather than recovering it.
 
 ## Base ring (§7c)
 
@@ -75,6 +86,23 @@ theorem one_sub_pow_eq_mul_levelBracket (r : ℕ) (Q : R) :
       simp [levelBracket, Finset.sum_range_succ]
     rw [hstep, mul_add, ← ih]
     ring
+
+/-- A `Q` that is not a root of unity is not `1`. -/
+theorem ne_one_of_gen {Q : R} (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) : Q ≠ 1 :=
+  fun h => hgen 1 one_ne_zero (by rw [h]; simp)
+
+/-- **The level bracket is nonzero under genericity.**
+
+`[r]_Q = 0` would make `1 − Q^r = (1 − Q)·[r]_Q` vanish, i.e. `Q^r = 1` with `r ≠ 0`.  So the `hbr`
+side condition carried separately through the level-`r` chain is *implied* by `hgen`, and the chain
+runs on one genericity assumption rather than two. -/
+theorem levelBracket_ne_zero_of_gen {Q : R} {r : ℕ}
+    (hgen : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1) (hr : r ≠ 0) : levelBracket r Q ≠ 0 := by
+  intro h
+  have h1 : (1 : R) - Q ^ r = (1 - Q) * levelBracket r Q :=
+    one_sub_pow_eq_mul_levelBracket r Q
+  rw [h, mul_zero, sub_eq_zero] at h1
+  exact hgen (r : ℤ) (by exact_mod_cast hr) (by rw [zpow_natCast, ← h1])
 
 /-! ## The normalised weight -/
 
@@ -128,6 +156,37 @@ theorem wenzlMarkovParam_eq (r : ℕ) (Q : R) (hbr : levelBracket r Q ≠ 0) (hQ
     Q ^ r * (1 - Q) / (1 - Q ^ r) = Q ^ r / levelBracket r Q := by
   rw [one_sub_pow_eq_mul_levelBracket r Q]
   field_simp
+
+/-! ## Recovering the level from the parameter -/
+
+/-- Wenzl's parameter relation holds at `z_W = Q^r / [r]_Q`, in the denominator-cleared form
+`QBeta.WenzlWeight.level_unique_of_markovParameter` consumes. -/
+theorem wenzlMarkovParam_spec {Q : R} {r : ℕ} (hbr : levelBracket r Q ≠ 0) :
+    Q ^ r / levelBracket r Q * (1 - Q ^ r) = Q ^ r * (1 - Q) := by
+  rw [one_sub_pow_eq_mul_levelBracket r Q]
+  field_simp
+
+/-- **Equal level-`r` Markov parameters force equal levels.**
+
+The `q` of `z_r = Q^r/(q·[r]_Q)` is the Hecke-normalisation shift; clearing it lands on Wenzl's
+`Q^r/[r]_Q`, where `level_unique_of_markovParameter` applies. -/
+theorem level_unique_of_wenzlMarkovParam_eq {q : R} (hq0 : q ≠ 0)
+    (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : R)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
+    (h : (q ^ 2) ^ r / (q * levelBracket r (q ^ 2))
+        = (q ^ 2) ^ s / (q * levelBracket s (q ^ 2))) : r = s := by
+  have hbr : levelBracket r (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hr
+  have hbs : levelBracket s (q ^ 2) ≠ 0 := levelBracket_ne_zero_of_gen hgen hs
+  have e : ∀ t : ℕ, (q ^ 2) ^ t / (q * levelBracket t (q ^ 2))
+      = (q ^ 2) ^ t / levelBracket t (q ^ 2) / q := fun t => by rw [mul_comm, div_div]
+  rw [e r, e s] at h
+  have key : (q ^ 2) ^ r / levelBracket r (q ^ 2) = (q ^ 2) ^ s / levelBracket s (q ^ 2) := by
+    have h2 := congrArg (fun x : R => x * q) h
+    simp only at h2
+    rwa [div_mul_cancel₀ _ hq0, div_mul_cancel₀ _ hq0] at h2
+  refine QOU.QBeta.WenzlWeight.level_unique_of_markovParameter (pow_ne_zero 2 hq0) hgen
+    (wenzlMarkovParam_spec hbr) ?_
+  rw [key]
+  exact wenzlMarkovParam_spec hbs
 
 /-! ## Conservativity: at `r = 2`, `Q = q²` this is the convention-D object -/
 

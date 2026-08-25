@@ -88,6 +88,17 @@ theorem MarkovTraceFamily.tr_coset (U : MarkovTraceFamily K q qi z) (m : ℕ)
   rw [← mul_assoc, U.tr_cyclic (m + 1) (heckeIncl K q qi m w * σ K q qi (m + 1) (Fin.last m))
     (heckeIncl K q qi m t), ← mul_assoc, ← map_mul, U.tr_markov]
 
+/-- **The Markov parameter is a value of the trace**, namely `z = tr₁(σ₀)`.
+
+Take `x = 1` in the Markov axiom: `tr₁(ι(1)·σ₀) = z · tr₀(1) = z`.  Two Markov trace families whose
+underlying `tr` agree therefore carry the *same* parameter — which is what lets `markovTrace_unique`
+(one `z`, one trace) be used in the other direction, to read a parameter off a trace. -/
+theorem MarkovTraceFamily.param_eq (T : MarkovTraceFamily K q qi z) :
+    T.tr 1 (σ K q qi 1 (Fin.last 0)) = z := by
+  have h := T.tr_markov 0 (1 : Hecke K q qi 0)
+  rw [map_one, one_mul, T.tr_one] at h
+  rw [h, mul_one]
+
 /-- **Uniqueness of the Markov trace.** -/
 theorem markovTrace_unique (T S : MarkovTraceFamily K q qi z) :
     ∀ (n : ℕ) (x : Hecke K q qi n), T.tr n x = S.tr n x := by

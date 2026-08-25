@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T08:55:10Z
-updated_at: 2026-08-23T16:27:09Z
+updated_at: 2026-08-24T18:04:24Z
 ---
 
 Surfaced by the #5519 staleness sweep. `computations/alpha/alpha_5_lp_dual_crystal.py`
@@ -90,3 +90,230 @@ All four TIMEOUT producers, measured:
 Two of four carry no timing at all. Four of 33 measured producers (12 %) are
 TIMEOUT, i.e. unmeasured — and the sweep cannot say how close any of them came
 to finishing, which is the decision it would need to inform a budget raise.
+
+
+---
+
+## Step 1 EXECUTED — and the premise does not survive it
+
+This bean's step 1 was *"measure its true runtime with a generous budget, on its
+own, teed to a log, so the number is known rather than bounded."* Done, and
+read-only: the whole `computations/` witness tree is snapshotted and restored
+around every run, because producers write **sibling** witnesses.
+
+| producer | sweep verdict | measured |
+|---|---|---|
+| `alpha/alpha_5_lp_dual_crystal` | TIMEOUT at 300 s **and** 420 s | **9 s**, exit 0 |
+| `he3_tritium_cosh_asymmetry_diagnosis` | TIMEOUT | **1 s**, exit 0 |
+| `binding_via_interface_knot` | TIMEOUT | **> 1800 s**, exit 124 — genuinely long, still **UNMEASURED** |
+| `block_swap_binding` | TIMEOUT | in flight |
+| `qbeta/qbeta_c3even_exact_sseries_probe` | TIMEOUT | in flight |
+| `qbeta/qbeta_c4even_exact_sseries_probe` | TIMEOUT | in flight |
+
+**So this bean's headline — "Genuinely long, not hung" — is refuted for its own
+subject.** `alpha_5_lp_dual_crystal` runs in 9 seconds. The static reasoning
+that produced that heading (a `combinations(eigs, ell)` enumeration, therefore
+long) was plausible and wrong; the combinatorial structure is there, it is just
+not expensive at these sizes. **A static read of the code is not a runtime
+measurement**, and this bean asserted one from the other.
+
+Two consequences:
+
+1. **The step-2 decision is moot for these two.** There is no budget to raise —
+   they finish inside any budget. The sweep's TIMEOUT verdicts are **not
+   producer runtimes** and must not be read as such.
+2. **`> 1800 s` is still not a runtime.** `binding_via_interface_knot` hit a
+   30-minute wall with no completion; per this bean's own standard that is
+   UNMEASURED, not "half an hour". Do not quote 1800 s as its cost.
+
+## I checked the obvious catch, and then killed my own explanation
+
+**The catch:** a 9-second run that quietly fell back to a float64 solver would
+be *cheaper work*, not *faster work*, and would prove nothing. It did not — the
+run recorded `backend: clarabel-mpfr`, `precision_bits: 167`, the same
+full-precision path the committed witness carries. The speed is real.
+
+**The explanation that died:** the sweep's recorded environment lists no
+`clarabel`, and the pip package is installed now — an inviting story for a slow
+fallback path. It is wrong. `_find_clarabel_lp_bin` resolves a **compiled Rust
+binary** (`tools/hecke-engine/target/release/clarabel-operator-selection-lp`),
+not the Python package, so that diff explains nothing and is not offered as a
+cause. The environments do differ (`mpmath 1.3.0` → `1.4.1`), which is a fact I
+can state without attributing the timeout to it.
+
+**So the mechanism behind the six TIMEOUTs is unknown.** Candidates I can name
+but have not tested: concurrency inside the sweep harness, or a per-run
+environment difference. What is established is only that the verdicts do not
+measure producer cost.
+
+## A separate blocker, bigger than the timing question
+
+`alpha_5_lp_dual_crystal`'s own guard printed on the run:
+
+> ⚠ raw-float64: `alpha-5-lp-dual-crystal.witness.json`: **101** raw float64
+> field(s) would enter the witness
+
+The committed `raw-float64-baseline.json` records **78** for that file, and
+`witness_raw_float64_audit.py`'s docstring is explicit: *"a baselined witness
+whose count **increases** fails."*
+
+**NOT yet a confirmed regression, and the reason matters.** The two numbers come
+from **different functions on different objects**: the producer-side 101 is
+`witness.py::_raw_float_paths` counting paths *before* serialization; the
+baseline 78 is `witness_raw_float64_audit.py::count_raw_floats` counting the
+*committed JSON*. Comparing them directly is a category error, which is why it
+is written here as a question rather than a finding. The decisive test is the
+audit itself run against a regenerated witness — pending, because it needs a
+tree-touching run and a producer batch was in flight.
+
+If it does confirm, it reorders this bean: the blocker on this producer is
+**precision, not budget**, and #5500 cannot regenerate it cleanly either way.
+
+## Process note against myself
+
+I ran `alpha_5` twice while the five-producer batch was running. Both use
+whole-tree snapshot/restore, so concurrent runs can restore each other's
+intermediate state. Nothing was corrupted (`dirty=0` after each), but that was
+careless and should not be repeated — serialise tree-touching runs.
+
+
+## The qbeta pair: cost located, and the obvious fix is not available
+
+Both remaining TIMEOUTs are the exact-`s`-series probes. The running one names
+its own expensive phase before it stalls:
+
+    exact sympy series to O(s^9) (log R and u) ...
+
+so the cost is **symbolic algebra**, not a numeric loop. Upstream of that line
+sit `sp.simplify` at 62, 75 and 104 and `sp.cancel` at 76 — the class
+`local/compute-audit` exists to route ("where is `sympy.simplify`").
+
+**Stated as a candidate, not a cause.** What is observed is that the run sits in
+the series phase and that three `simplify` calls precede it. Nothing here is
+profiled, so do not record `simplify` as the hot spot without measuring it —
+that inference is the same shape as this bean's original "combinatorial,
+therefore long", which was wrong.
+
+**"Just lower the series order" does not work, and it is the first thing anyone
+will propose.** The order is not a tuning knob:
+
+| probe | `KC` | `NS = 2·KC + 2` |
+|---|---|---|
+| `qbeta_c3even_exact_sseries_probe` | 3 — *"extract through c_3 (s^6); c_4 needs s^8"* | 8 |
+| `qbeta_c4even_exact_sseries_probe` | 4 — *"extract through c_4 (s^8)"* | 10 |
+
+Both are module-level constants with no argparse, and `KC` **is the quantity
+the probe extracts**. Lowering it does not make the probe cheaper — it makes it
+answer a smaller question. Any long-compute plan has to attack the symbolic
+route (targeted `cancel`/`together`/`radsimp` instead of blanket `simplify`, or
+an exact-rational route that avoids the series), not the order.
+
+**Expectation, not a measurement:** `c4even` runs at `NS = 10` against
+`c3even`'s `NS = 8`, and exact-series cost grows steeply with order, so if
+`c3even` exceeds 30 min then `c4even` should be worse. Recorded so the eventual
+number can be checked against it rather than rationalised after the fact.
+
+
+## The 78 → 101 question: RESOLVED, and it was a category error
+
+Measured with the audit's **own** counter on both files, plus a read of the
+comparison it actually performs:
+
+| quantity | value |
+|---|---|
+| `raw-float64-baseline.json` entry | **78** |
+| `count_raw_floats(committed)` | **45** |
+| `count_raw_floats(regenerated)` | **47** |
+
+And the gate's comparison, from `witness_raw_float64_audit.py:668`:
+
+```python
+grew = {f: (prior[f], n) for f, n in found.items()
+        if f in prior and n > prior[f]}      # prior = the BASELINE
+```
+
+**So regenerating `alpha_5_lp_dual_crystal` does NOT trip the ratchet.** 47 < 78
+puts it in `drained`, not `grew`; the gate passes and records a drain. The
+concern I raised is closed as a non-blocker, and #5500 is not obstructed here.
+
+**The 101 and the 78 were never comparable**, which is why this was written up as
+a question rather than a finding. `witness.py::_raw_float_paths` counts candidate
+paths *before* serialization (101); `witness_raw_float64_audit.py::count_raw_floats`
+counts the *serialized JSON* (45/47). Two functions, two objects. Had I reported
+"78 → 101 regression, #5500 blocked", it would have been wrong in both the number
+and the conclusion.
+
+Two residues, neither a defect:
+
+1. **Regeneration does add 2 fields** (45 → 47). Real drift, far under the
+   baseline, no gate consequence. Worth knowing only if someone later tightens
+   the entry.
+2. **The baseline entry overstates the committed file by 33** (78 vs 45). That is
+   safe *by construction* — the mechanism is drains-only, so a loose entry
+   under-ratchets rather than mis-passing. **Do not hand-edit it to 45**;
+   AGENTS.md forbids hand-editing baseline numbers, and the drain is supposed to
+   be recorded by a gate run, not by an agent typing a smaller number.
+
+Method note: the regeneration was done in the main tree with a single-file
+copy-out and `git checkout --` restore (9 s, one file touched), deliberately
+**not** a `git worktree` — the tree is 9.8 G against 13 G free, so a second
+checkout was not worth the disk.
+
+
+## Step 1 COMPLETE — all six measured
+
+| producer | sweep verdict | measured | reading |
+|---|---|---|---|
+| `alpha/alpha_5_lp_dual_crystal` | TIMEOUT at 300 s **and** 420 s | **9 s**, exit 0 | **refuted** |
+| `he3_tritium_cosh_asymmetry_diagnosis` | TIMEOUT | **1 s**, exit 0 | **refuted** |
+| `binding_via_interface_knot` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `block_swap_binding` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `qbeta/qbeta_c3even_exact_sseries_probe` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+| `qbeta/qbeta_c4even_exact_sseries_probe` | TIMEOUT | 1800 s, exit 124 | long, **UNMEASURED** |
+
+`DIRTY_AFTER=0` on every run; the whole-tree snapshot/restore held.
+
+**2 of 6 refuted, 4 of 6 confirmed long — and none of the four has a runtime.**
+A 1800 s censoring bound is not a duration. Do not quote "30 minutes" for any of
+them; the honest statement is "> 1800 s, unmeasured", which is this bean's own
+standard applied to its own results.
+
+## My own prediction: UNTESTED, not confirmed
+
+I recorded the expectation that `c4even` (higher order) would be worse than
+`c3even`. **The run cannot distinguish them — both were censored at the same
+1800 s bound.** Recording it as confirmed would be reading a tie as a win. It
+stays open, and a run that separates them needs a budget above whichever is
+larger.
+
+## The slow step is not my inference — the producer says so
+
+`c4even`'s own last line before the wall:
+
+    exact sympy series to O(s^11) (log R and u) — this is the slow step ...
+
+and `c3even`'s, at O(s^9). So the symbolic-series attribution is the producer's
+self-diagnosis, not a guess from a static read. It is still **not a profile**:
+`sp.simplify` at 62/75/104 remains a candidate for *where inside* that step the
+time goes, and nothing here measures it.
+
+## What step 2 now says, per producer class
+
+- **The two fast ones need no budget at all.** Their TIMEOUT verdicts were
+  artifacts; nothing to raise.
+- **The four long ones need a long-compute plan, not a bigger number.** For the
+  qbeta pair the target is the symbolic route — and per the section above,
+  lowering `KC` is not available, because `KC` *is* what each probe extracts.
+- **`binding_via_interface_knot` has zero timing references in 362 lines.**
+  Unlike `alpha_5`, where the logging complaint was moot once it turned out to
+  finish in 9 s, here the AGENTS.md long-compute rule genuinely bites: a
+  > 30-minute producer emitting no elapsed/ETA is indistinguishable from a hang.
+
+## Harness flaw, found by using it
+
+The timing harness wrote every run to one shared `/tmp/prod_run.log`, so each
+producer overwrote the previous one's output — discarding exactly the "last line
+before the timeout" that turned out to be the most useful diagnostic in this
+whole exercise. Fixed mid-batch to a per-producer path, which is why only
+`c4even` has its own log. The measurement tool had the same defect it was
+measuring.

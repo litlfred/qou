@@ -260,16 +260,56 @@ def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
     """
     seen = set()
 
+    def _as_text(v) -> Optional[str]:
+        """The decimal text of a q₀ field, whatever type it still is.
+
+        Matching only ``isinstance(v, str)`` misses the single commonest
+        shape in this corpus. The prevailing producer idiom stamps BEFORE
+        serialising::
+
+            WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)
+            json.dump(witness, f, indent=2, default=str)
+
+        so at stamp time ``parameters.q0`` is still an ``mpmath.mpf`` and only
+        ``default=str`` turns it into the digits that land in the file. A
+        str-only check therefore reads the evidence as absent on exactly the
+        witnesses that carry it, and it fails SILENTLY -- the stamp falls back
+        to the manifest and looks like an ordinary answer.
+
+        Measured on `meson_mass_from_hecke`: its committed witness records
+        `parameters.q0 = "1.10997859555418..."` (muon), the payload-first
+        resolver reads that file as muon, and yet a live re-run still stamped
+        `proton`, because at the moment of stamping that value was an `mpf`.
+
+        Kept conservative: anything whose text does not start with one of the
+        two 13-char 50-digit prefixes contributes no evidence, so a value
+        rendered at low precision (`str(mpf)` at dps 15 gives `1.10998`)
+        matches neither and falls through to the manifest rather than
+        guessing.
+        """
+        if isinstance(v, str):
+            return v
+        if isinstance(v, bool) or v is None:
+            return None
+        if isinstance(v, (int, float)) or hasattr(v, "__float__"):
+            try:
+                return str(v)
+            except Exception:  # noqa: BLE001
+                return None
+        return None
+
     def walk(node, depth=0):
         if depth > 4 or len(seen) > 1:
             return
         if isinstance(node, Mapping):
             for k, v in node.items():
-                if k in _Q0_FIELDS and isinstance(v, str):
-                    for name, pre in _Q0_PREFIXES:
-                        if v.strip().startswith(pre):
-                            seen.add(name)
-                elif isinstance(v, (dict, list)):
+                if k in _Q0_FIELDS:
+                    text = _as_text(v)
+                    if text is not None:
+                        for name, pre in _Q0_PREFIXES:
+                            if text.strip().startswith(pre):
+                                seen.add(name)
+                if isinstance(v, (dict, list)):
                     walk(v, depth + 1)
         elif isinstance(node, list):
             for v in node[:64]:
@@ -354,6 +394,80 @@ def q0_anchor_is_declared(
     stem = Path(script_path).stem
     return any(stem in man.get(k, [])
                for k in ("ideal_muon", "physical_proton", "ambiguous"))
+
+
+def resolve_q0_anchor_payload_first(
+    payload: Mapping,
+    script_path: Union[str, Path],
+    *,
+    require_declared: bool = False,
+    env: Optional[Mapping[str, str]] = None,
+) -> tuple:
+    """``(anchor, q0_value)`` for a payload, **payload evidence first**.
+
+    `q0Anchor`/`q0Value` answer one question: *at which pin was this payload
+    computed?* Until 2026-08-24 both were answered by `resolve_q0_anchor`,
+    which consults the manifest and the env var — a statement about what the
+    producer was **configured** to do, not about what it **did**. Where the two
+    disagree the witness asserts a layer its own numbers do not belong to,
+    which is the straddle AGENTS.md §"q₀ anchor convention" forbids regardless
+    of size, with a provenance field vouching for it.
+
+    They disagree systematically. 85 producers resolve q₀ by reading
+    ``computations/q-pinning-50-digit.witness.json`` -> ``derived_50_digit.q``
+    directly. That string **is** the muon anchor's definition — it is what
+    ``_q0_value_for_anchor("muon")`` returns — so those producers compute at
+    muon whatever the manifest says, and ``QOU_Q0_ANCHOR`` cannot reach them at
+    all. 67 of the 85 are absent from ``q0_anchor_manifest.json``, so
+    ``resolve_q0_anchor`` hands them its runtime **default** of ``proton`` and
+    the witness goes out declaring proton over a muon computation (bean
+    ``qou-aj91``).
+
+    So consult the payload first: ``_q0_anchor_from_payload`` matches the q₀ the
+    producer actually recorded against the two 50-digit prefixes. This is the
+    "test the ANSWER, not the source" move — a recorded value cannot be stale,
+    mislabelled, defaulted, or inherited from a manifest entry nobody
+    maintained, whereas every configuration-level signal can.
+
+    **Why the obvious second signal is NOT used.** A producer reading the
+    pinning witness records it via ``record_upstream``, so
+    ``data.upstream_witness_hashes`` looks like a ready-made detector for the
+    same 85. It is unsound, and measurably so: ``alpha_k_jones_markov_h12``
+    still records that upstream — deliberately, "for provenance and because
+    that witness remains the canonical 3-CAL (muon) pin document" — while
+    computing from ``q_parameter.Q_50_DIGIT_STR``, i.e. proton. Inferring muon
+    from the upstream record would have flipped a **correct** proton stamp to a
+    false muon one. Recording an input is not computing from it.
+
+    Precedence, highest first:
+
+    1. A manifest ``ambiguous`` entry. That is a deliberate "do not assert a
+       single pin" marker; payload evidence must not overrule it, since a
+       cross-anchor producer can easily record one pin under a name
+       ``_Q0_FIELDS`` knows and the other under one it does not.
+    2. Payload evidence (``muon``/``proton``). Note ``_q0_anchor_from_payload``
+       already returns ``None`` when the payload carries BOTH pins, so a
+       comparison payload never reaches here with one asserted over it.
+    3. ``resolve_q0_anchor`` — the manifest/env answer, unchanged, for the
+       ~1600 payloads that record no readable q₀ at all.
+
+    ``require_declared`` mirrors ``build()``'s existing rule: with no evidence
+    and no positive declaration, return ``(None, None)`` so nothing is stamped.
+    ``Q0_ANCHOR_MISSING`` is a tolerated, visible state; a defaulted pin is a
+    silent claim.
+
+    Callers that pass an explicit anchor still win over all of this — they are
+    making the same declaration one call frame out.
+    """
+    resolved, resolved_value = resolve_q0_anchor(script_path, env=env)
+    if resolved == "ambiguous":
+        return resolved, resolved_value
+    evidence = _q0_anchor_from_payload(payload)
+    if evidence in ("muon", "proton"):
+        return evidence, _q0_value_for_anchor(evidence)
+    if require_declared and not q0_anchor_is_declared(script_path, env=env):
+        return None, None
+    return resolved, resolved_value
 
 
 def _git_head_sha() -> str:
@@ -806,6 +920,39 @@ def _version_tuple(v: str) -> tuple:
     return tuple(out)
 
 
+# Environment keys that are NOT versions and must never be ORDERED.
+#
+# `pyhecke_native_build` is `sha256(<compiled .so>)[:16]` — a content hash of
+# the binary, not a version. Ordering it with `_version_tuple` is meaningless
+# and the result depends on whether the hash happens to start with a digit:
+#
+#     _version_tuple("30fd920c241a54fa") == (30,)    # leading "30" parsed
+#     _version_tuple("b843d058d29dcec6") == ()       # starts with a letter
+#     () < (30,)  ->  reported as a DOWNGRADE
+#
+# Measured on real corpus pairs, the verdict is a coin flip:
+#     b9cd89fd -> 0aaae203   "upgraded"
+#     0aaae203 -> e114ae83   "downgraded"
+#     fe19077e -> 30fd920c   "upgraded"
+#
+# And the committed corpus already carries FIVE distinct values across 811
+# witnesses, all within 2026-08-22..24 — a Rust release build is not
+# byte-reproducible across containers (embedded paths, link order), so this
+# value legitimately changes on every rebuild. It is not a corpus constant.
+#
+# The consequence was not cosmetic. A false "downgraded" makes `save()` take
+# the preserve path and KEEP THE OLD environment block, so a freshly computed
+# witness silently carries the PREVIOUS container's build hash — roughly half
+# the time, decided by a leading hex digit.
+#
+# A *changed* content hash is neither an upgrade nor a downgrade. A *missing*
+# one is still provenance loss and is still caught, by `stripped` below.
+# `platform` / `stdlib_only` / `note` are free text and get the same treatment.
+_NON_ORDINAL_ENV_KEYS = frozenset({
+    "pyhecke_native_build", "platform", "stdlib_only", "note",
+})
+
+
 def _environment_delta(old, new) -> dict:
     """Compare two `environment` blocks. Returns the four-way delta.
 
@@ -824,6 +971,7 @@ def _environment_delta(old, new) -> dict:
         f"{k} {old[k]} -> {new[k]}"
         for k in old
         if k in new and old[k] != new[k]
+        and k not in _NON_ORDINAL_ENV_KEYS
         and _version_tuple(new[k]) < _version_tuple(old[k])
     ]
     added = [k for k in new if k not in old]
@@ -831,6 +979,7 @@ def _environment_delta(old, new) -> dict:
         f"{k} {old[k]} -> {new[k]}"
         for k in old
         if k in new and old[k] != new[k]
+        and k not in _NON_ORDINAL_ENV_KEYS
         and _version_tuple(new[k]) > _version_tuple(old[k])
     ]
     return {"stripped": stripped, "downgraded": downgraded,
@@ -1404,7 +1553,10 @@ class WitnessBuilder:
         # can never be silently misread (bean tnjb flip-flop). Auto-resolved from
         # the manifest + env unless the caller passes an explicit anchor/value.
         if q0_anchor is None:
-            q0_anchor, _rv = resolve_q0_anchor(spath)
+            # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
+            # it was computed at beats the one the manifest/env would have
+            # configured. See `resolve_q0_anchor_payload_first`.
+            q0_anchor, _rv = resolve_q0_anchor_payload_first(payload, spath)
             if q0_value is None:
                 q0_value = _rv
         # A q0Anchor the producer already wrote into the payload WINS over the
@@ -1598,12 +1750,18 @@ class WitnessBuilder:
         # established.
         if "q0Anchor" not in witness:
             try:
-                if q0_anchor_is_declared(self._script_path):
-                    _a, _v = resolve_q0_anchor(self._script_path)
-                    if _a in ("muon", "proton"):
-                        witness["q0Anchor"] = _a
-                        if _v is not None:
-                            witness["q0Value"] = _v
+                # PAYLOAD FIRST (bean qou-aj91). `require_declared=True` keeps
+                # the rule below for the no-evidence case; payload evidence
+                # outranks it, because a recorded q₀ IS a positive declaration
+                # — a stronger one than a manifest entry, since the producer
+                # made it by computing rather than by being listed.
+                _a, _v = resolve_q0_anchor_payload_first(
+                    witness, self._script_path, require_declared=True,
+                )
+                if _a in ("muon", "proton"):
+                    witness["q0Anchor"] = _a
+                    if _v is not None:
+                        witness["q0Value"] = _v
             except Exception:  # noqa: BLE001
                 pass
 
