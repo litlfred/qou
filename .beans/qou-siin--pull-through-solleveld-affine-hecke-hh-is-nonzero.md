@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T21:28:18Z
+updated_at: 2026-08-25T22:01:16Z
 ---
 
 `arxiv-1108.5286v3` (Solleveld, *Hochschild homology of affine Hecke algebras*)
@@ -132,3 +132,45 @@ question is the one the second row points at: does `Omega^j` over a
 conjugacy-class index specialize to the body-order series of
 `conj:binding-manybody-eq-jet-filtration`? That needs the specialization
 exhibited (and the q-vs-q^2 offset above applied), not asserted.
+
+
+## The specialization question, first measurement (2026-08-25)
+
+Probe: `computations/probes/solleveld_form_degree_vs_body_order_probe.py`
+(exact — Fractions and ints only, Gaussian elimination over Q, no float, emits
+no witness).
+
+**Measured, n = 2..7, every conjugacy class of S_n:**
+
+    dim t_w  =  dim( t / (w-1)t )  on the reflection rep  =  #cycles(w) - 1
+
+so the top de Rham degree the summand `Omega^*(t_{rho_w})^{G_{rho_w}}` can carry
+at class `w` is `#cycles(w) - 1`.
+
+**DIRECTION — this is the finding.** The grading is DEEPEST on the identity class
+(n cycles, top degree n-1) and COLLAPSES to a scalar on an n-cycle (1 cycle,
+degree 0). Under the natural reading of binding — an n-body bound cluster merges
+n strands into ONE closure component, i.e. one longer cycle — more binding means
+FEWER cycles, hence a LOWER top degree. The body-order series of
+`conj:binding-manybody-eq-jet-filtration` needs depth that GROWS with cluster
+size. **It shrinks.**
+
+**SCOPE-(a), explicitly not (b).** This refutes the de Rham degree as the
+body-order index UNDER THAT READING of body order as cycle merging. It does not
+prove no map exists: a different assignment of body order to cycle data, or a
+sum ACROSS classes rather than a degree WITHIN one, is untouched, and no proved
+invariant forbids either. Do not upgrade this to an exclusion.
+
+**Index-set caution, NOT an obstruction.** Solleveld sums over CONJUGACY CLASSES;
+the corpus's Wedderburn form `tr_M = sum_lambda y_lambda chi_lambda` sums over
+IRREPS. For S_n both are partitions of n, but they are different roles paired by
+the character table — and the corpus's Frobenius pairing already carries BOTH
+indexings (`chi_lambda` evaluated at the class of `rho(beta)`). So the two index
+sets meet exactly where the corpus already works. Do not read the shared word
+"partition" as an identification; equally, do not treat the difference as a
+barrier.
+
+**Next.** The surviving route is the sum ACROSS classes, not the degree within
+one: whether `sum_w` over classes with a fixed cycle count reproduces a
+body-order term. That is a different calculation and this probe says nothing
+about it.
