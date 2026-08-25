@@ -181,3 +181,55 @@ braids should be trusted, including mine.
 STOPPING HERE rather than building further on an unverified input. Three
 inference layers in this session rested on a substituted object; two are already
 retracted.
+
+## Read the rest of the spec — the formula states its own domain, and I had not
+
+wedderburn-mass-formula.md continues past the part I was working from:
+
+  "For n >= 4, the Hecke algebra has additional irreducible representations
+   (one per partition of n), producing ADDITIONAL INVARIANTS NOT CAPTURED BY
+   THE 2x2 TRANSFER MATRIX. ... The mass functional uses the three extremal
+   invariants as the LEADING-ORDER formula; the full partition sum gives the
+   exact Markov trace."
+
+So the three-Phi formula is explicitly LEADING-ORDER, exact only while the three
+extremal blocks (sym, std, alt) exhaust the partitions. With n = A + Z strands:
+
+    atom   n   p(n)  extremal  missing   measured ratio
+    H-1    2     2      3       over-specified   5e5 off
+    D      3     3      3       0  EXACT         1.448  right sign
+    T      4     5      3       2                -0.179 WRONG SIGN
+    3He    5     7      3       4                -0.605 WRONG SIGN
+    4He    6    11      3       8                -0.227 WRONG SIGN
+
+n = 3 is the UNIQUE n where the three extremal invariants are all of them, and D
+is the ONLY atom whose sign is right. The breakdown starts exactly at the n >= 4
+boundary the source names. That is a much better explanation of my measurements
+than "Phi_1 is defective".
+
+CAVEAT, and it is not small: my M_i inputs are still unverified (two chains where
+the formula wants A+Z-1). So this correspondence is SUGGESTIVE, not established
+— two candidate explanations for the same numbers, and I cannot separate them
+until the constructor exists. Recording it because it reframes what the
+constructor is for: not to fix a defect, but to test the formula inside and
+outside its stated domain.
+
+## Retiring my own flag
+
+The previous entry flagged "alpha = m_e*8G is stated for the COMMUTATIVE limit;
+I assume it carries to the full formula". It does — the formula's own coefficient
+list gives alpha = m_e x 8G citing prop:binding-scale-catalan, alongside
+[3]_q = (q^3 - q^-3)/(q - q^-1) and h_A = q - q^-1, and states "All quantities
+are derived from q_0 and m_e. The formula has zero fitted parameters." Flag
+retired. Also confirms [3]_q = q^2 + 1 + q^-2 as implemented, since
+(q - q^-1)(q^2 + 1 + q^-2) = q^3 - q^-3.
+
+## Bearing on the alpha* question
+
+canonicalization-review.md §3.1 holds that alpha* absorbs the CHIRALITY term.
+The source says what is missing at n >= 4 is the NON-EXTREMAL PARTITION
+INVARIANTS. Those are different objects — chirality is the alt block, which is
+one of the three the formula already has. So the spec itself points at the
+partition sum rather than chirality as the deficit, which is independent support
+for the conclusion I reached by an invalid route and retracted. Still not proof:
+the retraction stands, and this is the source's framing, not a measurement.
