@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T18:09:12Z
+updated_at: 2026-08-25T01:25:18Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1481,3 +1481,44 @@ weight solve would answer it.
 `qou-5pgl`'s question therefore stands open: is `0.998367` convention-C, and
 what is its D value? That needs the trace machinery, not the weight solve.
 Recording the negative so the next attempt does not repeat this route.
+
+
+## 2026-08-25 — the two qbeta C sites in the probe drain: one LEFT, one KEPT
+
+The probe/derived-tower convention-C drain (PR #5739) was assigned both live
+qbeta C sites. **Neither was migrated**, and the two reasons are different.
+
+### `computations/qbeta/qbeta_h_frame_rungs_probe.py:73` — LEFT, because this bean owns it
+
+    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))      # z_C
+    alpha = (z - 1) * hh / 2
+
+That `alpha` is the **C-frame eigenphase**, and per
+`qbeta_zcd_classical_coincidence_probe` assertion 7 the ladder's `markovZ'` is
+hard-coded to z_C, so the phase is exactly where the convention enters the
+ladder. Substituting z_D into it is the banned "substitute into a derived
+conclusion" move — and AGENTS.md is explicit that the ladder "must be
+RE-DERIVED under D, and that is not a z-swap", with
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) making the C-frame
+ladder and the mass channel's three-row forcing mutually exclusive.
+
+So the site is a **real C defect that cannot be fixed by the drain**; it closes
+when this bean's re-derivation lands, not before. Flagging it here so the
+re-derivation knows to update this probe's z and alpha together rather than
+leaving a C binding behind in a file that will then look migrated.
+
+Note the probe's own docstring already says it establishes "nothing physical"
+and that alpha is "un-derived in both frames", so nothing downstream is
+asserting a D-frame result off it today.
+
+### `computations/qbeta/qbeta_zcd_classical_coincidence_probe.py:213` — KEPT, deliberate comparison
+
+    markovZ_prime = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+
+This is assertion 7 of a probe whose entire subject is C-vs-D. The line exists
+to RECORD that the ladder's markovZ' equals z_C; migrating it would destroy the
+probe's own finding. Correctly left, and it should stay through the
+re-derivation too — it is the record of what the C frame was.
+
+The drain's audit lists both as actionable because the detector cannot tell a
+comparison from a defect; only the second is a false positive.
