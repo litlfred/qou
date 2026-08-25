@@ -61,3 +61,53 @@ CAUTION: 'three-dimensional colour space A^3' is an AMBIENT affine space in whic
 a curve sits -- it is NOT a 3-dimensional representation of anything. Reading it
 as the missing flavour triple would be precisely the dimension-vs-object
 conflation this epic keeps having to retract.
+
+
+## CORRECTION 2026-08-25, same session — "ABSENT" WAS WRONG. Owner caught it.
+
+Owner: "double check corpus - should be pages there already. maybe only in lean
+and not exposition?" Correct on both counts; the central claim above is retracted.
+
+MY ERROR: the grep behind "ZERO hits" did cover .md AND .lean, but I read it
+through `head -15` and all fifteen lines were .md. The .lean hits sat below the
+cutoff. I concluded absence from a truncated list.
+
+WHAT ACTUALLY EXISTS — a real spectral-sequence layer, mostly in Lean:
+
+  QOU/Mathlib/SpectralSequence.lean          29 decls, ZERO sorry, zero axiom
+      Abstract E_r-page API: pages indexed by N x Z x Z, differential of bidegree
+      (r, 1-r) cohomological, CollapsesAt r0, convergesTo. Its docstring states
+      the gap it fills: "Mathlib has homological-algebra primitives
+      (HomotopyCategory, DerivedCategory, ChainComplex) but no E_r-page
+      abstraction with collapse criteria." EXPOSITION-FREE — exactly the owner's
+      guess: this piece exists only in Lean.
+
+  QOU/Machinery/SpectralSequenceBasic.lean    3 decls, 3 sorry (by design)
+      Scaffold for the GB (Groebner-Shirshov) filtration SS; d_1, d_2 sorry'd,
+      docstring calls the instances "the open infrastructure work".
+
+  QOU/BraidKnot/spectral_sequence_h3_explicit.lean   2 decls, 0 sorry
+  QOU/BraidKnot/e_infinity_identifications.lean      2 decls, 4 sorry (6-term E_inf)
+  QOU/WedderburnMass/curvature_rank_gb_stratification.lean
+  exposition: mass-theory/spectral-sequence-collapse-proof.md,
+              appendix-mass-binding-algorithms/mba-step07-gb-filtration.md
+
+WHAT SURVIVES, precisely: the corpus SS is the GB-FILTRATION / HOCHSCHILD-KLR
+one, claiming CollapsesAt 2 — the Wedderburn block decomposition IS the E_2 page.
+That is a filtration spectral sequence OF AN ALGEBRA. It is not the Serre-Leray
+SS OF A FIBRATION, which relates H*(base), H*(fibre), H*(total). Serre-Leray in
+that sense still does not appear.
+
+BUT THE GAP IS FAR SMALLER, AND BETTER SHAPED: the E_r machinery already exists
+and is sorry-free. Applying it to a fibration means INSTANTIATING AN EXISTING
+API, not building one.
+
+REVISED FIRST STEP (supersedes the one above): instantiate
+QOU.Mathlib.SpectralSequence on the colour fibration over P^1(C) — identify what
+plays E_2^{p,q} from base and fibre cohomology the corpus can actually supply.
+If the existing API cannot be instantiated on it, that is the answer, cheaply.
+
+CAUTIONS, both live: (1) the colour fibration's ambient A^3 is a space a curve
+sits in, NOT a 3-dimensional representation; (2) the GB SS's own differentials
+are sorry'd, so "the corpus has a spectral sequence" must not be read as "the
+corpus has a PROVED spectral sequence".
