@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:46:12.155501+00:00",
-  "commitSha": "43cfeee08cc6d33eb3cd1d36d0d9283393595cd3",
+  "computedAt": "2026-08-25T19:06:17.883596+00:00",
+  "commitSha": "ff7e968871813eb34c4f91e332d3f4ec7b38607a",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "c7ea7ebb0d76c4e2"
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2770,
-      "prov_ok": 2347,
+      "total_scanned": 2760,
+      "prov_ok": 2337,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965342960288808664259927797833935018050541516245487364620939"
+      "completeness_ratio": "0.965217391304347826086956521739130434782608695652173913043478"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -683,10 +683,6 @@
         },
         {
           "witness": "atom-vhyp-closure-matrix-m.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "atom-word-braid-letter-census.witness.json",
           "missing_fields": []
         },
         {
@@ -2966,10 +2962,6 @@
           "missing_fields": []
         },
         {
-          "witness": "em-linking-alpha-scaling-provenance.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "em-linking-borromean-acn.witness.json",
           "missing_fields": []
         },
@@ -2994,15 +2986,7 @@
           "missing_fields": []
         },
         {
-          "witness": "em-linking-kappa-regime-reachability.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "em-linking-mirror-series.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "em-linking-o2-neutralised-kernel.witness.json",
           "missing_fields": []
         },
         {
@@ -4287,26 +4271,6 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "meson-braid-conjugacy-floor-search.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "meson-braid-dehornoy-floor.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "meson-braid-floor-conjugacy-bound.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "meson-braid-length-cap.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "meson-braid-syllable-bound.witness.json",
           "missing_fields": []
         },
         {
@@ -9335,10 +9299,6 @@
         },
         {
           "witness": "wedderburn-lp-ew-wiring.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "wedderburn-mass-table-z1-20.witness.json",
           "missing_fields": []
         },
         {
