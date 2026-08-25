@@ -7,7 +7,8 @@ section_number: null
 pages: 1-1
 source_pdf: s10052-023-11923-y_a.pdf
 source_sha256: 73d1a03532d62ef7
-doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the"
+doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
+duplicate_of: "arxiv-2306.13098v2"
 ---
 from Cayley–Dickson sedenions
 Niels Gresnigta , Liam Gourlay, Abhinav Varma
