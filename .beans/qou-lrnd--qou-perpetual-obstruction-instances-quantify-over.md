@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-23T10:40:42Z
+updated_at: 2026-08-25T17:05:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -260,3 +260,82 @@ embedding per prime and it is frequently **< 1** (proton at p=11: 0.046;
 deuteron at p=13: 0.033), which is not itself an obstacle — conjugates of a
 non-unit may individually be small — but it does mean the bound has to be over
 the whole orbit, and the data as recorded is one embedding, not the orbit.
+
+
+---
+
+# 2026-08-25 — the block never claimed non-unitness; it claims NON-VANISHING
+
+Picked up from a stalled session (branch `claude/agent-stalled-discussion-iyeuqp`,
+PR #5769) that had read the block's sketch and stopped mid-edit.
+
+## The distinction this bean was missing
+
+Every pass on this bean, mine included, has been trying to prove the QOU
+Frobenius is a **non-unit**. Read the block:
+
+> If `χ(A) ≠ 0`, then `χ^mot_A` is **non-trivial** at every finite place `p`
+> with `p ∤ χ(A)`.
+
+and its sketch's last step:
+
+> a Frobenius character whose trace equals `χ(A) mod p`. Because `p ∤ χ(A)`,
+> this trace is **non-zero** modulo `p`. The character is non-trivial.
+
+**The block asks for NON-VANISHING. It never asks for non-unitness.** Over a
+field those are not the same property and they point opposite ways — a unit is
+precisely a nonzero element. `motivic_perpetual_obstruction`,
+`motivic_perpetual_obstruction_frobenius` and `habiro_frobenius_not_unit` all
+conclude `¬IsUnit`; none of them states what the block states.
+
+## The refutation is untouched — and it is the affirmative answer
+
+The scope-(b) exclusion recorded above stands verbatim: a congruence to a fixed
+constant `C` gives non-unitness only at the primes dividing `C`, and
+`isUnit_four_zmod` is why.
+
+That same fact settles the block's actual claim **positively**. `IsUnit` in
+`ZMod p` implies `≠ 0`. So exactly where the non-unit reading dies, the
+non-vanishing reading lives — and it lives in the perpetual shape: at every
+prime above `|χ(A)|`.
+
+The route was never dead. It was answering a question the block had not asked.
+
+## Landed
+
+`QOU/LiftingDescent/MotivicCharacterNonvanishing.lean`, sorry-free, `#print
+axioms` standard-only on all seven declarations, lean-direct exit 0:
+
+    residue_eq_zero_iff_dvd     vanishes IFF p | χ(A) — the locus, not a bound
+    residue_ne_zero_of_not_dvd  the sketch's final step, derived
+    residue_ne_zero_of_gt_abs   perpetuity quantified: every prime > |χ(A)|
+    ne_zero_of_isUnit_residue   the reconciliation
+
+Per §3b-cond the substantive links are hypothesis **fields** — `chi` and
+`residue_eq_chi` (the sketch's own congruence under `ρ_p`). The class carries
+no non-vanishing field; `residue_eq_zero_iff_dvd` is real arithmetic
+(`ZMod.intCast_zmod_eq_zero_iff_dvd`), not a projection. The witness is a
+`def`, deliberately **not** an `instance`, so it cannot silently discharge a
+downstream `[MotivicResidueRealization]`. It is built at `χ(A) = 8` — this
+bean's own corrected proton constant — and a `decide`-checked example
+witnesses **both** branches of the iff (vanishes at `p=2`, does not at `p=3`),
+so the theorem separates primes rather than describing a constant.
+
+## STILL OPEN, and unchanged
+
+This does **not** prove `thm:motivic-perpetual-obstruction`. `residue_eq_chi`
+— that the local Frobenius trace reduces to `χ(A)` mod `p` under `ρ_p` — is a
+hypothesis and is not derived. The archimedean-bound route recorded above is
+also untouched. What changed is which proposition the corpus should be aiming
+at.
+
+## Found alongside (fixed in `def765883`)
+
+The `def:motivic-galois-character` sibling — which is what a reader following
+the block's `lean.ref` lands on, per §0a — still declared
+`almost_everywhere_nontrivial` as a **class field**, the field the library
+removed 2026-08-12 because it "forced every instance to either prove it or
+launder an axiom". Nothing compiles that path (Lake globs are `["QOU","QOU.+"]`
+rooted at `lean/`), so it could drift indefinitely. Same family as `qou-a5dr`,
+one file over, still live. Re-synced rather than deleted: a `definition` block
+requires its sibling.
