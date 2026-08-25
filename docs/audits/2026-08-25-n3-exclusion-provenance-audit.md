@@ -1,0 +1,137 @@
+# Provenance audit of the seven `N = 3` exclusions
+
+**Bean:** `qou-bhfg`. **Date:** 2026-08-25.
+
+**Trigger.** Owner question, this session: *"note that some excluded route may
+be based on old probes using incorrect compute — ok to be skeptical if not lean
+proved exclusion."*
+
+That is the right question to ask of this table. The `N = 3` exclusion list in
+[`sm-eightfold-derivation-cheat-sheet.md` §4-A](../sm-eightfold-derivation-cheat-sheet.md)
+is load-bearing: it is what makes the eightfold surface's live question a
+*single* one, and AGENTS.md §"Formalize-first probe discipline" instructs agents
+to treat that table **as the prune** rather than re-run a scan it covers. A
+route excluded on stale compute would therefore not merely be one wrong row —
+it would be a permanently closed door with nothing behind the lock.
+
+The corpus has live reasons for the worry. Convention C (`z = √q/(q+1)`) was
+excised in favour of convention D (`z = q³/(q²+1)`) on 2026-08-09 and re-affirmed
+2026-08-15, and AGENTS.md records that the C surface should be treated as
+**unmeasured rather than clear**. Separately, the `Q_β` `c_k` ladder is
+C-frame throughout and is *not* re-derived. If an exclusion consumed either, it
+would be conditional on a superseded convention and would not know it.
+
+## Result
+
+**It does not pay out, and that is worth stating as plainly as a positive would
+be.** Seven routes, seven checked:
+
+- **Zero** rest on float64 arithmetic.
+- **Zero** consume the Markov/Ocneanu parameter `z`, so **none** is
+  convention-C-conditional.
+- **Six of seven** stand on a proved invariant, an exact symbolic identity, or
+  an elementary dimension count.
+- **Two** carry citation defects — a true-but-uncited claim and a dead pointer.
+  Both are presentation, not substance.
+
+| # | Route | Backing | Kind | Verdict |
+|---|---|---|---|---|
+| 1 | Odd-dim summand of `V^⊗n` | `QOU/Eightfold/Sym2GateParity.lean`, sorry-free | Clebsch–Gordan + Frobenius–Schur parity, `[fulton-harris1991]` §11 | **sound** |
+| 2 | Permutation `S₃ = W(A₂)` 3-dim rep | same criterion (odd dim ⇒ FS `+1`) | as (1) | **sound** |
+| 3 | Re-tune the Ocneanu parameter to `N = 3` | `y_{(2,1)}/y_{(3)} = q[2]_q[N−1]_q/[N+2]_q` | exact symbolic ratio in `(q, N)` | **sound** |
+| 4 | Hecke centralizer on regular `H₃` | `QOU/StandardModel/ColourHeckeRegularHost.lean`, sorry-free | exact `ℚ` matrices, `dim ≤ 6 < 8` | **sound**, scope stated in-file |
+| 5 | 4-form → `Spin(7)` → `G₂` → `SU(3)` | one table row, no citation | elementary dimension count | **true, uncited** — see below |
+| 6 | `S₄` / Fano bridge → Klein quartic | "marked-pair obstruction" | pointer resolves nowhere | **unresolved citation** |
+| 7 | Tetraplectic / quaternionic | supplies `SU(2)`, already spent | structural | **sound**, but see the scope note |
+
+## Route 3 — the one the worry actually targeted
+
+The Ocneanu parameter is the closest thing on this surface to the object the
+C→D excision moved, so it is where a stale-compute exclusion would most plausibly
+hide. It does not: the exclusion is
+[`2026-08-07-two-row-projection-is-the-pairwise-cap.md`](2026-08-07-two-row-projection-is-the-pairwise-cap.md)'s
+closed form
+
+    y_{(2,1)} / y_{(3)}  =  q [2]_q [N−1]_q / [N+2]_q
+
+which is an identity in the two free symbols. Non-proportionality at `N = 2`
+versus `N = 3` is read off the `N`-dependence directly; no anchor, no pin, no
+floating-point evaluation, and no dependence on the Markov parameter `z`
+enters. It is convention-independent in the sense that matters here.
+
+## Route 1 — the failure mode was real, and was already caught
+
+Worth recording because it is the exact shape the owner asked about, and the
+corpus caught it without prompting. The original argument for route 1 came from
+`computations/state_space_natural_three_sym2_gate.py` and reasoned: *every
+`SU(2)` representation is self-dual, therefore no summand of any `V^⊗n` passes
+the gate.* **That inference is invalid** — self-duality splits by the
+Frobenius–Schur indicator, and even-dimensional (symplectic) summands *do* pass.
+
+The correction landed 2026-08-07 and is formalised: `Sym2GateParity.lean` proves
+`gate_fails_iff_odd_dim`, and `self_duality_does_not_decide_gate` records the
+counterexample pair **specifically so the invalid inference cannot be re-derived
+from the file**. The physics conclusion survives on the corrected criterion —
+colour needs `dim W = 3`, which is odd — but it now rests on parity rather than
+on self-duality.
+
+Two scope notes so this row is not read wider than it is. The exclusion is about
+summands of tensor powers of the **2-dimensional fibre**; it says nothing about
+a genuinely non-isomorphic fibre, which is why it *forces* the surviving
+question rather than closing it. And the representation theory that makes
+`Sym²(𝟑) = 𝟔` irreducible is a declared **Mathlib gap** (`qou-8fl1`), honestly
+flagged in `Sym2Gate.lean`'s own docstring — the exclusion does not depend on it.
+
+## Route 5 — true, and checkable in two lines
+
+The claim is uncited and appears in exactly one place in `docs/`, which is a
+defect. The content, however, is elementary and now verified:
+
+| quantity | value |
+|---|---:|
+| `dim Λ⁴(ℝ⁸) = C(8,4)` | 70 |
+| `dim GL(8,ℝ)` | 64 |
+| `dim Spin(7)` | 21 |
+| Cayley orbit `= 64 − 21` | 43 |
+| codim `= 70 − 43` | **27** |
+
+`64 < 70` forbids an open `GL(8,ℝ)`-orbit on `Λ⁴(ℝ⁸)` outright, on dimension
+grounds alone — the stronger orbit-structure fact is not even needed. Both
+numbers in the table row are right. Add the citation; do not re-open the route.
+
+## Route 6 — the pointer, not the claim, is the problem
+
+`S₄`/Fano is excluded on a "marked-pair obstruction", and that phrase resolves
+to an unrelated τ-coherence construction elsewhere in `docs/audits/`. The
+cheat-sheet gloss (*`S₄` has no orbit of size ≤ 2 on `ℙ²`; the `S₄`-invariant
+quartics form an infinite pencil*) is a different and more specific statement
+than the audit's. **Neither is refuted here** — this is a citation defect, and
+the route should stay excluded pending someone re-deriving the pencil claim.
+Do not treat this row as re-opened.
+
+## Route 7 — a scope note, not a downgrade
+
+"Supplies `SU(2)`, already spent on electroweak" is a *wrong-object* argument,
+not an impossibility proof. Under AGENTS.md §"Before declaring refuted", it is
+a scope-(a) negative wearing scope-(b) phrasing: it says the construction does
+not yield the object wanted, which is correct, rather than that no such
+construction can. The row is fine; its **tier label** is a shade strong.
+
+## What this does and does not license
+
+- **Does not re-open any route.** Six stand outright; the two with citation
+  defects have defective *pointers*, not defective *reasoning*.
+- **Does license spending the `N = 3` effort on the surviving direction** — the
+  non-neutral Tannakian gerbe (`qou-y7vg` / `qou-8p1i`) — rather than on
+  re-auditing the prune. That was the actionable question.
+- **Records the negative.** Someone will ask this again. The answer is that the
+  prune was checked at provenance level on 2026-08-25 and held.
+
+## Adjacent finding — the literature is absent
+
+Separately measured this session (bean `qou-tzfm`): the surviving direction has
+**no corpus support to read**. Across `library/`'s 400 ingested documents,
+`INDEX.md` returns **one** Tannakian hit (a dissertation on Tannakian categories
+of perverse sheaves on abelian varieties) and **zero** on gerbes, non-neutral
+Tannakian categories, or inequivalent fibre functors. An agent attacking §4-A
+today is deriving against an empty shelf.
