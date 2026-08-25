@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-25T13:16:41Z
+updated_at: 2026-08-25T13:22:59Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -242,3 +242,59 @@ than from the tower's combinatorics.
 The localisation onto Coulomb still fails, for the two reasons already recorded
 (descended trace non-invariant at $q_0$; Coulomb term has the wrong sign), not
 for a third about enumeration.
+
+
+
+---
+
+**2026-08-25, fourth pass — chirality settled from `main`; sector audit COMPLETE.**
+
+Grepping `chirality` the way I should have grepped `brane tower` answered it
+immediately, twice over, from work already on `main`. **Fifth object-grep
+failure this session**, and this time on the sector I had *just named* as next.
+
+**Chirality breaks both involutions the remark names:**
+
+- **Hopf antipode** — `chirality_is_unique_S_odd`
+  (`frobenius-s-classification.lean`): the chirality term is the **unique
+  S-odd** term of the three. It is the one term that *anti*-commutes with the
+  antipode.
+- **Hecke-skein sign flip** — `prop:chirality-dual-space-derivation` defines the
+  factor as $\prod_c (1 + \mathrm{sign}(c)\,h)$ over a `List CrossingSign`. It
+  reads the crossing signs directly; a flip maps $(1+h) \leftrightarrow (1-h)$.
+
+**But chirality does not source THIS split.** ${}^3\mathrm{H}$ and
+${}^3\mathrm{He}$ carry the same crossing multiset (one positive, one negative),
+so both get $1 - h^2$. **Not over-claiming that as "chirality cancels"** — the
+factor multiplies a descended trace that *differs* between the isobars, so
+whether the product cancels is a separate question I have not analysed.
+
+**Credit: the corpus had my τ_sym result first.** The same block carries
+$\tau_{\mathrm{sym}}(\sigma) - \tau_{\mathrm{sym}}(\sigma^{-1}) = h$,
+$h = q - q^{-1}$ — my `trace_inv_sub_trace` specialised to the 1-dim symmetric
+rep. `TraceSignFlipRegime`'s docstring now says so up front. What it genuinely
+adds is **when the deviation vanishes**: any linear functional on any algebra
+rather than $\tau_{\mathrm{sym}}$ over $\mathbb{R}$; the **iff**; and the tie to
+`double_braiding_eq_one_iff` making *"trace is sign-flip blind"* and *"braiding
+is symmetric"* the same condition.
+
+**COMPLETE SECTOR AUDIT — two of four named sectors fail, not one:**
+
+| sector | status |
+|---|---|
+| Frobenius co-Casimir | invariant (arity) |
+| brane tower | invariant (arity; general form conditional) |
+| **descended trace** | **NOT invariant at the substrate** |
+| **chirality** | **breaks BOTH involutions** |
+| shell correction | invariant at $q \to 0$ only |
+
+**Meta-finding, and the one I would keep.** Five object-grep failures in one
+session, every one the same shape: declaring a corpus item absent after grepping
+the *topic* and not the *object*. The corpus-grep checklist names five paths;
+what it does not say loudly enough is that the unit of search is the **named
+declaration**, not the subject matter. Four of the five would have been caught by
+a single `grep -rn '^\(theorem\|lemma\|def\) .*<Object>' content/`.
+
+**Still open, unchanged across four passes:** $E_{\mathrm{EM}}$'s magnitude. Every
+pass has sharpened *where* it lives and *why* it is needed; none has produced a
+number.
