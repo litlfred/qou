@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T21:24:53Z
+updated_at: 2026-08-25T21:28:18Z
 ---
 
 `arxiv-1108.5286v3` (Solleveld, *Hochschild homology of affine Hecke algebras*)
@@ -91,3 +91,44 @@ the corpus's claim rather than contradicting its dual.
 this algebra, the shape-match lead is weaker than the note first suggested and
 should be re-scoped before anyone builds on it. §3.3 (Schwartz algebras) is the
 place to look.
+
+
+## Gate (iii) CHECKED — not closed, and it SPLITS the lead (2026-08-25)
+
+Read §3, §3.1, §3.3 for a bridge between homology and cohomology. **There is
+none.** `HH^` never appears; no duality or Poincare statement anywhere; the sole
+"cohomology" occurrence is about CYCLIC homology of smooth commutative algebras.
+
+Theorem 3.1 is proved at the COMPLEX level, in the Hochschild CHAIN complex
+`C_n(A) = A^{(x)n+1}` with boundary `b_n`, by exhibiting representative CYCLES:
+"every element of HH_*(H (x) Gamma) can be represented by a Hochschild cycle in
+(+)_w ^w C_*(O(t_w))". The cochain complex `Hom(A^{(x)n}, A)` has no automatic
+dual of that step. **The cohomological statement is not a transport — it is a
+separate piece of work.**
+
+(My own reading, NOT on the page, so do not cite it as corpus: for the smooth
+commutative local model O(t) that HKR governs here, both sides are nonzero in
+higher degrees — HH_n = Omega^n and HH^n = wedge^n Der. So no a-priori
+obstruction; the EXPECTATION is that cohomology also carries higher degrees.
+Expectation, not result.)
+
+**The split, which is the useful part:**
+
+| reading of Solleveld | needs HH^*? | status |
+|---|---|---|
+| scopes the corpus no-go ("vanishing is a property of finiteness") | YES — the corpus claim is cohomological | WEAKENED; qualify it |
+| supplies a graded home for the body-order series | NO — any extra grading serves | UNTOUCHED |
+
+The second was the interesting half and it survives intact. So the lead is NOT
+dead; it is narrowed to the half that never needed cohomology.
+
+**Bonus from the proof.** Theorem 3.1's hypothesis is "there exists eps in C^x
+such that k_alpha in eps*R for all alpha in R" — real parameters up to scaling.
+The corpus's real positive q0 gives real k, so it holds. Independently
+reinforces gates (i) and (ii).
+
+**Next step is no longer gate (iii).** With the split established, the live
+question is the one the second row points at: does `Omega^j` over a
+conjugacy-class index specialize to the body-order series of
+`conj:binding-manybody-eq-jet-filtration`? That needs the specialization
+exhibited (and the q-vs-q^2 offset above applied), not asserted.

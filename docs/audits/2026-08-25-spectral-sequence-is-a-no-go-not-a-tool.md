@@ -228,15 +228,47 @@ case and should be geometric type — which would make the first bullet apply
 directly and the deformation unnecessary. Confirm against [AMS §3.3] before
 relying on it.)*
 
-**(iii) Homology is not cohomology — OPEN, and this one is a gate on my own §1.**
+**(iii) Homology is not cohomology — checked, and it SPLITS the lead in two.**
 `prop:spectral-sequence-collapse` is about $\mathrm{HH}^k$ (**co**homology).
 Solleveld computes $\mathrm{HH}_*$ (**homology**). For a separable
 finite-dimensional algebra both vanish above degree $0$, so §1 is unaffected —
 but non-vanishing of $\mathrm{HH}_*$ does **not** formally imply non-vanishing
-of $\mathrm{HH}^*$ for an infinite-dimensional algebra. Whatever relates them
-here (a duality, smoothness, the Schwartz completion of §3.3) has to be supplied,
-not assumed. Until it is, Solleveld bounds the *scope* of the corpus's claim
-rather than contradicting its dual.
+of $\mathrm{HH}^*$ in infinite dimension.
+
+**Read for a bridge; there is none.** Across §3, §3.1 and §3.3 the string
+`HH^` never appears, no duality or Poincaré statement is made, and the only
+occurrence of "cohomology" is about *cyclic* homology of smooth commutative
+algebras. Theorem 3.1 is proved at the **complex level**, in the Hochschild
+*chain* complex $C_n(A) = A^{\otimes n+1}$ with boundary $b_n$, by exhibiting
+representative **cycles**: *"every element of $\mathrm{HH}_*(H \rtimes \Gamma)$
+can be represented by a Hochschild cycle in
+$\bigoplus_{w} {}^{w}C_*(\mathcal{O}(t_w))$."* The cochain complex
+$\mathrm{Hom}(A^{\otimes n}, A)$ has no automatic dual of that step. **So the
+cohomological statement is not a transport — it is a separate piece of work.**
+
+*(Not from the page — my own reading, so do not cite it as the corpus's: for the
+smooth commutative local model $\mathcal{O}(t)$ that HKR governs here, both
+sides are non-zero in higher degrees — $\mathrm{HH}_n \cong \Omega^n$ and,
+by the standard cohomological counterpart, $\mathrm{HH}^n \cong \wedge^n
+\mathrm{Der}$. So there is no a-priori obstruction; the expectation is that the
+cohomological statement also carries higher degrees. Expectation, not result.)*
+
+**Why this splits the lead.** The two readings of Solleveld have different
+exposure to this gate:
+
+| reading | needs $\mathrm{HH}^*$? | status after gate (iii) |
+|---|---|---|
+| *scopes the corpus's no-go* — "the vanishing is a property of finiteness" | **yes** — the corpus claim is cohomological | **weakened.** Bounds the scope only if the dual statement holds, which is unproved |
+| *supplies a graded home for the body-order series* | **no** — any extra grading serves | **untouched.** Homology carries the $\Omega^j$ degree regardless |
+
+The second was the interesting half, and it survives intact. State the first with
+the qualifier.
+
+**A bonus from reading the proof:** Theorem 3.1's own hypothesis is
+*"there exists $\epsilon \in \mathbb{C}^\times$ such that $k_\alpha \in
+\epsilon\mathbb{R}$ for all $\alpha \in R$"* — real parameters up to scaling.
+The corpus's real positive $q_0$ gives real $k$, so the hypothesis holds. That
+independently reinforces gates (i) and (ii).
 
 `arxiv-0911.4494v2` (Webster–Williamson, *The geometry of Markov traces*) is the
 other cohomological source and is **already scoped** in the 2026-08-21 lead
