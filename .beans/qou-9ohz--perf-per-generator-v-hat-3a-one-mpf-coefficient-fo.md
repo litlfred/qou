@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-24T19:56:38Z
+updated_at: 2026-08-25T16:51:11Z
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -95,3 +95,60 @@ Worst 1.448e-13 — the same tiny-denominator artifact as A=2 (one V_hat is
 
 Stronger than the planned harness comparison, which would have measured a
 reimplementation of the call rather than the call as producers actually make it.
+
+
+---
+
+## Independent confirmation on a SECOND consumer (2026-08-25, branch claude/gram-norm-threshold-investigation-v8ck94)
+
+Reached this bean's mechanism from the other end — a stalled probe, not
+`per_generator_V_hat_3A` — and it reproduces exactly. Recording it because the
+second consumer changes the scope estimate: this is not one function's bug.
+
+**Consumer:** `computations/probes/gram_norm_binding_probe.py::_letters`, line
+`out.append(c * sig + d * eye)`. Same word builder (`atom_braid_word_3A`), same
+contamination, independent code path.
+
+Measured type histogram matches this bean's exactly: `{(int,int), (int,mpf),
+(mpf,mpf)}`.
+
+**Quantified at the matmul, λ=(4,3,1,1), d=216:**
+
+    one matmul   float64 = 0.74 ms      object dtype = 13270 ms      1.8e4x
+
+**Symptom as seen from outside:** the probe ran >2131 s on ³H (n=9) and was on
+track to consume a 7200 s budget on that one isotope, against 0.8 s for ²H
+(n=6). A prior session read that as a "threshold effect in the underlying
+trace/Gram computation as the Hecke dimension grows" and proposed more budget
+plus per-unit instrumentation. **That hypothesis is wrong and is retracted
+here:** there is no threshold. The cost is smooth in Σ_λ dim³ with a ~1.8e4
+constant from object dtype; Σdim³ itself jumps ~6300x from n=6 to n=9, which is
+what makes it *look* like a cliff.
+
+**This bean's scalar-collapse fix does NOT apply to this consumer.** The
+collapse relies on every factor within one generator being a polynomial in the
+same σ_i, hence commuting. `gram_norm_binding_probe` multiplies a general braid
+word with interleaved *different* generators, which do not commute, so the
+matmul chain is genuinely required. Fixed instead by coercing the coefficients
+to float in `_letters`, which is sound *only* because on this path
+`build_seminormal_matrices` already returns float64 — the mpf is multiplying an
+operand that has already been truncated, so it carries precision that cannot
+survive the product. Verified at ²H: object-dtype vs coerced agree to 9e-16
+(rel), the float64 floor. Post-fix the whole default probe runs in 1.9 s.
+
+This is the same caveat this bean already states ("9.1e-16 is float64 round-off
+because `_cached_seminormal` returns float64 on this path ... it must not be
+reported as if it did [make it high-precision]"). Neither fix makes either path
+high-precision. The deeper item — that the seminormal path is float64 at all —
+is untouched by both and is not claimed closed by either.
+
+**Side finding, tracked separately:** the committed
+`gram-norm-binding-probe.witness.json` on `main` is stale — see the bean for it.
+
+
+
+**Correction to the note above (same session):** it ended by citing a
+raw-float64 drain of 248 -> 148 for the regenerated witness. That 148 came from
+a three-isotope run without `--with-4he`, compared against a four-isotope
+baseline. The like-for-like figure is **248, flat** — ratchet-neutral, not
+draining. See `qou-wlaf`.
