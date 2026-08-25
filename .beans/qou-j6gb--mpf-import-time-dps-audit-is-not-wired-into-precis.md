@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-08-25T11:17:19Z
+updated_at: 2026-08-25T16:44:32Z
 ---
 
 
@@ -763,3 +763,66 @@ attempt to diff the current dirty set against `raw-float64-baseline.json`
 reported 0 current dirty, which is obviously wrong. Stating that rather than
 guessing. Whoever picks this up needs those five names first; `REGRESSED: 0`
 says nothing got worse, so this is 5 additions someone made without draining.
+
+
+## CORRECTION 2026-08-25: the five ARE listed, by the audit itself
+
+The section above says "The audit has no flag that lists them" and recommends
+whoever picks it up build an extractor. **That is wrong, and the extractor is
+unnecessary.** `witness_raw_float64_audit.py` prints the names in its own stdout,
+unprompted, immediately under the count:
+
+      NEW witnesses carrying raw float64 — fix AT THE PRODUCER
+      (carry mpmath.mpf from the source, serialize with _precision.fmt),
+      then re-run it. Do NOT add the file to the baseline to silence this.
+            42  computations/deltalambda/deuteron-interface-handle-curvature.witness.json
+            28  computations/qbeta/birkhoff-barodd-pythagoras-bridge.witness.json
+            21  computations/qbeta/a3-branching-asymmetry-vs-required.witness.json
+             4  computations/deltalambda/yekutieli-trefoil-surface2form-discretization.witness.json
+             1  computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json
+
+No flag, no baseline diff, no extractor. `--help` does not advertise it, which is
+presumably how the earlier attempt went to the baseline instead -- worth noting as
+the actual lesson: the tool answered the question in its default output while the
+search was for an option to make it do so.
+
+## Disposition of the five (2026-08-25)
+
+All five producers are PROBES, landed 2026-08-02/09 -- i.e. BEFORE the
+2026-08-18 AGENTS.md "PROBES ARE NOT EXEMPT" directive. Pre-directive debt, now
+caught by the ratchet. Four were genuine float64 compute; one is an audit
+over-flag.
+
+FIXED (ported to mpf end to end; 0 raw floats remain in each witness):
+  ffb57ab2d  a3-branching-asymmetry-vs-required        worst move 7.2e-16
+  808156bb4  birkhoff-barodd-pythagoras-bridge         worst move 3.4e-16
+  ca3fd097c  yekutieli-trefoil-surface2form            worst move 1.3e-16
+
+  Every movement is at the float64 floor and no boolean verdict flipped, so
+  these are honesty/serialization fixes, not corrections -- the old numbers were
+  right to the digits the old arithmetic could hold.
+
+BLOCKED -> bean qou-8xb1:
+  deuteron-interface-handle-curvature (42 fields). Calls
+  `hecke_characters.build_seminormal_matrices`, which coerces `q` to float at
+  the INPUT (line 168) and allocates `np.zeros((dim,dim))` (line 228). Measured:
+  passing an mpf q returns BIT-IDENTICAL output to passing an f64 q. It is the
+  qou-d8gq failure mode surviving in the sibling builder -- qou-d8gq fixed
+  `pyhecke/syt_prefix_cache.py` only. 102 consumers under computations/, 65
+  emitting witnesses. NOT fixable by wrapping fmt() around the outputs: that is
+  the float64-padding defect by construction.
+
+AUDIT OVER-FLAG -> bean qou-hhm3:
+  sigma1cubed-seifert-surface-term (1 field). The producer already computes in
+  mpf; the single finding is `elapsed_sec = 0.001`, a wall-clock timer with no
+  mpf source to have lost digits from. Same argument qou-xt5l accepted for
+  integral floats.
+
+NET: NEW dirty witnesses 5 -> 2. The ratchet stays red on main until qou-8xb1
+lands; that is a real infra decision (qou-d8gq measured honest mpf matmul at
+642x slower), not a drain.
+
+Also corrected while here: the note above reads "this is 5 additions someone made
+without draining". Accurate as far as the ratchet goes, but the four real ones
+predate the directive that made them defects, so "without draining" reads more
+culpably than the history supports.
