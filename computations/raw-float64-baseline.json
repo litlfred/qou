@@ -3,7 +3,7 @@
   "enforced_rule": "AGENTS.md: NO-FLOAT64 means none may enter a witness.",
   "drain_owner": "PR #4677 (float64 residual, producer-side)",
   "files_count": 1409,
-  "fields_count": 487626,
+  "fields_count": 487622,
   "files": {
     "computations/4he-binding-full-pipeline.witness.json": 40,
     "computations/a-K-via-lp-dual-full.witness.json": 38,
@@ -94,7 +94,7 @@
     "computations/atomic-braid-alpha-shift-l6.witness.json": 13,
     "computations/atomic-braid-gb-filtration-extension.witness.json": 6,
     "computations/atomic-chirality-residue.witness.json": 126,
-    "computations/atomic-tr-m-helium4-canonical.witness.json": 7,
+    "computations/atomic-tr-m-helium4-canonical.witness.json": 3,
     "computations/atomic-tr-m-helium4.witness.json": 2,
     "computations/audit-lean-uniqueness-ref-wiring.witness.json": 1,
     "computations/audits/braid-encoding-audit.witness.json": 336,
