@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-26T13:35:46Z
+updated_at: 2026-08-26T13:55:21Z
 parent: qou-8lxd
 ---
 
@@ -149,3 +149,60 @@ need different repairs; correcting it either way changes a mathematical claim an
 belongs with the author. And NO LEAN -- the finding is that two prose claims
 differ from each other and from what a third needs; there is no invariant to
 prove, and a toy formalisation would be a trivial-true dressing up a reading.
+
+
+## STEP 1 (NAME THE BASE) WORKED 2026-08-26 -- IT IS A DECISION, NOT A LOOKUP
+
+Audit: docs/audits/2026-08-26-t3g-step1-name-the-base.md
+
+Expected a lookup. The corpus offers THREE candidate bases, two sharing a
+symbol, and designates none:
+
+  1. Spec R, R = Z[q,q^-1] -- def:quantum-universe's ground ring, the one
+     tau : C -> R-Mod is literally linear over. Strongest claim by construction.
+  2. Spec(R_q), R_q = the COORDINATE RING OF BRING'S CURVE --
+     def:categorical-mordell-weil. SAME SYMBOL AS (1), DIFFERENT RING:
+     Z[q,q^-1] is the coordinate ring of G_m/Z (affine, genus 0); Bring's curve
+     is genus 4. R_q appears NOWHERE in the notation register, so nothing
+     adjudicates the collision.
+  3. Spec(xi_q), the Reeb-eigenvalue SPECTRAL BASE.
+
+THE FIND THAT MATTERS -- THIS BEAN IS MISSING A CARRIER. def:categorical-mordell-weil
+states, verbatim:
+
+    'The fibre functor atlas of the QOU forms a G-gerbe over the spectral base.'
+
+That is T3g's own claim, in T3g's own vocabulary, and THIS BEAN DOES NOT CITE
+IT. This bean records the fivefold remark as the corpus's only assertion, and
+#5744's audit measured the external shelf as empty (one Tannakian hit in
+library/, zero on gerbes). Both readings missed this block.
+
+It is a STRONGER carrier than the fivefold remark: a `definition` with a .lean
+sibling, not a `remark`. Two caveats keep it from settling anything: the Lean is
+registered validation: "not_checked", and the gerbe is used as SETTING inside a
+Mordell-Weil / L-function block, not proved as a RESULT. Read it before any
+further T3g work.
+
+A FOURTH OBJECT, and the hazard. The same block defines H^1_ot(C, E_q) as 'the
+first cohomology of the monoidal category (classifying torsors under E_q in C)'
+-- a CATEGORICAL H^1, of C itself, under an OBJECT. T3g's question is
+H^1(base, Aut^ot(tau)) -- cohomology of a BASE, classifying FIBRE FUNCTORS.
+Different groups, different questions, both written H^1. Say which one, over
+which base, in which topology. This is the da-arity-conflation shape and the arc
+has now hit it three times.
+
+STATUS: step 1 NOT completed as a lookup; CONVERTED into a decision. The
+question 'is H^1(base, Aut^ot) nontrivial?' still cannot be posed -- and now for
+a sharper reason: not that nobody wrote the base down, but that the corpus
+contains three and reconciles none. Steps 2 and 3 have no determinate target
+until the owner answers:
+
+  (a) which ring is R_q -- Z[q,q^-1], or Bring's coordinate ring? Register the
+      survivor, rename the other.
+  (b) is T3g's base Spec R or the spectral base Spec(xi_q)? Different cohomology,
+      different topologies, different answers.
+
+DELIBERATELY NOT DONE: no symbol renamed, no base designated. Both are changes
+to mathematical claims across chapters that already depend on them, and the R_q
+collision may be a naming slip in one place or a genuine identification the
+author intends. Agents should not pick.

@@ -98,8 +98,20 @@ drops at `n = 3`.
 
 What is new here is the *proof*, and that it runs on different inputs: the
 `Sym^2` gate plus the Frobenius-Schur trichotomy, with no appeal to the Euler
-characteristic and none to Schur-Weyl. Two independent routes to one condition
-are worth having. The scope note in `qou-y7vg` — that this is the surviving
+characteristic and none to Schur-Weyl.
+
+A third route landed on `main` while this file was in review:
+`QOU.SU2EmergenceRankForced.no_three_dimensional_fundamental_in_one_fibre`
+derives `N != 3` from non-degeneracy of the fibre's volume form
+(`exteriorSquareDim N = 1` forces `N = 2`), touching none of the three inputs
+above.
+
+The three are not three votes on one proposition. The row-cap and volume-form
+arguments bound the **fibre** — they say `N = 2`, so one fibre cannot supply a
+three-dimensional object. This file bounds any **candidate**: it names the
+property a candidate must have, and so yields a test applicable to an object
+nobody has built. The negative is over-determined; the screen is what is
+additive. The scope note in `qou-y7vg` — that this is the surviving
 `N = 3` direction after the Klein, marked-pair and 4-form exclusions — is the
 live carrier; `qou-8p1i` was scrapped as a duplicate of `qou-dwsh`.
 
