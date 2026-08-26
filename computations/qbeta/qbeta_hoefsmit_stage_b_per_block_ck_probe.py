@@ -371,7 +371,7 @@ def main() -> int:
     E0 = 1 / (q_sym * (q_sym - 1))   # form-A E₀ (qbeta_delta_tr_vs_formA)
     diag = {}
     for label, anchor in (("proton", Q_PROTON), ("muon", Q_MUON)):
-        sub = substrate_ladder_quantities(anchor)
+        sub = substrate_ladder_quantities(anchor, convention="C")
         Q_A = mp.mpf(M_E_MEV) * sub["Q_A_over_me"]
         QN1 = Q_A * mp.cos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
         rows = {}
@@ -397,7 +397,7 @@ def main() -> int:
     print("  §5 CODATA-referenced ĉ_3 + scalar-peel saturation (k ≥ 4)")
     sat = {}
     for label, anchor in (("proton", Q_PROTON), ("muon", Q_MUON)):
-        sub = substrate_ladder_quantities(anchor)
+        sub = substrate_ladder_quantities(anchor, convention="C")
         u = sub["u"]
         Q_A = mp.mpf(M_E_MEV) * sub["Q_A_over_me"]
         QN1 = Q_A * mp.cos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)

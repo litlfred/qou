@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T04:17:11.994434+00:00",
-  "commitSha": "a340f7c8749e1a3cf9ad972838c4aa48b62427f7",
+  "computedAt": "2026-08-26T05:25:54.437879+00:00",
+  "commitSha": "d64a90c3def8b4c1417a97c9a8b4bf2b8df657a1",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -56,14 +56,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2775,
+      "total_scanned": 2777,
       "prov_ok": 2349,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 247,
+      "prov_exempt_no_reader": 249,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965405405405405405405405405405405405405405405405405405405405"
+      "completeness_ratio": "0.965430320489737126395390709398631616852718761253150882247029"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -11616,9 +11616,23 @@
           ]
         },
         {
+          "witness": "qbeta-counit-trace-transport-overshoot.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "qbeta-daha-macdonald.witness.json",
           "missing_fields": [
             "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "qbeta-delta-vs-deltaTbeta-discrepancy.witness.json",
+          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]

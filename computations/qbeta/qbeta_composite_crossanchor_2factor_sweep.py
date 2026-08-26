@@ -187,7 +187,7 @@ def build_atoms(q: mpf) -> dict[str, mpf]:
     failed individually (the 28-candidate single-formula bracket) plus the
     structural objects named in the KLR/crystal composite scope.
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     h, hbar_q, b, u = sub["h"], sub["hbar_q"], sub["b"], sub["u"]
     atoms: dict[str, mpf] = {
         # quantum integers + Markov traces

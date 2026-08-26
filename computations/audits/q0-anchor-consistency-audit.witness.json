@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T04:15:03.248105+00:00",
-  "commitSha": "a340f7c8749e1a3cf9ad972838c4aa48b62427f7",
+  "computedAt": "2026-08-26T05:14:31.111352+00:00",
+  "commitSha": "d64a90c3def8b4c1417a97c9a8b4bf2b8df657a1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -51,7 +51,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1652,
+      "Q0_ANCHOR_MISSING": 1654,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -5073,6 +5073,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-counit-trace-transport-overshoot.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-crossing-weight-affine.witness.json",
           "detail": ""
         },
@@ -5110,6 +5114,10 @@
         },
         {
           "witness": "qbeta-delta-tr-vs-formA.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-delta-vs-deltaTbeta-discrepancy.witness.json",
           "detail": ""
         },
         {
