@@ -2,6 +2,7 @@
 Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+import QOU.MathlibExt.PivotalCategory
 
 /-!
 # QOU.MathlibExt.RigidTensorDual — duals of a tensor product
@@ -129,5 +130,40 @@ what a **monoidal** pivotal structure compares against. -/
 noncomputable def tensorDoubleDualIso [RightRigidCategory C] (X Y : C) :
     ((((X ⊗ Y : C)ᘁ : C)ᘁ : C)) ≅ ((((X : C)ᘁ : C)ᘁ) ⊗ (((Y : C)ᘁ : C)ᘁ)) :=
   rightDualMapIso (tensorRightDualIso X Y) ≪≫ tensorRightDualIso ((Y : C)ᘁ) ((X : C)ᘁ)
+
+/-- **The dual comparison of a tensor product is the tensor of the dual comparisons.**
+
+Both `tensorExactPairing X X₁ Y Y₁` and `tensorExactPairing X X₂ Y Y₂` exhibit a right dual of
+`X ⊗ Y`, so `rightDualIso` compares them; the claim is that this comparison factors as the tensor
+of the two componentwise comparisons.  Note the **order reversal** on the right: the dual of a
+tensor is the tensor of the duals *in the opposite order*, so the `Y`-comparison comes first.
+
+Proved by uniqueness (`rightDualIso_hom_unique`): it suffices that the right-hand side satisfies
+the same evaluation identity, and that is the two componentwise identities plus one application of
+the interchange law.  Purely formal — no braiding, no rigidity beyond the two pairings. -/
+theorem rightDualIso_tensorExactPairing {X X₁ X₂ Y Y₁ Y₂ : C}
+    (p₁ : ExactPairing X X₁) (p₂ : ExactPairing X X₂)
+    (r₁ : ExactPairing Y Y₁) (r₂ : ExactPairing Y Y₂) :
+    (rightDualIso (tensorExactPairing X X₁ Y Y₁) (tensorExactPairing X X₂ Y Y₂)).hom
+      = (rightDualIso r₁ r₂).hom ⊗ₘ (rightDualIso p₁ p₂).hom := by
+  refine (rightDualIso_hom_unique _ _ _ ?_).symm
+  have hX := rightDualIso_hom_evaluation p₁ p₂
+  have hY := rightDualIso_hom_evaluation r₁ r₂
+  set rX := (rightDualIso p₁ p₂).hom
+  set rY := (rightDualIso r₁ r₂).hom
+  show ((rY ⊗ₘ rX) ▷ (X ⊗ Y)) ≫ (𝟙 _ ⊗≫ Y₂ ◁ ε_ X X₂ ▷ Y ⊗≫ ε_ Y Y₂)
+      = 𝟙 _ ⊗≫ Y₁ ◁ ε_ X X₁ ▷ Y ⊗≫ ε_ Y Y₁
+  rw [tensorHom_def]
+  calc _ = (rY ▷ X₁) ▷ (X ⊗ Y) ⊗≫ Y₂ ◁ (((rX ▷ X) ≫ ε_ X X₂) ▷ Y) ⊗≫ ε_ Y Y₂ := by
+            monoidal
+    -- the `X`-comparison is absorbed into the inner evaluation
+    _ = 𝟙 _ ⊗≫ (rY ▷ ((X₁ ⊗ X) ⊗ Y) ≫ Y₂ ◁ (ε_ X X₁ ▷ Y)) ⊗≫ ε_ Y Y₂ := by
+            rw [hX]; monoidal
+    -- interchange: `rY` and the inner evaluation act on disjoint strands
+    _ = 𝟙 _ ⊗≫ (Y₁ ◁ (ε_ X X₁ ▷ Y) ≫ rY ▷ (𝟙_ C ⊗ Y)) ⊗≫ ε_ Y Y₂ := by
+            rw [← whisker_exchange rY (ε_ X X₁ ▷ Y)]
+    _ = 𝟙 _ ⊗≫ Y₁ ◁ (ε_ X X₁ ▷ Y) ⊗≫ ((rY ▷ Y) ≫ ε_ Y Y₂) := by monoidal
+    -- and now the `Y`-comparison
+    _ = _ := by rw [hY]
 
 end QOU.MathlibExt
