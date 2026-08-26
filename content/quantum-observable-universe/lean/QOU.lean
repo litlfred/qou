@@ -100,6 +100,7 @@ import QOU.MathlibExt.RankMinor
 import QOU.MathlibExt.BraidedSlide
 import QOU.MathlibExt.Ribbon
 import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.BraidedTensorDual
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.GramNondegenerate
