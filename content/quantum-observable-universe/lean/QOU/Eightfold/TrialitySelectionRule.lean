@@ -43,6 +43,8 @@ as one.  Everything below the definition is *derived*.
   `pentaquark_neutral (4,1)`.
 * `triality_add` / `neutral_add` — it really is a grading: additive under
   composition, and neutrality is closed under it.
+* `identification_invisible_to_selection_rule` — the proved negative: weighting
+  the grading by a unit (`2`, the identified-groups case) changes no verdict.
 * **`neutral_decomposition`** and its converse `decomposition_neutral` — the
   content theorem.  Every colour-neutral combination is `m` mesons together with
   `n` baryons and `n'` antibaryons, and every such combination is neutral.  So
@@ -69,16 +71,26 @@ Conflating them would be the arity slip `AGENTS.md` §"Grep the claim SHAPE"
 describes: two singlet-counting statements about different objects, sharing a
 word.  They are complementary tools, not one tool.
 
-## Bearing on the open question `flavour vs colour SU(3)`
+## Bearing on the open question — a PROVED NEGATIVE, not a test
 
 `eightfold-open-problems.md` lists as open whether the flavour and colour
-`SU(3)` are the same, different, or groupoid-dual.  Triality is a property of
-each copy separately, so a quark carrying both indices has *two* independent
-gradings, and the neutrality conditions are independent.  Under an
-identification of the two groups they would collapse to one, which is a
-structural difference the corpus can test rather than assert.  **No claim is
-made here about which holds** — this file supplies the invariant, not the
-answer.
+`SU(3)` are the same, different, or groupoid-dual.  The obvious hope is that
+triality discriminates: if the groups are distinct a quark carries one
+fundamental index of each, while if they are identified it carries **two**
+indices of the one group, so its triality is `2` rather than `1`, and the
+neutrality condition becomes `2(a − b) = 0` instead of `a − b = 0`.
+
+**Those are the same condition, and `identification_invisible_to_selection_rule`
+proves it.**  `2` is a unit in `ℤ/3`, so multiplying the grading by it permutes
+the non-zero classes and fixes zero.  Every composite gets the same verdict
+either way — meson, baryon, diquark, tetraquark, pentaquark alike.
+
+So the selection rule **cannot** distinguish the two cases, and any argument
+that reaches for it is dead on arrival.  That is worth knowing precisely
+because it is the first thing one tries: the invariant proved above is real,
+but it is *blind* to the identification, and a search for the discriminator has
+to look somewhere the `ℤ/3` grading does not reach.  The question stays open;
+this file closes one route to it.
 
 ## Base ring (§7c)
 
@@ -172,6 +184,45 @@ theorem neutral_decomposition {a b : ℕ} (h : Neutral a b) :
   rcases le_total a b with hab | hab
   · exact ⟨a, 0, (b - a) / 3, by omega, by omega⟩
   · exact ⟨b, (a - b) / 3, 0, by omega, by omega⟩
+
+/-! ## 4. The grading is blind to the flavour/colour identification -/
+
+/-- **Weighted triality.**  If each quark carries `k` fundamental indices of the
+group, its triality is `k` and a composite of `a` quarks and `b` antiquarks has
+grading `k·(a − b)`.
+
+`k = 1` is the case where colour and flavour are **distinct** groups (one colour
+index per quark); `k = 2` is the case where they are **identified** (the colour
+and flavour indices become two indices of the same group). -/
+def trialityWeighted (k a b : ℕ) : ZMod 3 := (k : ZMod 3) * triality a b
+
+/-- Weighting by a unit changes nothing: `ℤ/3` is a field, so `k·x = 0` forces
+`x = 0` whenever `k ≠ 0`. -/
+theorem trialityWeighted_eq_zero_iff {k : ℕ} (hk : (k : ZMod 3) ≠ 0) (a b : ℕ) :
+    trialityWeighted k a b = 0 ↔ Neutral a b := by
+  unfold trialityWeighted Neutral
+  rw [mul_eq_zero]
+  exact or_iff_right hk
+
+/-- **The proved negative.**  Identifying colour with flavour doubles each
+quark's triality, and that is invisible to the selection rule — every composite
+receives the same verdict.  So triality cannot discriminate between the two
+cases, and the open question `flavour vs colour SU(3)` is not settled, or even
+narrowed, by this grading. -/
+theorem identification_invisible_to_selection_rule (a b : ℕ) :
+    trialityWeighted 2 a b = 0 ↔ trialityWeighted 1 a b = 0 := by
+  rw [trialityWeighted_eq_zero_iff (by decide), trialityWeighted_eq_zero_iff (by decide)]
+
+/-- Concretely, on the whole hadron table at once. -/
+theorem identification_agrees_on_hadrons :
+    (trialityWeighted 2 1 1 = 0 ↔ trialityWeighted 1 1 1 = 0) ∧
+    (trialityWeighted 2 3 0 = 0 ↔ trialityWeighted 1 3 0 = 0) ∧
+    (trialityWeighted 2 2 0 = 0 ↔ trialityWeighted 1 2 0 = 0) ∧
+    (trialityWeighted 2 4 1 = 0 ↔ trialityWeighted 1 4 1 = 0) :=
+  ⟨identification_invisible_to_selection_rule 1 1,
+   identification_invisible_to_selection_rule 3 0,
+   identification_invisible_to_selection_rule 2 0,
+   identification_invisible_to_selection_rule 4 1⟩
 
 /-- The two directions together: neutrality is *exactly* meson-and-baryon
 content. -/

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-08-26T03:13:30Z
+updated_at: 2026-08-26T03:18:12Z
 parent: qou-a0gr
 ---
 
@@ -277,3 +277,39 @@ owner: adopt SU(3)_c and SU(3)_F, register both, apply ONLY to the ~10 bare
 sites where a definite copy is meant, leave the 4 generic ones bare, and add a
 register note that the subscripts name the two ROLES rather than claiming the
 groups are distinct as objects.
+
+
+## SELF-CORRECTION, same session — the "testable structural difference" is NOT one
+
+I recorded above, and wrote into TrialitySelectionRule.lean and PR #5810, that
+triality gives a way to test the flavour-vs-colour identification: distinct
+groups mean a quark carries one fundamental index of each, identified groups
+mean two indices of one group, so the grading collapses and that is "a
+structural difference the corpus can test rather than assert".
+
+THAT IS WRONG, and it is now a proved negative rather than a corrected sentence.
+
+If the groups are identified the quark's triality is 2, not 1, so neutrality
+reads 2(a - b) = 0 instead of (a - b) = 0. But 2 is a UNIT in Z/3, so
+multiplying the grading by it permutes the non-zero classes and fixes zero. The
+two conditions are the same condition. Checked on the whole hadron table --
+meson, baryon, diquark, four-quark, tetraquark, pentaquark -- and the verdict is
+identical in every case.
+
+Added to the file, sorry-free, lean-direct exit 0:
+
+  trialityWeighted k a b                 = k * triality a b, k = indices per quark
+  trialityWeighted_eq_zero_iff           weighting by a unit changes nothing
+  identification_invisible_to_selection_rule
+                                         the negative, general in (a,b)
+  identification_agrees_on_hadrons       the table, as a corollary
+
+WHY THIS IS WORTH HAVING rather than just deleting the wrong sentence: the
+triality route is the FIRST thing anyone reaches for on this question, and it
+is dead on arrival. The invariant itself is real and the confinement content
+stands; what is now established is that the invariant is BLIND to the
+identification. A discriminator has to look somewhere the Z/3 grading does not
+reach.
+
+So the open question is not narrowed by this work. The file closes one route to
+it, which is a smaller and more honest claim than the one I made an hour ago.
