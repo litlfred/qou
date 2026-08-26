@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-26T20:00:59.961590Z",
+  "updated_at": "2026-08-26T20:42:25.139161Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2525,6 +2525,61 @@
       "file_sha": "4a51eeb662e1",
       "disposition": "no-change",
       "evidence": "Genuine symbolic identity over R: evaluates Sum_i 1/dim_q(lam_i) for the Hecke q-dimensions at this n to an explicit closed form, discharged by rw/simp/ring. Real content; merely named after Frobenius. Flagged because every symbol in the statement is defined in the same file -- the expected false-positive class for the LOCAL-ONLY signal.",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PerLoopMeasureShadowAssembly.lean::kl_eigenvalue_at_one_eq_pairCount::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 70,
+      "verdict": "genuine",
+      "file_sha": "8628435a122f",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def klEigenvalueAtOne : Int := 2` and `def pairCount : Int := 2` are two INDEPENDENTLY hand-entered literals, so the theorem is `2 = 2 := rfl`. The docstring presents it as a substantive coincidence -- \"The tower's own KL eigenvalue at the classical point equals the conjugate-pair count: the q->1 one-loop restores the doubled total\" -- under a name invoking Kazhdan-Lusztig. Nothing derives either constant; the identification is asserted by the two `:= 2`s.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::stokes_qzero_offdiagonal::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 100,
+      "verdict": "genuine",
+      "file_sha": "c781903a6387",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def Splus0 : M2 := ![![1, 3], ![0, 1]]` is a hand-entered matrix literal, so `Splus0 0 1 = 3` reads entry (0,1) of a hard-coded table. The name invokes Stokes constants; the content is a lookup.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_figureEight_value::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 307,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "GENUINE computation, not a lookup: `jones w := LP.mul (writheUnit w) (bracket w)` evaluates the Kauffman bracket over the real braid word `figureEight := [(1,true),(2,false),(1,true),(2,false)]`, and the theorem asserts the resulting Laurent polynomial. A real verification of V(4_1).",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_two::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 73,
+      "verdict": "legit",
+      "file_sha": "5766ffb0bdad",
+      "disposition": "no-change",
+      "evidence": "GENUINE computation: `markovParamCoeff` is a real recursion (`| (n+2) => -(6*(n+1)*markovParamCoeff (n+1) ...`), so `markovParamCoeff 2 = -1/16` evaluates it rather than looking it up.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n5::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 165,
+      "verdict": "legit",
+      "file_sha": "a7763e26e086",
+      "disposition": "no-change",
+      "evidence": "Same family as the hecke_nX_frobenius_codim group adjudicated legit at CRITICAL: a real symbolic identity over R for the q-dimension partition sum, merely named after Frobenius.",
+      "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
   }
