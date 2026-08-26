@@ -38,8 +38,13 @@ VOL = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic","compu
 def leaves(o, p=""):
     if isinstance(o, dict):
         for k, v in o.items():
-            if k in VOL or any(k.endswith(x) for x in
-                    ('_elapsed_sec','_elapsed','_seconds','_runtime','_wall_sec')):
+            # "elapsed" anywhere is timing: the suffix list missed
+            # elapsed_reduce_sec / elapsed_trace_sec, which end _sec but not
+            # _elapsed_sec. A bare _sec suffix would be broader than needed and
+            # could mask a real field, so key on the word instead.
+            if (k in VOL or "elapsed" in k
+                    or any(k.endswith(x) for x in
+                           ('_seconds','_runtime','_wall_sec'))):
                 continue
             yield from leaves(v, f"{p}.{k}")
     elif isinstance(o, list):
