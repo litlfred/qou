@@ -143,6 +143,22 @@ QOU.BraidKnot.SnIsotypicSpechtSplitInstance | QOU.BraidKnot.SnIsotypicSpechtSpli
 # refactor silently breaks.
 QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.catalan_G_eq_Cl_2_pi_div_two | clean
 QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand | clean
+# --- the Lobachevsky-Catalan identity: an AXIOM until 2026-08-26, now a theorem ---
+# `lobachevsky (pi/4) = catalan_G / 2` was recorded as an `axiom` citing Lewin 1981, on
+# the stated ground that a proof needs "Mathlib's full polylogarithm machinery ... none of
+# which is currently upstream".  That was wrong twice over: Mathlib has
+# `integral_log_sin_zero_pi_div_two` and `Analysis.Complex.AbelLimit`, and THIS REPO
+# already had the whole series-integral bridge in `QOU.Knot.clausen_eq_series`, sorry-free.
+# The proof is three steps over those.
+#
+# This is the highest-value pin in the file: a declaration that moved from `axiom` to
+# `theorem` is exactly what a careless revert turns back into an axiom while every name
+# and every downstream `rw` still typechecks.  `#print axioms` is the only thing that can
+# tell the difference, so it is pinned here.  The Whitehead entry is pinned alongside it
+# because it is the downstream consumer that was CONDITIONAL on the axiom and is now not;
+# if the identity regresses, this row is where the inherited `sorryAx` reappears.
+QOU.Archimedean.BorromeanVolumeCatalan | QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan | clean
+QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky | clean
 
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an

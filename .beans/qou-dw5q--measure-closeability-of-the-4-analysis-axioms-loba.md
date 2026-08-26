@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T21:26:14Z
-updated_at: 2026-08-25T21:45:51Z
+updated_at: 2026-08-25T22:19:50Z
 ---
 
 ## RESULT 2026-08-25 — one theorem PROVED; the axiom itself stays External
@@ -45,3 +45,37 @@ Pinned in the axiom guard; full gate rc=0 on 37 entries.
 **Axiom count unchanged at 24** — this proves a theorem that was missing, it does
 not discharge an axiom. Saying otherwise would be the over-claim this repo warns
 about.
+
+
+## FOLLOW-UP — gap isolated; still External, now for three NAMED reasons
+
+Pushed further toward the axiom. It is still **not closeable**, and the External
+classification stands — but the gap is now one identity with three named missing
+prerequisites, all measured against the pinned olean tree (401,418 constants
+visible, positive controls pass).
+
+**New theorem** `QOU.Archimedean.lobachevsky_catalan_iff_clausen`:
+
+    Λ(π/4) = catalan_G / 2   <->   Λ(π/4) = Cl_2 (π/2) / 2
+
+One rewrite off the bridge. Catalan is now **eliminated** from the statement of
+the gap: what remains is exactly the θ = π/4 instance of the Clausen integral
+representation `Λ(θ) = Cl_2 (2θ)/2`.
+
+**The three missing Mathlib pieces (measured, not assumed):**
+1. `∫₀^{π/2} log(sin x) dx = -(π/2) log 2` — no `integral`+`log` lemma of this
+   kind exists at this toolchain at all.
+2. Abel's limit theorem / boundary log series. Mathlib has
+   `Real.hasSum_pow_div_log_of_abs_lt_one` (strictly inside the disc) and nothing
+   carrying it to |z| = 1, z ≠ 1 — exactly where
+   `∑ cos(kθ)/k = -log|2 sin(θ/2)|` lives.
+3. Term-by-term integration of a conditionally-convergent Fourier series against
+   an integrand improper at t = 0.
+
+**Both classical routes hit the same wall.** The Fourier route needs (2)+(3). The
+`∫₀^{π/4} log(cot t) dt = G` route (u = tan t, geometric expansion — which
+sidesteps the boundary) still needs (1) to convert ∫log sin / ∫log cos into Λ.
+
+Verified `[propext, Classical.choice, Quot.sound]`. Pinned. Full gate rc=0 on 38.
+**Axiom count unchanged at 24** — this reduces what must be shown; it does not
+show it.
