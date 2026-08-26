@@ -1814,6 +1814,45 @@ Do not regress either.
 >   committed witness** references `scan_h2_molecule` or `rank_drop`, so the
 >   crossings it reports change without invalidating any recorded number.
 >
+>   **The `.lean` surface has never been counted, by this or any other tool
+>   (measured 2026-08-26, bean `qou-cxjq`).**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   walks the tree four times and every one is `rglob("*.py")` — lines 635, 760,
+>   785, 930. There is no `.lean` path in it. Its numbers are correct and
+>   correctly scoped; they are simply not *about* Lean, and nothing else covers
+>   Lean either. So do not read any figure in this section as an `.lean`
+>   all-clear. **Nor is there one elsewhere in this document:** the single
+>   "**0** in `.lean`/`.ts`" claim above belongs to the **Λ vs Cl₂ naming**
+>   guard (`qou-zdz5`), a different defect class — the two were conflated once,
+>   by shape rather than subject, in a bean about detector blindness.
+>
+>   Measured directly with
+>   [`scripts/lean-markov-convention-audit.py`](scripts/lean-markov-convention-audit.py)
+>   (which the producer audit structurally cannot do), the Lean
+>   Markov-parameter surface is **22 convention-C *definitions* across 18 files,
+>   under 3 spellings**, against **24** in convention D — roughly half the
+>   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
+>   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
+>   *mentions* a convention while one inside a `def` body *defines* it, and
+>   conflating them inflates the count several-fold. **Not all 22 are defects**: the same script triages
+>   them **14 actionable / 8 deliberate**, where deliberate means the site
+>   announces itself (a `_legacy` name, an `@[deprecated]`, or a docstring saying
+>   convention-C / comparison / historical). That is evidence of *intent*, not a
+>   clean bill — a deliberate C object can still be cited as though it were D. An earlier hand-verified pass in
+>   the audit below reported 7 across 6 files and was an undercount. And **`markovZ` is five
+>   declarations spanning both conventions** — three C (`markov-trace-factorization`,
+>   `QBetaCategoricalPrecisionLadder`, `HoefsmitV21CosSymmetrization`) against two
+>   D (`MarkovBondRule`, `y-lambda-recipe-from-partition`). Same name, opposite
+>   values: `z_C(q₀) = 0.49932…` vs `z_D(q₀) = 0.61268…`. Only **3** of the 7 use
+>   the square-root-variable disguise (`u/(u²+1)` or `s/(s²+1)` with `u² = q`);
+>   the other **4 write `Real.sqrt q` in plain sight** and are trivially
+>   greppable — the surface is unscanned, not invisible-in-principle. Note also
+>   that the Tier-2 migration which replaced `Real.sqrt` with a generic
+>   `markovZ (u : R)` **did not change the convention**: it removed the square
+>   root, which was its stated goal, and left C harder to see. Table and
+>   per-site verdicts:
+>   [`docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`](docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md).
+>
 >   **The posture below still does not change**, and the remaining 26 are the
 >   reason. Closing one shape does not
 >   close the class —
