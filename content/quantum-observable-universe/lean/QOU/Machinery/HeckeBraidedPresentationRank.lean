@@ -2,7 +2,7 @@ import QOU.Machinery.HeckeH3AlgebraInstance
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.HeckeH2AlgebraInstance
 import QOU.Machinery.HeckeH3Semisimple
-import QOU.MathlibExt.SemisimpleOfNondegenerateTrace
+import QOU.MathlibExt.TraceFormSemisimple
 import Mathlib.Tactic.IntervalCases
 
 /-!
@@ -304,7 +304,7 @@ theorem wenzlTowerStep_H2_H3_trivial (q : R) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 
       (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) trn1 where
   semisimple_ascend _ _ := isSemisimpleRing_H3A q hq h2 h3
 
-/-! ## `WenzlTowerStep` at GENERAL rank, for the algebra trace
+/-! ## `WenzlTowerStep` at GENERAL rank, for the regular trace
 
 `wenzlTowerStep_H2_H3_trivial` above discharges the field by discarding both
 hypotheses — it proves nothing about the ascent. This does the opposite, and the
@@ -336,19 +336,32 @@ apply to it and the general-`n` ascent for *that* trace remains open. Do not cit
 this as "the Wenzl ascent is formalized" without first pinning down which trace
 is meant. -/
 
-/-- **`WenzlTowerStep` for the algebra trace, at any rank.** Discharged from
+/-- **`WenzlTowerStep` for the regular trace, at any rank.** Discharged from
 left-nondegeneracy alone; the `IsSemisimpleRing Hn` hypothesis is discarded
 because it is not needed.
 
+The semisimplicity engine is NOT proved here — it is
+`QOU.MathlibExt.isSemisimpleRing_of_regTraceForm_nondegenerate`, which the
+corpus has carried since brick B3d (epic `qou-hnhg`). What this adds is only
+the adapter: `WenzlTowerStep` states nondegeneracy existentially (`∀ y ≠ 0,
+∃ z, tr (y * z) ≠ 0`) where that theorem states it as a left-kernel condition
+(`∀ x, (∀ y, B x y = 0) → x = 0`). The two are contrapositives once the unary
+trace is `w ↦ trace (L_w)`, since then `tr (y * z) = regTraceForm R Hn1 y z`.
+
 Contrast `wenzlTowerStep_H2_H3_trivial`, which discards BOTH hypotheses and
 therefore carries no content. Here the nondegeneracy hypothesis does the work. -/
-theorem wenzlTowerStep_algTrace {rank : ℕ}
+theorem wenzlTowerStep_regTrace {rank : ℕ}
     {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
     [FiniteDimensional R Hn1]
     (q : R) (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) :
-    WenzlTowerStep R q rank Hn Hn1 σn1 ι (QOU.MathlibExt.algTrace (K := R)) where
-  semisimple_ascend _ hnd :=
-    QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate hnd
+    WenzlTowerStep R q rank Hn Hn1 σn1 ι
+      (fun w => LinearMap.trace R Hn1 (Algebra.lmul R Hn1 w)) where
+  semisimple_ascend _ hnd := by
+    refine QOU.MathlibExt.isSemisimpleRing_of_regTraceForm_nondegenerate (K := R) ?_
+    intro x hx
+    by_contra hne
+    obtain ⟨z, hz⟩ := hnd x hne
+    exact hz (hx z)
 
 end QOU.Machinery.HeckeRank
