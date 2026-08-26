@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T09:37:58Z
-updated_at: 2026-08-26T09:57:56Z
+updated_at: 2026-08-26T10:02:13Z
 ---
 
 ## The shape
@@ -138,3 +138,68 @@ long-budget run is in flight; until it reports, do not claim either way.
 
 **Consequence for whoever picks this up:** the bean's list is a list of
 unguarded shapes. It is not a list of eight bugs, and it is not a batch.
+
+
+## 2026-08-26 — all 8 classified from the source. The discriminator is WHERE
+## THE INCREMENT SITS relative to the skip.
+
+The question is not "is there a guard" but **what does zero mean here**, and
+that is answered by reading three lines around the `+= 1`:
+
+| where `n_total += 1` sits | zero means | fix |
+|---|---|---|
+| **after** a `continue` that skips unavailable targets | the upstream is missing; the run verified nothing | **REFUSE** |
+| **after** a `continue` that filters *scope* | nothing was in scope — a legitimate result | **DO NOT ASSERT** |
+| inside a branch of a status split (`if underdet / else`) | every case is in the other state — legitimate | **DO NOT ASSERT** |
+| **first statement in the loop**, no `continue` before it | only reachable if the input list is empty | **low risk** |
+
+### The 8
+
+**REFUSE — zero implies a missing upstream**
+
+* `all_nuclides_wedderburn_spectral_v2:525` — `n_total` counts entries with
+  `A >= 1`; zero only if the nuclide table failed to load.
+* `qbeta_hoefsmit_stage_b_per_block_ck_probe:227` — `n_total` counts
+  `fnd[side]["nf_terms"]`; zero means the upstream witness carried no terms.
+
+**DO NOT ASSERT — zero is a legitimate outcome, refusing would be wrong**
+
+* `v_hat_to_delta_lambda_bridge:350` — two `continue`s filter channels; zero =
+  "no 1-dim channels in scope", which the producer already prints as a
+  CONCLUSION.
+* `sublemma_2_1_A_operator_extract_h9:539` — `n_overdet` increments only in the
+  `elif consistent` branch of an `if underdet` split; zero = every λ is
+  underdetermined, a real Phase-2 state.
+* `sublemma_2_1_h9_tritium_verify:453` — same shape (`n_overdet` in the `else`
+  of `if underdet`).
+
+**LOW RISK — the increment is unconditional**
+
+* `sublemma_2_1_h12_he4_branching:235` — `n_total += 1` is the **first**
+  statement in `for lam, d in targets:`, with no `continue` before it. It
+  therefore counts every target and **cannot** silently skip while reporting
+  zero. Reachable only if `targets` itself is empty, i.e. via an explicit
+  `--max-dim` that filters everything out — user error, not a silent upstream
+  failure.
+
+  **This corrects my own prediction.** I called it "the most likely of the eight
+  to be live", on the strength of it being the confirmed case's direct sibling
+  with identical `n_pass`/`n_total` naming. The naming is identical and the
+  structure is not: `phase25` has `if lam not in chi_a: continue` **before** its
+  increment, which is the entire defect. Sibling-by-name is not sibling-by-shape.
+
+**STILL AMBIGUOUS — need a further read**
+
+* `delta_lambda_v_hat_z_transfer_phase5d_4:186` — `flavor_rule_total` counts
+  rows where `r["is_interface"]`. Zero could be "`per_atom` empty" (refuse) or
+  "no row is an interface" (do not assert). Distinguishing needs the upstream's
+  contract.
+* `probes/A_operator_per_interface_probe:252` — same question for interfaces.
+
+### Method note
+
+This classification cost four greps and no compute. I had queued a long-budget
+producer run to settle whether `sublemma_2_1_h12_he4_branching` was live; the
+source answered it, and better — a run can only show what happens with *this*
+container's upstreams, whereas the increment's position settles it for all
+inputs.
