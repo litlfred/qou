@@ -124,4 +124,64 @@ theorem braiding_cap_monodromy {X Y Y' : C} (r : ExactPairing Y Y') :
           rw [hhex]; monoidal
     _ = _ := by rw [hslide]; monoidal
 
+/-- **The two pairings differ by exactly the inverse monodromy.**
+
+`X ⊗ Y` is a right dual of `Y' ⊗ X'` in two ways — swap-then-tensor (left) and tensor-then-swap
+(right) — and their evaluations differ by `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹` applied to `X ⊗ Y`.
+
+Both pushes, assembled: `evaluation_swap_tensor_step` removes the `Y`-over-`X'` crossing, one
+interchange separates the two evaluations (they act on disjoint strands), and
+`braiding_cap_monodromy` removes the `X`-over-`Y'` crossing and delivers the monodromy. -/
+theorem evaluation_swap_tensor_eq_monodromy {X X' Y Y' : C}
+    (p : ExactPairing X X') (r : ExactPairing Y Y') :
+    (β_ (X ⊗ Y) (Y' ⊗ X')).hom ≫ (𝟙 _ ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y')
+      = ((β_ Y X).inv ≫ (β_ X Y).inv) ▷ (Y' ⊗ X')
+          ≫ (𝟙 _ ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ▷ X'
+                ⊗≫ ((β_ X X').hom ≫ ε_ X X')) := by
+  rw [evaluation_swap_tensor_step p r]
+  have hX := whisker_exchange (ε_ Y Y') ((β_ X X').hom ≫ ε_ X X')
+  have hG := braiding_cap_monodromy (X := X) r
+  calc _ = 𝟙 ((X ⊗ Y) ⊗ Y' ⊗ X')
+            ⊗≫ X ◁ ((β_ Y Y').hom ▷ X')
+            ⊗≫ (β_ X Y').hom ▷ (Y ⊗ X')
+            ⊗≫ Y' ◁ ((β_ Y X).inv ▷ X')
+            ⊗≫ ((Y' ⊗ Y) ◁ ((β_ X X').hom ≫ ε_ X X') ≫ (ε_ Y Y') ▷ 𝟙_ C)
+            ⊗≫ 𝟙 (𝟙_ C) := by monoidal
+    -- the two evaluations act on disjoint strands, so they may be taken in either order
+    _ = 𝟙 ((X ⊗ Y) ⊗ Y' ⊗ X')
+            ⊗≫ X ◁ ((β_ Y Y').hom ▷ X')
+            ⊗≫ (β_ X Y').hom ▷ (Y ⊗ X')
+            ⊗≫ Y' ◁ ((β_ Y X).inv ▷ X')
+            ⊗≫ ((ε_ Y Y') ▷ (X ⊗ X') ≫ 𝟙_ C ◁ ((β_ X X').hom ≫ ε_ X X'))
+            ⊗≫ 𝟙 (𝟙_ C) := by rw [hX]
+    -- `X'` is a spectator to the whole `Y`-cap argument
+    _ = 𝟙 ((X ⊗ Y) ⊗ Y' ⊗ X')
+            ⊗≫ ((𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ X ◁ (β_ Y Y').hom ⊗≫ (β_ X Y').hom ▷ Y
+                  ⊗≫ Y' ◁ (β_ Y X).inv ⊗≫ ε_ Y Y' ▷ X ⊗≫ 𝟙 X) ▷ X')
+            ⊗≫ ((β_ X X').hom ≫ ε_ X X') := by monoidal
+    _ = 𝟙 ((X ⊗ Y) ⊗ Y' ⊗ X')
+            ⊗≫ ((𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ ((β_ Y X).inv ≫ (β_ X Y).inv) ▷ Y'
+                  ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ⊗≫ 𝟙 X) ▷ X')
+            ⊗≫ ((β_ X X').hom ≫ ε_ X X') := by rw [hG]
+    _ = _ := by monoidal
+
+/-- **Swap-then-tensor and tensor-then-swap are compared by the inverse monodromy.**
+
+The dual-uniqueness isomorphism between the two pairings of `Y' ⊗ X'` with `X ⊗ Y` is *not* the
+identity: it is `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹`.  In a **symmetric** category the monodromy is
+trivial and the two pairings agree; in a genuinely braided one they do not. -/
+theorem rightDualIso_swap_tensor {X X' Y Y' : C}
+    (p : ExactPairing X X') (r : ExactPairing Y Y') :
+    (rightDualIso
+        (@BraidedCategory.exactPairing_swap C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y'))
+        (@tensorExactPairing C _ _ Y' Y X' X
+          (BraidedCategory.exactPairing_swap Y Y') (BraidedCategory.exactPairing_swap X X'))).hom
+      = (β_ Y X).inv ≫ (β_ X Y).inv := by
+  refine (rightDualIso_hom_unique _ _ _ ?_).symm
+  show ((β_ Y X).inv ≫ (β_ X Y).inv) ▷ (Y' ⊗ X')
+        ≫ (𝟙 _ ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ▷ X'
+              ⊗≫ ((β_ X X').hom ≫ ε_ X X'))
+      = (β_ (X ⊗ Y) (Y' ⊗ X')).hom ≫ (𝟙 _ ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y')
+  exact (evaluation_swap_tensor_eq_monodromy p r).symm
+
 end QOU.MathlibExt
