@@ -2690,3 +2690,53 @@ companion = the entire closure, pattern = two parallel copies of it. It
 demonstrated the index-set escape the Lean predicted, and it is *not* the
 inter-nucleon structure. This addendum locates where the torus actually has to
 go: **at each of the $A-1$ walls**, not around the outside.
+
+## Addendum 29 — interface candidates screened, and none selected (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`interface_candidate_screen_probe.py`](../../computations/meson/interface_candidate_screen_probe.py)
+(7 assertions, 4 controls). Addendum 28 located the change in the interface `I`
+of $\beta = \beta_1 \star I \star \beta_2$. Five candidates screened at the
+deuteron wall. **None is selected, and that refusal is the result.**
+
+| cand | interface | xings | prov. #? | $\mathrm{tr}_M$ | vs $\sqrt{B_{\rm AME}}$ |
+|---|---|---:|---|---:|---:|
+| I1 | $\sigma_3$ *(current)* | 1 | **True** | 0.693389 | 0.4649× |
+| I2 | $\sigma_3\sigma_2\sigma_4\sigma_3$ *(2-block)* | 2 | False | 0.417642 | 0.2800× |
+| I3 | $\sigma_3^2$ *(clasp)* | 2 | False | 1.276677 | 0.8560× |
+| I4 | $\sigma_2\sigma_3\sigma_4$ *(fan)* | 1 | **True** | 0.328149 | 0.2200× |
+| I5 | $(\sigma_3\sigma_2\sigma_4\sigma_3)^2$ | 4 | False | 1.860693 | **1.2475×** |
+
+### Three findings and a refusal
+
+1. **The trace is not monotone in wall crossings.** `I2` crosses twice and
+   traces *below* `I1`, which crosses once. "More threading gives a bigger
+   trace" is false, so a crossing count is no proxy for the objective.
+2. **Strands *touched* is independent of strands *crossing*.** `I4` touches two
+   strands on each side yet crosses once and is **provably** still a connected
+   sum. My first pass conflated these two and reported `I4` as a 2-strand
+   interface; it is not.
+3. **One candidate clears the threshold** — `I5`, at 1.2475×.
+4. **No candidate is selected.** Choosing `I5` *because* it clears
+   $\sqrt{B_{\rm AME}}$ would be a fit, and exactly the kind the anti-fit
+   discipline exists to stop. Nothing here derives which interface is correct.
+   What could: the colour-tube structure of
+   `conj:inter-nucleon-channel-color-tube` via `conj:s5-so3-fiber-action`, or a
+   derivation from the Bring geometry. **The AME number may not do the
+   selecting.**
+
+### Read `prov. #?` correctly
+
+It is the single-crossing factorisation — a **sufficient** condition for a
+connected sum. `True` means the closure **is** one (`I1`, `I4` are). `False`
+means **not detected as one**, and does **not** imply an essential torus;
+incompressibility is geometric and no probe here tests it. Necessary, not
+sufficient — the same discipline as Addendum 28.
+
+### A comparison note that matters
+
+`I1` traces `0.693389`, not the committed atom value `0.575172`. Not a
+discrepancy: the canonical interface is the **colour-weighted averaged** letter
+(two branches at that slot), while all five candidates are **pure** words. `I1`
+is its pure analogue — the five are comparable to each other, and none is the
+committed object.
