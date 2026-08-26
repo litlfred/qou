@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T10:50:50.767014+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-26T15:26:18.225026+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "he3_baseline_sum_reproduces_full_theta_assembly",
@@ -14,8 +14,8 @@
     },
     {
       "name": "he3_joint_vs_baseline_recorded",
-      "computed": 187.66686545445657,
-      "expected": 4.896305834471014,
+      "computed": "187.666865454456575520278687356450605151287601363399668592218",
+      "expected": "4.89630583447101384669952797708642769362761800632574047496083",
       "passed": true,
       "tolerance": 1000000000.0,
       "source": "³He μ₀·Vol joint rel_err = 187.7% vs baseline 4.9%; joint_closer=False."
@@ -25,8 +25,8 @@
   "durationMs": 4,
   "computation": "binding-a3plus-joint-ji-combiner",
   "scriptFile": "binding_a3plus_joint_ji_combiner.py",
-  "scriptHash": "27c65045daec",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptHash": "c1f87c1ae66a",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,11 +36,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [

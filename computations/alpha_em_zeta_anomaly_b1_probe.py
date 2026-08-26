@@ -55,7 +55,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -133,7 +133,7 @@ def main() -> int:
     print(f"\n[2] photon (1-form) Laplacian on J(M)=T^{B1_JACOBIAN} (b₁=2g=8 at g=4):")
     print(f"    ζ_{{1-form}}(0) = b₁·Z_Λ(0) = 8·({mp.nstr(z0_T8,8)}) = {mp.nstr(zeta_1form_0,10)}")
     print(f"    ⇒ ζ_Λ(0) = −b₁ = −{B1_JACOBIAN}  (the bare topological count)")
-    wb.add_assertion("zeta_1form_0_is_minus_b1", computed=float(mp.re(zeta_1form_0)),
+    wb.add_assertion("zeta_1form_0_is_minus_b1", computed=fmt(mp.re(zeta_1form_0)),
                      expected=-float(B1_JACOBIAN), tolerance=1e-3,
                      source="ζ_{1-form on T^{b₁}}(0)=b₁·Z_Λ(0)=−b₁ (1-form Laplacian "
                             "= b₁ copies of scalar; b₁=8 for the g=4 Bring Jacobian)")

@@ -85,7 +85,7 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -539,7 +539,7 @@ def main() -> int:
     wb.add_assertion(
         "carrier_below_rotation_ceiling",
         computed=float(max(res[a]["mean_w"] for a in ATOMS)),
-        expected=0.0, tolerance=float(mp.pi),
+        expected=0.0, tolerance=fmt(mp.pi),
         source="E_p[|Δθ|] < π for every atom — the structural rotation-"
                "channel ceiling of the normalized mean (growth-channel "
                "share ≤ its recorded per-atom value)")
