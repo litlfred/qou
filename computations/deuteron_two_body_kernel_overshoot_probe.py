@@ -313,9 +313,10 @@ def main():
     # pin spread for the E_0 row
     try:
         from witness import _q0_value_for_anchor  # type: ignore
-        q_mu = mp.mpf(str(_q0_value_for_anchor("muon")))
+        _MUON_PIN_STR = str(_q0_value_for_anchor("muon"))
     except Exception:
-        q_mu = mp.mpf("1.10997859555733471989976")
+        _MUON_PIN_STR = "1.10997859555733471989976"
+    q_mu = mp.mpf(_MUON_PIN_STR)
     e0_mu = E_0(me, q_mu)
     pin_spread = abs(e0_mu - E_0(me, q)) / E_0(me, q)
     for row in miss:
@@ -330,6 +331,24 @@ def main():
     witness = {
         "computation": "deuteron-two-body-kernel-overshoot",
         "scriptFile": os.path.basename(__file__),
+        # q₀-anchor stamp (added 2026-08-26). The pin was recorded only in the
+        # prose `inputs.q0_pin` below, which `q0_anchor_consistency_audit.py`
+        # cannot read — so this witness sat in Q0_ANCHOR_MISSING,
+        # indistinguishable from a producer that simply forgot. It reads BOTH
+        # pins on purpose (proton for every result; muon solely to size
+        # `pin_spread`, the proton-vs-muon separation used as the "allowed
+        # move" scale for E_0), so the honest label is `comparison`, not
+        # `proton`: a single q0Value would assert the one pin this compute
+        # deliberately does not have.
+        "q0Anchor": "comparison",
+        "q0Values": {"proton": Q_50_DIGIT_STR, "muon": _MUON_PIN_STR},
+        "q0AnchorReason": (
+            "results are computed at the PROTON pin (owner directive "
+            "2026-08-07); the MUON pin is read once, to compute the "
+            "proton-vs-muon spread of E_0 that bounds how far the energy "
+            "scale could move. The comparison is the subject of the "
+            "`allowed_rel_move` column, not an accidental layer straddle."
+        ),
         "computedAt": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
         "engine": "mpmath mpf at 60 dps; no float64 anywhere; 0 free parameters",
         "free_parameters": 0,

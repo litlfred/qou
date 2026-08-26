@@ -441,7 +441,17 @@ def main():
     print(f"H_all:     {verdicts['H_all']}")
 
     # -------------------------------------------------------------- witness
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
     out = {
+        # q₀-anchor stamp (added 2026-08-26). `inputs.q0_proton_pin` below
+        # records the pin in a field NAME, which `q0_anchor_consistency_audit`
+        # does not read; without these two keys the witness sat in
+        # Q0_ANCHOR_MISSING, indistinguishable from a producer that forgot.
+        # They belong at the document ROOT — the audit reads the top level, so
+        # nesting them under "witness" leaves the verdict unchanged (measured:
+        # still Q0_ANCHOR_MISSING on the first attempt at this fix).
+        "q0Anchor": "proton",
+        "q0Value": _Q50_PROTON,
         "witness": {
             "schema": "qou-probe/v1",
             "kind": "exploratory-probe",
