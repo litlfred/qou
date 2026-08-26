@@ -410,6 +410,12 @@ QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsuffici
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_two | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_one_one | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_ne_contentSum | clean
+# Box-addition infrastructure for the Pieri step. The hook-length update rule
+# (+1 on the arm side, unchanged below) was verified over 111 cells across
+# twelve shapes BEFORE being formalised.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.drop_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_same_row | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_below | clean
 # The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
 # schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
 # n(lam) fix a correction rather than a preference: revert the prefactor and

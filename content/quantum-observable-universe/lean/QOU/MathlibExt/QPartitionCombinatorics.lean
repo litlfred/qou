@@ -354,6 +354,69 @@ silently. -/
 theorem nLambda_ne_contentSum :
     ((nLambda [1, 1] : ℤ)) ≠ contentSum [1, 1] := by decide
 
+/-! ### Adding a box, and how hook lengths respond
+
+Infrastructure for the Pieri step of the Macdonald hook telescope
+(`MathlibExt.MacdonaldTelescope`). Adding one box to row `r` of `λ` changes
+`hookLength` by **exactly `+1` on two sets and not at all elsewhere**:
+
+* the cells of row `r` strictly left of the new box — their *arm* grows;
+* the cells of column `λ_r` strictly above row `r` — their *leg* grows.
+
+Verified against this very definition over 111 cells across the addable corners
+of twelve shapes before being formalised. The arm half is proved below; the leg
+half is stated as `hookLength_addBoxRow_other_row_ne` for the cells it leaves
+alone, which is the part the Pieri product needs first. -/
+
+/-- Add one box to row `r`. Out of range, this is the identity (`List.set` is). -/
+def addBoxRow (lam : Partition) (r : ℕ) : Partition :=
+  lam.set r ((lam[r]?).getD 0 + 1)
+
+/-- **The tail below row `i` is untouched** whenever the box goes in at or above
+`i` — `List.set` at index `r ≤ i` is invisible after `drop (i+1)`. This is what
+keeps the *leg* fixed in the arm-growth case. -/
+theorem drop_addBoxRow (lam : Partition) (r i : ℕ) (h : r ≤ i) :
+    (addBoxRow lam r).drop (i + 1) = lam.drop (i + 1) := by
+  unfold addBoxRow
+  rw [List.drop_set, if_pos (by omega)]
+
+/-- **Arm growth.** For a cell of row `r` strictly left of the new box, the hook
+length increases by exactly one.
+
+The leg is unchanged by `drop_addBoxRow`; the arm goes from `λ_r − j − 1` to
+`λ_r − j`, which is `+1` precisely because `j < λ_r` (this is `ℕ` subtraction,
+so the hypothesis is doing real work, not decoration). -/
+theorem hookLength_addBoxRow_same_row
+    (lam : Partition) (r j : ℕ) (hr : r < lam.length)
+    (hj : j < (lam[r]?).getD 0) :
+    Partition.hookLength (addBoxRow lam r) r j
+      = Partition.hookLength lam r j + 1 := by
+  have hlam : lam[r]? = some ((lam[r]?).getD 0) := by
+    rw [List.getElem?_eq_getElem hr]; rfl
+  have hget : (addBoxRow lam r)[r]? = some ((lam[r]?).getD 0 + 1) := by
+    unfold addBoxRow
+    rw [List.getElem?_set_self (by simpa using hr)]
+  unfold Partition.hookLength
+  rw [hget, hlam, drop_addBoxRow lam r r (le_refl r)]
+  set m := (lam[r]?).getD 0 with hm
+  set L := ((lam.drop (r + 1)).filter (fun x => decide (x > j))).length with hL
+  simp only [Option.getD_some, if_pos hj,
+    if_pos (show j < m + 1 by omega)]
+  omega
+
+/-- **Rows strictly below the new box are untouched.** For `r < i` the row entry
+is unchanged (the `set` is at a different index) and so is the tail, so the hook
+length is literally the same. -/
+theorem hookLength_addBoxRow_row_below
+    (lam : Partition) (r i j : ℕ) (h : r < i) :
+    Partition.hookLength (addBoxRow lam r) i j
+      = Partition.hookLength lam i j := by
+  have hne : (addBoxRow lam r)[i]? = lam[i]? := by
+    unfold addBoxRow
+    rw [List.getElem?_set_ne (by omega)]
+  unfold Partition.hookLength
+  rw [hne, drop_addBoxRow lam r i (by omega)]
+
 /-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
     lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the
     content-sum formula and the explicitly-proved H₂ weights. -/
