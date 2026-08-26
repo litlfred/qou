@@ -1,11 +1,11 @@
 ---
 # qou-r765
 title: 'W3: define tr as iterated E_n; prove the MarkovTrace fields (cyclic + Markov normalization) from the tower'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-07-25T13:00:16Z
-parent: qou-utb3
+updated_at: 2026-08-26T13:33:20Z
 parent: qou-utb3
 ---
 
