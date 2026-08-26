@@ -1,11 +1,11 @@
 ---
 # qou-0avp
 title: 'TOOL: borrowed-name audit — decl named after an external theory whose statement is all local defs'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T19:29:31Z
+updated_at: 2026-08-26T19:42:03Z
 ---
 
 ## The gap this fills (measured, not assumed)
