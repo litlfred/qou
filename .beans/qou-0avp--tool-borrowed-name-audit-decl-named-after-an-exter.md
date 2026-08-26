@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T20:02:21Z
+updated_at: 2026-08-26T20:43:03Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -174,3 +174,34 @@ a sample of four suggested. The 7 false positives are one characterisable
 class — real symbolic or finite computations merely *named* after a
 mathematician — which is the expected LOCAL-ONLY failure mode and the lead
 for refinement. The 197 `major` remain untriaged.
+
+
+
+## `major` tier triaged 2026-08-26 (197 -> 115), sample-adjudicated
+
+**Two principled exclusions**, both demoting to advisory rather than dropping:
+1. `@[simp]` unfolding of a local def — definitional BY DESIGN. **All 62** of
+   the one-file cluster were these.
+2. Proof discharges via a binder FIELD (`tau.commutator`) — a genuine
+   conditional derivation. Ported from the sibling detector `qou-k9yt`.
+
+The 62-in-one-file concentration was the **per-item-counting trap** AGENTS.md
+records for the witness queue. After the exclusions, file concentration among
+survivors is flat (max 5), so a rate over them is no longer dominated by one file.
+
+CRITICAL unchanged at 19 — the exclusions do not reach that tier.
+
+**Sampled 8 at random (seed 7); 5 resolved by reading the definitions:**
+2 genuine, 3 legit ⇒ **~40% on a sample of five**, against 63% at CRITICAL.
+Lower is expected: `major` is exactly CRITICAL minus the OVERCLAIM gate.
+**Do not quote 40% as the tier rate** — n=5.
+
+Sharpest `major` catch: `kl_eigenvalue_at_one_eq_pairCount` —
+`klEigenvalueAtOne : Int := 2` and `pairCount : Int := 2` are two
+independently hand-entered literals, so the theorem is `2 = 2 := rfl`, while
+its docstring calls it *"the q->1 one-loop restores the doubled total"*.
+
+**Still open:** 110 of the 115 unadjudicated. The kernel pass is the scalable
+route (`defeq_collapse` decides table-lookup vs real content without reading
+each file), but it is SLOW — 8 modules exceeded 10 minutes — and only 23 of
+the 56 library modules involved have oleans in the restored cache.
