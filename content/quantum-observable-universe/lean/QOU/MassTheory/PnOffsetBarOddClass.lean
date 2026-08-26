@@ -75,6 +75,31 @@ invertible.
 
 No claim is made here that any offset is physically correct.
 
+## Base ring: why `Field` here, and what it would take to weaken it
+
+`[Field K] [CharZero K]` is stronger than the base ring the owner fixed on
+2026-08-26 (`R = ℤ[q,q⁻¹][Φ_d(q)⁻¹ : d ≥ 2]`, carried as the property
+`IsQGeneric`).  Recorded deliberately, with what a migration would need, since
+that drain is an active tranche and this file is new inventory for it:
+
+* `markovZ` needs `(q²+1)⁻¹`, and `q² + 1 = Φ₄(q)` — so it is **already** a unit
+  under `IsQGeneric`.  Same for every `q⁻ⁿ`.
+* What `IsQGeneric` does **not** give is `2⁻¹` and `3⁻¹`: the offsets are half
+  weights and `δ` carries a `1/3`.  A migration needs `Invertible (2 : R)` and
+  `Invertible (3 : R)` alongside it, plus `NoZeroDivisors` for the
+  `mul_eq_zero` step in `bond_barInvariant_iff_barOdd`.
+* The `q = 1` reasoning survives the move and is the reason to want it.  That
+  ruling inverts `Φ_d` only for `d ≥ 2`, so `Φ₁(q) = q - 1` stays a non-unit and
+  `q = 1` remains a point of `Spec R` — which is exactly where
+  `weightForm_cubic_factor` and the pole statements live.  Over a field one
+  reasons about that point by evaluation; over `R` the same facts are the
+  divisibility statements they are already written as, so nothing here is
+  *proved* by the field structure.
+
+Not done in this PR: the ruling landed the same day, its migration is owned
+elsewhere, and the sibling `PnInterfaceBarStructure` is `[Field K] [CharZero K]`
+too — moving one of the pair and not the other makes both harder to migrate.
+
 -- Ref: [manuscript] mass-theory/interface-knot-markov-z-proof.md,
 --      §"The three factors are one bar-orbit"
 -/
