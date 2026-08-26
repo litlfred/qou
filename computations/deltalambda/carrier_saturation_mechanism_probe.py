@@ -98,6 +98,11 @@ from codata_constants import (  # noqa: E402
 )
 from witness_base import WitnessBuilder  # noqa: E402
 from chi_free_via_lr import chi_free_lr, load_nucleon_chi  # noqa: E402
+# Frobenius route: same values (agree 1.3e-67, chi-free-via-frobenius
+# .witness.json), 31x faster at 6Li and 104x at 7Li. Used for the large-A
+# path; the 4He call below stays on chi_free_lr because that call IS the
+# LR-path validation, not a consumer of it.
+from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 
 set_compute_dps()
 
@@ -202,7 +207,7 @@ def build_large_a_rows(atom: str, nuc_chi: dict) -> tuple[list[dict], dict]:
 
     Z, N = LARGE_A_ZN[atom]
     t1 = time.time()
-    chi_free = chi_free_lr(Z, N, nuc_chi=nuc_chi)
+    chi_free = chi_free_frobenius(Z, N, nuc_chi=nuc_chi)
     t2 = time.time()
 
     rows = []

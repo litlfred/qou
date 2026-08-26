@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T18:54:20.206878+00:00",
-  "commitSha": "212e82cebade62ffda7de39a33150d2706a54f14",
+  "computedAt": "2026-08-26T19:14:23.635655+00:00",
+  "commitSha": "41828a862c6825ecee8310ed40a6411816c9c6e5",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -81,8 +81,8 @@
   "durationMs": 5,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "6952a0e9d530",
-  "scriptCommitSha": "d21ee01fdf86cbfb6fa6fafcff062c3723cf5c44",
+  "scriptHash": "a85cccb5f949",
+  "scriptCommitSha": "41828a862c6825ecee8310ed40a6411816c9c6e5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
