@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-24T19:33:27Z
+updated_at: 2026-08-26T04:22:59Z
 ---
 
 ## What
@@ -148,3 +148,162 @@ proton -> muon, payload BYTE-IDENTICAL, zero differing non-anchor keys.
 **Still open (NOT done here):** which layer each of the 85 producers' quantity
 actually belongs to. This makes each witness state the layer it was computed at
 — a precondition for that question, not an answer. No sweep.
+
+
+## 2026-08-26 — population re-measured: 74, and five different numbers were in circulation
+
+This bean says **85**. I have quoted **283** at the owner. Both are wrong, and
+so are two intermediate figures I produced getting here. Measured today:
+
+    148   raw-text grep for "q-pinning-50-digit"        <- over-counts via PROSE
+    283   my earlier figure                             <- per-WITNESS, not per-producer
+    119   AST-normalised, pin string appears in code    <- includes auditors + regexes
+     85   this bean, 2026-08-24                         <- stale
+    ---
+     74   producers that read the pin AS A FILE PATH    <- the honest number
+
+The 119 → 74 gap is the same defect class this arc keeps hitting: a script that
+carries `"q-pinning-50-digit"` as a **regex or search string** is not a script
+that **reads** it. Among the 45 excluded were **two of my own audit scripts**
+(`q0_independence_checker.py`, `no_q0_recorded_producer_split.py`), which
+pattern-match the name. Sixth instance. The discriminator that works: the
+string must be an argument to a path/open/read call.
+
+### The 74, by declaration
+
+    54   untagged (default proton at runtime; compute is muon regardless)
+    18   ideal_muon (consistent: read muon, declared muon)
+     5   physical_proton (STRADDLE: read muon, declared proton) -- was 2 in this
+         bean on 2026-08-24, so the straddle set GREW
+     1   ambiguous
+
+### Evidence on the fork this bean refuses to settle by sweep
+
+Of the **54 untagged**:
+
+    41   SILENT on the pin -- no stated rationale either way
+    10   state MUON intent ("canonical muon-q0 ... never hardcode", drift-proof)
+     3   state BOTH (comparison?)
+
+So Reading A — *"pinning to the canonical anchor is a deliberate, drift-proof
+design"* — is **explicitly stated by 10 of 54**. The other 44 say nothing.
+
+**Silence is not evidence of either reading**, and that is the finding, not a
+tiebreak. An idiom that propagates by copy-paste and a design choice nobody
+bothered to restate look identical in the source. What can be said:
+
+- the 10 who state it are a **real constituency**, so a blanket "route
+  everything through `q_parameter`" would override documented intent;
+- the 5 straddles are wrong under **either** reading — they read muon and
+  declare proton — so they are safe to fix now, independently of the fork;
+- the 41 silent ones are where the decision actually bites, and nothing in the
+  source decides it.
+
+### Recommendation (judgement, not a finding)
+
+Split the bean. The 5 straddles are unambiguous and small. The 10 stated-muon
+producers should be *tagged* `ideal_muon` so their intent stops being invisible
+to the manifest — that is a declaration change, not a numerical one. Only the 41
+silent ones need the owner's ruling, and by then the population is small enough
+to look at.
+
+
+## 2026-08-26 — reroute scoped before editing: the 44 are NOT one batch
+
+Owner authorised rerouting the 44 silent direct-pin producers through
+`q_parameter`. Scoped before touching any of them, and two properties split the
+set in ways a by-count batching would have hidden.
+
+### 1. Twelve of the 44 have NO committed witness
+
+    32   have a committed witness  -> the ~11.5 ppb move is MEASURABLE
+    12   have none                 -> the move is UNMEASURABLE
+
+For those twelve there is no before/after to compare, so rerouting them is a
+blind numerical change: nothing on disk records what they produced at the muon
+pin, and nothing will show what changed. They should be re-run and their witness
+COMMITTED FIRST, at the muon pin, so the migration has a baseline — otherwise
+the reroute silently discards the only evidence of the prior value.
+
+### 2. Nine of the 44 use `record_upstream` — rerouting DROPS provenance
+
+The uniform idiom is:
+
+    Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+    Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+
+`record_upstream` does two things: it reads the value AND registers the upstream
+witness in `data.upstream_witness_hashes`. The obvious replacement —
+`from q_parameter import Q_50_DIGIT_STR` — supplies the value and **loses the
+provenance record**.
+
+So the reroute is not a substitution, it is a substitution plus a provenance
+decision: either accept the loss (the pin is no longer an input, so arguably
+there is nothing upstream to record), or keep `record_upstream` for provenance
+while taking the VALUE from `q_parameter` — which is a straddle-shaped hybrid
+and needs care.
+
+### Proposed batching, by SHAPE not by count
+
+    A.  9  use record_upstream          -> needs the provenance decision first
+    B. 12  no committed witness         -> baseline the witness at muon FIRST
+    C. 23  plain read, witness exists   -> the clean batch; reroute + regenerate,
+                                           before/after measurable per file
+
+**C is the only batch that is mechanical.** It is also the one where the ~11.5
+ppb claim can actually be checked file by file. A and B each carry a decision
+that is not mine.
+
+
+## 2026-08-26 — batch C is NOT mechanical either: the reroute is DEPENDENCY-ORDERED
+
+Went to execute batch C (the 24 with a witness and no `record_upstream`) and
+stopped at the first file. The finding changes the shape of the whole migration.
+
+### Rerouting a producer whose UPSTREAM is muon-built MANUFACTURES a straddle
+
+`hydrogen_qshuffle_compound.py` reads the pin **and** loads two more witnesses:
+
+    terms-2-3-atom-per-gen-mpfr-50dps.witness.json   carries the muon value
+    proton-mass-full-tower-50dps.witness.json        q0Anchor: "muon", explicitly
+
+Moving its q₀ to proton while it keeps consuming muon-built inputs mixes an
+experimental-layer q₀ with ideal-layer data **inside one computed quantity** —
+the straddle AGENTS.md forbids "regardless of size", and the exact defect this
+epic exists to remove. The reroute would not fix a straddle; it would create one.
+
+**So a producer's q₀ can only move after its upstream witnesses have moved.**
+This is a dependency-ordered migration, not a batch of independent edits. Any
+by-count batching (≤ 49 files per PR) cuts across the dependency graph and will
+straddle whatever it happens to split.
+
+### Batch C re-partitioned by upstream layer
+
+    12   truly NO upstream witness      -> safe to reroute alone
+     5   consumes a MUON-built witness  -> BLOCKED until upstream migrates
+     4   upstream is proton             -> safe
+     3   upstream unlabelled            -> UNKNOWN layer, needs a look
+
+### Two detector corrections, both mine, both caught before editing
+
+1. A first pass keyed on `witness_path("…")` and reported **14** truly-clean.
+   It missed `json.load(open(COMP / "…"))` and `json.loads((COMP / "…").read_text())`
+   — `he4_binding_k_presentation_correction_probe` loads
+   `canonical-tr-m-via-chi-cache.witness.json` that way. Keying on **any
+   `.witness.json` string literal in code_only'd source** gives **12**, and moves
+   the straddle count 4 → **5**. I nearly edited 14 files off a false-clean list.
+2. The `.witness.json` scan runs through `code_only` — a filename in a docstring
+   is not a dependency. Same discipline as `qou-5li4`; without it the prose
+   naming an upstream witness counts as consuming it.
+
+### What is actually ready
+
+The **12** are ready to edit: no upstream witness, a committed witness to
+measure against, no `record_upstream`. Their read shapes are NOT uniform
+(`witness_path(…)`, `json.load(open(COMP / …))`, `json.loads((COMP / …).read_text())`),
+so this is 12 individual edits, not a sed.
+
+**Not attempted here**, deliberately: 12 non-uniform edits plus 12 producer
+re-runs plus 12 before/after comparisons is its own PR with its own verification,
+and starting it at the tail of a long session is how an unverified change lands.
+The list and the shapes are recorded so it can be picked up cold.

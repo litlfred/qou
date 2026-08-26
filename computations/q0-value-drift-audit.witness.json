@@ -5,8 +5,8 @@
   "data": {
     "counts": {
       "STALE": 228,
-      "canonical": 170,
-      "proton-pin": 1683,
+      "canonical": 169,
+      "proton-pin": 1685,
       "unknown": 25
     },
     "stale_total": 228,
@@ -5111,9 +5111,16 @@
       {
         "file": "computations/chirality-topology-binding.witness.json",
         "field": "q0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/chirality-topology-binding.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/chirality-weighted-3body-cluster.witness.json",
