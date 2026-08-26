@@ -197,6 +197,37 @@ Gell-Mann--Nishijima relation cannot be closed.
    `TrialitySelectionRule.identification_invisible_to_selection_rule`
    shows is likewise blind to the identification.
 
+   **The two blindnesses are one blindness.**  Both gates read only
+   *object-level* data --- a dimension, a Frobenius--Schur type, a
+   triality class --- and on that data the two triples coincide: the
+   colour triple is the $\mathbb{C}^3$ of
+   $\mathrm{Im}(\mathbb{O}) = \mathbb{R}\oplus\mathbb{C}^3$, of complex
+   dimension $(7-1)/2 = 3$; the flavour triple is the fundamental with
+   Dynkin label $(1,0)$, of Weyl dimension $2\cdot 1\cdot 3/2 = 3$;
+   both are complex type with triality $1$.
+   `FlavourColourDiscriminator.no_object_gate_separates` turns this into
+   a class exclusion --- **no** gate reading only object data separates
+   them, so there is no third such gate to look for.  This is scope-(b),
+   with the invariant named: equal data, equal verdict.
+
+   **Where a discriminator can live is item 7 below, not a further
+   invariant of the object.**  The obstruction lifts as soon as a gate
+   may also read *which Young-symmetry channel of $V^{\otimes 3}$ carries
+   the physical state*: colour occupies the totally antisymmetric channel
+   $\lambda = (1^3)$, flavour the symmetric $\lambda = (3)$ for the
+   decuplet and the mixed $\lambda = (2,1)$ for the octet.  These are
+   distinct $S_3$-irreps, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that tells them apart.  Item 7 already names this data, in the
+   form *"colour antisymmetric and spin symmetric force flavour
+   symmetric"*; items 4 and 7 are the same question seen from two sides.
+
+   This locates the discriminator; it does not establish one.  The
+   channel assignment is an **input**, and item 7 records that the
+   chapter derives neither the spin factor nor the colour antisymmetry
+   that would supply it.  What is settled is the negative half --- and
+   the negative half is what redirects the search.
+
 5. **Truncation mechanism.**
    Why does the observable-scale symmetry reduce to a finite-dimensional
    Lie group rather than the full groupoid symmetry?  Root-of-unity
@@ -221,6 +252,15 @@ Gell-Mann--Nishijima relation cannot be closed.
    constraint from the braid structure, and show that together they
    determine the Young symmetriser.  Compatibility with it is what the
    chapter currently establishes.
+
+   **This item is where item 4's discriminator lives.**  Item 4 asks
+   what separates flavour from colour and shows that no invariant of
+   the *object* can; the Young-symmetry channel named here is data
+   about the *role*, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that reads it and does separate them.  So deriving the
+   colour-antisymmetry constraint would settle more than the
+   selection rule --- it would supply the one input item 4 is missing.
 
 8. **The Gell-Mann--Okubo deviation.**
    The relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is *not* a target

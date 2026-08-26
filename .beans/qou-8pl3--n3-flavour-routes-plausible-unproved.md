@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T07:06:34Z
+updated_at: 2026-08-26T07:25:53Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -326,3 +326,59 @@ GAP (ii) STILL UNTOUCHED. arxiv-1107.1559v1's TITLE is 'Quaternion-Octonion
 SU(3) Flavor Symmetry' -- exactly gap (ii)'s question -- and it does not answer
 it; its conclusion argues strong interactions. Worth flagging because a future
 agent grepping the question will land on that paper first.
+
+
+## GAP (ii) DISCRIMINATOR SEARCH 2026-08-26 (PR #5819)
+
+Item 4 ended 'Whatever separates flavour from colour lies elsewhere'. This is
+the search for the elsewhere. Two results.
+
+RESULT 1 -- THE TWO KNOWN BLINDNESSES ARE ONE BLINDNESS, AND IT IS A CLASS.
+Both gates read only OBJECT-LEVEL data (dimension, Frobenius-Schur type,
+triality class), and on that data the two triples COINCIDE, by two different
+routes: colour is the C^3 of Im(O) = R + C^3, complex dim (7-1)/2 = 3; flavour
+is the fundamental (1,0), Weyl dim 2*1*3/2 = 3; both complex type, both
+triality 1.
+
+  no_object_gate_separates      no gate reading only object data separates them
+  no_object_invariant_separates same, arbitrary value type
+  tensor_cube_gates_also_blind  Sym^3 (10 both) and Lambda^3 (1 both) are
+                                functions of dim V alone, so the whole
+                                'try another tensor construction on V' family
+                                is dead WITHOUT RUNNING ANY OF IT
+
+Scope-(b), invariant named: equal data, equal verdict. So the Sym^2 and Z/3
+failures were never repairable and there is no third such gate to look for.
+
+DELIBERATELY NOT CLAIMED: that the two triples are ISOMORPHIC. That would beg
+item 4's question -- they are a priori reps of two different groups and whether
+those groups are identified is exactly what is open. The claim is only that the
+data these gates READ coincides, which is weaker and sufficient.
+
+RESULT 2 -- WHERE ONE CAN LIVE. The obstruction lifts once a gate may read
+WHICH YOUNG-SYMMETRY CHANNEL of V tensor V tensor V carries the physical state:
+colour is (1^3) antisymmetric (eps_abc), flavour is (3) symmetric for the
+decuplet and (2,1) mixed for the octet. Distinct S_3 irreps.
+some_channel_gate_separates exhibits such a gate (construction, not existence).
+
+ITEMS 4 AND 7 ARE THE SAME QUESTION. Item 7, seven items down and filed as a
+selection-rule problem, already names the location: 'colour antisymmetric and
+spin symmetric force flavour symmetric'. Neither item cited the other; both now
+do. This raises item 7's stakes -- deriving the colour-antisymmetry constraint
+would supply the one input item 4 is missing.
+
+THE CIRCULARITY THIS DOES NOT ESCAPE. The channel assignment is an INPUT. Item
+7 says the chapter derives neither the spin factor nor the colour antisymmetry.
+So the discriminator is LOCATED, NOT ESTABLISHED. Result 1 (the negative) is
+what is settled, and it is the half that redirects the search.
+
+SECOND CANDIDATE, named not pursued: the SYMMETRY-BREAKING SPECTRUM. Flavour
+SU(3) is broken and the corpus already has the relations in Lean
+(GellMannOkuboIdentity, ColemanGlashowIdentity, DecupletEqualSpacing); colour
+SU(3) is exact with no analogue. Also role-data, so Result 1 does not forbid it;
+same hazard that colour exactness would be an input unless derived.
+
+VERIFIED: lean-direct exit 0, real import cone. 7 decls, no sorryAx, zero sorry
+zero axiom. THREE MUTATION TESTS, each expected to fail and each failing
+(octonion dim (7-1)/2 -> /3; flavour FS complex -> real; colourChannel
+antisymmetric -> symmetric) -- the decides compute rather than rubber-stamp.
