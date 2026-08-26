@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T21:31:16Z
+updated_at: 2026-08-26T21:43:42Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -200,3 +200,47 @@ space the framework's own GNS proof says the theory lives in. The augmentation
 is. That does not by itself make the augmentation right — `qou-avt5`'s finding
 stands that the stated NF vector is not the exhibited element under *either*
 functional — but it removes a symmetry the fork used to have.
+
+
+## 2026-08-26 (2) — the two admissible functionals BRACKET Q_β, and the matching one is inadmissible
+
+`qbeta_admissible_functionals_bracket_probe.py` (15/15). Forced follow-on to the
+TL answer (`qou-879g`), not a search.
+
+Descent is annihilation of the ideal, so under D this bean's question has
+exactly two admissible answers, each giving one determined number:
+
+- **Multiplicative** functionals into a commutative ring are exactly the 1-dim
+  reps. `H₃(q)` has two — `σ ↦ q` and `σ ↦ −1/q` — and the second **is** the
+  block D quotients away. So exactly one survives: the augmentation.
+  **Uniqueness, not a choice.**
+- The Markov trace at `z_D` survives by construction.
+- The coordinate sum the ansatz evaluates does not.
+
+Measured, all three on the **same** object (the NF vector), against Q_codata:
+
+| functional | admissible under D? | err |
+|---|---|---|
+| coordinate sum (`epsNPq`) | **no** | **+0.168 %** |
+| augmentation `σ ↦ q` | yes | +12.470 % |
+| Markov trace at `z_D` | yes | −43.157 % |
+
+**The functional that reproduces the measured Q-value is precisely the one the
+canonical convention forbids**, and both permitted ones miss by more than an
+order of magnitude in opposite directions. That is evidence against the ansatz
+as it stands, not a step toward repairing it.
+
+**The trap, named:** the bracket means some convex combination hits Q_codata
+exactly. That is a one-parameter fit against a single anchor. Deliberately not
+computed; any weight must be **derived** from the representation.
+
+### A calibration I wrote wrong, kept because the mistake is the point
+
+I asserted the trace row should reproduce `qbeta-d-frame-trace-baseline`'s
+−15.451 %. It **failed** at −43.157 %, and the failure is correct: that probe
+evaluates `tr_M` on the **exhibited nucleon words**, this one on the **NF
+vector**, and `qou-avt5` established those are different objects. Two numbers
+both called "tr_M(Δ)" are not comparable and I nearly quoted them as if they
+were. Now pinned as
+`the_NF_vector_and_the_exhibited_words_give_DIFFERENT_traces`, and it is why
+this probe holds the object fixed and varies only the functional.
