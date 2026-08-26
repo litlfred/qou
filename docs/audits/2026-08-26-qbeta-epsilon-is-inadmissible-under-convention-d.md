@@ -140,4 +140,14 @@ review.
 - `qou-xzrj` — the 7.67 % of `epsNPq` invisible to every trace.
 - `qou-phlk` — `prop:algebraic-gns-embedding` claims faithfulness on `H_∞(q)`
   while its proof gives `H_∞/rad`; true under C, false under D since
-  2026-08-15. Downstream cone **not** walked.
+  2026-08-15. **Cone walked** (2026-08-26): five consumers, and the fix is
+  smaller than filed. `QOU/Observations/AlgebraicGnsEmbedding.lean` is already
+  **correct** — it states faithfulness relative to `traceIdeal` at both sites
+  and its docstring says *"Faithfulness on the GNS quotient"*, so no Lean change
+  is needed. Two consumers speak of the GNS **image**
+  (`algebraic-gns-embedding-cfs-consequence`,
+  `q-plancherel-asymptotic-skeleton`) and are unaffected. The
+  `definition-index` one-liner mirrors the proposition and follows from fixing
+  it. `non-commutative-probability-dictionary` carries the same quotient
+  subtlety — "the Hecke algebra … operates as a `(W*, tr)` probability space",
+  where under D the honest object is the quotient — and is worth one clause.
