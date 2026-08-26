@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T03:12:10Z
+updated_at: 2026-08-26T07:10:20Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -382,3 +382,51 @@ and both survivors are the two legitimate ones. That 2 is the FLOOR, not a queue
 Not closing the bean: the "28 committed witnesses recording a non-colour-weighted
 pn_convention" line is only partly discharged (25 were the habiro table). The
 remainder has not been enumerated.
+
+
+## WITNESS LINE DISCHARGED 2026-08-26 (PR #5821) — and my earlier count was wrong
+
+I reported this line "discharged to 4". **Wrong**, and the reason generalises:
+I scanned only the field name `pn_convention`. The corpus states this
+convention in a HETEROGENEOUS vocabulary. Keying on the field name
+`convention` as well gives 70 witnesses / 93 declarations, of which **22** are
+on the colour axis under names the first scan never looked for:
+`averaged-crossings`, `colour-weighted-averaged-crossing`,
+`sign-only-crossings`.
+
+### The 22, classified by whether a p-n interface EXISTS
+
+     4  single nucleon (chi-proton-h3, chi-neutron-h3)  no p-n interface
+     7  free / vacuum words                             no interface
+     2  dineutron, diproton                             nn/pp only
+     1  markov-identity-symbolic                        records BOTH; deliberate
+     4  older non-at-q0 generations                     superseded by siblings
+     4  -at-qinv- siblings                              REAL DEFECT -> qou-1oxx
+
+Most are legitimately colour-blind because there is nothing to weight.
+
+### Fixed
+
+  * `binding-combiner-markov-peel-fallback` — STALE WITNESS. PR #5783 flipped
+    PN_CONVENTION and never re-ran, so the witness DECLARED "strict_averaged
+    used" while the code computed canonical (scriptHash be64814b80ef vs file
+    a1402f7398b8). Note now derived from PN_CONVENTION, so it cannot drift.
+  * `canonical_ordering_dof_probe` — MY staleness from PR #5767, twice: it
+    claimed binding_canonical passes strict_averaged, and used that as the
+    `production_size` row, labelling a non-production convention as
+    production. Fixed; effect -0.076% / +0.061% / +0.60%, structure and
+    verdict unchanged, 22/22.
+
+### Scanning note for whoever comes next
+
+`chi_lambda_braid` is BOTH a pn_convention value AND the name of the character
+function `pyhecke_native.chi_lambda_braid`. A value-level grep returns 18
+witnesses, mostly prose naming the FUNCTION. Key on the field NAME.
+
+### Handed off, not closed
+
+The 4 `-at-qinv-` mismatches are bean `qou-1oxx` — structural, live (7
+consumers, several bar-parity), bounded at 0.0141 % per p-n interface.
+
+**This line is now discharged.** The bean's remaining scope is whatever else
+it names, not the witness count.

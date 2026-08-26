@@ -83,10 +83,14 @@ Q0 = mp.mpf(Q_50_DIGIT_STR)
 HERE = Path(__file__).resolve().parent
 COMPUTE = HERE.parent
 
-#: The two conventions the production chain actually instantiates.
-#: ``binding_canonical`` passes ``strict_averaged`` explicitly (its line
-#: ~282); ``atom_braid_word_3A`` and ``closed_form_ratio`` DEFAULT to
-#: ``bring_color_weighted``.  Both are covered -- the conclusion is identical.
+#: The two conventions the production chain has instantiated.
+#: ``binding_canonical`` passed ``strict_averaged`` explicitly until
+#: 2026-08-26; it now passes ``bring_color_weighted`` (PR #5767, owner ruling
+#: R3), as ``atom_braid_word_3A`` and ``closed_form_ratio`` already did by
+#: default. So the whole production chain is now on ONE convention, and
+#: ``strict_averaged`` is retained here as the historical comparison arm
+#: rather than as a live production instantiation. Both are still covered --
+#: the conclusion is identical, which is the point of covering both.
 CONVENTIONS = ("strict_averaged", "bring_color_weighted")
 
 
@@ -441,7 +445,12 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
     alpha = mp.mpf(M_E_MEV) * 8 * mp.catalan
     print(f"  alpha = m_e * 8 * Catalan = {mp.nstr(alpha, 12)} MeV")
 
-    conv = "strict_averaged"   # what binding_canonical passes explicitly
+    # The CANONICAL convention, which is what binding_canonical passes as of
+    # PR #5767. This line read `strict_averaged` with the comment "what
+    # binding_canonical passes explicitly" -- true when written, stale the
+    # moment that flip landed, and it is the `production_size` row, so the
+    # witness was labelling a non-production convention as production.
+    conv = "bring_color_weighted"
     f = interface_factors(Q0, conv)
     u = f["pn"] / f["pp"]
     v = f["pn"] / f["nn"]
