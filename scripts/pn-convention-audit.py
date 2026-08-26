@@ -49,9 +49,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 # ── the two reference values at the proton pin ───────────────────────────────
 # Recomputed by --selftest from the live producers, never trusted from here.
-BLIND_STR = "0.5081578877486455981370624"
-CANON_STR = "0.5082297893767389669218554"
+# 50-dps values. An earlier revision of this file carried the evaluation at
+# `q_parameter.Q`, which is a FLOAT64: identical to 17 significant digits
+# and divergent after, so it looked right and was not. The committed
+# witnesses record the 50-dps form.
+BLIND_STR = "0.508157887748645593880406757381"
+CANON_STR = "0.508229789376738962577995797656"
 # 12 significant digits separates them by ~1e8 and survives f64 round-tripping.
+# Unaffected by the q-precision correction above: the two forms agree to 17.
 BLIND_KEY = "0.508157887748"
 CANON_KEY = "0.508229789376"
 
@@ -353,16 +358,16 @@ def selftest() -> int:
     try:
         from mpmath import mp  # noqa: E402
         mp.dps = 50
-        from q_parameter import Q  # noqa: E402
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
         from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
         from _li_2_q_util import flavor_split_leading  # noqa: E402
-        q = Q
+        q = mp.mpf(Q_50_DIGIT_STR)
         z, h, d = markov_z(q), hecke_h(q), flavor_split_leading(q)
         blind = z - h / 2
         canon = z - h * (mp.mpf(1) / 2 - d / 4)
         for name, got, want in (("blind", blind, BLIND_STR),
                                 ("canon", canon, CANON_STR)):
-            gs = mp.nstr(got, 25)
+            gs = mp.nstr(got, 30)
             if gs[:14] != want[:14]:
                 print(f"  FAIL {name}: producers give {gs}, constant says {want}")
                 ok = False

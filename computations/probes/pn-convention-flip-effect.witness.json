@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T13:43:36.761275+00:00",
-  "commitSha": "b454a61af968c11530e5ff5c5fbff525ecff74b5",
+  "computedAt": "2026-08-26T13:46:05.225299+00:00",
+  "commitSha": "dfa08c14012ed6492c5110c92e7bd30178e1e9ab",
   "assertions": [
     {
       "name": "f_pn_blind",
-      "computed": "0.5081578877486455981370624",
-      "expected": "0.5081578877486455981370624",
+      "computed": "0.508157887748645593880406757381",
+      "expected": "0.508157887748645593880406757381",
       "passed": true
     },
     {
       "name": "f_pn_canonical",
-      "computed": "0.5082297893767389669218554",
-      "expected": "0.5082297893767389669218554",
+      "computed": "0.508229789376738962577995797656",
+      "expected": "0.508229789376738962577995797656",
       "passed": true
     },
     {
       "name": "per_bond_gap_is_h_delta_over_4",
-      "computed": "8.6125e-63",
+      "computed": "5.2368e-62",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-55",
@@ -33,7 +33,7 @@
     },
     {
       "name": "2H_shift_matches_single_factor_prediction",
-      "computed": "1.9354e-58",
+      "computed": "1.7985e-58",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -48,7 +48,7 @@
     },
     {
       "name": "3H_shift_matches_single_factor_prediction",
-      "computed": "3.558e-58",
+      "computed": "1.2104e-58",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -63,7 +63,7 @@
     },
     {
       "name": "3He_shift_matches_single_factor_prediction",
-      "computed": "4.9613e-58",
+      "computed": "4.8275e-58",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -78,7 +78,7 @@
     },
     {
       "name": "4He_shift_matches_single_factor_prediction",
-      "computed": "4.5864e-58",
+      "computed": "1.3484e-57",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -93,7 +93,7 @@
     },
     {
       "name": "7Li_shift_matches_single_factor_prediction",
-      "computed": "1.793e-58",
+      "computed": "3.9189e-58",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -108,7 +108,7 @@
     },
     {
       "name": "12C_shift_matches_single_factor_prediction",
-      "computed": "1.7543e-57",
+      "computed": "4.1959e-58",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-50",
@@ -144,11 +144,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "pn-convention-flip-effect",
   "scriptFile": "pn_convention_flip_effect_probe.py",
-  "scriptHash": "a183fbd2fb6c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d3c5a90d06b3",
+  "scriptCommitSha": "dfa08c14012ed6492c5110c92e7bd30178e1e9ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -171,12 +171,18 @@
   },
   "description": "What the strict_averaged -> bring_color_weighted p-n flip moves. The canonical ordering p..p n..n carries exactly ONE p-n boundary for every atom, so the flip is a single A-independent factor 1 + 1.4149466e-04 on the closed-form trace ratio, not an accumulating per-bond error; pure-flavour systems are untouched.",
   "contentBlock": "prop:pn-averaging-uniqueness",
+  "parameters": {
+    "q0Anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "data": {
-    "q0": "1.1099785827513808",
-    "delta": "0.0013757108070270973",
-    "f_pn_strict_averaged": "0.50815788774864559813706238543",
-    "f_pn_bring_color_weighted": "0.508229789376738966921855433751",
-    "relative_shift": "0.000141494661062772070343775678865",
+    "q0": "1.109978582751380807591669",
+    "delta": "0.001375710807027096008551109",
+    "f_pn_strict_averaged": "0.508157887748645593880406757381",
+    "f_pn_bring_color_weighted": "0.508229789376738962577995797656",
+    "relative_shift": "0.000141494661062771899920928590957",
     "mixed_bonds_in_canonical_ordering": 1,
     "a_independence_is_an_ordering_property_not_a_theorem": true
   }

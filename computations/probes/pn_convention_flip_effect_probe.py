@@ -53,7 +53,7 @@ for _p in (_HERE.parent, _HERE.parent / "substrate"):
 
 from mpmath import mp  # noqa: E402
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from closed_form_tau_M import closed_form_ratio, markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
@@ -68,7 +68,12 @@ PURE = [("proton", 1, 0), ("neutron", 0, 1), ("2p", 2, 0), ("2n", 0, 2)]
 def main() -> int:
     _started = time.monotonic()
     mp.dps = DPS
-    q = Q
+    # `q_parameter.Q` is a float64. Carrying it here would cap every
+    # printed value at 17 significant digits while the corpus computes
+    # these factors at 50 dps -- the committed witnesses record
+    # 0.508157887748645593880406757381..., which is the 50-dps value and
+    # diverges from the f64-q one at digit 18.
+    q = mp.mpf(Q_50_DIGIT_STR)
     z, h = markov_z(q), hecke_h(q)
     delta = flavor_split_leading(q)
 
@@ -86,10 +91,15 @@ def main() -> int:
         "accumulating per-bond error; pure-flavour systems are untouched."
     )
     w.set_content_block("prop:pn-averaging-uniqueness")
-    w.add_assertion("f_pn_blind", mp.nstr(f_blind, 25),
-                    "0.5081578877486455981370624")
-    w.add_assertion("f_pn_canonical", mp.nstr(f_canon, 25),
-                    "0.5082297893767389669218554")
+    # Emitted BY THE PRODUCER. A hand-built witness that gets these keys
+    # backfilled downstream loses them on every re-run -- the bare-producer
+    # hazard AGENTS.md records under the witness staleness triage.
+    w.add_parameter("q0Anchor", "proton")
+    w.add_parameter("q0", mp.nstr(q, 50))
+    w.add_assertion("f_pn_blind", mp.nstr(f_blind, 30),
+                    "0.508157887748645593880406757381")
+    w.add_assertion("f_pn_canonical", mp.nstr(f_canon, 30),
+                    "0.508229789376738962577995797656")
     # Exact identity, so the residual is pure arithmetic noise at 60 dps.
     # A tolerance is required: asserting == 0.0 against 8.6e-63 fails, which
     # is a defect in the assertion and not in the mathematics.
