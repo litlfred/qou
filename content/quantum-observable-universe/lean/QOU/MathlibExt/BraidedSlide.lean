@@ -67,6 +67,22 @@ theorem braiding_slide_cap_left {W A B : C} (c : A ⊗ B ⟶ 𝟙_ C) :
     _ = 𝟙 ((A ⊗ B) ⊗ W) ⊗≫ (c ▷ W ≫ (β_ (𝟙_ C) W).hom) ⊗≫ 𝟙 W := by rw [← h]
     _ = _ := by simp [monoidalComp]
 
+/-- **The inverse form of `braiding_slide_cap_right`** — the one an assembly actually uses.
+
+Read left to right: a strand `W` that crosses only the *second* leg `B` before the cap can still be
+pushed off, but it leaves behind an **inverse** braiding past the first leg `A`.  That leftover is
+where a monodromy comes from: apply this twice, once for each leg of a dual pair, and the two
+leftovers compose to a double braid. -/
+theorem braiding_slide_cap_right_inv {W A B : C} (c : A ⊗ B ⟶ 𝟙_ C) :
+    𝟙 ((A ⊗ W) ⊗ B) ⊗≫ A ◁ (β_ W B).hom ⊗≫ c ▷ W ⊗≫ 𝟙 W
+      = 𝟙 ((A ⊗ W) ⊗ B) ⊗≫ (β_ W A).inv ▷ B ⊗≫ W ◁ c ⊗≫ 𝟙 W := by
+  have h := braiding_slide_cap_right (W := W) c
+  calc _ = 𝟙 ((A ⊗ W) ⊗ B) ⊗≫ (β_ W A).inv ▷ B
+            ⊗≫ (𝟙 ((W ⊗ A) ⊗ B) ⊗≫ (β_ W A).hom ▷ B ⊗≫ A ◁ (β_ W B).hom
+                  ⊗≫ c ▷ W ⊗≫ 𝟙 W) := by
+            simp [monoidalComp]
+    _ = _ := by rw [h]; simp [monoidalComp]
+
 /-- **A strand slides across a cup**, braiding past each leg in turn.
 
 The cup-shaped dual of `braiding_slide_cap_right`. -/
