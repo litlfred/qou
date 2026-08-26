@@ -115,8 +115,27 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 set_compute_dps()
 HERE = pathlib.Path(__file__).resolve().parent
 
-# The isotope target set. B_AME from AME2020 via the committed sweep witness.
+# The isotope target sets. B_AME comes from the VENDORED AME2020 table via
+# `ame_2020_binding_energies._binding_mev_exact` (exact Decimal), so the set is
+# not limited to whatever the committed sweep witness happens to carry.
 SWEEP = "low-isotopes-binding-sweep.witness.json"
+
+# LOW — the owner-specified target set ("low isotopes like 2H, tritium etc").
+# This is the set the fitted ideal is DEFINED against; it is what the fit sees.
+ISOTOPES_LOW = [
+    ("D", 1, 2), ("T", 1, 3), ("3He", 2, 3), ("4He", 2, 4),
+    ("6Li", 3, 6), ("7Li", 3, 7), ("7Be", 4, 7),
+]
+
+# HELD-OUT — never shown to the fit. Used only to ask whether a calibration
+# fitted on the light nuclei GENERALISES. A 3-point calibration that fits its
+# own training set and then fails out-of-sample is diagnosing model shape, not
+# calibration choice, and that distinction is the whole point of this layer.
+ISOTOPES_HELDOUT = [
+    ("9Be", 4, 9), ("10B", 5, 10), ("11B", 5, 11), ("12C", 6, 12),
+    ("14N", 7, 14), ("16O", 8, 16), ("20Ne", 10, 20), ("24Mg", 12, 24),
+    ("28Si", 14, 28), ("40Ca", 20, 40), ("56Fe", 26, 56),
+]
 
 
 def _nucleon_word(g0, g1):
@@ -224,26 +243,32 @@ def golden_min(f, lo: mp.mpf, hi: mp.mpf, tol: mp.mpf, max_iter: int = 200):
     return (a + b) / 2, it
 
 
-def load_isotopes():
-    d = json.loads((HERE / SWEEP).read_text())
-    rows = d.get("witness", d).get("data", d.get("data", {}))["rows"]
+def build_set(spec):
+    """Isotope rows with exact AME2020 binding, as mpf."""
+    from ame_2020_binding_energies import _binding_mev_exact
     out = []
-    for r in rows:
+    for name, Z, A in spec:
         out.append({
-            "key": r["atom"],
-            "atom": r["atom"],
-            "Z": r["Z"], "N": r["N"], "A": r["A"],
-            "B_AME": mp.mpf(r["B_AME_MeV"]),
-            "B_pred_committed": mp.mpf(r["B_pred_canonical_MeV"]),
+            "key": name, "atom": name, "Z": Z, "N": A - Z, "A": A,
+            "B_AME": mp.mpf(str(_binding_mev_exact(Z, A))),
         })
     return out
+
+
+def committed_sweep_refs():
+    """B_pred from the committed sweep witness, keyed by atom (gate reference)."""
+    d = json.loads((HERE / SWEEP).read_text())
+    rows = d.get("witness", d).get("data", d.get("data", {}))["rows"]
+    return {r["atom"]: mp.mpf(r["B_pred_canonical_MeV"]) for r in rows}
 
 
 def main() -> int:
     t0 = time.monotonic()
     q0 = mp.mpf(Q_50_DIGIT_STR)
     qb_obs = mp.mpf(str(_Q_BETA_N))
-    isotopes = load_isotopes()
+    isotopes = build_set(ISOTOPES_LOW)
+    heldout = build_set(ISOTOPES_HELDOUT)
+    refs = committed_sweep_refs()
 
     # ── GATE: reproduce the committed B_pred at the observational point ──
     # This is the correctness gate for the whole evaluator. If the q-parametric
@@ -254,7 +279,7 @@ def main() -> int:
     worst_gate = mp.mpf(0)
     for row in isotopes:
         pred = qb_obs * defs0[row["key"]]
-        ref = row["B_pred_committed"]
+        ref = refs[row["key"]]
         rel = (pred - ref) / ref
         if abs(rel) > abs(worst_gate):
             worst_gate = rel
@@ -315,6 +340,49 @@ def main() -> int:
 
     from experimental_constants import M_E_MEV as _M_E
     me_obs = mp.mpf(str(_M_E))
+
+    # ── Held-out test: does a calibration fitted on the light nuclei
+    #    GENERALISE?  The held-out set is never shown to the fit.
+    #    This is the question a 3-point fit on 7 points can actually answer,
+    #    and it separates "the calibration was badly chosen" from "the model's
+    #    A-dependence is wrong".
+    defs_ho_fit = deficits_at(q_fit, heldout)
+    defs_ho_obs = deficits_at(q0, heldout)
+    rms_ho_fit = rel_rms(s_fit, defs_ho_fit, heldout)
+    rms_ho_obs = rel_rms(qb_obs, defs_ho_obs, heldout)
+
+    # For reference only: the best a refit on the held-out set alone could do.
+    # If in-sample fit and held-out refit want very different calibrations, no
+    # single 3-point choice serves both, which is a statement about the model.
+    rms_ho_refit, s_ho_refit, _ = objective(q_fit, heldout)
+    q_ho_refit, _ = golden_min(lambda x: objective(x, heldout),
+                               mp.mpf("1.01"), mp.mpf("1.60"), mp.mpf("1e-20"))
+    rms_ho_best, s_ho_best, _ = objective(q_ho_refit, heldout)
+
+    heldout_rows = []
+    for row in heldout:
+        pred = s_fit * defs_ho_fit[row["key"]]
+        heldout_rows.append({
+            "atom": row["atom"], "Z": row["Z"], "N": row["N"], "A": row["A"],
+            "B_AME_MeV": fmt(row["B_AME"]),
+            "B_fitted_on_low_MeV": fmt(pred),
+            "rel_out_of_sample": fmt((pred - row["B_AME"]) / row["B_AME"]),
+        })
+
+    print()
+    print("HELD-OUT (never seen by the fit) — calibration fitted on the low set:")
+    print(f"{'atom':>5} {'A':>3} {'B_AME':>10} {'B_pred':>11} {'rel':>10}")
+    for r in heldout_rows:
+        print(f"{r['atom']:>5} {r['A']:>3} "
+              f"{float(mp.mpf(r['B_AME_MeV'])):>10.4f} "
+              f"{float(mp.mpf(r['B_fitted_on_low_MeV'])):>11.4f} "
+              f"{float(mp.mpf(r['rel_out_of_sample']))*100:>9.2f}%")
+    print(f"  held-out rel-RMS, observational calibration = "
+          f"{mp.nstr(rms_ho_obs*100, 6)}%")
+    print(f"  held-out rel-RMS, calibration fitted on low  = "
+          f"{mp.nstr(rms_ho_fit*100, 6)}%")
+    print(f"  held-out rel-RMS, refitted on held-out       = "
+          f"{mp.nstr(rms_ho_best*100, 6)}%  (q={mp.nstr(q_ho_refit,12)})")
 
     rows_out = []
     for row in isotopes:
@@ -398,6 +466,17 @@ def main() -> int:
                       "is flat in it. Held at its observational value."),
     })
     w.add_data("isotopes", rows_out)
+    w.add_data("held_out", {
+        "note": ("Never shown to the fit. Tests whether a calibration fitted "
+                 "on the light nuclei generalises; separates 'calibration was "
+                 "badly chosen' from 'the model's A-dependence is wrong'."),
+        "rel_rms_observational_calibration": fmt(rms_ho_obs),
+        "rel_rms_calibration_fitted_on_low": fmt(rms_ho_fit),
+        "rel_rms_refitted_on_held_out": fmt(rms_ho_best),
+        "q_refitted_on_held_out": fmt(q_ho_refit),
+        "Q_beta_refitted_on_held_out_MeV": fmt(s_ho_best),
+        "rows": heldout_rows,
+    })
     w.add_data("q_scan", scan)
     w.add_data("anti_fit_label", {
         "is_a_fit": True,
