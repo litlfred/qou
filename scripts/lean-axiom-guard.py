@@ -416,6 +416,10 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.drop_addBoxRow | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_same_row | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_below | clean
+# Leg-growth half. countP_set_of_flip is proved by structural induction, not
+# imported -- Mathlib has no countP-over-set lemma reachable from here.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_set_of_flip | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_drop_addBoxRow_at_threshold | clean
 # The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
 # schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
 # n(lam) fix a correction rather than a preference: revert the prefactor and

@@ -417,6 +417,47 @@ theorem hookLength_addBoxRow_row_below
   unfold Partition.hookLength
   rw [hne, drop_addBoxRow lam r i (by omega)]
 
+/-- **Setting one entry from a value failing `p` to one satisfying it raises the
+count by exactly one.** The counting step behind leg growth; proved by
+structural induction rather than found in Mathlib. -/
+theorem countP_set_of_flip {p : ℕ → Bool} :
+    ∀ (l : List ℕ) (k v : ℕ), (hk : k < l.length) →
+      p (l[k]'hk) = false → p v = true →
+      (l.set k v).countP p = l.countP p + 1
+  | a :: t, 0, v, _, hold, hnew => by
+      simp only [List.getElem_cons_zero] at hold
+      simp [hold, hnew]
+  | a :: t, k + 1, v, hk, hold, hnew => by
+      have ih := countP_set_of_flip t k v (by simpa using Nat.lt_of_succ_lt_succ hk)
+        (by simpa using hold) hnew
+      simp [List.countP_cons, ih]
+      omega
+
+/-- **Leg growth, as a count.** For a row `i` strictly above the new box, the
+tail below `i` still contains row `r`, whose entry moves from `λ_r` to `λ_r + 1`.
+At the threshold `j = λ_r` that flips the predicate `(· > j)` from false to true,
+so the leg count rises by exactly one.
+
+This is the half the `drop` argument cannot reach: the modified entry survives
+into the tail rather than being dropped, so the proof is a `countP`-over-`set`
+argument instead. -/
+theorem countP_drop_addBoxRow_at_threshold
+    (lam : Partition) (r i : ℕ) (h : i < r) (hr : r < lam.length) :
+    ((addBoxRow lam r).drop (i + 1)).countP
+        (fun x => decide (x > (lam[r]?).getD 0))
+      = ((lam.drop (i + 1)).countP
+          (fun x => decide (x > (lam[r]?).getD 0))) + 1 := by
+  unfold addBoxRow
+  rw [List.drop_set, if_neg (by omega)]
+  have hr' : r < List.length lam := hr
+  have hlen : r - (i + 1) < (lam.drop (i + 1)).length := by
+    rw [List.length_drop]; omega
+  refine countP_set_of_flip (lam.drop (i + 1)) (r - (i + 1)) _ hlen ?_ ?_
+  · rw [List.getElem_drop]
+    have hidx : i + 1 + (r - (i + 1)) = r := by omega
+    simp [hidx, List.getElem?_eq_getElem hr]
+  · simp
+
 /-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
     lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the
     content-sum formula and the explicitly-proved H₂ weights. -/
