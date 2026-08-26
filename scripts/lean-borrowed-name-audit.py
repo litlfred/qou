@@ -45,10 +45,52 @@ the whole paper tree.
               of every declaration in the tree is built first, so an identifier
               absent from it is Mathlib/core by construction.
 
-`BORROWED and LOCAL-ONLY` is the borrowed-name shape and is reported CRITICAL.
+Those two alone are NOT enough, and shipping them as the CRITICAL rule would
+have been useless: measured, `BORROWED and LOCAL-ONLY` fires **1121** times,
+about a third of the provable declarations in the tree.  Most are legitimate —
+a file that defines an object and proves things about it is normal Lean.  Two
+further signals do the discriminating:
+
+  OVERCLAIM   the docstring asserts the declaration CARRIES the external
+              theory's content ("the real content", "the unification",
+              "derives", "PROVED", "the genuine check").  This is the mirror
+              image of the sibling detector's OPEN-CLAIM signal, which is why
+              that detector cannot see this shape.
+  CHEAP       the proof is <=4 steps drawn only from the restate-only tactics
+              (rfl/decide/simp/unfold/rw/norm_num/ring/...) and cites no lemma
+              from another file, so it cannot import content from outside.
+
+    CRITICAL  BORROWED and LOCAL-ONLY and OVERCLAIM and CHEAP   ->   12
+    major     BORROWED and LOCAL-ONLY and CHEAP                 ->  197
+    advisory  BORROWED and LOCAL-ONLY                           ->  939
+
 A docstring that DISCLAIMS ("definitional", "by definition", "a restatement",
-"notation for") downgrades it to advisory, mirroring the sibling detector's
+"notation for") downgrades to advisory, mirroring the sibling detector's
 exclusion discipline: a definitional restatement that says so is legitimate.
+
+## What the 12 look like (spot-checked 4; 3 genuine, 1 arguably legitimate)
+
+`QOU/BraidKnot/Sigma1CubedSeifertTessellation.seifert_euler_relation` is the
+clearest, and was found by the detector rather than designed for:
+
+    def seifertDisks : Int := 2          def boundaryComponents : Int := 1
+    def seifertBands : Int := 3          def seifertGenus : Int := 1
+    def seifertEuler : Int := seifertDisks - seifertBands
+    /-- ... This is the genuine check (had the cell count been wrong, this
+        would fail). -/
+    theorem seifert_euler_relation :
+        seifertEuler = 2 - 2 * seifertGenus - boundaryComponents := by decide
+
+Every integer is hand-entered, so `-1 = 2 - 2*1 - 1` cannot fail; the
+docstring's falsifiability claim is exactly backwards.  `b3_nf_wedderburn_-
+uniqueness : b3_nf_coefficients 5 = 0` reads off entry 5 of a hand-entered
+table whose fifth line is literally `| 5 => 0`, under a name claiming
+Wedderburn-Artin uniqueness.
+
+The arguably-legitimate one is `hecke_n3_frobenius_codim`, a real symbolic
+identity over a locally-defined q-dimension that merely happens to be named
+after Frobenius.  Expect roughly that rate; do not quote it as a precision
+figure from a sample of four.
 
 Like every other vacuity criterion this is a HIGH-RECALL CANDIDATE GENERATOR.
 A CRITICAL is not a verdict — the genuine/legit call is an agent's, and belongs
@@ -86,6 +128,22 @@ EXTERNAL_NAMES = [
 ]
 # Abbreviations, matched case-sensitively as standalone tokens only.
 EXTERNAL_ABBREV = ["DT", "KL", "YBE", "TQFT", "WRT", "PBW", "RTT"]
+
+# The docstring asserts that the declaration CARRIES the external theory's
+# content -- the mirror image of the sibling detector's OPEN-CLAIM signal.
+OVERCLAIM = re.compile(
+    r"the real content|non-?trivial content|the unification|unifies|"
+    r"THE GENERAL|derives|derivation of|is derived|proves that|"
+    r"establishes|the capstone|forced by|no longer conjectural|"
+    r"PROVED|now proved|closes the|the key (?:step|identity|fact)",
+    re.I)
+
+# A proof made only of these is cheap: it can restate a definition but cannot
+# import content from outside the file.
+CHEAP_TACTIC = re.compile(
+    r"^(?:rfl|trivial|decide|native_decide|norm_num|simp|simp_all|unfold|"
+    r"delta|rw|show|intro|intros|exact|refine|constructor|omega|ring|"
+    r"ring_nf|field_simp|dsimp|and_intro|split|rcases|obtain)\b")
 
 DISCLAIM = re.compile(
     r"by definition|definitional|is a definition|a restatement|restates|"
@@ -274,19 +332,35 @@ def audit(base: str, roots: list[str]):
             ext_lemmas = sorted(i for i in proof_ids
                                 if i in index and i not in per_file[p])
             disclaimed = bool(DISCLAIM.search(doc))
+            overclaim = bool(OVERCLAIM.search(doc))
+            steps = [t.strip() for t in re.split(r"[;\n<;>]|\bthen\b", proof)
+                     if t.strip() and t.strip() not in ("by",)]
+            steps = [re.sub(r"^by\s+", "", t) for t in steps]
+            cheap = bool(steps) and all(CHEAP_TACTIC.match(t) for t in steps) \
+                and len(steps) <= 4 and not ext_lemmas
+            if overclaim and cheap and not disclaimed:
+                sev = "CRITICAL"
+            elif cheap and not disclaimed:
+                sev = "major"
+            else:
+                sev = "advisory"
             findings.append({
                 "file": os.path.relpath(p, base),
                 "line": lineno,
                 "decl": name,
                 "kind": kind,
-                "severity": "advisory" if disclaimed else "CRITICAL",
+                "severity": sev,
+                "overclaim": overclaim,
+                "cheap_proof": cheap,
+                "proof_steps": len(steps),
                 "borrowed": hits,
                 "local_defs_in_statement": local,
                 "external_lemmas_in_proof": ext_lemmas,
                 "disclaimed": disclaimed,
                 "statement": re.sub(r"\s+", " ", stmt.strip())[:300],
             })
-    findings.sort(key=lambda f: (f["severity"] != "CRITICAL", f["file"], f["line"]))
+    rank = {"CRITICAL": 0, "major": 1, "advisory": 2}
+    findings.sort(key=lambda f: (rank[f["severity"]], f["file"], f["line"]))
     return findings
 
 

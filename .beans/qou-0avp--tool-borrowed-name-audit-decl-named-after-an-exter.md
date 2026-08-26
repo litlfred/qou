@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T18:58:57Z
+updated_at: 2026-08-26T19:12:15Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -89,3 +89,39 @@ internal conjecture?"* — measured over all 3,530 content blocks: 744 provable,
 Ranked by proof depth the set collapses immediately; the deepest item corpus-wide
 (`prop:polynomial-bar-involution`, 339 lines) proves that `X ↦ -X` is a ring
 involution on `R[X]` with fixed subring `R[X²]`.
+
+
+
+## Built and swept (2026-08-26)
+
+[`scripts/lean-borrowed-name-audit.py`](../scripts/lean-borrowed-name-audit.py),
+witness [`docs/audits/2026-08-26-borrowed-name-audit.witness.json`](../docs/audits/2026-08-26-borrowed-name-audit.witness.json).
+
+**The two signals in the plan above were not enough**, and this is the part
+worth carrying forward: `BORROWED and LOCAL-ONLY` fires **1121** times, about a
+third of the provable decls in the tree. A generator that flags a third of the
+corpus is noise. Two further signals were needed — OVERCLAIM (docstring asserts
+the decl carries the external theory's content) and CHEAP (<=4 restate-only
+tactic steps, no cross-file lemma):
+
+    CRITICAL  BORROWED + LOCAL-ONLY + OVERCLAIM + CHEAP     12
+    major     BORROWED + LOCAL-ONLY + CHEAP                197
+    advisory  BORROWED + LOCAL-ONLY                        939
+
+**Best independent catch** (not designed for): `seifert_euler_relation` in
+`QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean`. `seifertDisks := 2`,
+`seifertBands := 3`, `boundaryComponents := 1`, `seifertGenus := 1` are all
+hand-entered, so `-1 = 2 - 2*1 - 1` by `decide` cannot fail — while the
+docstring says *"This is the genuine check (had the cell count been wrong, this
+would fail)"*. The falsifiability claim is exactly backwards.
+
+Spot-checked 4 of 12: 3 genuine, 1 (`hecke_n3_frobenius_codim`) arguably
+legitimate — a real symbolic identity that merely happens to be named after
+Frobenius. **Sample of four; not a precision rate.**
+
+## Next (NOT done here)
+
+- Agent-adjudicate the 12 into `docs/audits/lean-vacuity-review-ledger.json`.
+- Triage the 197 `major`.
+- Decide whether this becomes a `qa-sweep` criterion or stays a standalone
+  script like its sibling `lean-definition-collapsed-audit.py`.
