@@ -137,7 +137,12 @@ the weighting; selecting $E$ requires re-deriving the colour weighting from the
 colour-tube geometry, and no particular $E$ is asserted here. All of the above
 is checked exactly in
 [`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
-(17 assertions).
+(17 assertions), and the four identities that are field-theoretic rather than
+substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
+defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
+equivalence — are formalised over an arbitrary characteristic-zero field in
+[`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
+sorry-free (`#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only).
 
 ### categorical verification (4 atoms, exact representation Rust kernel)
 
