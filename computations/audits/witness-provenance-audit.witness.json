@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T14:39:10.980868+00:00",
-  "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
+  "computedAt": "2026-08-26T18:54:15.720923+00:00",
+  "commitSha": "bd3710eb02ce2bfa1736cee3afa973d77624d398",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 98,
+      "computed": 99,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -28,9 +28,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
@@ -56,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2797,
-      "prov_ok": 2365,
+      "total_scanned": 2808,
+      "prov_ok": 2371,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 251,
+      "prov_exempt_no_reader": 255,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 98,
+      "prov_missing": 99,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.964962459778333929209867715409367179120486235252055774043618"
+      "completeness_ratio": "0.964743589743589743589743589743589743589743589743589743589744"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -729,6 +731,10 @@
         },
         {
           "witness": "hardcoded-q0-literal-families.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "mpf-float-cast-triage.witness.json",
           "missing_fields": []
         },
         {
@@ -1868,10 +1874,6 @@
           "missing_fields": []
         },
         {
-          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "chi-free-via-lr.witness.json",
           "missing_fields": []
         },
@@ -1901,6 +1903,10 @@
         },
         {
           "witness": "chi-proton-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-sym-alt-closed-form.witness.json",
           "missing_fields": []
         },
         {
@@ -2309,6 +2315,10 @@
         },
         {
           "witness": "carrier-saturation-mechanism.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "carrier-table-convention-d-rederivation.witness.json",
           "missing_fields": []
         },
         {
@@ -4992,6 +5002,10 @@
           "missing_fields": []
         },
         {
+          "witness": "probe-term4-conventions.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "probe-theta-carry-binding.witness.json",
           "missing_fields": []
         },
@@ -6244,6 +6258,10 @@
           "missing_fields": []
         },
         {
+          "witness": "pn-offset-bar-odd-class.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "pn-pair-two-sector-split.witness.json",
           "missing_fields": []
         },
@@ -7380,6 +7398,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-c3-barodd-determined-solve.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-c3-barodd-gluing-newton-solve.witness.json",
           "missing_fields": []
         },
@@ -7921,6 +7943,10 @@
         },
         {
           "witness": "qbeta-eigenphase-taylor-in-u.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-epsnpq-colour-weighted-exclusion.witness.json",
           "missing_fields": []
         },
         {
@@ -9630,6 +9656,12 @@
           ]
         },
         {
+          "witness": "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-deuteron-h6.witness.json",
           "missing_fields": [
             "engine",
@@ -10627,6 +10659,12 @@
           ]
         },
         {
+          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
@@ -10663,11 +10701,15 @@
           ]
         },
         {
+          "witness": "chi-helium-3-h9-at-qinv-50dps-colour-weighted.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
+            "scriptFile"
           ]
         },
         {
@@ -10679,11 +10721,15 @@
           ]
         },
         {
+          "witness": "chi-helium-4-h12-at-qinv-50dps-colour-weighted.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-helium-4-h12-at-qinv-50dps.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
+            "scriptFile"
           ]
         },
         {
@@ -10711,11 +10757,15 @@
           ]
         },
         {
+          "witness": "chi-tritium-h9-at-qinv-50dps-colour-weighted.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
+            "scriptFile"
           ]
         },
         {

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T15:21:13.105217+00:00",
-  "commitSha": "bf0dd6d23c011983f12ce06b33f59abe9da1cab9",
+  "computedAt": "2026-08-26T18:51:24.393033+00:00",
+  "commitSha": "bd3710eb02ce2bfa1736cee3afa973d77624d398",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -28,10 +28,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [
@@ -43,15 +45,15 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 986,
+      "Q0_OK": 997,
       "Q0_AMBIGUOUS": 2,
-      "Q0_AMBIGUOUS_NO_REASON": 14,
+      "Q0_AMBIGUOUS_NO_REASON": 13,
       "Q0_INDEPENDENT": 48,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 2,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1661,
+      "Q0_ANCHOR_MISSING": 1662,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -553,6 +555,10 @@
           "detail": ""
         },
         {
+          "witness": "mpf-float-cast-triage.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "snappy-census-volume-verification.witness.json",
           "detail": ""
         },
@@ -997,15 +1003,7 @@
           "detail": ""
         },
         {
-          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-helium-4-h12-at-qinv-50dps.witness.json",
           "detail": ""
         },
         {
@@ -1021,11 +1019,11 @@
           "detail": ""
         },
         {
-          "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
+          "witness": "chi-sym-alt-closed-form.witness.json",
           "detail": ""
         },
         {
-          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
+          "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
           "detail": ""
         },
         {
@@ -4793,6 +4791,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-c3-barodd-determined-solve.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-c3-barodd-gluing-newton-solve.witness.json",
           "detail": ""
         },
@@ -5218,6 +5220,10 @@
         },
         {
           "witness": "qbeta-eigenphase-taylor-in-u.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-epsnpq-colour-weighted-exclusion.witness.json",
           "detail": ""
         },
         {
@@ -7639,6 +7645,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
           "detail": ""
         },
@@ -7659,6 +7673,14 @@
           "detail": ""
         },
         {
+          "witness": "chi-helium-3-h9-at-qinv-50dps-colour-weighted.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-helium-3-h9.witness.json",
           "detail": ""
         },
@@ -7672,6 +7694,14 @@
         },
         {
           "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-helium-4-h12-at-qinv-50dps-colour-weighted.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-helium-4-h12-at-qinv-50dps.witness.json",
           "detail": ""
         },
         {
@@ -7712,6 +7742,14 @@
         },
         {
           "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9-at-qinv-50dps-colour-weighted.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-tritium-h9-at-qinv-50dps.witness.json",
           "detail": ""
         },
         {
@@ -7976,6 +8014,10 @@
         },
         {
           "witness": "carrier-saturation-mechanism.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "carrier-table-convention-d-rederivation.witness.json",
           "detail": ""
         },
         {
@@ -9191,6 +9233,10 @@
           "detail": ""
         },
         {
+          "witness": "probe-term4-conventions.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "probe-topological-mass-formula-algebraic.witness.json",
           "detail": ""
         },
@@ -9664,6 +9710,10 @@
         },
         {
           "witness": "pn-interface-bar-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "pn-offset-bar-odd-class.witness.json",
           "detail": ""
         },
         {
@@ -10658,10 +10708,6 @@
         },
         {
           "witness": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
-          "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
-        },
-        {
-          "witness": "chi-deuteron-h6-at-qinv-50dps.witness.json",
           "detail": "anchor=ambiguous with no q0AnchorReason — states that the pin is undetermined, but not WHAT is undetermined, so nothing records how it could ever be resolved"
         },
         {
