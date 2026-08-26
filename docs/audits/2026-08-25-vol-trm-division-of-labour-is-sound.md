@@ -2409,3 +2409,60 @@ knots, or cabling** — `grep` over `library/INDEX.md` for
 answer it, and no answer is offered here rather than one guessed. If that
 literature is wanted it needs ingesting first; that is a concrete, cheap next
 step and it is not done in this branch.
+
+## Addendum 25 — the ingest is blocked, but the physics question has an answer (2026-08-26)
+
+Bean `qou-6tcn`. Ledger:
+[`docs/coordination/satellite-cabling-source-ledger.md`](../coordination/satellite-cabling-source-ledger.md).
+
+Addendum 24 recorded that the library holds nothing on satellites or cabling and
+declined to guess at the author's question about mesonic toroidal forces. Asked
+to ingest that literature. **The ingest cannot be done in this sandbox; the
+question can now be answered anyway, from verified links rather than from text.**
+
+### Every paper host is blocked; one channel is not
+
+Walking the [`local/sandbox-egress`](../../.claude/skills/local/sandbox-egress.md)
+route table rather than stopping at the first 403: `export.arxiv.org` gives
+`CONNECT tunnel failed, response 403`; `arxiv.org`, `api.openalex.org`,
+`api.semanticscholar.org` and `api.crossref.org` all give `000`. Every
+`paper-search-mcp` backend returns `[]` for the same reason — they ride the same
+proxy. `raw.githubusercontent.com` gives `301` (open), as the route table says,
+but arXiv PDFs do not live there.
+
+**WebSearch is out-of-band and works** — exactly as the route table records — so
+verified IDs and titles are obtainable even though the PDFs are not.
+
+### So this is a citation ledger, not an ingest
+
+The distinction matters and the ledger states it at the top: **corpus-grep path
+5 still returns zero**, and that remains the correct answer until someone
+ingests the documents. The ledger is a pointer file; none of the papers has been
+read, and nothing in it may be used as a source for a claim.
+
+### The physics question: yes, and it is the Faddeev–Skyrme literature
+
+The Hopfion literature *is* "mesonic toroidal forces" — knotted solitons whose
+topology is the Hopf map $S^3 \to S^2$, carrying a **twisted toroidal**
+structure, in an effective low-energy $SU(2)$ model. Three points from the search
+summaries, flagged **unread**: Faddeev and Niemi conjectured the toroidal twisted
+structure and numerics confirmed it up to Hopf charge sixteen **including torus
+knots**; in low-energy QCD these appear as knots of the **gluon** field proposed
+to describe **glueballs**; and via the **Cho–Faddeev–Niemi decomposition** the
+model is conjectured to be the low-energy effective theory of $SU(2)$
+Yang–Mills.
+
+**The third point needs the most care.** QOU's fibre is pinned at rank two
+(`exteriorSquareDim N = 1 ↔ N = 2`), so an $SU(2)$ effective description is a
+*suggestive shape match* — precisely the class of observation the
+anti-numerology discipline exists to slow down. Nothing is wired, cited in a
+content block, or used in any derivation.
+
+### And a better route than the `H₁₂` compute
+
+The cabling group ([0807.2679](https://arxiv.org/abs/0807.2679) and the Kalfagianni–Tran
+sequence) gives the colored Jones of a cable in terms of the companion's. That
+would replace the one-isotope `H₁₂` measurement with a **closed form** — the
+formalize-first route, generalising past the deuteron in one step rather than
+one isotope at a time. Recorded as the preferred next move if this front is
+continued.
