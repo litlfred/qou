@@ -410,6 +410,14 @@ QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsuffici
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_two | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_one_one | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_ne_contentSum | clean
+# The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
+# schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
+# n(lam) fix a correction rather than a preference: revert the prefactor and
+# it and telescope_two become unprovable together.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.old_contentSum_prefactor_breaks_telescope | clean
 """
 
 
