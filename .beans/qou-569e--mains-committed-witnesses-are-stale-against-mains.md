@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T13:38:21Z
-updated_at: 2026-08-26T14:12:51Z
+updated_at: 2026-08-26T17:21:23Z
 ---
 
 ## The measurement
@@ -122,3 +122,49 @@ Three witnesses now, and the third inverts a positive result. All were
 regenerated during verification of PRs #5823's guards and all were reverted
 rather than committed, for the reason stated above: a two-thirds drop in a
 match count does not belong in a PR about assertion guards.
+
+
+## A SECOND, DIFFERENT staleness on the same tree (measured 2026-08-26, prepare-merge for PR #5842)
+
+Recorded here rather than as a new bean because it is the same claim family
+("main's committed witnesses are stale against main"), but the MECHANISM is not
+the import-cone one above and should not be conflated with it.
+
+`scripts/precision-gates.sh --changed`, run on a branch touching ONLY two .lean
+files and one Python script — zero `computations/` changes — reported three
+stale committed audit witnesses:
+
+  computations/audits/q0-anchor-consistency-audit.witness.json
+  computations/audits/witness-provenance-audit.witness.json
+  computations/q0-value-drift-audit.witness.json
+
+All blocking gates were green (rc=0); this is the advisory report, not a block.
+
+**The drift is main's, and it is COUNT drift, not value drift.** Attribution
+checked before claiming it, per the gate's own instruction:
+
+  q0-anchor-consistency:  Q0_OK 986 -> 994, Q0_ANCHOR_MISSING 1661 -> 1659,
+                          Q0_AMBIGUOUS_NO_REASON 14 -> 13
+  witness-provenance:     total_scanned 2797 -> 2802, prov_missing 98 -> 83,
+                          prov_exempt_no_reader 251 -> 272
+  q0-value-drift:         proton-pin 1708 -> 1724
+
+The newly-listed entries name `mpf-float-cast-triage.witness.json` (PR #5831,
+merged to main today as 84109e9502) and
+`chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json`. So: witnesses
+landed on main, and the audits that count them were not re-run in the same PR.
+
+**I did NOT commit the regenerated copies, deliberately.** Two reasons:
+
+1. Not mine to fix on a two-file Lean PR — it would mix an unrelated main-side
+   refresh into an unrelated change.
+2. More importantly, committing them would have written THIS container's
+   environment into main's audit records: the regenerated copies dropped
+   `"numpy": "2.4.6"` (numpy is not installed here) and changed
+   `pyhecke_native_build` c85ef99ee89ce1c3 -> 47b406d9ba6e343f. That is not a
+   drift refresh, it is stamping a degraded environment block onto a record
+   whose whole job is to describe the producing environment.
+
+Whoever drains this should re-run the three audits in an environment that has
+numpy and the matching pyhecke_native build, and check the env block before
+committing.

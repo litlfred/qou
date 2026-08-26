@@ -128,6 +128,14 @@ def q0_mp(dps: int = 50) -> mp.mpf:
 # a_operator_gauge_align) keep working.
 from partition_utils import dim_lambda as partition_dim  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 def verify_dimension_identity(n_inner: int, n_block: int) -> dict:
     """Preflight 1b: d_λ = Σ_{ξ,ν} c^λ_{ξν} d_ξ d_ν for every λ ⊢ n_inner+n_block.
@@ -509,7 +517,7 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
         P_in = _lagrange_projectors(C_in, ev, dim)   # keyed by ξ ⊢ 3
         P_bl = _lagrange_projectors(C_bl, ev, dim)   # keyed by ν ⊢ 3
         # Bridge interface I_pn = σ_3 (0-idx 2) with d = -h/2.
-        I_iface = mats[2] - (h / 2) * mp.eye(dim)
+        I_iface = mats[2] + _pn_d(h) * mp.eye(dim)
         # Π_{ξν} = P_in[ξ] · P_bl[ν]
         Pi = {(xi, nu): P_in[xi] * P_bl[nu]
               for xi in ev for nu in ev}

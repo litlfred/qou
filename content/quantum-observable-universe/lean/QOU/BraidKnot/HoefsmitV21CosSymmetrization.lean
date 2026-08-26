@@ -182,12 +182,28 @@ the transfer matrix `M_β` on `V_(2,1)` has eigenvalues `e^{±iα}` with
 `α = (z - 1) h / 2`. We axiomatise this as a class field. -/
 
 /-- Markov-Jones parameter (Tier 2 / generic-R form):
-    `z = u / (u² + 1) = 1 / (u + u⁻¹)`. -/
+    `z = u / (u² + 1) = 1 / (u + u⁻¹)`.
+
+    **This is the KERNEL, not a Markov parameter — convention-C shaped, kept
+    deliberately** (bean `qou-cxjq`, 2026-08-26). It is convention-neutral *as a
+    function*; the convention lives in how it is instantiated. Convention D is
+    **not** this at any argument — `QOU.BraidKnot.no_kernel_instantiation_is_conventionD`
+    proves the kernel's real range is `[-1/2, 1/2]` while `z_D q > 1/2` for every
+    `q > 1` — it is the rescaling `q² · (this kernel at q)`. Consume the `_real`
+    shim below, which is convention D. -/
 def markovZ {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
 
-/-- Archimedean shim of `markovZ` with explicit positivity. -/
+/-- Archimedean shim of `markovZ` with explicit positivity.
+
+    **Convention D** `z_D q = q³/(q²+1) = q² · (kernel at q)`, migrated from
+    convention C 2026-08-26 (bean `qou-cxjq`). This read `(kernel at √q)`, i.e.
+    `√q/(q+1)`. The rescaled shape is the only one available: no argument
+    reaches D (`no_kernel_instantiation_is_conventionD`); see
+    `QOU.BraidKnot.markovZD_eq_sq_mul_kernel`. The `0 < q` hypothesis is kept for
+    API compatibility and is now genuinely unused — convention D has no
+    `Real.sqrt` in it. -/
 noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q) : ℝ :=
-  markovZ (Real.sqrt q)
+  q ^ 2 * markovZ q
 
 /-- **Legacy unsafe form** of `markovZ` — `Real.sqrt q` without the
     `0 < q` hypothesis. Use `markovZ (u : R)` (Tier 2) or `markovZ_real

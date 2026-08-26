@@ -79,6 +79,10 @@ sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 DPS = 40
 mp.mp.dps = DPS + 10  # guard digits
 
@@ -145,7 +149,7 @@ ALT_F = {"pos": -QI, "inv": -Q0, "mix": -(Q0 + QI) / 2}
 
 # std eigen-branch factors (lambda in {q, -1/q}); used by the fast path.
 EIG = {"+": Q0, "-": -QI}
-STD_F = {k: {"pos": EIG[k], "inv": EIG[k] - H, "mix": EIG[k] - H / 2}
+STD_F = {k: {"pos": EIG[k], "inv": EIG[k] - H, "mix": EIG[k] + _pn_d(H)}
          for k in ("+", "-")}
 # checks: (q)-h = 1/q (inv on + branch); (-1/q)-h = -q (inv on - branch)
 

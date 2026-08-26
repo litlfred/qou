@@ -7,9 +7,9 @@
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-08-26T04:23:00.218147+00:00",
+  "timestamp": "2026-08-26T14:43:07.135777+00:00",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.1099785827513808",
     "engine": "sympy Poly + sequential cyclotomic division"
   },
   "results": {
@@ -551,11 +551,11 @@
       "tr_M_at_q0": "0.40376703685142811011861092302"
     }
   },
-  "scriptHash": "4ee7e1cd4ba0",
-  "scriptCommitSha": "001866f43b775c775b7f8fdb151f949ab53e0f90",
-  "commitSha": "de9f24d781bceb9d659d0929be8d353a5360e465",
+  "scriptHash": "f7ba1ae7ce7a",
+  "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
+  "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
   "engine": "mpmath",
-  "computedAt": "2026-08-26T04:23:00.255566+00:00",
+  "computedAt": "2026-08-26T14:43:07.168940+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",

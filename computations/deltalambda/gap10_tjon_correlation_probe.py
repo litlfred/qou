@@ -86,6 +86,8 @@ from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
 q0f = float(Q0)
@@ -125,7 +127,14 @@ def M_op(A, Z, N, complete):
     ifaces = {x[2]: x for x in full if x[2] % 3 == 2}
     d_by_gen = {g: float(ifaces[g][1]) for g in sorted(ifaces)}
     nz = [d for d in d_by_gen.values() if d != 0.0]
-    pn_d = min(nz, key=lambda d: abs(abs(d) - H / 2)) if nz else -H / 2
+    # Nearest-match against the CANONICAL p-n offset, not -H/2. The word
+    # now carries `-h*(1/2 - delta/4)`; the nearest-match happens to pick
+    # the same entry either way (the alternatives are 0 and -H, orders
+    # further off), but the reference and the fallback were both the
+    # colour-blind value and would silently mis-select if the spread ever
+    # narrowed.
+    _d_pn = _pn_d(H)
+    pn_d = min(nz, key=lambda d: abs(abs(d) - abs(_d_pn))) if nz else _d_pn
 
     free = [x for x in full if x[2] % 3 != 2]           # no interfaces at all
     allb = list(full)                                    # every adjacent interface

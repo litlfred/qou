@@ -1,5 +1,11 @@
 -- Quantum Observable Universe — Lean 4 Formalization
 --
+import QOU.AlgebraicSubstrate.QGenericBase
+import QOU.AlgebraicSubstrate.QGenericBaseReal
+import QOU.AlgebraicSubstrate.TwistSignTorsor
+import QOU.Eightfold.SelfDualSectorConfinement
+import QOU.Eightfold.OctonionicSu3RankObstruction
+import QOU.Eightfold.FlavourColourDiscriminator
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
@@ -91,6 +97,12 @@ import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.RankMinor
+import QOU.MathlibExt.BraidedSlide
+import QOU.MathlibExt.Ribbon
+import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.BraidedTensorDual
+import QOU.MathlibExt.BraidedQuantumDimension
+import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
@@ -632,6 +644,9 @@ import QOU.QBeta.GramSignature
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate
+import QOU.QBeta.MarkovTraceQuotient
+import QOU.QBeta.TLTowerRadicalDescent
+import QOU.QBeta.TraceNondegeneracyInsufficient
 import QOU.QBeta.JonesNormalisation
 -- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
 -- library root: `lake build` only builds `QOU.lean`'s import closure, so a
@@ -1235,3 +1250,15 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+
+-- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
+-- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
+-- behaviour in the square-root variable; `PnInterfaceBarStructure` proves the
+-- criterion (the weighted p-n factor is bar-even iff the offset is bar-odd);
+-- `PnOffsetBarOddClass` measures what that criterion does and does not select.
+-- All three were orphans -- outside QOU.lean's import closure, so invisible to
+-- blueprint, doc-gen and every dependency walk, though still compiled by the
+-- lakefile glob.  The first two predate this commit (bean qou-kljb).
+import QOU.Hecke.ClosedFormInterfaceFactors
+import QOU.MassTheory.PnInterfaceBarStructure
+import QOU.MassTheory.PnOffsetBarOddClass

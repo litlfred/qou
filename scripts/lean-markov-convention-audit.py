@@ -67,7 +67,13 @@ RE_C_SQRTVAR = re.compile(r"(\w+)\s*/\s*\(\s*\1\s*\^\s*2\s*\+\s*1\s*\)")
 # corroboration that the free variable really is a square root of q
 RE_BINDS_SQRT = re.compile(r"Real\.sqrt|=\s*s\s*\^\s*2|q\s*=\s*s²|u²\s*=\s*q|u\^2\s*=\s*q|q\s*=\s*s\^2|√q")
 
-DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)")
+# `instance` is included deliberately. A typeclass instance sets the
+# convention through a FIELD ASSIGNMENT (`z := 1 / (√q + 1/√q)`), not a
+# `def` body, so a def-only pattern cannot see it. That blind spot hid
+# `markovTraceTower_canonical` -- the CANONICAL Markov trace tower, and the
+# single most load-bearing convention site in the tree -- through every run
+# of this scanner up to 2026-08-26. Taxonomy entry #15.
+DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev|instance)\s+(\w+)")
 
 # Recorded convention-C definition sites, measured 2026-08-26. A site that is
 # legitimately migrated should be REMOVED here in the SAME commit that migrates
@@ -80,27 +86,19 @@ DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)")
 # comparison objects, the Lean analogue of the Python audit's declared-C bucket.
 # Separating actionable from deliberate is triage this script does not do.
 KNOWN_C = [
+    ("MarkovConventionSeparation", "markovKernel", "C-sqrtvar"),
     ("BorromeanCanonicalTraceDerivation", "zMarkov", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN_legacy", "C-plain"),
     ("BraidImageEigenphaseExclusion", "zC", "C-sqrtvar"),
-    ("ClosedFormInterfaceFactors", "markovZ", "C-sqrtvar"),
     ("EigenphaseCarrierVacuity", "markovZ", "C-plain"),
     ("GramMatrixH3Symbolic", "gramEntry", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ_legacy", "C-plain"),
-    ("JonesNuclearQuotient", "markovZ", "C-plain"),
     ("MarkovAxiomsPrimitive", "markovZax", "C-sqrtvar"),
     ("MarkovAxiomsPrimitive", "markovZax_legacy", "C-plain"),
     ("MarkovZClassicalCoincidence", "zCsub", "C-sqrtvar"),
-    ("QBetaCategoricalPrecisionLadder", "markovZ", "C-plain"),
-    ("categorical-chain-convergence-mechanisms", "markovZc", "C-plain"),
-    ("generator-volume-decomposition", "generatorVolume", "C-plain"),
-    ("markov-trace-factorization", "markovZ", "C-plain"),
     ("q-beta-cos-resummation", "markovZ", "C-plain"),
-    ("q-beta-spectral-bridge", "markovZ", "C-plain"),
-    ("skein-polynomial-transfer-matrix", "tracedVolumeFromMatrix", "C-plain"),
-    ("y-lambda-closed-form-wenzl-bridge", "jonesMarkovZ", "C-plain"),
 ]
 
 
@@ -126,10 +124,36 @@ RE_DELIB_DOC = re.compile(
 
 
 def _deliberate(path_text_lines, i: int, decl: str) -> str:
-    """`deliberate` if the site announces itself as C; else `actionable`."""
+    """`deliberate` if the site announces itself as C; else `actionable`.
+
+    The evidence window is the declaration's WHOLE preceding docstring, found by
+    walking back to its opening `/--`. A fixed line count silently mis-reports:
+    `q-beta-cos-resummation` was scoped deliberate with a 20-line docstring
+    explaining exactly why it cannot be migrated, and a 13-line window could not
+    see the words "Convention C, deliberately" at its top, so the site came back
+    `actionable` on the next run. A detector whose verdict depends on how verbose
+    the explanation is, is measuring the wrong thing.
+
+    The walk stops at a declaration keyword or a namespace boundary -- NOT at a
+    blank line. Blank lines are normal *inside* a docstring, and breaking on one
+    was the first version of this fix, which failed on the very file that
+    motivated it. `i` is 1-indexed, so the declaration itself is at index i-1 and
+    the search starts at i-2.
+    """
     if RE_DELIB_NAME.search(decl):
         return "deliberate"
-    above = " ".join(path_text_lines[max(0, i - 13):i])
+    STOP = re.compile(r"^\s*(noncomputable\s+)?(def|abbrev|theorem|lemma|instance|"
+                      r"structure|class|end|namespace|section)\b")
+    start = None
+    for j in range(i - 2, max(-1, i - 250), -1):
+        line = path_text_lines[j]
+        if "/--" in line:
+            start = j
+            break
+        if STOP.match(line):
+            break
+    lo = start if start is not None else max(0, i - 13)
+    above = " ".join(path_text_lines[lo:i - 1])
     if RE_DELIB_DOC.search(above):
         return "deliberate"
     return "actionable"

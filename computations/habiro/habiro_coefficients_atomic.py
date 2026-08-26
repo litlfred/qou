@@ -747,7 +747,23 @@ if __name__ == "__main__":
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(_Q_CANONICAL),
+            # STRING, not float(): `float(_Q_CANONICAL)` put a raw float64
+            # into the witness -- the one dirty field the qou-mass
+            # raw-float64 ratchet flags.
+            #
+            # This is NOT a 50-digit anchor stringified down, and it is not
+            # the "stringify the float" move the rule forbids. This producer
+            # computes at a SIXTEEN-DIGIT q by construction: see
+            # `q0 = Rational(int(_Q_CANONICAL * 10**16), 10**16)` above, which
+            # builds an exact rational from 16 decimal digits. The string
+            # below is that rational's exact decimal form, so the witness now
+            # records precisely the value the computation used.
+            #
+            # The 16-digit q IS a real precision limitation of this producer,
+            # and it is NOT fixed here: raising it changes the committed a_m
+            # coefficients, which is a canonical-value change and wants its
+            # own decision. Recorded rather than silently widened.
+            "q_0": mp.nstr(_Q_CANONICAL, 17),
             "engine": "sympy Poly + sequential cyclotomic division",
         },
         "results": results,

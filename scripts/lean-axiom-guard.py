@@ -314,6 +314,96 @@ QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃ | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_pos | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃_pos | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_eq | clean
+
+# --- W3 tower bridge (PR #5827, bean qou-r765) -----------------------------
+# These are CONDITIONAL on HeckeTower.HeckeConditionalExpectation, which has no
+# instance. They are pinned for the same reason #5822's coset lift is: their
+# whole value is that the hypotheses are genuine tower relations rather than the
+# conclusion in disguise, and that is exactly what a careless edit destroys
+# while leaving the file compiling.
+#
+# hCE_fails_without_conditional_expectation is the necessity direction -- it
+# proves the identity is FALSE for a linear map that is not a conditional
+# expectation. If it ever stops being clean, the "derivation" has become a
+# decoration.
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_mul | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_one | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_towerE | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.epsilon_inclusion_mul | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerTrace_mul_eq_of_memB | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.cyclic_two_g_of_tower | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.hCE_fails_without_conditional_expectation | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_of_spanning | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.spanning_shape_holds_for_identity_inclusion | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerE_eq_of_spanning | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_towerE_of_spanning | clean
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.constant_generator_presentation | clean
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.far_commute_zero | clean
+# --- rank-bounded presentation + the first content-bearing instance (qou-zm8z)
+# `heckePresentationOfRank_H3A` is the corpus's first presentation instance with
+# real content. `s0_mul_s1_ne_s1_mul_s0` is what separates it from the constant
+# family (`constant_generator_presentation`), where every relation is `rfl`
+# because everything commutes -- pin it, or a later "simplification" can hollow
+# the instance out while leaving the file compiling.
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.ofRank_of_unbounded | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s1_mul_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.braid_s0_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H3A | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_ne_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s1_ne_s1_mul_s0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.t0_mul_t0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H2A | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeCosetSpanning_H2_H3 | clean
+# The three CE/Markov class FIELDS, discharged concretely for H2 subset H3.
+# They are theorems rather than instances only because the two classes still
+# bind the UNBOUNDED presentation; the mathematics is not what is missing.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_retract | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_bimodule | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_markov | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeConditionalExpectation_H2_H3 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeMarkovExpectation_H2_H3 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.tower_classes_inhabited_H2_H3 | clean
+# TRIVIAL DISCHARGE, pinned so it stays visible. wenzlTowerStep_H2_H3_trivial
+# discards BOTH hypotheses and cites isSemisimpleRing_H3A -- it is NOT Wenzl's
+# ascent, and nothing downstream may cite it as evidence the ascent is formalized.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_H2_H3_trivial | clean
+# The prerequisite Mathlib lacks, supplied here (bean qou-kzjl). This is what a
+# real WenzlTowerStep ascent would consume; pinned because a regression here
+# silently re-opens the gap.
+# GENERAL RANK, and it USES its hypothesis -- contrast wenzlTowerStep_H2_H3_trivial
+# which discards both. Scope: trn1 = algTrace only; whether QOU's Markov trace is
+# the algebra trace is NOT settled.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_regTrace | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_zero_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_add_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_neg_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_apply_eq_zero | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.mem_traceRadicalIdeal | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_eq_zero_iff | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_nondegenerate | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.one_not_mem_traceRadical | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_one_ne_zero | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_one | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.instAlgebraTraceQuot | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk_apply | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.heckeBraidedPresentationOfRank_quot | clean
+# Brick 3: the tower inclusion detects the radical EXACTLY (both directions),
+# which is what makes the quotients a tower rather than a sequence. Conditional
+# on HeckeConditionalExpectation, itself an open class with no instance.
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceRadical | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.mem_traceRadical_of_map | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceRadical_iff | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.one_not_mem_either | clean
+# Brick 4, a NEGATIVE result: a nondegenerate cyclic trace does NOT imply
+# semisimplicity. Witness Q[eps]/(eps^2). Pinned because a regression here
+# would silently re-license discharging WenzlTowerStep from its own hypothesis.
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.epsCoeff_cyclic | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.epsCoeff_nondegenerate | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.dualNumber_not_isSemisimpleRing | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.nondegenerate_cyclic_trace_not_sufficient | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.traceRadical_epsCoeff_eq_bot | clean
 """
 
 

@@ -75,6 +75,10 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
@@ -110,7 +114,7 @@ H = hecke_h(Q0)
 # it does not, and the derivation is only as canonical as this line.
 # Tracked as bean `qou-cblw` finding 1; canonical implementation lives in
 # `tools/hecke-engine/src/color_weight.rs::pn_interface_factor`.
-FAC = {"pp": Z, "nn": Z - H, "pn": Z - H / 2}
+FAC = {"pp": Z, "nn": Z - H, "pn": Z + _pn_d(H)}
 
 # ── the residual simplex moments (#4320 targets, dimensionless) ───────────────
 RHO_GRAD = {2: mp.mpf("1.0"), 3: mp.mpf("3.34203107815"), 4: mp.mpf("15.7395726256")}

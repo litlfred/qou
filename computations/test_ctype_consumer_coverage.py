@@ -579,6 +579,14 @@ def part_d() -> None:
 PN_CONVENTION_BASELINE: dict[str, str] = {
     # Deliberate comparisons — a labelled measurement against a non-canonical
     # convention is legitimate under R3.
+    # This probe exists to MEASURE the strict_averaged -> bring_color_weighted
+    # flip, so it must evaluate both. It calls closed_form_ratio twice, once
+    # per convention, and asserts the ratio between them; requesting only the
+    # canonical one would leave nothing to compare it against. It also
+    # asserts that Z=0 and N=0 systems are bit-identical across the flip,
+    # which likewise needs both sides.
+    "probes/pn_convention_flip_effect_probe.py::main":
+        "measures the flip itself; evaluates BOTH conventions by construction (qou-cblw)",
     "binding_bring_enhancement_compare.py::build_witness":
         "named comparison; measures the bring-enhancement delta against strict_averaged",
     # Phase 5q validates the closed form against the empirical slow path TO

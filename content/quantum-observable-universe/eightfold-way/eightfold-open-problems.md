@@ -64,6 +64,43 @@ Gell-Mann--Nishijima relation cannot be closed.
    (ledger row, `Sym2Gate.lean`).  Whether it yields *flavour*
    $\mathrm{SU}(3)$ is untested.
 
+   **What such a construction must supply is now a theorem, and it is one
+   property rather than a list.**  `SelfDualSectorConfinement.lean`
+   (sorry-free) puts the two halves together: a three-dimensional object
+   passing the gate must contain a complex-type irrep
+   (`gate_forces_complex_of_dim_three`), and a category all of whose irreps
+   are self-dual contains none — which is precisely the single-fibre case,
+   since every $\mathrm{SU}(2)$ irrep is self-dual.  So *the property a
+   groupoid construction must exhibit is exactly the property one fibre
+   lacks*: **non-self-duality**.  This yields a screening test
+   (`screen_out_selfDual_candidate`): a candidate whose three-dimensional
+   object is isomorphic to its own dual is dead, and can be discarded
+   before its $\mathrm{Sym}^2$ decomposition is computed.  It does not
+   construct anything — Route A stays open — but it replaces "more
+   structure" with a single checkable condition.
+
+   **The same condition is reachable from the row cap, independently.**
+   The Descartes characteristic $\chi(A) = -6$ forces $\mathrm{SU}(2)$,
+   hence $\dim V = 2$, hence partitions of at most two rows, so the
+   $(1^3)$ block drops at $n = 3$ and a three-dimensional object cannot
+   be a tensor power of the single fibre.  That argument reaches
+   non-self-duality without the $\mathrm{Sym}^2$ gate and without the
+   Frobenius--Schur trichotomy, as the gate-and-trichotomy argument
+   reaches it without the Euler characteristic and without Schur--Weyl.
+   A third route reaches the same negative from a different direction
+   again: `SU2EmergenceRankForced.no_three_dimensional_fundamental_in_one_fibre`
+   derives $N \neq 3$ from non-degeneracy of the fibre's volume form
+   ($\Lambda^2 V \cong \mathbf{1}$ forces $N = 2$), without the
+   $\mathrm{Sym}^2$ gate, the row cap or the Euler characteristic.
+
+   The three are not three votes on one proposition, and the difference
+   is what matters here.  The row-cap and volume-form arguments bound the
+   **fibre**: they say $N = 2$, so one fibre cannot supply a
+   three-dimensional object.  The gate-and-trichotomy argument bounds any
+   **candidate**: it says which property a candidate must have, and so
+   yields a test that can be applied to an object nobody has built yet.
+   The negative is now over-determined; the screen is what is additive.
+
    *That the search is confined to the groupoid level is now a theorem,
    not an extrapolation.*  The parity criterion
    (`Sym2GateParity.lean`) decides the $\mathrm{Sym}^2$ gate for a single
@@ -182,6 +219,37 @@ Gell-Mann--Nishijima relation cannot be closed.
    `TrialitySelectionRule.identification_invisible_to_selection_rule`
    shows is likewise blind to the identification.
 
+   **The two blindnesses are one blindness.**  Both gates read only
+   *object-level* data --- a dimension, a Frobenius--Schur type, a
+   triality class --- and on that data the two triples coincide: the
+   colour triple is the $\mathbb{C}^3$ of
+   $\mathrm{Im}(\mathbb{O}) = \mathbb{R}\oplus\mathbb{C}^3$, of complex
+   dimension $(7-1)/2 = 3$; the flavour triple is the fundamental with
+   Dynkin label $(1,0)$, of Weyl dimension $2\cdot 1\cdot 3/2 = 3$;
+   both are complex type with triality $1$.
+   `FlavourColourDiscriminator.no_object_gate_separates` turns this into
+   a class exclusion --- **no** gate reading only object data separates
+   them, so there is no third such gate to look for.  This is scope-(b),
+   with the invariant named: equal data, equal verdict.
+
+   **Where a discriminator can live is item 7 below, not a further
+   invariant of the object.**  The obstruction lifts as soon as a gate
+   may also read *which Young-symmetry channel of $V^{\otimes 3}$ carries
+   the physical state*: colour occupies the totally antisymmetric channel
+   $\lambda = (1^3)$, flavour the symmetric $\lambda = (3)$ for the
+   decuplet and the mixed $\lambda = (2,1)$ for the octet.  These are
+   distinct $S_3$-irreps, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that tells them apart.  Item 7 already names this data, in the
+   form *"colour antisymmetric and spin symmetric force flavour
+   symmetric"*; items 4 and 7 are the same question seen from two sides.
+
+   This locates the discriminator; it does not establish one.  The
+   channel assignment is an **input**, and item 7 records that the
+   chapter derives neither the spin factor nor the colour antisymmetry
+   that would supply it.  What is settled is the negative half --- and
+   the negative half is what redirects the search.
+
 5. **Truncation mechanism.**
    Why does the observable-scale symmetry reduce to a finite-dimensional
    Lie group rather than the full groupoid symmetry?  Root-of-unity
@@ -206,6 +274,15 @@ Gell-Mann--Nishijima relation cannot be closed.
    constraint from the braid structure, and show that together they
    determine the Young symmetriser.  Compatibility with it is what the
    chapter currently establishes.
+
+   **This item is where item 4's discriminator lives.**  Item 4 asks
+   what separates flavour from colour and shows that no invariant of
+   the *object* can; the Young-symmetry channel named here is data
+   about the *role*, and
+   `FlavourColourDiscriminator.some_channel_gate_separates` exhibits a
+   gate that reads it and does separate them.  So deriving the
+   colour-antisymmetry constraint would settle more than the
+   selection rule --- it would supply the one input item 4 is missing.
 
 8. **The Gell-Mann--Okubo deviation.**
    The relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is *not* a target

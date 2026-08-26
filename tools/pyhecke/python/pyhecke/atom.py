@@ -47,6 +47,26 @@ from pyhecke.wedderburn import (  # type: ignore[import-not-found]
     partitions_of, q_dimension, wedderburn_weight, q_factorial,
 )
 
+# Canonical p-n interface offset. `D_PN` is the `d` of the (c, d) crossing
+# pair for a MIXED (proton-neutron) bond, bound once at the module q0 exactly
+# as `h` above is.
+#
+# It was open-coded as `-h/2` at the three nucleon p-n branches below, which
+# is `strict_averaged` -- the COLOUR-BLIND convention. The owner ruling of
+# 2026-08-15 (R3), reaffirmed 2026-08-26, makes `bring_color_weighted`
+# canonical, and this module is the single largest consumer of the choice:
+# 1027 of the 1929 witness-writing producers in `computations/` reach it
+# through this file.
+#
+# NOT the quark u-d mixed crossings further down (`ud -> sigma_0 mixed`).
+# Those are a different bond and keep `-h/2`; nothing here establishes what
+# convention a u-d crossing should carry.
+from pyhecke.constants import (  # type: ignore[import-not-found]
+    PN_CONVENTION, pn_interface_offset,
+)
+
+D_PN = pn_interface_offset(q0)
+
 # Legacy bridge — keeps the sys.path bootstrap alive in case anything
 # we lazy-import below requires it.
 from . import _legacy  # noqa: F401
@@ -189,7 +209,8 @@ def build_atom_nf(Z, N):
       3. Apply inter-nucleon crossings between each pair (i,j):
            pp: σ₀           (c=1, d=0)    — EM repulsion
            nn: σ₀⁻¹         (c=1, d=-h)   — nuclear attraction
-           pn: ½(σ₀+σ₀⁻¹)  (c=1, d=-h/2) — symmetric nuclear
+           pn: colour-weighted (c=1, d=D_PN) — mixed nuclear
+                            (d = -h/2 only under `strict_averaged`)
       4. Apply pe crossings for electrons (σ₁⁻¹ per electron)
 
     No separate gluon dressing — B₃ IS the gluon structure.
@@ -249,7 +270,7 @@ def build_atom_nf(Z, N):
             elif ti == 'n' and tj == 'n':
                 nf = hm(nf, 1, -h, 0)       # nn: σ₀⁻¹
             else:
-                nf = hm(nf, 1, -h/2, 0)     # pn/np: mixed
+                nf = hm(nf, 1, D_PN, 0)     # pn/np: mixed (colour-weighted)
 
     # Electrons: pe crossing (EM channel, gen=1)
     for _ in range(Z):
@@ -485,7 +506,7 @@ def atom_gen_chains(Z, N):
             elif ti == 'n' and tj == 'n':
                 g0.append((1, -h))      # nn: σ₀⁻¹
             else:
-                g0.append((1, -h / 2))  # pn: mixed
+                g0.append((1, D_PN))    # pn: mixed (colour-weighted)
 
     # 2. Electron crossings: pe = σ⁻¹ on gen 1
     for _ in range(Z):
@@ -700,7 +721,7 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
                 base_cross = (1.0, -h)       # nn: σ⁻¹
                 m_this = m_nn if m_nn is not None else crossings_per_pair
             else:
-                base_cross = (1.0, -h / 2)   # pn: ½(σ + σ⁻¹)
+                base_cross = (1.0, D_PN)     # pn: colour-weighted mixed
                 m_this = m_pn if m_pn is not None else crossings_per_pair
             pair_cross = [base_cross] * m_this
             for c, d in pair_cross:

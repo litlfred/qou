@@ -32,10 +32,47 @@ question.
 | 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
 | 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
 | 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
+| 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 15 — a convention set by an instance field, not a definition body
+
+Added 2026-08-26 (bean `qou-cxjq`), by the scanner from entry #14 — **which had
+this blind spot itself**.
+
+`scripts/lean-markov-convention-audit.py` tracked the enclosing declaration with
+`^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)`. A Lean typeclass instance
+does not set its parameters in a `def` body; it sets them as **field
+assignments**:
+
+```lean
+noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
+    MarkovTraceTower q where
+  z := 1 / (Real.sqrt q + 1 / Real.sqrt q)     -- convention C
+```
+
+A def-only pattern cannot see that line as a *site*, so the scanner reported it
+nowhere — through every run, while it was being used to drive a migration.
+
+**The instance it hid is the worst one in the tree.** Not an obscure corner:
+`markovTraceTower_canonical` is the **canonical** Markov trace tower, the
+instance downstream Jones-value code resolves against. Fourteen `def`-shaped
+sites were being carefully migrated while the canonical instance sat unmeasured.
+
+Two things worth carrying:
+
+1. **The count went UP when the blind spot closed** — 17 → 18 definitions,
+   actionable 4 → 5. A migration that had been reporting steady progress was
+   measuring a surface smaller than the real one. A falling count is only
+   meaningful against a detector whose reach is known.
+2. **This is the fourth consecutive entry found by the tool written to catch the
+   previous one** (#12 → #13 → #14 → #15). The pattern is not that detectors are
+   badly written; it is that each one encodes the shape its author had just
+   learned to see. Expect a #16, and prefer the answer-shaped test — testing what
+   a value *is* rather than how it was *written* — wherever one exists.
 
 ### 14 — the detector walks one tree and the count is quoted for the repo
 
@@ -393,6 +430,61 @@ gate saw it.
 This is the fourth blind spelling found **by** a detector written to catch the
 previous one, which is the pattern this document exists to record: each fix
 closes a shape and reveals that the surface was never measured, only sampled.
+
+### 8 — the intent is stated, but not where the detector looks (added 2026-08-26)
+
+The last convention-C Markov parameter in the Lean tree,
+`QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.zMarkov`, was reported
+`actionable` by `scripts/lean-markov-convention-audit.py` through fourteen runs.
+It is not a defect. The module's **first line** reads *"Canonical (convention C)
+Markov trace of β_Bor"*, and the whole file exists to derive the C value so that
+`BorromeanTraceConventionSplit.conventionD_ne_conventionC` has something to
+compare against. Migrating it would make the file derive D and compare it to
+itself.
+
+The blindness is structural, not a missing pattern. `_deliberate()` takes
+evidence from the declaration's **name** and from its **own** doc-comment,
+walking back from the declaration to the opener above it. Intent stated in a
+module header, or in a consumer three declarations below, is outside that window
+by construction — no widening of the window reaches it, because the evidence is
+not adjacent to the declaration at all.
+
+**Fixed at the source, not in the scanner.** The definition now says in its own
+doc-comment why it is C and what breaks if it moves. The alternative — teaching
+the scanner to accept a module header as deliberateness evidence — was rejected:
+it would absolve *every* C definition in any file whose header mentions C, which
+is the reassuring direction, and this document's whole subject is errors in that
+direction.
+
+**A near-miss worth more than the entry.** Reading the file, its "convention D"
+is described by the weight triple `y₃ = [4]/[2]³`, `y₂₁ = 1/[2]²`, `y_{(1³)} = 0`
+— the Temperley–Lieb / Jones decomposition. Reading `1/[2]` as the Markov
+parameter gives `q/(q²+1) = 0.49729` at `q₀`, which is **not** convention D's
+`q³/(q²+1) = 0.61269`; it is the bare kernel `g(q)`, and the separation theorem
+`no_kernel_instantiation_is_conventionD` then proves it cannot be D. That is a
+complete, self-consistent, Lean-backed argument that the corpus uses "convention
+D" for two different objects — and it is **wrong**.
+
+Computing the `z` the weights actually imply, against the character values the
+file itself uses (`χ(σ) = q, h, −q⁻¹`), gives
+
+```
+y₃·q + y₂₁·h + y₁₁₁·(−q⁻¹) = (q³ + q)/(q + q⁻¹)² = q³/(q²+1)
+```
+
+exactly convention D. The error was reading `1/[2]` off the *shape* of the
+weights in a normalisation that was never checked. Nothing in the corpus is
+wrong; one afternoon of a false "letter collision" finding was avoided by
+checking the arithmetic beside the name instead of the name — the same rule
+AGENTS.md states for the Λ vs Cl₂ guard, one subject over.
+
+**And the same character bit twice in one edit.** The doc-comment written to fix
+this contained the literal opener `` /-- `` as prose. Lean nests block comments,
+so the file failed with *"unterminated comment"* 120 lines later; and the
+scanner's own walk-back found *that* opener first, so the site still came back
+`actionable` with the marker sitting one line above the window. Two different
+tools, one character, the same failure. Rephrased, and both are green.
+
 
 ## The counter-move that worked, twice
 
