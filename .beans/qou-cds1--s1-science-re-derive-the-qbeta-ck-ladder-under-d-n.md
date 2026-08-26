@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T19:04:38Z
+updated_at: 2026-08-26T20:43:40Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1786,3 +1786,58 @@ CONSEQUENCE FOR THE RE-DERIVATION. The two live routes are now:
      re-derivation actually has to happen.
 
 Either way the work is at step 6/8, not in the rungs.
+
+
+## 2026-08-26 — RETRACTION of the foreclosure reading, and step 8
+
+**Owner correction (verbatim):** *"Every driving ladder doesn't fully close the
+gap if it is the proper thing to do, it should be done as once the other parts
+of the gap are closed it will improve the accuracy"* / *"Even if derriving the
+ladder..."*
+
+That names an inversion of AGENTS.md's own rule. My D-frame trace baseline
+(`qbeta_d_frame_trace_baseline_probe.py`, 4/4) measured the two-row (D)
+`tr_M(Δ) = −0.158016004341` → `Q_β = 0.661452 MeV`, −15.451 %, against a
+five-rung ladder that moves `Q_A` by 0.168 % — a 92.106× gap. I then read that
+as foreclosing the D-frame ladder re-derivation. Wrong: the two permanence
+principles under *"Before declaring refuted"* say a structurally-exact piece is
+a permanent, correct contribution **even while the total is inaccurate**, and
+that *"inaccurate alone" ≠ "excluded"*. Measuring how far a term falls short is
+not an argument against deriving it correctly.
+
+Fixed in `0da1e06c4`: docstring re-scoped, title line no longer says
+"forecloses", measurement untouched. **`qou-cds1` stays open and the D-frame
+re-derivation is still to be done.** What the measurement supplies is an
+expectation set on it, not a verdict on whether to run it.
+
+## Step 8, and why it interlocks with this bean
+
+`qbeta_net_trace_invariance_probe.py` (25/25, `428488665`) attacks step 8 of the
+2026-05-24 fitting-finding audit — the chain's one postulate, `Q_β =
+|Δ(net)|·𝔈₀` *"by construction"*.
+
+- **`net` is NOT a trace.** 8 of 36 ordered basis pairs fail cyclicity in the
+  6-dim regular rep of `H_3(q)`; both controls (augmentation, regular
+  character) pass on all 36. So the corpus's stated licence — that `ε(Δ)` is a
+  *"counit (transition) observable"* — is unavailable: an algebra map into a
+  commutative ring is automatically cyclic, so a counit **is** a class function.
+- **The split.** `H = Z(H) ⊕ [H,H]`, dim 3 + 3 (measured). At q₀:
+  `epsNPq = −0.187207194529378` = central `−0.172847658641848` (92.33 %) +
+  commutator `−0.014359535887530` (**7.67 %**). That 7.67 % is invisible to the
+  Markov trace, the augmentation, every `χ^λ`, and every combination.
+- **The derivable piece** — the constructive half, and the one that matters for
+  this bean. The unique trace agreeing with `net` on the centre is exhibited:
+  `a_(3) = (q+1)/((q²+1)(q²−q+1))`, `a_(2,1) = q(q²−1)/(q⁴+q²+1)`,
+  `a_(1³) = q³(q−1)/((q²+1)(q²+q+1))`. Verified to reproduce `net` on the whole
+  centre, annihilate `[H,H]`, and give exactly the central part on Δ.
+  **`a_(1³) ≠ 0`**, so it is not a two-row Markov trace of the shape convention
+  D forces at N=2 — which is a live datum for the re-derivation, not a block on
+  it.
+- **Presentation dependence.** Conjugating both nucleon words by one basis
+  element (a Markov-I move) moves `Q_β` over 0.692169 … 0.783646 MeV, a 0.0915
+  MeV spread ≈ 70× the +0.168 % residual. Exactly two values, because
+  conjugation by `w₀` is the diagram automorphism `s₀↔s₁` and permutes the
+  standard basis.
+
+Step 8's postulate is now narrowed from the whole of `net` to the 7.67 %
+remainder. Scope-(a) throughout.
