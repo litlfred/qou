@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T04:22:24Z
+updated_at: 2026-08-26T04:28:43Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -916,3 +916,40 @@ Two things worth recording for the next long sweep here:
     happened to sit outside the worktree — luck, not the precaution I claimed
     to have taken. Verify a backup by reading it back, especially when the
     reason you are taking it is that the disk is failing.
+
+
+## RESOLVED — the four `allPassed` witnesses: confirmed `True -> False`
+
+Earlier in this bean I recorded the assertion finding and then **softened
+it**, because `allPassed` differing from its committed `True` admits three
+readings — `True -> False`, `True -> null`, or the field being **absent**
+from the fresh witness entirely. Only the first is the interesting claim,
+and the sweep's field-level diff could not distinguish them: it records
+*that* a field moved, not what it moved to.
+
+Measured directly, in the session tree (safe once the worktree was gone),
+each producer re-run with `PYTHONPATH` covering every `computations/`
+subdirectory, against the git baseline at
+`f6501fba549591122523ebb76ce118e49a7003e1`:
+
+    mu3_abs_choice_robustness_probe      committed True  -> fresh False
+    option_a_vol_per_knot_light_series   committed True  -> fresh False
+    trace_convention_reconciliation      committed True  -> fresh False
+    triangle_bond_submodularity_probe    committed True  -> fresh False
+
+All four. Not null, not absent — **False**.
+
+So the sharpened claim now stands: **four witnesses committed on `main`
+record their own self-assertions passing, and those assertions now fail.**
+A producer that writes `allPassed` is stating that its internal
+cross-checks agreed at the moment of writing; the committed artifact says
+they did, and today they do not. That is a strictly stronger finding than
+"a number moved" — a moved number needs someone to adjudicate which value
+is right, whereas a failed self-assertion is the producer's own verdict on
+itself.
+
+Tree reverted clean afterwards (`git status --short` empty); no witness
+regenerated into the commit.
+
+This is the one claim in this bean I had explicitly queued as
+*not established*. It is now established.
