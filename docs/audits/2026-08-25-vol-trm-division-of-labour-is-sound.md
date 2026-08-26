@@ -853,3 +853,106 @@ That is a construction question, and it is where I would put the next effort.
 for an object the compute does not currently build, so it is untested rather than
 refuted. Nor that a qualifying construction does not exist; none is exhibited
 here either way.
+
+---
+
+## Addendum 11 — resolving the definitional contradiction: the averaging *is* Type B (2026-08-26)
+
+`def:atom-knot` demands a **closed braid**; `atom_braid_word_3A` returns an
+element outside `im(ρ)`. Asked how to resolve it. **The construction has already
+folded to Type B — by hand, at a degenerate parameter — and that is why it fell
+out of the braid group.**
+
+### The averaged letter, identified
+
+The averaged letter is `σ − h/2 = (σ + σ⁻¹)/2`. Its spectrum, computed:
+
+$$\text{eigenvalues}\bigl((\sigma+\sigma^{-1})/2\bigr) = \pm\frac{[2]_q}{2}$$
+
+Symmetric about zero, so it is **`[2]_q/2` times an involution** — *not* a braid
+generator, whose eigenvalues are `q, −q⁻¹`.
+
+Now compare the **Type B** Hecke algebra, whose extra generator `T₀` satisfies
+its own quadratic `(T₀ − Q)(T₀ + Q⁻¹) = 0` with a **second parameter `Q`**.
+Solving `c·T₀`'s eigenvalues `= ±[2]_q/2` has a **unique** solution:
+
+$$Q = 1, \qquad c = \frac{[2]_q}{2}$$
+
+**So the averaged letter is exactly `([2]_q/2)·T₀` at Type-B parameter `Q = 1`,**
+where the quadratic degenerates to `T₀² = 1` — a genuine involution.
+
+That is an identification, not an analogy. And `σ ↦ σ⁻¹` is the **bar
+involution**, so `(σ + σ̄)/2` is a bar-symmetrization: the construction is
+hand-encoding CPT/chirality neutrality.
+
+### Which is precisely what AGENTS.md §7b says not to do
+
+> *"**Type B folding for chirality / CPT.** To enforce matter–antimatter pairing
+> structurally in the reduction engine, **do not write custom `ℤ/2ℤ` rules**.
+> Fold the `𝔰𝔩ₙ` Cartan datum into a Type B datum; … its GS normal forms are
+> **bar-involution (`q ↦ q⁻¹`) invariant by construction**."*
+
+The averaging is a custom `ℤ/2ℤ` rule. Written inside a **Type A** algebra, those
+elements are outside `im(ρ)`; written in the **Type B** datum they are
+*generators*, and the object stays a braid. **The measured defect is the exact
+cost §7b predicts.**
+
+### Why this resolves three things at once
+
+The library already holds the machinery — all three ingested:
+
+| source | supplies |
+|---|---|
+| [`arxiv-math-0405508v1`](../../library/arxiv-math-0405508v1/) — Geck–Lambropoulou, *Markov traces and knot invariants related to Iwahori–Hecke algebras of type B* | the Type-B Markov trace, and the closure theory |
+| [`arxiv-math-9806163v1`](../../library/arxiv-math-9806163v1/) — *Weights of Markov traces on Hecke algebras* | the weights at minimal idempotents for type `Bₙ` — the `y_λ` analogue |
+| [`fd58d8e182ed…`](../../library/fd58d8e182edda805fed0946606c5ab82f81/) — *Gröbner–Shirshov bases for Temperley–Lieb algebras* | GS bases **of type B** — the normal-form machinery `def:atom-knot` is stated in |
+
+And the geometric payoff is in Geck–Lambropoulou's own words, from the ingested
+text: type-B braid closures *"correspond bijectively to **isotopy classes of
+knots in the solid torus**"*.
+
+A knot in a solid torus, embedded along a companion, **is a satellite** — its
+complement contains an **essential torus**. So the single move §7b prescribes
+delivers, simultaneously:
+
+1. a genuine **closed braid** → `def:atom-knot` becomes satisfiable;
+2. bar-invariance **by construction** → the CPT content the averaging hand-rolled;
+3. a **solid-torus / satellite** carrier → the essential torus
+   `conj:jsj-decomposition-linearity` needs, which is exactly the **missing
+   `Geom` case** of Addendum 10.
+
+Three separate gaps, one move, and the corpus already prescribes it and holds the
+sources.
+
+### The test that would settle it, and what would refute it
+
+Since `([2]_q/2)·T₀` at `Q = 1` is the *same algebra element*, the natural
+hypothesis is that reading the atom word in the Type-B setting **reproduces the
+current `tr_M` values** — the numbers do not move, but the object becomes a
+braid with a closure and a volume.
+
+**That is a hypothesis, not a claim.** The Type-B Markov trace is a *different*
+functional with its own parameters and weights, so it need not agree with the
+Type-A one. The decisive computation:
+
+1. Write the atom word in the Type-B generators (`σᵢ` for the intra-block
+   crossings, `T₀` at `Q = 1` for the `2A+1` averaged sites).
+2. Evaluate the **Geck–Lambropoulou** trace, with the `arxiv-math-9806163v1`
+   weights.
+3. Compare against the recorded `tr_M` — proton `1.1457596924573008697` at `q₀`.
+
+**Refuted if** the Type-B trace disagrees with the recorded values, or if the
+`Q = 1` specialisation is degenerate for the trace (a real risk: `Q = 1` is a
+non-generic parameter, and Markov-trace weights can blow up there).
+
+### Scope
+
+**(a)**, and the identification is the only part that is measured. Computed here:
+the averaged letter's spectrum, and that `Q = 1, c = [2]_q/2` is the unique
+solution matching a scaled `T₀`. Verified by reading: §7b's wording, and
+Geck–Lambropoulou's solid-torus statement in the ingested text.
+
+**Not** established: that a Type-B construction reproduces the corpus's numbers,
+that its JSJ pieces are hyperbolic, or that `conj:jsj-decomposition-linearity`
+then follows. No construction is exhibited — this identifies the route and the
+first computation on it. Bean `qou-7p7d`.
