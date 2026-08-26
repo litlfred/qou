@@ -53,9 +53,21 @@ D gives the block a nonzero weight:
 
 **Every negative character is in the kernel; the support has none.** The
 convention-D row cap `ell(lambda) <= 2` zeroes exactly the blocks carrying the
-sign structure. That is why the full-space program could reach AME and the
-projected one cannot: not merely because the kernel is unconstrained, but
-because the kernel is *where the minus signs live*.
+sign structure.
+
+  RETRACTED, same bean, by `deuteron_negative_occupation_locality_probe.py`.
+  This paragraph continued: "That is why the full-space program could reach AME
+  and the projected one cannot: not merely because the kernel is unconstrained,
+  but because the kernel is *where the minus signs live*." That inference is
+  causally wrong. Since `t_lambda = y_lambda * chi^lambda` and the row cap sets
+  `y_lambda = 0` on every kernel block, `t` vanishes IDENTICALLY there --
+  `max |t|` over the kernel is `0.0`, and `t . x` restricted to the kernel is
+  `0.0` in every solution measured. A block contributing nothing to the
+  objective cannot be why the objective grew. The actual mechanism is the
+  plain-sum net constraint: a kernel deficit buys the support extra budget, and
+  the characters play no part in it. The observation above -- that the negative
+  characters all sit in the kernel -- stands, and assertions A6/A7 below are
+  unaffected; only the causal reading is withdrawn.
 
 SCOPE -- (a) throughout
 =======================

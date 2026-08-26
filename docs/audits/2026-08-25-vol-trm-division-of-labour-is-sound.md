@@ -1710,3 +1710,106 @@ structure alongside #5812's ²H/⁴He sign argument, and it says something more
 specific than "signs are needed" — it says the framework's own characters
 already supply them, in precisely the sector the canonical trace convention
 cannot see.
+
+## Addendum 18 — Addendum 17's last paragraph is wrong, and the negative blocks are nowhere (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/deuteron_negative_occupation_locality_probe.py`](../../computations/meson/deuteron_negative_occupation_locality_probe.py)
+(8 assertions, all passing).
+
+### The retraction
+
+Addendum 17 closed with: *"the full-space program reached AME not merely
+because the kernel is unconstrained but because the kernel is **where the minus
+signs live**"*, and offered that to the sibling fronts as a second pointer at
+signed structure. **The inference is causally wrong.** The cost vector is
+
+$$ t_\lambda = y_\lambda\,\chi^\lambda(\beta_D), $$
+
+and convention D's row cap sets $y_\lambda = 0$ for $\ell(\lambda) > 2$. So on
+every kernel block $t_\lambda = 0$ **identically** — by construction, whatever
+the character does. Measured on the committed witness: $\max|t|$ over the seven
+kernel blocks is $0.0$, and $t\cdot x$ restricted to the kernel is $0.0$ in
+every solution examined. A block that contributes nothing to the objective
+cannot be the reason the objective got large. The character-sign *observation*
+stands (assertions A6/A7 of the previous probe are untouched, and the retraction
+is stamped into its docstring); the reading built on it does not.
+
+This is the sixteenth correction in this arc, and the first where the error was
+an inference rather than a number — the measurement that produced it was right,
+and I attached a cause to it that its own data contradicts one field over.
+
+### The mechanism, correctly
+
+The net constraint is a plain sum over **all** blocks, and on the kernel
+$G = 0$, so $Gx \ge 0$ imposes nothing there. A kernel deficit therefore buys
+the support extra budget. Method 4 — the only encoding reaching AME, and it
+reaches it by *imposing* AME as an equality:
+
+| sector | $\sum x$ | $t\cdot x$ |
+|---|---|---|
+| support | $+12.3662$, all of it on the single block $(6)$ | $2.224566 = $ AME |
+| kernel | $-11.7910$ | $0.0$ exactly |
+| net | $+0.5752 = n_{\text{target}}$ | |
+
+The zero-weight blocks are free in the objective ($t = 0$) *and* free in the
+Frobenius cone ($G = 0$). They are pure ledger. That is the precise sense in
+which the author's reading is right: this **is** a debt. What it is not is a
+debt that is ever repaid — there is no term anywhere in the program that would
+come due. It is an *unpriced* overdraft, and the only thing bounding it is the
+artificial box $|x| \le M$.
+
+### Which blocks go negative is not determined
+
+The question has no invariant answer. Permuting the **variable order** — a
+relabelling that leaves the polytope, the objective and the optimum untouched —
+moves the negative set entirely:
+
+| ordering | occupied support block | deficit $D$ | negative kernel blocks |
+|---|---|---|---|
+| identity | $(6)$ | $11.7910$ | $(4,1,1)\,(3,2,1)\,(3,1,1,1)\,(2,2,2)$ |
+| perm 0 | $(5,1)$ | $8.1851$ | $(4,1,1)\,(3,2,1)\,(2,2,1,1)\,(2,1^4)$ |
+| perm 1 | $(6)$ | $11.7910$ | $(3,1,1,1)\,(2,2,2)\,(2,2,1,1)\,(1^6)$ |
+| perm 2 | $(3,3)$ | $34.0392$ | $(4,1,1)\,(2,2,2)\,(2,2,1,1)\,(1^6)$ |
+| perm 3 | $(5,1)$ | $8.1851$ | $(3,2,1)\,(3,1,1,1)\,(2,2,2)\,(1^6)$ |
+
+Five orderings, **five distinct negative sets**, one objective. The kernel is a
+degenerate face: entries sit at $\pm M$ box bounds in near-cancelling
+combinations, and only the net matters. Asking which partition carries the debt
+is asking which vertex the simplex method stopped at. Every earlier attempt in
+this session to characterise the negative set — by $(-1)^{n(\lambda)}$, by
+$\ell(\lambda) \ge 3$, by content sign — failed for this reason, not for want
+of the right invariant.
+
+### What *is* determined: the floor on the debt
+
+Only the support pays, so the cheapest route to a target $B$ concentrates
+everything on the support block of largest cost, giving a floor
+
+$$ D_{\min} \;=\; \frac{B}{\max_{\lambda \in \mathrm{supp}} t_\lambda} - n_{\text{target}}
+   \;=\; \frac{2.224566}{0.253938} - 0.575172 \;=\; 8.185108, $$
+
+attained on $(5,1)$, and matching the smallest $D$ in the table. That is
+$14.23\times$ the entire net budget. If the debt reading is to attach to
+anything, it attaches here: to reach AME through this program the zero-weight
+sector must run a deficit of at least fourteen times the whole trace.
+
+### What this asks of the framework
+
+Stated as a requirement rather than a proposal: for "debt to vacuum" to be a
+physical statement rather than a description of an LP degeneracy, something must
+**price the kernel**. As posed it costs nothing to borrow there and nothing to
+stay borrowed. Convention D sets that price to exactly zero by the row cap, so
+the price cannot come from within convention D. The obvious candidate — a higher
+Ocneanu level $z_r = q^r/[r]_q$, which gives $\ell(\lambda) \le r$ blocks a
+nonzero $y_\lambda$ — was measured in Addendum 16 and makes the gap **worse**,
+so that door is closed. Scope (a): this says the two mechanisms available in the
+current program do not supply a price. It does not say none exists.
+
+**Correction to the sibling-front note.** Addendum 17's closing offer to the
+²H/⁴He sign front should not be taken up as written. What this arc supplies is
+not "the framework's own characters already supply the signs" — the characters
+that carry signs are exactly the ones the cost cannot see. What it supplies is a
+sharper negative: a signed-occupation program reaches AME only by an unpriced
+deficit whose location is not determined and whose magnitude is bounded below by
+$14.23\,n_{\text{target}}$.
