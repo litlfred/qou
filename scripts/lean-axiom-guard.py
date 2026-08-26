@@ -487,6 +487,12 @@ QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_
 # symmetric-function theory this file previously claimed.
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_one | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_via_pieri | clean
+# (P) at lambda=(2,1) — the first shape whose three corners exercise all three
+# row cases AND the new-bottom-row operation at once. pieri_one's two corners
+# are both trivial and cannot distinguish them.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_summands_at_two_three | clean
 """
 
 

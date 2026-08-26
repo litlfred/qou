@@ -270,4 +270,77 @@ theorem telescope_two_via_pieri (Q X : ℝ)
   rw [pieri_one Q X hQ0 hQ1 hQm1, telescope_one Q X]
   simp [telescopeRHS, pow_succ]
 
+/-! ### (P) at a shape that exercises the whole engine
+
+`pieri_one` is (P) at `λ = (1)`, whose two corners are both trivial: one is a
+single row, the other a single column, and neither has a cell above or below the
+new box. It cannot distinguish the three row cases from each other.
+
+`λ = (2,1)` is the first shape that does. It has **three** addable corners:
+
+| corner | what it exercises |
+|---|---|
+| `(3,1)` | a box in row `0`, with row `1` **below** it — `rowFactor_addBoxRow_row_below` |
+| `(2,2)` | a box in row `1`, with row `0` **above** it in the changed column — the interior case, the one needing product surgery |
+| `(2,1,1)` | a **new bottom row**, which `addBoxRow` cannot express at all (§ `addBoxNewRow`) |
+
+So this is the (P) analogue of `telescope_three`: the first case where the
+statement's moving parts are all in play at once, and the one an induction would
+have to trust. Verified symbolically with `X` free beforehand in
+`computations/y_lambda_pieri_step_probe.py`. -/
+
+/-- **(P) at `λ = (2,1)`**: `s₍₃,₁₎ + s₍₂,₂₎ + s₍₂,₁,₁₎ = ((1 − X)/(1 − Q)) · s₍₂,₁₎`.
+
+Three corners, one of each kind — a row with something below it, a row with
+something above it in the changed column, and a new bottom row. -/
+theorem pieri_two_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    WenzlSchurElement.schurElement Q X [3, 1]
+      + WenzlSchurElement.schurElement Q X [2, 2]
+      + WenzlSchurElement.schurElement Q X [2, 1, 1]
+      = ((1 - X) / (1 - Q)) * WenzlSchurElement.schurElement Q X [2, 1] := by
+  have h1 : (1 : ℝ) - Q ≠ 0 := sub_ne_zero.mpr (Ne.symm hQ1)
+  have hp1 : (1 : ℝ) + Q ≠ 0 := fun h => hQm1 (by linarith)
+  have h2 : (1 : ℝ) - Q ^ 2 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 2 = (1 - Q) * (1 + Q) := by ring
+    rw [hfac]; exact mul_ne_zero h1 hp1
+  have hq2q1 : (1 : ℝ) + Q + Q ^ 2 ≠ 0 := by
+    intro h; nlinarith [sq_nonneg (Q + 1 / 2), sq_nonneg Q]
+  have h3 : (1 : ℝ) - Q ^ 3 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 3 = (1 - Q) * (1 + Q + Q ^ 2) := by ring
+    rw [hfac]; exact mul_ne_zero h1 hq2q1
+  have hsq1 : (1 : ℝ) + Q ^ 2 ≠ 0 := by positivity
+  have h4 : (1 : ℝ) - Q ^ 4 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 4 = (1 - Q ^ 2) * (1 + Q ^ 2) := by ring
+    rw [hfac]; exact mul_ne_zero h2 hsq1
+  norm_num [WenzlSchurElement.schurElement, nLambda,
+    WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+    range_one_eq, range_two_eq, range_three_eq]
+  field_simp
+  ring
+
+/-- **(P) at `λ = (2,1)` is sharp at `Q = 2`, `X = 3`**: both sides are `20/7`,
+so the identity is not satisfied vacuously by both sides vanishing. -/
+theorem pieri_two_one_at_two_three :
+    WenzlSchurElement.schurElement 2 3 [3, 1]
+      + WenzlSchurElement.schurElement 2 3 [2, 2]
+      + WenzlSchurElement.schurElement 2 3 [2, 1, 1] = 20 / 7 := by
+  have h := pieri_two_one 2 3 (by norm_num) (by norm_num) (by norm_num)
+  rw [h]
+  norm_num [WenzlSchurElement.schurElement, nLambda,
+    WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+    range_one_eq, range_two_eq]
+
+/-- **The three corners contribute genuinely different amounts**, and one is
+negative: at `Q = 2`, `X = 3` they are `22/9`, `40/63` and `−2/9`, summing to
+`20/7`. Recorded because a sum identity whose summands happened to be equal —
+or all of one sign — would be a much weaker check than it looks. -/
+theorem pieri_two_one_summands_at_two_three :
+    WenzlSchurElement.schurElement 2 3 [3, 1] = 22 / 9
+      ∧ WenzlSchurElement.schurElement 2 3 [2, 2] = 40 / 63
+      ∧ WenzlSchurElement.schurElement 2 3 [2, 1, 1] = -2 / 9 := by
+  refine ⟨?_, ?_, ?_⟩ <;>
+    norm_num [WenzlSchurElement.schurElement, nLambda,
+      WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+      range_one_eq, range_two_eq, range_three_eq]
+
 end QOU.MathlibExt.MacdonaldTelescope
