@@ -265,3 +265,74 @@ This answers *which ring makes the axioms true*. It does **not** answer the T3g
 question of which **base scheme** the gerbe lives over — `Spec R` for whichever
 `R` is chosen, versus the Reeb spectral base `Spec(ξ_q)`. Fixing `R` is a
 prerequisite for that, not a substitute.
+
+---
+
+## 🛑 CORRECTED 2026-08-26 — "fails axiom 4" was too strong, and the tension does not exist
+
+Owner question: *state the QOU axioms as generically as possible for a ring `R`;
+what properties does `R` need — an injection into the canonical ring?* Answering
+it required reading the Lean, and the Lean corrects two claims above.
+
+### `R` needs only `CommRing`, and the axioms already say so
+
+`structure QuantumUniverse (R : Type*) [CommRing R]`, with
+
+```lean
+frobWeight : blocks → R
+dimQ       : blocks → R
+frobWeight_isUnit : ∀ b, IsUnit (frobWeight b)
+dimQ_isUnit       : ∀ b, IsUnit (dimQ b)
+```
+
+The invertibility is quantified over **this universe's own blocks**. It is a
+condition on the pair `(R, C)`, never on `R` alone. The definition is already
+maximally generic and should not be touched.
+
+**`IsQGeneric` therefore does not belong in the definition.** It belongs to the
+*construction* of a Hecke-type universe, where `dimQ b` is a bracket product and
+the property is what discharges `dimQ_isUnit`. Adding it to
+`def:quantum-universe` would over-constrain the definition to serve one family of
+instances.
+
+### No injection — and the direction is the other way
+
+The canonical ring is **initial** for the property, so the unique map runs
+`R_can → R`, *out of* it. An injection `R ↪ R_can` would be backwards, and would
+exclude exactly the specialisations the framework depends on: `ℝ` at the
+substrate anchor, `ℚ` at `q = 1`, `ℤ[ζ]` at a root of unity are **evaluations and
+quotients, not subrings**. Injectivity must not be required even in the correct
+direction — `R_can → ℚ` at `q = 1` kills `(q-1)` by design.
+
+Nor should any map appear in the definition: for a universe over `R` the
+invertibility fields are already given, so relating `R` to `R_can` adds nothing.
+
+### The root-of-unity "tension" was mine, not the corpus's
+
+This audit claimed axiom 4 conflicts with root-of-unity truncation and that *"the
+corpus does not record it."* **Both halves are wrong.** `quantum-universe.lean`
+records *and resolves* it, at the `blocks` field:
+
+> **`blocks` indexes the NON-NEGLIGIBLE blocks, and vanishing elsewhere is
+> permitted.** `dimQ_isUnit` below is therefore a specification of what `blocks`
+> ranges over, NOT a prohibition on the ambient category. This matters at a root
+> of unity (and in char p), where some `dim_q(λ)` really does vanish: those λ are
+> *negligible* — they form a tensor ideal … Read as a prohibition, the field
+> would exclude the root-of-unity categories outright; read as an index
+> specification, it says the decomposition is that of the semisimplified
+> quotient.
+
+So axiom 4 never forbade roots of unity. My tension was an artifact of reading
+the `.md` without the `.lean`.
+
+### And "fails axiom 4" is too strong
+
+Under the index-specification reading, `ℤ[q, q⁻¹]` does not *fail* the axioms —
+it satisfies them **degenerately**, with the block index collapsed to the trivial
+block, since no `[m]_q` with `m ≥ 2` is a unit there. The localisation is what
+makes a **non-degenerate** universe available, carrying the framework's actual
+Hecke decomposition. That is a weaker and more accurate statement than the one
+this audit opened with, and `quantum-universe.md` has been rewritten to match.
+
+The recommendation is unchanged: `R = ℤ[q,q⁻¹][Φ_d(q)⁻¹ : d ≥ 2]` as the
+canonical **instance**, with the definition left at `CommRing`.
