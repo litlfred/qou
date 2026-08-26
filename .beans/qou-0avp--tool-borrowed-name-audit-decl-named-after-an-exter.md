@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T19:42:03Z
+updated_at: 2026-08-26T20:02:21Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -164,3 +164,13 @@ workspace, so LEAN_PATH must be anchored at `$ROOT/.lake/packages/*`, not at
 `content/<paper>/lean/.lake/packages/*` (the latter has batteries but no
 Mathlib, and fails as "unknown module prefix 'Mathlib'", which reads like a
 missing cache). Both traps are documented in the driver header.
+
+
+
+## Adjudicated 2026-08-26 — all 19 CRITICAL into the vacuity ledger
+
+11 genuine / 1 advisory / 7 legit. **Measured precision 63%**, against the 75%
+a sample of four suggested. The 7 false positives are one characterisable
+class — real symbolic or finite computations merely *named* after a
+mathematician — which is the expected LOCAL-ONLY failure mode and the lead
+for refinement. The 197 `major` remain untriaged.
