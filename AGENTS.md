@@ -1830,7 +1830,7 @@ Do not regress either.
 >   [`scripts/lean-markov-convention-audit.py`](scripts/lean-markov-convention-audit.py)
 >   (which the producer audit structurally cannot do), the Lean
 >   Markov-parameter surface is **22 convention-C *definitions* across 18 files,
->   under 3 spellings**, against **23** in convention D — roughly half the
+>   under 3 spellings**, against **24** in convention D — roughly half the
 >   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
 >   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
 >   *mentions* a convention while one inside a `def` body *defines* it, and

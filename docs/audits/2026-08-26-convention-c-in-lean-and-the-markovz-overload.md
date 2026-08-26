@@ -61,7 +61,7 @@ anything and is recorded here only so nobody re-derives it.)
 > **incomplete**: it reports 7 sites across 6 files. A scanner written for fix
 > step 2 — [`scripts/lean-markov-convention-audit.py`](../../scripts/lean-markov-convention-audit.py),
 > which does what `convention-c-producer-audit.py` structurally cannot — measures
-> **22 convention-C Markov-parameter *definitions* across 18 files**, against 23
+> **22 convention-C Markov-parameter *definitions* across 18 files**, against 24
 > in convention D. Roughly half the Markov-parameter definitions in the Lean tree
 > are C. Quote the scanner, not the table; the table is kept as the record of
 > what hand-verification found and missed.
