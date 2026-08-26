@@ -364,9 +364,15 @@ Infrastructure for the Pieri step of the Macdonald hook telescope
 * the cells of column `λ_r` strictly above row `r` — their *leg* grows.
 
 Verified against this very definition over 111 cells across the addable corners
-of twelve shapes before being formalised. The arm half is proved below; the leg
-half is stated as `hookLength_addBoxRow_other_row_ne` for the cells it leaves
-alone, which is the part the Pieri product needs first. -/
+of twelve shapes before being formalised. Both halves are proved below, and
+`hookLength_addBoxRow_of_ne_corner` assembles them into the rule for every cell
+but the new box itself.
+
+The two halves need genuinely different arguments. The arm half is a `drop`
+argument: the entry that moved is dropped before the leg count sees it. The leg
+half cannot use that, because the modified entry survives *into* the tail — it
+is a `countP`-over-`set` argument instead, and `j = λ_r` is exactly the
+threshold at which the predicate `(· > j)` flips. -/
 
 /-- Add one box to row `r`. Out of range, this is the identity (`List.set` is). -/
 def addBoxRow (lam : Partition) (r : ℕ) : Partition :=
@@ -457,6 +463,141 @@ theorem countP_drop_addBoxRow_at_threshold
     have hidx : i + 1 + (r - (i + 1)) = r := by omega
     simp [hidx, List.getElem?_eq_getElem hr]
   · simp
+
+/-- **Setting one entry to another with the same `p`-value leaves the count
+alone.** The companion to `countP_set_of_flip`: together they say the count
+moves by exactly the indicator of a flip. Also proved by structural induction —
+Mathlib carries no `countP`-over-`set` lemma reachable from here. -/
+theorem countP_set_of_same {p : ℕ → Bool} :
+    ∀ (l : List ℕ) (k v : ℕ), (hk : k < l.length) →
+      p (l[k]'hk) = p v →
+      (l.set k v).countP p = l.countP p
+  | _ :: t, 0, v, _, h => by
+      simp only [List.getElem_cons_zero] at h
+      simp [List.countP_cons, ← h]
+  | _ :: t, k + 1, v, hk, h => by
+      have ih := countP_set_of_same t k v (by simpa using Nat.lt_of_succ_lt_succ hk)
+        (by simpa using h)
+      simp [List.countP_cons, ih]
+
+/-- **Off the threshold the leg count does not move.** For a row `i` above the
+new box and any column `j ≠ λ_r`, raising `λ_r` to `λ_r + 1` does not change
+whether row `r` exceeds `j`: below the threshold both exceed it, above it
+neither does. -/
+theorem countP_drop_addBoxRow_off_threshold
+    (lam : Partition) (r i j : ℕ) (h : i < r) (hr : r < lam.length)
+    (hj : j ≠ (lam[r]?).getD 0) :
+    ((addBoxRow lam r).drop (i + 1)).countP (fun x => decide (x > j))
+      = (lam.drop (i + 1)).countP (fun x => decide (x > j)) := by
+  unfold addBoxRow
+  rw [List.drop_set, if_neg (by omega)]
+  have hr' : r < List.length lam := hr
+  have hlen : r - (i + 1) < (lam.drop (i + 1)).length := by
+    rw [List.length_drop]; omega
+  refine countP_set_of_same (lam.drop (i + 1)) (r - (i + 1)) _ hlen ?_
+  rw [List.getElem_drop]
+  have hidx : i + 1 + (r - (i + 1)) = r := by omega
+  have hval : lam[r]'hr' = (lam[r]?).getD 0 := by
+    rw [List.getElem?_eq_getElem hr']; rfl
+  simp only [hidx, hval, decide_eq_decide]
+  omega
+
+/-- **Leg growth.** For a cell in column `λ_r` strictly above row `r`, the hook
+length increases by exactly one: the arm is untouched (the row entry at `i` is
+not the one that moved) and the leg count crosses its threshold.
+
+The hypothesis `λ_r < λ_i` is what puts the cell inside `λ` in the first place;
+without it both sides are `0` and there is nothing to say. -/
+theorem hookLength_addBoxRow_leg_growth
+    (lam : Partition) (r i : ℕ) (h : i < r) (hr : r < lam.length)
+    (hin : (lam[r]?).getD 0 < (lam[i]?).getD 0) :
+    Partition.hookLength (addBoxRow lam r) i ((lam[r]?).getD 0)
+      = Partition.hookLength lam i ((lam[r]?).getD 0) + 1 := by
+  have hr' : r < List.length lam := hr
+  have hi : i < List.length lam := by omega
+  have hlam : lam[i]? = some ((lam[i]?).getD 0) := by
+    rw [List.getElem?_eq_getElem hi]; rfl
+  have hne : (addBoxRow lam r)[i]? = lam[i]? := by
+    unfold addBoxRow; rw [List.getElem?_set_ne (by omega)]
+  have hcount := countP_drop_addBoxRow_at_threshold lam r i h hr
+  unfold Partition.hookLength
+  rw [hne, hlam]
+  simp only [if_pos hin, ← List.countP_eq_length_filter]
+  rw [hcount]
+  omega
+
+/-- **Rows above the new box, off its column, are untouched.** -/
+theorem hookLength_addBoxRow_row_above_ne
+    (lam : Partition) (r i j : ℕ) (h : i < r) (hr : r < lam.length)
+    (hj : j ≠ (lam[r]?).getD 0) :
+    Partition.hookLength (addBoxRow lam r) i j = Partition.hookLength lam i j := by
+  have hne : (addBoxRow lam r)[i]? = lam[i]? := by
+    unfold addBoxRow; rw [List.getElem?_set_ne (by omega)]
+  have hcount := countP_drop_addBoxRow_off_threshold lam r i j h hr hj
+  unfold Partition.hookLength
+  rw [hne]
+  cases hrow : lam[i]? with
+  | none => rfl
+  | some row_i =>
+    by_cases hjr : j < row_i
+    · simp only [if_pos hjr, ← List.countP_eq_length_filter, hcount]
+    · simp only [if_neg hjr]
+
+/-- **The hook-length update rule.** Adding one box to row `r` raises the hook
+length by exactly one on two sets of cells and leaves every other cell alone:
+
+* the cells of row `r` strictly left of the new box (their **arm** grows);
+* the cells of column `λ_r` strictly above row `r` (their **leg** grows).
+
+The new box itself, `(r, λ_r)`, is excluded: its hook length in the new shape is
+`1` only because no row below `r` exceeds `λ_r`, which is the weakly-decreasing
+property — and `Partition` is a bare `List ℕ` that does not carry it. Stating
+the rule off the corner keeps it unconditional; the corner is supplied
+separately by whatever carries the order hypothesis.
+
+This is the per-cell input to the Pieri step of the Macdonald hook telescope. -/
+theorem hookLength_addBoxRow_of_ne_corner
+    (lam : Partition) (r i j : ℕ) (hr : r < lam.length)
+    (hcorner : ¬(i = r ∧ j = (lam[r]?).getD 0)) :
+    Partition.hookLength (addBoxRow lam r) i j
+      = Partition.hookLength lam i j
+        + (if (i = r ∧ j < (lam[r]?).getD 0)
+             ∨ (i < r ∧ j = (lam[r]?).getD 0 ∧ j < (lam[i]?).getD 0)
+           then 1 else 0) := by
+  rcases lt_trichotomy i r with hlt | heq | hgt
+  · have hr' : r < List.length lam := hr
+    by_cases hj : j = (lam[r]?).getD 0
+    · subst hj
+      by_cases hin : (lam[r]?).getD 0 < (lam[i]?).getD 0
+      · rw [hookLength_addBoxRow_leg_growth lam r i hlt hr hin,
+          if_pos (Or.inr ⟨hlt, rfl, hin⟩)]
+      · have hi : i < List.length lam := by omega
+        have hlam : lam[i]? = some ((lam[i]?).getD 0) := by
+          rw [List.getElem?_eq_getElem hi]; rfl
+        have hne : (addBoxRow lam r)[i]? = lam[i]? := by
+          unfold addBoxRow; rw [List.getElem?_set_ne (by omega)]
+        rw [if_neg (by rintro (⟨h', _⟩ | ⟨_, _, h'⟩) <;> omega), Nat.add_zero]
+        unfold Partition.hookLength
+        rw [hne, hlam]
+        simp only [if_neg hin]
+    · rw [hookLength_addBoxRow_row_above_ne lam r i j hlt hr hj,
+        if_neg (by rintro (⟨h', _⟩ | ⟨_, h', _⟩) <;> omega), Nat.add_zero]
+  · subst heq
+    have hj : j ≠ (lam[i]?).getD 0 := fun h' => hcorner ⟨rfl, h'⟩
+    by_cases hlt : j < (lam[i]?).getD 0
+    · rw [hookLength_addBoxRow_same_row lam i j hr hlt, if_pos (Or.inl ⟨rfl, hlt⟩)]
+    · have hi : i < List.length lam := hr
+      have hlam : lam[i]? = some ((lam[i]?).getD 0) := by
+        rw [List.getElem?_eq_getElem hi]; rfl
+      have hget : (addBoxRow lam i)[i]? = some ((lam[i]?).getD 0 + 1) := by
+        unfold addBoxRow; rw [List.getElem?_set_self (by simpa using hr)]
+      rw [if_neg (by rintro (⟨_, h'⟩ | ⟨h', _⟩) <;> omega), Nat.add_zero]
+      unfold Partition.hookLength
+      rw [hget, hlam]
+      simp only [Option.getD_some, if_neg hlt,
+        if_neg (show ¬ j < (lam[i]?).getD 0 + 1 by omega)]
+  · rw [hookLength_addBoxRow_row_below lam r i j hgt,
+      if_neg (by rintro (⟨h', _⟩ | ⟨h', _⟩) <;> omega), Nat.add_zero]
 
 /-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
     lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the

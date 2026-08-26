@@ -420,6 +420,15 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 # imported -- Mathlib has no countP-over-set lemma reachable from here.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_set_of_flip | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_drop_addBoxRow_at_threshold | clean
+# Assembly. countP_set_of_same is the no-flip companion; the master rule
+# hookLength_addBoxRow_of_ne_corner covers every cell except the new box
+# itself, whose hook length needs the weakly-decreasing property that the
+# bare `List ℕ` carrier does not have.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_set_of_same | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_drop_addBoxRow_off_threshold | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_leg_growth | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_above_ne | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_of_ne_corner | clean
 # The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
 # schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
 # n(lam) fix a correction rather than a preference: revert the prefactor and
