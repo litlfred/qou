@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T20:43:40Z
+updated_at: 2026-08-26T21:06:14Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1841,3 +1841,98 @@ expectation set on it, not a verdict on whether to run it.
 
 Step 8's postulate is now narrowed from the whole of `net` to the 7.67 %
 remainder. Scope-(a) throughout.
+
+
+## 2026-08-26 (2) — the re-derivation advances: block resolution, a z-free floor, and the quotient reading
+
+Three probes, 57 assertions, all exact-symbolic. Owner directed this bean as
+first priority after correcting my foreclosure reading (section above).
+
+### 1. The phase has a z-FREE commutator floor, and it is bar-even
+
+`qbeta_alpha_commutator_floor_probe.py` (22/22). Combining this bean's identity
+`ε(Δ) − tr_M^z(Δ) = h(z−1) = 2α` with step 8's split `H = Z(H) ⊕ [H,H]`:
+
+    2α = [ net(dZ) − tr_M^z(dZ) ] + net(dC),    net(dC) = −(q²−1)²/(q⁴+q²+1)
+
+The floor contains **no Markov parameter**: identical in C and D to 50 digits
+(`−0.01435953588753045`), carrying **13.72 %** of 2α in C and **17.73 %** in D.
+Not a rounding term.
+
+**It extends the sibling prune.** `fcffeee29` reads: both surviving D weights
+are bar-even ⇒ no bar-odd part can be assembled from the D-frame **weights** at
+all. The floor is not built from weights — it is a non-trace functional on the
+component every weight annihilates — so that prune does not reach it. Measured:
+**the floor is bar-EVEN**, exactly. The trace-invisible sector supplies no
+bar-odd material either. Gap closed in an existing exclusion, proved not searched.
+
+**Fourth independent route to the D weights**, from the Ocneanu recursion
+(`tr(1)=1, tr(T_i)=z, tr(T_0T_1)=z², tr(T_0T_1T_0)=z(hz+1)`) solved symbolically
+in `z`: recovers `y_(1³)=0`, `y_(3)=(q⁴+1)/(q²+1)²`, `y_(2,1)=q²/(q²+1)²`,
+cross-checked against `y_lambda_su_n`.
+
+### 2. The functional form this bean has been asking for
+
+`qbeta_phase_block_resolution_probe.py` (18/18). Exactly, for every `z`:
+
+    2α(z) = Σ_λ [ a_λ − y_λ(z) ] · χ^λ(Δ) + net(dC)
+
+with `a_λ`, `χ^λ(Δ)` and `net(dC)` **all z-free** — the convention enters at
+**one factor**. That is why it is a re-derivation: the C-frame scalar `(z−1)h/2`
+is the *sum* of the blocks, and the sum is resolved into parts **before** a
+convention is chosen, so specialising to `z_D` is a statement about the D-frame
+representation rather than a reuse of the C formula.
+
+Three structural facts:
+- **`χ^(2,1)(Δ) = 0` identically** — dim 2 at the identity, trace `h` at each
+  generator: `(h²/2)·2 − (h/2)h − (h/2)h = 0`. The phase is blind to the
+  2-dimensional block, in **every** convention.
+- With that, under D the two-row forcing leaves `tr_M(Δ)` carried **entirely by
+  the trivial block**.
+- The `(1³)` block contributes `a_(1³)·χ^(1³)(Δ)` **uncancelled** under D, with
+  no counterpart in C: `−0.000543 → +0.004238`, sign flip and 7.8×.
+
+*A prediction of mine failed and is retained, not deleted:* I asserted all three
+`a_λ` were bar-"neither"; `a_(2,1)` is exactly bar-**odd**. It is the block χ
+kills, so it costs nothing — but the guess lost to the measurement again.
+
+### 3. The two-row forcing read as a QUOTIENT — 18× on the D phase
+
+`qbeta_d_frame_tl_quotient_phase_probe.py` (17/17). The identity above is exact,
+so it moves no number; a re-derivation needs a changed **input**. There is one
+the D convention touches that C does not, and it is not `z`:
+`WenzlWeightVanishing` proves `z_D` is Wenzl level `r = 2` exactly.
+
+Read that as a **quotient** — evaluate in `H_3(q)/J_(1³)`. The central idempotent
+is unique ⇒ `π(Δ)` is one determined element, **no free parameter**. It bites
+because projection is invisible to the D trace (`y_(1³)` already annihilated that
+block, so `tr_M^D(πΔ) = tr_M^D(Δ)` exactly) and **visible to `net`**, which is
+not a trace and does not respect the block ideal.
+
+| candidate | \|Δz\|/z* |
+|---|---|
+| C (as recorded) | 0.00043244 |
+| D naive z-swap (banned) | 0.22757466 |
+| D TL-quotient | 0.18695789 |
+| D naive + bar-odd | 0.01813926 |
+| **D TL-quotient + bar-odd** | **0.01268105** |
+
+**Calibrated before being trusted:** this bean records z* as "0.043% from z_C,
+1.81% from z_D^even, 22.8% from z_D"; the harness returns 0.0432% / 1.8139% /
+22.757%, the middle being an independent reproduction of the recorded
+`z_D^even` candidate reached by projecting the *phase* onto its bar-odd part
+instead of deriving `z_D^even = z_D − h/2`. The bar-odd projection's licence is
+a control: under C it acts as the **identity** (asserted).
+
+### Scope — this does NOT close the bean
+
+Best D is still **29.3×** the C distance. `z*` is anchor-inverted, not derived.
+The quotient reading is an **interpretive** step: the corpus establishes the
+two-row forcing for the trace's *support*, not for the *element*. Both
+corrections are reported separately so each marginal contribution is visible,
+and nothing is wired. Scope-(a) on two named readings.
+
+**Next, concrete:** decide the quotient reading on its merits rather than by its
+number — does the D-frame decay channel live in `H_3(q)` or in its TL quotient?
+That is a corpus/owner question, and it is now worth 1.43× on the best D
+candidate.
