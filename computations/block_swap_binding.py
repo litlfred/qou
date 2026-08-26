@@ -45,7 +45,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
-from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
+import pyhecke_native as _ph  # noqa: E402 — batched GP entry point
+from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402,F401
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 
@@ -94,15 +95,47 @@ def block_swap_word(s: int, m: int, n: int) -> list[int]:
     return word
 
 
+def _two_row_shapes(n: int, y_table) -> list[tuple[int, ...]]:
+    """The shapes that can contribute: two-row, and present in y_table.
+
+    The restriction is EXACT, not a tolerance. `QOU.MassTheory
+    .TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl` (sorry-free, `#print
+    axioms` clean) proves that restricting `Σ_λ y_λ χ_λ` to `ℓ(λ) ≤ 2` is
+    an identity under convention D (Wenzl level r = 2), for ARBITRARY `χ` —
+    the dropped terms die through the weight, so nothing depends on which
+    observable is summed. `threeRowPart_eq_zero_of_wenzl` states the
+    residual is `0`, not "small".
+
+    The `y_table.get(st) is None` guard this replaces could never fire:
+    `_load_y_lambda(12, ·)` returns all 77 shapes as nonzero, the two-row
+    ones at 2.3e-4 … 4.0e-3 and the other 70 topping out at 1.03e-73 —
+    solver residue against a value the Lean says is exactly zero. Without
+    a row test the loop computed 77 characters where 7 carry the answer.
+    """
+    return [tuple(sh) for sh in parts_of(n)
+            if len(tuple(sh)) <= 2 and y_table.get(tuple(sh)) is not None]
+
+
 def tr_M_of_word(word: list[tuple[int, int]], n: int, y_table, q) -> mp.mpf:
-    """tr_M(word) = Σ_λ y_λ · χ_λ(word) at q₀ (sign-only, Rust chi_q_via_gp)."""
+    """tr_M(word) = Σ_λ y_λ · χ_λ(word) at q₀ (sign-only, Rust GP path).
+
+    Uses the BATCHED `chi_lambdas_via_gp`, not per-shape `chi_q_via_gp`.
+    The Geck–Pfeiffer reduction is the expensive step and depends only on
+    `(n, word)` — not on `λ` — so calling the per-shape entry point inside
+    a partition loop repeats an identical reduction once per shape. The
+    Rust docstring states the batched form is ~O(p(n))× faster; at n = 12
+    that is up to 77×, and combined with the two-row cap above the loop
+    goes from 77 reductions to one.
+    """
+    shapes = _two_row_shapes(n, y_table)
+    laurents = _ph.chi_lambdas_via_gp([list(st) for st in shapes], n, list(word))
+    sqrt_q = mp.sqrt(q)
     total = mp.mpf(0)
-    for shape in parts_of(n):
-        st = tuple(shape)
-        y = y_table.get(st)
-        if y is None:
-            continue
-        total += mp.mpf(str(y)) * chi_rust_at_q_mpf(st, n, word, q)
+    for st, terms in zip(shapes, laurents):
+        chi = mp.mpf(0)
+        for (d_key, c_str) in terms:
+            chi += mp.mpf(int(c_str)) * (sqrt_q ** int(d_key))
+        total += mp.mpf(str(y_table[st])) * chi
     return total
 
 
