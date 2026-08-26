@@ -1048,3 +1048,98 @@ just falsified. Not run, deliberately.
 This is the ninth of my own claims corrected on this arc. It was found by
 checking where the averaged letters actually sit, which took one measurement and
 should have preceded the prescription rather than following it.
+
+## Addendum 12 — the satellite vocabulary, and which third of my claim survives (2026-08-26)
+
+Asked to unpack the terms in my own sentence: *"a knot in a solid torus,
+embedded along a companion, is a satellite — an essential torus."* Each word is
+load-bearing and none of them is framework jargon; they are standard 3-manifold
+topology (Jaco–Shalen, Johannson, Thurston). Definitions first, then what the
+construction actually buys, which is **less** than I claimed.
+
+### The four terms
+
+**Solid torus.** `V = S¹ × D²` — a circle thickened into a disc's worth of
+directions, i.e. a doughnut *with* its inside. Its boundary `∂V = S¹ × S¹` is an
+ordinary torus. Two curve classes on that boundary matter: the **meridian**
+`{pt} × ∂D²`, which bounds a disc inside `V`, and the **longitude** `S¹ × {pt}`,
+which does not.
+
+**A knot in a solid torus.** A knot `P ⊂ V` — the *pattern*. It is a knot in the
+doughnut, not in `S³`, so the same `P` can be realised in `S³` many different
+ways depending on how `V` is put there. A pattern has a **winding number**: how
+many times `P` runs around the `S¹` direction, algebraically. A closed braid on
+`n` strands is exactly a pattern with winding number `n` that meets every
+meridian disc in `n` points — that is the whole content of Alexander's theorem
+read in the solid torus.
+
+**Companion, and embedding along it.** Take a second knot `C ⊂ S³` — the
+*companion* — and let `N(C)` be a tubular neighbourhood of it, which is itself a
+solid torus. An **embedding along `C`** is a homeomorphism `f : V → N(C)` taking
+the longitude of `V` to the longitude of `C` (the framing choice; the standard
+one is Seifert framing). The image `K = f(P) ⊂ S³` is a knot in the 3-sphere.
+
+**Satellite.** That `K` is a **satellite knot** with pattern `P` and companion
+`C`, provided the construction is non-trivial: `P` is neither contained in a ball
+inside `V` (else `K` is just `P` in a ball, and `C` is invisible) nor isotopic to
+the core `S¹ × {0}` (else `K` is just `C`, and `P` is invisible). Cable knots,
+Whitehead doubles and connected sums are all satellites; the last is the case
+this arc keeps running into.
+
+**Essential torus, and why the word "is".** The image of `∂V` in `S³` is a torus
+`T ⊂ S³ ∖ K`. Non-triviality is exactly the statement that `T` is **essential**:
+incompressible (no disc in the complement whose boundary is an essential curve on
+`T`) and not boundary-parallel. So "satellite" and "the complement contains an
+essential torus" are the *same* condition, not two conditions that happen to
+co-occur. That is why the sentence says "is" rather than "gives".
+
+**Why it matters for `Geom`.** The JSJ decomposition cuts a knot complement along
+its essential tori into pieces that are each hyperbolic or Seifert-fibred, and
+this decomposition is canonical. Thurston's trichotomy for prime knots — torus,
+satellite, hyperbolic — is the statement that the complement either *has* such a
+torus (satellite) or does not, and then is hyperbolic or Seifert-fibred. So the
+missing case in the Stage-3 `Geom(K)` split is not a gap in coverage of some
+list; it is the **one case with internal structure**, and it is precisely the
+case `conj:jsj-decomposition-linearity` is about. That conjecture says the atomic
+complement decomposes along inter-nucleon tori into `Z` proton and `N` neutron
+pieces. Inter-nucleon tori *are* essential tori. A framework whose `Geom` has no
+satellite case cannot state its own binding conjecture.
+
+### What the construction buys — one of three, not three
+
+I wrote that one move gives three things at once. Checked individually, **one
+survives, one is weakened to a target, and one is withdrawn.**
+
+| claim | status |
+|---|---|
+| a genuine closed braid, so `def:atom-knot` is satisfiable | **survives** — a pattern of winding number `n` meeting each meridian disc in `n` points is a closed braid in `V` by definition, and its satellite image is a knot in `S³`; nothing about this depends on the algebra |
+| a satellite carrier — the essential torus the JSJ conjecture needs | **survives as a target, not as a construction** — the topology is what is *wanted*; no atom braid word producing it exists, and building one is the open construction question (bean `qou-7p7d`) |
+| bar-invariance by construction (the CPT content) | **WITHDRAWN** — this rested on the type-`B` reading falsified in §11b |
+
+The third is the one to be careful about, because it is the one that made the
+sentence sound like a solution rather than a wish. "Bar-invariance by
+construction" was §7b's promise about *folded* Cartan data: fold `𝔰𝔩ₙ` to type
+`B` and the GS normal forms are bar-invariant for free. §11b measured that the
+fold is unavailable here — `2A+1` involutive sites at distinct generator indices,
+against type `Bₙ`'s single `T₀` — so there is no fold, and therefore no free
+bar-invariance. What is left is the hand-rolled averaging that §7b tells you not
+to write, which is the defect, not the fix.
+
+The per-letter spectral fact does survive and is now Lean-proved
+([`AveragedLetterSpectrum.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/AveragedLetterSpectrum.lean),
+six declarations, sorry-free, axiom-clean): the averaged letter is `([2]_q/2)·ε`
+with `ε² = 1`, and a scaled generator with eigenvalues `cQ, −cQ⁻¹` matches `±t`
+only at `Q² = 1`, hence `Q = 1`, `c = t` under positivity. That is a statement
+about **one letter's spectrum**. It is not a statement about an algebra, and the
+file's docstring says so.
+
+### The open question, in these terms
+
+Find a pattern `P` in a solid torus which (i) is a closed braid, so
+`def:atom-knot` is satisfied on the nose; (ii) has `Z + N` companion pieces under
+JSJ, so `conj:jsj-decomposition-linearity` has something to be true of; and
+(iii) has bar-invariant normal forms **structurally** rather than by averaging.
+(i) and (ii) are ordinary satellite topology and are not the hard part. (iii) is
+the hard part, it is what the averaging was standing in for, and after §11b there
+is no candidate mechanism for it. Recorded as open on `qou-7p7d`; no route
+claimed.
