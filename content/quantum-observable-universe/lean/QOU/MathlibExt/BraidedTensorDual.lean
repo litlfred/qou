@@ -342,6 +342,30 @@ theorem twist_drinfeld_monoidal_tensorDoubleDualIso [BalancedCategory C] (X Y : 
   rw [drinfeldIso_comp_tensorDoubleDualIso]
   exact twist_drinfeld_monoidal X Y
 
+/-- **A ribbon category is pivotal** — in the literature's monoidal sense.
+
+This replaces the `pivotalOfBraided` instance that `QOU.MathlibExt.PivotalCategory` used to carry.
+Braiding alone is not enough: `drinfeldIso` misses monoidality by the inverse monodromy.  A
+balancing supplies exactly that monodromy (`BalancedCategory.twist_tensor`), so `θ ≫ drinfeldIso`
+is monoidal and the class is satisfied.
+
+The classical statement behind it is that a ribbon element `v` makes `uv⁻¹` grouplike.
+
+`Ribbon.lean` makes every symmetric category balanced (`θ = 𝟙`, the double braid being trivial), so
+this instance still fires for `FGModuleCat K` and every other symmetric rigid category — no
+linear algebra involved, exactly as before. -/
+noncomputable instance (priority := 100) pivotalOfRibbon [BalancedCategory C] :
+    PivotalCategory C :=
+  PivotalCategory.ofPointwise
+    (fun X => BalancedCategory.twistIso X ≪≫ drinfeldIso X)
+    (fun {X Y} f => by
+      simp only [Iso.trans_hom, BalancedCategory.twistIso_hom, Category.assoc]
+      rw [← drinfeldIso_naturality f, ← Category.assoc, ← Category.assoc,
+          BalancedCategory.twist_naturality f])
+    (fun X Y => by
+      simp only [Iso.trans_hom, BalancedCategory.twistIso_hom, Category.assoc]
+      exact twist_drinfeld_monoidal_tensorDoubleDualIso X Y)
+
 end Ribbon
 
 end QOU.MathlibExt
