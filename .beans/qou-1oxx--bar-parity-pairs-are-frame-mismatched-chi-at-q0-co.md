@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:07:20Z
-updated_at: 2026-08-26T07:07:56Z
+updated_at: 2026-08-26T07:13:35Z
 ---
 
 Found 2026-08-26 while fully discharging `qou-cds4`'s witness line. Third
@@ -73,3 +73,57 @@ Cheap first step for whoever takes it: confirm by MEASUREMENT, as with the
 chi-*-at-q0 oracles — recompute one qinv witness under both averaged variants
 and check whether the committed value matches the blind one. If it does, the
 diagnosis above is confirmed end-to-end rather than read off the source.
+
+
+## 🛑 CORRECTION 2026-08-26 — my prescribed fix was WRONG, measured
+
+The section above says this is "the same shape as marshal_to_chi_lambda_braid"
+and that the fix "needs a d-preserving qinv path". **Both are wrong**, and I
+found out by running the confirmation step this bean itself specified.
+
+`chi_all_lambda` REJECTS the word at 1/q0:
+
+    ValueError: unrecognised crossing (c=1.0, d=-0.10453...)
+
+because the word carries `d` pinned NUMERICALLY at q0. Measured, the deuteron
+word's distinct `d` values are:
+
+    0.0              sigma
+   -0.209060298796   sigma^-1        = -h(q0)
+   -0.104530149398   averaged blind  = -h(q0)/2
+   -0.104458247770   averaged wtd    = -h(q0)(1/2 - delta/4)
+
+and at 1/q0 the substrate `h` FLIPS SIGN:
+
+    h(q0)   =  0.209060298796
+    h(1/q0) = -0.209060298796
+
+so `-h(q0)/2 = -0.10453` is not the averaged coefficient at 1/q0 — there it is
+`+0.10453`. A value-preserving re-evaluation is therefore IMPOSSIBLE: carrying
+`d` across the bar is not conservative, it is wrong.
+
+**So the sign/type representation is NECESSARY, not a defect.** To evaluate chi
+at 1/q0 you must know the crossing TYPE and REBUILD `d` there. That is exactly
+what `_word_to_signed` does, and it is the right design.
+
+### The actual defect is narrower
+
+The type vocabulary has only THREE slots (sigma / sigma^-1 / averaged), so the
+two averaged variants have nowhere to go and are merged. The fix is a FOURTH
+slot — `averaged_weighted` — plus rebuilding `d` at 1/q0 per type. Much
+smaller than a rewrite, and it does not touch the representation choice.
+
+### Severity re-confirmed from the same measurement
+
+The deuteron word contains FOUR blind averaged crossings (intra-nucleon, two
+per nucleon — colour-blind by definition, nothing to weight) and ONE weighted
+crossing (the single p-n interface). The 3-slot collapse therefore loses
+exactly the p-n weighting on one crossing, which is the 0.0141 % figure
+already stated. Consistent.
+
+### Lesson
+
+I wrote a fix prescription from reading the source and it was wrong in the
+direction that would have caused work: "preserve d" is the OPPOSITE of correct
+across the bar involution. The cheap confirmation step was in the bean because
+I did not trust the reading — and it earned its place on the first run.
