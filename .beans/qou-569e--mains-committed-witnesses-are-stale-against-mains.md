@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T13:38:21Z
-updated_at: 2026-08-26T13:39:11Z
+updated_at: 2026-08-26T14:12:51Z
 ---
 
 ## The measurement
@@ -79,3 +79,46 @@ number moved and why. The `at_q0` value in particular is a recorded quantity
 that something downstream may read; leaving a 23 %-stale copy committed is
 worse than the vacuous assertions this arc has been chasing, because this one
 is a wrong number rather than an untested claim.
+
+
+## 2026-08-26, second instance — and this one is a stale RESULT, not a stale value
+
+Found the same way: running a producer to verify an unrelated guard.
+
+`v_hat_to_delta_lambda_bridge` — assertion `one_dim_universal_product_formula_closes`
+
+    committed              computed=12  expected=12  allPassed=TRUE
+    clean-main regenerated computed= 4  expected=12  allPassed=FALSE
+    this branch            computed= 4  expected=12  allPassed=FALSE   (identical)
+
+Clean `main` and this branch agree exactly, on trees differing only by an
+if/else that cannot alter an assertion's outcome when the else fires. So the
+move is `main`'s.
+
+**This is worse than the 23 % `at_q0` move recorded above.** That was a number
+drifting. This is a claim: the corpus currently records that a *universal
+product formula closes* — 12 of 12 channels — when re-running the producer on
+main today gives **4 of 12**. Whatever changed in the cone, two-thirds of the
+channels stopped matching and the committed witness still says they all do.
+
+I have not investigated why 8 channels stopped matching. That is the actual
+question and it is not this bean's — this bean only establishes that the
+committed witness disagrees with main.
+
+### Not the same as its neighbour
+
+`delta_lambda_v_hat_z_transfer_phase5d_4` was checked at the same time and is
+**not** an instance: committed `allPassed=False`, fresh run `allPassed=False`.
+It was already failing and still is. Worth stating so nobody re-derives it as a
+third case.
+
+### Running total for this bean
+
+    qbeta-hoefsmit-stage-b-per-block-ck   at_q0 0.011896786 -> 0.014597880   (23%)
+    all-nuclides-wedderburn-spectral-v2   allPassed false -> true
+    v-hat-to-delta-lambda-bridge          12/12 TRUE -> 4/12 FALSE           <- NEW
+
+Three witnesses now, and the third inverts a positive result. All were
+regenerated during verification of PRs #5823's guards and all were reverted
+rather than committed, for the reason stated above: a two-thirds drop in a
+match count does not belong in a PR about assertion guards.
