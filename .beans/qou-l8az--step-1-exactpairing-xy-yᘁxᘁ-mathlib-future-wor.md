@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:27Z
-updated_at: 2026-08-26T18:11:08Z
+updated_at: 2026-08-26T18:15:54Z
 ---
 
 
@@ -76,3 +76,48 @@ nothing -- an error naming field 2 is equally consistent with field 1 failing
 first. Verified properly by putting `sorry` in field 2 and cat_disch in field 1:
 field 1 fails. A pass/fail harness whose success condition is not the thing being
 tested is worse than no harness.
+
+
+
+## Update: 5 more routes ruled out; the goal is now GROUNDED (printed, not guessed)
+
+Additionally ruled out, after expanding the whiskering with
+whiskerLeft_comp / comp_whiskerRight first (so the individual eta/eps are
+exposed rather than buried under `(A) <| (f >> g)`):
+  + simp [whisker_exchange], + simp [<- whisker_exchange], + monoidal,
+  and two mixed simp-set variants. Eleven automated placements total now fail.
+
+### The precise obstruction, from the PRINTED goal
+
+The composite fires in the order  eta_X, eta_Y, eps_X, eps_Y.
+
+Neither snake is CONTIGUOUS in that order. The X-snake needs eta_X adjacent to
+eps_X; eta_Y sits between them. So:
+  - `monoidal` can never reach the two-snakes intermediate, because reordering
+    eta_Y past eps_X is the INTERCHANGE law, not coherence. That is why my first
+    calc step failed every time -- the intermediate was correct mathematics and
+    unreachable by the tactic I kept aiming at it.
+  - `simp [whisker_exchange]` does not place the exchange either: it needs to
+    fire at one specific subterm, and simp either does not match it or loops
+    over the symmetric rewrite.
+
+### What would actually work (not attempted -- out of budget this pass)
+
+Transcribe the idiom of `coevaluation_evaluation_braided'` (Rigid/Braided.lean)
+line by line rather than guessing calc shapes. Its distinguishing features,
+which none of my attempts had:
+  - `𝟙 X ⊗≫ ... ⊗≫ 𝟙 X` padding at BOTH ends of every calc term
+  - explicit parenthesisation of the interesting middle
+  - `congr 3` to isolate that middle before rewriting
+  - `repeat rw [<- assoc]` / `iterate n rw [...]` to drive the rewrite to the
+    right position
+Estimate: 20-30 lines of calc, an hour or more, genuine chance of success but
+no guarantee. This is the same genre as the proof being transcribed.
+
+### On literature
+
+NOT the blocker. The statement is textbook and the diagram is unambiguous --
+X2 pairs with the X from eta_X, Y2 with the Y from eta_Y, nested. No paper will
+supply the Lean bookkeeping, which is the entire difficulty. If any external
+source helps it is another FORMALISATION (a Lean or Coq library that already has
+rigid-monoidal tensor duals), not a mathematics paper.
