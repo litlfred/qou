@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T21:06:14Z
+updated_at: 2026-08-26T21:17:53Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1936,3 +1936,74 @@ and nothing is wired. Scope-(a) on two named readings.
 number — does the D-frame decay channel live in `H_3(q)` or in its TL quotient?
 That is a corpus/owner question, and it is now worth 1.43× on the best D
 candidate.
+
+
+## 2026-08-26 (3) — `net` = tr_M at z=1, corrected on ONE element; and the floor IS the 2-dim block
+
+`qbeta_net_as_trace_plus_longest_probe.py` (13/13). Sharpens two corpus
+assertions and closes the loop between the last two entries.
+
+`qbeta-counit-closed-form.md` says *"the counit and the Markov trace are
+genuinely distinct functionals on the substrate"* and *"the two agree precisely
+when z = 1"*. Both true, both vaguer than the situation. Measured exactly, on
+all six basis elements:
+
+    net  =  tr_M^{z=1}  −  h · (coefficient of the longest element w₀)
+
+The Ocneanu trace at z=1 sends every basis element to 1 **except** the longest,
+where `tr(T₀T₁T₀) = z(hz+1) → 1+h`; `net` sends every basis element to 1 by
+definition. **A single rank-one difference, supported on w₀.**
+
+### Three consequences
+
+1. **"They agree precisely when z=1" is about Δ's SUPPORT, not the
+   functionals.** Δ has zero w₀ coordinate, so `ε(Δ) = tr_M^{z=1}(Δ)` follows
+   structurally rather than numerically. On `T_{w₀}` the two differ by `h` at
+   **every** z, z=1 included.
+
+2. **The phase is a transport WITHIN one family**, not between two unrelated
+   functionals: `2α(z) = tr_M^{1}(Δ) − tr_M^{z}(Δ)`, symbolic in z. The
+   counit-minus-trace framing recorded above is right and understates it — the
+   endpoint is the same Ocneanu trace at the trivial loop value. That is what
+   the (axiomatised) cosine exponentiates.
+
+3. **The 2-dimensional block carries the entire z-free floor.** `tr_M^{z=1}` is
+   a trace, so it annihilates `[H,H]` and only the rank-one term survives:
+
+       net(dC) = −h·(dC)_{w₀}   and   (dC)_{w₀} = a_(2,1) = q(q²−1)/(q⁴+q²+1)
+       ⇒  net(dC) = −h·a_(2,1)                                        [exact]
+
+   Read against the block resolution, which gave `χ^(2,1)(Δ) = 0` identically:
+   **the 2-dimensional block contributes nothing to the trace-visible part of
+   the phase and everything to the trace-invisible part.** Its contribution was
+   never absent — it was in the sector no trace can see.
+
+Also pinned: the longest-coefficient functional is not cyclic, which is exactly
+why `net` fails cyclicity (step 8's 8-of-36).
+
+Convention-free: every result holds for all z, and the floor contains no Markov
+parameter. Scope-(a): derives no correction, proposes no value, wires nothing.
+
+## Lean landed alongside (sorry-free)
+
+`QOU/QBeta/PhaseBlockResolution.lean`, generic `[CommRing R]` per §7c, `lean`-
+direct exit 0 with no warnings, `#print axioms` → `[propext, Classical.choice,
+Quot.sound]` on all four declarations, 0 `sorry`. Tree is a RESTORED olean cache
+(6990 oleans / 0 traces, marker present) so **no `lake build` was run**.
+
+- `chi_two_one_delta_eq_zero` — the (2,1) character annihilates Δ, from the
+  block's dimension and generator trace alone; the character's values on the
+  three longer basis elements are left free in the statement.
+- `floor_bar_even` — division-free, bar involution carried by `u·v = 1`.
+- `floor_bar_defect` — committed **so the first is not mistaken for a `ring`
+  tautology**: off the bar locus the two sides differ by `3(u²−v²)((uv)²−1)`.
+- `floor_bar_even_units` — the `q : Rˣ` restatement.
+
+## Where the bean stands
+
+Still open. Best D candidate is 29.3× the C distance, and the bean's own
+discipline forbids hunting further corrections until one lands near the proved
+`c₂ = −1`. What this tranche adds is structure rather than a number: the phase's
+z-free part is now a closed form tied to a named block, the transport is
+identified as motion along the Markov line, and the two pieces that are ring
+identities are machine-checked.
