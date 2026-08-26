@@ -49,6 +49,7 @@ from pathlib import Path
 warnings.filterwarnings("ignore", category=UserWarning)
 sys.path.insert(0, str(Path(__file__).parent))
 
+import mpmath as mp
 import numpy as np
 import sympy as sp
 
@@ -56,6 +57,7 @@ from hecke_characters import partitions_of, dim_q, qfac
 from hecke_core import h as HA_VAL
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A, Q0_PROTON
 from q_parameter import Q as Q0
+from _precision import fmt, set_compute_dps
 from witness_base import WitnessBuilder
 
 
@@ -89,41 +91,49 @@ def count_factor_types(word):
     return counts
 
 
-def chi_in_shape(shape, word) -> complex:
-    """Compute χ_λ(W) in the λ-irrep via the seminormal matrices."""
+def chi_in_shape(shape, word):
+    """Compute χ_λ(W) in the λ-irrep via the seminormal matrices.
+
+    NO-FLOAT64 (qou-poi1). This built numpy `complex128` matrices via
+    `complex(sp.N(...))` and multiplied them with `@`, so every character came
+    back at ~1e-16 regardless of what was true -- and the word's own `d`
+    coefficients arrive as `mpmath.mpf` already (they are -h and -h/2, the
+    interface offsets), so the float64 was introduced HERE, not inherited.
+    Now the seminormal entries are evaluated at working precision and the
+    product is carried in `mpmath`. Max irrep dimension in scope is 16, so the
+    mpmath matrix product costs nothing measurable.
+    """
     sigmas, dim, _ = _cached_seminormal(shape, Q0_PROTON)
     if dim == 0:
-        return 0.0 + 0.0j
+        return mp.mpc(0)
     q_sym = sp.Symbol('q')
+    dps = mp.mp.dps
 
     sigmas_num = []
     for S in sigmas:
-        if hasattr(S, "toarray"):
-            S_arr = S.toarray()
-        else:
-            S_arr = np.asarray(S)
-        M = np.empty((dim, dim), dtype=complex)
+        S_arr = S.toarray() if hasattr(S, "toarray") else np.asarray(S)
+        M = mp.zeros(dim, dim)
         for i in range(dim):
             for j in range(dim):
                 e = S_arr[i, j]
                 if hasattr(e, "subs"):
-                    M[i, j] = complex(sp.N(e.subs(q_sym, Q0)))
+                    M[i, j] = mp.mpmathify(sp.N(e.subs(q_sym, Q0), dps))
                 else:
-                    M[i, j] = complex(e)
+                    M[i, j] = mp.mpmathify(e)
         sigmas_num.append(M)
 
-    I = np.eye(dim, dtype=complex)
-    prod = I.copy()
+    prod = mp.eye(dim)
     for c, d, g in word:
-        if g < len(sigmas_num):
-            prod = prod @ (c * sigmas_num[g] + d * I)
-        else:
-            return 0.0 + 0.0j
-    return complex(np.trace(prod))
+        if g >= len(sigmas_num):
+            return mp.mpc(0)
+        prod = prod * (sigmas_num[g] * mp.mpmathify(c)
+                       + mp.eye(dim) * mp.mpmathify(d))
+    return sum(prod[i, i] for i in range(dim))
 
 
-def closed_form_prediction(A: int, H_A: float) -> float:
-    return -(1.0 + H_A * H_A / 4.0) ** (2 * A + 1)
+def closed_form_prediction(A: int, H_A):
+    H_A = mp.mpmathify(H_A)
+    return -(1 + H_A * H_A / 4) ** (2 * A + 1)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -168,7 +178,7 @@ def count_factor_types_from_crossings(crossings) -> dict:
     return counts
 
 
-def _weighted_factor(q: float) -> float:
+def _weighted_factor(q):
     """|eigenvalue| of the colour-weighted p-n crossing, exactly.
 
     On a 1-dimensional irrep `σ ↦ ±…`, a crossing `c·σ + d·1` contributes
@@ -183,24 +193,28 @@ def _weighted_factor(q: float) -> float:
     alt magnitude is the same expression with the sign of the shift flipped.
     """
     from canonical_braid_crossings import _avg_color_delta
-    h = q - 1.0 / q
-    return (q + 1.0 / q) / 2.0 + h * float(_avg_color_delta()) / 4.0
+    q = mp.mpmathify(q)
+    h = q - 1 / q
+    # `float(_avg_color_delta())` was a downcast INSIDE an arithmetic
+    # expression -- the case AGENTS.md names as a computation, not a display.
+    return (q + 1 / q) / 2 + h * mp.mpmathify(_avg_color_delta()) / 4
 
 
-def chi_sym_closed_form(crossings, q: float) -> float:
+def chi_sym_closed_form(crossings, q):
     """χ_(n)(T_w) for the 1-dim sym irrep at substrate parameter q.
 
     Closed form: q^(n_σ - n_σ_inv) · ([2]_q / 2)^n_ud · w^n_wud, where
     `w = [2]_q/2 + hδ/4` is the colour-weighted p-n factor (`_weighted_factor`).
     """
     c = count_factor_types_from_crossings(crossings)
-    two_q_half = (q + 1.0 / q) / 2.0  # = [2]_q / 2 = (q + q⁻¹)/2
+    q = mp.mpmathify(q)
+    two_q_half = (q + 1 / q) / 2  # = [2]_q / 2 = (q + q⁻¹)/2
     return ((q ** (c["sigma"] - c["sigma_inv"]))
             * (two_q_half ** c["averaged"])
             * (_weighted_factor(q) ** c["averaged_weighted"]))
 
 
-def chi_alt_closed_form(crossings, q: float) -> float:
+def chi_alt_closed_form(crossings, q):
     """χ_(1ⁿ)(T_w) for the 1-dim alt irrep at substrate parameter q.
 
     Closed form: (−1)^#(β) · q^(n_σ_inv − n_σ) · ([2]_q / 2)^n_ud · w̄^n_wud,
@@ -208,26 +222,29 @@ def chi_alt_closed_form(crossings, q: float) -> float:
     reflected, since on the alt irrep σ ↦ −q⁻¹ (see `_weighted_factor`).
     """
     c = count_factor_types_from_crossings(crossings)
-    two_q_half = (q + 1.0 / q) / 2.0
-    w_alt = 2.0 * two_q_half - _weighted_factor(q)   # = [2]_q/2 − hδ/4
+    q = mp.mpmathify(q)
+    two_q_half = (q + 1 / q) / 2
+    w_alt = 2 * two_q_half - _weighted_factor(q)   # = [2]_q/2 − hδ/4
     total = (c["sigma"] + c["sigma_inv"]
              + c["averaged"] + c["averaged_weighted"])
-    sign = -1.0 if (total % 2 == 1) else 1.0
+    sign = mp.mpf(-1) if (total % 2 == 1) else mp.mpf(1)
     return (sign * (q ** (c["sigma_inv"] - c["sigma"]))
             * (two_q_half ** c["averaged"])
             * (w_alt ** c["averaged_weighted"]))
 
 
 def main():
-    w = WitnessBuilder("chi-sym-alt-closed-form", engine="numpy+sympy")
+    w = WitnessBuilder("chi-sym-alt-closed-form", engine="mpmath+sympy")
     w.set_description(
         "Exact closed form χ_sym(β_atom)·χ_alt(β_atom) = −(1 + H_A²/4)^(2A+1) "
         "derived from eigenvalue algebra of Hecke factors + ud-factor counting "
         "in atom_braid_word_3A."
     )
     w.set_content_block("rem:chi-sym-alt-closed-form")
-    w.add_parameter("q", float(Q0))
-    w.add_parameter("H_A", float(HA_VAL))
+    # Serialised via _precision.fmt, not float(). float(Q0) put the SUBSTRATE
+    # PARAMETER itself into the witness at 16 digits.
+    w.add_parameter("q", fmt(mp.mpmathify(Q0)))
+    w.add_parameter("H_A", fmt(mp.mpmathify(HA_VAL)))
     w.add_caveat(
         "This is a structural identity (no fitting). It explains the "
         "numerical coincidence χ_sym·χ_alt ≈ −1.08 as a function of A "
@@ -259,11 +276,11 @@ def main():
             "observed_n_ud": n_ud,
             "n_pure_sigma": n_pure_sigma,
             "n_pure_sigma_inv": n_pure_sigma_inv,
-            "chi_sym_direct": float(chi_sym_val.real),
-            "chi_alt_direct": float(chi_alt_val.real),
-            "product_direct": float(direct),
-            "product_closed_form": float(pred),
-            "rel_error": float(rel_err),
+            "chi_sym_direct": fmt(mp.re(chi_sym_val)),
+            "chi_alt_direct": fmt(mp.re(chi_alt_val)),
+            "product_direct": fmt(direct),
+            "product_closed_form": fmt(pred),
+            "rel_error": fmt(rel_err),
         })
 
         w.add_assertion(
@@ -275,26 +292,39 @@ def main():
         )
         w.add_assertion(
             f"{name}: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
-            computed=float(direct),
-            expected=float(pred),
-            tolerance=1e-3,  # seminormal matrices carry ~0.05% numerical noise
+            computed=fmt(direct),
+            expected=fmt(pred),
+            # Was 1e-3, justified as "seminormal matrices carry ~0.05%
+            # numerical noise". That was a float64 artifact of this producer's
+            # own arithmetic, not a property of the matrices. Under mpmath the
+            # discrepancy is 5.1139e-9 and is SYSTEMATIC, not noise: it agrees
+            # to six significant figures across all four atoms (5.11395455e-9,
+            # 5.11394902e-9, 5.11394779e-9, 5.11394169e-9). Something real is
+            # 5e-9 away from closing here; 1e-8 admits it without pretending
+            # it is zero, and would catch any drift in it.
+            tolerance="1e-8",
             source="direct character product vs closed form",
         )
 
     print(f"{'atom':<5} {'A':>2} {'2A+1':>5} "
           f"{'χs·χa (direct)':>16} {'closed form':>16} {'rel err':>10}")
     for r in rows:
+        # DISPLAY ONLY. The stored values are _precision.fmt strings now, so
+        # they are re-parsed and rendered with mp.nstr rather than %f -- which
+        # is the display route AGENTS.md prefers, and keeps the recorded value
+        # and the printed value from drifting apart.
         print(f"{r['atom']:<5} {r['A']:>2} {r['expected_n_ud']:>5} "
-              f"{r['product_direct']:>16.6f} {r['product_closed_form']:>16.6f} "
-              f"{r['rel_error']:>10.2e}")
+              f"{mp.nstr(mp.mpmathify(r['product_direct']), 8):>16} "
+              f"{mp.nstr(mp.mpmathify(r['product_closed_form']), 8):>16} "
+              f"{mp.nstr(mp.mpmathify(r['rel_error']), 3):>10}")
 
     w.add_data("atoms", rows)
     w.add_data("factor_eigenvalue_algebra", {
         "sym_eigenvalue": "c·q + d",
         "alt_eigenvalue": "-c/q + d",
         "per_factor_product": "d² − c² + c·d·H_A",
-        "pure_sigma_product": -1.0,
-        "pure_sigma_inv_product": -1.0,
+        "pure_sigma_product": "-1",
+        "pure_sigma_inv_product": "-1",
         "ud_product_symbolic": "-(1 + H_A²/4)",
     })
     w.add_data("closed_form", {
