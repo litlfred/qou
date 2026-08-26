@@ -160,6 +160,13 @@ PN_CONTEXT = re.compile(
 # `V == 0` branch above it. Excluding on the site's own same-flavour wording
 # is precise; widening PN_CONTEXT to demand a literal "pn" token would drop
 # real sites that only say "interface".
+# The quark-level u-d mixed crossing is a DIFFERENT BOND and keeps -h/2:
+# nothing in this corpus establishes what convention a u-d crossing carries.
+# It lives in the same function as the nucleon p-n branch (`build_atom_nf`),
+# so enclosing-function context cannot separate them -- the site's OWN line
+# can, because it says `ud -> sigma_0 mixed`.
+UD_CROSSING = re.compile(r"\bu-?d\b|\bquark\b|\bud\s*(->|→)", re.I)
+
 SAME_FLAVOUR = re.compile(r"same[-_ ]?flavou?r|\bp-p\b|\bn-n\b|\bpp\b.*\bnn\b",
                           re.I)
 
@@ -390,6 +397,10 @@ def scan_sources() -> list[dict]:
             if not PN_CONTEXT.search(window):
                 continue
             if SAME_FLAVOUR.search(window) and not re.search(r"\bp[-_]?n\b", window, re.I):
+                continue
+            # Judged on the SITE's own line, not the window: the u-d and the
+            # p-n crossings share an enclosing function.
+            if UD_CROSSING.search(lines[ln - 1]):
                 continue
             out.append({
                 "file": str(path.relative_to(ROOT)),
