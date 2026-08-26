@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T22:15:36Z
+updated_at: 2026-08-26T03:07:48Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -302,3 +302,61 @@ assignments are the whole tranche's weight". Measured on the habiro table:
 the flip moved every atom by a factor 1.2055 (-17.05 % old-normalised,
 +20.55 % new-normalised), versus 0.0141 % for a strict_averaged site.
 That is the 1210x the bean predicted, confirmed on real witnesses.
+
+
+## 🛑 CORRECTION 2026-08-26 — my "the oracles are colour-blind" claim was WRONG
+
+The progress note above says `chi_monotone_transfer.py` is COUPLED and must not
+be flipped until its four oracle witnesses are regenerated, because they are
+colour-blind. **That is false, and it was never measured — by me or by the
+comment I took it from.**
+
+I read it in `test_ctype_consumer_coverage.py`'s 2026-08-21 adjudication
+comment, which asserted the oracles "used the strict_averaged pn convention",
+and I relayed it as established fact into PR #5801's body, this bean, and three
+check-in notes without testing it. The witnesses record no convention field and
+no `scriptFile`, so the claim could not have been checked against them by
+reading — only by recomputation.
+
+Measured, recomputing each oracle under both conventions (max rel), and
+independently reproduced by me after a sibling (`qou-9ag4`) reached it first:
+
+    atom   strict_averaged   bring_color_weighted
+    D          2.625e-04           5.743e-50
+    T          5.482e-04           8.257e-50
+    3He        5.281e-04           7.487e-50
+    4He        1.883e-03           4.079e-49
+
+The oracles were **always canonical**. They reproduce exactly at the 50-dps
+working precision under colour-weighting and miss by 2.6e-4 .. 1.9e-3 under
+strict_averaged, so all four DISCRIMINATE. The self-test was therefore not
+"about to break" — it was ALREADY FAILING on main, quietly, because the
+comparison word was stale. The residual grows with A because the p-n `d`
+differs by 7.19e-05 and compounds per interface: a colour-weighting scale,
+not a precision scale.
+
+`chi_monotone_transfer.py` is flipped and green on main (sibling work,
+`qou-9ag4`); its Part F baseline entry is drained. Nothing here was blocked.
+
+### What I did about it
+
+  * Deleted the orphaned adjudication comment from the ctype test. It had
+    outlived its entry and sat immediately above the closing brace, so the
+    next reader attaches it to a surviving entry — which is how it reached me.
+    Replaced with the measurement above plus a note on why it must be measured.
+  * Fixed `atom_word_braid_letter_census_probe.py`, which was making main RED
+    on the ctype test (pre-existing, confirmed on a clean tree): a private
+    ctype vocabulary plus a family-blind `k == "averaged"` census. It counted
+    correctly only because its private classifier's FALLBACK swallowed
+    averaged_weighted; importing the canonical `classify_crossing`, which
+    returns averaged_weighted as a distinct ctype, would have silently
+    undercounted every p-n interface. Fixed both halves together; totals
+    unchanged (2H 5=2A+1/32 closures, 3He 7/128, 4He 9/512) and the witness
+    now reports the colour-blind/colour-weighted split, which is 1 weighted
+    letter per isotope — the single p-n interface.
+
+### Lesson, recorded because it is the bean's own subject matter
+
+A dated, specific, confident comment in the corpus is not a primary source.
+AGENTS.md says exactly this for `## Status` notes and for sibling beans; it
+applies to test-baseline adjudications too. Measure, then cite the script.

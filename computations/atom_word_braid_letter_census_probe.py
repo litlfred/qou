@@ -42,6 +42,7 @@ import _path_bridge  # noqa: F401,E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+from canonical_braid_crossings import classify_crossing  # noqa: E402
 from pyhecke.gram import h as h_val  # noqa: E402
 
 import mpmath as mp  # noqa: E402
@@ -57,14 +58,16 @@ set_compute_dps()
 ISOTOPES = [("2H", 1, 1), ("3He", 2, 1), ("4He", 2, 2)]
 
 
-def classify(d, h) -> str:
-    """sigma / sigma_inv are MONOMIALS (in im rho); averaged ones are not."""
-    r = mp.mpf(str(d)) / mp.mpf(str(h))
-    if abs(r) < mp.mpf("1e-9"):
-        return "sigma"
-    if abs(r + 1) < mp.mpf("1e-9"):
-        return "sigma_inv"
-    return "averaged"
+def _is_averaged_family(ctype: str) -> bool:
+    """Both members of the averaged family — colour-blind and colour-weighted.
+
+    The census question is "does this letter lie in im(rho)?", and NEITHER
+    averaged letter does, so both belong in `n_avg`. Matching the corpus
+    convention (`per_nucleon_shift_derivation`, `ocneanu_cancellation_derivation`,
+    `wenzl_a3_combiner_end_to_end`) rather than enumerating the two names, so a
+    future third member is caught too.
+    """
+    return ctype.startswith("averaged")
 
 
 def main() -> None:
@@ -72,8 +75,10 @@ def main() -> None:
     rows = []
     for name, Z, N in ISOTOPES:
         w = atom_braid_word_3A(Z, N)
-        kinds = [classify(d, h) for (_c, d, _g) in w]
-        n_avg = sum(1 for k in kinds if k == "averaged")
+        kinds = [classify_crossing(_c, d, float(h),
+                                   context=f"{name} gen {_g}")
+                 for (_c, d, _g) in w]
+        n_avg = sum(1 for k in kinds if _is_averaged_family(k))
         A = Z + N
         rows.append({
             "isotope": name, "Z": Z, "N": N, "A": A,
@@ -81,6 +86,12 @@ def main() -> None:
             "sigma": kinds.count("sigma"),
             "sigma_inv": kinds.count("sigma_inv"),
             "averaged_not_in_im_rho": n_avg,
+            # Split reported so the p-n colour weighting is VISIBLE in the
+            # witness. `atom_braid_word_3A` defaults to bring_color_weighted,
+            # so a table showing averaged_weighted == 0 would mean the word
+            # was built colour-blind — which the total alone cannot show.
+            "averaged_colour_blind": kinds.count("averaged"),
+            "averaged_colour_weighted": kinds.count("averaged_weighted"),
             "braid_generators": kinds.count("sigma") + kinds.count("sigma_inv"),
             "predicted_2A_plus_1": 2 * A + 1,
             "branch_closures_2_pow": 2 ** n_avg,
