@@ -37,7 +37,12 @@ from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lean_freshness import dirty_paths, effective_source_time  # noqa: E402
+from lean_freshness import (  # noqa: E402
+    dirty_paths,
+    olean_is_current,
+    record_source_sha,
+    sidecar_path,
+)
 
 IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)")
 
@@ -227,7 +232,10 @@ def main() -> int:
             return False
         ol = olean_of(m)
         src = mods[m]["src"]
-        if not ol.is_file() or ol.stat().st_mtime <= effective_source_time(src, dirty):
+        # conservative=True: without a hash stamp the olean must beat BOTH clocks.
+        # Rebuilding more than needed costs seconds; serving a stale olean is a
+        # wrong verdict. See lean_freshness.olean_is_current.
+        if not olean_is_current(src, ol, dirty, conservative=True):
             return False
         for d in deps[m]:
             if d in rebuilt:
@@ -251,6 +259,12 @@ def main() -> int:
             capture_output=True, text=True,
         )
         outtxt = (proc.stdout or "") + (proc.stderr or "")
+        if proc.returncode == 0:
+            # Stamp the olean with the hash of the source it was built from, so
+            # every later freshness question about this module is answered by
+            # content rather than by a clock. See lean_freshness.olean_is_current
+            # for the two ways a clock gets it wrong, both measured.
+            record_source_sha(ol, mods[m]["src"])
         if proc.returncode != 0:
             # Logs are written for FAILURES ONLY, and capped: classifying an
             # error shape needs the first errors, not a module's entire output.
@@ -268,6 +282,11 @@ def main() -> int:
                     ol.unlink()
                 except OSError:
                     pass
+            # and its hash stamp, so a leftover stamp can never outlive the olean
+            try:
+                sidecar_path(ol).unlink(missing_ok=True)
+            except OSError:
+                pass
         return m, proc.returncode, outtxt, time.time() - t
 
     # Incremental report: a row is appended the moment a module settles, so a

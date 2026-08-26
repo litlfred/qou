@@ -368,13 +368,13 @@ def _qou_imports(src: Path) -> list[str]:
 # here, and `scripts/lean_cone_build.py` used a *different* (mtime) rule.  The
 # compose this file's docstring recommends therefore deadlocked whenever you
 # built before committing.  Both now import `scripts/lean_freshness.py`, so the
-# two notions cannot drift apart again.  Bean `qou-5v24`; rationale and the
-# measured deadlock are in that module's docstring.
+# two notions cannot drift apart again.  Bean `qou-5v24`; the rationale, and BOTH
+# measured ways a timestamp answers this wrong, are in that module's docstring.
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lean_freshness import (  # noqa: E402
     dirty_paths as _dirty_paths,
-    effective_source_time as _effective_source_time,
+    olean_is_current as _olean_is_current,
 )
 
 
@@ -389,8 +389,10 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
     had moved files.) So walk the transitive QOU import cone of every registry module and
     flag any olean older than its own source.
 
-    "Older than its own source" is measured by `_effective_source_time`, not raw mtime —
-    see there for why raw mtime disables the gate on a fresh clone.
+    "Current" is `lean_freshness.olean_is_current`: the source-hash stamp the rebuilder
+    leaves when a stamp exists, and commit time (never raw mtime -- see there) when it
+    does not. The rebuilder asks the same function with a stricter fallback, so its
+    stale set contains this one and a rebuild always clears this gate.
     """
     problems: list[str] = []
     seen: set[str] = set()
@@ -408,7 +410,14 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
         if not ole.exists():
             problems.append(f"{mod}: olean MISSING")
             continue
-        if ole.stat().st_mtime < _effective_source_time(src, dirty):
+        # conservative=False: commit time as the no-stamp fallback, so this gate
+        # does not refuse to report on a fresh clone (2026-08-15: mtime flagged 15
+        # modules stale that `lake build` replayed as up to date). The rebuilder
+        # uses the stricter fallback, so its stale set CONTAINS this one and a
+        # rebuild always satisfies this gate -- that containment is what keeps
+        # qou-5v24 fixed. Where a hash stamp exists both consult it and agree
+        # exactly.
+        if not _olean_is_current(src, ole, dirty, conservative=False):
             problems.append(f"{mod}: olean STALE (source is newer)")
     return problems
 
