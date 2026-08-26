@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T09:19:22Z
-updated_at: 2026-08-26T09:19:52Z
+updated_at: 2026-08-26T14:02:07Z
 ---
 
 Found while wiring qou-3xk6. `computations/hecke/hecke_characters.py` changed, so
@@ -63,3 +63,56 @@ than green.
 
 Do NOT hand-edit sidecars to clear the staleness. Writing verdicts no checker
 produced is exactly the laundering AGENTS.md forbids.
+
+
+## FIXED 2026-08-26 — litlfred/folio-assistant#136
+
+0 -> 3814 scripts audited on qou, and 3814 is exactly
+`find computations -name '*.py' | wc -l`.
+
+## MY ROOT CAUSE ABOVE WAS WRONG — TWICE, IN OPPOSITE DIRECTIONS
+
+Read this before the section above, because that section is the error.
+
+I first said "the root does not exist". I then RETRACTED that and wrote "it
+resolves, it is empty of .py", and told the next agent that re-pointing a
+missing path would not help. Measured at runtime, the FIRST version was
+closer and the retraction was the mistake:
+
+    __filename        : /home/user/folio-assistant/content/pipeline/script-sweep.ts
+    REPO_ROOT         : /home/user/folio-assistant
+    joined SCRIPT_ROOT: /home/user/folio-assistant/folio-assistant/computations
+    existsSync        : false                              <-- DOUBLED path
+
+I had checked `qou/folio-assistant/computations` (= /home/user/folio-assistant
+/computations, exists, 0 .py) -- NOT the path the code actually builds. Same
+visible symptom, different mechanism, and I asserted the wrong one while
+writing a warning about asserting the wrong one.
+
+The lesson holds and I failed it: `existsSync` on a path YOU construct is not
+evidence about the path the CODE constructs. Print the joined path from inside
+the process. That took one 6-line probe and settled it.
+
+## The actual defect
+
+ONE CONSTANT DOING TWO JOBS. `REPO_ROOT` was the PLATFORM root, while
+SCRIPT_ROOTS entries were written CONTENT-relative. Both roots are real and
+needed: criterion sources are platform-relative (`source_file`), audited
+scripts are content-relative (`script_path`). Split into PLATFORM_ROOT and
+CONTENT_ROOT, with CONTENT_ROOT from the EXISTING `findContentRepoRoot()`
+helper -- whose docstring already names this class, "the caller reported a
+clean run over nothing". The walker was never migrated onto it.
+
+## The durable half
+
+A zero-target sweep now prints both roots, an exists/MISSING verdict per root,
+and exits 1. That is what let this hide: auditing nothing and finding nothing
+printed the same thing. A `--filter` matching nothing is distinguished and is
+not called a misconfiguration.
+
+## Still open, and NOT this bean
+
+The newly-visible backlog -- 106 critical / 2571 major / 8829 minor -- is
+content-repo work. Nothing was written (every run used --dry-run). 568 of 3814
+are under `_deprecated/` and the top-15 output cap means the full severity
+split is UNMEASURED; do not quote a breakdown off that sample.
