@@ -64,7 +64,16 @@ def baseline(rel):
 
 prod = {}
 for w, s in T["witnesses"]: prod.setdefault(s, []).append(w)
-env = dict(os.environ); env["PYTHONPATH"] = f"{COMP}:{env.get('PYTHONPATH','')}"
+# PYTHONPATH must include the producer SUBDIRECTORIES, not just computations/.
+# Producers are run from their own directory and import siblings by bare name
+# (`char_fast`, `markov_peel`), which live in computations/substrate/ and
+# computations/markov/. With only computations/ on the path they raise
+# ModuleNotFoundError and get recorded as CRASH — a verdict about the harness,
+# not the producer. AGENTS.md documents this exact misclassification.
+_SUBDIRS = [COMP] + [d for d in sorted(COMP.iterdir())
+                     if d.is_dir() and not d.name.startswith((".", "_"))]
+env = dict(os.environ)
+env["PYTHONPATH"] = ":".join(str(d) for d in _SUBDIRS) + ":" + env.get("PYTHONPATH", "")
 BUDGET = int(sys.argv[1]) if len(sys.argv) > 1 else 240
 
 def run_one(stem, ws):

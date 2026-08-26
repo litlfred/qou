@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:41:39Z
+updated_at: 2026-08-26T03:47:10Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -667,3 +667,47 @@ already records twice.
 that touches `computations/`. That is the hook working as designed, not a
 defect and not a sweep escape. Revert it; do not commit it; do not read it as
 evidence of anything about the sweep.
+
+
+---
+
+## The CRASH count over-reports too — narrow PYTHONPATH (2026-08-26)
+
+Same shape as the MOVED mask gaps: the instrument blames the corpus for its
+own limitation.
+
+Two of seven CRASH verdicts were `ModuleNotFoundError` on **in-repo** modules —
+`char_fast` and `markov_peel`, which exist at `computations/substrate/` and
+`computations/markov/`. The runner put only `computations/` on `PYTHONPATH`,
+but producers run from their own directory and import siblings by bare name.
+Re-run with the subdirectories added:
+
+  * `term5_aK_audit` — exit **124**. Not a crash at all; it is SLOW, and
+    belongs in the timeout/budget class.
+  * `rho_k_markov_multiplicativity_probe` — gets past the import to
+    `FileNotFoundError` on `_deprecated/atomic-tr-m-mpfr-50dps.witness.json`.
+    A missing-input problem, not an import failure. Whether that is a producer
+    defect or a worktree-checkout artifact is **not established** and should
+    not be assumed either way.
+
+So two of seven were verdicts about the harness. AGENTS.md documents this
+precise misclassification ("2 needed `computations/` on `PYTHONPATH`"; "1
+passed only in isolation, so the runner carried order-dependence") — the
+warning was there and the runner still shipped with it.
+
+**Consequence: the CRASH count from the current run is not trustworthy and
+must not be quoted.** The sweep in flight was launched before this fix, so its
+CRASH verdicts still carry the narrow path. They need re-running before any
+crash figure is published. The MOVED/IDENTICAL verdicts are unaffected —
+those producers ran to completion, so the path was sufficient for them by
+construction.
+
+Fixed: `PYTHONPATH` now includes every non-dotfile, non-underscore
+subdirectory of `computations/`.
+
+**Fifth instrument defect, same direction every time.** engineVersion,
+`*_elapsed_sec`, `elapsed_*_sec`, a substring screen, and now a narrow
+PYTHONPATH — every one made the corpus look worse than it is. That
+consistency is itself worth stating: **this instrument's errors are
+false-positive errors**, so its counts are upper bounds, and a verdict is only
+usable with its evidence attached.
