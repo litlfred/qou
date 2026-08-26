@@ -517,6 +517,19 @@ def main() -> int:
         "no production wiring; the criterion's physical meaning (if any) "
         "is the open question this probe feeds to the Delta_lambda work.",
     ])
+    # GUARD: refuse a vacuous pass. BOTH assertions below compare quantities
+    # that are 0 exactly when nothing was swept -- len(rows) == n_total and
+    # n_parity_ok == n_total are each trivially true at 0 == 0. n_total counts
+    # AME entries with A >= 1, so zero means the nuclide table did not load,
+    # not that the chart was swept and found empty.
+    if n_total == 0:
+        raise SystemExit(
+            f"REFUSING to emit a witness: 0 of {len(entries)} AME entries were "
+            f"swept (n_total == 0), so both chart_fully_swept_no_overflow and "
+            f"alt_parity_closed_form would pass vacuously at 0 == 0. The "
+            f"nuclide table is empty or failed to load."
+        )
+
     w.add_data("permitted_ZN_spectral", permitted_P)
     w.add_data("rows", rows)
     w.add_assertion(name="chart_fully_swept_no_overflow",
