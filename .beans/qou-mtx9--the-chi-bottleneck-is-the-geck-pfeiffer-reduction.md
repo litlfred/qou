@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:11:37Z
-updated_at: 2026-08-26T07:45:16Z
+updated_at: 2026-08-26T20:50:29Z
 ---
 
 ## Where the time actually goes
@@ -229,3 +229,63 @@ The cliff sits somewhere between 47 and 56 letters at n = 12 on this
 word family, and its position is a property of the word's distance from
 a minimal-length representative, not of length alone (see the correction
 above). Measure per producer; do not inherit this boundary.
+
+
+## CORRECTION — "triage on WORD LENGTH" is WRONG. Length predicts nothing.
+
+The recommendation this bean closed with, and which went into commit
+`17a3a38ee8` and the PR body verbatim, was:
+
+> the triage question is **word length**, not shape count
+
+**That is refuted.** Measured at n = 12, same seven two-row shapes, same
+batched call, each in its own subprocess with a hard 300 s kill:
+
+    word            len        GP    seminormal
+    prefix47         47      0.07s       0.24s
+    real_atom47      47      0.07s       0.23s
+    prefix56         56      0.29s       0.22s
+    real_swap_p      56     >300s        0.25s   <-- same length, >1000x
+
+`prefix56` and `real_swap_p` are **both 56 letters**, both at n = 12,
+both through `chi_lambdas_via_gp` with the identical shape list. GP does
+one in 0.29 s and cannot do the other in 300 s. A length-based rule
+cannot separate them, because they differ only in structure: `prefix56`
+is a prefix of the atom word repeated, `real_swap_p` is
+`w_atom + block_swap_braid`.
+
+So the useful statements are:
+
+1. **There is no cheap static triage.** You cannot read a producer's word
+   length — or its shape count, or its n — and predict which engine it
+   needs. The only reliable test is running it.
+2. **Seminormal is the safe default**, precisely because it has no cliff:
+   0.22-0.25 s across every case above, and 0.07 s at 20 letters rising
+   to 0.32 s at 56 in a separate prefix sweep. Flat.
+3. **GP is the better choice only where it is already known fast.** It
+   beats seminormal ~3x on short words (0.07 s vs 0.24 s), so it is worth
+   keeping where a producer is measured and comfortably clear of the
+   blowup. It is never the safe *default* for an unmeasured producer.
+
+This supersedes the length-based rule for the eight unconverted
+loop-callers. Convert on measurement, or convert to seminormal blind —
+but do not sort them by inspecting their words.
+
+### Why the earlier claim looked supported
+
+The first evidence was `block_swap_binding`'s own rows: `id` (47) fast,
+`swap_p` (56) hanging. Length was the visible difference and I took it as
+the cause without varying it independently. The prefix sweep — same
+lengths, structure held constant — is what breaks the correlation, and it
+was only run because I had promised "measure, don't inherit" and then
+written a rule that inherited.
+
+### Measurement caveat on the absolute numbers
+
+An earlier probe of mine was still running (1.9 h; its `signal.alarm`
+cannot interrupt `chi_lambdas_via_gp`, which releases the GIL and sits in
+Rust) and was stealing CPU throughout the first sweep. The same call
+measured **0.12 s** with it alive and **0.07 s** after it was killed — a
+~2x inflation on every GP timing in the prefix table. The qualitative
+result is far outside that (0.29 s vs >300 s), but do not treat the
+prefix numbers as a calibration curve.
