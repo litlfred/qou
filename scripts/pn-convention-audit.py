@@ -99,6 +99,10 @@ CANON_MARKS = (
     "pn_interface_factor",
     "pn_offset",
     "delta_m_over_M",
+    # A dual detector that computes the weighted offset in order to ACCEPT
+    # both is canonical machinery, not a blind site.
+    "_D_PN_WEIGHTED",
+    "_pn_weighted_d",
 )
 # A COMPARISON site is one that computes BOTH conventions on purpose --
 # never drain it. The test is that both NAMES appear, not that the file
@@ -130,7 +134,12 @@ DECLARED_BLIND_RE = re.compile(
 # colour-weighted `averaged_weighted`".
 BLIND_NAMES = ("strict_averaged", "StrictAveraged", '"averaged"', "'averaged'")
 CANON_NAMES = ("bring_color_weighted", "BringColorWeighted",
-               "averaged_weighted", "d_for_ctype")
+               "averaged_weighted", "d_for_ctype",
+               # A file that ALREADY accepts both offsets is a dual detector,
+               # not a blind site: atom_braid_active_partitions.py matches
+               # `d == -H_HALF or d == _D_PN_WEIGHTED` on purpose.
+               "_D_PN_WEIGHTED", "_pn_weighted_d", "pn_interface_offset",
+               "colour-blind z - h/2 was")
 
 # The p-n bond has to actually be what the line is about.
 # `\b` treats `_` as a word character, so `\bpn\b` does NOT match `V_pn_exact`,
