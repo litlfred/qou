@@ -1,11 +1,11 @@
 ---
 # qou-cq5g
 title: spectral_sequence_collapses_to_centre proves a class-field projection, not the collapse
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T22:52:32Z
+updated_at: 2026-08-26T03:07:38Z
 ---
 
 `QOU.WedderburnMass.spectral_sequence_collapses_to_centre`
@@ -87,3 +87,44 @@ this is no longer routine hygiene. A rename touching `spectral-sequence-collapse
 (`lean.ref`), `definition-index.md`, and a docstring cross-reference in
 `phi-q-categorical-truncation.lean` is a 3-source-file change with a 2.5-month
 history behind it, so it is worth the owner's eye rather than a silent drain.
+
+
+## DONE (2026-08-26) — disposition 1 taken, with the block-level question left open
+
+Owner picked options 1+2+3. This is 3.
+
+**Renamed** `QOU.WedderburnMass.spectral_sequence_collapses_to_centre` ->
+`centralIdempotent_idem`, the honest name for `forall i, e i * e i = e i`. The
+`[WhiteheadHH R A]` instance is KEPT in the signature — unused, deliberately, so
+the rename is behaviour-preserving for any call site that supplies it, and so
+the docstring can point at the fact that it is unused as the evidence.
+
+**Docstring rewritten** to say plainly what the theorem does not establish, and
+to carry the twice-found history so a third agent does not have to rediscover it.
+
+**A `-- GAP:` block added** stating why the collapse cannot honestly be written
+in Lean *yet*, with both reasons: (1) there is no defined filtration to collapse
+— all three `J^bullet` readings are excluded; (2) Mathlib has no
+Hochschild-cohomology framework, so `E_infinity` has no type. Ends with "Do not
+close this by renaming a different theorem back", which is precisely how it was
+closed the first time. Carries `-- Ref: [cartan1956]`.
+
+**Three consumers updated:** the `.ts` `lean.ref`, the docstring cross-reference
+in `phi-q-categorical-truncation.lean`, and the row in `definition-index.md`. The
+only surviving occurrence of the old name is inside the new history note, which
+quotes it deliberately.
+
+**`authorNotes` added to the `.ts`** (schema-checked: `AuthorNote` at
+`folio-assistant/schemas/types.ts:487`, `BlockBase.authorNotes` at :686) stating
+that the Lean does not prove the block's `.md` statement.
+
+**STILL OPEN, and deliberately not decided here:** whether
+`prop:spectral-sequence-collapse` should remain a `proposition` at all. Its `.md`
+asserts a collapse its Lean does not prove. Demoting to `conjecture` would be
+honest and would propagate under §3b to every consumer — a much larger change
+than a rename, and an author call rather than an agent one. Recorded in the
+authorNote so the block carries its own question.
+
+Note the underlying mathematics is NOT in doubt for the finite Hecke algebra —
+semisimple at generic q, so Whitehead gives HH^k = 0 for k >= 1. Only the Lean
+statement is missing, and (1) and (2) above block writing one.
