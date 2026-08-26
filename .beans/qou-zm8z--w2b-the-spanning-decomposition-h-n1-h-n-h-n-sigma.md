@@ -1,11 +1,11 @@
 ---
 # qou-zm8z
 title: 'W2b: the spanning decomposition H_{n+1} = H_n + H_n sigma_n H_n as a content-bearing 3b class (W2''s undelivered third deliverable)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T14:05:48Z
-updated_at: 2026-08-26T14:49:24Z
+updated_at: 2026-08-26T15:10:28Z
 ---
 
 ## Built 2026-08-26 — PR #5827
