@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-probe_d_barparity_binding.py — does the deuteron's 2.6e-4 bar-conjugate-law
+probe_d_barparity_binding.py — does the deuteron's bar-conjugate-law
 breaking KILL any already-refuted Δ_λ ansatz? (session 2026-07-04 follow-up to
 probe_d_delta_lambda_terms.py; owner question "does the bar-symmetric-subspace
 observation actually kill any of the already-refuted Δ_λ ansätze — a quick
@@ -28,10 +28,37 @@ Decompose the coefficient vector a_λ under the partition involution
     a^even_λ = (a_λ + a_{λ'})/2 ,   a^odd_λ = (a_λ − a_{λ'})/2 .
 A bar-EVEN Δ (Δ_λ = Δ_{λ'}) couples only to a^even; a bar-ODD Δ only to a^odd.
 
+## Frame correction 2026-08-26 (bean `qou-1oxx`) — the 2.6e-4 was MIXED
+
+This probe used to read the colour-BLIND `at-qinv` witness while its `at-q0`
+side is colour-WEIGHTED, so the "bar-conjugate law" residual compared
+`f_canon(q0)` against `f_strict(1/q0)`: two different functions, not one
+function at two points. Both sides are now canonical (R3). Measured, all four
+pairings of the deuteron:
+
+    blind(q0)  vs blind(1/q0)   = 1.48e-49   <- EXACT at 50 dps
+    canon(q0)  vs canon(1/q0)   = 5.86e-04   <- what this probe now reports
+    canon(q0)  vs blind(1/q0)   = 2.63e-04   <- the historical 2.6e-4, MIXED
+    blind(q0)  vs canon(1/q0)   = 3.23e-04
+
+The first line is the finding. The colour-blind form IS the bar-symmetriser
+(`f_strict = (f_pp + bar(f_pp))/2`) and the bar-conjugate law holds in it
+**exactly** — 1.5e-49 is zero at this precision. So the breaking is the colour
+weighting and nothing else, and the honest size of it, measured in a
+consistent frame, is 5.86e-04 rather than 2.6e-04. Note this is a residual
+accumulated over a 23-factor word and normalised by `|chi| + 1`; do NOT equate
+it with the interface function's own bar defect
+`bar(f) - f = (q-1)^5 (q+1)^3 (q^2+1) / (12 q^5) = 1.67e-05`, which is a
+different quantity.
+
+**The VERDICT below is unaffected**, and that is not luck: it rests on
+`sum_lambda a^odd_lambda = 0` holding by antisymmetry, which is exact and
+independent of the frame or of any numerical chi value.
+
 ## The result (verified)
 
 - ‖a^odd‖₂ ≈ 0.163 (≈70% of ‖a‖) — LARGE, but this is the generic λ↔λ'
-  asymmetry of characters at fixed q, NOT the 2.6e-4 colour effect.
+  asymmetry of characters at fixed q, NOT the colour effect.
 - Σ_λ a^odd_λ = 0 EXACTLY (antisymmetric ⇒ telescopes). Therefore the binding
   SCALAR Σ_λ a_λ = tr_M is a PURELY BAR-EVEN functional.
 
@@ -39,7 +66,7 @@ Consequence: a bar-symmetric Δ_λ (uniform δ = (B_AME/m_e)/tr_M = 11.21, or an
 dim/hook-based ansatz — all bar-even) satisfies the deuteron binding with ZERO
 obstruction from bar-symmetry.
 
-VERDICT: the hypothesis is FALSE as a scope-(b) claim. The 2.6e-4 is a
+VERDICT: the hypothesis is FALSE as a scope-(b) claim. The breaking is a
 q↔q⁻¹ (Im 𝔙, decay-sector) property of the character data; the binding
 functional the Δ_λ must satisfy is bar-even (Re 𝔙, binding sector). Bridging
 the two with no proved invariant is the category error the #3315 guard names.
@@ -96,7 +123,19 @@ def _l2(vals):
 def main() -> int:
     bound, bd = _load("chi-deuteron-h6-at-q0-50dps.witness.json")
     free, _ = _load("chi-deuteron-free-h6-at-q0-50dps.witness.json")
-    qinv, _ = _load("chi-deuteron-h6-at-qinv-50dps.witness.json")
+    # MATCHED FRAME (bean qou-1oxx, owner decision 2026-08-26 option 1). This
+    # read the colour-BLIND `chi-deuteron-h6-at-qinv-50dps` while `bound` above
+    # is colour-WEIGHTED, so the "bar-conjugate law" residual below was
+    # comparing f_canon(q0) against f_strict(1/q0) -- two DIFFERENT functions,
+    # not one function at two points. Now both sides carry the canonical p-n
+    # convention (R3).
+    qinv, _ = _load(
+        "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json")
+    # Colour-BLIND reference pair, kept because it is the actual finding: the
+    # blind form IS the bar-symmetriser, and measured, the bar-conjugate law
+    # holds in it EXACTLY -- 1.5e-49 at 50 dps, i.e. zero. So every nonzero
+    # residual reported here is the colour weighting, and nothing else.
+    qinv_blind, _ = _load("chi-deuteron-h6-at-qinv-50dps.witness.json")
 
     m_e = mp.mpf(str(M_E_MEV))
     B_AME = mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))
@@ -112,14 +151,18 @@ def main() -> int:
     # bar-conjugate-law residual (deuteron atom word L=23, odd ⇒ sign −1)
     L = 23
     sign = (-1) ** (L % 2)
-    barres = []
-    for p in bound:
-        cj = conjugate(p)
-        chi_qi = mp.mpf(str(qinv[p]["chi_lambda"]))
-        if cj in bound:
-            m_ = mp.mpf(str(bound[cj]["chi_lambda"]))
-            barres.append(abs(chi_qi - sign * m_) / (abs(m_) + 1))
-    barconj_max = max(barres)
+    def _barconj(qi_tab):
+        r = []
+        for p in bound:
+            cj = conjugate(p)
+            if cj in bound:
+                m_ = mp.mpf(str(bound[cj]["chi_lambda"]))
+                r.append(abs(mp.mpf(str(qi_tab[p]["chi_lambda"]))
+                             - sign * m_) / (abs(m_) + 1))
+        return max(r)
+
+    barconj_max = _barconj(qinv)                 # canonical vs canonical
+    barconj_mismatched = _barconj(qinv_blind)    # the historical mixed pairing
 
     # bar-parity split of a under λ ↔ λ'
     even = {p: (a[p] + a[conjugate(p)]) / 2 for p in a}
@@ -130,21 +173,30 @@ def main() -> int:
     uniform_delta = (B_AME / m_e) / tr_M
 
     print("=" * 90)
-    print("DEUTERON Δ_λ BAR-PARITY OF THE BINDING CONSTRAINT — does 2.6e-4 kill any ansatz?")
+    print("DEUTERON Δ_λ BAR-PARITY OF THE BINDING CONSTRAINT — does the "
+          "bar-conjugate breaking kill any ansatz?")
     print("=" * 90)
-    print(f"  bar-conjugate law max rel-resid (L={L}, sign {sign}) = {float(barconj_max):.3e}")
+    print(f"  bar-conjugate law max rel-resid (L={L}, sign {sign}) = "
+          f"{float(barconj_max):.3e}   [canonical p-n convention, BOTH sides]")
+    print(f"    for reference, the pre-qou-1oxx MIXED pairing "
+          f"f_canon(q0) vs f_strict(1/q0) = {float(barconj_mismatched):.3e}")
+    print(f"    and the colour-BLIND pair is EXACT (~1e-49): the blind form is "
+          f"the bar-symmetriser,")
+    print(f"    so the residual above is the colour weighting and nothing else.")
     print(f"  a_λ = y_λ·χ^λ(β_D);   Σ a_λ = tr_M = {mp.nstr(tr_M, 10)}")
     print(f"  ‖a‖₂            = {mp.nstr(_l2(a.values()), 8)}")
     print(f"  ‖a^even‖₂       = {mp.nstr(_l2(even.values()), 8)}")
     print(f"  ‖a^odd‖₂        = {mp.nstr(_l2(odd.values()), 8)}   "
-          f"({float(odd_frac):.2%} of ‖a‖ — large but GENERIC, not the 2.6e-4)")
+          f"({float(odd_frac):.2%} of ‖a‖ — large but GENERIC, not the "
+          f"colour effect)")
     print(f"  Σ a^even_λ      = {mp.nstr(even_sum, 10)}   (= tr_M ✓)")
     print(f"  Σ a^odd_λ       = {float(odd_sum):.2e}   (ZERO by antisymmetry ⇒ "
           f"binding scalar is BAR-EVEN)")
     print(f"  uniform (bar-even) Δ_λ = δ = {mp.nstr(uniform_delta, 10)}  "
           f"satisfies the binding with zero bar-symmetry obstruction")
     print()
-    print("  VERDICT: the 2.6e-4 bar-conjugate breaking is a q↔q⁻¹ (decay-sector)")
+    print(f"  VERDICT: the {float(barconj_max):.3e} bar-conjugate breaking "
+          f"is a q↔q⁻¹ (decay-sector)")
     print("  property; the binding functional is bar-EVEN. No scope-(b) structural")
     print("  exclusion of bar-symmetric Δ_λ ansätze exists — refutations stay scope-(a).")
 
@@ -152,12 +204,12 @@ def main() -> int:
           .set_description(
               "Bar-parity decomposition of the deuteron binding coefficient "
               "vector a_λ = y_λ·χ^λ(β_D) under the partition involution λ↔λ'. "
-              "Tests whether the 2.6e-4 bar-conjugate-law breaking structurally "
+              "Tests whether the bar-conjugate-law breaking structurally "
               "(scope-b) excludes bar-symmetric Δ_λ ansätze. Finding: the "
               "bar-odd projection sums to exactly 0, so the A=2 binding scalar "
               "Σ a_λ = tr_M is a purely bar-EVEN functional; a bar-symmetric "
               "Δ_λ (uniform δ, dim/hook ansätze) satisfies binding with zero "
-              "obstruction. The 2.6e-4 is a q↔q⁻¹ decay-sector effect, not a "
+              "obstruction. The breaking is a q↔q⁻¹ decay-sector effect, not a "
               "λ↔λ' binding-sector constraint. No scope-(b) exclusion exists; "
               "the six refuted ansätze stay scope-(a) numerical. Audit-only, "
               "not a closure ansatz (Δ_λ gate).")
@@ -165,24 +217,33 @@ def main() -> int:
               "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md")
           .add_parameter("compute_dps", DPS)
           .add_parameter("beta_D_word_length", L)
-          .add_data("bar_conjugate_max_rel_resid", float(barconj_max))
+          .add_data("bar_conjugate_max_rel_resid",
+                    mp.nstr(barconj_max, 20))
+          .add_data("bar_conjugate_max_rel_resid_mixed_frame_historical",
+                    mp.nstr(barconj_mismatched, 20))
+          .add_data("pn_convention_both_sides", "bring_color_weighted")
           .add_data("a_l2_norm", mp.nstr(_l2(a.values()), 20))
           .add_data("a_even_l2_norm", mp.nstr(_l2(even.values()), 20))
           .add_data("a_odd_l2_norm", mp.nstr(_l2(odd.values()), 20))
-          .add_data("a_odd_fraction_of_norm", float(odd_frac))
+          .add_data("a_odd_fraction_of_norm", mp.nstr(odd_frac, 20))
           .add_data("sum_a_even", mp.nstr(even_sum, 20))
           .add_data("sum_a_odd", mp.nstr(odd_sum, 6))
           .add_data("tr_M", mp.nstr(tr_M, 20))
           .add_data("uniform_delta_magnitude", mp.nstr(uniform_delta, 20)))
     wb.add_assertion(
         "binding_scalar_is_bar_even",
-        computed=float(abs(odd_sum)), expected=0.0, tolerance=1e-9,
+        # Strings, not floats: the drained convention (qou-t0rf) keeps the
+        # value out of float64. |Sum a^odd| is ~1e-72 here, which float()
+        # survives -- but the ratchet is about the FIELD, not the magnitude.
+        computed=mp.nstr(abs(odd_sum), 20), expected="0",
+        tolerance="1e-9",
         source="Σ_λ a^odd_λ = 0 (bar-odd projection of the binding coefficient "
                "vector sums to zero) ⇒ the A=2 binding scalar Σ a_λ = tr_M is "
                "bar-even ⇒ bar-symmetric Δ_λ ansätze are NOT structurally excluded")
     wb.add_assertion(
         "even_projection_recovers_trM",
-        computed=float(abs(even_sum - tr_M)), expected=0.0, tolerance=1e-9,
+        computed=mp.nstr(abs(even_sum - tr_M), 20), expected="0",
+        tolerance="1e-9",
         source="Σ_λ a^even_λ = tr_M (the full binding scalar lives in the "
                "bar-even subspace)")
     wb.save()

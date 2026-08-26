@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-08-26T15:00:24Z
+updated_at: 2026-08-26T15:10:28Z
 parent: qou-utb3
 ---
 
@@ -110,3 +110,20 @@ Not done here: that is a signature change to classes predating this work, which
 JonesBasicConstruction also binds. Left to the author.
 
 Guard rc=0 on 77 entries (74 -> 77).
+
+
+## W3 first half MERGED — PR #5827, 2026-08-26 (rebase, sha 09e2be2b50)
+
+Landed: the bridge (4 of 7 hypotheses derived), spanning class + its H2-H3
+instance, rank-bounded presentation + H2A/H3A instances, and all three CE/Markov
+class FIELDS proved concretely.
+
+**NOT completed.** cyclic_two_g_of_tower stays CONDITIONAL: HeckeConditionalExpectation
+and HeckeMarkovExpectation have their fields proved but no instances, because both
+still bind the UNBOUNDED HeckeBraidedPresentation. Re-pointing them at
+HeckeBraidedPresentationOfRank is the two-line change that would make both
+declarable and make cyclic_two_g_of_tower unconditionally instantiable at this rung.
+Author's call — it is a signature change to classes predating this work that
+JonesBasicConstruction also binds.
+
+And this is ONE RUNG. Nothing here speaks to general n; WenzlTowerStep untouched.

@@ -138,7 +138,39 @@ PRODUCER_CONVENTION: dict[str, str] = {
     # left to `chi_convention_from_values_audit`, which measures rather than
     # asserts.
     "chi_at_q0_via_hoefsmit_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
-    "chi_at_q_inv_via_native_mpfr.py": AVERAGED,
+    # Same word-dependence as the Hoefsmit producer above, for the same
+    # reason, plus a second axis: as of bean qou-1oxx this producer emits BOTH
+    # frames on every run -- `chi-{atom}-h{n}-at-qinv-50dps` (colour-blind, the
+    # bar-symmetriser) and `...-colour-weighted` (canonical, R3) -- so a single
+    # constant cannot express it either. Asserting AVERAGED here flagged all
+    # three new colour-weighted witnesses as CRITICAL mismatches against a
+    # label the producer had DERIVED by counting weighted crossings in the
+    # word. Both are accepted.
+    #
+    # 🛑 The deferral this MIRRORS does not actually cover the qinv family, and
+    # saying otherwise would be a coverage claim with nothing behind it. For
+    # the Hoefsmit q0 producer above, "both accepted" is safe because
+    # `chi_convention_from_values_audit` re-measures and would catch a wrong
+    # label. That audit hardcodes `chi-{atom}-h{n}-at-q0-50dps` (its main(),
+    # ~line 226) and never opens an `-at-qinv-` witness, weighted or blind. So
+    # for THIS producer the acceptance is currently unbacked: nothing
+    # re-measures the qinv labels.
+    #
+    # What stands in for it meanwhile: the label is DERIVED from the word by
+    # counting crossings whose d matches -h_0*(1/2 - delta/4), not asserted and
+    # not inferred from the filename, and the producer records the count in
+    # `n_colour_weighted_crossings` so a reader can check it against the atom.
+    # That is strictly better than the regex-inferred label it replaced, but it
+    # is the producer vouching for itself, which is not an independent check.
+    #
+    # Extending the values audit to the qinv family is a small
+    # parameterisation -- it already builds the word and runs the kernel twice,
+    # so it needs the target q and the shifts rebuilt there -- but it costs two
+    # more H_12 kernel runs per atom (~22 min for helium-4 alone). Bean
+    # qou-1oxx.
+    # The `-colour-weighted` suffix is also why COMPUTATION_PATTERNS does not
+    # catch these: its qinv regex is `$`-anchored on `-at-qinv-50dps`.
+    "chi_at_q_inv_via_native_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
     # symbolic + numeric catalogue (same full-canonical-word as Hoefsmit):
     # value-confirmed averaged — deuteron symbolic χ^(6) @q0 = 1.5598
     # matches the averaged numerical cache (1.5599), NOT sign-only (11.02).
@@ -257,7 +289,14 @@ def classify(path: Path) -> dict:
         "path": path.name,
         "computation": comp,
         "declared": declared,
-        "expected": expected,
+        # SORTED when it is a set. A bare `set` reprs in iteration order, which
+        # is not stable across runs, so this field churned the witness on every
+        # run with no change of meaning -- one diff line per multi-convention
+        # producer, purely from hash ordering. Two producers now carry sets
+        # (Hoefsmit q0, and the qinv driver as of bean qou-1oxx), so the churn
+        # was about to double.
+        "expected": (sorted(expected) if isinstance(expected, (set, frozenset))
+                     else expected),
         "expected_basis": basis,
         "producer": _producer_field(w),
         "status": status,
