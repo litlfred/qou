@@ -120,18 +120,30 @@ try:
             r["timeout_count"] = r.get("timeout_count", 0) + 1
             if r["timeout_count"] >= 2:
                 r["verdict"] = "BUDGET_EXCEEDED"
+    # carry the count forward: run_one returns a FRESH record with no
+    # timeout_count, so without this the count resets to 0 on every retry and
+    # BUDGET_EXCEEDED is never reached
+    prior_timeouts = {r["producer"]: r.get("timeout_count", 0)
+                      for r in _p if r.get("verdict") in ("TIMEOUT", "BUDGET_EXCEEDED")}
     prior = [r for r in _p
              if r.get("verdict") not in ("TIMEOUT", None)]
     done = {r["producer"] for r in prior}
     print(f"RESUME: {len(prior)} prior verdicts kept, {len(_p)-len(prior)} timeouts retried",
           flush=True)
 except Exception:
-    pass
+    prior_timeouts = {}
+if "prior_timeouts" not in dir():
+    prior_timeouts = {}
 
 results = prior + [st] if st["producer"] not in done else list(prior)
 todo = [(s,w) for s,w in sorted(prod.items()) if s != SELFTEST and s not in done]
 for i,(stem,ws) in enumerate(todo,1):
-    r = run_one(stem, ws); results.append(r)
+    r = run_one(stem, ws)
+    if r.get("verdict") == "TIMEOUT":
+        r["timeout_count"] = prior_timeouts.get(stem, 0) + 1
+        if r["timeout_count"] >= 2:
+            r["verdict"] = "BUDGET_EXCEEDED"
+    results.append(r)
     print(f"[{i}/{len(todo)}] {stem:<48s} {r['verdict']:<14s} {r['sec']:6.1f}s moved={len(r.get('moved',[]))}",flush=True)
     json.dump({"sha":SHA,"results":results},open("/tmp/residue_results3.json","w"),indent=1)
 restore()
