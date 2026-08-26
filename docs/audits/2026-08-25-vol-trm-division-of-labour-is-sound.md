@@ -2104,3 +2104,93 @@ here speaks to $^3$H, $^4$He or beyond — and a single point could not have
 distinguished a derivation from a coincidence even had it hit. Extending it
 needs the $n = 9$ and $n = 12$ branching, which is the concrete next measurement
 if this line is pursued.
+
+## Addendum 22 — the cut entropy is CONSTANT in A: scope-(b), and Lean-proved (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/cut_entropy_is_A_independent_probe.py`](../../computations/meson/cut_entropy_is_A_independent_probe.py)
+(8 assertions, 4 controls). Lean:
+[`QOU/MassTheory/MarkovMarginalConstant.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/MarkovMarginalConstant.lean)
+(6 declarations, sorry-free, `lean`-direct exit 0). Extension requested by the
+author. **The result retires the line.**
+
+### Measured
+
+One nucleon against the rest, cut $H_3 \otimes H_{3(A-1)} \subset H_{3A}$,
+Markov/Plancherel weighting:
+
+| iso | A | n | $S_{\rm vN}$ | $E_0 S_{\rm vN}$ | $B_{\rm AME}$ | ratio |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 6 | 1.0359164 | 4.33633 | 2.22457 | 1.9493× |
+| ³H | 3 | 9 | 1.0359164 | 4.33633 | 8.48180 | 0.5113× |
+| ³He | 3 | 9 | 1.0359164 | 4.33633 | 7.71804 | 0.5618× |
+| ⁴He | 4 | 12 | 1.0359164 | 4.33633 | 28.29566 | 0.1533× |
+| ⁶Li | 6 | 18 | 1.0359164 | 4.33633 | 31.99399 | 0.1355× |
+| ⁷Li | 7 | 21 | 1.0359164 | 4.33633 | 39.24508 | 0.1105× |
+
+$S_{\rm vN}$ is **the same number at every A**, to better than $10^{-50}$ out to
+$n = 24$. $B_{\rm AME}$ is extensive and rises $17.6\times$. **A constant cannot
+track an extensive quantity**, the ratio drifts by $17.6\times$, and Addendum
+21's near-2 at the deuteron was a coincidence of its being the smallest binding.
+
+### Why — a structural argument, not a fit
+
+The measured marginal is exactly $A_{(3)} = [4]_q/[2]_q^3$ and $A_{(2,1)} =
+[2]_q/[2]_q^3$, which are $y_\mu$ at **$n = 3$**. The one-nucleon marginal of
+the $n$-strand Markov measure **is** the three-strand Markov measure, for every
+$n$ — which is the Markov property itself. `prop:markov-trace-frobenius-selection`
+defines a Markov trace as *"a **compatible** family of linear functionals"*, and
+compatibility says precisely that restricting $\tau_n$ to $H_k$ gives $\tau_k$.
+Any functional of an $n$-independent marginal is $n$-independent.
+
+**This is scope (b)** — a structural exclusion with a named invariant, not the
+usual scope-(a) negative. The invariant is Markov compatibility: definitional,
+not fitted. It forbids *any* closure in which a **fixed-width** cut entropy of
+the Markov measure carries an extensive quantity. It does **not** exclude
+entanglement cost as an ingredient of binding, and a cut whose width **grows**
+with $A$ is untouched by the argument.
+
+### Lean
+
+`MarkovMarginalConstant.lean` proves the invariant rather than asserting it. The
+content is that a **one-step** hypothesis forces an **any-depth** conclusion:
+
+- `margDown_eq_of_step` — `∀ n d, margDown restrict w n d = w n`, by induction
+  on depth. The hypothesis constrains one step; the conclusion is about all.
+- `marginal_functional_const` — hence any `F` of the marginal is
+  depth-independent (the entropy is a special case; the proof does not care).
+- `not_forall_eq_of_const_of_two_values` — a constant cannot agree pointwise
+  with a target taking two values. Stated as a refutation of agreement rather
+  than `∃ c, f c ≠ g c`, so the proof is constructive.
+- `marginal_functional_ne_two_valued` — the exclusion assembled.
+- **Non-vacuity, both guards** (AGENTS.md §3b-tax): `step_satisfiable` exhibits
+  an inhabitant, and `margDown_ne_without_step` shows the hypothesis is
+  **load-bearing** — drop it and the conclusion is false, so the main theorem is
+  not a tautology about `margDown`.
+
+Verification: `lean`-direct **exit 0**; `#print axioms` on all six — five
+*"does not depend on any axioms"*, one on `propext` alone. **No `sorryAx`.**
+No `ℝ`, no typeclass, and **no imports at all** (AGENTS.md §7c: the argument is
+pure rewriting). `autoImplicit` is off, which is not decoration — with it on and
+no imports, `ℕ` auto-bound as a fresh type variable and every numeral failed to
+elaborate. That is exactly how the file first failed, twice.
+
+### Formalize-first, missed — and recorded as such
+
+The structural argument above predicts the entire table and needed **no
+compute**. I ran the extension sweep first and found the reason afterwards. That
+is precisely the failure mode AGENTS.md §"Formalize-first probe discipline"
+exists to prevent: state the invariant, let it narrow the probe. Recorded so the
+next agent reads the invariant before spending the sweep.
+
+### A control that earned its keep
+
+The probe carries its own Littlewood–Richardson implementation, so it is only as
+good as its controls. It reproduces the committed `lr_breakdown_per_lambda`
+exactly (35 coefficients, 0 mismatches, 0 invented terms), and the dimension
+identity $\sum c^\lambda_{\mu\nu} f^\mu f^\nu = f^\lambda$ holds at every $n$.
+
+**The second control caught a real bug**: a hard-coded row padding of 10
+silently returned wrong coefficients for partitions with more than 10 rows — 2
+failures out of 77 at $n = 12$ — which the two-row blocks this probe actually
+uses would never have revealed.
