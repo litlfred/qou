@@ -956,3 +956,43 @@ Geck–Lambropoulou's solid-torus statement in the ingested text.
 that its JSJ pieces are hyperbolic, or that `conj:jsj-decomposition-linearity`
 then follows. No construction is exhibited — this identifies the route and the
 first computation on it. Bean `qou-7p7d`.
+
+### Addendum 11a — two refinements, one of them to my own test
+
+**The solid-torus identification is now sourced, not recalled.** Geck–Lambropoulou,
+from the ingested text:
+
+> *"there exist braid structures related to arbitrary 3-manifolds … also that, if
+> the 3-manifold is a **solid torus**, then the sets of related braids form
+> groups, which are in fact the **Artin–Tits braid groups related to the B-type
+> Coxeter groups**."*
+
+and their trace *"is used in [7] for constructing a **4-variable analogue of the
+homfly-pt polynomial** for oriented knots inside a solid torus."* So Addendum 11's
+central link is the paper's own theorem.
+
+**But my test as stated is under-specified.** I wrote *"evaluate the
+Geck–Lambropoulou trace"* as if it named one object. The paper's stated aim is
+
+> *"to give a full **classification of all linear traces** on Iwahori–Hecke
+> algebras of type B which support the Markov property"*
+
+— a **family**, not a single functional. So the test must say *which* trace, and
+the classification is what supplies the candidates. Corrected: the question is
+whether **any** trace in the classified family reproduces the recorded `tr_M`,
+and if one does, whether it is the one the Markov property singles out for
+closures in the solid torus.
+
+**Scoping the build, since none of it exists here.** `computations/kazhdan_lusztig.py`
+cites Lusztig's *Hecke algebras with unequal parameters* for its convention but
+implements **type A only** — `permutations_S_n`, plain permutations throughout,
+no signed permutations. So the computation needs, in order:
+
+1. `W(Bₙ)` — signed permutations, length function, Bruhat order;
+2. the two-parameter Hecke algebra `H(Bₙ; q, Q)`, specialising `Q = 1`;
+3. a trace from the GL classification, and the argument for which one.
+
+That is a build, not a probe, and `Q = 1` is a non-generic specialisation where
+trace weights may degenerate — the refutation condition already recorded. Noting
+the size rather than starting it at the end of a long session: the route is
+identified and sourced, and choosing to spend on it is the author's call.
