@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T07:45:45.173328+00:00",
-  "commitSha": "f205e33078b269858f3043e6468ba2ffd6007259",
+  "computedAt": "2026-08-26T07:54:29.539950+00:00",
+  "commitSha": "99d499a4abd1fd4617063ba1909add28865b6e95",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -50,7 +50,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1658,
+      "Q0_ANCHOR_MISSING": 1659,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -5337,6 +5337,10 @@
         },
         {
           "witness": "qbeta-hecke-mn-character-engine.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-hecke-symbolic-seminormal.witness.json",
           "detail": ""
         },
         {
