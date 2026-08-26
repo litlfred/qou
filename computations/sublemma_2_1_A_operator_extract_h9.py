@@ -536,12 +536,22 @@ def main() -> int:
         )
     )
 
-    builder.add_assertion(
-        "overdetermined_lambda_consistent",
-        computed=n_consistent,
-        expected=n_overdet,
-        source="bilinear-system inversion at machine ε",
-    )
+    # n_overdet counts only the lambdas that reached the `elif consistent`
+    # branch of the `if underdet` split, so zero means EVERY lambda was
+    # under-determined -- a real Phase-2 state, not a missing input. Refusing
+    # would be wrong; asserting n_consistent == n_overdet at 0 == 0 would
+    # record a consistency check that never ran.
+    if n_overdet == 0:
+        builder.add_data("overdetermined_lambda_consistent_not_applicable",
+                         "every lambda was under-determined; no overdetermined "
+                         "consistency check was performed, so no assertion is made")
+    else:
+        builder.add_assertion(
+            "overdetermined_lambda_consistent",
+            computed=n_consistent,
+            expected=n_overdet,
+            source="bilinear-system inversion at machine ε",
+        )
 
     out_path = builder.save()
     print(f"  Witness: {out_path}")
