@@ -99,7 +99,6 @@ KNOWN_C = [
     ("MarkovAxiomsPrimitive", "markovZax", "C-sqrtvar"),
     ("MarkovAxiomsPrimitive", "markovZax_legacy", "C-plain"),
     ("MarkovZClassicalCoincidence", "zCsub", "C-sqrtvar"),
-    ("QBetaCategoricalPrecisionLadder", "markovZ", "C-plain"),
     ("q-beta-cos-resummation", "markovZ", "C-plain"),
 ]
 
