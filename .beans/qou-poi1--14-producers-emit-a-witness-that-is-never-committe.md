@@ -1,11 +1,11 @@
 ---
 # qou-poi1
 title: 14 producers emit a witness that is never committed, so the raw-float64 ratchet cannot see it
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T07:42:30Z
-updated_at: 2026-08-26T12:13:30Z
+updated_at: 2026-08-26T16:03:48Z
 ---
 
 ## The hole
@@ -297,3 +297,45 @@ reported "still going" about a process that had already died. The general point
 is the one this whole arc keeps re-learning: **a detector whose pattern can
 match the detector is not a detector.** Safest of all is a PID file written at
 launch and tested with `kill -0`, which cannot self-match by construction.
+
+
+## Closed 2026-08-26 (PR #5833)
+
+All three dirty producers addressed. Two drained to zero; the third is drained
+at the two fields it could reach, with the remainder scoped and beaned.
+
+1. **`qbeta_c3_barodd_determined_solve_probe`** — 9 float literals encoding 3
+   booleans → `int(...)` with `tolerance=0`. Ratchet exit 0, witness committed,
+   closing its blind spot. (04aa8b235)
+
+2. **`chi_sym_alt_closed_form`** — 36 → **0**. The character product moved from
+   numpy complex128 to mpmath end to end. Two things surfaced:
+   - the tolerance was 1e-3, justified as "seminormal matrices carry ~0.05%
+     numerical noise". They do not — that was the producer's own float64. Under
+     exact arithmetic the discrepancy is 5.1139e-9 and SYSTEMATIC, agreeing to
+     six significant figures across all four atoms. float64 had manufactured a
+     spurious 5e-4 "noise floor" that hid a real 5e-9 residual behind a
+     tolerance set to cover it. Tightened to 1e-8.
+   - the `n_ud` integer assertions fail on all four atoms by exactly 1
+     (observed 2A, asserted 2A+1). Untouched by the conversion; bean `qou-b4xn`.
+
+   (544c49d8a)
+
+3. **`sublemma_2_1_h12_he4_phase25`** — 2 scalar fields drained. But those
+   fields were only ever 0.0 because the producer computed nothing: F1's witness
+   was re-schema'd at #4619 and this loader read the pre-#4619 field through a
+   `.get(..., [])`, so a schema mismatch was indistinguishable from an empty
+   cache and it asserted `0 == 0` for months. Loader fixed (both shapes, newest
+   first, empty now RAISES). First real run fails 0/8 with O(1) residuals on
+   every dim>1 irrep — bean `qou-matm`.
+
+   Its remaining 32 raw float64 fields are the per-λ character dicts, float64 all
+   the way down (numpy complex128). They cannot be drained by stringifying, only
+   by moving `path_b_chi_h12` to mpmath. Witness therefore stays uncommitted, as
+   it has been since the producer was written. (3d38dab07)
+
+Ratchet after all three: NEW dirty 0, REGRESSED 0.
+
+**The blind spot this bean was about is unchanged in shape.** The ratchet scans
+committed witnesses; producer 3 still emits an uncommitted one. The count of
+never-committed-witness producers is 13, of which these 3 were dirty.

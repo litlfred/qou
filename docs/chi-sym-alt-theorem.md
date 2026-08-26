@@ -2,6 +2,42 @@
 
 *Proved by structural inspection of `atom_braid_word_3A`.*
 
+> **🟧 SCOPE (added 2026-08-26, bean `qou-cdqu`). This theorem is stated for the
+> COLOUR-BLIND convention, `pn_convention="strict_averaged"`. It is exact there
+> and it is not exact for the canonical word.**
+>
+> Step 4 below asserts that the single p-n boundary "uses (1, −H_A/2) = ud-half".
+> Under `pn_convention="bring_color_weighted"` — canonical since the owner ruling
+> of 2026-08-15 (R3), and the default of `atom_braid_word_3A` — that boundary is
+> `(1, −H_A·(1/2 − δ/4))` with `δ = flavor_split_subleading(q₀) ≈ 0.001376`. It is
+> **averaged but not a ud-half letter**, so the canonical word has `n_ud = 2A`
+> and `n_averaged = 2A + 1`, and the exponent `2A+1` above folds the p-n letter
+> in as if it were a ud one.
+>
+> **Measured cost of the substitution: 5.1139e-9**, on all four of D, T, ³He,
+> ⁴He. Carrying the p-n letter as itself, `f_ud^(2A) · f_pn`, takes the residual
+> to 1.2e-14 — the float64 floor of the inputs.
+>
+> **Why the error is second order**, which is why it hid for so long: the
+> per-factor product `f(d) = d² − 1 + d·H_A` satisfies the exact, division-free
+> identity
+>
+> $$4\,f(d) = (2d + H_A)^2 - H_A^2 - 4$$
+>
+> — all of the `d`-dependence sits inside a *perfect square* in the offset
+> `2d + H_A`, which vanishes exactly at `d = −H_A/2`. So the ud letter is a
+> stationary point, and the offset enters squared; those are the same fact. A `6.88e-4` relative shift in `d` moves the product by only
+> `(7.19e-5)² = 5.17e-9`. Predicted from that identity alone: 5.11397e-9, against
+> 5.11395e-9 measured — six significant figures. Formalised sorry-free as
+> `QOU.ChiSymAlt.perFactorOfD_sub_udHalf`.
+>
+> The colour-weighted generalisation is
+> `QOU.ChiSymAlt.chiPairProductC_eq`, with this theorem as its `δ = 0` corollary
+> (`chiPairProductC_delta_zero`). That is the only direction available: setting
+> `δ = 0` collapses the weighted form to this one, while this one has already
+> discarded `δ`. Nothing below is wrong within its own convention; it simply
+> never stated which convention it was in.
+
 ## Theorem
 
 Let $\beta_{Z,N}$ be the output of `atom_braid_word_3A(Z, N, m_pp=1, m_pn=1, m_nn=1, include_inter=True)` for any (Z, N) with Z ≥ 1 and N ≥ 1, A = Z + N. Then
@@ -52,15 +88,30 @@ From inspection of the source (mass_at_3A_proper.py:171-209 and mass_endomorphis
 **Per atom** (inter-nucleon): the ordering `['p']*Z + ['n']*N` has transitions:
 - Z−1 `pp` (no ud-half, uses (1, 0))
 - N−1 `nn` (no ud-half, uses (1, −H_A))
-- **Exactly 1 pn boundary** (uses (1, −H_A/2) = ud-half)
+- **Exactly 1 pn boundary** — (1, −H_A/2), a ud-half letter, **only under
+  `pn_convention="strict_averaged"`**. Under the canonical
+  `bring_color_weighted` it is (1, −H_A·(1/2 − δ/4)): averaged, but **not** a
+  ud-half. See the scope banner at the top of this file.
 
-With `m_pn = 1` (default), this adds **exactly 1 ud-half per atom**.
+With `m_pn = 1` (default), this adds **exactly 1 ud-half per atom** — again, in
+the colour-blind convention only. In the canonical one it adds one *averaged*
+letter that is not a ud-half, so `n_ud = 2A` and `n_averaged = 2A + 1`.
 
 ### Step 5 — Total count
 
-$$n_\text{ud}(Z, N) = 2A + 1 \quad \text{for } Z, N \geq 1$$
+$$n_\text{ud}(Z, N) = 2A + 1 \quad \text{for } Z, N \geq 1
+\qquad \text{(colour-blind convention)}$$
 
 Each nucleon contributes 2, and the single pn boundary adds 1.
+
+In the canonical colour-weighted convention the second clause does not hold: the
+pn boundary is averaged but is not a ud-half, giving
+
+$$n_\text{ud} = 2A, \qquad n_\text{averaged} = 2A + 1.$$
+
+Both counts are asserted per atom by
+`computations/chi_sym_alt_closed_form.py`, and `nUd` in the Lean sibling is the
+`2A` count.
 
 ### Step 6 — Assemble
 
