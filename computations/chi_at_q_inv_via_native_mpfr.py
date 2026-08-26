@@ -257,7 +257,13 @@ def run_atom(atom: str, Z: int, N: int, dps: int = 50, *,
         "n_partitions": len(by_partition),
         "n_partitions_total": len(by_partition),
         "producer": Path(__file__).name,
-        "compute_time_sec": round(elapsed, 2),
+        # STRING, not a raw float: the raw-float64 ratchet flags this
+        # field, and `compute_time_sec` matches neither "dur" nor
+        # "elapsed", so the duration carve-out does not and must not
+        # cover it -- widening that mask is what the audit's own
+        # comment warns against. The `at-q0` sibling has emitted a
+        # string here all along; this producer simply never drained it.
+        "compute_time_sec": f"{elapsed:.2f}",
         "by_partition": by_partition,
         "_provenance": {
             "engine": "pyhecke_native",
