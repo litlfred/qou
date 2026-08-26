@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T04:07:24.955373+00:00",
-  "commitSha": "e5deb145c7b35f26fee3327bd253d3b392c8b576",
+  "computedAt": "2026-08-26T04:27:14.265743+00:00",
+  "commitSha": "5e5f7bfed39e439c8134d4ed5d7a649c081990a6",
   "assertions": [
     {
       "name": "closed_form_tau_M_matches_empirical",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 545467,
+  "durationMs": 466803,
   "computation": "closed-form-tau-M-verification-phase5q",
   "scriptFile": "closed_form_tau_M_verification_phase5q.py",
-  "scriptHash": "61d8470211ec",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "2860b9842e45",
+  "scriptCommitSha": "5e5f7bfed39e439c8134d4ed5d7a649c081990a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,9 +73,9 @@
           "averaged": 0,
           "total": 1
         },
-        "wall_seconds_empirical": 0.004969358444213867,
-        "wall_seconds_closed": 4.172325134277344e-05,
-        "speedup_factor": 119.10285714285715
+        "wall_seconds_empirical": 0.00534510612487793,
+        "wall_seconds_closed": 3.910064697265625e-05,
+        "speedup_factor": 136.7012195121951
       },
       {
         "atom": "T",
@@ -93,9 +93,9 @@
           "averaged": 0,
           "total": 2
         },
-        "wall_seconds_empirical": 0.38762402534484863,
-        "wall_seconds_closed": 6.0558319091796875e-05,
-        "speedup_factor": 6400.8385826771655
+        "wall_seconds_empirical": 0.3173854351043701,
+        "wall_seconds_closed": 7.581710815429688e-05,
+        "speedup_factor": 4186.198113207547
       },
       {
         "atom": "3He",
@@ -113,9 +113,9 @@
           "averaged": 0,
           "total": 2
         },
-        "wall_seconds_empirical": 0.36075520515441895,
-        "wall_seconds_closed": 7.939338684082031e-05,
-        "speedup_factor": 4543.894894894895
+        "wall_seconds_empirical": 0.28783202171325684,
+        "wall_seconds_closed": 8.940696716308594e-05,
+        "speedup_factor": 3219.346666666667
       },
       {
         "atom": "4He",
@@ -133,9 +133,9 @@
           "averaged": 0,
           "total": 3
         },
-        "wall_seconds_empirical": 544.6941201686859,
-        "wall_seconds_closed": 0.0001227855682373047,
-        "speedup_factor": 4436141.217475728
+        "wall_seconds_empirical": 466.1720440387726,
+        "wall_seconds_closed": 8.273124694824219e-05,
+        "speedup_factor": 5634775.991354466
       }
     ],
     "verdict": "closed-form-verified-50dps",
