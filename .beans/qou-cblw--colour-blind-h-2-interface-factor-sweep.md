@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-26T04:20:00Z
+updated_at: 2026-08-26T17:00:28Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -411,3 +411,46 @@ I reported "zero issues naming either block" off a `grep -c` count, twice.
 A count is not evidence about *which* lines matched. There was one hit
 (pre-existing, `chapter:` unknown field); found only by going back for the
 line itself. Corrected in `a1f5a1eed6`.
+
+
+## §3 CLOSED as a negative, 2026-08-26 — PR #5841
+
+Owner authorised §3 with "1y" at the start of the 2026-08-26 session. Result:
+**the criterion cannot pick an `E`, and the frame `eps = q*delta*E/4` is
+narrower than the set of bar-even p-n factors it was meant to parametrise.**
+
+Lean `QOU.MassTheory.PnOffset`, 12 declarations, sorry-free:
+
+* `weightForm_barOdd` — bar-odd for EVERY bar-even `E`; the criterion selects
+  nothing inside the class.
+* `weightForm_cubic_factor` — `E` regular at `q=1` forces `eps = O((q-1)^3)`,
+  since `delta` vanishes to third order.
+* `bond_barInvariant_iff_barOdd` — the factor criterion is the shadow of
+  Kazhdan–Lusztig bar-invariance of the BOND element `sigma + d*1`, not a fact
+  about the trace.
+* `geomMean_*` — a SECOND derived bar-even factor exists: the geometric mean
+  of the bar orbit, `sqrt(f_pp*f_nn) = z/q^2`, with bar-odd offset
+  `eps = -(q^2-1)/(2(q^2+1))`. It is a genuine convex bond, weights
+  (0.448, 0.552) — and it is OUTSIDE the class: its `E` has a double pole
+  (`(q-1)^2*E -> -3/2` at `q=1`, not 0).
+
+Measured at the proton pin: `|eps_geom / eps_canonical| = 151.1`, opposite
+sign. Not two variants of one convention.
+
+Four candidate narrowing constraints checked and all vacuous as selectors —
+confluence, convex weights (`|E(q0)| <= 1310`), the Markov bond form, and the
+cubic vanishing order. Probe
+`computations/probes/pn_offset_bar_odd_class_probe.py`, 16 assertions.
+
+**No `E` selected.** Fitting one to an isotope anchor would be a fit. What
+this leaves is the prior question, which HAS a structural route: does the p-n
+bond interpolate its neighbours arithmetically (the Markov trace is linear in
+the bond element) or geometrically (the closed form is a product over bonds)?
+That is the item worth opening next; "which bar-even E" is not.
+
+Also on the same PR: corrected a claim that landed on main the same morning
+(`b858635ee6`, #5828) that `z - h/2` is not q-bar invariant "under either
+convention". Under D it IS — `bar(z) = z - h` exactly — and
+`MassTheory.strictPn_eq_barSymmetriser` had proved so since #5769, so main was
+internally inconsistent. Six further sorry-free declarations in
+`ClosedFormInterfaceFactors` §3a.
