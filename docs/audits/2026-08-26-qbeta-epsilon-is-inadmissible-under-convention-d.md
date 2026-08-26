@@ -25,9 +25,10 @@ appears), with mpmath at 50 dps for the numbers.
 | 2 | `qbeta_net_trace_invariance_probe` (25/25) | `net` is **not a trace** — 8 of 36 ordered basis pairs fail cyclicity |
 | 3 | `qbeta_alpha_commutator_floor_probe` (22/22) | the phase has a **z-free floor**, bar-even |
 | 4 | `qbeta_phase_block_resolution_probe` (18/18) | the phase resolves per block; `χ^(2,1)(Δ) = 0` identically |
-| 5 | `qbeta_net_as_trace_plus_longest_probe` (20/20) | `net = tr_M^{z=1} − h·(coefficient of w₀)` |
+| 5 | `qbeta_net_as_trace_plus_longest_probe` (20/20) | `net = tr_M^{z=1} − h·(coefficient of w₀)` — **n = 3 only**, see row 8 |
 | 6 | `qbeta_which_algebra_the_decay_channel_lives_in_probe` (11/11) | `net` does **not descend** to the TL quotient |
 | 7 | `qbeta_admissible_functionals_bracket_probe` (19/19) | the admissible set is **complete at two**, and they bracket |
+| 8 | `qbeta_rank_one_identity_is_n3_only_probe` (6/6) | **scope correction** — row 5 **fails at n = 4** (11 of 24) |
 
 ## Why "counit" was load-bearing, not cosmetic
 
@@ -129,6 +130,17 @@ review.
 4. **"Exactly two admissible functionals" from enumeration.** True but weaker
    than the situation — solving the condition showed the set is *complete* at
    two, and that `z = q` is a root at all.
+5. **`net = tr_M^{z=1} − h·δ_{w₀}` stated without an `n`.** Holds at n = 3,
+   **fails at n = 4** — nonzero on 11 of 24 basis elements, four distinct values,
+   and the trace at `z = 1` takes five values rather than being constant off
+   `w₀`. Every conclusion drawn from it stands (each is evaluated on Δ ∈ H₃(q)),
+   but the sentence read as a characterisation of the two functionals and is not
+   one. Caught because [PR #5337](https://github.com/litlfred/qou/pull/5337#issuecomment-5371899738)
+   had warned about generalising an n = 3 coincidence **on this very bean** —
+   *"do not generalise the n=3 coincidence"* — and I tested my own claims against
+   that warning instead of assuming they were exempt. Also recorded: imposing the
+   Markov property only at the top generator leaves the Ocneanu trace
+   **underdetermined** (rank 5 of 6 at n = 3).
 
 ## Follow-on
 
