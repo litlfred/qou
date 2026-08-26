@@ -57,6 +57,39 @@ anything and is recorded here only so nobody re-derives it.)
 | `lean/QOU/Hecke/ClosedFormInterfaceFactors.lean:18` | `z` | `s/(s²+1)`, `q = s²` | **C**, documented |
 | `knots-particles-confinement/knot-particle-generation.lean:95` | `pairSkeinMass` | `÷ (√q + 1/√q)` | **C**, unlabelled |
 
+> **UNDERCOUNT CORRECTED the same day.** The table above is hand-verified and
+> **incomplete**: it reports 7 sites across 6 files. A scanner written for fix
+> step 2 — [`scripts/lean-markov-convention-audit.py`](../../scripts/lean-markov-convention-audit.py),
+> which does what `convention-c-producer-audit.py` structurally cannot — measures
+> **22 convention-C Markov-parameter *definitions* across 18 files**, against 23
+> in convention D. Roughly half the Markov-parameter definitions in the Lean tree
+> are C. Quote the scanner, not the table; the table is kept as the record of
+> what hand-verification found and missed.
+>
+> **Three measurement errors of my own, in the scanner, each caught before it
+> shipped a number** — recorded because each is a way this audit could have been
+> wrong in the direction of *reassuring*:
+>
+> 1. **Scanning `.lake/`.** An unfiltered `rglob` walks Mathlib and every other
+>    dependency: 11206 files, 112 "D" sites, almost all somebody else's code.
+>    Measuring the harness, not the corpus. Excluded → 3193 files.
+> 2. **Counting theorem statements as definitions.** A `q³/(q²+1)` inside a proof
+>    *mentions* the convention; one inside a `def` body *defines* it. Together
+>    they inflate the total several-fold and hide which sites are load-bearing.
+>    The scanner now reports both and says to quote `defs`: 150 sites total, 45
+>    definitions.
+> 3. **A 3-line window that fixed one miss and broke four verdicts.** Added to
+>    catch `pairSkeinMass`, whose denominator wraps to the next line; it then
+>    swallowed neighbouring docstrings and misclassified four other sites.
+>    Reverted, with the multi-line case recorded as a known limitation rather
+>    than hacked around — it needs an expression parser, not a wider window.
+>
+> **Not all 22 are defects.** Three are named `_legacy` and carry deprecation
+> attributes; several (`zC`, `zCsub`, and the `MarkovZClassicalCoincidence` /
+> `BraidImageEigenphaseExclusion` sites) are **deliberate** convention-C
+> comparison objects — the Lean analogue of the Python audit's declared-C bucket.
+> Separating actionable from deliberate is triage that has **not** been done.
+
 **`markovZ` is five declarations across two conventions** — three C (in three
 different spellings) and two D — plus `markovZax`, `markovZ'`, `markovZ_real`,
 `markovZ_legacy` and `markovZW`/`markovZD`. One reader, one name, opposite

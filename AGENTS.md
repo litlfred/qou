@@ -1826,8 +1826,18 @@ Do not regress either.
 >   guard (`qou-zdz5`), a different defect class — the two were conflated once,
 >   by shape rather than subject, in a bean about detector blindness.
 >
->   Measured directly, the Lean Markov-parameter surface is **7 convention-C
->   sites across 6 files, under 3 spellings**, and **`markovZ` is five
+>   Measured directly with
+>   [`scripts/lean-markov-convention-audit.py`](scripts/lean-markov-convention-audit.py)
+>   (which the producer audit structurally cannot do), the Lean
+>   Markov-parameter surface is **22 convention-C *definitions* across 18 files,
+>   under 3 spellings**, against **23** in convention D — roughly half the
+>   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
+>   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
+>   *mentions* a convention while one inside a `def` body *defines* it, and
+>   conflating them inflates the count several-fold. **Not all 22 are defects** —
+>   three are `_legacy` with deprecation attributes and several are deliberate C
+>   comparison objects; that triage is not done. An earlier hand-verified pass in
+>   the audit below reported 7 across 6 files and was an undercount. And **`markovZ` is five
 >   declarations spanning both conventions** — three C (`markov-trace-factorization`,
 >   `QBetaCategoricalPrecisionLadder`, `HoefsmitV21CosSymmetrization`) against two
 >   D (`MarkovBondRule`, `y-lambda-recipe-from-partition`). Same name, opposite
