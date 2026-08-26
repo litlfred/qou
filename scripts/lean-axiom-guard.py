@@ -434,6 +434,12 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.length_addBoxRow | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_self | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_ne | clean
+# The prefactor's share of the Pieri step: n(lambda) rises by the ROW INDEX,
+# not the row length. The two decide-guards pin that direction; row 0 is the
+# case an index slip would break.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_zero | clean
 # (P), the Pieri step. schurElement is a fold; nothing cell-by-cell can be said
 # about a fold, so schurElement_eq_prod exhibits it as a product first. The two
 # rowFactor lemmas are the box-addition response in the two cases where it is a

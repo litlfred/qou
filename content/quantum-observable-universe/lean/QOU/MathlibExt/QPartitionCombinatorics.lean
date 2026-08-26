@@ -562,6 +562,54 @@ theorem getElem?_addBoxRow_ne (lam : Partition) (r i : ℕ) (h : i ≠ r) :
   unfold addBoxRow
   rw [List.getElem?_set_ne (Ne.symm h)]
 
+/-- A `foldl` that only ever adds to its accumulator IS a sum. -/
+private theorem foldl_add_eq_sum (f : ℕ → ℕ) :
+    ∀ (l : List ℕ) (a : ℕ), l.foldl (fun acc x => acc + f x) a = a + (l.map f).sum
+  | [], a => by simp
+  | x :: t, a => by
+      rw [List.foldl_cons, foldl_add_eq_sum f t (a + f x)]
+      simp [Nat.add_assoc]
+
+/-- **`n(λ + box in row r) = n(λ) + r`.**
+
+`n(λ) = Σ_i i·λ_i`, so raising `λ_r` by one adds exactly `r`. This is the
+prefactor's share of the Pieri step: `schurElement`'s `Q^{n(λ)}` becomes
+`Q^{n(λ)+r}` when the box goes into row `r`, and nothing else about the
+prefactor moves.
+
+Note the direction of the dependence: the increment is the ROW INDEX, not the
+row length. A box added to row `0` does not change `n(λ)` at all. -/
+theorem nLambda_addBoxRow (lam : Partition) (r : ℕ) (hr : r < lam.length) :
+    nLambda (addBoxRow lam r) = nLambda lam + r := by
+  have hsum : ∀ (f : ℕ → ℕ) (n : ℕ),
+      (List.range n).foldl (fun acc i => acc + f i) 0 = ∑ i ∈ Finset.range n, f i := by
+    intro f n
+    rw [foldl_add_eq_sum f (List.range n) 0, Nat.zero_add]
+    rfl
+  unfold nLambda
+  rw [length_addBoxRow, hsum, hsum]
+  have hmem : r ∈ Finset.range lam.length := Finset.mem_range.mpr hr
+  rw [← Finset.add_sum_erase _ _ hmem, ← Finset.add_sum_erase _ _ hmem]
+  have hrest : ∑ i ∈ (Finset.range lam.length).erase r, i * (((addBoxRow lam r)[i]?).getD 0)
+      = ∑ i ∈ (Finset.range lam.length).erase r, i * ((lam[i]?).getD 0) :=
+    Finset.sum_congr rfl fun i hi => by
+      rw [getElem?_addBoxRow_ne lam r i (Finset.ne_of_mem_erase hi)]
+  rw [hrest, getElem?_addBoxRow_self lam r hr]
+  simp only [Option.getD_some, Nat.mul_add, Nat.mul_one]
+  omega
+
+/-! The two guards below pin the *direction* of `nLambda_addBoxRow`. `n([3,2,1]) = 4`;
+adding a box to row `1` gives `[3,3,1]` with `n = 5`, and adding one to row `0`
+gives `[4,2,1]` with `n = 4` — unchanged. Row `0` is the case that separates
+"increment by the row index" from "increment by the row length", and it is the
+one a sign or index slip would break. -/
+
+theorem nLambda_addBoxRow_row_one : nLambda (addBoxRow [3, 2, 1] 1) = nLambda [3, 2, 1] + 1 := by
+  decide
+
+theorem nLambda_addBoxRow_row_zero : nLambda (addBoxRow [3, 2, 1] 0) = nLambda [3, 2, 1] := by
+  decide
+
 /-- **The hook-length update rule.** Adding one box to row `r` raises the hook
 length by exactly one on two sets of cells and leaves every other cell alone:
 
