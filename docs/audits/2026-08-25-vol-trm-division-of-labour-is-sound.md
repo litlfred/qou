@@ -342,3 +342,88 @@ than the lookup would have.
 
 Nothing about the Lean result changes — `lean`-direct exit 0, no `sorryAx`.
 Only the attribution of my own path error was wrong.
+---
+
+## Addendum 5 — (B) has no motivation, and the corpus says so in three places (2026-08-26)
+
+Asked for the motivation behind reading (B) before declaring it. **There is none,
+and (B) should not be declared.** My earlier elimination argument was wrong
+because the alternatives were framed too narrowly: there is a third reading I did
+not consider, and the corpus supports it in three independent places.
+
+### 1 · The canonical formula is ONE `K` — explicitly
+
+[`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
+§5, quoted verbatim in the
+[Vol-usage audit](2026-06-02-vol-usage-audit-uniform-vs-per-knot.md):
+
+```
+m(K) = m_e · VolDensity(K, q_0)
+VolDensity(K, q) = Vol(K) / ℏ_q² · linking_weight(K, q)
+```
+
+One `K`, in both factors. The cheat-sheet chain is likewise single-object:
+`braid β → tr_M → J_K(q) → ω → Geom(K) → × m_e → 𝔪`, with `J_K = tr_M(𝓑_K)` —
+the trace **of `K`'s own braid**.
+
+### 2 · The corpus already calls the mismatch a bug
+
+The same audit's TL;DR: *"Production compute is overwhelmingly
+uniform-`Vol(𝓑₃)`… **Net: 64 atom-touching scripts use ONLY uniform `Vol(𝓑₃)` —
+the bug.**"* 87 scripts uniform against 2 per-knot, with a per-isotope error
+budget (`m_p +2.89 %`, `⁴He +3.65 %`, `⁵⁶Fe +3.86 %`). Triggered by owner
+pushback: *"thought we determined this knot-dependent and should not be
+uniform."*
+
+So a `Vol` that does not belong to the object being traced is **already
+classified as a defect**, not a design.
+
+### 3 · The literature is the volume conjecture — and it is one-`K` too
+
+The library holds at least eight sources
+([`arxiv-1002.0126v1`](../../library/arxiv-1002.0126v1/) *An introduction to the
+volume conjecture*, [`arxiv-1203.2182v1`](../../library/arxiv-1203.2182v1/)
+*Volume Conjecture: Refined and Categorified*,
+[`arxiv-1003.4808v2`](../../library/arxiv-1003.4808v2/) *QFT and the Volume
+Conjecture*, and more), and the corpus carries
+[`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md)
+plus `QOU.Kashaev.VolumeConjecture` in Lean.
+
+This **is** the literature for relating an algebraic invariant to a geometric
+volume. But note what it says, in the cheat sheet's own words:
+
+> *"Volume is **NOT** the carrier — it is the **exponential** of it.
+> `tr_M ~ exp(Vol)`."*
+
+The volume conjecture relates `J_K` and `Vol(K)` **for one and the same `K`**, as
+a *correspondence* — asymptotically the trace **is** the exponentiated volume. It
+gives no licence to take `Vol` from one object and `tr` from another; if
+anything, for a single `K` the two carry the *same* content in two forms.
+
+### The third reading, which is the one the evidence supports
+
+- **(C)** The framework intends **one `K` per atom**, that `K` being the atom's
+  own braid word — the cheat sheet says so explicitly: *"each atom's canonical
+  `K` (proton `𝓑₃`, **deuteron `β_D` via `atom_braid_word_3A(1,1)`**, etc.)"*.
+  But that object **is not a link** (PR #5765: outside `im(ρ)`, `2A+1` averaged
+  letters — measured), so it **has no hyperbolic volume**, and production
+  substitutes the Borromean one. The pairing is the *symptom* of an
+  unsatisfiable specification, not a design.
+
+Note the inconsistency (C) exposes, visible in that one cheat-sheet parenthesis:
+the **proton**'s `K` is named as a genuine link (`𝓑₃`) while the **deuteron**'s is
+named as a Hecke element (`atom_braid_word_3A(1,1)`). Those are different kinds
+of object, and only one of them has a volume.
+
+### Consequence
+
+**Do not add a sentence declaring (B).** It would put a rationalisation into the
+paper for something the corpus classifies as a defect in one place, contradicts
+in another, and has no literature support for. The honest statement is (C): the
+one-`K` formula is currently **unsatisfiable at the atom level**, because the
+object the chain traces is not the kind of object that has a volume.
+
+That is a real open problem and it sits upstream of Obstruction A — bean
+`qou-7p7d`. My elimination in Addendum 4 stands as far as it goes (**(A) is
+refuted in Lean**), but "therefore (B)" does not follow: (C) was always available
+and is better supported.
