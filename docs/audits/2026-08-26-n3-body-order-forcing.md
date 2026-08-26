@@ -53,6 +53,29 @@ So the corpus does not work with reading U; it works with reading W, in which a
 weight appears that the displayed equation does not contain. Everything below is
 reading W.
 
+## 1b. A third reading — forced, but not realised anywhere
+
+The displayed equation writes the period as **`a_D^{(n)}(K)`** — K-dependent, a
+residue sum over the hyperbolic components of *that* braid. Read literally there
+are no weights and **n=3 would be forced with zero free parameters**: the A=3
+braid's own residue sum supplies it.
+
+No such object exists in the corpus. Measured across `computations/`, **all ten**
+producers that define `a_D` declare it as `a_D(n)` — body order alone, no knot
+argument — and each returns `S(n)/n`, a function of `n` and `q`:
+
+`theta_wn_kernel_derive_or_refute`, `theta_wn_jetfilt_linkvolume`,
+`binding_fewbody_bondcount`, `binding_wn_kernel_derive_refute`,
+`binding_wn_derive_or_refute`, `bk_crossing_coordination`,
+`binding_manybody_jet_filtration`, `binding_wn_multianchor_tower_refute`,
+`binding_wn_frobenius_dual_probe`, and this probe.
+
+So the K-dependence written in the conjecture is not realised anywhere, and
+`w_n(K)` was introduced in the scope note precisely to restore it. **"Forced but
+not yet computed" is therefore not a live third option** — there is no per-knot
+n=3 residue sum to evaluate. Building one would be the honest route to making n=3
+a prediction.
+
 ## 2. The counting — one free parameter, invariant under how the n=4 anchor is read
 
 Unknowns through A=4 are `w_2, w_3, w_4` — **three**. The conjecture supplies

@@ -158,6 +158,27 @@ def main() -> int:
     print("  NOT work with reading U — it works with reading W below, in which a")
     print("  weight w_n is inserted that the displayed equation does not contain.")
 
+    # ------------------------------------- the K-dependence is never realised
+    line("=")
+    print("A THIRD READING, AND WHY IT IS NOT LIVE")
+    line()
+    print("The displayed equation writes the period as a_D^(n)(K) — K-DEPENDENT,")
+    print("a residue sum over the hyperbolic components of THAT braid. Under that")
+    print("literal reading there are no weights and n=3 WOULD be forced, with no")
+    print("free parameter at all: the A=3 braid's own residue sum would supply it.")
+    print("\nBut no such object exists in the corpus. Every a_D in computations/")
+    print("takes the body order alone — measured, 10 producers, signature a_D(n):")
+    print("   theta_wn_kernel_derive_or_refute, theta_wn_jetfilt_linkvolume,")
+    print("   binding_fewbody_bondcount, binding_wn_kernel_derive_refute,")
+    print("   binding_wn_derive_or_refute, bk_crossing_coordination,")
+    print("   binding_manybody_jet_filtration, binding_wn_multianchor_tower_refute,")
+    print("   binding_wn_frobenius_dual_probe  (+ this probe, same signature)")
+    print("and each returns S(n)/n, a function of n and q with no knot argument.")
+    print("So the K-dependence in the displayed equation is not realised anywhere,")
+    print("and w_n(K) was introduced in the scope note precisely to restore it.")
+    print("⇒ 'forced but not yet computed' is NOT a live third option; there is no")
+    print("  per-knot n=3 residue sum to evaluate.")
+
     # ---------------------------------------------------------------- READING W
     line("=")
     print("READING W — the SCOPE NOTE's form: B(K)=Σ_{n=2}^{A} m_e·a_D^(n)·w_n,")
