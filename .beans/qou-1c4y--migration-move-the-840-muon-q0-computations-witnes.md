@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-26T04:01:35Z
+updated_at: 2026-08-26T04:09:46Z
 ---
 
 
@@ -1024,3 +1024,48 @@ STILL OPEN from the earlier pass: the 5 of 10 flagged producers not yet
 hand-checked (chirality_topology_binding_probe, eigenbasis_structural_lemmas_probe,
 habiro_witness_convention_adjudication, qbeta_habiro_f_from_shape_collapse,
 qbeta_rung1_div25_framing_squared_test).
+
+
+## RETRACTION 2026-08-26 — the 870 figure is CORRECT; I measured a different thing
+
+Earlier this session I measured the muon-pinned witness count at 149, reported
+AGENTS.md's 870 as "stale by ~5.8x", and named correcting it as next work.
+THAT WAS WRONG and the number should not be changed.
+
+WHY. "Carries the muon fingerprint" is ambiguous in this corpus, and the
+ambiguity is already documented one directory over:
+computations/audits/muon_pin_three_values_probe.py establishes that THREE
+different values are all called "the muon q0" --
+
+    A  1.1099785955573347...   frozen canonical pin
+    B  1.10997859555418057...  lepton-tower derivation, CODATA 2018
+    C  1.10997859564273904...  lepton-tower derivation, CODATA 2022
+
+diverging at the 13TH SIGNIFICANT DIGIT. So the prefix length silently selects
+which of the three you count:
+
+    match on                    counts             2026-08-16   2026-08-26
+    1.109978595   (10 digits)   all three             871          477
+    1.1099785955573347 (full)   canonical pin only    468          149
+
+870 is the ten-digit reading and is right. I matched the full canonical literal,
+so I was counting A alone and missing B and C entirely.
+
+WHAT IS ACTUALLY TRUE: the migration HAS run -- 871 -> 477 under the recorded
+definition, a 45% drop, measured with one script at both ends (git ls-tree per
+revision, so the denominator moves with the tree, 2947 -> 3102). It has NOT
+fallen to ~149.
+
+THE REAL DEFECT, and it is the one this bean is about: the number was recorded
+WITHOUT ITS METHOD, in a domain where the method is genuinely ambiguous and the
+ambiguity is documented elsewhere in the same corpus. That is prose about q0
+that cannot be checked against code -- so the next reader measures it, gets a
+different answer, and is one edit from replacing a correct figure with one
+answering a different question. I was that reader.
+
+FIXED: AGENTS.md now carries the method beside the number, both readings, both
+dates, and a pointer to muon_pin_three_values_probe.py for why the definition
+matters. Added computations/audits/muon_pin_witness_census.py so the count is
+re-derivable at any revision rather than remembered -- it prints every prefix
+length side by side and marks the two that are ambiguous with the proton pin,
+which is the shape of mistake one notch further down.
