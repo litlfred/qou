@@ -2,14 +2,49 @@
   "schema": "lean-borrowed-name/v1",
   "producer": "scripts/lean-borrowed-name-audit.py",
   "counts": {
-    "critical": 12,
+    "critical": 19,
     "major": 197,
     "advisory_not_persisted": 939,
-    "total": 1148
+    "total": 1155
   },
   "note": "High-recall candidate generator. A CRITICAL is a candidate, not a verdict; the genuine/legit call is an agent call per AGENTS.md 3b-tax. Advisory rows are counted but not stored.",
   "findings": [
     {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean",
+      "line": 142,
+      "decl": "chiralityFactor",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": false,
+      "statement": "def chiralityFactor (_n : \u2115) (q : \u211d) (_\u03b2 : HeckeAlgebra _n _q) : \u211d := 1 + 0 * q"
+    },
+    {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+      "line": 186,
+      "decl": "HyperbolicVolume",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": false,
+      "statement": "def HyperbolicVolume : Knot \u2192 \u211d := fun k => 0 * (k : \u211d)"
+    },
+    {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/EHartreeTraceRatio.lean",
       "line": 240,
       "decl": "em_channel_forced_to_two_two",
@@ -29,6 +64,7 @@
       "statement": "theorem em_channel_forced_to_two_two : ([[2, 2], [2, 1, 1], [1, 1, 1, 1]] : List (List \u2115)).filter (fun l => conjPart l == l) = [[2, 2]]"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean",
       "line": 312,
       "decl": "jetOrder3_certificate",
@@ -49,6 +85,7 @@
       "statement": "theorem jetOrder3_certificate : eliminationDet (jetPivots 3) \u2260 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIContentDecomposition.lean",
       "line": 988,
       "decl": "idB_verified_le12",
@@ -69,6 +106,7 @@
       "statement": "theorem idB_verified_le12 : \u2200 n \u2208 List.range 13, identityB_lhs n = identityB_rhs n"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean",
       "line": 64,
       "decl": "seifert_euler_relation",
@@ -90,6 +128,7 @@
       "statement": "theorem seifert_euler_relation : seifertEuler = 2 - 2 * seifertGenus - boundaryComponents"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTIndexGeneralN.lean",
       "line": 120,
       "decl": "dtEulerG_eq_deltaLambdaG",
@@ -111,6 +150,7 @@
       "statement": "theorem dtEulerG_eq_deltaLambdaG (N d : \u2115) : dtEulerG N d = deltaLambdaG N d"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean",
       "line": 131,
       "decl": "b3_nf_wedderburn_uniqueness",
@@ -130,6 +170,7 @@
       "statement": "theorem b3_nf_wedderburn_uniqueness : b3_nf_coefficients 5 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean",
       "line": 154,
       "decl": "cyclic_trace_kills_iterCommTower",
@@ -151,6 +192,7 @@
       "statement": "theorem cyclic_trace_kills_iterCommTower (\u03c4 : CyclicTrace R A) (c : \u2115 \u2192 A) (n : \u2115) : \u03c4.toLin (iterCommTower c (n + 1)) = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean",
       "line": 327,
       "decl": "qSchur_H2_content_bridge",
@@ -171,6 +213,7 @@
       "statement": "theorem qSchur_H2_content_bridge (q : \u211d) (hq : 1 < q) : contentSum [2] = 1 \u2227 contentSum [1, 1] = -1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 194,
       "decl": "hecke_n3_frobenius_codim",
@@ -191,6 +234,7 @@
       "statement": "theorem hecke_n3_frobenius_codim (q : \u211d) : \u2211 i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 350,
       "decl": "hecke_n5_frobenius_codim",
@@ -211,6 +255,7 @@
       "statement": "theorem hecke_n5_frobenius_codim (q : \u211d) : \u2211 i : Fin 7, 1 / heckeH5DimQ q i = 2 + 2 / (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) + 1 / ((q ^ 2 + (q ^ 2)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9))"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 469,
       "decl": "hecke_n6_frobenius_codim",
@@ -231,6 +276,7 @@
       "statement": "theorem hecke_n6_frobenius_codim (q : \u211d) : \u2211 i : Fin 11, 1 / heckeH6DimQ q i = 2 + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) + 2 / ((q ^ 4 + 1 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)) + 2 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)) + 2 / (q ^ 6 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 "
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 782,
       "decl": "hecke_n8_frobenius_codim",
@@ -253,6 +299,105 @@
       "statement": "theorem hecke_n8_frobenius_codim (q : \u211d) : \u2211 i : Fin 22, 1 / heckeH8DimQ q i = 2 / (1 : \u211d) + 2 / (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) + 2 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)) + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
+      "line": 29,
+      "decl": "descendedMarkov",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [
+        "Markov"
+      ],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": false,
+      "statement": "def descendedMarkov (q : \u211d) (_braid : Unit) : \u211d := 0 * q"
+    },
+    {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
+      "line": 30,
+      "decl": "braneTower",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": false,
+      "statement": "def braneTower (q : \u211d) (_braid : Unit) : \u211d := 0 * q"
+    },
+    {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+      "line": 127,
+      "decl": "wenzlSchurElement",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [
+        "Schur",
+        "Wenzl"
+      ],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": true,
+      "statement": "def wenzlSchurElement {n : \u2115} (lam : Partition n) (Q X : \u211d) : \u211d := 0 * (Q + X + (lam.parts.length : \u211d))"
+    },
+    {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+      "line": 151,
+      "decl": "jonesMarkovTrace",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [
+        "Hecke",
+        "Iwahori",
+        "Jones",
+        "Markov"
+      ],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": true,
+      "statement": "def jonesMarkovTrace {_n : \u2115} (q : \u211d) (_x : Unit) : \u211d := 0 * q"
+    },
+    {
+      "kind_of_finding": "zero-placeholder",
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+      "line": 155,
+      "decl": "jonesMarkovCoefficient",
+      "kind": "def",
+      "severity": "CRITICAL",
+      "borrowed": [
+        "Jones",
+        "Markov"
+      ],
+      "local_defs_in_statement": [],
+      "external_lemmas_in_proof": [],
+      "disclaimed": false,
+      "overclaim": false,
+      "cheap_proof": true,
+      "proof_steps": 0,
+      "confesses_in_docstring": true,
+      "statement": "def jonesMarkovCoefficient {_n : \u2115} (q : \u211d) (_lam : Partition _n) : \u211d := 0 * q"
+    },
+    {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
       "line": 170,
       "decl": "q_commutation_grade_one_half",
@@ -272,6 +417,7 @@
       "statement": "theorem q_commutation_grade_one_half {R : Type*} [CommRing R] (q : R) {A : Type*} [Ring A] [Algebra R A] [calc_inst : WoronowiczLeftCalculus R q A] (x : A) (h_two_deg : 2 * calc_inst.deg x = 1) (\u03c9 : calc_inst.Omega) : calc_inst.left_act x \u03c9 = q \u2022 calc_inst.right_act \u03c9 x"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean",
       "line": 55,
       "decl": "bring_trefoil_cinquefoil_channel",
@@ -292,6 +438,7 @@
       "statement": "theorem bring_trefoil_cinquefoil_channel : torusKnotGenus 2 3 = 1 \u2227 torusKnotGenus 2 5 = 2 \u2227 torusKnotGenus 2 3 \u2264 bringsGenus \u2227 torusKnotGenus 2 5 \u2264 bringsGenus \u2227 torusKnotGenus 2 3 \u2260 torusKnotGenus 2 5"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean",
       "line": 129,
       "decl": "schur_weyl_n3",
@@ -313,6 +460,7 @@
       "statement": "theorem schur_weyl_n3 (D : DescartesData) (sw : DescartesSchurWeyl D) (hn : sw.n = 3) : sw.numSummands = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/brings-surface/generation-completeness.lean",
       "line": 53,
       "decl": "generation_completeness",
@@ -334,6 +482,7 @@
       "statement": "theorem generation_completeness (K : KnotType) (h_embed : isEmbeddable K) : isReachable K"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean",
       "line": 95,
       "decl": "ord_u_zero_trM_eq",
@@ -354,6 +503,7 @@
       "statement": "theorem ord_u_zero_trM_eq (Z N : \u2115) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean",
       "line": 57,
       "decl": "t2_11_genus",
@@ -373,6 +523,7 @@
       "statement": "theorem t2_11_genus : seifertGenus_T2 11 = 5"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean",
       "line": 110,
       "decl": "delta_silver_hecke_scalar",
@@ -392,6 +543,7 @@
       "statement": "theorem delta_silver_hecke_scalar : delta_silver - delta_silver\u207b\u00b9 = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean",
       "line": 168,
       "decl": "writheTorus_not_symm",
@@ -411,6 +563,7 @@
       "statement": "theorem writheTorus_not_symm : writheTorus 2 3 \u2260 writheTorus 3 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
       "line": 708,
       "decl": "card_cells_eq_card_nimbers",
@@ -431,6 +584,7 @@
       "statement": "theorem card_cells_eq_card_nimbers (p n : \u2115) : Fintype.card (KazhdanLusztigCells p n) = Fintype.card (Nimbers p n)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean",
       "line": 91,
       "decl": "dq_sym_sq_eq_dq_alt_sq",
@@ -452,6 +606,7 @@
       "statement": "theorem dq_sym_sq_eq_dq_alt_sq : qHookProd hooksSym ^ 2 = qHookProd hooksAlt ^ 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.lean",
       "line": 98,
       "decl": "faddeev_limit_at_zero",
@@ -472,6 +627,7 @@
       "statement": "theorem faddeev_limit_at_zero (q : \u211d) (n : \u2115) : (1 - q) * Real.log (partialProductLocal q 0 n) - LiTwo 0 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HodgeWeilRealStructure.lean",
       "line": 138,
       "decl": "c_ne_F_on_witness",
@@ -493,6 +649,7 @@
       "statement": "theorem c_ne_F_on_witness : (cWeil v0).1 0 \u2260 (FGal v0).1 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Archimedean/PerLoopMeasureShadowAssembly.lean",
       "line": 70,
       "decl": "kl_eigenvalue_at_one_eq_pairCount",
@@ -513,6 +670,7 @@
       "statement": "theorem kl_eigenvalue_at_one_eq_pairCount : klEigenvalueAtOne = pairCount"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean",
       "line": 175,
       "decl": "jonesAtOne_doubleHopf_eq_four",
@@ -532,6 +690,7 @@
       "statement": "theorem jonesAtOne_doubleHopf_eq_four : jonesAtOne Link.doubleHopf = 4"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerIsospinBlind.lean",
       "line": 81,
       "decl": "t2_isobar_invariant",
@@ -552,6 +711,7 @@
       "statement": "theorem t2_isobar_invariant (M M' : MarkovTowerT2 n R) (hz : M.z = M'.z) : M.value = M'.value"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean",
       "line": 82,
       "decl": "ord_u_zero_trM_eq",
@@ -572,6 +732,7 @@
       "statement": "theorem ord_u_zero_trM_eq (Z N : \u2115) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean",
       "line": 180,
       "decl": "inter_nucleon_interface_pole",
@@ -591,6 +752,7 @@
       "statement": "theorem inter_nucleon_interface_pole : column_syt_pole_per_cycle 2 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean",
       "line": 148,
       "decl": "chirality_ideal_4_1_value",
@@ -610,6 +772,7 @@
       "statement": "theorem chirality_ideal_4_1_value {R : Type*} [Field R] : (chirality_ideal_4_1 (R := R)).central_projector_value = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
       "line": 260,
       "decl": "hoefsmit_V21_markov_symmetrized_character",
@@ -632,6 +795,7 @@
       "statement": "theorem hoefsmit_V21_markov_symmetrized_character (q : \u211d) [V21Eigenphase q] (trace_unsym : \u211d) : markovSymmetrizedV21Character q trace_unsym = trace_unsym * Real.cos (eigenphase q)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean",
       "line": 96,
       "decl": "jonesHopf_atOne",
@@ -651,6 +815,7 @@
       "statement": "theorem jonesHopf_atOne : classicalJonesAtOne 2 = -2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean",
       "line": 118,
       "decl": "markovZD_one",
@@ -670,6 +835,7 @@
       "statement": "theorem markovZD_one : markovZD 1 = 1 / 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean",
       "line": 120,
       "decl": "markovZC_one",
@@ -689,6 +855,7 @@
       "statement": "theorem markovZC_one : markovZC 1 = 1 / 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean",
       "line": 131,
       "decl": "markovZD_eq_sq_mul_kernel",
@@ -709,6 +876,7 @@
       "statement": "theorem markovZD_eq_sq_mul_kernel (q : \u211d) : markovZD q = q ^ 2 * markovKernel q"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 67,
       "decl": "markovParamCoeff_zero",
@@ -728,6 +896,7 @@
       "statement": "@[simp] theorem markovParamCoeff_zero : markovParamCoeff 0 = 1 / 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 69,
       "decl": "markovParamCoeff_one",
@@ -747,6 +916,7 @@
       "statement": "@[simp] theorem markovParamCoeff_one : markovParamCoeff 1 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 73,
       "decl": "markovParamCoeff_two",
@@ -766,6 +936,7 @@
       "statement": "theorem markovParamCoeff_two : markovParamCoeff 2 = -1 / 16"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 77,
       "decl": "markovParamCoeff_three",
@@ -785,6 +956,7 @@
       "statement": "theorem markovParamCoeff_three : markovParamCoeff 3 = 1 / 16"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 81,
       "decl": "markovParamCoeff_four",
@@ -804,6 +976,7 @@
       "statement": "theorem markovParamCoeff_four : markovParamCoeff 4 = -13 / 256"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean",
       "line": 105,
       "decl": "rogersLogCorrection_at_zero",
@@ -823,6 +996,7 @@
       "statement": "theorem rogersLogCorrection_at_zero : rogersLogCorrection 0 0 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean",
       "line": 163,
       "decl": "rogersAlphaBeta_at_zero",
@@ -843,6 +1017,7 @@
       "statement": "theorem rogersAlphaBeta_at_zero : rogersAlpha 0 0 = 0 \u2227 rogersBeta 0 0 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean",
       "line": 49,
       "decl": "seifertEuler_eq_neg_one",
@@ -862,6 +1037,7 @@
       "statement": "theorem seifertEuler_eq_neg_one : seifertEuler = -1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean",
       "line": 64,
       "decl": "twoM_content_decomposition",
@@ -882,6 +1058,7 @@
       "statement": "theorem twoM_content_decomposition (n : \u2124) : twoM n = n * (n - 1) + 2 * n ^ 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/nonabelian_stokes_surface_boundary_stokes.lean",
       "line": 183,
       "decl": "surfaceOrderedExp_append_letter",
@@ -901,6 +1078,7 @@
       "statement": "theorem surfaceOrderedExp_append_letter {G : Type*} [Group G] [Y : YekutieliSurfaceToBoundary G] (word : List G) (g : G) : Y.surfaceOrderedExp (word ++ [g]) = Y.surfaceOrderedExp word * g"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean",
       "line": 46,
       "decl": "qIntSym_zero",
@@ -920,6 +1098,7 @@
       "statement": "theorem qIntSym_zero (q : \u211d) : qIntSym q 0 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
       "line": 54,
       "decl": "heckeAB_nil",
@@ -939,6 +1118,7 @@
       "statement": "@[simp] theorem heckeAB_nil (h : R) : heckeAB h ([] : List R) = (0, 1)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
       "line": 56,
       "decl": "heckeAB_cons",
@@ -958,6 +1138,7 @@
       "statement": "theorem heckeAB_cons (h d : R) (ds : List R) : heckeAB h (d :: ds) = ((heckeAB h ds).1 * (h + d) + (heckeAB h ds).2, (heckeAB h ds).1 + (heckeAB h ds).2 * d)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
       "line": 61,
       "decl": "heckeAB_cons_fst",
@@ -977,6 +1158,7 @@
       "statement": "@[simp] theorem heckeAB_cons_fst (h d : R) (ds : List R) : (heckeAB h (d :: ds)).1 = (heckeAB h ds).1 * (h + d) + (heckeAB h ds).2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
       "line": 64,
       "decl": "heckeAB_cons_snd",
@@ -996,6 +1178,7 @@
       "statement": "@[simp] theorem heckeAB_cons_snd (h d : R) (ds : List R) : (heckeAB h (d :: ds)).2 = (heckeAB h ds).1 + (heckeAB h ds).2 * d"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
       "line": 93,
       "decl": "alexanderTorus2_zero",
@@ -1015,6 +1198,7 @@
       "statement": "@[simp] theorem alexanderTorus2_zero (q : R) : alexanderTorus2 q 0 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
       "line": 96,
       "decl": "alexanderTorus2_one",
@@ -1034,6 +1218,7 @@
       "statement": "@[simp] theorem alexanderTorus2_one (q : R) : alexanderTorus2 q 1 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
       "line": 99,
       "decl": "alexanderTorus2_succ",
@@ -1053,6 +1238,7 @@
       "statement": "theorem alexanderTorus2_succ (q : R) (m : \u2115) : alexanderTorus2 q (m + 1) = alexanderTorus2 q m + (-q) ^ m"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
       "line": 175,
       "decl": "framedQInt_sub_eq_zero_iff_alexander_root",
@@ -1073,6 +1259,7 @@
       "statement": "theorem framedQInt_sub_eq_zero_iff_alexander_root (q : R) (n : \u2115) : framedQInt q (n + 1) - q * framedQInt q n = 0 \u2194 alexanderTorus2 q (2 * n + 1) = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean",
       "line": 75,
       "decl": "gl2_image_eq_le2row",
@@ -1093,6 +1280,7 @@
       "statement": "theorem gl2_image_eq_le2row : PartitionOf5.allList.filter (fun p => decide p.inGL2SchurWeylImage) = [.five, .fourOne, .threeTwo]"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean",
       "line": 82,
       "decl": "electron_not_in_gl2_image",
@@ -1113,6 +1301,7 @@
       "statement": "theorem electron_not_in_gl2_image : \u00ac PartitionOf5.threeOneOne.inGL2SchurWeylImage"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean",
       "line": 403,
       "decl": "F_Bor_eq_trM_over_y_3",
@@ -1133,6 +1322,7 @@
       "statement": "theorem F_Bor_eq_trM_over_y_3 {R : Type*} [Field R] (q : R) (h_trM : R) (h_q3 : q^3 \u2260 0) (h_qfact : qFactorial q 3 \u2260 0) : h_trM * qFactorial q 3 / q^3 = h_trM / (q^3 / qFactorial q 3)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BringsSurface.lean",
       "line": 168,
       "decl": "riemann_hurwitz_check",
@@ -1152,6 +1342,7 @@
       "statement": "theorem riemann_hurwitz_check : eulerChar = (covering_degree : \u2124) * 2 - 14"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
       "line": 56,
       "decl": "seifertRank_two_three",
@@ -1171,6 +1362,7 @@
       "statement": "@[simp] theorem seifertRank_two_three : seifertRank 2 3 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
       "line": 57,
       "decl": "seifertRank_two_nine",
@@ -1190,6 +1382,7 @@
       "statement": "@[simp] theorem seifertRank_two_nine : seifertRank 2 9 = 4"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
       "line": 58,
       "decl": "seifertRank_two_eleven",
@@ -1209,6 +1402,7 @@
       "statement": "@[simp] theorem seifertRank_two_eleven : seifertRank 2 11 = 5"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Eightfold/DecupletEqualSpacing.lean",
       "line": 208,
       "decl": "decuplet_casimir_is_affine_in_hypercharge",
@@ -1228,6 +1422,7 @@
       "statement": "theorem decuplet_casimir_is_affine_in_hypercharge : \u2200 p \u2208 decupletStates, p.2 = (p.1 + 2) * (p.1 + 4)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Eightfold/FlavourColourDiscriminator.lean",
       "line": 88,
       "decl": "colour_eq_flavour_data",
@@ -1248,6 +1443,7 @@
       "statement": "theorem colour_eq_flavour_data : colourTripleData = flavourTripleData"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean",
       "line": 397,
       "decl": "bernstein_bound_linear",
@@ -1267,6 +1463,7 @@
       "statement": "theorem bernstein_bound_linear (conj : LeviDegeneracyConjecture) : conj.bernstein_bound = (conj.\u03ba : \u211d)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean",
       "line": 451,
       "decl": "quantum_peter_weyl_completeness",
@@ -1287,6 +1484,7 @@
       "statement": "theorem quantum_peter_weyl_completeness : \u2200 (twice_j : \u2115), eigenspace_dim twice_j = (twice_j + 1) ^ 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean",
       "line": 415,
       "decl": "heckeH_one",
@@ -1306,6 +1504,7 @@
       "statement": "theorem heckeH_one : heckeH (1 : R) = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean",
       "line": 81,
       "decl": "wedderburn_dim_three",
@@ -1327,6 +1526,7 @@
       "statement": "theorem wedderburn_dim_three : sytDimRow3 ^ 2 + sytDimHook21 ^ 2 + sytDimCol3 ^ 2 = 6"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
       "line": 644,
       "decl": "gramEntryD_zero_one",
@@ -1347,6 +1547,7 @@
       "statement": "theorem gramEntryD_zero_one (q : \u211d) : gramEntryD q 0 1 = markovWeightD q"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean",
       "line": 264,
       "decl": "unit2_nf_hecke_reduction",
@@ -1366,6 +1567,7 @@
       "statement": "theorem unit2_nf_hecke_reduction : unit2_nf 5 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
       "line": 307,
       "decl": "jones_figureEight_value",
@@ -1386,6 +1588,7 @@
       "statement": "theorem jones_figureEight_value : jones figureEight = \u27e8-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]\u27e9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
       "line": 370,
       "decl": "jones_trefoil_value",
@@ -1406,6 +1609,7 @@
       "statement": "theorem jones_trefoil_value : jones trefoil = \u27e8-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]\u27e9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
       "line": 433,
       "decl": "delta_sq_mul_jonesHopf",
@@ -1428,6 +1632,7 @@
       "statement": "theorem delta_sq_mul_jonesHopf : LP.mul (LP.mul delta delta) jonesHopf = jonesHopfReduced"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
       "line": 439,
       "decl": "jones_hopf_value",
@@ -1449,6 +1654,7 @@
       "statement": "theorem jones_hopf_value : jones hopf = jonesHopfReduced"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean",
       "line": 505,
       "decl": "jones_torus819_value",
@@ -1470,6 +1676,7 @@
       "statement": "theorem jones_torus819_value : jones torus819 = jonesTorus819Reduced"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Machinery/HeckeTowerBasicConstruction.lean",
       "line": 70,
       "decl": "smul_jonesIdempotent",
@@ -1489,6 +1696,7 @@
       "statement": "theorem smul_jonesIdempotent (q : R) (s : H) (hd : q + q\u207b\u00b9 \u2260 0) : (q + q\u207b\u00b9) \u2022 jonesIdempotent q s = q \u2022 (1 : H) - s"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean",
       "line": 93,
       "decl": "mackey_level2",
@@ -1511,6 +1719,7 @@
       "statement": "theorem mackey_level2 : mulT R32 R32 = matadd (mulT [[1], [1]] [[1], [1]]) Id2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MassEndomorphism/ZHabiroCauchy.lean",
       "line": 792,
       "decl": "truncSection_zHabiroLimit",
@@ -1533,6 +1742,7 @@
       "statement": "theorem truncSection_zHabiroLimit (qinv : R) (hq : IsUnit qinv) (c : \u2115 \u2192 R) (n : \u2115) : truncSection qinv hq n ((zHabiroLimit qinv c : \u2200 n, R[X] \u29f8 braneIdeal qinv n) n) = (\u2211 m \u2208 Finset.range (n + 1), C (c m) * branePoly qinv m) %\u2098 braneMonic qinv n"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean",
       "line": 65,
       "decl": "qou_order_is_double_milnor_degree",
@@ -1553,6 +1763,7 @@
       "statement": "theorem qou_order_is_double_milnor_degree (A : \u2115) : qouDeficitLeadingOrder A = 2 * milnorVassilievDegree A"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MassTheory/PnOffsetBarOddClass.lean",
       "line": 219,
       "decl": "likeFlavour_bond_not_barInvariant",
@@ -1572,6 +1783,7 @@
       "statement": "theorem likeFlavour_bond_not_barInvariant (h : K) (hh : h \u2260 0) : bondConst (-h) (1 / 2) - bondConst h (1 / 2) \u2260 h"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean",
       "line": 431,
       "decl": "yekutieli_markov_axiom_via_split",
@@ -1591,6 +1803,7 @@
       "statement": "theorem yekutieli_markov_axiom_via_split {G : Type u} [Group G] (z : G) (m : \u2115) : braidSurfaceMultTrace z (m + 1) = braidSurfaceMultTrace z m * z"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/PermutationEnumeration.lean",
       "line": 520,
       "decl": "lengthFn4_for_h3_to_h4_at_six",
@@ -1610,6 +1823,7 @@
       "statement": "theorem lengthFn4_for_h3_to_h4_at_six : lengthFn4_for_h3_to_h4 \u27e86, by decide\u27e9 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean",
       "line": 92,
       "decl": "dim_q_squares_sum_two",
@@ -1630,6 +1844,7 @@
       "statement": "theorem dim_q_squares_sum_two (q : \u211d) : dimqRowPartition 2 q ^ 2 + dimqColPartition 2 q ^ 2 = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean",
       "line": 84,
       "decl": "qFactorial_succ",
@@ -1650,6 +1865,7 @@
       "statement": "theorem qFactorial_succ (q : K) (n : \u2115) : qFactorial q (n + 1) = qFactorial q n * qInt q (n + 1)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean",
       "line": 127,
       "decl": "selectionInput_injective",
@@ -1669,6 +1885,7 @@
       "statement": "theorem selectionInput_injective : Function.Injective selectionInput"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean",
       "line": 105,
       "decl": "adjoint_palindromic",
@@ -1688,6 +1905,7 @@
       "statement": "theorem adjoint_palindromic : \u2200 e \u2208 adjointExponents, (-e) \u2208 adjointExponents"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean",
       "line": 205,
       "decl": "min_max_pair_reconstructs_datum",
@@ -1710,6 +1928,7 @@
       "statement": "theorem min_max_pair_reconstructs_datum : [dtMinus fourOne, dtPlus fourOne] = [dtMin fourOne, dtMax fourOne] \u2227 [dtMinus fiveTwo, dtPlus fiveTwo] = [dtMin fiveTwo, dtMax fiveTwo]"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean",
       "line": 152,
       "decl": "dtSplit52_chiral_grading",
@@ -1732,6 +1951,7 @@
       "statement": "theorem dtSplit52_chiral_grading : IsChiral dtSplit52 \u2227 barEven dtSplit52 = 7 \u2227 barOdd dtSplit52 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean",
       "line": 157,
       "decl": "dtSplit41_amphichiral",
@@ -1753,6 +1973,7 @@
       "statement": "theorem dtSplit41_amphichiral : \u00ac IsChiral dtSplit41 \u2227 barOdd dtSplit41 = 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean",
       "line": 161,
       "decl": "dtSplit41_eq",
@@ -1772,6 +1993,7 @@
       "statement": "theorem dtSplit41_eq : dtSplit41.1 = dtSplit41.2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/DTBehrendParityObstruction.lean",
       "line": 145,
       "decl": "dtCount_single",
@@ -1791,6 +2013,7 @@
       "statement": "theorem dtCount_single (n chiEuS : Int) : dtCount [(n, chiEuS)] = n * chiEuS"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean",
       "line": 127,
       "decl": "dtVector_eq",
@@ -1810,6 +2033,7 @@
       "statement": "theorem dtVector_eq : dtVector = (3, 4)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean",
       "line": 136,
       "decl": "no_menu_invariant_hits_dt_vector",
@@ -1832,6 +2056,7 @@
       "statement": "theorem no_menu_invariant_hits_dt_vector : \u2200 v \u2208 menuVectors, v \u2260 dtVector"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean",
       "line": 152,
       "decl": "dtDatum_fiveTwo_two_distinct",
@@ -1851,6 +2076,7 @@
       "statement": "theorem dtDatum_fiveTwo_two_distinct : (4 : Int) \u2208 dtDatum fiveTwo \u2227 (3 : Int) \u2208 dtDatum fiveTwo \u2227 (4 : Int) \u2260 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FMapC3ParityExclusion.lean",
       "line": 47,
       "decl": "barOdd_ne_hopf_value_at_one",
@@ -1870,6 +2096,7 @@
       "statement": "theorem barOdd_ne_hopf_value_at_one (f : \u211d \u2192 \u211d) : barOdd f 1 \u2260 -2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean",
       "line": 112,
       "decl": "splus0_carries_four",
@@ -1889,6 +2116,7 @@
       "statement": "theorem splus0_carries_four : Splus0 0 1 = 4"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean",
       "line": 116,
       "decl": "sminus0_carries_three",
@@ -1908,6 +2136,7 @@
       "statement": "theorem sminus0_carries_three : Sminus0 0 2 = 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean",
       "line": 127,
       "decl": "dt_spectrum_two_element",
@@ -1928,6 +2157,7 @@
       "statement": "theorem dt_spectrum_two_element : Splus0 0 1 \u2260 Sminus0 0 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean",
       "line": 240,
       "decl": "dtPair52_grading",
@@ -1949,6 +2179,7 @@
       "statement": "theorem dtPair52_grading : (barEvenPair dtPair52, barOddPair dtPair52) = (7, 1)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean",
       "line": 245,
       "decl": "dtPair52_chiral",
@@ -1969,6 +2200,7 @@
       "statement": "theorem dtPair52_chiral : barSwap dtPair52 \u2260 dtPair52"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/GZThirdKnotRankGrading.lean",
       "line": 425,
       "decl": "trace_field_alone_fails_on_pretzel237",
@@ -1989,6 +2221,7 @@
       "statement": "theorem trace_field_alone_fails_on_pretzel237 : traceFieldDegree DGKnot.fiveTwo = 3 \u2227 rank PKnot.pretzel237 = 6 \u2227 traceFieldDegree DGKnot.fiveTwo \u2260 rank PKnot.pretzel237"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZClassicalCoincidence.lean",
       "line": 92,
       "decl": "zCsub_eq_zDsub_one",
@@ -2009,6 +2242,7 @@
       "statement": "theorem zCsub_eq_zDsub_one : zCsub 1 = zDsub 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean",
       "line": 153,
       "decl": "a41_full_L_degree_eq_three",
@@ -2028,6 +2262,7 @@
       "statement": "theorem a41_full_L_degree_eq_three : a41FullLDegree = 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean",
       "line": 178,
       "decl": "c1_slope_ne_a41_slope",
@@ -2048,6 +2283,7 @@
       "statement": "theorem c1_slope_ne_a41_slope : \u00ac slopeEq (1, 2) (intSlope 4)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean",
       "line": 201,
       "decl": "r2_slope_reading_refuted",
@@ -2069,6 +2305,7 @@
       "statement": "theorem r2_slope_reading_refuted : a41MaxAbsSlope \u2208 dtSpectrum \u2227 fiveTwoMaxAbsSlope \u2209 dtSpectrum"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean",
       "line": 207,
       "decl": "r1_connection_reading_survives",
@@ -2090,6 +2327,7 @@
       "statement": "theorem r1_connection_reading_survives : a41Connections \u2208 dtSpectrum \u2227 fiveTwoConnections \u2208 dtSpectrum"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean",
       "line": 128,
       "decl": "euler_machinery_misses_dt_count",
@@ -2112,6 +2350,7 @@
       "statement": "theorem euler_machinery_misses_dt_count : partitionEuler3 \u2260 dtCount_fourOne"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean",
       "line": 157,
       "decl": "dtOffDiagMax_fourOne",
@@ -2131,6 +2370,7 @@
       "statement": "theorem dtOffDiagMax_fourOne : dtOffDiagMax fourOne = 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean",
       "line": 158,
       "decl": "dtOffDiagMax_fiveTwo",
@@ -2150,6 +2390,7 @@
       "statement": "theorem dtOffDiagMax_fiveTwo : dtOffDiagMax fiveTwo = 4"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean",
       "line": 85,
       "decl": "dt_spectrum_three_four",
@@ -2169,6 +2410,7 @@
       "statement": "theorem dt_spectrum_three_four : DT 0 1 = 4 \u2227 DT 0 2 = 3 \u2227 DT 1 0 = -4 \u2227 DT 1 2 = -3 \u2227 DT 2 0 = -3 \u2227 DT 2 1 = 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean",
       "line": 122,
       "decl": "minus_nine_is_derived",
@@ -2189,6 +2431,7 @@
       "statement": "theorem minus_nine_is_derived : SplusRecon 2 1 = DT 2 0 * DT 0 1 + DT 2 1 \u2227 SplusRecon 2 1 = -9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean",
       "line": 94,
       "decl": "ggm_sandwich_qzero",
@@ -2209,6 +2452,7 @@
       "statement": "theorem ggm_sandwich_qzero : \u2200 i j, sandwich i j = (-2 : \u2124) * Splus0 i j"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean",
       "line": 100,
       "decl": "stokes_qzero_offdiagonal",
@@ -2228,6 +2472,7 @@
       "statement": "theorem stokes_qzero_offdiagonal : Splus0 0 1 = 3"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QBeta/YekutieliTrefoilDiscretization.lean",
       "line": 94,
       "decl": "surface2Form_trefoil",
@@ -2249,6 +2494,7 @@
       "statement": "theorem surface2Form_trefoil (A : Fin 2 \u2192 R) : surface2Form seifertTrefoil A = bracket (A 0) (A 1)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean",
       "line": 226,
       "decl": "langlands_eigenvalue_swap",
@@ -2268,6 +2514,7 @@
       "statement": "theorem langlands_eigenvalue_swap {M : Type*} (ld : QLanglandsDual M) (p : M) : -(ld.gaugeGroup.field p)\u207b\u00b9 = -(ld.dualSubstrate.field p)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean",
       "line": 92,
       "decl": "markov_add",
@@ -2287,6 +2534,7 @@
       "statement": "theorem markov_add (D : HeckeWedderburnData K Part H) (a b : H) : D.markov (a + b) = D.markov a + D.markov b"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
       "line": 57,
       "decl": "heckeDim3_zero",
@@ -2306,6 +2554,7 @@
       "statement": "@[simp] theorem heckeDim3_zero : heckeDim3 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
       "line": 58,
       "decl": "heckeDim3_one",
@@ -2325,6 +2574,7 @@
       "statement": "@[simp] theorem heckeDim3_one : heckeDim3 1 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
       "line": 59,
       "decl": "heckeDim3_two",
@@ -2344,6 +2594,7 @@
       "statement": "@[simp] theorem heckeDim3_two : heckeDim3 2 = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean",
       "line": 104,
       "decl": "heckeStep_eq_transferMatrix_fst",
@@ -2363,6 +2614,7 @@
       "statement": "theorem heckeStep_eq_transferMatrix_fst (qq c d a b : R) : (transferMatrix qq c d).mulVec ![a, b] 0 = a * c * qq + a * d + b * c"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean",
       "line": 110,
       "decl": "heckeStep_eq_transferMatrix_snd",
@@ -2382,6 +2634,7 @@
       "statement": "theorem heckeStep_eq_transferMatrix_snd (qq c d a b : R) : (transferMatrix qq c d).mulVec ![a, b] 1 = a * c + b * d"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
       "line": 127,
       "decl": "heckePower_recurrence_a",
@@ -2402,6 +2655,7 @@
       "statement": "theorem heckePower_recurrence_a (k : \u2115) : heckePowerA (k + 2) = X * heckePowerA (k + 1) + heckePowerB (k + 1)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
       "line": 131,
       "decl": "heckePower_recurrence_b",
@@ -2422,6 +2676,7 @@
       "statement": "theorem heckePower_recurrence_b (k : \u2115) : heckePowerB (k + 1) = heckePowerA k"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
       "line": 142,
       "decl": "heckePowerB_two",
@@ -2441,6 +2696,7 @@
       "statement": "theorem heckePowerB_two : heckePowerB 2 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean",
       "line": 73,
       "decl": "jonesBorromeanFlipped_eq_eight",
@@ -2460,6 +2716,7 @@
       "statement": "theorem jonesBorromeanFlipped_eq_eight : jonesBorromeanFlipped = 8"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean",
       "line": 80,
       "decl": "jonesDoubleHopfValue_eq_four",
@@ -2479,6 +2736,7 @@
       "statement": "theorem jonesDoubleHopfValue_eq_four : jonesDoubleHopfValue = 4"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean",
       "line": 158,
       "decl": "asymptotic_volume_of_vc",
@@ -2499,6 +2757,7 @@
       "statement": "theorem asymptotic_volume_of_vc (q x V : \u211d) (h_vc_asymptotic : \u2200 \u03b5 > (0 : \u211d), \u2203 N : \u2115, \u2200 m, N \u2264 m \u2192 \u2016(1 - q) * Real.log (partialProductLocal q x m) - V\u2016 < \u03b5) (h_pole_cusp_matched : V = BlochWignerD x) : \u2200 \u03b5 > (0 : \u211d), \u2203 N : \u2115, \u2200 m, N \u2264 m \u2192 \u2016(1 - q) * Real.log (partialProductLocal q x m) - BlochWigne"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean",
       "line": 111,
       "decl": "S_w0_at_k5_neg",
@@ -2521,6 +2780,7 @@
       "statement": "theorem S_w0_at_k5_neg : S_w0 c5_V3 c5_V21 c5_V111 < 0"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean",
       "line": 165,
       "decl": "ckFromReduction_eq_c1",
@@ -2541,6 +2801,7 @@
       "statement": "theorem ckFromReduction_eq_c1 (q : \u211d) : ckFromReduction q 1 = hoefsmitB_local q"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean",
       "line": 171,
       "decl": "ckFromReduction_eq_c2",
@@ -2561,6 +2822,7 @@
       "statement": "theorem ckFromReduction_eq_c2 (q : \u211d) : ckFromReduction q 2 = (hoefsmitB_local q)^2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean",
       "line": 178,
       "decl": "ckFromReduction_eq_c3",
@@ -2583,6 +2845,7 @@
       "statement": "theorem ckFromReduction_eq_c3 (q : \u211d) : ckFromReduction q 3 = jonesHopfLocal"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean",
       "line": 185,
       "decl": "ckFromReduction_eq_c4",
@@ -2603,6 +2866,7 @@
       "statement": "theorem ckFromReduction_eq_c4 (q : \u211d) : ckFromReduction q 4 = (hoefsmitB_local q)^2 + 1/2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean",
       "line": 438,
       "decl": "helium4_lp_reduction",
@@ -2623,6 +2887,7 @@
       "statement": "theorem helium4_lp_reduction : partition_number_small 12 = 77 \u2227 max_active_channels 2 2 = 11 \u2227 partition_number_small 12 - max_active_channels 2 2 = 66"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean",
       "line": 489,
       "decl": "conjugate_4_4_4_involutive",
@@ -2642,6 +2907,7 @@
       "statement": "theorem conjugate_4_4_4_involutive : conjugatePartition (conjugatePartition [4, 4, 4]) = [4, 4, 4]"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 210,
       "decl": "heckeH2DimQ_eq_one",
@@ -2661,6 +2927,7 @@
       "statement": "@[simp] theorem heckeH2DimQ_eq_one (q : \u211d) (i : Fin 2) : heckeH2DimQ q i = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 261,
       "decl": "heckeH4DimQ_zero",
@@ -2680,6 +2947,7 @@
       "statement": "@[simp] theorem heckeH4DimQ_zero (q : \u211d) : heckeH4DimQ q 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 262,
       "decl": "heckeH4DimQ_one",
@@ -2699,6 +2967,7 @@
       "statement": "@[simp] theorem heckeH4DimQ_one (q : \u211d) : heckeH4DimQ q 1 = q ^ 2 + 1 + (q ^ 2)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 264,
       "decl": "heckeH4DimQ_two",
@@ -2718,6 +2987,7 @@
       "statement": "@[simp] theorem heckeH4DimQ_two (q : \u211d) : heckeH4DimQ q 2 = q ^ 2 + (q ^ 2)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 266,
       "decl": "heckeH4DimQ_three",
@@ -2737,6 +3007,7 @@
       "statement": "@[simp] theorem heckeH4DimQ_three (q : \u211d) : heckeH4DimQ q 3 = q ^ 2 + 1 + (q ^ 2)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 268,
       "decl": "heckeH4DimQ_four",
@@ -2756,6 +3027,7 @@
       "statement": "@[simp] theorem heckeH4DimQ_four (q : \u211d) : heckeH4DimQ q 4 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 284,
       "decl": "hecke_n4_frobenius_codim",
@@ -2776,6 +3048,7 @@
       "statement": "theorem hecke_n4_frobenius_codim (q : \u211d) : \u2211 i : Fin 5, 1 / heckeH4DimQ q i = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9) + 1 / (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 322,
       "decl": "heckeH5DimQ_zero",
@@ -2795,6 +3068,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_zero (q : \u211d) : heckeH5DimQ q 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 323,
       "decl": "heckeH5DimQ_one",
@@ -2814,6 +3088,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_one (q : \u211d) : heckeH5DimQ q 1 = q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 325,
       "decl": "heckeH5DimQ_two",
@@ -2833,6 +3108,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_two (q : \u211d) : heckeH5DimQ q 2 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 327,
       "decl": "heckeH5DimQ_three",
@@ -2852,6 +3128,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_three (q : \u211d) : heckeH5DimQ q 3 = (q ^ 2 + (q ^ 2)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 329,
       "decl": "heckeH5DimQ_four",
@@ -2871,6 +3148,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_four (q : \u211d) : heckeH5DimQ q 4 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 331,
       "decl": "heckeH5DimQ_five",
@@ -2890,6 +3168,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_five (q : \u211d) : heckeH5DimQ q 5 = q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 333,
       "decl": "heckeH5DimQ_six",
@@ -2909,6 +3188,7 @@
       "statement": "@[simp] theorem heckeH5DimQ_six (q : \u211d) : heckeH5DimQ q 6 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 404,
       "decl": "heckeH6DimQ_zero",
@@ -2928,6 +3208,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_zero (q : \u211d) : heckeH6DimQ q 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 405,
       "decl": "heckeH6DimQ_one",
@@ -2947,6 +3228,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_one (q : \u211d) : heckeH6DimQ q 1 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 407,
       "decl": "heckeH6DimQ_two",
@@ -2966,6 +3248,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_two (q : \u211d) : heckeH6DimQ q 2 = (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 409,
       "decl": "heckeH6DimQ_three",
@@ -2985,6 +3268,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_three (q : \u211d) : heckeH6DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 411,
       "decl": "heckeH6DimQ_four",
@@ -3004,6 +3288,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_four (q : \u211d) : heckeH6DimQ q 4 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 413,
       "decl": "heckeH6DimQ_five",
@@ -3023,6 +3308,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_five (q : \u211d) : heckeH6DimQ q 5 = (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 415,
       "decl": "heckeH6DimQ_six",
@@ -3042,6 +3328,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_six (q : \u211d) : heckeH6DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 417,
       "decl": "heckeH6DimQ_seven",
@@ -3061,6 +3348,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_seven (q : \u211d) : heckeH6DimQ q 7 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 419,
       "decl": "heckeH6DimQ_eight",
@@ -3080,6 +3368,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_eight (q : \u211d) : heckeH6DimQ q 8 = (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 421,
       "decl": "heckeH6DimQ_nine",
@@ -3099,6 +3388,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_nine (q : \u211d) : heckeH6DimQ q 9 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 423,
       "decl": "heckeH6DimQ_ten",
@@ -3118,6 +3408,7 @@
       "statement": "@[simp] theorem heckeH6DimQ_ten (q : \u211d) : heckeH6DimQ q 10 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 525,
       "decl": "heckeH7DimQ_zero",
@@ -3137,6 +3428,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_zero (q : \u211d) : heckeH7DimQ q 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 526,
       "decl": "heckeH7DimQ_one",
@@ -3156,6 +3448,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_one (q : \u211d) : heckeH7DimQ q 1 = q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 528,
       "decl": "heckeH7DimQ_two",
@@ -3175,6 +3468,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_two (q : \u211d) : heckeH7DimQ q 2 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 530,
       "decl": "heckeH7DimQ_three",
@@ -3194,6 +3488,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_three (q : \u211d) : heckeH7DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 532,
       "decl": "heckeH7DimQ_four",
@@ -3213,6 +3508,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_four (q : \u211d) : heckeH7DimQ q 4 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 534,
       "decl": "heckeH7DimQ_five",
@@ -3232,6 +3528,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_five (q : \u211d) : heckeH7DimQ q 5 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 536,
       "decl": "heckeH7DimQ_six",
@@ -3251,6 +3548,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_six (q : \u211d) : heckeH7DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 538,
       "decl": "heckeH7DimQ_seven",
@@ -3270,6 +3568,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_seven (q : \u211d) : heckeH7DimQ q 7 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 540,
       "decl": "heckeH7DimQ_eight",
@@ -3289,6 +3588,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_eight (q : \u211d) : heckeH7DimQ q 8 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 542,
       "decl": "heckeH7DimQ_nine",
@@ -3308,6 +3608,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_nine (q : \u211d) : heckeH7DimQ q 9 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 544,
       "decl": "heckeH7DimQ_ten",
@@ -3327,6 +3628,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_ten (q : \u211d) : heckeH7DimQ q 10 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 546,
       "decl": "heckeH7DimQ_eleven",
@@ -3346,6 +3648,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_eleven (q : \u211d) : heckeH7DimQ q 11 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 548,
       "decl": "heckeH7DimQ_twelve",
@@ -3365,6 +3668,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_twelve (q : \u211d) : heckeH7DimQ q 12 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 550,
       "decl": "heckeH7DimQ_thirteen",
@@ -3384,6 +3688,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_thirteen (q : \u211d) : heckeH7DimQ q 13 = q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 552,
       "decl": "heckeH7DimQ_fourteen",
@@ -3403,6 +3708,7 @@
       "statement": "@[simp] theorem heckeH7DimQ_fourteen (q : \u211d) : heckeH7DimQ q 14 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 691,
       "decl": "heckeH8DimQ_zero",
@@ -3422,6 +3728,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_zero (q : \u211d) : heckeH8DimQ q 0 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 693,
       "decl": "heckeH8DimQ_one",
@@ -3441,6 +3748,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_one (q : \u211d) : heckeH8DimQ q 1 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 695,
       "decl": "heckeH8DimQ_two",
@@ -3460,6 +3768,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_two (q : \u211d) : heckeH8DimQ q 2 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 697,
       "decl": "heckeH8DimQ_three",
@@ -3479,6 +3788,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_three (q : \u211d) : heckeH8DimQ q 3 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 699,
       "decl": "heckeH8DimQ_four",
@@ -3498,6 +3808,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_four (q : \u211d) : heckeH8DimQ q 4 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 701,
       "decl": "heckeH8DimQ_five",
@@ -3517,6 +3828,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_five (q : \u211d) : heckeH8DimQ q 5 = (q ^ 7 + q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9 + (q ^ 7)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 703,
       "decl": "heckeH8DimQ_six",
@@ -3536,6 +3848,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_six (q : \u211d) : heckeH8DimQ q 6 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 705,
       "decl": "heckeH8DimQ_seven",
@@ -3555,6 +3868,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_seven (q : \u211d) : heckeH8DimQ q 7 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 707,
       "decl": "heckeH8DimQ_eight",
@@ -3574,6 +3888,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_eight (q : \u211d) : heckeH8DimQ q 8 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 709,
       "decl": "heckeH8DimQ_nine",
@@ -3593,6 +3908,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_nine (q : \u211d) : heckeH8DimQ q 9 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 711,
       "decl": "heckeH8DimQ_ten",
@@ -3612,6 +3928,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_ten (q : \u211d) : heckeH8DimQ q 10 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 713,
       "decl": "heckeH8DimQ_eleven",
@@ -3631,6 +3948,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_eleven (q : \u211d) : heckeH8DimQ q 11 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 715,
       "decl": "heckeH8DimQ_twelve",
@@ -3650,6 +3968,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_twelve (q : \u211d) : heckeH8DimQ q 12 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 717,
       "decl": "heckeH8DimQ_thirteen",
@@ -3669,6 +3988,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_thirteen (q : \u211d) : heckeH8DimQ q 13 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 719,
       "decl": "heckeH8DimQ_fourteen",
@@ -3688,6 +4008,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_fourteen (q : \u211d) : heckeH8DimQ q 14 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 721,
       "decl": "heckeH8DimQ_fifteen",
@@ -3707,6 +4028,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_fifteen (q : \u211d) : heckeH8DimQ q 15 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 723,
       "decl": "heckeH8DimQ_sixteen",
@@ -3726,6 +4048,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_sixteen (q : \u211d) : heckeH8DimQ q 16 = (q ^ 7 + q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9 + (q ^ 7)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 725,
       "decl": "heckeH8DimQ_seventeen",
@@ -3745,6 +4068,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_seventeen (q : \u211d) : heckeH8DimQ q 17 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 727,
       "decl": "heckeH8DimQ_eighteen",
@@ -3764,6 +4088,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_eighteen (q : \u211d) : heckeH8DimQ q 18 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 729,
       "decl": "heckeH8DimQ_nineteen",
@@ -3783,6 +4108,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_nineteen (q : \u211d) : heckeH8DimQ q 19 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 731,
       "decl": "heckeH8DimQ_twenty",
@@ -3802,6 +4128,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_twenty (q : \u211d) : heckeH8DimQ q 20 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 733,
       "decl": "heckeH8DimQ_twentyone",
@@ -3821,6 +4148,7 @@
       "statement": "@[simp] theorem heckeH8DimQ_twentyone (q : \u211d) : heckeH8DimQ q 21 = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
       "line": 74,
       "decl": "habiro_terminates",
@@ -3841,6 +4169,7 @@
       "statement": "theorem habiro_terminates (h : HabiroExpansion) : (Finset.univ : Finset (Fin (h.M + 1))).card = h.M + 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
       "line": 122,
       "decl": "frobenius_codim_trace_n3",
@@ -3862,6 +4191,7 @@
       "statement": "theorem frobenius_codim_trace_n3 (q : \u211d) : frobeniusCoCasimirTrace q 3 = 2 + 1 / (q + 1 / q)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
       "line": 135,
       "decl": "frobenius_codim_trace_n2",
@@ -3883,6 +4213,7 @@
       "statement": "theorem frobenius_codim_trace_n2 (q : \u211d) : frobeniusCoCasimirTrace q 2 = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
       "line": 148,
       "decl": "frobenius_codim_trace_n4",
@@ -3904,6 +4235,7 @@
       "statement": "theorem frobenius_codim_trace_n4 (q : \u211d) : frobeniusCoCasimirTrace q 4 = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9) + 1 / (q ^ 2 + (q ^ 2)\u207b\u00b9)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
       "line": 165,
       "decl": "frobenius_codim_trace_n5",
@@ -3925,6 +4257,7 @@
       "statement": "theorem frobenius_codim_trace_n5 (q : \u211d) : frobeniusCoCasimirTrace q 5 = 2 + 2 / (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) + 1 / ((q ^ 2 + (q ^ 2)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9))"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean",
       "line": 180,
       "decl": "triple_identity",
@@ -3944,6 +4277,7 @@
       "statement": "theorem triple_identity (q : \u211d) (hq : 1 < q) : (SubstrateTripleIdentity.ofQ q hq).descartes_q = (SubstrateTripleIdentity.ofQ q hq).q \u2227 (SubstrateTripleIdentity.ofQ q hq).hecke_coeff = (SubstrateTripleIdentity.ofQ q hq).q - 1/(SubstrateTripleIdentity.ofQ q hq).q"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean",
       "line": 185,
       "decl": "heckeH_mk0",
@@ -3963,6 +4297,7 @@
       "statement": "theorem heckeH_mk0 (q : K) (hq : q \u2260 0) : heckeH (Units.mk0 q hq) = q - q\u207b\u00b9"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/tower-binding-energy.lean",
       "line": 34,
       "decl": "wedderburnWeightsSum",
@@ -3983,6 +4318,7 @@
       "statement": "theorem wedderburnWeightsSum (q : \u211d) (hq : q > 1) : wedderburnSym q hq + wedderburnStd q hq + wedderburnSym q hq = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean",
       "line": 106,
       "decl": "cpt_boolean_eq_orbit_closure",
@@ -4004,6 +4340,7 @@
       "statement": "theorem cpt_boolean_eq_orbit_closure {n : \u2115} (\u039b : List (Partition n)) : cptSaturatedBool \u039b = decide (isCPTSaturated \u039b)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/observations/building-block-knots.lean",
       "line": 133,
       "decl": "jones_unknot_eq_one",
@@ -4023,6 +4360,7 @@
       "statement": "theorem jones_unknot_eq_one (q : \u211d) : jones_unknot q = 1"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean",
       "line": 30,
       "decl": "alexander_weight_diff_six",
@@ -4042,6 +4380,7 @@
       "statement": "theorem alexander_weight_diff_six : alexanderWeightDifference 6 = 2"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/predicted-spectra/chebyshev-torus-coefficients.lean",
       "line": 56,
       "decl": "chebyshev_base",
@@ -4061,6 +4400,7 @@
       "statement": "theorem chebyshev_base : chebyshevTorusCoefficients 1 = (1, 0)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean",
       "line": 72,
       "decl": "chebyshev_crossing_one",
@@ -4080,6 +4420,7 @@
       "statement": "theorem chebyshev_crossing_one (q : \u211d) : chebyshev_crossing q 1 = (1, 0)"
     },
     {
+      "kind_of_finding": "borrowed-name",
       "file": "content/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean",
       "line": 62,
       "decl": "spoly_count_decomposition_su2",

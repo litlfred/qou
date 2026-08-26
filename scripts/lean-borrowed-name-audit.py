@@ -166,6 +166,32 @@ DECL = re.compile(
     r"(theorem|lemma|example|def|abbrev|structure|class|inductive|instance)\s+"
     r"([A-Za-z_][A-Za-z0-9_'.]*)")
 PROVABLE = {"theorem", "lemma", "example"}
+DEFINITIONAL = {"def", "abbrev"}
+
+# A definition whose body is a product with a literal `0` factor is identically
+# zero while *appearing* to consume its arguments.  There is no legitimate
+# reason to write `0 * (Q + X + n)`: the arguments are mentioned so the
+# declaration looks content-bearing, and `zero_mul` throws them away.
+#
+# Found via a sibling agent's coordination comment on PR #5856 (bean
+# `qou-6a7w`), whose docstring in the corpus CONFESSES the idiom verbatim:
+#   "Content-bearing placeholder `0 * (Q + X + lam.parts.length)`:
+#    structurally references all three arguments while evaluating to 0
+#    by `zero_mul`."
+# Verified at source before adding this check.
+# The `0` must be a WHOLE FACTOR, not a function argument.  First attempt used
+# `(?<![\w.])0\s*\*`, which fired on `p 0 * n.1` (indexing), `H.\u03c3 0 * H.\u03c3 0`
+# (Hecke generators) and `u 0 * v 0` (octonion multiplication): 22 hits of which
+# only 3 were real.  In `p 0 * n.1` the `0` IS preceded by a non-word char --
+# a space -- so the lookbehind never helped.  What distinguishes them is what
+# comes before the SPACE: an identifier means application.
+ZERO_PRODUCT = re.compile(
+    r"(?:^|:=|[(\[,+\-*/=]|=>)\s*0\s*\*"      # 0 as left factor
+    r"|\*\s*0\s*(?:$|[)\],+\-*/=]|--)")        # 0 as right factor
+# The docstring admitting the idiom -- corroboration, not the primary signal.
+ZERO_CONFESSION = re.compile(
+    r"structurally references.{0,80}evaluat\w*\s+to\s+0|"
+    r"content-bearing placeholder|placeholder\s+`?0\s*\*", re.I)
 IDENT = re.compile(r"[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*")
 
 # Lean keywords / tactics that are not declarations.
@@ -317,6 +343,37 @@ def audit(base: str, roots: list[str]):
         if not local_defs:
             continue
         for kind, name, lineno, body in decl_spans(code):
+            if kind in DEFINITIONAL:
+                stmt, val = split_statement(body)
+                # Only a TOP-LEVEL zero factor counts: `0 * x` buried inside a
+                # larger proof or a match arm is not the placeholder idiom.
+                first = val.strip().split("\n")[0]
+                # A LINEAR FORM with a zero coefficient is legitimate maths,
+                # not a placeholder: `mu2 * 1 + mu3 * 0 + mu4 * 0` is a real
+                # functional that happens to drop two terms.  Distinguish by
+                # the presence of a sibling NON-zero numeric coefficient.
+                linear_form = re.search(r"\*\s*[1-9]\d*(?![\w.])", first) is not None
+                if ZERO_PRODUCT.search(first) and not linear_form:
+                    doc = docstring_before(lines, lineno)
+                    findings.append({
+                        "kind_of_finding": "zero-placeholder",
+                        "file": os.path.relpath(p, base),
+                        "line": lineno,
+                        "decl": name,
+                        "kind": kind,
+                        "severity": "CRITICAL",
+                        "borrowed": borrowed_hits(name, doc),
+                        "local_defs_in_statement": [],
+                        "external_lemmas_in_proof": [],
+                        "disclaimed": False,
+                        "overclaim": False,
+                        "cheap_proof": True,
+                        "proof_steps": 0,
+                        "confesses_in_docstring": bool(ZERO_CONFESSION.search(doc)),
+                        "statement": re.sub(r"\s+", " ",
+                                            (stmt + " := " + first).strip())[:300],
+                    })
+                continue
             if kind not in PROVABLE:
                 continue
             doc = docstring_before(lines, lineno)
@@ -355,6 +412,7 @@ def audit(base: str, roots: list[str]):
             else:
                 sev = "advisory"
             findings.append({
+                "kind_of_finding": "borrowed-name",
                 "file": os.path.relpath(p, base),
                 "line": lineno,
                 "decl": name,
