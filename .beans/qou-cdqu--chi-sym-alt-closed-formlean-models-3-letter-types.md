@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T17:01:42Z
-updated_at: 2026-08-26T17:16:20Z
+updated_at: 2026-08-26T18:15:32Z
 ---
 
 [`content/quantum-observable-universe/braids-and-knots/chi-sym-alt-closed-form.lean`](../content/quantum-observable-universe/braids-and-knots/chi-sym-alt-closed-form.lean)
@@ -149,3 +149,15 @@ its own assumption; it simply never stated the assumption.
 
 Both are small, both are content-structure rather than mathematics, and neither
 was in this bean's scope.
+
+
+
+## Correction 2026-08-26 — the float64 tail item is RETRACTED
+
+This bean's closing item repeated the claim that both ⁴He braid constructors emit
+float64 offsets. It is false and is retracted in full on `qou-oppb`:
+`atom_braid_word_3A` is exact (relative error 0.0 at 60 dps against the closed
+form), the float64 belonged only to a since-deleted local rebuild, and
+`he4_braid_canonical` now delegates so there is one constructor. The 1.2e-14
+residual quoted above is the character accumulation's own, not a floor set by the
+offsets.

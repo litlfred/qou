@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T16:40:21Z
-updated_at: 2026-08-26T16:48:01Z
+updated_at: 2026-08-26T18:15:32Z
 ---
 
 Two functions in `computations/` each construct "the canonical ⁴He braid word at
@@ -131,3 +131,60 @@ every character built from either at ~1e-15 regardless of downstream dps. Not
 fixed here: it touches the corpus-wide constructor and moves numbers in ~220
 consumers, which is its own tranche. Related: `qou-b4xn`, whose subject is the
 same constructor.
+
+
+## RETRACTED 2026-08-26, same day — the float64 claim was mine and it is false
+
+This bean's "Still open" / "Secondary" item said:
+
+> both constructors emit **float64 offsets** (`atom_braid_word_3A` wraps one in
+> `mpf`, the `mpf(<float>)` pattern `scripts/precision-gates.sh` flags). That
+> caps every character built from either at ~1e-15 ... A ~220-consumer tranche.
+
+**There is no tranche.** `atom_braid_word_3A` is exact. It builds `h` and `delta`
+inside `workdps(max(mp.dps, 60))` from `Q_50_DIGIT_STR` and
+`flavor_split_leading`, and measured against the closed form at 60 dps its `ud`
+and p-n offsets have relative error **exactly 0.0**:
+
+```
+ud:  got   -0.104530149397819657715423106565
+     exact -0.104530149397819657715423106565
+pn:  got   -0.10445824776972628901783406629
+     exact -0.10445824776972628901783406629
+```
+
+`mass_at_3A_proper.py` even carries a long comment naming the exact two leaks I
+"found" — `pyhecke.gram.h` being a Python float, and `_avg_color_delta()`
+reaching only ~5e-16 — as **already fixed at the source**, with the measured
+improvement (deuteron 1.024e-16 → 3.476e-20 → 3.229e-50). I did not read it.
+
+### How the error was made
+
+The probe compared `he4_braid_canonical`'s word against `atom_braid_word_3A`'s
+and found the letters differing by ~5e-17. That difference is real. I attributed
+it to **both** words rather than to the one that moved. `he4_braid_canonical`
+used `pyhecke.gram.H` directly, which is a float; the other side was exact all
+along, so the 5e-17 was a one-sided error being read as a shared floor.
+
+The same mistake explains the "~1e-15 agreement" on the two one-dimensional
+irreps: that is the old local word's float64 error against an exact reference,
+not a cap on both.
+
+And it is doubly stale now: `he4_braid_canonical` **delegates** to
+`atom_braid_word_3A` as of this same bean's fix, so there is exactly ONE
+constructor and it is exact.
+
+### Where it propagated before being caught
+
+The probe docstring, this bean, `qou-cdqu`, the `authorNotes` of
+`prop:chi-sym-alt-closed-form`, and the bodies of PRs #5833 and #5847 — all
+corrected. Nothing downstream consumed the claim; it was described as a future
+tranche and never acted on.
+
+### The lesson, which is the corpus-grep rule again
+
+A measured difference between two implementations tells you they disagree. It
+does not tell you **which** is wrong. I had the exact closed form available the
+whole time (`flavor_split_leading`, the same function the constructor uses) and
+did not check either side against it — the check that would have settled it took
+one script and found rel error 0.0 immediately.

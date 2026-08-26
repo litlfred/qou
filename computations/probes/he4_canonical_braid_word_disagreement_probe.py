@@ -45,24 +45,32 @@ finding asserts that two of the eight AGREE, and an agreement measured in
 float64 cannot be told apart from the arithmetic floor.
 
 The two one-dimensional irreps agree to ~1e-15, NOT to the 40 dps used, and
-the reason is worth recording. **Both** constructors emit offsets that are
-float64 underneath -- `he4_braid_canonical` as a bare float, and
-`atom_braid_word_3A` as an `mpf` built from one, which is the `mpf(<float>)`
-pattern `scripts/precision-gates.sh` flags. They round differently in the last
-place:
+the reason is CORRECTED here -- see below. `he4_braid_LOCAL_PRE_FIX` computed
+its offsets from `pyhecke.gram.H`, which is a Python float, so the old local
+word was float64 in its letters. `atom_braid_word_3A` is NOT: it builds `h` and
+`delta` inside `workdps(max(dps, 60))` from `Q_50_DIGIT_STR` and
+`flavor_split_leading`, and measured against the closed form its `ud` and p-n
+offsets have relative error **exactly 0.0** at 60 dps.
 
-    -h    he4 -0.20906029879563936547   3A -0.20906029879563931543
-    -h/2  he4 -0.10453014939781968273   3A -0.10453014939781965772
+    -h    LOCAL -0.20906029879563936547   3A -0.20906029879563931543 (exact)
+    -h/2  LOCAL -0.10453014939781968273   3A -0.10453014939781965772 (exact)
 
-So the agreement is capped by the INPUTS, not by the arithmetic -- raising dps
-cannot improve it -- and the multiset equality below is an equality to ~5e-17,
-not an exact one. Do not read the 1e-15 as "agree to 15 digits and no
-further"; read it as "agree to the limit of what these two constructors can
-express in common".
+So the ~1e-15 agreement on the one-dimensional irreps is the OLD LOCAL word's
+float64 error against an exact reference -- one-sided -- not a floor shared by
+two flawed constructors. The multiset equality below is an equality to ~5e-17
+for the same reason.
 
-That still settles the question by fifteen orders of magnitude, 1e-15 against
-a minimum of 2.34 on the other six. But the float64 offsets are a real defect
-in both constructors, independent of which word turns out to be canonical.
+RETRACTION. This docstring previously said "**Both** constructors emit offsets
+that are float64 underneath ... `atom_braid_word_3A` as an `mpf` built from one,
+which is the `mpf(<float>)` pattern `scripts/precision-gates.sh` flags." That is
+false, and `mass_at_3A_proper.atom_braid_word_3A` carries a long comment naming
+the exact two leaks (`pyhecke.gram.h` being a float; `_avg_color_delta()`
+reaching only ~5e-16) as ALREADY FIXED at the source. The error was measuring a
+difference between two words and attributing it to both rather than to the one
+that moved. It settles the dimension-split question either way -- 1e-15 against
+a minimum of 2.34 is fifteen orders of magnitude -- but a one-sided error
+reported as a shared floor is a wrong claim, and it was propagated into two
+beans, a content block and two PR bodies before being caught.
 """
 from __future__ import annotations
 
