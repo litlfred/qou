@@ -1550,3 +1550,69 @@ an independent reason to expect signed structure: the one program here that
 them costs a factor of 15. **That is a hint about where the sign structure has
 to live, not evidence that any particular correction supplies it** — nothing
 here computes a binding contribution.
+
+## Addendum 16 — the level escape is closed on arithmetic (2026-08-26)
+
+§15 left three escapes from the deuteron infeasibility: a different cost, a
+different Wenzl level, or a program admitting signed occupations. Choosing among
+them is a modelling decision and is still not made here. But one of the three is
+now **closed by measurement**, without needing the hard existence question
+answered first.
+
+### Widening the level makes it worse, monotonically
+
+The Ocneanu parameter is a family `z_r = q^r/[r]_q` whose `r = 2` member is the
+canonical `z₂ = q³/(q²+1)`, and the Schur–Weyl row cap at level `r` is
+`ℓ(λ) ≤ r`. So raising `r` widens the support, and `y_lambda_su_n(n, q, N)`
+takes that rank directly. Recomputing the whole reachability calculation at each
+level ([`deuteron_reachability_vs_level_probe.py`](../../computations/meson/deuteron_reachability_vs_level_probe.py),
+6 assertions, three of them controls):
+
+| `r` | support | max rows | `n_target` | `max t` | ceiling | AME/ceiling |
+|---:|---:|---:|---|---|---|---:|
+| **2** | 4 | 2 | 0.575172 | 0.253938 | **0.146058** | **15.23×** |
+| 3 | 7 | 3 | 0.315377 | 0.161031 | 0.050785 | 43.80× |
+| 4 | 9 | 4 | 0.212258 | 0.118222 | 0.025094 | 88.65× |
+| 5 | 10 | 5 | 0.160273 | 0.095810 | 0.015356 | 144.87× |
+| 6 | 11 | 6 | 0.130108 | 0.082596 | 0.010746 | 207.01× |
+
+**No level clears AME, and the canonical one is the best of them.** The ceiling
+is strictly decreasing in `r`.
+
+The mechanism is the normalisation. `y` is fixed by `Σ_λ y_λ f^λ = 1`, so a
+wider support spreads the *same* total weight over more blocks: both `max t` and
+`n_target` shrink, and the ceiling is their product. Widening the level does not
+add room — it subdivides the room already there.
+
+`χ^λ(β_D)` is a character of the braid image in the irrep `λ` of `H_n(q)`,
+depending on `q` and `λ` only and not on the Markov parameter, so the committed
+characters are reused across levels unchanged. Only the weights move.
+
+### What this does and does not settle
+
+It **closes the level escape on arithmetic alone**. That matters because the
+existence question is much harder and is now not needed: `Λ²V ≅ 𝟙` pins the
+fibre dimension at 2 (`exteriorSquareDim_eq_one_iff`, sorry-free), and
+`su5-hypercharge-n3-gate` records that the levels are *alternatives, not stages*
+— no construction in the framework supplies a fibre at any `r ≠ 2`. Every row
+above `r = 2` is therefore a statement about a fibre the framework does not
+have. Had one of them cleared AME, that would have raised a real question about
+whether to go looking for such a fibre. None does, so the question does not
+arise.
+
+**Two escapes remain**, and both are still the author's call:
+
+* **A different cost.** Quantified: at the canonical level a cost reaching AME
+  needs `max(t) ≥ AME/n_target = 3.8677` against the actual `0.2539` — a factor
+  of **15.23×**. That is the same 15.23 as §15's shortfall, which is not a
+  coincidence: with `n_target` held fixed the two statements are the same ratio
+  read from either end.
+* **Signed occupations**, with a stated reason. Untouched here.
+
+**Scope (a).** Measured: the ceiling as a function of level, and the cost factor
+required at the canonical level. **Not** claimed: that any level is realisable;
+that a cost reaching the ceiling exists or is derivable; that signed occupations
+are or are not justified; that any binding conjecture is true or false. A
+ceiling clearing AME would have been **necessary, not sufficient** — it says
+room exists, not that a derivable cost reaches it. Nothing here computes a
+binding contribution.
