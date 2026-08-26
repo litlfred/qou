@@ -3761,3 +3761,57 @@ Words up to length 4 on up to 5 strands, all partitions — **not** the atom wor
 The predictor computes a **valuation**, not a trace: it says where the pole is,
 never how big the number is. Every magnitude conclusion on this branch (§C, §E,
 §G, §H) is untouched by it.
+
+---
+
+## Addendum 41 — the atom word at every colour, computed
+
+The object that motivated the question.
+[`atom_colour_profile_probe.py`](../../computations/meson/atom_colour_profile_probe.py),
+6/6.
+
+Two extensions Addendum 40 did not need. The atom word's letters are **Hecke
+elements** `c·σ_g + d·1`, so the matrix is `c·σ_g + d·I` and each diagonal entry
+has valuation `min(val(c) + val(aᵢ), val(d))` — a min, i.e. the min-plus bound
+one level down. And `val(c)`, `val(d)` are **measured at the q being evaluated**,
+the word rebuilt at each point per Addendum 32's layer lesson.
+
+**The deuteron's coefficient valuations** — 23 letters, and the structure
+Addendum 32 found is visible directly:
+
+| `val(c)` | `val(d)` | count |
+|---:|---:|---:|
+| 0 | **−5** | **1** ← the p–n interface carrying `δ` |
+| 0 | −1 | 11 |
+| 0 | — (`d = 0`) | 11 |
+
+### The profiles
+
+| isotope | `n` | letters | `(N, α)` |
+|---|---:|---:|---|
+| ²H | 6 | 23 | `(1,27) (3,27) (5,17) (7,5)` |
+| ³H | 9 | 35 | `(2,39) (4,39) (6,29) (8,19) (10,7)` |
+| ³He | 9 | 35 | `(2,37) (4,37) (6,27) (8,15) (10,3)` |
+| ⁴He | 12 | 47 | `(1,49) (3,49) (5,49) (7,39) (9,29) (11,17) (13,5)` |
+
+**Cross-check against dense seminormal algebra at ²H: 4/4 exact** — `(6,)→−5`,
+`(5,1)→−17`, `(4,2)→−27`, `(3,3)→−27`. The `27` at `N ∈ {1,3}` reproduces
+Addendum 32's seven-way tie, which included exactly `(4,2)` and `(3,3)`.
+
+**Every profile is non-increasing in `N`** (4 of 4). Reported as an
+observation — nothing is fitted to it, and four isotopes is not a basis for a
+law.
+
+One structural reading worth recording because it is checkable rather than
+suggestive: at the **highest** colour the deuteron gives `α = 5`, and the single
+`val(d) = −5` letter is the `δ`-carrying p–n interface. At that channel the
+entire pole order is that one letter's — the all-row channel rewards `σ⁻¹` and
+suppresses everything else, leaving the anomalous coefficient as the only
+surviving pole.
+
+### Scope
+
+This is a **valuation** — where the pole sits, never how big the number is. §C,
+§E, §G and §H are magnitude results and are untouched by anything in this table.
+Four isotopes; the min-plus core is `O(L·dim²)` in `int`, which is what made
+past-⁴He reachable at all.
