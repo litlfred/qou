@@ -193,6 +193,53 @@ def main() -> int:
           "(so the 2-dim block contributes NOTHING to the trace-visible part "
           "of the phase and EVERYTHING to the trace-invisible part)")
 
+    # ---- 4. the a_lambda are DERIVED, not merely solved for -----------------
+    # Everything else in the block-resolved identity is built from the Ocneanu
+    # trace. The a_lambda were obtained by solving three linear equations, which
+    # makes them determined but not explained. Since net = tr_M^{z=1} - h*d_w0,
+    # and both sides restrict to the centre where every functional is a trace:
+    #
+    #     a_lambda  =  y_lambda(1)  -  h * b_lambda
+    #
+    # with y_lambda(1) the Markov weights at the trivial loop value and
+    # b_lambda the chi-expansion of the longest-coefficient functional on the
+    # centre. That closes the identity: every object in it now comes from the
+    # Ocneanu trace plus one rank-one term.
+    b = sp.symbols("b0 b1 b2")
+    solB = sp.solve([sp.Eq(sum(b[k] * CHI[k](c) for k in range(3)), delta_w0(c))
+                     for c in centre], b, dict=True)
+    check("the_longest_coefficient_functional_has_a_chi_expansion_on_the_centre",
+          len(solB) == 1)
+    B = [sp.simplify(sp.factor(solB[0][b[k]])) for k in range(3)]
+
+    yv = sp.symbols("yy0 yy1 yy2")
+    solY = sp.solve([sp.Eq(sum(yv[k] * CHI[k](basis_vec(i)) for k in range(3)),
+                           TR[i].subs(Z, 1)) for i in (0, 1, 3)], yv, dict=True)
+    Y1 = [sp.simplify(sp.factor(solY[0][yv[k]])) for k in range(3)]
+    check("markov_weights_at_the_trivial_loop_value_solve_uniquely",
+          len(solY) == 1)
+    check("a_lambda_EQUALS_y_lambda_at_one_minus_h_times_b_lambda",
+          all(sp.simplify(A[k] - (Y1[k] - h * B[k])) == 0 for k in range(3)),
+          "(so every object in the block-resolved identity is now built from "
+          "the Ocneanu trace plus the single rank-one term)")
+    check("b_two_one_is_what_makes_the_floor",
+          sp.simplify(floor + h * (Y1[1] - h * B[1])) == 0,
+          f"(floor = -h*(y_(2,1)(1) - h*b_(2,1)); b_(2,1) = {sp.factor(B[1])})")
+    # b_(2,1) came out ZERO, which collapses the previous line to something
+    # stated entirely inside the Ocneanu family, with no `net`-specific object
+    # left in it at all.
+    check("b_two_one_VANISHES",
+          sp.simplify(B[1]) == 0,
+          "(the longest-coefficient functional has no (2,1) component on the "
+          "centre — so a_(2,1) is not merely equal to a Markov weight by "
+          "arithmetic, it IS one)")
+    check("a_two_one_IS_the_markov_weight_at_the_trivial_loop_value",
+          sp.simplify(A[1] - Y1[1]) == 0)
+    check("THE_FLOOR_IS_MINUS_h_TIMES_y_two_one_AT_z_EQUALS_ONE",
+          sp.simplify(floor + h * Y1[1]) == 0,
+          "(net(dC) = -h * y_(2,1)(1): the z-free part of the ladder phase, "
+          "in the Ocneanu family alone)")
+
     # ---- numbers --------------------------------------------------------------
     q0 = mp.mpf(Q_50_DIGIT_STR)
 
@@ -207,6 +254,9 @@ def main() -> int:
     w.add_data("h_at_q0", fmt(ev(h)))
     w.add_data("minus_h_times_a_2_1_at_q0", fmt(-ev(h) * ev(A[1])))
     w.add_data("net_minus_trM_z1_on_the_longest_element", str(sp.simplify(-h)))
+    for k, lbl in enumerate(["(3)", "(2,1)", "(1,1,1)"]):
+        w.add_data(f"y_{lbl}_at_z_equals_one", str(Y1[k]))
+        w.add_data(f"b_{lbl}_longest_functional_on_centre", str(B[k]))
     w.add_data("markov_convention",
                "convention-free — the results hold for every z, and the floor "
                "contains no Markov parameter at all")
@@ -214,21 +264,24 @@ def main() -> int:
 
     verdict = (
         "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, "
-        "on all six basis elements. So the corpus's 'the counit and the Markov "
-        "trace are genuinely distinct functionals' is sharpened to a single "
-        "rank-one difference supported on w_0, and its companion 'they agree "
-        "precisely when z=1' turns out to be a statement about Delta's SUPPORT "
-        "(Delta has zero w_0 coordinate) rather than about the functionals -- on "
-        "T_{w_0} they differ by h at every z. Two consequences: the ladder phase "
-        "is a transport WITHIN one family, 2*alpha(z) = tr_M^1(Delta) - "
-        "tr_M^z(Delta); and because tr_M^{z=1} annihilates [H,H], the entire "
-        "z-free floor IS the rank-one term, net(dC) = -h*(dC)_{w_0} = "
-        "-h*a_(2,1), exactly. Read with chi^(2,1)(Delta) = 0 from the block "
-        "resolution: the 2-dimensional block contributes nothing to the "
-        "trace-visible part of the phase and everything to the trace-invisible "
-        "part. Its contribution was never absent -- it was in the sector no "
-        "trace can see. Scope-(a): nothing derived about the correction, "
-        "nothing wired."
+        "on all six basis elements. That sharpens the corpus's 'genuinely "
+        "distinct functionals' to a single rank-one difference supported on "
+        "w_0, and turns its companion 'they agree precisely when z=1' into a "
+        "statement about Delta's SUPPORT -- Delta has zero w_0 coordinate -- "
+        "rather than about the functionals, which differ by h on T_{w_0} at "
+        "EVERY z. Consequences: the ladder phase is a transport WITHIN one "
+        "family, 2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta); and since "
+        "tr_M^{z=1} annihilates [H,H], the whole z-free floor is the rank-one "
+        "term. Chasing that through gives the closed form the identity was "
+        "missing: b_(2,1) = 0, so a_(2,1) IS the Markov weight y_(2,1)(1), and "
+        "    net(dC) = -h * y_(2,1)(1)  -- exact, and stated entirely inside "
+        "the Ocneanu family with no `net`-specific object left in it. Read "
+        "with chi^(2,1)(Delta) = 0 from the block resolution: the "
+        "2-dimensional block contributes nothing to the trace-visible part of "
+        "the phase and everything to the trace-invisible part. Its "
+        "contribution was never absent -- it was in the sector no trace can "
+        "see. Scope-(a): derives no correction, proposes no value, wires "
+        "nothing."
         if all(ok) else
         "INCONCLUSIVE -- an assertion failed; re-derive before citing.")
     w.add_data("verdict", verdict)
