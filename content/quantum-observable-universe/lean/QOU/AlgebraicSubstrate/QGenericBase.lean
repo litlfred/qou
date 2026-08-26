@@ -1,0 +1,138 @@
+/-
+# The base ring, stated as a property rather than a ring
+
+The framework's ground ring is fixed by an owner decision (2026-08-26) as
+
+    R = ℤ[q, q⁻¹][ Φ_d(q)⁻¹ : d ≥ 2 ]
+
+— Laurent polynomials with every cyclotomic polynomial from the second on
+inverted. `Spec R` is the `q`-line with the roots of unity of order `≥ 2`
+deleted, which is exactly the locus `def:quantum-universe` axiom 4 forbids: no
+quantum dimension may be a non-unit.
+
+**But the definition of a quantum universe should not name that ring.** A
+neighbouring community works over a *related* base — `ℚ(q)` for generic-`q`
+representation theory, `ℤ[v, v⁻¹]` with `q = v²` in the Lusztig convention, a
+real or complex algebra past the archimedean wall — and a definition hard-wired
+to one ring silently excludes all of them.
+
+So this file states the **property** instead, as `IsQGeneric R q`, and the ring
+above becomes the *initial* object satisfying it: for any commutative `S` with a
+distinguished unit `u` at which every `Φ_d`, `d ≥ 2`, is a unit, there is exactly
+one ring map `R → S` sending `q ↦ u`. That is the universal property of a
+localisation, applied twice, and it is the precise sense in which every related
+community ring is downstream of this one rather than in competition with it.
+
+`IsQGeneric.map` below is the working half of that: the property **transports
+along any ring homomorphism**, so a definition stated over `IsQGeneric` is
+automatically available in every specialisation.
+
+## Why `d ≥ 2` and not `d ≥ 1`
+
+`Φ₁(q) = q − 1`, so inverting from `d = 1` would delete `q = 1` from `Spec R`.
+The corpus uses that point — the `q = 1` classical shadow, `J_Hopf(1) = -2` —
+so deleting it would be a real loss.
+
+Nothing forces it. `ℏ_q = 1 - q⁻¹ = (q-1)/q` is the one construct that would
+need `Φ₁`, and every division by it happens past the archimedean wall, in `ℝ`,
+where `q₀ - 1 ≈ 0.11` is invertible on its own account. Measured: of the files
+mentioning `ℏ`, the ones that *divide* by it are archimedean.
+
+`qPow_sub_one_eq_mul_bracket` makes the boundary exact: `qⁿ - 1` factors as
+`(q - 1)` times a unit, so it is a unit **iff** `q - 1` is. The `d ≥ 2` choice
+buys every quantum dimension and leaves `q = 1` alive, and the theorem is what
+shows those two are not in tension.
+-/
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Eval
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+
+namespace QOU.AlgebraicSubstrate
+
+open Polynomial Finset
+
+variable {R S : Type*} [CommRing R] [CommRing S]
+
+/-- **The base-ring property.** `q` is a unit, and so is every cyclotomic
+polynomial `Φ_d` evaluated at `q`, for `d ≥ 2`.
+
+Stated as a property so that the definition of a quantum universe is available
+over *any* base satisfying it, not only over the initial one
+`ℤ[q, q⁻¹][Φ_d(q)⁻¹ : d ≥ 2]`. -/
+class IsQGeneric (R : Type*) [CommRing R] (q : R) : Prop where
+  isUnit_q : IsUnit q
+  isUnit_cyclotomic : ∀ d : ℕ, 2 ≤ d → IsUnit ((cyclotomic d R).eval q)
+
+/-- The `n`-th quantum bracket in cyclotomic form: `[n]_q = ∏_{d ∣ n, d ≥ 2} Φ_d(q)`.
+
+This is the unbalanced bracket `1 + q + ⋯ + q^{n-1}`, written so that its
+factorisation is the definition rather than a lemma. -/
+noncomputable def qBracket (R : Type*) [CommRing R] (q : R) (n : ℕ) : R :=
+  ∏ d ∈ n.divisors.filter (fun d => 2 ≤ d), (cyclotomic d R).eval q
+
+/-- **Every quantum bracket is a unit.** This is what axiom 4 needs: quantum
+dimensions are products of brackets, so they are units too.
+
+The proof is the whole point of choosing the cyclotomic generating set — the
+bracket is *by construction* a product of the elements the class inverts, so no
+divisibility argument is required. -/
+theorem isUnit_qBracket (q : R) [IsQGeneric R q] (n : ℕ) : IsUnit (qBracket R q n) := by
+  refine Finset.prod_induction _ IsUnit (fun a b => IsUnit.mul) isUnit_one ?_
+  intro d hd
+  exact IsQGeneric.isUnit_cyclotomic d (by simpa using (Finset.mem_filter.mp hd).2)
+
+/-- `qⁿ - 1 = (q - 1) · [n]_q` for `n ≥ 1` — the exact boundary of the `d ≥ 2`
+choice.
+
+Since `[n]_q` is a unit, `qⁿ - 1` is a unit **iff** `q - 1` is. The class does not
+invert `q - 1`, so `q = 1` survives in `Spec R`; anything genuinely needing
+`(qⁿ - 1)⁻¹` is asking for `Φ₁` and should say so. -/
+theorem qPow_sub_one_eq_mul_bracket (q : R) {n : ℕ} (hn : 0 < n) :
+    q ^ n - 1 = (q - 1) * qBracket R q n := by
+  have hprod := prod_cyclotomic_eq_X_pow_sub_one hn R
+  have := congrArg (fun p => Polynomial.eval q p) hprod
+  simp only [eval_prod, eval_sub, eval_pow, eval_one, eval_X] at this
+  rw [← this, ← Finset.prod_filter_mul_prod_filter_not n.divisors (fun d => 2 ≤ d)]
+  have h1 : n.divisors.filter (fun d => ¬ 2 ≤ d) = {1} := by
+    ext d
+    simp only [Finset.mem_filter, Nat.mem_divisors, Finset.mem_singleton, not_le]
+    constructor
+    · rintro ⟨⟨hdvd, -⟩, hlt⟩
+      interval_cases d
+      · rw [Nat.zero_dvd] at hdvd; omega
+      · rfl
+    · rintro rfl
+      exact ⟨⟨one_dvd n, hn.ne'⟩, one_lt_two⟩
+  rw [h1]
+  simp [qBracket, cyclotomic_one, mul_comm]
+
+/-- **The property transports along any ring homomorphism.**
+
+This is the working content of "state the property, not the ring": a definition
+made over `IsQGeneric` is automatically available in every specialisation — the
+generic-`q` field `ℚ(q)`, an archimedean evaluation at the substrate `q₀`, a
+neighbouring community's base — without restating anything. -/
+theorem IsQGeneric.map (f : R →+* S) (q : R) [IsQGeneric R q] : IsQGeneric S (f q) where
+  isUnit_q := (IsQGeneric.isUnit_q (q := q)).map f
+  isUnit_cyclotomic d hd := by
+    have : (cyclotomic d S).eval (f q) = f ((cyclotomic d R).eval q) := by
+      rw [← map_cyclotomic d f, eval_map, eval₂_at_apply]
+    rw [this]
+    exact (IsQGeneric.isUnit_cyclotomic d hd).map f
+
+/-- **The archimedean instance.** Every real `q > 1` is `q`-generic — the
+substrate anchor `q₀ ≈ 1.10998` included.
+
+`ℝ` here is not a §7c violation but the point of the exercise: this is the
+specialisation past the archimedean wall, and it genuinely needs the ordering
+(`cyclotomic_pos'` holds because every root of `Φ_d` lies on the unit circle, so
+`Φ_d` cannot vanish to the right of `1`).
+
+It also settles non-vacuity where it matters. The class is not merely
+inhabitable by some toy ring; it is satisfied at the value the framework actually
+evaluates at, so a definition stated over `IsQGeneric` reaches the substrate. -/
+theorem isQGeneric_real {q : ℝ} (hq : 1 < q) : IsQGeneric ℝ q where
+  isUnit_q := isUnit_iff_ne_zero.mpr (by linarith)
+  isUnit_cyclotomic d _ := isUnit_iff_ne_zero.mpr (cyclotomic_pos' d hq).ne'
+
+end QOU.AlgebraicSubstrate
