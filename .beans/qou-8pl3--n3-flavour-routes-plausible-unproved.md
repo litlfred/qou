@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T06:44:16Z
+updated_at: 2026-08-26T06:49:11Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -265,3 +265,20 @@ non-self-dual object EXISTS at groupoid level. Route A stays OPEN. What is
 settled is a NECESSARY condition and the exact reason the single-fibre case
 fails it. Nor does any of it bear on flavour-vs-colour -- both invariants are
 still blind to that.
+
+
+## Route A specification, PR #5819 (2026-08-26)
+
+Route A ('nothing has been built') is NOT closed. What is now settled is a
+NECESSARY condition on any candidate:
+
+  SelfDualSectorConfinement.lean, 4 theorems, sorry-free.
+  gate_forces_complex_of_dim_three (merged) + every SU(2) irrep self-dual
+  => the property a groupoid construction must EXHIBIT is exactly the
+     property one fibre LACKS: non-self-duality.
+
+Screening test: is the candidate three-dimensional object isomorphic to its
+own dual? If yes it is dead, with no Sym^2 decomposition needed.
+
+Still open: no construction, and no demonstration that a non-self-dual object
+EXISTS at groupoid level.
