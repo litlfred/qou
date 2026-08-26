@@ -110,7 +110,7 @@ Applied to two targets (primary $B_{\mathrm{AME}}$, secondary $R$) that is
 
 **Fit rule, fixed now:** least squares in log space, minimising
 $\sum_i (\ln B_i^{\text{model}} - \ln B_i^{\mathrm{AME}})^2$. For F1/F2 this is
-$\ln c = \operatorname{mean}_i(\ln B_i^{\mathrm{AME}} - p \ln A_i)$; for F3 it is the
+$\ln c = \mathrm{mean}_i(\ln B_i^{\mathrm{AME}} - p \ln A_i)$; for F3 it is the
 closed-form linear regression of $\ln B$ on $\ln A$. Closed form, deterministic, no
 optimiser, no seed, no stopping rule to tune. Computed in `mpmath.mpf` end to end.
 
