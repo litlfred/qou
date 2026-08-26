@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:28Z
-updated_at: 2026-08-26T19:11:49Z
+updated_at: 2026-08-26T19:45:06Z
 ---
 
 
@@ -112,3 +112,30 @@ a tensor is the tensor of the comparisons, order reversed), sorry-free, lean-dir
 Remaining gap: in a braided rigid category, `β_{X, Yᘁ}` is the bent-round *inverse* braiding
 `β_{Y,X}⁻¹`.  Mathlib lacks it; it is a snake-identity computation.  Everything else then
 follows from it plus `rightDualIso_tensorExactPairing`.
+
+
+
+## 2026-08-26 (later) — the diagrammatic argument is now PROVED, not argued
+
+The retraction note's string-diagram argument has been replaced by Lean:
+
+* `braiding_slide_cap_right/_left`, `braiding_slide_cup_right/_left` and
+  `braiding_slide_cap_right_inv` (QOU/MathlibExt/BraidedSlide.lean) — a strand crossing a
+  cap or cup can be pushed off, at the cost of braiding past EACH leg.
+* `evaluation_swap_tensor_step`, `braiding_cap_monodromy`,
+  `evaluation_swap_tensor_eq_monodromy`, `rightDualIso_swap_tensor`
+  (QOU/MathlibExt/BraidedTensorDual.lean) — swap-then-tensor and tensor-then-swap differ by
+  exactly `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹`.  **The comparison is the INVERSE monodromy.**
+* `rightDualIso_tensorExactPairing` (RigidTensorDual.lean) — the formal half.
+
+All sorry-free, `#print axioms` clean.
+
+**What is still NOT Lean-proved, and cannot be schematically**: the negative headline
+"drinfeldIso is not monoidal".  It is false in general but TRUE in symmetric categories, so
+there is no schematic refutation.  It follows from `rightDualIso_swap_tensor` in any category
+with `M ≠ 𝟙`; exhibiting one is not formalised here (FGModuleCat is symmetric).
+
+Remaining for pivotalOfRibbon: assemble `rightDualIso_swap_tensor` +
+`rightDualIso_tensorExactPairing` into the monoidality of `θ ≫ drinfeldIso`, using
+`twist_tensor` to cancel the monodromy.  The sign is now known, so the direction is
+determined: the balancing axiom supplies `β β`, the comparison supplies its inverse.
