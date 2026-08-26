@@ -424,6 +424,12 @@ QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.old_conten
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_at_two_three | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_needs_multiplicity | clean
+# The REDUCTION. pieri_one is (P) at mu=(1); telescope_two_via_pieri derives n=2
+# from n=1 THROUGH it, so the induction step is executed rather than asserted.
+# General n needs (P) + the SYT recursion -- elementary combinatorics, NOT the
+# symmetric-function theory this file previously claimed.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_via_pieri | clean
 """
 
 

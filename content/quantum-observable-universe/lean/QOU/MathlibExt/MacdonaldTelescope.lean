@@ -205,4 +205,69 @@ theorem telescope_three_needs_multiplicity :
       range_three_eq]
   rw [h3, h21, h111]; norm_num
 
+/-! ### The reduction: general `n` does NOT need symmetric-function theory
+
+**A correction to what this file said above, and to what I told the author
+repeatedly.** The general case was described as resting on symmetric-function
+infrastructure Mathlib lacks — the Frobenius identity and the
+principal-specialisation product formula. That is one route, and it is not the
+cheapest. The telescope follows by induction on `n` from two **elementary**
+statements, neither of which mentions a symmetric function:
+
+* **(P) Pieri, specialised.**
+  `Σ_{λ = μ + box} s_λ(Q, X) = ((1 − X)/(1 − Q)) · s_μ(Q, X)`,
+  a rational-function identity in `Q, X` over the cells of `μ` and its addable
+  corners. Verified symbolically with `X` **free** (not just at `X = Q^r`) for
+  `μ = ∅, (1), (2), (1,1), (2,1), (3), (2,2), (3,1)`.
+* **(F) the SYT recursion.** `f_λ = Σ_{μ = λ − box} f_μ`.
+
+Given those, the step is three rewrites:
+
+  `Σ_{λ⊢n+1} f_λ s_λ  =  Σ_{λ⊢n+1} (Σ_{μ=λ−box} f_μ) s_λ`   (F)
+                     `=  Σ_{μ⊢n} f_μ (Σ_{λ=μ+box} s_λ)`      (reindex)
+                     `=  ((1−X)/(1−Q)) · Σ_{μ⊢n} f_μ s_μ`    (P)
+
+Both inputs are Mathlib-shaped and elementary; `Nat.Partition n` (with its
+`Fintype`) and `YoungDiagram` already exist, so the enumeration and the
+box-addition maps are available. The remaining work is real but it is
+**combinatorics, not symmetric-function theory** — a materially smaller and
+differently-shaped gap than the one previously recorded here.
+
+The theorems below are not another base case. They exercise the *engine*:
+`pieri_one` is (P) at `μ = (1)`, and `telescope_two_via_pieri` derives `n = 2`
+from `n = 1` **through it**, showing the induction step is real rather than
+merely checked numerically. -/
+
+/-- **(P) at `μ = (1)`**: `s₍₂₎ + s₍₁,₁₎ = ((1 − X)/(1 − Q)) · s₍₁₎`.
+
+The two addable corners of a single box are `(2)` and `(1,1)`. Note this holds
+with `X` free — it is not special to `X = Q^r`. -/
+theorem pieri_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    WenzlSchurElement.schurElement Q X [2]
+      + WenzlSchurElement.schurElement Q X [1, 1]
+      = ((1 - X) / (1 - Q)) * WenzlSchurElement.schurElement Q X [1] := by
+  have h1 : (1 : ℝ) - Q ≠ 0 := sub_ne_zero.mpr (Ne.symm hQ1)
+  have hp1 : (1 : ℝ) + Q ≠ 0 := fun h => hQm1 (by linarith)
+  have h2 : (1 : ℝ) - Q ^ 2 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 2 = (1 - Q) * (1 + Q) := by ring
+    rw [hfac]; exact mul_ne_zero h1 hp1
+  norm_num [WenzlSchurElement.schurElement, nLambda,
+    WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+    range_one_eq, range_two_eq]
+  field_simp
+  ring
+
+/-- **The induction step, executed once.** `n = 2` derived from `n = 1` through
+`pieri_one` — not re-proved from scratch.
+
+This is the point of the reduction: `telescope_two` above is proved directly,
+whereas this obtains the same statement from the previous rung plus (P). If the
+general induction is ever formalised, this is the shape it will take. -/
+theorem telescope_two_via_pieri (Q X : ℝ)
+    (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    WenzlSchurElement.schurElement Q X [2]
+      + WenzlSchurElement.schurElement Q X [1, 1] = telescopeRHS 2 Q X := by
+  rw [pieri_one Q X hQ0 hQ1 hQm1, telescope_one Q X]
+  simp [telescopeRHS, pow_succ]
+
 end QOU.MathlibExt.MacdonaldTelescope
