@@ -1,11 +1,11 @@
 ---
 # qou-ximf
 title: 'Xi_k cyclotomic moment family — the even channel''s only derived source'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T03:28:36Z
-updated_at: 2026-08-26T03:49:29Z
+updated_at: 2026-08-26T04:14:19Z
 ---
 
 Parent: `qou-cds1`. Structural only; nothing wired, no c_k value.
@@ -76,3 +76,39 @@ The anti-fit fence above is unchanged and still binds.
 
 Probe: computations/qbeta/qbeta_xi_kcycle_route_prune_probe.py
 Triage: docs/audits/2026-08-26-murnaghan-nakayama-upload-triage.md
+
+
+## 2026-08-26 — 🛑 THE CENTRAL PROPOSAL OF THIS BEAN IS WITHDRAWN
+
+Xi_k carries NO structure beyond h. Measured exactly over Q(q), k = 1..8:
+
+    Xi_k = (q^k + q^-k) / [2]_q^k = 2*T_k([2]/2) / [2]^k     (Chebyshev)
+
+a rational function of [2]_q ALONE; and [2]_q^2 = h^2 + 4 exactly, so the whole
+family is a function of h^2. Concretely [2]^2*Xi_2 = h^2+2, [2]^2*Xi_3 = h^2+1.
+The ladder already carries h. So the family supplies nothing new and CANNOT be
+the source of the bar-even residual ce.
+
+What misled me, recorded because the mode recurs:
+
+* The CYCLOTOMIC numerators (1, Phi_8, Phi_12, Phi_16) are real but are just the
+  factorisation of 1 + q^{2k} -- a property of how it is WRITTEN, not content.
+  I read a suggestive form as a suggestive object. KC20 genuinely does not bind
+  the bar-even channel; the bar-even channel just has nothing to say.
+* The k=2 member IS the corpus's proved loop-mean identity, which IS content --
+  but its content is the MARKOV condition on z, not a fact about Xi_2, which is
+  merely (h^2+2)/[2]^2. Re-derived: 2*z_D - h = (h^2+2)/[2]_q exactly.
+
+This also SUPERSEDES THE EXPLANATION of my own k-cycle prune. That probe found
+Xi_3's coefficient came out free and read it as "the k-cycle route does not
+reach Xi_3". The real reason is that Xi_3 = (h^2+1)/[2]^2 is a REDUNDANT
+COORDINATE, so any basis holding it beside {1, h^2, [2]^2} is linearly dependent
+and a free coefficient is forced. The prune's CONCLUSION stands; its stated
+mechanism was wrong.
+
+NET for the bar-even channel: ce is not reachable from the Markov weights'
+moment structure at all, because that structure is a function of h. Deriving ce
+requires something genuinely new -- it is NOT hiding in the weights. Scope-(a):
+excludes the weight-moment family, not every conceivable derivation.
+
+Probe: computations/qbeta/qbeta_xi_family_collapses_to_h_probe.py (6/6, exit 0)

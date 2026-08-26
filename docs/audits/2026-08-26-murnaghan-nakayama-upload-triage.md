@@ -109,8 +109,15 @@ therefore does *not* supply a new bridge from the ladder to `Ξ_{k≥3}`; what i
 supplies is the general-`n` per-block characters of §2. Anyone reaching for the
 k-cycle route should stop here.
 
-The anti-fit fence on `qou-ximf` is unchanged and still binds: `ce` is resolved to
-1.45 %, so selecting `k` against the data is a fit.
+**🛑 Superseded the same day — the family itself is withdrawn.** `Ξ_k =
+(q^k + q^-k)/[2]_q^k` is a rational function of `[2]_q` alone, and
+`[2]_q² = h² + 4`, so every member is a function of `h²` — which the ladder
+already carries. So the k-cycle prune below was the *right conclusion for the
+wrong reason*: `Ξ₃ = (h²+1)/[2]²` is a redundant coordinate, which is why its
+coefficient came out free. `ce` is not hiding in the weights at all. See
+[`qbeta_xi_family_collapses_to_h_probe.py`](../../computations/qbeta/qbeta_xi_family_collapses_to_h_probe.py)
+(6/6) and the retraction in `qou-ximf`. The anti-fit fence is moot — there is no
+family left to fit with.
 
 ## 4. Net
 

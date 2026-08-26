@@ -143,46 +143,54 @@ correctly re-scoped in the registry; the ledger is not.
 
 ---
 
-## 3. The one new structural item — the `Ξ_k` moment family
+## 3. The `Ξ_k` moment family — proposed, then RETRACTED the same day
 
-Probe: [`qbeta_xi_moment_family_probe.py`](../../computations/qbeta/qbeta_xi_moment_family_probe.py)
-(4/4, exact over ℚ(q), exit 0).
+Probes: [`qbeta_xi_moment_family_probe.py`](../../computations/qbeta/qbeta_xi_moment_family_probe.py)
+(4/4) · [`qbeta_xi_kcycle_route_prune_probe.py`](../../computations/qbeta/qbeta_xi_kcycle_route_prune_probe.py)
+(8/8) · [`qbeta_xi_family_collapses_to_h_probe.py`](../../computations/qbeta/qbeta_xi_family_collapses_to_h_probe.py)
+(6/6). All exact over ℚ(q), all exit 0.
 
-The proved loop-mean identity `2z − h = [2]_q·Ξ` uses the ordinary `S_n`
-character at a **transposition**. Nothing in the argument is special to a
-transposition. For any class `μ`, Frobenius gives `Ξ_μ = p_μ(1,Q)/(1+Q)^n`, and
-for the k-cycle classes this collapses to an `n`-independent family:
+**What was proposed.** The proved loop-mean identity `2z − h = [2]_q·Ξ` uses the
+ordinary `S_n` character at a *transposition*; nothing in the argument is. By
+Frobenius the k-cycle classes give an `n`-independent, parameter-free, exactly
+bar-even family `Ξ_k = (1+Q^k)/(1+Q)^k` with **cyclotomic** numerators
+(`k = 1,2,3,4 → 1, Φ₈, Φ₁₂, Φ₁₆`), verified from actual Murnaghan–Nakayama
+characters against the actual D weights for `n = 2..7`. Since the residual `ce`
+is bar-**even** and KC20's no-root-of-unity exclusion concerns the bar-**odd**
+carrier, this looked like the even channel's only derived source.
+
+**🛑 It is withdrawn.** Measured exactly, `k = 1..8`:
 
 ```
-Ξ_k  =  (1 + Q^k) / (1 + Q)^k ,        Q = q² .
+Ξ_k  =  (q^k + q^-k) / [2]_q^k  =  2·T_k([2]_q/2) / [2]_q^k      (Chebyshev)
 ```
 
-Verified from actual Murnaghan–Nakayama characters against the actual D weights
-for `n = 2..7`, `k = 1..n`; `k = 2` reproduces the corpus's proved identity
-(that assertion is the harness calibration). Every member is **exactly bar-even
-(twist 1)**, and the numerators `1 + q^{2k}` are **cyclotomic**
-(`k = 1,2,3,4 → 1, Φ₈, Φ₁₂, Φ₁₆`).
+— a rational function of `[2]_q` **alone**; and `[2]_q² = h² + 4` exactly, so the
+whole family is a function of `h²`. Concretely `[2]²·Ξ₂ = h²+2`,
+`[2]²·Ξ₃ = h²+1`. **The ladder already carries `h`.** The family supplies nothing
+new and cannot be the source of `ce`.
 
-**Why it is worth recording.** The Q_β residual `ce` is bar-even, and a
-four-path corpus grep finds no other **derived, parameter-free, `n`-independent**
-family of bar-even weight functionals. Registry **KC20**'s "the bar-odd carrier
-is not a root-of-unity object" does **not** bind it — KC20 is a statement about
-the bar-**odd** carrier, and the bar-even channel has never been examined
-cyclotomically.
+Two things misled, recorded because the mode recurs:
 
-> **🛑 Anti-fit fence, stated before anyone uses this.** `ce` is resolved to
-> 1.45 %. A family with a free index `k` will supply a member inside a 1.45 %
-> window **by arithmetic alone**. The probe therefore deliberately does not
-> compare any `Ξ_k` to `ce`, and no such comparison may be quoted as evidence.
-> The value is structural — a derived source the even channel may draw on — not
-> a match. Selecting `k` against the data is a fit and is banned by `qou-cds1`'s
-> own discipline.
+1. **The cyclotomic numerators are a property of the writing, not the content** —
+   just the factorisation of `1 + q^{2k}`. A suggestive *form* was read as a
+   suggestive *object*.
+2. **The `k = 2` member is genuine content, but its content is about `z`, not
+   `Ξ₂`.** It is the Markov condition `2z − h = [2]_q·Ξ₂`; `Ξ₂` itself is merely
+   `(h²+2)/[2]²`. Re-derived: `2z_D − h = (h²+2)/[2]_q` exactly.
 
-This is a one-line corollary of an already-proved identity, not new mathematics.
-It is recorded because it is *derived* and the even channel currently has
-nothing else.
+**This also supersedes the explanation of the intermediate prune.** The k-cycle
+probe found `Ξ₃`'s coefficient came out free and read that as "the k-cycle route
+does not reach `Ξ₃`". The real reason is that `Ξ₃ = (h²+1)/[2]²` is a **redundant
+coordinate**, so any basis holding it beside `{1, h², [2]²}` is linearly
+dependent and a free coefficient is forced. The prune's *conclusion* stands; its
+stated mechanism was wrong.
 
----
+**Net, and it is a useful negative:** `ce` is not reachable from the Markov
+weights' moment structure at all, because that structure is a function of `h`.
+Deriving `ce` requires something genuinely new — it is **not hiding in the
+weights**. Scope-(a): this excludes the weight-moment family, not every
+conceivable derivation.
 
 ## 4. Verdict
 
