@@ -319,6 +319,41 @@ theorem contentSum_two : contentSum [2] = 1 := by decide
 /-- Content sum of (1,1) = -1 (cells at (0,0) and (1,0)). -/
 theorem contentSum_one_one : contentSum [1, 1] = -1 := by decide
 
+/-! ### `n(λ)`, the row-weighted size
+
+**Not the same quantity as `contentSum`**, and the two are easy to confuse —
+`contentSum` is `Σ_x (j − i)` over cells, whereas `n(λ)` is `Σ_i i·λ_i`. They
+coincide only for a single row of length ≤ 1. In terms of the conjugate,
+`contentSum λ = n(λ') − n(λ)`.
+
+The distinction is load-bearing: the Wenzl Schur element's prefactor is
+`Q^{n(λ)}`, and substituting `contentSum` there breaks the Macdonald hook
+telescope from `n = 2` upward (measured; see `WenzlSchurElement.schurElement`). -/
+
+/-- **`n(λ) = Σ_i i · λ_i`** (0-indexed rows), the row-weighted size of a
+    partition. This is the standard `n(λ)` of Macdonald I.1, written for
+    0-indexed rows so that `n(λ) = Σ_{i≥0} i·λ_i` rather than `Σ_{i≥1}(i−1)λ_i`. -/
+def nLambda (lam : Partition) : ℕ :=
+  (List.range lam.length).foldl (fun acc i => acc + i * ((lam[i]?).getD 0)) 0
+
+@[simp]
+theorem nLambda_nil : nLambda [] = 0 := by
+  unfold nLambda; simp
+
+/-! The three values below are the ones that separate `n(λ)` from `contentSum`,
+and are kept as regression guards — `contentSum [2] = 1` while `n([2]) = 0`, and
+`contentSum [1,1] = -1` while `n([1,1]) = 1`. -/
+
+theorem nLambda_two : nLambda [2] = 0 := by decide
+theorem nLambda_one_one : nLambda [1, 1] = 1 := by decide
+theorem nLambda_three_one : nLambda [3, 1] = 1 := by decide
+
+/-- **`n(λ)` and `contentSum` are genuinely different**, witnessed at `λ = (1,1)`:
+`n(λ) = 1` but `contentSum λ = −1`. Stated so the confusion cannot recur
+silently. -/
+theorem nLambda_ne_contentSum :
+    ((nLambda [1, 1] : ℤ)) ≠ contentSum [1, 1] := by decide
+
 /-- **THEOREM (q-Schur weight at H₂).** The Markov weight of partition
     lam ⊢ 2 is y_lam = q^{c(lam)} / [2]_q. This is the bridge between the
     content-sum formula and the explicitly-proved H₂ weights. -/

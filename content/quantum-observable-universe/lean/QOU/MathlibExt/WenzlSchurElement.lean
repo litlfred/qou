@@ -64,13 +64,26 @@ suffices for the macdonald hook telescope identity. -/
 
 /-- The **Wenzl Schur element** `s_{λ, X}(Q)` at partition `λ`.
 
-    Encodes `Q^{n(λ)} · ∏_x (1 − X·Q^{c(x)})/(1 − Q^{h(x)})`.
-    Abstracted here pending the symmetric-functions / Schur-element
-    infrastructure in Mathlib (this is a known gap). -/
+    Encodes `Q^{n(λ)} · ∏_x (1 − X·Q^{c(x)})/(1 − Q^{h(x)})`, with
+    `n(λ) = Σ_i i·λ_i` (`QPartitionCombinatorics.nLambda`).
+
+    **The prefactor is `n(λ)`, NOT `contentSum`.** This read `contentSum`
+    (`Σ_x (j − i)`, which is `n(λ') − n(λ)`) until 2026-08-26. The two agree
+    only for a single row of length ≤ 1 — `n([2]) = 0` against
+    `contentSum [2] = 1` — and with `contentSum` the Macdonald hook telescope
+    `Σ_λ f_λ·s_λ = ((1−X)/(1−Q))^n` **fails from `n = 2` upward**. Measured
+    symbolically for `n = 1..6`: exact `0` with `n(λ)`, nonzero with
+    `contentSum`. The docstring was right and the code was wrong; the guard
+    against a recurrence is `nLambda_ne_contentSum`.
+
+    Cross-checked against `computations/y_lambda_macdonald_telescope.py`, whose
+    `schur_principal_symbolic` uses `Q ** n_lambda(p)` with
+    `n_lambda(p) = Σ i·p[i]` — i.e. the Python was correct throughout and the
+    Lean had drifted from it. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 -- Ref: [macdonald1995] §I.3 ex. 1
 noncomputable def schurElement (Q X : ℝ) (lam : Partition) : ℝ :=
-  Q ^ (contentSum lam) *
+  Q ^ (nLambda lam) *
     (List.range lam.length).foldl
       (fun acc i =>
         acc * (List.range ((lam[i]?).getD 0)).foldl
@@ -219,7 +232,7 @@ theorem schurElement_ne_zero {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
     (lam : Partition) : schurElement Q X lam ≠ 0 := by
   have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
   unfold schurElement
-  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine mul_ne_zero (pow_ne_zero _ (ne_of_gt hQ0)) ?_
   refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
   intro i _
   refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_
@@ -373,7 +386,7 @@ theorem schurElement_tl_ne_zero {Q : ℝ} (hQ : 1 < Q) {N : ℤ}
     schurElement Q (Q ^ (-N)) lam ≠ 0 := by
   have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
   unfold schurElement
-  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine mul_ne_zero (pow_ne_zero _ (ne_of_gt hQ0)) ?_
   refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
   intro i hi
   refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_

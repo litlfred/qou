@@ -404,6 +404,12 @@ QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsuffici
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.dualNumber_not_isSemisimpleRing | clean
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.nondegenerate_cyclic_trace_not_sufficient | clean
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.traceRadical_epsCoeff_eq_bot | clean
+# n(lam) vs contentSum. schurElement's prefactor is n(lam); it read contentSum
+# until 2026-08-26, which breaks the Macdonald telescope from n=2 up. These pin
+# the separation so the confusion cannot recur silently.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_two | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_one_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_ne_contentSum | clean
 """
 
 
