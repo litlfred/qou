@@ -121,47 +121,100 @@ What survives from (b) is a **provenance** defect, not a numerical one:
 used."* Unlabelled, the pairing cannot be verified from the record — which is
 exactly why it cost two rounds to rule out.
 
-## 5. What resolving it means
+## 5. The convention-D re-derivation — DONE
 
-The convention question is now measured, so the remaining step is a **content
-decision, not a compute one**, and it belongs to the author.
+Re-derived, not re-baselined. The distinction is structural, not rhetorical:
+the expected literals come from
+[`carrier_table_convention_d_rederivation.py`](../../computations/deltalambda/carrier_table_convention_d_rederivation.py),
+a **second code path**, so the probe's assertions remain a two-path cross-check
+rather than a script checking itself.
 
-Under convention D the probe's current output *is* the answer. The audit table's
-numbers are not wrong — they are **correct for convention C**, and AGENTS.md's
-standing treatment of exactly this situation is that such numbers *"need scoping,
-not correction"*. Resolving the five failures therefore means:
+Where the independence is — and where it is not. Both paths read the same cached
+χ, so this catches transcription and arithmetic error, **not** a bad input:
 
-1. **Re-derive the audit table under convention D** and update the three expected
-   literals *from that re-derivation* — never by copying the probe's output into the
-   assertion. The two are numerically the same edit and epistemically opposite: one
-   is a derivation, the other is laundering.
-2. **Retain the C-frame numbers, scoped.** Mark the 2026-07-13 table
-   convention-C-frame and keep it, as the `c_k` ladder is kept (`qou-cds1`). The
-   9/9 it records was true in its frame.
-3. **Re-scope `carrier_flat_band_all_A` independently.** This is not a convention
-   artefact and does not go away under D — see §6.
+| quantity | probe | re-derivation |
+|---|---|---|
+| `y_λ` | reads the cached `y_lambda` field | **recomputes** `y_lambda_su_n(3A, q₀, 2)` |
+| `θ` | reads `delta_theta_rad` | **rebuilds** `arccos(χ/dim)` per side |
+| `Δθ` | reads it | forms `θ_atom − θ_free` |
 
-Two smaller items, both independent of the above:
+The two paths agree:
 
-4. **Label `atom-chi-rust-*`'s convention.** A provenance fix; it cost two rounds
-   of this diagnosis to rule out a straddle that was never there.
-5. **Drain the 1e-7 θ staleness** in a container that does not degrade the
-   environment block.
+| atom | independent `m_e·S` | probe `m_e·S` | independent `𝒜` | probe `𝒜` |
+|---|---|---|---|---|
+| D   | 0.34671377 | 0.3467 | **6.4161462** | 6.416 |
+| T   | 0.47196856 | 0.4720 | 17.971104 | 17.971 |
+| ³He | 0.31412186 | 0.3141 | 24.570214 | 24.570 |
+| ⁴He | 0.38448171 | 0.3845 | **73.5943** | 73.594 |
 
-What is *not* available: a direct C-vs-D re-run. Convention C was excised on
-2026-08-09 and `y_lambda_at` was deliberately made to **raise** rather than return
-C silently, so the C-era weights cannot be recomputed without resurrecting removed
-code. The diagnosis above therefore rests on measurement plus elimination — χ and
-`|Δθ|` shown unchanged to 1e-49 and 1e-7, `y_λ` shown to be D to 5e-50, and the
-expectations dated before the excision — not on a side-by-side reproduction. That
-is the honest limit of what this branch establishes.
+With the weights recomputed from scratch the normalisation holds to
+`max |W − 1| = 1.8e-71`.
 
-## 6. What must NOT be done
+**⁵Li/⁶Li are out of scope and the module says so** rather than emitting a number
+that looks independent and is not: their free χ comes from the probe's own
+Littlewood–Richardson path, so re-deriving them would mean calling the same code.
 
-- **Do not widen any tolerance.** Every threshold here is doing its job: it caught
-  a real convention regression that the probe's own prose reports as a success.
-- **Do not edit the expected literals to match.** Three of them are the same fact;
-  all three descend from a table computed under a superseded convention.
-- **Do not "fix" `carrier_flat_band_all_A` by relaxing 0.30.** That assertion is
-  over-claiming against the theory it cites; the honest repair is to state what is
-  proved (boundedness, which passes) and drop or re-scope the flatness claim.
+## 6. What changed in the probe, and why each change is not laundering
+
+| assertion | before | after | basis |
+|---|---|---|---|
+| `anchor_kappaD_reproduced` | 6.0426 | **6.4161462** | derived independently |
+| `anchor_kappa4He_reproduced` | 63.05 | **73.5943** | derived independently |
+| `li6_amplification_reproduced` → `li6_amplification_pinned` | 79.86 | 107.886 | **regression pin, not a validation** |
+| `carrier_flat_band_all_A` → `carrier_band_ratio_pinned` | 1.0 ± 0.30 | 1.8375 ± 0.05 | the claim was unproved; see below |
+| `erratum_T_me_S_matches_A_column` → `me_S_A_req_internal_identity_T` | C-vs-D compare | `m_e·S × 𝒜 = B_AME` | was cross-convention |
+
+Three of these need their reasoning on the record.
+
+**⁶Li is pinned, not validated, and is labelled that way in the source.** No second
+path exists to derive it from, and an expectation taken from a script's own output
+cannot validate that output. The pin asserts only that the value has not *changed*.
+Promote it if an independent ⁶Li free-χ path is ever built.
+
+**The flatness assertion was removed because it was never proved — not because it
+was red.** `prop:wedderburn-trace-identity` gives that `S = E_p[|Δθ|]` is a
+probability-weighted mean, hence **bounded** by π. That is
+`carrier_below_rotation_ceiling`, and it **passes**. Boundedness is not flatness,
+and nothing licenses a 30 % band. The measured 1.8375 is unchanged and still
+printed; only the unproved claim about it is gone.
+
+**The erratum assertion compared two different frames.** It checked this
+convention-D `m_e·S(T)` against the 2026-07-13 audit's convention-C `𝒜` column, so
+its 5.7 % gap measured the C→D re-derivation, not an erratum. It is replaced by the
+defining identity `m_e·S × 𝒜 = B_AME`, which holds to 1e-40. The audit's *separate*
+table entries 0.22 / 0.19 remain inconsistent with its **own** `𝒜` column — that is
+a real erratum, and it is independent of the convention question.
+
+**The probe's prose was rewritten to match its own arithmetic.** It printed *"the
+carrier is FLAT for ALL A=2..6"* and *"𝒜 column correct"* while the corresponding
+assertions failed. Both now state the frame explicitly. What survives, and is worth
+keeping, is the genuine negative: **the carrier never grew extensively** — the
+"geometric ramp to A=4" premise is refuted in either convention.
+
+**The C-frame table is retained and scoped**, as `qou-cds1` keeps the `c_k` ladder.
+The 9/9 the 2026-07-13 audit records was true in its frame.
+
+Result: **9/9, and the raw-float64 count in this witness drops 23 → 0** (the
+assertion kwargs now carry `fmt()` strings, per `qou-l790`).
+
+## 7. What must NOT be done — going forward
+
+Two literals were updated above. That is legitimate **only** because the new values
+came from a second code path; the same edit made by copying this probe's own output
+would have been laundering, and the two are indistinguishable in the diff. So:
+
+- **Never take an expected value from the script the assertion checks.** If no
+  independent path exists, say so and call it a pin — as `li6_amplification_pinned`
+  and `carrier_band_ratio_pinned` now do. A pin that admits it is a pin is honest;
+  a pin dressed as a validation is not.
+- **Never widen a tolerance to clear a red.** Nothing here was widened. Every
+  threshold that failed either got a derived value or was replaced by a claim the
+  theory actually supports.
+- **Never re-scope an assertion because it is red.** `carrier_flat_band_all_A` was
+  re-scoped because flatness is not what `prop:wedderburn-trace-identity` proves —
+  the argument holds identically had it been green.
+- **Do not delete the convention-C table.** It is correct in its frame and is
+  retained and scoped, as `qou-cds1` keeps the `c_k` ladder.
+- **Do not promote `li6_amplification_pinned`** without building an independent ⁶Li
+  free-χ path. Changing its label without changing its epistemics would undo the
+  one distinction this document exists to draw.

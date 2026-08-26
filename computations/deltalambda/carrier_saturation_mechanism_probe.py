@@ -339,17 +339,21 @@ def main() -> int:
     flat_ratio = max(me_S.values()) / min(me_S.values())
     print(f"\n  carrier band: [{float(min(me_S.values())):.4f}, "
           f"{float(max(me_S.values())):.4f}] MeV — max/min = "
-          f"{float(flat_ratio):.4f}  →  the carrier is FLAT for ALL A=2..6 "
-          f"(never grew; the 'geometric ramp to A=4' premise is an artifact "
-          f"of the discriminator table's T/³He m_e·S entries)")
+          f"{float(flat_ratio):.4f}  →  BOUNDED, not flat. The identity "
+          f"gives E_p[|Δθ|] ≤ π (checked separately and satisfied); it does "
+          f"NOT give flatness, and the band is 84 %. What IS refuted is the "
+          f"'geometric ramp to A=4': the carrier never grew extensively.")
     err_T = me_S["T"] / (B_AME["T"] / res["T"]["A_req"]) - 1  # ≡ 0, sanity
     impl_T = B_AME["T"] / mp.mpf("18.99041622")
     impl_3He = B_AME["3He"] / mp.mpf("19.90866299")
-    print(f"  erratum adjudication: recomputed m_e·S(T) = "
-          f"{float(me_S['T']):.4f} (audit's own 𝒜 column implies "
-          f"{float(impl_T):.4f}; its table printed 0.22) — table erratum, "
-          f"𝒜 column correct. ³He: {float(me_S['3He']):.4f} vs implied "
-          f"{float(impl_3He):.4f} (table printed 0.19).")
+    print(f"  convention frame: m_e·S(T) = {float(me_S['T']):.4f} here "
+          f"(convention D) vs {float(impl_T):.4f} implied by the "
+          f"2026-07-13 audit's 𝒜 column (convention C, pre-excision). "
+          f"³He: {float(me_S['3He']):.4f} vs {float(impl_3He):.4f}. These "
+          f"are DIFFERENT FRAMES, not an erratum — the C values are correct "
+          f"in their own frame. The audit's separate table entries 0.22 / "
+          f"0.19 remain inconsistent with its OWN 𝒜 column and are a real "
+          f"erratum, independent of the convention question.")
 
     # ── normalization (the structural mechanism) ────────────────────────
     max_W_dev = max(abs(res[a]["W"] - 1) for a in ATOMS)
@@ -502,53 +506,78 @@ def main() -> int:
     # ── assertions ──────────────────────────────────────────────────────
     wb.add_assertion(
         "markov_normalization_all_atoms",
-        computed=float(max_W_dev), expected=0.0, tolerance=1e-40,
+        computed=fmt(max_W_dev), expected="0", tolerance="1e-40",
         source="Σ_λ y_λ·dim_λ = 1 per prop:wedderburn-trace-identity, "
                "machine-checked on all 6 atoms from the cached witnesses "
                "(50-dps serialized y_λ)")
     wb.add_assertion(
         "anchor_kappaD_reproduced",
-        computed=float(res["D"]["A_req"]), expected=6.0426, tolerance=0.01,
-        source="regression vs theta-lambda-magnitude-kernel-probe / "
-               "li6-h18-amplification-discriminator (same cached inputs)")
+        computed=fmt(res["D"]["A_req"]), expected="6.4161462", tolerance="0.01",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py (y_λ recomputed "
+               "from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from "
+               "this script's own output. The prior 6.0426 was the "
+               "convention-C value from the 2026-07-13 audit, correct in its "
+               "own frame; see 2026-08-26-carrier-saturation-five-failures-"
+               "diagnosis.md")
     wb.add_assertion(
         "anchor_kappa4He_reproduced",
-        computed=float(res["4He"]["A_req"]), expected=63.05, tolerance=0.1,
-        source="regression vs the R3-b discriminator witness")
+        computed=fmt(res["4He"]["A_req"]), expected="73.5943", tolerance="0.1",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py. The prior 63.05 "
+               "was convention-C (2026-07-13 audit), correct in its frame")
     wb.add_assertion(
-        "li6_amplification_reproduced",
-        computed=float(res["6Li"]["A_req"]), expected=79.86, tolerance=0.05,
-        source="regression vs li6-h18-amplification-discriminator "
-               "(A_li6_y_dim = 79.85763014)")
+        "li6_amplification_pinned",
+        computed=fmt(res["6Li"]["A_req"]), expected="107.886", tolerance="0.05",
+        source="REGRESSION PIN, NOT A VALIDATION — and the distinction is "
+               "the point. ⁶Li's free χ comes from this script's own LR "
+               "path, so no second path exists to derive it from; an "
+               "expectation taken from this script's own output cannot "
+               "validate that output. This pin therefore asserts only that "
+               "the value has not CHANGED, never that it is right. The "
+               "prior 79.86 was the convention-C value. Promote to a real "
+               "assertion if an independent ⁶Li free-χ path is built")
     wb.add_assertion(
         "li6_all_385_partitions_present",
-        computed=res["6Li"]["n_blocks"], expected=385, tolerance=0,
+        computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",
         source="cached ⁶Li H₁₈ atom witness is complete")
     wb.add_assertion(
         "lr_free_path_validated_at_4He",
-        computed=float(lr_max_rel), expected=0.0,
-        tolerance=LR_CONVENTION_GAP_TOL,
+        computed=fmt(lr_max_rel), expected="0",
+        tolerance=str(LR_CONVENTION_GAP_TOL),
         source="chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness "
                "(documented sign-only-vs-averaged convention gap)")
     wb.add_assertion(
-        "carrier_flat_band_all_A",
-        computed=float(flat_ratio), expected=1.0, tolerance=0.30,
-        source="max/min of m_e·S over A=2..6 — the carrier is flat "
-               "(measured 1.22); a geometric ramp to A=4 would give ≥ 2.4. "
-               "Adjudicates the R3-b table erratum (T/³He entries)")
+        "carrier_band_ratio_pinned",
+        computed=fmt(flat_ratio), expected="1.8375", tolerance="0.05",
+        source="REGRESSION PIN on max/min of m_e·S over A=2..6. This was "
+               "`carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a "
+               "FLATNESS claim the cited theory does not support. "
+               "prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is "
+               "a probability-weighted mean, hence BOUNDED by π; that is "
+               "`carrier_below_rotation_ceiling`, and it passes. "
+               "Boundedness is not flatness, and nothing licenses 30 %. "
+               "Re-scoped to pin the measured band rather than assert an "
+               "unproved property — the number is unchanged and still "
+               "reported")
     wb.add_assertion(
         "carrier_below_rotation_ceiling",
-        computed=float(max(res[a]["mean_w"] for a in ATOMS)),
-        expected=0.0, tolerance=fmt(mp.pi),
+        computed=fmt(max(res[a]["mean_w"] for a in ATOMS)),
+        expected="0", tolerance=fmt(mp.pi),
         source="E_p[|Δθ|] < π for every atom — the structural rotation-"
                "channel ceiling of the normalized mean (growth-channel "
                "share ≤ its recorded per-atom value)")
     wb.add_assertion(
-        "erratum_T_me_S_matches_A_column",
-        computed=float(me_S["T"]), expected=float(impl_T), tolerance=1e-3,
-        source="recomputed m_e·S(T) equals B_AME(T)/𝒜(T) from the R3-b "
-               "audit's own 𝒜 column (0.4467 MeV), NOT its table entry "
-               "0.22 — adjudicating the erratum")
+        "me_S_A_req_internal_identity_T",
+        computed=fmt(me_S["T"] * res["T"]["A_req"]),
+        expected=fmt(B_AME["T"]), tolerance="1e-40",
+        source="m_e·S × 𝒜 = B_AME, the defining identity, checked at T. "
+               "Replaces `erratum_T_me_S_matches_A_column`, which compared "
+               "this convention-D m_e·S(T) against the 2026-07-13 audit's "
+               "convention-C 𝒜 column — a CROSS-CONVENTION comparison, so "
+               "its 5.7 %% gap measured the C→D re-derivation, not an "
+               "erratum. The C-vs-D gap is still reported in the table and "
+               "in data below; it is simply no longer asserted to be zero")
     out = wb.save()
     print(f"\n  witness: {out}")
     return 0

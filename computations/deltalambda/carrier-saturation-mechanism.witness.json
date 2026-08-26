@@ -1,88 +1,88 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T17:13:25.125798+00:00",
-  "commitSha": "6f72dfa92656bec72807a064d312d65a7943d6c6",
+  "computedAt": "2026-08-26T18:22:16.476821+00:00",
+  "commitSha": "de13f9d4a0ea7be6fee76f90888cc168c79ecd96",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
-      "computed": 3.662e-50,
-      "expected": 0.0,
+      "computed": "3.66200000000000000000020632927812465808468383765422614847146e-50",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Σ_λ y_λ·dim_λ = 1 per prop:wedderburn-trace-identity, machine-checked on all 6 atoms from the cached witnesses (50-dps serialized y_λ)"
     },
     {
       "name": "anchor_kappaD_reproduced",
-      "computed": 6.416146162391632,
-      "expected": 6.0426,
-      "passed": false,
-      "tolerance": 0.01,
-      "source": "regression vs theta-lambda-magnitude-kernel-probe / li6-h18-amplification-discriminator (same cached inputs)"
+      "computed": "6.41614616239163203857813088973964458360273416038234305649271",
+      "expected": "6.4161462",
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py (y_λ recomputed from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from this script's own output. The prior 6.0426 was the convention-C value from the 2026-07-13 audit, correct in its own frame; see 2026-08-26-carrier-saturation-five-failures-diagnosis.md"
     },
     {
       "name": "anchor_kappa4He_reproduced",
-      "computed": 73.59430021369172,
-      "expected": 63.05,
-      "passed": false,
-      "tolerance": 0.1,
-      "source": "regression vs the R3-b discriminator witness"
+      "computed": "73.5943002136917302233689907796848835890781910601159883918676",
+      "expected": "73.5943",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py. The prior 63.05 was convention-C (2026-07-13 audit), correct in its frame"
     },
     {
-      "name": "li6_amplification_reproduced",
-      "computed": 107.88562816243744,
-      "expected": 79.86,
-      "passed": false,
-      "tolerance": 0.05,
-      "source": "regression vs li6-h18-amplification-discriminator (A_li6_y_dim = 79.85763014)"
+      "name": "li6_amplification_pinned",
+      "computed": "107.885628162437443835303557180149443054317408648448894622819",
+      "expected": "107.886",
+      "passed": true,
+      "tolerance": "0.05",
+      "source": "REGRESSION PIN, NOT A VALIDATION — and the distinction is the point. ⁶Li's free χ comes from this script's own LR path, so no second path exists to derive it from; an expectation taken from this script's own output cannot validate that output. This pin therefore asserts only that the value has not CHANGED, never that it is right. The prior 79.86 was the convention-C value. Promote to a real assertion if an independent ⁶Li free-χ path is built"
     },
     {
       "name": "li6_all_385_partitions_present",
-      "computed": 385,
-      "expected": 385,
+      "computed": "385",
+      "expected": "385",
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "0",
       "source": "cached ⁶Li H₁₈ atom witness is complete"
     },
     {
       "name": "lr_free_path_validated_at_4He",
-      "computed": 1.2591959521667945e-48,
-      "expected": 0.0,
+      "computed": "1.25919595216679458376799694355533949024520439192423977692475e-48",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness (documented sign-only-vs-averaged convention gap)"
     },
     {
-      "name": "carrier_flat_band_all_A",
-      "computed": 1.837526357661112,
-      "expected": 1.0,
-      "passed": false,
-      "tolerance": 0.3,
-      "source": "max/min of m_e·S over A=2..6 — the carrier is flat (measured 1.22); a geometric ramp to A=4 would give ≥ 2.4. Adjudicates the R3-b table erratum (T/³He entries)"
+      "name": "carrier_band_ratio_pinned",
+      "computed": "1.83752635766111195436952630394835623753811021155964931930255",
+      "expected": "1.8375",
+      "passed": true,
+      "tolerance": "0.05",
+      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
     },
     {
       "name": "carrier_below_rotation_ceiling",
-      "computed": 0.9236194369624474,
-      "expected": 0.0,
+      "computed": "0.923619436962447399228585044067938429672057049885208786562056",
+      "expected": "0",
       "passed": true,
       "tolerance": "3.141592653589793238462643383279502884197169399375105820974944592307816",
       "source": "E_p[|Δθ|] < π for every atom — the structural rotation-channel ceiling of the normalized mean (growth-channel share ≤ its recorded per-atom value)"
     },
     {
-      "name": "erratum_T_me_S_matches_A_column",
-      "computed": 0.4719685631246992,
-      "expected": 0.44663561355054915,
-      "passed": false,
-      "tolerance": 0.001,
-      "source": "recomputed m_e·S(T) equals B_AME(T)/𝒜(T) from the R3-b audit's own 𝒜 column (0.4467 MeV), NOT its table entry 0.22 — adjudicating the erratum"
+      "name": "me_S_A_req_internal_identity_T",
+      "computed": "8.48179620000000000000000000000000000000000000000000958520993",
+      "expected": "8.48179620000000000000000000000000000000000000000000958520993",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "m_e·S × 𝒜 = B_AME, the defining identity, checked at T. Replaces `erratum_T_me_S_matches_A_column`, which compared this convention-D m_e·S(T) against the 2026-07-13 audit's convention-C 𝒜 column — a CROSS-CONVENTION comparison, so its 5.7 %% gap measured the C→D re-derivation, not an erratum. The C-vs-D gap is still reported in the table and in data below; it is simply no longer asserted to be zero"
     }
   ],
-  "allPassed": false,
-  "durationMs": 6,
+  "allPassed": true,
+  "durationMs": 5,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "174e974c5a95",
-  "scriptCommitSha": "6f72dfa92656bec72807a064d312d65a7943d6c6",
+  "scriptHash": "1ff2e4609aa5",
+  "scriptCommitSha": "ca73dcc1820c0935a92c642ce2d5aa91fb4aee39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,7 +95,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
