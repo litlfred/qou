@@ -38,9 +38,12 @@ TMP="$(mktemp /tmp/bnk-XXXX.lean)"
   echo "import BorrowedNameKernel"
   echo "open Lean Elab Command BorrowedNameKernel"
   echo "run_cmd liftTermElabM do"
-  for m in "$@"; do
-    echo "  logInfo (render \`$m (<- analyzeModule \`$m))"
-  done
+  # ONE pass over the environment for all modules -- see `analyzeModules`.
+  printf '  let rs <- analyzeModules ['
+  sep=""
+  for m in "$@"; do printf '%s`%s' "$sep" "$m"; sep=", "; done
+  printf ']\n'
+  echo '  for (m, rows) in rs do logInfo (render m rows)' 
 } > "$TMP"
 lean "$TMP" 2>&1 | grep -v '^warning:' | grep -v 'deprecated'
 rm -f "$TMP"

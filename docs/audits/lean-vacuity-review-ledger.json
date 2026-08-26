@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-26T20:42:25.139161Z",
+  "updated_at": "2026-08-26T20:53:24.767821Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2581,6 +2581,17 @@
       "evidence": "Same family as the hecke_nX_frobenius_codim group adjudicated legit at CRITICAL: a real symbolic identity over R for the q-dimension partition sum, merely named after Frobenius.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::card_cells_eq_card_nimbers::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 708,
+      "verdict": "legit",
+      "file_sha": "408c4fcb89ce",
+      "disposition": "no-change",
+      "tier": "major",
+      "evidence": "Kernel-confirmed definitional collapse (defeq_collapse=true, value_is_rfl=true): `abbrev KazhdanLusztigCells (p n) : Type := Fin (p^n)` and `abbrev Nimbers (p n) : Type := Fin (p^n)` are the same type, so `Fintype.card` equality is `rfl`. LEGIT rather than genuine because the docstring DISCLOSES exactly this -- \"provable without any class instance because both placeholder types are `Fin (p^n)`\" -- and scopes itself as \"the easy half of the OnPModularHecke conjecture\". The detector flagged it only because DISCLAIM did not recognise that phrasing; DISCLAIM now does.",
+      "source": "scripts/lean/BorrowedNameKernel.lean + lean-borrowed-name-audit.py (bean qou-0avp)"
     }
   }
 }
