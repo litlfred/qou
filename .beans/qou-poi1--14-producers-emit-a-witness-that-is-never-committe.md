@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:42:30Z
-updated_at: 2026-08-26T09:32:54Z
+updated_at: 2026-08-26T12:13:30Z
 ---
 
 ## The hole
@@ -252,3 +252,48 @@ Committing them would have written a phantom witness into the audit record.
 Reverted and re-run on a clean tree.
 
 **Delete the artefact before regenerating the audits, not after.**
+
+
+## 2026-08-26 — the 4 timeouts: 2 measured, 2 UNMEASURED. Closing at partial.
+
+Re-ran the four 120 s-timeout producers with a 600 s budget:
+
+    TIMEOUT>600s   fr-pullback-borromean-h3a-test
+    TIMEOUT>600s   sublemma-2-1-h12-he4-branching-verify
+    UNMEASURED     transfer-scaling-profile
+    UNMEASURED     chi-lambda-at-q0
+
+The two that reported are **long-running, not broken** — they consumed a full
+600 s doing work. Neither is classified dirty or clean; a longer budget would be
+needed, and that is a separate question from whether they emit float64.
+
+The two unmeasured ones stay unmeasured. **Two successive background runs died
+mid-flight**, both reclaimed rather than crashing (no traceback, partial log,
+process simply gone). The container does not keep long detached jobs alive
+across turns. A third attempt would most likely die the same way, and the
+information at stake — whether two known-slow producers are dirty — does not
+justify it. Anyone resuming should run them in the FOREGROUND inside a single
+turn, or accept them as unmeasured.
+
+So the honest tally for this bean is **11 of 13 classified**, not 13:
+
+     3   DIRTY (47 float64 fields)
+     3   CLEAN
+     3   NO-WITNESS (exit 1; 2 verified missing-upstream, 1 unchecked)
+     2   TIMEOUT>600s — long-running, unclassified
+     2   UNMEASURED
+
+## Method note: three ways to get "is it still running?" wrong
+
+This cost real confusion three times in one session, and twice I propagated the
+wrong remedy.
+
+    pgrep -f poi1c.py                      # WRONG - matches its own command line
+    ps -eo args | grep -qF /tmp/poi1c.py   # ALSO WRONG - same defect, one level down
+    pgrep -x -f "python3 -u /tmp/poi1c.py" # correct: -x requires an EXACT full match
+
+The second was written INTO a check-in message as the fix for the first, and it
+reported "still going" about a process that had already died. The general point
+is the one this whole arc keeps re-learning: **a detector whose pattern can
+match the detector is not a detector.** Safest of all is a PID file written at
+launch and tested with `kill -0`, which cannot self-match by construction.
