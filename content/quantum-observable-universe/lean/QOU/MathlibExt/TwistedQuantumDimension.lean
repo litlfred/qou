@@ -161,4 +161,29 @@ theorem qDimTwistedLeftWith_eq [RightRigidCategory C] [RibbonCategory C] (X : C)
 
 end Spherical
 
+section TwistlessSpecialisation
+
+/-- **The twistless dimension is exactly the `θ = 𝟙` case.**  The module docstring asserts this;
+here it is as a lemma, so the claim is backed rather than merely stated.
+
+Note the hypothesis is *pointwise* — only `θ_A = 𝟙` is required, not `θ = 𝟙` globally.  So this
+also covers an object that happens to be transparent in an otherwise non-trivially balanced
+category, which is the case one actually meets. -/
+theorem qDimTwistedWith_eq_qDimWith_of_twist_id [BalancedCategory C] (A B : C) [ExactPairing A B]
+    (h : BalancedCategory.twist A = 𝟙 A) :
+    qDimTwistedWith A B = qDimWith A B := by
+  simp [qDimTwistedWith, qDimWith, h]
+
+/-- **At the monoidal unit the twist is invisible**: `θ_𝟙 = 𝟙` is a `BalancedCategory` axiom, so
+the twisted and twistless dimensions of the unit agree unconditionally.
+
+This is why nothing in the RT-input vacuum normalisation moves when the twistless trace is
+correctly renamed: `qDim_unit` is a statement about `𝟙_C`, and at `𝟙_C` there is no difference to
+be made. -/
+theorem qDimTwistedWith_unit [BalancedCategory C] (B : C) [ExactPairing (𝟙_ C) B] :
+    qDimTwistedWith (𝟙_ C) B = qDimWith (𝟙_ C) B :=
+  qDimTwistedWith_eq_qDimWith_of_twist_id _ _ BalancedCategory.twist_unit
+
+end TwistlessSpecialisation
+
 end QOU.MathlibExt
