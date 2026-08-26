@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T19:32:35Z
+updated_at: 2026-08-26T19:48:20Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -86,3 +86,118 @@ separate decision (prove, demote to conjecture, or cite). Owner's call.
 The general-n Schur-element product formula cannot be built on the content-block
 copy. The library module is the real foundation and is where that work should
 start.
+
+
+## CORRECTION 2026-08-26 — "shadows a real library module" is WRONG; retracted
+
+The section above classifies this as an AGENTS.md 0a SHADOWING STUB and
+prescribes deleting the sibling so the ref resolves to
+QOU/MathlibExt/WenzlSchurElement.lean. **That is wrong.** Caught before acting on
+it, by checking what the ref actually resolves to rather than trusting my own
+diagnosis.
+
+  prop ref:  qou:QOU.BraidsAndKnots.y_lambda_closed_form_wenzl_bridge
+
+That declaration exists ONLY in the content-block sibling. grep over the entire
+library tree returns nothing. The library module is namespace
+QOU.MathlibExt.WenzlSchurElement carrying `schurElement (Q X : R) (lam :
+Partition)` -- a DIFFERENT declaration, in a DIFFERENT namespace, over a
+DIFFERENT Partition type (QPartitionCombinatorics' list-based one, versus the
+sibling's `structure Partition (n : N)`).
+
+0a shadowing means the sibling occludes a real library declaration the ref would
+OTHERWISE RESOLVE TO. Candidate 2 here
+(<lakeRoot>/QOU/BraidsAndKnots/y_lambda_closed_form_wenzl_bridge.lean) does not
+exist. So the sibling shadows NOTHING, and deleting it would leave the prop's
+lean.ref UNRESOLVABLE -- strictly worse than the status quo.
+
+**How I got it wrong.** I saw a real module whose name matched the topic
+(WenzlSchurElement) and inferred it was the same object under a different path.
+It is not. Same failure shape as the blast-radius error recorded above -- name
+similarity standing in for declaration identity -- committed twice in one
+investigation, the second time in the fix rather than the diagnosis.
+
+## What actually stands
+
+The MEASUREMENT is unaffected and was independently verified: wenzlSchurElement
+= 0, wenzlNormalization = 0, yLambdaWenzlBridge = 0, jonesMarkovTrace = 0,
+hookDim discarding its argument, all by Lean probes compiling exit 0. The
+docstring still states the evasion technique. hookDim's docstring still
+contradicts its body. macdonald-hook-telescope.lean still carries two axioms.
+
+Correct classification: **vacuous / laundered formalisation** (AGENTS.md 1a
+"No audit-dodging", "No trivial trues"), NOT a shadowing stub.
+
+## Honest dispositions -- 1a's three, plus a fourth that is available here
+
+1. Prove it: implement the real Schur element. Large.
+2. Queue it: state the REAL proposition with `sorry` + a `-- Ref:` citation.
+3. Demote the block to `conjecture`.
+4. **DELEGATE** -- newly available, and the cheapest honest option: the library
+   module's `schurElement` is real, and the sibling's `Partition (n)` structure
+   carries `.parts : List N`, which is exactly the library's Partition type. So
+   `wenzlSchurElement lam Q X := WenzlSchurElement.schurElement Q X lam.parts`
+   is a genuine delegation, replacing zero with the real definition and leaving
+   the ref resolving where it already resolves.
+
+Route 4 is what I am attempting. If the type bridge does not hold up, route 2
+(honest sorry + Ref) is the fallback -- NOT a return to zero.
+
+Corrected on PR #5857, in the coordination ledger, and on the one sibling PR
+(#5352) where the wrong advice was load-bearing:
+https://github.com/litlfred/qou/pull/5352#issuecomment-5430258333
+
+
+## ROUTE 4 ATTEMPTED AND IT FAILS -- informatively. The theorem is 0 = 0.
+
+Delegated `wenzlSchurElement` to the real library `schurElement` (the type
+bridge DOES hold: library `Partition` is `abbrev Partition := List N`, and the
+sibling's `structure Partition (n)` carries `.parts : List N`, so
+`schurElement Q X lam.parts` typechecks). The file then FAILS TO COMPILE, at
+exactly one place -- line 172, the block's main theorem:
+
+  theorem y_lambda_closed_form_wenzl_bridge ... :
+    jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q
+
+Residual goal with the real Schur element in place:
+
+  0 = schurElement (wenzlQ q) (wenzlX q) lam.parts / (sum over parts ...)
+
+So the theorem was provable ONLY because BOTH sides are definitionally zero:
+`jonesMarkovCoefficient = 0 * q` on the left, and `0/0 = 0` on the right. Make
+either side real and the statement is FALSE for generic q.
+
+**This is stronger than "vacuous".** The declaration the prop's lean.ref points
+at is `0 = 0`, while its docstring reads: "Numerically verified to 10^-16 for
+all 270 partitions of n = 2, ..., 12 in y-lambda-wenzl-bridge-symbolic-witness.json
+and gb-filtration-gauge-invariance.witness.json." The docstring describes a
+verified nontrivial identity; the Lean states an identity between two zeros. The
+witnesses may well be real -- that is a separate question, and nothing here
+impugns them -- but the THEOREM does not state what the docstring says was
+verified.
+
+## Why route 4 alone cannot fix it
+
+Delegating the Schur element makes the RIGHT side real. The LEFT side is
+`jonesMarkovCoefficient`, the actual Markov-trace central coefficient -- the hard
+object, with no library replacement. Fixing one side without the other converts a
+vacuous truth into a falsehood. So the cascade is: real Schur element REQUIRES a
+real jonesMarkovCoefficient, which is the very thing the arc is trying to reach.
+
+Edit REVERTED; the file compiles again as committed (exit 0). I am not leaving a
+broken tree, and not landing a change that turns 0 = 0 into a false statement.
+
+## Honest dispositions now, narrowed to two
+
+1. **Route 2 -- state the real proposition with `sorry` + `-- Ref:`.** The
+   citations are already in the file (wenzl1988, chlouveraki2016 Thm 6.20). The
+   honest form states `jonesMarkovCoefficient = yLambdaWenzlBridge` with BOTH
+   sides real and a cited `sorry`, and the block's derived status becomes
+   `has_sorry` -- the honest "stated, not yet proved" marker.
+2. **Route 3 -- demote the block from `proposition` to `conjecture`.** Per 3b
+   this is defensible: the statement depends on the Markov trace being the hard
+   unformalised object.
+
+Both are substantive changes to a `prop:` block. OWNER'S CALL -- and route 4 was
+worth attempting precisely because its failure narrows the choice to these two
+and shows why neither is avoidable.
