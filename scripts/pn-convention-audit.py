@@ -221,6 +221,29 @@ RUST_BLIND = (
 )
 
 
+def _module_docstring(text: str) -> str:
+    """The module docstring only, or "" if there is none.
+
+    DECLARED_BLIND is scoped to this and not to the whole file, because a
+    file mentions "colour-blind" for three different reasons and only one of
+    them is a declaration:
+
+      - it declares its own delta=0 regime  (bond_extensivity_equal_weight)
+      - it says what it FIXED                ("was -h/2, the colour-blind form")
+      - it says what the OTHER option is     ("two interfaces, not one: the
+                                              colour-blind averaged, and ...")
+
+    A whole-file search cannot tell them apart, and calling the second one a
+    declaration marks an already-migrated file as deliberately blind -- which
+    is the same defect as accepting "CONVENTION CAVEAT" as a comparison
+    marker, made twice in one session.
+    """
+    try:
+        return ast.get_docstring(ast.parse(text)) or ""
+    except SyntaxError:
+        return ""
+
+
 def _classify(text: str) -> tuple[str, str]:
     """Return (verdict, the evidence that produced it).
 
@@ -235,10 +258,10 @@ def _classify(text: str) -> tuple[str, str]:
     canon_marks = [m for m in CANON_MARKS if m in text]
     if canon_marks:
         return "MIXED", f"canonical machinery present: {canon_marks[0]}"
-    declared = DECLARED_BLIND_RE.search(text)
+    declared = DECLARED_BLIND_RE.search(_module_docstring(text))
     if declared:
         return ("DECLARED_BLIND",
-                f"the file declares its own colour-blind regime: "
+                f"the MODULE DOCSTRING declares a colour-blind regime: "
                 f"{declared.group(0)!r}")
     return "BLIND", "no canonical machinery, no second convention"
 
