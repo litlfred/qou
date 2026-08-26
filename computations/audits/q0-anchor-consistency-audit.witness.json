@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:24:19.692756+00:00",
-  "commitSha": "f0c5d467da1d379408cdc33eafe6a6d46b2e58b4",
+  "computedAt": "2026-08-26T04:07:19.037501+00:00",
+  "commitSha": "6cd4da390a0e600d63eb1b23e8a4b2110e587e91",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
-  "scriptCommitSha": "c20c44119f2aaeecb2c0ba6131d9a9cf68cce7c5",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +50,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1649,
+      "Q0_ANCHOR_MISSING": 1651,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -2589,6 +2589,10 @@
         },
         {
           "witness": "me-additive-term-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atom-vs-atlas-markov-trace.witness.json",
           "detail": ""
         },
         {
@@ -5637,6 +5641,10 @@
         },
         {
           "witness": "qbeta-wenzl-habiro-chain-alpha.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-xi-kcycle-route-prune.witness.json",
           "detail": ""
         },
         {

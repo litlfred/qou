@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:26:25.438592+00:00",
-  "commitSha": "f0c5d467da1d379408cdc33eafe6a6d46b2e58b4",
+  "computedAt": "2026-08-26T04:09:28.553937+00:00",
+  "commitSha": "6cd4da390a0e600d63eb1b23e8a4b2110e587e91",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "c20c44119f2aaeecb2c0ba6131d9a9cf68cce7c5",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,14 +55,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2772,
-      "prov_ok": 2348,
+      "total_scanned": 2774,
+      "prov_ok": 2349,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 245,
+      "prov_exempt_no_reader": 246,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965367965367965367965367965367965367965367965367965367965368"
+      "completeness_ratio": "0.965392934390771449170872386445565969718817591925018024513338"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4288,6 +4288,10 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-vs-atlas-markov-trace.witness.json",
           "missing_fields": []
         },
         {
@@ -11630,6 +11634,13 @@
           "witness": "qbeta-stokes3-largeorder-amplitude-fit.witness.json",
           "missing_fields": [
             "scriptFile"
+          ]
+        },
+        {
+          "witness": "qbeta-xi-kcycle-route-prune.witness.json",
+          "missing_fields": [
+            "scriptFile",
+            "commitSha"
           ]
         },
         {
