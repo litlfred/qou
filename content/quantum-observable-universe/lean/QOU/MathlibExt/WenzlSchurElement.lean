@@ -539,4 +539,59 @@ theorem rowFactor_addBoxRow_same_row (Q X : ℝ) (lam : Partition) (r : ℕ)
   unfold cellFactor
   rw [hookLength_addBoxRow_same_row lam r j hr hj']
 
+
+/-- **Product surgery at one index.** Two functions agreeing on `range n` off a
+single point `k` have products related by swapping that point's factor.
+
+Stated division-free — `(∏ f) · g k = (∏ g) · f k` rather than a ratio — because
+`cellFactor` is a quotient whose denominator `1 − Q^h` may vanish, and a ratio
+form would smuggle in a nonvanishing hypothesis the statement does not need. -/
+private theorem prod_range_swap_one {f g : ℕ → ℝ} (n k : ℕ) (hk : k < n)
+    (h : ∀ j, j < n → j ≠ k → f j = g j) :
+    ((List.range n).map f).prod * g k = ((List.range n).map g).prod * f k := by
+  have hf : ((List.range n).map f).prod = ∏ j ∈ Finset.range n, f j := rfl
+  have hg : ((List.range n).map g).prod = ∏ j ∈ Finset.range n, g j := rfl
+  rw [hf, hg]
+  have hmem : k ∈ Finset.range n := Finset.mem_range.mpr hk
+  rw [← Finset.mul_prod_erase _ f hmem, ← Finset.mul_prod_erase _ g hmem]
+  have hrest : ∏ j ∈ (Finset.range n).erase k, f j
+      = ∏ j ∈ (Finset.range n).erase k, g j :=
+    Finset.prod_congr rfl fun j hj =>
+      h j (Finset.mem_range.mp (Finset.mem_of_mem_erase hj)) (Finset.ne_of_mem_erase hj)
+  rw [hrest]
+  ring
+
+/-- **Rows above the new box, when the box's column meets them.** Exactly one
+cell of the row — the one in column `λ_r` — has its hook raised, so the two row
+factors differ by swapping that single factor.
+
+This is the third and last case, and the only one needing product surgery: below
+the box nothing moves, and the receiving row splits off its new cell by
+`List.range_succ`, but here the changed cell sits in the *interior* of the
+row's range. -/
+theorem rowFactor_addBoxRow_row_above (Q X : ℝ) (lam : Partition) (r i : ℕ)
+    (h : i < r) (hr : r < lam.length)
+    (hin : (lam[r]?).getD 0 < (lam[i]?).getD 0) :
+    rowFactor Q X (addBoxRow lam r) i * cellFactor Q X lam i ((lam[r]?).getD 0)
+      = rowFactor Q X lam i * cellFactor Q X (addBoxRow lam r) i ((lam[r]?).getD 0) := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_ne lam r i (by omega)]
+  refine prod_range_swap_one _ _ hin fun j _ hjne => ?_
+  unfold cellFactor
+  rw [hookLength_addBoxRow_row_above_ne lam r i j h hr hjne]
+
+/-- **Rows above the new box that the box's column misses.** If row `i` is no
+longer than `λ_r` the changed column lies outside it, so the factor is equal
+outright — no surgery, and no nonvanishing hypothesis. -/
+theorem rowFactor_addBoxRow_row_above_short (Q X : ℝ) (lam : Partition) (r i : ℕ)
+    (h : i < r) (hr : r < lam.length)
+    (hout : (lam[i]?).getD 0 ≤ (lam[r]?).getD 0) :
+    rowFactor Q X (addBoxRow lam r) i = rowFactor Q X lam i := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_ne lam r i (by omega)]
+  refine congrArg List.prod (List.map_congr_left fun j hj => ?_)
+  have hj' : j < (lam[i]?).getD 0 := List.mem_range.mp hj
+  unfold cellFactor
+  rw [hookLength_addBoxRow_row_above_ne lam r i j h hr (by omega)]
+
 end QOU.MathlibExt.WenzlSchurElement

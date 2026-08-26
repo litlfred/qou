@@ -441,6 +441,11 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.schurElement_eq_prod | clean
 QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_below | clean
 QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_same_row | clean
+# The third case: rows above, where the changed cell sits in the interior of
+# the row's range. Stated division-free — cellFactor's denominator may vanish,
+# so a ratio form would need a hypothesis the statement does not.
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_above | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_above_short | clean
 # The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
 # schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
 # n(lam) fix a correction rather than a preference: revert the prefactor and
