@@ -75,7 +75,7 @@ variable {C : Type*} [Category C] [MonoidalCategory C] [BraidedCategory C] [Righ
 
 omit [RightRigidCategory C] in
 /-- **The braided quantum dimension of the unit collapses to the identity.**  For the exact pairing
-`𝟙_C ⊣ Y` of the monoidal unit with any right dual `Y`, the ribbon trace
+`𝟙_C ⊣ Y` of the monoidal unit with any right dual `Y`, the braided (twistless) trace
 `η_{𝟙,Y} ≫ β_{𝟙,Y} ≫ ε_{𝟙,Y}` equals `𝟙_{𝟙_C}`.  The braiding of the unit is a pair of unitors
 (`braiding_tensorUnit_left`), and the snake identity (`ExactPairing.evaluation_coevaluation'`),
 whiskered by `𝟙_C` (conjugation by the right unitor), forces the composite to be the identity.

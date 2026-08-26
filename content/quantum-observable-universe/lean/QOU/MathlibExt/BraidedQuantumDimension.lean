@@ -10,8 +10,20 @@ The **braided quantum dimension** of an object `A` with a chosen right dual `B` 
 
     qDimWith A B = η_ A B ≫ (β_ A B).hom ≫ ε_ A B  :  𝟙_C ⟶ 𝟙_C
 
-— the ribbon trace of the identity. Mathlib has the coevaluation, the evaluation and the braiding,
-but no name for their composite and no lemma about it.
+— the *braided*, **twistless** closure of the identity. Mathlib has the coevaluation, the
+evaluation and the braiding, but no name for their composite and no lemma about it.
+
+**This is not the ribbon trace, and calling it that is a category error.** The ribbon trace carries
+the balancing twist, `η ≫ (θ_A ▷ B) ≫ β ≫ ε`; no `θ` appears above and none can, because
+`BalancedCategory` is not in scope here. The two agree exactly when `θ = 𝟙`. The genuine twisted
+trace is `QOU.MathlibExt.qDimTwistedWith`, and the difference is not cosmetic: sphericality
+(left trace = right trace) is provable for the twisted one from the ribbon axiom and is
+*structurally unavailable* for this one, since the two twistless closures differ by the monodromy,
+which no braided-rigid axiom kills.
+
+What the twistless closure *does* have, and keeps: `qDimWith_congr_dual` and `qDimWith_rightDual`
+below, both on a plain braided (right-rigid) category with no balanced or ribbon structure — the
+latter is strictly *cheaper* here than its twisted counterpart, which needs the ribbon axiom.
 
 ## Main statements
 
