@@ -288,6 +288,56 @@ theorem twist_drinfeld_monoidal [BalancedCategory C] (X Y : C) :
           rw [monodromy_inv_comm]
     _ = _ := by simp [← tensorHom_comp_tensorHom]
 
+/-- **The two comparisons agree** — `pivotorTensor` is the canonical one.
+
+`pivotorTensor X Y` was built by dual-uniqueness between two pairings of `Yᘁ ⊗ Xᘁ`, which is the
+convenient form for comparing against the componentwise `drinfeldIso`s.  The *canonical* monoidal
+structure map of the double-dual functor is instead `drinfeldIso (X ⊗ Y)` followed by
+`tensorDoubleDualIso X Y`, which routes through `(X ⊗ Y)ᘁᘁ`.  This says they are the same map, so
+the monoidality statement below can be read either way.
+
+The two are characterised against pairings on *different* base objects — `Yᘁ ⊗ Xᘁ` on one side,
+`(X ⊗ Y)ᘁ` on the other — so `rightDualIso_hom_unique` does not compare them directly.  The bridge
+is that `tensorRightDualIso X Y : (X ⊗ Y)ᘁ ≅ Yᘁ ⊗ Xᘁ` is itself a dual comparison, so it carries
+its own evaluation identity, and `braiding_naturality_right` moves it across the braiding that
+`drinfeldIso` contributes.  Four evaluation identities and one interchange, no diagram chase. -/
+theorem drinfeldIso_comp_tensorDoubleDualIso (X Y : C) :
+    (drinfeldIso (X ⊗ Y)).hom ≫ (tensorDoubleDualIso X Y).hom = (pivotorTensor X Y).hom := by
+  refine rightDualIso_hom_unique (swapTensorPairing X Y) (doubleDualTensorPairing X Y) _ ?_
+  have h2 : ((tensorRightDualIso ((Y : C)ᘁ) ((X : C)ᘁ)).hom ▷ ((Y : C)ᘁ ⊗ (X : C)ᘁ))
+        ≫ (doubleDualTensorPairing X Y).evaluation'
+      = ε_ ((Y : C)ᘁ ⊗ (X : C)ᘁ) (((Y : C)ᘁ ⊗ (X : C)ᘁ : C)ᘁ) :=
+    rightDualIso_hom_evaluation _ _
+  have h4 : ((drinfeldIso (X ⊗ Y)).hom ▷ ((X ⊗ Y : C)ᘁ))
+        ≫ ε_ ((X ⊗ Y : C)ᘁ) (((X ⊗ Y : C)ᘁ : C)ᘁ)
+      = (β_ (X ⊗ Y) ((X ⊗ Y : C)ᘁ)).hom ≫ ε_ (X ⊗ Y) ((X ⊗ Y : C)ᘁ) :=
+    rightDualIso_hom_evaluation _ _
+  have h6 : ((tensorRightDualIso X Y).inv ▷ (X ⊗ Y)) ≫ ε_ (X ⊗ Y) ((X ⊗ Y : C)ᘁ)
+      = (tensorExactPairing X ((X : C)ᘁ) Y ((Y : C)ᘁ)).evaluation' :=
+    rightDualIso_hom_evaluation _ _
+  show (((drinfeldIso (X ⊗ Y)).hom ≫ (tensorDoubleDualIso X Y).hom) ▷ ((Y : C)ᘁ ⊗ (X : C)ᘁ))
+      ≫ (doubleDualTensorPairing X Y).evaluation'
+    = (swapTensorPairing X Y).evaluation'
+  rw [tensorDoubleDualIso, Iso.trans_hom, rightDualMapIso_hom, comp_whiskerRight,
+      comp_whiskerRight, Category.assoc, Category.assoc, h2,
+      rightAdjointMate_comp_evaluation, ← Category.assoc, ← whisker_exchange,
+      Category.assoc, h4, ← Category.assoc, braiding_naturality_right,
+      Category.assoc, h6]
+  rfl
+
+/-- **The ribbon repair, in canonical form.**
+
+`twist_drinfeld_monoidal` stated against `pivotorTensor`; this states the same thing against the
+canonical comparison `drinfeldIso (X ⊗ Y) ≫ tensorDoubleDualIso X Y`, which is the shape a
+`PivotalCategory` monoidality field would take. -/
+theorem twist_drinfeld_monoidal_tensorDoubleDualIso [BalancedCategory C] (X Y : C) :
+    BalancedCategory.twist (X ⊗ Y)
+        ≫ ((drinfeldIso (X ⊗ Y)).hom ≫ (tensorDoubleDualIso X Y).hom)
+      = (BalancedCategory.twist X ≫ (drinfeldIso X).hom)
+          ⊗ₘ (BalancedCategory.twist Y ≫ (drinfeldIso Y).hom) := by
+  rw [drinfeldIso_comp_tensorDoubleDualIso]
+  exact twist_drinfeld_monoidal X Y
+
 end Ribbon
 
 end QOU.MathlibExt
