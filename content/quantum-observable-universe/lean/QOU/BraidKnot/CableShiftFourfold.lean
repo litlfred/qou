@@ -170,4 +170,120 @@ does not drop the hypothesis as noise. -/
 theorem writhe_cable_fails_on_zero_letter :
     writhe (cable [(0 : Int)]) ≠ 4 * writhe [(0 : Int)] := by decide
 
+
+/-! ### What the law actually rides on: multiplicativity, not cyclicity
+
+A sibling session raised this on PR #5863 and it is a real sharpening, verified
+here rather than taken on trust.  The framing above says "a one-dimensional
+channel sees only the writhe".  True, but it names the channel rather than the
+property.  Two properties are in play and only one of them does the work:
+
+  * **Cyclicity** (`χ(xy) = χ(yx)`) is shared — every character is a class
+    function, the multi-dimensional `χ^λ` included.  So cyclicity cannot be what
+    separates the channels.
+  * **Multiplicativity** (`χ(xy) = χ(x)·χ(y)`) is what a one-dimensional channel
+    has and a higher-dimensional one does not: a trace of a product is not a
+    product of traces once the dimension exceeds one.
+
+So the migration the deficit measures is from a **multiplicative** readout to a
+merely **cyclic** one.  That is why the writhe stops controlling the valuation:
+the writhe is exactly what a homomorphism can see, and once the maximizer is a
+sum over standard-tableau paths there is no homomorphism left for the factor of
+four to ride on.
+
+`fourfold_of_multiplicative` makes the dependence explicit — ANY readout that is
+multiplicative on concatenation and sends each letter to `s^{±1}` quadruples,
+whatever channel it came from.  `sqWritheReadout` is the converse guard: a
+readout that is cyclic but NOT multiplicative, on which the law fails outright
+(it scales by sixteen, not four).  Without that guard the theorem above could be
+read as though cyclicity sufficed.
+-/
+
+/-- The character is multiplicative on concatenation — an algebra map into a
+commutative target.  This is the property, stated on its own. -/
+theorem charOf_append (s : G) (v w : Word) :
+    charOf s (v ++ w) = charOf s v * charOf s w := by
+  induction v with
+  | nil => simp [charOf]
+  | cons g rest ih =>
+      show (if 0 < g then s else s⁻¹) * charOf s (rest ++ w)
+           = ((if 0 < g then s else s⁻¹) * charOf s rest) * charOf s w
+      rw [ih, mul_assoc]
+
+/-- Cabling a word of genuine braid letters produces genuine braid letters:
+every entry of `cableBlock g` is nonzero when `g` is, since `2g` is even and
+nonzero while `2g ± 1` are odd. -/
+theorem cable_letters_ne_zero :
+    ∀ w : Word, (∀ g ∈ w, g ≠ 0) → ∀ x ∈ cable w, x ≠ 0 := by
+  intro w
+  induction w with
+  | nil => intro _ x hx; simp [cable] at hx
+  | cons g rest ih =>
+      intro hw x hx
+      have hg : g ≠ 0 := hw g (by simp)
+      have hrest : ∀ y ∈ rest, y ≠ 0 := fun y hy => hw y (by simp [hy])
+      rcases List.mem_append.mp hx with h | h
+      · simp only [cableBlock, List.mem_cons, List.not_mem_nil, or_false] at h
+        rcases h with h | h | h | h <;> omega
+      · exact ih hrest x h
+
+/-- A multiplicative readout is determined by its values on single letters, so
+it agrees with `charOf`. -/
+theorem eq_charOf_of_multiplicative
+    (f : Word → G) (hmul : ∀ v w : Word, f (v ++ w) = f v * f w) (hnil : f [] = 1)
+    (s : G) (hlet : ∀ g : Int, g ≠ 0 → f [g] = if 0 < g then s else s⁻¹) :
+    ∀ w : Word, (∀ g ∈ w, g ≠ 0) → f w = charOf s w := by
+  intro w
+  induction w with
+  | nil => intro _; simpa [charOf] using hnil
+  | cons g rest ih =>
+      intro hw
+      have hg : g ≠ 0 := hw g (by simp)
+      have hrest : ∀ x ∈ rest, x ≠ 0 := fun x hx => hw x (by simp [hx])
+      show f ([g] ++ rest) = charOf s (g :: rest)
+      rw [hmul, hlet g hg, ih hrest]
+      rfl
+
+/-- **The property the law rides on.**  Any readout that is multiplicative on
+concatenation and sends each letter to `s^{±1}` quadruples under cabling — the
+channel it came from is irrelevant.  The hypothesis is MULTIPLICATIVITY; see
+`sqWritheReadout_not_fourfold` for why cyclicity would not do. -/
+theorem fourfold_of_multiplicative
+    (f : Word → G) (hmul : ∀ v w : Word, f (v ++ w) = f v * f w) (hnil : f [] = 1)
+    (s : G) (hlet : ∀ g : Int, g ≠ 0 → f [g] = if 0 < g then s else s⁻¹)
+    {w : Word} (hw : ∀ g ∈ w, g ≠ 0) :
+    f (cable w) = (f w) ^ (4 : Int) := by
+  rw [eq_charOf_of_multiplicative f hmul hnil s hlet (cable w)
+        (cable_letters_ne_zero w hw),
+      eq_charOf_of_multiplicative f hmul hnil s hlet w hw]
+  exact charOf_cable s hw
+
+/-- A readout built from the SQUARE of the writhe.  It is cyclic — the writhe is
+invariant under cyclic permutation, hence so is its square — but it is not
+multiplicative. -/
+def sqWritheReadout (s : G) (w : Word) : G := s ^ (writhe w * writhe w)
+
+/-- `sqWritheReadout` is cyclic: it takes the same value on `v ++ w` and
+`w ++ v`.  So it has the property every character shares. -/
+theorem sqWritheReadout_cyclic (s : G) (v w : Word) :
+    sqWritheReadout s (v ++ w) = sqWritheReadout s (w ++ v) := by
+  simp only [sqWritheReadout, writhe_conj]
+  ring_nf
+
+/-- **The converse guard.**  Cyclicity is not enough: this cyclic readout scales
+by SIXTEEN under cabling, not four, for any word of nonzero writhe.  So
+`fourfold_of_multiplicative`'s hypothesis is load-bearing — the law is about
+multiplicativity, and a merely-cyclic readout (which is what every
+higher-dimensional character is) breaks it. -/
+theorem sqWritheReadout_not_fourfold
+    {w : Word} (hw : ∀ g ∈ w, g ≠ 0) (hW : writhe w ≠ 0) :
+    writhe (cable w) * writhe (cable w) ≠ 4 * (writhe w * writhe w) := by
+  rw [writhe_cable w hw]
+  have : writhe w * writhe w > 0 := by
+    rcases lt_trichotomy (writhe w) 0 with h | h | h
+    · nlinarith
+    · exact absurd h hW
+    · nlinarith
+  nlinarith
+
 end QOU.BraidKnot

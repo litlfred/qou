@@ -116,6 +116,48 @@ nothing). Verified `lean`-direct against the real import cone, exit 0. Generic
 | `nonpositive_witness_has_inverse_letter` | that word really is non-positive |
 | `writhe_cable_fails_on_zero_letter` | `g ≠ 0` is load-bearing, not noise |
 
+## The property the law rides on — multiplicativity, not cyclicity
+
+A sibling session raised this on [#5863](https://github.com/litlfred/qou/pull/5863)
+and it sharpens the framing above, so it is recorded here rather than left in a
+comment. Verified independently before adopting it.
+
+The section above says *"a one-dimensional channel sees only the writhe"*. That
+is true, but it names the **channel** where it should name the **property**. Two
+properties are in play and only one separates the channels:
+
+| | one-dimensional `χ` | multi-dimensional `χ^λ` |
+|---|---|---|
+| **cyclic** — `χ(xy) = χ(yx)` | ✓ | ✓ — every character is a class function |
+| **multiplicative** — `χ(xy) = χ(x)·χ(y)` | ✓ | ✗ — a trace of a product is not a product of traces |
+
+So cyclicity cannot be what distinguishes them. **Multiplicativity is.** The
+migration the deficit measures is from a *multiplicative* readout to a merely
+*cyclic* one — and that is precisely why the writhe stops controlling the
+valuation. The writhe is exactly what a homomorphism can see; once the maximizer
+is a sum over standard-tableau paths, there is no homomorphism left for the
+factor of four to ride on.
+
+Two declarations added to
+[`CableShiftFourfold.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/CableShiftFourfold.lean)
+make the dependence explicit rather than implicit in the choice of channel:
+
+- `fourfold_of_multiplicative` — **any** readout that is multiplicative on
+  concatenation and sends each letter to `s^{\pm 1}` quadruples under cabling,
+  whatever channel it came from. Supported by `charOf_append` (the character is
+  multiplicative, stated on its own), `cable_letters_ne_zero` (cabling preserves
+  genuine braid letters, since `2g` is even and nonzero while `2g \pm 1` are
+  odd) and `eq_charOf_of_multiplicative` (a multiplicative readout is determined
+  by its values on single letters).
+- `sqWritheReadout_not_fourfold` — the **converse guard**. `s^{W^2}` is cyclic
+  (the writhe is invariant under cyclic permutation, hence so is its square) but
+  not multiplicative, and under cabling it scales by **sixteen**, not four, for
+  any word of nonzero writhe. Without this, the theorem above could be misread
+  as though cyclicity sufficed.
+
+Four more sorry-free declarations, `lean`-direct exit 0; `#print axioms` clean on
+all four.
+
 ## What is NOT proved — a derived limitation, not a gap
 
 Nothing here bounds the multi-dimensional case, and **nothing here claims the
