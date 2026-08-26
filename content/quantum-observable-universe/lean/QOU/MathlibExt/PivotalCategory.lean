@@ -81,6 +81,55 @@ symmetric and right-rigid, it is now pivotal too, with no linear algebra involve
 Sphericality — that the left and right quantum dimensions agree — is a separate condition and is
 not touched here.  A pivotal structure does not imply it.
 
+## `PivotalCategory` carries NO monoidality field — and `drinfeldIso` could not satisfy one
+
+A pivotal structure in the literature is a **monoidal** natural isomorphism: on top of naturality it
+must satisfy
+
+```
+pivotor (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom = pivotor X ⊗ₘ pivotor Y
+```
+
+against the comparison `(X ⊗ Y)ᘁᘁ ≅ Xᘁᘁ ⊗ Yᘁᘁ` (`QOU.MathlibExt.tensorDoubleDualIso`).  The class
+below deliberately omits that field, and **the omission must not be "fixed" without first replacing
+`pivotalOfBraided`**, because `drinfeldIso` does not satisfy it.
+
+**`drinfeldIso` is natural but NOT monoidal.**  A braided right-rigid category is therefore *not*
+pivotal in the monoidal sense — braiding alone is not enough.  Two independent arguments:
+
+* **Hopf-algebraic.**  For a quasitriangular Hopf algebra the Drinfeld element `u` implements `S²`
+  and satisfies `Δ(u) = (u ⊗ u)(R₂₁R)⁻¹` (Kassel, *Quantum Groups* XIV.6).  `u` is grouplike — which
+  is what monoidality of the induced `X ⟶ Xᘁᘁ` means — exactly when the monodromy `R₂₁R` is trivial,
+  i.e. essentially only in the symmetric case.  In `Rep U_q(sl₂)` it is not.
+* **Diagrammatic.**  Monoidality reduces (see `rightDualIso_tensorExactPairing`) to comparing two
+  exact pairings on `Yᘁ ⊗ Xᘁ`: `exactPairing_swap` of `tensorExactPairing`, against
+  `tensorExactPairing` of the two `exactPairing_swap`s.  Expanding the block braiding
+  `β_{X ⊗ Y, Yᘁ ⊗ Xᘁ}` by the two hexagons gives four crossings.  Two of them pair off with the two
+  caps and reproduce the componentwise comparisons; the surviving two are `X` over `Yᘁ` and `Y` over
+  `Xᘁ`.  Closing the caps joins `X` to `Xᘁ` and `Y` to `Yᘁ` into two loops, and — *counting with the
+  orientation reversal at each cap*, which is the step that makes this come out non-trivial — those
+  two crossings have the **same** sign.  The loops are Hopf-linked, not unlinked: the discrepancy is
+  the monodromy `(β_ X Y).hom ≫ (β_ Y X).hom`, not the identity.
+
+This retracts the scoping of the monoidality step, which had been recorded as "the last hard step"
+of a proof that was expected to go through.  It does not affect anything already proved here:
+`drinfeldIso`, `drinfeldIso_naturality` and `pivotalOfBraided` are statements about naturality only
+and stand unchanged.
+
+## The corrected statement: ribbon, not merely braided
+
+The monodromy is precisely what a **balancing** cancels.  With `θ` satisfying
+`θ_{X ⊗ Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)` (`QOU.MathlibExt.BalancedCategory.twist_tensor`),
+and using that `θ_X ⊗ θ_Y` commutes with the monodromy by naturality of the braiding, the twisted
+map `θ_X ≫ drinfeldIso X` *is* monoidal — one of `θ` or `θ⁻¹` according to the direction of the
+discrepancy, which the Lean will settle.  So the theorem to aim at is **`pivotalOfRibbon`**, not
+`pivotalOfBraided`; a ribbon category is pivotal, and that is the classical statement (a ribbon
+element `v` makes `uv⁻¹` grouplike).
+
+What is still missing is the diagrammatic lemma above in Lean.  Its formal content is a lemma
+Mathlib also lacks: in a braided rigid category the braiding against a *dual* leg, `β_{X, Yᘁ}`, is
+the bent-round *inverse* braiding `β_{Y,X}⁻¹`.  Tracked as bean `qou-wqst`.
+
 ## References
 
 * Mathlib, `CategoryTheory/Monoidal/Rigid/Basic.lean`, "Future work" (the two entries above).

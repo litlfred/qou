@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:28Z
-updated_at: 2026-08-26T18:44:09Z
+updated_at: 2026-08-26T19:11:49Z
 ---
 
 
@@ -80,3 +80,35 @@ Caution recorded: LHS is a composite of a rightDualIso with tensorDoubleDualIso,
 and tensorDoubleDualIso is built from rightDualMapIso -- which is NOT itself a
 rightDualIso. So rightDualIso_hom_trans does not apply to it directly; that was
 my first thought and it does not work.
+
+
+## 2026-08-26 — the target was FALSE; retracted and re-aimed
+
+`drinfeldIso` is natural but **not monoidal**, so a braided right-rigid category is not
+pivotal in the monoidal sense.  Two independent arguments, both in the
+`QOU/MathlibExt/PivotalCategory.lean` module docstring:
+
+1. Hopf-algebraic — the Drinfeld element satisfies `Δ(u) = (u⊗u)(R₂₁R)⁻¹` (Kassel XIV.6),
+   so `u` is grouplike iff the monodromy is trivial.
+2. Diagrammatic — expanding `β_{X⊗Y, Yᘁ⊗Xᘁ}` by the two hexagons leaves two crossings
+   after the caps absorb the other two.  Counting **with the orientation reversal at each
+   cap**, they have the same sign: the loops are Hopf-linked.  The discrepancy is the
+   monodromy `(β_ X Y).hom ≫ (β_ Y X).hom`.
+
+I nearly concluded the opposite: read naively, "X over Yᘁ" and "Y over Xᘁ" look like an
+over/under pair that cancels by R2.  That reading ignores the cap orientation and is wrong.
+
+Corrected target: **`pivotalOfRibbon`** — the twisted map `θ_X ≫ drinfeldIso X` is monoidal,
+because the balancing axiom `θ_{X⊗Y} = β β (θ_X ⊗ θ_Y)` is exactly the monodromy, and
+`θ_X ⊗ θ_Y` commutes with it by braiding naturality.
+
+**Do NOT add the monoidality field to `PivotalCategory` while `pivotalOfBraided` is an
+instance** — the field would be unprovable there, and it is unprovable because it is false.
+This supersedes bean `qou-ezas` as scoped.
+
+Landed this pass: `rightDualIso_tensorExactPairing` (the formal half — the dual comparison of
+a tensor is the tensor of the comparisons, order reversed), sorry-free, lean-direct exit 0.
+
+Remaining gap: in a braided rigid category, `β_{X, Yᘁ}` is the bent-round *inverse* braiding
+`β_{Y,X}⁻¹`.  Mathlib lacks it; it is a snake-identity computation.  Everything else then
+follows from it plus `rightDualIso_tensorExactPairing`.
