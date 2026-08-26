@@ -607,11 +607,18 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         from q_parameter import Q_50_DIGIT_STR as _Q50i
         ta_i, tf_i, _, _ = tr_m_atom_zn(
             Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q50i)), dps=50)
-        ta_i, tf_i = float(ta_i), float(tf_i)
-        E_retained = alpha * (ta + ta_i) / 2.0
-        E_emitted = alpha * abs(ta - ta_i) / 2.0
+        # NO-FLOAT64 (AGENTS.md): these were cast via `float(...)` until
+        # 2026-08-26.  Measured impact on E_multilink was 5e-22..3e-19 relative
+        # (2H/3H/3He/4He), i.e. none of the displayed digits moved -- the two
+        # defects differ at O(1), so the subtraction below is not in fact
+        # near-cancelling at these parameters.  Removed regardless: the rule is
+        # not conditional on the cancellation happening to be benign, and a
+        # dashboard column becomes an argument in an audit the moment it is
+        # quoted.
+        E_retained = alpha * (ta + ta_i) / 2
+        E_emitted = alpha * abs(ta - ta_i) / 2
         defect0, defecti = tf - ta, tf_i - ta_i
-        E_multilink = alpha * abs((defect0 - defecti) / 2.0)
+        E_multilink = alpha * abs((defect0 - defecti) / 2)
         B_sym_ent = B_sym + E_multilink
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
