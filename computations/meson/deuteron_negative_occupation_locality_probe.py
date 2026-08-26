@@ -27,6 +27,20 @@ Only the inference from it is withdrawn.
 
 THE ACTUAL MECHANISM -- an unpriced overdraft on the net constraint
 ==================================================================
+
+  SUPERSEDED, same bean, by `zero_weight_sector_is_temperley_lieb_probe.py`.
+  The word "unpriced" below is wrong, and so is the question it led to ("what
+  could price the kernel?"). Nothing prices it and nothing should: per
+  `prop:markov-trace-frobenius-selection` (iii), stated unconditionally, the
+  radical of <x,y> = tr_M(xy) is exactly the Temperley-Lieb ideal
+  I_n = ker(H_n(q) -> TL_n(q)), and it is (TL_n, tr_M) -- NOT (H_n, tr_M) --
+  that is the symmetric Frobenius algebra. Checked: the support's squared
+  dimensions sum to 132 = Catalan(6) = dim TL_6 exactly (and at n = 2..8).
+  So a negative occupation of a zero-weight block is not a debt against the
+  vacuum; it is an occupation of a direction that is not in the algebra. The
+  MEASUREMENTS below all stand -- the ledger identity, the vertex-dependence
+  of the negative set, D_min -- as facts about the LP as posed on H_6. What
+  changes is that posing it on H_6 was the defect.
 The net constraint is a plain sum, `sum_lambda x_lambda = n_target`. On the
 kernel `G = 0`, so `Gx >= 0` imposes nothing and `x` may go negative. So a
 kernel deficit `-D` buys the support a budget of `n_target + D`:

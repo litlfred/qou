@@ -1813,3 +1813,119 @@ that carry signs are exactly the ones the cost cannot see. What it supplies is a
 sharper negative: a signed-occupation program reaches AME only by an unpriced
 deficit whose location is not determined and whose magnitude is bounded below by
 $14.23\,n_{\text{target}}$.
+
+## Addendum 19 — the zero-weight sector is the Temperley–Lieb ideal; you don't price a radical (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/zero_weight_sector_is_temperley_lieb_probe.py`](../../computations/meson/zero_weight_sector_is_temperley_lieb_probe.py)
+(8 assertions, all passing, 4 controls). Prompted by the author asking what
+prices the zero-weight sector, and whether Frobenius duality is being used.
+
+**Both questions have one answer, and it was already in the corpus.** This is
+the third time in this arc that the answer was on disk before the measurement
+started, and the corpus-grep found it in one pass.
+
+### What the corpus already says
+
+[`prop:markov-trace-frobenius-selection`](../../content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-proof.md)
+part (iii), stated there **unconditionally**:
+
+> the radical of $\langle x,y\rangle_\tau := \mathrm{tr}_M(xy)$ ... is exactly
+> the Temperley–Lieb ideal $I_n = \ker(H_n(q) \twoheadrightarrow
+> \mathrm{TL}_n(q))$, neither larger nor smaller. ... It is
+> $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, **not** $(H_n(R,q), \mathrm{tr}_M)$,
+> that is a symmetric Frobenius algebra.
+
+So the seven zero-weight blocks of Addendum 18 are not blocks the trace forgot
+to charge for. They **span $I_6$**, and the Frobenius algebra the trace lives on
+is the quotient $\mathrm{TL}_6(q)$, where the pairing is **non-degenerate**.
+
+### Checked, not merely cited
+
+If the convention-D support really is $\mathrm{TL}_6$ then its squared
+dimensions must sum to the Catalan number — not merely to something less than
+$6!$:
+
+| | | |
+|---|---:|---|
+| $\sum_{\ell(\lambda)\le 2}(f^\lambda)^2$ | **132** | $= C_6 = \dim \mathrm{TL}_6$ |
+| $\sum_{\lambda \vdash 6}(f^\lambda)^2$ | 720 | $= 6! = \dim H_6$ |
+| $\sum_{\ell(\lambda)\ge 3}(f^\lambda)^2$ | 588 | $= \dim I_6$ |
+
+Exactly, and at $n = 2,\dots,8$ (7/7), so it is not an $n=6$ coincidence. The
+Gram is strictly positive on the support (min $0.0756$) and exactly zero off it,
+and the two ways of naming the split — $\ell(\lambda) \le 2$ versus
+$G_{\lambda\lambda} > 0$ — agree on all 11 blocks.
+
+### What this closes, and what it costs me
+
+**The signed-occupation escape is closed, and not by argument.** On the support
+$G$ is strictly positive, so $Gx \ge 0$ **is** $x \ge 0$ there. The sector that
+supplied the signs is $I_6$, which is not in the Frobenius algebra. There is
+nothing left to sign. All three escapes opened in Addendum 15 are now closed.
+
+**The support projection was never a modelling decision.** Addendum 15 and PR
+[#5826](https://github.com/litlfred/qou/pull/5826) §1 defended it as one —
+*"stated not smuggled"*. It is the **quotient map $H_6 \to \mathrm{TL}_6$**. So
+the six encodings are infeasible in the actual Frobenius algebra, not in a
+restricted model of it. The negative is stronger than it was reported to be.
+
+**And Addendum 18's central word is wrong.** "Unpriced overdraft" presumes a
+ledger with a missing entry. A radical is not an unpaid account; it is a
+direction the pairing does not have. The measurements in 18 all stand — the
+ledger identity, the vertex-dependence of the negative set, $D_{\min} =
+8.185108$ — as facts about the LP **as posed on $H_6$**. What changes is that
+posing it on $H_6$ was the defect. Seventeenth correction in this arc, and the
+second consecutive one to my own framing of this same object.
+
+### It also inverts the search
+
+Two routes I was about to take are foreclosed by the same proposition:
+
+- **"Widen the level so the kernel gets a weight"** is backwards. Part (ii)
+  makes the row cap the **input** — the $\mathrm{SU}_q(2)$ fibre supplies no
+  channel with $\ell(\lambda) \ge 3$ — and it is the row cap that *selects*
+  $z = q^3/(q^2+1)$, i.e. convention D itself.
+- **"Use a generic Ocneanu $z$, where the pairing is non-degenerate"** is true
+  and useless. Part (i): non-degeneracy *"singles out nothing"*, since **every**
+  weight vector with all $w_\lambda \ne 0$ induces a non-degenerate form. It
+  cannot be a selection principle, which is exactly why the framework uses a
+  prescribed **degeneracy** instead.
+
+**Scope.** Parts (i) and (iii) are unconditional in the corpus and are what is
+used here. Part (ii)'s antecedent — that the mass-channel trace *is* the
+categorical trace of the fibre action — is **open** (bean `qou-n1dj`); nothing
+here bears on it. Scope (a) throughout: this establishes *where the program
+lives*, not what it yields, and computes no binding contribution.
+
+### On the entanglement-cost reading
+
+The author also asked whether a prior entanglement cost must be tracked, and
+whether further entanglement costs something. Two findings, neither of them new:
+
+1. **The framework already charges for the third channel, by removing it.**
+   $\ell(\lambda) \ge 3$ needs a threefold antisymmetrisation, i.e.
+   $\Lambda^3 V \ne 0$, i.e. $N \ge 3$; and `exteriorSquareDim N = 1 ↔ N = 2`
+   pins $N = 2$, so $\Lambda^3 V = 0$. The cost of that sector is not high, it
+   is **infinite** — the states are absent, which is the same fact as $I_6$
+   being quotiented out. There is no prior ledger to carry.
+2. **The direct test exists and is a light-end refutation.** The owner
+   conjecture $B = E_0 \cdot S_{\mathrm{vN}}$ was tested in
+   [`binding_von_neumann_entropy_probe.py`](../../computations/probes/binding_von_neumann_entropy_probe.py)
+   with a state-dependent Born–Plancherel block weight. Binding **destroys**
+   block entanglement rather than generating it — $\Delta S < 0$ for ²H
+   ($-0.0135$) and ³H ($-0.0077$) — and $E_0\,|\Delta S|$ misses $B_{\rm AME}$
+   by $39\times$ (²H), $263\times$ (³H), $1.3\times10^{5}$ (³He), while
+   $E_0 S_{\rm bound}$ *overshoots* by 35–84 %. Scope (a): that refutes **one
+   prescription**, not entanglement cost as an ingredient. Note the witness is
+   muon-pinned ($q_0 = 1.10997859555\ldots$), pre-dating the 2026-08-07 proton
+   directive; the sign of $\Delta S$ will not turn on an 11.5 ppb re-pin, but
+   the magnitudes should be re-read after one.
+
+A name collision worth recording:
+[`q-beta-gamma-gamma-canonical-derivation.md`](../../content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md)
+is the $\mathfrak{Q}_\beta$ $c_k$-ladder derivation and **does not treat
+two-photon production**. Nothing in the corpus does; a γγ-production
+entanglement ledger would be new work, and would sit outside this LP entirely —
+an entropy is not a trace, so it is not a linear functional on the algebra and
+cannot appear as a cost vector.
