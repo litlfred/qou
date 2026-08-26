@@ -368,6 +368,11 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.tower_class
 # discards BOTH hypotheses and cites isSemisimpleRing_H3A -- it is NOT Wenzl's
 # ascent, and nothing downstream may cite it as evidence the ascent is formalized.
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_H2_H3_trivial | clean
+# The prerequisite Mathlib lacks, supplied here (bean qou-kzjl). This is what a
+# real WenzlTowerStep ascent would consume; pinned because a regression here
+# silently re-opens the gap.
+QOU.MathlibExt.SemisimpleOfNondegenerateTrace | QOU.MathlibExt.algTrace_eq_zero_of_isNilpotent | clean
+QOU.MathlibExt.SemisimpleOfNondegenerateTrace | QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate | clean
 """
 
 
