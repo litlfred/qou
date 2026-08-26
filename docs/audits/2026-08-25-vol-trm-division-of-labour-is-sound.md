@@ -1929,3 +1929,90 @@ two-photon production**. Nothing in the corpus does; a γγ-production
 entanglement ledger would be new work, and would sit outside this LP entirely —
 an entropy is not a trace, so it is not a linear functional on the algebra and
 cannot appear as a cost vector.
+
+## Addendum 20 — nothing destroys entanglement: the sign is forced, so the label was wrong (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/binding_cut_entropy_sign_is_forced_probe.py`](../../computations/meson/binding_cut_entropy_sign_is_forced_probe.py)
+(8 assertions, all passing, 4 controls). Raised by the author against the
+Addendum 19 §2 result I relayed — that binding "destroys" block entanglement.
+**The objection is right, and it is stronger than a complaint about a sign.**
+
+### Two reasons that number cannot be an entanglement entropy
+
+1. **Unitarity.** For a closed process in which the same particles come back —
+   virtual production and annihilation being the clean case — the global state
+   stays pure, so its von Neumann entropy is identically $0$ and **cannot
+   change**. Anything that moves under such a process is not the global entropy.
+2. **Positivity across a cut.** Entanglement entropy is defined only once a
+   bipartition is named, and across any cut a product state has $S_A = 0$ while
+   every state has $S_A \ge 0$. Free nucleons are a product across the
+   proton|neutron cut, so $\Delta S = S_{\rm bound} - 0 \ge 0$ **identically**.
+   It is a theorem, not a measurement.
+
+### What the committed probe actually computes
+
+`block_entropy` is $-\sum_\lambda p_\lambda \ln p_\lambda$ with
+$p_\lambda \propto W_\lambda \lVert \rho_\lambda(\beta)\rVert_F^2$. There is
+**no bipartition, no partial trace and no reduced density matrix** anywhere in
+it. It is the Shannon entropy of a classical distribution over the Wedderburn
+blocks of the *whole* algebra — a measure of how spread a braid's character is
+across irreps. A real quantity, and its arithmetic is not in dispute; it is
+simply not an entanglement entropy, and *"von Neumann entanglement entropy"* is
+the wrong label for it. Its $\Delta S < 0$ is the proof, since no bipartite
+measure can do that.
+
+**I relayed that label without checking it.** Eighteenth correction in this arc,
+and the first prompted by the author rather than found in a re-measurement.
+
+### The right cut is already in the corpus
+
+The natural bipartition is proton strands | neutron strands, i.e.
+$H_3 \otimes H_3 \subset H_6$. Restriction along it **is** Frobenius
+reciprocity — the same duality Addendum 19 was about — and its multiplicities
+are Littlewood–Richardson, already carried per $\lambda$ as
+`lr_breakdown_per_lambda` in
+[`sublemma-2-1-deuteron-branching.witness.json`](../../computations/sublemma-2-1-deuteron-branching.witness.json).
+That witness also records `max_relative_diff_no_interface = 1.98e-70`: the
+**disjoint** character matches the LR prediction to seventy digits, so the free
+state is exactly the induced product across this cut — which is what makes its
+cut entropy zero and lets the sign theorem bite.
+
+Measured in exact integer arithmetic, no $q$ and no float64, with
+$p^\lambda_{\mu\nu} = c^\lambda_{\mu\nu} f^\mu f^\nu / f^\lambda$:
+
+| $\lambda$ | $f^\lambda$ | cut terms | $S_{\rm cut}$ (nats) |
+|---|---:|---:|---:|
+| $(6)$ | 1 | 1 | **0.000000** |
+| $(5,1)$ | 5 | 3 | 1.054920 |
+| $(4,2)$ | 9 | 4 | 1.273028 |
+| $(4,1,1)$ | 10 | 5 | **1.470808** |
+| $(3,3)$ | 5 | 2 | 0.500402 |
+| $(3,2,1)$ | 16 | 5 | 1.386294 |
+| $(3,1,1,1)$ | 10 | 5 | **1.470808** |
+| $(2,2,2)$ | 5 | 2 | 0.500402 |
+| $(2,2,1,1)$ | 9 | 4 | 1.273028 |
+| $(2,1^4)$ | 5 | 3 | 1.054920 |
+| $(1^6)$ | 1 | 1 | **0.000000** |
+
+Non-negative on all eleven; exactly zero on exactly the two one-dimensional
+blocks — the ones restricting to a single $(\mu,\nu)$, i.e. genuinely product
+across the cut; strictly positive on the other nine; and invariant under
+conjugation $\lambda \mapsto \lambda'$ on all eleven. The dimension control
+$\sum_{\mu\nu} c^\lambda_{\mu\nu} f^\mu f^\nu = f^\lambda$ passes 11/11, so the
+LR weights really are the restriction.
+
+### What is NOT claimed, and one trap to name explicitly
+
+Nothing here says $E_0 \cdot S_{\rm cut}$ is the binding energy. The value AME
+would require, $S = B_{\rm AME}/E_0 = 2.224566/4.185981 = 0.5314$, **lies inside
+the measured range $[0,\,1.4708]$** — and that is a *genericity observation, not
+evidence*. A weighting over eleven blocks spanning that interval can be made to
+hit almost anything in it, which is the same trap the `S_leak` offset window
+records under §"Defined residual ≠ derived decomposition". No weighting is
+chosen here and no binding contribution is computed.
+
+Nor is entanglement cost excluded as an ingredient. The earlier probe refutes
+**one prescription**; this one refutes that prescription's **label**. Neither
+bears on whether a correctly-defined cut entropy plays a role — and the object
+that would have to be tested now exists, is parameter-free, and is exact.
