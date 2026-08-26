@@ -192,7 +192,56 @@ Deriving `ce` requires something genuinely new — it is **not hiding in the
 weights**. Scope-(a): this excludes the weight-moment family, not every
 conceivable derivation.
 
-## 4. Verdict
+
+## 4. The element `Q_A` rests on cannot exist as described — PROVED, scope-(b)
+
+Following `qou-avt5` (which established that `ε(Δ)` has no exhibited element),
+this settles the stronger question.
+
+**A typed crossing is `σ_g + d`.** `word_to_mpfr` recognises four templates by
+`d`: `0`, `−h`, `−h/2`, colour-weighted. The Hecke relation gives
+`σ⁻¹ = σ − h`, so those read off as σ / σ⁻¹ / the average — which is what the
+code calls them. The counit sends `σ ↦ q`, so
+
+```
+ε(σ_g + d) = q + d ∈ { q, 1/q, [2]_q/2 }   ⟹   ε(any typed word) = q^m·([2]_q/2)^c
+```
+
+**Side B confirmed a second time, now symbolically.** `ε(β_p) = q³([2]/2)²`,
+`ε(β_n) = q([2]/2)²`, and
+
+```
+ε(β_n − β_p) = −(q−1)(q+1)(q²+1)²/(4q) = chi_block_3      [exact identity]
+```
+
+**The exclusion.** `epsNPq = h(h−2)/2 = (q²−1)(q²−2q−1)/(2q²)` carries the
+irreducible factor `(q²−2q−1)`, whose root is the **silver ratio** `q = 1+√2`,
+so it vanishes there. A typed-word difference vanishing at the silver ratio
+forces `(1+√2)^{m₁−m₂} = (√2)^{c₂−c₁}`, because `[2]_q/2 = √2` **exactly** at
+that point. Absolute norms in `ℤ[√2]` — `|N(1+√2)| = 1` (the fundamental unit),
+`|N(√2)| = 2` — force `c₁ = c₂`, then `m₁ = m₂` since `1+√2` is not a root of
+unity. The difference is then identically zero, which `epsNPq` is not. ∎
+
+**Control, so the argument doesn't prove too much:** `chi_block_3` *is* such a
+difference, so it must not vanish at the silver ratio — and
+`chi_block_3(1+√2) = −12 − 8√2 ≠ 0`, with exponents `(1,2)` and `(3,2)`. A
+bounded sweep (84 100 pairs, three generic `q`) independently returns zero
+solutions for `epsNPq` and exactly that one for `chi_block_3`.
+
+**The fork, not adjudicated here.** The corpus's description of `Δ` and its
+asserted counit are mutually inconsistent: either the prose is wrong (`Δ` is not
+a typed-crossing word difference, and the real element is still unexhibited), or
+`epsNPq` is wrong — and with it `Q_A` and the ladder phase `ε − tr_M`. Deciding
+needs the owner of the counit block.
+
+**Scope discipline.** This is scope-(b): a structural exclusion on a *proved
+invariant* (the norm form on `ℤ[√2]`), not a failed search. It excludes the
+class "difference of two typed-crossing words" and nothing wider — a
+colour-weighted crossing contributes `q − h(½ − δ/4)`, outside the
+`q^m([2]/2)^c` normal form. A=1 nucleon words carry none, which is why the class
+is the right one here; do not quote it for words that do.
+
+## 5. Verdict
 
 | gap | closeable now? | binding reason |
 |---|---|---|

@@ -20,6 +20,8 @@ assessment. Order is my judgement and is meant to be overruled.
 | 4 | `qou-avt3` c3^odd | BLOCKED UPSTREAM by design. Not well-posed until (H1) is derived or dropped. Do not start it. |
 | - | `qou-ximf` Xi_k cyclotomic family | **RETRACTED** 2026-08-26 -- collapses to a function of h. |
 
+| 3c | `qou-avt6` no typed-crossing word difference has counit epsNPq | **PROVED scope-(b) 2026-08-26** via a norm argument in Z[sqrt2] at the silver ratio. Forces a fork: either the prose describing Delta is wrong, or epsNPq is. Owner call. |
+
 ## What the queue has established so far, as one sentence
 
 Three independent routes into the Q_beta residual have now been closed by

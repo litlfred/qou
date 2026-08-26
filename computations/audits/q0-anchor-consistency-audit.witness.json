@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T06:44:14.556954+00:00",
-  "commitSha": "a567e6ff77d647f1aef2ffe22e39d4e9474f483d",
+  "computedAt": "2026-08-26T07:08:00.292097+00:00",
+  "commitSha": "976a6bcada335aa588bf27abcc564ec3bd75c793",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
@@ -51,7 +51,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1656,
+      "Q0_ANCHOR_MISSING": 1657,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -5570,6 +5570,10 @@
         },
         {
           "witness": "qbeta-silver-rationals.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-single-wrap-element-cannot-exist.witness.json",
           "detail": ""
         },
         {
