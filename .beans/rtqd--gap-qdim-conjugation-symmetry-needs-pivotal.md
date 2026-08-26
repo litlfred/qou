@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-26T15:56:26Z
+updated_at: 2026-08-26T16:06:07Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -127,3 +127,44 @@ retired in its favour; it had zero consumers.
 one `RightRigidCategory` instance, and there the pivotor is `Module.evalEquiv`, whose
 naturality is already available. That gives a genuine `PivotalCategory` instance without
 the general braided argument.
+
+
+
+## Correction to the "cheapest route", measured 2026-08-26
+
+I recommended `FGModuleCat K` as the cheap way to get a `PivotalCategory` instance
+without the braided coherence proof. **Measured, that recommendation is wrong, or at
+least not established** -- it is not obviously cheaper, and the reason is a second
+missing piece of Mathlib infrastructure, not the pivotor.
+
+**What is there.** `Module.evalEquiv K V : V = Dual K (Dual K V)` exists, and its
+naturality is `Module.Dual.eval_naturality (f) : f.dualMap.dualMap <o eval = eval <o f`
+-- proved by `rfl`. So the linear-algebra half is free.
+
+**What is missing, and it is not small.** There is no bridge between the categorical
+mate and the linear-algebra one. The lemma needed is
+
+    (rightAdjointMate f).hom = LinearMap.dualMap f.hom     -- for f : V => W in FGModuleCat K
+
+and `grep -rn "rightAdjointMate\|dualMap" Mathlib/Algebra/Category/FGModuleCat/*.lean`
+returns **nothing**. Probed directly: the statement typechecks (the carriers unify --
+`Vdual.obj` is defeq to `Module.Dual K V`), and `simp [rightAdjointMate]` reduces it to
+the five-step composite
+
+    lambda o (eps_W |> Vdual) o alpha^-1 o (Wdual <| f |> Vdual) o (Wdual <| eta_V) o rho^-1
+
+applied to `phi`, and then **stops**. It stops because `FGModuleCat`'s monoidal structure
+is *induced* on a full subcategory -- `instance : (ModuleCat.isFG R).IsMonoidal` -- so the
+`ModuleCat.MonoidalCategory.whiskerLeft_apply` / `whiskerRight_apply` /
+`associator_inv_apply` family does **not** fire on it, and
+`Algebra/Category/FGModuleCat/Basic.lean` supplies no element-level replacements
+(grep for `whiskerLeft` there: two hits, both `open MonoidalCategory`).
+
+So the route needs element-level computation lemmas for the induced monoidal structure on
+an `ObjectProperty` full subcategory FIRST, and only then the dual-basis expansion
+`phi o f = sum_i phi(f e_i) . e*_i` over `Basis.ofVectorSpace`. Two missing layers, not
+one.
+
+**Net: both routes to the instance are Mathlib-contribution-sized.** Neither is a
+tidy-up. Whoever takes this should pick on interest, not on expected cost -- and should
+know the FGModuleCat one begins with subcategory plumbing rather than with duality.
