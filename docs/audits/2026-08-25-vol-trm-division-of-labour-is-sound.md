@@ -3372,3 +3372,82 @@ a non-positive word?** The measurement above says it is neither additive nor
 multiplicative, and that the deviation is in the direction of cancellation. That
 is a concrete question about `α_shift` under the cabling substitution, and it is
 prior to any statement about `r`.
+
+---
+
+## Addendum 37 — the cable-shift law: bounded, one-sided, and not a word statistic
+
+Addendum 36 refuted two candidate laws on four knots. This widens the sample to
+twelve and asks what the law actually is.
+[`cable_shift_law_family_probe.py`](../../computations/meson/cable_shift_law_family_probe.py),
+5/5.
+
+| word | `n` | `p` | `m` | `L` | `W` | `α(K)` | `α(cable)` | `4·α(K)` | `λ*(cable)` |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| `σ₁` | 2 | 1 | 0 | 1 | 1 | 1 | **4** | 4 | `(1,1,1,1)` |
+| `σ₁²` | 2 | 2 | 0 | 2 | 2 | 2 | **8** | 8 | `(1,1,1,1)` |
+| `σ₁³` trefoil | 2 | 3 | 0 | 3 | 3 | 3 | **12** | 12 | `(1,1,1,1)` |
+| `σ₁⁵` (2,5) | 2 | 5 | 0 | 5 | 5 | 5 | **20** | 20 | `(1,1,1,1)` |
+| `σ₁σ₂` | 3 | 2 | 0 | 2 | 2 | 2 | **8** | 8 | `(1⁶)` |
+| `σ₁⁻¹` | 2 | 0 | 1 | 1 | −1 | 1 | **4** | 4 | **`(4,)`** |
+| `σ₁σ₁⁻¹` | 2 | 1 | 1 | 2 | 0 | 0 | **0** | 0 | `(4,)` |
+| `σ₁σ₂σ₁⁻¹` | 3 | 2 | 1 | 3 | 1 | 1 | **4** | 4 | `(3,1,1,1)` |
+| `σ₁σ₂⁻¹` | 3 | 1 | 1 | 2 | 0 | 2 | **6** | 8 | `(4,2)` |
+| `σ₁²σ₂⁻¹` | 3 | 2 | 1 | 3 | 1 | 3 | **10** | 12 | `(2,2,1,1)` |
+| `σ₁σ₂⁻¹σ₂⁻¹` | 3 | 1 | 2 | 3 | −1 | 3 | **10** | 12 | `(4,2)` |
+| `(σ₁σ₂⁻¹)²` fig-8 | 3 | 2 | 2 | 4 | 0 | 4 | **12** | 16 | `(4,2)` |
+
+### The law, as far as it goes
+
+**`α(cable) ≤ 4·α(K)`, with equality iff the word is positive.** Positive words:
+**5/5 exact**, which is §F's theorem (`α` = letter count) under a substitution
+that multiplies letter count by `ℓ = 4`.
+
+**The deviation is one-sided.** Of the seven non-positive words, **4 fall below
+`4·α(K)` and 0 exceed it** (deficits 2, 4, 2, 2). Inverse letters **cancel**
+valuation under cabling; they never add it. So the law is a *bound* plus a
+residual `4·α(K) − α(cable) ≥ 0` that nothing here predicts.
+
+> **🛑 Anti-numerology, flagged before anyone quotes it.** The best-scoring
+> candidate across the twelve is `3·α(K) + W` at **10/12**. **That is a
+> two-parameter form fitted to twelve integers and it still misses two.** It is
+> not a law and must not be cited as one. It is recorded only so the next reader
+> does not re-derive it and mistake 10/12 for a discovery.
+
+### The mechanism — the maximizer moves, which is why no word statistic works
+
+Read the `λ*` column. For a **positive** word the maximizer is the all-column
+`(1ⁿ)`, where `σ ↦ −q⁻¹` has valuation `−1` per letter. For the **purely
+negative** `σ₁⁻¹` it flips to the all-**row** `(4,)`, where `σ ↦ q` and
+`σ⁻¹ ↦ q⁻¹` — so an inverse letter now *contributes* pole order. For **mixed**
+words neither extreme wins and the maximizer lands in the interior: `(4,2)`,
+`(3,1,1,1)`, `(2,2,1,1)`.
+
+So `α_shift` on a mixed word is a **competition between the row channel, which
+rewards `σ⁻¹`, and the column channel, which rewards `σ`** — and for mixed words
+the maximum is attained strictly between them. That is why no function of
+`L`, `W`, `p`, or `α(K)` can capture it: the answer depends on *which partition
+wins*, and that is a max over `p(n)` competing linear forms, not a count.
+
+This is the same phenomenon Addendum 32 measured on the atom word, where the
+maximizer sat at `(4,2)` in a seven-way tie rather than at the column. **Two
+independent measurements of the same effect**, and it is what makes the atom
+word — 11 `σ` against 7 `σ⁻¹` — resistant in both places.
+
+### What this settles, and what it does not
+
+**Settles:** the additive law is refuted at `n = 12`, not just `n = 4`
+(**0/12**), so Addendum 35's `r(s−1) = 1` route stays closed. And there is a
+genuine bound, `α(cable) ≤ 4·α(K)`, valid across the whole sample.
+
+**Does not settle:** the residual. A real law would predict `4·α(K) − α(cable)`,
+and this measurement only shows it is non-negative and that it is driven by
+which channel maximizes. That is consistent with van der Veen, where the cabled
+valuation is a `min` over the cable's **colour decomposition** — each term the
+original knot at a *different colour* — rather than a function of the word at
+all. **The right next object is `α_shift` as a function of colour**, not of the
+word; the corpus has that only for torus patterns
+(`prop:alpha-shift-torus-knot`).
+
+**Sample limits:** twelve words, all on 2 or 3 strands, one cabling degree
+(`ℓ = 4`, the 2-parallel). None of them is the atom word.
