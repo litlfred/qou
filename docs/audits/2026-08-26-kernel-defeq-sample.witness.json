@@ -1,0 +1,203 @@
+{
+  "schema": "lean-kernel-defeq/v1",
+  "generated_at": "2026-08-26",
+  "producer": "scripts/lean/BorrowedNameKernel.lean via scripts/lean/audit-driver.sh",
+  "bean": "qou-0avp",
+  "note": "defeq_collapse means the statement's two sides reduce to each other at default transparency. That is a CANDIDATE signal, not a verdict: it fires both on vacuous definitional restatements AND on genuine finite computations, because reduction is how a concrete computation is proved. The discriminator is whether the operands are hand-entered constants or actually computed -- spot-checked, most in this batch are hand-entered tables (jonesAtOne is a table whose torusLink2 entry is marked 'placeholder'; klEigenvalueAtOne and pairCount are two separate `Int := 2`).",
+  "modules_scanned": 8,
+  "theorems_analysed": 121,
+  "defeq_collapse_count": 19,
+  "wall_clock": "2m45s for 8 modules (single-pass analyzeModules)",
+  "findings": [
+    {
+      "module": "QOU.AppendixSurreals.Conjectures",
+      "decl": "QOU.AppendixSurreals.OnPModularHecke.card_cells_eq_card_nimbers",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Archimedean.PerLoopMeasureShadowAssembly",
+      "decl": "QOU.Archimedean.PerLoopMeasureShadowAssembly.conj_I_eq_neg_I",
+      "type_foreign": 4,
+      "type_local": 0,
+      "value_foreign": 5,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Archimedean.PerLoopMeasureShadowAssembly",
+      "decl": "QOU.Archimedean.PerLoopMeasureShadowAssembly.kl_eigenvalue_at_one_eq_pairCount",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.jonesAtOne_hopf_eq_neg_two",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.closure2_jones_at_one_sigma_sq_eq_neg_two",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.jonesAtOne_doubleHopf_eq_four",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.closure2_at_two_crossings_eq_hopf",
+      "type_foreign": 0,
+      "type_local": 4,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.closure2_at_one_eq_unknot",
+      "type_foreign": 0,
+      "type_local": 4,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.jonesAtOne_unknot_eq_one",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.jonesAtOne_trefoil_eq_one",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.BraidLinkTypes",
+      "decl": "QOU.BraidKnot.jonesAtOne_borromean_eq_neg_eight",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.CommutativeCrossingEnergy",
+      "decl": "QOU.BraidKnot.CommutativeCrossingEnergy.ord_u_zero_deuteron",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.CommutativeCrossingEnergy",
+      "decl": "QOU.BraidKnot.CommutativeCrossingEnergy.ord_u_zero_tritium",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.CommutativeCrossingEnergy",
+      "decl": "QOU.BraidKnot.CommutativeCrossingEnergy.ord_u_zero_proton",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.CommutativeCrossingEnergy",
+      "decl": "QOU.BraidKnot.CommutativeCrossingEnergy.ord_u_zero_helium3",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidKnot.CommutativeCrossingEnergy",
+      "decl": "QOU.BraidKnot.CommutativeCrossingEnergy.ord_u_zero_trM_eq",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity",
+      "decl": "QOU.BraidKnot.chirality_ideal_4_1_value",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity",
+      "decl": "QOU.BraidKnot.chirality_ideal_4_1_label",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.HoefsmitV21CosSymmetrization",
+      "decl": "QOU.BraidKnot.hoefsmit_V21_markov_symmetrized_character",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    }
+  ]
+}
