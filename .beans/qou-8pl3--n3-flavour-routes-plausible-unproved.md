@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T03:28:26Z
+updated_at: 2026-08-26T03:42:59Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -162,3 +162,57 @@ STILL OPEN and NOT touched: Route A (multi-fibre groupoid, nothing built);
 gap (ii), whether the octonionic SU(3) can serve as flavour rather than colour;
 and the flavour-vs-colour identification itself, which TrialitySelectionRule
 proves the Z/3 grading cannot see.
+
+
+## GAP (ii) WORKED 2026-08-26 — the Sym^2 gate CANNOT separate flavour from colour
+
+Gap (ii) asks whether the octonionic SU(3) can serve as flavour rather than
+colour, and records the chapter's position that it cannot, because "the Sym^2
+gate excludes the icosahedral colour triple T_1 while the G_2 route passes it".
+
+THAT ARGUMENT IS WITHDRAWN. Two defects.
+
+1. DEAD CITATION. eightfold-open-problems.md item 4 attributes it to
+   sec:color-algebra. Per eightfold-way.ts that section holds exactly ONE block,
+   color-su3-from-g2, which does not mention T_1 at all. The T_1 comparison is
+   in schur-weyl-eightfold.md -- and that source is far more careful than item
+   4: it says the octonionic 3 is "NOT EXCLUDED by the Sym^2 gate, on a
+   decomposition taken from the literature. It is not a machine-checked pass,
+   and the file should not be cited as one." Item 4 upgraded that to "the G_2
+   route passes it" and built a "cannot" on top.
+
+2. THE INFERENCE DOES NOT GO THROUGH. The premise compares TWO DIFFERENT
+   OBJECTS (T_1 fails, octonionic 3 not excluded) and establishes only that
+   those two differ. The conclusion is about ONE CONSTRUCTION supplying TWO
+   ROLES. The comparison never tests the proposition it is offered as proof of.
+   Scope-(a) negative presented as scope-(b) structural exclusion, with no
+   invariant cited that would license (b).
+
+3. AND NO STRENGTHENING RESCUES IT -- the gate is PROVABLY BLIND.
+   gate_forces_complex_of_dim_three: at dimension 3, passing is equivalent to
+   carrying a complex-type irrep. So ANY two 3-dim objects that both pass are
+   both complex type and receive the SAME verdict.
+   gate_does_not_separate_two_triples exhibits two distinct such objects.
+   A flavour triple and a colour triple that each pass are, to this gate,
+   indistinguishable.
+
+BOTH OBVIOUS INVARIANTS ARE NOW KNOWN BLIND. The Z/3 grading:
+identification_invisible_to_selection_rule (2 is a unit, every verdict
+unchanged). The Sym^2 gate: this. A discriminator must be found elsewhere, and
+that is now a proved constraint on the search rather than a hunch.
+
+WHAT SURVIVES, and it is stronger than the withdrawn claim in one respect: the
+gate gives a CLASS exclusion, not a two-example comparison -- no real or
+quaternionic construction whatever reaches dimension 3 through it. T_1's failure
+follows from its Frobenius-Schur type (a rotation rep of A_5 subset SO(3), hence
+real), not from anything about the icosahedron. real_triple_fails_gate is that
+in one line.
+
+ITEM 4 STAYS OPEN. Nothing here decides same/different/groupoid-dual. What is
+removed is a false piece of support for one answer; what is added is a proved
+reason not to look here again.
+
+Corrected in content (eightfold-open-problems.md item 4 rewritten: over-claim
+withdrawn, citation repointed to prop:schur-weyl-eightfold, the two blindness
+results cited). Audit:
+docs/audits/2026-08-26-sym2-gate-cannot-separate-flavour-from-colour.md

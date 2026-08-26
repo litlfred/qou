@@ -228,4 +228,58 @@ theorem even_dimOf_of_selfDual {S fs m dual d}
   obtain ⟨c, hc⟩ := two_dvd_dimOf_of_no_complex hgate hq hnc
   exact ⟨c, by omega⟩
 
+/-! ## 6. The gate CANNOT separate flavour from colour
+
+`eightfold-open-problems.md` item 4 concludes that flavour and colour `SU(3)`
+*"cannot both come from the same construction: the `Sym²` gate excludes the
+icosahedral colour triple `T₁`, while the `G₂` route passes it."*
+
+The premise concerns **two different objects** receiving different verdicts,
+which establishes that those two objects differ.  The conclusion is about
+**one construction supplying two roles**, which does not follow from it.
+
+`gate_forces_complex_of_dim_three` makes the failure structural rather than
+merely a gap in the inference: at dimension three, *passing* is equivalent to
+carrying a complex-type irrep.  So any two three-dimensional objects that both
+pass are both complex type, and the gate has returned the same verdict for
+both.  A flavour triple and a colour triple that each pass are, to this gate,
+indistinguishable.
+
+The witnesses below exhibit exactly that: two genuinely distinct
+three-dimensional objects, both passing.  The gate is not merely silent on the
+flavour/colour question — it is *provably blind* to it, in the same way
+`TrialitySelectionRule.identification_invisible_to_selection_rule` shows the
+`ℤ/3` grading is. -/
+
+/-- First triple: irrep `0`, complex, conjugate `1` absent. -/
+def fsA : ℕ → FSType := fun _ => .complex
+def mA : ℕ → ℕ := fun i => if i = 0 then 1 else 0
+def dA : ℕ → ℕ := fun _ => 3
+def dualA : ℕ → ℕ := fun i => if i = 0 then 1 else 0
+
+/-- Second triple: irrep `2`, complex, conjugate `3` absent.  A different
+object — a different index, a different conjugation. -/
+def fsB : ℕ → FSType := fun _ => .complex
+def mB : ℕ → ℕ := fun i => if i = 2 then 1 else 0
+def dB : ℕ → ℕ := fun _ => 3
+def dualB : ℕ → ℕ := fun i => if i = 2 then 3 else 2
+
+theorem tripleA_dim : dimOf {0} mA dA = 3 := by decide
+theorem tripleB_dim : dimOf {2} mB dB = 3 := by decide
+
+theorem tripleA_passes : Passes {0} fsA mA dualA := by
+  unfold Passes sym2Singlets fsA mA dualA; decide
+
+theorem tripleB_passes : Passes {2} fsB mB dualB := by
+  unfold Passes sym2Singlets fsB mB dualB; decide
+
+/-- **The gate is blind to the distinction.**  Two distinct three-dimensional
+objects, both passing the `Sym²` gate.  Whatever separates a flavour triple
+from a colour triple, it is not this gate — so item 4's conclusion does not
+follow from its premise, and no strengthening of the premise will rescue it. -/
+theorem gate_does_not_separate_two_triples :
+    (dimOf {0} mA dA = 3 ∧ Passes {0} fsA mA dualA) ∧
+    (dimOf {2} mB dB = 3 ∧ Passes {2} fsB mB dualB) :=
+  ⟨⟨tripleA_dim, tripleA_passes⟩, ⟨tripleB_dim, tripleB_passes⟩⟩
+
 end QOU.Eightfold.Sym2GateFSTrichotomy

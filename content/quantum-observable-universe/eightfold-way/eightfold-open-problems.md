@@ -150,11 +150,37 @@ Gell-Mann--Nishijima relation cannot be closed.
    The octonionic $\mathrm{SU}(3)$ is colour.  The eightfold-way
    classification requires flavour $\mathrm{SU}(3)$.  Whether these
    are the same, different, or related by a groupoid-level duality
-   is open.  The obstruction audit
-   ([the colour-algebra section](#sec:color-algebra)) shows
-   that they *cannot* both come from the same construction: the
-   $\mathrm{Sym}^2$ gate excludes the icosahedral colour triple $T_1$,
-   while the $G_2$ route passes it.
+   is open, and **the $\mathrm{Sym}^2$ gate cannot settle it.**
+
+   An earlier version of this item claimed the gate shows the two
+   *cannot* both come from the same construction, on the grounds that
+   it excludes the icosahedral triple $T_1$ while the $G_2$ route
+   passes.  That is withdrawn.  The premise compares **two different
+   objects** and establishes only that those two differ; the
+   conclusion is about **one construction supplying two roles**, which
+   does not follow.  (The cited support was also misattributed: the
+   $T_1$ comparison is in
+   [the Schur--Weyl proposition](#prop:schur-weyl-eightfold), where it
+   is stated carefully as *not excluded* on a literature
+   decomposition, not in the colour-algebra section.)
+
+   The failure is structural, not a repairable gap in the inference.
+   `Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` proves that
+   at dimension three, passing the gate is equivalent to carrying a
+   complex-type irrep.  Any two three-dimensional objects that both
+   pass are therefore both complex type, and the gate has returned the
+   same verdict for each --- `gate_does_not_separate_two_triples`
+   exhibits two distinct such objects.  A flavour triple and a colour
+   triple that each pass are, to this gate, indistinguishable.
+
+   What the gate *does* establish is a class exclusion: no real or
+   quaternionic construction reaches dimension three through it, so
+   $T_1$'s failure is a consequence of its Frobenius--Schur type and
+   not a fact about the icosahedron.  Whatever separates flavour from
+   colour lies elsewhere --- as it does for the $\mathbb{Z}/3$ grading,
+   which
+   `TrialitySelectionRule.identification_invisible_to_selection_rule`
+   shows is likewise blind to the identification.
 
 5. **Truncation mechanism.**
    Why does the observable-scale symmetry reduce to a finite-dimensional
