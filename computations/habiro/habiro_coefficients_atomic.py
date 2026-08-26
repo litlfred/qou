@@ -80,7 +80,7 @@ _ATOM_CHI_LABEL_BY_ZN: dict[tuple[int, int, bool], str] = {
 }
 
 
-def markov_trace_symbolic(Z, N, q, include_inter=True):
+def _markov_trace_via_partition_sum(Z, N, q, include_inter=True):
     """tr_M(T_w(Z,N), q) = Σ_{λ ⊢ 3A} y_λ(q) · χ^λ_q(T_w).
 
     Canonical Wenzl-bridge convention: y_λ via Wenzl Schur principal
@@ -154,6 +154,68 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     # word).  Cancel here in check_q, then back-substitute.
     total_u = sp.cancel(sp.together(total_u))
     return total_u.subs(u_int, sp.sqrt(q))
+
+
+def _markov_trace_via_peel(Z, N, q, include_inter=True):
+    """Same object, via the Markov-axiom recursive ascent.
+
+    `markov_peel.tr_M_atomic` reduces the braid word in the Hecke normal-form
+    basis and traces by recursive ascent, never forming the partition sum. It
+    returns an UNREDUCED fraction, hence the `cancel`, which is load-bearing:
+    without it the deuteron carries a spurious `(q²+1)²` and every downstream
+    Habiro coefficient is wrong while `reconstruction_matches` still reports
+    True (bean `qou-lrnd`).
+    """
+    from markov.markov_peel import tr_M_atomic
+
+    expr = tr_M_atomic(Z, N, include_inter=include_inter)
+    own_q = next((t for t in expr.free_symbols if str(t) == "q"), None)
+    if own_q is not None and own_q != q:
+        expr = expr.subs(own_q, q)
+    return sp.cancel(sp.together(expr))
+
+
+#: Which route `markov_trace_symbolic` takes by default.
+#:
+#: The two are the SAME rational function -- `sp.cancel(peel - partition) == 0`
+#: exactly, asserted for the proton and the deuteron in
+#: `habiro_coefficients_via_peel.py::assert_routes_agree`. They differ only in
+#: cost, and by orders of magnitude:
+#:
+#:     deuteron (A=2)   peel 0.79 s     partition  33.5 s     42x
+#:     A=3              peel 1.8 s      partition  ~18 DAYS
+#:
+#: The deuteron figures are COLD -- one route per fresh process. Measuring
+#: both in one process gives anywhere from 42x to 173x depending on what
+#: sympy's cache already holds, and a naive back-to-back timing can even show
+#: the partition route as FASTER, because by then it is fully cached. If you
+#: re-measure, use one route per process.
+#:
+#: The partition route is kept reachable (`route="partition"`) because it is
+#: the independent second computation: it is what makes the agreement check
+#: meaningful, and a self-check that calls the same route twice proves nothing.
+DEFAULT_TRACE_ROUTE = "peel"
+
+
+def markov_trace_symbolic(Z, N, q, include_inter=True, route=None):
+    """tr_M(T_w(Z,N), q) as a sympy expression in `q`.
+
+    `route="peel"` (the default) uses `markov_peel.tr_M_atomic`;
+    `route="partition"` uses the Wedderburn sum over partitions of 3A.
+    They are symbolically identical -- see `DEFAULT_TRACE_ROUTE`.
+
+    Pass `route` explicitly in any code that COMPARES the two. Leaving it
+    defaulted there would silently compare a route against itself.
+    """
+    route = DEFAULT_TRACE_ROUTE if route is None else route
+    if route == "peel":
+        return _markov_trace_via_peel(Z, N, q, include_inter=include_inter)
+    if route == "partition":
+        return _markov_trace_via_partition_sum(
+            Z, N, q, include_inter=include_inter)
+    raise ValueError(
+        f"markov_trace_symbolic: unknown route {route!r} "
+        '(expected "peel" or "partition")')
 
 
 # The canonical output symbol for anything this module SERIALIZES (bean

@@ -59,12 +59,59 @@ and says nothing about which candidate discharges it. The defect is the prose
 restating the antecedent as established for both -- the
 "conditional-proved != premise-established" pattern in AGENTS.md.
 
-Consequence, stated as scope rather than resolved here: the uniqueness
-proposition covers the bar-invariant family; the convention the owner made
-canonical on 2026-08-15 (R3) sits OUTSIDE its hypotheses. Whether the right
-move is to relax hypothesis (a), or to re-derive the colour weighting in a
-bar-invariant form, or to accept that canonicity and bar-invariance part ways
-here, is an owner call and is not made by this probe.
+# The obstruction is exactly one factor of q^2, and it is repairable
+
+Write the p-n factor as a weighted mean with offset `eps`:
+
+    f_pn(eps) = (1/2 + eps).f_pp + (1/2 - eps).f_nn
+
+Since `f_nn = bar(f_pp)`, applying `bar` swaps the two terms, so
+
+    bar(f_pn) - f_pn = -(bar(eps) + eps) . (q^2 - 1)/q
+
+which vanishes **iff `bar(eps) = -eps`**: the offset must be bar-ODD. Not
+bar-even -- that is the trap, and it is why "make the weight bar-symmetric"
+is the wrong repair.
+
+The current offset is `eps = delta/4`, and `bar(delta) = -q^2 . delta`. So it
+misses bar-oddness by **exactly a factor of q^2**, and nothing else.
+
+That factor is localisable. The flavour-split proposition's own factored form
+is `delta ~ hbar_q^2 . h_q . [2]_q`, and under `bar`:
+
+    hbar_q^2  ->  +q^2 .          (two quanta of substrate Planck action)
+    h_q       ->  -1              (one Hecke crossing -- honestly bar-odd)
+    [2]_q     ->  +1              (doublet quantum integer -- bar-even)
+
+The Hecke crossing already carries the correct odd parity and the doublet
+integer is inert. **The entire bar obstruction is the `hbar_q^2` prefactor.**
+
+# So a bar-invariant colour weighting EXISTS -- but is not unique
+
+`eps = q . delta . E / 4` is bar-odd for **any** bar-even `E`, since
+`bar(q . delta) = -q . delta`. Verified below for `E = 1`, `E = [2]_q/2`,
+`E = z.bar(z)` and `E = h^2`.
+
+Two natural members:
+
+    E = 1        ->  eps = q.delta/4            = 0.00152701 at q0
+    E = [2]_q/2  ->  eps = delta(1+q^2)/8       = 0.00153533 at q0
+                     (the bar-ODD projection of delta)
+
+against the current `delta/4 = 0.00137571`. An 11-12 % change in the offset,
+i.e. of order 8e-06 on f_pn itself.
+
+**Bar-invariance is therefore NECESSARY but NOT SUFFICIENT.** It fixes the
+parity and leaves a whole bar-even function `E` of freedom, so it does not by
+itself determine the weighting. Choosing among the repairs -- or rejecting all
+of them -- requires re-deriving the colour weighting from the colour-tube
+geometry. This probe does NOT claim any particular `E`; asserting one without
+that derivation would be a fit.
+
+What this does settle, against the three options that were on the table: the
+option "re-derive the colour weighting in a bar-invariant form" is **live**,
+not blocked, and the remaining work is small and well-posed. "Accept that
+canonicity and bar-invariance part ways" is not forced.
 
 No float64 anywhere: exact sympy throughout, evaluated only for display.
 """
@@ -148,6 +195,55 @@ def main() -> int:
     w.add_assertion("delta_is_bar_mixed",
                     str(sp.simplify(bar(DELTA) / DELTA)), "-q**2",
                     source="bar(delta) = -q^2 . delta")
+
+    # ---- the repair: which offsets restore bar-invariance ----
+    eps_sym = sp.Symbol("epsilon")
+    f_eps = (sp.Rational(1, 2) + eps_sym) * F_PP + (sp.Rational(1, 2) - eps_sym) * F_NN
+    # bar swaps f_pp <-> f_nn; E stands for bar(eps).
+    E_sym = sp.Symbol("E")
+    f_eps_bar = (sp.Rational(1, 2) + E_sym) * F_NN + (sp.Rational(1, 2) - E_sym) * F_PP
+    cond = sp.factor(sp.simplify(f_eps_bar - f_eps))
+    print(f"\n  bar(f_pn) - f_pn = {cond}", flush=True)
+    w.add_assertion("bar_condition_is_eps_bar_odd",
+                    str(sp.solve(sp.Eq(cond, 0), E_sym)), "[-epsilon]",
+                    source="vanishes iff bar(eps) = -eps")
+
+    w.add_assertion("delta_misses_bar_oddness_by_exactly_q_squared",
+                    str(sp.simplify(bar(DELTA) / DELTA)), "-q**2")
+
+    two_q = Q + 1 / Q
+    for label, E in [("one", sp.Integer(1)),
+                     ("two_q_over_2", two_q / 2),
+                     ("z_times_bar_z", Z * bar(Z)),
+                     ("h_squared", H ** 2)]:
+        assert sp.simplify(bar(E) - E) == 0, f"E={label} is not bar-even"
+        eps = Q * DELTA * E / 4
+        f_rep = (sp.Rational(1, 2) + eps) * F_PP + (sp.Rational(1, 2) - eps) * F_NN
+        ok = sp.simplify(bar(f_rep) - f_rep) == 0
+        print(f"  repair E = {label:14s} -> f_pn bar-even = {ok}", flush=True)
+        w.add_assertion(f"repair_q_delta_E_restores_bar_invariance_{label}",
+                        str(ok), "True",
+                        source="eps = q.delta.E/4, E bar-even")
+
+    # The obstruction localises to hbar_q^2 in the factored form of delta.
+    hbar = 1 - 1 / Q
+    for label, expr, expected in [("hbar_q_squared", hbar ** 2, "q**2"),
+                                  ("h_q", H, "-1"),
+                                  ("two_q", two_q, "1")]:
+        w.add_assertion(f"bar_parity_of_{label}",
+                        str(sp.simplify(bar(expr) / expr)), expected)
+
+    w.add_data("repair", {
+        "condition": "bar(eps) = -eps  (offset must be bar-ODD, not bar-even)",
+        "obstruction": "bar(delta) = -q^2 . delta -- misses by exactly q^2",
+        "obstruction_localises_to": "hbar_q^2, the two quanta of substrate "
+                                    "Planck action; h_q is already bar-odd and "
+                                    "[2]_q is bar-even",
+        "family": "eps = q.delta.E/4 for ANY bar-even E",
+        "note": "bar-invariance is NECESSARY but NOT SUFFICIENT -- it leaves a "
+                "bar-even function E free, so it does not pin the weighting. "
+                "No particular E is claimed here.",
+    })
 
     w.add_data("factors", {
         "f_pp": str(F_PP), "f_nn": str(F_NN),

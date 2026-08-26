@@ -171,7 +171,12 @@ def assert_routes_agree(w: WitnessBuilder) -> None:
     for Z, N, label in [(1, 0, "proton"), (1, 1, "deuteron")]:
         peel = tr_M_atomic(Z, N, include_inter=True)
         qp = next(s for s in peel.free_symbols if str(s) == "q")
-        part = markov_trace_symbolic(Z, N, q, include_inter=True)
+        # route="partition" is PINNED. markov_trace_symbolic now defaults
+        # to the peel, so leaving this defaulted would compare the peel
+        # against itself and pass unconditionally -- a self-fulfilling
+        # assertion, the exact defect class this check exists to rule out.
+        part = markov_trace_symbolic(Z, N, q, include_inter=True,
+                                     route="partition")
         delta = sp.cancel(sp.together(peel.subs(qp, q) - part))
         w.add_assertion(
             f"routes_agree_symbolically_{label}", str(delta), "0",
