@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T04:28:43Z
+updated_at: 2026-08-26T06:10:49Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -953,3 +953,71 @@ regenerated into the commit.
 
 This is the one claim in this bean I had explicitly queued as
 *not established*. It is now established.
+
+
+## CORRECTION — the CRASH bucket holds FIVE real defects, not three
+
+I reported *"3 real defects, 1 environment, 1 guard, 2 harness artifacts,
+2 other"*. The "2 other" were `probe_4c_li6_large_d_scan` and
+`probe_4f_h3_sigma_avg_asymmetry`, and they are **the same defect as the
+three I did name** — an `mpmath.mpf` reaching a float64-only consumer.
+
+Found by checking the whole `probe_4*` family against the committed
+results rather than only the producers I had already opened. All five
+consumers route `atom_braid_word_3A`'s word through the same
+`apply_T_w`, and three of them die at the identical line.
+
+Both halves measured per producer, never inferred from family membership:
+
+    producer     pre-fix (HEAD~3)          post-fix
+    probe_4b     crash                     exit 0, 16 shapes scanned
+    probe_4c     exit 1, apply_T_w:126     exit 0, verdict FALSIFIED
+    probe_4f     exit 1, apply_T_w:126     exit 0
+
+So: one upstream change (#5745, 2026-08-25) left five consumers dead;
+three casts in three functions revive them.
+
+## The two excluded buckets are different KINDS of thing
+
+Screened all 12 unmeasured producers: **10 use no numpy or scipy at all**
+— high-dps `mpmath`, no sympy, `set_compute_dps()`. Their cost is real
+arithmetic, not object-dtype contamination. So:
+
+  * **CRASH** was a *defect* bucket — 5 of 9, now fixed.
+  * **TIMEOUT** is a *cost* bucket — nothing a cast will fix.
+
+Only one of the two was ever a bug, and the "~19 unmeasured" caveat
+should not be read as "19 possible defects". At a 5x budget,
+`bar_pairing_binding_observable`, `block_swap_binding` and
+`chi_at_q_inv_via_native_mpfr` each TIMEOUT at **900 s**, having already
+exceeded 25 s and 180 s twice.
+
+`block_swap_binding` deserves its own line: it is the producer the
+original stall investigation was about. `gram_norm_binding_probe` got
+the object-dtype fix (3H 2131 s -> 0.45 s) and this one never did.
+
+## Two things NOT established, stated as such
+
+1. **The committed results file cannot corroborate the triage.** Zero of
+   the 91 records carry an `exception` key — every verdict predates that
+   runner feature, and the file is one vintage throughout (79 records
+   with 7 keys, 12 with `timeout_count`). What it does support is the
+   **counts**, which re-derive exactly. The triage is hand re-runs only.
+2. **`probe_4c`'s FALSIFIED verdict is not a new result.** Its committed
+   witness from 2026-07-07 already records the three falsifying
+   partitions, the same values and the same failing assertion. The crash
+   blocked re-verification, not discovery. I initially wrote that it had
+   been "invisible"; that was wrong.
+
+## Methodological note — three contaminated controls in one session
+
+Twice a corroborating measurement shared a defect with the thing it was
+checking (the retracted "reproduced on this branch" claim and its
+cross-check, both from my harness's import context). The third: I ran the
+pre-fix control against `git show HEAD~2:` — which is the fix commit
+itself, so the "pre-fix" code was the fixed code. That would have
+produced the exact opposite conclusion, and what caught it was the
+control agreeing with the treatment to **every digit**.
+
+**When a check agrees suspiciously well with what it is checking,
+suspect a shared defect before accepting the agreement.**
