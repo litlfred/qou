@@ -2290,3 +2290,122 @@ growing-width cut, whose object is extensive but whose width the framework does
 not fix. Everything else — the level escape, the cost escape, signed
 occupations, the fixed-width entropy, and now the trace magnitude for this word
 — is closed, the last two by proved invariants.
+
+## Addendum 24 — what a satellite is, and why the colour-tube refinement cannot carry the magnitude (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`colour_tube_refinement_is_convexity_bounded_probe.py`](../../computations/meson/colour_tube_refinement_is_convexity_bounded_probe.py)
+(7 assertions, 4 controls). Lean:
+[`QOU/MassTheory/BranchConvexityBound.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BranchConvexityBound.lean)
+(5 declarations, sorry-free). Prompted by the author asking what a satellite
+torus is, how to attack `conj:jsj-decomposition-linearity`, and where the
+missing binding term lives.
+
+### What a satellite knot is
+
+Take a knot $P$ drawn inside an unknotted **solid torus** $V$ — the *pattern*.
+Take any knot $C$ — the *companion*. Now embed $V$ into $S^3$ so that its core
+follows $C$, and carry $P$ along with it. The image is the **satellite** $K$
+with pattern $P$ and companion $C$.
+
+```
+   pattern P inside the solid torus V        embed V along the companion C
+   ┌───────────────────────────┐                      ___
+   │   ╭─────╮   ╭─────╮       │                    /     \        the boundary
+   │  ─┤  P  ├───┤     ├─      │      ───────►     |   ()  |  ◄─── ∂V becomes an
+   │   ╰─────╯   ╰─────╯       │                    \ ___ /        ESSENTIAL TORUS
+   └───────────────────────────┘                      C            in S³ ∖ K
+```
+
+The defining fact, and the one that matters here: **$S^3 \setminus K$ contains
+an incompressible ("essential") torus**, namely $\partial V$. That is not an
+extra property — *satellite* and *the complement contains an essential torus*
+are the same condition. It is precisely the case the JSJ decomposition cuts
+along, and precisely the case Stage 3's `Geom` trichotomy (hyperbolic / torus /
+unknot) never assigns a value to.
+
+Two familiar special cases: if $P$ is a $(p,q)$ curve on $\partial V$ you get a
+**cable** knot; if $P$ is the Whitehead link's clasp you get a **Whitehead
+double**. Both are satellites, both carry an essential torus, and neither is
+hyperbolic or a torus knot.
+
+**Contrast with what the atom carriers actually are.** #5817 measured all 40
+branch closures **composite** — connected sums — whose complements contain
+essential **spheres**, not tori. A connected sum is not a satellite. So as
+currently constructed the atom complement has no essential torus, which is why
+`conj:jsj-decomposition-linearity` is presently *true and empty*:
+$\mathrm{Vol}_p = \mathrm{Vol}_n = 0$.
+
+### Attack options on `conj:jsj-decomposition-linearity`
+
+The conjecture reads $\mathrm{Vol}(\mathcal{K}(Z,N)) = Z\,\mathrm{Vol}_p +
+N\,\mathrm{Vol}_n$, and its own text is explicit that *"additivity of hyperbolic
+volume over the pieces … is a theorem of 3-manifold topology (Thurston); the
+conjectural content therefore lies entirely in the decomposition hypothesis."*
+So there is nothing to prove on the additivity side, and exactly three moves:
+
+1. **Establish the hypothesis** — show the inter-nucleon braids form essential
+   tori. Currently measured **false** for the production construction (40/40
+   composite ⇒ essential spheres). Attacking this means changing the
+   construction, not the proof.
+2. **Change the inter-nucleon arc to a satellite move** — replace the single
+   Hecke generator at each arc with a pattern-in-a-solid-torus threaded along
+   the neighbouring nucleon. This is the "one move" that makes `def:atom-knot`'s
+   *closed braid* requirement and the essential-torus requirement land together.
+3. **Refute it as stated** — show no such decomposition exists, which would send
+   the binding term elsewhere entirely. Nothing in this arc bears on this.
+
+Route 2 is the only one this arc's results leave open, and §"the corollary"
+below is why.
+
+### The corollary: the colour-tube refinement is convexity-bounded
+
+`conj:inter-nucleon-channel-color-tube` is the corpus's own candidate for the
+inter-nucleon term — $A-1$ arcs, genuinely extensive — refining
+$\mathrm{pp}\mapsto\sigma$, $\mathrm{nn}\mapsto\sigma^{-1}$,
+$\mathrm{pn}\mapsto\sigma_{\rm avg}$ into
+$\sigma^{(F_1,F_2)} = \sum W_{c_1c_2}\,\sigma^{\epsilon}$.
+
+**That block's own statement fixes $W \in \mathbb{Q}_{\ge 0}$ normalised to
+$\sum W = 1$**, with $\epsilon = 0 \mapsto \sigma_{\rm avg}$, itself
+$(\tfrac12,\tfrac12)$. So every term lies in the convex hull of
+$\{\sigma,\sigma^{-1}\}$ at each arc: the refined atom is a **reweighting of the
+same 32 branches**, not a new element. `QOU.MassTheory.convex_comb_le_bound`
+then applies verbatim:
+
+$$ \text{refined } \mathrm{tr}_M(\beta_D) \;\le\; \max_b \mathrm{tr}_M(\beta_b)
+   \;=\; 1.018275 \;<\; 1.491498 \;=\; \sqrt{B_{\rm AME}}. $$
+
+**The colour-tube refinement cannot supply the deuteron binding magnitude.** It
+is bounded by the same number as the production assignment. This does **not**
+say the refinement is wrong — the p/n asymmetry and chirality sign structure it
+exists for are untouched. It bounds the magnitude only.
+
+**The premise is auditable, not asserted.** Assertion A6 greps the block for its
+own non-negativity and normalisation sentences, so a reader checks the reading
+against the source rather than against this addendum; if that block is ever
+edited to drop the normalisation, A6 fails and the corollary voids — which is
+the correct behaviour.
+
+### And the Lean says exactly what escapes
+
+`larger_index_set_escapes_the_bound` (sorry-free) exhibits the one way out: the
+bound is *relative to the branch set it is taken over*, and a larger index set
+can exceed it. A satellite replaces each strand by several, so its branches are
+words in a **bigger algebra** — not a reweighting but a different index set,
+outside the theorem's hypotheses. That asymmetry is the whole content of the
+file, and it is why front 2 closes the reweighting route while leaving the
+satellite route open. `bound_fails_without_nonneg` is the companion guard:
+weights $(2,-1)$ still sum to 1 and reach 2 past a max of 1, so convexity is
+doing the work — which is exactly what `atom-branch-convexity-bound` had to
+*measure* (`every w_b > 0`) rather than assume.
+
+### A library gap, stated rather than filled
+
+The author asked whether the physics literature has something like mesonic
+toroidal forces. **Our ingested library has nothing on satellites, toroidal
+knots, or cabling** — `grep` over `library/INDEX.md` for
+*satellite* / *toroidal* / *cabling* returns zero. So corpus-grep path 5 cannot
+answer it, and no answer is offered here rather than one guessed. If that
+literature is wanted it needs ingesting first; that is a concrete, cheap next
+step and it is not done in this branch.
