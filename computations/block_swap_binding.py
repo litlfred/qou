@@ -119,23 +119,32 @@ def _two_row_shapes(n: int, y_table) -> list[tuple[int, ...]]:
 def tr_M_of_word(word: list[tuple[int, int]], n: int, y_table, q) -> mp.mpf:
     """tr_M(word) = Σ_λ y_λ · χ_λ(word) at q₀ (sign-only, Rust GP path).
 
-    Uses the BATCHED `chi_lambdas_via_gp`, not per-shape `chi_q_via_gp`.
-    The Geck–Pfeiffer reduction is the expensive step and depends only on
-    `(n, word)` — not on `λ` — so calling the per-shape entry point inside
-    a partition loop repeats an identical reduction once per shape. The
-    Rust docstring states the batched form is ~O(p(n))× faster; at n = 12
-    that is up to 77×, and combined with the two-row cap above the loop
-    goes from 77 reductions to one.
+    Uses the SEMINORMAL mpfr engine, not the Geck–Pfeiffer path.
+
+    GP searches for minimal-length class representatives (cyclic-shift
+    completion) and that search has a cliff in word length. Measured here,
+    batched and restricted to the same seven shapes:
+
+        |word|      GP                   seminormal
+          47        0.12 s                 1.26 s
+          56        > 90 s (unfinished)    1.56 s
+          65        —                      2.12 s
+
+    GP wins on short words and then falls off a cliff; the seminormal
+    route is ~linear and has none. This producer's words run 47…65
+    letters, so all but the shortest sit past the cliff — which is why it
+    timed out at 25 s, 180 s (twice) and 900 s while doing nothing wrong.
+
+    The two engines are independent implementations and agree to the
+    50-dps floor on this producer's own words (`W_atom`, `W_free`: rel
+    2.6e-50 and 5.4e-50), which is what licenses the swap.
     """
     shapes = _two_row_shapes(n, y_table)
-    laurents = _ph.chi_lambdas_via_gp([list(st) for st in shapes], n, list(word))
-    sqrt_q = mp.sqrt(q)
+    chis = _ph.chi_lambdas_braid_mpfr(
+        [list(st) for st in shapes], list(word), Q_50_DIGIT_STR, 50)
     total = mp.mpf(0)
-    for st, terms in zip(shapes, laurents):
-        chi = mp.mpf(0)
-        for (d_key, c_str) in terms:
-            chi += mp.mpf(int(c_str)) * (sqrt_q ** int(d_key))
-        total += mp.mpf(str(y_table[st])) * chi
+    for st, chi in zip(shapes, chis):
+        total += mp.mpf(str(y_table[st])) * mp.mpf(str(chi))
     return total
 
 
