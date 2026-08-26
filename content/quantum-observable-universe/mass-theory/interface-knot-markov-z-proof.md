@@ -46,6 +46,63 @@ formalised over a generic commutative ring as
 `interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
 
+### The three factors are one bar-orbit
+
+Writing $\overline{\phantom{x}}$ for the involution $q \mapsto q^{-1}$, the
+positive and negative factors are **bar-conjugates of each other**:
+
+$$
+  \overline{z} \;=\; \frac{q^{-3}}{q^{-2}+1} \;=\; \frac{1}{q\,(q^{2}+1)}
+  \;=\; z - h .
+$$
+
+So $f_{pp} = z$ and $f_{nn} = \overline{z}$, and the p-n factor is exactly
+their mean,
+
+$$
+  z - \tfrac{h}{2} \;=\; \tfrac{1}{2}\bigl(z + \overline{z}\bigr),
+$$
+
+which is the bar-symmetriser of $z$ — manifestly bar-even. The name
+"bar-invariant p-n interface" is therefore literal rather than descriptive:
+the p-n factor is not merely *a* bar-invariant choice, it is *the*
+bar-symmetrisation of the p-p factor.
+
+This also fixes where a flavour weighting can act. The colour-tube-weighted
+form of the p-n factor is the same mean, **tilted**:
+
+$$
+  z - h\Bigl(\tfrac{1}{2} - \tfrac{\delta}{4}\Bigr)
+  \;=\; w_{p}\, f_{pp} + w_{n}\, f_{nn},
+  \qquad
+  w_{p} = \tfrac{1}{2} + \tfrac{\delta}{4},
+  \quad
+  w_{n} = \tfrac{1}{2} - \tfrac{\delta}{4},
+  \quad
+  w_{p} + w_{n} = 1,
+$$
+
+with $\delta$ the substrate flavour split of
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate). A like-flavour
+bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
+any weights summing to one — which is why the weighting is defined at the p-n
+interface and nowhere else.
+
+**The tilt is not bar-invariant.** $\delta$ is bar-mixed,
+$\overline{\delta} = -q^{2}\delta$, and
+
+$$
+  \overline{f^{\,\mathrm{weighted}}_{pn}} - f^{\,\mathrm{weighted}}_{pn}
+  \;=\; \frac{(q-1)^{5}(q+1)^{3}(q^{2}+1)}{12\,q^{5}},
+$$
+
+nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the substrate anchor).
+The unweighted factor above is the only one of the two that is bar-even, and
+the derivation in this proof — trace-linearity from the single Markov axiom —
+yields that one. The weighted form requires $\delta$ as an additional input
+and is therefore not obtained here. All five identities are checked exactly in
+[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py).
+
 ### categorical verification (4 atoms, exact representation Rust kernel)
 
 Computed via the canonical formalism
