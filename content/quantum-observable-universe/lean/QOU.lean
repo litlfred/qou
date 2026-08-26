@@ -1244,3 +1244,15 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+
+-- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
+-- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
+-- behaviour in the square-root variable; `PnInterfaceBarStructure` proves the
+-- criterion (the weighted p-n factor is bar-even iff the offset is bar-odd);
+-- `PnOffsetBarOddClass` measures what that criterion does and does not select.
+-- All three were orphans -- outside QOU.lean's import closure, so invisible to
+-- blueprint, doc-gen and every dependency walk, though still compiled by the
+-- lakefile glob.  The first two predate this commit (bean qou-kljb).
+import QOU.Hecke.ClosedFormInterfaceFactors
+import QOU.MassTheory.PnInterfaceBarStructure
+import QOU.MassTheory.PnOffsetBarOddClass
