@@ -112,4 +112,22 @@ noncomputable def tensorRightDualIso [RightRigidCategory C] (X Y : C) :
   rightDualIso (HasRightDual.exact (X := X ⊗ Y))
     (tensorExactPairing X ((X : C)ᘁ) Y ((Y : C)ᘁ))
 
+/-- Right-dualising an isomorphism.  Contravariant, so the mate of `i.inv` is the forward map. -/
+@[simps]
+noncomputable def rightDualMapIso [RightRigidCategory C] {A B : C} (i : A ≅ B) :
+    ((A : C)ᘁ : C) ≅ ((B : C)ᘁ : C) where
+  hom := rightAdjointMate i.inv
+  inv := rightAdjointMate i.hom
+  hom_inv_id := by rw [← comp_rightAdjointMate, i.hom_inv_id, rightAdjointMate_id]
+  inv_hom_id := by rw [← comp_rightAdjointMate, i.inv_hom_id, rightAdjointMate_id]
+
+/-- **The double dual of a tensor product**, `(X ⊗ Y)ᘁᘁ ≅ Xᘁᘁ ⊗ Yᘁᘁ`.
+
+`tensorRightDualIso` twice.  The order reverses on each application, so it comes back to `X, Y`
+rather than staying swapped — which is exactly why the *double* dual, and not the single one, is
+what a **monoidal** pivotal structure compares against. -/
+noncomputable def tensorDoubleDualIso [RightRigidCategory C] (X Y : C) :
+    ((((X ⊗ Y : C)ᘁ : C)ᘁ : C)) ≅ ((((X : C)ᘁ : C)ᘁ) ⊗ (((Y : C)ᘁ : C)ᘁ)) :=
+  rightDualMapIso (tensorRightDualIso X Y) ≪≫ tensorRightDualIso ((Y : C)ᘁ) ((X : C)ᘁ)
+
 end QOU.MathlibExt
