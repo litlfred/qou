@@ -3296,3 +3296,79 @@ concretely why a cable escapes `convex_comb_le_bound` — it is a **positive but
 un-normalised** combination, so the normalisation defect is exactly where the
 extra magnitude comes from. §E's `larger_index_set_escapes_the_bound` said the
 escape exists; this says what it is made of.
+
+---
+
+## Addendum 36 — Addendum 35's route does not go through; the cable-shift law is multiplicative, and non-positivity is what keeps the satellite alive
+
+Addendum 35 stated its one unestablished step honestly: **whether a cable
+contributes its pattern's `α_shift` at all.** It does not.
+[`cable_shift_law_probe.py`](../../computations/meson/cable_shift_law_probe.py),
+4/4.
+
+Two candidate laws, chosen because they disagree badly:
+
+- **Additive** — `α_shift(cable of K) = α_shift(K) + α_shift(pattern)`. This is
+  the reading A35's `r(s−1) = 1` argument requires.
+- **Multiplicative** — `α_shift(cable of K) = ℓ · α_shift(K)`, with `ℓ = 4` the
+  letters the 2-parallel substitution `σᵢ ↦ s_{2i}s_{2i−1}s_{2i+1}s_{2i}` writes
+  per generator. This is what §F's own theorem predicts for a **positive** word,
+  where `α_shift` *is* the letter count and cabling multiplies letter count.
+
+| knot | `n` | positive | `α(K)` | `2n` | `α(cable)` | additive | multiplicative |
+|---|---:|:---:|---:|---:|---:|---:|---:|
+| trefoil `σ₁³` | 2 | yes | 3 | 4 | **12** | 4 | **12** ✓ |
+| `(2,5)` torus `σ₁⁵` | 2 | yes | 5 | 4 | **20** | 6 | **20** ✓ |
+| figure-eight `(σ₁σ₂⁻¹)²` | 3 | no | 4 | 6 | **12** | 5 | 16 ✗ |
+| mixed `σ₁σ₂σ₁⁻¹` | 3 | no | 1 | 6 | **4** | 2 | **4** ✓ |
+
+### 🛑 A35's route is refuted
+
+**The additive law matches 0 of 4.** So `r(s−1) = 1` was never the right
+equation, the unique solution `(1,2)` was an answer to a question that does not
+arise, and **the satellite is _not_ closed by §F's mechanism.** §H's scope-(a)
+fit argument remains the only thing excluding it, exactly as it stood before
+A35.
+
+Recorded as a refutation rather than quietly dropped, because A35 is one
+addendum old and its framing — *"that would close the satellite by §F's
+mechanism, strictly stronger"* — was mine. The parts of A35 that survive are
+the ones that did not depend on the law: the cable pattern **is** a torus braid
+and its `α_shift = r(s−1)` **is** derived (verified at six patterns); van der
+Veen's coefficients are non-negative and un-normalised, which is what a cable's
+escape from `convex_comb_le_bound` is made of; and Kalfagianni–Tran's `q²`
+degree scaling still re-scopes §H's integrality claim.
+
+### What the measurement does establish
+
+**On positive words the law is exactly multiplicative** — 2/2, and not by
+coincidence: it is §F's theorem (`α_shift` = letter count) applied to a
+substitution that multiplies letter count by `ℓ`. That has a sharp consequence.
+
+> **If the atom word were positive, cabling would multiply the `D(u)` exponent
+> by 4** — `40 → 160` for the deuteron — **and the satellite would be excluded
+> by §F's mechanism.** It is precisely the word's **non-positivity** that keeps
+> the satellite alive.
+
+That connects two findings that looked unrelated. Addendum 32 measured the atom
+word at **23 letters: 11 `σ`, 7 `σ⁻¹`, 5 averaged** — non-positive, which is why
+§F's pinning stopped at the interface. The same 7 inverse letters are why the
+cable-shift law has no clean form here, and therefore why the satellite is not
+closed. **Non-positivity is load-bearing in both places, and it is the p/n
+structure**: the `σ⁻¹` letters are the neutron-side crossings.
+
+And the figure-eight shows the failure is real rather than a gap in coverage:
+`α(cable) = 12` against a multiplicative prediction of `16`. The inverse letters
+**cancel** valuation under cabling too, so the cabled shift is *smaller* than
+the positive law would give — not larger. A future law would have to track
+signed structure, not counts.
+
+### Where this leaves the satellite
+
+Open, with one scope-(a) argument against it (§H: reaches at ²H, needs a
+per-nuclide degree) and no scope-(b) exclusion. The selection-principle question
+A35 opened is still live and now better posed: **what is the cable-shift law for
+a non-positive word?** The measurement above says it is neither additive nor
+multiplicative, and that the deviation is in the direction of cancellation. That
+is a concrete question about `α_shift` under the cabling substitution, and it is
+prior to any statement about `r`.
