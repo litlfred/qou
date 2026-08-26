@@ -385,6 +385,10 @@ QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_nonde
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.one_not_mem_traceRadical | clean
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_one_ne_zero | clean
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_one | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.instAlgebraTraceQuot | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk_apply | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.heckeBraidedPresentationOfRank_quot | clean
 """
 
 
