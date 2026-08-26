@@ -659,3 +659,98 @@ Two directions, both for the author — neither is a computation:
 
 Bean `qou-7p7d`. Obstruction A is unchanged in substance and now has its
 mechanism: composite ⇒ additive ⇒ zero.
+
+---
+
+## Addendum 9 — what the carriers are, and how the sectors compare (2026-08-26)
+
+### What the non-link carriers actually are
+
+The proton carrier is not a link; it is a **convex combination of four links**,
+each weight `1/4`:
+
+| branch | closure |
+|---|---|
+| `σ₁⁷ σ₂⁻³ σ₂` | `T(2,7) # T(2,4)` |
+| `σ₁⁷ σ₂⁻⁴` | `T(2,7) # T(2,4)` |
+| `σ₁⁴ σ₁⁻¹ σ₁² σ₂⁻³ σ₂` | `T(2,7) # T(2,4)` |
+| `σ₁⁴ σ₁⁻¹ σ₁² σ₂⁻⁴` | `T(2,7) # T(2,4)` |
+
+measured as a 7-crossing 1-component piece and a 4-crossing 2-component piece —
+the classical fact that a 3-braid `σ₁^a σ₂^b` closes to `T(2,a) # T(2,b)`. The
+deuteron's 32 branches each carry **five** summands,
+`T(2,4) # T(2,7) # T(2,4) # T(2,7) # unknot`.
+
+So: **every constituent is a `(2,k)` torus link, glued by connected sum.** Not one
+hyperbolic piece anywhere in the expansion.
+
+### The mathematical context
+
+Three standard facts fix the situation, and none of them is a QOU claim:
+
+1. **A 3-braid `σ₁^a σ₂^b` closes to `T(2,a) # T(2,b)`.** The branch structure is
+   forced by the word shape, not by the substrate.
+2. **Volume is additive under connected sum** (Thurston):
+   `Vol(K₁ # K₂) = Vol(K₁) + Vol(K₂)`. So a composite of torus pieces has volume
+   `0 + 0 = 0` — Addendum 7's forty `degenerate` verdicts, explained.
+3. **The natural extension of `Vol` to all knots already exists**: the **Gromov
+   norm** (simplicial volume) `‖S³∖K‖`, which equals `Vol/v₃` on hyperbolic
+   pieces, vanishes on Seifert-fibered ones, and *is additive under connected
+   sum*. So "extend the functor to composites" is not an open construction — it
+   is standard, and **it gives zero here.**
+
+That last point is the sharp one: the obvious repair is available, principled,
+and does not help.
+
+### The physical context
+
+Hyperbolic volume is the **classical action** of `SL(2,ℂ)` Chern–Simons theory on
+the complement — which is why the volume conjecture reads `J_N ~ exp(N·Vol/2π)`
+and why the framework maps it to *mass/energy*. Torus knots are
+**Seifert-fibered**: no hyperbolic bulk, so no action to exponentiate; what
+survives is the Chern–Simons invariant, a rational **phase**. Hence Stage 3's
+*coupling phase*, and hence `em-coupling-chern-simons.md` switching functor.
+
+A **connected sum** glues pieces at a point — no essential interaction, no new
+bulk. So the atom carrier is a superposition of trivially-glued Seifert pieces:
+**nothing in it has the bulk that carries mass**, and that is a statement about
+the construction, not about the physics it is aimed at.
+
+### The other sectors — measured
+
+| sector | carrier | type | `Vol` | functor used |
+|---|---|---|---:|---|
+| lepton `m_μ` | `4₁` | **hyperbolic** | 2.02988 | `Vol/ℏ_q²` ✓ |
+| nucleon `m_p, m_n` | `𝓑₃` (L6a4) | **hyperbolic** | 7.32772 | `Vol/ℏ_q²` ✓ |
+| atom `D` | `6₂` | **hyperbolic** | 4.40083 | `Vol/ℏ_q²` ✓ |
+| atom `T` | `8₁₁` | **hyperbolic** | 8.28632 | `Vol/ℏ_q²` ✓ |
+| α_EM | `T(2,9)`, `T(3,5)` | torus | 0 | **`CS·ℏ_q²`** ✓ |
+| meson `𝔐` | `T(2,5)` | torus | **0** | — **this is Obstruction A** |
+
+**Every named atlas carrier is genuinely hyperbolic**, so the atlas is correctly
+inside the `Vol` case. And α_EM correctly switches. So the framework gets the
+case split right wherever it has actually classified the carrier.
+
+### What this reframes
+
+**Obstruction A is Stage 3 working, not failing.** The meson braid closes to
+`T(2,5)`, a torus link. Stage 3 says a torus carrier yields `CS·ℏ_q²` — a
+**coupling phase, not a mass**. So "the meson carrier has `Vol = 0`" is not an
+accident blocking a mass derivation; it is the case split *declining to produce a
+mass*, exactly as it declines for `T(2,9)` in the α_EM sector where the framework
+accepts the answer.
+
+Three distinct situations, then, and they should not be conflated:
+
+1. **α_EM** — torus carrier, torus functor, coupling wanted. **Consistent.**
+2. **Meson** — torus carrier, torus functor available, but a **mass** is wanted.
+   Obstruction A: the split says this carrier cannot supply one.
+3. **Atom** — the traced object is **composite**, which Stage 3 does not cover at
+   all, and whose standard extension (Gromov norm) gives zero.
+
+### Scope
+
+Measured: carrier types and branch decompositions. **Not** claimed: that any
+sector's number is wrong, or that the `CS` route would yield the meson mass —
+the Chern–Simons branch produces a phase by the framework's own labelling, and
+whether a mass can be recovered from it is not addressed here.
