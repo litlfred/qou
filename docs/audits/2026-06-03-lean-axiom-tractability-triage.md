@@ -8,6 +8,28 @@
 
 ## Headline
 
+> **🛑 STALE AS A DESCRIPTION OF THE TREE (re-measured 2026-08-26, bean `qou-8s7o`).**
+> The table below counts **77** axioms, 58 of them External. The live tree carries
+> **23 axioms in total**, across every bucket
+> (`scripts/lean-assumption-surface.py`; 2207 files, 0 `sorry` / 0 `sorryAx` /
+> 0 `true_vacuity`, 1 `native_decide`):
+>
+> | area | axioms |  | area | axioms |
+> |---|---|---|---|---|
+> | HeckeAlgebra | 8 |  | Mathlib | 2 |
+> | MathlibExt | 5 |  | AppendixSurreals / Archimedean / Hecke / IwahoriHecke | 1 each |
+> | BraidKnot | 4 |  | | |
+>
+> So roughly two-thirds of what this document triages has since been discharged or
+> removed. **Do not quote these bucket sizes as current.** The classifications
+> below remain useful as a record of *how each surviving axiom was judged at the
+> time*, which is exactly what the 2026-08-26 re-check tested — see
+> [`2026-08-26-live-axiom-surface-recheck.md`](2026-08-26-live-axiom-surface-recheck.md),
+> which also finds that a chunk of the surviving surface is **interface axioms over
+> `opaque` symbols** (unprovable by construction, not blocked on Mathlib) rather
+> than deep external mathematics.
+
+
 | Total axioms (declarations) | 77 |
 |---|---|
 | **Tractable** (numerical / decidable / small concrete inequality) | **8** |

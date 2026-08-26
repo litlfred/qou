@@ -34,6 +34,45 @@ already be set for lean-direct use (see `.claude/skills/local/lean-environment-s
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
 
+STALENESS IS ALREADY GATED HERE — AND THE GATE ONLY COVERS THIS REGISTRY
+------------------------------------------------------------------------
+`check_freshness` below walks the transitive QOU import cone of every registry
+module and refuses to report when an olean is missing or older than its source
+(by `_effective_source_time`, which uses commit time rather than mtime so a fresh
+clone does not read as universally stale). That gate predates 2026-08-26 and works.
+
+What it does NOT cover is an **ad-hoc `#print axioms` probe** written by hand
+against some other module. Such a probe reads the same mixed-vintage olean set
+with none of this protection, and mixed-vintage is the normal state of a restored
+container: measured 2026-08-26, QOU olean build dates on one tree spanned
+2026-06-09 .. 2026-08-26.
+
+Measured cost of that gap, same day, twice, both outside this registry:
+
+  * Two SDP declarations reported depending on
+    `PosSemidefDiagZero.entry_sq_le_diag_mul_axiom`, which does not exist in the
+    source — that module proves it as a THEOREM, and its olean was built
+    2026-06-09 when it was an axiom.
+  * A probe resolved `…SDPRealUniqueness.SDPSlaterUniqueness.ofSlater_proven`.
+    After a rebuild that name does not exist; the source declares it one
+    namespace higher. The reading was of a pre-move snapshot.
+
+So the rule is not "the guard is unsound" — it is sound within its registry. The
+rule is: **a hand-written `#print axioms` outside this registry has no gate, and
+must rebuild what it measures first.** The remediation tool already exists --
+`scripts/lean-direct-cone.sh` (driver: `scripts/lean_cone_build.py`) -- and this
+gate detects staleness without fixing it, so the two compose:
+
+    scripts/lean-direct-cone.sh $(scripts/lean-axiom-guard.py --print-modules)
+
+It uses `lean`-direct rather than `lake build`, which would evict a restored
+cache (bean `qou-r13s`), skips modules already up to date, and builds in
+parallel. Related and worth knowing before hand-rolling anything:
+`scripts/lean-verify-cone.sh` (bean `qou-fjcd`) verifies an edited file AND its
+consumers against rebuilt oleans, which is the consumer-side form of this trap.
+
+Full finding: docs/audits/2026-08-26-live-axiom-surface-recheck.md §4.
+
 WHAT MUST BE BUILT FIRST — only the registry's own modules
 ----------------------------------------------------------
 The probe file imports exactly the modules named in the registry and nothing
@@ -159,6 +198,33 @@ QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand 
 # if the identity regresses, this row is where the inherited `sorryAx` reappears.
 QOU.Archimedean.BorromeanVolumeCatalan | QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan | clean
 QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky | clean
+
+# --- the Markov-trace linearity chain: an AXIOM until 2026-08-26, now a theorem ---
+# `markovTrace_linear` asserted that an `opaque` function on `HeckeElement n` is linear.
+# `HeckeElement n` is not opaque -- it abbreviates `EuclideanSpace ℝ (Fin n!)` -- so by
+# Riesz every linear functional on it is `⟪w, ·⟫`. Carrying the trace as its weight vector
+# instead of as an opaque function makes linearity PROVABLE at no cost in content, and the
+# opacity moves to a datum (`markovTraceWeight`), which asserts nothing, from a function
+# plus an asserted property, which asserted something unprovable.
+#
+# Same reason to pin as the Lobachevsky row: axiom -> theorem is exactly what a revert turns
+# back into an axiom while every downstream name still typechecks. The two consumers are
+# pinned alongside because they are what the SDP-uniqueness arc actually calls.
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.markovTrace_linear | clean
+# The content-preservation claim itself. `markovTrace_linear` alone does NOT justify the
+# axiom -> theorem move: it is the easy direction, and on its own the move could have
+# NARROWED the admissible traces. `isLinearMap_iff_exists_weight` is the direction that
+# rules that out (every linear functional IS some `⟪w, ·⟫`), so it is the one whose loss
+# would silently invalidate the change. It was asserted in prose before it was proved.
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.isLinearMap_iff_exists_weight | clean
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.exists_weight_of_isLinearMap | clean
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.weight_unique | clean
+# The degeneracy is checked rather than asserted: both trace axioms hold under a zero
+# weight, so neither excludes `tr_M ≡ 0`. Pinned so that a later change claiming to have
+# pinned the trace away from zero has to confront this.
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markov_axioms_vacuous_of_weight_zero | clean
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_add | clean
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_smul | clean
 
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an

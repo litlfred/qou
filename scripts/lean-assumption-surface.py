@@ -34,6 +34,12 @@ import re
 import sys
 
 DEFAULT_ROOT = pathlib.Path("content/quantum-observable-universe/lean/QOU")
+# The whole Lean corpus, for the scope line. `DEFAULT_ROOT` is the QOU LIBRARY only;
+# content blocks carry sibling `.lean` files outside it, and they hold the large
+# majority of the corpus's axioms. Reporting the library figure without saying so
+# understates the assumption surface by an order of magnitude -- measured 2026-08-26,
+# 22 in the library against 198 corpus-wide. Never quote one for the other.
+CORPUS_ROOT = pathlib.Path("content")
 
 PATTERNS = {
     "sorry": re.compile(r"(?<![\w.])sorry(?![\w])"),
@@ -70,7 +76,11 @@ def strip_comments(text: str) -> list[str]:
 
 
 def scan(root: pathlib.Path) -> dict:
-    files = sorted(root.rglob("*.lean"))
+    # Exclude `.lake/` or the walk swallows Mathlib and every vendored package.
+    # Measured 2026-08-26: including it reported 418 axioms over 11198 files for
+    # `content/`, against 198 over 3185 once excluded -- i.e. it was mostly counting
+    # Mathlib's axioms and calling them ours.
+    files = sorted(f for f in root.rglob("*.lean") if ".lake" not in f.parts)
     hits: dict[str, list] = {k: [] for k in PATTERNS}
     for f in files:
         try:
@@ -136,7 +146,13 @@ def main() -> int:
 
     r = scan(args.root)
     h = r["hits"]
-    print(f"scanned {r['files']} .lean files under {args.root}\n")
+    print(f"scanned {r['files']} .lean files under {args.root}")
+    if CORPUS_ROOT.is_dir() and args.root != CORPUS_ROOT:
+        corpus = scan(CORPUS_ROOT)
+        ca, cf = len(corpus["hits"]["axiom"]), corpus["files"]
+        print(f"  SCOPE: this is a SUBTREE. Corpus-wide ({CORPUS_ROOT}, {cf} files): "
+              f"{ca} axioms. Quote the figure whose scope you name.")
+    print()
     print("  PROOF-OBLIGATION MARKERS (a sorry count alone is NOT the surface)")
     for key in ("sorry", "sorryAx", "true_vacuity"):
         print(f"    {key:16}: {len(h[key])}")
