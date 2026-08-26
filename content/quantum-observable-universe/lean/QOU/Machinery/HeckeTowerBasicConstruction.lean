@@ -278,4 +278,57 @@ class HeckeMarkovExpectation (R : Type*) [Field R] (q : R)
   /-- `ε` collapses the top-generator coset with the Ocneanu scalar `z`. -/
   markov : ∀ b c : Hlow, εlow (ιlow b * σn n * ιlow c) = z • (b * c)
 
+/-! ## What `HeckeBraidedPresentation` does and does not force
+
+Recorded while trying to build a genuine `HeckeCosetSpanning` instance (bean
+`qou-zm8z`). The attempt failed, and it failed one level BELOW the spanning
+decomposition — which is worth knowing before anyone else tries.
+
+At the time of writing `HeckeBraidedPresentation` has **no instance anywhere in
+the corpus**. The two results below say why that is harder than it looks, and
+they are the only two facts needed to see it.
+
+**It is satisfiable, but weakly.** `constant_generator_presentation` gives an
+instance from a SINGLE element satisfying the quadratic, with `σ` constant. Both
+the braid relation and far-commutation are then `rfl`. So an instance of this
+class does not force two distinct generators, does not force the braid relation
+to have any content, and does not force anything to fail to commute. It is much
+weaker than "is a Hecke algebra".
+
+**And a finite Hecke algebra cannot satisfy it with its true generators.** The
+fields quantify over ALL `i : ℕ`, so `H_n` must supply `σ i` beyond its rank.
+`far_commute_zero` is the obstruction: `σ 0` must commute with `σ j` for every
+`j ≥ 2`. In `H₃` with `σ 0 = σ₁` and `σ 1 = σ₂` that rules out padding with the
+last real generator, since `σ₁` and `σ₂` do not commute; and no eventually
+periodic padding works either, for the same reason at the next index. The class
+describes `H_∞`, not `H_n`.
+
+So a genuine instance needs either the infinite tower, or the class re-stated
+with a rank bound (`σ : Fin n → H`, relations guarded by `i + 1 < n`). That is a
+change to a class three other classes bind, so it is not made here. -/
+
+/-- **The class is satisfiable — degenerately.** Any single element satisfying
+the Hecke quadratic yields an instance via the constant family; braid and
+far-commutation hold by `rfl`.
+
+Stated to pin down how weak the class is, not as a recommended instance: nothing
+conditional on a `HeckeBraidedPresentation` obtained this way carries Hecke
+content. -/
+theorem constant_generator_presentation {R : Type*} [Field R] {q : R}
+    {H : Type*} [Ring H] [Algebra R H] (s : H)
+    (hs : s * s = (q - q⁻¹) • s + 1) :
+    HeckeBraidedPresentation R q H (fun _ => s) where
+  hecke_quadratic := fun _ => hs
+  braid_adjacent := fun _ => rfl
+  far_commute := fun _ _ _ => rfl
+
+/-- **The obstruction to a finite-rank instance.** `far_commute` forces `σ 0` to
+commute with every `σ j` for `j ≥ 2` — so the generators past rank cannot be
+padded with a non-commuting real generator. -/
+theorem far_commute_zero {R : Type*} [Field R] {q : R}
+    {H : Type*} [Ring H] [Algebra R H] (σ : ℕ → H)
+    [inst : HeckeBraidedPresentation R q H σ] (j : ℕ) (hj : 2 ≤ j) :
+    σ 0 * σ j = σ j * σ 0 :=
+  inst.far_commute 0 j (by omega)
+
 end QOU.Machinery.HeckeTower

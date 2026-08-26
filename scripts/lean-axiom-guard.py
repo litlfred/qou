@@ -335,6 +335,10 @@ QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.cyclic_two_g_o
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.hCE_fails_without_conditional_expectation | clean
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_of_spanning | clean
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.spanning_shape_holds_for_identity_inclusion | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerE_eq_of_spanning | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_towerE_of_spanning | clean
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.constant_generator_presentation | clean
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.far_commute_zero | clean
 """
 
 
