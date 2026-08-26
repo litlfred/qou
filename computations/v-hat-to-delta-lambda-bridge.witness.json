@@ -1,19 +1,19 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T15:09:53.824082+00:00",
-  "commitSha": "33615c99c7e2ae661ff4a6a3b0575dfc7712a6f2",
+  "computedAt": "2026-08-26T16:23:27.988489+00:00",
+  "commitSha": "b8564c8e12e9eadfbe9387ca56be5e606231361d",
   "assertions": [
     {
       "name": "one_dim_universal_product_formula_closes",
-      "computed": 4,
+      "computed": 12,
       "expected": 12,
-      "passed": false,
+      "passed": true,
       "source": "v_hat_to_delta_lambda_bridge"
     }
   ],
-  "allPassed": false,
-  "durationMs": 2670,
+  "allPassed": true,
+  "durationMs": 2486,
   "computation": "v-hat-to-delta-lambda-bridge",
   "scriptFile": "v_hat_to_delta_lambda_bridge.py",
   "scriptHash": "076025d3ec3a",
@@ -143,8 +143,8 @@
           "alt": "-0.67687668343293797886250168375128986008721472052131"
         },
         "product_per_generator_per_channel": {
-          "sym": "1.559758658103417214328266633698221331579763505103985787234373095745681",
-          "alt": "-0.6769250916999117425605662838828804537070841991065639585248115655625032"
+          "sym": "1.559870199564152730828350818826003397075949248390035079559285388641291",
+          "alt": "-0.6768766834329375800976824215311869632931813665022938719354104788606958"
         },
         "pair_volumes_summed_at_A1_only": {
           "sym": "0.0",
@@ -186,8 +186,8 @@
           "alt": "-0.68427261180216844371170495805556662131497667951161"
         },
         "product_per_generator_per_channel": {
-          "sym": "1.576801442396286321096616728966591745651925907516218327958371428532584",
-          "alt": "-0.6843215490045948332385115631279149225544823979783513285110376350473142"
+          "sym": "1.576914202620607569778402102195076742289930501746794388025293924531426",
+          "alt": "-0.6842726118021679030999952771830636190722815471986547660199613623670637"
         },
         "pair_volumes_summed_at_A1_only": {
           "sym": "0.0",
@@ -229,8 +229,8 @@
           "alt": "-0.4507863545099663749899866278865185658680496288344"
         },
         "product_per_generator_per_channel": {
-          "sym": "2.393510873803698400793557689040694907774631901724541938021589597185444",
-          "alt": "-0.4508185934490985084071997666782798162369329389398780249392908204929273"
+          "sym": "2.393682038552657085934133591035467486642104972817502156774361906542363",
+          "alt": "-0.4507863545099659715733762535047998496978853562584613456965902940672365"
         },
         "pair_volumes_summed_at_A1_only": {
           "sym": "0.0",
@@ -272,8 +272,8 @@
           "alt": "-0.45571189511342336867929902753175422954183424974703"
         },
         "product_per_generator_per_channel": {
-          "sym": "2.419663695147529934740323201005225614737397253195918096950932795541501",
-          "alt": "-0.4557444863130045546011800114905659855253132735240404322936607809044361"
+          "sym": "2.419836730137041471197621528971635187755189660481694594712499581208801",
+          "alt": "-0.4557118951134228692892975389684929249813883820141294165639054318447796"
         },
         "pair_volumes_summed_at_A1_only": {
           "sym": "0.0",
@@ -307,7 +307,7 @@
       }
     ],
     "hypothesis": "χ^λ(β_K) ∝ Σ_{i<j} (V̂_i V̂_j)_Wedd_λ for each channel λ. Bridge closes if any of {direct, dimension-scaled, squared} ratio is constant across all three n=3 channels.",
-    "n_one_dim_channels_matched": 4,
+    "n_one_dim_channels_matched": 12,
     "n_one_dim_channels_total": 12,
     "universal_formula": "χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim}  for any A (any number of generators).  Multiplicative property of 1-dim Wedderburn irreps.  Verified at A=1 (proton, neutron sym + alt) and A=2 (deuteron sym, alt) to ~1e-14 precision.  An earlier Σ_pair form was a degenerate special case at A=1 (only 2 generators → 1 pair → sum coincides with product); the product formula is the universal one.",
     "two_dim_status": "2-dim and higher-dim Wedderburn channels (std at H_3, the 9 multi-dim irreps at H_6, etc.) do NOT factor as a scalar V̂_i product.  The trace is intrinsically tr(∏ M_i) where M_i are the Hoefsmit matrices.  A bridge for these channels would require either: (a) recognizing that χ^{multi-dim}(β_K) = tr(M_full) directly (no factorisation; just call Hoefsmit), or (b) discovering a per-pair Markov-trace decomposition that wedderburn_pair_volumes already partially provides for the z·M_12 + M_22 std combination.  This is open work."
