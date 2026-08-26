@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T04:00:20Z
+updated_at: 2026-08-26T04:22:24Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -858,3 +858,61 @@ Worth noting the runner would have answered this for free had it stored the
 before/after values alongside the field names. Recording names was already the
 single most useful thing it does; recording values is the obvious next
 increment.
+
+
+---
+
+# FINAL RESULT — sweep complete at 91/95
+
+Pinned to `main` at `f6501fba549591122523ebb76ce118e49a7003e1`. Raw per-producer
+verdicts committed alongside this at
+`computations/audits/witness-dependency-residue-sweep.results.json`, so the
+figures below are checkable rather than asserted.
+
+    MOVED_SUBSTANTIVE      37
+    MOVED_PROVENANCE_ONLY   2
+    IDENTICAL              31
+    TIMEOUT                 9   excluded — budget artifact, not evidence
+    CRASH                   9   excluded — triaged separately above
+    ------------------------------
+    scoreable              70
+
+**37 of 70 scoreable producers emit witnesses whose committed values on `main`
+do not reproduce** — a little over half, against the ONE this bean opened with.
+Every substantive verdict was screened field-by-field; the moved fields are
+Markov traces, binding energies, symbolic results and masses, not provenance
+and not wall-clock.
+
+## Three limits that travel with the number
+
+1. **Upper bound, not a count.** Five instrument defects were found and fixed
+   during the sweep — `engineVersion`, `*_elapsed_sec`, `elapsed_*_sec`, a
+   substring screen, a narrow `PYTHONPATH` — and **every one inflated the
+   apparent damage**. None was a defect in the comparison itself. The failure
+   mode is consistently false-positive, so 37 is a ceiling.
+2. **~19 producers unmeasured, non-randomly.** 9 timeouts, 9 crashes, 4 never
+   reached. These are the *expensive* producers, so they cannot be assumed to
+   behave like the fast half in either direction.
+3. **A re-run establishes non-reproduction, not correctness.** It says today's
+   code disagrees with the committed value. It does not say which is right.
+   Anyone acting on the list must diff and decide.
+
+## Why it ended at 91 rather than 95
+
+The session's disk allowance was exhausted: the worktree grew 1.1 GB -> **14
+GB** and filled the filesystem, after which no command would run at all — even
+`echo` failed, because the harness writes an output file before executing
+anything. Recovered via the `CLAUDE_CODE_TMPDIR` redirect the ENOSPC message
+names, which let one command through to delete the worktree.
+
+Two things worth recording for the next long sweep here:
+
+  * **A worktree used for producer runs is not size-stable.** It grew 13x.
+    Whatever the sweep restores between producers, something accumulates.
+    Budget for it or bound it.
+  * **My "checkpoint secured" claim during the emergency was false.** The `cp`
+    ran under ENOSPC and produced a **0-byte** file; I reported it as secured
+    without verifying. The real data survived only because the live checkpoint
+    happened to sit outside the worktree — luck, not the precaution I claimed
+    to have taken. Verify a backup by reading it back, especially when the
+    reason you are taking it is that the disk is failing.
