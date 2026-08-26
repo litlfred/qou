@@ -226,9 +226,37 @@ trace is nondegenerate: if `Hn` is semisimple and `trn1` has no nonzero
 left kernel, then `Hn1` is semisimple. This is Wenzl's induction step
 [wenzl1988, Thm 2.2]; the proved rungs `isSemisimpleRing_H3A` (and the
 rank-2 `HeckeH2Wedderburn`) realize its conclusion concretely at
-`n = 2, 3` without the tower machinery. OPEN — no instance; proving this
-class's field for symmetric-group Coxeter data is exactly the general-`n`
-target the explicit-Wedderburn route cannot reach. -/
+`n = 2, 3` without the tower machinery. Proving this class's field for
+symmetric-group Coxeter data at the *Markov* trace is the general-`n`
+target the explicit-Wedderburn route cannot reach; it is still open.
+
+**The field cannot be proved by citing Mathlib, so the corpus supplies the
+prerequisite itself (measured 2026-08-26, bean `qou-kzjl`).** Mathlib's
+`traceForm_nondegenerate` is
+
+    ∀ (K L) [Field K] [Field L] [Algebra K L] [FiniteDimensional K L]
+      [Algebra.IsSeparable K L], (traceForm K L).Nondegenerate
+
+which is wrong here in two independent ways: it runs *separable ⇒ nondegenerate*
+where this field needs the converse, and both `K` and `L` are fields where
+`H_n(q)` is non-commutative. The `isSemisimpleRing_*` family is structural
+(`iff_jacobson`, `iff_isArtinianRing`, …), none of it trace-form based. The
+prerequisite — *a finite-dimensional algebra over a field with nondegenerate
+trace form is semisimple* — is therefore proved here rather than imported:
+`QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate`.
+
+**What that closes, and what it does not.** `QOU.Machinery.HeckeRank.wenzlTowerStep_algTrace`
+discharges this class's field at **general rank** for the *algebra* trace
+`QOU.MathlibExt.algTrace`, so the class is no longer instance-free. Two things
+are worth reading off that instance rather than assuming. First, the ascent
+does not consume the `Hn`-semisimple hypothesis at all — nondegeneracy at level
+`n+1` is the whole of it, which makes hypothesis 1 of the field redundant for
+this trace. Second, and this is the part still open: the general-`n` Hecke
+target needs the field at the **Markov** trace, not the algebra trace, and
+nondegeneracy of the Markov trace on `H_n(q)` is exactly Wenzl's content and is
+not supplied by any of the above.
+
+-/
 class WenzlTowerStep (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
     (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
