@@ -629,8 +629,17 @@ def main() -> int:
               file=sys.stderr)
         for pr in sorted(stale):
             print("  " + pr, file=sys.stderr)
-        print("\nRebuild the affected modules lean-direct, then re-run. A verdict from a stale\n"
-              "olean set is not assurance — it is the axiom status of an old snapshot.",
+        print("\nRebuild the affected modules, then re-run. A verdict from a stale olean set\n"
+              "is not assurance — it is the axiom status of an old snapshot.\n"
+              "\n"
+              "  scripts/lean-direct-cone.sh --force " + " ".join(sorted(
+                  pr.split(":")[0] for pr in stale)) + "\n"
+              "\n"
+              "--force matters: this gate compares the olean against the source's COMMIT\n"
+              "time, while the rebuilder compares it against the source's MTIME. If you\n"
+              "built before committing — the natural order — the rebuilder considers the\n"
+              "olean fresh and skips it, and re-running this gate fails again forever.\n"
+              "Bean qou-5v24.",
               file=sys.stderr)
         return 2
 

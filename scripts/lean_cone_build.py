@@ -135,6 +135,10 @@ def main() -> int:
     ap.add_argument("targets", nargs="*", help="QOU module names (default: --all)")
     ap.add_argument("--all", action="store_true", help="build every QOU module")
     ap.add_argument("-k", "--keep-going", action="store_true")
+    ap.add_argument("-B", "--force", action="store_true",
+                    help="recompile every module in the cone even if its olean looks "
+                         "fresh. Needed when a consumer judges freshness differently -- "
+                         "see `fresh` below and bean qou-5v24.")
     ap.add_argument("-j", "--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 1))
     ap.add_argument("--report", help="write TSV report here (JSON at <report>.json)")
     ap.add_argument("--log-dir", default="/tmp/lean-cone-logs")
@@ -194,7 +198,28 @@ def main() -> int:
 
     def fresh(m: str) -> bool:
         """olean usable as-is: newer than source, newer than every dep olean,
-        and no dep was rebuilt in this run."""
+        and no dep was rebuilt in this run.
+
+        ⚠ This is an **mtime** test, and a consumer may use a different clock.
+        `scripts/lean-axiom-guard.py` compares the olean against
+        `_effective_source_time`, which for a CLEAN file is the **commit time** of
+        the last commit touching it — deliberately, so that a fresh clone (which
+        stamps every source with the checkout time) does not read as universally
+        stale.
+
+        The two disagree in one exact case: you BUILD, then COMMIT. The olean is
+        then newer than the source's mtime (this returns True, skip) and older
+        than its commit time (the guard returns STALE, rc=2). Following the
+        guard's own advice to "rebuild, then re-run" loops forever. Measured
+        2026-08-26: source mtime 06:45:09, olean 06:45:12, commit 06:47:15; hit
+        three times in one session, because verify-then-commit is the natural
+        order.
+
+        `--force` is the escape hatch. Bean `qou-5v24` tracks unifying the two
+        notions properly; until then the guard's failure message names this flag.
+        """
+        if args.force:
+            return False
         ol = olean_of(m)
         src = mods[m]["src"]
         if not ol.is_file() or ol.stat().st_mtime <= src.stat().st_mtime:

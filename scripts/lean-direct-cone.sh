@@ -14,6 +14,11 @@
 #
 # Options are forwarded to scripts/lean_cone_build.py:
 #   --all           build every QOU module (whole-corpus survey)
+#   -B/--force      recompile even modules whose olean looks fresh. Needed when
+#                   lean-axiom-guard.py reports STALE but this script reports
+#                   up-to-date: the guard compares against the source's COMMIT
+#                   time, this script against its MTIME, and they differ exactly
+#                   when you built before committing. Bean qou-5v24.
 #   -k/--keep-going continue past a red module; its dependents are recorded
 #                   `blocked` (NOT compiled), which separates genuine errors
 #                   from missing-olean cascades
