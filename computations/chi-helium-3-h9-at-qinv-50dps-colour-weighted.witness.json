@@ -14,7 +14,7 @@
   "n_partitions": 30,
   "n_partitions_total": 30,
   "producer": "chi_at_q_inv_via_native_mpfr.py",
-  "compute_time_sec": 0.36,
+  "compute_time_sec": "0.35",
   "by_partition": [
     {
       "partition": [
@@ -124,7 +124,7 @@
         3,
         2
       ],
-      "chi_lambda": "2.9423197089831293375924874581375573511449097205304"
+      "chi_lambda": "2.9423197089831293375924874581375573511449097205305"
     },
     {
       "partition": [
@@ -307,11 +307,11 @@
       "-0.104618735975170678558580017101781309962976027623228458983965"
     ]
   },
-  "scriptHash": "f460035eb595",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
-  "commitSha": "20317af8008fb5b6089ce2bb262f1fc3da554695",
+  "scriptHash": "d5781ea2cf6b",
+  "scriptCommitSha": "80b1f75f8c3be884bd63e9f5b55e7a7a6c70c7b2",
+  "commitSha": "7a1099cd63a20d9a804fdb02c82832bfb18e87da",
   "engine": "pyhecke_native",
-  "computedAt": "2026-08-26T13:57:08.198500+00:00",
+  "computedAt": "2026-08-26T14:39:00.715966+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
