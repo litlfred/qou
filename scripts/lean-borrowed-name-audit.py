@@ -16,6 +16,16 @@ that is zero except in one slot.  No moduli space, no Behrend function, no
 perverse sheaf: `(-1)^N` is *named* the Behrend sign by the docstring.  The
 theorem is true, cheap, and about nothing but the three `def`s above it.
 
+**It is NOT, however, a `rfl`.**  Checked with the kernel companion
+(`scripts/lean/BorrowedNameKernel.lean`): `defeq_collapse = false`,
+`value_is_rfl = false`.  With `N` free, `List.range (N+1)` does not reduce, so
+`dtEulerG_collapse` is a genuine — if elementary — induction.  This audit's
+claim is therefore about NAMING and SCOPE (the statement quantifies over
+nothing but this file's own definitions, under a name borrowed from
+Donaldson-Thomas theory), NOT about the proof being vacuous.  Do not describe a
+CRITICAL here as "proved by rfl" without checking; the kernel companion is what
+settles that, and it overturned exactly that claim once.
+
 ## Why the existing detectors miss this
 
 `scripts/lean-definition-collapsed-audit.py` (bean `qou-k9yt`) needs BOTH

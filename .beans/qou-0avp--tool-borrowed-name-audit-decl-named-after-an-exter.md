@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T19:12:15Z
+updated_at: 2026-08-26T19:29:31Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -125,3 +125,42 @@ Frobenius. **Sample of four; not a precision rate.**
 - Triage the 197 `major`.
 - Decide whether this becomes a `qa-sweep` criterion or stays a standalone
   script like its sibling `lean-definition-collapsed-audit.py`.
+
+
+
+## CORRECTION — the kernel overturned one of my own claims (2026-08-26)
+
+Asked whether this was AST-based, the answer was no: the tool above is
+line/regex. So a kernel companion was built —
+[`scripts/lean/BorrowedNameKernel.lean`](../scripts/lean/BorrowedNameKernel.lean)
++ [`scripts/lean/audit-driver.sh`](../scripts/lean/audit-driver.sh) — which
+reads the ENVIRONMENT rather than the source text: `Expr.getUsedConstants` on
+the type and on the proof term, resolved through `Environment.getModuleIdxFor?`,
+plus `Meta.isDefEq` on the two sides of the statement under `forallTelescope`.
+That last check is the one bean `qou-wcff` asked for and the one no text
+scanner can approximate: definitional equality is decided by the kernel, not
+by the shape of the tactic block.
+
+**It immediately contradicted me.** I described `dtEulerG_eq_deltaLambdaG` as
+"rfl-level arithmetic". The kernel says `defeq_collapse = false`,
+`value_is_rfl = false`: with `N` free, `List.range (N+1)` does not reduce, so
+`dtEulerG_collapse` is a real (elementary) induction, not a `rfl`.
+
+**What survives unchanged** is the naming/scope claim, which the kernel
+independently confirms: `local_only = true`, `value_foreign = 0` — the
+statement quantifies over nothing but this file's own `def`s and the proof
+cites nothing outside the file. Calling the alternating sum of a one-hot list
+"the DT/3d-index graded Euler characteristic" with a "Behrend sign" is
+nomenclature, not geometry. But "proved by rfl" was wrong and is retracted.
+
+The kernel pass also found a definitional collapse the regex missed:
+`PartitionOf5.dtEuler_eq_dtEulerG` is `defeq_collapse = true` AND
+`value_is_rfl = true`. Regex flagged neither. **The two tools are
+complementary, not redundant** — text sees names and docstrings, the kernel
+sees reduction.
+
+Environment note for whoever runs this: the olean cache restores the ROOT
+workspace, so LEAN_PATH must be anchored at `$ROOT/.lake/packages/*`, not at
+`content/<paper>/lean/.lake/packages/*` (the latter has batteries but no
+Mathlib, and fails as "unknown module prefix 'Mathlib'", which reads like a
+missing cache). Both traps are documented in the driver header.
