@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T07:08:18Z
-updated_at: 2026-08-26T07:47:01Z
+updated_at: 2026-08-26T08:47:31Z
 ---
 
 Reproduced 2026-08-26 while merging PR #5820.
@@ -91,3 +91,38 @@ Also fixed here: dirty-set matching is worktree-relative rather than cwd-relativ
 (a cwd-relative path silently fails to match `git status` output, making an edited
 file read as clean), and the guard prints its own registry size — PR #5822's body
 said 53 entries against a measured 51.
+
+
+## CORRECTION 2026-08-26 — the commit-time fix above was itself defective (d5d76e6f01)
+
+The entry above says commit time is "the RIGHT rule for the rebuilder on its own
+merits". **That is wrong**, and I found out by merging main into the branch rather
+than by reasoning about it.
+
+Merging 45 commits of `main` dated EARLIER than my local oleans:
+`QOU.AlgebraicSubstrate.qou_obstruction_reduction` **changed in the merge**, commit
+time 07:38:27, existing olean 07:40:35. Commit time calls that fresh and serves a
+build of the old source. The mtime rule it replaced would have caught it.
+
+So each clock is wrong exactly where the other is right:
+  * mtime -> STALE after a clone/cache restore (2026-08-15, 15 modules)
+  * commit time -> FRESH when merged content is older-dated than the build
+
+**Content decides.** The rebuilder now stamps every olean with the SHA-256 of the
+source it was built from (`<olean>.srcsha`, under gitignored `.lake/`), and
+`olean_is_current` compares hashes when a stamp exists — no clock consulted.
+
+Where no stamp exists the two callers want OPPOSITE errors, so the fallback is
+asymmetric: rebuilder must beat BOTH clocks (may over-rebuild, never serves
+stale); guard uses commit time only (never refuses to report on a fresh clone).
+Since max(commit, mtime) >= commit the rebuilder's stale set CONTAINS the
+guard's, so a rebuild always satisfies the guard — that containment is what keeps
+the deadlock fixed, and the self-test asserts it over four clock configurations.
+
+`scripts/lean_freshness.py --selftest` — 11 checks, PASS — exists because this
+shipped broken once. It runs the clocks backwards on purpose; no test that does
+not would have caught it.
+
+Verified on the merged tree (main +45): rebuilder ok=4 / up-to-date=203 of 207,
+all stamped; the module that exposed the bug now reports current=False; guard
+rc=0 on 51; both selftests PASS.
