@@ -2,6 +2,7 @@ import QOU.Machinery.HeckeH3AlgebraInstance
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.HeckeH2AlgebraInstance
 import QOU.Machinery.HeckeH3Semisimple
+import QOU.MathlibExt.SemisimpleOfNondegenerateTrace
 import Mathlib.Tactic.IntervalCases
 
 /-!
@@ -302,5 +303,52 @@ theorem wenzlTowerStep_H2_H3_trivial (q : R) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 
     WenzlTowerStep R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
       (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) trn1 where
   semisimple_ascend _ _ := isSemisimpleRing_H3A q hq h2 h3
+
+/-! ## `WenzlTowerStep` at GENERAL rank, for the algebra trace
+
+`wenzlTowerStep_H2_H3_trivial` above discharges the field by discarding both
+hypotheses — it proves nothing about the ascent. This does the opposite, and the
+difference is the point.
+
+Read the field again:
+
+    semisimple_ascend :
+      IsSemisimpleRing Hn →
+      (∀ y : Hn1, y ≠ 0 → ∃ z, trn1 (y * z) ≠ 0) →
+      IsSemisimpleRing Hn1
+
+The **second hypothesis is exactly left-nondegeneracy of `trn1`**. So when `trn1`
+is the algebra trace, `QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate`
+discharges the field from that hypothesis alone — at **every** rank, with no
+appeal to any particular `H_n`.
+
+**And the first hypothesis is then redundant.** `IsSemisimpleRing Hn` is never
+used. That is a fact about the class worth stating plainly: for the algebra trace
+the ascent does not need semisimplicity at the level below, only nondegeneracy at
+the level above.
+
+## Scope — the one thing this does NOT settle
+
+It holds for `trn1 = algTrace`. Whether QOU's Markov trace **is** the algebra
+trace, or a nonzero multiple of it, is a **separate question and is not settled
+here**. If the Markov trace is some other functional, this instance does not
+apply to it and the general-`n` ascent for *that* trace remains open. Do not cite
+this as "the Wenzl ascent is formalized" without first pinning down which trace
+is meant. -/
+
+/-- **`WenzlTowerStep` for the algebra trace, at any rank.** Discharged from
+left-nondegeneracy alone; the `IsSemisimpleRing Hn` hypothesis is discarded
+because it is not needed.
+
+Contrast `wenzlTowerStep_H2_H3_trivial`, which discards BOTH hypotheses and
+therefore carries no content. Here the nondegeneracy hypothesis does the work. -/
+theorem wenzlTowerStep_algTrace {rank : ℕ}
+    {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+    [FiniteDimensional R Hn1]
+    (q : R) (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
+    (ι : Hn →ₐ[R] Hn1) :
+    WenzlTowerStep R q rank Hn Hn1 σn1 ι (QOU.MathlibExt.algTrace (K := R)) where
+  semisimple_ascend _ hnd :=
+    QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate hnd
 
 end QOU.Machinery.HeckeRank
