@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-26T03:30:00Z
+updated_at: 2026-08-26T04:20:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -323,3 +323,91 @@ The convention **flip** itself: still owner-scoped, still 51 Python files and
 already right", never "change the number". Also still unadjudicated: the 17
 blind-value witnesses noted in the sweep results (3 of the 22 are deliberate
 two-value comparisons and must not be drained).
+
+## 2026-08-26 — the flip is NOT free: the canonical convention is not bar-invariant
+
+Owner asked why the colour weighting applies only at p-n. Answering it turned
+up something bigger, and it **changes the flip decision**.
+
+### The structure (five exact identities, none previously in the corpus)
+
+With `bar` = the involution `q ↦ 1/q`:
+
+    bar(z) = 1/(q(q²+1)) = z − h
+
+so **f_pp and f_nn are bar-conjugates of each other**, and
+
+    f_pn(strict)    = (f_pp + bar(f_pp))/2                    ← the bar-symmetriser
+    f_pn(canonical) = w_p·f_pp + w_n·f_nn,  w = ½ ± δ/4,  w_p + w_n = 1
+
+**That is the answer to the owner's question.** The p-n factor *is* the
+weighted mean **of** the other two; the colour weighting is a δ-**tilt** of
+that mean. A like-flavour bond has no mean to tilt — averaging `f_pp` with
+itself returns `f_pp` for any weights summing to one — so "colour-averaging
+the p-p bond" is a no-op **by construction**, not an omission.
+
+It also makes the producers' name literal: *"uniform bar-invariant
+projection"* is not a description of the strict form, it **is** the
+bar-symmetrisation of `f_pp`.
+
+### The defect
+
+`δ` is bar-MIXED (`bar(δ) = −q²·δ`), so the tilt breaks bar-invariance:
+
+    bar(f_canonical) − f_canonical = (q−1)⁵(q+1)³(q²+1) / (12q⁵)
+
+nonzero for `q ≠ 1`; **1.67e-05** at the proton pin.
+
+`prop:pn-averaging-uniqueness` states *"…the uniform bar-invariant form and
+the Bring color-tube weighted form. **Both satisfy bar-invariance**…"* —
+which is **hypothesis (a) of its own uniqueness theorem**. The colour-weighted
+candidate does not satisfy it.
+
+**The Lean is fine.** `pn_averaging_unique` is the §3b-cond conditional-class
+pattern; `BarInvariant` is an instance hypothesis, so it proves the
+implication and is silent on which candidate discharges it. The prose
+restating the antecedent as established for both is the
+*conditional-proved ≠ premise-established* pattern.
+
+Corrected as **scope**, not resolved: the uniqueness statement covers the
+bar-invariant class; the convention made canonical on 2026-08-15 (R3) lies
+**outside its hypotheses**. This does not say the colour weighting is wrong.
+
+### What this does to the flip decision
+
+Flipping is **not** merely "re-run 42 producers and move binding by 1.5e-4".
+It trades an **exact bar-symmetry** for a flavour-asymmetry correction, and
+bar-parity is load-bearing here — a stated hypothesis of a published
+proposition. Two of the eight blind-only witnesses (`confined-knot-binding`'s
+exact channel cancellation, `b4-connected-bar-parity`'s parity
+classification) are plausibly downstream of exactly that symmetry.
+
+**Owner picked "settle bar-parity first" over flipping. That was the right
+call and this is why.**
+
+Landed: `84056a59ae` (finding + content), `a1f5a1eed6` (inert-field fix +
+a correction to 84056a59ae's own verification line).
+
+### Measured blast radius, corrected from the earlier figures
+
+| quantity | earlier | measured |
+|---|---|---|
+| Python consumers of the two gram fns | 51 | **54** (42 emit/handle a witness) |
+| witnesses carrying a blind constant | 22 | **12** |
+| of those, deliberate two-value comparisons | 3 | **4** (carry BOTH constants) |
+| unadjudicated | 17 | **8** |
+
+Binding shift from the flip: **−1.46e-4** (²H), −6.4e-5 (³He), −2.0e-5 (⁴He),
+−1.8e-6 (⁷Li), −6.7e-8 (¹²C) — falling with A, because canonical ordering
+`pᶻnᴺ` has **exactly one** p-n bond. Compare the open many-body binding
+magnitude gap, `r* ≈ 1.585`: the flip is ~4 orders of magnitude below it.
+It does **not** touch the L2 scoreboard — that producer has zero references to
+the interface machinery, and its `m_D`/`m_T` entries are CODATA validation
+targets, not framework predictions.
+
+### Verification lesson
+
+I reported "zero issues naming either block" off a `grep -c` count, twice.
+A count is not evidence about *which* lines matched. There was one hit
+(pre-existing, `chapter:` unknown field); found only by going back for the
+line itself. Corrected in `a1f5a1eed6`.
