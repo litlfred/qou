@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-26T07:30:41Z
+updated_at: 2026-08-26T07:43:58Z
 ---
 
 ## What
@@ -398,3 +398,75 @@ is **undetermined**, not established.
 
 The dependency ordering recorded above stands and is the critical path for
 `qou-1c4y`. Nothing here shortens it.
+
+
+## 2026-08-26 — the "11 with no committed witness" batch is 0 ready, 11 blocked
+
+Went to execute it. **The plan recorded above for this batch rests on a false
+premise and cannot be run as written.** It says:
+
+> They should be re-run and their witness COMMITTED FIRST, at the muon pin, so
+> the migration has a baseline.
+
+Measured, that is impossible for most of them:
+
+     7  write NO output at all — stdout-only probes
+     3  hand-roll a witness with write_text (no WitnessBuilder)
+     1  uses WitnessBuilder
+    --
+    11
+
+For the **7 stdout-only** there is no witness to baseline and none to compare
+after, so a reroute is a blind numerical change in both directions. Giving
+them one is bean `1j39`'s scope (I-infra-no-witnessbuilder batch port), not a
+step inside this batch.
+
+### And the 1 that could be baselined is blocked too
+
+`qbeta_c3_barodd_determined_solve_probe` is clean on every other axis — no
+`record_upstream`, no upstream witness, proper `WitnessBuilder`. Ran it
+(71.7 s, exit 0). It emits **9 raw float64 fields**, and with its witness
+present `witness_raw_float64_audit.py --strict` **exits 1** on 3 NEW dirty
+fields. Committing that baseline is forbidden: *"Do NOT add the file to the
+baseline to silence this."*
+
+Deleted the uncommitted witness rather than commit it. Filed as `qou-poi1`,
+which measures the general hole: **14 producers emit a witness that is never
+committed and is not gitignored, so the ratchet — which scans only committed
+witnesses — cannot see any of them.**
+
+Rerouting it would buy little in any case: the producer's own verdict is
+*"ANCHOR-BLIND to ~2.7e-11 (muon ≈ proton)"*.
+
+### Two corrections to this bean's own classification
+
+1. **"No committed witness" was wrong for 2 of the 11.**
+   `qbeta_argu_phase_branch_selection_probe` and
+   `qbeta_meridian_holonomy_anchor_swing_probe` DO have committed witnesses.
+   My index keyed on `witness.scriptFile`, and both records are
+   **`scriptFile: null`** — the "bare producers" class. So the index was right
+   to miss them and the real defect is missing provenance. They are invisible
+   to every provenance-keyed audit, this bean's census included.
+
+2. **Counting `q0` occurrences to find sign-only producers does not generalise.**
+   It worked for batch C. Here, three producers show `q0` **zero** times and
+   read the pin anyway, under `q_0`, `Q0_MPF` and `Q0_F64`
+   (`gram_matrix_seminormal_n`, `pyhecke_jones_markov_atlas`,
+   `pyhecke_n_generic`). Keying on one spelling of a variable name is the same
+   defect class as keying on one spelling of a convention — count the *reads*,
+   not the identifier.
+
+   Two of those three also do `float(mp.mpf(...))` on the substrate parameter
+   (`gram_matrix_seminormal_n:231`, `pyhecke_n_generic:100`, the latter named
+   `Q0_F64`). That is a NO-FLOAT64 defect, pre-existing, separate from the pin
+   question, and not fixed here.
+
+### Where the batch actually stands
+
+Nothing in this batch is executable until either `1j39` gives the 7 a witness
+mechanism, or the owner accepts a reroute with no before/after record. The
+latter is not mine to decide. **Do not re-attempt this batch expecting it to
+be the "cheap" one** — that was this bean's own framing and it was wrong.
+
+The 12 blocked on muon-built upstreams remain the critical path for
+`qou-1c4y`, unchanged.
