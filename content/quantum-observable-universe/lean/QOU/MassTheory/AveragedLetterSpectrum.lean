@@ -22,6 +22,20 @@ leaves the braid group because it is a scaled *involution*, and `σ ↦ σ⁻¹`
 **bar involution**, so the construction is hand-rolling a bar-symmetrization —
 which AGENTS.md §7b says not to do.
 
+**It is about the COLOUR-BLIND template only (scope added 2026-08-26).** The
+producer emits two non-braid templates, and the canonical one
+(`pn_convention="bring_color_weighted"`, owner ruling R3) is the *unequal*-weight
+`(1/2 + δ/4)σ + (1/2 − δ/4)σ⁻¹`. Its eigenvalues are **not** negatives of one
+another, so `Q = 1` does **not** apply to it: measured, that letter gives
+`Q = 1.0000715145…`, departing at leading order `(δ/4)h/c`
+(`computations/meson/atom_letter_colour_spectrum_probe.py`). Every theorem below
+is stated for a general weight and is unaffected — `averagedOn` fixes `w₊ = 1/2`
+by taking `lam - heckeH q / 2`, and `second_parameter_forced` carries the
+symmetric spectrum `±t` as an explicit hypothesis. What needs the scope is the
+*reading*: "the averaged letter forces `Q = 1`" is true of the symmetric letter
+and false of the colour-weighted one. See
+`docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md` §13.
+
 **It does NOT establish that the atom word can be written in a type-`B` algebra.**
 That prescription was measured to be unrealizable and is withdrawn: the averaged
 letters sit at `2A+1` **distinct** generator indices, while type `Bₙ` has exactly
