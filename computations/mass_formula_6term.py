@@ -64,6 +64,25 @@ m_e = M_E_MEV
 FROB_N3 = m_e * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
 
 
+def _mpf_from_witness_value(key: str, val) -> "mp.mpf":
+    """Parse one Σ-table entry, refusing a JSON float.
+
+    `probe_term4_conventions` serialises with `mp.nstr(..., 50)`, i.e. a
+    STRING, so the 50 digits survive the round-trip. A JSON *number* in this
+    slot means the table was written at float64 and the precision is already
+    gone upstream — `mp.mpf(str(<float>))` would re-wrap that loss in an mpf
+    and hide it, which is the laundering pattern the precision gates flag.
+    Refuse instead, and say where to fix it.
+    """
+    if isinstance(val, str):
+        return mp.mpf(val)
+    raise TypeError(
+        f"probe-term4-conventions: {key} is {type(val).__name__}, not str — "
+        f"the table must be serialised as a decimal string (mp.nstr) or its "
+        f"precision is lost before it is read. Fix the producer, not here."
+    )
+
+
 def _load_sigma_3A_table():
     """Load Σ_{λ⊢3A} 1/dim_q(λ) values at q_0 from the per-3A probe witness.
 
@@ -86,14 +105,18 @@ def _load_sigma_3A_table():
         return {}
     try:
         d = json.loads(path.read_text())
-        sigma = d["sigma_inv_dim_q_at_q0"]
+        # WitnessBuilder nests the payload under `data`; the pre-2026-08-26
+        # loader read only the top level, so it would have missed the table
+        # even had the witness existed. Top level kept as a fallback.
+        sigma = d.get("data", {}).get("sigma_inv_dim_q_at_q0") \
+            or d["sigma_inv_dim_q_at_q0"]
         out = {}
         # Map A → n=3A entry (covers all A whose key is present in witness).
         for key, val in sigma.items():
             if key.startswith("n="):
                 n = int(key.split("=")[1])
                 if n % 3 == 0:
-                    out[n // 3] = float(val)
+                    out[n // 3] = _mpf_from_witness_value(key, val)
         return out
     except Exception as exc:
         print(f"  \u26a0 term4: {path.name} unreadable ({exc!r}) — the "
@@ -330,12 +353,12 @@ if __name__ == "__main__":
               f"{B_term1:8.4f} MeV "
               f"({(B_term1-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
         print(f"  T1 + T2+3 + T4 per-vortex            : B = "
-              f"{B_term1_plus_frob_pv:8.4f} MeV "
-              f"({(B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+              f"{float(B_term1_plus_frob_pv):8.4f} MeV "
+              f"({float((B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         if B_term1_plus_frob_p3A is not None:
             print(f"  T1 + T2+3 + T4 per-3A (CANONICAL)    : B = "
-                  f"{B_term1_plus_frob_p3A:8.4f} MeV "
-                  f"({(B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+                  f"{float(B_term1_plus_frob_p3A):8.4f} MeV "
+                  f"({float((B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         if B_term5 is not None:
             print(f"  Term 5 only (paper BW+χ)             : B = "
                   f"{B_term5:8.4f} MeV "
@@ -386,11 +409,14 @@ if __name__ == "__main__":
         e1 = r['err_pct']['term1_only']
         e14_pv = r['err_pct']['term1_plus_term4_pervortex_legacy']
         e14_p3A = r['err_pct']['term1_plus_term4_per3A_canonical']
-        e14_p3A_str = f"{e14_p3A:>+15.2f}%" if e14_p3A is not None else "     (N/A)"
+        # float() casts here are DISPLAY ONLY (AGENTS.md permits it inside an
+        # f-string). These carry mpf since term 4 became exact.
+        e14_p3A_str = (f"{float(e14_p3A):>+15.2f}%"
+                       if e14_p3A is not None else "     (N/A)")
         t5 = r['err_pct']['term5_only']
-        t5_str = f"{t5:>+11.2f}%" if t5 is not None else "     (N/A)"
-        print(f"{iso:>5}  {e1:>+8.2f}%  "
-              f"{e14_pv:>+15.2f}%   {e14_p3A_str}  {t5_str}")
+        t5_str = f"{float(t5):>+11.2f}%" if t5 is not None else "     (N/A)"
+        print(f"{iso:>5}  {float(e1):>+8.2f}%  "
+              f"{float(e14_pv):>+15.2f}%   {e14_p3A_str}  {t5_str}")
 
     print()
     print("KEY FINDING: n/p discrepancy is NOT visible here because we")

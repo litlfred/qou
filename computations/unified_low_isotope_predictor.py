@@ -86,6 +86,25 @@ def term1_descended(Z, N, E_0):
 _SIGMA_3A_UNAVAILABLE: str | None = None
 
 
+def _mpf_from_witness_value(key: str, val) -> "mp.mpf":
+    """Parse one Σ-table entry, refusing a JSON float.
+
+    `probe_term4_conventions` serialises with `mp.nstr(..., 50)`, i.e. a
+    STRING, so the 50 digits survive the round-trip. A JSON *number* in this
+    slot means the table was written at float64 and the precision is already
+    gone upstream — `mp.mpf(str(<float>))` would re-wrap that loss in an mpf
+    and hide it, which is the laundering pattern the precision gates flag.
+    Refuse instead, and say where to fix it.
+    """
+    if isinstance(val, str):
+        return mp.mpf(val)
+    raise TypeError(
+        f"probe-term4-conventions: {key} is {type(val).__name__}, not str — "
+        f"the table must be serialised as a decimal string (mp.nstr) or its "
+        f"precision is lost before it is read. Fix the producer, not here."
+    )
+
+
 def _load_sigma_3A():
     """Load Σ_{λ⊢3A} 1/dim_q(λ) at q_0 from the per-3A probe witness.
 
@@ -127,13 +146,17 @@ def _load_sigma_3A():
         return {}
     try:
         d = json.loads(path.read_text())
-        sigma = d["sigma_inv_dim_q_at_q0"]
+        # WitnessBuilder nests the payload under `data`; the pre-2026-08-26
+        # loader read only the top level, so it would have missed the table
+        # even had the witness existed. Top level kept as a fallback.
+        sigma = d.get("data", {}).get("sigma_inv_dim_q_at_q0") \
+            or d["sigma_inv_dim_q_at_q0"]
         out = {}
         for key, val in sigma.items():
             if key.startswith("n="):
                 n = int(key.split("=")[1])
                 if n % 3 == 0:
-                    out[n // 3] = mp.mpf(str(val))
+                    out[n // 3] = _mpf_from_witness_value(key, val)
         return out
     except Exception as exc:
         _SIGMA_3A_UNAVAILABLE = f"unreadable: {path.name}: {exc!r}"
@@ -152,10 +175,10 @@ def term4_frobenius(Z, N):
     Genuine algebraic Term 4: when the isotope braid lives in H_{3A}(q),
     the Frobenius co-Casimir trace sums over partitions of 3A, not 3.
 
-    Coverage: the witness WOULD cover A ∈ {1,2,3,4,5,6,7} exactly — but it
-    is absent from this repository and always has been, so in practice the
-    fallback below is taken for every A (bean `qou-nk3h`).  For A ≥ 8 the
-    intended value is the **asymptotic estimate** Σ_{λ⊢3A} 1/dim_q(λ) ≈ 2.05
+    Coverage: A ∈ {1..8}, from `probe_term4_conventions.py` (bean `qou-nk3h`,
+    which also records that this witness was absent for the whole prior life of
+    this function, so the fallback below was silently taken for every A).  For
+    A ≥ 9 the value is the **asymptotic estimate** Σ_{λ⊢3A} 1/dim_q(λ) ≈ 2.05
     (the trace decays monotonically toward 2 as A → ∞ because the
     two extreme blocks (3A) and (1^{3A}) each contribute 1, with the
     q-dependent middle decaying).  The estimate is conservative: at
@@ -168,9 +191,8 @@ def term4_frobenius(Z, N):
     sigma_3A = _SIGMA_3A_AT_Q0.get(A)
     if sigma_3A is not None:
         return M_E * sigma_3A
-    # Fallback. Named "the A >= 8 asymptotic estimate", but with the table
-    # unavailable (see `_load_sigma_3A`) this branch is taken for EVERY A, so
-    # T4 is the constant m_e * 2.05 = 1.0475 MeV across the whole list.
+    # Fallback for A >= 9 only, now that the table exists. Measured at A = 8:
+    # 2.0419 and still decreasing, so 2.05 is fair just past the table.
     return M_E * mp.mpf("2.05")
 
 
