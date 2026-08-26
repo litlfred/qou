@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:51:27.868948+00:00",
-  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
+  "computedAt": "2026-08-26T04:23:48.430704+00:00",
+  "commitSha": "0c772454cfcf1032e2a06519427d85f56a8f5441",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -54,14 +54,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2771,
-      "prov_ok": 2348,
+      "total_scanned": 2772,
+      "prov_ok": 2349,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965355467340310357271743053049440635149765427643450018044027"
+      "completeness_ratio": "0.965367965367965367965367965367965367965367965367965367965368"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4287,6 +4287,10 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-vs-atlas-markov-trace.witness.json",
           "missing_fields": []
         },
         {
