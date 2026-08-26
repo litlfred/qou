@@ -257,12 +257,28 @@ no longer instance-free. It contributes an adapter between two spellings of
 nondegeneracy, not a semisimplicity proof. Two things are worth reading off it
 rather than assuming. First, the ascent does not consume the `Hn`-semisimple
 hypothesis at all — nondegeneracy at level `n+1` is the whole of it, which makes
-hypothesis 1 of the field redundant for this trace. Second, and this is the part
-still open: the general-`n` Hecke target needs the field at the **Markov**
-trace, and nondegeneracy of the Markov trace on `H_n(q)` is exactly Wenzl's
-content, supplied by none of the above. The closest existing statement is
+hypothesis 1 of the field redundant for this trace. Second: the general-`n`
+Hecke target needs the field at the **Markov** trace — and that is not merely
+unproved here, it is **false on `H_n` at the canonical convention D**, so no
+instance of this class at the Markov trace on `H_n` can exist. The convention-D
+pin `z(q²+1) = q³` forces the antisymmetric Wedderburn weight `y₍₁³₎` to `0`,
+that block lies in the radical of the trace form, and `det G = 0` exactly —
+`QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` and
+`QOU.QBeta.MarkovGramDegenerate.gram_det_eq_zero_of_radical_combination`, both
+sorry-free. Independently: the closed-form `n = 3` determinant in
+`gram-matrix-h3-symbolic` carries the factor `(q²+1)z − q³`, which *is* the
+convention-D pin rearranged, so `det G` vanishes identically in `q` there.
+
+The Frobenius structure is real but lives on the quotient `H_n / rad τ ≅ TL_n(δ)`
+(`pairing_descends`, `mem_radical_of_pairing_zero`), matching
+`prop:markov-trace-frobenius-selection` (iii). Discharging this class at the
+Markov trace over that quotient is bean `qou-s7z2`; it is genuine work, since
+both the braided presentation and the tower inclusion must be restated for the
+quotient. The nearest abstract statement remains
 `QOU.MathlibExt.isSemisimpleRing_of_qGeneric`, which reaches semisimplicity from
-`q`-genericity but takes the Gram–factorial equivalence as a hypothesis.
+`q`-genericity but takes the Gram–factorial equivalence as a hypothesis, and
+whose own open input — the general `T_w`-basis determinant, the classical
+Schur-element product formula — is unchanged by any of this.
 
 -/
 class WenzlTowerStep (R : Type*) [Field R] (q : R) (rank : ℕ)
