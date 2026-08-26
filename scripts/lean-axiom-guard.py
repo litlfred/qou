@@ -59,10 +59,17 @@ Measured cost of that gap, same day, twice, both outside this registry:
 
 So the rule is not "the guard is unsound" — it is sound within its registry. The
 rule is: **a hand-written `#print axioms` outside this registry has no gate, and
-must rebuild what it measures first.** `scripts/lean-rebuild-cone.py` is the
-remediation tool (this gate detects staleness; it does not fix it), and uses
-`lean`-direct rather than `lake build`, which would evict a restored cache
-(bean `qou-r13s`).
+must rebuild what it measures first.** The remediation tool already exists --
+`scripts/lean-direct-cone.sh` (driver: `scripts/lean_cone_build.py`) -- and this
+gate detects staleness without fixing it, so the two compose:
+
+    scripts/lean-direct-cone.sh $(scripts/lean-axiom-guard.py --print-modules)
+
+It uses `lean`-direct rather than `lake build`, which would evict a restored
+cache (bean `qou-r13s`), skips modules already up to date, and builds in
+parallel. Related and worth knowing before hand-rolling anything:
+`scripts/lean-verify-cone.sh` (bean `qou-fjcd`) verifies an edited file AND its
+consumers against rebuilt oleans, which is the consumer-side form of this trap.
 
 Full finding: docs/audits/2026-08-26-live-axiom-surface-recheck.md §4.
 

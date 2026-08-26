@@ -13,7 +13,8 @@ re-checks it against the corpus instead.
 > putting them side by side flatters the weaker ones. Tiers used throughout:
 >
 > - **PROVED** — a sorry-free Lean theorem, axioms checked with `#print axioms`.
->   Only §3's Riesz equivalence and the results in `qou-k5jt` are this.
+>   Only §3's Riesz equivalence and the results in `qou-k5jt` are this. They are
+>   also the only part of this audit that was not already in the corpus.
 > - **MEASURED** — the output of running something: `#print axioms` on a rebuilt
 >   cone, a build that exits 0 or 1, a script's count. §1, §2's proof-term
 >   comparison, §4's phantom-axiom experiment, §5.
@@ -88,8 +89,7 @@ ofSlater_via_rank_equality -> [propext, Classical.choice, Quot.sound,
 > a third instance of §4, and the first one committed by this audit against its
 > own evidence.
 >
-> Re-measured against `lean-rebuild-cone.py QOU.MathlibExt.SDPRankEquality`
-> (6/6 rebuilt), at the correct current names, **the comparison is unchanged**:
+> Re-measured against a rebuilt SDP cone (6/6), at the correct current names, **the comparison is unchanged**:
 > `ofSlater_proven` carries one axiom, `ofSlater_via_rank_equality` and
 > `SDPRankUniqueness_proven_via_rank_equality` carry two. The conclusion stands;
 > the route to it did not, until now.
@@ -194,11 +194,24 @@ measuring a June cache, and the `qou-mame` verification stands on its own terms 
 both changed modules were explicitly rebuilt before being measured. The defect is
 that nothing *enforces* that; it held by luck.
 
-**Fix:** [`scripts/lean-rebuild-cone.py`](../../scripts/lean-rebuild-cone.py)
-rebuilds a set of modules and their transitive QOU cone in topological order via
-`lean`-direct, so verdicts are about the source. `--from-guard` takes the axiom
-guard's registry as roots (15 roots → 199 modules). It uses `lean -o` rather than
-`lake build`, which would evict the restored oleans (bean `qou-r13s`).
+**Fix — and it already existed.** I wrote a `lean-rebuild-cone.py` for this and
+then found [`scripts/lean-direct-cone.sh`](../../scripts/lean-direct-cone.sh)
+(driver [`lean_cone_build.py`](../../scripts/lean_cone_build.py), 374 lines),
+which does the same job better: it skips modules already up to date, builds in
+parallel with progress and ETA, has `--keep-going` with dependency propagation and
+`--all` for a whole-corpus survey, and — as its own docstring predicts — includes
+the **root aggregator module** that a naive `QOU/`-directory walk misses. Measured
+head to head on the guard's registry: **205 modules against my 199**, and **318 s
+against 1572 s**. Mine was deleted. Compose it with the guard:
+
+```sh
+scripts/lean-direct-cone.sh $(scripts/lean-axiom-guard.py --print-modules)
+```
+
+`scripts/lean-verify-cone.sh` (bean `qou-fjcd`) is the consumer-side form of the
+same trap, and its docstring records a 2026-08-08 incident in which a PR claimed
+"lean-direct exit 0 on every consumer" against oleans that still held the removed
+instances. That is this audit's §4, already found, already tooled.
 
 ## 5. Three artifacts I hit while measuring this — all in one investigation
 
@@ -255,4 +268,5 @@ evidence for its own §2.
 - [`2026-06-03-lean-axiom-tractability-triage.md`](2026-06-03-lean-axiom-tractability-triage.md) — the bucket, corrected in place by `qou-mame`
 - [`scripts/lean-axiom-guard.py`](../../scripts/lean-axiom-guard.py) — the gate this hardens
 - [`scripts/lean-assumption-surface.py`](../../scripts/lean-assumption-surface.py) — the 23-axiom measurement
-- [`scripts/lean-rebuild-cone.py`](../../scripts/lean-rebuild-cone.py) — the fix
+- [`scripts/lean-direct-cone.sh`](../../scripts/lean-direct-cone.sh) + [`lean_cone_build.py`](../../scripts/lean_cone_build.py) — the remediation tool, which already existed
+- [`scripts/lean-verify-cone.sh`](../../scripts/lean-verify-cone.sh) — the consumer-side form (bean `qou-fjcd`)
