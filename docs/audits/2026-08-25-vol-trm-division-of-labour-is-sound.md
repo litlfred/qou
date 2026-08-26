@@ -2740,3 +2740,68 @@ discrepancy: the canonical interface is the **colour-weighted averaged** letter
 (two branches at that slot), while all five candidates are **pure** words. `I1`
 is its pure analogue — the five are comparable to each other, and none is the
 committed object.
+
+## Addendum 30 — the derived interface clears the structural bar and fails the magnitude one (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`colour_derived_interface_probe.py`](../../computations/meson/colour_derived_interface_probe.py)
+(7 assertions, 3 controls). Addendum 29 refused to select a candidate because the
+one that cleared `√B_AME` had no derivation. This derives one **first**, then
+measures it.
+
+### The derivation, fixed before any trace was computed
+
+`conj:inter-nucleon-channel-color-tube` says, in its own text: *"each nucleon
+carries **3 quark color sheets**"* — and the word runs on $n = 3A$ strands, so
+the three strands per nucleon **are** the colour sheets — and the $S_5
+\leftrightarrow \mathrm{SO}(3)$ fibre action gives *"a canonical $3 \times 3 =
+9$-element matrix of color-pair couplings per inter-nucleon arc"*.
+
+Nine couplings; the current assignment realises them as **one** generator. The
+braid in which every colour sheet of nucleon 1 crosses every sheet of nucleon 2
+is the positive permutation braid swapping the two 3-blocks:
+
+$$ I_{\rm colour} = (\sigma_3\sigma_2\sigma_1)(\sigma_4\sigma_3\sigma_2)(\sigma_5\sigma_4\sigma_3) $$
+
+Checked before measuring: **9 crossings** — one per colour pair — permutation
+$[4,5,6,1,2,3]$, i.e. the blocks swap.
+
+> **The 9-crossing reading is mine, not the block's.** The block explicitly
+> specifies a weighted sum over **one** generator. What is proposed is a
+> different realisation of the same geometric input — nine couplings as nine
+> *crossings* rather than nine *weights* on one crossing.
+
+### Measured
+
+| interface | $\mathrm{tr}_M$ | vs $\sqrt{B_{\rm AME}}$ |
+|---|---:|---:|
+| `I1` $\sigma_3$ *(current, 1 crossing)* | 0.693389 | 0.4649× |
+| **`I_colour`** *(9 crossings)* | **0.629005** | **0.4217×** |
+| `I_colour⁻¹` *(reversed)* | 0.110984 | 0.0744× |
+
+**It fails**, and it traces *below* the single crossing it replaces. Orientation
+is not a detail — the inverse is 5.7× lower again.
+
+### Two bars, and it clears only one
+
+| bar | source | result |
+|---|---|---|
+| structural — not provably a connected sum | Addendum 28 | **cleared** |
+| magnitude — $\mathrm{tr}_M \ge \sqrt{B_{\rm AME}}$ | Addendum 23 | **failed**, 0.4217× |
+
+Meanwhile Addendum 29's `I5` clears the magnitude bar at 1.2475× and has **no
+derivation at all**. That is the situation stated plainly: **the interface with
+a reason does not work, and the interface that works has no reason.** No rescue
+is attempted, and neither is selected.
+
+### What this rules out
+
+**Scope (a):** the colour-pair block transposition as a route to the binding
+magnitude at the deuteron. It is derived, checkable, and misses by 2.4×.
+
+**Not** ruled out: the colour-tube structure itself — it may be right about p/n
+asymmetry and chirality signs while saying nothing about magnitude; a different
+braid realisation of the same nine couplings (the permutation braid is the
+minimal positive one, not the only one); or an interface derived from elsewhere.
+And "not provably a connected sum" remains **necessary, not sufficient** — no
+essential torus is established.
