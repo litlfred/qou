@@ -4,12 +4,12 @@
   "description": "Substrate-anchor drift across witness JSONs. proton-pin is legitimate (documented layer); STALE matches no documented pin.",
   "data": {
     "counts": {
-      "STALE": 228,
+      "STALE": 227,
       "canonical": 169,
-      "proton-pin": 1685,
+      "proton-pin": 1693,
       "unknown": 25
     },
-    "stale_total": 228,
+    "stale_total": 227,
     "new_stale": 0,
     "rows": [
       {
@@ -2605,7 +2605,7 @@
       {
         "file": "computations/binding-triangle-3body-cluster.witness.json",
         "field": "parameters.q_0",
-        "value": "1.10997858275138080759166909561076887987449912187357763605672",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -5153,9 +5153,16 @@
       {
         "file": "computations/closed-form-tau-M-verification-phase5q.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955541805752815940796095093779932822799587",
-        "class": "STALE",
-        "ppb_vs_canonical": -0.0028416265239649993
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/closed-form-tau-M-verification-phase5q.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/co-bond-order-active-set.witness.json",
@@ -11192,6 +11199,20 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/probes/knot-operator-transition-convention-robustness.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/knot-operator-transition-convention-robustness.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/ksel2id-tropical-transport.witness.json",
         "field": "q0Value",
         "value": "1.10997859555733471",
@@ -11346,6 +11367,20 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/nv-categorical-derivation-probe.witness.json",
         "field": "q_0",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -11496,6 +11531,20 @@
         "file": "computations/probes/phi-q-spectral-combiner-probe.witness.json",
         "field": "q0Value",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/pn-interface-bar-structure.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/pn-interface-bar-structure.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
