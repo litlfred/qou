@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T13:47:22Z
+updated_at: 2026-08-26T21:31:16Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -174,3 +174,29 @@ That is evidence FOR the C-conditionality AGENTS.md already asserts -- it is
 not a measurement of D's accuracy.
 
 Items 1 (colour-blind crossing, 80 ppm) and 3 (muon pin) are unaffected.
+
+
+## 2026-08-26 — the mislabelling has a hard consequence under convention D
+
+From `qou-879g` (now answered): the corpus's own
+[`prf:algebraic-gns-embedding`](content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md)
+places the convention-D theory in the **Temperley–Lieb quotient**
+`H_∞(q)/rad ≅ TL_∞(q)` — the radical being exactly the `ℓ(λ) ≥ 3` blocks, since
+`y_λ = 0` there.
+
+A functional descends to a quotient iff it annihilates the ideal. Measured
+(`qbeta_which_algebra_the_decay_channel_lives_in_probe.py`, 11/11):
+
+- the **augmentation** `σ ↦ q` annihilates `J_(1³)` → **it descends**;
+- the **coordinate sum** `net` does not — `net(e) = q³(q−1)/((q²+1)(q²+q+1))` → **it does not**.
+
+Δ has a nonzero `(1³)` component, so `epsNPq` assigns different values to two
+representatives of the same TL class.
+
+**This sharpens the question this bean asks.** It is no longer only "which ε was
+meant". Under the canonical convention, one of the two candidates **cannot** be
+the answer on structural grounds: the coordinate sum is not a functional on the
+space the framework's own GNS proof says the theory lives in. The augmentation
+is. That does not by itself make the augmentation right — `qou-avt5`'s finding
+stands that the stated NF vector is not the exhibited element under *either*
+functional — but it removes a symmetry the fork used to have.
