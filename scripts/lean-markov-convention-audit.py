@@ -96,7 +96,6 @@ KNOWN_C = [
     ("GramMatrixH3Symbolic", "gramEntry", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ_legacy", "C-plain"),
-    ("JonesNuclearQuotient", "markovZ", "C-plain"),
     ("MarkovAxiomsPrimitive", "markovZax", "C-sqrtvar"),
     ("MarkovAxiomsPrimitive", "markovZax_legacy", "C-plain"),
     ("MarkovZClassicalCoincidence", "zCsub", "C-sqrtvar"),
