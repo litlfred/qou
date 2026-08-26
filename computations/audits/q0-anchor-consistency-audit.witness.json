@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T13:47:49.478477+00:00",
-  "commitSha": "baf4ff3a5acab07c6b4cfefa6781fa727295d899",
+  "computedAt": "2026-08-26T14:35:44.301068+00:00",
+  "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -43,15 +43,15 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 979,
+      "Q0_OK": 983,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 48,
       "Q0_INDEPENDENT_NO_REASON": 3,
-      "Q0_COMPARISON": 1,
+      "Q0_COMPARISON": 2,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1653,
+      "Q0_ANCHOR_MISSING": 1664,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -2597,6 +2597,10 @@
           "detail": ""
         },
         {
+          "witness": "atom-branch-geom-case.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "atom-branch-hyperbolicity.witness.json",
           "detail": ""
         },
@@ -5021,6 +5025,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-chi-block-symbolic-closure.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ck-closed-form-candidate-fits-probe.witness.json",
           "detail": ""
         },
@@ -5089,6 +5097,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-counit-trace-transport-overshoot.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-crossing-weight-affine.witness.json",
           "detail": ""
         },
@@ -5126,6 +5138,14 @@
         },
         {
           "witness": "qbeta-delta-tr-vs-formA.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-delta-vs-deltaTbeta-discrepancy.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-delta-vs-deltaTbeta-settled.witness.json",
           "detail": ""
         },
         {
@@ -5334,6 +5354,14 @@
         },
         {
           "witness": "qbeta-habiro-zeta8-categorical-witness.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-hecke-mn-character-engine.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-hecke-symbolic-seminormal.witness.json",
           "detail": ""
         },
         {
@@ -5573,6 +5601,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-single-wrap-element-cannot-exist.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-singularity-type-probe.witness.json",
           "detail": ""
         },
@@ -5658,6 +5690,18 @@
         },
         {
           "witness": "qbeta-wenzl-habiro-chain-alpha.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-xi-family-collapses-to-h.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-xi-kcycle-route-prune.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-xi-moment-family.witness.json",
           "detail": ""
         },
         {
@@ -8819,6 +8863,14 @@
           "detail": ""
         },
         {
+          "witness": "atom-letter-colour-spectrum.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "markov-weight-support-conjugation.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "meson-gen3-eta-phi.witness.json",
           "detail": ""
         },
@@ -9231,7 +9283,15 @@
           "detail": ""
         },
         {
+          "witness": "centre-frobenius-pairing-is-diagonal.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "clambda-shape-invariant-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "cluster-substructure-edgeset.witness.json",
           "detail": ""
         },
         {
@@ -11168,6 +11228,10 @@
       "Q0_COMPARISON": [
         {
           "witness": "muon-pin-stored-vs-live.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-two-body-kernel-overshoot.witness.json",
           "detail": ""
         }
       ],
