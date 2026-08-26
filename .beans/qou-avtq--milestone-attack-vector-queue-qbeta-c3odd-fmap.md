@@ -14,7 +14,7 @@ assessment. Order is my judgement and is meant to be overruled.
 | # | bean | state |
 |---|---|---|
 | 1 | `qou-avt1` counit->trace transport | RUN 2026-08-26 -> **overshoots ~300x**, scope-(a). Live residue: the G2 form clash (affine in w vs the asserted cosine). |
-| 2 | `qou-avt4` f-map keystone ledger stale since 2026-07-11 | QUEUED. Cheap, docs-only, but it is the entry point for the whole f-map programme so a stale one costs a session. |
+| 2 | `qou-avt4` f-map keystone ledger stale since 2026-07-11 | **DONE 2026-08-26** — banner + 7 log rows; historical sections kept. Cheap, docs-only, but it is the entry point for the whole f-map programme so a stale one costs a session. |
 | 3 | `qou-avt2` general-n per-block Hecke characters (Halverson-Ram / Jing-Liu) | QUEUED. Real math; newly unblocked by the 2026-08-26 upload drop. |
 | 4 | `qou-avt3` c3^odd | BLOCKED UPSTREAM by design. Not well-posed until (H1) is derived or dropped. Do not start it. |
 | - | `qou-ximf` Xi_k cyclotomic family | **RETRACTED** 2026-08-26 -- collapses to a function of h. |
