@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-26T03:51:43Z
+updated_at: 2026-08-26T04:22:59Z
 ---
 
 ## What
@@ -206,3 +206,104 @@ producers should be *tagged* `ideal_muon` so their intent stops being invisible
 to the manifest — that is a declaration change, not a numerical one. Only the 41
 silent ones need the owner's ruling, and by then the population is small enough
 to look at.
+
+
+## 2026-08-26 — reroute scoped before editing: the 44 are NOT one batch
+
+Owner authorised rerouting the 44 silent direct-pin producers through
+`q_parameter`. Scoped before touching any of them, and two properties split the
+set in ways a by-count batching would have hidden.
+
+### 1. Twelve of the 44 have NO committed witness
+
+    32   have a committed witness  -> the ~11.5 ppb move is MEASURABLE
+    12   have none                 -> the move is UNMEASURABLE
+
+For those twelve there is no before/after to compare, so rerouting them is a
+blind numerical change: nothing on disk records what they produced at the muon
+pin, and nothing will show what changed. They should be re-run and their witness
+COMMITTED FIRST, at the muon pin, so the migration has a baseline — otherwise
+the reroute silently discards the only evidence of the prior value.
+
+### 2. Nine of the 44 use `record_upstream` — rerouting DROPS provenance
+
+The uniform idiom is:
+
+    Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+    Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+
+`record_upstream` does two things: it reads the value AND registers the upstream
+witness in `data.upstream_witness_hashes`. The obvious replacement —
+`from q_parameter import Q_50_DIGIT_STR` — supplies the value and **loses the
+provenance record**.
+
+So the reroute is not a substitution, it is a substitution plus a provenance
+decision: either accept the loss (the pin is no longer an input, so arguably
+there is nothing upstream to record), or keep `record_upstream` for provenance
+while taking the VALUE from `q_parameter` — which is a straddle-shaped hybrid
+and needs care.
+
+### Proposed batching, by SHAPE not by count
+
+    A.  9  use record_upstream          -> needs the provenance decision first
+    B. 12  no committed witness         -> baseline the witness at muon FIRST
+    C. 23  plain read, witness exists   -> the clean batch; reroute + regenerate,
+                                           before/after measurable per file
+
+**C is the only batch that is mechanical.** It is also the one where the ~11.5
+ppb claim can actually be checked file by file. A and B each carry a decision
+that is not mine.
+
+
+## 2026-08-26 — batch C is NOT mechanical either: the reroute is DEPENDENCY-ORDERED
+
+Went to execute batch C (the 24 with a witness and no `record_upstream`) and
+stopped at the first file. The finding changes the shape of the whole migration.
+
+### Rerouting a producer whose UPSTREAM is muon-built MANUFACTURES a straddle
+
+`hydrogen_qshuffle_compound.py` reads the pin **and** loads two more witnesses:
+
+    terms-2-3-atom-per-gen-mpfr-50dps.witness.json   carries the muon value
+    proton-mass-full-tower-50dps.witness.json        q0Anchor: "muon", explicitly
+
+Moving its q₀ to proton while it keeps consuming muon-built inputs mixes an
+experimental-layer q₀ with ideal-layer data **inside one computed quantity** —
+the straddle AGENTS.md forbids "regardless of size", and the exact defect this
+epic exists to remove. The reroute would not fix a straddle; it would create one.
+
+**So a producer's q₀ can only move after its upstream witnesses have moved.**
+This is a dependency-ordered migration, not a batch of independent edits. Any
+by-count batching (≤ 49 files per PR) cuts across the dependency graph and will
+straddle whatever it happens to split.
+
+### Batch C re-partitioned by upstream layer
+
+    12   truly NO upstream witness      -> safe to reroute alone
+     5   consumes a MUON-built witness  -> BLOCKED until upstream migrates
+     4   upstream is proton             -> safe
+     3   upstream unlabelled            -> UNKNOWN layer, needs a look
+
+### Two detector corrections, both mine, both caught before editing
+
+1. A first pass keyed on `witness_path("…")` and reported **14** truly-clean.
+   It missed `json.load(open(COMP / "…"))` and `json.loads((COMP / "…").read_text())`
+   — `he4_binding_k_presentation_correction_probe` loads
+   `canonical-tr-m-via-chi-cache.witness.json` that way. Keying on **any
+   `.witness.json` string literal in code_only'd source** gives **12**, and moves
+   the straddle count 4 → **5**. I nearly edited 14 files off a false-clean list.
+2. The `.witness.json` scan runs through `code_only` — a filename in a docstring
+   is not a dependency. Same discipline as `qou-5li4`; without it the prose
+   naming an upstream witness counts as consuming it.
+
+### What is actually ready
+
+The **12** are ready to edit: no upstream witness, a committed witness to
+measure against, no `record_upstream`. Their read shapes are NOT uniform
+(`witness_path(…)`, `json.load(open(COMP / …))`, `json.loads((COMP / …).read_text())`),
+so this is 12 individual edits, not a sed.
+
+**Not attempted here**, deliberately: 12 non-uniform edits plus 12 producer
+re-runs plus 12 before/after comparisons is its own PR with its own verification,
+and starting it at the tail of a long session is how an unverified change lands.
+The list and the shapes are recorded so it can be picked up cold.
