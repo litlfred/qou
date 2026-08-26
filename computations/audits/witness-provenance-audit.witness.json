@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T07:54:37.066134+00:00",
-  "commitSha": "99d499a4abd1fd4617063ba1909add28865b6e95",
+  "computedAt": "2026-08-26T08:03:13.807883+00:00",
+  "commitSha": "0169f7fe9ed7ebf5c09a087c287635554ed7ac0f",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -55,14 +55,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2784,
-      "prov_ok": 2354,
+      "total_scanned": 2785,
+      "prov_ok": 2355,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 251,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965517241379310344827586206896551724137931034482758620689655"
+      "completeness_ratio": "0.965529622980251346499102333931777378815080789946140035906643"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -7624,6 +7624,10 @@
         },
         {
           "witness": "qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-chi-block-symbolic-closure.witness.json",
           "missing_fields": []
         },
         {

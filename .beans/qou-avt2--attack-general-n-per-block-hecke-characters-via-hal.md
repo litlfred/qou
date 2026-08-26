@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-26T07:35:45Z
+updated_at: 2026-08-26T08:03:14Z
 ---
 
 Newly enabled by the owner's 2026-08-26 Murnaghan-Nakayama upload drop
@@ -39,3 +39,38 @@ the Hecke q. Identifying them is the overloaded-symbol failure registry section
 
 NOTE what this does NOT do: it does not bridge to the Xi_k weight moments --
 those collapse to a function of h (qou-ximf, retracted 2026-08-26).
+
+
+## Delivered 2026-08-26 — three probes, and a correction
+
+**Part 1** `qbeta_hecke_mn_character_engine_probe.py` (7/7) — the Jing-Liu
+cyclotomic MN rule at m=1, exact sympy over Q(q), characters on standard
+elements. Collapsed form: chi = sum q^{k-cc-2ht} (-1)^ht h^{cc-1} chi'.
+Validated against the eigenvalues of sigma, the hook-length formula, an
+independent Frobenius/Schur expansion at q->1, column orthogonality, and the
+index/sign reps.
+
+**Part 2** `qbeta_hecke_symbolic_seminormal_probe.py` (5/5) — exact symbolic
+characters for ARBITRARY words. This is the symbolic half of the corpus's own
+NAMED deferred item "F3" (`chi_lambda_braid` precision='symbolic_q' raises
+NotImplementedError citing Murnaghan-Nakayama). Cross-checks against part 1
+SYMBOLICALLY on standard elements -- two unrelated algorithms.
+
+**Part 3** `qbeta_chi_block_symbolic_closure_probe.py` (9/9) — RESULT:
+`chi_block_{3,21,111}` are the EXACT q-rational characters of beta_n - beta_p,
+not q0 coincidences. qou-avt5 flagged exactly this as unmeasured ("the words
+are q0-BAKED"); they are not -- `nucleon_gen_chains` takes a symbolic q and
+only the module-level CONSTANTS are baked.
+
+**CORRECTION to this bean's premise.** It said the corpus has no general-n
+machinery. Too broad: `computations/hecke/hecke_characters.py` has had a
+general-n NUMERICAL seminormal engine all along, and
+`_deprecated/jing_liu_characters.py` has partial symbolic closed forms (hooks
+and two-row lambda only). What was missing, and is now supplied, is EXACT
+SYMBOLIC evaluation for general lambda.
+
+## Next
+
+Un-defer F3 properly: wire the symbolic path into
+`hecke_characters.chi_lambda_braid(precision='symbolic_q')` instead of raising,
+so consumers get it through the ordinary entry point. Separate bean.
