@@ -1,5 +1,7 @@
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.MarkovInductiveCyclicity
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic.NormNum
 
 /-!
 # Discharging the cyclicity bricks against the Ocneanu tower
@@ -151,5 +153,40 @@ theorem cyclic_two_g_of_tower
     u v p r hu hv hp hr
 
 end
+
+/-! ## The conditional-expectation instance is load-bearing
+
+A "reduction" that quietly assumed its conclusion would compile exactly as
+happily as this one, so the claim is checked rather than asserted. `simp` fails
+to close `hCE` with the instance removed, which is weak evidence; the section
+below is the decisive form — with a linear `ε` that is NOT a conditional
+expectation, the `hCE` identity is **false**, not merely unproved.
+
+Keep this section. It is what stops a later reader "simplifying" the theorem by
+dropping an instance that looks decorative in the statement. -/
+
+section Necessity
+
+/-- `ε` = "scale by 2" on `ℚ`: `ℚ`-linear, but neither a retraction of the
+identity inclusion nor an `(Hn, Hn)`-bimodule map, so every field of
+`HeckeConditionalExpectation` fails. -/
+noncomputable def scaleTwo : ℚ →ₗ[ℚ] ℚ := (2 : ℚ) • LinearMap.id
+
+/-- **The `hCE` identity FAILS for a retraction that is not a conditional
+expectation.** With `Hn = Hn1 = R = ℚ`, `ι = id` and `ε` = scaling by 2, the
+left side is `2ax` and the right is `4ax`; at `a = x = 1` that reads `2 = 4`.
+
+So `towerTrace_mul_eq_of_memB` genuinely consumes its instance. -/
+theorem hCE_fails_without_conditional_expectation :
+    ¬ (∀ a x : ℚ, memB (AlgHom.id ℚ ℚ) a → memB (AlgHom.id ℚ ℚ) x →
+        towerTrace id scaleTwo (a * x)
+          = towerTrace id scaleTwo (a * towerE (AlgHom.id ℚ ℚ) scaleTwo x)) := by
+  intro h
+  have hx := h 1 1 ⟨1, by simp⟩ ⟨1, by simp⟩
+  simp only [towerTrace, towerE, scaleTwo, AlgHom.coe_id, id_eq,
+    LinearMap.smul_apply, LinearMap.id_coe, smul_eq_mul] at hx
+  norm_num at hx
+
+end Necessity
 
 end QOU.Machinery.MarkovTowerBridge
