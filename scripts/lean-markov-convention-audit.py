@@ -86,7 +86,6 @@ DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev|instance)\s+(\w+)")
 # comparison objects, the Lean analogue of the Python audit's declared-C bucket.
 # Separating actionable from deliberate is triage this script does not do.
 KNOWN_C = [
-    ("HnMarkovTrace", "markovTraceTower_canonical", "C-plain"),
     ("MarkovConventionSeparation", "markovKernel", "C-sqrtvar"),
     ("BorromeanCanonicalTraceDerivation", "zMarkov", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN", "C-sqrtvar"),
