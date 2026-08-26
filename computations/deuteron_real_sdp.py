@@ -136,6 +136,70 @@ def solve_lp_with_eq(t, G, A_eq, b_eq, n_target):
     return out
 
 
+def project_rows_to_support(A_eq, b_eq, support_idx, n_blocks):
+    """Project equality rows onto the support columns, reporting what is lost.
+
+    A row `sum_lambda a_lambda x_lambda = b` restricted to the support DROPS
+    its kernel terms. That is a MODELLING DECISION, not an algebraic identity:
+    it asserts `x_lambda = 0` on every zero-weight block — "do not occupy a
+    block the Markov trace cannot see", which under convention D is exactly
+    `y_lambda = 0 => tr_M(P_lambda) = 0`. It is stated here rather than folded
+    silently into the solve.
+
+    A row whose weight lies ENTIRELY on the kernel degenerates to `0 = b`:
+    vacuous when `b == 0`, INFEASIBLE otherwise. Both are reported per row so
+    an encoding that dies under projection is visible as such rather than as a
+    bare `feasible: False`.
+    """
+    import numpy as _np
+    if A_eq is None:
+        return None, None, []
+    kernel_idx = [i for i in range(n_blocks) if i not in set(support_idx)]
+    rows_out, rhs_out, report = [], [], []
+    for j, (row, rhs) in enumerate(zip(A_eq, b_eq)):
+        a = _np.asarray(row, float)
+        w_sup = float(_np.abs(a[support_idx]).sum())
+        w_ker = float(_np.abs(a[kernel_idx]).sum()) if kernel_idx else 0.0
+        total = w_sup + w_ker
+        degenerate = w_sup == 0.0
+        report.append({
+            "row": j,
+            "weight_on_support": w_sup,
+            "weight_on_kernel": w_ker,
+            "fraction_dropped": (w_ker / total) if total > 0 else 0.0,
+            "degenerate_under_projection": degenerate,
+            "verdict": ("infeasible (0 = b, b != 0)" if degenerate and float(rhs) != 0.0
+                        else "vacuous (0 = 0)" if degenerate
+                        else "ok"),
+        })
+        rows_out.append(a[support_idx])
+        rhs_out.append(float(rhs))
+    return rows_out, rhs_out, report
+
+
+def solve_lp_with_eq_both(t, frob_diag, A_eq, b_eq, n_target, support_idx):
+    """Full-space solve plus the support-projected one, with the row report.
+
+    Under convention D the full-space answer is not a result: the kernel blocks
+    carry zero cost and a vacuous positivity row, and the net constraint is a
+    PLAIN SUM, so they absorb `sum x = n_target` for free and the optimum is 0.
+    The projected solve is the one to read. Both are emitted so the difference
+    stays auditable rather than being asserted in prose.
+    """
+    import numpy as _np
+    full = solve_lp_with_eq(t, _np.diag(frob_diag), A_eq, b_eq, n_target)
+    t_sup = _np.asarray(t, float)[support_idx]
+    g_sup = _np.diag(_np.asarray(frob_diag, float)[support_idx])
+    rows_sup, rhs_sup, report = project_rows_to_support(
+        A_eq, b_eq, support_idx, len(t))
+    proj = solve_lp_with_eq(t_sup, g_sup, rows_sup, rhs_sup, n_target)
+    return {
+        "result": full,
+        "result_support_projected": proj,
+        "projection_row_report": report,
+    }
+
+
 def parse_partition(key: str) -> tuple[int, ...]:
     """'(3, 2, 1)' -> (3, 2, 1)."""
     return tuple(int(p) for p in key.strip("()").rstrip(",").split(",") if p.strip())
@@ -369,7 +433,7 @@ def main() -> int:
     methods["1_bar_involution_fold"] = {
         "description": "x_λ = x_λ' (bar-involution/Type-B fold, §7b) — symmetry regulariser",
         "ansatz_flag": False,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), fold_rows, fold_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, fold_rows, fold_rhs, n_target, support_idx),
     }
 
     # (2) Character-projection color-flavor constraints (UN-VETTED ANSATZ).
@@ -388,7 +452,7 @@ def main() -> int:
         "description": "per-pair χ^λ projection rows + AME-apportioned RHS",
         "ansatz_flag": True,
         "ansatz_warning": "UN-VETTED: pair→block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), cf_rows, cf_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, cf_rows, cf_rhs, n_target, support_idx),
     }
 
     # (3) Conservation-law constraints only: baryon number (Σx fixes total)
@@ -400,7 +464,7 @@ def main() -> int:
     methods["3_conservation_laws"] = {
         "description": "baryon (net) + charge (sign-weighted) conservation rows",
         "ansatz_flag": False,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), cons_rows, cons_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, cons_rows, cons_rhs, n_target, support_idx),
     }
 
     # (4) AME-binding equality: retarget the net constraint to the physical
@@ -413,7 +477,7 @@ def main() -> int:
         "non_default_reason": "imposes the AME binding as an equality (consumes "
                               "the experimental answer); a validation anchor, not "
                               "a substrate derivation.",
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), [t], [B_D_AME_MeV], n_target),
+        **solve_lp_with_eq_both(t, frob_diag, [t], [B_D_AME_MeV], n_target, support_idx),
     }
 
     # (5) CANONICAL — Littlewood-Richardson branching H_6 ⊃ H_3 × H_3.
@@ -467,7 +531,7 @@ def main() -> int:
         "canonical": True,
         "production_default": True,
         "tr_M_neutron": tr_M_neutron,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), lr_rows, lr_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, lr_rows, lr_rhs, n_target, support_idx),
     }
 
     # (6) Scalar 9-pair weighted ratio (FITTED — must be labelled near-match).
@@ -488,8 +552,9 @@ def main() -> int:
         "ansatz_flag": True,
         "production_default": False,
         "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
-        "result": solve_lp_with_eq(
-            t, np.diag(frob_diag), [r_lambda], [ratio_scalar * n_target], n_target,
+        **solve_lp_with_eq_both(
+            t, frob_diag, [r_lambda], [ratio_scalar * n_target], n_target,
+            support_idx,
         ),
     }
 
@@ -567,18 +632,28 @@ def main() -> int:
             # ---- convention-D kernel structure ----
             "kernel_blocks_zero_weight": kernel_blocks,
             "phase_B_kernel_free_lunch_open": (
-                "OPEN (2026-08-26). The six Phase-B encodings below solve on "
-                "the FULL 11-block space via solve_lp_with_eq, so they inherit "
-                "the same kernel free lunch documented under "
-                "support_restricted: encodings 1, 3, 5 and 6 all return "
-                "primal_obj = 0.0, including 5_lr_branching_canonical, which "
-                "is the production default. Under convention C they returned "
-                "-0.0056, -22523, -2780 and -20230 respectively. Only "
-                "4_ame_binding_equality is unaffected, because its equality "
-                "row pins the objective to the AME value directly. Projecting "
-                "the Phase-B constraint rows onto the support is follow-up "
-                "work and is NOT done here; until it is, no Phase-B primal "
-                "objective should be read as a result."),
+                "CLOSED, with a NEGATIVE result (bean qou-6tcn). Each "
+                "encoding below now carries `result` (full space) AND "
+                "`result_support_projected`, plus a per-row "
+                "`projection_row_report`. Read the projected one. "
+                "MEASURED: all six are INFEASIBLE once projected. The reason "
+                "is structural, not numerical. On the support G is strictly "
+                "positive, so Gx >= 0 IS x >= 0 there; on the kernel G = 0, "
+                "so Gx >= 0 imposes nothing and x may go NEGATIVE. That is "
+                "what the kernel actually bought -- not merely absorbing the "
+                "net constraint at zero cost, but supplying signed "
+                "occupations. Remove it and the objective is bounded by "
+                "max(t)*n_target = 0.146058, against B_D(AME2020) = 2.224566: "
+                "short by 15.2x. Two rows also degenerate to 0 = b, one of "
+                "them (5_lr_branching_canonical row 2, mu = (1,1,1)) "
+                "infeasibly -- and that encoding is the production default. "
+                "SCOPE (a): this bounds THIS cost on THIS program with "
+                "non-negative occupations of the D-supported blocks. It "
+                "refutes no binding conjecture and says nothing about a "
+                "different cost, a different Wenzl level, or a program that "
+                "admits signed occupations for a stated reason. See "
+                "computations/meson/deuteron_support_reachability_probe.py "
+                "(6 assertions)."),
             "support_blocks": support_blocks,
             "support_restricted": support_restricted,
             # ---- Phase B interim (bounded positive-norm subspace) ----

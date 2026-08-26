@@ -1467,3 +1467,86 @@ fine), or link text repeating the URL's final path segment (the
 No mechanism identified. The workaround that holds is to not hyperlink that
 file at all — name it in a code span, as the body's Lean section already does
 for all three files. Do not spend another full-body rewrite on it.
+
+## Addendum 15 — projecting Phase B onto the support: a negative, and a sharper mechanism (2026-08-26)
+
+Bean `qou-6tcn`, the follow-on the previous addendum left open. §14 §1 said the
+six Phase-B encodings still solved on the full 11-block space and so returned
+`primal_obj = 0.0` through a "kernel free lunch", and that projecting their
+constraint rows onto the support was follow-up work. Done — and the result is
+a negative, plus a correction to how I described the free lunch.
+
+### What the kernel actually buys
+
+I wrote that the kernel blocks "absorb the net requirement at zero cost". True,
+and incomplete. On the support `G` is strictly positive, so `Gx ≥ 0` **is**
+`x ≥ 0` there. On the kernel `G = 0`, so `Gx ≥ 0` imposes **nothing** and `x`
+may go **negative**, down to the `-M` bound.
+
+So the kernel supplies **signed occupations**, and that is the load-bearing
+part. It is not that the visible blocks were paying for something for free —
+it is that the invisible ones could pay a *negative* amount.
+
+### The bound
+
+With `x ≥ 0` on the support and `Σx = n_target`, the objective is a convex
+combination scaled by `n_target`, so
+
+```
+t·x  ≤  max_{λ ∈ support} t_λ · n_target  =  0.253938 × 0.575172  =  0.146058
+B_D(AME2020)                              =  2.224566
+                                    short by 15.23×
+```
+
+Measured in [`deuteron_support_reachability_probe.py`](../../computations/meson/deuteron_support_reachability_probe.py)
+(6 assertions, two of them controls). The cost vanishes **identically** on the
+kernel — `t_λ = y_λ·χ^λ` and `y_λ = 0` there — which is why the full-space
+objective is insensitive to kernel occupation in the first place.
+
+### All six encodings, projected
+
+| encoding | full `primal_obj` | projected |
+|---|---|---|
+| `1_bar_involution_fold` | 0.0 | **infeasible** (row 3 degenerates, `0 = 0`) |
+| `2_character_projection_colorflavor` | — | **infeasible** |
+| `3_conservation_laws` | 0.0 | **infeasible** |
+| `4_ame_binding_equality` | 2.224566 | **infeasible** |
+| `5_lr_branching_canonical` | 0.0 | **infeasible** (row 2 degenerates, `0 = b`, `b ≠ 0`) |
+| `6_scalar_9pair_ratio_fitted` | 0.0 | **infeasible** |
+
+Each row now carries a `projection_row_report` giving the fraction of its
+weight that sits on the kernel — 30 % to 65 % for the non-degenerate rows. Two
+rows degenerate entirely. The infeasible one is `5_lr_branching_canonical`
+row 2, the `μ = (1,1,1)` Littlewood–Richardson row, whose weight is **100 %**
+on the kernel — and that encoding is the **production default**.
+
+That the `(1,1,1)` row is the one to die is not a coincidence: `(1,1,1)` is the
+three-row partition of 3, and the D row cap is exactly what zeroes it. The
+constraint was carrying its content on a block the canonical trace cannot see.
+
+### Scope, and what this is not
+
+**(a), scope-limited.** Measured: the support, the cost on it, the ceiling, and
+the projected feasibility of all six. **Not** claimed: that
+`conj:jsj-decomposition-linearity` or any binding conjecture is false; that the
+encodings are wrong; that the framework cannot reproduce the deuteron binding.
+The statement is narrower and exact — **this** cost vector, on **this** program,
+with non-negative occupations of the D-supported blocks, cannot reach the AME
+value. A different cost, a different Wenzl level `r`, or a program that admits
+signed occupations *for a stated reason* are all untouched.
+
+And the full-space numbers this replaces were **not wrong arithmetic**. They
+were the correct optimum of a program whose kernel is unconstrained. The finding
+is that such a program does not mean what its field names suggest — which is
+the same shape as §5's convention-C witness, one level down.
+
+### What it says to the binding front
+
+The sibling coordination on #5817 reported a calibration-free residual of
+`+31.4 %` at ²H against `−59.2 %` at ⁴He, and #5812's argument that no
+correction non-negative for all `A` can fix ⁴He while ²H overshoots. This adds
+an independent reason to expect signed structure: the one program here that
+*did* reach the AME value did so through negative occupations, and removing
+them costs a factor of 15. **That is a hint about where the sign structure has
+to live, not evidence that any particular correction supplies it** — nothing
+here computes a binding contribution.
