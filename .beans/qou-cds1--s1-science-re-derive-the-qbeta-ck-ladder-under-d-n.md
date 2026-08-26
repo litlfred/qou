@@ -1743,3 +1743,46 @@ relative error against F_required is 1.28e-6 under C and 6.02e-4 under D — D i
 471x worse in the coordinate the bean nominated as the honest one.
 
 Scope-(a). Nothing here derives F, and no value is proposed for anything.
+
+## 2026-08-26 — the D-frame TRACE baseline, computed not substituted
+
+Probe: computations/qbeta/qbeta_d_frame_trace_baseline_probe.py (4/4).
+
+NOT a z-swap. The ladder's formula is untouched. The D-frame object is built
+from its defining structural property instead -- under D the decay trace kills
+the third row and factors through Temperley-Lieb -- and
+`y_lambda_su_n(3, q, N=2)` IS that structure: a three-row partition has
+vanishing Schur function at N = 2, so y_(1^3) = 0 FALLS OUT rather than being
+imposed. Machine-checked.
+
+Trace taken on the EXHIBITED nucleon words, per block:
+
+    chi_(3)      = -0.26038764179012
+    chi_(2,1)    = -0.10681445765158
+    chi_(1,1,1)  = -0.17153864377660
+
+    two-row (D)   tr_M(Delta) = -0.15801600434149   Q_beta = 0.661452  -15.451 %
+    three-row     tr_M(Delta) = -0.13591200273905   Q_beta = 0.568925  -27.278 %
+    counit        (coordinate sum)                  Q_A    = 0.783646  +0.1678 %
+
+WHAT THIS FORECLOSES, and it is the useful part. Every rung of the published
+ladder is a sub-percent correction; the whole five-rung product moves Q_A by
+0.168 %. The D-frame trace baseline is off by 15.451 % -- **92.1x the entire
+existing ladder**. So re-deriving the ladder ON THE MARKOV TRACE cannot rescue
+Q_beta under D: no product of rungs that size closes a gap that large.
+
+SCOPE -- (a), NOT (b). This is "this construction, alone, does not reproduce
+the numbers as-is". It does NOT exclude the trace as an ingredient and does NOT
+prove Q_beta is not a trace observable. It excludes the specific hope that a
+D-frame re-derivation of the EXISTING rung structure lands on CODATA, and
+prices how far off that hope is.
+
+CONSEQUENCE FOR THE RE-DERIVATION. The two live routes are now:
+ (i) the counit/coordinate-sum route survives into D -- but the coordinate sum
+     is not an algebra map (QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one)
+     and would need its own D-frame justification, which nothing supplies; or
+ (ii) Q_beta is not a trace observable at all, and step 8 of the 2026-05-24
+     fitting-finding audit (Q_beta = |Delta(net)|*E_0, POSTULATED) is where the
+     re-derivation actually has to happen.
+
+Either way the work is at step 6/8, not in the rungs.
