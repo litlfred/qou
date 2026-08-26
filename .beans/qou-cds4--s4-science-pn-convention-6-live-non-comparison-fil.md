@@ -1,11 +1,11 @@
 ---
 # qou-cds4
 title: 'S4 (SCIENCE): p/n convention — 6 live non-comparison files + 28 witnesses off bring_color_weighted'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T07:10:20Z
+updated_at: 2026-08-26T13:20:06Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -430,3 +430,11 @@ consumers, several bar-parity), bounded at 0.0141 % per p-n interface.
 
 **This line is now discharged.** The bean's remaining scope is whatever else
 it names, not the witness count.
+
+
+## CLOSED 2026-08-26 — landed on main as 0bc2794da9 (PR #5821, rebase-merge)
+
+Both lines are discharged: the 8-file list drained (2 legitimate exceptions,
+which is the FLOOR not a queue) and the witness line closed. The residual —
+the four `-at-qinv-` frame mismatches — is handed to `qou-1oxx`, which is
+NOT a defect-with-a-known-fix: see that bean's two corrections.
