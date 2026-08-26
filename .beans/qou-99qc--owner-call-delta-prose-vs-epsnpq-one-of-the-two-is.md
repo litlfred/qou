@@ -148,3 +148,29 @@ empirical content is one scalar. But the binding constraint is sharper: the
 37.7 ppb figure exists only in a frame that is non-canonical in THREE
 independent ways. Canonicalise all three and it is 681535 ppb -- 87000x short
 of the L2 target.
+
+### RETRACTION (same day): the "convention D = 601192 ppb" row was mislabelled
+
+Owner challenged it -- "convention D makes everything else better, this seems
+odd" -- and the challenge is correct.
+
+THE ARITHMETIC IS RIGHT. alpha_C = -0.052336, alpha_D = -0.040486; cos rungs
+0.9983986 vs 0.9989990; rungs 2-5 are z-independent. 601192 ppb reproduces.
+
+THE LABEL WAS WRONG, and the corpus says so explicitly. AGENTS.md: "The ladder
+must be RE-DERIVED under D, and that is not a z-swap". And
+QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free): if the decay channel's
+decomposition kills the third row then its trace IS z_D and "the existing
+C-frame ladder is not that trace (re-derivation, not substitution)".
+
+I performed exactly the substitution the corpus forbids. So 601192 ppb is NOT
+"what convention D gives" -- it is what an invalid move gives. What convention
+D gives is UNKNOWN pending the re-derivation (qou-cds1).
+
+WHAT THE ROW DOES ESTABLISH, restated: the ladder is z_C-LOCKED. Its cos rung
+must supply exactly the 0.168 % that Q_A overshoots, and only alpha_C is large
+enough to do it (alpha_D is 23 % smaller in magnitude, delivering 0.100 %).
+That is evidence FOR the C-conditionality AGENTS.md already asserts -- it is
+not a measurement of D's accuracy.
+
+Items 1 (colour-blind crossing, 80 ppm) and 3 (muon pin) are unaffected.

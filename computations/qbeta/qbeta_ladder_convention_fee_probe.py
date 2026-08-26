@@ -21,10 +21,18 @@ Each one moves Q_beta by more than the residual it is quoted alongside:
      w = h(1/2 - delta/4) with delta = flavor_split_leading(q). Swapping to
      the canonical crossing moves Q_A by ~80 ppm.
 
-  2. MARKOV CONVENTION. The ladder's first rung is cos(alpha - b*hbar^2/2)
-     with alpha = (z-1)h/2. The published agreement needs z_C = sqrt(q)/(q+1).
-     Under the canonical z_D = q^3/(q^2+1) the SAME ladder converges to a
-     completely different place.
+  2. MARKOV CONVENTION -- and read the scope note, because the obvious
+     reading of this row is WRONG. The ladder's first rung is
+     cos(alpha - b*hbar^2/2) with alpha = (z-1)h/2, and the published
+     agreement needs z_C = sqrt(q)/(q+1). Substituting z_D into that formula
+     sends the ladder to 601192 ppb -- but that number is NOT "what convention
+     D gives". AGENTS.md and QOU.QBeta.decayLadder_zC_threeRow_ne_zero both
+     state that the ladder must be RE-DERIVED under D and that a z-swap is not
+     a valid move: if the decay channel's decomposition kills the third row
+     then its trace IS z_D and the existing C-frame ladder is not that trace.
+     What the row measures is that the ladder is z_C-LOCKED -- evidence for
+     its C-conditionality, not a measurement of D's accuracy, which is
+     UNKNOWN pending the re-derivation (qou-cds1).
 
   3. q0 PIN. The block's -0.0066 ppm reproduces only at the MUON pin. At the
      canonical proton pin (owner directive 2026-08-07, R2 2026-08-15) the same
@@ -130,11 +138,12 @@ def main() -> int:
     rows = [
         ("canonical COLOUR-WEIGHTED crossing (R3)",
          ladder(q_pr, zC(q_pr), w_colour(q_pr))),
-        ("canonical convention D  (z = q^3/(q^2+1))",
+        ("z_D SUBSTITUTED into the C-frame ladder (INVALID move; "
+         "not a measurement of convention D)",
          ladder(q_pr, zD(q_pr), w_blind(q_pr))),
         ("MUON pin (the block's own -0.0066 ppm frame)",
          ladder(q_mu, zC(q_mu), w_blind(q_mu))),
-        ("ALL THREE canonical at once (D + colour + proton)",
+        ("colour-weighted AND z_D-substituted (same caveat on z_D)",
          ladder(q_pr, zD(q_pr), w_colour(q_pr))),
     ]
     print(f"\n  {'one choice changed':50s} {'err (ppb)':>16s} {'x the base':>12s}")
@@ -149,9 +158,12 @@ def main() -> int:
     check("canonical_colour_weighting_degrades",
           abs(ppb(rows[0][1])) > abs(ppb(base)),
           f"|{mp.nstr(ppb(rows[0][1]), 6)}| > |{mp.nstr(ppb(base), 6)}| ppb")
-    check("canonical_convention_D_degrades",
+    check("ladder_is_z_C_locked_substitution_is_not_a_D_measurement",
           abs(ppb(rows[1][1])) > abs(ppb(base)),
-          f"|{mp.nstr(ppb(rows[1][1]), 6)}| > |{mp.nstr(ppb(base), 6)}| ppb")
+          f"z_D substituted gives {mp.nstr(ppb(rows[1][1]), 6)} ppb vs "
+          f"{mp.nstr(ppb(base), 6)} -- this shows the ladder is z_C-LOCKED. "
+          f"It is NOT what convention D gives; a z-swap is invalid per "
+          f"decayLadder_zC_threeRow_ne_zero. D's value is UNKNOWN (qou-cds1)")
     check("published_residual_is_quoted_at_the_NON_canonical_muon_pin",
           abs(ppb(rows[2][1])) < abs(ppb(base)),
           f"muon {mp.nstr(ppb(rows[2][1]), 6)} ppb BEATS canonical proton "
