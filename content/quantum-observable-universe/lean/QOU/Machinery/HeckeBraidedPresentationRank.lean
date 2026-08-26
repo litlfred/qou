@@ -1,6 +1,7 @@
 import QOU.Machinery.HeckeH3AlgebraInstance
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.HeckeH2AlgebraInstance
+import QOU.Machinery.HeckeH3Semisimple
 import Mathlib.Tactic.IntervalCases
 
 /-!
@@ -268,5 +269,38 @@ theorem tower_classes_inhabited_H2_H3 (q z : R) :
       ∧ HeckeMarkovExpectation R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
           (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) (epsLin (q - q⁻¹) z) 1 z :=
   ⟨inferInstance, inferInstance, inferInstance, inferInstance⟩
+
+/-! ## `WenzlTowerStep` at this rung is a TRIVIAL discharge — read this before citing it
+
+`WenzlTowerStep`'s field is an implication whose conclusion is
+`IsSemisimpleRing Hn1`. At `H₂ → H₃` that conclusion is already a theorem —
+`isSemisimpleRing_H3A`, via the explicit Wedderburn decomposition — so the field
+can be discharged by **ignoring both hypotheses and citing it**.
+
+That is what `wenzlTowerStep_H2_H3_trivial` below does, and it is why the name
+says so. It is a true statement and it is **not Wenzl's ascent**: the induction
+step (semisimplicity of `Hₙ` plus trace nondegeneracy *implying* semisimplicity
+of `H_{n+1}`) is never exercised. Anything downstream that cites this as evidence
+the ascent is formalized would be wrong.
+
+The same shape as `constant_generator_presentation`: an instance can exist while
+carrying none of the content its class is named for. Recorded for the same
+reason — so the next reader does not mistake inhabitation for content.
+
+**The general-`n` ascent remains open.** It is the actual target, and no part of
+this file touches it. -/
+
+/-- **`WenzlTowerStep` holds at `H₂ → H₃`, trivially.** Both hypotheses are
+discarded; the conclusion is `isSemisimpleRing_H3A`.
+
+Stated as a theorem taking the genericity conditions explicitly rather than as an
+`instance`, for two reasons: `isSemisimpleRing_H3A` needs them, and an instance
+would invite instance search to present a trivial discharge as though it were the
+ascent. -/
+theorem wenzlTowerStep_H2_H3_trivial (q : R) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
+    (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) (trn1 : H3A R (q - q⁻¹) → R) :
+    WenzlTowerStep R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+      (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) trn1 where
+  semisimple_ascend _ _ := isSemisimpleRing_H3A q hq h2 h3
 
 end QOU.Machinery.HeckeRank

@@ -364,6 +364,10 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_mark
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeConditionalExpectation_H2_H3 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeMarkovExpectation_H2_H3 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.tower_classes_inhabited_H2_H3 | clean
+# TRIVIAL DISCHARGE, pinned so it stays visible. wenzlTowerStep_H2_H3_trivial
+# discards BOTH hypotheses and cites isSemisimpleRing_H3A -- it is NOT Wenzl's
+# ascent, and nothing downstream may cite it as evidence the ascent is formalized.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_H2_H3_trivial | clean
 """
 
 
