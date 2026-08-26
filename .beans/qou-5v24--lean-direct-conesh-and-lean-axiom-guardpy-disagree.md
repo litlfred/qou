@@ -1,11 +1,11 @@
 ---
 # qou-5v24
 title: 'lean-direct-cone.sh and lean-axiom-guard.py disagree on freshness: verify-then-commit deadlocks the documented compose'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T07:08:18Z
-updated_at: 2026-08-26T07:26:16Z
+updated_at: 2026-08-26T07:47:01Z
 ---
 
 Reproduced 2026-08-26 while merging PR #5820.
@@ -63,3 +63,31 @@ in the original note stand; the guard's commit-time rule is deliberate (a fresh
 clone stamps every source with checkout time, so raw mtime would flag everything),
 so the fix is probably to teach the REBUILDER the same rule rather than to weaken
 the guard.
+
+
+## FIXED 2026-08-26 — 593cdea2c4 (PR #5822)
+
+`scripts/lean_freshness.py` now holds the ONE definition; both tools import it.
+The rebuilder gates on `effective_source_time` — the same commit-time rule the
+guard uses — so it can no longer call fresh an olean the guard calls stale.
+
+`-B/--force` (68b2634a3e) was the first fix and was a workaround: it made the
+operator supply by hand the agreement the tools should have had. It survives as a
+manual override; the guard's failure message no longer prescribes it.
+
+Commit time is also the RIGHT rule for the rebuilder on its own merits, not merely
+for agreement: a clone stamps every source with the checkout time, later than any
+olean restored from a build cache, so the old mtime rule recompiled a correctly
+restored cache. Verified live — a clean source with mtime 07:35:14 against an olean
+of 07:24:45 now reports `up-to-date=2 in 0s`; the old rule would have rebuilt it.
+
+Verification (all with LEAN_PATH via lean-direct-env.sh):
+  * genuinely edited source still rebuilds: `ok=1` in 2s
+  * documented compose end to end: rebuilder `ok=10, up-to-date=197 in 29s`,
+    then guard rc=0 — it terminates
+  * guard `--selftest` PASS
+
+Also fixed here: dirty-set matching is worktree-relative rather than cwd-relative
+(a cwd-relative path silently fails to match `git status` output, making an edited
+file read as clean), and the guard prints its own registry size — PR #5822's body
+said 53 entries against a measured 51.
