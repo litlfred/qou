@@ -56,6 +56,7 @@ without them the inner column-fold survives every tactic below. -/
 
 private theorem range_one_eq : List.range 1 = [0] := rfl
 private theorem range_two_eq : List.range 2 = [0, 1] := rfl
+private theorem range_three_eq : List.range 3 = [0, 1, 2] := rfl
 
 /-- The right-hand side of the telescope, `((1 − X)/(1 − Q))^n`. -/
 noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ := ((1 - X) / (1 - Q)) ^ n
@@ -130,5 +131,78 @@ theorem old_contentSum_prefactor_breaks_telescope :
       range_two_eq]
   rw [h2, h11]
   norm_num
+
+/-! ### `n = 3` — the first case where the SYT multiplicity does any work
+
+`n = 1` and `n = 2` both have `f_λ = 1` for every `λ`, so the multiplicity in
+`Σ_λ f_λ · s_λ` was never exercised: those cases would hold equally for an
+unweighted sum. `n = 3` is the first that distinguishes them —
+
+  `λ = (3)`      `f = 1`,  `n(λ) = 0`,  hooks `3,2,1`
+  `λ = (2,1)`    `f = 2`,  `n(λ) = 1`,  hooks `3,1,1`
+  `λ = (1,1,1)`  `f = 1`,  `n(λ) = 3`,  hooks `3,2,1`
+
+and the `2` is load-bearing: drop it and the identity fails. So this is the base
+case that actually tests the shape of the telescope, and the one an induction
+would need to trust. -/
+
+/-- **`n = 3`.** `s₍₃₎ + 2·s₍₂,₁₎ + s₍₁,₁,₁₎ = ((1−X)/(1−Q))³`.
+
+The `2` is the number of standard Young tableaux of shape `(2,1)`. This is the
+first telescope case in which `f_λ ≠ 1` for some `λ`. -/
+theorem telescope_three (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    WenzlSchurElement.schurElement Q X [3]
+      + 2 * WenzlSchurElement.schurElement Q X [2, 1]
+      + WenzlSchurElement.schurElement Q X [1, 1, 1] = telescopeRHS 3 Q X := by
+  have h1 : (1 : ℝ) - Q ≠ 0 := sub_ne_zero.mpr (Ne.symm hQ1)
+  have hp1 : (1 : ℝ) + Q ≠ 0 := fun h => hQm1 (by linarith)
+  have h2 : (1 : ℝ) - Q ^ 2 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 2 = (1 - Q) * (1 + Q) := by ring
+    rw [hfac]; exact mul_ne_zero h1 hp1
+  have hq2q1 : (1 : ℝ) + Q + Q ^ 2 ≠ 0 := by
+    intro h
+    -- `1 + Q + Q² = (Q + 1/2)² + 3/4 > 0` over `ℝ`, so it cannot vanish.
+    nlinarith [sq_nonneg (Q + 1 / 2), sq_nonneg Q]
+  have h3 : (1 : ℝ) - Q ^ 3 ≠ 0 := by
+    have hfac : (1 : ℝ) - Q ^ 3 = (1 - Q) * (1 + Q + Q ^ 2) := by ring
+    rw [hfac]; exact mul_ne_zero h1 hq2q1
+  norm_num [WenzlSchurElement.schurElement, nLambda, telescopeRHS,
+    WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+    range_two_eq, range_three_eq]
+  field_simp
+  ring
+
+/-- **`n = 3` is sharp at `Q = 2`, `X = 3`**: the weighted sum is exactly `8`. -/
+theorem telescope_three_at_two_three :
+    WenzlSchurElement.schurElement 2 3 [3]
+      + 2 * WenzlSchurElement.schurElement 2 3 [2, 1]
+      + WenzlSchurElement.schurElement 2 3 [1, 1, 1] = 8 := by
+  have h := telescope_three 2 3 (by norm_num) (by norm_num) (by norm_num)
+  rw [h]; norm_num [telescopeRHS]
+
+/-- **The multiplicity is load-bearing.** Replacing `f₍₂,₁₎ = 2` by `1` breaks
+the identity at `Q = 2`, `X = 3`. Stated so that "the sum of Schur elements"
+cannot be mistaken for the telescope: the *weighting* is part of the claim.
+
+At `Q = 2, X = 3` the three Schur elements are `110/21`, `10/7`, `−2/21`. With
+multiplicities `(1, 2, 1)` they sum to exactly `8`; unweighted they sum to
+`46/7`. -/
+theorem telescope_three_needs_multiplicity :
+    WenzlSchurElement.schurElement 2 3 [3]
+      + WenzlSchurElement.schurElement 2 3 [2, 1]
+      + WenzlSchurElement.schurElement 2 3 [1, 1, 1] ≠ 8 := by
+  have h3 : WenzlSchurElement.schurElement (2 : ℝ) 3 [3] = 110 / 21 := by
+    norm_num [WenzlSchurElement.schurElement, nLambda,
+      WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+      range_three_eq]
+  have h21 : WenzlSchurElement.schurElement (2 : ℝ) 3 [2, 1] = 10 / 7 := by
+    norm_num [WenzlSchurElement.schurElement, nLambda,
+      WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+      range_two_eq, range_three_eq]
+  have h111 : WenzlSchurElement.schurElement (2 : ℝ) 3 [1, 1, 1] = -2 / 21 := by
+    norm_num [WenzlSchurElement.schurElement, nLambda,
+      WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
+      range_three_eq]
+  rw [h3, h21, h111]; norm_num
 
 end QOU.MathlibExt.MacdonaldTelescope

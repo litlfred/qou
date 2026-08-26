@@ -418,6 +418,12 @@ QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_at_two_three | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.old_contentSum_prefactor_breaks_telescope | clean
+# n=3, the first case where the SYT multiplicity f_lam is not identically 1.
+# telescope_three_needs_multiplicity pins that the WEIGHTING is part of the
+# claim: unweighted the same sum is 46/7, not 8.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_needs_multiplicity | clean
 """
 
 
