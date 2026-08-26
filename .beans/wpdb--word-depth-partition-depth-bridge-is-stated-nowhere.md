@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T02:30:00Z
-updated_at: 2026-08-16T12:55:34Z
+updated_at: 2026-08-25T21:18:26Z
 ---
 
 Surfaced in #5183 as an open question, investigated and confirmed. Full
@@ -300,3 +300,45 @@ weighting highest.
 **zero findings** on a proof containing a clause its own Step 1 refutes. One
 miss is not evidence a checker is useless, but it is worth knowing before
 relying on `da-*` as coverage.
+
+
+## A SIXTH consumer, and it is on the BINDING side (2026-08-25)
+
+The five sites listed above are all **mass-formula** sites. The binding chain
+routes through the same unestablished bridge and is not in that list:
+
+    prop:jet-filtration-binding-extensive        (extensive, sorry-free)
+      -> conj:binding-manybody-eq-jet-filtration
+           -> lem:bond-order-eq-jet-degree       ("body order n = jet degree n")
+                -> prop:gb-spectral-sequence
+                -> prop:jet-prefix-gb-filtration
+
+`prop:jet-prefix-gb-filtration` DEFINES its jet prefix as a GB graded piece:
+`beta_k^GS := sigma_{k-3}(T_w) in J^{k-3}(q) / J^{k-2}(q)`. So the step naming
+WHICH body order an `a_D^{(n)}` belongs to is stated in the same `J^bullet` with
+three excluded readings.
+
+**This raises the stakes on wpdb.** The binding side is where the corpus's
+extensive term lives — the object the 4He measurement demands (it exceeds the
+complete-graph pairwise ceiling by 11.12 MeV,
+`2026-08-25-low-isotope-binding-error-staleness-vs-gap.md`).
+
+**Two consequences, deliberately separated — one is much weaker.**
+
+*Consistency observation only, NOT a derivation:* under the ideal-power reading,
+`J^{k-3}/J^{k-2}` is the zero quotient for every k > 3, so every prefix above the
+first stratum vanishes and the body-order series would truncate at the pairwise
+term — the same shape as the measured 4He failure. Since the ideal-power reading
+is precisely the one already EXCLUDED, this is a consequence of a reading nobody
+is committed to. It shows the two candidate explanations are not obviously
+independent; it establishes nothing.
+
+*Solid:* the magnitude gap is NOT downstream of `J^bullet`. `a_D^{(n)}` is a
+Seiberg-Witten period; the GB filtration enters only the indexing. Fixing
+`J^bullet` would say which term the MeV belong to, not supply them.
+
+Also note `gbDepth_const_on_H3` lands directly on the light isotopes: the atom
+word sits in `H_{3A}(q)`, so at A = 1 the grading this chain reads off is
+constant, separating first at n = 4.
+
+Analysis: `docs/audits/2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md` §4.

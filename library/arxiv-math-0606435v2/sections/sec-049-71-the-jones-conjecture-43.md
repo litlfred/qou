@@ -5,7 +5,7 @@ section_id: sec-049-71-the-jones-conjecture-43
 section_title: "The Jones conjecture 43"
 section_number: 7.1
 pages: 43-45
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -75,14 +75,12 @@ Consider ﬁrst
 βk = βk,0 = [ 4354] [2312]k .
 There are 11 Young diagrams Y of 6 boxes. Now βk ∈ B4 ⊂ B6, and according to p. 340 top, the restriction of πY to
 B4 splits into a direct sum of representations πY ′ indexed by 4-box Young diagramsY ′, which we name for shorthand
-A =
-B = C = D = E = .(49)
+A = B = C = D = E = .(49)
 The representations πY ′ are clariﬁed completely in §8 (see also §7.2 in this paper below). Denote by ψ n−1 the (reduced)
 (n − 1)-dimensional representation of Bn; see §2. Let us also write −1 for the parity representation (−1)[ .], and
 −ρ = −1 ⊗ ρ for the direct (tensor, or Kronecker) product of a represent ation ρ with the parity. Then πA = −1,
 πE is given by q[ .], πB = −ψ 3 (Note 5.7; the sign disappears here, though, because for us a lways e = [β] is even),
-πD = − V2 ψ 3 and πE = π
-◦ , with being the homomorphism B4 → B3 given by σ1,2,3 = σ1,2,1 (p. 355). Also
+πD = − V2 ψ 3 and πE = π ◦ , with being the homomorphism B4 → B3 given by σ1,2,3 = σ1,2,1 (p. 355). Also
 π = −ψ 2.
 Let us write below Y for the transposed (or dual) Young diagram to Y , given by exchanging rows and columns. For
 example, for Y = , we have Y = . The relation between πY and πY is given in Note 4.6.

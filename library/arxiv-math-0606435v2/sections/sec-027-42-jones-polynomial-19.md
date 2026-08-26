@@ -5,7 +5,7 @@ section_id: sec-027-42-jones-polynomial-19
 section_title: "Jones polynomial 19"
 section_number: 4.2
 pages: 19-20
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---

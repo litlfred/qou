@@ -5,7 +5,7 @@ section_id: sec-045-6-studying-alternating-links-by-braid-index
 section_title: "Studying alternating links by braid index"
 section_number: 6
 pages: 38-39
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---

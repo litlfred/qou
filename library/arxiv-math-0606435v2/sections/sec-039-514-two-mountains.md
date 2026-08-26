@@ -5,7 +5,7 @@ section_id: sec-039-514-two-mountains
 section_title: "Two mountains"
 section_number: 5.1.4
 pages: 29-31
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -20,8 +20,7 @@ Proof. Let k < n − 1 be the height of M. We assumed there are at least two mou
 now w.l.o.g. assume some, say the left, of the neighbored mou ntains of M has height k′ > k. Fill the two valleys
 around M starting with σk−1. Then the maximal subword has a syllable index sequence k + 1,k,k − 1,k,k − 1,k.
 Make the second and third syllable trivial (if not already), and apply YB relations, moving the fourth syllable to the
-left: k + 1,k − 1
-,k,k − 1(,k − 1),k. The result is a summit reduced word, in which a new syllable o f index k − 1
+left: k + 1,k − 1,k,k − 1(,k − 1),k. The result is a summit reduced word, in which a new syllable o f index k − 1
 (the underlined one) was removed and it became non-maximal. Hence the non-maximal subword has exponent sum
 [β′]k−1 > 1, and so MW F ≥ 4. ✷
 Lemma 5.5 If β has > 2 valleys of depth at most n − 3, then MW F(β) ≥ 4.
