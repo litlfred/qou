@@ -98,10 +98,47 @@ construction. Multi-week per axiom.
 ## External / cited / deep (58)
 
 The bulk — Adams 1985 hyperbolic volumes, Yekutieli non-abelian Stokes,
-Lobachevsky-Catalan transcendental identity, SDP strong duality, Schrijver
+~~Lobachevsky-Catalan transcendental identity~~ **[discharged 2026-08-26 — see
+below]**, SDP strong duality, Schrijver
 LP theorem, Mathlib-pending PSD lemmas, Kashiwara crystal axioms, …
 These cite established external results and / or wait for upstream
 Mathlib PRs. **Discharging these is not a feasible session-scale goal.**
+
+> **🛑 One entry in this bucket was misclassified, and the way it was
+> misclassified is the point (2026-08-26).**
+>
+> `lobachevsky_pi_div_four_eq_half_catalan` — `Λ(π/4) = G/2` — sat here as an
+> "External / cited / deep" transcendental identity for nearly three months. It
+> is now a **theorem**, proved sorry-free in about twenty lines, with no new
+> analysis and nothing fetched from upstream
+> ([`BorromeanVolumeCatalan.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanVolumeCatalan.lean)).
+>
+> Everything it needed already existed. `QOU.Knot.clausen_eq_series` — in this
+> repository, sorry-free — is the full Zagier series↔integral bridge
+> `∫₀^θ -log(2 sin(t/2)) dt = Cl₂(θ)` on `(0, 2π)`, and Mathlib supplies both
+> ingredients that bridge is built from: `integral_log_sin_zero_pi_div_two`
+> (`Analysis.SpecialFunctions.Integrals.LogTrigonometric`) and
+> `Analysis.Complex.AbelLimit`. The identity is three steps over those: drop the
+> absolute value on `[0, π/4]`, rescale `t = 2s` onto the half-angle integrand,
+> then apply the two bridges.
+>
+> **The lesson is about the triage method, not this axiom.** This bucket was
+> populated by *reading the axioms' own docstrings*, and this one's said a proof
+> "would require Mathlib's full polylogarithm machinery ... none of which is
+> currently upstream". That sentence was believed rather than checked, and it
+> stayed believed through at least two later revisits — including one on
+> 2026-08-25 that narrowed the gap to "the Clausen integral representation" and
+> re-affirmed the External classification, while the file proving exactly that
+> representation had been in the tree for weeks. An axiom's docstring is a claim
+> about the corpus made at the time it was written, and AGENTS.md §"Before
+> declaring 'open'" says to grep the corpus instead. **The rest of this bucket
+> has not been re-checked against that standard and should not be assumed
+> correct.**
+>
+> Discharging it also made a downstream consumer unconditional:
+> `WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky` (`Vol(L5a1) = 8·Λ(π/4)`) was
+> inheriting the axiom and now depends on `[propext, Classical.choice,
+> Quot.sound]` alone.
 
 ## Cross-refs
 
