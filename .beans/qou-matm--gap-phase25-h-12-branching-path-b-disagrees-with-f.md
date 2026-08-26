@@ -1,11 +1,11 @@
 ---
 # qou-matm
 title: 'GAP: phase25 H_12 branching Path B disagrees with F1 at O(1) on every dim>1 irrep'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T16:03:20Z
-updated_at: 2026-08-26T16:26:28Z
+updated_at: 2026-08-26T16:41:00Z
 ---
 
 `sublemma_2_1_h12_he4_phase25.py` verifies the H_12 ⁴He character two ways:
@@ -122,3 +122,55 @@ direct H_12 seminormal character. Nothing about the p-n interface is in play any
 more, so a discrepancy there is the η-restriction grouping, `_LR_TABLE_9_3`, or
 the `H3_GROUP_AT_H12` strand indexing — the three candidates listed above, with
 the fourth (Path-A staleness) now eliminated.
+
+
+## RETRACTED 2026-08-26 — `path_b_chi_h12` is exact; this was two different braid words
+
+This bean's premise was wrong, and the dimension split I built it on has a much
+simpler cause. Superseded by **`qou-oppb`**.
+
+Diagnostic:
+[`computations/probes/he4_canonical_braid_word_disagreement_probe.py`](../computations/probes/he4_canonical_braid_word_disagreement_probe.py).
+
+**1. The branching is complete.** For all 8 targets,
+`dim λ == Σ_{η,ν} c^λ_{η,ν}·d_η·d_ν` exactly; every η-class size equals the sum
+of its ranks; no SYT skipped. `_LR_TABLE_9_3` and `syt_restriction_shape` are
+correct — two of the four candidate causes listed above, eliminated.
+
+**2. Path B is exact.** For (11,1): the H_3 Wedderburn projectors are idempotent
+to 2e-16, of exactly the expected rank, mutually orthogonal, and sum to the
+identity on each η-class. Path B reproduces `tr(ρ_λ(β))` with defect **0.0** —
+not small, zero. The third candidate (`H3_GROUP_AT_H12` strand indexing) is
+eliminated with them.
+
+**3. The two paths run on different words.** Path A is F1's cached value, and
+F1's parameters record `atom_braid_word_3A(2, 2)`; Path B runs on
+`he4_braid_canonical()`. They differ in 36 of 47 positions while carrying the
+identical multiset of letters (5.0e-17 apart) and of generators.
+
+So the dimension split is commutativity, not a defect: 1-dim characters are
+products of scalars and are order-independent; dim>1 are matrix products and are
+not. Every one of my four candidate causes is eliminated, including the fourth
+(Path-A staleness), which the p-n flip had already refuted.
+
+**phase25 was never measuring what it reported.** It compares the characters of
+two different braid words and calls the difference a verification failure. Its
+0/8 is real as an observation and meaningless as a verdict on the branching
+machinery.
+
+### Correction to the post-#5824 note above
+
+That note said "the O(1) disagreement is an unrelated structural defect in
+`path_b_chi_h12`" and called the finding "cleaner, one confound removed". The
+first half is now retracted — there is no defect in `path_b_chi_h12`. The second
+half stands and was in fact the useful part: removing the p-n confound is what
+left a residual clean enough to chase to the actual cause.
+
+### What remains open
+
+Not this. `qou-oppb`: which of the two canonical-⁴He constructions is intended,
+and collapsing them to one so the question cannot recur. Also `qou-b4xn`, whose
+subject is `atom_braid_word_3A` and which may bear on the same choice.
+
+Leaving this bean open would keep pointing agents at `path_b_chi_h12`, which is
+correct.
