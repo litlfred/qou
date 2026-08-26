@@ -3562,3 +3562,119 @@ The honest next step is therefore not a bigger sweep but a **closed form**: the
 corpus has `α_shift` in closed form only for torus patterns
 (`prop:alpha-shift-torus-knot`), and what a colour law needs is `α_shift(K, N)`
 for the atom word. That is a derivation, and nothing here supplies it.
+
+---
+
+## Addendum 39 — 🛑 Addendum 37's candidate scan was a FIT; the bound and the closed form, derived and Lean-proved
+
+> **🛑 RETRACTION, on the author's challenge.** Addendum 37 scored a list of
+> candidate closed forms against twelve measured integers and reported the best
+> (`3·α(K) + W`, 10/12). **That is a fit.** Flagging it as *"not a law, do not
+> quote it"* does not undo having searched a form space against data, and the
+> repo's discipline is that every quantity is derived. It was also **redundant**:
+> the mechanism was already in hand from the same probe's argmax column, and the
+> derivation below says no such closed form exists to find. The candidate table
+> is superseded by what follows.
+>
+> **On calibration:** `α_shift` takes **no** CAL input. It is a Laurent valuation
+> of a seminormal character in the *formal* variable `q`, read at `q → 0` — a
+> fibre-level combinatorial invariant, not an archimedean evaluation at `q₀`.
+> CAL-1/2/3 fix the MeV scale, the modulus and the orthogonal meson class;
+> none of them enters here. So it cannot be traced to CAL-123 either — it has to
+> be derived outright.
+
+### The derivation
+
+On channel `λ`, with `ρ` the content difference across the transposed cells and
+`h = q − q⁻¹` (valuation `−1`), the seminormal entries are
+
+$$a = \frac{h}{1 - q^{-2\rho}},\qquad b = \sqrt{a\,a' + 1},$$
+
+whose valuations as `q → 0` are, **measured rather than asserted**
+([`alpha_shift_derived_bound_probe.py`](../../computations/meson/alpha_shift_derived_bound_probe.py),
+8/8):
+
+| | `σ`-entry | `σ⁻¹`-entry |
+|---|---:|---:|
+| `ρ = −1` (down a column) | **−1** | **+1** |
+| `ρ = +1` (along a row) | **+1** | **−1** |
+| off-diagonal `b` | 0 | 0 |
+
+The flip is exact: at `ρ = −1`, `a = −q⁻¹` and `a − h = −q⁻¹ − (q − q⁻¹) = −q`
+— **the leading `−q⁻¹` cancels**. So `σ` and `σ⁻¹` carry opposite per-entry
+valuations and **no entry beats `±1`**.
+
+Two consequences follow, neither fitted:
+
+- **(P1) `α_shift ≤ L`.** Every letter moves the valuation by at most one.
+- **(P2) `α_shift ≤ L_reduced`.** `tr_M` is a conjugation invariant (the Markov
+  property), so `α_shift` is too — the bound is on the *reduced* length.
+
+Against all twelve words: **P1 holds 12/12, P2 holds 12/12, and P2 is tight
+12/12.** The discriminating cases are the two words that shorten —
+`σ₁σ₁⁻¹` (`L = 2 → 0`, `α = 0`) and `σ₁σ₂σ₁⁻¹` (`L = 3 → 1`, `α = 1`) — where
+P1 alone would have permitted the larger value and P2 predicts the observed one.
+
+### The closed form for `α_shift(K, N)`
+
+A one-row or one-column diagram has a **single** standard tableau, so its
+channel is one-dimensional and the character is a pure monomial — an exact
+closed form for **every** word
+([`alpha_shift_closed_form_probe.py`](../../computations/meson/alpha_shift_closed_form_probe.py),
+6/6, verified on 13 words):
+
+| channel | colour | generator | character | `α_shift` |
+|---|---|---|---|---|
+| all-row `(n)` | `N = n+1` | `σ ↦ q` | `χ(w) = q^{W}` | `max(0, −W)` |
+| all-column `(1ⁿ)` | — (TL-radical for `n>2`) | `σ ↦ −q⁻¹` | `χ(w) = (−1)^{L} q^{−W}` | `max(0, +W)` |
+
+**A one-dimensional channel sees the writhe and nothing else.** Both are
+instances of one theorem, `χ(w) = s^{\,\mathrm{writhe}(w)}`.
+
+**The corpus's own torus formula is recovered from it.** At `n = 2`,
+`T(2,m) = σ₁^m` has colours `N ∈ {1,3}`, and the closed form gives
+`α(N=1) = m`, `α(N=3) = 0` — so `prop:alpha-shift-torus-knot`'s `r(s−1)` is the
+**colour-`N=1`** value, and at `n = 2` that channel is still in the support.
+
+### Why there is no closed form at intermediate colours — a derived statement
+
+For an intermediate two-row `λ` the channel has dimension `> 1`, the character
+is a sum over standard-tableau paths, and the pole order becomes
+
+> a **longest-path optimisation** over the tableau graph — each letter
+> contributing `−1`, `0` or `+1` according to the local `ρ`-sign —
+
+which is a combinatorial optimisation, not a function of counts. Measured:
+`σ₂σ₁σ₃σ₂` on `λ = (2,2)` has valuation `−2` where the row form gives `+4` and
+the column form `−4`; neither extreme reaches it. **So Addendum 37's scan was
+searching for something the derivation says does not exist.**
+
+*Imported, not derived here:* Kalfagianni–Tran prove `d±[J_K(n)]` are quadratic
+quasi-polynomials in the colour, so the general `α(K,N)` has quadratic-in-`N`
+**shape** with periodic coefficients. That is a cited theorem about knots and
+fixes the shape, not the coefficients.
+
+### The Lean
+
+[`AlphaShiftOneDimChannel.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/AlphaShiftOneDimChannel.lean)
+— **7 declarations, generic `CommGroup`, no `ℝ`, nothing archimedean, no
+calibration input**; `lean`-direct exit 0, no `sorryAx`, only
+`propext`/`Quot.sound`/`Classical.choice` (one decl depends on **no axioms at
+all**).
+
+| declaration | content |
+|---|---|
+| `charOf_eq_zpow` | **the closed form** — `χ(w) = s^{writhe(w)}`; both channels are instances |
+| `val_charOf` | under any additive valuation, `val χ = writhe · val s` |
+| `abs_writhe_le_length` | `\|writhe\| ≤ length` |
+| `abs_val_le_length` | **(P1)** `α ≤ L` when the generator has valuation `±1` |
+| `writhe_conj` | writhe is conjugation-invariant — why **(P2)** is on the reduced length |
+| `abs_val_lt_length_of_cancel` | non-vacuity: the bound is **strict** on a cancelling word |
+| `writhe_ne_length` | non-vacuity: `α = letter count` is a *positive-word* fact and does not generalise |
+
+Two notes for whoever builds on it. `Mathlib.Tactic.Ring` needs an **explicit**
+import here, exactly as `Linarith`/`NormNum` did in
+`ColourWeightHullThreshold.lean` — `Algebra.Group.Basic` does not bring it.
+And `abs_val_lt_length_of_cancel` is stated **without** the `|val s| = 1`
+hypothesis: it is not needed (the writhe of `σσ⁻¹` is zero), and carrying it
+would have made the theorem look more conditional than it is.
