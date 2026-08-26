@@ -996,3 +996,55 @@ That is a build, not a probe, and `Q = 1` is a non-generic specialisation where
 trace weights may degenerate — the refutation condition already recorded. Noting
 the size rather than starting it at the end of a long session: the route is
 identified and sourced, and choosing to spend on it is the author's call.
+
+### Addendum 11b — 🛑 the Type-B *route* is not realizable as I wrote it
+
+Addendum 11 prescribed: *"write the atom word in the Type-B generators (`σᵢ` for
+the intra-block crossings, `T₀` at `Q = 1` for the `2A+1` averaged sites)."*
+**That is not realizable, and the prescription is withdrawn.**
+
+Measured — the averaged letters sit at **distinct generator indices**:
+
+| isotope | strands | averaged letters at `(position, generator)` |
+|---|---:|---|
+| proton | 3 | `(4, g=0)`, `(10, g=1)` |
+| deuteron | 6 | `(4, g=0)`, `(10, g=1)`, `(11, g=2)`, `(15, g=3)`, `(16, g=3)` |
+
+Type `Bₙ` has **exactly one** distinguished generator `T₀`, at one position; the
+rest are ordinary braid generators. So the `2A+1` averaged sites cannot all be
+`T₀` in a single type-`Bₙ` algebra. A single fold supplies one special node; the
+word needs `2A+1` of them, at four distinct indices already at `A = 2`.
+
+Nor does Lusztig's unequal-parameter setting rescue it directly: there the weight
+function is **constant on conjugacy classes**, and the type-`A` generators
+`σ₀ … σ_{n−2}` are all conjugate, so they cannot carry different parameters
+within one type-`A` datum.
+
+### What survives
+
+- **The per-letter spectral identification, exactly.** Each averaged letter is
+  `([2]_q/2)·ε` with `ε² = 1`, matching a `Q = 1` type-B generator's spectrum.
+  `Q = 1, c = [2]_q/2` remains the unique solution. This is algebra and is
+  Lean-provable; it is the next thing proved below.
+- **The diagnosis.** The averaging is a hand-rolled bar-symmetrization —
+  `σ ↦ σ⁻¹` is the bar involution — which is what §7b says not to write, and
+  writing it inside a type-`A` algebra is exactly why the object left `im(ρ)`.
+- **The geometric target.** Braids in a solid torus, satellites, essential tori,
+  and the missing `Geom` case are unaffected; they are facts about what is
+  needed, not about type `B` specifically.
+
+### What is now open, restated honestly
+
+The requirement is a structure with **`2A+1` involutive generators at distinct
+positions**, interleaved with ordinary braid generators, whose closures live in a
+manifold with essential tori. Type `Bₙ` is not it. Whether such a structure
+exists — a multiply-folded datum, a Coxeter system whose special nodes are
+non-conjugate, or something else — **is open, and I do not have a candidate.**
+
+**And the trace comparison is moot in its stated form**: there is no type-`B`
+word to trace, so running it would be computing on a premise this addendum has
+just falsified. Not run, deliberately.
+
+This is the ninth of my own claims corrected on this arc. It was found by
+checking where the averaged letters actually sit, which took one measurement and
+should have preceded the prescription rather than following it.
