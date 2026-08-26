@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T21:17:53Z
+updated_at: 2026-08-26T21:21:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2007,3 +2007,25 @@ discipline forbids hunting further corrections until one lands near the proved
 z-free part is now a closed form tied to a named block, the transport is
 identified as motion along the Markov line, and the two pieces that are ring
 identities are machine-checked.
+
+
+### Closed form of the floor, inside the Ocneanu family alone
+
+Follow-through, same probe (now 20/20). Everything in the block-resolved
+identity except the `a_λ` came from the Ocneanu trace; the `a_λ` were *solved
+for*, which makes them determined but not explained. Since
+`net = tr_M^{z=1} − h·δ_{w₀}` and both sides restrict to the centre:
+
+    a_λ = y_λ(1) − h·b_λ
+
+with `b_λ` the χ-expansion of the longest-coefficient functional on the centre.
+Verified for all three blocks — **and `b_(2,1) = 0`**. So `a_(2,1)` is not merely
+numerically equal to a Markov weight, it **is** one, and
+
+    net(dC) = −h · y_(2,1)(1)                                        [exact]
+
+The z-free part of the ladder phase, stated entirely inside the Ocneanu family
+with no `net`-specific object left in it. With `χ^(2,1)(Δ) = 0` from the block
+resolution, the 2-dimensional block's role is now complete: nothing in the
+trace-visible part, everything in the trace-invisible part, and its size there
+fixed by its own Markov weight at the trivial loop value.
