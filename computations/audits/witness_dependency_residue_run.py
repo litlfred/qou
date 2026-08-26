@@ -142,7 +142,34 @@ if "prior_timeouts" not in dir():
 
 results = prior + [st] if st["producer"] not in done else list(prior)
 todo = [(s,w) for s,w in sorted(prod.items()) if s != SELFTEST and s not in done]
+# TWO-TIER PASS. The runner is serial and container resets here cut it short,
+# so a single slow producer at the full budget can consume an entire container
+# lifetime and the queue barely advances. Tier 1 runs everything at a small
+# budget to clear the many fast producers; anything exceeding it is DEFERRED —
+# explicitly NOT a verdict — and retried at the full budget in tier 2.
+#
+# This does NOT create the mixed-budget inconsistency that simply lowering the
+# budget would: a producer is only ever given a verdict by a run that completed
+# within the budget it was given, and BUDGET_EXCEEDED is still reached only at
+# the FULL budget, never the tier-1 one.
+TIER1 = 25
+deferred = []
 for i,(stem,ws) in enumerate(todo,1):
+    _full = BUDGET
+    BUDGET = TIER1
+    r = run_one(stem, ws)
+    BUDGET = _full
+    if r.get("verdict") == "TIMEOUT":
+        deferred.append((stem, ws))
+        print(f"[{i}/{len(todo)}] {stem:<48s} DEFERRED (>{TIER1}s)", flush=True)
+        continue
+    results.append(r)
+    print(f"[{i}/{len(todo)}] {stem:<48s} {r['verdict']:<14s} {r['sec']:6.1f}s "
+          f"moved={len(r.get('moved',[]))}", flush=True)
+    json.dump({"sha":SHA,"results":results},open("/tmp/residue_results3.json","w"),indent=1)
+
+print(f"\ntier 1 done: {len(deferred)} deferred to the full {BUDGET}s budget\n", flush=True)
+for i,(stem,ws) in enumerate(deferred,1):
     r = run_one(stem, ws)
     if r.get("verdict") == "TIMEOUT":
         r["timeout_count"] = prior_timeouts.get(stem, 0) + 1
