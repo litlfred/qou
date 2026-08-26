@@ -342,6 +342,52 @@ def main() -> int:
     print("\n  Residual after the extraction is exactly 0 by construction —")
     print("  3 unknowns, 3 equations. No agreement is being demonstrated.")
 
+    # ------------------------- is `multi-link emit` the n=3 term?  (coordinator)
+    line("=")
+    print("IS THE DASHBOARD'S `multi-link emit` THE n=3 TERM?  — NO, structurally")
+    line()
+    print("A live dashboard run shows E_multilink takes A=3 from err 1.38/1.44 to")
+    print("1.06/1.07 — it behaves like a three-body term where one is wanted. It is")
+    print("parameter-free (the bar-odd, q↦q⁻¹-antisymmetric part of the")
+    print("inter-nucleon binding defect tr_free−tr_atom; mass_binding_dashboard.py")
+    print(":601-614), so the near-miss is not a fit. But a body-order n=3 term is")
+    print("IDENTICALLY ZERO on a two-body system, and this one is not:")
+    try:
+        from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
+        print(f"\n   {'iso':>5} {'E_multilink (MeV)':>20}")
+        for (Z, N, nm) in ((1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He")):
+            ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+            tai, tfi, _, _ = tr_m_atom_zn(Z, N, q=mp.mpf(1) / Q0, dps=50)
+            eml = alpha * abs(((tf - ta) - (tfi - tai)) / 2)
+            print(f"   {nm:>5} {mp.nstr(eml, 10):>20}"
+                  + ("   ← must be 0 for an n=3 term" if nm == "2H" else ""))
+        print("\n   E_multilink(²H) ≠ 0 ⇒ it is NOT the n=3 body-order term.")
+    except Exception as exc:                                   # pragma: no cover
+        print(f"   [tr_m_atom_zn unavailable: {exc}]")
+    print("   It may still be a real object; it is not THIS one. Treat with the")
+    print("   caution its neighbour B_vol earned (DEPRECATED 2026-08-08, postdiction")
+    print("   near-match, not derived) until its provenance is separately traced.")
+    print("   Recomputed here in exact mpmath — the dashboard casts these traces to")
+    print("   float64 before a near-cancelling subtraction, which is a defect in")
+    print("   that file (not this one); the four values survive it unchanged.")
+
+    # --------------------------------------------- how conditional are the anchors
+    line("=")
+    print("CONDITIONALITY OF THE ANCHORS (beyond the free parameter)")
+    line()
+    print("n=2  B_sym is tagged DERIVED* — KVC-CONDITIONAL: ln|tr_M| is Vol only")
+    print("     via `vol-through-tau`, conditional on the OPEN Volume Conjecture")
+    print("     `conj:kashaev-volume-conjecture`. So the n=2 anchor is derived")
+    print("     CONDITIONAL ON THE VOLUME CONJECTURE, not outright.")
+    print("n=4  ρ_F = 2 is consumed as an input hypothesis (above).")
+    print("E_C  also DERIVED*: α_EM is derived but conditional on an open Witten-κ")
+    print("     Gram-determinant `sorry`; R = ƛ_π·A^(1/3) is a saturation")
+    print("     assumption (the fitted exponent is 0.97/0.43/0.53/0.31 at A=2,3,3,4)")
+    print("     and coefficient-exactly-1 is a selection among four mass scales.")
+    print("\n⇒ 'pinned at two body orders already derived without fitting' overstates")
+    print("  both anchors. Neither is unconditional, and one free parameter remains")
+    print("  regardless.")
+
     line("=")
     print("VERDICT")
     line()
