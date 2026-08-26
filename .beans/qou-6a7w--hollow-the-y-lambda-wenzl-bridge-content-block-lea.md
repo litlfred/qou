@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T21:51:54Z
+updated_at: 2026-08-26T22:05:38Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -257,3 +257,34 @@ share and is complete; the denominators are not.
 Recording it here rather than only in the PR body because this bean is what a
 later agent greps, and "all the ingredients are in place" would send them in
 expecting an assembly job.
+
+
+### CORRECTION TO THE CORRECTION — measured, 2026-08-26
+
+I over-corrected the entry above. `computations/y_lambda_pieri_step_probe.py`
+(exact sympy, no floats, no witness) measures what I had been asserting:
+
+- **(P) holds with X FREE** at eight shapes, up to `(3,2,1)` with four addable
+  corners.
+- **The per-shape ratio HAS a closed form** and it needs no collapse:
+  `s_{λ+□(r)}/s_λ = Q^r · (1 − X·Q^{λ_r−r})/(1 − Q^{h_μ(r,λ_r)}) ·
+  ∏_{h ∈ arm ∪ leg} (1−Q^h)/(1−Q^{h+1})`. The arm and leg sets are exactly what
+  the Lean update rule moves; `Q^r` is `nLambda_addBoxRow`.
+- **The shift product does NOT collapse** — `(Q²+Q+1)/((Q+1)³(Q²+1))` at
+  `λ=(3,2,1), r=1`; `1/(Q²+Q+1)` at `(3,1), r=1`.
+
+So the previous entry's "relating them is the hook-walk, the substance of (P)"
+is **wrong**. There is nothing to collapse. The per-shape ratio is reachable
+from what has landed, which is closer to my ORIGINAL claim than to the
+correction of it. **The sum over corners is the hard part, and always was.**
+
+That is three successive mischaracterisations of the same piece of mathematics,
+each stated confidently, none measured until now. The probe exists so the next
+one is checked rather than recalled.
+
+### A real gap in the Lean, found by the same probe
+
+`addBoxRow` is `List.set`, which is a **no-op out of range**. So
+`addBoxRow λ (length λ) = λ`, **not** `λ ++ [1]`. The new-bottom-row corner is
+not expressible by `addBoxRow` and needs its own operation — and every shape
+in the probe has exactly one such corner. Any attempt at (P) must add it.
