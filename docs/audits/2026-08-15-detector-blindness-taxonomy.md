@@ -31,10 +31,53 @@ question.
 | 11 | the **live code path** | prose that is the module's only convention statement | `markov_peel.tr_M_atomic`'s docstring (#5190) |
 | 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
 | 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
+| 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 14 — the detector walks one tree and the count is quoted for the repo
+
+Added 2026-08-26 (bean `qou-cxjq`).
+
+[`scripts/convention-c-producer-audit.py`](../../scripts/convention-c-producer-audit.py)
+walks the tree four times and every one is `base.rglob("*.py")` (lines 635, 760,
+785, 930). It is a **producer** audit, producers are Python, and its numbers are
+correct and correctly scoped. The blindness is not in the tool — it is in the
+reading: a figure produced by a Python-only walk gets quoted as the corpus's
+convention-C surface, and nothing else scans `.lean`, so that surface has never
+been counted at all.
+
+**Measured, once someone looked:** 7 convention-C Markov-parameter sites across
+6 `.lean` files, and `markovZ` is **five declarations spanning both
+conventions** — `z_C(q₀) = 0.49932…` against `z_D(q₀) = 0.61268…` under one
+name.
+
+Three properties make this different from #1–#13, and the third is the one worth
+carrying:
+
+1. **It is an absent measurement, not a wrong one.** Every prior entry is a
+   detector returning a number that is wrong about the thing it scanned. This
+   one returns a number that is right, about a tree that is not the corpus.
+2. **Only 3 of the 7 are actually hard to see** — the square-root-variable forms
+   `u/(u²+1)` and `s/(s²+1)` with `u² = q`, which share no lexeme with `√q/(q+1)`
+   and do need the answer-shaped test. The other **4 write `Real.sqrt q` in plain
+   sight**. So "a grep cannot in principle catch this" was too strong: mostly
+   nothing had grepped.
+3. **A migration can deepen the blindness while succeeding at its own goal.**
+   The Tier-2 migration replaced `Real.sqrt q` with a generic
+   `markovZ (u : R)` where `u² = q`. It removed the square root — its stated
+   purpose — and left the convention untouched and *less* visible. When
+   evaluating a migration, ask separately what it moved and what it merely
+   renamed.
+
+**The reading error this cost.** The bean that surfaced it reported AGENTS.md as
+carrying a false convention-C all-clear for `.lean`. There is none: the single
+"0 in `.lean`" claim in that document belongs to the **Λ vs Cl₂ naming** guard
+(`qou-zdz5`). Two drains, both reported "corpus-wide", conflated by shape rather
+than subject — inside a bean about detector blindness. Retracted in
+[`2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`](2026-08-26-convention-c-in-lean-and-the-markovz-overload.md).
 
 ### 13 — the staleness check said "current" about a stale witness
 
