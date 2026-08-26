@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:27Z
-updated_at: 2026-08-26T18:21:32Z
+updated_at: 2026-08-26T18:27:01Z
 ---
 
 
@@ -166,3 +166,63 @@ Total ruled out: ~23 automated placements across 5 batteries.
 Write middle' out explicitly as the second calc step's target and let the
 ELABORATOR check the endpoints -- a small goal with fast feedback -- rather
 than guessing whole-proof tactics. Then prove middle = middle' on its own.
+
+
+
+## REDUCED TO ONE LEMMA — skeleton verified, exchange open (2026-08-26, final pass)
+
+Steps 1, 3 and 4 of the calc are PROVED. The whole tensor-dual snake now rests
+on a single interchange step. Verified end to end with only that step sorry'd:
+`lean` exit 0, one `declaration uses 'sorry'` warning and nothing else.
+
+### The working skeleton — copy this, do not re-derive it
+
+    calc _ = 𝟙 _ ⊗≫ (Y2 ⊗ X2) ◁ eta_ X X2
+            ⊗≫ ((Y2 ⊗ X2) ◁ (X ◁ eta_ Y Y2 |> X2) ⊗≫ (Y2 ◁ eps_ X X2 |> Y) |> (Y2 ⊗ X2))
+            ⊗≫ eps_ Y Y2 |> (Y2 ⊗ X2) ⊗≫ 𝟙 _ := by monoidal          -- PROVED
+      _ = 𝟙 _ ⊗≫ (Y2 ⊗ X2) ◁ eta_ X X2
+            ⊗≫ (Y2 ◁ eps_ X X2 |> X2 ⊗≫ Y2 ◁ eta_ Y Y2 |> X2)
+            ⊗≫ eps_ Y Y2 |> (Y2 ⊗ X2) ⊗≫ 𝟙 _ := by
+            sorry                                                      -- THE ONLY GAP
+      _ = 𝟙 _ ⊗≫ Y2 ◁ (X2 ◁ eta_ X X2 ⊗≫ eps_ X X2 |> X2)
+            ⊗≫ (Y2 ◁ eta_ Y Y2 ⊗≫ eps_ Y Y2 |> Y2) |> X2 ⊗≫ 𝟙 _ := by monoidal   -- PROVED
+      _ = _ := by
+            rw [ExactPairing.coevaluation_evaluation'',
+                ExactPairing.coevaluation_evaluation'']
+            monoidal                                                   -- PROVED
+
+(`|>` above is the whiskerRight triangle; `◁` is whiskerLeft. Written this way
+because the real glyph does not survive every tool path.)
+
+### What the one gap is
+
+Exactly the INTERCHANGE: move `eta_Y` before `eps_X`. They act on disjoint
+strands -- eps_X consumes X2 (from the dual) and X (from eta_X); eta_Y creates
+Y ⊗ Y2 -- so it is true, and it is `whisker_exchange` morally. Both sides
+TYPE-CHECK (four bracketings of the exchanged middle were checked and all four
+elaborate), so the statement is right; only the placement is missing.
+
+### Ruled out for this ONE step (all run, all fail)
+
+congr 1 / congr 2 / congr 3; simp only [monoidalComp] then rw whisker_exchange
+in both directions; congr 1 followed by either; simp [monoidalComp,
+whisker_exchange]; monoidal; whisker_exchange with EXPLICIT arguments
+(Y2 ◁ eps_ X X2) (eta_ Y Y2) in both directions; and the tensorHom
+formulation -- simp/rw with tensorHom_def and tensorHom_def' in four
+combinations, which is the natural spelling of interchange and the most
+promising of the lot.
+
+Roughly 35 automated placements across 8 batteries now excluded.
+
+### The next thing to try (not attempted)
+
+Two more calc steps INSIDE step 2, regrouping each side until a literal
+`W ◁ g ≫ f |> Z` appears with no compound whiskering around it -- that bare
+pattern is what whisker_exchange matches and what the compound forms hide.
+This is the same move that made step 1 work; it was not applied to step 2.
+
+### Standing note
+
+No Lean committed. A sorry in the repo would assert this is one lemma away --
+which is now TRUE and precisely located, but the strict discipline is that the
+repo carries no sorry, and a bean carries the skeleton instead.
