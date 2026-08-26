@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:52:37.363507+00:00",
-  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
+  "computedAt": "2026-08-26T04:19:19.939698+00:00",
+  "commitSha": "411ed132489d4382b6b0f1cd7e101f451a5ab21a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 74,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
@@ -42,10 +42,10 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 972,
+      "Q0_OK": 974,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
-      "Q0_INDEPENDENT": 49,
+      "Q0_INDEPENDENT": 48,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -541,10 +541,6 @@
         },
         {
           "witness": "atomic-chirality-residue.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "atomic-tr-m-helium4-canonical.witness.json",
           "detail": ""
         },
         {
@@ -2593,6 +2589,10 @@
         },
         {
           "witness": "me-additive-term-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atom-vs-atlas-markov-trace.witness.json",
           "detail": ""
         },
         {
@@ -6826,6 +6826,10 @@
           "detail": ""
         },
         {
+          "witness": "atomic-tr-m-helium4-canonical.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "atomic-tr-m-helium4.witness.json",
           "detail": ""
         },
@@ -7667,6 +7671,10 @@
         },
         {
           "witness": "chirality-avg-content.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chirality-topology-binding.witness.json",
           "detail": ""
         },
         {
@@ -10937,10 +10945,6 @@
         },
         {
           "witness": "undeclared-muon-pin-flip-risk.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chirality-topology-binding.witness.json",
           "detail": ""
         },
         {

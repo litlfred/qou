@@ -2018,6 +2018,35 @@ muon; muon-anchor → ~4000σ on proton).
      stale-high**. A both-pin witness is either a deliberate comparison
      or a layer straddle — see the straddling hazard above; triage is
      bean `qou-cds3`.)
+
+     > **State the METHOD when you quote this number, or the next reader
+     > will "correct" it downward (added 2026-08-26).** "Carries the muon
+     > fingerprint" is ambiguous *in this corpus specifically*, because
+     > [`muon_pin_three_values_probe.py`](computations/audits/muon_pin_three_values_probe.py)
+     > establishes that **three different values are all called "the muon
+     > q₀"** — the frozen canonical pin `1.1099785955573347…`, and the
+     > lepton-tower derivation at CODATA 2018 (`…55541805…`) and 2022
+     > (`…56427390…`). They diverge at the **13th significant digit**, so
+     > the choice of prefix length silently selects which of the three you
+     > are counting:
+     >
+     > | match on | counts | at 2026-08-16 | at 2026-08-26 |
+     > |---|---|---|---|
+     > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
+     > | `1.1099785955573347` (full) | **the canonical pin only** | 468 | 149 |
+     >
+     > The **870** above is the ten-digit reading and is correct. Measured
+     > with the same script at both ends (`git ls-tree` on each revision,
+     > so the denominator moves with the tree: 2947 → 3102 tracked). The
+     > migration has genuinely run — **871 → 477 under the recorded
+     > definition** — but it has *not* fallen to ~149, and an agent
+     > measuring only the canonical literal will think it has.
+     >
+     > Recorded because that is exactly what happened on 2026-08-26: this
+     > figure was measured at 149, called "stale by 5.8×", and was one
+     > edit away from being replaced by a number answering a different
+     > question. Quote the number **with its prefix**, or re-measure and
+     > say which you used.
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
