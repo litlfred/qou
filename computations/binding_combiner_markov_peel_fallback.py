@@ -353,9 +353,13 @@ def main() -> int:
         "wrong A-trend) — trace difference has no magic-A scale factor",
     )
     w.add_data("color_weighting_note",
-               "strict_averaged used; canonical bring_color_weighted delta "
-               "is a sub-0.1% numeric perturbation not representable in the "
-               "exact-symbolic-in-q trace path")
+               f"{PN_CONVENTION} used (canonical per owner ruling R3). This "
+               "note read 'strict_averaged used' until 2026-08-26: the "
+               "convention was flipped in PR #5783 and the note was left "
+               "behind, so the witness went on DECLARING the old convention "
+               "while the code computed the new one. Derived from "
+               "PN_CONVENTION now rather than restated, so it cannot drift "
+               "again (bean qou-cds4).")
     w.add_data("total_wall_sec", round(total_elapsed, 1))
     out_path = w.save()
     print(f"  → wrote {out_path}", flush=True)

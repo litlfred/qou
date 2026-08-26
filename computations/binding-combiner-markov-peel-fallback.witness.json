@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-25T19:13:36.290388+00:00",
-  "commitSha": "58f71d2a95f7635a7f43fbee0faf0fa671674ad7",
+  "computedAt": "2026-08-26T07:04:02.123123+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [
     {
       "name": "a3plus_atoms_bypass_rank_deficiency_blocker",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 20,
   "computation": "binding-combiner-markov-peel-fallback",
   "scriptFile": "binding_combiner_markov_peel_fallback.py",
-  "scriptHash": "be64814b80ef",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "149893d5c342",
+  "scriptCommitSha": "51908a3e827e4c034ea445b897f87a43a8d4cfab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,7 +64,7 @@
           "reduced_term_count": 16,
           "trace_sympy_ops": 589,
           "word_length": 22,
-          "elapsed_reduce_sec": 0.297,
+          "elapsed_reduce_sec": 0.357,
           "elapsed_trace_sec": 0.002
         },
         "bound_config": {
@@ -73,8 +73,8 @@
           "reduced_term_count": 32,
           "trace_sympy_ops": 2703,
           "word_length": 23,
-          "elapsed_reduce_sec": 1.299,
-          "elapsed_trace_sec": 0.005
+          "elapsed_reduce_sec": 1.482,
+          "elapsed_trace_sec": 0.006
         },
         "B_dim": "0.55654466040443821190477222413",
         "B_MeV_E0": "0.435403481607",
@@ -94,8 +94,8 @@
           "reduced_term_count": 64,
           "trace_sympy_ops": 2373,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.723,
-          "elapsed_trace_sec": 0.014
+          "elapsed_reduce_sec": 2.017,
+          "elapsed_trace_sec": 0.017
         },
         "bound_config": {
           "tr_M_at_q0": "0.22931010210455650733209081026890887960280163645604",
@@ -103,8 +103,8 @@
           "reduced_term_count": 256,
           "trace_sympy_ops": 20658,
           "word_length": 35,
-          "elapsed_reduce_sec": 18.542,
-          "elapsed_trace_sec": 0.144
+          "elapsed_reduce_sec": 22.873,
+          "elapsed_trace_sec": 0.194
         },
         "B_dim": "0.888536126873670069996250574556",
         "B_MeV_E0": "0.695131497432",
@@ -124,8 +124,8 @@
           "reduced_term_count": 64,
           "trace_sympy_ops": 2352,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.71,
-          "elapsed_trace_sec": 0.019
+          "elapsed_reduce_sec": 2.2,
+          "elapsed_trace_sec": 0.025
         },
         "bound_config": {
           "tr_M_at_q0": "0.40376703685142817036867025333340254115508707059186",
@@ -133,8 +133,8 @@
           "reduced_term_count": 128,
           "trace_sympy_ops": 9684,
           "word_length": 35,
-          "elapsed_reduce_sec": 6.397,
-          "elapsed_trace_sec": 0.046
+          "elapsed_reduce_sec": 8.159,
+          "elapsed_trace_sec": 0.054
         },
         "B_dim": "0.892908575393515847369229041897",
         "B_MeV_E0": "0.69855220999",
@@ -154,8 +154,8 @@
           "reduced_term_count": 256,
           "trace_sympy_ops": 8282,
           "word_length": 44,
-          "elapsed_reduce_sec": 9.058,
-          "elapsed_trace_sec": 0.112
+          "elapsed_reduce_sec": 10.712,
+          "elapsed_trace_sec": 0.127
         },
         "bound_config": {
           "tr_M_at_q0": "0.16097414544240738182587344098071685392360735413340",
@@ -163,8 +163,8 @@
           "reduced_term_count": 1024,
           "trace_sympy_ops": 63108,
           "word_length": 47,
-          "elapsed_reduce_sec": 83.337,
-          "elapsed_trace_sec": 1.536
+          "elapsed_reduce_sec": 100.034,
+          "elapsed_trace_sec": 2.276
         },
         "B_dim": "1.11980900608623902881046442615",
         "B_MeV_E0": "0.876063997507",
@@ -187,8 +187,8 @@
     ],
     "bypasses_rank_deficiency_blocker": true,
     "closure_status": "blocker-free baseline; does NOT close binding (under-binds, wrong A-trend) — trace difference has no magic-A scale factor",
-    "color_weighting_note": "strict_averaged used; canonical bring_color_weighted delta is a sub-0.1% numeric perturbation not representable in the exact-symbolic-in-q trace path",
-    "total_wall_sec": 129.6
+    "color_weighting_note": "bring_color_weighted used (canonical per owner ruling R3). This note read 'strict_averaged used' until 2026-08-26: the convention was flipped in PR #5783 and the note was left behind, so the witness went on DECLARING the old convention while the code computed the new one. Derived from PN_CONVENTION now rather than restated, so it cannot drift again (bean qou-cds4).",
+    "total_wall_sec": 156.9
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
