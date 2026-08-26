@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T23:00:05.134461+00:00",
-  "commitSha": "c0a9eac8cf0e16b1984f2e00cfe4b2ba12422c27",
+  "computedAt": "2026-08-26T23:17:29.691557+00:00",
+  "commitSha": "17522305edd72b0573f5d9296469054919229b06",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -43,7 +43,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 1010,
+      "Q0_OK": 1011,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 13,
       "Q0_INDEPENDENT": 48,
@@ -10172,6 +10172,10 @@
         },
         {
           "witness": "qbeta-d-frame-eigenphase-window.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-d-frame-rung-one-rederivation.witness.json",
           "detail": ""
         },
         {

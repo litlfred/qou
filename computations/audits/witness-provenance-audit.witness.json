@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T23:02:24.189602+00:00",
-  "commitSha": "c0a9eac8cf0e16b1984f2e00cfe4b2ba12422c27",
+  "computedAt": "2026-08-26T23:19:50.348350+00:00",
+  "commitSha": "17522305edd72b0573f5d9296469054919229b06",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -56,14 +56,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2837,
-      "prov_ok": 2400,
+      "total_scanned": 2838,
+      "prov_ok": 2401,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 255,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 99,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965103983080719069439548819175185054635178004934790271413465"
+      "completeness_ratio": "0.965116279069767441860465116279069767441860465116279069767442"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -7893,6 +7893,10 @@
         },
         {
           "witness": "qbeta-d-frame-markov-weights.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-d-frame-rung-one-rederivation.witness.json",
           "missing_fields": []
         },
         {
