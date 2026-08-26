@@ -406,7 +406,8 @@ def main(argv: list[str]) -> int:
         return 0
 
     crit = [f for f in findings if f["severity"] == "CRITICAL"]
-    adv = [f for f in findings if f["severity"] != "CRITICAL"]
+    major = [f for f in findings if f["severity"] == "major"]
+    adv = [f for f in findings if f["severity"] == "advisory"]
     for f in findings:
         print(f"{f['severity']:8s} {f['file']}:{f['line']}  {f['decl']}")
         print(f"         borrowed : {', '.join(f['borrowed'])}")
@@ -414,11 +415,25 @@ def main(argv: list[str]) -> int:
         if f["external_lemmas_in_proof"]:
             print(f"         proof cites: {', '.join(f['external_lemmas_in_proof'][:6])}")
         print(f"         stmt     : {f['statement'][:160]}")
-    print(f"\nborrowed-name audit: {len(crit)} CRITICAL, {len(adv)} advisory")
+    print(f"\nborrowed-name audit: {len(crit)} CRITICAL, {len(major)} major, "
+          f"{len(adv)} advisory")
     if out:
-        json.dump({"schema": "lean-borrowed-name/v1", "findings": findings},
-                  open(out, "w"), indent=2)
-        print(f"wrote {out}")
+        # Persist CRITICAL + major only.  The advisory tier is 939 of 1148 rows
+        # and ~700 KB; it is the tier this tool deliberately does not even
+        # print, it carries no verdict, and it churns on every Lean edit.  Its
+        # count is kept in the header so the denominator is not lost.
+        keep = [f for f in findings if f["severity"] in ("CRITICAL", "major")]
+        json.dump({
+            "schema": "lean-borrowed-name/v1",
+            "producer": "scripts/lean-borrowed-name-audit.py",
+            "counts": {"critical": len(crit), "major": len(major),
+                       "advisory_not_persisted": len(adv), "total": len(findings)},
+            "note": ("High-recall candidate generator. A CRITICAL is a candidate, "
+                     "not a verdict; the genuine/legit call is an agent call per "
+                     "AGENTS.md 3b-tax. Advisory rows are counted but not stored."),
+            "findings": keep,
+        }, open(out, "w"), indent=2)
+        print(f"wrote {out} ({len(keep)} rows; {len(adv)} advisory counted, not stored)")
     return 1 if (strict and crit) else 0
 
 
