@@ -19,9 +19,14 @@
 > to 1.2e-14 — the float64 floor of the inputs.
 >
 > **Why the error is second order**, which is why it hid for so long: the
-> per-factor product `f(d) = d² − 1 + d·H_A` satisfies the exact identity
-> `f(d) − f(−H_A/2) = (d + H_A/2)²`, so the ud letter sits at a *stationary
-> point*. A `6.88e-4` relative shift in `d` moves the product by only
+> per-factor product `f(d) = d² − 1 + d·H_A` satisfies the exact, division-free
+> identity
+>
+> $$4\,f(d) = (2d + H_A)^2 - H_A^2 - 4$$
+>
+> — all of the `d`-dependence sits inside a *perfect square* in the offset
+> `2d + H_A`, which vanishes exactly at `d = −H_A/2`. So the ud letter is a
+> stationary point, and the offset enters squared; those are the same fact. A `6.88e-4` relative shift in `d` moves the product by only
 > `(7.19e-5)² = 5.17e-9`. Predicted from that identity alone: 5.11397e-9, against
 > 5.11395e-9 measured — six significant figures. Formalised sorry-free as
 > `QOU.ChiSymAlt.perFactorOfD_sub_udHalf`.

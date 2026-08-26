@@ -231,30 +231,35 @@ theorem perFactorOfD_sub_udHalf (H_A d : ℝ) :
     perFactorOfD H_A d - perFactorOfD H_A (-H_A / 2) = (d + H_A / 2) ^ 2 := by
   unfold perFactorOfD; ring
 
-/-- The same identity over any commutative ring in which `2` is invertible.
+/-- **The same content with no division, over any commutative ring.**
 
-    §7c: the statement is purely algebraic — no ordering, no `Real.sqrt`, no
-    archimedean construct — so it is stated generically and the `ℝ` version
-    above is its specialisation. Only the ORDERING corollary below genuinely
-    needs `ℝ`, because "the ud letter is the minimum" is not a ring statement.
+        4·(d² − 1 + d·H_A) = (2d + H_A)² − H_A² − 4
 
-    The `ℝ` form is kept as the primary name because every consumer in this file
-    is already `ℝ`-typed; this is the wall-side-correct version for anyone
-    working before the archimedean specialisation.
+    This is the sharper statement, and it is the primary one. Multiplying the
+    `ℝ` identity above by 4 clears the `/2`, so it needs no `Field`, no
+    `CharZero` and no `2 ≠ 0` — plain `ring` over `[CommRing R]`, which is what
+    §7c asks for.
 
-    **`CharZero` is not decoration.** `ring` alone does not close this: the
-    identity needs `2` invertible, and it is FALSE in characteristic 2, where
-    `H_A/2` is not even defined and the "stationary point" does not exist. So
-    the stationarity of the `ud` letter is a statement about the coefficient
-    ring, not only about the word — worth knowing before anyone specialises this
-    machinery to a root-of-unity or finite-characteristic setting. -/
-theorem perFactorOfD_sub_udHalf_generic {R : Type*} [Field R] [CharZero R]
-    (H_A d : R) :
-    (d ^ 2 - 1 + d * H_A) - ((-H_A / 2) ^ 2 - 1 + (-H_A / 2) * H_A)
-      = (d + H_A / 2) ^ 2 := by
-  have h2 : (2 : R) ≠ 0 := two_ne_zero
-  field_simp
+    It also says the thing more directly: **all of the `d`-dependence of the
+    per-factor product sits inside a perfect square**, `(2d + H_A)²`, and that
+    square vanishes exactly at `2d = -H_A`. "The `ud` letter is a stationary
+    point" and "the offset enters squared" are the same fact, and this form
+    makes the second one manifest without mentioning derivatives, division, or
+    a distinguished point.
+
+    Historical note worth keeping: the divided form needed `[Field R]
+    [CharZero R]`, because `H_A/2` is undefined in characteristic 2 and the
+    identity fails there. This form is fine in characteristic 2 — it degenerates
+    to `0 = 0`, which is honest: there is no stationary point to speak of, and
+    the statement makes no claim about one. -/
+theorem four_mul_perFactorOfD {R : Type*} [CommRing R] (H_A d : R) :
+    4 * (d ^ 2 - 1 + d * H_A) = (2 * d + H_A) ^ 2 - H_A ^ 2 - 4 := by
   ring
+
+/-- The `ℝ` per-factor product, in the division-free form. -/
+theorem four_mul_perFactorOfD_real (H_A d : ℝ) :
+    4 * perFactorOfD H_A d = (2 * d + H_A) ^ 2 - H_A ^ 2 - 4 := by
+  unfold perFactorOfD; ring
 
 /-- Corollary: the `ud` value is the extremum, and every other letter's value
     lies on one side of it. -/
