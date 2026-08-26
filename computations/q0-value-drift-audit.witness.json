@@ -5,8 +5,8 @@
   "data": {
     "counts": {
       "STALE": 227,
-      "canonical": 169,
-      "proton-pin": 1693,
+      "canonical": 167,
+      "proton-pin": 1695,
       "unknown": 25
     },
     "stale_total": 227,
@@ -12853,16 +12853,16 @@
       {
         "file": "computations/qbeta/qbeta-dladder-barodd-borel-pade-laplace.witness.json",
         "field": "data.q0",
-        "value": "1.10997859555733471989976322048",
-        "class": "canonical",
-        "ppb_vs_canonical": -2.905485447301874e-21
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-dladder-barodd-borel-pade-laplace.witness.json",
         "field": "q0Value",
-        "value": "1.10997859555733471989976322048",
-        "class": "canonical",
-        "ppb_vs_canonical": -2.905485447301874e-21
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/qbeta/qbeta-dladder-ecalle-acceleration.witness.json",
