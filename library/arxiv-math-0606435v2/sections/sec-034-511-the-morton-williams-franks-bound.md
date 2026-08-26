@@ -5,7 +5,7 @@ section_id: sec-034-511-the-morton-williams-franks-bound
 section_title: "The Morton-Williams-Franks bound"
 section_number: 5.1.1
 pages: 26-27
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---

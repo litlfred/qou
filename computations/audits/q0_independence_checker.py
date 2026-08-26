@@ -72,14 +72,49 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 
 # A q₀ read, in CODE. Each alternative is a way the corpus actually reaches q₀.
-READ = re.compile(r"""(
-      from\s+q_parameter\s+import | import\s+q_parameter
-    | qou_substrate\.constants    | from\s+\.constants\s+import
-    | \bq_at\s*\(                 | \bq_muon_at\s*\(
-    | \bQ_50_DIGIT_STR\b          | \bQ_MUON\b | \bQ_MP\b
-    | load_q_50dps                | q-pinning-50-digit
-    | _q0_value_for_anchor        | 1\.109978595
+# A q₀ read, in CODE, after two false-positive classes were measured and closed:
+#
+#   1. THE DECLARATION'S OWN PROSE. `q0AnchorReason` is where an author explains
+#      why a compute is q₀-independent, and that prose naturally says
+#      "q-pinning-50-digit" or quotes the pin. `ast.unparse` preserves string
+#      constants, so the explanation was being matched as evidence against
+#      itself. Measured: 3 of the first 4 violations inspected were nothing but
+#      their own reason string. `_blank_declaration_prose` removes it.
+#
+#   2. `from q_parameter import <non-q₀ symbol>`. That module also exports
+#      CODATA ratios; `knot-volumes.py` imports `MASS_RATIO_MU_E` from it and
+#      reads no q₀ at all. A bare module-name match cannot tell the two apart,
+#      so imports are matched on the SYMBOL, not the module.
+Q0_SYMBOLS = (
+    "Q", "Q_MP", "Q_MUON", "Q_50_DIGIT_STR", "Q_SYM", "HA_MP",
+    "q_at", "q_muon_at", "load_q_50dps", "_q0_value_for_anchor",
+)
+_SYMS = "|".join(re.escape(s) for s in Q0_SYMBOLS)
+READ = re.compile(rf"""(
+      from\s+q_parameter\s+import\s+[^\n]*\b({_SYMS})\b
+    | from\s+qou_substrate\.constants\s+import\s+[^\n]*\b({_SYMS})\b
+    | \bq_at\s*\(  | \bq_muon_at\s*\(  | \bload_q_50dps\s*\(
+    | \b(Q_50_DIGIT_STR|Q_MUON|Q_MP|HA_MP)\b
+    | _q0_value_for_anchor
+    | q-pinning-50-digit
+    | 1\.109978595
 )""", re.X)
+
+
+def _blank_declaration_prose(tree: ast.AST) -> None:
+    """Empty the q₀-declaration strings so a reason cannot indict its own claim."""
+    # NOT Q0_ROLE: the auditor marker is read back out of this same normalised
+    # source, so blanking it silently disables the carve-out (measured: exempt
+    # 3 -> 0 the moment it was included here).
+    DECL = {"q0Anchor", "q0AnchorReason", "q0Values"}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Dict):
+            for k, v in zip(node.keys, node.values):
+                if (isinstance(k, ast.Constant) and k.value in DECL
+                        and isinstance(v, ast.Constant)
+                        and isinstance(v.value, str)):
+                    v.value = ""
+
 
 # Dynamism this cannot follow. Presence anywhere in a cone => UNKNOWN, not clean.
 OPAQUE = re.compile(r"(\b__import__\s*\(|\bimportlib\b|\bexec\s*\(|\beval\s*\()")
@@ -103,6 +138,16 @@ AUDITOR_MARKER = re.compile(r"""Q0_ROLE\s*=\s*['"]auditor['"]""")
 
 IMPORT = re.compile(
     r"^\s*(?:from\s+([A-Za-z_][\w.]*)\s+import|import\s+([A-Za-z_][\w.]*))", re.M)
+
+# Modules whose PURPOSE is to serve q₀. Their own source obviously reads q₀, so
+# traversing into them makes every importer look like a q₀ consumer — including
+# one that imports something else entirely. Measured: `knot-volumes.py` imports
+# only `MASS_RATIO_MU_E` (a CODATA ratio) from `q_parameter` and reads no q₀,
+# but the walk followed the import and indicted it on q_parameter's own code.
+#
+# So these are TERMINAL: whether an importer reads q₀ is decided at the import
+# site by WHICH SYMBOL it binds (see Q0_SYMBOLS in READ), never by recursing.
+Q0_PROVIDER_MODULES = {"q_parameter", "constants"}
 
 STDLIB = {
     "os", "sys", "json", "re", "math", "pathlib", "typing", "collections",
@@ -146,6 +191,7 @@ class Cone:
                                 and isinstance(body[0].value, ast.Constant)
                                 and isinstance(body[0].value.value, str)):
                             body.pop(0)
+                _blank_declaration_prose(tree)
                 self._code[rel] = ast.unparse(tree)
             except Exception:            # noqa: BLE001 - unparseable => no claim
                 self._code[rel] = None
@@ -171,7 +217,7 @@ class Cone:
                 opaque_at = opaque_at or chain + ["<dynamic import/exec>"]
             for m in IMPORT.finditer(src):
                 name = (m.group(1) or m.group(2) or "").split(".")[0]
-                if not name or name in STDLIB:
+                if not name or name in STDLIB or name in Q0_PROVIDER_MODULES:
                     continue
                 for cand in self.by_stem.get(name, []):
                     if cand not in seen:

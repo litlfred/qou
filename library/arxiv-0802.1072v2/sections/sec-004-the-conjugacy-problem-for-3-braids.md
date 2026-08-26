@@ -5,7 +5,7 @@ section_id: sec-004-the-conjugacy-problem-for-3-braids
 section_title: "The conjugacy problem for 3-braids"
 section_number: null
 pages: 5-6
-source_pdf: 0802.1072v2.pdf
+source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
@@ -30,8 +30,7 @@ minimal for the conjugacy class. Her representative Σ ⋆(W ) is chosen so that
 so that among all sequences with the same t it is lexicographically smallest. Thus, for example,
 (5, (2, 2)) < (5, (1, 2, 1)) and (5 , (1, 3)) < (5, (2, 2)). She proves that W, W ′∈ B3 are conjugate if
 and only if Σ ⋆(W ) = Σ ⋆(W ′). We illustrate the algorithm via an example.
-Step 1:
-The ﬁrst part of the algorithm is to ﬁnd a single element in SS( W ). Let us suppose that
+Step 1: The ﬁrst part of the algorithm is to ﬁnd a single element in SS( W ). Let us suppose that
 we are given an element W = δqas1
 τ1 . . . ast
 τt∈ B3, which is in normal form but may or may not be
@@ -93,8 +92,7 @@ that element is Y and so Y ∈ SS(W ). In a more general example, another cyclin
 additional powers of δ, but in the most general example the following holds: If a tai l move does not
 change the power, then we have achieved summit power. Note th at the tail move may, nevertheless,
 increase syllable length.
-Step 2:
-Having achieved summit power, Xu’s method for choosing an in variant of the conjugacy
+Step 2: Having achieved summit power, Xu’s method for choosing an in variant of the conjugacy
 class is the following: If Y = δmal1
 µ1 . . . alk
 µk belongs to SS( W ), one associates to Y its Xu symbol

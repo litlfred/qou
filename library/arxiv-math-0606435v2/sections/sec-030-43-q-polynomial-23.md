@@ -5,7 +5,7 @@ section_id: sec-030-43-q-polynomial-23
 section_title: "Q polynomial 23"
 section_number: 4.3
 pages: 23-25
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -113,8 +113,7 @@ Proof. By theorem 4.5, L is the closure of a 3-braid β which is either A-adequa
 B-adequate case and show that M1 = M2 ≥ Mk + 3/ 2 implies maxdeg t Q1(L,x) ≥ M1 − 1. If β is A-adequate, we
 obtain similarly mindegt Q1(L,x) ≤ m1 + 1, and the result follows by the (anti)symmetry of Q1.
 Now if M1 = M2 ≥ Mk + 3/ 2, the last three coefﬁcients of M1,2 are not cancelled from other Mk (remember these
-are polynomials in √
-t, and coefﬁcients are meant for such polynomials), so it is en ough to show that they do not
+are polynomials in √t, and coefﬁcients are meant for such polynomials), so it is en ough to show that they do not
 (completely) cancel among each other. Now a look at the formu las for T1,2 shows that if these three coefﬁcients are
 all to cancel, then (apart from proper sign coincidences) we must have ¯V1 ¯V0 = −1 and ¯V2 = 0. (Take also into account
 the switch −t → t.) However, this situation was ruled out by lemma 4.10. ✷

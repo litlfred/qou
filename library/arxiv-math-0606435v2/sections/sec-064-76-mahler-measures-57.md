@@ -5,7 +5,7 @@ section_id: sec-064-76-mahler-measures-57
 section_title: "Mahler measures 57"
 section_number: 7.6
 pages: 57-58
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -43,8 +43,7 @@ Z 1/ 2
 log |Vn(e2πis)|ds ≥ O(n) .
 We must argue about s ∈ [0,1/ 3]. In that case, e±(t) are conjugate complex numbers of unit norm. This implies tha t
 the integrand is bounded above when n → ∞, but our problem is to show that it does not decrease too quick ly with n.
-The assignment (with i = √
-−1)
+The assignment (with i = √−1)
 t ↦− →f (t) = −t + 1/ t − 1
 2 + i
 √
@@ -68,15 +67,9 @@ for s ∈ [0,1/ 3]. The singularities of the Jensen integral (65) correspond to 
 If n ≫ g′
 min, then all intersection points 1 si of the graphs of h and m have |m′(si)| > |h′(si)|. (Here we use also that
 m ⁄= h when s = 0.) In particular, between two critical points xi of h, it intersects m at most once. So the number n′ of
-intersections si satisﬁes ⏐
-⏐
-⏐
-⏐n′ − 2
+intersections si satisﬁes ⏐⏐⏐⏐n′ − 2
 3 n
-⏐
-⏐
-⏐
-⏐ ≤ O(1) , and therefore n′ = O(n) .
+⏐⏐⏐⏐ ≤ O(1) , and therefore n′ = O(n) .
 Moreover,
 |m′(si)| − |h′(si)| ≥ (2 − |m(si)|) ·C ,(66)
 for a constant C independent on i and n. Now when n increases, the si will concentrate around s = 1
@@ -118,27 +111,17 @@ n ), using (67) and m(s) ≤ 1 when
 n′
 ∑
 i=1
-⏐
-⏐
-⏐log
+⏐⏐⏐log
 (
 2 − |m(si)|
-) ⏐
-⏐
-⏐ ≤ n′ ·
+) ⏐⏐⏐ ≤ n′ ·
 (
 C ·
-⏐
-⏐
-⏐
-⏐
+⏐⏐⏐⏐
 Z 1
 0
 log |x|dx
-⏐
-⏐
-⏐
-⏐ +C′
+⏐⏐⏐⏐ +C′
 )
 = O(n) .(70)
 Let di := xi+1 − xi. Because of g′
@@ -150,31 +133,21 @@ So, similarly as in (70)
 n′
 ∑
 i=1
-⏐
-⏐
-⏐di log
+⏐⏐⏐di log
 (
 2 − |m(si)|
-) ⏐
-⏐
-⏐ ≤ O(1) .(72)
+) ⏐⏐⏐ ≤ O(1) .(72)
 Also, because of (71) and
 R
 1 + logx dx = x · logx +C, for n large
-⏐
-⏐
-⏐
-⏐
+⏐⏐⏐⏐
 Z xi+1
 xi
 (
 1 + log|s − si|
 )
 ds
-⏐
-⏐
-⏐
-⏐ ≤ −C · di ·
+⏐⏐⏐⏐ ≤ −C · di ·
 [
 logdi + C′ ]
 ≤
@@ -186,18 +159,11 @@ for some real number C′ independent on i and n, and so
 n′
 ∑
 i=1
-⏐
-⏐
-⏐
-⏐
+⏐⏐⏐⏐
 Z xi+1
 xi
 2 · log|s − si|ds
-⏐
-⏐
-⏐
-⏐ ≤ O(√
-n) .
+⏐⏐⏐⏐ ≤ O(√n) .
 This, (72) and (69) imply that for s ∈ [0,1/ 3] the (part of the) Jensen integral (65) has a lower bound that behaves like
 −O(√n), so the dominating part is for s ∈ [1/ 3,1/ 2], and we are done for V.
 For ∆ the argument is similar. There m(s) ≡ 2, so instead of (68) we have fors ∈ [xi,xi+1] the estimate |m(s) − h(s)| ≥

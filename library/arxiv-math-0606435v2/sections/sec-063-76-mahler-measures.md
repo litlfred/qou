@@ -5,7 +5,7 @@ section_id: sec-063-76-mahler-measures
 section_title: "Mahler measures"
 section_number: 7.6
 pages: 56-57
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -43,10 +43,8 @@ Proof. We have
 2 =
 Z 1
 0
-⏐
-⏐X(e2πis)
-⏐
-⏐2 ds .(64)
+⏐⏐X(e2πis)
+⏐⏐2 ds .(64)
 If ∆ ∈ Z[t±n], then this integral for
 X = (1 − t2n)∆(t)
 1 − t = det(1 − ψ 2n−1)

@@ -5,7 +5,7 @@ section_id: sec-003-22-braids-and-a-adequacy
 section_title: "Braids and A-adequacy"
 section_number: 2.2
 pages: 3-5
-source_pdf: 1406.7337v4.pdf
+source_pdf: 1406.7337v4 (1).pdf
 source_sha256: 5bae8237742733b9
 doc_brief: "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and"
 ---

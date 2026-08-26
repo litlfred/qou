@@ -5,7 +5,7 @@ section_id: sec-041-515-more-than-two-mountains
 section_title: "More than two mountains"
 section_number: 5.1.5
 pages: 31-33
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -41,8 +41,7 @@ for k > 0, l ≥ 0, and their extensions.
 Case 2.2.1. [123412(334)k3211234(334)l321] and extensions.
 Case 2.2.1.1. l = 0. To display the extendability of syllables, in the following notation the necessarily trivial syllables
 are hatted, while a possibly trivial syllable is underlined.
-[1ˆ2ˆ34
-12(334)k3211ˆ2ˆ3ˆ4321].
+[1ˆ2ˆ3412(334)k3211ˆ2ˆ3ˆ4321].
 32 5 Positivity of 3-braid links
 When l = 0, then making non-trivial any single of the hatted syllable s makes MW F = 4 already for k = 1, while for
 any k > 0 making any combination (possibly all) of the underlined syllables non-trivial gives MW F = 3.
@@ -54,15 +53,13 @@ Case 2.2.1.2. When l = 1, the already for k = 1 we have without extensions[12341
 4.
 Case 2.2.2. [123421(334)k3211234(334)l321] and extensions.
 Case 2.2.2.1. When l = 0, we have for all k the extendability
-[12
-ˆ3421(334)k3ˆ2112ˆ3ˆ43ˆ21],
+[12ˆ3421(334)k3ˆ2112ˆ3ˆ43ˆ21],
 with the same explanation as before.
 For example, [122344213343343343321122343321] reduces to 3 strands.
 Case 2.2.2.2. When l ≥ 1, then already for k = 1 and no extensions MW F([1234213343211234334321]) = 4.
 Case 2.2.3. [12342(334)k32112341(334)l321] and extensions.
 Case 2.2.3.1. When l = 0, we have
-[12
-ˆ342(334)k3211ˆ2ˆ3ˆ413ˆ21].
+[12ˆ342(334)k3211ˆ2ˆ3ˆ413ˆ21].
 For example, [122344233433433433221123413321] reduces to 3 strands.
 Case 2.2.3.2. When l > 0, already for k = 1, l = 1 without extension we have [1234233432112341334321] and
 MW F = 4.
@@ -72,8 +69,7 @@ form
 [12341(334)k32112342321],
 for k > 0, and their extensions (here necessarily l = 0).
 Case 2.3.1. [1234(334)k32112342132] and extensions:
-[12
-34(334)k3ˆ2112ˆ3ˆ421ˆ3ˆ21].
+[1234(334)k3ˆ2112ˆ3ˆ421ˆ3ˆ21].
 Again for k = 1 making non-trivial all underlined syllables givesMW F = 3, while making non-trivial any of the hatted
 syllables gives MW F = 4.
 For example, [1234334321123214321] has MW F = 3, and its extensions
@@ -82,6 +78,5 @@ For example, [1234334321123214321] has MW F = 3, and its extensions
 were checked to reduce to 3 strands.
 The same is the outcome for k > 1.
 Case 2.3.2. [12341(334)k32112342321] and extensions:
-[1ˆ234
-1(334)k3ˆ2112ˆ3ˆ42ˆ321]
+[1ˆ2341(334)k3ˆ2112ˆ3ˆ42ˆ321]
 The reducibility cases follow analogously. For example, [123344133433433433211223423221] reduces to 3 strands.
