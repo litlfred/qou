@@ -339,6 +339,19 @@ QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerE_eq_of_s
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_towerE_of_spanning | clean
 QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.constant_generator_presentation | clean
 QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.far_commute_zero | clean
+# --- rank-bounded presentation + the first content-bearing instance (qou-zm8z)
+# `heckePresentationOfRank_H3A` is the corpus's first presentation instance with
+# real content. `s0_mul_s1_ne_s1_mul_s0` is what separates it from the constant
+# family (`constant_generator_presentation`), where every relation is `rfl`
+# because everything commutes -- pin it, or a later "simplification" can hollow
+# the instance out while leaving the file compiling.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.ofRank_of_unbounded | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s1_mul_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.braid_s0_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H3A | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_ne_s1 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s1_ne_s1_mul_s0 | clean
 """
 
 

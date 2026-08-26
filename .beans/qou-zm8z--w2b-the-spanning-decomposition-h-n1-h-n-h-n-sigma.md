@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T14:05:48Z
-updated_at: 2026-08-26T14:24:25Z
+updated_at: 2026-08-26T14:35:07Z
 ---
 
 ## Built 2026-08-26 — PR #5827
@@ -81,3 +81,49 @@ say nothing — laundering, per AGENTS.md 'Axiomatization is NOT a Proof'.
 bound (sigma : Fin n -> H, or relations guarded by i + 1 < n), then a genuine H2/H3
 instance is reachable from the existing concrete algebras. That touches a class
 three others bind, so it is its own change.
+
+
+## RANK-BOUNDED CLASS + FIRST CONTENT-BEARING INSTANCE (2026-08-26)
+
+`QOU/Machinery/HeckeBraidedPresentationRank.lean`. NEW class, not a mutation:
+12 files bind HeckeBraidedPresentation and its signature change is a refactor
+unrelated to this point.
+
+  HeckeBraidedPresentationOfRank q n H sigma
+    hecke_quadratic : forall i, i+1 < n -> ...
+    braid_adjacent  : forall i, i+2 < n -> ...
+    far_commute     : forall i j, i+1 < j -> j+1 < n -> ...
+
+`ofRank_of_unbounded` : the unbounded class implies it at every rank (guards only
+discard obligations), so existing consumers lose nothing by moving over.
+
+**`heckePresentationOfRank_H3A` — the corpus's first presentation instance of any
+kind, and it has real content.** Genuine H3(q) on the six-element NF basis, both
+true generators s0/s1 (basis indices 1,2), Hecke quadratic for each, braid
+relation between them. At rank 3 the guards leave exactly those three relations
+and leave generators past rank unconstrained — sent to 0, never padded.
+
+**Non-degeneracy CHECKED, not assumed** — this is what separates it from
+`constant_generator_presentation`, where every relation is rfl because everything
+commutes:
+  s0_ne_s1                 : the generators are distinct
+  s0_mul_s1_ne_s1_mul_s0   : they do NOT commute (axioms: [propext] only)
+
+## CORRECTION to my earlier entry
+
+I reported `far_commute_zero` as a finding. **It was already in the corpus** —
+`HeckeH3AlgebraLaws.lean:34-36` states the obstruction in prose and covers BOTH
+padding routes (sigma_i := 1 forces (q-q^-1).1 = 0 via the quadratic; sigma_i :=
+s1 violates far commutation), where I had only the second. I greped for
+INSTANCES, not for the OBSTRUCTION. The Lean lemma machine-checks half of a known
+note; `constant_generator_presentation` (satisfiability, hence worthlessness of a
+reachable instance) is the genuinely new half.
+
+## Still NOT closed
+
+HeckeCosetSpanning binds the UNBOUNDED presentation, so this instance does not
+give it one. Re-pointing it is a further change, and the spanning statement would
+still need proving for H2 subset H3 afterwards.
+
+Verification: lean-direct exit 0; #print axioms clean on all seven new decls;
+guard rc=0 on 71 entries (64 -> 71); guard --selftest PASS.
