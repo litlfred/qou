@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-25T21:20:17Z
+updated_at: 2026-08-25T22:13:09Z
 ---
 
 ## The wall
@@ -222,3 +222,33 @@ excluded by Thm 2's hypothesis.
 
 Obstruction A unchanged. PR #5782 (rebased; the library ingest is gone from it
 -- main landed a better ingest of the same 7 docs).
+
+2026-08-25T22:12Z — PR #5782 MERGED to main (1f68a7c7e8).
+
+Landed across seven addenda on
+docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md:
+
+  A3  link-level search: 4_1, genuinely hyperbolic, floor 0 across 118097
+      conjugates in B_3.
+  A4  Obstruction A splits. (1) the atom object is NOT A LINK -- H_n(q)
+      outside im(rho), 2A+1 averaged letters, measured at 2H/3He/4He; no
+      topological quantity applies, about KIND. (2) the knot-dictionary
+      carriers ARE links and sit below Ito's reach, about SCALE.
+  A5  the conjugacy bound was IN THE CORPUS all along (Ito Prop 2(2), from
+      [MN]/[Ma]): search -> PROOF, scope (a) -> (b). My path-5 grep hit only
+      INDEX.md, which is one line per document and cannot see a result cited
+      INSIDE a held paper.
+  A6  'Same Markov class' in per_atom_hyperbolic_volume_witness.py cannot
+      hold -- a non-braid has no Markov class. Corrected; no number moved.
+  A7  p/n's 'principled-derivation' IS sound (registry T_w sigma-braid word
+      via hp_volume_of_link_closure) -- my suspicion failed. But the atlas
+      provenance block's 'no entry is maintained by hand' is UNENFORCED:
+      both credited producers are deprecated. -> bean qou-4b6g.
+
+Probes: _dehornoy.py, meson_braid_dehornoy_floor_probe (3),
+meson_braid_conjugacy_floor_search_probe (4),
+meson_braid_floor_conjugacy_bound_probe (4),
+atom_word_braid_letter_census_probe (3). All assertions pass.
+
+STILL OPEN and unchanged by any of it: Obstruction A itself. T(2,n) torus
+closures have Vol = 0. Nothing above touches that.

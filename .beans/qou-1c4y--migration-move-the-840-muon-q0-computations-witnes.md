@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T21:30:17Z
+updated_at: 2026-08-26T03:46:08Z
 ---
 
 
@@ -903,3 +903,146 @@ and over this window the two were within a few files of each other.
 What survives unchanged is the operational point: the number has a shelf life
 of **hours**, so quote it with a timestamp or re-run the audit. What does not
 survive is any claim about the trend from a two-point sample — including mine.
+
+
+## 2026-08-25 — CORRECTION: the independence checker said 19; it is 10
+
+I reported "19 witnesses falsely declare `q0Anchor: independent`" in PR #5797's
+title, body and my summary to the owner. **The real number is 10.** Three
+false-positive classes, each found by hand-checking flagged files rather than
+by trusting the count:
+
+1. **The declaration's own prose was evidence against itself.** `q0AnchorReason`
+   is the field where an author explains *why* a compute is q₀-independent, so
+   it naturally contains "q-pinning-50-digit" or quotes a pin. `ast.unparse`
+   preserves string constants, so the reason matched the read pattern.
+   Measured: **3 of the first 4** violations inspected were nothing but their
+   own reason string. Several of these producers argue for `independent` in a
+   comment right beside the declaration — that argument is what indicted them.
+
+2. **`from q_parameter import <non-q₀ symbol>`.** That module also exports
+   CODATA ratios. `knot-volumes.py` imports `MASS_RATIO_MU_E` and reads no q₀.
+   Fixed by matching the SYMBOL, not the module name.
+
+3. **Cone traversal into the q₀ provider.** Fixing (2) at the import site was
+   not enough: the walk still followed the import into `q_parameter.py`, whose
+   own source obviously reads q₀, and indicted the importer on it.
+   `q_parameter` / `constants` are now TERMINAL — q₀-ness is decided at the
+   import site by which symbol is bound, never by recursing into the provider.
+
+A fourth defect was self-inflicted while fixing (1): blanking `Q0_ROLE` along
+with the declaration strings silently disabled the auditor carve-out
+(exempt 3 → 0). The marker is read back out of the same normalised source.
+
+Progression: **19 → 14 → 11 → 10**, and 41 upheld (was 32).
+
+### The 10, five of them hand-verified
+
+    chi_content_eigenbasis_probe      -> canonical_braid_crossings does
+                                         `from q_parameter import Q_50_DIGIT_STR`   VERIFIED
+    lambda_scale_substrate_probe      loads q-pinning-50-digit.witness.json directly;
+                                         also manifest `ideal_muon`                 VERIFIED
+    markov_identity_symbolic_probe    evaluates at BOTH pins -> wants `comparison`,
+                                         not a corrected single pin                 VERIFIED
+    qbeta_c3_rung_structure_analysis  `Q0_MP_PIN = Q_50_DIGIT_STR`                  VERIFIED
+    probe_he4_magic_baryeven_prune    `Q0 = mp.mpf(Q_50_DIGIT_STR)`                 VERIFIED
+    chirality_topology_binding_probe          (not yet hand-checked)
+    eigenbasis_structural_lemmas_probe        (not yet hand-checked)
+    habiro_witness_convention_adjudication    (not yet hand-checked)
+    qbeta_habiro_f_from_shape_collapse        (not yet hand-checked)
+    qbeta_rung1_div25_framing_squared_test    (not yet hand-checked)
+
+`markov_identity_symbolic_probe` is worth separating: it is not a mislabelled
+pin but a mislabelled KIND. It evaluates at both anchors deliberately, which the
+vocabulary already covers as `comparison`. Fixing it to `proton` would be as
+wrong as leaving it `independent`.
+
+### The lesson, which is the same one three times
+
+Every one of these classes is "the checker matched text that describes the
+thing rather than text that does the thing" — the `_path_bridge` docstring
+earlier today, then the reason string, then the provider module. A q₀ checker
+that reads prose about q₀ will always over-flag, and the corpus is full of
+careful prose about q₀ precisely where the code is careful not to use it.
+
+
+## 2026-08-26 — the 10 hand-checked: 7 genuine, 3 FALSE POSITIVES, and a fifth defect class
+
+All ten violations read individually, at source. **7 are real. 3 are my checker
+over-flagging again** — and one of the three was in the "✓ hand-verified" list
+I published in PR #5806. That verification used the wrong standard and is
+retracted below.
+
+### The split is FILE-LOCAL vs CONE, and it is not incidental
+
+    FILE-LOCAL (6)   the producer binds q₀ in its OWN file    -> all GENUINE
+    CONE       (4)   q₀ reached through an imported module    -> 1 genuine, 3 false
+
+**The six file-local are solid.** Each carries `Q0 = mp.mpf(Q_50_DIGIT_STR)` or
+`Q0_MP_PIN = Q_50_DIGIT_STR` in its own source, so `independent` is false on the
+face of it, no inference required:
+
+    markov_identity_symbolic_probe          (wants `comparison` — evaluates BOTH pins)
+    probe_he4_magic_baryeven_prune
+    lambda_scale_substrate_probe            (also manifest `ideal_muon`)
+    qbeta_c3_rung_structure_analysis
+    qbeta_habiro_f_from_shape_collapse
+    qbeta_rung1_div25_framing_squared_test
+
+**One cone case is genuine, and flagrantly so.**
+`chirality_topology_binding_probe` does `from hecke_channel_binding_probe import
+channels, BONDS, E0, Q0` — it imports **`Q0` itself**, prints it, and writes
+`"q0": str(Q0)` into its own witness payload while declaring `independent`. A
+witness that records q₀ and denies reading it is self-contradictory.
+
+### The three false positives
+
+| producer | what it imports | why `independent` is CORRECT |
+|---|---|---|
+| `eigenbasis_structural_lemmas_probe` | `partitions_of(n)` from `hecke_characters` | signature `(n)`, zero q-references. Pure combinatorics. The probe proves a Laurent-character bar-symmetry identity **for all q**. |
+| `habiro_witness_convention_adjudication_probe` | `tr_M_atomic_fast` | used **symbolically**: `U = sp.Symbol("u")`, `expr.subs(q, U**2)`, evaluated only at small exact rationals |
+| `chi_content_eigenbasis_probe` | `atom_canonical_crossings(Z, N)` | zero q-references; it calls `classify_crossing(c, d, h_val, …)` where the substrate **h is a PARAMETER**, supplied by the caller |
+
+`habiro_witness_convention_adjudication_probe` anticipated the flag in its own
+`q0AnchorReason`: *"No substrate anchor is read and none is recorded --
+deliberately no q0Value, which the q0-anchor audit correctly reads as
+contradicting `independent`."* The author was right and the checker was wrong.
+
+### RETRACTION of my own verification
+
+PR #5806 listed `chi_content_eigenbasis_probe` as **✓ hand-verified genuine**,
+on the evidence that `canonical_braid_crossings` contains
+`from q_parameter import Q_50_DIGIT_STR`. **That is a fact about the MODULE, not
+about the imported SYMBOL**, and it is exactly the standard this whole arc has
+been correcting. The module's q₀ sits at lines 89–91, in a guarded block
+computing `_AVG_COLOR_DELTA` — a different symbol entirely.
+
+### Class 5: parameterised-on-q is not reads-q₀
+
+Four classes were closed in #5806 (docstring text, the declaration's own reason
+string, module-name-vs-symbol, cone-into-provider). This is a fifth, and it is
+the hardest:
+
+> A function that takes `q` — or `h = q − q⁻¹` — as an **argument** is
+> q-PARAMETERISED, not q₀-READING. Whether its caller is q₀-dependent depends on
+> what the caller passes, which is dataflow. No import-cone walk can decide it.
+
+`classify_crossing(c, d, h_val)` is the worked case. This is why the corpus's
+symbolic/q-generic probes keep landing in the violation list: **being about q is
+the opposite of being pinned at q₀**, and a reachability analysis reads them the
+same.
+
+### A symbol-level cone was attempted and NOT shipped
+
+I implemented one (`symbol_reads_q0`: traverse only if the imported symbol's own
+definition reads q₀). It moved the broad numbers — `cone clean` 768 → 817,
+`cone reads` 1748 → 1699 — and **did not fix any of the three false positives**,
+because they fail on class 5, which symbol resolution does not reach. Reverted
+rather than merged: an analyser change I cannot validate is how the last three
+wrong numbers got published. The idea is sound and worth finishing with dataflow;
+it is not worth shipping half-done.
+
+**Verdict: 7 of 10 are real.** Fixing them means correcting each declaration —
+five to their actual pin, `markov_identity_symbolic_probe` to `comparison`, and
+`chirality_topology_binding_probe` to whatever `Q0` resolves to in its source
+module.

@@ -5,7 +5,7 @@ section_id: sec-044-52-positive-links-37
 section_title: "Positive links 37"
 section_number: 5.2
 pages: 37-38
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -26,8 +26,7 @@ Consider ﬁrst three special forms of k.
 If k = (12∗1) (with 2∗ being a sequence of ‘2’), thenD is regularly isotopic to a trivial 2-component link diagram . If
 k = (12∗) or (2∗1), then D is regularly isotopic to an unknot diagram with one positive kink. In both situations the
 claims follow directly.
-Now let
-k = (2∗). We orient D so as to become negative. Then D depicts the (2,−n − 1)-torus link. We can evaluateΛ
+Now let k = (2∗). We orient D so as to become negative. Then D depicts the (2,−n − 1)-torus link. We can evaluateΛ
 on L from F(L) by normalization. For its mirror image !L, we can use theorem 5.4 to conclude that mindega F(!L) = n.
 Now it is also known that spana F(!L) = c(!L), and c(!L) = n + 1, so
 maxdeg a F(!L) = mindeg a F(!L) +spana F(!L) = n + (n + 1) = 2n + 1 .
