@@ -42,7 +42,6 @@ import sys
 from pathlib import Path
 from mpmath import mp
 
-import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,  # noqa: over-count-3-input
@@ -84,9 +83,47 @@ def term1_descended(Z, N, E_0):
 # A·FROB_N3 (legacy) corresponds to A independent H_3 blocks, which
 # is NOT the algebra hosting an isotope braid.  See
 # probe-term4-conventions.witness.json for Σ_{λ⊢3A} 1/dim_q at q_0.
+_SIGMA_3A_UNAVAILABLE: str | None = None
+
+
 def _load_sigma_3A():
+    """Load Σ_{λ⊢3A} 1/dim_q(λ) at q_0 from the per-3A probe witness.
+
+    **The witness this reads has NEVER existed in this repository, and no
+    producer in the tree writes it** (measured 2026-08-26, bean `qou-nk3h`).
+    `git log --diff-filter=AD --all -- '*probe-term4-conventions*'` is empty,
+    and the only other references are this same loader in
+    `mass_formula_6term.py` and a source comment in `rho_k_h3a_co_casimir.py`.
+
+    So this function has always returned `{}`, and `term4_frobenius` has
+    always taken its `A >= 8` asymptotic fallback — for EVERY isotope, D
+    through 16O. It did so silently: the old body was
+
+        if not path.exists():
+            return {}
+        try:
+            ...
+        except Exception:
+            return {}
+
+    two swallowing paths and no signal on either. It now warns on stderr and
+    records `_SIGMA_3A_UNAVAILABLE` so the caller can say so.
+
+    Deliberately NOT fixed by reconstructing the table. Ten LIVE `dim_q`
+    implementations exist under `computations/` with differing signatures
+    (`phase5/phase5_n8_dim_q_table.py`,
+    `delta_lambda_empirical_tabulation.dim_q_at_q0`, `term7_chi5_basis.dim_q`,
+    ...), so building the table is a choice among conventions, not a
+    computation — and choosing one silently is the failure this guard exists
+    to stop. See the bean.
+    """
+    global _SIGMA_3A_UNAVAILABLE
     path = Path(__file__).parent / "probe-term4-conventions.witness.json"
     if not path.exists():
+        _SIGMA_3A_UNAVAILABLE = f"missing: {path.name}"
+        print(f"  \u26a0 term4: {path.name} not found — Sigma_(3A) table "
+              f"unavailable; term4_frobenius falls back to the A>=8 asymptotic "
+              f"constant for ALL A (bean qou-nk3h)", file=sys.stderr)
         return {}
     try:
         d = json.loads(path.read_text())
@@ -96,9 +133,13 @@ def _load_sigma_3A():
             if key.startswith("n="):
                 n = int(key.split("=")[1])
                 if n % 3 == 0:
-                    out[n // 3] = float(val)
+                    out[n // 3] = mp.mpf(str(val))
         return out
-    except Exception:
+    except Exception as exc:
+        _SIGMA_3A_UNAVAILABLE = f"unreadable: {path.name}: {exc!r}"
+        print(f"  \u26a0 term4: {path.name} unreadable ({exc!r}) — falling back "
+              f"to the A>=8 asymptotic constant for ALL A (bean qou-nk3h)",
+              file=sys.stderr)
         return {}
 
 
@@ -111,8 +152,10 @@ def term4_frobenius(Z, N):
     Genuine algebraic Term 4: when the isotope braid lives in H_{3A}(q),
     the Frobenius co-Casimir trace sums over partitions of 3A, not 3.
 
-    Coverage: witness covers A ∈ {1,2,3,4,5,6,7} exactly.  For A ≥ 8
-    we use the **asymptotic estimate** Σ_{λ⊢3A} 1/dim_q(λ) ≈ 2.05
+    Coverage: the witness WOULD cover A ∈ {1,2,3,4,5,6,7} exactly — but it
+    is absent from this repository and always has been, so in practice the
+    fallback below is taken for every A (bean `qou-nk3h`).  For A ≥ 8 the
+    intended value is the **asymptotic estimate** Σ_{λ⊢3A} 1/dim_q(λ) ≈ 2.05
     (the trace decays monotonically toward 2 as A → ∞ because the
     two extreme blocks (3A) and (1^{3A}) each contribute 1, with the
     q-dependent middle decaying).  The estimate is conservative: at
@@ -125,8 +168,10 @@ def term4_frobenius(Z, N):
     sigma_3A = _SIGMA_3A_AT_Q0.get(A)
     if sigma_3A is not None:
         return M_E * sigma_3A
-    # A ≥ 8: asymptotic estimate
-    return M_E * 2.05
+    # Fallback. Named "the A >= 8 asymptotic estimate", but with the table
+    # unavailable (see `_load_sigma_3A`) this branch is taken for EVERY A, so
+    # T4 is the constant m_e * 2.05 = 1.0475 MeV across the whole list.
+    return M_E * mp.mpf("2.05")
 
 
 # This producer never raised working precision, so every mpmath value in
@@ -340,11 +385,13 @@ def main():
     # Stats
     errs = [abs(r["err_pct"]) for r in rows if r["err_pct"] is not None]
     print(f"\n  mean |err| = {float(sum(errs)/len(errs)):.2f}%")
-    print(f"  max  |err| = {max(errs):.2f}%")
+    # float() here is DISPLAY ONLY (AGENTS.md permits it inside an f-string);
+    # `errs` are mpf now that term4 returns mpf, and mpf has no .2f format.
+    print(f"  max  |err| = {float(max(errs)):.2f}%")
 
     # Build witness
     w = (
-        WitnessBuilder("unified-low-isotope-predictor", engine="python+numpy")
+        WitnessBuilder("unified-low-isotope-predictor", engine="python+mpmath")
         .set_description(
             "Unified low-isotope binding predictor — applies all 6 derived "
             "terms uniformly, with derivable rules for term applicability "

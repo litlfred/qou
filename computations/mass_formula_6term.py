@@ -69,9 +69,20 @@ def _load_sigma_3A_table():
 
     Per the per-3A correction (audit 2026-04-28b): the genuine algebraic
     Term 4 is m_e · Σ_{λ⊢3A} 1/dim_q(λ), NOT A · m_e · (2 + 1/[2]_q).
-    The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4."""
+    The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4.
+
+    **That witness has never existed in this repository and no producer in
+    the tree writes it** (measured 2026-08-26, bean `qou-nk3h`; the identical
+    loader in `unified_low_isotope_predictor.py` has the same problem). Both
+    swallowing paths below now warn instead of returning `{}` in silence.
+    The table is deliberately not reconstructed here — ten live `dim_q`
+    implementations exist with differing signatures, so building it is a
+    choice among conventions rather than a computation."""
     path = Path(__file__).parent / "probe-term4-conventions.witness.json"
     if not path.exists():
+        print(f"  \u26a0 term4: {path.name} not found — Sigma_(3A) table "
+              f"unavailable; the caller's fallback is in force (bean qou-nk3h)",
+              file=sys.stderr)
         return {}
     try:
         d = json.loads(path.read_text())
@@ -84,7 +95,9 @@ def _load_sigma_3A_table():
                 if n % 3 == 0:
                     out[n // 3] = float(val)
         return out
-    except Exception:
+    except Exception as exc:
+        print(f"  \u26a0 term4: {path.name} unreadable ({exc!r}) — the "
+              f"caller's fallback is in force (bean qou-nk3h)", file=sys.stderr)
         return {}
 
 
