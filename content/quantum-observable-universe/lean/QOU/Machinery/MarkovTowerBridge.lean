@@ -216,6 +216,61 @@ theorem gwg_trace_of_spanning
     (fun i => ιlow (b i)) (fun i => ιlow (c i)) x y htr_add htr_zero
     (hlow a) (fun i _ => hmid (b i) (c i))
 
+/-- **`ε` computed on an arbitrary element.** Spanning gives the decomposition;
+the Markov property evaluates `ε` on each piece. Together they determine
+`ι (ε w)` outright:
+
+  `ιlow (εlow w) = ιlow a + Σᵢ z • (ιlow (b i) · ιlow (c i))`
+
+which is precisely the expectation `gwg_trace_of_spanning` exhibits. This is the
+composition the two classes exist to enable — neither alone says what `ε` does
+to a general element. -/
+theorem towerE_eq_of_spanning
+    (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow) (n : ℕ) (z : R)
+    (instCE : HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow)
+    (instMk : @HeckeMarkovExpectation R _ q Hlow Hn _ _ _ _ σlow σn _ _
+      ιlow εlow instCE n z)
+    (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow) :
+    ιlow (εlow (ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i)))
+      = ιlow a + ∑ i ∈ s, z • (ιlow (b i) * ιlow (c i)) := by
+  classical
+  rw [map_add, map_sum]
+  rw [instCE.retract a]
+  simp only [instMk.markov]
+  rw [map_add, map_sum]
+  simp only [map_smul, map_mul]
+
+/-- **`hgwg` in the shape `cyclic_two_g` wants, for an arbitrary `w`.**
+`gwg_trace_of_spanning` exhibits the expectation as a decomposition sum;
+`towerE_eq_of_spanning` identifies that sum with `ι (ε w)`. Composing them gives
+the reduction stated against `towerE` itself, with no residual `∃`.
+
+Conditional on BOTH `HeckeCosetSpanning` and `HeckeMarkovExpectation`, neither
+of which has an instance. -/
+theorem gwg_trace_towerE_of_spanning
+    (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow) (n : ℕ) (z hbar : R)
+    (instCE : HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow)
+    (instMk : @HeckeMarkovExpectation R _ q Hlow Hn _ _ _ _ σlow σn _ _
+      ιlow εlow instCE n z)
+    (instSp : HeckeCosetSpanning R q Hlow Hn σlow σn ιlow n)
+    (tr : Hn → R) (g : Hn)
+    (htr_add : ∀ p r : Hn, tr (p + r) = tr p + tr r) (htr_zero : tr 0 = 0)
+    (x y : Hn)
+    (hlow : ∀ a : Hlow, tr (x * (g * ιlow a * g) * y)
+              = tr (x * ιlow a * y) + z * hbar * tr (x * ιlow a * y))
+    (hmid : ∀ b c : Hlow,
+      tr (x * (g * (ιlow b * σn n * ιlow c) * g) * y)
+        = tr (x * (z • (ιlow b * ιlow c)) * y)
+          + z * hbar * tr (x * (ιlow b * σn n * ιlow c) * y))
+    (w : Hn) :
+    tr (x * g * w * g * y)
+      = tr (x * towerE ιlow εlow w * y) + z * hbar * tr (x * w * y) := by
+  obtain ⟨a, s, b, c, hw, heq⟩ :=
+    gwg_trace_of_spanning ιlow n instSp tr g z hbar htr_add htr_zero x y
+      hlow hmid w
+  rw [heq, towerE, hw,
+      towerE_eq_of_spanning ιlow εlow n z instCE instMk a s b c]
+
 end Spanning
 
 end

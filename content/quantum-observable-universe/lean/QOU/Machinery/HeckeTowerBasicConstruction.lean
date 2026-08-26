@@ -249,4 +249,33 @@ class HeckeCosetSpanning (R : Type*) [Field R] (q : R)
   spanning : ∀ w : Hn, ∃ (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow),
     w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i)
 
+/-- **§3b DEPENDENT conjecture — the Markov property of the conditional
+expectation (bean `qou-zm8z`).** GIVEN a conditional expectation, `ε` collapses
+the `σₙ`-coset with a single scalar:
+
+  `ε (ιlow b · σₙ · ιlow c) = z • (b · c)`.
+
+This is the defining property of the Markov trace's `z` (the Ocneanu parameter)
+at the level of `ε` rather than of `tr`. `HeckeConditionalExpectation` does NOT
+imply it — that class has exactly `retract` and `bimodule`, neither of which
+says anything about what `ε` does to the top generator, and `bimodule` in
+particular only moves `ιlow`-factors across `ε`, leaving `ε σₙ` untouched.
+
+**This class ASSUMES the Markov property; it does not derive it.** Its value is
+that the assumption is now a named, content-bearing carrier with a stated
+dependency edge, instead of an anonymous hypothesis threaded through call sites
+— and that, combined with `HeckeCosetSpanning`, it is exactly enough to
+*compute* `ε` on an arbitrary element (see
+`MarkovTowerBridge.towerE_eq_of_spanning`). That computation is the new content;
+the assumption itself is relocated, not discharged. OPEN — no instance. -/
+class HeckeMarkovExpectation (R : Type*) [Field R] (q : R)
+    (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
+    (σlow : ℕ → Hlow) (σn : ℕ → Hn)
+    [HeckeBraidedPresentation R q Hlow σlow] [HeckeBraidedPresentation R q Hn σn]
+    (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow)
+    [HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow]
+    (n : ℕ) (z : R) : Prop where
+  /-- `ε` collapses the top-generator coset with the Ocneanu scalar `z`. -/
+  markov : ∀ b c : Hlow, εlow (ιlow b * σn n * ιlow c) = z • (b * c)
+
 end QOU.Machinery.HeckeTower
