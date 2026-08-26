@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:42:30Z
-updated_at: 2026-08-26T09:18:56Z
+updated_at: 2026-08-26T09:32:54Z
 ---
 
 ## The hole
@@ -193,3 +193,62 @@ this very hole.
 
 Still a **lower bound on one shape**: hand-rolled writers and stdout-only
 probes remain uncounted.
+
+
+## 2026-08-26 — the hole hides more than float64: a verifier that verified nothing
+
+Went to fix the cheapest of the three dirty producers
+(`sublemma_2_1_h12_he4_phase25`, 2 fields) and found the float64 was the least
+of it.
+
+**It was emitting `allPassed: true` having verified nothing.**
+
+    n_partitions_processed = 0
+    n_partitions_verified  = 0
+    assertion "all_processed_lambda_path_a_eq_path_b_machine_eps"
+        computed = 0   expected = 0   passed = true
+    description: "Verified 0/0 λ ⊢ 12 … max rel residual 0.00e+00"
+
+The assertion is `n_pass == n_total`, trivially true when both are zero — the
+compute-side analogue of `theorem X : True := trivial`, which this repo bans
+in Lean and had no equivalent guard against in Python. Both are zero whenever
+the F1 `chi_q_at_q0` cache is absent, because every target then hits the
+`lam not in chi_a` continue.
+
+The contradiction was already printed and nothing acted on it:
+
+    Path A loaded from F1 cache: 0 λ ⊢ 12
+    Processing 8 / 77 λ ⊢ 12 (dim ≤ 80)
+    Verified: 0/0
+
+**This is the payoff of the measurement.** The vacuous green was invisible for
+exactly the reason this bean exists: the witness is never committed, so nothing
+downstream ever read it. The ratchet hole does not just hide dirty numbers — it
+hides a verification producer reporting success on an empty set.
+
+**Fixed** (commit `60386f4e4`): refuses before writing, naming the count, the
+cause and the remedy, in the repo's own guard idiom. Verified: exits 1, writes
+no witness.
+
+**Residual, deliberately not fixed:** the guard catches the fully-vacuous case
+only. A PARTIAL cache (3 of 8 targets) still reports "Verified 3/3" while 8
+were targeted. Tightening that changes behaviour beyond the bug.
+
+**The 2 float64 fields are NOT fixed, on purpose.** The producer computes in
+float64 throughout — `path_b_chi_h12(lam, beta_full, float(Q0))` downcasts the
+substrate parameter into the compute — so formatting
+`.data.max_relative_residual` with `_precision.fmt` would make a
+float64-derived number merely *look* precise. That is the cosmetic move the
+discipline forbids. Same conclusion as `chi_sym_alt_closed_form`: **all three
+dirty producers need real rewrites, not `fmt` calls.** There is no cheap one.
+
+### Method note, from a near-miss of my own
+
+A first gate run regenerated `witness-provenance-audit` and
+`q0-anchor-consistency-audit` while an untracked witness from a **pre-guard**
+run was still on disk. Both counted a file that no longer exists —
+`total_scanned` +1, and it appeared *by name* in the anchor audit's list.
+Committing them would have written a phantom witness into the audit record.
+Reverted and re-run on a clean tree.
+
+**Delete the artefact before regenerating the audits, not after.**
