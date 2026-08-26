@@ -104,8 +104,32 @@ theorem qDimTwistedWith_rightDual [RightRigidCategory C] [RibbonCategory C] (X :
 section Spherical
 
 /-- **The twisted LEFT quantum dimension**: the same strand closed on the other side, carrying the
-*inverse* twist.  The inverse is not a choice — it is what makes the closure a framed-link
-invariant of the same unknot, and it is what `qDimTwistedLeftWith_eq_of_cap` below needs. -/
+*inverse* twist.
+
+**The inverse is load-bearing, so it needs a justification that is not "it makes the theorem
+come out".**  `qDimTwistedLeftWith_eq_of_cap` works precisely because `θ_A` meets `θ_A⁻¹` and
+cancels; with `θ_A` on both sides one is left with `θ_A²`, and the identity would require
+`θ² = 𝟙`, which is false in general.  So the exponent is not cosmetic and cannot be waved through.
+
+Two things justify it, and it is worth separating them:
+
+1. **The opposite-exponent shape is the standard one.**  Barrett–Westbury, *Spherical Categories*,
+   Prop. 3.6, give the two traces of a spherical Hopf algebra as `tr_L(θ) = tr(θw)` and
+   `tr_R(θ) = tr(θw⁻¹)` — the same element in the two traces, with opposite exponents.
+2. **That shape does not smuggle in sphericality.**  This is the non-circularity check, and it is
+   the more important of the two: Barrett–Westbury's Example 3.5 — the quantised enveloping algebra
+   of the Borel of `SL₂(ℂ)` — uses *this very convention* to exhibit a category satisfying every
+   spherical axiom **except** that "the left and right traces are distinct".  A convention under
+   which sphericality is still refutable is not one that assumes it.
+
+**What this does NOT establish, stated so it is not read as more than it is.**  Barrett–Westbury's
+`w` is the **pivotal element** (`γ²(b) = w b w⁻¹`), *not* the ribbon twist `θ`.  The two are related
+in a ribbon category but are not the same object.  So the citation supports the *shape* of this
+definition and its non-circularity; it is **not** a citation that this particular `θ`/`θ⁻¹` pairing
+is the standard ribbon left trace.  Establishing that identification would need Turaev's
+construction of the left duality from the right one, which is not formalised here.
+
+-- Ref: [barrett1993] Barrett, Westbury, *Spherical Categories*, Prop. 3.6 and Example 3.5. -/
 noncomputable def qDimTwistedLeftWith [BalancedCategory C] (A B : C) [ExactPairing A B] :
     (𝟙_ C ⟶ 𝟙_ C) :=
   η_ A B ≫ (inv (BalancedCategory.twist A) ▷ B) ≫ (β_ B A).inv ≫ ε_ A B
