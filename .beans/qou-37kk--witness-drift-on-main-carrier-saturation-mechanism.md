@@ -46,8 +46,17 @@ Run 3 is the one that isolates the edit. Comparing against the committed
 witness (runs 1 and 2) measures the edit AND the drift together, which is how
 this nearly got attributed to the drain.
 
-12 of the 14 witnesses in that batch are drift-free, so this is two producers,
+15 of the 17 witnesses in that batch are drift-free, so this is two producers,
 not a corpus-wide problem.
+
+CORRECTED (2026-08-26, prepare-merge for #5838). This read "12 of the 14",
+low in both numerator and denominator by 3. Flagged by #5835 and then
+re-measured here rather than taken on its word: the drain branch touches
+17 producers and commits 15 witnesses
+(`git diff --name-only origin/main...origin/claude/assertion-kwarg-float-drain-2026-08-26`),
+and the 2 it does not commit are exactly this bean's two. Nothing downstream
+moves -- the exclusions were always the right two -- but the bean is the
+durable record and the next reader would take the tally at face value.
 
 ## What was done about it
 
