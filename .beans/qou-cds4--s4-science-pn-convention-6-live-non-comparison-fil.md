@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T03:07:48Z
+updated_at: 2026-08-26T03:12:10Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -360,3 +360,25 @@ not a precision scale.
 A dated, specific, confident comment in the corpus is not a primary source.
 AGENTS.md says exactly this for `## Status` notes and for sibling beans; it
 applies to test-baseline adjudications too. Measure, then cite the script.
+
+
+## File list DRAINED 2026-08-26
+
+All 8 files the bean named are now canonical or legitimately excepted:
+
+    binding_canonical.py                      canonical  (#5767, mine)
+    binding_combiner_markov_peel_fallback.py  canonical  (#5783, mine)
+    atomic_tr_m_helium4_canonical.py          canonical  (#5801, mine)
+    _habiro_coefficient_extract.py            canonical  (#5801, mine, 25 witnesses)
+    chi_monotone_transfer.py                  canonical  (sibling, qou-9ag4)
+    iterative_knot_builder.py                 canonical  (sibling; was strict_averaged)
+    binding_bring_enhancement_compare.py      LEGITIMATE — labelled comparison, R3 permits
+    closed_form_tau_M_verification_phase5q.py LEGITIMATE — validates the legacy frame,
+                                              must match the frame it validates
+
+`test_ctype_consumer_coverage.py` Part F reports 2 baselined / 0 unadjudicated,
+and both survivors are the two legitimate ones. That 2 is the FLOOR, not a queue.
+
+Not closing the bean: the "28 committed witnesses recording a non-colour-weighted
+pn_convention" line is only partly discharged (25 were the habiro table). The
+remainder has not been enumerated.
