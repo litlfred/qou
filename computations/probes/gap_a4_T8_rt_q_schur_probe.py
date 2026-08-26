@@ -75,7 +75,7 @@ del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -293,7 +293,7 @@ def main():
 
     w.add_assertion(
         "V_2_absent_from_sl2_at_n_equals_5",
-        computed=float(mp.mpf(classical["V_2_multiplicity"])),
+        computed=fmt(mp.mpf(classical["V_2_multiplicity"])),
         expected=0.0,
         tolerance=1e-30,
         source=(
