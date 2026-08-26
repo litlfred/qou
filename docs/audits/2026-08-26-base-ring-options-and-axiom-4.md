@@ -106,6 +106,73 @@ over. Otherwise axiom 4 and the truncation mechanism cannot both hold.
   `R → ℝ`, `q ↦ q₀ ≈ 1.10998`: at real `q₀ > 1` every balanced bracket is
   strictly positive, so nothing that was inverted is sent to zero.
 
+## Three owner follow-ups — including a correction to option 1
+
+### `1/Φ_d(q)` vs `1/[d]_q` — the same ring, two generating sets
+
+For a fixed cutoff these generate **the same localisation**, because a divisor of
+a unit is a unit: each `Φ_d` divides a bracket, and each bracket is a product of
+cyclotomics. Verified symbolically:
+
+- **unbalanced** `[m]_q = ∏_{d | m, d > 1} Φ_d(q)`
+- **balanced** (the corpus convention, §7c) `[m]_q = q^{−(m−1)} ∏_{d | 2m, d ≥ 3} Φ_d(q)`
+
+so `[2]_q = q⁻¹Φ₄`, `[3]_q = q⁻²Φ₃Φ₆`, `[4]_q = q⁻³Φ₄Φ₈`, `[6]_q = q⁻⁵Φ₃Φ₄Φ₆Φ₁₂`.
+
+The difference is what each is *good for*:
+
+- **`Φ_d` is the primitive spelling.** Each is irreducible, so it names exactly
+  which points you delete from `Spec` — the primitive `d`-th roots of unity. This
+  is the right way to *state* the ring.
+- **`[d]_q` is the consumer spelling.** Quantum dimensions are literally products
+  of brackets, so this is the right way to write the *conditions* a block must
+  satisfy.
+
+One convention trap: because the balanced bracket runs over `d | 2m`, inverting
+brackets up to `N` reaches cyclotomics up to `2N`, not `N`. Anyone converting
+between the two spellings must say which convention they are in.
+
+**Recommendation: define the ring in `Φ_d`, state the per-block conditions in
+`[d]_q`.**
+
+### 🛑 `N = 18` was wrong as a bound — it is `3A`, and `A` is not fixed
+
+Option 1 above is stated with `N = 18`. That number is the current compute
+ceiling, **not a structural bound**, and the distinction matters.
+
+The braid rank is `n = 3A` — stated verbatim in
+`computations/aK_via_lp_dual_full.py:11`, *"For each atom (Z, N) with n = 3A
+strands"*. So `H_18` is `A = 6` (⁶Li) and `H_21` is `A = 7` (⁷Li). The
+`dashboard-sweep` skill already targets ⁵⁶Fe, which is `A = 56` — **`H_168`**.
+
+So `N` is `3 ×` (heaviest isotope attempted), and it moves whenever someone
+computes one isotope further. **A base ring whose definition changes when you
+extend a table is a bad base ring.**
+
+This is the decisive argument for **option 2 over option 1**: inverting every
+`Φ_d(q)` for `d ≥ 2` has no cutoff to maintain, covers every rank at once, and
+removes exactly the locus axiom 4 forbids — `q` a nontrivial root of unity.
+Option 1 remains the honest *minimal* answer for a fixed, declared rank ceiling;
+it is not the right answer for a framework that intends to keep climbing `A`.
+
+### "`R` commutative, localised at `q`" — three readings, none of them the fix
+
+- **Invert the multiplicative set `{q^k}`.** `ℤ[q][1/q] = ℤ[q, q⁻¹]` — this is
+  option 0 exactly, and it is the thing that fails axiom 4.
+- **Localise at the prime ideal `(q)`.** `ℤ[q]_{(q)}` inverts everything *outside*
+  `(q)`, so `q` lands in the maximal ideal and becomes a **non-unit**. That is
+  strictly worse: Laurent structure is lost.
+- **Localise at `ker(ℤ[q,q⁻¹] → ℝ, q ↦ q₀)`.** If `q₀` is transcendental over `ℚ`
+  that kernel is `(0)` and the localisation is `Frac = ℚ(q)` — option 4. If `q₀`
+  were algebraic you would get a DVR: a local ring at one point, discarding the
+  whole `q`-family the framework is built on. (Whether `q₀` is transcendental is
+  not settled here.)
+
+The unifying point: **inverting `q` is free and already assumed — it is not the
+missing ingredient.** What axiom 4 needs is the *brackets* inverted, and brackets
+are not monomials. Option 0 → option 2 is precisely "keep inverting `q`, and
+additionally invert what the axioms actually demand."
+
 ## Follow-on measured: is `[Field R]` real field dependence?
 
 The 185 `[Field R]` files looked like the main obstacle to a non-field base.
