@@ -46,6 +46,39 @@ contributions pair with rank-$(N - \ell)$ contributions under the
 Frobenius integral.  The chirality stratum (S-anti-invariant rank
 $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 
+> **Refuted on the centre, scope (b).** The sentence above
+> transports the annihilator duality from $A$ to the *strata*, and the
+> paragraph below reads those strata off the central idempotents
+> $e_\lambda$. On that basis the pairing is **diagonal**, not
+> anti-diagonal, so distinct strata pair to **zero**: for any linear
+> functional $\varphi$,
+> $\varphi(e_\lambda e_\mu) = \varphi(\delta_{\lambda\mu} e_\lambda)$.
+> Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the corpus's own
+> idempotents — all six off-diagonal entries identically $0$, diagonal
+> $\mathrm{diag}(\tau(e_\lambda))$ nonzero, completeness self-test
+> $\sum_\lambda \tau(e_\lambda) = 1$
+> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+> So each stratum is **self**-dual and the annihilator of a stratum
+> within $Z$ is the span of the *complementary* idempotents — a set
+> complement, not a rank-reindexed stratum. The asserted pairing is
+> identically zero exactly where it claims to be perfect, whenever
+> $\ell \neq N - \ell$.
+>
+> **Scope (b)** rests on a proved invariant — mutual annihilation of
+> distinct central primitive idempotents — which holds for *every*
+> linear functional and every $n$. So no choice of filtration and no
+> choice of Frobenius form restores a cross-stratum pairing here, and
+> **supplying the missing $J^\bullet$ bridge would not repair it**:
+> this defect is independent of the Gap note below.
+>
+> **Not refuted:** $(J^\ell)^\perp = J^{N - \ell}$ as a statement about
+> the filtration of $A$ itself, which is a different claim and is
+> untouched here; and the *Practical consequence* below, which uses the
+> Wedderburn sum and not this duality. Same defect as
+> [`prf:quantum-dilogarithm-stratified`](#prf:quantum-dilogarithm-stratified)
+> Step 1 (bean `qou-xsv8`); analysis in
+> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+
 **Practical consequence.**
 *categorical derivation steps need only enumerate central idempotents $e_\lambda$,
 compute their GB-depth, evaluate $\chi_\lambda$ via Hoefsmit seminormal
@@ -54,7 +87,7 @@ sum $\sum_\lambda w_\lambda \cdot \chi_\lambda(\beta) / \dim_q V_\lambda$
 binning by $\mathrm{depth}(\lambda)$.  No higher-page differentials
 $d_r$ ($r \geq 1$) need ever be computed — they all vanish.*
 
-> **Gap (2026-08-16).** The step above reads a grading of the **centre** by
+> **Gap.** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are
