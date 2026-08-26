@@ -396,6 +396,14 @@ QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceR
 QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.mem_traceRadical_of_map | clean
 QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceRadical_iff | clean
 QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.one_not_mem_either | clean
+# Brick 4, a NEGATIVE result: a nondegenerate cyclic trace does NOT imply
+# semisimplicity. Witness Q[eps]/(eps^2). Pinned because a regression here
+# would silently re-license discharging WenzlTowerStep from its own hypothesis.
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.epsCoeff_cyclic | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.epsCoeff_nondegenerate | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.dualNumber_not_isSemisimpleRing | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.nondegenerate_cyclic_trace_not_sufficient | clean
+QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.traceRadical_epsCoeff_eq_bot | clean
 """
 
 

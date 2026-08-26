@@ -643,6 +643,7 @@ import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate
 import QOU.QBeta.MarkovTraceQuotient
 import QOU.QBeta.TLTowerRadicalDescent
+import QOU.QBeta.TraceNondegeneracyInsufficient
 import QOU.QBeta.JonesNormalisation
 -- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
 -- library root: `lake build` only builds `QOU.lean`'s import closure, so a
