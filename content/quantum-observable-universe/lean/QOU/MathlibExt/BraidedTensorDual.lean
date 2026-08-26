@@ -3,6 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import QOU.MathlibExt.BraidedSlide
 import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.Ribbon
 
 /-!
 # QOU.MathlibExt.BraidedTensorDual — where the monodromy comes from
@@ -183,5 +184,110 @@ theorem rightDualIso_swap_tensor {X X' Y Y' : C}
               ⊗≫ ((β_ X X').hom ≫ ε_ X X'))
       = (β_ (X ⊗ Y) (Y' ⊗ X')).hom ≫ (𝟙 _ ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y')
   exact (evaluation_swap_tensor_eq_monodromy p r).symm
+
+/-! ### The ribbon repair
+
+The monodromy is exactly what a **balancing** cancels, so while `drinfeldIso` is not monoidal, its
+twisted form `θ ≫ drinfeldIso` is.  That is the classical statement — a ribbon element `v` makes
+`uv⁻¹` grouplike — and `twist_drinfeld_monoidal` below is its categorical form.
+-/
+
+section Ribbon
+
+variable [RightRigidCategory C]
+
+/-- Swap-then-tensor: `X ⊗ Y` as a right dual of `Yᘁ ⊗ Xᘁ`, via `exactPairing_swap` of the
+tensor pairing. -/
+noncomputable def swapTensorPairing (X Y : C) :
+    ExactPairing ((Y : C)ᘁ ⊗ (X : C)ᘁ) (X ⊗ Y) :=
+  @BraidedCategory.exactPairing_swap C _ _ _ (X ⊗ Y) ((Y : C)ᘁ ⊗ (X : C)ᘁ)
+    (tensorExactPairing X ((X : C)ᘁ) Y ((Y : C)ᘁ))
+
+/-- Tensor-then-swap: the same objects, the other pairing.  `rightDualIso_swap_tensor` says these
+two differ by the inverse monodromy. -/
+noncomputable def tensorSwapPairing (X Y : C) :
+    ExactPairing ((Y : C)ᘁ ⊗ (X : C)ᘁ) (X ⊗ Y) :=
+  @tensorExactPairing C _ _ ((Y : C)ᘁ) Y ((X : C)ᘁ) X
+    (BraidedCategory.exactPairing_swap Y ((Y : C)ᘁ))
+    (BraidedCategory.exactPairing_swap X ((X : C)ᘁ))
+
+/-- `Xᘁᘁ ⊗ Yᘁᘁ` as a right dual of `Yᘁ ⊗ Xᘁ`. -/
+noncomputable def doubleDualTensorPairing (X Y : C) :
+    ExactPairing ((Y : C)ᘁ ⊗ (X : C)ᘁ) ((((X : C)ᘁ : C)ᘁ) ⊗ (((Y : C)ᘁ : C)ᘁ)) :=
+  tensorExactPairing ((Y : C)ᘁ) (((Y : C)ᘁ : C)ᘁ) ((X : C)ᘁ) (((X : C)ᘁ : C)ᘁ)
+
+/-- **The comparison a monoidal pivotal structure must satisfy**, `X ⊗ Y ≅ Xᘁᘁ ⊗ Yᘁᘁ`.
+
+Built by dual-uniqueness between two pairings of `Yᘁ ⊗ Xᘁ`, which is what makes it directly
+comparable with the componentwise `drinfeldIso`s.
+
+**Not yet identified with `drinfeldIso (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom`.**  The two are the
+same map — both are the monoidal structure map of the double-dual functor — but proving it means
+transporting a pairing along `tensorRightDualIso X Y : (X ⊗ Y)ᘁ ≅ Yᘁ ⊗ Xᘁ` (Mathlib's
+`exactPairingCongrLeft`, plus a compatibility lemma for `rightDualIso` that nobody has written).
+Until that is done, the results below are about *this* comparison, and a `PivotalCategory`
+monoidality field cannot yet be phrased in terms of them. -/
+noncomputable def pivotorTensor (X Y : C) :
+    (X ⊗ Y) ≅ ((((X : C)ᘁ : C)ᘁ) ⊗ (((Y : C)ᘁ : C)ᘁ)) :=
+  rightDualIso (swapTensorPairing X Y) (doubleDualTensorPairing X Y)
+
+/-- **`drinfeldIso` fails monoidality by exactly the inverse monodromy.**
+
+Not `(drinfeldIso X).hom ⊗ₘ (drinfeldIso Y).hom`, as a monoidal pivotal structure would require,
+but that composed with `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹`.  In a symmetric category the correction
+is the identity and monoidality does hold; in a genuinely braided one it does not.
+
+Three lemmas compose: `rightDualIso_hom_trans` factors the comparison through the intermediate
+tensor-then-swap pairing, `rightDualIso_swap_tensor` evaluates the first factor as the inverse
+monodromy, and `rightDualIso_tensorExactPairing` evaluates the second as the tensor of the two
+`drinfeldIso`s. -/
+theorem pivotorTensor_hom (X Y : C) :
+    (pivotorTensor X Y).hom
+      = ((β_ Y X).inv ≫ (β_ X Y).inv)
+          ≫ ((drinfeldIso X).hom ⊗ₘ (drinfeldIso Y).hom) := by
+  rw [pivotorTensor, ← rightDualIso_hom_trans (swapTensorPairing X Y) (tensorSwapPairing X Y)
+        (doubleDualTensorPairing X Y)]
+  congr 1
+  · exact rightDualIso_swap_tensor (HasRightDual.exact (X := X)) (HasRightDual.exact (X := Y))
+  · exact rightDualIso_tensorExactPairing
+      (BraidedCategory.exactPairing_swap Y ((Y : C)ᘁ)) (HasRightDual.exact (X := (Y : C)ᘁ))
+      (BraidedCategory.exactPairing_swap X ((X : C)ᘁ)) (HasRightDual.exact (X := (X : C)ᘁ))
+
+omit [RightRigidCategory C] in
+/-- The monodromy commutes with a tensor of endomorphisms — braiding naturality, twice. -/
+theorem monodromy_inv_comm {X Y : C} (f : X ⟶ X) (g : Y ⟶ Y) :
+    (f ⊗ₘ g) ≫ ((β_ Y X).inv ≫ (β_ X Y).inv)
+      = ((β_ Y X).inv ≫ (β_ X Y).inv) ≫ (f ⊗ₘ g) := by
+  rw [← Category.assoc, braiding_inv_naturality f g, Category.assoc,
+      braiding_inv_naturality g f, ← Category.assoc]
+
+/-- **The ribbon repair: `θ ≫ drinfeldIso` IS monoidal.**
+
+`drinfeldIso` misses monoidality by the inverse monodromy (`pivotorTensor_hom`); the balancing
+axiom `θ_{X ⊗ Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)` supplies exactly the monodromy, and the two
+cancel.  The step that makes the cancellation go through is `monodromy_inv_comm`: `θ_X ⊗ θ_Y`
+commutes past the monodromy by braiding naturality, so the `β β` from the balancing axiom meets its
+own inverse.
+
+This is the categorical form of the classical fact that a ribbon element `v` makes `uv⁻¹`
+grouplike, and it is why **ribbon**, not merely braided, is the hypothesis under which a rigid
+category is pivotal in the monoidal sense. -/
+theorem twist_drinfeld_monoidal [BalancedCategory C] (X Y : C) :
+    BalancedCategory.twist (X ⊗ Y) ≫ (pivotorTensor X Y).hom
+      = (BalancedCategory.twist X ≫ (drinfeldIso X).hom)
+          ⊗ₘ (BalancedCategory.twist Y ≫ (drinfeldIso Y).hom) := by
+  rw [pivotorTensor_hom, BalancedCategory.twist_tensor]
+  calc _ = (β_ X Y).hom ≫ (β_ Y X).hom
+            ≫ ((BalancedCategory.twist X ⊗ₘ BalancedCategory.twist Y)
+                ≫ ((β_ Y X).inv ≫ (β_ X Y).inv))
+            ≫ ((drinfeldIso X).hom ⊗ₘ (drinfeldIso Y).hom) := by simp
+    _ = (β_ X Y).hom ≫ (β_ Y X).hom
+            ≫ (((β_ Y X).inv ≫ (β_ X Y).inv)
+                ≫ (BalancedCategory.twist X ⊗ₘ BalancedCategory.twist Y))
+            ≫ ((drinfeldIso X).hom ⊗ₘ (drinfeldIso Y).hom) := by
+          rw [monodromy_inv_comm]
+    _ = _ := by simp [← tensorHom_comp_tensorHom]
+
+end Ribbon
 
 end QOU.MathlibExt
