@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-26T03:46:08Z
+updated_at: 2026-08-26T04:30:55Z
 ---
 
 
@@ -1046,3 +1046,265 @@ it is not worth shipping half-done.
 five to their actual pin, `markov_identity_symbolic_probe` to `comparison`, and
 `chirality_topology_binding_probe` to whatever `Q0` resolves to in its source
 module.
+
+## PROSE-VS-CODE, TWO MORE CLASSES FIXED 2026-08-26
+
+Working this bean's closing lesson -- "a q0 checker that reads prose about q0
+will always over-flag, and the corpus is full of careful prose about q0
+precisely where the code is careful not to use it." Three classes were already
+fixed (reason strings, module-vs-symbol imports, cone traversal). Two more, both
+in q0_producer_pin_classifier.py, both the same shape one level down: the prose
+is INSIDE the code, as message strings.
+
+CLASS 4 -- is_prose covered only DOCSTRINGS. A guard that refuses to straddle,
+
+    raise SystemExit(f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json: ...")
+
+names a muon artifact in its own warning, and the classifier counted that as
+evidence the producer READS the muon pin. qbeta_habiro_residual_probe is
+declared PROTON, carries exactly that guard, and was indicted on it. The prose
+it matched exists precisely to prevent the thing it was taken to prove.
+Fixed by _message_string_ids(): str constants inside an f-string, a raise, or a
+print/warn/log call are prose -- EXCEPT when the string is an argument to an
+operative call (open, Path, read_text, mpf, Decimal, json.load), because those
+strings do the thing rather than describe it.
+
+CLASS 5 -- the env-like gate read RAW SOURCE. `if s.lower() in MUON_ENV and
+"ANCHOR" in src` tested the whole file text, comments and strings included, so
+a file that merely DISCUSSES anchors satisfied it. That is what produced
+su4_1111_markov_trace_probe's `env-like "muon"`. Fixed by _code_only_text(),
+which tokenizes and drops COMMENT and STRING tokens.
+
+MEASURED HONESTLY: the headline counts DO NOT MOVE. proton 71, muon 27, none
+41, BOTH 9, before and after; the BOTH list is identical. What changed is the
+EVIDENCE:
+
+  qbeta_habiro_residual_probe  muon: ['"ANCHOR STRADDLE in q-pinning..."',
+                                      '"q-pinning-50-digit.witness.json"']
+                            -> muon: ['"q-pinning-50-digit.witness.json"',
+                                      '(prose only) "...docstring..."']
+  su4_1111_markov_trace_probe  muon: ['hardcoded muon 50-digit',
+                                      'env-like "muon"']
+                            -> muon: ['hardcoded muon 50-digit']
+
+Both files stay BOTH, and correctly so -- each has independent real evidence.
+qbeta_habiro_residual_probe genuinely does
+`record_upstream(COMP / "q-pinning-50-digit.witness.json", ...)`, and its own
+comment explains why that is right: the pin witness still supplies the CODATA
+uncertainty budget, an m_p/m_e quantity belonging to the proton layer, while q0
+itself comes from Q_50_DIGIT_STR. So the fix removes FALSE EVIDENCE, not false
+verdicts. Claiming it reduced the over-flag count would be wrong.
+
+REGRESSION TEST, and it can actually fail. --selftest asserts both demotions.
+Verified by reverting each fix in turn: the reverted classifier FAILS with 2
+regressions, the fixed one passes. That matters here more than usual, because
+the counts do not move when this regresses -- the selftest is the only thing
+that would notice.
+
+STILL OPEN from the earlier pass: the 5 of 10 flagged producers not yet
+hand-checked (chirality_topology_binding_probe, eigenbasis_structural_lemmas_probe,
+habiro_witness_convention_adjudication, qbeta_habiro_f_from_shape_collapse,
+qbeta_rung1_div25_framing_squared_test).
+
+
+## RETRACTION 2026-08-26 — the 870 figure is CORRECT; I measured a different thing
+
+Earlier this session I measured the muon-pinned witness count at 149, reported
+AGENTS.md's 870 as "stale by ~5.8x", and named correcting it as next work.
+THAT WAS WRONG and the number should not be changed.
+
+WHY. "Carries the muon fingerprint" is ambiguous in this corpus, and the
+ambiguity is already documented one directory over:
+computations/audits/muon_pin_three_values_probe.py establishes that THREE
+different values are all called "the muon q0" --
+
+    A  1.1099785955573347...   frozen canonical pin
+    B  1.10997859555418057...  lepton-tower derivation, CODATA 2018
+    C  1.10997859564273904...  lepton-tower derivation, CODATA 2022
+
+diverging at the 13TH SIGNIFICANT DIGIT. So the prefix length silently selects
+which of the three you count:
+
+    match on                    counts             2026-08-16   2026-08-26
+    1.109978595   (10 digits)   all three             871          477
+    1.1099785955573347 (full)   canonical pin only    468          149
+
+870 is the ten-digit reading and is right. I matched the full canonical literal,
+so I was counting A alone and missing B and C entirely.
+
+WHAT IS ACTUALLY TRUE: the migration HAS run -- 871 -> 477 under the recorded
+definition, a 45% drop, measured with one script at both ends (git ls-tree per
+revision, so the denominator moves with the tree, 2947 -> 3102). It has NOT
+fallen to ~149.
+
+THE REAL DEFECT, and it is the one this bean is about: the number was recorded
+WITHOUT ITS METHOD, in a domain where the method is genuinely ambiguous and the
+ambiguity is documented elsewhere in the same corpus. That is prose about q0
+that cannot be checked against code -- so the next reader measures it, gets a
+different answer, and is one edit from replacing a correct figure with one
+answering a different question. I was that reader.
+
+FIXED: AGENTS.md now carries the method beside the number, both readings, both
+dates, and a pointer to muon_pin_three_values_probe.py for why the definition
+matters. Added computations/audits/muon_pin_witness_census.py so the count is
+re-derivable at any revision rather than remembered -- it prints every prefix
+length side by side and marks the two that are ambiguous with the proton pin,
+which is the shape of mistake one notch further down.
+
+
+## THE 5 UNVERIFIED PRODUCERS — HAND-CHECKED 2026-08-26, one is a real defect
+
+Cleared the "not yet hand-checked" residue from the earlier pass. None of the
+five is flagged `muon` any more (three `none`, two `proton`), but "the checker
+says none" is not a hand-check, so each was read against its source.
+
+  eigenbasis_structural_lemmas_probe        CORRECT. q0Anchor "independent"
+                                            with an explicit reason: evaluated
+                                            at any q0, and the declaration
+                                            exists to stop the builder stamping
+                                            a default pin plus a q0Value it
+                                            never used. No q0 read anywhere.
+  habiro_witness_convention_adjudication    CORRECT. q0Anchor "independent",
+    _probe                                  deliberately no q0Value. (The bean
+                                            recorded this without its `_probe`
+                                            suffix, which is why it read as
+                                            missing.)
+  qbeta_habiro_f_from_shape_collapse        CORRECT. proton, via
+                                            `from q_parameter import
+                                            Q_50_DIGIT_STR`. No muon path.
+  qbeta_rung1_div25_framing_squared_test    CORRECT. same, proton.
+  chirality_topology_binding_probe          *** DEFECT, see below ***
+
+### chirality_topology_binding_probe declared `independent` on a FALSE experiment
+
+It imports Q0 from a PEER PRODUCER -- `from hecke_channel_binding_probe import
+... Q0`, where `Q0 = Q_MP`, the proton pin -- uses it numerically, records
+`"q0": str(Q0)` in its witness, and declared:
+
+    q0Anchor: "independent"
+    reason:   'PROVED by running this producer under QOU_Q0_ANCHOR=muon and
+               =proton and diffing the emitted witness: the only non-ephemeral
+               leaves that differ are q0Anchor and q0Value THEMSELVES -- every
+               substantive field is byte-identical'
+
+RE-RAN THAT EXPERIMENT. It refutes the claim. **43 non-ephemeral leaves
+differ**, among them /E0_MeV and EVERY entry of /channel_values_at_q0 for pp,
+nn and pn. Those are physics fields, not labels. Q_MP does track
+QOU_Q0_ANCHOR (verified directly: muon 1.1099785955573347..., proton
+1.10997858275138...), so the toggle really did move the value and the outputs
+really did move with it.
+
+And the committed witness held the MUON value for q0, under an `independent`
+label, contrary to the proton default.
+
+CONCLUSION UNAFFECTED, which is why this is hygiene and not an emergency:
+Pauli-complete is the best model under both anchors, RMS values move by ~1e-8
+relative -- consistent with the 11.5 ppb separation, and exactly the magnitude
+this bean predicts for the class. Fixed: q0Anchor -> "proton", witness
+regenerated at proton, reason string rewritten to record the measurement rather
+than assert the refuted one.
+
+### THE AUDIT GAP THIS EXPOSES
+
+inherited_q0_pin_audit.py audits inheritance through WITNESS FILES
+(upstream=...witness.json, reading src['constants']['q_0']). It does not audit
+inheritance through a PYTHON IMPORT FROM A PEER PRODUCER, which is how this one
+got its pin. q0_producer_pin_classifier scored it `none` for the same reason --
+Q0 arrives from a sibling probe, not from q_parameter/constants, and the
+provider-terminal rule (class 3) stops the walk before it reaches the real
+source.
+
+So there is an unaudited inheritance path: producer A imports a q0-bearing
+symbol from producer B. Worth its own pass; not attempted here.
+
+### AND IT IS THE SAME LESSON AGAIN
+
+The declaration was prose about q0 that the code contradicts -- a reason string
+asserting an experiment, where running the experiment refutes it. That is the
+fourth variant this session, after the checker reading its own guard's warning,
+the raw-source "ANCHOR" match, and the 870 figure recorded without its method.
+The pattern is not that the prose is careless; it is that prose about q0 is
+never re-run, so it decays silently while the code moves.
+
+
+## CORRECTION 2026-08-26 — I got 2 of my 5 hand-checks WRONG; the sibling is right
+
+My hand-check above recorded qbeta_habiro_f_from_shape_collapse and
+qbeta_rung1_div25_framing_squared_test as "CORRECT. proton, via
+`from q_parameter import Q_50_DIGIT_STR`. No muon path."
+
+THAT IS WRONG. Both bind Q0_MP_PIN = Q_50_DIGIT_STR in their OWN source (lines
+108 and 65) and declare q0Anchor: "independent" (lines 391 and 245). The
+sibling's file-local list has them right and my entry is retracted.
+
+HOW I GOT IT WRONG, because it is this arc's own error class and I walked into
+it mid-arc: I confirmed what the CLASSIFIER said the pin was (proton) and that
+there was no muon path, and reported on the CODE. The defect is a mismatch
+between the code and the DECLARATION, and I never read the declaration. I
+answered "which pin does it use" when the question was "does what it says match
+what it does" -- the same substitution the whole bean is about.
+
+CORRECTED TALLY for my five:
+
+    eigenbasis_structural_lemmas_probe        CORRECT   (sibling agrees)
+    habiro_witness_convention_adjudication..  CORRECT   (sibling agrees)
+    chirality_topology_binding_probe          DEFECT, fixed by me
+    qbeta_habiro_f_from_shape_collapse        DEFECT    (I said correct)
+    qbeta_rung1_div25_framing_squared_test    DEFECT    (I said correct)
+
+3 of 5 are defects, not 1 of 5.
+
+CONVERGENCE ON chirality_topology_binding_probe, from two directions: the
+sibling read the import (`it imports Q0 itself, prints it, and writes
+"q0": str(Q0) into its own witness while declaring independent -- a witness that
+records q0 and denies reading it is self-contradictory`); I re-ran the anchor
+experiment its q0AnchorReason cites and measured 43 differing non-ephemeral
+leaves. Same defect, independent routes, and the two findings are complementary
+-- theirs shows the declaration is self-contradictory on its face, mine shows
+the specific experiment the reason string invokes REFUTES it. Fixed on my side
+(q0Anchor -> proton, witness regenerated, reason rewritten).
+
+THE TWO I MIS-CLEARED ARE NOT FIXED. They are on the sibling's file-local list
+and are theirs to drain; I am not duplicating the fix. Flagged here so the
+mis-clearing does not sit in this bean as a clean verdict.
+
+
+## COORDINATION 2026-08-26 — a sibling owns the shared normaliser; I am standing off it
+
+PR #5818 (branch claude/muon-proton-pinning-migration-0u9qoc) landed
+computations/audits/_source_normalise.py: code_only() (tokenize, blank COMMENT +
+triple-quoted STRING, PRESERVE line and column), blank_declaration_prose(),
+code_only_ast(), with its own --selftest. Its docstring records that the corpus
+already carried FOUR independent correct implementations of that blanking pass,
+shared by none.
+
+I ADDED A FIFTH, AND MINE IS WORSE. My _code_only_text() in
+q0_producer_pin_classifier.py joins tokens with " ", which DESTROYS LINE
+NUMBERS -- the exact 476-vs-647 defect their module exists to fix. It currently
+only gates a boolean ("ANCHOR" in code_only) so no reported position depends on
+it, but it should become `from _source_normalise import code_only` once #5818
+lands. Recorded so it does not quietly persist as implementation #5.
+
+WHAT I HAVE THAT THEIRS DOES NOT, offered to them for folding in:
+_message_string_ids() demotes str constants inside an f-string, a raise, or a
+print/warn/log call -- EXCEPT when the string is an argument to an operative
+call (open, Path, read_text, mpf, Decimal, json.load). code_only deliberately
+leaves single-quoted strings intact (they carry declared values), which is right
+but leaves MESSAGE strings matchable; the operative-call carve-out is the
+load-bearing half, since without it real reads get blanked. Orthogonal to
+blank_declaration_prose, which keys on dict keys rather than call context.
+
+Posted all of this on #5818 as a coordination comment, including the retraction
+of my two wrong hand-checks (their file-local list has them right).
+
+STANDING OFF: the q0 reroute and the shared-normaliser wiring are
+dependency-ordered mechanical work with one owner, and that owner is the #5818
+branch. Their own scoping is the reason to stay off it -- they found the 44 are
+not one batch (12 with no committed witness, 9 using record_upstream, and of the
+remainder 5 BLOCKED because rerouting a producer whose upstream is muon-built
+MANUFACTURES a straddle). That is exactly the kind of finding a second agent
+batching by count would have destroyed.
+
+My side of this bean is done: the two prose-vs-code classifier classes, the
+selftest that can fail, the 870-method retraction plus the census script, and
+the chirality fix.

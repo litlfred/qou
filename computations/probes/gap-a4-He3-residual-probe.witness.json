@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T15:22:53.284423+00:00",
-  "commitSha": "2dd8d7d4ad60f5c21aa7a8b2a11d548826fbf212",
+  "computedAt": "2026-08-26T03:49:42.512568+00:00",
+  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 190,
+  "durationMs": 197,
   "computation": "gap-a4-He3-residual-probe",
   "scriptFile": "gap_a4_He3_residual_probe.py",
   "scriptHash": "2b597109a313",
-  "scriptCommitSha": "2af340cde8fe8c31061b1f64ed1cf49d1ee281bb",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -57,8 +57,8 @@
     "candidates": [
       {
         "label": "tr_M(³He)",
-        "value_at_q0": "0.68394780225041883750340784058091567173099448663057",
-        "relative_error": "-0.4401945268562123780843836582705073508081939536846",
+        "value_at_q0": "0.40376703685142817036867025333340254115508707059187",
+        "relative_error": "-0.66952010612394586095497262753006947216424467142699",
         "verdict": "REFUTED"
       },
       {

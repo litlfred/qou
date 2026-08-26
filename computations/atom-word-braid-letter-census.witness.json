@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:50:37.007191+00:00",
-  "commitSha": "43cfeee08cc6d33eb3cd1d36d0d9283393595cd3",
+  "computedAt": "2026-08-26T03:05:50.601328+00:00",
+  "commitSha": "f0c5d467da1d379408cdc33eafe6a6d46b2e58b4",
   "assertions": [
     {
       "name": "averaged_letter_count_is_2A_plus_1",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "atom-word-braid-letter-census",
   "scriptFile": "atom_word_braid_letter_census_probe.py",
-  "scriptHash": "b0df0298c92e",
-  "scriptCommitSha": "3f057ab89ea120a45a049c3dc570538e755e3504",
+  "scriptHash": "03a85f370e5f",
+  "scriptCommitSha": "920f33dba8e82327455154246339bc22676111cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,6 +73,8 @@
         "sigma": 11,
         "sigma_inv": 7,
         "averaged_not_in_im_rho": 5,
+        "averaged_colour_blind": 4,
+        "averaged_colour_weighted": 1,
         "braid_generators": 18,
         "predicted_2A_plus_1": 5,
         "branch_closures_2_pow": 32
@@ -86,6 +88,8 @@
         "sigma": 18,
         "sigma_inv": 10,
         "averaged_not_in_im_rho": 7,
+        "averaged_colour_blind": 6,
+        "averaged_colour_weighted": 1,
         "braid_generators": 28,
         "predicted_2A_plus_1": 7,
         "branch_closures_2_pow": 128
@@ -99,6 +103,8 @@
         "sigma": 23,
         "sigma_inv": 15,
         "averaged_not_in_im_rho": 9,
+        "averaged_colour_blind": 8,
+        "averaged_colour_weighted": 1,
         "braid_generators": 38,
         "predicted_2A_plus_1": 9,
         "branch_closures_2_pow": 512

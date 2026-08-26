@@ -587,17 +587,42 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
     # re-running rather than re-reading once S4 lands.
     "closed_form_tau_M_verification_phase5q.py::main":
         "self-consistency check within the legacy frame; re-run, do not re-read (qou-cds4)",
-    # NOT YET ADJUDICATED. Listed so the ratchet can hold, flagged so nobody
-    # mistakes silence for approval. Neither has been read.
-    # ADJUDICATED 2026-08-21: deliberate AND COUPLED. Its in-file comment says
-    # the four oracle witnesses it checks against "used the strict_averaged pn
-    # convention, so we compare on the MATCHING word". Correct today — and the
-    # same file already runs a colour-WEIGHTED check at n=6, so it is explicitly
-    # two-framed, not blind. But the oracles are
-    # chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}-at-q0-50dps, i.e. the
-    # colour-blind chi family from 45789ddfa0 that also lacks provenance. When
-    # those are regenerated weighted, THIS MUST FLIP TOO or the self-test starts
-    # comparing across frames and still passes.
+    # 🛑 The 2026-08-21 adjudication that used to sit here was WRONG, and it is
+    # deleted rather than amended because it kept being cited. It described a
+    # `chi_monotone_transfer.py` entry that no longer exists (the file is
+    # canonical as of `qou-9ag4`), and it asserted, as fact, that the four
+    # oracle witnesses chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}
+    # -at-q0-50dps "used the strict_averaged pn convention" and were "the
+    # colour-blind chi family" — concluding that flipping the file before
+    # regenerating them would make its self-test compare across frames and
+    # still pass.
+    #
+    # Measured, by recomputing each oracle under both conventions, max rel:
+    #
+    #                 strict_averaged   bring_color_weighted
+    #     D              2.625e-04            5.743e-50
+    #     T              5.482e-04            8.257e-50
+    #     3He            5.281e-04            7.487e-50
+    #     4He            1.883e-03            4.079e-49
+    #
+    # The oracles were ALWAYS canonical: they reproduce exactly at the 50-dps
+    # working precision under colour-weighting and miss by 2.6e-4 .. 1.9e-3
+    # under strict_averaged. So the self-test was not "about to" break — it was
+    # ALREADY FAILING on main, quietly, because the comparison word was stale.
+    # The residual grows with A because the p-n `d` differs by 7.19e-05 and
+    # compounds per interface: a colour-weighting scale, not a precision one.
+    #
+    # Why this note exists at all. The witnesses record no convention field and
+    # no `scriptFile`, so the original claim could not be checked against them —
+    # it had to be TESTED BY RECOMPUTATION, and nobody did until `qou-9ag4`. In
+    # the meantime it was quoted as established fact into a PR body, a bean, and
+    # three check-in notes by an agent (me) who read it here and did not measure
+    # it. That is the corpus-grep discipline in AGENTS.md failing in the
+    # direction it warns about: a specific, confident, dated comment reads as a
+    # primary source and is not one.
+    #
+    # If you are tempted to record a convention claim about a witness here:
+    # measure it first, and say which script you ran.
 }
 
 CANONICAL_PN = "bring_color_weighted"
