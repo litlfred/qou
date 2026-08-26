@@ -30,17 +30,24 @@ export default proposition({
         "substitution this block's statement avoids: raising the $ud$ factor " +
         "to the power $2A+1$ folds the colour-weighted p-n interface in as if " +
         "it were a $ud$ letter. Carrying it as itself takes the residual to " +
-        "$1.2\\times10^{-14}$, the float64 floor of the word's own offsets.",
+        "$1.2\\times10^{-14}$, which is the residual of the character " +
+        "accumulation itself, not a property of the word's offsets: those are " +
+        "exact.",
     },
     {
-      kind: "caveat",
+      kind: "note",
       date: "2026-08-26",
       body:
-        "Both constructors of the atomic word emit float64 interface offsets " +
-        "(`atom_braid_word_3A` wraps one in `mpf`), so any character built " +
-        "from them is capped at $\\sim10^{-15}$ regardless of the working " +
-        "precision downstream. The stationarity identity is exact; the " +
-        "numerical agreement is not better than that cap.",
+        "**Retracted, same day.** An earlier version of this note claimed both " +
+        "constructors of the atomic word emit float64 interface offsets, " +
+        "capping any character built from them at $\\sim10^{-15}$. That is " +
+        "false. `atom_braid_word_3A` builds $h$ and $\\delta$ inside " +
+        "`workdps(max(dps, 60))` from the 50-digit $q_0$ and " +
+        "`flavor_split_leading`; measured against the closed form, its $ud$ " +
+        "and p-n offsets have relative error exactly zero at 60 dps. The " +
+        "float64 belonged to a since-deleted local rebuild in the H_12 " +
+        "branching cone, and the error was attributing a one-sided difference " +
+        "to both sides.",
     },
   ],
   tags: [
