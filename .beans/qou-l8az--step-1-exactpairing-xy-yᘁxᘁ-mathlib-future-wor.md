@@ -1,11 +1,11 @@
 ---
 # qou-l8az
 title: 'Step 1: ExactPairing (X⊗Y) (Yᘁ⊗Xᘁ) — Mathlib Future-work entry, not done'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:27Z
-updated_at: 2026-08-26T18:27:01Z
+updated_at: 2026-08-26T18:33:35Z
 ---
 
 
@@ -226,3 +226,34 @@ This is the same move that made step 1 work; it was not applied to step 2.
 No Lean committed. A sorry in the repo would assert this is one lemma away --
 which is now TRUE and precisely located, but the strict discipline is that the
 repo carries no sorry, and a bean carries the skeleton instead.
+
+
+
+## CLOSED 2026-08-26 — both snakes PROVED, Mathlib Future-work entry 1 supplied
+
+QOU/MathlibExt/RigidTensorDual.lean: tensorExactPairing, sorry-free, axioms
+clean. Also hasRightDualTensor and tensorRightDualIso (`(X tensor Y)dual iso
+Ydual tensor Xdual`), so qou-9m7v (step 2) is closed in the same file.
+
+### What finally worked
+
+The move that unlocked step 1 of the calc, applied AGAIN inside the exchange
+step -- which is precisely what my earlier passes never did:
+
+  regroup until a BARE `W <| g >> f |> Z` appears with NO compound whiskering
+  around it. That bare shape is what whisker_exchange matches; the compound
+  forms hide it.
+
+Snake 1 needed one extra regrouping to expose it; snake 2 needed the mirrored
+form and `whisker_exchange` in the same direction (the composite runs
+f-then-g there rather than g-then-f, so the rewrite lands on the other side).
+
+Full proofs are in the file. ~35 automated placements had been ruled out first;
+none of them would ever have worked, because the pattern was not present to
+match until the regrouping exposed it.
+
+### Non-vacuity
+
+Mutation: declaring the pairing against the WRONG dual order (X' tensor Y'
+instead of Y' tensor X') fails to compile. So the order-reversal is load-bearing
+and this is not an accident of coherence.
