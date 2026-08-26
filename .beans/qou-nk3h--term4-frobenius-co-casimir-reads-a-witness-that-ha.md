@@ -1,11 +1,11 @@
 ---
 # qou-nk3h
 title: term4 Frobenius co-Casimir reads a witness that has NEVER existed — two producers silently fall back to a constant
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T16:53:01Z
-updated_at: 2026-08-26T16:53:40Z
+updated_at: 2026-08-26T17:16:21Z
 ---
 
 Found 2026-08-26 while answering "are the low-isotope dashboard's witnesses
@@ -86,3 +86,93 @@ confident conclusion — check the whole listing.
 
 Whether `B_pred_MeV = -261780` for deuterium means anything. It does not, but
 that is the producer's physics, and the k>=3 tail rather than term 4.
+
+
+## RESOLVED 2026-08-26 — the table is built, and the convention was measured not chosen
+
+`computations/probe_term4_conventions.py` now produces
+`probe-term4-conventions.witness.json`, and both consumers read it. T4 in
+`unified_low_isotope_predictor` varies with A again — 1.6363 / 1.2999 / 1.1507
+/ 1.0670 / 1.0526 MeV at A = 2,3,4,6,7 — instead of the flat 1.0475.
+
+### The convention decision I said needed the owner: it did not
+
+I wrote in the guard commit that reconstructing the table was "a choice among
+conventions, not a computation". That was the right caution and the wrong
+conclusion. Measured, two axes are genuinely free and both move the answer:
+
+| axis | option A | option B | Σ at A=7 |
+|---|---|---|---|
+| q-integer | balanced `(q^h−q^-h)/(q−q^-1)` | unbalanced `(q^h−1)/(q−1)` | **2.0599** vs 2.0337 |
+| row cap | all λ ⊢ 3A | ≤ 6 rows | **2.0599** vs 1.0299 |
+
+The row cap is a factor of 2, because capping removes the column partition
+`(1^{3A})`, which contributes exactly 1.
+
+Three facts already in the corpus pin both axes, so nothing was selected here.
+Each is a passing assertion in the witness:
+
+1. **The consumer's own docstring.** It quotes *"at A=7 the actual value is
+   2.060, at A=6 it is 2.088"*. Balanced/uncapped gives **2.0599** and
+   **2.0881**. Unbalanced gives 2.0337/2.0506; the 6-row cap gives
+   1.0299/1.0440. Neither of the other three combinations produces the quoted
+   pair.
+2. **The legacy constant.** `FROB_N3 = m_e·(2 + 1/[2]_q)` with balanced
+   `[2]_q = q + q⁻¹` is `2.4972905456049155559958…`, and the table's `n=3`
+   entry is `2.4972905456049155559958…` — every digit computed, an independent
+   corpus object landing on the A = 1 case.
+3. **The extreme blocks.** `dim_q((n)) = dim_q((1ⁿ)) = 1` (a single row's hooks
+   are exactly n, n−1, …, 1, so the hook product *is* `[n]_q!` — convention
+   free), so Σ → 2 from above. That is the behaviour the fallback constant 2.05
+   was estimating, and A = 8 measures 2.0419, still decreasing.
+
+The lesson generalises: *"this needs a convention decision"* was itself a
+measurable claim, and measuring it collapsed the option space to one. Do the
+measurement before escalating.
+
+### The table
+
+    A   n=3A    #λ    Σ 1/dim_q at q₀
+    1      3     3    2.497290545604915556
+    2      6    11    3.202134001221746245
+    3      9    30    2.543883846981462374
+    4     12    77    2.251934048039022824
+    5     15   176    2.137440963561643627
+    6     18   385    2.088090699685484443
+    7     21   792    2.059888298036941438
+    8     24  1575    2.041868785885538295
+
+Parameter-free: a finite combinatorial sum at the substrate q₀ (proton pin), no
+experimental input. mpmath at 60 dps, serialised as 50-digit strings.
+
+### Two precision defects fixed on the way in
+
+- **`mass_formula_6term` parsed the table with `float(val)`.** Harmless while
+  the table was absent; a real 50-digit → float64 truncation the moment it
+  exists. Both loaders now go through `_mpf_from_witness_value`, which parses a
+  string and **refuses a JSON number** rather than wrapping the loss in an mpf
+  — `mp.mpf(str(<float>))` is the laundering pattern the precision gates flag,
+  and writing it would have been the easy wrong fix.
+- **My own assertion bounds were float literals.** The raw-float64 ratchet
+  caught 12 fields (`expected`/`tolerance`) on the first run of the new
+  producer. Carried as `mp.mpf` instead.
+
+Display-only `float()` casts were added at five f-string sites across the two
+consumers, which now receive mpf where they used to receive float. Arithmetic
+stays mpf; AGENTS.md permits the cast inside an f-string.
+
+### Verification
+
+Both consumers exit 0 with the table wired and no warning.
+`scripts/precision-gates.sh --changed`: **all blocking gates green, exit 0**,
+before and after.
+
+### Explicitly NOT claimed
+
+**This does not make the predictor's physics right.** `B_pred(D)` is still
+−261780 MeV — the k≥3 tail, not term 4. And ⁶Li now lands at **+0.00 %**
+(31.9946 vs 31.9940 AME), which is **not** a result: in a predictor that misses
+deuterium by 10⁷ %, one isotope landing on target is noise finding a target, and
+its T1 is 0.0000 there. Do not quote it. The predictor's stale witness
+(`qou-syit`) is now *more* stale, and still cannot be refreshed until its 70
+raw-float64 payload fields are fixed at the producer.
