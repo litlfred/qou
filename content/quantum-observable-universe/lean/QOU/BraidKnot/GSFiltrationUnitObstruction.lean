@@ -331,4 +331,91 @@ theorem monomial_hypotheses_satisfiable :
 
 end NonVacuity
 
+/-! ### 6. An independent route: the anti-diagonal "Poincaré duality of strata"
+
+`prf:quantum-dilogarithm-stratified` Step 1 states, of the centre,
+
+    ⟨Z^(k)(A), Z^(ℓ)(A)⟩ = 0   whenever k + ℓ ≠ N,
+
+and calls the residual `Z^(k) × Z^(N-k) → R` the *Poincaré duality of
+curvature-rank strata*. It cites `prf:spectral-sequence-collapse`
+§"Frobenius duality of strata" — which states an **annihilator** duality
+`(J^ℓ)^⊥ = J^{N-ℓ}` for the ideal filtration of the **whole algebra** `A`. That
+is a reasonable thing to say about a Frobenius algebra. What is not reasonable
+is transporting it to the centre's *idempotent* strata, and this section is why.
+
+On `Z`, the pairing is `⟨a, b⟩ = φ(ab)` for the Frobenius integral `φ`, and
+distinct central primitive idempotents **annihilate each other**: `e_λ e_μ = 0`
+for `λ ≠ μ`. So the pairing matrix in the idempotent basis is `diag(φ(e_λ))` —
+**diagonal**, not anti-diagonal. A stratum therefore pairs with *itself*, and
+the anti-diagonal law can only hold if every occupied depth satisfies `2k = N`,
+i.e. if there is a single stratum.
+
+So this site's Step 1 collapses to the same conclusion as §2–§3 — the grading
+must be constant — by a completely **independent** route: it uses no filtration
+of words at all, only the multiplication table of the idempotents and the same
+measured `φ(e_λ) ≠ 0`. It is worth recording separately because it means the
+site is not repaired by fixing the word/partition bridge: its own Step 1 is
+already inconsistent with a non-constant grading.
+
+**Scope (b) — structural exclusion.** Invariant cited: *distinct central
+primitive idempotents multiply to zero, and the Frobenius integral does not
+vanish on any of them.* The first is the definition of a Wedderburn
+decomposition; the second is the measured fact above — and is in any case
+**implied by the same block's own assertion** that the pairing restricts to `Z`
+non-degenerately. -/
+
+section AntiDiagonal
+
+/-! `φ` lands in any type with a zero: the pairing argument needs nothing else
+of the coefficients, so `[Zero R]` is the whole requirement. -/
+
+variable {R : Type*} [Zero R]
+
+/-- **An anti-diagonal pairing law on idempotent strata forces the grading to
+be constant.**
+
+`hanti` is the block's own displayed hypothesis, restricted to the spanning
+idempotents (so it is *weaker* than what the block asserts, which makes the
+refutation stronger). `hidem` and `hφ` are the two structural inputs.
+
+The argument is three lines: were some `l` to have `2 · deg l ≠ N`, `hanti`
+would give `φ(e_l · e_l) = 0`, i.e. `φ(e_l) = 0` by idempotency, contradicting
+`hφ`. So every degree is `N / 2`, hence all equal.
+
+`φ` is taken as a bare function, not a linear map: linearity is never used, and
+the weaker hypothesis makes the theorem stronger. -/
+theorem antidiagonal_pairing_forces_constant_grading
+    {A : Type*} [Ring A] {Λ : Type*} (deg : Λ → ℕ) (e : Λ → A) (φ : A → R) (N : ℕ)
+    (hidem : ∀ l : Λ, e l * e l = e l)
+    (hφ : ∀ l : Λ, φ (e l) ≠ 0)
+    (hanti : ∀ l l' : Λ, deg l + deg l' ≠ N → φ (e l * e l') = 0) :
+    ∀ l l' : Λ, deg l = deg l' := by
+  have h : ∀ l : Λ, 2 * deg l = N := by
+    intro l
+    by_contra hc
+    exact hφ l (by rw [← hidem l]; exact hanti l l (by omega))
+  intro l l'
+  have h1 := h l
+  have h2 := h l'
+  omega
+
+/-- **The anti-diagonal strata pairing is unavailable at `n = 4`.**
+
+Instantiating §6 against `gbDepth_ne_on_H4`. This refutes
+`prf:quantum-dilogarithm-stratified` Step 1 **without using the word filtration
+at all** — so, unlike the six sites' shared defect, it is not repaired by
+supplying the missing word/partition bridge. -/
+theorem antidiagonal_pairing_excluded_at_four
+    {A : Type*} [Ring A] {Λ : Type*} (deg : Λ → ℕ) (e : Λ → A) (φ : A → R) (N : ℕ)
+    (a b : Λ) (ha : deg a = gbDepth p22) (hb : deg b = gbDepth p4)
+    (hidem : ∀ l : Λ, e l * e l = e l)
+    (hφ : ∀ l : Λ, φ (e l) ≠ 0)
+    (hanti : ∀ l l' : Λ, deg l + deg l' ≠ N → φ (e l * e l') = 0) : False := by
+  have hconst := antidiagonal_pairing_forces_constant_grading deg e φ N hidem hφ hanti a b
+  rw [ha, hb] at hconst
+  exact gbDepth_ne_on_H4 hconst.symm
+
+end AntiDiagonal
+
 end QOU.BraidKnot
