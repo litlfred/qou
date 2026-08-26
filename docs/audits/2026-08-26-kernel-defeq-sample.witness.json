@@ -4,10 +4,10 @@
   "producer": "scripts/lean/BorrowedNameKernel.lean via scripts/lean/audit-driver.sh",
   "bean": "qou-0avp",
   "note": "defeq_collapse means the statement's two sides reduce to each other at default transparency. That is a CANDIDATE signal, not a verdict: it fires both on vacuous definitional restatements AND on genuine finite computations, because reduction is how a concrete computation is proved. The discriminator is whether the operands are hand-entered constants or actually computed -- spot-checked, most in this batch are hand-entered tables (jonesAtOne is a table whose torusLink2 entry is marked 'placeholder'; klEigenvalueAtOne and pairCount are two separate `Int := 2`).",
-  "modules_scanned": 8,
-  "theorems_analysed": 121,
-  "defeq_collapse_count": 19,
-  "wall_clock": "2m45s for 8 modules (single-pass analyzeModules)",
+  "modules_scanned": 16,
+  "theorems_analysed": 221,
+  "defeq_collapse_count": 39,
+  "wall_clock": "8 modules per batch, ~2m40s each; 15 in ONE command exceeds 9m40s and 6 heavy ones time out -- batch at 8",
   "findings": [
     {
       "module": "QOU.AppendixSurreals.Conjectures",
@@ -198,6 +198,207 @@
       "local_only": true,
       "defeq_collapse": true,
       "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.MarkovParameterRecursion",
+      "decl": "QOU.BraidKnot.markovParamCoeff_one",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.MarkovParameterRecursion",
+      "decl": "QOU.BraidKnot.markovParamCoeff_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidKnot.QRogersPentagonArchimedean",
+      "decl": "QOU.BraidKnot.rogersAlpha_eq_beta_at_diagonal",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Braiding.HeckeGenPolyReduction",
+      "decl": "QOU.Braiding.heckeAB_cons_fst",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Braiding.HeckeGenPolyReduction",
+      "decl": "QOU.Braiding.heckeAB_nil",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Braiding.HeckeGenPolyReduction",
+      "decl": "QOU.Braiding.heckeAB_cons_snd",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Braiding.HeckeGenPolyReduction",
+      "decl": "QOU.Braiding.heckeAB_cons",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidsAndKnots.Su2SchurWeylForeclosure",
+      "decl": "QOU.BraidsAndKnots.Su2Foreclosure.gl2_image_eq_le2row",
+      "type_foreign": 0,
+      "type_local": 7,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidsAndKnots.YLambdaQSchur",
+      "decl": "QOU.BraidsAndKnots.dim_V_2_1_eq_two",
+      "type_foreign": 0,
+      "type_local": 0,
+      "value_foreign": 0,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidsAndKnots.YLambdaQSchur",
+      "decl": "QOU.BraidsAndKnots.qFactorial_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.BraidsAndKnots.YLambdaQSchur",
+      "decl": "QOU.BraidsAndKnots.yLambdaQSchur_proton_111_explicit",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BraidsAndKnots.YLambdaQSchur",
+      "decl": "QOU.BraidsAndKnots.yLambdaQSchur_proton_3_explicit",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.riemann_hurwitz_check",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.branch_points_eq",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.is_qou",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.total_ramification",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.aut_order_eq",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.eulerChar_eq",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.euler_genus_relation",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.BringsSurface",
+      "decl": "QOU.BringsSurface.BringsQOU.genus_eq",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
     }
-  ]
+  ],
+  "scaling_note": "maxRecDepth and the COMMAND's own 200000-heartbeat budget both bite on long module lists (fine at 8, fail at 15); the driver now sets maxRecDepth 100000 and maxHeartbeats 0. Even so, throughput is the binding constraint: batch at ~8 modules."
 }
