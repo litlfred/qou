@@ -253,3 +253,71 @@ Five worries on this arc: the word-level "load-bearing" claim (**retracted**),
 a proof**). One in five. The corpus-grep checklist earned its place four times
 here; the one time I skipped a tier of it — `INDEX.md` only — it cost the Malyutin
 bound that was quoted in a paper already on disk.
+
+---
+
+## Addendum 4 — reading (A) refuted in Lean; (B) stands by elimination (2026-08-26)
+
+Addendum 3 left two readings and said the corpus does not settle between them.
+**(B) is a statement of design intent and is not a proposition — nothing can
+prove it. (A) is a mathematical claim, and it is now refuted**, which settles the
+pair by elimination.
+
+[`QOU/MassTheory/TraceReadingsDiffer.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TraceReadingsDiffer.lean)
+— `lean`-direct **exit 0**, six declarations, **no `sorryAx`** on any
+(`propext`, `Classical.choice`, `Quot.sound` only; `not_rel_of_invariant_ne`
+depends on **no axioms at all**).
+
+### The separation is cleanest at the classical limit
+
+Both denominators are nonzero at `q = 1`, and there:
+
+$$\mathrm{tr}_M(\mathcal{B}_3)\big|_{q=1} = 1, \qquad \mathrm{tr}_M(\text{proton atom})\big|_{q=1} = \tfrac{1}{2}$$
+
+A clean factor of two, in exact small rationals — so the refutation needs no
+`q₀`, no dps, and no float. Stated over an arbitrary characteristic-zero field,
+so the separation is not an artefact of ℚ.
+
+| declaration | content |
+|---|---|
+| `trMBorromean_one` | `= 1` at the classical limit |
+| `trMProtonAtom_one` | `= 1/2` at the classical limit |
+| `trM_readings_differ_at_one` | the two differ **at `q = 1`** |
+| `trM_readings_differ` | hence differ **as functions** |
+| `not_rel_of_invariant_ne` | an invariant separates — general, axiom-free |
+| `readings_not_related_of_invariance` | given trace-invariance as an explicit hypothesis, the two are not related |
+
+### Why this refutes (A), and what it does not do
+
+Under **(A)** the atom element and `β_Bor` name the same `K`, hence are Markov
+equivalent, hence share **every** Markov invariant — including `tr_M`. They do
+not. So (A) is false.
+
+**Three things this deliberately does not claim.** The coefficients are **not**
+re-derived from the Hecke algebra inside Lean; they come from the corpus's own
+producers via
+[`atom_vs_atlas_markov_trace_probe.py`](../../computations/meson/atom_vs_atlas_markov_trace_probe.py),
+and what Lean adds is an **independent kernel-checked evaluation** of the
+separating inequality — a cross-check on that sympy run, not a replacement.
+That `tr_M` **is** a Markov invariant is standard (Jones) and is carried as an
+**explicit hypothesis** in `readings_not_related_of_invariance`, never asserted
+as proved — the §3b-cond pattern, with the class content being the invariance
+itself and the theorem *deriving* the conclusion by contraposition rather than
+projecting it.
+
+And **(B) is not thereby proved.** Elimination gives that (B) is the only
+surviving reading of the pipeline; (B)'s actual content is that the pairing is
+*intended*, which no theorem supplies. That still wants one sentence from the
+author in the block.
+
+### Note for the next agent: the `lean`-direct incantation
+
+AGENTS.md's recipe needs one correction for toolchain **v4.24.0**: the oleans
+live at `…/.lake/build/lib/**lean**/Mathlib/…`, one segment deeper than
+`…/build/lib`. A `LEAN_PATH` built from `build/lib` fails with *"unknown module
+prefix 'Mathlib'"* while 6990 oleans sit right there. The working form:
+
+```sh
+LP=$(find .lake/packages -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')".lake/build/lib/lean"
+LEAN_PATH="$LP" lean <file>          # 1m42s here, exit 0
+```
