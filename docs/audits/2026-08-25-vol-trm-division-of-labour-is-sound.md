@@ -310,14 +310,35 @@ surviving reading of the pipeline; (B)'s actual content is that the pairing is
 *intended*, which no theorem supplies. That still wants one sentence from the
 author in the block.
 
-### Note for the next agent: the `lean`-direct incantation
+### Correction to my own note above — the guidance was right, I did not read it
 
-AGENTS.md's recipe needs one correction for toolchain **v4.24.0**: the oleans
-live at `…/.lake/build/lib/**lean**/Mathlib/…`, one segment deeper than
-`…/build/lib`. A `LEAN_PATH` built from `build/lib` fails with *"unknown module
-prefix 'Mathlib'"* while 6990 oleans sit right there. The working form:
+An earlier version of this section claimed AGENTS.md's `lean`-direct recipe
+"needs one correction for toolchain v4.24.0". **That was false and is
+withdrawn.** AGENTS.md gives no path of its own; it routes to
+[`local/lean-environment-setup` §"VERIFY a single file with lean-direct"](../../.claude/skills/local/lean-environment-setup.md),
+which already carries exactly the working form:
 
 ```sh
-LP=$(find .lake/packages -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')".lake/build/lib/lean"
-LEAN_PATH="$LP" lean <file>          # 1m42s here, exit 0
+LP=$(find "$ROOT/.lake/packages" -maxdepth 5 -type d -path '*/.lake/build/lib/lean' | tr '\n' ':')
 ```
+
+`build/lib/lean` — the very segment I lost two attempts to. The skill even adds
+the workspace and paper olean dirs, which my improvised version omitted.
+
+What actually happened is that I invented a `find` pattern instead of opening the
+document AGENTS.md points at, **against a STRICT rule that says to do exactly
+that**: *"On **any** Lean env/tool failure … FIRST `grep -ri "<error keyword>"
+.claude/skills/ AGENTS.md docs/`."* A grep for `LEAN_PATH` would have landed on
+the right line in one call.
+
+**This is the second instance of one failure in this arc**, and the pair is worth
+more than either. The Malyutin bound was quoted in a paper already on disk and I
+missed it by running only tier 1 of corpus-grep path 5 (`INDEX.md`, one line per
+document, structurally unable to see a result cited *inside* a held paper). Here
+the recipe was in the skill and I missed it by not running the lookup at all.
+Same shape: **the answer was on disk, the checklist names where, and I
+improvised.** Both times the improvisation looked like progress and cost more
+than the lookup would have.
+
+Nothing about the Lean result changes — `lean`-direct exit 0, no `sorryAx`.
+Only the attribution of my own path error was wrong.
