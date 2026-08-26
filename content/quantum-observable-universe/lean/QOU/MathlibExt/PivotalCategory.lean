@@ -3,6 +3,8 @@ Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Monoidal.Rigid.Braided
+import QOU.MathlibExt.RightDualIsoUnique
+import QOU.MathlibExt.RigidTensorDual
 
 /-!
 # QOU.MathlibExt.PivotalCategory — the dual functors and pivotal categories
@@ -262,56 +264,6 @@ theorem rightAdjointMate_congr_dual {C : Type*} [Category C] [MonoidalCategory C
   rw [← @comp_rightAdjointMate C _ _ X Y Y dX₂ dY₂ dY₁ f (𝟙 Y)]
   rw [Category.id_comp, Category.comp_id]
 
-section Evaluation
-
-variable {C : Type*} [Category C] [MonoidalCategory C]
-
-/-- Pairing a morphism against the evaluation is, under `tensorRightHomEquiv`, the morphism itself
-(up to a unitor).  The snake identity, with the morphism carried out of the way by
-`whisker_exchange`. -/
-theorem tensorRightHomEquiv_whiskerRight_evaluation {X Y Y' : C} (g : X ⟶ Y) [ExactPairing Y' Y] :
-    (tensorRightHomEquiv X Y' Y (𝟙_ C)) ((g ▷ Y') ≫ ε_ Y' Y) = g ≫ (λ_ Y).inv := by
-  simp only [tensorRightHomEquiv, Equiv.coe_fn_mk]
-  calc _ = 𝟙 X ⊗≫ (X ◁ η_ Y' Y ≫ g ▷ (Y' ⊗ Y)) ⊗≫ ε_ Y' Y ▷ Y ⊗≫ 𝟙 _ := by monoidal
-    _ = 𝟙 X ⊗≫ (g ▷ 𝟙_ C ≫ Y ◁ η_ Y' Y) ⊗≫ ε_ Y' Y ▷ Y ⊗≫ 𝟙 _ := by rw [whisker_exchange]
-    _ = g ⊗≫ (Y ◁ η_ Y' Y ⊗≫ ε_ Y' Y ▷ Y) ⊗≫ 𝟙 _ := by monoidal
-    _ = _ := by rw [ExactPairing.coevaluation_evaluation'']; monoidal
-
-/-- **Pairing against the evaluation is injective.**  This is what makes a mate identifiable from
-the identity it satisfies, and is the cancellation step in `swap_mate_mate`. -/
-theorem whiskerRight_evaluation_injective {X Y Y' : C} [ExactPairing Y' Y] :
-    Function.Injective (fun g : X ⟶ Y => (g ▷ Y') ≫ ε_ Y' Y) := by
-  intro a b hab
-  have h := congrArg (tensorRightHomEquiv X Y' Y (𝟙_ C)) hab
-  rw [tensorRightHomEquiv_whiskerRight_evaluation, tensorRightHomEquiv_whiskerRight_evaluation] at h
-  exact (cancel_mono _).mp h
-
-/-- **The evaluation identity that characterises `rightDualIso`.**  `rightAdjointMate` of the
-identity, read through `rightAdjointMate_comp_evaluation`. -/
-theorem rightDualIso_hom_evaluation {A B₁ B₂ : C}
-    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
-    (((rightDualIso p₁ p₂).hom) ▷ A) ≫ ε_ A B₂ = ε_ A B₁ := by
-  simpa using (@rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
-
-/-- **The comparison of two right duals is unique.**  Any map commuting with the evaluations *is*
-`rightDualIso`.  Mathlib has `rightDualIso` and `rightDualIso_id` and nothing else about it, so
-this is the missing characterisation — and it is what makes the comparison usable in proofs, since
-it turns "construct the map" into "check one identity". -/
-theorem rightDualIso_hom_unique {A B₁ B₂ : C}
-    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂)
-    (f : B₁ ⟶ B₂) (h : (f ▷ A) ≫ ε_ A B₂ = ε_ A B₁) :
-    f = (rightDualIso p₁ p₂).hom :=
-  whiskerRight_evaluation_injective (h.trans (rightDualIso_hom_evaluation p₁ p₂).symm)
-
-/-- **Comparisons of right duals compose.**  Immediate from uniqueness. -/
-theorem rightDualIso_hom_trans {A B₁ B₂ B₃ : C}
-    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) (p₃ : ExactPairing A B₃) :
-    (rightDualIso p₁ p₂).hom ≫ (rightDualIso p₂ p₃).hom = (rightDualIso p₁ p₃).hom := by
-  refine rightDualIso_hom_unique p₁ p₃ _ ?_
-  rw [comp_whiskerRight, Category.assoc, rightDualIso_hom_evaluation,
-      rightDualIso_hom_evaluation]
-
-end Evaluation
 
 section BraidedNaturality
 

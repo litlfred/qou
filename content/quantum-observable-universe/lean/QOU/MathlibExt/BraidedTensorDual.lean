@@ -3,6 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import QOU.MathlibExt.BraidedSlide
 import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.PivotalCategory
 import QOU.MathlibExt.Ribbon
 
 /-!
