@@ -347,7 +347,12 @@ def main():
         "derived from eigenvalue algebra of Hecke factors + ud-factor counting "
         "in atom_braid_word_3A."
     )
-    w.set_content_block("rem:chi-sym-alt-closed-form")
+    # prop:, not rem:. This pointed at "rem:chi-sym-alt-closed-form", a block
+    # that did not exist anywhere in content/ -- the label was a guess at a
+    # block nobody had written. The block now exists as a PROPOSITION (the
+    # Lean proves it sorry-free, and a proposition is the kind that takes the
+    # .lean sibling), which also un-orphans chi-sym-alt-closed-form.lean.
+    w.set_content_block("prop:chi-sym-alt-closed-form")
     # Serialised via _precision.fmt, not float(). float(Q0) put the SUBSTRATE
     # PARAMETER itself into the witness at 16 digits.
     w.add_parameter("q", fmt(mp.mpmathify(Q0)))
