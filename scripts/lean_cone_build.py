@@ -36,6 +36,9 @@ import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lean_freshness import dirty_paths, effective_source_time  # noqa: E402
+
 IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)")
 
 
@@ -195,34 +198,36 @@ def main() -> int:
 
     ready = [m for m in order if remaining[m] == 0]
     t0 = time.time()
+    # One `git status` for the whole run; per-file commit times are cached.
+    dirty = dirty_paths(leandir)
 
     def fresh(m: str) -> bool:
         """olean usable as-is: newer than source, newer than every dep olean,
         and no dep was rebuilt in this run.
 
-        ⚠ This is an **mtime** test, and a consumer may use a different clock.
-        `scripts/lean-axiom-guard.py` compares the olean against
-        `_effective_source_time`, which for a CLEAN file is the **commit time** of
-        the last commit touching it — deliberately, so that a fresh clone (which
-        stamps every source with the checkout time) does not read as universally
-        stale.
+        "Newer than source" is `lean_freshness.effective_source_time` — the SAME
+        rule `scripts/lean-axiom-guard.py` gates on, which for a clean file is the
+        **commit time** of the last commit touching it, not the mtime.
 
-        The two disagree in one exact case: you BUILD, then COMMIT. The olean is
-        then newer than the source's mtime (this returns True, skip) and older
-        than its commit time (the guard returns STALE, rc=2). Following the
-        guard's own advice to "rebuild, then re-run" loops forever. Measured
-        2026-08-26: source mtime 06:45:09, olean 06:45:12, commit 06:47:15; hit
-        three times in one session, because verify-then-commit is the natural
-        order.
+        This used to be a raw mtime test, and the two tools then disagreed in one
+        exact case: you BUILD, then COMMIT.  The olean was newer than the source
+        mtime (skip) and older than its commit time (guard rc=2), so the compose
+        the guard's own docstring recommends looped forever — measured 2026-08-26,
+        source mtime 06:45:09, olean 06:45:12, commit 06:47:15, hit three times in
+        one session because verify-then-commit is the natural order.
 
-        `--force` is the escape hatch. Bean `qou-5v24` tracks unifying the two
-        notions properly; until then the guard's failure message names this flag.
+        Sharing the rule also stops this builder recompiling a correctly-restored
+        cache, where every source carries the checkout time: see bean `qou-5v24`
+        and the `lean_freshness` docstring for the 2026-08-15 measurement.
+
+        `--force` remains as a manual override; it is no longer needed to break the
+        deadlock, because there is no longer a deadlock to break.
         """
         if args.force:
             return False
         ol = olean_of(m)
         src = mods[m]["src"]
-        if not ol.is_file() or ol.stat().st_mtime <= src.stat().st_mtime:
+        if not ol.is_file() or ol.stat().st_mtime <= effective_source_time(src, dirty):
             return False
         for d in deps[m]:
             if d in rebuilt:
