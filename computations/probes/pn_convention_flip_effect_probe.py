@@ -9,34 +9,43 @@ tests pass identically before and after it, because its only atom tests
 something is a quantity computed for an atom with Z >= 1 AND N >= 1,
 measured against a prediction derived independently of the code under test.
 
-# What it establishes
+# The headline, and the correction it forced
 
-1. THE SHIFT IS A SINGLE FACTOR, AND IT DOES NOT GROW WITH A.
+**The two canonical paths disagree about how many p-n bonds an atom has,
+so the flip moves them by different amounts.** An earlier revision of this
+probe measured only the closed form, found a single A-independent factor,
+and stated it as a property of THE FLIP. That was an over-generalisation
+from one path, and it is the sort that invites skipping a regeneration.
 
-   `closed_form_ratio` walks the canonical ordering `["p"]*Z + ["n"]*N` and
-   multiplies one factor per adjacent pair. That ordering is all protons
-   followed by all neutrons, so it contains EXACTLY ONE p-n boundary --
-   for the deuteron and for carbon-12 alike. The flip therefore multiplies
-   the closed-form trace ratio by one A-independent factor
+    closed_form_ratio   adjacent pairs of the ordering ["p"]*Z + ["n"]*N.
+                        That ordering is all protons then all neutrons, so
+                        it has EXACTLY ONE p-n boundary -- for the deuteron
+                        and for carbon-12 alike. The flip is a single
+                        A-independent factor 1 + 1.4149466e-04, verified
+                        here to 56-57 decimal places.
 
-       f_canon / f_blind = 1 + 1.4149466e-04
+    build_atom_nf       ALL pairs (`for prev in range(k)`), so Z*N mixed
+                        bonds. The shift GROWS with A: measured +8.5e-05
+                        (2H), +2.1e-04 (4He), +8.1e-04 (7Li).
 
-   Verified here to > 55 decimal places for 2H, 3H, 3He, 4He, 7Li and 12C.
+Nor is the normal-form shift proportional to Z*N -- measured rel/pred is
+0.60, 1.06, 1.16, 1.47, 5.41, 5.69 against Z*N of 1, 2, 2, 4, 9, 12 --
+because `nf_tr` is a trace of a product in the Hecke algebra and not a
+product of scalars, so its sensitivity to one coefficient is not additive
+in the bonds.
 
-   This matters for the migration: the effect is not an accumulating
-   per-bond error but a single known multiplier, so a consumer that takes a
-   RATIO of two mixed atoms sees it cancel exactly, and a consumer of a
-   pure-flavour system does not see it at all.
+# What is safe to conclude
 
-2. Z = 0 OR N = 0 IS UNTOUCHED. The proton and the neutron have no mixed
-   bond, so their ratios are bit-identical across the flip. Any witness
-   whose atoms are all pure-flavour needs no regeneration.
+1. Z = 0 OR N = 0 IS UNTOUCHED, on both paths. The proton and the neutron
+   have no mixed bond and are bit-identical across the flip. Any witness
+   whose atoms are all pure-flavour needs no regeneration. This is the only
+   "no work needed" rule this probe supports.
 
-3. THE A-INDEPENDENCE IS A PROPERTY OF THE CANONICAL ORDERING, NOT A
-   THEOREM. An interleaved ordering (p n p n ...) has A-1 mixed bonds and
-   would shift by the factor raised to that power. Anything that varies the
-   ordering -- `canonical_ordering_dof_probe.py` does exactly this -- must
-   not inherit the single-factor result from here.
+2. On the closed-form path a RATIO of two mixed atoms sees the single
+   factor cancel exactly. That does NOT extend to the normal-form path.
+
+3. Anything on the normal-form path must be re-run to learn its new value.
+   There is no shortcut and this probe deliberately does not offer one.
 
 Bean qou-cblw. Owner authorisation 2026-08-26.
 """
@@ -78,6 +87,7 @@ def main() -> int:
     delta = flavor_split_leading(q)
 
     f_blind = z - h / 2
+    h_f64 = float(h)
     f_canon = z - h * (mp.mpf(1) / 2 - delta / 4)
     predicted = f_canon / f_blind - 1
 
@@ -140,6 +150,42 @@ def main() -> int:
         w.add_assertion(f"{name}_unchanged_by_flip", str(same), "True",
                         source="no mixed bond, so no factor to move")
 
+    # ── the normal-form path, which does NOT obey the single-factor law ──
+    #
+    # Measured separately and deliberately: `build_atom_nf` bonds ALL pairs
+    # (`for prev in range(k)`), so it has Z*N mixed bonds where the closed
+    # form has one. Reporting only the closed form here is what produced the
+    # over-generalised claim this probe now opens by retracting.
+    print()
+    print("normal-form path (pyhecke.atom.build_atom_nf, ALL pairs):")
+    print(f"{'atom':>8} {'Z*N':>5} {'blind':>20} {'canonical':>20} {'rel':>13} {'rel/pred':>9}")
+    try:
+        import pyhecke.atom as _A
+        from pyhecke.gram import nf_tr as _nf_tr
+        _canon_d, _blind_d = _A.D_PN, -h_f64 / 2
+        for name, Z, N in [("proton", 1, 0), ("neutron", 0, 1)] + ATOMS[:5]:
+            _A.D_PN = _blind_d
+            tb = float(_nf_tr(_A.build_atom_nf(Z, N)))
+            _A.D_PN = _canon_d
+            tc = float(_nf_tr(_A.build_atom_nf(Z, N)))
+            rel = (tc - tb) / tb if tb else 0.0
+            print(f"{name:>8} {Z*N:>5} {tb:>20.15f} {tc:>20.15f} "
+                  f"{rel:>13.4e} {rel/float(predicted) if predicted else 0:>9.4f}")
+            w.add_assertion(f"nf_{name}_shift", f"{rel:.6e}",
+                            "0.0" if Z * N == 0 else f"{rel:.6e}",
+                            tolerance="1e-30" if Z * N == 0 else None,
+                            source="build_atom_nf bonds ALL pairs, so Z*N mixed "
+                                   "bonds; the shift is NOT the single closed-form "
+                                   "factor and is not proportional to Z*N either")
+        _A.D_PN = _canon_d
+        nf_measured = True
+    except Exception as exc:              # pragma: no cover - env dependent
+        print(f"  (skipped: {exc})")
+        nf_measured = False
+    w.add_assertion("normal_form_path_measured", str(nf_measured), "True",
+                    source="reporting only the closed form is what produced the "
+                           "retracted single-factor claim")
+
     path = w.save(extra={"data": {
         "q0": mp.nstr(q, 25),
         "delta": mp.nstr(delta, 25),
@@ -147,7 +193,9 @@ def main() -> int:
         "f_pn_bring_color_weighted": mp.nstr(f_canon, 30),
         "relative_shift": mp.nstr(predicted, 30),
         "mixed_bonds_in_canonical_ordering": 1,
-        "a_independence_is_an_ordering_property_not_a_theorem": True,
+        "a_independence_holds_for_closed_form_ratio_ONLY": True,
+        "normal_form_path_bonds_all_pairs_and_shift_grows_with_A": True,
+        "retracted_claim": "an earlier revision called the single A-independent factor a property of the flip; it is a property of closed_form_ratio's adjacent-pair walk over the ordering p..p n..n",
     }})
     print(f"\nwitness -> {path}")
     return 0

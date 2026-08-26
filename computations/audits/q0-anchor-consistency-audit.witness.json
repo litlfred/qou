@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T09:24:53.423151+00:00",
-  "commitSha": "878b7ad528eb777a1721c9cd5276710f6cae68cd",
+  "computedAt": "2026-08-26T13:47:49.478477+00:00",
+  "commitSha": "baf4ff3a5acab07c6b4cfefa6781fa727295d899",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,18 +31,19 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py"
+      "computations/audits/q0_anchor_consistency_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 978,
+      "Q0_OK": 979,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 48,
@@ -50,7 +51,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1663,
+      "Q0_ANCHOR_MISSING": 1653,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -5020,10 +5021,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-chi-block-symbolic-closure.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-ck-closed-form-candidate-fits-probe.witness.json",
           "detail": ""
         },
@@ -5092,10 +5089,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-counit-trace-transport-overshoot.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-crossing-weight-affine.witness.json",
           "detail": ""
         },
@@ -5133,14 +5126,6 @@
         },
         {
           "witness": "qbeta-delta-tr-vs-formA.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-delta-vs-deltaTbeta-discrepancy.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-delta-vs-deltaTbeta-settled.witness.json",
           "detail": ""
         },
         {
@@ -5349,14 +5334,6 @@
         },
         {
           "witness": "qbeta-habiro-zeta8-categorical-witness.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-hecke-mn-character-engine.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-hecke-symbolic-seminormal.witness.json",
           "detail": ""
         },
         {
@@ -5596,10 +5573,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-single-wrap-element-cannot-exist.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-singularity-type-probe.witness.json",
           "detail": ""
         },
@@ -5685,18 +5658,6 @@
         },
         {
           "witness": "qbeta-wenzl-habiro-chain-alpha.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-xi-family-collapses-to-h.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-xi-kcycle-route-prune.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-xi-moment-family.witness.json",
           "detail": ""
         },
         {
@@ -9643,6 +9604,10 @@
         },
         {
           "witness": "phi-q-spectral-combiner-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "pn-convention-flip-effect.witness.json",
           "detail": ""
         },
         {
