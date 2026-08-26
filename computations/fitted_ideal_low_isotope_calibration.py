@@ -5,6 +5,34 @@
 **The fitted-ideal calibration layer** — the third of the three layers recorded
 in [`docs/coordination/calibration-layers.md`](../docs/coordination/calibration-layers.md).
 
+*** PAUSED — OWNER RULING 2026-08-26 ****************************************
+The large fitted q0 variation means the MODEL IS NOT YET CORRECT ENOUGH for
+this layer to mean anything: A TERM IS MISSING IN BINDING.
+
+The fit demands m_e = 1.9455 MeV against CODATA 0.51100 (3.8x) and moves q
++3.26% off the substrate pin. Two calibration parameters travelling that far
+are not exercising calibration freedom - they are ABSORBING MODEL ERROR into
+calibration values, which is the signature a missing extensive term in B
+produces. The held-out split says it again: light and heavy regimes want
+moduli 3.4% apart, so no single three-point choice serves both.
+
+What this does NOT retract: the measurements are correct as recorded and
+remain useful as a DIAGNOSTIC - they bound what recalibration alone can buy,
+and are independent evidence for the missing additive extensive term.
+
+What it DOES mean: do NOT quote the fitted values as a calibration of the
+framework, do not wire them anywhere, do not score any observable against
+them. Do NOT open a follow-on that fits harder (more isotopes, more free
+parameters, a widened objective) - that makes a mis-specified model fit
+better without making it more correct.
+
+Unblocking condition: the missing binding term, not more fitting. Once B
+carries the super-pairwise additive extensive object, re-run this producer.
+If the fitted calibration then lands near CODATA and the two regimes agree
+on q, the layer becomes meaningful. That is a real test - the layer can
+currently fail it.
+*****************************************************************************
+
 There are **exactly three calibration points in every layer**; the layers differ
 only in how the three values are *chosen*:
 
