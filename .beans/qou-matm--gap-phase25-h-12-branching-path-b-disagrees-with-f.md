@@ -3,8 +3,9 @@
 title: 'GAP: phase25 H_12 branching Path B disagrees with F1 at O(1) on every dim>1 irrep'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-26T16:03:20Z
-updated_at: 2026-08-26T16:03:20Z
+updated_at: 2026-08-26T16:26:28Z
 ---
 
 `sublemma_2_1_h12_he4_phase25.py` verifies the H_12 ⁴He character two ways:
@@ -66,3 +67,58 @@ or a wholesale misgrouping.
 Related but separate: draining this producer's remaining 32 raw float64 witness
 fields (the per-λ character dicts) requires moving `path_b_chi_h12` off numpy
 complex128, which is why its witness stays uncommitted (`qou-poi1`).
+
+
+## Re-measured 2026-08-26 post-#5824 — the finding SPLITS, and survives
+
+Main now carries #5824's p-n convention flip
+(`GRAM_PN_CONVENTION -> BringColorWeighted`), which changes
+`he4_braid_canonical`'s I_pn offset via `pn_interface_offset_from_h`. Re-ran
+phase25 against it with no change to `path_b_chi_h12`:
+
+| λ | dim | pre-flip | post-flip |
+|---|---|---|---|
+| (12,) | 1 | 7.15e-05 | **1.25e-08** |
+| (11,1) | 11 | 1.20e+00 | 1.20e+00 |
+| (10,2) | 54 | 9.48e-01 | 9.48e-01 |
+| (10,1,1) | 55 | 1.75e+00 | 1.75e+00 |
+| (3,1^9) | 55 | 1.20e+00 | 1.20e+00 |
+| (2,2,1^8) | 54 | 9.69e-01 | 9.69e-01 |
+| (2,1^10) | 11 | 1.09e+00 | 1.09e+00 |
+| (1^12) | 1 | 7.15e-05 | **1.07e-08** |
+
+**The 1-dim rows moved by 5700×; the six dim>1 rows did not move at all,** to
+every digit displayed. So there were two independent effects and the flip
+removed exactly one:
+
+1. The 7.15e-5 on the one-dimensional irreps **was the p-n convention.** Gone.
+2. The O(1) disagreement on every dim>1 irrep is **untouched by it** and is
+   structural in `path_b_chi_h12`. That is this bean, and it is now cleaner —
+   one confound removed, and the dimension split it rests on is sharper than
+   before, not weaker.
+
+### Two corrections, both to claims made above
+
+- **The residual 1.2e-8 is NOT a discrepancy.** F1 stores `chi_lambda` to 8
+  significant figures — `2.41983670e+00` vs `2.41983673e+00` is the whole of
+  it. Those two irreps now agree to the limit of what the upstream records. The
+  producer's `rel < 1e-9` pass threshold is **unmeetable against an 8-sig-fig
+  cache** no matter what the mathematics does, so the two 1-dim rows will read
+  ✗ forever until either the threshold or F1's serialization changes. Anyone
+  reading "0/8" should read it as "0 of 8, of which 2 are a serialization
+  floor and 6 are real".
+- **The Path-A-staleness speculation is REFUTED.** This bean suggested the
+  7.15e-5 might be Path-A staleness, on the grounds that F1's own value moved
+  by ~7e-5 between its `_deprecated` and live witnesses — a coincidence of
+  magnitude. It was the convention. The two ~7e-5 quantities were unrelated.
+  The speculation was labelled not-bisected, which is the only reason it did
+  not become a wrong finding.
+
+### What this does to the next step
+
+The cheapest-probe recommendation is unchanged and now better targeted: run
+(11,1), dim 11, and compare `path_b_chi_h12`'s per-(η,ν) partial sums against a
+direct H_12 seminormal character. Nothing about the p-n interface is in play any
+more, so a discrepancy there is the η-restriction grouping, `_LR_TABLE_9_3`, or
+the `H3_GROUP_AT_H12` strand indexing — the three candidates listed above, with
+the fourth (Path-A staleness) now eliminated.
