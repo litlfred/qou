@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:52:37.363507+00:00",
-  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
+  "computedAt": "2026-08-26T03:24:19.692756+00:00",
+  "commitSha": "f0c5d467da1d379408cdc33eafe6a6d46b2e58b4",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "c20c44119f2aaeecb2c0ba6131d9a9cf68cce7c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,9 @@
   "environment": {
     "python": "3.11.15",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -42,7 +42,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 972,
+      "Q0_OK": 973,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 49,
@@ -541,10 +541,6 @@
         },
         {
           "witness": "atomic-chirality-residue.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "atomic-tr-m-helium4-canonical.witness.json",
           "detail": ""
         },
         {
@@ -5644,6 +5640,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-xi-moment-family.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-z-bar-parity-fmap-class.witness.json",
           "detail": ""
         },
@@ -6823,6 +6823,10 @@
         },
         {
           "witness": "atomic-mass-via-rho-k.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atomic-tr-m-helium4-canonical.witness.json",
           "detail": ""
         },
         {

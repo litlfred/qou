@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T03:28:36Z
-updated_at: 2026-08-26T03:28:36Z
+updated_at: 2026-08-26T03:49:29Z
 ---
 
 Parent: `qou-cds1`. Structural only; nothing wired, no c_k value.
@@ -45,3 +45,34 @@ It is recorded because it is derived and the even channel has nothing else.
 
 Probe: computations/qbeta/qbeta_xi_moment_family_probe.py
 Audit: docs/audits/2026-08-26-three-gap-assessment-and-ck-cache-convention-confirm.md
+
+
+## 2026-08-26 — the k-cycle route into Xi_{k>=3} is PRUNED (my own idea, scope-(a))
+
+This bean suggested the k-cycle Hecke traces as the bridge letting the ladder
+see Xi_{k>=3}. Tested exactly at n=3, convention D, building the H_3(q) 2-dim
+irrep from the braid + Hecke relations rather than assuming it (8/8, exit 0):
+
+    Sum_lambda y_lambda chi_lambda(sigma1)        = z_D
+    Sum_lambda y_lambda chi_lambda(sigma1 sigma2) = z_D^2
+    4 z_D^2 = (h + [2]_q Xi_2)^2      <- the proved k=2 identity SQUARED
+
+An exact solve for constant rational coefficients leaves Xi_3's coefficient
+FREE: Xi_3 does not enter. The reason is structural and kills the whole
+sub-class -- the MARKOV PROPERTY forces tr_M(sigma_1...sigma_{k-1}) = z^{k-1}
+identically, so every standard-element Markov trace is a power of z. Single
+crossing powers are the same: Sum y chi(sigma_1^k) spans only {1, Xi_2}.
+
+CONSEQUENCE -- this SHARPENS the bean rather than killing it. Xi_{k>=3} is a
+WEIGHT FUNCTIONAL, not a trace value: computable from the weight vector, but
+not equal to any Markov trace on the ladder's own elements. So the Hecke
+Murnaghan-Nakayama literature the owner uploaded 2026-08-26 (Halverson-Ram
+q-alg/9511222; Jing-Liu 2504.18825, which supersedes HR with the FULL character
+table via Shoji determinacy) does NOT supply a bridge to Xi_{k>=3}. What it
+supplies instead is the general-n per-block Hecke characters -- the replacement
+for the corpus's hand-derived n=3 chi_block_* closed forms.
+
+The anti-fit fence above is unchanged and still binds.
+
+Probe: computations/qbeta/qbeta_xi_kcycle_route_prune_probe.py
+Triage: docs/audits/2026-08-26-murnaghan-nakayama-upload-triage.md
