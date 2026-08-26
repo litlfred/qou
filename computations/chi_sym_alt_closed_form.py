@@ -54,11 +54,34 @@ import numpy as np
 import sympy as sp
 
 from hecke_characters import partitions_of, dim_q, qfac
-from hecke_core import h as HA_VAL
 from mass_at_3A_proper import _cached_seminormal, atom_braid_word_3A, Q0_PROTON
-from q_parameter import Q as Q0
+from q_parameter import Q_50_DIGIT_STR
 from _precision import fmt, set_compute_dps
 from witness_base import WitnessBuilder
+
+# ---------------------------------------------------------------------------
+# PRECISION SETUP.  This must run BEFORE any module-level mpf is constructed.
+#
+# `set_compute_dps` was imported here and never called, so this producer ran at
+# mpmath's DEFAULT dps=15 while `fmt` serialised at 50 -- `chi_in_shape` reads
+# `dps = mp.mp.dps` as its working precision, so every seminormal entry was
+# evaluated at 15 digits and then printed at 50.  That is the whole of the
+# float64-padding red on this witness.  The call is idempotent.
+set_compute_dps()
+
+# The substrate parameter and the Hecke skein parameter, at FULL precision.
+#
+# Both were float64 before: `q_parameter.Q` is a Python float (AGENTS.md names
+# this hazard explicitly -- "q_parameter.Q is a FLOAT64.  Use Q_50_DIGIT_STR"),
+# and `hecke_core.h` is a float built from it.  `mp.mpmathify` of either
+# preserves 17 digits and no more, which is exactly the fake precision the
+# padding ratchet detects.
+#
+# `Q_50_DIGIT_STR` is ANCHOR-ADAPTIVE in the same way `Q` is -- `q_parameter`
+# rebinds it from the anchor witness under `QOU_Q0_ANCHOR=ideal` -- so this
+# swap fixes the precision without pinning the producer to proton.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
+HA_VAL = Q0 - 1 / Q0
 
 
 ATOMS = [
@@ -119,6 +142,15 @@ def pn_color_d(word):
     return None
 
 
+def _q_sympy(dps):
+    """The substrate parameter as a sympy Float at `dps` digits.
+
+    Built from the 50-digit string so the substitution carries real digits;
+    `sp.Float(<python float>)` would carry 17 whatever `dps` says.
+    """
+    return sp.Float(Q_50_DIGIT_STR, dps)
+
+
 def chi_in_shape(shape, word):
     """Compute χ_λ(W) in the λ-irrep via the seminormal matrices.
 
@@ -145,7 +177,10 @@ def chi_in_shape(shape, word):
             for j in range(dim):
                 e = S_arr[i, j]
                 if hasattr(e, "subs"):
-                    M[i, j] = mp.mpmathify(sp.N(e.subs(q_sym, Q0), dps))
+                    # sp.Float from the 50-digit STRING at working precision.
+                    # Substituting the old float64 `Q0` capped every entry at
+                    # 17 digits however large `dps` was.
+                    M[i, j] = mp.mpmathify(sp.N(e.subs(q_sym, _q_sympy(dps)), dps))
                 else:
                     M[i, j] = mp.mpmathify(e)
         sigmas_num.append(M)
