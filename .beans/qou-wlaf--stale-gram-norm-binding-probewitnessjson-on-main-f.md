@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:33:41Z
+updated_at: 2026-08-26T03:39:06Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -574,3 +574,53 @@ baseline, and this escape only writes one audit witness in the session tree.
 But the guard must keep being run: `git status --short | wc -l` in
 `/home/user/qou` at every check, treating non-zero as a defect rather than
 noise. That instruction was already recorded; this is the first time it fired.
+
+
+---
+
+## The CRASH bucket is three different things (2026-08-26)
+
+AGENTS.md is explicit that a non-zero exit is not a defect and that a guard
+raised as a domain exception is indistinguishable from a crash by shape — the
+discriminator is the exception TYPE and its message. Applied to the sweep's
+four CRASH verdicts, they are not one class:
+
+**Real defects (2):**
+
+  * `braid_encoding_audit` —
+    `TypeError: unsupported format string passed to mpf.__format__`.
+    The mpf-formatting class; the same family as the two defects PR #5615
+    fixed, so this is a further instance rather than a new kind.
+  * `probe_4b_li6_non_rectangular_scan` —
+    `TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))`.
+    An mpf reaching a numpy/scipy boundary — **the same object-dtype family as
+    the gram-norm finding this whole bean started from**, surfacing here as a
+    hard failure instead of a 1.8e4x slowdown.
+
+**Environment, not a defect (1):**
+
+  * `difference_knot_binding_probe` — `ModuleNotFoundError: No module named
+    'snappy'`. SnapPy is absent from this container. The producer is not
+    broken and must not be counted as such.
+
+**A guard doing its job (1), with a caveat worth a look:**
+
+  * `probe_canonical_braid_interface_composition` —
+    `ValueError: Unrecognised interface d=-0.104458247769726; expected one of
+    {0, -h/2=-0.1045, -h=-0.2091}`. A domain check refusing an unrecognised
+    value and naming the expected set: a refusal, not a crash.
+
+    **But note what it is refusing.** The rejected `d = -0.104458…` and the
+    expected `-h/2 = -0.1045` agree to four decimals. On its face the guard is
+    rejecting a value that may be the one it expects, on an exact comparison
+    where a tolerance was meant. Flagging rather than asserting — this needs
+    someone to read the guard, and it is out of scope for this bean.
+
+So of 4 CRASH verdicts: **2 real, 1 environmental, 1 a guard.** Reporting "4
+producers crash" would have been wrong in three different ways, and is exactly
+the over-count AGENTS.md records having made before (14 claimed, 2 real).
+
+**Runner improved so this never needs re-running.** It now records the
+exception line in each result, because classifying a CRASH previously meant
+re-running the producer by hand. Same reasoning as recording the moved field
+names, which has now paid for itself four times.
