@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:34:41Z
-updated_at: 2026-08-26T22:35:14Z
+updated_at: 2026-08-26T22:41:06Z
 ---
 
 Parent context: `bwrt` introduced `KeystoneRibbonMTCInput.qDimObj X = η ≫ β ≫ ε` and documents it
@@ -55,3 +55,36 @@ STILL OPEN (follow-on, this bean):
    hypothesis about the twistless pair. Either keep it under an honest name as a hypothesis, or
    migrate consumers to `qDimTwistedLeftWith_eq` where a `BalancedCategory` is genuinely in scope.
 3. Migrate consumers.
+
+
+CORRECTION (same session, before the PR was reviewed). My end-of-turn summary table claimed the
+TWISTLESS trace lacks dual-independence and conjugation symmetry. BOTH ROWS WERE WRONG, and I
+found it by grepping consumers for the rename step rather than by re-reading what I had already
+written — the module docstring in TwistedQuantumDimension.lean states the correct version, so the
+error was in the summary, not in the Lean.
+
+Measured on main:
+- `QOU.MathlibExt.qDimWith_congr_dual` — twistless dual-independence, ALREADY EXISTS.
+- `QOU.MathlibExt.qDimWith_rightDual` — twistless `qDim(Xᘁ) = qDim(X)`, ALREADY EXISTS and needs
+  only `[BraidedCategory C] [RightRigidCategory C]`: no balanced structure, NO RIBBON AXIOM. Its
+  docstring says so outright ("with no pivotal, spherical or transport hypothesis"), and
+  `QOU.BraidKnot.Ribbon.qDim_conj_object` is its consumer.
+
+So the honest ledger for adding the twist is a TRADE, not a strict gain:
+
+| property | twistless `qDimWith` | twisted `qDimTwistedWith` |
+|---|---|---|
+| dual-independence | already, braided only | ported, balanced only |
+| dim(Xᘁ) = dim(X) | already, braided only — FREE | needs the RIBBON AXIOM — a COST |
+| left = right (spherical) | structurally impossible | ribbon => spherical — the GAIN |
+
+The mechanism behind the middle row, which is the part worth keeping: `qDimWith_swap`'s proof
+turns on the swapped pairing's `β⁻¹` meeting the trace's own `β` and CANCELLING. Insert a twist
+between them and that cancellation no longer happens on its own — which is precisely the gap
+`RibbonCategory.twist_dual` fills. So the twist does not merely fail to help conjugation
+symmetry, it is what breaks the free proof.
+
+Net: the ONE genuinely new and genuinely unreachable-twistless result in PR #5866 is
+`qDimTwistedLeftWith_eq` (ribbon => spherical). The other two twisted theorems are ports of
+facts the corpus already had, and one of them is strictly more expensive than its twistless
+original.
