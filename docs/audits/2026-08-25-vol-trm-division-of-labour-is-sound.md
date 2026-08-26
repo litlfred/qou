@@ -3010,3 +3010,106 @@ question this does not touch.
 **One isotope, one convention pair.** ²H only, and the colour comparison is
 `bring_color_weighted` against `strict_averaged`. The `A`-dependence of the
 27 is unmeasured.
+
+---
+
+## Addendum 33 — the Δ freedom is a q → 0 artefact and buys no magnitude
+
+Addendum 32 found that Δ is not pinned the way the interface is, and named the
+carrier: the p–n letter `σ − h(½ − δ/4)·1` with `δ = flavor_split_leading(q)`.
+That is a statement about a **valuation at `q → 0`**. This addendum asks the
+§C/§E question instead — does that letter move `tr_M(β_D)` toward
+`√B_AME = 1.491498`? [`delta_freedom_buys_no_magnitude_probe.py`](../../computations/meson/delta_freedom_buys_no_magnitude_probe.py),
+9/9.
+
+**It does not, and the check is one line.** Using `σ⁻¹ = σ − h`,
+
+$$
+  \sigma - h\bigl(\tfrac12 - \tfrac\delta4\bigr)\cdot 1
+  \;=\; \bigl(\tfrac12 + \tfrac\delta4\bigr)\sigma \;+\; \bigl(\tfrac12 - \tfrac\delta4\bigr)\sigma^{-1},
+$$
+
+weights summing to 1. §C/§E's `convex_comb_le_bound` bounds any **convex**
+combination of the 32 branches by `max_b = 1.018275`, and its companion
+`bound_fails_without_nonneg` shows non-negativity is exactly what that needs.
+So everything turns on `|δ| ≤ 2`.
+
+### At the substrate, δ is negligible
+
+| | value |
+|---|---:|
+| `δ = (q−1)²(1−q⁻⁴)/3` at `q₀` | **0.001375710807** |
+| `w(σ) = ½ + δ/4` | 0.500343927702 |
+| `w(σ⁻¹) = ½ − δ/4` | 0.499656072298 |
+
+Both non-negative — **inside the hull**, so the §C ceiling holds verbatim. The
+colour weighting moves the interface off colour-blind `½` by `δ/4 = 3.44e−4`,
+i.e. **0.0688 %**. Measured on the trace:
+
+| convention | `tr_M(β_D)` |
+|---|---:|
+| `strict_averaged` (colour-blind) | 0.575090871630 |
+| `bring_color_weighted` (canonical) | **0.575172243918** |
+| difference | 8.14e−5 (**0.0141 %**) |
+
+**Control:** the canonical value reproduces §C's committed `0.575172` to
+`2.4e−7`, so this is measuring the object §C bounded. The four units of pole
+order the colour weighting buys at `q → 0` are worth **0.0141 %** of the trace
+at `q₀`, and land it **2.593× short** of the bar.
+
+### How far outside it would have to reach
+
+`tr_M` is affine in the interface weight `w`: `0.456792` at `w = 0` (pure
+`σ⁻¹`), `0.693389` at `w = 1` (pure `σ`). Reaching `√B_AME` needs
+
+> `w = 4.3733`, i.e. `δ = 15.493` — **11 262× the substrate's δ**,
+
+far outside `[0,1]` and far past the `|δ| = 2` threshold where a weight first
+goes negative. No convex interface reaches the bar; that is §C/§E restated at
+this one letter.
+
+### Reconciling the two regimes
+
+`δ = (q−1)²(1−q⁻⁴)/3`. The `q⁻⁴` diverges as `q → 0`; the `(q−1)²` prefactor
+vanishes as `q → 1`. Evaluated at both ends:
+
+| `q` | `δ` | outside the hull? |
+|---|---:|---|
+| `3⁻¹⁵` (the valuation limit) | `−1.413e+28` | **yes** |
+| `q₀ ≈ 1.10998` (the substrate) | `0.0013757` | no, by ~1450× |
+
+**Both earlier results are correct and describe different regimes.** Addendum
+32's maximizer genuinely leaves the column channel, and `α_shift` genuinely is
+not a word statistic — `α_shift` *is* a `q → 0` valuation by definition, so
+that is where it lives. §C's bound is a statement at `q₀`. The same `δ` is
+enormous in one and negligible in the other.
+
+> **🛑 Withdrawing my own billing of Addendum 32.** I called it *"a positive
+> lead, and the first of this arc"*. **That framing is wrong and is retracted.**
+> The valuation finding stands exactly as measured; what does not stand is the
+> implication that it pointed at a magnitude. It pointed at `q → 0`, where the
+> framework does not evaluate anything. An honest one-line summary of A32 is:
+> *the pinning argument of A31 does not extend to Δ* — a scope note on A31, not
+> a lead.
+
+### What this rules out
+
+**Scope (b), invariant named and premise now measured rather than assumed.**
+The invariant is branch convexity (`convex_comb_le_bound`, Lean, sorry-free);
+the premise — both interface weights non-negative — is measured at `q₀` above
+rather than asserted. **The colour weight `δ` cannot supply the deuteron
+binding magnitude**, by a factor of 11 262 in the quantity that would have to
+move.
+
+This is not a separate exclusion so much as a **confirmation that §C is
+airtight at the one letter that looked like it might escape**: every letter of
+the word, including the `δ`-carrying one, lies in the convex hull, so no letter
+escapes the ceiling. Conditional on `prop:flavor-split-substrate`, which is
+what derives `δ`.
+
+**What it does not touch.** A *different construction* — the satellite/cable of
+Addendum 28, which lives in a larger index set and measured `4.994×` past the
+un-cabled ceiling — is outside `convex_comb_le_bound`'s hypotheses and is
+unaffected by any of this. That remains the one open magnitude route, and
+Addendum 29's finding still applies to it: the atom's own word is a connected
+sum, so a satellite is a change of construction, not a reweighting.
