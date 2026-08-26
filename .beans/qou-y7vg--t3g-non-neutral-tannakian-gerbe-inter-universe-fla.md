@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-26T13:55:21Z
+updated_at: 2026-08-26T14:02:33Z
 parent: qou-8lxd
 ---
 
@@ -206,3 +206,62 @@ DELIBERATELY NOT DONE: no symbol renamed, no base designated. Both are changes
 to mathematical claims across chapters that already depend on them, and the R_q
 collision may be a naming slip in one place or a genuine identification the
 author intends. Agents should not pick.
+
+
+## CORRECTION 2026-08-26 -- CARRIER 3 HAS NO FORMAL CONTENT. I SAID OTHERWISE AN HOUR AGO.
+
+Audit: docs/audits/2026-08-26-t3g-carrier3-has-no-formal-content.md
+
+The step-1 entry above called def:categorical-mordell-weil 'a STRONGER carrier
+than the fivefold remark: a definition with a .lean sibling, not a remark'. WRONG,
+and wrong in the direction that flatters the finding. I read the manifest (kind:
+definition, lean.ref present) and inferred formal content from the SHAPE OF THE
+METADATA without opening the file. The entire sibling is:
+
+    def CategoricalMordellWeil   :=
+      -- Ref: [manuscript] def:categorical-mordell-weil
+      trivial
+
+trivial : True, so the inferred type IS True. That is def-disguised-true, the
+pattern AGENTS.md 1a names as a forbidden audit-dodge. A .lean sibling whose body
+is `trivial` is WEAKER than none -- it reads as formalised.
+
+BOTH CANDIDATE CARRIERS FOR T3G'S PREMISE ARE PROSE. The fivefold block is a
+remark with no Lean; this one is a definition whose Lean is a tautology.
+
+THREE-PART DEFECT in that block (someone else's chapter -- repair belongs to its
+owner, not drive-by):
+  1. sibling is a disguised True, as above;
+  2. its header says 'The compiled formalisation lives under QOU/AppendixSurreals/'
+     -- that directory has ~200 files and NONE declares CategoricalMordellWeil;
+  3. lean.ref says qou:QOU.AppendixSurreals.CategoricalMordellWeil, but the REAL
+     decl is QOU.CategoricalMordellWeil at QOU/QBirchSwinnertonDyer.lean:65
+     (def CategoricalMordellWeil (E : C) : Type v := (1_C) --> E, plus
+     theorem descartes_rank_zero). Sibling-first resolution means the stub SHADOWS
+     it -- the 0a 'no shadowing stubs' case. Repair is NOT 'delete the sibling':
+     a definition block requires one at type level. Either give the sibling real
+     content or re-point the ref. Author's call.
+
+AND THE REAL DECL HAS NO GERBE CONTENT: QBirchSwinnertonDyer defines Hom(1, E)
+and proves descartes_rank_zero. Grepping it for gerbe/atlas/spectral base returns
+ONE hit, the phrase 'fibre functor' in a docstring about chord-tangent addition.
+So 'The fibre functor atlas of the QOU forms a G-gerbe over the spectral base'
+has NO formal backing anywhere.
+
+DETECTOR BLIND SPOT, MEASURED NOT INFERRED. Ran the vacuity audit: 3193 .lean
+scanned, 134 candidates across 154 files, and categorical-mordell-weil.lean is
+NOT among them -- while proof-no-trivial-true fires on other files in the same
+run (e.g. e-hartree-categorical-derivation.lean:103). The criterion is live and
+does not see this decl. Likely cause: the test keys on the DECLARED CONCLUSION
+and `def X := trivial` has no type ascription, so there is no True written down
+to match. The cause is an inference; the blindness is the measurement. Candidate
+14th entry for the detector-blindness taxonomy.
+
+NOT FIXED, deliberately: widening the criterion touches a checker over 3193 files
+and `trivial` is a legitimate body in contexts this would newly flag. Needs a
+measured false-positive count and a selftest first -- its own piece of work.
+
+FOR T3G: carrier 3 joins carrier 1 as an assertion in prose. This bean SHOULD
+cite it -- it is still the closest thing in the corpus to T3g's own claim and it
+names the spectral base -- but it cannot be promoted and nothing should be built
+on it as established. The base question is unchanged and still needs the author.
