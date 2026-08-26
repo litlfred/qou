@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T19:40:39Z
+updated_at: 2026-08-25T22:15:36Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -264,3 +264,41 @@ the qou-4e5k peel value; and B(D), B(4He) now match `binding_canonical`'s
 - `_habiro_coefficient_extract` ×2 and `atomic_tr_m_helium4_canonical` — THIS
   BEAN'S TRANCHE, still open. The ⁴He one is a ~17 % move in tr_M(⁴He) and is
   coupled to the Phase-5q slow path; not a rename.
+
+
+## Progress 2026-08-25 (PR #5801)
+
+All three genuinely-off-canon PRODUCTION files are now flipped:
+
+    binding_canonical.py                 strict_averaged   -> canonical  (#5767)
+    binding_combiner_markov_peel_fallback.py               -> canonical  (#5783)
+    atomic_tr_m_helium4_canonical.py     chi_lambda_braid  -> canonical  (#5801)
+    _habiro_coefficient_extract.py       chi_lambda_braid  -> canonical  (#5801, 25 witnesses)
+
+`test_ctype_consumer_coverage.py` Part F now reports **2 baselined, 0
+unadjudicated**, and both survivors are LEGITIMATE, not backlog:
+
+  * `binding_bring_enhancement_compare.py::build_witness` — a labelled
+    comparison against a non-canonical convention, which R3 permits.
+  * `closed_form_tau_M_verification_phase5q.py::main` — deliberately left on
+    chi_lambda_braid by the 2026-06-03 audit, because it is the empirical
+    slow-path validator and must match the frame it validates.
+
+### Still open on this bean
+
+  * `chi_monotone_transfer.py` — COUPLED, do not flip alone. Its four oracle
+    witnesses `chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}-at-q0-50dps`
+    are colour-BLIND; the file compares on the matching word deliberately.
+    Flipping it before those oracles are regenerated makes the self-test compare
+    across frames AND STILL PASS. Regenerate the oracles first.
+  * `iterative_knot_builder.py` — not examined this session.
+  * The 28 committed witnesses recording a non-colour-weighted pn_convention:
+    25 of them were the habiro table and are now canonical.
+
+### Bean's own framing, confirmed by measurement
+
+The bean says "do not order S4 by file count: the 9 chi_lambda_braid
+assignments are the whole tranche's weight". Measured on the habiro table:
+the flip moved every atom by a factor 1.2055 (-17.05 % old-normalised,
++20.55 % new-normalised), versus 0.0141 % for a strict_averaged site.
+That is the 1210x the bean predicted, confirmed on real witnesses.
