@@ -48,6 +48,8 @@ from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,  #
                                        Q_TRITIUM_MEV)
 from light_isotope_sweep import tr_M_at_q0, FROB_N3, M_E
 from q_parameter import Q as Q_0
+from q_parameter import Q_50_DIGIT_STR
+from experimental_constants import _M_E_MEV as _M_E_MEV_EXACT  # noqa: E402
 from q_parameter import HA as H_VAL
 from witness_base import WitnessBuilder
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
@@ -426,9 +428,19 @@ def main():
             "β-decay calibration throughout."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
-        .add_parameter("q_0", Q_0)
-        .add_parameter("m_e_MeV", M_E_MEV)
+        # PROVENANCE parameters, recorded EXACTLY (bean `qou-syit`). `Q_0` and
+        # `M_E_MEV` are float64 module constants whose exact sources exist
+        # (`Q_50_DIGIT_STR`, `experimental_constants._M_E_MEV`), so recording
+        # them at 16 digits loses the pin's identity for no reason — a reader
+        # cannot tell which q₀ this ran at past the 16th digit. `Q_NEUTRON_MEV`
+        # has no exact private sibling and is recorded as the float64 it is.
+        .add_parameter("q_0", Q_50_DIGIT_STR)
+        .add_parameter("m_e_MeV", mp.nstr(_M_E_MEV_EXACT, 30))
         .add_parameter("Q_beta_n_MeV", Q_NEUTRON_MEV)
+        # COMPUTED parameters below are float64 and STAY float64: they come
+        # from `light_isotope_sweep.tr_M_at_q0`, whose pipeline is numpy +
+        # `BlockCache(float(Q0), H_VAL)` end to end. Serialising them as
+        # strings would hide that, which is the laundering this repo bans.
         .add_parameter("E_0_MeV_per_cat", E_0)
         .add_parameter("tr_M_proton_at_q_0", tr_p)
         .add_parameter("tr_M_neutron_at_q_0", tr_n)
@@ -437,6 +449,22 @@ def main():
             "mean_abs_err_pct": sum(errs)/len(errs) if errs else None,
             "max_abs_err_pct": max(errs) if errs else None,
         })
+        .add_caveat(
+            "PRECISION, measured 2026-08-26 (bean qou-syit): 57 payload "
+            "fields are raw float64. 33 originate in this producer; 24 are "
+            "INHERITED from light_isotope_sweep.tr_M_at_q0, whose pipeline is "
+            "numpy + BlockCache(float(Q0), H_VAL) end to end. Because "
+            "B_pred_MeV sums T1_descended, EVERY headline number here is "
+            "float64-derived no matter what this producer does locally — so "
+            "the 33 were deliberately NOT cosmetically converted. Per "
+            "AGENTS.md a float64 input poisons the whole result, and dressing "
+            "the survivors in mpf would hide that rather than fix it. Only "
+            "the two provenance parameters with exact sources (q_0, m_e_MeV) "
+            "are recorded exactly. Making this witness genuinely clean means "
+            "porting light_isotope_sweep off numpy/BlockCache — a real "
+            "tranche, with 3 module-importers (NOT the 118 a bare-name grep "
+            "for tr_M_at_q0 returns; that name is shared across modules)."
+        )
         .add_caveat(
             "T6 Habiro Laurent expansion deferred — placeholder = 0. "
             "k≥3 tail subtractive form only for atoms with entanglement-"
