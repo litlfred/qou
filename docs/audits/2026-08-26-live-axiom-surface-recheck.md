@@ -36,8 +36,8 @@ and three ways I mis-measured while finding it.
 
 ## 1. The bucket no longer maps to the tree: 58 → 23
 
-The triage doc sorts **58** axioms into "External / cited / deep". The live tree
-carries **23 axioms** in total, across every bucket
+The triage doc sorts **58** axioms into "External / cited / deep". The
+`QOU/` **library** carries **23 axioms** in total, across every bucket
 (`scripts/lean-assumption-surface.py`, 2207 files, 0 `sorry` / 0 `sorryAx` /
 0 `true_vacuity`, 1 `native_decide`):
 
@@ -49,7 +49,28 @@ carries **23 axioms** in total, across every bucket
 | Mathlib | 2 |
 | AppendixSurreals, Archimedean, Hecke, IwahoriHecke | 1 each |
 
-So most of what that document triages has since been discharged or removed. **Do
+So most of what that document triages has since been discharged or removed.
+
+> **🛑 SCOPE, corrected 2026-08-26. "23" is the `QOU/` LIBRARY, not the corpus.**
+> Content blocks carry sibling `.lean` files outside that library, and they hold
+> the large majority of the axioms: measured **22 in the library against 198
+> corpus-wide** (3185 files), i.e. 176 live outside the scope every figure in this
+> audit uses.
+>
+> The **comparison in this section is still valid** — the triage doc explicitly
+> snapshots "every `axiom` declaration in
+> `content/quantum-observable-universe/lean/QOU/`", so 58-vs-23 is scope-matched.
+> What was wrong is the phrase "the live tree", which reads as the corpus and is
+> off by an order of magnitude. The same applies to `qou-k5jt`'s "surface 23 → 22":
+> true of the library, and 198 → 197 of the corpus.
+>
+> `scripts/lean-assumption-surface.py` now prints its scope and the corpus figure
+> on every run, because a tool that silently reports a subtree invites exactly this.
+> (Adding that check immediately caught a second error in it: the corpus walk was
+> including `.lake/`, reporting 418 axioms over 11198 files — mostly Mathlib's,
+> counted as ours.)
+
+ **Do
 not quote its bucket sizes as a description of the current tree** — including the
 "57 remaining" figure in my own bean `qou-8s7o`, which inherited the error.
 
