@@ -3678,3 +3678,86 @@ import here, exactly as `Linarith`/`NormNum` did in
 And `abs_val_lt_length_of_cancel` is stated **without** the `|val s| = 1`
 hypothesis: it is not needed (the writhe of `σσ⁻¹` is zero), and carrying it
 would have made the theorem look more conditional than it is.
+
+---
+
+## Addendum 40 — α_shift at intermediate colours, computed by exact integer min-plus
+
+Addendum 39 derived that on a channel of dimension `> 1` the pole order is a
+longest-path optimisation over the standard-tableau graph. This implements it.
+[`alpha_shift_min_plus_probe.py`](../../computations/meson/alpha_shift_min_plus_probe.py),
+7/7.
+
+### The computation
+
+`χ(w) = Σ_paths ∏_k (entry at step k)`, and the entry valuations are the derived
+table of Addendum 39 — `−1`/`2ρ−1` on a `σ` diagonal, `+1`/`−1` on a `σ⁻¹`
+diagonal, `0` off-diagonal. A multiplicative valuation turns each path into a
+sum of integers, so
+
+$$\mathrm{val}(\chi) \;\ge\; \min_{\text{closed paths}} \sum_k \mathrm{val}(\text{entry}_k),$$
+
+a **min-plus (tropical) matrix product**, computed here in `int` arithmetic
+only. There is **no floating point in the predictor at all**; `mpmath` appears
+solely in the independent measurement it is checked against.
+
+### 🛑 It is a BOUND, and my first version asserted an identity
+
+The probe's first run asserted `min-plus = measured` and **failed 2 of 46**. The
+theory says equality holds only when the minimal paths do not cancel, so the
+falsifiable claims are the bound *direction* and its *tightness* — not equality.
+The assertions were corrected to test those; the finding was not adjusted to fit
+the test.
+
+| | result |
+|---|---|
+| pairs evaluated | **46** (24 on channels of dimension `> 1`) |
+| bound direction `val ≥ min-plus` | **holds on every pair**, no reversal |
+| exact | **44/46 (95 %)** |
+| exact on multi-dimensional channels | **22/24** |
+| cross-check vs Addendum 39's closed forms | **reproduces both, every word** |
+
+The two misses, in full:
+
+| word | `λ` | dim | min-plus | measured | over-stated by |
+|---|---|---:|---:|---:|---:|
+| `σ₂σ₁σ₃σ₂` | `(2,1,1)` | 3 | −2 | **0** | 2 |
+| `σ₂σ₁σ₃⁻¹σ₂` | `(3,1)` | 3 | −2 | **0** | 2 |
+
+**Both are on channels of dimension `> 1`, as they must be** — a one-dimensional
+channel has a single path and nothing to cancel against. These are measured
+cancellations, not defects.
+
+### What this changes about reach
+
+The predictor is `O(L · dim²)` **in integers**. That is the point: dense
+seminormal linear algebra is what put the colour law out of reach in Addendum 38
+(the `(9,9)` block at 18 strands is 4862-dimensional in `mpmath` at 300 dps), and
+a tropical product over the same index set is arithmetic a machine does not
+strain at. **The computational obstacle Addendum 38 named is lifted for the
+valuation** — though not for the trace, and this says nothing about magnitude.
+
+### The Lean
+
+[`MinPlusValuationBound.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MinPlusValuationBound.lean)
+— 6 declarations, generic `AddCommMonoid`/`CommMonoid`, no `ℝ`, exit 0, no
+`sorryAx`.
+
+| declaration | content |
+|---|---|
+| `minVal_le_val_sum` | **the bound** — a non-archimedean valuation of a sum is at least the min over terms; this is what makes min-plus valid, and only as a bound |
+| `sumVal_eq_val_prod` | the "plus" — a multiplicative valuation turns a path's product into a sum of integers |
+| `exists_strict_of_cancel` | **non-vacuity** — two terms of equal finite valuation can cancel to `⊤`, so the bound is genuinely strict sometimes |
+| `minVal_singleton_eq` | and a one-term sum attains it, so strictness is a multi-dimensional phenomenon — matching the measurement |
+
+`pathProd` is defined locally: `List.sum` is available in this build but
+`List.prod` is not, and a local definition keeps the import surface minimal.
+(Third instance of the same class of trap on this branch, after `Linarith`/
+`NormNum` and `Ring` — in this restored cache, assume nothing is ambient.)
+
+### Scope
+
+Words up to length 4 on up to 5 strands, all partitions — **not** the atom word.
+The predictor computes a **valuation**, not a trace: it says where the pole is,
+never how big the number is. Every magnitude conclusion on this branch (§C, §E,
+§G, §H) is untouched by it.
