@@ -1,11 +1,11 @@
 ---
 # qou-avt2
 title: 'ATTACK 2: general-n per-block Hecke characters via Halverson-Ram / Jing-Liu'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-26T04:14:19Z
+updated_at: 2026-08-26T07:35:45Z
 ---
 
 Newly enabled by the owner's 2026-08-26 Murnaghan-Nakayama upload drop

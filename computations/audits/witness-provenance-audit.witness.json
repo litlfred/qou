@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T07:27:22.047092+00:00",
-  "commitSha": "2ec09c1e5f0f2d796102a83281bb197bbc4839a4",
+  "computedAt": "2026-08-26T07:46:01.430466+00:00",
+  "commitSha": "f205e33078b269858f3043e6468ba2ffd6007259",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -35,10 +35,9 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py",
-      "--strict"
+      "computations/audits/witness_provenance_audit.py"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -56,14 +55,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2782,
-      "prov_ok": 2352,
+      "total_scanned": 2783,
+      "prov_ok": 2353,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 251,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965492451473759884974838245866283249460819554277498202731848"
+      "completeness_ratio": "0.965504850880344951491196550485088034495149119655048508803450"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -8041,6 +8040,10 @@
         },
         {
           "witness": "qbeta-hahn-exton-kernel-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-hecke-mn-character-engine.witness.json",
           "missing_fields": []
         },
         {

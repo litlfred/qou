@@ -1,11 +1,11 @@
 ---
 # qou-avt6
 title: 'PROVED (scope-b): no typed-crossing word difference has counit epsNPq — Q_A''s element cannot exist as described'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-26T07:07:45Z
-updated_at: 2026-08-26T07:29:30Z
+updated_at: 2026-08-26T07:35:21Z
 ---
 
 Parent: `qou-avtq`. Follows `qou-avt5` (which established that `eps(Delta)` has
