@@ -87,8 +87,19 @@ Gell-Mann--Nishijima relation cannot be closed.
    non-self-duality without the $\mathrm{Sym}^2$ gate and without the
    Frobenius--Schur trichotomy, as the gate-and-trichotomy argument
    reaches it without the Euler characteristic and without Schur--Weyl.
-   Two independent derivations of one necessary condition are stronger
-   evidence for it than either alone.
+   A third route reaches the same negative from a different direction
+   again: `SU2EmergenceRankForced.no_three_dimensional_fundamental_in_one_fibre`
+   derives $N \neq 3$ from non-degeneracy of the fibre's volume form
+   ($\Lambda^2 V \cong \mathbf{1}$ forces $N = 2$), without the
+   $\mathrm{Sym}^2$ gate, the row cap or the Euler characteristic.
+
+   The three are not three votes on one proposition, and the difference
+   is what matters here.  The row-cap and volume-form arguments bound the
+   **fibre**: they say $N = 2$, so one fibre cannot supply a
+   three-dimensional object.  The gate-and-trichotomy argument bounds any
+   **candidate**: it says which property a candidate must have, and so
+   yields a test that can be applied to an object nobody has built yet.
+   The negative is now over-determined; the screen is what is additive.
 
    *That the search is confined to the groupoid level is now a theorem,
    not an extrapolation.*  The parity criterion
