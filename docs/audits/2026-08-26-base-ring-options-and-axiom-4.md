@@ -106,6 +106,43 @@ over. Otherwise axiom 4 and the truncation mechanism cannot both hold.
   `R → ℝ`, `q ↦ q₀ ≈ 1.10998`: at real `q₀ > 1` every balanced bracket is
   strictly positive, so nothing that was inverted is sent to zero.
 
+## Follow-on measured: is `[Field R]` real field dependence?
+
+The 185 `[Field R]` files looked like the main obstacle to a non-field base.
+Measured, they are mostly not.
+
+**Only 4 of 185 declare `[Field R]` and never divide at all** — outright
+gratuitous, and directly downgradeable to `[CommRing R]`:
+`MathlibExt/SDPEmptyConstraints`, `BraidKnot/DepthStratifiedFrobeniusReciprocityVariance`,
+`BraidKnot/HeckeFullTwistProduct`, `BraidKnot/HeckeJucysMurphyReduction`.
+
+The other 181 do divide — but by **what** is the decision-relevant question, and
+the answer is lopsided. Counting every inverse across those files:
+
+| denominator | occurrences |
+|---|---:|
+| `q` | **1597** |
+| local variables (`D`, `v`, `x`, `s`, `a^2`, `L_k`, `t`, `G`, `u`, `B`, …) | ~205 |
+| `q^n`, `q^2`, `q + q⁻¹` | ~21 |
+| `(2 : ℂ)` | 17 |
+
+**About 88 % of all field usage is literally `q⁻¹`**, which `ℤ[q, q⁻¹]` already
+supplies — no field needed, and no localisation either. The next tier
+(`q^n`, `q²`, `q + q⁻¹`) is exactly what options 1 and 2 invert. The `(2 : ℂ)⁻¹`
+hits are archimedean-side, past the wall, and say nothing about the base.
+
+So `[Field R]` here is overwhelmingly a **convenience for writing `q⁻¹`** without
+carrying an `Invertible q` instance, not a structural demand. The 185 count is
+not evidence of deep field dependence, and it should not be read as an argument
+against options 1–2.
+
+**Scope of this measurement, stated honestly.** It counts the *syntactic shape*
+of denominators, not their semantics. The ~205 local-variable inverses need
+per-file inspection to tell a generic nonzero (which genuinely wants a field)
+from a name bound to a `q`-expression (which does not). That residue is the only
+part of the `[Field R]` surface still unmeasured, and it is where a migration
+would actually have to do work.
+
 ## What is not settled here
 
 This answers *which ring makes the axioms true*. It does **not** answer the T3g
