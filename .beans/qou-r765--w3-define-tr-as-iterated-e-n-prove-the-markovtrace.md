@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-08-26T13:52:07Z
+updated_at: 2026-08-26T15:00:24Z
 parent: qou-utb3
 ---
 
@@ -81,3 +81,32 @@ the Markov reduction, is documented-not-enforced in the `MarkovTrace` class beca
 
 **Real next brick:** the spanning decomposition, as a §3b class with a
 content-bearing field, then W3's second half becomes reachable.
+
+
+## CE + Markov fields DISCHARGED for H2 subset H3 (2026-08-26, PR #5827)
+
+All three class fields proved concretely. epsLin is FORCED, not chosen — every
+entry read off the coset table by imposing the Markov property:
+
+  eps v = <v0 + z.v2 + z.v5 , v1 + z.v3 + z.v4 + z.h.v5>
+
+  epsLin_retract   : eps (iota x) = x
+  epsLin_bimodule  : eps (iota x * w * iota y) = x * eps w * y
+  epsLin_markov    : eps (iota b * sigma1 * iota c) = z . (b*c)
+
+**bimodule is the one that could have failed.** eps was written down from the
+coset table; whether the resulting map is an (H2,H2)-bimodule map is a SEPARATE
+question, settled by computation over all six coordinates with x, y, w symbolic.
+
+**They are theorems, not instances, and the obstruction is NOT mathematical.**
+HeckeConditionalExpectation and HeckeMarkovExpectation both bind the UNBOUNDED
+HeckeBraidedPresentation, which has no contentful instance for a finite algebra
+(constant_generator_presentation + far_commute_zero). Re-pointing them at
+HeckeBraidedPresentationOfRank — as HeckeCosetSpanning already is — would make
+both instances declarable and would then make cyclic_two_g_of_tower
+UNCONDITIONALLY INSTANTIABLE at this rung.
+
+Not done here: that is a signature change to classes predating this work, which
+JonesBasicConstruction also binds. Left to the author.
+
+Guard rc=0 on 77 entries (74 -> 77).
