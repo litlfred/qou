@@ -1,0 +1,39 @@
+{
+  "computation": "qbeta-xi-family-collapses-to-h",
+  "description": "The Xi_k moment family collapses to a rational function of [2]_q (hence of h^2), so it carries no structure beyond h. Retracts qou-ximf's central proposal.",
+  "engine": "sympy-exact",
+  "markov_convention": "D",
+  "assertions": [
+    {
+      "name": "xi_k_eq_qk_plus_qnegk_over_bracket2_pow_k__k_1_to_8",
+      "passed": true
+    },
+    {
+      "name": "bracket2_sq_eq_h_sq_plus_4",
+      "passed": true
+    },
+    {
+      "name": "xi_k_is_chebyshev_in_bracket2__k_1_to_6",
+      "passed": true
+    },
+    {
+      "name": "bracket2_sq_xi2_eq_h_sq_plus_2",
+      "passed": true
+    },
+    {
+      "name": "bracket2_sq_xi3_eq_h_sq_plus_1",
+      "passed": true
+    },
+    {
+      "name": "loopMean_identity_in_h_only",
+      "passed": true
+    }
+  ],
+  "verdict": "RETRACTION (scope-(a)). Xi_k = (q^k + q^-k)/[2]_q^k = 2*T_k([2]/2)/[2]^k is a rational function of [2]_q alone, and [2]^2 = h^2 + 4, so the whole family is a function of h^2 -- which the ladder already carries. The family is NOT a new source of bar-even structure and cannot supply the convention-D residual `ce`. The cyclotomic numerators are the factorisation of 1 + q^{2k}, a property of the writing. qou-ximf's central proposal is withdrawn; the k-cycle prune's conclusion stands with a better explanation (Xi_3 = (h^2+1)/[2]^2 is a redundant coordinate, so a free coefficient was forced). `ce` is not hiding in the weights.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_xi_family_collapses_to_h_probe.py",
+    "scriptHash": "3beebe9f1caf",
+    "commitSha": "a340f7c8749e1a3cf9ad972838c4aa48b62427f7",
+    "generatedAt": "2026-08-26T04:13:01.461362+00:00"
+  }
+}

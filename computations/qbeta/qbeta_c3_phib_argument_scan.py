@@ -117,7 +117,7 @@ def main() -> int:
     # ---- targets, from first principles ----
     S, r, sub = {}, {}, {}
     for a, q in anchors.items():
-        sub[a] = substrate_ladder_quantities(q)
+        sub[a] = substrate_ladder_quantities(q, convention="C")
         c3 = c3_target_at(q, Qcod, me)
         S[a] = c3 + Vol41
         r[a] = S[a] * sub[a]["u"] ** 3
@@ -141,7 +141,7 @@ def main() -> int:
 
     # ---- argument menu + readouts per anchor ----
     def args_menu(q, b):
-        s = substrate_ladder_quantities(q)
+        s = substrate_ladder_quantities(q, convention="C")
         t = mp.log(q)
         cb = mp.mpc(0, 1) * (b + 1 / b) / 2
         u = s["u"]

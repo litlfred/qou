@@ -204,7 +204,7 @@ def main() -> int:
            ("mu=lambda_min-eps", lambda sub, ev: ev[0] - mp.mpf("1e-6"))]
 
     def at(q):
-        sub = substrate_ladder_quantities(q)
+        sub = substrate_ladder_quantities(q, convention="C")
         G = gram(q)
         ev = eigs(G)
         O = left_reg_operator(q, FIG8)

@@ -200,12 +200,12 @@
       "status": "agreed",
       "open_item": null,
       "resolution": {
-        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
+        "ruling": "owner, 2026-08-09 — excise convention C",
         "numerical_impact": "REAL and it is NOT an improvement on aggregate: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves 37.39% -> 43.85%. 2H improves +74.85% -> +27.36% and the 3H/3He mirror split 2.2708 -> 1.7471 MeV (nature 0.7638); everything heavier under-binds worse.",
         "numerical_impact_per_isotope": "B_D/B_C, A = 2..7: 0.935 (2H), 1.105 (3H), 1.062 (3He), 1.228 (4He), 1.489 (6Li), 1.613 (7Li), 1.614 (7Be) -- the exposure GROWS with interface count, -6.5% to +61%, and is NOT monotone in direction. The Delta_lambda route is far larger: 4He is a ~31x change WITH a sign flip. Measured in docs/audits/2026-08-08-binding-channel-convention-exposure.md; ~15 live consumers of markov_z / y_lambda_wenzl_bridge (deltalambda/*, phase5/*, the mu4/rho_F cluster probes, casimir_xi_2_dig_deeper, crystal_yekutieli_probes_abcd, connected_magnitude_charge_symmetric, meson_symmetry_and_bar_involution, y_lambda_symbolic_validate). This supersedes the earlier claim that binding's exposure is 195 ppm.",
         "structural_impact": "the 2H impossibility disappears. Under C, AME(2H)=2.2246 sits 30.4% BELOW the whole admissible band [2.9072, 5.1780]; under D the band is [2.0507, 3.7978] and AME is inside it, at d = -0.1192*h.",
         "mass_channel_unaffected": "verified: m_p = 938.27208943 and m_n = 939.56542276 both unchanged, because trM_borromean uses the Lean closed form (4+h^2-3h^4-h^6)/(h^2+4) and never calls y_lambda_at.",
-        "not_decided_by": "experimental match \u2014 see numerical_impact, D is worse on aggregate",
+        "not_decided_by": "experimental match — see numerical_impact, D is worse on aggregate",
         "residual_question": {
           "bean": "qou-rm47",
           "status": "NOT an open convention item -- the C-vs-D question is settled by the ruling above. What remains is a separate structural question about the binding channel's fibre.",
@@ -598,17 +598,17 @@
         "migrated": "2026-08-16 (qou-cds2)"
       },
       {
-        "id": "qbeta_utils.markov_parameter",
+        "id": "qbeta_utils.markov_parameter_convention_C",
         "convention": "C",
         "module": "qbeta_utils",
-        "symbol": "markov_parameter",
+        "symbol": "markov_parameter_convention_C",
         "kind": "callable_q",
         "sys_path": [
           "computations",
           "computations/qbeta",
           "computations/substrate"
         ],
-        "note": "THE DISPUTED qbeta-decay CHANNEL's production parameter -- registered C so R9 ASSERTS the disputed state instead of leaving it undetected (mirror of the pyhecke.gram.z blocked-migration pattern). If this ever reports D without the qbeta-decay channel being settled and the ladder re-derived, something swapped z under the ladder -- which the 2026-08-15 sensitivity probe shows breaks its empirical convergence (a z-swap is not a migration; c_3 -> ~-974). See channels.qbeta-decay.open_item (bean qou-b3nk)."
+        "note": "RENAMED 2026-08-26 markov_parameter -> markov_parameter_convention_C. The VALUE is unchanged (still z_C); only the name now says so, because an unqualified `markov_parameter` read as THE Markov parameter -- the same hard-coding defect fixed in ZBarParity.lean the same day. R9 must be kept pointed at the new symbol: renaming without updating this row degrades R9 from CONFIRMED-by-evaluation to a silent 'could not evaluate' WARNING, and the validator still exits 0, so the lost assertion looks green (measured: 22 -> 23 warnings). THE DISPUTED qbeta-decay CHANNEL's production parameter -- registered C so R9 ASSERTS the disputed state instead of leaving it undetected (mirror of the pyhecke.gram.z blocked-migration pattern). If this ever reports D without the qbeta-decay channel being settled and the ladder re-derived, something swapped z under the ladder -- which the 2026-08-15 sensitivity probe shows breaks its empirical convergence (a z-swap is not a migration; c_3 -> ~-974). See channels.qbeta-decay.open_item (bean qou-b3nk)."
       },
       {
         "id": "pyhecke_native.markov_z",

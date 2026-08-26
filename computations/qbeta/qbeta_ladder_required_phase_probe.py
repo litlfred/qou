@@ -82,7 +82,7 @@ def q_a_over_me(q):
 
 
 def analyse(q, label):
-    s = substrate_ladder_quantities(q)
+    s = substrate_ladder_quantities(q, convention="C")
     h, u = s["h"], s["u"]
     Q_A = ME * q_a_over_me(q)
 
@@ -168,7 +168,7 @@ def main() -> int:
         req = []
         acs = []
         for qq in qs:
-            s = substrate_ladder_quantities(qq)
+            s = substrate_ladder_quantities(qq, convention="C")
             Q_A = ME * q_a_over_me(qq)
             cr = QCOD / (Q_A * (1 + C2 * s["u"] ** 2))
             if not (-1 < cr < 1):
