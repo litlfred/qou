@@ -188,6 +188,7 @@ for i,(stem,ws) in enumerate(todo,1):
     json.dump({"sha":SHA,"results":results},open("/tmp/residue_results3.json","w"),indent=1)
 
 print(f"\ntier 1 done: {len(deferred)} deferred to the full {BUDGET}s budget\n", flush=True)
+_ndef = len(deferred)
 for i,(stem,ws) in enumerate(deferred,1):
     r = run_one(stem, ws)
     if r.get("verdict") == "TIMEOUT":
@@ -195,7 +196,7 @@ for i,(stem,ws) in enumerate(deferred,1):
         if r["timeout_count"] >= 2:
             r["verdict"] = "BUDGET_EXCEEDED"
     results.append(r)
-    print(f"[{i}/{len(todo)}] {stem:<48s} {r['verdict']:<14s} {r['sec']:6.1f}s moved={len(r.get('moved',[]))}",flush=True)
+    print(f"[tier2 {i}/{_ndef}] {stem:<44s} {r['verdict']:<14s} {r['sec']:6.1f}s moved={len(r.get('moved',[]))}",flush=True)
     json.dump({"sha":SHA,"results":results},open("/tmp/residue_results3.json","w"),indent=1)
 restore()
 print("\n=== SUMMARY ==="); print(f"pinned {SHA}")
