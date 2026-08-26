@@ -65,7 +65,31 @@ def marshal_intra(chain_g0, chain_g1, h_val: float):
 
 def compute_tau_M_nucleon_H3(g0, g1, q_val: mp.mpf,
                               dps: int = 50) -> mp.mpf:
-    """tr_M^3(nucleon, q) — proton or neutron H_3 Markov trace."""
+    """tr_M^3(nucleon, q) — proton or neutron H_3 Markov trace, LEGACY FRAME.
+
+    🛑 **NAME COLLISION, DELIBERATE — this is NOT
+    `closed_form_tau_M.compute_tau_M_nucleon_H3`, and since 2026-08-26 the two
+    return different numbers** (bean `qou-qu2w`):
+
+        here (legacy, marshalled)   tau_p 1.32159   tau_n 1.25756
+        canonical helper            tau_p 1.14576   tau_n 0.98774
+
+    The canonical helper was fixed to stop dropping `d` on each nucleon's two
+    INTRA-nucleon `averaged` crossings, which `marshal_to_chi_lambda_braid`
+    flattens to plain sigma (`z - h/2` -> `z`). This local copy keeps the
+    marshalling ON PURPOSE: this script's whole job is to check the closed form
+    against the empirical slow path, and that slow path is bound to
+    `chi_lambda_braid` via the same marshaller. Both sides of the comparison
+    must sit in ONE frame or the check is meaningless — which is why the
+    2026-06-03 colour-averaging audit lists this script as one to LEAVE on
+    `chi_lambda_braid`.
+
+    So: correct here, and the resulting `verdict: closed-form-verified-50dps`
+    is a statement about the closed-form MACHINERY, not evidence for the legacy
+    frame. Do not "unify" this with the canonical helper to remove the
+    duplication — that would silently re-point one side of the comparison and
+    the script would then compare across frames.
+    """
     h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word = marshal_intra(g0, g1, h_val)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
