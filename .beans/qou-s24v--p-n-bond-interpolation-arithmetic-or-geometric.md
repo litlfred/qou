@@ -1,11 +1,11 @@
 ---
 # qou-s24v
 title: 'p-n bond interpolation: arithmetic or geometric?'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T17:01:26Z
-updated_at: 2026-08-26T17:02:06Z
+updated_at: 2026-08-26T17:24:18Z
 ---
 
 Opened 2026-08-26 out of `qou-cblw` §3 (PR #5841), which closed "which bar-even
@@ -75,3 +75,64 @@ tempting because one of them will fit visibly better.
 
 Prior: `computations/probes/pn_offset_bar_odd_class_probe.py` (16 assertions),
 Lean `QOU.MassTheory.PnOffset` (12 declarations, sorry-free).
+
+
+## RESOLVED 2026-08-26, same day — and it retracts this bean's own argument
+
+**The case for the geometric mean, as written above, is unsound.** I wrote it;
+it does not survive contact with the bond elements.
+
+The argument was: *"the closed form is a PRODUCT over bonds, so the natural
+interpolation between two factors is the multiplicative midpoint."* That takes
+a geometric mean at the level of **factors** while borrowing its motivation
+from a multiplicative structure that exists only at the level of **elements** —
+and the two levels are not connected here.
+
+The two like-flavour bonds are `sigma` (p-p, `d = 0`) and `sigma - h*1 =
+sigma^-1` (n-n, `d = -h`). They are **mutually inverse**. So:
+
+    tau(sigma * sigma^-1) = tau(1) = 1          <- TRACE of the product
+    f_pp * f_nn           = (q/(q^2+1))^2       <- product of TRACES
+
+and `1/4 - f_pp*f_nn = ((q^2-1)/(2(q^2+1)))^2` is a **square**, so the product
+of the factors is `<= 1/4` at EVERY `q` (equality only at `q = 1`), never `1`.
+Measured at the proton pin: `0.2473` against `1`, a gap of `0.7527`.
+
+So the Markov trace is not multiplicative on these bonds — it could not be, a
+bond and its inverse would need reciprocal traces — and the closed form's
+product over bonds is a product of *traces*, not the trace of a *product*.
+There is no multiplicative structure at the factor level to take a midpoint in.
+At the element level the multiplicative midpoint of `sigma` and `sigma^-1` IS
+the identity, whose trace is 1, which is neither the geometric mean `z/q^2`
+(0.497) nor any other member of the family.
+
+**The arithmetic mean has no such gap**, because the trace is LINEAR:
+`(f_pp + f_nn)/2 = tau((sigma + sigma^-1)/2)`, the skein symmetriser that
+`QOU.BraidKnot.interface_knot_markov_z_bar_symmetric` is already stated about.
+Its bond constant is the midpoint of the other two (`arithMean_bondConst_eq_midpoint`).
+
+**Verdict: arithmetic, as the structurally-backed choice.** The arithmetic mean
+of the factors is the trace of a canonical element; the geometric mean is the
+trace of nothing canonical.
+
+Lean §4 of `QOU.MassTheory.PnOffset` (4 further declarations, sorry-free):
+`fPP_mul_fNN_eq`, `one_sub_fPP_mul_fNN`, `quarter_sub_fPP_mul_fNN`,
+`arithMean_bondConst_eq_midpoint`. Probe now 20 assertions. PR #5841.
+
+## SCOPE — what this does NOT establish
+
+Scope (a), not (b). It removes the structural argument FOR the geometric mean;
+it does **not** prove `eps = 0` is physically correct. The colour-tube
+correction `delta/4` sits on top of the arithmetic mean either way, and
+`qou-cblw` §3 stands: nothing in the corpus picks the bar-odd `E`.
+
+What it DOES do is close the fork this bean was opened for, so the remaining
+question is the offset ON the arithmetic mean rather than a choice between two
+means. It also means the "do not test both against AME" warning above is now
+mostly moot — there is one mean, not two.
+
+**Corpus note.** This did NOT need the colour-tube geometry re-derivation the
+bean says it needs. That estimate was wrong: the deciding fact is that the two
+like-flavour bonds are mutually inverse, which is already in the corpus
+(`bondD`, `interfaceFactor_eq_bond_expectation`). Formalize-first would have
+found it before the bean was opened.

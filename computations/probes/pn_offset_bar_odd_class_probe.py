@@ -288,6 +288,48 @@ def main() -> int:
                            "magnitude AND in sign -- they are not variants of "
                            "one convention")
 
+    # --- the arithmetic-vs-geometric fork (bean qou-s24v) -------------------
+    # The case FOR the geometric mean was: the closed form is a product over
+    # bonds, so the multiplicative midpoint is the natural interpolation. That
+    # argument does not survive contact with the bond ELEMENTS.
+    print("\n--- arithmetic vs geometric: the product-over-bonds argument ---")
+    prod_factors = f_pp * f_nn
+    # The two like-flavour bonds are sigma (d = 0) and sigma - h*1 = sigma^-1
+    # (d = -h). They are MUTUALLY INVERSE, so their product in the algebra is
+    # the identity, whose Markov-trace expectation is tau(1) = 1 -- the same
+    # normalisation the relation f_k = z + d_k already assumes.
+    trace_of_bond_product = mp.mpf(1)
+    print(f"  f_pp * f_nn                 = {mp.nstr(prod_factors, 20)}   (product of TRACES)")
+    print(f"  tau(sigma * sigma^-1)       = {mp.nstr(trace_of_bond_product, 20)}   (TRACE of the product)")
+    print(f"  gap                         = {mp.nstr(trace_of_bond_product - prod_factors, 20)}")
+    w.add_assertion("product_of_factors_eq_closed_form",
+                    mp.nstr(abs(prod_factors - (q / (q ** 2 + 1)) ** 2), 6), "0",
+                    tolerance="1e-50",
+                    source="f_pp*f_nn = (q/(q^2+1))^2, which is (z/q^2)^2 -- the "
+                           "reason the geometric mean is z/q^2")
+    w.add_assertion("markov_trace_not_multiplicative_on_these_bonds",
+                    str(abs(prod_factors - trace_of_bond_product) > mp.mpf("0.7")),
+                    "True",
+                    source="the product of the factors misses tau(1)=1 by more "
+                           "than 3/4; it could not do otherwise, since a bond "
+                           "and its inverse would need reciprocal traces")
+    # 1/4 - f_pp*f_nn is a SQUARE, so the bound holds at every q, not just q0.
+    sq = ((q ** 2 - 1) / (2 * (q ** 2 + 1))) ** 2
+    w.add_assertion("quarter_minus_product_is_a_square",
+                    mp.nstr(abs((mp.mpf(1) / 4 - prod_factors) - sq), 6), "0",
+                    tolerance="1e-50",
+                    source="1/4 - f_pp*f_nn = ((q^2-1)/(2(q^2+1)))^2, so the "
+                           "product is <= 1/4 for EVERY q, equality only at q=1 "
+                           "(Lean: quarter_sub_fPP_mul_fNN)")
+    # The arithmetic mean has no such gap: the trace is LINEAR.
+    arith = (f_pp + f_nn) / 2
+    w.add_assertion("arithmetic_mean_is_trace_of_skein_symmetriser",
+                    mp.nstr(abs(arith - (z - h / 2)), 6), "0", tolerance="1e-50",
+                    source="(f_pp+f_nn)/2 = z - h/2 = tau((sigma+sigma^-1)/2); the "
+                           "trace is linear, so the arithmetic mean of the factors "
+                           "IS the trace of a canonical element, and the geometric "
+                           "mean is the trace of nothing")
+
     # --- the honest verdict -------------------------------------------------
     w.add_assertion("an_E_is_selected", "False", "False",
                     source="none of C1-C4 narrows the class; selecting an E from "
@@ -307,7 +349,9 @@ def main() -> int:
         "regular_E_confines_offset_to": "O((q-1)^3)",
         "geometric_mean_reachable_in_class": False,
         "geometric_mean_required_E_pole_order": 2,
-        "open_question": "arithmetic vs geometric interpolation of the p-n bond: the Markov trace is linear in the bond element, but the closed form is a product over bonds",
+        "arithmetic_vs_geometric": "RESOLVED in favour of arithmetic as the structurally-backed choice (qou-s24v): the product-over-bonds argument for the geometric mean is unsound. f_pp and f_nn are the traces of sigma and sigma^-1, which are MUTUALLY INVERSE, so tau of their product is tau(1) = 1 while the product of their traces is <= 1/4 at every q. The closed form multiplies TRACES; there is no multiplicative structure at the factor level to take a midpoint in. The arithmetic mean, by contrast, IS the trace of the skein symmetriser (sigma+sigma^-1)/2, because the trace is linear. This does NOT establish eps = 0 physically; the colour-tube delta/4 sits on top either way.",
+        "product_of_factors_at_q0": mp.nstr(f_pp * f_nn, 25),
+        "trace_of_bond_product": "1",
         "lean": "QOU.MassTheory.PnOffset",
     }})
     print(f"\nwitness -> {path}")

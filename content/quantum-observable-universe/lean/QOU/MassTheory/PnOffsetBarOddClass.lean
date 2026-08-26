@@ -285,4 +285,87 @@ theorem geomMean_pole_residue_at_one :
     -(6 * (1 : K) ^ 3) / ((1 : K) ^ 2 + 1) ^ 2 = -(3 / 2) := by
   norm_num
 
+/-! ## §4. Arithmetic or geometric? The product-over-bonds argument is unsound -/
+
+/-- **The product of the two like-flavour factors, in closed form.**
+
+`f_pp · f_nn = (q/(q²+1))²`, which is `(z/q²)²` — consistent with `geomMean_sq`,
+and the reason the geometric mean is `z/q²` in the first place. -/
+theorem fPP_mul_fNN_eq (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    markovZ q * (markovZ q - heckeH q) = (q / (q ^ 2 + 1)) ^ 2 := by
+  unfold markovZ heckeH
+  field_simp
+  ring
+
+/-- **The product of the FACTORS is not the trace of the product of the BONDS,
+and misses it by at least `3/4` at every `q`.**
+
+This is the statement that decides the arithmetic-vs-geometric question, so it
+is worth being explicit about what the two sides are.
+
+* The two like-flavour bonds are the Hecke elements `σ` (p-p, `d = 0`) and
+  `σ - h·1 = σ⁻¹` (n-n, `d = -h`) — see `bondD` and
+  `QOU.Hecke.ClosedForm.interfaceFactor_eq_bond_expectation`.  They are
+  **mutually inverse**, so their product in the algebra is the identity, whose
+  Markov-trace expectation is `τ(1) = 1` (the normalisation that
+  `f_k = z + d_k` already assumes).
+* Their two *factors* are `f_pp` and `f_nn`, and this theorem says
+  `1 - f_pp·f_nn` is a square plus `3/4`.  So over any ordered field
+  `f_pp·f_nn ≤ 1/4`, never `1`, and the two sides differ by a factor of at
+  least four.
+
+Hence the Markov trace is **not** multiplicative on these bonds — it could not
+be, since a bond and its inverse would have to have reciprocal traces — and the
+closed form's product over bonds is a product of *traces*, not the trace of a
+*product*.
+
+**The consequence for the fork.**  The case for the geometric mean was that the
+closed form is a product, so the multiplicative midpoint of two neighbouring
+factors is the natural interpolation.  That argument takes a geometric mean at
+the level of *factors* while borrowing its motivation from a multiplicative
+structure that exists only at the level of *elements* — and the two levels are
+not connected here, by this theorem.  At the element level the multiplicative
+midpoint of `σ` and `σ⁻¹` is the identity, with trace `1`, which is not the
+geometric mean `z/q²` of the factors (`0.497` at the proton pin) nor anything
+else in the family.
+
+The arithmetic mean has no such gap: the Markov trace is **linear**, so
+`(f_pp + f_nn)/2` is exactly the trace of `(σ + σ⁻¹)/2`, the skein symmetriser
+that `QOU.BraidKnot.interface_knot_markov_z_bar_symmetric` is already stated
+about, and `arithMean_bondConst_eq_midpoint` records that its bond constant is
+the midpoint of the other two.
+
+**Scope.**  This is a statement about which of the two candidate interpolations
+has algebraic backing, not a derivation of the physical offset.  It removes the
+structural argument for the geometric mean; it does **not** establish that
+`ε = 0` is correct, and the colour-tube correction `δ/4` sits on top of the
+arithmetic mean either way. -/
+theorem one_sub_fPP_mul_fNN (q : K) (hq2 : q ^ 2 + 1 ≠ 0) :
+    1 - markovZ q * (markovZ q - heckeH q)
+      = ((q ^ 2 - 1) / (2 * (q ^ 2 + 1))) ^ 2 + 3 / 4 := by
+  unfold markovZ heckeH
+  field_simp
+  ring
+
+/-- The same identity in the form that gives the bound directly:
+`1/4 - f_pp·f_nn` is a square, so `f_pp·f_nn ≤ 1/4` over any ordered field,
+with equality exactly at `q² = 1`. -/
+theorem quarter_sub_fPP_mul_fNN (q : K) (hq2 : q ^ 2 + 1 ≠ 0) :
+    1 / 4 - markovZ q * (markovZ q - heckeH q)
+      = ((q ^ 2 - 1) / (2 * (q ^ 2 + 1))) ^ 2 := by
+  unfold markovZ heckeH
+  field_simp
+  ring
+
+/-- **The arithmetic mean's bond constant is the midpoint of the other two.**
+
+The p-p bond has `d = 0` and the n-n bond `d = -h`; the `ε = 0` p-n bond has
+`d = -h/2`, their midpoint.  Since the trace is linear this is the whole
+content of "arithmetic mean" at the element level: the bond is
+`σ - (h/2)·1 = (σ + σ⁻¹)/2`. -/
+theorem arithMean_bondConst_eq_midpoint (h : K) :
+    bondConst h 0 = (0 + -h) / 2 := by
+  unfold bondConst
+  ring
+
 end QOU.MassTheory.PnOffset
