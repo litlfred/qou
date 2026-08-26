@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-26T21:06:33Z
+updated_at: 2026-08-26T21:10:30Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -311,3 +311,47 @@ a primary source.
   'precisely this, and here is why ribbon does not give it'.
 
 No number moves either way. Scope (a) throughout.
+
+
+
+## 2026-08-26 — the bean's OWN question answered: NO, the ribbon axioms cannot close it
+
+This bean asks 'can the ribbon axioms close mass/binding derivation gaps'. Having severed the
+sphericality route above, here is the answer for the *binding* half, from the binding side.
+
+**The missing term is graph-combinatorial, not categorical.**
+`QOU.MassTheory.AdditiveSignChangingTerm` gives the leading derived candidate as a
+bond−frustration simplex term on the A-nucleon coordination graph `K_A`:
+
+    M(A) = s · (C(A,2) − κ · C(A,3))
+
+`C(A,2)` edges (2-body bonds) minus κ times `C(A,3)` triangular faces (frustrated 3-cycles).
+It is defined by **counting simplices on a graph**, not as a composite of twists and braidings
+in a ribbon category. So `twist_tensor_three` — 'θ on a 3-fold tensor is pairwise braidings
+plus single-object twists, with no irreducible 3-body datum' — **does not apply to it**. The
+bridge I left open on 2026-08-26 is now closed, and it closes the wrong way for the ribbon route.
+
+**What IS gained, narrowly.** The same lemma is a scope-(b) structural exclusion of one route:
+**no ribbon-derived weight can supply the `C(A,3)` piece**, because the balancing axiom
+decomposes θ on a 3-fold tensor into pairwise + per-object data only. The invariant is named
+(`BalancedCategory.twist_tensor`), so this qualifies as (b) rather than (a). It does not
+retroactively explain the six failed ansätze — Frobenius co-Casimir, Demazure-fibre,
+LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov are representation-theoretic, not
+twist/braiding composites.
+
+**Where the real gap is**, per that file, and it is not where this bean assumed:
+- The **sign** is already derived, 0-parameter: `M(3) > 0 ∧ M(4) < 0 ↔ 3/2 < κ < 3`, a genuine
+  open window from the simplex structure.
+- The **magnitude** is a fit, and provably vacuous: `(s,t) ↦ (M(3), M(4))` has determinant
+  −6 ≠ 0, so ANY target pair is hit uniquely. Matching both residuals is 2 parameters on 2
+  points and carries zero predictive content.
+- Progress = fixing **κ** by structure to 0–1 free parameters, turning `M(3)/M(4)` into a
+  prediction. Pre-registered candidates `κ ∈ {1,2,3,[3]_q}` + tetrahedral penalty were tried
+  and none lands.
+
+**Not going fishing for κ.** Searching the window `3/2 < κ < 3` for something that fits is
+precisely the fit-hunting the anti-fit rules forbid; a κ must come from structure or not at all.
+
+**Verdict for this bean: answer is NO on both halves.** Sphericality's consumer was already
+discharged by a shorter route; the binding term is not ribbon-shaped. Recommend closing it as
+answered-negative rather than leaving it in-progress.
