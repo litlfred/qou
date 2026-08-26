@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-24T19:33:27Z
+updated_at: 2026-08-26T03:51:43Z
 ---
 
 ## What
@@ -148,3 +148,61 @@ proton -> muon, payload BYTE-IDENTICAL, zero differing non-anchor keys.
 **Still open (NOT done here):** which layer each of the 85 producers' quantity
 actually belongs to. This makes each witness state the layer it was computed at
 — a precondition for that question, not an answer. No sweep.
+
+
+## 2026-08-26 — population re-measured: 74, and five different numbers were in circulation
+
+This bean says **85**. I have quoted **283** at the owner. Both are wrong, and
+so are two intermediate figures I produced getting here. Measured today:
+
+    148   raw-text grep for "q-pinning-50-digit"        <- over-counts via PROSE
+    283   my earlier figure                             <- per-WITNESS, not per-producer
+    119   AST-normalised, pin string appears in code    <- includes auditors + regexes
+     85   this bean, 2026-08-24                         <- stale
+    ---
+     74   producers that read the pin AS A FILE PATH    <- the honest number
+
+The 119 → 74 gap is the same defect class this arc keeps hitting: a script that
+carries `"q-pinning-50-digit"` as a **regex or search string** is not a script
+that **reads** it. Among the 45 excluded were **two of my own audit scripts**
+(`q0_independence_checker.py`, `no_q0_recorded_producer_split.py`), which
+pattern-match the name. Sixth instance. The discriminator that works: the
+string must be an argument to a path/open/read call.
+
+### The 74, by declaration
+
+    54   untagged (default proton at runtime; compute is muon regardless)
+    18   ideal_muon (consistent: read muon, declared muon)
+     5   physical_proton (STRADDLE: read muon, declared proton) -- was 2 in this
+         bean on 2026-08-24, so the straddle set GREW
+     1   ambiguous
+
+### Evidence on the fork this bean refuses to settle by sweep
+
+Of the **54 untagged**:
+
+    41   SILENT on the pin -- no stated rationale either way
+    10   state MUON intent ("canonical muon-q0 ... never hardcode", drift-proof)
+     3   state BOTH (comparison?)
+
+So Reading A — *"pinning to the canonical anchor is a deliberate, drift-proof
+design"* — is **explicitly stated by 10 of 54**. The other 44 say nothing.
+
+**Silence is not evidence of either reading**, and that is the finding, not a
+tiebreak. An idiom that propagates by copy-paste and a design choice nobody
+bothered to restate look identical in the source. What can be said:
+
+- the 10 who state it are a **real constituency**, so a blanket "route
+  everything through `q_parameter`" would override documented intent;
+- the 5 straddles are wrong under **either** reading — they read muon and
+  declare proton — so they are safe to fix now, independently of the fork;
+- the 41 silent ones are where the decision actually bites, and nothing in the
+  source decides it.
+
+### Recommendation (judgement, not a finding)
+
+Split the bean. The 5 straddles are unambiguous and small. The 10 stated-muon
+producers should be *tagged* `ideal_muon` so their intent stops being invisible
+to the manifest — that is a declaration change, not a numerical one. Only the 41
+silent ones need the owner's ruling, and by then the population is small enough
+to look at.
