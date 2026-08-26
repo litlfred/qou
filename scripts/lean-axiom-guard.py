@@ -429,6 +429,18 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_leg_growth | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_above_ne | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_of_ne_corner | clean
+# Bookkeeping the row products need: a box does not change the number of rows,
+# the receiving row is one longer, every other row is untouched.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.length_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_self | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_ne | clean
+# (P), the Pieri step. schurElement is a fold; nothing cell-by-cell can be said
+# about a fold, so schurElement_eq_prod exhibits it as a product first. The two
+# rowFactor lemmas are the box-addition response in the two cases where it is a
+# clean equality.
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.schurElement_eq_prod | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_below | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_same_row | clean
 # The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
 # schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
 # n(lam) fix a correction rather than a preference: revert the prefactor and

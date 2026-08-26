@@ -543,6 +543,25 @@ theorem hookLength_addBoxRow_row_above_ne
     · simp only [if_pos hjr, ← List.countP_eq_length_filter, hcount]
     · simp only [if_neg hjr]
 
+/-- Adding a box does not change the number of rows (`List.set` does not). -/
+@[simp]
+theorem length_addBoxRow (lam : Partition) (r : ℕ) :
+    (addBoxRow lam r).length = lam.length := by
+  unfold addBoxRow Partition.length
+  rw [List.length_set]
+
+/-- The row that received the box is one cell longer. -/
+theorem getElem?_addBoxRow_self (lam : Partition) (r : ℕ) (hr : r < lam.length) :
+    (addBoxRow lam r)[r]? = some ((lam[r]?).getD 0 + 1) := by
+  unfold addBoxRow
+  rw [List.getElem?_set_self (by simpa using hr)]
+
+/-- Every other row is untouched. -/
+theorem getElem?_addBoxRow_ne (lam : Partition) (r i : ℕ) (h : i ≠ r) :
+    (addBoxRow lam r)[i]? = lam[i]? := by
+  unfold addBoxRow
+  rw [List.getElem?_set_ne (Ne.symm h)]
+
 /-- **The hook-length update rule.** Adding one box to row `r` raises the hook
 length by exactly one on two sets of cells and leaves every other cell alone:
 
