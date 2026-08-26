@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:58:37Z
+updated_at: 2026-08-26T04:00:20Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -823,3 +823,38 @@ same over-count being made once before at larger scale (14 claimed, 2 real).
 The lesson repeats because the failure shapes genuinely are
 indistinguishable without reading the exception — which is why the runner now
 records it.
+
+
+### Precision correction to the "four witnesses fail their own assertions" claim
+
+That section says a boolean moving from `True` "can only have moved to
+`False`". **Not strictly true, and I cannot settle it from the data I have.**
+
+`allPassed` differing from its committed `True` admits three readings:
+
+  * `True -> False` — the witness now fails its own assertions (the claim as
+    stated);
+  * `True -> null` — the field is present but unset;
+  * the field is **absent** in the fresh run — the leaf comparison flags that
+    identically, since it compares key sets.
+
+The runner records which field names moved, **not their values**, so the
+checkpoint cannot separate these. Distinguishing them needs a re-run of those
+four producers with values captured — deliberately not done while the sweep
+is in flight, because running a producer in the shared worktree risks
+corrupting the diff of whichever producer the sweep is measuring.
+
+**What survives unweakened:** all three readings mean the committed witness
+does not reproduce, which is this bean's finding. Only the *sharpened*
+version — "records passing assertions and now fails them" — is unproven, and
+it is the version worth having, so it should be settled rather than dropped.
+
+Queued, not concluded: re-run `mu3_abs_choice_robustness_probe`,
+`option_a_vol_per_knot_light_series`, `trace_convention_reconciliation` and
+`triangle_bond_submodularity_probe` with values recorded, once the sweep is
+done and the worktree is free.
+
+Worth noting the runner would have answered this for free had it stored the
+before/after values alongside the field names. Recording names was already the
+single most useful thing it does; recording values is the obvious next
+increment.
