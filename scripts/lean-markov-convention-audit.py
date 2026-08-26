@@ -95,12 +95,7 @@ KNOWN_C = [
     ("MarkovAxiomsPrimitive", "markovZax_legacy", "C-plain"),
     ("MarkovZClassicalCoincidence", "zCsub", "C-sqrtvar"),
     ("QBetaCategoricalPrecisionLadder", "markovZ", "C-plain"),
-    ("categorical-chain-convergence-mechanisms", "markovZc", "C-plain"),
-    ("generator-volume-decomposition", "generatorVolume", "C-plain"),
-    ("markov-trace-factorization", "markovZ", "C-plain"),
     ("q-beta-cos-resummation", "markovZ", "C-plain"),
-    ("q-beta-spectral-bridge", "markovZ", "C-plain"),
-    ("y-lambda-closed-form-wenzl-bridge", "jonesMarkovZ", "C-plain"),
 ]
 
 
