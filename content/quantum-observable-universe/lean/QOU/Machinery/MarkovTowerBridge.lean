@@ -65,7 +65,7 @@ open QOU.Machinery.HeckeTower QOU.Machinery.HeckeBraidedCategory
 variable {R : Type*} [Field R] {q : R}
 variable {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
 variable {σn : ℕ → Hn} {σn1 : ℕ → Hn1}
-variable [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+variable {rankHi : ℕ} [HeckeBraidedPresentationOfRank q rankHi Hn1 σn1]
 
 /-- `memB ι x` — "`x` lies in the level-`n` subalgebra", i.e. in the image of
 the tower inclusion. This is the concrete reading of `MarkovInductive`'s
@@ -106,7 +106,7 @@ The conditional-expectation instance is bound by NAME rather than left to
 instance search: `q`, `σn` and `σn1` appear nowhere else in this statement, so
 they are pinned only by unification against `inst`. -/
 theorem epsilon_inclusion_mul
-    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (inst : HeckeConditionalExpectation R q rankHi Hn Hn1 σn1 ι ε)
     (y : Hn) (x : Hn1) : ε (ι y * x) = y * ε x := by
   have h := inst.bimodule y 1 x
   rwa [map_one, mul_one, mul_one] at h
@@ -119,7 +119,7 @@ bimodule law, the right because `ι y * ι (ε x) = ι (y * ε x)` and `ε` retr
 `ι`. This is the only one of the four discharged bricks with mathematical
 content — the other three are facts about the image of an algebra map. -/
 theorem towerTrace_mul_eq_of_memB
-    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (inst : HeckeConditionalExpectation R q rankHi Hn Hn1 σn1 ι ε)
     (trn : Hn → R) :
     ∀ a x : Hn1, memB ι a → memB ι x →
       towerTrace trn ε (a * x) = towerTrace trn ε (a * towerE ι ε x) := by
@@ -135,7 +135,7 @@ of `MarkovInductive.cyclic_two_g` are discharged above.
 
 Still conditional on `HeckeConditionalExpectation`, which has no instance. -/
 theorem cyclic_two_g_of_tower
-    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (inst : HeckeConditionalExpectation R q rankHi Hn Hn1 σn1 ι ε)
     (trn : Hn → R) (g : Hn1) (z hbar : R)
     (hIH : ∀ x y : Hn1, memB ι x → memB ι y →
       towerTrace trn ε (x * y) = towerTrace trn ε (y * x))
@@ -173,10 +173,8 @@ section Spanning
 open QOU.Machinery.MarkovInductive
 
 variable {Hlow : Type*} [Ring Hlow] [Algebra R Hlow] {σlow : ℕ → Hlow}
-variable [HeckeBraidedPresentation R q Hlow σlow]
 variable {rank : ℕ} [HeckeBraidedPresentationOfRank q rank Hn σn]
 
-omit [HeckeBraidedPresentation R q Hn σn] in
 /-- **The `hgwg` reduction for an arbitrary `w`.** Given the spanning
 decomposition and the two grounding shape lemmas — one for the lower-coset
 summand, one for the middle — the two-generator Markov reduction holds for
@@ -229,8 +227,8 @@ composition the two classes exist to enable — neither alone says what `ε` doe
 to a general element. -/
 theorem towerE_eq_of_spanning
     (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow) (n : ℕ) (z : R)
-    (instCE : HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow)
-    (instMk : @HeckeMarkovExpectation R _ q Hlow Hn _ _ _ _ σlow σn _ _
+    (instCE : HeckeConditionalExpectation R q rank Hlow Hn σn ιlow εlow)
+    (instMk : @HeckeMarkovExpectation R _ q rank Hlow Hn _ _ _ _ σn _
       ιlow εlow instCE n z)
     (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow) :
     ιlow (εlow (ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i)))
@@ -251,8 +249,8 @@ Conditional on BOTH `HeckeCosetSpanning` and `HeckeMarkovExpectation`, neither
 of which has an instance. -/
 theorem gwg_trace_towerE_of_spanning
     (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow) (n : ℕ) (z hbar : R)
-    (instCE : HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow)
-    (instMk : @HeckeMarkovExpectation R _ q Hlow Hn _ _ _ _ σlow σn _ _
+    (instCE : HeckeConditionalExpectation R q rank Hlow Hn σn ιlow εlow)
+    (instMk : @HeckeMarkovExpectation R _ q rank Hlow Hn _ _ _ _ σn _
       ιlow εlow instCE n z)
     (instSp : HeckeCosetSpanning R q rank Hlow Hn σn ιlow n)
     (tr : Hn → R) (g : Hn)
