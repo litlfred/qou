@@ -289,7 +289,14 @@ def classify(path: Path) -> dict:
         "path": path.name,
         "computation": comp,
         "declared": declared,
-        "expected": expected,
+        # SORTED when it is a set. A bare `set` reprs in iteration order, which
+        # is not stable across runs, so this field churned the witness on every
+        # run with no change of meaning -- one diff line per multi-convention
+        # producer, purely from hash ordering. Two producers now carry sets
+        # (Hoefsmit q0, and the qinv driver as of bean qou-1oxx), so the churn
+        # was about to double.
+        "expected": (sorted(expected) if isinstance(expected, (set, frozenset))
+                     else expected),
         "expected_basis": basis,
         "producer": _producer_field(w),
         "status": status,

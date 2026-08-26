@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T14:25:05.841485+00:00",
-  "commitSha": "813073814812ef15c0032246e71039d1b480267b",
+  "computedAt": "2026-08-26T15:40:09.824769+00:00",
+  "commitSha": "64e948be588fc02245ee737fcf52ed1951acba6b",
   "assertions": [
     {
       "name": "no_convention_mismatch",
@@ -36,8 +36,8 @@
   "durationMs": 5,
   "computation": "chi-convention-audit",
   "scriptFile": "chi_convention_audit.py",
-  "scriptHash": "105d6590baba",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "3726dd8841d7",
+  "scriptCommitSha": "628d2212871a909cb84e6c886a4e3591f7ade01f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -150,7 +150,10 @@
         "path": "chi-deuteron-free-h6-at-q0-50dps.witness.json",
         "computation": "chi-deuteron-free-h6-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "bar_pairing_binding_observable.py",
         "status": "ok"
@@ -177,7 +180,10 @@
         "path": "chi-deuteron-h6-at-q0-50dps.witness.json",
         "computation": "chi-deuteron-h6-at-q0-50dps",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -195,7 +201,10 @@
         "path": "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json",
         "computation": "chi-deuteron-h6-at-qinv-50dps-colour-weighted",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -204,7 +213,10 @@
         "path": "chi-deuteron-h6-at-qinv-50dps.witness.json",
         "computation": "chi-deuteron-h6-at-qinv-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -222,7 +234,10 @@
         "path": "chi-dineutron-h6-at-q0-50dps.witness.json",
         "computation": "chi-dineutron-h6-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -231,7 +246,10 @@
         "path": "chi-diproton-h6-at-q0-50dps.witness.json",
         "computation": "chi-diproton-h6-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -249,7 +267,10 @@
         "path": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
         "computation": "chi-helium-3-free-h9-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
@@ -276,7 +297,10 @@
         "path": "chi-helium-3-h9-at-q0-50dps.witness.json",
         "computation": "chi-helium-3-h9-at-q0-50dps",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -285,7 +309,10 @@
         "path": "chi-helium-3-h9-at-qinv-50dps-colour-weighted.witness.json",
         "computation": "chi-helium-3-h9-at-qinv-50dps-colour-weighted",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -294,7 +321,10 @@
         "path": "chi-helium-3-h9-at-qinv-50dps.witness.json",
         "computation": "chi-helium-3-h9-at-qinv-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -312,7 +342,10 @@
         "path": "chi-helium-4-free-h12-at-q0-50dps.witness.json",
         "computation": "chi-helium-4-free-h12-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "bar_pairing_binding_observable.py",
         "status": "ok"
@@ -348,16 +381,34 @@
         "path": "chi-helium-4-h12-at-q0-50dps.witness.json",
         "computation": "chi-helium-4-h12-at-q0-50dps",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
+        "status": "ok"
+      },
+      {
+        "path": "chi-helium-4-h12-at-qinv-50dps-colour-weighted.witness.json",
+        "computation": "chi-helium-4-h12-at-qinv-50dps-colour-weighted",
+        "declared": "colour-weighted-averaged-crossing",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
+        "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
+        "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
       },
       {
         "path": "chi-helium-4-h12-at-qinv-50dps.witness.json",
         "computation": "chi-helium-4-h12-at-qinv-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -413,7 +464,10 @@
         "path": "chi-neutron-h3-at-q0-50dps.witness.json",
         "computation": "chi-neutron-h3-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -440,7 +494,10 @@
         "path": "chi-proton-h3-at-q0-50dps.witness.json",
         "computation": "chi-proton-h3-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -458,7 +515,10 @@
         "path": "chi-tritium-free-h9-at-q0-50dps.witness.json",
         "computation": "chi-tritium-free-h9-at-q0-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "computation-id:/^chi-.*-at-q0-50dps$/",
         "producer": "",
         "status": "ok"
@@ -485,7 +545,10 @@
         "path": "chi-tritium-h9-at-q0-50dps.witness.json",
         "computation": "chi-tritium-h9-at-q0-50dps",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q0_via_hoefsmit_mpfr.py",
         "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
         "status": "ok"
@@ -494,7 +557,10 @@
         "path": "chi-tritium-h9-at-qinv-50dps-colour-weighted.witness.json",
         "computation": "chi-tritium-h9-at-qinv-50dps-colour-weighted",
         "declared": "colour-weighted-averaged-crossing",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -503,7 +569,10 @@
         "path": "chi-tritium-h9-at-qinv-50dps.witness.json",
         "computation": "chi-tritium-h9-at-qinv-50dps",
         "declared": "averaged-crossings",
-        "expected": "{'averaged-crossings', 'colour-weighted-averaged-crossing'}",
+        "expected": [
+          "averaged-crossings",
+          "colour-weighted-averaged-crossing"
+        ],
         "expected_basis": "producer:chi_at_q_inv_via_native_mpfr.py",
         "producer": "chi_at_q_inv_via_native_mpfr.py",
         "status": "ok"
@@ -528,8 +597,8 @@
       }
     ],
     "totals": {
-      "scanned": 51,
-      "ok": 35,
+      "scanned": 52,
+      "ok": 36,
       "mismatch": 2,
       "unknown_convention": 1,
       "missing_inferable": 6,
