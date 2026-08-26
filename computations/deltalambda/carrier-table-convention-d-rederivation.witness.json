@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T18:19:09.986487+00:00",
+  "commitSha": "de13f9d4a0ea7be6fee76f90888cc168c79ecd96",
+  "assertions": [
+    {
+      "name": "markov_normalization_recomputed_weights",
+      "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 79,
+  "computation": "carrier-table-convention-d-rederivation",
+  "scriptFile": "carrier_table_convention_d_rederivation.py",
+  "scriptHash": "b9402ae12352",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/carrier_table_convention_d_rederivation.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/carrier_table_convention_d_rederivation.py"
+  },
+  "description": "Independent convention-D re-derivation of the carrier table's m_e*S and A columns for the four anchors. y_lambda is RECOMPUTED from y_lambda_su_n and theta is REBUILT from chi/dim, so the probe's expected literals are not checked against the probe's own output. 5Li/6Li are out of scope: their free chi comes from the probe's own LR path, which would not be a cross-check.",
+  "data": {
+    "me_S_MeV_D": "0.346713766129367266507468823794614460018775009523676965674151",
+    "A_req_D": "6.41614616239368098657710443711106247118760376082946475918781",
+    "me_S_MeV_T": "0.471968563125080150455260229412483455204624662619166915223374",
+    "A_req_T": "17.9711041426972575501480521833799846328339327524547032545551",
+    "me_S_MeV_3He": "0.314121863371399831935514353262401952112412554710810339025966",
+    "A_req_3He": "24.5702137290412885091490688422306456967167965582153571465807",
+    "me_S_MeV_4He": "0.384481710104210974425022999173672817333590373380383569632915",
+    "A_req_4He": "73.5943002134761267645890742248712189589190329331883786114476",
+    "scope_note": "anchors only; 5Li/6Li excluded — their free chi comes from the probe's own LR path and would not be an independent check"
+  }
+}
