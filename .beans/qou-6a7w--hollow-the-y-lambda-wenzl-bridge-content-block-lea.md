@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T22:05:38Z
+updated_at: 2026-08-26T22:17:08Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -288,3 +288,27 @@ one is checked rather than recalled.
 `addBoxRow λ (length λ) = λ`, **not** `λ ++ [1]`. The new-bottom-row corner is
 not expressible by `addBoxRow` and needs its own operation — and every shape
 in the probe has exactly one such corner. Any attempt at (P) must add it.
+
+
+### The new-bottom-row corner now exists in Lean (2026-08-26)
+
+The gap recorded above is closed. `addBoxNewRow lam = lam ++ [1]`, with the kit
+mirroring `addBoxRow`'s: length, both `getElem?` cases, `drop`, the hook-length
+response, and `nLambda`. Plus `addBoxRow_at_length : addBoxRow lam lam.length =
+lam` — the trap stated as a theorem so it cannot be re-discovered by accident.
+
+Two ways the last row is EASIER than an interior corner, both worth carrying
+forward:
+
+- **Only column 0 changes.** The new row holds one cell, so its entry `1`
+  exceeds `j` exactly when `j = 0`; every other column's leg count is blind to
+  it.
+- **The new cell's hook is `1` unconditionally.** Nothing lies below the last
+  row, so no order hypothesis is needed — unlike the interior corner, which
+  `hookLength_addBoxRow_of_ne_corner` must exclude precisely because the bare
+  `List ℕ` carrier does not carry weak decrease.
+
+`nLambda_addBoxNewRow : n(λ ++ [1]) = n(λ) + ℓ(λ)`, checked against the probe
+(`[3,2,1] → [3,2,1,1]`, `n` going `4 → 7`).
+
+Guard rc=0 on 149. What is left for (P) is now exactly the sum over corners.
