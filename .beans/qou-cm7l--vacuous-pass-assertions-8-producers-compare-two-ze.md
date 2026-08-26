@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T09:37:58Z
-updated_at: 2026-08-26T10:02:13Z
+updated_at: 2026-08-26T10:07:46Z
 ---
 
 ## The shape
@@ -203,3 +203,60 @@ producer run to settle whether `sublemma_2_1_h12_he4_branching` was live; the
 source answered it, and better — a run can only show what happens with *this*
 container's upstreams, whereas the increment's position settles it for all
 inputs.
+
+
+## 2026-08-26 — the last two resolved. Full classification of all 8.
+
+**`probes/A_operator_per_interface_probe:252` — REFUSE (mixed).** Its lambda
+loop carries TWO skips before the increment:
+
+    for lam in parts_sum:
+        support = [... for (mu, nu, lam_), c in lr_table.items() if lam_ == lam]
+        if not support:
+            continue                      # <- upstream: empty lr_table skips EVERY lambda
+        ...
+        if n_eq < n_unknowns:
+            results[...] = {"status": "panel_too_small", ...}
+            continue                      # <- legitimate per-lambda outcome, and RECORDED
+        ...
+        n_linearity_total += 1
+
+So zero has two causes with different meanings. An empty `lr_table` skips every
+lambda and is an upstream failure — that is the refuse case. Every lambda being
+`panel_too_small` is legitimate, and note the producer already records each one
+in `results` with that status, so the information is not lost. The clean fix is
+therefore two-part: refuse on an empty `lr_table`, and do not assert when
+`n_linearity_total == 0` for the benign reason.
+
+**`delta_lambda_v_hat_z_transfer_phase5d_4:186` — DO NOT ASSERT / low risk.**
+`per_atom` is built INTERNALLY, `for name, Z, N in ATOMS:`, from a module
+constant — it is not read from an upstream witness, and the producer emits it
+(`builder.add_data("per_atom", per_atom)`) rather than consuming it. So an empty
+`per_atom` would require an empty `ATOMS` constant. Zero therefore means "no row
+is an interface", a property of the computation, not a missing input.
+
+### Final classification — all 8
+
+| producer | verdict | why |
+|---|---|---|
+| `all_nuclides_wedderburn_spectral_v2:525` | REFUSE | zero only if the nuclide table failed to load |
+| `qbeta_hoefsmit_stage_b_per_block_ck_probe:227` | REFUSE | zero means the upstream witness carried no `nf_terms` |
+| `probes/A_operator_per_interface_probe:252` | REFUSE (mixed) | empty `lr_table` skips every lambda; `panel_too_small` is benign and recorded |
+| `v_hat_to_delta_lambda_bridge:350` | DO NOT ASSERT | zero = "no 1-dim channels in scope", already printed as a conclusion |
+| `sublemma_2_1_A_operator_extract_h9:539` | DO NOT ASSERT | zero = every lambda underdetermined, a real Phase-2 state |
+| `sublemma_2_1_h9_tritium_verify:453` | DO NOT ASSERT | same `if underdet / else` split |
+| `delta_lambda_v_hat_z_transfer_phase5d_4:186` | DO NOT ASSERT | `per_atom` built internally from a constant |
+| `sublemma_2_1_h12_he4_branching:235` | LOW RISK | increment is unconditional, first statement in the loop |
+
+**3 REFUSE, 4 DO NOT ASSERT, 1 LOW RISK.** None of them is the sweep I first
+proposed, and the split is close to even — which is the point.
+
+### What is now known vs still unknown
+
+**Known, from the source, for all inputs:** which of the two fixes each producer
+needs, and that one of the eight is not really at risk.
+
+**Still unknown:** whether any of the seven at-risk cases is *currently* firing
+on this container's data. That needs a run each. It does not change which fix
+applies — the fix follows from what zero MEANS, not from whether zero happens
+today.
