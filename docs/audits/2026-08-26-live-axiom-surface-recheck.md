@@ -9,6 +9,23 @@ Follow-up to `qou-mame`, which discharged `lobachevsky_pi_div_four_eq_half_catal
 That bucket was populated by *reading each axiom's own docstring*. This audit
 re-checks it against the corpus instead.
 
+> **How to read the claims below.** They are not all the same kind of thing, and
+> putting them side by side flatters the weaker ones. Tiers used throughout:
+>
+> - **PROVED** — a sorry-free Lean theorem, axioms checked with `#print axioms`.
+>   Only §3's Riesz equivalence and the results in `qou-k5jt` are this.
+> - **MEASURED** — the output of running something: `#print axioms` on a rebuilt
+>   cone, a build that exits 0 or 1, a script's count. §1, §2's proof-term
+>   comparison, §4's phantom-axiom experiment, §5.
+> - **GREPPED** — a pattern count over source text. §2's same-stem search and
+>   §3's "eleven of twenty-three" are this, and a grep supports a claim about
+>   *what the text says*, never about what is provable. §3 records what happened
+>   when that distinction was ignored.
+>
+> The one claim here that is none of the three is the degeneracy note: that the
+> axioms do not *exclude* `tr_M ≡ 0` is proved, but their *consistency* is a
+> statement about models and is not established anywhere in this work.
+
 The headline is not the one I expected. Only two of the twenty-three live axioms
 have any same-shaped theorem elsewhere in the corpus, and neither is a free win.
 What the audit actually turned up is a **defect in the measurement instrument**,
@@ -61,6 +78,22 @@ ofSlater_via_rank_equality -> [propext, Classical.choice, Quot.sound,
                                strict_complementarity_kernel_disjoint]     2 axioms
 ```
 
+> **These numbers were first obtained by the method §4 condemns, and have since
+> been re-measured properly (2026-08-26).** The first run resolved the two
+> declarations under `…SDPRealUniqueness.SDPSlaterUniqueness.ofSlater_proven` and
+> `…SDPRankEquality.SDPSlaterUniqueness.ofSlater_via_rank_equality`. After
+> rebuilding the SDP cone from source those names **do not exist**: the current
+> source declares them one namespace higher, without the `SDPSlaterUniqueness`
+> segment. So the original measurement read an olean built before that move —
+> a third instance of §4, and the first one committed by this audit against its
+> own evidence.
+>
+> Re-measured against `lean-rebuild-cone.py QOU.MathlibExt.SDPRankEquality`
+> (6/6 rebuilt), at the correct current names, **the comparison is unchanged**:
+> `ofSlater_proven` carries one axiom, `ofSlater_via_rank_equality` and
+> `SDPRankUniqueness_proven_via_rank_equality` carry two. The conclusion stands;
+> the route to it did not, until now.
+
 `SDPRankEquality`'s own §5 says it "replaces the dependency on `SDPRankUniqueness`".
 That is true as stated and easy to read as a reduction; it is a **decomposition**.
 It trades one monolithic assumption for two more atomic ones — a reasonable goal,
@@ -68,27 +101,51 @@ since atomic assumptions are closer to something Mathlib might one day supply, b
 the assumed-mathematics count goes **up, not down**. Nothing outside the two SDP
 modules consumes either chain, and **no module imports `SDPRankEquality` at all**.
 
-## 3. Reclassification: much of the surface is interface, not deep mathematics
+## 3. Interface vs. deep — and the inference in this section that was wrong
 
-Eleven of the twenty-three sit in a file that also declares `opaque`. That is a
-co-location proxy rather than a per-axiom proof, but the pattern is clear where
-it was checked directly: `IwahoriHecke/MarkovTrace.lean:77` declares
-`noncomputable opaque markovTrace`, and `HeckeAlgebra/MarkovTrace.lean` declares
-`opaque heckeStab`. `MarkovTrace_cyclic` and `markovTrace_linear` assert
-cyclicity and linearity **of an opaque symbol**.
+**This section originally concluded that `markovTrace_linear` was "unprovable by
+construction". It is now a theorem** (`qou-k5jt`), and both halves of how it got
+that wrong are worth keeping, because they are different mistakes.
 
-Such an axiom is not blocked on Mathlib and is not deep — it is **unprovable by
-construction**, and will stay so until the opaque symbol is bridged to something
-with content. Filing it as "External / cited / deep" invites exactly the search I
-ran, which cannot succeed.
+**The wrong inference.** The argument was: `markovTrace` is `opaque`, an axiom
+about an `opaque` symbol cannot be proved, therefore not a Mathlib gap but a
+construction gap. The middle step does not follow. What matters is not whether
+the *function* is opaque but whether its *argument type* has content.
+`HeckeElement n` is not opaque — it abbreviates `EuclideanSpace ℝ (Fin n!)` — so
+by Riesz every ℝ-linear functional on it is `⟪w, ·⟫`. Carrying the trace as its
+weight vector instead of as an opaque function is the same class of functionals,
+and makes linearity provable. Proved both directions, sorry-free:
+`QOU.HeckeAlgebra.isLinearMap_iff_exists_weight`.
 
-There is a concrete bridge target: `MathlibExt/MarkovTrace.lean:117` defines
-`markovTrace` as a real `noncomputable def` over `HeckeRep`/`BraidWord`. So the
-corpus carries **two `markovTrace`s, one opaque and one concrete, with nothing
-connecting them** — the same unbridged-definitions hazard that held `catalan_G`
-apart from `Cl_2 (π/2)` until `qou-mame`, and the guard's own Catalan comment
-already names that shape as a live hazard. Bridging them is the real question
-behind the Hecke cluster, and it is a corpus-internal one.
+That the `→` direction had to be *proved* rather than cited is the point. Stated
+in prose it licenses the change; only the proof rules out the change having
+silently narrowed the admissible traces.
+
+**The wrong citation.** Separately, and more embarrassingly for a section arguing
+from specifics: the evidence offered was
+`IwahoriHecke/MarkovTrace.lean:77`'s `noncomputable opaque markovTrace`. But
+`markovTrace_linear` lives in `HeckeAlgebra/Common.lean` and is about
+`HeckeAlgebra.markovTrace`, a *different* declaration in a different namespace.
+The claim happened to be true of the intended one — `Common.lean:104` was
+`opaque` too — but the line cited to support it was about something else. In a
+corpus where "two declarations sharing a glyph" is a named recurring hazard,
+citing the wrong one inside the argument that the corpus has too many
+`markovTrace`s is its own small demonstration.
+
+**What survives.** `MarkovTrace_cyclic` is the genuine case and is untouched: it
+constrains the trace against `heckeMul`, which *is* opaque, so it is not
+expressible from the linear-algebra layer and stays an axiom. The reclassification
+holds for that one. It does not hold as a blanket claim about the eleven — that
+figure is a **co-location count** (axioms declared in a file that also declares
+`opaque`), never a per-axiom verdict, and the one member of it examined closely
+turned out to go the other way.
+
+There is still a concrete bridge target: `MathlibExt/MarkovTrace.lean:117` defines
+`markovTrace` as a real `noncomputable def` over `HeckeRep`/`BraidWord`. The corpus
+carries **several `markovTrace`s with nothing connecting them** — the same
+unbridged-definitions hazard that held `catalan_G` apart from `Cl_2 (π/2)` until
+`qou-mame`, and which the guard's own Catalan comment already names. Bridging them
+remains the real question behind the Hecke cluster, and it is corpus-internal.
 
 ## 4. The measurement instrument was unsound: `#print axioms` over a mixed-vintage cache
 
