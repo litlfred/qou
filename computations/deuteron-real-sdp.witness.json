@@ -402,7 +402,7 @@
       "(2, 1, 1, 1, 1)",
       "(1, 1, 1, 1, 1, 1)"
     ],
-    "phase_B_kernel_free_lunch_open": "OPEN (2026-08-26). The six Phase-B encodings below solve on the FULL 11-block space via solve_lp_with_eq, so they inherit the same kernel free lunch documented under support_restricted: encodings 1, 3, 5 and 6 all return primal_obj = 0.0, including 5_lr_branching_canonical, which is the production default. Under convention C they returned -0.0056, -22523, -2780 and -20230 respectively. Only 4_ame_binding_equality is unaffected, because its equality row pins the objective to the AME value directly. Projecting the Phase-B constraint rows onto the support is follow-up work and is NOT done here; until it is, no Phase-B primal objective should be read as a result.",
+    "phase_B_kernel_free_lunch_open": "CLOSED, with a NEGATIVE result (bean qou-6tcn). Each encoding below now carries `result` (full space) AND `result_support_projected`, plus a per-row `projection_row_report`. Read the projected one. MEASURED: all six are INFEASIBLE once projected. The reason is structural, not numerical. On the support G is strictly positive, so Gx >= 0 IS x >= 0 there; on the kernel G = 0, so Gx >= 0 imposes nothing and x may go NEGATIVE. That is what the kernel actually bought -- not merely absorbing the net constraint at zero cost, but supplying signed occupations. Remove it and the objective is bounded by max(t)*n_target = 0.146058, against B_D(AME2020) = 2.224566: short by 15.2x. Two rows also degenerate to 0 = b, one of them (5_lr_branching_canonical row 2, mu = (1,1,1)) infeasibly -- and that encoding is the production default. SCOPE (a): this bounds THIS cost on THIS program with non-negative occupations of the D-supported blocks. It refutes no binding conjecture and says nothing about a different cost, a different Wenzl level, or a program that admits signed occupations for a stated reason. See computations/meson/deuteron_support_reachability_probe.py (6 assertions).",
     "support_blocks": [
       "(6,)",
       "(5, 1)",
@@ -624,7 +624,57 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 3,
+            "weight_on_support": 0.0,
+            "weight_on_kernel": 2.0,
+            "fraction_dropped": 1.0,
+            "degenerate_under_projection": true,
+            "verdict": "vacuous (0 = 0)"
+          },
+          {
+            "row": 4,
+            "weight_on_support": 1.0,
+            "weight_on_kernel": 1.0,
+            "fraction_dropped": 0.5,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "2_character_projection_colorflavor": {
         "description": "per-pair \u03c7^\u03bb projection rows + AME-apportioned RHS",
@@ -637,7 +687,49 @@
           "x_star": null,
           "duality_gap": null,
           "backend": "scipy-highs"
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 21.399969653503966,
+            "weight_on_kernel": 20.16257072150279,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 42.79993930700793,
+            "weight_on_kernel": 40.32514144300558,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 10.699984826751983,
+            "weight_on_kernel": 10.081285360751394,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 3,
+            "weight_on_support": 21.399969653503966,
+            "weight_on_kernel": 20.16257072150279,
+            "fraction_dropped": 0.4851140122711884,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "3_conservation_laws": {
         "description": "baryon (net) + charge (sign-weighted) conservation rows",
@@ -678,7 +770,25 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 4.0,
+            "weight_on_kernel": 7.0,
+            "fraction_dropped": 0.6363636363636364,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "4_ame_binding_equality": {
         "description": "t\u00b7x = B_D_AME (physical binding-energy target)",
@@ -721,7 +831,25 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 0.5751722457697739,
+            "weight_on_kernel": 0.0,
+            "fraction_dropped": 0.0,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       },
       "5_lr_branching_canonical": {
         "description": "Littlewood-Richardson H_6\u2283H_3\u00d7H_3 branching rows: \u03a3_\u03bb[\u03a3_\u03bd c^\u03bb_{\u03bc\u03bd} \u03c7^\u03bd(n)] x_\u03bb = \u03c7^\u03bc(p)\u00b7tr_M_neutron, tr_M_neutron = \u03a3_\u03bd y_\u03bd \u03c7^\u03bd(n) (canonical, no fit).",
@@ -767,7 +895,41 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 7.890204498663975,
+            "weight_on_kernel": 3.401777212254086,
+            "fraction_dropped": 0.30125599733879793,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 1,
+            "weight_on_support": 5.64599085545903,
+            "weight_on_kernel": 10.628020850861054,
+            "fraction_dropped": 0.6530670520983842,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          },
+          {
+            "row": 2,
+            "weight_on_support": 0.0,
+            "weight_on_kernel": 9.047768067713115,
+            "fraction_dropped": 1.0,
+            "degenerate_under_projection": true,
+            "verdict": "infeasible (0 = b, b != 0)"
+          }
+        ]
       },
       "6_scalar_9pair_ratio_fitted": {
         "description": "single 9-pair weighted-ratio row (FITTED; bar-flip on mixed channel)",
@@ -810,7 +972,25 @@
             -0.0,
             -0.0
           ]
-        }
+        },
+        "result_support_projected": {
+          "status": 2,
+          "feasible": false,
+          "primal_obj": null,
+          "x_star": null,
+          "duality_gap": null,
+          "backend": "scipy-highs"
+        },
+        "projection_row_report": [
+          {
+            "row": 0,
+            "weight_on_support": 2.6523014029692096,
+            "weight_on_kernel": 4.477442059641017,
+            "fraction_dropped": 0.6279948336320377,
+            "degenerate_under_projection": false,
+            "verdict": "ok"
+          }
+        ]
       }
     },
     "production_default_encoding": "5_lr_branching_canonical",

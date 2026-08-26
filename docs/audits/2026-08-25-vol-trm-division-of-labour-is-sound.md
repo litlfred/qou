@@ -1467,3 +1467,2351 @@ fine), or link text repeating the URL's final path segment (the
 No mechanism identified. The workaround that holds is to not hyperlink that
 file at all — name it in a code span, as the body's Lean section already does
 for all three files. Do not spend another full-body rewrite on it.
+
+## Addendum 15 — projecting Phase B onto the support: a negative, and a sharper mechanism (2026-08-26)
+
+Bean `qou-6tcn`, the follow-on the previous addendum left open. §14 §1 said the
+six Phase-B encodings still solved on the full 11-block space and so returned
+`primal_obj = 0.0` through a "kernel free lunch", and that projecting their
+constraint rows onto the support was follow-up work. Done — and the result is
+a negative, plus a correction to how I described the free lunch.
+
+### What the kernel actually buys
+
+I wrote that the kernel blocks "absorb the net requirement at zero cost". True,
+and incomplete. On the support `G` is strictly positive, so `Gx ≥ 0` **is**
+`x ≥ 0` there. On the kernel `G = 0`, so `Gx ≥ 0` imposes **nothing** and `x`
+may go **negative**, down to the `-M` bound.
+
+So the kernel supplies **signed occupations**, and that is the load-bearing
+part. It is not that the visible blocks were paying for something for free —
+it is that the invisible ones could pay a *negative* amount.
+
+### The bound
+
+With `x ≥ 0` on the support and `Σx = n_target`, the objective is a convex
+combination scaled by `n_target`, so
+
+```
+t·x  ≤  max_{λ ∈ support} t_λ · n_target  =  0.253938 × 0.575172  =  0.146058
+B_D(AME2020)                              =  2.224566
+                                    short by 15.23×
+```
+
+Measured in [`deuteron_support_reachability_probe.py`](../../computations/meson/deuteron_support_reachability_probe.py)
+(6 assertions, two of them controls). The cost vanishes **identically** on the
+kernel — `t_λ = y_λ·χ^λ` and `y_λ = 0` there — which is why the full-space
+objective is insensitive to kernel occupation in the first place.
+
+### All six encodings, projected
+
+| encoding | full `primal_obj` | projected |
+|---|---|---|
+| `1_bar_involution_fold` | 0.0 | **infeasible** (row 3 degenerates, `0 = 0`) |
+| `2_character_projection_colorflavor` | — | **infeasible** |
+| `3_conservation_laws` | 0.0 | **infeasible** |
+| `4_ame_binding_equality` | 2.224566 | **infeasible** |
+| `5_lr_branching_canonical` | 0.0 | **infeasible** (row 2 degenerates, `0 = b`, `b ≠ 0`) |
+| `6_scalar_9pair_ratio_fitted` | 0.0 | **infeasible** |
+
+Each row now carries a `projection_row_report` giving the fraction of its
+weight that sits on the kernel — 30 % to 65 % for the non-degenerate rows. Two
+rows degenerate entirely. The infeasible one is `5_lr_branching_canonical`
+row 2, the `μ = (1,1,1)` Littlewood–Richardson row, whose weight is **100 %**
+on the kernel — and that encoding is the **production default**.
+
+That the `(1,1,1)` row is the one to die is not a coincidence: `(1,1,1)` is the
+three-row partition of 3, and the D row cap is exactly what zeroes it. The
+constraint was carrying its content on a block the canonical trace cannot see.
+
+### Scope, and what this is not
+
+**(a), scope-limited.** Measured: the support, the cost on it, the ceiling, and
+the projected feasibility of all six. **Not** claimed: that
+`conj:jsj-decomposition-linearity` or any binding conjecture is false; that the
+encodings are wrong; that the framework cannot reproduce the deuteron binding.
+The statement is narrower and exact — **this** cost vector, on **this** program,
+with non-negative occupations of the D-supported blocks, cannot reach the AME
+value. A different cost, a different Wenzl level `r`, or a program that admits
+signed occupations *for a stated reason* are all untouched.
+
+And the full-space numbers this replaces were **not wrong arithmetic**. They
+were the correct optimum of a program whose kernel is unconstrained. The finding
+is that such a program does not mean what its field names suggest — which is
+the same shape as §5's convention-C witness, one level down.
+
+### What it says to the binding front
+
+The sibling coordination on #5817 reported a calibration-free residual of
+`+31.4 %` at ²H against `−59.2 %` at ⁴He, and #5812's argument that no
+correction non-negative for all `A` can fix ⁴He while ²H overshoots. This adds
+an independent reason to expect signed structure: the one program here that
+*did* reach the AME value did so through negative occupations, and removing
+them costs a factor of 15. **That is a hint about where the sign structure has
+to live, not evidence that any particular correction supplies it** — nothing
+here computes a binding contribution.
+
+## Addendum 16 — the level escape is closed on arithmetic (2026-08-26)
+
+§15 left three escapes from the deuteron infeasibility: a different cost, a
+different Wenzl level, or a program admitting signed occupations. Choosing among
+them is a modelling decision and is still not made here. But one of the three is
+now **closed by measurement**, without needing the hard existence question
+answered first.
+
+### Widening the level makes it worse, monotonically
+
+The Ocneanu parameter is a family `z_r = q^r/[r]_q` whose `r = 2` member is the
+canonical `z₂ = q³/(q²+1)`, and the Schur–Weyl row cap at level `r` is
+`ℓ(λ) ≤ r`. So raising `r` widens the support, and `y_lambda_su_n(n, q, N)`
+takes that rank directly. Recomputing the whole reachability calculation at each
+level ([`deuteron_reachability_vs_level_probe.py`](../../computations/meson/deuteron_reachability_vs_level_probe.py),
+6 assertions, three of them controls):
+
+| `r` | support | max rows | `n_target` | `max t` | ceiling | AME/ceiling |
+|---:|---:|---:|---|---|---|---:|
+| **2** | 4 | 2 | 0.575172 | 0.253938 | **0.146058** | **15.23×** |
+| 3 | 7 | 3 | 0.315377 | 0.161031 | 0.050785 | 43.80× |
+| 4 | 9 | 4 | 0.212258 | 0.118222 | 0.025094 | 88.65× |
+| 5 | 10 | 5 | 0.160273 | 0.095810 | 0.015356 | 144.87× |
+| 6 | 11 | 6 | 0.130108 | 0.082596 | 0.010746 | 207.01× |
+
+**No level clears AME, and the canonical one is the best of them.** The ceiling
+is strictly decreasing in `r`.
+
+The mechanism is the normalisation. `y` is fixed by `Σ_λ y_λ f^λ = 1`, so a
+wider support spreads the *same* total weight over more blocks: both `max t` and
+`n_target` shrink, and the ceiling is their product. Widening the level does not
+add room — it subdivides the room already there.
+
+`χ^λ(β_D)` is a character of the braid image in the irrep `λ` of `H_n(q)`,
+depending on `q` and `λ` only and not on the Markov parameter, so the committed
+characters are reused across levels unchanged. Only the weights move.
+
+### What this does and does not settle
+
+It **closes the level escape on arithmetic alone**. That matters because the
+existence question is much harder and is now not needed: `Λ²V ≅ 𝟙` pins the
+fibre dimension at 2 (`exteriorSquareDim_eq_one_iff`, sorry-free), and
+`su5-hypercharge-n3-gate` records that the levels are *alternatives, not stages*
+— no construction in the framework supplies a fibre at any `r ≠ 2`. Every row
+above `r = 2` is therefore a statement about a fibre the framework does not
+have. Had one of them cleared AME, that would have raised a real question about
+whether to go looking for such a fibre. None does, so the question does not
+arise.
+
+**Two escapes remain**, and both are still the author's call:
+
+* **A different cost.** Quantified: at the canonical level a cost reaching AME
+  needs `max(t) ≥ AME/n_target = 3.8677` against the actual `0.2539` — a factor
+  of **15.23×**. That is the same 15.23 as §15's shortfall, which is not a
+  coincidence: with `n_target` held fixed the two statements are the same ratio
+  read from either end.
+* **Signed occupations**, with a stated reason. Untouched here.
+
+**Scope (a).** Measured: the ceiling as a function of level, and the cost factor
+required at the canonical level. **Not** claimed: that any level is realisable;
+that a cost reaching the ceiling exists or is derivable; that signed occupations
+are or are not justified; that any binding conjecture is true or false. A
+ceiling clearing AME would have been **necessary, not sufficient** — it says
+room exists, not that a derivable cost reaches it. Nothing here computes a
+binding contribution.
+
+## Addendum 17 — the two remaining escapes, and a correction to the first (2026-08-26)
+
+§16 closed the level escape. Two remain — a different cost, and signed
+occupations. Neither is chosen here; both are now quantified. Working the first
+one properly shows the figure §15/§16 reported for it was wrong.
+
+### The correction: `n_target` is not an independent input
+
+It was reported that "a cost reaching AME needs `max(t) ≥ AME/n_target = 3.8677`
+against the actual `0.2539` — a factor of **15.23×**, the same ratio read from
+either end with `n_target` fixed."
+
+**`n_target` cannot be held fixed.** It is not an input:
+
+```
+n_target = tr_M(β_D) = Σ_λ y_λ χ^λ = Σ_λ t_λ
+```
+
+The net-constraint target **is** the sum of the cost vector — verified to
+`8e-17`. So the ceiling is
+
+```
+ceiling = max(t) · Σ(t)
+```
+
+which is **quadratic** in the cost, not linear. A uniform rescale `t → c·t`
+scales it by `c²`, so it needs `c = √15.2307 = 3.903`, not 15.23. The 15.23 was
+correct only for a variation that moves `max(t)` while pinning `Σ(t)`, and no
+such variation exists. That "read from either end" remark was dressing an
+algebraic identity as an insight, and the identity was the wrong one.
+
+### What a cost change can and cannot buy
+
+Since `ceiling = max(t)·Σ(t)`, redistributing the cost at **fixed total** is
+maximised by putting everything on one block, giving `ceiling = (Σt)²`. That is
+the best any reshaping can do:
+
+| | value |
+|---|---|
+| actual ceiling | 0.146058 |
+| **best possible shape** (all weight on one block) | **0.330823** — 2.265× better |
+| AME | 2.224566 |
+| **still short by** | **6.72×** |
+
+So the constraint is **not on the cost's shape**. It is on `tr_M(β_D)` itself:
+even a perfectly concentrated cost needs `Σ(t) ≥ √AME = 1.491` against the
+actual `0.575` — the Markov trace of the deuteron braid would have to be
+**2.59× larger**. That is a derived quantity, not a free parameter, so "pick a
+different cost" is really "the deuteron braid's trace is too small", which is a
+much harder thing to want.
+
+**An independent check that this picture is right.** With `x ≥ 0` on the support
+and `Σx = n_target`, `t·x` ranges over `[min(t)·n_target, max(t)·n_target]` =
+`[0.0369647, 0.1460580]`, and a *minimising* LP should sit at the bottom. The
+committed `support_restricted` optimum is `0.03696468028280623`. It matches
+`min(t)·n_target` to `1e-12` — so the solver is doing exactly the convex
+combination this analysis assumes, and the bound is not an artefact of how the
+program was posed.
+
+### Where the sign structure went
+
+`χ^λ(β_D)` at `n = 6` takes both signs. Sorted by whether convention D gives the
+block a nonzero weight:
+
+| sector | `χ^λ(β_D)` |
+|---|---|
+| **support** (4 blocks) | `+1.560, +3.216, +1.674, +4.249` — **all positive** |
+| **kernel** (7 blocks) | `−0.470, −1.972, −0.490, −3.497, −0.820, +2.156, −0.677` — **six negative** |
+
+**Every negative character is in the kernel; the support has none.** The
+convention-D row cap `ℓ(λ) ≤ 2` zeroes exactly the blocks carrying the sign
+structure.
+
+That is a sharper reading of §15 than "the kernel is unconstrained". The
+full-space program could reach AME not merely because the kernel had no
+positivity constraint, but because the kernel is *where the minus signs live*.
+And it connects the three threads of this arc: the third row is where the weight
+dies (§13), where one fibre cannot reach (§14 §3), and — now — where the
+negative characters sit.
+
+**Scope (a), and the limit is important.** This locates where the negative
+characters are. It is **not** an argument that a program should occupy them, and
+it does **not** justify signed occupations. A reason would have to say what a
+negative occupation of a zero-weight block *means*, and nothing here supplies
+one. Nor is it claimed that a cost with a larger trace exists or is derivable,
+or that any binding conjecture is true or false. Nothing here computes a binding
+contribution.
+
+For the sibling fronts: this is a second, independent pointer at signed
+structure alongside #5812's ²H/⁴He sign argument, and it says something more
+specific than "signs are needed" — it says the framework's own characters
+already supply them, in precisely the sector the canonical trace convention
+cannot see.
+
+## Addendum 18 — Addendum 17's last paragraph is wrong, and the negative blocks are nowhere (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/deuteron_negative_occupation_locality_probe.py`](../../computations/meson/deuteron_negative_occupation_locality_probe.py)
+(8 assertions, all passing).
+
+### The retraction
+
+Addendum 17 closed with: *"the full-space program reached AME not merely
+because the kernel is unconstrained but because the kernel is **where the minus
+signs live**"*, and offered that to the sibling fronts as a second pointer at
+signed structure. **The inference is causally wrong.** The cost vector is
+
+$$ t_\lambda = y_\lambda\,\chi^\lambda(\beta_D), $$
+
+and convention D's row cap sets $y_\lambda = 0$ for $\ell(\lambda) > 2$. So on
+every kernel block $t_\lambda = 0$ **identically** — by construction, whatever
+the character does. Measured on the committed witness: $\max|t|$ over the seven
+kernel blocks is $0.0$, and $t\cdot x$ restricted to the kernel is $0.0$ in
+every solution examined. A block that contributes nothing to the objective
+cannot be the reason the objective got large. The character-sign *observation*
+stands (assertions A6/A7 of the previous probe are untouched, and the retraction
+is stamped into its docstring); the reading built on it does not.
+
+This is the sixteenth correction in this arc, and the first where the error was
+an inference rather than a number — the measurement that produced it was right,
+and I attached a cause to it that its own data contradicts one field over.
+
+### The mechanism, correctly
+
+The net constraint is a plain sum over **all** blocks, and on the kernel
+$G = 0$, so $Gx \ge 0$ imposes nothing there. A kernel deficit therefore buys
+the support extra budget. Method 4 — the only encoding reaching AME, and it
+reaches it by *imposing* AME as an equality:
+
+| sector | $\sum x$ | $t\cdot x$ |
+|---|---|---|
+| support | $+12.3662$, all of it on the single block $(6)$ | $2.224566 = $ AME |
+| kernel | $-11.7910$ | $0.0$ exactly |
+| net | $+0.5752 = n_{\text{target}}$ | |
+
+The zero-weight blocks are free in the objective ($t = 0$) *and* free in the
+Frobenius cone ($G = 0$). They are pure ledger. That is the precise sense in
+which the author's reading is right: this **is** a debt. What it is not is a
+debt that is ever repaid — there is no term anywhere in the program that would
+come due. It is an *unpriced* overdraft, and the only thing bounding it is the
+artificial box $|x| \le M$.
+
+### Which blocks go negative is not determined
+
+The question has no invariant answer. Permuting the **variable order** — a
+relabelling that leaves the polytope, the objective and the optimum untouched —
+moves the negative set entirely:
+
+| ordering | occupied support block | deficit $D$ | negative kernel blocks |
+|---|---|---|---|
+| identity | $(6)$ | $11.7910$ | $(4,1,1)\,(3,2,1)\,(3,1,1,1)\,(2,2,2)$ |
+| perm 0 | $(5,1)$ | $8.1851$ | $(4,1,1)\,(3,2,1)\,(2,2,1,1)\,(2,1^4)$ |
+| perm 1 | $(6)$ | $11.7910$ | $(3,1,1,1)\,(2,2,2)\,(2,2,1,1)\,(1^6)$ |
+| perm 2 | $(3,3)$ | $34.0392$ | $(4,1,1)\,(2,2,2)\,(2,2,1,1)\,(1^6)$ |
+| perm 3 | $(5,1)$ | $8.1851$ | $(3,2,1)\,(3,1,1,1)\,(2,2,2)\,(1^6)$ |
+
+Five orderings, **five distinct negative sets**, one objective. The kernel is a
+degenerate face: entries sit at $\pm M$ box bounds in near-cancelling
+combinations, and only the net matters. Asking which partition carries the debt
+is asking which vertex the simplex method stopped at. Every earlier attempt in
+this session to characterise the negative set — by $(-1)^{n(\lambda)}$, by
+$\ell(\lambda) \ge 3$, by content sign — failed for this reason, not for want
+of the right invariant.
+
+### What *is* determined: the floor on the debt
+
+Only the support pays, so the cheapest route to a target $B$ concentrates
+everything on the support block of largest cost, giving a floor
+
+$$ D_{\min} \;=\; \frac{B}{\max_{\lambda \in \mathrm{supp}} t_\lambda} - n_{\text{target}}
+   \;=\; \frac{2.224566}{0.253938} - 0.575172 \;=\; 8.185108, $$
+
+attained on $(5,1)$, and matching the smallest $D$ in the table. That is
+$14.23\times$ the entire net budget. If the debt reading is to attach to
+anything, it attaches here: to reach AME through this program the zero-weight
+sector must run a deficit of at least fourteen times the whole trace.
+
+### What this asks of the framework
+
+Stated as a requirement rather than a proposal: for "debt to vacuum" to be a
+physical statement rather than a description of an LP degeneracy, something must
+**price the kernel**. As posed it costs nothing to borrow there and nothing to
+stay borrowed. Convention D sets that price to exactly zero by the row cap, so
+the price cannot come from within convention D. The obvious candidate — a higher
+Ocneanu level $z_r = q^r/[r]_q$, which gives $\ell(\lambda) \le r$ blocks a
+nonzero $y_\lambda$ — was measured in Addendum 16 and makes the gap **worse**,
+so that door is closed. Scope (a): this says the two mechanisms available in the
+current program do not supply a price. It does not say none exists.
+
+**Correction to the sibling-front note.** Addendum 17's closing offer to the
+²H/⁴He sign front should not be taken up as written. What this arc supplies is
+not "the framework's own characters already supply the signs" — the characters
+that carry signs are exactly the ones the cost cannot see. What it supplies is a
+sharper negative: a signed-occupation program reaches AME only by an unpriced
+deficit whose location is not determined and whose magnitude is bounded below by
+$14.23\,n_{\text{target}}$.
+
+## Addendum 19 — the zero-weight sector is the Temperley–Lieb ideal; you don't price a radical (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/zero_weight_sector_is_temperley_lieb_probe.py`](../../computations/meson/zero_weight_sector_is_temperley_lieb_probe.py)
+(8 assertions, all passing, 4 controls). Prompted by the author asking what
+prices the zero-weight sector, and whether Frobenius duality is being used.
+
+**Both questions have one answer, and it was already in the corpus.** This is
+the third time in this arc that the answer was on disk before the measurement
+started, and the corpus-grep found it in one pass.
+
+### What the corpus already says
+
+[`prop:markov-trace-frobenius-selection`](../../content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-proof.md)
+part (iii), stated there **unconditionally**:
+
+> the radical of $\langle x,y\rangle_\tau := \mathrm{tr}_M(xy)$ ... is exactly
+> the Temperley–Lieb ideal $I_n = \ker(H_n(q) \twoheadrightarrow
+> \mathrm{TL}_n(q))$, neither larger nor smaller. ... It is
+> $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, **not** $(H_n(R,q), \mathrm{tr}_M)$,
+> that is a symmetric Frobenius algebra.
+
+So the seven zero-weight blocks of Addendum 18 are not blocks the trace forgot
+to charge for. They **span $I_6$**, and the Frobenius algebra the trace lives on
+is the quotient $\mathrm{TL}_6(q)$, where the pairing is **non-degenerate**.
+
+### Checked, not merely cited
+
+If the convention-D support really is $\mathrm{TL}_6$ then its squared
+dimensions must sum to the Catalan number — not merely to something less than
+$6!$:
+
+| | | |
+|---|---:|---|
+| $\sum_{\ell(\lambda)\le 2}(f^\lambda)^2$ | **132** | $= C_6 = \dim \mathrm{TL}_6$ |
+| $\sum_{\lambda \vdash 6}(f^\lambda)^2$ | 720 | $= 6! = \dim H_6$ |
+| $\sum_{\ell(\lambda)\ge 3}(f^\lambda)^2$ | 588 | $= \dim I_6$ |
+
+Exactly, and at $n = 2,\dots,8$ (7/7), so it is not an $n=6$ coincidence. The
+Gram is strictly positive on the support (min $0.0756$) and exactly zero off it,
+and the two ways of naming the split — $\ell(\lambda) \le 2$ versus
+$G_{\lambda\lambda} > 0$ — agree on all 11 blocks.
+
+### What this closes, and what it costs me
+
+**The signed-occupation escape is closed, and not by argument.** On the support
+$G$ is strictly positive, so $Gx \ge 0$ **is** $x \ge 0$ there. The sector that
+supplied the signs is $I_6$, which is not in the Frobenius algebra. There is
+nothing left to sign. All three escapes opened in Addendum 15 are now closed.
+
+**The support projection was never a modelling decision.** Addendum 15 and PR
+[#5826](https://github.com/litlfred/qou/pull/5826) §1 defended it as one —
+*"stated not smuggled"*. It is the **quotient map $H_6 \to \mathrm{TL}_6$**. So
+the six encodings are infeasible in the actual Frobenius algebra, not in a
+restricted model of it. The negative is stronger than it was reported to be.
+
+**And Addendum 18's central word is wrong.** "Unpriced overdraft" presumes a
+ledger with a missing entry. A radical is not an unpaid account; it is a
+direction the pairing does not have. The measurements in 18 all stand — the
+ledger identity, the vertex-dependence of the negative set, $D_{\min} =
+8.185108$ — as facts about the LP **as posed on $H_6$**. What changes is that
+posing it on $H_6$ was the defect. Seventeenth correction in this arc, and the
+second consecutive one to my own framing of this same object.
+
+### It also inverts the search
+
+Two routes I was about to take are foreclosed by the same proposition:
+
+- **"Widen the level so the kernel gets a weight"** is backwards. Part (ii)
+  makes the row cap the **input** — the $\mathrm{SU}_q(2)$ fibre supplies no
+  channel with $\ell(\lambda) \ge 3$ — and it is the row cap that *selects*
+  $z = q^3/(q^2+1)$, i.e. convention D itself.
+- **"Use a generic Ocneanu $z$, where the pairing is non-degenerate"** is true
+  and useless. Part (i): non-degeneracy *"singles out nothing"*, since **every**
+  weight vector with all $w_\lambda \ne 0$ induces a non-degenerate form. It
+  cannot be a selection principle, which is exactly why the framework uses a
+  prescribed **degeneracy** instead.
+
+**Scope.** Parts (i) and (iii) are unconditional in the corpus and are what is
+used here. Part (ii)'s antecedent — that the mass-channel trace *is* the
+categorical trace of the fibre action — is **open** (bean `qou-n1dj`); nothing
+here bears on it. Scope (a) throughout: this establishes *where the program
+lives*, not what it yields, and computes no binding contribution.
+
+### On the entanglement-cost reading
+
+The author also asked whether a prior entanglement cost must be tracked, and
+whether further entanglement costs something. Two findings, neither of them new:
+
+1. **The framework already charges for the third channel, by removing it.**
+   $\ell(\lambda) \ge 3$ needs a threefold antisymmetrisation, i.e.
+   $\Lambda^3 V \ne 0$, i.e. $N \ge 3$; and `exteriorSquareDim N = 1 ↔ N = 2`
+   pins $N = 2$, so $\Lambda^3 V = 0$. The cost of that sector is not high, it
+   is **infinite** — the states are absent, which is the same fact as $I_6$
+   being quotiented out. There is no prior ledger to carry.
+2. **The direct test exists and is a light-end refutation.** The owner
+   conjecture $B = E_0 \cdot S_{\mathrm{vN}}$ was tested in
+   [`binding_von_neumann_entropy_probe.py`](../../computations/probes/binding_von_neumann_entropy_probe.py)
+   with a state-dependent Born–Plancherel block weight. Binding **destroys**
+   block entanglement rather than generating it — $\Delta S < 0$ for ²H
+   ($-0.0135$) and ³H ($-0.0077$) — and $E_0\,|\Delta S|$ misses $B_{\rm AME}$
+   by $39\times$ (²H), $263\times$ (³H), $1.3\times10^{5}$ (³He), while
+   $E_0 S_{\rm bound}$ *overshoots* by 35–84 %. Scope (a): that refutes **one
+   prescription**, not entanglement cost as an ingredient. Note the witness is
+   muon-pinned ($q_0 = 1.10997859555\ldots$), pre-dating the 2026-08-07 proton
+   directive; the sign of $\Delta S$ will not turn on an 11.5 ppb re-pin, but
+   the magnitudes should be re-read after one.
+
+A name collision worth recording:
+[`q-beta-gamma-gamma-canonical-derivation.md`](../../content/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md)
+is the $\mathfrak{Q}_\beta$ $c_k$-ladder derivation and **does not treat
+two-photon production**. Nothing in the corpus does; a γγ-production
+entanglement ledger would be new work, and would sit outside this LP entirely —
+an entropy is not a trace, so it is not a linear functional on the algebra and
+cannot appear as a cost vector.
+
+## Addendum 20 — nothing destroys entanglement: the sign is forced, so the label was wrong (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/binding_cut_entropy_sign_is_forced_probe.py`](../../computations/meson/binding_cut_entropy_sign_is_forced_probe.py)
+(8 assertions, all passing, 4 controls). Raised by the author against the
+Addendum 19 §2 result I relayed — that binding "destroys" block entanglement.
+**The objection is right, and it is stronger than a complaint about a sign.**
+
+### Two reasons that number cannot be an entanglement entropy
+
+1. **Unitarity.** For a closed process in which the same particles come back —
+   virtual production and annihilation being the clean case — the global state
+   stays pure, so its von Neumann entropy is identically $0$ and **cannot
+   change**. Anything that moves under such a process is not the global entropy.
+2. **Positivity across a cut.** Entanglement entropy is defined only once a
+   bipartition is named, and across any cut a product state has $S_A = 0$ while
+   every state has $S_A \ge 0$. Free nucleons are a product across the
+   proton|neutron cut, so $\Delta S = S_{\rm bound} - 0 \ge 0$ **identically**.
+   It is a theorem, not a measurement.
+
+### What the committed probe actually computes
+
+`block_entropy` is $-\sum_\lambda p_\lambda \ln p_\lambda$ with
+$p_\lambda \propto W_\lambda \lVert \rho_\lambda(\beta)\rVert_F^2$. There is
+**no bipartition, no partial trace and no reduced density matrix** anywhere in
+it. It is the Shannon entropy of a classical distribution over the Wedderburn
+blocks of the *whole* algebra — a measure of how spread a braid's character is
+across irreps. A real quantity, and its arithmetic is not in dispute; it is
+simply not an entanglement entropy, and *"von Neumann entanglement entropy"* is
+the wrong label for it. Its $\Delta S < 0$ is the proof, since no bipartite
+measure can do that.
+
+**I relayed that label without checking it.** Eighteenth correction in this arc,
+and the first prompted by the author rather than found in a re-measurement.
+
+### The right cut is already in the corpus
+
+The natural bipartition is proton strands | neutron strands, i.e.
+$H_3 \otimes H_3 \subset H_6$. Restriction along it **is** Frobenius
+reciprocity — the same duality Addendum 19 was about — and its multiplicities
+are Littlewood–Richardson, already carried per $\lambda$ as
+`lr_breakdown_per_lambda` in
+[`sublemma-2-1-deuteron-branching.witness.json`](../../computations/sublemma-2-1-deuteron-branching.witness.json).
+That witness also records `max_relative_diff_no_interface = 1.98e-70`: the
+**disjoint** character matches the LR prediction to seventy digits, so the free
+state is exactly the induced product across this cut — which is what makes its
+cut entropy zero and lets the sign theorem bite.
+
+Measured in exact integer arithmetic, no $q$ and no float64, with
+$p^\lambda_{\mu\nu} = c^\lambda_{\mu\nu} f^\mu f^\nu / f^\lambda$:
+
+| $\lambda$ | $f^\lambda$ | cut terms | $S_{\rm cut}$ (nats) |
+|---|---:|---:|---:|
+| $(6)$ | 1 | 1 | **0.000000** |
+| $(5,1)$ | 5 | 3 | 1.054920 |
+| $(4,2)$ | 9 | 4 | 1.273028 |
+| $(4,1,1)$ | 10 | 5 | **1.470808** |
+| $(3,3)$ | 5 | 2 | 0.500402 |
+| $(3,2,1)$ | 16 | 5 | 1.386294 |
+| $(3,1,1,1)$ | 10 | 5 | **1.470808** |
+| $(2,2,2)$ | 5 | 2 | 0.500402 |
+| $(2,2,1,1)$ | 9 | 4 | 1.273028 |
+| $(2,1^4)$ | 5 | 3 | 1.054920 |
+| $(1^6)$ | 1 | 1 | **0.000000** |
+
+Non-negative on all eleven; exactly zero on exactly the two one-dimensional
+blocks — the ones restricting to a single $(\mu,\nu)$, i.e. genuinely product
+across the cut; strictly positive on the other nine; and invariant under
+conjugation $\lambda \mapsto \lambda'$ on all eleven. The dimension control
+$\sum_{\mu\nu} c^\lambda_{\mu\nu} f^\mu f^\nu = f^\lambda$ passes 11/11, so the
+LR weights really are the restriction.
+
+### What is NOT claimed, and one trap to name explicitly
+
+Nothing here says $E_0 \cdot S_{\rm cut}$ is the binding energy. The value AME
+would require, $S = B_{\rm AME}/E_0 = 2.224566/4.185981 = 0.5314$, **lies inside
+the measured range $[0,\,1.4708]$** — and that is a *genericity observation, not
+evidence*. A weighting over eleven blocks spanning that interval can be made to
+hit almost anything in it, which is the same trap the `S_leak` offset window
+records under §"Defined residual ≠ derived decomposition". No weighting is
+chosen here and no binding contribution is computed.
+
+Nor is entanglement cost excluded as an ingredient. The earlier probe refutes
+**one prescription**; this one refutes that prescription's **label**. Neither
+bears on whether a correctly-defined cut entropy plays a role — and the object
+that would have to be tested now exists, is parameter-free, and is exact.
+
+## Addendum 21 — every derived weighting overshoots AME by ~2×, robustly (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/binding_cut_entropy_derived_weightings_probe.py`](../../computations/meson/binding_cut_entropy_derived_weightings_probe.py)
+(9 assertions, all passing, 4 controls). Addendum 20 built the cut entropy and
+deliberately chose no weighting, since choosing one to hit AME would be a fit.
+The author asked for the derived weighting to be worked. **Every candidate with
+independent provenance was computed once. None reaches AME.**
+
+### The four candidates
+
+Under convention D only the four two-row blocks exist. The cut is closed on
+them without any truncation being imposed: $c^\lambda_{\mu\nu} \ne 0$ requires
+$\mu,\nu \subseteq \lambda$, so a two-row $\lambda$ restricts entirely inside
+$\mathrm{TL}_3 \otimes \mathrm{TL}_3$.
+
+The reduced proton-side state is block-diagonal in the $\mu$-isotypic
+decomposition with eigenvalue $A_\mu = \sum_\lambda p_\lambda a^\lambda_\mu$ of
+multiplicity $f^\mu$, where $a^\lambda_\mu = \sum_\nu c^\lambda_{\mu\nu}
+f^\nu/f^\lambda$; so $S_{\rm vN} = -\sum_\mu f^\mu A_\mu \ln A_\mu$. *(Addendum
+20 reported the **sector** entropy $-\sum_{\mu\nu} P \ln P$, a different and
+larger quantity. Both are non-negative and both vanish on a product, so its sign
+theorem is unaffected — but this one is the von Neumann entropy of the reduced
+density matrix and is the right thing to set against an energy.)*
+
+At the proton pin, $E_0 = m_e/(q_0(q_0-1)) = 4.185981$ MeV and
+$B_{\rm AME}(^2\mathrm{H}) = 2.224566$, so AME needs $S_{\rm vN} = 0.531432$:
+
+| weighting | provenance | $S_{\rm vN}$ | $E_0 S_{\rm vN}$ | vs $B$ |
+|---|---|---:|---:|---:|
+| **W1** $p = y_\lambda f^\lambda$ | Markov/Plancherel, **exact** closed form $y_{(n-k,k)} = [n{-}2k{+}1]_q/[2]_q^n$ | 1.035916 | 4.33633 | **1.949×** |
+| **W2** $p = t_\lambda/\mathrm{tr}_M(\beta_D)$ | Born; the deuteron braid's own distribution | 0.896974 | 3.75471 | **1.688×** |
+| W3 $p \sim (f^\lambda)^2$ | classical Plancherel — *control* | 1.096575 | 4.59024 | 2.063× |
+| W4 uniform | structure-free — *control* | 1.014392 | 4.24623 | 1.909× |
+
+**All four overshoot, by 1.69× to 2.06×.** W1's exact closed form reproduces the
+committed Frobenius Gram diagonal to $4\times10^{-9}$ — a control that it really
+is the framework's own weighting and not a reconstruction of mine.
+
+### The overshoot is robust, not a knob — and this sharpens Addendum 20
+
+Entropy is concave, so its minimum over weightings sits at a vertex:
+
+| vertex | $S_{\rm vN}$ | vs $B$ |
+|---|---:|---:|
+| $\delta_{(6)}$ | **0.000000** | 0.000× |
+| $\delta_{(5,1)}$ | 0.950271 | 1.788× |
+| $\delta_{(4,2)}$ | 1.098612 | 2.067× |
+| $\delta_{(3,3)}$ | 1.054920 | 1.985× |
+
+Every **non-trivial** block lands in 1.79×–2.07×. The only low value anywhere in
+the simplex is the trivial block, which by definition carries no cut structure —
+it restricts to a single $(\mu,\nu)$, i.e. it *is* a product. Reaching AME from
+W1 requires moving **69.3 % of the total weight onto $(6)$**, taking $p_{(6)}$
+from 0.1153 to 0.7282 — a **6.31×** concentration on the one block that says
+nothing.
+
+**Addendum 20's caveat was right in principle and too weak in fact.** It warned
+that a weighting spanning $[0, 1.4708]$ could hit almost anything in the
+interval, so being in range was genericity rather than evidence. True — but the
+*derived* candidates do not span it. They cluster a factor of ~2 above the
+target, and the escape route is the contentless block. That makes this a
+**robust negative rather than a free parameter**, which is a more useful outcome
+than either a hit or a fit.
+
+### The near-2 is recorded, asserted false, and not pursued
+
+W1 gives $1.9493\times$, which is $2.5\,\%$ from exactly 2. In a framework
+quoting accuracy in ppb, $2.5\,\%$ is not agreement, and "close to 2" is
+precisely what the anti-numerology discipline exists to stop. It is asserted as
+**not** equal to 2 (`markov_ratio_is_not_two`) so that the near-miss cannot
+later be read as a hit.
+
+### Scope
+
+**(a).** This does **not** refute an entanglement-cost contribution to binding.
+An overshoot of ~2× with the right sign and the right order of magnitude is not
+an exclusion, and a term entering with a coefficient, or alongside others, is
+untouched by it. What is established is narrower and firmer: **$E_0 S_{\rm cut}$
+alone, under every weighting the framework already fixes, is about twice too
+large at the deuteron.**
+
+And it is **one isotope**. LR branching data exists only for $^2$H, so nothing
+here speaks to $^3$H, $^4$He or beyond — and a single point could not have
+distinguished a derivation from a coincidence even had it hit. Extending it
+needs the $n = 9$ and $n = 12$ branching, which is the concrete next measurement
+if this line is pursued.
+
+## Addendum 22 — the cut entropy is CONSTANT in A: scope-(b), and Lean-proved (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/cut_entropy_is_A_independent_probe.py`](../../computations/meson/cut_entropy_is_A_independent_probe.py)
+(8 assertions, 4 controls). Lean:
+[`QOU/MassTheory/MarkovMarginalConstant.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/MarkovMarginalConstant.lean)
+(6 declarations, sorry-free, `lean`-direct exit 0). Extension requested by the
+author. **The result retires the line.**
+
+### Measured
+
+One nucleon against the rest, cut $H_3 \otimes H_{3(A-1)} \subset H_{3A}$,
+Markov/Plancherel weighting:
+
+| iso | A | n | $S_{\rm vN}$ | $E_0 S_{\rm vN}$ | $B_{\rm AME}$ | ratio |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 6 | 1.0359164 | 4.33633 | 2.22457 | 1.9493× |
+| ³H | 3 | 9 | 1.0359164 | 4.33633 | 8.48180 | 0.5113× |
+| ³He | 3 | 9 | 1.0359164 | 4.33633 | 7.71804 | 0.5618× |
+| ⁴He | 4 | 12 | 1.0359164 | 4.33633 | 28.29566 | 0.1533× |
+| ⁶Li | 6 | 18 | 1.0359164 | 4.33633 | 31.99399 | 0.1355× |
+| ⁷Li | 7 | 21 | 1.0359164 | 4.33633 | 39.24508 | 0.1105× |
+
+$S_{\rm vN}$ is **the same number at every A**, to better than $10^{-50}$ out to
+$n = 24$. $B_{\rm AME}$ is extensive and rises $17.6\times$. **A constant cannot
+track an extensive quantity**, the ratio drifts by $17.6\times$, and Addendum
+21's near-2 at the deuteron was a coincidence of its being the smallest binding.
+
+### Why — a structural argument, not a fit
+
+The measured marginal is exactly $A_{(3)} = [4]_q/[2]_q^3$ and $A_{(2,1)} =
+[2]_q/[2]_q^3$, which are $y_\mu$ at **$n = 3$**. The one-nucleon marginal of
+the $n$-strand Markov measure **is** the three-strand Markov measure, for every
+$n$ — which is the Markov property itself. `prop:markov-trace-frobenius-selection`
+defines a Markov trace as *"a **compatible** family of linear functionals"*, and
+compatibility says precisely that restricting $\tau_n$ to $H_k$ gives $\tau_k$.
+Any functional of an $n$-independent marginal is $n$-independent.
+
+**This is scope (b)** — a structural exclusion with a named invariant, not the
+usual scope-(a) negative. The invariant is Markov compatibility: definitional,
+not fitted. It forbids *any* closure in which a **fixed-width** cut entropy of
+the Markov measure carries an extensive quantity. It does **not** exclude
+entanglement cost as an ingredient of binding, and a cut whose width **grows**
+with $A$ is untouched by the argument.
+
+### Lean
+
+`MarkovMarginalConstant.lean` proves the invariant rather than asserting it. The
+content is that a **one-step** hypothesis forces an **any-depth** conclusion:
+
+- `margDown_eq_of_step` — `∀ n d, margDown restrict w n d = w n`, by induction
+  on depth. The hypothesis constrains one step; the conclusion is about all.
+- `marginal_functional_const` — hence any `F` of the marginal is
+  depth-independent (the entropy is a special case; the proof does not care).
+- `not_forall_eq_of_const_of_two_values` — a constant cannot agree pointwise
+  with a target taking two values. Stated as a refutation of agreement rather
+  than `∃ c, f c ≠ g c`, so the proof is constructive.
+- `marginal_functional_ne_two_valued` — the exclusion assembled.
+- **Non-vacuity, both guards** (AGENTS.md §3b-tax): `step_satisfiable` exhibits
+  an inhabitant, and `margDown_ne_without_step` shows the hypothesis is
+  **load-bearing** — drop it and the conclusion is false, so the main theorem is
+  not a tautology about `margDown`.
+
+Verification: `lean`-direct **exit 0**; `#print axioms` on all six — five
+*"does not depend on any axioms"*, one on `propext` alone. **No `sorryAx`.**
+No `ℝ`, no typeclass, and **no imports at all** (AGENTS.md §7c: the argument is
+pure rewriting). `autoImplicit` is off, which is not decoration — with it on and
+no imports, `ℕ` auto-bound as a fresh type variable and every numeral failed to
+elaborate. That is exactly how the file first failed, twice.
+
+### Formalize-first, missed — and recorded as such
+
+The structural argument above predicts the entire table and needed **no
+compute**. I ran the extension sweep first and found the reason afterwards. That
+is precisely the failure mode AGENTS.md §"Formalize-first probe discipline"
+exists to prevent: state the invariant, let it narrow the probe. Recorded so the
+next agent reads the invariant before spending the sweep.
+
+### A control that earned its keep
+
+The probe carries its own Littlewood–Richardson implementation, so it is only as
+good as its controls. It reproduces the committed `lr_breakdown_per_lambda`
+exactly (35 coefficients, 0 mismatches, 0 invented terms), and the dimension
+identity $\sum c^\lambda_{\mu\nu} f^\mu f^\nu = f^\lambda$ holds at every $n$.
+
+**The second control caught a real bug**: a hard-coded row padding of 10
+silently returned wrong coefficients for partitions with more than 10 rows — 2
+failures out of 77 at $n = 12$ — which the two-row blocks this probe actually
+uses would never have revealed.
+
+## Addendum 23 — the two fronts Addendum 22 left: one closes, one does not (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/two_remaining_fronts_probe.py`](../../computations/meson/two_remaining_fronts_probe.py)
+(9 assertions, 5 controls). Addendum 22 named exactly two things its theorem did
+not touch. Both worked, at the author's request, and they land differently.
+
+### Front 1 — a cut whose width grows with A. **Open, and genuinely different.**
+
+The Markov property that made the fixed-width entropy constant hands over the
+growing case for free: the marginal on the first $k$ strands *is* the $k$-strand
+Markov measure, so $S(k) = -\sum_{\mu} f^\mu y^{(k)}_\mu \ln y^{(k)}_\mu$ — no
+Littlewood–Richardson needed. Measured, this is a **volume law**:
+
+| $k$ | 24 | 96 | 384 | 768 |
+|---|---:|---:|---:|---:|
+| $S(k)/k$ | 0.60928 | 0.66315 | 0.68108 | 0.68439 |
+
+approaching $\ln[2]_q = 0.6985808$ from below, i.e. $S(k) = k\ln[2]_q - c +
+o(1)$: an entropy density of exactly one $\ln[2]_q$ per strand — the log of the
+fundamental's quantum dimension, which is what a strand carries. **So unlike the
+fixed-width case this quantity is extensive, and Addendum 22's theorem does not
+reach it.** The escape is real.
+
+**It does not match, and why it cannot be made to is the point.** For the
+balanced cut $k = \lfloor 3A/2 \rfloor$:
+
+| iso | A | $E_0 S(k)$ | $B_{\rm AME}$ | ratio | $E_0S/A$ | $B/A$ |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 4.3363 | 2.2246 | 1.9493× | 2.1682 | 1.1123 |
+| ³H | 3 | 6.8866 | 8.4818 | 0.8119× | 2.2955 | 2.8273 |
+| ⁴He | 4 | 11.9036 | 28.2957 | 0.4207× | 2.9759 | 7.0739 |
+| ⁶Li | 6 | 19.7479 | 31.9940 | 0.6172× | 3.2913 | 5.3323 |
+| ¹²C | 12 | 44.4404 | 92.1617 | 0.4822× | 3.7034 | 7.6801 |
+| ¹⁶O | 16 | 61.2108 | 127.6193 | 0.4796× | 3.8257 | 7.9762 |
+
+The ratio is not constant — $4.63\times$ across these, against $17.64\times$ for
+the fixed cut — and settles near $0.48$, an undershoot of about $2.1\times$.
+Asymptotically a cut growing at $w$ strands per nucleon gives $E_0 w \ln[2]_q$
+per nucleon, so the balanced $w = 1.5$ yields **4.386 MeV/nucleon** against an
+empirical approach to $\sim 8$.
+
+**$w$ is a free parameter, and that is the whole problem.** Matching fixes
+$w \approx 2.9$, which nothing derives — and at $w = 3$, the whole nucleon, the
+cut is the entire system and the entropy is identically zero. So the front is
+open in that the *object* is extensive, and closed in that nothing in the
+framework selects the cut. Choosing $w$ to match is a fit and is not done.
+
+### Front 2 — can $\mathrm{tr}_M(\beta_D)$ be $2.59\times$ larger? **Closed, scope (b).**
+
+Addendum 21 established that even a perfectly concentrated cost needs
+$\mathrm{tr}_M(\beta_D) \ge \sqrt{B_{\rm AME}} = 1.491498$ against the measured
+$0.575172$. **The corpus already proves the bound that settles it.**
+`atom-branch-convexity-bound` shows the atom is a *convex* combination of its
+branch closures ($\sum_b |w_b| = 1$, every $w_b > 0$), so
+$\mathrm{tr}_M(\text{atom}) = \sum_b w_b\,\mathrm{tr}_M(\beta_b) \le \max_b
+\mathrm{tr}_M(\beta_b)$. Measured over all 32 deuteron branches:
+
+| | |
+|---|---:|
+| $\min_b \mathrm{tr}_M$ | 0.291552 |
+| $\max_b \mathrm{tr}_M$ | **1.018275** |
+| required | 1.491498 |
+| max / required | **0.68272** |
+
+**No reweighting of the branches reaches it.** And the ceiling is quadratic, so
+even *at* the convex maximum the best attainable objective is
+$(\max_b \mathrm{tr}_M)^2 = 1.036884$ against $B_{\rm AME} = 2.224566$ — still
+**2.15× short**.
+
+That is **scope (b)**: the invariant is the convexity of the branch
+decomposition, proved in the corpus and not fitted. It excludes reaching AME by
+any redistribution over the branches of **this** braid word. It does **not**
+exclude a different word, and says nothing about whether one exists or is
+derivable.
+
+### Controls, and a precision note
+
+The branch computation's load-bearing control is that the weighted branch
+average reproduces the committed $\mathrm{tr}_M(\text{atom})$ — without it,
+$\max_b$ would be a bound on some other object. It agrees to $\sim 10^{-9}$,
+not exactly, because `binding_k_solver.per_block_evaluation` is float64; the
+verdict turns on a 47 % gap, far above that resolution. A second control asserts
+the branch traces genuinely spread *above* the atom's own value ($\max_b /
+\mathrm{tr}_M(\text{atom}) = 1.77$), so the bound is not trivially satisfied.
+Front 1 is exact mpmath from the closed form throughout — no LR, no float64 —
+and its $S(3)$ reproduces Addendum 22's fixed-width number as a cross-tie.
+
+### Where this leaves the arc
+
+Of everything opened since Addendum 15, **one thing remains open**: a
+growing-width cut, whose object is extensive but whose width the framework does
+not fix. Everything else — the level escape, the cost escape, signed
+occupations, the fixed-width entropy, and now the trace magnitude for this word
+— is closed, the last two by proved invariants.
+
+## Addendum 24 — what a satellite is, and why the colour-tube refinement cannot carry the magnitude (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`colour_tube_refinement_is_convexity_bounded_probe.py`](../../computations/meson/colour_tube_refinement_is_convexity_bounded_probe.py)
+(7 assertions, 4 controls). Lean:
+[`QOU/MassTheory/BranchConvexityBound.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BranchConvexityBound.lean)
+(5 declarations, sorry-free). Prompted by the author asking what a satellite
+torus is, how to attack `conj:jsj-decomposition-linearity`, and where the
+missing binding term lives.
+
+### What a satellite knot is
+
+Take a knot $P$ drawn inside an unknotted **solid torus** $V$ — the *pattern*.
+Take any knot $C$ — the *companion*. Now embed $V$ into $S^3$ so that its core
+follows $C$, and carry $P$ along with it. The image is the **satellite** $K$
+with pattern $P$ and companion $C$.
+
+```
+   pattern P inside the solid torus V        embed V along the companion C
+   ┌───────────────────────────┐                      ___
+   │   ╭─────╮   ╭─────╮       │                    /     \        the boundary
+   │  ─┤  P  ├───┤     ├─      │      ───────►     |   ()  |  ◄─── ∂V becomes an
+   │   ╰─────╯   ╰─────╯       │                    \ ___ /        ESSENTIAL TORUS
+   └───────────────────────────┘                      C            in S³ ∖ K
+```
+
+The defining fact, and the one that matters here: **$S^3 \setminus K$ contains
+an incompressible ("essential") torus**, namely $\partial V$. That is not an
+extra property — *satellite* and *the complement contains an essential torus*
+are the same condition. It is precisely the case the JSJ decomposition cuts
+along, and precisely the case Stage 3's `Geom` trichotomy (hyperbolic / torus /
+unknot) never assigns a value to.
+
+Two familiar special cases: if $P$ is a $(p,q)$ curve on $\partial V$ you get a
+**cable** knot; if $P$ is the Whitehead link's clasp you get a **Whitehead
+double**. Both are satellites, both carry an essential torus, and neither is
+hyperbolic or a torus knot.
+
+**Contrast with what the atom carriers actually are.** #5817 measured all 40
+branch closures **composite** — connected sums — whose complements contain
+essential **spheres**, not tori. A connected sum is not a satellite. So as
+currently constructed the atom complement has no essential torus, which is why
+`conj:jsj-decomposition-linearity` is presently *true and empty*:
+$\mathrm{Vol}_p = \mathrm{Vol}_n = 0$.
+
+### Attack options on `conj:jsj-decomposition-linearity`
+
+The conjecture reads $\mathrm{Vol}(\mathcal{K}(Z,N)) = Z\,\mathrm{Vol}_p +
+N\,\mathrm{Vol}_n$, and its own text is explicit that *"additivity of hyperbolic
+volume over the pieces … is a theorem of 3-manifold topology (Thurston); the
+conjectural content therefore lies entirely in the decomposition hypothesis."*
+So there is nothing to prove on the additivity side, and exactly three moves:
+
+1. **Establish the hypothesis** — show the inter-nucleon braids form essential
+   tori. Currently measured **false** for the production construction (40/40
+   composite ⇒ essential spheres). Attacking this means changing the
+   construction, not the proof.
+2. **Change the inter-nucleon arc to a satellite move** — replace the single
+   Hecke generator at each arc with a pattern-in-a-solid-torus threaded along
+   the neighbouring nucleon. This is the "one move" that makes `def:atom-knot`'s
+   *closed braid* requirement and the essential-torus requirement land together.
+3. **Refute it as stated** — show no such decomposition exists, which would send
+   the binding term elsewhere entirely. Nothing in this arc bears on this.
+
+Route 2 is the only one this arc's results leave open, and §"the corollary"
+below is why.
+
+### The corollary: the colour-tube refinement is convexity-bounded
+
+`conj:inter-nucleon-channel-color-tube` is the corpus's own candidate for the
+inter-nucleon term — $A-1$ arcs, genuinely extensive — refining
+$\mathrm{pp}\mapsto\sigma$, $\mathrm{nn}\mapsto\sigma^{-1}$,
+$\mathrm{pn}\mapsto\sigma_{\rm avg}$ into
+$\sigma^{(F_1,F_2)} = \sum W_{c_1c_2}\,\sigma^{\epsilon}$.
+
+**That block's own statement fixes $W \in \mathbb{Q}_{\ge 0}$ normalised to
+$\sum W = 1$**, with $\epsilon = 0 \mapsto \sigma_{\rm avg}$, itself
+$(\tfrac12,\tfrac12)$. So every term lies in the convex hull of
+$\{\sigma,\sigma^{-1}\}$ at each arc: the refined atom is a **reweighting of the
+same 32 branches**, not a new element. `QOU.MassTheory.convex_comb_le_bound`
+then applies verbatim:
+
+$$ \text{refined } \mathrm{tr}_M(\beta_D) \;\le\; \max_b \mathrm{tr}_M(\beta_b)
+   \;=\; 1.018275 \;<\; 1.491498 \;=\; \sqrt{B_{\rm AME}}. $$
+
+**The colour-tube refinement cannot supply the deuteron binding magnitude.** It
+is bounded by the same number as the production assignment. This does **not**
+say the refinement is wrong — the p/n asymmetry and chirality sign structure it
+exists for are untouched. It bounds the magnitude only.
+
+**The premise is auditable, not asserted.** Assertion A6 greps the block for its
+own non-negativity and normalisation sentences, so a reader checks the reading
+against the source rather than against this addendum; if that block is ever
+edited to drop the normalisation, A6 fails and the corollary voids — which is
+the correct behaviour.
+
+### And the Lean says exactly what escapes
+
+`larger_index_set_escapes_the_bound` (sorry-free) exhibits the one way out: the
+bound is *relative to the branch set it is taken over*, and a larger index set
+can exceed it. A satellite replaces each strand by several, so its branches are
+words in a **bigger algebra** — not a reweighting but a different index set,
+outside the theorem's hypotheses. That asymmetry is the whole content of the
+file, and it is why front 2 closes the reweighting route while leaving the
+satellite route open. `bound_fails_without_nonneg` is the companion guard:
+weights $(2,-1)$ still sum to 1 and reach 2 past a max of 1, so convexity is
+doing the work — which is exactly what `atom-branch-convexity-bound` had to
+*measure* (`every w_b > 0`) rather than assume.
+
+### A library gap, stated rather than filled
+
+The author asked whether the physics literature has something like mesonic
+toroidal forces. I reported that **our ingested library has nothing** on
+satellites, toroidal knots or cabling, on the strength of a `grep` over
+`library/INDEX.md` returning zero.
+
+> **🛑 That was wrong — see Addendum 27.** `INDEX.md` is tier 1 of a
+> **three**-tier path-5 checklist, and its briefs are extractive, so a topic
+> present in a body but absent from its abstract is invisible there. The
+> pre-existing library already held 12 documents mentioning *satellite*, 19
+> *cabling* and 13 *JSJ*. No answer was guessed, which was right; the gap was
+> real but far smaller than reported. If that
+literature is wanted it needs ingesting first; that is a concrete, cheap next
+step and it is not done in this branch.
+
+## Addendum 25 — the ingest is blocked, but the physics question has an answer (2026-08-26)
+
+Bean `qou-6tcn`. Ledger:
+[`docs/coordination/satellite-cabling-source-ledger.md`](../coordination/satellite-cabling-source-ledger.md).
+
+Addendum 24 recorded that the library holds nothing on satellites or cabling and
+declined to guess at the author's question about mesonic toroidal forces. Asked
+to ingest that literature. **The ingest cannot be done in this sandbox; the
+question can now be answered anyway, from verified links rather than from text.**
+
+### Every paper host is blocked; one channel is not
+
+Walking the [`local/sandbox-egress`](../../.claude/skills/local/sandbox-egress.md)
+route table rather than stopping at the first 403: `export.arxiv.org` gives
+`CONNECT tunnel failed, response 403`; `arxiv.org`, `api.openalex.org`,
+`api.semanticscholar.org` and `api.crossref.org` all give `000`. Every
+`paper-search-mcp` backend returns `[]` for the same reason — they ride the same
+proxy. `raw.githubusercontent.com` gives `301` (open), as the route table says,
+but arXiv PDFs do not live there.
+
+**WebSearch is out-of-band and works** — exactly as the route table records — so
+verified IDs and titles are obtainable even though the PDFs are not.
+
+### So this is a citation ledger, not an ingest
+
+The distinction matters and the ledger states it at the top. **The ledger's
+claim that path 5 "still returns zero" was itself wrong** for the reason in
+Addendum 27 — it was measured at tier 1 only. Both the ledger and the paragraph
+above are corrected in place; the papers were subsequently ingested, and none of
+them had been read at the time the ledger was written.
+
+### The physics question: yes, and it is the Faddeev–Skyrme literature
+
+The Hopfion literature *is* "mesonic toroidal forces" — knotted solitons whose
+topology is the Hopf map $S^3 \to S^2$, carrying a **twisted toroidal**
+structure, in an effective low-energy $SU(2)$ model. Three points from the search
+summaries, flagged **unread**: Faddeev and Niemi conjectured the toroidal twisted
+structure and numerics confirmed it up to Hopf charge sixteen **including torus
+knots**; in low-energy QCD these appear as knots of the **gluon** field proposed
+to describe **glueballs**; and via the **Cho–Faddeev–Niemi decomposition** the
+model is conjectured to be the low-energy effective theory of $SU(2)$
+Yang–Mills.
+
+**The third point needs the most care.** QOU's fibre is pinned at rank two
+(`exteriorSquareDim N = 1 ↔ N = 2`), so an $SU(2)$ effective description is a
+*suggestive shape match* — precisely the class of observation the
+anti-numerology discipline exists to slow down. Nothing is wired, cited in a
+content block, or used in any derivation.
+
+### And a better route than the `H₁₂` compute
+
+The cabling group ([0807.2679](https://arxiv.org/abs/0807.2679) and the Kalfagianni–Tran
+sequence) gives the colored Jones of a cable in terms of the companion's. That
+would replace the one-isotope `H₁₂` measurement with a **closed form** — the
+formalize-first route, generalising past the deuteron in one step rather than
+one isotope at a time. Recorded as the preferred next move if this front is
+continued.
+
+## Addendum 26 — the satellite escapes, measured: 4.99× over (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`satellite_cable_escapes_the_bound_probe.py`](../../computations/meson/satellite_cable_escapes_the_bound_probe.py)
+(9 assertions, 6 controls). The test Addendum 24 said needed doing and did not
+do. **It is the first positive result in this arc**, and it is exactly what
+`larger_index_set_escapes_the_bound` predicted before the number existed.
+
+### What was tested
+
+The **2-parallel cable** of the deuteron braid: each strand doubled, each
+$\sigma_i \mapsto s_{2i}s_{2i-1}s_{2i+1}s_{2i}$ in $B_{12}$. Its closure is the
+2-parallel of the original closure — a **genuine satellite** (pattern = the
+2-parallel curve in the solid torus, companion = the original knot), so the
+geometrically-motivated move rather than an arbitrary longer word.
+
+| | value | vs required |
+|---|---:|---:|
+| uncabled, $\max_b$ (Addendum 23) | 1.018275 | 0.683× |
+| **2-cable, $\max_b$** | **7.448220** | **4.994×** |
+| **2-cable, atom's own convex weights** | **1.657034** | **1.111×** |
+| required $\sqrt{B_{\rm AME}}$ | 1.491498 | 1 |
+
+**The trace magnitude is no longer the binding constraint on the satellite
+route.** And it is not only the max: the atom's *own* convex-weighted 2-cable
+clears the requirement too — though by **1.11×**, a thin margin.
+
+### Why this is the predicted escape, not a surprise
+
+`convex_comb_le_bound` bounds a reweighting of a **fixed** branch set;
+`larger_index_set_escapes_the_bound` shows a larger index set can exceed it. A
+cable puts the branches in $H_{12}$ rather than $H_6$ — a different index set,
+outside the theorem's hypotheses. The Lean identified this class as the escape;
+this measures that it actually escapes, and by how much.
+
+**A longer word generally has a larger trace, so "the cable is bigger" is not by
+itself interesting.** What is: the *geometrically-motivated* move crosses the
+specific threshold, by 5× rather than marginally; and the threshold is a
+**necessary** condition derived generically — a concentrated cost needs
+$\mathrm{tr}_M \ge \sqrt{B_{\rm AME}}$ at any $n$ — so the cross-algebra
+comparison is licit, which control C1 below is what licenses.
+
+### Controls — a positive needs more scrutiny than a negative
+
+Six, and the load-bearing one is the third:
+
+1. the same quantity **without** cabling falls short (0.683×), so A1 is a change
+   rather than a restatement;
+2. this code path reproduces Addendum 23's `1.018275083` exactly, so the cable
+   number comes off a validated route;
+3. **M1 normalisation $\sum_\lambda y_\lambda f^\lambda = 1$ holds at $n = 12$
+   *and* $n = 6$**, both exactly — this is what makes $\mathrm{tr}_M$ values
+   comparable across the two algebras and the A1 comparison legitimate at all;
+4. $\mathrm{tr}_M(1) = 1$ at $n = 12$;
+5. the convex average still reproduces the committed atom trace, so the branch
+   weights carried into the cable are the right ones;
+6. the cabling map stays within $H_{12}$'s generator range.
+
+### What this does **not** show
+
+* **Binding is not reproduced.** The cost vector, support, Gram and the whole LP
+  change at $n = 12$ and none of that is redone. Exceeding a **necessary**
+  condition is not sufficiency, and nothing here computes a binding
+  contribution.
+* **The pattern is a choice.** 2-parallel with blackboard framing is one
+  satellite among infinitely many; nothing derives it.
+* **`Geom` still assigns nothing to a satellite.** This shows the room exists,
+  not that the framework can use it. The missing case is still missing.
+
+### A 2500× cost difference from asking for less
+
+The first attempt called `per_block_evaluation`, which builds **all 77**
+partitions of 12. It reached **9.99 GB RSS** at 266 % CPU and was killed before
+it could OOM the session. Only the **7 two-row blocks** matter under convention D
+(max dimension 297), and `block_rep_braid_word` takes one partition at a time —
+the whole 32-branch sweep then ran in **3.6 seconds**.
+
+Two process notes worth keeping. The first attempt was also launched as
+`… | tail -12`, which buffers until the process exits, so it produced **no**
+progress output for its entire life — the long-compute discipline says `tee`,
+and this is why. And `pkill -f cable_feas.py` matched the killing command's own
+argv and killed that shell too.
+
+## Addendum 27 — the library was not empty, and my correction did not land where I said it did (2026-08-26)
+
+Bean `qou-6tcn`. Two errors, the second worse than the first.
+
+### The first: a one-tier grep reported as a corpus-wide gap
+
+Addendum 24 and the source ledger both state that the ingested library holds
+**zero** sources on satellites, toroidal knots or cabling. **False.** I grepped
+`library/INDEX.md` — the one-line briefs — got zero hits, and stopped.
+
+AGENTS.md path 5 prescribes **three** tiers, cheapest first: `INDEX.md`, then
+`summary.json`, then `grep -rln <topic> library/<doc-id>/sections/`. I ran tier
+1. Measured now, **excluding** the 15 documents ingested on the strength of the
+false report:
+
+| term | pre-existing documents |
+|---|---:|
+| `satellite` | **12** |
+| `cabling` | **19** |
+| `JSJ` | **13** |
+| `"essential torus"` | **4** |
+
+`INDEX.md` genuinely has 0 hits for all four, and that is *by construction*: the
+briefs are **extractive**, assembled from each document's abstract and section
+titles, so a topic discussed in a body but absent from its abstract cannot
+appear there. That is exactly why the checklist has three tiers and why its own
+text warns the briefs are "only as good as the abstract [they] came from". The
+failure is mine, not the index's.
+
+**It cost the author work.** They uploaded 15 PDFs in response. The ingest is
+still worth having — `arxiv-0807.2679v1`, the cabling formula, was genuinely not
+held, and path 5 now reaches all of it — but the gap was far smaller than
+reported.
+
+### The second: I said I had fixed it, and had not
+
+The ingest commit's message states *"the ledger's 'zero sources' framing is
+corrected in the same commit"*. **It was not.** Neither
+`satellite-cabling-source-ledger.md` nor Addendum 24 was touched by that commit;
+the false claim stayed live in two durable artifacts while the commit message
+asserted otherwise.
+
+That is the more serious of the two. A wrong measurement is a wrong
+measurement; a commit message claiming a correction that is not in the diff
+makes the record actively misleading, and would have survived exactly as long as
+nobody diffed the commit against its own message. Both files are corrected in
+place now, each carrying the measured numbers rather than a bare retraction.
+
+### The rule this earns
+
+**Grep INDEX.md to decide whether to look further — never to decide that
+nothing is there.** A zero at tier 1 is a statement about abstracts, not about
+the corpus. Before writing "the corpus has nothing on X" into anything durable,
+run tier 3.
+
+And: **when a commit message claims a correction, the correction must be in that
+commit's diff.** Check before writing the message, not after.
+
+## Addendum 28 — the atom word is a connected sum *by construction*, and that is the gap (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`atom_word_is_a_connected_sum_probe.py`](../../computations/meson/atom_word_is_a_connected_sum_probe.py)
+(6 assertions, 4 controls). The author asked whether the "two knots threaded by
+a torus" picture — the **convolution**, not the disjoint union — is visible in
+the normal-form structure of the braiding. **It is, and it shows the current
+construction is the other case.**
+
+### Measured — exact combinatorics, no `q`, no representation theory
+
+`atom_braid_word_3A(Z, N)`, generator indices in order:
+
+```
+deuteron   [1]×7 [2]×4   3   [4]×7 [5]×4
+⁴He        [1]×7 [2]×4   3   [4]×7 [5]×4   6   [7]×7 [8]×4   9   [10]×7 [11]×4
+```
+
+Each nucleon is an identical 11-letter block on its own three strands. The block
+walls sit at $\sigma_{3k}$, and **every wall is crossed by exactly one
+generator, used exactly once**. The word **factors strictly** at every wall —
+verified for ²H, ³He, ⁴He and ⁶Li — everything before using only generators
+below it, everything after only generators above.
+
+That is the **connected-sum normal form**. A closed braid factoring as
+`(word on 1..k)(one junction crossing)(word on k..n)` closes to a connected sum,
+whose essential surfaces are **spheres**.
+
+### What it explains
+
+#5817 measured all 40 branch closures **composite**, 0 hyperbolic, and read it
+as an empirical fact about the particular word. **It is not empirical — it is
+forced.** The atom is
+
+$$ \mathcal{K}(Z,N) \;=\; K_1 \,\#\, K_2 \,\#\, \cdots \,\#\, K_A $$
+
+by construction, so $S^3 \setminus \mathcal{K}$ contains essential spheres and
+**no essential torus anywhere**. That is exactly why
+`conj:jsj-decomposition-linearity` is presently **true and empty**: its
+decomposition hypothesis asks the inter-nucleon braids to form essential
+**tori**, and a one-strand junction cannot make one.
+
+### The gap, in one number
+
+| | |
+|---|---:|
+| strands crossing each block wall, **now** | **1** → connected sum, sphere |
+| strands needed for an essential torus | **≥ 2** → splice, torus |
+
+The author's *"not the simple disjoint union, the convolution is the
+interweaving"* names precisely this. One crossing joins the blocks **at a
+point**; a **bundle** of ≥ 2 strands threading the wall is what can make the
+boundary of a neighbourhood incompressible. And the slot for that change already
+exists: `conj:confinement-nf-structure-forcing` writes the atom as
+$\beta = \beta_1 \star I \star \beta_2$ across a basis interface $I$, with
+$\mathrm{shift}_{\rm NF}(\beta) = \alpha_{\rm shift}(I) + \Delta$. The interface
+$I$ is exactly what would change, and $\alpha_{\rm shift}(I)$ is what would move.
+
+### Scope — (a), and narrower than it may look
+
+**The strand count is necessary, not sufficient.** Incompressibility is a
+geometric condition this probe does not test, so it is **not** claimed that a
+≥ 2-strand interface *would* produce an essential torus — only that a 1-strand
+interface **cannot**. Nor is it claimed that any particular replacement is
+correct or derivable, that `conj:jsj-decomposition-linearity` is *false* (true
+and empty is not the same thing), or that binding follows. Nothing here computes
+a binding contribution.
+
+### And it re-scopes Addendum 26
+
+Addendum 26's 2-parallel cable put **one torus around the whole atom** —
+companion = the entire closure, pattern = two parallel copies of it. It
+demonstrated the index-set escape the Lean predicted, and it is *not* the
+inter-nucleon structure. This addendum locates where the torus actually has to
+go: **at each of the $A-1$ walls**, not around the outside.
+
+## Addendum 29 — interface candidates screened, and none selected (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`interface_candidate_screen_probe.py`](../../computations/meson/interface_candidate_screen_probe.py)
+(7 assertions, 4 controls). Addendum 28 located the change in the interface `I`
+of $\beta = \beta_1 \star I \star \beta_2$. Five candidates screened at the
+deuteron wall. **None is selected, and that refusal is the result.**
+
+| cand | interface | xings | prov. #? | $\mathrm{tr}_M$ | vs $\sqrt{B_{\rm AME}}$ |
+|---|---|---:|---|---:|---:|
+| I1 | $\sigma_3$ *(current)* | 1 | **True** | 0.693389 | 0.4649× |
+| I2 | $\sigma_3\sigma_2\sigma_4\sigma_3$ *(2-block)* | 2 | False | 0.417642 | 0.2800× |
+| I3 | $\sigma_3^2$ *(clasp)* | 2 | False | 1.276677 | 0.8560× |
+| I4 | $\sigma_2\sigma_3\sigma_4$ *(fan)* | 1 | **True** | 0.328149 | 0.2200× |
+| I5 | $(\sigma_3\sigma_2\sigma_4\sigma_3)^2$ | 4 | False | 1.860693 | **1.2475×** |
+
+### Three findings and a refusal
+
+1. **The trace is not monotone in wall crossings.** `I2` crosses twice and
+   traces *below* `I1`, which crosses once. "More threading gives a bigger
+   trace" is false, so a crossing count is no proxy for the objective.
+2. **Strands *touched* is independent of strands *crossing*.** `I4` touches two
+   strands on each side yet crosses once and is **provably** still a connected
+   sum. My first pass conflated these two and reported `I4` as a 2-strand
+   interface; it is not.
+3. **One candidate clears the threshold** — `I5`, at 1.2475×.
+4. **No candidate is selected.** Choosing `I5` *because* it clears
+   $\sqrt{B_{\rm AME}}$ would be a fit, and exactly the kind the anti-fit
+   discipline exists to stop. Nothing here derives which interface is correct.
+   What could: the colour-tube structure of
+   `conj:inter-nucleon-channel-color-tube` via `conj:s5-so3-fiber-action`, or a
+   derivation from the Bring geometry. **The AME number may not do the
+   selecting.**
+
+### Read `prov. #?` correctly
+
+It is the single-crossing factorisation — a **sufficient** condition for a
+connected sum. `True` means the closure **is** one (`I1`, `I4` are). `False`
+means **not detected as one**, and does **not** imply an essential torus;
+incompressibility is geometric and no probe here tests it. Necessary, not
+sufficient — the same discipline as Addendum 28.
+
+### A comparison note that matters
+
+`I1` traces `0.693389`, not the committed atom value `0.575172`. Not a
+discrepancy: the canonical interface is the **colour-weighted averaged** letter
+(two branches at that slot), while all five candidates are **pure** words. `I1`
+is its pure analogue — the five are comparable to each other, and none is the
+committed object.
+
+## Addendum 30 — the derived interface clears the structural bar and fails the magnitude one (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`colour_derived_interface_probe.py`](../../computations/meson/colour_derived_interface_probe.py)
+(7 assertions, 3 controls). Addendum 29 refused to select a candidate because the
+one that cleared `√B_AME` had no derivation. This derives one **first**, then
+measures it.
+
+### The derivation, fixed before any trace was computed
+
+`conj:inter-nucleon-channel-color-tube` says, in its own text: *"each nucleon
+carries **3 quark color sheets**"* — and the word runs on $n = 3A$ strands, so
+the three strands per nucleon **are** the colour sheets — and the $S_5
+\leftrightarrow \mathrm{SO}(3)$ fibre action gives *"a canonical $3 \times 3 =
+9$-element matrix of color-pair couplings per inter-nucleon arc"*.
+
+Nine couplings; the current assignment realises them as **one** generator. The
+braid in which every colour sheet of nucleon 1 crosses every sheet of nucleon 2
+is the positive permutation braid swapping the two 3-blocks:
+
+$$ I_{\rm colour} = (\sigma_3\sigma_2\sigma_1)(\sigma_4\sigma_3\sigma_2)(\sigma_5\sigma_4\sigma_3) $$
+
+Checked before measuring: **9 crossings** — one per colour pair — permutation
+$[4,5,6,1,2,3]$, i.e. the blocks swap.
+
+> **The 9-crossing reading is mine, not the block's.** The block explicitly
+> specifies a weighted sum over **one** generator. What is proposed is a
+> different realisation of the same geometric input — nine couplings as nine
+> *crossings* rather than nine *weights* on one crossing.
+
+### Measured
+
+| interface | $\mathrm{tr}_M$ | vs $\sqrt{B_{\rm AME}}$ |
+|---|---:|---:|
+| `I1` $\sigma_3$ *(current, 1 crossing)* | 0.693389 | 0.4649× |
+| **`I_colour`** *(9 crossings)* | **0.629005** | **0.4217×** |
+| `I_colour⁻¹` *(reversed)* | 0.110984 | 0.0744× |
+
+**It fails**, and it traces *below* the single crossing it replaces. Orientation
+is not a detail — the inverse is 5.7× lower again.
+
+### Two bars, and it clears only one
+
+| bar | source | result |
+|---|---|---|
+| structural — not provably a connected sum | Addendum 28 | **cleared** |
+| magnitude — $\mathrm{tr}_M \ge \sqrt{B_{\rm AME}}$ | Addendum 23 | **failed**, 0.4217× |
+
+Meanwhile Addendum 29's `I5` clears the magnitude bar at 1.2475× and has **no
+derivation at all**. That is the situation stated plainly: **the interface with
+a reason does not work, and the interface that works has no reason.** No rescue
+is attempted, and neither is selected.
+
+### What this rules out
+
+**Scope (a):** the colour-pair block transposition as a route to the binding
+magnitude at the deuteron. It is derived, checkable, and misses by 2.4×.
+
+**Not** ruled out: the colour-tube structure itself — it may be right about p/n
+asymmetry and chirality signs while saying nothing about magnitude; a different
+braid realisation of the same nine couplings (the permutation braid is the
+minimal positive one, not the only one); or an interface derived from elsewhere.
+And "not provably a connected sum" remains **necessary, not sufficient** — no
+essential torus is established.
+
+---
+
+## Addendum 31 — the derivation *does* come from further upstream, and it pins the interface to one crossing
+
+Addenda 29–30 screened interface words by the magnitude of $\mathrm{tr}_M(I)$
+against $\sqrt{B_{\rm AME}}$, and all six failed. **That screen was aimed at
+the wrong invariant, and the right one was already in the corpus.**
+
+The normal-form machinery never reads a magnitude off the interface.
+[`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.md)
+defines the quantity that enters
+[`conj:confinement-nf-structure-forcing`](../../content/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.md)
+as a **Laurent valuation**:
+
+$$
+  \alpha_{\mathrm{shift}}(K)
+  \;:=\; \max_{\lambda \,\vdash\, p} \; \mathrm{ord}^{(-)}_{q=0} \, \chi_\lambda(\beta_K),
+$$
+
+the pole order at $q = 0$ of the seminormal Hecke character — an **integer**,
+derived (closed form $k(p-1)$ for torus words), not fitted.
+
+### It is already pinned, and the pin is already checked
+
+[`confinement-nf-partial-proof.md`](../../content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md)
+assigns the atom's interface $\alpha_{\mathrm{shift}}(I) = \alpha_{\mathrm{shift}}(T_{2,1}) = 1\cdot(2-1) = 1$
+and derives $\mathrm{shift}_{\mathrm{NF}} = 18Z + 21N + 1$, which at $Z = N = 1$
+gives $\mathbf{40}$ — the exponent of $u$ in the recorded closed form
+$D(u) = 2^{2A+1} u^{18Z+21N+1} (1+u^2)^{3A-1}$. So the interface is not a free
+slot: its $\alpha_{\mathrm{shift}}$ is fixed by an already-verified integer.
+
+### Measured: every candidate moves that exponent
+
+[`interface_alpha_shift_is_pinned_probe.py`](../../computations/meson/interface_alpha_shift_is_pinned_probe.py)
+computes $\alpha_{\mathrm{shift}}$ of each screened word on its support-reduced
+form — the corpus's own convention when it calls a lone crossing $T_{2,1}$
+($\sigma_1$ in $B_2$, not $\sigma_3$ in $B_6$). The valuation is read as a
+log-log slope of $|\chi_\lambda(q)|$ over three decades in `mpmath` at 300 dps;
+controls reproduce the committed
+[`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json)
+values $\alpha_{\mathrm{shift}}(T_{2,9}) = 9$, $\alpha_{\mathrm{shift}}(T_{3,5}) = 10$,
+and return $1$ for the lone crossing. 9/9 assertions pass.
+
+| interface | word | $B_p$ | $\alpha_{\mathrm{shift}}$ | $D(u)$ exponent | off 40 by |
+|---|---|---|---|---|---|
+| `I1` (current) | $\sigma_3$ | $B_2$ | **1** | **40** | — |
+| `I3` clasp | $\sigma_3^2$ | $B_2$ | 2 | 41 | $+1$ |
+| `I4` fan | $\sigma_2\sigma_3\sigma_4$ | $B_4$ | 3 | 42 | $+2$ |
+| `I2` block transposition | $\sigma_3\sigma_2\sigma_4\sigma_3$ | $B_4$ | 4 | 43 | $+3$ |
+| `I5` doubled | $(\sigma_3\sigma_2\sigma_4\sigma_3)^2$ | $B_4$ | 8 | 47 | $+7$ |
+| `I_colour` (Add. 30) | $(\sigma_3\sigma_2\sigma_1)(\sigma_4\sigma_3\sigma_2)(\sigma_5\sigma_4\sigma_3)$ | $B_6$ | 9 | 48 | $+8$ |
+
+In every case the maximizing channel is the all-column $V_{(1^p)}$, and
+$\alpha_{\mathrm{shift}}$ equals the **letter count**.
+
+### Why, and the Lean
+
+On $V_{(1^p)}$ every SYT of a single column is unique, so the channel is
+1-dimensional and each generator acts by a scalar. Down a column the content
+difference is $\rho = -1$, so that scalar is
+$a = h/(1 - q^{-2\rho}) = (q - q^{-1})/(1 - q^{2}) = -q^{-1}$, of valuation
+exactly $-1$. A **positive** word of length $L$ therefore has column character
+$(-q^{-1})^{L}$, valuation $-L$: one letter, one unit of pole order.
+
+[`QOU/MassTheory/InterfaceLengthPinned.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/InterfaceLengthPinned.lean)
+proves the bookkeeping and — the point — that the unit step is what makes the
+pole order a *faithful* reader of word length. `colPole_faithful` is the
+pinning; `colPole_not_faithful_of_zero_step` shows the hypothesis is
+load-bearing (at step 0 every length collapses and nothing is constrained).
+Six declarations, generic `Nat` (no `ℝ`, nothing archimedean), `lean`-direct
+exit 0, `#print axioms` clean — four depend on no axioms at all, two on
+`propext`/`Quot.sound` from `omega`.
+
+### What this rules out
+
+**Scope (b) — structural, with the invariant named.** The invariant is the
+$q$-valuation of the all-column character, which is additive over
+concatenation and therefore equal to the word length on positive words. Any
+positive interface word other than a single crossing has
+$\alpha_{\mathrm{shift}} \ge 2$ and moves $\mathrm{shift}_{\mathrm{NF}}$ off
+the exponent that the recorded $D(u)$ already matches. **The missing binding
+magnitude cannot come from enriching the interface word.**
+
+Two honest limits on that (b):
+
+1. **It is conditional on $T_2$**, which
+   [`confinement-nf-partial-proof.md`](../../content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md)
+   reduces to Sub-lemma 2.1 and whose numeric inputs (the shifts $18$ and $21$,
+   the $D(u)$ closed form) are empirical benchmarks, not proofs. The exclusion
+   is as strong as that match, no stronger.
+2. **It covers positive words only.** A word with inverse generators can have
+   the column scalar $-q$ instead of $-q^{-1}$ and so cancel valuation; such an
+   interface is not excluded by this argument. The screened candidates were all
+   positive.
+
+### What it leaves open
+
+The three-line reading of Addenda 29–31 together: the interface *has* a
+derivation and it comes from upstream, but that derivation says the interface
+is **exactly one crossing** — so the interface was never the place the missing
+magnitude could live. Either the missing term enters through
+$\Delta(\beta_1,\beta_2;A)$ (the component shifts $18$ and $21$, which are the
+*nucleon* words, not the wall), or through a non-positive interface, or it is
+not in the normal-form decomposition at all. This closes the interface front
+rather than advancing it.
+
+---
+
+## Addendum 32 — the freedom is in Δ, and its carrier is the colour weight
+
+Addendum 31 closed the `α_shift(I)` term of
+`shift_NF(β) = α_shift(I) + Δ(β₁,β₂;A)` and flagged its own limit: the
+argument covers **positive** words only. The nucleon words are exactly the
+excluded case, so the question is whether Δ is pinned the same way.
+
+**It is not.** [`delta_struct_is_where_the_freedom_is_probe.py`](../../computations/meson/delta_struct_is_where_the_freedom_is_probe.py),
+11/11.
+
+### The word is not positive, and not even a braid word
+
+`atom_braid_word_3A`'s own docstring says so: its letters are **Hecke
+elements** `c·σ_g + d·1`, and `2A+1` of them are weight-½ averages. Measured
+at the deuteron: **23 letters — 11 `σ`, 7 `σ⁻¹`, 5 averaged**, the 5 matching
+`2A+1 = 5`. Seven inverse letters is already enough: Addendum 31 does not
+reach this word.
+
+> **🛑 A layer error this probe made first, and the failing assertion is what
+> caught it.** The first version built the word **once** via
+> `atom_braid_word_3A(1,1)` — which bakes in `q₀` — and then varied `q` inside
+> the representation. That freezes every offset `d` at a constant while the
+> character is evaluated at `q → 0`, so every letter's leading term becomes the
+> representation's own `−q⁻¹` regardless of what the letter *was*, and the
+> column pole order comes out as the **length** for any word whatsoever. It is
+> the straddle AGENTS.md names — an input from one layer against an input from
+> another inside one number. The fix is the producer's own `q=` keyword, which
+> materialises every crossing template at the given `q`; the word is rebuilt at
+> each evaluation point.
+>
+> A second, smaller instance of the same discipline: `reject_float64_q` refuses
+> evaluation points that round-trip exactly through float64 — a power of `1/10`
+> is refused for the same reason `mpf(str(Q))` is. Powers of `1/3` are genuine
+> 300-dps values; any three points give a slope, and decades were never
+> load-bearing.
+
+### 🛑 My writhe prediction was wrong — and running it down found the carrier
+
+On the all-column channel `σ ↦ −q⁻¹` (valuation `−1`) and `σ⁻¹ ↦ −q`
+(valuation `+1`), so inverse letters should **cancel** pole order and the
+column valuation should be the **writhe**, `11 + 5 − 7 = 9`. Measured: **13**.
+
+Per-letter, at one evaluation point:
+
+| convention | column pole order | anomalous letters |
+|---|---:|---|
+| `strict_averaged` (colour-blind) | **9** | none |
+| `bring_color_weighted` (canonical) | **13** | one: index 11, generator 2, valuation **−5** |
+
+So the argument was sound and the *convention* was wrong. Colour-blind, the
+writhe prediction is exactly right. The canonical convention adds **4 units of
+pole order in a single letter** — the p–n interface `σ − h(½ − δ/4)`, whose
+coefficient carries `δ = flavor_split_leading(q)`. **Every other coefficient
+in the word is a constant or a multiple of `h`; `δ` is the one that is
+separately `q`-dependent**, and it is the one that breaks the counting.
+
+### And the maximizer leaves the column channel entirely
+
+| λ ⊢ 6 | (2,2,1,1) | (2,2,2) | (3,1,1,1) | (3,2,1) | (3,3) | (4,1,1) | **(4,2)** | (2,1,1,1,1) | (5,1) | (1⁶) | (6) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| pole order | 27 | 27 | 27 | 27 | 27 | 27 | **27** | 21 | 17 | 13 | 5 |
+
+`α_shift = 27` at `(4,2)`, against the column's `13`. **So α_shift is not any
+word statistic here** — not the length, not the writhe, not a signed count.
+That is precisely the freedom `colPole_faithful` denies the interface.
+
+Two things worth noting rather than over-reading. The max-pole set is a
+**seven-way tie**, and **two of its members — `(4,2)` and `(3,3)` — have
+`ℓ(λ) ≤ 2`**, so under convention D they carry nonzero `y_λ`: the pole-heavy
+channels are **live blocks, not Temperley–Lieb radical**. Contrast Addendum 22,
+where the sign-carrying characters were unavailable *because* they sat in `I₆`.
+
+### What this is, and what it is not
+
+**It is a positive lead, and the first of this arc.** Addenda 22, 24, 26 and 31
+each closed a route with a named invariant. This one *fails* to close a route,
+and localises what does the failing: a derived, `q`-dependent colour weight
+sitting on the one letter that joins the proton to the neutron. `Δ` is where
+the missing magnitude can still live, and Addendum 31's exclusion is the
+reason that statement has content — the interface is pinned, so the two terms
+are not interchangeable.
+
+**It is not a magnitude result.** Everything here is a `q → 0` **valuation**.
+Nothing measured shows that Δ *supplies* the deuteron binding energy, and no
+number was compared to `B_AME`. The claim is narrower and exact: the pinning
+argument that closes the interface does not close Δ, and the obstruction has a
+name.
+
+**Do not equate the 27 with the 40.** `confinement-nf-partial-proof.md` records
+`shift_NF = 18Z + 21N + 1 = 40` as an exponent of `u = b·ℏ_q²`; the 27 here is
+an exponent of `q`. Different variables. Whether they are related is a separate
+question this does not touch.
+
+**One isotope, one convention pair.** ²H only, and the colour comparison is
+`bring_color_weighted` against `strict_averaged`. The `A`-dependence of the
+27 is unmeasured.
+
+---
+
+## Addendum 33 — the Δ freedom is a q → 0 artefact and buys no magnitude
+
+Addendum 32 found that Δ is not pinned the way the interface is, and named the
+carrier: the p–n letter `σ − h(½ − δ/4)·1` with `δ = flavor_split_leading(q)`.
+That is a statement about a **valuation at `q → 0`**. This addendum asks the
+§C/§E question instead — does that letter move `tr_M(β_D)` toward
+`√B_AME = 1.491498`? [`delta_freedom_buys_no_magnitude_probe.py`](../../computations/meson/delta_freedom_buys_no_magnitude_probe.py),
+9/9.
+
+**It does not, and the check is one line.** Using `σ⁻¹ = σ − h`,
+
+$$
+  \sigma - h\bigl(\tfrac12 - \tfrac\delta4\bigr)\cdot 1
+  \;=\; \bigl(\tfrac12 + \tfrac\delta4\bigr)\sigma \;+\; \bigl(\tfrac12 - \tfrac\delta4\bigr)\sigma^{-1},
+$$
+
+weights summing to 1. §C/§E's `convex_comb_le_bound` bounds any **convex**
+combination of the 32 branches by `max_b = 1.018275`, and its companion
+`bound_fails_without_nonneg` shows non-negativity is exactly what that needs.
+So everything turns on `|δ| ≤ 2`.
+
+### At the substrate, δ is negligible
+
+| | value |
+|---|---:|
+| `δ = (q−1)²(1−q⁻⁴)/3` at `q₀` | **0.001375710807** |
+| `w(σ) = ½ + δ/4` | 0.500343927702 |
+| `w(σ⁻¹) = ½ − δ/4` | 0.499656072298 |
+
+Both non-negative — **inside the hull**, so the §C ceiling holds verbatim. The
+colour weighting moves the interface off colour-blind `½` by `δ/4 = 3.44e−4`,
+i.e. **0.0688 %**. Measured on the trace:
+
+| convention | `tr_M(β_D)` |
+|---|---:|
+| `strict_averaged` (colour-blind) | 0.575090871630 |
+| `bring_color_weighted` (canonical) | **0.575172243918** |
+| difference | 8.14e−5 (**0.0141 %**) |
+
+**Control:** the canonical value reproduces §C's committed `0.575172` to
+`2.4e−7`, so this is measuring the object §C bounded. The four units of pole
+order the colour weighting buys at `q → 0` are worth **0.0141 %** of the trace
+at `q₀`, and land it **2.593× short** of the bar.
+
+### How far outside it would have to reach
+
+`tr_M` is affine in the interface weight `w`: `0.456792` at `w = 0` (pure
+`σ⁻¹`), `0.693389` at `w = 1` (pure `σ`). Reaching `√B_AME` needs
+
+> `w = 4.3733`, i.e. `δ = 15.493` — **11 262× the substrate's δ**,
+
+far outside `[0,1]` and far past the `|δ| = 2` threshold where a weight first
+goes negative. No convex interface reaches the bar; that is §C/§E restated at
+this one letter.
+
+### Reconciling the two regimes
+
+`δ = (q−1)²(1−q⁻⁴)/3`. The `q⁻⁴` diverges as `q → 0`; the `(q−1)²` prefactor
+vanishes as `q → 1`. Evaluated at both ends:
+
+| `q` | `δ` | outside the hull? |
+|---|---:|---|
+| `3⁻¹⁵` (the valuation limit) | `−1.413e+28` | **yes** |
+| `q₀ ≈ 1.10998` (the substrate) | `0.0013757` | no, by ~1450× |
+
+**Both earlier results are correct and describe different regimes.** Addendum
+32's maximizer genuinely leaves the column channel, and `α_shift` genuinely is
+not a word statistic — `α_shift` *is* a `q → 0` valuation by definition, so
+that is where it lives. §C's bound is a statement at `q₀`. The same `δ` is
+enormous in one and negligible in the other.
+
+> **🛑 Withdrawing my own billing of Addendum 32.** I called it *"a positive
+> lead, and the first of this arc"*. **That framing is wrong and is retracted.**
+> The valuation finding stands exactly as measured; what does not stand is the
+> implication that it pointed at a magnitude. It pointed at `q → 0`, where the
+> framework does not evaluate anything. An honest one-line summary of A32 is:
+> *the pinning argument of A31 does not extend to Δ* — a scope note on A31, not
+> a lead.
+
+### What this rules out
+
+**Scope (b), invariant named and premise now measured rather than assumed.**
+The invariant is branch convexity (`convex_comb_le_bound`, Lean, sorry-free);
+the premise — both interface weights non-negative — is measured at `q₀` above
+rather than asserted. **The colour weight `δ` cannot supply the deuteron
+binding magnitude**, by a factor of 11 262 in the quantity that would have to
+move.
+
+This is not a separate exclusion so much as a **confirmation that §C is
+airtight at the one letter that looked like it might escape**: every letter of
+the word, including the `δ`-carrying one, lies in the convex hull, so no letter
+escapes the ceiling. Conditional on `prop:flavor-split-substrate`, which is
+what derives `δ`.
+
+**What it does not touch.** A *different construction* — the satellite/cable of
+Addendum 28, which lives in a larger index set and measured `4.994×` past the
+un-cabled ceiling — is outside `convex_comb_le_bound`'s hypotheses and is
+unaffected by any of this. That remains the one open magnitude route, and
+Addendum 29's finding still applies to it: the atom's own word is a connected
+sum, so a satellite is a change of construction, not a reweighting.
+
+---
+
+## Addendum 34 — the satellite reaches at ²H and nowhere else, and its degree is a fit
+
+The satellite was the last magnitude route standing. Addendum 28 measured it
+clearing: the 2-parallel cable of the deuteron reaches `max_b tr_M = 7.448220`
+(4.994×) and, at the atom's **own** convex weights, `1.657034` — 1.111× past
+`√B_AME(²H) = 1.491498`. `larger_index_set_escapes_the_bound` says why it is
+allowed to: an `r`-cable replaces each strand by `r`, so its branches live in a
+bigger algebra and are not a reweighting of the original 32.
+
+This addendum asks the question that killed §B: **does it keep reaching as A
+grows?** [`satellite_degree_is_a_free_parameter_probe.py`](../../computations/meson/satellite_degree_is_a_free_parameter_probe.py),
+7/7.
+
+### The trace moves the wrong way
+
+| isotope | A | strands | `tr_M` | `B_AME` | bar `= √B` | short by |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 6 | 0.5751722439 | 2.22452 | 1.491482 | **2.593×** |
+| ³H | 3 | 9 | 0.2293101021 | 8.481821 | 2.912357 | **12.70×** |
+| ³He | 3 | 9 | 0.4037670369 | 7.71804 | 2.778136 | **6.881×** |
+| ⁴He | 4 | 12 | 0.1609741454 | 28.2957 | 5.319370 | **33.04×** |
+
+**Control:** ²H reproduces §C's committed `0.57517224` to `2.3e−13`.
+
+Binding is extensive and the bar rises `1.49 → 5.32`. The trace **falls**,
+`0.575 → 0.161`. The shortfall therefore runs `2.59× → 33.04×` — a **12.74×
+spread**, so it is not a constant that one overall factor could absorb.
+
+> **🛑 An anti-numerology note, because this one is a trap.** The two spreads
+> are `3.57307×` (trace) and `3.5665×` (bar) — **0.18 % apart**. That is *not*
+> agreement. `max/min` discards direction, and the two quantities move in
+> **opposite** directions; reading the matching `3.57`s as a shape match would
+> inverch the finding exactly. My first version of the assertion tested
+> `spread_bar > 2·spread_trace` and failed for precisely this reason. The
+> corrected test is on **direction**, not magnitude.
+
+### The degree that would rescue it is per-isotope, non-integral, and not even a function of A
+
+Taking Addendum 28's measured per-level gain at ²H (`2.881×` on the convex
+trace) and applying it as a ratio — **an extrapolation, not a measurement**,
+since a cabled `6A`-strand word is out of reach (the two-row block `(9,9)` at 18
+strands is alone 4862-dimensional):
+
+| isotope | short by | cable levels needed |
+|---|---:|---:|
+| ²H | 2.593× | 0.901 |
+| ³He | 6.881× | 1.823 |
+| ³H | 12.70× | 2.402 |
+| ⁴He | 33.04× | 3.306 |
+
+Three things, in decreasing order of how much they depend on that
+extrapolation:
+
+1. **Independent of it entirely:** ³H and ³He are **both A = 3 on 9 strands**
+   and need `12.70×` and `6.88×` — a `1.85×` spread at **fixed A**. So no
+   `r(A)` can work; a rescue would need `r(Z, N)`, one integer per nuclide.
+2. **Independent of it entirely:** the shortfall spread is `12.74×` across four
+   isotopes, so no single `r` serves the chain.
+3. **Depends on it:** the required levels are `0.90, 1.82, 2.40, 3.31` — three
+   of four more than 0.15 from an integer, while `r` **must** be an integer
+   (it multiplies strand count; it does not interpolate).
+
+### Nothing in the corpus fixes r
+
+Corpus-grepped across all three library tiers.
+[`2026-06-01-knot-operator-census-group-actions.md`](2026-06-01-knot-operator-census-group-actions.md)
+§(b) records cabling as in-corpus — *"`cabl` appears in 246 files"* — but **as
+pattern-on-companion**, with the arithmetic note that *"an `r`-cable multiplies
+strand count, never adding a single strand."* No block, witness, or Lean
+declaration derives a value for `r`. The library now holds the cabling
+literature (van der Veen's cabling formula for the coloured Jones, Liu's cable
+expansion, the two Kalfagianni–Tran degree-under-cabling papers, Anokhina et al
+on satellites) — all of which say how invariants *transform* under cabling, none
+of which selects a degree for a physical system.
+
+### What this rules out
+
+**Scope (a).** The **fixed-degree** satellite, as a source of the binding
+magnitude across the isotope chain. It reaches at ²H and misses everywhere
+else, and closing the gap means choosing an integer per nuclide against AME —
+**the same fit §D refused for the cut width `w`**, and the fit the
+three-calibration discipline exists to catch.
+
+**Not** ruled out, and the distinction matters: the satellite *construction*.
+Nothing here shows a satellite cannot carry binding — only that a **free**
+degree is a fit and a **fixed** degree does not fit. What would change the
+verdict is a derivation of `r` (or of a pattern) from the framework, in which
+case its A-dependence would be a prediction rather than a choice. That is the
+same bar `I_colour` failed on in Addendum 30 and `α_shift` cleared in Addendum
+31 — derived first, measured second.
+
+Nor is the *uncabled* trace's fall with A itself an argument against the
+framework: `tr_M` is not the binding, and §C's relation between them is
+quadratic. The measurement here is of the **gap**, and the gap is what widens.
+
+---
+
+## Addendum 35 — the cabling literature does supply a selection principle, and it is the invariant §F already used
+
+§H closed the **free-degree** satellite and left the derivation of `r` as the
+open question. Reading the two ingested sources answers it: a selection
+principle exists, it is the *same* Laurent valuation §F used to pin the
+interface, and the corpus already carries its closed form.
+[`cable_selection_principle_probe.py`](../../computations/meson/cable_selection_principle_probe.py),
+5/5.
+
+### The cable pattern is a torus braid
+
+van der Veen ([`arxiv-0807.2679v1`](../../library/arxiv-0807.2679v1/)) defines
+the `(r,s)`-cabling operation with the pattern taken to be *"the closure of the
+`(r,s)`-torus braid `B^r_s = (σ₁ ⋯ σ_{s−1})^r`"*, and proves
+
+$$
+  J_N\bigl(L^r_{i;s}\bigr)(q) \;=\; \sum_w \binom{g}{w}_{\!N}\,
+    q^{\,rw(wp+1)/g}\; J_{2wp+1}(L)(q), \qquad g=\gcd(r,s),\ p=s/g.
+$$
+
+**That pattern is exactly the object `prop:alpha-shift-torus-knot` gives a
+derived closed form for**: `α_shift(T_{r,s}) = r(s−1)`. Verified against the
+closed form at six patterns:
+
+| `(r,s)` | (1,2) | (2,2) | (1,3) | (3,2) | (1,4) | (2,3) |
+|---|---:|---:|---:|---:|---:|---:|
+| measured `α_shift` | 1 | 2 | 2 | 3 | 3 | 4 |
+| `r(s−1)` | 1 | 2 | 2 | 3 | 3 | 4 |
+
+So the cable degree is **not** a free parameter in the way §H's fit argument
+treated it — its valuation is derived.
+
+### What that would force
+
+The recorded `D(u)` exponent pins the interface term at
+`α_shift = 1` (§F). **If** a cable contributes its pattern's `α_shift`, then
+`r(s−1) = 1`, whose only solution with `r ≥ 1, s ≥ 2` is **`(1,2)`** — a
+two-strand pattern with one crossing, i.e. the **trivial** cable. Every other
+pattern in range has `α_shift ≥ 2` (19 checked). Kalfagianni–Tran's own
+standing assumption for a *non-trivial* cable is `|q| > 1`, which `(1,2)` is
+not.
+
+That would close the satellite by **§F's mechanism rather than §H's fit
+argument** — strictly stronger, since it would be a scope-(b) exclusion with a
+derived invariant rather than a scope-(a) observation about parameter freedom.
+
+### 🛑 The same reading corrects §H
+
+Kalfagianni–Tran ([`arxiv-1501.01574v3`](../../library/arxiv-1501.01574v3/))
+Thm 1.3: for a knot of period `≤ 2`,
+`js_{K_{p,q}} ⊂ (q² · js_K ∪ {pq/4})`, the degrees `d±[J_K(n)]` being
+**quadratic quasi-polynomials** in `n`.
+
+**Cabling scales the degree by `q²` — quadratic in the longitude, not geometric
+in a "cable level."** §H's third finding extrapolated Addendum 28's measured
+per-level trace gain (`2.881×` at ²H) as a constant ratio per level and
+concluded the required levels `0.90 / 1.82 / 2.40 / 3.31` are non-integral.
+**That extrapolation has no support and the conclusion resting on it is
+re-scoped to _unsupported_.**
+
+§H's other two findings do **not** use it and stand unchanged, because they are
+computed from measured shortfalls alone:
+
+- ³H and ³He are **both A = 3 on 9 strands** and need `12.70×` and `6.88×` — a
+  `1.85×` spread at **fixed A**, so no `r(A)` serves the chain;
+- the shortfall spread is `12.74×` across four isotopes.
+
+### The one step between this route and a derivation
+
+Stated rather than assumed. **§F's decomposition assigns `α_shift(I)` to an
+_interface_ sitting between `β₁` and `β₂`; a cable replaces _every_ strand.**
+Whether a cable contributes its pattern's `α_shift` to `shift_NF` at all is not
+established here, and it is the single question that turns this route into a
+result. It is well-posed and local — it is a statement about how
+`conj:confinement-nf-structure-forcing` extends from an interface insertion to
+a satellite operation — rather than an open research direction.
+
+A second, smaller thing the formula settles: van der Veen's coefficients
+`binom(g,w)_N` are **non-negative integers that do not sum to 1**. That is
+concretely why a cable escapes `convex_comb_le_bound` — it is a **positive but
+un-normalised** combination, so the normalisation defect is exactly where the
+extra magnitude comes from. §E's `larger_index_set_escapes_the_bound` said the
+escape exists; this says what it is made of.
+
+---
+
+## Addendum 36 — Addendum 35's route does not go through; the cable-shift law is multiplicative, and non-positivity is what keeps the satellite alive
+
+Addendum 35 stated its one unestablished step honestly: **whether a cable
+contributes its pattern's `α_shift` at all.** It does not.
+[`cable_shift_law_probe.py`](../../computations/meson/cable_shift_law_probe.py),
+4/4.
+
+Two candidate laws, chosen because they disagree badly:
+
+- **Additive** — `α_shift(cable of K) = α_shift(K) + α_shift(pattern)`. This is
+  the reading A35's `r(s−1) = 1` argument requires.
+- **Multiplicative** — `α_shift(cable of K) = ℓ · α_shift(K)`, with `ℓ = 4` the
+  letters the 2-parallel substitution `σᵢ ↦ s_{2i}s_{2i−1}s_{2i+1}s_{2i}` writes
+  per generator. This is what §F's own theorem predicts for a **positive** word,
+  where `α_shift` *is* the letter count and cabling multiplies letter count.
+
+| knot | `n` | positive | `α(K)` | `2n` | `α(cable)` | additive | multiplicative |
+|---|---:|:---:|---:|---:|---:|---:|---:|
+| trefoil `σ₁³` | 2 | yes | 3 | 4 | **12** | 4 | **12** ✓ |
+| `(2,5)` torus `σ₁⁵` | 2 | yes | 5 | 4 | **20** | 6 | **20** ✓ |
+| figure-eight `(σ₁σ₂⁻¹)²` | 3 | no | 4 | 6 | **12** | 5 | 16 ✗ |
+| mixed `σ₁σ₂σ₁⁻¹` | 3 | no | 1 | 6 | **4** | 2 | **4** ✓ |
+
+### 🛑 A35's route is refuted
+
+**The additive law matches 0 of 4.** So `r(s−1) = 1` was never the right
+equation, the unique solution `(1,2)` was an answer to a question that does not
+arise, and **the satellite is _not_ closed by §F's mechanism.** §H's scope-(a)
+fit argument remains the only thing excluding it, exactly as it stood before
+A35.
+
+Recorded as a refutation rather than quietly dropped, because A35 is one
+addendum old and its framing — *"that would close the satellite by §F's
+mechanism, strictly stronger"* — was mine. The parts of A35 that survive are
+the ones that did not depend on the law: the cable pattern **is** a torus braid
+and its `α_shift = r(s−1)` **is** derived (verified at six patterns); van der
+Veen's coefficients are non-negative and un-normalised, which is what a cable's
+escape from `convex_comb_le_bound` is made of; and Kalfagianni–Tran's `q²`
+degree scaling still re-scopes §H's integrality claim.
+
+### What the measurement does establish
+
+**On positive words the law is exactly multiplicative** — 2/2, and not by
+coincidence: it is §F's theorem (`α_shift` = letter count) applied to a
+substitution that multiplies letter count by `ℓ`. That has a sharp consequence.
+
+> **If the atom word were positive, cabling would multiply the `D(u)` exponent
+> by 4** — `40 → 160` for the deuteron — **and the satellite would be excluded
+> by §F's mechanism.** It is precisely the word's **non-positivity** that keeps
+> the satellite alive.
+
+That connects two findings that looked unrelated. Addendum 32 measured the atom
+word at **23 letters: 11 `σ`, 7 `σ⁻¹`, 5 averaged** — non-positive, which is why
+§F's pinning stopped at the interface. The same 7 inverse letters are why the
+cable-shift law has no clean form here, and therefore why the satellite is not
+closed. **Non-positivity is load-bearing in both places, and it is the p/n
+structure**: the `σ⁻¹` letters are the neutron-side crossings.
+
+And the figure-eight shows the failure is real rather than a gap in coverage:
+`α(cable) = 12` against a multiplicative prediction of `16`. The inverse letters
+**cancel** valuation under cabling too, so the cabled shift is *smaller* than
+the positive law would give — not larger. A future law would have to track
+signed structure, not counts.
+
+### Where this leaves the satellite
+
+Open, with one scope-(a) argument against it (§H: reaches at ²H, needs a
+per-nuclide degree) and no scope-(b) exclusion. The selection-principle question
+A35 opened is still live and now better posed: **what is the cable-shift law for
+a non-positive word?** The measurement above says it is neither additive nor
+multiplicative, and that the deviation is in the direction of cancellation. That
+is a concrete question about `α_shift` under the cabling substitution, and it is
+prior to any statement about `r`.
+
+---
+
+## Addendum 37 — the cable-shift law: bounded, one-sided, and not a word statistic
+
+Addendum 36 refuted two candidate laws on four knots. This widens the sample to
+twelve and asks what the law actually is.
+[`cable_shift_law_family_probe.py`](../../computations/meson/cable_shift_law_family_probe.py),
+5/5.
+
+| word | `n` | `p` | `m` | `L` | `W` | `α(K)` | `α(cable)` | `4·α(K)` | `λ*(cable)` |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| `σ₁` | 2 | 1 | 0 | 1 | 1 | 1 | **4** | 4 | `(1,1,1,1)` |
+| `σ₁²` | 2 | 2 | 0 | 2 | 2 | 2 | **8** | 8 | `(1,1,1,1)` |
+| `σ₁³` trefoil | 2 | 3 | 0 | 3 | 3 | 3 | **12** | 12 | `(1,1,1,1)` |
+| `σ₁⁵` (2,5) | 2 | 5 | 0 | 5 | 5 | 5 | **20** | 20 | `(1,1,1,1)` |
+| `σ₁σ₂` | 3 | 2 | 0 | 2 | 2 | 2 | **8** | 8 | `(1⁶)` |
+| `σ₁⁻¹` | 2 | 0 | 1 | 1 | −1 | 1 | **4** | 4 | **`(4,)`** |
+| `σ₁σ₁⁻¹` | 2 | 1 | 1 | 2 | 0 | 0 | **0** | 0 | `(4,)` |
+| `σ₁σ₂σ₁⁻¹` | 3 | 2 | 1 | 3 | 1 | 1 | **4** | 4 | `(3,1,1,1)` |
+| `σ₁σ₂⁻¹` | 3 | 1 | 1 | 2 | 0 | 2 | **6** | 8 | `(4,2)` |
+| `σ₁²σ₂⁻¹` | 3 | 2 | 1 | 3 | 1 | 3 | **10** | 12 | `(2,2,1,1)` |
+| `σ₁σ₂⁻¹σ₂⁻¹` | 3 | 1 | 2 | 3 | −1 | 3 | **10** | 12 | `(4,2)` |
+| `(σ₁σ₂⁻¹)²` fig-8 | 3 | 2 | 2 | 4 | 0 | 4 | **12** | 16 | `(4,2)` |
+
+### The law, as far as it goes
+
+**`α(cable) ≤ 4·α(K)`, with equality iff the word is positive.** Positive words:
+**5/5 exact**, which is §F's theorem (`α` = letter count) under a substitution
+that multiplies letter count by `ℓ = 4`.
+
+**The deviation is one-sided.** Of the seven non-positive words, **4 fall below
+`4·α(K)` and 0 exceed it** (deficits 2, 4, 2, 2). Inverse letters **cancel**
+valuation under cabling; they never add it. So the law is a *bound* plus a
+residual `4·α(K) − α(cable) ≥ 0` that nothing here predicts.
+
+> **🛑 Anti-numerology, flagged before anyone quotes it.** The best-scoring
+> candidate across the twelve is `3·α(K) + W` at **10/12**. **That is a
+> two-parameter form fitted to twelve integers and it still misses two.** It is
+> not a law and must not be cited as one. It is recorded only so the next reader
+> does not re-derive it and mistake 10/12 for a discovery.
+
+### The mechanism — the maximizer moves, which is why no word statistic works
+
+Read the `λ*` column. For a **positive** word the maximizer is the all-column
+`(1ⁿ)`, where `σ ↦ −q⁻¹` has valuation `−1` per letter. For the **purely
+negative** `σ₁⁻¹` it flips to the all-**row** `(4,)`, where `σ ↦ q` and
+`σ⁻¹ ↦ q⁻¹` — so an inverse letter now *contributes* pole order. For **mixed**
+words neither extreme wins and the maximizer lands in the interior: `(4,2)`,
+`(3,1,1,1)`, `(2,2,1,1)`.
+
+So `α_shift` on a mixed word is a **competition between the row channel, which
+rewards `σ⁻¹`, and the column channel, which rewards `σ`** — and for mixed words
+the maximum is attained strictly between them. That is why no function of
+`L`, `W`, `p`, or `α(K)` can capture it: the answer depends on *which partition
+wins*, and that is a max over `p(n)` competing linear forms, not a count.
+
+This is the same phenomenon Addendum 32 measured on the atom word, where the
+maximizer sat at `(4,2)` in a seven-way tie rather than at the column. **Two
+independent measurements of the same effect**, and it is what makes the atom
+word — 11 `σ` against 7 `σ⁻¹` — resistant in both places.
+
+### What this settles, and what it does not
+
+**Settles:** the additive law is refuted at `n = 12`, not just `n = 4`
+(**0/12**), so Addendum 35's `r(s−1) = 1` route stays closed. And there is a
+genuine bound, `α(cable) ≤ 4·α(K)`, valid across the whole sample.
+
+**Does not settle:** the residual. A real law would predict `4·α(K) − α(cable)`,
+and this measurement only shows it is non-negative and that it is driven by
+which channel maximizes. That is consistent with van der Veen, where the cabled
+valuation is a `min` over the cable's **colour decomposition** — each term the
+original knot at a *different colour* — rather than a function of the word at
+all. **The right next object is `α_shift` as a function of colour**, not of the
+word; the corpus has that only for torus patterns
+(`prop:alpha-shift-torus-knot`).
+
+**Sample limits:** twelve words, all on 2 or 3 strands, one cabling degree
+(`ℓ = 4`, the 2-parallel). None of them is the atom word.
+
+---
+
+## Addendum 38 — the colour bridge is exact; and §F's numbers were read off channels the trace cannot see
+
+Setting up the colour question surfaced a defect in §F first, so this addendum
+reports that before the colour result.
+[`alpha_shift_by_colour_probe.py`](../../computations/meson/alpha_shift_by_colour_probe.py),
+7/7.
+
+### 🛑 The defect: `α_shift` is a max over ALL λ, and the maximizer can be in the radical
+
+`prop:alpha-shift-torus-knot` defines `α_shift(K) := max_{λ ⊢ n} ord⁽⁻⁾_{q=0}
+χ_λ(β_K)` — a max over **every** partition — and its maximizer is the all-column
+`(1ⁿ)`. But `ℓ((1ⁿ)) = n`, so for `n > 2` that channel sits in the
+**Temperley–Lieb radical**, where `y_λ = 0` and the Markov trace cannot see it
+(§A, `prop:markov-trace-frobenius-selection` (iii), unconditional).
+
+Two different quantities, and §F used the first while arguing about what the
+second controls:
+
+| | definition | what it is |
+|---|---|---|
+| `α_shift` | max over **all** `λ ⊢ n` | the corpus's definition |
+| `α_shift^supp` | max over `ℓ(λ) ≤ 2` only | what `tr_M` can see under convention D |
+
+**Control first:** T(3,5) reproduces the committed `α_shift = 10` at `(1,1,1)`
+— method matches `alpha-shift-torus.witness.json` — and that maximizer has
+`ℓ = 3`, i.e. it is already in the radical for the corpus's own headline
+example.
+
+**Measured on §F's candidates — 3 of 5 attain `α_shift` in the radical:**
+
+| candidate | `n` | `α_shift` | `λ*` | `ℓ` | `α^supp` | `λ*_supp` | overstated by |
+|---|---:|---:|---|---:|---:|---|---:|
+| `I1` `σ₁` (current) | 2 | 1 | `(1,1)` | 2 | **1** | `(1,1)` | — |
+| `I3` `σ₁²` clasp | 2 | 2 | `(1,1)` | 2 | **2** | `(1,1)` | — |
+| `I4` fan | 4 | 3 | `(1,1,1,1)` | **4** | **0** | `(4,)` | **3** |
+| `I2` block | 4 | 4 | `(1,1,1,1)` | **4** | **2** | `(2,2)` | **2** |
+| `I5` doubled | 4 | 8 | `(1,1,1,1)` | **4** | **4** | `(2,2)` | **4** |
+
+### §F's conclusion survives; several of its numbers do not
+
+Recomputing the exponent column with `α^supp`:
+
+| candidate | §F's exponent | corrected |
+|---|---:|---:|
+| `I1` (current) | 40 | **40** |
+| `I3` clasp | 41 | 41 |
+| `I4` fan | 42 | **39** |
+| `I2` block | 43 | **41** |
+| `I5` doubled | 47 | **43** |
+
+**Every candidate but the current one still moves the exponent** (4 of 4), so
+§F's conclusion — *the interface is pinned to exactly one crossing* — holds.
+What does not hold is three of its tabulated figures, and `I4` moves the
+exponent **down** (39) rather than up. The §F table should be read as
+directionally right and numerically overstated wherever `ℓ(λ*) > 2`.
+
+**This is not a defect in `prop:alpha-shift-torus-knot`.** That proposition is a
+correct statement about `χ_λ`. The defect is in *my* use of it: in a
+convention-D / `tr_M` context the relevant quantity is the support-restricted
+max, and I did not check where the max was attained.
+
+**A caution for `conj:confinement-nf-structure-forcing`, stated carefully.** Its
+claim T₁ is that the Wedderburn maximizer *"resides strictly inside the active
+set A"* — so the conjecture already asks for the maximizer to be in the support.
+The measurement above shows the global argmax **can** sit outside it (T(3,5)),
+so **T₁ is a substantive claim rather than an automatic one.** T(3,5) is not a
+compound braid `β₁ ⋆ I ⋆ β₂` under the confinement hypothesis, so this is *not*
+a counterexample — only evidence that T₁ has content.
+
+### The colour bridge, which is what was asked for
+
+**Exact, and already in the corpus's own arithmetic.** Schur–Weyl sends the
+`n`-strand Hecke decomposition to `λ ⊢ n`; for `sl₂` only two-row `λ` survive,
+and the convention-D weight is `y_{(n−k,k)} = [n−2k+1]_q / [2]_q^n`. **The index
+`n − 2k + 1` in that `q`-integer is the colour** — the channel's quantum
+dimension. So
+
+$$\lambda = (n-k,\,k) \quad\longleftrightarrow\quad N = n - 2k + 1,
+  \qquad k = \tfrac{n+1-N}{2}.$$
+
+A two-row partition and an `sl₂` colour are the same datum. No new machinery is
+needed to ask the colour question — it is a relabelling of per-λ pole orders.
+
+### Why it cannot be tested yet, and the obstacle is not conceptual
+
+Measured colour profiles:
+
+| word | `(N, α)` |
+|---|---|
+| `I2` block | `(1, 2), (3, 0), (5, 0)` |
+| `I5` doubled | `(1, 4), (3, 0), (5, 0)` |
+
+**A braid on `n` strands admits only `⌊n/2⌋+1` colours.** At `n = 4` that is
+`N ∈ {1,3,5}` — three points. Kalfagianni–Tran's law is *quadratic* in `N`
+(`d±[J_K(n)]` are quadratic quasi-polynomials), which has three coefficients. So
+at these strand numbers a quadratic can be **fitted and not tested**, and this
+addendum fits nothing.
+
+Getting more colours means more strands, which is exactly the wall §H hit: the
+two-row block `(9,9)` at 18 strands is alone 4862-dimensional. **The obstacle is
+computational, not conceptual** — the object is well-defined, the bridge is
+exact, and the measurement is out of reach by dense linear algebra at the strand
+numbers the colour law needs.
+
+The honest next step is therefore not a bigger sweep but a **closed form**: the
+corpus has `α_shift` in closed form only for torus patterns
+(`prop:alpha-shift-torus-knot`), and what a colour law needs is `α_shift(K, N)`
+for the atom word. That is a derivation, and nothing here supplies it.
+
+---
+
+## Addendum 39 — 🛑 Addendum 37's candidate scan was a FIT; the bound and the closed form, derived and Lean-proved
+
+> **🛑 RETRACTION, on the author's challenge.** Addendum 37 scored a list of
+> candidate closed forms against twelve measured integers and reported the best
+> (`3·α(K) + W`, 10/12). **That is a fit.** Flagging it as *"not a law, do not
+> quote it"* does not undo having searched a form space against data, and the
+> repo's discipline is that every quantity is derived. It was also **redundant**:
+> the mechanism was already in hand from the same probe's argmax column, and the
+> derivation below says no such closed form exists to find. The candidate table
+> is superseded by what follows.
+>
+> **On calibration:** `α_shift` takes **no** CAL input. It is a Laurent valuation
+> of a seminormal character in the *formal* variable `q`, read at `q → 0` — a
+> fibre-level combinatorial invariant, not an archimedean evaluation at `q₀`.
+> CAL-1/2/3 fix the MeV scale, the modulus and the orthogonal meson class;
+> none of them enters here. So it cannot be traced to CAL-123 either — it has to
+> be derived outright.
+
+### The derivation
+
+On channel `λ`, with `ρ` the content difference across the transposed cells and
+`h = q − q⁻¹` (valuation `−1`), the seminormal entries are
+
+$$a = \frac{h}{1 - q^{-2\rho}},\qquad b = \sqrt{a\,a' + 1},$$
+
+whose valuations as `q → 0` are, **measured rather than asserted**
+([`alpha_shift_derived_bound_probe.py`](../../computations/meson/alpha_shift_derived_bound_probe.py),
+8/8):
+
+| | `σ`-entry | `σ⁻¹`-entry |
+|---|---:|---:|
+| `ρ = −1` (down a column) | **−1** | **+1** |
+| `ρ = +1` (along a row) | **+1** | **−1** |
+| off-diagonal `b` | 0 | 0 |
+
+The flip is exact: at `ρ = −1`, `a = −q⁻¹` and `a − h = −q⁻¹ − (q − q⁻¹) = −q`
+— **the leading `−q⁻¹` cancels**. So `σ` and `σ⁻¹` carry opposite per-entry
+valuations and **no entry beats `±1`**.
+
+Two consequences follow, neither fitted:
+
+- **(P1) `α_shift ≤ L`.** Every letter moves the valuation by at most one.
+- **(P2) `α_shift ≤ L_reduced`.** `tr_M` is a conjugation invariant (the Markov
+  property), so `α_shift` is too — the bound is on the *reduced* length.
+
+Against all twelve words: **P1 holds 12/12, P2 holds 12/12, and P2 is tight
+12/12.** The discriminating cases are the two words that shorten —
+`σ₁σ₁⁻¹` (`L = 2 → 0`, `α = 0`) and `σ₁σ₂σ₁⁻¹` (`L = 3 → 1`, `α = 1`) — where
+P1 alone would have permitted the larger value and P2 predicts the observed one.
+
+### The closed form for `α_shift(K, N)`
+
+A one-row or one-column diagram has a **single** standard tableau, so its
+channel is one-dimensional and the character is a pure monomial — an exact
+closed form for **every** word
+([`alpha_shift_closed_form_probe.py`](../../computations/meson/alpha_shift_closed_form_probe.py),
+6/6, verified on 13 words):
+
+| channel | colour | generator | character | `α_shift` |
+|---|---|---|---|---|
+| all-row `(n)` | `N = n+1` | `σ ↦ q` | `χ(w) = q^{W}` | `max(0, −W)` |
+| all-column `(1ⁿ)` | — (TL-radical for `n>2`) | `σ ↦ −q⁻¹` | `χ(w) = (−1)^{L} q^{−W}` | `max(0, +W)` |
+
+**A one-dimensional channel sees the writhe and nothing else.** Both are
+instances of one theorem, `χ(w) = s^{\,\mathrm{writhe}(w)}`.
+
+**The corpus's own torus formula is recovered from it.** At `n = 2`,
+`T(2,m) = σ₁^m` has colours `N ∈ {1,3}`, and the closed form gives
+`α(N=1) = m`, `α(N=3) = 0` — so `prop:alpha-shift-torus-knot`'s `r(s−1)` is the
+**colour-`N=1`** value, and at `n = 2` that channel is still in the support.
+
+### Why there is no closed form at intermediate colours — a derived statement
+
+For an intermediate two-row `λ` the channel has dimension `> 1`, the character
+is a sum over standard-tableau paths, and the pole order becomes
+
+> a **longest-path optimisation** over the tableau graph — each letter
+> contributing `−1`, `0` or `+1` according to the local `ρ`-sign —
+
+which is a combinatorial optimisation, not a function of counts. Measured:
+`σ₂σ₁σ₃σ₂` on `λ = (2,2)` has valuation `−2` where the row form gives `+4` and
+the column form `−4`; neither extreme reaches it. **So Addendum 37's scan was
+searching for something the derivation says does not exist.**
+
+*Imported, not derived here:* Kalfagianni–Tran prove `d±[J_K(n)]` are quadratic
+quasi-polynomials in the colour, so the general `α(K,N)` has quadratic-in-`N`
+**shape** with periodic coefficients. That is a cited theorem about knots and
+fixes the shape, not the coefficients.
+
+### The Lean
+
+[`AlphaShiftOneDimChannel.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/AlphaShiftOneDimChannel.lean)
+— **7 declarations, generic `CommGroup`, no `ℝ`, nothing archimedean, no
+calibration input**; `lean`-direct exit 0, no `sorryAx`, only
+`propext`/`Quot.sound`/`Classical.choice` (one decl depends on **no axioms at
+all**).
+
+| declaration | content |
+|---|---|
+| `charOf_eq_zpow` | **the closed form** — `χ(w) = s^{writhe(w)}`; both channels are instances |
+| `val_charOf` | under any additive valuation, `val χ = writhe · val s` |
+| `abs_writhe_le_length` | `\|writhe\| ≤ length` |
+| `abs_val_le_length` | **(P1)** `α ≤ L` when the generator has valuation `±1` |
+| `writhe_conj` | writhe is conjugation-invariant — why **(P2)** is on the reduced length |
+| `abs_val_lt_length_of_cancel` | non-vacuity: the bound is **strict** on a cancelling word |
+| `writhe_ne_length` | non-vacuity: `α = letter count` is a *positive-word* fact and does not generalise |
+
+Two notes for whoever builds on it. `Mathlib.Tactic.Ring` needs an **explicit**
+import here, exactly as `Linarith`/`NormNum` did in
+`ColourWeightHullThreshold.lean` — `Algebra.Group.Basic` does not bring it.
+And `abs_val_lt_length_of_cancel` is stated **without** the `|val s| = 1`
+hypothesis: it is not needed (the writhe of `σσ⁻¹` is zero), and carrying it
+would have made the theorem look more conditional than it is.
+
+---
+
+## Addendum 40 — α_shift at intermediate colours, computed by exact integer min-plus
+
+Addendum 39 derived that on a channel of dimension `> 1` the pole order is a
+longest-path optimisation over the standard-tableau graph. This implements it.
+[`alpha_shift_min_plus_probe.py`](../../computations/meson/alpha_shift_min_plus_probe.py),
+7/7.
+
+### The computation
+
+`χ(w) = Σ_paths ∏_k (entry at step k)`, and the entry valuations are the derived
+table of Addendum 39 — `−1`/`2ρ−1` on a `σ` diagonal, `+1`/`−1` on a `σ⁻¹`
+diagonal, `0` off-diagonal. A multiplicative valuation turns each path into a
+sum of integers, so
+
+$$\mathrm{val}(\chi) \;\ge\; \min_{\text{closed paths}} \sum_k \mathrm{val}(\text{entry}_k),$$
+
+a **min-plus (tropical) matrix product**, computed here in `int` arithmetic
+only. There is **no floating point in the predictor at all**; `mpmath` appears
+solely in the independent measurement it is checked against.
+
+### 🛑 It is a BOUND, and my first version asserted an identity
+
+The probe's first run asserted `min-plus = measured` and **failed 2 of 46**. The
+theory says equality holds only when the minimal paths do not cancel, so the
+falsifiable claims are the bound *direction* and its *tightness* — not equality.
+The assertions were corrected to test those; the finding was not adjusted to fit
+the test.
+
+| | result |
+|---|---|
+| pairs evaluated | **46** (24 on channels of dimension `> 1`) |
+| bound direction `val ≥ min-plus` | **holds on every pair**, no reversal |
+| exact | **44/46 (95 %)** |
+| exact on multi-dimensional channels | **22/24** |
+| cross-check vs Addendum 39's closed forms | **reproduces both, every word** |
+
+The two misses, in full:
+
+| word | `λ` | dim | min-plus | measured | over-stated by |
+|---|---|---:|---:|---:|---:|
+| `σ₂σ₁σ₃σ₂` | `(2,1,1)` | 3 | −2 | **0** | 2 |
+| `σ₂σ₁σ₃⁻¹σ₂` | `(3,1)` | 3 | −2 | **0** | 2 |
+
+**Both are on channels of dimension `> 1`, as they must be** — a one-dimensional
+channel has a single path and nothing to cancel against. These are measured
+cancellations, not defects.
+
+### What this changes about reach
+
+The predictor is `O(L · dim²)` **in integers**. That is the point: dense
+seminormal linear algebra is what put the colour law out of reach in Addendum 38
+(the `(9,9)` block at 18 strands is 4862-dimensional in `mpmath` at 300 dps), and
+a tropical product over the same index set is arithmetic a machine does not
+strain at. **The computational obstacle Addendum 38 named is lifted for the
+valuation** — though not for the trace, and this says nothing about magnitude.
+
+### The Lean
+
+[`MinPlusValuationBound.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MinPlusValuationBound.lean)
+— 6 declarations, generic `AddCommMonoid`/`CommMonoid`, no `ℝ`, exit 0, no
+`sorryAx`.
+
+| declaration | content |
+|---|---|
+| `minVal_le_val_sum` | **the bound** — a non-archimedean valuation of a sum is at least the min over terms; this is what makes min-plus valid, and only as a bound |
+| `sumVal_eq_val_prod` | the "plus" — a multiplicative valuation turns a path's product into a sum of integers |
+| `exists_strict_of_cancel` | **non-vacuity** — two terms of equal finite valuation can cancel to `⊤`, so the bound is genuinely strict sometimes |
+| `minVal_singleton_eq` | and a one-term sum attains it, so strictness is a multi-dimensional phenomenon — matching the measurement |
+
+`pathProd` is defined locally: `List.sum` is available in this build but
+`List.prod` is not, and a local definition keeps the import surface minimal.
+(Third instance of the same class of trap on this branch, after `Linarith`/
+`NormNum` and `Ring` — in this restored cache, assume nothing is ambient.)
+
+### Scope
+
+Words up to length 4 on up to 5 strands, all partitions — **not** the atom word.
+The predictor computes a **valuation**, not a trace: it says where the pole is,
+never how big the number is. Every magnitude conclusion on this branch (§C, §E,
+§G, §H) is untouched by it.
+
+---
+
+## Addendum 41 — the atom word at every colour, computed
+
+The object that motivated the question.
+[`atom_colour_profile_probe.py`](../../computations/meson/atom_colour_profile_probe.py),
+6/6.
+
+Two extensions Addendum 40 did not need. The atom word's letters are **Hecke
+elements** `c·σ_g + d·1`, so the matrix is `c·σ_g + d·I` and each diagonal entry
+has valuation `min(val(c) + val(aᵢ), val(d))` — a min, i.e. the min-plus bound
+one level down. And `val(c)`, `val(d)` are **measured at the q being evaluated**,
+the word rebuilt at each point per Addendum 32's layer lesson.
+
+**The deuteron's coefficient valuations** — 23 letters, and the structure
+Addendum 32 found is visible directly:
+
+| `val(c)` | `val(d)` | count |
+|---:|---:|---:|
+| 0 | **−5** | **1** ← the p–n interface carrying `δ` |
+| 0 | −1 | 11 |
+| 0 | — (`d = 0`) | 11 |
+
+### The profiles
+
+| isotope | `n` | letters | `(N, α)` |
+|---|---:|---:|---|
+| ²H | 6 | 23 | `(1,27) (3,27) (5,17) (7,5)` |
+| ³H | 9 | 35 | `(2,39) (4,39) (6,29) (8,19) (10,7)` |
+| ³He | 9 | 35 | `(2,37) (4,37) (6,27) (8,15) (10,3)` |
+| ⁴He | 12 | 47 | `(1,49) (3,49) (5,49) (7,39) (9,29) (11,17) (13,5)` |
+
+**Cross-check against dense seminormal algebra at ²H: 4/4 exact** — `(6,)→−5`,
+`(5,1)→−17`, `(4,2)→−27`, `(3,3)→−27`. The `27` at `N ∈ {1,3}` reproduces
+Addendum 32's seven-way tie, which included exactly `(4,2)` and `(3,3)`.
+
+**Every profile is non-increasing in `N`** (4 of 4). Reported as an
+observation — nothing is fitted to it, and four isotopes is not a basis for a
+law.
+
+One structural reading worth recording because it is checkable rather than
+suggestive: at the **highest** colour the deuteron gives `α = 5`, and the single
+`val(d) = −5` letter is the `δ`-carrying p–n interface. At that channel the
+entire pole order is that one letter's — the all-row channel rewards `σ⁻¹` and
+suppresses everything else, leaving the anomalous coefficient as the only
+surviving pole.
+
+### Scope
+
+This is a **valuation** — where the pole sits, never how big the number is. §C,
+§E, §G and §H are magnitude results and are untouched by anything in this table.
+Four isotopes; the min-plus core is `O(L·dim²)` in `int`, which is what made
+past-⁴He reachable at all.

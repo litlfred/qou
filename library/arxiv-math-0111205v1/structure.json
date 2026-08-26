@@ -1,0 +1,884 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0111205v1",
+ "source": {
+  "file": "0111205v1.pdf",
+  "sha256": "66325a21651aff89b24b08c459728ef3e03b483d9c0108d0790da3b2da7aea32",
+  "bytes": 533959,
+  "pages": 62,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0111205",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "19 Nov 2001"
+  },
+  "doi": null,
+  "title": "From Subfactors to Categories and Topology II",
+  "authors_raw": "The Quantum Double of Tensor Categories and Subfactors",
+  "title_lines": [
+   "From Subfactors to Categories and Topology II"
+  ],
+  "abstract": "For every tensor category C there is a braided tensor category Z(C), the \u2018center\u2019 of C. It is well known to be related to Drinfel\u2019d\u2019s notion of the qu antum double of a \ufb01nite dimensional Hopf algebra H by an equivalence Z(H \u2212 mod) \u2297 \u2243br D(H) \u2212 mod of braided tensor categories. In the Hopf algebra situation, whenever D(H) \u2212 mod is semisimple (which is the case i\ufb00 D(H) is semisimple i\ufb00 H is semisimple and cosemisimple i\ufb00 S2 = id and char F \u2224 dim H) it is modular in the sense of Turaev, i.e. its S-matrix is invertible. (This was proven by Etingof and Gelaki in characteristic zer o. We give a fairly general proof in the appendix.) The present paper is concerned with a generalization of this and other results to the quantum double (center) of more general tensor categories. We consider F-linear tensor categories C with simple unit and \ufb01nitely many isomor- phism classes of simple objects. We assume that C is either a \u2217-category (i.e. F = C and there is a positive \u2217-operation on the morphisms) or semisimple and spherical ov er an al- gebraically closed \ufb01eld F. In the latter case we assume dim C \u2261 \u2211 i d(Xi)2 \u2044= 0, where the summation runs over the isomorphism classes of simple objec ts. We prove that Z(C) (i) is a semisimple spherical (or \u2217-) category and (ii) is weakly monoidally Morita equivalent (in the sense of math.CT/0111204) to C \u2297 F Cop. This implies dim Z(C) = (dim C)2. (iii) We analyze the simple objects of Z(C) in terms of certain \ufb01nite dimensional algebras, of which Ocneanu\u2019s tube algebra is the smallest. We prove the conject ure of Gelfand and Kazhdan according to which the number of simple objects of Z(C) coincides with the dimension of the state space HS1\u00d7S1 of the torus in the triangulation TQFT built from C. (iv) We prove that Z(C) is modular and we compute \u2206 \u00b1(Z(C)) \u2261\u2211 i \u03b8(Xi)\u00b11d(Xi)2 = dim C. (v) Finally, if C is already modular then Z(C) \u2297 \u2243br C \u2297 F \u02dcC \u2297 \u2243 C \u2297 F Cop, where \u02dcC is the tensor category C with the braiding \u02dccX,Y = c\u22121 Y,X . \u2217 Supported by EU ",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030173458-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0111205v1  [math.CT]  19 Nov 2001"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "It is well known to be related to Drinfel\u2019d\u2019s notion of the qu antum double of a \ufb01nite",
+   "page": 1,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Some de\ufb01nitions and notations",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Frobenius algebras and 2-categories",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The sets of 2-morphisms in E are \ufb01nite dimensional F-vector spaces and the",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "There is an equivalence HOME (A, A)",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "J and J are mutual two-sided duals, i.e. there are 2-morphisms",
+   "page": 7,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "We have",
+   "page": 7,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "E is uniquely determined up to equivalence by the above proper ties. Isomorphic",
+   "page": 7,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Unfortunately, the above statement of the theorem will no t be su\ufb03cient for our",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Quantum Double of a Tensor Category",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "On half braidings",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Elementary properties of the quantum double",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Semisimplicity of Z1(C)",
+   "page": 13,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "The r\u02c6 ole of the assumption on the dimension is obvious: If dim C = 0 then the",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Note that we do net yet know that Z1(C) has \ufb01nitely many isomorphism classes of",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Weak Morita equivalence of Z1(C) and C \u22a0 C op",
+   "page": 16,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "A Frobenius Algebra in C \u22a0 C op",
+   "page": 17,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "A fully faithful tensor functor F : Z1(C) \u2192 B",
+   "page": 18,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "F is essentially surjective",
+   "page": 25,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "It seems likely that a simpler proof of the theorem can be gi ven using the interpre-",
+   "page": 29,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Modularity of the Quantum Double",
+   "page": 29,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The \u2018Tube algebra\u2019",
+   "page": 30,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Note that in the de\ufb01nition of \u039e L we could replace \u02c6YL by",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Invertibility of the S-matrix",
+   "page": 34,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "An alternative proof of the modularity of Z1(C) and of dim Z1(C) = (dim C)2 could",
+   "page": 38,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The tensor category B = EN DE (B) de\ufb01ned in [38] is known to be equivalent to",
+   "page": 38,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(Z (2)",
+   "page": 39,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(C)) is trivial? Here C, Z (2)",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(C), Z (2)",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(C))",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Computation of the Gauss sums",
+   "page": 39,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "The representation category of a rational conformal quan tum \ufb01eld theory is a",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The quantum double of a \u2217-category",
+   "page": 41,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(C) is",
+   "page": 42,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(C) \u2282 Z 1(C) one",
+   "page": 42,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(C) that is equivalent to Z1(C) as a tensor category. Given an isomorphism",
+   "page": 42,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(C) is monoidally equivalent to Z1(C),",
+   "page": 44,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(C)",
+   "page": 44,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The quantum double of a braided category",
+   "page": 44,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "(C) \u2243 Z 1(C) is. By the above, we have",
+   "page": 48,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Applications",
+   "page": 49,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "An adjoint for the forgetful functor Z1(C) \u2192 C",
+   "page": 49,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Invariants of 3-manifolds",
+   "page": 50,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Subfactor theory: The Longo-Rehren subfactor",
+   "page": 52,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u2297 b)R\u22121",
+   "page": 56,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "For a ribbon algebra H it is trivial that T maps Z(H) into itself, since \u03b8 \u2208 Z(H). \u2737",
+   "page": 57,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 59,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 84,
+   "n_words": 15
+  },
+  {
+   "id": "sec-001-c-it-is-well-known-to-be-related-to-drinfelds-no",
+   "number": "C",
+   "title": "It is well known to be related to Drinfel\u2019d\u2019s notion of the qu antum double of a \ufb01nite",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1967,
+   "n_words": 364
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 11696,
+   "n_words": 2106
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-21-some-de\ufb01nitions-and-notations",
+   "number": "2.1",
+   "title": "Some de\ufb01nitions and notations",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1361,
+   "n_words": 279
+  },
+  {
+   "id": "sec-005-22-frobenius-algebras-and-2-categories",
+   "number": "2.2",
+   "title": "Frobenius algebras and 2-categories",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1204,
+   "n_words": 286
+  },
+  {
+   "id": "sec-006-1-the-sets-of-2-morphisms-in-e-are-\ufb01nite-dimensi",
+   "number": "1",
+   "title": "The sets of 2-morphisms in E are \ufb01nite dimensional F-vector spaces and the",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 107,
+   "n_words": 18
+  },
+  {
+   "id": "sec-007-4-there-is-an-equivalence-home-a-a",
+   "number": "4",
+   "title": "There is an equivalence HOME (A, A)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 157,
+   "n_words": 41
+  },
+  {
+   "id": "sec-008-6-j-and-j-are-mutual-two-sided-duals-ie-there-ar",
+   "number": "6",
+   "title": "J and J are mutual two-sided duals, i.e. there are 2-morphisms",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 94,
+   "n_words": 31
+  },
+  {
+   "id": "sec-009-7-we-have",
+   "number": "7",
+   "title": "We have",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 182,
+   "n_words": 66
+  },
+  {
+   "id": "sec-010-8-e-is-uniquely-determined-up-to-equivalence-by",
+   "number": "8",
+   "title": "E is uniquely determined up to equivalence by the above proper ties. Isomorphic",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1061,
+   "n_words": 202
+  },
+  {
+   "id": "sec-011-2-unfortunately-the-above-statement-of-the-theor",
+   "number": "2",
+   "title": "Unfortunately, the above statement of the theorem will no t be su\ufb03cient for our",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 419,
+   "n_words": 79
+  },
+  {
+   "id": "sec-012-3-the-quantum-double-of-a-tensor-category",
+   "number": "3",
+   "title": "The Quantum Double of a Tensor Category",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-31-on-half-braidings",
+   "number": "3.1",
+   "title": "On half braidings",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2864,
+   "n_words": 715
+  },
+  {
+   "id": "sec-014-32-elementary-properties-of-the-quantum-double",
+   "number": "3.2",
+   "title": "Elementary properties of the quantum double",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 5595,
+   "n_words": 1375
+  },
+  {
+   "id": "sec-015-33-semisimplicity-of-z1c",
+   "number": "3.3",
+   "title": "Semisimplicity of Z1(C)",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2555,
+   "n_words": 685
+  },
+  {
+   "id": "sec-016-2-the-r\u02c6-ole-of-the-assumption-on-the-dimension",
+   "number": "2",
+   "title": "The r\u02c6 ole of the assumption on the dimension is obvious: If dim C = 0 then the",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3999,
+   "n_words": 844
+  },
+  {
+   "id": "sec-017-2-note-that-we-do-net-yet-know-that-z1c-has-\ufb01nit",
+   "number": "2",
+   "title": "Note that we do net yet know that Z1(C) has \ufb01nitely many isomorphism classes of",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 52,
+   "n_words": 11
+  },
+  {
+   "id": "sec-018-4-weak-morita-equivalence-of-z1c-and-c-c-op",
+   "number": "4",
+   "title": "Weak Morita equivalence of Z1(C) and C \u22a0 C op",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-019-41-a-frobenius-algebra-in-c-c-op",
+   "number": "4.1",
+   "title": "A Frobenius Algebra in C \u22a0 C op",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 4159,
+   "n_words": 899
+  },
+  {
+   "id": "sec-020-42-a-fully-faithful-tensor-functor-f-z1c-b",
+   "number": "4.2",
+   "title": "A fully faithful tensor functor F : Z1(C) \u2192 B",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 25,
+   "n_chars": 7953,
+   "n_words": 2081
+  },
+  {
+   "id": "sec-021-43-f-is-essentially-surjective",
+   "number": "4.3",
+   "title": "F is essentially surjective",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 7801,
+   "n_words": 1825
+  },
+  {
+   "id": "sec-022-2-it-seems-likely-that-a-simpler-proof-of-the-th",
+   "number": "2",
+   "title": "It seems likely that a simpler proof of the theorem can be gi ven using the interpre-",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 115,
+   "n_words": 25
+  },
+  {
+   "id": "sec-023-5-modularity-of-the-quantum-double",
+   "number": "5",
+   "title": "Modularity of the Quantum Double",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-024-51-the-tube-algebra",
+   "number": "5.1",
+   "title": "The \u2018Tube algebra\u2019",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1856,
+   "n_words": 392
+  },
+  {
+   "id": "sec-025-2-note-that-in-the-de\ufb01nition-of-\u03be-l-we-could-rep",
+   "number": "2",
+   "title": "Note that in the de\ufb01nition of \u039e L we could replace \u02c6YL by",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 5177,
+   "n_words": 1274
+  },
+  {
+   "id": "sec-026-52-invertibility-of-the-s-matrix",
+   "number": "5.2",
+   "title": "Invertibility of the S-matrix",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 3373,
+   "n_words": 867
+  },
+  {
+   "id": "sec-027-2-an-alternative-proof-of-the-modularity-of-z1c",
+   "number": "2",
+   "title": "An alternative proof of the modularity of Z1(C) and of dim Z1(C) = (dim C)2 could",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 654,
+   "n_words": 113
+  },
+  {
+   "id": "sec-028-3-the-tensor-category-b-en-de-b-de\ufb01ned-in-38-is",
+   "number": "3",
+   "title": "The tensor category B = EN DE (B) de\ufb01ned in [38] is known to be equivalent to",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 669,
+   "n_words": 122
+  },
+  {
+   "id": "sec-029-2-c",
+   "number": "2",
+   "title": "(C))",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 1210,
+   "n_words": 238
+  },
+  {
+   "id": "sec-030-3-z-2",
+   "number": "3",
+   "title": "(Z (2)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-031-2-c-is-trivial-here-c-z-2",
+   "number": "2",
+   "title": "(C)) is trivial? Here C, Z (2)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-2-c-z-2",
+   "number": "2",
+   "title": "(C), Z (2)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 106,
+   "n_words": 16
+  },
+  {
+   "id": "sec-033-53-computation-of-the-gauss-sums",
+   "number": "5.3",
+   "title": "Computation of the Gauss sums",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3010,
+   "n_words": 737
+  },
+  {
+   "id": "sec-034-2-the-representation-category-of-a-rational-conf",
+   "number": "2",
+   "title": "The representation category of a rational conformal quan tum \ufb01eld theory is a",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 319,
+   "n_words": 70
+  },
+  {
+   "id": "sec-035-6-the-quantum-double-of-a--category",
+   "number": "6",
+   "title": "The quantum double of a \u2217-category",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 359,
+   "n_words": 71
+  },
+  {
+   "id": "sec-036-1-c-is",
+   "number": "1",
+   "title": "(C) is",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 680,
+   "n_words": 147
+  },
+  {
+   "id": "sec-037-1-c-z-1c-one",
+   "number": "1",
+   "title": "(C) \u2282 Z 1(C) one",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 13,
+   "n_words": 4
+  },
+  {
+   "id": "sec-038-1-c-that-is-equivalent-to-z1c-as-a-tensor-catego",
+   "number": "1",
+   "title": "(C) that is equivalent to Z1(C) as a tensor category. Given an isomorphism",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 2602,
+   "n_words": 604
+  },
+  {
+   "id": "sec-039-1-c-is-monoidally-equivalent-to-z1c",
+   "number": "1",
+   "title": "(C) is monoidally equivalent to Z1(C),",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 556,
+   "n_words": 135
+  },
+  {
+   "id": "sec-040-7-the-quantum-double-of-a-braided-category",
+   "number": "7",
+   "title": "The quantum double of a braided category",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 48,
+   "n_chars": 8495,
+   "n_words": 1795
+  },
+  {
+   "id": "sec-041-1-c-z-1c-is-by-the-above-we-have",
+   "number": "1",
+   "title": "(C) \u2243 Z 1(C) is. By the above, we have",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 2565,
+   "n_words": 564
+  },
+  {
+   "id": "sec-042-8-applications",
+   "number": "8",
+   "title": "Applications",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-043-81-an-adjoint-for-the-forgetful-functor-z1c-c",
+   "number": "8.1",
+   "title": "An adjoint for the forgetful functor Z1(C) \u2192 C",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 1812,
+   "n_words": 394
+  },
+  {
+   "id": "sec-044-82-invariants-of-3-manifolds",
+   "number": "8.2",
+   "title": "Invariants of 3-manifolds",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 4618,
+   "n_words": 871
+  },
+  {
+   "id": "sec-045-83-subfactor-theory-the-longo-rehren-subfactor",
+   "number": "8.3",
+   "title": "Subfactor theory: The Longo-Rehren subfactor",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 56,
+   "n_chars": 10899,
+   "n_words": 2089
+  },
+  {
+   "id": "sec-046-12-1-br1",
+   "number": "12",
+   "title": "(1 \u2297 b)R\u22121",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 1638,
+   "n_words": 362
+  },
+  {
+   "id": "sec-047-2-for-a-ribbon-algebra-h-it-is-trivial-that-t-ma",
+   "number": "2",
+   "title": "For a ribbon algebra H it is trivial that T maps Z(H) into itself, since \u03b8 \u2208 Z(H). \u2737",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 3044,
+   "n_words": 584
+  },
+  {
+   "id": "sec-048-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 62,
+   "n_chars": 6989,
+   "n_words": 1102
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 50,
+  "sections": 49,
+  "chars_total": 114073
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0810.1697v1",
+ "source": {
+  "file": "0810.1697v1.pdf",
+  "sha256": "1aef66179da3c154d15e54acfef9b7bfafc086ecbf7e51de146503faff1bcf60",
+  "bytes": 361664,
+  "pages": 14,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0810.1697",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Oct 2008"
+  },
+  "doi": null,
+  "title": "ON THE CABLE EXPANSION FORMULA QIHOU LIU",
+  "authors_raw": null,
+  "title_lines": [
+   "ON THE CABLE EXPANSION FORMULA",
+   "QIHOU LIU"
+  ],
+  "abstract": "In this paper, a generalized version of Morton\u2019s formula [8] is proved. Using this formula, one can write down the colored Jo nes polynomials of cabling of an knot in terms of the colored Jones polynomial s of the original knot.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210619213743-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Basic definitions and notations",
+   "page": 1,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The multilinear bracket",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Expansion of cables in the skein module",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 827,
+   "n_words": 144
+  },
+  {
+   "id": "sec-001-2-basic-definitions-and-notations",
+   "number": "2",
+   "title": "Basic definitions and notations",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 687,
+   "n_words": 138
+  },
+  {
+   "id": "sec-002-21-examples",
+   "number": "2.1",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2668,
+   "n_words": 528
+  },
+  {
+   "id": "sec-003-22-the-multilinear-bracket",
+   "number": "2.2",
+   "title": "The multilinear bracket",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2574,
+   "n_words": 534
+  },
+  {
+   "id": "sec-004-3-expansion-of-cables-in-the-skein-module",
+   "number": "3",
+   "title": "Expansion of cables in the skein module",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5728,
+   "n_words": 1224
+  },
+  {
+   "id": "sec-005-4-proof-of-theorem-1",
+   "number": "4",
+   "title": "Proof of Theorem 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 4271,
+   "n_words": 1033
+  },
+  {
+   "id": "sec-006-5-appendix",
+   "number": "5",
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 1469,
+   "n_words": 331
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1250,
+   "n_words": 193
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 19474
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2303.08330v2",
+ "source_sha256": "94981fa0a792b3fa",
+ "brief": "A Cable Knot and BPS-Series II John Chae — This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3)",
+ "extended": "**A Cable Knot and BPS-Series II John Chae**\n\n*University of California Davis, 1 Shields Ave, Davis, CA, 95616, USA*\n\n17 pp, 11 sections.\n\n**Abstract.** This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots . The formulas provide an insight into the cabling operation. We verify the conjecture throug h explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WR T invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3 , 3w + 1)-cabling (|w| > 3).\n\n**Outline.** Introduction; Examples; Example 1; Example 2; Dehn surgery and; Example 3; Examples; Example 1; Example 2; Appendix; The colored Jones polynomial of a cable knot",
+ "tokens": {
+  "brief": 49,
+  "extended": 261
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-examples",
+   "title": "Examples",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-example-1",
+   "title": "Example 1",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-example-2",
+   "title": "Example 2",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-dehn-surgery-and",
+   "title": "Dehn surgery and",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-example-3",
+   "title": "Example 3",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-006-examples",
+   "title": "Examples",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-007-example-1",
+   "title": "Example 1",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-008-example-2",
+   "title": "Example 2",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-009-appendix",
+   "title": "Appendix",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
+   "title": "The colored Jones polynomial of a cable knot",
+   "pages": "14-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

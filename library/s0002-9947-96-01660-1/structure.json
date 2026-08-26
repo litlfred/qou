@@ -1,0 +1,446 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s0002-9947-96-01660-1",
+ "source": {
+  "file": "S0002-9947-96-01660-1.pdf",
+  "sha256": "aa63e62b78aa50451837fffef1bce1f91596ccbf31ffb01852877fb096572dd1",
+  "bytes": 464315,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS",
+  "authors_raw": "JOHN W. BARRETT AND BRUCE W. WESTBURY",
+  "title_lines": [
+   "AMERICAN MATHEMATICAL SOCIETY",
+   "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS"
+  ],
+  "abstract": "This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signi\ufb01cant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum \ufb01eld theory and the invariant is calculated from a triangulation of the 3-manifold. The data for the construction of the invariant is a tensor category with a condition on the duals, which we have called a spherical category. The def- inition of a spherical category and a coherence theorem needed in this paper are given in [3]. There are two classes of examples of spherical categories discussed in this paper. The \ufb01rst examples are given by the quantised enveloping algebra of a semisimple Lie algebra, and the second are given by an involutive Hopf algebra. In the \ufb01rst case, the invariant for sl2 de\ufb01ned in this paper is the Turaev-Viro invariant [25]. This invariant is known to distinguish lens spaces of the same homotopy type which already shows that the invariants in this paper are not trivial. For the general case, our examples rely on the known properties of the tilting modules, in particular the dimension formula of [1]. The problem of generalising the Turaev-Viro invariant to other quantised enveloping algebras has also been considered by [5], [28] and [24]. A noteworthy feature of our construction is that it does not require a braid- ing; the notion of a spherical category is more general than the notion of a ribbon category. A simple example of this is the",
+  "docinfo": {
+   "CreationDate": "D:19960909142938",
+   "Producer": "Acrobat Distiller 2.1 for Macintosh"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "State sum models",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Spherical categories",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The functors C\u00d7C\u2192C w h i c ho no b j e c t sa r eg i v e nb y(a,b )\u21a6\u2192 (a\u2297b)\u02c6 and",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "For all morphisms, f : a\u2192b, the following diagram commutes:",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "For all objects a, the following composite is the identity map of \u02c6a:",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "For all objects a and b the following composite is required to be \u03f5(a\u2297b):",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "An orientation of each edge,",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A distinguished edge at each trivalent vertex,",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A map from edges to objects,",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A map from vertices to morphisms,",
+   "page": 6,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Symmetries of simplicial invariants",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Since the action of \u03c3 onV\u2217(e1,e 2,e 3) is the inverse of the adjoint of the action",
+   "page": 14,
+   "source": "inferred",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "This tensor product is composed with the unique iterate of the twist map P",
+   "page": 14,
+   "source": "inferred",
+   "number": "3.7"
+  },
+  {
+   "level": 1,
+   "title": "Piecewise-linear manifolds",
+   "page": 16,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A bistellar move on a manifold with boundary does not change the triangu-",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Invariants of manifolds",
+   "page": 18,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Theorem 5.1 will follow once it has been established that C(M) is invariant",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Spherical Hopf algebras",
+   "page": 22,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Any involutory Hopf algebra is spherical. The element w can be taken to be",
+   "page": 22,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Any ribbon Hopf algebra, as de\ufb01ned in [19], is spherical. The elementw can be",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The coproduct, \u2206, is de\ufb01ned by \u2206(K)= K\u2297K and \u2206(X)= X\u2297K+K\u22121\u2297X,",
+   "page": 23,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The augmentation, \u03f5, is de\ufb01ned by \u03f5(K)=1a n d \u03f5(X)=0 ,",
+   "page": 23,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3835,
+   "n_words": 631
+  },
+  {
+   "id": "sec-001-1-state-sum-models",
+   "number": "1",
+   "title": "State sum models",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5150,
+   "n_words": 894
+  },
+  {
+   "id": "sec-002-2-spherical-categories",
+   "number": "2",
+   "title": "Spherical categories",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1888,
+   "n_words": 318
+  },
+  {
+   "id": "sec-003-3-the-functors-ccc-w-h-i-c-ho-no-b-j-e-c-t-sa-r",
+   "number": "3",
+   "title": "The functors C\u00d7C\u2192C w h i c ho no b j e c t sa r eg i v e nb y(a,b )\u21a6\u2192 (a\u2297b)\u02c6 and",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 264,
+   "n_words": 44
+  },
+  {
+   "id": "sec-004-1-for-all-morphisms-f-ab-the-following-diagram-c",
+   "number": "1",
+   "title": "For all morphisms, f : a\u2192b, the following diagram commutes:",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 57,
+   "n_words": 14
+  },
+  {
+   "id": "sec-005-2-for-all-objects-a-the-following-composite-is-t",
+   "number": "2",
+   "title": "For all objects a, the following composite is the identity map of \u02c6a:",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 77,
+   "n_words": 16
+  },
+  {
+   "id": "sec-006-3-for-all-objects-a-and-b-the-following-composit",
+   "number": "3",
+   "title": "For all objects a and b the following composite is required to be \u03f5(a\u2297b):",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3556,
+   "n_words": 633
+  },
+  {
+   "id": "sec-007-1-an-orientation-of-each-edge",
+   "number": "1",
+   "title": "An orientation of each edge,",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-2-a-distinguished-edge-at-each-trivalent-vertex",
+   "number": "2",
+   "title": "A distinguished edge at each trivalent vertex,",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-3-a-map-from-edges-to-objects",
+   "number": "3",
+   "title": "A map from edges to objects,",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-4-a-map-from-vertices-to-morphisms",
+   "number": "4",
+   "title": "A map from vertices to morphisms,",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4447,
+   "n_words": 778
+  },
+  {
+   "id": "sec-011-3-symmetries-of-simplicial-invariants",
+   "number": "3",
+   "title": "Symmetries of simplicial invariants",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 8727,
+   "n_words": 1525
+  },
+  {
+   "id": "sec-012-16-since-the-action-of-\u03c3-onve1e-2e-3-is-the-inve",
+   "number": "1.6",
+   "title": "Since the action of \u03c3 onV\u2217(e1,e 2,e 3) is the inverse of the adjoint of the action",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1358,
+   "n_words": 238
+  },
+  {
+   "id": "sec-013-37-this-tensor-product-is-composed-with-the-uniq",
+   "number": "3.7",
+   "title": "This tensor product is composed with the unique iterate of the twist map P",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3212,
+   "n_words": 603
+  },
+  {
+   "id": "sec-014-4-piecewise-linear-manifolds",
+   "number": "4",
+   "title": "Piecewise-linear manifolds",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1233,
+   "n_words": 222
+  },
+  {
+   "id": "sec-015-2-a-bistellar-move-on-a-manifold-with-boundary-d",
+   "number": "2",
+   "title": "A bistellar move on a manifold with boundary does not change the triangu-",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3066,
+   "n_words": 543
+  },
+  {
+   "id": "sec-016-5-invariants-of-manifolds",
+   "number": "5",
+   "title": "Invariants of manifolds",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3910,
+   "n_words": 698
+  },
+  {
+   "id": "sec-017-51-theorem-51-will-follow-once-it-has-been-estab",
+   "number": "5.1",
+   "title": "Theorem 5.1 will follow once it has been established that C(M) is invariant",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 6629,
+   "n_words": 1136
+  },
+  {
+   "id": "sec-018-6-spherical-hopf-algebras",
+   "number": "6",
+   "title": "Spherical Hopf algebras",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 675,
+   "n_words": 128
+  },
+  {
+   "id": "sec-019-1-any-involutory-hopf-algebra-is-spherical-the-e",
+   "number": "1",
+   "title": "Any involutory Hopf algebra is spherical. The element w can be taken to be",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-020-2-any-ribbon-hopf-algebra-as-de\ufb01ned-in-19-is-sph",
+   "number": "2",
+   "title": "Any ribbon Hopf algebra, as de\ufb01ned in [19], is spherical. The elementw can be",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1174,
+   "n_words": 220
+  },
+  {
+   "id": "sec-021-1-the-coproduct-is-de\ufb01ned-by-k-kk-and-x-xkk1x",
+   "number": "1",
+   "title": "The coproduct, \u2206, is de\ufb01ned by \u2206(K)= K\u2297K and \u2206(X)= X\u2297K+K\u22121\u2297X,",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-022-2-the-augmentation-\u03f5-is-de\ufb01ned-by-\u03f5k1a-n-d-\u03f5x0",
+   "number": "2",
+   "title": "The augmentation, \u03f5, is de\ufb01ned by \u03f5(K)=1a n d \u03f5(X)=0 ,",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 6976,
+   "n_words": 1169
+  },
+  {
+   "id": "sec-023-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 4285,
+   "n_words": 725
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 24,
+  "chars_total": 60521
+ }
+}
