@@ -35,6 +35,10 @@ can be lifted upstream verbatim.  Companion module:
   `drinfeldIso` and its naturality.
 * `rightAdjointMate_congr_dual` — the mate is independent of the choice of dual, up to
   `rightDualIso`.  Mathlib has no naturality lemma for `rightDualIso`.
+* `rightDualIso_hom_unique` / `rightDualIso_hom_trans` — the comparison of two right duals is
+  *uniquely* determined by commuting with the evaluations, and such comparisons compose.  Mathlib
+  carries `rightDualIso` and `rightDualIso_id` and nothing else about it; uniqueness is what makes
+  the comparison usable, since it turns "construct the map" into "check one identity".
 * `swap_mate_mate` — the double mate against swapped pairings is the identity; the braided form of
   Mathlib's "left adjoint mate of the right adjoint mate is the morphism itself" entry.
 * `PivotalCategory.ofPointwise` / `pivotor_naturality` — the functorial form and the pointwise form
@@ -223,6 +227,31 @@ theorem whiskerRight_evaluation_injective {X Y Y' : C} [ExactPairing Y' Y] :
   have h := congrArg (tensorRightHomEquiv X Y' Y (𝟙_ C)) hab
   rw [tensorRightHomEquiv_whiskerRight_evaluation, tensorRightHomEquiv_whiskerRight_evaluation] at h
   exact (cancel_mono _).mp h
+
+/-- **The evaluation identity that characterises `rightDualIso`.**  `rightAdjointMate` of the
+identity, read through `rightAdjointMate_comp_evaluation`. -/
+theorem rightDualIso_hom_evaluation {A B₁ B₂ : C}
+    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
+    (((rightDualIso p₁ p₂).hom) ▷ A) ≫ ε_ A B₂ = ε_ A B₁ := by
+  simpa using (@rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+
+/-- **The comparison of two right duals is unique.**  Any map commuting with the evaluations *is*
+`rightDualIso`.  Mathlib has `rightDualIso` and `rightDualIso_id` and nothing else about it, so
+this is the missing characterisation — and it is what makes the comparison usable in proofs, since
+it turns "construct the map" into "check one identity". -/
+theorem rightDualIso_hom_unique {A B₁ B₂ : C}
+    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂)
+    (f : B₁ ⟶ B₂) (h : (f ▷ A) ≫ ε_ A B₂ = ε_ A B₁) :
+    f = (rightDualIso p₁ p₂).hom :=
+  whiskerRight_evaluation_injective (h.trans (rightDualIso_hom_evaluation p₁ p₂).symm)
+
+/-- **Comparisons of right duals compose.**  Immediate from uniqueness. -/
+theorem rightDualIso_hom_trans {A B₁ B₂ B₃ : C}
+    (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) (p₃ : ExactPairing A B₃) :
+    (rightDualIso p₁ p₂).hom ≫ (rightDualIso p₂ p₃).hom = (rightDualIso p₁ p₃).hom := by
+  refine rightDualIso_hom_unique p₁ p₃ _ ?_
+  rw [comp_whiskerRight, Category.assoc, rightDualIso_hom_evaluation,
+      rightDualIso_hom_evaluation]
 
 end Evaluation
 
