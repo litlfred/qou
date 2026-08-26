@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T21:37:10Z
+updated_at: 2026-08-26T21:51:54Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -229,3 +229,31 @@ per-shape ratio is in place, the identity is not.
 
 Corpus-grep before claiming this open: `udmw` is a *different* telescope
 (AJFigureEight / Andersen–Kashaev), not this one.
+
+
+### CORRECTION to the entry above — "every ingredient of the per-shape ratio is
+### now in place" was WRONG
+
+I wrote that one commit ago. It is not right, and the distinction changes the
+scoping.
+
+`rowFactor_addBoxRow_same_row` gives the receiving row as a product over
+**shifted** hooks, `∏_{j<λ_r} (1 − X·Q^{c(r,j)}) / (1 − Q^{h_λ(r,j)+1})`. That
+is not expressible in terms of `rowFactor Q X λ r`, which is the same product
+over **unshifted** hooks. Relating them means evaluating
+`∏_j (1 − Q^h)/(1 − Q^{h+1})` over row `r`, which collapses only because of what
+a row's hook lengths actually are — the hook-walk. **That is the substance of
+(P), not its bookkeeping.**
+
+So the remaining work is TWO things, not one:
+
+1. the hook-shift collapse over a row, and
+2. the sum over addable corners.
+
+What landed (§5, §6 of the PR) is genuinely reusable and is less of (P) than I
+claimed. `nLambda_addBoxRow : n(λ + box in row r) = n(λ) + r` is the prefactor's
+share and is complete; the denominators are not.
+
+Recording it here rather than only in the PR body because this bean is what a
+later agent greps, and "all the ingredients are in place" would send them in
+expecting an assembly job.
