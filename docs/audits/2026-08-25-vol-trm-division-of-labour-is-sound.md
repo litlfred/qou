@@ -567,3 +567,95 @@ would misrepresent an absence as a measured zero. Branch rows now carry the
 solver status and the boolean, no volume field; only the calibration, a genuine
 measurement, carries a number, taken at ~212 bits where its digits are real.
 `precision-gates.sh --changed`: **all blocking gates green.**
+
+---
+
+## Addendum 8 — the design question, answered from inside the framework (2026-08-26)
+
+Asked to investigate whether the mass law wants a different geometric functor for
+non-link carriers, or a different carrier. **Neither. `Geom` is simply undefined
+on the carriers it is being applied to.**
+
+### The framework already states the rule — and applies it elsewhere
+
+`prop:hoefsmit-scattering-pipeline` Stage 3 makes `Geom(K)` a **three-way case
+split** on geometric type, with *different physical meanings*:
+
+| case | `Geom(K)` | meaning |
+|---|---|---|
+| **hyperbolic** | `Vol(K)/ℏ_q²` | mass / energy |
+| **torus** | `CS(K)·ℏ_q²` | coupling phase |
+| **unknot** | `0` | vacuum |
+
+And [`em-coupling-chern-simons.md`](../../content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md)
+**applies it**, verbatim:
+
+> *"The torus knots `T_{2,9}` and `T_{3,5}` are **non-hyperbolic**. Their τ-image
+> geometric invariant is the **Chern–Simons functional, not the hyperbolic
+> volume**."*
+
+So the framework does not need a new functor for non-hyperbolic carriers. It has
+one, states when to switch, and switches correctly — **in the α_EM sector**.
+
+### But no case covers the atom carriers
+
+Non-hyperbolic is not the same as torus. By Nielsen–Thurston a non-hyperbolic
+closure is torus **or reducible**, and a **connected sum is in neither** — Stage 3
+has no case for it. Measured
+([`atom_branch_geom_case_probe.py`](../../computations/meson/atom_branch_geom_case_probe.py),
+3 assertions):
+
+| isotope | branches | prime | **composite** | prime summands each |
+|---|---:|---:|---:|---:|
+| proton | 4 | 0 | **4** | 2 |
+| neutron | 4 | 0 | **4** | 2 |
+| deuteron | 32 | 0 | **32** | **5** |
+
+**40 of 40 composite. Zero prime.** Controls: the granny knot (trefoil # trefoil)
+splits into 2, the trefoil does not split.
+
+So the `Vol(𝓑₃)` substitution is **not picking the wrong case of the split —
+there is no case to pick.** Even the CS branch does not rescue it: `CS` is stated
+for *torus* knots, and these are composites of them.
+
+### Why there is no volume, mechanically
+
+Hyperbolic volume is **additive under connected sum** (Thurston):
+`Vol(K₁ # K₂) = Vol(K₁) + Vol(K₂)`. Each branch decomposes into summands that are
+themselves non-hyperbolic, so the sum of their volumes is zero. That is *why*
+Addendum 7's forty `degenerate` verdicts came out the way they did — the two
+measurements agree, and this one supplies the mechanism.
+
+Note the exact regularity: **the summand count equals the number of averaged
+letters** — 2 for the proton and neutron, 5 for the deuteron, uniform across all
+32 of its branches. Recorded as an observation; the natural reading is one
+connected-sum factor per maximal single-generator block, but that is not measured
+here.
+
+### A correction to Addendum 6, in the sibling's favour
+
+Addendum 6 reported that the sibling audit's stated reason — *"each branch braid
+is monotone, so its closure is a connected sum of `(2,k)` torus links"* — did not
+reproduce under either reading of "monotone" I tested. That stands. **But their
+conclusion is now independently confirmed by direct measurement: the closures
+*are* connected sums, 40 of 40.** The reasoning step I could not reproduce led to
+a correct result, and it is only fair to say so.
+
+### What this leaves
+
+The mass law reads `Geom(K)` for a `K` on which `Geom` has no defined value. That
+is not a bug in a producer, and it is not fixed by choosing the other branch of
+the split. It is a gap in Stage 3 itself: **the case analysis is incomplete for
+composite carriers**, and the framework's own carriers are all composite.
+
+Two directions, both for the author — neither is a computation:
+
+1. **Extend the split.** Give `Geom` a composite case. Additivity of volume makes
+   `Σᵢ Geom(Kᵢ)` the natural candidate, and for these carriers it is `0` — which
+   would say the atom carriers contribute no mass through this functor at all.
+2. **Change the carrier.** Require the atom's `K` to be prime and hyperbolic,
+   which the current `atom_braid_word_3A` construction does not produce in any
+   branch.
+
+Bean `qou-7p7d`. Obstruction A is unchanged in substance and now has its
+mechanism: composite ⇒ additive ⇒ zero.
