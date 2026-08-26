@@ -31,8 +31,35 @@ LaTeX label: `prop:q-beta-cos-resummation`
 namespace QOU.Interactions
 
 /-- Markov-Jones parameter `z(q) = 1 / (√q + 1/√q)`. (Defined locally to
-    avoid a circular import with `QBetaSpectralBridge`; the two `markovZ`
-    definitions agree by `rfl`.) -/
+    avoid a circular import with `QBetaSpectralBridge`.)
+
+    **Convention C, deliberately, and this file cannot be migrated to D by
+    swapping the body** (bean `qou-cxjq`, 2026-08-26).
+
+    `markovZ` here is `1/(√q + 1/√q) = √q/(q+1)` — convention C. The
+    migration was attempted and **Lean rejected it**, which turned out to be
+    the right answer rather than a proof-engineering problem: the file's
+    bar-antisymmetry result needs `z` to be **bar-even**, and
+
+      z_C(1/q) = z_C(q)   identically,
+      z_D(1/q) = 1/(q³+q) ≠ q³/(q²+1) = z_D(q)   except at q = 1.
+
+    `z_D` is neither bar-even nor bar-odd. So `F(1/q) = -F(q)` is **true for
+    C and false for D** — a theorem that does not survive the convention
+    change, not a proof that needs repairing. Migrating this file means
+    re-deriving what replaces bar-antisymmetry under D, under a distinct
+    name; the C statement stays correct **for C** and keeps its name.
+
+    Converges independently with `qou-1oxx` ("the canonical p-n convention
+    is not bar-invariant") and `QOU.QBeta.ZBarParity`, reached from the p-n
+    side rather than the Markov parameter.
+
+    **The `rfl` agreement with `QBetaSpectralBridge.markovZ` is GONE**, and that
+    is the point: that sibling migrated to D in this same tranche, so the two
+    `markovZ` definitions now differ. The original docstring's claim that they
+    "agree by `rfl`" has been removed rather than left to rot — it was true and
+    is no longer, which is exactly the kind of stale cross-reference the
+    five-way `markovZ` overload was built out of. -/
 noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Hecke-Skein quantum-integer differential `h(q) = q - q⁻¹`. -/

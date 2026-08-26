@@ -80,7 +80,7 @@ This is a direct consequence of Markov axiom M3:
 applied iteratively to stabilise the disjoint strands. -/
 
 /-- The Markov-Jones parameter z = 1 / (√q + 1/√q). -/
-noncomputable def markovZc (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+noncomputable def markovZc (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- **Single-strand disjoint-stabilisation (Markov axiom M3).**
 

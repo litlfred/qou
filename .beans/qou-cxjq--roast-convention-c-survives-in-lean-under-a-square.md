@@ -1,11 +1,11 @@
 ---
 # qou-cxjq
 title: 'ROAST: convention C survives in Lean under a square-root variable — the 2026-08-10 all-clear is false'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T05:27:06Z
-updated_at: 2026-08-26T07:44:02Z
+updated_at: 2026-08-26T16:10:48Z
 ---
 
 Found by the F1 agent (`qou-39bx`) while tracing where the deuteron's 27%
@@ -144,3 +144,141 @@ deuteron figure, but no citation of it as D-backing has been demonstrated — th
 is the hazard, and it is unmeasured.
 
 Audit: `docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`.
+
+
+---
+
+## Step 3 STARTED (owner said go). The structural gate is proved; migration under way.
+
+**PR [#5828]. Branch restarted from main** — #5812 merged, so per the merged-PR
+rule this is a fresh change on the same branch name (force-with-lease over
+already-merged history only).
+
+### The gate: conventions C and D are separated by the KERNEL'S RANGE
+
+Both are built from one kernel `g u = u/(u²+1)` (the generic Tier-2 `markovZ`):
+
+    z_C q = √q/(q+1)   = g(√q)
+    z_D q = q³/(q²+1)  = q² · g(q)
+
+`g` is bounded by `1/2` (from `0 ≤ (u−1)²`); `z_D q − 1/2` has numerator
+`(q−1)(2q²+q+1)`, so `z_D q > 1/2` for every `q > 1`. Hence **for every q > 1 no
+real `u` at all satisfies `g u = z_D q`** — D is outside the kernel's range, not
+at a different point of it. They touch only at `q = 1`.
+
+`QOU/BraidKnot/MarkovConventionSeparation.lean`, 9 declarations, `lean`-direct
+exit 0, `#print axioms` = `[propext, Classical.choice, Quot.sound]` on all six
+theorems, no `sorryAx`.
+
+**Three consequences, in increasing order of work saved:**
+1. *"Never substitute `s² = q`"* is now a **theorem**, not a caution.
+2. **The Tier-2 migration baked C in structurally.** I had recorded it as
+   "removed the square root and left C harder to see". It is stronger: the shape
+   it migrated to has real range `[−1/2, 1/2]`, which **excludes** D for every
+   `q > 1`. The generic form is not convention-neutral.
+3. **The 9 `C-sqrtvar` sites cannot be repaired by re-instantiating** — the
+   definition *shape* must change, from `g` to `q²·g q`.
+
+### DESIGN DECISION — never mutate `markovZ` in place to mean D
+
+The tempting migration is to edit each definition's body from C to D and stop.
+**That is the defect this whole bean is about**, one turn later: it would
+silently change what every existing theorem *name* means, which is exactly how
+five `markovZ` declarations came to span two conventions. So:
+
+- **A site with no dependent statements** may be migrated in place — but the
+  convention must be **named in the docstring**, never left to be inferred from
+  the formula.
+- **A site whose theorems depend on it** does NOT get an in-place body swap. The
+  C object keeps its name and its theorems (they are correct **for C**); D is
+  introduced under a **distinct** name; convention-sensitive results are
+  re-derived rather than renamed.
+
+### Progress
+
+Site 1/14 — `mass-theory/skein-polynomial-transfer-matrix.lean`
+`tracedVolumeFromMatrix`. Chosen first as the pattern-setter because it is the
+minimal case: **zero references anywhere in the tree**, and none of the file's
+three theorems mentions it, so nothing silently changes meaning. Migrated in
+place with the convention named and the separation theorem cited.
+
+13 sites remain (5 `C-sqrtvar`, 8 `C-plain`), ~3,600 lines and ~115 theorems.
+This is genuinely multi-tranche work; the count is measured by
+`scripts/lean-markov-convention-audit.py --selftest`, which will drop as sites
+land and whose `KNOWN_C` must be edited in the same commit that migrates a site.
+
+
+## RESOLVED 2026-08-26 — actionable convention-C definitions in Lean: 14 -> 0
+
+PR #5828 (branch `claude/isotope-mass-binding-dashboard-kdvhz6`).
+
+**Step 1-2 (measure).** 22 convention-C *definitions* across 18 files, against
+24 in convention D — roughly half the Markov-parameter definitions in the Lean
+tree. Quote `defs`, not sites: the scanner reports 150 sites, but a `q³/(q²+1)`
+in a proof *mentions* a convention while one in a `def` body *defines* it.
+Triage 14 actionable / 8 deliberate. New instrument:
+`scripts/lean-markov-convention-audit.py` (the Python producer audit is four
+`rglob("*.py")` calls and structurally cannot do this).
+
+**Step 3 (the gate, formalize-first).** `QOU/BraidKnot/MarkovConventionSeparation.lean`,
+9 declarations sorry-free. Both conventions are built from one kernel
+`g u = u/(u²+1)`: `z_C = g(√q)`, `z_D = q²·g(q)`. `g` has real range
+`[−1/2, 1/2]`; `z_D − 1/2` has numerator `(q−1)(2q²+q+1)`, so `z_D > 1/2` for
+every `q > 1`. Hence **no real `u` at all** gives `g u = z_D q` above `q = 1`
+(`no_kernel_instantiation_is_conventionD`). Consequences: "never substitute
+`s² = q`" is a theorem; the 2026-08-03 Tier-2 migration baked C in
+*structurally* (the generic shape it migrated to cannot reach D); and a
+`C-sqrtvar` site needs a SHAPE change, not a re-instantiation.
+
+**Step 4 (migrate).** 13 sites migrated, `lean`-direct exit 0 and axiom-clean
+on each. One scoped deliberate-C with its reason (`q-beta-cos-resummation` —
+its result needs `z` bar-even, which D is not). One left C by design
+(`BorromeanCanonicalTraceDerivation`, below).
+
+### What was learned, beyond the count
+
+- **D removes work.** It eliminates every `Real.sqrt` from the canonical Markov
+  tower; `z_pos` collapses to `positivity`, and a deferred rpow-normalisation
+  bridge collapsed to `field_simp; ring`.
+- **Theorems do not survive; proofs do not need patches.** Bar parity is the
+  recurring casualty: `z_C` bar-EVEN, `z_D` bar-COVARIANT of weight −4
+  (`z_D(1/q) = z_D(q)/q⁴`). Killed the bar-antisymmetry result in
+  `q-beta-cos-resummation` and the named `markovZ_bar` in
+  `ClosedFormInterfaceFactors`. Independently corroborated from the p-n side by
+  `qou-1oxx`.
+- **Two defects found that the convention change did NOT cause.**
+  (1) `ClosedFormInterfaceFactors` called `z − h/2` "the bar-invariant average"
+  using "bar" for two different involutions (`q ↦ q⁻¹` vs crossing reversal
+  `σ ↦ σ⁻¹`); it is invariant under NEITHER convention for the first, so the
+  epithet was wrong under C too. (2) Taxonomy #15: the detector could not see
+  `instance` field assignments, hiding `markovTraceTower_canonical` — the
+  canonical tower. The count went UP, 17 -> 18.
+
+### The last site: deliberate, not migrated
+
+`BorromeanCanonicalTraceDerivation.zMarkov` stays C. The file derives the C
+value so `conventionD_ne_conventionC` has something to compare against; its
+`wden`/`wnum*` are the solution of the 3×3 Markov system at THAT `z`. Fixed at
+the source (the definition now announces itself) rather than by widening the
+scanner. Taxonomy #8/#16: intent stated in a module header or on a downstream
+consumer is outside a walk-back window by construction.
+
+**A near-miss recorded in full** (`docs/audits/2026-08-15-detector-blindness-taxonomy.md`
+entry 8): that file's "convention D" is given as the TL/Jones weight triple, and
+reading `1/[2]` off its shape gives `q/(q²+1) = 0.49729`, not D's `0.61269` —
+a complete Lean-backed argument that the corpus uses "convention D" for two
+different objects, with a live mis-citation in `qou-mass` downstream. **It is
+wrong.** The `z` those weights actually imply, against the character values the
+file itself uses, is `(q³+q)/(q+q⁻¹)² = q³/(q²+1)` — exactly D. Verified in
+exact sympy both directions before writing anything down. Nothing in the corpus
+is wrong.
+
+### Not closed by this bean
+
+- `qou-cds1` — the `c_k` ladder's NUMERICAL re-derivation under D lives in the
+  Python producers (`qbeta_ck_cache.py`). `QBetaCategoricalPrecisionLadder` now
+  *compiles* under D, which is much weaker than it sounds. Every `c_k`
+  conclusion stays C-conditional.
+- `ClosedFormInterfaceFactors` is still written in `s` with `q = s²`. That
+  apparatus existed solely to spell `√q` without `Real.sqrt`; D has no square
+  root, so it is vestigial. Rewriting 22 theorems in `q` is a separate change.

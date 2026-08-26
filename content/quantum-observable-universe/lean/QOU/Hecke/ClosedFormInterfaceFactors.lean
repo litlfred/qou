@@ -7,29 +7,59 @@ the algebraic layer of the Phase-5q closed form
   tr_M(𝓑_K) = tr_M³(𝓑_p)^Z · tr_M³(𝓑_n)^N · ∏_i f_i(q),
   f_pp = z,   f_nn = z − h,   f_pn = z − h·(1/2 − δ(q)/4),
 
-with Markov parameter `z = 1/(√q + 1/√q)`, Hecke skein parameter
+with Markov parameter `z = q³/(q²+1)` (**convention D**, canonical per the
+owner ruling of 2026-08-15), Hecke skein parameter
 `h = q − q⁻¹`, and the PROVEN leading flavor split
 `δ(q) = (q−1)²·(1−q⁻⁴)/3` (prop:flavor-split-substrate; the posited
 subleading `(1+ℏ_q³)` correction was de-wired 2026-06-29 and is NOT used).
 
-To avoid `Real.sqrt` (which would cross the substrate→archimedean wall),
-everything is stated in the square-root variable `s` with `q = s²` over a
-generic `{R : Type u} [Field R]`:
+Everything is stated in the variable `s` with `q = s²` over a generic
+`{R : Type u} [Field R]`:
 
-  z = s/(s²+1) = 1/(s + s⁻¹),   h = s² − s⁻²,
+  z = s⁶/(s⁴+1),   h = s² − s⁻²,
   δ = (s²−1)²·(1 − s⁻⁸)/3.
+
+**The `s` substitution is now vestigial.** It existed to express `√q` without
+`Real.sqrt`, so the file could stay on the substrate side of the AGENTS.md §7c
+wall while carrying convention C's `z = 1/(√q + 1/√q)`. Convention D has no
+square root in it, so `s` buys nothing here any more; rewriting the file in `q`
+is a separate follow-up (see the `markovZ` docstring). Migrated 2026-08-26,
+bean `qou-cxjq` — this module's header is where that bean started, because it
+stated the substitution in plain English and every detector read past it.
+
+## Two different involutions are both called "bar" in this file
+
+Read the word with its object attached; they are not the same map and one is
+convention-dependent while the other is not.
+
+* **The `q`-bar**, `q ↦ q⁻¹` (in `s`: `s ↦ s⁻¹`). This is §3's subject, and it
+  is the one the convention change moves.
+* **The skein bar**, crossing reversal `σ ↦ σ⁻¹`. This is what "bar-symmetric"
+  means in `QOU.BraidKnot.interface_knot_markov_z_bar_symmetric`, which is
+  about `τ_M(α·(σ + σ⁻¹)) = (2z − h)·τ_M(α)`, and it is what the §5 epithets
+  mean. It is a statement about crossings, not about `q`, so it survives any
+  convention for `z` untouched.
+
+`z − h/2` is symmetric under the **skein** bar (it is the average of the two
+chiralities) and is **not** invariant under the **`q`**-bar — under either
+convention, since `q`-bar fixes `z` under C and scales it under D while
+flipping the sign of `h` in both. Two §5 docstrings said "bar-invariant"
+meaning the first and were readable as the second; corrected 2026-08-26.
 
 ## What is proved sorry-free here
 
-* the √q form of the Markov parameter (`markovZ_eq_inv_sqrt_sum`);
-* bar-involution behaviour under `s ↦ s⁻¹` (i.e. `q ↦ q⁻¹`): `z` bar-even,
-  `h` bar-odd, `δ(q⁻¹) = −q²·δ(q)`, and the induced swap on the factors;
+* the defining form of the Markov parameter, `z_D = q²·(q + q⁻¹)⁻¹`
+  (`markovZ_eq_sq_mul_inv_sum`);
+* `q`-bar behaviour under `s ↦ s⁻¹`: `z` bar-COVARIANT of weight `−4`
+  (`z(q⁻¹) = z(q)/q⁴`), `h` bar-odd, `δ(q⁻¹) = −q²·δ(q)`, and the induced
+  action on the factors;
 * the exact cubic-vanishing factorization
   `δ = (q−1)³(q³+q²+q+1)/(3q⁴)` — third-order zero at `q = 1` — and the
   structural identity `δ = ℏ_q²·h·[2]_q/3`;
 * factor algebra: `f_pp·f_nn = z² − z·h`, `f_pp + f_nn = 2z − h`,
   `f_pn = (f_pp+f_nn)/2 + h·δ/4` (bring-color-weighted p-n factor =
-  bar-invariant average + flavor-split correction), and the division-free
+  skein-symmetric chirality average + flavor-split correction), and the
+  division-free
   bridging form `4·f_pn = 4z − (2−δ)·h`;
 * confluence at `q = 1`: all three factors collapse to `z(1) = 1/2`-slot
   value `markovZ 1` (since `h(1) = 0`);
@@ -62,13 +92,13 @@ This module proves the complete algebraic layer downstream of that step.
 
 The ABSTRACT fold form of the interface product is already formalized in
 `mass-theory/interface-knot-markov-z.lean` (`interfaceTrace` over
-`List Bool` with generic `z`/`z−h`, plus the bar-symmetric averaged
+`List Bool` with generic `z`/`z−h`, plus the skein-bar-symmetric averaged
 `2z−h` form) — that module carried the bean-`s1ik` subsumption finding
 (PR #3329), together with the Phase-5l constituent multiplicativity
 proved separately. THIS module is the EXPLICIT-factor complement, not a
 duplicate: it names the three bond kinds with the proven flavor split
 `δ(q)` (so `f_pn = (f_pp+f_nn)/2 + h·δ/4`, absent from the abstract
-fold), proves per-factor bar-involution behaviour and the `δ` cubic
+fold), proves per-factor `q`-bar behaviour and the `δ` cubic
 factorization, assembles the canonical `Z/N` product, and bridges each
 named factor to the `MarkovTrace` class via the `(c, d)` bond data of
 `MarkovBondFactor.lean`.
@@ -96,10 +126,27 @@ variable {R : Type u} [Field R]
 
 /-! ## §1. The primary parameters in the square-root variable `s` (q = s²) -/
 
-/-- Markov parameter `z = 1/(√q + 1/√q)` written as the rational function
-`s/(s²+1)` in the square-root variable `s` (so no `Real.sqrt` is needed —
-per AGENTS.md §7c this stays on the substrate side of the wall). -/
-def markovZ (s : R) : R := s / (s ^ 2 + 1)
+/-- Markov parameter in **convention D**, `z_D = q³/(q²+1)`, written in the
+square-root variable `s` (`q = s²`) as `s⁶/(s⁴+1)`.
+
+**Migrated from convention C 2026-08-26 (bean `qou-cxjq`).** This read
+`s/(s²+1)`, which at `q = s²` is `√q/(q+1)` — convention C. This file's
+docstring is where the whole bean started: it states the `s`-substitution in
+plain English, and every detector missed it because the convention was hidden by
+a change of variable rather than a change of form.
+
+**The `s` apparatus is now VESTIGIAL, and that is the follow-up this commit does
+not do.** The entire reason for `s` was to express `√q` without `Real.sqrt`, so
+the file could stay on the substrate side of the AGENTS.md §7c wall. Convention D
+has no square root in it at all — `q³/(q²+1)` is rational in `q` directly — so
+the substitution buys nothing here any more, and `s⁶/(s⁴+1)` is strictly uglier
+than the `q` form it encodes. Rewriting the file in `q` is the right cleanup and
+is a separate, larger change across 22 theorems; doing it in the same commit as
+the convention migration would make both unreviewable.
+
+Migrated in place because this module has **zero importers** — verified by module
+import, not by name grep — so no recorded statement outside it changes meaning. -/
+def markovZ (s : R) : R := s ^ 6 / (s ^ 4 + 1)
 
 /-- Hecke skein parameter `h = q − q⁻¹ = s² − s⁻²`. -/
 def heckeH (s : R) : R := s ^ 2 - (s ^ 2)⁻¹
@@ -131,12 +178,24 @@ def fPN (s : R) : R := markovZ s - heckeH s * (1 / 2 - flavorDelta s / 4)
 
 /-! ## §3. √q form and bar-involution behaviour (`s ↦ s⁻¹`, i.e. `q ↦ q⁻¹`) -/
 
-/-- `z = 1/(√q + 1/√q)`: the defining form of the Markov parameter. -/
-theorem markovZ_eq_inv_sqrt_sum (s : R) (hs : s ≠ 0) :
-    markovZ s = (s + s⁻¹)⁻¹ := by
-  have h : s + s⁻¹ = (s ^ 2 + 1) / s := by
-    field_simp
-  rw [markovZ, h, inv_div]
+/-- **`z_D = q² · (q + q⁻¹)⁻¹`**: the defining form of the Markov parameter in
+convention D, written in `s` with `q = s²`.
+
+**Replaces `markovZ_eq_inv_sqrt_sum` (2026-08-26, bean `qou-cxjq`).** That
+theorem said `z = (s + s⁻¹)⁻¹`, i.e. `1/(√q + 1/√q)` — the convention-C defining
+identity. It is **false** under convention D and was re-derived, not repaired:
+`(s + s⁻¹)⁻¹ = s/(s²+1) = √q/(q+1)`, which is convention C by definition.
+
+The D form keeps the same `1/(x + x⁻¹)` shape but evaluates it at `x = q` rather
+than `x = √q`, and rescales by `q²` — which is exactly the factorisation
+`z_D = q² · g(q)` of `QOU.BraidKnot.markovZD_eq_sq_mul_kernel`. The rescaling is
+not cosmetic: no argument at all sends `g` to `z_D`, by
+`no_kernel_instantiation_is_conventionD`. -/
+theorem markovZ_eq_sq_mul_inv_sum (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    markovZ s = (s ^ 2) ^ 2 * (s ^ 2 + (s ^ 2)⁻¹)⁻¹ := by
+  unfold markovZ
+  have hs2 : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  field_simp
 
 /-- Helper: `(s⁻¹)² + 1` is a unit multiple of `s² + 1`. -/
 theorem inv_sq_add_one_eq (s : R) (hs : s ≠ 0) :
@@ -144,15 +203,39 @@ theorem inv_sq_add_one_eq (s : R) (hs : s ≠ 0) :
   field_simp
   ring
 
-/-- **`z` is bar-even**: `z(q⁻¹) = z(q)` — the Markov parameter is invariant
-under the bar involution `q ↦ q⁻¹` (`s ↦ s⁻¹`). -/
-theorem markovZ_bar (s : R) (hs : s ≠ 0) (h1 : s ^ 2 + 1 ≠ 0) :
-    markovZ s⁻¹ = markovZ s := by
-  have h2 : (s⁻¹) ^ 2 + 1 ≠ 0 := by
-    rw [inv_sq_add_one_eq s hs]
-    exact mul_ne_zero (inv_ne_zero (pow_ne_zero 2 hs)) h1
+/-- **`z_D` is bar-COVARIANT of weight `−4`, not bar-even**:
+`z_D(q⁻¹) = z_D(q) / q⁴` (in `s`: divided by `s⁸`).
+
+**Replaces `markovZ_bar` (2026-08-26, bean `qou-cxjq`), which does not survive
+the convention change.** That theorem asserted `z(q⁻¹) = z(q)` — *"`z` is
+bar-even"* — and it is a genuine property of convention C:
+`z_C(q⁻¹) = √(q⁻¹)/(q⁻¹+1) = √q/(q+1) = z_C(q)` identically. Convention D is
+neither bar-even nor bar-odd: `z_D(q⁻¹) = 1/(q³+q)` against `z_D(q) = q³/(q²+1)`,
+equal only at `q = 1`.
+
+So this is a theorem that **does not survive**, not a proof that needed
+repairing — the second such in this bean, after the bar-antisymmetry result in
+`nuclear-interactions/q-beta-cos-resummation.lean`, and the first stated as a
+named headline result.
+
+**What survives is better than nothing: the bar structure is graded rather than
+destroyed.** The involution still acts on `z` cleanly, with weight `q⁻⁴` instead
+of trivially. Any downstream argument that used bar-evenness as a *symmetry* must
+now carry that weight; an argument that only needed `z` to have *some* definite
+bar behaviour still has one.
+
+Independently corroborated from the p-n side by `qou-1oxx` ("the canonical p-n
+convention is not bar-invariant") and `QOU.QBeta.ZBarParity`. -/
+theorem markovZ_bar_weight (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    markovZ s⁻¹ = markovZ s / (s ^ 2) ^ 4 := by
+  have hs4 : s ^ 4 ≠ 0 := pow_ne_zero 4 hs
+  have hinv : (s⁻¹) ^ 4 + 1 = (s ^ 4)⁻¹ * (s ^ 4 + 1) := by
+    field_simp
+    ring
+  have hd : (s⁻¹) ^ 4 + 1 ≠ 0 := by
+    rw [hinv]; exact mul_ne_zero (inv_ne_zero hs4) h4
   unfold markovZ
-  rw [div_eq_div_iff h2 h1]
+  rw [div_eq_iff hd]
   field_simp
   ring
 
@@ -173,16 +256,34 @@ theorem flavorDelta_bar (s : R) (hs : s ≠ 0) :
   field_simp
   ring
 
-/-- Bar swap on the factors: the positive-crossing factor is bar-invariant. -/
-theorem fPP_bar (s : R) (hs : s ≠ 0) (h1 : s ^ 2 + 1 ≠ 0) :
-    fPP s⁻¹ = fPP s := markovZ_bar s hs h1
+/-- Bar swap on the factors: the positive-crossing factor is bar-COVARIANT of
+weight `−4`, `f_pp(q⁻¹) = f_pp(q)/q⁴`.
+
+**Re-derived, not repaired (2026-08-26, bean `qou-cxjq`).** The convention-C
+statement was `fPP s⁻¹ = fPP s` — bar-*invariance* — proved by one-line delegation
+to `markovZ_bar`. Since `f_pp = z` definitionally, this theorem is exactly as
+strong as the bar behaviour of `z`, and inherits the weight that
+`markovZ_bar_weight` records. -/
+theorem fPP_bar_weight (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    fPP s⁻¹ = fPP s / (s ^ 2) ^ 4 := markovZ_bar_weight s hs h4
 
 /-- Bar swap on the factors: the negative-crossing factor goes to
-`z + h = f_pp + h` — bar exchanges the crossing chirality. -/
-theorem fNN_bar (s : R) (hs : s ≠ 0) (h1 : s ^ 2 + 1 ≠ 0) :
-    fNN s⁻¹ = fPP s + heckeH s := by
-  unfold fNN fPP
-  rw [markovZ_bar s hs h1, heckeH_bar s]
+`z/q⁴ + h` — **bar still exchanges the crossing chirality**, now against a
+weight-`−4` `z`.
+
+**This is the part of the C-era `fNN_bar` that survives.** That theorem read
+`f_nn(q⁻¹) = f_pp(q) + h(q)`, and its content was two independent facts: the
+sign flip on `h` (bar-odd — the skein swaps `σ ↔ σ⁻¹`) and the bar-invariance of
+`z`. Only the second is convention-dependent, so the chirality exchange — the
+part the name is about — is untouched; the `z` term carries `q⁻⁴`.
+
+Concretely: `heckeH_bar` is used verbatim, `markovZ_bar` is replaced by
+`markovZ_bar_weight`, and the `+ h` on the right-hand side is unchanged. -/
+theorem fNN_bar_weight (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    fNN s⁻¹ = fPP s / (s ^ 2) ^ 4 + heckeH s := by
+  unfold fNN
+  rw [markovZ_bar_weight s hs h4, heckeH_bar s]
+  unfold fPP
   ring
 
 /-! ## §4. Structure of the flavor split `δ` -/
@@ -227,22 +328,28 @@ theorem fPP_mul_fNN (s : R) :
   unfold fPP fNN
   ring
 
-/-- `f_pp + f_nn = 2z − h`: twice the bar-invariant (strict-averaged)
-interface factor `z − h/2`. -/
+/-- `f_pp + f_nn = 2z − h`: twice the strict-averaged interface factor
+`z − h/2`, the combination symmetric under the **skein** bar `σ ↦ σ⁻¹`
+(`interface_knot_markov_z_bar_symmetric`).
+
+It is **not** invariant under the `q`-bar of §3, and was not under convention C
+either: `q`-bar flips the sign of `h`, so `z − h/2 ↦ z ± h/2` whatever it does
+to `z`. The pre-2026-08-26 docstring read "bar-invariant" without saying which
+bar. -/
 theorem fPP_add_fNN (s : R) :
     fPP s + fNN s = 2 * markovZ s - heckeH s := by
   unfold fPP fNN
   ring
 
-/-- **The bring-color-weighted p-n factor is the bar-invariant average plus
-the flavor-split correction**:
+/-- **The bring-color-weighted p-n factor is the skein-symmetric chirality
+average plus the flavor-split correction**:
 
   `f_pn = (f_pp + f_nn)/2 + h·δ/4`.
 
 At `δ = 0` this recovers the strict-averaged convention `z − h/2`; the
 `h·δ/4` term is the quaternionic color-tube asymmetry
 (`closed_form_tau_M` §"bring_color_weighted"). -/
-theorem fPN_eq_bar_avg_add_flavor (s : R) (h2 : (2 : R) ≠ 0) :
+theorem fPN_eq_skein_avg_add_flavor (s : R) (h2 : (2 : R) ≠ 0) :
     fPN s = (fPP s + fNN s) / 2 + heckeH s * flavorDelta s / 4 := by
   have h4 : (4 : R) ≠ 0 := by
     have h : (4 : R) = 2 * 2 := by norm_num
