@@ -100,8 +100,44 @@ nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the substrate anchor).
 The unweighted factor above is the only one of the two that is bar-even, and
 the derivation in this proof — trace-linearity from the single Markov axiom —
 yields that one. The weighted form requires $\delta$ as an additional input
-and is therefore not obtained here. All five identities are checked exactly in
-[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py).
+and is therefore not obtained here.
+
+### The obstruction is one factor of $q^{2}$, and it is repairable
+
+Write a general weighted p-n factor with offset $\varepsilon$,
+$f_{pn}(\varepsilon) = (\tfrac12 + \varepsilon) f_{pp} + (\tfrac12 - \varepsilon) f_{nn}$.
+Since $f_{nn} = \overline{f_{pp}}$, the involution *swaps* the two terms, so
+
+$$
+  \overline{f_{pn}} - f_{pn}
+  \;=\; -\bigl(\overline{\varepsilon} + \varepsilon\bigr)\,\frac{q^{2}-1}{q},
+$$
+
+which vanishes **iff $\overline{\varepsilon} = -\varepsilon$** — the offset must
+be bar-**odd**. (Not bar-even: symmetrising the weight is the wrong repair.)
+
+The colour weighting uses $\varepsilon = \delta/4$, and
+$\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
+of $q^{2}$ and nothing else. That factor localises: in the factored form
+$\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate), the Hecke
+crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
+so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
+substrate Planck action.
+
+Consequently a bar-invariant colour weighting **exists**: $\varepsilon = q\,\delta\,E/4$
+is bar-odd for *any* bar-even $E$, since $\overline{q\delta} = -q\delta$. Two
+natural members are $E = 1$ and $E = [2]_q/2$ (the latter being the bar-odd
+projection of $\delta$), differing from the current offset by 11–12 % and hence
+by order $8 \times 10^{-6}$ in $f_{pn}$.
+
+**Bar-invariance is necessary but not sufficient.** It fixes the parity and
+leaves a whole bar-even function $E$ free, so it does not by itself determine
+the weighting; selecting $E$ requires re-deriving the colour weighting from the
+colour-tube geometry, and no particular $E$ is asserted here. All of the above
+is checked exactly in
+[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
+(17 assertions).
 
 ### categorical verification (4 atoms, exact representation Rust kernel)
 

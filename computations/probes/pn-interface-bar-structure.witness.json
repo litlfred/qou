@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-26T03:38:15.514720+00:00",
-  "commitSha": "4be7ea09f58d6d8e93ad2941c1221da971757b07",
+  "computedAt": "2026-08-26T04:13:47.896861+00:00",
+  "commitSha": "de9f24d781bceb9d659d0929be8d353a5360e465",
   "assertions": [
     {
       "name": "f_nn_is_bar_conjugate_of_f_pp",
@@ -54,14 +54,73 @@
       "expected": "-q**2",
       "passed": true,
       "source": "bar(delta) = -q^2 . delta"
+    },
+    {
+      "name": "bar_condition_is_eps_bar_odd",
+      "computed": "[-epsilon]",
+      "expected": "[-epsilon]",
+      "passed": true,
+      "source": "vanishes iff bar(eps) = -eps"
+    },
+    {
+      "name": "delta_misses_bar_oddness_by_exactly_q_squared",
+      "computed": "-q**2",
+      "expected": "-q**2",
+      "passed": true
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_two_q_over_2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_z_times_bar_z",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_h_squared",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "bar_parity_of_hbar_q_squared",
+      "computed": "q**2",
+      "expected": "q**2",
+      "passed": true
+    },
+    {
+      "name": "bar_parity_of_h_q",
+      "computed": "-1",
+      "expected": "-1",
+      "passed": true
+    },
+    {
+      "name": "bar_parity_of_two_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 657,
+  "durationMs": 1519,
   "computation": "pn-interface-bar-structure",
   "scriptFile": "pn_interface_bar_structure_probe.py",
-  "scriptHash": "7f442882ff71",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "542045a2e03b",
+  "scriptCommitSha": "84056a59aeacc86f2cb8c58b9e0fc91839a2d1d1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,6 +148,13 @@
     "q0Anchor": "proton"
   },
   "data": {
+    "repair": {
+      "condition": "bar(eps) = -eps  (offset must be bar-ODD, not bar-even)",
+      "obstruction": "bar(delta) = -q^2 . delta -- misses by exactly q^2",
+      "obstruction_localises_to": "hbar_q^2, the two quanta of substrate Planck action; h_q is already bar-odd and [2]_q is bar-even",
+      "family": "eps = q.delta.E/4 for ANY bar-even E",
+      "note": "bar-invariance is NECESSARY but NOT SUFFICIENT -- it leaves a bar-even function E free, so it does not pin the weighting. No particular E is claimed here."
+    },
     "factors": {
       "f_pp": "q**3/(q**2 + 1)",
       "f_nn": "q**3/(q**2 + 1) - q + 1/q",
