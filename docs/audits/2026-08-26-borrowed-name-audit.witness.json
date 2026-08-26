@@ -3,8 +3,8 @@
   "producer": "scripts/lean-borrowed-name-audit.py",
   "counts": {
     "critical": 19,
-    "major": 115,
-    "advisory_not_persisted": 1021,
+    "major": 114,
+    "advisory_not_persisted": 1022,
     "total": 1155
   },
   "note": "High-recall candidate generator. A CRITICAL is a candidate, not a verdict; the genuine/legit call is an agent call per AGENTS.md 3b-tax. Advisory rows are counted but not stored.",
@@ -531,29 +531,6 @@
       "external_lemmas_in_proof": [],
       "disclaimed": false,
       "statement": "theorem writheTorus_not_symm : writheTorus 2 3 \u2260 writheTorus 3 2"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
-      "line": 708,
-      "decl": "card_cells_eq_card_nimbers",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "simp_unfold": false,
-      "discharged_via_hypothesis": false,
-      "proof_steps": 1,
-      "borrowed": [
-        "KL"
-      ],
-      "local_defs_in_statement": [
-        "KazhdanLusztigCells",
-        "Nimbers"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem card_cells_eq_card_nimbers (p n : \u2115) : Fintype.card (KazhdanLusztigCells p n) = Fintype.card (Nimbers p n)"
     },
     {
       "kind_of_finding": "borrowed-name",

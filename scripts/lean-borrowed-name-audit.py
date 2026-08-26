@@ -158,7 +158,15 @@ CHEAP_TACTIC = re.compile(
 DISCLAIM = re.compile(
     r"by definition|definitional|is a definition|a restatement|restates|"
     r"notation for|purely notational|unfolds to|by construction|"
-    r"cosmetic|bookkeeping|no mathematical content|says nothing",
+    r"cosmetic|bookkeeping|no mathematical content|says nothing|"
+    # A docstring naming its own operands as PLACEHOLDERS, or explaining that
+    # the result holds because two carriers are the same type, is disclosing
+    # the collapse.  Found via the kernel pass on `card_cells_eq_card_nimbers`,
+    # whose docstring reads "provable without any class instance because both
+    # placeholder types are `Fin (p^n)`" -- an honest definitional statement
+    # that the original DISCLAIM list did not recognise.
+    r"placeholder type|both .{0,40}types are|are the same type|"
+    r"provable without any class instance",
     re.I)
 
 DECL = re.compile(
