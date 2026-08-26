@@ -16,28 +16,43 @@ What stays here is the part that is about `qDimObj` — the categorical quantum 
 * `qDim_of_unitPairing` — for the unit object's exact pairing `𝟙_C ⊣ Y`, the braided quantum
   dimension of `𝟙_C` collapses to the identity: `η ≫ β ≫ ε = 𝟙_{𝟙_C}` (snake identity +
   `braiding_tensorUnit_left`).  Generic in `Y` and its pairing.
+* `qDim_conj_object` — **the categorical quantum dimension is conjugation-symmetric**,
+  `qDimObj (Xᘁ) = qDimObj X`, for every object, unconditionally.  See the correction below.
 * `qDim_unit` — the categorical quantum dimension of the monoidal unit (the vacuum object) is `1`:
   `qDimObj (𝟙_C) = 𝟙 (𝟙_C)`.  This is the categorical statement behind the RT-input normalization
   `RibbonMTCInput.vac_dim_one` (there carried as a hypothesis): when the vacuum label's simple object
   is the unit, its categorical dimension is genuinely `1`, not merely assumed.  It is also the
   trivial case of conjugation symmetry (`dim(𝟙) = dim(𝟙ᘁ) = 1`).
 
-## The conjugation-symmetry goal, and its residual gap (STRICT, §Axiomatization-is-NOT-a-Proof)
+## The conjugation-symmetry goal — CLOSED, and a correction to what this file used to say
 
 The corpus fact `qDim_conj` states the categorical quantum dimension is conjugation-symmetric,
-`qDimObj (Xᘁ) = qDimObj X` for **every** object `X`.  The unit case (`qDim_unit`) and the twist-level
-symmetry (`RibbonCategory.twist_dualDual`) are proved; the **general-object** statement is not.  That
-is an honest, structural gap, **not** a `sorry` and **not** something axiomatised here:
+`qDimObj (Xᘁ) = qDimObj X` for **every** object `X`.  `qDim_conj_object` below now proves it,
+unconditionally, in any braided right-rigid category — no pivotal, spherical or transport
+hypothesis.  It is a one-line consequence of `QOU.MathlibExt.qDimWith_rightDual`.
 
-* `qDimObj (Xᘁ)` traverses the **double dual** `Xᘁᘁ`, which a plain `[BraidedCategory C]
-  [RightRigidCategory C]` does **not** identify with `X`.  A *pivotal* (or ribbon-with-pivotal)
-  structure — a natural monoidal iso `X ≅ Xᘁᘁ` — is required, and Mathlib provides no such class.
-  Without it the general equality is not merely unproved but *not expressible as a computation on the
-  existing data* — hence no `sorry` (a `sorry` would falsely claim the statement is one lemma away).
-* Adding the pivotal iso as a `RibbonCategory` field and *asserting* the equality would be
-  anti-laundering-forbidden (§Axiomatization-is-NOT-a-Proof): it assumes the conclusion.  The honest
-  move is to bean the gap — a pivotal-structure class plus the coherence derivation of
-  `qDimObj (Xᘁ) = qDimObj X` from it is the next real step.
+**An earlier revision of this docstring said that was impossible, and the reasoning was wrong.**  It
+read:
+
+> `qDimObj (Xᘁ)` traverses the **double dual** `Xᘁᘁ`, which a plain `[BraidedCategory C]
+> [RightRigidCategory C]` does **not** identify with `X`.  A *pivotal* structure … is required, and
+> Mathlib provides no such class.  Without it the general equality is not merely unproved but *not
+> expressible as a computation on the existing data*.
+
+The premise is correct — that data really does not identify `Xᘁᘁ` with `X` — and the conclusion
+does not follow from it.  The **dimension** never needs the identification.  It needs only that the
+dimension of a fixed object is the same whichever dual computes it, and `X` is *also* a right dual
+of `Xᘁ` via `BraidedCategory.exactPairing_swap`.  Dual-**independence** is strictly weaker than
+double-dual **identification**, and it is what the trace actually consumes.
+
+Two things that were right and stay right: refusing to `sorry` it (a `sorry` would have claimed it
+was one lemma away from the route being attempted, which it was not), and refusing to axiomatise it
+as a class field (§Axiomatization-is-NOT-a-Proof).  The error was in the impossibility claim, not in
+the discipline that surrounded it.
+
+The conditional theorems in `KeystonePivotalSpherical.lean` remain valid.  They are no longer the
+only route, and their hypotheses are not needed for this conclusion.  Sphericality is a genuinely
+separate condition and is untouched.
 
 No fit; nothing wired; L2 unchanged.  Base ring (§7c): everything is stated over a generic Mathlib
 braided right-rigid category `C`; no `ℝ`.
@@ -45,6 +60,7 @@ braided right-rigid category `C`; no `ℝ`.
 -- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneRibbonMTCInput
+import QOU.MathlibExt.BraidedQuantumDimension
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 
@@ -90,6 +106,15 @@ case of conjugation symmetry — `dim(𝟙) = 1 = dim(𝟙ᘁ)`. -/
 theorem qDim_unit : qDimObj (𝟙_ C) = 𝟙 (𝟙_ C) := by
   unfold qDimObj
   exact qDim_of_unitPairing _
+
+/-- **The categorical quantum dimension is conjugation-symmetric**: `qDimObj (Xᘁ) = qDimObj X`.
+
+The corpus fact `qDim_conj`, at last unconditional.  `qDimObj` is by definition the braided
+quantum dimension taken against the canonical right dual, so this is
+`QOU.MathlibExt.qDimWith_rightDual` read through that definition. -/
+theorem qDim_conj_object (X : C) :
+    qDimObj ((X : C)ᘁ) = qDimObj X :=
+  QOU.MathlibExt.qDimWith_rightDual X
 
 end QuantumDimension
 

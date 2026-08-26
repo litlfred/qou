@@ -55,10 +55,21 @@ place and, more to the point, avoids the duplicate the ribbon layer had accumula
 
 ## Honest scope (STRICT)
 
-The residual is input 1, the pivotal transport lemma, whose classical proof is a
-string-diagram coherence argument (`ribbon ⇒ spherical`, Deligne/Yetter; Bakalov–Kirillov
-ch. 2). It is **not** proved here and **not** axiomatised — it is an explicit hypothesis
-of the conditional theorem, and stays open in bean `rtqd`.
+The residual is input 1, the pivotal transport lemma `qDimObj (Xᘁ) = leftQDim X`. It is
+still **not proved** — it is an explicit hypothesis of the conditional theorems below, and
+that is unchanged.
+
+**What has changed is that the goal those inputs served no longer needs them.**
+`QOU.BraidKnot.Ribbon.qDim_conj_object` proves `qDimObj (Xᘁ) = qDimObj X` outright, in any
+braided right-rigid category, with no pivotal, spherical or transport hypothesis — via
+`QOU.MathlibExt.qDimWith_rightDual`, which observes that the quantum dimension is
+independent of the choice of dual and that `X` is itself a right dual of `Xᘁ`.
+
+So the factoring below is now one route among two rather than the only one. Its theorems
+remain valid and are kept: a conditional result is not invalidated by an unconditional
+proof of its conclusion, and the transport identity is worth having in its own right —
+sphericality, which input 2 supplies in the symmetric case, is a separate condition that
+the unconditional route says nothing about.
 
 The pivotal *structure* is no longer part of that residual. `QOU.MathlibExt.pivotalOfBraided`
 proves every braided right-rigid category pivotal, sorry-free. What remains is the transport
