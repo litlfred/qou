@@ -1,10 +1,11 @@
 ---
 # qou-cdqu
 title: chi-sym-alt-closed-form.lean models 3 letter types; atom_braid_word_3A emits 4
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-26T17:01:42Z
-updated_at: 2026-08-26T17:01:42Z
+updated_at: 2026-08-26T17:16:20Z
 ---
 
 [`content/quantum-observable-universe/braids-and-knots/chi-sym-alt-closed-form.lean`](../content/quantum-observable-universe/braids-and-knots/chi-sym-alt-closed-form.lean)
@@ -64,3 +65,87 @@ first whether the corpus wants the colour-blind form kept as the headline (it is
 the simpler statement and is exactly true for `pn_convention="strict_averaged"`)
 with the colour-weighted one as a corollary, or the reverse. That is an
 expository call, not a measurement.
+
+
+## Closed 2026-08-26 (PR #5833, commits `f9799f9a2`, `09a5d5bbb`)
+
+Additive throughout — nothing that was proved changed.
+
+### The fix
+
+A **new** inductive `ColourFactorType` rather than a fourth constructor on
+`FactorType`, which would have cost `FactorType` its `DecidableEq` to a
+real-valued field. With it: `chiPairPerFactorC`, `chiPairProductC`, `nUdC`,
+`nBlind`, `nPn`, `pnProduct`, and
+
+```
+chiPairProductC H_A w = (-1)^{nBlind w} · (1 + H_A²/4)^{nUdC w} · pnProduct H_A w
+```
+
+The **weighted form is the theorem** and the colour-blind one its `δ = 0`
+corollary (`chiPairProductC_delta_zero`). That is the only direction that
+exists: setting `δ = 0` collapses weighted → blind, while the blind form has
+already discarded `δ`. It also matches R3 (owner ruling 2026-08-15) making
+`bring_color_weighted` canonical — the blind form is exact for
+`strict_averaged`, which R3 rules non-canonical.
+
+### The substantive lemma, and the owner's improvement to it
+
+The stationarity of the `ud` letter, first as
+
+```
+f(d) − f(−H_A/2) = (d + H_A/2)²        [ℝ, `ring`]
+```
+
+then — on the owner's question, *"can we rewrite identity so 2 is not in
+denom?"* — in the strictly better division-free form:
+
+```
+4·(d² − 1 + d·H_A) = (2d + H_A)² − H_A² − 4        [any CommRing, `ring`]
+```
+
+Three things this bought:
+
+1. **No `Field`, no `CharZero`, no `2 ≠ 0`.** My first generic version carried
+   `[Field R] [CharZero R]` purely so `field_simp` could clear a denominator
+   that did not need to be there. §7c asks for the weakest typeclass; this is
+   it.
+2. **It states the content better.** All the `d`-dependence sits inside a
+   *perfect square* in the offset `2d + H_A`, vanishing exactly at `2d = −H_A`.
+   "The ud letter is a stationary point" and "the offset enters squared" are the
+   same fact; this form makes the second manifest with no derivatives, no
+   division, and no distinguished point.
+3. **The characteristic-2 caveat disappears rather than being worked around.**
+   The divided form is genuinely *false* in char 2 (`H_A/2` undefined). This one
+   degenerates to `0 = 0` — the honest answer: no stationary point exists there,
+   and the statement claims none.
+
+Measured consequence, unchanged: predicted `5.11397e-9` from this identity
+alone against `5.11395e-9` measured on all four atoms.
+
+### Verified
+
+`lean`-direct **exit 0** (~6 s) against the real import cone;
+`#print axioms` on all six new declarations → `[propext, Classical.choice,
+Quot.sound]`, **no `sorryAx`**. `check-sidecars.sh` clean. Render preflight on
+the `.md` clean (22 `$$`, braces balanced, no `\operatorname`).
+
+### Doc annotated, not rewritten
+
+`docs/chi-sym-alt-theorem.md` — the `-- Ref:` this file cites — has a scope
+banner and two inline corrections. Its Step 4 asserted the p-n boundary "uses
+(1, −H_A/2) = ud-half", which is where the entire `2A+1` derivation comes from
+and is true only in the colour-blind convention. The derivation is correct under
+its own assumption; it simply never stated the assumption.
+
+### Two things found while doing it, NOT fixed — worth a follow-up
+
+- **`chi-sym-alt-closed-form.lean` has no `.md` or `.ts` sibling.** It is an
+  orphan Lean file in a content chapter directory, so it has no `.qa.json` and
+  nothing but an agent ever checks it — exactly the case AGENTS.md §"QA is
+  agent-owned" names. `check-sidecars.sh` agrees: *"library Lean … no sidecar"*.
+- **`chi_sym_alt_closed_form.py` sets `set_content_block("rem:chi-sym-alt-closed-form")`
+  and that block does not exist anywhere in `content/`.** Dangling reference.
+
+Both are small, both are content-structure rather than mathematics, and neither
+was in this bean's scope.
