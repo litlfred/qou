@@ -6,11 +6,42 @@ is evaluated from the ONE canonical Jones–Markov transfer trace (`tr_m_atom_zn
 the fine-Bratteli path); B_AME comes from the vendored AME2020 table
 (`data/ame2020.json`). This is the multi-isotope view of the single-pipeline
 probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
-`algebraic-quantum-volume.md` (Vol_alg := tr_M) + `vol-through-tau.md`
-(Vol = tau_arch(Vol_q), CONDITIONAL on conj:kashaev-volume-conjecture) for the
-form definitions. NOT `standard-part-functor.md` -- corrected 2026-08-25, that
-block defines the standard-part map st: No_fin -> R and the functor St, and
-contains no B_ form, no alpha and no binding.
+`algebraic-quantum-volume.md` (Vol_alg := tr_M) for the naming. NOT
+`standard-part-functor.md` -- corrected 2026-08-25, that block defines the
+standard-part map st: No_fin -> R and the functor St, and contains no B_ form,
+no alpha and no binding.
+
+WHAT LICENSES THE LOG, AND WHAT DOES NOT (corrected 2026-08-26, bean qou-mkm8).
+This docstring, and the B_sym provenance row, cited `vol-through-tau.md` and
+tagged the log-forms KVC-conditional. I put that citation here myself in
+933053614f, and it is wrong twice over -- so the retraction it announced is
+itself retracted. Three neighbouring objects have three different licences:
+
+  (1) The LOG'S EXTENSIVITY is DERIVED and needs no conjecture at all. The
+      interface subalgebra is 2-dimensional (sigma^2 = h*sigma + 1 gives
+      span{1, sigma_2}), so tr_atom = tr_free * prod_bonds (z + d_XY) by the
+      Markov property tr_M(W . sigma_2) = z * tr_M(W). A product over bonds has
+      an additive logarithm. That is the whole reason a log appears, and it is
+      elementary. See `_bond_type_L`.
+
+  (2) E_0 x (trace DIFFERENCE) is licensed -- as a CONJECTURE, not a
+      proposition -- by `knot-factor-frobenius-pairing.md`:
+      B_bulk = E_0 (|tr_M(W_free)| - |tr_M(W_atom)|). That is the B_can0 column,
+      and the code comment there already said "NOT the log B_sym".
+
+  (3) ln|tr_M| = Vol is `vol-through-tau.md`, KVC-conditional -- and it does not
+      reach this object. Its quantifier is "for every BRAID beta in B_n", while
+      atom_braid_word_3A's letters are c*sigma_g + d*1, general Hecke elements
+      that are not braid generators. I corrected that quantifier myself in
+      1c83073b3c, 47 minutes AFTER 933053614f, and did not go back to check what
+      it invalidated. Reading past the quantifier does not help either: 0 of 40
+      branch closures of the atom element are hyperbolic (c64833a979, both
+      controls green), so Vol = 0 while B_sym(2H) = 3.8897 MeV.
+
+So B_sym has (1)'s extensivity and (2)'s prefactor, and NO block asserts the
+combination. It is POSITED, not DERIVED*: the KVC tag was over-hedging in form
+(attaching an irrelevant open conjecture) while under-stating in substance
+(concealing that nothing licenses the energy identification at all).
 
 Feasibility: `B_sym` is the EXACT log-ratio binding, but it no longer needs the
 full per-knot trace `tr_M(W_atom)` (whose partition sum p(3A) explodes — ¹²C
@@ -678,10 +709,15 @@ def _print_provenance() -> None:
     print("| `CAL`       | one of the three calibrations: m_e (CAL-1), q₀ via "
           "CAL-2, m_π (CAL-3). Inputs BY CONSTRUCTION — not successes. |")
     print("| `DERIVED*`  | as DERIVED, but CONDITIONAL on an open conjecture or "
-          "sorry: the B-forms on conj:kashaev-volume-conjecture (open in "
-          "general), E_C on the Witten-κ Gram-determinant sorry. 2026-08-25. |")
+          "sorry: E_C on the Witten-κ Gram-determinant sorry. |")
+    print("| `POSITED`   | the functional FORM is asserted, not derived. The "
+          "log-forms: their extensivity follows from the Markov property (no "
+          "conjecture), but no block licenses α·ln(ratio) as an ENERGY — the "
+          "nearest, conj:knot-factor-frobenius-pairing, gives E₀ × the trace "
+          "DIFFERENCE. Corrected 2026-08-26 (bean qou-mkm8); these read "
+          "`DERIVED*` on a KVC citation that does not reach the atom word. |")
     print("| `DERIVED`   | parameter-free from (q₀, m_e) through the Markov "
-          "trace: B_sym, B_qCLT_fac, m_can, F_Bor. No fit, no "
+          "trace: m_can, F_Bor. No fit, no "
           "AME beyond the comparison. |")
     print("| `EXPLORATORY` | shown for comparison, NOT production-wired: "
           "B_lin, B_tetra, m_can⁰, m_tetra. |")
@@ -691,11 +727,14 @@ def _print_provenance() -> None:
     for col, tag, note in (
         ("B_AME / M_meas / σ_exp", "MEASURED", "AME2020 — the target"),
         ("m_e, q₀, m_π", "CAL", "the 3 calibrations; q₀ on the PROTON pin"),
-        ("B_sym", "DERIVED*", "exact log-ratio α·ln(tr_free/tr_atom) — "
-         "*KVC-CONDITIONAL: ln abs(tr_M) IS Vol only via vol-through-tau, a "
-         "proposition conditional on the OPEN conj:kashaev-volume-conjecture"),
-        ("B_qCLT_fac", "DERIVED*", "colour-weighted q-CLT (A→∞ approximation) — "
-         "*KVC-conditional, same route as B_sym"),
+        ("B_sym", "POSITED", "exact log-ratio α·ln(tr_free/tr_atom). The log's "
+         "EXTENSIVITY is derived (Markov property, no conjecture); the α× "
+         "identification as an energy is asserted. NOT KVC-conditional — "
+         "vol-through-tau quantifies over BRAIDS and the atom word's letters "
+         "are general Hecke elements; 0/40 closures hyperbolic ⇒ Vol = 0 while "
+         "B_sym(²H) = 3.89 MeV. Corrected 2026-08-26, bean qou-mkm8"),
+        ("B_qCLT_fac", "POSITED", "colour-weighted q-CLT (A→∞ approximation) — "
+         "same log-form licence as B_sym"),
         ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
         ("E_C", "DERIVED*", "uniform-sphere Coulomb at the CAL-3 length "
          "R = λ̄_π·A^(1/3), λ̄_π = ℏc/m_π = 1.41382 fm (NOT the empirical "
@@ -1130,8 +1169,9 @@ def main(argv=None) -> int:
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
           "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩. "
-          "Defn: algebraic-quantum-volume.md + vol-through-tau.md "
-          "(KVC-conditional).")
+          "Defn: algebraic-quantum-volume.md (Vol_alg := tr_M, a naming). The "
+          "log-forms are POSITED, not KVC-conditional — see the module "
+          "docstring, bean qou-mkm8.")
     _out = sys.stdout.getvalue()
     sys.stdout = _old_stdout
     print(format_md_tables(_out), end="")

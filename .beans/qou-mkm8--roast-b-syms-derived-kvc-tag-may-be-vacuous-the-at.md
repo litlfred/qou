@@ -1,11 +1,11 @@
 ---
 # qou-mkm8
 title: 'ROAST: B_sym''s DERIVED* KVC tag may be vacuous — the atom closures are NOT hyperbolic'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T05:27:07Z
-updated_at: 2026-08-26T05:29:15Z
+updated_at: 2026-08-26T06:44:03Z
 ---
 
 Surfaced by the owner's question "what is conjecture? can we prove?" -- which
@@ -85,3 +85,53 @@ and it is upstream of everything the five fronts measured.
 3. Either re-tag `B_sym` with the step it really rests on, or record the
    tension as a live defect at the top of the binding chain.
 4. Do NOT start work on proving KVC cases until 1-3 are settled.
+
+
+---
+
+## RESOLVED 2026-08-26 — steps 1–3 done. Verdict: POSITED, and the tag was mine.
+
+**Step 1 (trace the code cone, not the prose tag).** `B_sym`'s dependency cone
+contains no knot, no closure and no coloured-Jones limit. Three neighbouring
+objects have three different licences:
+
+1. **The log's extensivity is DERIVED, conjecture-free.** `σ² = hσ + 1` makes the
+   interface subalgebra 2-dimensional (`span{1, σ₂}`), so with the Markov
+   property `tr_M(W·σ₂) = z·tr_M(W)` we get
+   `tr_atom = tr_free·∏_bonds (z + d_XY)`. A product has an additive logarithm.
+   That is *why* a log appears, and it is elementary. It says nothing about MeV.
+2. **`E₀ × trace DIFFERENCE`** is licensed by `conj:knot-factor-frobenius-pairing`
+   — a **conjecture** block, and the *difference*, i.e. the `B_can0` column. The
+   code comment there already said "NOT the log `B_sym`".
+3. **`ln|tr_M| = Vol`** is `prop:vol-through-tau`, KVC-conditional, and does not
+   reach this object (braid quantifier + 0/40 non-hyperbolic ⇒ Vol = 0 while
+   `B_sym(²H) = 3.89 MeV`).
+
+`B_sym` has (1)'s extensivity and (2)'s prefactor. **No block asserts the
+combination.**
+
+**Step 2 (which reading holds).** Neither cleanly — the tag was wrong in **both**
+directions. Over-hedging in form (an irrelevant open conjecture attached), and
+under-stating in substance (concealing that nothing licenses the energy
+identification at all). The honest tier is **`POSITED`**.
+
+**Step 3 (re-tag).** Done: `B_sym` and `B_qCLT_fac` are now `POSITED`; a
+`POSITED` tier was added to the dashboard legend; the module docstring and the
+footer `Defn:` line no longer cite `vol-through-tau`. No number moves.
+
+**Self-correction.** I introduced the KVC tag myself in `933053614f`
+(2026-08-25 18:59:59), a commit that *retracted* an earlier "posited" finding of
+mine. Then in `1c83073b3c` — **47 minutes later, same session** — I corrected
+`vol-through-tau`'s quantifier and wrote a note saying the production object is
+not covered and "the corresponding Vol is in fact 0". I never went back. The
+retraction is retracted; the original finding was closer to right.
+
+**Still open → step 4.** Nothing here derives the log-form. Two candidate
+closures, and note they are *not* trivially the same: with `s = 1 − tr_atom/tr_free`,
+`B_can0 = α·tr_free·s` while `B_sym = α(s + s²/2 + …)`, so difference-form and
+log-form agree only for small `s` **and** `tr_free ≈ 1`, neither of which holds
+here. Either (a) derive the log-form from the difference-form conjecture plus a
+stated condition, or (b) find/write a block that licenses the log directly.
+**Do not close this by re-citing `vol-through-tau`.**
+
+Audit: `docs/audits/2026-08-26-what-licenses-the-log-not-the-volume-conjecture.md`
