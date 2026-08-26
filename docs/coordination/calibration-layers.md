@@ -72,7 +72,14 @@ quoted off a flat objective is meaningless.
 ## Result
 
 Producer: [`computations/fitted_ideal_low_isotope_calibration.py`](../../computations/fitted_ideal_low_isotope_calibration.py)
-→ `computations/fitted-ideal-low-isotope-calibration.witness.json`. Runs in 0.3 s.
+→ `computations/fitted-ideal-low-isotope-calibration.witness.json`. Runs in 0.5 s.
+
+`B_AME` is read from the **vendored AME2020 table** (`ame_2020_binding_energies._binding_mev_exact`,
+exact `Decimal`) rather than from the sweep witness, so the target set is not
+limited to what that witness happens to carry. Two low-set values differ from
+the sweep in the 5th decimal (⁶Li 31.99399 vs 31.99453, ⁷Li 39.24508 vs
+39.24453) — different AME routes; the exact table is the better source and the
+difference is ~1e-5 relative, far below every residual below.
 
 Relative-RMS binding error over the seven isotopes (²H, ³H, ³He, ⁴He, ⁶Li, ⁷Li, ⁷Be):
 
@@ -111,6 +118,37 @@ independent evidence for the already-recorded finding that the missing object is
 a separate super-pairwise **additive extensive** term rather than a per-block
 re-weighting
 (`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`).
+
+### Held-out test — the sharpest result
+
+The seven low isotopes are what the fitted ideal is *defined* against, so a fit
+on them is in-sample. Eleven heavier nuclides (⁹Be, ¹⁰B, ¹¹B, ¹²C, ¹⁴N, ¹⁶O,
+²⁰Ne, ²⁴Mg, ²⁸Si, ⁴⁰Ca, ⁵⁶Fe) are **never shown to the fit** and are used only to
+ask whether a calibration fitted on the light nuclei *generalises*.
+
+| held-out rel-RMS under… | value |
+|---|---|
+| the observational calibration | 97.89 % |
+| the calibration fitted on the low set (`q = 1.14615`) | **4.48 × 10⁸ %** |
+| a calibration refitted on the held-out set itself (`q = 1.10861`) | 15.44 % |
+
+The middle row is not a rounding artefact. The trace deficit grows
+geometrically in `A`, so the +3.26 % shift in `q` that the light nuclei want
+compounds: predicted `B(⁵⁶Fe) = 7.3 × 10⁹ MeV` against 492 MeV measured.
+
+**Do not read the blow-up itself as the finding.** That the construction
+degrades past the light nuclei is already known and expected (it is what the
+`dashboard-sweep` skill exists to display); extrapolating it to ⁵⁶Fe is outside
+where the binding construction is claimed to apply, and a large number there is
+not news.
+
+**The finding is the disagreement between the two fitted moduli.** The light
+nuclei want `q = 1.14615`; the heavier ones want `q = 1.10861` — which is within
+0.13 % of the substrate pin `q₀ = 1.10998`, while the light-nucleus preference
+sits 3.26 % away. **No single choice of the three calibration points serves both
+regimes**, and the regime that disagrees with the substrate pin is the *light*
+one. That is a statement about the model's `A`-dependence, not about calibration
+choice — which is exactly the separation this layer was added to make.
 
 ### One defect avoided, worth recording
 
