@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T17:57:00Z
-updated_at: 2026-08-26T18:20:45Z
+updated_at: 2026-08-26T18:55:10Z
 ---
 
 Successor to qou-vndn, whose premise ("Hecke radical vanishing") is refuted at
@@ -85,3 +85,48 @@ neither is automatic:
 Unchanged: HeckeGramFactorial's open input, the general T_w-basis determinant
 (the classical Schur-element product formula). n=2 done; no fabricated instance
 may stand in for the general value.
+
+
+## Brick 3 LANDED as PR #5853 (2026-08-26): the tower is INJECTIVE
+
+`QOU/QBeta/TLTowerRadicalDescent.lean`, 4 declarations, sorry-free, axiom-clean.
+
+Set out to prove preservation (iota carries rad tau_n into rad tau_{n+1}) and
+got REFLECTION as well, which is worth more:
+
+  iota a in rad(tau_{n+1})  <->  a in rad(tau_n)
+
+Preservation alone gives a map of quotients. Reflection makes it INJECTIVE, so
+TL_n embeds in TL_{n+1} rather than merely mapping to it -- i.e. the quotients
+are a TOWER, not a sequence of unrelated algebras. Unexpected, and it is the
+brick's real content.
+
+Mechanism: a bare inclusion cannot do this, because membership in rad(tau_{n+1})
+quantifies over all of H_{n+1}, not over iota's image. The conditional
+expectation is what connects them, via the bimodule law at z = 1
+(epsilon_inclusion_mul) moving a test element back down. Preservation spends
+BIMODULE; reflection spends RETRACT. Both fields of HeckeConditionalExpectation
+are load-bearing.
+
+CONDITIONAL (3b-cond): HeckeConditionalExpectation has NO instance. The
+implications are proved; the premise is not established.
+
+## Bricks 1-3 status
+
+1. #5850 MERGED -- the quotient exists as an object (TwoSidedIdeal + quotient
+   ring + descended trace + nondegeneracy in WenzlTowerStep's shape).
+2. #5852 OPEN -- the braided presentation descends (needed an Algebra instance
+   Mathlib does not supply; a scalar-action diamond shaped the proof).
+3. #5853 OPEN -- the tower inclusion detects the radical exactly; injectivity.
+
+## What is STILL not done
+
+No WenzlTowerStep instance at the Markov trace. Remaining: assemble bricks 2
+and 3 into the class. And untouched by all three bricks --
+HeckeGramFactorial's own open input, the general T_w-basis determinant (the
+classical Schur-element product formula). n=2 done; no fabricated instance may
+stand in for the general value.
+
+MERGE NOTE: #5852 and #5853 both anchor guard-registry entries at the same line
+and will conflict in scripts/lean-axiom-guard.py. Both sides are pure additions;
+keep both.
