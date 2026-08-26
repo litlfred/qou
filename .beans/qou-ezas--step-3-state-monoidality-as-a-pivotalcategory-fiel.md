@@ -1,11 +1,11 @@
 ---
 # qou-ezas
 title: 'Step 3: state monoidality as a PivotalCategory field'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:28Z
-updated_at: 2026-08-26T20:18:47Z
+updated_at: 2026-08-26T20:51:57Z
 ---
 
 
@@ -35,3 +35,19 @@ the monoidality in the exact shape a field would take.
 instance — it is unprovable there because it is FALSE.  Landing the field means replacing that
 instance with a ribbon-hypothesis one, i.e. a behavioural change to a class already on main.
 Own PR, own review.
+
+
+
+## DONE 2026-08-26 — PR #5860 (Option A, owner-chosen)
+
+`PivotalCategory` now carries `pivotor_tensor`.  `pivotalOfBraided` removed (unconstructible
+because false); `pivotalOfRibbon` added, requiring `[BalancedCategory C]`.
+
+**Measured, not assumed:** instance search confirmed a symmetric right-rigid category still
+resolves `PivotalCategory` automatically (Ribbon.lean's symmetric ⇒ balanced), so the apparent
+cost of dropping the braided instance is near-zero in this corpus.  Zero code consumers existed;
+five stale prose claims corrected across two files.
+
+Required a prerequisite split — `rightDualIso_hom_unique`/`_evaluation`/`_trans` moved to
+`RightDualIsoUnique.lean` to break a circular import (the field must mention
+`tensorDoubleDualIso`, which lives downstream of where the class sat).
