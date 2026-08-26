@@ -210,6 +210,55 @@ from a name bound to a `q`-expression (which does not). That residue is the only
 part of the `[Field R]` surface still unmeasured, and it is where a migration
 would actually have to do work.
 
+## The residue, measured: ~10 files, not 185
+
+The `[Field R]` sweep left ~205 local-variable inverses unclassified. Resolved by
+checking how each variable is **bound** in its own file:
+
+| class | occurrences | files | |
+|---|---:|---:|---|
+| generic — explicit `v ≠ 0`, no `q` binding | **88** | **6** | wants a field *as written* |
+| bound to a `q`-expression | 15 | 7 | option 2 covers |
+| neither pattern matched | 84 | — | needs eyes |
+
+The six genuinely-generic files are `Hecke/ClosedFormInterfaceFactors`,
+`Knot/HomflySkeinReference`, `QBeta/A3AntiSelfAdjointLift`,
+`QBeta/DTIndexAmplitudeE`, `QBeta/SuperBerezinianA3Magnitude`,
+`Torsion/YekutieliTriple`.
+
+**And they have a clean ring-level fix.** Spot-checking the largest (`D`, 42
+occurrences, `A3AntiSelfAdjointLift`) shows Berezinian / Schur-complement blocks:
+
+```lean
+def crossTerm {R : Type*} [Field R] (B C D : R) : R := B * D⁻¹ * C
+```
+
+with hypotheses `(hA : A ≠ 0) (hB : B ≠ 0) (hD : D ≠ 0)`. The file's own comment
+already says *"scalar inverses `D⁻¹`, `A⁻¹` genuinely required"* — and that is
+true, but it is a demand for **an inverse of a specific scalar**, not for a field.
+
+Over a commutative ring the faithful spelling is `[Invertible D]` with `⅟D`:
+
+```lean
+def crossTerm {R : Type*} [CommRing R] (B C D : R) [Invertible D] : R := B * ⅟D * C
+```
+
+This is *more* faithful to the corpus's own stated intent, not less —
+`quantum-universe-axiom-motivation.md` says in as many words that over a ring
+invertibility is the stronger demand and *"it is the stronger one that is meant"*.
+A `v ≠ 0` hypothesis is the field-flavoured weakening; `[Invertible v]` is the
+ring-flavoured strengthening the axioms already ask for elsewhere.
+
+**So the migration is roughly ten files, not 185:**
+
+1. **4 files** — `[Field R]` → `[CommRing R]`, nothing else (they never divide).
+2. **6 files / 88 occurrences** — `h : v ≠ 0` → `[Invertible v]`, `v⁻¹` → `⅟v`.
+   Mechanical and local.
+3. **84 occurrences** still need an eye, and are the only genuinely open part.
+
+Everything else — the 1597 `q⁻¹`, the `q^n`/`q²`/`q+q⁻¹` tier, the archimedean
+`(2 : ℂ)⁻¹` — is already compatible with option 2 and needs no change at all.
+
 ## What is not settled here
 
 This answers *which ring makes the axioms true*. It does **not** answer the T3g
