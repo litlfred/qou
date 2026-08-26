@@ -1,11 +1,11 @@
 ---
 # qou-qu2w
 title: H3 constituents disagree between the two canonical tr_M(4He) producers by 2.157x
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T22:10:20Z
-updated_at: 2026-08-26T03:53:24Z
+updated_at: 2026-08-26T13:20:06Z
 ---
 
 Found 2026-08-25 while flipping `_habiro_coefficient_extract.py` to the
@@ -100,3 +100,14 @@ function shares the canonical helper's name and now computes something
 different. Flagged in-file.
 
 Measured by `probes/nucleon_h3_marshalling_divergence_probe.py`.
+
+
+## CLOSED 2026-08-26 — landed on main (PR #5821 cone, merge 0bc2794da9)
+
+`closed_form_tau_M.compute_tau_M_nucleon_H3` now routes through the
+d-preserving `chi_monotone_transfer.chi_all_lambda` instead of
+`marshal_to_chi_lambda_braid`, which flattened each nucleon's two
+INTRA-nucleon averaged crossings to plain sigma. Verified present on
+origin/main. tau_p 1.32159298 -> 1.14575969, tau_n 1.25755790 -> 0.98774369;
+the 2.157x 4He constituent disagreement is closed. Root cause was NOT a
+convention issue — both producers were convention D throughout.

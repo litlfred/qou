@@ -137,6 +137,24 @@ def main() -> int:
     print(f"  Total Path B compute: {t_total:.1f}s")
     print()
 
+    # GUARD: refuse a vacuous pass. The assertion below is n_pass == n_total,
+    # which is trivially TRUE when both are 0 -- and both are 0 whenever the F1
+    # cache is missing, because every target then hits the `lam not in chi_a`
+    # continue. Without this guard the producer wrote allPassed=true having
+    # verified nothing, describing itself as "Verified 0/0", and the only sign
+    # was two stdout lines disagreeing ("loaded 0 λ" then "Processing 8").
+    # Refusing here follows the repo's own idiom for a guard that must not be
+    # silently satisfiable (cf. low_isotope_mass_table refusing below its
+    # target precision).
+    if n_total == 0:
+        raise SystemExit(
+            f"REFUSING to emit a witness: 0 of {len(targets)} target "
+            f"partitions were verified, because Path A (the F1 chi_q_at_q0 "
+            f"cache) supplied {len(chi_a)} entries. The assertion "
+            f"n_pass == n_total would pass vacuously. Re-run the F1 producer "
+            f"so the cache exists, then re-run this."
+        )
+
     builder = (
         WitnessBuilder("sublemma-2-1-h12-he4-phase25-verify",
                        engine="numpy")

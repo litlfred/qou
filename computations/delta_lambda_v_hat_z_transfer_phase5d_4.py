@@ -183,25 +183,37 @@ def main() -> int:
                 if abs(vf) < ZERO_TOL or abs(abs(vf) - h_half) < ZERO_TOL:
                     flavor_rule_passes += 1
 
-    builder.add_assertion(
-        "interface_v_hat_flavor_selective_rule",
-        # Counts, so they are int -- not float64. `float()` here was
-        # gratuitous and put three raw float64 fields into the witness
-        # (.computed/.expected/.tolerance) that the raw-float64 gate flags.
-        # Fixed at the producer; this file was never in raw-float64-baseline.json
-        # and is not being added to it.
-        computed=flavor_rule_passes,
-        expected=flavor_rule_total,
-        tolerance=0,
-        unit="count",
-        source=(
-            "Interface generator V̂_FULL ∈ {0, +h/2, -h/2}. "
-            "0 = different-flavor (p-n); +h/2 = same-flavor positive (p-p, σ); "
-            "-h/2 = same-flavor negative (n-n, σ⁻¹). "
-            f"Verified at {flavor_rule_passes}/{flavor_rule_total} interface generators "
-            f"across {len(per_atom)} atoms tested."
-        ),
-    )
+    # flavor_rule_total counts rows with r["is_interface"] across per_atom,
+    # which this producer BUILDS from the ATOMS constant and emits -- it is not
+    # read from an upstream witness. So zero means no row is an interface, a
+    # property of the computation rather than a missing input: refusing would
+    # be wrong, and asserting at 0 == 0 would record a flavour-rule check that
+    # never ran.
+    if flavor_rule_total == 0:
+        builder.add_data("interface_v_hat_flavor_selective_rule_not_applicable",
+                         "no interface generators were found across the atoms "
+                         "tested; the flavour-selective rule was never "
+                         "evaluated, so no assertion is made")
+    else:
+        builder.add_assertion(
+            "interface_v_hat_flavor_selective_rule",
+            # Counts, so they are int -- not float64. `float()` here was
+            # gratuitous and put three raw float64 fields into the witness
+            # (.computed/.expected/.tolerance) that the raw-float64 gate flags.
+            # Fixed at the producer; this file was never in raw-float64-baseline.json
+            # and is not being added to it.
+            computed=flavor_rule_passes,
+            expected=flavor_rule_total,
+            tolerance=0,
+            unit="count",
+            source=(
+                "Interface generator V̂_FULL ∈ {0, +h/2, -h/2}. "
+                "0 = different-flavor (p-n); +h/2 = same-flavor positive (p-p, σ); "
+                "-h/2 = same-flavor negative (n-n, σ⁻¹). "
+                f"Verified at {flavor_rule_passes}/{flavor_rule_total} interface generators "
+                f"across {len(per_atom)} atoms tested."
+            ),
+        )
 
     print(f"\n  Flavor-selective rule: {flavor_rule_passes}/{flavor_rule_total} interfaces match")
     print(f"  (z-exactness DOES NOT transfer to V̂ level; flavor selectivity holds instead)")

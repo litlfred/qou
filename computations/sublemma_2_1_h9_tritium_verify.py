@@ -492,13 +492,24 @@ def main() -> int:
         .add_data("n_underdetermined", n_underdet)
         .add_data("max_relative_residual_overdetermined", max_rel_overdet)
         .add_data("max_relative_residual_all", max_rel_all)
-        .add_assertion(
+    )
+    # Lifted OUT of the fluent chain above so it can be made conditional.
+    # n_overdet counts only the lambdas taking the `else` of `if underdet`, so
+    # zero means every lambda is under-determined -- a real Phase-2 state, not
+    # a missing input. Refusing would be wrong; asserting at 0 == 0 would
+    # record a Path A == Path B verification that never ran.
+    if n_overdet == 0:
+        builder.add_data("overdetermined_path_a_eq_path_b_not_applicable",
+                         "every lambda was under-determined; no overdetermined "
+                         "Path A vs Path B comparison was performed, so no "
+                         "assertion is made")
+    else:
+        builder.add_assertion(
             "overdetermined_path_a_eq_path_b_machine_eps",
             computed=n_overdet_pass,
             expected=n_overdet,
             source="iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3",
         )
-    )
     # See the H_6 frame guard block above. Recorded as data + assertion so the
     # check is auditable rather than only printed — the whole point of the bean
     # is that a loaded-but-unused input left no trace either way.
