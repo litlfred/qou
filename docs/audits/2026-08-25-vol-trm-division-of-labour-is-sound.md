@@ -2614,3 +2614,79 @@ run tier 3.
 
 And: **when a commit message claims a correction, the correction must be in that
 commit's diff.** Check before writing the message, not after.
+
+## Addendum 28 — the atom word is a connected sum *by construction*, and that is the gap (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`atom_word_is_a_connected_sum_probe.py`](../../computations/meson/atom_word_is_a_connected_sum_probe.py)
+(6 assertions, 4 controls). The author asked whether the "two knots threaded by
+a torus" picture — the **convolution**, not the disjoint union — is visible in
+the normal-form structure of the braiding. **It is, and it shows the current
+construction is the other case.**
+
+### Measured — exact combinatorics, no `q`, no representation theory
+
+`atom_braid_word_3A(Z, N)`, generator indices in order:
+
+```
+deuteron   [1]×7 [2]×4   3   [4]×7 [5]×4
+⁴He        [1]×7 [2]×4   3   [4]×7 [5]×4   6   [7]×7 [8]×4   9   [10]×7 [11]×4
+```
+
+Each nucleon is an identical 11-letter block on its own three strands. The block
+walls sit at $\sigma_{3k}$, and **every wall is crossed by exactly one
+generator, used exactly once**. The word **factors strictly** at every wall —
+verified for ²H, ³He, ⁴He and ⁶Li — everything before using only generators
+below it, everything after only generators above.
+
+That is the **connected-sum normal form**. A closed braid factoring as
+`(word on 1..k)(one junction crossing)(word on k..n)` closes to a connected sum,
+whose essential surfaces are **spheres**.
+
+### What it explains
+
+#5817 measured all 40 branch closures **composite**, 0 hyperbolic, and read it
+as an empirical fact about the particular word. **It is not empirical — it is
+forced.** The atom is
+
+$$ \mathcal{K}(Z,N) \;=\; K_1 \,\#\, K_2 \,\#\, \cdots \,\#\, K_A $$
+
+by construction, so $S^3 \setminus \mathcal{K}$ contains essential spheres and
+**no essential torus anywhere**. That is exactly why
+`conj:jsj-decomposition-linearity` is presently **true and empty**: its
+decomposition hypothesis asks the inter-nucleon braids to form essential
+**tori**, and a one-strand junction cannot make one.
+
+### The gap, in one number
+
+| | |
+|---|---:|
+| strands crossing each block wall, **now** | **1** → connected sum, sphere |
+| strands needed for an essential torus | **≥ 2** → splice, torus |
+
+The author's *"not the simple disjoint union, the convolution is the
+interweaving"* names precisely this. One crossing joins the blocks **at a
+point**; a **bundle** of ≥ 2 strands threading the wall is what can make the
+boundary of a neighbourhood incompressible. And the slot for that change already
+exists: `conj:confinement-nf-structure-forcing` writes the atom as
+$\beta = \beta_1 \star I \star \beta_2$ across a basis interface $I$, with
+$\mathrm{shift}_{\rm NF}(\beta) = \alpha_{\rm shift}(I) + \Delta$. The interface
+$I$ is exactly what would change, and $\alpha_{\rm shift}(I)$ is what would move.
+
+### Scope — (a), and narrower than it may look
+
+**The strand count is necessary, not sufficient.** Incompressibility is a
+geometric condition this probe does not test, so it is **not** claimed that a
+≥ 2-strand interface *would* produce an essential torus — only that a 1-strand
+interface **cannot**. Nor is it claimed that any particular replacement is
+correct or derivable, that `conj:jsj-decomposition-linearity` is *false* (true
+and empty is not the same thing), or that binding follows. Nothing here computes
+a binding contribution.
+
+### And it re-scopes Addendum 26
+
+Addendum 26's 2-parallel cable put **one torus around the whole atom** —
+companion = the entire closure, pattern = two parallel copies of it. It
+demonstrated the index-set escape the Lean predicted, and it is *not* the
+inter-nucleon structure. This addendum locates where the torus actually has to
+go: **at each of the $A-1$ walls**, not around the outside.
