@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T05:27:06Z
-updated_at: 2026-08-26T07:44:02Z
+updated_at: 2026-08-26T13:48:27Z
 ---
 
 Found by the F1 agent (`qou-39bx`) while tracing where the deuteron's 27%
@@ -144,3 +144,65 @@ deuteron figure, but no citation of it as D-backing has been demonstrated — th
 is the hazard, and it is unmeasured.
 
 Audit: `docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`.
+
+
+---
+
+## Step 3 STARTED (owner said go). The structural gate is proved; migration under way.
+
+**PR [#5828]. Branch restarted from main** — #5812 merged, so per the merged-PR
+rule this is a fresh change on the same branch name (force-with-lease over
+already-merged history only).
+
+### The gate: conventions C and D are separated by the KERNEL'S RANGE
+
+Both are built from one kernel `g u = u/(u²+1)` (the generic Tier-2 `markovZ`):
+
+    z_C q = √q/(q+1)   = g(√q)
+    z_D q = q³/(q²+1)  = q² · g(q)
+
+`g` is bounded by `1/2` (from `0 ≤ (u−1)²`); `z_D q − 1/2` has numerator
+`(q−1)(2q²+q+1)`, so `z_D q > 1/2` for every `q > 1`. Hence **for every q > 1 no
+real `u` at all satisfies `g u = z_D q`** — D is outside the kernel's range, not
+at a different point of it. They touch only at `q = 1`.
+
+`QOU/BraidKnot/MarkovConventionSeparation.lean`, 9 declarations, `lean`-direct
+exit 0, `#print axioms` = `[propext, Classical.choice, Quot.sound]` on all six
+theorems, no `sorryAx`.
+
+**Three consequences, in increasing order of work saved:**
+1. *"Never substitute `s² = q`"* is now a **theorem**, not a caution.
+2. **The Tier-2 migration baked C in structurally.** I had recorded it as
+   "removed the square root and left C harder to see". It is stronger: the shape
+   it migrated to has real range `[−1/2, 1/2]`, which **excludes** D for every
+   `q > 1`. The generic form is not convention-neutral.
+3. **The 9 `C-sqrtvar` sites cannot be repaired by re-instantiating** — the
+   definition *shape* must change, from `g` to `q²·g q`.
+
+### DESIGN DECISION — never mutate `markovZ` in place to mean D
+
+The tempting migration is to edit each definition's body from C to D and stop.
+**That is the defect this whole bean is about**, one turn later: it would
+silently change what every existing theorem *name* means, which is exactly how
+five `markovZ` declarations came to span two conventions. So:
+
+- **A site with no dependent statements** may be migrated in place — but the
+  convention must be **named in the docstring**, never left to be inferred from
+  the formula.
+- **A site whose theorems depend on it** does NOT get an in-place body swap. The
+  C object keeps its name and its theorems (they are correct **for C**); D is
+  introduced under a **distinct** name; convention-sensitive results are
+  re-derived rather than renamed.
+
+### Progress
+
+Site 1/14 — `mass-theory/skein-polynomial-transfer-matrix.lean`
+`tracedVolumeFromMatrix`. Chosen first as the pattern-setter because it is the
+minimal case: **zero references anywhere in the tree**, and none of the file's
+three theorems mentions it, so nothing silently changes meaning. Migrated in
+place with the convention named and the separation theorem cited.
+
+13 sites remain (5 `C-sqrtvar`, 8 `C-plain`), ~3,600 lines and ~115 theorems.
+This is genuinely multi-tranche work; the count is measured by
+`scripts/lean-markov-convention-audit.py --selftest`, which will drop as sites
+land and whose `KNOWN_C` must be edited in the same commit that migrates a site.

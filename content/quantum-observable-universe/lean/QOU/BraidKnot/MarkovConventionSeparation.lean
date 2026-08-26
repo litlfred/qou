@@ -63,7 +63,17 @@ namespace QOU.BraidKnot
 
 /-- The rational kernel both conventions are built from: `g u = u / (u² + 1)`.
 This is the generic Tier-2 `markovZ`, stated here over `ℝ` because the whole
-point of this file is an inequality. -/
+point of this file is an inequality.
+
+**This is a convention-C object, deliberately, and it is here for comparison
+only** — it is the thing convention D is separated *from*, and every theorem
+below is about the gap between it and `markovZD`. Do not consume it as a Markov
+parameter; `markovZD` is canonical (owner ruling R1, 2026-08-15).
+
+Recorded because `scripts/lean-markov-convention-audit.py` flagged this very
+declaration as actionable C on the run right after it was written — correct by
+its rules, and the right fix is for the site to announce itself rather than for
+the detector to special-case a filename. -/
 noncomputable def markovKernel (u : ℝ) : ℝ := u / (u ^ 2 + 1)
 
 /-- Convention **D**, the canonical one (owner ruling R1, 2026-08-15). -/

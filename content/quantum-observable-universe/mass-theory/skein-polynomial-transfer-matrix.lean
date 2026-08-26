@@ -58,16 +58,30 @@ noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
 -- The Skein polynomial in factored form
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The traced volume at generator σ_i: V̂_i(q) = z · a_i + b_i
-    where (a_i, b_i) come from the transfer matrix product M_i
-    and z = 1/(q^½ + q^{-½}).
+/-- The traced volume at generator σ_i: V̂_i(q) = z · a_i + b_i,
+    where (a_i, b_i) come from the transfer matrix product M_i and `z` is the
+    Markov parameter in **convention D**, `z = q³/(q² + 1)`.
 
-    This is a polynomial in q^½ (rational function that simplifies
-    for link invariants by Jones's theorem). -/
+    **Migrated from convention C 2026-08-26 (bean `qou-cxjq` step 3).** This read
+    `z = 1/(√q + 1/√q) = √q/(q+1)`, which is convention C — excised by owner
+    ruling R1 of 2026-08-15. The migration is a **change of shape, not a change
+    of variable**: `QOU.BraidKnot.no_kernel_instantiation_is_conventionD` proves
+    that for every `q > 1` no real `u` at all satisfies `u/(u²+1) = q³/(q²+1)`,
+    so no substitution `s² = q` could have done this. See
+    `QOU/BraidKnot/MarkovConventionSeparation.lean`.
+
+    Safe to migrate in place here: `tracedVolumeFromMatrix` has **no references
+    anywhere in the tree** outside this definition, and none of this file's three
+    theorems mentions it — so no recorded statement silently changes meaning.
+    (That is the failure mode the five-way `markovZ` overload created, and it is
+    why the convention is now named in the docstring rather than left to be
+    inferred from the formula.)
+
+    No longer a polynomial in `q^½`: convention D is rational in `q` itself,
+    which is the point of the convention. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 noncomputable def tracedVolumeFromMatrix (q : ℝ) (M : TransferMatrix) : ℝ :=
-  let q_half := Real.sqrt q
-  let z := 1 / (q_half + 1 / q_half)
+  let z := q ^ 3 / (q ^ 2 + 1)   -- convention D
   z * M.a₁₁ + M.a₂₁
 
 /-- The nuclear Skein polynomial: product of traced volumes.
