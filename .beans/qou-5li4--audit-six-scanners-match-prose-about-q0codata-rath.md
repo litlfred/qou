@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-08-26T04:02:29Z
+updated_at: 2026-08-26T04:14:30Z
 ---
 
 Split out of `qou-1c4y`, which records six instances of this defect found the
@@ -136,3 +136,53 @@ vulnerable because their patterns are *bare-token* (a literal, a module name, a
 symbol) and so match anywhere — including inside the sentence explaining why the
 file does not do the thing. **Pattern shape, not input normalisation, is the
 cheaper fix where the target is an assignment.**
+
+
+## 2026-08-26 — `_source_normalise.py` landed; consumer wiring deliberately NOT
+
+Added [`computations/audits/_source_normalise.py`](computations/audits/_source_normalise.py):
+`code_only()` (tokenize; blank COMMENT + triple-quoted STRING; **preserve line
+and column**), `blank_declaration_prose()`, `code_only_ast()`. Runs its own
+`--selftest`, which fails loudly if a future narrowing breaks line preservation
+or lets a reason string indict its own claim.
+
+### The finding that came out of building it is bigger than the one that prompted it
+
+This bean recorded that `hardcoded_literal_audit`'s docstring strip corrupts
+line numbers (476 reported for a string at 647). Measured across 400 live
+producers, the same `re.sub(r'\"\"\".*?\"\"\"', "")` does something worse:
+
+    files where the old strip DELETES lines : 397 of 400
+    total lines removed from the scan       : 18942
+    worst single file                       : 482  (_li_2_q_util.py)
+    code_only line-count preserved          : 400/400, asserted
+
+Those lines are not merely **mis-numbered**, they are **never scanned**. A
+`--strict` gate has been silently blind to ~19k lines of the corpus it audits.
+
+### Why the wiring is not in this change
+
+I wired `hardcoded_literal_audit` to `code_only` and its `i9_violation` count
+moved **248 → 332 scripts**. That is consistent with recovering unscanned lines
+— but I could not *characterise* the +84, and I should say why rather than
+imply the check was skipped: my diff of old-vs-new flagged lists compared two
+**truncated** displays (the audit prints 24 rows then "… and 320 more"), so it
+reported 24 = 24 and no delta. A vacuous check, of the same family this bean is
+about.
+
+**A +84 on a strict gate that I cannot explain is not shippable**, so it was
+reverted. It needs the full list (not the display), a sample of the newly-hit
+lines, and its own review.
+
+### Two scope corrections to this bean's own text
+
+- **The evidence case is not reachable by `code_only`.** `canonical_tower.py`'s
+  note is **implicitly-concatenated single-quoted** strings, not a docstring.
+  `code_only` deliberately leaves single-quoted strings intact — they carry
+  real declared values (`VAR = "1.1099785827..."") the audit must still see. So
+  wiring this module fixes the POSITIONS and the COVERAGE, **not** that false
+  positive. Separating a sentence from a declared constant is the pattern-shape
+  question, not a normalisation one.
+- Consequently "fixes all six by import" is **too strong**. It gives all six a
+  correct, shared, line-preserving normaliser; each still needs its own pattern
+  reviewed.
