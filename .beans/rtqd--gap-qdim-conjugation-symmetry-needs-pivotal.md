@@ -1,11 +1,11 @@
 ---
 # rtqd
 title: 'GAP: qDimObj(Xᘁ)=qDimObj X general-object conjugation symmetry needs a pivotal structure Mathlib lacks'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-26T16:38:08Z
+updated_at: 2026-08-26T17:17:36Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -185,3 +185,51 @@ hypothesis in qDim_conj_of_pivotalTransport is still carried, not discharged.
 What did change: the blocker recorded in KeystonePivotalSpherical.lean -- "a pivotal
 structure is required, and Mathlib provides no such class" -- is gone. The next step
 is the transport lemma itself, now expressible on data that exists.
+
+
+
+## CLOSED 2026-08-26, and the impossibility claim in this bean was WRONG
+
+qDimObj (Xdual) = qDimObj X is PROVED, unconditionally, in any braided right-rigid
+category. QOU.BraidKnot.Ribbon.qDim_conj_object, one line from
+QOU.MathlibExt.qDimWith_rightDual. Sorry-free, #print axioms clean.
+
+No pivotal hypothesis. No spherical hypothesis. No transport hypothesis.
+
+### What this bean got wrong
+
+It recorded the general-object case as not merely unproved but "NOT EXPRESSIBLE as a
+computation on the existing data" without a pivotal structure, because qDimObj (Xdual)
+traverses the double dual and a braided right-rigid category does not identify Xdualdual
+with X.
+
+The PREMISE is correct. The CONCLUSION does not follow from it. The dimension never needs
+the identification -- it needs only that a fixed object's dimension is the same whichever
+dual computes it, and X is ITSELF a right dual of Xdual via
+BraidedCategory.exactPairing_swap. Dual-INDEPENDENCE is strictly weaker than double-dual
+IDENTIFICATION, and it is what the trace consumes.
+
+### The proof, three steps
+
+  qDimWith_congr_dual  the quantum dimension does not depend on the choice of dual.
+                       rightDualIso is the comparison map; Mathlib's
+                       coevaluation_comp_rightAdjointMate and
+                       rightAdjointMate_comp_evaluation at f = id say it transports eta
+                       and epsilon; braiding naturality slides it across the crossing
+                       where the two occurrences cancel.
+  qDimWith_swap        against the swapped pairing, the swapped coevaluation's beta-inverse
+                       meets the trace's own beta and cancels, leaving qDim(X) exactly.
+  qDimWith_rightDual   both duals of Xdual give the same dimension; against the swapped one
+                       it is qDim(X).
+
+### What is NOT closed
+
+The pivotal TRANSPORT identity qDimObj (Xdual) = leftQDim X is still unproved and stays a
+hypothesis of KeystonePivotalSpherical's conditional theorems (bean qou-we9a). Sphericality
+is a separate condition, untouched. Those conditional theorems remain valid -- a conditional
+result is not invalidated by an unconditional proof of its conclusion.
+
+### What this bean got RIGHT and should be copied
+
+Refusing to sorry it, and refusing to axiomatise it as a class field. Both correct. The
+error was the impossibility claim, not the discipline around it.
