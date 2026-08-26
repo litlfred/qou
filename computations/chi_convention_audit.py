@@ -138,7 +138,18 @@ PRODUCER_CONVENTION: dict[str, str] = {
     # left to `chi_convention_from_values_audit`, which measures rather than
     # asserts.
     "chi_at_q0_via_hoefsmit_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
-    "chi_at_q_inv_via_native_mpfr.py": AVERAGED,
+    # Same word-dependence as the Hoefsmit producer above, for the same
+    # reason, plus a second axis: as of bean qou-1oxx this producer emits BOTH
+    # frames on every run -- `chi-{atom}-h{n}-at-qinv-50dps` (colour-blind, the
+    # bar-symmetriser) and `...-colour-weighted` (canonical, R3) -- so a single
+    # constant cannot express it either. Asserting AVERAGED here flagged all
+    # three new colour-weighted witnesses as CRITICAL mismatches against a
+    # label the producer had DERIVED by counting weighted crossings in the
+    # word. Both are accepted; the discrimination is left to
+    # `chi_convention_from_values_audit`, which measures rather than asserts.
+    # The `-colour-weighted` suffix is also why COMPUTATION_PATTERNS does not
+    # catch these: its qinv regex is `$`-anchored on `-at-qinv-50dps`.
+    "chi_at_q_inv_via_native_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
     # symbolic + numeric catalogue (same full-canonical-word as Hoefsmit):
     # value-confirmed averaged — deuteron symbolic χ^(6) @q0 = 1.5598
     # matches the averaged numerical cache (1.5599), NOT sign-only (11.02).
