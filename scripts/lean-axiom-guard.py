@@ -355,6 +355,12 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s1_n
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.t0_mul_t0 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H2A | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeCosetSpanning_H2_H3 | clean
+# The three CE/Markov class FIELDS, discharged concretely for H2 subset H3.
+# They are theorems rather than instances only because the two classes still
+# bind the UNBOUNDED presentation; the mathematics is not what is missing.
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_retract | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_bimodule | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_markov | clean
 """
 
 

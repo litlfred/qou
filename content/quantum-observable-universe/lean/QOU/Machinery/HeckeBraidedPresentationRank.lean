@@ -176,4 +176,75 @@ instance heckeCosetSpanning_H2_H3 (q : R) :
       simp [Finset.sum_range_succ, gen, H2A.iotaAlg, H2A.iotaFun, iota23, t0, s1,
         mulNF, mulσ₀, mulσ₁]
 
+/-! ## The conditional expectation for H₂ ⊂ H₃
+
+`ε` is FORCED on the basis once the Markov property is imposed, given the
+coset table above:
+
+  ε γ = γ,  ε σ₀ = σ₀                          (retraction on the image)
+  ε σ₁ = z•γ                                   (Markov)
+  ε (σ₁σ₀) = z•σ₀,  ε (σ₀σ₁) = z•σ₀            (bimodule, one side trivial)
+  ε (σ₀σ₁σ₀) = z•σ₀² = z•(h•σ₀ + 1)            (bimodule, both sides)
+
+so in coordinates
+
+  ε v = ⟨v₀ + z·v₂ + z·v₅ , v₁ + z·v₃ + z·v₄ + z·h·v₅⟩.
+
+Nothing is chosen here: every entry is read off the table. -/
+
+/-- The conditional expectation `H₃ → H₂` at Markov parameter `z`, in
+coordinates. -/
+def epsFun (h z : R) (w : H3A R h) : H2A R h :=
+  ⟨w.v 0 + z * w.v 2 + z * w.v 5,
+   w.v 1 + z * w.v 3 + z * w.v 4 + z * h * w.v 5⟩
+
+/-- `epsFun` bundled as an `R`-linear map. -/
+def epsLin (h z : R) : H3A R h →ₗ[R] H2A R h where
+  toFun := epsFun h z
+  map_add' x y := by apply H2A.ext <;> simp [epsFun] <;> ring
+  map_smul' c x := by apply H2A.ext <;> simp [epsFun, H2A.smul_a, H2A.smul_b] <;> ring
+
+/-- **`retract` holds for `epsLin`** — the first field of
+`HeckeConditionalExpectation`, concretely. -/
+theorem epsLin_retract (h z : R) (x : H2A R h) :
+    epsLin h z (H2A.iotaAlg x) = x := by
+  apply H2A.ext <;> simp [epsLin, epsFun, H2A.iotaAlg, H2A.iotaFun, iota23]
+
+/-- **`bimodule` holds for `epsLin`** — the second field, concretely:
+`ε (ι x · w · ι y) = x · ε w · y` for all `x, y : H₂` and `w : H₃`.
+
+This is the one that could have failed. `ε` was written down from the coset
+table by imposing the Markov property; whether the resulting map is an
+`(H₂, H₂)`-bimodule map is a separate question, settled here by computation
+over all six coordinates with `x`, `y`, `w` symbolic. -/
+theorem epsLin_bimodule (h z : R) (x y : H2A R h) (w : H3A R h) :
+    epsLin h z (H2A.iotaAlg x * w * H2A.iotaAlg y)
+      = x * epsLin h z w * y := by
+  apply H2A.ext <;>
+    simp [epsLin, epsFun, H2A.iotaAlg, H2A.iotaFun, iota23, mulNF, mulσ₀, mulσ₁,
+      H2A.mul_a, H2A.mul_b] <;> ring
+
+/-- **The Markov property holds for `epsLin`** — the field of
+`HeckeMarkovExpectation`: `ε (ι b · σ₁ · ι c) = z • (b · c)`. -/
+theorem epsLin_markov (h z : R) (b c : H2A R h) :
+    epsLin h z (H2A.iotaAlg b * s1 h * H2A.iotaAlg c) = z • (b * c) := by
+  apply H2A.ext <;>
+    simp [epsLin, epsFun, H2A.iotaAlg, H2A.iotaFun, iota23, s1, mulNF, mulσ₀,
+      mulσ₁, H2A.mul_a, H2A.mul_b, H2A.smul_a, H2A.smul_b] <;> ring
+
+/-! ### Why these are theorems and not instances
+
+All three fields of `HeckeConditionalExpectation` and `HeckeMarkovExpectation`
+are discharged above for `H₂ ⊂ H₃`. **The instances still cannot be declared**,
+and the obstruction is not mathematical: both classes bind the **unbounded**
+`HeckeBraidedPresentation`, which by `constant_generator_presentation` and
+`far_commute_zero` has no contentful instance for a finite algebra.
+
+Re-pointing them at `HeckeBraidedPresentationOfRank` — as `HeckeCosetSpanning`
+already is — would make the instances declarable, and would then make
+`cyclic_two_g_of_tower` unconditionally instantiable at this rung. That is a
+signature change to a class that predates this work and that
+`JonesBasicConstruction` also binds, so it is left for the author to decide
+rather than taken here. The mathematics is not what is missing. -/
+
 end QOU.Machinery.HeckeRank
