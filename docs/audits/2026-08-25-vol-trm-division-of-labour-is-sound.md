@@ -197,3 +197,59 @@ The one justification on record was *"Same Markov class, different topological
 realization"* — which is a category error, and which, read charitably as trace
 equality, is now measured false. Scope **(a)**: one production path, `H₃`,
 convention D, proton pin.
+
+---
+
+## Addendum 3 — the corpus answers most of it; I over-claimed again (2026-08-26)
+
+Addendum 2 called the `p`/`n` pairing *"unexplained"* and said nothing was on
+record saying it is intended. **The corpus-grep I should have run first says
+otherwise.**
+
+[`prop:hoefsmit-scattering-pipeline`](../../content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md)
+Stage 3 states the architecture directly:
+
+> *"The factor `Geom(K)` **projects the algebraic trace into a measurable
+> observable**: `Vol(K)/ℏ_q²` for hyperbolic `K` (mass/energy), `CS(K)·ℏ_q²` for
+> torus `K`, or `0` for the unknot."*
+
+and, in the proof:
+
+> *"On the algebraic side this is the algebraic-quantum-volume pairing in
+> `ℤ[q^{±1/2}]`; **the geometric reading appears only after applying
+> `τ_arch`**."*
+
+**Pairing an algebraic factor with a geometric one is the design**, and the two
+sit on opposite sides of the fibre functor by construction — that is what the
+observation frame *is*. So "an algebraic factor from one object and a geometric
+factor from another" is not an anomaly to be explained; it is the Tannakian
+structure working as specified. **Addendum 2's framing is withdrawn.**
+
+### What survives, narrowed to one question
+
+The block's formula carries **one** `K` throughout —
+`𝔪(K) = m_e · Geom(K) · ‖J_K(q)‖`, the trace *of* `K` against the volume *of*
+`K`. Production evaluates `Vol` of the Borromean link against a trace that is
+**not** `J_{𝓑₃}(q)`: measured, `tr_M(β_Bor) = 0.9986` while production's
+`ρ(proton) = 1.1458`.
+
+Two readings, and **the corpus does not settle between them**:
+
+- **(A)** the formula means one `K`, and the atom element is that `K`'s algebraic
+  side under a description the block does not spell out;
+- **(B)** the algebraic side carries the full quark-structured element while
+  `Geom` carries the geometry of its *carrier link* — two objects by design.
+
+(A) is what the formula literally says; (B) is what the `τ_arch` prose suggests.
+This is a **design-intent** question, and per this arc's own discipline it goes
+to the author rather than being guessed at.
+
+### Tally, because it is the point
+
+Five worries on this arc: the word-level "load-bearing" claim (**retracted**),
+"does anything read `Vol` off the atom object" (**no**), "is `p`/`n`'s
+`principled-derivation` a fit" (**no**), "is the pairing unexplained"
+(**no — documented**), and the conjugacy-floor exclusion (**held, and upgraded to
+a proof**). One in five. The corpus-grep checklist earned its place four times
+here; the one time I skipped a tier of it — `INDEX.md` only — it cost the Malyutin
+bound that was quoted in a paper already on disk.
