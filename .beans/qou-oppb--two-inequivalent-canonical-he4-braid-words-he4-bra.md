@@ -1,10 +1,11 @@
 ---
 # qou-oppb
 title: 'Two inequivalent canonical-He4 braid words: he4_braid_canonical vs atom_braid_word_3A'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-26T16:40:21Z
-updated_at: 2026-08-26T16:40:21Z
+updated_at: 2026-08-26T16:48:01Z
 ---
 
 Two functions in `computations/` each construct "the canonical ⁴He braid word at
@@ -69,3 +70,64 @@ Secondary, and independent of which word wins: **both constructors emit float64
 offsets** (`atom_braid_word_3A` wraps one in `mpf`, the `mpf(<float>)` pattern
 `scripts/precision-gates.sh` flags). That caps every character built from either
 at ~1e-15 regardless of the dps used downstream.
+
+
+## RESOLVED 2026-08-26 (PR #5833, commit `d003e06c4`)
+
+The bean framed the choice as "a judgement call, not a measurement". It turned
+out to be a measurement, and one-sided:
+
+| constructor | consumers |
+|---|---|
+| `atom_braid_word_3A` (defined `mass_at_3A_proper.py:433`) | **~220** corpus-wide |
+| `he4_braid_canonical` | **3**, all inside the H_12 branching cone |
+
+And the corpus word makes the divergent cone verify. Substituting it takes
+phase25's residuals from six at O(1) to:
+
+| λ | rel | λ | rel |
+|---|---|---|---|
+| (12,) | 1.25e-08 | (3,1⁹) | 1.02e-08 |
+| (11,1) | 6.64e-09 | (2,2,1⁸) | 4.97e-09 |
+| (10,2) | 4.75e-08 | (2,1¹⁰) | 1.77e-08 |
+| (10,1,1) | 1.43e-08 | (1¹²) | 1.07e-08 |
+
+That band is F1's **8-significant-figure storage floor**, not a residual. A
+third independent confirmation that `path_b_chi_h12` was always correct, after
+the completeness identity and the defect-0.0 projector check.
+
+`he4_braid_canonical` now delegates. Kept as a named function rather than
+deleted: it is the name this cone documents itself with, so a reader looking for
+"the canonical ⁴He word" lands there and is told where it comes from.
+
+### Deliberately not done
+
+**The pass threshold was not widened.** phase25 still prints 0/8, because
+`rel < 1e-9` is unmeetable against an upstream storing 8 significant figures.
+Relaxing it to make the run green is the baseline-widening anti-pattern; the
+honest report is that the mathematics agrees and the threshold is measuring F1's
+serialization. Whether `he4-canonical-tr-m-block-fingerprint` should store more
+digits belongs to whoever owns that producer.
+
+### What was NOT established
+
+That `he4_braid_canonical`'s local build was never deliberate. Established: it
+disagrees with ~220 files, nothing else consumes it, and the corpus word makes
+its own cone verify. Reversible in one line if someone knows otherwise.
+
+### The probe is now a regression pin
+
+The fix would have made
+[`he4_canonical_braid_word_disagreement_probe.py`](../computations/probes/he4_canonical_braid_word_disagreement_probe.py)
+compare the corpus word to itself and quietly stop demonstrating anything, so it
+reconstructs the old local word inline (verbatim, from `b2028fc3b`) and **exits
+non-zero if the delegation is ever undone**.
+
+### Still open, and separate
+
+Both constructors emit **float64 offsets** — `atom_braid_word_3A` wraps one in
+`mpf`, the `mpf(<float>)` pattern `scripts/precision-gates.sh` flags. That caps
+every character built from either at ~1e-15 regardless of downstream dps. Not
+fixed here: it touches the corpus-wide constructor and moves numbers in ~220
+consumers, which is its own tranche. Related: `qou-b4xn`, whose subject is the
+same constructor.
