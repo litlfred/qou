@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T18:51:24.393033+00:00",
-  "commitSha": "bd3710eb02ce2bfa1736cee3afa973d77624d398",
+  "computedAt": "2026-08-26T23:00:05.134461+00:00",
+  "commitSha": "c0a9eac8cf0e16b1984f2e00cfe4b2ba12422c27",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,12 +28,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -45,7 +43,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 997,
+      "Q0_OK": 1010,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 13,
       "Q0_INDEPENDENT": 48,
@@ -53,7 +51,7 @@
       "Q0_COMPARISON": 2,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1662,
+      "Q0_ANCHOR_MISSING": 1678,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -2603,6 +2601,46 @@
           "detail": ""
         },
         {
+          "witness": "atom-word-is-a-connected-sum.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "binding-cut-entropy-derived-weightings.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "binding-cut-entropy-sign-is-forced.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "colour-derived-interface.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "colour-tube-refinement-is-convexity-bounded.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "cut-entropy-is-A-independent.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-cost-and-sign-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-negative-occupation-locality.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deuteron-support-reachability.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "interface-candidate-screen.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "meson-braid-conjugacy-floor-search.witness.json",
           "detail": ""
         },
@@ -2620,6 +2658,18 @@
         },
         {
           "witness": "meson-braid-syllable-bound.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "satellite-cable-escapes-the-bound.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "two-remaining-fronts.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "zero-weight-sector-is-temperley-lieb.witness.json",
           "detail": ""
         },
         {
@@ -5119,6 +5169,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-d-frame-trace-baseline.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-daha-macdonald.witness.json",
           "detail": ""
         },
@@ -5224,6 +5278,10 @@
         },
         {
           "witness": "qbeta-epsnpq-colour-weighted-exclusion.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-epsnpq-functional-mismatch.witness.json",
           "detail": ""
         },
         {
@@ -5396,6 +5454,10 @@
         },
         {
           "witness": "qbeta-kc19-phib-departure-bridge.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-ladder-convention-fee.witness.json",
           "detail": ""
         },
         {
@@ -7661,6 +7723,10 @@
           "detail": ""
         },
         {
+          "witness": "chi-free-via-frobenius.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "chi-helium-3-free-h9-at-q0-50dps.witness.json",
           "detail": ""
         },
@@ -8901,6 +8967,10 @@
           "detail": ""
         },
         {
+          "witness": "deuteron-reachability-vs-level.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "markov-weight-support-conjugation.witness.json",
           "detail": ""
         },
@@ -9977,6 +10047,14 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-admissible-functionals-bracket.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-alpha-commutator-floor.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
           "detail": ""
         },
@@ -10097,6 +10175,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-d-frame-tl-quotient-phase.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-decay-channel-convention-status.witness.json",
           "detail": ""
         },
@@ -10122,6 +10204,10 @@
         },
         {
           "witness": "qbeta-fsc-g-pattern-comparison.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-gram-determinant-root-multiplicity-law.witness.json",
           "detail": ""
         },
         {
@@ -10189,11 +10275,27 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-net-as-trace-plus-longest.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-net-trace-invariance.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-perlambda-collapse-cancellation.witness.json",
           "detail": ""
         },
         {
+          "witness": "qbeta-phase-block-resolution.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-rank-one-identity-n3-only.witness.json",
           "detail": ""
         },
         {
@@ -10238,6 +10340,18 @@
         },
         {
           "witness": "qbeta-trm-crosscheck-convention-pin-split.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-two-row-zeros-exact-computed-route.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-where-trace-invisible-part-lives.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-which-algebra-decay-channel.witness.json",
           "detail": ""
         },
         {
