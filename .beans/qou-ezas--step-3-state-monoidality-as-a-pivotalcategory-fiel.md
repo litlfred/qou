@@ -1,11 +1,11 @@
 ---
 # qou-ezas
 title: 'Step 3: state monoidality as a PivotalCategory field'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:28Z
-updated_at: 2026-08-26T19:12:20Z
+updated_at: 2026-08-26T20:18:47Z
 ---
 
 
@@ -23,3 +23,15 @@ merged to main, so adding a field breaks pivotalOfBraided unless the proof
 do not add the field speculatively.
 
 BLOCKED 2026-08-26: see qou-wqst — the monoidality field is unprovable for pivotalOfBraided because drinfeldIso is not monoidal.
+
+
+
+## UNBLOCKED 2026-08-26 (PR #5859)
+
+The blocker was formulational and is gone: `twist_drinfeld_monoidal_tensorDoubleDualIso` states
+the monoidality in the exact shape a field would take.
+
+**Still not a mechanical edit.** The field cannot be added while `pivotalOfBraided` is an
+instance — it is unprovable there because it is FALSE.  Landing the field means replacing that
+instance with a ribbon-hypothesis one, i.e. a behavioural change to a class already on main.
+Own PR, own review.

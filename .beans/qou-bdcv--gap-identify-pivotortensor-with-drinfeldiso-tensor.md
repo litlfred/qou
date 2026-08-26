@@ -1,11 +1,11 @@
 ---
 # qou-bdcv
 title: 'GAP: identify pivotorTensor with drinfeldIso ≫ tensorDoubleDualIso'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T20:06:56Z
-updated_at: 2026-08-26T20:07:24Z
+updated_at: 2026-08-26T20:18:46Z
 ---
 
 Blocks the `PivotalCategory` monoidality field (qou-ezas).
@@ -30,3 +30,17 @@ merged in bfdedc68e6); this is the bridge from the convenient formulation to the
 
 Not urgent, and deliberately not bundled into #5848 — that PR was already 11 files, and the honest
 scope note in the `pivotorTensor` docstring is what a reader needs meanwhile.
+
+
+
+## DONE 2026-08-26 — PR #5859, and the proposed route was NOT the one that worked
+
+`drinfeldIso_comp_tensorDoubleDualIso` proves the identification.
+
+**Correction to this bean's own plan.** It said the route needs Mathlib's
+`exactPairingCongrLeft` plus an unwritten `rightDualIso` compatibility lemma.  **Neither was
+needed.** `tensorRightDualIso` is itself a `rightDualIso`, so it already carries an evaluation
+identity; `braiding_naturality_right` then moves it across the braiding `drinfeldIso`
+contributes.  Four evaluation identities and one interchange.
+
+Unblocks qou-ezas.
