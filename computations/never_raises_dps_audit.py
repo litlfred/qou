@@ -118,9 +118,24 @@ def raises_precision(tree: ast.Module) -> bool:
             t = node.target
             if isinstance(t, ast.Attribute) and t.attr == "dps":
                 return True
-        if isinstance(node, ast.ImportFrom):
-            if any(a.name in RAISERS for a in node.names):
-                return True
+        # NO ImportFrom clause. `from _precision import set_compute_dps`
+        # used to count as raising precision, so a producer that IMPORTED a
+        # raiser and never CALLED it scored clean (bean `qou-nk3h`/`qou-txru`,
+        # 2026-08-26). That is not a hypothetical: it is exactly how
+        # `chi_sym_alt_closed_form.py` ran its whole computation at mpmath's
+        # default 15 while `fmt()` serialised at 50, putting 46 fake-precision
+        # values into a committed witness and taking the float64-padding
+        # ratchet RED ON MAIN. This audit reported that file clean throughout.
+        #
+        # The module docstring's imported-helper exemption — `mp.dps` is global
+        # state, so a library legitimately inherits its caller's precision — is
+        # real, but it is enforced by `is_runnable()` (condition 3), which
+        # already exempts any file with no `__main__` block. It never needed
+        # this clause, and the clause silently widened it from "helpers" to
+        # "anything that mentions a raiser in an import".
+        #
+        # Removing it surfaced ZERO new findings on the tree at the time
+        # (measured), so the correction cost no baseline growth.
         if isinstance(node, ast.With):
             for item in node.items:
                 c = item.context_expr
@@ -220,6 +235,10 @@ def self_test() -> int:
         ("does NOT flag one using a workdps block",
          'import mpmath as mp\nwith mp.workdps(50):\n    x = mp.mpf("1.5")\n'
          'open("a.witness.json")\nif __name__ == "__main__":\n    pass\n', False),
+        ("FLAGS a producer that IMPORTS a raiser but never CALLS it",
+         'import mpmath as mp\nfrom _precision import fmt, set_compute_dps\n'
+         'x = mp.mpf("1.5")\nopen("a.witness.json")\n'
+         'if __name__ == "__main__":\n    pass\n', True),
         ("does NOT flag an IMPORTED helper (dps is global; caller sets it)",
          'import mpmath as mp\nx = mp.mpf("1.5")\nopen("a.witness.json")\n', False),
         ("does NOT flag a producer that builds no mpmath VALUE",

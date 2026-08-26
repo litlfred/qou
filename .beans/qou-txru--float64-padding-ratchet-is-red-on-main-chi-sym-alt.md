@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:08:04Z
-updated_at: 2026-08-26T18:20:52Z
+updated_at: 2026-08-26T18:29:57Z
 ---
 
 Found 2026-08-26 while merging 124 commits of main into PR #5843. **Not that
@@ -145,3 +145,36 @@ I had a specific, well-evidenced, traced-to-the-line root cause that was wrong,
 and the only reason I did not ship it is that I **re-ran the producer and
 compared the serialised output** instead of trusting that a plausible fix had
 worked. A patch that changes nothing is data.
+
+
+## The detector gap is closed, 2026-08-26
+
+The audit written for exactly this case reported the file **clean throughout**.
+Found the clause, in `raises_precision()`:
+
+    if isinstance(node, ast.ImportFrom):
+        if any(a.name in RAISERS for a in node.names):
+            return True
+
+**Importing a raiser counted as raising precision.** `chi_sym_alt_closed_form.py`
+has `from _precision import fmt, set_compute_dps` at line 61 and never calls it,
+so it scored clean while computing its entire run at 15 dps.
+
+The module docstring's imported-helper exemption is real — `mp.dps` is global
+state, so a library legitimately inherits its caller's precision — but that is
+enforced by `is_runnable()` (condition 3), which already exempts any file with
+no `__main__` block. The `ImportFrom` clause was never needed for it, and it
+silently widened the exemption from "helpers" to "anything that mentions a
+raiser in an import". The selftest had **no case** covering it.
+
+**Removed, and pinned.** New selftest case *"FLAGS a producer that IMPORTS a
+raiser but never CALLS it"*; battery 8 → 9, all passing.
+
+**Verified in both directions, which is the part that matters:**
+
+    fixed detector vs PRE-FIX producer :  NEW 1  — 23  chi_sym_alt_closed_form.py
+    fixed detector vs FIXED producer   :  NEW 0, REGRESSED 0
+
+**Cost: zero baseline growth.** Measured before applying — removing the clause
+surfaced no other findings on the current tree, because the one file it was
+hiding is the one already fixed. The correction is free.
