@@ -1448,3 +1448,22 @@ three generations — and none of them moved.
 same wall counted two ways: `ℓ(λ) ≤ 2` is the Schur–Weyl row cap at level
 `r = 2`, and `r = 2` is `N = 2` is `Λ²V ≅ 𝟙`. What §13 adds is that it has an
 isotope number; what this adds is that one fibre provably cannot cross it.
+
+### Addendum 14a — a PR-body link that will not stay fixed (2026-08-26)
+
+Recorded because it wasted three edits and will waste more. One markdown link in
+the #5817 body renders as `[Name](``https://…``)` — the URL wrapped in double
+backticks, which breaks it. It is **not in the submitted text**: a clean
+`[Name](url)` was sent three times, twice with backticks in the link text and
+once without, and it came back wrapped every time.
+
+What does NOT explain it, each checked against a link in the same body that
+renders fine: URL length (the `VolumeConstraintForcesFibreTwo.lean` link is
+comparable and fine), the `.lean` extension (same link, fine), a feature-branch
+path (the `atom_letter_colour_spectrum_probe.py` link is on the same branch and
+fine), or link text repeating the URL's final path segment (the
+`VolumeConstraintForcesFibreTwo` link does exactly that and is fine).
+
+No mechanism identified. The workaround that holds is to not hyperlink that
+file at all — name it in a code span, as the body's Lean section already does
+for all three files. Do not spend another full-body rewrite on it.
