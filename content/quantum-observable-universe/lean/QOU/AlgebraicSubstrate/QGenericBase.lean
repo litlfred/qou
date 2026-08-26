@@ -10,7 +10,26 @@ inverted. `Spec R` is the `q`-line with the roots of unity of order `≥ 2`
 deleted, which is exactly the locus `def:quantum-universe` axiom 4 forbids: no
 quantum dimension may be a non-unit.
 
-**But the definition of a quantum universe should not name that ring.** A
+## Scope: this is CONSTRUCTION-side, not a hypothesis of the axioms
+
+`def:quantum-universe` asks of its base only `CommRing`, and that is correct and
+should not change. The invertibility it needs is stated as `dimQ_isUnit` /
+`frobWeight_isUnit`, quantified over a universe's *own* blocks — a condition on
+the pair `(R, C)`, never on `R` alone. More importantly `q` is **emergent**:
+`QuantumUniverse` carries `unitEndEquiv : R ≃+* End (𝟙_ C)` and deliberately has
+**no `q` field**, because the twist axiom reads `q` off the ribbon structure and
+"a distinguished element would smuggle in as data the thing the framework claims
+to derive".
+
+`IsQGeneric R q` below takes `q` as a **parameter**, so it is exactly the shape
+the axioms refuse. It is therefore *not* a definition-layer constraint and must
+not be threaded into `QuantumUniverse`. Its use is the other direction of
+travel: when one **constructs** a Hecke-type universe, `q` is chosen first (one
+builds `H_n(q)`), and this class is what discharges the axiom-4 fields for that
+construction. Axiomatic direction — `R` generic, `q` emerges, nothing more
+required. Constructive direction — `q` given, and then this.
+
+**The ring below is likewise an instance, not a requirement.** A
 neighbouring community works over a *related* base — `ℚ(q)` for generic-`q`
 representation theory, `ℤ[v, v⁻¹]` with `q = v²` in the Lusztig convention, a
 real or complex algebra past the archimedean wall — and a definition hard-wired
