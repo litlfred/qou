@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:53:18Z
+updated_at: 2026-08-26T03:58:37Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -773,3 +773,53 @@ movement suggests a reference-table update and is a different question again.
 
 **None of this changes the instrument caveat.** These are upper bounds, read
 with their field lists attached.
+
+
+---
+
+## CRASH triage COMPLETE — 7 verdicts, four different causes
+
+All seven classified. "Seven producers crash" would have been wrong about four
+of them.
+
+**Real producer defects (3):**
+
+  * `braid_encoding_audit` — `TypeError: unsupported format string passed to
+    mpf.__format__`. The mpf-formatting family PR #5615 fixed twice already.
+  * `probe_4b_li6_non_rectangular_scan` — `TypeError: no supported conversion
+    for types: (dtype('float64'), dtype('O'))`.
+  * `reeb_rotation_pn_test` — `TypeError: ufunc 'isfinite' not supported for
+    the input types`.
+
+The last two are **the same object-dtype family as the gram-norm finding this
+bean opened with** — an `mpf` reaching a numpy boundary. There it cost 1.8e4x
+in wall time; here it is a hard failure. Same root cause, two different
+symptoms, and worth noting that the slow variant is the one that hides.
+
+**Environment, not a defect (1):**
+
+  * `difference_knot_binding_probe` — `ModuleNotFoundError: No module named
+    'snappy'`. SnapPy is absent from this container.
+
+**A guard working correctly (1):**
+
+  * `probe_canonical_braid_interface_composition` — refuses an unrecognised
+    interface value and names the expected set. Caveat still open: it rejects
+    `d = -0.104458247769726` while naming `-h/2 = -0.1045`, which agree to four
+    decimals. Possibly an exact comparison where a tolerance was meant; needs
+    its owner to read it.
+
+**My harness, not the producers (2):**
+
+  * `term5_aK_audit` — with subdirectories on `PYTHONPATH` it reaches exit
+    **124**. Not a crash: SLOW.
+  * `rho_k_markov_multiplicativity_probe` — reaches `FileNotFoundError` on a
+    `_deprecated/` witness. A missing-input question, not an import failure,
+    and whether that is a producer defect or a checkout artifact is **not
+    established**.
+
+**So: 3 real, 1 environmental, 1 a guard, 2 harness.** AGENTS.md records this
+same over-count being made once before at larger scale (14 claimed, 2 real).
+The lesson repeats because the failure shapes genuinely are
+indistinguishable without reading the exception — which is why the runner now
+records it.
