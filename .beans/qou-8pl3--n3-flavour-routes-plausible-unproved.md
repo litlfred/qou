@@ -416,7 +416,7 @@ Cartan collapse). The two have DIFFERENT causes:
      checklist HAS NO BEANS PATH. Paths 1-5 are docs/audits, content,
      computations, docs/coordination, library. .beans/ is under none of them,
      and qou-dwsh's sentence exists NOWHERE ELSE.
-Added .beans/ as path 6, with the note that  and  are the
+Added .beans/ as path 6, with the note that COMPLETED and SCRAPPED are the
 two statuses that bite -- completed hides an answer, scrapped names the live
 carrier.
 
