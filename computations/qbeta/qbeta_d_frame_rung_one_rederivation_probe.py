@@ -31,6 +31,31 @@ WHAT IS DERIVED (exact, symbolic, in q and z; no anchor, no fit).
   (D2)  rungs 2..5 are free of z. Every appearance of the Markov convention in
         the whole five-rung product is the single alpha inside rung 1.
 
+        *** (D2) IS NOT NEW. CORRECTED 2026-08-26, same session. *** It was
+        already proved in Lean, sorry-free, before this probe existed:
+        `QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common`
+        (LadderConventionLocalisation.lean:69), reached from the D-weight side
+        by a sibling working the same bean. My first commit of this probe
+        presented (D2) as a finding of its own; it is an independent
+        re-derivation and is kept as corroboration, not as a discovery. Two
+        routes to the same localisation is worth something -- claiming it
+        twice is not.
+
+  (D3)  the Hoefsmit V_(2,1) diagonal entry IS the convention-D Markov
+        parameter:  d_1 = q^3/(q^2+1) = z_D  (exact).
+
+        Hence, with the Hoefsmit coupling defined as b^2 = d_1*d_2 + 1
+        (chi-v21-hoefsmit-matrix-derivation.lean:58) and d_2 = -q^-1/(q^2+1):
+
+            y_(2,1)^D = -d_1 * d_2                                    [exact]
+
+        which makes the sibling's `hoefsmitB_sq_eq_one_sub_stdWeightD`
+        (b^2 = 1 - y_(2,1)^D) the Hoefsmit coupling definition re-read, rather
+        than a separate coincidence between the weights and the matrix. This
+        is an explanation of an already-proved theorem, not a new theorem --
+        one line once both objects are written down, and stated at that
+        weight.
+
 WHAT IS *NOT* DERIVED, and is flagged as a reading rather than a result.
 
   (I1)  "with an admissible baseline, alpha has no referent and is dropped."
@@ -177,9 +202,29 @@ def main() -> int:
                 1 - 2 * b**4 * b**4 * hb**8,
                 1 - (b**2 + sp.Rational(1, 2)) * b**5 * hb**10]
     z_free = all(sp.simplify(sp.diff(r, z)) == 0 for r in rungs_hi)
-    check("D2_rungs_2_to_5_carry_no_Markov_parameter", z_free,
-          "d/dz = 0 for all four -- the ENTIRE convention-dependence of the "
-          "five-rung product is the single alpha inside rung 1")
+    check("D2_rungs_2_to_5_carry_no_Markov_parameter_CORROBORATION", z_free,
+          "d/dz = 0 for all four. NOT a discovery -- already Lean-proved as "
+          "Q_beta_categorical_ofPhase_tail_common; this is a second, "
+          "independent route to the same localisation")
+
+    # ------------------------------------------------------------------ (D3)
+    # Hoefsmit V_(2,1) data, from chi-v21-hoefsmit-matrix-derivation.lean:51-58
+    d1 = q**3 / (q**2 + 1)
+    d2 = -q**-1 / (q**2 + 1)
+    zD_sym = q**3 / (q**2 + 1)
+    y21_D = q**2 / (q**2 + 1) ** 2          # the sibling's D weight
+    check("D3_hoefsmit_diagonal_d1_IS_the_convention_D_markov_parameter",
+          sp.simplify(d1 - zD_sym) == 0,
+          "d_1 = q^3/(q^2+1) = z_D -- convention D's Markov parameter is the "
+          "(2,1) Hoefsmit diagonal entry, not an independent choice")
+    check("D3_D_weight_of_the_2dim_block_is_minus_the_hoefsmit_determinant",
+          sp.simplify(y21_D - (-d1 * d2)) == 0,
+          "y_(2,1)^D = -d_1*d_2, so `b^2 = 1 - y_(2,1)^D` (Lean, sibling) is "
+          "b^2 = d_1*d_2 + 1 re-read -- an explanation of a proved theorem, "
+          "not a new one")
+    check("D3_consistency_b_squared_from_both_routes_agrees",
+          sp.simplify((d1 * d2 + 1) - b**2) == 0,
+          "the ladder's b and the Hoefsmit coupling are the same object")
 
     # ------------------------------------------------- numeric, at both pins
     qP = mp.mpf(Q_50_DIGIT_STR)

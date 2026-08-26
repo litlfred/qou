@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T23:17:12.931582+00:00",
-  "commitSha": "17522305edd72b0573f5d9296469054919229b06",
+  "computedAt": "2026-08-26T23:29:31.376223+00:00",
+  "commitSha": "7c2fd9d7653dbf9963410b8e4f7ea9776cb65914",
   "assertions": [
     {
       "name": "delta_rebuilt_from_words_matches_the_corpus_NF_vector",
@@ -33,7 +33,28 @@
       "tolerance": "0"
     },
     {
-      "name": "D2_rungs_2_to_5_carry_no_Markov_parameter",
+      "name": "D2_rungs_2_to_5_carry_no_Markov_parameter_CORROBORATION",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_hoefsmit_diagonal_d1_IS_the_convention_D_markov_parameter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_D_weight_of_the_2dim_block_is_minus_the_hoefsmit_determinant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_consistency_b_squared_from_both_routes_agrees",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -69,11 +90,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 61,
+  "durationMs": 60,
   "computation": "qbeta-d-frame-rung-one-rederivation",
   "scriptFile": "qbeta_d_frame_rung_one_rederivation_probe.py",
-  "scriptHash": "6f093313d172",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "aeca0daf0cbd",
+  "scriptCommitSha": "7c2fd9d7653dbf9963410b8e4f7ea9776cb65914",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
