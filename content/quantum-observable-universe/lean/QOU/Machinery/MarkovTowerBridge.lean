@@ -1,5 +1,6 @@
 import QOU.Machinery.HeckeTowerBasicConstruction
 import QOU.Machinery.MarkovInductiveCyclicity
+import QOU.Machinery.MarkovCosetLift
 import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.NormNum
 
@@ -152,6 +153,71 @@ theorem cyclic_two_g_of_tower
     (fun a x ha hx => towerTrace_mul_eq_of_memB ι ε inst trn a x ha hx)
     u v p r hu hv hp hr
 
+/-! ## Arbitrary `w`, via the spanning decomposition
+
+`cyclic_two_g`'s `hgwg` is stated for a `w` the caller has ALREADY put into
+coset-sum form. That is the weaker half of the assumption: it silently requires
+the caller to know a decomposition exists. `HeckeCosetSpanning` supplies exactly
+that, so the reduction below runs on an ARBITRARY `w : Hn`.
+
+What it yields is the `hgwg` equation with the expectation `Ew` **exhibited**,
+built from the decomposition, rather than assumed equal to `ι (ε w)`. Closing
+that last gap — `Ew = ι (ε w)` — needs the Markov property of the conditional
+expectation, `ε (b · σₙ · c) = z • (b·c)`, which is NOT a field of
+`HeckeConditionalExpectation` (it has exactly `retract` and `bimodule`). So this
+section does not close it, and says so rather than adding a field and calling
+the assumption discharged. -/
+
+section Spanning
+
+open QOU.Machinery.MarkovInductive
+
+variable {Hlow : Type*} [Ring Hlow] [Algebra R Hlow] {σlow : ℕ → Hlow}
+variable [HeckeBraidedPresentation R q Hlow σlow]
+
+/-- **The `hgwg` reduction for an arbitrary `w`.** Given the spanning
+decomposition and the two grounding shape lemmas — one for the lower-coset
+summand, one for the middle — the two-generator Markov reduction holds for
+EVERY `w : Hn`.
+
+The conclusion **pins the witness to the decomposition**: it asserts both that
+`w` splits and that the reduction holds with the expectation built from *that*
+split. A bare `∃ Ew, …` would have been weaker in a way that matters here — a
+degenerate trace (`tr = 0`, the case `markov_axioms_vacuous_of_weight_zero`
+already records upstream) satisfies `∃ Ew` for any `Ew` at all, so the
+existential alone would carry no information about the coset structure. Tying
+the two conjuncts together is what stops the statement being satisfiable by a
+lucky witness.
+
+The grounding hypotheses are the genuine mathematical input; the decomposition
+is what lets them cover every `w` rather than only pre-decomposed ones. -/
+theorem gwg_trace_of_spanning
+    (ιlow : Hlow →ₐ[R] Hn) (n : ℕ)
+    (inst : HeckeCosetSpanning R q Hlow Hn σlow σn ιlow n)
+    (tr : Hn → R) (g : Hn) (z hbar : R)
+    (htr_add : ∀ p r : Hn, tr (p + r) = tr p + tr r) (htr_zero : tr 0 = 0)
+    (x y : Hn)
+    (hlow : ∀ a : Hlow, tr (x * (g * ιlow a * g) * y)
+              = tr (x * ιlow a * y) + z * hbar * tr (x * ιlow a * y))
+    (hmid : ∀ b c : Hlow,
+      tr (x * (g * (ιlow b * σn n * ιlow c) * g) * y)
+        = tr (x * (z • (ιlow b * ιlow c)) * y)
+          + z * hbar * tr (x * (ιlow b * σn n * ιlow c) * y))
+    (w : Hn) :
+    ∃ (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow),
+      w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i) ∧
+      tr (x * g * w * g * y)
+        = tr (x * (ιlow a + ∑ i ∈ s, z • (ιlow (b i) * ιlow (c i))) * y)
+          + z * hbar * tr (x * w * y) := by
+  obtain ⟨a, s, b, c, hw⟩ := inst.spanning w
+  refine ⟨a, s, b, c, hw, ?_⟩
+  subst hw
+  exact gwg_trace_cosetSum tr g (σn n) z hbar s (ιlow a)
+    (fun i => ιlow (b i)) (fun i => ιlow (c i)) x y htr_add htr_zero
+    (hlow a) (fun i _ => hmid (b i) (c i))
+
+end Spanning
+
 end
 
 /-! ## The conditional-expectation instance is load-bearing
@@ -186,6 +252,24 @@ theorem hCE_fails_without_conditional_expectation :
   simp only [towerTrace, towerE, scaleTwo, AlgHom.coe_id, id_eq,
     LinearMap.smul_apply, LinearMap.id_coe, smul_eq_mul] at hx
   norm_num at hx
+
+/-- **The spanning shape does NOT force a proper tower.** With `ιlow` the
+identity, every `w` splits trivially — take `a := w` and an empty sum.
+
+So `HeckeCosetSpanning` is consistent (it has a degenerate model, which is what
+makes results conditional on it non-vacuous), and it is also *weaker than a
+proper inclusion*: an instance of it carries no information that `Hlow` is a
+strict subalgebra. Anything needing properness must say so separately.
+
+Stated over a bare `Ring` because the Hecke presentation binders carry no force
+here — the observation is about the shape of the decomposition, not about
+Hecke. -/
+theorem spanning_shape_holds_for_identity_inclusion
+    {A : Type*} [Ring A] [Algebra R A] (f w : A) :
+    ∃ (a : A) (s : Finset ℕ) (b c : ℕ → A),
+      w = (AlgHom.id R A) a
+        + ∑ i ∈ s, (AlgHom.id R A) (b i) * f * (AlgHom.id R A) (c i) :=
+  ⟨w, ∅, fun _ => 0, fun _ => 0, by simp⟩
 
 end Necessity
 

@@ -217,4 +217,36 @@ class WenzlTowerStep (R : Type*) [Field R] (q : R)
     (∀ y : Hn1, y ≠ 0 → ∃ z : Hn1, trn1 (y * z) ≠ 0) →
     IsSemisimpleRing Hn1
 
+/-- **§3b DEPENDENT conjecture — the coset spanning decomposition (bean
+`qou-zm8z`).** GIVEN the two Hecke braided presentations and the tower
+inclusion `ιlow : Hlow →ₐ Hn`, every element of the larger algebra splits as
+
+  `w = ιlow a + Σᵢ ιlow (b i) · σn n · ιlow (c i)`
+
+i.e. `Hn = Hlow + Hlow · σₙ · Hlow` — the level-`n` algebra is spanned by the
+lower one together with its `σₙ`-double-coset. Classically this is Iwahori's
+basis theorem / the Coxeter length filtration: a reduced word either avoids the
+top generator (first summand) or factors through exactly one occurrence of it
+(the sum). Mathlib has neither at general rank, which is why this is a class.
+
+**This is the brick Ocneanu cyclicity induction actually runs on.** The
+inductive step reduces `tr(w₁w₂)` to words of the shape `u·g·v`, and reaching
+an ARBITRARY pair needs exactly this spanning statement to put a general `w`
+into that shape. Without it the induction is stated only for already-decomposed
+words. It was named as a deliverable of the W2 re-scope note (bean `qou-2017`)
+alongside `HeckeConditionalExpectation` and `JonesBasicConstruction` and, unlike
+those two, was never built.
+
+Independent of the conditional expectation: it mentions neither `ε` nor the
+Jones projection, so it can be discharged separately, and a proof of it does not
+need any trace at all. OPEN — no instance. -/
+class HeckeCosetSpanning (R : Type*) [Field R] (q : R)
+    (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
+    (σlow : ℕ → Hlow) (σn : ℕ → Hn)
+    [HeckeBraidedPresentation R q Hlow σlow] [HeckeBraidedPresentation R q Hn σn]
+    (ιlow : Hlow →ₐ[R] Hn) (n : ℕ) : Prop where
+  /-- Every `w : Hn` decomposes over the lower algebra and its `σₙ`-coset. -/
+  spanning : ∀ w : Hn, ∃ (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow),
+    w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i)
+
 end QOU.Machinery.HeckeTower

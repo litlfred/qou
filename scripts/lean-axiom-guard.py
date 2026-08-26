@@ -333,6 +333,8 @@ QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.epsilon_inclus
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerTrace_mul_eq_of_memB | clean
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.cyclic_two_g_of_tower | clean
 QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.hCE_fails_without_conditional_expectation | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.gwg_trace_of_spanning | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.spanning_shape_holds_for_identity_inclusion | clean
 """
 
 
