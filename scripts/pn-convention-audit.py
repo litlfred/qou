@@ -123,25 +123,53 @@ def _is_h_name(node) -> bool:
     return False
 
 
-def _is_half_of_h(node) -> bool:
-    """True for `h/2`, `0.5*h`, `h*0.5` -- the eps = 0 offset, spelled any way."""
-    if not isinstance(node, ast.BinOp):
-        return False
-    if isinstance(node.op, ast.Div):
-        return _is_h_name(node.left) and _const(node.right) == 2
-    if isinstance(node.op, ast.Mult):
-        return ((_is_h_name(node.left) and _const(node.right) == 0.5)
-                or (_is_h_name(node.right) and _const(node.left) == 0.5))
-    return False
-
-
 def _const(node):
+    """The numeric value of a literal (or a negated literal), else None."""
     if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
         return float(node.value)
     if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
         v = _const(node.operand)
         return None if v is None else -v
     return None
+
+
+def _strip_neg(node) -> tuple[object, bool]:
+    """Peel unary minus signs, returning (inner, negated)."""
+    neg = False
+    while isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
+        neg = not neg
+        node = node.operand
+    return node, neg
+
+
+def _is_half_of_h(node) -> bool:
+    """True for any spelling of +/- h/2 -- the eps = 0 p-n offset.
+
+    Covers `h/2`, `-h/2`, `0.5*h`, `-0.5*h`, `h*0.5`, `(-h)/2`, `-(h/2)`.
+
+    THE UNARY-MINUS CASE IS WHY THIS FUNCTION EXISTS IN THIS FORM. Python
+    parses `-h / 2` as `(-h) / 2`, so the numerator is a UnaryOp and not a
+    Name. The first version of this scan tested `_is_h_name(node.left)`
+    directly and therefore matched `z - h / 2` while silently missing bare
+    `-h / 2` -- which is the commoner spelling in this corpus. It reported
+    15 sites against a true 23. That is the same detector-blind-spot class
+    catalogued in docs/audits/2026-08-15-detector-blindness-taxonomy.md,
+    and it was found only by noticing that a file the value scan flagged
+    did not appear in the source scan. Cross-check your detectors against
+    each other; a single one cannot tell you it has gone blind.
+    """
+    node, _ = _strip_neg(node)
+    if not isinstance(node, ast.BinOp):
+        return False
+    left, _ = _strip_neg(node.left)
+    right, _ = _strip_neg(node.right)
+    if isinstance(node.op, ast.Div):
+        return _is_h_name(left) and _const(node.right) in (2, -2)
+    if isinstance(node.op, ast.Mult):
+        lc, rc = _const(node.left), _const(node.right)
+        return ((_is_h_name(left) and rc is not None and abs(rc) == 0.5)
+                or (_is_h_name(right) and lc is not None and abs(lc) == 0.5))
+    return False
 
 
 class _BlindVisitor(ast.NodeVisitor):
@@ -160,10 +188,12 @@ class _BlindVisitor(ast.NodeVisitor):
     def visit_BinOp(self, node):
         if isinstance(node.op, ast.Sub) and _is_half_of_h(node.right):
             self.hits.append(node.lineno)
+        elif _is_half_of_h(node):
+            self.hits.append(node.lineno)
         self.generic_visit(node)
 
     def visit_UnaryOp(self, node):
-        if isinstance(node.op, ast.USub) and _is_half_of_h(node.operand):
+        if _is_half_of_h(node):
             self.hits.append(node.lineno)
         self.generic_visit(node)
 
@@ -351,9 +381,18 @@ def selftest() -> int:
         ("f_pn = z - 0.5 * h", True),
         ("f_pn = z - h * 0.5", True),
         ("f_pn = z - hecke_h(q) / 2", True),
+        # The unary-minus family. `-h / 2` parses as `(-h) / 2`; the first
+        # version of this scan missed every one of these and under-reported
+        # the surface by a third.
+        ('pn = (mp.mpf(1), -h / 2)', True),
+        ('pn = (1.0, -H / 2)', True),
+        ("d = -0.5 * h", True),
+        ("d = -(h / 2)", True),
+        ("blocks = interface_blocks(lam, 9, 3, q_str, -h / 2, 50)", True),
         ("f_pn = z - h * (1/2 - delta/4)", False),   # canonical
         ("f_nn = z - h", False),                      # a different bond
         ("half = x / 2", False),                      # not h
+        ("third = h / 3", False),                     # not a half
     ]
     for text, want in py_probes:
         tree = ast.parse(text)
