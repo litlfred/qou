@@ -1,11 +1,11 @@
 ---
 # qou-6a7w
 title: 'HOLLOW: the y_lambda Wenzl-bridge content-block Lean is identically ZERO and shadows a real library module'
-status: todo
+status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T19:48:20Z
+updated_at: 2026-08-26T21:37:10Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -201,3 +201,31 @@ broken tree, and not landing a change that turns 0 = 0 into a false statement.
 Both are substantive changes to a `prop:` block. OWNER'S CALL -- and route 4 was
 worth attempting precisely because its failure narrows the choice to these two
 and shows why neither is avoidable.
+
+
+### 2026-08-26 — (P)'s bookkeeping is complete; (P) itself is not
+
+PR #5857, twelve commits.
+
+**The hook-length update rule is proved** (`hookLength_addBoxRow_of_ne_corner`):
+adding a box to row `r` raises the hook length by exactly 1 on the arm cells of
+row `r` and the leg cells of column `λ_r` above row `r`, and leaves every other
+cell alone. The new box itself is excluded — its hook is 1 only by the
+weakly-decreasing property, which the bare `List ℕ` carrier does not have.
+
+**`schurElement` is now a product** (`schurElement_eq_prod`), not a fold. That
+was a real obligation, not a rewriting convenience: nothing cell-by-cell can be
+said about a fold. Cross-checked at λ=(2,1), Q=2, X=3 against the value
+`telescope_three_needs_multiplicity` derives independently: both 10/7.
+
+**All three box-addition cases for the row factor are proved** — below (equal),
+the receiving row (`List.range_succ` split), and above (product surgery at one
+interior index, via `Finset.mul_prod_erase`; stated division-free because
+`cellFactor`'s denominator may vanish).
+
+**What is left is (P) itself**: the sum over addable corners. Everything above
+is its bookkeeping. Do not read "all three cases proved" as "(P) proved" — the
+per-shape ratio is in place, the identity is not.
+
+Corpus-grep before claiming this open: `udmw` is a *different* telescope
+(AJFigureEight / Andersen–Kashaev), not this one.
