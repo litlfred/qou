@@ -108,6 +108,17 @@ CANON_MARKS = (
 # previous PR LABELLED rather than flipped. A label is not a comparison,
 # and a classifier that cannot tell them apart hides exactly the sites a
 # flip needs to find.
+# A file may work in the colour-blind limit DELIBERATELY without ever naming
+# a convention -- by declaring `delta -> 0`, "equal-weight", or "colour-blind"
+# in its own prose. `bond_extensivity_equal_weight.py` says "(delta->0)" in its
+# module docstring and is exactly right to use `z - h/2`; draining it on the
+# strength of the shape alone would silently change what the probe measures.
+# These are reported as DECLARED_BLIND, never as actionable.
+DECLARED_BLIND_RE = re.compile(
+    r"(\u03b4\s*(\u2192|->|=)\s*0|delta\s*(\u2192|->|=)\s*0"
+    r"|delta-degenerate|\u03b4-degenerate|colou?r-blind"
+    r"|no flavou?r split|equal[- ]weight)", re.I)
+
 BLIND_NAMES = ("strict_averaged", "StrictAveraged")
 CANON_NAMES = ("bring_color_weighted", "BringColorWeighted")
 
@@ -224,6 +235,11 @@ def _classify(text: str) -> tuple[str, str]:
     canon_marks = [m for m in CANON_MARKS if m in text]
     if canon_marks:
         return "MIXED", f"canonical machinery present: {canon_marks[0]}"
+    declared = DECLARED_BLIND_RE.search(text)
+    if declared:
+        return ("DECLARED_BLIND",
+                f"the file declares its own colour-blind regime: "
+                f"{declared.group(0)!r}")
     return "BLIND", "no canonical machinery, no second convention"
 
 
@@ -449,9 +465,11 @@ def main() -> int:
 
     if both or args.source:
         print(f"SOURCE SITES ({len(src)})")
-        for v in ("BLIND", "MIXED", "COMPARISON"):
+        for v in ("BLIND", "DECLARED_BLIND", "MIXED", "COMPARISON"):
             rows = [r for r in src if r["verdict"] == v]
-            print(f"  {v}: {len(rows)}")
+            note = ("  <- deliberate delta=0 regime, NOT actionable"
+                    if v == "DECLARED_BLIND" else "")
+            print(f"  {v}: {len(rows)}{note}")
             for r in rows:
                 gen = "  [GENERATED - sync, do not hand-edit]" if r["generated"] else ""
                 print(f"    {r['file']}:{r['line']}{gen}")

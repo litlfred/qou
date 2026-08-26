@@ -426,3 +426,26 @@ def pn_interface_offset(q, convention: "PnConvention | None" = None):
         # docstring records.
         return -(h * (1 - flavor_split_leading(q) / 2) / 2)
     raise ValueError(f"unknown p-n convention: {conv!r}")
+
+
+def pn_interface_offset_from_h(h, convention: "PnConvention | None" = None):
+    """`pn_interface_offset` for a caller that has ``h`` but not ``q``.
+
+    Most p-n crossing sites in `computations/` bind the Hecke ``h`` at module
+    level and never keep ``q`` in scope, so requiring ``q`` would turn a
+    one-token edit into a hunt through nine files for whatever the local
+    name for the substrate modulus happens to be.
+
+    ``h = q - 1/q`` inverts to ``q = (h + sqrt(h^2 + 4)) / 2`` on the branch
+    ``q > 1``, which is the substrate branch (``q0 ~ 1.11``). The negative
+    root is ``-1/q`` and is not a modulus.
+
+    Python mirror of `color_weight.rs::pn_offset_from_h`, which exists for
+    the same reason on the Rust side.
+    """
+    conv = PN_CONVENTION if convention is None else convention
+    if conv == "strict_averaged":
+        return -(h / 2)          # no q needed on this branch
+    q = (h + (h * h + 4) ** 0.5) / 2 if isinstance(h, float) else \
+        (h + (h * h + 4) ** (type(h)(1) / 2)) / 2
+    return pn_interface_offset(q, conv)
