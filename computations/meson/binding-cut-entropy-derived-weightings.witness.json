@@ -1,0 +1,160 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T15:44:21.486359+00:00",
+  "commitSha": "8558cf10c58ae253d5fd88c22155ce0eef6c826f",
+  "assertions": [
+    {
+      "name": "no_derived_weighting_reaches_ame",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "weightings with E_0*S_vN <= B_AME(2H), out of 4"
+    },
+    {
+      "name": "control_exact_y_lambda_matches_committed_gram",
+      "computed": "1.1398769693019424182e-8",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "unit": "relative",
+      "source": "y_{(n-k,k)} = [n-2k+1]_q/[2]_q^n vs deuteron-real-sdp frobenius_gram_diag (float64 in the witness)"
+    },
+    {
+      "name": "control_all_weightings_normalise",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "sum_lambda p_lambda = 1 over the four support blocks"
+    },
+    {
+      "name": "overshoot_band_lower_edge",
+      "computed": "1.6878413870644603339",
+      "expected": "1.6878",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "min over the four weightings of E_0*S_vN / B_AME"
+    },
+    {
+      "name": "overshoot_band_upper_edge",
+      "computed": "2.0634336455962060538",
+      "expected": "2.0634",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "max over the four weightings of E_0*S_vN / B_AME"
+    },
+    {
+      "name": "every_nontrivial_vertex_overshoots",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "vertices delta_(5,1), delta_(4,2), delta_(3,3)"
+    },
+    {
+      "name": "control_trivial_block_vertex_is_exactly_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "nats",
+      "source": "delta_(6,) restricts to a single (mu,nu): a product state"
+    },
+    {
+      "name": "ame_requires_concentration_on_trivial_block",
+      "computed": "6.3142475372142842105",
+      "expected": "6.314",
+      "passed": true,
+      "tolerance": "1e-2",
+      "unit": "ratio",
+      "source": "p_(6,) needed / p_(6,) under W1, bisected"
+    },
+    {
+      "name": "markov_ratio_is_not_two",
+      "computed": "0.025354409197895418653",
+      "expected": "0.02535",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "relative",
+      "source": "|1.9493 - 2|/2 -- recorded as NOT agreement, not pursued"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 47,
+  "computation": "binding-cut-entropy-derived-weightings",
+  "scriptFile": "binding_cut_entropy_derived_weightings_probe.py",
+  "scriptHash": "5f5459f372bc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/binding_cut_entropy_derived_weightings_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/binding_cut_entropy_derived_weightings_probe.py"
+  },
+  "description": "Enumerates every block weighting with independent provenance and computes E_0*S_vN of the proton|neutron cut entropy against B_AME(2H). All four overshoot by 1.69x-2.06x; none is selected or tuned. The overshoot is robust: every non-trivial vertex of the weight simplex lands in 1.79x-2.07x, and reaching AME needs 69.3% of the weight moved onto the trivial block (6,), a 6.31x concentration on the one block carrying no cut structure.",
+  "data": {
+    "E0_MeV": "4.18598136329447621452746090153",
+    "q0_pin": "proton",
+    "B_AME_2H_MeV": "2.224566",
+    "required_S_vN": "0.531432370795174466516343889472",
+    "weightings": {
+      "W1_markov_plancherel_exact": {
+        "S_vN": "1.03591643401005185272383",
+        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "ratio_to_B_AME": "1.94929118160420916269495"
+      },
+      "W2_born_deuteron": {
+        "S_vN": "0.896973549853881872520605",
+        "E0_S_vN_MeV": "3.75471456305643826706702",
+        "ratio_to_B_AME": "1.68784138706446033386603"
+      },
+      "W3_classical_plancherel_CONTROL": {
+        "S_vN": "1.09657543425772159450243",
+        "E0_S_vN_MeV": "4.59024433124936971625382",
+        "ratio_to_B_AME": "2.06343364559620605378929"
+      },
+      "W4_uniform_CONTROL": {
+        "S_vN": "1.01439199357512583960731",
+        "E0_S_vN_MeV": "4.2462259801806068192909",
+        "ratio_to_B_AME": "1.90878849185890947685566"
+      }
+    },
+    "vertex_S_vN": {
+      "(6,)": "0.0",
+      "(5, 1)": "0.950270539233234559763612",
+      "(4, 2)": "1.09861228866810969139525",
+      "(3, 3)": "1.05492016798614412706697"
+    },
+    "weight_fraction_onto_trivial_block_for_ame": "0.692752639348700854117935",
+    "concentration_factor": "6.31424753721428421051774"
+  },
+  "caveats": [
+    "Scope (a). No weighting is selected, endorsed, or tuned; all four are computed once and reported. The two controls (classical Plancherel, uniform) are deliberately structure-poor so that agreement between them and the derived pair is informative about the CUT rather than about the weighting.",
+    "This does NOT refute an entanglement-cost contribution to binding. An overshoot of ~2x with the right sign and order of magnitude is not an exclusion, and a term entering with a coefficient or alongside others is untouched. What is established is that E_0*S_cut alone, under every weighting the framework already fixes, is about twice too large.",
+    "ONE isotope. LR branching data exists only for the deuteron, so nothing here speaks to 3H, 4He or beyond -- and a single point could not have distinguished a derivation from a coincidence even had it hit.",
+    "SHARPENS the genericity caveat of binding_cut_entropy_sign_is_forced_probe.py: a weighting CAN in principle reach anything in [0, max], but no DERIVED one does -- they cluster at ~2x and the only low region is the trivial block. The earlier caveat was right in principle and too weak in fact."
+  ]
+}

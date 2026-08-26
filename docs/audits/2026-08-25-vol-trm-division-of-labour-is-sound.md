@@ -2016,3 +2016,91 @@ Nor is entanglement cost excluded as an ingredient. The earlier probe refutes
 **one prescription**; this one refutes that prescription's **label**. Neither
 bears on whether a correctly-defined cut entropy plays a role — and the object
 that would have to be tested now exists, is parameter-free, and is exact.
+
+## Addendum 21 — every derived weighting overshoots AME by ~2×, robustly (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/binding_cut_entropy_derived_weightings_probe.py`](../../computations/meson/binding_cut_entropy_derived_weightings_probe.py)
+(9 assertions, all passing, 4 controls). Addendum 20 built the cut entropy and
+deliberately chose no weighting, since choosing one to hit AME would be a fit.
+The author asked for the derived weighting to be worked. **Every candidate with
+independent provenance was computed once. None reaches AME.**
+
+### The four candidates
+
+Under convention D only the four two-row blocks exist. The cut is closed on
+them without any truncation being imposed: $c^\lambda_{\mu\nu} \ne 0$ requires
+$\mu,\nu \subseteq \lambda$, so a two-row $\lambda$ restricts entirely inside
+$\mathrm{TL}_3 \otimes \mathrm{TL}_3$.
+
+The reduced proton-side state is block-diagonal in the $\mu$-isotypic
+decomposition with eigenvalue $A_\mu = \sum_\lambda p_\lambda a^\lambda_\mu$ of
+multiplicity $f^\mu$, where $a^\lambda_\mu = \sum_\nu c^\lambda_{\mu\nu}
+f^\nu/f^\lambda$; so $S_{\rm vN} = -\sum_\mu f^\mu A_\mu \ln A_\mu$. *(Addendum
+20 reported the **sector** entropy $-\sum_{\mu\nu} P \ln P$, a different and
+larger quantity. Both are non-negative and both vanish on a product, so its sign
+theorem is unaffected — but this one is the von Neumann entropy of the reduced
+density matrix and is the right thing to set against an energy.)*
+
+At the proton pin, $E_0 = m_e/(q_0(q_0-1)) = 4.185981$ MeV and
+$B_{\rm AME}(^2\mathrm{H}) = 2.224566$, so AME needs $S_{\rm vN} = 0.531432$:
+
+| weighting | provenance | $S_{\rm vN}$ | $E_0 S_{\rm vN}$ | vs $B$ |
+|---|---|---:|---:|---:|
+| **W1** $p = y_\lambda f^\lambda$ | Markov/Plancherel, **exact** closed form $y_{(n-k,k)} = [n{-}2k{+}1]_q/[2]_q^n$ | 1.035916 | 4.33633 | **1.949×** |
+| **W2** $p = t_\lambda/\mathrm{tr}_M(\beta_D)$ | Born; the deuteron braid's own distribution | 0.896974 | 3.75471 | **1.688×** |
+| W3 $p \sim (f^\lambda)^2$ | classical Plancherel — *control* | 1.096575 | 4.59024 | 2.063× |
+| W4 uniform | structure-free — *control* | 1.014392 | 4.24623 | 1.909× |
+
+**All four overshoot, by 1.69× to 2.06×.** W1's exact closed form reproduces the
+committed Frobenius Gram diagonal to $4\times10^{-9}$ — a control that it really
+is the framework's own weighting and not a reconstruction of mine.
+
+### The overshoot is robust, not a knob — and this sharpens Addendum 20
+
+Entropy is concave, so its minimum over weightings sits at a vertex:
+
+| vertex | $S_{\rm vN}$ | vs $B$ |
+|---|---:|---:|
+| $\delta_{(6)}$ | **0.000000** | 0.000× |
+| $\delta_{(5,1)}$ | 0.950271 | 1.788× |
+| $\delta_{(4,2)}$ | 1.098612 | 2.067× |
+| $\delta_{(3,3)}$ | 1.054920 | 1.985× |
+
+Every **non-trivial** block lands in 1.79×–2.07×. The only low value anywhere in
+the simplex is the trivial block, which by definition carries no cut structure —
+it restricts to a single $(\mu,\nu)$, i.e. it *is* a product. Reaching AME from
+W1 requires moving **69.3 % of the total weight onto $(6)$**, taking $p_{(6)}$
+from 0.1153 to 0.7282 — a **6.31×** concentration on the one block that says
+nothing.
+
+**Addendum 20's caveat was right in principle and too weak in fact.** It warned
+that a weighting spanning $[0, 1.4708]$ could hit almost anything in the
+interval, so being in range was genericity rather than evidence. True — but the
+*derived* candidates do not span it. They cluster a factor of ~2 above the
+target, and the escape route is the contentless block. That makes this a
+**robust negative rather than a free parameter**, which is a more useful outcome
+than either a hit or a fit.
+
+### The near-2 is recorded, asserted false, and not pursued
+
+W1 gives $1.9493\times$, which is $2.5\,\%$ from exactly 2. In a framework
+quoting accuracy in ppb, $2.5\,\%$ is not agreement, and "close to 2" is
+precisely what the anti-numerology discipline exists to stop. It is asserted as
+**not** equal to 2 (`markov_ratio_is_not_two`) so that the near-miss cannot
+later be read as a hit.
+
+### Scope
+
+**(a).** This does **not** refute an entanglement-cost contribution to binding.
+An overshoot of ~2× with the right sign and the right order of magnitude is not
+an exclusion, and a term entering with a coefficient, or alongside others, is
+untouched by it. What is established is narrower and firmer: **$E_0 S_{\rm cut}$
+alone, under every weighting the framework already fixes, is about twice too
+large at the deuteron.**
+
+And it is **one isotope**. LR branching data exists only for $^2$H, so nothing
+here speaks to $^3$H, $^4$He or beyond — and a single point could not have
+distinguished a derivation from a coincidence even had it hit. Extending it
+needs the $n = 9$ and $n = 12$ branching, which is the concrete next measurement
+if this line is pursued.
