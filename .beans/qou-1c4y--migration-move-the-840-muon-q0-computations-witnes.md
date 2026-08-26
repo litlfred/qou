@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-26T04:09:46Z
+updated_at: 2026-08-26T04:19:57Z
 ---
 
 
@@ -1069,3 +1069,78 @@ matters. Added computations/audits/muon_pin_witness_census.py so the count is
 re-derivable at any revision rather than remembered -- it prints every prefix
 length side by side and marks the two that are ambiguous with the proton pin,
 which is the shape of mistake one notch further down.
+
+
+## THE 5 UNVERIFIED PRODUCERS — HAND-CHECKED 2026-08-26, one is a real defect
+
+Cleared the "not yet hand-checked" residue from the earlier pass. None of the
+five is flagged `muon` any more (three `none`, two `proton`), but "the checker
+says none" is not a hand-check, so each was read against its source.
+
+  eigenbasis_structural_lemmas_probe        CORRECT. q0Anchor "independent"
+                                            with an explicit reason: evaluated
+                                            at any q0, and the declaration
+                                            exists to stop the builder stamping
+                                            a default pin plus a q0Value it
+                                            never used. No q0 read anywhere.
+  habiro_witness_convention_adjudication    CORRECT. q0Anchor "independent",
+    _probe                                  deliberately no q0Value. (The bean
+                                            recorded this without its `_probe`
+                                            suffix, which is why it read as
+                                            missing.)
+  qbeta_habiro_f_from_shape_collapse        CORRECT. proton, via
+                                            `from q_parameter import
+                                            Q_50_DIGIT_STR`. No muon path.
+  qbeta_rung1_div25_framing_squared_test    CORRECT. same, proton.
+  chirality_topology_binding_probe          *** DEFECT, see below ***
+
+### chirality_topology_binding_probe declared `independent` on a FALSE experiment
+
+It imports Q0 from a PEER PRODUCER -- `from hecke_channel_binding_probe import
+... Q0`, where `Q0 = Q_MP`, the proton pin -- uses it numerically, records
+`"q0": str(Q0)` in its witness, and declared:
+
+    q0Anchor: "independent"
+    reason:   'PROVED by running this producer under QOU_Q0_ANCHOR=muon and
+               =proton and diffing the emitted witness: the only non-ephemeral
+               leaves that differ are q0Anchor and q0Value THEMSELVES -- every
+               substantive field is byte-identical'
+
+RE-RAN THAT EXPERIMENT. It refutes the claim. **43 non-ephemeral leaves
+differ**, among them /E0_MeV and EVERY entry of /channel_values_at_q0 for pp,
+nn and pn. Those are physics fields, not labels. Q_MP does track
+QOU_Q0_ANCHOR (verified directly: muon 1.1099785955573347..., proton
+1.10997858275138...), so the toggle really did move the value and the outputs
+really did move with it.
+
+And the committed witness held the MUON value for q0, under an `independent`
+label, contrary to the proton default.
+
+CONCLUSION UNAFFECTED, which is why this is hygiene and not an emergency:
+Pauli-complete is the best model under both anchors, RMS values move by ~1e-8
+relative -- consistent with the 11.5 ppb separation, and exactly the magnitude
+this bean predicts for the class. Fixed: q0Anchor -> "proton", witness
+regenerated at proton, reason string rewritten to record the measurement rather
+than assert the refuted one.
+
+### THE AUDIT GAP THIS EXPOSES
+
+inherited_q0_pin_audit.py audits inheritance through WITNESS FILES
+(upstream=...witness.json, reading src['constants']['q_0']). It does not audit
+inheritance through a PYTHON IMPORT FROM A PEER PRODUCER, which is how this one
+got its pin. q0_producer_pin_classifier scored it `none` for the same reason --
+Q0 arrives from a sibling probe, not from q_parameter/constants, and the
+provider-terminal rule (class 3) stops the walk before it reaches the real
+source.
+
+So there is an unaudited inheritance path: producer A imports a q0-bearing
+symbol from producer B. Worth its own pass; not attempted here.
+
+### AND IT IS THE SAME LESSON AGAIN
+
+The declaration was prose about q0 that the code contradicts -- a reason string
+asserting an experiment, where running the experiment refutes it. That is the
+fourth variant this session, after the checker reading its own guard's warning,
+the raw-source "ANCHOR" match, and the 870 figure recorded without its method.
+The pattern is not that the prose is careless; it is that prose about q0 is
+never re-run, so it decays silently while the code moves.
