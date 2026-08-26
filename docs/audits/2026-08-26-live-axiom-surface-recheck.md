@@ -162,8 +162,26 @@ experiment, not an inference.
 `#print axioms` reads the loaded environment, which comes from `.olean` files. In
 a restored container those are a **mixed-vintage cache**: QOU olean build dates on
 this tree span **2026-06-09 to 2026-08-26**, with 556 from 2026-07-02 alone.
-`scripts/lean-axiom-guard.py` assumes its modules are *built*; it never checks
-they are built **from the current source**.
+
+> **🛑 CORRECTION (same day). This section first said `lean-axiom-guard.py`
+> "assumes its modules are built; it never checks they are built from the current
+> source". That is FALSE, and it is the sharpest error in this audit — an audit
+> about not asserting what you have not checked.**
+>
+> The guard has had a freshness gate since `fed69b1c4d`, before this work started.
+> `check_freshness` walks the transitive QOU import cone of every registry module
+> and refuses to report on a missing or stale olean. Its docstring even records a
+> prior incident of this exact class (2026-08-15: all-match reported against
+> 9-day-old oleans while five underlying sorries had been closed upstream).
+>
+> I did not read the script I was auditing before describing what it does not do.
+> The corpus-grep discipline says the source is the authority over any claim
+> *about* it; I applied that to the axioms and not to the tool.
+>
+> **The real gap is narrower and still real.** The gate covers the guard's own
+> registry cone. It does not cover an **ad-hoc `#print axioms` probe written by
+> hand against some other module** — which has no gate at all. Both stale readings
+> below were exactly that: my own probes, outside the registry.
 
 **Direction of harm.** Here the stale cache was *pessimistic* — it over-reported
 assumed mathematics, which is the safe direction. The identical mechanism runs the
@@ -202,8 +220,22 @@ different context.
 3. **Clone-time mtime.** 845 of 1046 QOU oleans are "older than their source".
    That is exactly the set restored from the tarball: a checkout stamps every
    source with the clone time while tar preserves the oleans' build times. The
-   number is a description of the restore, not of staleness. **mtime cannot
-   answer this question** — which is why the fix rebuilds rather than compares.
+   number is a description of the restore, not of staleness.
+
+   > **Corrected.** This item first concluded "**mtime cannot answer this
+   > question** — which is why the fix rebuilds rather than compares." The first
+   > half is wrong. Raw mtime cannot, but `lean-axiom-guard.py::_effective_source_time`
+   > already answers it: for a clean file it uses the **commit time** of the last
+   > commit touching it, which is stable across clones, and falls back to mtime only
+   > for a **dirty** file, where a local edit is precisely the case being guarded and
+   > no commit can be trusted. Its docstring records the same measurement I
+   > re-derived here (2026-08-15: mtime flagged 15 modules stale while `lake build`,
+   > which hashes content, replayed all 3285 jobs as up to date).
+   >
+   > So the artifact is real — mtime alone is useless here — but the conclusion drawn
+   > from it was not, and the corpus had already solved it. `lean-rebuild-cone.py`
+   > earns its place as the **remediation** tool (the gate detects staleness; it does
+   > not fix it, and `lake build` would evict the restored cache), not as a detector.
 
 ## Verdict
 
@@ -212,8 +244,11 @@ closed. What remains splits into interface axioms over `opaque` symbols (§3,
 needing a corpus bridge, not a Mathlib PR), a deliberate SDP decomposition ladder
 (§2, where "replaces" means "decomposes"), and a genuinely external residue.
 
-The reusable result is §4: **a `#print axioms` verdict is only as current as the
-olean it was read from**, and until now nothing in the pipeline said so.
+The reusable result is §4, in its corrected form: **a `#print axioms` verdict is
+only as current as the olean it was read from.** The guard already knew that and
+gates its own registry. What has no gate is a hand-written probe outside it — which
+is what produced both stale readings here, including the one this audit used as
+evidence for its own §2.
 
 ## Cross-refs
 

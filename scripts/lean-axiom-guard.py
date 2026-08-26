@@ -34,30 +34,35 @@ already be set for lean-direct use (see `.claude/skills/local/lean-environment-s
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
 
-BUILT IS NOT ENOUGH — IT MUST BE BUILT FROM THE CURRENT SOURCE (2026-08-26)
----------------------------------------------------------------------------
-`#print axioms` reads the LOADED ENVIRONMENT, i.e. the `.olean` files. This gate
-therefore reports the axiom status of whatever was COMPILED, which in a restored
-container is a mixed-vintage cache — measured on this tree, QOU olean build dates
-span 2026-06-09 .. 2026-08-26.
+STALENESS IS ALREADY GATED HERE — AND THE GATE ONLY COVERS THIS REGISTRY
+------------------------------------------------------------------------
+`check_freshness` below walks the transitive QOU import cone of every registry
+module and refuses to report when an olean is missing or older than its source
+(by `_effective_source_time`, which uses commit time rather than mtime so a fresh
+clone does not read as universally stale). That gate predates 2026-08-26 and works.
 
-Verified, not hypothetical: `PosSemidefDiagZero.lean` proves
-`Matrix.PosSemidef.entry_sq_le_diag_mul` as a THEOREM, while its 2026-06-09 olean
-still carried the `entry_sq_le_diag_mul_axiom` it was built from. Two SDP
-declarations reported a dependency on an axiom that no longer exists in the
-source; rebuilding that one module removed it from both cones. Here the stale
-cache was PESSIMISTIC (over-reporting assumed mathematics) — but the same
-mechanism can report `clean` for a declaration whose source has since regressed,
-and this gate would stay green.
+What it does NOT cover is an **ad-hoc `#print axioms` probe** written by hand
+against some other module. Such a probe reads the same mixed-vintage olean set
+with none of this protection, and mixed-vintage is the normal state of a restored
+container: measured 2026-08-26, QOU olean build dates on one tree spanned
+2026-06-09 .. 2026-08-26.
 
-So before trusting a verdict, rebuild the registry cone from source:
+Measured cost of that gap, same day, twice, both outside this registry:
 
-    scripts/lean-rebuild-cone.py --from-guard    # 15 roots -> 199 modules
+  * Two SDP declarations reported depending on
+    `PosSemidefDiagZero.entry_sq_le_diag_mul_axiom`, which does not exist in the
+    source — that module proves it as a THEOREM, and its olean was built
+    2026-06-09 when it was an axiom.
+  * A probe resolved `…SDPRealUniqueness.SDPSlaterUniqueness.ofSlater_proven`.
+    After a rebuild that name does not exist; the source declares it one
+    namespace higher. The reading was of a pre-move snapshot.
 
-Do NOT try to detect this with mtime: a checkout stamps every source with the
-clone time and tar preserves the oleans' build times, so every restored olean is
-"older than its source" by construction (measured: 845 of 1046, which is exactly
-the restored set). Rebuilding is the only sound test.
+So the rule is not "the guard is unsound" — it is sound within its registry. The
+rule is: **a hand-written `#print axioms` outside this registry has no gate, and
+must rebuild what it measures first.** `scripts/lean-rebuild-cone.py` is the
+remediation tool (this gate detects staleness; it does not fix it), and uses
+`lean`-direct rather than `lake build`, which would evict a restored cache
+(bean `qou-r13s`).
 
 Full finding: docs/audits/2026-08-26-live-axiom-surface-recheck.md §4.
 
