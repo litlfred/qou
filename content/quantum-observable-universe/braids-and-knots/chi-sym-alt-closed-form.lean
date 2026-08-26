@@ -161,4 +161,197 @@ theorem chi_sym_alt_closed_form (Z N : ℕ) (H_A : ℝ) :
   refine ⟨w, hw, ?_⟩
   rw [chi_pair_closed_form, hw]
 
+/-! ## The colour-weighted alphabet
+
+    `FactorType` above has three constructors. The word `atom_braid_word_3A`
+    actually emits has **four** letter types: measured on ⁴He (47 letters), 23
+    `σ`, 15 `σ⁻¹`, 8 at `d = -H_A/2`, and **one** at `d = -H_A·(1/2 - δ/4)` with
+    `δ = flavor_split_subleading(q₀) ≈ 0.001376` — the colour-weighted p-n
+    interface. There is exactly one per atom regardless of `A`, because the p-p
+    interface is a plain `σ` and the n-n a plain `σ⁻¹`, already isospin-distinct
+    by chirality.
+
+    So everything above is sorry-free and TRUE, about a **colour-blind**
+    alphabet — the `pn_convention = "strict_averaged"` word. It is not about the
+    word the corpus builds, whose canonical convention is
+    `bring_color_weighted` (owner ruling 2026-08-15, R3).
+
+    This section is additive: nothing above changes. The colour-weighted form is
+    the theorem and the colour-blind one its `δ = 0` corollary, because that is
+    the only direction that exists — setting `δ = 0` collapses the weighted form
+    to the blind one, while the blind form has already discarded `δ`.
+
+    Bean `qou-cdqu`; the measurement is
+    `computations/chi_sym_alt_closed_form.py` and its witness. -/
+
+/-- Per-factor character product for the Hecke element `σ + d·1`.
+
+    In the 1-dim irreps `σ ↦ q` (sym) and `σ ↦ -q⁻¹` (alt), so the factor acts
+    as `(q + d)` and `(-q⁻¹ + d)`; their product is `d² - 1 + d·H_A`. Every
+    letter is an instance of this, including the three of `FactorType`. -/
+noncomputable def perFactorOfD (H_A d : ℝ) : ℝ := d ^ 2 - 1 + d * H_A
+
+/-- The `d` of each colour-blind letter. -/
+noncomputable def dOf (H_A : ℝ) : FactorType → ℝ
+  | .sigma    => 0
+  | .sigmaInv => -H_A
+  | .udHalf   => -H_A / 2
+
+/-- `chiPairPerFactor` is `perFactorOfD` at the letter's own `d`. The three
+    hard-coded values above are not three separate facts. -/
+theorem chiPairPerFactor_eq_perFactorOfD (H_A : ℝ) (ft : FactorType) :
+    chiPairPerFactor H_A ft = perFactorOfD H_A (dOf H_A ft) := by
+  cases ft <;> · unfold chiPairPerFactor perFactorOfD dOf; ring
+
+/-- **The stationarity identity.** For any `d`, the per-factor product differs
+    from the `ud` value by exactly the SQUARE of the offset:
+
+        perFactorOfD H_A d - perFactorOfD H_A (-H_A/2) = (d + H_A/2)²
+
+    This is the substantive content of this section, and it is a `ring`
+    identity — no calculus needed, and stronger than "the first derivative
+    vanishes" since it gives the exact remainder.
+
+    It says the `ud` letter sits at a **stationary point** of the per-factor
+    product, so perturbing it costs SECOND order. That is why the colour
+    weighting, a `6.88e-4` relative shift in `d`, moves the character product by
+    only `(7.19e-5)² = 5.17e-9`.
+
+    Measured consequence: `chi_sym_alt_closed_form.py` reported a residual of
+    `5.11395e-9` against the colour-blind form on all four atoms; predicted from
+    this identity alone, `5.11397e-9`. Six significant figures. Carrying the p-n
+    letter as itself takes the residual to `1.2e-14`, the float64 floor of the
+    inputs.
+
+    It is also why the gap stayed hidden: the producer ran in float64 under a
+    `tolerance = 1e-3` justified by a comment about "numerical noise" in the
+    seminormal matrices. There is no such noise, and a real second-order colour
+    term sat 200,000× inside that tolerance. -/
+theorem perFactorOfD_sub_udHalf (H_A d : ℝ) :
+    perFactorOfD H_A d - perFactorOfD H_A (-H_A / 2) = (d + H_A / 2) ^ 2 := by
+  unfold perFactorOfD; ring
+
+/-- The same identity over any commutative ring in which `2` is invertible.
+
+    §7c: the statement is purely algebraic — no ordering, no `Real.sqrt`, no
+    archimedean construct — so it is stated generically and the `ℝ` version
+    above is its specialisation. Only the ORDERING corollary below genuinely
+    needs `ℝ`, because "the ud letter is the minimum" is not a ring statement.
+
+    The `ℝ` form is kept as the primary name because every consumer in this file
+    is already `ℝ`-typed; this is the wall-side-correct version for anyone
+    working before the archimedean specialisation.
+
+    **`CharZero` is not decoration.** `ring` alone does not close this: the
+    identity needs `2` invertible, and it is FALSE in characteristic 2, where
+    `H_A/2` is not even defined and the "stationary point" does not exist. So
+    the stationarity of the `ud` letter is a statement about the coefficient
+    ring, not only about the word — worth knowing before anyone specialises this
+    machinery to a root-of-unity or finite-characteristic setting. -/
+theorem perFactorOfD_sub_udHalf_generic {R : Type*} [Field R] [CharZero R]
+    (H_A d : R) :
+    (d ^ 2 - 1 + d * H_A) - ((-H_A / 2) ^ 2 - 1 + (-H_A / 2) * H_A)
+      = (d + H_A / 2) ^ 2 := by
+  have h2 : (2 : R) ≠ 0 := two_ne_zero
+  field_simp
+  ring
+
+/-- Corollary: the `ud` value is the extremum, and every other letter's value
+    lies on one side of it. -/
+theorem perFactorOfD_udHalf_le (H_A d : ℝ) :
+    perFactorOfD H_A (-H_A / 2) ≤ perFactorOfD H_A d := by
+  have h := perFactorOfD_sub_udHalf H_A d
+  nlinarith [sq_nonneg (d + H_A / 2)]
+
+/-- The alphabet the canonical word uses: the three colour-blind letters, plus
+    a colour-weighted letter carrying its own `d`.
+
+    Deliberately a NEW inductive rather than a fourth constructor on
+    `FactorType`: everything above stays exactly as proved, and `FactorType`
+    keeps its `DecidableEq` (which a real-valued field would cost it). -/
+inductive ColourFactorType
+  | plain (ft : FactorType)
+  | pnColour (d : ℝ)
+
+abbrev ColourWord := List (ColourFactorType × ℕ)
+
+noncomputable def chiPairPerFactorC (H_A : ℝ) : ColourFactorType → ℝ
+  | .plain ft   => chiPairPerFactor H_A ft
+  | .pnColour d => perFactorOfD H_A d
+
+noncomputable def chiPairProductC (H_A : ℝ) : ColourWord → ℝ
+  | [] => 1
+  | (cf, _) :: rest => chiPairPerFactorC H_A cf * chiPairProductC H_A rest
+
+/-- Count of `udHalf` letters. Matches structurally rather than via `if _ = _`,
+    so no `DecidableEq` on the real-carrying type is needed. -/
+def nUdC : ColourWord → ℕ
+  | [] => 0
+  | (.plain .udHalf, _) :: rest => 1 + nUdC rest
+  | (_, _) :: rest => nUdC rest
+
+/-- Count of colour-blind letters. -/
+def nBlind : ColourWord → ℕ
+  | [] => 0
+  | (.plain _, _) :: rest => 1 + nBlind rest
+  | (_, _) :: rest => nBlind rest
+
+/-- Count of colour-weighted letters. One per atom, in the canonical word. -/
+def nPn : ColourWord → ℕ
+  | [] => 0
+  | (.pnColour _, _) :: rest => 1 + nPn rest
+  | (_, _) :: rest => nPn rest
+
+/-- Product over the colour-weighted letters. -/
+noncomputable def pnProduct (H_A : ℝ) : ColourWord → ℝ
+  | [] => 1
+  | (.pnColour d, _) :: rest => perFactorOfD H_A d * pnProduct H_A rest
+  | (_, _) :: rest => pnProduct H_A rest
+
+/-- **Closed form on the colour-weighted alphabet.**
+
+        χ_sym(β)·χ_alt(β) = (-1)^{#blind} · (1 + H_A²/4)^{nUd} · Π_{pn} f(d)
+
+    The colour-blind theorem `chiPairProduct_eq` is the case with no `pnColour`
+    letters, where `pnProduct = 1` and `#blind = length`. -/
+theorem chiPairProductC_eq (H_A : ℝ) (w : ColourWord) :
+    chiPairProductC H_A w =
+      (-1 : ℝ) ^ nBlind w * (1 + H_A ^ 2 / 4) ^ nUdC w * pnProduct H_A w := by
+  induction w with
+  | nil => simp [chiPairProductC, nBlind, nUdC, pnProduct]
+  | cons hd tl ih =>
+    obtain ⟨cf, _g⟩ := hd
+    match cf with
+    | .plain .sigma =>
+      simp only [chiPairProductC, chiPairPerFactorC, chiPairPerFactor,
+                 nBlind, nUdC, pnProduct, ih, pow_add, pow_one]
+      ring
+    | .plain .sigmaInv =>
+      simp only [chiPairProductC, chiPairPerFactorC, chiPairPerFactor,
+                 nBlind, nUdC, pnProduct, ih, pow_add, pow_one]
+      ring
+    | .plain .udHalf =>
+      simp only [chiPairProductC, chiPairPerFactorC, chiPairPerFactor,
+                 nBlind, nUdC, pnProduct, ih, pow_add, pow_one]
+      ring
+    | .pnColour d =>
+      simp only [chiPairProductC, chiPairPerFactorC, nBlind, nUdC, pnProduct, ih]
+      ring
+
+/-- **The δ = 0 corollary: the colour-blind form is the special case.**
+
+    A word whose single colour-weighted letter happens to sit at `d = -H_A/2`
+    — i.e. `δ = 0`, the `strict_averaged` convention — has its `pnColour` letter
+    contribute exactly what a `udHalf` letter would, so the product collapses to
+    the colour-blind closed form with the exponent raised by one.
+
+    This is the direction that exists. There is no route back: the colour-blind
+    statement has already discarded `d`. -/
+theorem chiPairProductC_delta_zero (H_A : ℝ) (w : ColourWord)
+    (hpn : pnProduct H_A w = (-(1 + H_A ^ 2 / 4)) ^ nPn w) :
+    chiPairProductC H_A w =
+      (-1 : ℝ) ^ nBlind w * (1 + H_A ^ 2 / 4) ^ nUdC w *
+      (-(1 + H_A ^ 2 / 4)) ^ nPn w := by
+  rw [chiPairProductC_eq, hpn]
+
 end QOU.ChiSymAlt
