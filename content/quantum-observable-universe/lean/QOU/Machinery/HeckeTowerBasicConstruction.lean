@@ -228,7 +228,23 @@ left kernel, then `Hn1` is semisimple. This is Wenzl's induction step
 rank-2 `HeckeH2Wedderburn`) realize its conclusion concretely at
 `n = 2, 3` without the tower machinery. OPEN — no instance; proving this
 class's field for symmetric-group Coxeter data is exactly the general-`n`
-target the explicit-Wedderburn route cannot reach. -/
+target the explicit-Wedderburn route cannot reach.
+
+**The general-`n` field cannot currently be proved by citing Mathlib (measured
+2026-08-26, bean `qou-kzjl`).** Mathlib's `traceForm_nondegenerate` is
+
+    ∀ (K L) [Field K] [Field L] [Algebra K L] [FiniteDimensional K L]
+      [Algebra.IsSeparable K L], (traceForm K L).Nondegenerate
+
+which is wrong here in two independent ways: it runs *separable ⇒ nondegenerate*
+where this field needs the converse, and both `K` and `L` are fields where
+`H_n(q)` is non-commutative. The prerequisite — *a finite-dimensional algebra
+over a characteristic-0 field with nondegenerate trace form is semisimple* —
+is not in Mathlib at that generality, and is a standalone contribution rather
+than a rider on this file. The `isSemisimpleRing_*` family is structural
+(`iff_jacobson`, `iff_isArtinianRing`, …), none of it trace-form based.
+
+-/
 class WenzlTowerStep (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
     (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
