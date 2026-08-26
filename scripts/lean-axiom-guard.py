@@ -375,6 +375,16 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerS
 # which discards both. Scope: trn1 = algTrace only; whether QOU's Markov trace is
 # the algebra trace is NOT settled.
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_regTrace | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_zero_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_add_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_neg_mem | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.traceRadical_apply_eq_zero | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.mem_traceRadicalIdeal | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_eq_zero_iff | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_nondegenerate | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.one_not_mem_traceRadical | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_one_ne_zero | clean
+QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quot_pairing_one | clean
 """
 
 
