@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-26T04:28:02Z
+updated_at: 2026-08-26T04:30:55Z
 ---
 
 
@@ -1267,3 +1267,44 @@ the specific experiment the reason string invokes REFUTES it. Fixed on my side
 THE TWO I MIS-CLEARED ARE NOT FIXED. They are on the sibling's file-local list
 and are theirs to drain; I am not duplicating the fix. Flagged here so the
 mis-clearing does not sit in this bean as a clean verdict.
+
+
+## COORDINATION 2026-08-26 — a sibling owns the shared normaliser; I am standing off it
+
+PR #5818 (branch claude/muon-proton-pinning-migration-0u9qoc) landed
+computations/audits/_source_normalise.py: code_only() (tokenize, blank COMMENT +
+triple-quoted STRING, PRESERVE line and column), blank_declaration_prose(),
+code_only_ast(), with its own --selftest. Its docstring records that the corpus
+already carried FOUR independent correct implementations of that blanking pass,
+shared by none.
+
+I ADDED A FIFTH, AND MINE IS WORSE. My _code_only_text() in
+q0_producer_pin_classifier.py joins tokens with " ", which DESTROYS LINE
+NUMBERS -- the exact 476-vs-647 defect their module exists to fix. It currently
+only gates a boolean ("ANCHOR" in code_only) so no reported position depends on
+it, but it should become `from _source_normalise import code_only` once #5818
+lands. Recorded so it does not quietly persist as implementation #5.
+
+WHAT I HAVE THAT THEIRS DOES NOT, offered to them for folding in:
+_message_string_ids() demotes str constants inside an f-string, a raise, or a
+print/warn/log call -- EXCEPT when the string is an argument to an operative
+call (open, Path, read_text, mpf, Decimal, json.load). code_only deliberately
+leaves single-quoted strings intact (they carry declared values), which is right
+but leaves MESSAGE strings matchable; the operative-call carve-out is the
+load-bearing half, since without it real reads get blanked. Orthogonal to
+blank_declaration_prose, which keys on dict keys rather than call context.
+
+Posted all of this on #5818 as a coordination comment, including the retraction
+of my two wrong hand-checks (their file-local list has them right).
+
+STANDING OFF: the q0 reroute and the shared-normaliser wiring are
+dependency-ordered mechanical work with one owner, and that owner is the #5818
+branch. Their own scoping is the reason to stay off it -- they found the 44 are
+not one batch (12 with no committed witness, 9 using record_upstream, and of the
+remainder 5 BLOCKED because rerouting a producer whose upstream is muon-built
+MANUFACTURES a straddle). That is exactly the kind of finding a second agent
+batching by count would have destroyed.
+
+My side of this bean is done: the two prose-vs-code classifier classes, the
+selftest that can fail, the 870-method retraction plus the census script, and
+the chirality fix.
