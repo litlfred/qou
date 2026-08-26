@@ -1,4 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.EuclideanDist
+import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic
 
@@ -134,23 +135,78 @@ opaque markovTraceWeight : (n : ℕ) → HeckeElement n
 noncomputable def markovTrace (n : ℕ) (x : HeckeElement n) : ℝ :=
   frobeniusInner (markovTraceWeight n) x
 
+/-- Every `frobeniusInner w` is an `ℝ`-linear functional. (The easy direction.) -/
+theorem isLinearMap_frobeniusInner {n : ℕ} (w : HeckeElement n) :
+    IsLinearMap ℝ (fun x : HeckeElement n => frobeniusInner w x) := by
+  constructor
+  · intro x y
+    simp only [frobeniusInner, inner_add_right]
+  · intro c x
+    simp only [frobeniusInner, real_inner_smul_right, smul_eq_mul]
+
+/-- **Riesz, surjective direction**: every `ℝ`-linear functional on `HeckeElement n`
+    IS `⟪w, ·⟫` for some `w`.
+
+    This is the direction that carries the weight of the claim below, and it is the
+    one that is easy to assert and skip. `HeckeElement n` is a finite-dimensional
+    real inner-product space, so a linear map out of it is automatically continuous
+    (`LinearMap.toContinuousLinearMap`) and `InnerProductSpace.toDual` is an
+    isometric equivalence onto the dual. -/
+theorem exists_weight_of_isLinearMap {n : ℕ} {f : HeckeElement n → ℝ}
+    (hf : IsLinearMap ℝ f) :
+    ∃ w : HeckeElement n, ∀ x, f x = frobeniusInner w x := by
+  classical
+  let L : HeckeElement n →ₗ[ℝ] ℝ := hf.mk' f
+  let Lc : HeckeElement n →L[ℝ] ℝ := LinearMap.toContinuousLinearMap L
+  refine ⟨(InnerProductSpace.toDual ℝ (HeckeElement n)).symm Lc, fun x => ?_⟩
+  have h := InnerProductSpace.toDual_apply (𝕜 := ℝ) (E := HeckeElement n)
+      (x := (InnerProductSpace.toDual ℝ (HeckeElement n)).symm Lc) (y := x)
+  rw [LinearIsometryEquiv.apply_symm_apply] at h
+  simp [frobeniusInner, Lc, L, IsLinearMap.mk']
+
+/-- **Riesz, uniqueness direction**: the representing weight is unique. -/
+theorem weight_unique {n : ℕ} {w w' : HeckeElement n}
+    (h : ∀ x, frobeniusInner w x = frobeniusInner w' x) : w = w' := by
+  have hz : ∀ x, inner ℝ (w - w') x = (0 : ℝ) := by
+    intro x
+    have hx := h x
+    simp only [frobeniusInner] at hx
+    rw [inner_sub_left, hx, sub_self]
+  exact sub_eq_zero.mp (inner_self_eq_zero.mp (hz (w - w')))
+
+/-- **The two presentations have the same content.**
+
+    A function `HeckeElement n → ℝ` is `ℝ`-linear **iff** it is `⟪w, ·⟫` for some
+    `w`, and by `weight_unique` that `w` is unique. So "an opaque function asserted
+    to be linear" and "an opaque weight vector" range over exactly the same
+    functionals, in bijection.
+
+    This is what licenses replacing the former by the latter, and it was stated in
+    prose before it was proved. The prose version only ever established the `←`
+    direction — that `⟪w, ·⟫` is linear — which on its own would permit the
+    replacement to have NARROWED the class of admissible traces. `→` is what rules
+    that out. -/
+theorem isLinearMap_iff_exists_weight {n : ℕ} (f : HeckeElement n → ℝ) :
+    IsLinearMap ℝ f ↔ ∃ w : HeckeElement n, ∀ x, f x = frobeniusInner w x := by
+  constructor
+  · exact exists_weight_of_isLinearMap
+  · rintro ⟨w, hw⟩
+    have : f = fun x => frobeniusInner w x := funext hw
+    rw [this]
+    exact isLinearMap_frobeniusInner w
+
 /-- The Markov trace is linear in its argument: this is the only structural
     property of `markovTrace` used by the SDP-uniqueness arguments downstream.
 
-    **Was an `axiom` until 2026-08-26**, on the stated ground that the
-    categorical definition had not been ported. That reasoning conflated two
-    things: the trace's *value* (genuinely not formalised, and still carried
-    opaquely in `markovTraceWeight`) with its *linearity*, which is a property
-    of the shape `⟪w, ·⟫` and needs no value at all. Riesz representation makes
-    the two presentations equivalent, so this costs nothing and discharges the
-    assumption. -/
+    **Was an `axiom` until 2026-08-26.** The stated ground was that the categorical
+    definition had not been ported; that conflated the trace's *value* (genuinely
+    not formalised, and still carried opaquely in `markovTraceWeight`) with its
+    *linearity*, which is a property of the shape `⟪w, ·⟫` and needs no value.
+    `isLinearMap_iff_exists_weight` proves the two presentations are the same
+    class of functionals, so this costs nothing. -/
 theorem markovTrace_linear (n : ℕ) :
-    IsLinearMap ℝ (fun x : HeckeElement n => markovTrace n x) := by
-  constructor
-  · intro x y
-    simp only [markovTrace, frobeniusInner, inner_add_right]
-  · intro c x
-    simp only [markovTrace, frobeniusInner, real_inner_smul_right, smul_eq_mul]
+    IsLinearMap ℝ (fun x : HeckeElement n => markovTrace n x) :=
+  isLinearMap_frobeniusInner (markovTraceWeight n)
 
 /-- **Absolute Markov trace** — the modulus of the Markov trace
     used in the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`.

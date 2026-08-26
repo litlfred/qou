@@ -160,6 +160,47 @@ axiom MarkovTrace_markov_axiom :
     markovTrace (n + 1) (heckeStab x) =
       QSubstrate.markovParameter * markovTrace n x
 
+/-! ## The degeneracy is not excluded — checked, not asserted
+
+`QOU.HeckeAlgebra.markovTrace`'s docstring observes that a zero weight satisfies
+every axiom stated about the trace. That was an observation made by reading the
+axioms; the two lemmas here make it a checked fact.
+
+**What this does and does not establish.** It shows the stated axioms *do not
+exclude* `tr_M ≡ 0`: under a zero weight each of them holds, so none of them can
+be used to derive a contradiction from degeneracy. It is NOT a consistency proof
+of the axiom set, which is a statement about models and is not the kind of thing
+a theorem inside that same set can settle. Read it as "nothing here forces
+`tr_M ≠ 0`", which is the claim being made, and not as more. -/
+
+/-- A zero Riesz weight collapses the trace. -/
+theorem markovTrace_eq_zero_of_weight_zero {n : ℕ}
+    (hw : QOU.HeckeAlgebra.markovTraceWeight n = 0) (x : HeckeElement n) :
+    markovTrace n x = 0 := by
+  simp [QOU.HeckeAlgebra.markovTrace, QOU.HeckeAlgebra.frobeniusInner, hw]
+
+/-- **Both trace axioms hold automatically under a zero weight.**
+
+    So `MarkovTrace_cyclic` and `MarkovTrace_markov_axiom` impose no constraint
+    that rules out the degenerate trace: cyclicity becomes `0 = 0` and the Markov
+    axiom becomes `0 = z * 0`.
+
+    This is the sharp form of the warning in `markovTrace`'s docstring, and it is
+    the residue of bean `qou-ck1f`: that bean removed a `∀ (z : ℝ)` binder which
+    *proved* `tr_M ≡ 0`. Removing it removed the proof of degeneracy. Nothing was
+    added that excludes it, and this lemma is what makes that concrete. -/
+theorem markov_axioms_vacuous_of_weight_zero
+    (hw : ∀ n, QOU.HeckeAlgebra.markovTraceWeight n = 0) :
+    (∀ (n : ℕ) (x y : HeckeElement n),
+        markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x))
+      ∧ (∀ (n : ℕ) (x : HeckeElement n),
+        markovTrace (n + 1) (heckeStab x)
+          = QSubstrate.markovParameter * markovTrace n x) := by
+  refine ⟨fun n x y => ?_, fun n x => ?_⟩
+  · rw [markovTrace_eq_zero_of_weight_zero (hw n), markovTrace_eq_zero_of_weight_zero (hw n)]
+  · rw [markovTrace_eq_zero_of_weight_zero (hw (n + 1)),
+        markovTrace_eq_zero_of_weight_zero (hw n), mul_zero]
+
 /-- **Categorical Markov trace on a Wedderburn decomposition**
     (axiomatised) — the categorical-level Markov trace `tr_M`
     applied directly to a `WedderburnDecomposition n`.  Bridges

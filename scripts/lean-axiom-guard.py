@@ -199,6 +199,18 @@ QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a
 # back into an axiom while every downstream name still typechecks. The two consumers are
 # pinned alongside because they are what the SDP-uniqueness arc actually calls.
 QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.markovTrace_linear | clean
+# The content-preservation claim itself. `markovTrace_linear` alone does NOT justify the
+# axiom -> theorem move: it is the easy direction, and on its own the move could have
+# NARROWED the admissible traces. `isLinearMap_iff_exists_weight` is the direction that
+# rules that out (every linear functional IS some `⟪w, ·⟫`), so it is the one whose loss
+# would silently invalidate the change. It was asserted in prose before it was proved.
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.isLinearMap_iff_exists_weight | clean
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.exists_weight_of_isLinearMap | clean
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.weight_unique | clean
+# The degeneracy is checked rather than asserted: both trace axioms hold under a zero
+# weight, so neither excludes `tr_M ≡ 0`. Pinned so that a later change claiming to have
+# pinned the trace away from zero has to confront this.
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markov_axioms_vacuous_of_weight_zero | clean
 QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_add | clean
 QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_smul | clean
 
