@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T04:21:14.868867+00:00",
-  "commitSha": "9d28e5e62edb09886d62412d3110b9645b0a8b39",
+  "computedAt": "2026-08-26T06:32:26.356971+00:00",
+  "commitSha": "f6909f2ff78bfb896b5ad2d255359a5891230bd9",
   "assertions": [
     {
       "name": "gate_reproduces_committed_sweep",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 536,
+  "durationMs": 1528,
   "computation": "fitted-ideal-low-isotope-calibration",
   "scriptFile": "fitted_ideal_low_isotope_calibration.py",
-  "scriptHash": "bb2f08dd7141",
-  "scriptCommitSha": "506be129ae8c05ffd3d5098bd4ad00ff21e93d07",
+  "scriptHash": "26b2b63f251a",
+  "scriptCommitSha": "f6909f2ff78bfb896b5ad2d255359a5891230bd9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

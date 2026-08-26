@@ -1,7 +1,51 @@
 # The three calibration layers — math ideal / observational ideal / fitted ideal
 
-**Status:** convention record. Owner-specified 2026-08-26.
+**Status:** convention record — **the fitted-ideal layer is PAUSED, see the
+banner below.** Owner-specified 2026-08-26.
 **Beans:** `qou-mkgt` (epic), `qou-nds9` (this doc), `qou-zeeg` (producer).
+
+> ## 🛑 PAUSED — do not build on the fitted ideal (owner ruling, 2026-08-26)
+>
+> **The large fitted q₀ variation means the model is not yet correct enough for
+> this layer to mean anything. A term is missing in binding.**
+>
+> The owner's ruling, in their words: *"the large q_0 fitted variation means
+> model is not correct enough yet to do this… we are missing term in binding."*
+>
+> **Why the layer's own numbers say the same thing.** A calibration layer is
+> only meaningful when the fitted values land *near* the measured ones — then
+> the residual is model error and the calibration is a calibration. Here they do
+> not: the fit demands `m_e = 1.9455 MeV` against CODATA's 0.51100 (**3.8×**)
+> and moves `q` **+3.26 %** off the substrate pin. Two calibration parameters
+> travelling that far are not exercising calibration freedom; they are
+> **absorbing model error into calibration values**, which is exactly the
+> signature a missing extensive term in `B` produces. The held-out split says it
+> again from the other side: the light and heavy regimes want moduli 3.4 % apart
+> (`1.14615` vs `1.10861`), so no single three-point choice serves both.
+>
+> **What this does and does not retract.**
+>
+> - **The diagnostic stands.** The measurements below are correct as recorded
+>   and were the point: they *bound what recalibration alone can buy* (93.09 % →
+>   28.80 % in-sample, and worse out-of-sample), and they are independent
+>   evidence for the missing **additive extensive** term. Nothing here is
+>   withdrawn.
+> - **The layer is not usable as a calibration.** Do not quote the fitted values
+>   as a calibration of the framework, do not wire them anywhere, and do not
+>   score any observable against them. They were already labelled a fit
+>   (`anti_fit_label.may_be_wired_to_production: false`); this ruling is
+>   stronger — the layer itself is on hold, not merely unwired.
+> - **The unblocking condition is the missing binding term**, not more fitting.
+>   Once `B` carries the super-pairwise additive extensive object, re-run the
+>   producer: if the fitted calibration then lands near CODATA and the two
+>   regimes agree on `q`, the layer becomes meaningful. That convergence is the
+>   test to apply — and it is a real one, since the layer can currently fail it.
+>
+> **Do not open a follow-on that fits harder.** Widening the objective, adding
+> isotopes, or freeing more parameters all move in the wrong direction: they
+> make a mis-specified model fit better without making it more correct. The
+> ⁴He outlier (−59.2 %) and the `m_K/m_π` CAL-3 option are both **on hold** for
+> this reason.
 
 The framework has **exactly three calibration points** in every layer below.
 The layers differ *only* in **how the three values are chosen** — never in how
