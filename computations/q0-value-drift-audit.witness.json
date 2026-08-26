@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 228,
       "canonical": 170,
-      "proton-pin": 1682,
+      "proton-pin": 1684,
       "unknown": 25
     },
     "stale_total": 228,
@@ -1940,6 +1940,13 @@
       {
         "file": "computations/atomic-tr-m-helium4-canonical.witness.json",
         "field": "parameters.q_0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/atomic-tr-m-helium4-canonical.witness.json",
+        "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
@@ -6603,6 +6610,13 @@
         "file": "computations/deuteron-from-scratch-ledger.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/deuteron-two-body-kernel-overshoot.witness.json",
+        "field": "inputs.q0",
+        "value": "1.10997858275138080759166909561076887987449912187360000000000",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },

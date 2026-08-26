@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:51:27.868948+00:00",
-  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
+  "computedAt": "2026-08-26T04:19:04.805820+00:00",
+  "commitSha": "092f9ea03dd8db5adb17478da873c614d5e0ad3b",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 96,
+      "computed": 97,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -27,16 +27,20 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
-      "computations/audits/witness_provenance_audit.py"
+      "computations/audits/witness_provenance_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py"
+    "reproduce": "python3 -u computations/audits/witness_provenance_audit.py --strict"
   },
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
@@ -54,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2771,
-      "prov_ok": 2348,
+      "total_scanned": 2776,
+      "prov_ok": 2351,
       "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 244,
+      "prov_exempt_no_reader": 245,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 96,
+      "prov_missing": 97,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965355467340310357271743053049440635149765427643450018044027"
+      "completeness_ratio": "0.965057636887608069164265129682997118155619596541786743515850"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4287,6 +4291,18 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-branch-convexity-bound.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-branch-hyperbolicity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-vs-atlas-markov-trace.witness.json",
           "missing_fields": []
         },
         {
@@ -9749,6 +9765,12 @@
           ]
         },
         {
+          "witness": "deuteron-two-body-kernel-overshoot.witness.json",
+          "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
           "witness": "em-linking-invariant-scoping.witness.json",
           "missing_fields": [
             "commitSha"
@@ -11321,6 +11343,14 @@
         },
         {
           "witness": "cgz_cyclic_qdilog_unit.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "cluster-substructure-edgeset.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
