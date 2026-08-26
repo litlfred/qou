@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:39:06Z
+updated_at: 2026-08-26T03:41:39Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -624,3 +624,46 @@ the over-count AGENTS.md records having made before (14 claimed, 2 real).
 exception line in each result, because classifying a CRASH previously meant
 re-running the producer by hand. Same reasoning as recording the moved field
 names, which has now paid for itself four times.
+
+
+### RETRACTION of the mechanism above — the worktree never leaked
+
+The section headed *"worktree isolation is NOT complete"* blamed the sweep,
+naming a hardcoded `/home/user/qou` in `forward_ref_classifier.py` and the
+inline ratchet on the witness-write path as escape routes. **That diagnosis is
+wrong and is withdrawn.** Neither was involved.
+
+The writer is `scripts/precommit-precision-warn.sh` — the repo's own
+`PreToolUse` hook on `Bash`, wired at `.claude/settings.json:40` and described
+in AGENTS.md. It does
+
+    cd "$(git rev-parse --show-toplevel)"
+    python3 computations/witness_raw_float64_audit.py --strict
+
+on every commit touching a witness or a `computations/` script. That audit
+writes `witness-raw-float64-audit.witness.json` as a side effect, in the
+SESSION tree, because that is where the hook runs.
+
+So **my own commits were producing the file I was attributing to the sweep.**
+The timing fitted the sweep because the sweep is what I was committing about.
+
+Evidence that settles it: `witness_raw_float64_audit.py` resolves its output
+via `Path(__file__).resolve().parent`, so a copy executed from
+`/tmp/residue-wt` writes inside the worktree by construction. It cannot reach
+the session tree from there. Only the session copy can, and only the hook runs
+the session copy.
+
+**What was right and stays:** reverting rather than committing. A regenerated
+audit witness is the `b28296c0d` class whatever produced it, and its counts
+here are a side effect of a hook, not a measurement anyone requested.
+
+**What was wrong:** the claim that worktree isolation is incomplete. On this
+evidence it held perfectly. I over-generalised from one dirty file to a
+structural conclusion, and picked two plausible mechanisms without testing
+either — the same "reasoned from shape instead of measuring" failure this bean
+already records twice.
+
+**Consequence:** the file will reappear on every commit this session makes
+that touches `computations/`. That is the hook working as designed, not a
+defect and not a sweep escape. Revert it; do not commit it; do not read it as
+evidence of anything about the sweep.
