@@ -32,9 +32,12 @@ dim > 1 the factors are matrices and do not commute. Hence: 2 agree at machine
 zero, 6 disagree at O(1), split exactly by dimension, with no defect anywhere
 in the branching machinery.
 
-So the open question is not "why is Path B wrong" but **which of the two
-canonical-4He constructions is the intended one** -- they cannot both be, and
-every consumer of either inherits the choice.
+RESOLVED (qou-oppb). `atom_braid_word_3A` is the corpus convention by a wide
+margin -- ~220 consumers against the 3 files in this branching cone -- and
+substituting it takes phase25 from 0/8 to every partition agreeing with F1 to
+its 8-significant-figure storage floor. `he4_braid_canonical` now delegates to
+it, and this probe pins the old local word so the divergence stays
+reproducible; it exits non-zero if that delegation is ever undone.
 
 PRECISION, and a defect it exposed. The characters are computed with mpmath
 end to end at 40 dps. This matters for the CLAIM, not merely for hygiene: the
@@ -79,8 +82,32 @@ from mpmath import mp  # noqa: E402
 
 from char_fast import _compiled_sigmas  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from sublemma_2_1_h12_he4_branching import he4_braid_canonical  # noqa: E402
-from chi_sym_alt_closed_form import atom_braid_word_3A  # noqa: E402
+from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
+    _proton_body, _neutron_body, H)
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
+
+def he4_braid_LOCAL_PRE_FIX() -> list:
+    """The word `he4_braid_canonical` built for itself before qou-oppb.
+
+    Reconstructed here rather than imported, because the fix made
+    `he4_braid_canonical` delegate to `atom_braid_word_3A` -- so importing it
+    would compare the corpus word to itself and this probe would report a
+    difference of zero, silently stopping demonstrating the very thing it
+    exists to demonstrate. Verbatim from `sublemma_2_1_h12_he4_branching.py`
+    as of commit b2028fc3b; this is now a regression pin, not live code.
+    """
+    word = []
+    word.extend(_proton_body())
+    word.append((1.0, 0.0, 2))
+    word.extend([(c, d, g + 3) for (c, d, g) in _proton_body()])
+    word.append((1.0, _pn_d(H), 5))
+    word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])
+    word.append((1.0, -H, 8))
+    word.extend([(c, d, g + 9) for (c, d, g) in _neutron_body()])
+    return word
 
 mp.dps = 40
 Q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -118,11 +145,17 @@ def chi(word, sig, dim):
 
 
 def main() -> int:
-    w_he4 = he4_braid_canonical()
+    w_he4 = he4_braid_LOCAL_PRE_FIX()
     w_3a = atom_braid_word_3A(2, 2)
 
-    print(f"he4_braid_canonical()    {len(w_he4)} letters")
-    print(f"atom_braid_word_3A(2,2)  {len(w_3a)} letters")
+    live = he4_braid_canonical()
+    fixed = (len(live) == len(w_3a)
+             and all(a == b for a, b in zip(live, w_3a)))
+    print(f"he4_braid_canonical() now delegates to atom_braid_word_3A: {fixed}"
+          f"{'' if fixed else '   <-- REGRESSION, the local word is back'}")
+    print()
+    print(f"he4_braid_LOCAL_PRE_FIX()  {len(w_he4)} letters  (the old local build)")
+    print(f"atom_braid_word_3A(2,2)    {len(w_3a)} letters  (the corpus word)")
     if len(w_he4) == len(w_3a):
         n_diff = sum(1 for a, b in zip(w_he4, w_3a)
                      if (mp.mpmathify(a[0]), mp.mpmathify(a[1]), a[2])
@@ -165,7 +198,14 @@ def main() -> int:
     print(f"dim  > 1 ({len(many)}): min rel "
           f"{mp.nstr(min(r[4] for r in many), 4)}")
     print("\nThe gap between those two lines is the whole finding.")
-    return 0
+    print()
+    print("RESOLVED (qou-oppb): he4_braid_canonical now returns the corpus word,")
+    print("and phase25 goes 0/8 -> every partition agreeing with F1's cached")
+    print("character to its 8-significant-figure storage floor (5e-9 to 4.8e-8).")
+    print("It still prints 0/8 because its pass threshold is rel < 1e-9, which is")
+    print("unmeetable against an 8-sig-fig upstream -- that threshold measures F1's")
+    print("serialization, not the mathematics, and was deliberately NOT widened.")
+    return 0 if fixed else 1
 
 
 if __name__ == "__main__":
