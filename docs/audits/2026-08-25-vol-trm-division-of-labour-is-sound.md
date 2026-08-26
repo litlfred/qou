@@ -2805,3 +2805,109 @@ braid realisation of the same nine couplings (the permutation braid is the
 minimal positive one, not the only one); or an interface derived from elsewhere.
 And "not provably a connected sum" remains **necessary, not sufficient** — no
 essential torus is established.
+
+---
+
+## Addendum 31 — the derivation *does* come from further upstream, and it pins the interface to one crossing
+
+Addenda 29–30 screened interface words by the magnitude of $\mathrm{tr}_M(I)$
+against $\sqrt{B_{\rm AME}}$, and all six failed. **That screen was aimed at
+the wrong invariant, and the right one was already in the corpus.**
+
+The normal-form machinery never reads a magnitude off the interface.
+[`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.md)
+defines the quantity that enters
+[`conj:confinement-nf-structure-forcing`](../../content/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing.md)
+as a **Laurent valuation**:
+
+$$
+  \alpha_{\mathrm{shift}}(K)
+  \;:=\; \max_{\lambda \,\vdash\, p} \; \mathrm{ord}^{(-)}_{q=0} \, \chi_\lambda(\beta_K),
+$$
+
+the pole order at $q = 0$ of the seminormal Hecke character — an **integer**,
+derived (closed form $k(p-1)$ for torus words), not fitted.
+
+### It is already pinned, and the pin is already checked
+
+[`confinement-nf-partial-proof.md`](../../content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md)
+assigns the atom's interface $\alpha_{\mathrm{shift}}(I) = \alpha_{\mathrm{shift}}(T_{2,1}) = 1\cdot(2-1) = 1$
+and derives $\mathrm{shift}_{\mathrm{NF}} = 18Z + 21N + 1$, which at $Z = N = 1$
+gives $\mathbf{40}$ — the exponent of $u$ in the recorded closed form
+$D(u) = 2^{2A+1} u^{18Z+21N+1} (1+u^2)^{3A-1}$. So the interface is not a free
+slot: its $\alpha_{\mathrm{shift}}$ is fixed by an already-verified integer.
+
+### Measured: every candidate moves that exponent
+
+[`interface_alpha_shift_is_pinned_probe.py`](../../computations/meson/interface_alpha_shift_is_pinned_probe.py)
+computes $\alpha_{\mathrm{shift}}$ of each screened word on its support-reduced
+form — the corpus's own convention when it calls a lone crossing $T_{2,1}$
+($\sigma_1$ in $B_2$, not $\sigma_3$ in $B_6$). The valuation is read as a
+log-log slope of $|\chi_\lambda(q)|$ over three decades in `mpmath` at 300 dps;
+controls reproduce the committed
+[`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json)
+values $\alpha_{\mathrm{shift}}(T_{2,9}) = 9$, $\alpha_{\mathrm{shift}}(T_{3,5}) = 10$,
+and return $1$ for the lone crossing. 9/9 assertions pass.
+
+| interface | word | $B_p$ | $\alpha_{\mathrm{shift}}$ | $D(u)$ exponent | off 40 by |
+|---|---|---|---|---|---|
+| `I1` (current) | $\sigma_3$ | $B_2$ | **1** | **40** | — |
+| `I3` clasp | $\sigma_3^2$ | $B_2$ | 2 | 41 | $+1$ |
+| `I4` fan | $\sigma_2\sigma_3\sigma_4$ | $B_4$ | 3 | 42 | $+2$ |
+| `I2` block transposition | $\sigma_3\sigma_2\sigma_4\sigma_3$ | $B_4$ | 4 | 43 | $+3$ |
+| `I5` doubled | $(\sigma_3\sigma_2\sigma_4\sigma_3)^2$ | $B_4$ | 8 | 47 | $+7$ |
+| `I_colour` (Add. 30) | $(\sigma_3\sigma_2\sigma_1)(\sigma_4\sigma_3\sigma_2)(\sigma_5\sigma_4\sigma_3)$ | $B_6$ | 9 | 48 | $+8$ |
+
+In every case the maximizing channel is the all-column $V_{(1^p)}$, and
+$\alpha_{\mathrm{shift}}$ equals the **letter count**.
+
+### Why, and the Lean
+
+On $V_{(1^p)}$ every SYT of a single column is unique, so the channel is
+1-dimensional and each generator acts by a scalar. Down a column the content
+difference is $\rho = -1$, so that scalar is
+$a = h/(1 - q^{-2\rho}) = (q - q^{-1})/(1 - q^{2}) = -q^{-1}$, of valuation
+exactly $-1$. A **positive** word of length $L$ therefore has column character
+$(-q^{-1})^{L}$, valuation $-L$: one letter, one unit of pole order.
+
+[`QOU/MassTheory/InterfaceLengthPinned.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/InterfaceLengthPinned.lean)
+proves the bookkeeping and — the point — that the unit step is what makes the
+pole order a *faithful* reader of word length. `colPole_faithful` is the
+pinning; `colPole_not_faithful_of_zero_step` shows the hypothesis is
+load-bearing (at step 0 every length collapses and nothing is constrained).
+Six declarations, generic `Nat` (no `ℝ`, nothing archimedean), `lean`-direct
+exit 0, `#print axioms` clean — four depend on no axioms at all, two on
+`propext`/`Quot.sound` from `omega`.
+
+### What this rules out
+
+**Scope (b) — structural, with the invariant named.** The invariant is the
+$q$-valuation of the all-column character, which is additive over
+concatenation and therefore equal to the word length on positive words. Any
+positive interface word other than a single crossing has
+$\alpha_{\mathrm{shift}} \ge 2$ and moves $\mathrm{shift}_{\mathrm{NF}}$ off
+the exponent that the recorded $D(u)$ already matches. **The missing binding
+magnitude cannot come from enriching the interface word.**
+
+Two honest limits on that (b):
+
+1. **It is conditional on $T_2$**, which
+   [`confinement-nf-partial-proof.md`](../../content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md)
+   reduces to Sub-lemma 2.1 and whose numeric inputs (the shifts $18$ and $21$,
+   the $D(u)$ closed form) are empirical benchmarks, not proofs. The exclusion
+   is as strong as that match, no stronger.
+2. **It covers positive words only.** A word with inverse generators can have
+   the column scalar $-q$ instead of $-q^{-1}$ and so cancel valuation; such an
+   interface is not excluded by this argument. The screened candidates were all
+   positive.
+
+### What it leaves open
+
+The three-line reading of Addenda 29–31 together: the interface *has* a
+derivation and it comes from upstream, but that derivation says the interface
+is **exactly one crossing** — so the interface was never the place the missing
+magnitude could live. Either the missing term enters through
+$\Delta(\beta_1,\beta_2;A)$ (the component shifts $18$ and $21$, which are the
+*nucleon* words, not the wall), or through a non-positive interface, or it is
+not in the normal-form decomposition at all. This closes the interface front
+rather than advancing it.
