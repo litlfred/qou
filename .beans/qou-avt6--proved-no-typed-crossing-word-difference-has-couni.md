@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T07:07:45Z
-updated_at: 2026-08-26T07:07:45Z
+updated_at: 2026-08-26T07:29:30Z
 ---
 
 Parent: `qou-avtq`. Follows `qou-avt5` (which established that `eps(Delta)` has
@@ -86,3 +86,30 @@ Lean it. The argument is elementary (a norm computation in `Z[sqrt2]` plus
 scope-(b) row rather than a probe.
 
 Probe: computations/qbeta/qbeta_single_wrap_element_cannot_exist_probe.py (10/10)
+
+
+## Lean landed 2026-08-26
+
+`content/quantum-observable-universe/lean/QOU/QBeta/SilverRatioCounitExclusion.lean`
+formalises the arithmetic core -- the corpus-specific part, previously unrecorded
+anywhere:
+
+  - `epsNP_silver`             : `epsNP (1+sqrt2) = 0`
+  - `bracket2half_silver`      : `[2]_q/2 = sqrt2` there, exactly
+  - `chiBlock3_silver_ne_zero` : the CONTROL does NOT vanish there
+  - `silver_separates_target_from_control` : the two together, as one citable row
+
+lean-direct EXIT=0; `#print axioms` on all five gives
+`[propext, Classical.choice, Quot.sound]` -- no `sorryAx`.
+
+DELIBERATELY NOT FORMALISED: the unit-group step
+`(1+sqrt2)^a = (sqrt2)^b => a = b = 0`. That is standard algebraic number theory
+(norms in `Z[sqrt2]`: `|N(1+sqrt2)| = 1`, `|N(sqrt2)| = 2`), not corpus-specific.
+It is left OUTSIDE Lean rather than `sorry`-ed: nothing in the file asserts it and
+no theorem depends on it. Formalising it needs `Zsqrtd 2` + norm multiplicativity.
+
+## Next
+
+The fork above (prose-wrong vs `epsNPq`-wrong) is an OWNER call and stays open.
+Optional follow-up: close the unit-group step over `Zsqrtd 2` to make the
+exclusion end-to-end machine-checked.
