@@ -427,3 +427,143 @@ That is a real open problem and it sits upstream of Obstruction A — bean
 `qou-7p7d`. My elimination in Addendum 4 stands as far as it goes (**(A) is
 refuted in Lean**), but "therefore (B)" does not follow: (C) was always available
 and is better supported.
+
+---
+
+## Addendum 6 — the pruning invariant: the atom trace is a convex combination (2026-08-26)
+
+Working `qou-7p7d` formalize-first: find the invariant that prunes *before*
+running a search.
+
+`tr_M` is **linear** on `H_n(q)`, and each letter `c·σ_g + d·1` expands over
+`{σ_g, σ_g⁻¹}` via `σ⁻¹ = σ − h`. So the atom element — which has no closure —
+is nonetheless a weighted sum of genuine braid images:
+
+$$\mathrm{atom} = \sum_b w_b\,\rho(\beta_b), \qquad \mathrm{tr}_M(\mathrm{atom}) = \sum_b w_b\, J_{K_b}(q)$$
+
+**Measured** ([`atom_branch_convexity_bound_probe.py`](../../computations/meson/atom_branch_convexity_bound_probe.py),
+3 assertions): the weights are a **convex combination** — every `w_b > 0`,
+`Σ_b w_b = 1` **exactly** — at `A = 1, 2, 4`.
+
+| isotope | `A` | letters | averaged | `2A+1` | branches | `Σ|w|` | convex |
+|---|---:|---:|---:|---:|---:|---:|---|
+| proton | 1 | 11 | **2** | 3 | 4 | `1.0` | ✓ |
+| neutron | 1 | 11 | **2** | 3 | 4 | `1.0` | ✓ |
+| deuteron | 2 | 23 | 5 | 5 | **32** | `1.0` | ✓ |
+| ⁴He | 4 | 47 | 9 | 9 | 512 | `1.0` | ✓ |
+
+**Proved** ([`AtomBranchConvexityBound.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/AtomBranchConvexityBound.lean),
+`lean`-direct exit 0, three declarations, **no `sorryAx`**): a convex combination
+cannot exceed its largest term, so `|tr_M(atom)| ≤ max_b |J_{K_b}(q)|` — and the
+bound is **sharp**, attained by a one-branch expansion.
+
+**Why it matters.** It collapses `2^(2A+1)` independent hyperbolicity questions
+into one: *is any single branch large?* That is the prune, and it is why no wide
+search was run.
+
+### The step I did not take, and why
+
+I was about to push the bound through `tr_M ~ exp(Vol)` — the cheat sheet's own
+shorthand — to get `Vol_eff(atom) ≤ max_b Vol(K_b)`. **Not licensed.** The volume
+conjecture is an asymptotic in the **colour** `N` at a root of unity,
+`lim (2π/N)·log|J_N(K; e^{2πi/N})| = Vol(K)`, not a pointwise bound on the
+ordinary Jones value at fixed `q`.
+
+The corpus's own numbers refute the misuse: every `²H` branch closure was
+measured non-hyperbolic, so a pointwise `|J| ≤ exp(Vol) = 1` would force
+`|tr_M(atom)| ≤ 1` — against the production proton value **1.1458**. The
+shorthand in the cheat sheet invites exactly this error; it is worth reading as
+the asymptotic statement it is.
+
+### Two corrections that fell out
+
+**1 · `2A+1` fails at `A = 1`.** `atom_braid_word_3A`'s docstring says *"there are
+`2A+1` such non-braid letters (two per nucleon… plus one per interface)"*.
+Measured: `A=2 → 5` ✓, `A=4 → 9` ✓, but **`A=1 → 2`, not 3** — a single nucleon
+has no interface, so the `+1` has nothing to count. My own
+`atom_word_braid_letter_census_probe.py` asserts the identity **only over
+`A ≥ 2`**, so its assertion is true as tested while its framing implies a
+generality it never checked.
+
+**2 · The sibling's stated reason does not reproduce.** The
+[atom-word audit](2026-08-25-atom-word-closures-are-not-hyperbolic.md) argues
+*"each branch braid is monotone, so its closure is a connected sum of `(2,k)`
+torus links"*. Tested under both readings — all letters sharing a sign, and
+Stallings-homogeneous (each generator consistently signed) — **the branches are
+neither**, at `A = 1` or `A = 2`. Their **measurement** (32/32 non-hyperbolic via
+SnapPy) is untouched; only the stated reason fails to reproduce, and possibly
+"monotone" carries a third sense I have not found.
+
+### Scope
+
+SnapPy is **unavailable** in this container, so **no volume is computed here** —
+the `²H` branch result is the sibling's, cited. For `A = 1` branch hyperbolicity
+nothing is established. The convexity bound and its Lean consequence are about
+**traces**, and stand on their own.
+
+---
+
+## Addendum 7 — the one question, answered: no branch is hyperbolic (2026-08-26)
+
+SnapPy installed (3.3.2), so the question the convexity bound reduced everything
+to is now measured rather than deferred.
+
+[`atom_branch_hyperbolicity_probe.py`](../../computations/meson/atom_branch_hyperbolicity_probe.py),
+3 assertions:
+
+| isotope | `A` | branches | hyperbolic | solver statuses |
+|---|---:|---:|---:|---|
+| proton | 1 | 4 | **0** | `degenerate` |
+| neutron | 1 | 4 | **0** | `degenerate` |
+| deuteron | 2 | 32 | **0** | `degenerate` |
+
+**Not one of the forty branch closures carries hyperbolic volume.** `A = 1` had
+never been checked — the sibling swept `²H` only — and `²H` here is an
+**independent re-run** that corroborates their 32/32 rather than citing it.
+
+### Both controls, because a null needs them
+
+A detector that can only say zero would produce this table whatever the truth.
+So the run asserts before reporting:
+
+- **positive** — the figure-eight must read `2.029883212819307`. Measured at
+  `high_precision()` (~212 bits): **delta `2.5 × 10⁻¹⁶`**. The pipeline can see
+  hyperbolic volume.
+- **negative** — the trefoil, a torus knot, must not read geometric. It reads
+  `degenerate`. So a `degenerate` verdict is a fact, not a solver default.
+
+### What this establishes, combined with the bound
+
+`|tr_M(atom)| ≤ max_b |J_{K_b}(q)|` is sorry-free, and **every branch in that max
+is non-hyperbolic**. So there is no branch from which a hyperbolic volume could
+be drawn: substituting `Vol(𝓑₃) = 7.3277` is not recovering something latent in
+the expansion — it is supplying, from outside, a quantity the object does not
+have anywhere in it.
+
+That is **Obstruction A with a mechanism** rather than as an observation, and it
+now covers `A = 1`, which the torus-closure framing never reached.
+
+### Still not a volume statement
+
+The temptation remains and is still refused: this does **not** say
+`Vol_eff(atom) = 0`. Going from "every branch is non-hyperbolic" to a statement
+about the atom element's own volume needs the `tr_M ~ exp(Vol)` step, which is an
+asymptotic in the **colour** `N`, not a pointwise bound — see Addendum 6, where
+the corpus's own numbers refute the misuse. What is established is exactly the
+table: **no branch is hyperbolic**.
+
+### A note on the precision fix, because `fmt` was the wrong instinct
+
+The first run put SnapPy's float64 volumes into the witness and the raw-float64
+ratchet flagged 50 fields, correctly. The reflex fix — `fmt()` them — would have
+been **laundering**: `_precision`'s own docstring says `fmt` *"will happily render
+a 53-bit value out to the full serialization width, so the number reads as
+measured while carrying ~15 significant digits"*, which is precisely what the
+float64-padding ratchet exists to catch.
+
+The real fix was that there was nothing to serialise. Every branch is
+**`degenerate`** — not "volume `0.0`" but *no hyperbolic structure*, so a `0.0`
+would misrepresent an absence as a measured zero. Branch rows now carry the
+solver status and the boolean, no volume field; only the calibration, a genuine
+measurement, carries a number, taken at ~212 bits where its digits are real.
+`precision-gates.sh --changed`: **all blocking gates green.**
