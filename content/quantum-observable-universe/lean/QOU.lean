@@ -1,5 +1,11 @@
 -- Quantum Observable Universe — Lean 4 Formalization
 --
+import QOU.AlgebraicSubstrate.QGenericBase
+import QOU.AlgebraicSubstrate.QGenericBaseReal
+import QOU.AlgebraicSubstrate.TwistSignTorsor
+import QOU.Eightfold.SelfDualSectorConfinement
+import QOU.Eightfold.OctonionicSu3RankObstruction
+import QOU.Eightfold.FlavourColourDiscriminator
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --

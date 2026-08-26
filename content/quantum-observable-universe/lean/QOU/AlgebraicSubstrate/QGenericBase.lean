@@ -46,6 +46,16 @@ community ring is downstream of this one rather than in competition with it.
 along any ring homomorphism**, so a definition stated over `IsQGeneric` is
 automatically available in every specialisation.
 
+## No `ℝ` in this file (§7c)
+
+The archimedean specialisation — every real `q > 1` is `q`-generic, the substrate
+anchor included — is a **separate file**,
+[`QGenericBaseReal.lean`](QGenericBaseReal.lean). §7c puts the specialisation past
+the wall in its own file even when the `ℝ` is warranted, and it is warranted there:
+the proof needs the ordering. An earlier revision kept it here behind a docstring
+arguing that the `ℝ` was justified. That argued the wrong question —
+`check-sidecars.sh` flags the *mixing*, not the `ℝ` — and it was flagged.
+
 ## Why `d ≥ 2` and not `d ≥ 1`
 
 `Φ₁(q) = q − 1`, so inverting from `d = 1` would delete `q = 1` from `Spec R`.
@@ -138,20 +148,5 @@ theorem IsQGeneric.map (f : R →+* S) (q : R) [IsQGeneric R q] : IsQGeneric S (
       rw [← map_cyclotomic d f, eval_map, eval₂_at_apply]
     rw [this]
     exact (IsQGeneric.isUnit_cyclotomic d hd).map f
-
-/-- **The archimedean instance.** Every real `q > 1` is `q`-generic — the
-substrate anchor `q₀ ≈ 1.10998` included.
-
-`ℝ` here is not a §7c violation but the point of the exercise: this is the
-specialisation past the archimedean wall, and it genuinely needs the ordering
-(`cyclotomic_pos'` holds because every root of `Φ_d` lies on the unit circle, so
-`Φ_d` cannot vanish to the right of `1`).
-
-It also settles non-vacuity where it matters. The class is not merely
-inhabitable by some toy ring; it is satisfied at the value the framework actually
-evaluates at, so a definition stated over `IsQGeneric` reaches the substrate. -/
-theorem isQGeneric_real {q : ℝ} (hq : 1 < q) : IsQGeneric ℝ q where
-  isUnit_q := isUnit_iff_ne_zero.mpr (by linarith)
-  isUnit_cyclotomic d _ := isUnit_iff_ne_zero.mpr (cyclotomic_pos' d hq).ne'
 
 end QOU.AlgebraicSubstrate
