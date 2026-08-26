@@ -341,36 +341,6 @@
    }
   },
   {
-   "producer": "bar_pairing_binding_observable",
-   "verdict": "BUDGET_EXCEEDED",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 2
-  },
-  {
-   "producer": "block_swap_binding",
-   "verdict": "BUDGET_EXCEEDED",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 2
-  },
-  {
-   "producer": "chi_at_q_inv_via_native_mpfr",
-   "verdict": "BUDGET_EXCEEDED",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 2
-  },
-  {
    "producer": "chirality_weighted_3body_cluster_probe",
    "verdict": "MOVED",
    "rc": 0,
@@ -1158,26 +1128,6 @@
    }
   },
   {
-   "producer": "closed_form_tau_M_verification_phase5q",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.0,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
-   "producer": "cross_check_trM_cw_seminormal_leg",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
    "producer": "d_frame_interface_twelve_derivation_probe",
    "verdict": "IDENTICAL",
    "rc": 0,
@@ -1213,26 +1163,6 @@
    }
   },
   {
-   "producer": "gram_qtrace_hutchinson_probe",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
-   "producer": "gram_transfer_quadratic",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
    "producer": "he4_qreeb_phase_falsification_probe",
    "verdict": "MOVED",
    "rc": 0,
@@ -1259,16 +1189,6 @@
    }
   },
   {
-   "producer": "helium4_mu4_cluster_moment_probe",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.0,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
    "producer": "markov_peel_atomic_witness",
    "verdict": "IDENTICAL",
    "rc": 0,
@@ -1276,16 +1196,6 @@
    "moved": [],
    "identical": 2,
    "fields": {}
-  },
-  {
-   "producer": "mu3_door_sign_C_vs_D_probe",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
   },
   {
    "producer": "orbit_reduction_crosscheck",
@@ -1312,26 +1222,6 @@
      ".precisionMetadata.truncation_bound"
     ]
    }
-  },
-  {
-   "producer": "orbit_trace_identity_proof",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
-  },
-  {
-   "producer": "paper_six_term_isotope_sweep",
-   "verdict": "TIMEOUT",
-   "rc": "TIMEOUT",
-   "sec": 180.1,
-   "moved": [],
-   "identical": 0,
-   "fields": {},
-   "timeout_count": 1
   },
   {
    "producer": "probe_4_li6_rectangular_python",
@@ -1368,14 +1258,188 @@
    "fields": {}
   },
   {
-   "producer": "probe_9b_laurent_degree_10a5",
+   "producer": "bar_pairing_binding_observable",
    "verdict": "TIMEOUT",
    "rc": "TIMEOUT",
-   "sec": 180.1,
+   "sec": 900.1,
    "moved": [],
    "identical": 0,
    "fields": {},
+   "exception": "",
    "timeout_count": 1
+  },
+  {
+   "producer": "block_swap_binding",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "chi_at_q_inv_via_native_mpfr",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "closed_form_tau_M_verification_phase5q",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "cross_check_trM_cw_seminormal_leg",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "gram_qtrace_hutchinson_probe",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "gram_transfer_quadratic",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "helium4_mu4_cluster_moment_probe",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "mu3_door_sign_C_vs_D_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 300.4,
+   "moved": [
+    "computations/probes/mu3-door-sign-c-vs-d.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/mu3-door-sign-c-vs-d.witness.json": [
+     ".scriptHash"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "orbit_trace_identity_proof",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 511.1,
+   "moved": [
+    "computations/orbit-trace-identity.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/orbit-trace-identity.witness.json": [
+     ".allPassed",
+     ".assertions[3].computed",
+     ".assertions[4].computed",
+     ".assertions[4].passed",
+     ".assertions[5].computed",
+     ".assertions[5].passed",
+     ".precisionMetadata.compute_dps",
+     ".precisionMetadata.guard_digits",
+     ".precisionMetadata.output_dps",
+     ".precisionMetadata.truncation_bound",
+     ".scriptHash"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "paper_six_term_isotope_sweep",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 701.9,
+   "moved": [
+    "computations/sweeps/paper-six-term-isotope-sweep.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/sweeps/paper-six-term-isotope-sweep.witness.json": [
+     ".all_modes.brane-legacy.rows[2].error",
+     ".all_modes.brane-legacy.rows[3].error",
+     ".all_modes.brane-legacy.rows[4].error",
+     ".all_modes.combined.rows[2].error",
+     ".all_modes.combined.rows[3].error",
+     ".all_modes.combined.rows[4].error",
+     ".all_modes.drop.rows[2].error",
+     ".all_modes.drop.rows[3].error",
+     ".all_modes.drop.rows[4].error",
+     ".all_modes.habiro.rows[2].error",
+     ".all_modes.habiro.rows[3].error",
+     ".all_modes.habiro.rows[4].error"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "probe_9b_laurent_degree_10a5",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 299.3,
+   "moved": [
+    "computations/probe-9b-laurent-degree-10a5.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probe-9b-laurent-degree-10a5.witness.json": [
+     ".assertions[2].computed",
+     ".assertions[3].computed",
+     ".assertions[4].computed",
+     ".assertions[5].computed",
+     ".assertions[6].computed",
+     ".assertions[7].computed",
+     ".assertions[8].computed",
+     ".assertions[9].computed",
+     ".data.isotope_rows[0].B_pred_MeV",
+     ".data.isotope_rows[0].Delta_lambda",
+     ".data.isotope_rows[0].dev_from_law",
+     ".data.isotope_rows[0].log_decomposition.log_q0_BAME_over_Qbeta"
+    ]
+   },
+   "exception": ""
   }
  ]
 }

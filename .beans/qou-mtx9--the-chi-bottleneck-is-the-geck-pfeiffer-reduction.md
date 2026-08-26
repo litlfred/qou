@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:11:37Z
-updated_at: 2026-08-26T07:17:23Z
+updated_at: 2026-08-26T07:45:16Z
 ---
 
 ## Where the time actually goes
@@ -148,3 +148,84 @@ the per-reduction cost, which is the steep term. So the honest projection
 for this producer is that it may still exceed its budget on the longest
 row — and if it does, that is the finding: the partition loop was never
 the dominant cost, one GP reduction on a 65-letter word is.
+
+
+## RESOLVED — and the fix is NOT batching. It is the wrong engine.
+
+`block_swap_binding`, measured end to end:
+
+    TIMEOUT at 25 s, 180 s (twice), 900 s      original (77 per-shape GP calls)
+    TIMEOUT at 1800 s                          batched GP + two-row prune
+    5 SECONDS, exit 0, assertion passes        SEMINORMAL + two-row prune
+
+So the recommendation in the first half of this bean was wrong. Batching
+removes the x77 on how many minimal-length searches you run; it cannot
+help the search itself, and the search is the whole cost. Measured with
+the SAME seven shapes and the same batched call shape:
+
+    |word|      GP                     seminormal
+      47        0.12 s                   1.26 s
+      56        > 90 s (unfinished)      1.56 s
+      65        —                        2.12 s
+
+GP wins on short words and then falls off a cliff. The seminormal route
+is ~linear and has none. This producer's words are 47-65 letters, so all
+but the shortest sit past the cliff — it was timing out while doing
+nothing wrong.
+
+**Correctness, checked before switching.** The two engines are
+independent implementations. On this producer's own words they agree to
+the 50-dps floor: `W_atom` rel **2.6e-50**, `W_free` rel **5.4e-50**.
+
+**The two-row prune is exact, verified numerically as well as in Lean.**
+7 shapes vs all 77 through the identical call, same word:
+
+    tr_M   7 two-row shapes : 2.89958832139990569
+    tr_M  all 77 shapes     : 2.89958832139990569
+    difference              : 0.0   (exactly)
+
+Largest >2-row contribution `|y*chi|` = 9.7e-72. The Lean said zero; the
+arithmetic agrees.
+
+**Note the two levers are separable and BOTH are needed.** Seminormal
+alone is not the answer: `chi_lambda_all_partitions_mpfr` — the
+all-77-shapes seminormal entry point — ran for **over 15 minutes without
+finishing** on the same word, because n = 12 includes blocks of dimension
+2310. It is seminormal RESTRICTED to the two-row shapes that is fast.
+Any conversion of the other producers must carry both halves.
+
+## What this makes newly measurable — a 45th stale witness
+
+`block-swap-binding.witness.json` (committed 2026-06-22) could never be
+checked, because the producer could not run. At 5 s it can. Every
+substantive field moved:
+
+    atom_traces/id        0.885616920  ->  2.899589970    3.3x
+    atom_traces/swap_pn   0.189970763  ->  3.267857280     17x
+    free_traces/swap_pn   0.353734913  ->  5.529478284   15.6x
+    S_atom                0.535257897  ->  1.062554528
+    S_free                0.374220678  ->  0.690782618
+    binding_signal        -0.357903009 ->  -0.430606035    20%
+
+`binding_signal_log_Sfree_over_Satom` is this producer's headline result
+and it moves 20 %. The drift is upstream, not from the engine swap —
+established by the two checks above (engines agree to 1e-50; prune is
+exact to 0.0).
+
+**The refreshed witness is deliberately NOT committed.** A re-run
+establishes non-reproduction, not correctness, and a 20 % move on a
+producer's headline scientific number is not something to land silently
+at the end of a session. Someone should decide which value is right.
+
+## Revised recommendation for the remaining producers
+
+Do NOT batch-convert the other eight to GP. The triage question per
+producer is **word length**, not shape count:
+
+  * words comfortably under the cliff -> GP is fine and faster
+  * words at or past it -> seminormal, restricted to the two-row shapes
+
+The cliff sits somewhere between 47 and 56 letters at n = 12 on this
+word family, and its position is a property of the word's distance from
+a minimal-length representative, not of length alone (see the correction
+above). Measure per producer; do not inherit this boundary.

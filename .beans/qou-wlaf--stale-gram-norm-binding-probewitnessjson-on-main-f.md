@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T06:10:49Z
+updated_at: 2026-08-26T07:46:23Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -1021,3 +1021,40 @@ control agreeing with the treatment to **every digit**.
 
 **When a check agrees suspiciously well with what it is checking,
 suspect a shared defect before accepting the agreement.**
+
+
+## FINAL TALLY — sweep complete, and the unmeasured tail is NOT different
+
+The 12 unmeasured producers were re-run at a 900 s budget (5x the tier-2
+budget), pinned to the same SHA, self-test green. Four completed.
+
+                           before      after
+    MOVED_SUBSTANTIVE        37    ->    40
+    MOVED_PROVENANCE_ONLY     2    ->     3
+    IDENTICAL                31    ->    31
+    TIMEOUT                   9    ->     8
+    CRASH                     9    ->     9
+    scoreable                70    ->    74
+
+**40 of 74 scoreable producers do not reproduce — 54 %, against 53 %
+before.** The four recovered split 3 substantive / 1 provenance-only,
+the same ratio as the fast half:
+
+    mu3_door_sign_C_vs_D_probe      MOVED   300.4 s
+    probe_9b_laurent_degree_10a5    MOVED   299.3 s
+    orbit_trace_identity_proof      MOVED   511.1 s
+    paper_six_term_isotope_sweep    MOVED   701.9 s
+
+That partly answers limit 2 in the earlier summary. I wrote that the
+unmeasured producers 'cannot be assumed to behave like the fast half in
+either direction'. Four of them now have, closely. Eight remain
+unmeasured at 900 s and the caveat still holds for those — but the
+expensive tail is no longer purely unknown.
+
+## Plus a 45th, found outside the sweep
+
+`block_swap_binding` — the producer this bean's stall investigation was
+originally about — is now measurable at **5 s** (see qou-mtx9: it was the
+wrong compute engine, not a defect). Its 2026-06-22 witness moves on
+every substantive field, including a **20 % move on its headline
+binding signal**. The refreshed witness is deliberately not committed.
