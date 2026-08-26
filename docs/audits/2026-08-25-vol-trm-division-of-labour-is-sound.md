@@ -754,3 +754,102 @@ Measured: carrier types and branch decompositions. **Not** claimed: that any
 sector's number is wrong, or that the `CS` route would yield the meson mass —
 the Chern–Simons branch produces a phase by the framework's own labelling, and
 whether a mass can be recovered from it is not addressed here.
+
+---
+
+## Addendum 10 — the missing physical sector *is* the missing mathematical case (2026-08-26)
+
+Asked whether the mathematical sectors exhaust the expected physical ones, and
+where the missing binding term sits. **They do not exhaust, and the two gaps are
+the same gap.**
+
+### What the classification actually has
+
+For a **prime** knot the classical trichotomy (Thurston, via JSJ) is exactly
+three cases:
+
+| case | complement | `Geom` in Stage 3 |
+|---|---|---|
+| **torus** | Seifert-fibered | `CS(K)·ℏ_q²` — coupling phase ✓ |
+| **satellite** | essential **torus**, non-trivial JSJ | **— no case —** |
+| **hyperbolic** | complete `H³` structure | `Vol(K)/ℏ_q²` — mass/energy ✓ |
+
+Stage 3 lists torus, hyperbolic, and the unknot. **The satellite case is
+missing** — and non-prime (connected sum, essential **sphere**) is missing too,
+which is Addendum 8's measured 40/40.
+
+### The missing binding term is the satellite case, and the corpus already says so
+
+AGENTS.md describes the missing many-body term as *"a separate, super-pairwise
+additive **extensive** object"*. That is a description of additivity over a
+decomposition — and the corpus already has the conjecture,
+[`conj:jsj-decomposition-linearity`](../../content/quantum-observable-universe/knots-particles-confinement/jsj-decomposition-linearity.md):
+
+> *"The **inter-nucleon braids form essential tori**, the complement decomposes
+> under the Jaco–Shalen–Johannson (JSJ) decomposition into `Z` proton-block
+> pieces and `N` neutron-block pieces with isotope-independent volume quanta"*
+>
+> $$\mathrm{Vol}(\mathcal{K}(Z,N)) = Z\cdot\mathrm{Vol}_p + N\cdot\mathrm{Vol}_n$$
+
+Additivity of volume over JSJ pieces is a **theorem** (Thurston); the block says
+so, and correctly locates the conjectural content in the decomposition
+hypothesis. An essential torus is a companion/pattern structure — a genuine
+bound state — and additivity over its pieces is extensive and super-pairwise by
+construction. **This is the missing term, in the right mathematical language.**
+
+So the physical sectors and the mathematical cases line up exactly:
+
+| physical | mathematical | status |
+|---|---|---|
+| coupling (α_EM) | torus | ✓ has functor, correctly used |
+| mass/energy (lepton, nucleon) | hyperbolic | ✓ has functor, carriers verified hyperbolic |
+| **many-body binding** | **satellite / JSJ** | **conjecture exists; `Geom` has no case** |
+| vacuum | unknot | ✓ |
+
+### Two things that block it, both measured
+
+**1 · `Geom` assigns no value to a satellite carrier.** `conj:jsj-decomposition-linearity`
+proposes the additive quantity, but Stage 3 gives no `Geom` case for the
+essential-torus class, so the conjecture has no functor to land in. Extending the
+split here is not cosmetic — it is where the binding term would enter.
+
+**2 · The measured objects are not satellites.** They decompose along essential
+**spheres**, not essential **tori** — connected sums of `(2,k)` torus links,
+40/40 (Addendum 8). Connected sum is *not* the satellite case. So on the objects
+the compute actually traces, `Vol_p = Vol_n = 0` and the linearity reads
+`0 = Z·0 + N·0` — true, and empty.
+
+### And the contradiction is at the definition, not the compute
+
+[`def:atom-knot`](../../content/quantum-observable-universe/knots-particles-confinement/atom-knot.md):
+
+> *"An **atom of type `(Z,N)`** is a **closed braid `K`** whose Gröbner–Shirshov
+> normal form in `H_{n(K)}(q)` admits a block decomposition … `n(K) = 3(Z+N)`."*
+
+A **closed braid** — a genuine link — on exactly the strand count
+`atom_braid_word_3A` uses. What that producer returns is **not a closed braid**:
+it lies outside `im(ρ)` because `2A+1` letters are averages (measured). So the
+gap is not a producer bug downstream of a sound definition; **the definition
+demands an object the construction does not build**, and `conj:jsj-decomposition-linearity`
+inherits that, since `𝒦(Z,N)` presupposes it.
+
+### What this makes the live question
+
+Not "which functor for non-link carriers" — that was my framing and it was too
+narrow. The live question is upstream:
+
+**Can the atom be built as an actual closed braid, as `def:atom-knot` requires,
+whose JSJ decomposition has the hyperbolic pieces `conj:jsj-decomposition-linearity`
+needs?** If yes, the binding term follows from a theorem (volume additivity over
+JSJ) rather than an ansatz — which is what the Δ_λ gate has been asking for. If
+no, both the definition and the conjecture need restating.
+
+That is a construction question, and it is where I would put the next effort.
+
+### Scope
+
+**(a)**. Measured: carrier types, branch decompositions, the definition's wording.
+**Not** claimed: that `conj:jsj-decomposition-linearity` is false — it is stated
+for an object the compute does not currently build, so it is untested rather than
+refuted. Nor that a qualifying construction does not exist; none is exhibited
+here either way.
