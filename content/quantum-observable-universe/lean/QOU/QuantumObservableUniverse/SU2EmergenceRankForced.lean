@@ -122,4 +122,30 @@ theorem volume_constraint_fails_of_not_rank_two
     {N : ℕ} (hN : N ≠ 2) : exteriorSquareDim N ≠ 1 :=
   fun h => hN ((exteriorSquareDim_eq_one_iff N).mp h)
 
+/-- **A single fibre satisfying the volume constraint has no three-dimensional
+fundamental.**
+
+Immediate from `exteriorSquareDim_eq_one_iff`, and recorded separately because
+it is the form the flavour question needs: the eightfold-way sector requires a
+three-dimensional `W`, and this says one fibre cannot supply it.
+
+**This is a SECOND route to a confinement the corpus already has, not a new
+result.** `eightfold-open-problems` states — correctly — that *"the search is
+confined to the groupoid level is now a theorem, not an extrapolation"*, on the
+strength of the `Sym²` gate (`Sym2Gate.lean`, `Sym2GateParity.lean`): a
+three-dimensional `W` must have `Sym²(W)` irreducible, and the gate decides
+that for an irreducible summand.
+
+The two arguments are independent. The `Sym²` route constrains `W` by the
+representation theory of its symmetric square; this one constrains the *fibre*
+by the non-degeneracy of its volume form, and never mentions `W`'s symmetric
+square at all. Two independent derivations of the same negative is worth
+having; neither supplies the construction that is actually open, which is a
+three-dimensional `W` in the **multi-fibre groupoid**. Nothing here bears on
+that, and nothing here should be read as narrowing it. -/
+theorem no_three_dimensional_fundamental_in_one_fibre
+    {N : ℕ} (hvol : exteriorSquareDim N = 1) : N ≠ 3 := by
+  rw [(exteriorSquareDim_eq_one_iff N).mp hvol]
+  decide
+
 end QOU
