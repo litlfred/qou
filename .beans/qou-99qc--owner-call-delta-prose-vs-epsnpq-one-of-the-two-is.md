@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T21:43:42Z
+updated_at: 2026-08-26T21:48:38Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -244,3 +244,32 @@ both called "tr_M(Δ)" are not comparable and I nearly quoted them as if they
 were. Now pinned as
 `the_NF_vector_and_the_exhibited_words_give_DIFFERENT_traces`, and it is why
 this probe holds the object fixed and varies only the functional.
+
+
+### Strengthened: the admissible set is COMPLETE, solved not sampled
+
+The structural condition **is** `y_(1³)(z) = 0`. Solved rather than checked
+against candidates, it is quadratic in `z` with exactly two roots:
+
+    z = q        and        z = z_D = q³/(q²+1)
+
+Two things follow that were not visible when I listed candidates:
+
+- **The two-row forcing is not unique to `z_D`** — `z = q` kills the `(1³)`
+  block too.
+- **At `z = q` the Markov trace IS the augmentation**, verified on all six basis
+  elements and not merely on Δ. So the second root adds no third option; it
+  reproduces the augmentation exactly.
+
+The admissible set is therefore **closed at two elements**, and the bracket is a
+completeness statement rather than a sample:
+
+| root | functional | err |
+|---|---|---|
+| `z = z_D` | Markov trace at `z_D` | −43.157 % |
+| `z = q` | ≡ the augmentation | +12.470 % |
+
+And `epsNPq` is `tr_M` at `z = 1` on Δ, with **`z = 1` neither root**. So the
+ansatz's +0.168 % comes from an evaluation inadmissible twice over: at a loop
+value the corpus itself calls never attained on the substrate, and one that does
+not survive the convention-D quotient.
