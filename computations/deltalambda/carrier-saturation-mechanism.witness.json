@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T18:22:16.476821+00:00",
-  "commitSha": "de13f9d4a0ea7be6fee76f90888cc168c79ecd96",
+  "computedAt": "2026-08-26T18:54:20.206878+00:00",
+  "commitSha": "212e82cebade62ffda7de39a33150d2706a54f14",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -29,12 +29,12 @@
       "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py. The prior 63.05 was convention-C (2026-07-13 audit), correct in its frame"
     },
     {
-      "name": "li6_amplification_pinned",
+      "name": "li6_amplification_reproduced",
       "computed": "107.885628162437443835303557180149443054317408648448894622819",
-      "expected": "107.886",
+      "expected": "107.88563",
       "passed": true,
       "tolerance": "0.05",
-      "source": "REGRESSION PIN, NOT A VALIDATION — and the distinction is the point. ⁶Li's free χ comes from this script's own LR path, so no second path exists to derive it from; an expectation taken from this script's own output cannot validate that output. This pin therefore asserts only that the value has not CHANGED, never that it is right. The prior 79.86 was the convention-C value. Promote to a real assertion if an independent ⁶Li free-χ path is built"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame"
     },
     {
       "name": "li6_all_385_partitions_present",
@@ -81,8 +81,8 @@
   "durationMs": 5,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "1ff2e4609aa5",
-  "scriptCommitSha": "ca73dcc1820c0935a92c642ce2d5aa91fb4aee39",
+  "scriptHash": "6952a0e9d530",
+  "scriptCommitSha": "d21ee01fdf86cbfb6fa6fafcff062c3723cf5c44",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -527,16 +527,21 @@ def main() -> int:
                "carrier_table_convention_d_rederivation.py. The prior 63.05 "
                "was convention-C (2026-07-13 audit), correct in its frame")
     wb.add_assertion(
-        "li6_amplification_pinned",
-        computed=fmt(res["6Li"]["A_req"]), expected="107.886", tolerance="0.05",
-        source="REGRESSION PIN, NOT A VALIDATION — and the distinction is "
-               "the point. ⁶Li's free χ comes from this script's own LR "
-               "path, so no second path exists to derive it from; an "
-               "expectation taken from this script's own output cannot "
-               "validate that output. This pin therefore asserts only that "
-               "the value has not CHANGED, never that it is right. The "
-               "prior 79.86 was the convention-C value. Promote to a real "
-               "assertion if an independent ⁶Li free-χ path is built")
+        "li6_amplification_reproduced",
+        computed=fmt(res["6Li"]["A_req"]), expected="107.88563",
+        tolerance="0.05",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py, whose ⁶Li free χ "
+               "comes from chi_free_via_frobenius — the power-sum / "
+               "Murnaghan–Nakayama route, which forms no Littlewood-"
+               "Richardson coefficient and so does not go through this "
+               "script's LR path. PROMOTED from a regression pin: until that "
+               "second path existed the expectation descended from this "
+               "script's own output and could not validate it. The two "
+               "routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-"
+               "frobenius.witness.json). The prior "
+               "79.86 was the convention-C value (2026-07-13 audit), correct "
+               "in its own frame")
     wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",
