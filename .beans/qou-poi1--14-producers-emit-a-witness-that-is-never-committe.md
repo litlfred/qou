@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:42:30Z
-updated_at: 2026-08-26T07:43:10Z
+updated_at: 2026-08-26T09:18:56Z
 ---
 
 ## The hole
@@ -100,3 +100,96 @@ Trying to execute the `qou-aj91` no-witness batch. The batch's plan was
 was the only one of eleven able to do that, and the ratchet blocked it. That
 is the ratchet working — the point of this bean is that it only worked because
 someone happened to run the producer.
+
+
+## 2026-08-26 — all of them run. CORRECTION: it is 13, not 14, and my
+## "the name mapping is exact" reasoning was wrong
+
+### The false positive, and why the earlier argument did not hold
+
+`delta_lambda_value_witness.py` declares `WitnessBuilder("delta-lambda-value")`
+but **writes `delta-lambda-witness.json`**, deliberately, with the reason in a
+comment beside it (a consumer expects that filename and TOP-LEVEL keys). That
+file **is** tracked. So it is committed, ratchet-visible, and never belonged in
+this list.
+
+The body above argues the count is sound because *"the name mapping is exact —
+witness.py:1117: Computation name (becomes the filename: `<name>.witness.json`)"*.
+That is the **default**, not a guarantee: a producer can hoist the payload and
+write wherever it likes. I verified the default from a docstring and never
+checked whether any producer overrides it. One does.
+
+Re-checked all 14 for the override shape (`write_text(json…)` / `json.dump`):
+**exactly one has it.** The other thirteen have `writes=0`, so their
+`.witness.json` string literals are upstream *reads*, not output paths. So the
+corrected count is **13**, and the detector needs an "and does not write its
+own output path" clause.
+
+### Every one of the 13 was run
+
+Per-producer, restoring the whole `computations/` tree between runs (producers
+write SIBLING witnesses). Verdict taken from the WitnessBuilder's own
+`raw-float64: N raw float64 field(s)` warning at write time — the authoritative
+signal, and the one that reaches nobody when the witness is never committed.
+
+    DIRTY        3   47 float64 fields between them
+    CLEAN        3   ran, wrote, no warning
+    NO-WITNESS   3   exit 1
+    TIMEOUT      4   >120 s (one >300 s)
+    ----------------
+                13
+
+**DIRTY — confirmed, with field counts:**
+
+    36   chi-sym-alt-closed-form            computations/chi_sym_alt_closed_form.py
+     9   qbeta-c3-barodd-determined-solve   computations/qbeta/qbeta_c3_barodd_determined_solve_probe.py
+     2   sublemma-2-1-h12-he4-phase25       computations/sublemma_2_1_h12_he4_phase25.py
+
+**CLEAN:** `phase3b-universal-vs-knot-specific`,
+`qbeta-toroidal-harmonics-basis-probe`, `qbeta-toroidal-mode-projection-probe`.
+
+**TIMEOUT (unclassified, not broken):** `chi-lambda-at-q0` (>300 s),
+`fr-pullback-borromean-h3a-test`, `sublemma-2-1-h12-he4-branching-verify`,
+`transfer-scaling-profile`. A 120 s budget artifact; re-run with a real budget
+before calling any of them anything.
+
+**NO-WITNESS (exit 1):** two were checked and are **missing-upstream**, not
+designed refusals and not precision defects:
+
+* `lr_hecke_character_probe` — `FileNotFoundError:
+  computations/probes/chi-proton-h3-at-q0-50dps.witness.json`. **The hole
+  compounding**: this producer cannot run because a witness *it* needs was
+  itself never committed.
+* `probe_4_li6_rectangular_conjecture` — *"lithium6-canonical-3A not found in
+  witness (re-run joint-tower-sdp with ⁶Li registered)"*.
+
+`probe_4d_li6_aggressive_scan` (exit 1, 12.9 s) was **not** checked; do not
+assume it is the same.
+
+### The worst one is not a serialization bug
+
+`chi_sym_alt_closed_form` does not merely serialize floats — it **computes** in
+float64. Its signature is literally
+
+    def chi_sym_closed_form(crossings, q: float) -> float
+
+so the substrate parameter is typed `float64`, and
+`add_parameter("q", float(Q0))` downcasts it on the way in. Line 187 mixes the
+two:
+
+    return (q + 1.0 / q) / 2.0 + h * float(_avg_color_delta()) / 4.0
+
+`float(_avg_color_delta())` is a downcast inside an arithmetic expression, which
+AGENTS.md names as the defining case: *"`hf = float(G.h)` followed by arithmetic
+against it is a computation, not a display, and is a defect."* Fixing this one is
+a producer rewrite, not a `fmt` call.
+
+### What this changes about the bean's claim
+
+The claim was "14 invisible, 1 verified dirty, 13 candidates". Measured, it is
+**13 invisible, 3 verified dirty (47 fields), 3 verified clean, 4 unclassified
+by timeout, 3 blocked on missing upstreams** — and 2 of those 3 are blocked by
+this very hole.
+
+Still a **lower bound on one shape**: hand-rolled writers and stdout-only
+probes remain uncounted.
