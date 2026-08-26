@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T21:48:38Z
+updated_at: 2026-08-26T22:44:45Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -273,3 +273,37 @@ And `epsNPq` is `tr_M` at `z = 1` on Δ, with **`z = 1` neither root**. So the
 ansatz's +0.168 % comes from an evaluation inadmissible twice over: at a loop
 value the corpus itself calls never attained on the substrate, and one that does
 not survive the convention-D quotient.
+
+
+### 🛑 SCOPE RETRACTION — the rank-one identity is n=3 only
+
+`qbeta_rank_one_identity_is_n3_only_probe.py` (6/6). Caught by taking a sibling's
+warning seriously rather than assuming my claims were exempt. PR #5337, on this
+very bean, five days before I wrote the identity:
+
+> *"One trap: at n = 3, Ξ coincides numerically with `y_(3)` … **`Ξ ≠ y_(n)` in
+> general — do not generalise the n=3 coincidence.**"*
+
+That is about a different coincidence. Mine is the same failure mode.
+
+**Measured**, with the Ocneanu trace **solved** at each n from unital + cyclic +
+the full Markov property at **every** level of the chain (not read off the stated
+recursion, so this is an independent route):
+
+| | rank | `net = tr_M^{z=1} − h·δ_{w₀}` |
+|---|---|---|
+| n = 3 | 6/6 unique | **holds**, defect exactly `−h` |
+| n = 4 | 24/24 unique | **FAILS** — nonzero on **11 of 24**, four distinct values |
+
+At n = 4 the trace at `z = 1` also takes **five** distinct values rather than
+being constant off `w₀`. Not a near miss.
+
+**Everything drawn from it stands** — each conclusion is evaluated on Δ, and
+Δ ∈ H₃(q): `ε(Δ) = tr_M^{z=1}(Δ)` follows from Δ's *support*; the phase is a
+transport within one family; the floor is `net(dC) = −h·y_(2,1)(1)`. The original
+probe still passes 20/20 and no number moves. What was wrong is the **sentence**,
+which read as a characterisation of the two functionals.
+
+**Also found:** imposing the Markov property only at the **top** generator leaves
+the Ocneanu trace **underdetermined** — rank 5 of 6 at n = 3. A partial Markov
+condition does not pin it.
