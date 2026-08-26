@@ -371,12 +371,10 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerS
 # The prerequisite Mathlib lacks, supplied here (bean qou-kzjl). This is what a
 # real WenzlTowerStep ascent would consume; pinned because a regression here
 # silently re-opens the gap.
-QOU.MathlibExt.SemisimpleOfNondegenerateTrace | QOU.MathlibExt.algTrace_eq_zero_of_isNilpotent | clean
-QOU.MathlibExt.SemisimpleOfNondegenerateTrace | QOU.MathlibExt.isSemisimpleRing_of_trace_nondegenerate | clean
 # GENERAL RANK, and it USES its hypothesis -- contrast wenzlTowerStep_H2_H3_trivial
 # which discards both. Scope: trn1 = algTrace only; whether QOU's Markov trace is
 # the algebra trace is NOT settled.
-QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_algTrace | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.wenzlTowerStep_regTrace | clean
 """
 
 
