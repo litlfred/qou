@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T20:10:49.472735+00:00",
-  "commitSha": "1339c00caf28c479ee2de2854582ac301bb52059",
+  "computedAt": "2026-08-26T20:42:03.502281+00:00",
+  "commitSha": "4284886655a9c2c6975b20f9d0a820e245c733a2",
   "assertions": [
     {
       "name": "third_row_vanishes_at_N_equals_2",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "qbeta-d-frame-trace-baseline",
   "scriptFile": "qbeta_d_frame_trace_baseline_probe.py",
-  "scriptHash": "5728a74e06db",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c721fe317662",
+  "scriptCommitSha": "f5c36c403d6bc327a4df4daf0cee1e35599d6004",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

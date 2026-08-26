@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 qbeta_d_frame_trace_baseline_probe.py — qou-cds1: the D-frame trace baseline,
-computed rather than substituted, and what it forecloses.
+computed rather than substituted, and what it prices.
 
 # Ref: .beans/qou-cds1--s1-science-re-derive-the-qbeta-ck-ladder-under-d-n.md
 # Ref: content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean
@@ -26,15 +26,27 @@ WHAT IT FINDS. The D-frame (two-row) Markov trace of Delta gives Q_beta about
 
 WHY THAT MATTERS FOR THE RE-DERIVATION. Every rung of the published ladder is a
 sub-percent correction -- the whole five-rung product moves Q_A by 0.168 %. A
-15.5 % baseline gap is ~92x the entire existing ladder. So re-deriving the
-ladder ON THE MARKOV TRACE cannot rescue Q_beta under D: no product of rungs
-that small closes a gap that large.
+15.5 % baseline gap is ~92x the entire existing ladder. So rungs of that size,
+applied to this baseline, do not by themselves land on CODATA.
+
+WHAT THAT IS NOT A REASON TO DO -- corrected 2026-08-26 on owner instruction.
+An earlier reading of this measurement (and the chat summary of it, which was
+worse than this file) treated the 92x as a reason to leave the D-frame ladder
+re-derivation undone. That inverts the standing rule: a structurally-exact
+piece is a PERMANENT, CORRECT contribution even while the current total is
+inaccurate, and "inaccurate alone" is not "excluded" (AGENTS.md, the two
+permanence principles under "Before declaring refuted"). The ladder is
+convention-C-frame throughout and un-re-derived under the canonical convention
+(bean qou-cds1); if re-deriving it is the right thing to do, it is right
+independently of whether it closes this gap, because once the other terms of
+the gap are supplied the correct rungs are what improves the accuracy. Do the
+re-derivation. What this measurement changes is the EXPECTATION set on it --
+it will not, on its own, land on CODATA -- not whether to do it.
 
 SCOPE -- (a), NOT (b), per AGENTS.md. This is "this construction, alone, does
 not reproduce the numbers as-is". It does NOT exclude the trace as an
-ingredient, and it does NOT prove Q_beta is not a trace observable. What it
-excludes is the specific hope that a D-frame re-derivation of the EXISTING
-rung structure lands on CODATA, and it prices exactly how far off that hope is.
+ingredient, does NOT prove Q_beta is not a trace observable, and does NOT
+foreclose the D-frame re-derivation. It prices one baseline.
 """
 from __future__ import annotations
 
