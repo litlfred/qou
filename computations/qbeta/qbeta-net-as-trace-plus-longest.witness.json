@@ -1,0 +1,178 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T21:16:07.521956+00:00",
+  "commitSha": "7a4f72a46a7b255e869f41b3db39edaef8f7b70a",
+  "assertions": [
+    {
+      "name": "net_sends_every_basis_element_to_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "trM_at_z_one_is_one_except_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_equals_trM_at_z_one_minus_h_times_the_longest_coefficient",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_functionals_DO_differ_exhibited_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_longest_coefficient_functional_is_NOT_a_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_reproduces_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_has_ZERO_coordinate_on_the_longest_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "epsNPq_equals_the_trace_at_the_trivial_loop_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_phase_is_a_transport_WITHIN_the_markov_family",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_floor_is_MINUS_h_times_the_longest_coefficient_of_dC",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_longest_coefficient_of_dC_EQUALS_a_two_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "hence_the_floor_is_minus_h_times_a_two_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "and_chi_two_one_of_delta_vanishes_CROSS_REFERENCE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1359,
+  "computation": "qbeta-net-as-trace-plus-longest",
+  "scriptFile": "qbeta_net_as_trace_plus_longest_probe.py",
+  "scriptHash": "4e4aa74c0a61",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_net_as_trace_plus_longest_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_net_as_trace_plus_longest_probe.py"
+  },
+  "description": "`net` equals the Ocneanu trace at z=1 corrected by -h on the longest element alone; Delta's support explains their agreement; and the z-free commutator floor is exactly -h*a_(2,1).",
+  "data": {
+    "floor_symbolic": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
+    "a_2_1_symbolic": "(q**3 - q)/(q**4 + q**2 + 1)",
+    "longest_coefficient_of_dC_symbolic": "q*(q - 1)*(q + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+    "floor_at_q0": "-0.0143595358875304501085086097144759087768871011997172248968326",
+    "a_2_1_at_q0": "0.0686860966441418312478759582739277630635695490069608206573360",
+    "h_at_q0": "0.209060298795639315430846213129674943859757495263061811021371",
+    "minus_h_times_a_2_1_at_q0": "-0.0143595358875304501085086097144759087768871011997173084207298",
+    "net_minus_trM_z1_on_the_longest_element": "-q + 1/q",
+    "markov_convention": "convention-free — the results hold for every z, and the floor contains no Markov parameter at all",
+    "assertion_notes": [
+      {
+        "assertion": "trM_at_z_one_is_one_except_on_the_longest_element",
+        "note": "(tr(T_0T_1T_0) = z(hz+1) -> 1+h at z=1)"
+      },
+      {
+        "assertion": "net_equals_trM_at_z_one_minus_h_times_the_longest_coefficient",
+        "note": "(exact on all six basis elements, hence as functionals)"
+      },
+      {
+        "assertion": "the_two_functionals_DO_differ_exhibited_on_the_longest_element",
+        "note": "(so 'they agree precisely when z=1' is about Delta, not the functionals — on T_{w_0} they differ by h at every z)"
+      },
+      {
+        "assertion": "the_longest_coefficient_functional_is_NOT_a_trace",
+        "note": "(which is exactly why `net` fails cyclicity)"
+      },
+      {
+        "assertion": "delta_has_ZERO_coordinate_on_the_longest_element",
+        "note": "(so eps(Delta) = tr_M^{z=1}(Delta) follows from SUPPORT, not from a numerical coincidence)"
+      },
+      {
+        "assertion": "the_phase_is_a_transport_WITHIN_the_markov_family",
+        "note": "(2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta), symbolic in z)"
+      },
+      {
+        "assertion": "the_floor_is_MINUS_h_times_the_longest_coefficient_of_dC",
+        "note": "(tr_M^{z=1} kills [H,H], so the rank-one term is all that survives)"
+      },
+      {
+        "assertion": "the_longest_coefficient_of_dC_EQUALS_a_two_one",
+        "note": "(both = q*(q - 1)*(q + 1)/((q**2 - q + 1)*(q**2 + q + 1)))"
+      },
+      {
+        "assertion": "and_chi_two_one_of_delta_vanishes_CROSS_REFERENCE",
+        "note": "(so the 2-dim block contributes NOTHING to the trace-visible part of the phase and EVERYTHING to the trace-invisible part)"
+      }
+    ],
+    "verdict": "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, on all six basis elements. So the corpus's 'the counit and the Markov trace are genuinely distinct functionals' is sharpened to a single rank-one difference supported on w_0, and its companion 'they agree precisely when z=1' turns out to be a statement about Delta's SUPPORT (Delta has zero w_0 coordinate) rather than about the functionals -- on T_{w_0} they differ by h at every z. Two consequences: the ladder phase is a transport WITHIN one family, 2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta); and because tr_M^{z=1} annihilates [H,H], the entire z-free floor IS the rank-one term, net(dC) = -h*(dC)_{w_0} = -h*a_(2,1), exactly. Read with chi^(2,1)(Delta) = 0 from the block resolution: the 2-dimensional block contributes nothing to the trace-visible part of the phase and everything to the trace-invisible part. Its contribution was never absent -- it was in the sector no trace can see. Scope-(a): nothing derived about the correction, nothing wired."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
