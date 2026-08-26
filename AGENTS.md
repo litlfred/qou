@@ -1834,9 +1834,11 @@ Do not regress either.
 >   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
 >   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
 >   *mentions* a convention while one inside a `def` body *defines* it, and
->   conflating them inflates the count several-fold. **Not all 22 are defects** —
->   three are `_legacy` with deprecation attributes and several are deliberate C
->   comparison objects; that triage is not done. An earlier hand-verified pass in
+>   conflating them inflates the count several-fold. **Not all 22 are defects**: the same script triages
+>   them **14 actionable / 8 deliberate**, where deliberate means the site
+>   announces itself (a `_legacy` name, an `@[deprecated]`, or a docstring saying
+>   convention-C / comparison / historical). That is evidence of *intent*, not a
+>   clean bill — a deliberate C object can still be cited as though it were D. An earlier hand-verified pass in
 >   the audit below reported 7 across 6 files and was an undercount. And **`markovZ` is five
 >   declarations spanning both conventions** — three C (`markov-trace-factorization`,
 >   `QBetaCategoricalPrecisionLadder`, `HoefsmitV21CosSymmetrization`) against two

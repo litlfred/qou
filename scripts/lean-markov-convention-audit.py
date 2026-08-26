@@ -105,6 +105,36 @@ KNOWN_C = [
 
 
 
+# Deliberateness markers. A convention-C definition is NOT automatically a
+# defect: the corpus keeps C objects on purpose for comparison, and keeps
+# `_legacy` shims while a migration runs. Mirrors the Python audit's
+# declared-C bucket. Evidence is taken from the declaration name and from the
+# ~12 lines of docstring/attribute above it, never from shape.
+RE_DELIB_NAME = re.compile(
+    r"legacy|_?C$|C_?sub|Classical|Coincidence|Exclusion|Historical|_old|Compare|Vs")
+# NOTE: bare "legacy" is deliberately NOT a marker. `markovZN`'s docstring says
+# "Use this in new code instead of `markovZN_legacy`" -- it names the legacy
+# shim in order to steer readers AWAY from it, and a bare-"legacy" marker read
+# that as self-deprecation and classified a live convention-C definition as
+# `deliberate`. That is an error in the reassuring direction, which is the one
+# that matters here. A declaration that is itself legacy carries `@[deprecated]`
+# or `_legacy` in its own name, both still matched.
+RE_DELIB_DOC = re.compile(
+    r"@\[deprecated|convention[- ]C|conventionC|historical|"
+    r"for comparison|comparison only|excised|superseded|do not use",
+    re.IGNORECASE)
+
+
+def _deliberate(path_text_lines, i: int, decl: str) -> str:
+    """`deliberate` if the site announces itself as C; else `actionable`."""
+    if RE_DELIB_NAME.search(decl):
+        return "deliberate"
+    above = " ".join(path_text_lines[max(0, i - 13):i])
+    if RE_DELIB_DOC.search(above):
+        return "deliberate"
+    return "actionable"
+
+
 def _kind(i: int, def_lines: set) -> str:
     """A `z` inside a definition body DEFINES the convention; a `z` in a
     theorem statement or proof merely MENTIONS it. Counting them together
@@ -116,6 +146,7 @@ def classify(path: pathlib.Path):
     """Yield (line_no, decl, verdict, snippet) for each Markov-shaped site."""
     text = path.read_text(errors="replace")
     def_lines = {i for i, l in enumerate(text.split("\n"), 1) if DEF.match(l)}
+    all_lines = text.split("\n")
     file_binds_sqrt = bool(RE_BINDS_SQRT.search(text))
     lines = text.split("\n")
     decl = "?"
@@ -135,12 +166,12 @@ def classify(path: pathlib.Path):
         # definition under the wrong verdict) -- measured, then reverted. Fixing
         # this properly needs an expression parser, not a wider window.
         if RE_D.search(line):
-            yield i, decl, "D", _kind(i, def_lines), stripped[:90]
+            yield i, decl, "D", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
         elif RE_C_PLAIN.search(line):
-            yield i, decl, "C-plain", _kind(i, def_lines), stripped[:90]
+            yield i, decl, "C-plain", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
         elif RE_C_SQRTVAR.search(line):
             v = "C-sqrtvar" if file_binds_sqrt else "C-shape-unbound"
-            yield i, decl, v, _kind(i, def_lines), stripped[:90]
+            yield i, decl, v, _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
 
 
 def main() -> int:
@@ -160,11 +191,11 @@ def main() -> int:
 
     hits = []
     for p in tracked():
-        for ln, decl, verdict, kind, snip in classify(p):
-            hits.append((p.relative_to(REPO), ln, decl, verdict, kind, snip))
+        for ln, decl, verdict, kind, delib, snip in classify(p):
+            hits.append((p.relative_to(REPO), ln, decl, verdict, kind, delib, snip))
 
     counts, defcounts = {}, {}
-    for _, _, _, v, k, _ in hits:
+    for _, _, _, v, k, _, _ in hits:
         counts[v] = counts.get(v, 0) + 1
         if k == "def":
             defcounts[v] = defcounts.get(v, 0) + 1
@@ -179,17 +210,29 @@ def main() -> int:
     print("\n  `defs` are definition bodies -- the sites that DEFINE a")
     print("  convention. `all` also counts theorem statements and proofs that")
     print("  merely mention the shape. Quote `defs`.\n")
-    for rel, ln, decl, verdict, kind, snip in hits:
+    tri = {}
+    for _, _, _, v, k, d, _ in hits:
+        if k == "def" and v.startswith("C"):
+            tri[d] = tri.get(d, 0) + 1
+    print(f"  convention-C definitions: {sum(tri.values())}  "
+          f"-> actionable {tri.get('actionable', 0)}, "
+          f"deliberate {tri.get('deliberate', 0)}")
+    print("  `deliberate` = the site announces itself (a `_legacy`/`C`-ish name,")
+    print("  a @[deprecated], or a docstring saying comparison/historical).")
+    print("  It is evidence of INTENT, not a clean bill -- a deliberate C object")
+    print("  can still be cited as though it were D.\n")
+    for rel, ln, decl, verdict, kind, delib, snip in hits:
         if kind != "def":
             continue
-        flag = "  " if verdict == "D" else "->"
-        print(f"{flag} [{verdict:<15}] {rel}:{ln}  ({decl})")
+        flag = "  " if verdict == "D" else ("->" if delib == "actionable" else " ~")
+        tag = verdict if verdict == "D" else f"{verdict}/{delib}"
+        print(f"{flag} [{tag:<26}] {rel}:{ln}  ({decl})")
         print(f"       {snip}")
 
     if args.selftest:
         print("\n--- SELFTEST ---")
         found = {}
-        for rel, _, decl, verdict, kind, _ in hits:
+        for rel, _, decl, verdict, kind, _, _ in hits:
             if kind == "def":
                 found.setdefault(rel.stem, set()).add((decl, verdict))
         bad = []

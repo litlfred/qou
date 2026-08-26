@@ -90,6 +90,24 @@ anything and is recorded here only so nobody re-derives it.)
 > comparison objects — the Lean analogue of the Python audit's declared-C bucket.
 > Separating actionable from deliberate is triage that has **not** been done.
 
+**Triage, also reproducible** (`--selftest` output, same script): of the 22,
+**14 actionable / 8 deliberate**. `deliberate` means the site *announces itself*
+— a `_legacy` name, an `@[deprecated]`, or a docstring saying convention-C /
+comparison / historical. The 8 are three `_legacy` shims, two `gramEntry` sites,
+`zC`, `zCsub`, and `EigenphaseCarrierVacuity.markovZ` (docstring: *"Convention-C
+Markov parameter, as spelled in the content block"*, reproduced verbatim for a
+vacuity proof). **Deliberate is evidence of intent, not a clean bill** — a
+deliberate C object can still be cited as though it were D.
+
+The split was **13/9 before a spot-check**, and the fix is worth recording
+because it moved in the direction that matters. A bare `legacy` docstring marker
+classified `markovZN` as deliberate — but its docstring reads *"Use this in new
+code instead of `markovZN_legacy`"*, naming the legacy shim in order to steer
+readers **away** from it. A live convention-C definition was being marked
+already-handled. Bare `legacy` is now not a marker; a genuinely legacy
+declaration carries `@[deprecated]` or `_legacy` in its own name, both still
+matched.
+
 **`markovZ` is five declarations across two conventions** — three C (in three
 different spellings) and two D — plus `markovZax`, `markovZ'`, `markovZ_real`,
 `markovZ_legacy` and `markovZW`/`markovZD`. One reader, one name, opposite
