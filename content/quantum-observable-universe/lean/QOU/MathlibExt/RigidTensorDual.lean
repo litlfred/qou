@@ -2,7 +2,7 @@
 Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
-import QOU.MathlibExt.PivotalCategory
+import QOU.MathlibExt.RightDualIsoUnique
 
 /-!
 # QOU.MathlibExt.RigidTensorDual — duals of a tensor product

@@ -98,6 +98,7 @@ import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.RankMinor
 import QOU.MathlibExt.BraidedSlide
+import QOU.MathlibExt.RightDualIsoUnique
 import QOU.MathlibExt.Ribbon
 import QOU.MathlibExt.RigidTensorDual
 import QOU.MathlibExt.BraidedTensorDual
