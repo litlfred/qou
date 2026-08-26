@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T14:19:04.769582+00:00",
-  "commitSha": "ba6c4b2fa32faf040f4f34b5c1e1068b716aeef9",
+  "computedAt": "2026-08-26T15:38:17.765146+00:00",
+  "commitSha": "64e948be588fc02245ee737fcf52ed1951acba6b",
   "assertions": [
     {
       "name": "wedderburn_closure",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 9,
   "computation": "probe-d-delta-lambda-terms",
   "scriptFile": "probe_d_delta_lambda_terms.py",
   "scriptHash": "2e99596f25b3",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "1ccff98a55ebfbfdfdddace99578b528f23164a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
