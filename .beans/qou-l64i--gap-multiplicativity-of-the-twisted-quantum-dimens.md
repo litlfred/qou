@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-26T23:00:41Z
+updated_at: 2026-08-26T23:03:45Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -82,3 +82,44 @@ Corpus-grep run before opening this: paths 1 (audits), 2 (content), 3 (lean), 4 
 6 (beans) are clear of any categorical `dim(X⊗Y)` statement. Path 5 (library/) was NOT run — do it
 before writing "open" in any durable artifact, since Turaev 1994 certainly contains this and may be
 ingested.
+
+
+MEASURED FOLLOW-UP, same session — MY OWN ROUTE-3 ADVICE ABOVE IS PARTLY WRONG, corrected here.
+
+I recommended the SYMMETRIC TWISTLESS case as an easier warm-up ("strictly easier, no θ
+bookkeeping"). I then ran it. It is NOT easier in the way I predicted:
+
+    theorem qDimWith_tensor [SymmetricCategory C] (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] :
+        @qDimWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+          = qDimWith X X' ≫ qDimWith Y Y'
+
+    monoidal      fails
+    aesop_cat     fails
+    simp [qDimWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+          SymmetricCategory.symmetry, braiding_tensor_left_hom, braiding_tensor_right_hom,
+          whisker_exchange]                                                            fails
+
+All fail fast, same profile as the twisted goal — and note this version has `SymmetricCategory`
+available, so `β_{X,Y} ≫ β_{Y,X} = 𝟙` is in scope and simp still cannot get there.
+
+WHAT THAT ACTUALLY TELLS US, and it is the useful part: THE DIFFICULTY IS THE NESTING, NOT THE
+TWIST. Removing θ entirely and handing simp the symmetry axiom changes nothing. So the obstruction
+is `tensorExactPairing`'s nested η/ε structure — the same interchange-law obstruction its own two
+snake fields hit — and any effort spent on θ bookkeeping is spent on the wrong half of the problem.
+
+CONSEQUENCE FOR THE ROUTE RANKING: route 3 is demoted. It is still worth doing as a SMALLER
+TARGET (fewer moving parts once you are hand-building the calc), but not as a FEASIBILITY PROBE —
+it has already been probed and it fails identically. Route 1 (partial trace) is now clearly the one
+to back, because a partial-trace lemma attacks the nesting directly, which is where the difficulty
+has now been measured to live.
+
+FEEDBACK MECHANISM, since there is no working LSP in this container: `trace_state` inside a tactic
+block prints the goal to the compiler output. That is the substitute for interactive goal
+inspection — the goals are large but it is real feedback, and hand-building a diagram calc blind
+without it is not realistic.
+
+BUILD NOTE: `lean`-direct cannot `import QOU.MathlibExt.TwistedQuantumDimension` because that
+module has no committed olean. To experiment against it, append the scratch to the module file
+itself and restore afterwards; do NOT `lake build`, which evicts the restored olean cache
+(bean qou-r13s).
