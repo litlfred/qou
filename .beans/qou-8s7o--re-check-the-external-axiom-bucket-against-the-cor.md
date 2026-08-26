@@ -1,11 +1,11 @@
 ---
 # qou-8s7o
 title: Re-check the External axiom bucket against the corpus, not against docstrings (57 entries)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T01:10:32Z
-updated_at: 2026-08-26T01:10:59Z
+updated_at: 2026-08-26T02:59:53Z
 ---
 
 Generalization of qou-mame (PR #5807).

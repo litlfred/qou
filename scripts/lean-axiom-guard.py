@@ -34,6 +34,33 @@ already be set for lean-direct use (see `.claude/skills/local/lean-environment-s
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
 
+BUILT IS NOT ENOUGH — IT MUST BE BUILT FROM THE CURRENT SOURCE (2026-08-26)
+---------------------------------------------------------------------------
+`#print axioms` reads the LOADED ENVIRONMENT, i.e. the `.olean` files. This gate
+therefore reports the axiom status of whatever was COMPILED, which in a restored
+container is a mixed-vintage cache — measured on this tree, QOU olean build dates
+span 2026-06-09 .. 2026-08-26.
+
+Verified, not hypothetical: `PosSemidefDiagZero.lean` proves
+`Matrix.PosSemidef.entry_sq_le_diag_mul` as a THEOREM, while its 2026-06-09 olean
+still carried the `entry_sq_le_diag_mul_axiom` it was built from. Two SDP
+declarations reported a dependency on an axiom that no longer exists in the
+source; rebuilding that one module removed it from both cones. Here the stale
+cache was PESSIMISTIC (over-reporting assumed mathematics) — but the same
+mechanism can report `clean` for a declaration whose source has since regressed,
+and this gate would stay green.
+
+So before trusting a verdict, rebuild the registry cone from source:
+
+    scripts/lean-rebuild-cone.py --from-guard    # 15 roots -> 199 modules
+
+Do NOT try to detect this with mtime: a checkout stamps every source with the
+clone time and tar preserves the oleans' build times, so every restored olean is
+"older than its source" by construction (measured: 845 of 1046, which is exactly
+the restored set). Rebuilding is the only sound test.
+
+Full finding: docs/audits/2026-08-26-live-axiom-surface-recheck.md §4.
+
 WHAT MUST BE BUILT FIRST — only the registry's own modules
 ----------------------------------------------------------
 The probe file imports exactly the modules named in the registry and nothing
