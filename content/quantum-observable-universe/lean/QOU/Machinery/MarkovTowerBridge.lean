@@ -1,0 +1,155 @@
+import QOU.Machinery.HeckeTowerBasicConstruction
+import QOU.Machinery.MarkovInductiveCyclicity
+
+/-!
+# Discharging the cyclicity bricks against the Ocneanu tower
+
+`QOU.Machinery.MarkovInductive.cyclic_two_g` proves the two-generator Ocneanu
+cyclicity step from **seven** hypotheses about an abstract `(memB, E, tr)`.
+Seven assumed hypotheses is a weak result: the more a conditional theorem
+assumes, the less its conclusion says, and nothing in that file forces the
+hypotheses to describe a Hecke tower rather than an arbitrary triple that
+happens to satisfy them.
+
+This file supplies the tower and **derives four of the seven** from the W2
+interface (`QOU.Machinery.HeckeTower.HeckeConditionalExpectation`, bean
+`qou-2017`), leaving `hIH` — the induction hypothesis, which is what an
+induction is *for* — and `hgwg`, the Markov reduction of a two-generator word.
+
+The instantiation is the obvious one:
+
+| brick | tower |
+|---|---|
+| `A` | `Hn1`, the level-`n+1` algebra |
+| `memB x` | `∃ y, x = ι y` — the image of `Hn` under the tower inclusion |
+| `E` | `ι ∘ ε` — conditional expectation, viewed back inside `Hn1` |
+| `tr` | `trn ∘ ε` — a level-`n` trace pulled up through `ε` |
+| `memBlow` | `memB` (see the note below) |
+
+## What is actually derived, and what is not
+
+`hCE` is the one with content. Everything else is bookkeeping about the image
+of an algebra map; `hCE` says the trace cannot distinguish `a * x` from
+`a * E x` for `a` in the subalgebra, which is the property that makes `ε` a
+*conditional expectation* rather than an arbitrary retraction. It follows from
+`bimodule` and `retract` together, and `towerTrace_mul_eq_of_memB` is the proof.
+
+Note that it is derived **only because `tr` was defined as `trn ∘ ε`**. For a
+trace not of that form `hCE` is a genuine assumption, and this file would not
+apply — which is the honest content of the reduction: it converts "assume the
+trace is compatible with `ε`" into "define the trace through `ε`".
+
+## Scope — what this does NOT close
+
+`HeckeConditionalExpectation` **has no instance**, and this file does not build
+one. It is a §3b dependent conjecture carrier, so every result here is
+conditional on it in exactly the way its own file says. **Conditional-proved is
+not premise-established.** What changed is the size of the conditional: four
+hypotheses that were free parameters are now consequences of one named,
+content-bearing class.
+
+`memBlow` is instantiated as `memB`, not as a genuinely lower level. That is
+sound — `cyclic_two_g` uses `memBlow` only through `hElow`/`hlowB`/`hCE`, and
+all three hold — but it means this file does not exercise the two-level
+structure the abstract statement allows. A tower with `H_{n-1} ⊊ H_n` would
+need a second `ε`; nothing here depends on the difference.
+-/
+
+namespace QOU.Machinery.MarkovTowerBridge
+
+open QOU.Machinery.HeckeTower QOU.Machinery.HeckeBraidedCategory
+
+variable {R : Type*} [Field R] {q : R}
+variable {Hn Hn1 : Type*} [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
+variable {σn : ℕ → Hn} {σn1 : ℕ → Hn1}
+variable [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+
+/-- `memB ι x` — "`x` lies in the level-`n` subalgebra", i.e. in the image of
+the tower inclusion. This is the concrete reading of `MarkovInductive`'s
+abstract `memB`. -/
+def memB (ι : Hn →ₐ[R] Hn1) (x : Hn1) : Prop := ∃ y : Hn, x = ι y
+
+/-- `towerE ι ε` — the conditional expectation viewed as an endomorphism of
+`Hn1`, which is the shape `MarkovInductive.cyclic_two_g` expects of `E`. -/
+def towerE (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn) (x : Hn1) : Hn1 := ι (ε x)
+
+/-- `towerTrace trn ε` — a level-`n` trace pulled up through the conditional
+expectation. Defining the level-`(n+1)` trace this way is what makes `hCE`
+derivable rather than assumed; see the module docstring. -/
+def towerTrace (trn : Hn → R) (ε : Hn1 →ₗ[R] Hn) (x : Hn1) : R := trn (ε x)
+
+section
+
+variable (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn)
+
+/-- The subalgebra is closed under multiplication — `hmul`. -/
+theorem memB_mul : ∀ x y : Hn1, memB ι x → memB ι y → memB ι (x * y) := by
+  rintro _ _ ⟨a, rfl⟩ ⟨b, rfl⟩
+  exact ⟨a * b, (map_mul ι a b).symm⟩
+
+/-- The subalgebra contains `1`. -/
+theorem memB_one : memB ι (1 : Hn1) := ⟨1, (map_one ι).symm⟩
+
+/-- `E` lands in the subalgebra — `hElow` (and, with `memBlow := memB`,
+`hlowB` is `id`). -/
+theorem memB_towerE (x : Hn1) : memB ι (towerE ι ε x) := ⟨ε x, rfl⟩
+
+/-- **The bimodule law at `z = 1`**: `ε (ι y * x) = y * ε x`.
+
+This is `bimodule` with the right factor trivialised, and it is the step that
+carries the weight in `towerTrace_mul_eq_of_memB` below.
+
+The conditional-expectation instance is bound by NAME rather than left to
+instance search: `q`, `σn` and `σn1` appear nowhere else in this statement, so
+they are pinned only by unification against `inst`. -/
+theorem epsilon_inclusion_mul
+    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (y : Hn) (x : Hn1) : ε (ι y * x) = y * ε x := by
+  have h := inst.bimodule y 1 x
+  rwa [map_one, mul_one, mul_one] at h
+
+/-- **`hCE`, derived.** For `a` in the level-`n` subalgebra the trace cannot
+tell `a * x` from `a * E x`.
+
+Both sides evaluate to `trn (y * ε x)` where `a = ι y`: the left by the
+bimodule law, the right because `ι y * ι (ε x) = ι (y * ε x)` and `ε` retracts
+`ι`. This is the only one of the four discharged bricks with mathematical
+content — the other three are facts about the image of an algebra map. -/
+theorem towerTrace_mul_eq_of_memB
+    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (trn : Hn → R) :
+    ∀ a x : Hn1, memB ι a → memB ι x →
+      towerTrace trn ε (a * x) = towerTrace trn ε (a * towerE ι ε x) := by
+  rintro _ x ⟨y, rfl⟩ -
+  have hL : ε (ι y * x) = y * ε x := epsilon_inclusion_mul ι ε inst y x
+  have hR : ε (ι y * towerE ι ε x) = y * ε x := by
+    rw [towerE, ← map_mul ι, inst.retract (y * ε x)]
+  simp only [towerTrace, hL, hR]
+
+/-- **The reduction.** Ocneanu two-generator cyclicity on the tower, from the
+induction hypothesis and the Markov reduction ALONE — the other five arguments
+of `MarkovInductive.cyclic_two_g` are discharged above.
+
+Still conditional on `HeckeConditionalExpectation`, which has no instance. -/
+theorem cyclic_two_g_of_tower
+    (inst : HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε)
+    (trn : Hn → R) (g : Hn1) (z hbar : R)
+    (hIH : ∀ x y : Hn1, memB ι x → memB ι y →
+      towerTrace trn ε (x * y) = towerTrace trn ε (y * x))
+    (hgwg : ∀ x w y : Hn1, memB ι x → memB ι w → memB ι y →
+      towerTrace trn ε (x * g * w * g * y)
+        = towerTrace trn ε (x * towerE ι ε w * y)
+          + z * hbar * towerTrace trn ε (x * w * y))
+    (u v p r : Hn1) (hu : memB ι u) (hv : memB ι v)
+    (hp : memB ι p) (hr : memB ι r) :
+    towerTrace trn ε ((u * g * v) * (p * g * r))
+      = towerTrace trn ε ((p * g * r) * (u * g * v)) :=
+  MarkovInductive.cyclic_two_g (memB ι) (memB ι) (towerTrace trn ε) g z hbar
+    (towerE ι ε) hIH (memB_mul ι)
+    (fun w _ => memB_towerE ι ε w) (fun _ h => h) hgwg
+    (fun a x ha hx => towerTrace_mul_eq_of_memB ι ε inst trn a x ha hx)
+    u v p r hu hv hp hr
+
+end
+
+end QOU.Machinery.MarkovTowerBridge
