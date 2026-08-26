@@ -1,0 +1,99 @@
+---
+# qou-cm7l
+title: 'Vacuous-pass assertions: 8 producers compare two zero-initialised counters with no guard'
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-26T09:37:58Z
+updated_at: 2026-08-26T09:38:45Z
+---
+
+## The shape
+
+    n_pass  = 0            # zero-initialised
+    n_total = 0
+    for target in targets:
+        if <target unavailable>:
+            continue       # skips WITHOUT incrementing n_total
+        n_total += 1
+        ...
+        if ok: n_pass += 1
+
+    w.add_assertion("...", computed=n_pass, expected=n_total)
+
+`n_pass == n_total` is **trivially true when both are 0**, and both are 0
+whenever every target is skipped — typically because an upstream cache is
+missing. The producer then emits `allPassed: true` having verified nothing.
+
+This is the compute-side analogue of `theorem X : True := trivial`, which
+AGENTS.md bans outright in Lean (*"tautological conclusions are banned … any
+proposition that is provable without using any hypothesis"*). There is no
+equivalent rule, and no checker, for the Python side.
+
+## Measured, 2026-08-26
+
+Detector: AST over the 3226 tracked `computations/**/*.py` (normalised through
+`_source_normalise.code_only`, so a docstring cannot match). Flags
+`add_assertion(computed=X, expected=Y)` where **both** X and Y are names that
+are assigned literal `0` somewhere and are the target of a `+=` somewhere —
+i.e. both are counters that start at zero.
+
+    3226   producers scanned
+       9   assertions comparing two zero-initialised counters
+       1   already fixed (sublemma_2_1_h12_he4_phase25, commit 60386f4e4)
+    ----
+       8   remaining, and ALL EIGHT are unguarded
+
+| producer | line | computed / expected |
+|---|---|---|
+| `all_nuclides_wedderburn_spectral_v2.py` | 525 | `n_parity_ok` / `n_total` |
+| `delta_lambda_v_hat_z_transfer_phase5d_4.py` | 186 | `flavor_rule_passes` / `flavor_rule_total` |
+| `probes/A_operator_per_interface_probe.py` | 252 | `n_linearity_ok` / `n_linearity_total` |
+| `qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py` | 227 | `n_match` / `n_total` |
+| `sublemma_2_1_A_operator_extract_h9.py` | 539 | `n_consistent` / `n_overdet` |
+| `sublemma_2_1_h12_he4_branching.py` | 235 | `n_pass` / `n_total` |
+| `sublemma_2_1_h9_tritium_verify.py` | 453 | `n_overdet_pass` / `n_overdet` |
+| `v_hat_to_delta_lambda_bridge.py` | 350 | `one_dim_matches` / `one_dim_total` |
+
+## The near-miss that is worth more than the list
+
+`v_hat_to_delta_lambda_bridge.py` **looks** guarded — grep finds
+`elif one_dim_total == 0:` at line 434. It is not a guard. It sits in the
+stdout CONCLUSION block and prints *"no 1-dim channels in scope"*, while the
+assertion at line 350 still evaluates `0 == 0` and the witness still records
+`allPassed`. The author noticed the zero case, handled it **in prose**, and
+left the machine-readable claim vacuously green.
+
+That is arguably worse than not noticing, because it defeats exactly the check
+a reviewer would run. Do not accept a `== 0` grep hit as evidence of a guard —
+confirm it dominates the assertion.
+
+## Status of each: CANDIDATE, not defect
+
+Only **one** of the nine has been *observed* passing vacuously
+(`sublemma_2_1_h12_he4_phase25`, where `load_f1_cache()` returned 0 entries on
+this container so all 8 targets were skipped). For the other eight the shape is
+present and unguarded, but whether the zero case is reachable depends on which
+upstream each needs. **Do not report eight defects.** Report eight unguarded
+candidates and one confirmed.
+
+`sublemma_2_1_h12_he4_branching.py` is the most likely of the eight to be live:
+it is the direct sibling of the confirmed one, shares the `n_pass`/`n_total`
+naming, has three `continue` statements that skip targets, and additionally
+`return 0 if n_pass == n_total else 1` — so a fully-skipped run exits **0** too.
+
+## Suggested fix
+
+The same guard used in `60386f4e4`: refuse before writing when the count is
+zero, naming the count, the cause and the remedy. One `raise SystemExit` each.
+It follows the repo's own idiom for a guard that must not be silently
+satisfiable (cf. `low_isotope_mass_table` refusing below its target precision).
+
+**A residual the guard does not cover:** a PARTIAL upstream (3 of 8 targets)
+still reports "Verified 3/3" while 8 were targeted. Tightening that changes
+behaviour beyond the bug and should be decided per producer.
+
+## Found by
+
+`qou-poi1` — chasing the raw-float64 ratchet's blind spot. The float64 was the
+lesser defect; this was underneath it.
