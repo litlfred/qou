@@ -1,11 +1,11 @@
 ---
 # qou-wqst
 title: 'Step 4: prove drinfeldIso is monoidal (braided instance)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:28Z
-updated_at: 2026-08-26T19:45:06Z
+updated_at: 2026-08-26T20:06:55Z
 ---
 
 
@@ -139,3 +139,18 @@ Remaining for pivotalOfRibbon: assemble `rightDualIso_swap_tensor` +
 `rightDualIso_tensorExactPairing` into the monoidality of `θ ≫ drinfeldIso`, using
 `twist_tensor` to cancel the monodromy.  The sign is now known, so the direction is
 determined: the balancing axiom supplies `β β`, the comparison supplies its inverse.
+
+
+
+## LANDED 2026-08-26 — PR #5848 merged as bfdedc68e6
+
+Target retracted, replaced, and both halves proved:
+
+* `rightDualIso_swap_tensor` — the comparison is the INVERSE monodromy
+* `twist_drinfeld_monoidal` — and `θ ≫ drinfeldIso` IS monoidal, so ribbon is the right hypothesis
+
+Remaining, and NOT part of this bean: identify `pivotorTensor` with
+`drinfeldIso (X ⊗ Y) ≫ tensorDoubleDualIso`.  Needs a pairing transported along
+`tensorRightDualIso` (Mathlib's `exactPairingCongrLeft`) plus a `rightDualIso`
+compatibility lemma nobody has written.  Until then a `PivotalCategory` monoidality
+field cannot be phrased — see qou-ezas, which stays blocked for that reason.
