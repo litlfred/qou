@@ -221,12 +221,15 @@ noncomputable def doubleDualTensorPairing (X Y : C) :
 Built by dual-uniqueness between two pairings of `Yᘁ ⊗ Xᘁ`, which is what makes it directly
 comparable with the componentwise `drinfeldIso`s.
 
-**Not yet identified with `drinfeldIso (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom`.**  The two are the
-same map — both are the monoidal structure map of the double-dual functor — but proving it means
-transporting a pairing along `tensorRightDualIso X Y : (X ⊗ Y)ᘁ ≅ Yᘁ ⊗ Xᘁ` (Mathlib's
-`exactPairingCongrLeft`, plus a compatibility lemma for `rightDualIso` that nobody has written).
-Until that is done, the results below are about *this* comparison, and a `PivotalCategory`
-monoidality field cannot yet be phrased in terms of them. -/
+It **is** the canonical comparison: `drinfeldIso_comp_tensorDoubleDualIso` below proves
+`drinfeldIso (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom = (pivotorTensor X Y).hom`, so the
+monoidality results here can be read against either form.
+
+*An earlier revision recorded this as open and predicted the route: transporting a pairing along
+`tensorRightDualIso X Y` via Mathlib's `exactPairingCongrLeft`, plus a `rightDualIso` compatibility
+lemma nobody had written.  **Neither was needed.**  `tensorRightDualIso` is itself a `rightDualIso`,
+so it already carries an evaluation identity, and `braiding_naturality_right` moves it across the
+braiding `drinfeldIso` contributes.* -/
 noncomputable def pivotorTensor (X Y : C) :
     (X ⊗ Y) ≅ ((((X : C)ᘁ : C)ᘁ) ⊗ (((Y : C)ᘁ : C)ᘁ)) :=
   rightDualIso (swapTensorPairing X Y) (doubleDualTensorPairing X Y)

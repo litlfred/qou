@@ -126,9 +126,18 @@ discrepancy, which the Lean will settle.  So the theorem to aim at is **`pivotal
 `pivotalOfBraided`; a ribbon category is pivotal, and that is the classical statement (a ribbon
 element `v` makes `uv⁻¹` grouplike).
 
-What is still missing is the diagrammatic lemma above in Lean.  Its formal content is a lemma
-Mathlib also lacks: in a braided rigid category the braiding against a *dual* leg, `β_{X, Yᘁ}`, is
-the bent-round *inverse* braiding `β_{Y,X}⁻¹`.  Tracked as bean `qou-wqst`.
+The diagrammatic argument above is **proved**, in `QOU.MathlibExt.BraidedTensorDual`:
+`rightDualIso_swap_tensor` states that the two pairings differ by exactly the inverse monodromy,
+and `twist_drinfeld_monoidal` that the balancing axiom cancels it.
+
+**An earlier revision of this paragraph predicted the wrong route, and the prediction is
+retracted.**  It said the formal content would be a lemma Mathlib also lacks — that in a braided
+rigid category the braiding against a *dual* leg, `β_{X, Yᘁ}`, is the bent-round *inverse* braiding
+`β_{Y,X}⁻¹`.  No such lemma was needed.  What the proof actually turns on is weaker and more
+general: a strand crossing **any** cap `c : A ⊗ B ⟶ 𝟙` can be pushed off it at the cost of braiding
+past each leg separately (`QOU.MathlibExt.braiding_slide_cap_right`), with nothing assumed of `c`
+beyond its type — no rigidity, no exact pairing.  Applying that once per leg of a dual pair leaves
+two inverse braidings, and those are the monodromy.
 
 ## References
 
