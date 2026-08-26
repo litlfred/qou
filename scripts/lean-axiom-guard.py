@@ -38,8 +38,11 @@ STALENESS IS ALREADY GATED HERE — AND THE GATE ONLY COVERS THIS REGISTRY
 ------------------------------------------------------------------------
 `check_freshness` below walks the transitive QOU import cone of every registry
 module and refuses to report when an olean is missing or older than its source
-(by `_effective_source_time`, which uses commit time rather than mtime so a fresh
-clone does not read as universally stale). That gate predates 2026-08-26 and works.
+(by `lean_freshness.effective_source_time`, which uses commit time rather than mtime
+so a fresh clone does not read as universally stale). That gate predates 2026-08-26
+and works. `scripts/lean_cone_build.py` imports the SAME function, so the rebuilder
+below cannot call fresh what this gate calls stale -- it could until 2026-08-26, and
+the compose deadlocked because of it (bean qou-5v24).
 
 What it does NOT cover is an **ad-hoc `#print axioms` probe** written by hand
 against some other module. Such a probe reads the same mixed-vintage olean set
@@ -199,6 +202,18 @@ QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand 
 QOU.Archimedean.BorromeanVolumeCatalan | QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan | clean
 QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky | clean
 
+# --- the coset-sum lift: the step MarkovInductiveCyclicity's header says is NOT mechanised ---
+# That header states "The **only** step not mechanised in Lean is the linear lift of the two
+# single-coset grounding lemmas to the general E on an arbitrary w = a + sum b_i f c_i".
+# These five are that lift. Pinned because the module is CONDITIONAL: its value is entirely
+# in the hypotheses being genuine tower relations rather than the conclusion in disguise, and
+# that property is exactly what a careless edit destroys while leaving the file compiling.
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.tr_finset_sum | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_lower_shape | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_mid_shape | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_cosetSum | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.ce_trace_cosetSum | clean
+
 # --- the Markov-trace linearity chain: an AXIOM until 2026-08-26, now a theorem ---
 # `markovTrace_linear` asserted that an `opaque` function on `HeckeElement n` is linear.
 # `HeckeElement n` is not opaque -- it abbreviates `EuclideanSpace ℝ (Fin n!)` -- so by
@@ -346,68 +361,21 @@ def _qou_imports(src: Path) -> list[str]:
     return out
 
 
-def _dirty_paths() -> set[str]:
-    """Repo-relative paths with uncommitted content changes (staged or not)."""
-    try:
-        proc = subprocess.run(
-            ["git", "status", "--porcelain", "--", str(LEAN_ROOT)],
-            capture_output=True, text=True, timeout=120,
-        )
-    except (FileNotFoundError, subprocess.SubprocessError):
-        return set()          # no git → fall back to mtime for everything
-    out: set[str] = set()
-    for line in proc.stdout.splitlines():
-        # "XY path" or "XY old -> new"; take the final path.
-        path = line[3:].strip()
-        if "->" in path:
-            path = path.split("->")[-1].strip()
-        out.add(path.strip('"'))
-    return out
-
-
-def _commit_time(src: Path) -> float | None:
-    """Unix time of the commit that last touched `src`, or None if unavailable."""
-    try:
-        proc = subprocess.run(
-            ["git", "log", "-1", "--format=%ct", "--", str(src)],
-            capture_output=True, text=True, timeout=120,
-        )
-    except (FileNotFoundError, subprocess.SubprocessError):
-        return None
-    val = proc.stdout.strip()
-    return float(val) if val else None
-
-
-def _effective_source_time(src: Path, dirty: set[str]) -> float:
-    """Source timestamp that survives a fresh clone.
-
-    ⚠ A plain `src.stat().st_mtime` is WRONG here, and wrong in the direction that
-    disables the gate. A clone or checkout stamps every file with the checkout time,
-    which is later than any olean restored from a build cache — so an mtime comparison
-    reports the entire import cone stale in exactly the environment this gate is meant
-    to run in (fresh container or CI runner + `lean-cache-restore.sh`).
-
-    Measured 2026-08-15: mtime flagged 15 modules stale — `Specht` source 10:08, olean
-    03:33 — while `lake build`, which hashes content, replayed all 3285 jobs as already
-    up to date. The sources had not changed since a commit that PREDATED the oleans; only
-    the checkout timestamp was newer. Left as-is this would have made the gate refuse to
-    report on every CI run, which is the same "protects nothing" outcome as never running
-    it, reached from the opposite direction.
-
-    So: for a file with no uncommitted changes, use the time of the commit that last
-    touched it — stable across clones. For a DIRTY file, fall back to mtime, because a
-    local edit is precisely the case the staleness check exists for and there is no
-    commit to trust.
-    """
-    try:
-        rel = str(src.relative_to(Path.cwd()))
-    except ValueError:
-        rel = str(src)
-    if rel not in dirty:
-        ct = _commit_time(src)
-        if ct is not None:
-            return ct
-    return src.stat().st_mtime
+# ---------------------------------------------------------------------------
+# Freshness: ONE definition, shared with the cone builder.
+#
+# `_dirty_paths` / `_commit_time` / `_effective_source_time` used to be defined
+# here, and `scripts/lean_cone_build.py` used a *different* (mtime) rule.  The
+# compose this file's docstring recommends therefore deadlocked whenever you
+# built before committing.  Both now import `scripts/lean_freshness.py`, so the
+# two notions cannot drift apart again.  Bean `qou-5v24`; the rationale, and BOTH
+# measured ways a timestamp answers this wrong, are in that module's docstring.
+# ---------------------------------------------------------------------------
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lean_freshness import (  # noqa: E402
+    dirty_paths as _dirty_paths,
+    olean_is_current as _olean_is_current,
+)
 
 
 def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
@@ -421,12 +389,14 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
     had moved files.) So walk the transitive QOU import cone of every registry module and
     flag any olean older than its own source.
 
-    "Older than its own source" is measured by `_effective_source_time`, not raw mtime —
-    see there for why raw mtime disables the gate on a fresh clone.
+    "Current" is `lean_freshness.olean_is_current`: the source-hash stamp the rebuilder
+    leaves when a stamp exists, and commit time (never raw mtime -- see there) when it
+    does not. The rebuilder asks the same function with a stricter fallback, so its
+    stale set contains this one and a rebuild always clears this gate.
     """
     problems: list[str] = []
     seen: set[str] = set()
-    dirty = _dirty_paths()
+    dirty = _dirty_paths(LEAN_ROOT)
     stack = [m for m, _, _ in entries]
     while stack:
         mod = stack.pop()
@@ -440,7 +410,14 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
         if not ole.exists():
             problems.append(f"{mod}: olean MISSING")
             continue
-        if ole.stat().st_mtime < _effective_source_time(src, dirty):
+        # conservative=False: commit time as the no-stamp fallback, so this gate
+        # does not refuse to report on a fresh clone (2026-08-15: mtime flagged 15
+        # modules stale that `lake build` replayed as up to date). The rebuilder
+        # uses the stricter fallback, so its stale set CONTAINS this one and a
+        # rebuild always satisfies this gate -- that containment is what keeps
+        # qou-5v24 fixed. Where a hash stamp exists both consult it and agree
+        # exactly.
+        if not _olean_is_current(src, ole, dirty, conservative=False):
             problems.append(f"{mod}: olean STALE (source is newer)")
     return problems
 
@@ -617,8 +594,18 @@ def main() -> int:
               file=sys.stderr)
         for pr in sorted(stale):
             print("  " + pr, file=sys.stderr)
-        print("\nRebuild the affected modules lean-direct, then re-run. A verdict from a stale\n"
-              "olean set is not assurance — it is the axiom status of an old snapshot.",
+        print("\nRebuild the affected modules, then re-run. A verdict from a stale olean set\n"
+              "is not assurance — it is the axiom status of an old snapshot.\n"
+              "\n"
+              "  scripts/lean-direct-cone.sh " + " ".join(sorted(
+                  pr.split(":")[0] for pr in stale)) + "\n"
+              "\n"
+              "That rebuild is enough: since 2026-08-26 the rebuilder gates on the same\n"
+              "`lean_freshness.effective_source_time` this gate does, so it can no longer\n"
+              "consider fresh an olean this gate calls stale. Before that it compared\n"
+              "MTIME while this gate compared COMMIT time, and building before committing\n"
+              "— the natural order — deadlocked the pair. Bean qou-5v24. `--force` is\n"
+              "still available as a manual override; you should not need it here.",
               file=sys.stderr)
         return 2
 
@@ -656,7 +643,12 @@ def main() -> int:
         for d in regressions:
             print("      " + d)
         return 1
-    print("\naxiom-guard: all declarations match their recorded axiom status.")
+    # Print the registry size rather than leaving it to be hand-counted in a PR
+    # body. A PR on this branch claimed "53 entries" against a measured 51 —
+    # careless description of a careful measurement, the recurring error this
+    # session kept correcting. The tool knows the number; let it say so.
+    print(f"\naxiom-guard: all {len(entries)} registry declarations match their "
+          "recorded axiom status.")
     return 0
 
 
