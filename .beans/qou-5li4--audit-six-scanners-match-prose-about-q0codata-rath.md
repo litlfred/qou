@@ -3,8 +3,9 @@
 title: 'AUDIT: six scanners match prose ABOUT q0/CODATA rather than code USING it — 3 are gates, 1 under-reports this epic''s own counts'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-08-26T03:58:32Z
+updated_at: 2026-08-26T04:02:29Z
 ---
 
 Split out of `qou-1c4y`, which records six instances of this defect found the
@@ -104,3 +105,34 @@ import — and fixes #1's line-number corruption for free.
 #1, #3 and #5 gate on exit code, so their false positives are enforced. #6 is
 the one that has already corrupted a number I published. #4 is triage noise by
 its own docstring ("a review queue … not a verdict") and can wait.
+
+
+## 2026-08-26 — one more AUDITED AND SOUND: `convention_frame_staleness_audit.py`
+
+Checked because sibling PR #5815 leans on its 47-candidate list to confirm a
+471× Q_β regression, and the file reads raw text (`text = py.read_text()`, line
+100) with no AST or tokenize pass — the shape this bean is about.
+
+**It is clean, and the suspicion did not survive measurement.** Its `D_BOUND`
+regex is `^`-anchored and ASSIGNMENT-shaped:
+
+    ^\s*{_Z_NAME}\s*=\s*[^=\n]*\*\*\s*3\s*/\s*\(\s*\w+\s*\*\*\s*2\s*\+\s*1\s*\)
+
+A `#` comment cannot match (the `#` precedes the name), and docstring prose
+almost never presents as a bare left-anchored assignment. Measured over all live
+`computations/**/*.py`: **212 raw-text matches, 212 code-only matches, 0
+prose-only.** Re-tokenized with COMMENT and triple-quoted STRING blanked while
+preserving line and column.
+
+The author had already reasoned about the failure mode from the other side — the
+constant carries a note explaining why it is a NAME list rather than "any
+assignment", *"the shape alone over-matches badly (121 candidates unfiltered vs
+137 producers here)"*.
+
+**Generalisable:** raw-text matching is not itself the defect. An
+`^`-anchored, assignment-shaped pattern is structurally immune to both prose
+sub-classes without needing a tokenizer. The six vulnerable scanners above are
+vulnerable because their patterns are *bare-token* (a literal, a module name, a
+symbol) and so match anywhere — including inside the sentence explaining why the
+file does not do the thing. **Pattern shape, not input normalisation, is the
+cheaper fix where the target is an assignment.**
