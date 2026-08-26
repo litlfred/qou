@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:07:20Z
-updated_at: 2026-08-26T07:13:35Z
+updated_at: 2026-08-26T08:37:56Z
 ---
 
 Found 2026-08-26 while fully discharging `qou-cds4`'s witness line. Third
@@ -127,3 +127,79 @@ I wrote a fix prescription from reading the source and it was wrong in the
 direction that would have caused work: "preserve d" is the OPPOSITE of correct
 across the bar involution. The cheap confirmation step was in the bean because
 I did not trust the reading — and it earned its place on the first run.
+
+
+## 🛑 SECOND CORRECTION 2026-08-26 — the FOURTH-SLOT prescription is also
+## questionable, for an independent reason: the canonical convention is NOT
+## bar-invariant
+
+The correction above narrowed the fix to "a fourth type slot
+(`averaged_weighted`) + rebuild `d` at 1/q0 per type". That still carries an
+unstated premise: that the q0 side and the qinv side OUGHT to be in the same
+p-n frame. Sibling work landed on `main` (bean `qou-cblw`, commit `a4b7cb4f39`)
+that makes the premise doubtful.
+
+A sibling bean is not a primary source (AGENTS.md states this explicitly), so I
+verified every identity symbolically myself rather than relaying them. All five
+confirmed, with `z` the Markov parameter, `h = q - 1/q`, and
+`delta = (q-1)^2 (1 - q^-4)/3` the flavour split:
+
+    bar(z) - (z - h)                         = 0
+        -> f_pp and f_nn ARE bar-conjugates of one another
+
+    f_strict - (f_pp + bar(f_pp))/2          = 0
+        -> the strict/colour-BLIND form IS the bar-symmetriser, by construction
+
+    bar(delta) + q^2 * delta                 = 0
+        -> bar(delta) = -q^2 delta, i.e. delta is bar-MIXED (neither even nor odd)
+
+    bar(f_strict) - f_strict                 = 0
+        -> the colour-BLIND form IS bar-invariant
+
+    bar(f_canon) - f_canon = (q-1)^5 (q+1)^3 (q^2+1) / (12 q^5)
+        -> the colour-WEIGHTED (canonical, R3) form is NOT bar-invariant
+        at the proton pin: 1.66849e-5   (sibling's claimed 1.67e-05 ✓)
+
+### What this does to the prescription
+
+`f_canon = w_p f_pp + w_n f_nn` with `w = 1/2 +- delta/4` is a weighted mean of
+two bar-conjugates. It is bar-invariant only if the weights are bar-invariant,
+and `delta` is bar-MIXED, so it is not. The strict form is exactly the
+equal-weight case, which IS the symmetriser.
+
+So for a probe whose entire job is to pair `chi(q)` against `chi(1/q)`, the
+colour-BLIND `qinv` witness may be the RIGHT object, not a stale one: the
+bar-parity statement is a statement about the bar-symmetric form. Making both
+sides colour-weighted — what this bean prescribes — would put a
+non-bar-invariant quantity on both sides of a bar-parity test and change what
+the test measures by 1.67e-5, which is COMPARABLE to the 0.0141% p-n weighting
+this bean set out to restore.
+
+### Re-scoped: this is now a QUESTION, not a defect with a known fix
+
+The measured frame mismatch is real and still stands as a finding. What is no
+longer established is that closing it means "make the qinv side colour-weighted".
+Two dispositions are now live, and they are NOT the same for every consumer:
+
+  (a) The bar-parity / conjugation probes (`bar_pairing_binding_observable.py`,
+      `probes/probe_d_barparity_binding.py`,
+      `deltalambda/deuteron_conjugation_parity_categorical_probe.py`,
+      `deltalambda/deltalambda_conjugation_symmetric_excluded_probe.py`)
+      may WANT the colour-blind form on BOTH sides — in which case the defect
+      is on the q0 side, the opposite end from where this bean pointed.
+
+  (b) Consumers that want the canonical (R3) observable want colour-weighted on
+      both sides and must accept that `bar` moves it by 1.67e-5.
+
+Deciding between them is a question about what the bar-parity observable is FOR,
+which is upstream of this bean and is the subject of `qou-cblw`. Do not
+implement the fourth slot as a mechanical fix until that is settled — the
+implementation is cheap, but it would silently pick (b) for consumers that need
+(a).
+
+### Lesson (second time in one bean)
+
+Both of my prescriptions here were written from reading source and both were
+wrong. The first assumed `d` could be carried across the bar; the second assumed
+both sides should be in the canonical frame. In each case the error was an
+UNSTATED premise about the bar involution, not a misreading of the code.
