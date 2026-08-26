@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-26T14:02:33Z
+updated_at: 2026-08-26T14:40:18Z
 parent: qou-8lxd
 ---
 
@@ -265,3 +265,50 @@ FOR T3G: carrier 3 joins carrier 1 as an assertion in prose. This bean SHOULD
 cite it -- it is still the closest thing in the corpus to T3g's own claim and it
 names the spectral base -- but it cannot be promoted and nothing should be built
 on it as established. The base question is unchanged and still needs the author.
+
+
+## OWNER DECISION 2026-08-26 -- BASE RING FIXED
+
+    R = Z[q, q^-1][ Phi_d(q)^-1 : d >= 2 ]
+
+(option 2). Spec R is the q-line with the roots of unity of order >= 2 deleted --
+exactly the locus axiom 4 forbids.
+
+AND THE DEFINITION SHOULD NOT NAME IT. Owner's second point: neighbouring
+communities work over a RELATED but different base (Q(q) for generic-q rep
+theory, Lusztig's Z[v,v^-1] with q = v^2, a real or complex algebra past the
+wall). A definition hard-wired to one ring silently excludes all of them.
+
+HANDLED BY STATING THE PROPERTY, NOT THE RING.
+QOU/AlgebraicSubstrate/QGenericBase.lean (5 decls, sorry-free, lean-direct
+exit 0, axioms [propext, Classical.choice, Quot.sound]):
+
+  class IsQGeneric R q     q is a unit, and so is Phi_d(q) for every d >= 2
+  qBracket                 [n]_q = prod_{d | n, d >= 2} Phi_d(q)
+  isUnit_qBracket          EVERY bracket is a unit -- what axiom 4 needs. The
+                           proof is trivial BY CONSTRUCTION because the bracket
+                           is literally a product of the inverted elements;
+                           that is the argument for the cyclotomic generating
+                           set over the bracket one.
+  qPow_sub_one_eq_mul_bracket   q^n - 1 = (q-1)*[n]_q, the exact boundary of the
+                           d >= 2 choice
+  IsQGeneric.map           THE PROPERTY TRANSPORTS ALONG ANY RING HOM
+  isQGeneric_real          every real q > 1 is q-generic, substrate q0 included
+
+R is the INITIAL object for the property (universal property of localisation,
+applied twice), so every related community ring is DOWNSTREAM of it rather than
+in competition. IsQGeneric.map is the working half: a definition stated over the
+class is automatically available in every specialisation without restatement.
+
+WHY d >= 2 IS RIGHT, NOT MERELY SUFFICIENT. Phi_1(q) = q - 1, so inverting from
+d = 1 would DELETE q = 1 from Spec R -- and the corpus uses that point (the q=1
+classical shadow, J_Hopf(1) = -2). Nothing forces it: hbar_q = 1 - q^-1 =
+(q-1)/q is the one construct needing Phi_1, and MEASURED, every division by it
+is past the archimedean wall in R, where q0 - 1 ~ 0.11 is invertible anyway.
+qPow_sub_one_eq_mul_bracket makes the boundary exact: q^n - 1 is a unit IFF q-1
+is. So d >= 2 buys every quantum dimension AND keeps q = 1 alive.
+
+NON-VACUITY WHERE IT MATTERS: isQGeneric_real is not a toy witness -- the class
+is satisfied at the value the framework actually evaluates at. Mutation-tested:
+removing [IsQGeneric R q] from isUnit_qBracket fails to synthesize, so the
+hypothesis is load-bearing.
