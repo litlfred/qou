@@ -134,3 +134,66 @@ Not settled, and not claimed: that the framework is wrong. This **confirms** the
 division of labour is a genuine split rather than a redundancy — the two objects
 really are different, and really are used for different factors. Scope **(a)**:
 two specific objects, `H₃`, convention D.
+
+---
+
+## Addendum 2 — which object production's `ρ(proton)` actually is (2026-08-26)
+
+The check-in prompt I wrote for this arc said *"p/n is sound"*. **That was
+understated, and this corrects it.**
+
+Addendum 7 of the Ito audit established that `p`/`n`'s *volume* provenance is
+sound — it comes from the particle registry's canonical `T_w` σ-braid word, a
+genuine braid. **That stands.** What was never checked is what that volume is
+*paired with*.
+
+`mass_per_knot_density.py` pairs them explicitly:
+
+```python
+vol = vol_borromean()                                    # 8·Catalan, the LINK
+tr_M_proton = _load_tr_M_proton_at_q0()                  # ← which object?
+vd_pb = per_knot_density_vd(vol, q, density=density_per_block(tr_M_proton))
+```
+
+Settled by value rather than by reading. Evaluating both symbolic traces at the
+proton-pinned `q₀` against what production loads from
+`chi-proton-h3-at-q0-50dps.witness.json`:
+
+| object | `tr_M` at `q₀` | Δ vs the cached production value |
+|---|---|---|
+| **atom `H₃` element** `(Z=1,N=0)` | `1.1457596924573008697` | **2.7 × 10⁻⁴⁰** |
+| Borromean braid `(σ₁σ₂⁻¹)³` | `0.99856216383678726595` | `0.147` |
+
+**Production's `ρ(proton)` is the atom element's trace, exactly.** So the live
+pairing is
+
+$$\underbrace{\mathrm{Vol}(\mathcal{B}_3)}_{\text{the LINK}} \;\times\; \underbrace{\mathrm{tr}_M(\text{atom element})}_{\text{a DIFFERENT object}}$$
+
+and the addendum above proves symbolically that those two objects **do not share
+a Markov trace**.
+
+### What this changes
+
+**The warrant gap covers `p`/`n` as well — and differently.** For `D`/`T`/`³He`
+the defect is a fit (knot chosen for volume proximity to `B_AME`). For `p`/`n`
+there is no fit; there is a **pairing** of a geometric factor taken from one
+object with an algebraic factor taken from another, and nothing on record saying
+that is intended or why. So it is 6 of 6, not 3 of 6, with two distinct causes.
+
+**The size is not marginal.** Anyone reading *"Same Markov class"* at its
+charitable face value would expect these two traces to agree. They differ by
+**≈ 15 %** in the very quantity the mass law calls `ρ`.
+
+### What it does not show
+
+**Not that the number is wrong, and not that the pairing is wrong.** Taking the
+geometric factor from the knot and the algebraic factor from the quark-structured
+element is a perfectly coherent design — arguably the intended one, since the
+per-block form is explicitly *"the Markov trace over the partitions of the knot's
+own strand count"* and `H₃` is where both live. What is missing is the statement
+that this is deliberate, and the reason.
+
+The one justification on record was *"Same Markov class, different topological
+realization"* — which is a category error, and which, read charitably as trace
+equality, is now measured false. Scope **(a)**: one production path, `H₃`,
+convention D, proton pin.
