@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T19:04:38Z
+updated_at: 2026-08-26T21:21:13Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1743,3 +1743,289 @@ relative error against F_required is 1.28e-6 under C and 6.02e-4 under D — D i
 471x worse in the coordinate the bean nominated as the honest one.
 
 Scope-(a). Nothing here derives F, and no value is proposed for anything.
+
+## 2026-08-26 — the D-frame TRACE baseline, computed not substituted
+
+Probe: computations/qbeta/qbeta_d_frame_trace_baseline_probe.py (4/4).
+
+NOT a z-swap. The ladder's formula is untouched. The D-frame object is built
+from its defining structural property instead -- under D the decay trace kills
+the third row and factors through Temperley-Lieb -- and
+`y_lambda_su_n(3, q, N=2)` IS that structure: a three-row partition has
+vanishing Schur function at N = 2, so y_(1^3) = 0 FALLS OUT rather than being
+imposed. Machine-checked.
+
+Trace taken on the EXHIBITED nucleon words, per block:
+
+    chi_(3)      = -0.26038764179012
+    chi_(2,1)    = -0.10681445765158
+    chi_(1,1,1)  = -0.17153864377660
+
+    two-row (D)   tr_M(Delta) = -0.15801600434149   Q_beta = 0.661452  -15.451 %
+    three-row     tr_M(Delta) = -0.13591200273905   Q_beta = 0.568925  -27.278 %
+    counit        (coordinate sum)                  Q_A    = 0.783646  +0.1678 %
+
+WHAT THIS FORECLOSES, and it is the useful part. Every rung of the published
+ladder is a sub-percent correction; the whole five-rung product moves Q_A by
+0.168 %. The D-frame trace baseline is off by 15.451 % -- **92.1x the entire
+existing ladder**. So re-deriving the ladder ON THE MARKOV TRACE cannot rescue
+Q_beta under D: no product of rungs that size closes a gap that large.
+
+SCOPE -- (a), NOT (b). This is "this construction, alone, does not reproduce
+the numbers as-is". It does NOT exclude the trace as an ingredient and does NOT
+prove Q_beta is not a trace observable. It excludes the specific hope that a
+D-frame re-derivation of the EXISTING rung structure lands on CODATA, and
+prices how far off that hope is.
+
+CONSEQUENCE FOR THE RE-DERIVATION. The two live routes are now:
+ (i) the counit/coordinate-sum route survives into D -- but the coordinate sum
+     is not an algebra map (QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one)
+     and would need its own D-frame justification, which nothing supplies; or
+ (ii) Q_beta is not a trace observable at all, and step 8 of the 2026-05-24
+     fitting-finding audit (Q_beta = |Delta(net)|*E_0, POSTULATED) is where the
+     re-derivation actually has to happen.
+
+Either way the work is at step 6/8, not in the rungs.
+
+
+## 2026-08-26 — RETRACTION of the foreclosure reading, and step 8
+
+**Owner correction (verbatim):** *"Every driving ladder doesn't fully close the
+gap if it is the proper thing to do, it should be done as once the other parts
+of the gap are closed it will improve the accuracy"* / *"Even if derriving the
+ladder..."*
+
+That names an inversion of AGENTS.md's own rule. My D-frame trace baseline
+(`qbeta_d_frame_trace_baseline_probe.py`, 4/4) measured the two-row (D)
+`tr_M(Δ) = −0.158016004341` → `Q_β = 0.661452 MeV`, −15.451 %, against a
+five-rung ladder that moves `Q_A` by 0.168 % — a 92.106× gap. I then read that
+as foreclosing the D-frame ladder re-derivation. Wrong: the two permanence
+principles under *"Before declaring refuted"* say a structurally-exact piece is
+a permanent, correct contribution **even while the total is inaccurate**, and
+that *"inaccurate alone" ≠ "excluded"*. Measuring how far a term falls short is
+not an argument against deriving it correctly.
+
+Fixed in `0da1e06c4`: docstring re-scoped, title line no longer says
+"forecloses", measurement untouched. **`qou-cds1` stays open and the D-frame
+re-derivation is still to be done.** What the measurement supplies is an
+expectation set on it, not a verdict on whether to run it.
+
+## Step 8, and why it interlocks with this bean
+
+`qbeta_net_trace_invariance_probe.py` (25/25, `428488665`) attacks step 8 of the
+2026-05-24 fitting-finding audit — the chain's one postulate, `Q_β =
+|Δ(net)|·𝔈₀` *"by construction"*.
+
+- **`net` is NOT a trace.** 8 of 36 ordered basis pairs fail cyclicity in the
+  6-dim regular rep of `H_3(q)`; both controls (augmentation, regular
+  character) pass on all 36. So the corpus's stated licence — that `ε(Δ)` is a
+  *"counit (transition) observable"* — is unavailable: an algebra map into a
+  commutative ring is automatically cyclic, so a counit **is** a class function.
+- **The split.** `H = Z(H) ⊕ [H,H]`, dim 3 + 3 (measured). At q₀:
+  `epsNPq = −0.187207194529378` = central `−0.172847658641848` (92.33 %) +
+  commutator `−0.014359535887530` (**7.67 %**). That 7.67 % is invisible to the
+  Markov trace, the augmentation, every `χ^λ`, and every combination.
+- **The derivable piece** — the constructive half, and the one that matters for
+  this bean. The unique trace agreeing with `net` on the centre is exhibited:
+  `a_(3) = (q+1)/((q²+1)(q²−q+1))`, `a_(2,1) = q(q²−1)/(q⁴+q²+1)`,
+  `a_(1³) = q³(q−1)/((q²+1)(q²+q+1))`. Verified to reproduce `net` on the whole
+  centre, annihilate `[H,H]`, and give exactly the central part on Δ.
+  **`a_(1³) ≠ 0`**, so it is not a two-row Markov trace of the shape convention
+  D forces at N=2 — which is a live datum for the re-derivation, not a block on
+  it.
+- **Presentation dependence.** Conjugating both nucleon words by one basis
+  element (a Markov-I move) moves `Q_β` over 0.692169 … 0.783646 MeV, a 0.0915
+  MeV spread ≈ 70× the +0.168 % residual. Exactly two values, because
+  conjugation by `w₀` is the diagram automorphism `s₀↔s₁` and permutes the
+  standard basis.
+
+Step 8's postulate is now narrowed from the whole of `net` to the 7.67 %
+remainder. Scope-(a) throughout.
+
+
+## 2026-08-26 (2) — the re-derivation advances: block resolution, a z-free floor, and the quotient reading
+
+Three probes, 57 assertions, all exact-symbolic. Owner directed this bean as
+first priority after correcting my foreclosure reading (section above).
+
+### 1. The phase has a z-FREE commutator floor, and it is bar-even
+
+`qbeta_alpha_commutator_floor_probe.py` (22/22). Combining this bean's identity
+`ε(Δ) − tr_M^z(Δ) = h(z−1) = 2α` with step 8's split `H = Z(H) ⊕ [H,H]`:
+
+    2α = [ net(dZ) − tr_M^z(dZ) ] + net(dC),    net(dC) = −(q²−1)²/(q⁴+q²+1)
+
+The floor contains **no Markov parameter**: identical in C and D to 50 digits
+(`−0.01435953588753045`), carrying **13.72 %** of 2α in C and **17.73 %** in D.
+Not a rounding term.
+
+**It extends the sibling prune.** `fcffeee29` reads: both surviving D weights
+are bar-even ⇒ no bar-odd part can be assembled from the D-frame **weights** at
+all. The floor is not built from weights — it is a non-trace functional on the
+component every weight annihilates — so that prune does not reach it. Measured:
+**the floor is bar-EVEN**, exactly. The trace-invisible sector supplies no
+bar-odd material either. Gap closed in an existing exclusion, proved not searched.
+
+**Fourth independent route to the D weights**, from the Ocneanu recursion
+(`tr(1)=1, tr(T_i)=z, tr(T_0T_1)=z², tr(T_0T_1T_0)=z(hz+1)`) solved symbolically
+in `z`: recovers `y_(1³)=0`, `y_(3)=(q⁴+1)/(q²+1)²`, `y_(2,1)=q²/(q²+1)²`,
+cross-checked against `y_lambda_su_n`.
+
+### 2. The functional form this bean has been asking for
+
+`qbeta_phase_block_resolution_probe.py` (18/18). Exactly, for every `z`:
+
+    2α(z) = Σ_λ [ a_λ − y_λ(z) ] · χ^λ(Δ) + net(dC)
+
+with `a_λ`, `χ^λ(Δ)` and `net(dC)` **all z-free** — the convention enters at
+**one factor**. That is why it is a re-derivation: the C-frame scalar `(z−1)h/2`
+is the *sum* of the blocks, and the sum is resolved into parts **before** a
+convention is chosen, so specialising to `z_D` is a statement about the D-frame
+representation rather than a reuse of the C formula.
+
+Three structural facts:
+- **`χ^(2,1)(Δ) = 0` identically** — dim 2 at the identity, trace `h` at each
+  generator: `(h²/2)·2 − (h/2)h − (h/2)h = 0`. The phase is blind to the
+  2-dimensional block, in **every** convention.
+- With that, under D the two-row forcing leaves `tr_M(Δ)` carried **entirely by
+  the trivial block**.
+- The `(1³)` block contributes `a_(1³)·χ^(1³)(Δ)` **uncancelled** under D, with
+  no counterpart in C: `−0.000543 → +0.004238`, sign flip and 7.8×.
+
+*A prediction of mine failed and is retained, not deleted:* I asserted all three
+`a_λ` were bar-"neither"; `a_(2,1)` is exactly bar-**odd**. It is the block χ
+kills, so it costs nothing — but the guess lost to the measurement again.
+
+### 3. The two-row forcing read as a QUOTIENT — 18× on the D phase
+
+`qbeta_d_frame_tl_quotient_phase_probe.py` (17/17). The identity above is exact,
+so it moves no number; a re-derivation needs a changed **input**. There is one
+the D convention touches that C does not, and it is not `z`:
+`WenzlWeightVanishing` proves `z_D` is Wenzl level `r = 2` exactly.
+
+Read that as a **quotient** — evaluate in `H_3(q)/J_(1³)`. The central idempotent
+is unique ⇒ `π(Δ)` is one determined element, **no free parameter**. It bites
+because projection is invisible to the D trace (`y_(1³)` already annihilated that
+block, so `tr_M^D(πΔ) = tr_M^D(Δ)` exactly) and **visible to `net`**, which is
+not a trace and does not respect the block ideal.
+
+| candidate | \|Δz\|/z* |
+|---|---|
+| C (as recorded) | 0.00043244 |
+| D naive z-swap (banned) | 0.22757466 |
+| D TL-quotient | 0.18695789 |
+| D naive + bar-odd | 0.01813926 |
+| **D TL-quotient + bar-odd** | **0.01268105** |
+
+**Calibrated before being trusted:** this bean records z* as "0.043% from z_C,
+1.81% from z_D^even, 22.8% from z_D"; the harness returns 0.0432% / 1.8139% /
+22.757%, the middle being an independent reproduction of the recorded
+`z_D^even` candidate reached by projecting the *phase* onto its bar-odd part
+instead of deriving `z_D^even = z_D − h/2`. The bar-odd projection's licence is
+a control: under C it acts as the **identity** (asserted).
+
+### Scope — this does NOT close the bean
+
+Best D is still **29.3×** the C distance. `z*` is anchor-inverted, not derived.
+The quotient reading is an **interpretive** step: the corpus establishes the
+two-row forcing for the trace's *support*, not for the *element*. Both
+corrections are reported separately so each marginal contribution is visible,
+and nothing is wired. Scope-(a) on two named readings.
+
+**Next, concrete:** decide the quotient reading on its merits rather than by its
+number — does the D-frame decay channel live in `H_3(q)` or in its TL quotient?
+That is a corpus/owner question, and it is now worth 1.43× on the best D
+candidate.
+
+
+## 2026-08-26 (3) — `net` = tr_M at z=1, corrected on ONE element; and the floor IS the 2-dim block
+
+`qbeta_net_as_trace_plus_longest_probe.py` (13/13). Sharpens two corpus
+assertions and closes the loop between the last two entries.
+
+`qbeta-counit-closed-form.md` says *"the counit and the Markov trace are
+genuinely distinct functionals on the substrate"* and *"the two agree precisely
+when z = 1"*. Both true, both vaguer than the situation. Measured exactly, on
+all six basis elements:
+
+    net  =  tr_M^{z=1}  −  h · (coefficient of the longest element w₀)
+
+The Ocneanu trace at z=1 sends every basis element to 1 **except** the longest,
+where `tr(T₀T₁T₀) = z(hz+1) → 1+h`; `net` sends every basis element to 1 by
+definition. **A single rank-one difference, supported on w₀.**
+
+### Three consequences
+
+1. **"They agree precisely when z=1" is about Δ's SUPPORT, not the
+   functionals.** Δ has zero w₀ coordinate, so `ε(Δ) = tr_M^{z=1}(Δ)` follows
+   structurally rather than numerically. On `T_{w₀}` the two differ by `h` at
+   **every** z, z=1 included.
+
+2. **The phase is a transport WITHIN one family**, not between two unrelated
+   functionals: `2α(z) = tr_M^{1}(Δ) − tr_M^{z}(Δ)`, symbolic in z. The
+   counit-minus-trace framing recorded above is right and understates it — the
+   endpoint is the same Ocneanu trace at the trivial loop value. That is what
+   the (axiomatised) cosine exponentiates.
+
+3. **The 2-dimensional block carries the entire z-free floor.** `tr_M^{z=1}` is
+   a trace, so it annihilates `[H,H]` and only the rank-one term survives:
+
+       net(dC) = −h·(dC)_{w₀}   and   (dC)_{w₀} = a_(2,1) = q(q²−1)/(q⁴+q²+1)
+       ⇒  net(dC) = −h·a_(2,1)                                        [exact]
+
+   Read against the block resolution, which gave `χ^(2,1)(Δ) = 0` identically:
+   **the 2-dimensional block contributes nothing to the trace-visible part of
+   the phase and everything to the trace-invisible part.** Its contribution was
+   never absent — it was in the sector no trace can see.
+
+Also pinned: the longest-coefficient functional is not cyclic, which is exactly
+why `net` fails cyclicity (step 8's 8-of-36).
+
+Convention-free: every result holds for all z, and the floor contains no Markov
+parameter. Scope-(a): derives no correction, proposes no value, wires nothing.
+
+## Lean landed alongside (sorry-free)
+
+`QOU/QBeta/PhaseBlockResolution.lean`, generic `[CommRing R]` per §7c, `lean`-
+direct exit 0 with no warnings, `#print axioms` → `[propext, Classical.choice,
+Quot.sound]` on all four declarations, 0 `sorry`. Tree is a RESTORED olean cache
+(6990 oleans / 0 traces, marker present) so **no `lake build` was run**.
+
+- `chi_two_one_delta_eq_zero` — the (2,1) character annihilates Δ, from the
+  block's dimension and generator trace alone; the character's values on the
+  three longer basis elements are left free in the statement.
+- `floor_bar_even` — division-free, bar involution carried by `u·v = 1`.
+- `floor_bar_defect` — committed **so the first is not mistaken for a `ring`
+  tautology**: off the bar locus the two sides differ by `3(u²−v²)((uv)²−1)`.
+- `floor_bar_even_units` — the `q : Rˣ` restatement.
+
+## Where the bean stands
+
+Still open. Best D candidate is 29.3× the C distance, and the bean's own
+discipline forbids hunting further corrections until one lands near the proved
+`c₂ = −1`. What this tranche adds is structure rather than a number: the phase's
+z-free part is now a closed form tied to a named block, the transport is
+identified as motion along the Markov line, and the two pieces that are ring
+identities are machine-checked.
+
+
+### Closed form of the floor, inside the Ocneanu family alone
+
+Follow-through, same probe (now 20/20). Everything in the block-resolved
+identity except the `a_λ` came from the Ocneanu trace; the `a_λ` were *solved
+for*, which makes them determined but not explained. Since
+`net = tr_M^{z=1} − h·δ_{w₀}` and both sides restrict to the centre:
+
+    a_λ = y_λ(1) − h·b_λ
+
+with `b_λ` the χ-expansion of the longest-coefficient functional on the centre.
+Verified for all three blocks — **and `b_(2,1) = 0`**. So `a_(2,1)` is not merely
+numerically equal to a Markov weight, it **is** one, and
+
+    net(dC) = −h · y_(2,1)(1)                                        [exact]
+
+The z-free part of the ladder phase, stated entirely inside the Ocneanu family
+with no `net`-specific object left in it. With `χ^(2,1)(Δ) = 0` from the block
+resolution, the 2-dimensional block's role is now complete: nothing in the
+trace-visible part, everything in the trace-invisible part, and its size there
+fixed by its own Markov weight at the trivial loop value.

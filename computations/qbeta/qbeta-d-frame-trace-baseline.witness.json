@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T20:42:03.502281+00:00",
+  "commitSha": "4284886655a9c2c6975b20f9d0a820e245c733a2",
+  "assertions": [
+    {
+      "name": "third_row_vanishes_at_N_equals_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D_frame_trace_baseline_is_far_from_CODATA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "gap_exceeds_the_entire_existing_ladder",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "three_row_trace_is_further_still",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "qbeta-d-frame-trace-baseline",
+  "scriptFile": "qbeta_d_frame_trace_baseline_probe.py",
+  "scriptHash": "c721fe317662",
+  "scriptCommitSha": "f5c36c403d6bc327a4df4daf0cee1e35599d6004",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_trace_baseline_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_trace_baseline_probe.py"
+  },
+  "description": "qou-cds1: the convention-D trace baseline for Q_beta, built from the two-row (Temperley-Lieb) structure rather than by substituting z_D into the C-frame ladder. Finds the D-frame trace 15.5 % low against the counit's +0.17 %, and prices that gap at ~92x the entire five-rung ladder -- so a D-frame re-derivation of the existing rung structure cannot close it. Scope-(a), not an exclusion of the trace.",
+  "data": {
+    "trM_Delta_N2": "-0.158016004341491285452416939966286459622236507187713864261487",
+    "Qbeta_N2": "0.661452049275741563323967514965143367293273524608797419837528",
+    "err_N2": "-0.154513866588921010852880319652764275804585737464034494714516",
+    "trM_Delta_N3": "-0.135912002739052703418935649749278911877603747657144336231565",
+    "Qbeta_N3": "0.568925110513702420861873148690077169196785391173005599202070",
+    "err_N3": "-0.272784334986348378046846398952638533647744078154308382800056",
+    "counit_baseline_Qbeta": "0.783645827374621226992832535853937149134687113453228559970451",
+    "counit_baseline_err": "0.00167756873104831725746541449970459937906781968525227659493139",
+    "gap_over_ladder_ratio": "92.1058337158948330273585514879575383229614314459746075449695",
+    "chi_1_1_1": "-0.171538643776599496489326981781406706110246028489055381698321",
+    "chi_2_1": "-0.106814457651578042296059137795233919319719284301786734682003",
+    "chi_3": "-0.260387641790120781011001561465200192051350043284427763652982"
+  }
+}

@@ -47,3 +47,130 @@ Two escapes remain from option (1), and neither is mine to pick:
   (b) epsNPq is simply wrong, and with it Q_A and the ladder phase.
 
 Widening the crossing vocabulary is no longer among the options.
+
+## 2026-08-26 — the FORK'S PREMISE DOES NOT HOLD (investigated on owner request)
+
+Neither (a) nor (b) is forced, because the contradiction that forced the
+choice is between two DIFFERENT functionals both written `eps`.
+
+  avt6's eps    the AUGMENTATION sigma -> q. Its probe evaluates a word as a
+                PRODUCT of per-letter counits (line 207:
+                COUNIT["sigma"]**m1 * COUNIT["averaged"]**c1 * ...), which is
+                legitimate only for an algebra map, and its table opens
+                COUNIT["sigma"] = q.
+
+  epsNPq        a value of the COORDINATE SUM sigma -> 1.
+                QBetaCounitTrace.epsNP is defined as the functional "which
+                weights every basis element by 1", applied to the stated
+                normal-form vector
+
+                    (n - p) = [h^2/2, -h/2, -h/2, 0, 0, 0]
+
+                in basis [gamma, sigma_0, sigma_1, L+, L-, e^-]. Its
+                coordinates sum to h^2/2 - h = h(h-2)/2 = epsNPq, EXACTLY
+                (verified symbolically, difference 0).
+
+sigma -> 1 is not an algebra map unless h = 0: push sigma^2 = h*sigma + 1
+through a unital multiplicative map sending sigma -> 1 and get 1 = h + 1.
+Lean, sorry-free (propext only):
+`QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`.
+
+So avt6's theorem is TRUE and its scope is the multiplicative eps. Quoting it
+against epsNPq is a functional mismatch -- the arity/shape class AGENTS.md
+already names. On the SAME vector the two differ by exactly h(q-1).
+
+WHAT THIS DOES NOT DO, and the distinction is the point. It does not vindicate
+epsNPq. Measured at q0, the stated NF vector is not the exhibited nucleon-word
+difference under EITHER functional:
+
+    chi_(3)(beta_n - beta_p)  = -0.26038764179012078   (recomputed from the
+                                                        words, not quoted)
+    coordinate sum (epsNPq)   = -0.18720719452937831
+    augmentation on same vec  = -0.21019934990050292
+
+So qou-avt5's scope-(a) finding stands untouched: Q_A still rests on a vector
+nobody has derived. The fork was the wrong question -- not a question with a
+reassuring answer.
+
+Probe: computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py (7/7).
+Lean:  content/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
+
+STILL AN OWNER CALL, but a different one. Not "which of (a)/(b)", rather:
+which functional is `eps` MEANT to be in the Q_beta ansatz, and what is the
+element it should act on? Answering that is what would actually close Q_A.
+
+## 2026-08-26 (later) — THE CONVENTION FEE, priced
+
+Owner asked whether "a convention fee or non-colour-weighted [choice] is
+sneaking around". Yes -- three, and each is larger than the residual it
+supports. Probe: computations/qbeta/qbeta_ladder_convention_fee_probe.py (4/4).
+
+  choice, canonicalised                              err (ppb)   vs published
+  as published (proton pin, conv C, colour-blind)         37.7         --
+  canonical COLOUR-WEIGHTED crossing (R3)              80332.6      2130x worse
+  canonical convention D (z = q^3/(q^2+1))            601191.5     15944x worse
+  muon pin (the block's own frame)                         7.34      0.19x BETTER
+  ALL THREE canonical at once                         681534.7     18074x worse
+
+1. NON-COLOUR-WEIGHTED AT THE BASE. Step 3 of the fitting-finding audit
+   publishes the mixed u-d crossing as C(u,d;sigma) = sigma - h/2 --
+   COLOUR-BLIND. Owner ruling R3 makes bring_color_weighted canonical,
+   w = h(1/2 - delta/4). Swapping it moves Q_A by 80 ppm. So Q_beta's
+   headline agreement is built on the PRE-R3 crossing.
+
+2. CONVENTION C IN THE COS RUNG. alpha = (z-1)h/2. Under canonical z_D the
+   same five rungs converge to 601192 ppb instead of 37.7. AGENTS.md flags the
+   c_k ladder as C-frame (qou-cds1); this is the number.
+
+3. MUON PIN. The block claims -0.0066 ppm. That reproduces at the MUON q0
+   (7.34 ppb), not the canonical proton pin (37.7 ppb, 5.14x worse).
+
+ALSO MEASURED, and it corrects the dashboard reading: AGENTS.md's "1279 ppb"
+is EXACTLY the 2-rung truncation (computed 1279.465 ppb). The full five rungs
+reach 37.7 ppb -- 4.8x short of the 7.8 ppb L2 target, not 164x. The
+convergence is 1677569 -> 73828 -> 1279 -> 43.7 -> 37.8 -> 37.7 ppb.
+
+The FIRST rung is a genuinely derivable piece -- Hoefsmit V_(2,1)
+cos-symmetrization, no fit -- and it does the heavy lifting (1677569 ->
+73828 ppb). That part is real and worth keeping.
+
+TWO CORRECTIONS TO MY OWN EARLIER CLAIMS IN THIS BEAN:
+ - "Q_A rests on a vector nobody has derived" is WRONG. Step 5 of the
+   2026-05-24 audit derives it and I verified it: pure expansion of the
+   single-wrap words, no Hecke reduction needed (no sigma^2 appears), L+
+   cancels, coordinate sum = h(h-2)/2 exactly.
+ - I first asserted every canonical swap DEGRADES the agreement. False for
+   the pin: the muon frame BEATS canonical proton. That is the stronger fit
+   signature, not a weaker one, and the failing assertion caught it.
+
+THE CAP, restated with this in hand. Step 8 stays postulated, so Q_beta's
+empirical content is one scalar. But the binding constraint is sharper: the
+37.7 ppb figure exists only in a frame that is non-canonical in THREE
+independent ways. Canonicalise all three and it is 681535 ppb -- 87000x short
+of the L2 target.
+
+### RETRACTION (same day): the "convention D = 601192 ppb" row was mislabelled
+
+Owner challenged it -- "convention D makes everything else better, this seems
+odd" -- and the challenge is correct.
+
+THE ARITHMETIC IS RIGHT. alpha_C = -0.052336, alpha_D = -0.040486; cos rungs
+0.9983986 vs 0.9989990; rungs 2-5 are z-independent. 601192 ppb reproduces.
+
+THE LABEL WAS WRONG, and the corpus says so explicitly. AGENTS.md: "The ladder
+must be RE-DERIVED under D, and that is not a z-swap". And
+QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free): if the decay channel's
+decomposition kills the third row then its trace IS z_D and "the existing
+C-frame ladder is not that trace (re-derivation, not substitution)".
+
+I performed exactly the substitution the corpus forbids. So 601192 ppb is NOT
+"what convention D gives" -- it is what an invalid move gives. What convention
+D gives is UNKNOWN pending the re-derivation (qou-cds1).
+
+WHAT THE ROW DOES ESTABLISH, restated: the ladder is z_C-LOCKED. Its cos rung
+must supply exactly the 0.168 % that Q_A overshoots, and only alpha_C is large
+enough to do it (alpha_D is 23 % smaller in magnitude, delivering 0.100 %).
+That is evidence FOR the C-conditionality AGENTS.md already asserts -- it is
+not a measurement of D's accuracy.
+
+Items 1 (colour-blind crossing, 80 ppm) and 3 (muon pin) are unaffected.

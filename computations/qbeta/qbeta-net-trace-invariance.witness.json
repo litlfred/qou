@@ -1,0 +1,298 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T20:39:43.472820+00:00",
+  "commitSha": "f5c36c403d6bc327a4df4daf0cee1e35599d6004",
+  "assertions": [
+    {
+      "name": "regular_rep_satisfies_hecke_and_braid_relations",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "left_and_right_actions_commute_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "generators_invertible_via_sigma_inv_eq_sigma_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "conjugation_by_each_basis_element_is_an_algebra_automorphism_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_reproduces_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_of_delta_is_epsNPq_symbolically",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "counit_is_a_trace_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "regular_character_is_a_trace_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_is_NOT_a_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "dim_commutator_is_3_and_dim_centre_is_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "centre_plus_commutator_spans_H",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_delta_is_the_sum_of_the_two_parts",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "commutator_part_of_delta_is_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "both_control_traces_annihilate_the_commutator_part_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_decomposition_of_the_regular_character_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "each_chi_is_a_trace_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_restricted_to_the_centre_has_a_unique_chi_expansion",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_expansion_reproduces_net_on_the_whole_centre",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_expansion_annihilates_the_commutator_part_BY_CONSTRUCTION",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_expansion_of_delta_equals_the_central_part_of_net",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_expansion_is_NOT_the_two_row_D_shape",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "Q_beta_moves_under_conjugation_a_Markov_I_move",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "conjugation_by_w0_permutes_the_standard_basis",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_takes_exactly_two_values_over_the_six_conjugators",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "counit_of_delta_is_conjugation_invariant_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7406,
+  "computation": "qbeta-net-trace-invariance",
+  "scriptFile": "qbeta_net_trace_invariance_probe.py",
+  "scriptHash": "f581f345644e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_net_trace_invariance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_net_trace_invariance_probe.py"
+  },
+  "description": "Step 8 of the Q_beta fitting-finding audit: `net` is tested for trace-invariance in the regular representation of H_3(q), and epsNPq is split into its trace-visible Z(H) part and its trace-invisible [H,H] part.",
+  "data": {
+    "epsNPq_at_q0": "-0.187207194529378320729836545290980788975650514906301240979951",
+    "net_central_part": "-0.172847658641847870621327935576504880198763413706582470891020",
+    "net_commutator_part": "-0.0143595358875304501085086097144759087768871011997168490392952",
+    "fraction_of_epsNPq_invisible_to_every_trace": "0.0767039745648077437669761312145785787368983392141644999952211",
+    "Q_A_MeV_full_net": "0.783645827374621213074939751341396890525736441030260633803977",
+    "Q_A_MeV_trace_visible_part_only": "0.723537077763860547615526044843926634029163001064905279678452",
+    "Q_A_err_ppb_full_net": "1677568.73104829946723350200931500391578271731359144051256396",
+    "Q_A_err_ppb_trace_visible_only": "-75155082.0230364898648189408165772519766988087822717961992778",
+    "net_trace_part_coefficient_chi_(3)": "(q + 1)/((q**2 + 1)*(q**2 - q + 1))",
+    "net_trace_part_coefficient_chi_(3)_at_q0": "0.842465647458931401250407575684121594872882260945716155106953",
+    "net_trace_part_coefficient_chi_(2,1)": "(q**3 - q)/(q**4 + q**2 + 1)",
+    "net_trace_part_coefficient_chi_(2,1)_at_q0": "0.0686860966441418312478759582739277630635695490069608206573360",
+    "net_trace_part_coefficient_chi_(1,1,1)": "q**3*(q - 1)/((q**2 + 1)*(q**2 + q + 1))",
+    "net_trace_part_coefficient_chi_(1,1,1)_at_q0": "0.0201621592527849362538405077680228789999786410403595308136651",
+    "epsNPq_symbolic": "(q - 1)*(q + 1)*(q**2 - 2*q - 1)/(2*q**2)",
+    "net_central_symbolic": "(q - 1)*(q + 1)*(q**6 - 2*q**5 + 2*q**4 - 2*q**3 - 2*q**2 - 2*q - 1)/(2*q**2*(q**2 - q + 1)*(q**2 + q + 1))",
+    "net_commutator_symbolic": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
+    "conjugation_spread": [
+      {
+        "conjugator": "gamma",
+        "net": "-0.187207194529378320729836545290980788975650514906299236406418",
+        "Q_MeV": "0.783645827374621213074939751341396890525736441030252615509847",
+        "err_ppb": "1677568.73104829946723350200931500391578271731358075140787809"
+      },
+      {
+        "conjugator": "sigma0",
+        "net": "-0.165354090263117326028826877452286634091543534549539334556176",
+        "Q_MeV": "0.692169140185921687082830353607913281713169981942441463221009",
+        "err_ppb": "-115250439.328061115872234491348171908921832947084913093280909"
+      },
+      {
+        "conjugator": "sigma1",
+        "net": "-0.165354090263117326028826877452286634091543534549539334556176",
+        "Q_MeV": "0.692169140185921687082830353607913281713169981942441463221009",
+        "err_ppb": "-115250439.328061115872234491348171908921832947084913093280909"
+      },
+      {
+        "conjugator": "L_plus",
+        "net": "-0.165354090263117326028826877452286634091543534549539334556176",
+        "Q_MeV": "0.692169140185921687082830353607913281713169981942441463221009",
+        "err_ppb": "-115250439.328061115872234491348171908921832947084913093280909"
+      },
+      {
+        "conjugator": "L_minus",
+        "net": "-0.165354090263117326028826877452286634091543534549539334556176",
+        "Q_MeV": "0.692169140185921687082830353607913281713169981942441463221009",
+        "err_ppb": "-115250439.328061115872234491348171908921832947084913093280909"
+      },
+      {
+        "conjugator": "e_minus",
+        "net": "-0.187207194529378320729836545290980788975650514906299236406418",
+        "Q_MeV": "0.783645827374621213074939751341396890525736441030252615509847",
+        "err_ppb": "1677568.73104829946723350200931500391578271731358075140787809"
+      }
+    ],
+    "cyclicity_failures_of_net": 8,
+    "markov_convention": "n/a - no Markov parameter z enters",
+    "assertion_notes": [
+      {
+        "assertion": "conjugation_by_each_basis_element_is_an_algebra_automorphism_CONTROL",
+        "note": "(g.1.g^-1 = 1 for all six)"
+      },
+      {
+        "assertion": "net_is_NOT_a_trace",
+        "note": "(8/36 ordered basis pairs fail cyclicity; first sigma0*L_plus differs by (q - 1)*(q + 1)/q)"
+      },
+      {
+        "assertion": "dim_commutator_is_3_and_dim_centre_is_3",
+        "note": "(got 3 and 3; H_3 = Q(q) + M_2 + Q(q))"
+      },
+      {
+        "assertion": "chi_expansion_is_NOT_the_two_row_D_shape",
+        "note": "(a_(1,1,1) = q**3*(q - 1)/((q**2 + 1)*(q**2 + q + 1)), nonzero, so the trace part of net is not supported on the two rows convention D forces)"
+      },
+      {
+        "assertion": "Q_beta_moves_under_conjugation_a_Markov_I_move",
+        "note": "(spread 0.0914766871886995259921093977334836088125664590878111522888379 MeV over the six basis conjugators)"
+      },
+      {
+        "assertion": "conjugation_by_w0_permutes_the_standard_basis",
+        "note": "(the diagram automorphism s0<->s1; it is why net survives that one conjugation and not the other four)"
+      }
+    ],
+    "verdict": "net is NOT a trace. The corpus's stated licence for step 8 - that eps(Delta) is a 'counit (transition) observable' - cannot apply to it: an algebra map into a commutative ring is automatically cyclic, so a counit IS a class function. The split above reports how much of epsNPq lives in [H,H], where every trace in the framework (the Markov trace, the augmentation, each chi^lambda, any combination) is identically blind. NOT claimed: that a non-cyclic functional is forbidden, or that Q_beta's number is wrong. What is established is which of the two net is, the exact split, and the spread of Q_beta across presentations of one particle."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
