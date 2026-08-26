@@ -73,6 +73,30 @@ def _q_inv_str(dps: int) -> str:
         return mp.nstr(1 / q, dps, strip_zeros=False)
 
 
+# ── Reproducibility envelope of this producer's chi values (measured, qou-1oxx)
+#
+# Diffing a regenerated witness against a committed one shows LAST-DIGIT
+# movement. Measured, so a future reader does not re-derive it or mistake it
+# for a regression:
+#
+#   within one process   three consecutive kernel calls are BIT-IDENTICAL
+#   4-arg vs 5-arg-None  BIT-IDENTICAL (deuteron 11/11, helium-3 30/30), so
+#                        the avg_shifts argument added here is NOT a cause
+#   across processes     the 50th (last serialised) digit CAN move: tritium
+#                        (3,3,2,1) matched main on one run and differed by
+#                        1.42e-50 on the next -- same code, same container
+#   vs origin/main       the environment also differs. main's committed
+#                        witnesses record mpmath 1.3.0 / pyhecke_native_build
+#                        c7ea7ebb0d76c4e2; this container is mpmath 1.4.1 /
+#                        c85ef99ee89ce1c3. A systematic contributor on top of
+#                        the run-to-run effect above, not instead of it.
+#
+# Largest observed: 4.34e-50 relative (helium-4, 4 of 77 partitions). That is
+# ~35 orders below the L1 target of 1e-15, so it bears on nothing -- but do
+# NOT claim "byte-identical" as a property of this producer. It has held on
+# some runs and not others, and that is luck, not a guarantee.
+
+
 def _h_at(q):
     """Substrate h(q) = q - 1/q. Sign-FLIPS under the bar: h(1/q) = -h(q)."""
     return q - 1 / q
