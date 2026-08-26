@@ -98,3 +98,53 @@ Lean:  content/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZ
 STILL AN OWNER CALL, but a different one. Not "which of (a)/(b)", rather:
 which functional is `eps` MEANT to be in the Q_beta ansatz, and what is the
 element it should act on? Answering that is what would actually close Q_A.
+
+## 2026-08-26 (later) — THE CONVENTION FEE, priced
+
+Owner asked whether "a convention fee or non-colour-weighted [choice] is
+sneaking around". Yes -- three, and each is larger than the residual it
+supports. Probe: computations/qbeta/qbeta_ladder_convention_fee_probe.py (4/4).
+
+  choice, canonicalised                              err (ppb)   vs published
+  as published (proton pin, conv C, colour-blind)         37.7         --
+  canonical COLOUR-WEIGHTED crossing (R3)              80332.6      2130x worse
+  canonical convention D (z = q^3/(q^2+1))            601191.5     15944x worse
+  muon pin (the block's own frame)                         7.34      0.19x BETTER
+  ALL THREE canonical at once                         681534.7     18074x worse
+
+1. NON-COLOUR-WEIGHTED AT THE BASE. Step 3 of the fitting-finding audit
+   publishes the mixed u-d crossing as C(u,d;sigma) = sigma - h/2 --
+   COLOUR-BLIND. Owner ruling R3 makes bring_color_weighted canonical,
+   w = h(1/2 - delta/4). Swapping it moves Q_A by 80 ppm. So Q_beta's
+   headline agreement is built on the PRE-R3 crossing.
+
+2. CONVENTION C IN THE COS RUNG. alpha = (z-1)h/2. Under canonical z_D the
+   same five rungs converge to 601192 ppb instead of 37.7. AGENTS.md flags the
+   c_k ladder as C-frame (qou-cds1); this is the number.
+
+3. MUON PIN. The block claims -0.0066 ppm. That reproduces at the MUON q0
+   (7.34 ppb), not the canonical proton pin (37.7 ppb, 5.14x worse).
+
+ALSO MEASURED, and it corrects the dashboard reading: AGENTS.md's "1279 ppb"
+is EXACTLY the 2-rung truncation (computed 1279.465 ppb). The full five rungs
+reach 37.7 ppb -- 4.8x short of the 7.8 ppb L2 target, not 164x. The
+convergence is 1677569 -> 73828 -> 1279 -> 43.7 -> 37.8 -> 37.7 ppb.
+
+The FIRST rung is a genuinely derivable piece -- Hoefsmit V_(2,1)
+cos-symmetrization, no fit -- and it does the heavy lifting (1677569 ->
+73828 ppb). That part is real and worth keeping.
+
+TWO CORRECTIONS TO MY OWN EARLIER CLAIMS IN THIS BEAN:
+ - "Q_A rests on a vector nobody has derived" is WRONG. Step 5 of the
+   2026-05-24 audit derives it and I verified it: pure expansion of the
+   single-wrap words, no Hecke reduction needed (no sigma^2 appears), L+
+   cancels, coordinate sum = h(h-2)/2 exactly.
+ - I first asserted every canonical swap DEGRADES the agreement. False for
+   the pin: the muon frame BEATS canonical proton. That is the stronger fit
+   signature, not a weaker one, and the failing assertion caught it.
+
+THE CAP, restated with this in hand. Step 8 stays postulated, so Q_beta's
+empirical content is one scalar. But the binding constraint is sharper: the
+37.7 ppb figure exists only in a frame that is non-canonical in THREE
+independent ways. Canonicalise all three and it is 681535 ppb -- 87000x short
+of the L2 target.
