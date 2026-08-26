@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-08-02T17:30:46Z
+updated_at: 2026-08-25T22:44:43Z
 parent: qou-a0gr
 ---
 
@@ -95,3 +95,88 @@ look like, not evidence. If it is later cited as support for the eightfold
 line without step 1 being done, that citation is the error.
 Scope (a): unsupported as stated, usual argument invalid; NOT structurally
 excluded, and I have no invariant that would exclude it.
+
+
+## INVENTORY DONE 2026-08-25 — the 2026-08-02 gap list is COMPREHENSIVELY STALE
+
+This bean's near-term step was: inventory the I3/Q/Y, strange-quark and
+three-strand ingredients and establish what the corpus already has. Done. The
+headline is that the gap list below it no longer describes the tree.
+
+The 2026-08-02 entry states: "no relevant meson octet, baryon octet, decuplet,
+or weight diagram layer is present in the content tree, and the existing
+baryon-label table does not yet include a Sigma-0 row."
+
+MEASURED 2026-08-25, all four are present. The eightfold-way chapter carries 16
+blocks:
+
+  meson octet     prop:meson-octet-decomposition   (+ rem:meson-mass-splitting,
+                                                    rem:vector-meson-nonet)
+  baryon octet    prop:baryon-octet-decomposition
+  decuplet        prop:borromean-decuplet, rem:decuplet-equal-spacing
+  weight geometry prop:a2-from-three-strands (the A2 root system),
+                  rem:q-deformation-weight-lattice,
+                  rem:flavor-charge-assignments
+  U-spin          rem:u-spin-coleman-glashow
+  colour side     prop:color-su3-from-g2
+  Schur-Weyl      prop:schur-weyl-eightfold
+
+Sigma-0 IS present, in baryon-octet-decomposition (.md/.ts/.qa.json) and in
+QOU/Eightfold/OctetWeightDegeneracy.lean. It is still absent from
+predicted-spectra/linking-relations-table-table3-data.md, which is the table
+the old entry was actually looking at - so that one clause is narrowly true
+and the general claim built on it is not.
+
+Do not re-derive the multiplet layer. It exists.
+
+## THE ACTUAL BLOCKER FOR THIS BEAN'S OWN QUESTION: A NOTATION COLLISION
+
+This bean asks to DISTINGUISH flavour SU(3) from colour SU(3). Measured, the
+chapter does not distinguish them NOTATIONALLY at all:
+
+  31 occurrences of SU(3) in eightfold-way/*.md
+   0 of them subscripted
+   corpus-wide there are only 4 subscripted forms (_{c}, _c, _R, _L), none in
+     this chapter
+
+So one symbol serves two different groups - colour SU(3) from
+G_2 = Aut(octonions), and flavour SU(3) organising the multiplets - with the
+distinction carried entirely in surrounding prose. Under AGENTS.md section
+7aa that is a register collision of exactly the kind the notation-collisions
+block forbids (compare its H_q ruling: "H_q alone = FORBIDDEN (collision)").
+
+NOT FIXED HERE, deliberately. It is 31 sites across 12 math-bearing .md blocks,
+each needing the render-QA battery and a sidecar refresh, and it is a change to
+the paper's notation register - which AGENTS.md routes through the notation
+content block, not through a chapter edit. Proposed: SU(3)_C and SU(3)_F, added
+to notation-register.md + notation-collisions.md first, then swept. That is an
+owner-visible convention decision, not a mechanical fix.
+
+## WHAT THE COMPLEX-TYPE RESULT CONTRIBUTES TO THIS BEAN
+
+Sym2GateComplexType.lean (this session) proves the mechanism the chapter had
+only asserted, and it bears directly on the flavour/colour split.
+
+color-su3-from-g2.md already says, correctly, that "the 3 and 3-bar are complex
+conjugate (not self-dual)" and that "non-self-duality is what the Sym^2 gate
+consumes". That was prose. It is now a theorem: the parity exclusion
+(dimOfMult_ne_three_of_gate) runs through self-duality, and a complex-type
+irrep whose conjugate is ABSENT passes the gate at any dimension, odd included
+- witnessed at dimension exactly 3.
+
+Consequence for this bean: a 3-dimensional FLAVOUR object is not barred by the
+corpus's own parity invariant, and the property it must have is now named and
+proved - complex type, conjugate absent. That is a genuine constraint on any
+flavour-SU(3) candidate action this bean goes on to build, and it is sharper
+than "must be multi-fibre".
+
+Wired into eightfold-open-problems.md, where the exclusion is stated, so the
+scope travels with the claim rather than sitting only in the Lean.
+
+## STATUS
+
+Near-term (inventory): DONE, and it overturned the recorded gap list.
+Blocker surfaced: the SU(3)_C / SU(3)_F notation collision - needs an owner
+convention decision before the medium-term "flavor-SU(3) candidate action
+without conflating it with the colour module" can even be stated unambiguously.
+Medium and long term: unchanged, open.

@@ -435,7 +435,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2506.10206v2",
       dir: "library/arxiv-2506.10206v2",
-      pdf: "library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf",
+      pdf: "library/arxiv-2506.10206v2/2506.10206v2.pdf",
       stage: "candidates",
       pages: 40,
       sections: 64,
@@ -446,7 +446,7 @@ export const references: Reference[] = [
     author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
     issued: { "date-parts": [[2025]] },
     URL: "https://arxiv.org/abs/2506.10206",
-    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
+    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
   }),
 
   // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
@@ -12038,7 +12038,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-1810.11563v1",
       dir: "library/arxiv-1810.11563v1",
-      pdf: "library/arxiv-1810.11563v1/1810.11563v1 (1).pdf",
+      pdf: "library/arxiv-1810.11563v1/1810.11563v1.pdf",
       stage: "candidates",
       pages: 84,
       sections: 44,
@@ -12361,7 +12361,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2304.12545v1",
       dir: "library/arxiv-2304.12545v1",
-      pdf: "library/arxiv-2304.12545v1/2304.12545v1 (1).pdf",
+      pdf: "library/arxiv-2304.12545v1/2304.12545v1.pdf",
       stage: "candidates",
       pages: 19,
       sections: 7,
@@ -12446,7 +12446,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2402.04839v2",
       dir: "library/arxiv-2402.04839v2",
-      pdf: "library/arxiv-2402.04839v2/2402.04839v2 (1).pdf",
+      pdf: "library/arxiv-2402.04839v2/2402.04839v2.pdf",
       stage: "candidates",
       pages: 28,
       sections: 22,
@@ -12684,7 +12684,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-math-0401068v1",
       dir: "library/arxiv-math-0401068v1",
-      pdf: "library/arxiv-math-0401068v1/0401068v1 (1).pdf",
+      pdf: "library/arxiv-math-0401068v1/0401068v1.pdf",
       stage: "candidates",
       pages: 12,
       sections: 4,
@@ -13195,7 +13195,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-hep-th-9308100v1",
       dir: "library/arxiv-hep-th-9308100v1",
-      pdf: "library/arxiv-hep-th-9308100v1/9308100v1 (1).pdf",
+      pdf: "library/arxiv-hep-th-9308100v1/9308100v1.pdf",
       stage: "candidates",
       pages: 22,
       sections: 14,

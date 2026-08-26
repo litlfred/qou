@@ -5,7 +5,7 @@ section_id: sec-006-8-working-with-cyclic-ordering
 section_title: "Working with cyclic ordering"
 section_number: 8
 pages: 47-51
-source_pdf: On_the_geometry_of_two_state_models_for_the_colore.pdf
+source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---

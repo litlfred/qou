@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:46:48.610229+00:00",
-  "commitSha": "741c3906ec606f8f10f9482fb13f8d04da776613",
+  "computedAt": "2026-08-25T22:52:37.363507+00:00",
+  "commitSha": "e9cf3a336da7139bd6f9e54fd34274511ac84694",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
-  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,20 +27,22 @@
   },
   "environment": {
     "python": "3.11.15",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
-      "computations/audits/q0_anchor_consistency_audit.py"
+      "computations/audits/q0_anchor_consistency_audit.py",
+      "--strict"
     ],
-    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py"
+    "reproduce": "python3 -u computations/audits/q0_anchor_consistency_audit.py --strict"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 971,
+      "Q0_OK": 972,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 49,
@@ -48,7 +50,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1644,
+      "Q0_ANCHOR_MISSING": 1649,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 80,
       "Q0_PARSE_ERROR": 0,
@@ -527,6 +529,10 @@
         },
         {
           "witness": "atom-vhyp-closure-matrix-m.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "atom-word-braid-letter-census.witness.json",
           "detail": ""
         },
         {
@@ -2587,6 +2593,22 @@
         },
         {
           "witness": "me-additive-term-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "meson-braid-conjugacy-floor-search.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "meson-braid-dehornoy-floor.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "meson-braid-floor-conjugacy-bound.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "meson-braid-length-cap.witness.json",
           "detail": ""
         },
         {
@@ -8045,6 +8067,10 @@
         },
         {
           "witness": "threerow-crossing-a-dependence.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "threerow-isospin-parity.witness.json",
           "detail": ""
         },
         {
