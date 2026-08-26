@@ -4,8 +4,8 @@
   "counts": {
     "critical": 19,
     "major": 114,
-    "advisory_not_persisted": 1022,
-    "total": 1155
+    "advisory_not_persisted": 1025,
+    "total": 1158
   },
   "note": "High-recall candidate generator. A CRITICAL is a candidate, not a verdict; the genuine/legit call is an agent call per AGENTS.md 3b-tax. Advisory rows are counted but not stored.",
   "findings": [
