@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T06:49:11Z
+updated_at: 2026-08-26T07:06:34Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -282,3 +282,47 @@ own dual? If yes it is dead, with no Sym^2 decomposition needed.
 
 Still open: no construction, and no demonstration that a non-self-dual object
 EXISTS at groupoid level.
+
+
+## ROUTE B route-class narrowing 2026-08-26 (PR #5819)
+
+Gap (i) is unchanged: the Gunaydin-Gursey decomposition is still a CITATION
+(now properly registered as gunaydin-gursey1973 with the decomposition in its
+note, done 2026-08-25). Nothing here derives it.
+
+What IS now settled is which octonionic route Route B may lean on. There are
+two in the literature and they are not variants:
+
+  stabiliser route   SU(3) subset G_2 = Aut(O) acting ON Im(O) = R + C^3.
+                     Real dimensions balance: 1 + 2*3 = 7.
+  identification     lambda_a <-> e_a, generators identified WITH the units.
+                     8 generators, 7 units. Excluded.
+
+QOU/Eightfold/OctonionicSu3RankObstruction.lean (4 decls, sorry-free,
+lean-direct exit 0, axioms [propext, Classical.choice, Quot.sound]):
+
+  no_faithful_generator_identification   dim 8 -> dim 7 is never injective
+  cartan_not_independent_on_one_unit     two multiples of one unit are
+                                         dependent, so a rank-2 Cartan
+                                         collapses to a line
+  no_injective_of_finrank_lt             the general dimension lemma
+  not_linearIndependent_of_common_line   the general rank lemma
+
+THE OBSERVATION IS NOT MINE. The 2026-08-25 upload triage already recorded both
+defects in prose, on two of the eight papers ('reusing e_3, which is not
+injective and not a Lie-algebra map'; 'lambda_8 prop lambda_3 collapses the
+Cartan to rank 1, destroying A_2'). I re-derived it independently and only found
+that on the corpus-grep. What is new: machine-checked, and stated as a CLASS
+exclusion rather than a defect of two named papers, so a third paper doing the
+same thing is excluded without being read. Scope-(b), invariants named
+(dimension, rank).
+
+Worked instance in docs/audits/2026-08-26-octonionic-su3-two-routes.md: in
+arxiv-1107.1559v1 all four of I_3, V_3, U_3, Y are real multiples of i*e_3 by
+its own eq (31)-(32), while the text on the same page calls them linearly
+independent.
+
+GAP (ii) STILL UNTOUCHED. arxiv-1107.1559v1's TITLE is 'Quaternion-Octonion
+SU(3) Flavor Symmetry' -- exactly gap (ii)'s question -- and it does not answer
+it; its conclusion argues strong interactions. Worth flagging because a future
+agent grepping the question will land on that paper first.
