@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-25T13:00:16Z
-updated_at: 2026-08-26T13:48:21Z
+updated_at: 2026-08-26T13:52:07Z
 parent: qou-utb3
 ---
 
@@ -54,3 +54,30 @@ coset-sum bricks for it are in QOU/Machinery/MarkovCosetLift.lean (PR #5822).
 **W2 note:** bean qou-2017 is marked completed with NO completion evidence in its
 body. Verified against the corpus instead: HeckeTowerBasicConstruction.lean does
 exist and does carry the three classes at :169/:187/:209. Deliverable is real.
+
+
+## W3 second half is BLOCKED, and on a specific missing brick (2026-08-26)
+
+The remaining target is the `MarkovTrace` class field `cyclic : ∀ x y : H, tr (x*y) = tr (y*x)`
+(`MarkovTraceOnHecke.lean:80`) — note it is **unconditional in x,y**.
+
+`cyclic_two_g_of_tower` (PR #5827) gives cyclicity only for words already in the
+shape `(u·g·v)·(p·g·r)` with u,v,p,r in H_n. Getting from there to arbitrary
+x,y needs the **spanning decomposition H_{n+1} = H_n + H_n σ_n H_n**, to reduce a
+general element to that shape. That decomposition **does not exist in the corpus**
+(see the finding appended to qou-2017 — it was a named W2 deliverable, undelivered).
+
+**Deriving `hgwg` does NOT unblock this.** `hgwg` would additionally need the
+Markov property of the conditional expectation, `ε (b · σₙ · c) = z • (b·c)`, which
+is NOT a field of `HeckeConditionalExpectation` (that class has exactly `retract`
+and `bimodule`). Adding it as a new class field would RELOCATE the assumption into
+a named carrier, not discharge it — worth doing for hygiene, but it is not progress
+on the mathematics and should not be reported as such.
+
+Also checked: `MarkovTraceCompatibility`, named in `MarkovTraceOnHecke.lean:16` as
+"axiomatising the Markov properties", **does not exist** — stale docstring. And (M3),
+the Markov reduction, is documented-not-enforced in the `MarkovTrace` class because
+σₙ is absent from its signature.
+
+**Real next brick:** the spanning decomposition, as a §3b class with a
+content-bearing field, then W3's second half becomes reachable.
