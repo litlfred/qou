@@ -33,8 +33,10 @@ can be lifted upstream verbatim.  Companion module:
 
 ## Main statements
 
-* `pivotalOfBraided` — **every braided right-rigid category is pivotal.**  The instance, built from
-  `drinfeldIso` and its naturality.
+* `PivotalCategory` — the class, carrying **both** the pivotor and its monoidality
+  (`pivotor_tensor`).  The instance satisfying it is `QOU.MathlibExt.pivotalOfRibbon`, which lives
+  downstream of the twist; there is deliberately no braided-only instance, and the note further
+  down says why.
 * `rightAdjointMate_congr_dual` — the mate is independent of the choice of dual, up to
   `rightDualIso`.  Mathlib has no naturality lemma for `rightDualIso`.
 * `rightDualIso_hom_unique` / `rightDualIso_hom_trans` — the comparison of two right duals is
@@ -74,16 +76,21 @@ Mathlib is missing, each of which follows from lemmas Mathlib already has:
   itself."*  Proved by evaluating both sides against `ε` and cancelling: the map
   `g ↦ (g ▷ Yᘁ) ≫ ε` is injective because `tensorRightHomEquiv` carries it to `g ≫ (λ_ Y).inv`.
 
-Composing them gives `drinfeldIso_naturality`, and hence `pivotalOfBraided` — **every braided
-right-rigid category is pivotal**, unconditionally and sorry-free.  Since `FGModuleCat K` is
-symmetric and right-rigid, it is now pivotal too, with no linear algebra involved.
+Composing them gives `drinfeldIso_naturality` — the Drinfeld isomorphism is a natural isomorphism
+`𝟭 C ≅ ᘁᘁ` on **every** braided right-rigid category, unconditionally and sorry-free.
+
+*That is naturality only.*  An earlier revision promoted it to an instance
+`pivotalOfBraided : PivotalCategory C` and claimed every braided right-rigid category pivotal; with
+the monoidality field present that instance is unconstructible, because the claim is false.  What
+survives, and is enough for `FGModuleCat K`, is `pivotalOfRibbon`: symmetric ⇒ balanced ⇒ ribbon,
+so the symmetric rigid categories are still pivotal with no linear algebra involved.
 
 ## What is still not proved
 
 Sphericality — that the left and right quantum dimensions agree — is a separate condition and is
 not touched here.  A pivotal structure does not imply it.
 
-## `PivotalCategory` carries NO monoidality field — and `drinfeldIso` could not satisfy one
+## `PivotalCategory` carries the monoidality field — and `drinfeldIso` cannot satisfy it
 
 A pivotal structure in the literature is a **monoidal** natural isomorphism: on top of naturality it
 must satisfy
@@ -93,8 +100,11 @@ pivotor (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom = pivotor X ⊗ₘ pivotor Y
 ```
 
 against the comparison `(X ⊗ Y)ᘁᘁ ≅ Xᘁᘁ ⊗ Yᘁᘁ` (`QOU.MathlibExt.tensorDoubleDualIso`).  The class
-below deliberately omits that field, and **the omission must not be "fixed" without first replacing
-`pivotalOfBraided`**, because `drinfeldIso` does not satisfy it.
+below carries that as `pivotor_tensor`, so `[PivotalCategory C]` now means what the literature
+means and Barrett–Westbury applies to it with no side condition.
+
+*Earlier revisions of this file omitted the field, and said so with a warning not to add it while
+`pivotalOfBraided` existed.  Both are resolved: the field is here and that instance is gone.*
 
 **`drinfeldIso` is natural but NOT monoidal.**  A braided right-rigid category is therefore *not*
 pivotal in the monoidal sense — braiding alone is not enough.  Two independent arguments:
@@ -115,18 +125,19 @@ pivotal in the monoidal sense — braiding alone is not enough.  Two independent
 
 This retracts the scoping of the monoidality step, which had been recorded as "the last hard step"
 of a proof that was expected to go through.  It does not affect anything already proved here:
-`drinfeldIso`, `drinfeldIso_naturality` and `pivotalOfBraided` are statements about naturality only
-and stand unchanged.
+`drinfeldIso` and `drinfeldIso_naturality` are statements about naturality only and stand
+unchanged.  What it did cost was the instance built from them — see the note where
+`pivotalOfBraided` used to be.
 
 ## The corrected statement: ribbon, not merely braided
 
 The monodromy is precisely what a **balancing** cancels.  With `θ` satisfying
 `θ_{X ⊗ Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)` (`QOU.MathlibExt.BalancedCategory.twist_tensor`),
 and using that `θ_X ⊗ θ_Y` commutes with the monodromy by naturality of the braiding, the twisted
-map `θ_X ≫ drinfeldIso X` *is* monoidal — one of `θ` or `θ⁻¹` according to the direction of the
-discrepancy, which the Lean will settle.  So the theorem to aim at is **`pivotalOfRibbon`**, not
-`pivotalOfBraided`; a ribbon category is pivotal, and that is the classical statement (a ribbon
-element `v` makes `uv⁻¹` grouplike).
+map `θ_X ≫ drinfeldIso X` *is* monoidal.  The direction was open when this was written and is now
+settled: it is `θ`, not `θ⁻¹`.  The instance is
+**`QOU.MathlibExt.pivotalOfRibbon`** — a ribbon category is pivotal, which is the classical
+statement (a ribbon element `v` makes `uv⁻¹` grouplike).
 
 The diagrammatic argument above is **proved**, in `QOU.MathlibExt.BraidedTensorDual`:
 `rightDualIso_swap_tensor` states that the two pairings differ by exactly the inverse monodromy,
@@ -195,6 +206,12 @@ presentation. -/
 class PivotalCategory (C : Type*) [Category C] [MonoidalCategory C] [RightRigidCategory C] where
   /-- The pivotor: a natural isomorphism identifying each object with its double dual. -/
   pivotor : 𝟭 C ≅ doubleDualFunctor C
+  /-- **Monoidality**: the pivotor is compatible with `⊗`, measured against the comparison
+  `(X ⊗ Y)ᘁᘁ ≅ Xᘁᘁ ⊗ Yᘁᘁ`.  Without this field the class is strictly weaker than the literature's
+  *pivotal*, and Barrett–Westbury does not apply to it. -/
+  pivotor_tensor : ∀ X Y : C,
+    pivotor.hom.app (X ⊗ Y) ≫ (tensorDoubleDualIso X Y).hom
+      = pivotor.hom.app X ⊗ₘ pivotor.hom.app Y
 
 namespace PivotalCategory
 
@@ -213,6 +230,12 @@ theorem pivotor_naturality {X Y : C} (f : X ⟶ Y) :
     f ≫ (pivotorApp Y).hom = (pivotorApp X).hom ≫ rightAdjointMate (rightAdjointMate f) :=
   (pivotor (C := C)).hom.naturality f
 
+/-- **Monoidality of the pivotor**, object-wise. -/
+theorem pivotorApp_tensor (X Y : C) :
+    (pivotorApp (X ⊗ Y)).hom ≫ (tensorDoubleDualIso X Y).hom
+      = (pivotorApp X).hom ⊗ₘ (pivotorApp Y).hom :=
+  pivotor_tensor X Y
+
 end
 
 /-- **Build a pivotal structure from object-wise data.**  A choice of `X ≅ Xᘁᘁ` for each `X`, plus
@@ -220,9 +243,12 @@ the naturality square, *is* a natural isomorphism `𝟭 C ≅ ᘁᘁ`.  Together
 this says the two presentations carry the same data, so a proof in either style lands. -/
 def ofPointwise (p : ∀ X : C, X ≅ ((X : C)ᘁ : C)ᘁ)
     (hp : ∀ {X Y : C} (f : X ⟶ Y),
-      f ≫ (p Y).hom = (p X).hom ≫ rightAdjointMate (rightAdjointMate f)) :
+      f ≫ (p Y).hom = (p X).hom ≫ rightAdjointMate (rightAdjointMate f))
+    (hm : ∀ X Y : C, (p (X ⊗ Y)).hom ≫ (tensorDoubleDualIso X Y).hom
+      = (p X).hom ⊗ₘ (p Y).hom) :
     PivotalCategory C where
   pivotor := NatIso.ofComponents p (fun f => hp f)
+  pivotor_tensor := hm
 
 end PivotalCategory
 
@@ -308,13 +334,25 @@ theorem drinfeldIso_naturality {X Y : C} (f : X ⟶ Y) :
   exact rightAdjointMate_congr_dual (fᘁ) (swapRightDual Y) inferInstance
     (swapRightDual X) inferInstance
 
-/-- **Every braided right-rigid category is pivotal.**
+/-! ### There is deliberately no `pivotalOfBraided`
 
-The pivotor is the Drinfeld isomorphism.  Unconditional and sorry-free, so the class is inhabited
-across every braided rigid category Mathlib has — `FGModuleCat K` among them, since it is symmetric,
-with no linear algebra involved. -/
-noncomputable instance (priority := 100) pivotalOfBraided : PivotalCategory C :=
-  PivotalCategory.ofPointwise drinfeldIso (fun f => drinfeldIso_naturality f)
+An earlier revision of this file carried an instance `pivotalOfBraided : PivotalCategory C`, with
+the Drinfeld isomorphism as pivotor, claiming *every braided right-rigid category is pivotal*.
+
+**It has been removed, because with the monoidality field it is unconstructible — and it is
+unconstructible because it is false.**  `drinfeldIso` is natural but not monoidal: it misses by
+exactly the inverse monodromy `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹`
+(`QOU.MathlibExt.rightDualIso_swap_tensor`).  Braiding alone does not make a rigid category pivotal
+in the literature's sense.
+
+The replacement is `QOU.MathlibExt.pivotalOfRibbon`, which asks for a balancing and uses
+`θ ≫ drinfeldIso`.  It lives in `QOU.MathlibExt.BraidedTensorDual`, downstream of the twist.  Note
+this costs less than it appears: `Ribbon.lean` makes every symmetric category balanced, so
+`FGModuleCat K` and friends still get a pivotal structure by instance search.
+
+The *fact* underlying the old instance is untouched and still here: `drinfeldIso` together with
+`drinfeldIso_naturality` is a natural isomorphism `𝟭 C ≅ ᘁᘁ` on any braided right-rigid category.
+Only its promotion to a `PivotalCategory` instance was wrong. -/
 
 end BraidedNaturality
 

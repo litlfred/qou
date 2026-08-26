@@ -82,8 +82,9 @@ proof of its conclusion, and the transport identity is worth having in its own r
 sphericality, which input 2 supplies in the symmetric case, is a separate condition that
 the unconditional route says nothing about.
 
-The pivotal *structure* is no longer part of that residual. `QOU.MathlibExt.pivotalOfBraided`
-proves every braided right-rigid category pivotal, sorry-free. What remains is the transport
+The pivotal *structure* is no longer part of that residual. `QOU.MathlibExt.pivotalOfRibbon`
+proves every **ribbon** right-rigid category pivotal, sorry-free — and since a symmetric category
+is balanced, that covers the symmetric case this file cares about. What remains is the transport
 identity itself, which is about the traces rather than about the double dual. This file does **not** close
 `bwse`, and adds no physics. No fit; nothing wired; L2 unchanged.
 
@@ -118,11 +119,20 @@ isomorphism `𝟭 C ≅ ᘁᘁ` — with `PivotalCategory.ofPointwise` and `Pivo
 showing the two presentations carry the same data.  That file also supplies the `rightDualFunctor` /
 `doubleDualFunctor` the functorial statement needs, which Mathlib does not have either.
 
-**The pivotal structure now exists.** `QOU.MathlibExt.pivotalOfBraided` makes **every braided
-right-rigid category pivotal**, unconditionally and sorry-free: the pivotor is `drinfeldIso`, and
-its naturality is `drinfeldIso_naturality`.  So the datum this file's docstring describes as
-"the infra Mathlib lacks" is supplied, and it is supplied for the whole class of categories the
-keystone cares about rather than for one example.
+**The pivotal structure now exists — under a ribbon hypothesis.**
+`QOU.MathlibExt.pivotalOfRibbon` makes every **ribbon** right-rigid category pivotal, sorry-free:
+the pivotor is `θ ≫ drinfeldIso`, its naturality combines `BalancedCategory.twist_naturality` with
+`drinfeldIso_naturality`, and its monoidality is `twist_drinfeld_monoidal_tensorDoubleDualIso`.
+
+*An earlier revision of this paragraph claimed the stronger thing — that `pivotalOfBraided` makes
+**every braided** right-rigid category pivotal, unconditionally.  That is **false** and the
+instance has been removed.  `drinfeldIso` is natural but not monoidal, missing by exactly the
+inverse monodromy (`QOU.MathlibExt.rightDualIso_swap_tensor`); braiding alone does not give a
+pivotal structure in the literature's sense, which is the sense Barrett–Westbury needs.*
+
+In practice the hypothesis costs this file nothing: `Ribbon.lean` makes every symmetric category
+balanced, so the datum is still supplied for the whole class of categories the keystone cares
+about rather than for one example.
 
 That does **not** discharge `hTransport` below.  The transport identity
 `qDimObj (Xᘁ) = leftQDim X` is a statement about the two *traces*; having the pivotor is a
