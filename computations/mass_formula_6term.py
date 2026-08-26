@@ -304,9 +304,9 @@ if __name__ == "__main__":
     Q_cat = t1_n - t1_p
     E_0 = Q_NEUTRON_MEV / abs(Q_cat)
     print(f"[A=1 calibration]")
-    print(f"  |tr_M(p)| @ q_0 = {t1_p:.6e}")
-    print(f"  |tr_M(n)| @ q_0 = {t1_n:.6e}")
-    print(f"  E_0 = Q_β(n)={Q_NEUTRON_MEV:.6f} / |Q_cat| = {E_0:.6f} MeV/cat.unit")
+    print(f"  |tr_M(p)| @ q_0 = {float(t1_p):.6e}")
+    print(f"  |tr_M(n)| @ q_0 = {float(t1_n):.6e}")
+    print(f"  E_0 = Q_β(n)={float(Q_NEUTRON_MEV):.6f} / |Q_cat| = {float(E_0):.6f} MeV/cat.unit")
     print()
 
     # Isotope sweep (skip ⁴He for speed; use light_isotope_sweep results)
@@ -348,10 +348,10 @@ if __name__ == "__main__":
         B_term5 = r["term5_bw_chirality_binding"]
 
         print(f"  Term 2+3 (brane tower)               : B23 = "
-              f"{B_term23:8.4f} MeV  ({t23_status})")
+              f"{float(B_term23):8.4f} MeV  ({t23_status})")
         print(f"  Term 1 only (descended)              : B = "
-              f"{B_term1:8.4f} MeV "
-              f"({(B_term1-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+              f"{float(B_term1):8.4f} MeV "
+              f"({float((B_term1-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         print(f"  T1 + T2+3 + T4 per-vortex            : B = "
               f"{float(B_term1_plus_frob_pv):8.4f} MeV "
               f"({float((B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
@@ -361,10 +361,10 @@ if __name__ == "__main__":
                   f"({float((B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         if B_term5 is not None:
             print(f"  Term 5 only (paper BW+χ)             : B = "
-                  f"{B_term5:8.4f} MeV "
-                  f"({(B_term5-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+                  f"{float(B_term5):8.4f} MeV "
+                  f"({float((B_term5-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         print(f"  B_AME                                : "
-              f"{B_AME[iso]:8.4f} MeV")
+              f"{float(B_AME[iso]):8.4f} MeV")
         print()
 
         err_p3A = (

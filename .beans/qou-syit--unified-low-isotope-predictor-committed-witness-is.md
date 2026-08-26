@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T16:32:15Z
-updated_at: 2026-08-26T17:27:59Z
+updated_at: 2026-08-26T18:00:53Z
 ---
 
 Measured 2026-08-26 while answering "are all witnesses and their dependencies
@@ -135,3 +135,72 @@ this session twice (`\bmarkovZ\b` across five namespaces; `head -8` of a
 `B_pred_MeV(D) = −261780 MeV`. The producer's physics is broken independently
 of its precision — that is the k≥3 tail, not term 4 and not float64. Fixing
 `light_isotope_sweep` would make this witness honest, not correct.
+
+
+## MAIN CHANGED THE ANSWER, 2026-08-26 — the count fell 57 -> 36 without the arithmetic changing
+
+Merged 124 commits of main and re-measured. **My conclusion above is now wrong
+in type and right in substance, and the new state is arguably worse.**
+
+`light_isotope_sweep.tr_M_at_q0` now returns an **`mpf`**. The file is
+**byte-unchanged** — all 8 `float(` sites still there, no commit touched it —
+so this is **import-cone drift**: main's `187aa0242d`
+("chi_sym_alt_closed_form: 36 raw float64 fields -> 0") drained the character
+closed forms, and `total = 0.0; total += y * chi` promotes the whole sum the
+moment `chi` is an mpf.
+
+### What that did to the witness
+
+| | pre-merge | post-merge |
+|---|--:|--:|
+| raw float64 payload fields | 57 (33 LOCAL / 24 INHERITED) | **36** (21 / 15) |
+| long numeric strings | 0 | **60** |
+
+21 fields left the ratchet's count and became 50-digit strings — among them
+`T1_descended`, `E_0_MeV_per_cat` and both `tr_M_*_at_q_0`, i.e. exactly the
+INHERITED ones this bean was about.
+
+### The arithmetic did not improve
+
+Measured on the live objects: `w_lambda types = {'float'}` and
+`chi types = {'float', 'mpf'}`. Both conventions produce a float weight —
+plancherel `w = float(d_q_val**2/nfac)`, wenzl-schur
+`y = float(w["y_lambda_numeric"])`. A float64 multiplicand caps the information
+content of the product at ~53 bits however many digits mpmath then prints. That
+is arithmetic, not an experiment.
+
+**A correction to my own instrument, recorded because I nearly shipped it.** I
+first tested this by running at dps 30/60/90 and checking digit stability. It
+agreed to 31 digits and I read that as "the precision is real". **That test
+cannot detect float64 contamination at all** — a float64 input is bit-identical
+at every `mp.dps`, so a contaminated result is stably *wrong*. Do not use
+dps-stability for this question.
+
+### The corpus caught it, mechanically, and it is RED ON MAIN
+
+`scripts/precision-gates.sh` goes **RED: float64-padding ratchet** — 59 padded
+occurrences, 38 distinct values, 46 NEW-not-baselined. The named offender is
+`computations/chi-sym-alt-closed-form.witness.json`, the witness that same drain
+commit produced:
+
+    assertions[2].computed
+        claims  -1.0558397672668704547760398781974799931049346923828...
+        really  -1.0558397672668705
+
+**Verified as main's, not this branch's:** that witness is byte-identical to
+`origin/main`, this branch does not touch it, and the audit run on a pristine
+`origin/main` checkout reports the same 59 / 46. So the padding gate is red on
+the base branch.
+
+### The generalisable lesson
+
+Draining `raw-float64` by promoting a float to `mpf` **without fixing the
+arithmetic** moves fields from the raw-float64 ratchet into the *padding*
+ratchet. If padding is not also checked, it looks like progress: the headline
+count drops, the values gain 34 meaningless digits, and the ratchet that was
+watching them goes quiet. Here the padding gate caught it — which is the gate
+earning its keep, not a reason to relax it.
+
+**Not fixed here.** `chi_sym_alt_closed_form` is `qou-l790`'s live file, merged
+an hour before this measurement. Fixing it is at that producer (carry the
+assertion values as strings/mpf at their true precision), and it is theirs.

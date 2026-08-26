@@ -352,10 +352,10 @@ def main():
     print(f"  q_0 = {Q_0}")
     print(f"  m_e = {M_E_MEV} MeV")
     print(f"  Q_β(n) = {Q_NEUTRON_MEV} MeV (CODATA, calibration input)")
-    print(f"  tr_M(p) at q_0 = {tr_p:.6f}")
-    print(f"  tr_M(n) at q_0 = {tr_n:.6f}")
-    print(f"  Q_cat = {tr_n - tr_p:.6f}")
-    print(f"  E_0 = Q_β / |Q_cat| = {E_0:.6f} MeV/cat-unit")
+    print(f"  tr_M(p) at q_0 = {float(tr_p):.6f}")
+    print(f"  tr_M(n) at q_0 = {float(tr_n):.6f}")
+    print(f"  Q_cat = {float(tr_n - tr_p):.6f}")
+    print(f"  E_0 = Q_β / |Q_cat| = {float(E_0):.6f} MeV/cat-unit")
     print()
 
     isotopes = [
