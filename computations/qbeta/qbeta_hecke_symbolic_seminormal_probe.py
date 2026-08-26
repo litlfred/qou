@@ -62,6 +62,10 @@ CHECKS
      mpmath 50 dps -- so the port is of the corpus's convention.
   5. chi^lambda(T_w) is NOT a class function on braid words: exhibited on
      w = s1 s2 s1 in H_3, which is a transposition but of length 3.
+  6. The entry point `chi_lambda_braid(precision="symbolic_q")` RETURNS this,
+     rather than raising -- agreeing with the direct call, accepting the typed
+     crossing-word form, and refusing both a stray q_value and a mixed-arity
+     word instead of guessing.
 
 Ref: computations/hecke/hecke_characters.py (build_seminormal_matrices_mp)
 Ref: library/arxiv-2504.18825v2/ (Jing-Liu, cyclotomic Murnaghan-Nakayama)
@@ -85,84 +89,18 @@ from qbeta_hecke_mn_character_engine_probe import (  # noqa: E402
     mn_char, partitions_of, q, h,
 )
 
+# The construction this probe validates now LIVES IN THE LIBRARY, at
+# `computations/hecke/hecke_characters_symbolic.py`, where
+# `chi_lambda_braid(precision="symbolic_q")` dispatches to it. It was
+# originally defined in this file; keeping a second copy here would let the
+# two drift and would mean this probe validated something the entry point no
+# longer runs. So it is imported, and `hecke_characters_symbolic.q` is
+# asserted below to be the same symbol this probe builds its comparisons in.
+from hecke_characters_symbolic import (  # noqa: E402
+    seminormal, q as _lib_q, h as _lib_h,
+)
+
 Partition = tuple[int, ...]
-
-
-# --------------------------------------------------------- standard tableaux
-
-@lru_cache(maxsize=None)
-def syts_and_contents(shape: Partition):
-    """Standard Young tableaux of `shape`, as maps entry -> cell, with contents.
-
-    Mirrors `hecke_characters.standard_young_tableaux`'s data shape: each SYT is
-    a dict {entry: cell}, and `contents[cell] = col - row`.
-    """
-    cells = [(i, j) for i, row in enumerate(shape) for j in range(row)]
-    contents = {(i, j): j - i for (i, j) in cells}
-    n = sum(shape)
-
-    out: list[dict[int, tuple[int, int]]] = []
-
-    def grow(k: int, used: set, rowlen: list[int], acc: dict):
-        if k > n:
-            out.append(dict(acc))
-            return
-        for i in range(len(shape)):
-            j = rowlen[i]
-            if j >= shape[i]:
-                continue
-            if i > 0 and rowlen[i - 1] <= j:
-                continue          # cell above must already be filled
-            rowlen[i] += 1
-            acc[k] = (i, j)
-            grow(k + 1, used, rowlen, acc)
-            del acc[k]
-            rowlen[i] -= 1
-
-    grow(1, set(), [0] * len(shape), {})
-    return tuple(out), contents
-
-
-# ---------------------------------------------------- symbolic seminormal rep
-
-@lru_cache(maxsize=None)
-def seminormal(shape: Partition) -> tuple[sp.Matrix, ...]:
-    """sigma_1..sigma_{n-1} in the seminormal basis, exact over Q(q)."""
-    syts, contents = syts_and_contents(shape)
-    dim = len(syts)
-    index = {tuple(sorted(t.items())): i for i, t in enumerate(syts)}
-    n = sum(shape)
-    mats = []
-
-    for k in range(1, n):
-        M = sp.zeros(dim, dim)
-        done: set[int] = set()
-        for i in range(dim):
-            if i in done:
-                continue
-            cell_k, cell_k1 = syts[i][k], syts[i][k + 1]
-            rho = contents[cell_k1] - contents[cell_k]
-            a = sp.simplify(h / (1 - q ** (-2 * rho)))
-            a_prime = sp.simplify(h / (1 - q ** (2 * rho)))
-
-            swapped = dict(syts[i])
-            swapped[k], swapped[k + 1] = cell_k1, cell_k
-            j = index.get(tuple(sorted(swapped.items())))
-            if j == i:
-                j = None
-
-            if j is None:
-                M[i, i] = a
-                done.add(i)
-            else:
-                # Similar-but-rational form; see the module docstring.
-                M[i, i] = a
-                M[j, j] = a_prime
-                M[i, j] = sp.simplify(a * a_prime + 1)
-                M[j, i] = sp.Integer(1)
-                done.update((i, j))
-        mats.append(sp.simplify(M))
-    return tuple(mats)
 
 
 def word_matrix(shape: Partition, word) -> sp.Matrix:
@@ -292,6 +230,49 @@ def main() -> int:
           f"chi^(2,1)(s1 s2 s1) = {long_val}, chi^(2,1)(s1) = {short_val}")
     print()
 
+    # ---- 6: the library entry point actually serves this ------------------
+    print("CHECK 6 — chi_lambda_braid(precision='symbolic_q') returns, not raises")
+    check("library_symbol_is_this_probes_symbol",
+          _lib_q == q and sp.simplify(_lib_h - h) == 0,
+          "hecke_characters_symbolic.q is the symbol the checks above use")
+    try:
+        from hecke_characters import chi_lambda_braid
+        w = [(1, 1), (1, 2), (1, 1)]
+        via_api, tag = chi_lambda_braid((2, 1), w, precision="symbolic_q",
+                                        return_precision=True)
+        direct = chi_word((2, 1), w)
+        check("entry_point_agrees_with_direct_call",
+              sp.simplify(via_api - direct) == 0 and tag == "symbolic_q",
+              f"chi^(2,1)(s1 s2 s1) = {sp.simplify(via_api)}, tag = {tag}")
+
+        # The typed [(c, d, gen0)] form of chi_all_lambda, on the symbolic path.
+        typed = chi_lambda_braid((3,), [(1, 0, 0), (1, 0, 1)],
+                                 precision="symbolic_q")
+        check("entry_point_accepts_typed_crossing_words",
+              sp.simplify(typed - q ** 2) == 0,
+              f"chi^(3)(sigma_0 sigma_1) = {sp.simplify(typed)}, the index rep at length 2")
+
+        # A q_value alongside symbolic_q must be refused, not ignored: silently
+        # dropping it is the class of defect this repo keeps recording.
+        try:
+            chi_lambda_braid((2,), [(1, 1)], q_value=1.11, precision="symbolic_q")
+            check("entry_point_refuses_q_value_with_symbolic", False,
+                  "q_value was accepted and silently ignored")
+        except ValueError:
+            check("entry_point_refuses_q_value_with_symbolic", True)
+
+        # Mixed word arities must raise rather than be guessed at.
+        try:
+            chi_lambda_braid((2,), [(1, 1), (1, 0, 0)], precision="symbolic_q")
+            check("entry_point_rejects_mixed_word_arity", False,
+                  "a mixed-arity word was accepted")
+        except ValueError:
+            check("entry_point_rejects_mixed_word_arity", True)
+    except Exception as exc:
+        check("entry_point_agrees_with_direct_call", False,
+              f"{exc.__class__.__name__}: {exc}")
+    print()
+
     ok = all(r[1] for r in RESULTS)
     print(f"{sum(1 for r in RESULTS if r[1])}/{len(RESULTS)} checks passed")
 
@@ -303,7 +284,7 @@ def main() -> int:
             "(the deferred 'F3' branch of hecke_characters.chi_lambda_braid), "
             "cross-checked symbolically against the Murnaghan-Nakayama engine."
         )
-        wb.add_data("closes", "hecke_characters.chi_lambda_braid precision='symbolic_q' (F3), symbolic half")
+        wb.add_data("closes", "hecke_characters.chi_lambda_braid precision='symbolic_q' (F3) — now WIRED, not deferred")
         wb.add_data("basis_note",
                     "off-diagonal pair (b,b) replaced by the similar rational "
                     "(a a' + 1, 1); characters identical, arithmetic exact")
