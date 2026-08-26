@@ -1,0 +1,167 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0203003v2",
+ "source": {
+  "file": "0203003v2.pdf",
+  "sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
+  "bytes": 187029,
+  "pages": 13,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0203003",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "24 Apr 2002"
+  },
+  "doi": null,
+  "title": "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in the recent years was the discovery",
+  "authors_raw": null,
+  "title_lines": [
+   "On the quantum Kazhdan-Lusztig functor",
+   "Pavel I. Etingof Adriano A. Moura",
+   "etingof@math.mit.edu adrianoam@ime.unicamp.br",
+   "Introduction",
+   "One of the most exciting developments in representation the ory in the recent years was the discovery"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181114011333-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0203003v2  [math.QA]  24 Apr 2002"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Exchange Representations",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Gauge Transformations",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Evaluation Representations",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
+   "page": 10,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5176,
+   "n_words": 817
+  },
+  {
+   "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
+   "number": "1",
+   "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3596,
+   "n_words": 725
+  },
+  {
+   "id": "sec-002-2-exchange-representations",
+   "number": "2",
+   "title": "Exchange Representations",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 11136,
+   "n_words": 2278
+  },
+  {
+   "id": "sec-003-3-gauge-transformations",
+   "number": "3",
+   "title": "Gauge Transformations",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4550,
+   "n_words": 921
+  },
+  {
+   "id": "sec-004-4-evaluation-representations",
+   "number": "4",
+   "title": "Evaluation Representations",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2670,
+   "n_words": 447
+  },
+  {
+   "id": "sec-005-5-comparison-of-f-with-the-classical-kazhdan-lus",
+   "number": "5",
+   "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4968,
+   "n_words": 952
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3053,
+   "n_words": 434
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 35149
+ }
+}
