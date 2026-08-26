@@ -3,8 +3,8 @@
   "producer": "scripts/lean-borrowed-name-audit.py",
   "counts": {
     "critical": 19,
-    "major": 197,
-    "advisory_not_persisted": 939,
+    "major": 115,
+    "advisory_not_persisted": 1021,
     "total": 1155
   },
   "note": "High-recall candidate generator. A CRITICAL is a candidate, not a verdict; the genuine/legit call is an agent call per AGENTS.md 3b-tax. Advisory rows are counted but not stored.",
@@ -52,6 +52,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Frobenius"
@@ -72,6 +74,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -93,6 +97,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Plancherel"
@@ -114,6 +120,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Seifert"
@@ -136,6 +144,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "DT",
@@ -158,6 +168,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Wedderburn"
@@ -178,6 +190,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Markov",
@@ -200,6 +214,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov",
@@ -221,6 +237,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Frobenius",
@@ -242,6 +260,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Frobenius",
@@ -263,6 +283,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Frobenius",
@@ -284,6 +306,8 @@
       "severity": "CRITICAL",
       "overclaim": true,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Casimir",
@@ -398,26 +422,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
-      "line": 170,
-      "decl": "q_commutation_grade_one_half",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 3,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "WoronowiczLeftCalculus"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem q_commutation_grade_one_half {R : Type*} [CommRing R] (q : R) {A : Type*} [Ring A] [Algebra R A] [calc_inst : WoronowiczLeftCalculus R q A] (x : A) (h_two_deg : 2 * calc_inst.deg x = 1) (\u03c9 : calc_inst.Omega) : calc_inst.left_act x \u03c9 = q \u2022 calc_inst.right_act \u03c9 x"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean",
       "line": 55,
       "decl": "bring_trefoil_cinquefoil_channel",
@@ -425,6 +429,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Seifert"
@@ -439,50 +445,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean",
-      "line": 129,
-      "decl": "schur_weyl_n3",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Schur",
-        "Weyl"
-      ],
-      "local_defs_in_statement": [
-        "DescartesData",
-        "DescartesSchurWeyl"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem schur_weyl_n3 (D : DescartesData) (sw : DescartesSchurWeyl D) (hn : sw.n = 3) : sw.numSummands = 2"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/brings-surface/generation-completeness.lean",
-      "line": 53,
-      "decl": "generation_completeness",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Seifert"
-      ],
-      "local_defs_in_statement": [
-        "KnotType",
-        "isEmbeddable",
-        "isReachable"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem generation_completeness (K : KnotType) (h_embed : isEmbeddable K) : isReachable K"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean",
       "line": 95,
       "decl": "ord_u_zero_trM_eq",
@@ -490,6 +452,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hoefsmit",
@@ -511,6 +475,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Seifert"
@@ -531,6 +497,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Hecke"
@@ -551,6 +519,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -571,6 +541,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "KL"
@@ -592,6 +564,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Wedderburn"
@@ -614,6 +588,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Faddeev"
@@ -635,6 +611,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Galois"
@@ -657,6 +635,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "KL"
@@ -678,6 +658,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -691,27 +673,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerIsospinBlind.lean",
-      "line": 81,
-      "decl": "t2_isobar_invariant",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Markov"
-      ],
-      "local_defs_in_statement": [
-        "MarkovTowerT2",
-        "value"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem t2_isobar_invariant (M M' : MarkovTowerT2 n R) (hz : M.z = M'.z) : M.value = M'.value"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean",
       "line": 82,
       "decl": "ord_u_zero_trM_eq",
@@ -719,6 +680,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hoefsmit",
@@ -740,6 +703,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -760,6 +725,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -780,6 +747,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hoefsmit",
@@ -803,6 +772,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Jones"
@@ -823,6 +794,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -843,6 +816,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -863,6 +838,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Markov"
@@ -878,52 +855,14 @@
     {
       "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
-      "line": 67,
-      "decl": "markovParamCoeff_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Markov"
-      ],
-      "local_defs_in_statement": [
-        "markovParamCoeff"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem markovParamCoeff_zero : markovParamCoeff 0 = 1 / 2"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
-      "line": 69,
-      "decl": "markovParamCoeff_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Markov"
-      ],
-      "local_defs_in_statement": [
-        "markovParamCoeff"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem markovParamCoeff_one : markovParamCoeff 1 = 0"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean",
       "line": 73,
       "decl": "markovParamCoeff_two",
       "kind": "theorem",
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -944,6 +883,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -964,6 +905,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -984,6 +927,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Rogers"
@@ -1004,6 +949,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Rogers"
@@ -1025,6 +972,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Seifert"
@@ -1045,6 +994,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Plancherel",
@@ -1059,26 +1010,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/nonabelian_stokes_surface_boundary_stokes.lean",
-      "line": 183,
-      "decl": "surfaceOrderedExp_append_letter",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Markov"
-      ],
-      "local_defs_in_statement": [
-        "YekutieliSurfaceToBoundary"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem surfaceOrderedExp_append_letter {G : Type*} [Group G] [Y : YekutieliSurfaceToBoundary G] (word : List G) (g : G) : Y.surfaceOrderedExp (word ++ [g]) = Y.surfaceOrderedExp word * g"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean",
       "line": 46,
       "decl": "qIntSym_zero",
@@ -1086,6 +1017,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -1100,32 +1033,14 @@
     {
       "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
-      "line": 54,
-      "decl": "heckeAB_nil",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeAB"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeAB_nil (h : R) : heckeAB h ([] : List R) = (0, 1)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
       "line": 56,
       "decl": "heckeAB_cons",
       "kind": "theorem",
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -1139,86 +1054,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
-      "line": 61,
-      "decl": "heckeAB_cons_fst",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeAB"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeAB_cons_fst (h d : R) (ds : List R) : (heckeAB h (d :: ds)).1 = (heckeAB h ds).1 * (h + d) + (heckeAB h ds).2"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean",
-      "line": 64,
-      "decl": "heckeAB_cons_snd",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeAB"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeAB_cons_snd (h d : R) (ds : List R) : (heckeAB h (d :: ds)).2 = (heckeAB h ds).1 + (heckeAB h ds).2 * d"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
-      "line": 93,
-      "decl": "alexanderTorus2_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Alexander"
-      ],
-      "local_defs_in_statement": [
-        "alexanderTorus2"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem alexanderTorus2_zero (q : R) : alexanderTorus2 q 0 = 0"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
-      "line": 96,
-      "decl": "alexanderTorus2_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Alexander"
-      ],
-      "local_defs_in_statement": [
-        "alexanderTorus2"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem alexanderTorus2_one (q : R) : alexanderTorus2 q 1 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean",
       "line": 99,
       "decl": "alexanderTorus2_succ",
@@ -1226,6 +1061,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Alexander"
@@ -1246,6 +1083,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Alexander"
@@ -1267,6 +1106,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Schur",
@@ -1288,6 +1129,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Schur",
@@ -1309,6 +1152,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov",
@@ -1330,6 +1175,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Riemann"
@@ -1343,66 +1190,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
-      "line": 56,
-      "decl": "seifertRank_two_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Seifert"
-      ],
-      "local_defs_in_statement": [
-        "seifertRank"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem seifertRank_two_three : seifertRank 2 3 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
-      "line": 57,
-      "decl": "seifertRank_two_nine",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Seifert"
-      ],
-      "local_defs_in_statement": [
-        "seifertRank"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem seifertRank_two_nine : seifertRank 2 9 = 4"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/BringsSurface/EulerCharacteristicSix.lean",
-      "line": 58,
-      "decl": "seifertRank_two_eleven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Seifert"
-      ],
-      "local_defs_in_statement": [
-        "seifertRank"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem seifertRank_two_eleven : seifertRank 2 11 = 5"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/Eightfold/DecupletEqualSpacing.lean",
       "line": 208,
       "decl": "decuplet_casimir_is_affine_in_hypercharge",
@@ -1410,6 +1197,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Casimir"
@@ -1430,6 +1219,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Weyl"
@@ -1445,32 +1236,14 @@
     {
       "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean",
-      "line": 397,
-      "decl": "bernstein_bound_linear",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 2,
-      "borrowed": [
-        "Bernstein"
-      ],
-      "local_defs_in_statement": [
-        "LeviDegeneracyConjecture"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem bernstein_bound_linear (conj : LeviDegeneracyConjecture) : conj.bernstein_bound = (conj.\u03ba : \u211d)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean",
       "line": 451,
       "decl": "quantum_peter_weyl_completeness",
       "kind": "theorem",
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Peter-Weyl",
@@ -1492,6 +1265,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -1512,6 +1287,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Wedderburn"
@@ -1534,6 +1311,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -1555,6 +1334,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -1575,6 +1356,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1596,6 +1379,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1617,6 +1402,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1640,6 +1427,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1662,6 +1451,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1684,6 +1475,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -1704,6 +1497,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hoefsmit"
@@ -1727,6 +1522,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Habiro"
@@ -1750,6 +1547,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Milnor"
@@ -1771,6 +1570,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Hecke"
@@ -1791,6 +1592,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Markov"
@@ -1811,6 +1614,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -1831,6 +1636,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Wedderburn"
@@ -1852,6 +1659,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Schur"
@@ -1873,6 +1682,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Wedderburn"
@@ -1893,6 +1704,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -1913,6 +1726,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -1936,6 +1751,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -1959,6 +1776,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -1981,6 +1800,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2001,6 +1822,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2021,6 +1844,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2041,6 +1866,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT",
@@ -2064,6 +1891,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2084,6 +1913,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Jones"
@@ -2104,6 +1935,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2124,6 +1957,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2144,6 +1979,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2165,6 +2002,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2187,6 +2026,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2208,6 +2049,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Galois"
@@ -2229,6 +2072,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Markov"
@@ -2250,6 +2095,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2270,6 +2117,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -2291,6 +2140,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2313,6 +2164,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2335,6 +2188,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT",
@@ -2358,6 +2213,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2378,6 +2235,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2398,6 +2257,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2418,6 +2279,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2439,6 +2302,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2460,6 +2325,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "DT"
@@ -2480,6 +2347,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Seifert"
@@ -2495,106 +2364,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean",
-      "line": 226,
-      "decl": "langlands_eigenvalue_swap",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Langlands"
-      ],
-      "local_defs_in_statement": [
-        "QLanglandsDual"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem langlands_eigenvalue_swap {M : Type*} (ld : QLanglandsDual M) (p : M) : -(ld.gaugeGroup.field p)\u207b\u00b9 = -(ld.dualSubstrate.field p)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean",
-      "line": 92,
-      "decl": "markov_add",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 2,
-      "borrowed": [
-        "Markov"
-      ],
-      "local_defs_in_statement": [
-        "HeckeWedderburnData"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "theorem markov_add (D : HeckeWedderburnData K Part H) (a b : H) : D.markov (a + b) = D.markov a + D.markov b"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
-      "line": 57,
-      "decl": "heckeDim3_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeDim3"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeDim3_zero : heckeDim3 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
-      "line": 58,
-      "decl": "heckeDim3_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeDim3"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeDim3_one : heckeDim3 1 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeWedderburnData3.lean",
-      "line": 59,
-      "decl": "heckeDim3_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeDim3"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeDim3_two : heckeDim3 2 = 2"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean",
       "line": 104,
       "decl": "heckeStep_eq_transferMatrix_fst",
@@ -2602,6 +2371,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Hecke"
@@ -2622,6 +2393,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Hecke"
@@ -2642,6 +2415,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -2663,6 +2438,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -2684,6 +2461,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -2704,6 +2483,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -2724,6 +2505,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -2744,6 +2527,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Bloch",
@@ -2765,6 +2550,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Plancherel"
@@ -2788,6 +2575,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Kashiwara"
@@ -2809,6 +2598,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Kashiwara"
@@ -2830,6 +2621,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones",
@@ -2853,6 +2646,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Kashiwara"
@@ -2874,6 +2669,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 2,
       "borrowed": [
         "Wedderburn"
@@ -2895,6 +2692,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Wedderburn"
@@ -2909,132 +2708,14 @@
     {
       "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 210,
-      "decl": "heckeH2DimQ_eq_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH2DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH2DimQ_eq_one (q : \u211d) (i : Fin 2) : heckeH2DimQ q i = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 261,
-      "decl": "heckeH4DimQ_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH4DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH4DimQ_zero (q : \u211d) : heckeH4DimQ q 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 262,
-      "decl": "heckeH4DimQ_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH4DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH4DimQ_one (q : \u211d) : heckeH4DimQ q 1 = q ^ 2 + 1 + (q ^ 2)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 264,
-      "decl": "heckeH4DimQ_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH4DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH4DimQ_two (q : \u211d) : heckeH4DimQ q 2 = q ^ 2 + (q ^ 2)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 266,
-      "decl": "heckeH4DimQ_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH4DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH4DimQ_three (q : \u211d) : heckeH4DimQ q 3 = q ^ 2 + 1 + (q ^ 2)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 268,
-      "decl": "heckeH4DimQ_four",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH4DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH4DimQ_four (q : \u211d) : heckeH4DimQ q 4 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
       "line": 284,
       "decl": "hecke_n4_frobenius_codim",
       "kind": "theorem",
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Frobenius",
@@ -3049,1106 +2730,6 @@
     },
     {
       "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 322,
-      "decl": "heckeH5DimQ_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_zero (q : \u211d) : heckeH5DimQ q 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 323,
-      "decl": "heckeH5DimQ_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_one (q : \u211d) : heckeH5DimQ q 1 = q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 325,
-      "decl": "heckeH5DimQ_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_two (q : \u211d) : heckeH5DimQ q 2 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 327,
-      "decl": "heckeH5DimQ_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_three (q : \u211d) : heckeH5DimQ q 3 = (q ^ 2 + (q ^ 2)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 329,
-      "decl": "heckeH5DimQ_four",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_four (q : \u211d) : heckeH5DimQ q 4 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 331,
-      "decl": "heckeH5DimQ_five",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_five (q : \u211d) : heckeH5DimQ q 5 = q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 333,
-      "decl": "heckeH5DimQ_six",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH5DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH5DimQ_six (q : \u211d) : heckeH5DimQ q 6 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 404,
-      "decl": "heckeH6DimQ_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_zero (q : \u211d) : heckeH6DimQ q 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 405,
-      "decl": "heckeH6DimQ_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_one (q : \u211d) : heckeH6DimQ q 1 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 407,
-      "decl": "heckeH6DimQ_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_two (q : \u211d) : heckeH6DimQ q 2 = (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 409,
-      "decl": "heckeH6DimQ_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_three (q : \u211d) : heckeH6DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 411,
-      "decl": "heckeH6DimQ_four",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_four (q : \u211d) : heckeH6DimQ q 4 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 413,
-      "decl": "heckeH6DimQ_five",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_five (q : \u211d) : heckeH6DimQ q 5 = (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 415,
-      "decl": "heckeH6DimQ_six",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_six (q : \u211d) : heckeH6DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 417,
-      "decl": "heckeH6DimQ_seven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_seven (q : \u211d) : heckeH6DimQ q 7 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 419,
-      "decl": "heckeH6DimQ_eight",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_eight (q : \u211d) : heckeH6DimQ q 8 = (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 421,
-      "decl": "heckeH6DimQ_nine",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_nine (q : \u211d) : heckeH6DimQ q 9 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 423,
-      "decl": "heckeH6DimQ_ten",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH6DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH6DimQ_ten (q : \u211d) : heckeH6DimQ q 10 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 525,
-      "decl": "heckeH7DimQ_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_zero (q : \u211d) : heckeH7DimQ q 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 526,
-      "decl": "heckeH7DimQ_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_one (q : \u211d) : heckeH7DimQ q 1 = q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 528,
-      "decl": "heckeH7DimQ_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_two (q : \u211d) : heckeH7DimQ q 2 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 530,
-      "decl": "heckeH7DimQ_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_three (q : \u211d) : heckeH7DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 532,
-      "decl": "heckeH7DimQ_four",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_four (q : \u211d) : heckeH7DimQ q 4 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 534,
-      "decl": "heckeH7DimQ_five",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_five (q : \u211d) : heckeH7DimQ q 5 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 536,
-      "decl": "heckeH7DimQ_six",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_six (q : \u211d) : heckeH7DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 538,
-      "decl": "heckeH7DimQ_seven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_seven (q : \u211d) : heckeH7DimQ q 7 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 540,
-      "decl": "heckeH7DimQ_eight",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_eight (q : \u211d) : heckeH7DimQ q 8 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 542,
-      "decl": "heckeH7DimQ_nine",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_nine (q : \u211d) : heckeH7DimQ q 9 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 544,
-      "decl": "heckeH7DimQ_ten",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_ten (q : \u211d) : heckeH7DimQ q 10 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 546,
-      "decl": "heckeH7DimQ_eleven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_eleven (q : \u211d) : heckeH7DimQ q 11 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 548,
-      "decl": "heckeH7DimQ_twelve",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_twelve (q : \u211d) : heckeH7DimQ q 12 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 550,
-      "decl": "heckeH7DimQ_thirteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_thirteen (q : \u211d) : heckeH7DimQ q 13 = q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 552,
-      "decl": "heckeH7DimQ_fourteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH7DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH7DimQ_fourteen (q : \u211d) : heckeH7DimQ q 14 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 691,
-      "decl": "heckeH8DimQ_zero",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_zero (q : \u211d) : heckeH8DimQ q 0 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 693,
-      "decl": "heckeH8DimQ_one",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_one (q : \u211d) : heckeH8DimQ q 1 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 695,
-      "decl": "heckeH8DimQ_two",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_two (q : \u211d) : heckeH8DimQ q 2 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 697,
-      "decl": "heckeH8DimQ_three",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_three (q : \u211d) : heckeH8DimQ q 3 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 699,
-      "decl": "heckeH8DimQ_four",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_four (q : \u211d) : heckeH8DimQ q 4 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 701,
-      "decl": "heckeH8DimQ_five",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_five (q : \u211d) : heckeH8DimQ q 5 = (q ^ 7 + q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9 + (q ^ 7)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 703,
-      "decl": "heckeH8DimQ_six",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_six (q : \u211d) : heckeH8DimQ q 6 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 705,
-      "decl": "heckeH8DimQ_seven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_seven (q : \u211d) : heckeH8DimQ q 7 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 707,
-      "decl": "heckeH8DimQ_eight",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_eight (q : \u211d) : heckeH8DimQ q 8 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 709,
-      "decl": "heckeH8DimQ_nine",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_nine (q : \u211d) : heckeH8DimQ q 9 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 711,
-      "decl": "heckeH8DimQ_ten",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_ten (q : \u211d) : heckeH8DimQ q 10 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 2 + 1 + (q ^ 2)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 713,
-      "decl": "heckeH8DimQ_eleven",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_eleven (q : \u211d) : heckeH8DimQ q 11 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 715,
-      "decl": "heckeH8DimQ_twelve",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_twelve (q : \u211d) : heckeH8DimQ q 12 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 2 + (q ^ 2)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 717,
-      "decl": "heckeH8DimQ_thirteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_thirteen (q : \u211d) : heckeH8DimQ q 13 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 719,
-      "decl": "heckeH8DimQ_fourteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_fourteen (q : \u211d) : heckeH8DimQ q 14 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 721,
-      "decl": "heckeH8DimQ_fifteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_fifteen (q : \u211d) : heckeH8DimQ q 15 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9) * (q + q\u207b\u00b9)\u207b\u00b9"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 723,
-      "decl": "heckeH8DimQ_sixteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_sixteen (q : \u211d) : heckeH8DimQ q 16 = (q ^ 7 + q ^ 5 + q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9 + (q ^ 5)\u207b\u00b9 + (q ^ 7)\u207b\u00b9) * (q ^ 3 + q + q\u207b\u00b9 + (q ^ 3)\u207b\u00b9) * (q ^ 3 + (q ^ 3)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 725,
-      "decl": "heckeH8DimQ_seventeen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_seventeen (q : \u211d) : heckeH8DimQ q 17 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 727,
-      "decl": "heckeH8DimQ_eighteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_eighteen (q : \u211d) : heckeH8DimQ q 18 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9) * (q ^ 4 + 1 + (q ^ 4)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 729,
-      "decl": "heckeH8DimQ_nineteen",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_nineteen (q : \u211d) : heckeH8DimQ q 19 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9) * (q ^ 6 + q ^ 2 + (q ^ 2)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 731,
-      "decl": "heckeH8DimQ_twenty",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_twenty (q : \u211d) : heckeH8DimQ q 20 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)\u207b\u00b9 + (q ^ 4)\u207b\u00b9 + (q ^ 6)\u207b\u00b9)"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
-      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
-      "line": 733,
-      "decl": "heckeH8DimQ_twentyone",
-      "kind": "theorem",
-      "severity": "major",
-      "overclaim": false,
-      "cheap_proof": true,
-      "proof_steps": 1,
-      "borrowed": [
-        "Hecke"
-      ],
-      "local_defs_in_statement": [
-        "heckeH8DimQ"
-      ],
-      "external_lemmas_in_proof": [],
-      "disclaimed": false,
-      "statement": "@[simp] theorem heckeH8DimQ_twentyone (q : \u211d) : heckeH8DimQ q 21 = 1"
-    },
-    {
-      "kind_of_finding": "borrowed-name",
       "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
       "line": 74,
       "decl": "habiro_terminates",
@@ -4156,6 +2737,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Habiro",
@@ -4177,6 +2760,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Casimir",
@@ -4199,6 +2784,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Casimir",
@@ -4221,6 +2808,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Casimir",
@@ -4243,6 +2832,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Casimir",
@@ -4265,6 +2856,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -4285,6 +2878,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"
@@ -4305,6 +2900,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 3,
       "borrowed": [
         "Wedderburn"
@@ -4326,6 +2923,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Frobenius"
@@ -4348,6 +2947,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Jones"
@@ -4368,6 +2969,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Alexander"
@@ -4388,6 +2991,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Chebyshev"
@@ -4408,6 +3013,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Chebyshev"
@@ -4428,6 +3035,8 @@
       "severity": "major",
       "overclaim": false,
       "cheap_proof": true,
+      "simp_unfold": false,
+      "discharged_via_hypothesis": false,
       "proof_steps": 1,
       "borrowed": [
         "Hecke"

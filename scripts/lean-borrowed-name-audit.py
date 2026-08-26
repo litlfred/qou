@@ -400,12 +400,32 @@ def audit(base: str, roots: list[str]):
                                 if i in index and i not in per_file[p])
             disclaimed = bool(DISCLAIM.search(doc))
             overclaim = bool(OVERCLAIM.search(doc))
+
+            # EXCLUSION 1 -- a `@[simp]` lemma unfolding a local definition.
+            # `@[simp] theorem heckeH4DimQ_one (q : R) : heckeH4DimQ q 1 =
+            #  q^2 + 1 + (q^2)inv` is a definitional restatement BY DESIGN:
+            # that is what a simp lemma for a table-valued function is for.
+            # Measured: 62 of the 197 `major` -- 31% -- were these, all in one
+            # file, which is the per-item-counting trap AGENTS.md records for
+            # the witness queue (one fact counted 119 times).
+            simp_unfold = bool(re.match(r"^\s*@\[[^\]]*\bsimp\b", stmt)) and bool(local)
+
+            # EXCLUSION 2 -- the proof discharges through a FIELD of a binder
+            # (`tau.commutator`, `C.ruleLinear`, `h.foo`).  That is a genuine
+            # conditional derivation, not a definitional collapse.  Ported from
+            # the sibling detector (bean `qou-k9yt`), which excludes the same
+            # shape and cites it as the fix for its one known false positive.
+            binders = binder_names(stmt)
+            via_hyp = any(re.search(r"(?<![\w.])" + re.escape(b) + r"\.\w", proof)
+                          for b in binders)
             steps = [t.strip() for t in re.split(r"[;\n<;>]|\bthen\b", proof)
                      if t.strip() and t.strip() not in ("by",)]
             steps = [re.sub(r"^by\s+", "", t) for t in steps]
             cheap = bool(steps) and all(CHEAP_TACTIC.match(t) for t in steps) \
                 and len(steps) <= 4 and not ext_lemmas
-            if overclaim and cheap and not disclaimed:
+            if simp_unfold or via_hyp:
+                sev = "advisory"
+            elif overclaim and cheap and not disclaimed:
                 sev = "CRITICAL"
             elif cheap and not disclaimed:
                 sev = "major"
@@ -420,6 +440,8 @@ def audit(base: str, roots: list[str]):
                 "severity": sev,
                 "overclaim": overclaim,
                 "cheap_proof": cheap,
+                "simp_unfold": simp_unfold,
+                "discharged_via_hypothesis": via_hyp,
                 "proof_steps": len(steps),
                 "borrowed": hits,
                 "local_defs_in_statement": local,
