@@ -70,6 +70,43 @@ general: the two traces differ by the twist factor `θ_{Xᘁ} ⊗ θ_X`, so the 
 `ribbon ⇒ spherical` — a theorem about the *twisted* trace — does not reach these
 *twistless* ones.
 
+### Barrett-Westbury say "any braided pivotal category is spherical" — why that does NOT close this
+
+The canonical reference for this class ([barrett1993], the paper that coined *spherical*)
+states on p. 2: *"spherical categories are not required to be braided. However, any braided
+pivotal category satisfies the extra spherical condition."* Read against the honest scope
+above, that looks like it closes the residual outright, since
+`QOU.MathlibExt.pivotalOfBraided` makes every braided right-rigid category pivotal. It does
+not, and the reason is a difference in **which two morphisms** are being compared.
+
+Barrett-Westbury's `tr_L` / `tr_R` (their Definition 2.4) are the **pivotal** traces, built
+from the pivotal data `epsilon(a)` and `tau : 1 -> **`, with **no braiding anywhere** — in
+the strict case `tr_L(f) = epsilon(a*)(1 (x) f)epsilon(a*)*` and
+`tr_R(f) = epsilon(a)(f (x) 1)epsilon(a)*`. The two differ in **which side the pivot acts on**.
+
+`qDimObj` and `leftQDim` here are the **twistless braided** traces: the *same* exact pairing
+`(eta, epsilon)` of the *same* dual, differing only in the **crossing** — forward
+`(beta_ X Xᘁ).hom` versus inverse `(beta_ Xᘁ X).inv`. The two differ in **which way the
+strand crosses**.
+
+Those are different pairs of morphisms, so the Barrett-Westbury implication is not about
+`SphericalStructure` as declared in this file, and asserting it here would be a shape
+conflation, not a proof. This is the same distinction the twist section below draws against
+the classical `ribbon => spherical`; it is recorded separately because the
+Barrett-Westbury phrasing is the stronger-sounding of the two and a reader who knows the
+paper will otherwise read the residual as over-claimed.
+
+The corroboration runs the other way, and is worth having. Barrett-Westbury's own
+Example 3.5 — the quantised enveloping algebra of the Borel subalgebra of `SL_2(C)` —
+is a pivotal category whose two traces are `tr_L(theta) = tr(theta w)` and
+`tr_R(theta) = tr(theta w^-1)` for the pivotal element `w`, and are distinct. So the left
+and right traces genuinely differ in general, and they differ *by conjugation by a single
+grouplike element* — structurally the same shape as `qDim_twist_eq_leftQDim` below, where
+the discrepancy is exactly the twist factor `theta_{Xᘁ} (x) theta_X`. Scope (a): a concrete
+witness that these traces come apart, not a claim about the twistless pair.
+
+-- Ref: [barrett1993] https://arxiv.org/abs/hep-th/9310164
+
 **What has also changed is that the goal those inputs served no longer needs them.**
 `QOU.BraidKnot.Ribbon.qDim_conj_object` proves `qDimObj (Xᘁ) = qDimObj X` outright, in any
 braided right-rigid category, with no pivotal, spherical or transport hypothesis — via

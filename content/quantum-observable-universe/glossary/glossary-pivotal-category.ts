@@ -6,4 +6,5 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-rigid-category"],
   defines: ["pivotal-category"],
+  cites: ["barrett1993"],
 });
