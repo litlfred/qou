@@ -101,4 +101,64 @@ theorem qDimTwistedWith_rightDual [RightRigidCategory C] [RibbonCategory C] (X :
   simp only [qDimTwistedWith]
   rw [braiding_naturality_left_assoc]
 
+section Spherical
+
+/-- **The twisted LEFT quantum dimension**: the same strand closed on the other side, carrying the
+*inverse* twist.  The inverse is not a choice — it is what makes the closure a framed-link
+invariant of the same unknot, and it is what `qDimTwistedLeftWith_eq_of_cap` below needs. -/
+noncomputable def qDimTwistedLeftWith [BalancedCategory C] (A B : C) [ExactPairing A B] :
+    (𝟙_ C ⟶ 𝟙_ C) :=
+  η_ A B ≫ (inv (BalancedCategory.twist A) ▷ B) ≫ (β_ B A).inv ≫ ε_ A B
+
+/-- **Sphericality, reduced to one identity at the cap.**
+
+Left trace = right trace *as soon as* the two twists agree across the evaluation,
+
+    (θ_B ▷ A) ≫ ε  =  (B ◁ θ_A) ≫ ε.
+
+Everything else is the balancing axiom.  Read as a decomposition this says exactly where the
+content of sphericality sits: the Joyal–Street axiom `θ_{A⊗B} = β_{A,B} ≫ β_{B,A} ≫ (θ_A ⊗ θ_B)`
+does all of the geometric work — it converts the *left* closure into the *right* one by feeding the
+double braiding through the coevaluation — and leaves behind precisely one residue, the twist that
+ended up on the dual leg.  A braided category alone cannot discharge that residue, because nothing
+relates `θ_B` to `θ_A`.  That is the job of the ribbon axiom, and it is the whole job. -/
+theorem qDimTwistedLeftWith_eq_of_cap [BalancedCategory C] (A B : C) [ExactPairing A B]
+    (hcap : (BalancedCategory.twist B ▷ A) ≫ ε_ A B
+      = (B ◁ BalancedCategory.twist A) ≫ ε_ A B) :
+    qDimTwistedLeftWith A B = qDimTwistedWith A B := by
+  -- `θ` is natural and `θ_𝟙 = 𝟙`, so the coevaluation absorbs `θ_{A⊗B}`.
+  have hη : η_ A B ≫ BalancedCategory.twist (A ⊗ B) = η_ A B := by
+    rw [← BalancedCategory.twist_naturality, BalancedCategory.twist_unit, Category.id_comp]
+  -- The balancing axiom, with the `A`-twists cancelling and the `B`-twist swept past the braiding.
+  have key : BalancedCategory.twist (A ⊗ B) ≫ (inv (BalancedCategory.twist A) ▷ B)
+        ≫ (β_ B A).inv
+      = (β_ A B).hom ≫ (BalancedCategory.twist B ▷ A) := by
+    rw [BalancedCategory.twist_tensor, tensorHom_def]
+    simp only [Category.assoc]
+    rw [whisker_exchange_assoc, ← comp_whiskerRight_assoc, IsIso.hom_inv_id, id_whiskerRight,
+      Category.id_comp, ← braiding_naturality_left_assoc, Iso.hom_inv_id, Category.comp_id]
+  rw [qDimTwistedWith_twist_right, qDimTwistedLeftWith]
+  conv_lhs => rw [← hη]
+  simp only [Category.assoc]
+  rw [reassoc_of% key, hcap]
+
+/-- **Ribbon ⇒ spherical**: in a ribbon category the left and right twisted quantum dimensions of
+every object agree.
+
+This is the statement that is *unavailable* for the twistless trace `qDimWith`, and the reason is
+visible in the proof: the cap identity is discharged by `RibbonCategory.twist_dual` together with
+`rightAdjointMate_comp_evaluation` at `f = θ_X`, and with `θ = 𝟙` both sides of the cap identity
+collapse to `ε` — true, but then `qDimTwistedLeftWith` and `qDimTwistedWith` are two *different*
+twistless closures (`(β_ B A).inv` versus `(β_ A B).hom`) whose difference is the monodromy, and no
+axiom of a braided rigid category forces that to vanish.  So the twistless pair is not made
+spherical by this argument at any twist, including the trivial one; it is the twist that carries the
+statement. -/
+theorem qDimTwistedLeftWith_eq [RightRigidCategory C] [RibbonCategory C] (X : C) :
+    qDimTwistedLeftWith X (Xᘁ) = qDimTwistedWith X (Xᘁ) := by
+  refine qDimTwistedLeftWith_eq_of_cap X (Xᘁ) ?_
+  rw [RibbonCategory.twist_dual]
+  simpa using (@rightAdjointMate_comp_evaluation C _ _ X X _ _ (BalancedCategory.twist X))
+
+end Spherical
+
 end QOU.MathlibExt
