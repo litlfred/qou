@@ -87,4 +87,41 @@ theorem evaluation_swap_tensor_step {X X' Y Y' : C}
             ⊗≫ ε_ Y Y' := by monoidal
     _ = _ := by rw [hS]; monoidal
 
+/-- **The second push, and the monodromy it leaves.**
+
+Three strands: `X` crossing the closed `Y`-pair.  Pushing the `X`-over-`Y'` crossing off the
+`Y`-cap leaves the **inverse monodromy** `((β_ X Y).hom ≫ (β_ Y X).hom)⁻¹` acting on `X ⊗ Y` at
+the top.
+
+The proof is three moves and no diagram chase.  Write `(β_ Y X).inv = M⁻¹ ≫ (β_ X Y).hom`, which
+splits the crossing into a monodromy and an *honest* braiding.  Recognise the two leading crossings
+as the block braiding `β_{X ⊗ Y, Y'}` (`braiding_tensor_left_hom`), so that
+`braiding_naturality_left` carries the monodromy from the middle to the top.  What is left is
+exactly `braiding_slide_cap_right` at the `Y`-cap. -/
+theorem braiding_cap_monodromy {X Y Y' : C} (r : ExactPairing Y Y') :
+    𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ X ◁ (β_ Y Y').hom ⊗≫ (β_ X Y').hom ▷ Y
+        ⊗≫ Y' ◁ (β_ Y X).inv ⊗≫ ε_ Y Y' ▷ X ⊗≫ 𝟙 X
+      = 𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ ((β_ Y X).inv ≫ (β_ X Y).inv) ▷ Y'
+        ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ⊗≫ 𝟙 X := by
+  have hinv : (β_ Y X).inv
+      = ((β_ Y X).inv ≫ (β_ X Y).inv) ≫ (β_ X Y).hom := by simp
+  have hnat := braiding_naturality_left ((β_ Y X).inv ≫ (β_ X Y).inv) Y'
+  have hhex := braiding_tensor_left_hom X Y Y'
+  have hslide := braiding_slide_cap_right (W := X) (A := Y') (B := Y) (ε_ Y Y')
+  calc _ = 𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ ((β_ (X ⊗ Y) Y').hom
+              ≫ Y' ◁ ((β_ Y X).inv ≫ (β_ X Y).inv))
+            ⊗≫ Y' ◁ (β_ X Y).hom ⊗≫ ε_ Y Y' ▷ X ⊗≫ 𝟙 X := by
+          rw [hhex]; conv_lhs => rw [hinv]
+          monoidal
+    -- naturality of the block braiding carries the monodromy to the top
+    _ = 𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ (((β_ Y X).inv ≫ (β_ X Y).inv) ▷ Y' ≫ (β_ (X ⊗ Y) Y').hom)
+            ⊗≫ Y' ◁ (β_ X Y).hom ⊗≫ ε_ Y Y' ▷ X ⊗≫ 𝟙 X := by
+          rw [hnat]
+    _ = 𝟙 ((X ⊗ Y) ⊗ Y') ⊗≫ ((β_ Y X).inv ≫ (β_ X Y).inv) ▷ Y'
+            ⊗≫ X ◁ (β_ Y Y').hom
+            ⊗≫ (𝟙 ((X ⊗ Y') ⊗ Y) ⊗≫ (β_ X Y').hom ▷ Y ⊗≫ Y' ◁ (β_ X Y).hom
+                  ⊗≫ ε_ Y Y' ▷ X ⊗≫ 𝟙 X) := by
+          rw [hhex]; monoidal
+    _ = _ := by rw [hslide]; monoidal
+
 end QOU.MathlibExt
