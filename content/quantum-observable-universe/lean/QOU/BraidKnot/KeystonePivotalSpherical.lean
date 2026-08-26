@@ -59,7 +59,18 @@ The residual is input 1, the pivotal transport lemma `qDimObj (Xᘁ) = leftQDim 
 still **not proved** — it is an explicit hypothesis of the conditional theorems below, and
 that is unchanged.
 
-**What has changed is that the goal those inputs served no longer needs them.**
+**And the two inputs are not two.** `transport_iff_spherical` proves them equivalent,
+unconditionally, modulo the conjugation symmetry. So the residual recorded against this
+file was never two conditions of which one might fall — it is one condition wearing two
+names, and it is *not* unconditionally provable, because sphericality is not.
+
+`pivotalTransport_of_symmetric` discharges it for the whole symmetric class, which is the
+first unconditional case. `qDim_twist_eq_leftQDim` says exactly what stands in the way in
+general: the two traces differ by the twist factor `θ_{Xᘁ} ⊗ θ_X`, so the classical
+`ribbon ⇒ spherical` — a theorem about the *twisted* trace — does not reach these
+*twistless* ones.
+
+**What has also changed is that the goal those inputs served no longer needs them.**
 `QOU.BraidKnot.Ribbon.qDim_conj_object` proves `qDimObj (Xᘁ) = qDimObj X` outright, in any
 braided right-rigid category, with no pivotal, spherical or transport hypothesis — via
 `QOU.MathlibExt.qDimWith_rightDual`, which observes that the quantum dimension is
@@ -80,6 +91,8 @@ identity itself, which is about the traces rather than about the double dual. Th
 -/
 import QOU.BraidKnot.KeystoneRibbonMTCInput
 import QOU.MathlibExt.PivotalCategory
+import QOU.MathlibExt.BraidedQuantumDimension
+import QOU.MathlibExt.Ribbon
 
 namespace QOU.BraidKnot.PivotalSpherical
 
@@ -200,5 +213,104 @@ theorem qDim_conj_of_pivotalTransport [SphericalStructure C] (X : C)
     (hTransport : qDimObj (Xᘁ) = leftQDim X) :
     qDimObj (Xᘁ) = qDimObj X := by
   rw [hTransport, SphericalStructure.leftQDim_eq X]
+
+/-! ### The two inputs are ONE input
+
+`qDim_conj_object` proved `qDimObj (Xᘁ) = qDimObj X` unconditionally. Reading the
+factoring above through it collapses the two "independent classical inputs" into
+each other. -/
+
+section Collapse
+
+variable {C : Type*} [Category C] [MonoidalCategory C] [BraidedCategory C]
+  [RightRigidCategory C]
+
+/-- **Pivotal transport and sphericality are equivalent**, unconditionally.
+
+The factoring above presents them as two independent classical inputs. They are not
+independent: modulo `QOU.MathlibExt.qDimWith_rightDual` (the unconditional conjugation
+symmetry) each follows from the other in one rewrite.
+
+The consequence is worth stating plainly. Transport is **not** unconditionally provable,
+because sphericality is not — the left and right traces genuinely differ in a general
+braided rigid category, and a category where they agree is what *spherical* names. So the
+residual recorded against this file was never two inputs of which one might fall; it is
+one condition, wearing two names. -/
+theorem transport_iff_spherical (X : C) :
+    qDimObj ((X : C)ᘁ) = leftQDim X ↔ leftQDim X = qDimObj X := by
+  have c : qDimObj ((X : C)ᘁ) = qDimObj X := QOU.MathlibExt.qDimWith_rightDual X
+  exact ⟨fun t => t.symm.trans c, fun s => c.trans s.symm⟩
+
+/-- **Sphericality supplies transport.** The half of the equivalence the conditional
+theorems above actually consume. -/
+theorem pivotalTransport_of_spherical [SphericalStructure C] (X : C) :
+    qDimObj ((X : C)ᘁ) = leftQDim X :=
+  (transport_iff_spherical X).mpr (SphericalStructure.leftQDim_eq X)
+
+end Collapse
+
+section SymmetricTransport
+
+variable {C : Type*} [Category C] [MonoidalCategory C] [SymmetricCategory C]
+  [RightRigidCategory C]
+
+/-- **In a symmetric right-rigid category the transport identity holds outright.**
+
+`leftQDim_eq_qDimObj_of_symmetric` proves sphericality there, and
+`transport_iff_spherical` converts it. So the hypothesis the conditional theorems above
+carry is discharged for the whole symmetric class — the first unconditional case of it. -/
+theorem pivotalTransport_of_symmetric (X : C) :
+    qDimObj ((X : C)ᘁ) = leftQDim X :=
+  (transport_iff_spherical X).mpr (leftQDim_eq_qDimObj_of_symmetric X)
+
+end SymmetricTransport
+
+/-! ### Why the twist does not close it — the exact obstruction
+
+The natural next thought, once a ribbon structure is available, is the classical
+`ribbon ⇒ spherical`. It does **not** apply to `qDimObj` and `leftQDim` as defined here,
+and the theorem below says precisely why. -/
+
+section TwistObstruction
+
+variable {C : Type*} [Category C] [MonoidalCategory C] [BraidedCategory C]
+  [RightRigidCategory C] [QOU.MathlibExt.BalancedCategory C]
+
+open QOU.MathlibExt
+
+/-- **The two traces differ by exactly the twist factor `θ_{Xᘁ} ⊗ θ_X`.**
+
+Inserting that factor into the right trace produces the left trace on the nose. The proof
+is the Joyal–Street balancing axiom, which turns the double braiding into
+`θ_{Xᘁ ⊗ X}` dressed by the two component twists, followed by naturality of `θ` against
+`η ≫ β⁻¹ : 𝟙_C ⟶ Xᘁ ⊗ X` — which absorbs the whole `θ_{Xᘁ ⊗ X}`, since `θ_{𝟙} = 𝟙`.
+
+**This is why `ribbon ⇒ spherical` does not apply here.** The classical theorem concerns
+the *twisted* trace, in which `θ` is already inserted; `qDimObj` and `leftQDim` are the
+*twistless* traces, and between those two the twist is not a normalisation but the entire
+difference. A ribbon structure supplies `θ_{Xᘁ} = (θ_X)ᘁ`, which relates the factor's two
+halves — it does not make the factor disappear. So sphericality is not a consequence of
+the ribbon axiom for these definitions, and by `transport_iff_spherical` neither is
+transport. Scope (a): this is a statement about *these* two definitions, not a claim that
+no twisted formulation closes. -/
+theorem qDim_twist_eq_leftQDim (X : C) :
+    η_ X ((X : C)ᘁ) ≫ (β_ X ((X : C)ᘁ)).hom
+        ≫ (BalancedCategory.twist ((X : C)ᘁ) ⊗ₘ BalancedCategory.twist X) ≫ ε_ X ((X : C)ᘁ)
+      = leftQDim X := by
+  have hbal := BalancedCategory.twist_tensor ((X : C)ᘁ) X
+  have hnat := BalancedCategory.twist_naturality
+    (η_ X ((X : C)ᘁ) ≫ (β_ ((X : C)ᘁ) X).inv)
+  simp only [BalancedCategory.twist_unit, Category.id_comp] at hnat
+  unfold leftQDim
+  calc _ = η_ X ((X : C)ᘁ) ≫ (β_ ((X : C)ᘁ) X).inv
+              ≫ ((β_ ((X : C)ᘁ) X).hom ≫ (β_ X ((X : C)ᘁ)).hom
+                 ≫ (BalancedCategory.twist ((X : C)ᘁ) ⊗ₘ BalancedCategory.twist X))
+              ≫ ε_ X ((X : C)ᘁ) := by simp
+    _ = η_ X ((X : C)ᘁ) ≫ (β_ ((X : C)ᘁ) X).inv
+              ≫ BalancedCategory.twist ((X : C)ᘁ ⊗ X) ≫ ε_ X ((X : C)ᘁ) := by
+          rw [← hbal]
+    _ = _ := by rw [← Category.assoc, ← Category.assoc, ← hnat, Category.assoc]
+
+end TwistObstruction
 
 end QOU.BraidKnot.PivotalSpherical
