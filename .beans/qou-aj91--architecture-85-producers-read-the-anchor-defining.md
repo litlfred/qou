@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-26T04:22:59Z
+updated_at: 2026-08-26T07:30:41Z
 ---
 
 ## What
@@ -307,3 +307,94 @@ so this is 12 individual edits, not a sed.
 re-runs plus 12 before/after comparisons is its own PR with its own verification,
 and starting it at the tail of a long session is how an unverified change lands.
 The list and the shapes are recorded so it can be picked up cold.
+
+
+## 2026-08-26 — batch C executed: PR #5823, 11 producers, 2 numbers moved
+
+The 12 this bean recorded as "ready to edit" turned out to be **11 to reroute
+plus 1 to exclude**, and the "each moves numbers ~11.5 ppb" framing was wrong
+for **9 of the 11**. Both corrections are to this bean's own text.
+
+### 9 of 11 do not move a number, and it is provable rather than merely observed
+
+Those nine use q₀ for one thing only:
+
+    sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
+
+`dnet = net(neutron) − net(proton)` evaluated at q₀, reduced to its **sign**.
+A Newton step from q₀ puts `dnet`'s nearest root **10 153 554 × the pin
+separation** away (Δq_root = 0.130 vs Δq_pin = 1.28e-8), so an 11.5 ppb move
+cannot flip it. Re-running confirms: byte-identical in every numeric payload
+key; only volatile provenance moved.
+
+So the discriminator for this batch was never "has a witness" — it is
+**how many times `q0` appears in the file**. Two occurrences ⇒ sign-only.
+The two that moved are exactly the two with more (3 and 13).
+
+`yekutieli_borromean_h2_extraction` is identical for a third reason worth
+keeping separate: its witness stores only `kappa_computed`, the h² Taylor
+coefficient **at h = 0**, which is q₀-independent by construction. `tr_M(q₀)`
+is printed, never recorded. Its "identical" is real, not a witness that
+silently failed to rewrite — checked by mtime and by the builder's own
+"[unchanged]" report.
+
+### The one real bug
+
+`qbeta_barodd_d_ladder_ord17_probe` builds a μ–p comparison:
+
+    q_num = {"proton": q0}          # q0 WAS the muon pin
+    q_num["muon"] = q_muon_at(50)
+
+Both rows were the same number (`h = 0.209060321996` vs `0.20906032199`), so
+a diagnostic that exists to exhibit the μ–p tension was comparing muon to
+muon. Post-reroute they differ by 1.11e-7 = `(1 + 1/q²)·Δq/h`, the real
+separation. **This is the first case in the epic where the mechanism-5 read
+was not merely mislabelled but made a comparison vacuous.**
+
+### mass-from-q-symbolic: excluded, and the census mis-scored it
+
+It met every batch-C criterion. It must not be rerouted: it computes at
+proton throughout and reads the muon pin once so the ideal-layer identity
+can be checked *in its own layer*.
+
+This bean's census scored it **"silent on the pin"**. It is not — the
+rationale is stated in the file, four lines above the read. The read-site
+classifier only looked at the read site. So the "41 silent / 10 stated-muon"
+split in the 2026-08-26 entry above is a **lower bound on stated intent**,
+and any producer in the silent bucket may have its rationale a few lines
+away. Do not treat that bucket as evidence of absent intent without
+re-checking with a wider window.
+
+Fixed by stating it at the read and declaring the stem `ambiguous`.
+
+### Environment control — the step that made the attribution real
+
+The container has `mpmath` 1.3.0 where several baselines recorded 1.4.1, so a
+before/after diff alone could not separate pin from environment. Re-running
+the **OLD code in THIS container**:
+
+* borel-pade: 2 provenance fields differ, no payload ⇒ all 21 payload moves
+  are the reroute.
+* barodd: exactly the 12 `muon/*` fields differ; every `proton/*` field
+  reproduces byte-identically ⇒ the 26 moved fields split **14 mine / 12
+  not**.
+
+Without that control I would have reported 26 fields moved by the reroute.
+
+### A drift this surfaced, filed separately as `qou-2zw0`
+
+The 12 `muon/*` fields move because the committed muon row is
+`h(frozen pin 1.1099785955573347…)` while `q_muon_at(50)` derives
+`1.109978595642739…` from live CODATA and cannot produce the frozen pin.
+Import-cone drift — every producer's `scriptHash` still matches its witness.
+The baseline `commitSha` does not resolve (`rewritten` class), so the cause
+is **undetermined**, not established.
+
+### Remaining mechanism-5 untagged: 33, unchanged and still not batchable
+
+    10  record_upstream        rerouting DROPS provenance — a decision
+    11  no committed witness   no baseline; witness must be committed first
+    12  muon-built upstream    BLOCKED: moving q₀ first MANUFACTURES a straddle
+
+The dependency ordering recorded above stands and is the critical path for
+`qou-1c4y`. Nothing here shortens it.
