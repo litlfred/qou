@@ -50,7 +50,27 @@ import io
 import tokenize
 from typing import Iterable, Optional
 
-__all__ = ["code_only", "blank_declaration_prose", "code_only_ast"]
+__all__ = ["code_only", "blank_declaration_prose", "blank_message_strings",
+           "code_only_ast"]
+
+#: Calls whose string argument DOES the thing rather than describes it. A
+#: filename inside `open(...)`/`witness_path(...)` is a real read; the same
+#: filename inside `raise SystemExit(f"...")` is a warning about one. This
+#: carve-out is the load-bearing half of `blank_message_strings` — without it
+#: the pass blanks genuine reads. Contributed from PR #5810, which measured the
+#: failure it prevents: `qbeta_habiro_residual_probe` raises a guard naming
+#: `q-pinning-50-digit.witness.json`, and a classifier read that guard's own
+#: warning as evidence the producer reads the muon pin.
+OPERATIVE_CALLS = frozenset({
+    "open", "Path", "read_text", "read_bytes", "mpf", "mpmath", "Decimal",
+    "load", "loads", "witness_path", "joinpath", "with_suffix", "glob",
+})
+
+#: Calls whose string arguments are MESSAGES — prose aimed at a human.
+MESSAGE_CALLS = frozenset({
+    "print", "warn", "warning", "log", "info", "debug", "error", "critical",
+    "SystemExit", "RuntimeError", "ValueError", "AssertionError", "format",
+})
 
 
 def code_only(src: str) -> str:
@@ -126,8 +146,57 @@ def blank_declaration_prose(
     return tree
 
 
+def blank_message_strings(tree: ast.AST) -> ast.AST:
+    """Empty MESSAGE strings — f-strings, `raise`, `print`/`warn`/`log` args.
+
+    `code_only` deliberately leaves single-quoted strings intact because they
+    carry declared values (`VAR = "1.1099785827..."`). That correctly keeps real
+    data visible and incorrectly keeps *messages* visible, and a message naming
+    a thing is the canonical shape of this whole defect class:
+
+        raise SystemExit(f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json: ...")
+
+    A guard that exists to PREVENT reading the muon pin, read as evidence that
+    it does. Blanking it is safe only because of `OPERATIVE_CALLS`: a string
+    that is an argument to `open`/`witness_path`/`mpf`/`json.load` is preserved
+    even inside a message context, because those calls act on it.
+
+    Mutates and returns `tree`. Compose with `blank_declaration_prose`, which is
+    orthogonal — that one keys on dict KEYS, this one on call CONTEXT.
+    """
+    protected: set[int] = set()
+
+    def _call_name(node: ast.Call) -> str:
+        f = node.func
+        return getattr(f, "attr", None) or getattr(f, "id", None) or ""
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call) and _call_name(node) in OPERATIVE_CALLS:
+            for a in list(node.args) + [k.value for k in node.keywords]:
+                for sub in ast.walk(a):
+                    if isinstance(sub, ast.Constant) and isinstance(sub.value, str):
+                        protected.add(id(sub))
+
+    def _blank_within(node: ast.AST) -> None:
+        for sub in ast.walk(node):
+            if (isinstance(sub, ast.Constant) and isinstance(sub.value, str)
+                    and id(sub) not in protected):
+                sub.value = ""
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.JoinedStr):
+            _blank_within(node)
+        elif isinstance(node, ast.Raise):
+            _blank_within(node)
+        elif isinstance(node, ast.Call) and _call_name(node) in MESSAGE_CALLS:
+            for a in list(node.args) + [k.value for k in node.keywords]:
+                _blank_within(a)
+    return tree
+
+
 def code_only_ast(src: str, *, strip_docstrings: bool = True,
-                  blank_keys: Optional[Iterable[str]] = None) -> Optional[str]:
+                  blank_keys: Optional[Iterable[str]] = None,
+                  blank_messages: bool = False) -> Optional[str]:
     """AST round-trip: docstrings dropped, declaration prose optionally blanked.
 
     Returns `None` when `src` will not parse, so a caller can distinguish
@@ -152,6 +221,8 @@ def code_only_ast(src: str, *, strip_docstrings: bool = True,
                     body.pop(0)
     if blank_keys is not None:
         blank_declaration_prose(tree, blank_keys)
+    if blank_messages:
+        blank_message_strings(tree)
     return ast.unparse(tree)
 
 
@@ -191,6 +262,31 @@ def _selftest() -> int:
         fails.append("unparseable source did not return None")
     if code_only("def broken(:\n") != "def broken(:\n":
         fails.append("code_only did not pass through unparseable source")
+
+    # message-string blanking, with the operative-call carve-out that makes it
+    # safe. Both halves are checked: the guard must vanish, the read must not.
+    msg_src = (
+        'import json\n'
+        'from _pb import witness_path\n'
+        'def f(p):\n'
+        '    q = json.load(open("q-pinning-50-digit.witness.json"))\n'
+        '    w = witness_path("q-pinning-50-digit.witness.json")\n'
+        '    if bad:\n'
+        '        raise SystemExit(f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json")\n'
+        '    print("reading q-pinning-50-digit.witness.json now")\n'
+    )
+    got = code_only_ast(msg_src, blank_messages=True)
+    if got is None:
+        fails.append("message selftest source did not parse")
+    else:
+        if got.count("q-pinning-50-digit") != 2:
+            fails.append(
+                "operative-call carve-out wrong: expected exactly the 2 real "
+                f"reads to survive, saw {got.count('q-pinning-50-digit')}")
+        if "ANCHOR STRADDLE" in got:
+            fails.append("raise-guard message was not blanked")
+        if "reading q-pinning" in got:
+            fails.append("print message was not blanked")
     for f in fails:
         print(f"  FAIL {f}")
     print("selftest:", "PASS" if not fails else f"{len(fails)} FAILURE(S)")

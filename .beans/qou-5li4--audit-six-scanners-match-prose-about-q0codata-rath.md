@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T03:58:32Z
-updated_at: 2026-08-26T04:14:30Z
+updated_at: 2026-08-26T05:31:44Z
 ---
 
 Split out of `qou-1c4y`, which records six instances of this defect found the
@@ -186,3 +186,57 @@ lines, and its own review.
 - Consequently "fixes all six by import" is **too strong**. It gives all six a
   correct, shared, line-preserving normaliser; each still needs its own pattern
   reviewed.
+
+
+## 2026-08-26 — `blank_message_strings` folded in from PR #5810; and my ratchet worry was unfounded
+
+### Capability added, contributed by a sibling
+
+#5810 offered a pass `code_only` deliberately lacks, and it is worth having.
+`code_only` leaves single-quoted strings intact — correct, they carry declared
+values — which also leaves **message** strings matchable. Their measured case:
+
+    raise SystemExit(f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json: ...")
+
+A guard whose whole purpose is to PREVENT reading the muon pin, read by a
+classifier as evidence that it does. The canonical shape of this defect class.
+
+`blank_message_strings(tree)` blanks str constants inside an **f-string**, a
+**`raise`**, or a **`print`/`warn`/`log`**-family call — **except** when the
+string is an argument to an `OPERATIVE_CALL` (`open`, `Path`, `read_text`,
+`mpf`, `Decimal`, `json.load`, `witness_path`, …), because those *act on* it.
+**That carve-out is the load-bearing half**; without it the pass blanks genuine
+reads. Orthogonal to `blank_declaration_prose`, which keys on dict keys rather
+than call context.
+
+Verified on the real file rather than the synthetic case:
+`qbeta_habiro_residual_probe` goes **2 → 1** occurrences — the guard message
+blanked, the genuine `record_upstream(COMP / 'q-pinning-50-digit.witness.json')`
+read untouched. The selftest now covers both halves and fails if either breaks.
+
+### A fifth private implementation exists and should be retired
+
+#5810 landed `_code_only_text()` in `q0_producer_pin_classifier.py` an hour
+before this module, and flagged it themselves: it **joins tokens with a space**,
+so it does not preserve line numbers — the exact 476-vs-647 defect. It currently
+gates only a boolean, so no position is reported off it, but it should become
+`from _source_normalise import code_only`. Recorded so it does not quietly
+become the fifth unshared copy this module exists to end.
+
+### My precision-gates worry, checked and unfounded
+
+#5805 warns that `precision-gates.sh` on a branch **behind** main walks ratchets
+**backwards** — it regenerates tree-measuring audits and says "commit the
+regenerated one", and `git log` on the new entries finds main commits, which
+reads as "main's, so commit it". They measured `drained_files 913 → 888` at 46
+behind while both HEAD and origin/main carried 913.
+
+**I saw that same 913 → 888** and reverted it — but attributed it to this
+container missing `sympy`/`numpy`/`scipy`/`clarabel`. Their diagnosis is the
+better one for that number. Both were true of my situation; only theirs explains
+the ratchet direction.
+
+**Checked whether I committed anything backwards: I did not.** The two audit
+witnesses I committed in the #5797 arc match `origin/main` exactly today —
+`Q0_OK 972`, `Q0_ANCHOR_MISSING 1649`, `proton-pin 1682`. The revert was right
+even though half my reasoning for it was wrong.
