@@ -1,5 +1,22 @@
 #!/usr/bin/env python3
-"""FLAG: two objects called "the neutron-minus-proton element of H_3(q)" differ
+"""🛑 SUPERSEDED 2026-08-26 by `qbeta_delta_vs_deltaTbeta_settled_probe.py`.
+
+The MEASUREMENT below stands (chi_(3)(Delta_T_beta)/eps(Delta) -> 1 as q -> 1,
+1.3909 at q0; both sides are closed forms, so nothing here was affected by the
+`d`-dropping defect fixed on main in e5deb145c).
+
+The READING is WITHDRAWN. This file calls it "two different q-deformations of
+one classical object". It is not. Side B is now VERIFIED against the EXHIBITED
+nucleon words (chi_block_* reproduces chi_lambda(beta_n - beta_p) exactly, all
+three blocks), while side A -- eps(Delta) = epsNPq -- is a BARE Lean `def` with
+no Hecke element constructed anywhere. Since the counit IS the lambda=(3) block
+and GS normal form is a character-invariant rewriting of the SAME element,
+epsNPq is simply not the counit of the exhibited difference.
+
+Read the settled probe instead. Kept for the measurement and the record.
+"""
+
+_HISTORICAL_DOC = """FLAG (superseded): two objects called "the neutron-minus-proton element of H_3(q)" differ
 by 39% at the substrate, and the corpus carries no disambiguation row.
 
 NOT A BUG REPORT. This probe MEASURES a discrepancy; it does NOT determine which
