@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T21:30:17Z
+updated_at: 2026-08-25T22:20:42Z
 ---
 
 
@@ -903,3 +903,64 @@ and over this window the two were within a few files of each other.
 What survives unchanged is the operational point: the number has a shelf life
 of **hours**, so quote it with a timestamp or re-run the audit. What does not
 survive is any claim about the trend from a two-point sample — including mine.
+
+
+## 2026-08-25 — CORRECTION: the independence checker said 19; it is 10
+
+I reported "19 witnesses falsely declare `q0Anchor: independent`" in PR #5797's
+title, body and my summary to the owner. **The real number is 10.** Three
+false-positive classes, each found by hand-checking flagged files rather than
+by trusting the count:
+
+1. **The declaration's own prose was evidence against itself.** `q0AnchorReason`
+   is the field where an author explains *why* a compute is q₀-independent, so
+   it naturally contains "q-pinning-50-digit" or quotes a pin. `ast.unparse`
+   preserves string constants, so the reason matched the read pattern.
+   Measured: **3 of the first 4** violations inspected were nothing but their
+   own reason string. Several of these producers argue for `independent` in a
+   comment right beside the declaration — that argument is what indicted them.
+
+2. **`from q_parameter import <non-q₀ symbol>`.** That module also exports
+   CODATA ratios. `knot-volumes.py` imports `MASS_RATIO_MU_E` and reads no q₀.
+   Fixed by matching the SYMBOL, not the module name.
+
+3. **Cone traversal into the q₀ provider.** Fixing (2) at the import site was
+   not enough: the walk still followed the import into `q_parameter.py`, whose
+   own source obviously reads q₀, and indicted the importer on it.
+   `q_parameter` / `constants` are now TERMINAL — q₀-ness is decided at the
+   import site by which symbol is bound, never by recursing into the provider.
+
+A fourth defect was self-inflicted while fixing (1): blanking `Q0_ROLE` along
+with the declaration strings silently disabled the auditor carve-out
+(exempt 3 → 0). The marker is read back out of the same normalised source.
+
+Progression: **19 → 14 → 11 → 10**, and 41 upheld (was 32).
+
+### The 10, five of them hand-verified
+
+    chi_content_eigenbasis_probe      -> canonical_braid_crossings does
+                                         `from q_parameter import Q_50_DIGIT_STR`   VERIFIED
+    lambda_scale_substrate_probe      loads q-pinning-50-digit.witness.json directly;
+                                         also manifest `ideal_muon`                 VERIFIED
+    markov_identity_symbolic_probe    evaluates at BOTH pins -> wants `comparison`,
+                                         not a corrected single pin                 VERIFIED
+    qbeta_c3_rung_structure_analysis  `Q0_MP_PIN = Q_50_DIGIT_STR`                  VERIFIED
+    probe_he4_magic_baryeven_prune    `Q0 = mp.mpf(Q_50_DIGIT_STR)`                 VERIFIED
+    chirality_topology_binding_probe          (not yet hand-checked)
+    eigenbasis_structural_lemmas_probe        (not yet hand-checked)
+    habiro_witness_convention_adjudication    (not yet hand-checked)
+    qbeta_habiro_f_from_shape_collapse        (not yet hand-checked)
+    qbeta_rung1_div25_framing_squared_test    (not yet hand-checked)
+
+`markov_identity_symbolic_probe` is worth separating: it is not a mislabelled
+pin but a mislabelled KIND. It evaluates at both anchors deliberately, which the
+vocabulary already covers as `comparison`. Fixing it to `proton` would be as
+wrong as leaving it `independent`.
+
+### The lesson, which is the same one three times
+
+Every one of these classes is "the checker matched text that describes the
+thing rather than text that does the thing" — the `_path_bridge` docstring
+earlier today, then the reason string, then the provider module. A q₀ checker
+that reads prose about q₀ will always over-flag, and the corpus is full of
+careful prose about q₀ precisely where the code is careful not to use it.
