@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T21:49:37Z
+updated_at: 2026-08-26T03:16:33Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -424,3 +424,41 @@ attempt stopped at 8 rather than a defect in the instrument.
 
 Harness committed at `computations/audits/witness_dependency_residue_{targets,run}.py`
 with the pinned-SHA and self-test discipline built in.
+
+
+---
+
+## Field re-audit of every MOVED_SUBSTANTIVE — all 8 hold (2026-08-26)
+
+Three false MOVEDs had already been traced to volatile fields the mask did not
+anticipate (`engineVersion`; `*_elapsed_sec`; `elapsed_*_sec`). Since the
+instrument's only observed failure mode is over-reporting, the surviving
+verdicts were re-audited field-by-field rather than trusted.
+
+**All 8 survive.** The moved fields are the framework's own computed
+quantities, not provenance and not wall-clock:
+
+  * Markov traces — `tr_M_atom`, `tr_M_free`, `tr_M_D`, `markov_trace`,
+    `trM_combiner`, `trM_transfer`, `tr_bound`, `tr_free`
+  * binding energies — `B_MeV`, `B_single_link_MeV`, `delta_m_over_m_pct`,
+    `delta_tr_per_bond`
+  * symbolic results — `polynomial_q`, `coeff`, `value_at_q0`, `difference`
+  * masses — `m_atom_per_irrep_total`, `m_free_per_irrep_total`
+
+So committed witnesses on `main` record trace and binding values that do not
+reproduce from today's code. That is the finding this bean exists for, now on
+8 producers rather than the 1 it started from.
+
+**The audit's own screen produced two false positives, by the same bug it was
+looking for.** A regex for volatile-looking names flagged
+`alpha_k_times_delta_phi` (matched "time" inside *times*) and
+`delta_tr_h3a_direct` (matched "dir" inside *direct*). Both are physics
+quantities. Substring matching where word matching was meant — precisely the
+error that let `elapsed_reduce_sec` through the mask, committed again one
+layer up in the tool built to catch it. Neither reached a verdict, because the
+screen only nominates for human reading, but a version that auto-excluded on
+that regex would have silently dropped two real findings.
+
+Worth keeping as the standing caution for this axis: **a MOVED verdict is only
+as good as the mask, and must be read with its field list attached.** The
+counts are not self-supporting.
