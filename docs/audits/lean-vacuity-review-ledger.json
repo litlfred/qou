@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-26T20:53:24.767821Z",
+  "updated_at": "2026-08-26T21:37:36.088479Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2592,6 +2592,39 @@
       "tier": "major",
       "evidence": "Kernel-confirmed definitional collapse (defeq_collapse=true, value_is_rfl=true): `abbrev KazhdanLusztigCells (p n) : Type := Fin (p^n)` and `abbrev Nimbers (p n) : Type := Fin (p^n)` are the same type, so `Fintype.card` equality is `rfl`. LEGIT rather than genuine because the docstring DISCLOSES exactly this -- \"provable without any class instance because both placeholder types are `Fin (p^n)`\" -- and scopes itself as \"the easy half of the OnPModularHecke conjecture\". The detector flagged it only because DISCLAIM did not recognise that phrasing; DISCLAIM now does.",
       "source": "scripts/lean/BorrowedNameKernel.lean + lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::is_qou::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "afcdf9c49e7b",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Every input is a hand-entered literal: `def genus : N := 4`, `def eulerChar : Z := -6`, `def covering_degree : N := 4`, `def num_branch_points : N := 6`, `def automorphism_order : N := 120`. The VALUES are correct for Bring's surface (genus 4, chi = -6, Aut = S_5 of order 120) and are standard citable facts -- the defect is not a wrong number. It is that nothing DERIVES them here, so a relation between them cannot fail. SHARPEST OF THE CLUSTER: `theorem is_qou (_bq : BringsQOU) : eulerChar = (covering_degree : Z) * 2 - 14 := riemann_hurwitz_check` takes a `BringsQOU` and DISCARDS it (`_bq`), returning the constant-arithmetic theorem unchanged. The name asserts the framework's central identification -- that Bring's surface IS a quantum observable universe -- and the statement says only `-6 = -6`, with the QOU structure unused.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::riemann_hurwitz_check::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "afcdf9c49e7b",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Every input is a hand-entered literal: `def genus : N := 4`, `def eulerChar : Z := -6`, `def covering_degree : N := 4`, `def num_branch_points : N := 6`, `def automorphism_order : N := 120`. The VALUES are correct for Bring's surface (genus 4, chi = -6, Aut = S_5 of order 120) and are standard citable facts -- the defect is not a wrong number. It is that nothing DERIVES them here, so a relation between them cannot fail. `eulerChar = (covering_degree : Z) * 2 - 14` is `-6 = 8 - 14`, closed by `simp` on the two defs. Named a `_check` and reading as a verification of Riemann-Hurwitz, but R-H is not applied: its conclusion is typed in as `eulerChar` and a rearrangement of the same literals is confirmed.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::euler_genus_relation::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "afcdf9c49e7b",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Every input is a hand-entered literal: `def genus : N := 4`, `def eulerChar : Z := -6`, `def covering_degree : N := 4`, `def num_branch_points : N := 6`, `def automorphism_order : N := 120`. The VALUES are correct for Bring's surface (genus 4, chi = -6, Aut = S_5 of order 120) and are standard citable facts -- the defect is not a wrong number. It is that nothing DERIVES them here, so a relation between them cannot fail. `eulerChar = 2 - 2 * (genus : Z)` is `-6 = 2 - 8`. Same shape as `seifert_euler_relation` (adjudicated genuine at CRITICAL): the Euler-genus relation is not tested, because both sides were entered consistently by hand.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     }
   }
 }

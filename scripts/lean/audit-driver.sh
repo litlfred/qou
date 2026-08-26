@@ -37,6 +37,14 @@ TMP="$(mktemp /tmp/bnk-XXXX.lean)"
   for m in "$@"; do echo "import $m"; done
   echo "import BorrowedNameKernel"
   echo "open Lean Elab Command BorrowedNameKernel"
+  # A long module list is one big list literal; the elaborator hits
+  # `maximum recursion depth` building it (measured: fine at 8, fails at 15).
+  echo "set_option maxRecDepth 100000 in"
+  # The COMMAND has its own 200000-heartbeat budget, separate from the 20000
+  # cap `defeqCollapse` puts around each isDefEq. The whole loop consumes it
+  # (measured: 8 modules fit, 15 do not). 0 = unlimited; the per-isDefEq cap
+  # still bounds any single hard goal, so a pathological one cannot hang.
+  echo "set_option maxHeartbeats 0 in"
   echo "run_cmd liftTermElabM do"
   # ONE pass over the environment for all modules -- see `analyzeModules`.
   printf '  let rs <- analyzeModules ['

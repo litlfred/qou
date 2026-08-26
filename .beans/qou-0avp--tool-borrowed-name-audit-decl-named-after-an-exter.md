@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T20:43:03Z
+updated_at: 2026-08-26T21:38:13Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -205,3 +205,32 @@ its docstring calls it *"the q->1 one-loop restores the doubled total"*.
 route (`defeq_collapse` decides table-lookup vs real content without reading
 each file), but it is SLOW — 8 modules exceeded 10 minutes — and only 23 of
 the 56 library modules involved have oleans in the restored cache.
+
+
+
+## Kernel scaling measured; BringsSurface cluster adjudicated (2026-08-26, post-merge)
+
+**Batch at ~8 modules.** Two separate limits bite on longer lists and both are
+now set in the driver: `maxRecDepth` (fine at 8, fails at 15 building the list
+literal) and the **command's own 200000-heartbeat budget**, which is separate
+from the 20000 cap `defeqCollapse` puts around each `isDefEq`. Even with both
+lifted, throughput binds: 8 modules ≈ 2m40s consistently, 15 in one command
+exceeds 9m40s, and one 6-module batch of heavier files times out.
+
+**Cumulative: 16 modules, 221 theorems, 39 defeq collapses.**
+
+**Largest cluster — `QOU/BringsSurface.lean`, 8 collapses.** Every input is a
+hand-entered literal (`genus := 4`, `eulerChar := -6`, `covering_degree := 4`,
+`num_branch_points := 6`, `automorphism_order := 120`). The **values are
+correct** for Bring's surface and are standard citable facts — the defect is not
+a wrong number, it is that nothing derives them, so a relation between them
+cannot fail.
+
+Sharpest: `theorem is_qou (_bq : BringsQOU) : eulerChar = (covering_degree : ℤ)
+* 2 - 14 := riemann_hurwitz_check` — takes a `BringsQOU` and **discards it**,
+returning constant arithmetic. The name asserts the framework's central
+identification; the statement says `-6 = -6` with the QOU structure unused.
+
+Also `riemann_hurwitz_check` (R-H not applied; its conclusion is typed in) and
+`euler_genus_relation` — the `seifert_euler_relation` shape exactly. All three
+adjudicated **genuine**; ledger now 182.
