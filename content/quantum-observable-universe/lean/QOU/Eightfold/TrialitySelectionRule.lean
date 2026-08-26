@@ -224,6 +224,54 @@ theorem identification_agrees_on_hadrons :
    identification_invisible_to_selection_rule 2 0,
    identification_invisible_to_selection_rule 4 1⟩
 
+/-! ## 5. Triality certifies COMPLEX TYPE — the input `Sym2GateFSTrichotomy` needs
+
+`Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` says a three-dimensional
+object passing the `Sym²` gate must be complex type, and leaves complex type as
+an input.  The grading supplies it: duality negates triality, and in `ℤ/3` an
+element equals its own negation only when it is zero.
+
+The same unit fact — `2` invertible in `ℤ/3` — that makes the grading *blind*
+to the flavour/colour identification also makes it *sharp* about self-duality.
+One arithmetic fact, a negative result and a positive one. -/
+
+/-- Duality exchanges fundamentals and antifundamentals, hence negates
+triality. -/
+theorem triality_dual (a b : ℕ) : triality b a = - triality a b := by
+  unfold triality; ring
+
+/-- **Self-duality forces vanishing triality.**  In `ℤ/3`, `−x = x` gives
+`2x = 0`, and `2` is a unit. -/
+theorem triality_eq_zero_of_selfDual {a b : ℕ} (h : triality b a = triality a b) :
+    triality a b = 0 := by
+  rw [triality_dual] at h
+  have h2 : (2 : ZMod 3) * triality a b = 0 := by
+    rw [two_mul]; linear_combination -h
+  rcases mul_eq_zero.mp h2 with h0 | h0
+  · exact absurd h0 (by decide)
+  · exact h0
+
+/-- **The certificate.**  An object of non-vanishing triality is *not*
+self-dual — so it is complex type, not real and not quaternionic. -/
+theorem not_selfDual_of_triality_ne_zero {a b : ℕ} (h : triality a b ≠ 0) :
+    triality b a ≠ triality a b :=
+  fun hcon => h (triality_eq_zero_of_selfDual hcon)
+
+/-- **The fundamental `𝟑` is complex type.**  Its triality is `1 ≠ 0`, so it is
+not isomorphic to its dual.
+
+This is the fact `Sym2GateFSTrichotomy` leaves as an input, obtained here from
+the grading rather than cited.  What remains cited for the octonionic route is
+the *other* half: that the Günaydin–Gürsey decomposition `Im(𝕆) ≅ ℝ ⊕ ℂ³` puts
+`SU(3)` on that `ℂ³` in its standard fundamental representation.  Given that,
+complex type is no longer an assumption. -/
+theorem fundamental_not_selfDual : triality 0 1 ≠ triality 1 0 :=
+  not_selfDual_of_triality_ne_zero (by decide)
+
+/-- The adjoint, by contrast, *is* self-dual — triality `0`.  Recorded so the
+certificate is seen to discriminate rather than to fire on everything. -/
+theorem adjoint_triality_zero : triality 1 1 = 0 := by decide
+
 /-- The two directions together: neutrality is *exactly* meson-and-baryon
 content. -/
 theorem neutral_iff_decomposition (a b : ℕ) :

@@ -59,12 +59,24 @@ Making them hypotheses is the point: the theorem then says exactly which
 standard inputs the conclusion needs, and a reader can see that *no* fact about
 octonions or icosahedra is among them.
 
-## What this does NOT establish
+## The complex-type input, and how much of it is now derived
 
-It does not prove the Günaydin–Gürsey triple *is* complex type — that is the
-cited literature decomposition, and bean `qou-8pl3` Route B gap (i) records it
-as cited rather than formalised.  This file says what complex type **buys** once
-you have it, and what real type **costs**.  The input is still an input.
+This file leaves complex type as an input.  `TrialitySelectionRule` supplies
+half of it: duality negates triality, and in `ℤ/3` an element equals its own
+negation only when it is zero, so **an object of non-vanishing triality is not
+self-dual** (`not_selfDual_of_triality_ne_zero`).  The fundamental has triality
+`1`, hence `fundamental_not_selfDual` — complex type, derived rather than cited.
+
+What remains cited is the *other* half, and it is genuinely about octonions:
+that the Günaydin–Gürsey decomposition `Im(𝕆) ≅ ℝ ⊕ ℂ³` puts `SU(3)` on that
+`ℂ³` in its **standard fundamental** representation.  Given that, complex type
+is no longer an assumption anywhere in the chain.
+
+So bean `qou-8pl3` Route B gap (i) narrows rather than closes: it was "the
+`Sym²` pass is a literature decomposition", and what is left is the smaller
+claim that the triple carries the fundamental.  This file says what complex type
+**buys** once you have it and what real type **costs**; `TrialitySelectionRule`
+says what certifies it.
 
 Nor does it bear on the flavour/colour identification: `TrialitySelectionRule`
 shows the `ℤ/3` grading is blind to that, and nothing here changes it.
