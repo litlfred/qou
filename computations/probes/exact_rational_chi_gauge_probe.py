@@ -52,6 +52,8 @@ from pathlib import Path
 
 import sympy as sp
 
+from canonical_braid_crossings import CTYPES  # noqa: E402
+
 HERE = Path(__file__).parent
 REPO = HERE.parent.parent
 sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
@@ -146,16 +148,30 @@ def factors_for(crossings, qv: F, *, colour_weighted: bool):
     hv = qv - F(1, 1) / qv
     dl = flavor_split_leading_exact(qv)
     out = []
+    # The ctype VOCABULARY has one owner. This probe cannot call
+    # `classify_crossing` -- that is float and this is exact `Fraction`
+    # arithmetic, which is the whole point of the probe -- but it can take
+    # the label set from the canonical module rather than re-listing it, and
+    # fail loudly if a fifth ctype ever lands.
+    d_for = {
+        "sigma": F(0),
+        "sigma_inv": -hv,
+        "averaged": -hv / 2,
+        # the p-n interface: colour-weighted unless this run is the control
+        "averaged_weighted": (-hv * (F(1, 2) - dl / 4) if colour_weighted
+                              else -hv / 2),
+    }
+    missing = set(CTYPES) - set(d_for)
+    if missing:
+        raise ValueError(
+            f"canonical_braid_crossings.CTYPES grew {sorted(missing)}; this "
+            f"probe has no exact-arithmetic `d` for it. Add one -- do NOT "
+            f"let it fall through to a default."
+        )
     for (g, kind) in crossings:
-        if kind == "sigma":
-            dd = F(0)
-        elif kind == "sigma_inv":
-            dd = -hv
-        elif kind == "averaged":
-            dd = -hv / 2
-        else:  # averaged_weighted — the p-n interface
-            dd = -hv * (F(1, 2) - dl / 4) if colour_weighted else -hv / 2
-        out.append((F(1), dd, g + 1))
+        if kind not in d_for:
+            raise ValueError(f"unknown ctype {kind!r}; expected one of {CTYPES}")
+        out.append((F(1), d_for[kind], g + 1))
     return out
 
 

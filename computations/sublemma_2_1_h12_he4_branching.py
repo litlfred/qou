@@ -52,6 +52,10 @@ from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
     _proton_body, _neutron_body, H,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # Module-level caches
 _LR_TABLE_9_3 = get_lr_table(9, 3)
@@ -87,7 +91,7 @@ def he4_braid_canonical() -> list:
     # β_p₂ on strands 3..5
     word.extend([(c, d, g + 3) for (c, d, g) in _proton_body()])
     # I_pn at strand 5
-    word.append((1.0, -H / 2, 5))
+    word.append((1.0, _pn_d(H), 5))
     # β_n₁ on strands 6..8
     word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])
     # I_nn at strand 8

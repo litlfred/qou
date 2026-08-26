@@ -52,6 +52,14 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
 # result READ as 50-digit while carrying 53 bits, which fmt() then pads.
 from q_parameter import Q_MP as Q0  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # ── Test braid words for β_p- and β_n-position ────────────────
 # Each is a list of (c, d, gen_idx) for an H_3 element. We'll
@@ -93,7 +101,7 @@ def disjoint(beta1: list, beta2: list) -> list:
 
 def with_interface(beta1: list, beta2: list,
                     interface_c: float = 1.0,
-                    interface_d: float = -H/2) -> list:
+                    interface_d: float = _pn_d(H)) -> list:
     """β_1 · I · β_2 in H_6 with I = c·σ_2 + d·1 (single inter-block
     crossing; default = averaged σ_2 - h/2 matching the atomic-braid
     proton-neutron interface)."""

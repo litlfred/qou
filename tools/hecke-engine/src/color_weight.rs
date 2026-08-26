@@ -232,10 +232,21 @@ pub fn pn_offset_from_h(h: f64, conv: PnConvention) -> f64 {
 /// an owner-scoped corpus migration, not an agent-side edit, so this constant
 /// records the live state honestly instead of pre-empting it.
 ///
-/// When the migration is authorised, the flip is this one token — and
-/// `gram_pn_convention_is_still_the_blind_one` is the test that must be
-/// updated in the same commit, by design.
-pub const GRAM_PN_CONVENTION: PnConvention = PnConvention::StrictAveraged;
+/// FLIPPED 2026-08-26 on owner authorisation ("do strict_averaged ->
+/// bring_color_weighted"), which reaffirms the 2026-08-15 R3 ruling.
+///
+/// **The "51 Python files / 18 witnesses" figure above was a serious
+/// undercount and is kept only as the record of what was believed.** It was
+/// measured by grepping for files that NAME a convention. Measured instead by
+/// import cone -- which is what actually determines whether a producer's
+/// numbers move -- **1027 of the 1929 witness-writing producers** in
+/// `computations/` reach a blind p-n site, 1027 of them through
+/// `pyhecke/atom.py` and 449 through `hecke_characters.py`. That is an upper
+/// bound: importing `atom.py` only matters for an atom that actually has a
+/// mixed bond, so a proton-only or neutron-only producer is unaffected. But
+/// it is the right order of magnitude, and it is two orders above the number
+/// this doc comment used to carry.
+pub const GRAM_PN_CONVENTION: PnConvention = PnConvention::BringColorWeighted;
 
 /// Per-bond factor for a labelled bond kind.
 ///
@@ -708,38 +719,36 @@ mod tests {
         }
     }
 
-    /// **This test records a live defect, and is meant to be edited.**
+    /// The p-n convention `gram` evaluates at is pinned by an assertion, so
+    /// that it cannot drift silently in either direction.
     ///
-    /// `gram` evaluates the p-n interface at [`PnConvention::StrictAveraged`]
-    /// while the owner ruling of 2026-08-15 (R3) makes
-    /// [`PnConvention::BringColorWeighted`] canonical. The gap is exactly
-    /// `h*delta/4` per p-n bond.
-    ///
-    /// It is asserted rather than merely commented so that the discrepancy
-    /// cannot be lost: flipping [`GRAM_PN_CONVENTION`] breaks this test, which
-    /// forces the flip and the corpus migration it implies (measured
-    /// 2026-08-25: 51 Python files, 18 committed witnesses) into the same
-    /// commit instead of letting the constant drift ahead of the numbers.
+    /// It previously asserted [`PnConvention::StrictAveraged`] and was
+    /// written to fail the moment the constant moved -- deliberately, so the
+    /// flip and the corpus migration it implies had to land together. That
+    /// flip is now authorised (owner, 2026-08-26, reaffirming the 2026-08-15
+    /// R3 ruling), so the assertion moves with it and keeps doing the same
+    /// job facing the other way: anything that quietly reverted `gram` to the
+    /// colour-blind constant would now break this test.
     #[test]
-    fn gram_pn_convention_is_still_the_blind_one() {
+    fn gram_pn_convention_is_the_colour_weighted_one() {
         assert_eq!(
             GRAM_PN_CONVENTION,
-            PnConvention::StrictAveraged,
-            "GRAM_PN_CONVENTION changed. If this is the authorised colour-weighting \
-             migration, update this test AND re-run the 51 Python consumers / 18 \
-             witnesses in the same commit (bean qou-cblw)."
+            PnConvention::BringColorWeighted,
+            "GRAM_PN_CONVENTION changed. `bring_color_weighted` is canonical \
+             (owner ruling 2026-08-15 R3, reaffirmed 2026-08-26). Reverting it \
+             to StrictAveraged makes `gram` colour-blind again and silently \
+             renumbers every atom carrying a mixed bond (bean qou-cblw)."
         );
 
-        // And the gap it leaves on the table, at the substrate anchor.
-        let gap = pn_offset(Q_0, PnConvention::BringColorWeighted)
-            - pn_offset(Q_0, GRAM_PN_CONVENTION);
-        let expected = hecke_h(Q_0) * flavor_split_leading(Q_0) / 4.0;
+        // The two are far enough apart that no recorded number is ambiguous
+        // about which convention produced it: h*delta/4 at the proton pin is
+        // ~1e11 times the f64 floor.
+        let blind = pn_offset(Q_0, PnConvention::StrictAveraged);
+        let canon = pn_offset(Q_0, PnConvention::BringColorWeighted);
         assert!(
-            (gap - expected).abs() < 1e-18,
-            "gap {gap:.17e} != h*delta/4 {expected:.17e}"
+            (canon - blind).abs() > 1e-8,
+            "the two conventions must stay distinguishable: {canon} vs {blind}"
         );
-        // ~7.19e-05 absolute: ~1e11 x the f64 floor, so a real shift.
-        assert!(gap > 7.0e-5 && gap < 7.4e-5, "gap out of recorded band: {gap:.6e}");
     }
 
     #[test]

@@ -53,6 +53,10 @@ from sublemma_2_1_A_operator_extract_h9 import (  # noqa: E402
     shape_dim,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # ──────────────────────────────────────────────────────────────────────
 # Atom braid composition (3+3+3 strand layout, pppnnn ordering)
@@ -94,7 +98,7 @@ def tritium_braid() -> list:
     """
     word = []
     word.extend(_proton_body())                                # β_p on 0..2
-    word.append((1.0, -H / 2, 2))                              # I_pn at strand 2
+    word.append((1.0, _pn_d(H), 2))                            # I_pn at strand 2
     word.extend([(c, d, g + 3) for (c, d, g) in _neutron_body()])  # β_n on 3..5
     word.append((1.0, -H, 5))                                  # I_nn at strand 5
     word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])  # β_n on 6..8
@@ -107,7 +111,7 @@ def he3_braid() -> list:
     word.extend(_proton_body())                                # β_p on 0..2
     word.append((1.0, 0.0, 2))                                 # I_pp at strand 2
     word.extend([(c, d, g + 3) for (c, d, g) in _proton_body()])   # β_p on 3..5
-    word.append((1.0, -H / 2, 5))                              # I_pn at strand 5
+    word.append((1.0, _pn_d(H), 5))                            # I_pn at strand 5
     word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])  # β_n on 6..8
     return word
 
@@ -233,7 +237,7 @@ def main() -> int:
     if args.atom == "tritium":               # p · n · n
         beta_full = tritium_braid()
         inner_first, inner_second = _proton_body(), _neutron_body()
-        inner_iface_cd = (1.0, -H / 2)       # I_pn (averaged)
+        inner_iface_cd = (1.0, _pn_d(H))     # I_pn (colour-weighted)
         third_body = _neutron_body()
     else:                                     # he3: p · p · n
         beta_full = he3_braid()

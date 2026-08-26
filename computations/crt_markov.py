@@ -53,6 +53,10 @@ import _path_bridge  # noqa: F401, E402 — ensure substrate/ on path for direct
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from q_parameter import Q as _Q_CANONICAL
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 def markov_trace_at_q(W_crossings_per_gen, n_strands, q_val):
     """Compute tr_M of atom braid at a specific q value.
@@ -134,7 +138,7 @@ def _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h):
             elif pair == ('n', 'n'):
                 base = (mpmath.mpf(1), -h); m_this = m_nn
             else:
-                base = (mpmath.mpf(1), -h / 2); m_this = m_pn
+                base = (mpmath.mpf(1), _pn_d(h)); m_this = m_pn
             crossings[3 * k + 2] = [base] * m_this
     for i in range(n_strands - 1):
         crossings.setdefault(i, [])

@@ -713,14 +713,38 @@ def chi_lambdas_braid(shapes, word, q_value=None, precision=None):
     ]
 
 
+# Canonical p-n interface offset, bound once at this module's q0. Imported
+# rather than open-coded so there is a single definition of the convention
+# across pyhecke (Layer 2b) and computations (Layer 3); the import is
+# deliberately hard, because a fallback to -h/2 would silently compute the
+# colour-blind convention while reporting success.
+from pyhecke.constants import (  # noqa: E402
+    PN_CONVENTION as _PN_CONVENTION,
+    pn_interface_offset as _pn_interface_offset,
+)
+
+D_PN = _pn_interface_offset(q0)
+
+
 def crossing_coeffs(ti, tj):
-    """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
+    """Crossing (c, d) for nucleon types: 1=proton, 0=neutron.
+
+    The mixed (p-n) branch carries the COLOUR-WEIGHTED offset `D_PN`, not
+    `-h/2`. `-h/2` is `strict_averaged`, which is the bar-symmetriser of z
+    and is colour-BLIND: it averages the two flavours 50/50 and so cannot
+    see the substrate flavour split. Canonical per the owner ruling of
+    2026-08-15 (R3), reaffirmed 2026-08-26.
+
+    This is the INTER-nucleon crossing only. The INTRA-nucleon quark-level
+    averaged crossings elsewhere in this module keep `sigma - (h/2)*1`;
+    nothing here establishes what convention a u-d crossing should carry.
+    """
     if ti == 1 and tj == 1:
         return 1.0, 0.0       # pp: σ
     elif ti == 0 and tj == 0:
         return 1.0, -h        # nn: σ⁻¹
     else:
-        return 1.0, -h / 2    # pn: mixed
+        return 1.0, D_PN      # pn: mixed, colour-weighted
 
 
 def nuclear_braid_character(Z, N, sigmas, dim, n_gens):

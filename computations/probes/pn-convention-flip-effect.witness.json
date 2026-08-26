@@ -1,0 +1,249 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T13:52:32.289351+00:00",
+  "commitSha": "baf4ff3a5acab07c6b4cfefa6781fa727295d899",
+  "assertions": [
+    {
+      "name": "f_pn_blind",
+      "computed": "0.508157887748645593880406757381",
+      "expected": "0.508157887748645593880406757381",
+      "passed": true
+    },
+    {
+      "name": "f_pn_canonical",
+      "computed": "0.508229789376738962577995797656",
+      "expected": "0.508229789376738962577995797656",
+      "passed": true
+    },
+    {
+      "name": "per_bond_gap_is_h_delta_over_4",
+      "computed": "5.2368e-62",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "the whole difference is exactly h*delta/4"
+    },
+    {
+      "name": "2H_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "2H_shift_matches_single_factor_prediction",
+      "computed": "1.7985e-58",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "3H_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "3H_shift_matches_single_factor_prediction",
+      "computed": "1.2104e-58",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "3He_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "3He_shift_matches_single_factor_prediction",
+      "computed": "4.8275e-58",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "4He_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "4He_shift_matches_single_factor_prediction",
+      "computed": "1.3484e-57",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "7Li_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "7Li_shift_matches_single_factor_prediction",
+      "computed": "3.9189e-58",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "12C_mixed_bond_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical ordering p..p n..n has ONE p-n boundary"
+    },
+    {
+      "name": "12C_shift_matches_single_factor_prediction",
+      "computed": "4.1959e-58",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "relative discrepancy vs f_canon/f_blind - 1"
+    },
+    {
+      "name": "proton_unchanged_by_flip",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "no mixed bond, so no factor to move"
+    },
+    {
+      "name": "neutron_unchanged_by_flip",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "no mixed bond, so no factor to move"
+    },
+    {
+      "name": "2p_unchanged_by_flip",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "no mixed bond, so no factor to move"
+    },
+    {
+      "name": "2n_unchanged_by_flip",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "no mixed bond, so no factor to move"
+    },
+    {
+      "name": "nf_proton_shift",
+      "computed": "0.000000e+00",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_neutron_shift",
+      "computed": "0.000000e+00",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_2H_shift",
+      "computed": "8.532796e-05",
+      "expected": "8.532796e-05",
+      "passed": true,
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_3H_shift",
+      "computed": "1.497426e-04",
+      "expected": "1.497426e-04",
+      "passed": true,
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_3He_shift",
+      "computed": "1.639417e-04",
+      "expected": "1.639417e-04",
+      "passed": true,
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_4He_shift",
+      "computed": "2.072937e-04",
+      "expected": "2.072937e-04",
+      "passed": true,
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "nf_7Li_shift",
+      "computed": "8.054611e-04",
+      "expected": "8.054611e-04",
+      "passed": true,
+      "source": "build_atom_nf bonds ALL pairs, so Z*N mixed bonds; the shift is NOT the single closed-form factor and is not proportional to Z*N either"
+    },
+    {
+      "name": "normal_form_path_measured",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "reporting only the closed form is what produced the retracted single-factor claim"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 131,
+  "computation": "pn-convention-flip-effect",
+  "scriptFile": "pn_convention_flip_effect_probe.py",
+  "scriptHash": "4d31760ce0aa",
+  "scriptCommitSha": "baf4ff3a5acab07c6b4cfefa6781fa727295d899",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pn_convention_flip_effect_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pn_convention_flip_effect_probe.py"
+  },
+  "description": "What the strict_averaged -> bring_color_weighted p-n flip moves. The canonical ordering p..p n..n carries exactly ONE p-n boundary for every atom, so the flip is a single A-independent factor 1 + 1.4149466e-04 on the closed-form trace ratio, not an accumulating per-bond error; pure-flavour systems are untouched.",
+  "contentBlock": "prop:pn-averaging-uniqueness",
+  "parameters": {
+    "q0Anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "q0": "1.109978582751380807591669",
+    "delta": "0.001375710807027096008551109",
+    "f_pn_strict_averaged": "0.508157887748645593880406757381",
+    "f_pn_bring_color_weighted": "0.508229789376738962577995797656",
+    "relative_shift": "0.000141494661062771899920928590957",
+    "mixed_bonds_in_canonical_ordering": 1,
+    "a_independence_holds_for_closed_form_ratio_ONLY": true,
+    "normal_form_path_bonds_all_pairs_and_shift_grows_with_A": true,
+    "retracted_claim": "an earlier revision called the single A-independent factor a property of the flip; it is a property of closed_form_ratio's adjacent-pair walk over the ordering p..p n..n"
+  }
+}
