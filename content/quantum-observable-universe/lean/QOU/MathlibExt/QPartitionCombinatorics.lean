@@ -579,15 +579,16 @@ prefactor moves.
 
 Note the direction of the dependence: the increment is the ROW INDEX, not the
 row length. A box added to row `0` does not change `n(λ)` at all. -/
+theorem nLambda_eq_sum (lam : Partition) :
+    nLambda lam = ∑ i ∈ Finset.range lam.length, i * ((lam[i]?).getD 0) := by
+  unfold nLambda
+  rw [foldl_add_eq_sum _ (List.range lam.length) 0, Nat.zero_add]
+  rfl
+
+/-- **`n(λ + box in row r) = n(λ) + r`.** -/
 theorem nLambda_addBoxRow (lam : Partition) (r : ℕ) (hr : r < lam.length) :
     nLambda (addBoxRow lam r) = nLambda lam + r := by
-  have hsum : ∀ (f : ℕ → ℕ) (n : ℕ),
-      (List.range n).foldl (fun acc i => acc + f i) 0 = ∑ i ∈ Finset.range n, f i := by
-    intro f n
-    rw [foldl_add_eq_sum f (List.range n) 0, Nat.zero_add]
-    rfl
-  unfold nLambda
-  rw [length_addBoxRow, hsum, hsum]
+  rw [nLambda_eq_sum, nLambda_eq_sum, length_addBoxRow]
   have hmem : r ∈ Finset.range lam.length := Finset.mem_range.mpr hr
   rw [← Finset.add_sum_erase _ _ hmem, ← Finset.add_sum_erase _ _ hmem]
   have hrest : ∑ i ∈ (Finset.range lam.length).erase r, i * (((addBoxRow lam r)[i]?).getD 0)
@@ -608,6 +609,117 @@ theorem nLambda_addBoxRow_row_one : nLambda (addBoxRow [3, 2, 1] 1) = nLambda [3
   decide
 
 theorem nLambda_addBoxRow_row_zero : nLambda (addBoxRow [3, 2, 1] 0) = nLambda [3, 2, 1] := by
+  decide
+
+/-! ### The corner `addBoxRow` cannot reach
+
+`addBoxRow` is `List.set`, and `List.set` is a **no-op out of range** — so
+`addBoxRow lam lam.length` is `lam`, not `lam ++ [1]`. The new-bottom-row corner
+is therefore not expressible by it, and **every** partition has exactly one such
+corner (measured in `computations/y_lambda_pieri_step_probe.py`, where each of
+the eight shapes checked contributes one). It is a second operation, not a
+defect in `addBoxRow` — a `set` genuinely cannot lengthen a list.
+
+The new row is *last*, which makes this case easier than the interior one in two
+places: nothing lies below it, so the new cell's hook length is unconditionally
+`1` (the interior corner needs the weakly-decreasing property, which the carrier
+does not have), and only column `0` sees any change at all. -/
+
+/-- **The trap, stated as a theorem** so it cannot be re-discovered by accident:
+adding a box "at row `lam.length`" via `addBoxRow` does nothing. -/
+theorem addBoxRow_at_length (lam : Partition) : addBoxRow lam lam.length = lam := by
+  unfold addBoxRow
+  exact List.set_eq_of_length_le (Nat.le_refl (List.length lam))
+
+/-- Add a box as a **new bottom row** of one cell. -/
+def addBoxNewRow (lam : Partition) : Partition := lam ++ [1]
+
+@[simp]
+theorem length_addBoxNewRow (lam : Partition) :
+    (addBoxNewRow lam).length = lam.length + 1 := by
+  unfold addBoxNewRow Partition.length
+  simp
+
+theorem getElem?_addBoxNewRow_lt (lam : Partition) (i : ℕ) (h : i < lam.length) :
+    (addBoxNewRow lam)[i]? = lam[i]? := by
+  unfold addBoxNewRow
+  rw [List.getElem?_append_left (by simpa using h)]
+
+theorem getElem?_addBoxNewRow_self (lam : Partition) :
+    (addBoxNewRow lam)[lam.length]? = some 1 := by
+  unfold addBoxNewRow
+  show (lam ++ [1])[List.length lam]? = some 1
+  rw [List.getElem?_append_right (Nat.le_refl (List.length lam))]
+  simp
+
+/-- The tail below row `i` gains the new row, for any `i` inside `lam`. -/
+theorem drop_addBoxNewRow (lam : Partition) (i : ℕ) (h : i < lam.length) :
+    (addBoxNewRow lam).drop (i + 1) = lam.drop (i + 1) ++ [1] := by
+  unfold addBoxNewRow
+  have h' : i + 1 ≤ List.length lam := h
+  rw [List.drop_append_of_le_length h']
+
+/-- **Only column `0` moves.** The new row holds a single cell, so its entry `1`
+exceeds `j` exactly when `j = 0`; for every other column the leg count is blind
+to it. -/
+theorem hookLength_addBoxNewRow_col_pos (lam : Partition) (i j : ℕ)
+    (h : i < lam.length) (hj : 0 < j) :
+    Partition.hookLength (addBoxNewRow lam) i j = Partition.hookLength lam i j := by
+  unfold Partition.hookLength
+  rw [getElem?_addBoxNewRow_lt lam i h, drop_addBoxNewRow lam i h]
+  cases hrow : lam[i]? with
+  | none => rfl
+  | some row_i =>
+    by_cases hjr : j < row_i
+    · simp only [if_pos hjr, List.filter_append, List.length_append,
+        List.filter_cons, List.filter_nil]
+      simp [Nat.not_lt.mpr (Nat.one_le_iff_ne_zero.mpr (by omega) : 1 ≤ j)]
+    · simp only [if_neg hjr]
+
+/-- **Column `0` gains exactly one**, for every row of `lam` that has a cell
+there. -/
+theorem hookLength_addBoxNewRow_col_zero (lam : Partition) (i : ℕ)
+    (h : i < lam.length) (hpos : 0 < (lam[i]?).getD 0) :
+    Partition.hookLength (addBoxNewRow lam) i 0 = Partition.hookLength lam i 0 + 1 := by
+  have hlam : lam[i]? = some ((lam[i]?).getD 0) := by
+    rw [List.getElem?_eq_getElem (show i < List.length lam from h)]; rfl
+  unfold Partition.hookLength
+  rw [getElem?_addBoxNewRow_lt lam i h, drop_addBoxNewRow lam i h, hlam]
+  simp only [if_pos hpos, List.filter_append, List.length_append,
+    List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  simp only [if_pos (show 0 < 1 by norm_num), List.length_cons, List.length_nil]
+  omega
+
+/-- **The new cell's hook length is `1`, unconditionally.** Nothing lies below
+the last row, so no order hypothesis is needed — unlike the interior corner,
+which `hookLength_addBoxRow_of_ne_corner` has to exclude. -/
+theorem hookLength_addBoxNewRow_new_cell (lam : Partition) :
+    Partition.hookLength (addBoxNewRow lam) lam.length 0 = 1 := by
+  have hnil : (addBoxNewRow lam).drop (lam.length + 1) = [] := by
+    refine List.drop_eq_nil_of_le ?_
+    simp [addBoxNewRow, Partition.length]
+  unfold Partition.hookLength
+  rw [getElem?_addBoxNewRow_self lam, hnil]
+  simp
+
+/-- **`n(λ ++ [1]) = n(λ) + ℓ(λ)`**: the new row sits at index `ℓ(λ)` and holds
+one cell, so it contributes exactly its own index. -/
+theorem nLambda_addBoxNewRow (lam : Partition) :
+    nLambda (addBoxNewRow lam) = nLambda lam + lam.length := by
+  rw [nLambda_eq_sum, nLambda_eq_sum, length_addBoxNewRow, Finset.sum_range_succ,
+    getElem?_addBoxNewRow_self lam]
+  have hrest : ∑ i ∈ Finset.range lam.length, i * (((addBoxNewRow lam)[i]?).getD 0)
+      = ∑ i ∈ Finset.range lam.length, i * ((lam[i]?).getD 0) :=
+    Finset.sum_congr rfl fun i hi => by
+      rw [getElem?_addBoxNewRow_lt lam i (Finset.mem_range.mp hi)]
+  rw [hrest]
+  simp
+
+/-- Concrete check, matching the probe: `[3,2,1] ++ [1] = [3,2,1,1]`, and
+`n` goes `4 → 7` because the new row sits at index `3`. -/
+theorem nLambda_addBoxNewRow_example :
+    addBoxNewRow [3, 2, 1] = [3, 2, 1, 1] ∧
+      nLambda (addBoxNewRow [3, 2, 1]) = nLambda [3, 2, 1] + 3 := by
   decide
 
 /-- **The hook-length update rule.** Adding one box to row `r` raises the hook

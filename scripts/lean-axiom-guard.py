@@ -440,6 +440,21 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_one | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_zero | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_eq_sum | clean
+# The corner addBoxRow cannot reach. addBoxRow is List.set, a NO-OP out of
+# range, so addBoxRow lam lam.length = lam and NOT lam ++ [1] — recorded as
+# addBoxRow_at_length so the trap cannot be re-discovered by accident. Every
+# partition has exactly one new-bottom-row corner, so (P) needs this operation.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addBoxRow_at_length | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.length_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxNewRow_lt | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxNewRow_self | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.drop_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_col_pos | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_col_zero | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_new_cell | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow_example | clean
 # (P), the Pieri step. schurElement is a fold; nothing cell-by-cell can be said
 # about a fold, so schurElement_eq_prod exhibits it as a product first. The two
 # rowFactor lemmas are the box-addition response in the two cases where it is a
