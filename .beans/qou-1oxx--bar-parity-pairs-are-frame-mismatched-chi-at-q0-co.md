@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T07:07:20Z
-updated_at: 2026-08-26T13:59:48Z
+updated_at: 2026-08-26T15:12:25Z
 ---
 
 Found 2026-08-26 while fully discharging `qou-cds4`'s witness line. Third
@@ -296,3 +296,53 @@ Neither is "the stale one". The colour-blind frame is a coherent object and is
 arguably the right one for a bar-parity question, since it IS the
 bar-symmetriser and IS bar-invariant. What was wrong was pairing it against a
 colour-weighted `at-q0` **without saying so**.
+
+
+## Reproducibility envelope, and why it is NOT sibling `qou-569e` (2026-08-26)
+
+Regenerating these witnesses shows LAST-DIGIT movement. Measured, so it is not
+re-derived or mistaken for a regression:
+
+    within one process   three consecutive kernel calls BIT-IDENTICAL
+    4-arg vs 5-arg-None  BIT-IDENTICAL (deuteron 11/11, helium-3 30/30) --
+                         the avg_shifts argument added here is NOT a cause
+    across processes     the 50th (last serialised) digit CAN move: tritium
+                         (3,3,2,1) matched main on one run and differed by
+                         1.42e-50 on the next, same code, same container
+    vs origin/main       an environment delta ALSO applies: main's committed
+                         witnesses record mpmath 1.3.0 / pyhecke_native_build
+                         c7ea7ebb0d76c4e2; this container is mpmath 1.4.1 /
+                         c85ef99ee89ce1c3
+
+Largest observed 4.34e-50 relative (helium-4, 4 of 77 partitions), ~35 orders
+below the L1 target of 1e-15.
+
+**Do NOT restate "byte-identical" as a property of this producer.** I reported
+it for D/T/3He and it then failed on a re-run of the same code. It was luck.
+
+### Distinct from sibling bean `qou-569e` -- do not merge the two
+
+`qou-569e` (landed on main 2026-08-26) reports that two committed witnesses do
+not reproduce on a clean `main` worktree, one by **23 %**, and attributes it to
+IMPORT-CONE drift. That is a different phenomenon from this one at every level:
+
+    qou-569e   23 % value move        import-cone drift   a real number changed
+    here       ~1e-50 digit movement  serialisation floor  no value changed
+
+A reader who sees "witnesses do not reproduce" in both could reasonably collapse
+them. They should not be collapsed: one is a corpus-integrity problem, the other
+is the last printed digit of a 50-dps serialisation.
+
+### This branch is NOT exposed to the qou-569e drift -- checked, not assumed
+
+`qou-569e` names `fbc0858af` (chi_lambda_braid symbolic_q now returns) as the
+probable cause. Verified here:
+
+  * `fbc0858af` is ALREADY an ancestor of this branch's HEAD, so these
+    witnesses were built with it, not before it.
+  * this producer references neither `chi_lambda_braid` nor `symbolic_q`.
+  * of the 20 commits main is ahead by, NONE touch any module in this
+    producer's import cone (`mass_at_3A_proper`, `canonical_braid_crossings`,
+    `_li_2_q_util`, `q_parameter`, `_precision`, `witness_base`, `tools/pyhecke`).
+
+So merging main in cannot invalidate what was generated here.
