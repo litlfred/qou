@@ -1616,3 +1616,97 @@ are or are not justified; that any binding conjecture is true or false. A
 ceiling clearing AME would have been **necessary, not sufficient** — it says
 room exists, not that a derivable cost reaches it. Nothing here computes a
 binding contribution.
+
+## Addendum 17 — the two remaining escapes, and a correction to the first (2026-08-26)
+
+§16 closed the level escape. Two remain — a different cost, and signed
+occupations. Neither is chosen here; both are now quantified. Working the first
+one properly shows the figure §15/§16 reported for it was wrong.
+
+### The correction: `n_target` is not an independent input
+
+It was reported that "a cost reaching AME needs `max(t) ≥ AME/n_target = 3.8677`
+against the actual `0.2539` — a factor of **15.23×**, the same ratio read from
+either end with `n_target` fixed."
+
+**`n_target` cannot be held fixed.** It is not an input:
+
+```
+n_target = tr_M(β_D) = Σ_λ y_λ χ^λ = Σ_λ t_λ
+```
+
+The net-constraint target **is** the sum of the cost vector — verified to
+`8e-17`. So the ceiling is
+
+```
+ceiling = max(t) · Σ(t)
+```
+
+which is **quadratic** in the cost, not linear. A uniform rescale `t → c·t`
+scales it by `c²`, so it needs `c = √15.2307 = 3.903`, not 15.23. The 15.23 was
+correct only for a variation that moves `max(t)` while pinning `Σ(t)`, and no
+such variation exists. That "read from either end" remark was dressing an
+algebraic identity as an insight, and the identity was the wrong one.
+
+### What a cost change can and cannot buy
+
+Since `ceiling = max(t)·Σ(t)`, redistributing the cost at **fixed total** is
+maximised by putting everything on one block, giving `ceiling = (Σt)²`. That is
+the best any reshaping can do:
+
+| | value |
+|---|---|
+| actual ceiling | 0.146058 |
+| **best possible shape** (all weight on one block) | **0.330823** — 2.265× better |
+| AME | 2.224566 |
+| **still short by** | **6.72×** |
+
+So the constraint is **not on the cost's shape**. It is on `tr_M(β_D)` itself:
+even a perfectly concentrated cost needs `Σ(t) ≥ √AME = 1.491` against the
+actual `0.575` — the Markov trace of the deuteron braid would have to be
+**2.59× larger**. That is a derived quantity, not a free parameter, so "pick a
+different cost" is really "the deuteron braid's trace is too small", which is a
+much harder thing to want.
+
+**An independent check that this picture is right.** With `x ≥ 0` on the support
+and `Σx = n_target`, `t·x` ranges over `[min(t)·n_target, max(t)·n_target]` =
+`[0.0369647, 0.1460580]`, and a *minimising* LP should sit at the bottom. The
+committed `support_restricted` optimum is `0.03696468028280623`. It matches
+`min(t)·n_target` to `1e-12` — so the solver is doing exactly the convex
+combination this analysis assumes, and the bound is not an artefact of how the
+program was posed.
+
+### Where the sign structure went
+
+`χ^λ(β_D)` at `n = 6` takes both signs. Sorted by whether convention D gives the
+block a nonzero weight:
+
+| sector | `χ^λ(β_D)` |
+|---|---|
+| **support** (4 blocks) | `+1.560, +3.216, +1.674, +4.249` — **all positive** |
+| **kernel** (7 blocks) | `−0.470, −1.972, −0.490, −3.497, −0.820, +2.156, −0.677` — **six negative** |
+
+**Every negative character is in the kernel; the support has none.** The
+convention-D row cap `ℓ(λ) ≤ 2` zeroes exactly the blocks carrying the sign
+structure.
+
+That is a sharper reading of §15 than "the kernel is unconstrained". The
+full-space program could reach AME not merely because the kernel had no
+positivity constraint, but because the kernel is *where the minus signs live*.
+And it connects the three threads of this arc: the third row is where the weight
+dies (§13), where one fibre cannot reach (§14 §3), and — now — where the
+negative characters sit.
+
+**Scope (a), and the limit is important.** This locates where the negative
+characters are. It is **not** an argument that a program should occupy them, and
+it does **not** justify signed occupations. A reason would have to say what a
+negative occupation of a zero-weight block *means*, and nothing here supplies
+one. Nor is it claimed that a cost with a larger trace exists or is derivable,
+or that any binding conjecture is true or false. Nothing here computes a binding
+contribution.
+
+For the sibling fronts: this is a second, independent pointer at signed
+structure alongside #5812's ²H/⁴He sign argument, and it says something more
+specific than "signs are needed" — it says the framework's own characters
+already supply them, in precisely the sector the canonical trace convention
+cannot see.
