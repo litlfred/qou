@@ -3,8 +3,9 @@
 title: three producers compute 70 provably-zero characters — the two-row cap is proved in Lean and unused in compute
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-08-26T06:46:25Z
+updated_at: 2026-08-26T22:55:00Z
 ---
 
 ## The claim
@@ -84,3 +85,38 @@ of the four producers as already guarded (`rowguard=1`). That match was
 `t[1] <= 2` filtering **braid generator indices**, not partition row
 counts. None of them guards on `ell(lambda)`. Same substring-vs-meaning
 class as the `elapsed_reduce_sec` mask bug.
+
+
+## 2026-08-26 — the trap is in the CACHED route; the COMPUTED route is already exact
+
+`computations/qbeta/qbeta_two_row_zeros_exact_on_computed_route_probe.py` (3/3),
+from PR #5864. Read-only: runs no producer, writes no cache.
+
+**Two distinct routes, not variants of one implementation.**
+
+| route | mechanism | >N-row weight |
+|---|---|---|
+| **cached** — `wedderburn_jones_markov._load_y_lambda_at_q0_witness` | reads `y-lambda-at-q0.witness.json`, built by `y_lambda_at_q0_cache.py` | **solver residue ~1e-73** — the trap this bean tracks |
+| **computed** — `y_lambda_su_n(n, q, N)` | evaluates `schur_principal(sh, N, q)` directly | **exactly `0.0`** |
+
+The computed route's zero is **structural**: a Schur function of a shape with
+more rows than variables vanishes identically, so it is not a convergence
+outcome at all.
+
+**Measured at N = 2 (convention D), n = 2..9** — 0, 1, 2, 4, 7, 11, 17, 25
+over-row shapes, **67 in total**, and every one satisfies `v == 0`, not
+"below tolerance".
+
+Checked across n **deliberately**: a single-n check would not have been
+evidence. I had just been burned treating an n = 3 identity as general
+(`qbeta_rank_one_identity_is_n3_only_probe` — that one *failed* at n = 4), so
+the same standard applies here.
+
+**What it changes for the three producers.** The row-count remedy is right and
+remains the safe general fix, because a consumer cannot tell which route its `y`
+arrived by. But there is a second option that removes the question entirely:
+on the computed route a truthiness check is *already correct*. Worth knowing
+before rewriting three call sites around a new predicate.
+
+**Not claimed:** that the cached witness is wrong. Its residues are ~1e-73 and
+move no number; the defect is only that they defeat a `None`/truthiness prune.
