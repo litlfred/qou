@@ -86,30 +86,71 @@ theorem frobeniusInner_symm {n : ℕ} (x y : HeckeElement n) :
   unfold frobeniusInner
   exact real_inner_comm y x
 
-/-- **Markov trace** on `H_n(q_0)`, axiomatised at the linear-
-    functional level.  The full categorical definition (Jones-
-    Markov coefficients `y_λ`, partition-sum decomposition) lives
-    in the rendered manuscript and the Python compute layer; the
-    Lean port is open work.
+/-- **Riesz weight of the Markov trace.**
 
-    Properties guaranteed by the axiomatisation:
-    * Linear in its argument.
-    * Cyclicity `markovTrace n (x * y) = markovTrace n (y * x)` —
-      not yet expressible without an algebra structure on
-      `HeckeElement`.
+    `HeckeElement n` is a finite-dimensional real inner-product space, so by
+    Riesz representation EVERY `ℝ`-linear functional on it is `⟪w, ·⟫` for a
+    unique `w`.  The Markov trace is such a functional, so nothing is lost by
+    carrying it as its weight vector rather than as an opaque function: the two
+    presentations have exactly the same content.
 
-    These properties are stated as separate axioms below; the
-    bare `markovTrace` axiom only fixes the *type* of the trace. -/
+    What IS gained is that linearity stops being assumed.  See
+    `markovTrace_linear` below, which was an `axiom` until 2026-08-26.
+
+    The weight itself stays `opaque` because its VALUE is genuinely not
+    formalised here — categorically it is the Jones-Markov combination
+    `Σ_λ y_λ χ^λ` (`QOU.HeckeAlgebra.MarkovTrace.markovTraceOnWedderburn`
+    carries that form against a Wedderburn decomposition).  An `opaque`
+    datum asserts nothing; an opaque function plus an asserted property
+    asserts something unprovable.  This is the difference. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (the trace is the y_λ-weighted block-trace sum, hence linear)
+opaque markovTraceWeight : (n : ℕ) → HeckeElement n
+
+/-- **Markov trace** on `H_n(q_0)`, as the linear functional with Riesz weight
+    `markovTraceWeight n`.
+
+    The full categorical definition (Jones-Markov coefficients `y_λ`,
+    partition-sum decomposition) lives in the rendered manuscript and the Python
+    compute layer; what is formalised here is that the trace is a linear
+    functional, which is the only property the downstream SDP-uniqueness
+    arguments use.
+
+    **Cyclicity is a separate matter** and remains an axiom
+    (`MarkovTrace.MarkovTrace_cyclic`): it constrains this functional against
+    `heckeMul`, which is itself `opaque`, so it is not expressible from the
+    linear-algebra layer alone.
+
+    🛑 **This does NOT pin the trace to a non-zero function.** Taking
+    `markovTraceWeight n = 0` satisfies this definition and every axiom stated
+    about `markovTrace` in `QOU.HeckeAlgebra.MarkovTrace`, since each of those
+    reads `0 = 0` under it. That was already true of the previous `opaque`
+    presentation and is unchanged here — but it is worth stating where a reader
+    will see it, because a sharper version of the same degeneracy was a live
+    defect: bean `qou-ck1f` found `MarkovTrace_markov_axiom` binding its Markov
+    parameter with `∀ (z : ℝ)`, which PROVED `tr_M ≡ 0`. Removing that binder
+    removed the proof of degeneracy; it did not add anything excluding it.
+    Nothing in this layer forces `tr_M ≠ 0`. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Markov trace H_n(q) → ℝ)
-opaque markovTrace : (n : ℕ) → HeckeElement n → ℝ
+noncomputable def markovTrace (n : ℕ) (x : HeckeElement n) : ℝ :=
+  frobeniusInner (markovTraceWeight n) x
 
-/-- The Markov trace is linear in its argument: this is the only
-    structural property of `markovTrace` used by the
-    SDP-uniqueness arguments downstream.  Stated as an axiom
-    pending the categorical definition. -/
--- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Markov trace is ℝ-linear)
-axiom markovTrace_linear (n : ℕ) :
-    IsLinearMap ℝ (fun x : HeckeElement n => markovTrace n x)
+/-- The Markov trace is linear in its argument: this is the only structural
+    property of `markovTrace` used by the SDP-uniqueness arguments downstream.
+
+    **Was an `axiom` until 2026-08-26**, on the stated ground that the
+    categorical definition had not been ported. That reasoning conflated two
+    things: the trace's *value* (genuinely not formalised, and still carried
+    opaquely in `markovTraceWeight`) with its *linearity*, which is a property
+    of the shape `⟪w, ·⟫` and needs no value at all. Riesz representation makes
+    the two presentations equivalent, so this costs nothing and discharges the
+    assumption. -/
+theorem markovTrace_linear (n : ℕ) :
+    IsLinearMap ℝ (fun x : HeckeElement n => markovTrace n x) := by
+  constructor
+  · intro x y
+    simp only [markovTrace, frobeniusInner, inner_add_right]
+  · intro c x
+    simp only [markovTrace, frobeniusInner, real_inner_smul_right, smul_eq_mul]
 
 /-- **Absolute Markov trace** — the modulus of the Markov trace
     used in the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`.

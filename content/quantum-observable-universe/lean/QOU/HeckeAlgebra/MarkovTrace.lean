@@ -70,6 +70,23 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit QOU.HeckeAlgebra.Wedderburn
 noncomputable def JonesMarkovCoefficient {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : ℝ :=
     QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q
 
+/-- **Identification** (Wenzl 1988 Lemma 3.2): the abstract Jones-Markov
+    coefficient IS the Wenzl closed form.
+
+    Definitional, hence `rfl` — `JonesMarkovCoefficient` is defined as
+    `wenzlClosedForm` directly above. Recorded as a named theorem anyway,
+    because until 2026-08-25 this was an `axiom` in
+    `QOU.HeckeAlgebra.JonesMarkovWenzl` and a reader looking for it there will
+    now find only a comment. Stating it here also means a future refactor that
+    makes `JonesMarkovCoefficient` something other than `wenzlClosedForm`
+    breaks a theorem rather than silently changing what the corpus means by
+    `y_λ`. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2
+theorem jonesMarkovCoefficient_eq_wenzlClosedForm
+    {n : ℕ} (lam : Nat.Partition n) (q : ℝ) :
+    JonesMarkovCoefficient lam q
+      = QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q := rfl
+
 /-- The Jones-Markov coefficients `y_λ(q)` are real-valued and
     sum to 1 across partitions: `Σ_{λ ⊢ n} y_λ(q) = 1` (the
     central-element normalisation, per Wenzl 1988 Lemma 3.2).

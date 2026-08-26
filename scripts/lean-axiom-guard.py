@@ -187,6 +187,21 @@ QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand 
 QOU.Archimedean.BorromeanVolumeCatalan | QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan | clean
 QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky | clean
 
+# --- the Markov-trace linearity chain: an AXIOM until 2026-08-26, now a theorem ---
+# `markovTrace_linear` asserted that an `opaque` function on `HeckeElement n` is linear.
+# `HeckeElement n` is not opaque -- it abbreviates `EuclideanSpace ℝ (Fin n!)` -- so by
+# Riesz every linear functional on it is `⟪w, ·⟫`. Carrying the trace as its weight vector
+# instead of as an opaque function makes linearity PROVABLE at no cost in content, and the
+# opacity moves to a datum (`markovTraceWeight`), which asserts nothing, from a function
+# plus an asserted property, which asserted something unprovable.
+#
+# Same reason to pin as the Lobachevsky row: axiom -> theorem is exactly what a revert turns
+# back into an axiom while every downstream name still typechecks. The two consumers are
+# pinned alongside because they are what the SDP-uniqueness arc actually calls.
+QOU.HeckeAlgebra.Common | QOU.HeckeAlgebra.markovTrace_linear | clean
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_add | clean
+QOU.HeckeAlgebra.MarkovTrace | QOU.HeckeAlgebra.MarkovTrace.markovTrace_smul | clean
+
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an
 # axiom check, so the check is pinned here rather than left as a one-off.  Measured
