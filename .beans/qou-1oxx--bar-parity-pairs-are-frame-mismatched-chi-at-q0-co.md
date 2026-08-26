@@ -1,11 +1,11 @@
 ---
 # qou-1oxx
 title: 'Bar-parity pairs are frame-mismatched: chi at-q0 colour-weighted, at-qinv colour-blind'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T07:07:20Z
-updated_at: 2026-08-26T15:12:25Z
+updated_at: 2026-08-26T15:45:27Z
 ---
 
 Found 2026-08-26 while fully discharging `qou-cds4`'s witness line. Third
@@ -346,3 +346,38 @@ probable cause. Verified here:
     `_li_2_q_util`, `q_parameter`, `_precision`, `witness_base`, `tools/pyhecke`).
 
 So merging main in cannot invalidate what was generated here.
+
+
+## ✅ MERGED 2026-08-26 — PR #5830, rebase-merge 7a5f6bf240
+
+All four atoms ship both frames. Verification at merge (no CI exists; the
+agent's own verification IS the gate, per AGENTS.md rule 10):
+
+    precision-gates.sh --changed   GATES_EXIT=0, no RED
+                                   (was RED: raw-float64 ratchet -- drained)
+    raw-float64 ratchet, direct    exit 0, 0 NEW dirty, 0 REGRESSED
+    chi_convention_audit           exit 0, ok 36 / mismatch 2
+                                   (clean main is 32/2; the 2 are pre-existing)
+    probe_d_barparity_binding      exit 0, 2/2, 5.859e-04, Sum a^odd 1.13e-72
+    probe_d_delta_lambda_terms     exit 0, 2/2, rel 2 = 5.859e-04
+
+Both probes reported values IDENTICAL before and after a rebase across 31 of
+main's commits -- the practical confirmation of the import-cone check above.
+
+Copilot did not enqueue (get_check_runs total_count 0). That is n=6 for bean
+qou-gwe9, whose measurement is n=5.
+
+**What remains open: ** --  does
+not cover the  family, so the widened PRODUCER_CONVENTION
+acceptance is not backed by an independent measurement. Found by auditing my
+own change. Not a regression from this work; a gap this work exposed.
+
+
+(The line above lost three identifiers to shell backtick-expansion when it was
+appended. Restated intact:)
+
+**What remains open: `qou-awwk`** — `chi_convention_from_values_audit` does not
+cover the `-at-qinv-` family, so the widened `PRODUCER_CONVENTION` acceptance in
+`chi_convention_audit` is not backed by an independent measurement. Found by
+auditing my own change rather than the corpus. Not a regression from this work;
+a gap this work exposed and named.
