@@ -3210,3 +3210,89 @@ same bar `I_colour` failed on in Addendum 30 and `α_shift` cleared in Addendum
 Nor is the *uncabled* trace's fall with A itself an argument against the
 framework: `tr_M` is not the binding, and §C's relation between them is
 quadratic. The measurement here is of the **gap**, and the gap is what widens.
+
+---
+
+## Addendum 35 — the cabling literature does supply a selection principle, and it is the invariant §F already used
+
+§H closed the **free-degree** satellite and left the derivation of `r` as the
+open question. Reading the two ingested sources answers it: a selection
+principle exists, it is the *same* Laurent valuation §F used to pin the
+interface, and the corpus already carries its closed form.
+[`cable_selection_principle_probe.py`](../../computations/meson/cable_selection_principle_probe.py),
+5/5.
+
+### The cable pattern is a torus braid
+
+van der Veen ([`arxiv-0807.2679v1`](../../library/arxiv-0807.2679v1/)) defines
+the `(r,s)`-cabling operation with the pattern taken to be *"the closure of the
+`(r,s)`-torus braid `B^r_s = (σ₁ ⋯ σ_{s−1})^r`"*, and proves
+
+$$
+  J_N\bigl(L^r_{i;s}\bigr)(q) \;=\; \sum_w \binom{g}{w}_{\!N}\,
+    q^{\,rw(wp+1)/g}\; J_{2wp+1}(L)(q), \qquad g=\gcd(r,s),\ p=s/g.
+$$
+
+**That pattern is exactly the object `prop:alpha-shift-torus-knot` gives a
+derived closed form for**: `α_shift(T_{r,s}) = r(s−1)`. Verified against the
+closed form at six patterns:
+
+| `(r,s)` | (1,2) | (2,2) | (1,3) | (3,2) | (1,4) | (2,3) |
+|---|---:|---:|---:|---:|---:|---:|
+| measured `α_shift` | 1 | 2 | 2 | 3 | 3 | 4 |
+| `r(s−1)` | 1 | 2 | 2 | 3 | 3 | 4 |
+
+So the cable degree is **not** a free parameter in the way §H's fit argument
+treated it — its valuation is derived.
+
+### What that would force
+
+The recorded `D(u)` exponent pins the interface term at
+`α_shift = 1` (§F). **If** a cable contributes its pattern's `α_shift`, then
+`r(s−1) = 1`, whose only solution with `r ≥ 1, s ≥ 2` is **`(1,2)`** — a
+two-strand pattern with one crossing, i.e. the **trivial** cable. Every other
+pattern in range has `α_shift ≥ 2` (19 checked). Kalfagianni–Tran's own
+standing assumption for a *non-trivial* cable is `|q| > 1`, which `(1,2)` is
+not.
+
+That would close the satellite by **§F's mechanism rather than §H's fit
+argument** — strictly stronger, since it would be a scope-(b) exclusion with a
+derived invariant rather than a scope-(a) observation about parameter freedom.
+
+### 🛑 The same reading corrects §H
+
+Kalfagianni–Tran ([`arxiv-1501.01574v3`](../../library/arxiv-1501.01574v3/))
+Thm 1.3: for a knot of period `≤ 2`,
+`js_{K_{p,q}} ⊂ (q² · js_K ∪ {pq/4})`, the degrees `d±[J_K(n)]` being
+**quadratic quasi-polynomials** in `n`.
+
+**Cabling scales the degree by `q²` — quadratic in the longitude, not geometric
+in a "cable level."** §H's third finding extrapolated Addendum 28's measured
+per-level trace gain (`2.881×` at ²H) as a constant ratio per level and
+concluded the required levels `0.90 / 1.82 / 2.40 / 3.31` are non-integral.
+**That extrapolation has no support and the conclusion resting on it is
+re-scoped to _unsupported_.**
+
+§H's other two findings do **not** use it and stand unchanged, because they are
+computed from measured shortfalls alone:
+
+- ³H and ³He are **both A = 3 on 9 strands** and need `12.70×` and `6.88×` — a
+  `1.85×` spread at **fixed A**, so no `r(A)` serves the chain;
+- the shortfall spread is `12.74×` across four isotopes.
+
+### The one step between this route and a derivation
+
+Stated rather than assumed. **§F's decomposition assigns `α_shift(I)` to an
+_interface_ sitting between `β₁` and `β₂`; a cable replaces _every_ strand.**
+Whether a cable contributes its pattern's `α_shift` to `shift_NF` at all is not
+established here, and it is the single question that turns this route into a
+result. It is well-posed and local — it is a statement about how
+`conj:confinement-nf-structure-forcing` extends from an interface insertion to
+a satellite operation — rather than an open research direction.
+
+A second, smaller thing the formula settles: van der Veen's coefficients
+`binom(g,w)_N` are **non-negative integers that do not sum to 1**. That is
+concretely why a cable escapes `convex_comb_le_bound` — it is a **positive but
+un-normalised** combination, so the normalisation defect is exactly where the
+extra magnitude comes from. §E's `larger_index_set_escapes_the_bound` said the
+escape exists; this says what it is made of.
