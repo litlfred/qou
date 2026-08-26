@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T16:49:49.730545+00:00",
-  "commitSha": "57eb4295a1d50f9f03710ce30d2b2a5c89ff997c",
+  "computedAt": "2026-08-26T17:23:36.100481+00:00",
+  "commitSha": "75304c7c8e7ae5bbfc871a73bd0c376affc2d534",
   "assertions": [
     {
       "name": "f_pn_strict_averaged",
@@ -120,6 +120,37 @@
       "source": "the two derived candidates differ by two orders of magnitude AND in sign -- they are not variants of one convention"
     },
     {
+      "name": "product_of_factors_eq_closed_form",
+      "computed": "3.88938e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "f_pp*f_nn = (q/(q^2+1))^2, which is (z/q^2)^2 -- the reason the geometric mean is z/q^2"
+    },
+    {
+      "name": "markov_trace_not_multiplicative_on_these_bonds",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "the product of the factors misses tau(1)=1 by more than 3/4; it could not do otherwise, since a bond and its inverse would need reciprocal traces"
+    },
+    {
+      "name": "quarter_minus_product_is_a_square",
+      "computed": "1.61045e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "1/4 - f_pp*f_nn = ((q^2-1)/(2(q^2+1)))^2, so the product is <= 1/4 for EVERY q, equality only at q=1 (Lean: quarter_sub_fPP_mul_fNN)"
+    },
+    {
+      "name": "arithmetic_mean_is_trace_of_skein_symmetriser",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "(f_pp+f_nn)/2 = z - h/2 = tau((sigma+sigma^-1)/2); the trace is linear, so the arithmetic mean of the factors IS the trace of a canonical element, and the geometric mean is the trace of nothing"
+    },
+    {
       "name": "an_E_is_selected",
       "computed": "False",
       "expected": "False",
@@ -128,11 +159,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "pn-offset-bar-odd-class",
   "scriptFile": "pn_offset_bar_odd_class_probe.py",
-  "scriptHash": "b0246ee4f906",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d12373cfb87e",
+  "scriptCommitSha": "831516994eb36d154b8d7cc28c3a713d948aa07e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -180,7 +211,9 @@
     "regular_E_confines_offset_to": "O((q-1)^3)",
     "geometric_mean_reachable_in_class": false,
     "geometric_mean_required_E_pole_order": 2,
-    "open_question": "arithmetic vs geometric interpolation of the p-n bond: the Markov trace is linear in the bond element, but the closed form is a product over bonds",
+    "arithmetic_vs_geometric": "RESOLVED in favour of arithmetic as the structurally-backed choice (qou-s24v): the product-over-bonds argument for the geometric mean is unsound. f_pp and f_nn are the traces of sigma and sigma^-1, which are MUTUALLY INVERSE, so tau of their product is tau(1) = 1 while the product of their traces is <= 1/4 at every q. The closed form multiplies TRACES; there is no multiplicative structure at the factor level to take a midpoint in. The arithmetic mean, by contrast, IS the trace of the skein symmetriser (sigma+sigma^-1)/2, because the trace is linear. This does NOT establish eps = 0 physically; the colour-tube delta/4 sits on top either way.",
+    "product_of_factors_at_q0": "0.2472978867480345984062206",
+    "trace_of_bond_product": "1",
     "lean": "QOU.MassTheory.PnOffset"
   }
 }
