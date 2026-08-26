@@ -226,6 +226,34 @@ def _is_half_of_h(node) -> bool:
     return False
 
 
+def _enclosing_context(tree, lineno: int, lines: list[str]) -> str:
+    """Source of the smallest function enclosing `lineno`, else a line window.
+
+    A FIXED LINE WINDOW IS NOT ENOUGH. `wlambda_nuclear_braid_connected_probe`
+    computes its p-n crossing in the `else:` branch of an if/elif that names
+    `p` and `n` twelve lines above -- and an eight-line comment sits in
+    between, pushing every p-n token out of a +/-3 window. The site was
+    therefore invisible: not misclassified, not reported at all.
+
+    The comment that hid it is one I added in PR #5769 to LABEL the site.
+    Labelling it made it undetectable, which is the third distinct way a
+    label has defeated this scanner.
+
+    The enclosing function is the right unit: a crossing table's flavour
+    branches are always in the same function as the offset they assign.
+    """
+    best = None
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            end = node.end_lineno or node.lineno
+            if node.lineno <= lineno <= end:
+                if best is None or (node.lineno > best.lineno):
+                    best = node
+    if best is not None:
+        return "\n".join(lines[best.lineno - 1: (best.end_lineno or best.lineno)])
+    return "\n".join(lines[max(0, lineno - 6): lineno + 5])
+
+
 class _BlindVisitor(ast.NodeVisitor):
     """Collect `<expr> - h/2` and bare `-h/2` in REAL expressions only.
 
@@ -282,6 +310,40 @@ def _module_docstring(text: str) -> str:
         return ""
 
 
+def _code_only(text: str) -> str:
+    """`text` with comments and docstrings removed.
+
+    COMPARISON is decided on this, not on the raw source. Requiring both
+    convention NAMES was meant to stop a label being read as a comparison,
+    and it does not: a label that says "`strict_averaged`, NOT the canonical
+    `bring_color_weighted`" contains both names, in prose. That is exactly
+    the comment I added to `wlambda_nuclear_braid_connected_probe` in PR
+    #5769, and it made a genuinely blind site read as deliberate.
+
+    Third time a label has defeated this scanner, each time in a different
+    way: as a marker string, as a whole-file phrase match, and now as a
+    both-names match. The invariant that keeps holding is that PROSE ABOUT a
+    convention is not USE of one -- so decide on code.
+    """
+    try:
+        tree = ast.parse(text)
+    except SyntaxError:
+        return text
+    lines = text.splitlines()
+    drop = set()
+    for node in ast.walk(tree):
+        if (isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant)
+                and isinstance(node.value.value, str)):
+            for ln in range(node.lineno, (node.end_lineno or node.lineno) + 1):
+                drop.add(ln)
+    out = []
+    for i, line in enumerate(lines, 1):
+        if i in drop:
+            continue
+        out.append(line.split("#", 1)[0])
+    return "\n".join(out)
+
+
 def _classify(text: str) -> tuple[str, str]:
     """Return (verdict, the evidence that produced it).
 
@@ -289,11 +351,13 @@ def _classify(text: str) -> tuple[str, str]:
     decided it so a reader can disagree with the classifier rather than
     with the tool.
     """
-    has_blind_name = [n for n in BLIND_NAMES if n in text]
-    has_canon_name = [n for n in CANON_NAMES if n in text]
+    code = _code_only(text)
+    has_blind_name = [n for n in BLIND_NAMES if n in code]
+    has_canon_name = [n for n in CANON_NAMES if n in code]
     if has_blind_name and has_canon_name:
-        return "COMPARISON", f"names both: {has_blind_name[0]} + {has_canon_name[0]}"
-    canon_marks = [m for m in CANON_MARKS if m in text]
+        return ("COMPARISON",
+                f"CODE names both: {has_blind_name[0]} + {has_canon_name[0]}")
+    canon_marks = [m for m in CANON_MARKS if m in code]
     if canon_marks:
         return "MIXED", f"canonical machinery present: {canon_marks[0]}"
     declared = DECLARED_BLIND_RE.search(_module_docstring(text))
@@ -322,7 +386,7 @@ def scan_sources() -> list[dict]:
         lines = text.splitlines()
         verdict, why = _classify(text)
         for ln in sorted(set(v.hits)):
-            window = "\n".join(lines[max(0, ln - 4): ln + 3])
+            window = _enclosing_context(tree, ln, lines)
             if not PN_CONTEXT.search(window):
                 continue
             if SAME_FLAVOUR.search(window) and not re.search(r"\bp[-_]?n\b", window, re.I):
