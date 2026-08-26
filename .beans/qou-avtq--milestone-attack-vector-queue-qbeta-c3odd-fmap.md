@@ -16,7 +16,7 @@ assessment. Order is my judgement and is meant to be overruled.
 | 1 | `qou-avt1` counit->trace transport | RUN 2026-08-26 -> **overshoots ~300x**, scope-(a). Live residue: the G2 form clash (affine in w vs the asserted cosine). |
 | 2 | `qou-avt4` f-map keystone ledger stale since 2026-07-11 | **DONE 2026-08-26** — banner + 7 log rows; historical sections kept. Cheap, docs-only, but it is the entry point for the whole f-map programme so a stale one costs a session. |
 | 3 | `qou-avt2` general-n per-block Hecke characters (Halverson-Ram / Jing-Liu) | STARTED -> its premise check surfaced `qou-avt5`. Build the general-n tool only after avt5 settles WHICH element the per-block characters belong to. |
-| 3b | `qou-avt5` two H_3 n-minus-p elements differ 39% at q0 | **OPEN, high** -- found 2026-08-26 checking avt2 premise. |
+| 3b | `qou-avt5` two H_3 n-minus-p elements differ 39% at q0 | **SETTLED 2026-08-26.** chi_block_* VERIFIED against the exhibited words; eps(Delta) is an asserted polynomial with no element. Q_A rests on the asserted one. Next: exhibit the single-wrap element. |
 | 4 | `qou-avt3` c3^odd | BLOCKED UPSTREAM by design. Not well-posed until (H1) is derived or dropped. Do not start it. |
 | - | `qou-ximf` Xi_k cyclotomic family | **RETRACTED** 2026-08-26 -- collapses to a function of h. |
 
