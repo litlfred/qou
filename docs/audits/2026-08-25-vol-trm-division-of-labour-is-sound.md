@@ -1334,3 +1334,117 @@ The withdrawal survives; its argument does not. Eleventh and twelfth corrections
 on this arc, and the first to a withdrawal — I withdrew on a measurement made
 against the wrong convention, which is the same failure as trusting a stale bean:
 the measurement was real and was about something else.
+
+## Addendum 14 — three requested fronts: the SDP, the SU(2) theorem, the groupoid gate (2026-08-26)
+
+### 1 · Convention C excised from the deuteron dual (`qou-tmou`)
+
+The producer **could not run on `main`**. `sublemma-2-1-deuteron-branching` serializes
+its characters as 60-digit strings — the drained-precision convention — and
+`deuteron_real_sdp.py` multiplied them as floats (`TypeError: can't multiply
+sequence by non-int`, then `dtype '<U64'` in `np.mean`). That is why the
+committed witness stayed C-framed while its **input** had already been migrated
+to D and re-pinned to proton: nobody could re-run it. Both parses fixed.
+
+What the re-run changed:
+
+| | C | D |
+|---|---|---|
+| `tr_M(β_D)` | 0.38836 | 0.57517 *(was simply stale)* |
+| `frobenius_gram_indefinite` | true | **false** |
+| forbidden negative-norm blocks | 3 | **none** |
+| `strong_duality_holds` | false | **true** |
+| `duality_gap` | 43926.6 | **3.7e-43** |
+| `sign_flip_conjugate_pairs` | 3 | **none** |
+
+**How the singularity is handled: it needs no repair to make the LP well posed.**
+The unboundedness *was* the indefiniteness, and that was convention C. The
+"Phase B colour-flavour constraints required for a well-posed bounded program"
+headline is dead, and so is the "§7b Type-B-folding signature" note — rewritten
+in place rather than deleted, so the record of what it claimed survives.
+
+**What the singularity does cost, and I got this wrong first.** I wrote that
+restricting to the support "changes nothing about the optimum". False. The
+feasible set is `{x : Σx = n_target, Gx ≥ 0}` — the net constraint is a **plain
+sum**. A kernel block has zero cost *and* a vacuous constraint, so it absorbs
+the whole net requirement free:
+
+| | full space | support-restricted |
+|---|---|---|
+| `primal_obj` | 3.7e-43 | **0.0370** = `dual_obj` |
+| `y0_star` | ~2e-48 | **0.0642671** |
+| `y_star` | uniform 0.168 filler | `[1.0026, 0.4805, 0.0309, ~0]` |
+| active | all 11 blocks | `(6,), (5,1), (4,2)` — **not** `(3,3)` |
+
+So the full-space answer is a free lunch through the kernel, meeting the net
+requirement with blocks contributing nothing to `tr_M`. `support_restricted` is
+now emitted and is the dual to read. The deuteron saturates the three dominant
+two-row blocks and does not saturate `(3,3)`.
+
+**Left open, in the witness rather than silently:** the six Phase-B encodings
+still solve on the full space, so 1, 3, 5 and 6 all return `primal_obj = 0.0` —
+including `5_lr_branching_canonical`, the production default (C gave −0.0056,
+−22523, −2780, −20230). Only `4_ame_binding_equality` is unaffected. Until
+those rows are projected onto the support, **no Phase-B primal objective is a
+result**.
+
+### 2 · `thm:su2-emergence` made a theorem (`qou-v1h5`)
+
+A sibling had already recorded the defect in an `authorNote` and in
+`VolumeConstraintForcesFibreTwo.lean`'s header: the prose proof takes the rank
+as an *input* to both sub-lemmas, the `lean.ref` resolved to a contentless
+`structure`, and the two supporting lemmas are single-field classes restating
+their own conclusions. That note recorded it;
+[`SU2EmergenceRankForced.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SU2EmergenceRankForced.lean)
+fixes it — five declarations, sorry-free, axiom-clean, `lean`-direct against the
+real import cone.
+
+The content is the **decomposition**:
+
+- **which subgroup** — unitary + `det = 1` ⇒ special unitary — holds at *every*
+  `N`. Stated at general `n` precisely so it cannot be traded for the other
+  half again.
+- **which rank** — `N = 2` — comes from the volume constraint alone, via
+  `exteriorSquareDim_eq_one_iff`, and is the only place `2` enters.
+
+`su2_emergence_rank_forced` states both conjuncts of one theorem.
+Non-vacuity: at `N = 3` the volume hypothesis fails while the subgroup half
+applies unchanged, so the rank conjunct is doing work.
+
+**Still assumed, and now in the statement rather than implicit:** that
+`Aut^⊗(τ)` *is* such a matrix set. This narrows the gap from "rank and subgroup
+both assumed" to "the realisation is assumed". It does not close it.
+
+### 3 · The groupoid gate — a second route, and no new claim (`qou-5t4b`)
+
+`su5-hypercharge-n3-gate` says climbing levels *"requires structure at the
+groupoid level"*, and `conj:sm-gauge-truncation` that `SU(3)`/`U(1)` *"must come
+from symmetry visible only at the groupoid level"*. **The corpus has already
+proved the confinement**, and says so plainly in `eightfold-open-problems`:
+
+> *"That the search is confined to the groupoid level is now a theorem, not an
+> extrapolation."*
+
+— on the strength of the `Sym²` gate (`Sym2Gate.lean`, `Sym2GateParity.lean`).
+So this is **not** an open item to re-declare, and the corpus-grep discipline
+applies: I nearly wrote it up as one.
+
+What is genuinely additive is a **second, independent** derivation, added as
+`no_three_dimensional_fundamental_in_one_fibre`. The `Sym²` route constrains a
+candidate `W` through the representation theory of its symmetric square; this
+one constrains the *fibre* through the non-degeneracy of its volume form and
+never mentions `Sym²(W)` at all. Two independent derivations of the same
+negative are worth having.
+
+**Neither supplies what is actually open**, which `eightfold-open-problems`
+states exactly: *construct a three-dimensional object `W` in the multi-fibre
+groupoid whose `Sym²(W)` is irreducible.* Nothing here bears on that. The
+corpus also records the adjacent open items — whether flavour and colour
+`SU(3)` are the same, different, or groupoid-dual; the truncation mechanism;
+three generations — and none of them moved.
+
+**Where this meets §13.** The measured wall there was the third *row*, at
+`A = 2`. The wall here is the third *dimension*, at one fibre. They are the
+same wall counted two ways: `ℓ(λ) ≤ 2` is the Schur–Weyl row cap at level
+`r = 2`, and `r = 2` is `N = 2` is `Λ²V ≅ 𝟙`. What §13 adds is that it has an
+isotope number; what this adds is that one fibre provably cannot cross it.
