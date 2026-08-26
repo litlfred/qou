@@ -47,3 +47,54 @@ Two escapes remain from option (1), and neither is mine to pick:
   (b) epsNPq is simply wrong, and with it Q_A and the ladder phase.
 
 Widening the crossing vocabulary is no longer among the options.
+
+## 2026-08-26 — the FORK'S PREMISE DOES NOT HOLD (investigated on owner request)
+
+Neither (a) nor (b) is forced, because the contradiction that forced the
+choice is between two DIFFERENT functionals both written `eps`.
+
+  avt6's eps    the AUGMENTATION sigma -> q. Its probe evaluates a word as a
+                PRODUCT of per-letter counits (line 207:
+                COUNIT["sigma"]**m1 * COUNIT["averaged"]**c1 * ...), which is
+                legitimate only for an algebra map, and its table opens
+                COUNIT["sigma"] = q.
+
+  epsNPq        a value of the COORDINATE SUM sigma -> 1.
+                QBetaCounitTrace.epsNP is defined as the functional "which
+                weights every basis element by 1", applied to the stated
+                normal-form vector
+
+                    (n - p) = [h^2/2, -h/2, -h/2, 0, 0, 0]
+
+                in basis [gamma, sigma_0, sigma_1, L+, L-, e^-]. Its
+                coordinates sum to h^2/2 - h = h(h-2)/2 = epsNPq, EXACTLY
+                (verified symbolically, difference 0).
+
+sigma -> 1 is not an algebra map unless h = 0: push sigma^2 = h*sigma + 1
+through a unital multiplicative map sending sigma -> 1 and get 1 = h + 1.
+Lean, sorry-free (propext only):
+`QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`.
+
+So avt6's theorem is TRUE and its scope is the multiplicative eps. Quoting it
+against epsNPq is a functional mismatch -- the arity/shape class AGENTS.md
+already names. On the SAME vector the two differ by exactly h(q-1).
+
+WHAT THIS DOES NOT DO, and the distinction is the point. It does not vindicate
+epsNPq. Measured at q0, the stated NF vector is not the exhibited nucleon-word
+difference under EITHER functional:
+
+    chi_(3)(beta_n - beta_p)  = -0.26038764179012078   (recomputed from the
+                                                        words, not quoted)
+    coordinate sum (epsNPq)   = -0.18720719452937831
+    augmentation on same vec  = -0.21019934990050292
+
+So qou-avt5's scope-(a) finding stands untouched: Q_A still rests on a vector
+nobody has derived. The fork was the wrong question -- not a question with a
+reassuring answer.
+
+Probe: computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py (7/7).
+Lean:  content/quantum-observable-universe/lean/QOU/QBeta/CounitSigmaOneForcesHZero.lean
+
+STILL AN OWNER CALL, but a different one. Not "which of (a)/(b)", rather:
+which functional is `eps` MEANT to be in the Q_beta ansatz, and what is the
+element it should act on? Answering that is what would actually close Q_A.
