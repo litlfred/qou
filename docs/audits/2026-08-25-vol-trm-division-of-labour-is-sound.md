@@ -1143,3 +1143,194 @@ JSJ, so `conj:jsj-decomposition-linearity` has something to be true of; and
 the hard part, it is what the averaging was standing in for, and after §11b there
 is no candidate mechanism for it. Recorded as open on `qou-7p7d`; no route
 claimed.
+
+## Addendum 13 — colour averaging, and the prune I could not name in §11b (2026-08-26)
+
+Four questions, and they turn out to be one. Asked whether I had tried **colour**
+averaging rather than plain averaging; whether the thing is really a group action
+with an `SU(5) → SU(3)×SU(2)×U(1)` shape, or a finite-group or groupoid action
+wanting derived-category / gerbe machinery; which isotope would first show a
+third channel; and what the SDP solution and LP shadow dual actually say.
+
+I had not tried colour averaging. It is the distinction that decides §11b, and
+it was named in the producer's own docstring all along.
+
+### 1 · Two templates, not one — and only one of them has a second parameter
+
+`atom_braid_word_3A` emits two non-braid templates:
+
+```
+sigma - (h/2)*1          == (sigma + sigma^-1)/2                  colour-BLIND
+sigma - h*(1/2 - d/4)*1  == (1/2+d/4)sigma + (1/2-d/4)sigma^-1    colour-WEIGHTED
+```
+
+The second is the default and is canonical (`bring_color_weighted`, owner ruling
+R3). Every measurement on this arc — the census, §11b's generator indices, and
+[`AveragedLetterSpectrum.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/AveragedLetterSpectrum.lean)
+— treated the `2A+1` non-braid letters as one kind.
+[`atom_letter_colour_spectrum_probe.py`](../../computations/meson/atom_letter_colour_spectrum_probe.py)
+splits them (8 assertions, exact template match at 60 dps, worst gap `0.0`, zero
+unclassified):
+
+| isotope | letters | σ | σ⁻¹ | symmetric | **colour** | colour at gen |
+|---|---:|---:|---:|---:|---:|---|
+| proton | 11 | 6 | 3 | 2 | **0** | — |
+| neutron | 11 | 5 | 4 | 2 | **0** | — |
+| deuteron | 23 | 11 | 7 | 4 | **1** | `[2]` |
+| helium-3 | 35 | 18 | 10 | 6 | **1** | `[5]` |
+| helium-4 | 47 | 23 | 15 | 8 | **1** | `[5]` |
+
+So `2A+1 = 2A` symmetric **+ exactly one** colour-weighted letter, the unique
+p–n interface. Under `strict_averaged` the colour count is `0` and the symmetric
+count is `2A+1` — the control that separates the conventions, and the reason
+lumping them hid this.
+
+Spectra follow from `μ₊ = w₊q + w₋q⁻¹`, `μ₋ = −w₊q⁻¹ − w₋q`, so `μ₊ + μ₋ = 0`
+iff `w₊ = w₋`:
+
+| template | `w₊` | `μ₊ + μ₋` | `Q` |
+|---|---|---|---|
+| symmetric | `1/2` | `0` | `1` |
+| colour | `1/2 + δ/4` | `1.438e-4` | **`1.0000715145…`** |
+
+Matching a scaled generator `cQ, −cQ⁻¹` gives a unique `Q > 0` because
+`Q ↦ Q − Q⁻¹` is a bijection `(0,∞) → ℝ`. On the symmetric letter it returns
+`Q = 1`, `c = [2]_q/2` — reproducing the Lean result as a **control**. On the
+colour letter it returns `Q ≠ 1`, departing at leading order `(δ/4)h/c`.
+
+**§11b's count objection is therefore wrong as stated.** It said `2A+1` averaged
+letters at distinct indices against type `Bₙ`'s single `T₀`. Exactly one letter
+carries a second parameter, and type `B` has exactly one `T₀`.
+
+### 2 · The prune that does hold, and it is proved rather than counted
+
+The route still does not work, for a better reason. The `2A` symmetric letters
+sit at `Q = 1`, where a type-`B` generator degenerates to a reflection
+(`T₀² = 1`) — so they are neither ordinary `q`-generators (eigenvalues
+`q, −q⁻¹`) nor `T₀` (`cQ, −cQ⁻¹` with `Q ≠ 1`). Three parameter classes are
+needed; type `B` supplies two.
+
+And underneath that sits a **structural** exclusion, scope (b), with a named
+invariant. [`VolumeConstraintForcesFibreTwo.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean)
+(sibling work, on `main` since `fed69b1c4d`, sorry-free) proves
+
+```
+exteriorSquareDim_eq_one_iff : exteriorSquareDim N = 1 ↔ N = 2
+```
+
+so the strong volume constraint `Λ²V ≅ 𝟙` — the non-degenerate volume form that
+*defines* the fibre — pins the fibre dimension at `2`, hence the Schur–Weyl row
+cap at two rows. A type-`B` fold is a refolding of **one fibre's** Cartan datum;
+it does not change that fibre's dimension. So no type-`B` structure, and no
+other single-algebra structure, can reach a third row. That is the exclusion
+§11b reached for and could only support by counting.
+
+Its anti-vacuity companion `weak_volume_reading_admits_three` (also sorry-free)
+shows the two readings differ: the **weak** constraint `Λ²V ≠ 0` gives only
+`2 ≤ N` and admits `N = 3`. So the third row is not absurd — it is what you get
+by giving up `Λ²V ≅ 𝟙`.
+
+**A caution, recorded because I nearly published the opposite.**
+`conj:sm-gauge-truncation` says a single-fibre realisation of the three factors
+"contradicts a proved theorem of the framework", citing `thm:su2-emergence`.
+That citation does not carry: `QOU.SU2Emergence` is a `structure` whose fields
+are `gaugeGroupType`, `ext_sq_action` and `det_one`; it never mentions `SU(2)`
+or the rank, and its two supporting lemmas are `class … : Prop` restating their
+own conclusions. I was going to report that as a finding. **The corpus already
+records it** — `VolumeConstraintForcesFibreTwo.lean`'s own header sets it out in
+two numbered points, including that the `lean.ref` does not resolve. Corpus-grep
+caught it; the sixth time on this arc that the answer was already on disk.
+
+### 3 · The SDP dual, and why its headline finding is convention C
+
+`deuteron-real-sdp.witness.json` carries a full dual — `y0_star = −0.01443`,
+`y_star` over 11 blocks, `active_set` of 7 — and reports
+`strong_duality_holds: false` with `duality_gap: 43926.6`, against a
+`phase_B_interim` gap of `8.1e-43`. Its diagnostic blames an **indefinite**
+Frobenius Gram with three forbidden negative-norm blocks, and its `symmetry_note`
+calls the pattern *"the §7b bar-involution / Type-B-folding signature"*.
+
+I was about to cite that note as the mechanism §11b said did not exist.
+
+The Gram is diagonal with `G_λλ = tr_M(P_λ) = y_λ(q₀)` — the producer says so at
+its own lines 18–21 — so its signature is just the sign pattern of the Markov
+weights. Convention D caps them at two rows, and all three "forbidden" blocks
+have `ℓ ≥ 4`. Compared entry by entry at `n = 6`
+([`markov_weight_support_conjugation_probe.py`](../../computations/meson/markov_weight_support_conjugation_probe.py)):
+eleven nonzero entries in the witness against **four** live, the other seven
+exactly zero, and **every survivor positive**. Swept `n = 3, 6, 9, 12`: **no
+negative weight at any `n`.**
+
+So that witness is convention **C**. Under **D** the Gram is positive
+semidefinite with a kernel: the SDP is still ill-posed, but as a **singularity**
+(bean `qou-cds2`), not an indefiniteness — a different defect with a different
+fix, and the "folding signature" reading goes with it. The witness is not
+corrected here, only shown not to describe D; re-running it under D is its own
+change.
+
+### 4 · The simplest isotope: A = 2, and the third channel is a third ROW
+
+The D support is exactly the two-row partitions (`⌊n/2⌋+1` of them, asserted).
+Conjugation `λ ↦ λ′` is the combinatorial shadow of the bar involution. A
+two-row `λ` of `n ≥ 6` has `λ₁ ≥ 3`, so `ℓ(λ′) ≥ 3` and `λ′` lies in the kernel:
+conjugation maps the **whole support** into the kernel. At `n = 3` it does not,
+because the unique self-conjugate partition of `3` is the staircase `(2,1)` —
+two rows, nonzero weight. The unique self-conjugate partition of `6` is
+`(3,2,1)` — three rows.
+
+| | `n` | support | self-conjugate | supported? |
+|---|---:|---|---|---|
+| A=1 | 3 | `(3), (2,1)` | `(2,1)` | **yes** |
+| A=2 | 6 | 4 two-row | `(3,2,1)` | no |
+| A=3 | 9 | 5 two-row | 2, both `ℓ≥3` | no |
+| A=4 | 12 | 7 two-row | 3, all `ℓ≥3` | no |
+
+**The bar-fixed sector is inside the supported sector at `A = 1` and outside it
+from `A = 2`.** The deuteron is where it changes — and independently the first
+isotope carrying a colour-weighted interface letter.
+
+Joining this to §2: three rows means `N = 3` means abandoning `Λ²V ≅ 𝟙`. And the
+level family `z_r = q^r/[r]_q` recorded in
+[`su5-hypercharge-n3-gate`](../../content/quantum-observable-universe/appendix-standard-model/su5-hypercharge-n3-gate.md)
+says `N = 3` would carry `z₃`, not the canonical `z₂ = q³/(q²+1)`. So the third
+channel is not merely unmeasured — **convention D's trace is blind to it by
+construction**, because seeing it would require a different trace parameter.
+That is what `y_λ = 0` for `ℓ > 2` is saying.
+
+### 5 · The group action, honestly
+
+The symmetric letter **is** a group average: the Reynolds operator of
+`ℤ/2 = {1, bar}` acting by `σ ↦ σ⁻¹`, weights `(1/2, 1/2)`. The colour letter is
+the same `ℤ/2` with weights `(1/2 + δ/4, 1/2 − δ/4)` — a **non-uniform** average,
+so not a group average and not a projection onto invariants. A weighting that is
+not the group's own measure is the shape one reaches for a **groupoid** rather
+than a group, which is the instinct behind the question.
+
+The corpus says the same thing from the other side, and says it as an open item:
+`su5-hypercharge-n3-gate` records that climbing to another level *"requires
+structure at the groupoid level"*, and `conj:sm-gauge-truncation` that any
+`SU(3)` or `U(1)` realisation *"must come from symmetry visible only at the
+groupoid level — multi-strand structure, framing data, and the interaction of
+distinct fibres."* Held sources that bear on it: `arxiv-2010.12445v1` (stacks of
+fibre functors and Tannaka reconstruction — the framework is Tannakian with
+fibre functor `τ`, so this is the right register) and `arxiv-1901.08945v2`
+(derived categories of gerbes decompose by the characters of the banding group —
+the right register for a support that splits by character).
+
+**No route is claimed.** `SU(5)` is `r = 5` and the corpus block already places
+it strictly downstream of the unbuilt `r = 3`; nothing here builds either. What
+§4 adds is that the wall is not abstract — it has an isotope number, `A = 2`,
+and a mechanism, the third row.
+
+### What this changes, in one place
+
+| §11b said | now |
+|---|---|
+| `2A+1` averaged letters vs one `T₀` | **wrong**: exactly one letter has `Q ≠ 1` |
+| no candidate mechanism for structural bar-invariance | still none — but the *reason* is now a sorry-free invariant, not a count |
+| type-`B` route withdrawn | **stays withdrawn**, on the fibre-dimension prune |
+
+The withdrawal survives; its argument does not. Eleventh and twelfth corrections
+on this arc, and the first to a withdrawal — I withdrew on a measurement made
+against the wrong convention, which is the same failure as trusting a stale bean:
+the measurement was real and was about something else.
