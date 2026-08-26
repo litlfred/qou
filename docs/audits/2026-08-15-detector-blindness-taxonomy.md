@@ -431,6 +431,61 @@ This is the fourth blind spelling found **by** a detector written to catch the
 previous one, which is the pattern this document exists to record: each fix
 closes a shape and reveals that the surface was never measured, only sampled.
 
+### 8 — the intent is stated, but not where the detector looks (added 2026-08-26)
+
+The last convention-C Markov parameter in the Lean tree,
+`QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.zMarkov`, was reported
+`actionable` by `scripts/lean-markov-convention-audit.py` through fourteen runs.
+It is not a defect. The module's **first line** reads *"Canonical (convention C)
+Markov trace of β_Bor"*, and the whole file exists to derive the C value so that
+`BorromeanTraceConventionSplit.conventionD_ne_conventionC` has something to
+compare against. Migrating it would make the file derive D and compare it to
+itself.
+
+The blindness is structural, not a missing pattern. `_deliberate()` takes
+evidence from the declaration's **name** and from its **own** doc-comment,
+walking back from the declaration to the opener above it. Intent stated in a
+module header, or in a consumer three declarations below, is outside that window
+by construction — no widening of the window reaches it, because the evidence is
+not adjacent to the declaration at all.
+
+**Fixed at the source, not in the scanner.** The definition now says in its own
+doc-comment why it is C and what breaks if it moves. The alternative — teaching
+the scanner to accept a module header as deliberateness evidence — was rejected:
+it would absolve *every* C definition in any file whose header mentions C, which
+is the reassuring direction, and this document's whole subject is errors in that
+direction.
+
+**A near-miss worth more than the entry.** Reading the file, its "convention D"
+is described by the weight triple `y₃ = [4]/[2]³`, `y₂₁ = 1/[2]²`, `y_{(1³)} = 0`
+— the Temperley–Lieb / Jones decomposition. Reading `1/[2]` as the Markov
+parameter gives `q/(q²+1) = 0.49729` at `q₀`, which is **not** convention D's
+`q³/(q²+1) = 0.61269`; it is the bare kernel `g(q)`, and the separation theorem
+`no_kernel_instantiation_is_conventionD` then proves it cannot be D. That is a
+complete, self-consistent, Lean-backed argument that the corpus uses "convention
+D" for two different objects — and it is **wrong**.
+
+Computing the `z` the weights actually imply, against the character values the
+file itself uses (`χ(σ) = q, h, −q⁻¹`), gives
+
+```
+y₃·q + y₂₁·h + y₁₁₁·(−q⁻¹) = (q³ + q)/(q + q⁻¹)² = q³/(q²+1)
+```
+
+exactly convention D. The error was reading `1/[2]` off the *shape* of the
+weights in a normalisation that was never checked. Nothing in the corpus is
+wrong; one afternoon of a false "letter collision" finding was avoided by
+checking the arithmetic beside the name instead of the name — the same rule
+AGENTS.md states for the Λ vs Cl₂ guard, one subject over.
+
+**And the same character bit twice in one edit.** The doc-comment written to fix
+this contained the literal opener `` /-- `` as prose. Lean nests block comments,
+so the file failed with *"unterminated comment"* 120 lines later; and the
+scanner's own walk-back found *that* opener first, so the site still came back
+`actionable` with the marker sitting one line above the window. Two different
+tools, one character, the same failure. Rephrased, and both are green.
+
+
 ## The counter-move that worked, twice
 
 Numeric evaluation. R9 catches what R4/R5 cannot because a docstring and a
