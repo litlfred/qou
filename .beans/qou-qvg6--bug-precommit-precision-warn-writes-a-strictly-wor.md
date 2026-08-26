@@ -1,11 +1,11 @@
 ---
 # qou-qvg6
 title: 'BUG: precommit-precision-warn writes a strictly-worse ratchet witness in a bare container'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T19:42:03Z
-updated_at: 2026-08-26T19:42:04Z
+updated_at: 2026-08-26T20:02:20Z
 ---
 
 ## What happened
@@ -75,3 +75,21 @@ but it is a change to a precision producer and wants the owner's eye.
 
 Reverted the file; committed nothing. My PR #5856 is tools-only and this file
 is not its content.
+
+
+
+## FIXED 2026-08-26 — option 2 (producer refuses to persist)
+
+`computations/witness_raw_float64_audit.py` now records
+`EPHEMERAL_PROVENANCE_OK` and, when the import failed, prints a loud stderr
+notice naming cause and remedy and returns **without writing the witness**.
+The exit code is computed by the same expression as the write path, so the
+**gate is unchanged** — and the empty-carve-out fail-safe itself is
+deliberately untouched, because failing strict is right for a gate.
+
+Verified both directions: without `qou_substrate` the tree stays clean and
+the gate still runs; with `pip install -e tools/qou-substrate` the witness is
+written with the carve-out restored (42 fields, drained_files 893).
+
+Separately committed a legitimate drain the correct run revealed:
+`dirty_witnesses 1277 -> 1275`, `total_fields 211732 -> 211712`.
