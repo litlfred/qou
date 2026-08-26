@@ -2466,3 +2466,86 @@ would replace the one-isotope `H₁₂` measurement with a **closed form** — t
 formalize-first route, generalising past the deuteron in one step rather than
 one isotope at a time. Recorded as the preferred next move if this front is
 continued.
+
+## Addendum 26 — the satellite escapes, measured: 4.99× over (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`satellite_cable_escapes_the_bound_probe.py`](../../computations/meson/satellite_cable_escapes_the_bound_probe.py)
+(9 assertions, 6 controls). The test Addendum 24 said needed doing and did not
+do. **It is the first positive result in this arc**, and it is exactly what
+`larger_index_set_escapes_the_bound` predicted before the number existed.
+
+### What was tested
+
+The **2-parallel cable** of the deuteron braid: each strand doubled, each
+$\sigma_i \mapsto s_{2i}s_{2i-1}s_{2i+1}s_{2i}$ in $B_{12}$. Its closure is the
+2-parallel of the original closure — a **genuine satellite** (pattern = the
+2-parallel curve in the solid torus, companion = the original knot), so the
+geometrically-motivated move rather than an arbitrary longer word.
+
+| | value | vs required |
+|---|---:|---:|
+| uncabled, $\max_b$ (Addendum 23) | 1.018275 | 0.683× |
+| **2-cable, $\max_b$** | **7.448220** | **4.994×** |
+| **2-cable, atom's own convex weights** | **1.657034** | **1.111×** |
+| required $\sqrt{B_{\rm AME}}$ | 1.491498 | 1 |
+
+**The trace magnitude is no longer the binding constraint on the satellite
+route.** And it is not only the max: the atom's *own* convex-weighted 2-cable
+clears the requirement too — though by **1.11×**, a thin margin.
+
+### Why this is the predicted escape, not a surprise
+
+`convex_comb_le_bound` bounds a reweighting of a **fixed** branch set;
+`larger_index_set_escapes_the_bound` shows a larger index set can exceed it. A
+cable puts the branches in $H_{12}$ rather than $H_6$ — a different index set,
+outside the theorem's hypotheses. The Lean identified this class as the escape;
+this measures that it actually escapes, and by how much.
+
+**A longer word generally has a larger trace, so "the cable is bigger" is not by
+itself interesting.** What is: the *geometrically-motivated* move crosses the
+specific threshold, by 5× rather than marginally; and the threshold is a
+**necessary** condition derived generically — a concentrated cost needs
+$\mathrm{tr}_M \ge \sqrt{B_{\rm AME}}$ at any $n$ — so the cross-algebra
+comparison is licit, which control C1 below is what licenses.
+
+### Controls — a positive needs more scrutiny than a negative
+
+Six, and the load-bearing one is the third:
+
+1. the same quantity **without** cabling falls short (0.683×), so A1 is a change
+   rather than a restatement;
+2. this code path reproduces Addendum 23's `1.018275083` exactly, so the cable
+   number comes off a validated route;
+3. **M1 normalisation $\sum_\lambda y_\lambda f^\lambda = 1$ holds at $n = 12$
+   *and* $n = 6$**, both exactly — this is what makes $\mathrm{tr}_M$ values
+   comparable across the two algebras and the A1 comparison legitimate at all;
+4. $\mathrm{tr}_M(1) = 1$ at $n = 12$;
+5. the convex average still reproduces the committed atom trace, so the branch
+   weights carried into the cable are the right ones;
+6. the cabling map stays within $H_{12}$'s generator range.
+
+### What this does **not** show
+
+* **Binding is not reproduced.** The cost vector, support, Gram and the whole LP
+  change at $n = 12$ and none of that is redone. Exceeding a **necessary**
+  condition is not sufficiency, and nothing here computes a binding
+  contribution.
+* **The pattern is a choice.** 2-parallel with blackboard framing is one
+  satellite among infinitely many; nothing derives it.
+* **`Geom` still assigns nothing to a satellite.** This shows the room exists,
+  not that the framework can use it. The missing case is still missing.
+
+### A 2500× cost difference from asking for less
+
+The first attempt called `per_block_evaluation`, which builds **all 77**
+partitions of 12. It reached **9.99 GB RSS** at 266 % CPU and was killed before
+it could OOM the session. Only the **7 two-row blocks** matter under convention D
+(max dimension 297), and `block_rep_braid_word` takes one partition at a time —
+the whole 32-branch sweep then ran in **3.6 seconds**.
+
+Two process notes worth keeping. The first attempt was also launched as
+`… | tail -12`, which buffers until the process exits, so it produced **no**
+progress output for its entire life — the long-compute discipline says `tee`,
+and this is why. And `pkill -f cable_feas.py` matched the killing command's own
+argv and killed that shell too.
