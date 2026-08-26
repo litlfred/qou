@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:20:31Z
+updated_at: 2026-08-26T03:33:41Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -529,3 +529,48 @@ defect in the comparison itself. **A MOVED verdict is only as good as its
 mask and must be read with its field list attached.** These eight survived an
 explicit field-by-field audit; any verdict added later deserves the same
 before it counts.
+
+
+---
+
+## CORRECTION: worktree isolation is NOT complete (2026-08-26)
+
+PR #5805 and its commit say a detached worktree "removes the hazard
+structurally instead of relying on cleanup". **That is too strong.** It
+reduces the hazard; it does not remove it.
+
+Caught by the session's own guard, which is the only reason it did not land:
+after a tier-1 sweep run entirely inside `/tmp/residue-wt`, the SESSION tree
+showed `computations/witness-raw-float64-audit.witness.json` modified —
+`total_fields` 258146 -> 258142, `baseline_fields` 487626 -> 487597,
+`drained_files` 913 -> 888. mtime 03:29:52, mid-sweep.
+
+That is the *same file* named in this bean as the b28296c0d
+already-reverted-once case, and the same file my own check-in note said to
+watch for exactly this reason.
+
+**Why a worktree does not stop it.** `git rev-parse --show-toplevel` correctly
+returns the worktree root, so path-resolution by git is safe. Two routes are
+not:
+
+  * a hardcoded absolute path — `computations/forward_ref_classifier.py`
+    contains a literal `/home/user/qou`;
+  * the witness-write path itself, which runs the raw-float64 ratchet inline
+    on every witness write (visible as the `⚠ raw-float64:` line producers
+    emit), and can write its audit witness outside the tree the producer is
+    confined to.
+
+Neither is defeated by choosing a different cwd or a different checkout. Only
+a filesystem-level confinement (container, mount namespace, read-only bind)
+would actually remove this class.
+
+**Reverted, not committed.** Committing a regenerated audit witness is the
+precise mistake b28296c0d had to undo, and the counts here are derived from a
+tree being perturbed by the sweep that produced them.
+
+**Consequence for the sweep's results:** none of the verdicts are affected —
+they are computed by diffing witnesses inside the worktree against a git
+baseline, and this escape only writes one audit witness in the session tree.
+But the guard must keep being run: `git status --short | wc -l` in
+`/home/user/qou` at every check, treating non-zero as a defect rather than
+noise. That instruction was already recorded; this is the first time it fired.
