@@ -43,6 +43,11 @@ one distinguished generator. See
 `docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md` §11b. The match
 proved here is **per letter, spectral**, and nothing more.
 
+**Base ring (§7c).** Everything here is generic `[Field K] [CharZero K]` with
+no archimedean construct. The one statement needing an order —
+`second_parameter_is_one`, which upgrades `Q² = 1` to `Q = 1` — lives in
+`AveragedLetterSpectrumOrdered.lean` so this file stays order-free.
+
 `-- Ref: [manuscript] docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md`
 -/
 import Mathlib.Algebra.Order.Field.Basic
@@ -117,17 +122,5 @@ theorem second_parameter_forced (Q c t : K) (hQ : Q ≠ 0) (ht : t ≠ 0)
   have h2 : Q * Q⁻¹ = 1 := mul_inv_cancel₀ hQ
   rw [← hQQ] at h2
   rw [sq]; exact h2
-
-/-- With positivity, `Q = 1` — and then the scale is exactly the spectrum value.
-For the averaged letter that value is `[2]_q/2`. -/
-theorem second_parameter_is_one {L : Type*} [Field L] [LinearOrder L]
-    [IsStrictOrderedRing L] (Q c t : L) (hQ : 0 < Q) (ht : t ≠ 0)
-    (hpos : c * Q = t) (hneg : -(c * Q⁻¹) = -t) : Q = 1 ∧ c = t := by
-  have hsq : Q ^ 2 = 1 :=
-    second_parameter_forced Q c t (ne_of_gt hQ) ht hpos hneg
-  have hQ1 : Q = 1 := by nlinarith [sq_nonneg (Q - 1)]
-  refine ⟨hQ1, ?_⟩
-  rw [hQ1, mul_one] at hpos
-  exact hpos
 
 end QOU.MassTheory
