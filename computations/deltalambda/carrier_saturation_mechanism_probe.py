@@ -98,6 +98,11 @@ from codata_constants import (  # noqa: E402
 )
 from witness_base import WitnessBuilder  # noqa: E402
 from chi_free_via_lr import chi_free_lr, load_nucleon_chi  # noqa: E402
+# Frobenius route: same values (agree 1.3e-67, chi-free-via-frobenius
+# .witness.json), 31x faster at 6Li and 104x at 7Li. Used for the large-A
+# path; the 4He call below stays on chi_free_lr because that call IS the
+# LR-path validation, not a consumer of it.
+from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 
 set_compute_dps()
 
@@ -202,7 +207,7 @@ def build_large_a_rows(atom: str, nuc_chi: dict) -> tuple[list[dict], dict]:
 
     Z, N = LARGE_A_ZN[atom]
     t1 = time.time()
-    chi_free = chi_free_lr(Z, N, nuc_chi=nuc_chi)
+    chi_free = chi_free_frobenius(Z, N, nuc_chi=nuc_chi)
     t2 = time.time()
 
     rows = []
@@ -527,16 +532,32 @@ def main() -> int:
                "carrier_table_convention_d_rederivation.py. The prior 63.05 "
                "was convention-C (2026-07-13 audit), correct in its frame")
     wb.add_assertion(
-        "li6_amplification_pinned",
-        computed=fmt(res["6Li"]["A_req"]), expected="107.886", tolerance="0.05",
-        source="REGRESSION PIN, NOT A VALIDATION — and the distinction is "
-               "the point. ⁶Li's free χ comes from this script's own LR "
-               "path, so no second path exists to derive it from; an "
-               "expectation taken from this script's own output cannot "
-               "validate that output. This pin therefore asserts only that "
-               "the value has not CHANGED, never that it is right. The "
-               "prior 79.86 was the convention-C value. Promote to a real "
-               "assertion if an independent ⁶Li free-χ path is built")
+        "li6_amplification_reproduced",
+        computed=fmt(res["6Li"]["A_req"]), expected="107.88563",
+        tolerance="0.05",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py, whose ⁶Li free χ "
+               "comes from chi_free_via_frobenius — the power-sum / "
+               "Murnaghan–Nakayama route, which forms no Littlewood-"
+               "Richardson coefficient and so does not go through this "
+               "script's LR path. PROMOTED from a regression pin: until that "
+               "second path existed the expectation descended from this "
+               "script's own output and could not validate it. The two "
+               "routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-"
+               "frobenius.witness.json). The prior "
+               "79.86 was the convention-C value (2026-07-13 audit), correct "
+               "in its own frame")
+    wb.add_assertion(
+        "anchor_kappa5Li_reproduced",
+        computed=fmt(res["5Li"]["A_req"]), expected="102.51379",
+        tolerance="0.05",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py, whose ⁵Li free χ "
+               "comes from chi_free_via_frobenius. ⁵Li was the last atom in "
+               "this table with no gate at all — it was wired to the "
+               "Frobenius path for speed while its numbers still rested on a "
+               "single route. The two routes now agree to 1.5e-69 on all 176 "
+               "⁵Li blocks (chi-free-via-frobenius.witness.json)")
     wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",

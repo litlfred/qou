@@ -63,6 +63,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI5_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -76,9 +77,19 @@ B_AME = {
     "3He": mp.mpf(str(AME_B_HE3_MEV_VALIDATION)),
     "4He": mp.mpf(str(AME_B_HE4_MEV_VALIDATION)),
 }
-A_OF = {"D": 2, "T": 3, "3He": 3, "4He": 4}
+A_OF = {"D": 2, "T": 3, "3He": 3, "4He": 4, "5Li": 5, "6Li": 6}
 ANCHORS = ["D", "T", "3He", "4He"]
 REEB = "binding-reeb-phase-decomposition.witness.json"
+
+# ⁶Li: atom χ from the cached H_18 witness; free χ from the Frobenius path
+# (chi_free_via_frobenius), which is independent of the probe's LR route.
+LARGE_A_ATOM = {
+    "5Li": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+    "6Li": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+}
+LARGE_A_ZN = {"5Li": (3, 2), "6Li": (3, 3)}
+B_AME["5Li"] = mp.mpf(str(AME_B_LI5_MEV_VALIDATION))
+B_AME["6Li"] = mp.mpf(str(AME_B_LI6_MEV_VALIDATION))
 
 
 def dim_sn(lam) -> int:
@@ -137,6 +148,44 @@ def rederive(atom: str, reeb: dict) -> dict:
             "A_req": B_AME[atom] / me_S}
 
 
+def rederive_large_a(atom: str) -> dict:
+    """⁶Li with the free χ from the Frobenius path, not the probe's LR path.
+
+    This is what lets `li6_amplification_pinned` become a real assertion: the
+    expected value no longer descends from the script being checked.
+    """
+    from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
+
+    w = json.loads((_COMP / LARGE_A_ATOM[atom]).read_text())
+    if w.get("partial") or w.get("tr_M_partial"):
+        raise RuntimeError(f"{atom} atom witness is partial — regenerate")
+    if int(w["n_partitions"]) != int(w["n_partitions_total"]):
+        raise RuntimeError(f"{atom} atom witness skipped partitions")
+
+    Z, N = LARGE_A_ZN[atom]
+    chi_free = chi_free_frobenius(Z, N)
+    n = 3 * (Z + N)
+    y_fresh = {tuple(sh): v for sh, v in y_lambda_su_n(n, q0, 2).items()}
+
+    S = mp.mpf(0)
+    W = mp.mpf(0)
+    used = 0
+    for e in w["by_partition"]:
+        lam = tuple(e["partition"])
+        d = dim_sn(lam)
+        r_atom = mp.mpf(str(e["chi_lambda"])) / d
+        r_free = chi_free[lam] / d
+        dtheta = theta_of(r_atom) - theta_of(r_free)
+        p = y_fresh[lam] * d
+        W += p
+        S += p * mp.fabs(dtheta)
+        used += 1
+
+    me_S = M_E * S
+    return {"n_blocks": used, "W": W, "S": S, "me_S": me_S,
+            "A_req": B_AME[atom] / me_S}
+
+
 def main() -> int:
     reeb = json.loads((_COMP / REEB).read_text())
     wb = WitnessBuilder("carrier-table-convention-d-rederivation",
@@ -167,20 +216,33 @@ def main() -> int:
 
     # The normalisation is the one thing that must hold exactly, in either
     # convention -- it is the Markov-trace identity, not a convention artefact.
-    max_W_dev = max(mp.fabs(out[a]["W"] - 1) for a in ANCHORS)
-    print(f"\n  max |W − 1| over the {len(ANCHORS)} anchors = "
+    for atom in ("5Li", "6Li"):
+        r = rederive_large_a(atom)
+        out[atom] = r
+        print(f"  {atom:>4s}  {A_OF[atom]:>2d}  {r['n_blocks']:>5d}  "
+              f"{mp.nstr(r['W'], 11):>13s}  {mp.nstr(r['me_S'], 8):>12s}  "
+              f"{mp.nstr(r['A_req'], 8):>12s}   [free χ: Frobenius, not LR]")
+
+    ALL = list(ANCHORS) + ["5Li", "6Li"]
+    max_W_dev = max(mp.fabs(out[a]["W"] - 1) for a in ALL)
+    print(f"\n  max |W − 1| over the {len(ALL)} atoms = "
           f"{mp.nstr(max_W_dev, 6)}")
 
     wb.add_assertion(
         "markov_normalization_recomputed_weights",
         computed=fmt(max_W_dev), expected="0", tolerance="1e-40",
     )
-    for a in ANCHORS:
+    for a in ALL:
         wb.add_data(f"me_S_MeV_{a}", fmt(out[a]["me_S"]))
         wb.add_data(f"A_req_{a}", fmt(out[a]["A_req"]))
     wb.add_data("scope_note",
-                "anchors only; 5Li/6Li excluded — their free chi comes from "
-                "the probe's own LR path and would not be an independent check")
+                "D/T/3He/4He rebuild theta from the cached per-block free AND "
+                "atom chi. 6Li has no cached free chi, so its free half comes "
+                "from chi_free_via_frobenius -- the power-sum/Murnaghan-"
+                "Nakayama route, which forms no Littlewood-Richardson "
+                "coefficient and is therefore independent of the probe's LR "
+                "path. 5Li is still excluded: no independent check was built "
+                "for it.")
     out = wb.save()
     print(f"\n  witness: {out}")
     return 0
