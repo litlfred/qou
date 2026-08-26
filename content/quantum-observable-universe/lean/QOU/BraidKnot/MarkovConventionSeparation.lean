@@ -122,7 +122,6 @@ theorem markovZD_eq_sq_mul_kernel (q : ℝ) :
     markovZD q = q ^ 2 * markovKernel q := by
   rw [markovZD, markovKernel]
   field_simp
-  ring
 
 /-- **Corollary for the migration.** At any substrate point above `q = 1` the
 two conventions are unequal, so a file that defines its Markov parameter through
