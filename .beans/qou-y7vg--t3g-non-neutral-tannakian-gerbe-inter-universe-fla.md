@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-26T14:40:18Z
+updated_at: 2026-08-26T15:18:09Z
 parent: qou-8lxd
 ---
 
@@ -312,3 +312,56 @@ NON-VACUITY WHERE IT MATTERS: isQGeneric_real is not a toy witness -- the class
 is satisfied at the value the framework actually evaluates at. Mutation-tested:
 removing [IsQGeneric R q] from isUnit_qBracket fails to synthesize, so the
 hypothesis is load-bearing.
+
+
+## THE v SIGN: CAN THE AXIOMS PICK IT? NO -- AND IT IS PROVABLE (2026-08-26)
+
+Owner asked whether the QOU axioms, particularly the NON-SYMMETRY of the
+braiding, can fix the sign of v = q^(1/2), the way axiom 1 gives time a
+direction. Answer: no, and the obstruction is structural rather than a gap.
+
+QOU/AlgebraicSubstrate/TwistSignTorsor.lean (4 decls; three depend on NO AXIOMS
+AT ALL, the fourth on propext only; mutation-tested).
+
+A SIGN FLIP IS NOT A FREE CHOICE. Replacing theta by theta' X = eps X * theta X
+preserves the ribbon axiom theta(V ot W) = (theta V ot theta W) . c . c IFF
+eps(V ot W) = eps V * eps W. So eps is a Z/2-valued MONOIDAL CHARACTER, and the
+ribbon structures over one braiding form a TORSOR under the group of such
+characters. Consequences:
+  sign_trivial_on_unit      eps 1 = 1
+  sign_trivial_on_squares   eps (x*x) = 1 -- THE FLIP IS INVISIBLE ON SQUARES,
+                            which is exactly why the braiding fixes q = v^2 and
+                            not v, and refutes 'just negate v everywhere'
+  no_constant_nonunit_sign  a constant sign /= 1 is not a homomorphism
+
+SO THE SIGN IS FREE EXACTLY WHEN THE CATEGORY HAS A NON-TRIVIAL Z/2 GRADING.
+Trivial grading => sign already determined. That the choice exists at all is the
+SAME FACT as there being a fermion parity.
+
+WHY NON-SYMMETRY CANNOT DO IT. eps acts on the TWIST and leaves the braiding
+alone, so checking all four axioms:
+  1 temporal braiding  reads only the order on c            -- untouched
+  2 Frobenius-Hopf     no twist appears                     -- untouched
+  3 symmetric Frobenius left and right traces BOTH scale by eps X, so their
+                        EQUALITY survives                   -- invariant
+  4 Wedderburn          each datum scales by a unit and invertibility is
+                        sign-blind (isUnit_unit_mul_iff)    -- invariant
+ALL FOUR ARE eps-INVARIANT. Scope-(b), invariant named.
+
+THE DISANALOGY WITH TIME IS THE POINT. Axiom 1 extracts a direction from an
+ORDER, and well-foundedness is not preserved under reversal -- the asymmetry
+lives in the SAME datum the axiom constrains. The sign lives in a DIFFERENT
+datum: a braided category has many ribbon structures, and the braiding fixes the
+monodromy q = v^2, never v. Non-symmetry is the WRONG INVARIANT, not an
+unexploited one.
+
+WHAT WOULD FIX IT: an ORDER on the base. Demanding dim_q(lambda) > 0 (unitarity)
+selects the sign, since eps(lambda) = -1 on odd-graded blocks makes one branch
+negative. That needs R ordered, hence archimedean, hence not categorical -- which
+is precisely why rem:sign-as-spin-structure says 'POST-ARCHIMEDEAN, this binary
+sign determines the spin structure'. The qualifier was already right; this
+explains why it is FORCED.
+
+NOT FORMALISED: the ribbon-axiom computation itself. Mathlib carries Braided but
+no ribbon categories, so the file formalises the torsor group theory and the
+sign-blindness of invertibility, and argues the categorical step in prose.
