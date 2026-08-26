@@ -5,7 +5,7 @@ section_id: sec-043-52-positive-links-35
 section_title: "Positive links 35"
 section_number: 5.2
 pages: 35-37
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -33,8 +33,7 @@ itive links. Our positivity considerations will make use of the criterion of Yok
 F. We recall the properties (6) – (8) that determine F and its writhe-unnormalized version Λ.
 Note that for P one can similarly deﬁne a regular isotopy invariant
 ˜P(D)(a,z) = (ia)−w(D)P(D)(ia,iz) ,(37)
-with i = √
-−1. Then ˜P satisﬁes similar relations to (6) – (8). The difference to Λ is that ˜P is deﬁned on oriented link
+with i = √−1. Then ˜P satisﬁes similar relations to (6) – (8). The difference to Λ is that ˜P is deﬁned on oriented link
 diagrams, and that the term making orientation incompatible on the right of (6) is missing.
 Theorem 5.4 (Yokota [Yo]) IfL is a positive link, then
 mindeg a F(L) = mindeg v P(L) = 1 − χ(L) ,

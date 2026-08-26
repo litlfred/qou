@@ -5,7 +5,7 @@ section_id: sec-052-71-the-jones-conjecture-47
 section_title: "The Jones conjecture 47"
 section_number: 7.1
 pages: 47-48
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -121,8 +121,7 @@ i ql·eY
 [ ˆWY (q,λ)
 ]
 λm .(55)
-(Now in the ˜c(i,Y ), the 1-degree ambiguity of c(i,Y ) for Y =
-, as explained above, cancels out.)
+(Now in the ˜c(i,Y ), the 1-degree ambiguity of c(i,Y ) for Y = , as explained above, cancels out.)
 Among the 55 possible (i,Y ) (with i ⁄= 4,7), only 21 of the ˜c(i,Y ) are non-zero. It turns out that for m = 0, when
 k = 6a − 1, l = −2a and a > 1, there is a unique term among the 21 summands in (55) whose mi nimal degree in q is
 the smallest (it is 14 − 36a). Thus [P(ˆβk,l)]ve−5 ⁄= 0. We calculated the polynomial with Morton-Short’s program for

@@ -5,7 +5,7 @@ section_id: sec-068-references
 section_title: "References"
 section_number: null
 pages: 64-68
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -25,8 +25,7 @@ N. (Figure 9 shows the case k = 4.) Then we use A-decomposition, as shown in ﬁ
 along the arcs a1,2. We show only the result for a1, the case of a2 and other k is analogous. ✷
 References
 [Al] J. W. Alexander, A lemma on systems of knotted curves, Proc. Nat. Acad. Sci. U.S.A. 9 (1923), 93–95.
-[Al2]
-” , Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928), 275–306.
+[Al2] ” , Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928), 275–306.
 [Ar] E. Artin, Theorie der Z¨ opfe, Abh. Math. Sem. Hamburgischen Univ. 4 (1926), 47–72.
 [Ar2] ” , Theory of braids, Ann. of Math. 48(2) (1947), 101–126.
 [Be] D. Bennequin, Entrelacements et ´ equations de Pfaff, Soc. Math. de France, Ast´ erisque107-108 (1983), 87–161.

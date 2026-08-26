@@ -5,7 +5,7 @@ section_id: sec-042-51-positive-braid-links-33
 section_title: "Positive braid links 33"
 section_number: 5.1
 pages: 33-35
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -19,8 +19,7 @@ plateau. Assume w.l.o.g. the (non-summit) σ1
 the syllables of β the syllable σ1
 1 can be written to occur just before or after a syllable with index n − 1 that belongs to
 the left plateau. This means that we can write β as
-βl,m,n = [12.3(223)n1(223)m2
-..1123(223)l21](36)
+βl,m,n = [12.3(223)n1(223)m2..1123(223)l21](36)
 with n,m,l ≥ 0, or some of its extensions. Note that MWF will be monotonous in m,n,l, i.e. MW F(βl,m,n+1) ≥
 MW F(βl,m,n) etc. Using symmetry assume n ≥ m.
 One can check already at this stage that such words are not B-adequate. So we obtain corollary 5.1, and for the proof
@@ -36,8 +35,7 @@ with n,m > 0, or l > 0 and their extensions, and both 2.. and 2. are trivial.
 Case 1.1. l = 0. We assumedn,m > 0, and already forn = m = 1, the word [12322312232112321], we haveMW F = 4.
 Case 1.2. l > 0.
 Case 1.2.1. m = n = 0. These are extensions of [1231211123(223)l21], and the admissibility is found to be:
-[1ˆ2ˆ31ˆ21123
-(223)l21].
+[1ˆ2ˆ31ˆ21123(223)l21].
 The two letters ‘2’ in the left plateau cannot be doubled ([123122112322321], [122312112322321]), neither the ‘3’
 ([123132112322321]), since MW F = 4 already for l = 1.
 Without extension, l = 1 ( [123121112322321]) and l = 3 ( [123121112322322322321]) reduce. So we ﬁnd that
@@ -57,8 +55,7 @@ The right 2 and the 3 in the right plateau must be trivial:
 But the left ‘2’ of the left and right plateau may not be trivial: [12223223223223121112222321] has MWF = 3.
 [122232232232231211122222321] simpliﬁes.
 So [12 ∗ [23] +312112 ∗ 321] simpliﬁes.
-We arrive at the form [123
-(223)n1ˆ2112ˆ3ˆ21].
+We arrive at the form [123(223)n1ˆ2112ˆ3ˆ21].
 34 5 Positivity of 3-braid links
 Case 3. In case both non-triviality conditions do not apply, we have [12312112321] and its extensions. (So both
 plateaus are mountains.)

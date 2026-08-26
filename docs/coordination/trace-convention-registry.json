@@ -816,5 +816,99 @@
         ]
       }
     ]
-  }
+  },
+  "blocked_on_rederivation": [
+    {
+      "file": "computations/qbeta/qbeta_prearchimedean_z_recursion.py",
+      "symbol": "z",
+      "line": 103,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "The probe's RESULT is the 3-term recursion 4(n+1)a_{n+1} + 6n a_n + (2n-1)a_{n-1} = 0, derived from the ODE (4+6w+2w^2)z' + w z = 0, which holds because z_C = sqrt(1+w)/(2+w) is ALGEBRAIC. z_D(1+w) = (1+w)^3/((1+w)^2+1) is RATIONAL, a different D-finite object: measured exactly, the C recursion's residuals at n = 1,2,3 are 17/2, 3, -5/4, not 0, 0, 0. Substituting z_D deletes the result rather than re-expressing it.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/probes/qbeta_fmap_power_class_prune.py",
+      "symbol": "z",
+      "line": 89,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "A verbatim Python mirror of the sorry-free Lean instance QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance (y = (z, 1/2-z, z), z = markov_parameter q), whose own file title advertises it as 'an explicit sqrt(q)-bearing inhabitant'. Migrating the Python alone desynchronises it from the Lean. Measured: with z_C the weighted object dtr_explicit carries half-integer powers of q (q^(27/2), q^(19/2), q^(15/2), q^(7/2)); with z_D it is purely rational, (-2q^11 - q^8 - 2q^7 + 2q^5 + 2q + 1)/(8q^3(q^2+1)). CORRECTION 2026-08-25, re-measured on recovery: this row previously ended 'a silent z-swap would un-refute the pure-power class without anyone re-deriving anything'. That is FALSE. Arm-1's obstructions run on dtr -- the atom-word bridge rational read from habiro-mode-to-ladder-bridge.witness.json -- which is z-FREE; z enters only dtr_explicit and its boolean explicit_differs, and explicit_differs is True under BOTH conventions. No Arm-1 verdict moves under a z-swap. What blocks the site is fidelity to the sorry-free Lean instance, not a refutation that would evaporate.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution HERE for a different reason than the other rows: the z is a verbatim mirror of a sorry-free Lean instance that is sqrt(q)-bearing BY CONSTRUCTION, so under D it is a different object, not the same object in new coordinates. The Lean must move first. Carried by the qou-cds1 tranche, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_eta_singularity_probe.py",
+      "symbol": "zq",
+      "line": 178,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "Feeds the ladder phase alpha = ((z-1)h - u_tilde)/2 (LEG 2, the closed-form net route, probe line 182). Measured at the proton pin q0 = 1.10997858275138080759166909561, 80 dps: z_C = 0.49932033418369445241, z_D = 0.61268803714646525160. CORRECTION 2026-08-25, re-measured on recovery: this row previously reported 'alpha moves -0.052336120268228835 -> -0.040485777340642763, a 22.64 % relative change'. Those are the values of the z-dependent part (z-1)h/2, NOT of alpha -- alpha also carries u_tilde = q*b*hbar^2 = 0.0094539479349434092, which the quoted numbers omit. Both quantities move, by different amounts: (z-1)h/2 goes -0.052336120268228839 -> -0.040485777340642765 (22.64 %), while alpha itself goes -0.057063094235700543 -> -0.045212751308114469 (20.77 %). The 22.64 % figure is correct as quoted in the qbeta_h_frame_rungs_probe row, whose alpha IS (z-1)h/2 with no u_tilde term (probe line 74). The eta-plane singularity locations are functions of that phase.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_eval_map_bar_decomposition_probe.py",
+      "symbol": "z",
+      "line": 48,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "The probe asserts z_bar_even_KC13 and confirms the sorry-free Lean lemmas epsNP_decomp / trMNP_bar_image. Measured exactly: z_C is bar-EVEN, z_D is bar-NEITHER (bar(z_D) = 1/(q^3+q)), so under D the odd-channel term -h*z is bar-NEITHER and the exact even/odd split the probe reports does not exist. Migrating flips a PASS to a FAIL and puts the probe in contradiction with sorry-free Lean.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_h_frame_rungs_probe.py",
+      "symbol": "z",
+      "line": 73,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "Feeds the ladder phase alpha = (z-1)h/2, then expands cos(alpha - u/2). Same 22.64 % phase move as qbeta_eta_singularity_probe. Companion to QOU/QBeta/LadderFrameChange.lean, which proves the h-frame algebra sorry-free against the C-frame phase.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py",
+      "symbol": "z",
+      "line": 68,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "T3-1 rests on z being CRITICAL at q = 1. Measured exactly: dz_C/dq|_1 = 0 so ord_{q=1}(z_C - 1/2) = 2 (even orders only, which is exactly what excludes the f(z)*kappa_(2,1) sub-class); dz_D/dq|_1 = 1 so ord_{q=1}(z_D - 1/2) = 1. Under D the even-order premise is false and the exclusion silently evaporates.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    },
+    {
+      "file": "computations/qbeta/qbeta_z_bar_parity_fmap_class_probe.py",
+      "symbol": "z",
+      "line": 72,
+      "stays": "C until qou-cds1 lands",
+      "blocked_on_bean": "qou-cds1",
+      "registered_on": "2026-08-25",
+      "evidence": "Companion to the sorry-free certificate QOU/QBeta/ZBarParity.lean, whose theorem z_bar_invariant proves z = sqrt(q)/(1+q) is exactly bar-even (zNum s = s, zDen s = 1 + s^2). Measured: parity(z_D^m) is NEITHER for m = 1..4, so the z-alone exclusion (a bar-even z-functional cannot source the bar-odd a_1) has no D-frame statement at all. The Lean must move first.",
+      "reason": "Convention D is canonical (owner ruling 2026-08-15 R1) and this site must not stay on C. It is NOT migratable by substitution: swapping in z_D changes the probe's own asserted RESULT rather than its coordinate, which is the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero (sorry-free) rules out. Carried by the qou-cds1 ladder re-derivation, not by this drain.",
+      "owner_decision_required": false
+    }
+  ],
+  "blocked_on_rederivation_note": "Sites that must NOT stay on convention C but cannot be migrated by substituting z_D, because the substitution changes the site's asserted RESULT rather than its coordinate. Distinct from `blocked_migrations`, whose rows say `stays: C` permanently by design -- these are PENDING the qou-cds1 ladder re-derivation. Recorded so a drain agent stops re-litigating them from scratch (the failure mode the markov_reduction_h3_to_h4_verify row names in its `why_the_detector_keeps_listing_it` field), and DELIBERATELY LEFT IN the audit's actionable count: a declaration accounts for a site without excusing it, exactly as `intra_module_split_waivers` does. Shrinking the number without changing the corpus is the thing this registry exists to prevent. Every `evidence` field is a measurement, not a judgement.",
+  "closed_form_measured_clear": [
+    {
+      "file": "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+      "symbol": "ocneanu_weights",
+      "line": 133,
+      "half_power_site_line": 162,
+      "verdict": "detector false positive -- MEASURED, not argued",
+      "verified_on": "2026-08-25",
+      "evidence": "The function's z is already convention D (`z = q ** 3 / (q ** 2 + 1)`, line 146, with an in-source note recording the C spelling it replaced). The half-power the closed-form scanner sees is at line 162, `Wq = {k: sp.simplify(v.subs(t, sp.sqrt(_q))) for k, v in Wt.items()}` -- a BACK-substitution undoing the working coordinate the function opens with (`t = sp.symbols('t', positive=True)`, `q = t ** 2`, 'in t=sqrt q for clean algebra'), not a convention-C closed form. Executed and measured: ocneanu_weights() returns W_(3) = (q^4+1)/(q^2+1)^2, W_(2,1) = q^2/(q^2+1)^2, W_(1^3) = 0, held_out_ok = True. All three are exact rational functions of q with ZERO half-integer q powers -- sympy `is_rational_function(q)` True for each.",
+      "why_not_suppressed": "The scanner is static and cannot evaluate; the discriminator here is the ANSWER, not the source. A rule that skipped every `.subs(t, sqrt(q))` would also skip a genuinely C-derived closed form back-substituted the same way, which is exactly how the previous four blind spots were created (docs/audits/2026-08-15-detector-blindness-taxonomy.md). So the site KEEPS its place in the report and this row only labels it, in the same accounting-without-excusing sense as `blocked_on_rederivation`. Re-verify by running the function, not by reading it.",
+      "action": "none -- nothing to migrate at this site"
+    }
+  ],
+  "closed_form_measured_clear_note": "Closed-form sites the scan_closed_forms half-power fingerprint reports in a convention-D file that have been EXECUTED and measured to be clear. The scanner is static; a half-integer power of q in the source is a shape, and the discriminator is whether the quantity the function RETURNS carries one. A row here records that measurement so the next drain does not repeat it -- it does NOT remove the site from the report, for the same reason `blocked_on_rederivation` rows stay in the actionable count: a channel that shrank the headline number would let the inventory improve while the corpus stood still. Every `evidence` field must name the measured return value."
 }

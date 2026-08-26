@@ -5,7 +5,7 @@ section_id: sec-048-71-the-jones-conjecture
 section_title: "The Jones conjecture"
 section_number: 7.1
 pages: 42-43
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -15,10 +15,8 @@ Conjecture 7.1 (Jones’s conjecture)
 1) (weaker version) If β,β′ ∈ Bn satisfy ˆβ = ˆβ′ = L and n = b(L), then [β] = [β′] =: wmin(L).
 2) (stronger version) Part 1 holds, and if β′′ ∈ B′
 n for n′ > n has ˆβ′′ = L, then
-⏐
-⏐[β′′] − wmin(L)
-⏐
-⏐ ≤ n′ − n .(44)
+⏐⏐[β′′] − wmin(L)
+⏐⏐ ≤ n′ − n .(44)
 It was observed in [St3] that counterexamples to the conject ure would make MWF and all of its cabled versions
 unsharp. (In [St3] the weaker version was focussed on, but th e same arguments address the stronger version too.)
 Thus, for example, corollary 6.8 can also be regarded as a par tial solution to Jones’s conjecture. Similarly, the work

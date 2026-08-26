@@ -5,7 +5,7 @@ section_id: sec-009-22-polynomial-link-invariants
 section_title: "Polynomial link invariants"
 section_number: 2.2
 pages: 6-7
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -23,8 +23,7 @@ Let P(v,z) be the skein polynomial [F&, LM]. It is a Laurent polynomial in two v
 We use here the convention of [Mo], i.e. with the polynomial taking the value 1 on the unknot, having the variables v
 and z and satisfying the skein relation
 v−1 P
-(
-)
+( )
 − vP
 ( )
 = zP
