@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-26T00:45:00Z
+updated_at: 2026-08-26T03:30:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -259,3 +259,67 @@ now emit the three keys themselves.
 
 Verified across both witnesses: the only diffs are timestamps, commit
 shas and the reason text. No computed number moved.
+
+## 2026-08-26 — findings 6, 8, 9 done. ALL NINE dispositioned (`2553296ad5`)
+
+| # | site | disposition |
+|---|---|---|
+| 1 | `mu4_rhoF_cluster_derivation_probe.py` | LABELLED (`42d2537721`) |
+| 2 | `wlambda_nuclear_braid_connected_probe.py` | LABELLED (`42d2537721`) |
+| 3 | `gram.rs:726` | NAMED via `GRAM_PN_CONVENTION` (`d85f1d581b`) |
+| 4 | `gram.rs:888` | NAMED via `GRAM_PN_CONVENTION` (`d85f1d581b`) |
+| 5 | `canonical-braid-interface-composition` | LABELLED (`b63c718177`) |
+| 6 | `recursive-atom-knot-atlas-registry` | **FIXED OUTRIGHT** (`2553296ad5`) |
+| 7 | `eigenvalue-product-expansion-proof` | SCOPED (`d79217f440`) |
+| 8 | `knot-operator-transition` | **MEASURED, conclusion vindicated** (`2553296ad5`) |
+| 9 | `crystal-bases-path-a-table1-data` | LABELLED (`2553296ad5`) |
+
+### Finding 6 was NOT a convention choice — the doc was wrong about the code
+
+The registry's inter-nucleon table described generator `3k+2` with the
+**intra**-nucleon label and formula (`averaged`, `σ − h/2`) while citing
+`atom_canonical_crossings` as its authority. Measured against that producer
+for D / ³He / ⁴He: generator `3k+2` returns `sigma`, `sigma_inv` or
+`averaged_weighted` — **never** `averaged`. `averaged` is real and the same
+producer emits it (six times for ³He), but only for intra-nucleon quark
+crossings.
+
+So this one is fixed outright and no number moves: the code was already
+canonical here. **Worth generalising** — "the doc disagrees with the code" and
+"the code uses the blind convention" look identical from a grep, and only the
+first is free to fix. Check which one you have before assuming the flip is
+owner-scoped.
+
+### Finding 8 needed a measurement, and I nearly asserted it instead
+
+Its claims are the *Dominant NF* and *Knot type* columns — about which basis
+element **dominates**, not about the coefficient. My first instinct was to write
+"a 0.07 % perturbation cannot flip a dominance ordering", which is plausible and
+was **not** established.
+
+Computed it instead: the H₃ normal form of all five operators under both
+conventions.
+
+    p  -> D      (1,0,2) both   margin 9.567x
+    D  -> 3H     (2,0,1) both   margin 4.783x
+    D  -> 3He    (2,0,1) both   margin 9.567x
+    3H -> 4He    (2,1,0) both   margin 9.567x
+    3He-> 4He    (2,1,0) both   margin 4.732x
+
+Same dominant element every time; margins 4.7×–9.6× against a relative
+perturbation of `δ/2 = 6.9e-4`. Four orders of magnitude of headroom. The
+block's conclusions are convention-**independent**; only its written operators
+are blind.
+
+Because the block now *asserts* those margins, the check is a real producer —
+`computations/probes/knot_operator_transition_convention_robustness_probe.py`,
+8 assertions, linked from the block. Exact sympy throughout, evaluated once at
+the end at 30 digits.
+
+### What is NOT done
+
+The convention **flip** itself: still owner-scoped, still 51 Python files and
+18 committed witnesses. Every disposition above is "name it" or "the code was
+already right", never "change the number". Also still unadjudicated: the 17
+blind-value witnesses noted in the sweep results (3 of the 22 are deliberate
+two-value comparisons and must not be drained).
