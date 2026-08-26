@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T21:21:13Z
+updated_at: 2026-08-26T23:33:09Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2029,3 +2029,95 @@ with no `net`-specific object left in it. With `χ^(2,1)(Δ) = 0` from the block
 resolution, the 2-dimensional block's role is now complete: nothing in the
 trace-visible part, everything in the trace-invisible part, and its size there
 fixed by its own Markov weight at the trivial loop value.
+
+
+---
+
+## Tranche (2026-08-26, PR #5864) — what rung 1 IS
+
+Owner directive this session: *"Even if deriving the ladder doesn't fully close
+the gap, if it is the proper thing to do it should be done."* So this tranche
+does the derivation and prices the expectation separately, rather than treating
+the 92x baseline gap as a reason to leave it undone.
+
+### Derived (exact, symbolic over Q(q); no anchor, no fit; 12/12)
+
+`computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py`
+
+**(D1) — new.**
+
+    2*alpha = net(Delta) - tr_M^z(Delta)          identically in q AND z
+
+`alpha = (z-1)h/2` is the rung-1 phase, `net` the coordinate sum (step 8's
+"counit"), `tr_M^z` the Ocneanu trace. Delta rebuilt from the typed-crossing
+words, asserted against its stated coordinates. So alpha is neither free nor
+fitted: it IS the discrepancy between the ladder's baseline and the admissible
+functional.
+
+**(D2) — NOT new, corroboration only.** Rungs 2-5 carry no `z`. Already
+Lean-proved as `QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` by the
+sibling on #5337. I derived it independently and initially wrote it up as a
+finding; corrected the same session.
+
+**(D1) + (D2) jointly:** the ladder's ENTIRE convention-dependence is its own
+baseline's inadmissibility. Neither half states that alone.
+
+**(D3) — new, modest; an explanation of a proved theorem, not a new one.**
+
+    d_1 = q^3/(q^2+1) = z_D           (Hoefsmit V_(2,1) DIAGONAL entry)
+    y_(2,1)^D = -d_1 * d_2                                        [exact]
+
+Convention D's Markov parameter is the (2,1) Hoefsmit diagonal entry -- the same
+expression written twice in the corpus without being joined. Since `b^2 =
+d_1*d_2 + 1` is the Hoefsmit coupling's DEFINITION, the sibling's
+`hoefsmitB_sq_eq_one_sub_stdWeightD` is that definition re-read, not a
+coincidence between the D weights and the Hoefsmit matrix.
+
+### What that makes of rung 1
+
+Both terms of its phase are 2-dimensional-block objects: alpha's z-free part is
+`-h*y_(2,1)(1)`, and `b` is the (2,1) Hoefsmit coupling. That block has
+`chi^(2,1)(Delta) = 0` -- invisible to the trace of Delta -- and D's TL quotient
+KEEPS it (only the three-row `(1^3)` is annihilated).
+
+**So rung 1 is built entirely from a block the trace cannot see and the
+convention retains.** That is a DERIVED reason a trace baseline does not rescue
+it, not a further measurement of the fact that it doesn't.
+
+### Measured, none selected
+
+Three readings of the D-frame rung 1, order fixed before evaluation; no convex
+combination formed, no selection on agreement:
+
+    R-i    baseline=tr_M^{z_D}, alpha dropped        -4.316e+8 ppb
+    R-ii   baseline=tr_M^{z_D}, alpha kept at z_D    -4.322e+8 ppb
+    R-iii  baseline=net,        alpha at z_D          6.012e+5 ppb   [INVALID]
+    R-iv   baseline=augmentation (z=q), alpha dropped 1.246e+8 ppb
+
+**Adverse.** R-iii -- the reading the corpus FORBIDS -- is **207x closer** to
+CODATA than the nearest admissible one. Third construction in this channel where
+proximity tracks INADMISSIBILITY; step 8's `net` was the first. My reading is
+that this points at the ansatz rather than the rungs. Reported, not buried.
+
+### Calibration
+
+The decomposition reproduces the existing implementation BIT-IDENTICALLY
+(`|diff| = 0.0`, both pins), so (D1) is about this ladder and not a lookalike.
+
+### Prediction retracted, kept in the file
+
+I asserted "all four readings exceed 1e6 ppb" before checking. FAILED on R-iii
+at 6.0e5. Repaired by stating what is true and naming what the failure showed --
+not by widening the bound.
+
+### Spun off, not chased
+
+`qou-54g5` (high): the block claims -0.0066 ppm at the muon pin; the
+implementation returns +7.34 ppb. Opposite sign, ~11 % apart in magnitude. That
+is the number the whole ladder is quoted on.
+
+### Still open
+
+The bean is NOT closed. What remains is the choice among the readings on
+principled grounds -- which (D3) now constrains but does not settle -- and the
+`qou-xzrj` trace-invisible term. Coordination posted to #5337.
