@@ -121,10 +121,36 @@ RE_DELIB_DOC = re.compile(
 
 
 def _deliberate(path_text_lines, i: int, decl: str) -> str:
-    """`deliberate` if the site announces itself as C; else `actionable`."""
+    """`deliberate` if the site announces itself as C; else `actionable`.
+
+    The evidence window is the declaration's WHOLE preceding docstring, found by
+    walking back to its opening `/--`. A fixed line count silently mis-reports:
+    `q-beta-cos-resummation` was scoped deliberate with a 20-line docstring
+    explaining exactly why it cannot be migrated, and a 13-line window could not
+    see the words "Convention C, deliberately" at its top, so the site came back
+    `actionable` on the next run. A detector whose verdict depends on how verbose
+    the explanation is, is measuring the wrong thing.
+
+    The walk stops at a declaration keyword or a namespace boundary -- NOT at a
+    blank line. Blank lines are normal *inside* a docstring, and breaking on one
+    was the first version of this fix, which failed on the very file that
+    motivated it. `i` is 1-indexed, so the declaration itself is at index i-1 and
+    the search starts at i-2.
+    """
     if RE_DELIB_NAME.search(decl):
         return "deliberate"
-    above = " ".join(path_text_lines[max(0, i - 13):i])
+    STOP = re.compile(r"^\s*(noncomputable\s+)?(def|abbrev|theorem|lemma|instance|"
+                      r"structure|class|end|namespace|section)\b")
+    start = None
+    for j in range(i - 2, max(-1, i - 250), -1):
+        line = path_text_lines[j]
+        if "/--" in line:
+            start = j
+            break
+        if STOP.match(line):
+            break
+    lo = start if start is not None else max(0, i - 13)
+    above = " ".join(path_text_lines[lo:i - 1])
     if RE_DELIB_DOC.search(above):
         return "deliberate"
     return "actionable"
