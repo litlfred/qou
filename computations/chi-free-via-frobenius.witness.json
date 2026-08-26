@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T18:53:24.368308+00:00",
-  "commitSha": "212e82cebade62ffda7de39a33150d2706a54f14",
+  "computedAt": "2026-08-26T19:20:53.259283+00:00",
+  "commitSha": "82d699c5f732fd77da3692d7156d30593f8692fc",
   "assertions": [
     {
       "name": "mn_reproduces_s3_character_table",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3762,
+  "durationMs": 4019,
   "computation": "chi-free-via-frobenius",
   "scriptFile": "chi_free_via_frobenius.py",
-  "scriptHash": "48d7386c44a0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0a4c8dd2ab12",
+  "scriptCommitSha": "790a3cd39ac519a05d6129a409ccef4cf93afc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,6 +60,8 @@
     "n_blocks_3He": "30",
     "worst_rel_vs_lr_4He": "7.9588402e-70",
     "n_blocks_4He": "77",
+    "worst_rel_vs_lr_5Li": "1.5371592e-69",
+    "n_blocks_5Li": "176",
     "worst_rel_vs_lr_6Li": "1.3437038e-67",
     "n_blocks_6Li": "385"
   },

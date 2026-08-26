@@ -256,7 +256,7 @@ def main() -> int:
     nuc = load_nucleon_chi(50)
     worst_overall = mp.mpf(0)
     print("\n  atom   blocks   worst rel |frobenius − LR|   frobenius   LR")
-    for atom in ("D", "3He", "4He", "6Li"):
+    for atom in ("D", "3He", "4He", "5Li", "6Li"):
         Z, N = ZN[atom]
         t0 = time.time()
         a = chi_free_frobenius(Z, N, nuc_chi=nuc)

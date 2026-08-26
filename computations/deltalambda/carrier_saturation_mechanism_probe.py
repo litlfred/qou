@@ -548,6 +548,17 @@ def main() -> int:
                "79.86 was the convention-C value (2026-07-13 audit), correct "
                "in its own frame")
     wb.add_assertion(
+        "anchor_kappa5Li_reproduced",
+        computed=fmt(res["5Li"]["A_req"]), expected="102.51379",
+        tolerance="0.05",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py, whose ⁵Li free χ "
+               "comes from chi_free_via_frobenius. ⁵Li was the last atom in "
+               "this table with no gate at all — it was wired to the "
+               "Frobenius path for speed while its numbers still rested on a "
+               "single route. The two routes now agree to 1.5e-69 on all 176 "
+               "⁵Li blocks (chi-free-via-frobenius.witness.json)")
+    wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=str(res["6Li"]["n_blocks"]), expected="385", tolerance="0",
         source="cached ⁶Li H₁₈ atom witness is complete")

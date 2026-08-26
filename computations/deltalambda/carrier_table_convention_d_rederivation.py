@@ -63,7 +63,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
-    AME_B_LI6_MEV_VALIDATION,
+    AME_B_LI5_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION,
 )
 
 set_compute_dps()
@@ -77,13 +77,18 @@ B_AME = {
     "3He": mp.mpf(str(AME_B_HE3_MEV_VALIDATION)),
     "4He": mp.mpf(str(AME_B_HE4_MEV_VALIDATION)),
 }
-A_OF = {"D": 2, "T": 3, "3He": 3, "4He": 4, "6Li": 6}
+A_OF = {"D": 2, "T": 3, "3He": 3, "4He": 4, "5Li": 5, "6Li": 6}
 ANCHORS = ["D", "T", "3He", "4He"]
 REEB = "binding-reeb-phase-decomposition.witness.json"
 
 # ⁶Li: atom χ from the cached H_18 witness; free χ from the Frobenius path
 # (chi_free_via_frobenius), which is independent of the probe's LR route.
-LI6_ATOM = "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json"
+LARGE_A_ATOM = {
+    "5Li": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+    "6Li": "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+}
+LARGE_A_ZN = {"5Li": (3, 2), "6Li": (3, 3)}
+B_AME["5Li"] = mp.mpf(str(AME_B_LI5_MEV_VALIDATION))
 B_AME["6Li"] = mp.mpf(str(AME_B_LI6_MEV_VALIDATION))
 
 
@@ -143,7 +148,7 @@ def rederive(atom: str, reeb: dict) -> dict:
             "A_req": B_AME[atom] / me_S}
 
 
-def rederive_li6() -> dict:
+def rederive_large_a(atom: str) -> dict:
     """⁶Li with the free χ from the Frobenius path, not the probe's LR path.
 
     This is what lets `li6_amplification_pinned` become a real assertion: the
@@ -151,14 +156,16 @@ def rederive_li6() -> dict:
     """
     from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 
-    w = json.loads((_COMP / LI6_ATOM).read_text())
+    w = json.loads((_COMP / LARGE_A_ATOM[atom]).read_text())
     if w.get("partial") or w.get("tr_M_partial"):
-        raise RuntimeError("⁶Li atom witness is partial — regenerate")
+        raise RuntimeError(f"{atom} atom witness is partial — regenerate")
     if int(w["n_partitions"]) != int(w["n_partitions_total"]):
-        raise RuntimeError("⁶Li atom witness skipped partitions")
+        raise RuntimeError(f"{atom} atom witness skipped partitions")
 
-    chi_free = chi_free_frobenius(3, 3)
-    y_fresh = {tuple(sh): v for sh, v in y_lambda_su_n(18, q0, 2).items()}
+    Z, N = LARGE_A_ZN[atom]
+    chi_free = chi_free_frobenius(Z, N)
+    n = 3 * (Z + N)
+    y_fresh = {tuple(sh): v for sh, v in y_lambda_su_n(n, q0, 2).items()}
 
     S = mp.mpf(0)
     W = mp.mpf(0)
@@ -176,7 +183,7 @@ def rederive_li6() -> dict:
 
     me_S = M_E * S
     return {"n_blocks": used, "W": W, "S": S, "me_S": me_S,
-            "A_req": B_AME["6Li"] / me_S}
+            "A_req": B_AME[atom] / me_S}
 
 
 def main() -> int:
@@ -209,21 +216,23 @@ def main() -> int:
 
     # The normalisation is the one thing that must hold exactly, in either
     # convention -- it is the Markov-trace identity, not a convention artefact.
-    li6 = rederive_li6()
-    out["6Li"] = li6
-    print(f"  {'6Li':>4s}   6  {li6['n_blocks']:>5d}  "
-          f"{mp.nstr(li6['W'], 11):>13s}  {mp.nstr(li6['me_S'], 8):>12s}  "
-          f"{mp.nstr(li6['A_req'], 8):>12s}   [free χ: Frobenius, not LR]")
+    for atom in ("5Li", "6Li"):
+        r = rederive_large_a(atom)
+        out[atom] = r
+        print(f"  {atom:>4s}  {A_OF[atom]:>2d}  {r['n_blocks']:>5d}  "
+              f"{mp.nstr(r['W'], 11):>13s}  {mp.nstr(r['me_S'], 8):>12s}  "
+              f"{mp.nstr(r['A_req'], 8):>12s}   [free χ: Frobenius, not LR]")
 
-    max_W_dev = max(mp.fabs(out[a]["W"] - 1) for a in list(ANCHORS) + ["6Li"])
-    print(f"\n  max |W − 1| over the {len(ANCHORS) + 1} atoms = "
+    ALL = list(ANCHORS) + ["5Li", "6Li"]
+    max_W_dev = max(mp.fabs(out[a]["W"] - 1) for a in ALL)
+    print(f"\n  max |W − 1| over the {len(ALL)} atoms = "
           f"{mp.nstr(max_W_dev, 6)}")
 
     wb.add_assertion(
         "markov_normalization_recomputed_weights",
         computed=fmt(max_W_dev), expected="0", tolerance="1e-40",
     )
-    for a in list(ANCHORS) + ["6Li"]:
+    for a in ALL:
         wb.add_data(f"me_S_MeV_{a}", fmt(out[a]["me_S"]))
         wb.add_data(f"A_req_{a}", fmt(out[a]["A_req"]))
     wb.add_data("scope_note",
