@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T16:00:26.604342+00:00",
-  "commitSha": "7a5f6bf2405527e6a18cb79207af990be6df5815",
+  "computedAt": "2026-08-26T17:13:25.125798+00:00",
+  "commitSha": "6f72dfa92656bec72807a064d312d65a7943d6c6",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -65,7 +65,7 @@
       "computed": 0.9236194369624474,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 3.141592653589793,
+      "tolerance": "3.141592653589793238462643383279502884197169399375105820974944592307816",
       "source": "E_p[|Δθ|] < π for every atom — the structural rotation-channel ceiling of the normalized mean (growth-channel share ≤ its recorded per-atom value)"
     },
     {
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "501a19c13c1b",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "174e974c5a95",
+  "scriptCommitSha": "6f72dfa92656bec72807a064d312d65a7943d6c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
