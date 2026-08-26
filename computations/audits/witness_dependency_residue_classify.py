@@ -15,11 +15,19 @@ PROVENANCE = {"scriptHash", "scriptCommitSha", "commitSha", "engine",
 def leaf_key(path):
     return path.rsplit(".", 1)[-1].split("[")[0]
 
+TIMING = lambda k: ("elapsed" in k or k.endswith("_seconds")
+                    or k.endswith("_runtime") or k.endswith("_wall_sec"))
+
 def classify(r):
     v = r.get("verdict")
     if v != "MOVED":
         return v
     keys = {leaf_key(f) for fl in r.get("fields", {}).values() for f in fl}
+    # drop timing keys the runner's mask missed at the time it ran; recorded
+    # field names make this reclassifiable without re-running anything
+    keys = {k for k in keys if not TIMING(k)}
+    if not keys:
+        return "IDENTICAL"
     if keys and keys <= PROVENANCE:
         return "MOVED_PROVENANCE_ONLY"
     return "MOVED_SUBSTANTIVE"
