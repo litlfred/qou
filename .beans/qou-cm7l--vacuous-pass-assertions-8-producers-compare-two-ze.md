@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T09:37:58Z
-updated_at: 2026-08-26T09:38:45Z
+updated_at: 2026-08-26T09:57:56Z
 ---
 
 ## The shape
@@ -97,3 +97,44 @@ behaviour beyond the bug and should be decided per producer.
 
 `qou-poi1` — chasing the raw-float64 ratchet's blind spot. The float64 was the
 lesser defect; this was underneath it.
+
+
+## 2026-08-26 — the 8 do NOT take a uniform fix. Do not sweep them.
+
+I recommended "guard the 8 with the same one-line refusal". That is wrong for at
+least one of them, and possibly more, because **zero can be a legitimate
+outcome rather than a missing upstream**.
+
+`v_hat_to_delta_lambda_bridge` is the clear case. Its zero branch prints
+
+    CONCLUSION: no 1-dim channels in scope.
+
+That reads as a valid scientific result for a filtered run, not an error. A
+`raise SystemExit` there would refuse a legitimate outcome. The defect is
+narrower than "no guard": the producer states the empty case correctly in prose
+while its **machine-readable** claim (`computed=0, expected=0, allPassed`)
+asserts a verification that did not happen.
+
+So the fix space has (at least) two shapes:
+
+* **Refuse** — when zero means an upstream is missing and the run is
+  meaningless. `sublemma_2_1_h12_he4_phase25` (fixed) is this: the F1 cache was
+  absent and it had nothing to verify.
+* **Do not assert** — when zero is a legitimate scope outcome. Omit the
+  assertion, or record it as not-applicable, so the witness stops claiming a
+  passed verification over an empty set. Refusing would be wrong here.
+
+Deciding which applies needs reading each producer's zero case. That is 8
+judgement calls, not a sed.
+
+### Reachability is still unmeasured for all 8
+
+`sublemma_2_1_h12_he4_branching` was the one I expected to be live, being the
+direct sibling of the confirmed case. It is **not settled**: it produces no
+output within 100 s (setup work before its first print) and timed out at 120 s
+in the earlier sweep, which is *weak evidence it does process targets* — a
+fully-skipped run should be fast, as the phase25 sibling's 0.8 s was. A
+long-budget run is in flight; until it reports, do not claim either way.
+
+**Consequence for whoever picks this up:** the bean's list is a list of
+unguarded shapes. It is not a list of eight bugs, and it is not a batch.
