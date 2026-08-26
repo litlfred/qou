@@ -3,8 +3,9 @@
 title: the chi bottleneck is the Geck-Pfeiffer reduction, it scales with WORD LENGTH, and a batched entry point already exists unused in 9 producers
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-26T07:11:37Z
-updated_at: 2026-08-26T07:11:37Z
+updated_at: 2026-08-26T07:17:23Z
 ---
 
 ## Where the time actually goes
@@ -93,3 +94,57 @@ what they measure.
 
 Six of the nine have committed witnesses, so each conversion needs its
 witness diffed against the committed baseline, not just an exit-0.
+
+
+## CORRECTION — "scales with WORD LENGTH, not n" is too simple, and lever 3 is dead
+
+Two measurements landed after that claim, and they pull in opposite
+directions. Both are real; the one-line summary was not.
+
+### Length matters steeply — WITHIN a family
+
+Measured on this producer's own words at n = 12, batched + two-row pruned:
+
+    id       |word| = 47      ~60 s for the row (two tr_M calls)
+    swap_p   |word| = 56      > 470 s and still running
+
+**Nine more letters cost roughly 8x.** So within a family of structurally
+similar words the growth is steep, and the `swap_pn` word (65 letters)
+should be worse again.
+
+### But structure dominates ACROSS families
+
+My benchmark's probe word — every generator 1..n-1 in ascending order,
+repeated twice — did **not finish in 15 minutes at n = 8 with 14
+letters**. This producer's 47-letter word at n = 12 completes in ~30 s
+per call. A production word **3x longer at higher n is >30x faster.**
+
+So the probe word is pathological, more severely than the caveat I
+attached to it allowed. The GP reduction's cost is a function of how far
+the word sits from a minimal-length class representative — which
+correlates with length inside a family and not at all across families.
+Do not quote the n=8/14-letter figure as a length scaling law; it is a
+worst case for the search, not a point on a curve.
+
+### Lever 3 (word shortening by free reduction) is DEAD
+
+Measured — every word is already freely reduced, zero headroom:
+
+    id       atom  47 -> 47      free  44 -> 44
+    swap_p   atom  56 -> 56      free  53 -> 53
+    swap_n   atom  56 -> 56      free  53 -> 53
+    swap_pn  atom  65 -> 65      free  62 -> 62
+
+No adjacent `sigma_i sigma_i^-1` pairs anywhere, including at the
+junction where `w_atom + beta` is concatenated. Free reduction cannot
+shorten these words at all, so the third optimisation I proposed does not
+exist. Anything that shortens them has to use braid relations, not free
+cancellation — a real search, not a scan.
+
+### What this means for the batching result
+
+Batching removes the **x77** on reduction COUNT. It does nothing about
+the per-reduction cost, which is the steep term. So the honest projection
+for this producer is that it may still exceed its budget on the longest
+row — and if it does, that is the finding: the partition loop was never
+the dominant cost, one GP reduction on a 65-letter word is.
