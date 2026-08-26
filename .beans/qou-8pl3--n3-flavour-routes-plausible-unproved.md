@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T03:24:21Z
+updated_at: 2026-08-26T03:28:26Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -123,3 +123,42 @@ to argue about icosahedra at all -- it needs exactly one thing, that its triple
 is complex type. Everything else follows. Conversely any future candidate that
 is real or quaternionic is dead on arrival at dimension 3, without further
 analysis.
+
+
+## GAP (i) NARROWED 2026-08-26 — triality certifies complex type (PR #5810)
+
+This bean records Route B gap (i) as: "the Sym^2 gate 'pass' is a literature
+decomposition; the Lean file proves only arithmetic". That gap is now SMALLER
+and, more usefully, SHARPER.
+
+Chain as it now stands:
+
+  1. gate_forces_complex_of_dim_three (Sym2GateFSTrichotomy) -- ANY dim-3 object
+     passing the Sym^2 gate must contain a complex-type irrep. Real and
+     quaternionic constructions excluded as a class. DERIVED.
+  2. not_selfDual_of_triality_ne_zero (TrialitySelectionRule) -- an object of
+     non-vanishing triality is not self-dual. DERIVED.
+  3. fundamental_not_selfDual -- the 3 has triality 1, hence complex type.
+     DERIVED.
+  4. Gunaydin-Gursey: Im(O) = R + C^3 with SU(3) acting on that C^3 in its
+     STANDARD FUNDAMENTAL representation. STILL CITED.
+
+Given (4), complex type is no longer an assumption anywhere in the chain. So
+what stands between Route B and a complete argument is ONE sharply stated,
+citable claim about the octonion decomposition -- not a diffuse "the literature
+says the triple passes the gate".
+
+That is worth more than the size of the reduction suggests: a referee can be
+pointed at a single sentence of Gunaydin-Gursey 1973 rather than asked to accept
+a decomposition-plus-gate-verdict as a package.
+
+THE SAME ARITHMETIC FACT DID BOTH JOBS, which is worth noting because it is the
+reason this was cheap: 2 being a unit in Z/3 is what makes the grading BLIND to
+the flavour/colour identification (the negative, which forced me to retract my
+own "testable difference" claim earlier in this session) and what makes it SHARP
+about self-duality (the positive here).
+
+STILL OPEN and NOT touched: Route A (multi-fibre groupoid, nothing built);
+gap (ii), whether the octonionic SU(3) can serve as flavour rather than colour;
+and the flavour-vs-colour identification itself, which TrialitySelectionRule
+proves the Z/3 grading cannot see.
