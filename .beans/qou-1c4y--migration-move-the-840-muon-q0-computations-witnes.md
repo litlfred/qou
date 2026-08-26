@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T22:20:42Z
+updated_at: 2026-08-26T04:01:35Z
 ---
 
 
@@ -964,3 +964,63 @@ thing rather than text that does the thing" — the `_path_bridge` docstring
 earlier today, then the reason string, then the provider module. A q₀ checker
 that reads prose about q₀ will always over-flag, and the corpus is full of
 careful prose about q₀ precisely where the code is careful not to use it.
+
+
+## PROSE-VS-CODE, TWO MORE CLASSES FIXED 2026-08-26
+
+Working this bean's closing lesson -- "a q0 checker that reads prose about q0
+will always over-flag, and the corpus is full of careful prose about q0
+precisely where the code is careful not to use it." Three classes were already
+fixed (reason strings, module-vs-symbol imports, cone traversal). Two more, both
+in q0_producer_pin_classifier.py, both the same shape one level down: the prose
+is INSIDE the code, as message strings.
+
+CLASS 4 -- is_prose covered only DOCSTRINGS. A guard that refuses to straddle,
+
+    raise SystemExit(f"ANCHOR STRADDLE in q-pinning-50-digit.witness.json: ...")
+
+names a muon artifact in its own warning, and the classifier counted that as
+evidence the producer READS the muon pin. qbeta_habiro_residual_probe is
+declared PROTON, carries exactly that guard, and was indicted on it. The prose
+it matched exists precisely to prevent the thing it was taken to prove.
+Fixed by _message_string_ids(): str constants inside an f-string, a raise, or a
+print/warn/log call are prose -- EXCEPT when the string is an argument to an
+operative call (open, Path, read_text, mpf, Decimal, json.load), because those
+strings do the thing rather than describe it.
+
+CLASS 5 -- the env-like gate read RAW SOURCE. `if s.lower() in MUON_ENV and
+"ANCHOR" in src` tested the whole file text, comments and strings included, so
+a file that merely DISCUSSES anchors satisfied it. That is what produced
+su4_1111_markov_trace_probe's `env-like "muon"`. Fixed by _code_only_text(),
+which tokenizes and drops COMMENT and STRING tokens.
+
+MEASURED HONESTLY: the headline counts DO NOT MOVE. proton 71, muon 27, none
+41, BOTH 9, before and after; the BOTH list is identical. What changed is the
+EVIDENCE:
+
+  qbeta_habiro_residual_probe  muon: ['"ANCHOR STRADDLE in q-pinning..."',
+                                      '"q-pinning-50-digit.witness.json"']
+                            -> muon: ['"q-pinning-50-digit.witness.json"',
+                                      '(prose only) "...docstring..."']
+  su4_1111_markov_trace_probe  muon: ['hardcoded muon 50-digit',
+                                      'env-like "muon"']
+                            -> muon: ['hardcoded muon 50-digit']
+
+Both files stay BOTH, and correctly so -- each has independent real evidence.
+qbeta_habiro_residual_probe genuinely does
+`record_upstream(COMP / "q-pinning-50-digit.witness.json", ...)`, and its own
+comment explains why that is right: the pin witness still supplies the CODATA
+uncertainty budget, an m_p/m_e quantity belonging to the proton layer, while q0
+itself comes from Q_50_DIGIT_STR. So the fix removes FALSE EVIDENCE, not false
+verdicts. Claiming it reduced the over-flag count would be wrong.
+
+REGRESSION TEST, and it can actually fail. --selftest asserts both demotions.
+Verified by reverting each fix in turn: the reverted classifier FAILS with 2
+regressions, the fixed one passes. That matters here more than usual, because
+the counts do not move when this regresses -- the selftest is the only thing
+that would notice.
+
+STILL OPEN from the earlier pass: the 5 of 10 flagged producers not yet
+hand-checked (chirality_topology_binding_probe, eigenbasis_structural_lemmas_probe,
+habiro_witness_convention_adjudication, qbeta_habiro_f_from_shape_collapse,
+qbeta_rung1_div25_framing_squared_test).
