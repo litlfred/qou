@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:26:59.885994+00:00",
-  "commitSha": "f6501fba549591122523ebb76ce118e49a7003e1",
+  "computedAt": "2026-08-26T03:43:32.805972+00:00",
+  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
   "assertions": [
     {
       "name": "interface_ratio_matches_convention_D_colour_weighted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 455,
+  "durationMs": 296,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
   "scriptHash": "07504bad02c2",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "4b0bc3f1848b2b4077d80ff6a8e1bb42cf4da551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,10 +51,10 @@
     "dps": 50
   },
   "data": {
-    "tau_p_str": "1.321592984237344535484100338492756505170133273442",
-    "tau_n_str": "1.2575579046963118128438700052596363151245672304443",
-    "tau_4he_str": "0.34716181818783578362588642216215069304917052159673",
-    "abs_tau_4he_str": "0.34716181818783578362588642216215069304917052159673",
+    "tau_p_str": "1.1457596924573008696890815957741193059437280619435",
+    "tau_n_str": "0.98774368811580957163402016550129498205504875906278",
+    "tau_4he_str": "0.16097414544240738182587344098071685392360735413342",
+    "abs_tau_4he_str": "0.16097414544240738182587344098071685392360735413342",
     "interface_census": {
       "positive": 1,
       "negative": 1,
@@ -62,9 +62,9 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.4473949759999414,
-      "closed_form_4he": 9.051200004250859e-05,
-      "total": 0.4474854879999839
+      "h3_baseline": 0.2916692570000805,
+      "closed_form_4he": 8.279299993319e-05,
+      "total": 0.2917520500000137
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",

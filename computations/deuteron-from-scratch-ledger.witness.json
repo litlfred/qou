@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:42:17.877083+00:00",
-  "commitSha": "12c53dd516252d08acf45256348fdcc12295f4dc",
+  "computedAt": "2026-08-26T03:49:38.070630+00:00",
+  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
   "assertions": [
     {
       "name": "q0_pin_roundtrip",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 25,
   "computation": "deuteron-from-scratch-ledger",
   "scriptFile": "deuteron_from_scratch_ledger.py",
   "scriptHash": "adce60cf01ae",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -139,13 +139,13 @@
         "ratio_atom_over_free": "0.50822978937673896257799579765589360389830839091657"
       },
       "closed_form": {
-        "tau_p_H3": "1.321592984237344535484100338492756505170133273442",
-        "tau_n_H3": "1.2575579046963118128438700052596363151245672304443",
-        "tr_free": "1.661979704118860839265284337131339980577377422204",
-        "tr_atom_bring_color_weighted": "0.84466759497274358481558241566260485868541451214808",
-        "tr_atom_chi_lambda_braid": "1.0182750826938479377965514104068941718403982001625",
+        "tau_p_H3": "1.1457596924573008696890815957741193059437280619434",
+        "tau_n_H3": "0.98774368811580957163402016550129498205504875906267",
+        "tr_free": "1.1317169043222100827313075681159639985201502826415",
+        "tr_atom_bring_color_weighted": "0.57517224391777187082653534398618088915249435289269",
+        "tr_atom_chi_lambda_braid": "0.69338940871464891221705864612176220936633981827889",
         "ratio_bring_color_weighted": "0.50822978937673896257799579765589360389830839091656",
-        "ratio_chi_lambda_braid": "0.61268803714646525159582986394589924802630839154507"
+        "ratio_chi_lambda_braid": "0.61268803714646525159582986394589924802630839154506"
       },
       "route_ratio_gap_rel": 0.205533500698232,
       "note": "the two routes are DIFFERENT trace normalizations on different canonical braid-word families (fine-Bratteli transfer / Z_N word vs colour-weighted atom word + Wenzl χ_λ) — NOT expected equal. Each is exact on its own reference (the Phase-5q closed form is verified as an exact-ℚ identity, PROBE-1 2026-07-02; the transfer path is the production binding object). The atom/free ratio gap recorded here is the route-choice error source; the finer Jones-vs-Wenzl convention-D spread is 1.955e-4 (trace-convention registry, 2026-07-02 addendum)"
@@ -154,19 +154,19 @@
       "available": true,
       "witness": "deuteron-real-sdp.witness.json",
       "full_space": {
-        "duality_gap": 43938.58869605584,
-        "primal_obj": -43938.59430213405,
-        "dual_obj": -0.005606078205036361,
+        "duality_gap": 43926.63578850925,
+        "primal_obj": -43926.64139405233,
+        "dual_obj": -0.005605543074008286,
         "strong_duality_holds": false,
         "diagnostic": "Real SDP UNBOUNDED at q_0 — Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program."
       },
       "bounded_positive_norm_subspace": {
-        "duality_gap": 0.0,
-        "primal_obj": -0.005597060263077108,
-        "dual_obj": -0.005597060263077108
+        "duality_gap": 8.133288954092144e-43,
+        "primal_obj": -0.005596526576849293,
+        "dual_obj": -0.005596526576849293
       },
       "production_default_encoding": "5_lr_branching_canonical",
-      "tr_M_beta_D": 0.38828642407479047,
+      "tr_M_beta_D": 0.3883571887237822,
       "frobenius_gram_indefinite": true,
       "note": "ERROR SOURCE (structural, documented): the full-space real SDP at q₀ is UNBOUNDED (Frobenius Gram indefinite — negative-norm conjugate blocks, bar-involution signature); the bounded positive-norm program achieves duality gap 0. Per the witness the canonical LR-branching encoding (production default 5) does NOT yet reproduce B_D — that open item IS the Δ_λ gate, quantified at S5"
     },
