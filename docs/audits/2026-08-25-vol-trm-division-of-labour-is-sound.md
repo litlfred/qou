@@ -3113,3 +3113,100 @@ un-cabled ceiling — is outside `convex_comb_le_bound`'s hypotheses and is
 unaffected by any of this. That remains the one open magnitude route, and
 Addendum 29's finding still applies to it: the atom's own word is a connected
 sum, so a satellite is a change of construction, not a reweighting.
+
+---
+
+## Addendum 34 — the satellite reaches at ²H and nowhere else, and its degree is a fit
+
+The satellite was the last magnitude route standing. Addendum 28 measured it
+clearing: the 2-parallel cable of the deuteron reaches `max_b tr_M = 7.448220`
+(4.994×) and, at the atom's **own** convex weights, `1.657034` — 1.111× past
+`√B_AME(²H) = 1.491498`. `larger_index_set_escapes_the_bound` says why it is
+allowed to: an `r`-cable replaces each strand by `r`, so its branches live in a
+bigger algebra and are not a reweighting of the original 32.
+
+This addendum asks the question that killed §B: **does it keep reaching as A
+grows?** [`satellite_degree_is_a_free_parameter_probe.py`](../../computations/meson/satellite_degree_is_a_free_parameter_probe.py),
+7/7.
+
+### The trace moves the wrong way
+
+| isotope | A | strands | `tr_M` | `B_AME` | bar `= √B` | short by |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 6 | 0.5751722439 | 2.22452 | 1.491482 | **2.593×** |
+| ³H | 3 | 9 | 0.2293101021 | 8.481821 | 2.912357 | **12.70×** |
+| ³He | 3 | 9 | 0.4037670369 | 7.71804 | 2.778136 | **6.881×** |
+| ⁴He | 4 | 12 | 0.1609741454 | 28.2957 | 5.319370 | **33.04×** |
+
+**Control:** ²H reproduces §C's committed `0.57517224` to `2.3e−13`.
+
+Binding is extensive and the bar rises `1.49 → 5.32`. The trace **falls**,
+`0.575 → 0.161`. The shortfall therefore runs `2.59× → 33.04×` — a **12.74×
+spread**, so it is not a constant that one overall factor could absorb.
+
+> **🛑 An anti-numerology note, because this one is a trap.** The two spreads
+> are `3.57307×` (trace) and `3.5665×` (bar) — **0.18 % apart**. That is *not*
+> agreement. `max/min` discards direction, and the two quantities move in
+> **opposite** directions; reading the matching `3.57`s as a shape match would
+> inverch the finding exactly. My first version of the assertion tested
+> `spread_bar > 2·spread_trace` and failed for precisely this reason. The
+> corrected test is on **direction**, not magnitude.
+
+### The degree that would rescue it is per-isotope, non-integral, and not even a function of A
+
+Taking Addendum 28's measured per-level gain at ²H (`2.881×` on the convex
+trace) and applying it as a ratio — **an extrapolation, not a measurement**,
+since a cabled `6A`-strand word is out of reach (the two-row block `(9,9)` at 18
+strands is alone 4862-dimensional):
+
+| isotope | short by | cable levels needed |
+|---|---:|---:|
+| ²H | 2.593× | 0.901 |
+| ³He | 6.881× | 1.823 |
+| ³H | 12.70× | 2.402 |
+| ⁴He | 33.04× | 3.306 |
+
+Three things, in decreasing order of how much they depend on that
+extrapolation:
+
+1. **Independent of it entirely:** ³H and ³He are **both A = 3 on 9 strands**
+   and need `12.70×` and `6.88×` — a `1.85×` spread at **fixed A**. So no
+   `r(A)` can work; a rescue would need `r(Z, N)`, one integer per nuclide.
+2. **Independent of it entirely:** the shortfall spread is `12.74×` across four
+   isotopes, so no single `r` serves the chain.
+3. **Depends on it:** the required levels are `0.90, 1.82, 2.40, 3.31` — three
+   of four more than 0.15 from an integer, while `r` **must** be an integer
+   (it multiplies strand count; it does not interpolate).
+
+### Nothing in the corpus fixes r
+
+Corpus-grepped across all three library tiers.
+[`2026-06-01-knot-operator-census-group-actions.md`](2026-06-01-knot-operator-census-group-actions.md)
+§(b) records cabling as in-corpus — *"`cabl` appears in 246 files"* — but **as
+pattern-on-companion**, with the arithmetic note that *"an `r`-cable multiplies
+strand count, never adding a single strand."* No block, witness, or Lean
+declaration derives a value for `r`. The library now holds the cabling
+literature (van der Veen's cabling formula for the coloured Jones, Liu's cable
+expansion, the two Kalfagianni–Tran degree-under-cabling papers, Anokhina et al
+on satellites) — all of which say how invariants *transform* under cabling, none
+of which selects a degree for a physical system.
+
+### What this rules out
+
+**Scope (a).** The **fixed-degree** satellite, as a source of the binding
+magnitude across the isotope chain. It reaches at ²H and misses everywhere
+else, and closing the gap means choosing an integer per nuclide against AME —
+**the same fit §D refused for the cut width `w`**, and the fit the
+three-calibration discipline exists to catch.
+
+**Not** ruled out, and the distinction matters: the satellite *construction*.
+Nothing here shows a satellite cannot carry binding — only that a **free**
+degree is a fit and a **fixed** degree does not fit. What would change the
+verdict is a derivation of `r` (or of a pattern) from the framework, in which
+case its A-dependence would be a prediction rather than a choice. That is the
+same bar `I_colour` failed on in Addendum 30 and `α_shift` cleared in Addendum
+31 — derived first, measured second.
+
+Nor is the *uncabled* trace's fall with A itself an argument against the
+framework: `tr_M` is not the binding, and §C's relation between them is
+quadratic. The measurement here is of the **gap**, and the gap is what widens.
