@@ -52,51 +52,109 @@ weighted mean, hence **bounded** by π — and that assertion (`carrier_below_ro
 `prop:wedderburn-trace-identity` licenses a 30 % band, and the measured band is
 84 % (`[0.2568, 0.4720]`). Excluding T it is still 1.497.
 
-## 3. Root cause: the two sides of the product are on different conventions
+## 3. Root cause: the weights were re-derived under convention D; the expectations are convention-C-frame
 
-`S(A) = Σ_λ p_λ · |Δθ_λ|` draws its two factors from separate witness families:
+`S(A) = Σ_λ p_λ·|Δθ_λ|` has exactly two factors. Both were measured:
 
-| side | supplies | source family | `convention` | computed |
-|---|---|---|---|---|
-| `p_λ = y_λ·dim_λ` | the weights | `chi-*-at-q0-50dps` | **`colour-weighted-averaged-crossing`** | **2026-08-10** |
-| `\|Δθ_λ\|` | the phases | `binding-reeb-phase-decomposition` → `atom-chi-rust-*` | **absent** | 2026-07-06 → 08-19/23 |
+| factor | source | verdict |
+|---|---|---|
+| `\|Δθ_λ\|` (phases) | `binding-reeb-phase-decomposition` → `atom-chi-rust-*` | **unchanged** — atom χ agrees with the colour-weighted family to **3.9e-49** across all 77 ⁴He blocks |
+| `p_λ = y_λ·dim_λ` (weights) | `chi-*-at-q0-50dps`, 2026-08-10 | **convention D** — matches a fresh `y_lambda_su_n(12, q₀, 2)` to **5.5e-50** across all 77 blocks |
 
-The weights were migrated to colour-weighted crossings on **2026-08-10** — one day
-after the owner ruling making `bring_color_weighted` canonical (AGENTS.md R3). The
-phase side was not, and **declares no convention at all**, so the pairing cannot
-be verified from the record. That is the `qou-cds4` surface ("six live non-comparison
-files still off-canon") reaching a consumer.
+`y_lambda_su_n` normalises the Schur principal specialisation so `Σ_λ y_λ f^λ = 1`.
+Its own file records the event: *"Added 2026-08-09. `y_lambda_at` … was made to
+RAISE when convention C was excised, because returning C silently would have been
+worse."* The weights were re-derived that day; the atom χ was not affected.
 
-The expectations (audit table, 2026-07-13) predate the migration. So does the 9/9.
+The expectations come from an audit dated **2026-07-13** — before the excision.
+
+**So the audit table is convention-C-frame and the probe now computes in convention
+D.** This is the same class AGENTS.md already records for the Q_β `c_k` ladder
+(bean `qou-cds1`): *"correct for C and are kept as recorded — they need scoping,
+not correction."*
+
+The normalisation assertion `markov_normalization_all_atoms` passes at 3.66e-50 in
+either convention, because `Σ y_λ f^λ = 1` is the Markov-trace normalisation itself
+— which is why the regression is invisible to the one check that would seem most
+likely to catch it.
 
 **Why the error grows with A** — 1.0618 (A=2), 1.1673 (A=4), 1.3509 (A=6): block
 count runs 11 → 77 → 385, and a reweighting of `p_λ` compounds across more blocks.
 
-## 4. A second, independent defect — real but NOT the cause
+## 4. Two hypotheses measured and REFUTED as the cause
 
-`binding-reeb-phase-decomposition.witness.json` (2026-07-06) is stale against its
-own inputs, which were regenerated 2026-08-19 and 2026-08-23. Re-running it moves
-**574 fields**.
+Both were real defects. Neither explains the failures. Recorded because stopping at
+the first plausible cause is how a wrong diagnosis gets written — and both of these
+were mine.
 
-**The movement is ~1e-7 to 1e-8 relative — four orders of magnitude too small to
-explain a 17–35 % discrepancy.** Recorded because it is a genuine staleness that
-should be drained, and because the temptation to stop at the first plausible cause
-is exactly what produces a wrong diagnosis. Import-cone staleness was the
-hypothesis; measuring it refuted it as the explanation while confirming it as a
-defect.
+**(a) Import-cone staleness — refuted at 1e-7.**
+`binding-reeb-phase-decomposition.witness.json` (2026-07-06) is stale against inputs
+regenerated 2026-08-19 and 08-23. Re-running moves **574 fields** — but at ~1e-7 to
+1e-8 relative, four orders of magnitude too small for a 17–35 % discrepancy. Not
+committed: this container degrades the environment block (drops `scipy`, `numpy`
+2.5.0 → 2.4.6, python 3.13.12 → 3.11.15), and trading provenance for a 1e-7 fix is
+the wrong way round.
 
-The re-run was **not committed**: this container degrades the environment block
-(drops `scipy`, `numpy` 2.5.0 → 2.4.6, python 3.13.12 → 3.11.15), and committing a
-weaker provenance record to fix a 1e-7 drift is the wrong trade.
+**(b) A convention straddle between atom and free χ — refuted at 1e-49, and
+RETRACTED.**
+The first version of this document claimed the phase side was off-canon because
+`atom-chi-rust-*` declares no `convention` while the weight side declares
+`colour-weighted-averaged-crossing`. **That was wrong.** Measured: the two atom-χ
+sources agree to **3.9e-49** on all 77 ⁴He blocks. `atom-chi-rust-*` *is*
+colour-weighted; it merely fails to say so.
 
-## 5. What would settle it
+The related worry — that the free χ is stale at `averaged-crossings` — is also
+wrong, and the producer says why. The label is **derived, not asserted**:
 
-Re-run the probe with **pre-migration** `y_λ` (or regenerate the phase side under
-the colour-weighted convention) and check whether 9/9 returns. If it does, the
-expectations are simply pre-migration and must be re-derived under the canonical
-convention — **re-derived, not re-baselined**: the audit table's numbers would then
-be *wrong under the canonical convention*, and updating the literals without
-recomputing the audit would be laundering.
+```python
+convention = ("colour-weighted-averaged-crossing" if n_colour_weighted
+              else "averaged-crossings")
+```
+
+and the weighting acts only on **p–n crossings**. Free χ is a Littlewood–Richardson
+product over disjoint nucleons, so no p–n crossing exists to weight:
+`n_colour_weighted = 0`, and `averaged-crossings` is the correct and *only* label.
+**The free side needs no migration.**
+
+What survives from (b) is a **provenance** defect, not a numerical one:
+`atom-chi-rust-*` should declare its convention, per AGENTS.md *"Say which pin you
+used."* Unlabelled, the pairing cannot be verified from the record — which is
+exactly why it cost two rounds to rule out.
+
+## 5. What resolving it means
+
+The convention question is now measured, so the remaining step is a **content
+decision, not a compute one**, and it belongs to the author.
+
+Under convention D the probe's current output *is* the answer. The audit table's
+numbers are not wrong — they are **correct for convention C**, and AGENTS.md's
+standing treatment of exactly this situation is that such numbers *"need scoping,
+not correction"*. Resolving the five failures therefore means:
+
+1. **Re-derive the audit table under convention D** and update the three expected
+   literals *from that re-derivation* — never by copying the probe's output into the
+   assertion. The two are numerically the same edit and epistemically opposite: one
+   is a derivation, the other is laundering.
+2. **Retain the C-frame numbers, scoped.** Mark the 2026-07-13 table
+   convention-C-frame and keep it, as the `c_k` ladder is kept (`qou-cds1`). The
+   9/9 it records was true in its frame.
+3. **Re-scope `carrier_flat_band_all_A` independently.** This is not a convention
+   artefact and does not go away under D — see §6.
+
+Two smaller items, both independent of the above:
+
+4. **Label `atom-chi-rust-*`'s convention.** A provenance fix; it cost two rounds
+   of this diagnosis to rule out a straddle that was never there.
+5. **Drain the 1e-7 θ staleness** in a container that does not degrade the
+   environment block.
+
+What is *not* available: a direct C-vs-D re-run. Convention C was excised on
+2026-08-09 and `y_lambda_at` was deliberately made to **raise** rather than return
+C silently, so the C-era weights cannot be recomputed without resurrecting removed
+code. The diagnosis above therefore rests on measurement plus elimination — χ and
+`|Δθ|` shown unchanged to 1e-49 and 1e-7, `y_λ` shown to be D to 5e-50, and the
+expectations dated before the excision — not on a side-by-side reproduction. That
+is the honest limit of what this branch establishes.
 
 ## 6. What must NOT be done
 
