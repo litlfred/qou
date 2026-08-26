@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T14:05:48Z
-updated_at: 2026-08-26T14:35:07Z
+updated_at: 2026-08-26T14:49:24Z
 ---
 
 ## Built 2026-08-26 — PR #5827
@@ -127,3 +127,45 @@ still need proving for H2 subset H3 afterwards.
 
 Verification: lean-direct exit 0; #print axioms clean on all seven new decls;
 guard rc=0 on 71 entries (64 -> 71); guard --selftest PASS.
+
+
+## FIRST SPANNING INSTANCE — H2 subset H3, concretely (2026-08-26)
+
+`heckeCosetSpanning_H2_H3` — the class now has an instance. Sorry-free,
+#print axioms clean.
+
+Measured first, then built. The four sigma-1 coset products are EXACTLY the four
+basis vectors iota23 does not reach, with no correction terms:
+
+  s1            -> index 2
+  s1 * s0       -> index 3
+  s0 * s1       -> index 4        <-- note the SWAP vs my first guess
+  s0 * s1 * s0  -> index 5
+
+and iota23 a b = ![a,b,0,0,0,0] covers 0,1. So H3 = i(H2) + i(H2).sigma1.i(H2)
+holds on the nose, and the instance is discharged by an EXPLICIT decomposition
+reading off w's coordinates — no abstract argument.
+
+My first index guess (s0*s1 -> 3, s1*s0 -> 4) was WRONG; Lean returned False at
+those coordinates and the swap was correct. Worth recording: I would have written
+a plausible-looking wrong decomposition if I had not asked the compiler.
+
+Supporting: `heckePresentationOfRank_H2A` (rank 2 — only the sigma-0 quadratic;
+braid and far-commute are vacuous by omega), `t0_mul_t0`.
+
+Also this pass:
+- `HeckeCosetSpanning` re-pointed at the bounded class and its INERT low-side
+  binders dropped (sigma_low and the low presentation were never used in the
+  statement). The rank class moved into HeckeTowerBasicConstruction so the
+  spanning class can bind it without an import cycle.
+- `gwg_trace_of_spanning` now carries `omit [HeckeBraidedPresentation R q Hn sigma_n]`
+  — the linter confirmed the unbounded presentation had become inert there.
+
+**The guard earned its keep this pass:** after the move it returned rc=2,
+'declarations not found: HeckeRank.ofRank_of_unbounded' — the decl had moved to
+HeckeTower and the registry was stale. Exactly the failure mode the registry
+exists to catch.
+
+Verification: lean-direct exit 0 on all three modules; #print axioms clean on
+every new decl (t0_mul_t0 needs only propext); guard rc=0 on 74 entries (71 -> 74);
+guard --selftest PASS; lean_freshness --selftest PASS.

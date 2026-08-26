@@ -345,13 +345,16 @@ QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.far_commute
 # family (`constant_generator_presentation`), where every relation is `rfl`
 # because everything commutes -- pin it, or a later "simplification" can hollow
 # the instance out while leaving the file compiling.
-QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.ofRank_of_unbounded | clean
+QOU.Machinery.HeckeTowerBasicConstruction | QOU.Machinery.HeckeTower.ofRank_of_unbounded | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s0 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s1_mul_s1 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.braid_s0_s1 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H3A | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_ne_s1 | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.s0_mul_s1_ne_s1_mul_s0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.t0_mul_t0 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckePresentationOfRank_H2A | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeCosetSpanning_H2_H3 | clean
 """
 
 

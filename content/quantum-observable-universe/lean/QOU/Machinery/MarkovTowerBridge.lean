@@ -174,7 +174,9 @@ open QOU.Machinery.MarkovInductive
 
 variable {Hlow : Type*} [Ring Hlow] [Algebra R Hlow] {σlow : ℕ → Hlow}
 variable [HeckeBraidedPresentation R q Hlow σlow]
+variable {rank : ℕ} [HeckeBraidedPresentationOfRank q rank Hn σn]
 
+omit [HeckeBraidedPresentation R q Hn σn] in
 /-- **The `hgwg` reduction for an arbitrary `w`.** Given the spanning
 decomposition and the two grounding shape lemmas — one for the lower-coset
 summand, one for the middle — the two-generator Markov reduction holds for
@@ -193,7 +195,7 @@ The grounding hypotheses are the genuine mathematical input; the decomposition
 is what lets them cover every `w` rather than only pre-decomposed ones. -/
 theorem gwg_trace_of_spanning
     (ιlow : Hlow →ₐ[R] Hn) (n : ℕ)
-    (inst : HeckeCosetSpanning R q Hlow Hn σlow σn ιlow n)
+    (inst : HeckeCosetSpanning R q rank Hlow Hn σn ιlow n)
     (tr : Hn → R) (g : Hn) (z hbar : R)
     (htr_add : ∀ p r : Hn, tr (p + r) = tr p + tr r) (htr_zero : tr 0 = 0)
     (x y : Hn)
@@ -252,7 +254,7 @@ theorem gwg_trace_towerE_of_spanning
     (instCE : HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow)
     (instMk : @HeckeMarkovExpectation R _ q Hlow Hn _ _ _ _ σlow σn _ _
       ιlow εlow instCE n z)
-    (instSp : HeckeCosetSpanning R q Hlow Hn σlow σn ιlow n)
+    (instSp : HeckeCosetSpanning R q rank Hlow Hn σn ιlow n)
     (tr : Hn → R) (g : Hn)
     (htr_add : ∀ p r : Hn, tr (p + r) = tr p + tr r) (htr_zero : tr 0 = 0)
     (x y : Hn)
