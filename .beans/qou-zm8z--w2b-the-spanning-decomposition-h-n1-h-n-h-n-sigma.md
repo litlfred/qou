@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T14:05:48Z
-updated_at: 2026-08-26T14:11:55Z
+updated_at: 2026-08-26T14:24:25Z
 ---
 
 ## Built 2026-08-26 — PR #5827
@@ -46,3 +46,38 @@ that would relocate an assumption, not discharge one.
 
 Verification: lean-direct exit 0 on both modules; #print axioms clean
 (spanning_shape needs only propext + Quot.sound); guard rc=0 on 60 entries.
+
+
+## (2) an INSTANCE — attempted, blocked one level lower (2026-08-26)
+
+**Blocked, and not by the spanning mathematics.** `HeckeCosetSpanning` binds
+`HeckeBraidedPresentation` instances in its type, and that class has **ZERO
+instances corpus-wide** (only grep hit is a comment in HeckeH4StabilizationRung
+saying one 'stays OPEN'). So no concrete algebra can even STATE a spanning
+instance today.
+
+Two facts, both proved (`HeckeTowerBasicConstruction.lean`), explain why:
+
+1. `constant_generator_presentation` — the class IS satisfiable, from a SINGLE
+   element satisfying the quadratic, with sigma constant. Braid and far-commute
+   are then `rfl`. So an instance does not force two distinct generators, does
+   not force the braid relation to carry content, does not force anything to
+   fail to commute. **Much weaker than 'is a Hecke algebra'.**
+
+2. `far_commute_zero` — far_commute forces sigma 0 to commute with sigma j for
+   EVERY j >= 2. The fields quantify over all i : N, so H_n must supply
+   generators beyond its rank. In H3 with sigma 0 = s1, sigma 1 = s2, that rules
+   out padding with the last real generator (s1 s2 != s2 s1), and no eventually
+   periodic padding works either. **The class describes H_inf, not H_n.**
+
+Concrete targets exist and are NOT the problem: H3A is a genuine Fin 6 -> R ring
+with proved normal-form multiplication (HeckeH3AlgebraInstance), H2A likewise.
+
+**I did NOT build a degenerate instance off the constant family.** It would type-
+check and be the corpus's 'first HeckeBraidedPresentation instance', and it would
+say nothing — laundering, per AGENTS.md 'Axiomatization is NOT a Proof'.
+
+**Route for whoever takes this:** re-state HeckeBraidedPresentation with a rank
+bound (sigma : Fin n -> H, or relations guarded by i + 1 < n), then a genuine H2/H3
+instance is reachable from the existing concrete algebras. That touches a class
+three others bind, so it is its own change.
