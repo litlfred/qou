@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-26T21:08:07Z
+updated_at: 2026-08-26T22:58:54Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -62,3 +62,37 @@ What object in the framework carries a non-cyclic functional's value on `[H,H]`,
 and is the preferred presentation (the "single-wrap convention", audit step 4)
 derivable rather than chosen? Step 8's postulate is now narrowed from the whole
 of `net` to this remainder; answering it would close the postulate or replace it.
+
+
+## 2026-08-26 — LOCATED: the traceless part of the 2-dimensional block, and D does NOT remove it
+
+`qbeta_where_the_trace_invisible_part_lives_probe.py` (9/9). This answers where,
+and settles the question the TL result made urgent.
+
+**The structure.** For a split semisimple algebra `⊕ M_{n_i}` the commutator
+subspace is `⊕ sl_{n_i}`, and `sl_1 = 0`. So in `H₃(q) = R ⊕ M₂ ⊕ R` the **entire**
+commutator subspace sits inside the 2-dimensional block. Measured, not inferred:
+`e_(3)` and `e_(1³)` both annihilate `[H,H]`, `e_(2,1)` acts on it as the
+identity, and `dim [H,H] = 3 = dim sl₂`.
+
+**Four facts that arrived separately are one fact.**
+
+- `dC` lies entirely in the `(2,1)` block.
+- **Δ's `(2,1)`-component *is* `dC`** — i.e. that component is traceless, which
+  is the *same statement* as `χ^(2,1)(Δ) = 0`. Those were found independently.
+- The floor `−h·y_(2,1)(1)` carries **that block's own weight** — not a
+  coincidence of labels.
+- So Δ splits as: two 1-dimensional blocks carrying everything a trace can see,
+  plus a **traceless element of the 2-dimensional block** carrying everything it
+  cannot.
+
+**The urgent question, answered.** Convention D quotients the `(1³)` block. `dC`
+is in `(2,1)`, so `e_(1³)·dC = 0` and `dC ≠ 0`: **the trace-invisible remainder
+survives the Temperley–Lieb quotient intact.** It is not what D removes, and this
+bean stays live under the canonical convention. The 7.67 % cannot be disposed of
+by appealing to the quotient.
+
+**Not claimed:** that anything in the framework's vocabulary evaluates a
+traceless element of a 2-dimensional block. That is exactly what remains open —
+this says where to look, not what to find. The sharpened question: **what
+observable, if any, is sensitive to `sl₂ ⊂ M₂` in the decay channel?**
