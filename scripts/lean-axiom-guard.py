@@ -361,6 +361,9 @@ QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeCosetS
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_retract | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_bimodule | clean
 QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.epsLin_markov | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeConditionalExpectation_H2_H3 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.heckeMarkovExpectation_H2_H3 | clean
+QOU.Machinery.HeckeBraidedPresentationRank | QOU.Machinery.HeckeRank.tower_classes_inhabited_H2_H3 | clean
 """
 
 

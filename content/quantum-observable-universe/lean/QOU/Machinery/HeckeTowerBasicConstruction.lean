@@ -150,6 +150,31 @@ theorem jonesIdempotent_h2 (q : R) (hd : q + q⁻¹ ≠ 0) :
   rw [mul_comm, ← sub_neg_eq_add, sub_neg_eq_add, add_comm]
   exact mul_inv_cancel₀ (by rwa [add_comm] at hd)
 
+/-- **Rank-bounded braided presentation.** The three Hecke relations, each
+guarded so it only speaks about generators that exist at rank `n`:
+`σ₀, …, σ_{n-2}` for `H_n`.
+
+Compare `HeckeBraidedCategory.HeckeBraidedPresentation`, whose unguarded `∀ i`
+forces an infinite generator family — the reason it has no contentful instance.
+The guards here are exactly what makes a finite algebra able to satisfy it. -/
+class HeckeBraidedPresentationOfRank (q : R) (n : ℕ) (H : Type*)
+    [Ring H] [Algebra R H] (σ : ℕ → H) : Prop where
+  /-- Hecke quadratic, for generators present at rank `n`. -/
+  hecke_quadratic : ∀ i, i + 1 < n → σ i * σ i = (q - q⁻¹) • σ i + 1
+  /-- Braid relation, for adjacent pairs both present at rank `n`. -/
+  braid_adjacent : ∀ i, i + 2 < n → σ i * σ (i + 1) * σ i = σ (i + 1) * σ i * σ (i + 1)
+  /-- Far commutation, for non-adjacent pairs both present at rank `n`. -/
+  far_commute : ∀ i j, i + 1 < j → j + 1 < n → σ i * σ j = σ j * σ i
+
+/-- The unbounded class implies the bounded one at every rank — the guards only
+discard obligations. So existing consumers lose nothing by moving over. -/
+theorem ofRank_of_unbounded {q : R} {H : Type*} [Ring H] [Algebra R H]
+    {σ : ℕ → H} [inst : QOU.Machinery.HeckeBraidedCategory.HeckeBraidedPresentation R q H σ]
+    (n : ℕ) : HeckeBraidedPresentationOfRank q n H σ where
+  hecke_quadratic i _ := inst.hecke_quadratic i
+  braid_adjacent i _ := inst.braid_adjacent i
+  far_commute i j hij _ := inst.far_commute i j hij
+
 /-! ## OPEN layer — the tower data as §3b dependent conjecture classes
 
 None of the classes below carries an instance. Each binds
@@ -166,10 +191,9 @@ construction; for Hecke algebras it is classically built from the
 Kazhdan–Lusztig/word filtration (`ε` reads off the coefficient layer over
 the parabolic subalgebra), which is exactly what Mathlib lacks at
 general rank. OPEN — no instance. -/
-class HeckeConditionalExpectation (R : Type*) [Field R] (q : R)
+class HeckeConditionalExpectation (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn) : Prop where
   /-- `ε` retracts the tower inclusion: `ε (ι x) = x`. -/
   retract : ∀ x : Hn, ε (ι x) = x
@@ -184,12 +208,11 @@ projection `e = jonesIdempotent q (σn1 n)` absorbs through it:
 relation of the Jones basic construction `⟨Hn1, e⟩`; combined with the
 PROVED local layer (`jonesIdempotent_mul_self` at `σn1 n`) it generates
 the Temperley–Lieb quotient tower. OPEN — no instance. -/
-class JonesBasicConstruction (R : Type*) [Field R] (q : R)
+class JonesBasicConstruction (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn)
-    [HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε] (n : ℕ) : Prop where
+    [HeckeConditionalExpectation R q rank Hn Hn1 σn1 ι ε] (n : ℕ) : Prop where
   /-- Absorption: `e · y · e = ι (ε y) · e` with
   `e = jonesIdempotent q (σn1 n)`. -/
   absorb : ∀ y : Hn1,
@@ -216,31 +239,6 @@ class WenzlTowerStep (R : Type*) [Field R] (q : R)
     IsSemisimpleRing Hn →
     (∀ y : Hn1, y ≠ 0 → ∃ z : Hn1, trn1 (y * z) ≠ 0) →
     IsSemisimpleRing Hn1
-
-/-- **Rank-bounded braided presentation.** The three Hecke relations, each
-guarded so it only speaks about generators that exist at rank `n`:
-`σ₀, …, σ_{n-2}` for `H_n`.
-
-Compare `HeckeBraidedCategory.HeckeBraidedPresentation`, whose unguarded `∀ i`
-forces an infinite generator family — the reason it has no contentful instance.
-The guards here are exactly what makes a finite algebra able to satisfy it. -/
-class HeckeBraidedPresentationOfRank (q : R) (n : ℕ) (H : Type*)
-    [Ring H] [Algebra R H] (σ : ℕ → H) : Prop where
-  /-- Hecke quadratic, for generators present at rank `n`. -/
-  hecke_quadratic : ∀ i, i + 1 < n → σ i * σ i = (q - q⁻¹) • σ i + 1
-  /-- Braid relation, for adjacent pairs both present at rank `n`. -/
-  braid_adjacent : ∀ i, i + 2 < n → σ i * σ (i + 1) * σ i = σ (i + 1) * σ i * σ (i + 1)
-  /-- Far commutation, for non-adjacent pairs both present at rank `n`. -/
-  far_commute : ∀ i j, i + 1 < j → j + 1 < n → σ i * σ j = σ j * σ i
-
-/-- The unbounded class implies the bounded one at every rank — the guards only
-discard obligations. So existing consumers lose nothing by moving over. -/
-theorem ofRank_of_unbounded {q : R} {H : Type*} [Ring H] [Algebra R H]
-    {σ : ℕ → H} [inst : QOU.Machinery.HeckeBraidedCategory.HeckeBraidedPresentation R q H σ]
-    (n : ℕ) : HeckeBraidedPresentationOfRank q n H σ where
-  hecke_quadratic i _ := inst.hecke_quadratic i
-  braid_adjacent i _ := inst.braid_adjacent i
-  far_commute i j hij _ := inst.far_commute i j hij
 
 /-- **§3b DEPENDENT conjecture — the coset spanning decomposition (bean
 `qou-zm8z`).** GIVEN the two Hecke braided presentations and the tower
@@ -292,12 +290,11 @@ dependency edge, instead of an anonymous hypothesis threaded through call sites
 *compute* `ε` on an arbitrary element (see
 `MarkovTowerBridge.towerE_eq_of_spanning`). That computation is the new content;
 the assumption itself is relocated, not discharged. OPEN — no instance. -/
-class HeckeMarkovExpectation (R : Type*) [Field R] (q : R)
+class HeckeMarkovExpectation (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
-    (σlow : ℕ → Hlow) (σn : ℕ → Hn)
-    [HeckeBraidedPresentation R q Hlow σlow] [HeckeBraidedPresentation R q Hn σn]
+    (σn : ℕ → Hn) [HeckeBraidedPresentationOfRank q rank Hn σn]
     (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow)
-    [HeckeConditionalExpectation R q Hlow Hn σlow σn ιlow εlow]
+    [HeckeConditionalExpectation R q rank Hlow Hn σn ιlow εlow]
     (n : ℕ) (z : R) : Prop where
   /-- `ε` collapses the top-generator coset with the Ocneanu scalar `z`. -/
   markov : ∀ b c : Hlow, εlow (ιlow b * σn n * ιlow c) = z • (b * c)

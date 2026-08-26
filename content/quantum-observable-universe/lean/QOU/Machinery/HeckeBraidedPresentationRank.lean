@@ -232,19 +232,41 @@ theorem epsLin_markov (h z : R) (b c : H2A R h) :
     simp [epsLin, epsFun, H2A.iotaAlg, H2A.iotaFun, iota23, s1, mulNF, mulσ₀,
       mulσ₁, H2A.mul_a, H2A.mul_b, H2A.smul_a, H2A.smul_b] <;> ring
 
-/-! ### Why these are theorems and not instances
+/-! ### The instances
 
-All three fields of `HeckeConditionalExpectation` and `HeckeMarkovExpectation`
-are discharged above for `H₂ ⊂ H₃`. **The instances still cannot be declared**,
-and the obstruction is not mathematical: both classes bind the **unbounded**
-`HeckeBraidedPresentation`, which by `constant_generator_presentation` and
-`far_commute_zero` has no contentful instance for a finite algebra.
+With `HeckeConditionalExpectation` and `HeckeMarkovExpectation` re-pointed at
+`HeckeBraidedPresentationOfRank`, the three theorems above are exactly their
+fields, so both classes are now inhabited at this rung. -/
 
-Re-pointing them at `HeckeBraidedPresentationOfRank` — as `HeckeCosetSpanning`
-already is — would make the instances declarable, and would then make
-`cyclic_two_g_of_tower` unconditionally instantiable at this rung. That is a
-signature change to a class that predates this work and that
-`JonesBasicConstruction` also binds, so it is left for the author to decide
-rather than taken here. The mathematics is not what is missing. -/
+/-- **`HeckeConditionalExpectation`, instantiated** for `H₂ ⊂ H₃`. -/
+instance heckeConditionalExpectation_H2_H3 (q z : R) :
+    HeckeConditionalExpectation R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+      (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) (epsLin (q - q⁻¹) z) where
+  retract := epsLin_retract (q - q⁻¹) z
+  bimodule x zz y := epsLin_bimodule (q - q⁻¹) z x zz y
+
+/-- **`HeckeMarkovExpectation`, instantiated** for `H₂ ⊂ H₃` at the coset
+generator `σ₁`, with the Ocneanu scalar `z`. -/
+instance heckeMarkovExpectation_H2_H3 (q z : R) :
+    HeckeMarkovExpectation R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+      (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) (epsLin (q - q⁻¹) z) 1 z where
+  markov b c := by simpa [gen] using epsLin_markov (q - q⁻¹) z b c
+
+/-- **All four tower classes are inhabited at `H₂ ⊂ H₃`, and found by instance
+search.** Recorded as one statement so the milestone is checkable rather than
+asserted across four separate declarations — and so that a later change which
+quietly breaks resolution for any one of them fails here.
+
+What this does NOT say: nothing about general `n`. Every component is fixed at
+rank 3, and `WenzlTowerStep` is not among them. -/
+theorem tower_classes_inhabited_H2_H3 (q z : R) :
+    HeckeBraidedPresentationOfRank q 3 (H3A R (q - q⁻¹)) (gen (q - q⁻¹))
+      ∧ HeckeCosetSpanning R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+          (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) 1
+      ∧ HeckeConditionalExpectation R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+          (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) (epsLin (q - q⁻¹) z)
+      ∧ HeckeMarkovExpectation R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+          (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) (epsLin (q - q⁻¹) z) 1 z :=
+  ⟨inferInstance, inferInstance, inferInstance, inferInstance⟩
 
 end QOU.Machinery.HeckeRank
