@@ -2194,3 +2194,99 @@ identity $\sum c^\lambda_{\mu\nu} f^\mu f^\nu = f^\lambda$ holds at every $n$.
 silently returned wrong coefficients for partitions with more than 10 rows — 2
 failures out of 77 at $n = 12$ — which the two-row blocks this probe actually
 uses would never have revealed.
+
+## Addendum 23 — the two fronts Addendum 22 left: one closes, one does not (2026-08-26)
+
+Bean `qou-6tcn`. Probe:
+[`computations/meson/two_remaining_fronts_probe.py`](../../computations/meson/two_remaining_fronts_probe.py)
+(9 assertions, 5 controls). Addendum 22 named exactly two things its theorem did
+not touch. Both worked, at the author's request, and they land differently.
+
+### Front 1 — a cut whose width grows with A. **Open, and genuinely different.**
+
+The Markov property that made the fixed-width entropy constant hands over the
+growing case for free: the marginal on the first $k$ strands *is* the $k$-strand
+Markov measure, so $S(k) = -\sum_{\mu} f^\mu y^{(k)}_\mu \ln y^{(k)}_\mu$ — no
+Littlewood–Richardson needed. Measured, this is a **volume law**:
+
+| $k$ | 24 | 96 | 384 | 768 |
+|---|---:|---:|---:|---:|
+| $S(k)/k$ | 0.60928 | 0.66315 | 0.68108 | 0.68439 |
+
+approaching $\ln[2]_q = 0.6985808$ from below, i.e. $S(k) = k\ln[2]_q - c +
+o(1)$: an entropy density of exactly one $\ln[2]_q$ per strand — the log of the
+fundamental's quantum dimension, which is what a strand carries. **So unlike the
+fixed-width case this quantity is extensive, and Addendum 22's theorem does not
+reach it.** The escape is real.
+
+**It does not match, and why it cannot be made to is the point.** For the
+balanced cut $k = \lfloor 3A/2 \rfloor$:
+
+| iso | A | $E_0 S(k)$ | $B_{\rm AME}$ | ratio | $E_0S/A$ | $B/A$ |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 4.3363 | 2.2246 | 1.9493× | 2.1682 | 1.1123 |
+| ³H | 3 | 6.8866 | 8.4818 | 0.8119× | 2.2955 | 2.8273 |
+| ⁴He | 4 | 11.9036 | 28.2957 | 0.4207× | 2.9759 | 7.0739 |
+| ⁶Li | 6 | 19.7479 | 31.9940 | 0.6172× | 3.2913 | 5.3323 |
+| ¹²C | 12 | 44.4404 | 92.1617 | 0.4822× | 3.7034 | 7.6801 |
+| ¹⁶O | 16 | 61.2108 | 127.6193 | 0.4796× | 3.8257 | 7.9762 |
+
+The ratio is not constant — $4.63\times$ across these, against $17.64\times$ for
+the fixed cut — and settles near $0.48$, an undershoot of about $2.1\times$.
+Asymptotically a cut growing at $w$ strands per nucleon gives $E_0 w \ln[2]_q$
+per nucleon, so the balanced $w = 1.5$ yields **4.386 MeV/nucleon** against an
+empirical approach to $\sim 8$.
+
+**$w$ is a free parameter, and that is the whole problem.** Matching fixes
+$w \approx 2.9$, which nothing derives — and at $w = 3$, the whole nucleon, the
+cut is the entire system and the entropy is identically zero. So the front is
+open in that the *object* is extensive, and closed in that nothing in the
+framework selects the cut. Choosing $w$ to match is a fit and is not done.
+
+### Front 2 — can $\mathrm{tr}_M(\beta_D)$ be $2.59\times$ larger? **Closed, scope (b).**
+
+Addendum 21 established that even a perfectly concentrated cost needs
+$\mathrm{tr}_M(\beta_D) \ge \sqrt{B_{\rm AME}} = 1.491498$ against the measured
+$0.575172$. **The corpus already proves the bound that settles it.**
+`atom-branch-convexity-bound` shows the atom is a *convex* combination of its
+branch closures ($\sum_b |w_b| = 1$, every $w_b > 0$), so
+$\mathrm{tr}_M(\text{atom}) = \sum_b w_b\,\mathrm{tr}_M(\beta_b) \le \max_b
+\mathrm{tr}_M(\beta_b)$. Measured over all 32 deuteron branches:
+
+| | |
+|---|---:|
+| $\min_b \mathrm{tr}_M$ | 0.291552 |
+| $\max_b \mathrm{tr}_M$ | **1.018275** |
+| required | 1.491498 |
+| max / required | **0.68272** |
+
+**No reweighting of the branches reaches it.** And the ceiling is quadratic, so
+even *at* the convex maximum the best attainable objective is
+$(\max_b \mathrm{tr}_M)^2 = 1.036884$ against $B_{\rm AME} = 2.224566$ — still
+**2.15× short**.
+
+That is **scope (b)**: the invariant is the convexity of the branch
+decomposition, proved in the corpus and not fitted. It excludes reaching AME by
+any redistribution over the branches of **this** braid word. It does **not**
+exclude a different word, and says nothing about whether one exists or is
+derivable.
+
+### Controls, and a precision note
+
+The branch computation's load-bearing control is that the weighted branch
+average reproduces the committed $\mathrm{tr}_M(\text{atom})$ — without it,
+$\max_b$ would be a bound on some other object. It agrees to $\sim 10^{-9}$,
+not exactly, because `binding_k_solver.per_block_evaluation` is float64; the
+verdict turns on a 47 % gap, far above that resolution. A second control asserts
+the branch traces genuinely spread *above* the atom's own value ($\max_b /
+\mathrm{tr}_M(\text{atom}) = 1.77$), so the bound is not trivially satisfied.
+Front 1 is exact mpmath from the closed form throughout — no LR, no float64 —
+and its $S(3)$ reproduces Addendum 22's fixed-width number as a cross-tie.
+
+### Where this leaves the arc
+
+Of everything opened since Addendum 15, **one thing remains open**: a
+growing-width cut, whose object is extensive but whose width the framework does
+not fix. Everything else — the level escape, the cost escape, signed
+occupations, the fixed-width entropy, and now the trace magnitude for this word
+— is closed, the last two by proved invariants.
