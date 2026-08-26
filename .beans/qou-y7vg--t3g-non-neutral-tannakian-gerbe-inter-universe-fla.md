@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-04T00:07:01Z
-updated_at: 2026-08-07T13:55:00Z
+updated_at: 2026-08-26T13:35:46Z
 parent: qou-8lxd
 ---
 
@@ -97,3 +97,55 @@ Before any gerbe construction: **promote or refute the existence claim.** Is
 "five topologically distinct embeddings of a fibre functor" a theorem, or a
 picture? That is prior to asking what band the gerbe has, and it is the honest
 first move on the merged `qou-8p1i`/`qou-y7vg` scope.
+
+
+## T3g EXISTENCE CLAIM CHECKED 2026-08-26 (PR #5819) -- IT DOES NOT SUPPLY THE PREMISE
+
+This bean's next step was 'promote or refute' rem:fivefold-affine-charts-generations,
+the block that supposedly already answers T3g's existence question. Checked.
+Verdict SCOPE-(a): the remark as written does not establish what T3g needs. NOT a
+claim that inequivalent fibre functors fail to exist -- that is untouched.
+
+Audit: docs/audits/2026-08-26-fivefold-charts-does-not-supply-t3g.md
+
+GAP 1 -- TARGET CATEGORY CONTRADICTS THE DEFINITION IT INTERPRETS. Literal, not
+interpretive. def:quantum-universe item 3 reads 'an R-linear faithful fibre
+functor tau : C -> R-Mod', and the same block says R is a commutative ring NOT a
+field (R_q = Z[q,q^-1]). The remark opens 'Each fibre functor tau : C -> Vect',
+and its manifest declares interprets: def:quantum-universe. Vect vs R-Mod.
+This is load-bearing: fibre functors to Vect_k over a FIELD are classified by
+Galois H^1(k, Aut^ot); fibre functors to R-Mod over Z[q,q^-1] are a question
+about Spec R, i.e. a Tannakian gerbe over a BASE SCHEME with H^1 in fppf/etale.
+Deligne's theorem is relative to a base. UNTIL THE BASE IS NAMED THE QUESTION HAS
+NO DETERMINATE ANSWER TO PROMOTE OR REFUTE.
+
+GAP 2 -- EMBEDDINGS ARE NOT ISOMORPHISM CLASSES. T3g needs tau_1 !~ tau_2. The
+remark supplies 'five topologically distinct EMBEDDINGS of A fibre functor' --
+singular, and an embedding is a placement, not a functor. Five placements of one
+functor are consistent with exactly ONE isomorphism class. da-arity-conflation.
+
+GAP 3 -- A TRANSITIVE ORBIT IS WHAT ONE CLASS LOOKS LIKE. S_5 acting on five
+sheets is the ordinary picture of one object with an index-5 stabiliser. Whether
+an S_5 element moves the ISOMORPHISM CLASS of tau is the unproved step, and it is
+the step that decides neutrality. Genuinely open in both directions --
+precomposition with a tensor-autoequivalence CAN move the class -- but the remark
+does not address it, and the orbit reads as evidence when it is neutral.
+
+WHAT WOULD SETTLE IT (so the next attempt is not another reading of this remark):
+  1. NAME THE BASE. Spec R with R = Z[q,q^-1], or a specialisation to a field.
+     Neutrality is not a property of C alone. Cheap, and prerequisite for 2-3.
+  2. Identify Aut^ot(tau) as a group scheme over that base.
+  3. Compute or bound H^1 of the base in the relevant topology.
+
+TWO FACTS MAKING THIS SAFE: (a) NOTHING CITES THE BLOCK -- corpus-wide grep over
+content/, docs/ and .beans/ finds no consumer besides the beans discussing it, so
+scoping it breaks no downstream argument. (b) Its numbers do not match T3g's
+target anyway: three of five sheets carry GENERATIONS, a 5-fold 3+2 split, not an
+SU(3) -- this bean already recorded that.
+
+DELIBERATELY NOT DONE: the remark is NOT rewritten. The Vect/R-Mod mismatch could
+be a typo or could mean an intended implicit base change to a field, and those
+need different repairs; correcting it either way changes a mathematical claim and
+belongs with the author. And NO LEAN -- the finding is that two prose claims
+differ from each other and from what a third needs; there is no invariant to
+prove, and a toy formalisation would be a trivial-true dressing up a reading.
