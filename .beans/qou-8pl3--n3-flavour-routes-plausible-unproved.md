@@ -3,8 +3,9 @@
 title: 'PLAUSIBLE-NOT-PROVED: routes to N = 3 for the flavour fundamental'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-08-26T03:24:21Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -77,3 +78,48 @@ worth knowing.
 
 Scope-(a) throughout. No proved invariant forbids `N = 3`; it is simply not
 constructed.
+
+
+## PROGRESS 2026-08-26 — Route B's T_1-vs-G_2 comparison is now a COROLLARY (PR #5810)
+
+This bean records the chapter's argument that the octonionic SU(3) and the
+icosahedral colour triple cannot both come from one construction, "since the
+Sym^2 gate excludes the icosahedral colour triple T_1 while the G_2 route
+passes it". That is a case analysis over two examples. The actual mechanism is
+Frobenius-Schur type -- T_1 is a rotation rep of A_5 subset SO(3) and so REAL,
+the Gunaydin-Gursey triple in Im(O) = R + C^3 is COMPLEX -- and neither of the
+two existing gate files could state it: Sym2GateMultiplicity models FS = +-1
+only, Sym2GateComplexType models FS = 0 only.
+
+QOU/Eightfold/Sym2GateFSTrichotomy.lean unifies them over the full trichotomy
+(12 decls, sorry-free, lean-direct exit 0, axioms [propext, Quot.sound] only --
+not even Classical.choice):
+
+  gate_forces_complex_of_dim_three   ANY dim-3 object passing the gate contains
+                                     a complex-type irrep
+  real_triple_fails_gate             the T_1 half, one line, no icosahedron
+  even_dimOf_of_selfDual             recovers Sym2GateMultiplicity's conclusion
+                                     in the unified language
+
+So real and quaternionic constructions are excluded AS A CLASS, not as two
+examples: passing forces real multiplicities to zero, quaternionic dimensions
+are even, the total is even, and 3 is odd. Complex type is not one way among
+several to reach dimension 3 through this gate -- it is the ONLY way.
+
+Two standard inputs are carried as EXPLICIT HYPOTHESES rather than assumed:
+QuaternionicEvenDim (an H-module has even dimension; Sym2GateMultiplicity got
+this free from dim = 2j+1, there is no such formula here) and the self-duality
+classification. That is deliberate -- the theorem then names exactly what it
+needs, and no fact about octonions or icosahedra is among them.
+
+GAP (i) IS UNCHANGED AND I WANT THAT ON THE RECORD. This does NOT prove the
+Gunaydin-Gursey triple IS complex type; that remains the cited literature
+decomposition, exactly as this bean says. The file establishes what complex type
+BUYS and what real type COSTS. The input is still an input, and Route B still
+needs it formalised or explicitly cited at the point of use.
+
+WHAT IT CHANGES FOR THE ROUTE: the target is now sharper. Route B does not need
+to argue about icosahedra at all -- it needs exactly one thing, that its triple
+is complex type. Everything else follows. Conversely any future candidate that
+is real or quaternionic is dead on arrival at dimension 3, without further
+analysis.
