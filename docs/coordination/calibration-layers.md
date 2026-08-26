@@ -194,6 +194,44 @@ regimes**, and the regime that disagrees with the substrate pin is the *light*
 one. That is a statement about the model's `A`-dependence, not about calibration
 choice — which is exactly the separation this layer was added to make.
 
+### Convention check — verified D by VALUE, not by docstring
+
+Asked directly whether the witness data underneath this layer was convention **C**
+(the excised `z = √q/(q+1) ≈ 0.49932`) rather than the canonical **D**
+(`z = q³/(q²+1) ≈ 0.61269`). It is **D**. Verified at the level of numbers, not
+declarations — `AGENTS.md` records a case where "the declaration, the interface
+and the constituent were three different answers", and #5812 has since found a
+**fourteenth** live C-spelling in Lean (`QOU.Hecke.ClosedFormInterfaceFactors`,
+`z = s/(s²+1)` with `q = s²` — C in a square-root variable, invisible to the
+detector).
+
+Three independent checks:
+
+| check | result |
+|---|---|
+| `markov_z(q₀)` returned value | `0.6126880371464652516` = **D** exactly; C would be `0.49932033418369445241` |
+| `y_(1³)` in both `y_λ` sources | `0` exactly (closed form) and `3.5e-72` (bridge) — the **D** signature; C has `y_(1³) ≠ 0` |
+| committed `low-isotopes-binding-sweep` `B_pred` vs recomputation | matches **D** to `1.4–3.0e-7`; a **C** recomputation is off by **8–23 %** |
+
+The third is the decisive one, because it tests the *gate reference* rather than
+this producer: the committed sweep is what the gate ties the evaluator to, so if
+it were C-frame the whole layer would inherit C regardless of what this code
+does. The C/D separation is **six orders of magnitude** larger than the residual,
+so it is not a marginal call.
+
+Per-isotope, committed vs recomputed:
+
+| | committed | `z_D` recomputed | rel | `z_C` recomputed | rel |
+|---|---|---|---|---|---|
+| ²H | 0.435403544348 | 0.435403481607 | 1.44e-7 | 0.535776972123 | **0.231** |
+| ³H | 0.695131652156 | 0.695131497432 | 2.23e-7 | 0.774296399072 | **0.114** |
+| ³He | 0.698552359972 | 0.698552209990 | 2.15e-7 | 0.814424403266 | **0.166** |
+| ⁴He | 0.876064256364 | 0.876063997507 | 2.95e-7 | 0.944656580873 | **0.078** |
+
+The ~2e-7 residual is a path difference (the committed sweep reaches `B_pred`
+through cached χ matrices rather than this recomputation), not a convention
+difference — a convention difference is 10⁶ times larger.
+
 ### One defect avoided, worth recording
 
 `tr_m_wenzl_bridge_mpfr._load_y_lambda` picks a **cached** `y_λ` table by
