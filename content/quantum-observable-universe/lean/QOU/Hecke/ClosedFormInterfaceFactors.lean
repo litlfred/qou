@@ -41,10 +41,29 @@ convention-dependent while the other is not.
   convention for `z` untouched.
 
 `z − h/2` is symmetric under the **skein** bar (it is the average of the two
-chiralities) and is **not** invariant under the **`q`**-bar — under either
-convention, since `q`-bar fixes `z` under C and scales it under D while
-flipping the sign of `h` in both. Two §5 docstrings said "bar-invariant"
-meaning the first and were readable as the second; corrected 2026-08-26.
+chiralities). Whether it is *also* invariant under the **`q`**-bar is
+convention-dependent — and the two conventions answer oppositely:
+
+* **Convention C.** `q`-bar fixes `z` and flips `h`, so `z − h/2 ↦ z + h/2`:
+  **not** invariant, defect `h`.
+* **Convention D (canonical).** `q`-bar sends `z ↦ z/q⁴`, and under D that
+  weight is not merely a scaling — it is *exactly* the shift `z ↦ z − h`
+  (`markovZ_weight_eq_shift`, an identity, not an approximation). So
+  `z − h/2 ↦ (z − h) + h/2 = z − h/2`: **invariant**
+  (`strictAvg_bar_invariant`), and `z − h/2` is precisely the `q`-bar
+  symmetriser `(z(q) + z(q⁻¹))/2` (`strictAvg_eq_bar_symmetriser`).
+
+The sign flip on `h` is what *produces* the invariance under D, not what
+prevents it. A 2026-08-26 revision of this header asserted non-invariance
+"under either convention" on the strength of that flip; the C half of that
+sentence was right and the D half was the C result generalised. Corrected
+2026-08-26 (this file's §3a), consistent with
+`QOU.MassTheory.strictPn_eq_barSymmetriser`, which has proved the D statement
+since PR #5769.
+
+None of this reaches `f_pn` itself: the canonical bring-color-weighted factor
+`z − h(1/2 − δ/4)` is **not** `q`-bar invariant, because `δ` is bar-odd only up
+to weight (`flavorDelta_bar`). See §5 and bean `qou-1oxx`.
 
 ## What is proved sorry-free here
 
@@ -286,6 +305,83 @@ theorem fNN_bar_weight (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
   unfold fPP
   ring
 
+/-! ## §3a. Under convention D the bar weight *is* a shift, and the strict
+average is bar-invariant -/
+
+/-- **The weight-`−4` scaling and the `−h` shift are the same map.**
+
+`z/q⁴ = z − h` is an identity of convention D, not a coincidence at one point:
+
+  `z/q⁴ = q³/(q⁴(q²+1)) = 1/(q(q²+1))`,
+  `z − h = q³/(q²+1) − (q²−1)/q = (q⁴ − (q⁴−1))/(q(q²+1)) = 1/(q(q²+1))`.
+
+This is the fact that reconciles `markovZ_bar_weight` ("bar scales `z` by
+`q⁻⁴`") with `QOU.MassTheory.barZ` ("bar sends `z` to `z − h`"): the two
+statements are the same statement. Reading the weight as a *mere* rescaling —
+one that leaves an `h` uncancelled — is what makes the strict average look
+bar-broken under D when it is not. -/
+theorem markovZ_weight_eq_shift (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    markovZ s / (s ^ 2) ^ 4 = markovZ s - heckeH s := by
+  unfold markovZ heckeH
+  field_simp
+  ring
+
+/-- **The `q`-bar of `z` is the shift by `−h`**: `z(q⁻¹) = z(q) − h(q)`.
+
+The `s`-variable twin of `QOU.MassTheory.barZ`; obtained by composing
+`markovZ_bar_weight` with `markovZ_weight_eq_shift`. -/
+theorem markovZ_bar_eq_shift (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    markovZ s⁻¹ = markovZ s - heckeH s := by
+  rw [markovZ_bar_weight s hs h4, markovZ_weight_eq_shift s hs h4]
+
+/-- **The bar carries the p-p factor onto the n-n factor exactly**, with no
+residual weight: `f_pp(q⁻¹) = f_nn(q)`. -/
+theorem fPP_bar_eq_fNN (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    fPP s⁻¹ = fNN s := by
+  unfold fPP fNN
+  exact markovZ_bar_eq_shift s hs h4
+
+/-- **…and back**: `f_nn(q⁻¹) = f_pp(q)`. Together with `fPP_bar_eq_fNN` this
+says the two like-flavour factors are a single two-element orbit of the
+involution — the sharp form of `fNN_bar_weight`, whose right-hand side
+`z/q⁴ + h` is `f_pp` written the long way round. -/
+theorem fNN_bar_eq_fPP (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0) :
+    fNN s⁻¹ = fPP s := by
+  unfold fNN fPP
+  rw [markovZ_bar_eq_shift s hs h4, heckeH_bar s]
+  ring
+
+/-- **The strict-averaged interface factor is the `q`-bar symmetriser**:
+`z − h/2 = (z(q) + z(q⁻¹))/2`.
+
+`s`-variable twin of `QOU.MassTheory.strictPn_eq_barSymmetriser`. -/
+theorem strictAvg_eq_bar_symmetriser (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0)
+    (h2 : (2 : R) ≠ 0) :
+    markovZ s - heckeH s / 2 = (markovZ s + markovZ s⁻¹) / 2 := by
+  rw [markovZ_bar_eq_shift s hs h4]
+  field_simp
+  ring
+
+/-- **The strict-averaged interface factor is `q`-bar INVARIANT under
+convention D**: `z(q⁻¹) − h(q⁻¹)/2 = z(q) − h(q)/2`.
+
+Being a symmetriser (`strictAvg_eq_bar_symmetriser`) it could hardly be
+otherwise. The `2 ≠ 0` hypothesis is not boilerplate: in characteristic 2 the
+average is not defined and the statement degenerates, exactly as in
+`QOU.MassTheory.PnInterfaceBarStructure`, which assumes `CharZero` for the
+same reason. Stated separately because it is the claim that the header of this
+file briefly denied: the bar flips the sign of `h`, and *that flip is exactly
+what cancels the shift* `z ↦ z − h`.
+
+Convention C behaves oppositely — there `z` is bar-fixed, so the flipped `h`
+has nothing to cancel against and the defect is `h`. -/
+theorem strictAvg_bar_invariant (s : R) (hs : s ≠ 0) (h4 : s ^ 4 + 1 ≠ 0)
+    (h2 : (2 : R) ≠ 0) :
+    markovZ s⁻¹ - heckeH s⁻¹ / 2 = markovZ s - heckeH s / 2 := by
+  rw [markovZ_bar_eq_shift s hs h4, heckeH_bar s]
+  field_simp
+  ring
+
 /-! ## §4. Structure of the flavor split `δ` -/
 
 /-- **Structural identity** `δ = ℏ_q² · h · [2]_q / 3`
@@ -332,10 +428,11 @@ theorem fPP_mul_fNN (s : R) :
 `z − h/2`, the combination symmetric under the **skein** bar `σ ↦ σ⁻¹`
 (`interface_knot_markov_z_bar_symmetric`).
 
-It is **not** invariant under the `q`-bar of §3, and was not under convention C
-either: `q`-bar flips the sign of `h`, so `z − h/2 ↦ z ± h/2` whatever it does
-to `z`. The pre-2026-08-26 docstring read "bar-invariant" without saying which
-bar. -/
+Under convention D it is **also** invariant under the `q`-bar of §3, because
+the bar exchanges the two summands exactly (`fPP_bar_eq_fNN`,
+`fNN_bar_eq_fPP`) rather than merely rescaling them — see
+`strictAvg_bar_invariant`. Under convention C it was not: there `q`-bar fixes
+`z` while flipping `h`, so `z − h/2 ↦ z + h/2`. -/
 theorem fPP_add_fNN (s : R) :
     fPP s + fNN s = 2 * markovZ s - heckeH s := by
   unfold fPP fNN
