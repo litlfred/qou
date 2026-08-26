@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T22:17:08Z
+updated_at: 2026-08-26T22:24:17Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -312,3 +312,30 @@ forward:
 (`[3,2,1] → [3,2,1,1]`, `n` going `4 → 7`).
 
 Guard rc=0 on 149. What is left for (P) is now exactly the sum over corners.
+
+
+### (P) now holds in Lean at TWO shapes, and the second one is the engine test
+
+`pieri_one` is (P) at `λ=(1)`, whose two corners are both trivial — a single row
+and a single column, neither with a cell above or below the new box. It cannot
+distinguish the three row cases.
+
+`pieri_two_one` is (P) at `λ=(2,1)`, whose three corners are one of each kind:
+`(3,1)` a box with a row **below**; `(2,2)` a box with a row **above** in the
+changed column (the interior case needing product surgery); `(2,1,1)` a **new
+bottom row**, which `addBoxRow` cannot express. First shape where every moving
+part is in play at once — the (P) analogue of `telescope_three`.
+
+Sharp at `Q=2, X=3`: total `20/7`, summands `22/9`, `40/63`, `−2/9`. The
+summands are recorded separately because a sum identity whose summands were
+equal, or all of one sign, is a much weaker check than it looks. One is
+negative.
+
+Guard rc=0 on 152.
+
+**What remains for (P) is the induction over addable corners.** Every ingredient
+is in Lean, and the statement now has two independent confirmations there.
+
+**Discipline note, second instance this session.** I wrote `−4/7` for the total
+from memory, into a theorem whose entire purpose is to check a constant.
+`norm_num` rejected it; the computed value is `20/7`. Compute, do not recall.
