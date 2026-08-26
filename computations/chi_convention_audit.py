@@ -145,8 +145,29 @@ PRODUCER_CONVENTION: dict[str, str] = {
     # constant cannot express it either. Asserting AVERAGED here flagged all
     # three new colour-weighted witnesses as CRITICAL mismatches against a
     # label the producer had DERIVED by counting weighted crossings in the
-    # word. Both are accepted; the discrimination is left to
-    # `chi_convention_from_values_audit`, which measures rather than asserts.
+    # word. Both are accepted.
+    #
+    # 🛑 The deferral this MIRRORS does not actually cover the qinv family, and
+    # saying otherwise would be a coverage claim with nothing behind it. For
+    # the Hoefsmit q0 producer above, "both accepted" is safe because
+    # `chi_convention_from_values_audit` re-measures and would catch a wrong
+    # label. That audit hardcodes `chi-{atom}-h{n}-at-q0-50dps` (its main(),
+    # ~line 226) and never opens an `-at-qinv-` witness, weighted or blind. So
+    # for THIS producer the acceptance is currently unbacked: nothing
+    # re-measures the qinv labels.
+    #
+    # What stands in for it meanwhile: the label is DERIVED from the word by
+    # counting crossings whose d matches -h_0*(1/2 - delta/4), not asserted and
+    # not inferred from the filename, and the producer records the count in
+    # `n_colour_weighted_crossings` so a reader can check it against the atom.
+    # That is strictly better than the regex-inferred label it replaced, but it
+    # is the producer vouching for itself, which is not an independent check.
+    #
+    # Extending the values audit to the qinv family is a small
+    # parameterisation -- it already builds the word and runs the kernel twice,
+    # so it needs the target q and the shifts rebuilt there -- but it costs two
+    # more H_12 kernel runs per atom (~22 min for helium-4 alone). Bean
+    # qou-1oxx.
     # The `-colour-weighted` suffix is also why COMPUTATION_PATTERNS does not
     # catch these: its qinv regex is `$`-anchored on `-at-qinv-50dps`.
     "chi_at_q_inv_via_native_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
