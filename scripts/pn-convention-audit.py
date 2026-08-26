@@ -119,11 +119,40 @@ DECLARED_BLIND_RE = re.compile(
     r"|delta-degenerate|\u03b4-degenerate|colou?r-blind"
     r"|no flavou?r split|equal[- ]weight)", re.I)
 
-BLIND_NAMES = ("strict_averaged", "StrictAveraged")
-CANON_NAMES = ("bring_color_weighted", "BringColorWeighted")
+# TWO VOCABULARIES NAME THE SAME PAIR. The convention-level names are
+# `strict_averaged` / `bring_color_weighted`; the ctype-level names, used by
+# `d_for_ctype` and the seminormal machinery, are `averaged` /
+# `averaged_weighted`. A file that builds BOTH interfaces using only the
+# second vocabulary is just as deliberate a comparison as one using the
+# first, and the initial list knew only the first -- so
+# `rho_w_crystal_vertex_trace.py` read as BLIND while its own docstring says
+# "Two interfaces, not one: the colour-blind `averaged` ... and the
+# colour-weighted `averaged_weighted`".
+BLIND_NAMES = ("strict_averaged", "StrictAveraged", '"averaged"', "'averaged'")
+CANON_NAMES = ("bring_color_weighted", "BringColorWeighted",
+               "averaged_weighted", "d_for_ctype")
 
 # The p-n bond has to actually be what the line is about.
-PN_CONTEXT = re.compile(r"\bp[-_]?n\b|\bpn\b|inter[-_]?nucleon|interface", re.I)
+# `\b` treats `_` as a word character, so `\bpn\b` does NOT match `V_pn_exact`,
+# `f_pn`, `pn_d` or `d_pn` -- i.e. it missed the ordinary Python naming
+# convention for this bond, which is the commonest way it appears. Explicit
+# alphanumeric lookaround treats `_` as a delimiter, which is what was meant.
+#
+# Found by an ASSERTION, not by the detector: after the flip,
+# confined_knot_binding's `V_pn = W_std*(z+d_pn)` check failed because
+# `V_pn_exact = W_STD * (z - h/2)` two hundred lines earlier was still blind
+# and invisible to this filter. Keep such assertions; they audit the auditor.
+PN_CONTEXT = re.compile(
+    r"(?<![A-Za-z0-9])p[-_]?n(?![A-Za-z0-9])|inter[-_]?nucleon|interface", re.I)
+
+# `h/2` near the word "interface" is not automatically a p-n site. The
+# SAME-FLAVOUR tag in delta_lambda_v_hat_z_transfer_phase5d_4.py matches
+# `|V| == h/2` to label a p-p or n-n interface -- the p-n case there is the
+# `V == 0` branch above it. Excluding on the site's own same-flavour wording
+# is precise; widening PN_CONTEXT to demand a literal "pn" token would drop
+# real sites that only say "interface".
+SAME_FLAVOUR = re.compile(r"same[-_ ]?flavou?r|\bp-p\b|\bn-n\b|\bpp\b.*\bnn\b",
+                          re.I)
 
 
 def _is_h_name(node) -> bool:
@@ -286,6 +315,8 @@ def scan_sources() -> list[dict]:
         for ln in sorted(set(v.hits)):
             window = "\n".join(lines[max(0, ln - 4): ln + 3])
             if not PN_CONTEXT.search(window):
+                continue
+            if SAME_FLAVOUR.search(window) and not re.search(r"\bp[-_]?n\b", window, re.I):
                 continue
             out.append({
                 "file": str(path.relative_to(ROOT)),

@@ -33,6 +33,14 @@ import rho_xi_diagonal as rxd                   # noqa: E402
 from young_seminormal import chi_young, seminormal_sigma  # noqa: E402
 from lr_coefficients import partitions_of       # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 DPS = 50
 mp.mp.dps = 60
 
@@ -141,9 +149,9 @@ def main() -> int:
     worst_id = mp.mpf(0)
     worst_df = mp.mpf(0)
     for lam in [(10, 2), (11, 1), (7, 5)]:
-        full = finner + [(mp.mpf(1), -h / 2, 8)] + [(c, d, g + 9) for (c, d, g) in fblock]
+        full = finner + [(mp.mpf(1), _pn_d(h), 8)] + [(c, d, g + 9) for (c, d, g) in fblock]
         lhs = chi_young(lam, full, q)
-        blocks = rec.interface_blocks(lam, 9, 3, q_str, -h / 2, DPS)
+        blocks = rec.interface_blocks(lam, 9, 3, q_str, _pn_d(h), DPS)
         rhs_diag = mp.mpf(0)
         rhs_full = mp.mpf(0)
         for (xi, nu), info in blocks.items():
