@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T03:42:59Z
+updated_at: 2026-08-26T06:44:16Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -216,3 +216,52 @@ Corrected in content (eightfold-open-problems.md item 4 rewritten: over-claim
 withdrawn, citation repointed to prop:schur-weyl-eightfold, the two blindness
 results cited). Audit:
 docs/audits/2026-08-26-sym2-gate-cannot-separate-flavour-from-colour.md
+
+
+## ROUTE A WORKED 2026-08-26 — the target is now ONE checkable property
+
+Route A is recorded as "construct a three-dimensional object W in the multi-fibre
+groupoid whose Sym^2(W) is irreducible. NOTHING HAS BEEN BUILT." Nothing is
+built here either -- but the specification is now a theorem instead of "more
+structure", and a candidate can be screened before any Sym^2 decomposition.
+
+QOU/Eightfold/SelfDualSectorConfinement.lean (4 theorems, sorry-free,
+lean-direct exit 0 against the REAL import cone -- Sym2GateFSTrichotomy.olean
+exists from the merged PR #5810, so the import resolved against a genuine build,
+not a stub):
+
+  selfDual_category_excludes_dim_three   in a category where every irrep is
+                                         self-dual, no dim-3 object passes
+  single_fibre_su2_excludes_dim_three    the SU(2) case, with the self-duality
+                                         of every SU(2) irrep carried as a NAMED
+                                         hypothesis rather than assumed
+  self_duality_is_the_obstruction        the two halves as one statement
+  screen_out_selfDual_candidate          the contrapositive, as a test
+
+THE POINT. gate_forces_complex_of_dim_three says any dim-3 gate pass must be
+complex type. selfDual_category_excludes_dim_three says a self-dual category has
+none. Every SU(2) irrep is self-dual. So THE PROPERTY A GROUPOID CONSTRUCTION
+MUST EXHIBIT IS EXACTLY THE PROPERTY ONE FIBRE LACKS: non-self-duality. Not one
+option among several -- the only way anything reaches dim 3 through this gate.
+
+Operationally that is a screening test: ask whether a candidate's
+three-dimensional object is isomorphic to its own dual. If yes it is dead,
+whatever else it has, and no Sym^2 computation is needed.
+
+A CORRECTION I EXPECTED TO MAKE AND DID NOT. I went in believing the chapter's
+confinement claim rested on a reason my own earlier work had undercut -- it
+says "the search is confined to the groupoid level is now a theorem" and cites
+the parity criterion, which Sym2GateFSTrichotomy shows is a SELF-DUAL-SECTOR
+theorem that does not bar dim 3 in general. Read the current text before
+editing: the chapter already states the self-duality mechanism explicitly ("the
+parity argument runs through self-duality: every SU(2) irrep satisfies
+V* = V..."), in a paragraph I added in the merged PR. The prose was already
+right. So this is prose -> theorem, NOT a correction, and the chapter got a
+short pointer rather than a rewrite. Third time this session that reading the
+current state prevented a wrong "fix".
+
+WHAT IS NOT DONE, explicitly: no construction, and no demonstration that a
+non-self-dual object EXISTS at groupoid level. Route A stays OPEN. What is
+settled is a NECESSARY condition and the exact reason the single-fibre case
+fails it. Nor does any of it bear on flavour-vs-colour -- both invariants are
+still blind to that.

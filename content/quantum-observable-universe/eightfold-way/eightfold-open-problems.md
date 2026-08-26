@@ -64,6 +64,21 @@ Gell-Mann--Nishijima relation cannot be closed.
    (ledger row, `Sym2Gate.lean`).  Whether it yields *flavour*
    $\mathrm{SU}(3)$ is untested.
 
+   **What such a construction must supply is now a theorem, and it is one
+   property rather than a list.**  `SelfDualSectorConfinement.lean`
+   (sorry-free) puts the two halves together: a three-dimensional object
+   passing the gate must contain a complex-type irrep
+   (`gate_forces_complex_of_dim_three`), and a category all of whose irreps
+   are self-dual contains none — which is precisely the single-fibre case,
+   since every $\mathrm{SU}(2)$ irrep is self-dual.  So *the property a
+   groupoid construction must exhibit is exactly the property one fibre
+   lacks*: **non-self-duality**.  This yields a screening test
+   (`screen_out_selfDual_candidate`): a candidate whose three-dimensional
+   object is isomorphic to its own dual is dead, and can be discarded
+   before its $\mathrm{Sym}^2$ decomposition is computed.  It does not
+   construct anything — Route A stays open — but it replaces "more
+   structure" with a single checkable condition.
+
    *That the search is confined to the groupoid level is now a theorem,
    not an extrapolation.*  The parity criterion
    (`Sym2GateParity.lean`) decides the $\mathrm{Sym}^2$ gate for a single
