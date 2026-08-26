@@ -389,6 +389,13 @@ QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.instAlgebraTraceQu
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk | clean
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.quotMk_apply | clean
 QOU.QBeta.MarkovTraceQuotient | QOU.QBeta.MarkovTraceQuotient.heckeBraidedPresentationOfRank_quot | clean
+# Brick 3: the tower inclusion detects the radical EXACTLY (both directions),
+# which is what makes the quotients a tower rather than a sequence. Conditional
+# on HeckeConditionalExpectation, itself an open class with no instance.
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceRadical | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.mem_traceRadical_of_map | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.map_mem_traceRadical_iff | clean
+QOU.QBeta.TLTowerRadicalDescent | QOU.QBeta.TLTowerRadicalDescent.one_not_mem_either | clean
 """
 
 
