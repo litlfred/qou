@@ -411,7 +411,6 @@ import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.CatalanClausenBridge
-import QOU.Archimedean.LobachevskyClausenGap
 import QOU.Archimedean.IdealTetrahedronConcavity
 import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.IdealTetrahedronShapeBridge
