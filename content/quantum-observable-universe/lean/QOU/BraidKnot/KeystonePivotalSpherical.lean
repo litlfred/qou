@@ -75,9 +75,22 @@ general: the two traces differ by the twist factor `θ_{Xᘁ} ⊗ θ_X`, so the 
 The canonical reference for this class ([barrett1993], the paper that coined *spherical*)
 states on p. 2: *"spherical categories are not required to be braided. However, any braided
 pivotal category satisfies the extra spherical condition."* Read against the honest scope
-above, that looks like it closes the residual outright, since
-`QOU.MathlibExt.pivotalOfBraided` makes every braided right-rigid category pivotal. It does
-not, and the reason is a difference in **which two morphisms** are being compared.
+above, that looks like it closes the residual outright, since `QOU.MathlibExt.pivotalOfBraided`
+makes every braided right-rigid category pivotal. It does not — and there are **two** independent
+reasons, of which only the second was recorded when this note was first written.
+
+**Reason zero: the hypothesis may not even be met.** `pivotalOfBraided` is stated against the
+in-repo `PivotalCategory` as it stands on `main`, which carries **naturality only**. Barrett-Westbury's
+pivotal structure is *monoidal*, and PR #5856 argues that `drinfeldIso` is natural but **not**
+monoidal, so a braided right-rigid category is *not* pivotal in the literature sense and the
+braided-only instance is unconstructible once the monoidality field is present; the surviving
+instance there is `pivotalOfRibbon`. That revision has not landed, so this file does not adopt
+either side — but it must not lean on `pivotalOfBraided` to supply a *Barrett-Westbury* hypothesis,
+because the two words "pivotal" may not denote the same class. If #5856 lands, this paragraph is
+the one to re-check.
+
+**Reason one (independent of that, and the one this note is really about): a difference in which
+two morphisms are being compared.**
 
 Barrett-Westbury's `tr_L` / `tr_R` (their Definition 2.4) are the **pivotal** traces, built
 from the pivotal data `epsilon(a)` and `tau : 1 -> **`, with **no braiding anywhere** — in
