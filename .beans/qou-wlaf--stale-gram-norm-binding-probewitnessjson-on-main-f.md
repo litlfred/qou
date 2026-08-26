@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:47:10Z
+updated_at: 2026-08-26T03:53:18Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -711,3 +711,65 @@ PYTHONPATH — every one made the corpus look worse than it is. That
 consistency is itself worth stating: **this instrument's errors are
 false-positive errors**, so its counts are upper bounds, and a verdict is only
 usable with its evidence attached.
+
+
+---
+
+## What actually moved — analysis at 78/95 (2026-08-26)
+
+Field-level analysis of the substantive verdicts, from recorded data only (no
+re-runs, nothing executed against the in-flight sweep).
+
+### Not every "substantive" move is staleness
+
+Of 34 substantive verdicts, **33 are real value changes** — the committed
+value was non-null and differs. **One is a null → value fill**
+(`qlommel_b_ladder_slope_derivation`): the committed witness had `q0Value:
+null` and today's code records a value. That is main's pin-stamping work
+(#5797 / `qou-1c4y`) *adding* provenance, an improvement, not drift. Counting
+it as staleness would have overstated the finding by one.
+
+So the headline is **33**, and the distinction is worth keeping: a field going
+null → value is provenance being added; a field changing value is the thing
+this bean is about.
+
+### The sharpest sub-finding: four witnesses no longer pass their own assertions
+
+`allPassed` / `passed` moved in five witnesses. Four were committed with
+`allPassed: True`:
+
+    mu3_abs_choice_robustness_probe
+    option_a_vol_per_knot_light_series
+    trace_convention_reconciliation
+    triangle_bond_submodularity_probe
+
+A boolean that moved from `True` can only have moved to `False`. These are
+witnesses that **record their own assertions passing and no longer reproduce
+that** — the same self-contradiction that identified the original gram-norm
+case, now on four more producers. This is the strongest form of the class,
+because it needs no interpretation: the artifact fails a test it says it
+passed.
+
+(The fifth, `iterative_lp_dual_h6_deuteron`, was committed `False`, so its
+move is in the other direction and is not evidence of decay.)
+
+### `q0Value` moves are a different story and should not be pooled
+
+`q0Value` moved in three. One (`mu3_frechet_perblock_probe`) had a real
+committed value, `1.1099785827513804319`, anchor `proton`. Two had `null`.
+Given the muon → proton pin migration landing on main, these are plausibly
+*expected* consequences of that work rather than independent drift —
+**not established either way here**, and deliberately not folded into the
+staleness headline.
+
+### Field frequency across the 33
+
+    10  computed        5  allPassed / passed      4  B_AME_MeV
+     3  q0Value         2  tr_M_free               2  B_MeV
+     2  delta_m_over_m_pct
+
+`B_AME_MeV` is the AME2020 experimental reference, not a framework output; its
+movement suggests a reference-table update and is a different question again.
+
+**None of this changes the instrument caveat.** These are upper bounds, read
+with their field lists attached.
