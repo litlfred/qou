@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T18:00:27Z
-updated_at: 2026-08-26T18:15:54Z
+updated_at: 2026-08-26T18:21:32Z
 ---
 
 
@@ -121,3 +121,48 @@ X2 pairs with the X from eta_X, Y2 with the Y from eta_Y, nested. No paper will
 supply the Lean bookkeeping, which is the entire difficulty. If any external
 source helps it is another FORMALISATION (a Lean or Coq library that already has
 rigid-monoidal tensor duals), not a mathematics paper.
+
+
+
+## BREAKTHROUGH on the calc shape (2026-08-26, later pass)
+
+**Step 1 of the Mathlib-idiom calc WORKS.** This is what every earlier attempt
+lacked, and it is durable -- do not rediscover it:
+
+    calc _ = 𝟙 _ ⊗≫ (Y2 ⊗ X2) ◁ eta_ X X2
+            ⊗≫ ((Y2 ⊗ X2) ◁ (X ◁ eta_ Y Y2 ▷ X2) ⊗≫ (Y2 ◁ eps_ X X2 ▷ Y) ▷ (Y2 ⊗ X2))
+            ⊗≫ eps_ Y Y2 ▷ (Y2 ⊗ X2) ⊗≫ 𝟙 _ := by monoidal
+
+`monoidal` closes that step, exit 0. So the outer coherence is SOLVED and the
+whole problem is now localised to the parenthesised middle.
+
+The features that made it work, absent from my earlier attempts:
+  - `𝟙 _ ⊗≫ ... ⊗≫ 𝟙 _` padding at BOTH ends
+  - the interesting part explicitly parenthesised as one ⊗≫ group
+  - whiskerings written in the compound form the goal actually has
+These are exactly the idiom of coevaluation_evaluation_braided'.
+
+## What middle' should be (derived, not yet type-checked)
+
+Doing eps_X FIRST and then eta_Y, the strands say:
+  eps_X consumes X2 (from the dual) and X (from eta_X), leaving eta_X's X2.
+  eta_Y must then create Y ⊗ Y2 BETWEEN Y2 and X2.
+So the exchanged middle should be, up to bracketing:
+
+    (Y2 ◁ eps_ X X2 ▷ X2) ⊗≫ (Y2 ◁ eta_ Y Y2 ▷ X2)
+
+## Still failing
+
+5 more routes, now from the padded base: rw/simp with whisker_exchange given
+EXPLICIT arguments `(Y2 ◁ eps_ X X2) (eta_ Y Y2)` in both directions, and
+simp with both snake ''-forms. The explicit args do not match the actual
+subterm shape -- the terms carry compound whiskerings, so the bare
+`W ◁ g ≫ f ▷ Z` pattern is not literally present.
+
+Total ruled out: ~23 automated placements across 5 batteries.
+
+## Next concrete step
+
+Write middle' out explicitly as the second calc step's target and let the
+ELABORATOR check the endpoints -- a small goal with fast feedback -- rather
+than guessing whole-proof tactics. Then prove middle = middle' on its own.
