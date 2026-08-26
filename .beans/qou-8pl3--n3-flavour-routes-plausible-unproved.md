@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-26T07:25:53Z
+updated_at: 2026-08-26T13:24:14Z
 ---
 
 ## UPDATE 2026-08-07 — the obstruction half is now PROVED
@@ -382,3 +382,56 @@ VERIFIED: lean-direct exit 0, real import cone. 7 decls, no sorryAx, zero sorry
 zero axiom. THREE MUTATION TESTS, each expected to fail and each failing
 (octonion dim (7-1)/2 -> /3; flavour FS complex -> real; colourChannel
 antisymmetric -> symmetric) -- the decides compute rather than rubber-stamp.
+
+
+## COORDINATION SWEEP 2026-08-26 — Route A's requirement was ALREADY RECORDED
+
+Ran /coordinate. One sibling overlaps: PR #5744 (Standard Model), same
+QOU/Eightfold/ namespace and same N=3 surface. Posted intent there. No file
+conflict. No other open PR touches eightfold-way/ or QOU/Eightfold/.
+
+THE FINDING, AND IT CORRECTS THIS PR. Route A's requirement -- 'the groupoid
+must supply non-self-duality' -- is NOT new. Bean qou-dwsh (2026-08-03,
+priority high, COMPLETED) states it verbatim in its body:
+
+  'Need: a groupoid with inequivalent fibre objects carrying a 3-dim W whose
+   fundamental is not self-dual.'
+
+and reaches it by a DIFFERENT route: the row cap. Descartes chi(A) = -6 forces
+SU(2), so dim V = 2, so partitions of at most two rows, so the (1^3) block
+drops at n=3. My route is the Sym^2 gate + FS trichotomy. Two independent
+derivations of one necessary condition -- which is worth having, and is worth
+less if presented as a discovery.
+
+Trail: qou-8pl3 -> qou-8p1i (SCRAPPED as duplicate of qou-dwsh) -> qou-dwsh.
+LIVE CARRIER for this surface is qou-y7vg (T3g, non-neutral Tannakian gerbe).
+qou-8pl3 Route A, qou-8p1i T3b, qou-dwsh, qou-y7vg T3g, and #5744's 'surviving
+direction' are ALL THE SAME OPEN PROBLEM under five names.
+
+THE PROCESS GAP, which is the more useful half. This is the SECOND prior-art
+miss in this PR (the first: the 2026-08-25 upload triage had the octonionic
+Cartan collapse). The two have DIFFERENT causes:
+  1. Tranche 2 -- ran the corpus-grep AFTER the work instead of before.
+  2. Tranche 1 -- the source was in .beans/, and the AGENTS.md corpus-grep
+     checklist HAS NO BEANS PATH. Paths 1-5 are docs/audits, content,
+     computations, docs/coordination, library. .beans/ is under none of them,
+     and qou-dwsh's sentence exists NOWHERE ELSE.
+Added .beans/ as path 6, with the note that  and  are the
+two statuses that bite -- completed hides an answer, scrapped names the live
+carrier.
+
+ALSO FIXED: my own chapter edit tripped voice-author-notes-pollution (major) by
+putting a dated work-plan reference into scholarly prose. Rewritten to state
+the row-cap derivation as mathematics with no provenance; provenance now lives
+in the Lean docstring and the coordination ledger, where it belongs.
+
+NOT A DEFECT, checked and clear: #5744's audit records that route 1's original
+argument ('every SU(2) irrep is self-dual, therefore no summand passes the
+gate') is INVALID, and that self_duality_does_not_decide_gate exists so it
+cannot be re-derived. SelfDualSectorConfinement is superficially that shape. It
+already cites Sym2GateParity, carries QuaternionicEvenDim explicitly on all
+four theorems, and its header states 'not parity excludes 3 (false in general)
+but SU(2) is a self-dual category, and in a self-dual category parity excludes
+3'. The guard held.
+
+New ledger: docs/coordination/eightfold-n3-surface.md.

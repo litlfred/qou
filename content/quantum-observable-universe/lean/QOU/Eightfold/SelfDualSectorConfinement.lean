@@ -82,6 +82,27 @@ ordering, no archimedean content.
 -- Ref: [fulton-harris1991] §3.5, §11 (the Frobenius–Schur trichotomy; every
 -- `SU(2)` irrep is self-dual, real for integer and quaternionic for
 -- half-integer spin).
+
+## Prior art — the requirement was already recorded, by a different route
+
+This file does not discover the non-self-duality requirement. The corpus
+work-plan recorded it on 2026-08-03 as the T3b entry (bean `qou-dwsh`, priority
+high, since completed):
+
+> a groupoid with inequivalent fibre objects carrying a 3-dim `W` whose
+> fundamental is **not self-dual**
+
+and reached it from the **row cap** — Descartes `chi(A) = -6` forces `SU(2)`,
+hence `dim V = 2`, hence partitions of at most two rows, so the `(1^3)` block
+drops at `n = 3`.
+
+What is new here is the *proof*, and that it runs on different inputs: the
+`Sym^2` gate plus the Frobenius-Schur trichotomy, with no appeal to the Euler
+characteristic and none to Schur-Weyl. Two independent routes to one condition
+are worth having. The scope note in `qou-y7vg` — that this is the surviving
+`N = 3` direction after the Klein, marked-pair and 4-form exclusions — is the
+live carrier; `qou-8p1i` was scrapped as a duplicate of `qou-dwsh`.
+
 -/
 
 namespace QOU.Eightfold.SelfDualSectorConfinement

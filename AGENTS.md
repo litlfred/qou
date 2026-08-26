@@ -1189,7 +1189,29 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-Only after **all five** grep paths return empty (modulo the
+6. **The beans** — `grep -rl <topic> .beans/`. The work-plan tracker is a
+   corpus in its own right (tens of thousands of files) and it is where a
+   prior agent's *conclusion* most often sits before it reaches an audit
+   doc or a content block. It is **not** covered by paths 1–5: `.beans/`
+   is not under `docs/`, `content/`, `computations/` or `library/`, and a
+   coordination ledger is a different file.
+
+   Read `status` and the whole body, not the title. A **`completed`** bean
+   is the one that bites — it means the question was answered, and the
+   answer may be a single sentence in the body with no artifact anywhere
+   else. A **`scrapped`** bean is worth as much: it usually names the bean
+   that superseded it, which is how you find the live carrier.
+
+   History: added 2026-08-26 after one PR re-derived two results the
+   corpus already held. The second was `qou-dwsh` (2026-08-03, priority
+   high, `completed`), whose body states the conclusion the PR spent a
+   tranche proving — *"a groupoid with inequivalent fibre objects carrying
+   a 3-dim `W` whose fundamental is **not self-dual**"* — and which paths
+   1–5 cannot reach, because that sentence exists nowhere but the bean.
+   The trail to it ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh`,
+   i.e. through exactly the two statuses this note says to read.
+
+Only after **all six** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
