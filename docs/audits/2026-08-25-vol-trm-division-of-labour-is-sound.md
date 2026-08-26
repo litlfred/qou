@@ -2911,3 +2911,102 @@ $\Delta(\beta_1,\beta_2;A)$ (the component shifts $18$ and $21$, which are the
 *nucleon* words, not the wall), or through a non-positive interface, or it is
 not in the normal-form decomposition at all. This closes the interface front
 rather than advancing it.
+
+---
+
+## Addendum 32 — the freedom is in Δ, and its carrier is the colour weight
+
+Addendum 31 closed the `α_shift(I)` term of
+`shift_NF(β) = α_shift(I) + Δ(β₁,β₂;A)` and flagged its own limit: the
+argument covers **positive** words only. The nucleon words are exactly the
+excluded case, so the question is whether Δ is pinned the same way.
+
+**It is not.** [`delta_struct_is_where_the_freedom_is_probe.py`](../../computations/meson/delta_struct_is_where_the_freedom_is_probe.py),
+11/11.
+
+### The word is not positive, and not even a braid word
+
+`atom_braid_word_3A`'s own docstring says so: its letters are **Hecke
+elements** `c·σ_g + d·1`, and `2A+1` of them are weight-½ averages. Measured
+at the deuteron: **23 letters — 11 `σ`, 7 `σ⁻¹`, 5 averaged**, the 5 matching
+`2A+1 = 5`. Seven inverse letters is already enough: Addendum 31 does not
+reach this word.
+
+> **🛑 A layer error this probe made first, and the failing assertion is what
+> caught it.** The first version built the word **once** via
+> `atom_braid_word_3A(1,1)` — which bakes in `q₀` — and then varied `q` inside
+> the representation. That freezes every offset `d` at a constant while the
+> character is evaluated at `q → 0`, so every letter's leading term becomes the
+> representation's own `−q⁻¹` regardless of what the letter *was*, and the
+> column pole order comes out as the **length** for any word whatsoever. It is
+> the straddle AGENTS.md names — an input from one layer against an input from
+> another inside one number. The fix is the producer's own `q=` keyword, which
+> materialises every crossing template at the given `q`; the word is rebuilt at
+> each evaluation point.
+>
+> A second, smaller instance of the same discipline: `reject_float64_q` refuses
+> evaluation points that round-trip exactly through float64 — a power of `1/10`
+> is refused for the same reason `mpf(str(Q))` is. Powers of `1/3` are genuine
+> 300-dps values; any three points give a slope, and decades were never
+> load-bearing.
+
+### 🛑 My writhe prediction was wrong — and running it down found the carrier
+
+On the all-column channel `σ ↦ −q⁻¹` (valuation `−1`) and `σ⁻¹ ↦ −q`
+(valuation `+1`), so inverse letters should **cancel** pole order and the
+column valuation should be the **writhe**, `11 + 5 − 7 = 9`. Measured: **13**.
+
+Per-letter, at one evaluation point:
+
+| convention | column pole order | anomalous letters |
+|---|---:|---|
+| `strict_averaged` (colour-blind) | **9** | none |
+| `bring_color_weighted` (canonical) | **13** | one: index 11, generator 2, valuation **−5** |
+
+So the argument was sound and the *convention* was wrong. Colour-blind, the
+writhe prediction is exactly right. The canonical convention adds **4 units of
+pole order in a single letter** — the p–n interface `σ − h(½ − δ/4)`, whose
+coefficient carries `δ = flavor_split_leading(q)`. **Every other coefficient
+in the word is a constant or a multiple of `h`; `δ` is the one that is
+separately `q`-dependent**, and it is the one that breaks the counting.
+
+### And the maximizer leaves the column channel entirely
+
+| λ ⊢ 6 | (2,2,1,1) | (2,2,2) | (3,1,1,1) | (3,2,1) | (3,3) | (4,1,1) | **(4,2)** | (2,1,1,1,1) | (5,1) | (1⁶) | (6) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| pole order | 27 | 27 | 27 | 27 | 27 | 27 | **27** | 21 | 17 | 13 | 5 |
+
+`α_shift = 27` at `(4,2)`, against the column's `13`. **So α_shift is not any
+word statistic here** — not the length, not the writhe, not a signed count.
+That is precisely the freedom `colPole_faithful` denies the interface.
+
+Two things worth noting rather than over-reading. The max-pole set is a
+**seven-way tie**, and **two of its members — `(4,2)` and `(3,3)` — have
+`ℓ(λ) ≤ 2`**, so under convention D they carry nonzero `y_λ`: the pole-heavy
+channels are **live blocks, not Temperley–Lieb radical**. Contrast Addendum 22,
+where the sign-carrying characters were unavailable *because* they sat in `I₆`.
+
+### What this is, and what it is not
+
+**It is a positive lead, and the first of this arc.** Addenda 22, 24, 26 and 31
+each closed a route with a named invariant. This one *fails* to close a route,
+and localises what does the failing: a derived, `q`-dependent colour weight
+sitting on the one letter that joins the proton to the neutron. `Δ` is where
+the missing magnitude can still live, and Addendum 31's exclusion is the
+reason that statement has content — the interface is pinned, so the two terms
+are not interchangeable.
+
+**It is not a magnitude result.** Everything here is a `q → 0` **valuation**.
+Nothing measured shows that Δ *supplies* the deuteron binding energy, and no
+number was compared to `B_AME`. The claim is narrower and exact: the pinning
+argument that closes the interface does not close Δ, and the obstruction has a
+name.
+
+**Do not equate the 27 with the 40.** `confinement-nf-partial-proof.md` records
+`shift_NF = 18Z + 21N + 1 = 40` as an exponent of `u = b·ℏ_q²`; the 27 here is
+an exponent of `q`. Different variables. Whether they are related is a separate
+question this does not touch.
+
+**One isotope, one convention pair.** ²H only, and the colour comparison is
+`bring_color_weighted` against `strict_averaged`. The `A`-dependence of the
+27 is unmeasured.
