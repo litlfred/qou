@@ -3,8 +3,9 @@
 title: precision-gates.sh tells you to commit a regenerated audit witness without checking whether your branch is behind main
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-26T04:51:58Z
-updated_at: 2026-08-26T04:51:58Z
+updated_at: 2026-08-26T21:08:07Z
 ---
 
 ## The instruction
@@ -70,3 +71,43 @@ existing `b28296c0d` guidance does not cover it.
 
 Not fixed here: this bean is the finding. The three witnesses were
 reverted rather than committed.
+
+
+## A THIRD reason not to commit these, and a retraction of my own call
+
+While running prepare-merge on PR #5805 the precision gate flagged
+`witness-provenance-audit.witness.json` stale and said to commit the
+regenerated copy. I checked this bean's discriminator, found the
+conditions inverted, and committed it:
+
+    qou-v0t8 case   tree BEHIND main, ratchet BACKWARDS   913 -> 888
+    that case       tree CURRENT (0 behind), FORWARDS     missing 96 -> 82
+
+I also established the movement was main's, not mine — the branch adds
+zero witness files and none of its six touched producers appeared among
+the 18 changed entries.
+
+**That reasoning was sound and the decision was still wrong.** Within
+twenty minutes the PR went `mergeable_state: dirty`, and the conflict
+was on exactly that file: main had regenerated it too.
+
+So the rule is stronger than this bean originally stated. It is not only
+that a behind-main tree walks the ratchet backwards. It is that a
+**tree-measuring audit witness is a CONTENDED file**: main regenerates it
+on its own cadence, so any feature branch that commits one acquires a
+conflict with main, and the conflict recurs on every subsequent main
+landing until the branch merges.
+
+Revised guidance: **never commit a tree-measuring audit witness from a
+feature branch**, regardless of ratchet direction or how current the
+tree is. Revert it. The correct place to refresh one is a dedicated
+chore commit on a branch that merges immediately, or main itself.
+
+The suggested gate guard is unchanged (`rev-list --count
+HEAD..origin/main`, suppress when non-zero) but is now known to be
+INSUFFICIENT — it would have permitted this commit, since the tree was
+current. The guard should suppress the 'commit the regenerated one'
+instruction unconditionally on any branch with an open PR.
+
+Resolution here: dropped the commit and rebased. Nothing was lost — the
+movement was main's, which main now carries anyway.
