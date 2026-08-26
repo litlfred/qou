@@ -77,8 +77,17 @@ def run_one(stem, ws):
                            capture_output=True,text=True,timeout=BUDGET)
         rc = r.returncode; both = (r.stdout or "") + (r.stderr or "")
         tb = "Traceback (most recent call last)" in both
+        # keep the exception line: a traceback is NOT proof of a defect. A guard
+        # implemented as a raised domain exception is indistinguishable from a
+        # crash by shape, and the discriminator is the exception TYPE and its
+        # message. Without this, classifying a CRASH means re-running it.
+        exc = [ln for ln in both.splitlines()
+               if ln and ln[0].isalpha() and ("Error" in ln.split(":")[0]
+                                              or "Exception" in ln.split(":")[0]
+                                              or "Invalid" in ln.split(":")[0])]
+        exc_line = exc[-1][:300] if exc else ""
         guard = any(k in both for k in ("Refusing","refuse","would publish","precision would"))
-    except subprocess.TimeoutExpired: rc = "TIMEOUT"
+    except subprocess.TimeoutExpired: rc = "TIMEOUT"; exc_line = ""
     except Exception as e: rc = f"ERR:{type(e).__name__}"
     dt = time.time() - t
     moved, ident, fields = [], [], {}
@@ -96,7 +105,8 @@ def run_one(stem, ws):
     v = ("TIMEOUT" if rc=="TIMEOUT" else "GUARD_REFUSAL" if (guard and not tb)
          else "CRASH" if tb else "MOVED" if moved else "IDENTICAL")
     return {"producer":stem,"verdict":v,"rc":rc,"sec":round(dt,1),
-            "moved":moved,"identical":len(ident),"fields":fields}
+            "moved":moved,"identical":len(ident),"fields":fields,
+            "exception": locals().get("exc_line","")}
 
 # ---- IN-LOOP SELF-TEST ----
 print(f"PINNED {SHA}", flush=True)
