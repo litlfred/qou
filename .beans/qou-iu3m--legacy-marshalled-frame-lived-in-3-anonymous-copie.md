@@ -1,11 +1,11 @@
 ---
 # qou-iu3m
 title: Legacy-marshalled frame lived in 3 anonymous copies — one named home + guard
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T04:19:45Z
-updated_at: 2026-08-26T04:21:31Z
+updated_at: 2026-08-26T13:20:06Z
 ---
 
 Found while fixing `qou-qu2w` (the 2.157x nucleon-trace divergence), and it is
@@ -66,3 +66,13 @@ Baselined the exact values before refactoring and re-checked after:
     tau_n 1.2575579046963118128   identical
 
 Bit-identical, so every legacy-frame comparison still compares what it did.
+
+
+## CLOSED 2026-08-26 — landed on main (PR #5821 cone, merge 0bc2794da9)
+
+`computations/legacy_marshalled_frame.py` is the one named home;
+`test_legacy_frame_no_new_copies.py` guards it (AST Call node, not substring
+— every such file discusses the marshaller in prose);
+`probes/nucleon_h3_marshalling_divergence_probe.py` pins the root cause.
+All three verified present on origin/main. The guard does not forbid the
+legacy frame — it forbids using it WITHOUT saying so.
