@@ -67,7 +67,13 @@ RE_C_SQRTVAR = re.compile(r"(\w+)\s*/\s*\(\s*\1\s*\^\s*2\s*\+\s*1\s*\)")
 # corroboration that the free variable really is a square root of q
 RE_BINDS_SQRT = re.compile(r"Real\.sqrt|=\s*s\s*\^\s*2|q\s*=\s*s²|u²\s*=\s*q|u\^2\s*=\s*q|q\s*=\s*s\^2|√q")
 
-DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)")
+# `instance` is included deliberately. A typeclass instance sets the
+# convention through a FIELD ASSIGNMENT (`z := 1 / (√q + 1/√q)`), not a
+# `def` body, so a def-only pattern cannot see it. That blind spot hid
+# `markovTraceTower_canonical` -- the CANONICAL Markov trace tower, and the
+# single most load-bearing convention site in the tree -- through every run
+# of this scanner up to 2026-08-26. Taxonomy entry #15.
+DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev|instance)\s+(\w+)")
 
 # Recorded convention-C definition sites, measured 2026-08-26. A site that is
 # legitimately migrated should be REMOVED here in the SAME commit that migrates
@@ -80,6 +86,7 @@ DEF = re.compile(r"^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)")
 # comparison objects, the Lean analogue of the Python audit's declared-C bucket.
 # Separating actionable from deliberate is triage this script does not do.
 KNOWN_C = [
+    ("HnMarkovTrace", "markovTraceTower_canonical", "C-plain"),
     ("MarkovConventionSeparation", "markovKernel", "C-sqrtvar"),
     ("BorromeanCanonicalTraceDerivation", "zMarkov", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN", "C-sqrtvar"),

@@ -32,10 +32,47 @@ question.
 | 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
 | 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
 | 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
+| 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 15 — a convention set by an instance field, not a definition body
+
+Added 2026-08-26 (bean `qou-cxjq`), by the scanner from entry #14 — **which had
+this blind spot itself**.
+
+`scripts/lean-markov-convention-audit.py` tracked the enclosing declaration with
+`^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)`. A Lean typeclass instance
+does not set its parameters in a `def` body; it sets them as **field
+assignments**:
+
+```lean
+noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
+    MarkovTraceTower q where
+  z := 1 / (Real.sqrt q + 1 / Real.sqrt q)     -- convention C
+```
+
+A def-only pattern cannot see that line as a *site*, so the scanner reported it
+nowhere — through every run, while it was being used to drive a migration.
+
+**The instance it hid is the worst one in the tree.** Not an obscure corner:
+`markovTraceTower_canonical` is the **canonical** Markov trace tower, the
+instance downstream Jones-value code resolves against. Fourteen `def`-shaped
+sites were being carefully migrated while the canonical instance sat unmeasured.
+
+Two things worth carrying:
+
+1. **The count went UP when the blind spot closed** — 17 → 18 definitions,
+   actionable 4 → 5. A migration that had been reporting steady progress was
+   measuring a surface smaller than the real one. A falling count is only
+   meaningful against a detector whose reach is known.
+2. **This is the fourth consecutive entry found by the tool written to catch the
+   previous one** (#12 → #13 → #14 → #15). The pattern is not that detectors are
+   badly written; it is that each one encodes the shape its author had just
+   learned to see. Expect a #16, and prefer the answer-shaped test — testing what
+   a value *is* rather than how it was *written* — wherever one exists.
 
 ### 14 — the detector walks one tree and the count is quoted for the repo
 
