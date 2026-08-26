@@ -723,7 +723,17 @@ pub fn build_atom_nf(z_count: u32, n_count: u32, h: f64) -> [f64; 6] {
             } else if ti == b'n' && tj == b'n' {
                 nf = hm(&nf, 1.0, -h, 0, h);          // nn: σ₀⁻¹
             } else {
-                nf = hm(&nf, 1.0, -half_h, 0, h);     // pn/np: mixed
+                // pn/np interface. This reproduces the `-half_h` that used
+                // to be inlined here, bit-identically — the point of naming
+                // the convention is that `GRAM_PN_CONVENTION` is NOT the
+                // canonical one: bring_color_weighted differs by h*delta/4.
+                // `build_atom_nf` carries only `h`, hence the h-only entry
+                // point, which needs no inversion for this convention.
+                let d_pn = crate::color_weight::pn_offset_from_h(
+                    h,
+                    crate::color_weight::GRAM_PN_CONVENTION,
+                );
+                nf = hm(&nf, 1.0, d_pn, 0, h);
             }
         }
     }
@@ -885,7 +895,13 @@ pub fn atom_per_generator_volumes(
             } else if nuc == b'n' && next_nuc == b'n' {
                 (1.0, -h, m_nn.unwrap_or(crossings_per_pair))
             } else {
-                (1.0, -0.5 * h, m_pn.unwrap_or(crossings_per_pair))
+                // pn/np interface — see the note in `build_atom_nf`; same
+                // convention, same bit-identical value, `q` in scope here.
+                let d_pn = crate::color_weight::pn_offset(
+                    q,
+                    crate::color_weight::GRAM_PN_CONVENTION,
+                );
+                (1.0, d_pn, m_pn.unwrap_or(crossings_per_pair))
             };
             for _ in 0..m {
                 states[i].apply(c, d, h, q, qi);

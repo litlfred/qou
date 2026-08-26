@@ -11,6 +11,28 @@ $T_1 = \mathrm{diag}(q, -q^{-1})$ contributes eigenvalues:
 | nn ($\sigma^{-1}$) | $(1, -h)$ | $q^{-1}$ | $-q$ |
 | pn (mixed) | $(1, -h/2)$ | $[2]/2$ | $-[2]/2$ |
 
+The pn row uses $d = -h/2$, the $\delta = 0$ convention. Under the
+colour-tube-weighted interface factor $d = -h(1/2 - \delta/4)$, with
+$\delta$ the substrate flavour split of
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate), *both* pn
+eigenvalues shift by the same $+h\delta/4$:
+
+$$
+  \lambda_{\mathrm{sym}} = \frac{[2]}{2} + \frac{h\delta}{4},
+  \qquad
+  \lambda_{\mathrm{anti}} = -\frac{[2]}{2} + \frac{h\delta}{4},
+  \qquad
+  \lambda_{\mathrm{sym}} + \lambda_{\mathrm{anti}}
+    = \frac{h\delta}{2}
+    = \frac{(q-1)^4 (q+1)^2 (q^2+1)}{6 q^5}.
+$$
+
+So the exact antisymmetry $\lambda_{\mathrm{anti}} = -\lambda_{\mathrm{sym}}$
+is a property of $\delta = 0$, not of the pn crossing as such, and the
+factorisation of $\Lambda_{\mathrm{sym}}$ below as a power of $[2]/2$ is
+conditional on that convention. The shift is $h\delta/4 \approx 7.190 \times
+10^{-5}$ at the substrate anchor.
+
 The symmetric channel product over all crossings on $T_1$:
 
 $$
@@ -41,8 +63,8 @@ Taking the logarithm and substituting $Z = A/2 + T$, $N = A/2 - T$:
 
 $$
   \ln|\Lambda_{\mathrm{sym}}|
-  = \ell \cdot T(A - 1)
-  + \ell_2 \cdot (A^2/4 - T^2)
+  = \ell \cdot T(A - 1) +
+  \ell_2 \cdot (A^2/4 - T^2)
 $$
 
 Expanding gives the four terms (I)--(IV).
@@ -60,9 +82,9 @@ evaluates to:
 
 $$
   \mathrm{tr}_M(q^c)
-  = W_{\mathrm{sym}} \cdot q^c
-  + W_{\mathrm{std}} \cdot \frac{\sum_{j=0}^{c} q^{c-2j}}{2}
-  + W_{\mathrm{alt}} \cdot q^{-c}
+  = W_{\mathrm{sym}} \cdot q^c +
+  W_{\mathrm{std}} \cdot \frac{\sum_{j=0}^{c} q^{c-2j}}{2} +
+  W_{\mathrm{alt}} \cdot q^{-c}
 $$
 
 The middle term is $[c{+}1]_q/2$, giving the $[c{+}1]$ factor in
