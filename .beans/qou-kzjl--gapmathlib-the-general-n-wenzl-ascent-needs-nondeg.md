@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T16:31:07Z
-updated_at: 2026-08-26T17:19:52Z
+updated_at: 2026-08-26T17:48:41Z
 ---
 
 Parent theme: qou-2c4t (A1 tower induction via Wenzl). Found 2026-08-26 while
@@ -96,3 +96,53 @@ Two caveats, both of which matter more than the instance itself:
    suggests the class as stated is weaker than the induction it was named for.
 
 Landed on PR #5842 (folded in from #5840, which is superseded).
+
+
+## RETRACTED 2026-08-26 (same day) — the corpus already had the prerequisite
+
+The section immediately above is WRONG in its conclusion and is retracted. The
+Mathlib measurement in it stands; what does not stand is "so it is proved here
+rather than imported".
+
+`QOU/MathlibExt/SemisimpleOfNondegenerateTrace.lean` re-derived a result this
+corpus has carried since brick B3d (epic qou-hnhg). All three declarations
+already existed, in the same directory:
+
+  algTrace                        -> regTraceForm            TraceNilpotent.lean:51
+  algTrace_eq_zero_of_isNilpotent -> trace_lmul_eq_zero_of_isNilpotent  :59
+  isSemisimpleRing_of_trace_nondegenerate
+      -> isSemisimpleRing_of_regTraceForm_nondegenerate  TraceFormSemisimple.lean:54
+
+Same proof, same three Mathlib citations. The existing file is literally named
+TraceFormSemisimple.lean. The one thing I flagged as a noteworthy discovery --
+that no characteristic assumption is needed -- is already in its docstring, as
+"a field is reduced".
+
+**The failure mode, stated plainly so it is greppable.** I cloned Mathlib and
+source-greped it exhaustively, discharging this bean's own caveat properly, and
+then treated "Mathlib lacks it" as "the corpus lacks it". AGENTS.md checklist
+path 2 is `grep -rln <topic> content/` over the whole tree and I never ran it.
+The thoroughness of the Mathlib search is what made the conclusion feel earned:
+a rigorous search of the WRONG corpus produces more confidence than a sloppy
+one, not less.
+
+Found only when starting the follow-on work and greping content/ for "markov" --
+the first listing showed TraceFormSemisimple.lean sitting in MathlibExt/.
+
+## What actually survives
+
+The duplicate is deleted. `wenzlTowerStep_regTrace` (renamed from
+_algTrace) is re-pointed at the existing theorem and is an ADAPTER: it bridges
+WenzlTowerStep's existential nondegeneracy to the corpus theorem's left-kernel
+form. The class is no longer instance-free and hypothesis 1 is still redundant,
+but no semisimplicity is proved by this branch.
+
+## Correction to the "not closed" note above
+
+That note names qou-2c4t as the live parent. qou-2c4t is COMPLETED; the
+in-progress carrier is qou-vndn ("Bridge stage 2: Hecke radical vanishing from
+Wenzl criterion"). Also relevant and already in the corpus:
+`isSemisimpleRing_of_qGeneric` (HeckeGenericSemisimple.lean), which reaches
+semisimplicity of H_n(q) from q-genericity conditional on the Gram-factorial
+equivalence -- i.e. part of the follow-on I was about to start was also already
+done.
