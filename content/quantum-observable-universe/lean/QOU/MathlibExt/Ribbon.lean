@@ -107,6 +107,38 @@ theorem inv_twist_naturality {X Y : C} (f : X ⟶ Y) :
     inv (twist X) ≫ f = f ≫ inv (twist Y) := by
   rw [IsIso.inv_comp_eq, ← Category.assoc, IsIso.eq_comp_inv, twist_naturality]
 
+/-- **The twist on a three-fold tensor carries no irreducible three-body datum.**
+
+Unfolding the balancing axiom twice: `θ_{X ⊗ Y ⊗ Z}` is built entirely from **pairwise** braidings
+(`β_{X, Y⊗Z}`, `β_{Y⊗Z, X}`, `β_{Y,Z}`, `β_{Z,Y}`) and **single-object** twists
+(`θ_X`, `θ_Y`, `θ_Z`).  Nothing in it depends on the three objects jointly in a way that is not
+already a composite of two-object data.  Three is the first arity at which a genuine many-body term
+*could* appear, and it does not.
+
+## Scope of the resulting prune (read before citing this downstream)
+
+This is a **structural** fact about the ribbon datum, in the sense of the "(b) structural exclusion"
+tier: the invariant is the balancing axiom itself, stated above and cited here.  What it excludes is
+precise and narrow:
+
+* it **does** exclude any weight *defined as a composite of twists and braidings* on an `A`-fold
+  tensor from carrying an irreducible three-or-more-body contribution — such a composite is always
+  per-object data together with pairwise data;
+* it **does not** exclude the missing super-pairwise additive term in the many-body binding
+  magnitude.  That term is not claimed here to be ribbon-derived, and if it is not, this says
+  nothing about it.
+
+The bridge between the two is a question about *how the binding weight is defined*, not a question
+about ribbon categories, and it is deliberately left open here.  What the lemma does supply, if that
+bridge is made, is a reason of the right kind: the pairwise cap `ρ_A ≤ C(A,2)` recorded in the
+mass-theory development has exactly the shape this decomposition predicts — `C(A,2)` is the number
+of pairwise braidings the iterated balancing axiom produces. -/
+theorem twist_tensor_three (X Y Z : C) :
+    twist (X ⊗ Y ⊗ Z)
+      = (β_ X (Y ⊗ Z)).hom ≫ (β_ (Y ⊗ Z) X).hom
+        ≫ (twist X ⊗ₘ ((β_ Y Z).hom ≫ (β_ Z Y).hom ≫ (twist Y ⊗ₘ twist Z))) := by
+  rw [twist_tensor X (Y ⊗ Z), twist_tensor Y Z]
+
 /-- **The balancing axiom is consistent with `θ_𝟙 = 𝟙`.**  Specialising `twist_tensor` at
 `Y = 𝟙_C` and transporting along the right unitor recovers exactly naturality, so the unit case
 imposes no constraint beyond the two axioms.  Derived — this is a check on the axiom set, not a new
