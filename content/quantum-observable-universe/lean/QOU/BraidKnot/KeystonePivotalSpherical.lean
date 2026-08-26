@@ -60,14 +60,9 @@ string-diagram coherence argument (`ribbon ⇒ spherical`, Deligne/Yetter; Bakal
 ch. 2). It is **not** proved here and **not** axiomatised — it is an explicit hypothesis
 of the conditional theorem, and stays open in bean `rtqd`.
 
-One step of it has since been taken, and it is worth stating precisely what that step is
-*not*. `QOU.MathlibExt.drinfeldIso` proves `X ≅ Xᘁᘁ` **unconditionally** in any braided
-right-rigid category, by uniqueness of duals: `BraidedCategory.exactPairing_swap` makes
-`X` a right dual of `Xᘁ`, `Xᘁᘁ` is the chosen one, and `rightDualIso` compares them. That
-supplies the *isomorphism*. It does **not** supply its **naturality**, which is what a
-`PivotalCategory` instance requires and what the transport lemma consumes — attempted and
-not obtained; the goal unfolds to a Whitney-move coherence identity of the same shape as
-Mathlib's own `coevaluation_evaluation_braided'`, not to a rewrite of the pieces. This file does **not** close
+The pivotal *structure* is no longer part of that residual. `QOU.MathlibExt.pivotalOfBraided`
+proves every braided right-rigid category pivotal, sorry-free. What remains is the transport
+identity itself, which is about the traces rather than about the double dual. This file does **not** close
 `bwse`, and adds no physics. No fit; nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
@@ -99,10 +94,15 @@ isomorphism `𝟭 C ≅ ᘁᘁ` — with `PivotalCategory.ofPointwise` and `Pivo
 showing the two presentations carry the same data.  That file also supplies the `rightDualFunctor` /
 `doubleDualFunctor` the functorial statement needs, which Mathlib does not have either.
 
-That move also puts a concrete candidate for `hTransport` below within reach: `drinfeldIso` proves
-`X ≅ Xᘁᘁ` unconditionally in any *braided* right-rigid category, from uniqueness of duals.  What it
-does not yet prove is that iso's **naturality**, which is what would make it a `PivotalCategory`
-instance — so the hypothesis below is still carried, not discharged.
+**The pivotal structure now exists.** `QOU.MathlibExt.pivotalOfBraided` makes **every braided
+right-rigid category pivotal**, unconditionally and sorry-free: the pivotor is `drinfeldIso`, and
+its naturality is `drinfeldIso_naturality`.  So the datum this file's docstring describes as
+"the infra Mathlib lacks" is supplied, and it is supplied for the whole class of categories the
+keystone cares about rather than for one example.
+
+That does **not** discharge `hTransport` below.  The transport identity
+`qDimObj (Xᘁ) = leftQDim X` is a statement about the two *traces*; having the pivotor is a
+prerequisite for it, not a proof of it.  The hypothesis is still carried.
 -/
 
 /-- **Sphericality**, in the standard form: the left and right quantum dimensions agree on

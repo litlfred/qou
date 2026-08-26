@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-26T16:06:07Z
+updated_at: 2026-08-26T16:38:08Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -168,3 +168,20 @@ one.
 **Net: both routes to the instance are Mathlib-contribution-sized.** Neither is a
 tidy-up. Whoever takes this should pick on interest, not on expected cost -- and should
 know the FGModuleCat one begins with subcategory plumbing rather than with duality.
+
+
+
+## The pivotal structure now EXISTS (2026-08-26)
+
+`QOU.MathlibExt.pivotalOfBraided`: every braided right-rigid category is pivotal,
+unconditional and sorry-free, pivotor = drinfeldIso, naturality =
+drinfeldIso_naturality. See qou-knsx for why my "Whitney move" estimate was wrong.
+
+**This bean is NOT closed by that.** What it needs is the pivotal TRANSPORT identity
+qDimObj (Xdual) = leftQDim X, which is a statement about the two TRACES. Having the
+pivotor is a prerequisite for stating and proving it, not a proof of it. The
+hypothesis in qDim_conj_of_pivotalTransport is still carried, not discharged.
+
+What did change: the blocker recorded in KeystonePivotalSpherical.lean -- "a pivotal
+structure is required, and Mathlib provides no such class" -- is gone. The next step
+is the transport lemma itself, now expressible on data that exists.
