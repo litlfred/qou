@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-08-26T06:47:15Z
+updated_at: 2026-08-26T07:20:14Z
 ---
 
 
@@ -32,3 +32,21 @@ Also relevant: there are THREE disconnected formalizations of Markov-trace cycli
   3. this module -- proved conditionally, orphan.
 
 None is wired to another. Re-scope this bean to the wiring, not the assembly.
+
+LIFT DELIVERED 2026-08-26 (qou-k5jt): QOU/Machinery/MarkovCosetLift.lean.
+
+The step MarkovInductiveCyclicity's header names as 'the only step not mechanised in Lean' -- the linear lift of the single-coset grounding lemmas to a general w = a + sum b_i f c_i -- is now proved, sorry-free:
+
+  tr_finset_sum             tr additive over a Finset sum
+  gwg_trace_lower_shape     lower coset in E-shape (hh = hbar . 1)
+  gwg_trace_mid_shape       mid coset in E-shape, via f^2 = 1 + hbar.f
+  gwg_trace_cosetSum        THE LIFT -- supplies hgwg for w in coset form
+  ce_trace_cosetSum         supplies hCE the same way
+
+#print axioms: all five clean; two need only propext.
+
+Needed [Algebra R A], which MarkovInductiveCyclicity deliberately lacks. That absence is WHY E had to stay an interface there: E(b.f.c) = z.b.c is not expressible without a scalar action, so the traced identity could only be assumed. The added instance weakens nothing -- every intended instance has it.
+
+STILL OPEN, unchanged: cyclic_two_g remains conditional. Instantiating needs a concrete tower (algebra, memB, a trace with the Markov property, and a coset decomposition of each w). Conditional-proved is not premise-established.
+
+CORRECTION to my own framing in PR #5820: I called MarkovInductiveCyclicity 'an ORPHAN -- 0 importers corpus-wide' as if notable. True, but the base rate guts it: 86 modules on disk under QOU/Machinery/, only 23 registered in QOU.lean. Being unregistered is the local norm, not evidence of abandonment. The new module is left unregistered for consistency.

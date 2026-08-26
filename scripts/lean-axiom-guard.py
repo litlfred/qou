@@ -199,6 +199,18 @@ QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand 
 QOU.Archimedean.BorromeanVolumeCatalan | QOU.Archimedean.lobachevsky_pi_div_four_eq_half_catalan | clean
 QOU.Archimedean.WhiteheadVolumeCatalan | QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky | clean
 
+# --- the coset-sum lift: the step MarkovInductiveCyclicity's header says is NOT mechanised ---
+# That header states "The **only** step not mechanised in Lean is the linear lift of the two
+# single-coset grounding lemmas to the general E on an arbitrary w = a + sum b_i f c_i".
+# These five are that lift. Pinned because the module is CONDITIONAL: its value is entirely
+# in the hypotheses being genuine tower relations rather than the conclusion in disguise, and
+# that property is exactly what a careless edit destroys while leaving the file compiling.
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.tr_finset_sum | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_lower_shape | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_mid_shape | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.gwg_trace_cosetSum | clean
+QOU.Machinery.MarkovCosetLift | QOU.Machinery.MarkovInductive.ce_trace_cosetSum | clean
+
 # --- the Markov-trace linearity chain: an AXIOM until 2026-08-26, now a theorem ---
 # `markovTrace_linear` asserted that an `opaque` function on `HeckeElement n` is linear.
 # `HeckeElement n` is not opaque -- it abbreviates `EuclideanSpace ℝ (Fin n!)` -- so by
