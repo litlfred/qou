@@ -229,10 +229,9 @@ rank-2 `HeckeH2Wedderburn`) realize its conclusion concretely at
 `n = 2, 3` without the tower machinery. OPEN — no instance; proving this
 class's field for symmetric-group Coxeter data is exactly the general-`n`
 target the explicit-Wedderburn route cannot reach. -/
-class WenzlTowerStep (R : Type*) [Field R] (q : R)
+class WenzlTowerStep (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (trn1 : Hn1 → R) : Prop where
   /-- Semisimplicity ascends along a nondegenerate Markov trace. -/
   semisimple_ascend :
