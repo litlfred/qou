@@ -194,7 +194,15 @@ def _output_name(scan_root: Path | None) -> str:
 #: reported backlog, which is what makes a future NEW trustworthy. Same shape
 #: as the 2026-08-24 integral-float reclassification, and reported the same
 #: way: as a reclassification, never as draining.
+#: True iff `_EPHEMERAL_META_FIELDS` was importable.  When False the carve-out
+#: is empty BY DESIGN (see below) and every count in this audit is degraded in
+#: the STRICT direction -- correct as a gate, wrong to persist.  See bean
+#: `qou-qvg6`.
+EPHEMERAL_PROVENANCE_OK = True
+
+
 def _ephemeral_timing_fields() -> frozenset[str]:
+    global EPHEMERAL_PROVENANCE_OK
     try:
         import sys as _s
         from pathlib import Path as _P
@@ -221,6 +229,15 @@ def _ephemeral_timing_fields() -> frozenset[str]:
     except Exception:
         # Never let provenance-import failure silently widen the gate: an empty
         # set carves out nothing, so the audit stays STRICTER, not looser.
+        #
+        # That is right for the GATE and is deliberately unchanged.  What is
+        # NOT right is persisting the degraded numbers: `qou_substrate` is not
+        # on PyPI, so a bare container -- the DEFAULT per AGENTS.md -- silently
+        # produces dirty_witnesses UP and drained_files DOWN, and any agent
+        # committing the result pushes a fake drain reversal into the ratchet
+        # everyone reads as the baseline.  Baselines drain, never grow.
+        # The refusal to write lives at the `out.write_text` call below.
+        EPHEMERAL_PROVENANCE_OK = False
         return frozenset()
 
 
@@ -879,6 +896,22 @@ def main() -> int:
         print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
 
     out = HERE / _output_name(scan_root)
+    if not EPHEMERAL_PROVENANCE_OK:
+        # Gate still gated (the exit code below is unchanged); witness NOT
+        # written, because these counts are import-degraded.  Bean `qou-qvg6`.
+        print(
+            "\n  !! WITNESS NOT WRITTEN — provenance import failed.\n"
+            "     `qou_substrate.witness._EPHEMERAL_META_FIELDS` is "
+            "unavailable, so the runtime-duration carve-out is EMPTY and\n"
+            "     every count above is degraded in the strict direction "
+            "(dirty UP, drained DOWN). The gate result stands; the\n"
+            "     numbers are not the corpus baseline and must not be "
+            "committed. Install the package to regenerate:\n"
+            "       pip install -e tools/qou-substrate\n"
+            "     (bean qou-qvg6)",
+            file=sys.stderr)
+        # SAME verdict as the write path below — the gate is unchanged.
+        return 1 if (args.strict and (new_files or grew)) else 0
     out.write_text(json.dumps({
         "schema": "witness/v1",
         "name": "witness-raw-float64-audit",
