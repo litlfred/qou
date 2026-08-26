@@ -91,7 +91,6 @@ KNOWN_C = [
     ("BraidGroupNStrand", "markovZN", "C-sqrtvar"),
     ("BraidGroupNStrand", "markovZN_legacy", "C-plain"),
     ("BraidImageEigenphaseExclusion", "zC", "C-sqrtvar"),
-    ("ClosedFormInterfaceFactors", "markovZ", "C-sqrtvar"),
     ("EigenphaseCarrierVacuity", "markovZ", "C-plain"),
     ("GramMatrixH3Symbolic", "gramEntry", "C-sqrtvar"),
     ("HoefsmitV21CosSymmetrization", "markovZ", "C-sqrtvar"),
