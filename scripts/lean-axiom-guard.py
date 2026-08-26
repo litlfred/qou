@@ -314,6 +314,25 @@ QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃ | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_pos | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃_pos | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_eq | clean
+
+# --- W3 tower bridge (PR #5827, bean qou-r765) -----------------------------
+# These are CONDITIONAL on HeckeTower.HeckeConditionalExpectation, which has no
+# instance. They are pinned for the same reason #5822's coset lift is: their
+# whole value is that the hypotheses are genuine tower relations rather than the
+# conclusion in disguise, and that is exactly what a careless edit destroys
+# while leaving the file compiling.
+#
+# hCE_fails_without_conditional_expectation is the necessity direction -- it
+# proves the identity is FALSE for a linear map that is not a conditional
+# expectation. If it ever stops being clean, the "derivation" has become a
+# decoration.
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_mul | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_one | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.memB_towerE | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.epsilon_inclusion_mul | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.towerTrace_mul_eq_of_memB | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.cyclic_two_g_of_tower | clean
+QOU.Machinery.MarkovTowerBridge | QOU.Machinery.MarkovTowerBridge.hCE_fails_without_conditional_expectation | clean
 """
 
 
