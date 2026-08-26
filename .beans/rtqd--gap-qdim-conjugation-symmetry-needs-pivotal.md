@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-02T00:00:00Z
+updated_at: 2026-08-26T15:56:26Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -90,3 +90,40 @@ Deligne/Yetter, Bakalov-Kirillov ch.2). NOT proved, NOT axiomatised, NOT sorry'd
 explicit hypothesis of the conditional theorems. So the state moved from "not expressible on the
 available data" to "expressible, and one named classical lemma from closing".
 Does NOT close bwse; nothing wired; L2 unchanged.
+
+
+
+## Progress 2026-08-26 (branch claude/8-fold-way-qou-k4e8ch)
+
+The gap narrowed by one named step, and it is worth recording exactly which step.
+
+**Closed: the isomorphism.** `QOU.MathlibExt.drinfeldIso` proves `X` is isomorphic to
+its double dual, unconditionally, in ANY braided right-rigid category:
+
+    noncomputable def drinfeldIso (X : C) : X = ((X : C)-dual : C)-dual :=
+      rightDualIso (BraidedCategory.exactPairing_swap X X-dual) (HasRightDual.exact (X := X-dual))
+
+Uniqueness of duals, twice: `exactPairing_swap` turns the pairing `X` / `X-dual` around,
+so `X` is a right dual OF `X-dual`; `X-dual-dual` is the chosen one; `rightDualIso`
+compares them. Sorry-free, `#print axioms` clean.
+
+**Still open: its NATURALITY.** `f >> drinfeldIso Y = drinfeldIso X >> ((f-mate)-mate)`
+is what a `PivotalCategory` instance needs and what the transport hypothesis consumes.
+Attempted; not obtained. `simp [drinfeldIso, rightDualIso, rightAdjointMate]` unfolds it
+to a ~20-term string-diagram identity of the same shape as Mathlib's own
+`coevaluation_evaluation_braided'` (a transcribed Whitney move built on `yang_baxter`).
+It is a real coherence proof, not a rewrite of the pieces. Mathlib has NO naturality
+lemma for `rightDualIso` at all -- the only lemma about it is `rightDualIso_id`.
+
+**Infrastructure now in place for whoever takes it.**
+`QOU/MathlibExt/PivotalCategory.lean` carries `rightDualFunctor : Cop => C`,
+`doubleDualFunctor : C => C`, and `PivotalCategory` in the shape Mathlib's own
+"Future work" list asks for (a natural iso `id C = double-dual`), plus
+`PivotalCategory.ofPointwise` so a pointwise string-diagram proof lands directly.
+`PivotalStructure` (the old pointwise class in `KeystonePivotalSpherical.lean`) is
+retired in its favour; it had zero consumers.
+
+**Cheapest concrete route** if the coherence proof stalls: `FGModuleCat K` is Mathlib's
+one `RightRigidCategory` instance, and there the pivotor is `Module.evalEquiv`, whose
+naturality is already available. That gives a genuine `PivotalCategory` instance without
+the general braided argument.

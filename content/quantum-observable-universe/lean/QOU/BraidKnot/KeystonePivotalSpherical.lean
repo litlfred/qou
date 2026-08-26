@@ -21,11 +21,17 @@ beaning it*, this file builds it.
   braiding `(β_ Xᘁ X).inv` in place of `(β_ X Xᘁ).hom`. A genuinely different morphism
   from `qDimObj` (the right dimension); the two coincide exactly when the category is
   spherical.
-* `PivotalStructure` — the missing class: a natural isomorphism `X ≅ Xᘁᘁ` with the
-  naturality square against double mates. Content-bearing; it does **not** carry
-  `qDimObj (Xᘁ) = qDimObj X` as a field (that would be the self-assuming projection
-  §3b-cond item 5 forbids).
 * `SphericalStructure` — the standard "left trace = right trace" class.
+
+`PivotalStructure` used to be built here too. It has **moved** to
+[`QOU/MathlibExt/PivotalCategory.lean`](../MathlibExt/PivotalCategory.lean), where it is
+`PivotalCategory`, stated in the shape Mathlib's own "Future work" list asks for — a
+natural isomorphism `𝟭 C ≅ ᘁᘁ` — together with the `rightDualFunctor` /
+`doubleDualFunctor` that shape needs and Mathlib also lacks. It still does **not** carry
+`qDimObj (Xᘁ) = qDimObj X` as a field (that would be the self-assuming projection
+§3b-cond item 5 forbids). Moving it keeps the Mathlib-gap classes in one upstreamable
+place and, more to the point, avoids the duplicate the ribbon layer had accumulated:
+`RibbonCategory` had been declared twice under two namespaces before this tranche.
 
 ## What is proved
 
@@ -52,12 +58,22 @@ beaning it*, this file builds it.
 The residual is input 1, the pivotal transport lemma, whose classical proof is a
 string-diagram coherence argument (`ribbon ⇒ spherical`, Deligne/Yetter; Bakalov–Kirillov
 ch. 2). It is **not** proved here and **not** axiomatised — it is an explicit hypothesis
-of the conditional theorem, and stays open in bean `rtqd`. This file does **not** close
+of the conditional theorem, and stays open in bean `rtqd`.
+
+One step of it has since been taken, and it is worth stating precisely what that step is
+*not*. `QOU.MathlibExt.drinfeldIso` proves `X ≅ Xᘁᘁ` **unconditionally** in any braided
+right-rigid category, by uniqueness of duals: `BraidedCategory.exactPairing_swap` makes
+`X` a right dual of `Xᘁ`, `Xᘁᘁ` is the chosen one, and `rightDualIso` compares them. That
+supplies the *isomorphism*. It does **not** supply its **naturality**, which is what a
+`PivotalCategory` instance requires and what the transport lemma consumes — attempted and
+not obtained; the goal unfolds to a Whitney-move coherence identity of the same shape as
+Mathlib's own `coevaluation_evaluation_braided'`, not to a rewrite of the pieces. This file does **not** close
 `bwse`, and adds no physics. No fit; nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneRibbonMTCInput
+import QOU.MathlibExt.PivotalCategory
 
 namespace QOU.BraidKnot.PivotalSpherical
 
@@ -74,20 +90,20 @@ a category in which they agree for every object is *spherical*. -/
 noncomputable def leftQDim (X : C) : (𝟙_ C ⟶ 𝟙_ C) :=
   η_ X Xᘁ ≫ (β_ Xᘁ X).inv ≫ ε_ X Xᘁ
 
-/-- **The pivotal structure Mathlib lacks.** A natural isomorphism `X ≅ Xᘁᘁ` identifying
-each object with its double dual, compatible with morphisms via the double mate. This is
-the datum whose absence blocks `qDimObj (Xᘁ) = qDimObj X` from even being expressible on
-the `η_` / `ε_` / `β_` / `rightAdjointMate` data.
+/-! ### The pivotal structure
 
-The fields are the *standard* pivotal axioms — the isomorphism and its naturality square.
-The class deliberately does **not** carry the conjugation symmetry as a field. -/
-class PivotalStructure (C : Type*) [Category C] [MonoidalCategory C]
-    [RightRigidCategory C] where
-  /-- The pivotor: each object is identified with its double dual. -/
-  pivotor : ∀ X : C, X ≅ (Xᘁ)ᘁ
-  /-- Naturality: the pivotor commutes with the double right-adjoint mate. -/
-  pivotor_naturality : ∀ {X Y : C} (f : X ⟶ Y),
-    f ≫ (pivotor Y).hom = (pivotor X).hom ≫ (fᘁ)ᘁ
+`PivotalStructure` used to be declared here, pointwise: a `∀ X, X ≅ Xᘁᘁ` plus a naturality field.
+It has moved to [`QOU/MathlibExt/PivotalCategory.lean`](../MathlibExt/PivotalCategory.lean) as
+`PivotalCategory`, stated the way Mathlib's own "Future work" list asks for it — a natural
+isomorphism `𝟭 C ≅ ᘁᘁ` — with `PivotalCategory.ofPointwise` and `PivotalCategory.pivotor_naturality`
+showing the two presentations carry the same data.  That file also supplies the `rightDualFunctor` /
+`doubleDualFunctor` the functorial statement needs, which Mathlib does not have either.
+
+That move also puts a concrete candidate for `hTransport` below within reach: `drinfeldIso` proves
+`X ≅ Xᘁᘁ` unconditionally in any *braided* right-rigid category, from uniqueness of duals.  What it
+does not yet prove is that iso's **naturality**, which is what would make it a `PivotalCategory`
+instance — so the hypothesis below is still carried, not discharged.
+-/
 
 /-- **Sphericality**, in the standard form: the left and right quantum dimensions agree on
 every object. (Equivalently, the left and right traces agree — here specialised to the
