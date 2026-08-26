@@ -3451,3 +3451,114 @@ word; the corpus has that only for torus patterns
 
 **Sample limits:** twelve words, all on 2 or 3 strands, one cabling degree
 (`ℓ = 4`, the 2-parallel). None of them is the atom word.
+
+---
+
+## Addendum 38 — the colour bridge is exact; and §F's numbers were read off channels the trace cannot see
+
+Setting up the colour question surfaced a defect in §F first, so this addendum
+reports that before the colour result.
+[`alpha_shift_by_colour_probe.py`](../../computations/meson/alpha_shift_by_colour_probe.py),
+7/7.
+
+### 🛑 The defect: `α_shift` is a max over ALL λ, and the maximizer can be in the radical
+
+`prop:alpha-shift-torus-knot` defines `α_shift(K) := max_{λ ⊢ n} ord⁽⁻⁾_{q=0}
+χ_λ(β_K)` — a max over **every** partition — and its maximizer is the all-column
+`(1ⁿ)`. But `ℓ((1ⁿ)) = n`, so for `n > 2` that channel sits in the
+**Temperley–Lieb radical**, where `y_λ = 0` and the Markov trace cannot see it
+(§A, `prop:markov-trace-frobenius-selection` (iii), unconditional).
+
+Two different quantities, and §F used the first while arguing about what the
+second controls:
+
+| | definition | what it is |
+|---|---|---|
+| `α_shift` | max over **all** `λ ⊢ n` | the corpus's definition |
+| `α_shift^supp` | max over `ℓ(λ) ≤ 2` only | what `tr_M` can see under convention D |
+
+**Control first:** T(3,5) reproduces the committed `α_shift = 10` at `(1,1,1)`
+— method matches `alpha-shift-torus.witness.json` — and that maximizer has
+`ℓ = 3`, i.e. it is already in the radical for the corpus's own headline
+example.
+
+**Measured on §F's candidates — 3 of 5 attain `α_shift` in the radical:**
+
+| candidate | `n` | `α_shift` | `λ*` | `ℓ` | `α^supp` | `λ*_supp` | overstated by |
+|---|---:|---:|---|---:|---:|---|---:|
+| `I1` `σ₁` (current) | 2 | 1 | `(1,1)` | 2 | **1** | `(1,1)` | — |
+| `I3` `σ₁²` clasp | 2 | 2 | `(1,1)` | 2 | **2** | `(1,1)` | — |
+| `I4` fan | 4 | 3 | `(1,1,1,1)` | **4** | **0** | `(4,)` | **3** |
+| `I2` block | 4 | 4 | `(1,1,1,1)` | **4** | **2** | `(2,2)` | **2** |
+| `I5` doubled | 4 | 8 | `(1,1,1,1)` | **4** | **4** | `(2,2)` | **4** |
+
+### §F's conclusion survives; several of its numbers do not
+
+Recomputing the exponent column with `α^supp`:
+
+| candidate | §F's exponent | corrected |
+|---|---:|---:|
+| `I1` (current) | 40 | **40** |
+| `I3` clasp | 41 | 41 |
+| `I4` fan | 42 | **39** |
+| `I2` block | 43 | **41** |
+| `I5` doubled | 47 | **43** |
+
+**Every candidate but the current one still moves the exponent** (4 of 4), so
+§F's conclusion — *the interface is pinned to exactly one crossing* — holds.
+What does not hold is three of its tabulated figures, and `I4` moves the
+exponent **down** (39) rather than up. The §F table should be read as
+directionally right and numerically overstated wherever `ℓ(λ*) > 2`.
+
+**This is not a defect in `prop:alpha-shift-torus-knot`.** That proposition is a
+correct statement about `χ_λ`. The defect is in *my* use of it: in a
+convention-D / `tr_M` context the relevant quantity is the support-restricted
+max, and I did not check where the max was attained.
+
+**A caution for `conj:confinement-nf-structure-forcing`, stated carefully.** Its
+claim T₁ is that the Wedderburn maximizer *"resides strictly inside the active
+set A"* — so the conjecture already asks for the maximizer to be in the support.
+The measurement above shows the global argmax **can** sit outside it (T(3,5)),
+so **T₁ is a substantive claim rather than an automatic one.** T(3,5) is not a
+compound braid `β₁ ⋆ I ⋆ β₂` under the confinement hypothesis, so this is *not*
+a counterexample — only evidence that T₁ has content.
+
+### The colour bridge, which is what was asked for
+
+**Exact, and already in the corpus's own arithmetic.** Schur–Weyl sends the
+`n`-strand Hecke decomposition to `λ ⊢ n`; for `sl₂` only two-row `λ` survive,
+and the convention-D weight is `y_{(n−k,k)} = [n−2k+1]_q / [2]_q^n`. **The index
+`n − 2k + 1` in that `q`-integer is the colour** — the channel's quantum
+dimension. So
+
+$$\lambda = (n-k,\,k) \quad\longleftrightarrow\quad N = n - 2k + 1,
+  \qquad k = \tfrac{n+1-N}{2}.$$
+
+A two-row partition and an `sl₂` colour are the same datum. No new machinery is
+needed to ask the colour question — it is a relabelling of per-λ pole orders.
+
+### Why it cannot be tested yet, and the obstacle is not conceptual
+
+Measured colour profiles:
+
+| word | `(N, α)` |
+|---|---|
+| `I2` block | `(1, 2), (3, 0), (5, 0)` |
+| `I5` doubled | `(1, 4), (3, 0), (5, 0)` |
+
+**A braid on `n` strands admits only `⌊n/2⌋+1` colours.** At `n = 4` that is
+`N ∈ {1,3,5}` — three points. Kalfagianni–Tran's law is *quadratic* in `N`
+(`d±[J_K(n)]` are quadratic quasi-polynomials), which has three coefficients. So
+at these strand numbers a quadratic can be **fitted and not tested**, and this
+addendum fits nothing.
+
+Getting more colours means more strands, which is exactly the wall §H hit: the
+two-row block `(9,9)` at 18 strands is alone 4862-dimensional. **The obstacle is
+computational, not conceptual** — the object is well-defined, the bridge is
+exact, and the measurement is out of reach by dense linear algebra at the strand
+numbers the colour law needs.
+
+The honest next step is therefore not a bigger sweep but a **closed form**: the
+corpus has `α_shift` in closed form only for torus patterns
+(`prop:alpha-shift-torus-knot`), and what a colour law needs is `α_shift(K, N)`
+for the atom word. That is a derivation, and nothing here supplies it.
