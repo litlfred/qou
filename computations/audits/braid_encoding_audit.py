@@ -101,7 +101,11 @@ def crossing_label(c: float, d: float, h: float) -> str:
         return "½(σ+σ⁻¹)"
     if abs(c) < eps and abs(d - 1.0) < eps:
         return "𝟏"
-    return f"({c:.4f}σ+{d:.4f}𝟏)"
+    # DISPLAY ONLY. `c`/`d` arrive as mpmath.mpf since the exact-word
+    # change (PR #5745); mpf has no __format__ for ".4f". The comparisons
+    # above stay in mpf — only the fallback label is coerced, which is a
+    # string, not a computed quantity.
+    return f"({float(c):.4f}σ+{float(d):.4f}𝟏)"
 
 
 def particle_braid_inventory() -> dict:
@@ -433,7 +437,11 @@ def cross_check_tr_M() -> dict:
             "term1_atomic_total") is None,
         "phase_1_6_closed_form": ob_at_q0.get("proton"),
         "markov_trace_assembly_chain": chain_value,
-        "axiomatic_content_block": 1.63315,   # from markov-trace-axiomatic-closed-form.md
+        # markov-trace-axiomatic-closed-form.md, migrated to convention D
+        # (z = q^3/(q^2+1)) at the proton pin. The prior 1.63315 here was the
+        # convention-C / muon-pin value and disagreed with this audit's own
+        # upstream (phase_1_6_closed_form) by 15%.
+        "axiomatic_content_block": 1.88432,
     }
     out["neutron"] = {
         "strategy_3_tr_M": _s3("n"),
