@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:08:04Z
-updated_at: 2026-08-26T18:29:57Z
+updated_at: 2026-08-26T18:35:44Z
 ---
 
 Found 2026-08-26 while merging 124 commits of main into PR #5843. **Not that
@@ -178,3 +178,35 @@ raiser but never CALLS it"*; battery 8 → 9, all passing.
 **Cost: zero baseline growth.** Measured before applying — removing the clause
 surfaced no other findings on the current tree, because the one file it was
 hiding is the one already fixed. The correction is free.
+
+
+## CORRECTION 2026-08-26 — a sibling landed the same fix on main first
+
+The "FIXED" section above is written as though I fixed this. During the
+prepare-merge rebase, `computations/chi_sym_alt_closed_form.py` conflicted with
+**`18bb011854` on main — "fix(chi-sym-alt): the padding red was a producer that
+never raised its precision"**. Same diagnosis, same root cause, same
+`set_compute_dps()` call.
+
+**Resolved by taking main's version wholesale**, and my code change was then
+*fully superseded* — the replayed commit reduced to this bean file alone, 0
+lines of Python.
+
+**Theirs is better than mine in a way worth recording.** I hardcoded
+`set_compute_dps(60)` and `sp.Float(Q_50_DIGIT_STR, 60)`. They used the bare
+idempotent `set_compute_dps()` and `Q0 = mp.mpf(Q_50_DIGIT_STR)`, noting that
+`Q_50_DIGIT_STR` is **anchor-adaptive** — `q_parameter` rebinds it from the
+anchor witness under `QOU_Q0_ANCHOR=ideal` — so the swap fixes the precision
+*without pinning the producer to the proton pin*. My version would have pinned
+it. That is a real defect in my patch that theirs does not have.
+
+**What survives from this session on this bean is the detector fix**, which is
+in a different file and is not duplicated: `never_raises_dps_audit.py` counted
+an `ImportFrom` naming a raiser as raising precision, so it reported this exact
+producer clean throughout. That is why the defect reached main at all, and
+removing the clause is what stops the class recurring.
+
+Two independent agents converging on the same root cause within hours is the
+parallel-exploration policy working as intended (AGENTS.md §"Parallel
+exploration is valuable"). Recorded rather than quietly dropped, because the
+bean above reads as a solo finding and is not one.
