@@ -1,16 +1,32 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T15:52:09.797870+00:00",
-  "commitSha": "04aa8b235ea12a6ffa3ec459e03f755cd5602b55",
+  "computedAt": "2026-08-26T17:00:23.802265+00:00",
+  "commitSha": "08be62d06afa8f5010ecc2e5cca925f0e7401515",
   "assertions": [
     {
-      "name": "D: n_ud(atom_braid_word_3A) = 2A+1",
+      "name": "D: n_ud(atom_braid_word_3A) = 2A",
       "computed": 4,
-      "expected": 5,
-      "passed": false,
+      "expected": 4,
+      "passed": true,
       "tolerance": 0,
-      "source": "atom_braid_word_3A + classify_factor"
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "D: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "D: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.05583976726687045477603987819747999310493469238281250000000",
+      "expected": "-1.05583976726685824232276900147553533315658569335937500000000",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
     },
     {
       "name": "D: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
@@ -21,12 +37,28 @@
       "source": "direct character product vs closed form"
     },
     {
-      "name": "T: n_ud(atom_braid_word_3A) = 2A+1",
+      "name": "T: n_ud(atom_braid_word_3A) = 2A",
       "computed": 6,
-      "expected": 7,
-      "passed": false,
+      "expected": 6,
+      "passed": true,
       "tolerance": 0,
-      "source": "atom_braid_word_3A + classify_factor"
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "T: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "T: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.07903920001515474247355541592696681618690490722656250000000",
+      "expected": "-1.07903920001513609072674171329708769917488098144531250000000",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
     },
     {
       "name": "T: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
@@ -37,12 +69,28 @@
       "source": "direct character product vs closed form"
     },
     {
-      "name": "3He: n_ud(atom_braid_word_3A) = 2A+1",
+      "name": "3He: n_ud(atom_braid_word_3A) = 2A",
       "computed": 6,
-      "expected": 7,
-      "passed": false,
+      "expected": 6,
+      "passed": true,
       "tolerance": 0,
-      "source": "atom_braid_word_3A + classify_factor"
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "3He: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "3He: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.07903920001515607474118496611481532454490661621093750000000",
+      "expected": "-1.07903920001513609072674171329708769917488098144531250000000",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
     },
     {
       "name": "3He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
@@ -53,12 +101,28 @@
       "source": "direct character product vs closed form"
     },
     {
-      "name": "4He: n_ud(atom_braid_word_3A) = 2A+1",
+      "name": "4He: n_ud(atom_braid_word_3A) = 2A",
       "computed": 8,
-      "expected": 9,
-      "passed": false,
+      "expected": 8,
+      "passed": true,
       "tolerance": 0,
-      "source": "atom_braid_word_3A + classify_factor"
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "4He: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "4He: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.10274838215584658485113322967663407325744628906250000000000",
+      "expected": "-1.10274838215581971745393730088835582137107849121093750000000",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
     },
     {
       "name": "4He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
@@ -69,12 +133,12 @@
       "source": "direct character product vs closed form"
     }
   ],
-  "allPassed": false,
-  "durationMs": 45,
+  "allPassed": true,
+  "durationMs": 44,
   "computation": "chi-sym-alt-closed-form",
   "scriptFile": "chi_sym_alt_closed_form.py",
-  "scriptHash": "439e2b31de9a",
-  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
+  "scriptHash": "faef2162ff88",
+  "scriptCommitSha": "140dbaa34f80eba20d62d7a3d20966d77fc51fe1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,8 +172,14 @@
       {
         "atom": "D",
         "A": 2,
-        "expected_n_ud": 5,
+        "expected_n_ud": 4,
         "observed_n_ud": 4,
+        "expected_n_averaged": 5,
+        "observed_n_averaged": 5,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.05583976726685824232276900147553533315658569335937500000000",
+        "rel_error_exact": "0.0000000000000115665782342048169836725044143394014873308826493736312102101",
         "n_pure_sigma": 11,
         "n_pure_sigma_inv": 7,
         "chi_sym_direct": "1.55987019956415995380893946276046335697174072265625000000000",
@@ -121,8 +191,14 @@
       {
         "atom": "T",
         "A": 3,
-        "expected_n_ud": 7,
+        "expected_n_ud": 6,
         "observed_n_ud": 6,
+        "expected_n_averaged": 7,
+        "observed_n_averaged": 7,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.07903920001513609072674171329708769917488098144531250000000",
+        "rel_error_exact": "0.0000000000000172855136434718916762925940074495182789096787978611047265076",
         "n_pure_sigma": 16,
         "n_pure_sigma_inv": 12,
         "chi_sym_direct": "1.57691420262061843260426030610688030719757080078125000000000",
@@ -134,8 +210,14 @@
       {
         "atom": "3He",
         "A": 3,
-        "expected_n_ud": 7,
+        "expected_n_ud": 6,
         "observed_n_ud": 6,
+        "expected_n_averaged": 7,
+        "observed_n_averaged": 7,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.07903920001513609072674171329708769917488098144531250000000",
+        "rel_error_exact": "0.0000000000000185201931894341701039482965628455155341052645878718863059476",
         "n_pure_sigma": 18,
         "n_pure_sigma_inv": 10,
         "chi_sym_direct": "2.39368203855267402957451849943026900291442871093750000000000",
@@ -147,8 +229,14 @@
       {
         "atom": "4He",
         "A": 4,
-        "expected_n_ud": 9,
+        "expected_n_ud": 8,
         "observed_n_ud": 8,
+        "expected_n_averaged": 9,
+        "observed_n_averaged": 9,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.10274838215581971745393730088835582137107849121093750000000",
+        "rel_error_exact": "0.0000000000000243640322948416633820880444814447894131582972310212653610506",
         "n_pure_sigma": 23,
         "n_pure_sigma_inv": 15,
         "chi_sym_direct": "2.41983673013706424015367701940704137086868286132812500000000",

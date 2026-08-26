@@ -71,7 +71,18 @@ ATOMS = [
 
 
 def classify_factor(c: float, d: float) -> str:
-    """Return 'pure_sigma', 'pure_sigma_inv', or 'ud'."""
+    """Return 'pure_sigma', 'pure_sigma_inv', 'ud', or 'pn_color'.
+
+    `pn_color` used to fall through to the `other(...)` branch, where
+    `count_factor_types` filed it under a key nothing asserted on. It is the
+    colour-weighted p-n interface, `d = -h·(1/2 - δ/4)` with δ =
+    flavor_split_subleading(q₀) ≈ 0.001376 — averaged like a `ud` letter but
+    NOT equal to one, and there is exactly ONE of them per atom regardless of A.
+
+    The distinction is load-bearing, not cosmetic: see `closed_form_prediction`
+    below, where treating this letter as a `ud` letter is the entire source of
+    the ~5.11e-9 residual this producer reports.
+    """
     if abs(c - 1.0) > 1e-12:
         return f"other(c={c}, d={d})"
     if abs(d) < 1e-12:
@@ -80,15 +91,32 @@ def classify_factor(c: float, d: float) -> str:
         return "pure_sigma_inv"
     if abs(d - (-HA_VAL / 2)) < 1e-12:
         return "ud"
+    # Averaged but not exactly -h/2: the colour-weighted p-n interface. The
+    # window is wide (δ/4 ≈ 3.4e-4 of h) but far outside the 1e-12 `ud` test.
+    if abs(d + HA_VAL / 2) < abs(HA_VAL) * 1e-2:
+        return "pn_color"
     return f"other(c={c}, d={d})"
 
 
 def count_factor_types(word):
-    counts = {"pure_sigma": 0, "pure_sigma_inv": 0, "ud": 0}
+    counts = {"pure_sigma": 0, "pure_sigma_inv": 0, "ud": 0, "pn_color": 0}
     for c, d, _g in word:
         k = classify_factor(c, d)
         counts[k] = counts.get(k, 0) + 1
     return counts
+
+
+def pn_color_d(word):
+    """The p-n interface's `d`, read off the word rather than recomputed.
+
+    Returns None if the word has no colour-weighted letter (a colour-blind
+    `pn_convention="strict_averaged"` word has none — its p-n interface is an
+    ordinary `-h/2`, indistinguishable from a `ud` letter).
+    """
+    for c, d, _g in word:
+        if classify_factor(c, d) == "pn_color":
+            return mp.mpmathify(d)
+    return None
 
 
 def chi_in_shape(shape, word):
@@ -132,8 +160,52 @@ def chi_in_shape(shape, word):
 
 
 def closed_form_prediction(A: int, H_A):
+    """Colour-BLIND closed form: -(1 + H_A²/4)^(2A+1).
+
+    Kept as-is because it is the form stated in the corpus and formalised in
+    `content/.../braids-and-knots/chi-sym-alt-closed-form.lean`. It raises the
+    `ud` factor to the power 2A+1 — i.e. it treats the one colour-weighted p-n
+    letter as though it were a 2A+1-th `ud` letter. It is not one, and that
+    substitution is exactly the residual this producer reports. See
+    `closed_form_prediction_exact`.
+    """
     H_A = mp.mpmathify(H_A)
     return -(1 + H_A * H_A / 4) ** (2 * A + 1)
+
+
+def _per_factor(d, H_A):
+    """χ_sym·χ_alt for the Hecke element σ + d·1: (q+d)(-1/q+d) = d² - 1 + d·H_A."""
+    d, H_A = mp.mpmathify(d), mp.mpmathify(H_A)
+    return d * d - 1 + d * H_A
+
+
+def closed_form_prediction_exact(A: int, H_A, d_pn=None):
+    """Closed form with the p-n interface carried as itself: f_ud^(2A) · f_pn.
+
+    The word has 2A `ud` letters at `d = -h/2` and ONE p-n letter at
+    `d = -h(1/2 - δ/4)`. The colour-blind form above folds the second into the
+    first; this one does not.
+
+    WHY THE DIFFERENCE IS SO SMALL, which is the part worth understanding. The
+    per-factor product is `f(d) = d² - 1 + d·h`, so `f'(d) = 2d + h`, which
+    **vanishes identically at d = -h/2**. The `ud` letter sits at a stationary
+    point of `f`. So perturbing it by the colour weighting costs second order,
+    not first: `Δd/d ≈ 6.88e-4` produces `Δf ≈ (Δd)² ≈ 5.170e-9`.
+
+    Predicted from that alone: 5.11397e-9. Measured by this producer before the
+    correction: 5.11395e-9 (D), 5.11395e-9 (T), 5.11395e-9 (³He), 5.11394e-9
+    (⁴He). Six significant figures.
+
+    That stationary point is also why float64 hid this. The old `tolerance=1e-3`
+    was justified by a comment about "~0.05% numerical noise" in the seminormal
+    matrices; there is no such noise, and under exact arithmetic a real,
+    identifiable, second-order colour term was sitting 200,000× inside it.
+    """
+    H_A = mp.mpmathify(H_A)
+    f_ud = _per_factor(-H_A / 2, H_A)
+    if d_pn is None:
+        return f_ud ** (2 * A + 1)
+    return f_ud ** (2 * A) * _per_factor(d_pn, H_A)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -261,19 +333,36 @@ def main():
         n_pure_sigma = counts["pure_sigma"]
         n_pure_sigma_inv = counts["pure_sigma_inv"]
 
-        pred = closed_form_prediction(A, HA_VAL)
+        n_pn = counts["pn_color"]
+        d_pn = pn_color_d(word)
+
+        pred = closed_form_prediction(A, HA_VAL)                       # colour-blind
+        pred_exact = closed_form_prediction_exact(A, HA_VAL, d_pn)     # p-n carried
 
         chi_sym_val = chi_in_shape((3 * A,), word)
         chi_alt_val = chi_in_shape((1,) * (3 * A), word)
         direct = (chi_sym_val * chi_alt_val).real
 
         rel_err = abs(direct - pred) / abs(pred) if abs(pred) > 0 else 0.0
+        rel_err_exact = (abs(direct - pred_exact) / abs(pred_exact)
+                         if abs(pred_exact) > 0 else 0.0)
 
         rows.append({
             "atom": name,
             "A": A,
-            "expected_n_ud": 2 * A + 1,
+            # 2A, NOT 2A+1. The word has two `ud` letters per nucleon and one
+            # colour-weighted p-n interface; the old expectation folded the
+            # interface into the `ud` count, which is also what the closed form
+            # does and is why it carries a residual. `nUd` in the Lean sibling
+            # (chi-sym-alt-closed-form.lean) is likewise the 2A count.
+            "expected_n_ud": 2 * A,
             "observed_n_ud": n_ud,
+            "expected_n_averaged": 2 * A + 1,
+            "observed_n_averaged": n_ud + n_pn,
+            "n_pn_color": n_pn,
+            "d_pn_color": fmt(d_pn) if d_pn is not None else None,
+            "product_closed_form_exact": fmt(pred_exact),
+            "rel_error_exact": fmt(rel_err_exact),
             "n_pure_sigma": n_pure_sigma,
             "n_pure_sigma_inv": n_pure_sigma_inv,
             "chi_sym_direct": fmt(mp.re(chi_sym_val)),
@@ -284,11 +373,28 @@ def main():
         })
 
         w.add_assertion(
-            f"{name}: n_ud(atom_braid_word_3A) = 2A+1",
+            f"{name}: n_ud(atom_braid_word_3A) = 2A",
             computed=n_ud,
+            expected=2 * A,
+            tolerance=0,
+            source="two ud letters per nucleon; the p-n interface is NOT one",
+        )
+        w.add_assertion(
+            f"{name}: n_averaged(atom_braid_word_3A) = 2A+1",
+            computed=n_ud + n_pn,
             expected=2 * A + 1,
             tolerance=0,
-            source="atom_braid_word_3A + classify_factor",
+            source="2A ud letters plus exactly one colour-weighted p-n "
+                   "interface, independent of A (pp is σ, nn is σ⁻¹ — both "
+                   "braid generators, neither averaged)",
+        )
+        w.add_assertion(
+            f"{name}: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+            computed=fmt(direct),
+            expected=fmt(pred_exact),
+            tolerance="1e-12",
+            source="closed form with the colour-weighted p-n interface carried "
+                   "as itself rather than folded into the ud power",
         )
         w.add_assertion(
             f"{name}: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
@@ -306,8 +412,9 @@ def main():
             source="direct character product vs closed form",
         )
 
-    print(f"{'atom':<5} {'A':>2} {'2A+1':>5} "
-          f"{'χs·χa (direct)':>16} {'closed form':>16} {'rel err':>10}")
+    print(f"{'atom':<5} {'A':>2} {'n_ud':>5} "
+          f"{'χs·χa (direct)':>16} {'closed form':>16} {'rel(blind)':>11} "
+          f"{'rel(exact)':>11}")
     for r in rows:
         # DISPLAY ONLY. The stored values are _precision.fmt strings now, so
         # they are re-parsed and rendered with mp.nstr rather than %f -- which
@@ -316,7 +423,8 @@ def main():
         print(f"{r['atom']:<5} {r['A']:>2} {r['expected_n_ud']:>5} "
               f"{mp.nstr(mp.mpmathify(r['product_direct']), 8):>16} "
               f"{mp.nstr(mp.mpmathify(r['product_closed_form']), 8):>16} "
-              f"{mp.nstr(mp.mpmathify(r['rel_error']), 3):>10}")
+              f"{mp.nstr(mp.mpmathify(r['rel_error']), 3):>11} "
+              f"{mp.nstr(mp.mpmathify(r['rel_error_exact']), 3):>11}")
 
     w.add_data("atoms", rows)
     w.add_data("factor_eigenvalue_algebra", {
