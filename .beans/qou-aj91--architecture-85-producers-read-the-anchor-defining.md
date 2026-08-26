@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-26T03:51:43Z
+updated_at: 2026-08-26T04:17:09Z
 ---
 
 ## What
@@ -206,3 +206,50 @@ producers should be *tagged* `ideal_muon` so their intent stops being invisible
 to the manifest — that is a declaration change, not a numerical one. Only the 41
 silent ones need the owner's ruling, and by then the population is small enough
 to look at.
+
+
+## 2026-08-26 — reroute scoped before editing: the 44 are NOT one batch
+
+Owner authorised rerouting the 44 silent direct-pin producers through
+`q_parameter`. Scoped before touching any of them, and two properties split the
+set in ways a by-count batching would have hidden.
+
+### 1. Twelve of the 44 have NO committed witness
+
+    32   have a committed witness  -> the ~11.5 ppb move is MEASURABLE
+    12   have none                 -> the move is UNMEASURABLE
+
+For those twelve there is no before/after to compare, so rerouting them is a
+blind numerical change: nothing on disk records what they produced at the muon
+pin, and nothing will show what changed. They should be re-run and their witness
+COMMITTED FIRST, at the muon pin, so the migration has a baseline — otherwise
+the reroute silently discards the only evidence of the prior value.
+
+### 2. Nine of the 44 use `record_upstream` — rerouting DROPS provenance
+
+The uniform idiom is:
+
+    Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+    Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+
+`record_upstream` does two things: it reads the value AND registers the upstream
+witness in `data.upstream_witness_hashes`. The obvious replacement —
+`from q_parameter import Q_50_DIGIT_STR` — supplies the value and **loses the
+provenance record**.
+
+So the reroute is not a substitution, it is a substitution plus a provenance
+decision: either accept the loss (the pin is no longer an input, so arguably
+there is nothing upstream to record), or keep `record_upstream` for provenance
+while taking the VALUE from `q_parameter` — which is a straddle-shaped hybrid
+and needs care.
+
+### Proposed batching, by SHAPE not by count
+
+    A.  9  use record_upstream          -> needs the provenance decision first
+    B. 12  no committed witness         -> baseline the witness at muon FIRST
+    C. 23  plain read, witness exists   -> the clean batch; reroute + regenerate,
+                                           before/after measurable per file
+
+**C is the only batch that is mechanical.** It is also the one where the ~11.5
+ppb claim can actually be checked file by file. A and B each carry a decision
+that is not mine.
