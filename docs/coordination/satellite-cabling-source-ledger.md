@@ -1,20 +1,39 @@
 # Satellite / cabling source ledger — links only, NOT ingested
 
-Bean `qou-6tcn`, 2026-08-26. Opened because Addendum 24 recorded that the
-ingested library has **zero** sources on satellites, toroidal knots or cabling,
-so corpus-grep path 5 could not answer whether the physics literature has
-anything like "mesonic toroidal forces".
+Bean `qou-6tcn`, 2026-08-26.
+
+> ## 🛑 CORRECTED 2026-08-26 — the premise of this file was false
+>
+> This ledger was opened because I reported the ingested library held **zero**
+> sources on satellites, toroidal knots or cabling. **That was wrong.** I
+> grepped `library/INDEX.md` — the one-line briefs — got zero hits, and stopped.
+> AGENTS.md path 5 prescribes **three** tiers: `INDEX.md`, then `summary.json`,
+> then `grep -rln <topic> library/<doc-id>/sections/`. I ran tier 1 only.
+>
+> Measured, **excluding** the 15 documents later ingested on the strength of my
+> false report: `satellite` **12** documents, `cabling` **19**, `JSJ` **13**,
+> `"essential torus"` **4**. `INDEX.md` really does have 0 hits — the briefs are
+> *extractive*, assembled from abstracts and section titles, so a topic
+> discussed in a body but absent from its abstract is invisible at tier 1. That
+> is exactly why the checklist has three tiers. The failure is mine, not the
+> index's.
+>
+> **The 15 documents are now ingested** (commit `6df6bd55f7`) and are worth
+> having — the cabling-formula paper in particular was genuinely not held. But
+> the gap this file was opened to fill was smaller than stated, and the sections
+> below are kept as the record of what was requested and why.
 
 ## 🛑 What this file is, and what it is not
 
 **It is a citation ledger.** Every entry below is an arXiv ID + title returned
 verbatim by an out-of-band web search. The links are real.
 
-**It is NOT an ingest, and path 5 still cannot reach these.** Corpus-grep path 5
-greps `library/<doc-id>/sections/*.md`; none of these documents is in
-`library/`, so a grep for *satellite*, *cabling* or *Hopfion* over the library
-still returns zero and **that remains the correct answer** until someone
-ingests them. Do not cite this file as evidence the corpus holds this material.
+**It was NOT an ingest when written — and it has since been superseded by one.**
+As written, none of these documents was in `library/`, so path 5 could not reach
+*them*. All 15 were ingested on 2026-08-26 (`6df6bd55f7`), and path 5 now
+returns **42** documents for *satellite*, **61** for *cabling* and **11** for
+*Hopfion* — figures that include the pre-existing documents my tier-1-only grep
+had missed. Cite the library, not this file, for what the corpus holds.
 
 **I have not read any of them.** Titles and IDs are as returned; the one-line
 notes are from search-result summaries, not from the papers. Nothing here may be

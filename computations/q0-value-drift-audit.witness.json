@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 227,
       "canonical": 167,
-      "proton-pin": 1695,
+      "proton-pin": 1704,
       "unknown": 25
     },
     "stale_total": 227,
@@ -6628,6 +6628,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/deuteron-two-body-kernel-overshoot.witness.json",
+        "field": "inputs.q0",
+        "value": "1.10997858275138080759166909561076887987449912187360000000000",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/e-hartree-mechanism-b-probe.witness.json",
         "field": "data.q0",
         "value": "1.1099785827513808",
@@ -8812,6 +8819,48 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/meson/atom-letter-colour-spectrum.witness.json",
+        "field": "data.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/meson/atom-letter-colour-spectrum.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/meson/deuteron-reachability-vs-level.witness.json",
+        "field": "data.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/meson/deuteron-reachability-vs-level.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/meson/markov-weight-support-conjugation.witness.json",
+        "field": "data.q0",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/meson/markov-weight-support-conjugation.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/meson-gen3-eta-phi.witness.json",
         "field": "constants.q_0",
         "value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
@@ -10067,7 +10116,7 @@
       {
         "file": "computations/probes/canonical-ordering-dof.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -10135,6 +10184,13 @@
         "ppb_vs_canonical": -11.313132316389003
       },
       {
+        "file": "computations/probes/centre-frobenius-pairing-is-diagonal.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/probes/charge-symmetry-bond-probe.witness.json",
         "field": "data.q0",
         "value": "1.1099785827513808",
@@ -10150,6 +10206,13 @@
       },
       {
         "file": "computations/probes/clambda-shape-invariant-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/probes/cluster-substructure-edgeset.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",

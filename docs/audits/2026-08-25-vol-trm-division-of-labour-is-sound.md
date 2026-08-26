@@ -2403,10 +2403,16 @@ doing the work — which is exactly what `atom-branch-convexity-bound` had to
 ### A library gap, stated rather than filled
 
 The author asked whether the physics literature has something like mesonic
-toroidal forces. **Our ingested library has nothing on satellites, toroidal
-knots, or cabling** — `grep` over `library/INDEX.md` for
-*satellite* / *toroidal* / *cabling* returns zero. So corpus-grep path 5 cannot
-answer it, and no answer is offered here rather than one guessed. If that
+toroidal forces. I reported that **our ingested library has nothing** on
+satellites, toroidal knots or cabling, on the strength of a `grep` over
+`library/INDEX.md` returning zero.
+
+> **🛑 That was wrong — see Addendum 27.** `INDEX.md` is tier 1 of a
+> **three**-tier path-5 checklist, and its briefs are extractive, so a topic
+> present in a body but absent from its abstract is invisible there. The
+> pre-existing library already held 12 documents mentioning *satellite*, 19
+> *cabling* and 13 *JSJ*. No answer was guessed, which was right; the gap was
+> real but far smaller than reported. If that
 literature is wanted it needs ingesting first; that is a concrete, cheap next
 step and it is not done in this branch.
 
@@ -2435,10 +2441,11 @@ verified IDs and titles are obtainable even though the PDFs are not.
 
 ### So this is a citation ledger, not an ingest
 
-The distinction matters and the ledger states it at the top: **corpus-grep path
-5 still returns zero**, and that remains the correct answer until someone
-ingests the documents. The ledger is a pointer file; none of the papers has been
-read, and nothing in it may be used as a source for a claim.
+The distinction matters and the ledger states it at the top. **The ledger's
+claim that path 5 "still returns zero" was itself wrong** for the reason in
+Addendum 27 — it was measured at tier 1 only. Both the ledger and the paragraph
+above are corrected in place; the papers were subsequently ingested, and none of
+them had been read at the time the ledger was written.
 
 ### The physics question: yes, and it is the Faddeev–Skyrme literature
 
@@ -2549,3 +2556,61 @@ Two process notes worth keeping. The first attempt was also launched as
 progress output for its entire life — the long-compute discipline says `tee`,
 and this is why. And `pkill -f cable_feas.py` matched the killing command's own
 argv and killed that shell too.
+
+## Addendum 27 — the library was not empty, and my correction did not land where I said it did (2026-08-26)
+
+Bean `qou-6tcn`. Two errors, the second worse than the first.
+
+### The first: a one-tier grep reported as a corpus-wide gap
+
+Addendum 24 and the source ledger both state that the ingested library holds
+**zero** sources on satellites, toroidal knots or cabling. **False.** I grepped
+`library/INDEX.md` — the one-line briefs — got zero hits, and stopped.
+
+AGENTS.md path 5 prescribes **three** tiers, cheapest first: `INDEX.md`, then
+`summary.json`, then `grep -rln <topic> library/<doc-id>/sections/`. I ran tier
+1. Measured now, **excluding** the 15 documents ingested on the strength of the
+false report:
+
+| term | pre-existing documents |
+|---|---:|
+| `satellite` | **12** |
+| `cabling` | **19** |
+| `JSJ` | **13** |
+| `"essential torus"` | **4** |
+
+`INDEX.md` genuinely has 0 hits for all four, and that is *by construction*: the
+briefs are **extractive**, assembled from each document's abstract and section
+titles, so a topic discussed in a body but absent from its abstract cannot
+appear there. That is exactly why the checklist has three tiers and why its own
+text warns the briefs are "only as good as the abstract [they] came from". The
+failure is mine, not the index's.
+
+**It cost the author work.** They uploaded 15 PDFs in response. The ingest is
+still worth having — `arxiv-0807.2679v1`, the cabling formula, was genuinely not
+held, and path 5 now reaches all of it — but the gap was far smaller than
+reported.
+
+### The second: I said I had fixed it, and had not
+
+The ingest commit's message states *"the ledger's 'zero sources' framing is
+corrected in the same commit"*. **It was not.** Neither
+`satellite-cabling-source-ledger.md` nor Addendum 24 was touched by that commit;
+the false claim stayed live in two durable artifacts while the commit message
+asserted otherwise.
+
+That is the more serious of the two. A wrong measurement is a wrong
+measurement; a commit message claiming a correction that is not in the diff
+makes the record actively misleading, and would have survived exactly as long as
+nobody diffed the commit against its own message. Both files are corrected in
+place now, each carrying the measured numbers rather than a bare retraction.
+
+### The rule this earns
+
+**Grep INDEX.md to decide whether to look further — never to decide that
+nothing is there.** A zero at tier 1 is a statement about abstracts, not about
+the corpus. Before writing "the corpus has nothing on X" into anything durable,
+run tier 3.
+
+And: **when a commit message claims a correction, the correction must be in that
+commit's diff.** Check before writing the message, not after.
