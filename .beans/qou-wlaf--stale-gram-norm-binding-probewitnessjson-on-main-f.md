@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-26T03:16:33Z
+updated_at: 2026-08-26T03:20:31Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -462,3 +462,70 @@ that regex would have silently dropped two real findings.
 Worth keeping as the standing caution for this axis: **a MOVED verdict is only
 as good as the mask, and must be read with its field list attached.** The
 counts are not self-supporting.
+
+
+---
+
+# RESULT (partial, and landed deliberately before the sweep completes)
+
+Pinned to `main` at `f6501fba549591122523ebb76ce118e49a7003e1`. 21 of 95
+producers measured. Recorded now rather than held, because the finding does
+not depend on the remaining 74 and the sweep advances roughly one producer per
+container lifetime.
+
+    MOVED_SUBSTANTIVE       8
+    MOVED_PROVENANCE_ONLY   1
+    IDENTICAL              10
+    TIMEOUT                 1   excluded — a budget artifact, not evidence
+    CRASH                   1   excluded
+
+**No rate is claimed.** 21/95 is under a quarter of the population and the
+tail is not known to resemble the head.
+
+## The eight committed witnesses that do not reproduce
+
+Each was field-audited individually (see the re-audit section above); the
+moved fields are the framework's own computed quantities, not provenance and
+not wall-clock.
+
+    computations/a_operator/a-operator-recursive-a3-h9.witness.json
+    computations/atom-nf-symbolic-D.witness.json
+    computations/binding-canonical.witness.json
+    computations/binding-depth-stratified.witness.json
+    computations/binding-per-bond-decomposition.witness.json
+    computations/binding-rotation-phase-lead.witness.json
+    computations/probes/binding-volume-difference-probe.witness.json
+    computations/canonical-with-proper-tower.witness.json
+
+What moved: Markov traces (`tr_M_atom`, `tr_M_free`, `tr_M_D`,
+`markov_trace`, `trM_combiner`, `trM_transfer`, `tr_bound`, `tr_free`),
+binding energies (`B_MeV`, `B_single_link_MeV`, `delta_m_over_m_pct`,
+`delta_tr_per_bond`), symbolic results (`polynomial_q`, `coeff`,
+`value_at_q0`), masses (`m_atom_per_irrep_total`, `m_free_per_irrep_total`).
+
+## What this establishes, and what it does not
+
+**Establishes:** the class this bean opened with — a witness stale because a
+*dependency* moved while its own producer file did not — is not a one-off. It
+holds on at least 8 producers, and it is invisible to `scriptHash`-keyed
+staleness triage by construction.
+
+**Does not establish:** *why* each moved, or that the current value is right
+and the committed one wrong. A re-run reproduces today's code; it does not
+adjudicate which value is correct. Anyone acting on this list must diff the
+values and decide, not simply regenerate.
+
+**Deliberately not done here:** regenerating them. That is a separate change
+with its own review — eight witnesses carrying trace and binding numbers is
+not a drive-by commit, and the 2.8e-7-scale shifts seen in the gram-norm case
+are large enough to matter to anything downstream.
+
+## Caveat that travels with these numbers
+
+The instrument over-reports. Four false MOVEDs were caught and removed
+(`engineVersion`, `*_elapsed_sec`, `elapsed_*_sec`, and one screen-level
+regex slip), every one a volatile field the mask had not anticipated — none a
+defect in the comparison itself. **A MOVED verdict is only as good as its
+mask and must be read with its field list attached.** These eight survived an
+explicit field-by-field audit; any verdict added later deserves the same
+before it counts.
