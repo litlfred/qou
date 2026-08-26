@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-17T17:40:29Z
+updated_at: 2026-08-26T21:00:52Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -234,3 +234,36 @@ T = 0 would CONTRADICT the working formula rather than support it.
 So the target is not "prove T = 0". It is "DECLARE which framing the mass path
 uses", which is a corpus/owner ruling and not a Lean obligation. This file makes
 the choice visible as a choice.
+
+
+
+## 2026-08-26 — TAKEOVER, and the stated blocker is gone
+
+Bean was in-progress since 2026-08-17 with no movement (9 days), so taken over per the
+stalled-claim rule.
+
+**The handoff's blocker no longer holds.** It said hSpherical 'needs several intermediate
+lemmas — at minimum a twist-vs-ev/coev compatibility and a slide lemma — and is a session of
+work'. Those slide lemmas now exist, landed today in PR #5848 (`bfdedc68e6`):
+
+* `QOU.MathlibExt.braiding_slide_cap_right` / `_left` — a strand crossing ANY cap
+  `c : A ⊗ B ⟶ 𝟙` can be pushed off it at the cost of braiding past each leg separately.
+  Nothing assumed of `c` beyond its type: no rigidity, no exact pairing.
+* `braiding_slide_cup_right` / `_left` — the cup duals.
+* `braiding_slide_cap_right_inv` — the inverse form, which is what produces a leftover
+  braiding rather than deleting one.
+
+That last is likely the load-bearing one here: the goal is to relate `(β_ X Xᘁ).hom` to
+`(β_ Xᘁ X).inv` under the coev/ev sandwich, i.e. exactly a difference of one braiding
+across a cap.
+
+**Also newly available**, from #5848/#5859/#5860:
+* `rightDualIso_swap_tensor` — two dual structures differ by the inverse monodromy.
+* `PivotalCategory` now carries monoidality (`pivotor_tensor`), and `pivotalOfRibbon`
+  supplies it from a balancing. So Barrett–Westbury's 'braided pivotal ⇒ spherical' is
+  applicable to the class as stated, which it was not before.
+* `twist_tensor_three` — θ on a 3-fold tensor is pairwise braidings + single twists only.
+
+**Scope (a) preserved from the original entry, and re-affirmed:** this closes a
+correctness/consistency gap in the mass chain's DERIVATION. It does not claim to improve
+m_p, the Δ_λ binding magnitude, or any number. Both Do-nots from the handoff stand.
