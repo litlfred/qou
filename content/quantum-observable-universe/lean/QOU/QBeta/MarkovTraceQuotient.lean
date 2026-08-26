@@ -1,4 +1,5 @@
 import QOU.QBeta.TemperleyLiebTower
+import QOU.Machinery.HeckeTowerBasicConstruction
 import Mathlib.Algebra.Module.LinearMap.Defs
 import Mathlib.RingTheory.TwoSidedIdeal.Basic
 import Mathlib.RingTheory.TwoSidedIdeal.Operations
@@ -189,5 +190,104 @@ theorem quot_pairing_one (h : tau 1 ≠ 0) :
   rwa [mul_one, quotTrace_mk]
 
 end Quotient
+
+section Presentation
+
+/-! ### The braided presentation descends
+
+Brick 2 of `qou-s7z2`. Brick 1 built the quotient; this shows the Hecke
+generators survive the passage to it, which is what any `WenzlTowerStep`
+instance over `TL_n` needs before it can even be *stated*.
+
+Two steps, and the first is not bookkeeping: `RingCon.mk'` is a **ring** hom,
+but `HeckeBraidedPresentationOfRank.hecke_quadratic` reads
+`σ i * σ i = (q - q⁻¹) • σ i + 1`, with an `R`-scalar action. A ring hom does
+not move `•`. So the quotient needs an `R`-algebra structure, which Mathlib does
+not supply for `TwoSidedIdeal` (`Algebra R I.ringCon.Quotient` fails to
+synthesize), and supplying it needs the image of `algebraMap` to be central —
+true here, inherited from `Algebra.commutes` in `A` through a surjection.
+
+**A scalar-action diamond to know about.** `RingCon` already puts a bare
+`SMul R` on its quotient (`instSMulQuotient`), and it is *not* part of a
+`Module`, let alone an `Algebra` — Mathlib supplies neither for this quotient.
+So the instance below introduces a second `SMul` that Lean will not identify
+with the first, and `map_smul` through the algebra hom fails to synthesize
+`MulActionHomClass` in the gap. The descent proof therefore avoids `•` crossing
+the hom at all: both sides are rewritten into `algebraMap _ * _` form with
+`Algebra.smul_def`, so only ring operations and `AlgHom.commutes` are used.
+Papering over the diamond with a cast would have been the wrong fix.
+
+Base ring: this section is over `[Field R]`, not brick 1's `[CommRing R]`,
+because `HeckeBraidedPresentationOfRank` is itself stated over a field. That is
+the presentation class's requirement, not a strengthening chosen here; brick 1
+stays at `CommRing`/`Module`.
+-/
+
+variable {R : Type*} [Field R] {A : Type*} [Ring A] [Algebra R A]
+variable (tau : A →ₗ[R] R) (hcyc : ∀ x y : A, tau (x * y) = tau (y * x))
+
+/-- **The quotient is an `R`-algebra.** Centrality of `algebraMap`'s image is
+inherited from `A`: reduce to a representative and apply `Algebra.commutes`. -/
+noncomputable instance instAlgebraTraceQuot :
+    Algebra R (TraceQuot tau hcyc) :=
+  RingHom.toAlgebra' ((traceRadicalIdeal tau hcyc).ringCon.mk'.comp (algebraMap R A))
+    (fun c x => by
+      induction x using Quotient.inductionOn with
+      | h a =>
+        show (traceRadicalIdeal tau hcyc).ringCon.mk' (algebraMap R A c * a)
+           = (traceRadicalIdeal tau hcyc).ringCon.mk' (a * algebraMap R A c)
+        rw [Algebra.commutes])
+
+/-- **The quotient map, as an algebra hom.** This is the object the descent
+needs; `RingCon.mk'` alone is too weak because it does not move `•`. -/
+noncomputable def quotMk : A →ₐ[R] TraceQuot tau hcyc where
+  toFun := (traceRadicalIdeal tau hcyc).ringCon.mk'
+  map_one' := map_one _
+  map_mul' := map_mul _
+  map_zero' := map_zero _
+  map_add' := map_add _
+  commutes' _ := rfl
+
+/-- Deliberately NOT `@[simp]`: marking it so lets `simp` strip the algebra-hom
+wrapper, which breaks the `hecke_quadratic` descent — the `•` is then stranded
+inside the quotient map. -/
+theorem quotMk_apply (a : A) :
+    quotMk tau hcyc a = ((traceRadicalIdeal tau hcyc).ringCon.mk' a) := rfl
+
+/-- **The braided presentation descends to the quotient.**
+
+Every relation of `HeckeBraidedPresentationOfRank` holds for the images of the
+generators, at the same rank. The proof is `map_mul` / `map_smul` / `map_one`
+under the algebra hom — the content is that such a hom exists at all, which is
+the instance above.
+
+What this does **not** do: it does not produce a `WenzlTowerStep` instance at
+the Markov trace. That additionally needs the tower inclusion `Hn →ₐ Hn1` shown
+to descend compatibly with the two radicals, which is brick 3 and is not
+automatic — the radicals at consecutive ranks are different ideals in different
+algebras, and nothing here relates them. -/
+theorem heckeBraidedPresentationOfRank_quot
+    (q : R) (n : ℕ) (σ : ℕ → A)
+    [inst : QOU.Machinery.HeckeTower.HeckeBraidedPresentationOfRank q n A σ] :
+    QOU.Machinery.HeckeTower.HeckeBraidedPresentationOfRank q n
+      (TraceQuot tau hcyc) (fun i => quotMk tau hcyc (σ i)) where
+  hecke_quadratic i hi := by
+    -- NOT `map_smul`: see the scalar-action note above. Both sides are put in
+    -- `algebraMap _ * _` form instead, so only ring operations cross the hom.
+    have h := congrArg (quotMk tau hcyc) (inst.hecke_quadratic i hi)
+    rw [map_mul, map_add, map_one, Algebra.smul_def, map_mul,
+      AlgHom.commutes] at h
+    rw [Algebra.smul_def]
+    exact h
+  braid_adjacent i hi := by
+    have h := congrArg (quotMk tau hcyc) (inst.braid_adjacent i hi)
+    rw [map_mul, map_mul, map_mul, map_mul] at h
+    exact h
+  far_commute i j hij hj := by
+    have h := congrArg (quotMk tau hcyc) (inst.far_commute i j hij hj)
+    rw [map_mul, map_mul] at h
+    exact h
+
+end Presentation
 
 end QOU.QBeta.MarkovTraceQuotient
