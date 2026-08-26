@@ -217,6 +217,33 @@ def main() -> int:
           "that is a one-parameter fit against a single anchor and is "
           "deliberately NOT computed — a weight must be DERIVED)")
 
+    # ---- the admissible set is COMPLETE, not merely the two I thought of ----
+    # The structural condition IS y_(1,1,1)(z) = 0. Solving it rather than
+    # checking candidates: it is quadratic in z, so it has exactly two roots.
+    yv = sp.symbols("yy0 yy1 yy2")
+    solY = sp.solve([sp.Eq(sum(yv[k] * CHI[k](basis_vec(i)) for k in range(3)),
+                           TR[i]) for i in (0, 1, 3)], yv, dict=True)[0]
+    Y = [sp.simplify(sp.factor(solY[yv[k]])) for k in range(3)]
+    roots = sp.solve(sp.Eq(sp.numer(sp.together(Y[2])), 0), Z)
+    roots = [sp.simplify(r) for r in roots]
+    check("the_two_row_condition_has_EXACTLY_two_roots_in_z", len(roots) == 2,
+          f"(y_(1,1,1)(z) = 0 solved, not guessed: z = {roots})")
+    check("one_root_is_z_D_and_the_other_is_z_equals_q",
+          any(sp.simplify(r - Z_D) == 0 for r in roots)
+          and any(sp.simplify(r - q) == 0 for r in roots),
+          "(so the two-row forcing is NOT unique to z_D — z = q kills the "
+          "(1,1,1) block too)")
+    check("at_z_equals_q_the_markov_trace_IS_the_augmentation",
+          all(sp.simplify(tr_M(basis_vec(i), q) - chi3(basis_vec(i))) == 0
+              for i in range(N)),
+          "(on ALL six basis elements, not just on Delta — so the second root "
+          "reproduces the augmentation exactly and the admissible set is "
+          "COMPLETE at two elements)")
+    check("z_equals_one_is_NEITHER_root",
+          sp.simplify(Y[2].subs(Z, 1)) != 0,
+          "(y_(1,1,1)(1) != 0, so tr_M at the trivial loop value does NOT "
+          "descend either — and epsNPq IS tr_M at z=1 on Delta)")
+
     for r in rows:
         w.add_data(r["functional"].split()[0] + "_" + r["functional"].split()[1], r)
     w.add_data("E0_MeV", fmt(E0))
@@ -225,23 +252,23 @@ def main() -> int:
     w.add_data("assertion_notes", notes)
 
     verdict = (
-        "Under convention D the corpus places the theory in the Temperley-Lieb "
-        "quotient, and descent is annihilation of the ideal, so the Q_beta "
-        "ansatz has exactly TWO admissible functionals -- the augmentation, "
-        "which is the UNIQUE surviving multiplicative one (H_3 has two 1-dim "
-        "reps and the other IS the quotiented block), and the Markov trace at "
-        "z_D. Both give determined numbers, and they BRACKET the measured "
-        "Q-value: augmentation " + fmt(e_aug)[:7] + " %, trace " + fmt(e_tr)[:8] +
-        " %. The coordinate sum the ansatz actually evaluates reproduces "
-        "Q_codata to " + fmt(e_ina)[:7] + " % and is INADMISSIBLE. So the "
-        "functional that matches experiment is precisely the one the canonical "
-        "convention forbids, and both permitted ones miss by more than an order "
-        "of magnitude in opposite directions. Reported plainly as evidence "
-        "against the ansatz as it stands. The bracket means some convex "
-        "combination hits the target exactly; that is a one-parameter fit "
-        "against a single anchor, it is NOT computed here, and any future "
-        "weight must be derived from the representation rather than read off "
-        "Q_codata. Scope-(a); nothing wired."
+        "The admissible set is COMPLETE and has exactly two elements. The "
+        "structural condition is y_(1,1,1)(z) = 0; solved rather than sampled, "
+        "it is quadratic with roots z = z_D and z = q — so the two-row forcing "
+        "is NOT unique to z_D. At z = q the Markov trace IS the augmentation, "
+        "on all six basis elements, so the two roots give exactly the two "
+        "functionals available: "
+        + fmt(e_tr)[:8] + " % and " + fmt(e_aug)[:7] + " %. They BRACKET "
+        "Q_codata. Meanwhile epsNPq is tr_M at z = 1 on Delta, and z = 1 is "
+        "NEITHER root — a loop value the corpus itself says is never attained "
+        "on the substrate, and one that does not survive the convention-D "
+        "quotient. So the +" + fmt(e_ina)[:6] + " % agreement is delivered "
+        "entirely by an evaluation that is inadmissible on both counts, while "
+        "the complete set of admissible ones misses by more than an order of "
+        "magnitude in opposite directions. Evidence against the ansatz as it "
+        "stands. The bracket means some convex combination hits the target; "
+        "that is a one-parameter fit against a single anchor, is NOT computed "
+        "here, and any weight must be DERIVED. Scope-(a); nothing wired."
         if all(ok) else
         "INCONCLUSIVE -- an assertion failed; re-derive before citing.")
     w.add_data("verdict", verdict)
