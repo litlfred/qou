@@ -94,6 +94,28 @@ supplies a *derived target* for $R(q,x)$ but does not determine it — the bindi
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
 
+**How much is undetermined, exactly, and why no scalar $R(q,x)$ can supply it.**
+"Does not determine it" is now a count rather than a caution. With $R$ an
+unconstrained formal power series the shift relation determines exactly one
+kernel coefficient per body order, and conversely: for any body sequence with
+$B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
+([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean),
+sorry-free). So the unconstrained ansatz constrains *nothing*: it reparametrises
+the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
+the recursion" is false unless $R$ is independently pinned. All of the ansatz's
+content therefore lies in the **finiteness** of the Laurent window.
+
+That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
+carrier is the rank-$2$ module $\mathcal{K}$ of
+[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol),
+which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
+every rank-1 $q$-difference module has integer slope — so no scalar
+$R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this
+conjecture must be a $2\times2$ **matrix**, and a rank-$2$ recursion needs two
+base cases, so the $n=3$ term is required as an independent input rather than
+produced by the recursion. This is consistent with, and independent of, the
+one-free-parameter count recorded above.
+
 A multi-anchor test (D$\to{}^{12}$C, Coulomb-corrected) further shows that the
 full-tower reading — summing $B(K)=\sum_{n=2}^{A} m_e\,a_D^{(n)}\,w_n$ to the
 nucleon count $A$ — is **refuted for $A\geq 5$**: the na-Stokes period $a_D^{(n)}$
