@@ -79,6 +79,17 @@ Gell-Mann--Nishijima relation cannot be closed.
    construct anything — Route A stays open — but it replaces "more
    structure" with a single checkable condition.
 
+   **The same condition is reachable from the row cap, independently.**
+   The Descartes characteristic $\chi(A) = -6$ forces $\mathrm{SU}(2)$,
+   hence $\dim V = 2$, hence partitions of at most two rows, so the
+   $(1^3)$ block drops at $n = 3$ and a three-dimensional object cannot
+   be a tensor power of the single fibre.  That argument reaches
+   non-self-duality without the $\mathrm{Sym}^2$ gate and without the
+   Frobenius--Schur trichotomy, as the gate-and-trichotomy argument
+   reaches it without the Euler characteristic and without Schur--Weyl.
+   Two independent derivations of one necessary condition are stronger
+   evidence for it than either alone.
+
    *That the search is confined to the groupoid level is now a theorem,
    not an extrapolation.*  The parity criterion
    (`Sym2GateParity.lean`) decides the $\mathrm{Sym}^2$ gate for a single
