@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T01:45:48Z
-updated_at: 2026-08-26T21:00:52Z
+updated_at: 2026-08-26T21:06:33Z
 ---
 
 ## 2026-08-17 — first pass: the twist reaches the mass chain, but is ONE AXIOM SHORT
@@ -267,3 +267,47 @@ across a cap.
 **Scope (a) preserved from the original entry, and re-affirmed:** this closes a
 correctness/consistency gap in the mass chain's DERIVATION. It does not claim to improve
 m_p, the Δ_λ binding magnitude, or any number. Both Do-nots from the handoff stand.
+
+
+
+## 2026-08-26 (same day) — RETRACTION: the chain is broken at the link this bean exists to supply
+
+I claimed the takeover above was unblocked. **Checking the bean's own premises against current
+code, its consumer chain no longer runs through sphericality at all.** Two independent reasons:
+
+**1. The named consumer is already discharged, by a different route.**
+`QOU.BraidKnot.Ribbon.qDim_conj_object` proves `qDimObj (Xᘁ) = qDimObj X` **unconditionally**,
+in any braided right-rigid category — no pivotal, no spherical, no transport hypothesis. It goes
+via `QOU.MathlibExt.qDimWith_rightDual`: the quantum dimension does not depend on the choice of
+dual, and `X` is itself a right dual of `Xᘁ`. So the chain
+`sphericality → qDim_conj → dim_q(λ) → G⁻¹ → mass` is severed at its first arrow: `qDim_conj`
+does not need sphericality.
+
+**2. For these definitions, ribbon probably does NOT imply spherical — and the file already says
+so.** `KeystonePivotalSpherical`'s own docstring records it: `qDim_twist_eq_leftQDim` shows the
+two traces differ by the twist factor `θ_{Xᘁ} ⊗ θ_X`, so the classical `ribbon ⇒ spherical` — a
+theorem about the **twisted** trace — does not reach these **twistless** ones.
+
+My own algebra lands in the same place. Using `rightAdjointMate_comp_evaluation` on
+`f = θ_X`, then `tensorHom_def`:
+
+    (θ_{Xᘁ} ⊗ₘ θ_X) ≫ ε  =  ((θ_{Xᘁ} ≫ (θ_X)ᘁ) ▷ X) ≫ ε
+
+so `leftQDim X = qDimObj X` would require `θ_{Xᘁ} ≫ (θ_X)ᘁ = 𝟙`. The repo's ribbon axiom is
+`twist_dual : θ_{Xᘁ} = (θ_X)ᘁ`, which gives `((θ_X)ᘁ)²` — so it would need **θ² = 𝟙**, false in
+general. The axiom that WOULD close it is the anti-compatibility `θ_{Xᘁ} = ((θ_X)ᘁ)⁻¹`, which is
+a different axiom from the one the class carries.
+
+**Where the error was:** I ran the corpus-grep, found this bean, and then took its premises at
+face value instead of checking them against current code — the same failure the grep discipline
+exists to prevent, one level up. AGENTS.md's own warning applies verbatim: a sibling's bean is not
+a primary source.
+
+**What is actually left**, and it is smaller and differently shaped:
+- Decide whether `SphericalStructure` (twistless) is the right class at all, given the classical
+  theorem is about twisted traces. That is a definitional question, not a proof gap.
+- If it is kept, the honest statement is the **obstruction**: `leftQDim` and `qDimObj` differ by
+  `((θ_X)ᘁ)²` under the sandwich. Worth proving as a lemma — it converts 'not yet proved' into
+  'precisely this, and here is why ribbon does not give it'.
+
+No number moves either way. Scope (a) throughout.
