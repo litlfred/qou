@@ -91,6 +91,7 @@ import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.RankMinor
+import QOU.MathlibExt.Ribbon
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
