@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:08:04Z
-updated_at: 2026-08-26T18:09:23Z
+updated_at: 2026-08-26T18:20:52Z
 ---
 
 Found 2026-08-26 while merging 124 commits of main into PR #5843. **Not that
@@ -89,3 +89,59 @@ real". **That test cannot detect float64 contamination at all** — a float64
 input is bit-identical at every `mp.dps`, so a contaminated result is stably
 *wrong*. Do not use dps-stability for this question; use the padding audit, or
 check the type of every multiplicand.
+
+
+## FIXED 2026-08-26 — and my own root-cause diagnosis above was WRONG
+
+**46 NEW → 0. Padding occurrences 59 → 13, exactly the baseline.**
+`chi-sym-alt-closed-form.witness.json` is no longer flagged;
+`scripts/precision-gates.sh --changed` reports **all blocking gates green**.
+
+### Retraction: line 148 was a contributor, not the cause
+
+Everything above diagnoses the defect as
+`chi_sym_alt_closed_form.py:148` substituting the float64 `Q0` into the
+symbolic seminormal entry. That is a real defect and is fixed here too — but it
+is **not** why the witness was padded, and I only found the real cause because
+patching line 148 changed **nothing**: the regenerated values were byte-identical
+to the old ones.
+
+The actual cause:
+
+    from _precision import fmt, set_compute_dps   # line 61
+
+`set_compute_dps` was **imported and never called.** `mp.dps` stayed at
+mpmath's default **15** for the entire run while `fmt()` serialised at 50. With
+the working precision at 15, the anchor was irrelevant — every value was
+15-digit whatever `q` it was computed from. Measured at import:
+
+    mp.dps after import: 15
+    Q0_EXACT           : 1.10997858275138        <- truncated at definition time
+
+That last line is the second half of it: an mpmath constant built *before* the
+dps raise is truncated when it is created, so the `set_compute_dps(60)` call
+has to sit above the constants, not merely somewhere in the file.
+
+### The evidence the fix is real, not cosmetic
+
+    old  -1.05583976726687045477603987819747999310493469238281250000000
+    new  -1.05583976726687183085942112763449928432331975561507218
+
+They diverge at **digit 15** — the old tail was the binary64 expansion, the new
+one carries real precision. `parameters.q` is now the exact 50-digit pin rather
+than the float64's decimal expansion. All 16 assertions still pass.
+
+### Why the existing gates missed it
+
+The `mp.dps no-op` gate reports *"clean — no no-op precision assignments in
+gated paths"*: it looks for an assignment that has no effect, not for a producer
+that **never assigns at all**. `computations/never_raises_dps_audit.py` exists
+for exactly that second case, so the check is written — this producer is simply
+not in its gated set. That gap is worth closing and is not done here.
+
+### Method note, which is the reusable part
+
+I had a specific, well-evidenced, traced-to-the-line root cause that was wrong,
+and the only reason I did not ship it is that I **re-ran the producer and
+compared the serialised output** instead of trusting that a plausible fix had
+worked. A patch that changes nothing is data.
