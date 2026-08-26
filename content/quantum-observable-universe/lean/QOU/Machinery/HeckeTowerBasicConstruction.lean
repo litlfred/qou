@@ -217,6 +217,31 @@ class WenzlTowerStep (R : Type*) [Field R] (q : R)
     (∀ y : Hn1, y ≠ 0 → ∃ z : Hn1, trn1 (y * z) ≠ 0) →
     IsSemisimpleRing Hn1
 
+/-- **Rank-bounded braided presentation.** The three Hecke relations, each
+guarded so it only speaks about generators that exist at rank `n`:
+`σ₀, …, σ_{n-2}` for `H_n`.
+
+Compare `HeckeBraidedCategory.HeckeBraidedPresentation`, whose unguarded `∀ i`
+forces an infinite generator family — the reason it has no contentful instance.
+The guards here are exactly what makes a finite algebra able to satisfy it. -/
+class HeckeBraidedPresentationOfRank (q : R) (n : ℕ) (H : Type*)
+    [Ring H] [Algebra R H] (σ : ℕ → H) : Prop where
+  /-- Hecke quadratic, for generators present at rank `n`. -/
+  hecke_quadratic : ∀ i, i + 1 < n → σ i * σ i = (q - q⁻¹) • σ i + 1
+  /-- Braid relation, for adjacent pairs both present at rank `n`. -/
+  braid_adjacent : ∀ i, i + 2 < n → σ i * σ (i + 1) * σ i = σ (i + 1) * σ i * σ (i + 1)
+  /-- Far commutation, for non-adjacent pairs both present at rank `n`. -/
+  far_commute : ∀ i j, i + 1 < j → j + 1 < n → σ i * σ j = σ j * σ i
+
+/-- The unbounded class implies the bounded one at every rank — the guards only
+discard obligations. So existing consumers lose nothing by moving over. -/
+theorem ofRank_of_unbounded {q : R} {H : Type*} [Ring H] [Algebra R H]
+    {σ : ℕ → H} [inst : QOU.Machinery.HeckeBraidedCategory.HeckeBraidedPresentation R q H σ]
+    (n : ℕ) : HeckeBraidedPresentationOfRank q n H σ where
+  hecke_quadratic i _ := inst.hecke_quadratic i
+  braid_adjacent i _ := inst.braid_adjacent i
+  far_commute i j hij _ := inst.far_commute i j hij
+
 /-- **§3b DEPENDENT conjecture — the coset spanning decomposition (bean
 `qou-zm8z`).** GIVEN the two Hecke braided presentations and the tower
 inclusion `ιlow : Hlow →ₐ Hn`, every element of the larger algebra splits as
@@ -240,14 +265,13 @@ those two, was never built.
 Independent of the conditional expectation: it mentions neither `ε` nor the
 Jones projection, so it can be discharged separately, and a proof of it does not
 need any trace at all. OPEN — no instance. -/
-class HeckeCosetSpanning (R : Type*) [Field R] (q : R)
+class HeckeCosetSpanning (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
-    (σlow : ℕ → Hlow) (σn : ℕ → Hn)
-    [HeckeBraidedPresentation R q Hlow σlow] [HeckeBraidedPresentation R q Hn σn]
-    (ιlow : Hlow →ₐ[R] Hn) (n : ℕ) : Prop where
-  /-- Every `w : Hn` decomposes over the lower algebra and its `σₙ`-coset. -/
+    (σn : ℕ → Hn) [HeckeBraidedPresentationOfRank q rank Hn σn]
+    (ιlow : Hlow →ₐ[R] Hn) (k : ℕ) : Prop where
+  /-- Every `w : Hn` decomposes over the lower algebra and its `σ k`-coset. -/
   spanning : ∀ w : Hn, ∃ (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow),
-    w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn n * ιlow (c i)
+    w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn k * ιlow (c i)
 
 /-- **§3b DEPENDENT conjecture — the Markov property of the conditional
 expectation (bean `qou-zm8z`).** GIVEN a conditional expectation, `ε` collapses

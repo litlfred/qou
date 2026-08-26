@@ -1,5 +1,6 @@
 import QOU.Machinery.HeckeH3AlgebraInstance
 import QOU.Machinery.HeckeTowerBasicConstruction
+import QOU.Machinery.HeckeH2AlgebraInstance
 import Mathlib.Tactic.IntervalCases
 
 /-!
@@ -48,34 +49,9 @@ proving for `H₂ ⊂ H₃` afterwards.
 
 namespace QOU.Machinery.HeckeRank
 
-open QOU.Machinery.H3
+open QOU.Machinery.H3 QOU.Machinery.HeckeTower
 
 variable {R : Type*} [Field R]
-
-/-- **Rank-bounded braided presentation.** The three Hecke relations, each
-guarded so it only speaks about generators that exist at rank `n`:
-`σ₀, …, σ_{n-2}` for `H_n`.
-
-Compare `HeckeBraidedCategory.HeckeBraidedPresentation`, whose unguarded `∀ i`
-forces an infinite generator family — the reason it has no contentful instance.
-The guards here are exactly what makes a finite algebra able to satisfy it. -/
-class HeckeBraidedPresentationOfRank (q : R) (n : ℕ) (H : Type*)
-    [Ring H] [Algebra R H] (σ : ℕ → H) : Prop where
-  /-- Hecke quadratic, for generators present at rank `n`. -/
-  hecke_quadratic : ∀ i, i + 1 < n → σ i * σ i = (q - q⁻¹) • σ i + 1
-  /-- Braid relation, for adjacent pairs both present at rank `n`. -/
-  braid_adjacent : ∀ i, i + 2 < n → σ i * σ (i + 1) * σ i = σ (i + 1) * σ i * σ (i + 1)
-  /-- Far commutation, for non-adjacent pairs both present at rank `n`. -/
-  far_commute : ∀ i j, i + 1 < j → j + 1 < n → σ i * σ j = σ j * σ i
-
-/-- The unbounded class implies the bounded one at every rank — the guards only
-discard obligations. So existing consumers lose nothing by moving over. -/
-theorem ofRank_of_unbounded {q : R} {H : Type*} [Ring H] [Algebra R H]
-    {σ : ℕ → H} [inst : QOU.Machinery.HeckeBraidedCategory.HeckeBraidedPresentation R q H σ]
-    (n : ℕ) : HeckeBraidedPresentationOfRank q n H σ where
-  hecke_quadratic i _ := inst.hecke_quadratic i
-  braid_adjacent i _ := inst.braid_adjacent i
-  far_commute i j hij _ := inst.far_commute i j hij
 
 /-! ## The instance: genuine H₃(q) at rank 3 -/
 
@@ -142,5 +118,62 @@ theorem s0_mul_s1_ne_s1_mul_s0 (h : R) [Nontrivial R] :
   intro hEq
   have h3 := congrArg (fun x => H3A.v x 3) hEq
   simp [s0, s1, mulNF, mulσ₀, mulσ₁] at h3
+
+/-! ## H₂ ⊂ H₃: the spanning decomposition, concretely
+
+The four `σ₁`-coset products are exactly the four basis vectors that
+`iota23` does not reach, with no correction terms:
+
+| product | basis index |
+|---|---|
+| `σ₁` | 2 |
+| `σ₁ · σ₀` | 3 |
+| `σ₀ · σ₁` | 4 |
+| `σ₀ · σ₁ · σ₀` | 5 |
+
+and `iota23 a b = ![a, b, 0, 0, 0, 0]` covers 0 and 1. So `H₃ = ι(H₂) + ι(H₂)·σ₁·ι(H₂)`
+holds on the nose. -/
+
+/-- `σ₀` inside the rank-2 algebra. -/
+def t0 (h : R) : H2A R h := ⟨0, 1⟩
+
+/-- Rank-2 generator family. At rank 2 the only obligation is the quadratic for
+`σ 0`; braid and far-commutation are vacuous, so indices past the rank go to `0`. -/
+def gen2 (h : R) : ℕ → H2A R h := fun i => if i = 0 then t0 h else 0
+
+theorem t0_mul_t0 (h : R) : t0 h * t0 h = h • t0 h + 1 := by
+  apply H2A.ext <;> simp [t0]
+
+/-- Rank-2 presentation instance for `H₂(q)`. -/
+instance heckePresentationOfRank_H2A (q : R) :
+    HeckeBraidedPresentationOfRank q 2 (H2A R (q - q⁻¹)) (gen2 (q - q⁻¹)) where
+  hecke_quadratic i hi := by
+    have hlt : i < 1 := by omega
+    interval_cases i
+    · simpa [gen2] using t0_mul_t0 (R := R) (q - q⁻¹)
+  braid_adjacent i hi := by omega
+  far_commute i j hij hj := by omega
+
+/-- **`HeckeCosetSpanning`, instantiated.** Every `w : H₃` splits as
+`ι a + Σᵢ ι (b i) · σ₁ · ι (c i)` with the four coset terms reading off `w`'s
+coordinates 2–5 and `a` reading off 0–1.
+
+This is the class's first instance, and the statement is discharged by an
+explicit decomposition rather than by any abstract argument. -/
+instance heckeCosetSpanning_H2_H3 (q : R) :
+    HeckeCosetSpanning R q 3 (H2A R (q - q⁻¹)) (H3A R (q - q⁻¹))
+      (gen (q - q⁻¹)) (H2A.iotaAlg (h := q - q⁻¹)) 1 where
+  spanning w := by
+    classical
+    refine ⟨⟨w.v 0, w.v 1⟩, Finset.range 4,
+      fun i => if i = 0 then (w.v 2) • 1 else if i = 1 then (w.v 4) • t0 _
+               else if i = 2 then (w.v 3) • 1 else (w.v 5) • t0 _,
+      fun i => if i = 0 then 1 else if i = 1 then 1
+               else if i = 2 then t0 _ else t0 _, ?_⟩
+    apply H3A.ext
+    funext i
+    fin_cases i <;>
+      simp [Finset.sum_range_succ, gen, H2A.iotaAlg, H2A.iotaFun, iota23, t0, s1,
+        mulNF, mulσ₀, mulσ₁]
 
 end QOU.Machinery.HeckeRank
