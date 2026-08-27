@@ -31,6 +31,35 @@ asserted from memory. Each was wrong at least once when asserted that way.
    what a row's hook lengths actually are — the hook-walk". It does not
    collapse at all. What telescopes is the SUM over corners, not the summand.
 
+4. **(P) splits into TWO one-variable identities.** The ratio is **linear in
+   `X`**, and structurally so: adding one box adds exactly one cell, hence
+   exactly one numerator factor `(1 − X·Q^c)`; everything else in the ratio is
+   hook lengths, which carry no `X`. So
+
+       R_r  =  K_r · (1 − X·Q^{c_r}),      K_r free of X,
+
+   and matching coefficients of `X` on both sides of (P) gives
+
+       (P1)  Σ_r K_r            =  1/(1 − Q)
+       (P2)  Σ_r K_r · Q^{c_r}  =  1/(1 − Q)
+
+   equivalently `Σ_r K_r·(1 − Q^{c_r}) = 0`. **A two-variable identity becomes
+   two one-variable ones**, which is the reduction the general proof wants.
+
+5. **The new box's hook is always 1** — at every addable corner, the interior
+   ones and the new bottom row alike. Nothing lies to its right or below it.
+
+6. **Both identities have a clean form summing to exactly 1.** Substituting
+   fact 5 into `K_r` clears the only denominator outside the product:
+
+       (P1)   Σ_r  Q^{r}      · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+       (P2)   Σ_r  Q^{λ_r}    · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+
+   Same product, two weightings — the **row index** and the **row length**
+   (both `0` for the new bottom row) — each summing to `1`. These are the
+   targets a Lean proof of (P) should aim at: one variable, no outer
+   denominator, right-hand side a literal `1`.
+
 Precision: this probe is EXACT throughout — sympy symbolic over ℚ(Q,X), with
 `cancel` deciding equality. No float appears anywhere, so the NO-FLOAT64
 discipline (AGENTS.md §"PROBES ARE NOT EXEMPT") is satisfied by construction
@@ -106,6 +135,51 @@ def check_ratio(lam, r):
     return cancel(actual - predicted) == 0, arm, leg, factor(cancel(shift))
 
 
+def shift_product(lam, r):
+    """`∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})`, and the row's length.
+
+    `r == len(lam)` is the new bottom row: it has no arm, and its leg is every
+    nonempty row above it (all of which exceed column 0)."""
+    if r < len(lam):
+        m = lam[r]
+        arm = [hook(lam, r, j) for j in range(m)]
+        leg = [hook(lam, i, m) for i in range(r) if lam[i] > m]
+    else:
+        m = 0
+        arm = []
+        leg = [hook(lam, i, 0) for i in range(len(lam)) if lam[i] > 0]
+    return prod([(1 - Q ** h) / (1 - Q ** (h + 1)) for h in arm + leg]), m
+
+
+def check_split(lam):
+    """Facts 4 and 5: X-linearity of each ratio, and the new box's hook."""
+    Ks, cs, new_hooks = [], [], []
+    for r, mu in addable_corners(lam):
+        if r < len(lam):
+            m, c = lam[r], lam[r] - r
+        else:
+            m, c = 0, -len(lam)
+        K = cancel((schur_element(mu) / schur_element(lam)) / (1 - X * Q ** c))
+        Ks.append(K)
+        cs.append(c)
+        new_hooks.append(hook(mu, r, m))
+    x_free = all(K.free_symbols <= {Q} for K in Ks)
+    target = 1 / (1 - Q)
+    p1 = cancel(sum(Ks) - target) == 0
+    p2 = cancel(sum(K * Q ** c for K, c in zip(Ks, cs)) - target) == 0
+    return x_free, p1, p2, all(h == 1 for h in new_hooks), cs
+
+
+def check_clean(lam):
+    """Fact 6: both identities in the form that sums to exactly 1."""
+    p1 = p2 = 0
+    for r, _ in addable_corners(lam):
+        prod_r, m = shift_product(lam, r)
+        p1 += Q ** r * prod_r
+        p2 += Q ** m * prod_r
+    return cancel(p1) == 1, cancel(p2) == 1
+
+
 def main():
     shapes = [(1,), (2,), (1, 1), (2, 1), (3,), (2, 2), (3, 1), (3, 2, 1)]
 
@@ -122,6 +196,15 @@ def main():
         ok_all &= ok
         print(f"  lam={lam!s:<10} r={r}  arm={arm} leg={leg}  {'OK' if ok else 'FAIL'}")
         print(f"    shift product = {shift}   <- does not collapse")
+
+    print("\n(P) splits into two one-variable identities (facts 4-6)")
+    split_shapes = shapes + [(4, 2, 1), (3, 3, 2), (4, 3, 1, 1)]
+    for lam in split_shapes:
+        x_free, p1, p2, hooks_one, cs = check_split(lam)
+        c1, c2 = check_clean(lam)
+        ok_all &= x_free and p1 and p2 and hooks_one and c1 and c2
+        print(f"  lam={lam!s:<12} X-linear={x_free}  new-box hook=1: {hooks_one}  "
+              f"(P1)={p1} (P2)={p2}  clean: {c1}/{c2}  contents={cs}")
 
     print("\nall exact:", ok_all)
     return 0 if ok_all else 1
