@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T09:14:43Z
+updated_at: 2026-08-27T13:09:55Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -437,3 +437,57 @@ why the ratio is the dimension. And it is **not unique to Delta** — `e_minus` 
 w_0 aligns too — so a derivation must explain a small family, not a singleton.
 
 Scope (a). Step 8's postulate is narrowed to one identity, not closed.
+
+
+## 2026-08-27 (7) — TRIED the last step. It does not close; it collapses onto step 4.
+
+`qbeta_last_step_is_the_presentation_probe.py` (4/4).
+
+### The result
+
+Delta is built with mixed crossing `t = h/2` — **step 4 of the fitting-finding
+audit, which this bean already flags as CHOSEN rather than derived**. Varying
+only that parameter:
+
+    t = h/2 (corpus)   parallel: YES   ratio = -2 = -dim(V_(2,1))
+    t = h/3            parallel: NO
+    t = h              parallel: NO
+    t = 0              parallel: NO
+
+At every other `t` the parallelism **fails outright** — not a different ratio,
+no proportionality at all. `t = h/2` is what makes the pairing representation
+EXIST; the clean `-dim` is its signature.
+
+**So deriving `comm(Omega) = -dim * dC` is exactly as hard as deriving
+`t = h/2`.** Six tranches reduce step 8's postulate to step 4's. They do not
+eliminate it.
+
+That is worth having — a postulate reduced to an earlier, already-named one
+says where to push — but it is **not** a derivation of `net`.
+
+### TWO CORRECTIONS to my own earlier entries in this bean
+
+1. **Mislabel.** Tranche (6) wrote `Omega_(2,1)`; the object is Omega's
+   **commutator part**. `chi^(2,1)(Omega) = 2h ≠ 0`, so the (2,1)-component is
+   strictly larger and not traceless. Identity unaffected; both probes
+   relabelled.
+
+2. **I over-read the alignment, in tranches (2), (4) and (5).** I called
+   `y0 ∥ dC` "a real 2-condition constraint". Measured:
+   `{x : comm-part(x) ∥ dC}` has dimension **4 of 6** — two thirds of the
+   algebra. Landing in it is not a coincidence, and `w_0` also aligning is
+   unsurprising rather than suggestive. **The content was never the
+   parallelism, only the ratio.**
+
+Both are now assertions in the probe so they cannot quietly revert.
+
+### Where this leaves the bean
+
+Derived: `net = tau(. * Omega)`; the Schur element `1/c_(2,1)` (tau's
+decomposition); the multiplicity `dim`; the pairing normalisation `1/y_(2,1)`.
+
+**Open, and now precisely located:** `t = h/2`, the step-4 presentation. Not a
+new unknown — the one the audit already named. The honest next move is either
+to derive step 4, or to record that step 8 is not independent of it.
+
+Scope (a). Step 8's postulate is REDUCED, not closed.
