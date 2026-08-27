@@ -153,7 +153,27 @@ def main() -> int:
     Z, N = 2, 2
     n = 3 * (Z + N)                      # 12
     q = mp.mpf(Q_50_DIGIT_STR)
-    y_table = _load_y_lambda(n, None)
+    # Select the y_λ table from the SAME pin the characters are evaluated at.
+    #
+    # `_load_y_lambda(n, None)` takes the module default, which is the proton
+    # table. This producer evaluates χ at `Q_50_DIGIT_STR`, which today also
+    # resolves to proton — so the two agree by COINCIDENCE, not construction.
+    # Verified: the default and the pin-derived table are byte-identical as of
+    # 2026-08-27.
+    #
+    # The bridge's own docstring records why that is not good enough. It
+    # "accepts q_str and then ignored it when choosing weights, so a proton-q₀
+    # caller got muon-pinned y_λ with nothing in the output saying so";
+    # repointing the default at proton fixed that and left the mirror live —
+    # a muon-q₀ caller now silently gets proton y_λ. Passing the pin closes
+    # both directions here, so a future re-pin moves the weights with the
+    # characters instead of desynchronising them silently.
+    #
+    # Measured cost of the desync if it ever happened: the two tables differ
+    # at the 8th digit (2.899588321 vs 2.899588372, ~18 ppb) — the μ–p
+    # substrate tension itself, per AGENTS.md "never straddle the two layers
+    # inside one quantity".
+    y_table = _load_y_lambda(n, None, q_str=Q_50_DIGIT_STR)
 
     # Block-swap braids as (sign=+1, gen_1based) pairs.
     swp = {
