@@ -1,11 +1,11 @@
 ---
 # qou-xzrj
 title: 'GAP: the 7.67% trace-invisible remainder of epsNPq (step 8)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-26T22:58:54Z
+updated_at: 2026-08-27T05:16:25Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
