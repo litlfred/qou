@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T01:14:23Z
+updated_at: 2026-08-27T03:25:21Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -310,3 +310,54 @@ the proof line, and the pattern `simp \[qTrWith.*` also matched `simp [qTrWith, 
 worthless. The `monoidal` verdict above is the re-run on a restored tree. When swapping tactics by
 regex in this module, anchor on a unique placeholder token, never on a tactic name that occurs in
 another proof.
+
+
+MONODROMY DIRECTION — a doubt I could not resolve by hand, recorded so nobody "fixes" the statement.
+
+Setting up the proof I counted crossings, and the count does not obviously come out. Recording it
+because the natural response — flip the monodromy to its inverse — would be WRONG, and the reason
+is worth stating.
+
+The count. `β_{X⊗Y, Y'⊗X'}` is four elementary crossings: (X,Y'), (X,X'), (Y,Y'), (Y,X'). Sorting
+them by component — X-circle is the X and X' strands, Y-circle the Y and Y' strands:
+
+    within X-circle:  (X,X')            -> the framing ±1, corrected by θ_X
+    within Y-circle:  (Y,Y')            -> the framing ±1, corrected by θ_Y
+    BETWEEN circles:  (X,Y') and (Y,X') -> two crossings, hence a linking number
+
+That is even, as it must be, and it is the linking that makes the twistless version false. So far so
+good. But `β_{X,Y} ≫ β_{Y,X}` is the FULL TWIST σ², i.e. two crossings of the SAME handedness,
+adding linking ±1 rather than cancelling it — which by that reading makes the total WORSE, not zero,
+and would mean the correcting factor is the INVERSE monodromy.
+
+WHY I AM NOT ACTING ON THAT, and why the recorded statement stands:
+
+1. **The direction is FORCED, not chosen.** `BalancedCategory.twist_tensor` gives
+   `θ_{X⊗Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)` — the FORWARD monodromy. The landed conditional
+   `qDimTwistedWith_tensor_of_monodromy` consumes exactly that, so if the lemma is true at all it is
+   true in the direction the statement already has. Flipping it would break the corollary and prove
+   nothing about the twisted dimension.
+2. **Multiplicativity in a ribbon category is classical.** If the forward monodromy really made the
+   linking worse, the classical theorem would be false. Between "the textbook theorem is wrong" and
+   "my crossing count has a sign error", the second is overwhelmingly more likely.
+3. **I have already made exactly this error once this session.** In the step-4 work I read two
+   leftover crossings as a cancelling R2 pair, and counting again WITH THE ORIENTATION REVERSAL AT
+   EACH CAP showed they were same-sign (Hopf-linked). The dual strands run backwards through the
+   caps, so naive handedness bookkeeping across a cap is exactly where I get it wrong.
+
+SO: treat the recorded `qTrWith_tensor_monodromy` as correct-as-stated, and treat this paragraph as
+a warning that the crossing arithmetic is subtle at the caps rather than as evidence against it. If
+a serious proof attempt hits a genuine sign obstruction, resolve it by working the orientations
+carefully — do NOT flip the statement to the inverse monodromy on the strength of a naive count,
+mine included.
+
+ALSO MEASURED THIS ROUND, both useful:
+- `trace_state` prints this goal COMPACTLY (about ten lines, fully readable) once
+  `simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation]` has
+  run. Blind hand-building is NOT necessary here; get the goal first.
+- Mathlib has NO compact-closed structure and NO categorical trace anywhere under
+  `CategoryTheory/Monoidal/` — checked directly. So there is no shortcut to borrow, and this is
+  genuinely new infrastructure rather than a re-derivation.
+- `braiding_tensor_left_hom` and `braiding_tensor_right_hom` are both `@[simp]`, so the big `simp`
+  that failed ALREADY had the four-way expansion available. That localises the difficulty further:
+  it is not the expansion, it is the interchange regrouping afterwards.
