@@ -722,6 +722,49 @@ theorem nLambda_addBoxNewRow_example :
       nLambda (addBoxNewRow [3, 2, 1]) = nLambda [3, 2, 1] + 3 := by
   decide
 
+/-! ### Addable corners
+
+A box may be added to row `r` exactly when the result is still weakly
+decreasing: `r = 0`, or row `r` is strictly shorter than the row above it.
+Plus, always, a new bottom row — the corner `addBoxRow` cannot express.
+
+The rule is stated for a bare `List ℕ`, so it does not *presuppose* weak
+decrease; on a genuine partition it is the usual notion. Cross-checked against
+`computations/y_lambda_pieri_step_probe.py`, which enumerates corners the same
+way and verifies (P) over them with `X` free. -/
+
+/-- The shapes obtained from `lam` by adding one box at an addable corner. -/
+def addableCorners (lam : Partition) : List Partition :=
+  ((List.range lam.length).filterMap fun r =>
+      if r = 0 ∨ (lam[r]?).getD 0 < (lam[r - 1]?).getD 0 then
+        some (addBoxRow lam r)
+      else none)
+    ++ [addBoxNewRow lam]
+
+/-! The three checks below are the shapes the probe enumerates, and they pin the
+rule from both sides: `(2,1)` has three corners because row 1 is strictly
+shorter than row 0, whereas `(2,2)` has only two because row 1 is **not** — a
+box there would break weak decrease. That negative case is the one a
+mis-stated condition would get wrong. -/
+
+theorem addableCorners_one : addableCorners [1] = [[2], [1, 1]] := by decide
+
+theorem addableCorners_two_one :
+    addableCorners [2, 1] = [[3, 1], [2, 2], [2, 1, 1]] := by decide
+
+theorem addableCorners_two_two : addableCorners [2, 2] = [[3, 2], [2, 2, 1]] := by decide
+
+theorem addableCorners_three_two_one :
+    addableCorners [3, 2, 1] = [[4, 2, 1], [3, 3, 1], [3, 2, 2], [3, 2, 1, 1]] := by decide
+
+/-- **The new bottom row is always a corner**, and it is always the last one
+listed. Recorded because the `++ [addBoxNewRow lam]` is easy to drop when
+refactoring, and `addableCorners` would then silently under-enumerate. -/
+theorem addBoxNewRow_mem_addableCorners (lam : Partition) :
+    addBoxNewRow lam ∈ addableCorners lam := by
+  unfold addableCorners
+  exact List.mem_append_right _ (List.mem_singleton_self _)
+
 /-- **The hook-length update rule.** Adding one box to row `r` raises the hook
 length by exactly one on two sets of cells and leaves every other cell alone:
 
