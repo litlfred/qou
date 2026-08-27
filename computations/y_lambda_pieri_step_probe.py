@@ -56,9 +56,30 @@ asserted from memory. Each was wrong at least once when asserted that way.
        (P2)   Σ_r  Q^{λ_r}    · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
 
    Same product, two weightings — the **row index** and the **row length**
-   (both `0` for the new bottom row) — each summing to `1`. These are the
-   targets a Lean proof of (P) should aim at: one variable, no outer
-   denominator, right-hand side a literal `1`.
+   (both `0` for the new bottom row) — each summing to `1`.
+
+7. **(P2) IS (P1) at the conjugate partition**, so the two are one identity.
+   Transposing sends the corner in row `r` at `(r, λ_r)` to the corner in row
+   `λ_r` at `(λ_r, r)`, so "row index" and "row length" swap; and hook lengths
+   are transposition-invariant, `h_λ(i,j) = h_{λ'}(j,i)`, so the product is
+   unchanged. Hence `(P2)[λ] = (P1)[λ']`.
+
+   **The whole Pieri step therefore reduces to ONE identity:**
+
+       Σ_r  Q^{r} · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+
+   (P2) follows by conjugation, and (P) from the two by X-linearity. That is
+   the target a Lean proof should aim at: one variable, no outer denominator,
+   right-hand side a literal `1`.
+
+   **Read the evidence for fact 7 carefully.** The **self-conjugate** shapes
+   — `(1)`, `(2,1)`, `(2,2)`, `(3,2,1)`, `(3,3,2)` — satisfy
+   `(P2)[λ] = (P1)[λ']` trivially, because `λ' = λ`. They are not evidence for
+   anything. `main()` therefore labels each shape and reports how many carry
+   information; at the shapes currently checked that is **6 of 11**. Do not
+   quote a count from this docstring — run it, because the shape list changes
+   and a hand-kept number decays. (This note replaces a count of "four" that
+   was wrong the moment it was typed.)
 
 Precision: this probe is EXACT throughout — sympy symbolic over ℚ(Q,X), with
 `cancel` deciding equality. No float appears anywhere, so the NO-FLOAT64
@@ -170,6 +191,32 @@ def check_split(lam):
     return x_free, p1, p2, all(h == 1 for h in new_hooks), cs
 
 
+def conjugate(lam):
+    """The transpose partition: column `j` becomes the count of rows exceeding `j`."""
+    if not lam:
+        return ()
+    return tuple(sum(1 for x in lam if x > j) for j in range(max(lam)))
+
+
+def weighted_corner_sum(lam, weight):
+    """`Σ_r w_r · ∏ (1−Q^h)/(1−Q^{h+1})`, with `w_r = Q^r` or `Q^{λ_r}`."""
+    total = 0
+    for r, _ in addable_corners(lam):
+        prod_r, m = shift_product(lam, r)
+        total += (Q ** r if weight == "row" else Q ** m) * prod_r
+    return cancel(total)
+
+
+def check_conjugation(lam):
+    """Fact 7: `(P2)[λ]` and `(P1)[λ']` are the same rational function.
+
+    Returns the verdict and whether `λ` is self-conjugate — a self-conjugate
+    shape satisfies this trivially and is NOT evidence."""
+    lam_c = conjugate(lam)
+    same = cancel(weighted_corner_sum(lam, "len") - weighted_corner_sum(lam_c, "row")) == 0
+    return same, lam_c == tuple(lam), lam_c
+
+
 def check_clean(lam):
     """Fact 6: both identities in the form that sums to exactly 1."""
     p1 = p2 = 0
@@ -205,6 +252,16 @@ def main():
         ok_all &= x_free and p1 and p2 and hooks_one and c1 and c2
         print(f"  lam={lam!s:<12} X-linear={x_free}  new-box hook=1: {hooks_one}  "
               f"(P1)={p1} (P2)={p2}  clean: {c1}/{c2}  contents={cs}")
+
+    print("\n(P2) is (P1) at the conjugate — fact 7. Self-conjugate shapes are NOT evidence.")
+    informative = 0
+    for lam in split_shapes:
+        same, self_conj, lam_c = check_conjugation(lam)
+        ok_all &= same
+        informative += 0 if self_conj else 1
+        tag = "self-conjugate, trivial" if self_conj else "INFORMATIVE"
+        print(f"  lam={lam!s:<12} lam'={lam_c!s:<14} (P2)[lam]==(P1)[lam']: {same}   {tag}")
+    print(f"  -> {informative} of {len(split_shapes)} shapes carry information; the rest are self-conjugate.")
 
     print("\nall exact:", ok_all)
     return 0 if ok_all else 1
