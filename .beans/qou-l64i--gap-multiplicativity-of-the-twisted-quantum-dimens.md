@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T03:25:21Z
+updated_at: 2026-08-27T03:28:56Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -361,3 +361,49 @@ ALSO MEASURED THIS ROUND, both useful:
 - `braiding_tensor_left_hom` and `braiding_tensor_right_hom` are both `@[simp]`, so the big `simp`
   that failed ALREADY had the four-way expansion available. That localises the difficulty further:
   it is not the expansion, it is the interchange regrouping afterwards.
+
+
+DIRECTION DOUBT RESOLVED — AFFIRMATIVELY. The forward monodromy is right, my count was wrong, and
+the proof mechanism is now identified.
+
+Printed the goal with the block braiding expanded (`simp only [qTrWith, tensorExactPairing,
+ExactPairing.coevaluation, ExactPairing.evaluation, braiding_tensor_left_hom,
+braiding_tensor_right_hom, Category.assoc]` then `trace_state`). The six braidings are explicit:
+
+    (β_ X Y).hom ≫ (β_ Y X).hom     -- the input monodromy
+    X ◁ (β_ Y Y').hom               -- Y-closure, survives to the RHS
+    (β_ X Y').hom ▷ Y               -- CROSS TERM
+    X ◁ (β_ Y X').hom               -- CROSS TERM
+    (β_ X X').hom ▷ Y               -- X-closure, survives to the RHS
+
+WHERE MY EARLIER COUNT WENT WRONG. I assumed the monodromy crossings had to cancel the cross terms
+DIRECTLY, and since both pairs are same-handed that looked impossible. They are not the same
+objects, so they cannot cancel directly at all — `β_{X,Y}` is X-past-Y, the cross term is
+X-past-Y'. The cancellation goes THROUGH A CAP: `β_{X,Y'}` and `β_{X,Y}` are X passing the two legs
+`Y'` and `Y` of the Y-cap `ε_ Y Y' : Y' ⊗ Y ⟶ 𝟙`, and a strand passing both legs of a cap is the
+R2-through-a-cap move. Symmetrically `β_{Y,X'}` pairs with `β_{Y,X}` across the X-cap. So it is two
+absorptions, not two cancellations, and the parity objection evaporates.
+
+THE MECHANISM IS A LEMMA WE ALREADY HAVE. `QOU.MathlibExt.braiding_slide_cap_right` (PR #5848) is
+exactly this move:
+
+    braiding_slide_cap_right (c : A ⊗ B ⟶ 𝟙_ C) :
+      𝟙 _ ⊗≫ (β_ W A).hom ▷ B ⊗≫ A ◁ (β_ W B).hom ⊗≫ c ▷ W ⊗≫ 𝟙 W
+        = 𝟙 _ ⊗≫ W ◁ c ⊗≫ 𝟙 W
+
+Instantiate `W := X`, `A := Y'`, `B := Y`, `c := ε_ Y Y'` for the first absorption, and
+`W := Y`, `A := X'`, `B := X`, `c := ε_ X X'` for the second. It was proved for precisely this kind
+of step and has been sitting unused since #5848.
+
+CONFIDENCE, stated honestly: the OBJECT-MATCHING is verified — the lemma's shape and the goal's
+braidings line up on `W, A, B, c` as above. What is NOT yet verified is the ORDERING: the goal
+presents the monodromy BEFORE the cross terms (`β_{X,Y}` … then `β_{X,Y'}`), whereas the lemma wants
+W-past-A before W-past-B, i.e. `β_{X,Y'}` first. Those two act on disjoint strands so interchange
+should reorder them, but I have not executed that. So: the mechanism is IDENTIFIED, the proof is not
+DONE, and the remaining work is the regrouping — which is the same interchange obstruction measured
+all along, now with a named target to regroup TOWARD instead of an open search.
+
+NEXT CONCRETE STEP for whoever picks this up: regroup the goal (pad with `𝟙 _ ⊗≫ … ⊗≫ 𝟙 _`, per the
+`tensorExactPairing` idiom) until the bare `(β_ W A).hom ▷ B ≫ A ◁ (β_ W B).hom ≫ c ▷ W` pattern is
+visible, then `rw [braiding_slide_cap_right]` twice. Use `trace_state` between steps — the goal
+prints compactly.
