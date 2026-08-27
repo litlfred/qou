@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T03:28:56Z
+updated_at: 2026-08-27T04:32:57Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -407,3 +407,31 @@ NEXT CONCRETE STEP for whoever picks this up: regroup the goal (pad with `𝟙 _
 `tensorExactPairing` idiom) until the bare `(β_ W A).hom ▷ B ≫ A ◁ (β_ W B).hom ≫ c ▷ W` pattern is
 visible, then `rw [braiding_slide_cap_right]` twice. Use `trace_state` between steps — the goal
 prints compactly.
+
+
+TACTIC LEDGER — SEVEN approaches now ruled out on `qTrWith_tensor_monodromy`. Do not re-run these.
+
+Earlier rounds:  monoidal;  aesop_cat;  coherence;  a loaded `simp` with the braiding_tensor
+expansions, tensorHom_def and whisker_exchange.
+
+This round (each a full compile at maxHeartbeats 1600000, all FAIL FAST — none is a budget artifact):
+
+    simp [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+          braiding_naturality_right, braiding_naturality_left, whisker_exchange, monoidalComp]
+    simp only [qTrWith, tensorExactPairing, …] ; rw [braiding_slide_cap_right]
+    simp [qTrWith, tensorExactPairing, …, monoidalComp] ; coherence
+
+The second is the informative one. `braiding_slide_cap_right` IS the right mechanism (established
+last round) but it does NOT fire as a rewrite, and the reason is structural rather than incidental:
+its statement is phrased with `⊗≫`, so its LHS carries baked-in coherence isomorphisms that no
+un-regrouped goal will match syntactically. It has to be reached by CONSTRUCTING the matching term
+in a `calc`, exactly as `tensorExactPairing`'s own snake fields do — not by `rw` or `simp`.
+
+CONCLUSION, and this closes out what can be learned without doing the proof: this is a hand-built
+string-diagram `calc` of the `tensorExactPairing` kind, and nothing shorter will reach it. Everything
+needed is now recorded — the true statement, the verified direction, the mechanism, the
+instantiations of `W/A/B/c`, the goal-printing recipe, and seven dead ends. The next agent should
+budget a real session for the calc rather than another round of tactic probing.
+
+STOPPING HERE deliberately. Further hourly check-in windows on this bean would produce more negative
+tactic results, which is thin value against a target that is now fully characterised.
