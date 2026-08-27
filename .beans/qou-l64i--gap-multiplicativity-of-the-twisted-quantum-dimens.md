@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T01:06:48Z
+updated_at: 2026-08-27T01:09:19Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -174,3 +174,52 @@ HONEST SCOPE: this is progress on the framework, NOT on the nesting. The obstruc
 earlier (interchange, not coherence) is untouched and now sits entirely inside
 `qTrWith_tensor_eq_ptr`. Do not read step 1 landing as the route being half done — it is the easy
 half, and the docstring in the file says so.
+
+
+🛑 SAME-SESSION CORRECTION — P2's TRUTH IS NOT ESTABLISHED, AND THERE IS A SPECIFIC REASON TO
+DOUBT IT AS STATED. Read this before attempting it.
+
+I recorded `qTrWith_tensor_eq_ptr` above as "the crux", i.e. as a true lemma awaiting a proof. That
+was an overstatement: I DEFINED `ptrWith` and then ASSERTED that the nested closure factors through
+it, without checking the factorisation holds. That is the "defined residual ≠ derived
+decomposition" trap in AGENTS.md, applied to a decomposition of a trace rather than of a number.
+The landed lemmas are unaffected — `ptrWith_id` is proved and true, and `qTrWith` is a definition —
+but the TARGET may be false.
+
+THE COUNT THAT RAISES THE DOUBT. `β_{X⊗Y, Y'⊗X'}` is ONE braiding on the left-hand side, but it
+decomposes: `braiding_tensor_left_hom` splits `β_{X⊗Y, Z}` into two elementary braidings, and each
+of those with `Z = Y' ⊗ X'` splits into two more by `braiding_tensor_right_hom`. So the LHS carries
+FOUR elementary braidings:
+
+    β_{X,Y'}   β_{X,X'}   β_{Y,Y'}   β_{Y,X'}
+
+The right-hand side carries exactly TWO: `β_{Y,Y'}` inside `ptrWith` and `β_{X,X'}` inside the
+outer `qTrWith`. So the identity as stated REQUIRES the cross terms `β_{X,Y'}` and `β_{Y,X'}` — the
+crossings between the X-loop and the Y-loop — to cancel each other.
+
+WHY THAT IS SUSPICIOUS, and it is the same argument that motivated this whole bean: if those two
+cancelled unconditionally, the identity would hold with NO twist anywhere, i.e. the TWISTLESS
+braided dimension would be multiplicative in ANY braided category. But the reason the twisted
+dimension is the right object at all is that the balancing axiom is what undoes the crossing the
+nested closure introduces between the X and Y strands (recorded above). Both cannot be true. Either
+the cross terms do not cancel on their own — so P2 as stated is FALSE — or they do, and my
+motivating story for why the twist is needed is wrong. I have not determined which, and I am not
+going to assert either.
+
+TWO REPAIRS TO TRY, in preference order:
+
+1. **A BRAIDED partial trace.** `ptrWith` may simply be the wrong partial trace for a braided
+   category: the X strand has to be threaded past the Y-closure, so the correct definition probably
+   carries the cross braidings itself. If so P2 becomes true by construction of the right object,
+   and `ptrWith_id` will need re-checking against the new definition (it may still hold, since at
+   `f = 𝟙` there is nothing to thread).
+2. **State P2 for the TWISTED trace directly**, with `twist_tensor` available, so the double
+   braiding from `θ_{X⊗Y}` is present to cancel the cross terms. This matches the motivating story
+   and is the version actually needed for multiplicativity anyway.
+
+CHEAPEST WAY TO DECIDE WHICH: specialise to a SYMMETRIC category, where `β_{X,Y'}` and `β_{Y,X'}`
+compose to the identity if they are an R2 pair. If P2 holds symmetrically but not braided, repair 2
+is right. If it fails even symmetrically, `ptrWith` is the wrong object and repair 1 is right.
+That is one compile, and it should be the next thing anyone does on this bean.
+
+DO NOT treat the statement recorded above as a theorem to be proved until one of these settles it.
