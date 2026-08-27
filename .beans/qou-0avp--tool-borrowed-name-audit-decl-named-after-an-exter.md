@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-26T21:38:13Z
+updated_at: 2026-08-27T05:34:46Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -234,3 +234,40 @@ identification; the statement says `-6 = -6` with the QOU structure unused.
 Also `riemann_hurwitz_check` (R-H not applied; its conclusion is typed in) and
 `euler_genus_relation` — the `seifert_euler_relation` shape exactly. All three
 adjudicated **genuine**; ledger now 182.
+
+
+
+## Sharpest catch of the audit — `quantum_peter_weyl_completeness` (2026-08-27)
+
+```lean
+def eigenspace_dim (twice_j : ℕ) : ℕ := (twice_j + 1) ^ 2
+
+/-- **Quantum Peter–Weyl completeness.** The matrix coefficients {D^j_{mn}}
+    form a complete orthonormal basis of L²(A).
+    This is an axiom of the formalization. … Tannaka–Krein reconstruction …
+    Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077 -/
+theorem quantum_peter_weyl_completeness :
+    ∀ (twice_j : ℕ), eigenspace_dim twice_j = (twice_j + 1) ^ 2 := by
+  intro twice_j; rfl
+```
+
+The theorem unfolds its own definition — literally `x = x`. Kernel-confirmed
+`defeq_collapse=true`, `value_is_rfl=true`, `local_only=true`.
+
+**It is the AGENTS.md §1a audit-dodge shape by its own words.** The docstring
+says *"This is an axiom of the formalization"* while the declaration is a
+`theorem`. §1a: a docstring saying "stated as an opaque axiom" beside a
+`theorem … := by rfl` is **strictly worse than an `axiom`, because an axiom is
+visible to `#print axioms` and this is not.** Same shape `qou-wcff` recorded
+for genus-filtration-ideal. Adjudicated **genuine**; ledger 183.
+
+Honest dispositions per §1a: prove the real completeness statement; or state it
+with `sorry` + `-- Ref: [woronowicz1987]`; or declare it an `axiom` so the
+axiom audit can see it.
+
+## Kernel scaling, follow-up measurement
+
+The 7 modules that timed out as one batch were retried at **batch size 3**:
+3 completed in 4m14s, the remaining 4 still time out at 560s. **Batch size
+alone does not rescue the heaviest modules** — those need their own budget.
+Cumulative: 19 modules, 352 theorems, 56 defeq collapses.
