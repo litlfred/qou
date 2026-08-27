@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-27T05:57:55Z
+updated_at: 2026-08-27T06:00:27Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -142,3 +142,29 @@ informative count — currently 6 of 11. Run it; do not quote a count.
    over the corners, equal to `1`.
 
 Nothing above is proved in Lean yet. All of it is measured exact-symbolically.
+
+
+### MEASURED NEGATIVE — partial sums in row order do NOT telescope
+
+Tested on `(2,1)`, `(3,1)`, `(3,2,1)`, `(4,2,1)`: form the tail sums
+`S_{≥k} = Σ_{corners in rows ≥ k} Q^r · P_r` and look for structure. There is
+none. `S_{≥0} = 1` as it must, but every proper tail is an ugly rational
+function with no pattern — e.g. at `(4,2,1)`,
+
+    S_{≥2} = Q²·(Q¹¹ + 3Q¹⁰ + 5Q⁹ + 8Q⁸ + 10Q⁷ + 11Q⁶ + 11Q⁵ + 9Q⁴ + 7Q³
+              + 5Q² + 2Q + 1) / ((Q+1)(Q²+1)(Q⁴+Q³+Q²+Q+1)(Q⁶+…+1))
+
+and the denominators are not the natural product denominators either. **The
+cancellation is global across all corners, not sequential.** Consistent with
+the earlier finding that no summand collapses on its own.
+
+**Scope (a), not (b):** this rules out *partial sums in row order* as a route,
+measured on four shapes. It is not a proved exclusion of every sequential or
+recursive structure — I have no invariant forbidding those, and did not look
+for one. Do not upgrade this to "no induction exists".
+
+What it does say: do not spend time looking for a telescoping in row order, and
+do not expect a two-term recursion in the number of rows to fall out. A route
+that works will have to move all corners at once — inclusion–exclusion over the
+corner's hook, in the shape of the Greene–Nijenhuis–Wilf hook-walk argument,
+is the obvious candidate and is a research-scale build in Lean, not a brick.
