@@ -1,11 +1,11 @@
 ---
 # qou-rfq9
 title: Merge the shared machinery of the two Lean vacuity text-detectors
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-27T11:56:04Z
-updated_at: 2026-08-27T13:22:17Z
+updated_at: 2026-08-27T15:35:20Z
 ---
 
 Measured 2026-08-27. Two text-level detectors now exist for the same defect
