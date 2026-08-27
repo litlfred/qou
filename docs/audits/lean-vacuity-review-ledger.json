@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T06:20:34.974979Z",
+  "updated_at": "2026-08-27T06:26:23.037689Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2668,6 +2668,39 @@
       "disposition": "note-overload",
       "tier": "major",
       "evidence": "`Splus0` is declared in at least TWO modules with DIFFERENT values and DIFFERENT types: here `Fin 3 -> Fin 3 -> Int` with entry (0,1) = 4, and in QOU/QBeta/StokesQZeroDTCount.lean as `M2 := ![![1, 3], ![0, 1]]` with entry (0,1) = 3. Both carry Stokes-matrix docstrings. A string-keyed reader will conflate them and read one module's constant as the other's; resolve to the DECLARATION. This is the hazard a sibling agent flagged on PR #5856 for hookDim/wenzlSchurElement, now confirmed independently in the Stokes modules.",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_product::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "db86496cd3c3",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `(9 * column_syt_pole_per_cycle 2) * (5 * column_syt_pole_per_cycle 3) = 90 := rfl` is `(9*1) * (5*2) = 90`. The docstring presents this as the combinatorial reading of `alpha_EM^-1 = q * [9]_q * [10]_q`, saying the product 90 'matches [9]*[10] in the q->1 limit of alpha_EM^-1'. But 9 and 5 are hand-chosen multipliers and the function is `p-1`, so the 'match' is arithmetic on inputs selected to produce it. LOAD-BEARING: alpha_EM is a live framework quantity, and this is presented as combinatorial support for its value.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::inter_nucleon_interface_pole::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "db86496cd3c3",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. Statement is `column_syt_pole_per_cycle 2 = 1 := rfl`, i.e. `2-1=1` -- BYTE-IDENTICAL to `column_syt_pole_per_cycle_two` declared a few lines earlier. Two differently-named theorems with the same trivial statement, one framed as 'Sanity' and this one as the inter-nucleon interface pole. Its own docstring concedes the real content is external: 'the per-nucleon 18 and 21 are inputs from the AXKIA per-new-nucleon decomposition (cited in audit Step 5, not provable from pole_indicator_correct alone)'. The name claims what the statement does not.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_T_2_9::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "advisory",
+      "file_sha": "db86496cd3c3",
+      "disposition": "note-disclosed-sanity-check",
+      "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `9 * column_syt_pole_per_cycle 2 = 9` is `9*1=9`. Trivial, but the docstring opens 'Sanity:' -- it announces itself as a check rather than a derivation, which is the honest framing. Recorded advisory rather than genuine on that basis; the same applies to axkia_pole_T_3_5.",
+      "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     }
   }
