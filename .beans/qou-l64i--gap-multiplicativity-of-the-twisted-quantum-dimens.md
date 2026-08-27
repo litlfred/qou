@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T01:10:57Z
+updated_at: 2026-08-27T01:14:23Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -272,3 +272,41 @@ as stated, does not factor — the ingredient is not excluded, and indeed repair
 STILL TRUE AND LANDED, unaffected by any of this: `qTrWith`, `qTrWith_id`, `qTrWith_twist`,
 `ptrWith`, `ptrWith_id`. `ptrWith_id` is about `f = 𝟙` on a SINGLE closure and never meets the
 cross terms.
+
+
+REPAIR 2, IN A BETTER FORM THAN "state it for the twisted trace". VERIFIED TO ELABORATE.
+
+Rather than restate the factorisation with `θ` baked in, put the UNLINKING DOUBLE BRAIDING
+EXPLICITLY ON THE INPUT. This isolates the geometric content — "a monodromy on the input unlinks
+the cable closure" — and makes multiplicativity a corollary rather than a restatement:
+
+    set_option maxHeartbeats 1600000 in
+    theorem qTrWith_tensor_monodromy (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] (g : X ⟶ X) (h : Y ⟶ Y) :
+        @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+            ((β_ X Y).hom ≫ (β_ Y X).hom ≫ (g ⊗ₘ h))
+          = qTrWith X X' g ≫ qTrWith Y Y' h
+
+MEASURED: the statement ELABORATES (checked with `sorry`; instances resolve, no metavariable or
+universe trouble). `monoidal` fails on it, re-run on a clean file — see the harness note below.
+Not committed: a `sorry` would be.
+
+WHY THIS SHAPE IS THE RIGHT ONE:
+- It says exactly what the diagram argument above establishes, and nothing more. The two cross
+  terms `β_{X,Y'}` and `β_{Y,X'}` are a linking number; `β_{X,Y} ≫ β_{Y,X}` is the monodromy that
+  cancels it. Everything else on both sides is per-object.
+- It is `g`/`h`-general, so it is one lemma rather than one per application.
+- MULTIPLICATIVITY IS THEN A COROLLARY, not a re-proof: take `g = θ_X`, `h = θ_Y`, and
+  `BalancedCategory.twist_tensor` rewrites `θ_{X⊗Y}` into exactly the LHS's input. With
+  `qTrWith_twist` (already landed, by `rfl`) both sides become the twisted dimensions and the
+  original target falls out.
+- It needs only `[BraidedCategory C]` — no balanced structure — so the balancing axiom is used
+  ONLY in the corollary, which is where it belongs. That is the same "the axiom enters at exactly
+  one step" separation as the sphericality proof in this file.
+
+HARNESS NOTE, recorded because it cost a wrong measurement here. I probed tactics by regex-swapping
+the proof line, and the pattern `simp \[qTrWith.*` also matched `simp [qTrWith, qDimWith]` inside
+`qTrWith_id` — so two of the three verdicts were measured against a CORRUPTED file and were
+worthless. The `monoidal` verdict above is the re-run on a restored tree. When swapping tactics by
+regex in this module, anchor on a unique placeholder token, never on a tactic name that occurs in
+another proof.
