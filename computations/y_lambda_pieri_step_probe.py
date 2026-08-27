@@ -72,6 +72,30 @@ asserted from memory. Each was wrong at least once when asserted that way.
    the target a Lean proof should aim at: one variable, no outer denominator,
    right-hand side a literal `1`.
 
+8. **(P) at `Q → 1` IS (F), the SYT branching rule.** They are not two
+   independent inputs — **(F) is the `q → 1` shadow of (P)**.
+
+   Each factor `(1 − Q^h)/(1 − Q^{h+1}) → h/(h+1)`, so fact 6's (P1) becomes
+   `Σ_r ∏_{h ∈ arm ∪ leg(r)} h/(h+1) = 1`. Now the Lean hook-length update rule
+   — hook `+1` on `arm ∪ leg`, new box hook `1`, everything else unchanged —
+   gives `∏_{c ∈ μ} h_μ(c) = ∏_{c ∈ λ} h_λ(c) · ∏_{h ∈ arm ∪ leg} (h+1)/h`.
+   Feed that through Frame–Robinson–Thrall (`f_ν · ∏hooks(ν) = |ν|!`):
+
+       f_μ / f_λ  =  (n+1) · ∏_{h ∈ arm ∪ leg} h/(h+1)
+
+   so `Σ_r ∏ h/(h+1) = 1` **iff** `Σ_{μ = λ+□} f_μ = (n+1)·f_λ`, which is (F).
+
+   **This corrects the framing carried in PR #5857 §4 and #5871**, where (P)
+   and (F) were listed as two separate elementary statements the telescope
+   needs. They are one statement and its `q → 1` degeneration. The general-`n`
+   telescope rests on a single q-deformed identity.
+
+   FRT is **machine-checked in this corpus**, sorry-free, at
+   `QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct`
+   (`QOU/Mathlib/HookLengthFormula.lean:171`) — so the `q = 1` case of the
+   identity is reachable from corpus material plus the update rule already
+   proved. Only the q-deformation is genuinely open.
+
    **Read the evidence for fact 7 carefully.** The **self-conjugate** shapes
    — `(1)`, `(2,1)`, `(2,2)`, `(3,2,1)`, `(3,3,2)` — satisfy
    `(P2)[λ] = (P1)[λ']` trivially, because `λ' = λ`. They are not evidence for
@@ -88,7 +112,7 @@ rather than by tolerance. No witness is emitted: every output is a symbolic
 identity that re-derives in seconds, and there is no measured number to record.
 """
 
-from sympy import symbols, prod, factor, cancel
+from sympy import Rational, cancel, factor, factorial, prod, symbols
 
 Q, X = symbols("Q X")
 
@@ -191,6 +215,33 @@ def check_split(lam):
     return x_free, p1, p2, all(h == 1 for h in new_hooks), cs
 
 
+def num_syt(lam):
+    """`#SYT(λ)` by the classical hook-length formula. Exact `Rational`."""
+    hook_prod = 1
+    for i in range(len(lam)):
+        for j in range(lam[i]):
+            hook_prod *= hook(lam, i, j)
+    return factorial(sum(lam)) / hook_prod
+
+
+def check_q1_is_branching(lam):
+    """Fact 8: at `Q → 1` the identity is the SYT branching rule.
+
+    Returns `(identity holds at q=1, branching rule holds)` — both computed
+    independently, so agreement is a cross-check rather than a restatement."""
+    q1 = 0
+    for r, _ in addable_corners(lam):
+        if r < len(lam):
+            m = lam[r]
+            hs = ([hook(lam, r, j) for j in range(m)]
+                  + [hook(lam, i, m) for i in range(r) if lam[i] > m])
+        else:
+            hs = [hook(lam, i, 0) for i in range(len(lam)) if lam[i] > 0]
+        q1 += prod([Rational(h, h + 1) for h in hs])
+    branch = sum(num_syt(mu) for _, mu in addable_corners(lam))
+    return q1 == 1, branch == (sum(lam) + 1) * num_syt(lam)
+
+
 def conjugate(lam):
     """The transpose partition: column `j` becomes the count of rows exceeding `j`."""
     if not lam:
@@ -262,6 +313,13 @@ def main():
         tag = "self-conjugate, trivial" if self_conj else "INFORMATIVE"
         print(f"  lam={lam!s:<12} lam'={lam_c!s:<14} (P2)[lam]==(P1)[lam']: {same}   {tag}")
     print(f"  -> {informative} of {len(split_shapes)} shapes carry information; the rest are self-conjugate.")
+
+    print("\n(P) at Q -> 1 IS the SYT branching rule (F) — fact 8.")
+    for lam in split_shapes:
+        id_q1, branching = check_q1_is_branching(lam)
+        ok_all &= id_q1 and branching
+        print(f"  lam={lam!s:<12} identity at q=1: {id_q1}   branching rule: {branching}")
+    print("  -> (F) is the q->1 shadow of (P), not an independent input.")
 
     print("\nall exact:", ok_all)
     return 0 if ok_all else 1
