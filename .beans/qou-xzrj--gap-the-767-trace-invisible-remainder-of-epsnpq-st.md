@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T05:33:38Z
+updated_at: 2026-08-27T06:11:05Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -163,3 +163,62 @@ as regular-character coefficients. They are the trace functional's own
 coefficients; it failed on 5 of 6 and the assertion caught it. My first
 DIAGNOSTIC was also wrong (compared against `net(x)` rather than `net(x_Z)`,
 which need not agree off the centre). Both are kept in the file as controls.
+
+
+## 2026-08-27 (2) — y0 IS dC, and the z-independence now has a MECHANISM
+
+`qbeta_riesz_element_is_structurally_forced_probe.py` (9/9, exact symbolic,
+z free throughout). Asked whether the unique y0 is merely DETERMINED or
+actually has an independent characterisation.
+
+### y0 = mu * dC,   mu = -2q/((q-z)(qz+1))
+
+The representing element is **Delta's own trace-invisible part**, rescaled.
+Nothing outside the decomposition is introduced. So
+
+    net(x) = sum_lambda a_lambda chi^lambda(x) + mu * tr_M(x * dC)
+
+and on dC the remainder is a **self-pairing**: `net(dC) = mu * tr_M(dC^2)`.
+The commutator space is 3-dimensional, so this is a real constraint.
+
+### Why the remainder is convention-free — previously MEASURED, now explained
+
+    <dC,dC> = -(z-q)(q-1)^2(q+1)^2(qz+1) / (2q(q^2-q+1)(q^2+q+1))
+    mu      = -2q / ((q-z)(qz+1))
+    product = -(q-1)^2(q+1)^2 / ((q^2-q+1)(q^2+q+1))            [z-FREE]
+
+Both carry the Hecke-quadratic pair `(q-z)(qz+1)`; they **cancel exactly**. The
+scalar's z-structure is the inverse of the pairing's. The bean recorded
+z-independence as an observation — this is the mechanism.
+
+### Two forced structural facts
+
+- y0's denominator = `(z-q)(qz+1)(q^2-q+1)(q^2+q+1)` = `q(q^4+q^2+1)(z^2-hz-1)`
+  — the **Hecke quadratic** `sigma^2 = h sigma + 1` read in z. Ratio exactly 1.
+- so y0's only poles are `z = q` and `z = -1/q`: exactly the two Markov Gram
+  roots that annihilate the **(2,1)** block (multiplicity law, PR #5864). y0
+  blows up precisely where the pairing defining it degenerates **on its own
+  block**. Neither z_C nor z_D is a pole.
+
+### Independent cross-check
+
+`net(dC) = -(q^2-1)^2/(q^4+q^2+1)` — the floor
+`qbeta_alpha_commutator_floor_probe.py` reached by a different construction.
+Two unrelated routes agree exactly.
+
+### Corrected
+
+I predicted the direction `[0,1,1,h,h,+2]` from a hand-factorisation; the
+assertion failed and the sign is **-2**. Claim survived, arithmetic did not.
+Retraction kept in the docstring.
+
+### STILL OPEN — the bean does not close
+
+Evidence y0 is **canonical rather than fitted**: z-free direction, structurally
+forced poles, and it is an object the decomposition already had. It is still
+**not a derivation from the substrate** — nothing here produces y0 without first
+inverting `net`.
+
+**The gap is now exactly `mu`.** Not "the element plus the scalar" — the element
+is accounted for. Is `mu = -2q/((q-z)(qz+1))` derivable? Its shape is
+suggestive: numerator `-2q`, denominator the Hecke quadratic. Scope (a).
