@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T13:07:41Z
+updated_at: 2026-08-27T13:09:57Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -568,3 +568,28 @@ assumed interchange would be enough. It is not.
 
 Tactic ledger now FIFTEEN ruled out (added: simp[whisker_exchange], aesop_cat, simp[←whisker_exchange]
 + monoidal, all from the exposed state).
+
+
+YANG-BAXTER IS AVAILABLE AND STILL DOES NOT CLOSE IT — measured, so the next attempt does not need
+to go looking for the tool.
+
+`CategoryTheory.yang_baxter` exists in this Mathlib (Braided/Basic.lean:155), along with
+`yang_baxter'`, `yang_baxter_iso`, and the `hexagon_forward/reverse` family with their `_iso` and
+`_inv` variants. So the braid relation the previous entry says is REQUIRED is present.
+
+    simp [hexagon_forward, hexagon_reverse, whisker_exchange, monoidalComp]   fails
+    simp [yang_baxter, whisker_exchange, monoidalComp]                       fails
+
+Both from the exposed state. These are genuine proof failures, not unknown-identifier errors — I
+checked. Seventeen approaches ruled out in total.
+
+WHAT THIS MEANS FOR THE NEXT ATTEMPT: every ingredient is now present and named — the working
+prefix, the two slide instantiations with their assignment, the mutual-blocking diagnosis, and the
+braid relation that the diagnosis says is needed. What is missing is the HAND APPLICATION: aiming
+`yang_baxter` at the specific crossing pair that blocks slide 2 (β_{X,X'} against β_{X,Y}), which a
+simp set will not do because it has no reason to prefer that direction. This is a targeted `rw` at a
+located subterm, i.e. `slice_lhs`/`conv` work, not a tactic search.
+
+SESSION SUMMARY (2026-08-27, dedicated session at the author's request): moved this bean from "no
+tactic fires, mechanism unknown" to "prefix verified, mechanism identified, obstruction named and
+diagnosed, required tool confirmed present". Still NOT PROVED, and no `sorry` committed.
