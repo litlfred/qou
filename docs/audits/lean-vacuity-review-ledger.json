@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T06:26:23.037689Z",
+  "updated_at": "2026-08-27T11:39:21.251415Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2575,10 +2575,10 @@
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 165,
-      "verdict": "legit",
+      "verdict": "genuine",
       "file_sha": "a7763e26e086",
-      "disposition": "no-change",
-      "evidence": "Same family as the hecke_nX_frobenius_codim group adjudicated legit at CRITICAL: a real symbolic identity over R for the q-dimension partition sum, merely named after Frobenius.",
+      "disposition": "state-the-real-proposition",
+      "evidence": "The docstring states the mechanism verbatim: \"The previous formulation declared `frobeniusCoCasimirTrace` as `noncomputable opaque` and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to bridge to the explicit values. Giving the function a partial `def` with `match n` discharges those axioms -- they are now theorems.\" Nothing was discharged: the axiom's CONTENT was moved into a `match` arm of the def, where the theorem reads it back by `rfl`. This is strictly worse than the axiom it replaced, because `#print axioms` reported the axiom and cannot see a def arm -- AGENTS.md 1a. The `rfl` has ZERO verification power: any value typed into the arm makes it pass. NARROW SCOPE -- the VALUE is separately derived in frobenius-codim-universal.lean (`hecke_n{n}_frobenius_codim`, a genuine `Fin.sum_univ` + `ring` evaluation of `sum 1/dim_q(lambda)`), so the mathematics is not fabricated. The defect is that NOTHING IN LEAN LINKS the arm to that theorem -- the cross-validation is by human eye across two files, so a mistyped arm is undetectable. FIX: state `frobeniusCoCasimirTrace q n = sum i, 1/heckeH{n}DimQ q i` and discharge it against the companion theorem; that is a real link and it catches a typo.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
@@ -2702,6 +2702,336 @@
       "evidence": "`def column_syt_pole_per_cycle (p : N) : N := if p = 0 then 0 else p - 1` -- it is just `p-1`. `9 * column_syt_pole_per_cycle 2 = 9` is `9*1=9`. Trivial, but the docstring opens 'Sanity:' -- it announces itself as a check rather than a derivation, which is the honest framing. Recorded advisory rather than genuine on that basis; the same applies to axkia_pole_T_3_5.",
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n3::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 122,
+      "verdict": "genuine",
+      "file_sha": "a7763e26e086",
+      "disposition": "state-the-real-proposition",
+      "evidence": "The docstring states the mechanism verbatim: \"The previous formulation declared `frobeniusCoCasimirTrace` as `noncomputable opaque` and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to bridge to the explicit values. Giving the function a partial `def` with `match n` discharges those axioms -- they are now theorems.\" Nothing was discharged: the axiom's CONTENT was moved into a `match` arm of the def, where the theorem reads it back by `rfl`. This is strictly worse than the axiom it replaced, because `#print axioms` reported the axiom and cannot see a def arm -- AGENTS.md 1a. The `rfl` has ZERO verification power: any value typed into the arm makes it pass. NARROW SCOPE -- the VALUE is separately derived in frobenius-codim-universal.lean (`hecke_n{n}_frobenius_codim`, a genuine `Fin.sum_univ` + `ring` evaluation of `sum 1/dim_q(lambda)`), so the mathematics is not fabricated. The defect is that NOTHING IN LEAN LINKS the arm to that theorem -- the cross-validation is by human eye across two files, so a mistyped arm is undetectable. FIX: state `frobeniusCoCasimirTrace q n = sum i, 1/heckeH{n}DimQ q i` and discharge it against the companion theorem; that is a real link and it catches a typo.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n2::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 135,
+      "verdict": "genuine",
+      "file_sha": "a7763e26e086",
+      "disposition": "state-the-real-proposition",
+      "evidence": "The docstring states the mechanism verbatim: \"The previous formulation declared `frobeniusCoCasimirTrace` as `noncomputable opaque` and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to bridge to the explicit values. Giving the function a partial `def` with `match n` discharges those axioms -- they are now theorems.\" Nothing was discharged: the axiom's CONTENT was moved into a `match` arm of the def, where the theorem reads it back by `rfl`. This is strictly worse than the axiom it replaced, because `#print axioms` reported the axiom and cannot see a def arm -- AGENTS.md 1a. The `rfl` has ZERO verification power: any value typed into the arm makes it pass. NARROW SCOPE -- the VALUE is separately derived in frobenius-codim-universal.lean (`hecke_n{n}_frobenius_codim`, a genuine `Fin.sum_univ` + `ring` evaluation of `sum 1/dim_q(lambda)`), so the mathematics is not fabricated. The defect is that NOTHING IN LEAN LINKS the arm to that theorem -- the cross-validation is by human eye across two files, so a mistyped arm is undetectable. FIX: state `frobeniusCoCasimirTrace q n = sum i, 1/heckeH{n}DimQ q i` and discharge it against the companion theorem; that is a real link and it catches a typo.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n4::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 148,
+      "verdict": "genuine",
+      "file_sha": "a7763e26e086",
+      "disposition": "state-the-real-proposition",
+      "evidence": "The docstring states the mechanism verbatim: \"The previous formulation declared `frobeniusCoCasimirTrace` as `noncomputable opaque` and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to bridge to the explicit values. Giving the function a partial `def` with `match n` discharges those axioms -- they are now theorems.\" Nothing was discharged: the axiom's CONTENT was moved into a `match` arm of the def, where the theorem reads it back by `rfl`. This is strictly worse than the axiom it replaced, because `#print axioms` reported the axiom and cannot see a def arm -- AGENTS.md 1a. The `rfl` has ZERO verification power: any value typed into the arm makes it pass. NARROW SCOPE -- the VALUE is separately derived in frobenius-codim-universal.lean (`hecke_n{n}_frobenius_codim`, a genuine `Fin.sum_univ` + `ring` evaluation of `sum 1/dim_q(lambda)`), so the mathematics is not fabricated. The defect is that NOTHING IN LEAN LINKS the arm to that theorem -- the cross-validation is by human eye across two files, so a mistyped arm is undetectable. FIX: state `frobeniusCoCasimirTrace q n = sum i, 1/heckeH{n}DimQ q i` and discharge it against the companion theorem; that is a real link and it catches a typo.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobeniusCoCasimirTraceFallback::proof-docstring-body-mismatch": {
+      "category": "proof-docstring-body-mismatch",
+      "pattern": "docstring-vs-body",
+      "line": 41,
+      "verdict": "genuine",
+      "file_sha": "a7763e26e086",
+      "disposition": "fix-the-docstring",
+      "evidence": "DOCSTRING CONTRADICTS BODY. The docstring ends \"Concrete model: returns 0 for every n >= 6\"; the body is `def frobeniusCoCasimirTraceFallback (_q : R) (n : N) : R := (n : R)`, which returns 6 at n=6, not 0. This is the term carrying the Frobenius correction for every n >= 6 -- i.e. every nucleus past the smallest -- so a reader who trusts the docstring reads the n >= 6 mass contribution as absent when it is `m_e * n`. Independent of the axiom-relocation finding above; found in the same read.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n2_frobenius_codim::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 229,
+      "verdict": "advisory",
+      "file_sha": "4a51eeb662e1",
+      "disposition": "no-change",
+      "evidence": "`noncomputable def heckeH2DimQ (_q : R) (_i : Fin 2) : R := 1` discards BOTH arguments, so `sum i : Fin 2, 1/heckeH2DimQ q i = 2` is `1 + 1 = 2`: the theorem cannot detect a wrong q-dimension because no q-dimension appears in it. The mathematical claim (both partitions of 2 have dim_q = 1) is true and the docstring says where it comes from, so this is a weak check rather than a false one. Its n=3/4/5 siblings ARE genuine evaluations and are not flagged.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 95,
+      "verdict": "genuine",
+      "file_sha": "e13ac108ae72",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def ord_u_zero_trM (Z N : N) : N := 18*Z + 21*N + 1` followed by `theorem ord_u_zero_trM_eq (Z N) : ord_u_zero_trM Z N = 18*Z + 21*N + 1 := rfl`. The theorem restates its own definition; `rfl` cannot fail. The docstring calls it a \"Path A pipeline closed-form (GAP-B-1 closure)\" and says it was \"Established by symbolic Hoefsmit pole-order analysis in per_irrep_pole_atom.py\" -- so the actual derivation is in Python and is NOT formalized here, while the Lean `theorem` under names borrowing Hoefsmit and Wedderburn reads as the formal closure of GAP-B-1. The docstring goes on to the formula's \"experimental implications (atomic binding energies)\". DUPLICATED verbatim in two files (see the sibling entry). Honest form: a `def` plus a documented pointer to the producer, or a theorem deriving the coefficients 18 and 21 from the pole-order analysis.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 82,
+      "verdict": "genuine",
+      "file_sha": "b29ed6241064",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def ord_u_zero_trM (Z N : N) : N := 18*Z + 21*N + 1` followed by `theorem ord_u_zero_trM_eq (Z N) : ord_u_zero_trM Z N = 18*Z + 21*N + 1 := rfl`. The theorem restates its own definition; `rfl` cannot fail. The docstring calls it a \"Path A pipeline closed-form (GAP-B-1 closure)\" and says it was \"Established by symbolic Hoefsmit pole-order analysis in per_irrep_pole_atom.py\" -- so the actual derivation is in Python and is NOT formalized here, while the Lean `theorem` under names borrowing Hoefsmit and Wedderburn reads as the formal closure of GAP-B-1. The docstring goes on to the formula's \"experimental implications (atomic binding energies)\". DUPLICATED verbatim in two files (see the sibling entry). Honest form: a `def` plus a documented pointer to the producer, or a theorem deriving the coefficients 18 and 21 from the pole-order analysis.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::jonesAtOne_doubleHopf_eq_four::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 175,
+      "verdict": "genuine",
+      "file_sha": "aafc985e17e2",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`jonesAtOne` is a flat lookup table (`| Link.doubleHopf => 4`, one branch commented \"placeholder; full formula for T(2,k) depends on k via the colored Jones\"). The theorem `jonesAtOne Link.doubleHopf = 4 := rfl` reads back a number the author typed. The docstring asserts a derivation the Lean does not perform: \"(-2)^2 = 4 (disjoint-union multiplicativity)\" -- there is no disjointUnion constructor and no multiplicativity rule in the def, so nothing computes (-2)^2. Under a name borrowing Jones this reads as a verified Jones value.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesBorromeanFlipped_eq_eight::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 73,
+      "verdict": "genuine",
+      "file_sha": "121d7f7441c4",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Same table shape as jonesAtOne_doubleHopf_eq_four: a hand-entered constant read back by `rfl` under a Jones name. Its neighbour's comment (\"Candidate for c_5 under double-Hopf disjoint-union\") shows these values feed the c_k ladder, so the table is not inert.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesDoubleHopfValue_eq_four::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 80,
+      "verdict": "genuine",
+      "file_sha": "121d7f7441c4",
+      "disposition": "state-the-real-proposition",
+      "evidence": "Same table shape as jonesBorromeanFlipped_eq_eight in the same file; hand-entered constant, `rfl`, Jones name, feeding the c_k candidate list.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c1::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 165,
+      "verdict": "genuine",
+      "file_sha": "11a6a9f9658e",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`noncomputable def ckFromReduction (q : R) : N -> R` is a `match` table (`| 1 => hoefsmitB_local q | 2 => (hoefsmitB_local q)^2 | 3 => jonesHopfLocal | 4 => (hoefsmitB_local q)^2 + 1/2`), and each `ckFromReduction_eq_c{k}` reads its own arm back by `rfl`. The names borrow Kashiwara / Jones / KL / Markov and the block is titled \"c_k extraction from algebraic rules\", but no rule is applied -- the arms ARE the answer. The c_3 case is the one that matters: `def jonesHopfLocal : R := -2` makes `ckFromReduction q 3 = jonesHopfLocal` an EXACT equality by construction, while AGENTS.md records `c_3 = -2 = J_Hopf(q=1)` as a NEAR-MATCH 3.4671 % from the extracted c_3 = -2.06934258, and requires c_k results be reported TIERED (proved / near-match / fitted), never as exact. Nothing here carries that scope. The `| 4 => ... + 1/2` arm introduces a `+ 1/2` with no stated origin.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c2::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 171,
+      "verdict": "genuine",
+      "file_sha": "11a6a9f9658e",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`noncomputable def ckFromReduction (q : R) : N -> R` is a `match` table (`| 1 => hoefsmitB_local q | 2 => (hoefsmitB_local q)^2 | 3 => jonesHopfLocal | 4 => (hoefsmitB_local q)^2 + 1/2`), and each `ckFromReduction_eq_c{k}` reads its own arm back by `rfl`. The names borrow Kashiwara / Jones / KL / Markov and the block is titled \"c_k extraction from algebraic rules\", but no rule is applied -- the arms ARE the answer. The c_3 case is the one that matters: `def jonesHopfLocal : R := -2` makes `ckFromReduction q 3 = jonesHopfLocal` an EXACT equality by construction, while AGENTS.md records `c_3 = -2 = J_Hopf(q=1)` as a NEAR-MATCH 3.4671 % from the extracted c_3 = -2.06934258, and requires c_k results be reported TIERED (proved / near-match / fitted), never as exact. Nothing here carries that scope. The `| 4 => ... + 1/2` arm introduces a `+ 1/2` with no stated origin.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c3::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 178,
+      "verdict": "genuine",
+      "file_sha": "11a6a9f9658e",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`noncomputable def ckFromReduction (q : R) : N -> R` is a `match` table (`| 1 => hoefsmitB_local q | 2 => (hoefsmitB_local q)^2 | 3 => jonesHopfLocal | 4 => (hoefsmitB_local q)^2 + 1/2`), and each `ckFromReduction_eq_c{k}` reads its own arm back by `rfl`. The names borrow Kashiwara / Jones / KL / Markov and the block is titled \"c_k extraction from algebraic rules\", but no rule is applied -- the arms ARE the answer. The c_3 case is the one that matters: `def jonesHopfLocal : R := -2` makes `ckFromReduction q 3 = jonesHopfLocal` an EXACT equality by construction, while AGENTS.md records `c_3 = -2 = J_Hopf(q=1)` as a NEAR-MATCH 3.4671 % from the extracted c_3 = -2.06934258, and requires c_k results be reported TIERED (proved / near-match / fitted), never as exact. Nothing here carries that scope. The `| 4 => ... + 1/2` arm introduces a `+ 1/2` with no stated origin.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c4::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 185,
+      "verdict": "genuine",
+      "file_sha": "11a6a9f9658e",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`noncomputable def ckFromReduction (q : R) : N -> R` is a `match` table (`| 1 => hoefsmitB_local q | 2 => (hoefsmitB_local q)^2 | 3 => jonesHopfLocal | 4 => (hoefsmitB_local q)^2 + 1/2`), and each `ckFromReduction_eq_c{k}` reads its own arm back by `rfl`. The names borrow Kashiwara / Jones / KL / Markov and the block is titled \"c_k extraction from algebraic rules\", but no rule is applied -- the arms ARE the answer. The c_3 case is the one that matters: `def jonesHopfLocal : R := -2` makes `ckFromReduction q 3 = jonesHopfLocal` an EXACT equality by construction, while AGENTS.md records `c_3 = -2 = J_Hopf(q=1)` as a NEAR-MATCH 3.4671 % from the extracted c_3 = -2.06934258, and requires c_k results be reported TIERED (proved / near-match / fitted), never as exact. Nothing here carries that scope. The `| 4 => ... + 1/2` arm introduces a `+ 1/2` with no stated origin.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean::hoefsmit_V21_markov_symmetrized_character::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 260,
+      "verdict": "genuine",
+      "file_sha": "e8f3476e6734",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`def markovSymmetrizedV21Character (q) (trace_unsym) : R := trace_unsym * Real.cos (eigenphase q)` and the theorem asserts exactly that, by `rfl`. The `[V21Eigenphase q]` instance is TAKEN AND DISCARDED -- `rfl` uses none of it -- so the docstring's \"Under the eigenphase axiomatisation, the symmetrized character equals ...\" describes a dependence the proof does not have. \"closed form\" in the docstring is an overclaim for a definition restated. Same shape as `is_qou` (already recorded genuine): a hypothesis bound in the signature and unused in the body.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean::chirality_ideal_4_1_value::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 148,
+      "verdict": "advisory",
+      "file_sha": "688de4da8efd",
+      "disposition": "no-change",
+      "evidence": "`chirality_ideal_4_1` is a structure literal whose `central_projector_value := 1` carries the inline comment \"placeholder for the abstract projector value\", and the docstring repeats \"placeholder\". The theorem projects that field out by `rfl`. The disclosure is explicit in both places, so this is honest; it is recorded only because a `theorem` asserting a value for a placeholder field would be better as an `example` or left as the def. Minor: the docstring says \"at k = 3\" while the name says 4_1 (3 is the depth, 4_1 the knot).",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean::dq_sym_sq_eq_dq_alt_sq::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 91,
+      "verdict": "advisory",
+      "file_sha": "10c103d9449d",
+      "disposition": "no-change",
+      "evidence": "`def hooksSym : List Z := [3, 2, 1]` and `def hooksAlt : List Z := [3, 2, 1]` are the SAME literal, so `qHookProd hooksSym ^ 2 = qHookProd hooksAlt ^ 2` holds definitionally whatever the entries are -- the theorem has no power to detect a wrong hook length in either list. The underlying fact is true (conjugate partitions share a hook multiset), and the docstring's two-step route via `dq_sym_eq_one`/`dq_alt_eq_one` is sound, so this is a weak check rather than a false one.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean::qou_order_is_double_milnor_degree::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 65,
+      "verdict": "advisory",
+      "file_sha": "dae6c0267bd2",
+      "disposition": "no-change",
+      "evidence": "`def milnorVassilievDegree (A) := A - 1` and `def qouDeficitLeadingOrder (A) := 2 * (A - 1)` -- the second is literally spelled as twice the first, so the theorem is `rfl` and cannot detect an error in either import. Recorded as advisory rather than genuine because both defs are attributed (Bar-Natan 1995 / Lin; #4471 / #4480) and the docstring's claim is NEGATIVE -- it is framing a GAP (\"the Milnor-Vassiliev bridge ... does not predict the observed order\"), which is the honest direction. The honest form would carry the two provenances as hypotheses.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean::bring_trefoil_cinquefoil_channel::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 55,
+      "verdict": "legit",
+      "file_sha": "286f106d6c96",
+      "disposition": "no-change",
+      "evidence": "`torusKnotGenus m n := (m-1)*(n-1)/2` is the real Seifert-genus formula for torus knots, transcribed as a def and disclosed as such; the theorem checks two values, two <= bounds against `bringsGenus` and distinctness. Honest scaffold -- the docstring calls it \"the provable scaffold\".",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean::t2_11_genus::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 57,
+      "verdict": "legit",
+      "file_sha": "a1835c8fd701",
+      "disposition": "no-change",
+      "evidence": "`seifertGenus_T2 p := (p-1)/2` is the correct T(2,p) genus; `decide` evaluates it at 11. A real formula evaluated at a point.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean::delta_silver_hecke_scalar::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 110,
+      "verdict": "legit",
+      "file_sha": "d67ae63b7397",
+      "disposition": "no-change",
+      "evidence": "`delta_silver := 1 + Real.sqrt 2`; the theorem `delta_silver - delta_silver^{-1} = 2` is proved via `delta_silver_inv` + `ring`, i.e. genuine irrational arithmetic, not `rfl`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean::writheTorus_not_symm::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 168,
+      "verdict": "legit",
+      "file_sha": "5dd9745bffce",
+      "disposition": "no-change",
+      "evidence": "`writheTorus m p := (m-1)*p` is genuinely asymmetric; the theorem is a NEGATIVE control and the docstring names the guard it forced (`m <= p` on rosso_jones_three_strand_delta_q.py). Exactly the kind of check the audit wants to see.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.lean::faddeev_limit_at_zero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 98,
+      "verdict": "legit",
+      "file_sha": "00bfa7308544",
+      "disposition": "no-change",
+      "evidence": "A boundary evaluation of two real formulas (`LiTwo`, `partialProductLocal`), and the docstring DISCLOSES the scope precisely: \"This is the only point at which the Faddeev limit is unconditional in Lean (no Tauberian input required).\"",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HodgeWeilRealStructure.lean::c_ne_F_on_witness::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 138,
+      "verdict": "legit",
+      "file_sha": "4b7d9679eaf1",
+      "disposition": "no-change",
+      "evidence": "`cWeil v := SWAP (conjV v)` and `FGal v := SWAP v` are genuinely different functions; the witness `v0` separates them. Real content -- the antilinear/linear distinction is what the theorem establishes.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_atOne::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 96,
+      "verdict": "legit",
+      "file_sha": "61b13a54ef48",
+      "disposition": "no-change",
+      "evidence": "`classicalJonesAtOne c := (loopValue 1)^(c-1)` is the real classical formula V_L(1) = (-2)^{c-1}; proved by rewrite + `norm_num`, not by table lookup. Contrast the `jonesAtOne` table entries in BraidLinkTypes/multi-link-jones, which are flagged.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_eq_sq_mul_kernel::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 131,
+      "verdict": "legit",
+      "file_sha": "70883a44f03f",
+      "disposition": "no-change",
+      "evidence": "`markovZD q := q^3/(q^2+1)` vs `markovKernel u := u/(u^2+1)`; the theorem relates two genuinely distinct defs by `field_simp`. This is the convention-D/C separation work and is substantive.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_four::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 81,
+      "verdict": "legit",
+      "file_sha": "5766ffb0bdad",
+      "disposition": "no-change",
+      "evidence": "`markovParamCoeff` is a real two-term recursion over Q; `norm_num` unfolds it four steps to -13/256. Genuine computation, not a table.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean::twoM_content_decomposition::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 64,
+      "verdict": "legit",
+      "file_sha": "bd0f37f4ea78",
+      "disposition": "no-change",
+      "evidence": "`twoM n := n*(3n-1)` and the theorem `= n*(n-1) + 2*n^2` is a REAL algebraic identity, general in n, proved by `ring` (3n^2-n = n^2-n+2n^2). The docstring attributes both pieces. A clean false positive of the detector.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::electron_not_in_gl2_image::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 82,
+      "verdict": "legit",
+      "file_sha": "560f99c28fc9",
+      "disposition": "no-change",
+      "evidence": "`inGL2SchurWeylImage p := p.numRows <= 2` transcribes the classical Schur-Weyl row bound, and the file says so. The file's real content is the capstone `su2_index_ne_wlambda`, an abstract theorem over any codomain with genuine hypotheses -- not `decide`. The `decide` lemmas are honest enumeration sanity checks.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Eightfold/DecupletEqualSpacing.lean::decuplet_casimir_is_affine_in_hypercharge::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 208,
+      "verdict": "legit",
+      "file_sha": "69773ef70747",
+      "disposition": "no-change",
+      "evidence": "`decupletStates` is declared as data and the docstring says so verbatim (\"This list is *data* -- the octet weight diagram, imported, not derived here\"). The file carries a NEGATIVE control (`octet_casimir_not_function_of_hypercharge`), a Nodup check and a non-degeneracy check. On the name: 4I(I+1) = (Y+2)(Y+4) is quadratic, but 4[I(I+1) - Y^2/4] = 6Y + 8 is affine -- the quantity entering the mass operator -- so the name is right.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
   }
 }
