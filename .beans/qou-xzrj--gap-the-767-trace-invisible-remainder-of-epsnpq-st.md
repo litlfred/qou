@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T06:30:02Z
+updated_at: 2026-08-27T07:30:55Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -315,3 +315,68 @@ vectors) → rank 3/3. The rank check is now an assertion in the file.
 It is z-free, so no convention question touches it. Closing step 8 means
 deriving that one constant from a normalisation principle — or showing it cannot
 be, which would be an equally publishable negative. Scope (a) throughout.
+
+
+## 2026-08-27 (5) — every factor of mu is a NAMED (2,1)-block invariant
+
+`qbeta_mu_is_block_invariants_probe.py` (7/7). Names the two pieces that were
+still bare constants.
+
+### The `2` is the regular-rep MULTIPLICITY
+
+    chi_reg(x y) = 2 * chi^(2,1)(x y)   for x,y in [H,H]      [all 9 pairs]
+
+Only (2,1) contributes on sl_2, with multiplicity dim = 2. Against the regular
+form the representative S satisfies `S/dC = -1/[3]_q`. So the 2 is the
+multiplicity = block dimension = `chi^(2,1)(1)`, not a constant that worked.
+
+### The `[3]_q` is the block's SCHUR ELEMENT
+
+From `tau = sum_lambda chi^lambda/c_lambda`, `tau(T_w) = delta_{w,e}` (rank 3/3):
+
+    c_(3)   = (q^2+1)(q^2-q+1)(q^2+q+1)
+    c_(2,1) = (q^2-q+1)(q^2+q+1)/q^2 = [3]_q
+    c_(1^3) = (q^2+1)(q^2-q+1)(q^2+q+1)/q^6
+
+`c_(2,1) = [3]_q` **is the hook formula** — hooks of (2,1) are 3,1,1, so
+`[3][1][1] = [3]_q`.
+
+### The Hecke quadratic FACTORISES into the block's two invariants
+
+    c_(2,1) * y_(2,1)(z) = -(z^2 - h z - 1)                      [exact]
+
+hence
+
+    mu = dim(V_(2,1)) / ( -c_(2,1) * y_(2,1)(z) )
+
+Dimension, Schur element, Markov weight — three canonical invariants of one
+block, no free constant among them.
+
+### CAREFUL — not the corpus's `schurElement`
+
+`QOU.MathlibExt.WenzlSchurElement.schurElement Q X lam` is the TWO-VARIABLE
+Wenzl form, and the corpus builds `y_lambda` from it
+(`jonesMarkovCoeff = schurElement/wenzlNormalisation`). What is computed here is
+the CLASSICAL one-variable symmetrizing-trace Schur element of H_3(q). Same
+concept, different variables/normalisation. **No equality claimed** under any
+substitution — a separate question this does not settle. And `c_(2,1) = [3]_q`
+is **not claimed new**: it is the standard hook formula, verified rather than
+cited because the value is load-bearing.
+
+### Method
+
+Both linear systems **rank-checked before their output was read** (3/3, 3/3) —
+the lesson from the rank-4/6 trap one tranche earlier.
+
+### Where the bean stands after five tranches
+
+Every ingredient of the representation is now a named framework object:
+
+    net(x) = sum_lambda a_lambda chi^lambda(x)
+             + [ dim(V_(2,1)) / (-c_(2,1) y_(2,1)(z)) ] * tr_M(x * dC)
+
+**What is still NOT derived:** the COMBINATION. Nothing derives why net's
+representative should be `-dim/(c_lambda y_lambda)` times dC rather than
+something else. That is now the whole of the gap — no bare constants left in
+it, just an unexplained combination of three named invariants. Scope (a); step
+8's postulate is narrowed, not closed.
