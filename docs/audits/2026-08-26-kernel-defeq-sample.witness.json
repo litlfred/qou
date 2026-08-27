@@ -1,12 +1,12 @@
 {
   "schema": "lean-kernel-defeq/v1",
-  "generated_at": "2026-08-26",
+  "generated_at": "2026-08-27",
   "producer": "scripts/lean/BorrowedNameKernel.lean via scripts/lean/audit-driver.sh",
   "bean": "qou-0avp",
   "note": "defeq_collapse means the statement's two sides reduce to each other at default transparency. That is a CANDIDATE signal, not a verdict: it fires both on vacuous definitional restatements AND on genuine finite computations, because reduction is how a concrete computation is proved. The discriminator is whether the operands are hand-entered constants or actually computed -- spot-checked, most in this batch are hand-entered tables (jonesAtOne is a table whose torusLink2 entry is marked 'placeholder'; klEigenvalueAtOne and pairCount are two separate `Int := 2`).",
-  "modules_scanned": 34,
-  "theorems_analysed": 536,
-  "defeq_collapse_count": 93,
+  "modules_scanned": 42,
+  "theorems_analysed": 615,
+  "defeq_collapse_count": 102,
   "wall_clock": "8 modules per batch, ~2m40s each; 15 in ONE command exceeds 9m40s and 6 heavy ones time out -- batch at 8",
   "findings": [
     {
@@ -938,8 +938,99 @@
       "local_only": true,
       "defeq_collapse": true,
       "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassTheory.MilnorVassilievGrading",
+      "decl": "QOU.MassTheory.MilnorVassilievGrading.qou_order_is_double_milnor_degree",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Hecke.H3Wedderburn",
+      "decl": "QOU.Hecke.wedderburn_dim_three",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Hecke.H3Wedderburn",
+      "decl": "QOU.Hecke.hookProd_row3",
+      "type_foreign": 1,
+      "type_local": 0,
+      "value_foreign": 1,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Hecke.H3Wedderburn",
+      "decl": "QOU.Hecke.hookProd_hook21",
+      "type_foreign": 1,
+      "type_local": 0,
+      "value_foreign": 1,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Hecke.H3Wedderburn",
+      "decl": "QOU.Hecke.hookProd_col3",
+      "type_foreign": 1,
+      "type_local": 0,
+      "value_foreign": 1,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Hecke.H3Wedderburn",
+      "decl": "QOU.Hecke.wedderburn_dim_three_eq_factorial",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.MathlibExt.QIntegerFactorial",
+      "decl": "QOU.MathlibExt.qInt_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.MathlibExt.QIntegerFactorial",
+      "decl": "QOU.MathlibExt.qInt_eq_canonical",
+      "type_foreign": 1,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": false,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MathlibExt.QIntegerFactorial",
+      "decl": "QOU.MathlibExt.qFactorial_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
     }
   ],
   "scaling_note": "maxRecDepth and the COMMAND's own 200000-heartbeat budget both bite on long module lists (fine at 8, fail at 15); the driver now sets maxRecDepth 100000 and maxHeartbeats 0. Even so, throughput is the binding constraint: batch at ~8 modules. Follow-up: the 7 previously-timed-out modules were retried at batch size 3 -- 3 completed in 4m14s, the remaining 4 still time out at 560s. Batch size alone does not rescue the heaviest modules; those need their own budget.",
-  "compile_note": "Olean coverage was the binding constraint, not the analysis. scripts/lean/compile-cone.sh resolves a module's QOU import cone depth-first and compiles the leaves first -- `lean -o` on a module whose imports have no olean simply fails, so a missing module cannot be built in isolation. Mathlib is never rebuilt (a `lake build` would EVICT the restored cache, qou-r13s). Measured: 8 previously-uncovered modules compiled and analysed here. Second compile round: 7 of 8 targets built; QOU.BraidKnot.JHopfQOneProvenance and QOU.BraidKnot.JonesNuclearQuotient FAILED to compile even with a 420s per-module budget -- a compile failure, distinct from the kernel-pass timeouts."
+  "compile_note": "Olean coverage was the binding constraint, not the analysis. scripts/lean/compile-cone.sh resolves a module's QOU import cone depth-first and compiles the leaves first -- `lean -o` on a module whose imports have no olean simply fails, so a missing module cannot be built in isolation. Mathlib is never rebuilt (a `lake build` would EVICT the restored cache, qou-r13s). Measured: 8 previously-uncovered modules compiled and analysed here. Second compile round: 7 of 8 targets built; QOU.BraidKnot.JHopfQOneProvenance and QOU.BraidKnot.JonesNuclearQuotient FAILED to compile even with a 420s per-module budget -- a compile failure, distinct from the kernel-pass timeouts.",
+  "batch3_note": "Batch 3 (2026-08-27, 8 modules newly reachable via scripts/lean/compile-cone.sh): 79 theorems, 9 collapses. Two independent cross-validations of the text pass in this batch. CONFIRMED: qou_order_is_double_milnor_degree collapses (defeq + rfl) and is the ONLY collapse among its module's 8 theorems -- the text pass flagged exactly it. CLEARED: QOU.Eightfold.DecupletEqualSpacing returns ZERO collapses across 13 theorems, independently supporting the `legit` verdict on decuplet_casimir_is_affine_in_hypercharge, which the text pass had flagged. A cleared module is as useful as a flagged one: it is what makes the tier's precision measurable rather than asserted. QOU.Hecke.H3Wedderburn is the outlier at 5 collapses of 6 -- almost entirely definitional unfolding, with sytDim_hook_formula (the one lemma carrying a foreign constant) the only non-collapsing member."
 }
