@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T13:09:55Z
+updated_at: 2026-08-27T15:34:40Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -491,3 +491,53 @@ new unknown — the one the audit already named. The honest next move is either
 to derive step 4, or to record that step 8 is not independent of it.
 
 Scope (a). Step 8's postulate is REDUCED, not closed.
+
+
+## 2026-08-27 (8) — CORRECTION to tranche (7), and the conclusion improves
+
+Tranche (7) said the last step "collapses onto step 4, which the bean flags as
+chosen rather than derived". **Both halves were wrong**, and reading the audit
+table settled it:
+
+1. **`t = h/2` is STEP 3, not step 4.** Step 3 defines the typed-crossing
+   operators — `C(u,d;sigma) = sigma - h/2`. Step 4 only assembles words from
+   them.
+2. **Neither step is "chosen".** The audit marks BOTH ✓ **Derived**. What flags
+   step 4 as a question is *this bean* (line 62, "is the preferred presentation
+   … derivable rather than chosen?") — a question, and I quoted it as a finding.
+
+And step 3's justification **checks exactly**:
+
+    (C(u,u;sigma) + C(d,d;sigma))/2 = (sigma + (sigma - h))/2 = sigma - h/2
+
+the symmetric midpoint forced by u<->d swap symmetry. Verified symbolically.
+
+### So the conclusion is BETTER than tranche (7) reported
+
+The chain does not bottom out in an undischarged postulate. It grounds out in
+**step 3, which is derived**. Every constant in the representation of `net`
+traces to derived material:
+
+    net(x) = tau(x * Omega)             Omega = sum_w T_w      [derived, rank 6/6]
+    1/c_(2,1)                            Schur element         [derived, hook formula]
+    dim V_(2,1) = 2                      regular multiplicity  [derived]
+    1/y_(2,1)(z)                         pairing normalisation [derived, Wedderburn]
+    comm(Omega) = -dim * dC              contingent on t = h/2 [step 3, DERIVED]
+
+### What is still NOT closed — and it is narrower than I have been saying
+
+**Step 8 postulates the PHYSICAL IDENTIFICATION**: that
+`Q_beta = |Delta(net)| * E_0`, i.e. that the unweighted NF sum *is* the
+leading-order mass difference. Nothing in seven tranches touches that. Showing
+`net` is expressible in derived algebraic objects says **what `net` is**, not
+that it is **the right observable**.
+
+That is the honest end state: the ALGEBRAIC side is fully grounded; the
+PHYSICAL identification is untouched and remains step 8's postulate.
+
+Written up as an addendum to
+`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`, including all
+four corrections (this one, the step-3/4 mix-up, the over-read alignment, the
+Omega mislabel).
+
+Scope (a) throughout.
