@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T12:11:53.336754Z",
+  "updated_at": "2026-08-27T12:19:20.230919Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3437,6 +3437,138 @@
       "file_sha": "2f1fc03ae00a",
       "disposition": "no-change",
       "evidence": "`unit2_nf | 5 => 0` and the theorem reads that arm back by `rfl`. The inline comment claims a derivation -- \"The e^- coefficient of (sigma_0 sigma_1^{-1})^2 vanishes BY HECKE REDUCTION\" -- which the Lean does not perform. Advisory rather than genuine because the next comment line discloses the mechanism (\"Proved via the explicit NF witness\"), and the other five arms carry real expressions (HA*HA, -HA, ...), so the normal form is a recorded result rather than an invented one.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_a::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 127,
+      "verdict": "legit",
+      "file_sha": "215384265d8f",
+      "disposition": "no-change",
+      "evidence": "A RECURSION EQUATION for a genuine two-term recursion (`heckePowerA | 0 => 0 | 1 => 1 | k+2 => X * A(k+1) + A k`), exposed as a rewritable lemma by `rfl`. Same legitimate class as heckeAB_cons; the docstring calls them \"Sanity recurrences\".",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_b::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 131,
+      "verdict": "legit",
+      "file_sha": "215384265d8f",
+      "disposition": "no-change",
+      "evidence": "A RECURSION EQUATION for a genuine two-term recursion (`heckePowerA | 0 => 0 | 1 => 1 | k+2 => X * A(k+1) + A k`), exposed as a rewritable lemma by `rfl`. Same legitimate class as heckeAB_cons; the docstring calls them \"Sanity recurrences\".",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePowerB_two::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 142,
+      "verdict": "legit",
+      "file_sha": "215384265d8f",
+      "disposition": "no-change",
+      "evidence": "`heckePowerB 2 = heckePowerA 1 = 1` unfolds two arms of two real recursions. The docstring says it \"matches the hand computation\", which is the honest framing for a smoke test.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean::asymptotic_volume_of_vc::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 158,
+      "verdict": "legit",
+      "file_sha": "09a4fae99934",
+      "disposition": "no-change",
+      "evidence": "A GENUINELY CONDITIONAL theorem: both hypotheses are real (one is a full epsilon-N convergence statement for the volume-conjecture saddle asymptotic), and the docstring states its own weight exactly -- \"The content is the two hypotheses; the composition [is trivial]\". That is the \u00a73b-cond pattern used correctly, and the opposite of a hypothesis bound and discarded.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean::S_w0_at_k5_neg::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 111,
+      "verdict": "advisory",
+      "file_sha": "289638dfe45a",
+      "disposition": "no-change",
+      "evidence": "The Lean is sound -- `S_w0` is a real weighted sum of three witnessed rationals and `norm_num` establishes the sign. The advisory is about the INFERENCE the docstring draws: \"matching the empirical c_5 ~ -395.41 IN SIGN (the Plancherel-weighted sum is positive, wrong sign)\". A sign match is ONE BIT, so selecting the w_0 weighting because its sign agrees is a 1-bit discrimination between two candidates, not evidence of the weighting. This sits in the c_k zone AGENTS.md flags for the four-session wire/un-wire flip-flop and requires TIERED reporting. To its credit the block reports the competing option's failure explicitly rather than only its own success.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_lp_reduction::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 438,
+      "verdict": "advisory",
+      "file_sha": "4a57f12b7be9",
+      "disposition": "no-change",
+      "evidence": "`max_active_channels Z N := 3*(Z+N) - Z + 1` is a hand-written linear formula giving 11 at (2,2), and `partition_number_small` is a lookup table giving p(12) = 77. So the docstring's \"a >= 7x constraint tightening that RESOLVES THE PRIOR UNDER-DETERMINATION\" is 77/11, a table divided by an asserted formula -- the theorem verifies the arithmetic, not the channel count. ADVISORY rather than genuine because the block is a CONJECTURE carrier and the docstring attributes the claim correctly (\"THE CONJECTURE SAYS the LP/SDP feasibility region shrinks...\"), which is the honest disposition for an unproved reduction. The theorem's NAME, `helium4_lp_reduction`, is what reads as established.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::conjugate_4_4_4_involutive::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 489,
+      "verdict": "legit",
+      "file_sha": "4a57f12b7be9",
+      "disposition": "no-change",
+      "evidence": "`conjugatePartition` is a real algorithm (foldl max, then filter-and-count per column), so `decide` genuinely computes the double transpose of [4,4,4] rather than reading a table.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n4_frobenius_codim::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 284,
+      "verdict": "legit",
+      "file_sha": "4a51eeb662e1",
+      "disposition": "no-change",
+      "evidence": "A real `Fin.sum_univ_five` + `ring` evaluation of sum 1/dim_q(lambda) over the five partitions of 4. This is the COMPANION derivation whose absence of a Lean link makes frobenius_codim_trace_n4 genuine -- the mathematics is here and is sound; what is missing is any Lean connection from the `match` arm in knot-mass-formula-unified to this theorem. Note the q-hook dimensions in `heckeH4DimQ` are themselves a hand-entered table, attributed in the docstring.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean::habiro_terminates::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 74,
+      "verdict": "advisory",
+      "file_sha": "74170ad700ba",
+      "disposition": "no-change",
+      "evidence": "Finiteness is BUILT INTO THE STRUCTURE by fiat -- `structure HabiroExpansion where M : N; coeffs : Fin (M+1) -> HabiroCoeff` -- so the theorem is `Fintype.card_fin`, a Mathlib triviality about `Fin`, and says nothing about Markov traces. The header \"PROPOSITION (finiteness / termination)\" therefore overclaims. ADVISORY rather than genuine because the docstring RETRACTS it precisely in its own last clause -- \"Habiro 2000 Thm 1.1 supplies the existence of such a finite expansion for any braid word; HERE WE RECORD THAT THE STRUCTURE CARRIES A FINITE BOUND\" -- and carries `-- Ref: [habiro2000] Theorem 1.1`. It also says it replaced a prior `exists M, True` placeholder, which is a strict improvement. Same principle as the \"Sanity:\"-prefixed AXKIA lemmas: what separates a defect from a legitimate restatement is whether the declaration says so.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean::triple_identity::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 180,
+      "verdict": "advisory",
+      "file_sha": "4bb45e8ecaf8",
+      "disposition": "no-change",
+      "evidence": "`SubstrateTripleIdentity.ofQ q hq` builds the structure with `q := q`, so projecting `descartes_q = q` back out is `rfl` by construction; the theorem is a bundle-consistency check and cannot fail. Honest, and the docstring claims only that the three roles \"use the same numerical value\" -- which is exactly what construction guarantees -- but under the name `triple_identity` it reads as a substantive identification of three independently motivated quantities.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean::heckeH_mk0::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 185,
+      "verdict": "legit",
+      "file_sha": "e1d78826a61a",
+      "disposition": "no-change",
+      "evidence": "A real bridge lemma between the units presentation (`q : K^x`, `heckeH q := q - q^{-1}` with the unit inverse) and the field presentation, discharged by `simp`. The docstring states the point correctly: \"Nothing is lost by carrying q : K^x.\"",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/mass-theory/tower-binding-energy.lean::wedderburnWeightsSum::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 34,
+      "verdict": "legit",
+      "file_sha": "775599820168",
+      "disposition": "no-change",
+      "evidence": "A REAL algebraic identity: with `wedderburnSym := 1/(t^2+2)` and `wedderburnStd := t^2/(t^2+2)` for t = q + q^{-1}, the sum `1/(t^2+2) + t^2/(t^2+2) + 1/(t^2+2) = 1` needs `field_simp` and `ring`, not unfolding. It is the normalisation check on the Wedderburn weights and would catch a wrong weight.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
