@@ -115,6 +115,12 @@ Exit: 0 always, unless --strict (1 on any CRITICAL) or --selftest fails.
 from __future__ import annotations
 import os, re, sys, json
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+from lean_decl_scan import (            # noqa: E402  (path set above)
+    blank_comments, split_statement, decl_spans, docstring_before,
+    binder_names, assumption_binders, discharges_via_binder_field,
+)
+
 DEFAULT_ROOTS = [
     "content/quantum-observable-universe",
     "content/unital-groebner-bases",
@@ -210,90 +216,12 @@ NOISE = {
 }
 
 
-def blank_comments(src: str) -> str:
-    """Blank out `--` comments and `/- -/` blocks, PRESERVING every newline.
-
-    Line-preserving is load-bearing: declaration line numbers are used to find
-    the docstring in the ORIGINAL source, so a stripper that deletes lines
-    silently mis-aligns every docstring lookup (it did, and the selftest caught
-    it).  Blanking also stops a `theorem ...` line quoted inside a docstring
-    from being parsed as a declaration.
-    """
-    out, i, n, depth = [], 0, len(src), 0
-    while i < n:
-        c = src[i]
-        if depth == 0 and src.startswith("--", i):
-            j = src.find("\n", i)
-            j = n if j < 0 else j
-            out.append(" " * (j - i))
-            i = j
-        elif src.startswith("/-", i):
-            depth += 1
-            out.append("  ")
-            i += 2
-        elif depth and src.startswith("-/", i):
-            depth -= 1
-            out.append("  ")
-            i += 2
-        else:
-            out.append(c if (not depth or c == "\n") else " ")
-            i += 1
-    return "".join(out)
 
 
-def split_statement(chunk: str) -> tuple[str, str]:
-    """Split a decl body at the top-level `:=` — returns (statement, proof)."""
-    depth, i, n = 0, 0, len(chunk)
-    while i < n:
-        c = chunk[i]
-        if c in "([{⟨⦃":
-            depth += 1
-        elif c in ")]}⟩⦄":
-            depth -= 1
-        elif depth <= 0 and chunk.startswith(":=", i):
-            return chunk[:i], chunk[i + 2:]
-        i += 1
-    return chunk, ""
 
 
-def decl_spans(src: str):
-    """Yield (kind, name, header_line_no, body_text) for each top-level decl."""
-    lines = src.split("\n")
-    hits = []
-    for idx, ln in enumerate(lines):
-        m = DECL.match(ln)
-        if m:
-            hits.append((idx, m.group(1), m.group(2)))
-    for k, (idx, kind, name) in enumerate(hits):
-        end = hits[k + 1][0] if k + 1 < len(hits) else len(lines)
-        yield kind, name, idx + 1, "\n".join(lines[idx:end])
+# BINDER now comes from scripts/lib/lean_decl_scan (bean qou-rfq9).
 
-
-def docstring_before(lines: list[str], idx0: int) -> str:
-    """The `/-- ... -/` (or `/-! ... -/`) block immediately above line idx0."""
-    j = idx0 - 2
-    while j >= 0 and (lines[j].lstrip().startswith("--") or not lines[j].strip()):
-        j -= 1
-    if j < 0 or not lines[j].rstrip().endswith("-/"):
-        return ""
-    k = j
-    while k >= 0 and not (lines[k].lstrip().startswith("/--")
-                          or lines[k].lstrip().startswith("/-!")):
-        k -= 1
-    return "\n".join(lines[max(k, 0):j + 1]) if k >= 0 else ""
-
-
-BINDER = re.compile(r"[({\u2983\[]\s*([^:()\[\]{}]*?)\s*:")
-
-
-def binder_names(stmt: str) -> set[str]:
-    """Names bound by `(x y : T)` / `{x : T}` / `[inst : C]` groups."""
-    out: set[str] = set()
-    for m in BINDER.finditer(stmt):
-        for tok in m.group(1).split():
-            if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_']*", tok):
-                out.add(tok)
-    return out
 
 
 def split_camel(name: str) -> str:
@@ -423,7 +351,7 @@ def audit(base: str, roots: list[str]):
             # conditional derivation, not a definitional collapse.  Ported from
             # the sibling detector (bean `qou-k9yt`), which excludes the same
             # shape and cites it as the fix for its one known false positive.
-            binders = binder_names(stmt)
+            binders = assumption_binders(stmt)
             via_hyp = any(re.search(r"(?<![\w.])" + re.escape(b) + r"\.\w", proof)
                           for b in binders)
             steps = [t.strip() for t in re.split(r"[;\n<;>]|\bthen\b", proof)
