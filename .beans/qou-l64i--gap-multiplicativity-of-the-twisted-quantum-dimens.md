@@ -1,11 +1,11 @@
 ---
 # qou-l64i
 title: 'GAP: multiplicativity of the twisted quantum dimension, dim(X tensor Y) = dim X * dim Y'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T06:11:02Z
+updated_at: 2026-08-27T13:04:32Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -472,3 +472,57 @@ ALSO MEASURED THIS ROUND:
 
 TACTIC LEDGER NOW AT NINE ruled-out approaches. The search is closed; the remaining work is the
 hand-constructed calc, and everything needed to start it is recorded above.
+
+
+2026-08-27 — SUBSTANTIAL PROGRESS. A WORKING REWRITE PREFIX, AND BOTH SLIDES IDENTIFIED WITH
+MATCHING ORDER. This supersedes "nothing fires" — two rewrites DO fire, and the goal is now fully
+exposed.
+
+THE PREFIX THAT WORKS (verified, reaches a readable goal):
+
+    simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+      monoidalComp, Category.assoc, Category.id_comp, Category.comp_id]
+    rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
+    simp only [braiding_tensor_right_hom, Category.assoc]
+
+`braiding_naturality_left_assoc` is the one I had missed: `m ▷ (Y'⊗X') ≫ β_{X⊗Y,Y'⊗X'}` matches it
+exactly, and it moves the MONODROMY across the block braiding to sit just before the caps. That is
+what makes everything else line up.
+
+AFTER THE PREFIX, all six braidings are explicit and IN THIS ORDER:
+
+    β_{Y,Y'}   -- keeper: the Y-loop framing, appears on the RHS
+    β_{Y,X'}   -- CROSS
+    β_{X,Y'}   -- CROSS
+    β_{X,X'}   -- keeper: the X-loop framing, appears on the RHS
+    β_{X,Y} ≫ β_{Y,X}   -- the monodromy, now adjacent to the caps
+    then  Y' ◁ ε_X ▷ Y  then  ε_Y
+
+BOTH SLIDES ARE INSTANTIATED, AND THE ORDER IS ALREADY RIGHT — this is the key finding:
+
+  slide 1:  W = Y, A = X', B = X, c = ε_X
+            needs  Y-past-X'  then  Y-past-X  then  ε_X
+            has    β_{Y,X'}   then  β_{Y,X} (2nd monodromy factor)  then  ε_X     ✓ ORDER MATCHES
+
+  slide 2:  W = X, A = Y', B = Y, c = ε_Y
+            needs  X-past-Y'  then  X-past-Y  then  ε_Y
+            has    β_{X,Y'}   then  β_{X,Y} (1st monodromy factor)  then  ε_Y     ✓ ORDER MATCHES
+
+So the monodromy's TWO factors serve the TWO slides, one each — `β_{Y,X}` feeds the X-cap slide and
+`β_{X,Y}` feeds the Y-cap slide. That is why the forward monodromy is the right one and why there
+are exactly two of them: one per cap. The earlier "linking number" story was the right intuition;
+this is the mechanism at the level of the actual term.
+
+WHAT REMAINS is purely the INTERCHANGE REGROUPING: the terms of each slide are separated by
+morphisms acting on disjoint strands (`β_{X,Y'}`, `β_{X,X'}` sit between `β_{Y,X'}` and the
+monodromy), so `whisker_exchange` must commute them into adjacency before either slide can fire.
+That is the same obstruction measured all along, but it is now a FINITE, NAMED list of commutations
+toward a KNOWN target rather than an open search.
+
+MECHANISM NOTE for the implementer: `braiding_slide_cap_right` cannot be `rw`-applied (⊗≫ form, per
+the earlier finding). Its CONTENT is `braiding_naturality_right W c` at the cap, plus
+`← braiding_tensor_right_hom` to recombine `β_{W,A}` and `β_{W,B}` into `β_{W,A⊗B}`. Recombining is
+the step to aim the regrouping at.
+
+STILL NOT PROVED. Tactic finishers from the exposed state (`monoidal`, two loaded `simp`s) all still
+fail — twelve approaches ruled out now. But the remaining work is construction, not search.
