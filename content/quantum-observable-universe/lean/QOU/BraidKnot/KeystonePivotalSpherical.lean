@@ -141,7 +141,28 @@ prerequisite for it, not a proof of it.  The hypothesis is still carried.
 
 /-- **Sphericality**, in the standard form: the left and right quantum dimensions agree on
 every object. (Equivalently, the left and right traces agree — here specialised to the
-identity, which is the case the keystone consumes.) -/
+identity, which is the case the keystone consumes.)
+
+**Why this is a hypothesis and not a theorem, and when you do not need it.**
+
+`leftQDim` and `qDimObj` are the two *twistless* closures, and they differ by the monodromy
+`(β_ Xᘁ X).inv` against `(β_ X Xᘁ).hom`.  No axiom of a braided rigid category forces the
+monodromy to vanish, so this class cannot be derived here — it is a genuine condition, which is
+what `spherical_of_symmetric` below witnesses from the other side (symmetric ⇒ monodromy trivial ⇒
+spherical).
+
+The classical `ribbon ⇒ spherical` is a theorem about the **twisted** traces, and it does not reach
+these two.  If a `BalancedCategory` is in scope, do not carry this hypothesis: use
+`QOU.MathlibExt.qDimTwistedLeftWith_eq`, which *proves* left = right for
+`qDimTwistedLeftWith` / `qDimTwistedWith` in any `RibbonCategory`.  Its companion
+`qDimTwistedLeftWith_eq_of_cap` shows the balancing axiom does all the geometric work and the
+ribbon axiom is used exactly once, on the cap.
+
+So the division of labour is: **this class is the right object precisely where there is no twist
+available** — as here, where the variable block is braided right-rigid and no `θ` exists.  Where a
+twist does exist, sphericality is a theorem and this class is the wrong thing to assume.  Nothing
+in this file needs migrating on that account: the results below are true at braided right-rigid
+generality, and requiring a ribbon structure to obtain them would be a loss, not a gain. -/
 class SphericalStructure (C : Type*) [Category C] [MonoidalCategory C]
     [BraidedCategory C] [RightRigidCategory C] where
   /-- Left trace = right trace. -/
