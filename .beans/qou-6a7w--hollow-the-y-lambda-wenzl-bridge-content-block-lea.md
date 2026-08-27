@@ -1,11 +1,11 @@
 ---
 # qou-6a7w
 title: 'HOLLOW: the y_lambda Wenzl-bridge content-block Lean is identically ZERO and shadows a real library module'
-status: in-progress
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-26T19:32:35Z
-updated_at: 2026-08-26T22:24:17Z
+updated_at: 2026-08-27T05:35:37Z
 ---
 
 Found while starting the general-n Gram determinant (the Schur-element product
@@ -339,3 +339,15 @@ is in Lean, and the statement now has two independent confirmations there.
 **Discipline note, second instance this session.** I wrote `−4/7` for the total
 from memory, into a theorem whose entire purpose is to check a constant.
 `norm_num` rejected it; the computed value is `20/7`. Compute, do not recall.
+
+
+### CLOSED — PR #5857 merged 2026-08-27 05:15 (6f4d0d2a3a)
+
+Everything this bean tracked is on main: the prefactor bug and its fix, the
+telescope at n=1,2,3 with two degeneracy guards, the hook-length update rule,
+schurElement as a product, all three row-factor cases, addBoxNewRow, and (P)
+at (1) and (2,1).
+
+Follow-up work continues on PR #5871 (a NEW PR — a merged PR is finished):
+addableCorners plus (P) stated in general, with both proved cases shown to be
+instances of it. What remains is the induction over corners, tracked there.
