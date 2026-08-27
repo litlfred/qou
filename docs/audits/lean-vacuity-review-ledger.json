@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T12:02:27.829415Z",
+  "updated_at": "2026-08-27T12:05:54.342286Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3197,6 +3197,127 @@
       "evidence": "Member of the conjugate-duality cluster recorded under dimqPartition31_eq_dimqPartition211 in this file; both sides are `:= 1` ignoring q, so the duality is `rfl`. Both carry a `_via_hook_formula` derivation.",
       "tier": "kernel-cluster",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 118,
+      "verdict": "legit",
+      "file_sha": "70883a44f03f",
+      "disposition": "no-change",
+      "evidence": "`markovZD q := q^3/(q^2+1)` evaluated at 1 by `norm_num` -- a real closed form, real arithmetic. Part of the convention-D separation work.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZC_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 120,
+      "verdict": "legit",
+      "file_sha": "70883a44f03f",
+      "disposition": "no-change",
+      "evidence": "`markovZC q := Real.sqrt q/(q+1)` evaluated at 1 by `norm_num`. Together with markovZD_one it establishes the classical coincidence that a q=1 ladder evaluation is unmoved by the C->D ruling. The file keeps convention C explicitly as \"the object being separated\", which is the correct disposition for an excised convention.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_three::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 77,
+      "verdict": "legit",
+      "file_sha": "5766ffb0bdad",
+      "disposition": "no-change",
+      "evidence": "Same genuine two-term recursion as markovParamCoeff_four (already recorded legit); `norm_num` unfolds three steps to 1/16.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersLogCorrection_at_zero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 105,
+      "verdict": "legit",
+      "file_sha": "6252ac8ed2f4",
+      "disposition": "no-change",
+      "evidence": "`rogersLogCorrection u v := log((1-u)/(1-uv)) * log((1-v)/(1-uv))` is the real Rogers correction; the theorem evaluates it at the degenerate pentagon vertex where both log arguments are 1. The docstring names the degeneracy rather than hiding it.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersAlphaBeta_at_zero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 163,
+      "verdict": "legit",
+      "file_sha": "6252ac8ed2f4",
+      "disposition": "no-change",
+      "evidence": "Boundary evaluation of the two real Rogers substitutions alpha(u,v) = u(1-v)/(1-uv) and beta(u,v) = v(1-u)/(1-uv). Honest and disclosed as a boundary case.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifertEuler_eq_neg_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 49,
+      "verdict": "advisory",
+      "file_sha": "4180b2166d2d",
+      "disposition": "no-change",
+      "evidence": "`seifertEuler := seifertDisks - seifertBands` on hand-entered cell counts, so `decide` verifies the subtraction, not the tessellation. Cross-confirmed by the kernel pass, which reports 4 of this module's 5 theorems as defeq collapses -- the densest ratio in its batch. The cell counts are the real input and are not checked by anything here; recording the Seifert data explicitly is nonetheless the honest way to carry it.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean::qIntSym_zero::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 46,
+      "verdict": "legit",
+      "file_sha": "b10c0b9c8b47",
+      "disposition": "no-change",
+      "evidence": "`qIntSym` is an abbrev for the real balanced q-integer `QOU.QInteger.qIntBalZ`, and `[0]_q = 0` follows from it by `simp`. A boundary fact about an imported definition, not a local table.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean::heckeAB_cons::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 56,
+      "verdict": "legit",
+      "file_sha": "7026746650a2",
+      "disposition": "no-change",
+      "evidence": "A RECURSION EQUATION for the local `heckeAB` fold -- exposing a `match` arm as a rewritable lemma, which is the standard and correct way to make a recursive def usable. DETECTOR PRECISION NOTE: this is the class covered by EXCLUSION 1 (a `@[simp]` lemma unfolding a local def), but it slipped through because the ATTRIBUTE is on its sibling `heckeAB_cons_fst`, not on it. The exclusion keys on `@[simp]`; an unattributed recursion equation is the same legitimate thing. Worth widening the exclusion to a lemma whose statement is a def's own match arm, regardless of attribute.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::alexanderTorus2_succ::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 99,
+      "verdict": "legit",
+      "file_sha": "b08c395263b7",
+      "disposition": "no-change",
+      "evidence": "`alexanderTorus2 q m := sum over range m of (-q)^j` and the successor equation is proved by `Finset.sum_range_succ` -- a real Mathlib lemma doing real work, general in q and m.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::framedQInt_sub_eq_zero_iff_alexander_root::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 175,
+      "verdict": "legit",
+      "file_sha": "b08c395263b7",
+      "disposition": "no-change",
+      "evidence": "An IFF, general in q and n, between the framed quantum-integer vanishing locus and the Alexander root set. Substantive. Its docstring is also unusually careful about what it does NOT claim -- it says the result makes a literature programme's phrasing a root-finding problem, \"an observation about the shape of that programme, not an endorsement of its numer[ology]\". That is the epistemic hygiene the audit exists to protect.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::gl2_image_eq_le2row::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 75,
+      "verdict": "advisory",
+      "file_sha": "560f99c28fc9",
+      "disposition": "no-change",
+      "evidence": "`inGL2SchurWeylImage p := p.numRows <= 2`, so filtering the 7-element partition list by that predicate and `decide`-ing the result is an enumeration check against the predicate's own definition. Advisory rather than genuine: the file's real content is the capstone `su2_index_ne_wlambda` (abstract over the codomain, genuine hypotheses, already recorded legit), and this lemma is an honest sanity enumeration beside it.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
   }
 }
