@@ -135,6 +135,7 @@ from partition_utils import dim_lambda as partition_dim  # noqa: E402
 # definition; the import is hard on purpose because a fallback would compute
 # the blind convention while reporting success.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 
 def verify_dimension_identity(n_inner: int, n_block: int) -> dict:
@@ -633,7 +634,7 @@ def categorical_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
     import a_operator_gauge_align as _ga
     if q_str is None:
         from q_parameter import Q as _Q
-        q_str = mp.nstr(mp.mpf(str(_Q)), dps)
+        q_str = mp.nstr(Q_MP, dps)
     blocks = _ga.gauge_aligned_A_combiner_general(lam, n_inner, 3, q_str, dps)
     key = (tuple(xi), tuple(nu))
     if key not in blocks:

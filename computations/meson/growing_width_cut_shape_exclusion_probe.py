@@ -80,12 +80,13 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, ame_binding_mev  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 60)
 
-Q = mp.mpf(str(Q0))
+Q = Q_MP
 E0 = mp.mpf(str(M_E_MEV)) / (Q * (Q - 1))
 
 ISO = [("2H", 1, 2), ("3H", 1, 3), ("3He", 2, 3), ("4He", 2, 4),

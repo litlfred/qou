@@ -88,6 +88,7 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, ame_binding_mev  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
@@ -174,7 +175,7 @@ def main() -> int:
         "1.9493x was a coincidence. SCOPE (b): the invariant is the Markov "
         "compatibility axiom, definitional not fitted.")
 
-    q0 = mp.mpf(str(Q0))
+    q0 = Q_MP
     E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
 
     def qint(m):

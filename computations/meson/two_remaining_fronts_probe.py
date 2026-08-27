@@ -102,14 +102,15 @@ from codata_constants import M_E_MEV, ame_binding_mev  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import HA_MP, Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 50)
 
-Q = mp.mpf(str(Q0))
+Q = Q_MP
 E0 = mp.mpf(str(M_E_MEV)) / (Q * (Q - 1))
-H = mp.mpf(str(_h_f))
+H = HA_MP
 TOL = mp.mpf("1e-9")
 SUPPORT6 = [(6,), (5, 1), (4, 2), (3, 3)]
 

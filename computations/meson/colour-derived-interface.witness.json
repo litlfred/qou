@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T17:44:41.333330+00:00",
-  "commitSha": "ec0a28fa53f9a93acdd240cee37dfbc6d6f53d97",
+  "computedAt": "2026-08-27T05:31:32.569780+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
   "assertions": [
     {
       "name": "derived_interface_has_nine_crossings",
@@ -33,7 +33,7 @@
     },
     {
       "name": "magnitude_bar_failed",
-      "computed": "0.42172723601489853286",
+      "computed": "0.42172723601489849774",
       "expected": "0.4217272",
       "passed": true,
       "tolerance": "1e-5",
@@ -51,7 +51,7 @@
     },
     {
       "name": "control_orientation_changes_the_trace_substantially",
-      "computed": "5.667521744081850419",
+      "computed": "5.667521744081850353",
       "expected": "5.667",
       "passed": true,
       "tolerance": "1e-2",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 85,
+  "durationMs": 135,
   "computation": "colour-derived-interface",
   "scriptFile": "colour_derived_interface_probe.py",
-  "scriptHash": "1b51833a9ffe",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e243bb931cf8",
+  "scriptCommitSha": "a0b2cb2a2659d65d4255eff6607ffe92bc4a087e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -85,10 +85,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -118,9 +117,9 @@
       2,
       3
     ],
-    "tr_M_current": "0.693389408714651929186072",
-    "tr_M_colour_derived": "0.62900528891009429906764",
-    "tr_M_reversed": "0.110984186265701638376739",
+    "tr_M_current": "0.693389408714651855647004",
+    "tr_M_colour_derived": "0.629005288910094246675701",
+    "tr_M_reversed": "0.110984186265701630425345",
     "required_trace": "1.49149790479236007540919"
   },
   "caveats": [

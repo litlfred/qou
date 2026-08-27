@@ -1,15 +1,15 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T21:41:41.936329+00:00",
-  "commitSha": "9e4e8c591530687c4d4ab473f80ea93b1fb8035e",
+  "computedAt": "2026-08-27T05:31:35.353605+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 393,
+  "durationMs": 469,
   "computation": "growing-width-cut-shape-exclusion",
   "scriptFile": "growing_width_cut_shape_exclusion_probe.py",
-  "scriptHash": "db3674aff65e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7d8e74f22509",
+  "scriptCommitSha": "f0b403cd2cff62943bf765649c56e9eebe18f2ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +21,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
@@ -34,9 +33,9 @@
   },
   "description": "Excludes the one-parameter growing-width cut of Addendum 23 Front 1 WITHOUT selecting any w. S(k)/k is increasing, so the model's per-nucleon prediction is non-decreasing in A for every fixed w; the AME per-nucleon binding is not, peaking at 4He (7.0739) and dipping at 6Li (5.3323). A non-decreasing function cannot match a function that decreases across the same two points, and an arbitrary positive rescaling preserves that -- so the failure is in the SHAPE, not the normalisation, and the family is excluded scope (b). Also corrects Addendum 23's claim that the entropy is identically zero at w = 3: S(3A) > 0 at every A, because S is a TRACE-state entropy, not a pure-state bipartition entropy (it is not even symmetric under k <-> n-k).",
   "data": {
-    "q0": "1.1099785827513808",
-    "E0_MeV": "4.1859813632944762145",
-    "ln_2q": "0.69858082489417387533",
+    "q0": "1.1099785827513808076",
+    "E0_MeV": "4.1859813632944758969",
+    "ln_2q": "0.69858082489417387604",
     "S_3A_positive": {
       "2": "2.84368686974",
       "3": "4.71761833287",
@@ -47,12 +46,12 @@
       "16": "30.8628878965"
     },
     "density_increasing_to_kmax": 64,
-    "density_at_kmax": "0.65266713414394449799",
+    "density_at_kmax": "0.65266713414394449765",
     "w_grid_monotonicity_violations": 0,
     "B_over_A_4He": "7.0739156",
     "B_over_A_6Li": "5.3323312",
-    "required_rescale_min": "0.51300703524560472455",
-    "required_rescale_max": "2.3770636016604339459",
+    "required_rescale_min": "0.51300703524560476372",
+    "required_rescale_max": "2.3770636016604341273",
     "best_constant_multiplicative_error": "2.1525772228297437249",
     "verdict": "scope-(b): the one-parameter constant-w growing-width cut, and any overall rescaling of it, is excluded by the monotonicity of S(k)/k against the non-monotonicity of B/A. A cut whose width depends on the isotope's own structure is NOT excluded.",
     "corrects": "Addendum 23 Front 1: 'at w = 3 the cut is the entire system and the entropy is identically zero' is false; S(3A) > 0 at every A."

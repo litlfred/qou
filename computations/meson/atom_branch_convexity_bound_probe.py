@@ -64,8 +64,9 @@ set_compute_dps()
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
+from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 
-H = mp.mpf(str(_h_f))
+H = HA_MP
 TOL = mp.mpf("1e-9")          # the census tolerance; 1e-30 misclassifies sigma^-1
 ISOTOPES = [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1), ("4He", 2, 2)]
 
