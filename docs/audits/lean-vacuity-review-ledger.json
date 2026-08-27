@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T12:05:54.342286Z",
+  "updated_at": "2026-08-27T12:11:53.336754Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3316,6 +3316,127 @@
       "file_sha": "560f99c28fc9",
       "disposition": "no-change",
       "evidence": "`inGL2SchurWeylImage p := p.numRows <= 2`, so filtering the 7-element partition list by that predicate and `decide`-ing the result is an enumeration check against the predicate's own definition. Advisory rather than genuine: the file's real content is the capstone `su2_index_ne_wlambda` (abstract over the codomain, genuine hypotheses, already recorded legit), and this lemma is an honest sanity enumeration beside it.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_trefoil_value::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 370,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "GENUINE COMPUTATION, not a table read-back -- and the counterpart to the PermutationEnumeration calibration. `jones w := LP.mul (writheUnit w) (bracket w)` runs the Kauffman bracket skein reduction over a Temperley-Lieb basis on an actual braid word; `decide` evaluates it. If the braid word or the bracket algorithm were wrong the coefficient list would come out wrong, so the check has real power. The file's docstrings state the use correctly -- \"The link library REPRODUCES THE KNOWN ... Jones polynomial\", i.e. it is checking against literature. The 8_19 case is documented as ~70 s of kernel reduction, which is itself evidence that work is being done.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_hopf_value::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 439,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "GENUINE COMPUTATION, not a table read-back -- and the counterpart to the PermutationEnumeration calibration. `jones w := LP.mul (writheUnit w) (bracket w)` runs the Kauffman bracket skein reduction over a Temperley-Lieb basis on an actual braid word; `decide` evaluates it. If the braid word or the bracket algorithm were wrong the coefficient list would come out wrong, so the check has real power. The file's docstrings state the use correctly -- \"The link library REPRODUCES THE KNOWN ... Jones polynomial\", i.e. it is checking against literature. The 8_19 case is documented as ~70 s of kernel reduction, which is itself evidence that work is being done.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_torus819_value::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 505,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "GENUINE COMPUTATION, not a table read-back -- and the counterpart to the PermutationEnumeration calibration. `jones w := LP.mul (writheUnit w) (bracket w)` runs the Kauffman bracket skein reduction over a Temperley-Lieb basis on an actual braid word; `decide` evaluates it. If the braid word or the bracket algorithm were wrong the coefficient list would come out wrong, so the check has real power. The file's docstrings state the use correctly -- \"The link library REPRODUCES THE KNOWN ... Jones polynomial\", i.e. it is checking against literature. The 8_19 case is documented as ~70 s of kernel reduction, which is itself evidence that work is being done.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_sq_mul_jonesHopf::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 433,
+      "verdict": "legit",
+      "file_sha": "e37036e78021",
+      "disposition": "no-change",
+      "evidence": "`LP.mul` is a real Laurent-polynomial convolution (a double fold over both coefficient lists), so multiplying by delta^2 and comparing to the reduced form is genuine polynomial arithmetic. Same family as the jones_*_value group in this file.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 81,
+      "verdict": "advisory",
+      "file_sha": "9cd256b28680",
+      "disposition": "no-change",
+      "evidence": "`sytDimRow3 := 1`, `sytDimHook21 := 2`, `sytDimCol3 := 1` are hand-entered, so the theorem is `1 + 4 + 1 = 6` and the kernel reports 5 of this module's 6 theorems as collapses. ADVISORY rather than genuine because the mitigation is present AND is the strongest of the three cases seen so far: `sytDim_hook_formula` in the same file verifies each literal against `Partition.hookLength` -- a real external function, computed by `decide` -- via f^lambda * prod h(x) = 3!, and it is the one theorem in the module that does NOT collapse. GRADIENT worth keeping straight across the three cases now measured: frobenius_codim_trace_* has its derivation in ANOTHER file with no link (genuine); wedderburn_dim_three is checked in-file against a real external function (advisory, strongest mitigation); dimqPartition31_eq_dimqPartition211 is checked against a second copy of the same expression (advisory, weakest). None of the three LINKS the check to the claim in Lean; they differ in what the check is against.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three_eq_factorial::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 86,
+      "verdict": "advisory",
+      "file_sha": "9cd256b28680",
+      "disposition": "no-change",
+      "evidence": "Same literals as wedderburn_dim_three, restated against `Nat.factorial 3`. The factorial side is a genuine computation; the sum side is the same three hand-entered dimensions.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Eightfold/FlavourColourDiscriminator.lean::colour_eq_flavour_data::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 88,
+      "verdict": "legit",
+      "file_sha": "44b4f98a561b",
+      "disposition": "no-change",
+      "evidence": "The two `dim` fields are genuinely different arithmetic -- `(7-1)/2` (octonion decomposition) against `(1+1)*(0+1)*(1+0+2)/2` (Weyl dimension formula) -- and the theorem checks they agree at 3. Written as two different expressions, so `decide` is doing real work; the docstring names both routes. The `fs` and `tri` fields ARE identical by construction, so only the dim half of the equality carries content.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean::gramEntryD_zero_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 644,
+      "verdict": "legit",
+      "file_sha": "d9c3b3239d0b",
+      "disposition": "no-change",
+      "evidence": "A DELIBERATE `rfl`, and the docstring states the purpose exactly: \"A one-line convention anchor: it pins, IN CHECKABLE LEAN RATHER THAN IN A DOCSTRING, which `z` these entries were built from.\" Given the convention-C/D history (owner ruling R1, 2026-08-15) that is a correct and useful use of a definitional lemma -- it makes a convention choice machine-checkable instead of prose. Compare the self-certifying `s3_bridge_audit_status` STRING in knot-mass-formula-unified, which does the opposite.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean::heckeH_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 415,
+      "verdict": "legit",
+      "file_sha": "a2d23f8c3430",
+      "disposition": "no-change",
+      "evidence": "`heckeH s := s^2 - (s^2)^{-1}` evaluated at 1 by `norm_num` -- a real closed form. The kernel reports ZERO collapses across this module's 29 theorems.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean::F_Bor_eq_trM_over_y_3::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 403,
+      "verdict": "legit",
+      "file_sha": "c040379b3985",
+      "disposition": "no-change",
+      "evidence": "Genuine algebra, general in q and h_trM over any field, with real nonzero hypotheses (h_q3, h_qfact) discharged by `field_simp`. The docstring calls its own proof \"trivial algebra\", which is accurate and is the honest framing.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean::unit2_nf_hecke_reduction::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 264,
+      "verdict": "advisory",
+      "file_sha": "2f1fc03ae00a",
+      "disposition": "no-change",
+      "evidence": "`unit2_nf | 5 => 0` and the theorem reads that arm back by `rfl`. The inline comment claims a derivation -- \"The e^- coefficient of (sigma_0 sigma_1^{-1})^2 vanishes BY HECKE REDUCTION\" -- which the Lean does not perform. Advisory rather than genuine because the next comment line discloses the mechanism (\"Proved via the explicit NF witness\"), and the other five arms carry real expressions (HA*HA, -HA, ...), so the normal form is a recorded result rather than an invented one.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     }
