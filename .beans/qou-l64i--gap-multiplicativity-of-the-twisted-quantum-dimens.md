@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-26T23:03:45Z
+updated_at: 2026-08-27T01:06:48Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -123,3 +123,54 @@ BUILD NOTE: `lean`-direct cannot `import QOU.MathlibExt.TwistedQuantumDimension`
 module has no committed olean. To experiment against it, append the scratch to the module file
 itself and restore afterwards; do NOT `lake build`, which evicts the restored olean cache
 (bean qou-r13s).
+
+
+2026-08-27 — ROUTE 1 STEP 1 IS DONE AND LANDED; the crux is now ISOLATED to one lemma.
+
+Landed on PR #5866 (QOU/MathlibExt/TwistedQuantumDimension.lean, sorry-free, lean-direct exit 0):
+
+    qTrWith (A B : C) [ExactPairing A B] (f : A ⟶ A) : (𝟙_ C ⟶ 𝟙_ C)
+      := η_ A B ≫ (f ▷ B) ≫ (β_ A B).hom ≫ ε_ A B
+    qTrWith_id     : qTrWith A B (𝟙 A) = qDimWith A B
+    qTrWith_twist  : qTrWith A B (twist A) = qDimTwistedWith A B     (by rfl)
+
+    ptrWith (X Y Y' : C) [ExactPairing Y Y'] (f : X ⊗ Y ⟶ X ⊗ Y) : X ⟶ X
+      := 𝟙 X ⊗≫ X ◁ η_ Y Y' ⊗≫ f ▷ Y' ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ⊗≫ 𝟙 X
+    ptrWith_id     : ptrWith X Y Y' (𝟙 (X ⊗ Y))
+                       = (ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom
+
+`ptrWith_id` closed with `simp [ptrWith, qDimWith, monoidalComp]` FIRST TRY. `qTrWith` matters more
+than it looks: without a MORPHISM-level trace there is nothing for a partial trace to be composed
+INTO, so the whole route is unstatable. That is why this step came first.
+
+THE CRUX, now a single named lemma — state it exactly like this, it elaborates cleanly:
+
+    theorem qTrWith_tensor_eq_ptr (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] (f : X ⊗ Y ⟶ X ⊗ Y) :
+        @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y') f
+          = qTrWith X X' (ptrWith X Y Y' f) := by
+      sorry
+
+MEASURED ON IT: `simp [qTrWith, ptrWith, tensorExactPairing, ExactPairing.coevaluation,
+ExactPairing.evaluation, monoidalComp]` dies on MAXIMUM RECURSION DEPTH (not a heartbeat timeout —
+a different failure from the earlier probes, and raising maxRecDepth is unlikely to help since the
+term is genuinely large). `monoidal` fails. NOT COMMITTED, because committing it means committing a
+`sorry` and this repo does not take them.
+
+ONCE THE CRUX LANDS, multiplicativity is short and needs no new ideas:
+
+    qDimWith (X⊗Y) (Y'⊗X')
+      = qTrWith (X⊗Y) (Y'⊗X') (𝟙)              -- qTrWith_id
+      = qTrWith X X' (ptrWith X Y Y' 𝟙)         -- THE CRUX
+      = qTrWith X X' ((ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom)   -- ptrWith_id
+      = qDimWith X X' ≫ qDimWith Y Y'           -- scalar pull-out, End(𝟙) acting by whiskering
+
+The last step needs a small "scalars pull out of the trace" lemma
+(`qTrWith A B ((ρ).inv ≫ (A ◁ s) ≫ (ρ).hom) = qDimWith A B ≫ s` for `s : 𝟙 ⟶ 𝟙`), which should be
+easy and is NOT the obstruction. The TWISTED version is the same chain with `qTrWith_twist` in
+place of `qTrWith_id`, plus `twist_tensor` — so proving the crux buys BOTH.
+
+HONEST SCOPE: this is progress on the framework, NOT on the nesting. The obstruction measured
+earlier (interchange, not coherence) is untouched and now sits entirely inside
+`qTrWith_tensor_eq_ptr`. Do not read step 1 landing as the route being half done — it is the easy
+half, and the docstring in the file says so.
