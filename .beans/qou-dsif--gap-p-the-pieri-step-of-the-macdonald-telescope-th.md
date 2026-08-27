@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-27T06:00:27Z
+updated_at: 2026-08-27T06:35:37Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -168,3 +168,46 @@ do not expect a two-term recursion in the number of rows to fall out. A route
 that works will have to move all corners at once — inclusion–exclusion over the
 corner's hook, in the shape of the Greene–Nijenhuis–Wilf hook-walk argument,
 is the obvious candidate and is a research-scale build in Lean, not a brick.
+
+
+### (P) AND (F) ARE ONE STATEMENT — and the corpus already had q=1 (2026-08-27)
+
+PR #5876. Audit: `docs/audits/2026-08-27-pieri-and-branching-are-one-statement.md`.
+
+**Framing correction.** #5857 §4 and #5871 both said the telescope follows from
+**two** elementary statements, (P) and (F). It does not. (F) is the `q → 1`
+shadow of (P): each factor `(1−Q^h)/(1−Q^{h+1}) → h/(h+1)`, the update rule
+gives `∏_{c∈μ} h_μ = ∏_{c∈λ} h_λ · ∏ (h+1)/h`, and FRT turns that into
+`f_μ/f_λ = (n+1)·∏ h/(h+1)`. So the `q=1` identity holds **iff** (F) does.
+Verified by two independent routes on eleven shapes.
+
+**Corpus find — I built alongside existing work.** The topic grep I ran only
+after the reductions landed turns up:
+
+- `numStandardYoungTableaux_mul_hookLengthProduct` — **FRT, sorry-free**,
+  `QOU/Mathlib/HookLengthFormula.lean:171`
+- `QOU/Mathlib/QHookProduct.lean` — a q-hook product on **Mathlib's
+  `YoungDiagram`** with the `q=1` specialisation proved, **sorry-free
+  throughout**
+
+The Pieri tower here is a **parallel development on a bare `List ℕ`**. `sp09`
+(completed) already sizes the bridge: ~40 lines per-cell hook agreement,
+~120–150 for the SYT-count encoding bridge. **Not done, and not recommended
+now** — recorded so the choice is deliberate. **Any further Pieri work must
+check `QOU/Mathlib/` first.**
+
+### Revised sizing — this is not a brick
+
+Only the **q-deformation** is open; the `q=1` case is reachable from corpus
+material plus the update rule already proved. But `sp09` records that (F) — the
+`q=1` case — was believed to need Greene–Nijenhuis–Wilf or
+Novelli–Pak–Stoyanovskii, and is "multi-week, a plausible Mathlib contribution
+in its own right". **The q-deformation is at least that hard.** Treat this as a
+multi-week build needing owner sign-off on scope, not a next brick.
+
+### Hazard for the cyclotomic route
+
+Count poles and zeros **per root of unity**, not per exponent. At `(4,2,1) r=0`
+the pole exponents are `{3,5,7}` and zeros `{1,4,6}`: the `(1−Q³)` pole dies
+against the `(1−Q⁶)` zero, both vanishing at a primitive cube root. Exponent
+matching reports a spurious pole.
