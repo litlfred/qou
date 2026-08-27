@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T06:11:05Z
+updated_at: 2026-08-27T06:21:32Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -222,3 +222,53 @@ inverting `net`.
 **The gap is now exactly `mu`.** Not "the element plus the scalar" — the element
 is accounted for. Is `mu = -2q/((q-z)(qz+1))` derivable? Its shape is
 suggestive: numerator `-2q`, denominator the Hecke quadratic. Scope (a).
+
+
+## 2026-08-27 (3) — mu has a closed form; the gap is now an IDENTIFICATION, not an unknown
+
+`qbeta_mu_closed_form_and_delta_alignment_probe.py` (6/6, exact symbolic, z free).
+
+### mu is framework-native
+
+    (q-z)(qz+1)   = -q (z^2 - h z - 1)            the HECKE QUADRATIC in z
+    z^2 - h z - 1 = -(q^4+q^2+1)/q^2 * y_(2,1)(z)
+    q^4+q^2+1     = q^2 [3]_q                      ([3]_q = q^2 + 1 + q^-2)
+
+    ==>   mu = - dim(V_(2,1)) / ( [3]_q * y_(2,1)(z) ),    dim = 2
+
+Block dimension, a quantum integer, the block's OWN Markov weight. So the full
+representation, every ingredient a framework object:
+
+    net(x) = sum_lambda a_lambda chi^lambda(x)
+             - [ dim(V_(2,1)) / ([3]_q y_(2,1)(z)) ] * tr_M(x * dC)
+
+**Not a fit:** an identity in TWO FREE SYMBOLS, exact for every q and every z —
+nothing to tune. The `2` is `chi^(2,1)(1)`, measured not asserted. Bracket
+convention cross-checked against the sibling's `b^2 = [3]_q/[2]_q^2` (#5337).
+
+### The Delta alignment — measured, and NOT the clean answer I expected
+
+y0 is the Riesz representative of `net` on [H,H]; **Delta enters nowhere in its
+definition**, so `y0 ∥ dC` is a real alignment, not a restatement. Parallelism
+in a 3-dim space is 2 conditions.
+
+I expected "Delta alone". Measured: of five basis elements with nonzero
+commutator part, **four are not parallel and one is** — `e_minus` = w_0, the
+longest element. So Delta satisfies a real constraint but is **not unique** in
+doing so. Do not over-claim this as "Delta is special".
+
+That w_0 is the one is probably not accidental: conjugation by w_0 is the
+diagram automorphism s_0 <-> s_1, which this bean already records as why `net`
+takes only two values across the six conjugates.
+
+### Where the bean now stands
+
+Every piece of `net` is expressed in framework-native objects. What is NOT done:
+mu's closed form was reached by **identification** — recognising the factors —
+not by a forward derivation from a normalisation principle. That is a narrowing,
+not a closure; step 8's postulate is not closed.
+
+**The remaining question is sharp and small:** is
+`mu = -dim / ([3]_q y_(2,1))` FORCED by a normalisation of the Markov pairing,
+or is it merely the value that happens to work? A forward derivation would close
+step 8. Scope (a) throughout.
