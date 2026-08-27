@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-27T05:36:22Z
+updated_at: 2026-08-27T05:48:41Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -64,3 +64,43 @@ Open question worth settling first, cheaply, in the probe: is there a partial-
 fraction identity over the corners that makes the sum term-by-term, or does it
 genuinely need all corners at once? Measure before formalising — that is what
 the three corrections above cost.
+
+
+### THE REDUCTION — measured 2026-08-27, PR #5871
+
+The open question this bean posed ("is there a partial-fraction identity that
+makes the sum term-by-term, or does it need all corners at once?") is answered,
+and better than expected. Exact sympy, eleven shapes up to `(4,3,1,1)`.
+
+**(P) splits into TWO identities in `Q` alone.** The ratio is linear in `X`, and
+structurally so: one box adds one cell, hence exactly one numerator factor
+`(1 − X·Q^c)`; everything else is hook lengths, which carry no `X`. So
+`R_r = K_r·(1 − X·Q^{c_r})` with `K_r` X-free, and matching coefficients gives
+
+    (P1)  Σ_r K_r            = 1/(1 − Q)
+    (P2)  Σ_r K_r · Q^{c_r}  = 1/(1 − Q)
+
+equivalently `Σ_r K_r·(1 − Q^{c_r}) = 0`.
+
+**The new box's hook is always 1**, at every addable corner including the new
+bottom row. Substituting that clears the only denominator outside the product,
+and both identities become:
+
+    (P1)   Σ_r  Q^{r}     · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+    (P2)   Σ_r  Q^{λ_r}   · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+
+Same product, two weightings — the **row index** and the **row length**, both
+`0` for the new bottom row — each summing to exactly `1`.
+
+**AIM THE LEAN PROOF AT THESE, not at (P).** One variable, no outer
+denominator, right-hand side a literal `1`. (P) then follows by X-linearity,
+which is itself a short argument: the ratio has one X-bearing factor.
+
+Note the two are NOT obviously the same identity, and I have not tested whether
+one implies the other (e.g. by conjugation `λ ↦ λ'`, which negates contents, or
+by `Q ↦ 1/Q`). That is the next cheap measurement, and it would halve the work
+again if it lands. Measure it; do not assume it.
+
+Still true and still worth not re-deriving: the shift product itself does NOT
+collapse — `(Q²+Q+1)/((Q+1)³(Q²+1))` at `(3,2,1), r=1`. The cancellation is
+across the sum, never inside a summand.
