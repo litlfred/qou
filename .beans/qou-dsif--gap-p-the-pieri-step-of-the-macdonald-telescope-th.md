@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-27T05:35:38Z
-updated_at: 2026-08-27T05:48:41Z
+updated_at: 2026-08-27T05:57:55Z
 ---
 
 Successor to `qou-6a7w`, which is completed (PR #5857 merged `6f4d0d2a3a`).
@@ -104,3 +104,41 @@ again if it lands. Measure it; do not assume it.
 Still true and still worth not re-deriving: the shift product itself does NOT
 collapse — `(Q²+Q+1)/((Q+1)³(Q²+1))` at `(3,2,1), r=1`. The cancellation is
 across the sum, never inside a summand.
+
+
+### AND (P2) IS (P1) AT THE CONJUGATE — the step is ONE identity
+
+The "next cheap measurement" above landed. Transposing sends the corner in row
+`r` at `(r, λ_r)` to the corner in row `λ_r` at `(λ_r, r)`, so **row index** and
+**row length** swap; hook lengths are transposition-invariant
+(`h_λ(i,j) = h_{λ'}(j,i)`), so the product is unchanged. Hence
+`(P2)[λ] = (P1)[λ']`.
+
+**THE WHOLE PIERI STEP IS NOW ONE IDENTITY IN ONE VARIABLE:**
+
+    Σ_r  Q^{r} · ∏_{h ∈ arm ∪ leg(r)} (1 − Q^h)/(1 − Q^{h+1})  =  1
+
+(P2) follows by conjugation; (P) follows from the two by X-linearity. No outer
+denominator, right-hand side a literal `1`.
+
+**PROVE THIS. Do not attack (P) directly.**
+
+Evidence caveat, and the probe enforces it: the self-conjugate shapes
+`(1)`, `(2,1)`, `(2,2)`, `(3,2,1)`, `(3,3,2)` satisfy fact 7 **trivially**
+(`λ' = λ`) and are not evidence. `main()` labels each shape and reports the
+informative count — currently 6 of 11. Run it; do not quote a count.
+
+### What a Lean attack now needs
+
+1. `Partition.conjugate` already exists in `QPartitionCombinatorics`. Needed:
+   that it is an involution on the shapes in play, that it bijects addable
+   corners with addable corners, and that it preserves hook lengths
+   transposed. That is the conjugation half.
+2. The X-linearity half: `schurElement` at `μ = λ + □` has exactly one more
+   content factor than at `λ`. Should be short from `schurElement_eq_prod`
+   plus the row-factor cases already proved.
+3. The one identity itself. Still open, still the hard part — but now a
+   single-variable statement about a sum of products of `(1−Q^h)/(1−Q^{h+1})`
+   over the corners, equal to `1`.
+
+Nothing above is proved in Lean yet. All of it is measured exact-symbolically.
