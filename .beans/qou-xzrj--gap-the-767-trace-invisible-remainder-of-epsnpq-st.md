@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T05:16:25Z
+updated_at: 2026-08-27T05:33:38Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -96,3 +96,70 @@ by appealing to the quotient.
 traceless element of a 2-dimensional block. That is exactly what remains open —
 this says where to look, not what to find. The sharpened question: **what
 observable, if any, is sensitive to `sl₂ ⊂ M₂` in the decay channel?**
+
+
+---
+
+## 2026-08-27 — ANSWERED (representation), PR #5869: an ELEMENT, via the pairing
+
+The bean's question — *"what object in the framework carries a non-cyclic
+functional's value on [H,H]?"* — has an answer that needs nothing new.
+
+**A trace is LINEAR and kills [H,H]. The Markov PAIRING `<x,y> = tr_M(x*y)` is
+BILINEAR and does not** (for 2x2 traceless `A`, `tr(A^2) = -2 det A`).
+
+**The enabling fact was already in the corpus and is the opposite of an
+obstruction.** `qou-s7z2` proves the pairing is DEGENERATE on H_3 under
+convention D with radical the `(1^3)` ideal
+(`MarkovGramDegenerate.pairing_descends`, `mem_radical_of_pairing_zero`). But
+`[H,H] = sl_2` sits in the TWO-row `(2,1)` block. So the pairing is degenerate
+exactly where the remainder is NOT, and nondegenerate exactly where it IS.
+
+### Measured (12/12, exact symbolic over Q(q), z a free symbol)
+
+`computations/qbeta/qbeta_trace_invisible_is_pairing_representable_probe.py`
+
+- Riesz system **rank 6/6** — `y0` is UNIQUE, not a fitted choice.
+- `y0` lies in the commutator subspace (all three centre-coordinates vanish).
+- `tr_M(dC * y0) = net(dC)` exactly; `|diff| = 0.0` at the proton pin.
+- **Exact on all six basis elements:**
+
+      net(x) = sum_lambda a_lambda chi^lambda(x) + tr_M(x * y0)
+
+- The pairing term vanishes on the CENTRE, so no double-counting.
+
+### Lean (4 declarations, sorry-free, lean-direct exit 0, no warnings)
+
+`QOU/QBeta/PairingSeesCommutator.lean` — the structural facts, not a Lean
+transcription of the probe:
+
+- `cyclic_annihilates_commutator` — **cyclicity ALONE** kills every commutator,
+  so no search over traces can repair the invisibility. `[propext, Quot.sound]`.
+- `trace_pairing_sees_a_commutator` — the CONVERSE GUARD (`trace d = 0` but
+  `trace(d*d) = 2`), without which the first reads as an impossibility.
+- `diag_one_neg_one_is_commutator` — `d = e*f - f*e`, so the guard is about the
+  commutator subspace and not merely a traceless matrix.
+- `eq_of_pairing_eq_of_nondegenerate` — **uniqueness** of the representative,
+  on `[propext]` alone. This is the load-bearing one: a solve admitting many
+  answers would be a fit; nondegeneracy leaves nothing to select.
+
+### Still open — the bean does NOT close
+
+- **Existence of `y0` is not formalised.** It is a finite-dimensional
+  dual-space fact, instantiated by the probe (rank 6/6). The Lean proves
+  "unique if it exists" and "the pairing reaches [H,H] at all"; the probe
+  supplies "it exists, here it is". Neither substitutes for the other.
+- **Is `y0` DERIVABLE?** This is now the question. The representation is exact
+  and `y0` is determined, but determined-by-`net` is not the same as
+  derived-from-the-substrate. Until that is answered, step 8's postulate is
+  narrowed rather than closed.
+- Scope **(a)** throughout: a representation of `net`, not a derivation of it;
+  says nothing about whether the single-wrap presentation is forced.
+
+### Method note
+
+My first version of the decomposition wrote `2 * a21`, reading the `a_lambda`
+as regular-character coefficients. They are the trace functional's own
+coefficients; it failed on 5 of 6 and the assertion caught it. My first
+DIAGNOSTIC was also wrong (compared against `net(x)` rather than `net(x_Z)`,
+which need not agree off the centre). Both are kept in the file as controls.
