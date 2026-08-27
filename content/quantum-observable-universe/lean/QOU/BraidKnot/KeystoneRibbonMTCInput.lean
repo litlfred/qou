@@ -52,9 +52,15 @@ open QOU.BraidKnot
 variable {C : Type*} [Category C] [MonoidalCategory C] [BraidedCategory C] [RightRigidCategory C]
 
 /-- **The categorical (right) quantum dimension** of an object `X` in a braided right-rigid
-category, as an endomorphism of the unit object: the ribbon trace of the identity,
-`𝟙_C --η_X--> X ⊗ Xᘁ --β--> Xᘁ ⊗ X --ε_X--> 𝟙_C`.  This is the genuine `dim_q(X) ∈ End(𝟙_C)` that
-the abstract `VerlindeVacuumRow.d` stands for. -/
+category, as an endomorphism of the unit object: the *braided*, **twistless** closure of the
+identity, `𝟙_C --η_X--> X ⊗ Xᘁ --β--> Xᘁ ⊗ X --ε_X--> 𝟙_C`.  This is the `dim_q(X) ∈ End(𝟙_C)` that
+the abstract `VerlindeVacuumRow.d` stands for.
+
+**Not the ribbon trace** (a borrowed name this docstring used to carry): the ribbon trace carries
+the balancing twist and there is no `BalancedCategory` in the variable block above, so no `θ`
+appears here and none can.  See `QOU.MathlibExt.qDimTwistedWith` for the twisted version.  Nothing
+downstream of this definition is affected — `qDim_unit` and the vacuum-row results are true of the
+object actually defined here, and since `θ_𝟙 = 𝟙` they read the same either way. -/
 noncomputable def qDimObj (X : C) : (𝟙_ C ⟶ 𝟙_ C) :=
   η_ X Xᘁ ≫ (β_ X Xᘁ).hom ≫ ε_ X Xᘁ
 

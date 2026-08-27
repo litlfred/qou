@@ -104,6 +104,7 @@ import QOU.MathlibExt.RigidTensorDual
 import QOU.MathlibExt.BraidedTensorDual
 import QOU.MathlibExt.BraidedQuantumDimension
 import QOU.MathlibExt.PivotalCategory
+import QOU.MathlibExt.TwistedQuantumDimension
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
