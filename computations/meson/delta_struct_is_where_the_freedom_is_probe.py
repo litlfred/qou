@@ -66,6 +66,7 @@ from _precision import set_compute_dps  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
+from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 set_compute_dps()
 mp.mp.dps = 300
@@ -212,7 +213,7 @@ def main() -> int:
         checks.append((bool(ok), detail))
         print(f"  [{'PASS' if ok else 'FAIL'}] A{len(checks)}: {detail}")
 
-    hq = mp.mpf(str(_h_f))
+    hq = HA_MP
     word = atom_braid_word_3A(1, 1)          # at q₀ — the physical word, for counting
     words_by_q = {q: word_at(q) for q in _DECADES}   # the q-family, for the valuation
     n = 6

@@ -59,10 +59,11 @@ set_compute_dps()
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
+from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 import snappy  # noqa: E402
 
-H = mp.mpf(str(_h_f))
+H = HA_MP
 TOL = mp.mpf("1e-9")
 
 

@@ -44,6 +44,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from canonical_braid_crossings import classify_crossing  # noqa: E402
 from pyhecke.gram import h as h_val  # noqa: E402
+from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -71,7 +72,7 @@ def _is_averaged_family(ctype: str) -> bool:
 
 
 def main() -> None:
-    h = mp.mpf(str(h_val))
+    h = HA_MP
     rows = []
     for name, Z, N in ISOTOPES:
         w = atom_braid_word_3A(Z, N)

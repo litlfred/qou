@@ -87,12 +87,14 @@ from _precision import set_compute_dps  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
+from q_parameter import HA_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 40)
 
-Q, H, TOL, WALL = mp.mpf(str(Q0)), mp.mpf(str(_h_f)), mp.mpf("1e-9"), 3
+Q, H, TOL, WALL = Q_MP, HA_MP, mp.mpf("1e-9"), 3
 I_COLOUR = [3, 2, 1, 4, 3, 2, 5, 4, 3]
 
 

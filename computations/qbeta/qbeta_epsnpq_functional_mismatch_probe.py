@@ -60,6 +60,7 @@ from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 set_compute_dps()
 
@@ -73,7 +74,7 @@ def main() -> int:
     qs = sp.symbols("q")
     hs = qs - 1 / qs
 
-    q = mp.mpf(str(Q0))
+    q = Q_MP
     h = q - 1 / q
 
     wb = WitnessBuilder("qbeta-epsnpq-functional-mismatch", engine="mpmath")
