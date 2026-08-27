@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T18:58:13Z
-updated_at: 2026-08-27T05:34:46Z
+updated_at: 2026-08-27T13:28:14Z
 ---
 
 ## The gap this fills (measured, not assumed)
@@ -271,3 +271,43 @@ The 7 modules that timed out as one batch were retried at **batch size 3**:
 3 completed in 4m14s, the remaining 4 still time out at 560s. **Batch size
 alone does not rescue the heaviest modules** — those need their own budget.
 Cumulative: 19 modules, 352 theorems, 56 defeq collapses.
+
+
+---
+
+## 2026-08-27 — the four "impossible" modules, resolved 3–1
+
+Ran solo (2400 s each) after the batch-5 finding that PermutationEnumeration
+completes alone:
+
+    PermutationEnumeration          73 thms /  58 collapses   79 %
+    MassEndomorphism.ZHabiroCauchy       38 /   7             18 %
+    Mathlib.NonAbelianStokes             48 /   7             14 %
+    Knots.KauffmanTL3               TIMED OUT at 2400 s
+
+**Corrects a claim in the merged PR #5875**, which said "the constraint was the
+BATCH, not the module". True for three of four. KauffmanTL3 is genuinely too
+heavy: its own docstring records the 8_19 `decide` as ~70 s of kernel reduction
+on its own, and the pass then runs isDefEq over every theorem in the module,
+several carrying those same bracket reductions. A batch budget was never its
+problem.
+
+Corrected: solo running recovers a module the batch STARVED; it does not
+recover one whose own reductions exceed the budget.
+
+Recorded in `docs/audits/2026-08-26-kernel-defeq-sample.witness.json`
+(batch6_note), landed on branch
+`claude/lean-vacuity-detector-shared-machinery-2026-08-27` / PR #5880 rather
+than a third PR — it corrects the PR that spawned that branch and touches no
+detector code.
+
+Kernel sample now 53 modules / 994 theorems / 252 collapses — still 2.3 % of
+the 2257-module QOU tree. The collapse range across the sample is now 14–79 %,
+which strengthens rather than weakens batch 5's conclusion that the rate is not
+a quality signal: the two new low-end modules and the 79 % high-end one are all
+substantially legitimate.
+
+Remaining on this bean: 34 unadjudicated `major` candidates (expected yield near
+zero — §6a of #5875 measures the genuine findings as concentrated 16-of-18 in
+the mass/binding files, and the remainder sit outside them), and 741 QOU modules
+with no olean, two of which are known compile failures.
