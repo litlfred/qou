@@ -36,7 +36,11 @@ tau's own decomposition.**
 
 ## and reduces the gap to ONE identity
 
-    Omega_(2,1) = -dim(V_(2,1)) * dC                                      [N3]
+    comm(Omega) = -dim(V_(2,1)) * dC                                      [N3]
+
+NAMING, corrected in the follow-up probe: this is Omega's COMMUTATOR part,
+not its (2,1)-component. `chi^(2,1)(Omega) = 2h` is NONZERO, so the two
+differ. The identity is unaffected.
 
 exact, ratio exactly -2. So the entire remaining content of the representation is
 this: **the all-ones element's traceless part is minus the block dimension times
@@ -222,10 +226,11 @@ def main() -> int:
     Om21 = comm_part(allones)
     nz = next(i for i in range(N) if sp.simplify(dC[i]) != 0)
     ratio = sp.simplify(sp.factor(Om21[nz] / dC[nz]))
-    check("N3_all_ones_traceless_part_is_MINUS_DIM_times_dC",
+    check("N3_all_ones_COMMUTATOR_part_is_MINUS_DIM_times_dC",
           all(sp.simplify(sp.together(Om21[i] - ratio * dC[i])) == 0
               for i in range(N)) and sp.simplify(ratio + 2) == 0,
-          f"Omega_(2,1) = {ratio} * dC = -dim(V_(2,1)) * dC, exact. This is the "
+          f"comm(Omega) = {ratio} * dC = -dim(V_(2,1)) * dC, exact (COMMUTATOR "
+          f"part, not the (2,1)-component -- chi^(2,1)(Omega) = 2h != 0). "
           f"WHOLE remaining content -- two explicit canonical elements, no "
           f"constants left in it")
 

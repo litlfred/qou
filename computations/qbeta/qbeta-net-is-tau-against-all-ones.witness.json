@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-27T09:07:51.176862+00:00",
-  "commitSha": "8b2b9b7759e189c41b6c4835896879e6f054501b",
+  "computedAt": "2026-08-27T13:01:35.451533+00:00",
+  "commitSha": "f97c4f63921194016396733d3e2b63bd71ba36d1",
   "assertions": [
     {
       "name": "CONTROL_the_inverse_sum_is_NOT_the_representative",
@@ -40,7 +40,7 @@
       "tolerance": "0"
     },
     {
-      "name": "N3_all_ones_traceless_part_is_MINUS_DIM_times_dC",
+      "name": "N3_all_ones_COMMUTATOR_part_is_MINUS_DIM_times_dC",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 22,
   "computation": "qbeta-net-is-tau-against-all-ones",
   "scriptFile": "qbeta_net_is_tau_against_all_ones_probe.py",
-  "scriptHash": "6a2e08e003b1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c59236c9b453",
+  "scriptCommitSha": "56c3453381f478714470cb58e5a950e937d2165a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
