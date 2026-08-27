@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T11:51:04.152594Z",
+  "updated_at": "2026-08-27T11:57:10.217637Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3043,6 +3043,17 @@
       "evidence": "MACHINE-CHECKED VACUOUS (`lean` exit 0, scripts/lean/probes/unified-knot-mass-satisfiability.lean). The class field `descended_is_markov : descended = |descendedMarkov q braid|` with `descendedMarkov q _braid := 0 * q` forces `U.descended = 0` for EVERY instance; this theorem's hypothesis `h_desc : U.descended = 1` therefore contradicts the class it quantifies over, and the conclusion follows from False -- the probe derives `U.total_mass = 12345` from the same hypotheses. Its sibling hypothesis `h_tower : U.tower = 0` is REDUNDANT (the class already forces it), which is the tell: one hypothesis restates the class and the other refutes it. The docstring's reading of h_desc ('the trace of the identity element of H_n(q)') is correct mathematics -- tr(1) = 1 -- and is exactly why pinning the field to the stub is wrong. Full analysis: docs/audits/2026-08-27-unified-knot-mass-class-is-unsatisfiable.md",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qInt_eq_canonical::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 45,
+      "verdict": "legit",
+      "file_sha": "92a92bfafb0d",
+      "disposition": "no-change",
+      "evidence": "CALIBRATION POINT -- flagged by BOTH detectors and legit under both. scripts/lean-definition-collapsed-audit.py (bean qou-k9yt) reports it as its only surviving CRITICAL, and the kernel pass independently reports defeq_collapse=true, value_is_rfl=true. It is a compatibility lemma between two definitions of the quantum integer and SHOULD be `rfl`; the docstring says so outright: \"`qInt` is kept rather than aliased ... The two are definitionally the same object, so the consolidation here is this equation -- checked, not asserted.\" It also gives the reason `qInt` is not simply aliased (`qInt_eq_div` rewrites through the literal Finset.sum body). Recorded because it is the clearest demonstration that defeq_collapse is a CANDIDATE, never a verdict: reduction is how a genuine definitional identification is proved.",
+      "tier": "cross-detector",
+      "source": "scripts/lean/BorrowedNameKernel.lean + scripts/lean-definition-collapsed-audit.py (beans qou-0avp, qou-k9yt)"
     }
   }
 }
