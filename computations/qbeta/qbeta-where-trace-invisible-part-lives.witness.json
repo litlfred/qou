@@ -1,0 +1,133 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T22:58:52.979020+00:00",
+  "commitSha": "09bfe79e3e1b94bb444cd6c50d1128f98507a69b",
+  "assertions": [
+    {
+      "name": "commutator_subspace_is_three_dimensional_equal_to_dim_sl2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_ENTIRE_commutator_subspace_sits_in_the_2_dim_block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_reproduces_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "dC_is_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "dC_lies_entirely_in_the_2_dim_block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "deltas_2_dim_component_IS_dC_exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "and_chi_2_1_of_delta_vanishes_CROSS_REFERENCE",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "dC_SURVIVES_the_convention_D_TL_quotient",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_floor_is_minus_h_times_the_2_dim_weight_at_z_equals_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2615,
+  "computation": "qbeta-where-trace-invisible-part-lives",
+  "scriptFile": "qbeta_where_the_trace_invisible_part_lives_probe.py",
+  "scriptHash": "7770bfcd714c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_where_the_trace_invisible_part_lives_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_where_the_trace_invisible_part_lives_probe.py"
+  },
+  "description": "The trace-invisible 7.67 % of epsNPq lives in the traceless part of the 2-dimensional block, and survives the convention-D Temperley-Lieb quotient intact.",
+  "data": {
+    "dim_commutator": 3,
+    "block_containing_the_remainder": "(2,1) — the 2-dimensional one",
+    "floor_symbolic": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
+    "floor_at_q0": "-0.0143595358875304501085086097144759087768871011997172248968326",
+    "epsNPq_at_q0": "-0.187207194529378320729836545290980788975650514906299236406418",
+    "fraction_trace_invisible": "0.0767039745648077437669761312145785787368983392141673398077255",
+    "survives_TL_quotient": true,
+    "markov_convention": "convention-free — no z is specialised",
+    "assertion_notes": [
+      {
+        "assertion": "commutator_subspace_is_three_dimensional_equal_to_dim_sl2",
+        "note": "(H_3 = R + M_2 + R, so [H,H] = sl_1 + sl_2 + sl_1 = sl_2)"
+      },
+      {
+        "assertion": "the_ENTIRE_commutator_subspace_sits_in_the_2_dim_block",
+        "note": "(e_(3) and e_(1,1,1) annihilate [H,H]; e_(2,1) acts as the identity)"
+      },
+      {
+        "assertion": "deltas_2_dim_component_IS_dC_exactly",
+        "note": "(so Delta's (2,1) part is TRACELESS — the same fact as chi^(2,1)(Delta) = 0, found separately and now unified)"
+      },
+      {
+        "assertion": "dC_SURVIVES_the_convention_D_TL_quotient",
+        "note": "(D quotients the (1,1,1) block; dC is in (2,1), so the trace-invisible remainder is NOT what D removes — qou-xzrj stays live under the canonical convention)"
+      },
+      {
+        "assertion": "the_floor_is_minus_h_times_the_2_dim_weight_at_z_equals_one",
+        "note": "(so -h*y_(2,1)(1) is not a coincidence of labels: it is the weight of the very block the remainder lives in)"
+      }
+    ],
+    "verdict": "The trace-invisible remainder lives in the TRACELESS part of the 2-dimensional block, and this unifies four facts that arrived separately. For H_3 = R + M_2 + R the commutator subspace is sl_1 + sl_2 + sl_1 = sl_2, so [H,H] sits ENTIRELY in the (2,1) block (measured: the two 1-dim idempotents annihilate it, e_(2,1) is the identity on it, dim = 3). Hence dC is in that block; Delta's (2,1)-component IS dC exactly, which is the SAME statement as chi^(2,1)(Delta) = 0; and the floor -h*y_(2,1)(1) carries that block's own weight rather than coincidentally sharing its label. So Delta splits as two 1-dimensional blocks carrying everything a trace can see, plus a traceless element of the 2-dimensional block carrying everything it cannot. AND THE URGENT QUESTION: convention D quotients the (1,1,1) block, dC is in (2,1), so the remainder SURVIVES the Temperley-Lieb quotient intact -- it is not what D removes, and qou-xzrj stays live under the canonical convention. NOT claimed: that anything in the framework's vocabulary evaluates a traceless element of a 2-dimensional block. That is what remains open; this says where to look."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

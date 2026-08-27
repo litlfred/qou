@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T21:19:54.899031+00:00",
-  "commitSha": "bce7ab268030e0abff7f1f97c984121568ac27b8",
+  "computedAt": "2026-08-26T22:42:32.285195+00:00",
+  "commitSha": "4df598b769fb242d5dab12a182f56d87aa6321fb",
   "assertions": [
     {
       "name": "net_sends_every_basis_element_to_one",
@@ -146,11 +146,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1949,
+  "durationMs": 1976,
   "computation": "qbeta-net-as-trace-plus-longest",
   "scriptFile": "qbeta_net_as_trace_plus_longest_probe.py",
-  "scriptHash": "e0c452fbf0f4",
-  "scriptCommitSha": "048fa14ea32199d08ae0025e0d425da9436fe22d",
+  "scriptHash": "6426f4dd100c",
+  "scriptCommitSha": "eec9be12cbec979f33e1973d17605c47be5abf46",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -242,7 +242,7 @@
         "note": "(net(dC) = -h * y_(2,1)(1): the z-free part of the ladder phase, in the Ocneanu family alone)"
       }
     ],
-    "verdict": "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, on all six basis elements. That sharpens the corpus's 'genuinely distinct functionals' to a single rank-one difference supported on w_0, and turns its companion 'they agree precisely when z=1' into a statement about Delta's SUPPORT -- Delta has zero w_0 coordinate -- rather than about the functionals, which differ by h on T_{w_0} at EVERY z. Consequences: the ladder phase is a transport WITHIN one family, 2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta); and since tr_M^{z=1} annihilates [H,H], the whole z-free floor is the rank-one term. Chasing that through gives the closed form the identity was missing: b_(2,1) = 0, so a_(2,1) IS the Markov weight y_(2,1)(1), and     net(dC) = -h * y_(2,1)(1)  -- exact, and stated entirely inside the Ocneanu family with no `net`-specific object left in it. Read with chi^(2,1)(Delta) = 0 from the block resolution: the 2-dimensional block contributes nothing to the trace-visible part of the phase and everything to the trace-invisible part. Its contribution was never absent -- it was in the sector no trace can see. Scope-(a): derives no correction, proposes no value, wires nothing."
+    "verdict": "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, ON H_3(q) -- it FAILS at n = 4 (11 of 24; see qbeta_rank_one_identity_is_n3_only_probe), so it is an n=3 fact and not a characterisation of the functionals; the conclusions below are unaffected because each is evaluated on Delta in H_3(q). Measured on all six basis elements. That sharpens the corpus's 'genuinely distinct functionals' to a single rank-one difference supported on w_0, and turns its companion 'they agree precisely when z=1' into a statement about Delta's SUPPORT -- Delta has zero w_0 coordinate -- rather than about the functionals, which differ by h on T_{w_0} at EVERY z. Consequences: the ladder phase is a transport WITHIN one family, 2*alpha(z) = tr_M^1(Delta) - tr_M^z(Delta); and since tr_M^{z=1} annihilates [H,H], the whole z-free floor is the rank-one term. Chasing that through gives the closed form the identity was missing: b_(2,1) = 0, so a_(2,1) IS the Markov weight y_(2,1)(1), and     net(dC) = -h * y_(2,1)(1)  -- exact, and stated entirely inside the Ocneanu family with no `net`-specific object left in it. Read with chi^(2,1)(Delta) = 0 from the block resolution: the 2-dimensional block contributes nothing to the trace-visible part of the phase and everything to the trace-invisible part. Its contribution was never absent -- it was in the sector no trace can see. Scope-(a): derives no correction, proposes no value, wires nothing."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

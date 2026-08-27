@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T13:47:22Z
+updated_at: 2026-08-26T22:44:45Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -174,3 +174,136 @@ That is evidence FOR the C-conditionality AGENTS.md already asserts -- it is
 not a measurement of D's accuracy.
 
 Items 1 (colour-blind crossing, 80 ppm) and 3 (muon pin) are unaffected.
+
+
+## 2026-08-26 — the mislabelling has a hard consequence under convention D
+
+From `qou-879g` (now answered): the corpus's own
+[`prf:algebraic-gns-embedding`](content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md)
+places the convention-D theory in the **Temperley–Lieb quotient**
+`H_∞(q)/rad ≅ TL_∞(q)` — the radical being exactly the `ℓ(λ) ≥ 3` blocks, since
+`y_λ = 0` there.
+
+A functional descends to a quotient iff it annihilates the ideal. Measured
+(`qbeta_which_algebra_the_decay_channel_lives_in_probe.py`, 11/11):
+
+- the **augmentation** `σ ↦ q` annihilates `J_(1³)` → **it descends**;
+- the **coordinate sum** `net` does not — `net(e) = q³(q−1)/((q²+1)(q²+q+1))` → **it does not**.
+
+Δ has a nonzero `(1³)` component, so `epsNPq` assigns different values to two
+representatives of the same TL class.
+
+**This sharpens the question this bean asks.** It is no longer only "which ε was
+meant". Under the canonical convention, one of the two candidates **cannot** be
+the answer on structural grounds: the coordinate sum is not a functional on the
+space the framework's own GNS proof says the theory lives in. The augmentation
+is. That does not by itself make the augmentation right — `qou-avt5`'s finding
+stands that the stated NF vector is not the exhibited element under *either*
+functional — but it removes a symmetry the fork used to have.
+
+
+## 2026-08-26 (2) — the two admissible functionals BRACKET Q_β, and the matching one is inadmissible
+
+`qbeta_admissible_functionals_bracket_probe.py` (15/15). Forced follow-on to the
+TL answer (`qou-879g`), not a search.
+
+Descent is annihilation of the ideal, so under D this bean's question has
+exactly two admissible answers, each giving one determined number:
+
+- **Multiplicative** functionals into a commutative ring are exactly the 1-dim
+  reps. `H₃(q)` has two — `σ ↦ q` and `σ ↦ −1/q` — and the second **is** the
+  block D quotients away. So exactly one survives: the augmentation.
+  **Uniqueness, not a choice.**
+- The Markov trace at `z_D` survives by construction.
+- The coordinate sum the ansatz evaluates does not.
+
+Measured, all three on the **same** object (the NF vector), against Q_codata:
+
+| functional | admissible under D? | err |
+|---|---|---|
+| coordinate sum (`epsNPq`) | **no** | **+0.168 %** |
+| augmentation `σ ↦ q` | yes | +12.470 % |
+| Markov trace at `z_D` | yes | −43.157 % |
+
+**The functional that reproduces the measured Q-value is precisely the one the
+canonical convention forbids**, and both permitted ones miss by more than an
+order of magnitude in opposite directions. That is evidence against the ansatz
+as it stands, not a step toward repairing it.
+
+**The trap, named:** the bracket means some convex combination hits Q_codata
+exactly. That is a one-parameter fit against a single anchor. Deliberately not
+computed; any weight must be **derived** from the representation.
+
+### A calibration I wrote wrong, kept because the mistake is the point
+
+I asserted the trace row should reproduce `qbeta-d-frame-trace-baseline`'s
+−15.451 %. It **failed** at −43.157 %, and the failure is correct: that probe
+evaluates `tr_M` on the **exhibited nucleon words**, this one on the **NF
+vector**, and `qou-avt5` established those are different objects. Two numbers
+both called "tr_M(Δ)" are not comparable and I nearly quoted them as if they
+were. Now pinned as
+`the_NF_vector_and_the_exhibited_words_give_DIFFERENT_traces`, and it is why
+this probe holds the object fixed and varies only the functional.
+
+
+### Strengthened: the admissible set is COMPLETE, solved not sampled
+
+The structural condition **is** `y_(1³)(z) = 0`. Solved rather than checked
+against candidates, it is quadratic in `z` with exactly two roots:
+
+    z = q        and        z = z_D = q³/(q²+1)
+
+Two things follow that were not visible when I listed candidates:
+
+- **The two-row forcing is not unique to `z_D`** — `z = q` kills the `(1³)`
+  block too.
+- **At `z = q` the Markov trace IS the augmentation**, verified on all six basis
+  elements and not merely on Δ. So the second root adds no third option; it
+  reproduces the augmentation exactly.
+
+The admissible set is therefore **closed at two elements**, and the bracket is a
+completeness statement rather than a sample:
+
+| root | functional | err |
+|---|---|---|
+| `z = z_D` | Markov trace at `z_D` | −43.157 % |
+| `z = q` | ≡ the augmentation | +12.470 % |
+
+And `epsNPq` is `tr_M` at `z = 1` on Δ, with **`z = 1` neither root**. So the
+ansatz's +0.168 % comes from an evaluation inadmissible twice over: at a loop
+value the corpus itself calls never attained on the substrate, and one that does
+not survive the convention-D quotient.
+
+
+### 🛑 SCOPE RETRACTION — the rank-one identity is n=3 only
+
+`qbeta_rank_one_identity_is_n3_only_probe.py` (6/6). Caught by taking a sibling's
+warning seriously rather than assuming my claims were exempt. PR #5337, on this
+very bean, five days before I wrote the identity:
+
+> *"One trap: at n = 3, Ξ coincides numerically with `y_(3)` … **`Ξ ≠ y_(n)` in
+> general — do not generalise the n=3 coincidence.**"*
+
+That is about a different coincidence. Mine is the same failure mode.
+
+**Measured**, with the Ocneanu trace **solved** at each n from unital + cyclic +
+the full Markov property at **every** level of the chain (not read off the stated
+recursion, so this is an independent route):
+
+| | rank | `net = tr_M^{z=1} − h·δ_{w₀}` |
+|---|---|---|
+| n = 3 | 6/6 unique | **holds**, defect exactly `−h` |
+| n = 4 | 24/24 unique | **FAILS** — nonzero on **11 of 24**, four distinct values |
+
+At n = 4 the trace at `z = 1` also takes **five** distinct values rather than
+being constant off `w₀`. Not a near miss.
+
+**Everything drawn from it stands** — each conclusion is evaluated on Δ, and
+Δ ∈ H₃(q): `ε(Δ) = tr_M^{z=1}(Δ)` follows from Δ's *support*; the phase is a
+transport within one family; the floor is `net(dC) = −h·y_(2,1)(1)`. The original
+probe still passes 20/20 and no number moves. What was wrong is the **sentence**,
+which read as a characterisation of the two functionals.
+
+**Also found:** imposing the Markov property only at the **top** generator leaves
+the Ocneanu trace **underdetermined** — rank 5 of 6 at n = 3. A partial Markov
+condition does not pin it.

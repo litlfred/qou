@@ -3655,3 +3655,47 @@ carried the duration as a float; this branch serialized it as the string
 wall-clock field drifting on every re-run. On rebase this branch's version of
 that one fix was **dropped in favour of main's** (convergent fix, superseded);
 the leak is drained either way.
+
+## 2026-08-26 — coordination: PR #5864 (ε admissibility) vs PR #5337 (two-row cap)
+
+**Scope map.** Two open PRs are on `qou-cds1` simultaneously. This is deliberate
+overlap under the measured-research-overlap rule, and the angles are distinct.
+
+| PR | branch | angle |
+|---|---|---|
+| [#5337](https://github.com/litlfred/qou/pull/5337) | `claude/qbeta-f-coordinate-2026-08-19` | fold the Wenzl two-row cap in as a **correction** — what does the capped decomposition *produce*? |
+| [#5864](https://github.com/litlfred/qou/pull/5864) | `claude/qbeta-decay-channel-algebra-2026-08-26` | which functional is **admissible** at all — what is *permitted*? |
+
+Different questions; neither subsumes the other. No file overlap: #5864 touches
+`computations/qbeta/`, `QOU/QBeta/`, `docs/audits/`, and one `observations/`
+block; #5337's scope is the F-coordinate bridge and the cap fold-in.
+
+**What #5864 hands #5337**, posted as intent on that PR
+([comment](https://github.com/litlfred/qou/pull/5337#issuecomment-5431694623)):
+
+- the per-block resolution `2α(z) = Σ_λ [a_λ − y_λ(z)] χ^λ(Δ) + net(d_C)`, which
+  is the step #5337's body names as *"NOT folded in yet"*, done for every `z`;
+- `χ^(2,1)(Δ) = 0` identically, so Δ's block support is `{(3), (1³)}` in every
+  convention;
+- under D the cap leaves the `(1³)` block **uncancelled** (`a_(1³) ≠ 0` against
+  `y_(1³) = 0`) — a sign flip and 7.8×, not a cancellation;
+- the two-row condition has **two** roots, `z = q` and `z = z_D`, and at `z = q`
+  the Markov trace **is** the augmentation — so the cap does not single out `z_D`;
+- the phase's z-free floor `net(d_C) = −h·y_(2,1)(1)`, bar-even, extending the
+  `fcffeee29` prune.
+
+**The disagreement worth recording** (not resolved, not split): on #5864's
+reading the cap cannot supply the correction, because the object being corrected
+is not admissible under the canonical convention in the first place. #5337 tests
+a different proposition and may still return something. Flagged to that PR
+rather than asserted over it.
+
+**#5857 — adjacent, not overlapping.** Its `schurElement` prefactor fix is a Lean
+correction; #5864's weights come from the Ocneanu recursion and were cross-checked
+against `y_lambda_su_n`. Posted a corroboration of its §1 "the Lean drifted from
+the Python" direction-of-drift call at n=3
+([comment](https://github.com/litlfred/qou/pull/5857#issuecomment-5431696870)),
+explicitly not a claim about the telescope or `n(λ)` vs `contentSum`.
+
+**Not commented on:** #5352 (TL-arc Lean infra) — plausibly relevant to #5864's TL
+result, but not read, and the skill's "don't post on every sibling" applies.

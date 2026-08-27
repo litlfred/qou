@@ -18,6 +18,14 @@ exactly HOW they differ, and the answer is a single rank-one term.
 
     net  =  tr_M^{z=1}  -  h * (coefficient of the longest element)
 
+🛑 SCOPE, added 2026-08-26 — an n = 3 FACT, not a characterisation of the two
+functionals. At n = 4 it FAILS: `net - tr^{z=1}` is nonzero on 11 of 24 basis
+elements with four distinct values, and the trace at z = 1 is not constant off
+w_0 either (five values). See `qbeta_rank_one_identity_is_n3_only_probe.py`
+(6/6). Every conclusion below stands — each is evaluated on Delta, and Delta
+lives in H_3(q) — but the unscoped sentence did not, and PR #5337 had warned
+about generalising an n = 3 coincidence ON THIS VERY BEAN before I did it.
+
 verified on all six basis elements. The Ocneanu trace at z = 1 sends every basis
 element to 1 EXCEPT the longest, where tr(T_0T_1T_0) = z(hz+1) evaluates to
 1 + h; `net` sends every basis element to 1 by definition. So the two functionals
@@ -264,6 +272,10 @@ def main() -> int:
 
     verdict = (
         "`net` = tr_M^{z=1} - h*(coefficient of the longest element), exactly, "
+        "ON H_3(q) -- it FAILS at n = 4 (11 of 24; see "
+        "qbeta_rank_one_identity_is_n3_only_probe), so it is an n=3 fact and "
+        "not a characterisation of the functionals; the conclusions below are "
+        "unaffected because each is evaluated on Delta in H_3(q). Measured "
         "on all six basis elements. That sharpens the corpus's 'genuinely "
         "distinct functionals' to a single rank-one difference supported on "
         "w_0, and turns its companion 'they agree precisely when z=1' into a "
