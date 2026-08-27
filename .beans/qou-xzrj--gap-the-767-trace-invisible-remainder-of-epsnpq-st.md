@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T07:30:55Z
+updated_at: 2026-08-27T09:14:43Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -380,3 +380,60 @@ representative should be `-dim/(c_lambda y_lambda)` times dC rather than
 something else. That is now the whole of the gap — no bare constants left in
 it, just an unexplained combination of three named invariants. Scope (a); step
 8's postulate is narrowed, not closed.
+
+
+## 2026-08-27 (6) — `net` is tau against the ALL-ONES element; the gap is now ONE identity
+
+`qbeta_net_is_tau_against_all_ones_probe.py` (8/8).
+
+### `net` has an intrinsic form
+
+`tau(T_w) = delta_{w,e}` picks the identity coefficient, so pairing against the
+all-ones element sums coordinates — which is exactly `net`:
+
+    Omega := sum_w T_w = [1,1,1,1,1,1]
+    net(x) = tau(x * Omega)                     for every x
+
+**Solved, not assumed** — the tau-representative system is rank 6/6 (unique) and
+returns all-ones.
+
+### which DERIVES the Schur-element factor
+
+With `tau = sum_lambda chi^lambda/c_lambda`, and x in sl_2 where only (2,1)
+survives, the representative against the unscaled block form is
+
+    W = Omega_(2,1) / c_(2,1)
+
+**So the `1/c_(2,1)` in mu is not an identification** — it is the Schur element
+in tau's own decomposition. That was the largest identified piece; now derived.
+
+### and collapses the gap to one identity
+
+    Omega_(2,1) = -dim(V_(2,1)) * dC              exact, ratio -2
+
+The whole remaining content: **the all-ones element's traceless part is minus
+the block dimension times Delta's traceless part.** Two explicit canonical
+elements, no constant left in the statement.
+
+### A guess that failed, kept as a control
+
+`Omega = sum_w T_w^{-1}` (the dual-basis reflex) is **NOT** the representative:
+`net(x) = tau(x * sum T_w^{-1})` fails on 5 of 6, and the inverse-sum has
+coordinates like `(q^2-q-1)^2/q^2` where the answer is plain 1.
+
+### Where the bean stands after six tranches
+
+    net(x) = sum_lambda a_lambda chi^lambda(x)  +  tr_M(x * y0)
+    y0     = mu * dC
+    mu     = dim / (-c_(2,1) y_(2,1)(z))
+
+with, now DERIVED: the pairing normalisation `1/y_(2,1)` (Wedderburn); the
+multiplicity `dim` (chi_reg = 2 chi^(2,1) on sl_2); the Schur element
+`1/c_(2,1)` (tau's decomposition); and `net = tau(. * Omega)`.
+
+**STILL OPEN — the only step:** why is `Omega_(2,1) = -dim * dC`? Nothing
+explains why Delta's commutator part is parallel to the all-ones element's, nor
+why the ratio is the dimension. And it is **not unique to Delta** — `e_minus` =
+w_0 aligns too — so a derivation must explain a small family, not a singleton.
+
+Scope (a). Step 8's postulate is narrowed to one identity, not closed.
