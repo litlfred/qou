@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T13:04:32Z
+updated_at: 2026-08-27T13:07:41Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -526,3 +526,45 @@ the step to aim the regrouping at.
 
 STILL NOT PROVED. Tactic finishers from the exposed state (`monoidal`, two loaded `simp`s) all still
 fail — twelve approaches ruled out now. But the remaining work is construction, not search.
+
+
+CORRECTION TO THE PLAN ABOVE — THE TWO SLIDES INTERLEAVE, so "both orders already match" is true but
+NOT sufficient. Traced the object positions by hand; recording before the plan misleads someone.
+
+Position trace, starting from `(X ⊗ Y) ⊗ (Y' ⊗ X')` i.e. order  X, Y, Y', X':
+
+    β_{Y,Y'}   ->  X, Y', Y, X'     (Y-loop framing, keeper)
+    β_{Y,X'}   ->  X, Y', X', Y     (cross, slide 1)
+    β_{X,Y'}   ->  Y', X, X', Y     (cross, slide 2)
+    β_{X,X'}   ->  Y', X', X, Y     (X-loop framing, keeper)
+    β_{X,Y}    ->  Y', X', Y, X     (monodromy 1st, slide 2)
+    β_{Y,X}    ->  Y', X', X, Y     (monodromy 2nd, slide 1)
+    ε_X contracts X'(2) with X(3);  ε_Y contracts Y'(1) with Y(4)
+
+So the assignment is confirmed — slide 1 consumes {β_{Y,X'}, β_{Y,X}}, slide 2 consumes
+{β_{X,Y'}, β_{X,Y}}, one monodromy factor each. THE PROBLEM IS WHAT SITS BETWEEN:
+
+  * between slide 1's two factors sit β_{X,Y'}, β_{X,X'} AND β_{X,Y} — and β_{X,Y} TOUCHES Y,
+    so it cannot be commuted away by `whisker_exchange` (which needs disjoint strands).
+  * between slide 2's two factors sit β_{X,X'} — which TOUCHES X, likewise not disjoint from
+    slide 2's W = X.
+
+So NEITHER slide can be brought to adjacency by interchange alone while the other is still in place.
+They are mutually blocking, and the resolution has to be either (i) an order of application where
+firing one first clears the other's obstruction — note firing slide 2 removes β_{X,Y}, which is
+exactly slide 1's blocker, so SLIDE 2 FIRST is the candidate — or (ii) a braid relation
+(hexagon/Yang-Baxter) to reorder crossings that share a strand, which interchange cannot do.
+
+RECOMMENDED NEXT STEP, concretely: try SLIDE 2 FIRST (W = X, A = Y', B = Y, c = ε_Y). Its only
+in-between term is β_{X,X'}. That is still not disjoint from X, so it likely needs Yang-Baxter
+rather than whisker_exchange — check whether Mathlib's `hexagon_forward` / `hexagon_reverse` (or
+`braiding_naturality` on the braiding itself) reorders β_{X,X'} past β_{X,Y}. If it does, slide 2
+fires, β_{X,Y} disappears, and slide 1's path is then clear of Y-touching obstructions.
+
+THIS IS THE FIRST TIME THE OBSTRUCTION HAS A NAME BEYOND "interchange": it is that two of the six
+crossings share a strand with the terms that must move past them, so `whisker_exchange` is
+provably insufficient and a BRAID RELATION is required. Every earlier round, mine included,
+assumed interchange would be enough. It is not.
+
+Tactic ledger now FIFTEEN ruled out (added: simp[whisker_exchange], aesop_cat, simp[←whisker_exchange]
++ monoidal, all from the exposed state).
