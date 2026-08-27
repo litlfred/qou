@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T06:10:30.689318Z",
+  "updated_at": "2026-08-27T06:20:34.974979Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2350,11 +2350,11 @@
     "content/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean::qSchur_H2_content_bridge::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
-      "line": 327,
+      "line": 786,
       "verdict": "genuine",
-      "file_sha": "ae6ae88836a2",
+      "file_sha": "613e7442cc8e",
       "disposition": "state-the-real-proposition",
-      "evidence": "Docstring: \"THEOREM (q-Schur weight at H2). The Markov weight of partition lam |- 2 is y_lam = q^{c(lam)}/[2]_q. This is the bridge between the content-sum formula and the explicitly-proved H2 weights.\" The STATEMENT is `contentSum [2] = 1 AND contentSum [1,1] = -1` -- no y_lam, no Markov weight, no [2]_q. The binders `(q : R) (hq : 1 < q)` do not occur in the conclusion. Two content-sum arithmetic facts under a name and docstring claiming a q-Schur/Wenzl bridge.",
+      "evidence": "Docstring: \"THEOREM (q-Schur weight at H2). The Markov weight of partition lam |- 2 is y_lam = q^{c(lam)}/[2]_q. This is the bridge between the content-sum formula and the explicitly-proved H2 weights.\" The STATEMENT is `contentSum [2] = 1 AND contentSum [1,1] = -1` -- no y_lam, no Markov weight, no [2]_q. The binders `(q : R) (hq : 1 < q)` do not occur in the conclusion. Two content-sum arithmetic facts under a name and docstring claiming a q-Schur/Wenzl bridge. RE-VERIFIED 2026-08-27 after the ledger's own staleness check flagged this entry (file_sha ae6ae88836a2 -> 613e7442cc8e). The FILE changed -- the declaration moved from line 327 to 786 as material was added above it -- but the DECLARATION is byte-identical: same docstring claiming the y_lam = q^{c(lam)}/[2]_q bridge, same statement `contentSum [2] = 1 AND contentSum [1,1] = -1`, same unused `(q : R) (hq : 1 < q)` binders, same proof. Verdict stands.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifert_euler_relation::proof-borrowed-name": {
