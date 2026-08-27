@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T13:09:57Z
+updated_at: 2026-08-27T15:35:51Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -593,3 +593,44 @@ located subterm, i.e. `slice_lhs`/`conv` work, not a tactic search.
 SESSION SUMMARY (2026-08-27, dedicated session at the author's request): moved this bean from "no
 tactic fires, mechanism unknown" to "prefix verified, mechanism identified, obstruction named and
 diagnosed, required tool confirmed present". Still NOT PROVED, and no `sorry` committed.
+
+
+🛑 CORRECTION — MY SLIDE-2 INSTANTIATION WAS WRONG. It is a CUP slide, not a cap slide.
+
+I published "slide 2: W = X, A = Y', B = Y, c = ε_Y" in this bean and in PR #5879. It is wrong, and
+the reason is simple enough that it should have been caught before publishing: **X does not survive
+to ε_Y.** Read the position trace above — `Y' ◁ ε_X ▷ Y` contracts X'(2) with X(3), so the X strand
+is CONSUMED BY ε_X. `braiding_slide_cap_right` requires W to survive past the cap (its conclusion is
+`W ◁ c`), so X cannot slide across ε_Y. There is no such move.
+
+WHAT ACTUALLY HANDLES β_{X,Y'} AND β_{X,Y}: the Y-**CUP**, not the Y-cap. Y and Y' are the two legs
+of `η_Y : 𝟙 ⟶ Y ⊗ Y'`, and X crosses both, so this is a strand sliding across a CUP — the mirror
+move. `QOU.MathlibExt.braiding_slide_cup_right` already exists in BraidedSlide.lean (I wrote it in
+#5848 and had forgotten it; the file has FOUR slide lemmas — cap right/left, cup right/left — plus
+the cap inverse form):
+
+    braiding_slide_cup_right (u : 𝟙_ C ⟶ A ⊗ B) :
+      u ▷ W = W ◁ u ≫ (β_ W A).hom ▷ B ≫ A ◁ (β_ W B).hom          (⊗≫-padded)
+
+CORRECTED PLAN:
+
+    slide 1  CAP  — W = Y, A = X', B = X, c = ε_X   consumes β_{Y,X'}, β_{Y,X}
+                    order in the goal MATCHES the lemma                              ✓
+    slide 2  CUP  — W = X, A = Y,  B = Y', u = η_Y  consumes β_{X,Y},  β_{X,Y'}
+                    order in the goal is REVERSED: the goal has β_{X,Y'} (from the
+                    block braiding) BEFORE β_{X,Y} (monodromy), the lemma wants
+                    X-past-A=Y first                                                 ✗
+
+AND THAT REVERSAL INDEPENDENTLY CONFIRMS THE BRAID-RELATION FINDING. β_{X,Y'} and β_{X,Y} both
+involve X, so they are NOT disjoint and `whisker_exchange` cannot swap them — only Yang-Baxter can.
+So the previous entry's conclusion ("a braid relation is required, interchange is provably
+insufficient") stands, and now it is pinned to a specific swap: reorder β_{X,Y'} past β_{X,Y} so the
+cup slide can fire.
+
+Handedness note, checked: our braidings are `β_{X,·}` (X on the left), which matches the `_right`
+family; `braiding_slide_cup_left` is the wrong handedness here.
+
+LESSON, recorded because it is the second time this session: I asserted a slide instantiation from
+the SHAPE of the crossings without checking WHICH CAP CONSUMES THE STRAND. Both times the fix came
+from tracing object positions through the composite. Trace positions first; the crossing pattern
+alone does not determine which absorption applies.
