@@ -1,11 +1,11 @@
 ---
 # qou-djk4
 title: 'Twisted quantum dimension: ribbon => spherical, and the qDimObj borrowed name'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-26T22:34:41Z
-updated_at: 2026-08-26T22:41:06Z
+updated_at: 2026-08-27T05:25:25Z
 ---
 
 Parent context: `bwrt` introduced `KeystoneRibbonMTCInput.qDimObj X = η ≫ β ≫ ε` and documents it
@@ -88,3 +88,37 @@ Net: the ONE genuinely new and genuinely unreachable-twistless result in PR #586
 `qDimTwistedLeftWith_eq` (ribbon => spherical). The other two twisted theorems are ports of
 facts the corpus already had, and one of them is strictly more expensive than its twistless
 original.
+
+
+CLOSED 2026-08-27. PR #5866 MERGED (16b4b2346a). Author chose option 1 — keep SphericalStructure —
+and asked whether consumers should be migrated anyway. Both remaining items resolved by MEASUREMENT
+rather than judgement, and both came out "no work needed":
+
+STEP 1 (rename) — ALREADY DONE, by a different mechanism than planned. This bean said "rename
+qDimObj / leftQDim honestly". Re-checked before acting: the borrowed "ribbon trace" name was in the
+DOCSTRINGS, and #5866's retraction commit already fixed all three sites. The IDENTIFIERS never
+claimed ribbon — `qDimObj` is the quantum dimension of an object, `leftQDim` the left quantum
+dimension, both accurate. A 6-file rename would be churn with no correctness gain and would break
+sibling `bwrt`'s references. NOT DONE, deliberately.
+
+STEP 2/3 (migrate consumers) — NO SUBJECT, and would be a LOSS if it had one.
+- `SphericalStructure` has ZERO external consumers. Every use is inside its own file:
+  `spherical_of_symmetric` (non-vacuity instance) plus two conditional theorems.
+- Migration would require adding `[RibbonCategory C]` to a file whose results hold at BRAIDED
+  RIGHT-RIGID generality. `qDim_unit` and `qDim_conj_object` need no balanced structure at all —
+  `qDimWith_rightDual`'s docstring says "with no pivotal, spherical or transport hypothesis". So
+  migrating trades generality for nothing.
+
+WHAT WAS ACTUALLY LEFT was navigation, and that is PR #5870: a docstring on `SphericalStructure`
+recording why it is a hypothesis (the monodromy), that the classical ribbon => spherical is about
+the TWISTED traces and does not reach it, and that where a `BalancedCategory` IS in scope the right
+move is `qDimTwistedLeftWith_eq`. Division of labour stated in the file: this class is the right
+object precisely where there is no twist available.
+
+LANDED ON MAIN via #5866: qDimTwistedWith, qDimTwistedWith_twist_right, qDimTwistedWith_congr_dual,
+qDimTwistedWith_rightDual, qDimTwistedLeftWith, qDimTwistedLeftWith_eq_of_cap,
+qDimTwistedLeftWith_eq (ribbon => spherical), qDimTwistedWith_eq_qDimWith_of_twist_id,
+qDimTwistedWith_unit, qTrWith + qTrWith_id + qTrWith_twist, ptrWith + ptrWith_id,
+qDimTwistedWith_tensor_of_monodromy. All sorry-free. Plus three retracted "ribbon trace" docstrings.
+
+STILL OPEN, tracked separately in qou-l64i: multiplicativity. Not a blocker for anything here.
