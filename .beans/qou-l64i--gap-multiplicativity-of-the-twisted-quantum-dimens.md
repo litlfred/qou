@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T04:32:57Z
+updated_at: 2026-08-27T06:11:02Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -435,3 +435,40 @@ budget a real session for the calc rather than another round of tactic probing.
 
 STOPPING HERE deliberately. Further hourly check-in windows on this bean would produce more negative
 tactic results, which is thin value against a target that is now fully characterised.
+
+
+2026-08-27 — A SECOND, SYNTACTICALLY CHECKABLE REASON THE ptrWith FACTORISATION WAS FALSE.
+
+Worth recording because it is cheaper to check than the linking argument and it rules out the wrong
+shape by READING A DEFINITION rather than by reasoning about diagrams.
+
+`tensorExactPairing` nests the two pairs in OPPOSITE orders at the two ends:
+
+    coevaluation' := η_ X X' ⊗≫ X ◁ η_ Y Y' ▷ X'      -- η_X OUTER, η_Y INNER
+    evaluation'   := Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y'      -- ε_X INNER, ε_Y OUTER
+
+So X is the OUTER cup but the INNER cap, and Y is the INNER cup but the OUTER cap. A factorisation
+`qTrWith (X⊗Y) … f = qTrWith X X' (ptr_Y f)` needs X to be outer at BOTH ends — it is not. Nor is
+the opposite order available, because Y is likewise mismatched. So NEITHER nesting order can support
+a clean trace-of-partial-trace, and this is visible directly in the definition without any crossing
+count.
+
+This is INDEPENDENT of, and complementary to, the linking argument recorded earlier: linking says
+the twistless version is false, and this says the ptrWith SHAPE is wrong regardless of twisting. Both
+point at the same conclusion; this one is checkable in ten seconds.
+
+ALSO MEASURED THIS ROUND:
+- `braiding_slide_cap_right` is NOT IMPORTED by TwistedQuantumDimension.lean. Whoever takes this up
+  must add `import QOU.MathlibExt.BraidedSlide` first — I did not add it, since an unused import is
+  churn, but the missing import will otherwise read as "unknown identifier" and look like the lemma
+  does not exist.
+- With the import in place, `simp` including `braiding_slide_cap_right` (and its `_inv` companion)
+  STILL fails, confirming the earlier structural finding from the other direction: a `⊗≫`-phrased
+  lemma cannot fire as a rewrite at all, so no amount of adding it to a simp set will help. It has to
+  be reached by CONSTRUCTING its LHS in a calc.
+- Neither `rw [braiding_naturality_right]` nor its reverse fires on the normalised goal — the
+  associators sit between, so the bare pattern is absent. That is the interchange obstruction again,
+  now confirmed at the level of a single rewrite.
+
+TACTIC LEDGER NOW AT NINE ruled-out approaches. The search is closed; the remaining work is the
+hand-constructed calc, and everything needed to start it is recorded above.
