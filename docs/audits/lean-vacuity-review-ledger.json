@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T12:59:12.799947Z",
+  "updated_at": "2026-08-27T13:21:19.440040Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3172,7 +3172,7 @@
       "verdict": "legit",
       "file_sha": "5c929caf08b1",
       "disposition": "no-change",
-      "evidence": "Titled \"The honest negative\" in its own docstring, and it is one: the QOU Wedderburn/Springer Euler characteristic (-2) does NOT equal the knot DT count (3), so the bridge's first equality is not produced by the QOU machinery. `partitionEuler3` is a real sum over the H_3 blocks, not a literal. Reporting that your own machinery misses the target is the opposite of the defect this tier looks for.",
+      "evidence": "Titled \"The honest negative\" in its own docstring, and it is one: the QOU Wedderburn/Springer Euler characteristic (-2) does NOT equal the knot DT count (3), so the bridge's first equality is not produced by the QOU machinery. `partitionEuler3` is a real sum over the H_3 blocks, not a literal. Reporting that your own machinery misses the target is the opposite of the defect this tier looks for. ORPHANED 2026-08-27 (bean qou-rfq9): after the detectors adopted the shared scanning module this declaration is no longer flagged, because a body no longer swallows the `end` line that had inflated its apparent proof length. The verdict is KEPT rather than deleted -- it says the declaration is fine, and re-flagging it later should not lose the reading.",
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },

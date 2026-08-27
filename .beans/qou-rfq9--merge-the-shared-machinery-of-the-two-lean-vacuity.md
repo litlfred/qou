@@ -1,10 +1,11 @@
 ---
 # qou-rfq9
 title: Merge the shared machinery of the two Lean vacuity text-detectors
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-27T11:56:04Z
-updated_at: 2026-08-27T11:56:04Z
+updated_at: 2026-08-27T13:22:17Z
 ---
 
 Measured 2026-08-27. Two text-level detectors now exist for the same defect
@@ -59,3 +60,58 @@ candidate, never a verdict.
 
 Blocked on nothing. Whoever takes it should also decide whether qou-k9yt's
 `--strict` CRITICAL gate belongs in the (currently dispatch-only) CI.
+
+
+---
+
+## 2026-08-27 — done, and the unification CORRECTED a published count
+
+Branch `claude/lean-vacuity-detector-shared-machinery-2026-08-27`.
+Shared module: `scripts/lib/lean_decl_scan.py`. Selftest:
+`scripts/lib/test_lean_decl_scan.py` (12 regression cases, all from bugs
+actually hit). Full measured delta: `scripts/lib/lean_decl_scan_delta.md`.
+
+Both front-ends kept separate, as this bean proposed — only the substrate is
+shared (comment blanking, decl spans, docstring lookup, binder extraction,
+the binder-field exclusion).
+
+**The headline is not the deduplication, it is what it exposed.**
+
+    lean-definition-collapsed   1 CRITICAL / 2047 adv  ->  1 CRITICAL / 2100 adv
+    lean-borrowed-name         19 CRITICAL /  115 maj  -> 25 CRITICAL /  145 maj
+
+The borrowed-name figures 19/115, published in PR #5875 (merged), were
+UNDER-COUNTS from a real bug: a declaration body ran to the next declaration
+head, so `end Foo` and `omit [...] in` lines were read as part of the proof.
+`:= by decide` became `by decide\n\nend Trefoil`, which fails every
+"proof is short/trivial" test. 25/145 are the corrected numbers.
+
+Every adjudication made under the old counts stays valid — each verdict is
+about a named declaration and none changed. Only the denominator grew. Exactly
+one verdict is orphaned (`euler_machinery_misses_dt_count`, `legit`); kept and
+annotated rather than deleted.
+
+Three further defects found by measuring, not by reading:
+
+- `definition-collapsed` never blanked comments, so it scanned declarations
+  QUOTED INSIDE DOCSTRINGS. `blochWignerD_real_pos` does not exist — it is
+  quoted in a module docstring recording its own removal for being a banned
+  tautology. The detector was flagging a theorem from its obituary.
+- The same gap hid real proofs: `b3_nf_wedderburn_uniqueness` carries comments
+  between its name and its statement, so its `:= rfl` was invisible. That one
+  is already adjudicated `genuine` by the other detector — blanking recovers a
+  known true positive this detector structurally could not see.
+- The binder-field exclusion fired on ordinary dot-notation over a VALUE binder
+  (`A.choose` where `A : ℕ`). `assumption_binders` now restricts it to
+  instance brackets, Prop-ish types and the `h`-prefix convention; applying it
+  to borrowed-name moved 8 items advisory -> major.
+
+Deliberately NOT applied, and measured enough to be a real proposal: signal B
+should read `--` comment blocks, not only `/--` docstrings.
+`b3_nf_wedderburn_uniqueness`'s prose says "Full proof requires Wedderburn-Artin
+over R_q" — a textbook OPEN-CLAIM — in `--` comments where signal B cannot see
+it. That would move the `definition-collapsed` CRITICAL count, the one
+published tier this change leaves untouched, so it deserves its own decision.
+
+Still open from this bean: whether `--strict` belongs in CI. CI is
+dispatch-only here, so it would not fire on push anyway.
