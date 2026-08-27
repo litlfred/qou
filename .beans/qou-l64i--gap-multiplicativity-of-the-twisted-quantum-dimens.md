@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T15:35:51Z
+updated_at: 2026-08-27T15:38:24Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -634,3 +634,39 @@ LESSON, recorded because it is the second time this session: I asserted a slide 
 the SHAPE of the crossings without checking WHICH CAP CONSUMES THE STRAND. Both times the fix came
 from tracing object positions through the composite. Trace positions first; the crossing pattern
 alone does not determine which absorption applies.
+
+
+SYMMETRIC TWISTLESS CASE ALSO FAILS BY TACTIC — the smaller target is not a shortcut either.
+
+Tried `qDimWith_tensor_symm` — the `[SymmetricCategory C]` twistless case, where the monodromy is
+the identity and the two cross terms β_{Y,X'}, β_{X,Y'} should form an R2 pair that
+`SymmetricCategory.symmetry` kills. With the working prefix in front:
+
+    simp [SymmetricCategory.symmetry, whisker_exchange, monoidalComp]                    fails
+    simp [SymmetricCategory.symmetry, braiding_slide_cup_right, braiding_slide_cap_right,
+          monoidalComp]                                                                  fails
+
+NINETEEN approaches ruled out. The symmetric case is genuinely smaller and genuinely true, and it
+still needs the same hand construction — so it remains worth doing FIRST as a warm-up (fewer moving
+parts once someone is hand-building), but it is NOT a feasibility shortcut and should not be
+attempted as one. That is the second time this bean has recorded "the smaller case is not easier";
+the first was the earlier symmetric probe, before the prefix existed.
+
+FINAL STATE OF THIS TRANCHE (two dedicated sessions). Everything below is verified:
+
+  KNOWN     the statement, and that it type-checks
+  KNOWN     the direction (forward monodromy), forced by twist_tensor and no longer doubted
+  KNOWN     the working rewrite prefix (three lines, reaches a compact readable goal)
+  KNOWN     the mechanism: ONE CAP SLIDE + ONE CUP SLIDE, not two cap slides
+              slide 1  CAP  W=Y, A=X', B=X, c=ε_X   order MATCHES
+              slide 2  CUP  W=X, A=Y,  B=Y', u=η_Y  order REVERSED, needs Yang-Baxter
+  KNOWN     both slide lemmas already exist (BraidedSlide.lean, four of them)
+  KNOWN     yang_baxter exists in this Mathlib and is the required tool
+  KNOWN     19 tactic approaches that do not work, including on the symmetric sub-case
+  OPEN      the construction itself: a conv/slice_lhs surgery to reorder β_{X,Y'} past β_{X,Y}
+            so the cup slide fires, then the cap slide
+
+WHAT I WOULD TELL THE NEXT AGENT: stop probing tactics — that is exhausted. Open the goal with the
+prefix, print it with `trace_state`, and do `conv`-level surgery aimed at the two named slides. The
+single decisive question is whether `yang_baxter` can be aimed at the β_{X,Y'}/β_{X,Y} pair in
+context; if it can, both slides fire and the rest is coherence.
