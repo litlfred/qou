@@ -3,6 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 -/
 import QOU.MathlibExt.Ribbon
 import QOU.MathlibExt.BraidedQuantumDimension
+import QOU.MathlibExt.RigidTensorDual
 
 /-!
 # QOU.MathlibExt.TwistedQuantumDimension — the quantum dimension the ribbon literature means
@@ -209,5 +210,43 @@ theorem qDimTwistedWith_unit [BalancedCategory C] (B : C) [ExactPairing (𝟙_ C
   qDimTwistedWith_eq_qDimWith_of_twist_id _ _ BalancedCategory.twist_unit
 
 end TwistlessSpecialisation
+
+section PartialTrace
+
+/-- **Braided trace of an ENDOMORPHISM**, relative to a chosen pairing: `η ≫ (f ▷ B) ≫ β ≫ ε`.
+
+This is the common generalisation of the two dimensions in this file — `qDimWith` is its value at
+`𝟙`, `qDimTwistedWith` its value at `θ`, recorded as `qTrWith_id` and `qTrWith_twist` below. Having
+it is what lets a *partial* trace be composed with a full one, which is the shape the
+multiplicativity route needs (bean `qou-l64i`). -/
+noncomputable def qTrWith (A B : C) [ExactPairing A B] (f : A ⟶ A) : (𝟙_ C ⟶ 𝟙_ C) :=
+  η_ A B ≫ (f ▷ B) ≫ (β_ A B).hom ≫ ε_ A B
+
+theorem qTrWith_id (A B : C) [ExactPairing A B] : qTrWith A B (𝟙 A) = qDimWith A B := by
+  simp [qTrWith, qDimWith]
+
+theorem qTrWith_twist [BalancedCategory C] (A B : C) [ExactPairing A B] :
+    qTrWith A B (BalancedCategory.twist A) = qDimTwistedWith A B := rfl
+
+/-- **Right partial trace over `Y`**, relative to a chosen pairing `Y ⊣ Y'`: close only the `Y`
+strand of an endomorphism of `X ⊗ Y`, leaving an endomorphism of `X`. -/
+noncomputable def ptrWith (X Y Y' : C) [ExactPairing Y Y'] (f : X ⊗ Y ⟶ X ⊗ Y) : X ⟶ X :=
+  𝟙 X ⊗≫ X ◁ η_ Y Y' ⊗≫ f ▷ Y' ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ⊗≫ 𝟙 X
+
+/-- **The partial trace of the identity is the dimension**, acting on `X` through the right unitor.
+
+`End(𝟙_C)` acts on every hom-set by whiskering-and-unitors, and this says the partial trace of
+`𝟙_{X⊗Y}` over `Y` is exactly `qDimWith Y Y'` acting on `X` that way — the categorical form of
+"tracing out a factor multiplies by its dimension".
+
+This is the FIRST of the two steps the multiplicativity route needs (bean `qou-l64i`, route 1). The
+second — that the *nested* closure of `X ⊗ Y` factors as a full trace of a partial trace — is the
+crux and is NOT proved here; its statement is recorded in that bean. Do not read this lemma as
+progress on the nesting: it deliberately sits on the easy side of it. -/
+theorem ptrWith_id (X Y Y' : C) [ExactPairing Y Y'] :
+    ptrWith X Y Y' (𝟙 (X ⊗ Y)) = (ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom := by
+  simp [ptrWith, qDimWith, monoidalComp]
+
+end PartialTrace
 
 end QOU.MathlibExt
