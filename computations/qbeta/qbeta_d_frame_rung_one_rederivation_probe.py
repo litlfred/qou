@@ -19,6 +19,31 @@ WHAT IS DERIVED (exact, symbolic, in q and z; no anchor, no fit).
 
   (D1)  2*alpha = net(Delta) - tr_M^z(Delta)          identically in q and z
 
+        *** THE IDENTIFICATION IS NOT MINE. CORRECTED 2026-08-27. *** A sibling
+        stated it on PR #5337 at 2026-08-26T06:59Z (comment 5421747260, from
+        #5815 / bean qou-avt5), ~15 h before this probe existed, in these words:
+        "Q_A = -E_0*eps(Delta), and the ladder's phase IS eps - tr_M". I called
+        (D1) new in the first version of this file, in its commit, in the bean
+        and on #5337 itself -- where that sibling comment sits in the same
+        thread. Credit for the identification is theirs.
+
+        What this probe adds is the DERIVATION rather than the assertion, and
+        the difference is not cosmetic:
+
+          - the FACTOR. Their sentence reads "the phase IS eps - tr_M"; the
+            phase is alpha and the identity carries a 2. Stated loosely it is
+            off by that factor.
+          - "IDENTICALLY IN z", which is the whole load-bearing part. An
+            unquantified assertion at one z says nothing about localisation;
+            the joint statement with (D2) needs the relation to hold for EVERY
+            z, and that is what is proved here.
+          - Delta is REBUILT from the corpus's typed-crossing words and
+            asserted against its stated coordinates, so the identity is about
+            the corpus's object rather than about a transcription of it.
+
+        So: identification theirs, proof and exact form here. Not new; not
+        redundant either.
+
         where alpha = (z-1)h/2 is the ladder's rung-1 phase, `net` is the
         coordinate sum (the step-8 "counit"), and tr_M^z is the Ocneanu trace.
         Both sides are computed here from Delta REBUILT out of the corpus's

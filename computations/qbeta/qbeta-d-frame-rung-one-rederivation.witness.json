@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T23:29:31.376223+00:00",
-  "commitSha": "7c2fd9d7653dbf9963410b8e4f7ea9776cb65914",
+  "computedAt": "2026-08-27T00:42:24.342172+00:00",
+  "commitSha": "7ac9e17b56a1fb0d45b0559e3de34c8e754f66bd",
   "assertions": [
     {
       "name": "delta_rebuilt_from_words_matches_the_corpus_NF_vector",
@@ -93,8 +93,8 @@
   "durationMs": 60,
   "computation": "qbeta-d-frame-rung-one-rederivation",
   "scriptFile": "qbeta_d_frame_rung_one_rederivation_probe.py",
-  "scriptHash": "aeca0daf0cbd",
-  "scriptCommitSha": "7c2fd9d7653dbf9963410b8e4f7ea9776cb65914",
+  "scriptHash": "2eab69ba35e9",
+  "scriptCommitSha": "eb0d6329e712dbdd1099a3ed39751f3e3cf7ae95",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

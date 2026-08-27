@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-26T23:33:09Z
+updated_at: 2026-08-27T00:43:01Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2121,3 +2121,46 @@ is the number the whole ladder is quoted on.
 The bean is NOT closed. What remains is the choice among the readings on
 principled grounds -- which (D3) now constrains but does not settle -- and the
 `qou-xzrj` trace-invisible term. Coordination posted to #5337.
+
+
+### Correction 2026-08-27 — (D1)'s identification is a sibling's, not mine
+
+The tranche note above presents **(D1) — new**. That is wrong and is corrected
+here rather than edited away.
+
+A sibling stated the identification on PR #5337 at **2026-08-26T06:59Z**
+(comment 5421747260, from #5815 / bean `qou-avt5`) — roughly 15 hours before my
+probe existed:
+
+> "`Q_A = -E_0*eps(Delta)`, and the ladder's phase **is** `eps - tr_M`."
+
+I read that comment during coordination and did not connect it. It sits in the
+same #5337 thread where I then posted (D1) as new.
+
+**What survives as mine** is the derivation rather than the assertion, and the
+gap between the two is load-bearing rather than cosmetic:
+
+- **The factor.** "the phase IS eps - tr_M" is off by 2; the phase is `alpha`
+  and the identity is `2*alpha = net - tr_M`.
+- **"Identically in z"** — the part the localisation argument actually needs.
+  An unquantified assertion at one `z` cannot be joined to (D2) to conclude
+  anything about where the convention lives; a for-all-`z` identity can.
+- **Delta rebuilt from the typed-crossing words** and asserted against its
+  stated coordinates, so the identity is about the corpus's object.
+
+Restated honestly: **identification theirs, proof and exact form mine.**
+
+### The pattern, since this is the second time in one session
+
+(D2) was already the sibling's Lean; (D1)'s identification was already the
+sibling's comment. Both were caught *after* I had written them up as findings.
+The common cause is that I grep before *starting* and after *finishing*, but
+write the novelty claim in between — and in both cases the prior was somewhere
+the six-path corpus-grep does not reach: a Lean file I had not linked to the
+question, and a **PR comment**.
+
+**PR comments are a seventh surface and the checklist does not name them.** On
+an actively-coordinated bean like this one they are where sibling results land
+*first*, hours to days before an audit doc or a content block. Worth adding to
+the checklist, or at minimum: on a bean with a live sibling PR, read that PR's
+comment history before claiming novelty, not only before starting.
