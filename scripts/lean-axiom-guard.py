@@ -455,6 +455,14 @@ QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_new_cell | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow | clean
 QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow_example | clean
+# Addable-corner enumeration. addableCorners_two_two is the NEGATIVE case: (2,2)
+# has only two corners because row 1 is NOT shorter than row 0, so a box there
+# would break weak decrease. A mis-stated condition gets that one wrong.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addableCorners_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addableCorners_two_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addableCorners_two_two | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addableCorners_three_two_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addBoxNewRow_mem_addableCorners | clean
 # (P), the Pieri step. schurElement is a fold; nothing cell-by-cell can be said
 # about a fold, so schurElement_eq_prod exhibits it as a product first. The two
 # rowFactor lemmas are the box-addition response in the two cases where it is a
@@ -493,6 +501,10 @@ QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_at_two_three | clean
 QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_summands_at_two_three | clean
+# (P) stated in general, with both proved cases shown to be INSTANCES of it
+# rather than statements that merely resemble it. The general induction is open.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieriStep_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieriStep_two_one | clean
 """
 
 

@@ -343,4 +343,48 @@ theorem pieri_two_one_summands_at_two_three :
       WenzlSchurElement.cellContent, Partition.hookLength, Partition.length,
       range_one_eq, range_two_eq, range_three_eq]
 
+/-! ### (P) stated in general
+
+`QPartitionCombinatorics.addableCorners` enumerates the shapes one box larger.
+With it, (P) is a single equation about one shape, and the two cases proved
+above are **instances of it** rather than statements that merely resemble it —
+which is what `pieriStep_one` and `pieriStep_two_one` below establish.
+
+Stating it does not prove it. The general case is the induction over corners,
+and it is open; nothing here asserts otherwise. What this buys is that the open
+goal is now a *named proposition with verified instances*, so the next attempt
+starts from a statement that has been checked against the probe rather than
+from prose. -/
+
+/-- The left side of (P): the Schur elements of `λ`'s addable corners, summed. -/
+noncomputable def pieriSum (Q X : ℝ) (lam : Partition) : ℝ :=
+  ((addableCorners lam).map (WenzlSchurElement.schurElement Q X)).sum
+
+/-- **(P) at one shape**: the corner sum equals `((1 − X)/(1 − Q))` times the
+shape's own Schur element. -/
+def PieriStep (Q X : ℝ) (lam : Partition) : Prop :=
+  pieriSum Q X lam = ((1 - X) / (1 - Q)) * WenzlSchurElement.schurElement Q X lam
+
+/-- `pieri_one` **is** (P) at `λ = (1)` — the enumeration produces exactly the
+two corners that theorem sums. -/
+theorem pieriStep_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    PieriStep Q X [1] := by
+  unfold PieriStep pieriSum
+  rw [addableCorners_one]
+  simpa using pieri_one Q X hQ0 hQ1 hQm1
+
+/-- `pieri_two_one` **is** (P) at `λ = (2,1)` — the enumeration produces exactly
+the three corners that theorem sums, in the same order.
+
+This is the load-bearing one: `(2,1)` is where the enumeration has to get the
+weak-decrease condition right (row 1 is strictly shorter than row 0, so it is
+addable) *and* remember the new bottom row. -/
+theorem pieriStep_two_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    PieriStep Q X [2, 1] := by
+  unfold PieriStep pieriSum
+  rw [addableCorners_two_one]
+  have h := pieri_two_one Q X hQ0 hQ1 hQm1
+  simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
+  linarith [h]
+
 end QOU.MathlibExt.MacdonaldTelescope
