@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T11:57:10.217637Z",
+  "updated_at": "2026-08-27T12:02:27.829415Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -3054,6 +3054,149 @@
       "evidence": "CALIBRATION POINT -- flagged by BOTH detectors and legit under both. scripts/lean-definition-collapsed-audit.py (bean qou-k9yt) reports it as its only surviving CRITICAL, and the kernel pass independently reports defeq_collapse=true, value_is_rfl=true. It is a compatibility lemma between two definitions of the quantum integer and SHOULD be `rfl`; the docstring says so outright: \"`qInt` is kept rather than aliased ... The two are definitionally the same object, so the consolidation here is this equation -- checked, not asserted.\" It also gives the reason `qInt` is not simply aliased (`qInt_eq_div` rewrites through the literal Finset.sum body). Recorded because it is the clearest demonstration that defeq_collapse is a CANDIDATE, never a verdict: reduction is how a genuine definitional identification is proved.",
       "tier": "cross-detector",
       "source": "scripts/lean/BorrowedNameKernel.lean + scripts/lean-definition-collapsed-audit.py (beans qou-0avp, qou-k9yt)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FMapC3ParityExclusion.lean::barOdd_ne_hopf_value_at_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 47,
+      "verdict": "legit",
+      "file_sha": "089c075d6ad7",
+      "disposition": "no-change",
+      "evidence": "GENERAL in `f`: `barOdd f q := (f q - f q^{-1})/2` vanishes at the bar fixed point for EVERY f, so `barOdd f 1 != -2` is a real parity invariant quantified over all constructions, not a check on a chosen one. It is the single invariant behind the refutation of both route A and route B to c_3. A clean false positive of the detector -- borrowed name (Hopf), local def, short proof, genuine content.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dt_spectrum_two_element::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 127,
+      "verdict": "advisory",
+      "file_sha": "f20c01a4db60",
+      "disposition": "no-change",
+      "evidence": "`Splus0` and `Sminus0` are hand-entered 3x3 integer tables and the theorem compares two of their entries (4 != 3). The entries are attributed to the literature (GGM eq 60), so the data is sourced and the claim -- a chiral knot's leading Stokes data is not served by a single integer -- is real. Recorded advisory because the theorem verifies the TABLE, not the mathematics: a mis-transcribed entry would pass. SEE ALSO the separately-recorded `Splus0` name overload in this file.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::sminus0_carries_three::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 116,
+      "verdict": "advisory",
+      "file_sha": "f20c01a4db60",
+      "disposition": "no-change",
+      "evidence": "`Sminus0 0 2 = 3` by `decide` against a hand-entered table -- the entry is read back, not derived. Attributed to the literature and the docstring says which constant it is, so this is data recording rather than a false claim.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_chiral::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 245,
+      "verdict": "legit",
+      "file_sha": "f20c01a4db60",
+      "disposition": "no-change",
+      "evidence": "`barSwap (a,b) := (b,a)` applied to `dtPair52 := (Splus0 0 1, Sminus0 0 2) = (4,3)`; the theorem says the swap MOVES it, i.e. the two Stokes constants differ. Real structural content (chirality = the tau-antisymmetric part being nonzero) on top of the sourced table.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/GZThirdKnotRankGrading.lean::trace_field_alone_fails_on_pretzel237::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 425,
+      "verdict": "legit",
+      "file_sha": "8862d3cb09e9",
+      "disposition": "no-change",
+      "evidence": "A worked COUNTEREXAMPLE: the trace-field-only rule predicts 3 for (-2,3,7) and the measured rank is 6. The docstring states its own purpose -- \"This is why the hypothesis has to be stated, not assumed\" -- which is the honest direction. A negative result carried by literature data is exactly what the tier should NOT flag as a defect.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZClassicalCoincidence.lean::zCsub_eq_zDsub_one::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 92,
+      "verdict": "legit",
+      "file_sha": "f17d91839fc7",
+      "disposition": "no-change",
+      "evidence": "`zCsub s := s/(s^2+1)` and `zDsub s := s^6/(s^4+1)` are genuinely different functions; the theorem proves they agree at s = 1 by real rewriting. Load-bearing for the convention-D migration -- it is why a q=1 ladder evaluation such as c_3 = J_Hopf(1) is unmoved by the C->D ruling. Substantive.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::c1_slope_ne_a41_slope::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 178,
+      "verdict": "legit",
+      "file_sha": "a4e46432d6ac",
+      "disposition": "no-change",
+      "evidence": "A REFUTATION: the C1 binding carrier's Newton slope 1/2 is not the 4_1 boundary slope 4, so C1 is not the quantum A-polynomial of 4_1. `slopeEq` is a genuine cross-multiplication predicate, not a table. The docstring draws the correct consequence (Route A needs the real colored-Jones recursion).",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r2_slope_reading_refuted::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 201,
+      "verdict": "legit",
+      "file_sha": "a4e46432d6ac",
+      "disposition": "no-change",
+      "evidence": "A CROSS-KNOT GATE, and it fires negative: the slope reading holds at 4_1 and fails at 5_2, so \"DT integer = boundary slope\" is a single-knot coincidence. Its sibling `r1_connection_reading_survives` records the reading that passes the same gate. Testing a candidate rule on a knot it was not built from, and reporting the failure, is the discipline the audit exists to protect.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r1_connection_reading_survives::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 207,
+      "verdict": "legit",
+      "file_sha": "a4e46432d6ac",
+      "disposition": "no-change",
+      "evidence": "The positive half of the same cross-knot gate as r2_slope_reading_refuted; both readings are tested against both knots and only one survives. Recorded so the pair is legible together.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::a41_full_L_degree_eq_three::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 153,
+      "verdict": "advisory",
+      "file_sha": "a4e46432d6ac",
+      "disposition": "no-change",
+      "evidence": "`a41FullLDegree := a41GeomLDegree + 1` and the theorem evaluates it to 3 -- arithmetic on a literature-sourced input plus one. Honest and attributed; recorded advisory only because the check cannot detect a wrong `a41GeomLDegree`.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::euler_machinery_misses_dt_count::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 128,
+      "verdict": "legit",
+      "file_sha": "5c929caf08b1",
+      "disposition": "no-change",
+      "evidence": "Titled \"The honest negative\" in its own docstring, and it is one: the QOU Wedderburn/Springer Euler characteristic (-2) does NOT equal the knot DT count (3), so the bridge's first equality is not produced by the QOU machinery. `partitionEuler3` is a real sum over the H_3 blocks, not a literal. Reporting that your own machinery misses the target is the opposite of the defect this tier looks for.",
+      "tier": "major",
+      "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition31_eq_dimqPartition211::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 315,
+      "verdict": "advisory",
+      "file_sha": "6adea58b42ec",
+      "disposition": "no-change",
+      "evidence": "CLUSTER, ~10 declarations. The kernel pass reports 56 defeq collapses among this module's 91 theorems (62 %) -- by far the densest in the sample -- and the largest coherent group is the conjugate-duality lemmas: dimqPartition31_eq_dimqPartition211, dimqPartition4_eq_dimqPartition1111, dimqPartition41_eq_dimqPartition2111, dimqPartition32_eq_dimqPartition221, dimqPartition5_eq_dimqPartition11111, yLambdaRow2_eq_yLambdaCol2, yLambda_row3_eq_col3, yLambda_row4_eq_yLambda_col4, yLambda_31_eq_yLambda_211, yLambdaCorrected_row3_eq_col3. Each states a column-row duality (dim_q(lambda) = dim_q(lambda')) between two defs that are THE SAME EXPRESSION written twice -- e.g. `dimqPartition31 q := qInteger q 3` and `dimqPartition211 q := qInteger q 3` -- so the proof is `rfl` and cannot detect a wrong value on either side. ADVISORY, NOT GENUINE, and the mitigation is why: BOTH sides of every pair carry a separate `dimqPartition<lambda>_via_hook_formula` theorem deriving the value from the hook-length formula under a real `q > 1` hypothesis. The values ARE independently derived, in this same file. Contrast frobenius_codim_trace_*, recorded genuine, where the companion derivation lives in another file and nothing links to it. IMPROVEMENT: chain each duality lemma through its two `_via_hook_formula` results instead of `rfl`; it then becomes a real conjugation check. Note also that the module's other collapses are mostly length checks on hand-entered lists (n{k}_cohort_length, n{k}_dimq_hook_list_length) -- honest bookkeeping -- and factorial_9..12, which collapse because computing 9! by reduction is a GENUINE finite computation (they carry foreign constants, unlike the rest).",
+      "tier": "kernel-cluster",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition4_eq_dimqPartition1111::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "borrowed-name",
+      "line": 319,
+      "verdict": "advisory",
+      "file_sha": "6adea58b42ec",
+      "disposition": "no-change",
+      "evidence": "Member of the conjugate-duality cluster recorded under dimqPartition31_eq_dimqPartition211 in this file; both sides are `:= 1` ignoring q, so the duality is `rfl`. Both carry a `_via_hook_formula` derivation.",
+      "tier": "kernel-cluster",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     }
   }
 }
