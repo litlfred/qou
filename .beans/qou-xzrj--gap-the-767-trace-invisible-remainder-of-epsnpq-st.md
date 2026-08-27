@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-08-27T06:21:32Z
+updated_at: 2026-08-27T06:30:02Z
 ---
 
 Opened from `qou-cds1` / step 8 of the 2026-05-24 Q_β fitting-finding audit,
@@ -272,3 +272,46 @@ not a closure; step 8's postulate is not closed.
 `mu = -dim / ([3]_q y_(2,1))` FORCED by a normalisation of the Markov pairing,
 or is it merely the value that happens to work? A forward derivation would close
 step 8. Scope (a) throughout.
+
+
+## 2026-08-27 (4) — the split: ALL of mu's convention-dependence is DERIVED
+
+`qbeta_mu_normalisation_is_derived_probe.py` (5/5).
+
+On `[H,H] = sl_2` the Markov trace collapses to one block, so for x, w in [H,H]
+
+    tr_M(x w) = y_(2,1)(z) * chi^(2,1)(x w)          [verified, all 9 pairs]
+
+The Markov **pairing** there is just the block's trace form scaled by the
+block's own Markov weight. That is Wedderburn — nothing chosen. Writing W for
+the representative of `net|_[H,H]` against the UNSCALED form:
+
+    mu = (W / dC) / y_(2,1)(z),    W/dC = -2/[3]_q,    W is z-FREE
+
+  - `1/y_(2,1)(z)`  — **DERIVED**, the pairing's normalisation on the block
+  - `-2/[3]_q`      — z-free, **still an identification**
+
+**So all of mu's convention-dependence is derived.** What remains unexplained
+does not move with the Markov parameter at all.
+
+### Method trap worth remembering
+
+Solving for W over **all of H_3** (6 unknowns) is **rank 4/6** — `chi^(2,1)(xw)`
+annihilates both 1-dim blocks, so two coordinates stay free and the "ratio"
+comes back still containing symbols: an answer-shaped expression that is not an
+answer. W must be solved **inside sl_2** (3 unknowns, 3 commutator basis
+vectors) → rank 3/3. The rank check is now an assertion in the file.
+
+### Where the bean stands after four tranches
+
+| question | status |
+|---|---|
+| what object sees the remainder? | **answered** — an element, via the Markov pairing |
+| is that element derivable? | **answered** — it is `dC`, Delta's own commutator part |
+| is `mu` derivable? | **half** — `1/y_(2,1)(z)` derived; `-2/[3]_q` identified |
+| does step 8's postulate close? | **no** |
+
+**The whole remaining gap is the pure-q constant `-2/[3]_q` = `-dim/[3]_q`.**
+It is z-free, so no convention question touches it. Closing step 8 means
+deriving that one constant from a normalisation principle — or showing it cannot
+be, which would be an equally publishable negative. Scope (a) throughout.
