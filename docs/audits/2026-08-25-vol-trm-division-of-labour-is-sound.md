@@ -3815,3 +3815,140 @@ This is a **valuation** — where the pole sits, never how big the number is. §
 §E, §G and §H are magnitude results and are untouched by anything in this table.
 Four isotopes; the min-plus core is `O(L·dim²)` in `int`, which is what made
 past-⁴He reachable at all.
+
+## Addendum 42 — the growing-width cut is excluded by its own extensivity, and Addendum 23's `w = 3` endpoint is wrong
+
+Bean `qou-kfff`. Probe:
+[`growing_width_cut_shape_exclusion_probe.py`](../../computations/meson/growing_width_cut_shape_exclusion_probe.py)
+(7 assertions: 2 controls + 5). Lean:
+[`QOU/MassTheory/GrowingWidthCutShapeExclusion.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/GrowingWidthCutShapeExclusion.lean)
+(6 declarations, sorry-free). This is the second of the two fronts the author
+named; the first was the cable-shift law (Addendum 39 and PR #5863).
+
+### The move: do not derive `w` — ask whether any constant `w` can work
+
+Addendum 23 Front 1 left this open with *"`w` is a free parameter, and that is
+the whole problem"*. Rather than hunt for a principle that fixes `w` — which
+would invite exactly the candidate-scan mistake Addendum 39 had to retract — ask
+whether the family contains **any** member that works. Two measured facts settle
+it.
+
+**Fact 1 — the model is monotone in $A$, for every $w$.** $S(k)/k$ is strictly
+increasing over $k = 1 \ldots 64$, so the per-nucleon prediction
+$g_w(A) := E_0\,S(\lfloor wA \rfloor)/A$ never decreases from ⁴He to ⁶Li.
+Verified for all 581 values of $w$ on a $0.005$ grid across $[0.10, 3.00]$ — a
+grid used to *falsify* a universal claim, which is the legitimate direction, not
+to select a $w$.
+
+**Fact 2 — the data is not.** $B/A$ **peaks** at ⁴He ($7.0739$ MeV) and **dips**
+at ⁶Li ($5.3323$ MeV). That is the ⁴He peak: a fact about AME, not about this
+framework.
+
+**Therefore.** A non-decreasing function cannot equal one that decreases across
+the same two points, and multiplying by any positive constant preserves that. So
+no member of the family matches both isotopes — and the conclusion survives an
+arbitrary overall rescaling stacked on top of $w$, so the whole *two*-parameter
+family goes at once. **The failure is in the shape, not the normalisation.**
+
+### The extensivity is what kills it
+
+Addendum 23 read $S(k)/k \to \ln[2]_q$ as the escape: the object is a volume law,
+so Addendum 22's fixed-width theorem does not reach it. **That reading is
+correct** — and it is also the exclusion. A volume law is a constant per strand;
+a constant per strand is a monotone per nucleon. The property that made the
+escape real is the property that forecloses it.
+
+### Two corrections to Addendum 23
+
+**1. The `w = 3` endpoint is false.** Addendum 23 states that *"at $w = 3$, the
+whole nucleon, the cut is the entire system and the entropy is identically
+zero"*, and brackets $w$ with that endpoint. Measured: $S(3A) > 0$ at every $A$
+— $S(6) = 2.8437$, $S(12) = 6.6650$. The reason is structural: $S$ is the
+entropy of the Markov **trace** state restricted to $H_k(q)$, and a trace state
+is maximally mixed on each block, never pure. The zero-at-the-endpoint intuition
+belongs to the entanglement entropy of a bipartition of a **pure** state, which
+this is not — $S$ is not even symmetric under $k \leftrightarrow n-k$
+($S(1) = 0$ against $S(5) = 2.2124$ at $n = 6$). So no Schmidt argument applies,
+and there is likewise **no "the balanced cut is the maximiser" justification
+available for $w = 3/2$**. Worth stating explicitly, because that is the
+tempting wrong reason to prefer the balanced cut.
+
+**2. The convergence is slow, so the asymptotic figure overstates the model.**
+At $k = 64$ the density is still $6.57\%$ short of $\ln[2]_q$. Every isotope in
+the table has $k$ single- or double-digit, so quoting $E_0\,w \ln[2]_q$ per
+nucleon — as Addendum 23 does when it derives $4.386$ MeV/nucleon at $w = 3/2$ —
+credits the model with an asymptote it is nowhere near.
+
+| $k$ | $S(k)$ | $S(k)/k$ |
+|---:|---:|---:|
+| 3 | 1.03592 | 0.34531 |
+| 6 | 2.84369 | 0.47395 |
+| 12 | 6.66499 | 0.55542 |
+| 24 | 14.62282 | 0.60928 |
+| 64 | 41.77070 | 0.65267 |
+| $\infty$ | — | $\ln[2]_q = 0.69858$ |
+
+### How badly any constant must miss
+
+At the balanced cut $w = 3/2$, the rescaling each isotope would require spans
+$[0.51301$ (²H)$,\; 2.37706$ (⁴He)$]$. For any positive constant $c$ the worst
+multiplicative error is at least $\sqrt{r_{\max}/r_{\min}}$ — a closed-form
+identity, verified rather than searched — giving **2.1526×**. The Lean carries
+the general bound and an instantiation certifying a floor of $2\times$.
+
+| isotope | $A$ | $B/A$ | $g_w(A)$ at $w = 3/2$ | required rescale |
+|---|---:|---:|---:|---:|
+| ²H | 2 | 1.11228 | 2.16816 | **0.51301** |
+| ³H | 3 | 2.82727 | 2.29552 | 1.23165 |
+| ³He | 3 | 2.57268 | 2.29552 | 1.12074 |
+| ⁴He | 4 | 7.07392 | 2.97591 | **2.37706** |
+| ⁶Li | 6 | 5.33233 | 3.29131 | 1.62012 |
+| ⁷Li | 7 | 5.60644 | 3.21093 | 1.74605 |
+| ¹²C | 12 | 7.68014 | 3.70337 | 2.07383 |
+| ¹⁶O | 16 | 7.97621 | 3.82568 | 2.08491 |
+
+### What is proved
+
+| declaration | content |
+|---|---|
+| `no_constant_scale_matches_of_mono` | the exclusion: monotone model × any non-negative constant cannot match decreasing data |
+| `matching_possible_when_data_nondecreasing` | non-vacuity — drop the ⁴He peak and matching becomes possible, so the theorem really is about that peak |
+| `mono_hypothesis_is_load_bearing` | non-vacuity — a *non*-monotone model matches the same decreasing data exactly, which is why the probe must verify monotonicity for every $w$ rather than assume it |
+| `sqrt_mul_le_max` | the geometric mean never exceeds the max |
+| `best_constant_error_lower_bound` | every constant misses by at least $\sqrt{\text{spread}}$ |
+| `measured_constant_error_at_least_two` | instantiated at the measured spread: $\ge 2\times$ somewhere |
+
+Over $\mathbb{R}$ deliberately (AGENTS.md §7c) — this compares model to
+measurement and needs an ordering and `Real.sqrt`.
+
+### Scope — (b), and narrow
+
+What is excluded is the **one-parameter family** *"cut of width $wA$ with $w$
+constant across isotopes"*, together with any overall positive rescaling of it.
+The invariant is the monotonicity of $S(k)/k$ against the non-monotonicity of
+$B/A$, both measured, neither fitted.
+
+**Not excluded**: a cut whose width depends on the isotope's own structure
+rather than on a constant $w$; any other entropy of any other object. Nothing
+here says what the missing binding term **is**.
+
+One honest limitation: $S(k)/k$ is measured monotone on $k = 1 \ldots 64$, not
+proved monotone for all $k$. It enters the Lean as a hypothesis, not a theorem.
+The isotopes reach only $k \le 48$, so the measured range covers the claim — but
+an extension to heavier nuclei would need the range extended with it.
+
+### Where this leaves the arc
+
+Addendum 23 closed Front 2 and left Front 1 as the single open item. Front 1 is
+now closed too, in the negative. **Everything opened since Addendum 15 is
+resolved** — the level escape, the cost escape, signed occupations, the
+fixed-width entropy, the trace magnitude for this word, and now the
+growing-width cut.
+
+The two fronts the author named on 2026-08-26 came out structurally opposite,
+and the contrast is the useful part. The cable-shift law (Addendum 39, PR #5863)
+turned out to be a **maximisation** — $\alpha_{\text{shift}}$ is a max over
+$\lambda$, so which channel wins is *determined*, and the law follows. The
+growing-width cut has **no maximisation principle at all**: $S$ is monotone in
+$k$ with no interior optimum, so nothing selects the cut, and that is precisely
+why $w$ looked free. It was free. It is now also excluded.
