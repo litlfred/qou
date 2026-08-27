@@ -72,11 +72,12 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 60)
-Q = mp.mpf(str(Q0))
+Q = Q_MP
 
 _FAILED: list[str] = []
 
