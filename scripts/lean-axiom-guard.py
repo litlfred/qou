@@ -404,6 +404,95 @@ QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsuffici
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.dualNumber_not_isSemisimpleRing | clean
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.nondegenerate_cyclic_trace_not_sufficient | clean
 QOU.QBeta.TraceNondegeneracyInsufficient | QOU.QBeta.TraceNondegeneracyInsufficient.traceRadical_epsCoeff_eq_bot | clean
+# n(lam) vs contentSum. schurElement's prefactor is n(lam); it read contentSum
+# until 2026-08-26, which breaks the Macdonald telescope from n=2 up. These pin
+# the separation so the confusion cannot recur silently.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_two | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_one_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_ne_contentSum | clean
+# Box-addition infrastructure for the Pieri step. The hook-length update rule
+# (+1 on the arm side, unchanged below) was verified over 111 cells across
+# twelve shapes BEFORE being formalised.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.drop_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_same_row | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_below | clean
+# Leg-growth half. countP_set_of_flip is proved by structural induction, not
+# imported -- Mathlib has no countP-over-set lemma reachable from here.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_set_of_flip | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_drop_addBoxRow_at_threshold | clean
+# Assembly. countP_set_of_same is the no-flip companion; the master rule
+# hookLength_addBoxRow_of_ne_corner covers every cell except the new box
+# itself, whose hook length needs the weakly-decreasing property that the
+# bare `List ℕ` carrier does not have.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_set_of_same | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.countP_drop_addBoxRow_off_threshold | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_leg_growth | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_row_above_ne | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxRow_of_ne_corner | clean
+# Bookkeeping the row products need: a box does not change the number of rows,
+# the receiving row is one longer, every other row is untouched.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.length_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_self | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxRow_ne | clean
+# The prefactor's share of the Pieri step: n(lambda) rises by the ROW INDEX,
+# not the row length. The two decide-guards pin that direction; row 0 is the
+# case an index slip would break.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_one | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxRow_row_zero | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_eq_sum | clean
+# The corner addBoxRow cannot reach. addBoxRow is List.set, a NO-OP out of
+# range, so addBoxRow lam lam.length = lam and NOT lam ++ [1] — recorded as
+# addBoxRow_at_length so the trap cannot be re-discovered by accident. Every
+# partition has exactly one new-bottom-row corner, so (P) needs this operation.
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.addBoxRow_at_length | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.length_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxNewRow_lt | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.getElem?_addBoxNewRow_self | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.drop_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_col_pos | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_col_zero | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.hookLength_addBoxNewRow_new_cell | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow | clean
+QOU.MathlibExt.QPartitionCombinatorics | QOU.MathlibExt.QPartitionCombinatorics.nLambda_addBoxNewRow_example | clean
+# (P), the Pieri step. schurElement is a fold; nothing cell-by-cell can be said
+# about a fold, so schurElement_eq_prod exhibits it as a product first. The two
+# rowFactor lemmas are the box-addition response in the two cases where it is a
+# clean equality.
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.schurElement_eq_prod | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_below | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_same_row | clean
+# The third case: rows above, where the changed cell sits in the interior of
+# the row's range. Stated division-free — cellFactor's denominator may vanish,
+# so a ratio form would need a hypothesis the statement does not.
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_above | clean
+QOU.MathlibExt.WenzlSchurElement | QOU.MathlibExt.WenzlSchurElement.rowFactor_addBoxRow_row_above_short | clean
+# The Macdonald hook telescope, proved at n=1 and n=2 from the CONCRETE
+# schurElement. old_contentSum_prefactor_breaks_telescope is what makes the
+# n(lam) fix a correction rather than a preference: revert the prefactor and
+# it and telescope_two become unprovable together.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.old_contentSum_prefactor_breaks_telescope | clean
+# n=3, the first case where the SYT multiplicity f_lam is not identically 1.
+# telescope_three_needs_multiplicity pins that the WEIGHTING is part of the
+# claim: unweighted the same sum is 46/7, not 8.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_three_needs_multiplicity | clean
+# The REDUCTION. pieri_one is (P) at mu=(1); telescope_two_via_pieri derives n=2
+# from n=1 THROUGH it, so the induction step is executed rather than asserted.
+# General n needs (P) + the SYT recursion -- elementary combinatorics, NOT the
+# symmetric-function theory this file previously claimed.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.telescope_two_via_pieri | clean
+# (P) at lambda=(2,1) — the first shape whose three corners exercise all three
+# row cases AND the new-bottom-row operation at once. pieri_one's two corners
+# are both trivial and cannot distinguish them.
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_at_two_three | clean
+QOU.MathlibExt.MacdonaldTelescope | QOU.MathlibExt.MacdonaldTelescope.pieri_two_one_summands_at_two_three | clean
 """
 
 

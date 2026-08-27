@@ -64,13 +64,26 @@ suffices for the macdonald hook telescope identity. -/
 
 /-- The **Wenzl Schur element** `s_{λ, X}(Q)` at partition `λ`.
 
-    Encodes `Q^{n(λ)} · ∏_x (1 − X·Q^{c(x)})/(1 − Q^{h(x)})`.
-    Abstracted here pending the symmetric-functions / Schur-element
-    infrastructure in Mathlib (this is a known gap). -/
+    Encodes `Q^{n(λ)} · ∏_x (1 − X·Q^{c(x)})/(1 − Q^{h(x)})`, with
+    `n(λ) = Σ_i i·λ_i` (`QPartitionCombinatorics.nLambda`).
+
+    **The prefactor is `n(λ)`, NOT `contentSum`.** This read `contentSum`
+    (`Σ_x (j − i)`, which is `n(λ') − n(λ)`) until 2026-08-26. The two agree
+    only for a single row of length ≤ 1 — `n([2]) = 0` against
+    `contentSum [2] = 1` — and with `contentSum` the Macdonald hook telescope
+    `Σ_λ f_λ·s_λ = ((1−X)/(1−Q))^n` **fails from `n = 2` upward**. Measured
+    symbolically for `n = 1..6`: exact `0` with `n(λ)`, nonzero with
+    `contentSum`. The docstring was right and the code was wrong; the guard
+    against a recurrence is `nLambda_ne_contentSum`.
+
+    Cross-checked against `computations/y_lambda_macdonald_telescope.py`, whose
+    `schur_principal_symbolic` uses `Q ** n_lambda(p)` with
+    `n_lambda(p) = Σ i·p[i]` — i.e. the Python was correct throughout and the
+    Lean had drifted from it. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 -- Ref: [macdonald1995] §I.3 ex. 1
 noncomputable def schurElement (Q X : ℝ) (lam : Partition) : ℝ :=
-  Q ^ (contentSum lam) *
+  Q ^ (nLambda lam) *
     (List.range lam.length).foldl
       (fun acc i =>
         acc * (List.range ((lam[i]?).getD 0)).foldl
@@ -219,7 +232,7 @@ theorem schurElement_ne_zero {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
     (lam : Partition) : schurElement Q X lam ≠ 0 := by
   have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
   unfold schurElement
-  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine mul_ne_zero (pow_ne_zero _ (ne_of_gt hQ0)) ?_
   refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
   intro i _
   refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_
@@ -373,7 +386,7 @@ theorem schurElement_tl_ne_zero {Q : ℝ} (hQ : 1 < Q) {N : ℤ}
     schurElement Q (Q ^ (-N)) lam ≠ 0 := by
   have hQ0 : (0 : ℝ) < Q := lt_trans one_pos hQ
   unfold schurElement
-  refine mul_ne_zero (zpow_ne_zero _ (ne_of_gt hQ0)) ?_
+  refine mul_ne_zero (pow_ne_zero _ (ne_of_gt hQ0)) ?_
   refine foldl_mul_ne_zero _ _ _ one_ne_zero ?_
   intro i hi
   refine foldl_mul_div_ne_zero _ _ _ _ one_ne_zero ?_ ?_
@@ -426,5 +439,159 @@ theorem substrate_not_tl_degenerate {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
     {N : ℤ} {lam : Partition} (hdeg : X = Q ^ (-N) ∧ HasContentCell lam N) :
     False :=
   substrate_avoids_tl_locus hQ hX N hdeg.1
+
+
+/-! ### Product form — what (P) has to manipulate
+
+`schurElement` is defined by a nested `foldl` so that it *computes*. Nothing
+cell-by-cell can be said about a fold, so before the Pieri step can compare two
+shapes the same value has to be exhibited as a **product over cells**.
+
+That is a proof obligation, not a rewriting convenience. Both folds multiply
+into their accumulator and start at `1`, and `a * n / d = a * (n / d)` holds in
+a field regardless of whether `d` vanishes — but the interleaved division is
+exactly what makes it non-obvious, so it is proved rather than assumed. -/
+
+/-- A `foldl` that only ever multiplies its accumulator IS a product. -/
+private theorem foldl_mul_eq_prod {α : Type*} (f : α → ℝ) :
+    ∀ (l : List α) (a : ℝ), l.foldl (fun acc x => acc * f x) a = a * (l.map f).prod
+  | [], a => by simp
+  | x :: t, a => by
+      rw [List.foldl_cons, foldl_mul_eq_prod f t (a * f x)]
+      simp [mul_assoc]
+
+/-- The factor cell `(i, j)` contributes: content numerator over hook
+denominator. Note the hook length is taken **in `lam`** — this is the quantity
+the box-addition update rule (`QPartitionCombinatorics`) moves. -/
+noncomputable def cellFactor (Q X : ℝ) (lam : Partition) (i j : ℕ) : ℝ :=
+  (1 - X * Q ^ (cellContent i j)) / (1 - Q ^ (Partition.hookLength lam i j))
+
+/-- The factor row `i` contributes. -/
+noncomputable def rowFactor (Q X : ℝ) (lam : Partition) (i : ℕ) : ℝ :=
+  ((List.range ((lam[i]?).getD 0)).map (cellFactor Q X lam i)).prod
+
+/-- **`schurElement` is a product over cells.** The prefactor `Q^{n(λ)}` times
+the product over rows of the product over that row's cells.
+
+This is the form every step of (P) is stated against: adding a box changes the
+hook length of finitely many cells and adds one new one, so the ratio of two
+Schur elements is a ratio of two products differing on a known set — a statement
+one can make about a product and cannot make about a fold. -/
+theorem schurElement_eq_prod (Q X : ℝ) (lam : Partition) :
+    schurElement Q X lam
+      = Q ^ (nLambda lam) * ((List.range lam.length).map (rowFactor Q X lam)).prod := by
+  unfold schurElement
+  congr 1
+  have h : ∀ i : ℕ, (List.range ((lam[i]?).getD 0)).foldl
+      (fun a j => a * (1 - X * Q ^ (cellContent i j)) /
+        (1 - Q ^ (Partition.hookLength lam i j))) 1 = rowFactor Q X lam i := by
+    intro i
+    rw [rowFactor]
+    simpa [cellFactor, mul_div_assoc] using
+      foldl_mul_eq_prod (cellFactor Q X lam i) (List.range ((lam[i]?).getD 0)) 1
+  simp only [h]
+  simpa using foldl_mul_eq_prod (rowFactor Q X lam) (List.range lam.length) 1
+
+
+/-! ### How a row factor responds to a box
+
+The per-cell update rule lifts to the row products. Three cases, and they are
+not symmetric:
+
+* **below** the new box — nothing moves at all, so the factor is literally equal;
+* **the row itself** — one cell longer, and every old cell's hook is `+1`;
+* **above** — one cell of the row (the one in column `λ_r`) has its hook raised.
+
+The first two are proved here. The third needs product surgery at a single
+index, which is the next piece. -/
+
+/-- **Rows below the new box contribute the same factor.** Neither the row's
+length nor any of its hook lengths moved. -/
+theorem rowFactor_addBoxRow_row_below (Q X : ℝ) (lam : Partition) (r i : ℕ)
+    (h : r < i) :
+    rowFactor Q X (addBoxRow lam r) i = rowFactor Q X lam i := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_ne lam r i (by omega)]
+  refine congrArg List.prod (List.map_congr_left fun j _ => ?_)
+  unfold cellFactor
+  rw [hookLength_addBoxRow_row_below lam r i j h]
+
+/-- **The row that received the box.** Its factor is the old row's cells with
+every hook raised by one, times the factor of the new cell.
+
+`List.range_succ` is what makes this a clean split: the new row's index range is
+the old one with `λ_r` appended, so the product splits as a product over the old
+cells and a single new factor. The old cells are then rewritten one at a time by
+the arm-growth half of the update rule. -/
+theorem rowFactor_addBoxRow_same_row (Q X : ℝ) (lam : Partition) (r : ℕ)
+    (hr : r < lam.length) :
+    rowFactor Q X (addBoxRow lam r) r
+      = ((List.range ((lam[r]?).getD 0)).map (fun j =>
+            (1 - X * Q ^ (cellContent r j)) /
+              (1 - Q ^ (Partition.hookLength lam r j + 1)))).prod
+        * cellFactor Q X (addBoxRow lam r) r ((lam[r]?).getD 0) := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_self lam r hr]
+  simp only [Option.getD_some, List.range_succ, List.map_append, List.prod_append,
+    List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one]
+  refine congrArg (· * _) (congrArg List.prod (List.map_congr_left fun j hj => ?_))
+  have hj' : j < (lam[r]?).getD 0 := List.mem_range.mp hj
+  unfold cellFactor
+  rw [hookLength_addBoxRow_same_row lam r j hr hj']
+
+
+/-- **Product surgery at one index.** Two functions agreeing on `range n` off a
+single point `k` have products related by swapping that point's factor.
+
+Stated division-free — `(∏ f) · g k = (∏ g) · f k` rather than a ratio — because
+`cellFactor` is a quotient whose denominator `1 − Q^h` may vanish, and a ratio
+form would smuggle in a nonvanishing hypothesis the statement does not need. -/
+private theorem prod_range_swap_one {f g : ℕ → ℝ} (n k : ℕ) (hk : k < n)
+    (h : ∀ j, j < n → j ≠ k → f j = g j) :
+    ((List.range n).map f).prod * g k = ((List.range n).map g).prod * f k := by
+  have hf : ((List.range n).map f).prod = ∏ j ∈ Finset.range n, f j := rfl
+  have hg : ((List.range n).map g).prod = ∏ j ∈ Finset.range n, g j := rfl
+  rw [hf, hg]
+  have hmem : k ∈ Finset.range n := Finset.mem_range.mpr hk
+  rw [← Finset.mul_prod_erase _ f hmem, ← Finset.mul_prod_erase _ g hmem]
+  have hrest : ∏ j ∈ (Finset.range n).erase k, f j
+      = ∏ j ∈ (Finset.range n).erase k, g j :=
+    Finset.prod_congr rfl fun j hj =>
+      h j (Finset.mem_range.mp (Finset.mem_of_mem_erase hj)) (Finset.ne_of_mem_erase hj)
+  rw [hrest]
+  ring
+
+/-- **Rows above the new box, when the box's column meets them.** Exactly one
+cell of the row — the one in column `λ_r` — has its hook raised, so the two row
+factors differ by swapping that single factor.
+
+This is the third and last case, and the only one needing product surgery: below
+the box nothing moves, and the receiving row splits off its new cell by
+`List.range_succ`, but here the changed cell sits in the *interior* of the
+row's range. -/
+theorem rowFactor_addBoxRow_row_above (Q X : ℝ) (lam : Partition) (r i : ℕ)
+    (h : i < r) (hr : r < lam.length)
+    (hin : (lam[r]?).getD 0 < (lam[i]?).getD 0) :
+    rowFactor Q X (addBoxRow lam r) i * cellFactor Q X lam i ((lam[r]?).getD 0)
+      = rowFactor Q X lam i * cellFactor Q X (addBoxRow lam r) i ((lam[r]?).getD 0) := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_ne lam r i (by omega)]
+  refine prod_range_swap_one _ _ hin fun j _ hjne => ?_
+  unfold cellFactor
+  rw [hookLength_addBoxRow_row_above_ne lam r i j h hr hjne]
+
+/-- **Rows above the new box that the box's column misses.** If row `i` is no
+longer than `λ_r` the changed column lies outside it, so the factor is equal
+outright — no surgery, and no nonvanishing hypothesis. -/
+theorem rowFactor_addBoxRow_row_above_short (Q X : ℝ) (lam : Partition) (r i : ℕ)
+    (h : i < r) (hr : r < lam.length)
+    (hout : (lam[i]?).getD 0 ≤ (lam[r]?).getD 0) :
+    rowFactor Q X (addBoxRow lam r) i = rowFactor Q X lam i := by
+  unfold rowFactor
+  rw [getElem?_addBoxRow_ne lam r i (by omega)]
+  refine congrArg List.prod (List.map_congr_left fun j hj => ?_)
+  have hj' : j < (lam[i]?).getD 0 := List.mem_range.mp hj
+  unfold cellFactor
+  rw [hookLength_addBoxRow_row_above_ne lam r i j h hr (by omega)]
 
 end QOU.MathlibExt.WenzlSchurElement
