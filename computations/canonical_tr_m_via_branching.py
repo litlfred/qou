@@ -74,6 +74,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from char_fast import _compiled_sigmas  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q_FLOAT  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 
 set_compute_dps()
@@ -667,7 +668,7 @@ def compute_tr_m_via_branching(
             # Presume the package anchor and refuse anywhere else — the
             # conservative reading, since a wrong presumption costs a refusal
             # while the alternative costs a silent hybrid.
-            _q_anchor = mp.mpf(str(Q_FLOAT))
+            _q_anchor = Q_MP
             _why = ("records no generation q (checked `q0Value`, `data.q0Value`,"
                     " `data.q_0`), so it is presumed to be at the package"
                     " anchor")

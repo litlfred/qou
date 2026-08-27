@@ -82,6 +82,7 @@ from closed_form_tau_M import compute_tau_M_nucleon_H3
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
 from q_parameter import Q as Q0
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 
 def _sha():
@@ -98,7 +99,7 @@ def _word(g0, g1):
 
 
 def main():
-    q = mp.mpf(str(Q0)); h = q - 1/q
+    q = Q_MP; h = q - 1/q
     assertions = []
 
     def check(name, passed, note=""):

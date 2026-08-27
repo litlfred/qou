@@ -63,6 +63,7 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 from chi_monotone_transfer import chi_all_lambda  # noqa: E402
 from hecke_core import (  # noqa: E402
@@ -79,7 +80,7 @@ def _word(g0, g1):
 
 
 def main() -> int:
-    q = mp.mpf(str(Q0))
+    q = Q_MP
     h = q - 1 / q
     me = mp.mpf(str(M_E_MEV))
     Qexp = mp.mpf(str(Q_NEUTRON_MEV))

@@ -62,6 +62,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 
 mp.dps = 50
 
@@ -107,7 +108,7 @@ def s(x, n=16):
 
 
 def main() -> int:
-    q0 = mpf(str(Q_PROTON))
+    q0 = Q_MP
     m_e, m_p, m_n = mpf(M_E), mpf(M_P), mpf(M_N)
 
     # coefficients, all from q0 / m_e / Catalan by the formula's own definitions

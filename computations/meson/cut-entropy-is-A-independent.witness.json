@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T16:00:31.567785+00:00",
-  "commitSha": "d555091e04db4007e31918f4f13544e95e8b8d13",
+  "computedAt": "2026-08-27T05:33:11.596433+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
   "assertions": [
     {
       "name": "cut_entropy_is_constant_across_the_chain",
@@ -15,7 +15,7 @@
     },
     {
       "name": "one_nucleon_marginal_is_the_three_strand_markov_measure",
-      "computed": "9.0556790788267123675e-72",
+      "computed": "1.1319598848533390459e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
@@ -24,7 +24,7 @@
     },
     {
       "name": "marginal_independent_of_n",
-      "computed": "9.0556790788267123675e-72",
+      "computed": "6.3389753551786986573e-71",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 42,
+  "durationMs": 48,
   "computation": "cut-entropy-is-A-independent",
   "scriptFile": "cut_entropy_is_A_independent_probe.py",
-  "scriptHash": "a597cee83866",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c3b87013c6e1",
+  "scriptCommitSha": "7b626a4a8bdd65a9fc30cc3684d55aa2622dc303",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,10 +94,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -107,7 +106,7 @@
   },
   "description": "The one-nucleon cut entropy of the Markov/Plancherel measure is the SAME number at every A (1.0359164340, to <1e-50 out to n=24), because the one-nucleon marginal of the n-strand Markov measure IS the 3-strand Markov measure -- A_(3) = [4]_q/[2]_q^3 and A_(2,1) = [2]_q/[2]_q^3 exactly. B_AME is extensive and rises 17.6x over the same range, so E_0*S_cut cannot be the binding energy and the deuteron's 1.9493x was a coincidence. SCOPE (b): the invariant is the Markov compatibility axiom, definitional not fitted.",
   "data": {
-    "E0_MeV": "4.18598136329447621452746090153",
+    "E0_MeV": "4.18598136329447589694506215876",
     "q0_pin": "proton",
     "cut": "H_3 (x) H_{3(A-1)} < H_{3A}  (one nucleon vs the rest)",
     "weighting": "W1 Markov/Plancherel p = y_lambda f^lambda",
@@ -117,67 +116,67 @@
         "Z": 1,
         "A": 2,
         "n": 6,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "2.2245662",
-        "ratio": "1.94929100635285619291512"
+        "ratio": "1.94929100635285604408012"
       },
       {
         "isotope": "3H",
         "Z": 1,
         "A": 3,
         "n": 9,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "8.4817962",
-        "ratio": "0.511251011512932739437863"
+        "ratio": "0.51125101151293270040211"
       },
       {
         "isotope": "3He",
         "Z": 2,
         "A": 3,
         "n": 9,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "7.71804132",
-        "ratio": "0.561842921915912878297425"
+        "ratio": "0.561842921915912835398807"
       },
       {
         "isotope": "4He",
         "Z": 2,
         "A": 4,
         "n": 12,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "28.2956624",
-        "ratio": "0.153250587506887598440518"
+        "ratio": "0.153250587506887586739314"
       },
       {
         "isotope": "6Li",
         "Z": 3,
         "A": 6,
         "n": 18,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "31.9939872",
-        "ratio": "0.13553568236398335372903"
+        "ratio": "0.13553568236398334338042"
       },
       {
         "isotope": "7Li",
         "Z": 3,
         "A": 7,
         "n": 21,
-        "S_vN": "1.03591643401005185272383",
-        "E0_S_vN_MeV": "4.33632688669654916021966",
+        "S_vN": "1.03591643401005185222109",
+        "E0_S_vN_MeV": "4.33632688669654882912635",
         "B_AME_MeV": "39.2450807",
-        "ratio": "0.110493514329722072917528"
+        "ratio": "0.110493514329722064480972"
       }
     ],
-    "constant_S_vN": "1.03591643401005185272383",
-    "constant_E0_S_vN_MeV": "4.33632688669654916021963948971",
+    "constant_S_vN": "1.03591643401005185222109",
+    "constant_E0_S_vN_MeV": "4.33632688669654882912635320915",
     "marginal_closed_form": {
-      "A_(3)": "0.505404226503930802484187090596",
-      "A_(2,1)": "0.247297886748034598757906454702"
+      "A_(3)": "0.50540422650393080318755870324",
+      "A_(2,1)": "0.24729788674803459840622064838"
     }
   },
   "caveats": [
