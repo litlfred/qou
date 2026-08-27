@@ -4,9 +4,9 @@
   "producer": "scripts/lean/BorrowedNameKernel.lean via scripts/lean/audit-driver.sh",
   "bean": "qou-0avp",
   "note": "defeq_collapse means the statement's two sides reduce to each other at default transparency. That is a CANDIDATE signal, not a verdict: it fires both on vacuous definitional restatements AND on genuine finite computations, because reduction is how a concrete computation is proved. The discriminator is whether the operands are hand-entered constants or actually computed -- spot-checked, most in this batch are hand-entered tables (jonesAtOne is a table whose torusLink2 entry is marked 'placeholder'; klEigenvalueAtOne and pairCount are two separate `Int := 2`).",
-  "modules_scanned": 51,
-  "theorems_analysed": 908,
-  "defeq_collapse_count": 238,
+  "modules_scanned": 53,
+  "theorems_analysed": 994,
+  "defeq_collapse_count": 252,
   "wall_clock": "8 modules per batch, ~2m40s each; 15 in ONE command exceeds 9m40s and 6 heavy ones time out -- batch at 8",
   "findings": [
     {
@@ -2388,6 +2388,146 @@
       "local_only": true,
       "defeq_collapse": true,
       "value_is_rfl": false
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.braneMonic_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.branePoly_succ",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.branePoly_zero",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coe_apply",
+      "type_foreign": 0,
+      "type_local": 4,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.braneMonic_succ",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.truncSection_mk",
+      "type_foreign": 0,
+      "type_local": 3,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.MassEndomorphism.ZHabiroCauchy",
+      "decl": "QOU.MassEndomorphism.ZHabiroCauchy.truncSection_zHabiroLimit",
+      "type_foreign": 0,
+      "type_local": 6,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.yekutieli_stokes_continuous_path",
+      "type_foreign": 0,
+      "type_local": 2,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.continuousPath2FormPairing_eq_one",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.finite_slice_trace_at_depth",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.braidWordHolonomy_nil",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.piecewiseAffineLineIntegral_nil",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": true
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.stokes_trivial_case",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
+    },
+    {
+      "module": "QOU.Mathlib.NonAbelianStokes",
+      "decl": "QOU.Mathlib.NonAbelianStokes.piecewiseAffineLineIntegral_nil_append",
+      "type_foreign": 0,
+      "type_local": 1,
+      "value_foreign": 0,
+      "local_only": true,
+      "defeq_collapse": true,
+      "value_is_rfl": false
     }
   ],
   "scaling_note": "maxRecDepth and the COMMAND's own 200000-heartbeat budget both bite on long module lists (fine at 8, fail at 15); the driver now sets maxRecDepth 100000 and maxHeartbeats 0. Even so, throughput is the binding constraint: batch at ~8 modules. Follow-up: the 7 previously-timed-out modules were retried at batch size 3 -- 3 completed in 4m14s, the remaining 4 still time out at 560s. Batch size alone does not rescue the heaviest modules; those need their own budget.",
@@ -2400,9 +2540,10 @@
     "qou_modules_total": 2257,
     "qou_modules_with_olean": 1516,
     "qou_modules_without_olean": 741,
-    "modules_scanned": 51,
+    "modules_scanned": 53,
     "coverage_of_tree_pct": 2.3,
-    "coverage_of_olean_reachable_pct": 3.4,
+    "coverage_of_olean_reachable_pct": 3.5,
     "note": "QUOTE THIS BLOCK, NOT A BARE MODULE COUNT. The kernel pass has seen 51 of 2257 QOU modules -- 2.3 % of the tree, 3.4 % of what currently has an olean. It is a SAMPLE and the file name says so; nothing here supports a corpus-wide claim about how common defeq collapse is. CORRECTION: PR #5875's scope section said \"8 modules still lack oleans\". That 8 was scoped to the modules carrying UNADJUDICATED MAJOR FINDINGS at that moment, not to the corpus -- the real figure is 741 of 2257, a third of the Lean tree. Reported as a corpus number it invites the reading that coverage is nearly complete when it is 2.3 %. Same error class as the precision-figure correction one commit earlier (a filtered count published as an unfiltered one), made twice in one session by the agent auditing the corpus for it. The 741 are not all failures: most have simply never been asked for. Two are known compile failures at a 420 s budget (QOU.BraidKnot.JHopfQOneProvenance, QOU.BraidKnot.JonesNuclearQuotient); the rest are untried. scripts/lean/compile-cone.sh reaches any of them without letting `lake build` evict the restored Mathlib cache."
-  }
+  },
+  "batch6_note": "Batch 6 (2026-08-27): the four modules recorded as exceeding every kernel batch budget, run SOLO. THREE COMPLETE, ONE DOES NOT -- which CORRECTS the generalisation in PR #5875. PermutationEnumeration 73 thms / 58 collapses (folded in as batch 5), MassEndomorphism.ZHabiroCauchy 38 / 7, Mathlib.NonAbelianStokes 48 / 7, and Knots.KauffmanTL3 TIMED OUT at 2400 s. #5875 said \"the constraint was the BATCH, not the module\". That is right for three of the four and WRONG for KauffmanTL3, which is genuinely too heavy: its own docstring records the 8_19 `decide` as ~70 s of kernel reduction ON ITS OWN, and the kernel pass then runs isDefEq over every theorem in the module, several of which carry those same bracket reductions. A batch budget was never its problem. Correct statement: solo running recovers a module the batch starved; it does not recover a module whose own reductions exceed the budget. The two new modules are also the LOW end of the collapse range -- 18 % and 14 %, against WenzlBridgeConcrete's 62 % and PermutationEnumeration's 79 % -- which is further evidence for batch 5's conclusion that the rate is not a quality signal in either direction."
 }
