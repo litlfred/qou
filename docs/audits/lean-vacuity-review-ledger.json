@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T12:19:20.230919Z",
+  "updated_at": "2026-08-27T12:59:12.799947Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2350,11 +2350,11 @@
     "content/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean::qSchur_H2_content_bridge::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
-      "line": 786,
+      "line": 829,
       "verdict": "genuine",
-      "file_sha": "613e7442cc8e",
+      "file_sha": "c6828cc53f60",
       "disposition": "state-the-real-proposition",
-      "evidence": "Docstring: \"THEOREM (q-Schur weight at H2). The Markov weight of partition lam |- 2 is y_lam = q^{c(lam)}/[2]_q. This is the bridge between the content-sum formula and the explicitly-proved H2 weights.\" The STATEMENT is `contentSum [2] = 1 AND contentSum [1,1] = -1` -- no y_lam, no Markov weight, no [2]_q. The binders `(q : R) (hq : 1 < q)` do not occur in the conclusion. Two content-sum arithmetic facts under a name and docstring claiming a q-Schur/Wenzl bridge. RE-VERIFIED 2026-08-27 after the ledger's own staleness check flagged this entry (file_sha ae6ae88836a2 -> 613e7442cc8e). The FILE changed -- the declaration moved from line 327 to 786 as material was added above it -- but the DECLARATION is byte-identical: same docstring claiming the y_lam = q^{c(lam)}/[2]_q bridge, same statement `contentSum [2] = 1 AND contentSum [1,1] = -1`, same unused `(q : R) (hq : 1 < q)` binders, same proof. Verdict stands.",
+      "evidence": "Docstring: \"THEOREM (q-Schur weight at H2). The Markov weight of partition lam |- 2 is y_lam = q^{c(lam)}/[2]_q. This is the bridge between the content-sum formula and the explicitly-proved H2 weights.\" The STATEMENT is `contentSum [2] = 1 AND contentSum [1,1] = -1` -- no y_lam, no Markov weight, no [2]_q. The binders `(q : R) (hq : 1 < q)` do not occur in the conclusion. Two content-sum arithmetic facts under a name and docstring claiming a q-Schur/Wenzl bridge. RE-VERIFIED 2026-08-27 after the ledger's own staleness check flagged this entry (file_sha ae6ae88836a2 -> 613e7442cc8e). The FILE changed -- the declaration moved from line 327 to 786 as material was added above it -- but the DECLARATION is byte-identical: same docstring claiming the y_lam = q^{c(lam)}/[2]_q bridge, same statement `contentSum [2] = 1 AND contentSum [1,1] = -1`, same unused `(q : R) (hq : 1 < q)` binders, same proof. Verdict stands. RE-VERIFIED AGAIN 2026-08-27 at merge time, after main's Pieri/hook-length tranche touched this file (file_sha 613e7442cc8e -> c6828cc53f60). The DECLARATION is byte-identical -- same statement, same docstring, same one-line proof; it moved from line 786 to 829 as material was added above it. Verdict unchanged. This is the SECOND time this one entry has been flagged by the staleness gate for a file edit that did not touch the declaration, which is the gate working as designed: a whole-file sha cannot tell a move from an edit, so an agent has to look.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifert_euler_relation::proof-borrowed-name": {
