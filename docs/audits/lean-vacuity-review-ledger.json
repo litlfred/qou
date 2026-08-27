@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-26T21:37:36.088479Z",
+  "updated_at": "2026-08-27T05:34:06.028707Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2624,6 +2624,17 @@
       "disposition": "state-the-real-proposition",
       "evidence": "Every input is a hand-entered literal: `def genus : N := 4`, `def eulerChar : Z := -6`, `def covering_degree : N := 4`, `def num_branch_points : N := 6`, `def automorphism_order : N := 120`. The VALUES are correct for Bring's surface (genus 4, chi = -6, Aut = S_5 of order 120) and are standard citable facts -- the defect is not a wrong number. It is that nothing DERIVES them here, so a relation between them cannot fail. `eulerChar = 2 - 2 * (genus : Z)` is `-6 = 2 - 8`. Same shape as `seifert_euler_relation` (adjudicated genuine at CRITICAL): the Euler-genus relation is not tested, because both sides were entered consistently by hand.",
       "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::quantum_peter_weyl_completeness::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 451,
+      "verdict": "genuine",
+      "file_sha": "b538e202d529",
+      "disposition": "state-the-real-proposition",
+      "tier": "major",
+      "evidence": "SHARPEST CATCH OF THE AUDIT. `def eigenspace_dim (twice_j : N) : N := (twice_j + 1)^2`, and `theorem quantum_peter_weyl_completeness : forall twice_j, eigenspace_dim twice_j = (twice_j + 1)^2 := by intro twice_j; rfl` unfolds that definition -- it is literally x = x. Kernel-confirmed defeq_collapse=true, value_is_rfl=true, local_only=true. The docstring states the REAL Peter-Weyl content ('The matrix coefficients {D^j_{mn}} form a complete orthonormal basis of L^2(A)'), attributes it to Tannaka-Krein reconstruction, and cites [woronowicz1987] 10.1007/BF01219077 -- none of which appears in the statement. It also says verbatim 'This is an axiom of the formalization' while being declared a THEOREM. That is the AGENTS.md 1a audit-dodge shape by its own words: a docstring saying 'stated as an opaque axiom' beside a `theorem ... := by rfl` is STRICTLY WORSE than an `axiom`, because an axiom is visible to `#print axioms` and this is not. Same shape bean qou-wcff documented for genus-filtration-ideal. Honest dispositions per AGENTS.md 1a: prove the real completeness statement, state it with `sorry` + `-- Ref: [woronowicz1987]`, or declare it an `axiom` so the axiom audit can see it.",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     }
   }
