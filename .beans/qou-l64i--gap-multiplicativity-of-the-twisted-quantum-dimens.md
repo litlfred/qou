@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T22:59:50Z
-updated_at: 2026-08-27T01:09:19Z
+updated_at: 2026-08-27T01:10:57Z
 ---
 
 Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
@@ -223,3 +223,52 @@ is right. If it fails even symmetrically, `ptrWith` is the wrong object and repa
 That is one compile, and it should be the next thing anyone does on this bean.
 
 DO NOT treat the statement recorded above as a theorem to be proved until one of these settles it.
+
+
+RESOLVED (geometrically, not in Lean) — P2 AS STATED IS FALSE; REPAIR 2 IS THE RIGHT ONE.
+
+First, a correction to the paragraph immediately above: I wrote that specialising to a symmetric
+category "is one compile, and it should be the next thing anyone does". THAT IS WRONG and I should
+not have written it. A tactic FAILING proves nothing — every tactic already fails on every version
+of this goal. Only a proof settles true, and only a counterexample settles false. The prescription
+was worthless as stated; ignore it.
+
+Worked out from the diagram instead, which does settle it:
+
+The braided trace `η ≫ β ≫ ε` of `𝟙_A` is the closure of the A-strand THROUGH ONE CROSSING — not
+the plain Markov closure. For a single object that is an unknot with framing ±1, which is exactly
+why a framing correction (the twist) belongs in the trace at all.
+
+Now take `A = X ⊗ Y`, a 2-CABLE. The block braiding `β_{X⊗Y, Y'⊗X'}` crosses the whole cable past
+the whole dual cable, so on closure it contributes the two cross terms counted above,
+`β_{X,Y'}` and `β_{Y,X'}`. Those are crossings BETWEEN THE TWO COMPONENTS: after closing, the X
+circle and the Y circle have LINKING NUMBER ±1. But `dim(X) · dim(Y)` is two UNLINKED circles. The
+two sides therefore differ by a Hopf link's worth of linking, and no amount of rearranging inside a
+braided category removes it — there is no R2 pair to cancel, the crossings have the same sign.
+
+WHICH IS EXACTLY WHAT `twist_tensor` SUPPLIES. The balancing axiom
+
+    θ_{X⊗Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)
+
+carries a DOUBLE BRAIDING — the monodromy, linking number ∓1 — whose whole job here is to unlink
+the two components, leaving the per-object twists `θ_X ⊗ θ_Y` to supply the two framings. So the
+twist is not bookkeeping around the identity; it IS the identity's content, and the twistless
+version is false for a reason that can be named rather than merely suspected.
+
+CONSEQUENCES:
+1. Do NOT attempt `qTrWith_tensor_eq_ptr` as stated (twistless, general `f`). It is false.
+2. Repair 1 (a "braided partial trace" carrying the cross braidings) is a WORSE idea than it looked:
+   it would be defining the answer into the object — the same defined-residual trap that produced
+   this correction in the first place. Only take it if the resulting object matches an independent
+   definition in the literature.
+3. GO STRAIGHT TO REPAIR 2: state the factorisation for the TWISTED trace, where `twist_tensor` is
+   available to cancel the cross terms. That is the version multiplicativity needs anyway.
+
+EPISTEMIC STATUS: this is a string-diagram argument, NOT a Lean proof and NOT a counterexample. It
+is strong enough to redirect effort and to stop anyone proving a false lemma; it is not strong
+enough to write "refuted" in a durable artifact per the (a)/(b) rule. Scope (a): this construction,
+as stated, does not factor — the ingredient is not excluded, and indeed repair 2 uses it.
+
+STILL TRUE AND LANDED, unaffected by any of this: `qTrWith`, `qTrWith_id`, `qTrWith_twist`,
+`ptrWith`, `ptrWith_id`. `ptrWith_id` is about `f = 𝟙` on a SINGLE closure and never meets the
+cross terms.
