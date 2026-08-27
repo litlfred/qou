@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-27T05:34:06.028707Z",
+  "updated_at": "2026-08-27T06:10:30.689318Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -2635,6 +2635,39 @@
       "disposition": "state-the-real-proposition",
       "tier": "major",
       "evidence": "SHARPEST CATCH OF THE AUDIT. `def eigenspace_dim (twice_j : N) : N := (twice_j + 1)^2`, and `theorem quantum_peter_weyl_completeness : forall twice_j, eigenspace_dim twice_j = (twice_j + 1)^2 := by intro twice_j; rfl` unfolds that definition -- it is literally x = x. Kernel-confirmed defeq_collapse=true, value_is_rfl=true, local_only=true. The docstring states the REAL Peter-Weyl content ('The matrix coefficients {D^j_{mn}} form a complete orthonormal basis of L^2(A)'), attributes it to Tannaka-Krein reconstruction, and cites [woronowicz1987] 10.1007/BF01219077 -- none of which appears in the statement. It also says verbatim 'This is an axiom of the formalization' while being declared a THEOREM. That is the AGENTS.md 1a audit-dodge shape by its own words: a docstring saying 'stated as an opaque axiom' beside a `theorem ... := by rfl` is STRICTLY WORSE than an `axiom`, because an axiom is visible to `#print axioms` and this is not. Same shape bean qou-wcff documented for genus-filtration-ideal. Honest dispositions per AGENTS.md 1a: prove the real completeness statement, state it with `sorry` + `-- Ref: [woronowicz1987]`, or declare it an `axiom` so the axiom audit can see it.",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::splus0_carries_four::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "f20c01a4db60",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`Splus0` and `Sminus0` are HAND-ENTERED 3x3 integer tables (`| 0, 0 => 1  | 0, 1 => 4 | 0, 2 => 0` ...). The docstrings frame the entries as DT/Stokes constants with (96)/(97) factorization provenance; nothing in the file derives them. `Splus0 0 1 = 4 := by decide` reads entry (0,1) of a table whose (0,1) is literally `4`. The docstring calls it 'the DT constant 4 ... the (96) factorization constant'; the proof is a table lookup.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::chirality_sum_seven::proof-borrowed-name": {
+      "category": "proof-borrowed-name",
+      "pattern": "kernel-defeq",
+      "line": 0,
+      "verdict": "genuine",
+      "file_sha": "f20c01a4db60",
+      "disposition": "state-the-real-proposition",
+      "evidence": "`Splus0` and `Sminus0` are HAND-ENTERED 3x3 integer tables (`| 0, 0 => 1  | 0, 1 => 4 | 0, 2 => 0` ...). The docstrings frame the entries as DT/Stokes constants with (96)/(97) factorization provenance; nothing in the file derives them. `Splus0 0 1 + Sminus0 0 2 = 7 := by decide` is `4 + 3 = 7` over two hand-entered entries. Presented as 'the symmetric (iota-even) sum of the two chirality constants', and used to argue that four different integers mean 'no single scalar reproduces the leading Stokes data' -- an argument whose inputs were all typed in.",
+      "tier": "major",
+      "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
+    },
+    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::Splus0::name-overload": {
+      "category": "proof-borrowed-name",
+      "pattern": "name-overload",
+      "line": 90,
+      "verdict": "advisory",
+      "file_sha": "f20c01a4db60",
+      "disposition": "note-overload",
+      "tier": "major",
+      "evidence": "`Splus0` is declared in at least TWO modules with DIFFERENT values and DIFFERENT types: here `Fin 3 -> Fin 3 -> Int` with entry (0,1) = 4, and in QOU/QBeta/StokesQZeroDTCount.lean as `M2 := ![![1, 3], ![0, 1]]` with entry (0,1) = 3. Both carry Stokes-matrix docstrings. A string-keyed reader will conflate them and read one module's constant as the other's; resolve to the DECLARATION. This is the hazard a sibling agent flagged on PR #5856 for hookDim/wenzlSchurElement, now confirmed independently in the Stokes modules.",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     }
   }
