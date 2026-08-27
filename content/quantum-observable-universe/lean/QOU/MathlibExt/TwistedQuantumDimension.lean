@@ -247,6 +247,31 @@ theorem ptrWith_id (X Y Y' : C) [ExactPairing Y Y'] :
     ptrWith X Y Y' (𝟙 (X ⊗ Y)) = (ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom := by
   simp [ptrWith, qDimWith, monoidalComp]
 
+/-- **Multiplicativity, CONDITIONAL on the monodromy factorisation.**
+
+The hypothesis `hmono` is the one open lemma (bean `qou-l64i`): closing the 2-cable `X ⊗ Y` with a
+monodromy `β_{X,Y} ≫ β_{Y,X}` on the input splits into the two separate closures.  Given it, the
+twisted quantum dimension is multiplicative, and the derivation uses the balancing axiom exactly
+once — `twist_tensor` is precisely what puts the required monodromy in front of `θ_X ⊗ θ_Y`.
+
+This is stated conditionally on purpose.  I had asserted in the bean that multiplicativity "is then
+a corollary"; that assertion is what this theorem replaces with a machine-checked implication, after
+an earlier assertion of the same kind (that the nested closure factors through `ptrWith`) turned out
+to be false.  A named hypothesis discharged by `rw` is worth more than a claim that a step will go
+through. -/
+theorem qDimTwistedWith_tensor_of_monodromy [BalancedCategory C] (X X' Y Y' : C)
+    [ExactPairing X X'] [ExactPairing Y Y']
+    (hmono : ∀ (g : X ⟶ X) (h : Y ⟶ Y),
+      @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+          ((β_ X Y).hom ≫ (β_ Y X).hom ≫ (g ⊗ₘ h))
+        = qTrWith X X' g ≫ qTrWith Y Y' h) :
+    @qDimTwistedWith C _ _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+      = qDimTwistedWith X X' ≫ qDimTwistedWith Y Y' := by
+  show @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+        (BalancedCategory.twist (X ⊗ Y))
+      = qTrWith X X' (BalancedCategory.twist X) ≫ qTrWith Y Y' (BalancedCategory.twist Y)
+  rw [BalancedCategory.twist_tensor, hmono]
+
 end PartialTrace
 
 end QOU.MathlibExt
