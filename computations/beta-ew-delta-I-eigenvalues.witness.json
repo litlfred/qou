@@ -1,4 +1,7 @@
 {
+  "scriptFile": "beta_ew_delta_I_eigenvalues.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md",
   "computation": "beta-ew-delta-I-eigenvalues",
   "computedAt": "2026-08-23T21:00:13.281722+00:00",
   "description": "Symbolic eigenvalue extraction of β_EW(Δ_I^minimal) on the 2 Δ_I-invariant tableaux of partitions of 6 (b_+ = row shape (6), b_- = column shape (1^6)).  Eigenvalues exactly q^27 and -q^{-27} respectively — bar-anti-self-dual pair: ι(eig_+) = -eig_-.  Tests candidate cot θ_W readings from this 2-dim spectrum; structural conclusion: invariant subspace alone is insufficient to close Weinberg angle, the rotation lives in the 18-dim Δ_I-mixed complement.",

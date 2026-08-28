@@ -1,4 +1,7 @@
 {
+  "scriptFile": "paper_six_term_shadow_price_sweep.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "computation": "paper-six-term-shadow-price-sweep",
   "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
   "reference_blocks": [
