@@ -71,6 +71,30 @@ starts: `q_beta_predicted` carries `CAL-2_q_0`, and naming CAL-2 identifies
 `confinement-operator-selection` is an LP/SDP witness, so the dual fields
 matter to any re-run.
 
+### Method note added 2026-08-28: match on ≤ 18 significant digits, never the full literal
+
+Re-scanning these 19 with an exact match on the recorded 19-char literal
+`1.10997859555418057` returns **0 hits on nine of them** — all nine genuinely
+carry the value. The superseded pin has two renderings that diverge at the
+**19th** significant digit: the *rounded* `…057528…` (107 files: AGENTS.md,
+bean `qou-khac`, content `.qa.json`) and the *truncated* `…056776…` (5 files,
+incl. `d-from-scratch`, one of the 19). `|d| ~ 7e-19` — three orders below the
+3.15e-12 that makes superseded a distinct pin, and below the 1 ppQ L1 target,
+so it moves no observable and raises no ruling question. It breaks detectors.
+
+`q0_muon_population_partition.py` was safe by construction (16-digit prefix,
+with a comment showing the length was deliberate), so **the 19 stands** — the
+re-scan was the wrong instrument, not the triage. The usable window is 14–18
+digits: 14 is the shortest that separates superseded from current, 11–13 are
+ambiguous between them. The ceiling is now recorded in the script itself.
+
+A second, unrelated blind spot in the same pass: witness stems drop a
+producer's `_probe` suffix (`alpha_em_smatrix_perloop_probe` →
+`alpha-em-smatrix-perloop.witness.json`), so a stem-equals-producer-name
+lookup returns NO FILE for three of the 19. Both failures were mine, in one
+sitting, on a list whose own text warns that counts here move when read by
+hand. That is the sixth and seventh instance in this arc.
+
 ## 🛑 The "13 orphans" were my detector's blind spot, not a provenance gap
 
 An earlier revision of this document called the 13 a provenance gap — *"nothing

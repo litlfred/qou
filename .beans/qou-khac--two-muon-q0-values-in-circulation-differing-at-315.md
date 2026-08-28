@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-25T01:54:01Z
+updated_at: 2026-08-28T16:55:21Z
 ---
 
 
@@ -238,3 +238,45 @@ artifact (`/result/z/q` is the Markov z, not q0). Genuine residue:
 `meson-mass-from-hecke` (fixed here), `he3-tower-charge-asymmetry`,
 `he3-brane-tower-structural-gap` — none of which are in `qou-bdkx`'s list of
 4, because that list came from the gate and the gate is blind to this shape.
+
+
+---
+
+## Addendum 2026-08-28 — the superseded value has TWO renderings; any exact-string detector must stop at 18 sig digits
+
+Measured while reading the 19 genuine superseded-muon candidates from the
+`qou-1c4y` triage (PR #5892). **This does NOT add a fourth pin** — the item
+this bean tracks (muon-canonical vs the 3.15e-12 variant) is unchanged.
+
+Two *string renderings* of the superseded value circulate:
+
+| rendering | files | example site |
+|---|---:|---|
+| `1.10997859555418057528…` (this bean's table) | **107** | content `.qa.json`, beans, AGENTS.md |
+| `1.10997859555418056776…` | **5** | `d-from-scratch`, `q0-value-drift-audit`, 3 under `_deprecated/` |
+
+They diverge at the **19th significant digit** (`…05` then `7528` vs `6776`),
+|d| ~ 7e-19. That is three orders below the 3.15e-12 this bean is about and
+below the 1 ppQ (1e-15) L1 target, so it moves no observable and is not a
+ruling question. It is a *detector* question.
+
+**Consequence, and it already cost two scans today.** An exact-match detector
+built on the recorded 19-char string `1.10997859555418057` reports **0** hits
+on nine of the nineteen candidates, all of which genuinely carry the value.
+`computations/audits/q0_muon_population_partition.py` is safe by construction
+(`MUON_OLD = "1.109978595554180"`, 16 digits, with a comment showing the
+prefix length was deliberate) and its count of 19 stands — the re-scan was
+the wrong instrument, not the triage.
+
+**Rule for anyone matching this value:** use a prefix of **≤ 18 significant
+digits**. 14 is the shortest that still separates superseded from current
+(`1.109978595554` vs `1.109978595557`); 11–13 are AMBIGUOUS between them.
+Do not paste the full literal out of this bean or AGENTS.md into a `in`
+test — both record the *rounded* rendering, and the corpus stores the
+*truncated* one.
+
+Second, unrelated blind spot found in the same pass: witness stems drop a
+producer's `_probe` suffix, so `alpha_em_smatrix_perloop_probe` resolves to
+`computations/alpha_em/alpha-em-smatrix-perloop.witness.json`. A
+stem-equals-producer-name lookup returns NO FILE for it, for
+`qbeta_h4_route_a_gate_probe`, and for `derived_masses`.
