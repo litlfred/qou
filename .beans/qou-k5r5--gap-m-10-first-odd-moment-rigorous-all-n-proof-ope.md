@@ -291,3 +291,24 @@ UNDETERMINED order (bulk and edge both plausible). Open.
 2026-08-28 TRACK A + D CONVERGENT FINDINGS (PR #5882 Track A, #5887 Track D). Two independent routes to the asymptotic sign kappa_n>=kappa now have PROVED obstructions: (A) Sniady character genus expansion Thm 4.14 does NOT apply — exact transition-measure free-cumulant probe shows Sigma_h=1/2(p2+p2') is NOT a free-cumulant polynomial (transpose-invariant but ODD leading degree, E_Planch[Sigma_h]~n^1.5; every transpose-invariant R-poly has EVEN degree). Its antisym partner 1/2(p2-p2')=1/2 R3 IS in A. So Sigma_h notin A; Thm 4.14 expands A-elements only. ALSO fixed a x3 normalisation error: R4=3*omega3-n (matches Lean r4Value), so omega3=(R4+R2)/3 and M1=(1/3)Cov(Sigma_h,R4) — sign unchanged. (D) Fulman Stein/exchangeable-pair ERROR TERM walls (no N0): a Berry-Esseen MAGNITUDE bound cannot certify a one-sided SIGN; Fulman's statistic is W~Sigma_c not Sigma_h; counterfactual constant ~1e17. Both tracks converge: Sigma_h being outside the char/eigenfunction algebra is the crux. ONLY remaining live route for the asymptotic sign = shape-field / linear-statistic SECOND-ORDER theory (Dolega-Feray Gaussian fluctuations of Young diagrams, 1402.4615/1704.02352), where Sigma_h is a legitimate test function. Track B (exact kappa_n) extending past n<=67, still >kappa. qou-k5r5 OPEN.
 
 2026-08-28 SHAPE-FIELD RECON (the 3rd tool): Dolega-Feray 1402.4615 / Dolega-Sniady 1704.02352 give the CLT LIMIT = kappa (already have it), NOT the finite-n rate kappa_n-kappa; also Jack-character observables (Sigma_h notin A again). So ALL THREE standard tools are now pruned with distinct reasons: (1) Sniady genus Thm 4.14 obstructed by Sigma_h notin A; (2) Fulman Stein = marginal Berry-Esseen, not a covariance sign; (3) Dolega-Feray = limit not rate. CONSOLIDATED VERDICT: the sign of kappa_n-kappa (n>=13) is a bespoke rate-of-convergence result (finite-n correction to a limiting Plancherel covariance with near-cancelling P,N ~n^5/2), not closeable off-the-shelf — matches this bean's original assessment. Defensible arc status: kappa>0 DERIVED + M1>0 exact n<=67 (Track B extending) + Lean k<=8. All-n sign = explicitly-scoped OPEN rate problem. qou-k5r5 OPEN.
+
+TRACK D (2026-08-28, PR #5887, branch claude/m1-fulman-stein-finite-n-2026-08-28).
+Tested: can Fulman's Stein/exchangeable-pair ERROR-TERM machinery (arxiv-math-0305423,
+Thm 1.2's 40.1 n^-1/4; Thm 1.3 assembled from exact Prop 4.5 + Prop 4.6) bound the
+second-order correction kappa_n - kappa from BELOW by 0 for n>=13? VERDICT: NO, Track D
+WALLS (scope-(a) negative). Three reasons: (1) TYPE MISMATCH, fatal & n-independent -
+Thm 1.2/1.3 bound a KOLMOGOROV DISTANCE of the MARGINAL W; a magnitude bound
+|kappa_n-kappa|<=B_n is two-sided and can NEVER certify the ONE-SIDED sign
+kappa_n-kappa>=0 (it gives only kappa_n >= kappa - B_n < kappa). No N0 exists; N0=inf.
+(2) WRONG STATISTIC: W ~ Sum c in Lambda*; M_1 pairs omega3 with Sum h, which is NOT in
+Lambda* / not a J-eigenfunction (the wall). Fulman's Prop 4.3/4.5 exact formulas are for
+W, none reaches a covariance with Sum h. (3) VACUOUS: bound/margin ~1.6e5 at n0=13
+(exact margin kappa_n-kappa = 1.3e-4..1.5e-3 on [13,30], SHRINKS to 0); counterfactual
+N0 (ignoring 1,2) ~4.6e17 (Thm 1.2), ~6.8e8 (conj C=40.1 n^-1/2) - all astronomically
+past 13. REUSABLE: the exact exchangeable-pair COVARIANCE IDENTITY (Cov=1/(2(1-beta))*
+E[Df Dg]) is already on main and is circular for the all-n sign. NOT reusable: the error
+term. The finite-n sign must come from a second-order-cumulant (Sniady genus-1) computation,
+NOT Fulman's first-order Berry-Esseen. Probe: computations/deltalambda/
+wlambda_covariance_epic_M1_fulman_stein_finite_n_bound.py (exit 0, exact Fraction/mpmath,
+no float64, nothing wired, no c_k). Audit: docs/audits/2026-08-28-covariance-kernel-M1-
+fulman-stein-finite-n.md. Gap stays OPEN. Not laundered.
