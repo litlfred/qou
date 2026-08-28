@@ -156,7 +156,7 @@ def main():
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, q0_anchor=None)
+            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
 
     print("=== T3 : Z3 carrier q=1-order preflight ===")

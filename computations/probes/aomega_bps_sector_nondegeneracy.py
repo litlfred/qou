@@ -127,7 +127,7 @@ def main():
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, q0_anchor=False)
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"open-sector 4_1 count = {open_count_4_1} (det); reproduces {{3,4}}? {open_reproduces}")
     print(f"closed-sector reduced-Stokes = {reduced_stokes} ∈ {ggm_dt_spectrum}? {closed_reproduces}")

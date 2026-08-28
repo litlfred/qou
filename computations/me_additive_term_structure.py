@@ -257,7 +257,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     payload.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        payload, script_path=__file__, q0_anchor=False)
+        payload, script_path=__file__, engine=None, q0_anchor=False)
     _OUT.write_text(json.dumps(payload, indent=2) + "\n")
     print(f"\nwrote {_OUT.relative_to(HERE.parent)}")
     return 0

@@ -10,12 +10,30 @@ WHAT THIS INSERTS
 
 Immediately before the statement that writes the witness:
 
-    WitnessBuilder.stamp_staleness_metadata(
-        <payload>, script_path=__file__, q0_anchor=False)
+    import os as _os
+    from qou_substrate.witness import WitnessBuilder as _WB
+    <payload>.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        <payload>, script_path=__file__, engine=None, q0_anchor=False)
 
-plus the import if absent. `stamp_staleness_metadata` is the corpus's own
-helper for "the filename is non-standard and wrap_legacy().save() cannot be
-applied", which is precisely this population.
+`stamp_staleness_metadata` is the corpus's own helper for "the filename is
+non-standard and wrap_legacy().save() cannot be applied", which is precisely
+this population. Two of those four lines exist for reasons worth stating:
+
+* **the `setdefault`**, because the helper does NOT write `scriptFile` -- it
+  stamps scriptHash / scriptCommitSha / commitSha / engine / computedAt /
+  durationMs. The first pass of this migration omitted the line and therefore
+  added staleness metadata to 282 producers while leaving every one of their
+  witnesses still unable to name its producer. `setdefault` rather than `=`
+  so an existing attribution is never silently rewritten: a regenerator such
+  as `regenerate_y_lambda_orphans_conventionD.py` writes witnesses belonging
+  to OTHER producers, and it is in this population.
+* **`engine=None`**, the "keep what the payload already declares" sentinel
+  added to the helper alongside this pass. Without it the helper's
+  unconditional `payload["engine"] = engine` downgrades a producer's own value
+  -- measured, `"sympy+mpmath"` -> `"python"` with `engineVersion` left reading
+  `"sympy 1.14.0, mpmath 1.4.1"`, an internally contradictory witness produced
+  by a pass whose whole purpose was better provenance.
 
 WHY AST AND NOT A REGEX
 
@@ -385,7 +403,7 @@ def apply_one(plan: dict) -> str | None:
         f"{pad}{plan['payload']}.setdefault("
         f'"scriptFile", _os.path.basename(__file__))',
         f"{pad}_WB.stamp_staleness_metadata(",
-        f"{pad}    {plan['payload']}, script_path=__file__, q0_anchor={anchor})",
+        f"{pad}    {plan['payload']}, script_path=__file__, engine=None, q0_anchor={anchor})",
     ]
     lines[idx:idx] = block
     path.write_text("\n".join(lines))

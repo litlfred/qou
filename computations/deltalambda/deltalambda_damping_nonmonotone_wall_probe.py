@@ -195,7 +195,7 @@ from qou_substrate.witness import WitnessBuilder as _WB
 import os as _os  # noqa: E402 -- provenance stamp
 witness.setdefault("scriptFile", _os.path.basename(__file__))
 _WB.stamp_staleness_metadata(
-    witness, script_path=__file__, q0_anchor=False)
+    witness, script_path=__file__, engine=None, q0_anchor=False)
 OUT.write_text(json.dumps(witness, indent=1, ensure_ascii=False))
 print(f"\nwrote {OUT.relative_to(ROOT)}  allPassed={all_passed}")
 sys.exit(0 if all_passed else 1)

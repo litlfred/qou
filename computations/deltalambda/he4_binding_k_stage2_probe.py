@@ -575,7 +575,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        wit, script_path=__file__, q0_anchor=None)
+        wit, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)
     # Completed cleanly — drop the resume caches so the next run is fresh.
     for _c in (legA_prog, legB_prog):

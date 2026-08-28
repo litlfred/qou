@@ -183,7 +183,7 @@ def emit_witness():
     from qou_substrate.witness import WitnessBuilder as _WB
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        out, script_path=__file__, q0_anchor=False)
+        out, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(out,open(_HERE_W / "hecke-regular-nf-h4.witness.json","w"),indent=1)
     print("witness written; markov_reduction_H4:",mk_ok,"parab:",par4)
 

@@ -234,7 +234,7 @@ def main():
     from qou_substrate.witness import WitnessBuilder as _WB
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        out, script_path=__file__, q0_anchor=False)
+        out, script_path=__file__, engine=None, q0_anchor=False)
     wpath.write_text(json.dumps(out, indent=2) + "\n")
     print("cov(k) ≤ 0 all k≤%d: %s" % (KMAX_COV, out["cov_all_nonpos"]))
     print("NARROWING B — transpose summand-invariant: %s | T₂ content-form all zero: %s"

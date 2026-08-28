@@ -187,7 +187,7 @@ with open(pathlib.Path(__file__).resolve().parent / "gswz_frobenius_teichmuller.
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, q0_anchor=False)
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

@@ -261,7 +261,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     payload.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        payload, script_path=__file__, q0_anchor=None)
+        payload, script_path=__file__, engine=None, q0_anchor=None)
     WITNESS.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     print(f"WROTE {WITNESS.name} — 77/77, partial=False", flush=True)
     return 0

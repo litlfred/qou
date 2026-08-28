@@ -244,7 +244,7 @@ def _save_mpm_disk(n: int):
         import os as _os  # noqa: E402 -- provenance stamp
         payload.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            payload, script_path=__file__, q0_anchor=None)
+            payload, script_path=__file__, engine=None, q0_anchor=None)
         f.write_text(json.dumps(payload))
     except Exception:
         pass

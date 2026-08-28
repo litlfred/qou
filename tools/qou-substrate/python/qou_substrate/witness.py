@@ -1608,7 +1608,7 @@ class WitnessBuilder:
         payload: dict,
         *,
         script_path: Union[str, Path],
-        engine: str = "python",
+        engine: Optional[str] = "python",
         engine_version: Optional[str] = None,
         q0_anchor: Union[str, bool, None] = None,
         q0_value: Optional[str] = None,
@@ -1649,8 +1649,24 @@ class WitnessBuilder:
         out to be inert is a labelling problem, while a MISSING anchor on a
         witness that does depend on q₀ is the ambiguity the field exists to
         prevent.
+
+        ``engine`` accepts ``None`` meaning **keep whatever the payload already
+        declares**, falling back to ``"python"`` when it declares nothing. The
+        default stays the literal ``"python"``, so all 959 existing call sites
+        behave byte-identically; only a caller that opts in gets preservation.
+
+        It exists because the unconditional ``payload["engine"] = engine`` below
+        silently DOWNGRADES a producer's own, more specific value. Measured
+        while migrating bean ``qou-4un2``: stamping
+        ``qbeta-5two-leading-odd-datum`` rewrote ``engine`` from
+        ``"sympy+mpmath"`` to ``"python"`` while leaving ``engineVersion``
+        reading ``"sympy 1.14.0, mpmath 1.4.1"`` — an internally contradictory
+        witness, produced by a pass whose entire purpose was better provenance.
+        ``kappa-provenance`` lost ``"python-stdlib"`` the same way.
         """
         spath = str(script_path)
+        if engine is None:
+            engine = payload.get("engine") or "python"
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()

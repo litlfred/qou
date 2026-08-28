@@ -556,3 +556,43 @@ def test_only_False_suppresses_not_any_falsy_value():
     )
     assert payload.get("q0Anchor") == ""
     assert "q0Anchor" in payload
+
+
+def test_engine_none_preserves_the_payloads_own_declaration(tmp_path):
+    """`engine=None` keeps what the producer already declared.
+
+    Without it the helper's unconditional `payload["engine"] = engine`
+    DOWNGRADES a producer's own, more specific value. Measured while migrating
+    bean qou-4un2: `qbeta-5two-leading-odd-datum` went from "sympy+mpmath" to
+    "python" while `engineVersion` still read "sympy 1.14.0, mpmath 1.4.1" --
+    an internally contradictory witness written by a provenance pass.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+
+    declared = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        declared, script_path=str(script), engine=None, q0_anchor=False)
+    assert declared["engine"] == "sympy+mpmath"
+
+    bare = {}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        bare, script_path=str(script), engine=None, q0_anchor=False)
+    assert bare["engine"] == "python", "None on a bare payload falls back"
+
+
+def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
+    """The 603 call sites relying on the default must not shift.
+
+    `engine` defaults to the literal "python", NOT to None, precisely so that
+    adding the sentinel changes no existing caller's behaviour. If someone
+    "tidies" the default to None later, every one of those call sites silently
+    starts preserving instead of overwriting -- which is the opposite of what
+    they were written against.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+    payload = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=str(script), q0_anchor=False)
+    assert payload["engine"] == "python"

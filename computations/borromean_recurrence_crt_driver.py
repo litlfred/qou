@@ -273,7 +273,7 @@ def main() -> int:
             import os as _os  # noqa: E402 -- provenance stamp
             op.setdefault("scriptFile", _os.path.basename(__file__))
             _WB.stamp_staleness_metadata(
-                op, script_path=__file__, q0_anchor=False)
+                op, script_path=__file__, engine=None, q0_anchor=False)
             Path(__file__).with_name(
                 "borromean-diagonal-recurrence-operator.json").write_text(
                 json.dumps(op, indent=1) + "\n")

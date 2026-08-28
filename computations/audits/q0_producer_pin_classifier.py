@@ -591,7 +591,7 @@ def main(argv: list[str] | None = None) -> int:
         from qou_substrate.witness import WitnessBuilder as _WB
         proposal.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            proposal, script_path=__file__, q0_anchor=None)
+            proposal, script_path=__file__, engine=None, q0_anchor=None)
         Path(args.emit_proposal).write_text(json.dumps(proposal, indent=2) + "\n")
         print(f"\n  proposal -> {args.emit_proposal}")
 

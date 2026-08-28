@@ -183,7 +183,7 @@ def main() -> int:
         import os as _os  # noqa: E402 -- provenance stamp
         wit.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            wit, script_path=__file__, q0_anchor=None)
+            wit, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(wit, f, indent=1)
     print(f"\nworst |Δ|/ref = {float(worst):.2e}  ({'ALL 1ppQ' if all_ok else 'FAIL'})")
     print(f"witness -> {out.name}  allPassed: {wit['allPassed']}  "

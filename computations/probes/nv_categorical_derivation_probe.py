@@ -199,7 +199,7 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        out, script_path=__file__, q0_anchor=None)
+        out, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print()
     print(f"Wrote: {out_path}")

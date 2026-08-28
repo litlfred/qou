@@ -206,7 +206,7 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        wit, script_path=__file__, q0_anchor=False)
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2) + "\n")
     print(f"\nwitness → {out.name}")
     return 0

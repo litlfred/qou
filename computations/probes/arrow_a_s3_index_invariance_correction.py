@@ -150,7 +150,7 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     wit.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        wit, script_path=__file__, q0_anchor=False)
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     (sp.with_name("arrow-a-s3-index-invariance-correction.witness.json")).write_text(json.dumps(wit, indent=2) + "\n")
     print(f"\nwitness → arrow-a-s3-index-invariance-correction.witness.json")
     return 0 if ok else 1
