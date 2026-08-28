@@ -101,3 +101,23 @@ The prose note says *"The kernel pass has seen 51 of 2257 QOU modules"* while th
 block records `modules_scanned: 53`. Both round to 2.3 %, so the percentage
 cannot disambiguate them. Left alone rather than guessed at — that is
 `qou-0avp`'s number to confirm.
+
+---
+
+## Duplicate note 2026-08-28 — a sibling filed this first, and I did not check
+
+**`qou-6gdb`** records the same finding (*"raw-float64 in
+docs/audits/2026-08-26-kernel-defeq-sample.witness.json (2 coverage pcts) —
+takes the audits-tree ratchet red"*), filed **15:50**, before this bean at
+~18:00. So this one is the duplicate, not theirs.
+
+It cost nothing here — theirs is now `scrapped` with *"Nothing to merge. The
+gate is green on main via their fix"*, so they saw the fix land and stood down,
+and no work was done twice. But the duplicate exists because I filed without
+running **corpus-grep path 6** (`grep -rl <topic> .beans/`), which AGENTS.md
+added on 2026-08-26 for exactly this: a prior agent's conclusion sitting in a
+bean and nowhere else.
+
+Keeping both rather than scrapping this one: it carries the fix's measurements
+(`53/2257`, `53/2155`, the strict before/after) and the "there is no producer"
+finding, which theirs does not. The redundancy is in the filing, not the content.

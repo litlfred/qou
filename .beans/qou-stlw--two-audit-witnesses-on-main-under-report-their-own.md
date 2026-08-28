@@ -1,7 +1,7 @@
 ---
 # qou-stlw
 title: 'Two audit witnesses on main under-report their own live counts (stale-low ratchets)'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-28T00:00:00Z
@@ -123,3 +123,28 @@ four to corpus drift.
   bean guessed this correctly.
 
 Witness refreshed, with both causes known.
+
+---
+
+## Status flip 2026-08-28 — this bean sat at `todo` with a RESOLVED section above it
+
+Recorded rather than silently corrected, because the failure is the one
+AGENTS.md §3 exists to catch: I wrote the resolution into the body and never
+changed `status:`. A reader running `beans list` saw an open item; a reader
+opening the file saw a closed one. Both halves are required and I did one.
+
+The work itself is done and merged (#5899, and `ad65db8d49` for the
+`y_lambda` half — see below). Flipping to `completed` now.
+
+### Cross-reference, and a duplicate of mine
+
+A sibling filed **`qou-6gdb`** for the same `docs/audits` float64 finding at
+15:50, before my `qou-f64d` at ~18:00 — so **`qou-f64d` duplicates it**. Theirs
+is now `scrapped` with the note *"Nothing to merge. The gate is green on main
+via their fix"*, i.e. they saw mine land and stood down. The coordination
+worked; the duplicate bean is the cost of my not grepping `.beans/` for the
+finding before filing. That is corpus-grep path 6, which I did not run.
+
+Their bean also records, accurately, that my `qou-stlw` *"landed only an audit
+doc"* on the `y_lambda` half — correct: I dropped my code fix mid-rebase in
+favour of theirs (`ad65db8d49`), which is what main carries.

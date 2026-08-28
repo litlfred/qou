@@ -1,11 +1,11 @@
 ---
 # qou-ylcp
 title: 'y_lambda_two_row_cap_gate.py trips the import-time-dps ratchet on main (new_not_baselined 0 -> 1)'
-status: todo
+status: completed
 type: task
 priority: medium
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-08-28T16:32:49Z
+updated_at: 2026-08-28T00:00:00Z
 ---
 
 `scripts/precision-gates.sh` is RED on `main` (measured 2026-08-28, not
@@ -47,3 +47,21 @@ gate run to learn them:
 
 Regenerating them is clean and mechanical; it was deliberately not carried on
 the Lean branch.
+
+---
+
+## FIXED on main 2026-08-28 — `ad65db8d49`, by a sibling
+
+`fix(y_lambda gate): raise dps before the module-scope mpf, draining the
+ratchet` (PR #5898) puts `set_compute_dps()` at module scope above
+`CAP_RATIO_MAX`, using the file's existing `_precision` import.
+
+Verified on main just now: `mpf_import_time_dps_audit` reports
+`literal 0 / expr 20`, **NEW files (not baselined) 0**, **REGRESSED 0** — the
+`new_not_baselined 0 -> 1` this bean names is back to 0. The gate itself still
+PASSes on all four rows.
+
+I independently wrote the same fix against `qou-stlw` and **dropped it during a
+rebase** in favour of this one, which is cleaner (it reuses the existing import
+rather than adding a second path to `qou_substrate`). Recorded so the two beans
+are not read as two separate fixes: there is one, and it is `ad65db8d49`.
