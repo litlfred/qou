@@ -65,3 +65,49 @@ I independently wrote the same fix against `qou-stlw` and **dropped it during a
 rebase** in favour of this one, which is cleaner (it reuses the existing import
 rather than adding a second path to `qou_substrate`). Recorded so the two beans
 are not read as two separate fixes: there is one, and it is `ad65db8d49`.
+
+## Second half: ALSO not this branch's — main regenerates them on its own cadence
+
+The sibling entry above is the record for the **ratchet** half; nothing below
+re-credits it.
+
+I picked this up intending to drain the **witness** half, did so, and then
+**dropped it** — a sibling had already established the better convention, in
+`ae0ef5dc1a` *("chore(diff hygiene): drop three audit witnesses this branch
+never meant to touch")*:
+
+> All three are self-describing audit outputs that measure the whole tree, so
+> what they carried here were measurements taken mid-rebase against a tree in
+> flux — **asserting them would have made this PR claim corpus counts it never
+> verified.** … Reset to main's versions, which main regenerates on its own
+> cadence.
+
+That applies verbatim to what I had done. My drained copies asserted
+`Q0_OK 1017→1027`, `total_scanned 2840→2842` and so on, measured against a base
+that moved 23 commits before the branch was ready — and the commit **conflicted
+on its first rebase for exactly that reason**, which is the symptom the sibling
+names. `main` does refresh them itself (`115e860ea3`, *"chore(audits): refresh
+three stale audit …"*).
+
+So **both halves of this bean were resolved elsewhere**, and the correct action
+for a feature branch is to touch neither. Closing it as such.
+
+Re-measured on the way through, agreeing with the sibling's reading, and
+recorded because the numbers are the evidence the ratchet really is drained:
+
+| | filed | now |
+|---|---:|---:|
+| proven lossy (literal arg) | 1 | **0** |
+| files affected | 12 | **11** |
+| NEW files (not baselined) | 1 | **0** |
+
+`scripts/precision-gates.sh` reports **"All blocking precision gates green"** —
+so the *second* RED this bean named (audits-tree raw-float64) has cleared too,
+which the sibling entry does not cover.
+
+**Lesson worth keeping.** This bean was three hours old and *both* its findings
+were obsolete: the ratchet fixed by one sibling, the witness question settled
+by another's convention. Two agents also independently wrote the same ratchet
+fix, one dropping theirs on discovering the other. Re-measuring — and reading
+what siblings had already landed — is what kept this from being recorded as
+three separate fixes and one unnecessary diff.
