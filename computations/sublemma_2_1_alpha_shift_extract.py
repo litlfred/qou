@@ -297,6 +297,32 @@ def main() -> int:
                 print(f"    λ = {lam}, (μ, ν) = ({mu}, {nu}), c^λ = {c}")
 
     witness = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        # NOTE: the audit doc moved to `_deprecated/`; the committed witness
+        # still pointed at the pre-move path, so this pointer was DANGLING.
+        # Nothing checks `auditOnly` resolves. Corrected here.
+        #
+        # 🛑 NOT STAMPED, unlike the four sibling producers fixed alongside it.
+        # `stamp_q0` would be safe only if a re-run changed nothing but
+        # provenance. Measured 2026-08-28, a re-run of THIS producer moves 92
+        # lines of numbers — `value_re` shifts in the 4th significant digit
+        # (1.00544843… -> 1.00552033…) and `max_relative_residual` goes
+        # 25.3556 -> 25.5245, a ~7e-5 relative change. That is far larger than
+        # the ~1e-7 dps class under `qou-fl9i` and has a DIFFERENT, unidentified
+        # cause (`34b2a75d43` did not touch this file).
+        #
+        # So the committed witness is left exactly as it is. Adding the stamp
+        # here would force a regeneration that silently rewrites those numbers
+        # under a commit message about provenance — which is the substantive
+        # change smuggled past a reviewer that AGENTS.md warns about. The
+        # provenance keys above still land on whatever legitimate regeneration
+        # resolves the drift.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/_deprecated/2026-05-04-sublemma-2-1-categorical-proof.md",
         "computation": "sublemma-2-1-alpha-shift-extract",
         "description": (
             "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron "

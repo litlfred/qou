@@ -166,6 +166,16 @@ def main() -> int:
     print("    open per the audit doc.")
 
     out = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        # NOTE: the audit doc moved to `_deprecated/`; the committed witness
+        # still pointed at the pre-move path, so this pointer was DANGLING.
+        # Nothing checks `auditOnly` resolves. Corrected here.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/_deprecated/2026-05-05-nv-categorical-impasse.md",
         "computation": "nv-categorical-derivation-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
