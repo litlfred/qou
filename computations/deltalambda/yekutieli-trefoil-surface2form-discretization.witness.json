@@ -1,7 +1,7 @@
 {
  "computation": "yekutieli-trefoil-surface2form-discretization",
  "scriptFile": "yekutieli_trefoil_surface2form_discretization_probe.py",
- "computedAt": "2026-08-25T16:52:56.704263+00:00",
+ "computedAt": "2026-08-28T15:50:02.742221+00:00",
  "engine": "mpmath mpf (pure 2x2 matrices; 0 free params; structural validation)",
  "free_parameters": 0,
  "inputs": {
@@ -37,5 +37,7 @@
  "scope": "scope-(a): builds + validates the discretization (the qou-prjo 'missing' object) and quantifies the abelian(0)/non-abelian(O(h\u00b2)) dichotomy. Does NOT close the deuteron number (reduced-Burau is a toy germ, not the canonical pn-interface holonomy). No fit; nothing wired.",
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
- "notes": "Grounds \u00bdP\u222e\u222e[F_q,F_q] in the corpus germ F_q (germ-commutator-q-curvature); remaining gap = the non-abelian interface handle holonomies (qou-jqof/qou-dp32)."
+ "notes": "Grounds \u00bdP\u222e\u222e[F_q,F_q] in the corpus germ F_q (germ-commutator-q-curvature); remaining gap = the non-abelian interface handle holonomies (qou-jqof/qou-dp32).",
+ "q0Anchor": "muon",
+ "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

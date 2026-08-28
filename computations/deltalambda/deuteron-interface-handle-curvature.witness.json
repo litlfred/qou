@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-interface-handle-curvature",
  "scriptFile": "deuteron_interface_handle_curvature_probe.py",
- "computedAt": "2026-08-25T16:52:56.986225+00:00",
+ "computedAt": "2026-08-28T15:50:02.552544+00:00",
  "engine": "mpmath mpf (H\u2086 Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -222,5 +222,7 @@
  "scope": "scope-(a): computes + characterizes the interface germ curvature (the missing handle holonomies). Does NOT close the deuteron MeV binding \u2014 needs the pairing tr_M(\u03c1_deuteron\u00b7dF_q) (raw trace is 0) + \u03bb-weighting (open). No fit; nothing wired.",
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
- "notes": "Feeds surface2Form(V_trefoil,[A_a,A_b])=[A_a,A_b]=F_q (Lean). Remaining: the canonical binding pairing (qou-jqof/qou-dp32)."
+ "notes": "Feeds surface2Form(V_trefoil,[A_a,A_b])=[A_a,A_b]=F_q (Lean). Remaining: the canonical binding pairing (qou-jqof/qou-dp32).",
+ "q0Anchor": "muon",
+ "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

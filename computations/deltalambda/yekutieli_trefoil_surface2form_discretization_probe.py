@@ -32,6 +32,8 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "substrate"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+from _witness_q0_stamp import stamp_q0  # noqa: E402
+
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 
@@ -146,6 +148,11 @@ def main() -> None:
                  "remaining gap = the non-abelian interface handle holonomies (qou-jqof/qou-dp32).",
     }
 
+    # Provenance stamp (bean 1j39): this producer hand-rolls json.dump and so
+    # never reaches WitnessBuilder.build(), which is where q0Anchor is set.
+    # Without this the witness stays unstamped permanently — re-running it
+    # cannot fix that. Adds two keys; touches nothing else.
+    stamp_q0(witness, __file__)
     out = os.path.join(os.path.dirname(__file__), "yekutieli-trefoil-surface2form-discretization.witness.json")
     with open(out, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=1)

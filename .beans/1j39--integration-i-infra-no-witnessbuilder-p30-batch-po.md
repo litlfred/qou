@@ -49,3 +49,71 @@ to any number.
 This gives the port a second, sharper justification beyond consistency: it is
 the difference between a witness that becomes verifiable on its next run and
 one that stays unverifiable permanently.
+
+---
+
+## 2026-08-28 — the 4 are ported; the CLASS is measured; `cmiy` still owns the full port
+
+### What landed
+
+The four named producers now stamp, via a new shared helper
+[`computations/_witness_q0_stamp.py`](../computations/_witness_q0_stamp.py)
+(`stamp_q0(payload, __file__)`, called immediately before `json.dump`). Each
+witness gained **exactly two keys** and nothing else:
+
+    + "q0Anchor": "muon"
+    + "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+
+All four resolve **muon** — a `qou-1c4y` datum in itself: these were invisible to
+every anchor audit and belong to the population that migration has to move.
+Measured after re-running all four: 16 insertions / 8 deletions across the four
+witnesses, and **0** changed lines outside `computedAt` / `notes` / the two new
+keys. Assertions still pass, exit 0 on all four.
+
+### A stamp, deliberately, NOT the WitnessBuilder port
+
+This bean proposes porting to `WitnessBuilder`; that is still the right end state
+and is still `cmiy`. But a hand-rolled payload is an arbitrary dict, so the port
+reshapes each witness file — a large per-file diff, 120 times. The stamp adds the
+two provenance keys and touches nothing else, so it applies uniformly across the
+class where the port does not. A stamped hand-rolled witness still lacks
+`environment` / `scriptHash` / `commitSha` / `precisionMetadata`. **`cmiy` is not
+discharged by this.**
+
+### The class, measured on `main` (this is the number `cmiy` needs to size itself)
+
+    witnesses carrying q0Anchor                          1103
+    unstamped, no resolvable pin                         1897
+    UNSTAMPED but carrying a resolvable pin at depth <=3  169
+      -> attributed to a named producer                  124   (120 producers)
+      -> UNATTRIBUTED, scriptFile null                     45   (cannot be ported)
+
+Producers using `WitnessBuilder`: 1341. Hand-rolled `json.dump` with no builder:
+251. Every one of the 169 is hand-rolled, confirming this bean's premise.
+
+The **45 unattributed** are the harder half and are not addressable by either
+route: with `scriptFile` null there is no producer to port or to re-run. They are
+the "bare producers" class this bean's own earlier entry names.
+
+### Two defects I introduced and caught before they shipped
+
+1. **The helper stamped payloads with NO pin.** `resolve_q0_anchor_payload_first`
+   consults the payload first but *falls back to the manifest/env* when there is
+   no payload evidence — measured, `{"zzz": 1}` resolves to `("proton", <proton
+   pin>)`. Right for `WitnessBuilder`, which knows what q₀ its producer was
+   handed; **wrong** here, where it would assert a layer the numbers may not
+   belong to, with a provenance field vouching for it — the exact straddle this
+   work exists to expose, manufactured by the tool meant to reveal it. Fixed:
+   `stamp_q0` now requires the payload to carry a recognisable pin at depth ≤ 3,
+   and an unstampable witness stays visibly unstamped. Five-case self-check in
+   the commit.
+2. **A regex patch hit the wrong site.** My `out = … with open(out, "w")` anchor
+   also matched a *local* `out` inside `surface2Form()` in the yekutieli probe,
+   injecting `stamp_q0(witness, …)` where `witness` is undefined —
+   `NameError`, caught by running it. Re-patched by hand against the witness
+   *filename literal*. Confirmed against the pre-change file that the failure was
+   mine, not pre-existing.
+
+### Still true
+
+This bean remains a DUPLICATE of `cmiy` and is still owner-close-when-convenient.
