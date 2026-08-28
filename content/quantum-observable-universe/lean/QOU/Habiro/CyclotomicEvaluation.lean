@@ -145,6 +145,36 @@ theorem habiroEval_ne_zero_of_head_not_dvd_one (a : ℕ → R) (ζ : R) {N : ℕ
   have : qPochDiag ζ 1 = 1 - ζ := by unfold qPochDiag; simp
   rw [this]; exact hhead
 
+theorem habiroEval_two (a : ℕ → R) (ζ : R) :
+    habiroEval a ζ 2 = a 0 + a 1 * (1 - ζ) := by
+  unfold habiroEval qPochDiag
+  simp [Finset.sum_range_succ]
+
+theorem qPochDiag_two (ζ : R) : qPochDiag ζ 2 = (1 - ζ) * (1 - ζ ^ 2) := by
+  unfold qPochDiag
+  simp [Finset.prod_range_succ]
+
+/-- **j = 2 specialisation — the index that is actually usable at `ζ_{2p}`.**
+
+    `habiroEval_ne_zero_of_head_not_dvd_one` is vacuous at every odd prime,
+    because `Norm(1 - ζ_n) = Φ_n(1) = 1` unless `n` is a prime power, so
+    `1 - ζ_{2p}` is a **unit** there and `head_criterion_vacuous_of_isUnit`
+    applies. At `j = 2` the divisor picks up the second factor `1 - ζ² = 1 - ζ_p`,
+    whose norm is `Φ_p(1) = p`; that is a non-unit at every prime, so this form of
+    the criterion has content everywhere.
+
+    Concretely, in `ℤ[ζ_{2p}] = ℤ[ζ_p]` with `𝔭 = (1 - ζ_p)` the unique prime above
+    `p` and residue field `𝔽_p` (in which `ζ_{2p} ≡ -1`), the hypothesis reduces to
+    the single integer condition `a₀(-1) + 2·a₁(-1) ≢ 0 (mod p)` — one integer per
+    series, deciding non-vanishing at **every** odd prime outside its finite set of
+    divisors, with no dependence on how far the coefficients are known. -/
+theorem habiroEval_ne_zero_of_head_not_dvd_two (a : ℕ → R) (ζ : R) {N : ℕ} (h : 2 ≤ N)
+    (hhead : ¬ ((1 - ζ) * (1 - ζ ^ 2) ∣ a 0 + a 1 * (1 - ζ))) :
+    habiroEval a ζ N ≠ 0 := by
+  apply habiroEval_ne_zero_of_head_not_dvd a ζ h
+  rw [habiroEval_two, qPochDiag_two]
+  exact hhead
+
 /-- A unit head-divisor makes the criterion unusable — stated so the failure mode
     is a theorem, not a footnote. -/
 theorem head_criterion_vacuous_of_isUnit (a : ℕ → R) (ζ : R) {j : ℕ}
