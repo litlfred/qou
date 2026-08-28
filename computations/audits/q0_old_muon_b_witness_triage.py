@@ -45,6 +45,13 @@ the witness is stale or is a correct record OF staleness:
                 wrong — the live muon source returns C — but correcting it is
                 the A->C anchor migration in substance, on files #5500 does not
                 select.  Reported, not drained unilaterally.
+    SCANNER     the witness belongs to a corpus-scanning auditor and contains
+                B because it FOUND B (`hits[].text`, `data.rows[].issues[]
+                .literal`).  It is a report, not a pin; B stays after a re-run
+                for as long as B is anywhere in the tree.  Such a witness can
+                still be stale -- `q0_consistency_audit`'s hit list moved
+                253 -> 318 -- but that is stale AUDIT OUTPUT, a different
+                finding from a stale anchor, and must not be counted as one.
     PRIMARY     the key is the producer's own working q0 (`parameters.q_0`,
                 `q_0`, `q0`, `q`) with nothing marking it as a reference.  The
                 producer computed its result at B.  This is the clean drain.
@@ -99,6 +106,23 @@ HISTORICAL_MARKS = ("stale", "old_", "_old", "legacy", "historical",
 # comparison.  Wrong (the live muon source returns C) but its correction is the
 # A->C migration, which is PR #5500's subject.
 MUON_LEG_MARKS = ("muon", "anchor")
+# A key fragment marking the occurrence as SCANNED EVIDENCE: the witness of a
+# corpus-scanning auditor, which contains B because it FOUND B in the tree.
+# Such a witness is not stale-because-of-its-q0 -- it is a report, and B will
+# still be in it after a re-run for as long as B is anywhere in the corpus.
+#
+# This class was not in the first version of this file and had to be measured
+# into existence.  `fitted_labelled_canonical_audit` and `q0_consistency_audit`
+# both came back SUBSTANTIVE with B still present afterwards; reading the
+# actual values explained why -- `data.rows[].issues[].literal` is
+# '1.1099785955541805' quoted FROM a source file, and `hits[].text` is the
+# whole line 'q0_proton = 1.10997858275138...  q0_muon = 1.10997859555418...'.
+# Neither is the producer's own pin.  A path-name rule alone would have kept
+# calling them PRIMARY, i.e. would have reported a scanner's correct report as
+# a stale anchor.
+SCANNER_MARKS = ("hits", "rows", "issues", "literal", "candidates", "matches",
+                 "findings", "evidence", "text", "line", "sample", "snippet",
+                 "occurrences", "offenders", "violations")
 
 # Producers that must legitimately keep a muon-side value: their witness is a
 # record of, or a comparison against, the muon layer.  Established BEFORE any
@@ -153,14 +177,15 @@ def classify_paths(paths):
         low = p.lower()
         if any(m in low for m in HISTORICAL_MARKS):
             cls.add("HISTORICAL")
+        elif any(m in low for m in SCANNER_MARKS):
+            cls.add("SCANNER")
         elif any(m in low for m in MUON_LEG_MARKS):
             cls.add("MUON-LEG")
         else:
             cls.add("PRIMARY")
-    if "PRIMARY" in cls:
-        return "PRIMARY"
-    if "MUON-LEG" in cls:
-        return "MUON-LEG"
+    for c in ("PRIMARY", "MUON-LEG", "SCANNER"):
+        if c in cls:
+            return c
     return "HISTORICAL"
 
 
