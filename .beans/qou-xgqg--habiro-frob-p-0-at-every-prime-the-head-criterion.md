@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-28T19:33:34Z
-updated_at: 2026-08-28T19:38:46Z
+updated_at: 2026-08-28T19:49:24Z
 ---
 
 ## RESULT — both scope limits of PR #5884 closed
@@ -83,3 +83,40 @@ deg G in {0, 6, 12, 18}. G is a monomial, not a constant. Never committed, but
 worth recording — the pre-written conclusion was the failure mode, not the
 data. Separately the probe's section 4 kept a line calling G(-1)=1 "the ONE
 step not proved" after section 5 derived it; fixed before commit.
+
+
+## The mass bound is gone too — the whole question is SIX polynomials
+
+I closed the previous entry saying the remaining gap was uniformity in mass:
+each (Z,N) proved individually by exhaustive finite check, but "no Phi_2p ever
+divides P at any mass" verified to 10 rather than proved. That gap closes
+completely, and the argument is short:
+
+  - P = NUM / G with G a monomial u^k (proved above);
+  - NUM = n_p^Z * n_n^N * PROD_k n_k — powers of SIX FIXED polynomials,
+    independent of (Z,N);
+  - Phi_2p is IRREDUCIBLE over Q, and Phi_2p(0) != 0, so it cannot divide u^k;
+  - Q[u] is a UFD, so Phi_2p | NUM iff Phi_2p divides one of the six.
+
+So a single finite check on six fixed polynomials settles EVERY atom at EVERY
+prime. Measured — none of the six is divisible by any Phi_2p, and the check is
+finite by degree:
+
+    tau_p              deg 44   p <= 45   14 primes   none
+    tau_n              deg 36   p <= 37   12 primes   none
+    positive           deg  6   p <=  7    4 primes   none
+    negative           deg  0   p <=  1    0 primes   none
+    averaged           deg  8   p <=  9    4 primes   none
+    averaged_weighted  deg 20   p <= 21    8 primes   none
+
+Largest degree 44, so p > 45 is impossible by degree.
+
+    Frob_p != 0 for every (Z,N), at every prime, with NO mass bound.
+
+**The 65-cell grid was overkill and I should say so.** The answer never
+depended on mass — it was always six polynomials. The grid is kept because it
+also exercises the closed form, but it is corroboration, not the evidence for
+uniform non-vanishing. Three escalating sweeps (27, 44, 65 cells, the last
+~6 min) were spent on a question a degree-44 factorisation answers outright;
+the reduction was available from the start and I did not look for it until the
+sweep had already succeeded.
