@@ -270,6 +270,13 @@ def main():
     out = os.path.join(root, "computations", "probes",
                        "qbeta-g3-aomega-route-a-newton-polygon.witness.json")
     with open(out, "w") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, q0_anchor=False)
         json.dump(witness, fh, indent=2)
         fh.write("\n")
     print(f"\n witness: {out}")

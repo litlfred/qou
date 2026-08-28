@@ -181,6 +181,13 @@ def main() -> None:
     out = script_path.parent / "trefoil-complex-volume-probe.witness.json"
     # Explicit utf-8 so the write does not depend on the locale default
     # encoding (would risk UnicodeEncodeError under LANG=C / POSIX).
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n", encoding="utf-8")
     print(f"allPassed={all_passed}")
     print(f"  tr_M(trefoil)@q0 = {data['trM_trefoil_at_q0']}  (|.|={data['abs_trM_trefoil_at_q0']})")

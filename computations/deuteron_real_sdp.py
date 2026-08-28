@@ -692,6 +692,13 @@ def main() -> int:
             "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)",
         },
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=False)
     OUT_WITNESS.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
 
     print(f"deuteron real SDP @ H_6 — {len(keys)} blocks")

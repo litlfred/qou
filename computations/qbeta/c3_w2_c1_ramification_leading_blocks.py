@@ -242,6 +242,13 @@ def main() -> None:
         "durationMs": int((time.perf_counter() - _t0) * 1000),
     }
     out = script_path.parent / "c3-w2-c1-ramification-leading-blocks.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=1) + "\n")
     n_pass = sum(1 for a in witness["assertions"] if a["passed"])
     print(f"\n  Witness: {out.name}  ({n_pass}/{len(witness['assertions'])} assertions passed)")

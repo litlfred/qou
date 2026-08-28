@@ -125,6 +125,13 @@ def main():
         "verdict": verdict,
     }
     wp = HERE / "lpdual-active-set-vs-edge-set-negative.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, q0_anchor=False)
     wp.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"\nwitness → {wp}")
     return 0

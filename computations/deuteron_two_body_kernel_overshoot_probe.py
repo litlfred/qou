@@ -418,6 +418,13 @@ def main():
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "deuteron-two-body-kernel-overshoot.witness.json")
     with open(out, "w", encoding="utf-8") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, q0_anchor=None)
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 

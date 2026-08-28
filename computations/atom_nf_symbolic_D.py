@@ -326,6 +326,13 @@ def main() -> int:
         "symbolic_ratio": str(ratio) if ratio is not None else None,
     }
     out = Path(__file__).parent / "atom-nf-symbolic-D.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Witness: {out}")
     return 0
