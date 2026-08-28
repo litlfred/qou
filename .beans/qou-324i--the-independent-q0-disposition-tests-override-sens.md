@@ -185,3 +185,27 @@ Scope note: the source check is now available but is NOT yet a required half of
 the disposition anywhere, because nothing invokes `q0_independence_checker` at
 all -- `scripts/staleness-gates.sh` runs `anchor_flip_straddle_audit`, not this.
 Wiring it is the remaining work on this bean.
+
+---
+
+## RE-MEASURED 2026-08-28 — narrowed, NOT closed
+
+Detector half is **done** (`_is_unit_numerator` on main, PR #5494). The **primary**
+claim — that `independent` tests *override-sensitivity* rather than
+q₀-independence — is **still live**:
+
+    witnesses stamped independent : 53   (was 37 on 2026-08-23)
+      ... still carrying muon digits:  4   (was 9)
+
+`fitted_labelled_canonical_audit`, `hardcoded_q0_literal_families_audit`,
+`lambda_scale_substrate_probe`, `markov_identity_symbolic_probe`.
+
+**Caveat:** `hardcoded_q0_literal_families_audit` is an audit whose SUBJECT is
+hardcoded q₀ literals, so it legitimately contains them — very likely a false
+positive of this test. Actionable is **≤ 3** until each is read individually. A
+count from a detector is a hypothesis until one of its members has been opened by
+hand; that is the lesson this arc kept re-learning.
+
+Remaining work: require the env-invariance **and** a source check (no q₀-shaped
+literal, no direct pinning-witness read). Both halves exist as scripts —
+`q0_hardcoded_pin_audit.py` and `q0_muon_population_partition.py`.
