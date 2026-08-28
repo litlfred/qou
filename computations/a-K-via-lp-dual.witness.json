@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T18:21:14.950238+00:00",
-  "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+  "computedAt": "2026-08-28T20:17:50.976256+00:00",
+  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
   "assertions": [
     {
       "name": "a_K_R_finite[deuteron]",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 15,
   "computation": "a-K-via-lp-dual",
   "scriptFile": "aK_via_lp_dual.py",
   "scriptHash": "f9ba6676796e",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -77,16 +77,23 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
-  "description": "Item B (B.1a) \u2014 a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, \u00b3He, \u2074He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(\u03bb) and \u039b^\u2228 involution). Per `prop:mass-coefficient-shadow-price` \u00a73, a_K should equal 1 + \u03a3_{\u03bb \u2209 \u039b^sc} u_\u03bb*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
+  "invocation": {
+    "argv": [
+      "computations/aK_via_lp_dual.py"
+    ],
+    "reproduce": "python3 -u computations/aK_via_lp_dual.py"
+  },
+  "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:mass-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
-    "q0_50dps": "1.1099785955573347199",
-    "h_q": "0.20906032199559367898",
+    "q0_50dps": "1.1099785956427390467",
+    "h_q": "0.20906032215031674663",
     "dps": 50
   },
   "data": {
@@ -223,11 +230,11 @@
         "N": 1,
         "A": 2,
         "a_K_R_ratio": "0.50822978937673896258",
-        "a_K_C_closed": "1.209060321995593679",
+        "a_K_C_closed": "1.2090603221503167466",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -579648.9388239215,
-        "D_chi_vs_C_ppm": 654177.1850546998,
+        "R_vs_C_ppm": -579648.9388777138,
+        "D_chi_vs_C_ppm": 654177.1848430152,
         "n_active_chirality_blocks": 4,
         "active_chirality_partitions": [
           [
@@ -407,11 +414,11 @@
         "N": 2,
         "A": 3,
         "a_K_R_ratio": "0.20513564044864976893",
-        "a_K_C_closed": "0.95629378176709868978",
+        "a_K_C_closed": "0.95629378170240578107",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -785488.8901718179,
-        "D_chi_vs_C_ppm": 1091407.513185202,
+        "R_vs_C_ppm": -785488.8901573062,
+        "D_chi_vs_C_ppm": 1091407.5133266847,
         "n_active_chirality_blocks": 5,
         "active_chirality_partitions": [
           [
@@ -878,11 +885,11 @@
         "N": 1,
         "A": 3,
         "a_K_R_ratio": "0.31138631207259565241",
-        "a_K_C_closed": "0.95629378176709868978",
+        "a_K_C_closed": "0.95629378170240578107",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -674382.1637141708,
-        "D_chi_vs_C_ppm": 1091407.513185202,
+        "R_vs_C_ppm": -674382.1636921428,
+        "D_chi_vs_C_ppm": 1091407.5133266847,
         "n_active_chirality_blocks": 5,
         "active_chirality_partitions": [
           [
@@ -1349,11 +1356,11 @@
         "N": 2,
         "A": 4,
         "a_K_R_ratio": "0.12568415289526626941",
-        "a_K_C_closed": "0.91449779704641937449",
+        "a_K_C_closed": "0.91449779692268852185",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -862564.8379895587,
-        "D_chi_vs_C_ppm": 1186992.6931037551,
+        "R_vs_C_ppm": -862564.8379709639,
+        "D_chi_vs_C_ppm": 1186992.6933996535,
         "n_active_chirality_blocks": 7,
         "active_chirality_partitions": [
           [
@@ -2573,15 +2580,15 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
-        "size_bytes": 5551,
-        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
+        "size_bytes": 6237,
+        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
+        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
+        "computedAt": "2026-08-22T21:11:04.185076+00:00"
       }
     ]
   },
   "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347199",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

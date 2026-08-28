@@ -1,7 +1,7 @@
 {
   "computation": "q-pinning-50-digit",
   "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath.  READ THE THREE anchor_* ROLE FIELDS BELOW BEFORE USING THIS: the word \"anchor\" does three different jobs in this witness and they do NOT all say the same thing.  This producer is listed under ideal_muon in q0_anchor_manifest.json, so when run under its own name q_parameter rebinds q_at to return the MUON literal and the Newton solve described below never executes -- derived_50_digit.q is the muon value.  The m_p/m_e route is what DEFINES the quantity, not what ran.  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 8.30e-13 (830 ppQ) from the 0.017 ppb m_p/m_e ratio (see physical_anchoring_bound).  m_\u03bc/m_e is recorded only as a 9.5\u03c3 cross-check prediction.  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-08-22T21:11:03.612392+00:00",
+  "timestamp": "2026-08-28T20:41:41.384276+00:00",
   "precision_decimal_digits": 70,
   "calibration_inputs": {
     "Vol_4_1_str": "2.029883212819307250042405108549040571883378615060599584034978213553195",
@@ -23,7 +23,7 @@
     "q_inv": "0.9009182734924223000509948678780818667199283918031324432703064942929475",
     "H_A": "0.2090603221503167466308002615019198859801371692258791137037392757061475",
     "two_q": "2.010896869135161346732789997258083619419993952832144000244352264292042",
-    "z_markov": "0.4993203340325600168882835204917545978849816679299517204853604180742267",
+    "z_markov": "0.6126880506382724152208889276461106648319646313607796792710889099112901",
     "s_skein": "0.1043880698890507637533688678906164851810398386820984411494235381737513"
   },
   "quantum_integers": {
@@ -64,14 +64,14 @@
     "muon_cross_check_relative_uncertainty": "0.000000001223353827169450140082479862729952591564232159513537329583408446995427",
     "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  q\u2080 is anchored on m_p/m_e (the most precise ratio, 0.017 ppb); the propagated bound \u03c3(q\u2080)/q\u2080 \u2248 8.30e-13 (830 ppQ) improves one-for-one as CODATA improves m_p/m_e \u2014 it is not a framework ceiling.  The muon-anchor bound (~1.22e-9) is shown for comparison and is ~429\u00d7 looser; m_\u03bc/m_e is now a 9.5\u03c3 prediction."
   },
-  "scriptHash": "79beef331c1e",
-  "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
-  "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
+  "scriptHash": "58f994b46a01",
+  "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
+  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
   "engine": "mpmath",
-  "computedAt": "2026-08-22T21:11:04.185076+00:00",
+  "computedAt": "2026-08-28T20:41:41.698540+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "scriptFile": "q_pinning_50_digit.py"
 }

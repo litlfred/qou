@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:17:28.924519+00:00",
-  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+  "computedAt": "2026-08-28T20:40:10.338705+00:00",
+  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
   "scriptHash": "a23fb0934008",
@@ -31,10 +31,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -44,10 +44,10 @@
   },
   "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
-    "q_0": 1.1099785955573347,
-    "h_q0": 0.20906032199559368,
-    "h_sq_q0": 0.04370621823290131,
-    "h_4_q0": 0.001910233512221995,
+    "q_0": 1.109978595642739,
+    "h_q0": 0.20906032215031675,
+    "h_sq_q0": 0.04370621829759422,
+    "h_4_q0": 0.0019102335178769597,
     "klr_positivity": "Khovanov-Lauda-Rouquier categorical positivity: framework's |tr_M|·Vol(K) prediction is a LOWER BOUND on observed binding. Over-predictions (B_pred > B_AME) indicate the formula has a mistake — wrong knot, wrong ν_SDP, or missing restriction."
   },
   "data": {
@@ -319,14 +319,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
         "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
+        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
+        "computedAt": "2026-08-22T21:11:04.185076+00:00"
       }
     ]
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }
