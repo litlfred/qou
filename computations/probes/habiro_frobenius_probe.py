@@ -73,6 +73,7 @@ from pathlib import Path
 from typing import Any
 
 import mpmath
+from _precision import fmt  # noqa: E402
 import sympy as sp
 
 # Standalone scientific-computation script — set mpmath precision
@@ -81,6 +82,7 @@ import sympy as sp
 # *truth* is the exact algebraic Z[ζ_{2p}] representative computed
 # via sp.Poly arithmetic.
 mpmath.mp.dps = 30
+_DISPLAY_DPS = 30
 
 # Frobenius evaluation runs in **exact algebraic arithmetic** in
 # Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
@@ -92,9 +94,20 @@ mpmath.mp.dps = 30
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
 
-# Prefer the fast-path witness (covers more atoms) if available;
-# fall back to the symbolic-q baseline.
-WITNESS_FAST = _pb.witness_path("habiro-coefficients-atomic-fast.witness.json", HERE)
+# CANONICAL SOURCE: the symbolic-q atomic witness, which carries the
+# convention-D regeneration (`cde2fbcd89`, all 25 atoms).
+#
+# This used to prefer `habiro-coefficients-atomic-fast.witness.json`
+# "(covers more atoms)". Both carry 5 atoms today, so that reason had
+# lapsed — and the fast-path file now lives under `_deprecated/` and was
+# never regenerated, so preferring it fed this probe PRE-convention-D
+# coefficients while the mass table around it had migrated. Measured on
+# `cdbdc84af1`: the symbolic-q aggregate matches the per-atom
+# convention-D witnesses 5/5; the deprecated fast path matches 0/5.
+#
+# There is deliberately NO fallback to the deprecated file. Silently
+# substituting superseded data is the defect being fixed here, not a
+# resilience feature: a missing canonical source is an error.
 WITNESS_SYMBOLIC = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 
@@ -319,7 +332,16 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
     # already set to 30dps; no need to set per-call.
     zeta_2p_num = mpmath.exp(2j * mpmath.pi / n_2p)
     display_rep = frob_full_rep if frob_full_rep is not None else num_rep
-    frob_num_complex = complex(display_rep.as_expr().subs(u, zeta_2p_num))
+    # Evaluate at the module dps and KEEP it there. This used to end in
+    # `complex(...)`, which collapsed a 30-dps value to binary64 and then
+    # serialized the halves as raw floats — the NO-FLOAT64 defect the probe
+    # rules name (a witness field is a recorded value, not a display).
+    # Measured on one term at n_2p = 10: `complex()` gives an imaginary part
+    # of 1.69e-21, pure float64 noise, where `sp.N(·, 30)` gives 1.82e-31.
+    _disp = sp.N(display_rep.as_expr().subs(u, zeta_2p_num), _DISPLAY_DPS)
+    frob_re = mpmath.mpf(str(sp.re(_disp)))
+    frob_im = mpmath.mpf(str(sp.im(_disp)))
+    frob_abs = mpmath.sqrt(frob_re ** 2 + frob_im ** 2)
 
     return {
         "prime": p,
@@ -334,12 +356,13 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
         ),
         "denom_folded": denom_unit,
         "denom_inversion_error": denom_inversion_error,
-        # Numeric value (display-only).
+        # Numeric value, serialized through the precision formatter so the
+        # witness carries no raw binary64 (raw-float64 ratchet).
         "frob_complex": {
-            "real": frob_num_complex.real,
-            "imag": frob_num_complex.imag,
+            "real": fmt(frob_re),
+            "imag": fmt(frob_im),
         },
-        "abs_frob": abs(frob_num_complex),
+        "abs_frob": fmt(frob_abs),
         "pochhammer_truncates_at_m": truncate_at,
         "frob_p_is_exact": is_exact,
         "exact_via": (
@@ -370,11 +393,7 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
 
 
 def load_atoms() -> dict[str, dict]:
-    """Load atom-records from the fast-path witness if available;
-    fall back to the symbolic-q baseline otherwise."""
-    if WITNESS_FAST.exists():
-        data = json.loads(WITNESS_FAST.read_text())
-        return data.get("results", {})
+    """Load atom-records from the convention-D symbolic-q witness."""
     if WITNESS_SYMBOLIC.exists():
         data = json.loads(WITNESS_SYMBOLIC.read_text())
         return data.get("results", {})
@@ -384,8 +403,10 @@ def load_atoms() -> dict[str, dict]:
 def main() -> int:
     atoms = load_atoms()
     if not atoms:
-        print(f"ERROR: neither {WITNESS_FAST.name} nor "
-              f"{WITNESS_SYMBOLIC.name} exists")
+        print(f"ERROR: {WITNESS_SYMBOLIC.name} not found — regenerate it "
+              f"with _habiro_coefficient_extract.py. Do NOT substitute "
+              f"_deprecated/habiro-coefficients-atomic-fast.witness.json: "
+              f"it predates the convention-D migration.")
         return 1
 
     u = sp.symbols("u")
@@ -428,7 +449,7 @@ def main() -> int:
                        if row["galois_trace_full_int"] is not None else "—")
             print(f"    p = {p:>3}  m_trunc = "
                   f"{row['pochhammer_truncates_at_m']!s:>5}  "
-                  f"|Frob| = {row['abs_frob']:>9.4f}  "
+                  f"|Frob| = {float(row['abs_frob']):>9.4f}  "
                   f"Tr(num) = {tr_num:>8} {num_pass}  "
                   f"Tr(full) = {tr_full:>8} {full_pass}")
             per_prime.append(row)
@@ -479,10 +500,7 @@ def main() -> int:
             "def:motivic-substrate",
             "prop:motivic-perpetual-obstruction",
         ],
-        "input_witness": (
-            WITNESS_FAST.name if WITNESS_FAST.exists()
-            else WITNESS_SYMBOLIC.name
-        ),
+        "input_witness": WITNESS_SYMBOLIC.name,
         "primes": PRIMES,
         "atoms": atoms_out,
         "summary": {
