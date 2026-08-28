@@ -253,6 +253,14 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     A = Z + N
     n_strands = 3 * A
 
+    # Hoisted to function scope. Two of the three branches below used to
+    # `import mpmath as mp` locally, which makes `mp` a function-LOCAL name
+    # for the whole body — so the shared tail could reach it on one route and
+    # raise `UnboundLocalError` on another. The tail now needs it on every
+    # route (it carries the trace through as `mpf` rather than collapsing to
+    # binary64), so the import belongs here.
+    import mpmath as mp
+
     # ── Fast path: fine-Bratteli transfer matrix (DEFAULT) ───────
     # Lossless Σ_{λ ⊢ 3A} y_λ χ^λ over ALL p(3A) partitions via the
     # monotone-word transfer matrix — no d_λ wall, no native dep, full
@@ -287,7 +295,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "tr_M_atom": mp.nstr(tr_atom_mp, mp.mp.dps),
             "tr_M_free": mp.nstr(tr_free_mp, mp.mp.dps),
             "Q_beta_n_MeV": Q_beta_n_mev,
-            "B_MeV": float(B),
+            # mpf, not `float(B)` — see the note on the shared tail's exit.
+            "B_MeV": B,
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -356,8 +365,23 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
             dt = time.time() - t0
-            tr_atom = complex(float(tr_atom_mp), 0.0)
-            tr_free = complex(float(tr_free_mp), 0.0)
+            # KEEP the mpf. `complex(float(tr_atom_mp), 0.0)` collapsed a
+            # value that `closed_form_tau_M` had just computed at 50 dps
+            # down to binary64 — ~34 significant digits discarded one line
+            # after they were produced, on the path that
+            # `mass_table_comprehensive` and `binding_factor_f_*` take.
+            # Both traces are real here by construction (Im(q_0) = 0), so
+            # there is nothing a `complex` was carrying: the cast bought
+            # only the type the legacy symbolic branch below happens to
+            # produce. The shared tail is polymorphic over mpf / mpc /
+            # complex (`.real` and `.imag` exist on all three), so the two
+            # branches no longer have to agree on a type — only on the
+            # interface. `binding_factor_f_sequence.py` documents the
+            # downstream cost of the collapse at length: a 16-digit
+            # `tr_M_*` string is the double 0.98352601518469637…, not the
+            # datum.
+            tr_atom = tr_atom_mp
+            tr_free = tr_free_mp
             atom_n_terms = -1  # not computed in closed-form path
             free_n_terms = -1
             tr_atom_sym = None
@@ -425,14 +449,30 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # silent collapse) and works uniformly for float / Python-complex /
     # mpmath.mpc (the latter does NOT subclass Python `complex`, so an
     # isinstance guard would be fragile — per Gemini review on PR #1738).
-    B = Q_beta_n_mev * delta_tr.real
+    # `Q_beta_n_mev` arrives as a Python float from most callers. Promote it
+    # through its DECIMAL repr, not its binary value, when the trace is exact
+    # — matching the transfer path's `mp.mpf(str(Q_beta_n_mev))` — so the two
+    # exact routes multiply by the same number. On the legacy symbolic route
+    # `delta_tr` is genuinely binary64 (`complex(sp.N(...))` upstream), so the
+    # product stays a float and `B_MeV` keeps float64's honest 17 digits
+    # rather than being dressed in 50 it does not have.
+    _exact = isinstance(delta_tr, (mp.mpf, mp.mpc))
+    B = (mp.mpf(str(Q_beta_n_mev)) if _exact else Q_beta_n_mev) * delta_tr.real
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": str(tr_atom_r),
         "tr_M_free": str(tr_free_r),
         "Q_beta_n_MeV": Q_beta_n_mev,
-        "B_MeV": float(B),
+        # NOT `float(B)`. On the closed-form route this is an mpf carrying the
+        # full trace precision; casting it here re-imposed exactly the binary64
+        # collapse the branch above stopped doing. `mpf` is drop-in for every
+        # reader in the corpus — it does mixed arithmetic with `float`, formats
+        # under `f"{B:.4f}"`, and survives `float(...)` — but it is NOT
+        # JSON-serializable, so a caller writing it to a witness must route it
+        # through `_precision.fmt` (that is a feature: the cast is now visible
+        # at the point where precision is actually being given up).
+        "B_MeV": B,
         "n_atom_terms": atom_n_terms,
         "n_free_terms": free_n_terms,
         "use_closed_form": use_closed_form,
