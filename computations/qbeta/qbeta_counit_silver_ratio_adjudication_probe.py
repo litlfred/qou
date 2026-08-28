@@ -15,6 +15,28 @@ difference of the neutron and proton TYPED-CROSSING ELEMENTS in H_3(q)"* and
 asserts `eps(Delta) = epsNPq = h(h-2)/2`.  qou-avt5 proves those two statements
 cannot both hold:
 
+  * SCOPE CORRECTION (2026-08-28) — READ BEFORE THE REST. This probe's
+    original conclusion ("the fork is asymmetric: epsNPq is EXCLUDED, the live
+    typed counit is NOT") DOES NOT HOLD, and the corpus had already said so.
+    `qou-99qc`, 2026-08-26: the contradiction is between two DIFFERENT
+    functionals both written `eps`.
+      - avt6's invariant below governs the AUGMENTATION `sigma -> q`, which is
+        multiplicative (its probe evaluates a word as a PRODUCT of per-letter
+        counits — legitimate only for an algebra map).
+      - `epsNPq` is a value of the COORDINATE SUM `sigma -> 1`, which is NOT an
+        algebra map unless h = 0: push `sigma^2 = h*sigma + 1` through it and
+        get `1 = h + 1`. Sorry-free Lean:
+        `QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`.
+    `eps_typed` at step 3 below is ALSO a coordinate sum (`sum(a - b)`), so the
+    invariant applies to NEITHER object compared here. Quoting it against them
+    is the arity/shape conflation AGENTS.md names as `da-arity-conflation`.
+    WHAT SURVIVES: step 3's re-derivation of the typed coordinate sum from live
+    source, step 4's provenance check, and the ARITHMETIC of step 5 (86 != 0).
+    WHAT DOES NOT: any claim that either object is admissible or excluded.
+    This does not vindicate epsNPq either — qou-99qc measures the stated NF
+    vector against the exhibited nucleon-word difference and they disagree under
+    BOTH functionals (chi_(3) = -0.2604 vs coordinate sum -0.1872 vs
+    augmentation -0.2102).
   * the counit of any typed-crossing word is `q^m * ([2]_q/2)^c`;
   * `epsNPq` carries the factor `(q^2 - 2q - 1)`, so it vanishes at the SILVER
     RATIO `q = 1 + sqrt2`;
@@ -169,7 +191,7 @@ def main() -> int:
         "2. epsNPq vanishes at h = 2 but is not the zero polynomial",
         sp.simplify(eps_npq.subs(h, 2)) == 0 and sp.expand(eps_npq) != 0,
         f"epsNPq(h=2) = {sp.simplify(eps_npq.subs(h, 2))}; epsNPq = "
-        f"{sp.factor(eps_npq)} != 0. This is the qou-avt5 contradiction",
+        f"{sp.factor(eps_npq)} != 0. This is the qou-avt6 contradiction (NOT avt5 — see header)",
     )
 
     # ---- 3. re-derive the LIVE typed counit from CURRENT source ----
@@ -185,7 +207,7 @@ def main() -> int:
         sp.expand(eps_typed - expected) == 0,
         f"gram.hm sha {sha_hm}, atom.build_nucleon_nf sha {sha_bnf}; "
         f"eps = {sp.factor(eps_typed)}. Re-derived rather than reused because a "
-        "sibling (qou-avt5) was burned calibrating against a producer that was "
+        "sibling (qou-avt6) was burned calibrating against a producer that was "
         "itself wrong by 15-27%: being behind the corpus defeats a cross-check",
     )
 
@@ -211,8 +233,10 @@ def main() -> int:
     check(
         "5. the live typed counit does NOT vanish at h = 2 — it is NOT excluded",
         v_typed != 0,
-        f"eps(typed n-p)(h=2) = {v_typed} != 0, against epsNPq(h=2) = 0. Under "
-        "qou-avt5's own invariant the live construction is admissible and the "
+        f"eps(typed n-p)(h=2) = {v_typed} != 0, against epsNPq(h=2) = 0. "
+        "SCOPE-CORRECTED 2026-08-28: this is an ARITHMETIC contrast between two "
+        "COORDINATE SUMS, NOT an admissibility verdict — avt6's invariant governs "
+        "the MULTIPLICATIVE counit and applies to neither. See qou-99qc and the "
         "asserted value is not — the two horns are NOT symmetric",
     )
 
@@ -240,12 +264,23 @@ def main() -> int:
         return 1
     print("7/7 assertions hold.")
     print()
-    print("READING: qou-avt5 proved no typed-crossing word difference can have")
-    print("counit epsNPq, and declined to say whether the prose or the value is")
-    print("wrong. The live typed construction SURVIVES that same invariant (86 vs")
-    print("0 at h = 2), so the fork is asymmetric. That does not settle it —")
-    print("necessary is not sufficient — but it does turn horn (a) into a")
-    print("concrete target: exhibit a non-typed-word Delta vanishing at h = 2.")
+    print("READING (SCOPE-CORRECTED 2026-08-28 — the original is RETRACTED):")
+    print("this probe once concluded the qou-avt6 fork is ASYMMETRIC, because")
+    print("epsNPq is excluded by avt6's invariant while the live typed value is")
+    print("not. That conclusion DOES NOT HOLD. avt6's invariant governs the")
+    print("MULTIPLICATIVE counit (augmentation, sigma -> q); epsNPq and the")
+    print("eps_typed computed above are both COORDINATE SUMS (sigma -> 1), which")
+    print("is not an algebra map unless h = 0. The invariant applies to neither,")
+    print("so neither is shown admissible or excluded. qou-99qc recorded this on")
+    print("2026-08-26, two days before this probe was written; the four-path grep")
+    print("here reached avt5/avt6 and the audits but not the bean that had")
+    print("already disposed of the question — which is why AGENTS.md path 6 says")
+    print("to grep .beans/ too, and to read COMPLETED beans in particular.")
+    print()
+    print("WHAT STILL STANDS: step 3 re-derives the typed coordinate sum from")
+    print("live source (hash-pinned) and step 4 confirms it IS the live")
+    print("construction. Those are reusable. The h = 2 arithmetic is correct and")
+    print("means only what arithmetic means.")
     return 0
 
 

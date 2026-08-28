@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T00:54:05Z
-updated_at: 2026-08-28T18:27:37Z
+updated_at: 2026-08-28T19:11:15Z
 ---
 
 Surfaced from `qou-pdix` (PR #5448). Probe:
@@ -145,3 +145,51 @@ representation.
 Also note both admissible replacements are **far** worse against CODATA than the
 inadmissible evaluation. That is a reason to take the exclusion seriously as a
 statement about the framework, not a reason to keep `epsNPq`.
+
+
+## RE-SCOPED 2026-08-28 — this bean sits behind qou-99qc, and my own probe is retracted
+
+**Re-scope.** This bean asks which nucleon NF is canonical *for feeding*
+`epsNPq`. Two beans sit upstream of that and should be read first:
+
+- **`qou-99qc`** (todo) — *"OWNER CALL: Delta prose vs epsNPq"*. The live owner
+  decision. Its 2026-08-26 entry establishes that the fork's premise does not
+  hold as originally stated, and narrows option (1) by closing the
+  colour-weighted carve-out (15/15 probe).
+- **`qou-xzrj`** (todo) — *"the 7.67% trace-invisible remainder of epsNPq (step
+  8)"*. The step-8 postulate already has a carrier; do not open another.
+
+If the functional is excluded, choosing between two NFs to feed it is a
+downstream question. This bean is not closed by that — it is queued behind it.
+
+## RETRACTION of my own contribution (PR #5893, merged 4135ad98e2)
+
+`qbeta_counit_silver_ratio_adjudication_probe.py` concluded that the qou-avt6
+fork is **asymmetric** — `epsNPq` excluded by avt6's invariant, the live typed
+value not. **That conclusion does not hold**, and `qou-99qc` had recorded why on
+2026-08-26, two days earlier.
+
+avt6's invariant (`counit of a typed-crossing word is q^m([2]_q/2)^c`) governs
+the **multiplicative** counit — the augmentation `sigma -> q`, evaluated as a
+PRODUCT of per-letter counits, which is legitimate only for an algebra map.
+`epsNPq` is a value of the **coordinate sum** `sigma -> 1`, which is not an
+algebra map unless `h = 0` (`QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`,
+sorry-free). The probe's own `eps_typed` is a coordinate sum too — literally
+`sum(a - b)` over the NF coordinates. **So the invariant applies to neither
+object the probe compares**, and no admissibility verdict follows for either.
+
+This is the `da-arity-conflation` class AGENTS.md names: a theorem quoted past
+the scope its type fixes.
+
+**What survives**: the step-3 re-derivation of the typed coordinate sum from
+current source (hash-pinned `gram.hm`, `atom.build_nucleon_nf`), the step-4
+provenance check that it IS the live `PROTON_NF`/`NEUTRON_NF`, and the
+arithmetic `86 != 0`. Those are reusable. Corrected in place rather than
+reverted, so the re-derivation stays available and the reasoning error stays on
+the record.
+
+**Method failure worth keeping.** The four-path corpus-grep reached `qou-avt5`,
+`qou-avt6` and the audit docs, and still missed the bean that had disposed of
+the question. `.beans/` is not under `docs/`, `content/`, `computations/` or
+`library/` — it is **path 6**, added 2026-08-26 for exactly this, and the entry
+that would have stopped this was in a bean body and nowhere else.
