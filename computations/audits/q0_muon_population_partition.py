@@ -70,9 +70,28 @@ MUON_FAMILY_LOOSE = "1.10997859"
 # "1.10997859555418057" reports 0 hits on nine of the nineteen genuine
 # candidates, all of which carry the value.
 #
-# 14 digits is the SHORTEST prefix that separates superseded from current
-# ("1.109978595554" vs "1.109978595557"); 11-13 are ambiguous between them.
-# So the usable window is 14..18. The 16 above sits in the middle of it.
+# CORRECTED 2026-08-28, twice over. This read "14 digits is the SHORTEST
+# prefix that separates superseded from current". Two faults:
+#
+#   UNIT. That 14 counted CHARACTERS INCLUDING THE DECIMAL POINT --
+#   "1.109978595554" is 14 characters but 13 digits. Right boundary,
+#   wrong unit.
+#
+#   CURRENCY. It compared against 1.10997859555733471..., which main's
+#   fca08de7d DEMOTED (muon anchor -> CODATA 2022, owner ruling). Three
+#   muon renderings are now in play, not two.
+#
+# Re-derived in SIGNIFICANT DIGITS:
+#
+#     vs demoted   1.10997859555733471...   12 common -> 13 needed
+#     vs canonical 1.10997859564273904...   10 common -> 11 needed
+#
+# CODATA-2022 moved the anchor at the 11th figure rather than the 13th,
+# so the window LOOSENS at the bottom: 11..18 against the canonical pin,
+# 13..18 against the demoted one. The 18 ceiling is unchanged -- it comes
+# from the superseded value's OWN two renderings diverging at digit 19,
+# which is independent of what the current value is. The 16 above sits
+# inside both windows, so the count of 19 stands under either reading.
 
 PIN_WITNESS = "q-pinning-50-digit"
 ROUTES_ANCHOR = re.compile(

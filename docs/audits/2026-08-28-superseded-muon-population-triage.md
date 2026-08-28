@@ -250,3 +250,44 @@ Its `transition.delta_net = -0.1882906200111204` also turns out to be the
 [the Δ-fork addendum](2026-08-28-delta-element-fork-corpus-asymmetry.md), where the
 anchor explanation for it is measured and refuted.
 
+## 🛑 Currency + unit correction, 2026-08-28 (post-rebase)
+
+Two corrections to the prefix analysis above, one of staleness and one of
+units. Both were caught by the `/prepare-merge` verification on #5892 and by
+re-deriving rather than re-reading.
+
+**1. The value this document calls "current" has been demoted.** Main's
+`fca08de7d` — *"muon anchor → CODATA 2022 (owner ruling): derive it, stop the
+self-certification"* — landed in this branch's history during the rebase and
+re-derived the anchor-defining witness. The canonical muon pin is now
+`1.10997859564273904…`, **not** `1.10997859555733471…`. So the corpus carries
+**three** muon renderings in play, not two: superseded (`…55418057…`), demoted
+(`…55733471…`), and canonical (`…5642739…`).
+
+**The headline result is untouched.** 265 → 19, and all nineteen resolving to
+the **proton** anchor, is a statement about the proton pin and about manifest
+membership. Neither depends on which muon value is current.
+
+**2. The separation threshold was quoted in the wrong unit, and is now
+looser.** Re-derived:
+
+| separate superseded from | common prefix | shortest that separates |
+|---|---:|---:|
+| demoted `…55733471…` | 12 sig digits | **13** |
+| canonical `…5642739…` | 10 sig digits | **11** |
+
+The text above says *"14 is the shortest"*. That figure counted **characters
+including the decimal point** (`1.109978595554` is 14 characters but 13
+digits), so it was right about the boundary and wrong about the unit. Against
+the value that is now canonical only **11 significant digits** are needed,
+because CODATA-2022 moved the muon anchor at the 11th figure rather than the
+13th.
+
+**The 18-digit ceiling is unchanged and still binding.** That limit comes from
+the superseded value's own two renderings diverging at their 19th digit — a
+fact about the superseded value alone, independent of what the current one is.
+So the usable window widens at the bottom but not at the top: **11–18**
+significant digits against the canonical pin, 13–18 against the demoted one.
+`q0_muon_population_partition.py`'s 16-digit constants sit inside both, so the
+count of 19 stands under either reading.
+
