@@ -1,10 +1,11 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-08-23T00:39:14Z
+updated_at: 2026-08-28T15:06:25Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -99,3 +100,36 @@ agent's own verification is not the last gate standing — it is the only
 one. Worth saying plainly in AGENTS.md rather than leaving Copilot listed
 as "the one review to wait on", because the wait is what the protocol
 still prescribes and it always expires.
+
+
+## CLOSED 2026-08-28 — a sibling landed the correction, with better evidence
+
+AGENTS.md rule 10's gate table now carries the corrected row, citing this
+bean by name:
+
+  | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`):
+    requested explicitly via `request_copilot_review` on #5474, #5495,
+    #5411, #5459, #5482 -- zero reviews every time, and `get_check_runs`
+    returns `total_count: 0` rather than a queued
+    `copilot-pull-request-reviewer` run, so nothing is ever enqueued. ... |
+
+That is STRONGER than what this bean recorded. My n=2 controlled cases
+established only that no review arrived; the `get_check_runs` observation
+establishes the MECHANISM -- nothing is ever enqueued -- which is the
+difference between "slow" and "absent", and I had explicitly flagged that
+as the thing I could not see.
+
+The banner now also states the consequence I raised: "the Phase-4 gate
+table now has ZERO live external gates, not one ... the agent's own
+verification is not the last gate standing -- it is the ONLY gate", and
+tells agents to skip prepare-merge-auto Phase 1b's 15-minute poll citing
+this bean.
+
+Independent confirmation since: 12 merged PRs sampled 2026-08-22..27
+spanning #5415-#5880 carry zero reviews of any kind, and a THIRD explicit
+request (#5532) also produced none.
+
+Residual fixed here: the banner HEADING still read "Two of the three
+original gates no longer exist" while its own table and closing paragraph
+both say three. Corrected -- that heading is the line a skimming agent
+reads.
