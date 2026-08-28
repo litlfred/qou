@@ -175,6 +175,34 @@ theorem habiroEval_ne_zero_of_head_not_dvd_two (a : ℕ → R) (ζ : R) {N : ℕ
   rw [habiroEval_two, qPochDiag_two]
   exact hhead
 
+theorem habiroEval_three (a : ℕ → R) (ζ : R) :
+    habiroEval a ζ 3 = a 0 + a 1 * (1 - ζ) + a 2 * ((1 - ζ) * (1 - ζ ^ 2)) := by
+  unfold habiroEval qPochDiag
+  simp [Finset.sum_range_succ, Finset.prod_range_succ]
+
+theorem qPochDiag_three (ζ : R) :
+    qPochDiag ζ 3 = (1 - ζ) * (1 - ζ ^ 2) * (1 - ζ ^ 3) := by
+  unfold qPochDiag
+  simp [Finset.prod_range_succ]
+
+/-- **j = 3 specialisation — what is needed when `j = 2` is silent.**
+
+    The `j = 2` criterion is silent exactly when `p` divides the integer
+    `A = a₀(-1) + 2·a₁(-1)` (see `habiroEval_ne_zero_of_head_not_dvd_two`).
+    Measured on this corpus, the only odd prime that ever divides `A` is `3`,
+    and it does so exactly for the mixed atoms; at `j = 3` the divisor picks up
+    the further factor `1 - ζ³`, and the criterion fires there for every one of
+    them. Silence at one index says nothing about the value — it says the test
+    at that index cannot see it. -/
+theorem habiroEval_ne_zero_of_head_not_dvd_three (a : ℕ → R) (ζ : R) {N : ℕ}
+    (h : 3 ≤ N)
+    (hhead : ¬ ((1 - ζ) * (1 - ζ ^ 2) * (1 - ζ ^ 3) ∣
+        a 0 + a 1 * (1 - ζ) + a 2 * ((1 - ζ) * (1 - ζ ^ 2)))) :
+    habiroEval a ζ N ≠ 0 := by
+  apply habiroEval_ne_zero_of_head_not_dvd a ζ h
+  rw [habiroEval_three, qPochDiag_three]
+  exact hhead
+
 /-- A unit head-divisor makes the criterion unusable — stated so the failure mode
     is a theorem, not a footnote. -/
 theorem head_criterion_vacuous_of_isUnit (a : ℕ → R) (ζ : R) {j : ℕ}
