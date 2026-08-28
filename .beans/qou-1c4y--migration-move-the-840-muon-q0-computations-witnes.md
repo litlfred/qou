@@ -1424,3 +1424,46 @@ the experiment it cites). Still theirs to fix.
 
 Also: `habiro_witness_convention_adjudication_probe` is RUN-FAIL even WITH
 PYTHONPATH, so it is UNTESTED rather than clean, and stays pending.
+
+---
+
+---
+
+## The superseded-muon class TRIAGED 2026-08-28 — 19 actionable, not 260
+
+The 2026-08-22 partition recorded the superseded-muon population as the largest
+untouched class and I recommended it as the next work item on that basis. **That
+recommendation was inflated by the same error class this arc kept correcting: a
+population count is not a work count.**
+
+    witnesses carrying the superseded value          265
+      under _deprecated/                             214   <- 81%, not live work
+      live                                            51
+        no scriptFile at all (orphan)                 13
+        scriptFile names a missing producer            2
+        scriptFile names a LIVE producer              36
+          self-declaring (deliberate)                 17
+          GENUINE candidates                          19
+
+**265 -> 19. A 14x over-count of actionable work.**
+
+The 17 deliberate ones declare themselves in a field or producer name —
+`stale_muon_pin_q0` (x4), `q0_muon_pin` / `q_muon` / `q0_muon` (x6),
+`muon_pin_three_values_probe` whose subject IS the pin history,
+`probe_trace_convention_production_impact`, and two audits whose subject is
+literals. Re-pinning any of them would destroy what they measure.
+
+The 19 genuine candidates carry it under a **bare** pin key (`q_0`, `q0`, `q`,
+`q_0_50dps`, `q_0_mpf50`) with nothing declaring it deliberate. **Still an upper
+bound**: each needs an individual read. Two to flag before anyone starts —
+`q_beta_predicted` carries `CAL-2_q_0`, and naming CAL-2 identifies *which
+calibration*, not *which pin* (the conflation the partition audit retracts); and
+`confinement-operator-selection` is an LP/SDP witness, so the dual fields matter
+to any re-run.
+
+**Separate problem, worth its own bean:** the **13 orphans** are live, on the
+superseded value, and carry **no `scriptFile` at all` — nothing can regenerate
+them and nothing records what did. Re-pinning is not even an available action;
+it is a provenance gap, not migration work.
+
+Full detail: `docs/audits/2026-08-28-superseded-muon-population-triage.md`.
