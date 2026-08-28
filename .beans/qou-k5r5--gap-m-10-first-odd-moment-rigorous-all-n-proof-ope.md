@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-28T15:20:46Z
+updated_at: 2026-08-28T15:40:59Z
 ---
 
 
@@ -312,3 +312,5 @@ NOT Fulman's first-order Berry-Esseen. Probe: computations/deltalambda/
 wlambda_covariance_epic_M1_fulman_stein_finite_n_bound.py (exit 0, exact Fraction/mpmath,
 no float64, nothing wired, no c_k). Audit: docs/audits/2026-08-28-covariance-kernel-M1-
 fulman-stein-finite-n.md. Gap stays OPEN. Not laundered.
+
+2026-08-28 SOFTER ROUTE (PR #5896): M1>0 is NOT a delicate rate problem. Fulman N/P ~ 0.66 << 1 (margin 0.37) — reframes the 'delicate cancellation' framing (WRONG: terms don't nearly cancel). Cauchy-Schwarz (rho_N<=1, free) + sig_W cancels gives AIRTIGHT sufficient condition (CS): sig(SumD2)/sig(Sum|c|) < rho(Sum|c|,omega3) => M1>0. Measured exact all 4<=n<=32: sig_D/sig_A~0.67, rho_P~0.98, (CS) margin ~0.30 NON-VANISHING. This needs only CRUDE bounds (Var(SumD2)<Var(Sum|c|); lower bound on corr(Sum|c|,omega3)) — far softer than the sharp rate kappa_n>=kappa (which all 3 lit tools fail to deliver). HONEST: a REDUCTION not a proof; (CS) verified n<=32 not all-n; |c|,D2 non-A so still Plancherel asymptotics but crude not sharp. This is the most promising open route. qou-k5r5 OPEN.
