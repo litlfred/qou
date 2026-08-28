@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-28T15:50:41Z
-updated_at: 2026-08-28T15:51:25Z
+updated_at: 2026-08-28T18:10:44Z
 ---
 
 ## Done
@@ -60,3 +60,16 @@ colour weighting is exactly a structure HOMFLY cannot see.
 - C1's naive-inversion guard bit on only 1 of 14 words, because knots have
   only even z-degrees; odd ones need multi-component links (parity c-1).
   Added Hopf+/Hopf-/(2,4) torus link, and the assertion now demands >= 3.
+
+
+
+## Merged
+
+PR #5898, rebase-merged to main 2026-08-28 as 115e860ea. Three commits land
+as a linear sequence per AGENTS.md rule 8.
+
+Re-verified on the post-rebase head (68936891c) before merging — the earlier
+run predated a 12-commit rebase onto main, so the checklist would otherwise
+have described a different tree than the one merged. All three green on the
+actual merge head: cross-check PASS (17 words, worst 5.554e-40), y_lambda
+gate PASS with identical numbers, import-time-dps ratchet 0 findings.
