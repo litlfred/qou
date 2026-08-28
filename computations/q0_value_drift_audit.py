@@ -65,8 +65,48 @@ BASELINE = HERE / "q0-drift-baseline.json"
 # Documented anchors. Canonical is the CAL-2 muon pin carried by
 # q-pinning-50-digit.witness.json; the proton pin is the physical-
 # observations layer (AGENTS.md §q₀ anchor convention).
-Q_CANONICAL = mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
-PROTON_PIN_PPB = mpf("-11.5371")     # measured offset of the proton-pinned value
+#
+# BOTH ARE RESOLVED LIVE.  They used to be transcribed literals here:
+#
+#     Q_CANONICAL    = mpf("1.10997859555733471989...")   # the frozen anchor
+#     PROTON_PIN_PPB = mpf("-11.5371")                    # measured against it
+#
+# and that is a defect of exactly the kind this audit exists to detect.  A
+# drift detector whose reference is a transcription cannot see the reference
+# drift.  Concretely, under the 2026-08-22 owner ruling ("A --> CODATA 2022")
+# the anchor moves +0.0769 ppb, and a transcribed Q_CANONICAL would then have
+# classified every CORRECTLY migrated witness as STALE while calling the
+# superseded value canonical -- the ratchet inverted, pointing at the fix
+# instead of the defect.  It was already doing so on the migration branch: it
+# reported the re-derived anchor witness as the single NEW stale entry.
+#
+# PROTON_PIN_PPB moves with it.  It is an OFFSET measured against the muon
+# anchor, so re-pinning the anchor changes it too (-11.5371 vs A becomes
+# -11.6140 vs C); freezing the offset while the reference moves would drag
+# every proton-pinned witness across the PIN_TOL_PPB window.  Deriving it
+# from the two resolved pins keeps the pair consistent by construction.
+#
+# `_q0_value_for_anchor` is the anchor-LABEL resolver in qou_substrate --
+# the same function that decides what gets stamped `muon` -- so this audit
+# and the stamps it checks now read one source instead of two.
+from qou_substrate.witness import _q0_value_for_anchor as _pin
+
+
+def _resolved(anchor: str) -> mpf:
+    v = _pin(anchor)
+    if not v:
+        raise SystemExit(
+            f"q0_value_drift_audit: cannot resolve the {anchor} pin. "
+            "Refusing to fall back to a transcribed literal -- a drift audit "
+            "measuring against a guess is worse than no drift audit."
+        )
+    return mpf(v)
+
+
+Q_CANONICAL = _resolved("muon")
+_Q_PROTON = _resolved("proton")
+# Offset of the proton-pinned value, in ppb, DERIVED rather than transcribed.
+PROTON_PIN_PPB = (_Q_PROTON - Q_CANONICAL) / Q_CANONICAL * mpf(10) ** 9
 PIN_TOL_PPB = mpf("0.5")             # how close to a named pin counts as that pin
 
 # Field names that carry a substrate anchor. `q_star` / `qstar` are a
