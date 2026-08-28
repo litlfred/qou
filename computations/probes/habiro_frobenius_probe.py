@@ -259,8 +259,17 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
 
     num_rep = evaluate_num_in_ring()
 
-    # Fold in the denominator: Frob_p = num · denom⁻¹ in Z[ζ_{2p}].
-    denom_unit = False
+    # Fold in the denominator: Frob_p = num · denom⁻¹ in Q(ζ_{2p}).
+    #
+    # NOTE the ring. `sp.invert(..., Phi_2p)` works over Q, and Q(ζ_{2p}) is a
+    # field, so this succeeds for ANY nonzero denominator. The flag below is
+    # therefore a NONZERO test, not a unit test — `denom_nonzero`, not
+    # `denom_unit`, which is what it was called until 2026-08-28 and which
+    # produced a wrong claim in a PR body ("requires the denominator to be a
+    # unit, so Tr(Frob_p) is an algebraic integer"). Measured: Frob_p is an
+    # algebraic integer on 0 of 45 (atom, prime) cells, so the denominator is
+    # never a unit in Z[ζ_{2p}] and a genuine unit test would pass nowhere.
+    denom_nonzero = False
     denom_inversion_error: str | None = None
     if denom_in_u is not None:
         try:
@@ -278,10 +287,10 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
                     inv_poly = sp.Poly(inv_expr, u)
                     frob_rep = num_rep * inv_poly
                     _, frob_rep = frob_rep.div(phi_2p)
-                    denom_unit = True
+                    denom_nonzero = True
                 except (sp.NotInvertible, ValueError, Exception) as e:
                     denom_inversion_error = (
-                        f"denominator not a unit mod Phi_{n_2p}: "
+                        f"denominator not invertible mod Phi_{n_2p}: "
                         f"{type(e).__name__}"
                     )
         except Exception as e:
@@ -289,14 +298,14 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
                 f"denom parse failed: {type(e).__name__}: {str(e)[:80]}"
             )
 
-    if not denom_unit:
-        # Denominator is not a unit in Z[ζ_{2p}] — typically because
+    if not denom_nonzero:
+        # Denominator vanishes mod Phi_{2p} — typically because
         # tr_M's Plancherel-weight denominator shares a cyclotomic
         # factor with Φ_{2p}. The full Markov-trace evaluation
         # tr_M(ζ_{2p}) lives in Q(ζ_{2p}) \ Z[ζ_{2p}] in this case.
         frob_full_rep: sp.Poly | None = None
     else:
-        frob_full_rep = frob_rep  # set above when denom_unit succeeded
+        frob_full_rep = frob_rep  # set above when denom_nonzero succeeded
 
     # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}. |orbit| = φ(2p).
     galois_ks = [k for k in range(1, n_2p) if gcd(k, n_2p) == 1]
@@ -355,7 +364,7 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
             str(frob_full_rep.as_expr()) if frob_full_rep is not None
             else None
         ),
-        "denom_folded": denom_unit,
+        "denom_folded": denom_nonzero,
         "denom_inversion_error": denom_inversion_error,
         # Numeric value, serialized through the precision formatter so the
         # witness carries no raw binary64 (raw-float64 ratchet).
@@ -388,7 +397,7 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
             is_exact and num_trace_is_integer
         ),
         "step2_full_trace_passed": bool(
-            is_exact and full_trace_is_integer and denom_unit
+            is_exact and full_trace_is_integer and denom_nonzero
         ),
     }
 
@@ -544,13 +553,20 @@ def main() -> int:
             "cells_step2_full_trace_passed": cells_full_labels,
             "summary_note": (
                 "step2_all_atoms_compatible is the NUMERATOR test: it asks "
-                "only that Tr(numerator) be a rational integer, which the "
-                "denominator's unit-ness does not enter. The full-trace test "
-                "step2_all_atoms_full_trace_compatible is strictly stronger — "
-                "it additionally requires the denominator to be a unit at "
-                "ζ_{2p}, so Tr(Frob_p) itself is an algebraic integer. Read "
-                "the full-trace fields as the headline; the numerator fields "
-                "pass on every cell and therefore discriminate nothing."
+                "only that Tr(numerator) be a rational integer, and the "
+                "denominator does not enter. The full-trace test "
+                "step2_all_atoms_full_trace_compatible is strictly stronger: "
+                "it asks that the Galois trace of the DENOMINATOR-FOLDED value "
+                "be a rational integer. CORRECTED 2026-08-28: an earlier "
+                "wording said it 'requires the denominator to be a unit at "
+                "ζ_{2p}, so Tr(Frob_p) is itself an algebraic integer'. That "
+                "is wrong twice over — the denom_folded flag is a nonzero test "
+                "performed over Q, not a unit test, and Frob_p is an algebraic "
+                "integer on 0 of 45 cells, so a real unit test would pass "
+                "nowhere. What the full-trace test detects is integrality of "
+                "the TRACE, not of the element. Read the full-trace fields as "
+                "the headline; the numerator fields pass on every cell and "
+                "therefore discriminate nothing."
             ),
         },
     }
