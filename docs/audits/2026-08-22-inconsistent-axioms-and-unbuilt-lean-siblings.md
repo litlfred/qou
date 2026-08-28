@@ -143,8 +143,26 @@ violation arises.
   time this file has ever compiled.
 - `#print axioms` on all three declarations: `[propext, Classical.choice,
   Quot.sound]`. No `sorryAx`, no custom axiom.
-- Note this file is **not** covered by `lean-content-siblings.yml` and has no
-  build target (see §4), so this agent verification is the only gate.
+- Note this file has no build target (see §4), so this agent verification is
+  the only gate.
+
+  **CORRECTED 2026-08-28.** This read *"not covered by
+  `lean-content-siblings.yml`"*, which is wrong about the mechanism and
+  under-states the problem. That workflow's `content-sibling-compile` job
+  **does** cover content-block siblings — it runs `lean`-direct on the `.lean`
+  files a PR changes, which on that PR would have included this one. It did not
+  run for **two** independent reasons, and only naming the second is what makes
+  the finding durable:
+
+  1. **It is `workflow_dispatch:` only** — "CI auto-triggers disabled (owner
+     directive 2026-06-30): Actions billing". So it never fires on a push or a
+     PR, and nothing enqueues it.
+  2. **It is diff-scoped by design**, and deliberately so: a whole-tree gate
+     would block every PR on the pre-existing backlog. So even with triggers
+     restored it would gate *new* drift and never reach the 73 already there.
+
+  Reason 2 is the one that survives billing being fixed, and it is the reason
+  §4's remedy has to be a widened gate rather than a re-enabled one.
 
 ---
 
