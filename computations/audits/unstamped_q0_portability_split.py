@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+"""Split the resolvable-but-unstamped witnesses by WHAT WOULD FIX EACH ONE.
+
+Bean `1j39`. Pure static inspection + JSON reads; no arithmetic, so the
+NO-FLOAT64 discipline is satisfied vacuously.
+
+THE QUESTION
+------------
+A witness is *resolvable-but-unstamped* when it carries a q₀ pin under a key
+`qou_substrate.witness._Q0_FIELDS` recognises, at depth <= 3, but has no
+`q0Anchor` provenance stamp. Nothing consults the pin it does carry, so the
+`qou-1c4y` proton migration cannot be verified over these files.
+
+The useful split is not "how many" but "what closes each one", and there are
+four answers with nothing in common:
+
+  A. producer GONE      -- `scriptFile` names a .py that no longer exists
+                           anywhere in the tree. Nothing to port; the witness
+                           is a historical record and can only be labelled by
+                           hand or left alone.
+  B. producer uses      -- `WitnessBuilder.build()` has stamped since the
+     WitnessBuilder        stamping landed, so these witnesses are merely
+                           STALE. Re-running the producer fixes them, at the
+                           cost of regenerating every number in the file.
+  C. producer HAND-ROLLS -- a bare `json.dump`, never reaching `build()`.
+     json.dump             Re-running will never stamp these. They are the
+                           `_witness_q0_stamp.stamp_q0` targets.
+  D. producer UNNAMED    -- no `scriptFile` at all. Cannot be ported because
+                           nothing says what to port.
+
+WHY THIS SCRIPT EXISTS RATHER THAN A NUMBER IN A DOCSTRING
+-----------------------------------------------------------
+It was a number in a docstring, and the number was wrong within a day.
+`_witness_q0_stamp.py` shipped asserting *"every one of the 169 is from a
+hand-rolled producer"* and that regeneration therefore could not fix them.
+Measured here: of 120 named producers, **62 use WitnessBuilder** (bucket B,
+regeneration fixes them) and only **15 hand-roll** (bucket C). The claim was
+wrong about ~four fifths of the class it described, and it was wrong because
+it was measured once and then written down.
+
+TWO EXTRACTION TRAPS, both of which produced wrong counts before this script
+settled — check them before trusting any figure about this class:
+
+  1. **`scriptFile` is TOP-LEVEL, not under a `witness` block.** Reading
+     `payload["witness"]["scriptFile"]` finds nothing and reports every
+     witness as unattributed (measured: 0 named, against a true 124).
+  2. **`scriptFile` holds a BARE BASENAME, not a repo-relative path.**
+     `Path(sf).exists()` is False for essentially all of them, which reads as
+     "the producer was deleted" (measured: 121 of 124 "missing", against a
+     true 43). Resolve by basename across the tree, preferring the
+     non-`_deprecated` copy.
+
+Exit 0 always -- this reports, it does not gate.
+"""
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+_REPO = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(_REPO / "tools" / "qou-substrate" / "python"))
+
+from qou_substrate.witness import _Q0_FIELDS  # noqa: E402
+
+#: Matches `_witness_q0_stamp._find_pin`. A deeper hit is more likely to be a
+#: recorded reference value in a data table than the pin the producer ran at.
+_MAX_PIN_DEPTH = 3
+
+
+def find_pin(node, depth: int = 0):
+    """The q₀ the payload itself records, or None."""
+    if depth > _MAX_PIN_DEPTH:
+        return None
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k in _Q0_FIELDS and isinstance(v, str) and v.startswith("1.1"):
+                return v
+        for v in node.values():
+            found = find_pin(v, depth + 1)
+            if found is not None:
+                return found
+    return None
+
+
+def script_of(payload: dict):
+    """The producer this witness names, or None.
+
+    Checks the top-level `scriptFile` FIRST -- see trap 1 in the module
+    docstring. The two fallbacks cover older shapes; `computation` is also
+    sometimes a bare STRING naming a computation rather than a file, which is
+    deliberately NOT treated as an attribution (a name is not a producer).
+    """
+    sf = payload.get("scriptFile")
+    if isinstance(sf, str) and sf.strip():
+        return sf.strip()
+    comp = payload.get("computation")
+    if isinstance(comp, dict) and isinstance(comp.get("script"), str):
+        return comp["script"].strip() or None
+    wit = payload.get("witness")
+    if isinstance(wit, dict) and isinstance(wit.get("scriptFile"), str):
+        return wit["scriptFile"].strip() or None
+    return None
+
+
+def build_py_index() -> dict:
+    """basename -> best path, preferring live over `_deprecated`, then shortest.
+
+    GIT-TRACKED FILES ONLY. A bare `rglob` walks `.lake/`, vendored packages
+    and any local venv, so a producer basename could resolve to a third-party
+    copy sharing its name, and the builder-vs-hand-rolled verdict would then
+    be about the wrong file.
+
+    On this tree the restriction changes NOTHING — both indexes give the same
+    18/65/41/56 split. It is a guard against an environment that happens to
+    have a colliding basename checked out, not a fix for a defect observed
+    here. Stated because the obvious way to write this comment ("measured: N
+    against M") would be inventing a measurement that was never taken.
+    """
+    tracked = subprocess.check_output(
+        ["git", "ls-files", "*.py"], cwd=_REPO, text=True).split()
+    idx = defaultdict(list)
+    for rel in tracked:
+        p = _REPO / rel
+        idx[p.name].append(p)
+    for name in idx:
+        idx[name].sort(key=lambda p: ("_deprecated" in str(p), len(str(p))))
+    return {k: v[0] for k, v in idx.items()}
+
+
+def classify_producer(path: Path) -> str:
+    """`builder` if it reaches WitnessBuilder, `handrolled` if it json.dumps."""
+    try:
+        src = path.read_text(errors="replace")
+    except Exception:                                   # noqa: BLE001
+        return "unreadable"
+    if "WitnessBuilder" in src:
+        return "builder"
+    if "json.dump" in src:
+        return "handrolled"
+    return "no-write-found"
+
+
+def main() -> int:
+    tracked = subprocess.check_output(
+        ["git", "ls-files", "*.witness.json"], cwd=_REPO, text=True).split()
+
+    rows = []          # (witness_rel, scriptFile-or-None)
+    stamped = 0
+    for rel in tracked:
+        try:
+            payload = json.loads((_REPO / rel).read_text())
+        except Exception:                               # noqa: BLE001
+            continue
+        if not isinstance(payload, dict):
+            continue
+        if payload.get("q0Anchor"):
+            stamped += 1
+            continue
+        if find_pin(payload) is None:
+            continue
+        rows.append((rel, script_of(payload)))
+
+    pyidx = build_py_index()
+    buckets = defaultdict(list)
+    for rel, sf in rows:
+        if not sf:
+            buckets["D-unnamed"].append((rel, None))
+            continue
+        # Trap 2: resolve by basename, not by treating the value as a path.
+        hit = pyidx.get(Path(sf).name)
+        if hit is None:
+            buckets["A-producer-gone"].append((rel, sf))
+            continue
+        kind = classify_producer(hit)
+        key = {"builder": "B-builder-stale",
+               "handrolled": "C-handrolled"}.get(kind, "E-" + kind)
+        buckets[key].append((rel, str(hit.relative_to(_REPO))))
+
+    print("resolvable-but-unstamped q₀ witnesses — what would fix each")
+    print(f"  witnesses tracked          {len(tracked)}")
+    print(f"  already carrying q0Anchor  {stamped}")
+    print(f"  RESOLVABLE BUT UNSTAMPED   {len(rows)}")
+    print()
+    order = ["A-producer-gone", "B-builder-stale", "C-handrolled",
+             "D-unnamed"] + sorted(k for k in buckets if k.startswith("E-"))
+    fix = {
+        "A-producer-gone":  "nothing to port — producer deleted/renamed",
+        "B-builder-stale":  "RE-RUN the producer; build() stamps",
+        "C-handrolled":     "apply stamp_q0() — re-running never will",
+        "D-unnamed":        "no producer named; classify by the recorded pin",
+    }
+    for key in order:
+        items = buckets.get(key, [])
+        prods = {p for _, p in items if p}
+        live = sum(1 for w, _ in items if "_deprecated/" not in w)
+        print(f"  {key:<18} {len(items):>4} witness(es) over {len(prods):>3} producer(s)"
+              f"   [{live} live / {len(items) - live} deprecated]")
+        print(f"                     -> {fix.get(key, 'unclassified')}")
+
+    hand = buckets.get("C-handrolled", [])
+    live_hand = sorted({p for w, p in hand if "_deprecated/" not in (p or "")})
+    print()
+    print(f"stamp_q0 targets — live hand-rolled producers ({len(live_hand)}):")
+    for p in live_hand:
+        print(f"    {p}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

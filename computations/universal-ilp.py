@@ -11,9 +11,39 @@ Runs the same LP for:
   Level 3: proton+gluon → electron attachment
   Level 4: H atom → H₂ molecular bond
 
+🛑 LEVEL 4 AND LEVEL 4b DO NOT RUN — THIS SCRIPT ABORTS (bean `qou-uilp`).
+------------------------------------------------------------------------
+`apply_second_H` (:191) and `apply_second_C` (:202) call **`apply_atom_nf`**,
+which has never been defined — not in this file, not anywhere in the repo
+(`git log -S'def apply_atom_nf'` returns no commit). It is NOT a typo for
+`build_atom_nf`: that one exists in `pyhecke/gram.py` and takes `(Z, N)`,
+two arguments, where this is called with three (`nf, Z, N`). Different
+signature, different job — applying a second atom to an existing normal form
+rather than building one. Levels 4 and 4b are unimplemented math.
+
+So a run reaches Level 4 and raises
+
+    NameError: name 'apply_atom_nf' is not defined
+
+**before** `results['bond_HH']` is assigned, and never reaches the witness
+write. Levels 1-3 print but are not persisted by this run.
+
+`universal-ilp.witness.json` nonetheless carries `data.bond_HH` and
+`data.bond_CC` with `computedAt` 2026-04-14. It is therefore not merely stale
+— no run of this producer can reproduce it. Treat it as a HISTORICAL RECORD
+of an April computation, not as regenerable backing; the content block
+`def:universal-ilp-algorithm` records `computation.status: "error"` for this
+reason. Nothing reads `bond_HH`/`bond_CC` in code (measured: the only hits are
+comments, a docstring, and a filename inside a string).
+
+Do NOT "fix" this by re-running to refresh the witness: the run fails, and a
+witness written from a partial run would read as fresh while being less
+complete than what is committed. Either implement `apply_atom_nf` (real
+unimplemented math) or excise Levels 4/4b deliberately — both are author calls.
+
 Usage:
     cd computations
-    python3 universal-ilp.py
+    python3 universal-ilp.py       # aborts at Level 4, see above
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
