@@ -190,4 +190,36 @@ theorem nPart_ofRowLens_eq_nLambda (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)
   unfold nLambda Partition.length
   rw [list_range_foldl_add]
 
+/-- **Assembly (B6), conditional on the hook match.** Given that the
+YoungDiagram hook length agrees with the List `hookLength` on every cell of
+`ofRowLens lam hl`, the two Schur elements coincide at the principal
+specialisation `X = Q^r`:
+
+`schurElement Q (Q^r) lam = schurPrincipal r Q (ofRowLens lam hl)`.
+
+The prefactors match by `nPart_ofRowLens_eq_nLambda`; the cell products match
+by `prod_cells_ofRowLens`, the content match (numerator, via
+`Q^r · Q^{c} = Q^{r+c}`, needs `Q ≠ 0`), and the hypothesis `hhook`
+(denominator). The single remaining ingredient for the *unconditional* bridge is
+`hhook` — i.e. `hook_ofRowLens_eq_hookLength` (B3, the sorted-list leg-length
+identity). -/
+theorem schurElement_eq_schurPrincipal_of_hook (r : ℕ) (Q : ℝ) (hQ0 : Q ≠ 0)
+    (lam : List ℕ) (hl : lam.Sorted (· ≥ ·))
+    (hhook : ∀ i j, j < (lam[i]?).getD 0 →
+      QOU.QBeta.WenzlWeight.hook (YoungDiagram.ofRowLens lam hl) (i, j)
+        = Partition.hookLength lam i j) :
+    schurElement Q (Q ^ r) lam
+      = QOU.QBeta.WenzlWeight.schurPrincipal r Q (YoungDiagram.ofRowLens lam hl) := by
+  rw [schurElement_eq_finset_prod]
+  unfold QOU.QBeta.WenzlWeight.schurPrincipal
+  rw [prod_cells_ofRowLens, nPart_ofRowLens_eq_nLambda]
+  congr 1
+  apply Finset.prod_congr rfl
+  intro i _
+  apply Finset.prod_congr rfl
+  intro j hj
+  rw [Finset.mem_range] at hj
+  simp only [cellFactor]
+  rw [content_eq_cellContent, ← hhook i j hj, ← zpow_natCast Q r, ← zpow_add₀ hQ0]
+
 end QOU.MathlibExt.WenzlSchurElementBridge
