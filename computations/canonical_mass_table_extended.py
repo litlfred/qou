@@ -762,6 +762,32 @@ def main() -> int:
         .add_parameter("active_set_pruning_safe", pruning_safe)
         .add_parameter("atoms_requested", ",".join(requested))
         .add_parameter("timeout_per_atom_sec", args.timeout)
+        # Names WHICH route the p / n `prediction_MeV_50dps` came from, because
+        # the corpus has two and they disagree by ~555x on m_n. Both reproduce
+        # on current main, and the split is deliberate — not a staleness bug:
+        #
+        #   this table, via canonical_mass.nucleon_mass_mev()
+        #     m_n = 939.5658930680   ->  +501 ppb   (flavour-split identity)
+        #   per_observable_100x_status.py "Path C" (that file, line ~533)
+        #     m_n = 939.565422788    ->  +0.90 ppb  (m_n = m_p + Q_beta + m_e)
+        #
+        # Path C's own comment there calls it "8x better than the
+        # substrate-identity's", so the L2 dashboard prefers it knowingly.
+        #
+        # Recorded when the p / n rows were restored (bean `qou-7e1t` option 3).
+        # Before that this table had no nucleon rows, so the disagreement was
+        # unstatable rather than absent — a reader diffing the two witnesses
+        # would have found a 555x gap on a scored observable with nothing in
+        # either file saying they compute it differently. Adjudication of which
+        # route should be canonical is bean `qou-khue`; this is the pointer, not
+        # the answer.
+        .add_parameter(
+            "nucleon_prediction_route",
+            "canonical_mass.nucleon_mass_mev (muon-anchored Hecke energy, "
+            "flavour-split substrate identity). NOT the Path C route "
+            "(m_p + Q_beta + m_e) used by per-observable-100x-status; the two "
+            "differ by ~555x on m_n. See bean qou-khue.",
+        )
         .add_data("rows", records)
         # Nuclide-keyed view of the SAME records, so consumers can address a
         # row by what it is rather than by where it sits (bean `qou-xwet`).

@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T15:51:59.833441+00:00",
-  "commitSha": "7f8974b6cc3e4d4f2be3a16e4f7b04f03f90ab88",
+  "computedAt": "2026-08-28T18:31:52.425711+00:00",
+  "commitSha": "abdac9aeefae6338d53346144c8a10559058bd75",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 31139,
+  "durationMs": 24817,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "8cdcd0dc1be5",
-  "scriptCommitSha": "1eb1651aa24d31071eb407d2ee2d9cfdaba23ae9",
+  "scriptHash": "40791121a9b0",
+  "scriptCommitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,8 @@
     "paper_hard_floor_ppb": 780,
     "active_set_pruning_safe": true,
     "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li,7Li",
-    "timeout_per_atom_sec": 1500
+    "timeout_per_atom_sec": 1500,
+    "nucleon_prediction_route": "canonical_mass.nucleon_mass_mev (muon-anchored Hecke energy, flavour-split substrate identity). NOT the Path C route (m_p + Q_beta + m_e) used by per-observable-100x-status; the two differ by ~555x on m_n. See bean qou-khue."
   },
   "data": {
     "rows": [
