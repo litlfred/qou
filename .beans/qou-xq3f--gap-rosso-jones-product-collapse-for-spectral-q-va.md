@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-28T15:01:58Z
+updated_at: 2026-08-28T15:24:34Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -174,3 +174,5 @@ REVISED TIERS (tractability order):
  T-n4  Numerator value tr_M(e_{(1³)}·τ·T_β) — concrete braid elements; last brick,
        once M1/M2/M3 + y_λ values are in place.
 Starting T-n1 this session (user directive 2026-08-28).
+
+T-n2 (n=3) LANDED: jonesMarkov_normalisation_three in MacdonaldTelescope.lean — M1 axiom tr_M(1)=1 at nucleon rank H3 for the concrete jonesMarkovCoeff weights (f_lambda = 1,2,1 over partitions of 3), derived from proved telescope_three / Z3. lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free.
