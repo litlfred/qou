@@ -54,6 +54,26 @@ MUON_LOOSE = "1.1099785955"
 # (1.10997858275...), which diverges one digit earlier.
 MUON_FAMILY_LOOSE = "1.10997859"
 
+# 18-SIG-DIGIT CEILING -- do NOT lengthen these prefixes (measured 2026-08-28).
+#
+# The superseded value has TWO renderings in the corpus, diverging at the 19th
+# significant digit:
+#
+#     1.10997859555418057528...   107 files  (the ROUNDED form -- AGENTS.md,
+#                                             bean qou-khac, content .qa.json)
+#     1.10997859555418056776...     5 files  (the TRUNCATED form -- d-from-scratch,
+#                                             q0-value-drift-audit, 3 deprecated)
+#
+# |d| ~ 7e-19: three orders below the 3.15e-12 that makes superseded a distinct
+# pin at all, and below the 1 ppQ (1e-15) L1 target. It moves no observable --
+# it breaks DETECTORS. An exact-match scan built on the 19-char literal
+# "1.10997859555418057" reports 0 hits on nine of the nineteen genuine
+# candidates, all of which carry the value.
+#
+# 14 digits is the SHORTEST prefix that separates superseded from current
+# ("1.109978595554" vs "1.109978595557"); 11-13 are ambiguous between them.
+# So the usable window is 14..18. The 16 above sits in the middle of it.
+
 PIN_WITNESS = "q-pinning-50-digit"
 ROUTES_ANCHOR = re.compile(
     r"(import\s+q_parameter|from\s+q_parameter"
