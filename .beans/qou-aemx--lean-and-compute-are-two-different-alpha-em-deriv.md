@@ -1,7 +1,7 @@
 ---
 # qou-aemx
 title: 'The Lean and the compute are two DIFFERENT alpha_em derivations (470 ppb apart); the scorecard rests on the one the paper does not cite'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-28T16:32:49Z
@@ -64,3 +64,41 @@ moves: it does not, this is about what the number is conditional ON.
 Decide which construction is canonical, or establish that they are the same
 object under a reparametrisation (the 1049 ppm prefactor gap says they are not).
 Until then the corpus asserts two incompatible alpha_em values.
+
+
+## 2026-08-28 — half answered: NOT one object; and my own emphasis corrected
+
+**"Are they the same object under a reparametrisation?" — NO, settled
+symbolically.** Lean's prefactor is `45(q⁶−1)/(q²(q²−1))`; the compute's is a
+degree-32 cyclotomic product over `q¹⁶`. They differ by 1.5× at q→1 and by
+~1973× at q=2, and **cross at q\* = 1.11015574, 0.016 % from q₀**. The 1049 ppm
+agreement is where the crossing sits, not shared structure — and is expected,
+since both target ≈137 near the same point.
+
+**Genericity test on both κ** (window giving |err| < 100 ppb):
+
+| | claimed | window | width | % of claimed | inside? |
+|---|---:|---|---:|---:|:--:|
+| Lean `8q` | 8.8798 | [8.4744, 9.2648] | 0.790 | 8.9 % | yes |
+| compute Gram | 1.7216 | [1.8739, 1.9567] | 0.083 | 4.8 % | no |
+
+- `8q` is **in range, not forced** — the window also admits the integer 9
+  (33 ppb).
+- But bare `κ = 8`, the file's own *"dim su(3) gluon octet"* reading, gives
+  **−220 ppb and misses**. The `q` factor does the work, not the 8.
+- The Gram κ misses a *relatively tighter* window by 10 % — behaving like a
+  prediction that is not quite right.
+
+**RETRACTING MY OWN EMPHASIS.** The original entry (and PR #5886's body) called
+the 181× gap an *"anti-fit signature pointing the wrong way"*. Over-stated: a
+loosely-constrained empirical parameter beating a tightly-constrained derived
+one is near what neutral assumptions predict. The measured facts stand; the
+inference from them does not. Corrected in audit §8.
+
+## Still open — the canonical question
+
+Which construction is canonical is **not** settled. What is settled is that the
+choice is real (they are different objects), and that the derived one is the
+one making a falsifiable, currently-failing claim. Deciding it needs an owner
+or a structural argument for one prefactor over the other — `45·[3]_q` vs
+`q·[9]_q·[10]_q` — which nothing in the corpus currently supplies.

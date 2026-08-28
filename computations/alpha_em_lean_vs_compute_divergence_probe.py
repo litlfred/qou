@@ -130,5 +130,91 @@ def main():
     print("  formalisation, and the cited formalisation is the better fit.")
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# Follow-on (bean qou-aemx, 2026-08-28): are they the same object, and is
+# either kappa actually forced?
+# ─────────────────────────────────────────────────────────────────────────
+
+
+def same_function_check(q):
+    """Are the two prefactors one function under a reparametrisation? NO.
+
+    Settled symbolically -- it needs no anchor. Lean's is
+    `45(q^6-1)/(q^2(q^2-1))`; the compute's is a degree-32 cyclotomic product
+    over `q^16`. Evaluated away from q0 they diverge outright.
+    """
+    L = lambda x: 45 * qbal(3, x)
+    C = lambda x: x * qbal(9, x) * qbal(10, x)
+    print("-" * 68)
+    print("  Same function? Evaluate both away from q0")
+    print("-" * 68)
+    for x in ["1.0001", "1.05", str(q), "1.5", "2"]:
+        xx = mp.mpf(x)
+        print(f"  q={x:<20s} Lean={mp.nstr(L(xx), 10):>16s}"
+              f"  compute={mp.nstr(C(xx), 10):>16s}"
+              f"  ratio={mp.nstr(L(xx) / C(xx), 8)}")
+    qx = mp.findroot(lambda x: L(x) - C(x), (q * mp.mpf("0.99"), q * mp.mpf("1.05")),
+                     solver="bisect", tol=mp.mpf("1e-40"))
+    print()
+    print(f"  they CROSS at q* = {mp.nstr(qx, 18)}")
+    print(f"  q0               = {mp.nstr(q, 18)}")
+    print(f"  q* is {mp.nstr((qx - q) / q * 100, 6)} % from q0 -- the agreement at q0 is")
+    print("  where the crossing happens to sit, not shared structure. Both forms")
+    print("  target ~137 near the same point, so proximity there is expected and")
+    print("  is not evidence for either.")
+
+
+def kappa_windows(q):
+    """Is either kappa FORCED, or merely IN RANGE? (AGENTS.md genericity test.)
+
+    Reports the interval of kappa giving |err| < 100 ppb against CODATA.
+    """
+    Lbare = 45 * qbal(3, q)
+    d = ((1 - 1 / q) ** 4) * qbal(5, q)
+    a_lean = lambda k: Lbare * (1 + d + k * d ** 2)
+
+    pi = mp.pi
+    cbare = q * qbal(9, q) * qbal(10, q)
+    n2 = qbal(2, q)
+    c1 = (pi ** 2 * mp.mpf(10) / 9 + pi ** 2 * mp.mpf(16) / 15) * (n2 / 2) \
+        * (1 - 1 / q) ** 2 / cbare
+    a_comp = lambda K: cbare * (1 + c1 / (1 - c1 * K))
+
+    def window(f):
+        lo = mp.findroot(lambda k: ppb(f(k), CODATA_ALPHA_EM_INV) + 100,
+                         (mp.mpf(-5), mp.mpf(40)), solver="bisect", tol=mp.mpf("1e-20"))
+        hi = mp.findroot(lambda k: ppb(f(k), CODATA_ALPHA_EM_INV) - 100,
+                         (mp.mpf(-5), mp.mpf(40)), solver="bisect", tol=mp.mpf("1e-20"))
+        return (lo, hi) if lo < hi else (hi, lo)
+
+    print()
+    print("-" * 68)
+    print("  Is kappa forced, or merely in range?  (|err| < 100 ppb window)")
+    print("-" * 68)
+    for name, f, claimed in [("Lean  8q", a_lean, 8 * q),
+                             ("compute Gram", a_comp, mp.mpf("1.72161420170879"))]:
+        lo, hi = window(f)
+        rel = (hi - lo) / claimed * 100
+        inside = lo < claimed < hi
+        print(f"  {name:14s} claimed={mp.nstr(claimed, 10):>14s}"
+              f"  window=[{mp.nstr(lo, 8)}, {mp.nstr(hi, 8)}]")
+        print(f"  {'':14s} width={mp.nstr(hi - lo, 6)} ({mp.nstr(rel, 4)} % of the claimed value)"
+              f"   INSIDE={inside}")
+    print()
+    print("  Two facts that pull opposite ways, and both belong in the record:")
+    print("   * Lean's 8q is INSIDE -- but its window is relatively WIDER, and it")
+    print("     also admits the integer 9 (33 ppb). So 8q is IN RANGE, not FORCED.")
+    print(f"     Bare kappa=8 -- the file's own 'dim su(3) gluon octet' reading --")
+    print(f"     gives {mp.nstr(ppb(a_lean(mp.mpf(8)), CODATA_ALPHA_EM_INV), 6)} ppb and MISSES the window:")
+    print("     the q factor does the work, not the 8.")
+    print("   * compute's Gram kappa is 10 % OUTSIDE a relatively TIGHTER window.")
+    print("     A parameter-free construction that misses is behaving like a")
+    print("     prediction -- what an unfitted quantity looks like when it is")
+    print("     not quite right.")
+
+
 if __name__ == "__main__":
     main()
+    q = mp.mpf(Q_50_DIGIT_STR)
+    same_function_check(q)
+    kappa_windows(q)
