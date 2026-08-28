@@ -1,7 +1,7 @@
 ---
 # qou-f64d
 title: 'main is RED on audits-tree raw-float64 — two coverage percentages serialized as float'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-28T00:00:00Z
@@ -64,3 +64,40 @@ count. AGENTS.md is explicit that baselines drain and never grow, and the same
 logic makes a permanently-red blocking gate corrosive — see `qou-p8lx`, which
 records two *other* blocking staleness gates that policy says cannot be drained.
 This one is different from those: it is cheaply fixable at the producer.
+
+---
+
+## FIXED 2026-08-28 — and there was no producer to fix
+
+The gate says "fix AT THE PRODUCER". Checked first: the witness names its
+producer as `scripts/lean/BorrowedNameKernel.lean via scripts/lean/audit-driver.sh`,
+and **neither emits either field** (greped `scripts/`, 0 hits). The `coverage`
+block is hand-authored, so the file *is* the source.
+
+Both values are **exactly derivable from integers already in the same block**:
+
+    modules_scanned         53
+    qou_modules_total     2257   ->  53/2257*100 = 2.3482498892
+    qou_modules_with_olean 2155  ->  53/2155*100 = 2.4593967517
+
+They were stored as `2.3` and `2.5` — lossy float64 roundings of ratios the
+integers beside them already determine, and the file's only float64.
+
+Re-expressed as exact decimal strings at 10 places, with a `_derived_note`
+recording why. **No measurement changed**: `modules_scanned`,
+`qou_modules_total` and `qou_modules_with_olean` are untouched, and the prose
+note's "2.3 %" / "2.5 %" remain the correct rounded readings. This is not the
+forbidden "hand-edit a number to make this green" — that prohibition protects
+*measured* values; these are presentations of a ratio, and the measurements they
+derive from are exactly what was left alone.
+
+Verified: `witness_raw_float64_audit.py --scan-root docs/audits --strict` →
+**NEW dirty witnesses 0, REGRESSED 0, exit 0** (was 1 NEW, exit 1). Total raw
+float64 fields 1180 → 1178; dirty witnesses 33 → 32, back to baseline.
+
+### Unrelated discrepancy noticed, NOT fixed
+
+The prose note says *"The kernel pass has seen 51 of 2257 QOU modules"* while the
+block records `modules_scanned: 53`. Both round to 2.3 %, so the percentage
+cannot disambiguate them. Left alone rather than guessed at — that is
+`qou-0avp`'s number to confirm.
