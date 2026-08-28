@@ -52,8 +52,37 @@ cd "$ROOT"
 #   - witness_dependency_coverage_audit.py flags witnesses that don't declare
 #     upstream_witness_hashes — the root cause of the "silent stale" class.
 GATES=(
-  "scriptHash + upstream drift|computations/witness_dependency_drift.py|--strict|yes"
-  "q0 constant staleness|computations/substrate/witness_constant_staleness.py|--strict|yes"
+  # ADVISORY UNTIL qou-1c4y LANDS — owner decision, 2026-08-28. Both were
+  # BLOCKING and both measure the SAME backlog: the muon->proton q0 migration
+  # that AGENTS.md rule 4 says not to drain outside its tracked sweep. A
+  # blocking gate that policy forbids you to fix is permanently red, and this
+  # file's sibling (precision-gates.sh) states the consequence at its top --
+  # "a gate that is red on arrival gets skipped, which is how a checker goes
+  # quiet". Demoting keeps the signal and stops the array training agents to
+  # ignore it.
+  #
+  # This is a RELAXATION WITH AN EXPIRY, not a silencing. Both still run, still
+  # print, and still report every offender; they simply do not fail the array.
+  #
+  # FLIP BOTH BACK TO BLOCKING when qou-1c4y completes. That is the whole
+  # condition -- not "when the counts look better". Measured at demotion time
+  # (main cdbdc84af1, 2026-08-28):
+  #
+  #   q0 constant staleness      2 stale of 55 scanned (was 6 before the
+  #                              qou-bdkx closure and the derived-output
+  #                              exemption). Both survivors declare
+  #                              `q0Anchor: muon` AND carry a muon q0Value --
+  #                              self-consistent and valid as recorded; they
+  #                              are the migration, not defects.
+  #   scriptHash + upstream drift  492 self-stale of 3170 checked, dominated by
+  #                              sha256_mismatch against
+  #                              q-pinning-50-digit.witness.json -- the same
+  #                              root. AGENTS.md §4 measures the self-stale
+  #                              class as ~0% safe to refresh.
+  #
+  # Do NOT baseline either one to make it green. Baselines drain, never grow.
+  "scriptHash + upstream drift|computations/witness_dependency_drift.py|--strict|no"
+  "q0 constant staleness|computations/substrate/witness_constant_staleness.py|--strict|no"
   "dependency coverage|computations/audits/witness_dependency_coverage_audit.py|--strict|no"
   # BLOCKING, and green on arrival. Bean qou-cdj8.
   #
@@ -133,9 +162,24 @@ fi
 # A full run on `main` exits 1. Re-measured 2026-08-23; the set SHRANK, and the
 # correction matters more than the count:
 #
-#   scriptHash + upstream drift   RED   dominated by sha256_mismatch against
+#   scriptHash + upstream drift   ADVISORY as of 2026-08-28 — dominated by
+#                                       sha256_mismatch against
 #                                       q-pinning-50-digit.witness.json
-#   q0 constant staleness         RED   6 witnesses in the muon basin
+#   q0 constant staleness         ADVISORY as of 2026-08-28 — 2 witnesses in
+#                                       the muon basin, down from 6: four were
+#                                       closed by bean qou-bdkx (PR #5532, three
+#                                       producers that hardcoded the muon
+#                                       literal under a proton declaration) and
+#                                       by the derived-output exemption in
+#                                       53aafb7795, which covers knot-volumes,
+#                                       where the flagged value is q0 DERIVED
+#                                       from Vol(4_1) and m_mu/m_e as the
+#                                       assertion's own subject. The 2 that
+#                                       remain declare muon and carry muon:
+#                                       consistent, and owned by qou-1c4y.
+#
+#   See the GATES array for why both are advisory and the single condition
+#   that flips them back.
 #   anchor-flip layer straddle    green clean=8 / STRADDLE=0. Added 2026-08-24
 #                                       red on arrival (3 of 8) by choice, and
 #                                       drained the same day in #5646 -- one

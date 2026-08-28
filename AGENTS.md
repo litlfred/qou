@@ -812,10 +812,13 @@ ephemeral.
     - **Phase 4:** merge only after reviews resolved + the
       **verification gate** below is satisfied
 
-    > **🛑 Two of the three original gates no longer exist — do NOT
-    > block on them (recorded 2026-08-07).** An agent following the
-    > older wording waits forever on reviewers and a CI run that can
-    > never arrive:
+    > **🛑 ALL THREE original gates are gone — do NOT block on any of
+    > them (recorded 2026-08-07; Copilot row added later, heading
+    > corrected 2026-08-28).** This heading read "Two of the three"
+    > while the table beneath it and its own closing paragraph both say
+    > three, so the line a skimming agent reads contradicted the body it
+    > introduces. An agent following the older wording waits forever on
+    > reviewers and a CI run that can never arrive:
     >
     > | Original gate | Actual state |
     > |---|---|
