@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-27T00:43:01Z
+updated_at: 2026-08-28T19:42:05Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2164,3 +2164,47 @@ an actively-coordinated bean like this one they are where sibling results land
 *first*, hours to days before an audit doc or a content block. Worth adding to
 the checklist, or at minimum: on a bean with a live sibling PR, read that PR's
 comment history before claiming novelty, not only before starting.
+
+
+## 2026-08-28 — the D-frame ladder is priced: 74x to 257x the correction the C ladder supplies
+
+Owner selected "re-derive the ladder under D" as one of four tracks on
+`qou-99qc`. Not attempted here; priced, so the next session starts from the
+cost rather than rediscovering it.
+
+**Why it cannot start from the current base.** The ladder multiplies a base
+`Q_base = eps(Delta) * E_0`, and that `eps` is the coordinate sum, which
+`qou-99qc` establishes is INADMISSIBLE under D (it does not descend to
+TL_inf(q)). So a D-frame ladder cannot be the C ladder with `z` swapped — that
+much AGENTS.md and `decayLadder_zC_threeRow_ne_zero` already say — but it also
+cannot keep the same BASE. Both the functional and the ladder change.
+
+**What the re-derivation has to achieve.** Recomputed at q0 from the NF vector,
+reproducing this bean's and `qou-99qc`'s published table exactly (independent
+route: covectors built from the basis, not read off the recorded numbers):
+
+    functional                       |Q_pred| MeV     err vs CODATA
+    coordinate sum (INADMISSIBLE)    0.7836458274        +0.167757 %
+    augmentation   (admissible)      0.8798905613        +12.47 %
+    tr_M at z_D    (admissible)      0.4447004085        -43.1572 %
+
+The current five-rung ladder corrects the 0.167757 % residual of the
+inadmissible base. Starting from an admissible base instead, the ladder must
+correct:
+
+    augmentation    12.47 %    ->   74.3339x larger
+    tr_M at z_D     43.1572 %  ->  257.26x  larger
+
+**So this is not a perturbation of the existing ladder.** A correction two-plus
+orders of magnitude larger is a different object, and the c_k extracted for the
+C frame carry no information about it. Any attempt that reuses the C rungs as a
+starting point is doing the substitution the corpus forbids, one level up.
+
+**Track 3 is closed and it removes the shortcut.** The convex-combination repair
+(a weight between the two admissible functionals) is EXCLUDED by a rank
+computation — `net` is not in their span, so there is no weight to derive. See
+`qou-99qc` and `computations/qbeta/qbeta_admissible_span_prune_probe.py` (8/8).
+That route is not available to shrink the 74x.
+
+Scope-(a): none of this shows the Q-value wrong, and none of it forecloses the
+re-derivation. It sizes it.
