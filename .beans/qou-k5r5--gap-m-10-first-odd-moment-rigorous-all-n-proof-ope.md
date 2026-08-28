@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-28T20:29:47Z
+updated_at: 2026-08-28T20:39:59Z
 ---
 
 
@@ -339,3 +339,20 @@ The variance asymptotics are exactly BOO's rigorous Airy-edge/sine-bulk kernel a
 Still OPEN: turn measured a~1 into a cited BOO edge/bulk bound (in-corpus, tractable);
 sigma_D (SumD2 quadratic) needs the DPP 4-point (mechanical, deferred).
 Audit: docs/audits/2026-08-28-covariance-kernel-M1-descent-dpp-variance-rate.md
+
+## 2026-08-28 (cont) — sigma_D leg + BOO bound structure (PR #5924)
+
+(b) sigma_D leg EXACT (wlambda_covariance_epic_M1_sigmaD_leg_rate.py): SumD2 quadratic,
+sig_D/sig_A -> 0.679610, (CS) margin -> 0.300187. HONEST: damped-OSCILLATORY approach (not a
+pointwise power law -- corrected an initial over-claim of a clean rate); ENVELOPE of |dev|
+decays ~n^-0.9 (0.076@4 -> 0.024@9 -> 0.012@21 -> 0.0079@38), matching Poisson-smoothed rho_P
+~n^-1. margin>0 all 4<=n<=40, min 0.20025@n=4.
+
+(a) BOO edge/bulk bound structure (audit section): Var=1/2 Sum(g(x)-g(y))^2 J^2 = bulk (Thm 3
+discrete sine kernel, O(theta^-1/2) corr) + edge (Baik-Deift-Johansson Airy, theta^1/6 window,
+subleading) -> crude |Var/n^5/2 - V| <= C n^-1/2, conservative vs measured ~n^-1, traps the
+oscillation below 0.30 for n>=N0. Ingredients are published BOO estimates (PR #5922), not new
+theorems -- the one remaining analytic step, fully scoped.
+
+STATE: both #5924 next-steps done. Remaining to CLOSE qou-k5r5: write the BOO bulk-sine +
+Airy-edge + de-poissonization estimate out rigorously (all ingredients in-corpus).
