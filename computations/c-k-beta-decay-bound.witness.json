@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:26:21.190392+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-28T20:18:14.533989+00:00",
+  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
   "assertions": [
     {
       "name": "geometric_form_equals_exponential_form_to_50dps",
-      "computed": 0.0,
+      "computed": 9.961246986709384e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40"
     },
     {
       "name": "N0_observed_residual_within_per_braid_bound",
-      "computed": 0.16920008519588986,
+      "computed": 0.16920006477069252,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 6,
   "computation": "c-k-beta-decay-bound",
   "scriptFile": "c_k_beta_decay_witness.py",
   "scriptHash": "2da665553d35",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,77 +34,86 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
-  "description": "Substrate-derived dampening rate c(K) for the \u03b2-decay operator class. From the per-braid-mass-tower bound |R_N| \u2264 \u210f_q^(2(N+1))/(1-\u210f_q\u00b2) and the substrate identity \u210f_q = (q_0-1)/q_0, the bound reads exactly C(K)\u00b7exp(-c(K)\u00b7N) with c(K) = -2 ln \u210f_q \u2248 4.624 and C(K) = \u210f_q\u00b2/(1-\u210f_q\u00b2) \u2248 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9\u00d7 headroom. The actual c(K) for the operator may be larger than this ceiling rate \u2014 pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_\u03b2) input \u2014 N=0 prediction comes from prop:neutron-qvalue-symbolic.",
+  "invocation": {
+    "argv": [
+      "computations/c_k_beta_decay_witness.py"
+    ],
+    "reproduce": "python3 -u computations/c_k_beta_decay_witness.py"
+  },
+  "description": "Substrate-derived dampening rate c(K) for the β-decay operator class. From the per-braid-mass-tower bound |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) and the substrate identity ℏ_q = (q_0-1)/q_0, the bound reads exactly C(K)·exp(-c(K)·N) with c(K) = -2 ln ℏ_q ≈ 4.624 and C(K) = ℏ_q²/(1-ℏ_q²) ≈ 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9× headroom. The actual c(K) for the operator may be larger than this ceiling rate — pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_β) input — N=0 prediction comes from prop:neutron-qvalue-symbolic.",
   "contentBlock": "conj:archimedean-remainder-exponential-decay",
   "parameters": {
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "m_e_MeV": "0.51099895069",
     "Q_beta_codata_MeV": "0.78233341"
   },
   "data": {
-    "hbar_q": "0.09908172643825895908209941598274232360541489286732614018176309084180655",
-    "hbar_q_sq": "0.009817188513985984393706486894049481445099640584607407063788821825257402",
-    "c_K": "4.623620499646102464359927439103616249444895186342219062704453196437552",
-    "C_K": "0.009914521238005401119823722522653047292008385525683653175320352243510309",
+    "hbar_q": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
+    "hbar_q_sq": "0.009817188527722425437750202432517666656054200594570201864112973133249281",
+    "c_K": "4.623620498246878947885325611376464636313096341677089510965170628679336",
+    "C_K": "0.009914521252015572897985205973357183165901212082093636382966210623954052",
     "bound_table": [
       {
         "N": 0,
-        "bound_geometric": "0.009914521238005401119823722522653047292008385525683653175320352243510309",
-        "bound_exponential": "0.009914521238005401119823722522653047292008385525683653175320352243510309",
+        "bound_geometric": "0.009914521252015572897985205973357183165901212082093636382966210623954052",
+        "bound_exponential": "0.009914521252015572897985205973357183165901212082093636382966210623954052",
         "ratio_geom_over_exp": "1.0",
-        "bound_pct": 0.9914521238005402,
-        "bound_ppm": 9914.521238005402,
-        "bound_ppb": 9914521.238005402
+        "bound_pct": 0.9914521252015573,
+        "bound_ppm": 9914.521252015573,
+        "bound_ppb": 9914521.252015572
       },
       {
         "N": 1,
-        "bound_geometric": "0.0000973327240194167261172356286035658469087449410762461115315304182529075",
-        "bound_exponential": "0.00009733272401941672611723562860356584690874494107624611153153041825290749",
+        "bound_geometric": "0.00009733272429314746023500354083951650984701148752343451885323749070477084",
+        "bound_exponential": "0.00009733272429314746023500354083951650984701148752343451885323749070477084",
         "ratio_geom_over_exp": "1.0",
-        "bound_pct": 0.009733272401941672,
-        "bound_ppm": 97.33272401941673,
-        "bound_ppb": 97332.72401941672
+        "bound_pct": 0.009733272429314746,
+        "bound_ppm": 97.33272429314746,
+        "bound_ppb": 97332.72429314746
       },
       {
         "N": 2,
-        "bound_geometric": "0.0000009555337002783856194782781192378637635844874202868819352598580895983021",
-        "bound_exponential": "0.000000955533700278385619478278119237863763584487420286881935259858089598302",
-        "ratio_geom_over_exp": "1.0",
-        "bound_pct": 9.555337002783857e-05,
-        "bound_ppm": 0.9555337002783856,
-        "bound_ppb": 955.5337002783856
+        "bound_geometric": "0.0000009555337043026570672931623015280805958971008108961970669713127493474472",
+        "bound_exponential": "0.0000009555337043026570672931623015280805958971008108961970669713127493474473",
+        "ratio_geom_over_exp": "0.9999999999999999999999999999999999999999999999999999999999999999999999",
+        "bound_pct": 9.555337043026571e-05,
+        "bound_ppm": 0.955533704302657,
+        "bound_ppb": 955.533704302657
       },
       {
         "N": 3,
-        "bound_geometric": "0.000000009380654467099493521861641017311704262573160301143269422649092036062857",
-        "bound_exponential": "0.000000009380654467099493521861641017311704262573160301143269422649092036062856",
-        "ratio_geom_over_exp": "1.0",
-        "bound_pct": 9.380654467099493e-07,
-        "bound_ppm": 0.009380654467099493,
-        "bound_ppb": 9.380654467099493
+        "bound_geometric": "0.00000000938065451973215735126181941353125871056444855197729904201961799633242",
+        "bound_exponential": "0.000000009380654519732157351261819413531258710564448551977299042019617996332421",
+        "ratio_geom_over_exp": "0.9999999999999999999999999999999999999999999999999999999999999999999999",
+        "bound_pct": 9.380654519732158e-07,
+        "bound_ppm": 0.009380654519732157,
+        "bound_ppb": 9.380654519732158
       },
       {
         "N": 4,
-        "bound_geometric": "0.000000000092091653288080463138251158599854794281669982003015312789729886831197",
-        "bound_exponential": "0.00000000009209165328808046313825115859985479428166998200301531278972988683119699",
-        "ratio_geom_over_exp": "1.0",
-        "bound_pct": 9.209165328808047e-09,
-        "bound_ppm": 9.209165328808046e-05,
-        "bound_ppb": 0.09209165328808046
+        "bound_geometric": "0.00000000009209165393364205370956716125641393245081028546258950335364546351881717",
+        "bound_exponential": "0.00000000009209165393364205370956716125641393245081028546258950335364546351881718",
+        "ratio_geom_over_exp": "0.9999999999999999999999999999999999999999999999999999999999999999999999",
+        "bound_pct": 9.209165393364205e-09,
+        "bound_ppm": 9.209165393364206e-05,
+        "bound_ppb": 0.09209165393364205
       }
     ],
-    "Q_beta_form_a_MeV": "0.7836458038973215495988764817067477910980670825826358648183381566111344",
-    "R_0_observed_relative": "0.001677537838146973166947429366141720955093919078102346182988857156355389",
-    "R_0_observed_keV": "1.312393897321549598876481706747791098067082582635864818338156611134415",
-    "R_0_bound_relative": "0.009914521238005401119823722522653047292008385525683653175320352243510309",
-    "margin_observed_over_bound": "0.1692000851958898488783591534777009888113976009509591111946038441711742",
-    "speedup_bound_over_observed": "5.910162508737860027179044202844158472815828283437932246160482026304094"
+    "Q_beta_form_a_MeV": "0.7836458037407488374581770075818439054190002345849219181273731549085477",
+    "R_0_observed_relative": "0.001677537638011442535960476981091610824853095031339538634011750704277993",
+    "R_0_observed_keV": "1.312393740748837458177007581843905419000234584921918127373154908547704",
+    "R_0_bound_relative": "0.009914521252015572897985205973357183165901212082093636382966210623954052",
+    "margin_observed_over_bound": "0.1692000647706925305214639266770137071679576827829373021725176061939497",
+    "speedup_bound_over_observed": "5.910163222190514954504408264080945841971106448918305929265835322079531"
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

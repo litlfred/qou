@@ -7,7 +7,7 @@
   "muon": "1.10997859555733471989976"
  },
  "q0AnchorReason": "results are computed at the PROTON pin (owner directive 2026-08-07); the MUON pin is read once, to compute the proton-vs-muon spread of E_0 that bounds how far the energy scale could move. The comparison is the subject of the `allowed_rel_move` column, not an accidental layer straddle.",
- "computedAt": "2026-08-26T06:52:15+00:00",
+ "computedAt": "2026-08-28T20:24:50+00:00",
  "engine": "mpmath mpf at 60 dps; no float64 anywhere; 0 free parameters",
  "free_parameters": 0,
  "inputs": {

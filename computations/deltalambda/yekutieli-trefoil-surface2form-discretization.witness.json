@@ -1,7 +1,7 @@
 {
  "computation": "yekutieli-trefoil-surface2form-discretization",
  "scriptFile": "yekutieli_trefoil_surface2form_discretization_probe.py",
- "computedAt": "2026-08-28T15:50:02.742221+00:00",
+ "computedAt": "2026-08-28T20:24:45.422646+00:00",
  "engine": "mpmath mpf (pure 2x2 matrices; 0 free params; structural validation)",
  "free_parameters": 0,
  "inputs": {
@@ -38,6 +38,6 @@
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Grounds \u00bdP\u222e\u222e[F_q,F_q] in the corpus germ F_q (germ-commutator-q-curvature); remaining gap = the non-abelian interface handle holonomies (qou-jqof/qou-dp32).",
- "q0Anchor": "muon",
- "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-interface-handle-curvature",
  "scriptFile": "deuteron_interface_handle_curvature_probe.py",
- "computedAt": "2026-08-28T15:50:02.552544+00:00",
+ "computedAt": "2026-08-28T20:24:32.637264+00:00",
  "engine": "mpmath mpf (H\u2086 Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -223,6 +223,6 @@
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Feeds surface2Form(V_trefoil,[A_a,A_b])=[A_a,A_b]=F_q (Lean). Remaining: the canonical binding pairing (qou-jqof/qou-dp32).",
- "q0Anchor": "muon",
- "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
