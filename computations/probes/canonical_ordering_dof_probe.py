@@ -173,6 +173,34 @@ def canonical(Z: int, N: int) -> str:
 # Part 0 -- Q1: the production call chain, established from source
 # ---------------------------------------------------------------------------
 
+def _cell(x):
+    """Read one `mass-table-comprehensive` cell as an exact `mpf`, or `None`.
+
+    That witness's numeric cells changed type when the producer's float64 was
+    drained: they were JSON floats (`round(v, 6)`) and are now decimal strings
+    (`f"{v:.6f}"`). Both spellings carry the same six decimals, so this probe
+    must give the same answer against either — a consumer that only handles
+    the shape it was written against turns a producer's type fix into a
+    downstream break, which is the usual reason such fixes are avoided.
+
+    A float is routed through `repr` rather than `mpf(float)` so that a
+    decimal literal is read as that decimal, not as the binary double nearest
+    to it.
+    """
+    if x is None:
+        return None
+    return mp.mpmathify(x) if isinstance(x, str) else mp.mpf(repr(x))
+
+
+def _lit(x):
+    """The cell's value as a decimal STRING, for copying into this witness.
+
+    A copy must not re-introduce as a JSON float what the producer just
+    stopped emitting as one.
+    """
+    return None if x is None else (x if isinstance(x, str) else repr(x))
+
+
 def part0_production_trace(results: dict, assertions: dict) -> None:
     print("\n" + "=" * 78)
     print("PART 0 -- Q1: is the canonical ordering LIVE IN PRODUCTION?")
@@ -196,8 +224,12 @@ def part0_production_trace(results: dict, assertions: dict) -> None:
         # the production mass table calls it
         "mass_table_comprehensive_calls_binding_canonical":
             "from binding_canonical import binding_canonical" in mtc,
+        # `math.log` -> `mp.log` when the producer's float64 was drained; the
+        # comment form is the stable anchor, the call forms are corroboration.
         "mass_table_symbolic_log_trace_uses_binding_canonical_trace":
-            'B = -alpha * ln|tau_M|' in mtc or "-alpha * math.log(tr)" in mtc,
+            'B = -alpha * ln|tau_M|' in mtc
+            or "-alpha * math.log(tr)" in mtc
+            or "-alpha * mp.log(tr)" in mtc,
     }
     for k, v in checks.items():
         print(f"  {'OK ' if v else 'MISS'}  {k}")
@@ -488,27 +520,29 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
         dB_hi = -alpha * mp.log(lo)      # smallest ratio -> largest B
         dB_lo = -alpha * mp.log(hi)      # largest ratio  -> smallest B
         spread = dB_hi - dB_lo
-        B_ame = r.get("B_AME_MeV") or 0.0
-        # B_pred/B_AME are read out of mass-table-comprehensive.witness.json,
-        # which is IN the raw-float64 baseline (75,112 fields). They arrive as
-        # Python floats, so `pct` is f64-limited however `spread` was computed.
-        # Serialized as strings at their true f64 width: the baseline covers the
-        # SOURCE of these numbers, not a copy of them into a new witness, and a
-        # copy is exactly what this probe makes.
-        pct = (mp.mpf(spread) / mp.mpf(repr(B_ame)) * 100) if B_ame else None
+        B_ame = _cell(r.get("B_AME_MeV")) or mp.mpf(0)
+        # B_pred/B_AME are read out of mass-table-comprehensive.witness.json.
+        # That witness used to be the corpus's largest raw-float64 entry
+        # (75,112 fields) and these cells arrived as JSON floats; they are now
+        # decimal strings. `_cell` reads either, so this probe runs against a
+        # pre-drain and a post-drain witness alike and gives the same answer.
+        # Either way `pct` is limited by whatever precision the SOURCE had —
+        # a copy cannot recover digits the producer did not write.
+        pct = (spread / B_ame * 100) if B_ame else None
+        _bp_raw = r.get("B_pred_MeV")
         table.append({
             "atom": name, "Z": Z, "N": N,
             "in_production_table": bool(r),
-            "B_pred_MeV_production": (None if r.get("B_pred_MeV") is None
-                                      else repr(r["B_pred_MeV"])),
-            "B_AME_MeV": repr(B_ame) if B_ame else None,
+            "B_pred_MeV_production": (None if _bp_raw is None
+                                      else _lit(_bp_raw)),
+            "B_AME_MeV": _lit(r.get("B_AME_MeV")) if B_ame else None,
             "n_reachable_multisets": len(reachable_blocks(Z, N)),
             "ratio_min": mp.nstr(lo, 10), "ratio_max": mp.nstr(hi, 10),
             "dB_min_MeV": mp.nstr(dB_lo, 8), "dB_max_MeV": mp.nstr(dB_hi, 8),
             "spread_MeV": mp.nstr(spread, 8),
             "spread_pct_of_B_AME": mp.nstr(pct, 17) if B_ame else None,
         })
-        bp = r.get("B_pred_MeV")
+        bp = _cell(r.get("B_pred_MeV"))
         print(f"  {name:6s} {Z:3d} {N:3d} "
               f"{(f'{bp:10.3f}' if bp is not None else '       n/a')} "
               f"{(f'{B_ame:10.3f}' if B_ame else '       n/a')} "
@@ -522,8 +556,8 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
         Z, N = r["Z"], r["N"]
         lo, hi = ratio_range(Z, N)
         spread = -alpha * mp.log(lo) + alpha * mp.log(hi)     # stays mpf
-        B_ame = r.get("B_AME_MeV") or 0.0
-        if B_ame and spread / mp.mpf(repr(B_ame)) > mp.mpf("0.01"):
+        B_ame = _cell(r.get("B_AME_MeV")) or mp.mpf(0)
+        if B_ame and spread / B_ame > mp.mpf("0.01"):
             n_moved_1pct += 1
         if worst is None or spread > worst[1]:
             worst = (r["atom"], spread)
