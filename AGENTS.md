@@ -3710,6 +3710,7 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+trap 'rm -f "$TGZ"' EXIT INT TERM   # ~1.6G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
@@ -3717,6 +3718,16 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && tar xzf "$TGZ" -C "$ROOT" \
   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
   && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+
+# 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
+# `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
+# ~1.6G, and until 2026-08-28 nothing deleted it — not the recipe, not a reaper.
+# Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
+# disk thirteen days later and was a direct contributor to this container
+# reaching **92K free**, at which point the Bash harness cannot write its own
+# output capture and EVERY command fails, including the `rm` that would fix it.
+# Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
+# used, because the real limit is a per-session quota near 38G.
 
 # 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
 # stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
