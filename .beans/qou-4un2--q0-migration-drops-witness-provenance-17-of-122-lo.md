@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T14:08:26Z
-updated_at: 2026-08-28T14:21:24Z
+updated_at: 2026-08-28T14:28:09Z
 ---
 
 ## Measured 2026-08-28, on origin/main at cdbdc84af1
@@ -139,3 +139,69 @@ a pre-write guard that refuses to drop a provenance key present in the committed
 witness covers every one of the 281 regardless of how it writes. Step 4 (make the
 producers emit it themselves) remains the real fix, and is now scoped: 281 files,
 none of which currently touch `WitnessBuilder`.
+
+
+--------
+
+## 2026-08-28 — CORRECTION 3: step 1 was designed at the wrong layer, and a guard already exists
+
+Corpus-grepped before writing the guard, per the checklist. **It already exists**:
+`_check_producer_takeover` in `tools/qou-substrate/python/qou_substrate/witness.py`
+(bean `qou-okl8`), with its own test file and a
+`QOU_WITNESS_ALLOW_PRODUCER_TAKEOVER` override. It raises with, literally,
+*"drops N field(s) the committed one carries"*.
+
+It cannot catch this class, for a reason that invalidates my step 1 as written.
+
+**1. It lives inside the writer, and these producers bypass the writer.**
+`_check_producer_takeover` has exactly ONE call site — `witness.py:2022`, inside
+`WitnessBuilder.save()`. Measured on the casualties through `code_only`:
+
+    sweeps/low_isotope_binding_sweep.py      WitnessBuilder=False  json.dump=True
+    probes/gt_matrix_pslq_probe.py           WitnessBuilder=False  json.dump=True
+    sublemma_2_1_alpha_shift_extract.py      WitnessBuilder=False  json.dump=True
+
+A producer writing json.dump(...) directly never reaches line 2022. **No amount
+of strengthening the in-writer guard helps.**
+
+**2. Even if reached, two early returns skip this case by design.**
+
+    if not isinstance(new_script, str): return    # a bare producer has NO scriptFile
+    if PurePath(old).name == PurePath(new).name: return
+
+The second is deliberate and documented: *"The same producer dropping a field is
+schema evolution and is not this function's business."* That is the right scope
+for `qou-okl8` (producer TAKEOVER) and the wrong scope for this bean (provenance
+DELETION by the owning producer).
+
+### Revised step 1 — one tree-level ratchet, replacing steps 1 AND 2
+
+The check must be independent of how a producer writes, so it belongs where the
+repo already puts this idiom: a **pre-commit ratchet over the tree**, alongside
+the raw-float64 and float64-padding ratchets in `scripts/precision-gates.sh`.
+
+    for each changed *.witness.json:
+        committed = git show HEAD:<path>
+        if any of (scriptFile, commitSha, engine, auditOnly) present in
+           committed and absent in the working tree  ->  RED
+
+Properties, none of which the in-writer guard has:
+
+  * catches all 281 at-risk AND the 325 that already carry no scriptFile,
+    because it keys on the FILE, not on the producer;
+  * needs no producer edits at all;
+  * subsumes old step 2 — a deletion becomes a red rather than a smaller
+    denominator, so there is no separate "fix the gate" item;
+  * `--changed` makes it free when no witness was touched.
+
+**Do NOT extend `_check_producer_takeover` for this.** Widening its early returns
+would make it fire on ordinary schema evolution by the owning producer, which is
+the exact false positive its author measured against ("how a guard like this
+earns a reputation for crying wolf and gets switched off"). Two guards, two
+scopes.
+
+### Plan, as revised
+
+  1. tree-level provenance ratchet in precision-gates.sh   (was steps 1 + 2)
+  2. restore the 17 from git (JSON merge, not a re-run)     (was step 3)
+  3. route the 281 through WitnessBuilder                   (was step 4, the real fix)
