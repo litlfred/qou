@@ -508,11 +508,20 @@ def main() -> int:
             print(f"  FAILED  : {path}  {err}")
         return 1 if failed else 0
 
-    q0_yes = sum(1 for p in plans if p["q0"])
+    # The q0 split covers FRESH plans only. An upgrade inserts the `scriptFile`
+    # line and no `q0_anchor` kwarg at all, so its plan carries a placeholder
+    # `q0: False` that is never emitted -- counting those made the reported
+    # split 467/66 against a true tree state of 378/154, i.e. the summary
+    # described the plan dict rather than the code it writes.
+    fresh = [p for p in plans if not p.get("upgrade")]
+    upgrades = len(plans) - len(fresh)
+    q0_yes = sum(1 for p in fresh if p["q0"])
     print(f"  bare producers found        : {len(producers)}")
     print(f"  transformable               : {len(plans)}")
-    print(f"    -> stamp anchor (q0 seen) : {q0_yes}")
-    print(f"    -> q0_anchor=False        : {len(plans) - q0_yes}")
+    print(f"    -> fresh stamp            : {len(fresh)}")
+    print(f"       - q0_anchor=None (q0 seen) : {q0_yes}")
+    print(f"       - q0_anchor=False          : {len(fresh) - q0_yes}")
+    print(f"    -> scriptFile upgrade only: {upgrades}  (no q0_anchor written)")
     print(f"  NOT transformable           : {len(skips)}")
     from collections import Counter
     for why, n in Counter(w for _, w in skips).most_common():
