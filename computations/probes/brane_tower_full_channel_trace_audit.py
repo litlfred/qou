@@ -56,6 +56,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from q_parameter import Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
 set_compute_dps()
 
@@ -258,6 +259,11 @@ def main() -> None:
             "content/quantum-observable-universe/observations/atom-mass-full-hecke.md",
         ],
     }
+    # Hand-rolled write: this payload never reaches `WitnessBuilder.build()`,
+    # so it never picked up the `q0Anchor` provenance stamp and no number of
+    # re-runs would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out_path = self_path.parent.parent / "brane-tower-full-channel-trace-audit.witness.json"
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
