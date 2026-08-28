@@ -211,10 +211,25 @@ def main() -> int:
 
     builder.add_data("cache_anchor_q_0", cache["q_0_50dps"])
     builder.add_data("cache_anchor_note", (
-        "Cache was generated at q_0=1.10997859555…, which is within ~3e-12 of "
-        "the CURRENT canonical proton re-pin q_at()≈1.1099785955573… (2026-05-28) "
-        "and of the muon anchor q_muon_at()≈1.10997859555418…. The retired "
-        "pre-re-pin proton anchor was 1.10997858275… (Δq ≈ 1.28e-8 from current). "
+        # ANCHOR IDENTIFICATIONS CORRECTED 2026-08-28. The string that stood
+        # here carried all THREE of the inversions the 2026-08-23 header note
+        # above retracts: it called 1.1099785955573… "the CURRENT canonical
+        # proton re-pin" (that is the frozen MUON pin; q_at() never returns
+        # it), called 1.10997859555418… what "q_muon_at()" returns (that is
+        # the SUPERSEDED CODATA-2018 muon; q_muon_at() returns
+        # 1.10997859564274…), and called 1.10997858275… "the retired pre-re-pin
+        # proton anchor" (it is the CURRENT proton pin). The 2026-08-23 pass
+        # fixed the header comment in 13 files and missed this string literal,
+        # which is the one that reaches a witness. The committed witness still
+        # holds the ORIGINAL, correct note -- so this was caught before a run
+        # replaced a correct record with a wrong one.
+        "Cache was generated at q_0=1.10997859555418…, the SUPERSEDED "
+        "(CODATA-2018) muon value. The current production anchor is the proton "
+        "pin q_at()≈1.10997858275138… (Δq ≈ 1.28e-8 from the cache anchor). For "
+        "reference the other two muon values are the frozen canonical pin "
+        "1.10997859555733… and q_muon_at()≈1.10997859564274… (CODATA-2022); see "
+        "computations/audits/muon_pin_three_values_probe.py. This probe is a "
+        "deliberate cross-anchor comparison and must NOT be migrated. "
         "Cross-anchor q-stability of the contribution table is plausible at "
         "this scale but not formally verified by this probe."
     ))
