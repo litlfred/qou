@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-28T19:42:05Z
+updated_at: 2026-08-28T20:47:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2208,3 +2208,12 @@ That route is not available to shrink the 74x.
 
 Scope-(a): none of this shows the Q-value wrong, and none of it forecloses the
 re-derivation. It sizes it.
+
+## 2026-08-28 — base-admissibility completeness now Lean-proved (PR #5925, bean qou-06wh)
+
+The 'admissible set is COMPLETE, closed at two elements {q, z_D}' fact (qou-99qc,
+sympy bracket probe 15/15) is now sorry-free Lean: QOU/QBeta/ConventionDAdmissibleRoots.lean.
+The (1^3)-weight numerator factors over any CommRing as (z-q)*((q^2+1)z-q^3), so
+admissible_markov_param_iff proves roots = {q, z_D} exactly and one_not_root proves
+z=1 (net) excluded on the substrate window. The base side of the re-derivation is
+now on a Lean foundation; the ladder/correction side (74x-257x) stays open.
