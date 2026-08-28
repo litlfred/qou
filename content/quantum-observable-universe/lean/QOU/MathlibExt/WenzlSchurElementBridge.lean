@@ -49,6 +49,9 @@ substantial part and land incrementally; the final target is
 
 namespace QOU.MathlibExt.WenzlSchurElementBridge
 
+open QOU.MathlibExt.WenzlSchurElement
+open QOU.MathlibExt.QPartitionCombinatorics
+
 /-- **Content-carrier match.** The List-carrier cell content `cellContent i j =
 j − i` and the YoungDiagram-carrier `content (i, j) = j − i` are the same
 function of the cell coordinates — the first (and definitional) link between the
@@ -77,5 +80,76 @@ theorem rowLen_ofRowLens_getD (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)) (i 
     rw [YoungDiagram.mem_ofRowLens] at hmem
     obtain ⟨hlt, _⟩ := hmem
     omega
+
+/-- A finite product of `List.map` over `List.range n` is the `Finset.range n`
+product — the List↔Finset bridge used to move `schurElement`'s list folds onto
+the Finset products `schurPrincipal` uses. -/
+theorem list_range_map_prod {M : Type*} [CommMonoid M] (n : ℕ) (h : ℕ → M) :
+    ((List.range n).map h).prod = ∏ j ∈ Finset.range n, h j := by
+  induction n with
+  | zero => simp
+  | succ k ih =>
+    rw [List.range_succ, List.map_append, List.prod_append, ih, Finset.prod_range_succ]
+    simp
+
+/-- **`schurElement` as a Finset double product.** Restates the List-fold
+`schurElement` (via `schurElement_eq_prod`) as `Q^{n(λ)}` times a product over
+rows `i ∈ range (length)` of a product over cells `j ∈ range (row length)` of
+`cellFactor`. This is the shape that matches `schurPrincipal`'s `∏ x ∈ μ.cells`. -/
+theorem schurElement_eq_finset_prod (Q X : ℝ) (lam : Partition) :
+    schurElement Q X lam
+      = Q ^ (nLambda lam)
+          * ∏ i ∈ Finset.range lam.length,
+              ∏ j ∈ Finset.range ((lam[i]?).getD 0), cellFactor Q X lam i j := by
+  rw [schurElement_eq_prod, list_range_map_prod]
+  have hrow : ∀ i ∈ Finset.range lam.length,
+      rowFactor Q X lam i
+        = ∏ j ∈ Finset.range ((lam[i]?).getD 0), cellFactor Q X lam i j := by
+    intro i _
+    simp only [rowFactor]
+    exact list_range_map_prod _ _
+  rw [Finset.prod_congr rfl hrow]
+
+/-- **Cells of `ofRowLens` as a disjoint union of rows.** Each row `i < length`
+contributes `{i} ×ˢ range(rowLenᵢ)`, and by `rowLen_ofRowLens_getD` the row
+length is `(lam[i]?).getD 0`. -/
+theorem cells_ofRowLens_eq_biUnion (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)) :
+    (YoungDiagram.ofRowLens lam hl).cells
+      = (Finset.range lam.length).biUnion
+          (fun i => {i} ×ˢ Finset.range ((lam[i]?).getD 0)) := by
+  ext ⟨a, b⟩
+  rw [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen, rowLen_ofRowLens_getD]
+  simp only [Finset.mem_biUnion, Finset.mem_range, Finset.mem_product,
+    Finset.mem_singleton]
+  constructor
+  · intro hb
+    refine ⟨a, ?_, rfl, hb⟩
+    by_contra hge
+    push_neg at hge
+    rw [List.getElem?_eq_none hge, Option.getD_none] at hb
+    omega
+  · rintro ⟨i, _, rfl, hb⟩
+    exact hb
+
+/-- **Product reindex (B5).** A product over the cells of `ofRowLens lam hl`
+equals the row-by-row double product over `range (length)` and
+`range ((lam[i]?).getD 0)`. -/
+theorem prod_cells_ofRowLens {M : Type*} [CommMonoid M]
+    (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)) (g : ℕ × ℕ → M) :
+    ∏ x ∈ (YoungDiagram.ofRowLens lam hl).cells, g x
+      = ∏ i ∈ Finset.range lam.length,
+          ∏ j ∈ Finset.range ((lam[i]?).getD 0), g (i, j) := by
+  rw [cells_ofRowLens_eq_biUnion]
+  have hdisj : (↑(Finset.range lam.length) : Set ℕ).PairwiseDisjoint
+      (fun i => ({i} ×ˢ Finset.range ((lam[i]?).getD 0)) : ℕ → Finset (ℕ × ℕ)) := by
+    intro i _ i' _ hii
+    simp only [Function.onFun, Finset.disjoint_left, Finset.mem_product,
+      Finset.mem_singleton]
+    rintro ⟨a, b⟩ ⟨rfl, -⟩ ⟨h2, -⟩
+    exact absurd h2 hii
+  rw [Finset.prod_biUnion hdisj]
+  apply Finset.prod_congr rfl
+  intro i _
+  rw [Finset.prod_product, Finset.prod_singleton]
 
 end QOU.MathlibExt.WenzlSchurElementBridge
