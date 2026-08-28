@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-26T22:44:45Z
+updated_at: 2026-08-28T19:11:15Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -307,3 +307,21 @@ which read as a characterisation of the two functionals.
 **Also found:** imposing the Markov property only at the **top** generator leaves
 the Ocneanu trace **underdetermined** — rank 5 of 6 at n = 3. A partial Markov
 condition does not pin it.
+
+
+## 2026-08-28 — an independent probe re-derived the mismatch you already named, and got it wrong
+
+PR #5893 (`qbeta_counit_silver_ratio_adjudication_probe.py`, merged
+`4135ad98e2`) applied avt6's invariant to `epsNPq` and to a typed coordinate
+sum, and concluded the fork is asymmetric. That is the functional mismatch this
+bean diagnosed on 2026-08-26. The probe has been scope-corrected in place and
+the conclusion retracted; the re-derivation of the typed coordinate sum from
+live source survives and is hash-pinned.
+
+Recorded here so the count is right: this bean's diagnosis has now been
+**independently re-encountered**, which is evidence it is correct and evidence
+that the entry is hard to find — it lives in a bean body, reachable only by
+corpus-grep path 6.
+
+No change to what is open. The decision in this bean is untouched and still
+yours.
