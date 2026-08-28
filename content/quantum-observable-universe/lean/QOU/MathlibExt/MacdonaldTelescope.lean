@@ -461,4 +461,77 @@ theorem jonesMarkov_normalisation_of_telescope
     ring
   rw [hmap, List.sum_map_mul_right, htel, mul_inv_cancel₀ hZ]
 
+/-! ## M3 Markov peel — the `z`-recursion of the normalisation -/
+
+/-- The **Markov parameter** `z = (1 − X)/(1 − Q)` of the Jones–Markov trace. It
+is the single-box rank-raising factor: the Pieri corner-sum (`PieriStep`) equals
+`z · s_λ`, and the Wenzl normalisation obeys `Z_{n+1} = z · Z_n`. -/
+noncomputable def markovParameter (Q X : ℝ) : ℝ := (1 - X) / (1 - Q)
+
+/-- **M3 peel at the normalisation level.** The Wenzl normalisation satisfies the
+one-step Markov recursion `Z_{n+1} = z · Z_n` with `z` the Markov parameter. This
+is the trace-side content of the Markov property `tr(x·σ_n) = z·tr(x)`: raising
+the rank by one multiplies the normalisation by exactly `z`, which is what the
+Pieri corner-sum realises box-by-box. -/
+theorem wenzlNormalisation_markov_recursion (n : ℕ) (Q X : ℝ) :
+    WenzlSchurElement.wenzlNormalisation (n + 1) Q X
+      = markovParameter Q X * WenzlSchurElement.wenzlNormalisation n Q X := by
+  unfold WenzlSchurElement.wenzlNormalisation markovParameter
+  rw [pow_succ']
+
+/-- The same recursion on `telescopeRHS` (defeq to the Wenzl normalisation), the
+form the telescope induction step consumes. -/
+theorem telescopeRHS_markov_recursion (n : ℕ) (Q X : ℝ) :
+    telescopeRHS (n + 1) Q X = markovParameter Q X * telescopeRHS n Q X := by
+  unfold telescopeRHS markovParameter
+  rw [pow_succ']
+
+/-- `PieriStep` **is** the statement that the rank-raising corner-sum multiplies
+the Schur element by the Markov parameter `z`; naming `z` makes the M3 reading
+explicit. -/
+theorem pieriStep_iff_markov (Q X : ℝ) (lam : Partition) :
+    PieriStep Q X lam ↔
+      pieriSum Q X lam = markovParameter Q X * WenzlSchurElement.schurElement Q X lam :=
+  Iff.rfl
+
+/-- **Concrete M3 peel at the load-bearing `(2,1)` shape** — the rank-2 → rank-3
+transition. The corner-sum over the addable boxes of `(2,1)` equals `z` times its
+own Schur element, `z` the Markov parameter. Derived from the proved
+`pieriStep_two_one`. -/
+theorem markov_peel_two_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) :
+    pieriSum Q X [2, 1]
+      = markovParameter Q X * WenzlSchurElement.schurElement Q X [2, 1] :=
+  (pieriStep_iff_markov Q X [2, 1]).mp (pieriStep_two_one Q X hQ0 hQ1 hQm1)
+
+/-! ## Concrete M1 ladder at ranks 1 and 2 -/
+
+/-- **M1 normalisation at rank `1`.** The single partition `(1)` has `f = 1` and
+`y₍₁₎ = 1`, since `s₍₁₎ = Z₁`. -/
+-- Ref: [wenzl1988] Theorem 2.1
+theorem jonesMarkov_normalisation_one (Q X : ℝ) (hQ1 : Q ≠ 1) (hX : X ≠ 1) :
+    WenzlSchurElement.jonesMarkovCoeff Q X [1] = 1 := by
+  have htel := telescope_one Q X
+  have hrhs : telescopeRHS 1 Q X = WenzlSchurElement.wenzlNormalisation 1 Q X := rfl
+  rw [hrhs] at htel
+  have hZ : WenzlSchurElement.wenzlNormalisation 1 Q X ≠ 0 :=
+    WenzlSchurElement.wenzlNormalisation_ne_zero hQ1 hX
+  unfold WenzlSchurElement.jonesMarkovCoeff
+  rw [show Partition.size [1] = 1 from rfl, htel, div_self hZ]
+
+/-- **M1 normalisation at rank `2`.** Both partitions of `2` carry `f = 1`, and
+`y₍₂₎ + y₍₁,₁₎ = 1` follows from `telescope_two` divided by `Z₂`. -/
+-- Ref: [wenzl1988] Theorem 2.1
+theorem jonesMarkov_normalisation_two (Q X : ℝ)
+    (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) (hX : X ≠ 1) :
+    WenzlSchurElement.jonesMarkovCoeff Q X [2]
+      + WenzlSchurElement.jonesMarkovCoeff Q X [1, 1] = 1 := by
+  have htel := telescope_two Q X hQ0 hQ1 hQm1
+  have hrhs : telescopeRHS 2 Q X = WenzlSchurElement.wenzlNormalisation 2 Q X := rfl
+  rw [hrhs] at htel
+  have hZ : WenzlSchurElement.wenzlNormalisation 2 Q X ≠ 0 :=
+    WenzlSchurElement.wenzlNormalisation_ne_zero hQ1 hX
+  unfold WenzlSchurElement.jonesMarkovCoeff
+  rw [show Partition.size [2] = 2 from rfl, show Partition.size [1, 1] = 2 from rfl,
+      ← add_div, htel, div_self hZ]
+
 end QOU.MathlibExt.MacdonaldTelescope

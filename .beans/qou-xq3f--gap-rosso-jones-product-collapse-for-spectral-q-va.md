@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-28T18:11:53Z
+updated_at: 2026-08-28T18:16:19Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -178,3 +178,5 @@ Starting T-n1 this session (user directive 2026-08-28).
 T-n2 (n=3) LANDED: jonesMarkov_normalisation_three in MacdonaldTelescope.lean — M1 axiom tr_M(1)=1 at nucleon rank H3 for the concrete jonesMarkovCoeff weights (f_lambda = 1,2,1 over partitions of 3), derived from proved telescope_three / Z3. lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free.
 
 General conditional M1 LANDED: jonesMarkov_normalisation_of_telescope in MacdonaldTelescope.lean — for any partition list of common size n, IF the multiplicity-weighted schurElement sum = Z_n (the open general Macdonald telescope, carried as an explicit hypothesis) THEN the same weights normalise jonesMarkovCoeff to 1. Generalises T-n2 off the three partitions of 3 to arbitrary rank; instantiate with a proved telescope and normalisation follows. lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free.
+
+T-n3 (M3 Markov peel) LANDED in MacdonaldTelescope.lean: markovParameter z=(1-X)/(1-Q); wenzlNormalisation_markov_recursion (Z_{n+1}=z*Z_n, the trace-side Markov property tr(x sigma_n)=z tr(x)); telescopeRHS_markov_recursion; pieriStep_iff_markov (Pieri corner-sum = z*s_lambda); markov_peel_two_one (concrete peel at the rank-2->3 (2,1) shape); plus jonesMarkov_normalisation_one/_two completing the concrete M1 ladder at ranks 1,2. All lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free. Concrete M1 now closed at ranks 1,2,3; general M1 conditional on telescope; M3 z-recursion of the normalisation proved + concrete peel at (2,1).
