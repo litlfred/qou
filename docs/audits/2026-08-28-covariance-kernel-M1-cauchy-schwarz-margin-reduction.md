@@ -68,12 +68,33 @@ analysis project" verdict did not consider.
 - Complements — does not contradict — the "bespoke rate" verdict: it offers an alternative that
   **avoids** the rate entirely.
 
+## The strategic point: (CS)'s ingredients are LEADING-order, unlike the rate
+
+The reason the rate `κ_n − κ` resisted all three tools is that it is a **finite-n correction** to a
+limiting covariance. **The (CS) ingredients are not** — `σ(Σ|c|)`, `σ(ΣD²)` and `ρ(Σ|c|, ω₃)` are
+**leading-order fluctuation quantities** (variances and one correlation), exactly the objects the IO
+Kerov CLT delivers — the same machinery that already produced `κ = Ω̂₃/3`. So:
+
+- **(CS) asymptotically is a leading-order IO computation**, not a rate: expand the profile
+  representations of `Σ|c|` (a `∫|x|dμ`-type linear statistic) and `ΣD²` in the IO Chebyshev-mode
+  basis, read off the two variances and the correlation from the diagonal covariance. The asymptotic
+  values (`σ_D/σ_A → ≈0.67`, `ρ_P → ≈0.98`) are leading-order numbers, within reach of the tool that
+  works.
+- **A leading-order proof of (CS) already almost closes the problem.** Leading-order (CS) gives
+  `M₁ > 0` for `n ≥ N₀`; the exact check covers `13 ≤ n < N₀` (verified to **n = 77** and counting).
+  If the leading (CS) margin is as robust as measured (`≈0.30`) and `N₀ ≤ 77`, that is a **complete
+  proof of `M₁ > 0` for all n** — no rate ever needed.
+
+**Caveat (honest):** `Σ|c|` and `ΣD²` are non-smooth linear statistics (`|x|` has a kink at the
+Plancherel content centre; `D(u)` is the diagonal-length representation), so the IO expansion needs
+care at the kink — not automatic, but leading-order-CLT territory, not the intractable rate.
+
 ## Next
 
-Attempt rigorous crude bounds on the two (CS) ingredients: (1) `Var(ΣD²) < Var(Σ|c|)` asymptotically +
-finite-n, (2) `corr(Σ|c|, ω₃)` bounded below. Both are variance/correlation statements about content /
-diagonal statistics under Plancherel, with large margins — a materially more tractable problem than the
-`κ_n − κ` sign.
+Execute the IO leading-order computation of the two (CS) ingredients: (1) `σ(ΣD²)/σ(Σ|c|)` (asymptotic
+`≈0.67`) via the Chebyshev-mode variances, (2) `ρ(Σ|c|, ω₃)` lower bound (asymptotic `≈0.98`). Then find
+`N₀` from the exact table (have it to n=77) — if `N₀ ≤ 77`, `M₁ > 0` for all n is **proved** via the
+soft route, sidestepping the rate entirely.
 
 ## Compute
 
