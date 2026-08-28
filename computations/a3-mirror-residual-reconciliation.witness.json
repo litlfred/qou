@@ -9,7 +9,7 @@
       "computed": -2.9686547482331886,
       "expected": -2.9686547,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "percent",
       "source": "³He linear-chain bond-count binding residual m_e·2·Vol(L6a4) vs AME; the −2.97% is the whole A=3 mirror residual (current best, no fit)."
     },
@@ -18,7 +18,7 @@
       "computed": 0.31118810992188334,
       "expected": 0.31118811,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "tanh(ln q₀)·B_pp / (B_³H − B_³He): the DERIVED pp-Coulomb covers 31.1% of the mirror split; the remaining 3.2× is the OPEN two-like-charge EM-linking invariant (owner-gated; fit-closing is a CAL-4 violation)."
     }
   ],

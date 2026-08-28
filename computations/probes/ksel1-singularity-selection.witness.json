@@ -9,7 +9,7 @@
       "computed": "0.03493",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "q = 1, exact integers n <= 60 + mpmath 60 dps: the Lean sandwich n! <= 4^n I(n)^2 <= 8^n n! (mirror of sorry-free QOU/Mass/BindingGevreyHalf.lean) holds exactly; the level-1/2 Borel coefficients (I(n)/n)/Gamma(n/2+1) are all positive (Pringsheim: dominant singularity ON the positive real axis — exact); the root test extrapolates to sqrt(2) within 10% (location xi* = 1/sqrt(2)). TIER: growth class Gevrey-1/2 = Lean-proved; location 1/sqrt(2) = classical-asymptote-derived + measured scope-(a) (Pade pole 0.688, 2.6% — witness lever1-borel-half-singularity-probe; local model + Stokes constant in lever1-bridge-alien-datum). This datum lives in the CLASSICAL level-1/2 plane at q = 1; the corpus (gevrey-order pin) already showed that plane collapses at q0 (class change to q-Gevrey)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "4.7793e-58",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = 1.2, sympy exact + 60 dps: for an input with a Borel-plane pole at xi* = 1/sqrt(2) (model), the atomic-kernel q-Laplace output's pole set is EXACTLY xi*(1-p)/u · qt^Z (identity xi*/t = xi*(1-p)/u·qt^(2m-j) exact; exponent set j-2m covers Z; all masses positive so residues cannot cancel; every computed pole lands on the lattice, rel < 1e-30, for u = 1, 1.3, qt^(1/2)). The map u |-> [lattice class] is a FREE TRANSITIVE circle action (class shift = -log_qt u exactly), so ONE known output pole location selects a UNIQUE u mod qt^Z: the solved u places a pole on x_tgt = 0.53 to < 1e-30 while a qt^0.37-detuned u misses by 0.37 of a step. KSel-1 is well-formed and uniquely selective IN FORM — given an input-side singularity and an output-side datum"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "2.8368e-13",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "q = test (1.2...), 60 dps, n <= 400 via the exact q-telephone recurrence (= involution numbers at q = 1, checked exact): (a) the q-Borel-side carrier b^q_n = S(n)/[n]_q! has g(n) = (b_(n+1)/b_n)·q^((2n+1)/4) two-cycle-converged (Cauchy 6.63e-18) to 1/rho_phi with rho_phi ~ 2.4494906 => b^q_n ~ q^(-n^2/4)·rho_phi^(-n): phi(xi) = sum b^q_n xi^n is ENTIRE (theta growth class) — NO finite q-Borel-plane singularity exists at the fibre for input-side singularity matching; (b) the balanced period series sum b^q_n·N^bal(n)·x^n is GEOMETRIC class with radius r* = 0.4680694639 (two-cycle geometric mean, Cauchy 2.84e-13; exact per-n identity ratB(n) = g(n)·q^(1/4-n)·[n]_q asserted < 1e-40; wall bracketed: terms decay at 0.9·r*, grow at 1.1·r*), with ALL coefficients positive => Pringsheim: the output-side singularity is ON the positive real axis at x* = r*. NEW measured datum (scope-(a)); at q = 1 the same recurrence gives the known radius-0 Gevrey-1/2 divergence — the finite radius is a fibre-level phenomenon"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "2.5632e-8",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "q = muon (1.10997859556...), 60 dps, n <= 400 via the exact q-telephone recurrence (= involution numbers at q = 1, checked exact): (a) the q-Borel-side carrier b^q_n = S(n)/[n]_q! has g(n) = (b_(n+1)/b_n)·q^((2n+1)/4) two-cycle-converged (Cauchy 1.58e-11) to 1/rho_phi with rho_phi ~ 3.1768976 => b^q_n ~ q^(-n^2/4)·rho_phi^(-n): phi(xi) = sum b^q_n xi^n is ENTIRE (theta growth class) — NO finite q-Borel-plane singularity exists at the fibre for input-side singularity matching; (b) the balanced period series sum b^q_n·N^bal(n)·x^n is GEOMETRIC class with radius r* = 0.3403946578 (two-cycle geometric mean, Cauchy 2.56e-8; exact per-n identity ratB(n) = g(n)·q^(1/4-n)·[n]_q asserted < 1e-40; wall bracketed: terms decay at 0.9·r*, grow at 1.1·r*), with ALL coefficients positive => Pringsheim: the output-side singularity is ON the positive real axis at x* = r*. NEW measured datum (scope-(a)); at q = 1 the same recurrence gives the known radius-0 Gevrey-1/2 divergence — the finite radius is a fibre-level phenomenon"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "2.5632e-8",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "q = proton (1.10997858275...), 60 dps, n <= 400 via the exact q-telephone recurrence (= involution numbers at q = 1, checked exact): (a) the q-Borel-side carrier b^q_n = S(n)/[n]_q! has g(n) = (b_(n+1)/b_n)·q^((2n+1)/4) two-cycle-converged (Cauchy 1.58e-11) to 1/rho_phi with rho_phi ~ 3.1768978 => b^q_n ~ q^(-n^2/4)·rho_phi^(-n): phi(xi) = sum b^q_n xi^n is ENTIRE (theta growth class) — NO finite q-Borel-plane singularity exists at the fibre for input-side singularity matching; (b) the balanced period series sum b^q_n·N^bal(n)·x^n is GEOMETRIC class with radius r* = 0.340394637 (two-cycle geometric mean, Cauchy 2.56e-8; exact per-n identity ratB(n) = g(n)·q^(1/4-n)·[n]_q asserted < 1e-40; wall bracketed: terms decay at 0.9·r*, grow at 1.1·r*), with ALL coefficients positive => Pringsheim: the output-side singularity is ON the positive real axis at x* = r*. NEW measured datum (scope-(a)); at q = 1 the same recurrence gives the known radius-0 Gevrey-1/2 divergence — the finite radius is a fibre-level phenomenon"
     },
     {
@@ -49,7 +49,7 @@
       "computed": "1.7165e-47",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "q = 1.2, 60 dps, truncation N = 30, x = 0.3: the atomic-kernel double sum sum_a c_a·fhat_N(x t_a)/t_a equals the u-INDEPENDENT truncated balanced series sum b^q_n·N^bal(n)·x^n to rel < 1e-25 for u = 1, 1.3, and qt^(1/2) (extends the REP R3 falsifier per-u). Since every term is positive for x > 0, Tonelli rearrangement makes this exact at the function level: the kernel output on the positive real axis IS the u-independent series wherever it converges and +inf beyond r* — for EVERY u. The positive-axis output singularity x* = r* (K3b) is therefore EXACTLY u-invariant, by the same reindex mechanism that makes the moments u-invariant"
     },
     {
@@ -65,7 +65,7 @@
       "computed": "9.5948e-47",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "q = 1.2, 60 dps: (i) the full kernel's ds/s-moments equal N^bal at u = 1, 1.3, AND the sigma-self-dual point u = qt^(1/2) (rel < 1e-30 — u-invariance holds at the KSel-3 maximal-symmetry candidates, as forced by the REP R4a reindex identity); (ii) the family is a genuine circle: mu_(qt·u) = mu_u as normalized measures (< 1e-25); (iii) sigma: s -> qt^(-1)/s maps mu_u -> mu_(1/u) and fixes exactly the classes u = 1 and u = qt^(1/2) (measure equalities < 1e-25); (iv) the two self-dual points' model pole-lattice classes differ by exactly HALF a qt-step (|frac - 1/2| < 1e-25). RECORDED, NOT INTERPRETED: KSel-1 selects no u (K4), so no selected-u-vs-self-dual coincidence exists to evaluate; the half-step offset is the exact discriminant a future measured output pole lattice would use to split the two KSel-3 symmetry-maximal candidates"
     }
   ],

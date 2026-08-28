@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(h-2)/2 == (q^2-2q-1)/(2q) at both anchors to 1e-55 (Lean departure_factor_eq)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(anchor) from c3_target_at matches the committed saddle witness S_target to 1e-6"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "vol_deficit rel spread < 1e-5 across anchors while S(p)*S(mu) < 0: even anchor-blind handles cannot source the swing through the anchor-rigid affine bridge"
     }
   ],

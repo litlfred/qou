@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "zeta_Delta1(0)=-b1 reproduced; circle det zeta'_{S^1}(0)=-2logL (det'=L^2) for L=1,2,3.7; E'_Z(0)=-2log(2pi); torsion weight Sum(-1)^q q C(d,q)=-1(d=1),0(d>=2)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "zeta'_{S^1}(0) = -2 log L via the Epstein-derivative machinery vs the closed form"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "tau_RS(T^b1)=exp(1/2 zeta'_Delta0(0) Sum_q(-1)^q q C(b1,q))=exp(0)=1: analytic torsion trivial (pi cancels); fails pi-power=-1 and reciprocal-b1 axes"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "d(log Z_Maxwell)/db1 = -1/2 log(2pi) + const is b1-independent; no graded/per-mode determinant object on T^{b1} is reciprocal in b1"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "A (torsion=1, covolume residue) and B (alt-ratio=1, per-mode const) each fail area-free + pi^-1 + reciprocal-b1; measure must be the RT/WRT S-matrix total quantum dimension D=Sum d_i^2 (off the flat-torus determinant). No alpha_k wired; no fit."
     }
   ],

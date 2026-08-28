@@ -9,7 +9,7 @@
       "computed": "3.96925550169968792492786809497403515759332138989398213393077e-72",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "(R − q)(R + q⁻¹) = 0 on V⊗V — the defining Hecke quotient relation for σ_i.  Verified to 50 dps."
     },
     {
@@ -17,7 +17,7 @@
       "computed": "7.24454326306136989400729543271023342454602495851131055166609e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "tr_{V^⊗3}(β_Bor) via direct 8×8 R-matrix computation equals the Schur-Weyl prediction dim(V_{3/2})·χ^{(3)}(β_Bor) + dim(V_{1/2})·χ^{(2,1)}(β_Bor) = 4·1 + 2·(2 − 3h⁴ − h⁶) = 8 − 6h⁴ − 2h⁶ (classical integer sl_2 dims 4, 2 — NOT q-deformed [4]_q/[2]_q, per gotcha 1; χ^{(3)}(β_Bor) = 1 from writhe 0 + T15 polynomial)."
     },
     {
@@ -25,7 +25,7 @@
       "computed": "8.00000000000000000000000000000000000000000000000000000000000",
       "expected": 8.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "At q = 1, β_Bor → identity ∈ S_3, so tr_{V^⊗3}(β_Bor) = tr_{V^⊗3}(id) = dim V^⊗3 = 2³ = 8."
     }
   ],

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|det((+)^4 [[0,1],[-1,0]])|=1 (Poincare duality => genus-g intersection form unimodular); Smith normal form all 1s => discriminant group A_L=L*/L trivial"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|A_L|=1 => the abelian anyonic theory of Jac(Bring) has ONE simple object, Sd_i^2=1 (FORCED by topology, and forces 1 != 8) -- kills candidate (A)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 8.0,
       "expected": 8.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "b1=2g=8 for genus-4 Bring; this is the Betti NUMBER (distinct from |disc|=1)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 3.618033988749895,
       "expected": 3.618033988749895,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Sigma(2,3,5) Sd_i^2=1+phi^2=(5+sqrt5)/2~3.618 != 8 (cross-check vs #3889 genuine S-matrix)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(A) forced->1; (B)/(D) fitted (choose level/group); (C) relabels b1 (no categorical content). No candidate FORCES Sd_i^2=8 by topology => scope-(a) NEGATIVE; 1/b1 already derived as the #3834 Betti count zeta_{Delta1}(0)=-b1; only 1/pi remains open."
     }
   ],

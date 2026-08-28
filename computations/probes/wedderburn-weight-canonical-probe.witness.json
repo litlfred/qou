@@ -9,7 +9,7 @@
       "computed": 1.19999999999988e-24,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "max over \u03bb \u22a2 n (n=1..6) of |dim_q(\u03bb)|_{q=1+1e-13} \u2212 f_\u03bb classical|",
       "source": "q-deformed Frame-Robinson-Thrall: dim_q(\u03bb) = [n]_q!/\u220f [h_x]_q  \u2192  n!/\u220f h_x  at q\u21921."
     }

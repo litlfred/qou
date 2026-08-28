@@ -9,7 +9,7 @@
       "computed": "2.39590747953859582472517113137404212467834069688428981182525e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Thurston figure-eight: z(z−1)=−1 at complete z=e^{iπ/3}"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "gluing Newton solve at m=1 gives Vol(4₁)=D(z)+D(w)"
     }
   ],

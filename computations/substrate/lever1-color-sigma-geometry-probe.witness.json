@@ -49,7 +49,7 @@
       "computed": 4.094e-60,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "ΣX_i=−(z+1) has no 1/z term ⇒ Σ Res_∞=0"
     }
   ],

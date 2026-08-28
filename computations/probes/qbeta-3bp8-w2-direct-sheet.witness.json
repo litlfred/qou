@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "every I(0,e), e<=64, agrees to >=8 digits between adaptive order and order-400"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "two-sided sum at w=1 matches the honest deep tower 0.42764420131745803633 to <=1e-10"
     }
   ],

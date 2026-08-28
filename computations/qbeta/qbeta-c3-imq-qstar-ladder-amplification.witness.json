@@ -9,7 +9,7 @@
       "computed": 2.3716291316445135,
       "expected": 2.37,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S'(q*) = (smooth O(1) prefactor ~2.37) x 1/u^3; the dc3/dq swing is a 1/u^3 representation artifact, not a physical singularity"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "q* at 80% muon-ward != precision-weighted mass reconciliation ~0% (proton); q* is an independent decay-sector determination of q0"
     }
   ],

@@ -33,7 +33,7 @@
       "computed": 1.254900067507142e-51,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Σ y_λ·χ_λ(atom) reproduces the witness's own tr_M_at_q0"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.2591959521667945e-48,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness; tolerance is the documented sign-only-vs-averaged convention gap (≤1e-5), which perturbs 𝒜 by ≪ 0.01 %"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 2.1203209415282148e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0"
     },
     {

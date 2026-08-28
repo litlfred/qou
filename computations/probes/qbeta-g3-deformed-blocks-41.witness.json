@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "theta (109) and Theorem-16 generator to ~1e-45"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Theorem 14 assembly DERIVED (two-pole residue cancellation + Theorem-16 annihilator + exact e^(a+b(tau+1/tau)) fit reproducing the printed b exponents); matches GK (44) to 5.5e-54 on the imaginary axis"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact deformed Z finite with O(1)-comparable saddle terms at tau = 1/10 + 0.05i"
     }
   ],

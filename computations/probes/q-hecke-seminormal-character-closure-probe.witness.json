@@ -9,7 +9,7 @@
       "computed": 2.3185571113579718e-30,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "max over 5 test braids of |Σ_λ y_λ(q_0)·χ_λ(β) − tr_M(β) via recursive reducer|",
       "source": "Wedderburn-Artin decomposition H_n(q) ≅ ⊕_λ M_{f^λ}(ℂ) combined with Wenzl 1988 Schur principal specialization for y_λ(q)."
     }

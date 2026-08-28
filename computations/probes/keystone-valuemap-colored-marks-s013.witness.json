@@ -9,7 +9,7 @@
       "computed": 2.2269290288621444e-68,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "colour α=1 on p=5 fibre == uncoloured s013.tau_N"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.0986274160728857e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "mark α=5 on p₃=5 fibre: sin(6·5π/5)=sin(6π)=0 (split node)"
     },
     {

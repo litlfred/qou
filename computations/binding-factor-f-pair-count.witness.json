@@ -9,7 +9,7 @@
       "computed": 0.3822199463832243,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "|f/(Z·N) − 1| < 1% for D, 6Li, 7Li (zero-free-parameter fit to the structural integer Z·N)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.24097074926523976,
       "expected": 0.367209,
       "passed": false,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "κ = T_excess − ³He_excess matches the binding-factor-f-decomposition κ=0.367 to 1e-4 (independent extraction)"
     }
   ],

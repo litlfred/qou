@@ -15,7 +15,7 @@
       "computed": 1.4210854715202004e-14,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "A4: float64 regrouped combiner vs exact young_seminormal.chi_young (small-d \u03bb\u22a212) on the real \u2074He word \u2014 validates the fast path."
     },
     {
@@ -23,7 +23,7 @@
       "computed": 1.7763568394002505e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "A4: float64 regrouped combiner vs the original mpmath interface_blocks combiner \u2014 confirms the regrouping is the same arithmetic."
     },
     {
@@ -39,7 +39,7 @@
       "computed": 1.7299306185835026e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "A5 \u2075He: relative |\u0394tr_M| between the operator combiner and the fine-Bratteli transfer (tr_M = \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = 0.06417731513)."
     }
   ],

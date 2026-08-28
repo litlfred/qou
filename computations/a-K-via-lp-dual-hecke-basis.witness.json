@@ -15,7 +15,7 @@
       "computed": 5.955373008461181e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "absolute",
       "source": "primal_obj = dual_obj"
     },
@@ -30,7 +30,7 @@
       "computed": 3.425255604057077e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "absolute",
       "source": "primal_obj = dual_obj"
     }

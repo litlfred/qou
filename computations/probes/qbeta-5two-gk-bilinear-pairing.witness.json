@@ -9,7 +9,7 @@
       "computed": 2.209637089157538e-25,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "in-probe S⁺ assembly = the committed A2 witness matrix (consistency gate)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 440.0,
       "expected": 440.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "pre-registered parameter-free confrontation ran to completion; hits + near-misses recorded"
     }
   ],

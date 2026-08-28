@@ -33,7 +33,7 @@
       "computed": 0.0014084206519422438,
       "expected": "0",
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "max |slope − 2| over n = 3..8 (slopes 2.0000..2.0014): log-log fit of |N^bal_q(n)/(n−1)! − 1| vs h = ln q over q = 1+10^(−k), k = 1..6 (60 dps, exact product formula): slope in [1.9, 2.1] for every n = 3..8, and the extracted dev/h² at k = 6 matches the exact rational c₂(n) to < 1e-06 rel — the balanced moments converge to (n−1)! at rate O((ln q)²) with zero first order; n = 1, 2 deviations are exactly 0. The fitted exponent is a DIAGNOSTIC of the exactly-proved C2 series structure, not a fitted physics constant"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "9.5948e-47",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = test (1.2…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
     },
     {
@@ -57,7 +57,7 @@
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = muon (1.10997859556…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
     },
     {
@@ -65,7 +65,7 @@
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = proton (1.10997858275…): the balanced moments factor exactly as N^bal(k+1) = [k]_{q⁻¹}!·q^{k(k−1)/4} (k = 0..8, rel < 1e−30) and BOTH factors are moments of manifestly positive measures — Jackson q-Gamma kernel at p = q⁻¹ (atoms p^m/(1−p), masses p^m·(p^{m+1};p)_∞ > 0) and the half-weight theta kernel at q̃ = √q (atoms q̃^j, masses ∝ 1/θ(q̃^j;q̃) > 0 by the RSZ eq-(1.2) triple product, every factor positive on the grid; log-normal continuous variant verified by quadrature, rel < 1e−28). Mellin convolution ⇒ an EXPLICIT positive kernel with exactly the balanced moments exists: (POS)∧(REP-balanced) is satisfiable at the fibre"
     },
     {

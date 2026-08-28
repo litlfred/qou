@@ -9,7 +9,7 @@
       "computed": 60.0,
       "expected": 60.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Integer-spin 2I irreps factor through A_5; \u03a3 dim\u00b2 over them equals |A_5| = 60 (Burnside on the quotient)."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 60.0,
       "expected": 60.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Half-spin 2I irreps are genuinely 2I-valued; \u03a3 dim\u00b2 over them equals |2I| \u2212 |A_5| = 60."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 120.0,
       "expected": 120.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "\u03a3 dim\u00b2 over all 2I irreps = |2I| = 120."
     }
   ],

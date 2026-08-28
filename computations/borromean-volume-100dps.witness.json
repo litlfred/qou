@@ -9,7 +9,7 @@
       "computed": 9.079301521129947e-112,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "relative",
       "source": "Λ(π/4) = G/2 classical identity (see Lewin 1981 §1)"
     },
@@ -18,7 +18,7 @@
       "computed": 9.079301521129947e-112,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "relative",
       "source": "Adams 1985 + Λ(π/4) = G/2; both sides should agree exactly"
     }

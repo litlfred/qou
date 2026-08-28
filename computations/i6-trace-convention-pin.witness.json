@@ -9,21 +9,21 @@
       "computed": "0.99856216",
       "expected": "0.998562",
       "passed": true,
-      "tolerance": 0.0001
+      "tolerance": "0.0001"
     },
     {
       "name": "chicache_trM_p_over_n_asymmetric",
       "computed": "1.1539211",
       "expected": "1.15392",
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "conventions_distinct_factor_R_p_gt_1",
       "computed": "1.0668339",
       "expected": "1.0668",
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     }
   ],
   "allPassed": true,

@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "block_swap_word self-asserts _apply(word)==block_swap_perm for swap_p (0,3) and swap_n (6,3) — the braids are the correct S₂×S₂ block transpositions."
     }
   ],

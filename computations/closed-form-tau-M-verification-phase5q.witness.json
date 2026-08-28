@@ -9,7 +9,7 @@
       "computed": 3.565752305786425e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "unit": "dimensionless",
       "source": "Phase 5q: max relative error between empirical tr_M(𝓑_K) and the closed-form prediction across 4 atoms at q_0.  Identity holds at mpfr-50-dps precision if max rel.err < 1e-12."
     }

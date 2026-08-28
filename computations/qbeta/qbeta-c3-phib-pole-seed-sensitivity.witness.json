@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "seed fates identical across anchors => seeding map locally constant at the anchor separation"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "amplification << 1 => the complete-structure pole-seeding stage CANNOT carry the u^3-lever anchor swing; scope-(a): the S anchor-dependence must enter via the m-DEFORMED gluing equations"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.28867513459481287,
       "expected": 0.5,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|g'(e^{i pi/3})|^-1 = O(1): no near-singular Newton step at the complete structure"
     }
   ],

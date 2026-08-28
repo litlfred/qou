@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "import of #3543 vol_of_m at complete structure"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "arg u = 0 => sin(2 arg u) = 0 (substrate real axis)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.0457657139078074,
       "expected": 2.0,
       "passed": true,
-      "tolerance": 0.3,
+      "tolerance": "0.3",
       "source": "|u|_min(proton)/t ~ 2 => |u| = O(t) anchor-blind law infeasible"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "scope-(a): this finite canonical menu fails; nothing excluded"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "required 5.308e+7 >= 100x smooth 1633.0 — smooth substrate phase laws cannot carry the anchor swing; the u_ladder^3-lever class can (one-sided lower bound)"
     }
   ],

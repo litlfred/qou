@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(C.9) annihilates delta(e,3m) only for the pinned action convention"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "L41 residual identically zero on the (m,e) grid for a candidate"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exactly one candidate assembly is annihilated"
     }
   ],

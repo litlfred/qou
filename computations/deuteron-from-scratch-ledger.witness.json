@@ -9,7 +9,7 @@
       "computed": 1.9157060790354576e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "q_at(50) vs q-pinning-50-digit witness string"
     },
     {
@@ -24,7 +24,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "RAW-pin anchor round-trip in RATIO space on the bare identity (not a prediction) — CODATA m_p/m_e"
     },
     {

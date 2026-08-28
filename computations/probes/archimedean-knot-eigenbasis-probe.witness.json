@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "|residue of (c \u2212 q)(c + q\u207b\u00b9) \u2212 (c\u00b2 \u2212 (q \u2212 q\u207b\u00b9)c \u2212 1)|",
       "source": "Claim 1: R-matrix eigenvalues are q and \u2212q\u207b\u00b9 satisfying the Hecke quadratic."
     },
@@ -27,7 +27,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "unit": "|(\u03bb \u2212 q)(\u03bb + q\u207b\u00b9) at \u03bb = q| + |\u2026at \u03bb = \u2212q\u207b\u00b9| at q_0",
       "source": "Direct evaluation of the root quadratic at q_0."
     }

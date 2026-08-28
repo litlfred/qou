@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "count of Carlitz q-Bernoulli derived Casimir-prefactor candidates within 1% of π²/720",
       "source": "Empirical null assertion: even the Carlitz/KKW q-zeta machinery does not yield a sub-1% match to π²/720 at substrate q_0.  Passing this assertion documents that Route A (q-deformed ζ) remains open for sub-problem 3 of conj:casimir-epsilon-vacuum."
     }

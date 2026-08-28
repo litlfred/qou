@@ -42,7 +42,7 @@
         2.115825194472788e-59
       ],
       "expected": 0.0,
-      "tolerance": 1e-45
+      "tolerance": "1e-45"
     },
     {
       "name": "W3_agm_periods_match_j_inversion",
@@ -53,7 +53,7 @@
         0.0
       ],
       "expected": 0.0,
-      "tolerance": 1e-45
+      "tolerance": "1e-45"
     },
     {
       "name": "W4b_tau0_recovered_matches_corpus",
@@ -61,7 +61,7 @@
       "detail": "tau0 = gamma'^(-1)(tau_A^fund) = -1/2 + i/(4 t_A) = -0.5 + 0.186676462462809923206162881363i; reduce(tau0)==tau_A^fund (0.0); matches the corpus literature -0.5+0.186676i to the quoted 6 digits (|diff| = 4.62e-7); Re(tau0) = -1/2 exactly by the SL2(Z) word structure",
       "computed": 4.6246280992320614e-07,
       "expected": 0.0,
-      "tolerance": 2e-06
+      "tolerance": "2e-06"
     },
     {
       "name": "W5_x05_gate_1555_certified",
@@ -69,7 +69,7 @@
       "detail": "reduce(5*tau0_rec) == tau_B^fund to 7.78e-62 (the X0(5) 5-isogeny, j-labelling j(tau0)=-121945/32, j(5tau0)=-25/2 CONFIRMED); Im ratio Im(tau_B^fund)/Im(tau0_rec) = 4*t_A*t_B = 5.0 \u2014 the (1,5,5,5) gate's ratio-5 certified at 50 dps INDEPENDENTLY of the Braden-Northover normalization",
       "computed": 0.0,
       "expected": 0.0,
-      "tolerance": 1e-45
+      "tolerance": "1e-45"
     },
     {
       "name": "W7_deg25_scale_observation_recorded",
@@ -77,7 +77,7 @@
       "detail": "route-C canonical representative c_geo = 0.99470743140273345841; c_geo/(1/(8pi)) = 24.999724471728 \u2014 within 1.1e-5 (relative) of 25 = deg(5-isogeny)^2 = 5^2, the square of the X0(5) degree certified in W5. RECORDED as a candidate discrete origin for the tau-scale \u2014 OPEN, owner-level, NO identification, DOUBLE-GATED: (a) the ratio is normalization-carrying per route C's own refutation (entry-[0,0]=1 convention); (b) observation, not derivation. Residual 1.1e-5 reported as-is, not tuned",
       "computed": 1.1021130879797009e-05,
       "expected": 0.0,
-      "tolerance": 5e-05
+      "tolerance": "5e-05"
     }
   ],
   "allPassed": true,

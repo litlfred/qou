@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "det W_m = 2 and eq (49) hold exactly through q^30"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "a (59a)-shaped sandwich reproduces GGM (61)/(62)/(64) exactly"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S+_11(e^-t) stable to >= 8 digits under truncation drop"
     }
   ],

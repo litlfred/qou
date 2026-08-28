@@ -9,7 +9,7 @@
       "computed": 2.720699046352687e-12,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "V_of_u(u→0) Re = Vol(4₁); Im = 0"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 4.233248428111387e-47,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "Im 𝔙(u→0) = 0 (complete = amphichiral, CS=0)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.1547005383792515e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "dv/du|₀ = 2√−3 (Hikami 2v = −2πi + 4√3 i u + …)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 2.152394441202919e-41,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "Murakami gluing eqns log w+log(1−z)=u, Σ log = 0"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.057827345943670366,
       "expected": 0.055,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "Im[κ₁·(2πb²)] at 2πb²=i·t, κ₁=11√3π/108 (rem:ohtsuki-tower-bar-parity)"
     }
   ],

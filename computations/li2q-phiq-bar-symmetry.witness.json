@@ -9,7 +9,7 @@
       "computed": 9.33452291679e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "absolute",
       "source": "Algebraic identity log Φ_{q⁻¹}(z) = -log Φ_q(z) for compact-q-dilog Φ_q(z) = ∏(1-q^{2k+1}z)^{-1}; falsifies the boxed identity in prop:li2q-phiq-bar-symmetrization."
     },
@@ -18,7 +18,7 @@
       "computed": 2.0534819527054347e-55,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "unit": "relative",
       "source": "Bar-anti-symmetrization with (h/2) factor recovers Li_2^q exactly, modulo series-truncation residuals."
     }

@@ -9,7 +9,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "c_2 = -1 is Lean-proved (Kashiwara f̃₁²) AND empirically the Taylor coefficient at canonical q₀"
     }
   ],

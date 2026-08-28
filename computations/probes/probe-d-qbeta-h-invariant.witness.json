@@ -23,7 +23,7 @@
       "computed": 1.5557538194652854e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "numerical cross-check of the exact reduction at q₀"
     }
   ],

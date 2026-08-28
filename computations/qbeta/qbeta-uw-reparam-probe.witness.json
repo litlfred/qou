@@ -30,7 +30,7 @@
       "computed": 4.408167790739285e-24,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "Σ c_k^(v) v^k truncated at order 6, reconstruct f(1.001)"
     },
     {
@@ -38,7 +38,7 @@
       "computed": 5.446930938679649e-26,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "Σ c_k^(w) w^k truncated at order 6, reconstruct f(1.001)"
     }
   ],

@@ -16,7 +16,7 @@
       "computed": "4.11805e-84",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "4 sample hyperbolic-knot volumes"
     },
     {
@@ -31,7 +31,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "algebraic-side numerical check"
     }
   ],

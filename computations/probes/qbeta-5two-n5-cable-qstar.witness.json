@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "fr = +q^{12} exactly (θ_{V₅} ribbon magnitude; sign alternates with cable width: −q^{7.5} at cN=3, +q^{12} at cN=4) from the writhe-1 unknot at 2 q points"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 7.065556047240567e-26,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "4₁ 4-cable J'_5 (framing-free) = trusted p=−1 tower"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 4.907344347264942e-26,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "B₅(4₁;q*) = 0 — mirror/bar control at N=5"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "3-point + slope-bound certificate: same sign at q*±2e-8 and q*, slope·window ≪ 1"
     }
   ],

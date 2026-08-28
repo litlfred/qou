@@ -9,7 +9,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "c_2 = -1 is Lean-proved Taylor-exact (Kashiwara f̃₁², qou:QOU.BraidKnot.N2_factor); independent of any Wenzl ansatz."
     }
   ],

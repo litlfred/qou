@@ -9,7 +9,7 @@
       "computed": 0.9435,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "E_gate = E0*ln(1/W_lambda) reproduces the 4He binding to 6% (c_lambda = B_AME/E_gate = 0.94), vs B_sym which is 2.36x off."
     }
   ],

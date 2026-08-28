@@ -9,7 +9,7 @@
       "computed": 2.5327796563993914,
       "expected": 2.5328,
       "passed": true,
-      "tolerance": 0.0005,
+      "tolerance": "0.0005",
       "source": "(1/4)·Σ_{λ⊢4} dim_q(V_λ) at q₀ — the original T4 target quantity (= linking_weight_family_a(q₀) ≈ 2.5328); reproduced here as a baseline cross-check, NOT a target."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.4599522717037905,
       "expected": 2.46,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "Round-trip density target m_p·ℏ_q²/(m_e·Vol(𝓑₃)) — the ≈2.46 the audit doc cites as the value that round-trips m_p (reported, not fitted)."
     }
   ],

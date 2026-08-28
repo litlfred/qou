@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "\u03c7_\u03bb(w_0) direct == \u03c7_\u03bb(w_0) via chain, for all \u03bb \u22a2 3"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.220446049250313e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "\u03c7_\u03bb(w_0) direct == \u03c7_\u03bb(w_0) via chain, for all \u03bb \u22a2 6"
     },
     {

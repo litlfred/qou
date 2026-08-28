@@ -143,7 +143,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "c_2 = -1 is the one proved rung (Lean N2_factor); the single scale d.o.f."
     },
     {

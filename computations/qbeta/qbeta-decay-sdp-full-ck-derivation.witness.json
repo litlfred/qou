@@ -9,7 +9,7 @@
       "computed": 2.20467108571997e-07,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "SDP-T_\u03b2 extraction matches empirical sweep c_4"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 4.488483768305418e-07,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "SDP-T_\u03b2 extraction matches empirical sweep c_5"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 6.18922254409204e-08,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "SDP-T_\u03b2 extraction matches empirical sweep c_6"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 3.2571234902055566e-07,
       "expected": 0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "SDP-T_\u03b2 extraction matches empirical sweep c_7"
     }
   ],

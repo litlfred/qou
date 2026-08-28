@@ -9,7 +9,7 @@
       "computed": 0.7598356856515925,
       "expected": 0.7598356856515925,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "√|τ_adj(4₁)| = 3^{-1/4} = Ohtsuki's Kashaev N^{3/2} amplitude; confirms |τ_adj(4₁)| = 1/√3 (Porti/Dubois, meridian; Ohtsuki–Takata Geom. Topol. 19 (2015) 853)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.828122088330783,
       "expected": 2.828122088330783,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Vol(5₂) = 3·|D(z)|, z root of z³-z²+1 (disc -23); SnapPy value 2.828122088330783"
     }
   ],

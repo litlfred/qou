@@ -57,7 +57,7 @@
       "computed": "1.0",
       "expected": "1.000000000000000000000000000000",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "W_atom = W_free for free nucleon (R trivially 1)"
     }
   ],

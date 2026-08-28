@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Toy 1: depth-1 geometric kernel g = 1, seed c_2 = -1. Recursion produces c_k = -1 for all k. Validates the applyRecursion machinery and confirms the 'even rungs geometric' pattern note of qbeta-1ppq-achieved."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.7409746223e-06,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "Toy 2: depth-2 kernel (a=0.5, b=-0.02843) constructed by inverting the c_4 fit value -0.97157 from qbeta-1ppq-achieved. Validates that the depth-2 recursion engine reproduces the fit by construction; extends to c_5, c_6, etc. predictions for that kernel."
     }
   ],

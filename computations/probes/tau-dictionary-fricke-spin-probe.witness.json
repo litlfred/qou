@@ -16,7 +16,7 @@
       "computed": 2.5015e-119,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-60,
+      "tolerance": "1e-60",
       "source": "t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at dps 120, both q0 pins — the nome dictionary is exponentially cusp-suppressed at theorem level."
     },
     {
@@ -24,7 +24,7 @@
       "computed": 1.448908652612274e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125)."
     },
     {
@@ -32,7 +32,7 @@
       "computed": 4.9842457649862225e-68,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "||t5|^2 - 125| on the bar<->Fricke-equivariant circle family (both pins) — |t5| = 5*sqrt5 != 10 excludes every parametrization of the W5-fixed circle (proved invariant)."
     },
     {

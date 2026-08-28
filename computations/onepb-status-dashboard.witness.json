@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "prop:operator-selection-lp strong duality"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "cross-check-trM-1ppb (Hoefsmit vs markov_peel)"
     }
   ],

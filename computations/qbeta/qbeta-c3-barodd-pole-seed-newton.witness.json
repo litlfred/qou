@@ -9,7 +9,7 @@
       "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Σ rogers at m=1: Im=Vol(4₁), Re−π²/6=CS=0 (amphichiral)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "3.13697925231327879494342183906761885127522305665701035093283e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS); Lean-proved"
     }
   ],

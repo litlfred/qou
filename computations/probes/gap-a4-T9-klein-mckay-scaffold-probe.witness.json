@@ -9,7 +9,7 @@
       "computed": 120.0,
       "expected": 120.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "\u03a3 dim\u00b2 over 2I irreps = |2I| = 120 (Burnside); verifies the affine \u00ca_8 Coxeter mark list (1,2,3,4,5,6,4,3,2) is the correct 2I irrep dim spectrum."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 60.0,
       "expected": 60.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "\u03a3 dim\u00b2 over A_5 irreps = |A_5| = 60 (Burnside); matches the irrep dim list (1,3,3,4,5) used in T4."
     },
     {

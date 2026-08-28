@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "|residue of (e_+ + e_-) − 1|",
       "source": "Idempotent completeness in H_2(q)."
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "|residue of e_+ · e_-|",
       "source": "Central-idempotent orthogonality."
     },
@@ -27,7 +27,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "|sum of (e_±² − e_±) residues|",
       "source": "e_+² = e_+ and e_-² = e_-."
     },

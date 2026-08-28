@@ -9,7 +9,7 @@
       "computed": 2.440697895179596e-14,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "unit": "max rel diff per-λ ‖ρ_λ(W)‖_F² transfer(50dps) vs dense einsum (float64) over n∈[6, 9, 9, 12]",
       "source": "doubled-Bratteli transfer ≡ dense ρ(W)·ρ(W)^T of gram_norm_binding_probe; agreement at the float64 floor of the dense reference (the transfer carries 50 dps)."
     },
@@ -18,7 +18,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "transfer reached ⁴He n=12 (and beyond) without d_λ materialisation",
       "source": "Σ_λ d_λ²=(3A)! caps the dense probe at A≤3 (opt-in ⁴He); the transfer is edge-count bound, not d_λ bound."
     },

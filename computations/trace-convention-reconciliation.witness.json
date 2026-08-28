@@ -9,7 +9,7 @@
       "computed": 3.444033215507615e-12,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "Wenzl-bridge joint-word Δtr = binding_canonical Δtr to 11 digits (3e-12). Both Wenzl JM; the residual is the factorized-product vs joint-word free-trace construction detail, far below the 0.17 Plancherel gap."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.17118713023466037,
       "expected": 0.171,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "Wenzl JM (0.5952) ≠ Plancherel (0.4241): per-block weight difference"
     }
   ],

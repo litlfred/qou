@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S'(q*) and S''(q*) both finite => analytic simple zero; S (hence Phi_odd) does not diverge at q*, so the 'rigidity divergence at the self-dual locus' mechanism has no support at q*"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "1/|u^2-1| ~ 1.00007 (O(1)) is ~6 orders of magnitude below the measured swing S'(q*) ~ 3.84e6; scale gap = 1/u^3 up to O(1); q0 not near a u^2->1 locus"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.3716291316445135,
       "expected": 2.37,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S'(q*) = 2.37 x (1/u^3), smooth O(1) prefactor -- the merged 1/u^3 capstone (#3636) stands; the swing is a representation artifact, not a self-dual pole"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness (genuine opposite-sign crossing at q*)"
     }
   ],

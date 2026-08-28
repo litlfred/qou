@@ -9,7 +9,7 @@
       "computed": 0.999932,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "log10|tr_M| ~ aA²+bA+c lstsq R² (crossing-count law)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.991521,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "B ~ mA+c lstsq R² (linear binding curve)"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": 0.23887392990626846,
       "expected": 0.24,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "³He has Z·N = 2 under R5, so the predicted residual is sqrt([3]_q/[2]_q)^2 = [3]_q/[2]_q ≈ 1.514 vs actual 1.222 → +24 %.  This is an assertion that ³He doesn't satisfy R5 (the categorical Schur-Weyl rule), confirming we're in the numerology regime."
     }
   ],

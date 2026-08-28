@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "the real-saddle φ_σ3 series is real at ±x₀"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 180.0,
       "expected": 180.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "pre-registered parameter-free scan ran to completion; hits+near-misses recorded in full"
     }
   ],

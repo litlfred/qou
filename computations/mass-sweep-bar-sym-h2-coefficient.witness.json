@@ -9,7 +9,7 @@
       "computed": 1.9453547247491583,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "unit": "dimensionless",
       "source": "(1 - B_AME/B_prod) / h² uniformity check"
     }

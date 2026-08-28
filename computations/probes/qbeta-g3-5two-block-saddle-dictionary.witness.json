@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact per-term Prony-grid ratios + drift recorded; comparable magnitudes; no clean bijection at this window (honest diagnostic)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "per-term identification table recorded with honest residuals (derived if < 0.05)"
     }
   ],

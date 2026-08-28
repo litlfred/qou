@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "build_d_ladder reproduces the generating function through valid_top (odd_ok) and d_k∈ℚ(√3)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "per-parity divergence classes C_odd, C_even differ by >0.01 (two critical times)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(k!)^{s1}(k!)^{s2}=(k!)^{s1+s2} to 1e-45: fixed-order iteration cannot reach a new critical time"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "optimal-truncation D(ũ) identical muon vs proton (<1e-6) while S sign-flips ⇒ anchor-dependence is non-perturbative (A_ω)"
     }
   ],

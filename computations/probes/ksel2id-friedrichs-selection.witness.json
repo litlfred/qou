@@ -17,7 +17,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-300,
+      "tolerance": "1e-300",
       "source": "mpf qd at r = 6/5 (q = 2.0736), dps 400, K = 48: beta_k > 0 all k, moment reproduction rel < 1e-300 (measured 8.53e-401), and agreement with the exact-Q qd (K = 12) to rel < 1e-350"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "r = 6/5: truncation eigenvalues lambda_j(N) strictly decrease in N for every j (polynomials are a form core of the Friedrichs extension => min-max; the truncation limit IS J_F, [simon1998] / [pedersen1995]); lambda_min(48) = 0.336681762134, Cauchy rel 2.07e-7 (N = 42 vs 48): lambda_F in (0.33, 0.34) STRICTLY POSITIVE — the Friedrichs measure has no support near 0"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "r = 6/5, N = 48 Gauss-Radau truncation with node pinned at 0 (boundary shift t_N = P_N(0)/P_{N-1}(0)) — the canonical solution with 0 in supp = the KREIN extension measure ([pedersen1995]): pinned eigenvalue < 1e-80, all other atoms > 0 and Cauchy (rel < 1e-4), mass at 0 = 1/sum_{k<48} p_k(0)^2 to < 1e-25, sum p_k(0)^2 convergent (indeterminacy corroboration), and the positive Krein atoms INTERLACE the Friedrichs atoms"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "r = 6/5: Friedrichs atom spacing in qtilde-steps decreases monotonically to 2 (last window value 2.001223) — the extremal supports are asymptotically q-LATTICES, incommensurate with the u-continuum's qtilde-grids; the qtilde-class of the Friedrichs atoms Aitken-extrapolates to 0.805336 vs the u = 1 class phi_1 = 0.805241 (circ dist 9.45e-5; half-shifted class rejected, dist 0.5), and the Krein class extrapolates to 0.805085 (dist 0.000156) — F and K asymptotically occupy complementary q-sublattices of the ONE u = 1 qtilde-grid; the LOW Friedrichs atoms are off that grid (lambda_0 class dist 0.209 > 0.1)"
     },
     {
@@ -57,7 +57,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "both q0 pins (muon + proton), K = 24: qd beta_k > 0, moment reproduction < 1e-150, lambda_min(N) strictly decreasing and positive (N = 16/20/24), Radau pin at 0 < 1e-40, Radau mass-at-0 identity < 1e-20. The pins sit deep in the pre-asymptotic window (qtilde - 1 ~ 0.054): asymptotic grid classes are read at the strong-deformation leg (F5), stated as such — no class claim is made at the pins"
     },
     {

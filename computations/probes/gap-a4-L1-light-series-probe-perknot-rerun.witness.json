@@ -9,7 +9,7 @@
       "computed": 0.029605202317669388,
       "expected": 0.0296,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "PR #1874 / AGENTS.md documented +2.96% lambda_A proton gap (lambda_A ~ 2.533 vs CODATA-implied ~ 2.46)."
     },
     {
@@ -17,7 +17,7 @@
       "computed": -0.5559734894917526,
       "expected": -0.556,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "PR #1874 L1a worst-rel ~ -55.6% at 4He (lambda_A constant vs growing lambda_emp)."
     }
   ],

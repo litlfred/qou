@@ -9,7 +9,7 @@
       "computed": 1.6845754483580537e-05,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "|t5(tau0)+10| at BDH22 6-d.p. tau0 (truncation-limited ~2e-5)."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 8.5542896562114e-69,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "max |t5(gamma tau0) - t5(tau0)| over gamma in {T, [[1,0],[5,1]]} subset Gamma0(5) — the validator tests class membership."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.9485004122780365e-69,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "|t5(-1/(5 tau0)) - 5^3/t5(tau0)|; image ~ -25/2 = j(5 tau0)."
     },
     {

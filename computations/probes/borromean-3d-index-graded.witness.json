@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I(0), I(mu_1), I(mu_1+lam_1) equal borromean-3d-index.witness.json to q^6"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "shared-shell sweep equals IndexTriangulation.index() on 4 classes exactly"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "no negative q-powers on any of 729 classes (GHHR Cor 10.21)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I_B3(0)(0) = 1"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I(pi.b) = I(b) for all 729 classes x 6 permutations"
     }
   ],

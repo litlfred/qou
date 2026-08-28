@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Q>1 over-accelerates to an entire transform; Q<1 leaves the divergence class unchanged; Leroy boundary is the only match"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel–Leroy Γ(1+sk) back-transform equals the direct partial sum at the meridian to <1e-15 at both anchors"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "scope-(a): no instanton action / Stokes datum / candidate value claimed at k=21; gate_pass_anywhere=False"
     }
   ],

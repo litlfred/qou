@@ -9,7 +9,7 @@
       "computed": "0.0137077838904018869706034597221",
       "expected": "0.0137077838904018869706034597221",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "(π²/6)·|ζ(-3)| with disjoint geometric n³ degeneracy"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "disjoint unknot count is q-independent"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "0.0083333333134920635094",
       "expected": "0.0083333333333333333333",
       "passed": true,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "source": "S(ε) - 6/ε⁴ → ζ(-3) = 1/120 via exponential cutoff (physical regulator), independent of ζ-continuation"
     }
   ],

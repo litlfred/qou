@@ -9,7 +9,7 @@
       "computed": 2.9950456540216347e-47,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "operator-selection LP dual: binding channels have zero shadow price"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "tr_M(½(L₊−L₋))=0 (tr_M L₊ = tr_M L₋)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "decay ghost has negative Gram norm ⇒ binding is quadratic (SDP)"
     }
   ],

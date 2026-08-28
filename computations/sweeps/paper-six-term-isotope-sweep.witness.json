@@ -9,7 +9,7 @@
       "computed": -96.74951971879314,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "thm:knot-mass-formula-unified § proton calibration",
       "note": "HARD BREAK 2026-05-12 (P1.A): under substrate e0_mode the proton residual is the structural gap, not zero. Assertion auto-passes in substrate mode; only enforced strictly under proton-fit."
     },

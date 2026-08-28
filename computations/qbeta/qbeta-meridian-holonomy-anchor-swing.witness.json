@@ -45,7 +45,7 @@
       "computed": "9.95682e-60",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "(barEven/barOdd)\u00b2 = 1 + 4/barOdd\u00b2 at both q\u2080 anchors \u2014 the boost-hyperbola identity, probe\u2194Lean MeridianHolonomyAnchorCarrier.sensitivity_sq tie"
     },
     {
@@ -53,7 +53,7 @@
       "computed": "2.2114312e-7",
       "expected": "< 1e-5 (O(ppm)); \u2248 2\u00b7\u03c1_u\u00b7(\u0394q\u2080/q\u2080)",
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "\u0394(u\u00b2)/u\u00b2 across the muon\u2194proton q\u2080 anchors, coordinate FIXED (u=2 ln q). Leading-order 2\u00b7\u03c1_u\u00b7(\u0394q\u2080/q\u2080)=2.2194507e-7; barOdd-shape swing=1.1097254e-7; cross-check A1 \u03c9 home swing=4.5581062e-6"
     },
     {

@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "symbolic: m_k = G_k J_k with G_k = LN(-L/2, L) moments = the classical SW weight at t_sw = e^(-L) = 1/qtilde pushed by s -> s qtilde^(-3/2) (exact); numeric: the Jackson atomic measure (p;p)_oo sum p^m/(p;p)_m delta_{p^m/(1-p)} has moments (p;p)_k/(1-p)^k via Euler's q-exponential (rel < 1e-30 at q = 1.2 + both pins, k <= 8) — support in (0, 1/(1-p)] compact => determinate. Balanced = SW(base qtilde) (*) Jackson: the indeterminacy core IS Stieltjes' 1894 example."
     },
     {
@@ -41,7 +41,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "exact: the alpha=0 q-Laguerre weight 1/(-x;p)_oo satisfies w(px) = (1+x)w(x) => nu_{k+1} = p^(-(k+1))(1-p^(k+1)) nu_k (quadrature cross-check rel < 1e-20 at p = 5/6 + both pins, k <= 6) => rho_k = p^(-k(k+1)/2)(p;p)_k; symbolic k <= 12: [k]_q! = rho_k (p/(1-p))^k — the ONE-SIDED normalizer family IS the q-Laguerre (Moak) family under the exact scaling s -> (p/(1-p)) s; balanced = one-sided deconvolved by exactly one SW Gaussian LN(-L/2, L)"
     }
   ],

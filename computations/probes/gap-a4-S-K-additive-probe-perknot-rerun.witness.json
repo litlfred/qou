@@ -9,7 +9,7 @@
       "computed": -27.777735036597537,
       "expected": -27.76,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "PR #1876 baseline: pred(p) = m_e*Vol(B3)/hbar_q^2*lambda_A ~ 966.03 MeV; S_emp(p) = 938.27 - 966.03 ~ -27.76 MeV (-54.3 m_e; the documented +2.96% lambda_A proton gap)."
     }
   ],

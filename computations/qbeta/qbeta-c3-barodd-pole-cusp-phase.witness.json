@@ -9,7 +9,7 @@
       "computed": "3.73375213536985718815682624717227502321907806979547561847525e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "ω=e^{iπ/3}: barEven ω = 1 (Lean CuspShapeBarParity)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "3.13697925231327879494342183906761885127522305665701035093283e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "ω=e^{iπ/3}: (barOdd ω)² = −3 (Lean CuspShapeBarParity)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Newton at m=1 recovers Vol(4₁); Vol extremal at complete"
     }
   ],

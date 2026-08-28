@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "count of Macdonald-derived Cherednik-q-zeta candidates within 1% of π²/720 (across 7 t-specializations × 3 candidate formulas × 2 (n=3, n=4) × both direct and geom-mult)",
       "source": "Null assertion for Route A2 via Macdonald.  Passing this assertion documents that the Cherednik DAHA framework does NOT yield the Casimir prefactor π²/720 through any obvious low-degree Macdonald-norm combination at substrate q_0."
     }

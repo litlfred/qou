@@ -25,7 +25,7 @@
       "computed": "9.5948e-47",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = test (1.2…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = muon (1.10997859556…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "1.8989e-44",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "q = proton (1.10997858275…), 60 dps: the Jackson q-Gamma ⊛ theta atomic kernel (RSZ Def 2.3.3 weight + eq (1.2) theta + §1.2.1 Jackson-style discrete contour) has ds/s-moments ∫ s^n K(ds)/s exactly N^bal(n) = q^(−(n−1)(n−2)/4)·[n−1]_q! for n = 1..9 (rel < 1e−30), the exact per-n gap to the corpus's proved one-sided strip [n−1]_q! being the bar-covariant weight q^(−(n−1)(n−2)/4) (Attack E); the finite-order resummation of the q-lift C1 carrier b^q_n = S_q(n)/[n]_q! through the kernel matches Σ b^q_n·N^bal(n)·x^n at x = 0.37 (rel < 1e−30). FALSIFIER PASSES in the balanced convention"
     },
     {

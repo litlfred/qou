@@ -9,7 +9,7 @@
       "computed": 6.661338147750939e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Σ_λ y_λ · tr(ρ_λ(b_i)·ρ_λ(b_j)) == tr_M(b_i·b_j) for all i,j ∈ NF basis; 1 ppQ gate"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.6363738689870015e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "RMS over 36 NF Gram entries; 1 ppQ gate"
     }
   ],

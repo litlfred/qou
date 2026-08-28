@@ -9,7 +9,7 @@
       "computed": 5.551115123125783e-17,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "symbolic f_pp(q₀) == numeric z(q₀); the fibre expression realizes correctly at the archimedean anchor."
     }
   ],

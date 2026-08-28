@@ -9,7 +9,7 @@
       "computed": 0.00040026447354502004,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "max |closed − measured| over A=6..12",
       "source": "kappa-writhe-side-decomposition-probe.witness.json (measured values rounded to 3-4 dp)"
     },
@@ -18,7 +18,7 @@
       "computed": 1.3718095572365478,
       "expected": 1.37181,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "unit": "log_q0(tau_p/tau_n)",
       "source": "tr_M_via_wenzl_bridge_mpfr on canonical H_3 words at 50 dps"
     }

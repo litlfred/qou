@@ -18,7 +18,7 @@
       "computed": "0.00000000000040373601716286186406724069761440189871841918866189",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "1 ppb target via the canonical identity. NOTE: q₀ and m_p inform the same H¹ datum, so this is a calibration-consistency cross-check, not an independent 1-ppb prediction (AGENTS.md §q₀ anchor convention)."
     },
     {

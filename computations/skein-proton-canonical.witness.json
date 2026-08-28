@@ -9,7 +9,7 @@
       "computed": 0.07552144320874712,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "unit": "relative",
       "source": "markov_peel.tr_M_atomic vs canonical-mass-table-extended.witness.json"
     },
@@ -18,7 +18,7 @@
       "computed": 0.029605202317669388,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "unit": "relative",
       "source": "Family A m_avg layer (S(p) = 0) vs CODATA m_p; the 29 000 ppm Family A residual is the m_avg gap that Bring-Bloch / categorical q-dilog tower closes (open R&D)."
     }

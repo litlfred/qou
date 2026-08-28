@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "b₁/Area=8/(12π)=2/(3π) exactly (PhotonIRZeroMode): the proved α_EM π is the Gauss–Bonnet Area 4π(g−1) — geometric, no loop"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.5,
       "expected": 1.5,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Area/(π·b₁)=12π/8π=2(g−1)/g=3/2: the self-energy π-home (8π) is a DIFFERENT π from the proved geometric one (Area=12π), excluding the same-geometric-π reading (Area value data-falsified)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.0,
       "expected": 2.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "8π = 2·(4π), (4π)^{d/2}|_{d=2}=4π the universal 2D heat-kernel loop norm; only universal constant of single-π shape (momentum is 4π², Schwinger π-free) — supports the universal-loop reading of the π"
     }
   ],

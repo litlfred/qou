@@ -9,7 +9,7 @@
       "computed": -0.18150848456294633,
       "expected": -0.1815,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "Sanity check: this probe re-derives L1b(³He) from the Phase-4 formula and should reproduce PR #1874's -18.15 % rel_err verdict to better than 0.2 %."
     }
   ],

@@ -17,7 +17,7 @@
       "computed": 0.011850342927586074,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "α(q_0) computed from symbolic α = (z-1)·h/2 should match the value stored in q-beta-operator-valued-N3.witness.json (alpha field) to 50+ digits."
     }
   ],
