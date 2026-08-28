@@ -203,6 +203,60 @@ theorem habiroEval_ne_zero_of_head_not_dvd_three (a : ℕ → R) (ζ : R) {N : �
   rw [habiroEval_three, qPochDiag_three]
   exact hhead
 
+/-! ### The prime 2: four explicit terms, so no criterion is needed
+
+At a primitive fourth root the Pochhammer collapses to constants and the whole
+evaluation is four terms. Non-vanishing at `p = 2` is therefore decided by
+*evaluating*, not by a divisibility criterion — which matters because the
+criterion provably cannot decide it: `qPochDiag ζ 4 = 0` caps the divisor, so
+`habiroEval_ne_zero_of_head_not_dvd` has only `j = 1, 2, 3` to work with. -/
+
+theorem qPochDiag_two_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 2 = 2 * (1 - ζ) := by
+  rw [qPochDiag_two, hζ]; ring
+
+theorem qPochDiag_three_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 3 = 4 := by
+  rw [qPochDiag_three, hζ]
+  have h3 : ζ ^ 3 = -ζ := by
+    have : ζ ^ 3 = ζ ^ 2 * ζ := by ring
+    rw [this, hζ]; ring
+  rw [h3]
+  have : (1 - ζ) * (1 - -1) * (1 - -ζ) = 2 * ((1 - ζ) * (1 + ζ)) := by ring
+  rw [this]
+  have : (1 - ζ) * (1 + ζ) = 1 - ζ ^ 2 := by ring
+  rw [this, hζ]; ring
+
+theorem qPochDiag_four_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 4 = 0 := by
+  have h4 : ζ ^ 4 = 1 := by
+    have : ζ ^ 4 = (ζ ^ 2) ^ 2 := by ring
+    rw [this, hζ]; ring
+  unfold qPochDiag
+  rw [Finset.prod_range_succ]
+  simp [h4]
+
+/-- **Evaluation at a primitive fourth root is four explicit terms.**
+
+    `2` and `4` here are the collapsed Pochhammers `(ζ;ζ)_2 = 2(1-ζ)` and
+    `(ζ;ζ)_3 = 4`; `(ζ;ζ)_4 = 0` truncates everything beyond. So at this root
+    the value depends on `a 0 … a 3` alone, however long the series is. -/
+theorem habiroEval_at_sq_eq_neg_one (a : ℕ → R) (ζ : R) (hζ : ζ ^ 2 = -1)
+    {N : ℕ} (hN : 4 ≤ N) :
+    habiroEval a ζ N
+      = a 0 + a 1 * (1 - ζ) + a 2 * (2 * (1 - ζ)) + a 3 * 4 := by
+  have h4 : ζ ^ 4 = 1 := by
+    have : ζ ^ 4 = (ζ ^ 2) ^ 2 := by ring
+    rw [this, hζ]; ring
+  rw [habiroEval_stable a (by norm_num : 0 < 4) h4 hN]
+  unfold habiroEval
+  rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
+    Finset.sum_range_succ, Finset.sum_range_zero]
+  rw [qPochDiag_two_of_sq_eq_neg_one ζ hζ, qPochDiag_three_of_sq_eq_neg_one ζ hζ]
+  have h0 : qPochDiag ζ 0 = 1 := by unfold qPochDiag; simp
+  have h1 : qPochDiag ζ 1 = 1 - ζ := by unfold qPochDiag; simp
+  rw [h0, h1]; ring
+
 /-- A unit head-divisor makes the criterion unusable — stated so the failure mode
     is a theorem, not a footnote. -/
 theorem head_criterion_vacuous_of_isUnit (a : ℕ → R) (ζ : R) {j : ℕ}
