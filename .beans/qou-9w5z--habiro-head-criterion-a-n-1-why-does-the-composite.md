@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:17:19Z
-updated_at: 2026-08-28T15:29:32Z
+updated_at: 2026-08-28T16:04:36Z
 ---
 
 ## ANSWERED — the 3 is not structural, and p=3 closes at j=3
@@ -92,3 +92,135 @@ finding in qou-iph3.** That claim was "the denominators are powers of two",
 measured on stale data. The true 2-adic fact is that the trace's 2-adic
 DEPTH is what BLOCKS the criterion at p=2 — deep is bad, not good, and the
 neutron wins by being shallow.
+
+
+## CORRECTION — p=2 is NOT open. I framed it wrong.
+
+I closed the previous entry saying "p=2 needs a different argument" and
+reported it to the author as "the honest open item". **That was wrong**, and
+the error was conflating two different things:
+
+- the HEAD CRITERION cannot decide p=2 (true, and §6 above proves the
+  ceiling is structural rather than a shortage of coefficients);
+- therefore the QUESTION is open (false).
+
+p=2 is a **single prime**, and `(i;i)_4 = 0` truncates the sum after four
+terms whose coefficients `a_0..a_3` every atom already carries on disk. So
+Frob_2 is a finite exact computation in Z[i] — it needs no criterion at all.
+There is no infinitude to cover, which is the only thing the criterion buys.
+
+Measured exactly, on every (Z,N) with Z+N <= 6 (27 cells, 0 mismatches):
+
+    P(i) = P(-1) = A                    the SAME integer runs p=2 and odd p
+    Frob_2 = P(i)/denom(i) = -2^(1-2M)  M = Z+N;  NEVER zero
+
+so **Frob_2 != 0 for every atom, 27/27** — and with the odd-prime result,
+**Frob_p != 0 at EVERY prime.** The arc's non-vanishing requirement is met.
+
+### What IS distinctive about p=2, and it is not vanishing
+
+`Frob_2` is **not an algebraic integer** — 0/27 cells — with
+v_(1-i)(Frob_2) = -2(2M-1) < 0. Its Galois trace over Q(i)/Q is an integer
+only for M = 1, which is exactly the 2/45 the frobenius probe reports for
+`step2_full_trace_passed` (proton and neutron at p=2, Tr(full) = -1).
+
+That is the same fact as the ceiling, seen from the other side: an
+integrality-flavoured divisibility criterion has nothing to say at the one
+prime where the value is not integral. So §5 and §6 are not in tension —
+§5 explains WHY no criterion works there, §6 shows none is needed.
+
+### Cross-check that caught my own reading
+
+I initially thought my Frob_2 = -1/2 contradicted the probe's
+`step2_full_trace_passed = True` for the proton at p=2. It does not:
+`denom_folded` is not a unit claim, and Tr(-1/2) over Q(i)/Q is -1, an
+integer. The two computations agree; my reading of the flag was the error.
+
+### Witness fields corrected
+
+`p2_closes: false` was misleading on its own and is replaced by
+`p2_head_criterion_closes: false` + `p2_closed_by_direct_evaluation: true`,
+with `frob_2_closed_form` and `frobenius_nonzero_at_every_prime: true`.
+
+### Lean
+
+Four more sorry-free declarations making the p=2 collapse citable rather
+than only computed: `qPochDiag_{two,three,four}_of_sq_eq_neg_one`
+((z;z)_2 = 2(1-z), (z;z)_3 = 4, (z;z)_4 = 0 at a primitive fourth root) and
+`habiroEval_at_sq_eq_neg_one`, which gives the four-term evaluation for
+every N >= 4.
+
+
+## RETRACTION within the correction — non-integrality is GENERIC
+
+The entry above says the distinctive thing about p=2 is that Frob_2 is not an
+algebraic integer, and offers that as the reason an integrality-flavoured
+criterion has nothing to say there ("two views of the same fact"). **I checked
+that instead of asserting it, and it is wrong.**
+
+Measured across all 45 (atom, prime) cells with the tested primes
+{2,3,5,7,11,13,17,19,23}: Frob_p is an algebraic integer on **0 of 45**.
+Non-integrality holds everywhere, so it cannot distinguish p=2 from any other
+prime and explains nothing about the ceiling. Recorded as section [8] of the
+probe with the full scan, precisely so the wrong reading is not re-derived.
+
+**What IS special at p=2** is the length of the truncation, nothing subtler.
+`(u;u)_m` vanishes at m = 2p, so p=2 gives the criterion the FEWEST usable
+indices of any prime — three — and caps the divisor's valuation at 4. That one
+fact cuts both ways, and this is the real "two views": a short truncation
+starves the criterion and simultaneously makes direct evaluation trivial.
+p = 2 is the worst prime for the criterion and the best for evaluation.
+
+The rest of the correction stands unchanged: p=2 is closed by direct
+evaluation, Frob_2 = -2^(1-2M) on 27/27 cells, and P(i) = P(-1) = A.
+
+Also added, closing a genuine gap in the "every prime" claim: every
+non-vanishing result above is about the NUMERATOR, and Frob_p = P/denom is
+equally undefined if the denominator vanishes at zeta_{2p} (a pole, not a
+zero). It never does, for any atom at any prime — deg Phi_{2p} = p-1, so once
+p-1 > deg(denom) the cyclotomic cannot divide, and every prime below that
+bound is checked explicitly (9 to 23 primes per atom, 0 hits).
+
+Note P(i) = P(-1) is forced rather than coincidental: tr_M(-1) = -tr_M(1) and
+denom(i) = -denom(-1), and the two sign flips cancel.
+
+
+## Third correction, and the one with the widest blast radius
+
+While checking whether "non-integrality is generic" was consistent with the
+frobenius probe reporting `step2_full_trace_passed` 2/45, I found the two
+could not both be true under my description of that test — so I read the code
+instead of reasoning about the name.
+
+`habiro_frobenius_probe.py` sets its flag by `sp.invert(denom, Phi_2p)`, which
+works over **Q**. Q(zeta_2p) is a field, so that succeeds for ANY nonzero
+denominator: the flag is a **nonzero test, not a unit test**. It was named
+`denom_unit` and its comment read "Denominator is not a unit in Z[zeta_2p]",
+and I took the name at face value.
+
+Consequences, all mine:
+
+- I wrote in PR #5884's body and in a commit message that the full-trace test
+  "additionally requires the denominator to be a unit at zeta_{2p}, so
+  Tr(Frob_p) itself is an algebraic integer". **Wrong twice**: the flag is not
+  a unit test, and Frob_p is an algebraic integer on 0/45 cells, so a real
+  unit test would pass nowhere and the test would be 0/45 rather than 2/45.
+- The same wrong sentence had been written into the witness `summary_note`.
+
+What the full-trace test actually detects is integrality of the **Galois
+trace**, not of the element. Since the denominator never vanishes (section 7),
+the discriminating condition is purely `full_trace_is_integer`.
+
+Fixed: variable renamed `denom_unit` -> `denom_nonzero`, the misleading comment
+replaced by one stating the ring the inversion happens in and citing the 0/45
+measurement, the error string "not a unit" -> "not invertible", and the
+witness `summary_note` rewritten with the correction recorded in place.
+
+The witness field name `denom_folded` is kept — it is accurate, the value WAS
+folded — and only the internal name was lying.
+
+Worth noting why 2/45 is p=2 and the nucleons: Frob_p = tr_M(zeta_p), so at
+p=2 the argument is zeta_2 = -1 and the value lands in Q, where the trace of
+-1/2 over Q(i)/Q is the integer -1. p=2 is the only prime whose value is
+rational at all. That is a third distinct sense in which p=2 is special, and
+it is unrelated to both the truncation length and to integrality.
