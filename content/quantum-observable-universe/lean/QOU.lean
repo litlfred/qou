@@ -1265,3 +1265,15 @@ import QOU.Mathlib.RothInductionHypothesis
 import QOU.Hecke.ClosedFormInterfaceFactors
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
+
+-- The two modules created to break the cross-sibling blocker (bean qou-lsib,
+-- PR #5505): content-block `.lean` siblings live outside the package globs, so
+-- they cannot import one another, and six particle files were each re-declaring
+-- the same structures while `positron-knot` could not reach `Electron` at all.
+-- Moving the shared declarations into the library tree fixed that -- but the
+-- tree is not the build.  Nothing inside QOU.lean's closure imports either
+-- module, so `lake build QOU` never compiled them and they sat in the qou-orph
+-- orphan population (986 of 2257 modules); their only type-check was the
+-- lean-direct run in that PR.  Wiring them here is the other half of the fix.
+import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.Archimedean.ParticleKnots
