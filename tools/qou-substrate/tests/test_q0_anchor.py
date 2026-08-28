@@ -479,3 +479,80 @@ def test_payload_evidence_does_not_move_any_value():
         payload, script_path=_UNLISTED, engine="mpmath",
     )
     assert (dict(payload["parameters"]), payload["result"], payload["note"]) == before
+
+
+# ── q0_anchor=False: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
+
+
+def test_false_stamps_no_anchor_at_all():
+    """A producer that never touches q₀ gets no anchor, not a resolved one.
+
+    The resolver has no "no anchor" outcome, so before this existed every
+    caller got a pin whether or not the numbers depended on one — and an inert
+    stamp is byte-identical to a load-bearing one.
+    """
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    assert "q0Anchor" not in payload
+    assert "q0Value" not in payload
+
+
+def test_false_still_stamps_the_provenance_fields():
+    """Opting out of the ANCHOR must not opt out of provenance — that is the
+    whole point of the migration this flag exists for."""
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    for field in ("scriptHash", "scriptCommitSha", "commitSha", "engine",
+                  "computedAt", "durationMs"):
+        assert field in payload, field
+
+
+def test_false_beats_payload_evidence():
+    """`False` is a caller DECLARATION and outranks payload evidence.
+
+    A q₀-looking number in the payload is not proof the result depends on it —
+    a probe may record the pin it ran beside without consuming it.
+    """
+    payload = {"parameters": {"q0": _MUON}, "result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    assert "q0Anchor" not in payload
+
+
+def test_none_and_str_are_unchanged_by_the_new_branch():
+    """Regression: the default and the explicit-string paths still stamp."""
+    default = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        default, script_path=_UNLISTED, engine="python",
+    )
+    assert default.get("q0Anchor") == "muon"
+
+    explicit = {"result": 1}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        explicit, script_path=_UNLISTED, engine="python", q0_anchor="proton",
+    )
+    assert explicit.get("q0Anchor") == "proton"
+
+
+def test_only_False_suppresses_not_any_falsy_value():
+    """`is False`, not truthiness — so the only value that drops the field is
+    the one that means it.
+
+    An empty string is NOT suppression and is NOT resolved: it reaches the
+    explicit-declaration branch and is stamped verbatim, which is this
+    function's pre-existing behaviour for any non-None argument. Asserted so a
+    future change to the `is False` check cannot quietly start swallowing other
+    falsy values. (I first documented `""` as falling through to resolution;
+    this test disagreed and the test was right.)
+    """
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor="",
+    )
+    assert payload.get("q0Anchor") == ""
+    assert "q0Anchor" in payload

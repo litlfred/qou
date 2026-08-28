@@ -1610,7 +1610,7 @@ class WitnessBuilder:
         script_path: Union[str, Path],
         engine: str = "python",
         engine_version: Optional[str] = None,
-        q0_anchor: Optional[str] = None,
+        q0_anchor: Union[str, bool, None] = None,
         q0_value: Optional[str] = None,
     ) -> dict:
         """Public helper: stamp the WitnessBuilder staleness fields onto
@@ -1623,6 +1623,32 @@ class WitnessBuilder:
         ``computedAt``, and ``durationMs`` set. Avoids the need to
         import the underscore-prefixed ``_git_head_sha`` /
         ``_git_file_sha`` helpers from outside this module.
+
+        ``q0_anchor`` takes three kinds of value:
+
+        * ``None`` (default) — resolve the anchor and stamp it.
+        * a ``str`` — stamp that anchor, caller's declaration wins.
+        * ``False`` — **this witness does not depend on q₀; stamp no anchor
+          at all.**
+
+        The ``False`` case exists because the resolver ALWAYS produces an
+        anchor, so a producer that never touches q₀ still got one — and an
+        inert stamp is byte-identical to a load-bearing one, so nothing
+        downstream can tell them apart. Reported from a habiro probe doing
+        exact integer arithmetic in ``ℤ[ζ_{2p}]`` that came back stamped
+        ``q0Anchor: "proton"`` (PR #5884, bean ``qou-iph3``).
+
+        It matters at scale rather than one file at a time: of the 287
+        provenance-less producers bean ``qou-4un2`` is migrating, **196 do not
+        reach q₀ even one import hop out**, so stamping unconditionally would
+        have added ~196 inert anchors — roughly doubling the class the report
+        was about, in the very pass meant to improve provenance.
+
+        Pass ``False`` only when the witness genuinely carries no q₀-dependent
+        field. When in doubt leave it ``None``: a resolved anchor that turns
+        out to be inert is a labelling problem, while a MISSING anchor on a
+        witness that does depend on q₀ is the ambiguity the field exists to
+        prevent.
         """
         spath = str(script_path)
         payload["scriptHash"] = file_content_hash(spath)
@@ -1654,6 +1680,19 @@ class WitnessBuilder:
         # q₀-anchor provenance: make the muon/proton pin explicit so the value
         # can never be silently misread (bean tnjb flip-flop). Auto-resolved from
         # the manifest + env unless the caller passes an explicit anchor/value.
+        # `False` means the caller has declared this witness q₀-independent.
+        # Return BEFORE resolving: the resolver has no failure mode that
+        # produces "no anchor", so asking it and then discarding the answer
+        # would still leave the door open for a later edit to stamp it.
+        # Checked with `is False`, not truthiness, so the ONLY value that
+        # suppresses the field is the one that means it. An empty string is
+        # not caught here and is not resolved either — it reaches the explicit
+        # branch below and is stamped verbatim, which is this function's
+        # pre-existing behaviour for any non-None argument and is left alone.
+        # (I first wrote that `""` "falls through to resolution"; the test
+        # below disagreed, and the test was right.)
+        if q0_anchor is False:
+            return payload
         if q0_anchor is None:
             # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
             # it was computed at beats the one the manifest/env would have
