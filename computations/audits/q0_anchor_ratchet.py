@@ -209,6 +209,63 @@ def write_baseline(path: Path, files: list[str], prev: set[str], rev: str) -> in
     return 0
 
 
+
+def selftest() -> int:
+    """Prove the gate can still SEE a new unstamped witness.
+
+    A detector that has quietly gone blind reports a clean tree, which is
+    indistinguishable from success --- this corpus has the scar: a name-keyed
+    accessor audit reported zero hits after a narrowing, and the zero was the
+    narrowing, not the tree. So the self-test asserts the POSITIVE case (a new
+    unstamped witness IS caught), not merely that the script runs.
+
+    Four properties, each of which has a way of being refactored away:
+      A  a baselined unstamped witness does NOT fire      (backlog tolerated)
+      B  a NEW unstamped witness DOES fire                (the whole point)
+      C  a stamped witness never fires
+      D  an audit-emitted witness (AUDIT_SUFFIXES) is out of scope, so a
+         tightening of that list cannot silently swallow real witnesses
+    """
+    import shutil
+    import tempfile
+
+    global REPO, BASELINE
+    saved = (REPO, BASELINE)
+    tmp = Path(tempfile.mkdtemp(prefix="q0ratchet-selftest-"))
+    try:
+        (tmp / "computations" / "sub").mkdir(parents=True)
+        REPO = tmp
+        BASELINE = tmp / "computations" / "q0-anchor-missing-baseline.json"
+        BASELINE.write_text(json.dumps(
+            {"files_count": 1,
+             "files": ["computations/old-unstamped.witness.json"]}))
+        (tmp / "computations" / "old-unstamped.witness.json").write_text('{"r":1}')
+        (tmp / "computations" / "sub" / "stamped.witness.json").write_text(
+            '{"q0Anchor":"proton","q0Value":"1"}')
+
+        base = load_baseline(BASELINE)
+        got = set(scan_worktree())
+        assert got == {"computations/old-unstamped.witness.json"}, \
+            f"A/C: expected only the baselined witness unstamped, got {got}"
+        assert not (got - base), "A: a baselined witness fired"
+
+        new_w = tmp / "computations" / "sub" / "brand-new.witness.json"
+        new_w.write_text('{"r":2}')
+        got = set(scan_worktree())
+        assert (got - base) == {"computations/sub/brand-new.witness.json"}, \
+            f"B: a NEW unstamped witness was NOT caught — the gate is blind. {got - base}"
+
+        new_w.rename(new_w.with_name("brand-new-audit.witness.json"))
+        got = set(scan_worktree())
+        assert not (got - base), "D: an audit-emitted witness fired"
+    finally:
+        REPO, BASELINE = saved
+        shutil.rmtree(tmp, ignore_errors=True)
+    print("selftest OK: A backlog tolerated, B new caught, C stamped ignored, "
+          "D audit-emitted out of scope")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--strict", action="store_true",
@@ -219,7 +276,18 @@ def main() -> int:
                                   "working tree (reproducible; immune to a "
                                   "concurrent branch switch)")
     ap.add_argument("--baseline", help="use this baseline file instead")
+    # `--self-test` is the spelling scripts/precision-gates.sh invokes
+    # (its line 467). `--selftest` is accepted as an alias so a hand-run does
+    # not have to remember which. Getting this wrong is silent in the harness:
+    # a self-test that errors on an unknown flag is indistinguishable from one
+    # that fails, and both just print the gate name.
+    ap.add_argument("--self-test", "--selftest", dest="self_test",
+                    action="store_true",
+                    help="prove the gate still catches a new unstamped witness")
     args = ap.parse_args()
+
+    if args.self_test:
+        return selftest()
 
     baseline_path = Path(args.baseline) if args.baseline else BASELINE
     missing = scan_rev(args.rev) if args.rev else scan_worktree()
