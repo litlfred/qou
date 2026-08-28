@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T23:19:50.348350+00:00",
-  "commitSha": "17522305edd72b0573f5d9296469054919229b06",
+  "computedAt": "2026-08-28T15:47:28.912636+00:00",
+  "commitSha": "cdbdc84af1332800dae14cf6ce68b7bf476eb78f",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -56,14 +57,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2838,
-      "prov_ok": 2401,
+      "total_scanned": 2840,
+      "prov_ok": 2403,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 255,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 99,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965116279069767441860465116279069767441860465116279069767442"
+      "completeness_ratio": "0.965140845070422535211267605633802816901408450704225352112676"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4352,6 +4353,10 @@
           "missing_fields": []
         },
         {
+          "witness": "determinacy-filter-calibration.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "deuteron-cost-and-sign-structure.witness.json",
           "missing_fields": []
         },
@@ -4365,6 +4370,10 @@
         },
         {
           "witness": "deuteron-support-reachability.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "growing-width-cut-shape-exclusion.witness.json",
           "missing_fields": []
         },
         {
