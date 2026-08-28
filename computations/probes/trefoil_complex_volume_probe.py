@@ -55,10 +55,31 @@ from pathlib import Path
 
 getcontext().prec = 60
 
-# Muon-canonical substrate modulus (computations/ layer convention; matches the
+# PROTON-pinned substrate modulus — q₀ ≈ 1.10997858275138080759…
+#
+# This comment used to read "Muon-canonical substrate modulus … matches the
 # committed rho-prefactor-structural-verifier.witness.json `q_0` parameter and
-# the cheat-sheet muon value 1.10997859555733471…).
+# the cheat-sheet muon value 1.10997859555733471…". Every clause of that is now
+# false, and it went false silently:
+#
+#   * `q0_anchor_manifest.json` lists this stem under `physical_proton`, so
+#     `Q_50_DIGIT_STR` resolves to the PROTON pin. Measured: the value this
+#     producer computes at, and writes to `parameters.q_0`, is
+#     1.109978582751380807591669095611.
+#   * `rho-prefactor-structural-verifier.witness.json` still carries
+#     1.1099785955573347 — the MUON pin. The two no longer "match"; they are
+#     11.5 ppb apart, which is the μ–p substrate tension itself.
+#
+# Nothing was computed wrongly — the numbers were always whatever the manifest
+# handed this file. What was wrong is that the source said one layer while the
+# output belonged to the other, so a reader (or a grep-based anchor audit)
+# would classify this producer muon on the strength of a comment.
+#
+# Found by adding the `stamp_q0` call below: the stamp resolved "proton"
+# directly against the payload, one line from a comment asserting muon. That
+# is the stamp doing its job — see bean `1j39`.
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 Q0 = Decimal(Q_50_DIGIT_STR)
 
 
@@ -184,6 +205,12 @@ def main() -> None:
         },
         "data": data,
     }
+
+    # This payload is hand-built in the shape `WitnessBuilder` emits, but it
+    # never goes through `build()`, so it never picked up the `q0Anchor`
+    # provenance stamp that `build()` has applied since 2026-08-25 — and no
+    # number of re-runs would ever add it (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
 
     out = script_path.parent / "trefoil-complex-volume-probe.witness.json"
     # Explicit utf-8 so the write does not depend on the locale default
