@@ -74,6 +74,42 @@ GATES=(
   #                              `q0Anchor: muon` AND carry a muon q0Value --
   #                              self-consistent and valid as recorded; they
   #                              are the migration, not defects.
+  #
+  #                              CORRECTION 2026-08-28, same day: that last
+  #                              sentence was right about ONE of the two.
+  #                              `lever1-binding-core-characterization` did
+  #                              NOT carry a muon q0Value -- its `params.q0`
+  #                              held the PROTON pin while q0Anchor/q0Value
+  #                              declared muon. A provenance stamp asserting a
+  #                              layer its numbers do not belong to is the
+  #                              straddle AGENTS.md forbids "regardless of
+  #                              size", not the migration. Root cause was the
+  #                              qou-7vm4 shape (`try:` proton constant /
+  #                              `except:` hardcoded muon literal), so the
+  #                              anchor depended on whether an import
+  #                              succeeded. Fixed at the producer; re-tagged
+  #                              ambiguous -> physical_proton; all three
+  #                              fields now agree and no number moved.
+  #
+  #                              The other survivor,
+  #                              `lever1_binding_habiro_single_element_test`,
+  #                              IS the migration and is now exempted
+  #                              STRUCTURALLY (declared_ideal_muon_exempt:
+  #                              witness declares muon AND manifest declares
+  #                              the producer ideal_muon), because the gate
+  #                              hardcodes live q0 = proton while q_parameter
+  #                              resolves that stem TO muon. That exemption
+  #                              holds regardless of qou-1c4y.
+  #
+  #                              So this gate now reports q0-stale: 0 on its
+  #                              own merits, not by demotion. DO NOT flip it
+  #                              back on that basis alone -- the condition
+  #                              below says counts are not the trigger, and
+  #                              that is still right. But note for whoever
+  #                              holds qou-1c4y that this gate's demotion
+  #                              premise ("both are the migration") no longer
+  #                              describes it, so it may be promotable ahead
+  #                              of the other. Owner call, not an agent's.
   #   scriptHash + upstream drift  492 self-stale of 3170 checked, dominated by
   #                              sha256_mismatch against
   #                              q-pinning-50-digit.witness.json -- the same
