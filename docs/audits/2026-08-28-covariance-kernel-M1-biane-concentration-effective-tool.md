@@ -1,70 +1,69 @@
-# Covariance-kernel epic (`qou-x631`) — the effective tool for the M₁>0 finite-n bound IS in the corpus (Biane concentration)
+# Covariance-kernel epic (`qou-x631`) — the finite-n tool: Biane concentration is quantitative but INSUFFICIENT; the gap is a second-order CLT rate
 
 **Date:** 2026-08-28 · **Branch:** `claude/m1-biane-concentration-effective-tool-2026-08-28` · **Tier:**
-tool identification (answers "need lit?"; states the remaining derivation precisely — does NOT execute
-it) · **Discipline:** scope-(a); no fit; nothing wired; no `c_k`; L2 unchanged. **Epic:** `qou-x631`;
-gap `qou-k5r5`.
+tool assessment with a **self-correction** (an initial "effective tool found" over-claim, retracted
+here on reflection) · **Discipline:** scope-(a); no fit; nothing wired; no `c_k`; L2 unchanged.
+**Epic:** `qou-x631`; gap `qou-k5r5`.
 
-## The gap this closes (partially)
+## What the finite-n step needs
 
 The finite-n step ([`…-finite-n-cs-closure-step.md`](2026-08-28-covariance-kernel-M1-finite-n-cs-closure-step.md),
-PR #5903) reduced `M₁>0` to one requirement: an **effective / quantitative** bound on the IO-CLT
-variance asymptotics, trapping the damped-oscillatory (CS) margin below the derived `0.30` leading
-value for `n ≥ N₀`. It stated this was "not off-the-shelf (Fulman's marginal Berry–Esseen ruled out;
-qualitative CLT gives no rate)." **That was too pessimistic — the effective tool is in the corpus.**
+PR #5903) reduced `M₁>0` to: keep the (CS) margin `m(n) = ρ_P(n) − σ_D(n)/σ_A(n)` positive for
+`n ≥ N₀`, where `m(n) → 0.30` (leading, derived, 52 % headroom). Because `m(n)` is a **ratio of
+standard deviations plus a correlation**, closing it needs the **second-order** convergence
+`σ_D/σ_A → 0.6796`, `ρ_P → 0.9798` **with an explicit rate** — a *variance/covariance-CLT* statement.
 
-## The tool: Biane, *Approximate factorization and concentration for characters of symmetric groups* (`arxiv-math-0006111`)
+## Candidate: Biane concentration (`arxiv-math-0006111`) — quantitative, but the wrong order
 
-**Theorem 1** (moments) and its **Corollary 1** (free cumulants). For a positive-definite normalised
-`ψ` in the approximate-factorization class `F^n_{c,δ}` on `S_q`, there is a constant `K` such that `ψ`
-is `(δ+q^{-1})^{1/2}`-supported by the set of Young diagrams `λ` with
+Biane's **Theorem 1 / Corollary 1**: for the approximate-factorization class (Plancherel, `δ→0`),
+`|R_l(λ) − R̄_l| ≤ K·n^{l/2 − 1/4}` on a set of probability `≥ 1 − n^{-1/2}`. This is a genuine
+**quantitative** result with an explicit `n^{-1/4}` relative rate — the closest in-corpus quantitative
+tool.
 
-> `|m_l(λ) − m_l(ψ)| ≤ K(δ+q^{-1})^{1/4} q^{l/2}`  (Cor 1: same for free cumulants `|R_l(λ)−R_l(ψ)|`),
-> for all `l ≤ n/2`.
+**But it is insufficient for the (CS) margin, and an earlier draft of this note claiming otherwise is
+retracted.** The reason is an order/side mismatch:
 
-**Plancherel is in this class with `δ → 0`** (the regular-representation character factorises exactly),
-so with `q = n`:
+- Biane gives **one-sided, first-order** control: a high-probability *deviation* (LLN-with-rate) bound.
+  It bounds the *fluctuation size*, hence gives a **crude upper** bound on a variance
+  (`Var ≲ (n^{l/2−1/4})² = n^{l−1/2}`, overestimating the true `n^{l−1}` by `n^{1/2}`), and gives **no
+  lower bound** on any variance or correlation.
+- The (CS) margin needs **two-sided, second-order** control: `σ_D/σ_A` and `ρ_P` converging to their
+  leading values with a rate. That requires an **upper** bound on `σ_D` *and a lower* bound on `σ_A`
+  (and a lower bound on `ρ_P`) — none of which a one-sided deviation bound provides, and none of which
+  survives Biane's `n^{1/2}` crudeness.
 
-> **`|R_l(λ) − R̄_l| ≤ K·n^{l/2 − 1/4}` on a set of Plancherel-probability `≥ 1 − n^{-1/2}`.**
+A deviation/LLN-with-rate bound does not yield a variance-ratio convergence rate. So Biane, though
+quantitative, does **not** close the finite-n step.
 
-This is an **explicit, quantitative** deviation bound with a concrete `n^{-1/4}` relative rate — exactly
-the *effective* control the finite-n step lacked, and **crude** (the CLT fluctuation is the sharper
-`n^{l/2 − 1/2}`; Biane's is looser by `n^{1/4}`), which is **fine**: the leading (CS) margin is `0.30`
-(52 % headroom), so a crude rate is all that is required. (An earlier note dismissed Biane as
-"character-algebra, `Σh∉A` bites" — wrong: concentration is a *deviation* bound on the diagram, broader
-than exact membership in the polynomial-function algebra.)
+## The sharpened "need lit?" answer
 
-## The remaining derivation (concrete, no longer tool-less)
+The missing ingredient is a **quantitative (effective) SECOND-ORDER Kerov CLT** — an explicit rate for
+the *variance/covariance* convergence of Plancherel linear statistics (specifically the non-`A`
+statistics `Σ|c|`, `ΣD²` and their covariance with `ω₃`). The corpus provides:
 
-`M₁>0` for all n now reduces to executing the **concentration → (CS)-margin chain**:
+- the **qualitative** second-order CLT (Ivanov–Olshanski `0304010`, Dołęga–Féray `1402.4615`,
+  Dołęga–Śniady `1704.02352`) — a *limit*, no rate;
+- **first-order** quantitative concentration (Biane `0006111`) — a *deviation* rate, wrong order;
+- a **marginal** Berry–Esseen (Fulman `0305423`) — ruled out (#5887).
 
-1. **Moments/cumulants → the three (CS) quantities.** `ω₃ = (R₄+R₂)/3` is directly a cumulant
-   (Cor 1 applies verbatim). `Σ|c| = ∫|x|dm` is a **Lipschitz, non-polynomial** functional — bound it by
-   approximating `|x|` by polynomials on the (concentrated, bounded) support, controlling the error by
-   Thm 1's moment bounds. `ΣD² = Σ_u D(u)²` is **quadratic** in the profile — its fluctuation
-   linearises to `2⟨D⟩δD` (a moment-linear statistic, Thm 1 applies) plus an `O(√n)` remainder to be
-   bounded.
-2. **Deviation → variance.** Biane gives a high-probability *support* statement, not a variance bound.
-   Convert via: (concentration on the bulk set) + (a tail bound on the exceptional `n^{-1/2}` set using
-   crude a-priori moment bounds). This yields `|σ_A²/n² − V_A| ≤ C n^{-a}`, likewise `σ_D²`, `ρ_P`, with
-   `a > 0` explicit (expected `a = 1/4` from the rate).
-3. **Absorb in the margin.** With `|margin(n) − 0.30| ≤ C' n^{-a}`, pick `N₀` with `C' N₀^{-a} < 0.30`;
-   then `(CS)` holds for `n ≥ N₀`, and `4 ≤ n < N₀` is closed by the exact table (have `(CS)` to n=40,
-   `M₁>0` to n=78). That **completes `M₁>0` for all n**.
+**None gives a second-order variance-convergence rate.** That specific result — an effective/Edgeworth
+version of the Kerov CLT at the *variance* level — is what would close `M₁>0` via the (CS) route, and it
+is **not in the corpus**. (Whether it exists in the wider literature is the open lit question; arxiv is
+firewalled here.)
 
 ## Honest status
 
-- **Answered:** "need lit?" — the effective tool is **in the corpus** (`arxiv-math-0006111`, Thm 1 /
-  Cor 1); the finite-n step is **not tool-less**. This supersedes the #5903 audit's "not off-the-shelf".
-- **Not executed:** the three-step chain above is a real derivation (steps 1–2 need care for the
-  non-polynomial `Σ|c|` and quadratic `ΣD²`, and for the deviation→variance conversion). No claim that
-  `M₁>0` is proved — only that the last missing ingredient has a named, in-corpus quantitative tool with
-  adequate (crude) rate.
-- Gap `qou-k5r5` stays **OPEN** — but the "effective bound" is now a concrete derivation against a
-  cited theorem, not an open search for a tool.
+- **Self-correction recorded:** Biane concentration is quantitative but is **not** the effective tool
+  for the (CS) margin (first-order/one-sided vs the required second-order/two-sided). The initial
+  "effective tool IS in the corpus" claim is **withdrawn**.
+- **Sharper frontier:** the one open ingredient is a *quantitative second-order (variance-level) Kerov
+  CLT* for `Σ|c|`, `ΣD²`. Absent that, the alternative is a bespoke direct derivation of the
+  variance-convergence rate — a genuine analysis project, but with 52 % headroom (crude rate suffices).
+- Gap `qou-k5r5` stays **OPEN**; the leading order remains proved (#5901), `M₁>0` exact to n=78.
 
 ## Cross-references
 
-- Finite-n step (the requirement this addresses): [`2026-08-28-covariance-kernel-M1-finite-n-cs-closure-step.md`](2026-08-28-covariance-kernel-M1-finite-n-cs-closure-step.md)
+- Finite-n step: [`2026-08-28-covariance-kernel-M1-finite-n-cs-closure-step.md`](2026-08-28-covariance-kernel-M1-finite-n-cs-closure-step.md)
 - Leading-order (CS) derivation: [`2026-08-28-covariance-kernel-M1-io-leading-order-CS-derived.md`](2026-08-28-covariance-kernel-M1-io-leading-order-CS-derived.md)
+- Shape-field CLT tools (qualitative): [`2026-08-28-covariance-kernel-M1-sigmah-not-in-free-cumulant-algebra.md`](2026-08-28-covariance-kernel-M1-sigmah-not-in-free-cumulant-algebra.md)
 - Gap bean `qou-k5r5`.
