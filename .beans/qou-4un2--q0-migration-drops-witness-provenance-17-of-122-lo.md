@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T14:08:26Z
-updated_at: 2026-08-28T14:09:00Z
+updated_at: 2026-08-28T14:21:24Z
 ---
 
 ## Measured 2026-08-28, on origin/main at cdbdc84af1
@@ -74,3 +74,68 @@ run.
 
 Steps 1 and 2 are small and independent of the science. Step 3 is mechanical.
 Step 4 is per-producer and is the real fix.
+
+
+--------
+
+## 2026-08-28 follow-up: the population at risk, and TWO corrections to my own method
+
+### Correction 1 — urgency. The batch sweep already converged.
+
+I first wrote "qou-1c4y is in-progress, so more batches will do the same". Precisely:
+the `migrate(q0) batch*` commits ran on 2026-08-24 and ended at batch 8/9
+("iteration at practical convergence", "final fixed-point writes"). The 17 are
+**static damage, not a growing count.**
+
+The live hazard is different and still real: PR #5818 (MERGED) re-partitioned the
+remaining reroute into 12 producers that are safe alone, 5 BLOCKED by a straddle,
+4 proton, 3 unlabelled — and recorded them in `qou-aj91` **to be picked up cold**.
+Each reroute is a producer RE-RUN, which is the operation that deletes provenance.
+So the next agent on `qou-aj91` walks into this unless step 1 lands first.
+Nobody is holding that work right now, so this is pre-emptive, not a collision.
+
+### Correction 2 — diagnosis. All 17 are bare; my "4 exceptions" were a grep artifact.
+
+I measured that 4 of the 17 casualties DO use `WitnessBuilder`, which would have
+meant the emitter itself can drop provenance — a much worse finding. It is wrong.
+
+The marker `witness_base` matched **line 45 of the Phase-6 path-bridge boilerplate**:
+
+    # Keeps flat-namespace imports (`from witness_base import …`)
+
+a COMMENT, present in nearly every producer. All four have `WitnessBuilder=0`.
+Re-measured through `_source_normalise.code_only` (comments and docstrings blanked):
+
+    17 casualties: 17 bare, 0 use WitnessBuilder
+
+This is exactly the defect class PR #5818 built `code_only` for — a name in a
+comment is not a usage — and I walked into it with the module already on main.
+(An earlier pass also resolved producers by `rglob(base)[0]`, arbitrary among
+duplicate basenames; re-run with sibling-preferring resolution the casualty
+result was unchanged, so that bug did not affect the count.)
+
+### The population at risk
+
+Witnesses that currently CARRY `scriptFile` but whose producer never calls
+`WitnessBuilder` — i.e. a re-run drops provenance, as it did for the 17.
+Measured through `code_only`, excluding `_deprecated`:
+
+    carry scriptFile, producer really uses WitnessBuilder : 2226
+    carry scriptFile, producer does NOT                   :  281   <-- AT RISK
+    no scriptFile at all                                  :  325
+    producer unresolvable / ambiguous                     :    8
+
+So the 17 are the realised part of a **281-witness** exposure. Any sweep that
+re-runs producers — the `qou-aj91` reroute, an idle-pass witness refresh, a
+convention migration — draws from that pool.
+
+**The 8 unresolvable are a separate small finding**: `scriptFile` names a producer
+that is not uniquely locatable, so provenance is recorded but not followable.
+
+### Step 1 restated, now that the diagnosis is right
+
+Because all 17 are bare, step 1 does not need to change any producer to land:
+a pre-write guard that refuses to drop a provenance key present in the committed
+witness covers every one of the 281 regardless of how it writes. Step 4 (make the
+producers emit it themselves) remains the real fix, and is now scoped: 281 files,
+none of which currently touch `WitnessBuilder`.
