@@ -162,6 +162,12 @@ for word, coeff in sorted(reduced.terms.items(), key=lambda x: (len(x[0]), x[0])
     reduced_terms[w_str] = coeff
 
 witness = {
+    # Emitted BY THE PRODUCER.  These three were hand-added to the committed
+    # witness and were silently dropped on every regeneration -- the qou-4un2
+    # provenance-loss class.  A hand-edited field is the opposite of derived.
+    "scriptFile": "t35-weak-vertex.py",
+    "engine": "python",
+    "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
     "computation": "t35-weak-vertex",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "description": (
