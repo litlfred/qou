@@ -1,4 +1,7 @@
 {
+  "scriptFile": "toffoli-lp-stability.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "computation": "toffoli-lp-stability",
   "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), \u03a6(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q\u22c6 = 1/\u03c6\u00b2.",
   "label": "prop:toffoli-lp-stability",

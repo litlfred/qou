@@ -1,4 +1,7 @@
 {
+  "scriptFile": "nv_categorical_derivation_probe.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
   "computation": "nv-categorical-derivation-probe",
   "computedAt": "2026-08-24T07:33:42.531152+00:00",
   "description": "Probe for closed-form N_v ≈ factor · q_0^(90 + δ) with factor a small categorical constant and δ a clean q-rational correction.  Best fit is 120·q^(90 + h²) at -0.13% (5× better than the bare 120·q^90 at -0.58% from docs/audits/n-v-derivation-candidates.md).  Neither factor=120 nor L=90 nor δ=h² have categorical derivations; the closure is suggestive numerology pending paper-side work.",
