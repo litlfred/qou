@@ -738,3 +738,39 @@ pass or fail, with `pass=N neutral-skip=N fail=N`. Two known-genuine failures
 were labelled SKIP. Parse the tool's own counters. Caught only because a file
 already known to fail was checked against the classifier before the numbers were
 believed.
+
+### 5g. Whole-population re-sweep: 73 → 34
+
+Re-measured on this branch (= `main` at `cdbdc84af1` plus this tranche), all
+944 content-block siblings, `scripts/lean-verify-siblings.sh` at 6-way
+parallelism. Per-file data:
+[`2026-08-28-unbuilt-lean-siblings-resweep.tsv`](2026-08-28-unbuilt-lean-siblings-resweep.tsv).
+
+| | count | share |
+|---|---:|---:|
+| PASS | 907 | 96.1 % |
+| FAIL | **34** | 3.6 % |
+| NEUTRAL-SKIP (cache-cone, not a defect) | 3 | 0.3 % |
+
+**73 → 34, and most of it was not this arc.** Three closed here
+(`c5-involution-leibniz-decomposition`, `spectral-half-line`,
+`hasse-weil-bound`), one by a sibling on `main`
+(`frobenius-codim-universal`), 22 in #5505, and the remainder across main's
+26,632 intervening commits by agents who never saw this bean. The population
+also shrank 958 → 944.
+
+**The §4h figure of 42 was never wrong, but it has expired** — it was measured
+against a base that has since moved by 26k commits, which is precisely the rule
+§4h itself records. Quote 34, with its date and its base.
+
+**One verdict shape worth knowing before reading the TSV.**
+`delta-max-uniform-bound` is `FAIL` with **zero** `: error` lines. That is
+correct, not a classifier artifact: it is the STALE IMPORT class — it imports
+`QOU.MassEndomorphism.JetTower`, which does not exist in the source tree — and
+the script detects that instead of running Lean at all. Do not filter the TSV
+by error count.
+
+The 34 are not triaged here. Shape of the tail: 11 files at a single error, 11
+at two, and 8 at five, so the distribution is still mostly small — but §4's
+warning stands that these counts are floors, since Lean halts at the first
+parse error and reports nothing behind it.
