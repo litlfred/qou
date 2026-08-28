@@ -251,3 +251,75 @@ unidentifiable 1.6, which is a later and different development. Whether that
 revival supersedes the supersession is exactly the open canonical question, and
 this does not settle it. But *"nothing in the corpus argues for one over the
 other"* was wrong, and I withdraw it.
+
+
+---
+
+# 10. The cross-sector gap, stated in the framework's own terms — a dilemma
+
+§9d named *"why should a nucleon-knot volume set an electromagnetic
+coefficient"* as the load-bearing open item. Pursuing it does not close it; it
+makes it sharper, and turns it into a dilemma with two costed horns.
+
+## 10a. First: the identity is NOT generic
+
+If many knots gave an integer `Vol(K)/G`, then `8 = Vol(𝓑₃)/G` would be a
+re-description available for any number. Measured over the corpus's own volume
+table plus five more hyperbolic knots:
+
+| knot | Vol | Vol/G | |
+|---|---:|---:|---|
+| 4₁ figure-eight | 2.02988 | 2.21611 | |
+| 5₂ three-twist | 2.82812 | 3.08759 | |
+| 6₁ | 3.16396 | 3.45424 | |
+| 6₂ | 4.40083 | 4.80458 | |
+| 6₃ | 5.69302 | 6.21532 | |
+| 7₄ | 5.13794 | 5.60932 | |
+| 8₁₈ | 12.35091 | 13.48403 | |
+| Whitehead = V_oct | 3.66386 | **4.0** | **integer** |
+| L6a4 Borromean | 7.32772 | **8.0** | **integer** |
+
+**2 of 9**, and both are the octahedral family. So the `8` is a genuinely
+constrained topological number, not a re-description. **But the reason it is
+constrained is octahedral decomposability** — standard knot theory, with no
+bearing on electromagnetism.
+
+## 10b. The corpus's own sector rule runs the other way
+
+[`fundamental-knots-operator-basis.md`](../../content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.md)
+states the assignment explicitly, in the same table that carries the `8G`:
+
+> Torus knots carry zero hyperbolic volume, representing the **massless,
+> force-carrying sector**. Hyperbolic knots carry positive volume, which
+> **translates to mass** via `Vol(K)/ℏ_q²`.
+
+and places the **photon** — the electromagnetic force carrier — as *"not a
+knot"*, a four-term Hecke element with `J = 1 (bare)`, in that **zero-volume**
+sector. The nucleon sits in the other one, at `Vol = 8G`.
+
+So using the **nucleon's hyperbolic volume** to set a coefficient inside the
+**electromagnetic** coupling crosses the framework's own volume↔mass /
+zero-volume↔force-carrier boundary. That is a stronger objection than
+"unexplained": it runs against a rule the corpus states in the same breath as
+the `8G` it is invoking.
+
+## 10c. The dilemma — both horns cost something
+
+- **If the volume is doing the work**, it crosses that stated boundary. The
+  photon is explicitly volume-zero; volume is explicitly the mass channel.
+- **If only the integer 8 is doing the work**, the knot-theoretic reading adds
+  nothing over `κ = 8q`, and the post-hoc charge returns — merely aimed at a
+  different gloss than su(3).
+
+Nothing found in six grep paths resolves this. **It is not a numerical
+question**, so no probe will settle it; it needs either a structural argument
+for why a mass-channel invariant may enter a force-carrier coupling, or an
+explicit statement that only the integer is meant.
+
+## 10d. What §9 still gets right
+
+None of this retracts §9. `8 = Vol(𝓑₃)/G` is exact, non-generic, live in the
+corpus, and a better-grounded reading than the su(3) gloss the `.lean` carried.
+The docstring correction stands. What §10 adds is that the *sector* question is
+not a loose end to be tidied later — it is the whole remaining content of the
+claim, and the framework's own table is evidence against the easy answer.
