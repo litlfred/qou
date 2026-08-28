@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-28T20:20:55Z
+updated_at: 2026-08-28T20:47:45Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -181,3 +181,56 @@ falsy-stem rows and should be ignored.
 `cmiy` still owns the full port. The 16-producer `stamp_q0` worklist is
 tractable but each application needs its producer re-run and diffed for
 byte-stability, which is the next step rather than this one.
+
+
+---
+
+## 2026-08-28 (later still) — BUCKET C IS NOT UNIFORMLY STAMPABLE. Measured 14/14 (PR #5923)
+
+The split script names 16 live hand-rolled producers as the `stamp_q0`
+worklist. **That list is a candidate set, not a worklist.** I ran 14 of them
+(skipping `regenerate_y_lambda_orphans_conventionD`, which rewrites the
+load-bearing y_λ tables, and counting the already-landed trefoil separately)
+and only **3 are actually stampable**:
+
+| outcome | n | producers |
+|---|---|---|
+| **STABLE — stamped** | 3 | `trefoil_complex_volume_probe`, `zhabiro_physical_z_pin`, `brane_tower_full_channel_trace_audit` |
+| **STRIPS provenance on re-run** | 4 | `beta_ew_delta_I_321_and_wedderburn`, `beta_ew_delta_I_numerical_spectrum`, `nv_pslq_tr_pure_basis`, `sublemma_2_1_alpha_shift_extract` (+ `nv_categorical_derivation_probe`) |
+| **numbers move** | 4 | the three `option_e_*` + `he3_pairknot_composite_lp_probe` |
+| **content moved** | 1 | `qbeta_habiro_p8_identification_probe` (`check_q` -> `u` in the polynomial strings) |
+| **now FAILS its own assertions** | 1 | `qbeta_cal3_anchor_table_impact` |
+| **writes nothing** | 1 | `binding_additive_linked_cluster_probe` |
+
+### The one that changes the plan: re-running STRIPS provenance
+
+Five producers emit a witness **missing** `scriptFile`, `engine` and
+`auditOnly` — fields the committed copy has. Those fields were added
+**downstream**, by hand or by a later pass; the producer never emitted them.
+So for these, running `stamp_q0` would add `q0Anchor` **while deleting the
+`scriptFile` that my own split script used to classify them into bucket C.**
+Net provenance loss, in the name of a provenance fix.
+
+This is AGENTS.md's documented "bare producers" hazard (*"re-running one
+deletes the field this audit keys on"*), and it means the split script's
+`C-handrolled` bucket silently mixes two populations. **Fix the producer to
+emit its provenance first** — then stamp. Not a two-line change.
+
+### The other non-stampables are real findings, filed where they belong
+
+  * The four numeric movers are `qou-fl9i`'s: its `mp.dps = 50` ->
+    `set_compute_dps()` fix landed in the producers and the witnesses were
+    never regenerated. Recorded there with the ruled-out alternatives
+    (nondeterminism: no, self-reproducible; environment: no, identical under
+    mpmath 1.3.0 and 1.4.1; input drift: no, inputs predate the witnesses).
+  * `qbeta_cal3_anchor_table_impact` now prints *"VERDICT: INCONCLUSIVE — a
+    factorization/wiring assertion failed"* and exits 1, flipping two
+    `passed: true` to `false` against its committed witness. **Not
+    investigated** — flagged here so it is not mistaken for a stamp candidate.
+
+### What the split script should say
+
+Its `C-handrolled` count is an upper bound on stampable producers, and the
+measured ratio on this sample is 3 of 14. A future pass should either add a
+dry-run stability probe to the script or carry this table; I have added a
+warning to the script rather than a second measurement that will also decay.
