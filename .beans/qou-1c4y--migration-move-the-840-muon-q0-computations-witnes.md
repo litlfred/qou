@@ -1308,3 +1308,42 @@ batching by count would have destroyed.
 My side of this bean is done: the two prose-vs-code classifier classes, the
 selftest that can fail, the 870-method retraction plus the census script, and
 the chirality fix.
+
+---
+
+## 2026-08-28 status re-measure — the standing-off note above is STALE; the block is now elsewhere
+
+The last entry says *"STANDING OFF: … one owner, and that owner is the #5818
+branch."* **#5818 merged 2026-08-26**, so no one owns it. That is not, however,
+an invitation to execute: the work re-partitioned while the branch was away.
+
+Measured on `main` today:
+
+| tranche | state |
+|---|---|
+| batch C — 12 with a witness, no `record_upstream` | **executed** (`a2923609c3`) |
+| no-witness batch (11) | **0 ready / 11 blocked** (`11db7f2856`) |
+| 12 blocked on muon-built upstreams | **unchanged — the critical path** |
+
+So the remaining work is blocked on two things, neither of which is effort:
+
+1. **Dependency order.** A producer's q₀ can only move *after* its upstream
+   witnesses move. #5818 established this by stopping at its first file:
+   `hydrogen_qshuffle_compound` consumes `proton-mass-full-tower-50dps`
+   (`q0Anchor: "muon"`), so rerouting it would **manufacture** the straddle this
+   epic exists to remove. Any by-count batching cuts across the graph.
+
+2. **An owner decision this bean already declined to make.** Its own words:
+   *"Nothing in this batch is executable until either `1j39` gives the 7 a
+   witness mechanism, or the owner accepts a reroute with no before/after
+   record. The latter is not mine to decide."* That is still true and I am not
+   overriding it — a reroute with no before/after record is exactly the kind of
+   unverifiable change the four constraints in AGENTS.md exist to prevent.
+
+**What would unblock it, in order of cheapness:** `1j39` (give the 7 a witness
+mechanism, making the no-witness batch measurable); then walk the *roots* of the
+upstream graph — the muon-built witnesses that themselves consume nothing muon —
+since those are the only nodes movable without creating a straddle.
+
+I did not attempt (2) and did not batch by count. Recorded so the next reader
+does not repeat #5818's stop, or mistake the merged PR for an idle claim.
