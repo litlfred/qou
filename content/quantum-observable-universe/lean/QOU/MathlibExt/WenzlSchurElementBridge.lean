@@ -1,5 +1,7 @@
 import QOU.MathlibExt.WenzlSchurElement
 import QOU.QBeta.WenzlWeightVanishing
+import QOU.Mathlib.ColLenRowLensBridge
+import QOU.Mathlib.SYTHookFormulaBetaProd
 
 /-!
 # Carrier bridge: List `schurElement` ↔ YoungDiagram `schurPrincipal`
@@ -221,5 +223,64 @@ theorem schurElement_eq_schurPrincipal_of_hook (r : ℕ) (Q : ℝ) (hQ0 : Q ≠ 
   rw [Finset.mem_range] at hj
   simp only [cellFactor]
   rw [content_eq_cellContent, ← hhook i j hj, ← zpow_natCast Q r, ← zpow_add₀ hQ0]
+
+/-- **Hook match (B3).** For every cell `(i, j)` of `ofRowLens lam hl`
+(`j < (lam[i]?).getD 0`, `lam` weakly-decreasing and positive), the YoungDiagram
+hook length equals the List `hookLength`:
+
+`hook (ofRowLens lam hl) (i, j) = Partition.hookLength lam i j`.
+
+Both are `(row_i − j) + leg`, where the arm is `row_i − j` and the leg is the
+number of rows below `i` still reaching column `j`. The YoungDiagram column
+length is identified with the corpus list column length by
+`QOU.Mathlib.colLen_rowLens` (on `rowLens_ofRowLens_eq_self`), and the sorted-list
+leg identity `colLen l j = (i+1) + cnt (l.drop (i+1)) j`
+(`QOU.Mathlib.SYTBeta.colLen_eq_succ_add_cnt_drop`) supplies exactly the
+`hookLength` leg count `((lam.drop (i+1)).filter (· > j)).length`. -/
+theorem hook_ofRowLens_eq_hookLength (lam : List ℕ) (hl : lam.Sorted (· ≥ ·))
+    (hpos : ∀ x ∈ lam, 0 < x) (i j : ℕ) (hj : j < (lam[i]?).getD 0) :
+    QOU.QBeta.WenzlWeight.hook (YoungDiagram.ofRowLens lam hl) (i, j)
+      = Partition.hookLength lam i j := by
+  have hi : i < lam.length := by
+    by_contra h
+    push_neg at h
+    rw [List.getElem?_eq_none h, Option.getD_none] at hj
+    omega
+  have hget : (lam[i]?).getD 0 = lam[i] := by
+    rw [List.getElem?_eq_getElem hi, Option.getD_some]
+  have hjlt : j < lam[i] := hget ▸ hj
+  have hjd : j < lam.getD i 0 := by rw [List.getD_eq_getElem?_getD]; exact hj
+  have hrow : (YoungDiagram.ofRowLens lam hl).rowLen i = (lam[i]?).getD 0 :=
+    rowLen_ofRowLens_getD lam hl i
+  have hcol : (YoungDiagram.ofRowLens lam hl).colLen j
+      = (i + 1) + QOU.Mathlib.SYTBeta.cnt (lam.drop (i + 1)) j := by
+    rw [← QOU.Mathlib.colLen_rowLens, YoungDiagram.rowLens_ofRowLens_eq_self hpos]
+    exact QOU.Mathlib.SYTBeta.colLen_eq_succ_add_cnt_drop lam hl i j hi hjd
+  have hleg : ((lam.drop (i + 1)).filter (· > j)).length
+      = QOU.Mathlib.SYTBeta.cnt (lam.drop (i + 1)) j := rfl
+  unfold QOU.QBeta.WenzlWeight.hook
+  rw [hrow, hcol, hget]
+  simp only [Partition.hookLength, List.getElem?_eq_getElem hi]
+  rw [if_pos hjlt, hleg]
+  omega
+
+/-- **The carrier bridge (unconditional).** For a weakly-decreasing, strictly
+positive partition `lam` and `Q ≠ 0`, the List-carrier `schurElement` at the
+principal specialisation `X = Q^r` equals the YoungDiagram-carrier
+`schurPrincipal`:
+
+`schurElement Q (Q^r) lam = schurPrincipal r Q (ofRowLens lam hl)`.
+
+This is `schurElement_eq_schurPrincipal_of_hook` with the hook match B3 supplying
+the hypothesis. It is the missing lemma connecting the two developments: the
+general Macdonald hook telescope is proved on the YoungDiagram carrier
+(`QOU.SchurWeyl.sum_dim_wenzlWeight_eq_one`), and this equality transports it to
+the List carrier. -/
+theorem schurElement_eq_schurPrincipal (r : ℕ) (Q : ℝ) (hQ0 : Q ≠ 0)
+    (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)) (hpos : ∀ x ∈ lam, 0 < x) :
+    schurElement Q (Q ^ r) lam
+      = QOU.QBeta.WenzlWeight.schurPrincipal r Q (YoungDiagram.ofRowLens lam hl) :=
+  schurElement_eq_schurPrincipal_of_hook r Q hQ0 lam hl
+    (fun i j hj => hook_ofRowLens_eq_hookLength lam hl hpos i j hj)
 
 end QOU.MathlibExt.WenzlSchurElementBridge
