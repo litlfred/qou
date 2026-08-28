@@ -9,7 +9,7 @@
       "computed": 7.737175596588903e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "−V''(z*) = −3/2 + i√3/2, |−V''| = √3"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "Im V(z*) = Vol(4_1)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Vol(4_1)/(4π)=0.16153 ∈ [0.147,0.168] (#3810)"
     }
   ],

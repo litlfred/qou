@@ -33,7 +33,7 @@
       "computed": 3.675051476376769e-51,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "tr_M(AB)=tr_M(BA) on the atomic braid @50dps"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.05534833516376857,
       "expected": 0.05534833516376857,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "markov_trace @50dps (~7-digit sanity)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 0.029441385679919125,
       "expected": 0.029441385679919125,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "markov_trace @50dps (~7-digit sanity)"
     }
   ],

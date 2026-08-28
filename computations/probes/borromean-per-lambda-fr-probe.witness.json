@@ -9,7 +9,7 @@
       "computed": 7.162229445453156,
       "expected": 7.16,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "max/min |net/target|",
       "source": "borromean_binding_recompute.py (z = q^3/(q^2+1), convention D) gives 7.162229445453156; this mirror now reproduces it. The old 6.17 reference was the C-frame straddle recorded in 2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md. Referenced against the PRODUCER, not its committed witness, which is 17-23% stale (bean qou-5t68)."
     },
@@ -18,7 +18,7 @@
       "computed": 9.987438477423559e-51,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0005,
+      "tolerance": "0.0005",
       "source": "y-lambda witness × proved chi vs Lean BorromeanMarkovTrace"
     }
   ],

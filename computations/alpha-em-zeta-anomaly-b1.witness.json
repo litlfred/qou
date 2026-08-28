@@ -9,7 +9,7 @@
       "computed": 4.0127249212675005e-12,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "Z_Λ(0) = −1 for every flat n-torus (Seeley: a_{n/2}=0, dim ker=1); verified n∈{1,2,3,8}, several covolumes"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "-8.00000000000045021282772616001921380486874088211042078489415",
       "expected": -8.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "ζ_{1-form on T^{b₁}}(0)=b₁·Z_Λ(0)=−b₁ (1-form Laplacian = b₁ copies of scalar; b₁=8 for the g=4 Bring Jacobian)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 3.606000984620583e-20,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "covolume V appears in the leading heat coeff V/(4π)^{n/2} (μ-absorbable) — NOT in ζ(0), which is the bare count −b₁"
     }
   ],

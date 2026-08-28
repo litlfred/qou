@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "o(0) = c^+(0) - c^-(0) = 4 - 3 = 1, the ι-odd {3,4} datum (DEFINED before compute; not tuned)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "amphichiral 4₁: single DT constant 3, v=(3,3) on diagonal"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "5₂ angle>0 (near-but-not-on), 4₁ angle=0 (on the saddle)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "o(q) is NOT a q-constant — the saddle genuinely deforms with q (picture: near-but-not-on, moves off the classical position)"
     }
   ],

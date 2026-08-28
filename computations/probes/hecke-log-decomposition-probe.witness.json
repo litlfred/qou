@@ -9,7 +9,7 @@
       "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {q_0, 1.5, 2} of |h − ℏ_q · (q+1)|",
       "source": "Direct algebraic chain: h = (q²−1)/q = (q−1)(q+1)/q = ℏ_q · (q+1)."
     },
@@ -18,7 +18,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {q_0, 1.5, 2} of |log(1/h) − log(1/ℏ_q) + log(1+q)|",
       "source": "Taking log of the factorisation: log(1/h) = log(1/(ℏ_q·(q+1))) = log(1/ℏ_q) − log(1+q)."
     }

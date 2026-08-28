@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Im Li_2^q(z) is identical (spread < 1e-12) for all z>q₀ — it is the +i0 arc residue π·Res, independent of the upper limit z. Resolves the PR #1657 reality gate: the additive imaginary constant cancels in the m_e-normalised ratio."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 6.226747840562556e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im Li_2^q(z>q₀) = π·Res to converging precision — the imaginary part is exactly the simple-pole residue of the integrand at u=q₀."
     }
   ],

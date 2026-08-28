@@ -9,7 +9,7 @@
       "computed": 2.3682084585071444e-43,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "solve_psd_operator_selection_sdp over K's Wedderburn blocks"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 10.0,
       "expected": 10.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "1 binding equation in p(6)=11 unknowns Δ_λ; M_λ(K) not supplied by χ^λ(K)"
     }
   ],

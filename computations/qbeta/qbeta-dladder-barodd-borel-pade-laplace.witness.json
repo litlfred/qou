@@ -15,7 +15,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel-Pade Laplace value matches optimal-truncation S_opt"
     },
     {
@@ -29,7 +29,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "nearest Borel pole |zeta*| drifts with Pade order"
     }
   ],

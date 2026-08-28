@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "60 dps, q0 muon + proton pins + q = 1.2, both frames: Jacobi beta_k > 0 (k <= 11), moment reproduction rel < 1e-25 (measured < 1e-59)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "theta-translate reindex identity exact (sympy) + numeric u-independence (q = 1.2, u in {1, 1.3}, k <= 8, rel < 1e-59) + support offset 0.878 of a q̃-step: a CONTINUUM of representing measures for the balanced moments at q != 1 (rep-jackson R4) => INDETERMINATE => minimal Jacobi operator has deficiency (1,1); extension circle = relocated kernel convention"
     }
   ],

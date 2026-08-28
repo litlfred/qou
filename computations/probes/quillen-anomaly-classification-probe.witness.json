@@ -16,7 +16,7 @@
       "computed": "-14.348054954552774683",
       "expected": "-14.348054954552774683",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im tau)^2 |eta|^4]"
     },
     {
@@ -24,7 +24,7 @@
       "computed": "-0.3652567755131857696",
       "expected": "-0.3652567755131857696",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im tau)^2 |eta|^4]"
     },
     {
@@ -32,7 +32,7 @@
       "computed": "0.768225422326056659002594179576",
       "expected": "0.768225422326056659002594179576",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|eta(i)| = Gamma(1/4)/(2 pi^{3/4})"
     },
     {
@@ -40,7 +40,7 @@
       "computed": 1.4489110934123289e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|t5(tau)| = 5^(3/2) * (N(tau)/N(5 tau))^6, N = (Im tau)^(1/4) |eta| SL(2,Z)-invariant (T/S invariance asserted < 1e-40): the (Im tau)^{1/4} anomaly factors cancel exactly up to 5^{3/2}; sympy bookkeeping identity asserted exact"
     },
     {
@@ -48,7 +48,7 @@
       "computed": 4.288769611732331e-68,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "R(W5 tau) = 1/R(tau) and |t5(tau) * t5(W5 tau)| = 125 = (5^(3/2))^2 via S-invariance of N: the Fricke constant is exactly the square of the anomaly-cancellation constant"
     },
     {
@@ -56,7 +56,7 @@
       "computed": 1.448908652612274e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "t5(i/sqrt5) = 5 sqrt(5); R = 1 at the W5 fixed point => |t5| = 5^(3/2): the 2026-07-24 Fricke-circle invariant re-derived from anomaly bookkeeping"
     },
     {
@@ -64,7 +64,7 @@
       "computed": 2.921984030130309,
       "expected": 2.922,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "m(5 tau_0)*m(tau_0), m(tau) = 1/(sqrt(Im tau) |eta|^2): corpus print 2.922 (2026-07-18 retraction audit) — product of genus-1 Quillen norms, class (b)"
     },
     {
@@ -72,7 +72,7 @@
       "computed": 8.226285221978587,
       "expected": 8.226,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "m(5 tau_0)^3*m(tau_0): the retracted 8.226 is a product of genus-1 Quillen norms — class (b), frame data, not a candidate distinguished constant"
     }
   ],

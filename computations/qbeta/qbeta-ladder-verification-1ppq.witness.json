@@ -9,7 +9,7 @@
       "computed": 1.3385254080130346e-45,
       "expected": 0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "ppm",
       "source": "Level 1 cos correction"
     },
@@ -18,7 +18,7 @@
       "computed": 6.682396538426676e-45,
       "expected": 0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "ppm",
       "source": "Level 2 b^2*hbar^4 correction"
     },
@@ -27,7 +27,7 @@
       "computed": 0.0038526149487923783,
       "expected": 0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "%",
       "source": "c_3 = J - hbar^2 model"
     }

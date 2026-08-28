@@ -9,7 +9,7 @@
       "computed": "206.7682827",
       "expected": "206.7682827",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Q_50_DIGIT_STR + MU_OVER_E (canonical pin)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "3.043706208532521989402019335677388309768213960713522216242847344641826",
       "expected": "3.043706208532521989402019335677388309768213960713522216242847344641826",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem three_plus_h_sq_eq_bracket3 (muon identity)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "4.109682411207941161760568789096330243364328078586423592371013617194224",
       "expected": "4.109682411207941161760568789096330243364328078586423592371013617194224",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem two_plus_h_sq_times_bracket2_eq_bracket4 (muon T6 (c))"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "6.388086592175452084863255178649922720615903252408374534283189380137426",
       "expected": "6.388086592175452084863255178649922720615903252408374534283189380137426",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem bracket6_eq_bracket2_bracket3_times_one_plus_h_sq (tau structural identity)"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": 0.000699132482365097,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "Sanity check: re-derived A(D) from the Phase-4 formula must match the Phase-4 doc's tabulated |Δ_λ*(D)| = 22.9594 to ≤ 0.1 % (the doc's quoted 0.07 % rel.err.)."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "C5 control with P_λ ≡ 0 must give |S| = 0 exactly."
     }
   ],

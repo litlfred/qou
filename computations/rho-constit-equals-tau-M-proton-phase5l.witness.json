@@ -9,7 +9,7 @@
       "computed": 1.7524305409510018e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "unit": "dimensionless",
       "source": "Phase 5l: max relative error between ρ_Z^constit(q) and tr_M^3(𝓑_p, q) across 5 q-points in the substrate window.  Identity holds at mpfr-50-dps precision if max rel.err. < 1e-12."
     }

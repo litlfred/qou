@@ -9,14 +9,14 @@
       "computed": "0.98636505683992695870431584875707626271003243518388",
       "expected": "0",
       "passed": false,
-      "tolerance": 0.01
+      "tolerance": "0.01"
     },
     {
       "name": "m_p_within_2_percent",
       "computed": "0.98636505683992695870431584875707626271003243518388",
       "expected": "0",
       "passed": false,
-      "tolerance": 0.02
+      "tolerance": "0.02"
     }
   ],
   "allPassed": false,

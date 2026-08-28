@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "|χ_(3)(β*) − χ_(3)(β)|",
       "source": "Amphicheirality: non-alternating blocks have χ_λ(β*) = +χ_λ(β); only λ = (1^n) flips sign."
     },

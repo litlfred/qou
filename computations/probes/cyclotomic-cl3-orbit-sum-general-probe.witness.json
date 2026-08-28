@@ -9,7 +9,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over N ∈ {3,5,7,9,11} of |Σ Cl_3 − (−(N²−1)/N² · ζ(3))|",
       "source": "Multiplication formula Σ_{k=0..N-1} Li_n(ζ_N^k) = N^{1-n} Li_n(1) at n = 3, taking real parts."
     },
@@ -18,7 +18,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over N ∈ {3,5,7,9,11} of |Σ_{k=1..(N-1)/2} Cl_3 − (−(N²−1)/(2N²) · ζ(3))|",
       "source": "Reflection symmetry Cl_3(2πk/N) = Cl_3(2π(N-k)/N); for odd N the (N-1)/2 distinct values each appear twice in the full sum, so the half-sum is exactly half the full sum."
     }

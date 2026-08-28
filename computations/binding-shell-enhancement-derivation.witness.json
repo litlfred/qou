@@ -9,7 +9,7 @@
       "computed": 1.0673151249491584,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "B_endo = m_e·Vol(𝓑₃)·Δtr closes D (resid 0.998, 0 closures)"
     },
     {

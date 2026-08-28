@@ -9,7 +9,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (N ∈ 2..8, n ∈ 2..5) of |orbit_sum − ((N^{1-n}-1)ζ(n) [odd] or 0 [even])|",
       "source": "Multiplication formula for polylogarithms at roots of unity (Lewin 1991): Σ_{k=0..N-1} Li_n(z^{1/N} ζ_N^k) = N^{1-n} Li_n(z). Set z = 1 and take Re / Im to separate odd / even depths."
     }

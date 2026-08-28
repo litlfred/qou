@@ -9,7 +9,7 @@
       "computed": 3.173962373193022e-48,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "max rel err of closed-form y_λ vs the symbolic-sourced canonical witness over all pre-existing n (≤12) — confirms the tower extension is the same object, just non-recursive/fast."
     }
   ],

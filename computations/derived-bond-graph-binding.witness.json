@@ -9,7 +9,7 @@
       "computed": 5.53e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "max over D/T/³He/⁴He of |∏_chain (c·z+d) − tr_atom/tr_free| / (tr_atom/tr_free); confirms f_bond is the Markov conditional expectation of the bridge crossing, not a fit."
     }
   ],

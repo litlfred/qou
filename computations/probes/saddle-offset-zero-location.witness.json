@@ -9,7 +9,7 @@
       "computed": 0.001945744564011767,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "q*(18) matches the 1−9q−28q²=0 root (−9+√193)/56 within 0.01; spread over N≥3 is O(1e-3)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "q* misses q₀−1, ℏ_q, ℏ_q², 1/q₀, radius all by ≫1% (locked before compute)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "partial sums o_N(q₀) diverge (q₀≫R, q₀>1); c_3 hook via q₀ evaluation impossible; no derived o↔c_3 relation; not wired"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "o(0)=1≠0 ⇒ o is not f(q)−f(q⁻¹); its q=1 vanishing is not delivered by the bar-fixed-point argument (that gives the trivial vanishing of a genuine bar-odd object, a different object from the DT datum)"
     }
   ],

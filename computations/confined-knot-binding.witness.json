@@ -9,7 +9,7 @@
       "computed": 0.16546138503360688,
       "expected": 0.16546138503360688,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Wedderburn-Artin: dim_q((3))=dim_q((1,1,1))=1"
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-14,
+      "tolerance": "1e-14",
       "unit": "dimensionless",
       "source": "W_sym·χ_sym + W_alt·χ_alt = W_sym·(χ_sym+χ_alt) = 0"
     },
@@ -27,7 +27,7 @@
       "computed": 0.34004497964551195,
       "expected": 0.34004497964551195,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Standard rep carries all pn binding"
     }

@@ -9,7 +9,7 @@
       "computed": "3.62227163153068494700364771635511671227301247925565527583305e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "χ^{(2,1)}(β_Bor) = (−q^{12} + 3q^{10} − 3q^8 + 4q^6 − 3q^4 + 3q^2 − 1)/q^6 = 2 − 3·h⁴ − h⁶ (where h = q − q⁻¹), derived via u = q² + q⁻² = h² + 2 substitution.  Verified to 50 dps at q_0."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.0,
       "expected": 2.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "At h = 0 (q = 1), χ^{(2,1)}(β_Bor)|_{q=1} = χ^{(2,1)}(id) = d_(2,1) = 2 since β_Bor → id ∈ S_3."
     }
   ],

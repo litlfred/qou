@@ -9,7 +9,7 @@
       "computed": -1.1591269220898192e-69,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "sl_2 q-Schur centralizer: [2]_q^n = Σ_{λ 2-row} dim_q(V_λ^{sl_2}) · dim(S^λ) where dim(S^λ) is the classical integer S_n-irrep dimension (H_n(q)-side of the centralizer carries classical dims). n=5: 1·[6]_q + 4·[4]_q + 5·[2]_q = [2]_q^5."
     },
     {
@@ -17,7 +17,7 @@
       "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Classical SU(2) Clebsch-Gordan on V_{1/2}^⊗5 yields V_{5/2} ⊕ 4·V_{3/2} ⊕ 5·V_{1/2}; V_2 has multiplicity 0. The icosahedral H (dim 5) is NOT reachable via sl_2 q-Schur."
     }
   ],

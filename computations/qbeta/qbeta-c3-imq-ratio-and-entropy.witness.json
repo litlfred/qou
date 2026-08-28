@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S sign-flips (eps=0 bracketed between anchors); 2 anchors at ~2.2 digits cannot PSLQ-identify q* / eps(q0)"
     }
   ],

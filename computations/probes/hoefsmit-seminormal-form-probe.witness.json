@@ -9,7 +9,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over partitions λ ⊢ n (2 ≤ n ≤ 6) and generators σ_i of |σ_i² − (q−q⁻¹) σ_i − 𝟙|_∞",
       "source": "Hoefsmit-seminormal axial-distance formula; the Hecke quadratic is the defining relation per rem:hecke-algebra-from-braiding."
     },
@@ -18,7 +18,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over partitions λ ⊢ n (3 ≤ n ≤ 6) and adjacent pairs (i, i+1) of |σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}|_∞",
       "source": "Hoefsmit's construction is a faithful representation of the braid group on |SYT(λ)|-dimensional space; the braid relation is preserved by construction."
     }

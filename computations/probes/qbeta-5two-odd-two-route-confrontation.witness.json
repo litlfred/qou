@@ -9,7 +9,7 @@
       "computed": 4.084548134568633e-18,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im φ_σ1(x_sub): truncation = directional resummation (both converged at |x| ≈ 0.104)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "three-model tail-law ranking (algebraic / stretched / quadratic) identical across the two tail windows on the exact T̂_n"
     }
   ],

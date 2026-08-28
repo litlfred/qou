@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "∫₀^∞ f dt/t − 2·∫₁^∞ f dt/t for bar-even f(t)=exp(−(t+1/t)) (exact by t↦1/t substitution; verified 30 dps): the bar quotient carries EXACTLY ½ of the bar-doubled Haar measure — candidate (b′)'s ½, located as a domain-quotient factor"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 3.1861838222649046e-58,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "∫₀^∞ (t−1/t)e^{−(t+1/t)} dt/t = 0 (bar-odd): the falsifier — bar-symmetrization gives ½ ONLY in bar-even channels; a bar-odd channel gets 0, never ½"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.870935297064537e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Θ_{Z⁸}(1/s) − s⁴·Θ_{Z⁸}(s) at s ∈ {0.7, 1.37} (Jacobi θ³-type Poisson, b₁ = 8 unimodular lattice): the raw heat trace reflects with WEIGHT 4, it is NOT bar-even (|Θ(1/s) − Θ(s)| > 0.1 at the same points) — the naive bar-symmetrization of the raw trace FAILS; the ½'s bar-even home must be per-channel, post-split"
     },
     {

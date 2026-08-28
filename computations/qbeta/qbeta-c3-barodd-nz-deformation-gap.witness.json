@@ -9,7 +9,7 @@
       "computed": "3.62227163153068494700364771635511671227301247925565527583305e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Bloch-Wigner D(e^{iπ/3})=Λ(π/3)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "4₁ amphichiral: CS=0 at complete structure"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "0.000000221143116489440166747553953987200759254724514126386036440489",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "smooth real u(q0)∝log q0 gives ratio~1; measured is -4.08 -> phase channel"
     }
   ],

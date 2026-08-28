@@ -9,7 +9,7 @@
       "computed": -0.18150848563837815,
       "expected": -0.1815,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "Re-derived L1b(3He) must reproduce PR #1874's -18.15% rel_err."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0365293282553231,
       "expected": 0.0365,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "PR #1882 baseline: lambda_A/2 ~ 1.2664 vs target 1.2218 (+3.65%, NEAR-MATCH <5%, filed as numerology)."
     }
   ],

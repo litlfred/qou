@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "sum (-1)^L [L+1]_q x^L = 1/((1+qx)(1+q^-1 x)) to O(x^12), sympy"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "[2]_{q=1} * alpha/(8pi) = alpha/(4pi) exactly"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "form-B proton residual +0.313 ppb reproduced"
     }
   ],

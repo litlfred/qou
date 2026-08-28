@@ -9,7 +9,7 @@
       "computed": 21688247146661.387,
       "expected": 21688247146661.387,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2546395431398100.0,
       "expected": 2546395431398100.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.989697438062701e+17,
       "expected": 2.989697438062701e+17,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization"
     }
   ],

@@ -33,7 +33,7 @@
       "computed": 0.9977404933916316,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "split_pred = B_pp·|mu|/3 under the UNDERIVED unit-capacity sum rule vs AME2020 — the guarded near-match (-0.23%); reported, not tuned; kappa=1/3 is not thereby derived"
     },
     {

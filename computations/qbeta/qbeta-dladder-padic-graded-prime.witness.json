@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "p=2 carries the exact ℤ/2 parity grading (v2(den b_k)=0 ⟺ k odd, with the a_k mirror), while p=3 is ungraded factorial-smooth growth (v3(den b_k)>0 on both parities) — 2 = the bar-involution prime is the unique prime that sees the grading"
     }
   ],

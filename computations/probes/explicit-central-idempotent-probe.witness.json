@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (\u03bb \u22a2 3, T' \u2208 SYT(\u03bb)) of |e_\u03bb \u00b7 v_{T'} \u2212 1|",
       "source": "Lagrange interpolation gives the unique projector with eigenvalue 1 on the desired tableau slot."
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (\u03bb \u22a2 3, \u03bc \u22a2 3 with \u03bc \u2260 \u03bb, T' \u2208 SYT(\u03bc)) of |e_\u03bb \u00b7 v_{T'} \u2212 0|",
       "source": "Cells of distinct partitions have distinct content multisets in this regime; the Lagrange product vanishes when JM eigenvalues for T' miss the cell set of \u03bb."
     },
@@ -27,7 +27,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over T' \u2208 \u222a_\u03bc SYT(\u03bc) of |\u03a3_\u03bb e_\u03bb \u00b7 v_{T'} \u2212 1|",
       "source": "\u03a3_\u03bb e_\u03bb = 1 in H_n(q) \u2014 partition into Wedderburn blocks is complete."
     }

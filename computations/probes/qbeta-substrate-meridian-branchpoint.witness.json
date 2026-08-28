@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|det J(q₀)| = O(1) ≠ 0 — the 5₂ gluing saddle is non-degenerate at the substrate meridian"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "nearest branch point is 1.100e-01 from q₀ (~8.6e+06× the 1.28e-8 anchor gap) — GENERIC, not anomalously close; the amplification is not geometric"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(3,3)(β_Bor_2) − Σ_(μ,ν) c^(3,3)_{μν} χ_μ(β_{4_1}) χ_ν(β_{4_1})|",
       "source": "GENUINE Brunnian-decoupling witness on λ = (3,3) ⊢ 6 (dim 5).  LHS is computed via H_6 Hoefsmit-seminormal matrices (independent of single-component reps); RHS = χ_(3)² + χ_(2,1)² ≈ 1 + 0.8293 = 1.8293 via LR branching at q_0.  Per Copilot follow-up review on PR #818, this is the non-tautological replacement for the prior tr(A ⊗ A) = (tr A)² Kronecker check."
     },
@@ -18,7 +18,7 @@
       "computed": "2.263919769706678091877279822721947945170632799534784547395653722483875e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(4,2)(β_Bor_2) − (1 + χ_(2,1))²|",
       "source": "Tight structural test on λ = (4,2) ⊢ 6 (dim 9).  LR branching gives χ_(4,2)(β_Bor_2) = (1 + χ_(2,1)(β_{4_1}))² ≈ (1 − 0.9107)² ≈ 0.0080 at q_0.  Random arithmetic on a 9×9 product of 8 Hoefsmit matrices reproduces this value to ~1e-50 ONLY because the structural cancellation enforced by Brunnian decoupling + LR coefficients holds."
     }

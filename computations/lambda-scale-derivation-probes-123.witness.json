@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "absolute",
       "source": "Vol(B_3) = 16 · Λ(π/4) (Thurston / standard ideal-tetrahedron decomposition)"
     }

@@ -33,14 +33,14 @@
       "computed": 3.8127980918525233,
       "expected": 3.8128,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "rho_strong_4_is_13p03",
       "computed": 13.03157458024245,
       "expected": 13.032,
       "passed": true,
-      "tolerance": 0.02
+      "tolerance": "0.02"
     },
     {
       "name": "writhe_forced_rho3_misses_target_gt5pct",

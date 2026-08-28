@@ -9,7 +9,7 @@
       "computed": 4.0904710881614294e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "operator-selection LP strong duality |primal - dual|"
     },
     {

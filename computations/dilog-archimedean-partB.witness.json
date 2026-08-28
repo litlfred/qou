@@ -9,7 +9,7 @@
       "computed": 2.6733266531965362e-05,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "Part A (proved): q→1⁻ ⇒ (1−q)logΦ_n(x;q)→Li₂(x)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0015855620280957106,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "pole-subtracted reg(x)→Li₂(x)−π²/3 (q→1⁺): the x-dependence of Li₂(x) is reproduced EXACTLY up to the universal π²/3"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0022681036498258663,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "the offset reg−Li₂ is x-independent (= −π²/3): the branch-cut/pole residue is a single universal constant"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Euler negative-factor tail ∫₀^∞log(1−e^{−s})ds=−π²/6; with the Li₂(1)=π²/6 branch point → offset −π²/3"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 0.0017614084427417715,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.006,
+      "tolerance": "0.006",
       "source": "the stratified-truncation categorical object Φ^{[≤k*]} → Li₂(x)−π²/6: T_w truncation removes the Euler-tail π²/6, leaving the single regulator constant ζ(2)=Li₂(1)"
     },
     {
@@ -57,7 +57,7 @@
       "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the residual cusp ζ(2)=π²/6 is the extended-Bloch/Rogers-dilog normalization pairing the algebraic (Li₂) and geometric (Bloch–Wigner Vol) halves"
     }
   ],

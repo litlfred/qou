@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "P4 control: A_Phase4(p) / A_Phase4(p) = 1 by construction; any deviation signals an arithmetic bug."
     }
   ],

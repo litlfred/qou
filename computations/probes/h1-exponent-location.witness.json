@@ -9,7 +9,7 @@
       "computed": 14.98883933278229,
       "expected": 14.989,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 24.933807145864563,
       "expected": 24.934,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 23.595651452652188,
       "expected": 23.596,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 35.272296287914735,
       "expected": 35.272,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {

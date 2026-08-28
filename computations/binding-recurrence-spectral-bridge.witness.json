@@ -9,7 +9,7 @@
       "computed": "-2.95159936137e-5",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "ITERATED seq ratio tail − λ₊ (tautological; seq built by iterating x²−τx+1)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "1.0",
       "expected": "1",
       "passed": true,
-      "tolerance": 1e-30
+      "tolerance": "1e-30"
     },
     {
       "name": "dominant_root_extensive",
@@ -32,7 +32,7 @@
       "computed": "2.896e-50",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "q-hook lw(1,2,3) vs closed-form anchors a₂,a₃,a₄ (seed agreement)"
     },
     {
@@ -56,7 +56,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "lw(c,q→1) = (1,4/3,5/2,26/5) = #2764 Lever1Depth2Exclusion classical weights"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-300,
+      "tolerance": "1e-300",
       "source": "(★) = the direct C_n·poch²·a₀-power route, n ≤ 64 at dps 500"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.2635983763538196e-08,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "c∞ = (q̃;q̃)_∞² vs the A6.3 Aitken plateau (residual transient O(q̃⁹⁷) ≈ 4e-5)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 6.650969328070041e-05,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "(u_n−c∞)/(u_{n−1}−c∞) → q̃ = 1/q₀ exactly"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 4.6446496368713314e-11,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "Padé of the exact-pole-subtracted regular part has its nearest pole at w = −q₀ (k = 1 rung)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 4.490378404130091e-12,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "θ-Laplace with the exact pole split reproduces the g3 median D_odd"
     }
   ],

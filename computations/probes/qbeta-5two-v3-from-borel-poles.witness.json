@@ -9,7 +9,7 @@
       "computed": 0.02217891652486455,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "frame check: the zeta12 pole is recovered, so the pole map is read in the right frame"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.02944337011457461,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "a Pade pole sits on the line Im zeta = Vol"
     },
     {

@@ -9,7 +9,7 @@
       "computed": 6.034788105223311e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "unit": "max rel diff of Σ y_λ tr(ρ_λ(W)) vs 50-dps tr_m_atom_zn",
       "source": "float64 seminormal path vs canonical transfer (validation)."
     },
@@ -18,7 +18,7 @@
       "computed": 5.172675518762807e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "max rel |tr_M(W^♯) − tr_M(W)|",
       "source": "character symmetry χ^λ(T_{w⁻¹}) = χ^λ(T_w); the QUADRATIC Gram norm tr_M(W·W^♯) is the non-trivial diagnostic."
     }

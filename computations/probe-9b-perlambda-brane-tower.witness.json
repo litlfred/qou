@@ -9,7 +9,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "τ closed form = [4]/[2]³·1 + 1/[2]²·(2−3h⁴−h⁶) exactly (SU(2)/TL weights, (1³) killed)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "χ^{(2,1)}((σ1σ2⁻¹)³) = 2−3h⁴−h⁶ vs direct Hoefsmit seminormal matrix product at 50 dps"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Σ y_λ d_λ = 1 under both Jones/TL and Wenzl weights"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.00019554,
       "passed": false,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the Jones/TL trace, NOT the corpus-canonical Wenzl z-trace"
     },
     {
@@ -65,7 +65,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "scalar Jones tower vs borromean-binding-recompute.witness.json per-isotope B_tower (q-string precision difference only)"
     },
     {
@@ -73,7 +73,7 @@
       "computed": 6.861016731418701e-07,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "max per-λ tower shift vs scalar < 1% across all isotopes and all three collapse-last variants — the ¹⁶O 2.3× normalization is untouched (REFUTED-scope-(a) for this un-collapsed (y_λ, χ^λ) weighting alone)"
     }
   ],

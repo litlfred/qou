@@ -9,7 +9,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] = 2 - 3h^4 - h^6"
     },
     {

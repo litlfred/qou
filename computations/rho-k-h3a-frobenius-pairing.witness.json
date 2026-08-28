@@ -9,14 +9,14 @@
       "computed": 2.897817305224548e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40
+      "tolerance": "1e-40"
     },
     {
       "name": "min_norm_vs_occam_singleton",
       "computed": 36.95665913055737,
       "expected": 36.95665913055737,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "‖δ^G‖² should be ≤ ‖δ^A‖² (min-norm property)"
     },
     {
@@ -24,7 +24,7 @@
       "computed": 36.95665913055737,
       "expected": 36.95665913055737,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "‖δ^G‖² should be ≤ ‖δ^F‖² (min-norm property)"
     }
   ],

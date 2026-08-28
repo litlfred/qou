@@ -17,7 +17,7 @@
       "computed": "9.4182e-32",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "∫ s² dK = N^bal_q(3) for BOTH explicit kernels (atomic Jackson ⊛ theta via the separable Mellin factors [2]_p!·q^{1/2}; a.c. Jackson ⊛ log-normal via the exact Gaussian moment e^{2μ̂+2σ²} = q^{1/2}) at every sampled q (test, proton, muon, 1+1e-1, 1+1e-2, 1+1e-3), rel < 1e−30 (60 dps), and every value ≤ the exact monotone bound C₂ = max N^bal(3) = 2.00831604419 — the uniformly-bounded-second-moment hypothesis of the Lean tightness theorem is verified on the constructed family"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "7.5368e-49",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "N^bal_q(3) − 2 = (√q−1)²/√q exactly (rel < 1e−30 vs the closed form) and strictly decreasing to 0 along q = 1+10^{−k}, k = 1..6 — the k = 2 moment-convergence hypothesis (Tendsto → 2!) that the Lean theorem isTightMeasureSet_of_tendsto_integral_sq converts into tightness via Tendsto.bddAbove_range + Markov"
     }
   ],

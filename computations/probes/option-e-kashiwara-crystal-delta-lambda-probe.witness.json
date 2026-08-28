@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "E4 control: with c(λ) ≡ 0, every term y_λ·χ^λ·c(λ) = 0 so the sum must be exactly 0; any deviation is a bug in the summation pipeline, not a crystal-statistic finding."
     }
   ],

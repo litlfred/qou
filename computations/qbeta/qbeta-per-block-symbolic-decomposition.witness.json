@@ -9,7 +9,7 @@
       "computed": 1.8862456153519428e-09,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "source": "Σ y_λ · χ_λ(T_β) = τ_M(T_β) = Q_β/E_0 at q_0 (post-bug-fix)"
     }
   ],

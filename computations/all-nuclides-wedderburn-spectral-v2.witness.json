@@ -9,7 +9,7 @@
       "computed": 3.3409558876152446e-52,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "rho^2 = h rho + 1 at mpf"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "rho(s0)rho(s1)rho(s0) = rho(s1)rho(s0)rho(s1)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 8.881784197001252e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "pyhecke_native.chi_lambda_braid([2,1],...)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 8.181092171808018e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-28,
+      "tolerance": "1e-28",
       "source": "A<=16 sample [(1, 0), (1, 1), (2, 1), (2, 2), (3, 4), (6, 6), (8, 8)]"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 2.0603103745727144e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "y_lam tr rho_lam vs gram.nf_tr(build_atom_nf)"
     },
     {

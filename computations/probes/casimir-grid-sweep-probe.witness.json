@@ -9,7 +9,7 @@
       "computed": 10.0,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "count of non-structurally-trivial 2- or 3-term substrate-primitive combinations within 1% of π²/720",
       "source": "Comprehensive brute-force grid sweep.  Passing this assertion is the final empirical evidence that the Casimir prefactor π²/720 is not recoverable from any low-degree substrate expression at q_0."
     }

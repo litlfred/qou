@@ -9,7 +9,7 @@
       "computed": 2.0284721136571836e-69,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} of |χ_λ(σ_1)/h − c_λ|, c_λ ∈ {1, 3, 8, 10}",
       "source": "Hoefsmit-seminormal single-generator character; claim that c_λ = χ_λ(σ)/h ∈ ℤ for self-conjugate λ."
     },
@@ -18,7 +18,7 @@
       "computed": "3.112889683346682376331259756242678424609620099360328752669023868415329e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_2) − h²|",
       "source": "prop:symbolic-character-table pair-character row."
     },
@@ -27,7 +27,7 @@
       "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_3) − (h² − 2)|",
       "source": "prop:symbolic-character-table pair-character row."
     },
@@ -36,7 +36,7 @@
       "computed": "1.358351861824006855126367893633168767102379679720870728437392233490325e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_2 σ_3) − (−h)|",
       "source": "prop:symbolic-character-table Coxeter-triple row."
     }

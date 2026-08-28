@@ -9,7 +9,7 @@
       "computed": "0.78364582737462121307493975134139689052573644103029",
       "expected": "0.78364582737462121307493975134139689052573644103029",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "MeV",
       "source": "Lean Qbeta_closed (qbeta_energy_scale.lean)"
     },
@@ -18,7 +18,7 @@
       "computed": 0.1677567847474663,
       "expected": 0.17,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "unit": "percent",
       "source": "PR #2363 audit (+0.17 %)"
     },

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "summing kappa1..kappa4 shifts Im V_b 0.0578->0.0548 (odd rungs only) and stays anchor-blind at both anchors"
     }
   ],

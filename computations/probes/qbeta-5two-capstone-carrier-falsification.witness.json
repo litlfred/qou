@@ -9,7 +9,7 @@
       "computed": 4.947704352032726e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "m=1 NZ saddle reproduces Vol(5₂)=2.82812 (merged witness gate)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "cross-anchor |d𝔙/dq| = O(1) reproduces the merged qbeta-5two-quantum-volume witness"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B(q) has 0 sign changes (Re and Im) on ±2e-8 grid straddling q*, |B(q*)| > 1e-10 — carrier constraint (2) fails"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "placing the zero in f instead needs log-slope > 1e6 across the anchor window — violates 'smooth O(1)'"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.21019936882842152,
       "expected": 0.21,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "capstone D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 (writhe-2, pre-#3892 6₂-braid era) — constraint-(2) failure"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 0.4295857567411061,
       "expected": 0.42,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "corrected 5₂ (braid [1,1,1,2,-1,2], writhe 4, #3892): ½(q*⁴−q*⁻⁴) ≈ 0.42 — same constraint-(2) failure"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "1 + q^{2k+1}·x_k = 0 at x_k = −q^{-(2k+1)} (Φ_q pole)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "sign[ImV_lead] identical at both anchors for all k in 0..19"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "no odd (2k+1) strictly between π/log q at the two anchors"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(muon) > 0 > S(proton), the anchor-blind witness targets"
     }
   ],

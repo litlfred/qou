@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "q*=c3_target_at+Vol(4_1) zero reproduces the committed k<=21-era value to >18 digits; the extractor carries no d_k so q* is ladder-order-independent"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|O_31-O_21|=6.94e-29 at q*: the extra terms 22..31 add nothing at the physical substrate point; carrier saturates by k~12"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "ladder tail |O_31-O_21|~1e-27 is >20 orders below q*'s experimental-Q_beta floor for any realistic sigma(Q_beta), and the carrier does not enter q*; k=31 does NOT sharpen q* (scope-(a) negative)"
     }
   ],

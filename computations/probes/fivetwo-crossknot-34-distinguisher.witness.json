@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "whether chiral 5₂'s S± share one q-exact (S12+S21)/S11 — expected FALSE (spectrum splits across chirality)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "5₂ leading Stokes factorization carries {3,4}"
     }
   ],

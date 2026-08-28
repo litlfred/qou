@@ -18,7 +18,7 @@
       "computed": 1.1099785827513808,
       "expected": 1.1099785827513808,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Definitional (q_parameter.py)"
     },
     {
@@ -26,7 +26,7 @@
       "computed": 206.76828298931505,
       "expected": 206.7682827,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "unit": "dimensionless",
       "source": "Ideal-layer check. Tolerance 1e-5 absolute (~48 ppb) because the muon pin was solved against CODATA 206.768283 while MASS_RATIO_MU_E here is 206.7682827 — a 1.4 ppb difference that is a CODATA precision artifact, not physics."
     },
@@ -53,7 +53,7 @@
       "computed": 0.6468490981890975,
       "expected": 0.6468490981890975,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Internal consistency check"
     },
     {
@@ -61,7 +61,7 @@
       "computed": 0.5047761838462848,
       "expected": 0.5047761838462848,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Internal consistency check"
     },
     {
@@ -69,7 +69,7 @@
       "computed": 746.4180075979668,
       "expected": 746.4180075979668,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "m_e",
       "source": "𝔪(K) = Vol(K) / ℏ_q²"
     },

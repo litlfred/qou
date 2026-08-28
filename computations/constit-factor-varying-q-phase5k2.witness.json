@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "dimensionless (refutation-confirmed boolean)",
       "source": "Phase 5k.2 falsification probe: c(q) = (ρ - (2q-1)) / h^5 varies by spread/|mean| = 499.1% across 5 q-points. The unit-coefficient h^5 hypothesis (c ≡ 1) requires spread < 10%; observed spread = 499.1% confirms the hypothesis is FALSIFIED — exactly the expected outcome of this falsification probe.  Verdict: h5-form-not-confirmed."
     }
