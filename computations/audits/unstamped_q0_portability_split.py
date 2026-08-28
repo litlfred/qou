@@ -24,7 +24,8 @@ four answers with nothing in common:
                            cost of regenerating every number in the file.
   C. producer HAND-ROLLS -- a bare `json.dump`, never reaching `build()`.
      json.dump             Re-running will never stamp these. They are the
-                           `_witness_q0_stamp.stamp_q0` targets.
+                           `stamp_q0` CANDIDATES -- see the caveat below,
+                           because most of them are not actually stampable.
   D. producer UNNAMED    -- no `scriptFile` at all. Cannot be ported because
                            nothing says what to port.
 
@@ -49,6 +50,30 @@ settled — check them before trusting any figure about this class:
      "the producer was deleted" (measured: 121 of 124 "missing", against a
      true 43). Resolve by basename across the tree, preferring the
      non-`_deprecated` copy.
+
+BUCKET C IS A CANDIDATE SET, NOT A WORKLIST (measured 2026-08-28, `1j39`)
+-------------------------------------------------------------------------
+This script decides bucket C from the producer's SOURCE (`json.dump` present,
+`WitnessBuilder` absent). That is the right test for "will re-running ever
+stamp it", and it says nothing about whether re-running is SAFE. Measured over
+14 of the 16 live bucket-C producers, only **3 could actually be stamped**:
+
+  * **5 STRIP provenance on re-run.** They emit a witness MISSING `scriptFile`,
+    `engine` and `auditOnly` -- fields the committed copy has, added downstream
+    rather than by the producer. Stamping one adds `q0Anchor` while deleting
+    the very `scriptFile` this script used to classify it into bucket C. Net
+    provenance loss. AGENTS.md's "bare producers" hazard; the remedy is to make
+    the producer emit its provenance FIRST, which is not a two-line change.
+  * **4 move numbers** -- `qou-fl9i`'s `mp.dps = 50` -> `set_compute_dps()` fix
+    landed in the producers and their witnesses were never regenerated.
+  * **1 has content drift**, **1 now fails its own assertions**, **1 writes
+    nothing**.
+
+So read `C-handrolled` as an upper bound, and dry-run any producer before
+stamping it: run it, diff the witness, and confirm nothing but provenance
+moved. This script deliberately does NOT run producers -- it is a static audit,
+and adding a run would make it slow, environment-dependent, and capable of
+dirtying the tree (producers write SIBLING witnesses).
 
 Exit 0 always -- this reports, it does not gate.
 """
@@ -189,7 +214,9 @@ def main() -> int:
     fix = {
         "A-producer-gone":  "nothing to port — producer deleted/renamed",
         "B-builder-stale":  "RE-RUN the producer; build() stamps",
-        "C-handrolled":     "apply stamp_q0() — re-running never will",
+        "C-handrolled":     ("stamp_q0() CANDIDATES — re-running never stamps "
+                             "them, but only ~3 of 14 sampled were safe to "
+                             "re-run at all; DRY-RUN each (see docstring)"),
         "D-unnamed":        "no producer named; classify by the recorded pin",
     }
     for key in order:
