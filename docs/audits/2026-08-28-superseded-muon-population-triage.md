@@ -71,12 +71,51 @@ starts: `q_beta_predicted` carries `CAL-2_q_0`, and naming CAL-2 identifies
 `confinement-operator-selection` is an LP/SDP witness, so the dual fields
 matter to any re-run.
 
-## The 13 orphans are a different problem
+## 🛑 The "13 orphans" were my detector's blind spot, not a provenance gap
 
-Live, on the superseded value, and carrying **no `scriptFile` at all** — so
-nothing can regenerate them and nothing identifies what did. They are not part
-of the re-pin work; they are a provenance gap, and re-pinning is not even
-available as an action. Worth their own bean rather than being counted here.
+An earlier revision of this document called the 13 a provenance gap — *"nothing
+can regenerate them and nothing identifies what did"* — and proposed a bean for
+them. **That was wrong, and it is the fourth detector correction in this arc.**
+
+The scan keyed on `scriptFile` / `script`. Opening the 13 by hand:
+
+| how provenance is recorded | count | resolves? |
+|---|---:|---|
+| under `computation`, naming a producer path | 8 | **all 8 exist** — 6 under `docs/audits/scripts/`, which a `computations/`-scoped search cannot see |
+| no provenance field, but the witness-name ↔ producer-name convention holds | 5 | **all 5 exist** |
+| genuinely unregenerable | **0** | — |
+
+The five that record nothing still resolve by name:
+`alpha-k-jones-markov-h4` → `computations/alpha/alpha_k_jones_markov_h4.py`,
+`consumer-control-arm-audit` → `computations/audits/consumer_control_arm_audit.py`,
+`metallic-q-n4-character-sweep`, `q0-value-drift-audit`,
+`two-quark-active-set-mahler-sweep` — the last of which this arc has been
+regenerating all along, which should have been the tell.
+
+So the real finding is smaller and different in kind: **13 live witnesses omit
+`scriptFile`**, a field-completeness gap in how the schema is used, not a loss
+of provenance. Nothing is unrecoverable and no bean is warranted for the
+"orphans" as such.
+
+### The pattern is now the finding
+
+Four counts in this arc came from a field-keyed or shape-keyed detector of mine,
+and **every one was wrong until a member was opened by hand** — twice too high,
+twice too low:
+
+| detector | direction | corrected |
+|---|---|---|
+| dual-purpose, by substring match | over 7× | 21 → 3 |
+| contradictions, file-local scan | under 5.5× | 2 → 11 |
+| superseded-muon "work", by population | over 14× | 265 → 19 |
+| orphans, by `scriptFile` only | over ∞ | 13 → 0 |
+
+That is not four unlucky scans. A detector encodes one spelling of the thing it
+looks for, and the corpus has more spellings than any one scan carries —
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` catalogues thirteen for
+convention C alone, four of them found *by* detectors written to catch the
+previous blind spot. Treat any count in this arc as a hypothesis with an error
+bar of several fold until one of its members has been read.
 
 ## What this does not say
 
