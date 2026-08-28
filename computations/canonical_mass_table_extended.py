@@ -175,6 +175,22 @@ def compute_tr_m_canonical(
 
     Returns (|tr_M|, wall_seconds, error_str, method_used).
     """
+    # `auto` is the DEFAULT as of 2026-08-28 (bean qou-7e1t, option 3). It was
+    # `branching`, which returns an error for A < 2 — there is no interface to
+    # peel in a one-nucleon word, so the combiner does not apply — and main()
+    # SKIPS any atom with a non-empty `err`. So p and n were requested by
+    # DEFAULT_ATOMS, computed by nothing, and silently absent from the table:
+    # `atoms_requested` listed nine, `rows` held seven.
+    #
+    # That absence is what let `low_isotope_mass_table.py` be WIDER than the
+    # canonical table it projects from, which is the defect qou-7e1t is about.
+    #
+    # This is NOT a departure from the "branching is canonical" directive
+    # below. `auto` dispatches to `branching` verbatim for every A >= 2, and
+    # that was re-measured on this tree before the flip: over all nine
+    # DEFAULT_ATOMS at 60 dps, the seven composite values are equal under
+    # Python `==` on the mpf — not "agree to a tolerance", identical — while p
+    # and n go from an error row to a computed one. Total cost 4.5 s.
     if method == "auto":
         # No single method spans the low-isotope set. Free nucleons
         # (A < 2) need the direct H_3 Hoefsmit path — `laurent_q_rust`
@@ -464,13 +480,13 @@ def main() -> int:
         "--method",
         choices=["auto", "laurent_q_rust", "markov_peel", "laurent_q",
                  "rust_f64", "rust_mpfr", "branching"],
-        default="branching",
+        default="auto",
         help=(
-            "Computation method. `branching` (operator-valued Wenzl combiner) "
-            "is the canonical pipeline per user directive, replacing empirical fits. "
-            "`auto` routes per-atom: nucleons (A<2) -> laurent_q_rust (Rust+MPFR "
-            "H_3 Hoefsmit), composites (A>=2) -> branching; both Rust-backed MPFR. "
-            "Use `auto` for mixed nucleon+composite sets (e.g. the low-isotope table)."
+            "Computation method. `auto` routes per-atom: composites (A>=2) -> "
+            "`branching` (the operator-valued Wenzl combiner, canonical per user "
+            "directive, replacing empirical fits), nucleons (A<2) -> "
+            "`laurent_q_rust` (Rust+MPFR H_3 Hoefsmit). Both Rust-backed MPFR. "
+            "`branching` alone is the same computation with the A<2 rows dropped."
         ),
     )
     parser.add_argument(
