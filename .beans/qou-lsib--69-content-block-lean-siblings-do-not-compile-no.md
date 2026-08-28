@@ -1,7 +1,7 @@
 ---
 # qou-lsib
 title: '69 content-block Lean siblings do not compile — nothing builds them, and 66 back a declared lean: ref'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-22T20:45:00Z
@@ -96,3 +96,31 @@ The first pass of this measurement reported **297 / 31 %**. That was wrong:
 failed on an unresolvable module. Adding the three paper build dirs moved
 224 of the 297 to exit 0. Anyone re-running this must include
 `content/*/lean/.lake/build/lib/lean` or they will overstate by ~4x.
+
+
+## Update 2026-08-28 — 73 → 34, and the gate half is still open
+
+Re-swept all 944 siblings on `main` @ `cdbdc84af1` + the 2026-08-28 tranche:
+**907 pass / 34 fail / 3 neutral-skip**. Per-file TSV:
+`docs/audits/2026-08-28-unbuilt-lean-siblings-resweep.tsv`. Audit §5.
+
+All four named residuals are closed. Three here; `frobenius-codim-universal` by
+a **sibling agent** on `main` (`d16f2b6273`), not by this bean.
+
+Three findings beyond the count:
+
+- **A third axiom proving `False`** — `eigenvalue_norm_sq_axiom` in
+  `hasse-weil-bound.lean`, missing `αᵢ ≠ 0`. Machine-checked artifact at
+  `docs/audits/artifacts/2026-08-28-eigenvalue-norm-sq-axiom-refutation.lean`.
+  Discharged with a real proof, not deleted. The class from `qou-rhax` is not
+  closed, and a file that cannot compile is where these survive.
+- **`LocalQZetaFunction.q` was formal where it had to be real**, which made both
+  its consumers *unstatable* rather than unproved. Its `q_pos` had been
+  commented out as "not meaningful over R_q" — a prior author at the same wall.
+- **The structural fix wired nothing into the build.** Both modules #5505 added
+  were `qou-orph` orphans until 2026-08-28.
+
+**Remaining work — the half that stops it regrowing.** Remedy 2 is untouched:
+widen the gate. `lean-content-siblings.yml` already compiles content siblings,
+but diff-scoped and `workflow_dispatch:`-only, so it reaches neither the 34 nor
+anything on a push. Widening it — not re-enabling it — is what closes this.
