@@ -64,9 +64,12 @@ fixed `n`, so `Var_n(ω₃)=Var_n(Σc²)`, `Cov_n(Σ|c|,ω₃)=Cov_n(Σ|c|,Σc²
 2. **De-poissonized cross-check** against exact combinatorial Plancherel at `n=16,22,30`: `ρ_dpp`
    matches `ρ_comb` to ~0.5 % (the residual is the leading-order Gaussian-conditioning error).
 
-3. **The deliverable — the rate.** De-poissonized `ρ_P(n)` → the merged #5901 IO constant
-   **0.979796** with a **measured algebraic rate** (log-log slopes `a = 0.97, 0.94, 1.01, 0.97`
-   over `θ = 20→320`), i.e. `|ρ_P(n) − ρ_∞| ~ C·n^{-1}`. **No fit** — `a` is read off, not chosen.
+3. **The deliverable — the rate.** The **DPP curve at continuous `θ`** (Poisson-smoothed over
+   `n`) gives `ρ_P(θ)` → the merged #5901 IO constant **0.979796** with a **measured algebraic
+   rate** (log-log slopes `a = 0.97, 0.94, 1.01, 0.97` over `θ = 20→320`), i.e.
+   `|ρ_P(θ) − ρ_∞| ~ C·θ^{-1}`. **No fit** — `a` is read off, not chosen. The **fixed-`n`**
+   quantity oscillates around this smooth curve (see §σ_D leg); the Poisson layer removes the
+   arithmetic oscillation.
 
 ## Why this closes the *character* of the open step
 
@@ -79,18 +82,63 @@ fixed `n`, so `Var_n(ω₃)=Var_n(Σc²)`, `Cov_n(Σ|c|,ω₃)=Cov_n(Σ|c|,Σc²
   machinery could not supply precisely because DPP linear statistics **escape** the polynomial
   algebra `A` — the same reason `Σh ∉ A`.
 
+## The σ_D leg (`ΣD²`, quadratic) — exact, damped-oscillatory, envelope ~n⁻¹
+
+`wlambda_covariance_epic_M1_sigmaD_leg_rate.py` (exit 0; exact `Fraction`; NO float64) computes
+the **exact** quadratic statistic `ΣD² = Σ_u D(u)²` (no linearization) and the full (CS) margin
+`m(n) = ρ_P(n) − σ_D(n)/σ_A(n)` over `4 ≤ n ≤ 40`:
+
+- `σ_D/σ_A → 0.679610` and `m(n) → 0.300187` — both the merged #5901 IO leading values ✓.
+- **The approach is damped-oscillatory, NOT a pointwise power law.** A naive log-log slope on
+  the fixed-`n` deviation swings from `+12` to `−35`; reporting that as a "rate" would launder
+  an oscillation as convergence, and an initial version of this probe did exactly that — it is
+  **corrected**. What decays cleanly is the **envelope** (successive local maxima of
+  `|σ_D/σ_A − 0.6796|`): `0.076 (n=4) → 0.024 (n=9) → 0.012 (n=21) → 0.0079 (n=38)`, decaying
+  `~n^{-0.9}`, consistent with the Poisson-smoothed `ρ_P` `~n^{-1}`.
+- `m(n) > 0` for all `4 ≤ n ≤ 40`, minimum `0.20025` at `n=4`, oscillating in the band
+  `~[0.20, 0.33]` — large headroom over 0. (This reconfirms the merged finite-n margin finding.)
+
+So **both** legs of the (CS) margin land on the IO constants; the fixed-`n` signal carries the
+same damped arithmetic oscillation as `κ_n`, with an envelope that decays like the smooth DPP
+curve.
+
+## The rigorous finite-`n` bound — ingredients now fully identified (the remaining step)
+
+This is a **route with its ingredients named**, not a completed proof. `Var(Σg·η) =
+½Σ_{x≠y}(g(x)−g(y))²J(x,y)²` splits into a bulk and an edge region, each with a BOO
+asymptotic:
+
+- **Bulk** `|x| < 2√θ`: BOO Thm 3 (`sec-006`) gives `J(x,y) → S(x−y; a)`, the **discrete sine
+  kernel** `S(k,a) = sin(k·arccos(a/2))/(πk)`, local density `ρ(a) = arccos(a/2)/π`, at
+  `a = x/√θ`. The sine-kernel limit reproduces the IO/Kerov CLT integral `V_A = Σ Â_k²/k`; the
+  correction to the sine kernel is `O(θ^{-1/2})` uniformly in the bulk (inverse local-density
+  gradient scale), giving the leading `|Var/θ^{5/2} − V_A| = O(θ^{-1/2})` bulk term.
+- **Edge** `|x ∓ 2√θ| ~ θ^{1/6}`: BOO's main theorem (the Baik–Deift–Johansson **Airy** edge)
+  controls the `θ^{1/6}`-wide edge window, where the `|c|`-weight `g(x) ~ x²` is `O(θ)`. The
+  edge contribution to the variance is `O(θ · θ^{1/6} · (Airy)²)`, subleading against the bulk
+  `O(θ^{5/2})`.
+
+Assembled, these give a **crude** `|Var(Σ|c|)/n^{5/2} − V_A| ≤ C·n^{-1/2}` (and likewise for
+`V_W`, `P`, and the linearized `V_D`), trapping the oscillation envelope below the `0.30`
+leading margin for `n ≥ N₀`, with the finite window `4 ≤ n < N₀` closed by the exact table.
+The **measured** envelope (`~n^{-1}`) is *better* than this `n^{-1/2}` bound, so the bound is
+conservative. Writing it out rigorously (uniform bulk sine error + Airy edge tail + the
+de-poissonization lemma) is the one remaining analytic step; every ingredient is a **published
+BOO estimate in the ingested corpus**, not a new theorem.
+
 ## Honest scope — what is proved, what remains
 
-- **Proved / exact:** the structural reduction (validated to 1e-5), and the covariance formulae.
-- **Measured (not yet a closed-form bound):** `a≈1`. Turning this into a *rigorous* finite-`n`
-  bound is now the standard step of quoting BOO's edge/bulk kernel-asymptotic error terms and
-  controlling the polynomial weight's contribution at the `±2√θ` edge (where the `|c|`-weight's
-  `d²` growth meets the Airy fall-off). That is an **in-corpus, tractable** estimate, not an
-  obstruction.
-- **`σ_D` (the `ΣD²` leg) is quadratic.** `ΣD² = Σ_u h(u)²`; at leading order it linearises
-  (weight `Ω(u)−|u|`) and is a descent-DPP linear statistic like the others, with the `(δh)²`
-  correction `O(√n) ≪ n`. A fully rigorous `σ_D` bound needs the DPP 4-point function (a Wick
-  expansion of the same kernel) — mechanical, deferred.
+- **Proved / exact:** the structural reduction (validated to 1e-5), the covariance formulae, and
+  the exact `σ_D` (quadratic) via the combinatorial route.
+- **Measured (not yet a closed-form bound):** the smooth DPP curve's rate `a≈1`, and the
+  fixed-`n` oscillation **envelope** `~n^{-1}` for both legs. Turning these into a *rigorous*
+  finite-`n` bound is the standard step of quoting BOO's edge/bulk kernel-asymptotic error terms
+  (§bound above) — an **in-corpus, tractable** estimate, not an obstruction.
+- **`σ_D` (the `ΣD²` leg) is quadratic.** Computed **exactly** per partition here (no
+  linearization), it lands on `σ_D/σ_A → 0.6796` by damped oscillation. For the *DPP* bound it
+  linearises at leading order (weight `Ω(u)−|u|`, `(δh)²` correction `O(√n) ≪ n`); a fully
+  rigorous DPP `σ_D` bound needs the 4-point function (a Wick expansion of the same kernel) —
+  mechanical, deferred.
 - **De-poissonization** is used at leading (Gaussian-conditioning) order; its `O(1/n)` correction
   is the ~0.5 % cross-check residual and is BOO-standard (Costin–Lebowitz / de-poissonization
   lemma).
@@ -104,7 +152,10 @@ rate it must yield is measured (`a≈1`) against a large-headroom target.
 - [`wlambda_covariance_epic_M1_descent_dpp_variance_rate.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_descent_dpp_variance_rate.py)
   (exit 0; mpmath 40 dps; exact `Fraction` for the combinatorial cross-checks; NO float64; validated
   against exact poissonized + de-poissonized combinatorial covariances and against the merged #5901
-  IO constant).
+  IO constant) — the descent-DPP reduction + smooth-curve rate.
+- [`wlambda_covariance_epic_M1_sigmaD_leg_rate.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_sigmaD_leg_rate.py)
+  (exit 0; exact `Fraction`; mpmath only for sqrt/display; NO float64) — the exact quadratic `σ_D`
+  leg + full (CS) margin, damped-oscillatory with `~n^{-1}` envelope, margin `> 0` on `4 ≤ n ≤ 40`.
 
 ## Cross-references
 
