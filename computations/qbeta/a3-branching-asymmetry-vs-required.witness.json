@@ -1,7 +1,7 @@
 {
  "computation": "a3-branching-asymmetry-vs-required",
  "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
- "computedAt": "2026-08-25T16:52:56.584027+00:00",
+ "computedAt": "2026-08-28T15:50:02.117194+00:00",
  "engine": "mpmath mpf (0 free params; structural)",
  "free_parameters": 0,
  "inputs": {
@@ -58,5 +58,7 @@
  "scope": "scope-(a): confirms the Lean Pythagorean structure (1+x\u00b2)\u00b2=(1\u2212x\u00b2)\u00b2+(2x)\u00b2 and reports that the branching's own x is too small. r*/\u03bc\u2083/c\u2083/x never inverted to fit.",
  "lean": "QOU.QBeta.A3BranchingModulusReflection",
  "wired": false,
- "notes": "Honest negative on 'derive s from the branching': the branching cannot; s is transverse."
+ "notes": "Honest negative on 'derive s from the branching': the branching cannot; s is transverse.",
+ "q0Anchor": "muon",
+ "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }
