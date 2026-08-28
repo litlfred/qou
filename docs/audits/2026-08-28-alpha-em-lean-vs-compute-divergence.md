@@ -181,3 +181,73 @@ settles which construction is canonical, and this audit does not claim to.
 **Unchanged by any of this:** the scorecard still consumes the −467.6 ppb
 construction, the cited formalisation is still not the computation, and
 **0/5 unconditionally-parameter-free stands.**
+
+
+---
+
+# 9. The `8` IS structural — `Vol(𝓑₃)/G`, exactly. Wrong gloss, right number.
+
+Found by finally running the corpus-grep properly on the bean's open half
+(*"nothing in the corpus argues for one prefactor over the other"* — a claim I
+made without having run all six paths).
+
+## 9a. The identity
+
+The Borromean rings `L6a4` — **this framework's nucleon knot** — have
+
+```
+Vol(𝓑₃) = 2 · V_oct = 8G,        V_oct = 4G,        G = Catalan
+```
+
+Machine-checked to 30 digits in the probe: `V_oct/G = 4.0`, `Vol(𝓑₃)/G = 8.0`,
+residual exactly 0.
+
+**This is already live and load-bearing in the corpus** — not a new claim:
+
+- [`fundamental-knots-operator-basis.md`](../../content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.md),
+  nucleon row: `Vol ≈ 7.328 = 8G`
+- [`binding-knots-visual-inventory.md`](../../content/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory.md):
+  the binding scale `α = m_e · 8G ≈ 3.7445 MeV`
+
+And it is the reading `computations/_deprecated/alpha_em_q9_q10_derivation.py`
+gives outright: **`κ = 8q = q · Vol(𝓑₃)/G`**.
+
+## 9b. So the live `.lean` carried the weaker of two available readings
+
+`em-coupling-chern-simons.lean` glossed the 8 as *"dim(su(3)) = gluon octet"*
+and — correctly — called that **post-hoc, with no structural derivation**. That
+assessment of *that* gloss stands. But the corpus had an exact one the whole
+time and the file did not cite it. Docstring corrected in this tranche; the
+honest caveats are kept.
+
+## 9c. This revises §7, and my PR #5911
+
+§7 reports that bare `κ = 8` misses at −220 ppb and concludes *"the `q` factor
+does the work, not the 8."* Under the corpus reading that framing is wrong:
+`κ = q · Vol(𝓑₃)/G` is **one object**, and the `q` is part of the claimed
+structure rather than an unexplained fudge. The measurement is unchanged;
+`κ = 8` missing is *consistent with* that reading, not damaging to it.
+
+## 9d. What is still not derived — and it is not small
+
+- **The combination.** Why `q · Vol/G` and not `Vol/G` or `q² · Vol/G`? The
+  identity fixes the 8, not the power of `q` multiplying it.
+- **The cross-sector step.** Why a **nucleon**-knot volume sets a coefficient in
+  an **electromagnetic** coupling is unaddressed. This is the load-bearing gap.
+- **The genericity window is unmoved.** κ ∈ [8.474, 9.265] still admits the
+  integer 9 (33 ppb), so `8q` remains **in range, not forced**.
+
+## 9e. And the prefactor question now has a chronology
+
+The same deprecated file shows `45·[3]_q` **replaced** `q·[9]_q·[10]_q`:
+
+> *"REFINED FORMULA (replaces the troublesome 1.6 mystery constant)"* … and, of
+> the older form, *"OPEN: clean q-algebraic form for the '1.6' factor. PSLQ …
+> finds no small-[relation]"*.
+
+So the corpus does record an ordering, and **production compute uses the
+superseded prefactor** — now with a Gram-determinant κ rather than the
+unidentifiable 1.6, which is a later and different development. Whether that
+revival supersedes the supersession is exactly the open canonical question, and
+this does not settle it. But *"nothing in the corpus argues for one over the
+other"* was wrong, and I withdraw it.

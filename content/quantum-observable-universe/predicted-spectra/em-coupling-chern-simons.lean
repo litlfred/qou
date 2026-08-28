@@ -79,9 +79,36 @@ the **balanced** quantum integer (see the note above). -/
 noncomputable def deltaCS_gluonOctet (q : ℝ) : ℝ :=
   ((1 - 1/q) ^ 4) * qIntBal q 5
 
-/-- The κ coefficient in the gluon-octet form is empirically `8q`.
-    The "8 = dim(su(3)) = gluon octet" interpretation is post-hoc;
-    no structural derivation links su(3) gluon dimension to α_EM. -/
+/-- The κ coefficient in the gluon-octet form is `8q`.
+
+    **The "8 = dim(su(3)) = gluon octet" reading is post-hoc** — no structural
+    derivation links the su(3) gluon dimension to α_EM, and this docstring said
+    so, correctly.
+
+    **But the corpus supplies a different and exact reading of the same 8**
+    (found 2026-08-28, bean `qou-aemx`). The Borromean rings `L6a4` — the
+    nucleon knot of this framework — have hyperbolic volume
+
+        Vol(𝓑₃) = 2 · V_oct = 8G,      G = Catalan's constant,
+
+    since a regular ideal octahedron has `V_oct = 4G`. Verified to 30 digits.
+    That identity is already live and load-bearing elsewhere in the corpus —
+    the nucleon row of `fundamental-knots-operator-basis`, and the binding
+    scale `α = m_e · 8G` in `binding-knots-visual-inventory` — and it is the
+    reading `computations/_deprecated/alpha_em_q9_q10_derivation.py` gives:
+    `κ = 8q = q · Vol(𝓑₃)/G`.
+
+    So `8` here is not a fitted integer; it is `Vol(𝓑₃)/G`, exactly. The
+    su(3)-octet gloss was the wrong gloss on a right number.
+
+    **What is still NOT derived, and must not be read as closed.** Why the
+    combination is `q · Vol(𝓑₃)/G` rather than `Vol(𝓑₃)/G` or `q² · Vol(𝓑₃)/G`
+    is unaddressed; and why the *nucleon* knot's volume should set a coefficient
+    in an *electromagnetic* coupling needs its own argument. Measured, the κ
+    window admitting |err| < 100 ppb against CODATA is `[8.474, 9.265]`, which
+    also contains the integer 9 — so `8q` is IN RANGE, not FORCED. Bare `κ = 8`
+    does miss it (−220 ppb), which is consistent with the `q` belonging to the
+    structure rather than being a fudge, but is not a derivation of it. -/
 noncomputable def gluonOctetKappa (q : ℝ) : ℝ := 8 * q
 
 /-- The corrected inverse fine structure constant via gluon-octet form. -/

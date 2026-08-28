@@ -213,8 +213,47 @@ def kappa_windows(q):
     print("     not quite right.")
 
 
+def borromean_catalan_identity():
+    """The `8` in `kappa = 8q` is Vol(B_3)/G -- exactly, not a fitted integer.
+
+    The Borromean rings L6a4 (this framework's nucleon knot) have
+    `Vol = 2*V_oct = 8G`, since a regular ideal octahedron is `V_oct = 4G`.
+    Both checked here to the working precision.
+
+    This is the corpus's own reading -- `fundamental-knots-operator-basis`
+    carries `Vol ~ 7.328 = 8G` on the nucleon row, and
+    `binding-knots-visual-inventory` uses `alpha = m_e * 8G` -- and it is what
+    `_deprecated/alpha_em_q9_q10_derivation.py` states: `kappa = 8q =
+    q * Vol(B_3)/G`. The live .lean instead glossed the 8 as `dim su(3)`,
+    calling that post-hoc, which it is. Wrong gloss, right number.
+
+    NOT derived by this: why the combination is `q * Vol/G` rather than `Vol/G`
+    or `q^2 * Vol/G`, nor why the NUCLEON knot's volume sets a coefficient in an
+    ELECTROMAGNETIC coupling.
+    """
+    lam = lambda t: mp.clsin(2, 2 * t) / 2          # Lobachevsky
+    v_oct = 8 * lam(mp.pi / 4)
+    v_borr = 2 * v_oct
+    print()
+    print("-" * 68)
+    print("  Is the 8 in kappa = 8q structural?  Vol(B_3)/G")
+    print("-" * 68)
+    print(f"  Catalan G          = {mp.nstr(mp.catalan, 25)}")
+    print(f"  V_oct              = {mp.nstr(v_oct, 25)}")
+    print(f"  Vol(B_3) = 2*V_oct = {mp.nstr(v_borr, 25)}")
+    print(f"  V_oct    / G       = {mp.nstr(v_oct / mp.catalan, 25)}")
+    print(f"  Vol(B_3) / G       = {mp.nstr(v_borr / mp.catalan, 25)}")
+    print(f"  Vol(B_3)/G - 8     = {mp.nstr(v_borr / mp.catalan - 8, 10)}")
+    print()
+    print("  So `8` is Vol(B_3)/G exactly. The .lean's `dim su(3) gluon octet`")
+    print("  gloss was the wrong gloss on a right number. What remains underived")
+    print("  is the COMBINATION q*Vol/G, and why a nucleon-knot volume sets an")
+    print("  electromagnetic coefficient at all.")
+
+
 if __name__ == "__main__":
     main()
     q = mp.mpf(Q_50_DIGIT_STR)
     same_function_check(q)
     kappa_windows(q)
+    borromean_catalan_identity()
