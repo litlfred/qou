@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-28T15:40:59Z
+updated_at: 2026-08-28T18:13:26Z
 ---
 
 
@@ -314,3 +314,5 @@ no float64, nothing wired, no c_k). Audit: docs/audits/2026-08-28-covariance-ker
 fulman-stein-finite-n.md. Gap stays OPEN. Not laundered.
 
 2026-08-28 SOFTER ROUTE (PR #5896): M1>0 is NOT a delicate rate problem. Fulman N/P ~ 0.66 << 1 (margin 0.37) — reframes the 'delicate cancellation' framing (WRONG: terms don't nearly cancel). Cauchy-Schwarz (rho_N<=1, free) + sig_W cancels gives AIRTIGHT sufficient condition (CS): sig(SumD2)/sig(Sum|c|) < rho(Sum|c|,omega3) => M1>0. Measured exact all 4<=n<=32: sig_D/sig_A~0.67, rho_P~0.98, (CS) margin ~0.30 NON-VANISHING. This needs only CRUDE bounds (Var(SumD2)<Var(Sum|c|); lower bound on corr(Sum|c|,omega3)) — far softer than the sharp rate kappa_n>=kappa (which all 3 lit tools fail to deliver). HONEST: a REDUCTION not a proof; (CS) verified n<=32 not all-n; |c|,D2 non-A so still Plancherel asymptotics but crude not sharp. This is the most promising open route. qou-k5r5 OPEN.
+
+2026-08-28 CLOSING MOVE DERIVED (PR #5901): the (CS) sufficient condition holds at LEADING ORDER, 52% margin. Via IO Kerov CLT (the field that gave kappa=Omega_hat_3/3), (CS) reduces to the scalar inequality V_D = sum_{k>=3 odd}(Omega_hat_k - A_hat_k)^2/k < A_hat_3^2/3, where A_hat_k,Omega_hat_k are Chebyshev coeffs of |x| and VKLS Omega. Computed 40dps no-float64: V_D=0.04160 < 0.08646, RELATIVE MARGIN 52%. VALIDATED: rho(Sum|c|,omega3)->0.9798 (exact data ~0.98), sig(SumD2)/sig(Sum|c|)->0.6796 (exact data ~0.67), Omega_hat_3=128/(75pi^2) to 1e-42, kappa reproduced. So M1>0 for all n>=N0 is DERIVED via the soft route (NOT the intractable rate; NOT a fit — 52% margin matches exact data). REMAINING GAP now CRUDE: a finite-n error bound with 52% headroom connecting asymptotic to the exact (CS) check (holds 4<=n<=32) + M1>0 exact to n=78. Rigorous modulo published IO CLT + crude bound. This is the first route with the leading order PROVED and only a soft large-headroom remainder. qou-k5r5 OPEN but materially advanced.
