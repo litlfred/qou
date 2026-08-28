@@ -234,10 +234,30 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     must move the LABEL and the COMPUTED VALUE together, or it reintroduces the
     disagreement above.
 
-    Note ``computations/substrate/q_parameter.py`` asserts the witness starts
-    with ``1.109978595557``, so substituting the canonical string there
-    hard-fails all 257 ``ideal_muon`` producers, and a second copy of that
-    guard ships in the published ``qou_mass`` package.
+    **That loop is now broken (owner ruling 2026-08-22, "A --> CODATA 2022").**
+    ``q_parameter``'s ideal/muon branch derives ``q`` from ``q_muon_at()``
+    instead of reading it back, so the witness records a value it did not
+    choose and ``q_muon_at()`` reproduces it by construction. The paragraph
+    below described the obstacle to doing that; all three of its claims are
+    stale, and they are kept only so the shape of the obstacle is legible:
+
+      - the ``startswith("1.109978595557")`` assert in
+        ``computations/substrate/q_parameter.py`` is **removed**, not
+        re-pointed — an import-time raise would deadlock regeneration, since
+        the producer needs that module to run. The check it performed lives in
+        ``tests/test_muon_anchor_codata_2022.py``, which additionally inverts
+        the stored ``q`` back to ``m_mu/m_e`` and compares it against the
+        ratio the witness itself declares — the self-consistency the loop
+        defeated;
+      - **"all 257 ``ideal_muon`` producers"** was never right: the manifest
+        lists 45;
+      - **``qou_mass`` is not published.** It 404s on PyPI, and its
+        ``_internal/`` copy of that guard is GENERATED from ``computations/``
+        by ``scripts/sync-qou-mass-vendor.py`` — never hand-edit it.
+
+    The LABEL still moves with the value: ``_Q0_PREFIXES`` below carries the
+    muon prefix, so it decides what gets stamped ``muon`` and must be updated
+    in the same change as the anchor, exactly as this docstring warns.
     """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
