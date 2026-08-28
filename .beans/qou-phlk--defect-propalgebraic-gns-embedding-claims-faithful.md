@@ -1,11 +1,11 @@
 ---
 # qou-phlk
 title: 'DEFECT: prop:algebraic-gns-embedding claims faithfulness on H_inf(q); its proof gives H_inf/rad'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-26T21:32:02Z
-updated_at: 2026-08-26T21:56:51Z
+updated_at: 2026-08-28T19:30:32Z
 ---
 
 Found while answering `qou-879g`. Scope-(a); the fix is one qualifying clause,
@@ -107,3 +107,25 @@ which is exactly the formulation that dodges the issue.
 Qualify the proposition (`π_GNS : H_∞(q)/rad ↪ L(H)`, `≅ TL_∞(q)` under D); the
 index line follows. Optionally one clause in the probability dictionary. **No
 Lean change needed.** Smaller than filed.
+
+
+## VERIFIED FIXED 2026-08-28 — bean was stale at `todo`
+
+Fixed on main by `7bd726ace8` ("fix(qou-phlk): qualify the GNS embedding to the
+trace-quotient — false as written under D"), not by me. Verified all three
+surfaces rather than trusting the commit subject:
+
+- **`.md` statement** now reads *"a faithful `*`-representation of the
+  trace-quotient"* with `pi_GNS : H_inf(q)/N -> L(H)`, plus a "the quotient is
+  not cosmetic" note giving the C-vs-D provenance.
+- **`.ts`** carries an `authorNotes` entry recording it as a convention-migration
+  casualty rather than an original error.
+- **Lean needed no change, and that claim checks out.**
+  `AlgebraicGnsEmbedding.lean:71` is
+  `repr_faithful : forall (x : A), (forall h : H, repr x h = 0) -> traceIdeal x`
+  — the conclusion is `traceIdeal x`, NOT `x = 0`, so the class always stated
+  quotient-faithfulness. Same for `trM_faithful` at line 58.
+
+The fix is exactly the "one qualifying clause" this bean predicted. Nothing
+downstream moves: the TL-quotient descent argument in `qou-99qc` /
+`qou-879g` was already reasoning from the proof, which was correct throughout.
