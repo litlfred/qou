@@ -6,6 +6,7 @@ type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
 updated_at: 2026-08-29T00:14:00Z
+updated_at: 2026-08-28T15:48:44Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2248,3 +2249,82 @@ is the forbidden z=1 return in disguise. Extends the two-row-cap prune (13.6x) t
 both bases; closes #5337's stated question. Open core sharpened: the accurate value
 lives at inadmissible z=1, so a genuinely different D construction (not tr_M(Delta)
 at a single z) is needed. Nothing wired.
+
+## 2026-08-28 — TWO ELEMENTS ANSWER TO THE NAME `Delta`, and this bean's two
+## headline results sit on different ones (PR: claude/cds1-ladder-convention-d-2026-08-28)
+
+Probe `computations/qbeta/qbeta_delta_element_fork_pricing_probe.py` (15/15,
+exact symbolic Q(q), no float64). Audit
+`docs/audits/2026-08-28-cds1-two-nucleon-word-models.md`. Bean `qou-bg3w`.
+Scope-(a): refutes nothing, proposes no c_k, wires nothing, decides nothing.
+
+**The two elements.**
+
+| | Delta_S | Delta_L |
+|---|---|---|
+| source | `deuteron-binding-dressing-proton-net.md`: net(p)=1-h/2, net(n)=1-3h/2+h^2/2 | `hecke_core._PROTON_G0/_G1` etc. |
+| crossings | 1 (p), 2 (n) | **11** each |
+| reduced | (h^2/2, -h/2, -h/2, 0,0,0) | (-h/2, -h^2/4, -h^2/4, -h(q^4+1)/(4q^2), 0, 0) |
+| net(Delta) | h^2/2 - h = epsNPq = **-0.187207** | **-0.233198** |
+| tr_M^z(Delta) | h^2/2 - h z (**affine in z**) | **quadratic in z** |
+| chi^(2,1)(Delta) | **0** identically | -0.106814 |
+
+Both closed forms in `qbeta-counit-closed-form.md` hold for Delta_S and FAIL
+for Delta_L. Delta_S's crossing count is DERIVED (a typed crossing has
+net = 1+d and net is multiplicative across DISTINCT generators, so
+net(n) = (1-h/2)(1-h) exactly); Delta_L's 11 is what
+`q-beta-c3-hopf-three-fold-markov.md` states the construction uses.
+Mechanism: net is NOT multiplicative within one generator, since
+T_0^2 = h T_0 + 1 gives net(T_0^2) = 1+h vs net(T_0)^2 = 1.
+
+**CALIBRATED BEFORE CONCLUDING.** Delta_L reproduces all three chi^lambda in
+the committed `qbeta-d-frame-trace-baseline.witness.json` to **6.1e-50**, and
+the probe reproduces the committed `gap_over_ladder_ratio = 92.1058...`
+EXACTLY. That is what establishes the attribution rather than asserting it.
+
+**Consequence 1 — the D-frame trace baseline is priced across the two.**
+`qbeta_d_frame_trace_baseline_probe` hard-codes `eps = h**2/2 - h` (Delta_S)
+and traces the 11-crossing words (Delta_L).
+
+    published, MIXED   92.106x
+    consistent Delta_S  257.260x     <- the element Q_A is actually built from
+
+The published figure UNDERSTATES the gap by **2.793x**. Per the owner's
+2026-08-26 correction this is not a reason to leave the re-derivation undone;
+it moves the expectation, in the harder direction.
+
+**Consequence 2 — (D1) IS SHORT-MODEL-SPECIFIC. This is the part that
+matters.** `2*alpha(z) = net(Delta) - tr_M^z(Delta)` is affine in z ONLY
+because Delta_S is supported on {gamma, sigma0, sigma1}, where net - tr_M^z is
+0, 1-z, 1-z. Delta_L is supported on L+ too, where the Ocneanu trace is z^2, so
+there the difference is QUADRATIC and alpha = (z-1)h/2 is not the
+counit-minus-trace gap at all.
+
+So the ladder phase's LINEARITY IN THE MARKOV PARAMETER — the property that
+makes the C->D move look like a substitution in the first place — is a fact
+about the short model, not about the 11-crossing nucleon words the corpus
+names.
+
+**Where that leaves the re-derivation.** It cannot be posed until the element
+is chosen, and the two answers send it to different places:
+ * Delta_S canonical -> the phase leg is derived as recorded ((D1) holds for
+   every z), the bar-odd projection and forced D weights apply, the D price is
+   257x, and the open item is the c_k assembly (still fenced).
+ * Delta_L canonical -> (D1) is UNAVAILABLE, so with branch 1 closed in full
+   and branch 2 circular, **branch 3 (KZ / Kohno-Drinfeld holonomy) is the only
+   remaining home for a derivation of alpha**. Also chi^(2,1)(Delta_L) != 0, so
+   "the phase is blind to the 2-dim block" and the floor
+   `net(dC) = -h*y_(2,1)(1)` both need restating.
+
+**NOT the qou-avt6 / qou-goc9 question.** Those concern the AUGMENTATION
+(sigma -> q, an algebra map). This concerns the COORDINATE SUM `net`
+(T_w -> 1), which is what epsNPq is (qou-99qc) and what Q_A is computed from.
+Under `net` the element exists — it is Delta_S. Complementary; neither implies
+the other. (Non-overlap checked against live PR #5893 before writing.)
+
+**FLAGGED, NOT CLAIMED.** `pyhecke.atom.PROTON_NF`/`NEUTRON_NF` coordinate sums
+differ by -0.188291, 0.58 % from epsNPq and matching NEITHER element. Stored
+float64 and the basis convention is UNVERIFIED, so it is a pointer, not a
+measurement. Tracked in `qou-bg3w`.
+
+**Still open.** cds1 is not closed and nothing here closes it.
