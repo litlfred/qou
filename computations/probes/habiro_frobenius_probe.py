@@ -67,6 +67,7 @@ del _sys, _Path, _bridge
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from math import gcd
@@ -570,6 +571,10 @@ def main() -> int:
             ),
         },
     }
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python")
+    out["scriptFile"] = os.path.basename(__file__)
     WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print()
     print(f"Wrote: {WITNESS_OUT.name}")
