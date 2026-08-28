@@ -68,7 +68,7 @@ GATES=(
   # This ratchet tolerates the backlog and blocks NEW arrivals. Blocking is
   # safe: it is green at its own baseline, so it can only ever fire on a new
   # regression. Bean qou-y98b.
-  "q0-anchor refill ratchet|computations/audits/q0_anchor_ratchet.py|--strict|no|yes"
+  "q0-anchor refill ratchet|computations/audits/q0_anchor_ratchet.py|--strict|yes|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
   "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "never-raises-dps ratchet|computations/never_raises_dps_audit.py|--strict|yes|yes"
