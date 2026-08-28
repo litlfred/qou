@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-25T21:15:53Z
+updated_at: 2026-08-28T20:20:55Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -117,3 +117,67 @@ the "bare producers" class this bean's own earlier entry names.
 ### Still true
 
 This bean remains a DUPLICATE of `cmiy` and is still owner-close-when-convenient.
+
+
+---
+
+## 2026-08-28 (later) — CORRECTION to my own entry above; the 2026-08-25 entry was right (PR #5923)
+
+### What was wrong
+
+`computations/_witness_q0_stamp.py` shipped this morning asserting
+
+> "Every one of the 169 is from a hand-rolled producer."
+> "That is the one unstamped class regeneration cannot fix."
+
+**Both are wrong about most of the class**, and the error is mine and recent.
+The **2026-08-25 entry above states it correctly** — that the ~157
+unstamped-but-single-pin witnesses "are simply stale and will resolve on
+regeneration", with hand-rolled producers as the *exception*. My 2026-08-28
+entry took the exception and applied it to the population.
+
+Re-measured: of **120 named producers, 62 already use `WitnessBuilder`**
+(re-running stamps them) and only **17 hand-roll**. So the practical
+consequence is the opposite of what the docstring said — most of the class is
+closed by a re-run, and `stamp_q0` is the right tool for a minority.
+
+### Why the count came out wrong — two extraction traps
+
+Worth recording, because each independently produces a plausible-looking number:
+
+| trap | wrong reading | true |
+|---|---|---|
+| `scriptFile` is **top-level**, not under a `witness` block | 0 named | 124 |
+| `scriptFile` holds a **bare basename**, not a path, so `Path(sf).exists()` reads as "producer deleted" | 121 of 124 gone | 41 |
+
+I hit both in a single session, in opposite directions, and each looked like a
+finding before it looked like a bug.
+
+### The number is now computed, not written down
+
+`computations/audits/unstamped_q0_portability_split.py` splits the class by
+**what closes each bucket**:
+
+    RESOLVABLE BUT UNSTAMPED   180   (of 3406 tracked witnesses)
+      A-producer-gone     41   nothing to port — producer deleted/renamed
+      B-builder-stale     65   RE-RUN the producer; build() stamps
+      C-handrolled        18   apply stamp_q0() — re-running never will
+      D-unnamed           56   no producer named; classify by the recorded pin
+
+and names the **16 live hand-rolled producers**, which is the actual
+`stamp_q0` worklist. Do not restate these figures from any prose — the last
+docstring constant was stale within one day of being written.
+
+### Also corrected: the "45 unattributed" figure
+
+Quoted in this bean, in PR #5899, and in `qou-uilp`. It was **correct when
+measured** (169 resolvable / 124 named / 45 unnamed); today the same query
+gives 180 / 124 / 56, because `main` moved. The `124` is stable. A separate
+figure of "40" that appeared mid-session came from a filter that also admitted
+falsy-stem rows and should be ignored.
+
+### Not done here
+
+`cmiy` still owns the full port. The 16-producer `stamp_q0` worklist is
+tractable but each application needs its producer re-run and diffed for
+byte-stability, which is the next step rather than this one.
