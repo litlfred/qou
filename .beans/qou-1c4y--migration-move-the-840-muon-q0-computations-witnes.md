@@ -1467,3 +1467,26 @@ them and nothing records what did. Re-pinning is not even an available action;
 it is a provenance gap, not migration work.
 
 Full detail: `docs/audits/2026-08-28-superseded-muon-population-triage.md`.
+
+
+### 🛑 Correction to the entry above: the "13 orphans" were my detector, not a gap
+
+I wrote that the 13 were a provenance gap needing their own bean — *"nothing can
+regenerate them and nothing records what did"*. **Wrong.** The scan keyed on
+`scriptFile`/`script` only. Opened by hand:
+
+- **8** record provenance under `computation` — all 8 producers **exist**, 6 of
+  them under `docs/audits/scripts/`, which a `computations/`-scoped search
+  cannot see.
+- **5** record no provenance field but resolve by the witness-name ↔
+  producer-name convention — including `q0-value-drift-audit`, which this arc
+  has been regenerating all along.
+- **0** genuinely unregenerable.
+
+Real finding: 13 live witnesses **omit `scriptFile`** — a field-completeness gap
+in schema usage, not lost provenance. **No orphans bean is warranted.**
+
+**Fourth detector correction in this arc**, all mine, two high and two low:
+dual-purpose 21→3 (substring), contradictions 2→11 (file-local), superseded-muon
+work 265→19 (population≠work), orphans 13→0 (`scriptFile`-only). Treat any count
+here as a hypothesis with a several-fold error bar until a member is read.
