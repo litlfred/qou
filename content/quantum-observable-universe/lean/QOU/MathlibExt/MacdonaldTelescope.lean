@@ -387,4 +387,37 @@ theorem pieriStep_two_one (Q X : ℝ) (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q 
   simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
   linarith [h]
 
+/-! ## M1 normalisation at the nucleon rank `H₃` -/
+
+/-- **Markov-trace normalisation `tr_M(1) = 1` at rank `3`, for the concrete
+Jones–Markov weights.** The closed-form weights `y_λ = jonesMarkovCoeff` sum to
+one over the three partitions of `3`, each weighted by its SYT count
+`f_λ = (1, 2, 1)`:
+
+  `f₍₃₎·y₍₃₎ + f₍₂,₁₎·y₍₂,₁₎ + f₍₁³₎·y₍₁³₎ = 1`.
+
+This is not assumed — it is **derived** from the proved `telescope_three`
+(`Σ_λ f_λ·s_λ = ((1−X)/(1−Q))³`) divided by the common Wenzl normalisation
+`Z₃ = ((1−X)/(1−Q))³`, which is nonzero for `Q ≠ 1`, `X ≠ 1`. Rank `3` is the
+first at which the standard channel `(2,1)` carries multiplicity `f = 2`, so the
+identity genuinely exercises all three Wedderburn blocks — it is the M1 axiom
+`tr_M(𝟙) = 1` of the Markov trace, instantiated at the nucleon rank `H₃` on the
+real weights rather than on an abstract trace functional. -/
+-- Ref: [wenzl1988] Theorem 2.1
+theorem jonesMarkov_normalisation_three (Q X : ℝ)
+    (hQ0 : Q ≠ 0) (hQ1 : Q ≠ 1) (hQm1 : Q ≠ -1) (hX : X ≠ 1) :
+    WenzlSchurElement.jonesMarkovCoeff Q X [3]
+      + 2 * WenzlSchurElement.jonesMarkovCoeff Q X [2, 1]
+      + WenzlSchurElement.jonesMarkovCoeff Q X [1, 1, 1] = 1 := by
+  have htel := telescope_three Q X hQ0 hQ1 hQm1
+  have hrhs : telescopeRHS 3 Q X = WenzlSchurElement.wenzlNormalisation 3 Q X := rfl
+  rw [hrhs] at htel
+  have hZ : WenzlSchurElement.wenzlNormalisation 3 Q X ≠ 0 :=
+    WenzlSchurElement.wenzlNormalisation_ne_zero hQ1 hX
+  unfold WenzlSchurElement.jonesMarkovCoeff
+  rw [show Partition.size [3] = 3 from rfl,
+      show Partition.size [2, 1] = 3 from rfl,
+      show Partition.size [1, 1, 1] = 3 from rfl,
+      ← mul_div_assoc, ← add_div, ← add_div, htel, div_self hZ]
+
 end QOU.MathlibExt.MacdonaldTelescope
