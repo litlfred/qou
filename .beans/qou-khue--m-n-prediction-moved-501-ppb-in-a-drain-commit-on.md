@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-28T18:18:52Z
-updated_at: 2026-08-28T18:19:47Z
+updated_at: 2026-08-28T18:28:10Z
 ---
 
 ## Found 2026-08-28, by restoring the p/n rows (qou-7e1t option 3)
@@ -83,3 +83,76 @@ looking row computed from a vanished source.
 Read `4f715fc970`'s full diff and its bean, decide reading 1 vs 2, and either
 restore the pre-drain value at the producer or record 501 ppb as the honest
 m_n and update the L2 dashboard note accordingly.
+
+
+--------
+
+## RESOLVED, and I was wrong about the shape of it (2026-08-28, same day)
+
+Both readings above are wrong, and so was the alarm I raised on the way. The
+answer is neither "the drain broke m_n" nor "the drain unmasked m_n".
+
+### Fact 1 — the value is reproducible; the drain did not corrupt anything
+
+Re-ran `m_p_substrate_identity_50dps.py` on current main:
+
+    m_p_MeV : REPRODUCES exactly
+    m_n_MeV : REPRODUCES exactly   (939.5658930679811464936213)
+
+So +501 ppb is what the code genuinely produces. Reading 1, in the sense of a
+corrupted write, is refuted. The drain commit `4f715fc970` re-ran the producer
+and kept the result, which is what it says it did.
+
+### Fact 2 — I claimed the L2 dashboard was stale. It is NOT.
+
+I found `per-observable-100x-status.witness.json` still reporting
+`m_n err_ppb 0.9029 / miss_factor 176.7` and concluded the headline precision
+artifact was carrying a pre-drain number. **Wrong.** Re-ran its producer:
+every row is unchanged, m_n included. It reproduces 0.9029 on today's tree.
+
+### Fact 3 — what is actually true: TWO LIVE ROUTES, disagreeing 555x
+
+    canonical_mass.neutron_mass_mev()      939.5658930680   +501 ppb
+      <- m-p-substrate-identity-50dps.witness.json (flavour-split identity)
+
+    per_observable_100x_status.py "Path C" 939.565422788    +0.9029 ppb
+      <- m_n = m_p + Q_beta + m_e  (categorical, no flavour split)
+
+Both reproduce on current main. This is **deliberate and documented in the
+source** — `per_observable_100x_status.py:533` introduces Path C, and its own
+comment says it puts "m_n at 0.24 ppm (8x better than the substrate-identity's
+2 ppm)". So the dashboard knowingly prefers the categorical route.
+
+It is therefore NOT a hidden inconsistency, and this bean should not be read as
+one. (Note in passing: that comment's "2 ppm" matches neither the pre-drain
+0.00239 ppm nor the post-drain 0.501 ppm, so it is stale in its own right and
+worth a look, but it is a comment, not a computation.)
+
+### The live consequence, which IS mine
+
+Restoring the p/n rows (qou-7e1t option 3) made
+`canonical-mass-table-extended.witness.json` carry an `n` row sourced from
+`canonical_mass` -> **501 ppb**, while `per-observable-100x-status.witness.json`
+reports the same observable at **0.9029 ppb**. Two committed production
+artifacts now disagree about a scored observable by 555x, on their face, with
+no note in either saying they use different routes.
+
+Before my change the mass table had no `n` row at all, so the disagreement was
+unstatable rather than absent.
+
+I am NOT proposing to drop the row again — the row's `tr_M` is legitimate, and
+its mass column is governed by the absolute-mass excision anyway (`qou-exam`:
+absolute mass is not a claim, so `prediction_MeV` there is a rendering). But a
+reader diffing the two artifacts will see a contradiction and deserves a
+pointer.
+
+### Next step (narrow, and no longer urgent)
+
+Decide which route the canonical mass table's nucleon rows should cite, and say
+so IN the witness — a `prediction_route` field naming "substrate-identity" vs
+"path-C" would make the 555x self-explaining instead of alarming. That is a
+labelling change, not a physics one, and it is the whole of what is left here.
+
+The physics question — why the flavour-split identity sits 555x off the
+categorical route — is real but is not this bean's, and is not new: it predates
+the drain by however long the two routes have coexisted.
