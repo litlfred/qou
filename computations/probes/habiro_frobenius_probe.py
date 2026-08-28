@@ -481,6 +481,20 @@ def main() -> int:
             },
         })
 
+    all_truncated_cells = [
+        (a["atom_label"], r)
+        for a in atoms_out
+        for r in a["frobenius"]
+        if r["pochhammer_truncates_at_m"] is not None
+    ]
+    n_cells_truncated = len(all_truncated_cells)
+    cells_full_labels = [
+        f"{lab} @ p={r['prime']}"
+        for lab, r in all_truncated_cells
+        if r["step2_full_trace_passed"]
+    ]
+    n_cells_full = len(cells_full_labels)
+
     out = {
         "computation": "habiro-frobenius-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -506,6 +520,7 @@ def main() -> int:
         "summary": {
             "n_atoms": len(atoms_out),
             "n_primes": len(PRIMES),
+            # --- numerator test (the weaker of the two) ---
             "step2_all_atoms_compatible": all(
                 a["step2_summary"]["all_truncated_primes_compatible"]
                 for a in atoms_out
@@ -514,13 +529,40 @@ def main() -> int:
                 1 for a in atoms_out
                 if a["step2_summary"]["all_truncated_primes_compatible"]
             ),
+            # --- full-trace test (strictly stronger; see the note below) ---
+            "step2_all_atoms_full_trace_compatible": all(
+                a["step2_summary"]["step2_full_trace_compatible"]
+                for a in atoms_out
+            ),
+            "n_atoms_step2_full_trace_passed": sum(
+                1 for a in atoms_out
+                if a["step2_summary"]["step2_full_trace_compatible"]
+            ),
+            "n_cells_truncated": n_cells_truncated,
+            "n_cells_step2_full_trace_passed": n_cells_full,
+            "cells_step2_full_trace_passed": cells_full_labels,
+            "summary_note": (
+                "step2_all_atoms_compatible is the NUMERATOR test: it asks "
+                "only that Tr(numerator) be a rational integer, which the "
+                "denominator's unit-ness does not enter. The full-trace test "
+                "step2_all_atoms_full_trace_compatible is strictly stronger — "
+                "it additionally requires the denominator to be a unit at "
+                "ζ_{2p}, so Tr(Frob_p) itself is an algebraic integer. Read "
+                "the full-trace fields as the headline; the numerator fields "
+                "pass on every cell and therefore discriminate nothing."
+            ),
         },
     }
     WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print()
     print(f"Wrote: {WITNESS_OUT.name}")
-    print(f"Step-2 all-atoms-compatible: "
+    print(f"Step-2 numerator test  (weaker):  all-atoms-compatible = "
           f"{out['summary']['step2_all_atoms_compatible']}")
+    print(f"Step-2 FULL-TRACE test (headline): all-atoms-compatible = "
+          f"{out['summary']['step2_all_atoms_full_trace_compatible']}"
+          f"  ({n_cells_full}/{n_cells_truncated} truncated cells"
+          + (f": {', '.join(cells_full_labels)}" if cells_full_labels else "")
+          + ")")
     return 0
 
 

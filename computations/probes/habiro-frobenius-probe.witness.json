@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-08-28T14:50:19.475159+00:00",
+  "computedAt": "2026-08-28T14:51:38.404953+00:00",
   "description": "R6 step-1 + step-2 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. The Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) is verified to be a rational integer (residual < 1e-6) on every (atom, prime) where the truncation lands inside the on-disk Habiro data — finite-place reciprocity check.",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -1225,6 +1225,15 @@
     "n_atoms": 5,
     "n_primes": 9,
     "step2_all_atoms_compatible": true,
-    "n_atoms_step2_passed": 5
+    "n_atoms_step2_passed": 5,
+    "step2_all_atoms_full_trace_compatible": false,
+    "n_atoms_step2_full_trace_passed": 0,
+    "n_cells_truncated": 45,
+    "n_cells_step2_full_trace_passed": 2,
+    "cells_step2_full_trace_passed": [
+      "p (proton, A=1) @ p=2",
+      "n (neutron, A=1) @ p=2"
+    ],
+    "summary_note": "step2_all_atoms_compatible is the NUMERATOR test: it asks only that Tr(numerator) be a rational integer, which the denominator's unit-ness does not enter. The full-trace test step2_all_atoms_full_trace_compatible is strictly stronger — it additionally requires the denominator to be a unit at ζ_{2p}, so Tr(Frob_p) itself is an algebraic integer. Read the full-trace fields as the headline; the numerator fields pass on every cell and therefore discriminate nothing."
   }
 }
