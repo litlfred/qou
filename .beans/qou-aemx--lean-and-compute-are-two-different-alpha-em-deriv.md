@@ -146,3 +146,34 @@ development.
 4. **Does the revival supersede the supersession?** `q·[9]_q·[10]_q` was
    retired for needing an unidentifiable constant, then revived with a derived
    Gram κ. Whether that reinstates it is the canonical question, still open.
+
+
+## 2026-08-28 (later still) — the cross-sector gap is a DILEMMA, and the corpus argues against the easy horn
+
+Pursued the load-bearing open item. It does not close; it sharpens.
+
+**The identity is not generic.** Only **2 of 9** corpus/standard hyperbolic
+knots give an integer `Vol(K)/G` — Whitehead (4) and Borromean (8), both
+octahedral. So the `8` is genuinely constrained, not a re-description. But the
+constraint is *octahedral decomposability*, which has no bearing on EM.
+
+**The corpus's own sector rule runs against the volume reading.**
+`fundamental-knots-operator-basis` states, in the same table that carries the
+`8G`: *"Torus knots carry zero hyperbolic volume, representing the massless,
+force-carrying sector. Hyperbolic knots carry positive volume, which translates
+to mass via Vol(K)/ℏ_q²."* — and places the **photon**, the EM carrier, as "not
+a knot", `J = 1 (bare)`, in the **zero-volume** sector.
+
+So a **nucleon** volume inside the **electromagnetic** coupling crosses the
+framework's own volume↔mass / zero-volume↔carrier boundary.
+
+**The dilemma:**
+
+- If the **volume** does the work → it crosses that stated boundary.
+- If only the **integer 8** does the work → the knot reading adds nothing over
+  `κ = 8q` and the post-hoc charge returns, just aimed at a different gloss.
+
+**This is not a numerical question and no probe will settle it.** It needs
+either a structural argument for why a mass-channel invariant may enter a
+force-carrier coupling, or an explicit statement that only the integer is
+meant. That is an owner/structural call, which is why this bean stays open.

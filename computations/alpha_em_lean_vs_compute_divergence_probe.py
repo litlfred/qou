@@ -251,9 +251,84 @@ def borromean_catalan_identity():
     print("  electromagnetic coefficient at all.")
 
 
+def volume_over_catalan_genericity():
+    """Is `Vol(K)/G in Z` generic among corpus knots? NO -- 2 of 9.
+
+    If many knots gave an integer, `8 = Vol(B_3)/G` would be a re-description
+    available for any number, not an explanation. Measured over the corpus's
+    own volume table plus five more hyperbolic knots.
+
+    Only the OCTAHEDRAL family lands: Whitehead/V_oct = 4G and Borromean =
+    2*V_oct = 8G. Everything else is comfortably non-integer. So the identity
+    is NOT generic -- though the reason it is not is a known one (octahedral
+    decomposability), and has nothing to do with electromagnetism.
+    """
+    G = mp.catalan
+    v_oct = 8 * (mp.clsin(2, mp.pi / 2) / 2)
+    vols = [
+        ("4_1 figure-eight", mp.mpf("2.02988321281931")),
+        ("5_2 three-twist", mp.mpf("2.82812208832975")),
+        ("6_1", mp.mpf("3.16396322888")),
+        ("6_2", mp.mpf("4.40083251")),
+        ("6_3", mp.mpf("5.69302109")),
+        ("7_4", mp.mpf("5.13794120")),
+        ("8_18", mp.mpf("12.35090620")),
+        ("Whitehead = V_oct", v_oct),
+        ("L6a4 Borromean", mp.mpf("7.32772475341775")),
+    ]
+    print()
+    print("-" * 68)
+    print("  Is Vol(K)/G an integer generically?  (if so, `8` explains nothing)")
+    print("-" * 68)
+    hits = 0
+    for name, v in vols:
+        r = v / G
+        n = mp.nint(r)
+        is_int = abs(r - n) < mp.mpf("1e-9")
+        hits += is_int
+        print(f"  {name:20s} Vol={mp.nstr(v, 12):>15s}  Vol/G={mp.nstr(r, 14):>17s}"
+              f"  {'INTEGER ' + str(int(n)) if is_int else ''}")
+    print()
+    print(f"  {hits} of {len(vols)} are integers -- both octahedral. NOT generic.")
+    print("  So the 8 is a genuinely constrained topological number. But the")
+    print("  reason is octahedral decomposability, which says nothing about EM.")
+
+
+def cross_sector_objection():
+    """The gap, stated in the framework's OWN terms -- and it is a dilemma.
+
+    `fundamental-knots-operator-basis` sets the sector rule explicitly:
+
+      "Torus knots carry zero hyperbolic volume, representing the massless,
+       force-carrying sector. Hyperbolic knots carry positive volume, which
+       translates to mass via Vol(K)/hbar_q^2."
+
+    and places the PHOTON -- the electromagnetic carrier -- as "not a knot",
+    a four-term Hecke element with `J = 1 (bare)`, in that ZERO-VOLUME sector.
+    The nucleon (Borromean) sits in the other one, at Vol = 8G.
+
+    So using the NUCLEON's hyperbolic volume to set a coefficient inside the
+    ELECTROMAGNETIC coupling crosses the framework's own volume<->mass /
+    zero-volume<->force-carrier assignment. That is sharper than "unexplained":
+    it runs against a rule the corpus states in the same breath as the 8G.
+
+    THE DILEMMA, and both horns cost something:
+
+      * If the VOLUME is doing the work, it crosses that stated boundary --
+        the photon is explicitly volume-zero.
+      * If only the INTEGER 8 is doing the work, the knot-theoretic reading
+        adds nothing over `kappa = 8q`, and the post-hoc charge returns,
+        merely aimed at a different gloss than su(3).
+
+    Nothing found in the corpus resolves this. It is the load-bearing open
+    item on bean qou-aemx, and it is not a numerical question.
+    """
+
+
 if __name__ == "__main__":
     main()
     q = mp.mpf(Q_50_DIGIT_STR)
     same_function_check(q)
     kappa_windows(q)
     borromean_catalan_identity()
+    volume_over_catalan_genericity()
