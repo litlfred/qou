@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T15:38:44.251381+00:00",
-  "commitSha": "cdbdc84af1332800dae14cf6ce68b7bf476eb78f",
+  "computedAt": "2026-08-28T23:50:29.912631+00:00",
+  "commitSha": "6a76abdde6ef1331b25b7873cb8ccccac2204a21",
   "assertions": [
     {
       "name": "short_model_net_coefficients_factor_as_one_and_two_crossings",
@@ -111,11 +111,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4759,
+  "durationMs": 3598,
   "computation": "qbeta-delta-element-fork-pricing",
   "scriptFile": "qbeta_delta_element_fork_pricing_probe.py",
   "scriptHash": "656f507bfe7b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6a76abdde6ef1331b25b7873cb8ccccac2204a21",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -125,9 +125,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
@@ -170,5 +172,7 @@
     "net_neutron_short_corpus": "0.708262656072802021554740348144181739094470737462165848935831",
     "trM_z_on_long_model": "-(q - 1)*(q + 1)*(q**4*z**2 + 2*q**3*z + 2*q**2 - 2*q*z + z**2)/(4*q**3)",
     "net_minus_trM_on_long_model": "(q - 1)*(q + 1)*(z - 1)*(q**4*z + q**4 + 2*q**3 - 2*q + z + 1)/(4*q**3)"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
