@@ -218,3 +218,35 @@ one. The bulk migration is `qou-1c4y` under the owner authorisation recorded
 witnesses and several producers in this corpus are long-compute or refuse by
 design. What has changed is the *expected outcome* of doing it: for these 19,
 the run is a re-pin with no adjudication in it.
+
+## `derived_masses` resolved — it is `free-neutron-decay`, and it is the dependency-order case
+
+The one unresolved candidate of the 19. Three corrections, two of them to my own
+reading:
+
+1. **It resolves via a top-level `scriptFile`.** `free-neutron-decay.witness.json`
+   declares `"scriptFile": "derived_masses.py"` at the **top level**; my scan read
+   `witness.scriptFile` and `computation.script` and returned `None`. Eighth
+   detector blind spot of the arc, same class as the other seven.
+2. **I nearly reported it unregenerable, and that was wrong.**
+   `derived_masses.py` is a *library* — its only "write" is a `print(json.dumps(...))`
+   — and it *reads* this witness, so the declaration looked circular. But
+   `computations/free-neutron-decay.py` **exists**. My consumer scan missed it for
+   a mundane reason: a file does not usually contain its own name, so a
+   `grep -rln "free-neutron-decay" --include=*.py` never lists the producer. The
+   live producer sets `witness["scriptFile"] = Path(__file__).name`, so the
+   committed witness simply predates that fix.
+3. **It is regenerable and would self-correct — but must NOT be re-run alone.**
+   `free-neutron-decay` is unlisted in the manifest, so it resolves proton, exactly
+   like the other 17. What makes it different is that **20 Python consumers** read
+   this witness and several call it canonical; it supplies `Δ(net)` to the `c_k`
+   chain that `qou-cds1` is actively working on #5337 and #5897. This is precisely
+   the **dependency-order** blocker the `qou-1c4y` sibling flagged: it *is* the
+   upstream. Re-running it moves numbers under live work. Left for the sanctioned
+   migration, not taken here.
+
+Its `transition.delta_net = -0.1882906200111204` also turns out to be the
+"possible third model" #5897 flagged in `pyhecke` — see
+[the Δ-fork addendum](2026-08-28-delta-element-fork-corpus-asymmetry.md), where the
+anchor explanation for it is measured and refuted.
+

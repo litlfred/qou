@@ -123,3 +123,42 @@ proposed that "single-wrap" separated the two models; the next grep found the
 same qualifier attached to the 11-crossing construction, refuting it. The
 habit that pattern argues for is not "distrust detectors" but "state the
 hypothesis so the refuting grep is one command away".
+
+## Addendum 2026-08-28 — the "possible third model" is real, is canonical, and is NOT an anchor artifact
+
+#5897 flagged a third coordinate-sum value in `pyhecke` (`−0.188291`, 0.58 % from
+`epsNPq`) as *"a pointer, not a measurement — stored float64, basis convention
+unverified"*. Two things can now be said about it.
+
+**It is not only in `pyhecke`.** The same value is
+`transition.delta_net = -0.1882906200111204` in
+[`computations/free-neutron-decay.witness.json`](../../computations/free-neutron-decay.witness.json),
+which **20 Python consumers** read and which several of them call *"the canonical
+free-neutron-decay witness"*. It is the source of `Δ(net)(q)` for the `c_k`
+S-series work. So the third value is not a stray in a helper package — it is the
+canonical one, and the two closed forms in `qbeta-counit-closed-form.md` disagree
+with it.
+
+**It is not the anchor.** The cheapest explanation would be that `h²/2 − h` is
+being evaluated at a different q₀. Measured at 50 dps against all three:
+
+| anchor | `h²/2 − h` | vs `delta_net` |
+|---|---|---|
+| proton `q_at()` | −0.187207194529378 | −0.5754 % |
+| muon, frozen canonical | −0.187207212879143 | −0.5754 % |
+| muon, superseded CODATA-2018 | −0.187207212874623 | −0.5754 % |
+
+The three anchors differ from each other in the **8th** significant figure —
+the 11.5 ppb μ–p tension, i.e. ~1.15e-6 %. The gap to `delta_net` is
+**0.575 %**, five orders larger. **Anchor choice cannot produce it**, so
+`delta_net` is a different quantity, not a re-evaluation. Scope-(a): this
+excludes one explanation, it does not identify what `delta_net` is.
+
+That is worth having because it is the explanation an adjudicator would try
+first, and because this witness carries the superseded muon pin — which makes
+"it is just the old q₀" look plausible until it is measured.
+
+**Consequence for `qou-bg3w`.** The fork is not two elements plus a loose
+pointer. It is two elements with published closed forms, and a third value
+sitting in the witness that 20 producers actually consume.
+
