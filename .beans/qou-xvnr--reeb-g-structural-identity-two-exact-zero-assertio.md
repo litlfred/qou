@@ -1,5 +1,5 @@
 ---
-# qou-a9li
+# qou-xvnr
 title: 'reeb_g_structural_identity: two exact-zero assertions carry tolerance=None'
 status: completed
 type: task
@@ -64,3 +64,10 @@ after — only the two verdicts moved. Witness now `allPassed: true`.
 3. `pyhecke_native` 0.9.0 **is** importable in this container, and cargo +
    maturin are both present. AGENTS.md's project-structure note implies a
    container without it is the default; that is not true of this image.
+
+<!-- re-issued 2026-08-28: this bean and
+     `qou-a9li--em-linking-crossing-number-minimisation-crux-from.md` both claimed id
+     `qou-a9li`. They are unrelated beans that collided on a random id (EM-linking
+     crossing-number minimisation vs a reeb_g tolerance=None assertion); both are
+     `completed`. The older 2026-08-01 bean keeps `qou-a9li`; this newer 2026-08-23 one
+     takes a fresh id `qou-xvnr`. Caught by scripts/check-beans.sh. -->
