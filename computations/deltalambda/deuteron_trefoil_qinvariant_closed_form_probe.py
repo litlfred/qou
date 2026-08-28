@@ -19,7 +19,12 @@ The trefoil is the torus knot T(2,3): NON-hyperbolic, so volume/dilog
 
 Canonical conventions (verified against committed witness):
   A = sqrt(q0)                       ("A" = Kauffman/skein variable)
-  z_markov = 1/(A + 1/A)             ( = 1/[2]_{sqrt q}, committed 0.49932... )
+  z_markov = q^3/(q^2 + 1)           ( convention D, 0.6126880... )
+    CORRECTED 2026-08-28: this read 1/(A + 1/A) = z_C and cited the
+    committed 0.49932 as its authority.  Those were free-neutron-decay's
+    constants_at_q0, corrected to D in the same tranche, so the cited
+    authority no longer says that.  Convention D is canonical (owner
+    ruling 2026-08-15 R1).
   s_skein  = A - 1/A                 ( committed 0.10439... )
   Hecke:  sigma^2 = s*sigma + 1      (from (sigma-A)(sigma+A^{-1})=0)
 """
@@ -32,7 +37,7 @@ mp.mp.dps = 60
 # ---------------------------------------------------------------------------
 q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
 A = mp.sqrt(q0)                      # skein variable sqrt(q)
-z = 1 / (A + 1 / A)                  # Markov parameter (committed z_markov)
+z = q0 ** 3 / (q0 ** 2 + 1)          # Markov parameter, convention D
 s = A - 1 / A                        # skein s (committed s_skein)
 
 # quantum integers [n]_q = (q^{n/2}-q^{-n/2})/(q^{1/2}-q^{-1/2})  (balanced)
