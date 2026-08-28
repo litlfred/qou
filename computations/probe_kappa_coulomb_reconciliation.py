@@ -250,6 +250,8 @@ def main() -> None:
     # it -- and a re-run of an unstamped producer DELETES the
     # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
     from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n")

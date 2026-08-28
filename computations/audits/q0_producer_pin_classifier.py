@@ -583,6 +583,15 @@ def main(argv: list[str] | None = None) -> int:
     print("                     producer, so it is a decision, not a sweep.")
 
     if args.emit_proposal:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        proposal.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            proposal, script_path=__file__, q0_anchor=None)
         Path(args.emit_proposal).write_text(json.dumps(proposal, indent=2) + "\n")
         print(f"\n  proposal -> {args.emit_proposal}")
 

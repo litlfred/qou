@@ -242,6 +242,15 @@ witness = {
 outp = os.path.join(os.path.dirname(__file__),
                     "deuteron_trefoil_qinvariant_closed_form.witness.json")
 with open(outp, "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=False)
     json.dump(witness, f, indent=2)
 print(f"\nwitness -> {outp}")
 print(f"VERDICT: {witness['verdict']}")

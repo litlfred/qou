@@ -315,5 +315,14 @@ output = {
 
 witness_out = os.path.join(SCRIPT_DIR, "beta-decay-energy-scale.witness.json")
 with open(witness_out, "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    output.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        output, script_path=__file__, q0_anchor=None)
     json.dump(output, f, indent=2)
 print(f"\n✓ Witness written to {witness_out}")

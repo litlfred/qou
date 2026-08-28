@@ -128,6 +128,15 @@ def main():
     }
     path = (_HERE_W / "wlambda-covariance-epic-A2-tail-second-instance.witness.json")
     with open(path, "w") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, q0_anchor=False)
         json.dump(out, fh, indent=1, default=str)
     print(f"\nall_ok={all_ok} onset_ok={onset_ok}  witness -> {path} "
           f"({time.time()-t0:.1f}s)")

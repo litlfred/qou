@@ -188,6 +188,15 @@ def main() -> int:
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "he4-stage2-ranking-seminormal-xcheck.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"],
           f" ({wit['elapsed_sec']}s)")

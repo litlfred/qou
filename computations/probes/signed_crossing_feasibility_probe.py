@@ -216,6 +216,15 @@ def main() -> int:
         },
     }
     out = HERE.parent / "signed-crossing-feasibility.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    w.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(w, indent=2))
     print(f"\n  Witness: {out}")
     return 0

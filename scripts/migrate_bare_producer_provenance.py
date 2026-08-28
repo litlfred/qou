@@ -46,9 +46,36 @@ show to be q0-free gets `q0_anchor=None` (resolve and stamp), including every
 producer whose q0 use is only reachable further out than the one import hop
 measured here.
 
+TWO WAYS TO BUILD THE POPULATION, AND ONLY ONE OF THEM WORKS
+
+The first pass of this migration built the population WITNESS-FIRST: walk every
+`*.witness.json`, read its `scriptFile`, resolve that to a producer, keep the
+ones that never call `WitnessBuilder`. That found 287 and it undercounts by
+~48 %, because it can only ever see a producer that some witness NAMES:
+
+  * a witness with NO provenance field has no `scriptFile` to resolve, so its
+    producer is skipped -- and 248 of the 2842 witnesses (8.7 %) are in exactly
+    that state. The scan is blindest to precisely the defect it hunts.
+  * a witness whose `scriptFile` names the WRONG file sends the scan to the
+    wrong producer. `free-neutron-decay.witness.json` names `derived_masses.py`,
+    which only ever READS it; the real producer, `free-neutron-decay.py`, is a
+    bare `json.dump` and was invisible to the whole first pass.
+  * a witness naming a shim whose write is delegated (`per_irrep_pole_proton_h3`
+    -> `per_irrep_pole_atom`) sends the scan to a file with no write at all.
+
+WRITER-FIRST is the correct construction and is now the default: walk every
+`computations/**/*.py`, keep the ones that contain a witness write the AST can
+find and no `WitnessBuilder`. It asks "does this file write a witness without
+stamping it", which is the actual question, and it does not depend on any field
+that might be missing or wrong. It finds 260 producers the witness-first pass
+never saw, disjoint from the 282 it migrated.
+
+`--scan witness` is kept only to reproduce the first pass for comparison.
+
 Usage:
     python3 scripts/migrate_bare_producer_provenance.py --dry-run
     python3 scripts/migrate_bare_producer_provenance.py --apply --limit 10
+    python3 scripts/migrate_bare_producer_provenance.py --scan witness --dry-run
 """
 from __future__ import annotations
 
@@ -72,6 +99,12 @@ STAMP_IMPORT = (
     "from qou_substrate.witness import WitnessBuilder  "
     "# noqa: E402 -- provenance stamp, bean qou-4un2"
 )
+
+#: How to recognise a file this script has already touched, and whether it got
+#: the `scriptFile` line. The first pass omitted that line -- see `apply_one` --
+#: so a file with the first marker and not the second needs the upgrade.
+STAMP_MARKER = "_WB.stamp_staleness_metadata("
+SCRIPTFILE_MARKER = '_os.path.basename(__file__)'
 
 
 def resolve_producer(witness_path: pathlib.Path, script_file: str):
@@ -176,15 +209,94 @@ def find_write(tree: ast.AST):
     return best
 
 
+def payload_bindings(tree: ast.AST, name: str):
+    """Every value expression bound to `name`, INCLUDING via tuple unpacking.
+
+    Tuple unpacking is not a corner case here: `report, scanned, deprecated =
+    {}, 0, 0` is a common idiom in the audit scripts, and a check that only
+    looks at `Assign.targets[0]` sees a `Tuple` rather than a `Name` and
+    reports the payload as never assigned. That produced two false "never
+    bound" findings before this function existed.
+    """
+    out = []
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Assign):
+            for t in n.targets:
+                if isinstance(t, ast.Name) and t.id == name:
+                    out.append((n.lineno, n.value))
+                elif isinstance(t, ast.Tuple):
+                    for i, el in enumerate(t.elts):
+                        if isinstance(el, ast.Name) and el.id == name:
+                            out.append((n.lineno,
+                                        n.value.elts[i]
+                                        if isinstance(n.value, ast.Tuple)
+                                        and i < len(n.value.elts) else None))
+        elif isinstance(n, ast.AnnAssign) and isinstance(n.target, ast.Name) \
+                and n.target.id == name:
+            out.append((n.lineno, n.value))
+    return sorted(out, key=lambda x: x[0])
+
+
+def payload_is_dict(tree: ast.AST, name: str, before_line: int) -> bool:
+    """Whether the binding of `name` LIVE AT `before_line` is provably a dict.
+
+    Nearest-preceding, not "any binding anywhere". One name is routinely bound
+    to both shapes in one file -- the accumulator idiom
+
+        out = []          # line 62,  a list built inside an earlier function
+        ...
+        out = {...}       # line 238, the witness itself
+        json.dump(out, f) # line 270
+
+    -- and 11 of the 13 list-bound payloads in this population look exactly like
+    that. An "any binding is a dict" test passes them for the right reason by
+    accident; it would equally pass the reverse order, where the live value at
+    the write really is a list. Taking the last binding above the write answers
+    the question actually being asked.
+
+    THIS IS A CORRECTNESS GATE, NOT A TIDINESS ONE. `stamp_staleness_metadata`
+    does `payload["scriptHash"] = ...`, so a non-dict payload raises TypeError
+    AT RUN TIME -- `list indices must be integers or slices, not str`. Measured
+    on this population: 13 producers bind the write payload to a LIST and 8 more
+    to a string / bytes / opaque call, because a file that merely READS a
+    witness passes a "mentions .witness.json" filter while its `write_text`
+    actually emits markdown or a text report. Stamping those 21 would have
+    broken 21 working scripts.
+
+    Deliberately conservative: a payload assembled by a helper (`w =
+    build_witness()`) is not provably a dict here and is reported rather than
+    stamped. Under-reaching costs a follow-up; over-reaching costs a crash.
+    """
+    prior = [v for ln, v in payload_bindings(tree, name) if ln < before_line]
+    return bool(prior) and isinstance(prior[-1], (ast.Dict, ast.DictComp))
+
+
 def plan_one(path: pathlib.Path):
     raw = path.read_text(errors="ignore")
     src = code_only(raw)
-    if "WitnessBuilder" in src:
-        return None, "already uses WitnessBuilder"
     try:
         tree = ast.parse(raw)
     except SyntaxError as exc:
         return None, f"unparseable: {exc}"
+    if STAMP_MARKER in src and SCRIPTFILE_MARKER not in src:
+        # First-pass file: it has the stamp call but no `scriptFile` line.
+        call = next((n for n in ast.walk(tree)
+                     if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+                     and n.func.attr == "stamp_staleness_metadata"), None)
+        if call is None or not call.args or not isinstance(call.args[0], ast.Name):
+            return None, "first-pass stamp present but its payload is not a plain name"
+        stmt = next(n for n in ast.walk(tree)
+                    if isinstance(n, ast.Expr) and n.value is call)
+        return {
+            "path": str(path.relative_to(ROOT)),
+            "line": stmt.lineno,
+            "payload": call.args[0].id,
+            "q0": False,          # unused on the upgrade path
+            "col": stmt.col_offset,
+            "upgrade": True,
+        }, None
+    if "WitnessBuilder" in src:
+        return None, "already uses WitnessBuilder"
     hit = find_write(tree)
     if hit == "inline":
         return None, ("payload is an inline dict literal at the write site — "
@@ -192,6 +304,9 @@ def plan_one(path: pathlib.Path):
     if hit is None:
         return None, "no json.dump / write_text call found"
     stmt, payload = hit
+    if not payload_is_dict(tree, payload, stmt.lineno):
+        return None, (f"payload {payload!r} is not provably a dict — stamping a "
+                      "non-dict raises TypeError at run time")
     return {
         "path": str(path.relative_to(ROOT)),
         "line": stmt.lineno,
@@ -237,12 +352,38 @@ def apply_one(plan: dict) -> str | None:
     anchor = "None" if plan["q0"] else "False"
     note = ("resolve and stamp the q0 anchor" if plan["q0"]
             else "no q0 in this producer's cone; stamp provenance only")
+    if plan.get("upgrade"):
+        # The file already carries this script's stamp from the first pass but
+        # not the `scriptFile` line; insert only the missing line.
+        block = [f"{pad}{plan['payload']}.setdefault("
+                 f'"scriptFile", _os.path.basename(__file__))',
+                 f"{pad}import os as _os  # noqa: E402 -- provenance stamp"]
+        block.reverse()
+        lines[idx:idx] = block
+        path.write_text("\n".join(lines))
+        return None
     block = [
         f"{pad}# Provenance stamp (bean qou-4un2): this producer writes its",
         f"{pad}# witness directly, so nothing else records which script made",
         f"{pad}# it -- and a re-run of an unstamped producer DELETES the",
         f"{pad}# scriptFile a downstream pass had added. {note}.",
+        f"{pad}import os as _os  # noqa: E402 -- provenance stamp",
         f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
+        # `stamp_staleness_metadata` does NOT write `scriptFile` -- it stamps
+        # scriptHash / scriptCommitSha / commitSha / engine / computedAt /
+        # durationMs (+ q0Anchor). So the field this bean is actually about has
+        # to be set here, or the migration adds staleness metadata and still
+        # leaves the witness unable to name its producer. Measured: the first
+        # pass shipped exactly that gap on 282 files.
+        #
+        # `setdefault`, not `=`: filling a MISSING attribution is this bean's
+        # goal, but overwriting an existing one would silently re-attribute a
+        # regenerator's output (e.g. `regenerate_y_lambda_orphans_conventionD`
+        # writes witnesses belonging to other producers) to the regenerator.
+        # A wrong-but-deliberate `scriptFile` is a separate defect and is not
+        # something a bulk pass should "fix" unverified.
+        f"{pad}{plan['payload']}.setdefault("
+        f'"scriptFile", _os.path.basename(__file__))',
         f"{pad}_WB.stamp_staleness_metadata(",
         f"{pad}    {plan['payload']}, script_path=__file__, q0_anchor={anchor})",
     ]
@@ -251,16 +392,42 @@ def apply_one(plan: dict) -> str | None:
     return None
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--dry-run", action="store_true", default=True)
-    ap.add_argument("--apply", action="store_true")
-    ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--only", default="", help="apply only to paths containing this")
-    ap.add_argument("--json", action="store_true")
-    args = ap.parse_args()
+def population_writer_first() -> dict[str, None]:
+    """Every `computations/**/*.py` that writes a witness without stamping it.
 
-    producers: dict[str, None] = {}
+    This asks the actual question and depends on no witness field, so a missing
+    or misattributed `scriptFile` cannot hide a producer from it. See the
+    module docstring for the three ways the witness-first construction fails.
+    """
+    out: dict[str, None] = {}
+    for p in sorted(COMP.rglob("*.py")):
+        if "_deprecated" in p.parts:
+            continue
+        raw = p.read_text(errors="ignore")
+        src = code_only(raw)
+        # A file already carrying THIS script's stamp but not its `scriptFile`
+        # line is a first-pass file needing the upgrade, so it stays in scope
+        # even though `WitnessBuilder` is present.
+        needs_upgrade = (STAMP_MARKER in src
+                         and SCRIPTFILE_MARKER not in src)
+        # The `.witness.json` literal must be in CODE, not a comment: it is what
+        # distinguishes a witness write from any other `json.dump` in the file.
+        if not needs_upgrade and ("WitnessBuilder" in src
+                                  or ".witness.json" not in src):
+            continue
+        try:
+            tree = ast.parse(raw)
+        except SyntaxError:
+            continue
+        if not needs_upgrade and find_write(tree) is None:
+            continue
+        out[str(p)] = None
+    return out
+
+
+def population_witness_first() -> dict[str, None]:
+    """The original construction, kept only for comparison. Undercounts ~48 %."""
+    out: dict[str, None] = {}
     for w in sorted(COMP.rglob("*.witness.json")):
         if "_deprecated" in w.parts:
             continue
@@ -275,7 +442,24 @@ def main() -> int:
             continue
         if "WitnessBuilder" in code_only(p.read_text(errors="ignore")):
             continue
-        producers[str(p)] = None
+        out[str(p)] = None
+    return out
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--dry-run", action="store_true", default=True)
+    ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--only", default="", help="apply only to paths containing this")
+    ap.add_argument("--json", action="store_true")
+    ap.add_argument("--scan", choices=("writer", "witness"), default="writer",
+                    help="how to build the population; 'witness' reproduces the "
+                         "first pass and undercounts (see module docstring)")
+    args = ap.parse_args()
+
+    producers = (population_witness_first() if args.scan == "witness"
+                 else population_writer_first())
 
     plans, skips = [], []
     for p in sorted(producers):
