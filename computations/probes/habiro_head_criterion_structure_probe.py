@@ -70,6 +70,52 @@ This is the real 2-adic content of the trace, and it is the OPPOSITE of the
 retracted "denominators are powers of two" finding in bean `qou-iph3`: the
 2-adic depth of the trace is what BLOCKS the criterion at p=2.
 
+## 6. ...but p = 2 does not need the criterion, and is closed
+
+The ceiling above is a statement about the CRITERION, not about the question.
+p = 2 is a single prime, and `(i;i)_4 = 0` truncates the sum after four terms
+whose coefficients `a_0 .. a_3` every atom already has on disk. So Frob_2 is a
+finite exact computation in Z[i], not something needing a divisibility test:
+
+    Frob_2 = P(i) / denom(i) = tr_M(q = -1)          (q = u^2, so u = i is q = -1)
+
+Measured, and closed-form on every (Z, N) with Z + N <= 5:
+
+    P(i) = P(-1) = A            -- the SAME integer runs both p=2 and odd p
+    Frob_2 = -2^(1 - 2M),  M = Z + N        -- never zero
+
+So non-vanishing at p = 2 holds for every atom, by evaluation.
+
+**Non-integrality is NOT what is special about p = 2.** `Frob_2` is not an
+algebraic integer (`v_(1-i)(Frob_2) = -2(2M - 1) < 0`), and it is tempting to
+call that the reason an integrality-flavoured criterion fails there. Measured
+across all 45 (atom, prime) cells, `Frob_p` is not an algebraic integer at ANY
+tested prime — non-integrality is generic, so it cannot distinguish p = 2 from
+anything else. Section 8 records the scan.
+
+What IS special at p = 2 is the length of the truncation. `(u;u)_m` vanishes
+at m = 2p, so p = 2 gives the criterion the FEWEST usable indices of any
+prime — three — and caps the divisor's valuation at 4. That single fact cuts
+both ways, and this is the real "two views": a short truncation starves the
+criterion and simultaneously makes direct evaluation trivial. p = 2 is the
+worst prime for the one and the best for the other.
+
+## 7. No poles, so "nonzero numerator" really means "nonzero Frobenius"
+
+Every non-vanishing claim above is about the NUMERATOR. `Frob_p = P/denom` is
+also undefined if the denominator vanishes at `ζ_{2p}` — a pole, which is a
+different failure from vanishing and would break the claim just as badly. It
+does not happen at any prime, for any atom: `deg Φ_{2p} = p - 1`, so once
+`p - 1 > deg(denom)` the cyclotomic cannot divide the denominator, and every
+prime below that bound is checked explicitly (9 to 23 primes per atom).
+
+## Scope of the resulting claim
+
+For the five on-disk atoms, `Frob_p != 0` at EVERY prime. The `A` closed form
+extends the `p != 3` half of that to every `(Z, N)` with `Z + N <= 6`; the
+`p = 3` closure at `j = 3` reads `a_2` and so is verified for the five atoms
+only.
+
 All arithmetic is exact (sympy integers and rationals). No float appears.
 
 Usage:
@@ -106,6 +152,7 @@ WITNESS_IN = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 WITNESS_OUT = HERE / "habiro-head-criterion-structure-probe.witness.json"
 
 MAX_MASS = 6            # (Z, N) grid for the closed-form test: Z + N <= 6
+PRIMES_SCAN = [2, 3, 5, 7, 11, 13, 17, 19, 23]   # matches the frobenius probe
 Q, U = sp.symbols("q u")
 
 
@@ -240,8 +287,9 @@ def main() -> int:
     for mass in range(1, MAX_MASS + 1):
         for Z in range(mass + 1):
             N = mass - Z
-            p_u, _, _ = to_u_polynomial(
+            p_u, sh, _ = to_u_polynomial(
                 ex._build_closed_form(Z, N, tau_p, tau_n, Q), Q, U)
+            assert sh == 0, f"nonzero shift {sh} at Z={Z} N={N}"
             A = sp.Integer(sp.expand(p_u).subs(U, -1))
             mixed = Z >= 1 and N >= 1
             closed = sp.Integer(2 ** (3 * Z + N) * (12 if mixed else 1))
@@ -299,6 +347,119 @@ def main() -> int:
             f"j={r['j']}: v(head)={r['v_head']!s:>2s} vs {r['v_pochhammer']}"
             f" {'FIRES' if r['fires'] else '  .  '}" for r in rows))
 
+    # ---- 6. p = 2 closes by direct evaluation -----------------------------
+    print("\n[6] p = 2 closes by DIRECT EVALUATION — no criterion needed")
+    print("    (i;i)_4 = 0 truncates after four terms, and every atom has")
+    print("    a_0..a_3 on disk, so Frob_2 = P(i)/denom(i) is exact and finite.")
+    phi4 = sp.Poly(sp.cyclotomic_poly(4, U), U)
+
+    def gauss(expr) -> tuple[int, int]:
+        pp = sp.Poly(sp.expand(expr), U) % phi4
+        c = [int(x) for x in pp.all_coeffs()]
+        c = [0] * (2 - len(c)) + c
+        return c[-1], c[-2]
+
+    two_out, n_bad2 = [], 0
+    print(f"    {'Z':>2s} {'N':>2s} {'A = P(-1)':>10s} {'P(i)':>10s} "
+          f"{'denom(i)':>12s} {'Frob_2':>10s} {'-2^(1-2M)':>10s} {'integral?':>9s}")
+    for mass in range(1, MAX_MASS + 1):
+        for Z in range(mass + 1):
+            N = mass - Z
+            P, shift, den = to_u_polynomial(
+                ex._build_closed_form(Z, N, tau_p, tau_n, Q), Q, U)
+            # tr_M(u^2) = P(u) / (u^shift * denom(u)). This section reads
+            # Frob_2 = P(i)/denom(i), which is only right when shift = 0 —
+            # otherwise the value is off by a factor i^shift. Measured 0 on
+            # every cell here, but assert rather than assume: a silent i^shift
+            # would look like a plausible wrong answer, not like an error.
+            assert shift == 0, f"nonzero shift {shift} at Z={Z} N={N}"
+            P, D = sp.expand(P), sp.expand(sp.sympify(den))
+            A = sp.Integer(P.subs(U, -1))
+            pa, pb = gauss(P)
+            da, db = gauss(D)
+            same_A = (pa == A and pb == 0)
+            if (da, db) == (0, 0):
+                raise AssertionError(f"denominator vanishes at u=i for Z={Z} N={N}")
+            nrm = da * da + db * db
+            fa = sp.Rational(pa * da + pb * db, nrm)
+            fb = sp.Rational(pb * da - pa * db, nrm)
+            target = -sp.Rational(1, 2 ** (2 * mass - 1))
+            closed = (fa == target and fb == 0)
+            nonzero = not (fa == 0 and fb == 0)
+            integral = (fa.q == 1 and fb.q == 1)
+            n_bad2 += (not (same_A and closed and nonzero))
+            two_out.append({
+                "Z": Z, "N": N, "A": int(A),
+                "P_at_i": [int(pa), int(pb)], "denom_at_i": [int(da), int(db)],
+                "frob_2": str(fa) if fb == 0 else f"{fa}+{fb}i",
+                "P_at_i_equals_A": bool(same_A),
+                "matches_minus_2_pow_1_minus_2M": bool(closed),
+                "is_nonzero": bool(nonzero),
+                "is_algebraic_integer": bool(integral),
+            })
+            if mass <= 3:
+                print(f"    {Z:>2d} {N:>2d} {str(A):>10s} {str(pa):>10s} "
+                      f"{str(da):>12s} {str(fa):>10s} {str(target):>10s} "
+                      f"{str(integral):>9s}")
+    ok = ok and (n_bad2 == 0)
+    n_int = sum(1 for t in two_out if t["is_algebraic_integer"])
+    print(f"    ... {len(two_out)} cells (Z+N <= {MAX_MASS}); mismatches {n_bad2}")
+    print(f"    Frob_2 != 0 on {sum(1 for t in two_out if t['is_nonzero'])}"
+          f"/{len(two_out)}  -> p=2 is CLOSED, by evaluation")
+    print(f"    Frob_2 is an algebraic integer on {n_int}/{len(two_out)}"
+          f"  -- but see [8]: that is GENERIC, not a p=2 trait")
+
+    # ---- 7. no poles: Frob_p is well defined at EVERY prime ---------------
+    print("\n[7] Can the denominator vanish at zeta_{2p} for ANY prime?")
+    print("    A pole would make Frob_p undefined, which is a different")
+    print("    failure from vanishing. deg Phi_{2p} = p-1, so once p-1 exceeds")
+    print("    deg(denom) it cannot divide; below that bound, check every prime.")
+    poles_out, n_poles = [], 0
+    for lab, rec in results.items():
+        D = sp.Poly(sp.expand(sp.sympify(rec["denom_in_u"])), U)
+        deg = D.degree()
+        primes = list(sp.primerange(2, deg + 2))
+        vanish = [int(pr) for pr in primes
+                  if (D % sp.Poly(sp.cyclotomic_poly(2 * pr, U), U)).is_zero]
+        n_poles += len(vanish)
+        poles_out.append({"atom_label": lab, "denom_degree": int(deg),
+                          "primes_checked": [int(x) for x in primes],
+                          "degree_bound": int(deg + 1),
+                          "primes_where_denom_vanishes": vanish})
+        print(f"    {lab[:14]:14s} deg={deg:>3d}  all {len(primes):>2d} primes "
+              f"p <= {deg + 1} checked, p > {deg + 1} impossible by degree "
+              f"-> {vanish if vanish else 'no pole'}")
+    ok = ok and (n_poles == 0)
+    print(f"    -> no pole at any prime, for any atom: Frob_p = num/denom is")
+    print(f"       well defined everywhere, so 'nonzero numerator' really does")
+    print(f"       give 'nonzero Frobenius value'.")
+
+    # ---- 8. integrality is generic, not a p=2 trait -----------------------
+    print("\n[8] Is Frob_p an algebraic integer at ANY prime?")
+    print("    Guards against reading p=2's non-integrality as the reason the")
+    print("    criterion fails there. If it fails everywhere, it explains nothing.")
+    integ_out, n_integral = [], 0
+    for lab, rec in results.items():
+        P = sp.expand(sp.sympify(rec["p_in_u"]))
+        D = sp.expand(sp.sympify(rec["denom_in_u"]))
+        marks = []
+        for pr in PRIMES_SCAN:
+            phi = sp.Poly(sp.cyclotomic_poly(2 * pr, U), U)
+            dd = sp.Poly(D, U) % phi
+            nn = sp.Poly(P, U) % phi
+            quot = (nn * sp.invert(dd, phi)) % phi
+            is_int = all(sp.Rational(c).q == 1 for c in quot.all_coeffs())
+            n_integral += is_int
+            marks.append({"prime": pr, "is_algebraic_integer": bool(is_int)})
+        integ_out.append({"atom_label": lab, "per_prime": marks})
+        print(f"    {lab[:14]:14s} " + " ".join(
+            f"p={m['prime']}:{'int' if m['is_algebraic_integer'] else '-'}"
+            for m in marks))
+    n_cells = len(results) * len(PRIMES_SCAN)
+    print(f"    -> algebraic integer on {n_integral}/{n_cells} cells."
+          + ("  Non-integrality is GENERIC: it is not what makes p=2 hard."
+             if n_integral == 0 else ""))
+
     out = {
         "computation": "habiro-head-criterion-structure-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -338,6 +499,9 @@ def main() -> int:
         "closed_form_grid": grid,
         "first_firing_j": jout,
         "p2_valuation_ceiling": ceil_out,
+        "p2_direct_evaluation": two_out,
+        "denominator_pole_scan": poles_out,
+        "integrality_scan": integ_out,
         "summary": {
             "A_equals_P_at_minus_1_on_all_atoms": all(
                 a["A_equals_P_at_minus_1"] for a in atoms_out),
@@ -348,11 +512,53 @@ def main() -> int:
             "factor_3_source": "flavor_split_leading(q) denominator (/3)",
             "only_odd_prime_dividing_A": 3,
             "p3_closes_at_j": 3,
-            "p2_closes": False,
-            "p2_reason": (
+            # NB: the head criterion failing at p=2 is NOT the question being
+            # open. Keep these two apart — an earlier reading of this probe
+            # conflated them and reported p=2 as an open item.
+            "p2_head_criterion_closes": False,
+            "p2_head_criterion_reason": (
                 "v_(1-i)((i;i)_j) is capped at 4 because (i;i)_4 = 0; four of "
                 "the five atoms have v(head) >= 4, so no j can catch them. "
                 "Only the neutron (v(head) = 2) fires."
+            ),
+            "p2_closed_by_direct_evaluation": True,
+            "p2_direct_evaluation_reason": (
+                "p=2 is a single prime and (i;i)_4 = 0 truncates the sum after "
+                "four terms, whose coefficients every atom has on disk, so "
+                "Frob_2 = P(i)/denom(i) is a finite exact computation in Z[i]. "
+                "Frob_2 = -2^(1-2M) with M = Z+N, verified on every (Z,N) with "
+                "Z+N <= 6 — never zero. P(i) = P(-1) = A, so one integer runs "
+                "both p=2 and the odd primes."
+            ),
+            "frob_2_closed_form": "-2^(1-2M),  M = Z + N",
+            "p2_cells_tested": len(two_out),
+            "p2_cells_nonzero": sum(1 for t in two_out if t["is_nonzero"]),
+            "p2_cells_algebraic_integer": n_int,
+            # RETRACTED framing: an earlier version of this probe said p=2 is
+            # "where integrality fails" and offered that as the reason the head
+            # criterion cannot decide it. Measured, Frob_p is not an algebraic
+            # integer at ANY tested prime, so non-integrality distinguishes
+            # nothing. What is special at p=2 is the SHORTEST truncation.
+            "frobenius_is_algebraic_integer_cells": n_integral,
+            "frobenius_is_algebraic_integer_cells_total": n_cells,
+            "non_integrality_is_generic": bool(n_integral == 0),
+            "p2_is_special_because": (
+                "(u;u)_m vanishes at m = 2p, so p=2 gives the criterion the "
+                "fewest usable indices of any prime (three) and caps the "
+                "divisor's valuation at 4. The same shortness makes direct "
+                "evaluation trivial there — worst prime for the criterion, "
+                "best for evaluation."
+            ),
+            "denominator_vanishes_at_any_prime": False,
+            "frobenius_nonzero_at_every_prime": True,
+            "frobenius_nonzero_scope": (
+                "The five on-disk atoms. Numerator: nonzero at every odd prime "
+                "(j=2 for p not dividing A, j=3 for p=3) and at p=2 by direct "
+                "evaluation. Denominator: never vanishes at any prime, checked "
+                "exhaustively below the degree bound p-1 > deg(denom) and "
+                "impossible above it. The A closed form extends the p != 3 "
+                "half to every (Z,N) with Z+N <= 6; the p=3 closure at j=3 "
+                "needs a_2 and is verified for the five atoms only."
             ),
             "all_checks_passed": bool(ok),
         },
