@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-25T22:25:49Z
+updated_at: 2026-08-28T15:01:59Z
 ---
 
 ## Context
@@ -315,3 +315,19 @@ Formalization-bookkeeping items 1-4: CLOSED and verified.
 Remaining: item 5 (def:octonion-algebra - author vs cite), items 6-7
 (research-gated), chapter-wide QA staleness (large drain, route via
 /integration-audit), and the complex-type extension above.
+
+
+
+## REVISED 2026-08-28 — items 1-4 CLOSED; siblings extended further
+Since my last pass: meson octet-singlet is now a real traceless/scalar
+decomposition (sibling), the decuplet warning is drained by the dimension formula,
+and the Sym²-gate scope is wired into the chapter prose. Formalization-bookkeeping
+items (1,2,3,4) done. REMAINING (research, not formalization bookkeeping):
+ - item 5 def:octonion-algebra — author the algebra (Mathlib has none) OR keep
+   literature citation; decision needed, not session-tractable as a proof.
+ - items 6,7 — Gell-Mann-Okubo (asserted not derived), spin-flavour-colour
+   selection rule. Open physics.
+ - chapter-wide QA-staleness refresh — large idle-backlog qa-drain, route to
+   /integration-audit.
+This bean is now essentially at its research frontier; no clean formalization
+increment remains.

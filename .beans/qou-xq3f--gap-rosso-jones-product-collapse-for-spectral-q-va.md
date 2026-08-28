@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-23T08:56:54Z
+updated_at: 2026-08-28T15:01:58Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -145,3 +145,32 @@ satisfy Σ y_λ d_λ = 1 + the M3 Markov peel; (b) M3 (Markov peel) as a theorem
 the concrete e_{(1³)}, τ, T_β braid elements + the numerator value. This is
 multi-session infra, not a single-session brick — the structural scaffolding (M1/M2
 shadows) is now in place for it.
+
+
+
+## ═══ REVISED WORKPLAN 2026-08-28 (post-keystone-closure) ═══
+
+PIVOT: my prior notes called the SYT-count f_λ sum 'the deep Mathlib gap' blocking
+the Markov-trace normalisation + Macdonald telescope. That gap is now CLOSED on
+main (sibling work: RSK_substrate_axiom de-axiomatised; RSKBijection n for every n;
+list-model dimension identity for every n; Identity-I chain closed). So what was
+'multi-session infra' is now WIRING.
+
+Landed (structural T2 bricks, all sorry-free, on main): collapse mechanism +
+inactive branches + numerator idempotent-sandwich + denominator closed form +
+weightedCharacterTrace M2 cyclicity + M1 identity (Σ y_λ d_λ). Also: schurElement
+prefactor corrected nLambda (NOT contentSum) by sibling 2026-08-26 — do not
+reintroduce contentSum there.
+
+REVISED TIERS (tractability order):
+ T-n1  Prove Wenzl/Macdonald normalisation Σ_λ f_λ·s_λ = ((1−X)/(1−Q))^n using the
+       now-available RSK/SYT-count machinery — de-abstract wenzlNormalisation
+       (currently defined as the closed form ((1−X)/(1−Q))^n, with the SYT sum
+       'abstracted'). This is the unblocking lemma.
+ T-n2  jonesMarkovCoeff normalisation Σ_λ y_λ·f_λ = 1 (M1 for the REAL y_λ) —
+       derives from T-n1; wires weightedCharacterTrace M1 shadow to concrete y_λ.
+ T-n3  M3 (Markov peel) as a theorem — check whether the sibling HnMarkovTrace /
+       tower work already supplies it before building.
+ T-n4  Numerator value tr_M(e_{(1³)}·τ·T_β) — concrete braid elements; last brick,
+       once M1/M2/M3 + y_λ values are in place.
+Starting T-n1 this session (user directive 2026-08-28).
