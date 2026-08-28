@@ -152,4 +152,42 @@ theorem prod_cells_ofRowLens {M : Type*} [CommMonoid M]
   intro i _
   rw [Finset.prod_product, Finset.prod_singleton]
 
+/-- Additive analog of `list_range_map_prod`: a left fold that accumulates
+`acc + f i` over `List.range n` is the `Finset.range n` sum. Used to identify
+`nLambda`'s fold with a Finset sum. -/
+theorem list_range_foldl_add {M : Type*} [AddCommMonoid M] (n : ℕ) (f : ℕ → M) :
+    (List.range n).foldl (fun acc i => acc + f i) 0 = ∑ i ∈ Finset.range n, f i := by
+  induction n with
+  | zero => simp
+  | succ k ih =>
+    rw [List.range_succ, List.foldl_append]
+    simp only [List.foldl_cons, List.foldl_nil]
+    rw [ih, Finset.sum_range_succ]
+
+/-- **`nPart` match (B4).** `nPart (ofRowLens lam hl) = nLambda lam`. Reindex
+`∑ x ∈ cells, x.1` by rows: each row `i` contributes `∑_{j} i = i·(row length)`,
+and the total is `nLambda`'s `∑ i · λᵢ`. -/
+theorem nPart_ofRowLens_eq_nLambda (lam : List ℕ) (hl : lam.Sorted (· ≥ ·)) :
+    QOU.QBeta.WenzlWeight.nPart (YoungDiagram.ofRowLens lam hl) = nLambda lam := by
+  unfold QOU.QBeta.WenzlWeight.nPart
+  rw [cells_ofRowLens_eq_biUnion]
+  have hdisj : (↑(Finset.range lam.length) : Set ℕ).PairwiseDisjoint
+      (fun i => ({i} ×ˢ Finset.range ((lam[i]?).getD 0)) : ℕ → Finset (ℕ × ℕ)) := by
+    intro i _ i' _ hii
+    simp only [Function.onFun, Finset.disjoint_left, Finset.mem_product,
+      Finset.mem_singleton]
+    rintro ⟨a, b⟩ ⟨rfl, -⟩ ⟨h2, -⟩
+    exact absurd h2 hii
+  rw [Finset.sum_biUnion hdisj]
+  have hinner : ∀ i ∈ Finset.range lam.length,
+      ∑ x ∈ ({i} ×ˢ Finset.range ((lam[i]?).getD 0)), x.1
+        = i * ((lam[i]?).getD 0) := by
+    intro i _
+    rw [Finset.sum_product, Finset.sum_singleton]
+    show ∑ _j ∈ Finset.range ((lam[i]?).getD 0), i = i * ((lam[i]?).getD 0)
+    rw [Finset.sum_const, Finset.card_range, smul_eq_mul, Nat.mul_comm]
+  rw [Finset.sum_congr rfl hinner]
+  unfold nLambda Partition.length
+  rw [list_range_foldl_add]
+
 end QOU.MathlibExt.WenzlSchurElementBridge
