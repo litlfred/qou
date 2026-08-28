@@ -1,11 +1,11 @@
 ---
 # qou-9w5z
 title: 'Habiro head criterion A = N(-1): why does the composite factor of 3 appear, and is the multiplier 12 structural?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-28T15:17:19Z
-updated_at: 2026-08-28T16:04:36Z
+updated_at: 2026-08-28T18:39:38Z
 ---
 
 ## ANSWERED — the 3 is not structural, and p=3 closes at j=3
@@ -224,3 +224,22 @@ p=2 the argument is zeta_2 = -1 and the value lands in Q, where the trace of
 -1/2 over Q(i)/Q is the integer -1. p=2 is the only prime whose value is
 rational at all. That is a third distinct sense in which p=2 is special, and
 it is unrelated to both the truncation length and to integrality.
+
+
+## CLOSED — PR #5884 merged to main as ef261ff5b6 (2026-08-28)
+
+The question this bean opened — is the composite factor of 3 structural? — is
+answered NO, with the mechanism identified and machine-checked: it is the
+literal /3 in delta = flavor_split_leading(q), reaching A through the single
+averaged_weighted interface that every mixed atom has and no pure one does.
+
+Landed: two probes (habiro_head_divisibility_probe,
+habiro_head_criterion_structure_probe), ten sorry-free Lean declarations in
+QOU/Habiro/CyclotomicEvaluation.lean, and three retractions recorded in place
+rather than dropped.
+
+Verification re-run in full after the rebase onto main, not carried over:
+lean-direct exit 0 with #print axioms clean on all ten; all three probes
+reproduce identically (empty witness diffs under volatile-key masking); the
+one remaining precision-gate RED is in docs/audits/, which the branch touches
+zero files of.

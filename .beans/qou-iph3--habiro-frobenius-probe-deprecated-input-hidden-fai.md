@@ -1,11 +1,11 @@
 ---
 # qou-iph3
 title: 'habiro-frobenius probe: deprecated input, hidden failing test, half-integer full trace'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-28T15:08:45Z
+updated_at: 2026-08-28T18:39:38Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -498,3 +498,25 @@ sorryAx on any of the three.
 The j=1 vacuity I predicted is confirmed as the reason the shipped
 _one form was unusable: Norm(1 - zeta_n) = Phi_n(1) = 1 unless n is a
 prime power, so 1 - zeta_{2p} is a unit at every odd prime.
+
+
+## CLOSED — PR #5884 merged to main as ef261ff5b6 (2026-08-28)
+
+All three defects resolved or retracted, plus the successor question answered:
+
+- defect 1 (deprecated input) — fixed, repointed to the convention-D symbolic-q
+  witness with the fallback removed deliberately;
+- defect 2 (hidden failing test) — fixed, the full-trace test now reaches the
+  top-level summary, where it reads 2/45 rather than the uniform false the
+  bean expected;
+- defect 3 (half-odd-integer full trace) — RETRACTED as a stale-data artifact,
+  along with my own earlier correction to it. On convention-D data 17 of 45
+  cells carry an odd part 3;
+- defect 4 (j=2 head divisibility) — answered, and then some: Frob_p != 0 at
+  EVERY prime for the five on-disk atoms. Odd primes via the closed form
+  A(Z,N) = 2^(3Z+N) * 12^[mixed] (j=2 for p not dividing A, j=3 for p=3);
+  p=2 by direct exact evaluation in Z[i], where Frob_2 = -2^(1-2M) is never
+  zero.
+
+Successor bean qou-9w5z carries the structural follow-up (where the factor of
+3 comes from, why p=2 resists the criterion, and three further retractions).
