@@ -36,8 +36,19 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE.parent))
 
+import _path_bridge  # noqa: F401, E402  -- substrate modules live in substrate/
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _Y_LAMBDA_BY_ANCHOR, _load_y_lambda  # noqa: E402
+
+# Raise the working precision BEFORE any module-scope `mpf` is built.
+# `mp.mpf("1e-30")` below is string-sourced, which is necessary but not
+# sufficient: at mpmath's default dps of 15 the constant is still rounded
+# to ~53 bits (measured: 8.3e-17 relative against the same literal at 65
+# dps). Neither this gate's verdicts nor its 40-orders-of-headroom framing
+# turn on that, but the import-time-dps ratchet is a ratchet and this file
+# was the one entry taking it red.
+set_compute_dps()
 
 #: Convention D forces the ratio to ~1e-70 (pure solver residue against an
 #: exact zero). The June table that motivated this gate scored 2.26. Anything
