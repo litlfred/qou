@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-all-primes-probe",
-  "computedAt": "2026-08-28T19:33:02.589844+00:00",
+  "computedAt": "2026-08-28T19:45:03.453771+00:00",
   "description": "Closes the two scope limits of the head-criterion probes. (1) The criterion is equivalent to a divisibility of P itself — (z;z)_j | head_j iff (z;z)_j | P(zeta), verified on 158 cells — so it never needed the Habiro coefficients, and it is strictly weaker than asking P(zeta) != 0. (2) Therefore decide directly: P(zeta_2p) = 0 iff Phi_2p | P, and deg Phi_2p = p-1 makes that impossible once p-1 > deg P, so finitely many primes settle EVERY prime — no criterion, no a_2, no truncation-depth caveat, and it reaches atoms with no Habiro data on disk. The same argument on denom rules out a pole. (3) The A closed form is derived rather than merely verified: A = n_p(-1)^Z n_n(-1)^N PROD n_k(-1) / G(-1) with n_p(-1)=8, n_n(-1)=2 and per-kind 1/1/2/12, and exactly one averaged_weighted per mixed atom — leaving G(-1) = 1 as the single unproved step. (4) Because `averaged` contributes 2 and not 12, the factor of 3 is a fingerprint of the canonical bring_color_weighted convention, not of the trace. All arithmetic exact; no float.",
   "reference_lean": [
     "qou:QOU.Habiro.habiroEval_sub_head",
@@ -2193,6 +2193,50 @@
       "1"
     ],
     "frobenius_nonzero_at_every_prime": true,
+    "uniform_closure": {
+      "argument": "P = NUM/G with G a monomial; NUM is a product of powers of six fixed polynomials independent of (Z,N); Phi_2p is irreducible over Q with Phi_2p(0) != 0 so it cannot divide u^k; Q[u] is a UFD. Hence Phi_2p | P iff Phi_2p divides one of the six — a finite check, bounded by their largest degree, that settles EVERY (Z,N) at EVERY prime.",
+      "six_factors": {
+        "tau_p": {
+          "degree": 44,
+          "degree_bound": 45,
+          "n_primes_checked": 14,
+          "primes_dividing": []
+        },
+        "tau_n": {
+          "degree": 36,
+          "degree_bound": 37,
+          "n_primes_checked": 12,
+          "primes_dividing": []
+        },
+        "positive": {
+          "degree": 6,
+          "degree_bound": 7,
+          "n_primes_checked": 4,
+          "primes_dividing": []
+        },
+        "negative": {
+          "degree": 0,
+          "degree_bound": 1,
+          "n_primes_checked": 0,
+          "primes_dividing": []
+        },
+        "averaged": {
+          "degree": 8,
+          "degree_bound": 9,
+          "n_primes_checked": 4,
+          "primes_dividing": []
+        },
+        "averaged_weighted": {
+          "degree": 20,
+          "degree_bound": 21,
+          "n_primes_checked": 8,
+          "primes_dividing": []
+        }
+      },
+      "any_cyclotomic_divides_any_factor": [],
+      "largest_factor_degree": 44,
+      "mass_bound_needed": false
+    },
     "G_at_minus_one_proof": {
       "A_denominators_are_const_u_i_phi8_j": {
         "tau_p": "4*u**18*(u**4 + 1)**2",
@@ -2225,9 +2269,9 @@
     "factor_3_is_convention_specific": true,
     "all_checks_passed": true
   },
-  "scriptHash": "739c7cecd784",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6d638f72a854397028d0f6a34c6175660c31cc05",
+  "scriptHash": "e6e0c2d8ec47",
+  "scriptCommitSha": "f138b46f677b67fbdb8a43ea77088cade6df0e69",
+  "commitSha": "f138b46f677b67fbdb8a43ea77088cade6df0e69",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

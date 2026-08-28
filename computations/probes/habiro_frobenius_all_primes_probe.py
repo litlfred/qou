@@ -87,6 +87,30 @@ atom, and the `j = 2` criterion would fire at every odd prime with no
 exception. The 3 is a fingerprint of `bring_color_weighted` (owner ruling R3,
 2026-08-15) reaching `A` through `delta`'s denominator — not of the trace.
 
+## 5. Uniform in (Z, N): the whole question is six fixed polynomials
+
+The grid above settles each `(Z, N)` it visits, but leaves "no `Phi_2p` ever
+divides `P`, at any mass" as a verified rather than proved statement. That gap
+closes, and closes completely:
+
+  - `P = NUM / G` with `G` a monomial `u^k` (section 5 below);
+  - `NUM = n_p^Z * n_n^N * PROD_k n_k` — powers of SIX FIXED polynomials,
+    independent of `(Z, N)`;
+  - `Phi_2p` is **irreducible** over `Q` and `Phi_2p(0) != 0`, so it cannot
+    divide `u^k`;
+  - `Q[u]` is a UFD, so `Phi_2p | NUM` iff `Phi_2p` divides one of the six.
+
+So one finite check on six fixed polynomials settles EVERY atom at EVERY
+prime. None of the six is divisible by any `Phi_2p` — and the check is finite
+because the largest of the six has degree 44, so `p > 45` is impossible by
+degree. Hence
+
+    Frob_p != 0  for every (Z, N), at every prime,  with no mass bound.
+
+**The 65-cell grid was overkill.** It is kept as corroboration and because it
+also exercises the closed form, but the evidence for uniform non-vanishing is
+the six-polynomial check, not the sweep.
+
 All arithmetic is exact (sympy integers and rationals). No float appears.
 
 Usage:
@@ -307,6 +331,34 @@ def main() -> int:
     print("    form is PROVED, not merely verified.")
     ok = ok and all(coprime.values()) and all(even_only.values())
 
+    # ---- 6. uniform in (Z,N): six fixed polynomials decide everything ------
+    print("\n[6] Uniform closure — no mass bound")
+    print("    P = NUM/G, G a monomial; NUM is a product of powers of SIX fixed")
+    print("    polynomials; Phi_2p is irreducible with Phi_2p(0) != 0, so")
+    print("    Phi_2p | P  iff  Phi_2p divides one of the six.")
+    factors = {"tau_p": tau_p, "tau_n": tau_n, **KIND_EXPR}
+    six, worst, hits = {}, 0, []
+    print(f"    {'factor':20s} {'deg':>4s} {'p<=':>5s} {'#primes':>7s}  Phi_2p | it?")
+    for name, expr in factors.items():
+        e = sp.together(sp.cancel(sp.expand(sp.simplify(expr).subs(Q, U ** 2))))
+        n_, _ = sp.fraction(e)
+        poly = sp.Poly(sp.expand(n_), U)
+        deg = poly.degree()
+        worst = max(worst, deg)
+        primes = [int(x) for x in sp.primerange(2, deg + 2)]
+        bad = [pr for pr in primes if cyclotomic_divides_poly(poly, pr)]
+        hits += [(name, pr) for pr in bad]
+        six[name] = {"degree": deg, "degree_bound": deg + 1,
+                     "n_primes_checked": len(primes),
+                     "primes_dividing": bad}
+        print(f"    {name:20s} {deg:>4d} {deg + 1:>5d} {len(primes):>7d}  "
+              f"{bad if bad else 'none'}")
+    ok = ok and not hits
+    print(f"    largest degree {worst} => p > {worst + 1} impossible by degree")
+    print("    => Phi_2p NEVER divides P, for ANY (Z,N), at ANY prime.")
+    print("       Uniform, proved, no mass bound. The grid above is")
+    print("       corroboration, not the evidence.")
+
     out = {
         "computation": "habiro-frobenius-all-primes-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -352,6 +404,20 @@ def main() -> int:
             "closed_form_mismatches": n_cf_bad,
             "distinct_G_at_minus_one": sorted(str(g) for g in g_values),
             "frobenius_nonzero_at_every_prime": bool(n_zero == 0),
+            "uniform_closure": {
+                "argument": (
+                    "P = NUM/G with G a monomial; NUM is a product of powers of "
+                    "six fixed polynomials independent of (Z,N); Phi_2p is "
+                    "irreducible over Q with Phi_2p(0) != 0 so it cannot divide "
+                    "u^k; Q[u] is a UFD. Hence Phi_2p | P iff Phi_2p divides one "
+                    "of the six — a finite check, bounded by their largest "
+                    "degree, that settles EVERY (Z,N) at EVERY prime."
+                ),
+                "six_factors": six,
+                "any_cyclotomic_divides_any_factor": hits,
+                "largest_factor_degree": worst,
+                "mass_bound_needed": False,
+            },
             "G_at_minus_one_proof": {
                 "A_denominators_are_const_u_i_phi8_j": denom_shapes,
                 "B_numerators_coprime_to_u4_plus_1": coprime,
