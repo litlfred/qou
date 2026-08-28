@@ -70,6 +70,8 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from _source_normalise import code_only  # noqa: E402  (shared, PR #5818)
 
 # A q₀ read, in CODE. Each alternative is a way the corpus actually reaches q₀.
 # A q₀ read, in CODE, after two false-positive classes were measured and closed:
@@ -227,6 +229,151 @@ class Cone:
         return "clean", [entry]
 
 
+# ---------------------------------------------------------------------------
+# IS THE ENV-FLIP EXPERIMENT EVEN VALID HERE?  (bean `qou-324i`)
+#
+# Most `independent` dispositions in this corpus are justified by one sentence,
+# copy-pasted across five witnesses verbatim:
+#
+#     "PROVED by running this producer under QOU_Q0_ANCHOR=muon and =proton and
+#      diffing the emitted witness: ... every substantive field is byte-identical"
+#
+# `QOU_Q0_ANCHOR` is read by `q_parameter` at import. It therefore reaches a q0
+# ONLY when the q0 arrives through `q_parameter` / `qou_substrate.constants`.
+# When it does not, byte-identity under the flip is guaranteed a priori and the
+# experiment measures OVERRIDE-SENSITIVITY, not q0-independence -- so a producer
+# can be hard-pinned to the muon layer and still "pass".
+#
+# Measured on this tree (2026-08-28): `probes/lambda_scale_substrate_probe.py`
+# reads `q-pinning-50-digit.witness.json` directly -- the muon anchor-defining
+# witness -- and the flip reports `clean`. That is the false negative, live.
+#
+# Three ways the override is defeated. Each is reported by NAME, because the
+# correct repair differs: a literal is edited, a pin-witness read is rerouted
+# through `q_parameter`, a peer import is chased to its provider.
+FLIP_BLIND_LITERAL = "literal"
+FLIP_BLIND_PIN_WITNESS = "pin-witness"
+FLIP_BLIND_PEER_IMPORT = "peer-import"
+
+# A q0-shaped decimal. Both basins: an `independent` claim is defeated by a
+# hardcoded PROTON pin exactly as much as by a muon one -- the label says the
+# producer reads no substrate value, and a literal is one.
+_Q0_SHAPED = re.compile(r"\b1\.1099785\d{3,}")
+_PIN_WITNESS = re.compile(r"q-pinning-50-digit")
+
+# `sp.symbols('q')` is NOT a q0. This guard is not decoration: without it the
+# peer-import scan indicts `probes/chi_content_eigenbasis_probe.py` and
+# `probes/eigenbasis_structural_lemmas_probe.py`, which import `Q` from
+# `hoefsmit_symbolic` -- where line 57 reads `Q = sp.symbols('q', positive=True)`.
+# Both are correctly `independent`; a name-shaped detector calls them defects.
+# The known TRUE positive is `chirality_topology_binding_probe`'s
+# `from hecke_channel_binding_probe import Q0`, where `Q0 = Q_MP` is numeric
+# (fixed on main in 0c772454cf); `--selftest` pins both directions.
+_SYMBOLIC_RHS = re.compile(r"\b(symbols|Symbol|Dummy|Wild)\s*\(")
+
+_PEER_Q0_NAMES = set(Q0_SYMBOLS) | {"Q0", "q0", "Q0_MP", "Q0_PROTON", "Q0_MUON",
+                                    "q0_mp", "Q_PIN", "Q0_PIN"}
+
+
+def _module_level_binding(cone: "Cone", stem: str, name: str) -> str | None:
+    """The unparsed RHS of a module-level `name = ...` in module `stem`."""
+    for rel in cone.by_stem.get(stem, []):
+        try:
+            tree = ast.parse((ROOT / rel).read_text(encoding="utf-8",
+                                                    errors="replace"))
+        except Exception:                # noqa: BLE001
+            continue
+        for node in tree.body:           # module level only, deliberately
+            if isinstance(node, ast.Assign) and len(node.targets) == 1 \
+                    and isinstance(node.targets[0], ast.Name) \
+                    and node.targets[0].id == name:
+                return ast.unparse(node.value)
+    return None
+
+
+def flip_validity(producer: str, cone: "Cone") -> tuple[bool, list[str]]:
+    """(the flip can see this producer's q0, reasons it cannot).
+
+    A TRUE means only that the override reaches SOME q0 path here -- it is not
+    a verdict that the producer is q0-dependent. A FALSE is the load-bearing
+    direction: it says a byte-identical flip result is not evidence of anything.
+    """
+    try:
+        raw = (ROOT / producer).read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return True, []
+    try:
+        code = code_only(raw)            # comments + docstrings blanked IN PLACE
+    except Exception:                    # noqa: BLE001 - unparseable: no claim
+        code = raw
+
+    blind: list[str] = []
+    lits = sorted(set(_Q0_SHAPED.findall(code)))
+    if lits:
+        blind.append(f"{FLIP_BLIND_LITERAL}: {', '.join(lits[:3])}")
+    if _PIN_WITNESS.search(code):
+        blind.append(f"{FLIP_BLIND_PIN_WITNESS}: reads q-pinning-50-digit.witness.json")
+
+    # Peer import: a q0-bearing name bound from another PRODUCER module. This is
+    # the inheritance path `qou-1c4y` records as unaudited -- `inherited_q0_pin_
+    # audit` follows witness FILES, not python imports, and the pin classifier
+    # stops at a provider-terminal rule before it reaches the real source.
+    try:
+        tree = ast.parse(raw)
+    except SyntaxError:
+        return (not blind), blind
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.ImportFrom) or not node.module:
+            continue
+        stem = node.module.split(".")[-1]
+        if stem in Q0_PROVIDER_MODULES or stem not in cone.by_stem:
+            continue
+        for alias in node.names:
+            if alias.name not in _PEER_Q0_NAMES:
+                continue
+            rhs = _module_level_binding(cone, stem, alias.name)
+            if rhs is not None and _SYMBOLIC_RHS.search(rhs):
+                continue                 # a sympy symbol is not a q0
+            blind.append(
+                f"{FLIP_BLIND_PEER_IMPORT}: {alias.name} from {node.module}"
+                + (f" (= {rhs})" if rhs else ""))
+    return (not blind), blind
+
+
+CITES_FLIP = re.compile(
+    r"QOU_Q0_ANCHOR\s*=\s*(muon|proton|ideal|physical)", re.I)
+
+
+def _selftest_flip_validity(cone: "Cone") -> int:
+    """Both directions of the sympy guard, pinned against real files.
+
+    A narrowing that loses either one is the failure this file exists to make
+    loud: over-reporting turns two correct dispositions into fake defects,
+    under-reporting hands a hard muon pin a clean bill.
+    """
+    rc = 0
+    ok, why = flip_validity("computations/probes/chi_content_eigenbasis_probe.py", cone)
+    print(f"  chi_content_eigenbasis_probe  flip_visible={ok} blind={why}")
+    if not ok:
+        print("  SELFTEST FAILED - a sympy `Q` was read as a q0 (false positive).")
+        rc = 1
+    ok, why = flip_validity("computations/probes/lambda_scale_substrate_probe.py", cone)
+    print(f"  lambda_scale_substrate_probe  flip_visible={ok} blind={why}")
+    if ok or not any(FLIP_BLIND_PIN_WITNESS in w for w in why):
+        print("  SELFTEST FAILED - the direct pin-witness read was not detected.")
+        rc = 1
+    ok, why = flip_validity(
+        "computations/probes/chirality_topology_binding_probe.py", cone)
+    print(f"  chirality_topology_binding_probe  flip_visible={ok} blind={why}")
+    if ok or not any(FLIP_BLIND_PEER_IMPORT in w for w in why):
+        print("  SELFTEST FAILED - the known peer-import positive "
+              "(`Q0 = Q_MP` via hecke_channel_binding_probe) was not detected.")
+        rc = 1
+    if rc == 0:
+        print("  selftest OK")
+    return rc
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--verify", action="store_true",
@@ -234,6 +381,12 @@ def main() -> int:
                          "cone reads q0")
     ap.add_argument("--propose", action="store_true",
                     help="list producers whose fully-resolved cone reads no q0")
+    ap.add_argument("--flip-validity", action="store_true",
+                    help="for every `independent` witness, report whether the "
+                         "QOU_Q0_ANCHOR flip experiment can see its q0 at all "
+                         "(bean qou-324i)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="pin both directions of the peer-import sympy guard")
     args = ap.parse_args()
 
     tracked = _tracked()
@@ -242,12 +395,16 @@ def main() -> int:
     pys = [f for f in tracked if f.endswith(".py")]
     cone = Cone(pys)
 
+    if args.selftest:
+        return _selftest_flip_validity(cone)
+
     violations: list[tuple[str, str, list[str]]] = []
     declared_ok = 0
     auditor_exempt = 0
     verdicts: collections.Counter = collections.Counter()
     candidates: list[str] = []
     unknowns: list[tuple[str, list[str]]] = []
+    flip_blind: list[tuple[str, str, list[str], bool]] = []
 
     for w in wits:
         try:
@@ -266,6 +423,15 @@ def main() -> int:
         verdicts[state] += 1
 
         if d.get("q0Anchor") == "independent":
+            reason = d.get("q0AnchorReason") or ""
+            visible, blind = flip_validity(producer, cone)
+            # An AUDITOR holds q0 literals as the DATA IT AUDITS, so the
+            # override not reaching them is correct rather than a blind spot.
+            # Same declared carve-out the VIOLATION path uses; measured cost of
+            # omitting it here was 2 of 4 rows being audit tools.
+            if not visible and not AUDITOR_MARKER.search(cone.code(producer) or ""):
+                flip_blind.append((w, producer, blind,
+                                   bool(CITES_FLIP.search(reason))))
             if state == "reads":
                 src = cone.code(producer) or ""
                 if AUDITOR_MARKER.search(src):
@@ -290,6 +456,25 @@ def main() -> int:
     print(f"  declared independent, VIOLATED: {len(violations)}")
     print(f"  candidates (clean, undeclared): {len(sorted(set(candidates)))} producers")
     print(f"  UNKNOWN cones (not candidates): {len(set(p for p, _ in unknowns))} producers")
+
+    cited = [r for r in flip_blind if r[3]]
+    print(f"  flip experiment CANNOT see q0 : {len(flip_blind)}"
+          f"  (of which {len(cited)} cite that experiment as their proof)")
+
+    if args.flip_validity:
+        print("\nFLIP-BLIND — `independent` producers the QOU_Q0_ANCHOR override")
+        print("  does not reach. A byte-identical flip here is guaranteed a")
+        print("  priori and is NOT evidence of q0-independence (bean qou-324i).")
+        for w, prod, blind, does_cite in flip_blind:
+            print(f"  {w}")
+            print(f"      producer {prod}")
+            for b in blind:
+                print(f"      blind    {b}")
+            if does_cite:
+                print("      🛑 its own q0AnchorReason cites the flip experiment "
+                      "as proof — the proof does not apply")
+        if not flip_blind:
+            print("  (none)")
 
     if violations:
         print("\nVIOLATIONS — declares q0-independence, but the cone reads q0:")

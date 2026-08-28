@@ -1,11 +1,11 @@
 ---
 # qou-324i
 title: The `independent` q0 disposition tests override-sensitivity, not q0-independence — 7 false positives
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-08-23T08:32:24Z
+updated_at: 2026-08-28T15:19:37Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
