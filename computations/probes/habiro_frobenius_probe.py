@@ -2,8 +2,9 @@
 """Frobenius eigenvalues from Habiro symbolic data — R6 step 1 + 2.
 
 For each atom with a Habiro cyclotomic expansion on disk
-(`habiro-coefficients-atomic-fast.witness.json`, which now covers
-A ∈ {1, 2, 3} after PR #506 fast-path landed), evaluate the
+(`habiro-coefficients-atomic.witness.json`, the symbolic-q
+aggregate carrying the convention-D regeneration; covers
+A ∈ {1, 2, 3}), evaluate the
 truncated Habiro element at u = ζ_{2p} (here u is the spinor
 rate \check{q} substituted to a root of unity; Habiro-literature
 name "u" kept as the local Python symbol) for primes
