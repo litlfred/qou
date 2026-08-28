@@ -37,8 +37,9 @@ on:
   workflow_dispatch:
 
 # Job-level permissions per PR #1104 review (Copilot, least-privilege).
-# PR runs build the image without pushing, so they don't need
-# `packages: write`; only main / schedule / workflow_dispatch do.
+# The workflow-level default stays `contents: read`; the build job adds
+# `packages: write` because the only live trigger (workflow_dispatch)
+# always pushes the image.
 permissions:
   contents: read
 
@@ -52,9 +53,17 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      # packages: write only when we'll actually push. PR runs stay at
-      # the default (no packages permission).
-      packages: ${{ github.event_name != 'pull_request' && 'write' || 'read' }}
+      # `permissions:` is evaluated before any context is available, so it
+      # accepts only the literals read / write / none — an expression here
+      # is an "Unrecognized named-value: 'github'" parse error that makes
+      # the whole workflow file invalid. This was
+      #   packages: ${{ github.event_name != 'pull_request' && 'write' || 'read' }}
+      # which is also moot now: `workflow_dispatch` is the only trigger, so
+      # the run always pushes and always needs `packages: write`. If the
+      # push / schedule triggers are ever re-enabled alongside pull_request,
+      # gate the push at the *step* level (the `if:` and `push:` conditions
+      # below already do), not here.
+      packages: write
     steps:
       - uses: actions/checkout@v4
 
