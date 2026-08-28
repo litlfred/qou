@@ -102,3 +102,47 @@ choice is real (they are different objects), and that the derived one is the
 one making a falsifiable, currently-failing claim. Deciding it needs an owner
 or a structural argument for one prefactor over the other — `45·[3]_q` vs
 `q·[9]_q·[10]_q` — which nothing in the corpus currently supplies.
+
+
+## 2026-08-28 (later) — the `8` IS structural, and I withdraw "nothing in the corpus argues"
+
+I closed the previous entry with *"nothing in the corpus argues for `45·[3]_q`
+over `q·[9]_q·[10]_q`."* I had not run all six grep paths. Running them:
+
+**`8 = Vol(𝓑₃)/G`, exactly.** The Borromean rings `L6a4` — this framework's
+**nucleon** knot — have `Vol = 2·V_oct = 8G` with `V_oct = 4G`, G Catalan.
+Machine-checked to 30 digits; residual exactly 0. Already live and
+load-bearing: the nucleon row of `fundamental-knots-operator-basis`, and the
+binding scale `α = m_e·8G` in `binding-knots-visual-inventory`. And stated as
+the κ reading outright in
+`computations/_deprecated/alpha_em_q9_q10_derivation.py`: **`κ = 8q =
+q · Vol(𝓑₃)/G`**.
+
+**The live `.lean` carried the weaker of two available readings** — `dim su(3)
+= gluon octet`, which it correctly called post-hoc — while the corpus held an
+exact one it did not cite. Docstring corrected this tranche, caveats kept.
+
+**This revises my own §7 framing.** *"The q does the work, not the 8"* is wrong
+under the corpus reading: `q·Vol(𝓑₃)/G` is **one object**, so the `q` is part
+of the claimed structure. Bare `κ = 8` missing at −220 ppb is *consistent with*
+that, not damaging to it. The measurement is unchanged.
+
+**A chronology also exists, and I missed it.** The same deprecated file shows
+`45·[3]_q` **replaced** `q·[9]_q·[10]_q` — *"REFINED FORMULA (replaces the
+troublesome 1.6 mystery constant)"*, the older form's correction needing a
+`1.6` that PSLQ could not identify. So **production compute uses the superseded
+prefactor**, now with a Gram κ instead of the 1.6 — a later, different
+development.
+
+## Still open, and now sharper
+
+1. **The combination.** The identity fixes the `8`; it does not fix the power
+   of `q` multiplying it. `Vol/G` and `q²·Vol/G` are not excluded.
+2. **The cross-sector step — the load-bearing gap.** Why should a **nucleon**
+   knot's volume set a coefficient in an **electromagnetic** coupling? Nothing
+   found addresses this.
+3. **Genericity unmoved.** κ ∈ [8.474, 9.265] still admits the integer 9
+   (33 ppb): `8q` is in range, not forced.
+4. **Does the revival supersede the supersession?** `q·[9]_q·[10]_q` was
+   retired for needing an unidentifiable constant, then revived with a derived
+   Gram κ. Whether that reinstates it is the canonical question, still open.
