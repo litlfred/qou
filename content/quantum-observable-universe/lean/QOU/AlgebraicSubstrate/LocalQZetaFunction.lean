@@ -45,8 +45,22 @@ def bringsGenus : ℕ := 4
     LaTeX: `\label{def:local-q-zeta-function}`
     Ref: [manuscript] Chapter 8, Section 4 -/
 structure LocalQZetaFunction where
-  /-- The substrate parameter `q`. -/
-  q : R_q
+  /-- The cardinality of the base field, as a real number.
+
+      **Corrected 2026-08-28 (bean `qou-lsib`).** This field was `q : R_q`,
+      i.e. a formal Laurent polynomial over `ℤ`. That contradicted both its own
+      narrative and every other field of this structure. The `.md` defines the
+      object as the classical Weil zeta function of Bring's curve over a finite
+      field — it counts `|ℬ(𝔽_{q^n})|`, its polynomial is the characteristic
+      polynomial of `Fr_q`, and the Hasse-Weil bound it exists to state is
+      `|αᵢ| = √q` — while `eigenvalues` and `charPoly` were already `ℂ`-valued.
+      A field size is not a formal parameter, and `√q`, `q^ρ` and `|α|² ≤ q` are
+      not statements about `ℤ[q, q⁻¹]`: `R_q` carries no order and no norm, so
+      the two downstream results were not merely unproved but unstatable.
+
+      This is the archimedean side of the wall (§7c): the ordering and `rpow`
+      the consumers need are exactly the constructs that require `ℝ`. -/
+  q : ℝ
   /-- The 8 fundamental Frobenius eigenvalues `α₁, …, α₈`. -/
   eigenvalues : Fin 8 → ℂ
   /-- The *reversed* characteristic polynomial `P̃(X) = ∏ᵢ (X − αᵢ)`.
