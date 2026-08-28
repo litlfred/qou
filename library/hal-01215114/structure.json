@@ -1,0 +1,361 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "hal-01215114",
+ "source": {
+  "file": "hal-01215114.pdf",
+  "sha256": "c70f8b04a5542a1f7ca757bcc435276bab7992822a8fad87de813dd54d1739a1",
+  "bytes": 344011,
+  "pages": 12,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "FPSAC 2011, Reykjav\u00edk, Iceland DMTCS proc. AO, 2011, 317\u2013328 Dual combinatorics of zonal polynomials",
+  "authors_raw": "Valentin F\u00e9ray1 and Piotr \u015aniady2,3",
+  "title_lines": [
+   "FPSAC 2011, Reykjav\u00edk, Iceland DMTCS proc. AO, 2011, 317\u2013328",
+   "Dual combinatorics of zonal polynomials"
+  ],
+  "abstract": "In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are de\ufb01ned as suitably normalized coef\ufb01cients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. R\u00e9sum\u00e9. Dans cet article, nous \u00e9tablissons une nouvelle formule combinatoire pour les polyn\u00f4mes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l\u2019involution changeant les signes. Nous en d\u00e9duisons des formules pour les caract\u00e8res zonaux, qui sont d\u00e9\ufb01nis comme les coef\ufb01cients des polyn\u00f4mes zonaux \u00e9crits sur la base des fonctions puissance, normalis\u00e9s de mani\u00e8re appropri\u00e9e. Ces formules sont des analogues de d\u00e9veloppements r\u00e9cents sur les caract\u00e8res du groupe sym\u00e9trique. L\u2019existence de telles formules aurait pu \u00eatre pr\u00e9dite \u00e0 partir des travaux de M. Lassalle, qui a propos\u00e9 deux conjectures de positivit\u00e9 sur les caract\u00e8res de Jack, que nous prouvons dans le cas particulier des polyn\u00f4mes zonaux.",
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "CreationDate": "D:20110611110800+02'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Notations",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Symmetric functions",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Jack symmetric functions and zonal polynomials",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Pair partitions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The main result",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Zonal polynomials in terms of pair-partition",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Application",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Combinatorial interpretation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Links between pair-partitions and zonal characters",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 3",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Combinatorial lemmas",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Triangularity",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Orthogonality",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Normalization",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Combinatorial formulas for zonal characters",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Via numbers of embeddings",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "In terms of Stanley's coordinates",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "In terms of free cumulants",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 698,
+   "n_words": 110
+  },
+  {
+   "id": "sec-001-symmetric-functions",
+   "number": null,
+   "title": "Symmetric functions",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1827,
+   "n_words": 294
+  },
+  {
+   "id": "sec-002-notations",
+   "number": null,
+   "title": "Notations",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1440,
+   "n_words": 247
+  },
+  {
+   "id": "sec-003-jack-symmetric-functions-and-zonal-polynomials",
+   "number": null,
+   "title": "Jack symmetric functions and zonal polynomials",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1886,
+   "n_words": 307
+  },
+  {
+   "id": "sec-004-pair-partitions",
+   "number": null,
+   "title": "Pair partitions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1738,
+   "n_words": 314
+  },
+  {
+   "id": "sec-005-the-main-result",
+   "number": null,
+   "title": "The main result",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-zonal-polynomials-in-terms-of-pair-partition",
+   "number": null,
+   "title": "Zonal polynomials in terms of pair-partition",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2141,
+   "n_words": 397
+  },
+  {
+   "id": "sec-007-application",
+   "number": null,
+   "title": "Application",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 984,
+   "n_words": 156
+  },
+  {
+   "id": "sec-008-combinatorial-interpretation",
+   "number": null,
+   "title": "Combinatorial interpretation",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 574,
+   "n_words": 93
+  },
+  {
+   "id": "sec-009-links-between-pair-partitions-and-zonal-characte",
+   "number": null,
+   "title": "Links between pair-partitions and zonal characters",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 485,
+   "n_words": 75
+  },
+  {
+   "id": "sec-010-proof-of-theorem-3",
+   "number": null,
+   "title": "Proof of Theorem 3",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 321,
+   "n_words": 67
+  },
+  {
+   "id": "sec-011-combinatorial-lemmas",
+   "number": null,
+   "title": "Combinatorial lemmas",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5478,
+   "n_words": 1038
+  },
+  {
+   "id": "sec-012-orthogonality",
+   "number": null,
+   "title": "Orthogonality",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2423,
+   "n_words": 395
+  },
+  {
+   "id": "sec-013-normalization",
+   "number": null,
+   "title": "Normalization",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 393,
+   "n_words": 80
+  },
+  {
+   "id": "sec-014-combinatorial-formulas-for-zonal-characters",
+   "number": null,
+   "title": "Combinatorial formulas for zonal characters",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 375,
+   "n_words": 61
+  },
+  {
+   "id": "sec-015-via-numbers-of-embeddings",
+   "number": null,
+   "title": "Via numbers of embeddings",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1971,
+   "n_words": 355
+  },
+  {
+   "id": "sec-016-in-terms-of-free-cumulants",
+   "number": null,
+   "title": "In terms of free cumulants",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2426,
+   "n_words": 423
+  },
+  {
+   "id": "sec-017-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 4120,
+   "n_words": 599
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 18,
+  "chars_total": 29280
+ }
+}
