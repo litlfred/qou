@@ -1,0 +1,626 @@
+{
+  "computation": "habiro-head-divisibility-probe",
+  "computedAt": "2026-08-28T15:00:55.134401+00:00",
+  "description": "j = 2 head-divisibility criterion feeding the sorry-free Lean lemma QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd. For odd p the criterion reduces to a single integer A = a_0(-1) + 2*a_1(-1) per atom: it fires — hence Frob_p != 0 — at every odd prime not dividing A. j = 1 is vacuous for odd p because 1 - zeta_{2p} is a unit there (Norm = Phi_{2p}(1) = 1 when 2p is not a prime power), which is the head_criterion_vacuous_of_isUnit case. The closed form is cross-checked against brute-force divisibility in Z[u]/Phi_{2p}(u) at 14 primes. All arithmetic is exact; no floating point is used anywhere in this script.",
+  "reference_lean": [
+    "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd",
+    "qou:QOU.Habiro.head_criterion_vacuous_of_isUnit",
+    "qou:QOU.Habiro.qPochDiag"
+  ],
+  "reference_blocks": [
+    "def:motivic-galois-character",
+    "prop:motivic-perpetual-obstruction"
+  ],
+  "input_witness": "habiro-coefficients-atomic.witness.json",
+  "brute_force_check_primes": [
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47
+  ],
+  "atoms": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "Z": 1,
+      "N": 0,
+      "n_habiro_coefficients": 9,
+      "head_j2_poly": "172*u**2 - 164",
+      "closed_form_A": 8,
+      "A_prime_factors": [
+        2
+      ],
+      "criterion_fires_at_all_odd_primes_except": [],
+      "p2_criterion_fires": false,
+      "brute_force_checks": [
+        {
+          "prime": 3,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 5,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 7,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 11,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 13,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 17,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 19,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 23,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 29,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 31,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 37,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 41,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 43,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 47,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        }
+      ],
+      "closed_form_agrees_on_all_checked_primes": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "Z": 0,
+      "N": 1,
+      "n_habiro_coefficients": 9,
+      "head_j2_poly": "34*u**2 - 32",
+      "closed_form_A": 2,
+      "A_prime_factors": [
+        2
+      ],
+      "criterion_fires_at_all_odd_primes_except": [],
+      "p2_criterion_fires": true,
+      "brute_force_checks": [
+        {
+          "prime": 3,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 5,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 7,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 11,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 13,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 17,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 19,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 23,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 29,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 31,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 37,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 41,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 43,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 47,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        }
+      ],
+      "closed_form_agrees_on_all_checked_primes": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "Z": 1,
+      "N": 1,
+      "n_habiro_coefficients": 14,
+      "head_j2_poly": "8544*u**2 - 8352",
+      "closed_form_A": 192,
+      "A_prime_factors": [
+        2,
+        3
+      ],
+      "criterion_fires_at_all_odd_primes_except": [
+        3
+      ],
+      "p2_criterion_fires": false,
+      "brute_force_checks": [
+        {
+          "prime": 3,
+          "brute_force_divides": true,
+          "closed_form_predicts_divides": true,
+          "agree": true,
+          "criterion_fires": false
+        },
+        {
+          "prime": 5,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 7,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 11,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 13,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 17,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 19,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 23,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 29,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 31,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 37,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 41,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 43,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 47,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        }
+      ],
+      "closed_form_agrees_on_all_checked_primes": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "Z": 1,
+      "N": 2,
+      "n_habiro_coefficients": 17,
+      "head_j2_poly": "23616*u**2 - 23232",
+      "closed_form_A": 384,
+      "A_prime_factors": [
+        2,
+        3
+      ],
+      "criterion_fires_at_all_odd_primes_except": [
+        3
+      ],
+      "p2_criterion_fires": false,
+      "brute_force_checks": [
+        {
+          "prime": 3,
+          "brute_force_divides": true,
+          "closed_form_predicts_divides": true,
+          "agree": true,
+          "criterion_fires": false
+        },
+        {
+          "prime": 5,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 7,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 11,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 13,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 17,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 19,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 23,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 29,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 31,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 37,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 41,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 43,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 47,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        }
+      ],
+      "closed_form_agrees_on_all_checked_primes": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "Z": 2,
+      "N": 1,
+      "n_habiro_coefficients": 17,
+      "head_j2_poly": "101376*u**2 - 99840",
+      "closed_form_A": 1536,
+      "A_prime_factors": [
+        2,
+        3
+      ],
+      "criterion_fires_at_all_odd_primes_except": [
+        3
+      ],
+      "p2_criterion_fires": false,
+      "brute_force_checks": [
+        {
+          "prime": 3,
+          "brute_force_divides": true,
+          "closed_form_predicts_divides": true,
+          "agree": true,
+          "criterion_fires": false
+        },
+        {
+          "prime": 5,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 7,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 11,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 13,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 17,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 19,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 23,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 29,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 31,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 37,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 41,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 43,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        },
+        {
+          "prime": 47,
+          "brute_force_divides": false,
+          "closed_form_predicts_divides": false,
+          "agree": true,
+          "criterion_fires": true
+        }
+      ],
+      "closed_form_agrees_on_all_checked_primes": true
+    }
+  ],
+  "summary": {
+    "n_atoms": 5,
+    "closed_form_agrees_everywhere": true,
+    "n_atoms_firing_at_all_odd_primes": 2,
+    "n_atoms_firing_at_p2": 1
+  },
+  "scriptHash": "85cb63b8901d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "c45fdfeccc206b6e81a0f9108e9c2df9ba7445c0",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "habiro_head_divisibility_probe.py"
+}
