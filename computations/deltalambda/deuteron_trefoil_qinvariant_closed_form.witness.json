@@ -1,4 +1,7 @@
 {
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "emitted by the producer: q0 is the frozen canonical muon pin, hard-coded at module scope in this probe",
   "schema": "witness/v1",
   "computation": "deuteron_trefoil_qinvariant_closed_form_probe",
   "description": "Derive-then-check: does a 0-parameter closed-form q-invariant of the sigma_1^3 trefoil (T(2,3)) at q0 reproduce the deuteron C_knot=5.853? VERDICT: honest negative -- no parameter-free hit within exactness threshold.",
@@ -11,7 +14,7 @@
   },
   "inputs": {
     "q0": "1.1099785955573347198997632204832250266562084087802",
-    "z_markov": "0.499320334033561271768966386276",
+    "z_markov": "0.612688050548890157044516774582",
     "s_skein": "0.104388069812003712600114172167",
     "m_e_MeV": "0.51099895069",
     "B_D_MeV": "2.22452",
@@ -29,13 +32,5 @@
   },
   "exactness_threshold_rel_err": "1e-6",
   "verdict": "honest-negative: no 0-parameter closed-form q-invariant of the trefoil reproduces C_knot to exactness; nearest 0-knob is q0^17 (0.69%, ruled-out numerology #4556 s4); nearest structural single [3]_q! is 3.0% off; objects landing within ~2.5% carry a free level/color knob (= fit).",
-  "scriptHash": "2f6cf3eeba21",
-  "scriptFile": "deuteron_trefoil_qinvariant_closed_form_probe.py",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
-  "engine": "python",
-  "computedAt": "2026-08-29T01:24:04.244768+00:00",
-  "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "scriptHash": "0e2bea59dba0"
 }

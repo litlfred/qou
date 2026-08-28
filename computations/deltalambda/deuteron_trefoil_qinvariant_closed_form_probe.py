@@ -211,6 +211,16 @@ best_struct = min(  # best 0-knob that is NOT q0^k numerology
 )
 src = open(__file__, "rb").read()
 witness = {
+    # Emitted BY THE PRODUCER.  These three were backfilled into the committed
+    # witness by a provenance tool, not written here, so every regeneration
+    # silently dropped them -- the qou-4un2 provenance-loss class.  q0 above is
+    # the frozen canonical MUON pin, held as a literal in this file; the anchor
+    # is recorded as what it actually is rather than inferred from a call site.
+    "q0Anchor": "muon",
+    "q0Value": mp.nstr(q0, 50),
+    "q0AnchorReason": (
+        "emitted by the producer: q0 is the frozen canonical muon pin, "
+        "hard-coded at module scope in this probe"),
     "schema": "witness/v1",
     "computation": "deuteron_trefoil_qinvariant_closed_form_probe",
     "description": "Derive-then-check: does a 0-parameter closed-form q-invariant of the "
