@@ -420,4 +420,45 @@ theorem jonesMarkov_normalisation_three (Q X : ℝ)
       show Partition.size [1, 1, 1] = 3 from rfl,
       ← mul_div_assoc, ← add_div, ← add_div, htel, div_self hZ]
 
+/-! ## M1 normalisation at general rank, conditional on the telescope -/
+
+/-- **Markov-trace normalisation `tr_M(𝟙) = 1` at general rank `n`, conditional
+on the Macdonald hook telescope.**
+
+Given any list `parts` of `(multiplicity, partition)` pairs whose partitions all
+have size `n`, IF the multiplicity-weighted Schur-element sum equals the Wenzl
+normalisation `Z_n = ((1−X)/(1−Q))^n` (the general telescope, `htel` — the one
+identity Mathlib's missing symmetric-function infrastructure prevents proving
+outright, see the file header), THEN the same multiplicities weight the concrete
+Jones–Markov coefficients `y_λ = jonesMarkovCoeff` to exactly one:
+
+  `Σ_p  mult_p · s_{λ_p}  =  Z_n`   ⟹   `Σ_p  mult_p · y_{λ_p}  =  1`.
+
+This is the honest conditional M1: it is the `jonesMarkov_normalisation_three`
+argument (divide the telescope by the common `Z_n`) lifted off the three fixed
+partitions of `3` to an arbitrary rank and partition list. It carries the open
+general telescope as an explicit hypothesis rather than assuming it — instantiate
+`htel` with a proved telescope (as `telescope_three` does at `n = 3`) and the
+normalisation follows unconditionally. Nonzero denominator needs only `Q ≠ 1`,
+`X ≠ 1`. -/
+-- Ref: [wenzl1988] Theorem 2.1
+theorem jonesMarkov_normalisation_of_telescope
+    (n : ℕ) (Q X : ℝ) (hQ1 : Q ≠ 1) (hX : X ≠ 1)
+    (parts : List (ℕ × Partition))
+    (hsize : ∀ p ∈ parts, Partition.size p.2 = n)
+    (htel : (parts.map fun p => (p.1 : ℝ) * WenzlSchurElement.schurElement Q X p.2).sum
+              = WenzlSchurElement.wenzlNormalisation n Q X) :
+    (parts.map fun p => (p.1 : ℝ) * WenzlSchurElement.jonesMarkovCoeff Q X p.2).sum = 1 := by
+  have hZ : WenzlSchurElement.wenzlNormalisation n Q X ≠ 0 :=
+    WenzlSchurElement.wenzlNormalisation_ne_zero hQ1 hX
+  have hmap : (parts.map fun p => (p.1 : ℝ) * WenzlSchurElement.jonesMarkovCoeff Q X p.2)
+      = parts.map fun p =>
+          ((p.1 : ℝ) * WenzlSchurElement.schurElement Q X p.2)
+            * (WenzlSchurElement.wenzlNormalisation n Q X)⁻¹ := by
+    apply List.map_congr_left
+    intro p hp
+    rw [WenzlSchurElement.jonesMarkovCoeff, hsize p hp]
+    ring
+  rw [hmap, List.sum_map_mul_right, htel, mul_inv_cancel₀ hZ]
+
 end QOU.MathlibExt.MacdonaldTelescope
