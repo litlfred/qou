@@ -1,7 +1,7 @@
 {
   "note": "Witnesses carrying no top-level q0Anchor when this ratchet was introduced. A TOLERATED BACKLOG, not approval. Enforced by computations/audits/q0_anchor_ratchet.py; attributed by cause in computations/audits/q0_anchor_missing_cause_partition.py.",
   "enforced_rule": "An unstamped witness NOT listed here fails --strict. This list DRAINS ONLY: --rebaseline refuses to write a larger file. Never add an entry to silence a red gate. Fix it at the producer \u2014 declare the stem in q0_anchor_manifest.json (only effective if the producer uses WitnessBuilder), or record q0Anchor independent/ambiguous with a q0AnchorReason via save(extra=...).",
-  "generated_from_rev": "origin/main (cdbdc84af1332800dae14cf6ce68b7bf476eb78f)",
+  "generated_from_rev": "origin/main (03f57c2b75c35c6b89593731fbf783e3fb9a362a)",
   "drain_owner": "bean qou-y98b (refill gate); qou-1c4y (muon migration)",
   "files_count": 1678,
   "files": [

@@ -173,16 +173,36 @@ def load_baseline(path: Path) -> set[str]:
         return set()
 
 
-def write_baseline(path: Path, files: list[str], prev: set[str], rev: str) -> int:
-    if prev and len(files) > len(prev):
+def write_baseline(path: Path, files: list[str], prev: set[str], rev: str,
+                   establish: str | None = None) -> int:
+    """Write the baseline. Growth is refused unless deliberately `establish`ed.
+
+    The drain-only rule has one legitimate exception, and leaving it
+    undocumented would be worse than naming it: while this gate's own PR is
+    open, main keeps moving, and unstamped witnesses that land there are not
+    this branch's doing. Without an exception the gate blocks its own landing
+    and the only way through is to delete the baseline file so `prev` is empty
+    --- an escape hatch that exists either way, but silently.
+
+    So growth is permitted ONLY with `--establish "<reason>"`, which records the
+    reason and the exact grown entries INTO the file, where a reviewer sees them
+    in the diff. It must never be used to absorb a witness your own branch
+    created; that is the refill this gate exists to stop.
+    """
+    grew = sorted(set(files) - prev)
+    if prev and len(files) > len(prev) and not establish:
         print(
             f"REFUSED: --rebaseline would GROW the baseline "
             f"{len(prev)} -> {len(files)}.\n"
             "Baselines drain, never grow. Those entries are a refill: declare "
-            "their producers, or have them record an honest q0Anchor.",
+            "their producers, or have them record an honest q0Anchor.\n"
+            "If and ONLY if they landed on main independently of your branch, "
+            "re-establish deliberately:\n"
+            '    --rebaseline --establish "rebased onto <sha>; these arrived on '
+            'main, not from this branch"',
             file=sys.stderr,
         )
-        for f in sorted(set(files) - prev)[:20]:
+        for f in grew[:20]:
             print(f"    NEW {f}", file=sys.stderr)
         return 1
     path.write_text(json.dumps({
@@ -201,6 +221,11 @@ def write_baseline(path: Path, files: list[str], prev: set[str], rev: str) -> in
             "independent/ambiguous with a q0AnchorReason via save(extra=...)."
         ),
         "generated_from_rev": rev,
+        **({"established": {
+            "reason": establish,
+            "grew_by": len(grew),
+            "entries_added": grew,
+        }} if establish and grew else {}),
         "drain_owner": "bean qou-y98b (refill gate); qou-1c4y (muon migration)",
         "files_count": len(files),
         "files": sorted(files),
@@ -276,6 +301,12 @@ def main() -> int:
                                   "working tree (reproducible; immune to a "
                                   "concurrent branch switch)")
     ap.add_argument("--baseline", help="use this baseline file instead")
+    ap.add_argument("--establish", metavar="REASON",
+                    help="permit --rebaseline to GROW, recording REASON and the "
+                         "added entries in the file. ONLY for entries that "
+                         "landed on main independently of your branch (e.g. "
+                         "rebasing this gate's own PR). Never to absorb a "
+                         "witness your branch created.")
     # `--self-test` is the spelling scripts/precision-gates.sh invokes
     # (its line 467). `--selftest` is accepted as an alias so a hand-run does
     # not have to remember which. Getting this wrong is silent in the harness:
@@ -336,7 +367,7 @@ def main() -> int:
         )
 
     if args.rebaseline:
-        return write_baseline(baseline_path, missing, base, src)
+        return write_baseline(baseline_path, missing, base, src, args.establish)
 
     if args.strict and new:
         print(f"\nFAIL (--strict): {len(new)} witness(es) newly unstamped.")
