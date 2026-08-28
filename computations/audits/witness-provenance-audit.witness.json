@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T15:47:28.912636+00:00",
-  "commitSha": "cdbdc84af1332800dae14cf6ce68b7bf476eb78f",
+  "computedAt": "2026-08-28T19:37:11.716498+00:00",
+  "commitSha": "8bee7ef1a4160c85091be59b01c38fd8a8c6086b",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 99,
+      "computed": 100,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -32,7 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -57,14 +57,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2840,
-      "prov_ok": 2403,
+      "total_scanned": 2842,
+      "prov_ok": 2404,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 255,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 99,
+      "prov_missing": 100,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965140845070422535211267605633802816901408450704225352112676"
+      "completeness_ratio": "0.964813511611541168191414496833216045038705137227304714989444"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3093,10 +3093,6 @@
           "missing_fields": []
         },
         {
-          "witness": "free-neutron-decay.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "frobenius-gram-delta-lambda.witness.json",
           "missing_fields": []
         },
@@ -5894,6 +5890,14 @@
         },
         {
           "witness": "habiro-frobenius-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-head-criterion-structure-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-head-divisibility-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -9986,6 +9990,13 @@
         {
           "witness": "em-linking-invariant-scoping.witness.json",
           "missing_fields": [
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "free-neutron-decay.witness.json",
+          "missing_fields": [
+            "engine",
             "commitSha"
           ]
         },
