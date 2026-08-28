@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-28T19:11:15Z
+updated_at: 2026-08-28T19:38:53Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -325,3 +325,49 @@ corpus-grep path 6.
 
 No change to what is open. The decision in this bean is untouched and still
 yours.
+
+
+## 2026-08-28 — TRACK 3 CLOSED BY EXCLUSION: there is no weight to derive
+
+Owner selected all four tracks. Track 3 was "hunt a derived weight for the
+bracket". It does not need hunting — the answer is a rank computation.
+
+`computations/qbeta/qbeta_admissible_span_prune_probe.py` (8/8, exact symbolic
+over Q(q)).
+
+**The prior question the bracket framing skips.** Matching on `Delta` alone is
+ONE equation; agreeing as FUNCTIONALS on H_3(q) is SIX. A functional here is a
+covector in a 6-dimensional space, so "is there a weight w with
+w*aug + (1-w)*tr_M(z_D) = net?" has a definite linear-algebra answer:
+
+    rank{aug, tr_M(z_D)}       = 2
+    rank{aug, tr_M(z_D), net}  = 3        ->  net is NOT in the span
+
+**So no weight — derived, fitted, convex or affine — reproduces the coordinate
+sum as a functional.** There is nothing to derive. The bracket is a statement
+about one number on one element, not about the functionals.
+
+Exhibited concretely rather than left abstract: the weight that reproduces
+`Delta` exists and is unique,
+
+    w* = -q^2 + q + 1/q,    w*(q0) = 0.77884441254035836848...
+
+and that same w* then **disagrees with `net` on 3 of the 6 basis elements**
+(indices 3, 4, 5). That is the one-parameter-one-anchor fit this bean already
+named, now with its failure exhibited off the anchor.
+
+**Scope-(b), and the invariant is cited** per the AGENTS.md refutation rule: a
+rank computation is a dimension bound, which is one of the permitted grounds.
+This is an exclusion, not a failed search — re-running it will not change it.
+
+**What it does NOT show.** Not that the Q-value is wrong; not that the ansatz is
+irreparable. It removes exactly one repair route — the convex combination. The
+honest options remaining are (i) adopt an admissible functional and accept its
+error (+12.470 % or -43.157 %), or (ii) derive a different ELEMENT for an
+admissible functional to act on. Option (ii) is where `qou-avt5`'s standing
+finding bites: the stated NF vector is not the exhibited nucleon-word difference
+under either functional.
+
+Controls included so the rank is not an artifact: each covector is verified to
+reproduce its functional on every basis element, and the augmentation is
+verified multiplicative on the generators rather than assumed from its shape.
