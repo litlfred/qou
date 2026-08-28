@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-26T04:30:55Z
+updated_at: 2026-08-28T15:47:01Z
 ---
 
 
@@ -1347,3 +1347,80 @@ since those are the only nodes movable without creating a straddle.
 
 I did not attempt (2) and did not batch by count. Recorded so the next reader
 does not repeat #5818's stop, or mistake the merged PR for an idle claim.
+
+
+## 2026-08-28 — the `independent` label hides producers from THIS migration (PR #5895)
+
+Slice taken: bean `qou-324i`, which was `todo` and unclaimed since 2026-08-23.
+No overlap with the batch sweep; no manifest edit, no anchor-defining witness
+touched, and the two producers a sibling claimed on 2026-08-26 were MEASURED but
+NOT edited.
+
+**Why it belongs to this bean.** `q0Anchor: "independent"` asserts the compute
+never reads q0, so such a witness is invisible to every pin audit -- including
+this migration's inventory. `probes/lambda_scale_substrate_probe` is the case:
+it reads `q-pinning-50-digit.witness.json` directly, is listed `ideal_muon` in
+the manifest, and declared `independent`. It is a MUON producer the migration
+could not see. Relabelled `muon`, which puts it in scope; whether it should MOVE
+is a separate question and is not answered here.
+
+**Three labels corrected, zero numbers moved.** Each regeneration moved exactly
+three non-ephemeral leaves -- `q0Anchor`, `q0AnchorReason`, and `q0Value`, the
+last appearing where the witness previously recorded NO pin at all (rule 4's
+last bullet). No substantive field moved in any of the three, so the committed
+values were already at the anchor the manifest declares; only the label was
+wrong.
+
+  probe_he4_magic_baryeven_prune        independent -> proton   (manifest: physical_proton)
+  qbeta/qbeta_c3_rung_structure_analysis independent -> proton   (manifest: physical_proton)
+  probes/lambda_scale_substrate_probe    independent -> muon     (manifest: ideal_muon)
+
+All three CONTRADICTED their own manifest entry, so no judgement call was needed.
+
+**Provenance checked, not assumed** (PR #5883 / bean `qou-4un2` reports the
+migration deleting provenance through bare producers). Before/after per file:
+all of `scriptFile`, `commitSha`, `engine`, `engineVersion`, `scriptHash`, and
+`auditOnly` where present, survived all three re-runs. Nothing lost.
+
+## The unaudited peer-import inheritance path is now audited
+
+This bean records: "there is an unaudited inheritance path: producer A imports a
+q0-bearing symbol from producer B. Worth its own pass; not attempted here."
+Attempted. `q0_independence_checker --flip-validity` now detects it, with the
+known positive (`chirality_topology_binding_probe`'s `Q0 = Q_MP` via
+`hecke_channel_binding_probe`) pinned in `--selftest`.
+
+The guard that makes it usable: `hoefsmit_symbolic.Q` is `sp.symbols('q')`, not
+a q0. Without a symbolic-RHS check the scan indicts two producers whose
+disposition is CORRECT -- a detector keyed on the shape of a name rather than
+its role, which is this bean family's recurring failure. Both directions are in
+the selftest so a narrowing cannot lose either silently.
+
+## CORROBORATION of a sibling's claimed pair — measured, not duplicated
+
+The 2026-08-26 note here retracts two hand-clears and leaves
+`qbeta_habiro_f_from_shape_collapse` and `qbeta_rung1_div25_framing_squared_test`
+to their claiming sibling. I did not edit them. I did RUN the flip:
+
+  qbeta_habiro_f_from_shape_collapse       MOVES, 5 fields, e.g. /data/numerical_sanity_at_q0/S_N0_at_q0
+  qbeta_rung1_div25_framing_squared_test   MOVES, 7 fields, e.g. /data/numerical_at_q0/[5]_q
+
+Both move SUBSTANTIVE numerical fields, so the sibling's DEFECT verdict is
+independently confirmed by a different method (they read the declaration; I ran
+the experiment it cites). Still theirs to fix.
+
+## Two harness defects found by using the harness — reported, not fixed
+
+1. `anchor_flip_straddle_audit._run` sets no PYTHONPATH and runs only with
+   `cwd=<producer dir>`, so a producer importing a sibling under `computations/`
+   is reported `RUN-FAIL ... UNTESTED`. Measured on `chi_content_eigenbasis_probe`
+   and `eigenbasis_structural_lemmas_probe`: exit 1 plain, exit 0 with
+   `PYTHONPATH=computations:.`, ZERO tracebacks either way. That audit is a
+   BLOCKING gate in `scripts/staleness-gates.sh`, so it currently under-reports.
+   Not fixed here: it moves a live gate's output and wants its own before/after.
+2. Its EPHEMERAL mask has `elapsed_seconds` but not `elapsed_sec`, so
+   `markov_identity_symbolic_probe`'s first "moved" field is
+   `/results/0/bridge/elapsed_sec` -- the harness measuring itself.
+
+Also: `habiro_witness_convention_adjudication_probe` is RUN-FAIL even WITH
+PYTHONPATH, so it is UNTESTED rather than clean, and stays pending.
