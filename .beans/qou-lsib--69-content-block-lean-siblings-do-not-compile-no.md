@@ -20,6 +20,15 @@ Content-block `.lean` siblings live at
 `globs = ["QOU", "QOU.+"]`. `lake build QOU` never touches them, and
 `lean-content-siblings.yml` does not gate them either.
 
+**CORRECTED 2026-08-28 — right conclusion, wrong reason.** That workflow's
+`content-sibling-compile` job **does** cover content-block siblings; it runs
+`lean`-direct on the `.lean` files a PR changes. Two separate things stop it
+reaching this population: it is **`workflow_dispatch:` only** (auto-triggers
+disabled repo-wide, 2026-06-30, Actions billing), so it never fires; and it is
+**diff-scoped by design**, so even when dispatched it gates new drift and never
+the pre-existing backlog. The second is why remedy 2 below must *widen* the
+gate rather than merely re-enable it.
+
 `lean`-direct across all **958**, with all three paper build dirs plus
 `.lake/packages/*` on `LEAN_PATH`:
 
