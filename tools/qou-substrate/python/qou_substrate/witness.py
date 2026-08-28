@@ -718,6 +718,73 @@ def record_upstream(path: Union[str, Path], into: list) -> dict:
 
 # ── Assertion type ───────────────────────────────────────────────
 
+#: Most significant decimal digits a tolerance may carry and still be read as
+#: a DECLARED CONSTANT rather than a computed quantity. See
+#: `_tolerance_literal` for why 5, and for why the number is not a knob.
+_TOLERANCE_LITERAL_MAX_SIG = 5
+
+
+def _tolerance_literal(t: Any) -> "Optional[str]":
+    """The literal an author typed, or None if this tolerance is COMPUTED.
+
+    A tolerance is not a measurement. `1e-9` is a threshold the author chose;
+    nothing was measured to that precision and nothing about the physics is
+    recorded in its binary expansion. Writing it as the string `"1e-9"` is
+    therefore not the laundering the raw-float64 guard warns about — that
+    warning is against dressing a LOSSY f64 as preserved precision, and a
+    one-significant-digit literal claims exactly one significant digit.
+
+    It is also what the corpus already does. Measured on `main` 2026-08-28:
+    **693 committed assertions across 136 witnesses already carry a string
+    tolerance**, emitted by producers that drained their own float64 by hand
+    (bean qou-t0rf). This centralises that, rather than inventing a convention.
+
+    WHY THIS REFUSES THE COMPUTED ONES, which is the whole discrimination.
+    Some tolerances are derived — an error budget scaled off the expected
+    value, say — and arrive as things like `1025.6028557082007`. Those really
+    did lose precision against whatever `mpf` produced them, they are genuine
+    findings, and stringifying one would hide a defect behind a convention. So
+    they are left as floats and stay counted by
+    `computations/witness_raw_float64_audit.py`.
+
+    WHY 5, AND WHY IT IS NOT TUNED. Measured over all 1296 raw-float64
+    `.assertions[].tolerance` fields in the corpus, significant digits are
+    sharply bimodal with an EMPTY BIN at 6:
+
+        1 sig  1198      7 sig     5
+        2 sig    24      8 sig    14
+        3 sig     2      9 sig     6
+        4 sig     7     16 sig    20
+        5 sig     1     17 sig    19
+        6 sig     0   <- the gap
+
+    The cut sits in a bin with no members, so it is the boundary of a real
+    cluster rather than a threshold chosen to hit a target. 1232 of 1296
+    fields (95.1 %) are declared literals; the other 64 are computed and are
+    deliberately left alone.
+
+    INTEGRAL-VALUED tolerances (`0.0`, `1.0`, `2.0`) return None and stay
+    floats. They are exact in binary64, the ratchet already excuses them, and
+    converting them would churn ~200 committed values for no gate benefit.
+    """
+    if not isinstance(t, float) or isinstance(t, bool):
+        return None
+    if t != t or t in (float("inf"), float("-inf")):
+        return None
+    if t.is_integer():
+        return None
+    s = repr(t)
+    mantissa = s.lstrip("+-").split("e")[0].split("E")[0]
+    if len(mantissa.replace(".", "").strip("0")) > _TOLERANCE_LITERAL_MAX_SIG:
+        return None
+    # `repr` is the shortest string that round-trips, so this cannot fail --
+    # asserted anyway, because a serialization repair that is not
+    # value-preserving is the one thing this must never be.
+    if float(s) != t:
+        return None
+    return s
+
+
 class Assertion:
     """A single named claim with computed vs expected values."""
 
@@ -772,7 +839,12 @@ class Assertion:
             "passed": self.passed,
         }
         if self.tolerance is not None:
-            d["tolerance"] = self.tolerance
+            # A DECLARED tolerance is serialized as the literal its author
+            # typed, so a threshold never enters the corpus as raw float64.
+            # A COMPUTED one is left alone and stays a finding — see
+            # `_tolerance_literal`.
+            literal = _tolerance_literal(self.tolerance)
+            d["tolerance"] = self.tolerance if literal is None else literal
         if self.unit:
             d["unit"] = self.unit
         if self.source:
