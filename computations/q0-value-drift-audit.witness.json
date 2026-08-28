@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 221,
       "canonical": 173,
-      "proton-pin": 1764,
+      "proton-pin": 1765,
       "unknown": 25
     },
     "stale_total": 221,
@@ -8607,6 +8607,13 @@
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.61406020773339
+      },
+      {
+        "file": "computations/low-isotope-mass-table.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/low-isotope-sign-flip-diagnostic.witness.json",

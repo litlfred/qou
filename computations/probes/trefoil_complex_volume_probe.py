@@ -25,8 +25,15 @@ This is the part-3 contrast made concrete:
 Hecke/Markov conventions (AGENTS.md §7a): the Hecke generator σ satisfies
     σ² = (q − q⁻¹)σ + 1,    h := q − q⁻¹,
 and J_K(q) = tr_M(ρ(β_K)) with the Ocneanu/Markov normalisation tr(1)=1,
-tr(σ)=z, z = 1/(q^{1/2}+q^{-1/2}) (the Markov parameter, matching the repo's
-z_markov ≈ 0.49932 in pentagon-reduction-li2q.witness.json).
+tr(σ)=z, z = q³/(q²+1) — convention D, canonical per the 2026-08-15 owner
+ruling (R1), z_D(q₀) ≈ 0.6126880.
+
+CORRECTED 2026-08-28.  This read z = 1/(q^{1/2}+q^{-1/2}) — convention C,
+z_C(q₀) ≈ 0.49932 — and cited pentagon-reduction-li2q.witness.json as the
+authority for it.  That citation was stale: the witness carries
+0.6126880371464652515958298639458992480263083915450636084720501751483235,
+i.e. D.  The defect was the CLAIM, not merely the value: the probe asserted
+its convention was the repo's and named a witness that says otherwise.
 
 The trefoil is the closure of σ³ ∈ B₂.  Reducing σ³ in H₂(q):
     σ³ = σ·σ² = σ((q−q⁻¹)σ + 1) = (h²+1)·σ + h,
@@ -63,7 +70,7 @@ def compute() -> dict:
     q = Q0
     h = q - 1 / q                      # h = q − q⁻¹
     rootq = q.sqrt()
-    z = 1 / (rootq + 1 / rootq)        # Markov parameter z = 1/(q^{1/2}+q^{-1/2})
+    z = q ** 3 / (q ** 2 + 1)          # Markov parameter, convention D
 
     # tr_M(σ³) = (h²+1)·z + h  (exact reduction; (h²+1, h) are the Laurent
     # coefficients of the reduced Hecke element, convention-robust).

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T19:37:11.716498+00:00",
-  "commitSha": "8bee7ef1a4160c85091be59b01c38fd8a8c6086b",
+  "computedAt": "2026-08-28T20:06:45.663481+00:00",
+  "commitSha": "43d8c92dacb7d487d31c1eecd7c2f30b12906c66",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -9719,8 +9719,6 @@
         {
           "witness": "beta-decay-from-q.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10093,8 +10091,6 @@
         {
           "witness": "nv-pslq-extended-basis.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10155,7 +10151,6 @@
         {
           "witness": "option-e-probe1-derive-1plusq-over-2.witness.json",
           "missing_fields": [
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10213,16 +10208,12 @@
         {
           "witness": "gt-matrix-pslq-probe.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "nv-categorical-derivation-probe.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10283,8 +10274,6 @@
         {
           "witness": "shadow-price-c-321-q0.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10305,8 +10294,6 @@
         {
           "witness": "sublemma-2-1-alpha-shift-extract.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10321,24 +10308,18 @@
         {
           "witness": "low-isotope-binding-sweep.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "paper-six-term-shadow-price-sweep.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "t35-weak-vertex.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10353,8 +10334,6 @@
         {
           "witness": "toffoli-lp-stability.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -10759,24 +10738,18 @@
         {
           "witness": "beta-ew-delta-I-321-and-wedderburn.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "beta-ew-delta-I-eigenvalues.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "beta-ew-delta-I-numerical-spectrum.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -11490,16 +11463,12 @@
         {
           "witness": "nv-pslq-tr-pure-basis.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
         {
           "witness": "nv1_candidate_a_doubleprime.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -12556,8 +12525,6 @@
         {
           "witness": "tau-hat-n-proton-realisation.witness.json",
           "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
