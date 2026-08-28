@@ -149,3 +149,72 @@ bar of several fold until one of its members has been read.
   rule 4 stand.
 - It does not touch the 214 deprecated witnesses. They are correct as recorded
   for retired code.
+
+## The 19 read: all nineteen producers resolve to PROTON today (2026-08-28)
+
+The individual reads this document asked for are done to the point where the
+character of the item is settled, and it is not "19 files to adjudicate".
+
+**Anchor resolution.** `computations/substrate/q_parameter.py` (the source, not
+the generated `qou-mass/_internal/` mirror — `sync-qou-mass-vendor.py --check`
+reports in sync, so the raw `diff` between them is import rewrites only)
+resolves the anchor from the running producer's stem:
+
+```python
+_stem = _MP(_sys.argv[0]).stem ...
+if _stem in _man.get("ideal_muon", []):
+    _anchor = "ideal"
+```
+
+with the comment stating the rule outright: *"ideal_muon ⇒ muon; anything else
+⇒ proton"*. So an **unlisted** stem resolves to proton.
+
+**Measured against `q0_anchor_manifest.json`:**
+
+| bucket | size | of the 19 |
+|---|---:|---|
+| `ideal_muon` | 45 | **0** |
+| `physical_proton` | 665 | 2 |
+| `ambiguous` | 18 | 0 |
+| unlisted | — | 17 |
+
+**Not one of the nineteen is listed under `ideal_muon`.** None of them asks for
+the muon anchor. The two that are listed are listed `physical_proton`. So every
+one of the 19 resolves to proton on a run today, and the superseded value in
+its committed witness is a **stale output from before that default** — not a
+deliberate muon pin, and not a live defect in the producer.
+
+**Two are not bare pins at all** — my "bare pin key" test missed two declarative
+field names:
+
+| witness | key carrying the value | also carries proton? |
+|---|---|---|
+| `chirality-avg-content-chiral` | `/parameters/q0_anchor_note` — a *note about* the anchor | yes |
+| `he4-partition-dominance-audit-probe` | `/data/cache_anchor_q_0` — the anchor of a cache it **read** | yes |
+
+The second deserves its own look and not as a pin defect: a `physical_proton`
+producer recording a **muon-built cache's** anchor is the shape of the μ₃
+Fréchet straddle AGENTS.md documents at 11.54 ppb, where `y_λ` came from a
+muon-built cache while `χ_λ` was evaluated at proton. Whether this one straddles
+or merely records its provenance honestly is a separate read.
+
+**One is unresolved:** `derived_masses` has no witness carrying the value under
+that stem.
+
+**One would move data, not just a parameter:**
+`delta-coupling-closed-form-probe` carries the value at twelve `/data/rows[i]/t_value`
+entries as well as at `/parameters/q_0`, so a re-run changes tabulated data,
+not only a recorded pin.
+
+### What this changes about the work
+
+The item is **not** "read 19 and adjudicate". It is "re-run 17 producers, which
+self-correct, and read 2 by hand". Constraint 1 is not at risk: the
+anchor-defining `q-pinning-50-digit` is **not** among the 19.
+
+It is still **not** authorised as a sweep here, and this document does not run
+one. The bulk migration is `qou-1c4y` under the owner authorisation recorded
+2026-08-19, with its four constraints; a producer re-run mutates sibling
+witnesses and several producers in this corpus are long-compute or refuse by
+design. What has changed is the *expected outcome* of doing it: for these 19,
+the run is a re-pin with no adjudication in it.
