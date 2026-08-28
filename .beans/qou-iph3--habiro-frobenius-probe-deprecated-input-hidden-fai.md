@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-23T17:35:00Z
+updated_at: 2026-08-28T14:54:19Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -393,3 +393,59 @@ mpmath downgraded) — the exact versions were installed and the run repeated.
 headline still omits `step2_full_trace_passed` (False at 45/45), and the uniform
 half-odd-integer full trace still wants a probe before it is read as a
 refutation.
+
+
+## RESOLVED for defects 1 and 2 — PR #5884 (2026-08-28)
+
+Branch `claude/habiro-probe-convention-d-2026-08-28`, two commits.
+
+**Defect 1 (deprecated input) — fixed.** Repointed to the symbolic-q
+aggregate `habiro-coefficients-atomic.witness.json`, with the fallback
+removed deliberately (a missing canonical source is now an error, not a
+silent substitution). The "which generation is canonical is an author
+call" framing in the bean body is now settled by measurement, not by
+judgement: on `cdbdc84af1` the symbolic-q aggregate matches the per-atom
+convention-D witnesses **5/5**; the deprecated fast path matches **0/5**.
+The deprecated file was never regenerated for convention D, so the depth
+advantage it had (proton 10 vs 9, etc.) was depth in superseded data.
+
+**Defect 2 (hidden failing test) — fixed.** The top-level summary now
+carries `step2_all_atoms_full_trace_compatible`,
+`n_atoms_step2_full_trace_passed`, `n_cells_truncated`,
+`n_cells_step2_full_trace_passed`, `cells_step2_full_trace_passed`, and a
+`summary_note` naming which of the two tests is the headline. Both print.
+
+This mattered more than the bean anticipated. The body says the full-trace
+test is "False at 45/45", so surfacing it would have surfaced a uniform
+negative. On convention-D data it is **2/45**: the proton and the neutron
+at p=2, both with `Tr(full) = -1`. The omission was hiding a signal, not a
+uniform false.
+
+**Defect 3 — DEAD, and so is its correction.** Both the original
+"uniform factor of 2" claim and the corrected denominator table above
+were measured on the deprecated pre-convention-D coefficients. On the
+convention-D data **17 of the 45 cells have an odd part 3** in the
+denominator — 192, 96, 768, 384, 3. The half-odd-integer pattern that
+made defect 3 "the one lead in this area with a visible pattern" does not
+exist in the canonical data. Do not carry it forward; it was an artifact.
+
+The scope-(a) framing in the bean body still stands and still applies:
+`step2_full_trace_compatible: false` on 43 of 45 cells is a scope-(a)
+negative about this normalisation as computed, not a structural exclusion.
+
+**Also fixed in passing:** a NO-FLOAT64 defect the repoint exposed —
+`frob_complex` / `abs_frob` went through `complex(...)`, collapsing 30 dps
+to binary64 and serializing raw floats. Fixed at the producer (`sp.N` at
+module dps, carry `mpmath.mpf`, serialize via `_precision.fmt`). No
+baseline touched. `precision-gates.sh --changed` clears the raw-float64
+ratchet; the two remaining REDs reproduce on pristine main.
+
+**Still open — the successor question.** `j=2` head divisibility: is
+`a_0 + a_1(1-zeta)` divisible by `(1-zeta)(1-zeta^2)` in Z[zeta_{2p}]?
+This feeds `QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd` (#5513, merged,
+sorry-free) and would upgrade the numerical "45/45 nonzero" observation to
+a proof at each p where it holds. Note `j=1` is vacuous for odd p —
+`1 - zeta_{2p}` is a unit there (`Norm = Phi_{2p}(1) = 1` for 2p not a
+prime power), which is exactly what `head_criterion_vacuous_of_isUnit`
+records. `j=2` is non-vacuous at every p because `1 - zeta_p` has norm p.
+Now answerable from the regenerated coefficients.
