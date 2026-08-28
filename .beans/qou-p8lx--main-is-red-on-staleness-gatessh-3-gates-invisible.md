@@ -140,3 +140,61 @@ the demotion-time measurements are recorded in the GATES array itself.
 
 Both errors were of the same shape -- a single measurement generalised into
 a standing category without checking whether its members differed.
+
+---
+
+## 2026-08-28 (later) — a third thing this bean got wrong, and it was in the demotion itself
+
+The demotion note recorded, of the q0 gate's two survivors:
+
+> Both survivors declare `q0Anchor: muon` AND carry a muon q0Value —
+> self-consistent and valid as recorded; they are the migration, not defects.
+
+**That is true of one of them.** `lever1-binding-core-characterization` did *not*
+carry a muon `q0Value` in the sense that matters: its `params.q0` held the
+**PROTON** pin while `q0Anchor`/`q0Value` declared **muon**. The declaration and
+the payload disagreed — a provenance stamp asserting a layer its numbers do not
+belong to, which AGENTS.md forbids "regardless of size". That is a defect, not
+the migration.
+
+Root cause was the `qou-7vm4` shape in a second file: `try:` the proton constant
+/ `except:` a hardcoded muon literal, so the physics layer depended on whether an
+import succeeded. Fixed at the producer (fallback removed — this producer's whole
+output is an evaluation *at* the pin, so a run that cannot read it has nothing to
+say), manifest re-tagged `ambiguous → physical_proton`, re-run: all three fields
+agree on proton and **no number moved**.
+
+The other survivor, `lever1_binding_habiro_single_element_test`, genuinely IS the
+migration — and is now exempted **structurally** rather than incidentally. The
+gate hardcodes "live q₀" as proton, but `q_parameter` resolves a
+manifest-declared `ideal_muon` stem *to muon*, so it was reading a correct
+ideal-layer witness as a stale physical-layer one, and its prescribed remedy
+(re-run) would have destroyed the declared pin — the regeneration reverted in
+PR #5436. `declared_ideal_muon_exempt` requires both the witness declaring muon
+and the manifest declaring the producer `ideal_muon`, fails closed, and
+deliberately does not accept `ambiguous`.
+
+### Consequence, and what is NOT being done about it
+
+`q0 constant staleness` now reports **q₀-stale: 0 on its own merits**, not by
+demotion. It is tempting to flip it back to blocking on that basis. **I have not,
+and the gate's own note is why**: *"FLIP BOTH BACK TO BLOCKING when qou-1c4y
+completes. That is the whole condition — not 'when the counts look better'."*
+That rule is right and a green count is exactly the argument it pre-empts.
+
+What HAS changed is the demotion's *premise* for this one gate — "both are the
+migration" no longer describes it. Recorded in the GATES array beside the
+original measurement so whoever holds `qou-1c4y` can see it may be promotable
+ahead of `scriptHash + upstream drift`. Owner call.
+
+### The pattern this bean is tracking, one more time
+
+Its own closing lesson — *"a single measurement generalised into a standing
+category without checking whether its members differed"* — describes the
+demotion note too. Two witnesses were called one thing; they were two.
+
+### Correction to my reporting
+
+I told the author twice that the third red "needs your decision". It did not: the
+decision was made and shipped the same day in `8df1883353`, and the array already
+exited 0. I was reading a stale measurement of my own and repeating it.
