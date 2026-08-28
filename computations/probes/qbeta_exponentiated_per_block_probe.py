@@ -366,6 +366,13 @@ def main():
 
     wout = os.path.join(HERE, "qbeta-exponentiated-per-block.witness.json")
     with open(wout, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, q0_anchor=None)
         json.dump(out, f, indent=2)
     print(f"\n  witness -> {wout}")
     return out

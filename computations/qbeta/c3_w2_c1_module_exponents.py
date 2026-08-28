@@ -93,6 +93,13 @@ def main() -> None:
         "scope": "0-side Fuchsian exponent data only; inf-side Stokes is the residual. No fit.",
     }
     out = script_path.with_suffix(".witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\nverdict: {witness['verdict']}\nwitness: {out}")
 

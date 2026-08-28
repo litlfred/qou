@@ -381,5 +381,12 @@ if __name__ == "__main__":
         "results": _serialize(results),
     }
     out = Path(__file__).parent / "paper-six-term-shadow-price-sweep.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

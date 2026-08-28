@@ -225,6 +225,13 @@ def main() -> int:
         "durationMs": int((time.monotonic() - t0) * 1000),
     }
     wp = _HERE / "centre-frobenius-pairing-is-diagonal.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, q0_anchor=None)
     wp.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\nwitness -> {wp}")
     return 0 if out["allPassed"] else 1

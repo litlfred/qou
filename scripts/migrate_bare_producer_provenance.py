@@ -201,11 +201,62 @@ def plan_one(path: pathlib.Path):
     }, None
 
 
+def apply_one(plan: dict) -> str | None:
+    """Insert the import + stamp call. Returns an error string, or None on ok.
+
+    The import goes at the stamp site, not the module top. Two reasons:
+
+      * these producers have no `_path_bridge` preamble and no uniform import
+        block, so "after the last import" is not a well-defined line in a file
+        that may put imports inside a `if __name__` guard;
+      * a local import cannot change module-import order or introduce a cycle
+        in a file that never imported this package before.
+
+    `qou_substrate` resolves without any sys.path bootstrap in this repo (309
+    in-repo importers rely on that), so no path manipulation is emitted.
+    """
+    path = ROOT / plan["path"]
+    lines = path.read_text(errors="ignore").split("\n")
+    idx = plan["line"] - 1                 # ast lineno is 1-based
+    if idx >= len(lines):
+        return f"line {plan['line']} past EOF"
+    # Indentation comes from the SOURCE LINE, not from the node's col_offset.
+    # They differ whenever the write sits in a compound one-liner:
+    #
+    #     with open(out, "w") as f: json.dump(w, f, indent=2)
+    #
+    # there the `json.dump` Expr has col_offset 29 -- its position after the
+    # colon -- so padding to it produced a 29-space block against a 4-space
+    # line and the file stopped parsing. Caught by the post-apply syntax check
+    # on 1 of 281 files; the line's own leading whitespace is what "the
+    # indentation here" actually means, and it is right for the simple case
+    # too. Inserting before a compound line still places the stamp before the
+    # `with`, which is correct: the payload is already built by then.
+    line = lines[idx]
+    pad = line[:len(line) - len(line.lstrip())]
+    anchor = "None" if plan["q0"] else "False"
+    note = ("resolve and stamp the q0 anchor" if plan["q0"]
+            else "no q0 in this producer's cone; stamp provenance only")
+    block = [
+        f"{pad}# Provenance stamp (bean qou-4un2): this producer writes its",
+        f"{pad}# witness directly, so nothing else records which script made",
+        f"{pad}# it -- and a re-run of an unstamped producer DELETES the",
+        f"{pad}# scriptFile a downstream pass had added. {note}.",
+        f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
+        f"{pad}_WB.stamp_staleness_metadata(",
+        f"{pad}    {plan['payload']}, script_path=__file__, q0_anchor={anchor})",
+    ]
+    lines[idx:idx] = block
+    path.write_text("\n".join(lines))
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--dry-run", action="store_true", default=True)
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--only", default="", help="apply only to paths containing this")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
@@ -231,9 +282,29 @@ def main() -> int:
         plan, why = plan_one(pathlib.Path(p))
         (plans if plan else skips).append(plan or (p, why))
 
+    if args.only:
+        plans = [p for p in plans if args.only in p["path"]]
+    if args.limit:
+        plans = plans[:args.limit]
+
     if args.json:
         print(json.dumps({"plans": plans, "skips": [list(s) for s in skips]}, indent=2))
         return 0
+
+    if args.apply:
+        # Deepest line first per file is unnecessary (one insert per file), but
+        # sorting by path keeps the applied order deterministic and reviewable.
+        done, failed = 0, []
+        for p in sorted(plans, key=lambda x: x["path"]):
+            err = apply_one(p)
+            if err:
+                failed.append((p["path"], err))
+            else:
+                done += 1
+        print(f"  applied : {done}")
+        for path, err in failed:
+            print(f"  FAILED  : {path}  {err}")
+        return 1 if failed else 0
 
     q0_yes = sum(1 for p in plans if p["q0"])
     print(f"  bare producers found        : {len(producers)}")

@@ -155,6 +155,13 @@ def main() -> None:
     stamp_q0(witness, __file__)
     out = os.path.join(os.path.dirname(__file__), "yekutieli-trefoil-surface2form-discretization.witness.json")
     with open(out, "w", encoding="utf-8") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, q0_anchor=False)
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 

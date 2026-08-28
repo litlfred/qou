@@ -119,6 +119,13 @@ def main():
     }
     out = _HERE_W / "aomega-bps-sector-nondegeneracy.witness.json"
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"open-sector 4_1 count = {open_count_4_1} (det); reproduces {{3,4}}? {open_reproduces}")
     print(f"closed-sector reduced-Stokes = {reduced_stokes} ∈ {ggm_dt_spectrum}? {closed_reproduces}")

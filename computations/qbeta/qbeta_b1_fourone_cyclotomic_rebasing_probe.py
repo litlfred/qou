@@ -160,6 +160,13 @@ def main():
     out = os.path.join(os.path.dirname(__file__),
                        "qbeta-b1-fourone-cyclotomic-rebasing.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, q0_anchor=False)
         json.dump(witness, f, indent=2)
 
     print("=== B1+B2 : 4_1 cyclotomic re-basing ===")

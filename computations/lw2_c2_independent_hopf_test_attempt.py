@@ -286,6 +286,13 @@ def main() -> int:
     from q0_stamp import stamp_q0_anchor  # noqa: PLC0415
     stamp_q0_anchor(witness, __file__)
     out = HERE / "lw2-c2-independent-hopf-test-attempt.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n")
 
     print("=" * 78)
