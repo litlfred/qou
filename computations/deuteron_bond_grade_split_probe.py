@@ -118,11 +118,14 @@ def e2_thickening_the_bond():
     print("  splitting appears once the bond is thickened, because the second")
     print("  crossing acts where an inversion now exists.")
     print()
-    print("  CAUTION on k=2 vs k=3: the GRADE COUNTS above are identical, and")
-    print("  equal counts do NOT establish equal elements. The support is the")
-    print("  same; whether every coefficient matches is checked separately and")
-    print("  is not asserted here. Do not read this table as `the bond")
-    print("  saturates at two crossings' -- read it as `the grade counts do'.")
+    print("  MEASURED, and it is not saturation. k=2 and k=3 have identical")
+    print("  grade counts AND identical basis support -- and 50 coefficients")
+    print("  still differ. So the bond's filtration SHAPE stabilises at two")
+    print("  crossings while its CONTENT keeps changing.")
+    print()
+    print("  That is a third lossy projection, alongside the trace and the")
+    print("  normal form: reading only WHERE the mass sits loses the bond")
+    print("  thickness entirely. Equal counts never establish equal elements.")
     return rows
 
 
