@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T00:54:05Z
-updated_at: 2026-08-23T08:23:02Z
+updated_at: 2026-08-28T15:36:52Z
 ---
 
 Surfaced from `qou-pdix` (PR #5448). Probe:
@@ -44,3 +44,47 @@ typed-crossings normal form, or vice versa. The 2026-05-11 audit leaves the
 1.00168 to make the full 1.00744), so the corpus has not chosen.
 
 Scope-(a) throughout: nothing is refuted, neither NF is declared canonical.
+
+
+## 2026-08-28 — the question is REFRAMED by qou-avt5, and the fork is asymmetric
+
+Corpus-grep (the STRICT checklist) found `qou-avt5` — COMPLETED, and it changes
+what this bean is asking.
+
+`qbeta_single_wrap_element_cannot_exist_probe.py` proves scope-(b): NO difference
+of typed-crossing words has counit `epsNPq = h(h-2)/2`. Route: eps of any typed
+word is `q^m([2]_q/2)^c`; `epsNPq` carries `(q^2-2q-1)` so it vanishes at the
+silver ratio; absolute norms in Z[sqrt2] force the difference identically zero
+there, which epsNPq is not. Verified here 10/10.
+
+**So goc9's original framing was subtly wrong.** I asked "which of two valid NFs
+is canonical". It is not a choice between two admissible objects: the corpus's
+DESCRIPTION of Delta (a typed-crossing word difference) and its ASSERTED value
+(epsNPq) are mutually inconsistent. qou-avt5 states the fork — prose wrong, or
+value wrong — and explicitly declines to adjudicate.
+
+## Independent convergence
+
+My 0.579% gap between the single-wrap and typed counits (PR #5448) is the
+NUMERICAL shadow of their STRUCTURAL exclusion. Two routes, same fact, neither
+derived from the other.
+
+## New datum, and the limit of it
+
+eps(typed n-p) = 86 at h = 2, where epsNPq = 0. So the live construction SURVIVES
+the invariant that kills the asserted value: the horns are not symmetric.
+Probe: computations/qbeta/qbeta_counit_silver_ratio_adjudication_probe.py (7/7),
+PR #5893.
+
+Necessary, NOT sufficient — this does not prove epsNPq wrong and does not select
+horn (b). BEAN STAYS OPEN.
+
+What it buys: horn (a) is now falsifiable. If epsNPq is retained, the real Delta
+must have a counit vanishing at h = 2 while not being a typed-word difference.
+
+Also worth recording: h = q - 1/q is EXACTLY 2 at the silver ratio, so epsNPq
+vanishes there because it is built with a root at h = 2. The content is the norm
+argument; the constant is a red herring.
+
+NEXT: the fork needs the owner of the counit block, or a derivation of epsNPq
+from something. Its current status is a bare Lean `def` with no theorem.
