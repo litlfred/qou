@@ -69,6 +69,35 @@ for a non-`A` linear statistic needs the **shape-field / linear-statistic second
   exchangeable-pair / Stein), which works on the up-down chain and never needs `Σh ∈ A`.
 - Gap `qou-k5r5` stays **OPEN**. Nothing wired; sign/order still not claimed.
 
+## Redirect reconnaissance — the shape-field papers give the LIMIT, not the RATE (2026-08-28)
+
+The redirect above points at the shape-field / linear-statistic second-order theory (Dołęga–Féray
+`1402.4615`, Dołęga–Śniady `1704.02352`). Extracted both (pymupdf) and read the main theorems. **They
+do not close the sign either, for a new reason:**
+
+- Both are stated for **Jack measure / Jack characters `θ^{(α)}_k`** — again character-algebra
+  observables (`W_k(λ) = √k·θ^{(α)}_{(k,1^{n-k})}/n^{…}`), so `Σh ∉ A` bites here too.
+- More fundamentally, their **"second-order asymptotics" IS the CLT**: first order = LLN (limit shape
+  `Ω`), second order = **Gaussian fluctuations around `Ω`** (Kerov CLT). That CLT *is* the limiting
+  covariance — i.e. **`κ` itself**, which this arc already derived. The papers give the **limit**
+  `κ_n → κ`, **not the finite-n correction `κ_n − κ`** whose *sign* is the open nub.
+
+So the three standard literature tools each fall short, each for a distinct reason:
+
+| Tool | What it gives | Why it misses the sign |
+|---|---|---|
+| Śniady genus expansion (Thm 4.14) | 2nd-order expansion of **A-elements** in `R_k` | `Σh ∉ A` (this audit) |
+| Fulman Stein / exchangeable pair | Berry–Esseen for a **marginal** distribution | a magnitude/distance bound, not a covariance **sign** (PR #5887) |
+| Dołęga–Féray / Dołęga–Śniady | the **CLT limit** (= `κ`) | gives `κ`, not the finite-n **rate** `κ_n − κ` |
+
+**Honest consolidated verdict.** The sign of `κ_n − κ` is a **bespoke rate-of-convergence result** —
+the finite-n correction to a limiting Plancherel covariance whose two `~n^{5/2}` pieces (`P`, `N`)
+nearly cancel — and it is **not** delivered by any off-the-shelf tool surveyed. This matches the
+`qou-k5r5` bean's standing assessment (a "genuine analysis project, not closeable by probe-driven exact
+computation"). The defensible arc status remains: **`κ > 0` derived + `M₁ > 0` exact to n≤67 (extending)
++ Lean `k ≤ 8`** — an *asymptotic-positivity + exact-finite-check* result, with the all-n sign an
+explicitly-scoped open rate problem.
+
 ## Cross-references
 
 - Genus source unblock (corrected here): [`2026-08-23-covariance-kernel-M1-genus-source-unblock.md`](2026-08-23-covariance-kernel-M1-genus-source-unblock.md)
