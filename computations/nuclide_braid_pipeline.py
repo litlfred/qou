@@ -241,7 +241,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, q0_anchor=None)
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
     print(f"  tr_M = {total:.10f}   ({time.time() - t0:.1f}s, "
           f"{len(per_partition)}/{len(shapes)} partitions"

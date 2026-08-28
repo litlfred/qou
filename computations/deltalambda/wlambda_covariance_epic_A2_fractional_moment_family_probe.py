@@ -196,7 +196,7 @@ def main():
         from qou_substrate.witness import WitnessBuilder as _WB
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            out, script_path=__file__, q0_anchor=False)
+            out, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(out, fh, indent=1, default=str)
     print(f"\nverdict: FMP {'HOLDS' if fmp_holds else 'FAILS'} on window; "
           f"worst margin {worst[0]:+.4f} at n={worst[1]}, alpha={worst[2]:.2f}")

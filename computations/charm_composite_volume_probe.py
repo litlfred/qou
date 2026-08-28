@@ -157,7 +157,7 @@ def main():
         from qou_substrate.witness import WitnessBuilder as _WB
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, q0_anchor=False)
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("\nwrote computations/charm-composite-volume.witness.json")
 

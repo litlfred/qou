@@ -273,7 +273,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     summary.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        summary, script_path=__file__, q0_anchor=False)
+        summary, script_path=__file__, engine=None, q0_anchor=False)
     out_path.write_text(json.dumps(summary, indent=2))
 
     print(f"Scanned {len(scripts)} scripts under {args.root}")

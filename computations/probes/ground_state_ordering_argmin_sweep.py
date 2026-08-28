@@ -417,7 +417,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     out.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        out, script_path=__file__, q0_anchor=None)
+        out, script_path=__file__, engine=None, q0_anchor=None)
     Path(path).write_text(json.dumps(out, indent=2) + "\n")
     print(f"\nwrote {path}  ({out['wall_seconds']}s)")
     return 0

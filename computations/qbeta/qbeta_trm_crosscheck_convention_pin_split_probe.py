@@ -257,7 +257,7 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, q0_anchor=False)
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n", encoding="utf-8")
     print(f"\nwitness -> {out}")
     print(f"allPassed: {all_passed}  ({int((time.monotonic() - t0) * 1000)} ms)")

@@ -96,7 +96,7 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     manifest.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        manifest, script_path=__file__, q0_anchor=None)
+        manifest, script_path=__file__, engine=None, q0_anchor=None)
     (HERE / "q0_anchor_manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"ideal/muon:      {len(ideal)}")

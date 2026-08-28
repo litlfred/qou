@@ -182,7 +182,7 @@ def main() -> int:
         from qou_substrate.witness import WitnessBuilder as _WB
         report.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            report, script_path=__file__, q0_anchor=False)
+            report, script_path=__file__, engine=None, q0_anchor=False)
         pathlib.Path(args.json).write_text(json.dumps(report, indent=2) + "\n")
         print(f"\n  wrote {args.json}")
     return 0

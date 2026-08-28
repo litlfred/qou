@@ -323,6 +323,6 @@ with open(witness_out, "w") as f:
     from qou_substrate.witness import WitnessBuilder as _WB
     output.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        output, script_path=__file__, q0_anchor=None)
+        output, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(output, f, indent=2)
 print(f"\n✓ Witness written to {witness_out}")

@@ -330,7 +330,7 @@ def _check_infra_staleness() -> set[str]:
         from qou_substrate.witness import WitnessBuilder as _WB
         current.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            current, script_path=__file__, q0_anchor=None)
+            current, script_path=__file__, engine=None, q0_anchor=None)
         _INFRA_HASH_FILE.write_text(
             json.dumps(current, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
