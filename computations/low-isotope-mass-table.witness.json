@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T18:13:14.893520+00:00",
-  "commitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
+  "computedAt": "2026-08-28T19:05:57.942242+00:00",
+  "commitSha": "9305d6b8f7b81283bc671e845325fec348bc9fbd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26396,
+  "durationMs": 104,
   "computation": "low-isotope-mass-table",
   "scriptFile": "low_isotope_mass_table.py",
   "scriptHash": "0bb62b58bf87",
-  "scriptCommitSha": "12a288ee64ba91f0b87fd06cc61acabff00bc8df",
+  "scriptCommitSha": "08f590f4e9f6863a2460bad9a25a2bea20b9c924",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,9 @@
   },
   "invocation": {
     "argv": [
-      "computations/low_isotope_mass_table.py",
-      "--rerun-canonical"
+      "computations/low_isotope_mass_table.py"
     ],
-    "reproduce": "python3 -u computations/low_isotope_mass_table.py --rerun-canonical"
+    "reproduce": "python3 -u computations/low_isotope_mass_table.py"
   },
   "description": "Low-isotope mass table (A ≤ 3) via canonical pipeline (auto). Thin projection of canonical-mass-table-extended.witness.json restricted to the lightest 5 atoms.",
   "parameters": {
@@ -911,19 +910,19 @@
     "n_atoms": 5,
     "derived_from": {
       "witness": "canonical-mass-table-extended.witness.json",
-      "scriptHash": "8cdcd0dc1be5",
+      "scriptHash": "40791121a9b0",
       "scriptCommitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
-      "computedAt": "2026-08-28T18:13:14.224921+00:00",
-      "commitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4"
+      "computedAt": "2026-08-28T18:31:52.425711+00:00",
+      "commitSha": "abdac9aeefae6338d53346144c8a10559058bd75"
     },
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "301c49ab79b33e4ce548ecf99aaa43975d3f4bcb35ed3a4cd401b71df713af90",
-        "size_bytes": 72759,
-        "commitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
+        "sha256": "df2cfa2cd9a32856218bfe0bcd4174983b241447e28266c0d642fe308fb47e4a",
+        "size_bytes": 72973,
+        "commitSha": "abdac9aeefae6338d53346144c8a10559058bd75",
         "scriptCommitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
-        "computedAt": "2026-08-28T18:13:14.224921+00:00"
+        "computedAt": "2026-08-28T18:31:52.425711+00:00"
       }
     ]
   },
