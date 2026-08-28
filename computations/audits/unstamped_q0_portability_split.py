@@ -56,18 +56,31 @@ BUCKET C IS A CANDIDATE SET, NOT A WORKLIST (measured 2026-08-28, `1j39`)
 This script decides bucket C from the producer's SOURCE (`json.dump` present,
 `WitnessBuilder` absent). That is the right test for "will re-running ever
 stamp it", and it says nothing about whether re-running is SAFE. Measured over
-14 of the 16 live bucket-C producers, only **3 could actually be stamped**:
+15 of the 16 live bucket-C producers, **7 proved stampable and 8 did not**:
 
-  * **5 STRIP provenance on re-run.** They emit a witness MISSING `scriptFile`,
-    `engine` and `auditOnly` -- fields the committed copy has, added downstream
-    rather than by the producer. Stamping one adds `q0Anchor` while deleting
-    the very `scriptFile` this script used to classify it into bucket C. Net
-    provenance loss. AGENTS.md's "bare producers" hazard; the remedy is to make
-    the producer emit its provenance FIRST, which is not a two-line change.
+  * **3 were stampable as they stood.**
+  * **5 STRIPPED provenance on re-run** -- they emitted a witness MISSING
+    `scriptFile`, `engine` and `auditOnly`, fields the committed copy has
+    because they were added downstream rather than by the producer. Stamping
+    one would have added `q0Anchor` while deleting the very `scriptFile` this
+    script uses to classify it into bucket C. AGENTS.md's "bare producers"
+    hazard. **FIXED for all 5** by having each producer emit those three keys
+    itself; 4 of them then stamped cleanly. (The fix also repaired 2 DANGLING
+    `auditOnly` pointers: both targets had moved to `docs/audits/_deprecated/`
+    and nothing checks that the path resolves.)
   * **4 move numbers** -- `qou-fl9i`'s `mp.dps = 50` -> `set_compute_dps()` fix
     landed in the producers and their witnesses were never regenerated.
+  * **1 moves numbers for a DIFFERENT, unidentified reason** (~7e-5, two orders
+    above the dps class): `sublemma_2_1_alpha_shift_extract`. Its provenance is
+    fixed but it is deliberately NOT stamped, because stamping forces a
+    regeneration that would rewrite 92 lines of values under a provenance
+    commit message.
   * **1 has content drift**, **1 now fails its own assertions**, **1 writes
     nothing**.
+
+The lesson for the next pass: "not stampable" is usually a fixable producer
+defect, not a property of the witness. Five of the eight blockers were the same
+downstream-provenance bug, and fixing it converted four of them.
 
 So read `C-handrolled` as an upper bound, and dry-run any producer before
 stamping it: run it, diff the witness, and confirm nothing but provenance
@@ -215,8 +228,9 @@ def main() -> int:
         "A-producer-gone":  "nothing to port — producer deleted/renamed",
         "B-builder-stale":  "RE-RUN the producer; build() stamps",
         "C-handrolled":     ("stamp_q0() CANDIDATES — re-running never stamps "
-                             "them, but only ~3 of 14 sampled were safe to "
-                             "re-run at all; DRY-RUN each (see docstring)"),
+                             "them; 7 of 15 examined proved stampable, 4 only "
+                             "after fixing the producer. DRY-RUN each first "
+                             "(see docstring)"),
         "D-unnamed":        "no producer named; classify by the recorded pin",
     }
     for key in order:
