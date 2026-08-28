@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-26T17:00:28Z
+updated_at: 2026-08-28T20:05:19Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -454,3 +454,30 @@ convention". Under D it IS — `bar(z) = z - h` exactly — and
 `MassTheory.strictPn_eq_barSymmetriser` had proved so since #5769, so main was
 internally inconsistent. Six further sorry-free declarations in
 `ClosedFormInterfaceFactors` §3a.
+
+
+---
+
+## Cross-reference from PR #5918 — one of the deferred regenerations, metered
+
+`computations/mass-table-comprehensive.witness.json` is one of the witnesses
+this bean's flip (`543e30adfd`) deliberately left un-regenerated. Measured
+while draining that witness's float64:
+
+  * `B_qCLT_MeV` moves by a **constant -7.92e-4 MeV** and `m_approx_MeV` by
+    +7.92e-4, on every row from D (A=2) to 40Cl (A=40) — the once-per-atom
+    p-n signature.
+  * Established by running the pristine `origin/main` producer against the
+    drained one **in the same process**, so the movement is attributed to this
+    flip and not to the drain (the drain itself moves these by 2.8e-16 to
+    5.5e-14).
+
+PR #5918 re-runs the producer, so this witness lands on the canonical
+colour-weighted value there. No action needed on this bean; recorded so the
+regeneration is not double-counted or mistaken for a regression.
+
+**One number does not reconcile and is left open in `qou-q3f7`:** the implied
+`d(sum_log_V) = 2.1153e-4` is **1.4949x** this bean's single-crossing
+`1.41497e-4`, and that is not 3/2 (3/2 would need 2.12246e-4, outside the
+6-dp error bar). Either a multiplicity, or the sibling commit `879419b0ac`
+also contributing. Untested.
