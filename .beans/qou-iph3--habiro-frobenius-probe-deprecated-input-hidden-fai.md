@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-28T14:54:19Z
+updated_at: 2026-08-28T15:08:45Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -449,3 +449,52 @@ a proof at each p where it holds. Note `j=1` is vacuous for odd p —
 prime power), which is exactly what `head_criterion_vacuous_of_isUnit`
 records. `j=2` is non-vacuous at every p because `1 - zeta_p` has norm p.
 Now answerable from the regenerated coefficients.
+
+
+## Defect 4 (the successor question) — ANSWERED, same PR #5884
+
+The j=2 head criterion resolves, and it gives more than the numerical
+sweep did.
+
+For odd p, Z[zeta_{2p}] = Z[zeta_p], the ramified prime is
+p = (1 - zeta_p) with residue field F_p in which zeta_{2p} = -1, and
+(1 - zeta) is a unit. So divisibility of the head H = a_0 + a_1(1 - zeta)
+by (zeta;zeta)_2 collapses to ONE INTEGER per atom:
+
+    A := a_0(-1) + 2*a_1(-1)     criterion fires  <=>  p does not divide A
+
+  atom       A       factors      silent at
+  proton     8       2^3          no odd prime
+  neutron    2       2            no odd prime
+  deuteron   192     2^6 * 3      p = 3 only
+  tritium    384     2^7 * 3      p = 3 only
+  3He        1536    2^9 * 3      p = 3 only
+
+So Frob_p != 0 for all five atoms at every prime p outside {2, 3}. At
+p = 2 the reduction does not apply (2p = 4 IS a prime power); done by
+exact Z[i] arithmetic, fires for the neutron only.
+
+This is strictly stronger than the frobenius sweep, which is bounded by
+coefficient depth and covers 9 primes. The criterion reads only a_0 and
+a_1, so it is depth-independent and covers infinitely many p.
+
+**Silence is not vanishing** — scope-(a), not scope-(b). Where the
+criterion is silent the sweep still measures nonzero (proton at p=2,
+frob_num = 16; deuteron at p=3, Tr(num) = 24). It is a sufficient
+condition for non-vanishing and nothing more should be read into its
+failing.
+
+Cross-checked against brute-force divisibility in Z[u]/Phi_{2p}(u) at 14
+primes: agree 70/70. That check validates the residue-field reduction,
+which is otherwise a hand argument.
+
+Landed: computations/probes/habiro_head_divisibility_probe.py (exact
+integer arithmetic, no float anywhere) plus three sorry-free Lean
+declarations in QOU/Habiro/CyclotomicEvaluation.lean — habiroEval_two,
+qPochDiag_two, habiroEval_ne_zero_of_head_not_dvd_two. Verified
+lean-direct exit 0 against the real import cone; #print axioms shows no
+sorryAx on any of the three.
+
+The j=1 vacuity I predicted is confirmed as the reason the shipped
+_one form was unusable: Norm(1 - zeta_n) = Phi_n(1) = 1 unless n is a
+prime power, so 1 - zeta_{2p} is a unit at every odd prime.
