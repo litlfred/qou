@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-28T20:47:45Z
+updated_at: 2026-08-28T23:56:39Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -234,3 +234,46 @@ Its `C-handrolled` count is an upper bound on stampable producers, and the
 measured ratio on this sample is 3 of 14. A future pass should either add a
 dry-run stability probe to the script or carry this table; I have added a
 warning to the script rather than a second measurement that will also decay.
+
+
+### Follow-up, same day: the strip-provenance blocker was FIXABLE (7 of 15 now stamped)
+
+The table above recorded "5 STRIP provenance on re-run" as a blocker. It is a
+**producer defect**, not a property of those witnesses, and fixing it converted
+most of the blocked set. Each of the 5 now emits `scriptFile` / `engine` /
+`auditOnly` itself; **4 then stamped cleanly** (two q0 keys, zero numbers
+moved, all resolve `proton`).
+
+Running total: **7 of 15 examined are stamped.** Bucket C 18 -> 11 witnesses;
+corpus-wide `q0Anchor` 1259 -> 1266.
+
+**Two DANGLING `auditOnly` pointers repaired as a side effect.** Both targets
+had moved to `docs/audits/_deprecated/` and the witnesses still named the
+pre-move path — `sublemma-2-1-alpha-shift-extract` and
+`nv-categorical-derivation-probe`. **Nothing in the repo checks that
+`auditOnly` resolves**, which is how they stayed broken. I verified all five
+associations rather than copying the recorded values; a third
+(`beta-ew-delta-I-numerical-spectrum`) points at a doc that exists but does
+**not** mention the witness. Kept as recorded and noted — not invented, not
+deleted.
+
+**One deliberately left unstamped.** `sublemma_2_1_alpha_shift_extract` gets
+the provenance fix but no stamp: a re-run moves **92 lines of numbers**,
+`value_re` shifting in the **4th significant digit** (1.00544843… ->
+1.00552033…) and `max_relative_residual` 25.3556 -> 25.5245, a ~7e-5 relative
+change. That is **two orders above** the `qou-fl9i` dps class and has a
+different, unidentified cause — `34b2a75d43` did not touch this file. Stamping
+forces a regeneration, so it would have rewritten those values under a commit
+message about provenance. Its witness is byte-identical; the producer carries
+the reason. **Open: what moves it.**
+
+**A rake I walked into, recorded because this bean's own text warns of it.** My
+first import insertion landed inside a multi-line `from x import (...)` block
+and broke two producers — exactly `qou-fl9i`'s *"import insertion is
+AST-located; a regex lands inside multi-line blocks"*. Redone with
+`ast.end_lineno`, which is the only thing that sees the block's true extent.
+
+**Generalisation for whoever takes the rest:** "not stampable" was usually a
+fixable producer defect rather than a fact about the witness. Five of the eight
+blockers were the same downstream-provenance bug. Check that before writing a
+candidate off.
