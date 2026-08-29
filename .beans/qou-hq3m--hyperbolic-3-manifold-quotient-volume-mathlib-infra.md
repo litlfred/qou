@@ -1,7 +1,7 @@
 ---
 # qou-hq3m
 title: 'Mathlib infra: the volume of a hyperbolic 3-manifold as a quotient of H^3'
-status: in-progress
+status: completed
 type: task
 priority: high
 parent: qou-8mtd
@@ -75,3 +75,47 @@ but a very special one (a cusp); it is not a knot complement, and nothing here
 makes `Vol(4_1)` computable. The point is to replace *assumed* volume with
 *derived* volume in one honest case, and to leave the general bridge conditional
 exactly as it is.
+
+
+---
+
+## DONE 2026-08-29 — landed, sorry-free
+
+`QOU/Archimedean/HyperbolicQuotient.lean`, 19 declarations, all
+`[propext, Classical.choice, Quot.sound]`, zero `sorryAx`, all pinned in the axiom
+guard and verified against freshly-rebuilt oleans.
+
+The load-bearing result is `vaddInvariantMeasure`: a horizontal translation group
+**preserves hyperbolic volume**, discharged by the corpus's own `hypVolume_add_left`
+rather than assumed. That is what makes the quotient volume *derived*. Alongside it:
+the action is on H³ and not merely on ℝ³ (`vadd_mem_upperHalfSpace`), it is **free**
+(`eq_zero_of_vadd_eq`) which is what makes the quotient a manifold rather than an
+orbifold, and the quotient volume is **well defined**
+(`hypVolume_eq_of_isAddFundamentalDomain`).
+
+**A fundamental domain is exhibited** (`isAddFundamentalDomain_slab`), deliberately.
+§4 is a statement about fundamental domains and would be worth nothing over an empty
+hypothesis — the exact trap the sibling `ManifoldVolumeBridge` fell into, where the
+class admitted `Realises := fun _ _ => False` and every theorem held vacuously.
+Exhibiting the model is the only way to know. The unit slab is proved to be one, with
+`Int.floor_eq_iff` supplying the unique representative.
+
+### Two overclaims of my own, caught before commit
+
+1. **`H³/ℤ` is NOT a cusp.** A cusp cross-section is a torus and needs a **rank-2**
+   lattice; the exhibited one is rank 1. `isHorizontal_closure` is therefore stated for
+   a general generating set, so a rank-2 group satisfies §1–§4 — but only rank 1 gets a
+   fundamental domain here.
+2. **The volume is not computed.** §4/§6 establish it is WELL DEFINED (every
+   fundamental domain gives the same element of `ℝ≥0∞`), which is weaker than knowing
+   which element. `∫ dz/z³` diverges at `z → 0` so the slab is *expected* to have
+   volume `⊤` — **not proved**.
+
+### Still open (follow-ups, not blockers)
+
+- `hypVolume slab = ⊤` — the divergence, unproved.
+- A rank-2 fundamental domain, giving an actual cusp.
+- Finite-volume quotients, which need truncation and are where a *number* would appear.
+
+Mostow rigidity and Thurston hyperbolisation are untouched, and nothing here is a step
+toward either.
