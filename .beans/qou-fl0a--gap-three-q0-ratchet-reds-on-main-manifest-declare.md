@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T18:04:28Z
-updated_at: 2026-08-29T18:05:01Z
+updated_at: 2026-08-29T18:13:18Z
 ---
 
 Found while running `/prepare-merge` on PR #6026. **Inherited from `main`, not
@@ -75,3 +75,85 @@ Every input to the gate is identical to main's, so the gate result is main's.
 A worktree check against a pristine `origin/main` was attempted and aborted:
 the container hit `No space left on device` (719M free). The blob-identity
 argument above is stronger anyway — it does not depend on reproducing a run.
+
+
+---
+
+## 🛑 CORRECTION — my own diagnosis above is WRONG, retract it
+
+Everything above the line stating the cause as *"WitnessBuilder with no script
+path"* is **retracted**. I read `WitnessBuilder(name, engine=...)`, saw no path
+argument, and concluded the manifest lookup never runs. It does:
+`WitnessBuilder.__init__` **resolves the caller frame** when no path is passed —
+its own comment says *"Resolve caller frame ONLY when script path not explicitly
+provided"*. All three producers have a script path and their stems resolve.
+
+Measured, not reasoned: `resolve_q0_anchor()` on all three returns
+`'ambiguous'`, so the lookup demonstrably works.
+
+## The ACTUAL cause
+
+All three are declared under **`ambiguous`** in the manifest (PR #5958's
+declarations). And `WitnessBuilder.build()` writes the stamp only here:
+
+    if _a in ("muon", "proton"):
+        witness["q0Anchor"] = _a
+
+`ambiguous` is not in that tuple. The anchor resolves **correctly** and is then
+**discarded**. So a manifest `ambiguous` entry can never produce a stamp, and
+the witness stays in `Q0_ANCHOR_MISSING` forever while the manifest reads as
+handled.
+
+This is worse than the trap I mis-diagnosed, because the ratchet's own docstring
+lists `ambiguous` as one of THREE honest answers — *"reads q0 but the pin is
+genuinely undetermined --> 'ambiguous' with a q0AnchorReason"* — so the gate
+documents an answer its own writer refuses to record.
+
+## Blast radius, measured 2026-08-29
+
+    producers declared ambiguous : 19
+      witnesses stamped          : 10
+      witnesses UNSTAMPED        :  9
+
+And the decisive split: of the 10 stamped, the two carrying `ambiguous`
+(`mu-p-pin-sensitivity-map`, `q0-consistency-audit`) declare it AT THE PRODUCER.
+The rest are `comparison`/`independent` (producer-declared) or `proton`.
+**Every `ambiguous` stamp in the corpus came from the producer; none came from
+the manifest.**
+
+The other 6 unstamped: mass-from-q-symbolic, tau-dictionary-hauptmodul-validator,
+tau-dictionary-fricke-spin-probe, qbeta-ck-basis-constrained-pslq,
+qbeta-ck-qholonomic-recurrence-test, qbeta-habiro-integrality-kill-test.
+
+## What was done, and what was deliberately NOT
+
+DONE: corrected the ratchet's own warning, which named the wrong condition
+("a declaration on a hand-rolled json.dump producer is INERT" — all three of
+these DO use WitnessBuilder). It now names both inert paths and cites the
+measurement. That warning is what sent me down the wrong route, so fixing it is
+the higher-value half.
+
+NOT DONE, deliberately — this is a DESIGN CALL for the owner, not a drive-by:
+
+  (a) add "ambiguous" to build()'s whitelist. Fixes all 9 at once. But a
+      manifest entry carries no `q0AnchorReason`, and the ratchet requires one
+      for `ambiguous` — so this writes a stamp weaker than the documented
+      contract.
+  (b) declare at each of the 9 producers with a reason. Matches the documented
+      contract exactly. Costs 9 producer edits and 9 re-runs.
+  (c) treat manifest-`ambiguous` as a category error and remove the class — the
+      manifest's job is muon/proton routing, and `ambiguous`/`independent`/
+      `comparison` are producer-side vocabulary. Sharpest reading; largest
+      blast radius.
+
+I lean (b) for these 9 plus (c) as the follow-up, but it touches shared infra
+that many producers depend on and the owner should pick.
+
+## Method note
+
+Two wrong diagnoses in one bean, both from reading code instead of running it.
+The corpus's own `q0_anchor_missing_cause_partition.py` would have said
+`DECLARED_STALE` — which is ALSO wrong for these, since a re-run does not fix
+them (tested: re-ran `mpmath_version_staleness_probe`, witness came back with
+`q0Anchor` still absent). Three classifications, three wrong. The one that held
+was calling `resolve_q0_anchor()` and reading `build()`'s actual branch.
