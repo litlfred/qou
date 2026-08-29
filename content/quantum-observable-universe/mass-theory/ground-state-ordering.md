@@ -114,9 +114,9 @@ $$
 the fourth power being the mixed proton–neutron eigenfactor, which carries
 no $z$.  For $q > 1$ every other factor is positive, so the counterexample
 holds exactly when $-q^{-1} < z < q$ — the Markov parameter strictly
-between the two eigenvalues.  Both $z = \sqrt{q}/(q+1)$ and
-$z = q^3/(q^2+1)$ lie in
-that window for every $q > 1$, so the refutation is a fact about the
+between the two eigenvalues.  Both the canonical convention D,
+$z = q^3/(q^2+1)$, and the excised convention C, $z = \sqrt{q}/(q+1)$,
+lie in that window for every $q > 1$, so the refutation is a fact about the
 readout rather than about a choice of $z$; it degenerates to equality only
 at $q = 1$, where the deformation switches off, which is why it holds on a
 whole interval rather than at a single anchor.
