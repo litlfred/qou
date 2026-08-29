@@ -10,9 +10,9 @@ model the triad on the quaternions by right-multiplication by the imaginary
 units — $M_x(p) = p\,x$ for $x \in \{\mathbf{i}, \mathbf{j}, \mathbf{k}\}$, or
 in $2 \times 2$ block form*
 
-```tex
-M_x = \begin{pmatrix} x & 0 \\ 0 & x \end{pmatrix} .
-```
+$$
+  M_x = \begin{pmatrix} x & 0 \\ 0 & x \end{pmatrix} .
+$$
 
 *Write $[M_x, M_y] := M_y \circ M_x - M_x \circ M_y$. Then*
 
