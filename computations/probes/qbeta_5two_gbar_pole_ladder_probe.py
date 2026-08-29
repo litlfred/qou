@@ -272,22 +272,22 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("star_identity_exact",
-                     computed=float(dev1), expected=0.0, tolerance=1e-300,
+                     computed=dev1, expected=0.0, tolerance=1e-300,
                      source="(★) = the direct C_n·poch²·a₀-power route, "
                             "n ≤ 64 at dps 500")
     wb.add_assertion("residue_closed_form",
-                     computed=float(dev2), expected=0.0, tolerance=1e-3,
+                     computed=dev2, expected=0.0, tolerance=1e-3,
                      source="c∞ = (q̃;q̃)_∞² vs the A6.3 Aitken plateau "
                             "(residual transient O(q̃⁹⁷) ≈ 4e-5)")
     wb.add_assertion("transient_ratio_is_qtilde",
-                     computed=float(dev3), expected=0.0, tolerance=1e-3,
+                     computed=dev3, expected=0.0, tolerance=1e-3,
                      source="(u_n−c∞)/(u_{n−1}−c∞) → q̃ = 1/q₀ exactly")
     wb.add_assertion("pole_ladder_k1_located",
-                     computed=float(dev4), expected=0.0, tolerance=0.05,
+                     computed=dev4, expected=0.0, tolerance=0.05,
                      source="Padé of the exact-pole-subtracted regular part "
                             "has its nearest pole at w = −q₀ (k = 1 rung)")
     wb.add_assertion("regularized_dodd_consistent",
-                     computed=float(dev5), expected=0.0, tolerance=1e-9,
+                     computed=dev5, expected=0.0, tolerance=1e-9,
                      source="θ-Laplace with the exact pole split reproduces "
                             "the g3 median D_odd")
     ok = all(a.passed for a in wb.assertions)

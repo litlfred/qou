@@ -130,8 +130,8 @@ def main() -> int:
 
     builder.add_assertion(
         name="tau_adj_4_1_amplitude_crosscheck",
-        computed=float(sqrt_abs_tau),
-        expected=float(ohtsuki_amp),
+        computed=sqrt_abs_tau,
+        expected=ohtsuki_amp,
         tolerance=1e-40,
         source="√|τ_adj(4₁)| = 3^{-1/4} = Ohtsuki's Kashaev N^{3/2} amplitude; "
                "confirms |τ_adj(4₁)| = 1/√3 (Porti/Dubois, meridian; "
@@ -165,8 +165,8 @@ def main() -> int:
 
     builder.add_assertion(
         name="vol_5_2_geometric_shape",
-        computed=float(vol52),
-        expected=float(vol52_ref),
+        computed=vol52,
+        expected=vol52_ref,
         tolerance=1e-12,
         source="Vol(5₂) = 3·|D(z)|, z root of z³-z²+1 (disc -23); "
                "SnapPy value 2.828122088330783",

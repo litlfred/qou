@@ -221,8 +221,8 @@ def main():
 
     wb.add_assertion(
         "m_K_over_m_pi_within_500ppm",
-        computed=float(m_K_over_m_pi),
-        expected=float(target),
+        computed=m_K_over_m_pi,
+        expected=target,
         tolerance=0.002,
         source="(q₀⁵ − q₀⁻⁵) × (9/5)²",
     )
@@ -242,7 +242,7 @@ def main():
     )
     wb.add_assertion(
         "power_2_beats_power_1_and_3",
-        computed=float(err_ppm < err_power1 and err_ppm < err_power3),
+        computed=err_ppm < err_power1 and err_ppm < err_power3,
         expected=1,
         tolerance=0,
         source="n_q = 2 gives the smallest error among powers 1, 2, 3. "

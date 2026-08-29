@@ -373,15 +373,15 @@ def main() -> int:
         "near-miss is reported, not suppressed. auditOnly; comparison to "
         "observed; no fit; nothing wired.")
     w.add_assertion("zeta12_calibration",
-                    computed=float(d12), expected=0.0, tolerance=0.05,
+                    computed=d12, expected=0.0, tolerance=0.05,
                     source="frame check: the zeta12 pole is recovered, so "
                            "the pole map is read in the right frame")
     w.add_assertion("reality_line_populated",
-                    computed=float(ref["im_dev"]), expected=0.0,
+                    computed=ref["im_dev"], expected=0.0,
                     tolerance=0.10,
                     source="a Pade pole sits on the line Im zeta = Vol")
     w.add_assertion("favours_published_V3",
-                    computed=float(d_ggm), expected=float(d_ggm),
+                    computed=d_ggm, expected=d_ggm,
                     tolerance=float(d_leg),
                     source="V3_measured is closer to the published GGM value "
                            "than to the legacy literal")

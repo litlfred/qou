@@ -1,37 +1,37 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:59:34.965887+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-29T10:56:31.428599+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "Q_beta_pred_within_0.5_pct_of_codata",
-      "computed": 0.0016775376380114425,
+      "computed": "0.001677537638011442535960476981091610824853095031339538634011750704277993",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.005"
     },
     {
       "name": "Q_beta_pred_residual_under_2_keV",
-      "computed": 1.3123937407488375,
+      "computed": "1.312393740748837458177007581843905419000234584921918127373154908547704",
       "expected": 0.0,
       "passed": true,
       "tolerance": 2.0
     },
     {
       "name": "single_wrap_beats_typed_crossings",
-      "computed": 0.0013123937407488375,
+      "computed": "0.001312393740748837458177007581843905419000234584921918127373154908547704",
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.013661951235981984
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "q-beta-predicted",
   "scriptFile": "q_beta_predicted.py",
-  "scriptHash": "68e36bedd00f",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "b8dbcda9f9c7",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
