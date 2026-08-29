@@ -2,7 +2,7 @@
   "computation": "free-neutron-decay",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. All Gröbner--Shirshov relations traced verbosely.",
-  "timestamp": "2026-08-28T19:33:16.662400+00:00",
+  "timestamp": "2026-08-29T02:29:48.404126+00:00",
   "commit_sha": "unknown",
   "q0": 1.1099785827513808,
   "relations": {
@@ -183,5 +183,13 @@
     "delta_e": -0.0009759885889367159,
     "Q_observed_MeV": 0.78233
   },
-  "scriptFile": "free-neutron-decay.py"
+  "scriptFile": "free-neutron-decay.py",
+  "scriptHash": "660fd58b48bb",
+  "scriptCommitSha": "48fcce288f5daf927cc64c100244cdcb1475d4ac",
+  "commitSha": "f4d6f068d3963b61590fbc5bb615f91733a76858",
+  "engine": "python",
+  "computedAt": "2026-08-29T02:29:48.981135+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
