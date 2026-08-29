@@ -3,9 +3,9 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1104,
-    "total_fields": 127045,
-    "lp_dual_carved_out_fields": 427,
+    "dirty_witnesses": 1100,
+    "total_fields": 46468,
+    "lp_dual_carved_out_fields": 394,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 10,
@@ -18,7 +18,6 @@
       "computations/h2-integer-lp.witness.json": 11,
       "computations/he3-pairknot-composite-lp.witness.json": 15,
       "computations/nucleus-operator-selection-sdp.witness.json": 36,
-      "computations/onepb-status-dashboard.witness.json": 33,
       "computations/option-b-proton-mass-full-chain.witness.json": 10,
       "computations/probes/borromean-angle-structure-lp-probe.witness.json": 1,
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 7,
@@ -68,9 +67,13 @@
       "elapsed_seconds"
     ],
     "f64_integrator_carved_out_fields": 65,
-    "deprecated_f64_carved_out_fields": 97,
+    "deprecated_f64_carved_out_fields": 80675,
     "deprecated_f64_carved_out_by_file": {
-      "computations/atom-level-wedderburn-tower.witness.json": 97
+      "computations/a_operator/A-operator-extract-h9-pn.witness.json": 22738,
+      "computations/a_operator/A-operator-extract-h9-pp.witness.json": 22750,
+      "computations/atom-level-wedderburn-tower.witness.json": 97,
+      "computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json": 17531,
+      "computations/sublemma-2-1-A-operator-extract-h9-pn.witness.json": 17559
     },
     "f64_integrator_carved_out_by_file": {
       "computations/qns-backscatter-sustainment-probe.witness.json": 19,
@@ -81,15 +84,15 @@
     "baseline_files": 1106,
     "baseline_fields": 128542,
     "new_not_baselined": 0,
-    "regressed": 0,
-    "drained_files": 11
+    "regressed": 1,
+    "drained_files": 15
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "577549623ef8",
   "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "362e36cf809106f9a2b989b2fda9673932022914",
+  "commitSha": "c4304c93e9dcdbf5edc0b1ea6a9ae1252efd0e23",
   "engine": "python",
-  "computedAt": "2026-08-29T06:45:25.232684+00:00",
+  "computedAt": "2026-08-29T07:45:57.387439+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
