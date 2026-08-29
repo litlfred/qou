@@ -103,7 +103,7 @@ either a definition, the universal Cauchy–Schwarz inequality, or the exact tab
 states precisely **what is assumed versus proved**: `M₁>0` for all `n` is *proved* modulo the single
 analytic margin certificate — it is the reduction, not the closure. See
 `docs/audits/2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md` for the scheme that would
-supply `hCS`, and the `qou-cav1` epic for the machinery still to be built.
+supply `hCS`, and the `qou-h315` epic for the machinery still to be built.
 
 Base ring: generic ordered commutative ring (no `ℝ`, no division); `linarith` over it is
 base-ring-minimal (the `check-sidecars` "§7c MIXED" flag is the documented false positive). -/
