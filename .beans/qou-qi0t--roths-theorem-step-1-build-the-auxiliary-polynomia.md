@@ -58,3 +58,52 @@ at `(α,…,α)`" as a linear system over `ℤ`, count equations against unknown
 `Mathlib.NumberTheory.SiegelsLemma.exists_ne_zero_int_vec_norm_le`, and read off `a`. The
 producer now says exactly what that construction must deliver: heights with `H_j^{2q} ≤ H_k^p`,
 a scale `N`, degrees clearing `p·d_j ≥ p + 2q`, and an `F` meeting clause 3a.
+
+## The system, and the counting
+
+`QOU/Mathlib/RothAuxiliaryPolynomial.lean` — 14 declarations, all axiom-clean.
+
+**Mathlib supplies more of the engine than expected.**
+`NumberTheory.NumberField.House.exists_ne_zero_int_vec_house_le` is Siegel's lemma **over a
+number field**, with the `house` bound already proved. So the equations may keep their
+`ℚ(α)` coefficients; the expansion in a `ℚ`-basis that I had scoped as work is not needed.
+
+### Part 1 — the index condition is a linear system
+
+`le_index_iff_coeff_eq_zero` turns `c ≤ index d α P` into "every translate-coefficient of
+weight below `c` vanishes"; `coeff_translate_eq_sum` shows each is linear in `P`'s coefficients
+with matrix `translateMatrix α i n := coeff i (translate α (monomial n 1))`.
+
+⚠ Defining the matrix that way rather than by the closed form
+`∏_h binom(n_h,i_h)·α_h^{n_h−i_h}` is deliberate: the closed form is a multivariate binomial
+theorem, `RothIndex` records that `coeff_translate` does not exist at this Mathlib pin, and the
+**system does not need it** — only the `house` bound does.
+
+### Part 2 — the counting, done exactly
+
+`sum_centredWeight_sq` computes the second moment **exactly**: cross terms vanish, only the `m`
+diagonal terms survive. Built from the one-coordinate moments (`0` and `(r+1)(r+2)/(12r)`) and
+two product-space lemmas (`sum_piFinset_single`, `sum_piFinset_pair_eq_zero`).
+`card_centredWeight_le` is Chebyshev: at most `m/(4λ²)` of the box lies `λ` below the mean.
+
+⚠⚠ **The cross terms are load-bearing, and I checked this before writing them.** Cauchy–Schwarz
+on `(∑_h u_h)² ≤ m·∑_h u_h²` bounds the variance by `m²/4` instead of `m/4`. With Roth's
+`λ = εm` that turns the conclusion from `1/(4ε²m)` into `1/(4ε²)` — a constant, with no `m` left
+to grow. Since the whole argument is "take `m` large enough that `deg α/(4ε²m) < 1`", the
+cheaper inequality does not weaken the result, it **destroys** it. Two hours of Finset
+manipulation bought by five minutes of arithmetic.
+
+⚠ `card_centredWeight_le` needs `0 ≤ lam` and is **false without it** — at negative `lam` the
+filter is weaker than the square bound it is compared against. `nlinarith` refused the step,
+which is the cheapest a statement-stronger-than-the-truth defect has ever been caught in this
+arc: no reading, no counterexample construction, just a tactic declining.
+
+### Remaining
+
+1. the `house` bound on `translateMatrix` — this one does need the closed form;
+2. the bridge from `Fin m → ℕ` (the counting) to `σ →₀ ℕ` (the arc's `index`);
+3. equations-vs-unknowns: `deg α` equations per vanishing condition, against `∏(r_h+1)`
+   unknowns, then `exists_ne_zero_int_vec_house_le`.
+
+(2) is plumbing. (1) is a real lemma. (3) is where `m` gets chosen, and the counting above is
+what makes the choice possible.
