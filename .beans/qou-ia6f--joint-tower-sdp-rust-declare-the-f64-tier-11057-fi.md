@@ -1,11 +1,11 @@
 ---
 # qou-ia6f
 title: 'joint-tower-sdp-rust: declare the f64 tier — 11,057 fields, but the q0 it evaluates at is 251 ppm off the pin'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T10:09:49Z
-updated_at: 2026-08-29T10:49:49Z
+updated_at: 2026-08-29T12:21:07Z
 ---
 
 ## Landed: PR #6007 — the source fixes
@@ -82,3 +82,63 @@ above, no number in this witness should be quoted as a value — the input
 error is five orders of magnitude coarser than the L2 ppb targets. Changing
 the default to the proton pin would move all 10,796 eigenvalues and every
 downstream probe conclusion, so it is deliberately NOT done here.
+
+
+## RESOLVED 2026-08-29 — owner said "do all 4"; all four options executed
+
+**(b) the truncation flag** — `--truncate-for-repo` plus
+`--truncate-jet-log-max-steps` (default 20) and `--truncate-by-grade-max-terms`
+(default 20), recorded in a `truncation` block IN the witness. Verified rather
+than asserted: the defaults reproduce `main`'s shape on **all 11 atoms**, at
+502 KB against main's 493 KB. They are not claimed to BE the originals — those
+stay unknowable inside (20, 238] and (14, 28] — only to be inside the brackets
+and to reconstruct the artifact.
+
+**(a) regenerate and commit** — done, at FULL fidelity. The 13 MB figure that
+made this look expensive was the raw one; measured, git stores **795 KB**
+gzipped (vs ~118 KB truncated), and the corpus-wide float64 audit still runs in
+**4.3 s** with it in tree. All 118 evaluated blocks reproduce bit-identically.
+
+**(c) record the retirement** — `computations/README.md` row said "Production
+R1+R2+R3+R4+R5min in Rust"; replaced with the measurement (five probe
+consumers, one-way `consumed_by` edge, q₀ 251 ppm off pin, shape-checks-not-
+values) and the regeneration command.
+
+**(d)** superseded.
+
+### The blocker turned out to be TWO uncommitted halves, not one
+
+The bean recorded the missing truncation. Diffing a fresh run against main
+turned up a second gap: six provenance fields the Rust binary never emits and
+main has anyway — `scriptFile`, `scriptHash`, `scriptCommitSha`, `commitSha`,
+`q0Anchor`, `durationMs`. Regenerating without restoring them would have been
+a provenance REGRESSION on the unreproducible witness. Fixed as
+`computations/stamp_joint_tower_witness.py`, routing through
+`WitnessBuilder.stamp_staleness_metadata` so the Rust witness gets provenance
+by the same code path as every Python producer. `scriptCommitSha` now resolves;
+`"unknown"` on main was the fingerprint of a stamper that could not find its
+own file.
+
+### Result
+
+Raw-float64 ratchet: **11,057 → 0** on this file, corpus **46,467 → 35,400**,
+0 new dirty, 0 regressions. The file leaves the baseline entirely. The
+deprecated-f64 carve-out goes 80,675 → 91,732 across 6 witnesses — reclassified
+and reported, not hidden.
+
+### Two findings surfaced by smoke-testing the consumers first
+
+- `alpha_star_dominant_partitions.py` **could not run at all**: the Phase-5
+  subdirectory refactor moved it into `alpha/` and left the witness read at
+  `__file__.parent`. Fixed to use `_path_bridge.witness_path`, as its sibling
+  already does. Re-run confirms identical numbers.
+- `probe_4_li6_rectangular_conjecture` **cannot run either**, and this one is
+  not fixable here: it needs `lithium6-canonical-3A`, an atom the producer
+  reaches at H_18 and is SIGKILLed on memory computing (4m36s, exit 137). Its
+  error message says "re-run with ⁶Li registered" — ⁶Li IS registered now, so
+  the blocker moved from registration to memory. Left as a real compute limit.
+
+So of five "live consumers", two were dead. That strengthens rather than
+weakens the `not_production` claim.
+
+PR #6007.
