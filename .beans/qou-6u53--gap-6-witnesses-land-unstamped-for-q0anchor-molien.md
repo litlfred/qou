@@ -1,11 +1,11 @@
 ---
 # qou-6u53
 title: 'GAP: 6 witnesses land unstamped for q0Anchor — molien/fake-degree + gap2-he4-borromean-mu-bar'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T09:07:10Z
-updated_at: 2026-08-29T09:07:38Z
+updated_at: 2026-08-29T10:01:20Z
 ---
 
 Surfaced while merging main into claude/cds3-muon-proton-drain-2026-08-29
@@ -51,3 +51,50 @@ since they know whether the compute is q-symbolic (very likely `independent`
 for Molien-series / fake-degree combinatorics) or evaluates at the substrate.
 
 Reported on PR #5989 rather than guessed at.
+
+
+## 2026-08-29 — RESOLVED. All six are genuinely q0-independent
+
+Fixed in PR #5989, ported to #5992. Both gates green on both branches.
+
+I reported these rather than fixing them a few hours earlier, on the grounds
+that choosing between a manifest declaration and `independent` needs each
+producer's import cone rather than a grep. Right about METHOD, wrong about
+EFFORT — the cone trace is mechanical, and having run it, all six answer the
+same way.
+
+### Evidence, three converging lines
+
+AST import-cone walk (transitive; asks whether q_parameter /
+qou_substrate.constants / Q / Q_50_DIGIT_STR / q_at is REACHABLE at all):
+
+  fake_degree_addable_box_recursion_probe   UNREACHABLE in the whole cone
+  molien_binding_signed_dimension_probe     UNREACHABLE in the whole cone
+  molien_wenzl_weight_identity_probe        UNREACHABLE in the whole cone
+  gap2_he4_borromean_mu_bar                 reachable ONLY via
+                                            codata_2022_source (a CODATA mass
+                                            table); the file has no q_0
+                                            reference at all
+  molien_jones_markov_general_n_probe       reachable via the Hecke machinery,
+                                            but EXACT SYMBOLIC in
+                                            sp.symbols("q z") per its own
+                                            docstring
+  molien_jones_markov_n3_identification     reachable via an imported probe,
+                                            but "everything exact in Q(q,z)"
+
+Decisive test, applied to the ANSWER rather than the source: **none of the six
+records a q_0 value anywhere in its payload.**
+
+Reachable is not used; symbolic in q is not evaluated at a pin. Declared at
+each producer with a reason (152-242 chars), never by hand-editing JSON and
+never by a manifest entry that would assert a pin they do not use.
+
+### A trap worth recording — a clean py_compile is not a clean generator
+
+My first generator emitted the reason's continuation lines as `#` comments
+INSIDE the parenthesised string expression. One file failed to compile (nested
+quote); the other **five compiled fine while silently truncating
+q0AnchorReason to its first line**, because Python simply dropped the
+comments. Five-of-six green would have read as success. Caught by the one
+syntax error, not by the five successes. Reverted and redone with real
+implicit-concatenation literals.
