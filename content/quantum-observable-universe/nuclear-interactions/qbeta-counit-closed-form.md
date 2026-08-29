@@ -14,7 +14,13 @@ $$
   \mathrm{tr}_M(\Delta) = \frac{h^2}{2} - h\,z.
 $$
 
-The coordinate sum is the Markov trace evaluated at the trivial loop value. The two agree precisely when $z = 1$. The trivial-loop value is never attained on the substrate. The two are genuinely distinct functionals on the substrate.
+On $\Delta$ the coordinate sum agrees with the Markov trace at the trivial loop value $z = 1$, and the trivial-loop value is never attained on the substrate, so the two are genuinely distinct functionals there.
+
+**That agreement is a property of $\Delta$, not an identity.** The Markov trace at $z = 1$ weights the standard basis as $[1,1,1,1,1,h+1]$, while the coordinate sum weights it as $[1,1,1,1,1,1]$, so
+$$
+  \mathrm{tr}_M\big|_{z=1} - \varepsilon \;=\; h \cdot (\text{the } e^- \text{ coordinate}).
+$$
+The two therefore coincide exactly on elements whose $e^-$ coordinate vanishes, which both nucleon models happen to satisfy. The identity must not be quoted in general.
 
 ## Scope: $\varepsilon$ is not a counit, and is inadmissible under convention D
 
