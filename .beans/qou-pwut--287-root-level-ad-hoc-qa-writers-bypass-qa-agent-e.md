@@ -234,3 +234,85 @@ verdict in the corpus. That is a scope decision for the author, not a cleanup.
 `milnor-editor` verdicts (the 41 in the measurement) and clobbers whole
 sidecars. It is hardcoded to `/Users/litlfred/space_cats/qou/...` and cannot run
 anywhere in this repo, so it is inert. Deleting it is `qou-gljq`'s call.
+
+---
+
+## ARCHAEOLOGY, on full history — and they were never producers (2026-08-29)
+
+Owner asked: we cannot have live content without producers; why were the
+originals deleted, what must be restored, or do we not need the witnesses?
+
+**First, a correction to this bean's own recorded limit.** It says *"Shallow
+clone (51 commits) … `git fetch --deepen` times out against this remote."* Both
+halves are stale. `--deepen=2000` took **20 s** (19 grafts → 2) and
+`--unshallow` took **4 min** (shallow file gone, 31,381 commits). The archaeology
+below was impossible when this bean was written and is routine now.
+
+**Two false attributions I nearly published**, recorded because the tell is
+reusable. Blaming the largest sidecar-touching commit gave `230cdd1136`
+(*"decorating the Gram cannot break the confinement-LP degeneracy"*, 3,592
+sidecars **A**dded) and then, after one deepen, `635c73ad4d` (*"4_1 gluing"*,
+3,297 added). **Both are shallow graft points** — at a graft the parent is
+unresolvable, so every file reads as an addition. The tell both times was an
+implausible `A` count (the second was 25,599 files, i.e. the whole tree).
+**At a graft boundary, `--name-status` is meaningless.**
+
+**The real origin, on full history.** `-S` on the entry's own timestamp rather
+than on the criterion name (the criterion dates to 2026-05-28 and is not the
+same question):
+
+    e62336dabc1  2026-07-07  chore(qa-sweep): heuristic agentic redo for
+                             proof criteria (full replace)
+
+Self-describing and honest: a **heuristic agentic redo**, **full replace**.
+
+**Why the writers were deleted:** `9ddf0ad9c0`, 2026-08-25 — *"Option 3 of the
+three the author picked, **approved explicitly**."* Recorded reasoning: 0 of 316
+referenced anywhere; **286 distinct hashes across 316 files**; hardcoded
+`/Users/litlfred/...` paths; none emits `field_hash`.
+
+### They were serializers, not producers — so there is nothing to restore
+
+286 distinct hashes over 316 files is not one tool run 316 times; it is 316
+bespoke throwaways. Each took a verdict **an agent had already reached** and
+wrote it to JSON. A witness producer *derives* a value and re-running it
+regenerates that value; these *transcribed a judgement*. Restoring them would
+restore the ability to **write** verdicts, not to **reproduce these ones**.
+
+**And a QA agent verdict is not a witness.** There is no producer even in
+principle — the "producer" was a model session in July. This document already
+says so under `prepare-merge-auto`: *"An agent verdict has no producer —
+`qa-sweep` regenerates script candidates and never a judgement."* So the answer
+to *"do we not need the witnesses?"* is: **there are none to need.** The
+reproducibility frame does not apply to this artifact class.
+
+### The concern is right but displaced — and largely already handled
+
+The real defect is not the missing producer. It is that these entries carry **no
+`field_hash`**, so nothing records *which version of the block* was judged.
+
+**But that already fails safe, verified in code, not taken from a commit
+message.** [`qa-agent-drain-queue.ts:72-75`](../content/pipeline/qa-agent-drain-queue.ts)
+computes `fresh` as `e.field_hash?.md === curmd`. A missing hash is `undefined`,
+never equal, so the criterion lands in `need` and the block is queued.
+
+**Every affected block is therefore ALREADY queued for re-review.** The
+unhashed entries suppress nothing.
+
+### Measured scale
+
+| | |
+|---|---|
+| blocks affected | **3,389** of 3,617 sidecars (94 %) |
+| distinct criteria | 31 |
+| cosmetic (`trap-`/`voice-`/`milnor-`/`expo-`) | 8,655 |
+| **substantive** (`da-`/`proof-`/`q-usage-`) | **44,638** |
+| location | **100 % live content, 0 in `_deprecated/`** |
+
+### So the only live question
+
+Not restoration, and not re-queueing — both are already settled. It is whether
+the stale text should be **removed** from the sidecars, since a human or agent
+reading a `.qa.json` sees `"result": "pass"` with a confident note and no
+indication it adjudicates nothing. The drain queue knows; a reader does not.
+That is the author's call and nothing here presumes it.
