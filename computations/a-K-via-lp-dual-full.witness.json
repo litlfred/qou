@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-29T07:00:58.234441+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-29T10:06:17.241323+00:00",
+  "commitSha": "85d4ee8bf9f089c29a0bec444f69ef02b40a0c40",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2281,
+  "durationMs": 2301,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
-  "scriptHash": "5903e02fa126",
-  "scriptCommitSha": "a1b5edbfda0abadb45473f47433073c8c2513f74",
+  "scriptHash": "50d3be1e17b7",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -126,8 +126,8 @@
   "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
-    "q0_50dps": "1.1099785956427390467",
-    "h_q": "0.20906032215031674663",
+    "q0_50dps": "1.1099785827513808076",
+    "h_q": "0.20906029879563931543",
     "precision": "f64 (scipy linprog highs)",
     "lp_method": "highs"
   },
@@ -430,7 +430,7 @@
         "self_conjugate_dual_sum_str": "0.16843299533748291519212290136002599362411891308244",
         "a_K_via_lp_dual": null,
         "a_K_dual_status": "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; under convention D the l(lambda)>=3 blocks vanish identically, so this LP needs re-posing on the two-row quotient",
-        "a_K_C_closed": 1.2090603221503167,
+        "a_K_C_closed": 1.2090602987956394,
         "dual_vs_C_ppm": null,
         "per_partition": [
           {
@@ -810,7 +810,7 @@
         "self_conjugate_dual_sum_str": "0.05051089519232343356142383229119607178980899476263",
         "a_K_via_lp_dual": null,
         "a_K_dual_status": "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; under convention D the l(lambda)>=3 blocks vanish identically, so this LP needs re-posing on the two-row quotient",
-        "a_K_C_closed": 0.9562937817024058,
+        "a_K_C_closed": 0.9562937914674781,
         "dual_vs_C_ppm": null,
         "per_partition": [
           {
@@ -1549,7 +1549,7 @@
         "self_conjugate_dual_sum_str": "0.10973484888357397972027520559375979508840797304215",
         "a_K_via_lp_dual": null,
         "a_K_dual_status": "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; under convention D the l(lambda)>=3 blocks vanish identically, so this LP needs re-posing on the two-row quotient",
-        "a_K_C_closed": 0.9562937817024058,
+        "a_K_C_closed": 0.9562937914674781,
         "dual_vs_C_ppm": null,
         "per_partition": [
           {
@@ -2523,7 +2523,7 @@
         "self_conjugate_dual_sum_str": "0.036325104454062080297658060857366477528701476864276",
         "a_K_via_lp_dual": null,
         "a_K_dual_status": "degenerate: |y0_star| <= 1e-12, the LP collapsed to the trivial point; under convention D the l(lambda)>=3 blocks vanish identically, so this LP needs re-posing on the two-row quotient",
-        "a_K_C_closed": 0.9144977969226885,
+        "a_K_C_closed": 0.9144978155992444,
         "dual_vs_C_ppm": null,
         "per_partition": [
           {
@@ -4576,7 +4576,6 @@
   "caveats": [
     "B.1a-rev.4 PROBE-ONLY: the LP basis used here is the Wedderburn-block projector basis {π_λ : λ ⊢ n}, giving a block-DIAGONAL Frobenius Gram G_λλ' = w_λ · δ_λλ'. This is too coarse for the operator-selection LP — the duals come out DEGENERATE (y0^* = 0 for A ≥ 2; chirality dual sum diverges in the limit). The full operator-selection LP per `prop:mass-coefficient-shadow-price` requires the full Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item (per Item B audit §7c B.1a-rev.4); the present script wires the SDP-attribution path and surfaces the block-diagonal LP's degeneracy as an empirical finding."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

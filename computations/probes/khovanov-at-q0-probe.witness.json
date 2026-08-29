@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:37:04.097387+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-29T09:30:59.227155+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [
     {
       "name": "c_3_match_at_q1",
@@ -17,7 +17,7 @@
   "durationMs": 5,
   "computation": "khovanov-at-q0-probe",
   "scriptFile": "khovanov_at_q0_probe.py",
-  "scriptHash": "8c8b554a4e90",
+  "scriptHash": "c8dec9e34f72",
   "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -43,14 +43,14 @@
   },
   "description": "Khovanov polynomials Kh(L)(q, t) evaluated at the substrate q_0 with t = −1 (Jones-decategorification limit). Tests whether the empirical c_k coefficients of the Q_β precision ladder match Kh values at q_0 rather than at q=1, providing an automatic source of the b²-correction terms that were unexplained at q=1.",
   "data": {
-    "q_0_50dps": "1.109978595642739046681795129380001752700065561029",
-    "b_sq_at_q0": "0.752702113849160547812963666695",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "b_sq_at_q0": "0.75270211325196540159377935162",
     "kh_at_q0": {
-      "unknot": "2.0108968691351613467",
-      "Hopf+": "5.6202039601944451359",
-      "Trefoil+": "1.6048331607212923612",
-      "Figure-8": "4.5816359615769952757",
-      "Borromean": "0.022151257454555540013"
+      "unknot": "2.0108968667071222998",
+      "Hopf+": "5.6202037307342178868",
+      "Trefoil+": "1.604833269675387833",
+      "Figure-8": "4.5816358285999749673",
+      "Borromean": "0.022151252438864392564"
     },
     "kh_at_q1": {
       "unknot": "2.0",
@@ -63,11 +63,11 @@
       "c_3_empirical": -2.0,
       "c_3_kh_hopf_q1_match": true,
       "c_4_empirical": -1.143537,
-      "c_4_kh_hopf_q0_half": 2.8101019800972225,
-      "c_4_residual": -3.9536389800972227,
+      "c_4_kh_hopf_q0_half": 2.810101865367109,
+      "c_4_residual": -3.953638865367109,
       "c_5_empirical": 12.81699,
-      "c_5_kh_hopf_plus_borromean_q0": 5.642355217649,
-      "c_5_residual": 7.174634782350999
+      "c_5_kh_hopf_plus_borromean_q0": 5.642354983173083,
+      "c_5_residual": 7.174635016826918
     },
     "upstream_witness_hashes": [
       {
@@ -80,6 +80,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

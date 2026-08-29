@@ -5,6 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
+updated_at: 2026-08-29T09:42:17Z
 updated_at: 2026-08-29T08:52:07Z
 ---
 
@@ -195,6 +196,54 @@ environment delta swamps the signal. A future drain needs an environment
 matching the recorded one, or it should compare only non-environment fields.
 
 
+## 2026-08-29 (LATER) — the 36 direct readers: 18 MIGRATED, PR #5992
+
+The work the drain established could not be done by re-running. Source edit +
+manifest move + re-run, all three, per producer.
+
+**Landed (18 producers, 19 witnesses to proton).** ideal_muon 45 -> 32.
+Zero straddles among the touched witnesses.
+
+**The manifest half is not optional and half the change is a NO-OP.** 14 of
+the 20 stems were listed under ideal_muon, so q_parameter.Q_50_DIGIT_STR
+resolves to MUON for them and the source edit alone does nothing. Found it
+when delta-S-chain-audit came back stamped muon with a muon data.q_0_50dps
+after a source-only edit — the payload-first resolver caught it instantly.
+AGENTS.md says this ("the manifest reclassification and the witnesses it
+re-pins are one change") and it reads as advice about MERGE ORDER; it is also
+a statement that half the change is inert.
+
+**5 excluded after reading, not by pattern.** The ledger
+(q0-muon-legitimate-producers.json, 17 entries, inherited from PR #5500 rather
+than rebuilt) covers 13. Three more on inspection: muon_pin_three_values_probe
+(derives inline to COMPARE the three values), lambda_scale_substrate_probe
+(self-documents that it reads directly BY DESIGN and measures that), and
+q_beta_predicted (no direct read at all — prose label only; reaches muon via
+derived_masses, so it is the indirect class).
+
+**2 DEFERRED on a float64 defect — and the mechanism generalises.**
+chi_lambda_he4_full_partition_table and gram_matrix_seminormal_h6 turned the
+raw-float64 ratchet red (194->196, 130->131). The migration did NOT add
+float64: those fields were always f64, evaluated to exactly 1.0 / -1.0 at the
+muon pin where the ratchet's INTEGRAL-VALUED CARVE-OUT does not count them,
+and to 1.000000000000009 / -0.9999999999999999 / 0.9999999999999998 at proton
+where it does.
+
+  🛑 The carve-out hides float64 error whenever the true value is whole.
+  A clean ratchet on a determinant-of-±1 or an exact-count character is NOT
+  evidence the arithmetic is exact.
+
+Root cause: chi_lambda_braid(..., q0_f64) enters the f64 Rust kernel;
+gram_matrix_seminormal_n.py:190,195 uses float(np.linalg.det(M)). Fix is named
+by the corpus (precision='mpfr_50dps' / chi_lambda_braid_mpf) but changes the
+COMPUTE PATH, so every value in both witnesses moves. Bean qou-k6b3.
+
+## What remains on cds3
+
+  * 2 direct readers, blocked on qou-k6b3
+  * ~25 witnesses whose producers reach muon INDIRECTLY (imports, upstream
+    witnesses) — these need cone tracing, not a direct edit, and are the
+    genuinely unmeasured part
 ## 2026-08-29 — the sweep RAN, and it cannot finish the migration
 
 Drain: computations/audits/q0_muon_proton_drain.py across 177 producers, 94.7 min.

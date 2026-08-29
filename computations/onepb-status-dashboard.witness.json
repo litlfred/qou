@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T09:02:27.324634+00:00",
-  "commitSha": "5ea6338121bebd9da568a2998279807aac19ad58",
+  "computedAt": "2026-08-29T10:06:21.054520+00:00",
+  "commitSha": "85d4ee8bf9f089c29a0bec444f69ef02b40a0c40",
   "assertions": [
     {
       "name": "lp_max_duality_gap",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 27,
+  "durationMs": 25,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
   "scriptHash": "3eeb5bd7ad07",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "28ee8c9766ce742c207206a1669d31af73c3ff1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

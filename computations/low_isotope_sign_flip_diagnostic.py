@@ -149,7 +149,24 @@ def main() -> int:
 
     src = record_upstream(INPUT_WITNESS, _UPSTREAM_RECORDS)
     rows_in = src["data"]["rows"]
-    q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+    # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+    # §"q₀ anchor convention": the experimental (proton) anchor is the default
+    # for all production compute, and the owner authorisation recorded there
+    # covers this sweep ("we want proton unless for an explicit reason ... fix
+    # all, even if not visible").
+    #
+    # This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+    # MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+    # direct read of the anchor-defining witness computes at muon whatever the
+    # configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+    # tension itself.
+    #
+    # The upstream record is KEPT — that witness remains the canonical 3-CAL
+    # (muon) pin document, it is simply no longer the source of this
+    # computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+    record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+    q = mp.mpf(_Q50_PROTON)
     # mpf, not float(): this feeds `signed_h_weight`, which is regressed
     # against err_pct below -- a computation, not a display (AGENTS.md
     # "PROBES ARE NOT EXEMPT").
