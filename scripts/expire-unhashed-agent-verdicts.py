@@ -90,7 +90,12 @@ def main() -> int:
                     continue
                 if (entry.get("reviewer") or {}).get("kind") != "agent":
                     continue
-                if "field_hash" in entry:
+                # An EMPTY ``field_hash: {}`` records no block version either:
+                # the drain's freshness test is ``e.field_hash?.md === curmd``,
+                # and ``{}.md`` is ``undefined`` exactly as a missing key is.
+                # The first version of this script tested ``"field_hash" in
+                # entry``, which skipped 2,040 such entries.
+                if entry.get("field_hash"):
                     continue
                 notes = entry.get("notes") or ""
                 if notes.startswith(MARK):
