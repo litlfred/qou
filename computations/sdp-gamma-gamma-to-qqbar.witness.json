@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:17:42.979431+00:00",
-  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
+  "computedAt": "2026-08-29T08:31:52.911436+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "sdp-gamma-gamma-to-qqbar",
   "scriptFile": "sdp_gamma_gamma_to_qqbar.py",
   "scriptHash": "772706c924a3",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -46,7 +46,7 @@
       "sym_eigenvalue_at_q_0": 1.3675518845998744,
       "alt_eigenvalue_at_q_0": -0.7312336820716571,
       "psd_at_q_0": false,
-      "tr_M_at_q_0": 0.8485266504695027
+      "tr_M_at_q_0": 0.8485266504781129
     },
     "h3_skeleton_outline": {
       "n_strands": 3,

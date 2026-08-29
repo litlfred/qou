@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T02:52:37.660439+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T07:34:33.451190+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "linear_trace_matches_transfer_engine",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 64,
   "computation": "gram-norm-binding-probe",
   "scriptFile": "gram_norm_binding_probe.py",
   "scriptHash": "a67cb484c3f1",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "457c3fc487845ef5f54f58e63890ebe9ad0dfb4c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -532,7 +532,7 @@
           }
         ],
         "qbar": {},
-        "wall_sec": 19.42
+        "wall_sec": 8.12
       },
       {
         "iso": "3He",
@@ -860,7 +860,7 @@
           }
         ],
         "qbar": {},
-        "wall_sec": 28.32
+        "wall_sec": 8.13
       }
     ]
   },

@@ -80,6 +80,12 @@ try:
     from qou_substrate.constants import Q_50_DIGIT_STR as _Q_PROTON_STR
 except Exception:  # pragma: no cover — sandbox fallback, same documented value
     _Q_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
+try:
+    from _precision import fmt  # canonical mpf -> string serializer
+except Exception:  # pragma: no cover — sandbox fallback
+    def fmt(x, dps: int = 50):
+        return mp.nstr(mp.mpf(x), dps, strip_zeros=False)
+
 Q0_PROTON = mp.mpf(_Q_PROTON_STR)
 # Muon pin: the canonical 3-CAL computations-layer value (task-given).
 Q0_MUON = mp.mpf("1.1099785955573347198997632204832250266562084087802")
@@ -329,26 +335,26 @@ def main():
         "assertions": [
             {
                 "name": "per_block_leading_eps_coefficients_are_minus2_minus1_minus2",
-                "computed": 1.0 if lead_ok else 0.0,
-                "expected": 1.0,
+                "computed": fmt(mp.mpf(1) if lead_ok else mp.mpf(0)),
+                "expected": fmt(mp.mpf(1)),
                 "passed": bool(lead_ok),
-                "tolerance": 0.0,
+                "tolerance": fmt(mp.mpf(0)),
                 "source": "qbeta_multiblock_order_audit.py (PR #1593) per-block leading data",
             },
             {
                 "name": "scale_fix_c2_minus1_solvable_and_exact",
-                "computed": float(results["proton"]["c"][2]),
-                "expected": -1.0,
+                "computed": fmt(results["proton"]["c"][2]),
+                "expected": fmt(mp.mpf(-1)),
                 "passed": bool(abs(results["proton"]["c"][2] + 1) < mp.mpf("1e-35")),
-                "tolerance": 1e-35,
+                "tolerance": fmt(mp.mpf("1e-35")),
                 "source": "c_2 = -1 is the one proved rung (Lean N2_factor); the single scale d.o.f.",
             },
             {
                 "name": "kill_criterion_hit_exponentiated_seed_misses_c3_gate",
-                "computed": 0.0 if within_1pct_both else 1.0,
-                "expected": 1.0,  # kill criterion fires => probe verdict NEGATIVE
+                "computed": fmt(mp.mpf(0) if within_1pct_both else mp.mpf(1)),
+                "expected": fmt(mp.mpf(1)),  # kill criterion fires => probe verdict NEGATIVE
                 "passed": bool(not within_1pct_both),
-                "tolerance": 0.0,
+                "tolerance": fmt(mp.mpf(0)),
                 "source": ("Pre-stated kill criterion: anchor-constant and far from "
                            "empirical (C13 failure mode) => NEGATIVE, extend C13 "
                            "scope-limited (a)."),

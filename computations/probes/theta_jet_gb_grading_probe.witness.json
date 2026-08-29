@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:12:05.225736+00:00",
-  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
+  "computedAt": "2026-08-29T07:57:45.803267+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [],
   "allPassed": true,
   "durationMs": 19,
   "computation": "theta_jet_gb_grading_probe",
   "scriptFile": "theta_jet_gb_grading_probe.py",
   "scriptHash": "78bf71b05c73",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
   },
   "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
   "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
-  "generated": "2026-08-29T03:12:05+00:00",
+  "generated": "2026-08-29T07:57:45+00:00",
   "parameters": {
     "dps": 60,
     "m_max": 200,
