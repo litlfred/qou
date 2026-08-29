@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T02:22:57Z
+updated_at: 2026-08-29T02:52:38Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -105,3 +105,5 @@ LEAN STATUS: n=3 sorry-free (general z, MolienJonesMarkovN3.lean). n=4 needs the
 INDEPENDENT general-z H_4 weights as polynomials for a ring proof (only have z=z_D
 corpus pin + exact normalization). forall-n Lean = abstract S_n Molien + H_n Markov
 machinery, a real formalization project = THIS BEAN. Nothing wired.
+
+2026-08-29 Molien->binding hook (probe molien_binding_signed_dimension_probe.py, exact sympy, S3+S4 pass): the PROVED binding signed dims Delta_lambda=(-1)^{n(lambda)} dim V_lambda are read off the SAME M_nu(u,t) as the weights, at the fake-degree edge t=0: fd_lambda(u)=M_nu(u,0)*prod_{i=2}^n(1-u^i), n(lambda)=u-valuation, dim=fd(1). Weights at (u=q^2,t=qz/W); binding signed-dims at (u,t=0). Whole B=Sum y chi Delta is one bigraded Molien object read at two corners. HONEST: needs the FULL coinvariant denominator (reduced numerator gives dim=1 for all lambda -- corrected). Does NOT touch the open binding MAGNITUDE (extensive M_n(K) term). forall-n still open. Nothing wired.
