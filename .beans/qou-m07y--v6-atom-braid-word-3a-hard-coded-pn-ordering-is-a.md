@@ -1,11 +1,11 @@
 ---
 # qou-m07y
 title: 'V6: atom_braid_word_3A hard-coded p/n ordering is a non-physical DOF; re-measure the spread under convention D'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:45:57Z
-updated_at: 2026-08-29T18:46:56Z
+updated_at: 2026-08-29T18:52:47Z
 parent: qou-mhj9
 ---
 
@@ -30,3 +30,34 @@ different multisets).
 DO NOT fit m_pp/m_pn/m_nn (the lever exists in the signature; tuning it buys a
 table and costs the parameter-free claim). The fix is to make the answer
 order-INDEPENDENT, or to derive the ordering.
+
+
+## RESOLVED as a STRUCTURAL EXCLUSION 2026-08-29 (PR #6059)
+
+Lean: QOU/MassTheory/ChainBondOrderDependence.lean, sorry-free, lean-direct
+exit 0, #print axioms clean on all 8 decls (five need [propext] alone).
+
+The bean asked to re-measure the ordering spread under convention D and make
+the answer order-independent. The structural question turns out to settle it
+without the sweep:
+
+  orderIndependent_iff -- the chain bond sum is invariant under every
+  rearrangement IFF L_pp = L_pn = L_nn. Two A=3 witnesses force it:
+    B(ppn) = L_pp + L_pn  vs  B(pnp) = 2 L_pn  =>  L_pp = L_pn
+    B(nnp) = L_nn + L_pn  vs  B(npn) = 2 L_pn  =>  L_nn = L_pn
+
+  not_orderIndependent_of_ne -- L_pp != L_nn ALONE breaks it, every A >= 3.
+
+With InterfaceScalar.charge_independence_iff (L_pp = L_nn <-> h = 0 <-> q = 1):
+the linear chain is arrangement-independent ONLY at q = 1. At q0 no bond-scalar
+assignment repairs it.
+
+SCOPE-(b), invariant named. Excludes the LINEAR-CHAIN ANSATZ as a well-defined
+binding functional at q != 1. Does NOT exclude the bond picture. Do not
+symmetrise over arrangements and do not hunt a better convention -- the defect
+is that the chain has an arrangement at all. The repair changes the BOND SET
+(coordination graph / all-pairs / derived edge set, qou-h7mh).
+
+The D-frame spread re-measurement is now MOOT as a decision input (the answer
+is "nonzero for any q != 1"), though the numbers would still be worth having
+for the audit record if a probe is ever cheap.
