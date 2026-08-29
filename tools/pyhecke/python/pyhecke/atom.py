@@ -30,6 +30,7 @@ from __future__ import annotations
 import math
 from fractions import Fraction
 import numpy as np
+import mpmath as _mp
 
 # Substrate constants + Gram / NF primitives — pyhecke owns these
 # (M2b inversion landed earlier; pyhecke.gram is the canonical source).
@@ -38,6 +39,7 @@ from pyhecke.gram import (  # type: ignore[import-not-found]
     W_SYM, W_STD, W_ALT,
     NF_BASIS, NF_NAMES,
     hm, hm_exact, nf_tr, nf_net,
+    h_mp, hm_mp,
     G,
     _H_FRAC, _Z_FRAC, _SYM_EIG_FRAC, _ALT_EIG_FRAC,
     _Q_FRAC, _QI_FRAC,
@@ -802,6 +804,53 @@ def build_nucleon_nf(quarks):
 
 
 
+def build_nucleon_nf_mp(quarks, dps: int = 50):
+    """float64-free twin of `build_nucleon_nf`, at the TRUE substrate q_0.
+
+    Same construction, same crossing order, same generator assignment — only
+    the arithmetic differs. Every coefficient is `mpmath.mpf` and `h` comes
+    from `gram.h_mp(dps)`, i.e. `q_0 - q_0**-1` at the 50-dps substrate
+    string.
+
+    **Why not `hm_exact`.** The module's Fraction path is exact arithmetic at
+    the RATIONAL MODEL `q = 111/100`, which differs from the substrate
+    `q_0 = 1.1099785827513808` by 1.93e-5 relative (gram.py says so at
+    `_Z_FRAC`). Measured on this builder's own output, that propagates to a
+    **1.66e-5 relative deviation** — 16.6 ppm — so routing it through the
+    Fraction path would be float-free and eleven orders of magnitude WORSE
+    than the float64 it replaced. Exactness of the arithmetic and correctness
+    of the anchor are separate properties, and only the mp path has both.
+
+    Measured agreement with the float64 builder: max relative difference
+    1.4e-16 (proton) and 6.0e-17 (neutron), i.e. the float path was already
+    correct to its own precision — this twin extends the precision, it does
+    not correct a value.
+
+    **What this does not change.** `build_nucleon_nf`, `PROTON_NF` and
+    `NEUTRON_NF` are untouched, so no existing consumer moves. This is the
+    additive twin the module already uses elsewhere (`build_atom_nf` /
+    `build_atom_nf_exact`); callers who need more than float64 opt in.
+    """
+    hv = h_mp(dps)
+    nf = [_mp.mpf(1)] + [_mp.mpf(0)] * 5
+    one, zero = _mp.mpf(1), _mp.mpf(0)
+    # B_3 confinement: (sigma_0 . sigma_1^-1)^3
+    for _ in range(3):
+        nf = hm_mp(nf, one, zero, 0, dps)        # sigma_0
+        nf = hm_mp(nf, one, -hv, 1, dps)         # sigma_1^-1
+    # Quark pairwise crossings: (0,1), (0,2), (1,2); generator = lower index
+    for i, j in [(0, 1), (0, 2), (1, 2)]:
+        qi_, qj_ = quarks[i], quarks[j]
+        gen = i
+        if qi_ == qj_ == 'u':
+            nf = hm_mp(nf, one, zero, gen, dps)      # sigma_gen
+        elif qi_ == qj_ == 'd':
+            nf = hm_mp(nf, one, -hv, gen, dps)       # sigma_gen^-1
+        else:
+            nf = hm_mp(nf, one, -hv / 2, gen, dps)   # (sigma + sigma^-1)/2
+    return nf
+
+
 # Precomputed nucleon NFs
 PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 
@@ -810,6 +859,7 @@ NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 
 __all__ = [
     "_ID_NF",
+    "build_nucleon_nf_mp",
     "_PROTON_G0", "_PROTON_G1", "_NEUTRON_G0", "_NEUTRON_G1",
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",
