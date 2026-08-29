@@ -269,8 +269,32 @@ def declared_ideal_muon_exempt(witness) -> Optional[str]:
         return None
     if stem not in (man.get("ideal_muon") or []):
         return None
-    return (f"declares q0Anchor=muon and `{stem}` is manifest-declared "
-            f"`ideal_muon`; the muon pin IS live for this producer")
+
+    #   3. and the value must be the CURRENT muon pin.
+    #
+    # Conditions 1-2 establish that the muon LAYER is right for this producer.
+    # They do not establish that the muon VALUE is current, and the muon pin
+    # has moved more than once — `_SELFTEST_STALE` below is itself an older
+    # muon-basin value. Without this, a witness declaring `muon` with a stem in
+    # `ideal_muon` was exempted no matter WHICH muon value it carried, so an
+    # ideal-layer witness left behind by a muon re-pin passed silently: exactly
+    # the staleness this gate exists to catch, moved one layer sideways.
+    # Measured: `alpha_high_precision` (a real `ideal_muon` stem) was exempted
+    # for the current pin AND for 1.1099785955541805, an old one.
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor
+        muon = _q0_value_for_anchor("muon") or ""
+    except Exception:  # noqa: BLE001
+        return None  # anchors unreadable => no exemption, stay strict
+    if not muon:
+        return None
+    for _p, v in _basin_paths(doc):
+        sv = str(v)
+        if not (muon.startswith(sv.rstrip("0").rstrip(".")) or sv.startswith(muon[:len(sv)])):
+            return None
+
+    return (f"declares q0Anchor=muon, `{stem}` is manifest-declared "
+            f"`ideal_muon`, and every basin value is the CURRENT muon pin")
 
 
 def _basin_paths(node, path: str = ""):
@@ -398,6 +422,46 @@ def _selftest() -> int:
 
     print("derived-output exemption self-test:")
     passed = all(case(*c) for c in checks)
+
+    # ── ideal-layer (manifest muon) exemption ────────────────────────
+    #
+    # This exemption had no self-test, which is the one thing this file's own
+    # doctrine says an exemption must have: it is the only place the gate can
+    # LOSE detection power. Each of its three conditions is pinned by a case
+    # that must NOT be exempted.
+    try:
+        from qou_substrate.witness import _q0_value_for_anchor as _qv
+        _cur_muon = _qv("muon") or ""
+    except Exception:  # noqa: BLE001
+        _cur_muon = ""
+    try:
+        _man = json.loads(_MANIFEST.read_text())
+        _im = (_man.get("ideal_muon") or [])
+    except Exception:  # noqa: BLE001
+        _im = []
+    if _cur_muon and _im:
+        _stem = _im[0]
+        _cases = [
+            ("declares muon, stem IS ideal_muon, CURRENT pin",
+             {"q0Anchor": "muon", "scriptFile": _stem + ".py",
+              "q0Value": _cur_muon}, True),
+            ("cond 1: declares proton while carrying muon — a FLIP",
+             {"q0Anchor": "proton", "scriptFile": _stem + ".py",
+              "q0Value": _cur_muon}, False),
+            ("cond 2: declares muon but stem NOT in the manifest",
+             {"q0Anchor": "muon", "scriptFile": "not_a_manifest_muon_stem.py",
+              "q0Value": _cur_muon}, False),
+            ("cond 3: right layer, OLD muon value — an ideal-layer re-pin left behind",
+             {"q0Anchor": "muon", "scriptFile": _stem + ".py",
+              "q0Value": _SELFTEST_STALE}, False),
+        ]
+        print("ideal-layer (manifest muon) exemption self-test:")
+        for _name, _doc, _want in _cases:
+            _got = declared_ideal_muon_exempt(_doc) is not None
+            _ok = _got == _want
+            passed = passed and _ok
+            print(f"  {'ok  ' if _ok else 'FAIL'}  {_name}  "
+                  f"(exempt={_got}, want={_want})")
 
     # ── the precision-aware comparator ───────────────────────────────
     #
