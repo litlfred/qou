@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: low
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-08-29T17:44:42Z
+updated_at: 2026-08-29T18:09:40Z
 ---
 
 The "on a QOU" content — currently narrative or section-3b-conditional axioms.
@@ -48,3 +48,5 @@ THE COUPLING C12 ACTUALLY ASKED FOR: no_nontrivial_periodic_trace derives FROM t
 DEFECT FOUND AND FIXED EN ROUTE (commit 876f70faa3): QOU.Substrate.contact_threshold_lt_two in QOU/QCollatz.lean was titled 'The contact threshold 1 < v* < 2' while its statement and proof establish only v* < 2. The lower half existed NOWHERE in the corpus, and it is the half that rules out a single halving, so it was load-bearing for this very block's 'the integer threshold is exactly 2'. Docstring corrected; the missing half proved in the new file.
 
 STILL NOT DONE on C12, and deliberately: collatz-three-forms.ts is untouched, so the block still carries no lean ref. Wiring one needs pipeline validation and folio-assistant is NOT set up in this container (bun present, folio-assistant/ absent), so I did not guess at the ref shape. Note every other collatz library file in the arc is likewise unreferenced from any content block, so this matches the arc's existing pattern rather than leaving C12 uniquely unwired. A later agent with the pipeline should decide whether the arc's library files get content-block refs as a class.
+
+C11 LOCALISED 2026-08-29 (bean qou-7kfp, commits d7a5da7355 + 369528b64d). The residual is now a precisely-bounded target instead of a diffuse 'conditional': exactly the one equation kappa_0 = chi(A), with the surrounding trace apparatus proved decorative and the two literature inputs proved unable to reach it. Tier C is now: C8/C9/C10/C12 done, C11 localised-but-open (needs a real Hochschild computation), nothing untouched.
