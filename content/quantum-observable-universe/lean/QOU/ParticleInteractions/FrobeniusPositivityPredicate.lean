@@ -2,6 +2,9 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 import Mathlib.Data.Fintype.Fin
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Data.Matrix.Mul
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # QOU.ParticleInteractions.FrobeniusPositivityPredicate
@@ -206,5 +209,86 @@ nonnegative **integer** coordinates. Any formalisation aiming to decide
 stability for a nucleon must carry that constraint, or it proves nothing. -/
 theorem stableAt_trivial (G : Fin N → Fin N → R) : StableAt G :=
   ⟨fun _ => 0, fun _ => le_refl 0, frobPos_zero G⟩
+
+
+/-! ## Why the Gram entries come out nonnegative
+
+The computation `qbeta_frobenius_gram_h3_probe` finds every entry of the
+Frobenius Gram matrix nonnegative — at `k = 3`, where the central primitive
+idempotents are orthogonal and `G` is diagonal, and also across the `k ≤ 2`
+filtration, where `G` acquires four genuine off-diagonal entries and stays
+nonnegative anyway.
+
+That is not a coincidence of the numbers. `tr_M = Σ_λ y_λ χ_λ`, so with
+convention D's weights (`y_λ ≥ 0`, and `= 0` for `ℓ(λ) > 2`) the entries are
+nonnegative as soon as each `χ_λ(e_a e_b)` is. The block characters are traces
+of the idempotents' images in the Wedderburn blocks, so the fact needed is the
+one below, about matrices.
+
+It is the reason a Gram matrix built from *idempotents* is better behaved than
+an arbitrary Gram matrix — and therefore the reason the separation theorem
+above, while sound in general, does not bite here. -/
+
+section IdempotentTrace
+
+variable {n : Type*} [Fintype n]
+
+-- `Matrix.transpose` is written out rather than using the `ᵀ` postfix: that
+-- notation lives in a module this file does not import, and a parse failure
+-- on it cascades into misleading "failed to synthesize HMul" errors on the
+-- surrounding `*` -- the error points at the multiplication, not at the cause.
+-- Both `Data.Matrix.Basic` (for `transpose`) and `Data.Matrix.Mul` (for the
+-- `*` instance) are required; importing only one produces the same cascade.
+
+/-- `tr(Aᵀ A) ≥ 0`: the trace of `Aᵀ A` is the sum of the squares of the
+entries of `A`. -/
+theorem trace_transpose_mul_self_nonneg (A : Matrix n n R) :
+    0 ≤ Matrix.trace (Matrix.transpose A * A) := by
+  rw [Matrix.trace]
+  refine Finset.sum_nonneg fun i _ => ?_
+  simp only [Matrix.diag_apply, Matrix.mul_apply, Matrix.transpose_apply]
+  exact Finset.sum_nonneg fun j _ => mul_self_nonneg _
+
+/-- **The structural fact.** For *symmetric idempotent* matrices `P` and `Q`,
+`tr(P Q) ≥ 0`.
+
+The proof is the identity `tr(P Q) = tr((P Q)ᵀ (P Q))`, which holds because
+`(PQ)ᵀ (PQ) = Q P P Q = Q P Q` and `tr(Q P Q) = tr(P Q²) = tr(P Q)` by
+cyclicity and idempotency. The right-hand side is a sum of squares.
+
+This is what makes the Frobenius Gram matrix of a family of idempotents
+entrywise nonnegative, block by block, and hence -- once weighted by
+nonnegative `y_λ` -- what makes `EntriesNonneg` hold for the `G` the corpus
+defines. The nonnegativity measured at `k = 3` and across the `k ≤ 2`
+filtration is this identity, not a numerical accident. -/
+theorem trace_mul_nonneg_of_symm_idem {P Q : Matrix n n R}
+    (hPs : Matrix.transpose P = P) (hPi : P * P = P)
+    (hQs : Matrix.transpose Q = Q) (hQi : Q * Q = Q) :
+    0 ≤ Matrix.trace (P * Q) := by
+  have key : Matrix.trace (Matrix.transpose (P * Q) * (P * Q))
+      = Matrix.trace (P * Q) := by
+    rw [Matrix.transpose_mul, hPs, hQs]
+    calc Matrix.trace (Q * P * (P * Q))
+        = Matrix.trace (Q * (P * Q)) := by
+          rw [Matrix.mul_assoc Q P (P * Q), ← Matrix.mul_assoc P P Q, hPi]
+      _ = Matrix.trace (P * Q * Q) := Matrix.trace_mul_comm Q (P * Q)
+      _ = Matrix.trace (P * Q) := by rw [Matrix.mul_assoc, hQi]
+  rw [← key]
+  exact trace_transpose_mul_self_nonneg _
+
+/-- The Gram matrix of a family of symmetric idempotents is entrywise
+nonnegative -- exactly the hypothesis `frobPos_of_entriesNonneg` needs.
+
+So for such a family Frobenius positivity is implied by coordinatewise
+positivity, and therefore excludes nothing from the nonnegative orthant: the
+constraint is **loose**. This is the general statement behind the corpus's own
+report of `N_ℓ = 84` feasible ILP solutions for the proton -- a count that is
+large precisely because the constraint is weak. -/
+theorem entriesNonneg_gram_of_symm_idem {N' : ℕ} (e : Fin N' → Matrix n n R)
+    (hs : ∀ a, Matrix.transpose (e a) = e a) (hi : ∀ a, e a * e a = e a) :
+    EntriesNonneg (fun a b => Matrix.trace (e a * e b)) :=
+  fun a b => trace_mul_nonneg_of_symm_idem (hs a) (hi a) (hs b) (hi b)
+
+end IdempotentTrace
 
 end QOU.ParticleInteractions
