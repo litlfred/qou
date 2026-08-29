@@ -821,6 +821,69 @@ def build_nucleon_nf(quarks):
 
 
 
+def nucleon_braid_word(quarks, dps: int = 50):
+    """The nucleon's 11 crossings as a `(c, d, gen)` word in **BRAID ORDER**.
+
+    This is `build_atom_nf`'s per-nucleon block expressed as a word rather
+    than folded into an NF, so a trace routine can consume it directly:
+
+        B_3 = (sigma_0 . sigma_1^-1)^3        6 crossings, ALTERNATING
+        quark pairs (0,1)@0 (0,2)@0 (1,2)@1   3
+        gluon self-coupling 2 . sigma_0@0     2   (ILP, prop:mass-endomorphism-tower)
+
+    **Why the order is not free.** `sigma_0` and `sigma_1` do not commute, so
+    re-sorting the crossings by generator is a different element of `H_3(q)` --
+    not a re-parameterisation. It matters most exactly where it looks most
+    innocuous: on `B_3` alone, at the substrate q_0,
+
+        (s0 s1^-1)^3  tr_M = 0.99856216383678726595     the Borromean braid
+        s0^3 s1^-3    tr_M = 0.18006453953550109830     its monotone re-sort
+
+    an 81.97 % difference, and essentially the whole 82.06 % gap seen on the
+    full nucleon. The alternation IS the Borromean structure that `B_3` is
+    named for, so flattening it substitutes a different link rather than
+    perturbing the intended one.
+
+    ⚠️  DO NOT SWAP THIS IN FOR THE MONOTONE WORD. It is provided for
+    comparison and for callers who genuinely want the literal per-nucleon
+    braid; it is NOT established as the correct H_3 reduction, and measurement
+    currently points the other way.
+
+    The independent Markov-peel route
+    (`binding_combiner_markov_peel_fallback.py`) builds from
+    `atom_braid_word_3A` — the 3A-strand word, which never passes through
+    `nucleon_gen_chains` and so shares no ordering assumption with it — and its
+    committed deuteron value `0.575172243917771870826535` matches what the
+    MONOTONE H_3 word gives, not what this braid-order word gives (0.151968…).
+    So the monotone form appears to be the correct H_3 *reduction* of the 3A
+    braid, even though it is not the literal sub-braid, and the fact that its
+    shape was originally chosen to satisfy `chi_all_lambda` (a fine-Bratteli
+    transfer matrix that applies `O_g` once per generator in increasing order
+    and raises on a non-monotone word) does not by itself make it wrong.
+
+    What remains established: the two orderings are different elements, 82 %
+    apart on tr_M, essentially all of it from `B_3`. What is NOT established is
+    which is the right reduction. Bean qou-1qsw.
+    """
+    hv = h_mp(dps)
+    one, zero = _mp.mpf(1), _mp.mpf(0)
+    w = []
+    for _ in range(3):                       # B_3, alternating
+        w.append((one, zero, 0))             # sigma_0
+        w.append((one, -hv, 1))              # sigma_1^-1
+    for i, j, gen in [(0, 1, 0), (0, 2, 0), (1, 2, 1)]:
+        a, b = quarks[i], quarks[j]
+        if a == b == 'u':
+            w.append((one, zero, gen))
+        elif a == b == 'd':
+            w.append((one, -hv, gen))
+        else:
+            w.append((one, -hv / 2, gen))
+    w.append((one, zero, 0))                 # gluon 1
+    w.append((one, zero, 0))                 # gluon 2
+    return w
+
+
 def build_nucleon_nf_mp(quarks, dps: int = 50):
     """float64-free twin of `build_nucleon_nf`, at the TRUE substrate q_0.
 
@@ -877,6 +940,7 @@ NEUTRON_NF = build_nucleon_nf(['u', 'd', 'd'])
 __all__ = [
     "_ID_NF",
     "build_nucleon_nf_mp",
+    "nucleon_braid_word",
     "_PROTON_G0", "_PROTON_G1", "_NEUTRON_G0", "_NEUTRON_G1",
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",
