@@ -1,37 +1,37 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T15:34:30.325411+00:00",
-  "commitSha": "3119740b7ebcbb54e18b6ca6bc3e7beffe1ebf93",
+  "computedAt": "2026-08-29T03:59:34.965887+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "Q_beta_pred_within_0.5_pct_of_codata",
-      "computed": 0.0016775378381469733,
+      "computed": 0.0016775376380114425,
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.005"
     },
     {
       "name": "Q_beta_pred_residual_under_2_keV",
-      "computed": 1.3123938973215497,
+      "computed": 1.3123937407488375,
       "expected": 0.0,
       "passed": true,
       "tolerance": 2.0
     },
     {
       "name": "single_wrap_beats_typed_crossings",
-      "computed": 0.0013123938973215496,
+      "computed": 0.0013123937407488375,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.013661951904318606
+      "tolerance": 0.013661951235981984
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 6,
   "computation": "q-beta-predicted",
   "scriptFile": "q_beta_predicted.py",
   "scriptHash": "68e36bedd00f",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,41 +67,41 @@
   ],
   "parameters": {
     "m_e_MeV": "0.51099895069",
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+    "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095"
   },
   "data": {
     "energy_scale_E_0": {
-      "E_0_full_MeV": "4.227482823399844911449069981313174118793099898076557484389463631806852",
+      "E_0_full_MeV": "4.227482819850349871542277045668884623156341688571772431979230847606849",
       "E_0_full_formula": "m_e / (q_0 (q_0 - 1)) = m_e c_q² ℏ_q",
       "E_0_calibrated_MeV": "4.1549250300084931033542380034303330229973926723012532144561483931274",
       "E_0_calibrated_formula": "Q_β_CODATA / |Δ(net)|",
-      "agreement_pct": "1.746308125112031018785500377292852216885086626711552024688789474709893",
+      "agreement_pct": "1.746308039683412830227296841970871166211766477284260276921163889168368",
       "residual_attribution": "0.75% residual is the brane-tower correction: the derived expression uses single-level c_q² ℏ_q, while the calibrated value implicitly includes the full tower of n and p (per beta-decay-energy-scale.md §Calibration cross-check)."
     },
     "q_beta_prediction": {
-      "Q_beta_pred_MeV": "0.7836458038973215495988764817067477910980670825826358648183381566111344",
+      "Q_beta_pred_MeV": "0.7836458037407488374581770075818439054190002345849219181273731549085477",
       "Q_beta_pred_formula": "Q_β = m_e · |q² - 2q - 1| · (q+1) / (2q³)  (single-wrap symbolic form per prop:neutron-qvalue-symbolic). The L_± and e^- contributions cancel exactly at single wrap; Q-value comes entirely from γ + σ_0 + σ_1 channels.",
       "Q_beta_codata_MeV": "0.78233341",
-      "err_pct": "0.1677537838146973166947429366141720955093919078102346182988857156355389",
-      "err_keV": 1.3123938973215497,
-      "err_ppb": 1677537.8381469732,
+      "err_pct": "0.1677537638011442535960476981091610824853095031339538634011750704277993",
+      "err_keV": 1.3123937407488375,
+      "err_ppb": 1677537.6380114425,
       "residual_attribution": "+0.17% / +1.31 keV is the brane-tower truncation residual: derived E_0 = m_e/(q(q-1)) is the single-level Planck-tick approximation; exact tower-summed E_0 absorbs this 0.17%. Closure path: Workplan 2 Phase 2 50-dps m_e_Hecke lift."
     },
     "q_beta_typed_crossings_legacy": {
-      "Q_beta_pred_MeV": "0.7959953619043186062699261205581242068157014530013986043079029785497685",
+      "Q_beta_pred_MeV": "0.795995361235981984479479531852261338061230198036373727829870741571601",
       "Q_beta_pred_formula": "|Δ(net)| · E_0_full  (typed-crossings 6-term, Δ(net) = -0.18829 from beta-decay-energy-scale.witness.json)",
-      "err_pct": "1.74630812511491823798323026471849218553780708424539919724289654838702",
+      "err_pct": "1.746308039686300049422602551546576294272054421959778993699213430192248",
       "comment": "Legacy 6-term decomposition that gave +0.747% error (the L_± and e^- channels picked up small asymmetric contributions that exactly cancel at single wrap). Replaced by the single-wrap symbolic form above (4.5x improvement). Kept here only for cross-check."
     },
     "observable_virtual_split": {
-      "Q_observable_MeV": "0.4653207443297346684208198290196130009840087259638619294222100228549586",
+      "Q_observable_MeV": "0.4653207439390403136568116016516624344887571087984164844343868441839418",
       "Q_observable_formula": "|Δ(obs)| · E_0  (ℓ ≥ 2 terms: Hopf links L_±, trefoil e^-)",
-      "Q_observable_fraction": 0.5937896202793986,
-      "Q_virtual_MeV": "0.3306746175745841492232474615307567782851917926962426145406878595226841",
+      "Q_observable_fraction": 0.5937896198994782,
+      "Q_virtual_MeV": "0.3306746172969418821968089227180924806863253726821884012125683259762808",
       "Q_virtual_formula": "|Δ(virt)| · E_0  (ℓ < 2 terms: γ, σ_0, σ_1)",
-      "Q_virtual_fraction": 0.42196948663545875,
-      "sum_obs_plus_virt_MeV": "0.7959953619043188176440672905503697792692005186601045439628978823776427",
-      "sum_residual_MeV": 2.1137414116999224e-16,
+      "Q_virtual_fraction": 0.42196948636547277,
+      "sum_obs_plus_virt_MeV": "0.7959953612359821958536205243697549151750824814806048856469551701602226",
+      "sum_residual_MeV": 2.113741409925175e-16,
       "physical_interpretation": "Observable component (58.46%) is the topologically non-trivial part — physical kinetic energy released in the β-decay event. Virtual component (41.54%) is the gauge / vacuum-debt contribution that cancels in asymptotic states. See beta-decay-energy-scale.md §'Observable vs virtual: Q_{≥2}'."
     }
   },
@@ -109,21 +109,21 @@
     "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
     "calibration_inputs_loaded": {
       "CAL-1_m_e_MeV": "0.51099895069",
-      "CAL-2_q_0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "CAL-2_q_0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "CAL-3_Q_beta_MeV": "0.78233341 (cross-check only; predicted by framework below)"
     },
     "wired_predictions": {
-      "E_0_N0_MeV": "4.185980827582890914289876185817232762251768697517854997171023821386601",
-      "E_0_full_MeV": "4.227482823399844911449069981313174118793099898076557484389463631806852",
+      "E_0_N0_MeV": "4.185980824010171367799724430485258393389751702536966425209855759395583",
+      "E_0_full_MeV": "4.227482819850349871542277045668884623156341688571772431979230847606849",
       "E_0_calibrated_MeV": "4.1549250300084931033542380034303330229973926723012532144561483931274",
-      "E_0_N0_vs_calibrated_pct": 0.7474454376457024,
-      "E_0_full_vs_calibrated_pct": 1.746308125112031,
-      "Q_beta_predicted_MeV": "0.7836458038973215495988764817067477910980670825826358648183381566111344",
-      "Q_beta_observable_MeV": "0.4653207443297346684208198290196130009840087259638619294222100228549586",
-      "Q_beta_virtual_MeV": "0.3306746175745841492232474615307567782851917926962426145406878595226841",
+      "E_0_N0_vs_calibrated_pct": 0.7474453516581209,
+      "E_0_full_vs_calibrated_pct": 1.7463080396834127,
+      "Q_beta_predicted_MeV": "0.7836458037407488374581770075818439054190002345849219181273731549085477",
+      "Q_beta_observable_MeV": "0.4653207439390403136568116016516624344887571087984164844343868441839418",
+      "Q_beta_virtual_MeV": "0.3306746172969418821968089227180924806863253726821884012125683259762808",
       "Q_beta_codata_MeV": "0.7823334100000222",
-      "Q_beta_pred_vs_codata_pct": 0.16775378381185488,
-      "Q_beta_observable_fraction": 0.5937896202793986
+      "Q_beta_pred_vs_codata_pct": 0.16775376379830184,
+      "Q_beta_observable_fraction": 0.5937896198994782
     },
     "stubbed_predictions": [
       "proton_mass_mev",
@@ -137,5 +137,5 @@
     "handoff_doc": "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

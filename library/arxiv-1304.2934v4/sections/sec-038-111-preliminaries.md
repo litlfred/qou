@@ -7,6 +7,7 @@ section_number: 11.1
 pages: 91-93
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 11.1.1. Non-commutative probability theory. The originality of this section is that, al-
 though the problem is formulated in a classical probability space, it is natural to work

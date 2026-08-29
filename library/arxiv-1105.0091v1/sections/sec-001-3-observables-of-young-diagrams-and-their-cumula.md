@@ -7,6 +7,7 @@ section_number: 3
 pages: 22-31
 source_pdf: 1105.0091v1.pdf
 source_sha256: 7d6f72e016b25027
+doc_brief: "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible"
 ---
 For the asymptotic analysis of Young diagrams, we are basically going to
 use a method of moments, but we have to deﬁne precisely what we mean by

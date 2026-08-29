@@ -7,6 +7,7 @@ section_number: 0
 pages: 17-18
 source_pdf: S0002-9947-96-01660-1.pdf
 source_sha256: aa63e62b78aa5045
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state"
 ---
 condition that the link of an edge is a triangulation of S1. This later construction
 is done explicitly as follows.

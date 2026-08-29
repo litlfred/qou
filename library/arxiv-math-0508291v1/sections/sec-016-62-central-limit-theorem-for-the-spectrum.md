@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 44-49
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 is to study Plancherel measure of association schemes, whic h chooses i ∈
 {0, · · ·,n } with probability µ i

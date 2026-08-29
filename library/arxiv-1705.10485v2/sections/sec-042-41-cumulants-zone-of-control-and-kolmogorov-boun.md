@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 28-30
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 In this section, we will see that appropriate bounds on the cumulants of a sequence of random variables
 (Sn)n∈N imply the existence of a large zone of control for a renormalized version ofSn. In this whole

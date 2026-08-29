@@ -7,6 +7,7 @@ section_number: 8.3
 pages: 67-68
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 ample that ﬁlls in this framework is the number of disjoint cycles Xn of a uniform
 random permutation in S(n). As mod-convergence of Xn has already been discussed

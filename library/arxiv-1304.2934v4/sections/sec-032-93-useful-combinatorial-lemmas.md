@@ -7,6 +7,7 @@ section_number: 9.3
 pages: 73-76
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 lemmas on graphs and spanning trees.
 9.3.1. A functional on graphs. In this section, we consider graphsH with multiple edges

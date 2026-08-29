@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 12-14
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 We now give an estimate ofE[fn(Yn)]− E[fn(Y )], where (fn)n∈N is a sequence of test functions in
 T0(R) or T1(R), and(Yn)n∈N is a sequence of random variables associated to a sequence(Xn)n∈N which

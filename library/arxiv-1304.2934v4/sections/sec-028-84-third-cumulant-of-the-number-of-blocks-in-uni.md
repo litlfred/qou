@@ -7,6 +7,7 @@ section_number: 8.4
 pages: 68-69
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 Let Bn be the number of set-partitions of[n], known as then-th Bell number. Dobinski’s
 formula states thatBn = e−1 ∑∞

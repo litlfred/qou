@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T21:06:39.150909+00:00",
-  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T03:59:33.175508+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
-      "computed": "0.98636505683992695870431584875707626271003243518388",
+      "computed": "0.98636505683175920881008651378189203457212774206428",
       "expected": "0",
       "passed": false,
       "tolerance": "0.01"
     },
     {
       "name": "m_p_within_2_percent",
-      "computed": "0.98636505683992695870431584875707626271003243518388",
+      "computed": "0.98636505683175920881008651378189203457212774206428",
       "expected": "0",
       "passed": false,
       "tolerance": "0.02"
     }
   ],
   "allPassed": false,
-  "durationMs": 39,
+  "durationMs": 33,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
   "scriptHash": "f597b2ee422e",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,10 +36,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -50,7 +50,7 @@
   "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_50dps": "1.1099785956427390466817951293800017527000655610290",
     "M_E_MEV_CAL1": "0.51099895069"
   },
   "data": {
@@ -62,17 +62,17 @@
         "Z": 1,
         "N": 0,
         "knot_type": "none",
-        "T1_descended_50dps": "1.0228960804927440240638015880872927077350342504914",
-        "T2_single_Li2q_50dps": "3.3998646086819300768884772881775926668887782471401",
-        "T3_pair_Li2q_50dps": "0.62437224552369227597609412232654549858659300301451",
+        "T1_descended_50dps": "1.0228960811333439237765500526537248022838388116233",
+        "T2_single_Li2q_50dps": "3.3998646147204356999158887713911963297601493882462",
+        "T3_pair_Li2q_50dps": "0.62437224650815851243615380131199267530005189630926",
         "T4_Frobenius_50dps": "1.636287114593083917134660394638053126521738160248",
         "T5_chirality_BW_50dps_cat_units": "4.1887308561594205768837158432987722251106659563856",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "12.793286608061019407916243028034186489202272816944",
+        "m_hecke_50dps": "12.793286615724591167116462654799669423335907412476",
         "wedderburn_vols_full_50dps": [
-          "1.0802152945037791169129056536610818247775645179075",
-          "0.9469372315845926374785838549537102785108736803297"
+          "1.0802152951839359069417138952227579936202007508045",
+          "0.9469372315813841214577066349124665962155039839289"
         ]
       },
       "neutron": {
@@ -82,17 +82,17 @@
         "Z": 0,
         "N": 1,
         "knot_type": "none",
-        "T1_descended_50dps": "0.88754462480873000654589248148541719655885504899516",
-        "T2_single_Li2q_50dps": "2.7937714468666756432323525618316925197482281576629",
-        "T3_pair_Li2q_50dps": "0.47227082184382196978568519699441217552800360744009",
+        "T1_descended_50dps": "0.88754462533111337865885900044974370539528999868386",
+        "T2_single_Li2q_50dps": "2.7937714483902918722368579542086351084069577156967",
+        "T3_pair_Li2q_50dps": "0.47227082230671223022593099196408677044808689386304",
         "T4_Frobenius_50dps": "1.6362871145930839171346603946380531265217381602479",
         "T5_chirality_BW_50dps_cat_units": "4.0020362578956172456348134056940016648387024584836",
         "T6_Habiro_residue_50dps_cat_units": "1.9211357026101485369694937915059302643594631996641",
         "tower_convention": "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) − Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). T5 categorical via A_max_grade. T6 from Habiro residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms is research-scope).",
-        "m_hecke_50dps": "11.713045968618077319302897832149506947554990632494",
+        "m_hecke_50dps": "11.713045971126967180860615538460450639970238426639",
         "wedderburn_vols_full_50dps": [
-          "0.94109159813579496661154834038607516271846538200467",
-          "0.94310120987889386006300020747078886502360500125127"
+          "0.9410915986738288192849154931311892520192474119256",
+          "0.94310120989479347570296239344187095532150578564074"
         ]
       },
       "electron": {
@@ -100,17 +100,17 @@
       }
     },
     "ratios": {
-      "m_p_over_m_e_50dps": "25.03583733545106432499520526174759235531977921241",
-      "m_n_over_m_e_50dps": "22.921859140418966638608182759494634663150859145444"
+      "m_p_over_m_e_50dps": "25.035837350448300129202096336304062760375738752138",
+      "m_n_over_m_e_50dps": "22.921859145328741615973543240037393040327063742134"
     },
     "predictions_MeV": {
-      "m_p_pred_50dps": "12.793286608061019407916243028034186489202272816944",
-      "m_n_pred_50dps": "11.713045968618077319302897832149506947554990632494"
+      "m_p_pred_50dps": "12.793286615724591167116462654799669423335907412476",
+      "m_n_pred_50dps": "11.713045971126967180860615538460450639970238426639"
     },
     "comparisons": {
       "m_p_codata_MeV": "938.27208943",
-      "rel_diff_p": "0.98636505683992695870431584875707626271003243518388",
-      "rel_diff_p_ppm": "986365.05683992695870431584875707626271003243518389"
+      "rel_diff_p": "0.98636505683175920881008651378189203457212774206428",
+      "rel_diff_p_ppm": "986365.05683175920881008651378189203457212774206428"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
@@ -121,14 +121,14 @@
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "2ae9ce807deaf49dc59f98f44a5093de9b5d8622e8c1cc26ae3bb76258aa9df8",
-        "size_bytes": 10739,
-        "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
-        "scriptCommitSha": "3f63d180a4b8bfaa425f98971fe64eb17fe32670",
-        "computedAt": "2026-08-24T08:50:26.782178+00:00"
+        "sha256": "c037e7f3b77170f16ac9ca0399fd6a17993a75c709a2a48a857b6e4e502ab06a",
+        "size_bytes": 10741,
+        "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-29T03:01:05.214737+00:00"
       }
     ]
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

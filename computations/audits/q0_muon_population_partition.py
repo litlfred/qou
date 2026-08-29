@@ -54,6 +54,45 @@ MUON_LOOSE = "1.1099785955"
 # (1.10997858275...), which diverges one digit earlier.
 MUON_FAMILY_LOOSE = "1.10997859"
 
+# 18-SIG-DIGIT CEILING -- do NOT lengthen these prefixes (measured 2026-08-28).
+#
+# The superseded value has TWO renderings in the corpus, diverging at the 19th
+# significant digit:
+#
+#     1.10997859555418057528...   107 files  (the ROUNDED form -- AGENTS.md,
+#                                             bean qou-khac, content .qa.json)
+#     1.10997859555418056776...     5 files  (the TRUNCATED form -- d-from-scratch,
+#                                             q0-value-drift-audit, 3 deprecated)
+#
+# |d| ~ 7e-19: three orders below the 3.15e-12 that makes superseded a distinct
+# pin at all, and below the 1 ppQ (1e-15) L1 target. It moves no observable --
+# it breaks DETECTORS. An exact-match scan built on the 19-char literal
+# "1.10997859555418057" reports 0 hits on nine of the nineteen genuine
+# candidates, all of which carry the value.
+#
+# CORRECTED 2026-08-28, twice over. This read "14 digits is the SHORTEST
+# prefix that separates superseded from current". Two faults:
+#
+#   UNIT. That 14 counted CHARACTERS INCLUDING THE DECIMAL POINT --
+#   "1.109978595554" is 14 characters but 13 digits. Right boundary,
+#   wrong unit.
+#
+#   CURRENCY. It compared against 1.10997859555733471..., which main's
+#   fca08de7d DEMOTED (muon anchor -> CODATA 2022, owner ruling). Three
+#   muon renderings are now in play, not two.
+#
+# Re-derived in SIGNIFICANT DIGITS:
+#
+#     vs demoted   1.10997859555733471...   12 common -> 13 needed
+#     vs canonical 1.10997859564273904...   10 common -> 11 needed
+#
+# CODATA-2022 moved the anchor at the 11th figure rather than the 13th,
+# so the window LOOSENS at the bottom: 11..18 against the canonical pin,
+# 13..18 against the demoted one. The 18 ceiling is unchanged -- it comes
+# from the superseded value's OWN two renderings diverging at digit 19,
+# which is independent of what the current value is. The 16 above sits
+# inside both windows, so the count of 19 stands under either reading.
+
 PIN_WITNESS = "q-pinning-50-digit"
 ROUTES_ANCHOR = re.compile(
     r"(import\s+q_parameter|from\s+q_parameter"

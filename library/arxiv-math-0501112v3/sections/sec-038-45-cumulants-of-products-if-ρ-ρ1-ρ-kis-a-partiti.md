@@ -7,6 +7,7 @@ section_number: 4.5
 pages: 21-22
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 {1, . . . , n }with blocks ρi = {ρi,1 , . . . , ρ i,m (i)} we deﬁne partition–indexed
 cumulants given by a multiplicative extension of the usual cumulants:

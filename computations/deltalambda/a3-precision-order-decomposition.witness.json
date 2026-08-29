@@ -5,30 +5,30 @@
   "description": "HOW to improve A=3 binding precision. The corpus model predicts B(\u00b3H)/B(\u00b2H)=3.8128 to 4.56%; the dominant graded baseline \u03c1_grad_G(3)=[3]_q is EXACT (87.6% of the ratio) and the derived leading Borromean cluster c\u2083=0.297 is 7.8%, so ALL the error is subleading. Order-separation: closing the 0.17377 miss by higher cluster orders needs an h\u2076 coefficient a\u2081\u224813.4 (13\u00d7 the O(1) natural size); a bounded (|a_k|\u22642) tail closes \u22640.7% of the ratio \u226a 4.56%. So the routine higher-order route is RULED OUT \u2014 precision needs a new leading-order (h\u2074) 3-body channel (the \u0394_\u03bb closure) or an anomalous fit-flag coefficient. A=3 ratio precision is \u0394_\u03bb-gated, NOT q\u2080-limited (scale cancels in the ratio). Report precision on the frame-independent physical ratio, not the \u03bc\u2083 residual (which amplifies ~8\u00d7). scope-(a); anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) precision-route pruning (order-separation of the higher-cluster route); no fit",
-  "scriptHash": "ac0b978242332a3a",
+  "scriptHash": "b27b58ec2811",
   "result": {
     "substrate": {
-      "q0": "1.10997859555733471",
-      "h": "0.209060321996",
-      "h2": "0.0437062182329"
+      "q0": "1.109978582751380807591669095610768879874",
+      "h": "0.209060298796",
+      "h2": "0.0437062085325"
     },
     "physical_ratio_decomposition": {
       "rho_strong3_BH3_over_BH2": "3.8128",
-      "rho_grad_G3_exact": "3.342031078",
+      "rho_grad_G3_exact": "3.342031037",
       "rho_grad_frac_of_ratio": "0.876529",
       "c3_leading_cluster_h4": "0.297",
       "c3_frac_of_ratio": "0.0778955",
-      "miss": "0.1737689218",
-      "miss_frac_of_ratio_pct": "4.55751",
+      "miss": "0.1737689631",
+      "miss_frac_of_ratio_pct": "4.55752",
       "note": "the EXACT graded baseline is 87.6% of the ratio; the derived leading cluster is 7.8%; ALL 4.56% of the error is in the subleading many-body cluster."
     },
     "order_separation": {
-      "miss_over_c3": "0.58508054",
-      "h2_natural_next_order_size": "0.043706218",
-      "required_h6_coefficient_a1": "13.386666",
+      "miss_over_c3": "0.58508068",
+      "h2_natural_next_order_size": "0.043706209",
+      "required_h6_coefficient_a1": "13.386672",
       "required_a1_vs_O1": "13.3867 (\u224813\u00d7 the O(1) natural size)",
       "coeff_bound_used": "2.0",
-      "bounded_tail_max_close": "0.027148031",
+      "bounded_tail_max_close": "0.027148025",
       "bounded_tail_frac_of_ratio_pct": "0.712023",
       "higher_order_route_ruled_out": true,
       "required_coeff_anomalous": true
@@ -46,8 +46,13 @@
     "builds_on": "PR #4491 (\u03bc\u2083 frame-robustness, frame-independent ratio), #4364 (c\u2083 leading cluster), three-walls audit, Q_\u03b2 c\u2083 hypersensitivity (2026-07-12)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "a3_precision_order_decomposition_probe.py",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "engine": "python",
+  "computedAt": "2026-08-29T04:17:51.345105+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

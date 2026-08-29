@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 16-17
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 that if the permutation π is ﬁxed, its non-trivial cycle lengths are equal to
 k1, . . . , kr ≥ 2, and the Young diagram λ is balanced (i.e. r(λ), c(λ) =

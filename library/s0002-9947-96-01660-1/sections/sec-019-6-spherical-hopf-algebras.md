@@ -7,6 +7,7 @@ section_number: 6
 pages: 22-22
 source_pdf: S0002-9947-96-01660-1.pdf
 source_sha256: aa63e62b78aa5045
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state"
 ---
 Deﬁnition 6.1. A spherical Hopf algebra over a ﬁeld k consists of a ﬁnite dimen-
 sional vector space A together with the following data:

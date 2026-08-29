@@ -7,6 +7,7 @@ section_number: 10.2
 pages: 83-85
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 10.2.1. Dealing with several arrangements. Consider a list (A1, . . . ,Ar) of arrangements.
 We associate to this data two graphs (unless said explicitly, we always consider loop-

@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 50-55
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 times write log(log n) = log2 n, which is negligible in comparison to log n as n goes to
 inﬁnity.

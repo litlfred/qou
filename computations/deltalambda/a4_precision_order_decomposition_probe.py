@@ -183,7 +183,16 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=False)
+        # q0_anchor was `False` -- the declaration "this witness carries no
+        # q0-dependent field" (see WitnessBuilder.stamp_staleness_metadata).
+        # It is not true of this producer: it reads q0 out of the
+        # jet-filtration witness at module scope and records it under
+        # `result.substrate.q0`, and every q-integer below is a function of
+        # it. The false declaration DELETED the anchor stamp on every run,
+        # turning a visible Q0_FLIP into a silent Q0_ANCHOR_MISSING.
+        # Resolving (the default) is correct now that the upstream
+        # jet-filtration probe resolves its own pin rather than freezing it.
+        witness, script_path=__file__, engine=None)
     out.write_text(json.dumps(witness, indent=2, default=str) + "\n")
 
     print("=== A=4 (⁴He) order-separation diagnostic — the mirror of A=3, sharper ===")

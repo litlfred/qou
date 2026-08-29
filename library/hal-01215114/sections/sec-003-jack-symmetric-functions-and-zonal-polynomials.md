@@ -7,6 +7,7 @@ section_number: null
 pages: 3-3
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 The set of partitions of a given integern can be endowed with a partial order, called dominance order: by
 deﬁnition,

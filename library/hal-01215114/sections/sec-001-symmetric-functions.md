@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 Gelfand pairs (Sn× Sn, Sn) and (GLd(C),Ud). Besides, many of the properties of Schur functions can
 be extended to zonal polynomials and this article goes in this direction.

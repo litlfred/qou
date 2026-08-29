@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 16-16
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 Lemma 3.2 to Kerov polynomials. For this, we need some interesting arith-
 metic properties of coefﬁcients of Kerov polynomials. The n ext lemma,

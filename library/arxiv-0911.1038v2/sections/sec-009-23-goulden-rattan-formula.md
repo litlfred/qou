@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 12-12
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 mial symmetric function in variables x1,x 2,... . In this paper we consider
 the particular evaluation of the monomial symmetric function atxi =i, for

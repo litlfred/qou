@@ -7,6 +7,7 @@ section_number: null
 pages: 50-52
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 [AlD] Aldous, D. and Diaconis, P., Longest increasing subse quences: from patience sort-
 ing to the Baik-Deift-Johansson theorem, Bull. Amer. Math. Soc. 36 (1999), 413-

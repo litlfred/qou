@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 3-5
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 sequence of real-valued random variables (Xn)n∈N, but this time we assume that their
 Laplace transforms E[ezXn] are convergent in an open disk of radiusc > 0. In this case,

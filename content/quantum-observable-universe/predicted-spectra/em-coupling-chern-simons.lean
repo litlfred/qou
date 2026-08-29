@@ -132,11 +132,31 @@ class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
 
 /-- The **Chern-Simons-form** conjecture (distinct from the
     PSLQ gluon-octet form above). States the algebraic identity
-    `1/α = q · [9]_q · [10]_q · (1 + δ_CS + κ · δ_CS²)`, where
-    `κ` is a Gram-determinant ratio from the Chern-Simons
+
+        1/α = q · [9]_q · [10]_q · (1 + δ_CS/(1 − δ_CS·κ))
+
+    where `κ` is a Gram-determinant ratio from the Chern-Simons
     pairing on Bring's surface. Per `conj:em-coupling-chern-
     simons`, the algebraic content is the existence of such a
     Gram-determinant `κ` making the identity hold.
+
+    **Docstring corrected 2026-08-29** (bean `qou-aemx`). This read
+    `(1 + δ_CS + κ · δ_CS²)`, which the block's `.md` names as the form
+    it *previously* displayed. The live `.md` gives the resummed form
+    above: the tower `Σ_{j≥1} δ_CS^j κ^{j−1}` is geometric with ratio
+    `δ_CS·κ ≈ 2.7e-3`, so it sums in closed form and **has no truncation
+    order to choose** — which is the point of resumming, since a chosen
+    truncation order is a free parameter.
+
+    Re-derived at 50 dps at the proton-pinned `q₀`, with the Witten-1988
+    `κ ≈ 1.722`: resummed `137.0359352` (−466.7 ppb vs CODATA-2022),
+    truncated `137.0359337` (−477.8 ppb). The truncation costs
+    **11.07 ppb**, reproducing the `.md`'s stated `11.06`.
+
+    Only this docstring changed. The `opaque` Prop below is untouched and
+    still has **no instance** — what the conjecture asserts, which `κ` it
+    asserts it of, and whether the claim is algebraic or numerical are
+    author decisions, not a docstring repair. See the note after the class.
 
     Per `AGENTS.md §3b-cond`, encoded as opaque Prop + class
     field. Algebraic tier only — numerical CODATA match deferred

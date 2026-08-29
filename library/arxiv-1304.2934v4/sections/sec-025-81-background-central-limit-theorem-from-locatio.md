@@ -7,6 +7,7 @@ section_number: 8.1
 pages: 64-64
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 central limit theorem by looking at the zeros of the probability generating function
 originates from an article of Harper [Har67]. Harper was interested in the number of

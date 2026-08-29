@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 5-7
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 In the following we will distinguish the symmetric group Sn which per-
 mutes the elements {1, . . . , n} and the symmetric group ˜Sn which permutes

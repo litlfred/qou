@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 2-4
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 We take as reference law a stable distributionφ of index α∈ (0, 2]. Let (Xn)n∈N be a sequence of
 variables that admits a zone of control (this notion will be deﬁned in Deﬁnition 5; this is closely related to

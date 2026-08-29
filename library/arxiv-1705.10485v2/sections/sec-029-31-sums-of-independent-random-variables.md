@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 18-20
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 As a direct application of Theorem 20, one recovers the classical Berry–Esseen estimates. Let(An)n∈N
 be a sequence of centered i.i.d. random variables with a third moment. We denoteE[(Ai)2] = σ2 and

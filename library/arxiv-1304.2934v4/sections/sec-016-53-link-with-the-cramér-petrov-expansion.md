@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 43-45
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 pansion of the ﬂuctuations up to any order T = o((αn)1−ε), and indeed, it is a partic-
 ular case of the results given by Rudzkis, Saulis and Statuleviˇ cius in [RSS78, SS91], see

@@ -7,6 +7,7 @@ section_number: null
 pages: 25-26
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 [Bia07] Philippe Biane. On the formula of Goulden and Rattan for Kerov polynomials.
 Sém. Lothar. Combin., 55:Art. B55d, 5 pp. (electronic), 2005/07.

@@ -1,11 +1,11 @@
 ---
 # qou-rh31
 title: 'probe_9b_alphak_structure: the Markov trace identity is broken at BOTH pins — stale witness, import-cone drift'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T08:05:32Z
-updated_at: 2026-08-23T08:12:38Z
+updated_at: 2026-08-28T15:23:57Z
 ---
 
 Exposed 2026-08-23 while re-running the `load_q_50dps` callers (PR #5494,
@@ -98,3 +98,15 @@ the convention-D tranche (`qou-cds1` / `qou-cds2`), not with a q₀-pin PR, and
 some consumers may use the returned z in a **pair-weight** role
 (`compute_t2_t3_from_vols` uses `T3 = z²·Σ_{i<j}`) rather than the Markov role —
 which still needs the per-consumer read before anything is changed.
+
+
+## CLOSED 2026-08-28 — `_markov_z` is convention D on main
+
+The diagnosis was that `load_q_50dps` returned `z = 1/(√q + 1/√q)` = **z_C** while
+the Hecke machinery computes in **D** — which is why `tr_M(T_w) = z^{ℓ(w)}` failed
+by 0.126066 identically at BOTH q₀ pins, hence not a pin defect.
+
+Verified on main: `_markov_z` now reads *"Canonical convention-D Markov parameter,
+via the single definition"*, and its docstring cites this arc's detector findings —
+*"shape-keyed detectors are exactly what missed the value-literal and return-form
+C sites on this branch"*. Cause removed.

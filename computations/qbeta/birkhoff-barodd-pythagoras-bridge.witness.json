@@ -1,16 +1,16 @@
 {
  "computation": "birkhoff-barodd-pythagoras-bridge",
  "scriptFile": "birkhoff_barodd_pythagoras_bridge_probe.py",
- "computedAt": "2026-08-28T15:50:02.251585+00:00",
+ "computedAt": "2026-08-29T04:32:32.423851+00:00",
  "engine": "mpmath mpf/mpc (structural demonstration; 0 free params)",
  "free_parameters": 0,
  "inputs": {
-  "q0": "1.1099785955573347",
-  "q0_pin": "muon (ideal CAL-2)",
-  "q0_precision_note": "17 significant digits, recorded VERBATIM as computed with. The muon anchor's full value is 1.10997859555733471989976..., so fmt()-padding this literal to the serialization width would append zeros that are not merely fabricated but WRONG from digit 18. q0Value must equal what the producer computed with (qou_substrate/witness.py::_q0_value_for_anchor). Quantities derived from it below are exact functions of THIS literal, reproducible, but carry no more physical accuracy than its 17 digits.",
-  "h": "0.109978595557334700000000000000000000000000000000000000000000",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_pin": "proton (experimental pin, resolved)",
+  "q0_precision_note": "RESOLVED from substrate.q_parameter at run time, not frozen. It was a 17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal cannot follow an anchor move, which is how this witness came to record the superseded muon pin under the label \"muon\".",
+  "h": "0.109978582751380807591669095610768879874499121873600000000000",
   "h_definition": "q0 - 1 (the A3 crossterm probe's reading; NOT the Hecke h = q - 1/q)",
-  "hbar_q": "0.0990817264382589429303822597764403577189482164408920979907548",
+  "hbar_q": "0.0990817160442585078391771175189060639852583733894630782552147",
   "mu3_MeV": "0.4708",
   "c3_single_trace_MeV": "0.297",
   "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
@@ -82,30 +82,30 @@
   "longitudinal_readings": [
    {
     "reading": "h",
-    "rho": "0.109978595557334700000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "0.890021404442665300000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.695163780742519885185185185185185185185185185185185185185185",
+    "rho": "0.109978582751380807591669095610768879874499121873600000000000",
+    "correction_1_minus_rho": "0.890021417248619192408330904389231120125500878126400000000000",
+    "abs_err_vs_rstar": "0.695163767936565992776854280795954065059684307058785185185185",
     "lands_rstar": false
    },
    {
     "reading": "-h",
-    "rho": "-0.109978595557334700000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "1.10997859555733470000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.475206589627850485185185185185185185185185185185185185185185",
+    "rho": "-0.109978582751380807591669095610768879874499121873600000000000",
+    "correction_1_minus_rho": "1.10997858275138080759166909561076887987449912187360000000000",
+    "abs_err_vs_rstar": "0.475206602433804377593516089574416305310686063311585185185185",
     "lands_rstar": false
    },
    {
     "reading": "\u210f_q",
-    "rho": "0.0990817264382589429303822597764403577189482164408920979907548",
-    "correction_1_minus_rho": "0.900918273561741057069617740223559642281051783559107902009245",
-    "abs_err_vs_rstar": "0.684266911623444128115567444961625542904133401626077283175940",
+    "rho": "0.0990817160442585078391771175189060639852583733894630782552147",
+    "correction_1_minus_rho": "0.900918283955741492160822882481093936014741626610536921744785",
+    "abs_err_vs_rstar": "0.684266901229443693024362302704091249170443558574648263440400",
     "lands_rstar": false
    },
    {
     "reading": "-\u210f_q",
-    "rho": "-0.0990817264382589429303822597764403577189482164408920979907548",
-    "correction_1_minus_rho": "1.09908172643825894293038225977644035771894821644089209799075",
-    "abs_err_vs_rstar": "0.486103458746926242254802925408744827466236968744293087194430",
+    "rho": "-0.0990817160442585078391771175189060639852583733894630782552147",
+    "correction_1_minus_rho": "1.09908171604425850783917711751890606398525837338946307825521",
+    "abs_err_vs_rstar": "0.486103469140926677346008067666279121199926811795722106929970",
     "lands_rstar": false
    }
   ],
@@ -116,6 +116,10 @@
  "lean": "QOU.QBeta.BirkhoffBarOddPythagorasBridge",
  "wired": false,
  "notes": "Companion to BirkhoffBarOddPythagorasBridge.lean (sorry-free). The modulus reading is a structure hypothesis with NO instance; the Pythagorean consequence is conditional. Nothing wired to production.",
- "q0Anchor": "muon",
- "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "scriptHash": "08533d7824bc",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+ "durationMs": 0
 }

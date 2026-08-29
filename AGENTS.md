@@ -89,6 +89,48 @@ Adapt ALL responses accordingly:
   whose meaning, cost and consequences were legible only to the agent that had
   just spent the session measuring them.
 
+- **NAMING A DECISION IS ASKING A QUESTION — the frame above applies wherever
+  you raise one, not only in `AskUserQuestion` (STRICT, 2026-08-29).**
+
+  Every rule above says "`AskUserQuestion`", and an agent reads that as a rule
+  about a *tool*. It is not. It is a rule about **handing the author a
+  decision**, and the tool is one of several ways to do that. The others, all
+  of which carry the same obligation:
+
+  - an end-of-turn summary line ("the one thing waiting on you is …");
+  - a `**next**` entry in the beans report;
+  - a "Suggested follow-up" / "open question" section in a PR body;
+  - a bean body's "still open" list;
+  - a chat sentence of the form *"X is a judgement call for you"*.
+
+  **The test is not which tool you used. It is: does this sentence require the
+  author to decide something?** If yes, it owes the six-part frame — expand
+  every identifier, lead with the decision, give each option its what-it-means
+  / costs / risks / commits-to, state the default, name the blast radius in
+  real terms — and a recommendation marked as judgement.
+
+  **The failure mode is specifically the one-line gesture.** *"Whether the mass
+  context should move to `tower_term_li2q` is a judgement about the framework"*
+  names a decision and supplies none of what is needed to make it: not what the
+  two options do, not that the calibration has **zero non-probe consumers**
+  (which is what makes it cheap), not what happens if the author says nothing.
+  The author cannot act on it, and worse, cannot tell that it is cheap to
+  ignore. That is not a hand-off; it is a mention.
+
+  **Cheapest correct move when you do not want to spend the words:** don't
+  raise it. A decision you are not prepared to frame is a decision you should
+  either measure further yourself or leave in the bean unmentioned — a bean the
+  author can read on their own schedule is a fine home for an unframed
+  question. What is not fine is putting it in front of them stripped of
+  everything that would let them answer.
+
+  History: added 2026-08-29 on owner instruction — *"Named decision, but I
+  haven't described any information about it. This is a repeated habit of
+  yours."* The agent had applied the six-part frame diligently inside
+  `AskUserQuestion` calls all session while ending turn after turn with bare
+  one-line decision gestures, because every rule it had was addressed to the
+  tool rather than to the act.
+
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
   - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
@@ -528,6 +570,33 @@ user's last message, not the most recently mentioned file.
       trusting the exit code; and then check whether that traceback's exception
       type is a **guard the corpus defines**. Without all seven its verdicts are
       about itself.
+
+      **🛑 But requirement one MASKS a whole defect class, and the "2 real
+      defects" figure below cannot see it (added 2026-08-29, bean `qou-0e1t`).**
+      Setting `PYTHONPATH` is necessary for the runner to reach the corpus's
+      bare-name imports — and it is exactly what hides a script whose
+      `import _path_bridge` precedes the `sys.path` bootstrap that resolves it.
+      `_path_bridge` lives in `computations/`; a script in a cluster subdir has
+      `sys.path[0]` set to its own directory, so that import fails unless the
+      parent is already on the path. **Measured on the SAME file at the SAME
+      commit, varying only the environment:** without `PYTHONPATH`,
+      `ModuleNotFoundError: No module named '_path_bridge'`; with
+      `PYTHONPATH=computations`, 4/4 checks pass and the witness is written.
+      **Six such scripts were live on `main`** — among them
+      `qbeta_d_frame_trace_baseline_probe`, whose `gap_over_ladder_ratio =
+      92.1058` the Δ fork-pricing probe calibrates against — and none appears
+      in the "2 real defects" list, because the runner that produced that list
+      set `PYTHONPATH` by its own rule. So read that 2 as *"2 that survive a
+      PYTHONPATH-equipped runner"*, not as *"2 that a user can run"*.
+
+      The fix is at the script (move the import after the bootstrap, per
+      `_path_bridge`'s documented USAGE), and the guard is
+      [`computations/audits/path_bridge_bootstrap_audit.py`](computations/audits/path_bridge_bootstrap_audit.py),
+      which narrows by pattern but **decides by executing each candidate with
+      `PYTHONPATH` stripped**. Its own count was 28 before it was corrected to
+      6: the first pass matched only `sys.path.insert(` and missed
+      `sys.path[:0] = [...]` — 22 false positives from one unknown spelling,
+      the same detector-blindness class as everything else in this section.
 
       **The 2 real defects**, re-verified against `main` on 2026-08-24:
       `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an

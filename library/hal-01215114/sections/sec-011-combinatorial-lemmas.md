@@ -7,6 +7,7 @@ section_number: null
 pages: 6-8
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 The proof relies on three simple combinatorial lemmas.
 Lemma 4 Letλ andµ be two partitions of the same integer n. If λ does not dominate µ then for any

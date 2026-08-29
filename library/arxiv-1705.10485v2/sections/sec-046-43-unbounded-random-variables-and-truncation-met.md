@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 35-37
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 A possible generalization regards sums ofunbounded random variables. In the following, we develop a
 truncation method that yields a criterion of asymptotic normality similar to Lyapunov’s condition (see

@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 46-47
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 Theorem 6.3. Let B be a Borelian subset of R.
 (1) If B is admissible, then

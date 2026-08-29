@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 41-48
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 tion, we now have to gather the estimates given by Theorem 21 to get the asymptotics
 of the cumulants κ(2r)(Mn) of the magnetization.

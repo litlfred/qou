@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 31-35
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 In this paragraph, we will see that the uniform bounds on cumulants are satisﬁed for sumsSn =∑n
 i=1Ai,n of dependent random variables with speciﬁc dependency structure.

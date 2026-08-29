@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 32-36
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 We have already seen that the concrete semisimple tensor ∗-categories Repf (A, ∆) and Corep f ( ˆA, ˆ∆) come with
 conjugates whenever (A, ∆) is a discrete aqg. In this section we prove the converse. We star t oﬀ with a couple

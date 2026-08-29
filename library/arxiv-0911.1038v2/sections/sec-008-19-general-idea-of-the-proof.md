@@ -7,6 +7,7 @@ section_number: 1.9
 pages: 7-12
 source_pdf: 0911.1038v2.pdf
 source_sha256: 3bc566efaefd44c6
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS — We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class."
 ---
 symmetric functionk(µ) := |µ| + 2g − 1 = p1(µ) + 2g − 1, therefore for
 a given symmetric functions fg andhg we can deﬁne symmetric functions

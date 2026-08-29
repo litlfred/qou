@@ -7,6 +7,7 @@ section_number: 5.7
 pages: 33-35
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 tor Σ π . Let π be a partition of the set {1, . . . , n }. Since the fat parti-
 tion π fat connects every element of the set {1 ′, 2 ′, . . . , n ′} with exactly

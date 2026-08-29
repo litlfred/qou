@@ -5,10 +5,10 @@
   "description": "Frame-robustness of the \u03bc\u2083 (A=3 magnitude) target. \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small residual (\u22480.47) that is a difference of two O(3.5) numbers, so \u2014 like g\u2082=1+r \u2014 it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline. Measured across three legitimate deuteron-normalized A-scaling baselines (graded coinvariant dimension = CORPUS #4300, balanced quantum dimension, classical q\u21921) the SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust but \u03bc\u2083's MAGNITUDE swings by a factor comparable to / exceeding the 1.6\u00d7 gap the closure attempts target. Hence the '1.6\u00d7 A=3 magnitude gap' is baseline-CLASS-relative, not absolute. scope-(a) CAVEAT (not a refutation of the principled graded-dimension route): closure attempts must state their baseline. Anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) frame-robustness measurement (baseline-class spread of the \u03bc\u2083 target); no fit; nothing wired",
-  "scriptHash": "b130535ac6e927dc",
+  "scriptHash": "463d95c25ec1",
   "result": {
     "substrate": {
-      "q0": "1.10997859555733471",
+      "q0": "1.109978582751380807591669095610768879874",
       "source": "muon-canonical jet-filtration witness"
     },
     "c3_cluster_prediction_MeV": "0.297",
@@ -17,31 +17,31 @@
       "per_baseline": {
         "G_graded_coinvariant": {
           "desc": "\u220f[k]_q, [k]=1+q+\u2026+q^{k-1}  (CORPUS, #4300 graded dim)",
-          "rho_grad3": "3.342031078",
-          "rho_grad4": "15.73957263",
+          "rho_grad3": "3.342031037",
+          "rho_grad4": "15.73957214",
           "mu2": "0.0",
-          "mu3": "0.4707689218",
-          "mu4": "-4.591048313",
+          "mu3": "0.4707689631",
+          "mu4": "-4.591047988",
           "mu2_is_zero": true,
           "mu3_sign_pos": true,
           "mu4_sign_neg": true,
-          "gap_ratio_c3_over_mu3": "0.63088277",
-          "gap_factor_mu3_over_c3": "1.5850805",
-          "amplification_rhograd3_over_mu3": "7.0990903"
+          "gap_ratio_c3_over_mu3": "0.63088271",
+          "gap_factor_mu3_over_c3": "1.5850807",
+          "amplification_rhograd3_over_mu3": "7.0990896"
         },
         "Q_balanced_quantum": {
           "desc": "\u220f[k]_q^bal, [k]=q^{k-1}+\u2026+q^{-(k-1)}  (quantum dim)",
-          "rho_grad3": "3.043706218",
-          "rho_grad4": "12.50866598",
+          "rho_grad3": "3.043706209",
+          "rho_grad4": "12.50866587",
           "mu2": "0.0",
-          "mu3": "0.7690937818",
-          "mu4": "-2.553441111",
+          "mu3": "0.7690937915",
+          "mu4": "-2.553441036",
           "mu2_is_zero": true,
           "mu3_sign_pos": true,
           "mu4_sign_neg": true,
           "gap_ratio_c3_over_mu3": "0.38616877",
           "gap_factor_mu3_over_c3": "2.5895414",
-          "amplification_rhograd3_over_mu3": "3.9575229"
+          "amplification_rhograd3_over_mu3": "3.9575228"
         },
         "C_classical": {
           "desc": "\u220fk  (q\u21921 classical dim)",
@@ -58,10 +58,10 @@
           "amplification_rhograd3_over_mu3": "3.6909449"
         }
       },
-      "mu3_min": "0.47076892",
+      "mu3_min": "0.47076896",
       "mu3_max": "0.8128",
       "mu3_spread_factor": "1.72654",
-      "mu4_min": "-4.5910483",
+      "mu4_min": "-4.591048",
       "mu4_max": "-2.2196",
       "mu4_spread_factor": "2.06841",
       "gap_factor_min": "1.58508",
@@ -74,31 +74,31 @@
       "per_baseline": {
         "G_graded_coinvariant": {
           "desc": "\u220f[k]_q, [k]=1+q+\u2026+q^{k-1}  (CORPUS, #4300 graded dim)",
-          "rho_grad3": "3.342031078",
-          "rho_grad4": "15.73957263",
+          "rho_grad3": "3.342031037",
+          "rho_grad4": "15.73957214",
           "mu2": "0.0",
-          "mu3": "0.4718178427",
-          "mu4": "-4.903822414",
+          "mu3": "0.4718178839",
+          "mu4": "-4.903822088",
           "mu2_is_zero": true,
           "mu3_sign_pos": true,
           "mu4_sign_neg": true,
-          "gap_ratio_c3_over_mu3": "0.62948022",
-          "gap_factor_mu3_over_c3": "1.5886123",
-          "amplification_rhograd3_over_mu3": "7.083308"
+          "gap_ratio_c3_over_mu3": "0.62948017",
+          "gap_factor_mu3_over_c3": "1.5886124",
+          "amplification_rhograd3_over_mu3": "7.0833072"
         },
         "Q_balanced_quantum": {
           "desc": "\u220f[k]_q^bal, [k]=q^{k-1}+\u2026+q^{-(k-1)}  (quantum dim)",
-          "rho_grad3": "3.043706218",
-          "rho_grad4": "12.50866598",
+          "rho_grad3": "3.043706209",
+          "rho_grad4": "12.50866587",
           "mu2": "0.0",
-          "mu3": "0.7701427026",
-          "mu4": "-2.866215212",
+          "mu3": "0.7701427123",
+          "mu4": "-2.866215137",
           "mu2_is_zero": true,
           "mu3_sign_pos": true,
           "mu4_sign_neg": true,
-          "gap_ratio_c3_over_mu3": "0.38564282",
+          "gap_ratio_c3_over_mu3": "0.38564281",
           "gap_factor_mu3_over_c3": "2.5930731",
-          "amplification_rhograd3_over_mu3": "3.9521328"
+          "amplification_rhograd3_over_mu3": "3.9521327"
         },
         "C_classical": {
           "desc": "\u220fk  (q\u21921 classical dim)",
@@ -115,10 +115,10 @@
           "amplification_rhograd3_over_mu3": "3.6861878"
         }
       },
-      "mu3_min": "0.47181784",
+      "mu3_min": "0.47181788",
       "mu3_max": "0.81384892",
       "mu3_spread_factor": "1.72492",
-      "mu4_min": "-4.9038224",
+      "mu4_min": "-4.9038221",
       "mu4_max": "-2.5323741",
       "mu4_spread_factor": "1.93645",
       "gap_factor_min": "1.58861",
@@ -129,9 +129,9 @@
     "frame_independent_full_ratio": {
       "physical_observable": "B(\u00b3H)/B(\u00b2H) = \u03c1_strong(3)",
       "rho_strong3": "3.8128",
-      "model_prediction_rho_grad_plus_c3": "3.6390311",
-      "absolute_miss_delta": "0.17376892",
-      "miss_pct_of_physical_ratio": "4.55751",
+      "model_prediction_rho_grad_plus_c3": "3.639031",
+      "absolute_miss_delta": "0.17376896",
+      "miss_pct_of_physical_ratio": "4.55752",
       "miss_pct_of_residual_mu3": "36.9117",
       "framing_amplification_rho3_over_mu3": "8.09909",
       "reading": "the '1.6\u00d7 gap on \u03bc\u2083' (model reaches 0.63\u00b7\u03bc\u2083) is the SAME absolute miss \u0394 as a ~4.6% shortfall on the physical ratio B(\u00b3H)/B(\u00b2H); the residual framing amplifies \u0394 by \u03c1_strong(3)/\u03bc\u2083 \u2248 8\u00d7. The frame-INDEPENDENT accuracy statement is the % on the physical ratio, not the multiplicative gap on the small residual."
@@ -151,8 +151,13 @@
     "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
     "no_fit": true
   },
-  "scriptCommitSha": "b71822016e0c868380498baa597b9edd88a79026",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "mu3_target_frame_robustness_probe.py",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "engine": "python",
+  "computedAt": "2026-08-29T04:17:52.527780+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

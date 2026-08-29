@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 19-20
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 may ask what happens if instead of β and 1
 e2β one puts arbitrary coefﬁcients for the

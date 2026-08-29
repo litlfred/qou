@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 17-19
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 parameter α = 0, and β arbitrary. We have shown in Section 2 the complex mod-
 Gaussian convergence of (n−1/4 Mn)n∈N with parameters n1/2 e2β and limiting func-

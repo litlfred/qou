@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 45-46
 source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
+doc_brief: "MOD-φ CONVERGENCE, I: — In this paper, we use the framework of mod- φ convergence to prove pre- cise large or moderate deviations for quite general sequences of real valued random variables (Xn)n∈N"
 ---
 (1) The random variables Xn satisfy the hypotheses of Deﬁnition 1.1 with c = + ∞
 (in particular, ψ is entire on C).

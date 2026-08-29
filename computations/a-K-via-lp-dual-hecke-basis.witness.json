@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T05:02:30.858554+00:00",
-  "commitSha": "550985daa5aeaf44c63fa89d10084789b08bd22f",
+  "computedAt": "2026-08-29T04:41:47.437016+00:00",
+  "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 54,
   "computation": "a-K-via-lp-dual-hecke-basis",
   "scriptFile": "aK_via_lp_dual_hecke_basis.py",
-  "scriptHash": "f1cc27d897e7",
-  "scriptCommitSha": "86e639171915a5090ccc66e60ee9bcf5cc1ab491",
+  "scriptHash": "126ba2e9e4e0",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -65,8 +66,8 @@
   "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
-    "q0": "mpf('1.109978595557334719899763220483225026656208408780153686607981146144929999')",
-    "h": "mpf('0.2090603219955936789818626364659673502616233016474798267897442369867365562')",
+    "q0": "1.109978595642739046681795129380001752700065561029",
+    "h": "0.20906032215031674663080026150191988598013716922588",
     "basis_size": 6,
     "hecke_level": 3,
     "lp_method": "scipy linprog highs (f64)"
@@ -489,14 +490,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
         "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
+        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
+        "computedAt": "2026-08-22T21:11:04.185076+00:00"
       }
     ]
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029"
 }

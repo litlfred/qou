@@ -7,6 +7,7 @@ section_number: 22
 pages: 22-23
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 Assume, therefore, that d is ﬁnite. Observe that for any bounded
 increment ∆ x we have

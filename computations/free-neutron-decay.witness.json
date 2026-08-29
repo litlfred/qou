@@ -1,10 +1,10 @@
 {
-  "computedAt": "2026-04-14T22:24:03.405420+00:00",
   "computation": "free-neutron-decay",
-  "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. All Gröbner--Shirshov relations traced verbosely.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "commit_sha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
-  "q0": 1.1099785955541805,
+  "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. All Gröbner--Shirshov relations traced verbosely.",
+  "timestamp": "2026-08-29T02:33:33.982244+00:00",
+  "commit_sha": "unknown",
+  "q0": 1.1099785827513808,
   "relations": {
     "R1_Hecke": "σ_i² = (q − q⁻¹)·σ_i + 1",
     "R2_far_comm": "σ_i·σ_j = σ_j·σ_i for |i−j| ≥ 2",
@@ -18,10 +18,11 @@
     "u-d": "½(1+q²)·σ_i − ½q·s·𝟏"
   },
   "constants_at_q0": {
-    "q0": 1.1099785955541805,
-    "HA": 0.20906032198987945,
-    "s_skein": 0.10438806980915827,
-    "z_markov": 0.4993203340335982
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "HA": "0.209060298795639315430846213129674943859757495263022562533407",
+    "s_skein": "0.104388058259181637833117159349806602633660861250240884082433",
+    "z_markov": "0.61268803714646525159582986394589924802630839154506360847205",
+    "z_markov_convention": "D: z = q^3/(q^2+1)"
   },
   "neutron": {
     "composition": "[u, d, d]",
@@ -32,7 +33,7 @@
         "particle": "ν",
         "knot": "unknot (0₁)",
         "coefficient_symbolic": "q**7/4 - q**5/2 - q**3/4 + q/2 - 1/(2*q) + 1/(4*q**3) + 1/(2*q**5) - 1/(4*q**7)",
-        "coefficient_numeric": -0.20170383884270415
+        "coefficient_numeric": -0.20170381820966587
       },
       {
         "word": [
@@ -42,7 +43,7 @@
         "particle": "σ₀",
         "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "q**8/4 - q**6/2 + q**4/4 + q**2/2 - 1 + 1/(2*q**2) + 1/(4*q**4) - 1/(2*q**6) + 1/(4*q**8)",
-        "coefficient_numeric": 0.04813038950468018
+        "coefficient_numeric": 0.04813037781513507
       },
       {
         "word": [
@@ -52,7 +53,7 @@
         "particle": "σ₁",
         "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "-q**6/4 + q**4/2 + q**2/2 - 1/2 + 1/(2*q**2) + 1/(2*q**4) - 1/(4*q**6)",
-        "coefficient_numeric": 1.008995448774928
+        "coefficient_numeric": 1.0089954472120495
       },
       {
         "word": [
@@ -63,7 +64,7 @@
         "particle": "L₊",
         "knot": "Hopf link",
         "coefficient_symbolic": "-q**7/4 + q**5/2 - 3*q/4 + 3/(4*q) - 1/(2*q**5) + 1/(4*q**7)",
-        "coefficient_numeric": -0.009640792161232925
+        "coefficient_numeric": -0.009640788839731962
       },
       {
         "word": [
@@ -74,7 +75,7 @@
         "particle": "L₋",
         "knot": "Hopf link",
         "coefficient_symbolic": "q**5/4 - q**3/4 - q/2 + 1/(2*q) + 1/(4*q**3) - 1/(4*q**5)",
-        "coefficient_numeric": 0.009237074564505066
+        "coefficient_numeric": 0.009237071467924962
       },
       {
         "word": [
@@ -86,11 +87,12 @@
         "particle": "e⁻",
         "knot": "trefoil (3₁)",
         "coefficient_symbolic": "-q**4/4 + 1/2 - 1/(4*q**4)",
-        "coefficient_numeric": -0.0441837766085153
+        "coefficient_numeric": -0.044183766698594085
       }
     ],
     "n_terms": 6,
-    "net_coefficient": 0.8108345052316609,
+    "net_coefficient": 0.8108345227471176,
+    "net_coefficient_exact": "0.8108345227471176837970976911175292169049446557413942",
     "reduction_steps": {
       "hecke": 13,
       "yb": 4,
@@ -107,7 +109,7 @@
         "particle": "ν",
         "knot": "unknot (0₁)",
         "coefficient_symbolic": "q**7/4 - q**5 + 2*q**3 - 13*q/4 + 13/(4*q) - 2/q**3 + q**(-5) - 1/(4*q**7)",
-        "coefficient_numeric": -0.0996576638783706
+        "coefficient_numeric": -0.09965765397138737
       },
       {
         "word": [
@@ -117,7 +119,7 @@
         "particle": "σ₀",
         "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "q**8/4 - q**6 + 5*q**4/2 - 17*q**2/4 + 5 - 17/(4*q**2) + 5/(2*q**4) - 1/q**6 + 1/(4*q**8)",
-        "coefficient_numeric": 0.03572941527166762
+        "coefficient_numeric": 0.03572940667020408
       },
       {
         "word": [
@@ -127,7 +129,7 @@
         "particle": "σ₁",
         "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "-q**6/2 + 7*q**4/4 - 5*q**2/2 + 7/2 - 5/(2*q**2) + 7/(4*q**4) - 1/(2*q**6)",
-        "coefficient_numeric": 0.99757046356861
+        "coefficient_numeric": 0.9975704646560544
       },
       {
         "word": [
@@ -138,7 +140,7 @@
         "particle": "L₊",
         "knot": "Hopf link",
         "coefficient_symbolic": "-q**7/2 + 2*q**5 - 7*q**3/2 + 9*q/2 - 9/(2*q) + 7/(2*q**3) - 2/q**5 + 1/(2*q**7)",
-        "coefficient_numeric": 0.0993537847899173
+        "coefficient_numeric": 0.0993537750524709
       },
       {
         "word": [
@@ -149,7 +151,7 @@
         "particle": "L₋",
         "knot": "Hopf link",
         "coefficient_symbolic": "q**5/2 - 3*q**3/2 + 2*q - 2/q + 3/(2*q**3) - 1/(2*q**5)",
-        "coefficient_numeric": 0.009336913072779618
+        "coefficient_numeric": 0.009336909920816261
       },
       {
         "word": [
@@ -161,11 +163,12 @@
         "particle": "e⁻",
         "knot": "trefoil (3₁)",
         "coefficient_symbolic": "q**6/4 - 5*q**4/4 + 7*q**2/4 - 3/2 + 7/(4*q**2) - 5/(4*q**4) + 1/(4*q**6)",
-        "coefficient_numeric": -0.04320778758182264
+        "coefficient_numeric": -0.04320777810965737
       }
     ],
     "n_terms": 6,
-    "net_coefficient": 0.9991251252427813,
+    "net_coefficient": 0.9991251242185004,
+    "net_coefficient_exact": "0.999125124218500454238834911243979875321710039012636",
     "reduction_steps": {
       "hecke": 13,
       "yb": 5,
@@ -174,14 +177,19 @@
     }
   },
   "transition": {
-    "delta_net": -0.1882906200111204,
-    "delta_nu": -0.10204617496433355,
-    "delta_e": -0.0009759890266926585,
+    "delta_net": "-0.1882906014713827704417372201264506584167653832712418",
+    "delta_net_float": -0.18829060147138277,
+    "delta_nu": -0.1020461642382785,
+    "delta_e": -0.0009759885889367159,
     "Q_observed_MeV": 0.78233
   },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0,
+  "scriptFile": "free-neutron-decay.py",
+  "scriptHash": "660fd58b48bb",
+  "scriptCommitSha": "1e09d97149d9afabea879a4e7f1367aab30502c9",
+  "commitSha": "7c51e3db5feeb20214e95fb0f5589d3a0f0c4312",
   "engine": "python",
-  "scriptFile": "derived_masses.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+  "computedAt": "2026-08-29T02:33:34.475599+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

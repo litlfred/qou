@@ -7,6 +7,7 @@ section_number: 5
 pages: 15-15
 source_pdf: 0701051v4.pdf
 source_sha256: 4592a048c3b84a8d
+doc_brief: "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA — We prove an upper bound for characters of the symmetric groups."
 ---
 It might happen also for two adjacent (with respect to the pla nar structure)
 edges e1, e2 of G′′ that each of these edgesei corresponds to a pair or a triple

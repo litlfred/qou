@@ -7,6 +7,7 @@ section_number: 3
 pages: 12-12
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
+doc_brief: "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups"
 ---
 we mention that the commutative-compact case can be described in terms of the algebra of regular functions
 on a compact group, and we make here an analytic statement conce rning both cases.

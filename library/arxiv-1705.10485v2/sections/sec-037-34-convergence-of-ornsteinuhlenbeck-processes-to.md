@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 24-26
 source_pdf: 1705.10485v2.pdf
 source_sha256: b33759def53c6a43
+doc_brief: "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ"
 ---
 Another way to approximate a stable lawφc,α,β is by using the marginales of a random process of
 Ornstein–Uhlenbeck type. Consider more generally a self-decomposable lawφ on R, that is an inﬁnitely

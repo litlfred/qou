@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 6-7
 source_pdf: 0405258v2.pdf
 source_sha256: dbd6bf5a94deebaf
+doc_brief: "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to"
 ---
 garten function. In the following we will be interested in the asymp-
 totics of special matrix integrals over the group U(N) of unitary N ×N-

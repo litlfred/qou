@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 30-32
 source_pdf: 1409.2849v1.pdf
 source_sha256: 7bf9646716fbb247
+doc_brief: "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the"
 ---
 local limit theorems for mod- φ convergence, we obtain the following local limit theo-
 rem for the magnetization in the Curie-Weiss model:

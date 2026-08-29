@@ -7,6 +7,7 @@ section_number: 5
 pages: 13-23
 source_pdf: 1009.4034v1.pdf
 source_sha256: 8f8d6d786b60c279
+doc_brief: "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young"
 ---
 To make appear the Chebyshev polynomials of the second type, we start by computing the moments
 of the deviation∆λ,c of a rescaled Young diagram from its limit shape. Ifλ is a partition of sizen, let

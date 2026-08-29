@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 26-26
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 some constructions on partitions of the set X = {1, 2, . . . , N }. However,
 it should be understood that by a change of labels these const ructions can

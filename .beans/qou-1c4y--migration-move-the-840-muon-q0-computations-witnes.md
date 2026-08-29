@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-28T15:47:01Z
+updated_at: 2026-08-29T05:10:54Z
 ---
 
 
@@ -1424,3 +1424,150 @@ the experiment it cites). Still theirs to fix.
 
 Also: `habiro_witness_convention_adjudication_probe` is RUN-FAIL even WITH
 PYTHONPATH, so it is UNTESTED rather than clean, and stays pending.
+
+---
+
+---
+
+## The superseded-muon class TRIAGED 2026-08-28 — 19 actionable, not 260
+
+The 2026-08-22 partition recorded the superseded-muon population as the largest
+untouched class and I recommended it as the next work item on that basis. **That
+recommendation was inflated by the same error class this arc kept correcting: a
+population count is not a work count.**
+
+    witnesses carrying the superseded value          265
+      under _deprecated/                             214   <- 81%, not live work
+      live                                            51
+        no scriptFile at all (orphan)                 13
+        scriptFile names a missing producer            2
+        scriptFile names a LIVE producer              36
+          self-declaring (deliberate)                 17
+          GENUINE candidates                          19
+
+**265 -> 19. A 14x over-count of actionable work.**
+
+The 17 deliberate ones declare themselves in a field or producer name —
+`stale_muon_pin_q0` (x4), `q0_muon_pin` / `q_muon` / `q0_muon` (x6),
+`muon_pin_three_values_probe` whose subject IS the pin history,
+`probe_trace_convention_production_impact`, and two audits whose subject is
+literals. Re-pinning any of them would destroy what they measure.
+
+The 19 genuine candidates carry it under a **bare** pin key (`q_0`, `q0`, `q`,
+`q_0_50dps`, `q_0_mpf50`) with nothing declaring it deliberate. **Still an upper
+bound**: each needs an individual read. Two to flag before anyone starts —
+`q_beta_predicted` carries `CAL-2_q_0`, and naming CAL-2 identifies *which
+calibration*, not *which pin* (the conflation the partition audit retracts); and
+`confinement-operator-selection` is an LP/SDP witness, so the dual fields matter
+to any re-run.
+
+**Separate problem, worth its own bean:** the **13 orphans** are live, on the
+superseded value, and carry **no `scriptFile` at all` — nothing can regenerate
+them and nothing records what did. Re-pinning is not even an available action;
+it is a provenance gap, not migration work.
+
+Full detail: `docs/audits/2026-08-28-superseded-muon-population-triage.md`.
+
+
+### 🛑 Correction to the entry above: the "13 orphans" were my detector, not a gap
+
+I wrote that the 13 were a provenance gap needing their own bean — *"nothing can
+regenerate them and nothing records what did"*. **Wrong.** The scan keyed on
+`scriptFile`/`script` only. Opened by hand:
+
+- **8** record provenance under `computation` — all 8 producers **exist**, 6 of
+  them under `docs/audits/scripts/`, which a `computations/`-scoped search
+  cannot see.
+- **5** record no provenance field but resolve by the witness-name ↔
+  producer-name convention — including `q0-value-drift-audit`, which this arc
+  has been regenerating all along.
+- **0** genuinely unregenerable.
+
+Real finding: 13 live witnesses **omit `scriptFile`** — a field-completeness gap
+in schema usage, not lost provenance. **No orphans bean is warranted.**
+
+**Fourth detector correction in this arc**, all mine, two high and two low:
+dual-purpose 21→3 (substring), contradictions 2→11 (file-local), superseded-muon
+work 265→19 (population≠work), orphans 13→0 (`scriptFile`-only). Treat any count
+here as a hypothesis with a several-fold error bar until a member is read.
+
+
+## 2026-08-29 — the WITNESS count is not the migration's size; the SOURCE count is
+
+Found while merging #5892 with main, and it corrects a framing this bean's
+own title carries.
+
+This bean is scoped as *"move the ~840 muon-q0 **witnesses**"*. But a witness
+is an output — re-running its producer moves it only if the producer
+**consults** `q_parameter`. Measured with the corpus's own
+`computations/audits/q0_hardcoded_pin_audit.py` (which already existed; I
+nearly rebuilt it before grepping):
+
+    files mentioning a pin literal : 362
+    PROSE_ONLY (not a finding)     :  66
+    UNDECLARED (migration scope)   : 248
+    consistent / not reached       :  46
+    CONTRADICTS (defect)           :   2
+    OFF_PIN (neither pin, in code) :  10
+
+**248 sources hardcode a pin the manifest cannot reach.** For those, the
+manifest is inert and a re-run is a no-op — so the sweep is a *source* edit,
+not a *witness* regeneration, and any plan sized off the witness count
+understates it.
+
+Worked counterexample, and the reason this was found:
+`deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py` line 38 is a
+hardcoded frozen-muon literal. Its stem is in **neither** manifest list, so
+the standard inference ("not `ideal_muon` ⇒ resolves to proton") says proton
+— and the file never asks. Measured: its committed `z_markov` matches the
+frozen muon anchor to **1.7e-19**, i.e. 21.9 ppb from proton (11.5 ppb in q₀
+amplified by `d ln z/d ln q = 3 − 2q²/(q²+1) = 1.896`). A live pin, not a
+stale output.
+
+This invalidated a headline inference in #5892 ("all 19 GENUINE candidates
+resolve to proton on a run today"); that PR's body now carries the
+correction. The 265 → 19 population reduction is unaffected — it is a count,
+not an inference.
+
+**Not swept here.** Annotated only: the probe now records that its `LOCKED`
+means the anti-fit target and not the anchor, that nothing in it consults
+`q_parameter`, and that its verdict is robust to the eventual re-pin
+(11.5 ppb against a 0.6904 % miss). Constraints 1–4 above still gate the
+actual sweep.
+
+**Suggested re-scope for whoever runs this:** partition by *whether the
+producer resolves or hardcodes* before sizing. The resolving set is a
+re-run; the 248 hardcodes are edits, each one changing every number that
+producer prints — so each needs its own verdict-robustness check of the kind
+done above, not a blanket regeneration.
+## 2026-08-29 — second drain pass (PR #5950): 47 -> 5 flips
+
+Ran the proton migration under the recorded owner authorisation. Gates:
+q0-anchor flip 47 -> 5, q0-value drift 318/101 -> 240/26, refill ratchet green
+(NEW 0), raw-float64 NEW 0 / REGRESSED 0. No baseline widened.
+
+THE PARTITION THIS BEAN ASKED FOR, MEASURED. Of the 45 producers behind the 47
+flips, **25 hardcode a q0 literal in EXECUTABLE code** (AST-checked). For those
+a bare re-run does not migrate — it writes `q0Anchor: proton` onto a payload
+computed with frozen muon A, i.e. replaces a truthful contradiction with a
+silent one. All 25 were run, inspected and reverted; 17 were then migrated at
+the source with a per-producer verdict-robustness check.
+
+THE MANIFEST GATES THE STALENESS CHECK. A producer that declares no anchor
+inherits the previous run's pin unless judged stale, and staleness needs either
+payload evidence or `q0_anchor_is_declared`. 40 of 48 had an UNLISTED stem, so
+their stale pair was immune to any number of re-runs. That is why constraint 4
+is load-bearing rather than procedural.
+
+Also: 11 producers falsely declared `q0_anchor=False` (deleting the stamp every
+run); `main`'s `a-K-via-lp-dual-full` active_set disagreed with its own y_star
+in all six atoms; `low_isotope_sign_flip_diagnostic` fixed (its TypeError was a
+string/float boundary, and the naive fix would have added float64 aggregation).
+
+NOT LANDED: the c3even/c4even ladder re-run. It moves `c2_even` -8.00641 ->
+-7.45876, and that is NOT the pin — origin/main's producer with its frozen
+muon-A literal produces the identical value. It is qou-cds1's C->D
+re-derivation surfacing through a witness that predates its own producer.
+
+Remaining 5 flips, all with stated reasons, in
+docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md.

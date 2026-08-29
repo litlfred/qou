@@ -1,17 +1,50 @@
 {
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T03:12:05.225736+00:00",
+  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "theta_jet_gb_grading_probe",
+  "scriptFile": "theta_jet_gb_grading_probe.py",
+  "scriptHash": "78bf71b05c73",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/theta_jet_gb_grading_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/theta_jet_gb_grading_probe.py"
+  },
   "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
-  "computation": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
-  "generated": "2026-07-20T04:05:41+00:00",
+  "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
+  "generated": "2026-08-29T03:12:05+00:00",
   "parameters": {
     "dps": 60,
     "m_max": 200,
-    "q0": "1.1099785955573347199",
+    "q0": "1.1099785956427390467",
     "q0_anchor": "muon (computations layer canonical)"
   },
   "results": {
     "curvature_2nd_diff_theta": {
       "target_2a": "1/2",
-      "window_20_40": "0.540749665814",
+      "window_20_40": "0.540749665744",
       "window_140_180": "0.499980646728",
       "sd": "0.00168887",
       "drift": "0.00059225983",
@@ -20,8 +53,8 @@
     },
     "quadratic_fit_120_180": {
       "a_target_1_4": "0.250019262144",
-      "b_linear": "11.07160766",
-      "b_pred_framing_half_logq_inv_qm1": "10.57817728",
+      "b_linear": "11.07160765",
+      "b_pred_framing_half_logq_inv_qm1": "10.57817727",
       "c": "-97.4613"
     },
     "gs_bridge_leading": {
@@ -34,7 +67,7 @@
     },
     "slope_s_m_diagnostic_linear_polluted": {
       "window_20_40": "1.087462091",
-      "window_160_180": "0.6273839911",
+      "window_160_180": "0.627383991",
       "drift": "0.4600781",
       "note": "polluted by framing b; NOT the constancy invariant"
     },
@@ -58,6 +91,6 @@
     "discipline": "scope-(a); pre-stated discriminants; no AME data; the GS-bridge identification is leading-q-order + conjectural (C1 = binding module is the standing keystone conjecture)"
   },
   "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347199",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

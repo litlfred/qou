@@ -90,8 +90,15 @@ ORD = 18              # order to which q-series identities are asserted
 S_P_TARGET = _sw.S_P_TARGET   # [[1,4,0],[0,1,0],[-3,-9,1]]
 S_M_TARGET = _sw.S_M_TARGET   # [[1,0,3],[-4,1,-3],[0,0,1]]
 
-Q0 = mp.mpf(
-    "1.10997859555733471989976322048322502665620840878015368660798114614493")
+# Was a hardcoded literal of the SUPERSEDED muon pin A. Read the anchor
+# instead: this producer's stem is listed `ideal_muon`, so q_parameter rebinds
+# q_at to the muon closure and this follows the anchor through a CODATA
+# revision with no digit edited by hand -- which is the whole point of
+# fca08de7d2. A frozen literal here made the witness stamp (q0Value, set from
+# the anchor) disagree with the arithmetic (run at A): a layer straddle inside
+# one witness. Bean qou-3f7a.
+from q_parameter import q_at  # noqa: E402
+Q0 = mp.mpf(str(q_at(mp.mp.dps)))
 
 
 # ------------------------------------------------------------------ helpers

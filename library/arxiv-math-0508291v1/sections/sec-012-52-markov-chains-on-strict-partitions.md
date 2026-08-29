@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 32-34
 source_pdf: 0508291v1.pdf
 source_sha256: d2d541426aaec742
+doc_brief: "Stein’s Method and Random Character Ratios — Stein’s method is used to prove limit theorems for random character ratios."
 ---
 Markov chain on DP (n) to be used in deﬁning an exchangeable pair for the
 proof of Theorem 5.2.

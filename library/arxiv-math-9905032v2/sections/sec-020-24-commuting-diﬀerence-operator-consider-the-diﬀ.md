@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 17-18
 source_pdf: 9905032v2.pdf
 source_sha256: ba933d4cb484964b
+doc_brief: "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS — We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity."
 ---
 erators ∆ and ∇ on the lattice Z,
 (∆ f )(k) = f (k + 1) − f (k) , (∇f )(k) = f (k) − f (k − 1) .

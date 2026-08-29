@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: hal-01215114.pdf
 source_sha256: c70f8b04a5542a1f
+doc_brief: "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of"
 ---
 Deﬁnition 2 A pair-partition of [2n] ={1,..., 2n} is a set of pairwise disjoint two-element sets, such
 that their (disjoint) union is equal to [2n].
