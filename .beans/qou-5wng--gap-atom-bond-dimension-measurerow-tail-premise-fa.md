@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-29T22:50:40Z
+updated_at: 2026-08-29T23:48:14Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to
@@ -232,3 +232,45 @@ that wording: promoting `y_lambda_at` to a muon identifier once reclassified
 **56 clean producers**. Note `mu3_anchor_consistency_probe.py` is describing the
 real 11.54 ppb straddle incident and its reference is legitimate history, not a
 stale rationale — do not "fix" it.
+
+
+## The stale-rationale count was MINE and it was wrong: 4 carriers, not 11
+
+I reported "the same stale rationale is carried by 10 other live files". Reading
+all of them in context, that number counts **retractions and history as
+carriers** — the exact over-count the `_c_level_is_prose_only` work in this same
+arc exists to prevent. A grep cannot tell a file stating a claim from a file
+quoting it to kill it.
+
+Measured, 11 live files pairing the muon-cache phrase with `y_lambda_at`:
+
+**Already CORRECT — they quote the claim in order to retract it (2):**
+  * `computations/audits/q0_producer_pin_classifier.py` — "THAT IS OUT OF DATE",
+    then quotes the live body.
+  * `computations/tr_m_wenzl_bridge_mpfr.py` — "CORRECTED 2026-08-23: THE CITED
+    MECHANISM IS DEAD, THE GUARD IS NOT ... Verified by reading both bodies, not
+    inferred."
+
+**Legitimate history (1):**
+  * `computations/deltalambda/mu3_anchor_consistency_probe.py` — describing the
+    real 11.54 ppb straddle incident. Not to be "fixed".
+
+**Genuine carriers, stating it as current behaviour (4) — FIXED here:**
+  * `computations/chi_dual_path_xref_audit.py`
+  * `computations/probe_1b_li6_orthogonality.py`
+  * `computations/probes/binding_sum_C_vs_D_per_isotope_probe.py`
+  * `computations/qbeta/qbeta_ladder_phase_from_wedderburn_weights.py`
+
+**Mild, left alone (2):** `binding_production_route_C_vs_D_probe.py` and
+`l1_ceiling_d_frame_remeasure.py` each state their OWN behaviour ("no muon-built
+cache is read / consulted") and merely list `y_lambda_at` among things they do
+not call. True as written; the stale claim is implied, not asserted. Editing
+them would be churn.
+
+**Plus the 2 fixed earlier** (`two_row_support_recount.py`,
+`q0_anchor_gate_test.py`), so 6 corrected in total.
+
+Note the prior art: `tr_m_wenzl_bridge_mpfr.py`'s correction cites "#5324, which
+is auditing the same stale claim where it also appears in AGENTS.md" — and
+AGENTS.md HAS been corrected (the `qou-c1ya`/`qou-vu19` note). So the doc side
+was already done; what remained was this call-site residue.

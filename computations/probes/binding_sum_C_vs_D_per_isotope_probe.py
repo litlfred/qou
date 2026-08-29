@@ -50,8 +50,7 @@ PIN
 EXPERIMENTAL / proton, q_parameter.Q_50_DIGIT_STR (owner directive
 2026-08-07).  No muon-built cache is read: y_lambda is computed live from the
 Wenzl-bridge closed form at both z values (never y_lambda_at() /
-y-lambda-at-q0.witness.json, whose "matches the package constant => serve the
-cache" gate would hand back a muon-built vector), and chi^lambda is computed
+y-lambda-at-q0.witness.json), and chi^lambda is computed
 live from the Hoefsmit seminormal matrices at the proton q_0 (never the
 committed chi-<atom>-h<n>-at-q0-50dps.witness.json files, which carry the
 MUON q_0 = 1.10997859555733471... and are marked q0Anchor: "ambiguous").
