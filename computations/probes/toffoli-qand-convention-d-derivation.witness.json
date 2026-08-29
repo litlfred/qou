@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T17:40:02.276213+00:00",
-  "commitSha": "36cccfad5e2faebe5089a1894ee74d25df105392",
+  "computedAt": "2026-08-29T18:06:03.543947+00:00",
+  "commitSha": "d60cda35b4e7b367abf37c843583187d7c8cbffb",
   "assertions": [
     {
       "name": "published_Phi_is_A_zC2_plus_B_zC_exactly",
@@ -21,14 +21,26 @@
       "computed": 1,
       "expected": 1,
       "passed": true
+    },
+    {
+      "name": "published_P77_is_z_plus_h_z2_exactly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_D_positive_for_all_q_gt_0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 150,
+  "durationMs": 37,
   "computation": "toffoli-qand-convention-d-derivation",
   "scriptFile": "toffoli_qand_convention_d_derivation.py",
-  "scriptHash": "63894d54ee27",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2a6be24b767f",
+  "scriptCommitSha": "9fa43d70b421b6e870efa6e327a0549853634ebc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,10 +75,17 @@
     "convention_C_threshold_q": "0.46557123187676802665673122522",
     "Phi_D_at_convention_C_threshold": "-0.0209080982892547310368841080021",
     "Phi_C_at_q0": "0.0495376843629006907569056253187",
-    "Phi_D_at_q0": "0.0624697516022889701705696957421"
+    "Phi_D_at_q0": "0.0624697516022889701705696957421",
+    "P77_D_closed_form": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+    "P77_h_coefficient": "(q - 1)*(q + 1)/q",
+    "golden_threshold_q_star": "0.381966011250105151795413165634",
+    "P77_D_at_golden_threshold": "0.0433440700006542778381263639471",
+    "P77_C_at_q0": "0.551443414318455993583364700049",
+    "P77_D_at_q0": "0.691166478358444526147719530979",
+    "surviving_thresholds_under_D": "q = 1 only (Phi vanishes; classical limit)"
   },
   "caveats": [
-    "DERIVED for Phi, on the proof block's own chain (Phi = z*(z*Delta_a0 + Delta_b0)) plus uniqueness of the decomposition over Q(q). For the DIAGONAL P_77 the same uniqueness gives P_77 = z + (q-1)/(q+1) as the unique z-linear form, but the proof block does not state that the diagonal has that shape -- its V_1 table gives d = 0 for the pp pair -- so the D-frame diagonal is NOT derived here and is not reported as such."
+    "Both entries are DERIVED, not z-swapped: each is a z-polynomial with Q(q) coefficients and no constant term (Phi = B z + A z^2, P_77 = z + h z^2), reconstructed symbolically against the published closed forms, so the convention enters through z alone. An earlier revision reported P_77 as conditional because the constant (q-1)/(q+1) looked unstructured; it is h*z_C^2 exactly. NOT covered here: the off-diagonal P_66, whose published form carries q^{7/2} and which this probe does not decompose."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
