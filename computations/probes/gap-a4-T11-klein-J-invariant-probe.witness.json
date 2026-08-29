@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:59:34.214556+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-29T05:01:27.129399+00:00",
+  "commitSha": "2fcb90c11621b04fd7a2431bd2091b70210d5a27",
   "assertions": [
     {
       "name": "klein_f_leading_coefficient_one",
@@ -38,7 +38,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 9,
   "computation": "gap-a4-T11-klein-J-invariant-probe",
   "scriptFile": "gap_a4_T11_klein_J_invariant_probe.py",
   "scriptHash": "63eeda2e0a89",
@@ -112,6 +112,7 @@
     },
     "synthesis_verdict": "T11 sets up the Klein J-invariant direction structurally and verifies (a) the polynomial degrees (f deg 12, H deg 20, T deg 30) with H = Hessian of f and T = Jacobian of f, H; (b) the Klein syzygy 1728\u00b7f^5 = T\u00b2 + H\u00b3 at z = 0 (trivial check); (c) the J-invariant orbit values (J = 0 at vertex orbit, 1 at face orbit, \u221e at edge orbit); (d) the Riemann-Hurwitz identity 118 = 48 + 40 + 30 for the icosahedral covering \u2102P\u00b9 \u2192 \u2102P\u00b9/I. The h-deformation question stays OPEN: whether an icosahedral q-Klein invariant carries the Borromean h\u2074 = \u22123/4 is NOT addressed in this scaffold per formalize-first discipline (no-7th-ansatz). Implementing the q-icosahedral analogue of the Eisenstein series would be a substantial follow-up (~500+ lines symbolic+numeric); deferred to a dedicated probe series if pursued."
   },
-  "q0Anchor": "independent",
-  "q0AnchorReason": "structural probe: Klein J-invariant degrees, syzygy, orbit values and Riemann-Hurwitz; no q0 in the import cone"
+  "q0Anchor": "proton",
+  "q0AnchorReason": "structural probe: Klein J-invariant degrees, syzygy, orbit values and Riemann-Hurwitz; no q0 in the import cone",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
