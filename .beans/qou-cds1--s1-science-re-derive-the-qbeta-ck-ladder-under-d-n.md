@@ -5,8 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T00:14:00Z
-updated_at: 2026-08-28T15:48:44Z
+updated_at: 2026-08-29T07:38:55Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2328,3 +2327,51 @@ float64 and the basis convention is UNVERIFIED, so it is a pointer, not a
 measurement. Tracked in `qou-bg3w`.
 
 **Still open.** cds1 is not closed and nothing here closes it.
+
+
+## 2026-08-29 — THE FORK IS FORCED: (D1) cannot be had for the 11-crossing element
+
+Owner asked directly: *"can we derive full 11 cross w/ D1?"* Answer: **no**, and
+the exclusion is symbolic.
+
+The entry above says (D1) is affine only because Delta_S is supported on
+{gamma, sigma_0, sigma_1}, while Delta_L also lives on L+ where the Ocneanu
+trace is z^2. **But Delta is a DIFFERENCE** -- if n and p carried the same L+
+coordinate it would cancel and (D1) would survive for the 11-crossing element.
+That escape was open and is now measured shut.
+
+`computations/qbeta/qbeta_d1_eleven_crossing_exclusion_probe.py` (6/6), exact
+symbolic in h, words from the hash-pinned `build_nucleon` transcription (PR
+#5893) imported rather than re-transcribed:
+
+    gamma     h(2h^4 + h^2 - 2)/4
+    sigma_0   h^2 (h^2+1)(2h^2+1)/4
+    sigma_1   h^2 (h^2-h+1)(h^2+h+1)/4
+    L+        -h^5/4                     <- DOES NOT CANCEL
+    L-        h(h^2+1)(h^4-2)/4          <- DOES NOT CANCEL
+    e^-       -h^4 (h^2+2)/4
+
+**L+ = -h^5/4 shuts it cleanly.** A monomial has one root, h = 0, and the
+substrate has h = q - 1/q ~ 0.209 at q0. There is no parameter value in range
+where the quadratic term drops out. Scope-(b) with the invariant cited (a
+degree argument). L- corroborates independently: roots only at h = 0 and
+h^4 = 2 (~1.189), neither the substrate value.
+
+**Consequence.** The two branches this bean records are now genuinely
+exclusive, and the choice of element IS the choice of programme:
+
+  * Delta_S canonical -> (D1) holds for every z, the phase leg is derived as
+    recorded, open item narrows to the c_k assembly.
+  * Delta_L canonical -> (D1) unavailable; with branch 1 closed and branch 2
+    circular, branch 3 (KZ / Kohno-Drinfeld holonomy) is the only remaining
+    home for a derivation of alpha.
+
+No third option keeps both. cds1 remains blocked on `qou-bg3w` (which element
+is Delta) -- but that block is now a decision with both costs priced, not an
+open question about whether the dichotomy is real.
+
+**A float64 run was done first and is NOT the evidence.** The stored
+PROTON_NF/NEUTRON_NF give L+ = -9.98e-5, L- = -0.109 -- the right answer, from
+values whose basis convention this bean's own tail records as UNVERIFIED, and
+-9.98e-5 is small enough that "is it exactly zero?" is precisely what float64
+cannot answer.
