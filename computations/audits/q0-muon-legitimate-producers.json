@@ -93,7 +93,7 @@
       ]
     },
     "dual_layer": {
-      "rule": "Anchor-parameterised: emits one artifact per layer. Needs BOTH pins; the manifest cannot express that, so it is served per-process.",
+      "rule": "Anchor-parameterised: emits one artifact per layer. Needs BOTH pins; the manifest cannot express that, so it is served per-process. DETECTION (added 2026-08-29): a producer emitting two witnesses whose `q0Anchor` values DIFFER is dual-layer by construction. That test found 4 where the originating regex -- which keys on assertions, raises and prose -- had found 2, because a producer that simply writes both layers makes no assertion and raises nothing.",
       "members": [
         {
           "producer": "atomic_tr_m_mpfr_50dps",
@@ -109,6 +109,34 @@
             "text": "raise SystemExit(f\"unknown anchor {anchor!r}: expected 'proton' or 'ideal'\")"
           },
           "note": "Takes --anchor proton|ideal and refuses anything else."
+        },
+        {
+          "producer": "canonical_tr_m_via_chi_cache",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/canonical_tr_m_via_chi_cache.py",
+            "line": 300,
+            "text": "the muon run writes a suffixed file; the anchor is DERIVED from the q0 actually in force, not read from the filename"
+          },
+          "witnesses": [
+            "computations/canonical-tr-m-via-chi-cache.witness.json (proton)",
+            "computations/canonical-tr-m-via-chi-cache-muon.witness.json (muon)"
+          ],
+          "note": "Base name is PROTON. `cross_check_trM_1ppb` is declared ideal_muon and reads this cache, so one file cannot serve both. Added 2026-08-29 (qou-cds3): found by a dual-layer detector -- a producer emitting two witnesses whose q0Anchor values differ -- not by the regex that built this ledger."
+        },
+        {
+          "producer": "markov_peel_atomic_witness",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/markov/markov_peel_atomic_witness.py",
+            "line": 113,
+            "text": "Base name = PROTON here, and the muon layer takes the `-muon` suffix"
+          },
+          "witnesses": [
+            "computations/markov/markov-peel-atomic-tr-m.witness.json (proton)",
+            "computations/markov/markov-peel-atomic-tr-m-muon.witness.json (muon)"
+          ],
+          "note": "Inverts the sibling convention (elsewhere the base name is the muon layer) and says so. The inversion was deliberate: SIX consumers of the base name are not anchor-aware, so making the base muon would hand them muon values -- the same straddle class this is meant to close. Added 2026-08-29 (qou-cds3)."
         }
       ]
     },
@@ -168,6 +196,60 @@
         }
       ],
       "source": "q0_muon_population_partition.py::co_read_fields (dict-key test, not substring: substring over-reports 7x)"
+    },
+    "derives_the_muon_pin": {
+      "rule": "DERIVES the muon pin from its own definition -- the CAL-2 lepton tower `m_mu/m_e = Vol(4_1)/hbar_q^2`, `hbar_q = 1 - q0^-1`, inverted as `q0 = 1/(1 - sqrt(Vol_4_1 / M_MU_OVER_M_E))`. These do not READ an anchor; they COMPUTE one, and the one they compute is the ideal/CAL-2 layer. Re-pinning them to proton is incoherent: the quantity they produce IS the muon-anchored one, so a proton stamp would describe a number that does not exist in the file. DETECTION: `M_MU_OVER_M_E` (or `codata_2022_source`) imported AND `hbar_q` present AND a `q0 = .../(1 - hbar_q)` assignment. The mass-ratio import alone OVER-MATCHES -- `rho_k_h3a_residual_decomposition` imports muon material but has hbar_q nowhere; it uses the muon value as an explicit comparison reference, which is a different class. Added 2026-08-29 (qou-cds3).",
+      "members": [
+        {
+          "producer": "canonical_lepton_braid_words",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/canonical_lepton_braid_words.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "f_ell_derivation_via_per_braid_mass_tower",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/f_ell_derivation_via_per_braid_mass_tower.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_lepton_h3_3channel_convention",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_lepton_h3_3channel_convention.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_tau_h5_embedding_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/probes/t6_tau_h5_embedding_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "t6_three_halves_factor_probes",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/t6_three_halves_factor_probes.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        },
+        {
+          "producer": "xi_ell_phi_q_probe",
+          "manifest": "UNDECLARED",
+          "evidence": {
+            "file": "computations/xi_ell_phi_q_probe.py",
+            "text": "hbar_q_sq = Vol_4_1 / M_MU_OVER_M_E; q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)"
+          }
+        }
+      ],
+      "note": "Found while partitioning the INDIRECT remainder. A marker scan for q0 names (q_muon_at, pin_value_for_anchor, the anchor witness, a muon literal, QOU_Q0_ANCHOR) reports NO muon route for these, and an upstream scan reports none either -- because the route is neither a q0 name nor a witness read, but a mass ratio. That is why the class was missing. Corroborated independently: three of these six (t6_tau_h5_embedding_probe, t6_three_halves_factor_probes, xi_ell_phi_q_probe) are exactly the witnesses that flipped proton -> muon in the PR #5989 drain, where `resolve_q0_anchor_payload_first` caught them declaring proton (the manifest default for an unlisted stem) over a muon computation. The two findings explain each other."
     }
   },
   "rejected": [
