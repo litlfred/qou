@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-29T21:58:05Z
+updated_at: 2026-08-29T22:50:40Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to
@@ -167,3 +167,68 @@ verdict — and now correct (7 / 0 / 0) under all three spellings.
 
 NOT a live wrong number: nothing committed was wrong. This is a latent failure
 mode removed.
+
+
+## Fourth and fifth: a RED GATE on main, and a stale rationale in 11 live files
+
+### q0_anchor_gate_test.py was FAILING on main, and its message accused a Lean declaration
+
+Its check 3 compared `mp.sign(y_λ)` across the two anchors over ALL partitions
+and reported:
+
+    FAIL: sign(y_λ) now differs between anchors — QOU.MassTheory.
+          YLambdaSignThreshold.wenzl_sign is anchor-dependent after all
+
+Measured at n=9: **all 25 disagreements are exactly the ℓ≥3 partitions, and in
+every one BOTH values are below the noise floor** — proton residues of 1e-73 to
+1e-147 against a muon leg of exactly 0.0. The 5 two-row blocks, the ones
+carrying weight, agree. So it was reading `sign()` of cancellation dust and
+reporting a refutation of a proved statement.
+
+The underlying fact is convention D's: `r = 2` so `y_λ = 0` for `ℓ(λ) > 2`, and
+that vanishing is a polynomial identity reached by CANCELLATION at finite
+precision — whether the residue lands on 0.0 or 1e-75 depends on how q₀ is
+spelled, so the two legs differ in their dust and nothing else. Related and
+already adjudicated: `qou-ulxr` found the threshold lands exactly ON the content
+lattice under D, so `wenzl_sign`'s `hnd` hypothesis fails and the parity there
+is UNDEFINED, not merely zero — one more reason not to read a sign off it.
+
+Fixed: signs compared only above the floor, annihilated stratum reported
+separately. Gate now exits 0. Negative control: flipping a two-row weight's sign
+at one anchor fails check 3 and NAMES the block — `[(9,)]` — with a message
+distinguishing it from the annihilated stratum.
+
+**Checks 1 and 2 also carried stale messages** ("served the muon cache",
+"the cache must still be reachable"). There is no cache: the gated load moved
+into the dead `_y_lambda_at_convention_C_HISTORICAL` and the live body computes
+from whatever q it is handed. They are now correctly described as a
+cross-implementation agreement test — still what would catch a re-introduced
+cache, but not the cache-gating test they claimed.
+
+### The stale rationale is in 11 live files
+
+`two_row_support_recount.py` justified avoiding `y_lambda_at` as "(it serves a
+muon-built cache when handed q_parameter.Q)". That is doubly stale: no cache,
+and the cache FILE was itself re-derived to convention D and re-pinned to
+PROTON in the same 2026-08-09 cascade. Measured, pairing the muon-cache phrase
+with `y_lambda_at` within a 9-line window, excluding three sibling-agent
+worktrees:
+
+    computations/audits/q0_producer_pin_classifier.py
+    computations/chi_dual_path_xref_audit.py
+    computations/deltalambda/l1_ceiling_d_frame_remeasure.py
+    computations/deltalambda/mu3_anchor_consistency_probe.py     <- legitimate: the historical incident
+    computations/deltalambda/two_row_support_recount.py          <- fixed
+    computations/probe_1b_li6_orthogonality.py
+    computations/probes/binding_production_route_C_vs_D_probe.py
+    computations/probes/binding_sum_C_vs_D_per_isotope_probe.py
+    computations/q0_anchor_gate_test.py                          <- fixed
+    computations/qbeta/qbeta_ladder_phase_from_wedderburn_weights.py
+    computations/tr_m_wenzl_bridge_mpfr.py
+
+Not swept here — the two in my audit scope are fixed and the rest are a bounded
+follow-up. It matters because AGENTS.md warns specifically against acting on
+that wording: promoting `y_lambda_at` to a muon identifier once reclassified
+**56 clean producers**. Note `mu3_anchor_consistency_probe.py` is describing the
+real 11.54 ppb straddle incident and its reference is legitimate history, not a
+stale rationale — do not "fix" it.
