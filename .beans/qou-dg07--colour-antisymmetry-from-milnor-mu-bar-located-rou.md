@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T10:18:14Z
+updated_at: 2026-08-29T10:22:06Z
 ---
 
 ## Summary
@@ -182,3 +182,80 @@ objects for the same S_3 are proportional. That is nearly trivial and is NOT by
 itself the derivation -- it does not say the physics of one is the physics of
 the other. Do not let the uniqueness be mistaken for the identification; it is
 the reason the two agree, not evidence that one causes the other.
+
+
+## The bridge is MONODROMY, and the corpus already computed it
+
+The remaining question was whether the Alt selection follows from something or is
+an independent input. It follows -- from the geometry of the colour-tube cubic,
+which the corpus has already computed.
+
+`bring-fibre-q0-figure.md`, backed by `bring-chiral-fibre-figure.witness.json`:
+
+- the discriminant Delta(z) vanishes at EXACTLY SIX points, and the witness
+  carries all six with discriminant_residual ~ 1e-15, all DISTINCT
+- "As z circles z_c at radius 0.15, EXACTLY TWO OF THE THREE SHEETS MERGE. This
+  is the B_3-monodromy fingerprint. The third sheet remains well-separated."
+
+A simple zero of a cubic's discriminant (two roots colliding, third distinct)
+has TRANSPOSITION monodromy -- an ODD permutation. So the monodromy
+representation
+
+    pi_1(P^1 minus Delta)  ->  B_3  ->  S_3
+
+hits transpositions, and composing with sgn gives a NON-TRIVIAL +-1 character.
+The Vandermonde sqrt(Delta) = prod_{i<j}(c_i - c_j) is precisely the object
+carrying it: double-valued around each simple zero.
+
+### What that buys
+
+The sign character on the three colour sheets is NOT a choice. It is the
+monodromy of the colour-tube cubic around its own discriminant. So
+`prop:baryon-product-from-alt`'s "the quark-color content SELECTS the Alt
+isotype" can be replaced by a derivation: the geometry forces a non-trivial sign
+character, and Alt is where it lives.
+
+And it explains the agreement with mu-bar without appeal to the
+one-dimensionality triviality I flagged earlier: both the base-side Vandermonde
+and the fibre-side Milnor invariant are pullbacks of the SAME sign character of
+the SAME monodromy group. The corpus even names it B_3 on both sides -- B_3
+monodromy of the cubic, and the Borromean link as a pure braid in B_3.
+
+### Status of each link in the chain
+
+  six distinct discriminant zeros          COMPUTED (witness, residuals 1e-15)
+  two sheets merge at the chosen zero      STATED in the .md + figure
+  simple branch point => transposition     STANDARD (not machine-checked here)
+  transposition => sgn non-trivial         TRIVIAL once the above holds
+  sqrt(Delta) carries that character       STANDARD
+
+The one link that is stated rather than computed is the second. It is not in
+doubt mathematically -- the six zeros are distinct, and the block says the third
+sheet stays well-separated -- but it is prose plus a figure, not a witness field.
+A monodromy-permutation field in that witness would close it.
+
+## A SEPARATE question about lambda_baryon, raised NOT asserted
+
+Checking the above surfaced something I could not resolve and am not calling a
+defect.
+
+`prop:baryon-product-from-alt` writes
+
+    lambda_baryon(z) := prod_{k=1}^{3} dc_k/dz
+
+and says it "is the projection onto the Alt^3 (sign) isotype".
+
+A product over ALL THREE roots is a SYMMETRIC function of them: permuting the
+c_k permutes the factors and a product is invariant under that. Under monodromy
+c_1 <-> c_2, the product is unchanged. Read literally, lambda_baryon is
+monodromy-INVARIANT, i.e. trivial isotype, not sign.
+
+The likely reading is that `prod` denotes the WEDGE in the tensor module the
+block names (bigotimes_k T_{c_k} C), i.e. dc_1 ^ dc_2 ^ dc_3 / (dz)^3, which IS
+antisymmetric and IS the Alt projection. That reading is consistent with
+everything else in the block.
+
+So this is probably notation (prod written for wedge) rather than mathematics.
+Flagging it because the two differ by exactly the sign that this whole route is
+about, and because a reader checking the Alt claim against the literal formula
+will hit the same wall I did. Worth one clarifying word in the block.
