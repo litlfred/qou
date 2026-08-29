@@ -1,0 +1,71 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T10:11:49.473699+00:00",
+  "commitSha": "d11c519b68329f593e1ec3fdaa0876a994840325",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 216746,
+  "computation": "qbeta-nucleon-selection-rule",
+  "scriptFile": "qbeta_nucleon_selection_rule_probe.py",
+  "scriptHash": "73c30636e066",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nucleon_selection_rule_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nucleon_selection_rule_probe.py"
+  },
+  "description": "Applies the corpus's own ILP tie-break -- minimize |tr_M|, stated in ilp-solution-count-unwrap.md and categorical-proton-properties.md -- to the nucleon gluon count, which the neutron block states inconsistently (prose says 13 crossings, its own printed net is the 11-crossing value).",
+  "data": {
+    "markov_convention": "D",
+    "z_D_symbolic": "q**3/(q**2 + 1)",
+    "selection_rule": "minimize |tr_M| over feasible configurations",
+    "z_D_at_q0": "0.612688037146465251595829863945899248026299999999999481630438",
+    "net_B3": "0.999600646188434698263261863659042810866700000000000497659522",
+    "the_B3_word_is_a_CORPUS_statement_not_a_reconstruction": true,
+    "bare_9crossing_feasible_p": false,
+    "bare_9crossing_feasible_n": false,
+    "the_corpus_INFEASIBILITY_claim_is_CORRECT": true,
+    "rule_selected_k_p": 2,
+    "rule_selected_trM_p": "0.815849465470869551057411344484562915342399999999999725860414",
+    "rule_selected_net_p": "1.48905211059390486970386426690460464062600000000000125944733",
+    "rule_selected_gens_p": [
+      0,
+      0,
+      0
+    ],
+    "rule_selected_k_n": 3,
+    "rule_selected_trM_n": "0.815849465470869551057411344484562915342399999999999725860414",
+    "rule_selected_net_n": "1.48905211059390486970386426690460464062600000000000125944733",
+    "rule_selected_gens_n": [
+      1,
+      0,
+      0
+    ],
+    "the_rule_needs_a_CONSTRAINT_SET_the_corpus_does_not_define": true,
+    "corpus_asserts_k1_restores_proton_stability": true,
+    "naive_positivity_says_k1_feasible_p": false,
+    "the_NAIVE_positivity_reading_is_REFUTED_by_the_corpus": true,
+    "the_selection_RULE_EXISTS_correcting_my_own_earlier_report": true,
+    "scope": "(a) scope-limited; adjudicates no net value"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
