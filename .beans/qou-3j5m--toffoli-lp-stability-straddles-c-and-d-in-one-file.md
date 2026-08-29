@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T18:53:51Z
+updated_at: 2026-08-29T19:07:45Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -429,3 +429,63 @@ deprecation was about consumers rather than correctness.
 
 Running total: 4 independent disagreements (P_66 value, P_76/P_67 value AND sign,
 the Delta_1 = 0 lemma, universality) against 1 agreement (P_77).
+
+
+## 2026-08-29 — the adjudication material is complete; universality settles which branch is open
+
+The investigation asked for (\"which of the two disagreeing objects is current
+and derivable/canonical\") is done for the P_77 half and blocked-with-reason for
+the other three. Summary of what is now measured
+(computations/probes/toffoli_published_vs_construction_audit.py, 6/6):
+
+**P_77 — SETTLED, published == construction.** The published closed form
+(q + sqrt(q) - 1)/(q + 1) is exactly what _deprecated/toffoli-braid.py produces
+(symbolic zero). It is convention C, it is derivable, and its convention-D
+partner q^3(q^4+1)/(q^2+1)^2 is now derived and carried in the blocks. Done.
+
+**Phi, P_66, P_67 — NOT settled, and now demonstrably NOT this construction.**
+
+    P_66   construction 0.4153790120   published 0.6010017280
+    P_76   construction -0.1415316448  published +0.0495489435 (claimed = Phi)
+    P_67   construction +0.1415316448  published -0.0495489435
+
+Two structural facts on top of the numeric gap:
+
+1. The proof block's key lemma Delta_1 = 0 (\"target-flip blindness of the
+   control crossing\") is convention-dependent. chain_reduce pairs generator i
+   with every j > i, so generator 1 is the crossing (1,2) — control-control only
+   if the target is strand 0. The producer's toffoli_output flips k & 1, the LAST
+   strand. Measured: target = last, Delta_1 = -0.1045 (not zero); target = first,
+   Delta_1 = 0.
+
+2. **Universality fails under BOTH indexings.** The block asserts
+   P_flip = c_{k1k2} * Phi with c = 1 for every control pair; the interpretation
+   table lists all three as +0.0495 \"1x\". At q = 111/100:
+
+       control   target = LAST   target = FIRST   first / Phi
+       pp         -0.13061590     -0.04667483      -0.9420
+       mixed      -0.11767065     -0.03258679      -0.6577
+       nn         -0.10701099     -0.02078434      -0.4195
+
+   Three amplitudes, not one — including in the target-FIRST reading, which is
+   the block's own prose and the only one where its key lemma holds.
+
+**Why (2) is the load-bearing one.** It closes a branch I could not close
+before. A number that disagrees can be transcription drift; a structural
+property that fails cannot be. So \"the published trio is this construction,
+mis-copied\" is out. What remains is a branch this probe cannot test: an
+unrecorded derivation absent from the tree. The construction lives in a
+_deprecated file that neither the content blocks nor the live producer cite, so
+that is a real possibility, not a formality.
+
+**Consequence for the convention work.** Migrating Phi / P_66 / P_67 to
+convention D would carry an unresolved disagreement to a new value, so it stays
+blocked on the owner. P_77 is unaffected and is done. The straddle this bean
+opened with — toffoli-lp-stability.py computing physical_q0_stable from two
+C-frame closed forms inside a D-Gram file — is unchanged and still live; the
+P_77 half of it is now at least derivable in both frames.
+
+**Open, for the owner.** Which is the framework's object for Phi / P_66 / P_67:
+the published closed forms, or _deprecated/toffoli-braid.py? Nothing in the tree
+records it, and the two disagree in value AND in structure. I have deliberately
+not edited those blocks.
