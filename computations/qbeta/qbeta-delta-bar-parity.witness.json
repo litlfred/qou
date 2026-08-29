@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T00:48:06.342934+00:00",
-  "commitSha": "25a2f7ca040c33a5c23030b76a03243bc463df9b",
+  "computedAt": "2026-08-29T01:49:07.522715+00:00",
+  "commitSha": "8ec121f43cb1d03681d3e6e202f62ed60971dfa0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3409,
+  "durationMs": 3324,
   "computation": "qbeta-delta-bar-parity",
   "scriptFile": "qbeta_delta_bar_parity_probe.py",
-  "scriptHash": "1a141f6eede5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b1ba709ba34b",
+  "scriptCommitSha": "8ec121f43cb1d03681d3e6e202f62ed60971dfa0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,6 +46,7 @@
     "neither_element_lies_in_the_two_row_quotient": true,
     "the_fork_survives_descent": true,
     "no_rescaling_identifies_the_two_models": true,
+    "net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes": true,
     "short_model_is_exactly_bar_odd": true,
     "long_model_is_neither_bar_odd_nor_bar_even": true,
     "short_bar_parity": "odd",
@@ -64,8 +65,8 @@
     "scope": "a",
     "adjudicates_the_fork": false,
     "wires_anything": false,
-    "checks_passed": 14,
-    "checks_total": 14
+    "checks_passed": 15,
+    "checks_total": 15
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
