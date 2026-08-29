@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T15:14:53Z
+updated_at: 2026-08-29T15:20:16Z
 ---
 
 ## Summary
@@ -335,3 +335,34 @@ resolvents. S_3 has order 6, 4 does not divide 6, so no V_4 inside; and
 (1 3)(2 4) does not fix w_1, so it does not restrict to {w_2,w_3,w_4}.
 Different sets, no stated map. Needs rem:holonomy-trefoil's own definition
 read before anyone calls it a defect.
+
+
+## §8 — the H_1,H_2 flag resolved (2026-08-29, later still)
+
+Read rem:holonomy-trefoil's own text. Two findings, both on main, neither
+introduced by this branch.
+
+**§8.1 rem:holonomy-trefoil contradicts itself.** It says x|->H_1, y|->H_2
+is an ISOMORPHISM pi_1(S^3\\K_{3,2}) ~= <H_1,H_2> and 'the monodromy group
+of the branched cover is exactly the trefoil-knot group'; then that H_1H_2
+is a double transposition, hence an involution. Exponent sum is a
+homomorphism B_3 -> Z, sigma_1 sigma_2 has exponent sum 2, so it has
+INFINITE order in B_3 and cannot be an involution. 'on SO(3)' does not
+rescue it: through the 2:1 projection (H_1H_2)^4 = 1, still finite. The
+claim that cannot survive is 'exactly the trefoil-knot group' — a finite
+branched cover has a finite monodromy group. Scope (b), invariant named.
+
+**§8.2 prop:color-elliptic's closing bridge is unsupported as written.**
+'Recovers the holonomy generators H_1,H_2': the H's move FOUR spectral
+modes, E_z has THREE sheets; the computed monodromy is S_3 and 4 does not
+divide 6 so there is no V_4 in it; and H_1H_2 : w |-> (w_3,w_4,w_1,w_2)
+does not preserve the colour triple {w_2,w_3,w_4}. Scope (a).
+
+**§8.3 kept separate:** the two blocks' w_k differ in cardinality (w_1..w_4
+vs w_0..w_4) and no block identifies them. Only §8.2's third row depends on
+that identification; rows one and two do not.
+
+**AUTHOR DECISION, not agent-fixable.** §8.1's repair means choosing which
+of the two claims to keep — surjection-not-isomorphism, or drop the
+involution. That changes what the block asserts about the trefoil group, so
+it is the author's call, not a typo fix. Left unrepaired deliberately.
