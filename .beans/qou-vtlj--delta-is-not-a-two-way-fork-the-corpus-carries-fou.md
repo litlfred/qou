@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T06:50:15Z
+updated_at: 2026-08-29T07:06:59Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -244,3 +244,57 @@ matches none.
 
 **Still open:** the 0.0189 γ↔L₋ displacement and the 0.0039 on σ₀. No variant
 of 240 closes them, so one more structural element is unaccounted for.
+
+
+## 2026-08-29 (cont. 5) — the blocker is PRECISION, not mathematics
+
+Following the structured residual to its end.
+
+**The residual is real.** corpus − constructed, on the best of 240 variants:
+
+    gamma    -0.018837071     <- 376.7x the table's rounding
+    sigma0   -0.0039162
+    sigma1   -1.49e-5   ~0
+    L_plus   -1.83e-5   ~0
+    L_minus  +0.0189
+    e_minus  -2.66e-5   ~0
+
+So a term IS missing, and it lives entirely in {γ, σ₀, L₋}.
+
+**Its shape is clean.** Normalised by γ the residual is
+`(1, 0.2079, ~0, ~0, -1.0033, ~0)` — i.e. `c·(1 + h·σ₀ − L₋)`, and since
+`σ₀² = h σ₀ + 1` that is
+
+    c * (sigma_0^2 - sigma_1 sigma_0)  =  c * (sigma_0 - sigma_1) * sigma_0
+
+with `c = −0.0188371`.
+
+**But the shape cannot be confirmed.** The table is quoted to 4 dp, so each
+entry carries ±5e-5. Propagating that:
+
+    sigma0/gamma  = 0.20790 +/- 0.00271   vs  h = 0.20906   ->  0.43 sigma
+    L_minus/gamma = -1.00334 +/- 0.00376  vs  -1            ->  0.89 sigma
+
+**Both within the table's own rounding.** The residual is *consistent with*
+`c(σ₀−σ₁)σ₀` and **not distinguishable from it**.
+
+**And the disagreement sits exactly where the corpus records least precision.**
+γ is quoted to 2 significant figures (0.52 % relative) and L₋ to 3 (0.27 %) —
+the two components that disagree. The two the construction matches, e⁻ (6 s.f.,
+0.005 %) and L₊ (4 s.f., 0.023 %), are the tightest recorded.
+
+**No higher-precision source exists.** Searched the committed witnesses; none
+carries the neutron NF vector. `tbl:categorical-neutron-table-data` at 4 dp is
+the only record.
+
+## What would settle Delta
+
+Re-run whatever produced that table and record the neutron NF at 50 dps. Then
+either the residual collapses — the construction is right and the table was
+merely rounded, giving Delta directly — or it resolves into an identifiable
+term and Delta follows from that.
+
+Until then the derivation is blocked on **data precision, not on mathematics**,
+which is a materially different and much smaller obstacle than "which of four
+values". That producer is not identified yet; finding it is the next concrete
+step.
