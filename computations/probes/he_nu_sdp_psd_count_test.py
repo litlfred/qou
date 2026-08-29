@@ -53,7 +53,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))            # computations/ on path for hoefsmit_numpy
 from hoefsmit_numpy import hoefsmit_matrices_numpy  # noqa: E402
 
-# Canonical substrate q₀ (proton-pinned; == computations/q_parameter.Q), inlined.
+# Canonical substrate q₀, inlined. NOTE: this is the MUON pin, not the proton
+# one — it read "proton-pinned; == computations/q_parameter.Q" until 2026-08-29
+# and sits 11.5371 ppb from the proton pin. Label corrected, value untouched;
+# whether muon is INTENDED is open (bean qou-fd0e). Separately, this is a
+# float64 literal, which the corpus's no-float64 directive forbids — fixing
+# that changes the compute, so it is recorded rather than done here.
 Q0 = 1.1099785955573347
 H = Q0 - 1.0 / Q0
 TOL = 1e-9

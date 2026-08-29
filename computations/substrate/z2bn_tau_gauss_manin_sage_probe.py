@@ -85,7 +85,10 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = mp.mpf("1.1099785955573347199")   # substrate q₀ (proton-pinned), 50-dps witness
+# substrate q₀ from the 50-dps witness — the MUON pin. Read "(proton-pinned)"
+# until 2026-08-29; it is 11.5371 ppb from the proton pin. Label corrected,
+# value untouched (bean qou-fd0e).
+Q0 = mp.mpf("1.1099785955573347199")
 TOL = mp.mpf("1e-12")                  # derivation tolerance; near-miss > TOL is NOT a hit
 
 

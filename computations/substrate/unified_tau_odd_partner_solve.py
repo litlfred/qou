@@ -50,7 +50,10 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from sl2_tau_solver import tau_from_three, verify_recurrence  # noqa: E402
 
-# Canonical substrate q_0 (proton-pinned, 50 dps)
+# Canonical substrate q_0, 50 dps — the MUON pin. Read "proton-pinned" until
+# 2026-08-29; the literal is 11.5371 ppb from the proton pin. Label corrected,
+# value untouched (bean qou-fd0e). Same literal and near-identical wording as
+# _gap_a4_qsafe.py carried, so this mislabel spread by copy-paste.
 Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 

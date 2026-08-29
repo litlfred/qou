@@ -124,6 +124,15 @@ def _label_near(lines: list, lineno: int, name: str | None):
         if i - j > 8:
             break
     blob = " ".join(ctx).lower()
+    # A context that DECLARES a deliberate two-anchor arrangement is not a
+    # mislabel, even when it names only one anchor. `sigma_all_evaluator` pins
+    # its selftest at muon while emitting its witness at proton and says so —
+    # "the two anchors are deliberate" — and naming only "proton" there made
+    # this audit call a documented design a defect.
+    if any(k in blob for k in ("two anchors", "both anchors", "both sides",
+                               "cross-anchor", "cross anchor", "each anchor",
+                               "either anchor", "anchors are deliberate")):
+        return "ambiguous"
     has_p = "proton" in blob
     has_m = "muon" in blob or "mu_e" in blob or "m_mu" in blob
     if has_p and has_m:
@@ -156,6 +165,22 @@ def _scan():
             unparseable.append(f"{f.relative_to(REPO)}: {exc.__class__.__name__}")
             continue
         lines = src.splitlines()
+        # Literals inside a dict KEYED BY ANCHOR NAME are a classification
+        # table, not a labelled value: `aoperator_a5_crosscheck` holds
+        # `_PINS = {"muon": "1.109978595", "proton": "1.109978582"}`, where both
+        # pins appear and both mappings are correct. Reading a "label" off the
+        # surrounding comment there reports the file's own anchor-consistency
+        # machinery as the defect it exists to prevent.
+        in_table = set()
+        for n in ast.walk(tree):
+            if not isinstance(n, ast.Dict):
+                continue
+            keys = {k.value for k in n.keys
+                    if isinstance(k, ast.Constant) and isinstance(k.value, str)}
+            if {"muon", "proton"} <= keys:
+                for sub in ast.walk(n):
+                    if isinstance(sub, ast.Constant):
+                        in_table.add(id(sub))
         # bind lineno -> assignment target name, for the label context
         names = {}
         for n in ast.walk(tree):
@@ -171,6 +196,8 @@ def _scan():
             if isinstance(raw, float):
                 raw = repr(raw)
             if not isinstance(raw, str) or not _Q0_SHAPED.match(raw):
+                continue
+            if id(n) in in_table:
                 continue
             n_literals += 1
             layer, ppb = _layer(raw)

@@ -83,7 +83,10 @@ def main() -> int:
     n = 9
     sgn = (-1) ** (n - 1)
 
-    # the bare-trace A=3 magnitude (proved closed form) — for context, at the muon-canonical q₀
+    # the bare-trace A=3 magnitude (proved closed form) — for context, at the
+    # PROTON q₀. Read "muon-canonical" until 2026-08-29; the literal below is
+    # the proton pin, 11.5371 ppb from the muon pin it claimed. Label corrected,
+    # value untouched — whether proton is INTENDED here is open (bean qou-fd0e).
     q0 = mp.mpf('1.1099785827513808075916690956107688798744991218736')
     h = q0 - 1 / q0
     deficit = h ** 4 * (3 + h ** 2) / (h ** 2 + 4)          # 1 − τ_Borr (dimensionless)

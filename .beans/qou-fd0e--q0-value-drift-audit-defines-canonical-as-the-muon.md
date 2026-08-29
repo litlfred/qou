@@ -698,3 +698,64 @@ visible and countable; it does not rule on them.
 
 The 354 unlabelled literals are reported as **unexamined, not clean** — that
 substitution is the defect `qou-i5jy` exists for.
+
+
+## 2026-08-29 — label-vs-value drained to zero, after removing two false positives of my own
+
+### First: the detector was over-reporting, 2 of 8
+
+Reading all eight by hand before touching any of them found **two that were not
+defects at all**:
+
+- `probes/aoperator_a5_crosscheck.py` holds
+  `_PINS = {"muon": "1.109978595", "proton": "1.109978582"}` — a classification
+  **lookup table** where both pins appear and both mappings are correct. My
+  label-from-nearby-comment read the wrong key off it. Reporting this one meant
+  flagging a file's own anchor-consistency machinery as the defect it exists to
+  prevent — the surrounding comment even says a hardcoded anchor *"would
+  silently become a lie if the classification ever changed"*.
+- `sigma_all_evaluator.py` pins its selftest at muon while emitting its witness
+  at proton, and says so: *"Pinning both sides here makes the test survive every
+  future re-pin … **the two anchors are deliberate**."* My `ambiguous` rule only
+  fired when a context named BOTH anchors; this one names only "proton", so a
+  documented design was reported as a contradiction.
+
+Two rules added: literals inside a dict **keyed by anchor name** are a table, not
+a labelled value (44 literals now correctly excluded, 628 → 584 scanned); and a
+context declaring a deliberate two-anchor arrangement is `ambiguous` even when it
+names one anchor. **8 → 6**, and the six are the ones verified by hand.
+
+### Then: all six labels corrected
+
+| file:line | said | holds |
+|---|---|---|
+| `deltalambda/a3_magnitude_parity_orthogonal_probe.py:87` | "muon-canonical" | **proton** |
+| `probes/he_nu_sdp_psd_count_test.py:57` | "proton-pinned" | **muon** A |
+| `probes/qbeta_habiro_cyclotomic_probe.py:270` | "at proton q₀" | **muon** A |
+| `substrate/unified_tau_odd_partner_solve.py:54` | "proton-pinned" | **muon** A |
+| `substrate/z2bn_tau_gauss_manin_sage_probe.py:88` | "proton-pinned" | **muon** A |
+| `docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py:39` | "proton-anchored re-pin" | **muon** B |
+
+Each comment now states the measured fact, the ppb distance from what it had
+claimed, and that **whether that layer is INTENDED remains open** — the label is
+corrected, the intent is not ruled on.
+
+**No value was changed, and that is checked rather than asserted**: every q0
+literal in all six files is byte-identical to `HEAD`, compared as extracted sets.
+Two assignments moved to their own line so an inline comment could become a
+block; the literals themselves are untouched.
+
+    label CONTRADICTS value   6 -> 0
+    label agrees with value   205 -> 211
+
+### Recorded, not fixed
+
+Two of the six (`he_nu_sdp_psd_count_test`,
+`keystone_wrt_schurweyl_plancherel_4count_probe`) hold their q0 as a **float64
+literal**, which the corpus's no-float64 directive forbids. Changing that changes
+the compute, so each carries a note instead. Separate work.
+
+`unified_tau_odd_partner_solve.py:54` holds the **identical 50-digit string**
+that `_gap_a4_qsafe.py` carried under near-identical wording, which is the
+copy-paste lineage already recorded here. Main has since fixed `_gap_a4_qsafe`
+structurally by resolving through `q_parameter`; this one is still a literal.

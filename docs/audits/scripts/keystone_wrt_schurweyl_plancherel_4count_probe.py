@@ -36,7 +36,12 @@ Float64 is sufficient: W_λ ~ O(0.1), compared to the canonical table at 5 sig f
 import json
 import os
 
-Q0 = 1.1099785955541805  # substrate q_0 (proton-anchored re-pin; matches #2603 witness)
+# substrate q_0 matching the #2603 witness. This is a MUON-family value (the
+# CODATA-2018 closed form B), not a proton one — it read "proton-anchored
+# re-pin" until 2026-08-29 and sits 11.5343 ppb from the proton pin. Label
+# corrected, value untouched (bean qou-fd0e). Also a float64 literal, which
+# the no-float64 directive forbids; changing it would change the compute.
+Q0 = 1.1099785955541805
 
 # WRT false-theta colour components Ψ̃₃₀^(a)(1/q₀), from #2603 witness
 # (computations/keystone-wrt-color-schurweyl.witness.json, 50 dps; 14 sig figs here).

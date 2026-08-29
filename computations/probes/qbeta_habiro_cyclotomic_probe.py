@@ -266,7 +266,9 @@ def main() -> int:
     c3_rows = []
     for name, cand in c3_candidates.items():
         rat = is_rational_in_q(cand)
-        # evaluate at proton q₀ to report the residual (report only — no fit)
+        # evaluate at the MUON q₀ to report the residual (report only — no fit).
+        # Read "at proton q₀" until 2026-08-29; the literal below is the muon
+        # pin, 11.5371 ppb away. Label corrected, value untouched (bean qou-fd0e).
         q0 = sp.Float("1.1099785955573347198997632204832250266562084087802")
         val0 = sp.N(cand.subs(q, q0)) if cand.free_symbols else sp.N(cand)
         err = abs(float(val0) - float(c3_numeric)) / abs(float(c3_numeric)) * 100
