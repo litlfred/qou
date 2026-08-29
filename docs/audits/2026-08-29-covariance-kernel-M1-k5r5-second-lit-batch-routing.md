@@ -38,29 +38,46 @@ oscillatory edge part of the `θ^{−1}` remainder) and the **method** (determin
 **not** supply the **bulk** discrete-sine-kernel rate. The precise remaining targets, in decreasing
 directness:
 
-1. **Widom's Toeplitz-determinant asymptotics for the discrete sine kernel** — the paper BOO Remark
-   1.6 cites as `[41]` ("answering a question of Dyson"). This is the *discrete* case and the most
-   direct: the Plancherel descent process *is* this Toeplitz determinant.
-2. **Tracy–Widom, "Level-spacing distributions and the sine kernel"** (`hep-th/9303139`, the bulk
-   companion of the two edge papers now in the batch — **not yet uploaded**). Painlevé V representation
-   for the bulk gap probability; the bulk analogue of `9211141`/`9304063`.
-3. **Gorbunov 2024** (`sm10137`, already in corpus) + **Borodin–Okounkov** Toeplitz identity — the
-   *continuous* Bessel rate via Kac–Akhiezer, which must be **transported to the discrete Plancherel
-   variance**. This is the analytic step, not a drop-in.
-4. **Deift–Its–Krasovsky** Toeplitz+Hankel determinant asymptotics *with error term* — the general
-   engine for such rates (not in corpus).
+1. **Widom, "The strong Szegő limit theorem for circular arcs," Indiana Univ. Math. J. 21 (1971),
+   271–283** — the exact paper BOO Remark 1.6 / ref `[41]` cites for the discrete-sine-kernel Toeplitz
+   determinant asymptotics ("answering a question of F. Dyson"), read off **BOO's own bibliography**
+   (`library/arxiv-math-9905032v2/sections/sec-042-references.md`). This is the *discrete* case and the
+   most direct: the Plancherel descent process *is* this Toeplitz determinant. **A 1971 journal
+   article — pre-arXiv, so not fetchable by arXiv id;** obtain from Indiana Univ. Math. J.
+2. **Gorbunov 2024** (`sm10137`, already in corpus) + the **Borodin–Okounkov Fredholm-determinant
+   identity** — the *continuous* Bessel rate via Kac–Akhiezer, which must be **transported to the
+   discrete Plancherel variance**. The analytic step, not a drop-in.
+3. **Deift–Its–Krasovsky**, "Asymptotics of Toeplitz, Hankel, and Toeplitz+Hankel determinants with
+   Fisher–Hartwig singularities," Ann. of Math. 174 (2011) — the modern *with-error-term* engine (not
+   in corpus).
 
-If the goal is to *cite* the bulk rate, uploading (1) Widom or (2) `hep-th/9303139` is the highest-
-value next step. If the goal is to *derive* it, the route is (3): apply Gorbunov's Kac–Akhiezer +
-Borodin–Okounkov machinery to the discrete descent variance — a genuine analytic step this corpus now
-has the tools for.
+Related but *not* the tool: **Tracy–Widom, "Level-spacing distributions and the sine kernel," Commun.
+Math. Phys. 163 (1994), 33–72** gives the *continuum* sine-kernel gap distribution (Painlevé V) — the
+limit object, not the discrete convergence rate, so like the edge papers it supplies the *method*, not
+the bulk rate.
+
+> **🛑 CORRECTION (self, recorded here).** A prior version of this audit named
+> `hep-th/9303139` as the Tracy–Widom sine-kernel paper. **That arXiv id is wrong** — it is
+> **A. Morozov, "Integrability and Matrix Models"** (ITFA 93-10, Physics-Uspekhi 1994; ingested as
+> `library/arxiv-hep-th-9303139v2`), a 149-page matrix-model integrability review (Kontsevich model,
+> Virasoro constraints, Toda τ-functions, orthogonal polynomials). It is *tangential* to `qou-k5r5`
+> — integrable-systems background, with **zero** mention of Toeplitz / Fredholm / Borodin–Okounkov /
+> Szegő — not the bulk-rate tool. The correct TW sine-kernel paper is the CMP 163 (1994) reference
+> above; its arXiv id was **guessed and is not asserted here** (arXiv is firewalled from the agent, so
+> it could not be verified). Use the bibliographic details, not a guessed number.
+
+If the goal is to *cite* the bulk rate, obtaining **Widom (1971)** — target (1) — is the highest-value
+next step (it is the *discrete* Toeplitz result BOO already leans on). If the goal is to *derive* it,
+the route is target (2): apply Gorbunov's Kac–Akhiezer + Borodin–Okounkov machinery to the discrete
+descent variance — a genuine analytic step this corpus now has the tools for.
 
 ## Status of `qou-k5r5`
 
 Unchanged in verdict, sharper in detail: the leading margin is **proved** (rigorous `V_D` ceiling),
 the **tail** and **de-Poissonization** are **cited** (Johansson), the bulk rate's **method** is now
 well-represented (Tracy–Widom determinant machinery + Gorbunov), and the one open input is the **bulk
-discrete-sine-kernel rate**, whose most direct citation (Widom / TW-sine) is named and not yet in the
+discrete-sine-kernel rate**, whose most direct citation — **Widom, Indiana Univ. Math. J. 21 (1971),
+271–283** (BOO's own ref `[41]`) — is now named precisely from a primary source and is not yet in the
 corpus. Gap **OPEN**. No fake closure.
 
 ## Compute + sources

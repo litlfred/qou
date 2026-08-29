@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T10:26:17Z
+updated_at: 2026-08-29T11:38:45Z
 ---
 
 
@@ -456,3 +456,5 @@ corpus checked at the source. Status:
 2026-08-29 (leading margin PROVED): discharged the ONE class field not gated on the bulk rate. leading_margin_pos = (sqrt(V_D/V_A) < 2sqrt6/5) = (V_D < 64/(75pi^2)) after pi cancels. V_D (no closed form) bounded RIGOROUSLY: certified mp.iv interval partial sum k=3..999 + explicit elementary tail majorant R(K)<=a^2/(2K^4)+b^2/(3K^6), R(999)<=1.05e-11 => V_D < 0.0415974806 < 0.0864607, margin 0.0449. Upgrades m_inf>0 from measured to PROVED. Lean leading_margin_pos_of_VD_ceiling (sorry-free, axiom-clean) reduces the field to the certified ceiling. 1 of 3 class fields closed with rigor; only the two bulk-rate Tendsto remain open. Probe: wlambda_covariance_epic_M1_VD_ceiling_rigorous.py.
 
 2026-08-29 (2nd lit batch + bulk-rate probe): owner uploaded 23 papers (ae1c51be). Pointwise bulk kernel probe = HONEST NEGATIVE: |J-S| does not decay cleanly (oscillatory + density rounding), so the bulk rate must be argued at the INTEGRATED/determinant level (variance theta^{-1} already measured). Batch routing: Tracy-Widom edge kernels (Airy hep-th-9211141, Bessel hep-th-9304063) give the Painleve/Fredholm-determinant METHOD but for the EDGE/hard-edge, not the BULK; chiral-RMT Dirac cluster (Verbaarschot etc) is hard-edge Bessel in QCD; several off-topic (stars, magnetars, quantum repeater, epidemic, theorem-proving). NEED LIT answer: YES for the bulk specifically -- most direct missing citation is Widom's discrete-sine Toeplitz asymptotics (BOO Rem 1.6 ref [41]) or Tracy-Widom sine-kernel hep-th/9303139 (NOT uploaded); or DERIVE via Gorbunov Kac-Akhiezer + Borodin-Okounkov applied to the discrete descent variance. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-second-lit-batch-routing.md. Gap OPEN.
+
+2026-08-29 (CORRECTION + precise ref): I gave a WRONG arxiv number earlier -- hep-th/9303139 is A.Morozov 'Integrability and Matrix Models' (matrix-model integrability review), NOT Tracy-Widom sine kernel. Ingested (library/arxiv-hep-th-9303139v2) but tangential to k5r5 (integrable-systems background; zero Toeplitz/Fredholm/BO/Szego). Corrected the routing audit. PRIMARY-SOURCE precise ref for the bulk rate, read off BOO's own bibliography [41]: Widom, 'The strong Szego limit theorem for circular arcs', Indiana Univ. Math. J. 21 (1971) 271-283 -- the discrete-sine Toeplitz asymptotics BOO Rem 1.6 leans on. It is a 1971 pre-arxiv journal paper (not arxiv-fetchable). Correct TW sine-kernel = Commun. Math. Phys. 163 (1994) 33-72 (arxiv id NOT asserted -- firewalled, could not verify). Gap OPEN.
