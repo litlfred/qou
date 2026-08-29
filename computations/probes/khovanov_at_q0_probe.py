@@ -54,7 +54,16 @@ from mpmath import mp, mpf  # noqa: E402
 # Substrate q_0 at 50 dps
 import json
 Q_PIN = COMPUTE_DIR / "q-pinning-50-digit.witness.json"
-Q_0 = mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute; the owner authorisation recorded there covers
+# this sweep. A direct read of the anchor-defining witness computes at MUON
+# whatever the manifest or `QOU_Q0_ANCHOR` says — the two pins differ by
+# 11.54 ppb, the μ–p substrate tension itself. The upstream/path reference is
+# kept for provenance; it is no longer the source of this q₀.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q_0 = mpf(_Q50_PROTON)
 HBAR_Q = (Q_0 - mpf(1)) / Q_0
 B_SQ = (Q_0**4 + Q_0**2 + mpf(1)) / (Q_0**2 + mpf(1))**2  # b² = (q⁴+q²+1)/(q²+1)²
 
