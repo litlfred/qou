@@ -51,9 +51,12 @@ def _sigma_pow_trace(h, z, k):
 
 def main() -> int:
     q = sp.symbols("q", positive=True)
-    sq = sp.sqrt(q)
+    # Convention D (canonical, owner ruling 2026-08-15 R1, re-affirmed by the
+    # owner 2026-08-29). This read `1/(sq + 1/sq)` with `sq = sqrt(q)` = z_C — unannounced, and
+    # invisible to scripts/convention-c-producer-audit.py, whose matcher does
+    # not see the sqrt-variable spelling. Found by convention-c-value-audit.py.
     h = q - 1 / q
-    z = 1 / (sq + 1 / sq)
+    z = q ** 3 / (q ** 2 + 1)
 
     tr1 = _sigma_pow_trace(h, z, 1)
     tr2 = _sigma_pow_trace(h, z, 2)
@@ -64,10 +67,20 @@ def main() -> int:
     lean_hopf = h * z + 1
     lean_trefoil = (h ** 2 + 1) * z + h
 
-    # The already-verified JonesViaMarkovTrace.jonesHopf closed form:
-    jones_hopf_file = (
-        q ** sp.Rational(5, 2) - q ** sp.Rational(1, 2) + q ** 2 + q
-    ) / (q ** 2 + q)
+    # The already-verified JonesViaMarkovTrace.jonesHopf closed form.
+    #
+    # This read `(q^(5/2) - q^(1/2) + q^2 + q)/(q^2 + q)` -- the CONVENTION-C
+    # value, and a STALE transcription: QOU/BraidKnot/JonesViaMarkovTrace.lean
+    # migrated to convention D and its own docstring records the C form it
+    # replaced, `J(Hopf) = (q^4 + 1)/(q^2 + 1)`. Because the probe's `z` was
+    # also still C, the two stale halves agreed and this assertion PASSED while
+    # checking nothing against the live Lean. Migrating `z` alone is what
+    # surfaced it: got (q^4+1)/(q^2+1), want the C transcription.
+    #
+    # The check is not circular. The probe derives `h*z + 1` from its own `h`
+    # and `z`; this is the Lean's independently STATED closed form. They agree
+    # because (q - 1/q)*q^3/(q^2+1) + 1 = (q^4+1)/(q^2+1), verified symbolically.
+    jones_hopf_file = (q ** 4 + 1) / (q ** 2 + 1)
 
     assertions = []
 

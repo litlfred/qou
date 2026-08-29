@@ -32,8 +32,10 @@ One section per paper in the folio.  The **Source** column links to the
 content objects; the **PDF** column links to the published standalone build,
 and shows `—` for a chapter that has not been published.
 
-<!-- Generated — regenerate with `readme_toc` (MCP) or, from the platform
-     checkout, `bun run readme:toc`.  Edits between the markers are lost. -->
+<!-- Generated — regenerate with `readme_sync` (MCP) or, from the platform
+     checkout, `bun run readme:sync`.  Edits between any `folio:*:begin` /
+     `folio:*:end` pair in this file are lost; everything else is authored
+     prose and is never touched. -->
 
 <!-- folio:toc:begin -->
 
@@ -128,13 +130,25 @@ knot theory, and categorical constructions from the manuscript.
 ### Coverage
 
 
-Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publish):
+Live snapshot from `scripts/lean-coverage.ts`, refreshed by `readme_sync`.
+Covers every paper in the folio that carries Lean sources — the figures below
+had drifted badly while this table was maintained by hand.
 
-| Block kind | Total | With Lean sibling | Fully formalized |
-|------------|------:|------------------:|-----------------:|
-| Provable claims (theorem/lemma/proposition/corollary) | 583 | 577 | **574 sorry-free (98.5%)** |
-| Conjectures (open) | 135 | 133 | **125 class-axiomatised (92.6%)** |
-| Definitions | 211 | 211 | — |
+<!-- folio:lean-coverage:begin -->
+
+| Paper | Block kind | Total | With Lean sibling | Fully formalized |
+|-------|------------|------:|------------------:|-----------------:|
+| On the Mechanics of Quantum Observable Universes | Provable claims | 745 | 738 | **736 sorry-free (98.8%)** |
+| | Conjectures (open) | 173 | 170 | **161 class-axiomatised (93.1%)** |
+| | Definitions | 257 | 257 | — |
+| Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | Provable claims | 10 | 10 | **10 sorry-free (100%)** |
+| | Conjectures (open) | 0 | 0 | **0 class-axiomatised (0%)** |
+| | Definitions | 12 | 12 | — |
+| Integration of Skewed-Poisson Structures on Non-commutative Formal Groups | Provable claims | 6 | 6 | **6 sorry-free (100%)** |
+| | Conjectures (open) | 0 | 0 | **0 class-axiomatised (0%)** |
+| | Definitions | 6 | 6 | — |
+
+<!-- folio:lean-coverage:end -->
 
 Class-axiomatised conjectures follow the conditional-class convention
 (AGENTS.md §3b): the conjecture is encoded as a Lean `class` with
@@ -143,6 +157,10 @@ explicit field axioms, and downstream theorems carry the class as an
 by Lean modulo a single, named, axiomatised input.
 
 ### Modules
+
+<!-- folio:lean-modules:begin -->
+
+**On the Mechanics of Quantum Observable Universes**
 
 | Module | Source |
 |--------|--------|
@@ -155,9 +173,11 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Basic` | `Basic.lean` |
 | `QOU.BraidKnot` | `BraidKnot.lean` |
 | `QOU.BraidTwistFlip` | `BraidTwistFlip.lean` |
+| `QOU.BringCone` | `BringCone.lean` |
 | `QOU.BringsSurface` | `BringsSurface.lean` |
 | `QOU.Calculations` | `Calculations.lean` |
 | `QOU.CategoricalDqSquared` | `CategoricalDqSquared.lean` |
+| `QOU.CategoricalDynamics` | `CategoricalDynamics.lean` |
 | `QOU.CategoricalMassMarkov` | `CategoricalMassMarkov.lean` |
 | `QOU.ChannelSeparation` | `ChannelSeparation.lean` |
 | `QOU.ClassicalLimitObstruction` | `ClassicalLimitObstruction.lean` |
@@ -177,6 +197,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Glossary` | `Glossary.lean` |
 | `QOU.GradedFrobeniusHopf` | `GradedFrobeniusHopf.lean` |
 | `QOU.GroundRingAnnotations` | `GroundRingAnnotations.lean` |
+| `QOU.GroundRingCore` | `GroundRingCore.lean` |
 | `QOU.HadronicMass` | `HadronicMass.lean` |
 | `QOU.Hecke` | `Hecke.lean` |
 | `QOU.HeckeAlgebra` | `HeckeAlgebra.lean` |
@@ -200,6 +221,8 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.MobiusEnergy` | `MobiusEnergy.lean` |
 | `QOU.MotivesArchimedean` | `MotivesArchimedean.lean` |
 | `QOU.ObservableSubcategory` | `ObservableSubcategory.lean` |
+| `QOU.OneLoopEdgeLattice` | `OneLoopEdgeLattice.lean` |
+| `QOU.OneLoopPrefactorInvariance` | `OneLoopPrefactorInvariance.lean` |
 | `QOU.orbital_fourier_decomposition` | `orbital_fourier_decomposition.lean` |
 | `QOU.PAdicQuantumGroups` | `PAdicQuantumGroups.lean` |
 | `QOU.PathIntegrals` | `PathIntegrals.lean` |
@@ -207,14 +230,21 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.PhiQPiece` | `PhiQPiece.lean` |
 | `QOU.PhotonThreading` | `PhotonThreading.lean` |
 | `QOU.q_gl_obstruction_calc` | `q_gl_obstruction_calc.lean` |
+| `QOU.QBeta` | `QBeta.lean` |
 | `QOU.QBirchSwinnertonDyer` | `QBirchSwinnertonDyer.lean` |
 | `QOU.QCollatz` | `QCollatz.lean` |
 | `QOU.QGeometricLanglands` | `QGeometricLanglands.lean` |
 | `QOU.qou_canonical_action` | `qou_canonical_action.lean` |
 | `QOU.QuantumBloch` | `QuantumBloch.lean` |
 | `QOU.QuantumObservableUniverse` | `QuantumObservableUniverse.lean` |
+| `QOU.QuaternionicElectroweak` | `QuaternionicElectroweak.lean` |
 | `QOU.QuaternionicSpectralResolvents` | `QuaternionicSpectralResolvents.lean` |
 | `QOU.RepresentationTheory` | `RepresentationTheory.lean` |
+| `QOU.Resurgence` | `Resurgence.lean` |
+| `QOU.scratch_matrix` | `scratch_matrix.lean` |
+| `QOU.scratch_pmass` | `scratch_pmass.lean` |
+| `QOU.scratch_skein` | `scratch_skein.lean` |
+| `QOU.SelectionRules` | `SelectionRules.lean` |
 | `QOU.Shared` | `Shared.lean` |
 | `QOU.SkeinResolutionObstruction` | `SkeinResolutionObstruction.lean` |
 | `QOU.StaircaseCornerHook` | `StaircaseCornerHook.lean` |
@@ -223,58 +253,100 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.Su2Generators` | `Su2Generators.lean` |
 | `QOU.substrate_radial_coordinate` | `substrate_radial_coordinate.lean` |
 | `QOU.Torsion` | `Torsion.lean` |
+| `QOU.TypedCrossingsEncoding` | `TypedCrossingsEncoding.lean` |
 | `QOU.variational_equations` | `variational_equations.lean` |
 | `QOU.volume_from_rigidity` | `volume_from_rigidity.lean` |
-| `QOU.AlgebraicSubstrate.*` | `19 files` |
-| `QOU.AppendixSurreals.*` | `34 files` |
-| `QOU.Archimedean.*` | `67 files` |
-| `QOU.ArchimedeanUniverse.*` | `4 files` |
+| `QOU.AlgebraicSubstrate.*` | `37 files` |
+| `QOU.AlphaEM.*` | `1 files` |
+| `QOU.Appendix.*` | `1 files` |
+| `QOU.AppendixQValues.*` | `1 files` |
+| `QOU.AppendixSurreals.*` | `44 files` |
+| `QOU.Archimedean.*` | `196 files` |
+| `QOU.ArchimedeanUniverse.*` | `5 files` |
 | `QOU.AtomicMass.*` | `1 files` |
 | `QOU.BaryonWeight.*` | `1 files` |
-| `QOU.Braiding.*` | `10 files` |
-| `QOU.BraidKnot.*` | `143 files` |
-| `QOU.BraidsAndKnots.*` | `15 files` |
-| `QOU.BraidsKnots.*` | `6 files` |
-| `QOU.Brings.*` | `2 files` |
-| `QOU.BringsSurface.*` | `1 files` |
+| `QOU.Braiding.*` | `14 files` |
+| `QOU.BraidKnot.*` | `375 files` |
+| `QOU.BraidsAndKnots.*` | `74 files` |
+| `QOU.BraidsKnots.*` | `7 files` |
+| `QOU.Brings.*` | `4 files` |
+| `QOU.BringsSurface.*` | `7 files` |
 | `QOU.CategoricalReeb.*` | `3 files` |
-| `QOU.Common.*` | `1 files` |
+| `QOU.Common.*` | `10 files` |
 | `QOU.CommutativeQOU.*` | `1 files` |
+| `QOU.Conjectures.*` | `5 files` |
 | `QOU.Descent.*` | `1 files` |
+| `QOU.Eightfold.*` | `16 files` |
+| `QOU.EightfoldWay.*` | `2 files` |
 | `QOU.Encounter.*` | `1 files` |
 | `QOU.Experimental.*` | `2 files` |
 | `QOU.FeynmanPathIntegrals.*` | `1 files` |
-| `QOU.FlavorDressing.*` | `3 files` |
-| `QOU.FluidDynamics.*` | `19 files` |
+| `QOU.FlavorDressing.*` | `4 files` |
+| `QOU.FluidDynamics.*` | `35 files` |
 | `QOU.FrobeniusHopfData.*` | `1 files` |
-| `QOU.Habiro.*` | `1 files` |
+| `QOU.GaugeFieldFluidDynamics.*` | `1 files` |
+| `QOU.Geometry.*` | `1 files` |
+| `QOU.Habiro.*` | `3 files` |
 | `QOU.HadronicMass.*` | `3 files` |
-| `QOU.Hecke.*` | `9 files` |
-| `QOU.HeckeAlgebra.*` | `8 files` |
-| `QOU.HyperellipticQuintic.*` | `1 files` |
-| `QOU.Information.*` | `6 files` |
+| `QOU.Hecke.*` | `30 files` |
+| `QOU.HeckeAlgebra.*` | `9 files` |
+| `QOU.HyperellipticQuintic.*` | `4 files` |
+| `QOU.Information.*` | `39 files` |
 | `QOU.Infra.*` | `4 files` |
-| `QOU.Interactions.*` | `27 files` |
-| `QOU.IwahoriHecke.*` | `6 files` |
-| `QOU.KnotTheory.*` | `1 files` |
-| `QOU.LiftingDescent.*` | `17 files` |
+| `QOU.Interactions.*` | `33 files` |
+| `QOU.IwahoriHecke.*` | `7 files` |
+| `QOU.Knot.*` | `82 files` |
+| `QOU.Knots.*` | `1 files` |
+| `QOU.KnotTheory.*` | `4 files` |
+| `QOU.LiftingDescent.*` | `22 files` |
+| `QOU.Machinery.*` | `88 files` |
 | `QOU.MagicShell.*` | `1 files` |
-| `QOU.MassEndomorphism.*` | `4 files` |
-| `QOU.Mathlib.*` | `10 files` |
-| `QOU.MathlibExt.*` | `12 files` |
-| `QOU.Molecular.*` | `7 files` |
+| `QOU.Mass.*` | `75 files` |
+| `QOU.MassEndomorphism.*` | `9 files` |
+| `QOU.MassTheory.*` | `108 files` |
+| `QOU.Mathlib.*` | `169 files` |
+| `QOU.MathlibExt.*` | `114 files` |
+| `QOU.Molecular.*` | `11 files` |
 | `QOU.Observations.*` | `11 files` |
+| `QOU.Optimization.*` | `4 files` |
 | `QOU.OptionE.*` | `5 files` |
-| `QOU.ParticleInteractions.*` | `22 files` |
+| `QOU.ParticleInteractions.*` | `36 files` |
+| `QOU.QBeta.*` | `255 files` |
 | `QOU.QGeometricLanglands.*` | `4 files` |
 | `QOU.QuantumBloch.*` | `2 files` |
-| `QOU.QuantumObservableUniverse.*` | `16 files` |
-| `QOU.QuantumObservableUniverses.*` | `2 files` |
-| `QOU.Shared.*` | `4 files` |
-| `QOU.StaircaseCornerHook.*` | `1 files` |
+| `QOU.QuantumComputationalUniversality.*` | `1 files` |
+| `QOU.QuantumObservableUniverse.*` | `19 files` |
+| `QOU.QuantumObservableUniverses.*` | `10 files` |
+| `QOU.Resurgence.*` | `4 files` |
+| `QOU.SchurWeyl.*` | `66 files` |
+| `QOU.Shared.*` | `5 files` |
+| `QOU.StandardModel.*` | `20 files` |
+| `QOU.Substrate.*` | `5 files` |
 | `QOU.TopologicalMass.*` | `3 files` |
-| `QOU.Torsion.*` | `20 files` |
+| `QOU.Torsion.*` | `21 files` |
+| `QOU.TransferMatrices.*` | `1 files` |
 | `QOU.WedderburnMass.*` | `4 files` |
+
+**Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings**
+
+| Module | Source |
+|--------|--------|
+| `UGB.BuchbergerPBW` | `BuchbergerPBW.lean` |
+| `UGB.GrobnerShirshov` | `GrobnerShirshov.lean` |
+| `UGB.Introduction` | `Introduction.lean` |
+| `UGB.UnitalGroebner` | `UnitalGroebner.lean` |
+| `UGB.BuchbergerPBW.*` | `3 files` |
+| `UGB.GrobnerShirshov.*` | `13 files` |
+| `UGB.Introduction.*` | `1 files` |
+| `UGB.UnitalGroebner.*` | `7 files` |
+
+**Integration of Skewed-Poisson Structures on Non-commutative Formal Groups**
+
+| Module | Source |
+|--------|--------|
+| `Fred2005.FormalGroups` | `FormalGroups.lean` |
+
+<!-- folio:lean-modules:end -->
 
 ### Knot Registry
 
@@ -305,6 +377,8 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 
 ### Interactive Simulators
 
+<!-- folio:simulators:begin -->
+
 | Simulator | File |
 |-----------|------|
 | Beta Decay Braid | `simulators/beta_decay_braid.html` |
@@ -316,6 +390,8 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Q Double Slit | `simulators/q_double_slit.html` |
 | Quantum Brings Surface | `simulators/quantum_brings_surface.html` |
 | Valley Stability | `simulators/valley_stability.html` |
+
+<!-- folio:simulators:end -->
 
 ## Published Artefacts
 
@@ -408,35 +484,24 @@ The compute pipeline is layered into reusable packages so external researchers c
 
 ## CI/CD Workflows
 
+<!-- folio:workflows:begin -->
+
 | Workflow | Purpose |
 |----------|---------|
-| `agent-review.yml` | AI-assisted code review |
-| `blueprint.yml` | Blueprint compilation, dependency graph, doc-gen4 |
-| `build-latex-image.yml` | Build LaTeX CI Docker image |
-| `build-lean-mcp.yml` | Build Lean MCP Docker image |
-| `copilot-setup-steps.yml` | Copilot Setup Steps |
-| `deploy-folio.yml` | Deploy Folio Assistant to remote server |
-| `discoverability-docs.yml` | Discoverability docs (cargo doc + pdoc + TypeDoc) |
-| `docker-ci-image.yml` | Build general CI Docker image |
-| `hecke-engine-wasm.yml` | hecke-engine-wasm Build & Test |
+| `build-lean-mcp.yml` | Build Paper Assistant Image |
+| `build.yml` | build |
+| `doc-gen4.yml` | Build Lean Documentation (doc-gen4) |
 | `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
-| `lean-build-sidecar.yml` | Lean build sidecar |
-| `lean-build.yml` | Lean build and proof status updates |
-| `lean_ci.yml` | Lean build, proof status, axiom report, doc generation |
+| `lean-axiom-guard.yml` | lean-axiom-guard |
+| `lean-content-siblings.yml` | lean-content-siblings |
+| `lean-orphan-gate.yml` | lean-orphan-gate |
+| `lp-dual-gate.yml` | lp-dual-gate |
 | `paper-builder-image.yml` | Build paper-builder Docker image |
-| `publish.yml` | Full paper build — PDF, HTML, viewer, schema docs, deploy to gh-pages |
-| `pyhecke-native-wheels.yml` | pyhecke-native wheels |
-| `pyhecke-pypi-publish.yml` | Publish pyhecke to PyPI |
-| `pyhecke.yml` | pyhecke |
-| `pyodide-smoke.yml` | Pyodide integration smoke |
-| `qa-sweep.yml` | QA sweep (all integration watchers) |
-| `release-folio-assistant.yml` | Release Folio Assistant package |
-| `release-please.yml` | release-please |
-| `snappea_wasm.yml` | SnapPea WASM build and test |
-| `sync-skills.yml` | Sync external skill packages |
-| `witness-pipeline.yml` | Witness pipeline |
-| `witness-refresh.yml` | Witness refresh (commit-back to main) |
-| `wrapper-tests.yml` | Wrapper tests (per-language smoke matrix) |
+| `probe-float64-gate.yml` | probe-float64-gate |
+| `pyhecke-native-wheel.yml` | pyhecke-native-wheel |
+| `witness-staleness.yml` | witness-staleness |
+
+<!-- folio:workflows:end -->
 
 ## Building
 
