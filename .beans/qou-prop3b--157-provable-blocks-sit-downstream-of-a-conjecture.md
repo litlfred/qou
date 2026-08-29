@@ -179,9 +179,41 @@ conditional-class banner audit), the bibliography cross-check, and the §7c wall
 sweep. The idiom to fix them already exists in the same directory —
 `find-dangling-remarks.ts` calls `requirePaper(process.argv[2])`.
 
-Patched six locally to prove it; the propagation audit then ran first time and
-produced the numbers above. Not pushed — a second repository, awaiting the
-owner.
+Patched six locally to prove it; the propagation audit then ran and produced the
+numbers above. Not pushed — a second repository, awaiting the owner.
+
+**Do NOT fix these with `requirePaper(process.argv[2])`, even though that is the
+idiom `find-dangling-remarks.ts` uses.** I did, and it broke two of them: in
+`conjectural-propagation-audit.ts` and `conjectural-propagation-sweep.ts`,
+`argv[2]` is *already* the output path —
+
+```ts
+const WITNESS_OUT = process.argv[2] ?? join(REPO_ROOT, "docs/audits/…witness.json");
+```
+
+— so naming the paper positionally also redirects the witness, and the audit
+wrote a 70 KB JSON to a file called `quantum-observable-universe` at the repo
+root. Caught by the stop hook, not by me. Five of the six collide: the other
+three take `--strict` or slice positionals; only `generate-index.ts` is safe.
+
+The working shape is **both** of:
+
+1. `--paper <name>` as a **flag**, matching `extract-status-sections.ts`
+   (`requirePaper(get("--paper"))`), never a positional.
+2. In the two scripts that take an output path, read the **first non-flag**
+   argument rather than `argv[2]` — with `--paper` alone, the witness lands in a
+   file literally named `--paper`. The flag is necessary and not sufficient.
+
+Verified end to end after both: `Witness:
+docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json`, no stray
+files, numbers stable.
+
+**The regenerated witness was reverted, deliberately.** The run refreshed the
+committed artifact by 814 insertions / 915 deletions — genuinely fresher than
+the stale committed copy — but it was produced by a locally patched producer
+that exists in no branch. Committing it would place a number in the corpus that
+nobody could reproduce. Regenerate it *after* the platform fix lands, with the
+landed version.
 
 ## Lesson, recorded because it is the fifth time this session
 
