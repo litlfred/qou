@@ -304,14 +304,30 @@ def main() -> int:
     # environment variable that set it -- a value cannot disagree with itself,
     # whereas an env read can be out of step with what `q_parameter` bound at
     # import.
+    # The two pins were recognised by HARDCODED PREFIXES, and the muon one was
+    # "1.10997859555" -- the SUPERSEDED value A. When fca08de7d2 moved the muon
+    # anchor to the live CODATA-2022 derivation C ("1.10997859564"), this guard
+    # stopped recognising its own muon layer and the producer refused to run AT
+    # ALL under QOU_Q0_ANCHOR=ideal:
+    #     "q_0 = 1.1099785956427390466817… is neither the muon nor the proton
+    #      pin; refusing to guess which cache name this run belongs under."
+    # The guard's INTENT is right (never guess which cache a run belongs to);
+    # only its references were frozen. Resolve them from the anchors instead,
+    # so this follows the next CODATA revision the way the anchor does.
+    # Bean qou-3f7a.
+    from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
     _q = str(Q_50_DIGIT_STR)
-    if _q.startswith("1.10997859555"):
+    _muon_ref = str(_q0_value_for_anchor("muon") or "")
+    _proton_ref = str(_q0_value_for_anchor("proton") or "")
+    _N = 14  # shortest prefix that separates the two pins
+    if _muon_ref and _q[:_N] == _muon_ref[:_N]:
         _witness_name = "canonical-tr-m-via-chi-cache-muon"
-    elif _q.startswith("1.10997858275"):
+    elif _proton_ref and _q[:_N] == _proton_ref[:_N]:
         _witness_name = "canonical-tr-m-via-chi-cache"
     else:
         raise SystemExit(
-            f"q_0 = {_q[:24]}… is neither the muon nor the proton pin; "
+            f"q_0 = {_q[:24]}… matches neither the muon anchor "
+            f"({_muon_ref[:24]}…) nor the proton anchor ({_proton_ref[:24]}…); "
             "refusing to guess which cache name this run belongs under.")
 
     builder = WitnessBuilder.wrap_legacy(
