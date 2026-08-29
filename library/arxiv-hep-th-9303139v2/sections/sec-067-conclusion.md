@@ -7,6 +7,7 @@ section_number: null
 pages: 138-140
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 We came to the end of our brief review of the facts, that are already known
 about the relation between matrix models and integrable hierarchies. There

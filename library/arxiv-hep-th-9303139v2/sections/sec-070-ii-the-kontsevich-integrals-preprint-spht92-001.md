@@ -7,6 +7,7 @@ section_number: II
 pages: 143-149
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 Int.J.Mod.Phys.A.
 [34] C.Crnkovic, P.Ginsparg and G.Moore, Phys.Lett. 237B (1990) 196;

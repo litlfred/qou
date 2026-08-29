@@ -7,6 +7,7 @@ section_number: 13
 pages: 31-35
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 point of view of symmetries (Ward identities) it is more natural to consider ZV not as a
 function of T -variables, but of some more complicated combination ˆTk + rk, depending on

@@ -7,6 +7,7 @@ section_number: 16
 pages: 43-46
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 the ordinary 1-matrix model (2.1) in this case - can be considered as deﬁning integral
 transformations. This view on matrix models can to large extent deﬁne their role in the

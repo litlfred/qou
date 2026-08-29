@@ -7,6 +7,7 @@ section_number: 29
 pages: 79-80
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 study of ordinary integrable hierarchies: the Hamiltonian ﬂows, which describe evolution
 in diﬀerent t-directions just commute, because t’s are associated with the commuting

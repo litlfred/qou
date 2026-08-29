@@ -7,6 +7,7 @@ section_number: 2
 pages: 81-92
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 annihilates the product of two vacuum states:
 (T a ⊗T a) | 0⟩⊗| 0⟩= 0,

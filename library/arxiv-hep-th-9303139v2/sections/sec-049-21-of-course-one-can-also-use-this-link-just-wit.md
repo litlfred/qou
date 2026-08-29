@@ -7,6 +7,7 @@ section_number: 21
 pages: 60-62
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 tifull mathematical theory of orthogonal polinomials into the general context of string
 theory. Among interesting problems here is the matrix-model description of q-orthogonal
