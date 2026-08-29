@@ -1,0 +1,61 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T02:48:48.574734+00:00",
+  "commitSha": "faa8a83a9d15e84acb46597a36948cb1f2457874",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 22504,
+  "computation": "qbeta-delta-net-four-values",
+  "scriptFile": "qbeta_delta_net_four_values_probe.py",
+  "scriptHash": "c82b4be6237c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_net_four_values_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_net_four_values_probe.py"
+  },
+  "description": "qou-bg3w: the Delta question is not a two-way fork. net(p) takes three distinct values in the corpus (0.8955 short / 1.0065 stated / 1.3464 hecke_core) and Delta net takes four. Separately: the neutron block's '13 crossings' sentence contradicts the +0.7976 it reports two lines later, which is the ONE-Hopf-link (11-crossing) value -- so the count is 11 and the sentence is the error. Scope-(a): adjudicates nothing, changes no compute.",
+  "data": {
+    "net_B3": "0.999600646188434698263261863659042810866700000000000497659522",
+    "B3_net_is_not_the_stated_one": true,
+    "neutron_net_k0": "0.788010051322919909759786218968200444610100000000000098183956",
+    "neutron_net_k1": "0.797566438888272789292820389259669218726900000000000168145515",
+    "neutron_net_k2": "1.23585855913880108565985352804418918953699999999999876038657",
+    "neutron_net_k3": "1.46622763916970709566655279475527586833099999999999970674102",
+    "the_stated_neutron_net_is_the_ELEVEN_crossing_value": true,
+    "the_neutron_match_is_not_a_single_tuned_assignment": true,
+    "hecke_net_p": "1.34643522652513785327684609806804531299599999999999971177907",
+    "hecke_net_n": "1.11323751520947915123678206474336877865999999999999966584640",
+    "hecke_core_nets_do_not_match_the_content_blocks": true,
+    "delta_net_short": "-0.187207194529378320729836545290980788975700000000000099906947",
+    "delta_net_stated": "-0.208899999999999999999999999999999999999999999999999416268187",
+    "delta_net_built": "-0.213763830616664642436797248967312271868599999999999903181737",
+    "delta_net_hecke": "-0.233197711315658702040064033324676534336000000000000045932669",
+    "no_two_of_the_four_delta_values_agree": true,
+    "net_p_alone_takes_three_values": true,
+    "scope": "a",
+    "adjudicates": false,
+    "checks_passed": 6,
+    "checks_total": 6
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
