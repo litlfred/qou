@@ -62,6 +62,17 @@ routes above), not a missing one-line lemma. This file supplies the honest scaff
 correctly typed over `Nat.Partition n`, reduced to the single normalised statement a future proof must
 establish — and leaves the content to bean `qou-3quc`.
 
+## Faithfulness to the concrete cases — the one mechanical step, and why it is not taken here
+
+`molienSum n q` is a faithful lift of `MolienFakeDegree.molien_qanalogue_n{2,3,4}`: for each concrete
+`n` the abstract `∑ p : Nat.Partition n` equals that file's hand-written finite sum. The exact bridge
+is `QOU.Mathlib.PartitionsOfBridge.sum_map_partitionsOf n g`, which rewrites `∑ p, g (toList p)` into
+`((partitionsOf n).map g).sum` over the *computable* enumerator `partitionsOf n`, followed by
+`SYTEnum.dimSYT_eq_numSYTenum` to turn `dimSYT p` into the `numSYTenum (toList p)` the concrete file
+uses. It is left unbuilt **only** because `PartitionsOfBridge` imports the `SchenstedRSKBurnside`
+Robinson–Schensted layer, whose oleans are not in the restored `lake-cache` (a from-source build); it
+is otherwise routine and touches none of the open content (`normalizedSum n q = 1`).
+
 Base ring: the `hookProd` / `qDim_eq_qFactorial_div` layer is generic `{R : Type*} [Field R]`
 (§7c — purely algebraic). The `molienSum`/`normalizedSum` statements are over `ℝ` because `qDim` and
 `contentSum`-weighting inherit the `ℝ` specialisation of `QPartitionCombinatorics` (and `1 < q` is
