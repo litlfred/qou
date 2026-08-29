@@ -247,7 +247,7 @@ def main() -> int:
     w.add_data("closed_form_candidates_for_c_4He", closed_form_data)
     w.add_assertion(
         "single_coefficient_hypothesis",
-        computed=float(max_dev),
+        computed=max_dev,
         expected=0.0,
         tolerance=0.05,  # 5% tolerance — if all c values within 5%, single c
         unit="dimensionless",

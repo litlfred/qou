@@ -203,7 +203,7 @@ def main():
     })
     wb.add_assertion(
         "deuteron_endomorphism_exact",
-        computed=float(endo["D"]["resid"]),
+        computed=endo["D"]["resid"],
         expected=1.0,
         tolerance=0.01,
         source="B_endo = m_e·Vol(𝓑₃)·Δtr closes D (resid 0.998, 0 closures)",

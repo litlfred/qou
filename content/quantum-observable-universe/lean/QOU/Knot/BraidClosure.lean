@@ -643,9 +643,10 @@ strand. By `lapStep_eq` this is `(closurePerm w)⁻¹`, and it — not `closureP
 
 Naming it matters beyond taste. Stating the walk under `(closurePerm w)⁻¹` while
 counting laps with `cycleLen (closurePerm w)` forced a `cycleLen f⁻¹ p =
-cycleLen f p` bridge, which is blocked by a `DecidableRel` instance divergence
-(see the diagnosis above). Phrasing every part of the traversal in the *same*
-permutation removes the need for that bridge entirely. -/
+cycleLen f p` bridge across a `DecidableRel` instance divergence. That bridge is
+now proved (`cycleLen_inv`, below), but phrasing every part of the traversal in
+the *same* permutation is still the better fix: it removes the need for the
+bridge rather than paying for it. -/
 noncomputable def stepPerm (w : BraidWord n) : Equiv.Perm (Fin n) :=
   (closurePerm w)⁻¹
 
@@ -841,30 +842,38 @@ theorem walk_disjoint_of_ne_leader (g : Equiv.Perm (Fin n)) {p q : Fin n}
   have h2 : g.SameCycle q x := walk_sameCycle g q x b hy
   exact hne (leader_unique g hp hq (h1.trans h2.symm))
 
-/-! **Blocked lemma, diagnosed** — `cycleLen f⁻¹ p = cycleLen f p`.
+/-! ### `cycleLen f⁻¹ p = cycleLen f p` — was diagnosed as blocked; it is not
 
-True; not proved here. `cycleOf` takes a `DecidableRel f.SameCycle` argument, and
-separately-elaborated occurrences of it do not agree, so `Equiv.Perm.cycleOf_inv`
-cannot be rewritten into a goal mentioning `cycleLen f⁻¹ p`. Measured, so the
-next attempt need not repeat it:
+The obstruction was real and correctly diagnosed: `Equiv.Perm.cycleOf` takes a
+`DecidableRel f.SameCycle` argument, and the instance elaborated for
+`f⁻¹.cycleOf p` in a goal differs from the one `Equiv.Perm.cycleOf_inv` derives
+from `[DecidableRel f.SameCycle]`, so the rewrite finds no occurrence. The
+diagnosis also named the fix — bridge the two instances — and it was right that
+this is plumbing rather than mathematics. `congr!` discharges the bridge,
+because `Decidable` is a subsingleton and so `DecidableRel` is one pointwise.
 
-* `∀ g, cycleLen g p = orderOf (g.cycleOf p) := fun _ => rfl` **holds** — the
-  definition is transparent, so `cycleLen` is *not* the obstruction.
-* `show orderOf (f⁻¹.cycleOf p) = orderOf (f.cycleOf p)` is rejected as **not
-  definitionally equal** to `cycleLen f⁻¹ p = cycleLen f p`, which is only
-  possible if the two `DecidableRel` arguments differ.
-* `orderOf (f⁻¹.cycleOf p) = orderOf ((f.cycleOf p)⁻¹)` is **provable** by
-  `congr 1` + `cycleOf_inv`, yet still fails to `rw` into the goal — the same
-  divergence one level out.
-* Removing `open scoped Classical` from the `cycleLen` family (done — it was
-  causing a *different* mismatch, and the file is simpler for it) does not fix
-  this one.
+Two routes that do NOT work, measured, so the next reader need not retry them.
+`simp only [cycleLen, h]` with `h : f⁻¹.cycleOf p = (f.cycleOf p)⁻¹` proved
+separately: simp reports `h` unused, because the instance `h` synthesizes in a
+tactic block is not the one `cycleLen`'s body carries. `show orderOf
+(f⁻¹.cycleOf p) = orderOf (f.cycleOf p)` fails outright with a pattern error —
+so the two instances are not merely syntactically different, they are not
+definitionally equal either, and no amount of restating the goal will bridge
+them. The bridge has to be an explicit subsingleton step.
 
-The fix is instance plumbing, not mathematics: fix **one** `DecidableRel
-(Equiv.Perm.SameCycle ·)` instance for the section and pass it explicitly, or
-state the lemma with `Subsingleton.elim` bridging the two instances. It is
-needed for `lapStarts_nodup`, since the walk runs under `f⁻¹` while the lap
-count is stated for `f`. -/
+The lemma is no longer *needed*: the `stepPerm` refactor phrases the walk and
+the lap count in the same permutation, which is the better fix and removes the
+bridge from the critical path. It is proved here because it is true, it is
+three lines, and a lemma the file spent three paragraphs saying it could not
+prove should not stay unproved. -/
+
+/-- **Inverting a permutation does not change any cycle's length.** -/
+theorem cycleLen_inv (f : Equiv.Perm (Fin n)) (p : Fin n) :
+    cycleLen f⁻¹ p = cycleLen f p := by
+  unfold cycleLen
+  rw [← orderOf_inv (f.cycleOf p), Equiv.Perm.cycleOf_inv f p]
+  congr!
+
 
 open scoped Classical in
 /-- **A component walk does not repeat.** The orbit is traversed exactly once,

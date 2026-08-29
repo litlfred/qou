@@ -413,7 +413,7 @@ def main() -> int:
                      computed=1.0 if (g5a and g5b) else 0.0, expected=1.0, tolerance=0.5,
                      source="det S± = 1 and S⁺(q)ᵀ·S⁻(q) = 1 (Conjecture 1b) in exact series")
     wb.add_assertion("inversion_numeric_at_substrate",
-                     computed=float(inv_res), expected=0.0, tolerance=1e-30,
+                     computed=inv_res, expected=0.0, tolerance=1e-30,
                      source="S⁺ᵀ·S⁻ = 1 numerically at q=1/q₀ with independently-"
                             "assembled matrices (29a vs 29b)")
     wb.add_assertion("odd_channel_nonzero",

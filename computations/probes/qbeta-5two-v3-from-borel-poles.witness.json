@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:36:47.328453+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:52:34.829801+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "zeta12_calibration",
-      "computed": 0.02217891652486455,
+      "computed": "0.02217891652486455084739481196630093103550246670776608445045761967613484",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.05",
@@ -14,7 +14,7 @@
     },
     {
       "name": "reality_line_populated",
-      "computed": 0.02944337011457461,
+      "computed": "0.02944337011457460962349965166847312023355256080145433342261330988789003",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.1",
@@ -22,8 +22,8 @@
     },
     {
       "name": "favours_published_V3",
-      "computed": 0.006638164172502432,
-      "expected": 0.006638164172502432,
+      "computed": "0.006638164172502431654988613421018008164552243048357143870247035476532192",
+      "expected": "0.006638164172502431654988613421018008164552243048357143870247035476532192",
       "passed": true,
       "tolerance": 1.8078250278728225,
       "source": "V3_measured is closer to the published GGM value than to the legacy literal"
@@ -33,7 +33,7 @@
   "durationMs": 0,
   "computation": "qbeta-5two-v3-from-borel-poles",
   "scriptFile": "qbeta_5two_v3_from_borel_poles_probe.py",
-  "scriptHash": "a4ab05a43498",
+  "scriptHash": "b3caa6d7d4dc",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -141,8 +141,8 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-phi-series-engine.witness.json",
-        "sha256": "f866db7ad97ad2068716ed86f703443105f2bdf1e635450f0cec58c0a40ae963",
-        "size_bytes": 5970,
+        "sha256": "f4531337dafa8574bab3dac83440a1a11433a3b1ea5c8b09c662239aff2b67d2",
+        "size_bytes": 5978,
         "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
         "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
         "computedAt": "2026-08-01T15:17:51.390941+00:00"

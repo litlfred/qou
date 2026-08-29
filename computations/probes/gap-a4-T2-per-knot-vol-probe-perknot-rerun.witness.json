@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T17:01:31.840964+00:00",
-  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T10:52:12.270272+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "proton_chi_cache_tr_M_matches_documented",
-      "computed": 1.1457596924573008,
+      "computed": "1.1457596924573008696890815957741193059437280619435",
       "expected": 1.0653062380758782,
       "passed": false,
       "tolerance": "1e-12",
@@ -14,7 +14,7 @@
     },
     {
       "name": "neutron_chi_cache_tr_M_matches_documented",
-      "computed": 0.9877436881158096,
+      "computed": "0.98774368811580957163402016550129498205504875906282",
       "expected": 0.9232333051498377,
       "passed": false,
       "tolerance": "1e-12",
@@ -22,10 +22,10 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "gap-a4-T2-per-knot-vol-probe-perknot-rerun",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe_perknot_rerun.py",
-  "scriptHash": "c2b0acb9fe24",
+  "scriptHash": "0c2c6e44ecea",
   "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -38,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

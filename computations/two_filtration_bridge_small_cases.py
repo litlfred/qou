@@ -123,14 +123,14 @@ def main() -> None:
     # Cross-check the canonical Vol(4₁) value used to anchor q₀ elsewhere.
     wb.add_assertion(
         "vol_4_1_equals_2_Cl2_pi3",
-        computed=float(VOL_4_1),
+        computed=VOL_4_1,
         expected=2.0298832128,
         tolerance=1e-9,
         source="Vol(4₁) = 2·Cl₂(π/3) (thurston1978); anchors m_μ/m_e = Vol(4₁)/ℏ_q²",
     )
     wb.add_assertion(
         "trefoil_CS_equals_neg_pi2_over_6",
-        computed=float(CS_3_1 / (pi ** 2)),
+        computed=CS_3_1 / (pi ** 2),
         expected=-1.0 / 6.0,
         tolerance=1e-12,
         source="CS(3₁) = −π²/6 (standard trefoil Chern–Simons invariant)",

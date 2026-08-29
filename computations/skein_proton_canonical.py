@@ -287,7 +287,7 @@ def main() -> int:
     # ── Headline assertions ──────────────────────────────────
     w.add_assertion(
         "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
-        computed=float(rel_diff),
+        computed=rel_diff,
         expected=0.0,
         tolerance=1e-12,
         unit="relative",
@@ -303,7 +303,7 @@ def main() -> int:
     # (which was a CAL-4 tautology).
     w.add_assertion(
         "Family_A_m_p_gap_within_5pct_of_CODATA",
-        computed=float(abs((m_p_pred_S0 - M_P_CODATA) / M_P_CODATA)),
+        computed=abs((m_p_pred_S0 - M_P_CODATA) / M_P_CODATA),
         expected=0.0,
         tolerance=5e-2,  # 5 % ceiling, matches m_p_borromean_verification
         unit="relative",

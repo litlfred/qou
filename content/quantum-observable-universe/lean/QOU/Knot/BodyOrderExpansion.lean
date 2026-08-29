@@ -150,13 +150,20 @@ supplies the `G_1(x)^A` half **abstractly**: a generating function over a
 product index set, with additive degree and multiplicative coefficients,
 factorises.
 
-**What is still missing, and it is the harder half.** Applying this to the
-atomic braid needs the index set of `H_{3A}`'s normal forms to BE such a
-product -- i.e. that Coxeter length is additive over the Young subgroup
-`S_3 × ⋯ × S_3`, `ℓ(w) = Σᵢ ℓ(wᵢ)`. That is the parabolic length formula, it is
-a real theorem in the inversion-set model, and it is **not proved here**. So
-this section is the bookkeeping half of the block factorisation, not the
-content. -/
+Applying this to the atomic braid needs the index set of `H_{3A}`'s normal
+forms to BE such a product -- i.e. that Coxeter length is additive over the
+Young subgroup `S_3 × ⋯ × S_3`, `ℓ(w) = Σᵢ ℓ(wᵢ)`. That is the parabolic length
+formula, and it is proved in `QOU.Knot.BlockLengthAdditive` (`length_blockProd`,
+and `length_blockProd_of_supportedIn` for the two-sided support condition a
+nucleon block actually satisfies). `QOU.Knot.BlockGeneratingFunction` joins the
+two halves, using the dependent-family form `gf_pi` (in
+`QOU.Knot.GradedGeneratingFunction`, since it needs only a `CommSemiring`)
+rather than `gf_pow` below -- nucleon blocks are not identical to one another.
+
+(An earlier version of this note said the parabolic formula was "not proved
+here" and called this section bookkeeping rather than content. That was true
+when written and is no longer; the missing half was the reason the note
+existed.) -/
 
 /-- **The generating function is multiplicative over a product index set**,
 when the degree is additive and the coefficient multiplicative across the

@@ -266,8 +266,8 @@ def main() -> int:
     )
     w.add_assertion(
         "factor_N1_equals_2q_squared_minus_2q_plus_1_over_q_squared",
-        computed=float(factor_N1_num),
-        expected=float((2*q_0**2 - 2*q_0 + 1) / q_0**2),
+        computed=factor_N1_num,
+        expected=(2*q_0**2 - 2*q_0 + 1) / q_0**2,
         tolerance=1e-40,
     )
     w.add_assertion(

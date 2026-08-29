@@ -330,7 +330,7 @@ def main() -> int:
                      computed=c3_err_max, expected=0.0, tolerance=1e-10,
                      source="zeta'_{S^1}(0) = -2 log L via the Epstein-derivative machinery vs the closed form")
     wb.add_assertion("ray_singer_torsion_of_flat_torus_is_trivial",
-                     computed=float(tau), expected=1.0, tolerance=1e-8,
+                     computed=tau, expected=1.0, tolerance=1e-8,
                      source="tau_RS(T^b1)=exp(1/2 zeta'_Delta0(0) Sum_q(-1)^q q C(b1,q))=exp(0)=1: "
                             "analytic torsion trivial (pi cancels); fails pi-power=-1 and reciprocal-b1 axes")
     wb.add_assertion("permode_derivative_is_b1_independent_not_reciprocal",

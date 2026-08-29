@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:49:42.512568+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-08-29T11:09:25.401504+00:00",
+  "commitSha": "436b1fcb3e20b485fdd88708c52cd6d97c7c755b",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
-      "computed": -0.18150848456294633,
+      "computed": "-0.18150848456294632830259937258124067365445416948642",
       "expected": -0.1815,
       "passed": true,
       "tolerance": "0.002",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 197,
+  "durationMs": 136,
   "computation": "gap-a4-He3-residual-probe",
   "scriptFile": "gap_a4_He3_residual_probe.py",
-  "scriptHash": "2b597109a313",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "32b1756c5efe",
+  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

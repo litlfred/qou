@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T21:06:44.967242+00:00",
-  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
+  "computedAt": "2026-08-29T10:51:59.101922+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "symbolic_tr_T121_eq_z_plus_h_z2",
@@ -30,7 +30,7 @@
     },
     {
       "name": "numeric_z_series_depth_le2",
-      "computed": 6.203140168996298e-70,
+      "computed": "6.203140168996297971743746714258137369767533870725309659864091199605818e-70",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -38,7 +38,7 @@
     },
     {
       "name": "numeric_tr_T121_closed_form",
-      "computed": 9.689576614344582e-70,
+      "computed": "9.689576614344582233234757641249937205330308382008877862853397932230986e-70",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -46,7 +46,7 @@
     },
     {
       "name": "alpha3_value_not_derived_near_match_10pc",
-      "computed": 0.12808874411435378,
+      "computed": "0.1280887441143537855931516549992460492834828187552073039607551768775653",
       "expected": 0.104,
       "passed": false,
       "tolerance": "0.01",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 22,
+  "durationMs": 20,
   "computation": "probe-9b-alphak-structure",
   "scriptFile": "probe_9b_alphak_structure.py",
-  "scriptHash": "ade7fe590b72",
-  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "scriptHash": "0a31952ea0ab",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -86,10 +86,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

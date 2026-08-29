@@ -105,8 +105,8 @@ def main() -> int:
         w.add_data(f"{atom}_ord_B_pred", mp.nstr(op, 20))
         w.add_assertion(
             name=f"{atom}_decomposition_matches_witness_exponent",
-            computed=float(diff),
-            expected=float(r["log_q0_Delta"]),
+            computed=diff,
+            expected=r["log_q0_Delta"],
             tolerance=2e-3,
             source="ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic "
                    "consistency with the source witness",
