@@ -28,10 +28,23 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
-/-- A Reeb eigenvalue ρ in the spectrum of the Reeb derivation ξ_q. -/
+/-- A Reeb eigenvalue ρ in the spectrum of the Reeb derivation ξ_q.
+
+**Widened to `ℂ` on 2026-08-29 (bean `qou-qspc`).** The field was `ℝ`, with the
+docstring *"the eigenvalue ρ ∈ ℂ (represented here as ℝ for the real part)"* —
+and `spectralSide` then used that real part *as the exponent*. That is not a
+simplification, it is a different sum. In the classical explicit formula
+`X^ρ = X^{1/2}·e^{iγ log X}` for `ρ = ½ + iγ`: the oscillation **is** the
+imaginary part. Substituting `Re ρ` leaves `X^{1/2}`, which is monotone, so the
+formalised spectral side could not oscillate while the `.md` promised that "each
+eigenvalue `ρ` contributes a wave of amplitude `X^ρ/[ρ]_q`".
+
+It also disagreed with the sibling `cor:spectral-half-line`, which quantifies
+over `ρ : Fin 8 → ℂ` and concludes `Re(ρ) = 1/2` — a conclusion that would say
+every eigenvalue *equals* ½ against a real spectrum. -/
 structure ReebEigenvalue where
-  /-- The eigenvalue ρ ∈ ℂ (represented here as ℝ for the real part). -/
-  val : ℝ
+  /-- The eigenvalue ρ ∈ ℂ. -/
+  val : ℂ
 
 /-- The q-integer [ρ]_q = (q^ρ - q^{-ρ}) / (q - q^{-1}).
 
@@ -42,8 +55,32 @@ this is the continuous-index bracket; the canonical `qIntBal` (ℕ) and
 which merely *looked* continuous — there the `rpow`s were at half-integer
 multiples of a `ℕ` index and did reduce to `qIntBal` at `q^{1/2}`.  Here `ρ`
 ranges over a genuine spectrum, so no such reduction exists. -/
-noncomputable def qInteger (q : ℝ) (hq : 1 < q) (ρ : ℝ) : ℝ :=
+noncomputable def qInteger (q : ℝ) (_hq : 1 < q) (ρ : ℂ) : ℂ :=
+  ((q : ℂ) ^ ρ - (q : ℂ) ^ (-ρ)) / ((q : ℂ) - (q : ℂ)⁻¹)
+
+/-- The real-index q-integer, kept because its positivity is a genuine proved
+    fact (`qIntegerReal_pos`) that the complex bracket cannot state. -/
+noncomputable def qIntegerReal (q : ℝ) (_hq : 1 < q) (ρ : ℝ) : ℝ :=
   (q ^ ρ - q ^ (-ρ)) / (q - q⁻¹)
+
+/-- The two brackets agree on a real index: `[ρ]_q` computed over `ℂ` at
+    `(ρ : ℂ)` is the coercion of the real one. Keeps the widening honest —
+    nothing about the real-index case changed. -/
+theorem qInteger_ofReal (q : ℝ) (hq : 1 < q) (ρ : ℝ) :
+    qInteger q hq (ρ : ℂ) = ((qIntegerReal q hq ρ : ℝ) : ℂ) := by
+  have hq0 : (0 : ℝ) ≤ q := by linarith
+  unfold qInteger qIntegerReal
+  push_cast [← Complex.ofReal_cpow hq0]
+  norm_num [Complex.ofReal_cpow hq0]
+
+/-- The widening is not cosmetic: the type now admits an eigenvalue off the real
+    axis, which is exactly what the oscillatory term needs and what the previous
+    `val : ℝ` could not express. With `ρ = ½ + iγ` the classical term is
+    `X^ρ = X^{1/2}·e^{iγ log X}`; at `γ = 0` it degenerates to the monotone
+    `X^{1/2}` that the old spectral side computed for every eigenvalue. -/
+theorem exists_offAxis_reebEigenvalue :
+    ∃ ρ : ReebEigenvalue, ρ.val.im ≠ 0 :=
+  ⟨⟨⟨1 / 2, 1⟩⟩, by norm_num⟩
 
 /-- The q-logarithm ln_q(x) = ln(x) / ln(q). Well-defined for `q > 1`
     (so `Real.log q ≠ 0`); the positivity hypothesis is carried by the
@@ -55,15 +92,15 @@ noncomputable def qLog (q : ℝ) (x : ℝ) : ℝ :=
     over Reeb eigenvalues plus constant and tail terms. -/
 noncomputable def spectralSide
     (q : ℝ) (hq : 1 < q) (spectrum : List ReebEigenvalue)
-    (Omega_q : ℝ) (X : ℝ) : ℝ :=
-  X - (spectrum.map fun ρ => X ^ ρ.val / qInteger q hq ρ.val).sum
-    - qLog q (2 * Real.pi * Omega_q)
-    - (1 / 2) * qLog q (1 - X ^ (-2 : ℝ))
+    (Omega_q : ℝ) (X : ℝ) : ℂ :=
+  (X : ℂ) - (spectrum.map fun ρ => (X : ℂ) ^ ρ.val / qInteger q hq ρ.val).sum
+    - ((qLog q (2 * Real.pi * Omega_q) : ℝ) : ℂ)
+    - (1 / 2) * ((qLog q (1 - X ^ (-2 : ℝ)) : ℝ) : ℂ)
 
 /-- For q > 1, the q-integer [n]_q is positive for positive n. -/
-theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
-    0 < qInteger q hq ρ := by
-  unfold qInteger
+theorem qIntegerReal_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
+    0 < qIntegerReal q hq ρ := by
+  unfold qIntegerReal
   apply div_pos
   · -- q^ρ > q^{-ρ} when q > 1 and ρ > 0
     have hq_pos : (0 : ℝ) < q := by linarith
@@ -219,14 +256,14 @@ structure QZetaDatum where
 class QExplicitFormula (D : QZetaDatum) : Prop where
   /-- The identity, at every `X > 1`. -/
   formula : ∀ X : ℝ, 1 < X →
-    QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X =
+    ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ) =
       spectralSide D.q D.hq D.spectrum D.Omega_q X
 
 /-- The explicit formula holds for a datum satisfying the conjecture. Conditional
     on `[QExplicitFormula D]` (§3b-cond) — the hypothesis is visible in the type
     rather than assumed globally. -/
 theorem explicit_formula (D : QZetaDatum) [QExplicitFormula D] (X : ℝ) (hX : 1 < X) :
-    QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X =
+    ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ) =
       spectralSide D.q D.hq D.spectrum D.Omega_q X :=
   QExplicitFormula.formula X hX
 
@@ -254,6 +291,10 @@ theorem not_qExplicitFormula_empty :
     exact Real.log_neg (by norm_num) (by norm_num)
   have hq34 : qLog 2 (1 - 1/4 : ℝ) < 0 :=
     div_neg_of_neg_of_pos hlog34 (Real.log_pos (by norm_num))
-  nlinarith [h, hq34]
+  -- the identity is now an equation in ℂ, but every term is a real coercion,
+  -- so injectivity of `Complex.ofReal` returns it to ℝ.
+  have hre := congrArg Complex.re h
+  simp at hre
+  nlinarith [hre, hq34]
 
 end QOU.AlgebraicSubstrate
