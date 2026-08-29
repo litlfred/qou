@@ -231,7 +231,7 @@ def main() -> int:
         f"(resid {mp.nstr(resA, 3)}), tau_B^fund = -1/2 + {mp.nstr(tB, 30)}i "
         f"(resid {mp.nstr(resB, 3)})",
         computed=[float(resA), float(resB)], expected=0.0,
-        tolerance=1e-45)
+        tolerance="1e-45")
 
     # ---- W3: AGM periods from the Q-models (no period-matrix input) --------
     tauA_agm, errA = periods_from_model(c4A, c6A, J_A)
@@ -248,7 +248,7 @@ def main() -> int:
         f"Twist-independent; NO Braden-Northover period matrix consumed",
         computed=[float(abs(tauA_agm - tauA_inv)),
                   float(abs(tauB_agm - tauB_inv))],
-        expected=0.0, tolerance=1e-45)
+        expected=0.0, tolerance="1e-45")
 
     # ---- W4b: recover tau0 at 50 dps via the exact SL2(Z) word -------------
     # Reduction word of the literature tau0: gamma' = [[1,1],[-2,-1]] maps
@@ -265,7 +265,7 @@ def main() -> int:
         f"(|diff| = {mp.nstr(abs(tau0_rec - TAU0_LIT), 3)}); Re(tau0) = -1/2 "
         f"exactly by the SL2(Z) word structure",
         computed=abs(tau0_rec - TAU0_LIT), expected=0.0,
-        tolerance=2e-6)
+        tolerance="2e-6")
 
     # ---- W5: X0(5) + the (1,5,5,5) gate, self-certified ---------------------
     five_iso = abs(reduce_fund(5 * tau0_rec) - tauB_inv)
@@ -279,7 +279,7 @@ def main() -> int:
         f"CONFIRMED); Im ratio Im(tau_B^fund)/Im(tau0_rec) = 4*t_A*t_B = "
         f"{mp.nstr(gate, 30)} — the (1,5,5,5) gate's ratio-5 certified at "
         f"50 dps INDEPENDENTLY of the Braden-Northover normalization",
-        computed=gate_dev, expected=0.0, tolerance=1e-45)
+        computed=gate_dev, expected=0.0, tolerance="1e-45")
 
     # ---- W6/W7: the honest tau-scale finding + the deg^2=25 observation ----
     here = os.path.dirname(os.path.abspath(__file__))
@@ -306,7 +306,7 @@ def main() -> int:
         f"carrying per route C's own refutation (entry-[0,0]=1 convention); "
         f"(b) observation, not derivation. Residual 1.1e-5 reported as-is, "
         f"not tuned",
-        computed=rel_dev_25, expected=0.0, tolerance=5e-5)
+        computed=rel_dev_25, expected=0.0, tolerance="5e-5")
 
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
