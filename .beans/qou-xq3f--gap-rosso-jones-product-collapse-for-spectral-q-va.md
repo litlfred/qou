@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-29T02:59:15Z
+updated_at: 2026-08-29T06:42:40Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -188,3 +188,5 @@ CARRIER BRIDGE COMPLETE (unconditional, sorry-free): schurElement_eq_schurPrinci
 FULL UNCONDITIONAL M1 drafted (WenzlJonesMarkovNormalisation.lean): sum_dim_jonesMarkovCoeff_eq_one -- SUM over SYT-weighted diagrams of size n of f^nu * jonesMarkovCoeff Q (Q^r) nu.rowLens = 1, general n, unconditional. Route AVOIDS a List-sum conversion: proved termwise = wenzlWeight via the carrier bridge + ofRowLens_to_rowLens_eq_self, then cites the proved SchurWeyl.sum_dim_wenzlWeight_eq_one. Sub-lemmas: rowLens_sum_eq_card, levelBracket_eq (geom sum), jonesMarkovCoeff_rowLens_eq_wenzlWeight. Proof written; blocked only on the SchurWeyl olean cone (WenzlNormalisation + deps missing from restored cache) -- delegated env-build + verification.
 
 FULL UNCONDITIONAL M1 VERIFIED (sorry-free): sum_dim_jonesMarkovCoeff_eq_one compiles via lake build (3308 jobs, whole SchurWeyl cone from source; cache get 403'd). #print axioms = [propext, Classical.choice, Quot.sound]. This closes the M1 arc: general-n Markov normalisation tr_M(1)=1 for the concrete List-carrier jonesMarkovCoeff weights, DERIVED from the proved SchurWeyl.sum_dim_wenzlWeight_eq_one via the carrier bridge (no fit, no assumption). INFRA FINDING: lake-cache/qou-v4-24-0 has ZERO SchurWeyl oleans -- the whole cone must be rebuilt from source by anyone touching it; candidate for re-seeding.
+
+GENERAL-X TELESCOPE (research frontier) STARTED: MacdonaldTelescopeGeneralX.lean lays out the polynomial-identity route (both telescope sides are polynomials in X of degree n, agreeing at all X=Q^r via the merged bridge + sum_dim_wenzlWeight_eq_one; {Q^r} infinite for Q>1 ⇒ Polynomial.eq_of_infinite_eval_eq forces equality for ALL X). Brick 1 landed sorry-free (powers_infinite: {x|∃n,Q^n=x} infinite for Q>1). Bricks 2-4 open + substantial (schurElementPoly : ℝ[X] lift of the nested product; un-normalised X=Q^r agreement; assembly). Research tranche, not one-sitting.
