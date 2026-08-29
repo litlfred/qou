@@ -15,7 +15,18 @@
   no referent.  `VOL_5_2` is *defined* as `3·D(y₁)`, which is a definition, not a
   computation of an invariant.
 
-  Closing that needs a theory of hyperbolic 3-manifolds (Mathlib has none), Mostow
+  ⚠ **The corpus DOES carry a second "volume of M", and it is not this one.**
+  `QOU.Encounter.MostowRigidity` has a class field `volume : ℝ` with *instances* --
+  `figureEight` sets it to the literal `2.02988321281930`, synced from a witness by
+  `codemod-leanval.ts`.  So `volumeInvariant FigureEight = 2.0298…` holds by `rfl`.
+  That is a manifold-side number, but an ENTERED one: nothing in that module mentions a
+  triangulation, and no theorem there relates it to `Σ D(zᵢ)`.  Two carriers for one
+  quantity is the collision the notation discipline warns about, so read this file as
+  supplying the missing TRANSPORT rather than a third notion.
+  `QOU.Encounter.MostowTriangulationBridge` spends it on exactly that, and is where the
+  two are finally connected.
+
+  Closing the gap needs a theory of hyperbolic 3-manifolds (Mathlib has none), Mostow
   rigidity for invariance, and Thurston hyperbolisation for the bridge itself.  **This
   file does none of that.**  What it does is make the dependence EXPLICIT: downstream
   statements can now carry the bridge as a named hypothesis in their type instead of
