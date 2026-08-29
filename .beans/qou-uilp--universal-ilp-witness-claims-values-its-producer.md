@@ -1,11 +1,11 @@
 ---
 # qou-uilp
-title: 'universal-ilp.witness.json claims bond_HH/bond_CC that its producer cannot compute (NameError)'
-status: todo
+title: universal-ilp.witness.json claims bond_HH/bond_CC that its producer cannot compute (NameError)
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-28T00:00:00Z
-updated_at: 2026-08-28T00:00:00Z
+updated_at: 2026-08-28T20:20:23Z
 ---
 
 Found running two "GAP: broken producer" beans to see whether their claims held.
@@ -103,3 +103,41 @@ Not attempting any of them: (1) is unimplemented math, (2) destroys data, and
 **Do not "fix" this by regenerating the witness.** The regeneration fails, and
 a partial witness written from a failed run would be worse than the current
 state — it would look fresh.
+
+
+---
+
+## RESOLVED 2026-08-28 — route 3, narrowed on measurement (PR #5923)
+
+Took route 3 ("mark historical"), but **not** its literal wording. The bean
+said to drop the `computation.witness` link. Re-reading the block, the false
+claim is in **`status: "verified"`**, not in the link: `universal-ilp.witness.json`
+genuinely IS the artifact the block refers to, and it is the only surviving
+record of the April computation. Dropping the pointer would destroy the trail
+to the data without removing any false claim.
+
+So:
+
+  * `content/.../universal-ilp-algorithm.ts`: `status: "verified"` to `"error"`,
+    reason inline; `witness:` link KEPT.
+  * `computations/universal-ilp.py`: header stating LEVEL 4/4b are unimplemented
+    (`apply_atom_nf` never defined anywhere), that the run aborts before the
+    witness write, that the committed witness is a HISTORICAL RECORD, and that
+    re-running to "refresh" it is forbidden — a partial run would read as fresh
+    while being less complete than what is committed.
+
+Re-verified the producer's failure on a live run before editing anything:
+`NameError: name 'apply_atom_nf' is not defined` at :191, raised before
+`results['bond_HH']` is assigned. `run-validate.ts` exit 0.
+
+Routes 1 (implement `apply_atom_nf` — real unimplemented math) and 2 (excise
+Levels 4/4b and regenerate without the bond values) remain **author calls** and
+are untouched. Nothing here forecloses either.
+
+
+**Count correction (same PR).** The "Why nothing caught it" section above cites
+`1j39`'s "169 unstamped-but-resolvable, 124 portable, 45 unattributed". The
+**124 portable** half of that is wrong — see `1j39`; 62 of those 120 producers
+already use `WitnessBuilder` and are fixed by a re-run, not by porting. This
+witness's own classification is unaffected: it names no producer at all, so it
+sits in the unnamed bucket either way, and no re-run can help it.

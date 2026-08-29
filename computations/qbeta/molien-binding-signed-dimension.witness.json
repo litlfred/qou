@@ -1,0 +1,54 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T02:49:30.767319+00:00",
+  "commitSha": "ff5ce012bdf1ac3bfe23ce343449df55f1cbb252",
+  "assertions": [
+    {
+      "name": "s3_delta_from_fake_degree",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "(-1)^(u-val) fd(1) == (-1)^n(lambda) dim, exact sympy S_3"
+    },
+    {
+      "name": "s4_delta_from_fake_degree",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "(-1)^(u-val) fd(1) == (-1)^n(lambda) dim, exact sympy S_4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "molien-binding-signed-dimension",
+  "scriptFile": "molien_binding_signed_dimension_probe.py",
+  "scriptHash": "93667c8e518e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/molien_binding_signed_dimension_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/molien_binding_signed_dimension_probe.py"
+  },
+  "description": "bean qou-3quc (Molien->binding hook): the PROVED binding signed dimensions Delta_lambda = (-1)^{n(lambda)} dim V_lambda are read off the SAME Webster-Williamson S_n Molien series M_nu(u,t) that gives the Jones-Markov weights -- at the fake-degree edge t=0: n(lambda) = u-valuation of fd_lambda(u)=numer M_nu(u,0), dim V_lambda = fd_lambda(1). Weights live at (u=q^2, t=qz/(q^2-qz-1)); binding signed-dims live at (u, t=0). The whole B = Sum y_lambda chi^lambda Delta_lambda is one bigraded Molien object read at two corners. Exact sympy at S_3, S_4. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-molien-jones-markov-n3-identification.md",
+  "data": {
+    "delta_from_molien": "Delta_lambda = (-1)^(u-val fd_lambda) * fd_lambda(1)",
+    "fake_degree_edge": "fd_lambda(u) = numerator of M_nu(u, t=0)",
+    "free_parameters": 0
+  }
+}

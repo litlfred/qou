@@ -297,6 +297,53 @@ def main() -> int:
                 print(f"    λ = {lam}, (μ, ν) = ({mu}, {nu}), c^λ = {c}")
 
     witness = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        # NOTE: the audit doc moved to `_deprecated/`; the committed witness
+        # still pointed at the pre-move path, so this pointer was DANGLING.
+        # Nothing checks `auditOnly` resolves. Corrected here.
+        #
+        # 🛑 NOT STAMPED, unlike the four sibling producers fixed alongside it.
+        # `stamp_q0` would be safe only if a re-run changed nothing but
+        # provenance. Measured 2026-08-28, a re-run of THIS producer moves 92
+        # lines of numbers — `value_re` shifts in the 4th significant digit
+        # (1.00544843… -> 1.00552033…) and `max_relative_residual` goes
+        # 25.3556 -> 25.5245, a ~7.19e-5 change.
+        #
+        # THE CAUSE IS THE FLOAT64 -> MPMATH PORT, and the committed values are
+        # the OLD ones. The witness is stamped
+        #     computedAt   2026-08-24T08:06:59
+        # and `253e2ffaf5` ("sublemma alpha-shift solves in mpmath, and the
+        # FIRST fix was wrong") landed at
+        #     2026-08-24T08:10:43
+        # — **3 minutes 44 seconds later**. That commit swapped
+        # `chi_lambda_fast` -> `chi_lambda_fast_mp` and `Q` (a Python float)
+        # -> `Q_MP` (an mpf). So the committed numbers came out of the float64
+        # producer, minutes before it stopped existing, and a fresh run is the
+        # mpmath one. The drift is a CORRECTION and the fresh values are the
+        # better ones — the same shape as the A-operator case in
+        # docs/audits/2026-08-23-pr5517-downstream-witness-attribution.md §1,
+        # and the same "stamped minutes before the commit that superseded it"
+        # signature as its §0.
+        #
+        # NOT the cause, though the corpus records it and it is easy to reach
+        # for: §2 of that audit attributes a 1.745e-7 move here to a muon ->
+        # proton re-pin on regeneration (`qou-b3l8`). That has since HAPPENED —
+        # this witness's `parameters.q_0` already reads the proton pin
+        # 1.10997858275138…, and 7.19e-5 is ~400x that effect anyway.
+        #
+        # So the committed witness is left exactly as it is. Adding the stamp
+        # here would force a regeneration that rewrites 92 lines of values
+        # under a commit message about provenance — a substantive change
+        # smuggled past a reviewer, which AGENTS.md forbids regardless of the
+        # values being better. Regeneration IS now justified, deliberately and
+        # on its own commit, by whoever picks up `qou-b3l8`; the provenance
+        # keys above will land with it.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/_deprecated/2026-05-04-sublemma-2-1-categorical-proof.md",
         "computation": "sublemma-2-1-alpha-shift-extract",
         "description": (
             "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron "

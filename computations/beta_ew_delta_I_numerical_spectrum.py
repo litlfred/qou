@@ -255,6 +255,13 @@ def main() -> int:
     print(f"VERDICT: {verdict}")
 
     out = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/2026-05-06-staircase-ew-predictions.md",
         "computation": "beta-ew-delta-I-numerical-spectrum",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (

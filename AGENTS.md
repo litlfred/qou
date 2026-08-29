@@ -1520,8 +1520,38 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
 > 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
 > **prune stands and the real-q c₃ family stays killed** — only the
-> quoted magnitude was wrong. The five other sites are audit docs and
-> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+> quoted magnitude was wrong.
+>
+> **🛑 "five other sites" was wrong by an order of magnitude, and wrong
+> about WHERE (corrected 2026-08-29, bean `qou-kt8o`).** Measured on
+> `origin/main`, excluding `.beans/`: the figure appears in **43 files on
+> 71 lines** that also name `c₃` on the same line, and in **88 files** by a
+> file-level scan that allows the figure and the `c₃` context to sit on
+> adjacent lines. Either number is ~10–20× the "five" claimed here, so do
+> not treat this figure as nearly drained.
+>
+> **The characterisation misled more than the count.** "Audit docs and
+> `local/compute-author` §precedent-table" names neither of the two places
+> that actually matter. By the tight line-level measure the largest group is
+> **`computations/qbeta` (20 files)** — live probes, producers and witness
+> `description` fields, i.e. code that *recomputes* the stale figure rather
+> than merely recording it — against 8 in `docs/audits`. And there are
+> **5 `.lean` files**, which this note does not mention at all; one of them
+> (`FaddeevModularDouble.lean`) carried the superseded `c₃ = -2.0097`
+> itself, not just the derived slope. All 5 are fixed as of #5942.
+>
+> **Both spellings are the same stale value.** `4.6e6` and `4.66e6` are
+> one figure: the secant `|-2.0693 - (-2.0097)|/1.28e-8 = 4.65958e6`. Its
+> companion `Δc₃ = 0.0596` is a third spelling. A grep for `4.6e6` alone
+> finds well under half of them.
+>
+> **Do not sweep the remainder blind.** Most survivors are dated audit docs
+> — `qou-3nva` deliberately left those as historical records of the
+> analysis, and that decision stands — or witness `description` fields,
+> which cannot be corrected without re-running their producer. Several use
+> `4.66e6` as the *input* to a refutation whose conclusion holds under
+> `3.84e6` anyway. Re-measure the specific file you are editing, and fix at
+> the producer; tracked in `qou-3nva` / `qou-kt8o`.
 
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets

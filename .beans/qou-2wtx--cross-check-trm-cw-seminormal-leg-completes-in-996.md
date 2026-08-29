@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T23:47:23Z
+updated_at: 2026-08-29T06:46:21Z
 ---
 
 ## The measurement
@@ -560,3 +560,59 @@ feel earned.
 defects chain, and the peel regeneration itself are all independent of this and
 stand. `main` reproduced the identical regenerated values from a different
 diagnosis and a different environment.
+
+
+---
+
+## STEP 1 LANDED ON MAIN — and step 2's residual is now measured (PR #5962)
+
+This bean's step 1 ("regenerate the peel witness under convention D") was
+recorded as *"still not regenerated on main as of +165 commits, unclaimed"*.
+**It has since landed**: `cfe73b8eb5` ("drain(q0): re-run the flip producers at
+the derived anchor") regenerated
+`computations/markov/markov-peel-atomic-tr-m.witness.json`, and its values match
+this bean's predicted regeneration **to every digit**:
+
+    proton    1.1457596924573008696890
+    neutron   0.9877436881158095716340
+    deuteron  0.5751722439177718708265
+
+Independent confirmation of the diagnosis, from a different session and a
+different route.
+
+## The consumer has now been re-run, and the O(1) term is gone
+
+| atom | this bean, C-era peel | now, D peel |
+|---|---|---|
+| triton | 1.20e+00 | 1.98e-07 |
+| helium-3 | 9.55e-01 | 2.53e-07 |
+| helium-4 | **1.91e+00** | **2.99e-07** |
+
+Worst **1.91e+00 → 2.99e-07**, a **6.4e6× improvement**. The prediction that
+step 1 alone is a ~10^6× improvement was right.
+
+**The ~1e-7 residual is defect 2 exactly as this bean scoped it** — the pin
+straddle, peel stamped `proton` against a leg resolving `ideal_muon`. Corroborated
+from the other side: the L1 cross-check independently reports `rel_delta_max`
+2.9066e-07 for helium-4 (see `qou-wgaw`). Same scale, same cause.
+
+`allPassed` moves True → False. That is the pass→fail regression this bean
+found, now landed **with its dominant cause removed** rather than concealed.
+
+## Budget correction — 1501 s, not 996 s
+
+Measured on the same producer, 2026-08-29: **1501 s total, helium-4 alone
+1499 s (99.9 %)**. This bean measured 996 s on 2026-08-24. Both are real runs;
+the 1.5× gap is **not explained**, and two candidates are untested (slower
+container; the convention-D peel changed the work). Budget **1500 s**.
+
+The method note stands and is the reusable part: **the five cheap atoms take
+~2 s combined and all of them fail too**, so any hypothesis is testable in
+seconds rather than 25 minutes.
+
+## Step 2 remains open
+
+Dropping the leg's `QOU_Q0_ANCHOR=ideal` default and its muon assert so both
+legs sit at proton is NOT done here. It is a pin-policy change on an L1
+reference, and this PR's subject is the A→C repin. Its expected value is the
+remaining ~1e-7.

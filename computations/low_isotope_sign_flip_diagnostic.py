@@ -229,7 +229,11 @@ def main() -> int:
     # KLR-positivity cross-check
     klr_pos_violations = [
         r for r in rows_out
-        if float(r.get("err_pct", 0)) < 0
+        # _mpf, not float(): this sign test CLASSIFIES a row into the
+        # KLR-positivity violation list whose count is recorded in the
+        # witness, so it is an argument, not a display.  AGENTS.md
+        # ("PROBES ARE NOT EXEMPT") permits float() only inside an f-string.
+        if _mpf(r.get("err_pct", 0)) < 0
         and r["prediction_type"] == "binding_energy"
     ]
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:30:44.696993+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-29T08:56:23.716016+00:00",
+  "commitSha": "5ea6338121bebd9da568a2998279807aac19ad58",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -18,7 +18,7 @@
   "durationMs": 5,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "535b3e89b0d3",
+  "scriptHash": "fc1197d7a4e8",
   "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
   "precisionMetadata": {
     "compute_dps": 70,

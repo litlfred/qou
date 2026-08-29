@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T05:50:54.126504+00:00",
-  "commitSha": "b4951c19f6819c61c3426b760aa76f42338ea234",
+  "computedAt": "2026-08-29T06:58:57.935063+00:00",
+  "commitSha": "4c794c440268815487b48ba5b49172d2120e2211",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 96,
+      "computed": 95,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2849,
-      "prov_ok": 2427,
+      "total_scanned": 2850,
+      "prov_ok": 2429,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 243,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 96,
+      "prov_missing": 95,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.966303966303966303966303966303966303966303966303966303966304"
+      "completeness_ratio": "0.966666666666666666666666666666666666666666666666666666666667"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4750,6 +4750,10 @@
           "missing_fields": []
         },
         {
+          "witness": "no-free-parameter-certificate.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "nonet-mixing-purity.witness.json",
           "missing_fields": []
         },
@@ -5967,6 +5971,10 @@
         },
         {
           "witness": "he4-9-3-trace-dominant-correction-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "he4-body-order-shortfall-location.witness.json",
           "missing_fields": []
         },
         {
@@ -10136,12 +10144,6 @@
             "engine",
             "scriptFile",
             "commitSha"
-          ]
-        },
-        {
-          "witness": "no-free-parameter-certificate.witness.json",
-          "missing_fields": [
-            "engine"
           ]
         },
         {
