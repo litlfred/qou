@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T07:47:31Z
+updated_at: 2026-08-29T07:55:41Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -401,3 +401,39 @@ makes the whole quadratic sign-definite.
 
 Which is the same fact as the NF-vector comparison, now in closed form: the
 gluon and trefoil channels are simply not in the object `hecke_core` traces.
+
+
+## 2026-08-29 (cont. 8) — archaeology: BLOCKED at the clone boundary, and I nearly reported the boundary as the answer
+
+Owner asked to keep going and find the table's producer by commit archaeology.
+Result: **cannot be determined from this clone**, and the way it fails is worth
+recording because I walked into it.
+
+**Deepened** 338 → **14,679** commits (`git fetch --deepen=3000`).
+`git fetch --unshallow` did **not** complete in the time available; the repo is
+still shallow with **6 grafts**.
+
+**The trap.** With the deeper clone, `git log -S"1.0109"` and
+`git log -S"0.0445860283"` both bottom out at the *same* three commits —
+`c43d8b253d`, `a41b592e50`, `a3e3f5e4fa`, all 2026-06-12 — which looks exactly
+like a co-introduction. It is not: **`.git/shallow` lists those very commits as
+grafts**, and `git rev-list --max-parents=0` returns precisely the six graft
+points as if they were roots. The "earliest" result *is* the fetch horizon.
+
+**Third time this session** a "found the origin" answer was the boundary: the
+`scriptCommitSha` class AGENTS.md warns about, then the first `--diff-filter=A`
+attempt, now this. The tell is always the same — several independent searches
+agreeing on one suspiciously round date.
+
+**What IS established about the table, independent of history:**
+`categorical-neutron-table-data.ts` carries **no** `computation.script` and no
+`computation.witness`; it is tagged **`extracted-table`**. So no producer is
+declared, whatever the history says. The nearest analogue found — commit
+`a41b592e50`, *"conj-table digit fix"* — is a **different** table
+(`conj-canonical-knot-id-sdp`, knot volumes) whose stale digits were replaced
+by census values, **owner-confirmed**, i.e. hand-edited rather than
+regenerated. Suggestive of the same pattern here; **not evidence for it**.
+
+**How much this still matters: less than it did.** The exact parabola gives
+infinite precision on the `hecke_core` side, so that exclusion is now a theorem
+and needs
