@@ -6,12 +6,12 @@
   "scope": "scope-(a), diagnosis only. Wires nothing, changes no value, regenerates no witness. Only one script in computations/ enforces a runtime pin, so this is this gate \u2014 not a corpus-wide class.",
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "computedAt": "2026-08-29T00:08:57.585686+00:00",
-  "commitSha": "9e0be429156cafcd0ff4fe39bb727e4b12474e2f",
+  "computedAt": "2026-08-29T04:05:27.371933+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_trm_crosscheck_convention_pin_split_probe.py",
-  "scriptHash": "de5fab542d84",
+  "scriptHash": "cef88f217f30",
   "assertions": [
     {
       "name": "1_hoef_and_chi_are_same_footing",
@@ -56,12 +56,12 @@
       "markov_peel": {
         "witness": "markov-peel-atomic-tr-m-muon",
         "q0Anchor": "muon",
-        "recorded_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+        "recorded_q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
       },
       "Habiro": {
         "witness": "habiro-coefficients-extended",
-        "q0Anchor": "proton",
-        "recorded_q0": "1.1099785827513808075916690956107688798744991218736"
+        "q0Anchor": "muon",
+        "recorded_q0": "1.109978595642739046681795129380001752700065561029011556974045769999095"
       }
     },
     "hoef_vs_chi_rel": "0.00000000321990414805465830166504854223538449613535015134474463044398",
@@ -75,5 +75,7 @@
     "gate": "computations/cross_check_trM_1ppb.py (the L1 compute-precision gate)",
     "audit": "docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md",
     "corpus_context": "1966 of 2681 witnesses (73%) carry no q0Anchor"
-  }
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0
 }
