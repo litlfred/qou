@@ -16,6 +16,11 @@ Run: `cd computations && PYTHONPATH=. python3 probes/np_splitting_residual_probe
 """
 from __future__ import annotations
 
+# bootstrap: _path_bridge lives in computations/, one level up from this
+# cluster dir, so it must be on sys.path BEFORE it is imported. Without
+# this the module is unresolvable and the script cannot run standalone.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401
 from fractions import Fraction
 

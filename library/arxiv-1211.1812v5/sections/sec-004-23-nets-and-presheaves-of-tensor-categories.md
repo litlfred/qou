@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 9-14
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 In the present section we recall some properties of nets and pres heaves of tensor categories, that
 constitute one of the main objects of study in the present paper. More detailed references on this

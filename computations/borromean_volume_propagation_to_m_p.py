@@ -36,6 +36,7 @@ if str(HERE) not in sys.path:
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 
 
@@ -156,7 +157,7 @@ def main() -> int:
     delta_8G_ppm = mp.fabs(delta_8G / M_P_CODATA * mp.mpf("1e6"))
     w.add_assertion(
         "m_p residual via exact 8·G Vol(𝓑₃) drops below 2 ppb",
-        computed=float(delta_8G_ppm * mp.mpf("1e3")),  # in ppb
+        computed=fmt(delta_8G_ppm * mp.mpf("1e3")),  # in ppb
         expected=0.0,
         tolerance=2.0,
         unit="ppb",

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T21:29:51Z
-updated_at: 2026-08-24T21:30:29Z
+updated_at: 2026-08-29T08:28:37Z
 ---
 
 Found 2026-08-24 completing the qou-37xc conversion of _li_2_q_util (PR #5622,
@@ -63,3 +63,31 @@ WHAT VERIFIED THE CONVERSION ITSELF, separately from these negatives: five
 witnesses moved by exactly 5.056e-01, which is the predicted quadratic ratio
 (z_D/z_C)^2 = 1.505637 computed in advance. A wrong substitution cannot
 manufacture that.
+
+
+CORRECTION 2026-08-29 (bean qou-zloi, PR #5978) -- item 1's "Related:" line is
+wrong in kind, and the rest of item 1 stands.
+
+That line reads: "Related: the Phi_q-pole problem recorded on bean qou-2tuv and
+in mass_at_3A_proper.per_generator_V_hat_3A's docstring ('V_hat at 1.08837
+against a cap of 1.087779')." MEASURED: that pole problem is NOT an instance of
+the C -> D change and cannot be moved by re-pinning the convention.
+
+`per_generator_V_hat_3A` is affine in an effective Markov parameter
+Z = Sum_lambda omega_lambda tr(sigma^lambda)/dim lambda, and its production
+weight scheme (normalized_plancherel) pins Z = h/2 = (q - 1/q)/2 = 0.10453014
+BY SYMMETRY -- 79 % below z_C = 0.4993203 and 83 % below z_D = 0.6126880, and
+identical at n = 3, 6, 9. Proved: QOU.BraidsAndKnots.markov_param_eq_half_h
+(normalised + transpose-symmetric weights force h/2, any n). So the convention
+never reaches that producer; the pole distance is set by the sigma-coefficient
+alpha_i of the collapsed braid word (QOU.BraidsAndKnots.vHat_margin).
+
+WHAT STILL STANDS. Item 1's own subject -- convergence_safe_vhat_tower emitting
++inf in 12 fields under D -- is a DIFFERENT producer and is untouched by this.
+Items 2 and 3 are untouched. The C->D cascade is real; it just does not extend
+to `per_generator_V_hat_3A`.
+
+Note also that 1.08837 is the NEUTRON's gen-1 V_hat, not the proton's
+(proton max is 1.0551103188). And the corpus carries two inequivalent proton
+V_hat -- canonical_tower.per_gen_V_hat_canonical gives 1.0646262154 by a
+Plancherel-averaged JM eigenvalue -- so quote the entry point with the number.

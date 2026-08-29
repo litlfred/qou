@@ -218,8 +218,14 @@ def main() -> int:
         tolerance="1e-15",
         source="mp.findroot on z_N(q_0); independent of #4766's N_eff",
     )
+    # Was add_assertion(name, 0, 0) -- `x == x`, with source="sympy exact" claiming a
+    # computation it did not perform. The predicate is already evaluated above for
+    # checks["no_integer_rank_is_bar_invariant"]; count it rather than assert a literal.
+    _n_bar_inv = sum(1 for _n in range(1, 9)
+                     if sp.simplify(q ** (-2 * _n) - 1) == 0)
     wb.add_assertion(
-        "n_integer_ranks_that_are_bar_invariant", 0, 0, source="sympy exact"
+        "n_integer_ranks_that_are_bar_invariant", _n_bar_inv, 0,
+        source="sympy exact, counted over n = 1..8"
     )
 
     wb.add_data(

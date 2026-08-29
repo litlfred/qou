@@ -7,6 +7,7 @@ section_number: 3
 pages: 14-18
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 The goal of this section is to introduce the stack of ﬁber func tors and prove Theorem A. We
 will work over a base ring R and denote by A a general R-algebra.

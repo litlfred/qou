@@ -7,6 +7,7 @@ section_number: 5
 pages: 21-27
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 Several deﬁnitions of non-abelian bundle gerbes have appeared in lit erature so far [ACJ05, Jur11,
 MRS]. The approach we give here not only shows a conceptually clear w ay to deﬁne non-abelian

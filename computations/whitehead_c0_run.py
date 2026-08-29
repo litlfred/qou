@@ -70,6 +70,15 @@ def write_witness(vals, note):
         "progress_note": note,
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    w.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, engine=None, q0_anchor=False)
     OUT.write_text(json.dumps(w, indent=2))
     print(f"    witness updated ({note}): c0_mean={c0_mean:.4f} factor={factor:.2f} -> factor {nearest}", flush=True)
 

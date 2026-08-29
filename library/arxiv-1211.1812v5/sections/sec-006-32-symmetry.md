@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 16-17
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 As a ﬁnal step we consider the symmetry structure. This is an esse ntial ingredient at the level of
 duality theory ([16, §1]) and, at the same time, encodes the Fermi-Bose statistics (see [1 3] for a

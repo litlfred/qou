@@ -1,11 +1,11 @@
 ---
 # qou-qb8g
-title: "c_3's bar-parity is UNDETERMINED — neither named split is derived"
+title: c_3's bar-parity is UNDETERMINED — neither named split is derived
 status: todo
 type: task
 priority: medium
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-08-08T12:05:00Z
+updated_at: 2026-08-29T10:50:30Z
 ---
 
 *** REWRITTEN 2026-08-08 (same day). The original title was "Prove c_3^even = 0".
@@ -356,3 +356,11 @@ bar(z_D) = q^-4 * z_D exactly (probe
 qbeta-c3-ladder-trace-convention-sensitivity, 9/9) — so under D the trace
 parameter itself carries a monomial bar-twist (KC16-style). Scope-(a):
 observation, not a parity result.
+
+
+## 2026-08-29 — workflow (symbolic-exact, both lenses survive): the alpha_C/alpha_D bar-homogeneity discriminant
+NEW derived structural obstruction to porting the C bar-split to D: alpha_C=(z_C-1)h/2 is PURE bar-odd (bar-even part exactly 0) -- which is WHY log R = E(u-tilde)+h*D(u-tilde) can pin the even channel E with normalisation in advance. alpha_D=(z_D-1)h/2 is bar-MIXED (even part (q^2-1)^2/(4q^2) != 0 AND odd part != 0) because z_D-1 is not bar-homogeneous (z_D bar-weight -4, const 1 weight 0). So the pure-odd-phase mechanism has NO D analog yet. Does not supply a parity; identifies the exact obstruction. No D-frame c3 exists until cds1 lands -> no D-frame parity. (bar(z_D)=q^-4 z_D exact.) Audit 2026-08-29-convention-d-qbeta-front.
+
+
+## 2026-08-29 — the alpha_D bar-mixed obstruction is now PROVED-LEAN (landed)
+QOU/QBeta/EigenphaseBarMixedD.lean committed (0f4df6eed6), sorry-free (clean axioms): twoAlphaD_bar_even_sum (2a_D(1/q)+2a_D(q)=(q^2-1)^2/q^2) + twoAlphaD_not_bar_odd. Contrast alpha_C pure bar-odd (QOU.Interactions.eigenphase_bar_involution). This machine-checks the exact obstruction to porting the C bar-split to D. Parity still OPEN (blocked on cds1 D ladder).

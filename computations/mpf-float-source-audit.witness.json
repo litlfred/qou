@@ -218,5 +218,14 @@
         "fix": null
       }
     ]
-  }
+  },
+  "scriptFile": "mpf_float_source_audit.py",
+  "scriptHash": "cdeb737aadf9",
+  "scriptCommitSha": "unknown",
+  "commitSha": "19c22712bb5c535b1483138fcdc36afe77a3d02a",
+  "engine": "python",
+  "computedAt": "2026-08-29T07:01:21.846720+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

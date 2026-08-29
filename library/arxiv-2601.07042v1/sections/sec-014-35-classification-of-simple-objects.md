@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 22-25
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
+doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
 ---
 corresponding to basic classes in the elliptic twisted Levi subgroupsM „Ý ÑResE{FpGLsqofGL n which
 are not isomorphic to an object of the formY ‘c for a basic objectYcorresponding toRes E{FpGLs1qfor

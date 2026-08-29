@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 7-9
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
+doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
 ---
 ΓE{F
 Z-gradedLE-algebra

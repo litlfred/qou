@@ -9,7 +9,7 @@
       "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Li₂(z)+Li₂(1/z)+½log²(−z) = −π²/6 (dilog inversion formula) — the cusp crossing x↔1/x forces this constant"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.6449340668482264e-12,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "the Faddeev inversion constant iπ(b²+b⁻²)/12 at the Li₂ level (×2πib²) → −π²/6 as b→0 — the modular anomaly the bare partial product lacks and Φ_b carries"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 5.4334074472960274e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the inversion constant = the extended-Bloch/Rogers normalization pairing Li₂ ↔ Bloch–Wigner"
     }
   ],

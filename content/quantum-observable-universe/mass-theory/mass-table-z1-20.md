@@ -22,9 +22,34 @@ $q_{0}$ is confined to step 3 alone.
 
 See [Table](#tbl:mass-table-z1-20-table-data).
 
-The row values tabulated here are **not currently reproducible** from a
-committed witness — the referenced `atom-mass-complete-wedderburn`
-witness is absent from the repository. The live mass-prediction
+The row values tabulated here are reproduced by
+[`wedderburn_mass_table_z1_20.py`](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py)
+from the committed witness `wedderburn-mass-table-z1-20`, evaluating the
+formula above at the proton-pin $q_{0}$ with zero fitted parameters: the
+three coefficients are fixed by $m_{e}$, Catalan's constant and $q_{0}$
+through the formula's own definitions.
+
+These values supersede an earlier table computed with a third coefficient
+of $0.0499$ in place of $h_{\mathrm{A}}^{2}$. That coefficient has no
+derivation in the corpus, and it is inconsistent with the same table's
+second coefficient: since
+$[3]_{q} - 3 = q^{2} - 2 + q^{-2} = h_{\mathrm{A}}^{2}$, the two are locked
+as $-2[3]_{q} = -6 - 2h_{\mathrm{A}}^{2}$, and the recorded
+$-2[3]_{q} = -6.087415$ agrees with $h_{\mathrm{A}}^{2} = 0.0437$, not with
+$0.0499$. Every row moved, by at most $1.206\;\mathrm{MeV}$; agreement with
+AME2020 is materially unchanged (mean $0.075\%$, max $0.191\%$, against
+$0.074\%$ and $0.192\%$), because $\Phi_{3}$ enters roughly fifty times more
+weakly than $\Phi_{1}$. The correction is one of provenance, not of fit.
+
+Two limitations remain. The three invariants
+$\Phi_{1}, \Phi_{2}, \Phi_{3}$ are carried from the superseded producer
+rather than re-derived, so the transfer-matrix computation behind them is
+not itself reproduced here. And the base masses used are
+$44$ and $36\;\mathrm{ppm}$ below CODATA, which accounts for roughly
+$1.5\;\mathrm{MeV}$ at $Z = 20$; correcting them is a separate change and
+has not been made.
+
+The live mass-prediction
 pipelines give substantially larger errors than these figures: nucleons
 at $+2.89\%$ (Family-A VolDensity); $\mathrm{D}/\mathrm{T}/{}^{3}\mathrm{He}$
 at $\sim 1$–$3\%$ via census-assigned knots; and $A \geq 4$ via the

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 6-7
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
 ---
 rigid category, with simple unit object 1∈C . We refer to [ 10] for more details
 on ﬁnite tensor categories. Without loss of generality, we s hall assume that

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 23-27
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 the vector bundles on X and on Fib X , C.
 Proposition 5.14. Let X and C be as in 5.1. The following conditions are equivalent:

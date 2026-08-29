@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exp/linear Schwinger resid differ by <0.01 ppb (h4a2~1e-7 negligible)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "c2 known to ~1 sig fig (residual pin+sigma limited) => PSLQ hopeless"
     }
   ],

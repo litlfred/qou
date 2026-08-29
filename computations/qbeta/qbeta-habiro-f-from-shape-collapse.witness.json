@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "S_N0 = (2q+1-q²)(q²-1)/(2q²): diagnostic — S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 1/(q-1) pole). Pass ⇒ confirms this S is the SDP-constraint scalar, NOT the ladder normalization. The categorical f-construction needs symbolic Q_A(q) and α(q), not Q_β/E_0."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "S_tower = S_N0 · (1-ℏ_q²): diagnostic — S(q=1) should equal 0 (Q_β · (q-1) zero meets E_0 1/(q-1) pole). Pass ⇒ confirms this S is the SDP-constraint scalar, NOT the ladder normalization. The categorical f-construction needs symbolic Q_A(q) and α(q), not Q_β/E_0."
     }
   ],

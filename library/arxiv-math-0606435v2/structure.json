@@ -2,10 +2,11 @@
  "_schema": "pdf-structure/v1",
  "doc_id": "arxiv-math-0606435v2",
  "source": {
-  "file": "0606435v2.pdf",
+  "file": "0606435v2 (1).pdf",
   "sha256": "6dddaf838a19f0f5c366a60f27b03a782dc04ea8ba2b8e968de0159f01a55b34",
   "bytes": 618020,
-  "pages": 68
+  "pages": 68,
+  "text_source": "embedded"
  },
  "metadata": {
   "arxiv": {
@@ -17,6 +18,9 @@
   "doi": null,
   "title": "PROPERTIES OF CLOSED 3-BRAIDS",
   "authors_raw": "AND OTHER LINK BRAID REPRESENTATIONS",
+  "title_lines": [
+   "PROPERTIES OF CLOSED 3-BRAIDS"
+  ],
   "abstract": "We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are \ufb01nitely many, and can be effectively determined. We classify among closed 3-b raids strongly quasi-positive and \ufb01bered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating l inks occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an ef\ufb01cient 4-braid test.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.08",
@@ -698,8 +702,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1325,
-   "n_words": 248
+   "n_chars": 1323,
+   "n_words": 246
   },
   {
    "id": "sec-014-3-xus-form-and-seifert-surfaces",
@@ -858,8 +862,8 @@
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 7519,
-   "n_words": 1482
+   "n_chars": 7518,
+   "n_words": 1481
   },
   {
    "id": "sec-030-43-q-polynomial-23",
@@ -868,8 +872,8 @@
    "level": 2,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 5335,
-   "n_words": 1272
+   "n_chars": 5334,
+   "n_words": 1271
   },
   {
    "id": "sec-031-43-q-polynomial-25",
@@ -958,8 +962,8 @@
    "level": 3,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 6715,
-   "n_words": 1349
+   "n_chars": 6714,
+   "n_words": 1348
   },
   {
    "id": "sec-040-51-positive-braid-links-31",
@@ -978,8 +982,8 @@
    "level": 3,
    "page_start": 31,
    "page_end": 33,
-   "n_chars": 4805,
-   "n_words": 781
+   "n_chars": 4800,
+   "n_words": 776
   },
   {
    "id": "sec-042-51-positive-braid-links-33",
@@ -988,8 +992,8 @@
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 5445,
-   "n_words": 952
+   "n_chars": 5442,
+   "n_words": 949
   },
   {
    "id": "sec-043-52-positive-links-35",
@@ -998,8 +1002,8 @@
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 7343,
-   "n_words": 1498
+   "n_chars": 7342,
+   "n_words": 1497
   },
   {
    "id": "sec-044-52-positive-links-37",
@@ -1048,8 +1052,8 @@
    "level": 2,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 3041,
-   "n_words": 584
+   "n_chars": 3039,
+   "n_words": 582
   },
   {
    "id": "sec-049-71-the-jones-conjecture-43",
@@ -1078,8 +1082,8 @@
    "level": 1,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 2482,
-   "n_words": 480
+   "n_chars": 2481,
+   "n_words": 479
   },
   {
    "id": "sec-052-71-the-jones-conjecture-47",
@@ -1108,8 +1112,8 @@
    "level": 2,
    "page_start": 49,
    "page_end": 50,
-   "n_chars": 2871,
-   "n_words": 576
+   "n_chars": 2870,
+   "n_words": 575
   },
   {
    "id": "sec-055-73-norm-estimates",
@@ -1118,8 +1122,8 @@
    "level": 2,
    "page_start": 50,
    "page_end": 51,
-   "n_chars": 2148,
-   "n_words": 531
+   "n_chars": 2121,
+   "n_words": 504
   },
   {
    "id": "sec-056-73-norm-estimates-51",
@@ -1128,8 +1132,8 @@
    "level": 2,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 3758,
-   "n_words": 801
+   "n_chars": 3740,
+   "n_words": 783
   },
   {
    "id": "sec-057-74-skein-polynomial",
@@ -1198,8 +1202,8 @@
    "level": 2,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 2402,
-   "n_words": 478
+   "n_chars": 2400,
+   "n_words": 476
   },
   {
    "id": "sec-064-76-mahler-measures-57",
@@ -1208,8 +1212,8 @@
    "level": 2,
    "page_start": 57,
    "page_end": 58,
-   "n_chars": 3882,
-   "n_words": 940
+   "n_chars": 3848,
+   "n_words": 906
   },
   {
    "id": "sec-065-762-skein-polynomial-and-generalized-twisting",
@@ -1228,8 +1232,8 @@
    "level": 2,
    "page_start": 59,
    "page_end": 60,
-   "n_chars": 3801,
-   "n_words": 803
+   "n_chars": 3782,
+   "n_words": 784
   },
   {
    "id": "sec-067-77-knots-with-unsharp-mwf-inequality",
@@ -1238,8 +1242,8 @@
    "level": 2,
    "page_start": 60,
    "page_end": 64,
-   "n_chars": 11487,
-   "n_words": 2193
+   "n_chars": 11482,
+   "n_words": 2188
   },
   {
    "id": "sec-068-references",
@@ -1257,6 +1261,6 @@
   "likely_scanned": false,
   "toc_entries": 76,
   "sections": 69,
-  "chars_total": 211401
+  "chars_total": 211278
  }
 }

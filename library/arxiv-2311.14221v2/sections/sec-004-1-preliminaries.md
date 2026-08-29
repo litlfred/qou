@@ -7,6 +7,7 @@ section_number: 1
 pages: 5-6
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
 ---
 Throughout this paper, k will denote an arbitrary ﬁeld. We shall denote
 by vect k the category of ﬁnite dimensional k-vector spaces.

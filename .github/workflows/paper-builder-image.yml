@@ -19,24 +19,27 @@ name: Build paper-builder Docker image
 # to actually consume it.
 
 on:
+  # AUTO-TRIGGERS DISABLED (owner directive 2026-08-26): no GitHub Actions
+  # budget for private repos. This workflow now runs ONLY when dispatched
+  # by hand, matching build.yml's 2026-06-30 disablement.
+  #
+  # Disabled below, kept for whoever re-enables:
+  #   push:      branches [main], paths [Dockerfile.paper-builder, this file]
+  #              — refreshed the :latest and :<sha> tags publish.yml pins.
+  #   schedule:  cron '0 4 1 * *' — monthly TeX Live / bun / Python security
+  #              rebuild, emitting the :<yyyymm> rollback anchor.
+  #
+  # Consequence to know before relying on the image: the pinned :<sha> tag
+  # is no longer refreshed automatically, so publish.yml keeps consuming
+  # whatever image was last built. Dispatch this workflow by hand after
+  # changing .github/docker/Dockerfile.paper-builder, or the Dockerfile
+  # change will not reach the published image.
   workflow_dispatch:
-  push:
-    branches: [main]
-    # Rebuild + push the image only when the image's own inputs change.
-    # (The :latest / :<sha> tags are gated to main pushes in the metadata
-    # step, so this is the only event that refreshes the pinned image.)
-    paths:
-      - '.github/docker/Dockerfile.paper-builder'
-      - '.github/workflows/paper-builder-image.yml'
-  schedule:
-    # Monthly rebuild (1st, 04:00 UTC) so the baked TeX Live + bun +
-    # Python stack picks up security patches even when the Dockerfile
-    # is unchanged. Emits the :<yyyymm> rollback anchor (see meta step).
-    - cron: '0 4 1 * *'
 
 # Job-level permissions per PR #1104 review (Copilot, least-privilege).
-# PR runs build the image without pushing, so they don't need
-# `packages: write`; only main / schedule / workflow_dispatch do.
+# The workflow-level default stays `contents: read`; the build job adds
+# `packages: write` because the only live trigger (workflow_dispatch)
+# always pushes the image.
 permissions:
   contents: read
 
@@ -50,9 +53,17 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      # packages: write only when we'll actually push. PR runs stay at
-      # the default (no packages permission).
-      packages: ${{ github.event_name != 'pull_request' && 'write' || 'read' }}
+      # `permissions:` is evaluated before any context is available, so it
+      # accepts only the literals read / write / none — an expression here
+      # is an "Unrecognized named-value: 'github'" parse error that makes
+      # the whole workflow file invalid. This was
+      #   packages: ${{ github.event_name != 'pull_request' && 'write' || 'read' }}
+      # which is also moot now: `workflow_dispatch` is the only trigger, so
+      # the run always pushes and always needs `packages: write`. If the
+      # push / schedule triggers are ever re-enabled alongside pull_request,
+      # gate the push at the *step* level (the `if:` and `push:` conditions
+      # below already do), not here.
+      packages: write
     steps:
       - uses: actions/checkout@v4
 

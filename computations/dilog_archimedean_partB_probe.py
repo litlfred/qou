@@ -62,7 +62,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 Q0 = mp.mpf("1.11")           # substrate scale (q₀ ≈ 1.10998)
@@ -200,7 +200,7 @@ def main() -> int:
     print(f"\n[B3] π²/3 = 2·(π²/6): Li₂(1)={mp.nstr(mp.pi**2/6,8)} (k≤k* branch point) + "
           f"Euler tail ∫₀^∞log(1−e^{{−s}})ds={mp.nstr(euler_tail,8)} (=−π²/6)")
     decomp_ok = abs(euler_tail + mp.pi ** 2 / 6) < mp.mpf("1e-15")
-    wb.add_assertion("pi2_over_3_decomposition", computed=float(abs(euler_tail + mp.pi**2/6)),
+    wb.add_assertion("pi2_over_3_decomposition", computed=fmt(abs(euler_tail + mp.pi**2/6)),
                      expected=0.0, tolerance=1e-12,
                      source="Euler negative-factor tail ∫₀^∞log(1−e^{−s})ds=−π²/6; with "
                             "the Li₂(1)=π²/6 branch point → offset −π²/3")

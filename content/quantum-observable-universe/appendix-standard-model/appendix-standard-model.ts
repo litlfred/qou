@@ -47,6 +47,9 @@ export default chapter({
         "sm-hypercharge-invariant",
         "strand-twist-datum",
         "sm-colour-stabilizer-action",
+        // The SU(5) scope note. Placed after both blocks it uses
+        // (truncation, hypercharge) so its uses[] edges run backward.
+        "su5-hypercharge-n3-gate",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",
       ],

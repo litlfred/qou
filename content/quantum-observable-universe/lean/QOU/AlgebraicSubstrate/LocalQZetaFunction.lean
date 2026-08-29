@@ -45,10 +45,44 @@ def bringsGenus : ℕ := 4
     LaTeX: `\label{def:local-q-zeta-function}`
     Ref: [manuscript] Chapter 8, Section 4 -/
 structure LocalQZetaFunction where
-  /-- The substrate parameter `q`. -/
-  q : R_q
+  /-- The cardinality of the base field, as a real number.
+
+      **Corrected 2026-08-28 (bean `qou-lsib`).** This field was `q : R_q`,
+      i.e. a formal Laurent polynomial over `ℤ`. That contradicted both its own
+      narrative and every other field of this structure. The `.md` defines the
+      object as the classical Weil zeta function of Bring's curve over a finite
+      field — it counts `|ℬ(𝔽_{q^n})|`, its polynomial is the characteristic
+      polynomial of `Fr_q`, and the Hasse-Weil bound it exists to state is
+      `|αᵢ| = √q` — while `eigenvalues` and `charPoly` were already `ℂ`-valued.
+      A field size is not a formal parameter, and `√q`, `q^ρ` and `|α|² ≤ q` are
+      not statements about `ℤ[q, q⁻¹]`: `R_q` carries no order and no norm, so
+      the two downstream results were not merely unproved but unstatable.
+
+      This is the archimedean side of the wall (§7c): the ordering and `rpow`
+      the consumers need are exactly the constructs that require `ℝ`. -/
+  q : ℝ
+  /-- The base field has more than one element, so `q > 0`.
+
+      Restored 2026-08-28. The pre-migration structure carried this field
+      commented out, annotated `-- (archimedean; not meaningful over R_q)` --
+      an author wanting exactly this hypothesis and unable to state it, which
+      is independent evidence for the `q : ℝ` correction above. Its absence is
+      why `hasse_weil_bound` referenced a nonexistent `Z.q_pos`. -/
+  q_pos : 0 < q
   /-- The 8 fundamental Frobenius eigenvalues `α₁, …, α₈`. -/
   eigenvalues : Fin 8 → ℂ
+  /-- No eigenvalue vanishes.
+
+      Frobenius acts invertibly on `H¹`, with `det(Fr_q) = ±q^g ≠ 0`, so no
+      root of the characteristic polynomial is zero. It does not follow from
+      `charPoly_roots`, which permits zero roots, so it is carried as a field.
+
+      Added 2026-08-28. Without it `eigenvalue_norm_sq_axiom` in
+      `hasse-weil-bound.lean` is not merely unproved but FALSE: the all-zeros
+      datum satisfies every other field and every hypothesis of that axiom, and
+      its conclusion `‖αᵢ‖² = q` then reads `0 = q`, contradicting `q_pos`.
+      Machine-checked before the axiom was replaced by a proof. -/
+  eigenvalues_ne_zero : ∀ i, eigenvalues i ≠ 0
   /-- The *reversed* characteristic polynomial `P̃(X) = ∏ᵢ (X − αᵢ)`.
       Related to the standard form `P(t) = ∏ᵢ (1 − αᵢ t)` by
       `P(t) = t^{2g} · P̃(1/t)`, so the roots of `P̃` are the eigenvalues

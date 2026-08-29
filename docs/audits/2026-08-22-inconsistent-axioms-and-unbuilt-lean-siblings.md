@@ -143,8 +143,26 @@ violation arises.
   time this file has ever compiled.
 - `#print axioms` on all three declarations: `[propext, Classical.choice,
   Quot.sound]`. No `sorryAx`, no custom axiom.
-- Note this file is **not** covered by `lean-content-siblings.yml` and has no
-  build target (see §4), so this agent verification is the only gate.
+- Note this file has no build target (see §4), so this agent verification is
+  the only gate.
+
+  **CORRECTED 2026-08-28.** This read *"not covered by
+  `lean-content-siblings.yml`"*, which is wrong about the mechanism and
+  under-states the problem. That workflow's `content-sibling-compile` job
+  **does** cover content-block siblings — it runs `lean`-direct on the `.lean`
+  files a PR changes, which on that PR would have included this one. It did not
+  run for **two** independent reasons, and only naming the second is what makes
+  the finding durable:
+
+  1. **It is `workflow_dispatch:` only** — "CI auto-triggers disabled (owner
+     directive 2026-06-30): Actions billing". So it never fires on a push or a
+     PR, and nothing enqueues it.
+  2. **It is diff-scoped by design**, and deliberately so: a whole-tree gate
+     would block every PR on the pre-existing backlog. So even with triggers
+     restored it would gate *new* drift and never reach the 73 already there.
+
+  Reason 2 is the one that survives billing being fixed, and it is the reason
+  §4's remedy has to be a widened gate rather than a re-enabled one.
 
 ---
 
@@ -619,3 +637,140 @@ references, or revert the kind — depends on the author's intent, and the
 commit is recent.
 
 **Standing count: 47 → 42.**
+
+
+---
+
+## 5. Follow-on, 2026-08-28: a third inconsistent axiom, and the other half of the structural fix
+
+Written after #5467 and #5505 merged and `main` moved 26,632 commits. Two of
+the findings below are corrections to this document.
+
+### 5a. The structural fix put the modules in the tree, not the build
+
+§4h reported the cross-sibling move as the architectural fix. It was half of
+one. Nothing inside `QOU.lean`'s import closure imported either new module, so
+`lake build QOU` never compiled them and both sat in the `qou-orph` orphan
+population; the only thing that had ever type-checked them was the `lean`-direct
+run in that PR. Measured with `scripts/lean-orphan-modules.sh`: 986 → 984 NOT
+BUILT after wiring them into the root, and `--list` no longer names either.
+
+### 5b. The sibling gate exists — see the correction in §3
+
+The claim that `lean-content-siblings.yml` "does not gate" this population was
+wrong about the mechanism. Corrected in place above; the durable half is that
+the gate is **diff-scoped by design**, so widening it — not re-enabling it — is
+what §4's remedy requires.
+
+### 5c. All four named residuals are closed, and one was not closed by me
+
+| file | was | now | by |
+|---|---:|---|---|
+| `c5-involution-leibniz-decomposition` | 1 | **exit 0** | this tranche |
+| `spectral-half-line` | 6 | **exit 0** | this tranche |
+| `hasse-weil-bound` | 24 | **exit 0** | this tranche |
+| `frobenius-codim-universal` | 8 | **exit 0** | a sibling agent, `d16f2b6273` on `main` |
+
+`frobenius-codim-universal` was carried in §4f as the one file that improved but
+would not close. It closed while this branch was away, sorry-free, 100 errors to
+0 — credited here because the standing count would otherwise read as this
+tranche's work.
+
+### 5d. The q-zeta structure's `q` was formal where it had to be real
+
+Four of `spectral-half-line`'s six errors and most of `hasse-weil-bound`'s were
+a single type error, and it was in the structure rather than in either consumer.
+`LocalQZetaFunction.q` was `R_q = LaurentPolynomial ℤ` while `eigenvalues` and
+`charPoly` were already `ℂ`-valued, and the block's own `.md` defines the object
+as the classical Weil zeta function of Bring's curve over a finite field. `R_q`
+carries no order and no norm, so `Z.q > 1`, `(Z.q : ℂ)` and `q ^ ρ` were not
+unproved but **unstatable** — neither file could have compiled whatever was done
+to its proofs.
+
+Corroboration that this was a known wall: the pre-migration structure carried
+`q_pos` **commented out**, annotated `-- (archimedean; not meaningful over
+R_q)`. An author wanted exactly that hypothesis and could not state it.
+
+### 5e. A third axiom that proves `False` (the class from §3 is not closed)
+
+`hasse-weil-bound.lean` declared three axioms. Two are properly cited external
+results (Weil 1948 §IV–V; Rosen 2002 Ch 5). The third was not:
+
+```lean
+axiom eigenvalue_norm_sq_axiom :
+    ∀ Z i (_h_cs : ‖Z.eigenvalues i‖^2 ≤ Z.q)
+          (_h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i),
+      ‖Z.eigenvalues i‖^2 = Z.q
+```
+
+It omits `αᵢ ≠ 0`. The all-zeros datum satisfies every field of the structure
+and both hypotheses — `‖0‖² = 0 ≤ q`, and `(q : ℂ)/0 = 0` in Lean, so the
+functional equation holds with `j = i` — and the conclusion then reads `0 = q`,
+against `q_pos`.
+
+Machine-checked and preserved as a self-contained artifact:
+[`artifacts/2026-08-28-eigenvalue-norm-sq-axiom-refutation.lean`](artifacts/2026-08-28-eigenvalue-norm-sq-axiom-refutation.lean)
+— exit 0, with `#print axioms axiom_is_false` naming that axiom and the three
+standard ones. It carries its own copy of the pre-fix structure on purpose: the
+live one now has `eigenvalues_ne_zero`, which makes the witness inadmissible.
+
+Its own comment records the provenance — *"since `lake build` is prohibited for
+this task, the exact mathlib lemma names ... cannot be safely verified.
+Retaining the axiom fallback"* — which is the general shape to watch for: an
+axiom introduced because verification was unavailable, in a file that could not
+be verified either.
+
+**Discharged, not deleted.** The paired eigenvalue has norm `q/‖αᵢ‖`, so
+Castelnuovo–Severi applied to it gives `q ≤ ‖αᵢ‖²`; with the forward bound that
+is equality. Axiom surface 3 → 2, both cited.
+
+### 5f. Two lessons about the measurement, not the corpus
+
+**A silent stop is not a result.** The first whole-population re-sweep died at
+100 of 944 with no completion line and was left looking like a partial answer
+for an hour. The repo's own long-compute discipline says to assume a crash and
+relaunch with logging; that is what it is for.
+
+**Do not grep a tool's prose for its verdict.** The second sweep reported *zero*
+failures over 270 files because it classified a run as a skip whenever the
+output contained "neutral" — and `lean-verify-siblings.sh` ends **every** run,
+pass or fail, with `pass=N neutral-skip=N fail=N`. Two known-genuine failures
+were labelled SKIP. Parse the tool's own counters. Caught only because a file
+already known to fail was checked against the classifier before the numbers were
+believed.
+
+### 5g. Whole-population re-sweep: 73 → 34
+
+Re-measured on this branch (= `main` at `cdbdc84af1` plus this tranche), all
+944 content-block siblings, `scripts/lean-verify-siblings.sh` at 6-way
+parallelism. Per-file data:
+[`2026-08-28-unbuilt-lean-siblings-resweep.tsv`](2026-08-28-unbuilt-lean-siblings-resweep.tsv).
+
+| | count | share |
+|---|---:|---:|
+| PASS | 907 | 96.1 % |
+| FAIL | **34** | 3.6 % |
+| NEUTRAL-SKIP (cache-cone, not a defect) | 3 | 0.3 % |
+
+**73 → 34, and most of it was not this arc.** Three closed here
+(`c5-involution-leibniz-decomposition`, `spectral-half-line`,
+`hasse-weil-bound`), one by a sibling on `main`
+(`frobenius-codim-universal`), 22 in #5505, and the remainder across main's
+26,632 intervening commits by agents who never saw this bean. The population
+also shrank 958 → 944.
+
+**The §4h figure of 42 was never wrong, but it has expired** — it was measured
+against a base that has since moved by 26k commits, which is precisely the rule
+§4h itself records. Quote 34, with its date and its base.
+
+**One verdict shape worth knowing before reading the TSV.**
+`delta-max-uniform-bound` is `FAIL` with **zero** `: error` lines. That is
+correct, not a classifier artifact: it is the STALE IMPORT class — it imports
+`QOU.MassEndomorphism.JetTower`, which does not exist in the source tree — and
+the script detects that instead of running Lean at all. Do not filter the TSV
+by error count.
+
+The 34 are not triaged here. Shape of the tail: 11 files at a single error, 11
+at two, and 8 at five, so the distribution is still mostly small — but §4's
+warning stands that these counts are floors, since Lean halts at the first
+parse error and reports nothing behind it.

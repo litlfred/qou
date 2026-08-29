@@ -9,7 +9,7 @@
       "computed": 3.220136695625281e-13,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "on-ray Laplace Im 𝔙̃_b matches the committed 0.05855"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.002991767257638278,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.25,
+      "tolerance": "0.25",
       "source": "lateral discontinuity scales LINEARLY with straddle δ (ratio D(δ)/D(δ/2)≈2 as δ→0): the physical-ray resummation is SMOOTH, no Stokes jump — a genuine jump would give ratio≈1 (constant). Directly computed, not inferred from the off-ray argument"
     }
   ],

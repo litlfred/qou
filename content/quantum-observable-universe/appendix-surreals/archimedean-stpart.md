@@ -5,7 +5,7 @@ An archimedean QOU $(\mathbf{C}, \varTheta, G, \mathcal{S})$ ([quantum observabl
 | Frobenius pairing | $\int_A \circ \mu = \mathrm{id}$ | $= \mathrm{id} + O(\varepsilon)$ |
 | Observability | $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ | $\leq \varepsilon$ |
 | Volume | $g_{\mathbf{1}} = \mathrm{id}$ | $= (1 + \varepsilon) \mathrm{id}$ |
-| Vacuum | $\mathrm{Geom}(\unicode{9737}) = 0$ | $= \varepsilon$ |
+| Vacuum | $\mathrm{Geom}(\bigcirc) = 0$ | $= \varepsilon$ |
 
 **Conjecture.** The standard-part map $\mathrm{St}$ sends every surreal QOU to an archimedean QOU.
 

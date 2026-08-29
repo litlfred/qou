@@ -1,0 +1,53 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "noniterativeroth2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "83bbcdf45da069e5275d2e268fb5915d0adc361a35c167dac98bb919a2fbe4d6",
+  "file": "noniterativeroth2.pdf"
+ },
+ "provenance": {
+  "title": "A PROOF OF ROTH\u2019S THEOREM ON ARITHMETIC PROGRESSIONS",
+  "authors": "ERNIE CROOT AND OLOF SISASK",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "We have that r3(N) = o(N).",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "[2] For any 1 6 M 6 N , and for any set T 0 \u0012 [N], we have",
+   "section_file": "sections/sec-004-4-ernie-croot-and-olof-sisask.md",
+   "section_title": "ERNIE CROOT AND OLOF SISASK",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T13:33:14.619473+00:00",
+  "commitSha": "16af90115f0805d0481a2896093ce4ebb2b7bd4a",
+  "assertions": [
+    {
+      "name": "control_support_is_four_two_row_blocks",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "convention D row cap: y_lambda = 0 for ell(lambda) > 2"
+    },
+    {
+      "name": "cost_vanishes_on_kernel",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "unit": "dimensionless",
+      "source": "t_l = y_l * chi^l, and y_l = 0 on the kernel"
+    },
+    {
+      "name": "ame_exceeds_support_reachability_ceiling",
+      "computed": "15.230707007048173846",
+      "expected": "15.2307",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "t.x <= max(t)*n_target for x >= 0, sum x = n_target"
+    },
+    {
+      "name": "ceiling_strictly_below_ame",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "direct comparison"
+    },
+    {
+      "name": "no_encoding_feasible_under_projection",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "deuteron-real-sdp.witness.json result_support_projected"
+    },
+    {
+      "name": "lr_canonical_has_a_fully_kernel_row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "projection_row_report: row 2, mu = (1,1,1), 100% on kernel"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "deuteron-support-reachability",
+  "scriptFile": "deuteron_support_reachability_probe.py",
+  "scriptHash": "264b8ca61324",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/deuteron_support_reachability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/deuteron_support_reachability_probe.py"
+  },
+  "description": "Under convention D the deuteron operator-selection LP, restricted to the four supported (two-row) Wedderburn blocks with non-negative occupations, cannot reach the AME2020 binding: the objective is bounded by max(t)*n_target = 0.146058 against B_D = 2.224566, short by 15.2x. The full-space program met the AME value only because the seven zero-Gram kernel blocks carry no positivity constraint and so admit NEGATIVE occupations.",
+  "data": {
+    "support_blocks": [
+      "(6,)",
+      "(5, 1)",
+      "(4, 2)",
+      "(3, 3)"
+    ],
+    "kernel_blocks": [
+      "(4, 1, 1)",
+      "(3, 2, 1)",
+      "(3, 1, 1, 1)",
+      "(2, 2, 2)",
+      "(2, 2, 1, 1)",
+      "(2, 1, 1, 1, 1)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "t_on_support": [
+      "0.17989082376310217",
+      "0.25393778300524394",
+      "0.07707649023917293",
+      "0.06426714876225478"
+    ],
+    "n_target": "0.5751722457697739",
+    "reachability_ceiling": "0.146057964936923681323745648145",
+    "B_D_AME_MeV": "2.22456607",
+    "shortfall_factor": "15.2307070070481738455087386035",
+    "projected_feasible": {
+      "1_bar_involution_fold": false,
+      "2_character_projection_colorflavor": false,
+      "3_conservation_laws": false,
+      "4_ame_binding_equality": false,
+      "5_lr_branching_canonical": false,
+      "6_scalar_9pair_ratio_fitted": false
+    }
+  },
+  "caveats": [
+    "Scope (a). This bounds THIS cost vector on THIS program with non-negative occupations of the convention-D supported blocks. It does not refute any binding conjecture, does not say the encodings are wrong, and says nothing about a different cost, a different Wenzl level r, or a program that admits signed occupations for a stated reason.",
+    "The full-space numbers this replaces were not wrong arithmetic. They were the correct optimum of a program whose kernel is unconstrained, and the finding is that such a program does not mean what its field names suggest."
+  ]
+}

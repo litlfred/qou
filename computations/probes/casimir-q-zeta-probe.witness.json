@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "count of non-classical-limit-trivial candidates with |value - π²/720| / (π²/720) < 1%",
       "source": "Empirical null-result assertion: π²/720 is NOT a low-degree substrate q-rational at q_0.  Counts candidates from candidate_q_rationals + substrate_quantity_candidates after filtering out forms of shape a·π²/(720·[m]_q^p) with a == m^p (those match trivially by q → 1 continuity).  Asserts the filtered count is 0; passing this assertion is the null result the audit reports."
     }

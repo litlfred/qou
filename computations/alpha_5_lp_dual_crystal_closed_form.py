@@ -170,6 +170,15 @@ def main() -> int:
         "all_passed": ok_all,
     }
     path = HERE / "alpha-5-lp-dual-crystal-closed-form.results.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=False)
     path.write_text(json.dumps(out, indent=2) + "\n", encoding="utf-8")
     print(f"\nWrote {path.name}")
     print("closed form reproduces every LP field"

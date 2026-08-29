@@ -52,6 +52,12 @@ from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
     _proton_body, _neutron_body, H,
 )
 
+# The canonical 4He word comes from the corpus constructor, NOT from a local
+# rebuild — see he4_braid_canonical's docstring and bean qou-oppb. The p-n
+# interface offset (owner ruling 2026-08-15 R3, reaffirmed 2026-08-26) is
+# applied inside it, so `pn_interface_offset_from_h` is no longer imported here.
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+
 
 # Module-level caches
 _LR_TABLE_9_3 = get_lr_table(9, 3)
@@ -78,23 +84,36 @@ H3_GROUP_AT_H12 = [
 
 
 def he4_braid_canonical() -> list:
-    """Canonical pppnnn ⁴He braid at H_12: p₁ · I_pp · p₂ · I_pn · n₁ · I_nn · n₂."""
-    word = []
-    # β_p₁ on strands 0..2
-    word.extend(_proton_body())
-    # I_pp at strand 2 (bridge between p₁ and p₂)
-    word.append((1.0, 0.0, 2))
-    # β_p₂ on strands 3..5
-    word.extend([(c, d, g + 3) for (c, d, g) in _proton_body()])
-    # I_pn at strand 5
-    word.append((1.0, -H / 2, 5))
-    # β_n₁ on strands 6..8
-    word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])
-    # I_nn at strand 8
-    word.append((1.0, -H, 8))
-    # β_n₂ on strands 9..11
-    word.extend([(c, d, g + 9) for (c, d, g) in _neutron_body()])
-    return word
+    """Canonical pppnnn ⁴He braid at H_12 — delegates to the corpus constructor.
+
+    This used to build the word here: `_proton_body()` twice and
+    `_neutron_body()` twice, with the three interfaces spliced in at generators
+    2, 5 and 8. That local construction produced a word that **disagreed with
+    the rest of the corpus**, and the disagreement was live.
+
+    Measured (`probes/he4_canonical_braid_word_disagreement_probe.py`): against
+    `atom_braid_word_3A(2, 2)` it was the same 47 letters — identical multiset
+    of (c, d) factors to 5.0e-17, identical multiset of generators — attached to
+    different strands in a different order, differing in **36 of 47 positions**.
+    Reordering is invisible on a one-dimensional irrep, where the character is a
+    product of commuting scalars, and O(1) on every other, where it is a matrix
+    product. So `sublemma_2_1_h12_he4_phase25` reported 0 of 8 verified with the
+    only two agreements at dim 1, and that was recorded as a defect in
+    `path_b_chi_h12` (bean qou-matm, retracted) rather than as two different
+    words.
+
+    `atom_braid_word_3A` is the corpus convention by a wide margin — ~220
+    consumers against the 3 files in this branching cone — and substituting it
+    takes phase25 from 0/8 to **8/8**, every partition agreeing with F1's cached
+    character to its 8-significant-figure storage floor (5e-9 to 4.7e-8). Two
+    independent confirmations that `path_b_chi_h12` was always correct.
+
+    Kept as a named function rather than replaced at the call sites: the name is
+    the one this cone documents itself with, and a reader looking for "the
+    canonical 4He word" should land here and be told where it actually comes
+    from. Bean qou-oppb.
+    """
+    return atom_braid_word_3A(2, 2)
 
 
 def path_b_chi_h12(lam: tuple, beta_full: list, q_val: float) -> complex:

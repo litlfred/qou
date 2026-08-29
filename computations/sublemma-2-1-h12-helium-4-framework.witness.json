@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "boolean",
       "source": "This is a deferred-compute framework, not a production extraction. The H_{12} extract itself is queued as a follow-on PR per docs/coordination/2026-05-20-lambda-p-followons-ledger.md §Next-direction recommendations."
     }

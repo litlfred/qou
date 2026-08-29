@@ -9,7 +9,7 @@
       "computed": 4.653311810663103e-41,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "max over {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} of |tr_M(b) \u2212 closed_form(b)|",
       "source": "Ocneanu-Wenzl recursion + Hecke quadratic + Markov axiom."
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "max over (i,j) of |G_{ij} \u2212 G_{ji}|",
       "source": "Cyclicity of the Markov trace tr_M(ab) = tr_M(ba)."
     },

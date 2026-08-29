@@ -377,6 +377,83 @@ def _file_of_module(repo: pathlib.Path, mod: str):
     return None
 
 
+def rederivation_blocked_files(repo: pathlib.Path):
+    """Files the registry records as PENDING the qou-cds1 ladder re-derivation.
+
+    A third way the registry accounts for a convention-C site, alongside
+    `blocked_migrations` (stays C permanently, by design) and the `evaluators.z`
+    + `intra_module_split_waivers` pair (declared, R9-asserted). These sites
+    must NOT stay on C -- but a z_D substitution changes what the site ASSERTS
+    rather than the coordinate it asserts it in, so the migration is carried by
+    the re-derivation, not by a sweep.
+
+    Measured, per row: `z_C` is bar-EVEN and `z_D` is bar-NEITHER, so every
+    bar-parity result stated for `z` has no D-frame statement to migrate TO;
+    `ord_{q=1}(z - 1/2)` is 2 under C and 1 under D, so the even-order premise
+    of the T3 exclusion is simply false under D; the ladder phase `(z-1)h/2`
+    moves 22.6 % at the proton pin.
+
+    Like `declared_c_files`, this ACCOUNTS FOR a site without EXCUSING it:
+    these stay in the actionable count and only the label changes. A registry
+    row that shrinks the headline number would be a way to make the inventory
+    smaller without making the corpus better -- which is the failure this whole
+    detector exists to prevent.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        rows = json.loads(reg.read_text()).get("blocked_on_rederivation", [])
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out: dict[str, list] = {}
+    for r in rows:
+        f, sym = r.get("file", ""), r.get("symbol", "")
+        if not f or not sym:
+            continue
+        # VERIFY THE PREMISE, exactly as blocked_symbols does: a row asserting
+        # a site is still C is a liability the moment the site moves to D.
+        try:
+            src = (repo / f).read_text()
+        except OSError:
+            src = ""
+        if src and _defines_convention_d(src, sym):
+            print(f"  REGISTRY STALE: {f}::{sym} is registered under "
+                  f"blocked_on_rederivation but the file defines it as "
+                  f"convention D. Drop the row; the site has migrated.")
+            continue
+        out.setdefault(f, []).append(sym)
+    return {f: sorted(set(v)) for f, v in out.items()}
+
+
+def closed_form_measured_clear(repo: pathlib.Path):
+    """(file, symbol) pairs whose half-power the registry records as MEASURED clear.
+
+    `scan_closed_forms` is static. Its fingerprint is a half-integer power of `q`
+    in the source of a trace/weight binding, and that is a SHAPE -- the question
+    it stands in for is whether the quantity the binding RETURNS carries one.
+    Usually those agree. When they do not, the discriminator is the answer, not
+    the source, and a static scanner cannot reach it.
+
+    So a row here does NOT drop the site from the report. It labels it with the
+    measurement, so the next drain does not re-derive it, and leaves the count
+    alone -- the same accounting-without-excusing rule `blocked_on_rederivation`
+    follows. Suppressing instead would be how the previous four detector blind
+    spots were made (`docs/audits/2026-08-15-detector-blindness-taxonomy.md`):
+    a rule broad enough to skip this site would also skip a genuinely C-derived
+    closed form back-substituted the same way.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        rows = json.loads(reg.read_text()).get("closed_form_measured_clear", [])
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out = {}
+    for r in rows:
+        f, sym = r.get("file", ""), r.get("symbol", "")
+        if f and sym:
+            out[(f, sym)] = r.get("verdict", "measured clear")
+    return out
+
+
 def blocked_symbols(repo: pathlib.Path):
     """The (module, symbol) pairs the registry deliberately leaves on C.
 
@@ -778,7 +855,20 @@ def is_c_form_reciprocal(node: ast.AST, half_vars: set):
     return None
 
 
-def classify(path: str, blocked_files=(), declared_files=()) -> str:
+def _area_of(path: str) -> str:
+    """The area label a blocked/declared site is reported under.
+
+    Kept deliberately coarse — it names where to LOOK, not what the site is.
+    """
+    for pfx in ("tools/pyhecke/", "computations/probes/", "computations/qbeta/",
+                "computations/deltalambda/", "qou-mass/", "tools/"):
+        if path.startswith(pfx):
+            return pfx.rstrip("/")
+    return path.split("/", 1)[0] if "/" in path else path
+
+
+def classify(path: str, blocked_files=(), declared_files=(),
+             rederivation_files=()) -> str:
     """Bucket a site. `blocked_files` comes from the registry, not from here.
 
     This used to label EVERY site under `tools/pyhecke/` "BLOCKED on C by
@@ -793,10 +883,24 @@ def classify(path: str, blocked_files=(), declared_files=()) -> str:
     registry means a site is only excused while a row actually excuses it.
     """
     if path in blocked_files:
-        return "tools/pyhecke — BLOCKED on C by design (registry)"
+        # The bucket name carries the AREA, not a fixed "tools/pyhecke" — a
+        # blocked row is keyed on a file path and nothing restricts it to that
+        # package. It read "tools/pyhecke — BLOCKED on C by design" for every
+        # blocked file until 2026-08-25, when the first non-pyhecke row landed
+        # (computations/probes/markov_reduction_h3_to_h4_verify.py, bean
+        # qou-ze9n) and the summary line filed a computations/ probe under a
+        # tools/ heading. Harmless to the count, but the count is not what a
+        # reader uses to go find the site.
+        return f"{_area_of(path)} — BLOCKED on C by design (registry)"
     if path in declared_files:
         return ("tools/pyhecke — DECLARED C in evaluators.z, R10-waived "
                 "(open defect, still actionable)")
+    if path in rederivation_files:
+        # NOT excused. The row records WHY a z-swap is invalid here so the next
+        # drain does not re-derive that from scratch; it does not claim the site
+        # is finished. See `blocked_on_rederivation_note` in the registry.
+        return (f"{_area_of(path)} — BLOCKED on the qou-cds1 re-derivation "
+                "(registry, still actionable)")
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — C with NO registry row (unexplained)"
     # computations/from_scratch/README.md declares the whole directory
@@ -817,7 +921,7 @@ def classify(path: str, blocked_files=(), declared_files=()) -> str:
     return "computations — live producers"
 
 
-def scan(roots=ROOTS, blocked_files=(), declared_files=()):
+def scan(roots=ROOTS, blocked_files=(), declared_files=(), rederivation_files=()):
     """Yield (path, lineno, target_name, source, bucket, deliberate)."""
     for r in roots:
         base = pathlib.Path(r)
@@ -847,7 +951,8 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
-                       classify(sp, blocked_files, declared_files),
+                       classify(sp, blocked_files, declared_files,
+                                rederivation_files),
                        bool(DELIBERATE(nm)))
 
             # RETURNED, not assigned. The scan above keys off an assignment
@@ -899,7 +1004,9 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                     yield (sp, r.lineno, f"{fn.name}() -> return",
                            ast.unparse(val),
                            "convention dispatcher (returns C and D) — labelled comparison"
-                           if dispatcher else classify(sp, blocked_files, declared_files),
+                           if dispatcher else classify(sp, blocked_files,
+                                                      declared_files,
+                                                      rederivation_files),
                            bool(DELIBERATE(fn.name)) or dispatcher)
 
 
@@ -1117,6 +1224,38 @@ def selftest() -> int:
                   blocked_files={"tools/pyhecke/python/pyhecke/gram.py"},
                   declared_files={"tools/pyhecke/python/pyhecke/gram.py"})
          .startswith("tools/pyhecke — BLOCKED")),
+        # blocked_on_rederivation: the third accounting channel. It must label
+        # WITHOUT excusing -- a row that shrank the headline count would let the
+        # inventory get smaller while the corpus stayed the same.
+        ("a re-derivation-blocked site is labelled as such",
+         "BLOCKED on the qou-cds1 re-derivation" in
+         classify("computations/qbeta/p.py",
+                  rederivation_files={"computations/qbeta/p.py"})),
+        ("a re-derivation-blocked site stays ACTIONABLE",
+         "still actionable" in
+         classify("computations/qbeta/p.py",
+                  rederivation_files={"computations/qbeta/p.py"})
+         and not any(e in classify("computations/qbeta/p.py",
+                                   rederivation_files={"computations/qbeta/p.py"})
+                     for e in ("BLOCKED on C by design", "DEPRECATED for production"))),
+        ("a permanent blocked_migrations row still outranks a re-derivation row",
+         classify("computations/probes/m.py",
+                  blocked_files={"computations/probes/m.py"},
+                  rederivation_files={"computations/probes/m.py"})
+         .endswith("BLOCKED on C by design (registry)")),
+        # closed_form_measured_clear: a LABEL, never a suppression. The site must
+        # still be reported; only an annotation is added. A future edit that
+        # turned this into a filter would be caught by the count assertion in
+        # the second test.
+        ("the live registry records the measured-clear closed form",
+         ("computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+          "ocneanu_weights") in closed_form_measured_clear(pathlib.Path("."))),
+        ("a measured-clear row does NOT remove the site from scan_closed_forms",
+         any(c[0].endswith("qbeta_5two_categorical_markov_volume_probe.py")
+             for c in scan_closed_forms(roots=("computations/probes",)))),
+        # The live registry must actually carry the seven qbeta-cone rows.
+        ("the live registry records the qbeta-cone re-derivation blocks",
+         len(rederivation_blocked_files(pathlib.Path("."))) == 7),
         # declared_c_files reads the LIVE registry: a C evaluator whose module
         # is NOT waived must not be silently treated as declared.
         ("an unwaived C evaluator does not count as declared",
@@ -1260,8 +1399,10 @@ def main() -> int:
                          pathlib.Path("docs/coordination/trace-convention-registry.json")
                          .read_text()).get("blocked_migrations", [])}
     declared_files = declared_c_files(pathlib.Path("."))
+    rederivation_files = rederivation_blocked_files(pathlib.Path("."))
     rows = list(scan(blocked_files=blocked_files,
-                     declared_files=set(declared_files)))
+                     declared_files=set(declared_files),
+                     rederivation_files=set(rederivation_files)))
     live = [r for r in rows if not r[5]]
     deliberate = [r for r in rows if r[5]]
 
@@ -1299,8 +1440,14 @@ def main() -> int:
               f"convention-D files still carry a half-integer power of q.")
         print("  Migrating z is not migrating the file: h*z+1 and (q*z+1)/(q^2+1) are")
         print("  rational under D, so a square root in one is z_C showing through.")
+        cleared = closed_form_measured_clear(pathlib.Path("."))
         for path, line, what, _ in closed:
+            sym = what.split(" <- ")[0].strip()
+            mark = cleared.get((path, sym))
             print(f"    {path}:{line}   {what}")
+            if mark:
+                print(f"        [{mark}] — registry `closed_form_measured_clear`. "
+                      f"Still listed on purpose; re-verify by RUNNING it, not by reading it.")
     if pending:
         print(f"\n  SECOND TIER — {len(pending)} closed form(s) in files whose z is STILL C "
               f"(listed above).")

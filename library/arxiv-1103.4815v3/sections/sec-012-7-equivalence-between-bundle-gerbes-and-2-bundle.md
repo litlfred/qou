@@ -7,6 +7,7 @@ section_number: 7
 pages: 38-39
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 In this section we show that Versions III and IV of smooth Γ-gerbe s are equivalent in the strongest
 possible sense:

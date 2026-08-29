@@ -141,7 +141,7 @@ def main():
     )
     wb.add_assertion(
         "habiro_sum_nonzero",
-        computed=float(mp.fabs(habiro_sum)),
+        computed=fmt(mp.fabs(habiro_sum)),
         expected=2.0,
         tolerance=1.0,
     )

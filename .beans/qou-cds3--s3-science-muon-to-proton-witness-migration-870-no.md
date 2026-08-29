@@ -5,7 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T09:17:15Z
+updated_at: 2026-08-29T09:42:17Z
+updated_at: 2026-08-29T08:52:07Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -193,3 +194,131 @@ files that need eyes, and the useful thing learned is that **re-running them in
 a container older than the one that wrote them cannot decide anything** — the
 environment delta swamps the signal. A future drain needs an environment
 matching the recorded one, or it should compare only non-environment fields.
+
+
+## 2026-08-29 (LATER) — the 36 direct readers: 18 MIGRATED, PR #5992
+
+The work the drain established could not be done by re-running. Source edit +
+manifest move + re-run, all three, per producer.
+
+**Landed (18 producers, 19 witnesses to proton).** ideal_muon 45 -> 32.
+Zero straddles among the touched witnesses.
+
+**The manifest half is not optional and half the change is a NO-OP.** 14 of
+the 20 stems were listed under ideal_muon, so q_parameter.Q_50_DIGIT_STR
+resolves to MUON for them and the source edit alone does nothing. Found it
+when delta-S-chain-audit came back stamped muon with a muon data.q_0_50dps
+after a source-only edit — the payload-first resolver caught it instantly.
+AGENTS.md says this ("the manifest reclassification and the witnesses it
+re-pins are one change") and it reads as advice about MERGE ORDER; it is also
+a statement that half the change is inert.
+
+**5 excluded after reading, not by pattern.** The ledger
+(q0-muon-legitimate-producers.json, 17 entries, inherited from PR #5500 rather
+than rebuilt) covers 13. Three more on inspection: muon_pin_three_values_probe
+(derives inline to COMPARE the three values), lambda_scale_substrate_probe
+(self-documents that it reads directly BY DESIGN and measures that), and
+q_beta_predicted (no direct read at all — prose label only; reaches muon via
+derived_masses, so it is the indirect class).
+
+**2 DEFERRED on a float64 defect — and the mechanism generalises.**
+chi_lambda_he4_full_partition_table and gram_matrix_seminormal_h6 turned the
+raw-float64 ratchet red (194->196, 130->131). The migration did NOT add
+float64: those fields were always f64, evaluated to exactly 1.0 / -1.0 at the
+muon pin where the ratchet's INTEGRAL-VALUED CARVE-OUT does not count them,
+and to 1.000000000000009 / -0.9999999999999999 / 0.9999999999999998 at proton
+where it does.
+
+  🛑 The carve-out hides float64 error whenever the true value is whole.
+  A clean ratchet on a determinant-of-±1 or an exact-count character is NOT
+  evidence the arithmetic is exact.
+
+Root cause: chi_lambda_braid(..., q0_f64) enters the f64 Rust kernel;
+gram_matrix_seminormal_n.py:190,195 uses float(np.linalg.det(M)). Fix is named
+by the corpus (precision='mpfr_50dps' / chi_lambda_braid_mpf) but changes the
+COMPUTE PATH, so every value in both witnesses moves. Bean qou-k6b3.
+
+## What remains on cds3
+
+  * 2 direct readers, blocked on qou-k6b3
+  * ~25 witnesses whose producers reach muon INDIRECTLY (imports, upstream
+    witnesses) — these need cone tracing, not a direct edit, and are the
+    genuinely unmeasured part
+## 2026-08-29 — the sweep RAN, and it cannot finish the migration
+
+Drain: computations/audits/q0_muon_proton_drain.py across 177 producers, 94.7 min.
+149 OK + 5 completed-with-failing-assertion, 11 crash, 9 timeout (240 s budget),
+3 refuse by design. 131 witness files changed. Landed on
+claude/cds3-muon-proton-drain-2026-08-29.
+
+### The population this bean records is stale by ~4x
+
+The body above says 870 witnesses. **Measured: 222**, of which **178 actionable
+over 177 producers** — 11 legitimate-muon by ledger, 10 declared
+ambiguous/comparison/independent, 20 with no scriptFile, 2 whose producer is
+gone, 1 anchor-defining (excluded by name). The 870 is the ten-digit-prefix
+reading of an older tree; see AGENTS.md's own warning that three different
+values are all called "the muon q0" and the prefix length silently selects which.
+
+### What the re-run bought — and why muon went UP
+
+HEAD vs worktree, identical filters over computations/**/*.witness.json:
+
+    10-digit muon fingerprint    437 -> 431   (-6)
+    frozen canonical pin literal  66 ->  42   (-24)
+    q0Anchor: "muon"              49 ->  61   (+12)
+
+**The +12 is correct.** resolve_q0_anchor_payload_first (2026-08-24, qou-aj91)
+reads the payload's recorded q0 instead of the manifest, so three witnesses that
+declared "proton" over a muon computation now declare the layer their numbers
+actually belong to (t6-tau-h5-embedding-probe, t6-three-halves-factor-probes,
+xi-ell-phi-q-probe). Straddle corrections, not regressions. The -24 is
+stale-to-current: the anchor-defining witness on main already holds the
+CODATA-2022 derivation 1.10997859564273904..., not the frozen
+1.1099785955573347..., so those witnesses were disagreeing with their own anchor.
+
+### 🛑 THE FINDING: re-running producers is structurally incapable of finishing
+
+Of the **61** muon witnesses remaining, **36 have producers that read
+computations/q-pinning-50-digit.witness.json directly**. That string IS the muon
+anchor's definition — it is what _q0_value_for_anchor("muon") returns — so those
+producers compute at muon whatever the manifest says, QOU_Q0_ANCHOR cannot reach
+them, and re-running them re-derives the same muon value forever.
+
+**163 producers in the tree read the pinning witness.** Migrating them needs a
+per-producer SOURCE EDIT (read q_at() instead), which is a code change, not a
+sweep. And the manifest is not the lever either: resolve_q0_anchor_payload_first
+deliberately overrules it with payload evidence — that is the function's whole
+purpose, so relabelling the manifest would now change nothing at all.
+
+So "re-run the impacted witnesses" — the method this bean assumes — is done, and
+it moved 6. The remaining work is 36 producer edits plus 25 whose muon route is
+via imports/upstream and needs tracing. That is the real shape of what is left.
+
+### 🛑 AND cds1 BLOCKS IT: four witnesses reverted for live C->D contamination
+
+The re-run put convention-D values into the Q_beta c_k channel, which qou-cds1
+explicitly forbids ("c_3 ~ -974 is a sensitivity measurement, not a proposed
+value. Do not wire it anywhere"):
+
+    qbeta-ck-basis-constrained-pslq     c3_reproduced_canonical -2.0202 -> -974.38
+    qbeta-decay-sdp-full-ck-derivation  c_3 -2.0097 -> -974.12 (c_4/c_6/c_7 dropped)
+    qbeta-habiro-integrality-kill-test  three N3 residuals ~1e-44 -> -972.05
+    qbeta-borromean-cyclotomic          documented_D_neq_C_split_reproduced FAILED
+
+Detector: assertions flipping passed true -> false across the drain — catches
+the class generally rather than by value range. All four reverted to their
+committed C-frame state.
+
+**The ladder core is already on D while the ladder itself has not been
+re-derived**, so any mechanical re-run of a c_k producer bakes in a value the
+corpus says is not a value. cds1 is not merely adjacent to cds3; it gates the
+qbeta slice of it.
+
+### Gates
+
+    witness_raw_float64_audit.py --strict   PASS (0 new, 0 regressed; 12 drained)
+    q0_anchor_ratchet.py --strict           PASS (0 new; 39 drained)
+
+The float64 ratchet was RED first pass and is green only after fixing
+qbeta_exponentiated_per_block_probe.py at the producer. No baseline widened.

@@ -53,6 +53,10 @@ from pyhecke.gram import (  # noqa: E402
     nf_of_word as _nf_of_word, nf_net as _nf_net,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 def atom_per_generator_full_matrices(
     Z: int, N: int, *, include_inter: bool = True,
@@ -140,7 +144,7 @@ def atom_per_generator_full_matrices(
                 base_cross = (1.0, -h)
                 m_this = m_nn if m_nn is not None else crossings_per_pair
             else:
-                base_cross = (1.0, -h / 2)
+                base_cross = (1.0, _pn_d(h))
                 m_this = m_pn if m_pn is not None else crossings_per_pair
             for _ in range(m_this):
                 apply_crossing(i, *base_cross)

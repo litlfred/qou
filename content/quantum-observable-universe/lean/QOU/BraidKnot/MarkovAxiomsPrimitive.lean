@@ -58,21 +58,51 @@ for the migration roadmap and Policy B rationale.
     `Real.sqrt`, works over any field, and matches the original
     `1 / (u + u⁻¹)` formula (equivalent by clearing the denominator).
 
-    Archimedean specialisation: `markovZax (Real.sqrt q) = markovZax_real q hq`
-    when `0 < q`. See `markovZax_real` below. -/
+    **The Markov KERNEL, not a Markov parameter — convention-C shaped, kept
+    deliberately for comparison** (bean `qou-cxjq`, 2026-08-26).
+
+    The old line here read "Archimedean specialisation:
+    `markovZax (Real.sqrt q) = markovZax_real q hq` when `0 < q`". That is no
+    longer true — `markovZax_real` is now convention D — and it is removed rather
+    than left to rot.
+
+    `markovZax u = u/(u²+1)` is convention-neutral *as a function*; the
+    convention lives in how it is instantiated. Convention C is `markovZax √q`.
+    Convention D is **not** `markovZax u` for any `u` at all
+    (`QOU.BraidKnot.no_kernel_instantiation_is_conventionD`: the kernel's real
+    range is `[-1/2, 1/2]` and `z_D q > 1/2` for every `q > 1`) — it is the
+    *rescaling* `q² · markovZax q`, which is what `markovZax_real` now computes.
+
+    So: do not consume this as a Markov parameter. Use `markovZax_real`, which is
+    convention D. -/
 def markovZax {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
 
-/-- **Archimedean specialisation** of `markovZax` over `ℝ`.
+/-- **Archimedean specialisation** of `markovZax` over `ℝ`, in **convention D**:
+    `z_D q = q³/(q² + 1) = q² · markovZax q`.
 
-    Backward-compat shim: instantiates the generic Tier 2 `markovZax`
-    at `u := Real.sqrt q` under the explicit positivity hypothesis
-    `0 < q`. Use the generic `markovZax` directly in new code.
+    **Migrated from convention C 2026-08-26 (bean `qou-cxjq`).** This read
+    `markovZax (Real.sqrt q)`, i.e. `√q/(q+1)` — convention C, excised by owner
+    ruling R1 of 2026-08-15.
 
-    Equivalence: `markovZax_real q hq = 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)`
-    follows from `markovZax u = u / (u² + 1) = 1 / (u + u⁻¹)` with
-    `u := Real.sqrt q`. -/
+    The migration is possible in exactly this shape and no other, and that is a
+    theorem rather than a preference. `markovZax` is convention-neutral **as a
+    function**; the convention lives in how it is *instantiated*, and
+    `QOU.BraidKnot.no_kernel_instantiation_is_conventionD` proves that for every
+    `q > 1` **no** argument `u` whatsoever gives `markovZax u = z_D q` — the
+    kernel's real range is `[-1/2, 1/2]` and `z_D q > 1/2`. So convention D is
+    unreachable by re-instantiating, and is reached instead by the *rescaling*
+    `q² · markovZax q` (`QOU.BraidKnot.markovZD_eq_sq_mul_kernel`).
+
+    This is why the 2026-08-03 Tier-2 migration, which replaced `Real.sqrt` with
+    the generic kernel, did not make the convention question go away: it removed
+    the square root, which was its goal, and left convention C in place and
+    harder to see.
+
+    The `0 < q` hypothesis is retained for backward compatibility with existing
+    callsites. Convention D needs no positivity — there is no `Real.sqrt` left in
+    it — so the hypothesis is now genuinely unused rather than load-bearing. -/
 noncomputable def markovZax_real (q : ℝ) (_hq : 0 < q) : ℝ :=
-  markovZax (Real.sqrt q)
+  q ^ 2 * markovZax q
 
 /-- **Legacy unsafe form** of `markovZax` — `Real.sqrt q` without the
     `0 < q` hypothesis. Kept for backward compatibility with the
@@ -158,7 +188,13 @@ theorem markov_iterated_stab {R : Type*} [Field R] (u : R) [MarkovTraceAxioms u]
 theorem markov_iterated_stab_real (q : ℝ) (hq : 0 < q)
     [MarkovTraceAxioms (Real.sqrt q)] (τ_x : ℝ) (k : ℕ) :
     ∃ τ_x_k_stab : ℝ, τ_x_k_stab = τ_x * (markovZax_real q hq)^k :=
-  markov_iterated_stab (Real.sqrt q) τ_x k
+  -- Routed through the ABSTRACT-`z` form, not through `markovZax (√q)`.
+  -- Under convention D the shim is `q² · markovZax q`, which is not
+  -- `markovZax u` for ANY `u` (`no_kernel_instantiation_is_conventionD`), so
+  -- the kernel-tied `markov_iterated_stab` can no longer supply it. The
+  -- iteration never depended on what `z` is, and `markov_iterated_stab_gen`
+  -- already says so — the shim was routing through the kernel gratuitously.
+  markov_iterated_stab_gen (markovZax_real q hq) τ_x k
 
 /-- **Disjoint-product factorisation (derived from M3)**: two braids K_1, K_2
     acting on disjoint strands give the factorised joint trace.
@@ -189,7 +225,8 @@ theorem disjoint_product_factorisation {R : Type*} [Field R] (u : R)
 theorem disjoint_product_factorisation_real (q : ℝ) (hq : 0 < q)
     [MarkovTraceAxioms (Real.sqrt q)] (τ_K1 τ_K2 : ℝ) (k : ℕ) :
     ∃ τ_joint : ℝ, τ_joint = τ_K1 * τ_K2 * (markovZax_real q hq)^k :=
-  disjoint_product_factorisation (Real.sqrt q) τ_K1 τ_K2 k
+  -- Abstract-`z` form, for the same reason as `markov_iterated_stab_real`.
+  disjoint_product_factorisation_gen (markovZax_real q hq) τ_K1 τ_K2 k
 
 /-! ## Discharge of MarkovDisjointStabilisation
 

@@ -9,7 +9,7 @@
       "computed": 0.9999996300752454,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "S(p)-S(mu) = S'(q*)*(q_p-q_mu) to <5%: the anchor swing is the KC21 1/u^3 slope, so a c3-level smooth meridian source is structurally excluded from the swing"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(proton)*S(muon) < 0 while every candidate is a single positive number"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.17118534203267116,
       "expected": 0.4,
       "passed": true,
-      "tolerance": 0.4,
+      "tolerance": "0.4",
       "source": "all |S|/candidate ratios are O(0.17-0.7): the deformed rungs supply the scale (only)"
     }
   ],

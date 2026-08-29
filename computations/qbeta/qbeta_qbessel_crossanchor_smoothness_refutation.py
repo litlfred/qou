@@ -31,13 +31,17 @@ significant figures — they differ only in the 8th decimal:
     q₀_proton = 1.10997858275138…      q₀_muon = 1.10997859555418…
     Δq₀ = 1.2803e-8   (relative 1.15e-8)
 
-yet the CAL-anchored `c_3` differs by ~2.9 %:
+yet the CAL-anchored `c_3` differs by ~2.37 %:
 
-    c_3(proton) = −2.0693            c_3(muon) = −2.0097      (eigenphase, authoritative)
+    c_3(proton) = −2.0693            c_3(muon) = −2.0202      (registry §3, live)
 
 So the empirical slope is
 
-    dc_3/dq₀ ≈ 4.66e6 .
+    dc_3/dq₀ ≈ 3.84e6 .
+
+(Corrected 2026-08-29, bean `qou-kt8o`: this read c_3(muon) = −2.0097 and
+4.66e6, the pre-#1422 SUPERSEDED pair. The refutation is unaffected — 3.84e6
+is just as impossible for a smooth real `f`.)
 
 Any candidate of the form `c_3(η) = K · sinh(x·sinh η)` with a **fixed** real `x`
 is a *smooth* real function of `η = log q₀`. Its cross-anchor relative swing is
@@ -48,8 +52,8 @@ which is bounded by `x · cosh η · (Δq₀/q₀)` for `x·sinh η ≳ 1`. Pinn
 physical brane-tower scale — `x ∈ {1, 1/√u, 1/u} ≈ {1, 10.8, 117.4}`, where
 `u = b·ℏ_q² ≈ 0.00852` is the ladder step (`1/u ≈ 117.4` is the q-difference pole
 the q-Bessel recurrence reproduces, `qbeta_qbessel_contiguity_cfinite.py`) — gives
-a predicted swing of `≤ 1.4e-6`, i.e. **at least 2×10⁴ too small** to be the
-observed `2.9e-2`.
+a predicted swing of `≤ 1.4e-6`, i.e. **at least 1.7×10⁴ too small** to be the
+observed `2.37e-2`.
 
 Equivalently (the dual): solving (★) for the `x` that *would* match the observed
 slope gives `x ≈ 2.5e6`, so the Jacobi–Anger argument `x·sinh η ≈ 2.6e5` — deep in
@@ -103,13 +107,34 @@ set_compute_dps()
 # q₀ values: qbeta_chain4_kashiwara_step3_cross_anchor.py (Q_PROTON / Q_MUON).
 Q0_PROTON = mpf("1.10997858275138080759166909561")
 Q0_MUON = mpf("1.10997859555418057528159407961")
-# c_3 targets: qbeta_eigenphase_taylor_in_u.py (C3_EMP_MP / C3_EMP_MUON) — the
-# authoritative both-anchor pair. (The scope doc's Φ₂ reconciliation quotes a
-# slightly different muon value −2.0202; the verdict is robust to either, so we
-# report both as a sensitivity check.)
+# c_3 targets, at BOTH muon values the corpus carries.
+#
+# 🛑 THE LABELS WERE BACKWARDS (corrected 2026-08-29, bean `qou-kt8o`). This
+# block read:
+#
+#     C3_MUON_AUTH  = -2.0097   # eigenphase probe (authoritative)
+#     C3_MUON_SCOPE = -2.0202   # scope-doc Φ₂ reconciliation (sensitivity)
+#
+# `-2.0097` is the **pre-#1422 SUPERSEDED** muon c_3. `-2.0202` is the LIVE
+# one: `ck-dk-canonical-registry.md` §3 records the extracted pair as
+# `-2.06934258 / -2.02020024`, and AGENTS.md names `-2.0097` as superseded by
+# that exact number. So the superseded value was carrying the "authoritative"
+# label and the live one was demoted to a sensitivity check.
+#
+# That is not cosmetic: this file's slope assertion below was written against
+# whichever value wore the label, so it pinned the stale figure — see there.
+#
+# The names are kept (they are used below) but now mean what they say:
+# `_LIVE` is the registry pair, `_SUPERSEDED` is retained deliberately so the
+# 4.6e6 figure scattered through the corpus stays *explicable* rather than
+# merely wrong — this file is where it can be seen to come from.
 C3_PROTON = mpf("-2.0693")
-C3_MUON_AUTH = mpf("-2.0097")  # eigenphase probe (authoritative)
-C3_MUON_SCOPE = mpf("-2.0202")  # scope-doc Φ₂ reconciliation (sensitivity)
+C3_MUON_LIVE = mpf("-2.0202")        # registry §3 extracted pair (authoritative)
+C3_MUON_SUPERSEDED = mpf("-2.0097")  # pre-#1422; the source of the corpus's 4.6e6
+# Back-compat aliases for the old names, so nothing downstream silently reads
+# the wrong one: AUTH now points at the LIVE value, which is the fix.
+C3_MUON_AUTH = C3_MUON_LIVE
+C3_MUON_SCOPE = C3_MUON_SUPERSEDED
 
 # Substrate ladder step u = b·ℏ_q² ≈ 0.00852 (qbeta_ck_truncation_bias_correction_probe.py);
 # 1/u ≈ 117.4 is the q-difference pole reproduced by the q-Bessel tail ratio
@@ -149,7 +174,7 @@ check("anchors differ by < 1e-7 (same substrate to 7 sig figs)", abs(rel_dq) < m
 # ── (2) The empirical c_3 slope is the #1821 ≈4.6e6 smoothness wall ───────────
 print("\n(2) Empirical cross-anchor slope dc_3/dq₀")
 slope_table = {}
-for tag, c3m in [("authoritative", C3_MUON_AUTH), ("scope_phi2", C3_MUON_SCOPE)]:
+for tag, c3m in [("live/registry", C3_MUON_LIVE), ("superseded", C3_MUON_SUPERSEDED)]:
     dc3 = c3m - C3_PROTON
     rel_swing = abs(dc3 / C3_PROTON)
     slope = dc3 / dq
@@ -163,17 +188,43 @@ for tag, c3m in [("authoritative", C3_MUON_AUTH), ("scope_phi2", C3_MUON_SCOPE)]
         "dc3_dq0": mp.nstr(slope, 8),
     }
 results["empirical_slope"] = slope_table
-# Both variants land in the millions (the #1821 wall): assert > 1e6.
+# Both variants land in the millions (the #1821 wall): assert > 1e6. This is
+# the assertion the REFUTATION actually rests on, and it is indifferent to
+# which muon c_3 is used — which is the point of stating it at 1e6.
 check(
-    "dc_3/dq₀ > 1e6 for both muon variants (the PR #1821 ≈4.6e6 smoothness wall)",
-    abs((C3_MUON_AUTH - C3_PROTON) / dq) > mpf("1e6")
-    and abs((C3_MUON_SCOPE - C3_PROTON) / dq) > mpf("1e6"),
+    "dc_3/dq₀ > 1e6 for both muon variants (the PR #1821 smoothness wall)",
+    abs((C3_MUON_LIVE - C3_PROTON) / dq) > mpf("1e6")
+    and abs((C3_MUON_SUPERSEDED - C3_PROTON) / dq) > mpf("1e6"),
 )
-# Authoritative variant reproduces ≈4.6e6 specifically.
-slope_auth = abs((C3_MUON_AUTH - C3_PROTON) / dq)
+# 🛑 THIS ASSERTION PINNED A SUPERSEDED NUMBER AND PASSED (corrected
+# 2026-08-29, bean `qou-kt8o`). It read:
+#
+#     "authoritative dc_3/dq₀ ≈ 4.6e6 (matches AGENTS.md / PR #1821 figure
+#      within 10%)"
+#     abs(slope_auth - 4.6e6) / 4.6e6 < 0.10
+#
+# with `slope_auth` computed from the value then labelled AUTH — the
+# pre-#1422 superseded `c_3 = -2.0097`, which yields 4.6552e6 and passes
+# comfortably. Against the LIVE c_3 the same test reads 3.8351e6 vs 4.6e6 =
+# 16.6 % and FAILS. So a green check was enforcing a stale figure, and would
+# have gone red the moment anyone corrected the constant upstream — punishing
+# the fix.
+#
+# It now asserts against the LIVE pair and the registry's corrected 3.84e6
+# (`ck-dk-canonical-registry.md` §3, PR #5765). The second check keeps the
+# superseded value visible and pins the number it produces, so the 4.6e6
+# scattered through the corpus stays traceable to its cause instead of just
+# being wrong somewhere.
+slope_live = abs((C3_MUON_LIVE - C3_PROTON) / dq)
 check(
-    "authoritative dc_3/dq₀ ≈ 4.6e6 (matches AGENTS.md / PR #1821 figure within 10%)",
-    abs(slope_auth - mpf("4.6e6")) / mpf("4.6e6") < mpf("0.10"),
+    "live dc_3/dq₀ ≈ 3.84e6 (registry §3 as corrected in PR #5765, within 10%)",
+    abs(slope_live - mpf("3.84e6")) / mpf("3.84e6") < mpf("0.10"),
+)
+slope_superseded = abs((C3_MUON_SUPERSEDED - C3_PROTON) / dq)
+check(
+    "the corpus's 4.6e6 is reproduced ONLY by the superseded c_3 = -2.0097 "
+    "(within 10%) — i.e. it is the stale-c_3 twin, not an independent figure",
+    abs(slope_superseded - mpf("4.6e6")) / mpf("4.6e6") < mpf("0.10"),
 )
 
 
@@ -207,11 +258,11 @@ check(
 # ── (4) DUAL (inverse): the x that WOULD match the slope is absurd ───────────
 print("\n(4) DUAL — solve for the x that would match the observed slope")
 inv = {}
-x_req_auth = None  # cache the authoritative root for the assertion (findroot is costly)
-for tag, c3m in [("authoritative", C3_MUON_AUTH), ("scope_phi2", C3_MUON_SCOPE)]:
+x_req_auth = None  # cache the LIVE root for the assertion (findroot is costly)
+for tag, c3m in [("live/registry", C3_MUON_LIVE), ("superseded", C3_MUON_SUPERSEDED)]:
     target = abs((c3m - C3_PROTON) / dq / C3_PROTON)  # |d ln c_3 / dq₀|
     x_req = findroot(lambda x: coth(x * se) * x * ce / Q0_PROTON - target, mpf("2e6"))
-    if tag == "authoritative":
+    if tag == "live/registry":
         x_req_auth = x_req
     arg = x_req * se
     print(
@@ -231,7 +282,7 @@ all_passed = all(ok for _, ok in asserts)
 verdict = (
     "REFUTED (real x). A substrate-fixed real amplitude x in the bar-odd q-Bessel / "
     "Jacobi–Anger object sinh(x·sinh η) CANNOT reproduce the c_3 cross-anchor swing: "
-    "the two anchors differ by Δq₀≈1.28e-8 while c_3 differs ~2.9%, so dc_3/dq₀≈4.66e6 "
+    "the two anchors differ by Δq₀≈1.28e-8 while c_3 differs ~2.37%, so dc_3/dq₀≈3.84e6 "
     "— the PR #1821 smoothness wall. Pinning x at any physical brane-tower scale "
     "(1…117) under-predicts the swing by ≥2e4×; matching it needs x≈2.5e6 (argument "
     "≈2.6e5), physically absurd. This CONFIRMS PR #2279's stated caution (no c_3 "
@@ -248,8 +299,8 @@ witness = {
     "description": (
         "Formalize-first refutation of a substrate-fixed real-x q-Bessel "
         "sinh(x·sinh η) as a c_3 residue-A cross-anchor closed form. The "
-        "proton/muon anchors differ by Δq₀≈1.28e-8 but c_3 differs ~2.9% "
-        "(dc_3/dq₀≈4.66e6, the PR #1821 wall); any physical-scale x under-predicts "
+        "proton/muon anchors differ by Δq₀≈1.28e-8 but c_3 differs ~2.37% "
+        "(dc_3/dq₀≈3.84e6, the PR #1821 wall); any physical-scale x under-predicts "
         "the swing ≥2e4×, matching it needs x≈2.5e6. Closes the one open gate PR "
         "#2279 named; confirms its no-closure caution. "
         "docs/audits/2026-06-14-qbessel-c3-crossanchor-smoothness-refutation.md."

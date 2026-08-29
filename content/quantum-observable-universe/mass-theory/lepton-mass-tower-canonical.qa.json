@@ -38,7 +38,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -72,7 +72,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -87,7 +87,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -102,7 +102,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -117,7 +117,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -132,7 +132,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -147,7 +147,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -162,7 +162,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -180,7 +180,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -198,7 +198,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -216,7 +216,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -230,7 +230,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -243,7 +243,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -258,7 +258,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -273,7 +273,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -288,7 +288,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -303,7 +303,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -318,7 +318,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -333,7 +333,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -348,7 +348,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -363,7 +363,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -378,7 +378,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -393,7 +393,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -408,7 +408,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -423,7 +423,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -438,7 +438,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -453,7 +453,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
         "reviewed_at": "2026-07-08T18:28:17.000Z",
         "reviewed_sha": "f31ec032ff26f2f79a0cdff9040a2f2e33ac47b6",
         "reviewer": {
@@ -1098,7 +1098,7 @@
         "reviewed_at": "2026-08-10T03:28:15.190Z",
         "reviewed_sha": "8aa78aebe2cf2798717c127d827171ac3bec205e",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:21: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q) | quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:23: Li_2^q (Rogers) in mass-anchor block — context violation (use Φ_q)"
+        "evidence": "quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:21: Li_2^q (Rogers) in mass-anchor block \u2014 context violation (use \u03a6_q) | quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md:23: Li_2^q (Rogers) in mass-anchor block \u2014 context violation (use \u03a6_q)"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1307,7 +1307,7 @@
           "in_degree": 0,
           "cone_size": 69,
           "depth": 25,
-          "pagerank": 0.000078,
+          "pagerank": 7.8e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1445,7 +1445,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. The published `title:` now reads \"**without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor\", matching the lowercase form the .md body already used. The all-caps SUPERSEDED markers in the authorNotes are left as they are — that is the working channel.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The published `title:` now reads \"**without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor\", matching the lowercase form the .md body already used. The all-caps SUPERSEDED markers in the authorNotes are left as they are \u2014 that is the working channel.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1834,8 +1834,8 @@
         "reviewed_at": "2026-08-21T21:12:56.950Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "severity": "minor",
-        "evidence": "Five unqualified maximal adverbs in a block whose whole content is a NEGATIVE result, where hedging is what the result actually supports: 'The evaluation occurs ENTIRELY within…', 'falsifying the Skein formula', 'fails to predict $m_\\tau/m_e$ ENTIRELY', 'diverges SEVERELY', 'governs the divergence behavior ENTIRELY'. Per the corpus's scope-(a)/(b) refutation discipline these are scope-(a) numerical negatives; the adverbs push them toward scope-(b) structural exclusions without citing any invariant.",
-        "notes": "proposed: drop 'entirely' at all three sites and 'severely'; 'falsifying … as a direct pre-limit identity' already carries its own scope and can stay."
+        "evidence": "Five unqualified maximal adverbs in a block whose whole content is a NEGATIVE result, where hedging is what the result actually supports: 'The evaluation occurs ENTIRELY within\u2026', 'falsifying the Skein formula', 'fails to predict $m_\\tau/m_e$ ENTIRELY', 'diverges SEVERELY', 'governs the divergence behavior ENTIRELY'. Per the corpus's scope-(a)/(b) refutation discipline these are scope-(a) numerical negatives; the adverbs push them toward scope-(b) structural exclusions without citing any invariant.",
+        "notes": "proposed: drop 'entirely' at all three sites and 'severely'; 'falsifying \u2026 as a direct pre-limit identity' already carries its own scope and can stay."
       }
     ],
     "trap-nonspeakable": [
@@ -1870,7 +1870,7 @@
         "reviewed_at": "2026-08-21T21:12:57.004Z",
         "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
         "severity": "minor",
-        "evidence": "'The operative Skein formula evaluates the $m_\\mu/m_e$ ratio using the Kashaev limit' — 'the operative Skein formula' names nothing defined in the block, and 'operative' is doing the work a script name or a block reference should. Same shape as the sweep-substitution pattern where 'the canonical formalism' stands in for a producer. Compare 'The canonical $\\mathcal{F}_\\ell(q)$ must supply the missing magnitude', where 'canonical' is again load-bearing and undefined.",
+        "evidence": "'The operative Skein formula evaluates the $m_\\mu/m_e$ ratio using the Kashaev limit' \u2014 'the operative Skein formula' names nothing defined in the block, and 'operative' is doing the work a script name or a block reference should. Same shape as the sweep-substitution pattern where 'the canonical formalism' stands in for a producer. Compare 'The canonical $\\mathcal{F}_\\ell(q)$ must supply the missing magnitude', where 'canonical' is again load-bearing and undefined.",
         "notes": "proposed: name the formula (or its block label) at first use. Not fixed inline: I cannot tell from this block which Skein formula is meant."
       }
     ],
@@ -1895,5 +1895,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:12:57.004Z"
+  "updated_at": "2026-08-21T21:12:57.004Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

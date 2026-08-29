@@ -9,7 +9,7 @@
       "computed": 0.0002828827514141016,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "rel_err",
       "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.470014; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0283% (conj:alpha-cosh-h-z-step-correction)."
     },
@@ -18,7 +18,7 @@
       "computed": 0.016983993028839586,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.025,
+      "tolerance": "0.025",
       "unit": "rel_err",
       "source": "empirical T/D and ⁴He/³He ratios match (q^{1/2}+q^{-1/2})^4 to ≤ 2%"
     },
@@ -27,7 +27,7 @@
       "computed": 0.006625079349731892,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "unit": "rel_std",
       "source": "Phase 3 baseline rel_std = 1.398; this script's two-factor closure achieves rel_std = 0.0066 on the 4 atoms with one fit parameter (α)."
     },
@@ -36,7 +36,7 @@
       "computed": 0.025056910170182283,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.03,
+      "tolerance": "0.03",
       "unit": "rel_err",
       "source": "Zero-parameter substrate-derived formula |Δ_λ*(K)| = (Vol_hyp(K) / [8]_q) · [3]_q^(2(Z-1)) · (q^{1/2}+q^{-1/2})^(4N) reproduces empirical |Δ_λ*| to max rel.err. 2.51% on the 4 atoms."
     }

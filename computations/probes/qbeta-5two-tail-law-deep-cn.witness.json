@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "shared-triangle C_n == profile C52(n), integer dict equality at n = 5, 20, 43"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "T̂_n (n ≤ 43) matches the A6.2 profile-module route"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "three-model ranking identical on 48..96 and 64..96"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 4.371195596752283e-10,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "Aitken plateau c∞ of (−1)^n·T̂_n stable across offsets — simple pole at w = −1, residue c∞"
     }
   ],

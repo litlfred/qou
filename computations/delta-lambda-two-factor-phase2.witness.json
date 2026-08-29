@@ -9,7 +9,7 @@
       "computed": 0.3883571225623544,
       "expected": 0.3882864715477132,
       "passed": false,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "tr_M(D) at q_0",
       "source": "delta-lambda-empirical-tabulation.witness.json"
     }

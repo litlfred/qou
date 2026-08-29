@@ -9,7 +9,7 @@
       "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|p_+ + p_- − 1|",
       "source": "prop:hecke-markov-transition (ii)."
     },
@@ -18,7 +18,7 @@
       "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|p_+/p_- − q²|",
       "source": "prop:hecke-markov-transition (ii)."
     },
@@ -27,7 +27,7 @@
       "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|q/(q+q⁻¹) − q²/(q²+1)|",
       "source": "prop:hecke-markov-transition (ii) closed form."
     },
@@ -36,7 +36,7 @@
       "computed": "4.527839539413356183754559645443895890341265599069569094791307444967751e-72",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|q⁻¹/(q+q⁻¹) − 1/(q²+1)|",
       "source": "prop:hecke-markov-transition (ii) closed form."
     },
@@ -45,7 +45,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {(3), (2,1), (1^3)} × {completeness, idempotency e_+, idempotency e_-, orthogonality, spectral reconstruction} of the matrix-entry residue",
       "source": "prop:hecke-markov-transition (i) — completeness, idempotency, orthogonality, and σ = q·e_+ − q⁻¹·e_- on the three H_3 Hoefsmit-seminormal irreps."
     }

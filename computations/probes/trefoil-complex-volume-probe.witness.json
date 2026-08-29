@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python (stdlib decimal, 60 dps)",
-  "computedAt": "2026-08-24T17:14:56.687792+00:00",
-  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
+  "computedAt": "2026-08-29T04:41:01.807999+00:00",
+  "commitSha": "2e92c56a4e899a3a7d41fd9421b3364f1c1a47e4",
   "assertions": [
     {
       "name": "trefoil_markov_trace_nonzero",
       "passed": true,
-      "detail": "|tr_M(sigma^3)|@q0 = 0.730204031629694885498299011373 > 0.1"
+      "detail": "|tr_M(sigma^3)|@q0 = 0.848526607059009556201749746812 > 0.1"
     },
     {
       "name": "trefoil_jones_nonzero",
@@ -26,11 +26,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 0,
   "computation": "trefoil-complex-volume-probe",
   "scriptFile": "trefoil_complex_volume_probe.py",
-  "scriptHash": "480d8aad9d43",
-  "scriptCommitSha": "d6e6e6ada93e69f06578bd71a13a7625f5088109",
+  "scriptHash": "d1f0abbf461f",
+  "scriptCommitSha": "e63907e6f0248768e8f62597fbefc2080737b0d9",
   "precisionMetadata": {
     "compute_dps": 60,
     "output_dps": 30,
@@ -49,16 +49,18 @@
   "data": {
     "q_0": "1.109978582751380807591669095611",
     "h_eq_q_minus_qinv": "0.209060298795639315430846213130",
-    "z_markov": "0.499320334183694452413442680258",
+    "z_markov": "0.612688037146465251595829863946",
     "trM_reduction": "sigma^3 = (h^2+1)*sigma + h  in H_2(q)",
     "trM_coeff_sigma_h2_plus_1": "1.043706208532521989402019335677",
     "trM_coeff_one_h": "0.209060298795639315430846213130",
-    "trM_trefoil_at_q0": "0.730204031629694885498299011373",
-    "abs_trM_trefoil_at_q0": "0.730204031629694885498299011373",
+    "trM_trefoil_at_q0": "0.848526607059009556201749746812",
+    "abs_trM_trefoil_at_q0": "0.848526607059009556201749746812",
     "jones_convention": "V(3_1)(t) = -t^-4 + t^-3 + t^-1 (left trefoil), t = q_0",
     "jones_trefoil_at_q0": "0.973370174529144848190871929036",
     "abs_jones_trefoil_at_q0": "0.973370174529144848190871929036",
     "vol_hyp_trefoil": "0.0",
     "vol_hyp_reason": "(2,3) torus knot: Seifert-fibered, non-hyperbolic, Gromov norm 0"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

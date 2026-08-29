@@ -7,6 +7,7 @@ section_number: null
 pages: 59-62
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 Let C be a bicategory (we assume that associators and uniﬁers are invertible 2-morphisms). We
 ﬁx the following terminology: a 1- isomorphism f : X1 /d47/d47 X2 in C always includes the data of

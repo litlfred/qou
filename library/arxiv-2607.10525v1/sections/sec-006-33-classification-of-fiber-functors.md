@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 11-12
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 Theorem 3.6.LetGact on a finite tensor categoryC. Fiber functors onC G are in
 bijection with conjugacy classes of pairs(H,M)such that:

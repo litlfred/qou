@@ -9,7 +9,7 @@
       "computed": 34.13661525439891,
       "expected": 34.14,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "unit": "hyperbolic volume",
       "source": "(m_tau/m_e)*hbar_q^2 at canonical q0."
     },
@@ -27,7 +27,7 @@
       "computed": 3.382314419348457,
       "expected": 3.383,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "unit": "hyperbolic volume",
       "source": "(m_tau/m_e)*hbar_q^3 at canonical q0."
     },

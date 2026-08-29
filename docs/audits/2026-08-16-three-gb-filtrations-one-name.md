@@ -1,5 +1,19 @@
 # Three different filtrations are called "the GB filtration", and two of them provably cannot do the job
 
+> **▶ SUPERSEDED IN PART (2026-08-26, bean `qou-wjbd`).** The third reading —
+> the Coxeter-length filtration, the one this document leaves standing from
+> `n = 4` up — **is now excluded too, for every `n ≥ 2`, and no re-indexing
+> repairs it**:
+> [`2026-08-26-no-shift-rescues-the-word-partition-bridge.md`](2026-08-26-no-shift-rescues-the-word-partition-bridge.md).
+> The "holds at `n = 4..7`" verdict below is correct **as a verdict on the test
+> that was run** — a necessary condition comparing against `gr_k` of the whole
+> algebra — but that bound is lossy, and computing the actual induced dimension
+> `dim(Z ∩ F_k)` makes it an equality test that fails at every `n`. So **all
+> three** readings of `J^•` are excluded, and the dilemma in §3 collapses onto
+> its second branch: the citation does no work.
+
+
+
 Follow-on to [`2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated`](2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md)
 (bean `wpdb`). That audit said the word-depth ↔ partition-depth identification is
 *unstated*. Reading the proof block rather than only the statement changes the

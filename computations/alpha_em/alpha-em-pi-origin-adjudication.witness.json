@@ -22,7 +22,7 @@
       "computed": 0.2122065907891938,
       "expected": 0.2122065907891938,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "DERIVED zero-mode b1/Area = 8/(12pi) = 2/(3pi); Area = 4pi(g-1) = 12pi (Gauss-Bonnet 2pi.chi, chi=-6)"
     },
     {
@@ -30,7 +30,7 @@
       "computed": -8.0,
       "expected": -8.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "zeta_{Delta1}(0) = b1.zeta_Lambda(0) = -b1 (rank-independent Epstein zeta(0)=-1; #3834 area-free count)"
     },
     {
@@ -38,7 +38,7 @@
       "computed": 4.0,
       "expected": 4.0,
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "zeta'_{S1}(0) machinery: det'(-d2/dx2)_{S1_{L=2}} = L^2 = 4 (the 2pi cancels in the det value)"
     },
     {
@@ -46,7 +46,7 @@
       "computed": -4.0,
       "expected": -4.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "(2pi)-Gaussian per-mode: pi-power -b1/2 = -4, NOT -1 => EXCLUDED (derived, wrong power)"
     },
     {
@@ -54,7 +54,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "4pi heat-kernel proper-time determinant (4pi.s)^{-d/2}|_{d=2} = 1/(4pi): pi-power -1, DERIVED"
     },
     {
@@ -62,7 +62,7 @@
       "computed": -2.0,
       "expected": -2.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "momentum-space (2pi)^{-d}|_{d=2} = 1/(4pi^2): pi-power -2 (pi^2 reading) -- NOT the determinant normalization"
     },
     {
@@ -70,7 +70,7 @@
       "computed": 2.0,
       "expected": 2.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Rogers L(z)=rational.pi^2 (pi-power +2), Bloch-Wigner D(z)=O(1) (pi-power 0); bare 1/pi only via CONJECTURAL higher-Bloch regulator"
     },
     {
@@ -78,7 +78,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "decision rule: only candidate 3 (heat-kernel) yields a DERIVED pi-power -1 => 1/pi ORIGIN closes to it; (2) gives -4, (1) gives +2/0"
     },
     {
@@ -86,7 +86,7 @@
       "computed": 1.5,
       "expected": 1.5,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "per-loop pi (bare 4pi) != zero-mode pi (dressed Area 12pi); SAME heat-kernel mechanism, separated by Area/(pi.b1)=2(g-1)/g=3/2 -- a DISTINCT pi-value, not the same Gauss-Bonnet pi"
     }
   ],

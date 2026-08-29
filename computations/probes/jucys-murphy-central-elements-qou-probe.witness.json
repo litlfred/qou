@@ -9,7 +9,7 @@
       "computed": 2.897817305224548e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (\u03bb, \u2113, SYT pair) of |e_\u2113(J_1(T), \u2026) \u2212 e_\u2113(J_1(T'), \u2026)|  on V_\u03bb",
       "source": "JM elements act diagonally on the Hoefsmit basis; elementary symmetric polynomials of diagonal matrices are also diagonal; centrality says they act as the SAME scalar across all SYTs of shape \u03bb."
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (\u03bb, \u2113) of |e_\u2113(JM eigenvalues for any SYT) \u2212 e_\u2113({q^{2c(\u25a1)} : \u25a1 \u2208 \u03bb})|",
       "source": "Closed form c_\u2113(\u03bb) = e_\u2113({q^{2c(\u25a1)}}) per the proposition; the JM-eigenvalue sum over an SYT visits each cell of \u03bb exactly once."
     }

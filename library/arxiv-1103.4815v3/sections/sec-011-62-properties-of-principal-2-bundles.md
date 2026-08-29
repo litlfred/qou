@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 36-38
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 Principal Γ-2-bundles over M form a bicategory denoted 2- BunΓ (M ). There is an evident pullback
 2-functor

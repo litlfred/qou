@@ -1,0 +1,17 @@
+---
+# qou-mame
+title: 'Close the Lobachevsky-Catalan axiom: lobachevsky(pi/4) = catalan_G/2 via QOU.Knot.clausen_eq_series'
+status: in-progress
+type: task
+priority: normal
+created_at: 2026-08-26T00:50:24Z
+updated_at: 2026-08-26T01:05:03Z
+---
+
+PROVED 2026-08-26. `lobachevsky_pi_div_four_eq_half_catalan` is now a theorem, sorry-free, [propext, Classical.choice, Quot.sound]. Axiom surface 24 -> 23.
+
+The axiom was recorded External on the strength of its own docstring ("needs Mathlib's full polylogarithm machinery ... none of which is currently upstream"). Both halves were false: Mathlib has `integral_log_sin_zero_pi_div_two` and `Analysis.Complex.AbelLimit`, and this repo already had the whole series-integral bridge in `QOU.Knot.clausen_eq_series` (sorry-free). Proof is 3 steps over those.
+
+Downstream: `WhiteheadVolume.vol_L5a1_eq_eight_lobachevsky` was conditional on the axiom and is now unconditional.
+
+Deleted `LobachevskyClausenGap.lean` (its narrative asserted a gap that does not exist). Guard rc=0 / 40 entries.

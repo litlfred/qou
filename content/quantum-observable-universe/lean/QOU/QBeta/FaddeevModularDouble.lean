@@ -120,10 +120,20 @@ theorem not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
 
 The fibre-side spec for the `c_k` evaluation map (handed to the z→c_k f-map
 keystone, PR #3458). The observed cross-anchor `c_3` swing
-(`c_3(q_p) = −2.0693` proton vs `−2.0097` muon; `Δq = 1.28×10⁻⁸`) demands a
-slope `dc_3/dq ≈ 4.66×10⁶`, which for a **smooth real function of `q`** requires
-a singularity within `≈ 4.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
-#1821 — no categorical object supplies such a pole). The lemmas below record
+(`c_3(q_p) = −2.0693` proton vs `−2.02020024` muon; `Δq = 1.28×10⁻⁸`) demands a
+slope `dc_3/dq ≈ 3.84×10⁶`, which for a **smooth real function of `q`** requires
+a singularity within `≈ 5.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
+#1821 — no categorical object supplies such a pole).
+
+All three numbers were corrected on 2026-08-29 (bean `qou-kt8o`) from
+`−2.0097` / `4.66×10⁶` / `4.4×10⁻⁷`. The muon `c_3` was the **pre-#1422
+superseded** value, and the other two are its arithmetic consequences: the
+stale pair gives a secant of `4.65958×10⁶` and `|c_3|/slope = 4.44×10⁻⁷`,
+reproducing the old figures to every digit shown, while the live pair gives
+`3.83925×10⁶` and `5.39×10⁻⁷`. **The impossibility is unaffected** — `3.84×10⁶`
+is as impossible for a smooth real `f` as `4.66×10⁶`, and a pole within
+`5.4×10⁻⁷` is as unavailable as one within `4.4×10⁻⁷`. Only the magnitudes
+were wrong. The lemmas below record
 the algebraic reason the impossibility is a **magnitude-channel** bound only:
 between two σ-unitaries (the fibre-saddle `|Φ_b| = 1`), the entire connecting
 factor is again σ-unitary — a *pure phase*. The magnitude channel is flat, so

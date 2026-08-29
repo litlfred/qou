@@ -87,8 +87,17 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
 /-- **Sanity inventory** — confirms the 8 upstream files
     contribute interlocking content.  This theorem is a
     documentation handle: every named class / instance below
-    is in scope and consumable. -/
-theorem inventory_check (R : Type u) [CommRing R] (q : R) :
+    is in scope and consumable.
+
+    Conditional on `[IwahoriHeckeAlgebra R 2 q]` (§3b-cond): the trivial
+    global `IwahoriHeckeAlgebra` instance was deliberately removed on
+    2026-08-23 (anti-laundering — a content-free `carrier = PUnit` instance
+    must not be fabricated to close it), so `Nonempty (IwahoriHeckeAlgebra
+    R 2 q)` is honestly available only *given* the class. `WedderburnIsomorphism
+    R 2 q` and `GBFiltrationCollapsesAtE2 R` carry real instances (`wedderburn_n2`,
+    `canonical`) and stay unconditional. -/
+theorem inventory_check (R : Type u) [CommRing R] (q : R)
+    [IwahoriHeckeAlgebra R 2 q] :
     -- Spectral sequence
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
     -- Hecke algebra

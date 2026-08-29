@@ -65,8 +65,48 @@ BASELINE = HERE / "q0-drift-baseline.json"
 # Documented anchors. Canonical is the CAL-2 muon pin carried by
 # q-pinning-50-digit.witness.json; the proton pin is the physical-
 # observations layer (AGENTS.md §q₀ anchor convention).
-Q_CANONICAL = mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
-PROTON_PIN_PPB = mpf("-11.5371")     # measured offset of the proton-pinned value
+#
+# BOTH ARE RESOLVED LIVE.  They used to be transcribed literals here:
+#
+#     Q_CANONICAL    = mpf("1.10997859555733471989...")   # the frozen anchor
+#     PROTON_PIN_PPB = mpf("-11.5371")                    # measured against it
+#
+# and that is a defect of exactly the kind this audit exists to detect.  A
+# drift detector whose reference is a transcription cannot see the reference
+# drift.  Concretely, under the 2026-08-22 owner ruling ("A --> CODATA 2022")
+# the anchor moves +0.0769 ppb, and a transcribed Q_CANONICAL would then have
+# classified every CORRECTLY migrated witness as STALE while calling the
+# superseded value canonical -- the ratchet inverted, pointing at the fix
+# instead of the defect.  It was already doing so on the migration branch: it
+# reported the re-derived anchor witness as the single NEW stale entry.
+#
+# PROTON_PIN_PPB moves with it.  It is an OFFSET measured against the muon
+# anchor, so re-pinning the anchor changes it too (-11.5371 vs A becomes
+# -11.6140 vs C); freezing the offset while the reference moves would drag
+# every proton-pinned witness across the PIN_TOL_PPB window.  Deriving it
+# from the two resolved pins keeps the pair consistent by construction.
+#
+# `_q0_value_for_anchor` is the anchor-LABEL resolver in qou_substrate --
+# the same function that decides what gets stamped `muon` -- so this audit
+# and the stamps it checks now read one source instead of two.
+from qou_substrate.witness import _q0_value_for_anchor as _pin
+
+
+def _resolved(anchor: str) -> mpf:
+    v = _pin(anchor)
+    if not v:
+        raise SystemExit(
+            f"q0_value_drift_audit: cannot resolve the {anchor} pin. "
+            "Refusing to fall back to a transcribed literal -- a drift audit "
+            "measuring against a guess is worse than no drift audit."
+        )
+    return mpf(v)
+
+
+Q_CANONICAL = _resolved("muon")
+_Q_PROTON = _resolved("proton")
+# Offset of the proton-pinned value, in ppb, DERIVED rather than transcribed.
+PROTON_PIN_PPB = (_Q_PROTON - Q_CANONICAL) / Q_CANONICAL * mpf(10) ** 9
 PIN_TOL_PPB = mpf("0.5")             # how close to a named pin counts as that pin
 
 # Field names that carry a substrate anchor. `q_star` / `qstar` are a
@@ -174,15 +214,33 @@ def main() -> int:
             print(f"    {r['file']}  {r['field']} = {r['value']}")
 
     if args.rebaseline:
-        BASELINE.write_text(json.dumps(
-            {"note": "Known-stale q0 fields. Regenerate ONLY when draining; "
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload_1 = {"note": "Known-stale q0 fields. Regenerate ONLY when draining; "
                      "the count must go DOWN. Not a way to silence a new failure.",
              "count": len(stale),
-             "stale_keys": sorted(key(r) for r in stale)}, indent=2) + "\n")
+             "stale_keys": sorted(key(r) for r in stale)}
+        _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+        BASELINE.write_text(json.dumps(
+            _prov_payload_1, indent=2) + "\n")
         print(f"\nRebaselined: {len(stale)} stale keys recorded.")
 
     out = HERE / "q0-value-drift-audit.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload_2 = {
         "schema": "witness/v1",
         "name": "q0-value-drift-audit",
         "description": "Substrate-anchor drift across witness JSONs. proton-pin is "
@@ -190,7 +248,11 @@ def main() -> int:
         "data": {"counts": {k: len(v) for k, v in by.items()},
                  "stale_total": len(stale), "new_stale": len(new_stale),
                  "rows": rows},
-    }, indent=2) + "\n")
+    }
+    _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
     print(f"\nWrote {out.name}")
 
     return 1 if (args.strict and new_stale) else 0

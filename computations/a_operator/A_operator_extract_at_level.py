@@ -470,6 +470,34 @@ def main() -> int:
         .add_data("n_consistent", n_consistent)
         .add_data("n_underdetermined", n_underdet)
         .add_data("results_per_lambda", results_per_lambda)
+        .add_data("precision_tier", "float64")
+        .add_data("deprecated", {
+            "reason":
+                "np.linalg.lstsq on dense complex systems, residual ~1e-14. "
+                "A genuine float64 COMPUTATION, not a float64 exit -- there "
+                "is no higher-precision value being cast away here. An "
+                "mpmath rewrite is not available at any budget: mp.qr_solve "
+                "at 50 dps measures 2.62 / 8.91 / 21.32 / 76.65 s at "
+                "n_unknowns 64 / 96 / 128 / 192, a fitted exponent of 3.07, "
+                "and the largest real block is 3,390 unknowns -- ~145 h for "
+                "one block, ~17,000 h across 30 blocks x 4 witnesses. Robust "
+                "to the exponent: even at n^2 it is ~500 h. Bean qou-1lr8.",
+            "not_production":
+                "Reachability established by reading the CONTROL FLOW, not by "
+                "grep and not by import cone -- both of those gave wrong "
+                "answers first, in opposite directions (qou-1lr8 records "
+                "them). canonical_tr_m_via_branching sets n = 3*A and returns "
+                "via the fine-Bratteli transfer for A >= 3 BEFORE the extract "
+                "load, so the load is reached only at A == 2 where n is "
+                "always 6. NO H_9 entry is reachable from it, and the "
+                "canonical mass table reaches these witnesses only through "
+                "that function. The two real consumers -- "
+                "sublemma_2_1_h9_tritium_verify.py and "
+                "sublemma_2_1_h12_helium_4_framework.py -- are ANCHOR-ONLY: "
+                "neither contains q_val, q0, Q_MP or Q_50_DIGIT anywhere, so "
+                "the hybrid-off-anchor failure mode qou-8chw fixed for the "
+                "deuteron cannot arise. Closes that bean's surviving item.",
+        })
     )
     out = builder.save()
     print(f"  Witness: {out.name}")

@@ -7,6 +7,7 @@ section_number: null
 pages: 57-59
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 In this section we are concerned with a Lie 2-group Γ and Lie groupoid s X and Y with actions
 R1 : X × Γ /d47/d47 X and R2 : Y × Γ /d47/d47 Y.

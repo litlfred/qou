@@ -7,6 +7,7 @@ section_number: null
 pages: 33-34
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 [BV07] Alain Bruguières and Alexis Virelizier. Hopf monads.Adv. Math., 215(2):679–733, 2007.
 [CGPW16] Shawn X. Cui, César Galindo, Julia Yael Plavnik, and Zhenghan Wang. On gauging

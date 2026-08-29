@@ -312,9 +312,8 @@ theorem quantumTwo_at_silver_ratio_squared :
   -- 1/(1+√2) = √2 - 1 since (1+√2)(√2-1) = √2·√2 - 1 = 1, so
   -- (1+√2) + 1/(1+√2) = 2√2 and its square is 4·(√2·√2) = 8.
   have hinv : (1 + Real.sqrt 2)⁻¹ = Real.sqrt 2 - 1 := by
-    rw [eq_comm, eq_inv_iff_mul_eq_one₀ h_ne]
-    ring_nf
-    linarith [h2]
+    field_simp
+    linear_combination -h2
   rw [one_div, hinv]
   have : (1 + Real.sqrt 2 + (Real.sqrt 2 - 1)) = 2 * Real.sqrt 2 := by ring
   rw [this]

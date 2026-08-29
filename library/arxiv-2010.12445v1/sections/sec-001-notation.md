@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 In this paper we work over a base commutative, associative ri ng R with unity. If not stated
 otherwise a ﬁber category will be a category ﬁbered in groupo ids over Aﬀ /R , the category of

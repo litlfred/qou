@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:33.118118+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T07:34:12.854382+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "bond_dilog_O1_arg_worse_than_geometric",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "the O(1)-argument bond-log \u03b1 is farther from \u03b1_true than the geometric self-energy \u2014 the bond-dilog does not derive \u03b1"
+      "source": "the O(1)-argument bond-log α is farther from α_true than the geometric self-energy — the bond-dilog does not derive α"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "flavor-split-alpha-bond-dilog",
   "scriptFile": "flavor_split_alpha_bond_dilog_probe.py",
-  "scriptHash": "c8a9dc0426fa",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "bd3ae3ca48de",
+  "scriptCommitSha": "76e640cac9a12372238b3aa9a7fe647b761695cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -40,7 +40,7 @@
     ],
     "reproduce": "python3 -u computations/probes/flavor_split_alpha_bond_dilog_probe.py"
   },
-  "description": "Bond-dilog derivation of the flavor-split coefficient \u03b1: RULED OUT. The dilog/log at the O(1) bond arguments (z\u22480.5, h\u22480.21) gives \u03b1\u22480.03\u20130.07 (worse than the geometric self-energy \u03b1=1, which is closest at +7.8%). Any single \u2212ln(1\u2212a\u00b7x) has 2nd-order ratio 1/2, so normalized \u03b1 \u221d bond-sensitivity A\u22480.13. \u03b1 is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
+  "description": "Bond-dilog derivation of the flavor-split coefficient α: RULED OUT. The dilog/log at the O(1) bond arguments (z≈0.5, h≈0.21) gives α≈0.03–0.07 (worse than the geometric self-energy α=1, which is closest at +7.8%). Any single −ln(1−a·x) has 2nd-order ratio 1/2, so normalized α ∝ bond-sensitivity A≈0.13. α is a resummed self-energy, not a single bond-dilog; exact 0.929 is mass-functor-limited, not fitted. Anchor-stable.",
   "data": {
     "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
     "proton_anchor": {

@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 17-20
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 We now deﬁne a presheaf structure on the family Z 1
 c (R)< := {Z 1

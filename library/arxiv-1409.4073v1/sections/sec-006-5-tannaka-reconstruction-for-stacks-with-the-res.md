@@ -7,6 +7,7 @@ section_number: 5
 pages: 27-35
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 Deﬁnition 5.1. A (contravariant) monoidal functor Ω : C − →D between symmetric monoidal
 categories is called strong if the maps

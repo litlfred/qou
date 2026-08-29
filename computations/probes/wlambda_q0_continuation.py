@@ -25,6 +25,16 @@ import time
 from datetime import datetime, timezone
 from fractions import Fraction
 from pathlib import Path
+# Path bridge — this file had NONE, which is why `from q_parameter import ...`
+# raised ModuleNotFoundError from any cwd but computations/. Every sibling in
+# probes/ carries this (or an equivalent sys.path insert) before its bare-name
+# imports; the `# noqa: E402` below implies preceding setup that was never here.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
+
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Substrate modulus q₀ (muon-pinned; computations/ layer canonical, from
@@ -153,7 +163,11 @@ assertions.append({
     "expected": "1.000, 4.110, 5.220, 6.220 (approx)",
     "passed": (abs(growing[0] - 1) < 1e-6 and abs(growing[1] - 4.110) < 1e-2
                and abs(growing[2] - 5.220) < 1e-2 and abs(growing[3] - 6.220) < 1e-2),
-    "tolerance": 1e-2,
+    # Exact decimal string, not the bare float `1e-2`: a raw float64 in a
+    # witness trips the raw-float64 ratchet, and a tolerance is a SPECIFICATION
+    # constant rather than a computed value, so it has an exact decimal form.
+    # Bean qou-3f7a.
+    "tolerance": "0.01",
     "source": "value-map qi polynomials evaluated at t₀=q₀+q₀⁻¹; unfolds the bounded root (1,φ,0,1).",
 })
 
@@ -197,6 +211,15 @@ witness = {
 }
 
 out = script_path.parent / "wlambda-q0-continuation.witness.json"
+# Provenance stamp (bean qou-4un2): this producer writes its
+# witness directly, so nothing else records which script made
+# it -- and a re-run of an unstamped producer DELETES the
+# scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+from qou_substrate.witness import WitnessBuilder as _WB
+import os as _os  # noqa: E402 -- provenance stamp
+witness.setdefault("scriptFile", _os.path.basename(__file__))
+_WB.stamp_staleness_metadata(
+    witness, script_path=__file__, engine=None, q0_anchor=None)
 out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
 print(f"wrote {out}  (allPassed={all_passed}, {len(assertions)} assertions)")
 for name, row in table.items():

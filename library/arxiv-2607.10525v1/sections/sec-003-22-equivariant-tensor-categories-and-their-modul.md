@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-9
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 FIBER FUNCTORS OF EQUIV ARIANTIZATIONS 5
 2.2.1.Group actions on tensor categories.LetG be the strict monoidal category

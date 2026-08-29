@@ -7,6 +7,7 @@ section_number: 2
 pages: 10-14
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 One of the key points in the proof of Theorem A is a characterization of the following stacks.
 Deﬁnition 2.1. A pseudo-aﬃne stack is a quasi-compact fpqc stack with quasi-aﬃne diagona l

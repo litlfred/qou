@@ -89,6 +89,48 @@ Adapt ALL responses accordingly:
   whose meaning, cost and consequences were legible only to the agent that had
   just spent the session measuring them.
 
+- **NAMING A DECISION IS ASKING A QUESTION — the frame above applies wherever
+  you raise one, not only in `AskUserQuestion` (STRICT, 2026-08-29).**
+
+  Every rule above says "`AskUserQuestion`", and an agent reads that as a rule
+  about a *tool*. It is not. It is a rule about **handing the author a
+  decision**, and the tool is one of several ways to do that. The others, all
+  of which carry the same obligation:
+
+  - an end-of-turn summary line ("the one thing waiting on you is …");
+  - a `**next**` entry in the beans report;
+  - a "Suggested follow-up" / "open question" section in a PR body;
+  - a bean body's "still open" list;
+  - a chat sentence of the form *"X is a judgement call for you"*.
+
+  **The test is not which tool you used. It is: does this sentence require the
+  author to decide something?** If yes, it owes the six-part frame — expand
+  every identifier, lead with the decision, give each option its what-it-means
+  / costs / risks / commits-to, state the default, name the blast radius in
+  real terms — and a recommendation marked as judgement.
+
+  **The failure mode is specifically the one-line gesture.** *"Whether the mass
+  context should move to `tower_term_li2q` is a judgement about the framework"*
+  names a decision and supplies none of what is needed to make it: not what the
+  two options do, not that the calibration has **zero non-probe consumers**
+  (which is what makes it cheap), not what happens if the author says nothing.
+  The author cannot act on it, and worse, cannot tell that it is cheap to
+  ignore. That is not a hand-off; it is a mention.
+
+  **Cheapest correct move when you do not want to spend the words:** don't
+  raise it. A decision you are not prepared to frame is a decision you should
+  either measure further yourself or leave in the bean unmentioned — a bean the
+  author can read on their own schedule is a fine home for an unframed
+  question. What is not fine is putting it in front of them stripped of
+  everything that would let them answer.
+
+  History: added 2026-08-29 on owner instruction — *"Named decision, but I
+  haven't described any information about it. This is a repeated habit of
+  yours."* The agent had applied the six-part frame diligently inside
+  `AskUserQuestion` calls all session while ending turn after turn with bare
+  one-line decision gestures, because every rule it had was addressed to the
+  tool rather than to the act.
+
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
   - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
@@ -212,6 +254,55 @@ Concretely:
   independent parallel assessment — like independent adversarial
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
+
+## Subagents with persistent memory (`.claude/agents/`)
+
+Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
+carrying `memory: project` in its frontmatter. That gives the agent its own
+directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
+25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
+prompt when it starts, and it reads and writes the directory as it works.
+
+| agent | owns |
+|---|---|
+| `lean-verifier` | olean cache restore, `lean`-direct verification, sorry/axiom status |
+| `corpus-grepper` | the six-path checklist before anything is declared open / refuted |
+| `compute-precision-auditor` | the NO-FLOAT64 gate family, witness staleness, producer health |
+| `convention-auditor` | convention C vs D, the muon/proton q₀ pin, Λ vs Cl₂, layer straddles |
+| `merge-coordinator` | branch/PR policy, sibling coordination, drive-to-green |
+
+The point is the failure mode this document is itself a record of: an agent
+spends a session measuring something, writes the number down, and the number
+is quoted months later as though it were current. **Memory does not fix that
+by holding better numbers — it fixes it by holding methods.** Each `MEMORY.md`
+labels every entry as exactly one of:
+
+- **STABLE** — a path, a command, a ruling, a structural fact. Trustworthy;
+  verify cheaply if surprising.
+- **TRAP** — a specific way the task goes wrong, with the evidence that
+  established it. Durable, and the highest-value entry type.
+- **BASELINE** — a measured number, stored **with the command that produced it
+  and the date, and never quoted as a current answer.** A baseline tells the
+  agent what to measure and how; re-run it, report fresh, then update the
+  entry.
+
+**Maintaining them is part of the work.** When a session establishes a durable
+fact in one of these areas — a detector blind spot, a producer that refuses by
+design, a gate that cannot fire — add it to the relevant `MEMORY.md` as a TRAP
+in the same PR. When a session re-measures a BASELINE, update the entry with
+the fresh number and date. A memory file that only accretes becomes the thing
+it exists to prevent.
+
+Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+under 200 lines — split detail into sibling files the agent reads on demand
+(`compute-precision-auditor/producer-health.md` is the worked example). And
+`memory: project` writes under `.claude/agent-memory/`, which is **committed**;
+`memory: local` writes under `.claude/agent-memory-local/`, which is
+gitignored, for anything genuinely per-machine.
+
+The agents defer to `.claude/skills/local/*.md` as the source of truth on
+procedure. Memory summarises; the skill governs. Where the two disagree, the
+skill wins and the memory entry is wrong — fix it.
 
 ## Agent work-plan policy (STRICT)
 
@@ -529,6 +620,33 @@ user's last message, not the most recently mentioned file.
       type is a **guard the corpus defines**. Without all seven its verdicts are
       about itself.
 
+      **🛑 But requirement one MASKS a whole defect class, and the "2 real
+      defects" figure below cannot see it (added 2026-08-29, bean `qou-0e1t`).**
+      Setting `PYTHONPATH` is necessary for the runner to reach the corpus's
+      bare-name imports — and it is exactly what hides a script whose
+      `import _path_bridge` precedes the `sys.path` bootstrap that resolves it.
+      `_path_bridge` lives in `computations/`; a script in a cluster subdir has
+      `sys.path[0]` set to its own directory, so that import fails unless the
+      parent is already on the path. **Measured on the SAME file at the SAME
+      commit, varying only the environment:** without `PYTHONPATH`,
+      `ModuleNotFoundError: No module named '_path_bridge'`; with
+      `PYTHONPATH=computations`, 4/4 checks pass and the witness is written.
+      **Six such scripts were live on `main`** — among them
+      `qbeta_d_frame_trace_baseline_probe`, whose `gap_over_ladder_ratio =
+      92.1058` the Δ fork-pricing probe calibrates against — and none appears
+      in the "2 real defects" list, because the runner that produced that list
+      set `PYTHONPATH` by its own rule. So read that 2 as *"2 that survive a
+      PYTHONPATH-equipped runner"*, not as *"2 that a user can run"*.
+
+      The fix is at the script (move the import after the bootstrap, per
+      `_path_bridge`'s documented USAGE), and the guard is
+      [`computations/audits/path_bridge_bootstrap_audit.py`](computations/audits/path_bridge_bootstrap_audit.py),
+      which narrows by pattern but **decides by executing each candidate with
+      `PYTHONPATH` stripped**. Its own count was 28 before it was corrected to
+      6: the first pass matched only `sys.path.insert(` and missed
+      `sys.path[:0] = [...]` — 22 false positives from one unknown spelling,
+      the same detector-blindness class as everything else in this section.
+
       **The 2 real defects**, re-verified against `main` on 2026-08-24:
       `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
       `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
@@ -812,10 +930,13 @@ ephemeral.
     - **Phase 4:** merge only after reviews resolved + the
       **verification gate** below is satisfied
 
-    > **🛑 Two of the three original gates no longer exist — do NOT
-    > block on them (recorded 2026-08-07).** An agent following the
-    > older wording waits forever on reviewers and a CI run that can
-    > never arrive:
+    > **🛑 ALL THREE original gates are gone — do NOT block on any of
+    > them (recorded 2026-08-07; Copilot row added later, heading
+    > corrected 2026-08-28).** This heading read "Two of the three"
+    > while the table beneath it and its own closing paragraph both say
+    > three, so the line a skimming agent reads contradicted the body it
+    > introduces. An agent following the older wording waits forever on
+    > reviewers and a CI run that can never arrive:
     >
     > | Original gate | Actual state |
     > |---|---|
@@ -938,6 +1059,33 @@ table, against a path-filtered trigger and against full push+PR triggers. So
 this script is not a stopgap until CI returns; it *is* the gate. Treat a skipped
 run the way you would treat a skipped CI check, and do not re-propose enabling
 the trigger without a new reason.
+
+**A warn-only commit hook now surfaces the blocking gate (2026-08-25).** The
+paragraph above was true and nothing acted on it: `core.hooksPath` was unset,
+there was no `.githooks/`, and every reference to `precision-gates.sh` in the
+tree was prose. A gate nobody invokes is documentation, and the cost is on the
+record — beans `qou-mnrd` and `qou-82ur` reached the same finding from opposite
+directions, that dirty witnesses land, get drained, and are replaced by
+different dirty witnesses, each one arriving the way the last did.
+[`scripts/precommit-precision-warn.sh`](scripts/precommit-precision-warn.sh) is
+a `PreToolUse` hook on `Bash` that runs the **raw-float64 ratchet** when a
+commit touches a witness or a `computations/` script, and prints the NEW-dirty
+list. Three properties are deliberate and should not be "improved" away:
+
+- **It warns; it never blocks.** It always exits 0. A `PreToolUse` hook exiting
+  non-zero stops the tool call, and a bare container is the *default* here —
+  `mpmath`/`numpy`/`scipy` are routinely absent on a fresh clone, exactly when a
+  blocking hook would brick every commit in the session. Warn-on-commit was the
+  owner's choice on 2026-08-25; the push-side block was offered and **declined**.
+  Do not upgrade it to blocking without asking again.
+- **It runs the ratchet only, not the family.** Measured on this corpus:
+  the ratchet is **1.8 s**, the full `precision-gates.sh` is **3 m 12 s**. A
+  hook runs *before* the tool call, so wiring the family in would add three
+  minutes to every witness-touching commit — which buys avoidance, not safety.
+  The advisory gates are deliberately not run here; `precision-gates.sh` remains
+  the full preflight and is still yours to run by hand.
+- **It is not a substitute for the preflight.** It covers one gate on the commit
+  path. Everything the QA-is-agent-owned rule asks of you is unchanged.
 
 **Never make a red run green by widening a baseline.** Fix at the producer —
 carry the value as `mpmath.mpf` from its source and serialize with
@@ -1162,7 +1310,29 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-Only after **all five** grep paths return empty (modulo the
+6. **The beans** — `grep -rl <topic> .beans/`. The work-plan tracker is a
+   corpus in its own right (tens of thousands of files) and it is where a
+   prior agent's *conclusion* most often sits before it reaches an audit
+   doc or a content block. It is **not** covered by paths 1–5: `.beans/`
+   is not under `docs/`, `content/`, `computations/` or `library/`, and a
+   coordination ledger is a different file.
+
+   Read `status` and the whole body, not the title. A **`completed`** bean
+   is the one that bites — it means the question was answered, and the
+   answer may be a single sentence in the body with no artifact anywhere
+   else. A **`scrapped`** bean is worth as much: it usually names the bean
+   that superseded it, which is how you find the live carrier.
+
+   History: added 2026-08-26 after one PR re-derived two results the
+   corpus already held. The second was `qou-dwsh` (2026-08-03, priority
+   high, `completed`), whose body states the conclusion the PR spent a
+   tranche proving — *"a groupoid with inequivalent fibre objects carrying
+   a 3-dim `W` whose fundamental is **not self-dual**"* — and which paths
+   1–5 cannot reach, because that sentence exists nowhere but the bean.
+   The trail to it ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh`,
+   i.e. through exactly the two statuses this note says to read.
+
+Only after **all six** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -1399,8 +1569,38 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
 > 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
 > **prune stands and the real-q c₃ family stays killed** — only the
-> quoted magnitude was wrong. The five other sites are audit docs and
-> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+> quoted magnitude was wrong.
+>
+> **🛑 "five other sites" was wrong by an order of magnitude, and wrong
+> about WHERE (corrected 2026-08-29, bean `qou-kt8o`).** Measured on
+> `origin/main`, excluding `.beans/`: the figure appears in **43 files on
+> 71 lines** that also name `c₃` on the same line, and in **88 files** by a
+> file-level scan that allows the figure and the `c₃` context to sit on
+> adjacent lines. Either number is ~10–20× the "five" claimed here, so do
+> not treat this figure as nearly drained.
+>
+> **The characterisation misled more than the count.** "Audit docs and
+> `local/compute-author` §precedent-table" names neither of the two places
+> that actually matter. By the tight line-level measure the largest group is
+> **`computations/qbeta` (20 files)** — live probes, producers and witness
+> `description` fields, i.e. code that *recomputes* the stale figure rather
+> than merely recording it — against 8 in `docs/audits`. And there are
+> **5 `.lean` files**, which this note does not mention at all; one of them
+> (`FaddeevModularDouble.lean`) carried the superseded `c₃ = -2.0097`
+> itself, not just the derived slope. All 5 are fixed as of #5942.
+>
+> **Both spellings are the same stale value.** `4.6e6` and `4.66e6` are
+> one figure: the secant `|-2.0693 - (-2.0097)|/1.28e-8 = 4.65958e6`. Its
+> companion `Δc₃ = 0.0596` is a third spelling. A grep for `4.6e6` alone
+> finds well under half of them.
+>
+> **Do not sweep the remainder blind.** Most survivors are dated audit docs
+> — `qou-3nva` deliberately left those as historical records of the
+> analysis, and that decision stands — or witness `description` fields,
+> which cannot be corrected without re-running their producer. Several use
+> `4.66e6` as the *input* to a refutation whose conclusion holds under
+> `3.84e6` anyway. Re-measure the specific file you are editing, and fix at
+> the producer; tracked in `qou-3nva` / `qou-kt8o`.
 
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
@@ -1787,11 +1987,122 @@ Do not regress either.
 >   committed witness** references `scan_h2_molecule` or `rank_drop`, so the
 >   crossings it reports change without invalidating any recorded number.
 >
+>   **The `.lean` surface has never been counted, by this or any other tool
+>   (measured 2026-08-26, bean `qou-cxjq`).**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   walks the tree four times and every one is `rglob("*.py")` — lines 635, 760,
+>   785, 930. There is no `.lean` path in it. Its numbers are correct and
+>   correctly scoped; they are simply not *about* Lean, and nothing else covers
+>   Lean either. So do not read any figure in this section as an `.lean`
+>   all-clear. **Nor is there one elsewhere in this document:** the single
+>   "**0** in `.lean`/`.ts`" claim above belongs to the **Λ vs Cl₂ naming**
+>   guard (`qou-zdz5`), a different defect class — the two were conflated once,
+>   by shape rather than subject, in a bean about detector blindness.
+>
+>   Measured directly with
+>   [`scripts/lean-markov-convention-audit.py`](scripts/lean-markov-convention-audit.py)
+>   (which the producer audit structurally cannot do), the Lean
+>   Markov-parameter surface is **22 convention-C *definitions* across 18 files,
+>   under 3 spellings**, against **24** in convention D — roughly half the
+>   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
+>   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
+>   *mentions* a convention while one inside a `def` body *defines* it, and
+>   conflating them inflates the count several-fold. **Not all 22 are defects**: the same script triages
+>   them **14 actionable / 8 deliberate**, where deliberate means the site
+>   announces itself (a `_legacy` name, an `@[deprecated]`, or a docstring saying
+>   convention-C / comparison / historical). That is evidence of *intent*, not a
+>   clean bill — a deliberate C object can still be cited as though it were D. An earlier hand-verified pass in
+>   the audit below reported 7 across 6 files and was an undercount. And **`markovZ` is five
+>   declarations spanning both conventions** — three C (`markov-trace-factorization`,
+>   `QBetaCategoricalPrecisionLadder`, `HoefsmitV21CosSymmetrization`) against two
+>   D (`MarkovBondRule`, `y-lambda-recipe-from-partition`). Same name, opposite
+>   values: `z_C(q₀) = 0.49932…` vs `z_D(q₀) = 0.61268…`. Only **3** of the 7 use
+>   the square-root-variable disguise (`u/(u²+1)` or `s/(s²+1)` with `u² = q`);
+>   the other **4 write `Real.sqrt q` in plain sight** and are trivially
+>   greppable — the surface is unscanned, not invisible-in-principle. Note also
+>   that the Tier-2 migration which replaced `Real.sqrt` with a generic
+>   `markovZ (u : R)` **did not change the convention**: it removed the square
+>   root, which was its stated goal, and left C harder to see. Table and
+>   per-site verdicts:
+>   [`docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`](docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md).
+>
+>   **🛑 RE-MEASURED 2026-08-29 (PR #5972) — every figure in the paragraph above
+>   has moved, and one has moved in a direction worth noticing.** Run the same
+>   two scripts before quoting any of them.
+>
+>   | quantity | recorded above | measured 2026-08-29 |
+>   |---|---|---|
+>   | `.lean` convention-C **defs** | 22 across 18 files | **14** |
+>   | of those, actionable / deliberate | 14 / 8 | **0 / 14** |
+>   | `.lean` convention-D defs | 24 | **38** |
+>   | `computations/` actionable (shape audit) | 26 | **9** (7 registry-blocked on `qou-cds1`) |
+>   | `markovZ` declarations | 5 (3 C, 2 D) | **13** (3 C, 10 D) |
+>   | `content/` live unscoped C | 5 of 12 grep matches | **3** |
+>
+>   **The Lean surface reaching 0 actionable is real progress, not a detector
+>   getting weaker** — the C defs that remain all announce themselves. But
+>   `markovZ` went the OTHER way: 5 declarations became **13**, still spanning
+>   both conventions. The paragraph above names `markov-trace-factorization` and
+>   `QBetaCategoricalPrecisionLadder` as two of the three C `markovZ`; **both are
+>   now D**. The live C three are `HoefsmitV21CosSymmetrization` (the
+>   convention-neutral kernel), `EigenphaseCarrierVacuity`, and
+>   `q-beta-cos-resummation`. So a name that spans two conventions keeps
+>   accreting declarations while the convention question underneath it is being
+>   settled — the overload is a naming defect that migration does not fix, and
+>   it is tracked as bean `qou-961o` with the rename proposal and the
+>   `lean`-direct verification recipe.
+>
+>   **RESOLVED 2026-08-29 (session tender-keller).** The three C `markovZ` were
+>   renamed so bare `markovZ` now means convention D uniformly:
+>   `EigenphaseCarrierVacuity` and `q-beta-cos-resummation` → `markovZC`;
+>   `HoefsmitV21CosSymmetrization`'s convention-neutral kernel → `cosKernel`.
+>   All three are file-local (no cross-file consumers) and `lean`-direct clean;
+>   the 10 D declarations keep the `markovZ` name (one convention for the bare
+>   name — re-measured 2026-08-29: **9 bare `markovZ`, all D**).
+>
+>   **But "no collision" is wrong, and the rename is what created the new one.**
+>   `markovZC` (**upper** C) is convention C; `markovZc` (**lower** c), at
+>   `categorical-chain-convergence-mechanisms.lean:83`, is convention **D**.
+>   They differ by one letter's case and mean opposite things — `0.4993203342`
+>   vs `0.6126880371` at the proton q₀, 0.113 apart. A case-insensitive grep
+>   cannot separate them. Resolve any `markovZ*` to its definition body before
+>   reasoning about its value; the suffix is now actively misleading rather
+>   than merely absent. Bean `qou-961o` (reopened scope).
+>
+>   **RESOLVED 2026-08-29 (#6015), and the docstring was the worse half.**
+>   `markovZc` is renamed to bare `markovZ` (convention D, matching the other
+>   ten), so `markovZC` has no case twin. Underneath the collision its
+>   **docstring** read *"z = 1 / (√q + 1/√q)"* — convention C — above a body
+>   computing `q³/(q²+1)`. Name and docstring agreed with each other and both
+>   were wrong; only the body was right. Docstring corrected to the body.
+>   **Agreement between two labels is not evidence about the third thing.**
+>
+>   **And the `computations/` figure is NOT a measurement of the C surface.**
+>   26 → 9 is real drain, but both numbers count only what a shape-matcher can
+>   see. Measured by VALUE with
+>   [`scripts/convention-c-value-audit.py`](scripts/convention-c-value-audit.py)
+>   (new, PR #5972 — it evaluates each binding at two sample points instead of
+>   matching its shape), `computations/` holds **85 confirmed convention-C
+>   bindings**, of which **21 are reported by the shape audit NOWHERE** — not
+>   actionable, not deliberate, not at all. All 21 use the sqrt-variable
+>   spelling (`1/(sq + 1/sq)` or `u/(u²+1)` with the variable equal to `√q`).
+>   That is the 14th entry for the blindness taxonomy and it hides BOTH buckets
+>   at once, so draining the shape audit to zero would not end the excision.
+>   Confirmed from the other side: five of those sites were registered in
+>   `blocked_on_rederivation` on 2026-08-29 and the audit's printed count did
+>   **not** move, because it never counted them. Live per-tree value counts —
+>   `computations/` 85, `qou-mass/` 1 (the generated mirror of the deliberate
+>   `_wenzl_constants_convention_C_HISTORICAL`), `tools/` **0**, `content/` 0.
+>   Remainder tracked as `qou-t9r1`; the four sites that cannot be migrated by
+>   substituting `z_D` at all are `qou-pmkh`.
+>
 >   **The posture below still does not change**, and the remaining 26 are the
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirteen** distinct detector-blind spellings, four of which were
+>   catalogues **sixteen** distinct detector-blind spellings (this said *thirteen*
+>   and was itself stale — the table already ran to 15 on 2026-08-26, and row 16
+>   landed 2026-08-29), several of which were
 >   found *by* detectors written to catch the previous blind spot. So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
@@ -1991,6 +2302,35 @@ muon; muon-anchor → ~4000σ on proton).
      stale-high**. A both-pin witness is either a deliberate comparison
      or a layer straddle — see the straddling hazard above; triage is
      bean `qou-cds3`.)
+
+     > **State the METHOD when you quote this number, or the next reader
+     > will "correct" it downward (added 2026-08-26).** "Carries the muon
+     > fingerprint" is ambiguous *in this corpus specifically*, because
+     > [`muon_pin_three_values_probe.py`](computations/audits/muon_pin_three_values_probe.py)
+     > establishes that **three different values are all called "the muon
+     > q₀"** — the frozen canonical pin `1.1099785955573347…`, and the
+     > lepton-tower derivation at CODATA 2018 (`…55541805…`) and 2022
+     > (`…56427390…`). They diverge at the **13th significant digit**, so
+     > the choice of prefix length silently selects which of the three you
+     > are counting:
+     >
+     > | match on | counts | at 2026-08-16 | at 2026-08-26 |
+     > |---|---|---|---|
+     > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
+     > | `1.1099785955573347` (full) | **the canonical pin only** | 468 | 149 |
+     >
+     > The **870** above is the ten-digit reading and is correct. Measured
+     > with the same script at both ends (`git ls-tree` on each revision,
+     > so the denominator moves with the tree: 2947 → 3102 tracked). The
+     > migration has genuinely run — **871 → 477 under the recorded
+     > definition** — but it has *not* fallen to ~149, and an agent
+     > measuring only the canonical literal will think it has.
+     >
+     > Recorded because that is exactly what happened on 2026-08-26: this
+     > figure was measured at 149, called "stale by 5.8×", and was one
+     > edit away from being replaced by a number answering a different
+     > question. Quote the number **with its prefix**, or re-measure and
+     > say which you used.
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
@@ -3593,6 +3933,7 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+trap 'rm -f "$TGZ"' EXIT INT TERM   # ~1.6G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
@@ -3600,6 +3941,16 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && tar xzf "$TGZ" -C "$ROOT" \
   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
   && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+
+# 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
+# `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
+# ~1.6G, and until 2026-08-28 nothing deleted it — not the recipe, not a reaper.
+# Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
+# disk thirteen days later and was a direct contributor to this container
+# reaching **92K free**, at which point the Bash harness cannot write its own
+# output capture and EVERY command fails, including the `rm` that would fix it.
+# Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
+# used, because the real limit is a per-session quota near 38G.
 
 # 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
 # stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
@@ -3783,7 +4134,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`; renamed from `uploads/` 2026-08-15. |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
+| `uploads/` | **Incoming queue** — raw PDFs as dropped, not yet ingested. `uploads/` and `library/` are **two stages of one pipeline, not the same directory renamed**: a file sits in `uploads/` until it is processed into `library/<doc-id>/`, and `uploads/` stays live for the next drop. **Corpus-grep path 5 searches `library/` only**, so anything still in `uploads/` is invisible to it — an un-ingested paper will not be found by any "has the corpus got this?" check, which is exactly how a held source gets re-derived. `scripts/migrate-uploads-to-library.py` moves one across. (Corrected 2026-08-25 on owner instruction: this row previously read *"renamed from `uploads/` 2026-08-15"*, which described the one-time migration of the then-existing backlog as though it had retired the incoming path. It had not, and reading it that way makes an agent treat a live queue as a dead alias.) |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

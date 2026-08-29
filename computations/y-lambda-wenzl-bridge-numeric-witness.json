@@ -1,6 +1,6 @@
 {
   "computation": "y-lambda-wenzl-bridge-numeric",
-  "computedAt": "2026-05-02T20:27:38.843869+00:00",
+  "computedAt": "2026-08-29T08:31:49.754298+00:00",
   "description": "Numeric mpmath evaluation of y_\u03bb via the Wenzl-bridge Schur principal-specialization closed form. Bypasses both sympy symbolic recursion error and Rust-MPFR matmul cost. Covers n=2..18 with FROB-FILTER signatures per A=n/3.",
   "q0": "1.10997859555418051695830018898879867637876138498395",
   "Q_eq_qsq": "1.2320524825884310484866114801",
@@ -22816,5 +22816,12 @@
   "interpretation": "p_n = \u03a3 f_\u03bb\u00b2 over y_\u03bb(q_0) > 0 partitions; q_n = same for y_\u03bb < 0. The FROB-FILTER conjecture predicts that the atomic-number A_** at which \u03a3_FP becomes mandatory (witnessed empirically at A=6 in branching-qvalues.witness.json) corresponds to the smallest A with q_{3A} dominantly exceeding p_{3A}.",
   "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
-  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py"
+  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py",
+  "scriptHash": "7e7013de58aa",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

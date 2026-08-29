@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 13-16
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 A (strict) Lie 2-group is a Lie groupoid Γ whose objects and morphisms are Lie groups, and
 all of whose structure maps are Lie group homomorphisms. One can conveniently bundle the

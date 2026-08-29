@@ -25,7 +25,7 @@
       "computed": 1.6845754483580537e-05,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "|(η(τ₀)/η(5τ₀))⁶ + 10| at the 6-d.p. BDH22 τ₀; residual is τ₀-truncation-limited (~2e-5 observed)."
     }
   ],

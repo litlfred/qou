@@ -9,7 +9,7 @@
       "computed": 0.7527021138452041,
       "expected": 0.7527021138452041,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "b^2 = (h^2+3)/(h^2+4) from Hoefsmit"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.5836118735876724,
       "expected": 0,
       "passed": false,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "%",
       "source": "c_3 = J - hbar^2"
     }

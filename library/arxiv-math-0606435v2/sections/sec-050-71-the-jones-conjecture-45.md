@@ -5,7 +5,7 @@ section_id: sec-050-71-the-jones-conjecture-45
 section_title: "The Jones conjecture 45"
 section_number: 7.1
 pages: 45-46
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -33,11 +33,9 @@ c(i,Y ), and veriﬁed them with a few extra values of k in (50). While it is cl
 expressions in q, we expected them to be in fact Laurent polynomials. So we wer e a bit startled by the denominators
 1 + q2. However, according to p. 343 top, the Hecke algebra may degenerate at roots of unityq, which justiﬁes at least
 cyclotomic polynomials as denominators.
-For Y =
-, πY was written down directly on p. 362, and for its transposed (dual) Young diagram , one uses Note
+For Y = , πY was written down directly on p. 362, and for its transposed (dual) Young diagram , one uses Note
 4.6.
-There remain 3 representations, for Y =
-, , and its dual , with a total of 15 unknown c(i,Y ). These were
+There remain 3 representations, for Y = , , and its dual , with a total of 15 unknown c(i,Y ). These were
 more complicated to ﬁnd, since we knew of no way to evaluate tr πY directly. To help ourselves, ﬁrst observe that we
 have, for ﬁxed Y, the trace identities
 7

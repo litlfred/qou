@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-26
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 In this section we address the problem of when the Yoneda func tor QCohA X − → LR(C,A )
 is fully faithful and describe its essential image. This wil l led us to the notion of generating

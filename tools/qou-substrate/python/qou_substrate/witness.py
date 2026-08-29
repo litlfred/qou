@@ -234,10 +234,30 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     must move the LABEL and the COMPUTED VALUE together, or it reintroduces the
     disagreement above.
 
-    Note ``computations/substrate/q_parameter.py`` asserts the witness starts
-    with ``1.109978595557``, so substituting the canonical string there
-    hard-fails all 257 ``ideal_muon`` producers, and a second copy of that
-    guard ships in the published ``qou_mass`` package.
+    **That loop is now broken (owner ruling 2026-08-22, "A --> CODATA 2022").**
+    ``q_parameter``'s ideal/muon branch derives ``q`` from ``q_muon_at()``
+    instead of reading it back, so the witness records a value it did not
+    choose and ``q_muon_at()`` reproduces it by construction. The paragraph
+    below described the obstacle to doing that; all three of its claims are
+    stale, and they are kept only so the shape of the obstacle is legible:
+
+      - the ``startswith("1.109978595557")`` assert in
+        ``computations/substrate/q_parameter.py`` is **removed**, not
+        re-pointed — an import-time raise would deadlock regeneration, since
+        the producer needs that module to run. The check it performed lives in
+        ``tests/test_muon_anchor_codata_2022.py``, which additionally inverts
+        the stored ``q`` back to ``m_mu/m_e`` and compares it against the
+        ratio the witness itself declares — the self-consistency the loop
+        defeated;
+      - **"all 257 ``ideal_muon`` producers"** was never right: the manifest
+        lists 45;
+      - **``qou_mass`` is not published.** It 404s on PyPI, and its
+        ``_internal/`` copy of that guard is GENERATED from ``computations/``
+        by ``scripts/sync-qou-mass-vendor.py`` — never hand-edit it.
+
+    The LABEL still moves with the value: ``_Q0_PREFIXES`` below carries the
+    muon prefix, so it decides what gets stamped ``muon`` and must be updated
+    in the same change as the anchor, exactly as this docstring warns.
     """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
@@ -255,7 +275,7 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
-_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859555"))
+_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859564"))
 _Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
 
 
@@ -698,6 +718,73 @@ def record_upstream(path: Union[str, Path], into: list) -> dict:
 
 # ── Assertion type ───────────────────────────────────────────────
 
+#: Most significant decimal digits a tolerance may carry and still be read as
+#: a DECLARED CONSTANT rather than a computed quantity. See
+#: `_tolerance_literal` for why 5, and for why the number is not a knob.
+_TOLERANCE_LITERAL_MAX_SIG = 5
+
+
+def _tolerance_literal(t: Any) -> "Optional[str]":
+    """The literal an author typed, or None if this tolerance is COMPUTED.
+
+    A tolerance is not a measurement. `1e-9` is a threshold the author chose;
+    nothing was measured to that precision and nothing about the physics is
+    recorded in its binary expansion. Writing it as the string `"1e-9"` is
+    therefore not the laundering the raw-float64 guard warns about — that
+    warning is against dressing a LOSSY f64 as preserved precision, and a
+    one-significant-digit literal claims exactly one significant digit.
+
+    It is also what the corpus already does. Measured on `main` 2026-08-28:
+    **693 committed assertions across 136 witnesses already carry a string
+    tolerance**, emitted by producers that drained their own float64 by hand
+    (bean qou-t0rf). This centralises that, rather than inventing a convention.
+
+    WHY THIS REFUSES THE COMPUTED ONES, which is the whole discrimination.
+    Some tolerances are derived — an error budget scaled off the expected
+    value, say — and arrive as things like `1025.6028557082007`. Those really
+    did lose precision against whatever `mpf` produced them, they are genuine
+    findings, and stringifying one would hide a defect behind a convention. So
+    they are left as floats and stay counted by
+    `computations/witness_raw_float64_audit.py`.
+
+    WHY 5, AND WHY IT IS NOT TUNED. Measured over all 1296 raw-float64
+    `.assertions[].tolerance` fields in the corpus, significant digits are
+    sharply bimodal with an EMPTY BIN at 6:
+
+        1 sig  1198      7 sig     5
+        2 sig    24      8 sig    14
+        3 sig     2      9 sig     6
+        4 sig     7     16 sig    20
+        5 sig     1     17 sig    19
+        6 sig     0   <- the gap
+
+    The cut sits in a bin with no members, so it is the boundary of a real
+    cluster rather than a threshold chosen to hit a target. 1232 of 1296
+    fields (95.1 %) are declared literals; the other 64 are computed and are
+    deliberately left alone.
+
+    INTEGRAL-VALUED tolerances (`0.0`, `1.0`, `2.0`) return None and stay
+    floats. They are exact in binary64, the ratchet already excuses them, and
+    converting them would churn ~200 committed values for no gate benefit.
+    """
+    if not isinstance(t, float) or isinstance(t, bool):
+        return None
+    if t != t or t in (float("inf"), float("-inf")):
+        return None
+    if t.is_integer():
+        return None
+    s = repr(t)
+    mantissa = s.lstrip("+-").split("e")[0].split("E")[0]
+    if len(mantissa.replace(".", "").strip("0")) > _TOLERANCE_LITERAL_MAX_SIG:
+        return None
+    # `repr` is the shortest string that round-trips, so this cannot fail --
+    # asserted anyway, because a serialization repair that is not
+    # value-preserving is the one thing this must never be.
+    if float(s) != t:
+        return None
+    return s
+
+
 class Assertion:
     """A single named claim with computed vs expected values."""
 
@@ -752,7 +839,12 @@ class Assertion:
             "passed": self.passed,
         }
         if self.tolerance is not None:
-            d["tolerance"] = self.tolerance
+            # A DECLARED tolerance is serialized as the literal its author
+            # typed, so a threshold never enters the corpus as raw float64.
+            # A COMPUTED one is left alone and stays a finding — see
+            # `_tolerance_literal`.
+            literal = _tolerance_literal(self.tolerance)
+            d["tolerance"] = self.tolerance if literal is None else literal
         if self.unit:
             d["unit"] = self.unit
         if self.source:
@@ -1516,9 +1608,9 @@ class WitnessBuilder:
         payload: dict,
         *,
         script_path: Union[str, Path],
-        engine: str = "python",
+        engine: Optional[str] = "python",
         engine_version: Optional[str] = None,
-        q0_anchor: Optional[str] = None,
+        q0_anchor: Union[str, bool, None] = None,
         q0_value: Optional[str] = None,
     ) -> dict:
         """Public helper: stamp the WitnessBuilder staleness fields onto
@@ -1531,8 +1623,54 @@ class WitnessBuilder:
         ``computedAt``, and ``durationMs`` set. Avoids the need to
         import the underscore-prefixed ``_git_head_sha`` /
         ``_git_file_sha`` helpers from outside this module.
+
+        ``q0_anchor`` takes three kinds of value:
+
+        * ``None`` (default) — resolve the anchor and stamp it.
+        * a ``str`` — stamp that anchor, caller's declaration wins.
+        * ``False`` — **this witness does not depend on q₀; stamp
+          ``q0Anchor: "independent"`` with a reason.** Note this DECLARES the
+          independence rather than omitting the field: an absent field cannot
+          be told apart from an unmigrated producer, and the q0Anchor ratchet
+          counts it as missing. It asserts no pin, so it is not an inert
+          anchor.
+
+        The ``False`` case exists because the resolver ALWAYS produces an
+        anchor, so a producer that never touches q₀ still got one — and an
+        inert stamp is byte-identical to a load-bearing one, so nothing
+        downstream can tell them apart. Reported from a habiro probe doing
+        exact integer arithmetic in ``ℤ[ζ_{2p}]`` that came back stamped
+        ``q0Anchor: "proton"`` (PR #5884, bean ``qou-iph3``).
+
+        It matters at scale rather than one file at a time: of the 287
+        provenance-less producers bean ``qou-4un2`` is migrating, **196 do not
+        reach q₀ even one import hop out**, so stamping unconditionally would
+        have added ~196 inert anchors — roughly doubling the class the report
+        was about, in the very pass meant to improve provenance.
+
+        Pass ``False`` only when the witness genuinely carries no q₀-dependent
+        field. When in doubt leave it ``None``: a resolved anchor that turns
+        out to be inert is a labelling problem, while a MISSING anchor on a
+        witness that does depend on q₀ is the ambiguity the field exists to
+        prevent.
+
+        ``engine`` accepts ``None`` meaning **keep whatever the payload already
+        declares**, falling back to ``"python"`` when it declares nothing. The
+        default stays the literal ``"python"``, so all 959 existing call sites
+        behave byte-identically; only a caller that opts in gets preservation.
+
+        It exists because the unconditional ``payload["engine"] = engine`` below
+        silently DOWNGRADES a producer's own, more specific value. Measured
+        while migrating bean ``qou-4un2``: stamping
+        ``qbeta-5two-leading-odd-datum`` rewrote ``engine`` from
+        ``"sympy+mpmath"`` to ``"python"`` while leaving ``engineVersion``
+        reading ``"sympy 1.14.0, mpmath 1.4.1"`` — an internally contradictory
+        witness, produced by a pass whose entire purpose was better provenance.
+        ``kappa-provenance`` lost ``"python-stdlib"`` the same way.
         """
         spath = str(script_path)
+        if engine is None:
+            engine = payload.get("engine") or "python"
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()
@@ -1562,6 +1700,47 @@ class WitnessBuilder:
         # q₀-anchor provenance: make the muon/proton pin explicit so the value
         # can never be silently misread (bean tnjb flip-flop). Auto-resolved from
         # the manifest + env unless the caller passes an explicit anchor/value.
+        # `False` means the caller has declared this witness q₀-independent.
+        # Return BEFORE resolving: the resolver has no failure mode that
+        # produces "no anchor", so asking it and then discarding the answer
+        # would still leave the door open for a later edit to stamp it.
+        # Checked with `is False`, not truthiness, so the ONLY value that
+        # suppresses the field is the one that means it. An empty string is
+        # not caught here and is not resolved either — it reaches the explicit
+        # branch below and is stamped verbatim, which is this function's
+        # pre-existing behaviour for any non-None argument and is left alone.
+        # (I first wrote that `""` "falls through to resolution"; the test
+        # below disagreed, and the test was right.)
+        if q0_anchor is False:
+            # DECLARE the independence; do not merely omit the field.
+            #
+            # Omitting is byte-identical to never having asked, so a downstream
+            # reader cannot tell a producer that ANSWERED "I do not use q0" from
+            # one that was never migrated. Measured: `q0_anchor_ratchet.py`
+            # (bean qou-y98b) counts an absent field as Q0_ANCHOR_MISSING and
+            # fails --strict on it, so a correctly-migrated q0-independent
+            # producer was tripping the gate that exists to catch UNmigrated
+            # ones -- and re-running such a producer converted a stamped
+            # witness into an unstamped one, which reads as a regression.
+            #
+            # "independent" is not an inert anchor and does not reintroduce the
+            # problem this branch was added for (bean qou-iph3, ~196 of 287
+            # producers that never reach q0): it asserts no pin, so nothing can
+            # misread a proton/muon value off it. It is an established verdict
+            # in q0_anchor_consistency_audit.py (Q0_INDEPENDENT), which is why
+            # this needs no new vocabulary -- and that audit reports
+            # Q0_INDEPENDENT_NO_REASON separately, so the reason is required
+            # rather than decorative.
+            #
+            # setdefault, not assignment: a producer's own explicit declaration
+            # wins, the same precedence this function applies to q0Anchor below.
+            payload.setdefault("q0Anchor", "independent")
+            payload.setdefault(
+                "q0AnchorReason",
+                "producer declared q0-independent at the stamp site "
+                "(q0_anchor=False): no q0-dependent field in this witness",
+            )
+            return payload
         if q0_anchor is None:
             # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
             # it was computed at beats the one the manifest/env would have

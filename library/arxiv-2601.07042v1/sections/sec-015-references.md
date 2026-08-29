@@ -7,6 +7,7 @@ section_number: null
 pages: 25-26
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
+doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
 ---
 [BMO25] Alexander Bertoloni Meli and Masao Oi.The B(G)-parametrization of the local Langlands
 correspondence. 2025. arXiv:2211.13864 [math.NT].URL:https://arxiv.org/

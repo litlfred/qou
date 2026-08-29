@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "held-out/conjugation/constancy gate values recorded; failure is the diagnostic, not papered over"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "x_tilde = 1 exactly at the substrate — l-tower degeneracy explains the finite-rank failure; tilt counter-test recorded"
     }
   ],

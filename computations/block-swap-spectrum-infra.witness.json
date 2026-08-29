@@ -9,7 +9,7 @@
       "computed": 4.828125836353614e-07,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "max ‖P²−P‖ over the demo blocks — the full-matrix spectral projector built from β's actual spectrum is idempotent."
     }
   ],

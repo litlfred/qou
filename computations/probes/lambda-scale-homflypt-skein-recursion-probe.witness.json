@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "boolean",
       "source": "mpmath.pslq at max_coef=10^5, tol=1e-12 on a 12-element basis of HOMFLYPT polynomial values for {3_1, 4_1, 5_2, \ud835\udcd1_3} \u00d7 \u03b1 \u2208 {q_0, q_0\u207b\u00b9, q_0^{1/2}}. A negative result complements Tier 6 by closing off the 'deep HOMFLYPT recursion COULD produce' caveat in 3a1b11069's Strategy J scalar-ratio probe. Combined with the 8-search cumulative case in 00083b94e, the Bring-Bloch + HOMFLYPT axes are now both retired as \u03bb_scale closure candidates."
     }

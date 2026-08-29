@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:57:18.689883+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T07:33:29.877736+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "c4_required_not_integer_46",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "mp-habiro-c4-keystone-probe",
   "scriptFile": "mp_habiro_c4_keystone_probe.py",
   "scriptHash": "7b8ebb89a9e9",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,8 +40,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mp_habiro_c4_keystone_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mp_habiro_c4_keystone_probe.py"
   },
   "description": "Characterizes the m_p term-6 Habiro residue coefficient c_4 (the real target behind the production habiro_ratio {46,4,29}): required c_4 = 46.03 (q-dependent, NOT integer 46); {4,29} below the extraction floor (cosmetic); cross-anchor swing 3.8e-5; no clean 1-2 factor categorical hit. Derivation gated on the s5bb keystone (same open Habiro-element as Q_beta c_k). Nothing wired.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",

@@ -1,4 +1,7 @@
 {
+  "scriptFile": "gt_matrix_pslq_probe.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-02-4-parallel-followup-synthesis.md",
   "computation": "gt-matrix-pslq-probe",
   "timestamp_utc": "2026-08-23T21:09:46.649400+00:00",
   "description": "PSLQ probe of g_A = [5]_q/[4]_q \u00b7 (1 + \u03b4_GT) at q=q_0. Tests whether \u03b4_GT admits a clean q-arithmetic closed form parallel to \u03b4_CS = \u210f_q^4\u00b7[5]_q from 1/\u03b1_EM.",

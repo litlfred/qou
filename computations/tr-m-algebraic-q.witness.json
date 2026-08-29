@@ -9,7 +9,7 @@
       "computed": 1.3877787807814457e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "max |tr_M_algebraic(q₀) − tr_m_atom_zn| over D/T(/³He), atom & free words"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.168404344971009e-19,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "flavor_split_leading_sym(q₀) vs _li_2_q_util"
     }
   ],

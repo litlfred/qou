@@ -7,6 +7,7 @@ section_number: null
 pages: 27-28
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
+doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
 ---
 [AOV08] Dan Abramovich, Martin Olsson, and Angelo Vistoli. Tame stacks in positive charac-
 teristic. Ann. Inst. Fourier (Grenoble) , 58(4):1057–1091, 2008.

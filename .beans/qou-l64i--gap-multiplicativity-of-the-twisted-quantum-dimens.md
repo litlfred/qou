@@ -1,0 +1,474 @@
+---
+# qou-l64i
+title: 'GAP: multiplicativity of the twisted quantum dimension, dim(X tensor Y) = dim X * dim Y'
+status: todo
+type: task
+priority: normal
+created_at: 2026-08-26T22:59:50Z
+updated_at: 2026-08-27T06:11:02Z
+---
+
+Parent: qou-djk4 (PR #5866, QOU/MathlibExt/TwistedQuantumDimension.lean).
+
+TARGET, stated and TYPE-CHECKED (the instances resolve; only the proof is missing):
+
+    theorem qDimTwistedWith_tensor [BalancedCategory C] (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] :
+        @qDimTwistedWith C _ _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+          = qDimTwistedWith X X' ≫ qDimTwistedWith Y Y'
+
+I expect `[BalancedCategory C]` to SUFFICE — no ribbon axiom. `twist_dual` is about duals, the
+balancing axiom is about tensor, and this is a tensor statement. Do not assume ribbon is needed
+without trying balanced first.
+
+WHY IT SHOULD BE TRUE, and the consistency check I ran before spending anything on it: at θ = 𝟙
+the balancing axiom reads 𝟙 = β_{X,Y} ≫ β_{Y,X}, i.e. the MONODROMY IS TRIVIAL, i.e. the category
+is symmetric — and in a symmetric category the twistless dimension IS multiplicative. So the
+θ = 𝟙 specialisation is consistent rather than contradictory, and the balancing axiom is doing
+exactly the geometric work of undoing the crossing that the NESTED tensor closure introduces
+between the X and Y strands. That nesting is visible in `tensorExactPairing`: its coevaluation
+nests η_Y inside η_X, and its evaluation contracts ε_X first and ε_Y second.
+
+WHAT IS ALREADY RULED OUT (measured, each a full compile at maxHeartbeats 1600000; all four FAIL
+FAST rather than exhausting heartbeats, so these are genuine failures and not budget artifacts):
+
+    monoidal      fails
+    aesop_cat     fails
+    coherence     fails
+    simp [qDimTwistedWith, tensorExactPairing, ExactPairing.coevaluation,
+          ExactPairing.evaluation, BalancedCategory.twist_tensor,
+          braiding_tensor_left_hom, braiding_tensor_right_hom, whisker_exchange]   fails
+
+This is the SAME profile as `tensorExactPairing`'s own two snake fields, whose docstring records
+that ~35 automated placements were tried and none closed either. Expect a hand-built string-diagram
+calc, not a tactic.
+
+THE IDIOM THAT WORKS HERE (from `RigidTensorDual.tensorExactPairing`, learned the hard way — read
+that proof before starting): pad every calc term with `𝟙 _ ⊗≫ … ⊗≫ 𝟙 _`, parenthesise the
+interesting part as a single `⊗≫` group, and regroup until a BARE `W ◁ g ≫ f ▷ Z` appears with no
+compound whiskering around it. That bare shape is what `whisker_exchange` matches; compound forms
+hide it. `monoidal` can never reach it on its own, because the move required is the INTERCHANGE
+LAW, not coherence.
+
+TOOLS ALREADY IN THE TREE, built for exactly this kind of step:
+- `QOU.MathlibExt.BraidedSlide` (PR #5848) — `braiding_slide_cap_right` and its inverse form slide
+  a braiding past a cap. This is the tool for pushing the closure's braiding through the nested
+  ε's.
+- `QOU.MathlibExt.RigidTensorDual` — `tensorExactPairing`, `tensorDoubleDualIso`.
+- `braiding_tensor_left_hom` / `braiding_tensor_right_hom` expand β_{X⊗Y, Z} into elementary
+  braidings.
+
+SUGGESTED DECOMPOSITION, in the order I would try it:
+1. A PARTIAL-TRACE lemma: closing only the Y strand of an endo of X ⊗ Y yields an endo of X.
+   Then multiplicativity is `tr = tr_X ∘ tr_Y` plus the θ bookkeeping. This is the standard
+   literature route and is the one I would back, but it is real infrastructure Mathlib lacks.
+2. Direct: expand β_{X⊗Y, Y'⊗X'} into its four elementary braidings, then use the double braiding
+   from `twist_tensor` to cancel two of them against the nesting, leaving two independent closures.
+3. Warm-up worth doing first if 1 and 2 both stall: prove the SYMMETRIC, TWISTLESS case
+   (`qDimWith_tensor` under `[SymmetricCategory C]`). Strictly easier, no θ bookkeeping, and it
+   tells you whether the diagram manipulation is tractable at all before committing to the general
+   case.
+
+CORPUS STATUS — DO NOT PRESENT THIS AS A NEW RESULT. The mathematical claim is ALREADY HELD by the
+corpus, by citation: `computations/_deprecated/rho_k_markov_multiplicativity_probe.py` and its
+witness conclude "Markov multiplicativity for disjoint p+n is a categorical consequence of
+Wenzl 1988 Theorem 5, verified numerically. ρ_K^LO is therefore CATEGORICALLY DERIVED, not an
+empirical ansatz." What a Lean proof adds is (a) a SECOND, INDEPENDENT route — ribbon-categorical
+rather than Hecke-branching-specific — and (b) machine-checked exactness in place of "verified
+numerically to machine precision", which per the AGENTS.md no-float64 directive is not an answer to
+an EXACTNESS question at all. Both are worth having; neither is a discovery.
+
+Corpus-grep run before opening this: paths 1 (audits), 2 (content), 3 (lean), 4 (computations) and
+6 (beans) are clear of any categorical `dim(X⊗Y)` statement. Path 5 (library/) was NOT run — do it
+before writing "open" in any durable artifact, since Turaev 1994 certainly contains this and may be
+ingested.
+
+
+MEASURED FOLLOW-UP, same session — MY OWN ROUTE-3 ADVICE ABOVE IS PARTLY WRONG, corrected here.
+
+I recommended the SYMMETRIC TWISTLESS case as an easier warm-up ("strictly easier, no θ
+bookkeeping"). I then ran it. It is NOT easier in the way I predicted:
+
+    theorem qDimWith_tensor [SymmetricCategory C] (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] :
+        @qDimWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+          = qDimWith X X' ≫ qDimWith Y Y'
+
+    monoidal      fails
+    aesop_cat     fails
+    simp [qDimWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+          SymmetricCategory.symmetry, braiding_tensor_left_hom, braiding_tensor_right_hom,
+          whisker_exchange]                                                            fails
+
+All fail fast, same profile as the twisted goal — and note this version has `SymmetricCategory`
+available, so `β_{X,Y} ≫ β_{Y,X} = 𝟙` is in scope and simp still cannot get there.
+
+WHAT THAT ACTUALLY TELLS US, and it is the useful part: THE DIFFICULTY IS THE NESTING, NOT THE
+TWIST. Removing θ entirely and handing simp the symmetry axiom changes nothing. So the obstruction
+is `tensorExactPairing`'s nested η/ε structure — the same interchange-law obstruction its own two
+snake fields hit — and any effort spent on θ bookkeeping is spent on the wrong half of the problem.
+
+CONSEQUENCE FOR THE ROUTE RANKING: route 3 is demoted. It is still worth doing as a SMALLER
+TARGET (fewer moving parts once you are hand-building the calc), but not as a FEASIBILITY PROBE —
+it has already been probed and it fails identically. Route 1 (partial trace) is now clearly the one
+to back, because a partial-trace lemma attacks the nesting directly, which is where the difficulty
+has now been measured to live.
+
+FEEDBACK MECHANISM, since there is no working LSP in this container: `trace_state` inside a tactic
+block prints the goal to the compiler output. That is the substitute for interactive goal
+inspection — the goals are large but it is real feedback, and hand-building a diagram calc blind
+without it is not realistic.
+
+BUILD NOTE: `lean`-direct cannot `import QOU.MathlibExt.TwistedQuantumDimension` because that
+module has no committed olean. To experiment against it, append the scratch to the module file
+itself and restore afterwards; do NOT `lake build`, which evicts the restored olean cache
+(bean qou-r13s).
+
+
+2026-08-27 — ROUTE 1 STEP 1 IS DONE AND LANDED; the crux is now ISOLATED to one lemma.
+
+Landed on PR #5866 (QOU/MathlibExt/TwistedQuantumDimension.lean, sorry-free, lean-direct exit 0):
+
+    qTrWith (A B : C) [ExactPairing A B] (f : A ⟶ A) : (𝟙_ C ⟶ 𝟙_ C)
+      := η_ A B ≫ (f ▷ B) ≫ (β_ A B).hom ≫ ε_ A B
+    qTrWith_id     : qTrWith A B (𝟙 A) = qDimWith A B
+    qTrWith_twist  : qTrWith A B (twist A) = qDimTwistedWith A B     (by rfl)
+
+    ptrWith (X Y Y' : C) [ExactPairing Y Y'] (f : X ⊗ Y ⟶ X ⊗ Y) : X ⟶ X
+      := 𝟙 X ⊗≫ X ◁ η_ Y Y' ⊗≫ f ▷ Y' ⊗≫ X ◁ ((β_ Y Y').hom ≫ ε_ Y Y') ⊗≫ 𝟙 X
+    ptrWith_id     : ptrWith X Y Y' (𝟙 (X ⊗ Y))
+                       = (ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom
+
+`ptrWith_id` closed with `simp [ptrWith, qDimWith, monoidalComp]` FIRST TRY. `qTrWith` matters more
+than it looks: without a MORPHISM-level trace there is nothing for a partial trace to be composed
+INTO, so the whole route is unstatable. That is why this step came first.
+
+THE CRUX, now a single named lemma — state it exactly like this, it elaborates cleanly:
+
+    theorem qTrWith_tensor_eq_ptr (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] (f : X ⊗ Y ⟶ X ⊗ Y) :
+        @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y') f
+          = qTrWith X X' (ptrWith X Y Y' f) := by
+      sorry
+
+MEASURED ON IT: `simp [qTrWith, ptrWith, tensorExactPairing, ExactPairing.coevaluation,
+ExactPairing.evaluation, monoidalComp]` dies on MAXIMUM RECURSION DEPTH (not a heartbeat timeout —
+a different failure from the earlier probes, and raising maxRecDepth is unlikely to help since the
+term is genuinely large). `monoidal` fails. NOT COMMITTED, because committing it means committing a
+`sorry` and this repo does not take them.
+
+ONCE THE CRUX LANDS, multiplicativity is short and needs no new ideas:
+
+    qDimWith (X⊗Y) (Y'⊗X')
+      = qTrWith (X⊗Y) (Y'⊗X') (𝟙)              -- qTrWith_id
+      = qTrWith X X' (ptrWith X Y Y' 𝟙)         -- THE CRUX
+      = qTrWith X X' ((ρ_ X).inv ≫ (X ◁ qDimWith Y Y') ≫ (ρ_ X).hom)   -- ptrWith_id
+      = qDimWith X X' ≫ qDimWith Y Y'           -- scalar pull-out, End(𝟙) acting by whiskering
+
+The last step needs a small "scalars pull out of the trace" lemma
+(`qTrWith A B ((ρ).inv ≫ (A ◁ s) ≫ (ρ).hom) = qDimWith A B ≫ s` for `s : 𝟙 ⟶ 𝟙`), which should be
+easy and is NOT the obstruction. The TWISTED version is the same chain with `qTrWith_twist` in
+place of `qTrWith_id`, plus `twist_tensor` — so proving the crux buys BOTH.
+
+HONEST SCOPE: this is progress on the framework, NOT on the nesting. The obstruction measured
+earlier (interchange, not coherence) is untouched and now sits entirely inside
+`qTrWith_tensor_eq_ptr`. Do not read step 1 landing as the route being half done — it is the easy
+half, and the docstring in the file says so.
+
+
+🛑 SAME-SESSION CORRECTION — P2's TRUTH IS NOT ESTABLISHED, AND THERE IS A SPECIFIC REASON TO
+DOUBT IT AS STATED. Read this before attempting it.
+
+I recorded `qTrWith_tensor_eq_ptr` above as "the crux", i.e. as a true lemma awaiting a proof. That
+was an overstatement: I DEFINED `ptrWith` and then ASSERTED that the nested closure factors through
+it, without checking the factorisation holds. That is the "defined residual ≠ derived
+decomposition" trap in AGENTS.md, applied to a decomposition of a trace rather than of a number.
+The landed lemmas are unaffected — `ptrWith_id` is proved and true, and `qTrWith` is a definition —
+but the TARGET may be false.
+
+THE COUNT THAT RAISES THE DOUBT. `β_{X⊗Y, Y'⊗X'}` is ONE braiding on the left-hand side, but it
+decomposes: `braiding_tensor_left_hom` splits `β_{X⊗Y, Z}` into two elementary braidings, and each
+of those with `Z = Y' ⊗ X'` splits into two more by `braiding_tensor_right_hom`. So the LHS carries
+FOUR elementary braidings:
+
+    β_{X,Y'}   β_{X,X'}   β_{Y,Y'}   β_{Y,X'}
+
+The right-hand side carries exactly TWO: `β_{Y,Y'}` inside `ptrWith` and `β_{X,X'}` inside the
+outer `qTrWith`. So the identity as stated REQUIRES the cross terms `β_{X,Y'}` and `β_{Y,X'}` — the
+crossings between the X-loop and the Y-loop — to cancel each other.
+
+WHY THAT IS SUSPICIOUS, and it is the same argument that motivated this whole bean: if those two
+cancelled unconditionally, the identity would hold with NO twist anywhere, i.e. the TWISTLESS
+braided dimension would be multiplicative in ANY braided category. But the reason the twisted
+dimension is the right object at all is that the balancing axiom is what undoes the crossing the
+nested closure introduces between the X and Y strands (recorded above). Both cannot be true. Either
+the cross terms do not cancel on their own — so P2 as stated is FALSE — or they do, and my
+motivating story for why the twist is needed is wrong. I have not determined which, and I am not
+going to assert either.
+
+TWO REPAIRS TO TRY, in preference order:
+
+1. **A BRAIDED partial trace.** `ptrWith` may simply be the wrong partial trace for a braided
+   category: the X strand has to be threaded past the Y-closure, so the correct definition probably
+   carries the cross braidings itself. If so P2 becomes true by construction of the right object,
+   and `ptrWith_id` will need re-checking against the new definition (it may still hold, since at
+   `f = 𝟙` there is nothing to thread).
+2. **State P2 for the TWISTED trace directly**, with `twist_tensor` available, so the double
+   braiding from `θ_{X⊗Y}` is present to cancel the cross terms. This matches the motivating story
+   and is the version actually needed for multiplicativity anyway.
+
+CHEAPEST WAY TO DECIDE WHICH: specialise to a SYMMETRIC category, where `β_{X,Y'}` and `β_{Y,X'}`
+compose to the identity if they are an R2 pair. If P2 holds symmetrically but not braided, repair 2
+is right. If it fails even symmetrically, `ptrWith` is the wrong object and repair 1 is right.
+That is one compile, and it should be the next thing anyone does on this bean.
+
+DO NOT treat the statement recorded above as a theorem to be proved until one of these settles it.
+
+
+RESOLVED (geometrically, not in Lean) — P2 AS STATED IS FALSE; REPAIR 2 IS THE RIGHT ONE.
+
+First, a correction to the paragraph immediately above: I wrote that specialising to a symmetric
+category "is one compile, and it should be the next thing anyone does". THAT IS WRONG and I should
+not have written it. A tactic FAILING proves nothing — every tactic already fails on every version
+of this goal. Only a proof settles true, and only a counterexample settles false. The prescription
+was worthless as stated; ignore it.
+
+Worked out from the diagram instead, which does settle it:
+
+The braided trace `η ≫ β ≫ ε` of `𝟙_A` is the closure of the A-strand THROUGH ONE CROSSING — not
+the plain Markov closure. For a single object that is an unknot with framing ±1, which is exactly
+why a framing correction (the twist) belongs in the trace at all.
+
+Now take `A = X ⊗ Y`, a 2-CABLE. The block braiding `β_{X⊗Y, Y'⊗X'}` crosses the whole cable past
+the whole dual cable, so on closure it contributes the two cross terms counted above,
+`β_{X,Y'}` and `β_{Y,X'}`. Those are crossings BETWEEN THE TWO COMPONENTS: after closing, the X
+circle and the Y circle have LINKING NUMBER ±1. But `dim(X) · dim(Y)` is two UNLINKED circles. The
+two sides therefore differ by a Hopf link's worth of linking, and no amount of rearranging inside a
+braided category removes it — there is no R2 pair to cancel, the crossings have the same sign.
+
+WHICH IS EXACTLY WHAT `twist_tensor` SUPPLIES. The balancing axiom
+
+    θ_{X⊗Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)
+
+carries a DOUBLE BRAIDING — the monodromy, linking number ∓1 — whose whole job here is to unlink
+the two components, leaving the per-object twists `θ_X ⊗ θ_Y` to supply the two framings. So the
+twist is not bookkeeping around the identity; it IS the identity's content, and the twistless
+version is false for a reason that can be named rather than merely suspected.
+
+CONSEQUENCES:
+1. Do NOT attempt `qTrWith_tensor_eq_ptr` as stated (twistless, general `f`). It is false.
+2. Repair 1 (a "braided partial trace" carrying the cross braidings) is a WORSE idea than it looked:
+   it would be defining the answer into the object — the same defined-residual trap that produced
+   this correction in the first place. Only take it if the resulting object matches an independent
+   definition in the literature.
+3. GO STRAIGHT TO REPAIR 2: state the factorisation for the TWISTED trace, where `twist_tensor` is
+   available to cancel the cross terms. That is the version multiplicativity needs anyway.
+
+EPISTEMIC STATUS: this is a string-diagram argument, NOT a Lean proof and NOT a counterexample. It
+is strong enough to redirect effort and to stop anyone proving a false lemma; it is not strong
+enough to write "refuted" in a durable artifact per the (a)/(b) rule. Scope (a): this construction,
+as stated, does not factor — the ingredient is not excluded, and indeed repair 2 uses it.
+
+STILL TRUE AND LANDED, unaffected by any of this: `qTrWith`, `qTrWith_id`, `qTrWith_twist`,
+`ptrWith`, `ptrWith_id`. `ptrWith_id` is about `f = 𝟙` on a SINGLE closure and never meets the
+cross terms.
+
+
+REPAIR 2, IN A BETTER FORM THAN "state it for the twisted trace". VERIFIED TO ELABORATE.
+
+Rather than restate the factorisation with `θ` baked in, put the UNLINKING DOUBLE BRAIDING
+EXPLICITLY ON THE INPUT. This isolates the geometric content — "a monodromy on the input unlinks
+the cable closure" — and makes multiplicativity a corollary rather than a restatement:
+
+    set_option maxHeartbeats 1600000 in
+    theorem qTrWith_tensor_monodromy (X X' Y Y' : C)
+        [ExactPairing X X'] [ExactPairing Y Y'] (g : X ⟶ X) (h : Y ⟶ Y) :
+        @qTrWith C _ _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y')
+            ((β_ X Y).hom ≫ (β_ Y X).hom ≫ (g ⊗ₘ h))
+          = qTrWith X X' g ≫ qTrWith Y Y' h
+
+MEASURED: the statement ELABORATES (checked with `sorry`; instances resolve, no metavariable or
+universe trouble). `monoidal` fails on it, re-run on a clean file — see the harness note below.
+Not committed: a `sorry` would be.
+
+WHY THIS SHAPE IS THE RIGHT ONE:
+- It says exactly what the diagram argument above establishes, and nothing more. The two cross
+  terms `β_{X,Y'}` and `β_{Y,X'}` are a linking number; `β_{X,Y} ≫ β_{Y,X}` is the monodromy that
+  cancels it. Everything else on both sides is per-object.
+- It is `g`/`h`-general, so it is one lemma rather than one per application.
+- MULTIPLICATIVITY IS THEN A COROLLARY, not a re-proof: take `g = θ_X`, `h = θ_Y`, and
+  `BalancedCategory.twist_tensor` rewrites `θ_{X⊗Y}` into exactly the LHS's input. With
+  `qTrWith_twist` (already landed, by `rfl`) both sides become the twisted dimensions and the
+  original target falls out.
+- It needs only `[BraidedCategory C]` — no balanced structure — so the balancing axiom is used
+  ONLY in the corollary, which is where it belongs. That is the same "the axiom enters at exactly
+  one step" separation as the sphericality proof in this file.
+
+HARNESS NOTE, recorded because it cost a wrong measurement here. I probed tactics by regex-swapping
+the proof line, and the pattern `simp \[qTrWith.*` also matched `simp [qTrWith, qDimWith]` inside
+`qTrWith_id` — so two of the three verdicts were measured against a CORRUPTED file and were
+worthless. The `monoidal` verdict above is the re-run on a restored tree. When swapping tactics by
+regex in this module, anchor on a unique placeholder token, never on a tactic name that occurs in
+another proof.
+
+
+MONODROMY DIRECTION — a doubt I could not resolve by hand, recorded so nobody "fixes" the statement.
+
+Setting up the proof I counted crossings, and the count does not obviously come out. Recording it
+because the natural response — flip the monodromy to its inverse — would be WRONG, and the reason
+is worth stating.
+
+The count. `β_{X⊗Y, Y'⊗X'}` is four elementary crossings: (X,Y'), (X,X'), (Y,Y'), (Y,X'). Sorting
+them by component — X-circle is the X and X' strands, Y-circle the Y and Y' strands:
+
+    within X-circle:  (X,X')            -> the framing ±1, corrected by θ_X
+    within Y-circle:  (Y,Y')            -> the framing ±1, corrected by θ_Y
+    BETWEEN circles:  (X,Y') and (Y,X') -> two crossings, hence a linking number
+
+That is even, as it must be, and it is the linking that makes the twistless version false. So far so
+good. But `β_{X,Y} ≫ β_{Y,X}` is the FULL TWIST σ², i.e. two crossings of the SAME handedness,
+adding linking ±1 rather than cancelling it — which by that reading makes the total WORSE, not zero,
+and would mean the correcting factor is the INVERSE monodromy.
+
+WHY I AM NOT ACTING ON THAT, and why the recorded statement stands:
+
+1. **The direction is FORCED, not chosen.** `BalancedCategory.twist_tensor` gives
+   `θ_{X⊗Y} = β_{X,Y} ≫ β_{Y,X} ≫ (θ_X ⊗ θ_Y)` — the FORWARD monodromy. The landed conditional
+   `qDimTwistedWith_tensor_of_monodromy` consumes exactly that, so if the lemma is true at all it is
+   true in the direction the statement already has. Flipping it would break the corollary and prove
+   nothing about the twisted dimension.
+2. **Multiplicativity in a ribbon category is classical.** If the forward monodromy really made the
+   linking worse, the classical theorem would be false. Between "the textbook theorem is wrong" and
+   "my crossing count has a sign error", the second is overwhelmingly more likely.
+3. **I have already made exactly this error once this session.** In the step-4 work I read two
+   leftover crossings as a cancelling R2 pair, and counting again WITH THE ORIENTATION REVERSAL AT
+   EACH CAP showed they were same-sign (Hopf-linked). The dual strands run backwards through the
+   caps, so naive handedness bookkeeping across a cap is exactly where I get it wrong.
+
+SO: treat the recorded `qTrWith_tensor_monodromy` as correct-as-stated, and treat this paragraph as
+a warning that the crossing arithmetic is subtle at the caps rather than as evidence against it. If
+a serious proof attempt hits a genuine sign obstruction, resolve it by working the orientations
+carefully — do NOT flip the statement to the inverse monodromy on the strength of a naive count,
+mine included.
+
+ALSO MEASURED THIS ROUND, both useful:
+- `trace_state` prints this goal COMPACTLY (about ten lines, fully readable) once
+  `simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation]` has
+  run. Blind hand-building is NOT necessary here; get the goal first.
+- Mathlib has NO compact-closed structure and NO categorical trace anywhere under
+  `CategoryTheory/Monoidal/` — checked directly. So there is no shortcut to borrow, and this is
+  genuinely new infrastructure rather than a re-derivation.
+- `braiding_tensor_left_hom` and `braiding_tensor_right_hom` are both `@[simp]`, so the big `simp`
+  that failed ALREADY had the four-way expansion available. That localises the difficulty further:
+  it is not the expansion, it is the interchange regrouping afterwards.
+
+
+DIRECTION DOUBT RESOLVED — AFFIRMATIVELY. The forward monodromy is right, my count was wrong, and
+the proof mechanism is now identified.
+
+Printed the goal with the block braiding expanded (`simp only [qTrWith, tensorExactPairing,
+ExactPairing.coevaluation, ExactPairing.evaluation, braiding_tensor_left_hom,
+braiding_tensor_right_hom, Category.assoc]` then `trace_state`). The six braidings are explicit:
+
+    (β_ X Y).hom ≫ (β_ Y X).hom     -- the input monodromy
+    X ◁ (β_ Y Y').hom               -- Y-closure, survives to the RHS
+    (β_ X Y').hom ▷ Y               -- CROSS TERM
+    X ◁ (β_ Y X').hom               -- CROSS TERM
+    (β_ X X').hom ▷ Y               -- X-closure, survives to the RHS
+
+WHERE MY EARLIER COUNT WENT WRONG. I assumed the monodromy crossings had to cancel the cross terms
+DIRECTLY, and since both pairs are same-handed that looked impossible. They are not the same
+objects, so they cannot cancel directly at all — `β_{X,Y}` is X-past-Y, the cross term is
+X-past-Y'. The cancellation goes THROUGH A CAP: `β_{X,Y'}` and `β_{X,Y}` are X passing the two legs
+`Y'` and `Y` of the Y-cap `ε_ Y Y' : Y' ⊗ Y ⟶ 𝟙`, and a strand passing both legs of a cap is the
+R2-through-a-cap move. Symmetrically `β_{Y,X'}` pairs with `β_{Y,X}` across the X-cap. So it is two
+absorptions, not two cancellations, and the parity objection evaporates.
+
+THE MECHANISM IS A LEMMA WE ALREADY HAVE. `QOU.MathlibExt.braiding_slide_cap_right` (PR #5848) is
+exactly this move:
+
+    braiding_slide_cap_right (c : A ⊗ B ⟶ 𝟙_ C) :
+      𝟙 _ ⊗≫ (β_ W A).hom ▷ B ⊗≫ A ◁ (β_ W B).hom ⊗≫ c ▷ W ⊗≫ 𝟙 W
+        = 𝟙 _ ⊗≫ W ◁ c ⊗≫ 𝟙 W
+
+Instantiate `W := X`, `A := Y'`, `B := Y`, `c := ε_ Y Y'` for the first absorption, and
+`W := Y`, `A := X'`, `B := X`, `c := ε_ X X'` for the second. It was proved for precisely this kind
+of step and has been sitting unused since #5848.
+
+CONFIDENCE, stated honestly: the OBJECT-MATCHING is verified — the lemma's shape and the goal's
+braidings line up on `W, A, B, c` as above. What is NOT yet verified is the ORDERING: the goal
+presents the monodromy BEFORE the cross terms (`β_{X,Y}` … then `β_{X,Y'}`), whereas the lemma wants
+W-past-A before W-past-B, i.e. `β_{X,Y'}` first. Those two act on disjoint strands so interchange
+should reorder them, but I have not executed that. So: the mechanism is IDENTIFIED, the proof is not
+DONE, and the remaining work is the regrouping — which is the same interchange obstruction measured
+all along, now with a named target to regroup TOWARD instead of an open search.
+
+NEXT CONCRETE STEP for whoever picks this up: regroup the goal (pad with `𝟙 _ ⊗≫ … ⊗≫ 𝟙 _`, per the
+`tensorExactPairing` idiom) until the bare `(β_ W A).hom ▷ B ≫ A ◁ (β_ W B).hom ≫ c ▷ W` pattern is
+visible, then `rw [braiding_slide_cap_right]` twice. Use `trace_state` between steps — the goal
+prints compactly.
+
+
+TACTIC LEDGER — SEVEN approaches now ruled out on `qTrWith_tensor_monodromy`. Do not re-run these.
+
+Earlier rounds:  monoidal;  aesop_cat;  coherence;  a loaded `simp` with the braiding_tensor
+expansions, tensorHom_def and whisker_exchange.
+
+This round (each a full compile at maxHeartbeats 1600000, all FAIL FAST — none is a budget artifact):
+
+    simp [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation,
+          braiding_naturality_right, braiding_naturality_left, whisker_exchange, monoidalComp]
+    simp only [qTrWith, tensorExactPairing, …] ; rw [braiding_slide_cap_right]
+    simp [qTrWith, tensorExactPairing, …, monoidalComp] ; coherence
+
+The second is the informative one. `braiding_slide_cap_right` IS the right mechanism (established
+last round) but it does NOT fire as a rewrite, and the reason is structural rather than incidental:
+its statement is phrased with `⊗≫`, so its LHS carries baked-in coherence isomorphisms that no
+un-regrouped goal will match syntactically. It has to be reached by CONSTRUCTING the matching term
+in a `calc`, exactly as `tensorExactPairing`'s own snake fields do — not by `rw` or `simp`.
+
+CONCLUSION, and this closes out what can be learned without doing the proof: this is a hand-built
+string-diagram `calc` of the `tensorExactPairing` kind, and nothing shorter will reach it. Everything
+needed is now recorded — the true statement, the verified direction, the mechanism, the
+instantiations of `W/A/B/c`, the goal-printing recipe, and seven dead ends. The next agent should
+budget a real session for the calc rather than another round of tactic probing.
+
+STOPPING HERE deliberately. Further hourly check-in windows on this bean would produce more negative
+tactic results, which is thin value against a target that is now fully characterised.
+
+
+2026-08-27 — A SECOND, SYNTACTICALLY CHECKABLE REASON THE ptrWith FACTORISATION WAS FALSE.
+
+Worth recording because it is cheaper to check than the linking argument and it rules out the wrong
+shape by READING A DEFINITION rather than by reasoning about diagrams.
+
+`tensorExactPairing` nests the two pairs in OPPOSITE orders at the two ends:
+
+    coevaluation' := η_ X X' ⊗≫ X ◁ η_ Y Y' ▷ X'      -- η_X OUTER, η_Y INNER
+    evaluation'   := Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y'      -- ε_X INNER, ε_Y OUTER
+
+So X is the OUTER cup but the INNER cap, and Y is the INNER cup but the OUTER cap. A factorisation
+`qTrWith (X⊗Y) … f = qTrWith X X' (ptr_Y f)` needs X to be outer at BOTH ends — it is not. Nor is
+the opposite order available, because Y is likewise mismatched. So NEITHER nesting order can support
+a clean trace-of-partial-trace, and this is visible directly in the definition without any crossing
+count.
+
+This is INDEPENDENT of, and complementary to, the linking argument recorded earlier: linking says
+the twistless version is false, and this says the ptrWith SHAPE is wrong regardless of twisting. Both
+point at the same conclusion; this one is checkable in ten seconds.
+
+ALSO MEASURED THIS ROUND:
+- `braiding_slide_cap_right` is NOT IMPORTED by TwistedQuantumDimension.lean. Whoever takes this up
+  must add `import QOU.MathlibExt.BraidedSlide` first — I did not add it, since an unused import is
+  churn, but the missing import will otherwise read as "unknown identifier" and look like the lemma
+  does not exist.
+- With the import in place, `simp` including `braiding_slide_cap_right` (and its `_inv` companion)
+  STILL fails, confirming the earlier structural finding from the other direction: a `⊗≫`-phrased
+  lemma cannot fire as a rewrite at all, so no amount of adding it to a simp set will help. It has to
+  be reached by CONSTRUCTING its LHS in a calc.
+- Neither `rw [braiding_naturality_right]` nor its reverse fires on the normalised goal — the
+  associators sit between, so the bare pattern is absent. That is the interchange obstruction again,
+  now confirmed at the level of a single rewrite.
+
+TACTIC LEDGER NOW AT NINE ruled-out approaches. The search is closed; the remaining work is the
+hand-constructed calc, and everything needed to start it is recorded above.

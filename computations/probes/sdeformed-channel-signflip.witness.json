@@ -30,7 +30,7 @@
       "name": "tau_purely_imaginary_modulus_sqrt3",
       "computed": 5.77350269189847e-13,
       "expected": 0.0,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "passed": true,
       "source": "closed-form longitude v(u)/u: Re\u21920, |\u03c4|=\u221a3 (\u00b1i\u221a3 \u211a(\u221a\u22123) cusp modulus; sign is a log-branch convention)"
     },
@@ -46,7 +46,7 @@
       "name": "leading_form_matches_integrated_to_O_u4",
       "computed": 7.235411225101673e-06,
       "expected": 0.0,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "passed": true,
       "source": "Im \ud835\udd19\u2084\u2081 = \u03ba(Re\u00b2u\u2212Im\u00b2u), \u03ba=\u221a3/4 (integrated closed form, r=0.1)"
     },
@@ -54,7 +54,7 @@
       "name": "imV_vanishes_on_diagonal_not_axis",
       "computed": 7.216789159622881e-06,
       "expected": 0.0,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "passed": true,
       "source": "Im \ud835\udd19\u2084\u2081(Re u = Im u) = 0 (harmonic quadratic form Re(u\u00b2))"
     },

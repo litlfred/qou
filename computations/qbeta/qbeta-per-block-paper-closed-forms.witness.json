@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Paper's (q²-1) form and clean (q+1)·ℏ_q form are symbolically equal"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.015943095354596763,
       "expected": 0,
       "passed": false,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "source": "Σ y_λ · χ_λ(β_n - β_p) = τ_M(β_n - β_p) at q_0"
     }
   ],

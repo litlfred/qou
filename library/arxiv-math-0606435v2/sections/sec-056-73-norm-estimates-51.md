@@ -5,7 +5,7 @@ section_id: sec-056-73-norm-estimates-51
 section_title: "Norm estimates 51"
 section_number: 7.3
 pages: 51-52
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -32,22 +32,16 @@ It makes some sense to ask about the status of 4-braids.
 Question 7.1 Are there only ﬁnitely many closed 4-braids of given Alexander polynomial (degree)?
 When working with ∆, for 3- and 4-braids we can be more explicit.
 Corollary 7.3 If β ∈ B4, then
-⏐
-⏐ ∆ ˆβ(t)
-⏐
-⏐ ≤ 8 |1 − t|
+⏐⏐ ∆ ˆβ(t)
+⏐⏐ ≤ 8 |1 − t|
 |1 − t4| ,(59)
 when |t| = 1 and ℜ t > 0. If β ∈ B3 and ℜ t > −1/ 2, then
-⏐
-⏐ ∆ ˆβ(t)
-⏐
-⏐ ≤ 4 |1 − t|
+⏐⏐ ∆ ˆβ(t)
+⏐⏐ ≤ 4 |1 − t|
 |1 − t3| . ✷
 Putting t = e2πi/ 5 in (59) we have
-⏐
-⏐ ∆(e2πi/ 5)
-⏐
-⏐ ≤ 8 . This improves the bound 10 .47 . . .in [St3] suggested to replace
+⏐⏐ ∆(e2πi/ 5)
+⏐⏐ ≤ 8 . This improves the bound 10 .47 . . .in [St3] suggested to replace
 Jones’s (incorrect) value 6.5 in [J2]. For 3-braid knots Jones gives in [J, proposition 15.2] the better bound 3 when
 t = i, using the property V (i) = ±1.
 Example 7.1 The simplest knots with MWF = 4 which can be excluded from being a 4-braid using corollary 7.3 are
@@ -56,10 +50,7 @@ Example 7.1 The simplest knots with MWF = 4 which can be excluded from being a 4
 we explained in example 4.2.)
 If we know the exponent sum of β we can do better.
 Proposition 7.2 If β ∈ B4, e = [β] and t as before, then
-⏐
-⏐
-⏐
-⏐
+⏐⏐⏐⏐
 (
 −
 √
@@ -67,14 +58,8 @@ t
 ) e−3
 ∆ ˆβ(t)1 − t4
 1 − t − 1 + (−t)e
-⏐
-⏐
-⏐
-⏐ ≤ 6.
-If β ∈ B3 and ℜ t > −1/ 2, then ⏐
-⏐
-⏐
-⏐
+⏐⏐⏐⏐ ≤ 6.
+If β ∈ B3 and ℜ t > −1/ 2, then ⏐⏐⏐⏐
 (
 −
 √
@@ -82,10 +67,7 @@ t
 ) e−2
 ∆ ˆβ(t)1 − t3
 1 − t − 1 − (−t)e
-⏐
-⏐
-⏐
-⏐ ≤ 2 . ✷
+⏐⏐⏐⏐ ≤ 2 . ✷
 52 7 Applications of the representation theory
 ~W1111 = 1
 [2][3][4] × ~W211 = q

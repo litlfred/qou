@@ -763,3 +763,216 @@ attempt to diff the current dirty set against `raw-float64-baseline.json`
 reported 0 current dirty, which is obviously wrong. Stating that rather than
 guessing. Whoever picks this up needs those five names first; `REGRESSED: 0`
 says nothing got worse, so this is 5 additions someone made without draining.
+
+
+---
+
+## The five ARE named by the audit itself — my predecessor's blocker was not real
+
+Picked up 2026-08-25 from the handoff above ("Whoever picks this up needs those
+five names first"). That handoff states:
+
+> The audit has no flag that lists them and my attempt to diff the current dirty
+> set against `raw-float64-baseline.json` (1409 entries) failed.
+
+**Both halves are wrong, and the second follows from the first.** The audit
+prints the NEW set unconditionally at `witness_raw_float64_audit.py:722-728`,
+under the heading `NEW witnesses carrying raw float64 — fix AT THE PRODUCER`,
+one line per file with its field count. No flag is needed; a plain
+`--strict` run emits it. The custom baseline-differ that returned "0 current
+dirty, which is obviously wrong" was written to reconstruct output the tool
+already produces.
+
+Recorded because the failure mode is reusable, not to score a point: the
+predecessor reached for a reimplementation before reading the reporting code
+of the tool it was reimplementing. Same shape as the `y_lambda_at` and
+`qbeta_h_frame_rungs_probe` corrections elsewhere in this corpus — **read at
+the body**.
+
+## The five, measured on clean main (exit 1, `NEW dirty witnesses: 5`)
+
+    42  computations/deltalambda/deuteron-interface-handle-curvature.witness.json
+    28  computations/qbeta/birkhoff-barodd-pythagoras-bridge.witness.json
+    21  computations/qbeta/a3-branching-asymmetry-vs-required.witness.json
+     4  computations/deltalambda/yekutieli-trefoil-surface2form-discretization.witness.json
+     1  computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json
+
+96 raw float64 fields total. `REGRESSED: 0` — nothing baselined got worse, so
+this is five additions that were never drained, exactly as the handoff inferred.
+
+Four of the five carry a producer and all four were computed 2026-08-09, each
+declaring its arithmetic in its own `engine` string:
+
+    deuteron-interface-handle-curvature   "python+numpy (H6 Hoefsmit seminormal, pure-python builder)"
+    birkhoff-barodd-pythagoras-bridge     "python-complex (structural demonstration; no precision needed)"
+    a3-branching-asymmetry-vs-required    "python-float (0 free params; structural)"
+    yekutieli-trefoil-surface2form-...    "python (pure 2x2 matrices; structural validation)"
+
+That is the pre-directive probe class: all four predate the 2026-08-18 owner
+directive "PROBES ARE NOT EXEMPT ... Never compute in `float`", and
+"no precision needed" / "structural" is the exact reasoning that directive
+names and bans. The fifth (`sigma1cubed-seifert-surface-term`, 1 field,
+2026-08-02) carries no `scriptFile` and needs separate handling.
+
+
+## DRAINED — the raw-float64 ratchet is GREEN, and both trunk reds are now closed
+
+All five, fixed AT THE PRODUCER (no baseline widening, no hand-edited numbers).
+96 raw float64 fields removed; corpus total 258,420 -> 258,324.
+
+    raw-float64 ratchet   NEW 5 -> 0, REGRESSED 0, exit 1 -> 0
+    precision-gates.sh    "All blocking precision gates green", exit 0
+
+Three of the five were self-contained (`math` only) and ported directly. The
+other two were not, and neither obstruction was visible from the witness:
+
+**The deuteron witness (42 fields, 44% of the total) was blocked at LIBRARY
+level.** `hecke_characters.build_seminormal_matrices` coerces its argument
+(`q_local = float(q)`), so an `mpf` handed to it is silently downcast; it
+computes the axial-distance entries in float; it reaches for `mp.sqrt` and then
+throws the precision away (`b = float(mp.sqrt(...))`); and it returns
+`np.zeros`. **64 live callers**, so converting it in place moves numbers
+corpus-wide. Resolved by adding `build_seminormal_matrices_mp` ALONGSIDE it --
+nothing existing modified, no current caller changed, and the other 63 can adopt
+it as they drain. Verified against the float64 builder at the muon q0 across all
+11 partitions of 6: max deviation 4.441e-16, i.e. 2 ulp.
+
+**The fifth was a false precision finding.** `sigma1cubed`'s single float was
+`elapsed_sec` -- wall-clock timing, already listed in qou_substrate's
+`_EPHEMERAL_META_FIELDS`, whose comment states "the masked names are reserved
+for runtime-metadata semantics". Serialized as a string (the mask strips by
+name, so this is inert). The class fix -- teaching the audit to skip
+`_EPHEMERAL_META_FIELDS` -- is left for the owner: exactly 4 witnesses
+corpus-wide carry `elapsed_sec` and all 4 are raw floats, but widening a gate to
+turn a red green is the move AGENTS.md bans, so it is not mine to take.
+
+### Two things the exact route revealed that float64 had hidden
+
+1. **`q = 1 + 1e-7` was a finite-difference stand-in for the q->1 limit**, worth
+   ~1e-9 in the reported `dF_q`. The limit is elementary (`a -> 1/rho`,
+   `b^2 -> 1 - 1/rho^2`: Young's classical seminormal form), so it is now exact.
+   Confirmation the port is otherwise faithful: every q0-only quantity is
+   unchanged to 1e-16, and ONLY the q=1-referencing ones moved.
+
+2. **`dFq_scales_as_h_squared` was a hardcoded `True`**, annotated
+   "~1.77 h^4 (measured, constant ratio)". Neither half was measured. Now
+   computed, and sharper than the claim it replaced:
+
+       lim_{q->1} ||dF_q||^2 / h^4  =  4k/9  EXACTLY,  k in {0,1,2,3,4}
+
+   verified to 22 digits, conjugation-symmetric ((5,1)<->(2,1^4) both 4/9,
+   (3,2,1) alone 16/9). The ratio is NOT constant -- at q0 it spans
+   0.4355..1.7506 -- and "1.77" is 16/9, the LIMIT for (3,2,1) alone, i.e. the
+   maximum over partitions rather than a q0 value. The h^2 conclusion stands and
+   is now evidence rather than assertion.
+
+### One defect I introduced and caught myself
+
+Serializing `Q0` through `fmt()` rendered the 17-digit literal as
+`1.10997859555733470000...` (59 digits) and `q0_value_drift_audit` classified it
+`canonical`. The muon anchor is `1.10997859555733471989976...`, so those
+appended digits are not merely fabricated -- they are **wrong from digit 18**. I
+had added the very fake-precision class this drain removes. Fixed by recording
+input literals verbatim; every computed value is byte-identical.
+
+NOT fixed by upgrading Q0 to the anchor's full 68 digits, which was my first
+instinct: `witness.py::_q0_value_for_anchor` documents that exact change being
+made and REVERTED the same day, because `q0Value` must record what the producer
+actually computed with. Worth noting the padding ratchet keys on float64 and
+this was a string, so nothing but the drift audit would have caught it.
+
+### For whoever runs the gate next: main's audit witnesses are stale, not yours
+
+A gate run rewrites three of them
+(`q0-anchor-consistency`, `witness-provenance`, `q0-value-drift`) and the gate
+tells you to check whether the movement is yours. On this branch it is **not**:
+`total_scanned` moves 2739 -> 2758, i.e. +19 witnesses, while the branch adds
+**zero** witness files and modifies exactly 5. Nineteen witnesses landed on main
+without the audits being regenerated. They are deliberately NOT committed here
+-- doing so would fold main's staleness into an unrelated drain and, in a
+container without scipy/sympy/clarabel, would also record a degraded environment
+block as corpus provenance (measured: those three are DROPPED and mpmath is
+downgraded 1.3.0 -> 1.4.1). I did not attribute each count individually; only
+established that the bulk cannot be this branch's.
+
+
+## Sibling review (#5772, #5774, #5775) — three corrections and one new finding
+
+### NEW: main's raw-float64 audit witness was stale in the UNDERSTATING direction
+
+Found while answering a sibling's warning that this branch might commit a
+regenerated audit witness carrying a degraded environment block. It does not,
+and the reason turned out to be more interesting than the warning.
+
+`computations/witness-raw-float64-audit.witness.json` on `origin/main` records
+
+    dirty_witnesses: 1288    total_fields: 258324
+
+while the live audit on that same tree reports **1293 / 258420, NEW 5**. The
+difference is exactly the five files and 96 fields drained here (1293-5=1288,
+258420-96=258324). So the committed witness was already recording the DRAINED
+state while the tree was undrained — last written by PR #5745, whereas the five
+dirty witnesses date from 2026-08-09.
+
+**Consequence: anyone reading that witness instead of running the audit would
+have concluded the ratchet was clean.** A stale witness that overstates a
+problem wastes a pass; one that understates it hides a live gate failure, and
+this is the second kind. It is also why the file does not appear in this
+branch's diff — the drain made reality match what the witness already claimed.
+
+That witness has **no `environment` block at all** (keys: schema, name,
+description, data), so it is structurally immune to the container-package
+hazard the siblings flagged. The hazard is real for the other three
+(`q0-anchor-consistency`, `witness-provenance`, `q0-value-drift`), which this
+branch hit and reverted.
+
+### CONFIRMED: the float64 coercion is deliberate, which is why ADDITIVE was right
+
+A sibling reported the coercion as intentional. Verified on main at
+`hecke_characters.py:378`:
+
+    # Normalize q_value to float ONCE here ... so callers passing mpmath / str
+    # / numeric types don't break NumPy dtype handling further down
+    # (per Copilot review on PR #1861).
+
+Precisely: that rationale is attached to `q_f` in the fallback path at 379, not
+to line 168 inside `build_seminormal_matrices` itself; both coerce, only 378 is
+documented. Either way, converting the builder IN PLACE would break the numpy
+dtype handling this comment protects, so a separate function returning
+`mp.matrix` rather than `np.ndarray` sidesteps it entirely.
+
+### CORRECTED: "642x slower" is MATMUL, not construction — and my adoption advice was too broad
+
+A sibling cited `qou-d8gq`'s 642x figure as the cost of going mpf. That number
+is for mpf **matrix multiplication** at dim=162. This bean's builder only
+CONSTRUCTS. Measured here, construction vs the float64 builder:
+
+    dim  16   0.7x      dim  35  21.5x
+    dim 162   9.8x      dim 168  32.4x
+
+So ~10-30x for construction, not 642x. The two costs are separate and both are
+real: a consumer that constructs and then multiplies large matrices still
+inherits the matmul cost, which is the trade `qou-d8gq` measured.
+
+**My "the other 63 can adopt it incrementally" was therefore too broad.** It is
+right for small dims — the deuteron use is dim <= 16, where the cost is nil —
+and needs the matmul trade weighed for anything at dim ~162+. Restated in the
+PR rather than left standing.
+
+### Blast radius: 64 vs 102 is a definitional difference, not a disagreement
+
+Measured three ways under `computations/`, excluding `_deprecated`:
+
+    64   files naming build_seminormal_matrices directly   <- the figure used here
+    133  files importing hecke_characters at all
+    55   of the 64 direct callers that emit a witness
+
+A sibling reported 102 consumers / 65 emitting. Neither is wrong; they count
+different sets. Stating which definition is in use rather than adopting or
+dismissing the other number.
+
+### Not counted as drains
+
+Per #5775, `gram-norm-binding-probe.witness.json` is ratchet-NEUTRAL (248
+against a 248 baseline, REGRESSED 0), not a drain. It was never in this bean's
+five and is not counted here.

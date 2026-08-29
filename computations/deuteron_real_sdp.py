@@ -65,7 +65,9 @@ from pyhecke.lp_dual_solver import (  # noqa: E402
     solve_psd_operator_selection_sdp,
 )
 from murnaghan_nakayama import dim_specht  # noqa: E402  shared hook-length dim
-from nucleus_sdp_assembly import build_cost_gram, tr_M_from_cache, solve_real_sdp  # noqa: E402
+from nucleus_sdp_assembly import (  # noqa: E402
+    build_cost_gram, tr_M_from_cache, solve_real_sdp, solve_real_sdp_arrays,
+)
 
 COST_WITNESS = _pb.witness_path("iterative-lp-dual-h6-deuteron.witness.json", HERE)
 BRANCHING_WITNESS = _pb.witness_path("sublemma-2-1-deuteron-branching.witness.json", HERE)
@@ -134,6 +136,70 @@ def solve_lp_with_eq(t, G, A_eq, b_eq, n_target):
     return out
 
 
+def project_rows_to_support(A_eq, b_eq, support_idx, n_blocks):
+    """Project equality rows onto the support columns, reporting what is lost.
+
+    A row `sum_lambda a_lambda x_lambda = b` restricted to the support DROPS
+    its kernel terms. That is a MODELLING DECISION, not an algebraic identity:
+    it asserts `x_lambda = 0` on every zero-weight block — "do not occupy a
+    block the Markov trace cannot see", which under convention D is exactly
+    `y_lambda = 0 => tr_M(P_lambda) = 0`. It is stated here rather than folded
+    silently into the solve.
+
+    A row whose weight lies ENTIRELY on the kernel degenerates to `0 = b`:
+    vacuous when `b == 0`, INFEASIBLE otherwise. Both are reported per row so
+    an encoding that dies under projection is visible as such rather than as a
+    bare `feasible: False`.
+    """
+    import numpy as _np
+    if A_eq is None:
+        return None, None, []
+    kernel_idx = [i for i in range(n_blocks) if i not in set(support_idx)]
+    rows_out, rhs_out, report = [], [], []
+    for j, (row, rhs) in enumerate(zip(A_eq, b_eq)):
+        a = _np.asarray(row, float)
+        w_sup = float(_np.abs(a[support_idx]).sum())
+        w_ker = float(_np.abs(a[kernel_idx]).sum()) if kernel_idx else 0.0
+        total = w_sup + w_ker
+        degenerate = w_sup == 0.0
+        report.append({
+            "row": j,
+            "weight_on_support": w_sup,
+            "weight_on_kernel": w_ker,
+            "fraction_dropped": (w_ker / total) if total > 0 else 0.0,
+            "degenerate_under_projection": degenerate,
+            "verdict": ("infeasible (0 = b, b != 0)" if degenerate and float(rhs) != 0.0
+                        else "vacuous (0 = 0)" if degenerate
+                        else "ok"),
+        })
+        rows_out.append(a[support_idx])
+        rhs_out.append(float(rhs))
+    return rows_out, rhs_out, report
+
+
+def solve_lp_with_eq_both(t, frob_diag, A_eq, b_eq, n_target, support_idx):
+    """Full-space solve plus the support-projected one, with the row report.
+
+    Under convention D the full-space answer is not a result: the kernel blocks
+    carry zero cost and a vacuous positivity row, and the net constraint is a
+    PLAIN SUM, so they absorb `sum x = n_target` for free and the optimum is 0.
+    The projected solve is the one to read. Both are emitted so the difference
+    stays auditable rather than being asserted in prose.
+    """
+    import numpy as _np
+    full = solve_lp_with_eq(t, _np.diag(frob_diag), A_eq, b_eq, n_target)
+    t_sup = _np.asarray(t, float)[support_idx]
+    g_sup = _np.diag(_np.asarray(frob_diag, float)[support_idx])
+    rows_sup, rhs_sup, report = project_rows_to_support(
+        A_eq, b_eq, support_idx, len(t))
+    proj = solve_lp_with_eq(t_sup, g_sup, rows_sup, rhs_sup, n_target)
+    return {
+        "result": full,
+        "result_support_projected": proj,
+        "projection_row_report": report,
+    }
+
+
 def parse_partition(key: str) -> tuple[int, ...]:
     """'(3, 2, 1)' -> (3, 2, 1)."""
     return tuple(int(p) for p in key.strip("()").rstrip(",").split(",") if p.strip())
@@ -181,15 +247,44 @@ def main() -> int:
     tr_M_recorded = float(data["tr_M_check_at_q0"])
     tr_M_rel_err = abs(tr_M_beta_D - tr_M_recorded) / abs(tr_M_recorded)
 
-    # Phase A diagnostic — the q_0 Frobenius Gram is INDEFINITE.  At q_0 ≠ 1
-    # the Wenzl/Markov q-trace is not positive-definite, so some blocks carry
-    # a negative q-trace norm (tr_M(P_λ) < 0).  These are "forbidden" channels:
-    # an occupation x_λ ≥ 0 on a negative-norm block violates Frobenius
-    # positivity, so the physical real SDP must set x_λ = 0 there.  Without
-    # this the unconstrained LP is unbounded (the empty-SDP pathology in
-    # disguise) — which is precisely why Phase B's color-flavor constraints
-    # are required.
+    # ── Phase A diagnostic — REWRITTEN FOR CONVENTION D (2026-08-26) ──────
+    #
+    # This block used to read: "the q_0 Frobenius Gram is INDEFINITE ... some
+    # blocks carry a negative q-trace norm ... the unconstrained LP is
+    # unbounded ... which is precisely why Phase B's color-flavor constraints
+    # are required."  Every clause of that was true in convention **C** and is
+    # false in **D**, which has been canonical since 2026-08-09 (owner ruling
+    # R1, reaffirmed 2026-08-15).
+    #
+    # D caps the Markov weights at two rows: `y_λ = 0` for `ℓ(λ) > 2`.  Since
+    # `G_λλ = tr_M(P_λ) = y_λ · dim S^λ` and `t_λ = y_λ · χ^λ(β_D)`, a
+    # three-or-more-row block contributes **zero to the Gram and zero to the
+    # cost**.  It is not a forbidden channel carrying a negative norm; it is
+    # simply absent.  Measured at n = 6: C gave eleven nonzero Gram entries,
+    # three of them negative; D gives four positive and seven exactly zero,
+    # and there is no negative weight at n = 3, 6, 9 or 12.
+    #
+    # CONSEQUENCE, measured by re-running this producer: the program is
+    # **bounded** and strong duality **holds** (gap 3.7e-43, against 43926.6
+    # under C).  So the singularity needs no repair to make the LP well posed —
+    # the unboundedness *was* the indefiniteness, and that was convention C.
+    #
+    # WHAT THE SINGULARITY DOES COST is the dual's information content.  The
+    # seven kernel blocks have zero cost and a vacuous constraint (`0·x ≥ 0`),
+    # so their occupations are free null directions and the solver returns an
+    # arbitrary interior point on them — measured, a uniform `y_star = 0.168`
+    # across all seven, which is filler rather than a shadow price.  Reading
+    # `active_set` off the full space therefore reports all eleven blocks as
+    # "active", which is meaningless.  Worse, because the net constraint is a
+    # plain sum `Σx = n_target`, those free blocks absorb the entire net
+    # requirement at zero cost, so the full-space OPTIMUM is ~0 as well —
+    # satisfied by occupations that contribute nothing to tr_M.  The fix is to
+    # solve on the support; that is `support_restricted` below, and it is the
+    # one whose objective AND dual should be read.
     forbidden_blocks = [keys[i] for i, g in enumerate(frob_diag) if g < 0.0]
+    kernel_blocks = [keys[i] for i, g in enumerate(frob_diag) if g == 0.0]
+    support_idx = [i for i, g in enumerate(frob_diag) if g != 0.0]
+    support_blocks = [keys[i] for i in support_idx]
 
     # Phase C — solve the real SDP with the true (indefinite) Frobenius Gram.
     # The canonical operator-selection entry point takes a square (d,d) Gram,
@@ -207,9 +302,57 @@ def main() -> int:
     bounded = (_gap_full is not None and abs(float(_gap_full)) < 1e-6
                and bool(lp_d.get("feasible", True)))
 
-    # active demand channels = blocks the deuteron bound state saturates
+    # active demand channels = blocks the deuteron bound state saturates.
+    # NOTE: on the full space under D this is not informative — see the Phase A
+    # note above. Read `support_restricted.active_blocks` instead.
     active_idx = lp_d.get("active_set", [])
     active_blocks = [keys[i] for i in active_idx if i < len(keys)]
+
+    # ── Support-restricted solve (convention D) ──────────────────────────
+    # Drop the zero-Gram / zero-cost blocks and re-solve on the support, where
+    # the Gram is diagonal and strictly positive. This is what makes `y_star`
+    # a shadow price again rather than solver filler on a null direction.
+    # It is NOT the same move as C's "drop the forbidden negative-norm blocks":
+    # there the dropped blocks carried nonzero cost and a violated positivity
+    # constraint. Here they carry zero cost and a vacuous constraint.
+    #
+    # The restriction DOES change the optimum, and that is the point. The
+    # feasible set is `{x : Σx = n_target, Gx ≥ 0, x ≥ -M_bound}` — the net
+    # constraint is a PLAIN SUM over blocks, not a trace-weighted one. So a
+    # kernel block, having zero cost and no positivity constraint, can absorb
+    # the entire `Σx = n_target` requirement for free. Measured: the full-space
+    # optimum is 3.7e-43 (i.e. zero) while the support-restricted optimum is
+    # 0.0370. The full-space answer is a free lunch through the kernel — it
+    # satisfies the net requirement using blocks that contribute nothing to
+    # tr_M — and it is an artifact of carrying null directions, not a result.
+    #
+    # THAT is what the D singularity actually costs. It does not make the
+    # program unbounded (C's indefiniteness did that); it makes the full-space
+    # optimum vacuous and the full-space dual uninformative. Both are repaired
+    # by solving where the weights live.
+    _t_sup = np.array([t[i] for i in support_idx], dtype=float)
+    _g_sup = np.diag([frob_diag[i] for i in support_idx])
+    _r_sup = solve_real_sdp_arrays(_t_sup, _g_sup, n_target)
+    lp_sup = _r_sup["lp"]
+    _sup_active = lp_sup.get("active_set", [])
+    support_restricted = {
+        "blocks": support_blocks,
+        "n_blocks": len(support_idx),
+        "rationale": (
+            "Convention D zeroes y_lambda for ell(lambda) > 2, so the kernel "
+            "blocks carry zero cost AND a vacuous positivity constraint. The "
+            "net constraint is a PLAIN SUM (Sum x = n_target), so those blocks "
+            "can absorb the whole requirement for free: the full-space optimum "
+            "is ~0 (3.7e-43), achieved on blocks contributing nothing to tr_M, "
+            "with y_star a uniform 0.168 of filler. Restricting to the support "
+            "removes that escape. The optimum CHANGES (to 0.0370) and that is "
+            "the correct value; the full-space one is an artifact of carrying "
+            "null directions."),
+        "active_blocks": [support_blocks[i] for i in _sup_active
+                          if i < len(support_blocks)],
+        "lp": lp_sup,
+        "sdp": _r_sup["sdp"],
+    }
 
     # ── Symmetry analysis (involution / bar / skew) ──────────────────────
     # The Frobenius-norm sign structure is governed by the bar-involution
@@ -290,7 +433,7 @@ def main() -> int:
     methods["1_bar_involution_fold"] = {
         "description": "x_λ = x_λ' (bar-involution/Type-B fold, §7b) — symmetry regulariser",
         "ansatz_flag": False,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), fold_rows, fold_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, fold_rows, fold_rhs, n_target, support_idx),
     }
 
     # (2) Character-projection color-flavor constraints (UN-VETTED ANSATZ).
@@ -309,7 +452,7 @@ def main() -> int:
         "description": "per-pair χ^λ projection rows + AME-apportioned RHS",
         "ansatz_flag": True,
         "ansatz_warning": "UN-VETTED: pair→block map invented here; flag to canonical-watcher / CAL-4 discipline before any production use.",
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), cf_rows, cf_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, cf_rows, cf_rhs, n_target, support_idx),
     }
 
     # (3) Conservation-law constraints only: baryon number (Σx fixes total)
@@ -321,7 +464,7 @@ def main() -> int:
     methods["3_conservation_laws"] = {
         "description": "baryon (net) + charge (sign-weighted) conservation rows",
         "ansatz_flag": False,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), cons_rows, cons_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, cons_rows, cons_rhs, n_target, support_idx),
     }
 
     # (4) AME-binding equality: retarget the net constraint to the physical
@@ -334,7 +477,7 @@ def main() -> int:
         "non_default_reason": "imposes the AME binding as an equality (consumes "
                               "the experimental answer); a validation anchor, not "
                               "a substrate derivation.",
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), [t], [B_D_AME_MeV], n_target),
+        **solve_lp_with_eq_both(t, frob_diag, [t], [B_D_AME_MeV], n_target, support_idx),
     }
 
     # (5) CANONICAL — Littlewood-Richardson branching H_6 ⊃ H_3 × H_3.
@@ -349,8 +492,15 @@ def main() -> int:
     #     and the χ are computed at q_0.  Three rows (μ ∈ {(3),(2,1),(1³)}).
     branch = json.loads(BRANCHING_WITNESS.read_text())
     lr = branch["lr_breakdown_per_lambda"]            # {λ_key: [{mu,nu,c,term_re}]}
-    chi_p = {k: v["re"] for k, v in branch["chi_proton_h3"].items()}
-    chi_n = {k: v["re"] for k, v in branch["chi_neutron_h3"].items()}
+    # `re` is serialized as a 60-digit STRING (the drained precision convention,
+    # qou-t0rf) — NOT a float. Reading it raw made every downstream product a
+    # `str * float`, so this producer could not run at all on `main`; that is
+    # why its committed witness stayed stale in the convention-C frame while
+    # its input witness had already been migrated to D. Parsed here at the
+    # numpy boundary, which is where the LP rows are assembled and where the
+    # narrowing is visible, rather than silently upstream.
+    chi_p = {k: float(v["re"]) for k, v in branch["chi_proton_h3"].items()}
+    chi_n = {k: float(v["re"]) for k, v in branch["chi_neutron_h3"].items()}
     parts3 = ["(3,)", "(2, 1)", "(1, 1, 1)"]
 
     def pkey(lst):  # [3] -> "(3,)" ; [2,1] -> "(2, 1)"
@@ -381,7 +531,7 @@ def main() -> int:
         "canonical": True,
         "production_default": True,
         "tr_M_neutron": tr_M_neutron,
-        "result": solve_lp_with_eq(t, np.diag(frob_diag), lr_rows, lr_rhs, n_target),
+        **solve_lp_with_eq_both(t, frob_diag, lr_rows, lr_rhs, n_target, support_idx),
     }
 
     # (6) Scalar 9-pair weighted ratio (FITTED — must be labelled near-match).
@@ -390,7 +540,10 @@ def main() -> int:
     #     neutron-heavy 5:4 weighted 9-pair value with the bar-involution
     #     sign flip on the mixed channel.  NOT substrate-canonical.
     interface = branch["deuteron_interface_ratios"]
-    r_lambda = np.array([interface[k]["ratio"][0] for k in keys])
+    # Same string-serialization boundary as `chi_p`/`chi_n` above: `ratio[0]`
+    # is a drained-precision STRING, and np.array of those gives dtype '<U64',
+    # on which np.mean raises. Parsed explicitly.
+    r_lambda = np.array([float(interface[k]["ratio"][0]) for k in keys])
     # neutron-heavy weighted ratio using interface magnitudes (bar-flip baked in
     # via signed ratios); scalar target = mean interface ratio · tr_M.
     ratio_scalar = float(np.mean(r_lambda))
@@ -399,8 +552,9 @@ def main() -> int:
         "ansatz_flag": True,
         "production_default": False,
         "discipline_label": "near-match / exploratory — NOT substrate-canonical (CAL-4)",
-        "result": solve_lp_with_eq(
-            t, np.diag(frob_diag), [r_lambda], [ratio_scalar * n_target], n_target,
+        **solve_lp_with_eq_both(
+            t, frob_diag, [r_lambda], [ratio_scalar * n_target], n_target,
+            support_idx,
         ),
     }
 
@@ -455,11 +609,53 @@ def main() -> int:
             "self_conjugate_blocks": self_conjugate_blocks,
             "sign_flip_conjugate_pairs": [list(p) for p in sign_flip_pairs],
             "symmetry_note": (
+                "CONVENTION D (2026-08-26). This field used to read: 'Every "
+                "negative-norm forbidden block is the conjugate lambda -> "
+                "lambda' of a dominant positive block with tr_M(P_lambda) "
+                "sign-flipped -- the S7b bar-involution / Type-B-folding "
+                "signature.' That was a convention-C statement and it does "
+                "not survive: under D there are NO negative-norm blocks, so "
+                "sign_flip_conjugate_pairs is empty and the claimed signature "
+                "has no instances. What conjugation does under D is map the "
+                "entire support (the two-row partitions) into the kernel, "
+                "since a two-row lambda of n >= 6 has lambda_1 >= 3 hence "
+                "ell(lambda') >= 3. (3,2,1) remains the self-conjugate "
+                "partition of 6, and under D its weight is zero -- it sits in "
+                "the kernel, not at a fixed point of a sign flip."
+            )
+            if not sign_flip_pairs else
+            (
                 "Every negative-norm forbidden block is the conjugate λ↦λ' "
                 "of a dominant positive block with tr_M(P_λ) sign-flipped — "
-                "the §7b bar-involution (q↦q⁻¹) / Type-B-folding signature. "
-                "(3,2,1) is the self-conjugate fixed point."
+                "the §7b bar-involution (q↦q⁻¹) / Type-B-folding signature."
             ),
+            # ---- convention-D kernel structure ----
+            "kernel_blocks_zero_weight": kernel_blocks,
+            "phase_B_kernel_free_lunch_open": (
+                "CLOSED, with a NEGATIVE result (bean qou-6tcn). Each "
+                "encoding below now carries `result` (full space) AND "
+                "`result_support_projected`, plus a per-row "
+                "`projection_row_report`. Read the projected one. "
+                "MEASURED: all six are INFEASIBLE once projected. The reason "
+                "is structural, not numerical. On the support G is strictly "
+                "positive, so Gx >= 0 IS x >= 0 there; on the kernel G = 0, "
+                "so Gx >= 0 imposes nothing and x may go NEGATIVE. That is "
+                "what the kernel actually bought -- not merely absorbing the "
+                "net constraint at zero cost, but supplying signed "
+                "occupations. Remove it and the objective is bounded by "
+                "max(t)*n_target = 0.146058, against B_D(AME2020) = 2.224566: "
+                "short by 15.2x. Two rows also degenerate to 0 = b, one of "
+                "them (5_lr_branching_canonical row 2, mu = (1,1,1)) "
+                "infeasibly -- and that encoding is the production default. "
+                "SCOPE (a): this bounds THIS cost on THIS program with "
+                "non-negative occupations of the D-supported blocks. It "
+                "refutes no binding conjecture and says nothing about a "
+                "different cost, a different Wenzl level, or a program that "
+                "admits signed occupations for a stated reason. See "
+                "computations/meson/deuteron_support_reachability_probe.py "
+                "(6 assertions)."),
+            "support_blocks": support_blocks,
+            "support_restricted": support_restricted,
             # ---- Phase B interim (bounded positive-norm subspace) ----
             "phase_B_interim": {
                 "positive_norm_blocks": pos_keys,
@@ -486,10 +682,25 @@ def main() -> int:
             # ---- scope markers ----
             "phase_A_cost": "done",
             "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
-            "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",
+            "phase_C_dual_solve": (
+                "diagnostic (unbounded on full space; bounded on positive "
+                "subspace)"
+                if not bounded else
+                "bounded on the full space under convention D; read the dual "
+                "from support_restricted (the full-space y_star is filler on "
+                "the seven zero-Gram null directions)"),
             "phase_D_lean_wiring": "pending (deuteron_emptySDP -> deuteron_realSDP)",
         },
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     OUT_WITNESS.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
 
     print(f"deuteron real SDP @ H_6 — {len(keys)} blocks")

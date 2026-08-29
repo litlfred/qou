@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "f_pp/f_pn/f_nn and κ recomputed from exact formulas at 50 dps vs the committed PROBE 1 exponent dictionary"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.2868893973670072e-85,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "gap(T−³He) computed directly from Δ_λ equals asym + swap + mirror — algebraic identity of the closed-form Δ_λ definition, checked at 50 dps"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "res_M0(³He) − res_M0(T) = mirror gap EXACTLY (isobars share the law value 25): the PROBE-1 '1.404 vs 1.338' 0.066 discrepancy is precisely T's own law residual — no missing δ/tr_free term"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 4.825835240126277e-86,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "res_M3(³He) − res_M3(T) = swap + mirror identically: M3 puts the whole mirror gap into the trace asymmetry, so 'gate exact' ⟺ 'swap + mirror = 0'"
     },
     {
@@ -49,7 +49,7 @@
       "computed": -0.4708557485879333,
       "expected": -0.033654,
       "passed": false,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "A=3 swap+mirror = −0.938014 + 0.904360 = −0.033654: a near-cancellation with computable residual, NOT an identity (swap = interface algebra at q₀; mirror = AME data; no shared structure)"
     },
     {
@@ -57,7 +57,7 @@
       "computed": 0.9587303987382305,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "M3 residuals recomputed here (T +0.0665, ³He +0.0329) vs the committed probe-9b-h-power-asymmetry witness"
     },
     {
@@ -65,7 +65,7 @@
       "computed": 2.7615636814839406,
       "expected": 2.406147,
       "passed": false,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "candidate 'swap = log g_pp − log g_nn = −3.344 (A-independent)' REFUTED: actual A=3 swap is −0.938; 1−∏f does not factor over interfaces, so the swap term is A-dependent"
     },
     {
@@ -73,7 +73,7 @@
       "computed": 0.06327532037893908,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "|swap| shrinks −0.938 (A=3) → −0.117 (A=5) → −0.0167 (A=7): geometric decay of the interface product, a DERIVED property of the closed form (all f ∈ (0,1) at q₀)"
     },
     {
@@ -81,7 +81,7 @@
       "computed": 0.34691630232629367,
       "expected": 0.3935,
       "passed": false,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "⁷Li/⁷Be (both bound, vendored AME2020): swap+mirror = −0.0167 + 0.4102 = +0.394 — an order of magnitude above the A=3 residual −0.0337; the near-cancellation behind the [Z>N] gate is A=3-specific, not generic"
     }
   ],

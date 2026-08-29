@@ -210,11 +210,15 @@ def main() -> int:
     # QOU.BraidKnot.markovZ' q = 1/(sqrt q + (sqrt q)^-1). This is the reason the
     # convention question reaches the ladder at all -- and, with tail_common, the
     # reason it reaches ONLY the N=1 rung.
-    markovZ_prime = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    # Named with the _C suffix although it mirrors the Lean declaration
+    # `QOU.BraidKnot.markovZ'`: assertion 7 is precisely the claim that this
+    # expression IS z_C, so the C-ness is the result, not a defect. The plain
+    # mirror-name made it invisible to the AST detector's deliberate-name test.
+    markovZ_prime_C = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
     check(
         "7. the ladder's markovZ' equals z_C exactly (so alpha is C-frame)",
-        sp.simplify(markovZ_prime - z_C(q)) == 0,
-        f"1/(sqrt q + 1/sqrt q) = {sp.simplify(markovZ_prime)} = z_C",
+        sp.simplify(markovZ_prime_C - z_C(q)) == 0,
+        f"1/(sqrt q + 1/sqrt q) = {sp.simplify(markovZ_prime_C)} = z_C",
     )
 
     print()

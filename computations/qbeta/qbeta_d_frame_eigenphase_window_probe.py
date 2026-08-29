@@ -171,7 +171,7 @@ def section1_exact() -> dict:
 # ───────────────────────── §2 the three candidate phases ───────────────────
 def phases(q: mp.mpf) -> dict:
     """The three eigenphase candidates at substrate `q`, all mpf."""
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     h, u = sub["h"], sub["u"]
     zC = sub["z"]                                  # convention C (as recorded)
     zD = q ** 3 / (q ** 2 + 1)                     # convention D

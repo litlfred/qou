@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-9
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 gories.Afiber functoron a finite tensor categoryCis an exact faithful tensor functor
 F:C→Vec k. We use the monoidal constraints

@@ -65,7 +65,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "tr_M_via_orbit_representative(2,1) == tr_M_atomic_fast(2,1); a Z!·N! factor would be 2×"
     },
     {
@@ -73,7 +73,7 @@
       "computed": 0.05534833516376857,
       "expected": 0.05534833516376857,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "tr_M_via_orbit_representative(2,2) @50dps"
     }
   ],

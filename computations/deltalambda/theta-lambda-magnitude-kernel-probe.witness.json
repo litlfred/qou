@@ -9,7 +9,7 @@
       "computed": 6.0426992254061815,
       "expected": 6.0426,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "B_D/(m_e·Σ y·dim·|Δθ|) from cached canonical witnesses (matches binding-a3plus-full-theta-assembly rho_need/m_e)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0564698109728798,
       "expected": 1.06,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "per-added-nucleon 𝒜 ratios (3.14–3.32) agree within ~6 % — the geometric-extensivity CONSTRAINT (guarded; identification of the ratio constant is degenerate)"
     },
     {

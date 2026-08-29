@@ -249,3 +249,11 @@ content/quantum-observable-universe/lean/.lake/
 
 # q0 migration sweep journal (regenerated per run; not corpus data)
 computations/q0-migration-decompose-progress.json
+
+# Build artifact from scripts/lean/audit-driver.sh (regenerated on every run)
+scripts/lean/*.olean
+scripts/lean/*.ilean
+
+# Per-machine subagent memory (`memory: local` scope). The committed
+# `project` scope lives at .claude/agent-memory/ and is tracked.
+.claude/agent-memory-local/

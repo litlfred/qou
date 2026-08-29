@@ -40,8 +40,11 @@ LINEAR trace, tr_M(W^♯) = tr_M(W) (character symmetry χ^λ(T_{w⁻¹}) =
 the QUADRATIC tr_M(W·W^♯) ≠ tr_M(W)² in general.
 
 Feasibility: dense/sparse seminormal per λ ⊢ 3A; Σ_λ d_λ² = (3A)! caps the
-default at A ≤ 3 (n ≤ 9, instant). ⁴He (n = 12, d_max = 7700, ~1 GB peak,
-minutes) is opt-in via --with-4he.
+default at A ≤ 3. Measured 2026-08-25: ²H 0.02 s, ³H 0.45 s, ³He 0.42 s;
+⁴He (n = 12, d_max = 7700, ~1.8 GB peak) 418 s, opt-in via --with-4he.
+NB those figures hold only with the float coercion in `_letters` — without it
+an mpf word coefficient promotes every letter to dtype=object and ³H alone runs
+for hours (see that function's docstring, and bean qou-9ohz).
 
 Emits `gram-norm-binding-probe.witness.json` (audit-only).
 
@@ -64,15 +67,19 @@ import sys  # noqa: E402
 import time  # noqa: E402
 from pathlib import Path  # noqa: E402
 
+import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 import scipy.sparse as sps  # noqa: E402
+import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from hecke.hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
+from hecke.hecke_characters import (  # noqa: E402
+    build_seminormal_matrices, build_seminormal_matrices_mp, partitions_of)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as Q_50_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
@@ -81,13 +88,26 @@ ISO_4HE = ("4He", 2, 2)
 
 
 def _letters(word, dim, sigmas):
-    """Materialise the word's letters c·σ_g + d·1 as matrices for one λ."""
+    """Materialise the word's letters c·σ_g + d·1 as matrices for one λ.
+
+    The coefficients (c, d) arrive from `atom_braid_word_3A` as a mix of
+    `int` and `mpmath.mpf`; the seminormal σ are float64 (see the module
+    PRECISION note). An mpf scalar times a float64 array yields a
+    **dtype=object** array, and object dtype then propagates through every
+    subsequent `@` in `_word_products`, running the whole matmul chain at
+    Python speed. Measured on λ=(4,3,1,1), d=216: one matmul costs 0.74 ms
+    in float64 and 13270 ms in object dtype — a factor of 1.8e4. Since the
+    σ operand is *already* float64-truncated, the mpf carries no information
+    the product can keep (verified at ²H: object vs coerced agree to 9e-16,
+    the float64 floor), so coercing here loses nothing and is what makes
+    ³H and beyond feasible at all.
+    """
     eye = sps.identity(dim, format="csr") if sigmas and sps.issparse(sigmas[0]) \
         else np.eye(dim)
     out = []
     for c, d, g in word:
         sig = sigmas[g]
-        out.append(c * sig + d * eye)
+        out.append(float(c) * sig + float(d) * eye)
     return out
 
 
@@ -107,6 +127,77 @@ def _word_products(word, dim, sigmas):
     for L in reversed(letters):
         rev = _rmul(rev, L)
     return fwd, rev
+
+
+def _letters_mp(word, dim, sigmas):
+    """Exact twin of `_letters`: mp.matrix letters, mpf coefficients KEPT.
+
+    The float coercion in `_letters` is sound only because the float64 builder
+    has already truncated sigma. On this path `build_seminormal_matrices_mp`
+    returns exact `mp.matrix`, so the word's mpf coefficients are the whole
+    point and are carried through untouched."""
+    eye = mp.eye(dim)
+    out = []
+    for c, d, g in word:
+        cm = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
+        dm = d if isinstance(d, mp.mpf) else mp.mpf(str(d))
+        out.append(cm * sigmas[g] + dm * eye)
+    return out
+
+
+def _gram_and_trace_mp(word, n, y_mp, q):
+    """(G, T) at full working precision — the exact route through
+    `build_seminormal_matrices_mp`. No float64 anywhere in the chain.
+
+    Cost is measured, not extrapolated: 2H (d <= 16) completes in ~2 s; a 3H
+    (d <= 216) run exceeded 30 min without finishing. The per-matmul ratio
+    (29x at d=16, 561x at d=216) is a LOWER BOUND on the aggregate ratio and
+    must not be multiplied into a whole-pipeline float64 time — the float64
+    path gets a speedup on the large blocks that this path cannot use."""
+    G = mp.mpf(0)
+    T = mp.mpf(0)
+    for lam in partitions_of(n):
+        sigmas, dim = build_seminormal_matrices_mp(lam, q)[:2]
+        if dim == 0:
+            continue
+        letters = _letters_mp(word, dim, sigmas)
+        fwd = mp.eye(dim)
+        rev = mp.eye(dim)
+        for L in letters:
+            fwd = fwd * L
+        for L in reversed(letters):
+            rev = rev * L
+        # tr(fwd . rev) without materialising the product
+        chi_sharp = mp.fsum(fwd[i, j] * rev[j, i]
+                            for i in range(dim) for j in range(dim))
+        chi = mp.fsum(fwd[i, i] for i in range(dim))
+        yl = y_mp[tuple(lam)]
+        G += yl * chi_sharp
+        T += yl * chi
+    return G, T
+
+
+def _y_lambda_exact(n, q):
+    """y_λ(q) at full precision, from the SYMBOLIC weights.
+
+    `y_lambda_at(n, q_val=...)` evaluates in float; passing `q_val=None`
+    returns sympy expressions in q, which is the only exact source available.
+    Substituting at mp.mp.dps and re-parsing keeps the whole chain off f64."""
+    dps = mp.mp.dps
+    ysym = y_lambda_at(n, q_val=None)
+    qsym = None
+    for v in ysym.values():
+        if hasattr(v, "free_symbols") and v.free_symbols:
+            qsym = next(iter(v.free_symbols))
+            break
+    out = {}
+    for lam, e in ysym.items():
+        if qsym is None or not getattr(e, "free_symbols", None):
+            out[tuple(lam)] = mp.mpf(str(sp.N(e, dps + 5)))
+        else:
+            out[tuple(lam)] = mp.mpf(
+                str(sp.N(e.subs(qsym, sp.Float(str(q), dps + 5)), dps + 5)))
+    return out
 
 
 def _conj(lam):
@@ -173,6 +264,16 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--with-4he", action="store_true",
                     help="include ⁴He (n=12, d_max=7700; ~1 GB peak, minutes)")
+    ap.add_argument("--exact", action="store_true",
+                    help="ALSO run the exact (mpmath) route via "
+                         "build_seminormal_matrices_mp and report whether the "
+                         "float64 verdict survives. Additive: the float64 "
+                         "numbers above are unchanged. COST, measured not "
+                         "extrapolated: 2H (d<=16) ~2 s; 3H/3He (d<=216) "
+                         "exceeded 30 min WITHOUT finishing and are unmeasured; "
+                         "4He (d=7700) is out of reach and is not run.")
+    ap.add_argument("--exact-dps", type=int, default=50,
+                    help="working precision for --exact (default 50)")
     ap.add_argument("--qbar", action="store_true",
                     help="also evaluate G at q₀⁻¹ (q-parameterised word/y/ρ) "
                          "and report the bar-parity even/odd split of G")
@@ -311,6 +412,40 @@ def main() -> int:
         print(f"| {r['iso']} | {r['B_AME'] if r['B_AME'] is not None else '—'} "
               f"| {r['R_abs']:.4f} | {r['R_anti']:.4f} | {r['R_signed']:+.4f} "
               f"| {alpha * r['R_abs']:.3f} |")
+
+    if args.exact:
+        mp.mp.dps = args.exact_dps
+        q_ex = mp.mpf(str(Q_50_STR))
+        print(f"\n### EXACT route ({args.exact_dps} dps, "
+              f"build_seminormal_matrices_mp — no float64 in the chain)")
+        print("\n| iso | n | r=B_gram/B_sym (float64) | r (exact) | rel diff "
+              "| G_atom (exact) | tr_atom (exact) |")
+        print("|---|--:|--:|--:|--:|--:|--:|")
+        for name, Z, N in ISOTOPES:
+            n = 3 * (Z + N)
+            row = next(r for r in rows if r["iso"] == name)
+            t0 = time.time()
+            y_ex = _y_lambda_exact(n, q_ex)
+            wa = atom_braid_word_3A(Z, N, include_inter=True)
+            wf = atom_braid_word_3A(Z, N, include_inter=False)
+            Ga, Ta = _gram_and_trace_mp(wa, n, y_ex, q_ex)
+            Gf, Tf = _gram_and_trace_mp(wf, n, y_ex, q_ex)
+            # alpha CANCELS in r, so the verdict ratio needs no calibration input:
+            #   r = ln(G_free/G_atom) / (2 * ln(tr_free/tr_atom))
+            r_ex = (mp.log(Gf / Ga) / (2 * mp.log(Tf / Ta))
+                    if (Gf > 0 and Ga > 0 and Ta != 0 and Tf != 0) else None)
+            r_f64 = row["r_gram_sym"]
+            rel = (abs(float(r_ex) - r_f64) / abs(r_f64)
+                   if (r_ex is not None and r_f64) else None)
+            print(f"| {name} | {n} | {r_f64:.10f} | {mp.nstr(r_ex, 12)} "
+                  f"| {rel:.2e} | {mp.nstr(Ga, 12)} | {mp.nstr(Ta, 12)} |")
+            print(f"      ({time.time() - t0:.1f}s)", flush=True)
+        print("\n4He is NOT run exactly (d_max = 7700). NB the per-matmul "
+              "ratio (561x at d=216) is a LOWER BOUND on the aggregate ratio, "
+              "not an estimate of it: the float64 path gets a large speedup on "
+              "the big blocks that the mpmath path cannot use, so multiplying a "
+              "whole-pipeline float64 time by it understates the cost — "
+              "measured, by at least an order of magnitude at 3H.")
 
     if args.qbar:
         print("\n| iso | G_even atom | G_odd atom | odd/even atom "

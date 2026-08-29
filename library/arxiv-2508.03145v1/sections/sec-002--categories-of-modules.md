@@ -7,6 +7,7 @@ section_number: null
 pages: 11-14
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
+doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
 ---
 To conclude this part onΘ-categories, we will define a Θ-category of left
 B-modules for a given Θ-algebra B∈ Θ-CAlg(T Θ). To this end, we first

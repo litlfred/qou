@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:45:00.041818+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T07:58:31.283853+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "complex_analytic_framing_supported",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "qbeta-c3-complex-singularity-probe",
   "scriptFile": "qbeta_c3_complex_singularity_probe.py",
-  "scriptHash": "9d4221a6855c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "571e1ff2a517",
+  "scriptCommitSha": "ee772cd282cfcbbf33fc3d2e41e5f6b772d3db08",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -64,5 +64,7 @@
     "complex_analytic_framing_supported": "True",
     "root_of_unity_mechanism_refuted": "True",
     "is_closure": "false"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

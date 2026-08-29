@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T09:49:32.663084+00:00",
-  "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
+  "computedAt": "2026-08-28T18:31:52.425711+00:00",
+  "commitSha": "abdac9aeefae6338d53346144c8a10559058bd75",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 5321,
+  "durationMs": 24817,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "dfcd6d57966b",
-  "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
+  "scriptHash": "40791121a9b0",
+  "scriptCommitSha": "f4a18cd3791ef27ca51661dcf05b0fa637183fd4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,24 +23,228 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
-  "description": "Extended canonical mass table via operator-valued Wenzl branching combiner (canonical pipeline) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
+  "invocation": {
+    "argv": [
+      "computations/canonical_mass_table_extended.py"
+    ],
+    "reproduce": "python3 -u computations/canonical_mass_table_extended.py"
+  },
+  "description": "Extended canonical mass table via per-atom route: A<2 -> direct H_3 Hoefsmit (laurent_q_rust, falling back to laurent_q when pyhecke_native is absent); A>=2 -> operator-valued Wenzl branching combiner; + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "method": "branching",
+    "method": "auto",
     "precision": "mpfr",
-    "dps": 0,
+    "dps": 50,
     "compute_dps": 70,
     "output_dps": 60,
     "target_dps": 60,
     "paper_hard_floor_ppb": 780,
     "active_set_pruning_safe": true,
     "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li,7Li",
-    "timeout_per_atom_sec": 1500
+    "timeout_per_atom_sec": 1500,
+    "nucleon_prediction_route": "canonical_mass.nucleon_mass_mev (muon-anchored Hecke energy, flavour-split substrate identity). NOT the Path C route (m_p + Q_beta + m_e) used by per-observable-100x-status; the two differ by ~555x on m_n. See bean qou-khue."
   },
   "data": {
     "rows": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ]
+        ],
+        "markov_closure": "trefoil 3_1 = T(2,3)",
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "938.2720894273243",
+        "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_ppb": "-0.00285171275799438004559808144017787678295044432823505734577907",
+        "err_ppm": "-0.00000285171275799438004559808144017787678295044432823505734577907",
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via laurent_q_rust)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": "trefoil 3_1 = T(2,3)",
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "939.5658930679812",
+        "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
+        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729",
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via laurent_q_rust)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
       {
         "Z": 1,
         "N": 1,
@@ -199,17 +403,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
+        "tr_M_q0_canonical_50dps": "0.575172243917774052084841763492493025333615985339182583267599",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
+        "prediction_MeV_50dps": "2.2488207979013090647629504720728859696833657096508",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",
-        "err_pct": "1.09030686078521643396256885981009538938840181233977742207137",
-        "err_ppb": "10903068.6078521643396256885981009538938840181233977706812035",
-        "err_ppm": "10903.0686078521643396256885981009538938840181233977720825020",
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_ppb": "10903068.6078522027184223477246422109997741176013763636812810",
+        "err_ppm": "10903.0686078522027184223477246422109997741176013763510695948",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -447,17 +651,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268822375141122395452654441392918",
+        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268908879602801636456044701588122",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
-        "prediction_MeV_50dps": "8.468598397968138217308132595917413709685206413269",
+        "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318617826918674040825862903147935867309524973906117",
-        "err_pct": "-0.155601499029908107104334858724691950447873137189413923293933",
-        "err_ppb": "-1556014.99029908107104334858724691950447873137189414100851038",
-        "err_ppm": "-1556.01499029908107104334858724691950447873137189413914741086",
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419",
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -695,7 +899,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333240521653469699944352047412313",
+        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333402541155087070591870456875555",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1018,7 +1222,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980764507246433793785973330018130",
+        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980716853923607354133419963102312",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1416,7 +1620,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722465584967663433828011782860303",
+        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722516604819225248791078984813198",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1889,13 +2093,13 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977892269632763162623001259777637",
+        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977781916100264193437729388235563",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": "31.9939871999999960000000000000000000000000000000000000000000",
+        "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
@@ -2437,7 +2641,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121555340628176674362309562244985",
+        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121512515025984778375315622634736",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2454,6 +2658,36 @@
       }
     ],
     "rows_by_nuclide": {
+      "p": {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "prediction_type": "mass",
+        "prediction_method": "canonical-trace",
+        "tr_M_q0_canonical_50dps": "1.14575969245730086968908159577411930594372806194352203945878",
+        "prediction_MeV_50dps": "938.2720894273243",
+        "B_AME_MeV": "938.272089430000000000000000000000000000000000000000000000000",
+        "err_MeV": "-0.00000000267568248789757490158081054687500000000000000000000000000000",
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_ppb": "-0.00285171275799438004559808144017787678295044432823505734577907",
+        "err_ppm": "-0.00000285171275799438004559808144017787678295044432823505734577907"
+      },
+      "n": {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "prediction_type": "mass",
+        "prediction_method": "canonical-trace",
+        "tr_M_q0_canonical_50dps": "0.987743688115809571634020165501294982055048759062790056921782",
+        "prediction_MeV_50dps": "939.5658930679812",
+        "B_AME_MeV": "939.565421940000000000000000000000000000000000000000000000000",
+        "err_MeV": "0.000471127981164676893968135118484497070312500000000000000000000",
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_ppb": "501.431800450786280633454702979165566281610067571108001092729",
+        "err_ppm": "0.501431800450786280633454702979165566281610067571108001092729"
+      },
       "D": {
         "Z": 1,
         "N": 1,
@@ -2461,13 +2695,13 @@
         "n_strands": 6,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.575172243917761909602476197451075851381081919999999859357794",
-        "prediction_MeV_50dps": "2.2488207979013089793867766275070607662200927734375",
+        "tr_M_q0_canonical_50dps": "0.575172243917774052084841763492493025333615985339182583267599",
+        "prediction_MeV_50dps": "2.2488207979013090647629504720728859696833657096508",
         "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "0.0242545979013089793867766275070607662200927734374981106160886",
-        "err_pct": "1.09030686078521643396256885981009538938840181233977742207137",
-        "err_ppb": "10903068.6078521643396256885981009538938840181233977706812035",
-        "err_ppm": "10903.0686078521643396256885981009538938840181233977720825020"
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_ppb": "10903068.6078522027184223477246422109997741176013763636812810",
+        "err_ppm": "10903.0686078522027184223477246422109997741176013763510695948"
       },
       "T": {
         "Z": 1,
@@ -2476,13 +2710,13 @@
         "n_strands": 9,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268822375141122395452654441392918",
-        "prediction_MeV_50dps": "8.468598397968138217308132595917413709685206413269",
+        "tr_M_q0_canonical_50dps": "0.229310102104556507332090810268908879602801636456044701588122",
+        "prediction_MeV_50dps": "8.468598397968137439766862761578",
         "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-0.0131978020318617826918674040825862903147935867309524973906117",
-        "err_pct": "-0.155601499029908107104334858724691950447873137189413923293933",
-        "err_ppb": "-1556014.99029908107104334858724691950447873137189414100851038",
-        "err_ppm": "-1556.01499029908107104334858724691950447873137189413914741086"
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
+        "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
+        "err_ppb": "-1556014.99029917274281327797312555092988440349462711476441429",
+        "err_ppm": "-1556.01499029917274281327797312555092988440349462711513663419"
       },
       "3He": {
         "Z": 2,
@@ -2491,7 +2725,7 @@
         "n_strands": 9,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333240521653469699944352047412313",
+        "tr_M_q0_canonical_50dps": "0.403767036851428170368670253333402541155087070591870456875555",
         "prediction_MeV_50dps": "7.4889193198832206495234833469509444304899048613641",
         "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
         "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
@@ -2506,7 +2740,7 @@
         "n_strands": 12,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980764507246433793785973330018130",
+        "tr_M_q0_canonical_50dps": "0.160974145442407381825873440980716853923607354133419963102312",
         "prediction_MeV_50dps": "29.955677279532882598093933387803777721959619445456",
         "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
         "err_MeV": "1.66001487953288259809393338780377772195961944545630945751440",
@@ -2521,7 +2755,7 @@
         "n_strands": 15,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722465584967663433828011782860303",
+        "tr_M_q0_canonical_50dps": "0.113002764654032341178084944722516604819225248791078984813198",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": "26.3280000000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
@@ -2536,9 +2770,9 @@
         "n_strands": 18,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977892269632763162623001259777637",
+        "tr_M_q0_canonical_50dps": "0.0450520270665527266978068001977781916100264193437729388235563",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": "31.9939871999999960000000000000000000000000000000000000000000",
+        "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
@@ -2551,7 +2785,7 @@
         "n_strands": 21,
         "prediction_type": "binding_energy",
         "prediction_method": "canonical-trace",
-        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121555340628176674362309562244985",
+        "tr_M_q0_canonical_50dps": "0.0179613759806625499996012671121512515025984778375315622634736",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": "39.2452200000000000000000000000000000000000000000000000000000",
         "err_MeV": null,
@@ -2560,23 +2794,23 @@
         "err_ppm": null
       }
     },
-    "n_atoms_computed": 7,
+    "n_atoms_computed": 9,
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "10513cdb945eb811d9a52ab55f0a27b04b4f25b36d69696b201bf69ed2f354f4",
-        "size_bytes": 16500,
-        "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
-        "scriptCommitSha": "bbb18e6ff3fb3b6447c87e019e853850ee76383a",
-        "computedAt": "2026-08-19T21:21:57.161289+00:00"
+        "sha256": "74a6ddbaf2f7a6fc75bffaf1ea30aaf3aa1d7738f69b995e9987428960ae6778",
+        "size_bytes": 16765,
+        "commitSha": "6a5a5660675bbe5b19240de78af6e2450d99b355",
+        "scriptCommitSha": "5822016e790d07408ab22b9db038867eb4d1ae19",
+        "computedAt": "2026-08-23T13:07:09.714211+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "80bf4958e6630693a0098e4a23c7c539f50dea878e0bfe453070d92b46667bbd",
-        "size_bytes": 10940,
-        "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-19T21:21:56.859542+00:00"
+        "sha256": "a2c4fba672ed0b8e17154c07585f31d71180f46de5720142d9d3cc8098b8905d",
+        "size_bytes": 11542,
+        "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+        "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
+        "computedAt": "2026-08-23T21:16:04.728212+00:00"
       }
     ]
   },

@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 9-13
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 An anafunctor is a generalization of a smooth functor between Lie g roupoids, similar to a Morita
 equivalence, and also known as a Hilsum-Skandalis morphism. The idea g oes back to Benabou

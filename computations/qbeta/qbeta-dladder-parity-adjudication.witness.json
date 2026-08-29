@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Method A (imported Probe-A machinery) reproduces Probe A arm 3 on the same exact d_k: both parities gate-PASS, |rho_odd/rho_even-1| = 0.4038 (Probe A reported 0.404)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Method B (imported Probe-B machinery) reproduces Probe B arm 3: gate passes odd 0/9, even 0/9 (Probe B reported 0/9 both)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "ADVERSARIAL: the located singularity is invariant to the conformal-iterate seed — max seed-sensitivity across {0.5,1,1.5,2}xrho_rt = 2.6453e-13 (< 0.1); the gate is NOT an artifact of seeding at the root-test radius"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Method A real per-parity rho_zeta max rel spread = 0.10215 (< 0.15)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "raw dlog-Padé at Method A's OWN per-parity s* FAILS both parities (odd gap 0.5095015117367749, even gap 0.47944637984705585) while the conformal estimator passes — the PASS/FAIL discrepancy is driven by the conformal map (Probe B's raw-Padé low bias)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact D-ladder built at ORD 43 with zero over-determination"
     }
   ],

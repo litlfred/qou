@@ -199,6 +199,15 @@ def main() -> int:
           f"{mp.nstr(100*mx, 6)}% of target")
 
     o = HERE / "l1-ceiling-d-frame-remeasure.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=None)
     o.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\nwrote {o.relative_to(REPO)}")
     return 0

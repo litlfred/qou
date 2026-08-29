@@ -9,7 +9,7 @@
       "computed": 9.055679078826712e-72,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "proved b² vs PR #1331 formula (correct sign)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "σ₂² = hσ₂ + I"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 3.622271631530685e-71,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "σ₁σ₂σ₁ = σ₂σ₁σ₂"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.9941858129799641,
       "expected": 1.994,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "|tr(B₃)| on V_{(2,1)} = |χ^{(2,1)}((σ₁σ₂⁻¹)³)|"
     }
   ],

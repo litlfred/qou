@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 egoryis a finite abelian category equipped with a rigid monoidal structure, bilinear
 tensor product, and simple unit [EO04, Section 2.2]; afusion categoryis a semisimple

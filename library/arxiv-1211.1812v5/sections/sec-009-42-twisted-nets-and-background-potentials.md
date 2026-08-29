@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 23-28
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 We show how a class of twists arises when a quantum ﬁeld interacts wit h a classical background
 potential. We start by assuming that M is a globally hyperbolic spin manifold and consider the

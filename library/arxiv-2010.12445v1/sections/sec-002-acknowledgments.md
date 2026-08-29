@@ -7,6 +7,7 @@ section_number: null
 pages: 4-4
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 I would like to thank Jarod Alper, Daniel Schäppi, Mattia Tal po and Angelo Vistoli for the
 useful conversations I had with them and all the suggestions they gave me. Moreover I would like

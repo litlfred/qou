@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T17:36:34.429992+00:00",
-  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
+  "computedAt": "2026-08-26T04:27:16.070398+00:00",
+  "commitSha": "5e5f7bfed39e439c8134d4ed5d7a649c081990a6",
   "assertions": [
     {
       "name": "phase_5k_2_unit_h5_hypothesis_falsified",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "dimensionless (refutation-confirmed boolean)",
-      "source": "Phase 5k.2 falsification probe: c(q) = (\u03c1 - (2q-1)) / h^5 varies by spread/|mean| = 499.1% across 5 q-points. The unit-coefficient h^5 hypothesis (c \u2261 1) requires spread < 10%; observed spread = 499.1% confirms the hypothesis is FALSIFIED \u2014 exactly the expected outcome of this falsification probe.  Verdict: h5-form-not-confirmed."
+      "source": "Phase 5k.2 falsification probe: c(q) = (ρ - (2q-1)) / h^5 varies by spread/|mean| = 499.1% across 5 q-points. The unit-coefficient h^5 hypothesis (c ≡ 1) requires spread < 10%; observed spread = 499.1% confirms the hypothesis is FALSIFIED — exactly the expected outcome of this falsification probe.  Verdict: h5-form-not-confirmed."
     }
   ],
   "allPassed": true,
-  "durationMs": 1195,
+  "durationMs": 1281,
   "computation": "constit-factor-varying-q-phase5k2",
   "scriptFile": "constit_factor_varying_q_phase5k2.py",
-  "scriptHash": "1585ed966144",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "984f38bdbef5",
+  "scriptCommitSha": "5e5f7bfed39e439c8134d4ed5d7a649c081990a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,11 +30,19 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
-  "description": "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-coefficient h^5 finding. For each q in the substrate window, computes \u03c1_Z^constit(q) = tr_M_constit(\u00b3He, q) / tr_M_constit(D, q) using y_\u03bb(q) Wenzl weights and \u03c7_\u03bb(\ud835\udcd1_constit, q) Hecke characters. Tests whether c(q) := (\u03c1 - (2q-1)) / h^5 is approximately 1 across q, which would confirm the structural identity \u03c1 = (2q-1) + h^5 + O(h^7).",
+  "invocation": {
+    "argv": [
+      "computations/constit_factor_varying_q_phase5k2.py"
+    ],
+    "reproduce": "python3 -u computations/constit_factor_varying_q_phase5k2.py"
+  },
+  "description": "Phase 5k.2: varying-q sweep to confirm Phase 5k.1's unit-coefficient h^5 finding. For each q in the substrate window, computes ρ_Z^constit(q) = tr_M_constit(³He, q) / tr_M_constit(D, q) using y_λ(q) Wenzl weights and χ_λ(𝓑_constit, q) Hecke characters. Tests whether c(q) := (ρ - (2q-1)) / h^5 is approximately 1 across q, which would confirm the structural identity ρ = (2q-1) + h^5 + O(h^7).",
   "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "parameters": {
     "q_values": [
@@ -53,8 +61,8 @@
         "tau_M_constit_3He": 0.571029963943124,
         "rho_Z_constit": 0.8400486222513776,
         "rho_Z_constit_str": "0.840048622251377550812266446345",
-        "wall_seconds_D": 0.004833221435546875,
-        "wall_seconds_3He": 0.23531317710876465,
+        "wall_seconds_D": 0.005421876907348633,
+        "wall_seconds_3He": 0.24825119972229004,
         "predicted_2q_minus_1": 1.1,
         "residual": -0.2599513777486224,
         "h": 0.09761904761904762,
@@ -68,8 +76,8 @@
         "tau_M_constit_3He": 1.1600010411489916,
         "rho_Z_constit": 1.0676230831090316,
         "rho_Z_constit_str": "1.06762308310903175536688060482",
-        "wall_seconds_D": 0.003679513931274414,
-        "wall_seconds_3He": 0.2363274097442627,
+        "wall_seconds_D": 0.0034608840942382812,
+        "wall_seconds_3He": 0.24852848052978516,
         "predicted_2q_minus_1": 1.16,
         "residual": -0.09237691689096825,
         "h": 0.15407407407407409,
@@ -83,8 +91,8 @@
         "tau_M_constit_3He": 2.1964607169083443,
         "rho_Z_constit": 1.3215929842373446,
         "rho_Z_constit_str": "1.32159298423734453548410033849",
-        "wall_seconds_D": 0.0037088394165039062,
-        "wall_seconds_3He": 0.2260134220123291,
+        "wall_seconds_D": 0.003814220428466797,
+        "wall_seconds_3He": 0.2464914321899414,
         "predicted_2q_minus_1": 1.2199571655027617,
         "residual": 0.10163581873458293,
         "h": 0.2090602987956393,
@@ -98,8 +106,8 @@
         "tau_M_constit_3He": 3.284350963190136,
         "rho_Z_constit": 1.509554084729557,
         "rho_Z_constit_str": "1.50955408472955703946749985089",
-        "wall_seconds_D": 0.003180980682373047,
-        "wall_seconds_3He": 0.2293248176574707,
+        "wall_seconds_D": 0.003462076187133789,
+        "wall_seconds_3He": 0.24979567527770996,
         "predicted_2q_minus_1": 1.26,
         "residual": 0.24955408472955704,
         "h": 0.2450442477876106,
@@ -113,8 +121,8 @@
         "tau_M_constit_3He": 7.0786005093842475,
         "rho_Z_constit": 1.938958351738262,
         "rho_Z_constit_str": "1.93895835173826213627586059039",
-        "wall_seconds_D": 0.003184795379638672,
-        "wall_seconds_3He": 0.23356842994689941,
+        "wall_seconds_D": 0.0038967132568359375,
+        "wall_seconds_3He": 0.2502610683441162,
         "predicted_2q_minus_1": 1.34,
         "residual": 0.5989583517382622,
         "h": 0.3152991452991453,

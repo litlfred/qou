@@ -9,7 +9,7 @@
       "computed": -0.75,
       "expected": -0.75,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Borromean Markov trace tr_M(\u03b2_Bor) = (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076) / (h\u00b2 + 4) Taylor-expands to 1 + 0\u00b7h\u00b2 \u2212 (3/4)\u00b7h\u2074 \u2212 (1/16)\u00b7h\u2076 + ...  The h\u2074 coefficient extracted numerically from the closed form equals exactly \u22123/4."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.25,
       "expected": 0.25,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "From the Frobenius expansion: h\u2074-coeff(tr_M) = \u22123\u00b7y_{(2,1)}(0) since \u03c7^{(2,1)}(\u03b2_Bor) at h\u2074 is \u22123 (per T15) and the (3), (1\u00b3) contributions have no h\u2074 correction (\u03c7^{(3)}=\u03c7^{(1\u00b3)}=1 exactly).  Solving \u22123\u00b7y_{(2,1)}(0) = \u22123/4 gives y_{(2,1)}(0) = 1/4."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.25,
       "expected": 0.25,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "1/[2]_q\u00b2|_{q=1} = 1/(q + q\u207b\u00b9)\u00b2|_{q=1} = 1/4 = Markov normalization factor for 3-component link closure. The (h\u00b2 + 4) denominator in tr_M(\u03b2_Bor) IS [2]_q\u00b2 in h-coordinates."
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "\u03a3_\u03bb y_\u03bb(1)\u00b7d_\u03bb = tr_M(1_3) = 1 (Markov normalization for the identity braid) with the CLOSED-FORM weight vector (y_(3), y_(2,1), y_(1\u00b3))|_{q=1} = (1/2, 1/4, 0) and d_\u03bb = (1, 2, 1): 1\u00b7(1/2) + 2\u00b7(1/4) + 1\u00b70 = 1. CORRECTED from the original uniform (1/4,1/4,1/4) claim \u2014 the Jones trace is chiral; see prop:h3-markov-wenzl-weights."
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "The closed-form weights y_(3) = [4]_q/[2]_q\u00b3, y_(2,1) = 1/[2]_q\u00b2, y_(1\u00b3) = 0 reproduce tr_M(\u03b2_Bor) = (4 + h\u00b2 \u2212 3h\u2074 \u2212 h\u2076)/(h\u00b2 + 4) exactly at sample q = 1.3 (independent verification of prop:h3-markov-wenzl-weights)."
     }
   ],

@@ -1,5 +1,11 @@
 -- Quantum Observable Universe — Lean 4 Formalization
 --
+import QOU.AlgebraicSubstrate.QGenericBase
+import QOU.AlgebraicSubstrate.QGenericBaseReal
+import QOU.AlgebraicSubstrate.TwistSignTorsor
+import QOU.Eightfold.SelfDualSectorConfinement
+import QOU.Eightfold.OctonionicSu3RankObstruction
+import QOU.Eightfold.FlavourColourDiscriminator
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
@@ -15,6 +21,7 @@ import QOU.Basic
 import QOU.MathlibExt
 import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
+import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
 import QOU.MathlibExt.FaddeevQuantumDilogarithm
@@ -91,6 +98,14 @@ import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.RankMinor
+import QOU.MathlibExt.BraidedSlide
+import QOU.MathlibExt.RightDualIsoUnique
+import QOU.MathlibExt.Ribbon
+import QOU.MathlibExt.RigidTensorDual
+import QOU.MathlibExt.BraidedTensorDual
+import QOU.MathlibExt.BraidedQuantumDimension
+import QOU.MathlibExt.PivotalCategory
+import QOU.MathlibExt.TwistedQuantumDimension
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
@@ -410,6 +425,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
+import QOU.Archimedean.CatalanClausenBridge
 import QOU.Archimedean.IdealTetrahedronConcavity
 import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.IdealTetrahedronShapeBridge
@@ -631,6 +647,9 @@ import QOU.QBeta.GramSignature
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.MarkovGramDegenerate
+import QOU.QBeta.MarkovTraceQuotient
+import QOU.QBeta.TLTowerRadicalDescent
+import QOU.QBeta.TraceNondegeneracyInsufficient
 import QOU.QBeta.JonesNormalisation
 -- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
 -- library root: `lake build` only builds `QOU.lean`'s import closure, so a
@@ -891,6 +910,7 @@ import QOU.Archimedean.MatrixSchurCommutant
 import QOU.Archimedean.SchurInvariantFormProportional
 import QOU.Archimedean.InvariantFormTransport
 import QOU.Archimedean.GaugeGroupThreeScale
+import QOU.Archimedean.GramDetRatioCongruence
 import QOU.Archimedean.SchwingerMeasureShape
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
@@ -1234,3 +1254,39 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+
+-- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
+-- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
+-- behaviour in the square-root variable; `PnInterfaceBarStructure` proves the
+-- criterion (the weighted p-n factor is bar-even iff the offset is bar-odd);
+-- `PnOffsetBarOddClass` measures what that criterion does and does not select.
+-- All three were orphans -- outside QOU.lean's import closure, so invisible to
+-- blueprint, doc-gen and every dependency walk, though still compiled by the
+-- lakefile glob.  The first two predate this commit (bean qou-kljb).
+import QOU.Hecke.ClosedFormInterfaceFactors
+import QOU.MassTheory.PnInterfaceBarStructure
+import QOU.MassTheory.PnOffsetBarOddClass
+
+-- The two modules created to break the cross-sibling blocker (bean qou-lsib,
+-- PR #5505): content-block `.lean` siblings live outside the package globs, so
+-- they cannot import one another, and six particle files were each re-declaring
+-- the same structures while `positron-knot` could not reach `Electron` at all.
+-- Moving the shared declarations into the library tree fixed that -- but the
+-- tree is not the build.  Nothing inside QOU.lean's closure imports either
+-- module, so `lake build QOU` never compiled them and they sat in the qou-orph
+-- orphan population (986 of 2257 modules); their only type-check was the
+-- lean-direct run in that PR.  Wiring them here is the other half of the fix.
+import QOU.AlgebraicSubstrate.LocalQZetaFunction
+import QOU.Archimedean.ParticleKnots
+
+-- Same fix, same reason, a third module (bean qou-aemx follow-on).
+-- `QOU/Observations/centered_hecke_variance_positive.lean` is the canonical
+-- declaration for `prop:centered-hecke-variance-positive`, and nothing imported
+-- it, so `lake build QOU` never compiled it.  Its block's `.md` was corrected
+-- from convention C to convention D on 2026-08-09 -- withdrawing the figure
+-- `Var ≈ 0.855` -- and the Lean sibling was not: it kept the C parameter, the
+-- withdrawn number, and a pair of positivity axioms that under D hold only on
+-- `q ∈ (1, ψ)`.  Nineteen days of drift that a compile would not have caught
+-- either, since the old file type-checked fine; but an uncompiled module is one
+-- nobody has reason to open.  Wiring it in at least puts it in the build.
+import QOU.Observations.centered_hecke_variance_positive

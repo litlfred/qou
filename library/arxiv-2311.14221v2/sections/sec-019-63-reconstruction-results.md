@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 32-35
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
 ---
 results and is a generalization of [ 22, Thm. 2.2.8].
 Theorem 6.7. LetC be a tensor category, and B be a right C-module cat-

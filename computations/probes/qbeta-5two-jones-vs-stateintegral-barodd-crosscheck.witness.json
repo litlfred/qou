@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "both the Jones bar-odd and the state-integral Im(L_odd) are nonzero (chiral 5₂ carries a bar-odd datum on both faces)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "kill-criterion (b) PINNED as regression guard: best derived normalization 'pi^2*[3]_q' rel=2.282 exceeds the 1% floor — DISTINCT normalizations, bridge is the open §4e quantum-modularity. A rerun finding a sub-floor match flips this assertion so a human re-adjudicates the verdict."
     }
   ],

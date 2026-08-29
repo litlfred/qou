@@ -7,6 +7,7 @@ section_number: 5
 pages: 18-21
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 We now apply the classification to gaugings. LetBbe a braided fusion category
 and let

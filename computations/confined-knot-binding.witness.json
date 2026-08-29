@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:51:41.002146+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-26T14:29:25.095282+00:00",
+  "commitSha": "e9fb5ae64a40ba9fdfeb211391cc4440bd8a6cbc",
   "assertions": [
     {
       "name": "W_sym equals W_alt",
       "computed": 0.16546138503360688,
       "expected": 0.16546138503360688,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Wedderburn-Artin: dim_q((3))=dim_q((1,1,1))=1"
     },
@@ -18,26 +18,26 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-14,
+      "tolerance": "1e-14",
       "unit": "dimensionless",
       "source": "W_sym·χ_sym + W_alt·χ_alt = W_sym·(χ_sym+χ_alt) = 0"
     },
     {
-      "name": "V_pn = W_std*(z-h/2)",
-      "computed": 0.3399968719033596,
-      "expected": 0.3399968719033596,
+      "name": "V_pn = W_std*(z+d_pn)",
+      "computed": 0.34004497964551195,
+      "expected": 0.34004497964551195,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "dimensionless",
       "source": "Standard rep carries all pn binding"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "confined-knot-binding",
   "scriptFile": "confined_knot_binding.py",
-  "scriptHash": "4c8ec0b1224b",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "03f50203d20e",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,11 +47,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [
@@ -68,7 +67,7 @@
     "W_sym": 0.16546138503360688,
     "W_std": 0.6690772299327864,
     "W_alt": 0.16546138503360688,
-    "V_pn": 0.3399968719033596
+    "V_pn": 0.34004497964551195
   },
   "data": {
     "crossing_types": [
@@ -93,14 +92,14 @@
         "sym_alt_cancel": false
       },
       {
-        "name": "pn (½(σ+σ⁻¹))",
+        "name": "pn (colour-weighted)",
         "c": 1,
-        "d": -0.10453014939781968,
-        "chi_sym": 1.0054484334,
-        "chi_alt": -1.0054484334,
-        "chi_std": 0.5081578877,
-        "V_full": 0.3399968719,
-        "sym_alt_cancel": true
+        "d": -0.10445824776972631,
+        "chi_sym": 1.005520335,
+        "chi_alt": -1.0053765317,
+        "chi_std": 0.5082297894,
+        "V_full": 0.3400687735,
+        "sym_alt_cancel": false
       },
       {
         "name": "pe (σ₁⁻¹)",
@@ -134,73 +133,73 @@
         "name": "²H",
         "Z": 1,
         "N": 1,
-        "atom_product": 1.7891791722,
+        "atom_product": 1.7893238512,
         "free_product": 0.7768007219,
-        "ratio": 2.3032666188
+        "ratio": 2.3034528686
       },
       {
         "name": "³H",
         "Z": 1,
         "N": 2,
-        "atom_product": 2.8914936581,
+        "atom_product": 2.8917144657,
         "free_product": 0.5899127289,
-        "ratio": 4.9015617336
+        "ratio": 4.9019360392
       },
       {
         "name": "³He",
         "Z": 2,
         "N": 1,
-        "atom_product": 4.0385770305,
+        "atom_product": 4.0391752965,
         "free_product": 0.7945863391,
-        "ratio": 5.0826157355
+        "ratio": 5.083368663
       },
       {
         "name": "⁴He",
         "Z": 2,
         "N": 2,
-        "atom_product": 7.661881151,
+        "atom_product": 7.6635502441,
         "free_product": 0.6034193615,
-        "ratio": 12.6974400214
+        "ratio": 12.7002060796
       },
       {
         "name": "⁶Li",
         "Z": 3,
         "N": 3,
-        "atom_product": 38.0242896885,
+        "atom_product": 38.0379133154,
         "free_product": 0.4687365957,
-        "ratio": 81.1208043928
+        "ratio": 81.1498689614
       },
       {
         "name": "⁷Li",
         "Z": 3,
         "N": 4,
-        "atom_product": 70.4116571586,
+        "atom_product": 70.4368626042,
         "free_product": 0.3559647622,
-        "ratio": 197.8051330592
+        "ratio": 197.8759418815
       },
       {
         "name": "⁹Be",
         "Z": 4,
         "N": 5,
-        "atom_product": 379.5933546182,
+        "atom_product": 379.7834375738,
         "free_product": 0.2765136843,
-        "ratio": 1372.7832516138
+        "ratio": 1373.4706785527
       },
       {
         "name": "¹²C",
         "Z": 6,
         "N": 6,
-        "atom_product": 6004.4886591956,
+        "atom_product": 6009.2136883864,
         "free_product": 0.2197139961,
-        "ratio": 27328.6580073036
+        "ratio": 27350.163370068
       },
       {
         "name": "¹⁶O",
         "Z": 8,
         "N": 8,
-        "atom_product": 180476.8304138506,
+        "atom_product": 180670.5212503643,
         "free_product": 0.1325796793,
-        "ratio": 1361270.6820809196
+        "ratio": 1362731.6211750363
       }
     ]
   },

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 LetCbe a finite tensor category over an algebraically closed fieldkof characteristic
 zero. Afiber functoronCis ak-linear exact faithful tensor functorF:C→Vec k.

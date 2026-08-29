@@ -434,7 +434,48 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted",
                          q=None, allow_float64: bool = False):
-    """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
+    """Full 3A-strand word as a list of (c, d, gen_idx) triples.
+
+    ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
+    A rename was considered and rejected: 685 call sites across 382 files. So the
+    name stays and this docstring carries the correction.
+
+    Each triple `(c, d, g)` denotes the HECKE ELEMENT `c*sigma_g + d*1`, not a braid
+    generator. The letters OUTSIDE the image of rho are exactly the AVERAGED ones,
+    `d in {-h/2, -h(1/2 - delta/4)}` -- NOT merely the `d != 0` ones. Under this
+    module's convention `sigma^-1 = sigma - h`, a `d == -h` letter IS a braid
+    generator (it is sigma^-1), as the next sentence's identity itself says. Measured
+    on 2H: of 23 letters, 11 are `d = 0` (sigma) and 7 are `d = -h` (sigma^-1), so 18
+    are braid generators and 5 are not -- and 5 = 2A + 1, the count this docstring
+    gives below. Getting this wrong invalidates the wrong objects: under a `d == 0`
+    rule the figure-eight `(s1 s2^-1)^2` -- the muon carrier, a genuine hyperbolic
+    LINK the mass law reads Vol from -- would read as "not a braid word".
+    The averaged interfaces are EXACTLY weight-1 averages over crossing sign:
+
+        sigma - (h/2)*1          == (sigma + sigma^-1)/2
+        sigma - h*(1/2 - d/4)*1  == (1/2 + d/4)*sigma + (1/2 - d/4)*sigma^-1
+
+    There are `2A + 1` such non-braid letters (two per nucleon, from its two `ud`
+    pairs, plus one per interface). So the returned object lies in `H_n(q)` and is
+    NOT in the image of `rho : B_n -> H_n(q)`.
+
+    WHAT FOLLOWS, and why it matters:
+
+      * `tr_M` of this object IS well defined -- the Markov trace is a linear
+        functional on all of `H_n(q)` and needs no closure. Every binding number
+        computed from it stands.
+      * But there is NO SINGLE LINK behind it. By linearity `tr_M` here is a
+        weighted sum of `2^(2A+1)` link invariants (32 for 2H), not the invariant
+        of one link.
+      * So NO TOPOLOGICAL quantity may be read off it -- not a volume, not a
+        crossing number, not a genus. Those are not linear and linearity is the
+        only thing transporting the sum.
+
+    Measured: all 32 branch closures for 2H are non-hyperbolic (each branch braid
+    is monotone, so its closure is a connected sum of (2,k) torus links; verified
+    32/32 against SnapPy deconnect_sum). Vol = 0 for every one.
+    See docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md and
+    content/.../braids-and-knots/markov-disambiguation.md.
 
     Matches the chain-walk convention of
     hecke_core.atom_per_generator_volumes (lines 3029–3079):
@@ -1296,5 +1337,14 @@ if __name__ == "__main__":
         "tower_path": results_tw,
     }
     out = Path(__file__).parent / "mass-at-3A-proper.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

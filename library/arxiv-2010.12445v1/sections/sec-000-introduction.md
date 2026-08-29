@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 Classical (non-neutral) Tannaka’s duality over a ﬁeld k establishes a correspondence between
 k-Tannakian categories and aﬃne gerbes over k. More precisely given a k-Tannakian category C

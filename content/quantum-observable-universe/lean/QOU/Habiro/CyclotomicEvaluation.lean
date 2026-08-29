@@ -145,6 +145,118 @@ theorem habiroEval_ne_zero_of_head_not_dvd_one (a : ℕ → R) (ζ : R) {N : ℕ
   have : qPochDiag ζ 1 = 1 - ζ := by unfold qPochDiag; simp
   rw [this]; exact hhead
 
+theorem habiroEval_two (a : ℕ → R) (ζ : R) :
+    habiroEval a ζ 2 = a 0 + a 1 * (1 - ζ) := by
+  unfold habiroEval qPochDiag
+  simp [Finset.sum_range_succ]
+
+theorem qPochDiag_two (ζ : R) : qPochDiag ζ 2 = (1 - ζ) * (1 - ζ ^ 2) := by
+  unfold qPochDiag
+  simp [Finset.prod_range_succ]
+
+/-- **j = 2 specialisation — the index that is actually usable at `ζ_{2p}`.**
+
+    `habiroEval_ne_zero_of_head_not_dvd_one` is vacuous at every odd prime,
+    because `Norm(1 - ζ_n) = Φ_n(1) = 1` unless `n` is a prime power, so
+    `1 - ζ_{2p}` is a **unit** there and `head_criterion_vacuous_of_isUnit`
+    applies. At `j = 2` the divisor picks up the second factor `1 - ζ² = 1 - ζ_p`,
+    whose norm is `Φ_p(1) = p`; that is a non-unit at every prime, so this form of
+    the criterion has content everywhere.
+
+    Concretely, in `ℤ[ζ_{2p}] = ℤ[ζ_p]` with `𝔭 = (1 - ζ_p)` the unique prime above
+    `p` and residue field `𝔽_p` (in which `ζ_{2p} ≡ -1`), the hypothesis reduces to
+    the single integer condition `a₀(-1) + 2·a₁(-1) ≢ 0 (mod p)` — one integer per
+    series, deciding non-vanishing at **every** odd prime outside its finite set of
+    divisors, with no dependence on how far the coefficients are known. -/
+theorem habiroEval_ne_zero_of_head_not_dvd_two (a : ℕ → R) (ζ : R) {N : ℕ} (h : 2 ≤ N)
+    (hhead : ¬ ((1 - ζ) * (1 - ζ ^ 2) ∣ a 0 + a 1 * (1 - ζ))) :
+    habiroEval a ζ N ≠ 0 := by
+  apply habiroEval_ne_zero_of_head_not_dvd a ζ h
+  rw [habiroEval_two, qPochDiag_two]
+  exact hhead
+
+theorem habiroEval_three (a : ℕ → R) (ζ : R) :
+    habiroEval a ζ 3 = a 0 + a 1 * (1 - ζ) + a 2 * ((1 - ζ) * (1 - ζ ^ 2)) := by
+  unfold habiroEval qPochDiag
+  simp [Finset.sum_range_succ, Finset.prod_range_succ]
+
+theorem qPochDiag_three (ζ : R) :
+    qPochDiag ζ 3 = (1 - ζ) * (1 - ζ ^ 2) * (1 - ζ ^ 3) := by
+  unfold qPochDiag
+  simp [Finset.prod_range_succ]
+
+/-- **j = 3 specialisation — what is needed when `j = 2` is silent.**
+
+    The `j = 2` criterion is silent exactly when `p` divides the integer
+    `A = a₀(-1) + 2·a₁(-1)` (see `habiroEval_ne_zero_of_head_not_dvd_two`).
+    Measured on this corpus, the only odd prime that ever divides `A` is `3`,
+    and it does so exactly for the mixed atoms; at `j = 3` the divisor picks up
+    the further factor `1 - ζ³`, and the criterion fires there for every one of
+    them. Silence at one index says nothing about the value — it says the test
+    at that index cannot see it. -/
+theorem habiroEval_ne_zero_of_head_not_dvd_three (a : ℕ → R) (ζ : R) {N : ℕ}
+    (h : 3 ≤ N)
+    (hhead : ¬ ((1 - ζ) * (1 - ζ ^ 2) * (1 - ζ ^ 3) ∣
+        a 0 + a 1 * (1 - ζ) + a 2 * ((1 - ζ) * (1 - ζ ^ 2)))) :
+    habiroEval a ζ N ≠ 0 := by
+  apply habiroEval_ne_zero_of_head_not_dvd a ζ h
+  rw [habiroEval_three, qPochDiag_three]
+  exact hhead
+
+/-! ### The prime 2: four explicit terms, so no criterion is needed
+
+At a primitive fourth root the Pochhammer collapses to constants and the whole
+evaluation is four terms. Non-vanishing at `p = 2` is therefore decided by
+*evaluating*, not by a divisibility criterion — which matters because the
+criterion provably cannot decide it: `qPochDiag ζ 4 = 0` caps the divisor, so
+`habiroEval_ne_zero_of_head_not_dvd` has only `j = 1, 2, 3` to work with. -/
+
+theorem qPochDiag_two_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 2 = 2 * (1 - ζ) := by
+  rw [qPochDiag_two, hζ]; ring
+
+theorem qPochDiag_three_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 3 = 4 := by
+  rw [qPochDiag_three, hζ]
+  have h3 : ζ ^ 3 = -ζ := by
+    have : ζ ^ 3 = ζ ^ 2 * ζ := by ring
+    rw [this, hζ]; ring
+  rw [h3]
+  have : (1 - ζ) * (1 - -1) * (1 - -ζ) = 2 * ((1 - ζ) * (1 + ζ)) := by ring
+  rw [this]
+  have : (1 - ζ) * (1 + ζ) = 1 - ζ ^ 2 := by ring
+  rw [this, hζ]; ring
+
+theorem qPochDiag_four_of_sq_eq_neg_one (ζ : R) (hζ : ζ ^ 2 = -1) :
+    qPochDiag ζ 4 = 0 := by
+  have h4 : ζ ^ 4 = 1 := by
+    have : ζ ^ 4 = (ζ ^ 2) ^ 2 := by ring
+    rw [this, hζ]; ring
+  unfold qPochDiag
+  rw [Finset.prod_range_succ]
+  simp [h4]
+
+/-- **Evaluation at a primitive fourth root is four explicit terms.**
+
+    `2` and `4` here are the collapsed Pochhammers `(ζ;ζ)_2 = 2(1-ζ)` and
+    `(ζ;ζ)_3 = 4`; `(ζ;ζ)_4 = 0` truncates everything beyond. So at this root
+    the value depends on `a 0 … a 3` alone, however long the series is. -/
+theorem habiroEval_at_sq_eq_neg_one (a : ℕ → R) (ζ : R) (hζ : ζ ^ 2 = -1)
+    {N : ℕ} (hN : 4 ≤ N) :
+    habiroEval a ζ N
+      = a 0 + a 1 * (1 - ζ) + a 2 * (2 * (1 - ζ)) + a 3 * 4 := by
+  have h4 : ζ ^ 4 = 1 := by
+    have : ζ ^ 4 = (ζ ^ 2) ^ 2 := by ring
+    rw [this, hζ]; ring
+  rw [habiroEval_stable a (by norm_num : 0 < 4) h4 hN]
+  unfold habiroEval
+  rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
+    Finset.sum_range_succ, Finset.sum_range_zero]
+  rw [qPochDiag_two_of_sq_eq_neg_one ζ hζ, qPochDiag_three_of_sq_eq_neg_one ζ hζ]
+  have h0 : qPochDiag ζ 0 = 1 := by unfold qPochDiag; simp
+  have h1 : qPochDiag ζ 1 = 1 - ζ := by unfold qPochDiag; simp
+  rw [h0, h1]; ring
+
 /-- A unit head-divisor makes the criterion unusable — stated so the failure mode
     is a theorem, not a footnote. -/
 theorem head_criterion_vacuous_of_isUnit (a : ℕ → R) (ζ : R) {j : ℕ}

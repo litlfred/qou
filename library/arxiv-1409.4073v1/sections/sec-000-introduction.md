@@ -7,6 +7,7 @@ section_number: null
 pages: 1-5
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 If G is an aﬃne group scheme over a ﬁeld k, classical Tannaka’s reconstruction problem
 consists in reconstructing the group G from RepGk, its category of ﬁnite representations: if

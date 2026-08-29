@@ -26,7 +26,7 @@
 
   ═══ ⚠ PROVENANCE ═══
 
-  Reconstructed from a **partly illegible scan** (`uploads/roth_lemma.pdf`, added in commit
+  Reconstructed from a **partly illegible scan** (`library/roth-lemma/roth_lemma.pdf`, added in commit
   `ca1ae1a2eb`).  The structure — truncated arithmetic progression, ceiling cut-off, quadratic
   conclusion — is legible; several constants in the original are not.
 

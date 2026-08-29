@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T01:09:11.961615+00:00",
-  "commitSha": "1334cff77426d0afb6bf86d19448162ff270c61c",
+  "computedAt": "2026-08-29T08:34:59.737593+00:00",
+  "commitSha": "e111288a19a646d9715517796f7e5a8ee04b41eb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 199,
+  "durationMs": 239,
   "computation": "t6-lepton-h3-3channel-convention",
   "scriptFile": "t6_lepton_h3_3channel_convention.py",
   "scriptHash": "043fd6cfc1ea",
-  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+  "scriptCommitSha": "6d7bf80756b5f09907b0251d985162a23b224d02",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -85,5 +85,7 @@
       "relative_error_percent": -1.8344424770459587e+69
     }
   },
-  "timestamp": "2026-08-25T01:09:11+00:00"
+  "timestamp": "2026-08-29T08:34:59+00:00",
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

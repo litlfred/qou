@@ -5,7 +5,7 @@ section_id: sec-003-the-word-problem
 section_title: "The word problem:"
 section_number: null
 pages: 4-5
-source_pdf: 0802.1072v2.pdf
+source_pdf: 0802.1072v2 (1).pdf
 source_sha256: 6f4d93f0b7ba5cd7
 doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---

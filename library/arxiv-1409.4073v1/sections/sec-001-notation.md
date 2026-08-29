@@ -7,6 +7,7 @@ section_number: null
 pages: 5-5
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 In this paper we work over a base commutative, associative ri ng R with unity. If not stated
 otherwise a ﬁber category will be a category ﬁbered in groupo ids over Aﬀ /R, the category of

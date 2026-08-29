@@ -106,8 +106,24 @@ def verdict(label, blind_diff, weighted_diff, n_pn: int | None = None) -> str:
     return "AGREES" if claimed == actual else "MISLABELLED"
 
 
-def _measure(atom: str, Z: int, N: int, stored: dict, dps: int):
-    """Σ|diff| of stored χ against each convention. Import-heavy; lazy."""
+def _measure(atom: str, Z: int, N: int, stored: dict, dps: int,
+             *, point: str = "q0"):
+    """Σ|diff| of stored χ against each convention. Import-heavy; lazy.
+
+    `point` selects the EVALUATION point: "q0" for the substrate anchor,
+    "qinv" for its bar image 1/q₀ (bean `qou-awwk`).
+
+    The braid word is built at q₀ either way — that is where its `d` values
+    are pinned, and it is what encodes WHICH crossing is the p-n interface.
+    But the shift handed to the kernel is REBUILT at the target point, never
+    carried from the word: `h(1/q₀) = −h(q₀)`, so the q₀ coefficient −h₀/2 is
+    `+h₀/2` at the bar image, and δ is bar-MIXED (`bar(δ) = −q²δ`), so neither
+    factor survives the bar unchanged. Carrying `d` across is wrong rather
+    than conservative.
+
+    At q₀ the rebuild reproduces the previous behaviour exactly, because there
+    the word's own `d` IS the q₀ coefficient — verified bit-identical.
+    """
     import _path_bridge  # noqa: F401
     from mpmath import mp, mpf
     from mass_at_3A_proper import atom_braid_word_3A
@@ -116,21 +132,34 @@ def _measure(atom: str, Z: int, N: int, stored: dict, dps: int):
     from q_parameter import Q_50_DIGIT_STR
 
     with mp.workdps(dps):
-        q_str = str(Q_50_DIGIT_STR)
+        q0 = mpf(str(Q_50_DIGIT_STR))
+        if point == "qinv":
+            q_str = mp.nstr(1 / q0, dps, strip_zeros=False)
+        else:
+            q_str = str(Q_50_DIGIT_STR)
         q = mpf(q_str)
         h = q - 1 / q
+        # Shifts at the TARGET point. `sh_blind` is the kernel's own default,
+        # so passing it is equivalent to passing None; it is written out so the
+        # two branches are visibly the same shape.
+        sh_blind = h / 2
+        sh_weighted = h * (mpf(1) / 2 - flavor_split_leading(q) / 4)
         # δ from the closed form at THIS q₀, not `_avg_color_delta()`, which
         # evaluates at the float64 `q_parameter.Q` and reaches only ~5e-16.
         # Once the producers went exact this audit became the COARSER side of
         # its own comparison — it still separated the two conventions
         # decisively (5.97e-19 weighted vs 3.13e-03 blind), but an audit
         # carrying the defect it exists to detect is not one to leave alone.
-        cw = -h * (mpf(1) / 2 - flavor_split_leading(q) / 4)
+        # CLASSIFICATION constants stay in the q₀ frame: the word's `d` values
+        # are pinned there, so this is what identifies the p-n crossing. Only
+        # the SHIFT moves to the target point.
+        h0 = q0 - 1 / q0
+        cw = -h0 * (mpf(1) / 2 - flavor_split_leading(q0) / 4)
         cwf = float(cw)
         n = 3 * (Z + N)
         word = [(c, cw if abs(float(d) - cwf) < 1e-9 else d, g)
                 for (c, d, g) in atom_braid_word_3A(Z, N)]
-        hf = float(h)
+        hf = float(h0)
 
         def run(weighted: bool):
             ws, sh = [], []
@@ -141,9 +170,18 @@ def _measure(atom: str, Z: int, N: int, stored: dict, dps: int):
                 elif abs(df + hf) < 1e-9:
                     ws.append((-1, int(g) + 1)); sh.append("")
                 else:
+                    # REBUILT at the target point, not `-d` from the word.
+                    # Which branch is taken is decided in the q₀ frame (df vs
+                    # cwf); the VALUE comes from the target q.
                     ws.append((0, int(g) + 1))
-                    sh.append(mp.nstr(-mp.mpf(d), dps + 10, strip_zeros=False)
-                              if weighted else "")
+                    if weighted and abs(df - cwf) < 1e-9:
+                        sh.append(mp.nstr(sh_weighted, dps + 10,
+                                          strip_zeros=False))
+                    elif point == "qinv":
+                        sh.append(mp.nstr(sh_blind, dps + 10,
+                                          strip_zeros=False))
+                    else:
+                        sh.append("")
             out = pn.chi_lambda_all_partitions_mpfr(
                 n, ws, q_str, dps, sh if any(sh) else None)
             return {tuple(l): mpf(v) for l, v in out}
@@ -210,35 +248,56 @@ def main() -> int:
                          "which is hours at H_12)")
     ap.add_argument("--dps", type=int, default=50)
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--point", action="append", choices=("q0", "qinv"),
+                    help="evaluation point(s); default both. `qinv` covers "
+                         "the bar-image family, which this audit did not "
+                         "look at at all before bean qou-awwk.")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
 
     atoms = a.atom or [x for x in ATOMS if x != "helium-4"]
-    print(f"{'atom':<11} {'claims':<34} {'blind':>10} {'weighted':>10}  verdict")
+    points = a.point or ["q0", "qinv"]
+    print(f"{'witness':<46} {'claims':<34} "
+          f"{'blind':>10} {'weighted':>10}  verdict")
     bad = 0
     for atom in atoms:
         if atom not in ATOMS:
-            print(f"{atom:<11} not a known atom")
+            print(f"{atom:<46} not a known atom")
             continue
         Z, N = ATOMS[atom]
         n = 3 * (Z + N)
-        p = HERE / f"chi-{atom}-h{n}-at-q0-50dps.witness.json"
-        if not p.exists():
-            print(f"{atom:<11} (no -at-q0-50dps witness)")
-            continue
-        stored = json.loads(p.read_text(encoding="utf-8"))
-        try:
-            db, dw, n_pn = _measure(atom, Z, N, stored, a.dps)
-        except Exception as exc:  # noqa: BLE001
-            print(f"{atom:<11} MEASURE FAILED: {type(exc).__name__}: {exc}")
-            continue
-        v = verdict(stored.get("convention"), db, dw, n_pn)
-        bad += v not in {"AGREES", "INDISTINGUISHABLE"}
-        fb = "n/a" if db is None else f"{db:.2e}"
-        fw = "n/a" if dw is None else f"{dw:.2e}"
-        print(f"{atom:<11} {str(stored.get('convention'))[:34]:<34} "
-              f"{fb:>10} {fw:>10}  {v}")
+        for point in points:
+            # q0 has ONE witness; qinv has TWO, because the producer emits
+            # both frames (qou-1oxx). Both need measuring — checking only the
+            # blind one would leave the colour-weighted label exactly as
+            # unbacked as it was before this audit covered the family.
+            if point == "q0":
+                stems = [f"chi-{atom}-h{n}-at-q0-50dps"]
+            else:
+                stems = [f"chi-{atom}-h{n}-at-qinv-50dps",
+                         f"chi-{atom}-h{n}-at-qinv-50dps-colour-weighted"]
+            for stem in stems:
+                wp = HERE / f"{stem}.witness.json"
+                if not wp.exists():
+                    print(f"{stem:<46} (no witness)")
+                    continue
+                stored = json.loads(wp.read_text(encoding="utf-8"))
+                try:
+                    db, dw, n_pn = _measure(atom, Z, N, stored, a.dps,
+                                            point=point)
+                except Exception as exc:  # noqa: BLE001
+                    print(f"{stem:<46} MEASURE FAILED: "
+                          f"{type(exc).__name__}: {exc}")
+                    bad += 1
+                    continue
+                v = verdict(stored.get("convention"), db, dw, n_pn)
+                bad += v not in {"AGREES", "INDISTINGUISHABLE"}
+                fb = "n/a" if db is None else f"{db:.2e}"
+                fw = "n/a" if dw is None else f"{dw:.2e}"
+                print(f"{stem:<46} "
+                      f"{str(stored.get('convention'))[:34]:<34} "
+                      f"{fb:>10} {fw:>10}  {v}")
     print("\nA label is only evidence when it AGREES; every survey over "
           "`convention`\nshould be re-derived from values until these are "
           "repaired.")

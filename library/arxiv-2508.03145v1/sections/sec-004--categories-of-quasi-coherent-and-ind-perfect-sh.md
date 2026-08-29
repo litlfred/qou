@@ -7,6 +7,7 @@ section_number: null
 pages: 15-23
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
+doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
 ---
 For a commutativek-algebraA, we considerQCoh(SpecA), also denoted by
 QCoh(A), the symmetric monoidal∞-category of complexes ofA-modules.

@@ -12,11 +12,14 @@ import qou_substrate.witness as w  # noqa: E402
 def test_env_override_muon():
     a, v = w.resolve_q0_anchor("whatever.py", env={"QOU_Q0_ANCHOR": "muon"})
     assert a == "muon"
-    # The muon pin as the COMPUTE path actually uses it. Do NOT "correct" this
-    # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
-    # computes with the witness string, so a derived label would disagree with
-    # the number the witness reports. See _q0_value_for_anchor's note.
-    assert v is None or v.startswith("1.109978595557")
+    # The muon pin as the COMPUTE path actually uses it. The original comment
+    # here warned against "correcting" this to a derived value, because a
+    # muon-tagged producer computes with the witness string and a derived label
+    # would disagree with the number the witness reports. That intent is kept
+    # and is now satisfied by construction: PR #5500 made the WITNESS ITSELF
+    # derive, so reading the same resolver the compute path reads IS the witness
+    # string, and the hard-coded prefix was the thing that had gone stale.
+    assert v is None or v == str(w._q0_value_for_anchor("muon"))
 
 
 def test_env_override_proton():
@@ -383,8 +386,21 @@ if __name__ == "__main__":
 # directly: that string IS the muon anchor's definition, 67 of the 85 are
 # absent from the manifest, and the manifest's runtime default is proton.
 
-_MUON = "1.10997859555733471989976322048322502665620840878015368660798114614493"
-_PROTON = "1.1099785827513808075916690956107688798744991218736"
+# DERIVED, not frozen (bean qou-y98b). These were literals, and the muon one
+# went stale the moment PR #5500 landed: it made the muon anchor DERIVE from the
+# live CODATA-2022 m_mu/m_e instead of reading a frozen string, so the pin moved
+# 1.109978595557... -> 1.109978595642... Five tests here then failed, and the two
+# payload-evidence ones failed in a way that reads as a logic bug rather than
+# stale data -- a payload carrying the OLD literal is no longer muon evidence,
+# so it fell through to proton and the assertion said `'proton' == 'muon'`.
+#
+# Re-freezing at the new value would reintroduce exactly what #5500 removed and
+# would break again at the next CODATA revision. Reading them from the same
+# resolver the compute path uses keeps these tests about BEHAVIOUR -- does
+# payload evidence outrank the manifest, does an explicit declaration win --
+# which is what they were always for.
+_MUON = str(w._q0_value_for_anchor("muon"))
+_PROTON = str(w._q0_value_for_anchor("proton"))
 # A REAL path (the stamper hashes the file) whose stem is absent from
 # `q0_anchor_manifest.json`, so it resolves to the runtime default, proton.
 _UNLISTED = __file__
@@ -397,7 +413,7 @@ def test_payload_evidence_beats_the_manifest_default():
         payload, script_path=_UNLISTED, engine="mpmath",
     )
     assert payload["q0Anchor"] == "muon"
-    assert payload["q0Value"].startswith("1.109978595557")
+    assert payload["q0Value"] == _MUON      # derived, see _MUON above
 
 
 def test_payload_evidence_is_read_before_serialisation():
@@ -479,3 +495,152 @@ def test_payload_evidence_does_not_move_any_value():
         payload, script_path=_UNLISTED, engine="mpmath",
     )
     assert (dict(payload["parameters"]), payload["result"], payload["note"]) == before
+
+
+# ── q0_anchor=False: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
+
+
+def test_false_declares_independence_and_stamps_no_pin():
+    """A producer that never touches q₀ DECLARES that; it does not get a pin.
+
+    The resolver has no "no anchor" outcome, so before this existed every
+    caller got a pin whether or not the numbers depended on one — and an inert
+    stamp is byte-identical to a load-bearing one. That is what this guards,
+    and it still holds: no proton, no muon, no q0Value.
+
+    CONTRACT CHANGED (bean qou-y98b): `False` now stamps
+    `q0Anchor: "independent"` rather than omitting the field. Omission was
+    byte-identical to never having asked, so a correctly-migrated
+    q0-independent producer was indistinguishable from an unmigrated one, and
+    `q0_anchor_ratchet.py --strict` counted it as Q0_ANCHOR_MISSING and failed
+    on it. "independent" asserts no pin, so it does not reintroduce the inert
+    anchor this branch exists to prevent — it is an established verdict of
+    `q0_anchor_consistency_audit.py` (Q0_INDEPENDENT).
+    """
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    assert payload["q0Anchor"] == "independent"
+    assert payload["q0AnchorReason"]          # audit reports _NO_REASON otherwise
+    assert "q0Value" not in payload           # the original point: NO pin
+    assert payload["q0Anchor"] not in ("proton", "muon")
+
+
+def test_false_still_stamps_the_provenance_fields():
+    """Opting out of the ANCHOR must not opt out of provenance — that is the
+    whole point of the migration this flag exists for."""
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    for field in ("scriptHash", "scriptCommitSha", "commitSha", "engine",
+                  "computedAt", "durationMs"):
+        assert field in payload, field
+
+
+def test_false_beats_payload_evidence():
+    """`False` is a caller DECLARATION and outranks payload evidence.
+
+    A q₀-looking number in the payload is not proof the result depends on it —
+    a probe may record the pin it ran beside without consuming it.
+    """
+    payload = {"parameters": {"q0": _MUON}, "result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    # The declaration still wins over the payload's q₀-looking number: the
+    # result is "independent", NOT the muon pin that evidence would resolve to.
+    assert payload["q0Anchor"] == "independent"
+    assert "q0Value" not in payload
+
+
+def test_none_and_str_are_unchanged_by_the_new_branch():
+    """Regression: the default and the explicit-string paths still stamp.
+
+    Deliberately asserts THAT an anchor is stamped, not WHICH one. What the
+    `q0_anchor=False` branch could plausibly break is the other two paths
+    silently stamping nothing; which anchor a given payload resolves to is a
+    different question, owned by the resolution tests above.
+
+    Naming a specific anchor here also made this test hostage to a value it is
+    not about. It first read `assert default.get("q0Anchor") == "muon"` off
+    `_MUON`, and `fca08de7d` ("muon anchor -> CODATA 2022 (owner ruling)")
+    moved the anchor-defining witness to a different one of the THREE values
+    the corpus calls "the muon q₀" (they diverge at the 13th significant
+    digit). That turned this into a sixth instance of the five failures that
+    commit already left in this module -- and it passed in a full-file run
+    anyway, because an earlier test leaks `QOU_Q0_ANCHOR=muon` into the
+    environment and masks it. A test that only passes via another test's
+    leaked state is worse than one that fails honestly.
+    """
+    default = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        default, script_path=_UNLISTED, engine="python",
+    )
+    assert default.get("q0Anchor"), "the default path must still resolve and stamp"
+
+    explicit = {"result": 1}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        explicit, script_path=_UNLISTED, engine="python", q0_anchor="proton",
+    )
+    assert explicit.get("q0Anchor") == "proton"
+
+
+def test_only_False_suppresses_not_any_falsy_value():
+    """`is False`, not truthiness — so the only value that drops the field is
+    the one that means it.
+
+    An empty string is NOT suppression and is NOT resolved: it reaches the
+    explicit-declaration branch and is stamped verbatim, which is this
+    function's pre-existing behaviour for any non-None argument. Asserted so a
+    future change to the `is False` check cannot quietly start swallowing other
+    falsy values. (I first documented `""` as falling through to resolution;
+    this test disagreed and the test was right.)
+    """
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor="",
+    )
+    assert payload.get("q0Anchor") == ""
+    assert "q0Anchor" in payload
+
+
+def test_engine_none_preserves_the_payloads_own_declaration(tmp_path):
+    """`engine=None` keeps what the producer already declared.
+
+    Without it the helper's unconditional `payload["engine"] = engine`
+    DOWNGRADES a producer's own, more specific value. Measured while migrating
+    bean qou-4un2: `qbeta-5two-leading-odd-datum` went from "sympy+mpmath" to
+    "python" while `engineVersion` still read "sympy 1.14.0, mpmath 1.4.1" --
+    an internally contradictory witness written by a provenance pass.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+
+    declared = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        declared, script_path=str(script), engine=None, q0_anchor=False)
+    assert declared["engine"] == "sympy+mpmath"
+
+    bare = {}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        bare, script_path=str(script), engine=None, q0_anchor=False)
+    assert bare["engine"] == "python", "None on a bare payload falls back"
+
+
+def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
+    """The 603 call sites relying on the default must not shift.
+
+    `engine` defaults to the literal "python", NOT to None, precisely so that
+    adding the sentinel changes no existing caller's behaviour. If someone
+    "tidies" the default to None later, every one of those call sites silently
+    starts preserving instead of overwriting -- which is the opposite of what
+    they were written against.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+    payload = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=str(script), q0_anchor=False)
+    assert payload["engine"] == "python"

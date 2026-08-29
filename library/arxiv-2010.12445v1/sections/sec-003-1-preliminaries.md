@@ -7,6 +7,7 @@ section_number: 1
 pages: 4-6
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 We recall some basic deﬁnitions and set up some notations. We ﬁx a base ring R.
 1.1. Monoidal functors and their sheaﬁﬁcation.

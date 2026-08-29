@@ -9,7 +9,7 @@
       "computed": 2.897817305224548e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "sum_j Re V_j = -3 pi^2/2"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.173362978918411e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "V3 = -2 Re V1 - 3 pi^2/2"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.173362978918411e-70,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "sum_j V_j^ext = 0 -- the pi^2/2 shift centers"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.00010498525121583873,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0002,
+      "tolerance": "0.0002",
       "source": "both legacy literals match the extraction convention to ~4 digits"
     },
     {

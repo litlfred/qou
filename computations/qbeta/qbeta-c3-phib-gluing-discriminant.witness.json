@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "min distance 0.35587 >> anchor separation 1.3e-08 => no branch-point graze"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.6604590185851419,
       "expected": 0.6604590185851419,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "recorded exact-locus distance from m=1 (informational)"
     }
   ],

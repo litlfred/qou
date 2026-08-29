@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-18
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 We have already mentioned group valued ˇCech 1-cocycles in the introduction. They consist of an
 open cover U = {Ui}i∈I of M and smooth functions gij : Ui ∩Uj /d47/d47 G satisfying the cocycle

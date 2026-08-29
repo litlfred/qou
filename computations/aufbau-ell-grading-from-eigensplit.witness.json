@@ -1,31 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:54:31.458857+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-25T22:21:40.219876+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "lambda_plus_eq_q",
       "computed": "1.1099785827513808076",
       "expected": "1.1099785827513808076",
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "roots of x^2-(q-1/q)x-1"
     },
     {
       "name": "structural_ell_coeff_is_negative_two",
-      "computed": -2,
-      "expected": -2,
+      "computed": "-2.0",
+      "expected": "-2.0",
       "passed": true,
-      "source": "ln|lambda_-/lambda_+| / ln(lambda_+) = -2"
+      "tolerance": "1e-18",
+      "source": "ln|lambda_-/lambda_+| / ln(lambda_+), evaluated"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "aufbau-ell-grading-from-eigensplit",
   "scriptFile": "aufbau_ell_grading_from_eigensplit.py",
-  "scriptHash": "7c017dc430d8",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "61cae9a80577",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [

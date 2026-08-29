@@ -7,6 +7,7 @@ section_number: 6
 pages: 33-36
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 The basic idea of a smooth 2-bundle is that it gives for every point x in the base manifold M a
 Lie groupoid Px varying smoothly with x. Numerous diﬀerent versions have appeared so far in the

@@ -75,8 +75,39 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q0_MP = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q0_MP = mp.mpf(_Q50_PROTON)
+# `Q0_F64` is kept ONLY for the numpy conditioning diagnostics below, which
+# are float64 by construction (`np.linalg.cond` is a binary64 SVD). Every
+# matrix entry is now evaluated at `Q0_MP`, the full 50-digit pin.
 Q0_F64 = float(Q0_MP)
+
+# Digits requested from sympy's `evalf` for each matrix entry. Matched to the
+# anchor's own 50, not to the corpus OUTPUT_DPS of 60: the pin carries 50, so
+# asking for 60 would print ten digits nothing supplies.
+_EVAL_DPS = 50
+
+
+def _c(z) -> str:
+    """Serialize one matrix entry's real part as a decimal string."""
+    return mp.nstr(z.real if hasattr(z, "real") else z, _EVAL_DPS,
+                   strip_zeros=False)
 
 
 def partitions_of_descending(n: int) -> list[list[int]]:
@@ -103,11 +134,42 @@ def longest_reduced_word(n: int) -> list[int]:
     return list(range(n - 1, 0, -1)) + longest_reduced_word(n - 1)
 
 
-def evaluate_matrix_numerical(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val: float
-                               ) -> list[list[complex]]:
-    """Substitute q_sym → q_val in M_sym, return nested list of complex."""
+def _ev(expr, q_sym, q_val) -> "mp.mpc":
+    """Evaluate one symbolic expression at the full-precision q0.
+
+    Three sites collapsed a symbolic expression with `complex(expr.evalf(...))`
+    and only one of them was inside `evaluate_matrix_numerical`. Missing the
+    other two had a visible cost: `chi_direct` reached 50 digits while
+    `chi_chain` stayed binary64, so `residual = |chi_direct - chi_chain|`
+    stopped measuring whether the two DERIVATIONS agree and started measuring
+    the f64 collapse of one leg. It read 1.11e-16 -- exactly binary64 epsilon,
+    which is the tell.
+    """
+    return mp.mpmathify(str(sp.N(expr.subs({q_sym: q_val}), _EVAL_DPS)))
+
+
+def evaluate_matrix_numerical(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val
+                               ) -> list[list["mp.mpc"]]:
+    """Substitute q_sym -> q_val in M_sym at FULL precision.
+
+    The source here is SYMBOLIC — `M_sym` is an exact sympy expression in
+    `q` — so there is nothing approximate about these matrices until the
+    substitution. This function used to do
+
+        complex(M_sym[i, j].evalf(subs={q_sym: q_val}))
+
+    with `q_val = float(Q0_MP)`, which threw the precision away twice over:
+    the anchor was truncated to binary64 before substitution, and whatever
+    `evalf` returned was then collapsed by `complex()`. A symbolic source
+    evaluated into a double is the cheapest kind of precision to recover and
+    the easiest to lose.
+
+    `evalf` is now given the full 50-digit q0 and asked for `_EVAL_DPS`
+    digits, and the result is carried as `mpc`.
+    """
     n_rows, n_cols = M_sym.shape
-    return [[complex(M_sym[i, j].evalf(subs={q_sym: q_val}))
+    return [[mp.mpmathify(str(sp.N(M_sym[i, j].subs({q_sym: q_val}),
+                                   _EVAL_DPS)))
              for j in range(n_cols)]
             for i in range(n_rows)]
 
@@ -141,7 +203,7 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
             for k in word_w0_1based:
                 w0_sym = w0_sym * matrices_sym[k - 1]
             w0_at_q0 = [[complex(w0_sym[0, 0].evalf(subs={q_sym: q_val}))]]
-            chi_direct = complex(w0_sym[0, 0].evalf(subs={q_sym: q_val}))
+            chi_direct = _ev(w0_sym[0, 0], q_sym, q_val)
         else:
             w0_sym = sp.eye(dim)
             for k in word_w0_1based:
@@ -149,19 +211,27 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
                 # cancel keeps complexity manageable
                 w0_sym = w0_sym.applyfunc(sp.cancel)
             w0_at_q0 = evaluate_matrix_numerical(w0_sym, q_sym, q_val)
-            chi_direct = sum(complex(w0_sym[i, i].evalf(subs={q_sym: q_val}))
-                             for i in range(dim))
+            chi_direct = sum((_ev(w0_sym[i, i], q_sym, q_val)
+                              for i in range(dim)), mp.mpc(0))
 
         # χ_λ(w_0) via canonical chain (q_character_on_braid_word)
         chi_chain_sym = q_character_on_braid_word(shape_t, crossings, q_sym)
-        chi_chain = complex(chi_chain_sym.evalf(subs={q_sym: q_val}))
+        chi_chain = _ev(chi_chain_sym, q_sym, q_val)
 
         residual = abs(chi_direct - chi_chain)
 
         # Per-block det/cond telemetry (real part; imag is float-noise zero)
         import numpy as _np
         def _np_real(M):
-            return _np.array([[v.real for v in row] for row in M], dtype=_np.float64)
+            # `float(...)` is REQUIRED here, not a leftover: the entries are
+            # `mpc` now, and numpy would build an object array that
+            # `linalg.det`/`cond` cannot factor. The DIAGNOSTICS below are
+            # float64 by construction (`np.linalg.cond` is a binary64 SVD)
+            # and are declared as such rather than pretended otherwise; the
+            # matrices they describe are exact. Draining these four fields
+            # means an mpmath SVD, which is a separate change.
+            return _np.array([[float(v.real) for v in row] for row in M],
+                             dtype=_np.float64)
 
         sigma_k_dets = [float(_np.linalg.det(_np_real(M))) for M in sigma_k_at_q0]
         sigma_k_conds = [
@@ -196,12 +266,13 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
         out[shape_t] = {
             "dim": dim,
             "n_syts": len(syts),
-            "sigma_k_at_q0_re": [[[v.real for v in row] for row in M]
+            "sigma_k_at_q0_re": [[[_c(v) for v in row] for row in M]
                                  for M in sigma_k_at_q0],
-            "w0_matrix_at_q0_re": [[v.real for v in row] for row in w0_at_q0],
-            "chi_lambda_w0_direct": chi_direct.real,
-            "chi_lambda_w0_via_chain": chi_chain.real,
-            "cross_check_residual": residual,
+            "w0_matrix_at_q0_re": [[_c(v) for v in row] for row in w0_at_q0],
+            "chi_lambda_w0_direct": _c(chi_direct),
+            "chi_lambda_w0_via_chain": _c(chi_chain),
+            "cross_check_residual": mp.nstr(residual, _EVAL_DPS,
+                                            strip_zeros=False),
             "chi_lambda_w0_at_q_eq_1": chi_at_q_eq_1,
             "sigma_k_dets": sigma_k_dets,
             "sigma_k_conds": sigma_k_conds,
@@ -243,22 +314,25 @@ def main() -> None:
         print(f"§. {atom}")
         print("-" * 78)
         t0 = time.time()
-        bd = per_block_data(n, q, Q0_F64)
+        # full-precision pin, not the f64 alias
+        bd = per_block_data(n, q, Q0_MP)
         elapsed = time.time() - t0
         print(f"  Built in {elapsed:.1f}s")
 
         total_dim_sq = 0
-        max_resid = 0.0
+        max_resid = mp.mpf(0)
         print(f"  {'λ':>20} {'dim_λ':>6} {'χ_λ(w_0) direct':>22} "
               f"{'χ_λ(w_0) chain':>22} {'|Δ|':>10}")
         for shape_t, data in bd.items():
             dim = data["dim"]
             total_dim_sq += dim ** 2
-            resid = data["cross_check_residual"]
+            # the cell is a decimal string; compare the value
+            resid = mp.mpmathify(data["cross_check_residual"])
             max_resid = max(max_resid, resid)
+            # the two chi cells are decimal strings now; float() for display
             print(f"  {str(shape_t):>20} {dim:>6} "
-                  f"{data['chi_lambda_w0_direct']:>22.10e} "
-                  f"{data['chi_lambda_w0_via_chain']:>22.10e} "
+                  f"{float(data['chi_lambda_w0_direct']):>22.10e} "
+                  f"{float(data['chi_lambda_w0_via_chain']):>22.10e} "
                   f"{resid:>10.2e}")
         import math
         n_fact = math.factorial(n)
@@ -277,36 +351,33 @@ def main() -> None:
         }
 
     # Witness assembly (builder created at top of main for durationMs accuracy)
-    w.add_data("q_0_f64", Q0_F64)
+    # f64 alias of the pin, recorded as the decimal it is
+    w.add_data("q_0_f64", repr(Q0_F64))
     w.add_data("q_0_50dps", str(Q0_MP))
     w.add_data("h3", results[3])
     w.add_data("h6", results[6])
     w.add_assertion(
         "h3_chi_lambda_max_cross_check_residual",
-        computed=results[3]["max_residual"],
-        expected=0.0,
-        tolerance=1e-6,
+        computed=mp.nstr(results[3]["max_residual"], _EVAL_DPS),
+        expected="0", tolerance="1e-6",
         source="χ_λ(w_0) direct == χ_λ(w_0) via chain, for all λ ⊢ 3",
     )
     w.add_assertion(
         "h6_chi_lambda_max_cross_check_residual",
-        computed=results[6]["max_residual"],
-        expected=0.0,
-        tolerance=1e-6,
+        computed=mp.nstr(results[6]["max_residual"], _EVAL_DPS),
+        expected="0", tolerance="1e-6",
         source="χ_λ(w_0) direct == χ_λ(w_0) via chain, for all λ ⊢ 6",
     )
     w.add_assertion(
         "h3_wedderburn_sum_dim_squared",
-        computed=results[3]["total_dim_sq"],
-        expected=6,
-        tolerance=0,
+        computed=str(results[3]["total_dim_sq"]),
+        expected="6", tolerance="0",
         source="Σ_λ dim_λ² = n! = 3! for n=3",
     )
     w.add_assertion(
         "h6_wedderburn_sum_dim_squared",
-        computed=results[6]["total_dim_sq"],
-        expected=720,
-        tolerance=0,
+        computed=str(results[6]["total_dim_sq"]),
+        expected="720", tolerance="0",
         source="Σ_λ dim_λ² = n! = 6! for n=6",
     )
     w.save()

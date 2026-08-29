@@ -340,14 +340,21 @@ def main() -> int:
                "On the fibre (|q|=1, ũ ∼ O(1)) the jump is unsuppressed.",
         "status": "OPEN — not produced by any substrate-branch computation"})
 
-    wb.add_assertion("d_ladder_form_holds", 1.0 if odd_ok else 0.0, 1.0,
-                     tolerance=0.5,
+    # BOOLEANS, not measurements. These were `1.0 if X else 0.0, 1.0,
+    # tolerance=0.5` -- nine float literals encoding three yes/no answers, and
+    # the raw-float64 ratchet counted every one. A bool has no precision to
+    # preserve, so int is not a downgrade: `1 == 1` exactly, and tolerance=0 is
+    # the honest tolerance for an equality between flags. Same fix, same
+    # reasoning, as delta_lambda_v_hat_z_transfer_phase5d_4 ("Counts, so they
+    # are int -- not float64").
+    wb.add_assertion("d_ladder_form_holds", int(odd_ok), 1,
+                     tolerance=0,
                      source="D-ladder two-variable form holds at all valid orders")
-    wb.add_assertion("substrate_borel_anchor_blind", 1.0 if anchor_blind else 0.0, 1.0,
-                     tolerance=0.5,
+    wb.add_assertion("substrate_borel_anchor_blind", int(anchor_blind), 1,
+                     tolerance=0,
                      source="D_opt identical at muon/proton to <1e-6 while S sign-flips")
-    wb.add_assertion("qbeta_100x_closure", 1.0 if closure else 0.0, 1.0,
-                     tolerance=0.5,
+    wb.add_assertion("qbeta_100x_closure", int(closure), 1,
+                     tolerance=0,
                      source="c₃^odd from Borel sum vs empirical at 7.8 ppb")
     out = wb.save()
     print(f"  Witness: {out}")

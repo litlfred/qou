@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Delta_lambda_co_casimir[λ] = Delta_lambda_co_casimir[λ'] on all conjugate pairs ⇒ bar-EVEN (norm-type Casimir ∝ Σcontent²)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "a bar-even Δ_λ couples only to a^even; the bar-odd sector contributes 0 to Σ a_λ Δ_λ"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.6626231120299994e-51,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "reconstructed Σ a_λ Δ_λ reproduces the committed co_casimir_prediction"
     }
   ],

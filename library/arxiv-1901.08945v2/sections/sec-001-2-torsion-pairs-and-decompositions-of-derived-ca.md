@@ -7,6 +7,7 @@ section_number: 2
 pages: 5-13
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
+doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
 ---
 We give criteria ensuring that a torsion pair in an abelian category give s rise
 to a semi-orthogonal decomposition on the level of derived catego ries. Our main

@@ -9,21 +9,21 @@
       "computed": 1.065411768009746,
       "expected": 1.065306228613167,
       "passed": false,
-      "tolerance": 1e-10
+      "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[neutron]",
       "computed": 0.923413212248394,
       "expected": 0.9232332971861535,
       "passed": false,
-      "tolerance": 1e-10
+      "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[deuteron]",
       "computed": 0.3884713632142838,
       "expected": 0.3882864715477132,
       "passed": false,
-      "tolerance": 1e-10
+      "tolerance": "1e-10"
     }
   ],
   "allPassed": false,

@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 21-33
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
 scription to the small radical gaugings classified in [GN25]. Table 1, adapted from
 [GN25, Table 3], records the non-pointed nondegenerate entries and the conclusions

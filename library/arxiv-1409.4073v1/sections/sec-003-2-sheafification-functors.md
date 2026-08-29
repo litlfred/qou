@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-16
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 In this section we deﬁne and describe particular functors th at generalize sheaﬁﬁcation functors
 for aﬃne schemes or projective schemes. The idea is to interp ret the category of modules or

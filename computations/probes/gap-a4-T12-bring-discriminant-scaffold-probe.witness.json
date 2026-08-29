@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "Brioschi discriminant \u0394(x^5 + bx + c) = 256\u00b7b^5 + 3125\u00b7c^4 matches the companion-matrix product \u0394 = a^{2n-2}\u00b7\u03a0_{i<j}(r_i \u2212 r_j)^2 to 50 dps."
     },
     {

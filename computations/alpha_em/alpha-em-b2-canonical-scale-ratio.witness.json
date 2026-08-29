@@ -22,7 +22,7 @@
       "detail": "c^4 transforms by (lam/(mu*s^2))^4 under (G_M,G_H,P) -> (lam G_M, mu G_H, s P): measured factor deviation 4.98e-60. Two canonical Gram pins still leave the intertwiner gauge s^2 (Lean: invariantForm_pullback_smul) \u2014 full normalization-freedom of the magnitude is impossible with two pins; the third scale IS the tau-scale gate",
       "computed": 4.9784122222889134e-60,
       "expected": 0.0,
-      "tolerance": 1e-40
+      "tolerance": "1e-40"
     },
     {
       "name": "K2_theta5_conditional_restatement",
@@ -30,7 +30,7 @@
       "detail": "log_5(c*8pi) = 1.99999315214863; theta_5 = frac = -6.84785e-6 (distance to integer grading), selected k = 2. UNDER hypothesis H5 (all residual gauges 5-power-graded; Hodge/intertwiner leg motivated by W6's discrete narrowing, Markov leg UNVERIFIED) theta_5 is gauge-invariant and '25 = deg^2' restates normalization-independently as theta_5 = 0. CONDITIONAL, not derived; H5's Markov leg is tested next",
       "computed": -6.847851369574001e-06,
       "expected": 0.0,
-      "tolerance": 5e-05
+      "tolerance": "5e-05"
     },
     {
       "name": "K3_markov_canonical_pins_computed",
@@ -53,7 +53,7 @@
         0.3329186539330864
       ],
       "expected": "all > 1e-3",
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "K3_F2_trace_pins_module_scale_blind",
@@ -61,7 +61,7 @@
       "detail": "G-adjoint invariant under G -> lam*G to 0.0: every Markov-trace observable lives on End(V) where the module-form scale cancels \u2014 the canonical trace normalizations (a),(b) are ALGEBRA scalars and transmit NO canonical scale to the module Gram entering c. A trace pin is not a module pin (structural)",
       "computed": 0.0,
       "expected": 0.0,
-      "tolerance": 1e-45
+      "tolerance": "1e-45"
     },
     {
       "name": "K4_25_does_not_survive_declared_pins",
@@ -73,7 +73,7 @@
         "gamma_cellular": "0.3927830764"
       },
       "expected": "all far from 0",
-      "tolerance": 5e-05
+      "tolerance": "5e-05"
     },
     {
       "name": "K5_matching_condition_stated",

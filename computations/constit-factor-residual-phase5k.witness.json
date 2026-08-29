@@ -9,7 +9,7 @@
       "computed": 1.0159501980054337,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "unit": "dimensionless",
       "source": "Phase 5k.1 residual / h^5 at q_0; if coefficient is close to ±1, residual is O(h^5) with unit coefficient. Empirically c = 1.016, within 2% of unity."
     }

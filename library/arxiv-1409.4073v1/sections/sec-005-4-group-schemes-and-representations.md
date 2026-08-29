@@ -7,6 +7,7 @@ section_number: 4
 pages: 26-27
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 Let G be a ﬂat and aﬃne group scheme over R. In this section we want to interpret the
 results obtained in the case X = BRG, the stack of G-torsors for the fpqc topology, which is a

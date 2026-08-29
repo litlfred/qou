@@ -27,7 +27,7 @@
       "computed": 1e-20,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "unit": "|H_A²/(4·(q−1)²) − 1| at q = 1 + 10⁻²⁰",
       "source": "Leading-order Taylor: H_A = q − q⁻¹ ≈ 2(q − 1) + O((q−1)²)."
     }

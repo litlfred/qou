@@ -5,7 +5,7 @@ section_id: sec-013-26-gauß-sum-invariants
 section_title: "Gauß sum invariants"
 section_number: 2.6
 pages: 10-11
-source_pdf: 0606435v2.pdf
+source_pdf: 0606435v2 (1).pdf
 source_sha256: 6dddaf838a19f0f5
 doc_brief: "PROPERTIES OF CLOSED 3-BRAIDS — We show that 3-braid links with given (non-zero) Alexander o r Jones polynomial are ﬁnitely many, and can be effectively determined."
 ---
@@ -40,9 +40,6 @@ We will use the symmetrized version of (14) w.r.t. taking themirror image of the
 v2 = 1
 2
 
-
-
-+
+ +
 
-
- .(15)
+ .(15)

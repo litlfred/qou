@@ -608,6 +608,8 @@ export default chapter({
         "kummer-bloch-wigner-identity",
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-relabelling-invariance",
+        "ideal-tetrahedron-law-of-sines",
+        "birthday-axioms-underdetermine",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",

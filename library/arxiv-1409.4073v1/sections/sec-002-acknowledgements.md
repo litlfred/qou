@@ -7,6 +7,7 @@ section_number: null
 pages: 5-9
 source_pdf: 1409.4073v1.pdf
 source_sha256: b40be7f0022f70a1
+doc_brief: "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — W e introduce “sheaﬁﬁcation” functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves"
 ---
 I would like to thank Jarod Alper, David Rydh, Daniel Schäppi , Mattia Talpo and Angelo
 Vistoli for the useful conversations I had with them and all t he suggestions they gave me.

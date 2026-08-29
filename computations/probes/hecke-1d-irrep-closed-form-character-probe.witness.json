@@ -9,7 +9,7 @@
       "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {trivial, sign} × {9 test braids} of |χ_direct(β) − χ_closed_form(β)|",
       "source": "Universal closed form for 1-d Hecke irrep characters; direct LHS via canonical Hoefsmit-seminormal (`build_hoefsmit_mpfr` at 50 dps), closed-form RHS from the proposition statement."
     }

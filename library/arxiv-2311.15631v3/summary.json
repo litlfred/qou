@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2311.15631v3",
+ "source_sha256": "a3cc6d51cd04fc07",
+ "brief": "Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI — We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤",
+ "extended": "**Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI**\n\n*Department of Physics, National Taiwan University, Taipei 10617, Taiwan*\n\n30 pp, 5 sections.\n\n**Abstract.** We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤ 3 including degenerate and non-(pseudo-)unitary ones. We c omment on Lagrangian algebras and physical applications to ground st ate degeneracy and proof of spontaneous B-symmetry breaking.\n\n**Outline.** Introduction; Rank one; Rank two; Rank three; Physical applications",
+ "tokens": {
+  "brief": 49,
+  "extended": 145
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-rank-one",
+   "title": "Rank one",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-002-rank-two",
+   "title": "Rank two",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-003-rank-three",
+   "title": "Rank three",
+   "pages": "11-23"
+  },
+  {
+   "id": "sec-004-physical-applications",
+   "title": "Physical applications",
+   "pages": "23-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

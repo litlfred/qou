@@ -7,6 +7,7 @@ section_number: 4
 pages: 20-23
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 In the previous section we proved that the superselection struct ure Z 1,•(R) can be described by a
 presheaf and, as a consequence of [39], as the dual of a group (ne t) bundle G when an embedding is

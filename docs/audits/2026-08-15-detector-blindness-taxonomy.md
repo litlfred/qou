@@ -31,10 +31,91 @@ question.
 | 11 | the **live code path** | prose that is the module's only convention statement | `markov_peel.tr_M_atomic`'s docstring (#5190) |
 | 12 | the artifact's own **convention tag** | a tag accurate about the bytes and silent about currency | 9 colour-blind `chi-*` witnesses (#5209) |
 | 13 | **`scriptHash`** — the staleness check itself | staleness arriving through a *dependency* | `pyhecke-h3-vs-h3a-impact-comparison` (qou-11wz) |
+| 14 | **the file extension** — the tree the tool walks | an entire language's surface, never scanned at all | 7 convention-C sites in `.lean` (qou-cxjq) |
+| 15 | **the declaration keyword** — `def`/`abbrev` only | a convention set by a typeclass **field assignment** inside an `instance` | `markovTraceTower_canonical` (qou-cxjq) |
+| 16 | **the expression's SHAPE** — every matcher above | the same value under a sqrt-variable spelling, invisible in the *deliberate* bucket too | 21 sites `convention-c-producer-audit.py` reports in NO bucket (qou-t9r1) |
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an
 assumption the rest share.
+
+### 15 — a convention set by an instance field, not a definition body
+
+Added 2026-08-26 (bean `qou-cxjq`), by the scanner from entry #14 — **which had
+this blind spot itself**.
+
+`scripts/lean-markov-convention-audit.py` tracked the enclosing declaration with
+`^\s*(?:noncomputable\s+)?(?:def|abbrev)\s+(\w+)`. A Lean typeclass instance
+does not set its parameters in a `def` body; it sets them as **field
+assignments**:
+
+```lean
+noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
+    MarkovTraceTower q where
+  z := 1 / (Real.sqrt q + 1 / Real.sqrt q)     -- convention C
+```
+
+A def-only pattern cannot see that line as a *site*, so the scanner reported it
+nowhere — through every run, while it was being used to drive a migration.
+
+**The instance it hid is the worst one in the tree.** Not an obscure corner:
+`markovTraceTower_canonical` is the **canonical** Markov trace tower, the
+instance downstream Jones-value code resolves against. Fourteen `def`-shaped
+sites were being carefully migrated while the canonical instance sat unmeasured.
+
+Two things worth carrying:
+
+1. **The count went UP when the blind spot closed** — 17 → 18 definitions,
+   actionable 4 → 5. A migration that had been reporting steady progress was
+   measuring a surface smaller than the real one. A falling count is only
+   meaningful against a detector whose reach is known.
+2. **This is the fourth consecutive entry found by the tool written to catch the
+   previous one** (#12 → #13 → #14 → #15). The pattern is not that detectors are
+   badly written; it is that each one encodes the shape its author had just
+   learned to see. Expect a #16, and prefer the answer-shaped test — testing what
+   a value *is* rather than how it was *written* — wherever one exists.
+
+### 14 — the detector walks one tree and the count is quoted for the repo
+
+Added 2026-08-26 (bean `qou-cxjq`).
+
+[`scripts/convention-c-producer-audit.py`](../../scripts/convention-c-producer-audit.py)
+walks the tree four times and every one is `base.rglob("*.py")` (lines 635, 760,
+785, 930). It is a **producer** audit, producers are Python, and its numbers are
+correct and correctly scoped. The blindness is not in the tool — it is in the
+reading: a figure produced by a Python-only walk gets quoted as the corpus's
+convention-C surface, and nothing else scans `.lean`, so that surface has never
+been counted at all.
+
+**Measured, once someone looked:** 7 convention-C Markov-parameter sites across
+6 `.lean` files, and `markovZ` is **five declarations spanning both
+conventions** — `z_C(q₀) = 0.49932…` against `z_D(q₀) = 0.61268…` under one
+name.
+
+Three properties make this different from #1–#13, and the third is the one worth
+carrying:
+
+1. **It is an absent measurement, not a wrong one.** Every prior entry is a
+   detector returning a number that is wrong about the thing it scanned. This
+   one returns a number that is right, about a tree that is not the corpus.
+2. **Only 3 of the 7 are actually hard to see** — the square-root-variable forms
+   `u/(u²+1)` and `s/(s²+1)` with `u² = q`, which share no lexeme with `√q/(q+1)`
+   and do need the answer-shaped test. The other **4 write `Real.sqrt q` in plain
+   sight**. So "a grep cannot in principle catch this" was too strong: mostly
+   nothing had grepped.
+3. **A migration can deepen the blindness while succeeding at its own goal.**
+   The Tier-2 migration replaced `Real.sqrt q` with a generic
+   `markovZ (u : R)` where `u² = q`. It removed the square root — its stated
+   purpose — and left the convention untouched and *less* visible. When
+   evaluating a migration, ask separately what it moved and what it merely
+   renamed.
+
+**The reading error this cost.** The bean that surfaced it reported AGENTS.md as
+carrying a false convention-C all-clear for `.lean`. There is none: the single
+"0 in `.lean`" claim in that document belongs to the **Λ vs Cl₂ naming** guard
+(`qou-zdz5`). Two drains, both reported "corpus-wide", conflated by shape rather
+than subject — inside a bean about detector blindness. Retracted in
+[`2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`](2026-08-26-convention-c-in-lean-and-the-markovz-overload.md).
 
 ### 13 — the staleness check said "current" about a stale witness
 
@@ -350,6 +431,115 @@ gate saw it.
 This is the fourth blind spelling found **by** a detector written to catch the
 previous one, which is the pattern this document exists to record: each fix
 closes a shape and reveals that the surface was never measured, only sampled.
+
+### 8 — the intent is stated, but not where the detector looks (added 2026-08-26)
+
+The last convention-C Markov parameter in the Lean tree,
+`QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.zMarkov`, was reported
+`actionable` by `scripts/lean-markov-convention-audit.py` through fourteen runs.
+It is not a defect. The module's **first line** reads *"Canonical (convention C)
+Markov trace of β_Bor"*, and the whole file exists to derive the C value so that
+`BorromeanTraceConventionSplit.conventionD_ne_conventionC` has something to
+compare against. Migrating it would make the file derive D and compare it to
+itself.
+
+The blindness is structural, not a missing pattern. `_deliberate()` takes
+evidence from the declaration's **name** and from its **own** doc-comment,
+walking back from the declaration to the opener above it. Intent stated in a
+module header, or in a consumer three declarations below, is outside that window
+by construction — no widening of the window reaches it, because the evidence is
+not adjacent to the declaration at all.
+
+**Fixed at the source, not in the scanner.** The definition now says in its own
+doc-comment why it is C and what breaks if it moves. The alternative — teaching
+the scanner to accept a module header as deliberateness evidence — was rejected:
+it would absolve *every* C definition in any file whose header mentions C, which
+is the reassuring direction, and this document's whole subject is errors in that
+direction.
+
+**A near-miss worth more than the entry.** Reading the file, its "convention D"
+is described by the weight triple `y₃ = [4]/[2]³`, `y₂₁ = 1/[2]²`, `y_{(1³)} = 0`
+— the Temperley–Lieb / Jones decomposition. Reading `1/[2]` as the Markov
+parameter gives `q/(q²+1) = 0.49729` at `q₀`, which is **not** convention D's
+`q³/(q²+1) = 0.61269`; it is the bare kernel `g(q)`, and the separation theorem
+`no_kernel_instantiation_is_conventionD` then proves it cannot be D. That is a
+complete, self-consistent, Lean-backed argument that the corpus uses "convention
+D" for two different objects — and it is **wrong**.
+
+Computing the `z` the weights actually imply, against the character values the
+file itself uses (`χ(σ) = q, h, −q⁻¹`), gives
+
+```
+y₃·q + y₂₁·h + y₁₁₁·(−q⁻¹) = (q³ + q)/(q + q⁻¹)² = q³/(q²+1)
+```
+
+exactly convention D. The error was reading `1/[2]` off the *shape* of the
+weights in a normalisation that was never checked. Nothing in the corpus is
+wrong; one afternoon of a false "letter collision" finding was avoided by
+checking the arithmetic beside the name instead of the name — the same rule
+AGENTS.md states for the Λ vs Cl₂ guard, one subject over.
+
+**And the same character bit twice in one edit.** The doc-comment written to fix
+this contained the literal opener `` /-- `` as prose. Lean nests block comments,
+so the file failed with *"unterminated comment"* 120 lines later; and the
+scanner's own walk-back found *that* opener first, so the site still came back
+`actionable` with the marker sitting one line above the window. Two different
+tools, one character, the same failure. Rephrased, and both are green.
+
+
+### 16 — the sqrt-variable spelling, invisible in BOTH buckets (added 2026-08-29)
+
+`z = 1 / (sq + 1 / sq)` where `sq = mp.sqrt(q)`, and its sibling `u / (u**2 + 1)`
+where `u` is the square root variable. Both are `sqrt(q)/(q+1) = z_C` exactly.
+`scripts/convention-c-producer-audit.py` matches neither.
+
+This one is worth a row of its own even though blindness-to-a-spelling is the
+theme of the whole document, because of *where* the loss lands. Every earlier
+row costs a false **negative** in the actionable bucket: a defect goes
+unreported. This spelling is invisible in the **deliberate** bucket too. The
+audit does not under-report these sites; it does not know they exist. So the
+usual reassurance — "the count is a floor, the deliberates are accounted for" —
+does not hold, and an agent draining the actionable list to zero would declare
+the excision complete with 21 convention-C bindings still live.
+
+**Measured 2026-08-29 (PR #5972).** `scripts/convention-c-value-audit.py`
+evaluates each binding at two sample points rather than matching its shape, and
+finds **90 confirmed convention-C bindings** in `computations/` against the
+shape audit's 71 rows. **Twenty-one** appear in no bucket of the shape audit.
+Their dispositions on inspection: 4 already announced and deliberate (including
+`schur_principal_mpmath._wenzl_constants_convention_C_HISTORICAL`, kept on
+purpose as the one live C implementation the D-vs-C comparison quotes), 5
+migrated in that PR, 4 blocked by a measured obstruction (`qou-pmkh`), 8 still
+open (`qou-t9r1`).
+
+**Confirmed from the other side, which is the part to remember.** Five of the
+21 were registered in `blocked_on_rederivation` that same day. The audit's
+printed count went from 9 actionable to 9 actionable. Registering a site the
+detector cannot see changes nothing it prints — so a stable count is not
+evidence of a stable surface.
+
+**The counter-move.** Not another matcher. `convention-c-value-audit.py` walks
+the AST for any binding whose RHS is a closed arithmetic expression in one free
+variable, compiles it, and **evaluates** it against `z_C`, `z_D` and their
+sqrt-variable forms at two independent points — one point is a numeric
+coincidence, two is functional identity. It cannot be evaded by re-spelling
+because it never reads the spelling. All arithmetic is `mpmath.mpf` at 60 dps:
+a float64 evaluation bottoms out at ~1e-16 and could not separate `z_C` from a
+near-miss, which is the failure the section below on tolerance describes.
+
+**Its own limit, stated rather than papered over.** A `-sqrtvar` match is a
+*candidate*: `x/(x**2+1)` is `z_C` when `x` is `sqrt(q)` and is `1/[2]_q`, a
+convention-neutral quantity, when `x` **is** `q`. Nothing in the expression
+distinguishes them — only what the variable *means* does. The report prints the
+variable, triages on a name list, and reports `unresolved` rather than guessing;
+on the current corpus that is 3 not-C and 1 unresolved out of 89.
+
+**Two false positives from its own first run**, both fixed with regression
+fixtures in `--selftest`, per row 3's lesson that a detector needs fixtures
+pinning its narrowing: an attribute *base* counted as a free variable, so every
+`mp.mpf(...)` binding looked like a one-variable expression; and NaN comparing
+out of every inequality, so an `mp.mpf("nan")` sentinel "agreed" with whatever
+it was tested against. Four sites reported, zero real.
 
 ## The counter-move that worked, twice
 

@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 5-7
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 Let M be a connected manifold. We say that a base ∆ for the topology of M is good whenever
 any a ∈ ∆ has compact closure and is arcwise and simply connected. For exam ple, we have the

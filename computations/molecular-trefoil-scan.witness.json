@@ -9,7 +9,7 @@
       "computed": 4.2,
       "expected": 4.478,
       "passed": true,
-      "tolerance": 1.3434,
+      "tolerance": "1.3434",
       "unit": "eV"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 10.5,
       "expected": 11.09,
       "passed": true,
-      "tolerance": 3.327,
+      "tolerance": "3.327",
       "unit": "eV"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 56.9,
       "expected": 57.4,
       "passed": true,
-      "tolerance": 17.22,
+      "tolerance": "17.22",
       "unit": "eV"
     }
   ],

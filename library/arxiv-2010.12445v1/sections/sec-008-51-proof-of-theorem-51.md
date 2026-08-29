@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 20-23
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
 particular we assume the hypothesis and notation in its stat ement.
 It is easy to see that Fib X , C is a stack (not necessarily in groupoids) for the fpqc topolo gy on

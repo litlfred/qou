@@ -7,6 +7,7 @@ section_number: null
 pages: 62-65
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 [ACJ05] P. Aschieri, L. Cantini, and B. Jurco, “Nonabelian bundle ger bes, their diﬀerential
 geometry and gauge theory”. Commun. Math. Phys. , 254:367–400, 2005.

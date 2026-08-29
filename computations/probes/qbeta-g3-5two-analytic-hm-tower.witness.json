@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(86) + extension recurrence < 1e-38 at 2 q x 3 k x both branches; E1-sign flip breaks at > 1e-6"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "c*H0 column addition preserves (86) and det — orthogonality is the only pin"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact Fractions: sigma_c = 1/4 - 6*E2hat solved from polynomiality, all 9 entries polynomial to O(q^24), held-out m verified"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "independent mpmath towers reproduce the derived (92) identity to < 1e-40"
     }
   ],

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.2754,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "PDG 2024"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.821440179968053e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "prop:operator-selection-lp § strong duality"
     },
     {

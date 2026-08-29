@@ -9,7 +9,7 @@
       "computed": 4.947704352032726e-50,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 (Hikami eq 4.12 / SnapPy) — validates the NZ saddle"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Re 𝔙(5₂) ≠ 0 (chiral, CS≠0) — the bar-odd/CS home 4₁ (amphichiral, CS=0) structurally lacks"
     }
   ],

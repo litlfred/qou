@@ -74,10 +74,11 @@ mp.mp.dps = 60
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
-# --- substrate q0 sourced from the muon-canonical jet-filtration witness (no re-pin) ----
+# --- substrate q0 sourced from the jet-filtration witness, which now RESOLVES its
+# --- own pin (proton) rather than freezing the superseded muon literal (qou-1c4y) ----
 JET_WITNESS = HERE / "deltalambda-jet-filtration-magnitude.witness.json"
 _jw = json.loads(JET_WITNESS.read_text())
-Q0 = mp.mpf(str(_jw["parameters"]["q0"]))          # 1.10997859555733471 (muon-canonical)
+Q0 = mp.mpf(str(_jw["parameters"]["q0"]))          # whatever the upstream resolved
 
 # --- derived cluster prediction + AME targets (consumed only; never inverted) ----------
 C3_CLUSTER = mp.mpf("0.297")                        # BorromeanMagnitudeLift #4364, 0-fit
@@ -284,11 +285,26 @@ def main() -> int:
     except Exception:
         witness["scriptCommitSha"] = "uncommitted"
     out = HERE / "mu3-target-frame-robustness.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. This producer DOES read q0 (from the
+    # jet-filtration witness), so the anchor is resolved and stamped, not suppressed.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+    # Untrue: q0 is read from the jet-filtration witness at module scope and
+    # every quantity below is a function of it. The false declaration DELETED
+    # the anchor stamp on every run, converting a visible Q0_FLIP into a silent
+    # Q0_ANCHOR_MISSING (bean qou-1c4y).
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None)
     out.write_text(json.dumps(witness, indent=2, default=str) + "\n")
 
     # ---- console report ----
     print("=== μ₃ (A=3 magnitude) target frame-robustness ===")
-    print(f"q0 = {mp.nstr(Q0, 30)}  (muon-canonical)   c₃ cluster = {mp.nstr(C3_CLUSTER,4)} MeV")
+    print(f"q0 = {mp.nstr(Q0, 30)}  (resolved pin)     c₃ cluster = {mp.nstr(C3_CLUSTER,4)} MeV")
     print(f"μ₃ = ρ_strong(3) − ρ_grad(3): SMALL residual = difference of two O(3.5) numbers")
     print()
     print("baseline (corrected ρ_strong)      ρ_grad(3)   μ₃        gap c₃/μ₃   amp ρ_grad3/μ₃")

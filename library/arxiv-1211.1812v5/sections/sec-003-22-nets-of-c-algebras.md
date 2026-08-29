@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 7-9
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
+doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
 ---
 A net 3 of C*-algebras over ∆ is given by a family A = {Aa}a∈∆ of unital C*-algebras, and unital
 *-monomorphisms (called the net structure )

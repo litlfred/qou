@@ -7,6 +7,7 @@ section_number: 4
 pages: 18-21
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 It is well known that for a Lie group G the smooth ˇCech-cohomology ˇH1(M,G ) and the continuous
 ˇCech-cohomology ˇH1

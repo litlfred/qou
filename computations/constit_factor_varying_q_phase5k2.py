@@ -62,6 +62,17 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
     Uses the CONSTIT factorisation (include_inter=False), so the
     braid word has no interface generators.
 
+    ⚠ LEGACY-MARSHALLED FRAME, deliberately. `marshal_to_chi_lambda_braid`
+    drops the crossing `d`, so every `averaged` crossing is priced `z` rather
+    than `z - h/2`. That is correct HERE — this sweep's whole subject is the
+    constit factor as the legacy pipeline computes it — but it means these
+    numbers are NOT comparable with `closed_form_tau_M`'s canonical helper,
+    which was fixed on 2026-08-26 to stop dropping `d` (bean `qou-qu2w`).
+    The frame's one documented home is `legacy_marshalled_frame`; this file
+    marshals the FULL atom word rather than a nucleon chain, so it calls the
+    marshaller directly instead of going through that module's nucleon
+    helper. Declared here so the choice is greppable (bean `qou-iu3m`).
+
     Per Gemini PR #854 review: braid marshalling centralized in
     `canonical_braid_marshalling.marshal_to_chi_lambda_braid` (see
     that module for the (c, d) → (sign, gen) convention).

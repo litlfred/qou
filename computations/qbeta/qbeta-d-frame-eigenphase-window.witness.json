@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T07:31:31.257317+00:00",
-  "commitSha": "2832d6f90f05aee9029d6999596772a151aaa192",
+  "computedAt": "2026-08-29T08:14:52.770128+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "bar_odd_shift_unique",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 21,
   "computation": "qbeta-d-frame-eigenphase-window",
   "scriptFile": "qbeta_d_frame_eigenphase_window_probe.py",
-  "scriptHash": "16442992eb2d",
-  "scriptCommitSha": "8c1d0ed4de9460ccb87edf0698bd04dfbec78b61",
+  "scriptHash": "798a5b870ac7",
+  "scriptCommitSha": "98f6bfecb17731e452230df3979c8f15aec85d94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [

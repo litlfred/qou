@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 48-57
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 We now provide the data we will feed into Lemma B.1 in order to produce a 2-functor
 RM : GrbΓ (M ) /d47/d47 2-BunΓ (M ) that is inverse to the 2-functor EM constructed in the previous

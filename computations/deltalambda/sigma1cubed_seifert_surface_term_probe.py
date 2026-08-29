@@ -239,13 +239,28 @@ def main():
             "open wall is the fibre→archimedean τ-transfer, NOT a missing discretization. Honest negative."
         ),
         "computed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "elapsed_sec": round(time.perf_counter() - t0, 3),
+        # Serialized as a string, like every other numeric in this witness.
+        # elapsed_sec is runtime timing METADATA, not a payload number -- it is
+        # in `_EPHEMERAL_META_FIELDS` (qou_substrate/witness.py) and is stripped
+        # by NAME for comparison, so the type change is inert to the mask. As a
+        # JSON float it was this witness's only raw-float64 field and its sole
+        # entry on the NO-FLOAT64 ratchet's NEW list, for zero precision content.
+        "elapsed_sec": f"{time.perf_counter() - t0:.3f}",
         "data": out,
     }
     src = Path(__file__).read_bytes()
     witness["scriptHash"] = hashlib.sha256(src).hexdigest()[:16]
 
     wpath = HERE / "sigma1cubed-seifert-surface-term.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     wpath.write_text(json.dumps(witness, indent=2) + "\n")
 
     print("=" * 78)

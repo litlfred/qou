@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T20:46:14.298441+00:00",
-  "commitSha": "f933ce228900e206c942f5e4448d5c5ffd35cc19",
+  "computedAt": "2026-08-26T15:26:18.687949+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "m_p residual via exact 8·G Vol(𝓑₃) drops below 2 ppb",
-      "computed": 209.43341688598883,
+      "computed": "209.433416885988824613357408718465747021826199248401342241336",
       "expected": 0.0,
       "passed": false,
       "tolerance": 2.0,
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 34,
+  "durationMs": 28,
   "computation": "borromean-volume-propagation-to-m-p",
   "scriptFile": "borromean_volume_propagation_to_m_p.py",
-  "scriptHash": "6594785420aa",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "12afe8946cf1",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/borromean_volume_propagation_to_m_p.py"
+    ],
+    "reproduce": "python3 -u computations/borromean_volume_propagation_to_m_p.py"
   },
   "description": "Tests whether replacing the stale Vol(𝓑₃) = 7.32772290 (SnapPy default-precision literature value, used in m_p_borromean_verification_50dps.py:68) with the exact 8·G = 7.32772475 closes the 250 ppb m_p residual. Hypothesis: the hardcoded λ_p_scale = 2.4599527869 was calibrated against CODATA m_p using the CORRECT 8·G value, so the stale Vol in the production formula introduces a compensating ~0.25 ppm error.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",

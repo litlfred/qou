@@ -9,7 +9,7 @@
       "computed": 0.5751722439177719,
       "expected": 0.388357,
       "passed": false,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "canonical_tr_m_via_branching (#2080) D value"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 2.5918416396151817e-41,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "chi_free_via_lr (independent parabolic-LR formula)"
     }
   ],

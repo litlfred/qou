@@ -14,17 +14,30 @@ THIS probe attacks the structural question WITHOUT tuning c:
   Q1. What is c, STRUCTURALLY?  Is the per-crossing coupling fixed by an
       EXISTING framework object, or is it free (the obstruction)?
       FINDING (derived from corpus, NOT fitted):
-        def:coulomb-charge (content/.../climax-volume-mass/coulomb-charge.lean,
-        .md) defines the framework's ELECTRIC / Coulomb charge of a knot
-        composite as
+        def:coulomb-charge (content/quantum-observable-universe/
+        knots-particles-confinement/coulomb-charge.lean, .md) defines
               Q(H) = (1/2)(n_+ - n_-)
         where n_+, n_- are the positive/negative crossing counts.  The writhe
         is w = n_+ - n_-.  Therefore
               Q(H) = w / 2,  i.e.  c = 1/2  is FIXED by def:coulomb-charge.
       The coupling c is NOT free: the framework already supplies a canonical
-      crossing->charge coupling, namely 1/2, in the Coulomb-charge definition.
-      This is the SAME 1/2 that appears in the q-momentum / writhe normalisation
-      and in the coulombCorrection term Q(H)*(q - q^{-1}).
+      halving of the writhe, and c = 1/2 is that halving.
+
+      NAMING, CORRECTED 2026-08-29 (PR #5956, beans qou-toul / qou-a468).
+      This docstring called Q(H) "the framework's ELECTRIC / Coulomb charge".
+      It is not the electric charge.  Q = (1/2)(n_+ - n_-) is the halved
+      WRITHE, and it is the coefficient of the SYMMETRIC (strong) channel of
+      the crossing energy, not the antisymmetric (Coulomb) one -- the
+      antisymmetric coefficient is (1/2)(n_+ + n_-).  This docstring also
+      cited "the coulombCorrection term Q(H)*(q - q^{-1})"; that term was the
+      swapped assignment and has been removed.  Q multiplies (q + q^{-1}).
+
+      NOTHING NUMERICAL CHANGES.  c = 1/2 is the halving of the writhe and is
+      independent of which channel Q weights.  If anything the correction
+      SUPPORTS this probe's own Q2 result below: a quantity that weights the
+      strong channel is expected to track a strong-interaction quantum number,
+      and Q2 finds exactly that -- the writhe ladder matches I_3 and is
+      falsified as a hypercharge map.
 
   Q2. Gell-Mann-Nishijima: Y = 2(Q - I_3).  The framework HAS isospin
       (conj:isospin-from-canonical-bowtie, D9) and a writhe-U(1).  We test the
@@ -86,12 +99,19 @@ def eval_at_q0(expr):
 # Q1.  c is STRUCTURALLY FIXED = 1/2 by def:coulomb-charge.
 # ===========================================================================
 # def:coulomb-charge:  Q(H) = (1/2)(n_+ - n_-) = (1/2) * writhe.
-# So the per-crossing charge coupling is c = 1/2, fixed -- NOT a free knob.
+# So the per-crossing coupling is c = 1/2, fixed -- NOT a free knob.
+# The name is historical: Q is the halved writhe and weights the SYMMETRIC
+# (strong) channel, not the Coulomb one (PR #5956).  The 1/2 is unaffected.
 C_COULOMB = Fraction(1, 2)  # from def:coulomb-charge (NOT fitted)
 
 
 def coulomb_charge(writhe_value):
-    """Framework electric charge Q(H) = (1/2)*writhe  (def:coulomb-charge)."""
+    """Q(H) = (1/2)*writhe, the halved writhe of def:coulomb-charge.
+
+    Named "coulomb" for the definition it comes from, NOT because it is the
+    electric charge -- it is the coefficient of the symmetric (strong)
+    channel.  See the naming correction in the module docstring.
+    """
     return C_COULOMB * writhe_value
 
 
@@ -305,7 +325,7 @@ w.add_caveat(
 )
 w.add_caveat(
     "VERDICT (b, the precise residual obstruction): Gell-Mann-Nishijima "
-    "Y = 2(Q - I_3) requires Q (the Coulomb charge, = writhe/2) AND I_3 "
+    "Y = 2(Q - I_3) requires the ELECTRIC charge Q AND I_3 "
     "TOGETHER. Writhe alone gives I_3 (its sign/ratio). The Coulomb charge "
     "def gives Q = writhe/2 -- but that is the SAME writhe datum, so on the "
     "single inter-nucleon writhe the framework supplies only ONE integer per "

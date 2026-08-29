@@ -585,7 +585,7 @@
 | [prop:frobenius-self-duality-forces-lp-dual-extraction](#prop:frobenius-self-duality-forces-lp-dual-extraction) | Frobenius self-duality of $(H_n(R,q),\tau)$ forces $\tau$-extraction to produce LP-dual variables | Ch 12 | `qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction` |
 | [prop:emergence-to-quantum-flat](#prop:emergence-to-quantum-flat) | From Tannakian emergence to 2-group quantum flatness | Ch 2 | `qou:QOU.emergence_to_quantum_flat` |
 | [prop:deuteron-fusion-frame](#prop:deuteron-fusion-frame) | Fusion frame of the deuteron law: the $5$ is forced by $[2]_v^2 = [3]_v + 1$ and $g$ is the marginal-stability rate | Ch 12 | `qou:QOU.MassTheory.DeuteronFusion.fusion_identity` |
-| [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse) | GB spectral sequence collapses at E_1 (semisimple cohomology vanishing) | Ch 12 | `qou:QOU.WedderburnMass.spectral_sequence_collapses_to_centre` |
+| [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse) | GB spectral sequence collapses at E_1 (semisimple cohomology vanishing) | Ch 12 | `qou:QOU.WedderburnMass.centralIdempotent_idem` |
 | [prop:gb-spectral-sequence](#prop:gb-spectral-sequence) | GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass | Ch 7 | `qou:QOU.BraidKnot.gb_spectral_sequence` |
 | [prop:jonquiere-cyclotomic-tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality) | General Jonquière Tate-rationality: wrong-parity part of $\mathrm{Li}_n(\zeta_K)$ has closed form $-(2\pi i)^n / n! \cdot B_n(1/K)$ at every depth | Ch 12 | `qou:QOU.BraidKnot.JonquiereCyclotomicTateRationality.jonquiere_tate_rationality` |
 | [prop:cyclotomic-orbit-sum-all-depths](#prop:cyclotomic-orbit-sum-all-depths) | General orbit-sum at every depth: $\sum_k \mathrm{Cl}_n(2\pi k/N) = (N^{1-n} - 1)\zeta(n)$ for $n$ odd, $0$ for $n$ even | Ch 12 | `qou:QOU.BraidKnot.CyclotomicOrbitSumAllDepths.orbit_sum_all_depths` |
@@ -1109,7 +1109,7 @@
 | [conj:lqg-entropy-qdim-partition-pole](#conj:lqg-entropy-qdim-partition-pole) | Horizon entropy as the $q$-dimension partition-function pole | Ch 13 | `qou:QOU.GravitySpacetime.LQGEntropyQDimPartitionPole` |
 | [conj:infinitesimal-frobenius](#conj:infinitesimal-frobenius) | Infinitesimal Frobenius pairing: $\int_A \circ \mu = \mathrm{id} + O(\varepsilon)$ | Ch 26 | `qou:QOU.AppendixSurreals.InfinitesimalFrobenius` |
 | [conj:infinitesimal-observability](#conj:infinitesimal-observability) | Infinitesimal observability: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.InfinitesimalObservability` |
-| [conj:vacuum-epsilon](#conj:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\unicode{9737}) = \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.VacuumEpsilon` |
+| [conj:vacuum-epsilon](#conj:vacuum-epsilon) | Infinitesimal vacuum: $\mathrm{Geom}(\bigcirc) = \varepsilon$ | Ch 25 | `qou:QOU.AppendixSurreals.VacuumEpsilon` |
 | [conj:inter-nucleon-channel-color-tube](#conj:inter-nucleon-channel-color-tube) | Inter-nucleon Hecke channel assignment from Bring color-tube weighting | Ch 6 | `qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube` |
 | [conj:single-volume-irrationality](#conj:single-volume-irrationality) | Irrationality of a single hyperbolic knot volume | Ch 14 | `qou:QOU.Archimedean.SingleVolumeIrrationality` |
 | [conj:hecke-anyonic-substrate](#conj:hecke-anyonic-substrate) | Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation | Ch 10 | `qou:QOU.IwahoriHecke.Tw.HeckeAnyonicSubstrate` |

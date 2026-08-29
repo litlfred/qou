@@ -64,7 +64,7 @@ import _path_bridge  # noqa: F401, E402
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV as M_E_MEV_F  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -304,8 +304,8 @@ if "3He" in comparison["rho_v2_mu_0"]["per_atom"]:
     he3 = comparison["rho_v2_mu_0"]["per_atom"]["3He"]
     wb.add_assertion(
         "he3_joint_vs_baseline_recorded",
-        computed=float(mp.mpf(he3["joint_rel_err"]) * 100),
-        expected=float(mp.mpf(he3["baseline_rel_err"]) * 100),
+        computed=fmt(mp.mpf(he3["joint_rel_err"]) * 100),
+        expected=fmt(mp.mpf(he3["baseline_rel_err"]) * 100),
         tolerance=1e9,  # informational: record both, never gate
         source=(f"³He μ₀·Vol joint rel_err = "
                 f"{float(mp.mpf(he3['joint_rel_err']))*100:.1f}% vs baseline "

@@ -9,7 +9,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over n ∈ {1, …, 12} of |Im Li_3(ζ_n)_mpmath − (n−1)(n−2)π³/(3n³)|",
       "source": "Kummer reflection formula (Lewin 1991, Eq. 6.10) applied to ζ_n = e^{2πi/n}; principal-log identity for −ζ_n gives the closed form."
     }

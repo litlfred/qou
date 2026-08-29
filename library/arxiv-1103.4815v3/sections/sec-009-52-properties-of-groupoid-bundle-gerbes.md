@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 27-33
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
 ---
 We recall that a homomorphism Λ : Γ /d47/d47 Ω between Lie 2-groups is an anafunctor together with a
 transformation (2.4.4) describing its compatibility with the multiplicatio ns. We recall further from

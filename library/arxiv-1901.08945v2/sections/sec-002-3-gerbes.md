@@ -7,6 +7,7 @@ section_number: 3
 pages: 13-16
 source_pdf: 1901.08945v2.pdf
 source_sha256: df222d76e597057f
+doc_brief: "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of"
 ---
 In this section, we collect some results from the theory on gerbes, bandings by
 abelian groups and the relation to cohomology. Throughout the sec tion, S will be

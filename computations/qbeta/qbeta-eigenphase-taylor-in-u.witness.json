@@ -17,7 +17,7 @@
       "computed": -0.14433756729740643,
       "expected": -0.14433756729740643,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Numeric u¹ coefficient matches the exact radical -√3/12."
     },
     {
@@ -25,7 +25,7 @@
       "computed": -0.48808756729740643,
       "expected": -0.48808756729740643,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Numeric u² coefficient matches the exact radical -11/32 - √3/12."
     },
     {

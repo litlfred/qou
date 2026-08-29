@@ -165,14 +165,39 @@ for f in "${files[@]}"; do
         # carries both a generic decl and its ℝ specialisation. Resolving this
         # conflict to either side alone would have silently dropped the other
         # half of the false-positive reduction.
-        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        #
+        # THIRD false-positive class (bean qou-aemx follow-on, 2026-08-29).
+        # `linarith`, `positivity`, `nlinarith` and `LinearOrdered` were STRONG,
+        # i.e. archimedean wherever they appear. All four work over ANY ordered
+        # field -- including the generic `[LinearOrder R] [IsStrictOrderedRing R]`
+        # that the §7c table itself offers as the alternative to ℝ ("Ordering
+        # `0 < q` -> ℝ (or `[LinearOrderedField R]`)"). So a fully compliant
+        # generic file that merely ran `positivity` was reported MIXED with no ℝ
+        # in it -- and the fix suggested, "split into two files per §7c", is the
+        # wrong edit to make on such a file.
+        #
+        # They are demoted to ORDERED, which counts only alongside RTYPE, exactly
+        # as WEAK already does. Safety argument: a genuine §7c violation is a
+        # GRATUITOUS ℝ, which by definition needs ℝ present (hasR=1), and when
+        # hasR=1 an ORDERED hit still counts -- so the demotion cannot hide one.
+        # Measured over the 2293 library files: MIXED 123 -> 79, clearing 44, and
+        # every one of the 44 has hasR=0.
+        #
+        # Orthogonal to both earlier fixes, and neither subsumes it: qou-mr3q's
+        # split cleared files whose only signal was a bare relational operator
+        # (hasS=0 there), and qou-akb4's pair detection clears files that DO carry
+        # ℝ. This class has hasS=1 and hasR=0, which neither reaches.
+        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|CODATA|MeV)'
+        ORDERED='(\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered)'
         WEAK='(0\s*<|<\s*1|≤|≥)'
         printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
         printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
+        printf '%s\n' "$body" | grep -qE "$ORDERED" && hasO=1 || hasO=0
         printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
         printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
         # A weak operator justifies ℝ only when ℝ is there to justify.
-        if [ "$hasS" = 1 ] || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
+        if [ "$hasS" = 1 ] || { [ "$hasO" = 1 ] && [ "$hasR" = 1 ]; } \
+           || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
         # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
         # declaration `foo` sitting beside its archimedean specialisation
         # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the
@@ -259,6 +284,55 @@ for f in "${files[@]}"; do
       echo "▸ $f  [witness]"
       echo "    → check scriptHash drift (NOT scriptCommitSha — rebase-merge rewrites it; bean qou-wsha)"
       echo "      LP/SDP duals via lp_dual_witness_validator.py"
+      ;;
+    # The c_k/d_k registry is a TWINNED pair — an authoritative `.md` and a
+    # machine-readable `.json` that its own meta says "MUST agree". Touching
+    # either one is what makes them disagree, so the twin check runs on a
+    # change to either.
+    #
+    # Wiring it here is the point, not a nicety. `ck_dk_registry_validate.py`
+    # existed for months and was named in exactly one place — a prose link in
+    # the very document it validates — so nothing ever ran it. The measured
+    # cost: the `dc_3/dq ≈ 4.6e6 → 3.84e6` correction landed in the `.md` on
+    # 2026-08-25 and the JSON still said 4.6e6 four days later, and the swing
+    # figure drifted the OTHER way in the same table cell. Compare AGENTS.md
+    # §"A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS".
+    # TWO registries are twinned against ck-dk-canonical-registry.md, and they
+    # check DIFFERENT sections of it, so a change to the .md runs both:
+    #
+    #   ck_dk_registry_validate.py --twin   §3/§4/§6 vs ck-dk-registry.json
+    #   kernel_constraints_registry_validate.py  §9 (KC rows) vs
+    #                                       kernel-constraints-registry.json
+    #
+    # Neither was wired anywhere. The kernel one already had a twin-drift
+    # check (R6, always-on, bean qou-ungx) and it was still reachable only by
+    # someone typing its path — the same "gate nobody runs" half of the defect
+    # that let the ck-dk twin sit stale for four days. Both are ~30 ms, so
+    # there is no cost argument for leaving them out.
+    #
+    # NOT passing --lint-docs to the kernel validator: that mode rglobs every
+    # docs/**/*.md and is a corpus-wide sweep, not a preflight for the file in
+    # front of you. R6 twin-drift runs either way.
+    docs/coordination/ck-dk-registry.json|docs/coordination/ck-dk-canonical-registry.md|docs/coordination/kernel-constraints-registry.json)
+      echo "▸ $f  [twinned registry — .md + .json]"
+      case "$f" in
+        *ck-dk-registry.json) vals="ck_dk" ;;
+        *kernel-constraints-registry.json) vals="kernel" ;;
+        *) vals="ck_dk kernel" ;;   # the shared .md — both read it
+      esac
+      for v in $vals; do
+        case "$v" in
+          ck_dk)  cmd=("$ROOT/docs/coordination/ck_dk_registry_validate.py" --twin) ;;
+          kernel) cmd=("$ROOT/docs/coordination/kernel_constraints_registry_validate.py") ;;
+        esac
+        if out=$(python3 "${cmd[@]}" 2>&1); then
+          printf '%s\n' "$out" | sed 's/^/    /'
+        else
+          printf '%s\n' "$out" | sed 's/^/    /'
+          echo "    ⚠ twin divergence — fix the file that is stale, not the checker"
+          action=1
+        fi
+      done
       ;;
     *) : ;;  # no known sidecar axis
   esac

@@ -107,7 +107,7 @@ def q0_for(anchor: str) -> str:
         # together) and this (4.6e-8, one leg only) is the straddle signature.
         # Do not read a small pin delta as evidence a straddle is excluded.
         from q_parameter import Q_50_DIGIT_STR as _resolved
-        if not str(_resolved).startswith("1.10997859555"):
+        if not str(_resolved).startswith("1.10997859564"):
             raise SystemExit(
                 "--anchor ideal, but q_parameter resolved to the PROTON pin "
                 f"({str(_resolved)[:24]}…). This producer's ideal leg needs "
