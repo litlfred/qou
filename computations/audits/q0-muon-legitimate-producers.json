@@ -93,7 +93,7 @@
       ]
     },
     "dual_layer": {
-      "rule": "Anchor-parameterised: emits one artifact per layer. Needs BOTH pins; the manifest cannot express that, so it is served per-process.",
+      "rule": "Anchor-parameterised: emits one artifact per layer. Needs BOTH pins; the manifest cannot express that, so it is served per-process. DETECTION (added 2026-08-29): a producer emitting two witnesses whose `q0Anchor` values DIFFER is dual-layer by construction. That test found 4 where the originating regex -- which keys on assertions, raises and prose -- had found 2, because a producer that simply writes both layers makes no assertion and raises nothing.",
       "members": [
         {
           "producer": "atomic_tr_m_mpfr_50dps",
@@ -109,6 +109,34 @@
             "text": "raise SystemExit(f\"unknown anchor {anchor!r}: expected 'proton' or 'ideal'\")"
           },
           "note": "Takes --anchor proton|ideal and refuses anything else."
+        },
+        {
+          "producer": "canonical_tr_m_via_chi_cache",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/canonical_tr_m_via_chi_cache.py",
+            "line": 300,
+            "text": "the muon run writes a suffixed file; the anchor is DERIVED from the q0 actually in force, not read from the filename"
+          },
+          "witnesses": [
+            "computations/canonical-tr-m-via-chi-cache.witness.json (proton)",
+            "computations/canonical-tr-m-via-chi-cache-muon.witness.json (muon)"
+          ],
+          "note": "Base name is PROTON. `cross_check_trM_1ppb` is declared ideal_muon and reads this cache, so one file cannot serve both. Added 2026-08-29 (qou-cds3): found by a dual-layer detector -- a producer emitting two witnesses whose q0Anchor values differ -- not by the regex that built this ledger."
+        },
+        {
+          "producer": "markov_peel_atomic_witness",
+          "manifest": "physical_proton",
+          "evidence": {
+            "file": "computations/markov/markov_peel_atomic_witness.py",
+            "line": 113,
+            "text": "Base name = PROTON here, and the muon layer takes the `-muon` suffix"
+          },
+          "witnesses": [
+            "computations/markov/markov-peel-atomic-tr-m.witness.json (proton)",
+            "computations/markov/markov-peel-atomic-tr-m-muon.witness.json (muon)"
+          ],
+          "note": "Inverts the sibling convention (elsewhere the base name is the muon layer) and says so. The inversion was deliberate: SIX consumers of the base name are not anchor-aware, so making the base muon would hand them muon values -- the same straddle class this is meant to close. Added 2026-08-29 (qou-cds3)."
         }
       ]
     },
