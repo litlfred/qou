@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T07:38:47Z
+updated_at: 2026-08-29T07:47:31Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -345,3 +345,59 @@ than produced. `git log --follow --diff-filter=A` returns 2026-08-26 — but the
 clone is **shallow (336 commits)**, so that is the fetch boundary, not the
 creation date. Exactly the hazard AGENTS.md records for `scriptCommitSha`.
 Deepening the clone is the next step.
+
+
+## 2026-08-29 (cont. 7) — the EXACT parabola: the exclusion is a THEOREM in q
+
+Owner asked whether the difference is due to the SDP/ILP being integer, and
+whether the exact parabola vertex is obtainable. **Yes to the vertex; no to
+integrality being the cause.**
+
+### The exact objects
+
+`hecke_core`'s (n−p) coordinates, exactly in ℚ(q):
+
+    gamma   = (1 - q^2)/(2q)                = -h/2
+    sigma0  = sigma1 = -(q^2-1)^2/(4q^2)    = -h^2/4
+    L_plus  = -(q^2-1)(q^4+1)/(4q^3)
+    L_minus = 0          <-- vanishes identically
+    e_minus = 0          <-- vanishes identically
+
+    A = -(q-1)(q+1)(q^4+1)/(4q^3)
+    B = -(q-1)^2(q+1)^2/(2q^2)
+    C = -(q-1)(q+1)/(2q)
+
+    z*  = -q(q-1)(q+1)/(q^4+1)
+    max = -(q-1)(q+1)(q^2+1)^2 / (4q(q^4+1))
+
+Numerics check out: z* = −0.10229469281 and max = −0.103412421104, matching
+the measured values exactly.
+
+### The exclusion upgrades from a measurement to a theorem
+
+`max`'s numerator factors as **−(q−1)(q+1)(q²+1)²**, strictly negative for
+**every q > 1**. So
+
+> `hecke_core`'s Δtr_M(n−p) < 0 for ALL real z AND ALL q > 1,
+> while the γγ anchor is POSITIVE (+0.0445860283).
+
+Not "disagrees at q₀ under convention D" — **impossible across the entire
+substrate range and every Markov parameter.** All three coefficients are
+−(positive) for q > 1, so the quadratic is negative-definite.
+
+### Answering the ILP question directly: integrality is NOT the cause
+
+The corpus's *"integer LP dual enumerates all feasible gluon combinations and
+selects the configuration minimizing |tr_M|"* selects among **gluon
+configurations**, not among z. And the vertex z* = −q(q²−1)/(q⁴+1) is
+**negative** — nowhere near any admissible Markov parameter (z_C 0.499,
+z_D 0.613, q 1.110), so the ILP's minimisation is not happening there either.
+
+The actual cause is structural and visible in the coordinates: **L₋ and e⁻
+vanish identically**. With them gone the `z(hz+1)` term disappears entirely and
+the z² term is L₊ alone, leaving every surviving coefficient negative. It is
+the vanishing of two NF coordinates — the Hopf-link and trefoil channels — that
+makes the whole quadratic sign-definite.
+
+Which is the same fact as the NF-vector comparison, now in closed form: the
+gluon and trefoil channels are simply not in the object `hecke_core` traces.

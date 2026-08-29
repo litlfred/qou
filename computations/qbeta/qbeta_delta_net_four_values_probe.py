@@ -598,6 +598,50 @@ def main() -> int:
           f"So the 10-digit anchor is reachable by the construction and "
           f"unreachable by hecke_core", w)
 
+    # ---- the EXACT parabola: the exclusion is a THEOREM in q -------------
+    print("\n  the exact parabola (owner asked for the exact vertex)")
+    dvx = [sp.simplify(sp.factor(
+        hecke_word(_NEUTRON_G0, _NEUTRON_G1)[i]
+        - hecke_word(_PROTON_G0, _PROTON_G1)[i])) for i in range(N)]
+    print("    hecke_core (n-p) EXACT coordinates:")
+    for i, nm in enumerate(BASIS_NAMES):
+        print(f"      {nm:<9} {dvx[i]}")
+    Ax = sp.factor(sp.simplify(dvx[3] + dvx[4] + dvx[5] * h))
+    Bx = sp.factor(sp.simplify(dvx[1] + dvx[2] + dvx[5]))
+    Cx = sp.factor(sp.simplify(dvx[0]))
+    zst = sp.factor(sp.simplify(-Bx / (2 * Ax)))
+    vst = sp.factor(sp.simplify(Cx - Bx**2 / (4 * Ax)))
+    print(f"\n    A  = {Ax}")
+    print(f"    B  = {Bx}")
+    print(f"    C  = {Cx}")
+    print(f"    z* = {zst}")
+    print(f"    max= {vst}")
+    w.add_data("hecke_parabola_A", str(Ax))
+    w.add_data("hecke_parabola_vertex_z", str(zst))
+    w.add_data("hecke_parabola_max", str(vst))
+
+    # the max numerator factors as -(q-1)(q+1)(q^2+1)^2, negative for all q>1
+    numer = sp.simplify(sp.numer(sp.together(vst)))
+    factored_ok = sp.simplify(numer + (q - 1) * (q + 1) * (q**2 + 1)**2) == 0
+    check("the_exclusion_is_a_THEOREM_in_q_not_a_number_at_q0",
+          factored_ok,
+          f"max = {vst}, whose numerator factors as "
+          f"-(q-1)(q+1)(q^2+1)^2 -- strictly NEGATIVE for every q > 1. So "
+          f"hecke_core's Delta tr_M(n-p) < 0 for ALL real z AND ALL q > 1, "
+          f"while the gamma-gamma anchor is POSITIVE. The exclusion holds "
+          f"for the whole substrate range, not just at q_0", w)
+
+    check("the_cause_is_the_VANISHING_L_minus_and_e_minus_not_integrality",
+          sp.simplify(dvx[4]) == 0 and sp.simplify(dvx[5]) == 0,
+          "L_minus and e_minus vanish IDENTICALLY in hecke_core's (n-p). "
+          "With them gone the z(hz+1) term disappears and the z^2 term is "
+          "L_plus alone; every surviving coefficient is -(positive) for "
+          "q > 1, so the quadratic is negative-definite. The corpus's "
+          "'integer LP dual' selects among gluon CONFIGURATIONS, not among "
+          "z -- and the vertex z* = -q(q^2-1)/(q^4+1) is negative, nowhere "
+          "near any admissible parameter (z_C 0.499, z_D 0.613, q 1.110). "
+          "So integrality is NOT the cause; the vanishing coordinates are", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -606,12 +650,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 17 - len(_FAILURES)
-    print(f"\n  {npass}/17 checks passed")
+    npass = 19 - len(_FAILURES)
+    print(f"\n  {npass}/19 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 17)
+    w.add_data("checks_total", 19)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
