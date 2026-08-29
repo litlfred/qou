@@ -175,10 +175,24 @@ def main() -> int:
         if r["crit"] == M1_CRIT:
             c["m1"].append(r["result"] in PASS)
         if r["crit"].startswith("proof-rater-") and isinstance(r["score"], (int, float)):
-            # Fraction(...) on a float is exact -- it takes the float's true
-            # binary value, it does not re-round. No precision is invented and
-            # none is lost; what the sidecar holds is what is carried.
-            c["m2"].append(Fraction(r["score"]))
+            # Build the Fraction from the score's DECIMAL spelling, not from
+            # the float. Fraction(0.85) is exactly 0.84999999999999997779...,
+            # the true binary64 value -- so the old comment here was right
+            # that nothing is invented at THIS step, and wrong about the
+            # consequence: _mean_exact then serialises that tail to 60 digits
+            # and the witness claims 56 digits of precision for a number a
+            # rater typed as "0.85". That is the float64-padding gate's
+            # definition of fake precision, and it fired on
+            # data.cohort_table[1].M2_mean_score.
+            #
+            # str() on a float is the shortest repr that round-trips, i.e.
+            # the decimal the sidecar author actually wrote, so
+            # Fraction(str(0.85)) is Fraction(17, 20) and the mean of the
+            # cohort serialises as a short exact decimal. An int score is
+            # already exact; keep it as one.
+            score = r["score"]
+            c["m2"].append(Fraction(score) if isinstance(score, int)
+                           else Fraction(str(score)))
         if r["to_green"] is not None:
             c["m4"].append(r["to_green"])
         if r["crit"] in M5_CRITS:
