@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-29T21:48:00Z
+updated_at: 2026-08-29T21:53:09Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to
@@ -87,3 +87,40 @@ claims; `main()`'s summary lines corrected. Runs end to end, exit 0.
 Whether the *conclusion* "the ≤3-row SU_q(3) restriction is invalid at the
 1-ppQ floor" is true on other grounds. This file no longer supports it, and I
 have not looked for another support. That is the honest residue.
+
+
+## Second instance from the same blind-spot list: threerow_sign_crossing_decomp.py
+
+`computations/deltalambda/threerow_sign_crossing_decomp.py` asked *"which ≥3-row
+partitions drive the deuteron sign crossing of
+`F_D(q) = Σ_{λ⊢6,ℓ≥3} y_λ·χ^λ·Δ_λ`"* and sorted its rows by `|term|` to name the
+dominant block. Under D that sum is identically zero, so the question has no
+answer and the ranking was ordering round-off.
+
+Measured 2026-08-29 at 70 dps, deuteron:
+
+    lambda                Delta_l   term(q_lo)      term(q0)
+    (3, 2, 1)                  16          0.0    2.16210e-71
+    (4, 1, 1)                 -10          0.0   -5.14025e-72
+    (3, 1, 1, 1)               10          0.0   -1.02723e-72
+    ... all seven between 1e-71 and 1e-75, q_lo column exactly 0.0
+    noise floor = 1.15324e-63   terms above it: 0 of 7
+
+`(3,2,1)` printed at the top of the old ranking and reads as a structural
+finding. It is cancellation residue.
+
+**The parent was already repaired; this file was not, and the reason is the
+blind spot.** `threerow_sign_crossing_probe.py` emits a witness whose committed
+2026-08-25 run carries the PASSING assertion
+`three_row_object_is_structural_zero`. So the parent knows. The companion emits
+no witness, so layers 2 and 3 could not reach it and the repair stopped at the
+file they could see. Same `mu3_door_budget` failure mode (PR #4673), one file
+over.
+
+**Repaired**, not deleted: noise floor scaled to `max|y_λ|` over ALL λ (scaling
+to the ℓ≥3 entries would measure the residue against itself), fixed partition
+ordering so no "dominant block" can be read off, per-λ values kept as evidence
+OF the cancellation, and a non-zero exit if anything ever clears the floor —
+that would mean the structural zero had stopped holding, which should not be
+silent. Negative control: spiking one ℓ≥3 weight to 0.01 marks it `ABOVE`, names
+`(4,1,1)`, and returns 1.
