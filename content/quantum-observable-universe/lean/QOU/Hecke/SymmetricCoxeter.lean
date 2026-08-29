@@ -309,4 +309,114 @@ theorem gen_braid {j : ℕ} (hj : j + 1 < N) :
   exact hpow
 
 
+/-! ### Descending runs and the four coset-closure cases
+
+The order bound is `|W(Aₙ N)| ≤ (N+1)·|W(Aₙ (N-1))|`, obtained by showing that
+the union of the `N+1` cosets `H · t_k` — where `H` is the parabolic `incl`
+image and `t_k = σ_{N-1} ⋯ σ_k` — is closed under right multiplication by every
+generator, hence is all of `W`.
+
+Closure splits into exactly four cases by the position of `i` relative to `k`,
+**all four of which are proved below**:
+
+| case | lemma | mechanism |
+|---|---|---|
+| `i = k` | `t_mul_gen_self` | `σ_k² = 1` |
+| `i = k-1` | `t_mul_gen_pred` | the run extends: it *is* `t_{k-1}` |
+| `i + 1 < k` | `t_comm` | distant generators commute past every factor |
+| `k < i` | `t_push` | `t_k σ_i = σ_{i-1} t_k`, by induction on `i - k` with a braid base |
+
+`t_push` is the only one with real content: the base case `i = k+1` peels the
+run twice and combines the braid relation with `t_comm`, and the step case
+commutes `σ_k` past `σ_i` and applies the inductive hypothesis one rung up. -/
+
+/-- The descending run `t N k = σ_{N-1} σ_{N-2} ⋯ σ_k`, empty (`= 1`) when `k ≥ N`. -/
+noncomputable def t (N k : ℕ) : (Aₙ N).Group :=
+  (((List.range' k (N - k)).reverse).map (gen N)).prod
+
+@[simp] theorem t_self (N : ℕ) : t N N = 1 := by
+  simp [t]
+
+theorem t_of_ge {N k : ℕ} (h : N ≤ k) : t N k = 1 := by
+  simp [t, Nat.sub_eq_zero_of_le h]
+
+/-- The bottom recursion: peel off the last (smallest-index) generator. -/
+theorem t_succ {N k : ℕ} (hk : k < N) : t N k = t N (k + 1) * gen N k := by
+  unfold t
+  have hlen : N - k = (N - (k + 1)) + 1 := by omega
+  rw [hlen]
+  have hcons : List.range' k (N - (k + 1) + 1) = k :: List.range' (k + 1) (N - (k + 1)) := rfl
+  rw [hcons, List.reverse_cons, List.map_append, List.prod_append]
+  simp
+
+
+/-- Case `i = k`: the run absorbs its own bottom generator. -/
+theorem t_mul_gen_self {N k : ℕ} (hk : k < N) : t N k * gen N k = t N (k + 1) := by
+  rw [t_succ hk, mul_assoc, gen_mul_self, mul_one]
+
+/-- Case `i = k - 1`: the run extends downward. -/
+theorem t_mul_gen_pred {N k : ℕ} (hk : 0 < k) (hkN : k ≤ N) :
+    t N k * gen N (k - 1) = t N (k - 1) := by
+  have h : k - 1 < N := by omega
+  have e := t_succ h
+  rw [Nat.sub_add_cancel hk] at e
+  exact e.symm
+
+/-- A generator distant from every factor of a product commutes past it. -/
+theorem gen_comm_prod {N i : ℕ} (L : List ℕ) (h : ∀ j ∈ L, i + 1 < j) :
+    (L.map (gen N)).prod * gen N i = gen N i * (L.map (gen N)).prod := by
+  induction L with
+  | nil => simp
+  | cons a L ih =>
+      simp only [List.map_cons, List.prod_cons, mul_assoc]
+      rw [ih (fun j hj => h j (List.mem_cons_of_mem _ hj))]
+      rw [← mul_assoc, ← mul_assoc, ← gen_comm N (h a (List.mem_cons_self ..))]
+
+/-- Case `i + 1 < k`: distant generators commute past the whole run. -/
+theorem t_comm {N i k : ℕ} (h : i + 1 < k) : t N k * gen N i = gen N i * t N k := by
+  refine gen_comm_prod _ (fun j hj => ?_)
+  rw [List.mem_reverse, List.mem_range'_1] at hj
+  omega
+
+
+/-- Case `k < i`: the run pushes a generator down by one.
+    `t_k σ_i = σ_{i-1} t_k`. -/
+theorem t_push {N : ℕ} (d : ℕ) : ∀ (k i : ℕ), i = k + 1 + d → i < N →
+    t N k * gen N i = gen N (i - 1) * t N k := by
+  induction d with
+  | zero =>
+      intro k i hi hiN
+      subst hi
+      have hk : k < N := by omega
+      have hk1 : k + 1 < N := by omega
+      simp only [Nat.add_zero, Nat.add_sub_cancel]
+      rw [t_succ hk, t_succ hk1]
+      have hbr := gen_braid N (show k + 1 < N by omega)
+      have hcm := t_comm (N := N) (i := k) (k := k + 1 + 1) (by omega)
+      calc t N (k + 1 + 1) * gen N (k + 1) * gen N k * gen N (k + 1)
+          = t N (k + 1 + 1) * (gen N (k + 1) * gen N k * gen N (k + 1)) := by
+            simp only [mul_assoc]
+        _ = t N (k + 1 + 1) * (gen N k * gen N (k + 1) * gen N k) := by rw [hbr]
+        _ = (t N (k + 1 + 1) * gen N k) * gen N (k + 1) * gen N k := by
+            simp only [mul_assoc]
+        _ = (gen N k * t N (k + 1 + 1)) * gen N (k + 1) * gen N k := by rw [hcm]
+        _ = gen N k * (t N (k + 1 + 1) * gen N (k + 1) * gen N k) := by
+            simp only [mul_assoc]
+  | succ d ih =>
+      intro k i hi hiN
+      subst hi
+      have hk : k < N := by omega
+      rw [t_succ hk]
+      have hcomm := gen_comm N (show k + 1 < k + 1 + (d + 1) by omega)
+      have hIH := ih (k + 1) (k + 1 + 1 + d) rfl (by omega)
+      calc t N (k + 1) * gen N k * gen N (k + 1 + (d + 1))
+          = t N (k + 1) * (gen N k * gen N (k + 1 + (d + 1))) := by simp only [mul_assoc]
+        _ = t N (k + 1) * (gen N (k + 1 + (d + 1)) * gen N k) := by rw [hcomm]
+        _ = (t N (k + 1) * gen N (k + 1 + 1 + d)) * gen N k := by
+            simp only [mul_assoc]; ring_nf
+        _ = (gen N (k + 1 + 1 + d - 1) * t N (k + 1)) * gen N k := by rw [hIH]
+        _ = gen N (k + 1 + (d + 1) - 1) * (t N (k + 1) * gen N k) := by
+            simp only [mul_assoc]; ring_nf
+
+
 end QOU.Hecke.SymmetricCoxeter
