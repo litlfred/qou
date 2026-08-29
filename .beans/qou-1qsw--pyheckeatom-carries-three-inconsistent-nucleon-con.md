@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:21:39Z
+updated_at: 2026-08-29T18:32:30Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -169,3 +169,93 @@ dressing by design. That needs the owner. When it is settled, the mp builder is
 the precision-correct base to re-point onto — and the same warning applies to
 whatever is done for the two 11-crossing models: build them on `hm_mp`, not on
 `hm_exact`.
+
+
+## 2026-08-29 — RESOLVED on the owner's criterion (gamma-gamma + SDP), and the split is worse than filed
+
+Owner: *"what are the three? it should follow \g\g and SDP. investigate and
+resolve"* — and, separately, *"why would we omit gluon by design? i did not
+design that"*.
+
+### RETRACTION: "omits gluon dressing by design" was never a design decision
+
+Every prior entry on this bean, and two PR bodies, said the 9-crossing model
+omits the gluon term **by design**. That phrasing is mine. Its only source is
+`build_nucleon_nf`'s own docstring — *"No separate gluon dressing — B_3 IS the
+gluon structure"* — an unsourced assertion that cites no proposition, no ILP
+and no SDP. AGENTS.md is explicit that a source file's own status note is not
+authoritative, and I treated one as a ruling and propagated it. Withdrawn.
+
+### The three, precisely
+
+| # | builder | word | crossings |
+|---|---|---|---|
+| 1 | `build_nucleon_nf` -> `PROTON_NF`/`NEUTRON_NF` | B_3(6) + quarks(3) | **9** |
+| 2 | `build_atom_nf` / `build_atom_nf_exact` | B_3(6) + quarks(3) + gluon 2.sigma_0(2), **in braid order** | **11** |
+| 3 | `nucleon_gen_chains` + `binding_canonical._nucleon_word` | the same 11, **re-sorted to all-gen-0 then all-gen-1** | **11** |
+
+### Resolution part 1 — the gluon term is derived, so 9 is excluded
+
+`computations/sdp_gamma_gamma_to_qqbar.py` decomposes the proton into FOUR SDP
+components:
+
+    H_3 SDP for the inner Borromean braid B_3
+    H_3 SDP for each quark pair (uu, ud, dd)
+    H_2 SDP for the 2.sigma_0 gluon self-coupling      <-- separate component
+    LR cross-level embedding to combine into H_3
+
+6 + 3 + 2 = **11**. The gluon self-coupling is its own SDP, not something B_3
+already contains, and `prop:mass-endomorphism-tower` carries its ILP
+derivation (cited at the gluon lines of `build_atom_nf`). So the 9-crossing
+model drops a derived component. **Excluded.** Docstring corrected in place.
+
+### Resolution part 2 — the re-sorting is NOT trace-preserving, and it is 82 %
+
+Measured at 50 dps on the REAL module constants (`_PROTON_G0`/`_G1`), not a
+hand transcription. The two 11-crossing forms carry an **identical multiset**
+of (template, generator):
+
+    Counter({('sigma',0): 6, ('inv',1): 3, ('avg',0): 1, ('avg',1): 1})
+
+for both. They differ only in ORDER. Yet:
+
+    tr_M braid-order  = 0.62932840220292191817
+    tr_M gen-grouped  = 1.1457596924573008697
+    relative diff     = 0.820607        <-- 82 %, not the 2.66 % filed above
+
+**The 2.66 % in the entry above is on `net`, not on `tr_M`.** `net` is a sum of
+NF coordinates; `tr_M` is what `binding_canonical` actually feeds into
+`closed_form_tau_M`. On the quantity that reaches the physics the disagreement
+is 82 %.
+
+sigma_0 and sigma_1 do not commute in H_3(q), so re-sorting a braid word is not
+a re-parameterisation — it is a different element. Nothing in the SDP framework
+licenses it: it says the components are solved separately and then **LR
+cross-level embedded**, which is not "concatenate all gen-0 crossings then all
+gen-1".
+
+### Where the fault actually lies — NOT in `nucleon_gen_chains`
+
+`nucleon_gen_chains` is legitimate **as a per-generator decomposition**. Its
+intended consumer is `_chain_V_full` / `atom_per_generator_volumes`, which
+multiplies within ONE generator and ADDS the two — it never forms `g0 . g1`.
+Used that way there is no defect.
+
+The defect is `binding_canonical._nucleon_word(g0, g1)`, which concatenates
+them into a word and hands it to `tr_M_via_wenzl_bridge_mpfr` as tau_p / tau_n.
+That is the one step that is unlicensed, and it is on the canonical binding
+path.
+
+### Verdict
+
+**Canonical = #2, the 11-crossing braid-order word.** #1 drops a derived SDP
+component; #3 is #2's crossings in an order no relation justifies, differing by
+82 % on the trace.
+
+### NOT executed — this needs sequencing, not a unilateral sweep
+
+Correcting `_nucleon_word` moves canonical binding numbers by ~82 % on tau_p /
+tau_n. That is not a change to make in the same turn as the finding. What is
+done here: the false docstring is corrected (no number moves), and the finding
+is recorded with its evidence. The remediation — and which of the 53 readers
+are on the volume path (fine) versus the word path (not) — is the next piece.

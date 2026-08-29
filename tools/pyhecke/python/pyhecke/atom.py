@@ -782,7 +782,24 @@ def build_nucleon_nf(quarks):
     Generator assignment: pair (i,j) uses gen = i (the lower quark index).
     For 3 quarks: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1.
 
-    No separate gluon dressing — B₃ IS the gluon structure.
+    ⚠️  NO GLUON TERM — and this is a DEFECT, not a convention.
+
+    This builder stops at B₃ + quarks = 9 crossings. The line that used to
+    stand here, "No separate gluon dressing — B₃ IS the gluon structure",
+    asserted that omission was deliberate. Nothing backs it: it cites no
+    proposition, no ILP, no SDP, and it contradicts the framework it sits in.
+    `computations/sdp_gamma_gamma_to_qqbar.py` decomposes the proton into FOUR
+    SDP components — H₃ for the Borromean B₃, H₃ per quark pair, **H₂ for the
+    2·σ₀ gluon self-coupling**, then LR cross-level embedding — so the gluon
+    term is a separate derived component, not something B₃ already contains.
+    `prop:mass-endomorphism-tower` carries the ILP derivation, cited at the
+    gluon lines of `build_atom_nf`.
+
+    6 (B₃) + 3 (quarks) + 2 (gluon) = 11 is the SDP-consistent budget. Use
+    `build_atom_nf` / `build_atom_nf_exact`, which build it in braid order.
+
+    Kept for the consumers that already read `PROTON_NF` / `NEUTRON_NF`;
+    do not build anything new on it. Bean qou-1qsw.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³
