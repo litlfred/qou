@@ -324,3 +324,52 @@ Three things earned their keep and one did not:
    muon layer through `QOU_Q0_ANCHOR=ideal` with a `-muon` suffix rather than
    through `ideal_muon`, so a manifest-only split misfiled them. The right test
    is *what anchor does a re-run actually resolve to*.
+
+## Result — `scripts/precision-gates.sh`, before → after
+
+| gate | before | after | |
+|---|---|---|---|
+| **q0-anchor flip** | 83 `Q0_FLIP` | **47** | 36 cleared |
+| **q0-value drift** | 383 stale / 165 NEW | **318 stale / 101 NEW** | 65 stale, 64 NEW cleared |
+| **raw-float64 ratchet** | *green* | **red on 1 field** | net **−29** fields, 0 new dirty files |
+
+**All three are still RED, and no baseline was widened to make any of them
+otherwise.** No `--rebaseline`, no file added to a baseline JSON, no
+hand-edited digit.
+
+### Why each is still red
+
+- **q0-anchor flip, 47.** These are Group P — a re-run sends them to
+  **proton**, not to C. That is `qou-1c4y`, a different migration. The number
+  is the honest cost of not doing someone else's migration inside this PR.
+- **q0-value drift, 318 / 101 NEW.** Same population, seen from the value side.
+  Note the "NEW" count fell 165 → 101 while `stale total` fell 383 → 318, i.e.
+  the drain removed 64 of the sites that made this gate newly red.
+- **raw-float64 ratchet, 1 field.** `c-k-beta-decay-bound` 16 → 17. Measured,
+  not inferred: the producer's `scriptHash` is unchanged, the raw float count
+  is **identical (20 both sides)**, and the single field that moved is
+  `.assertions[0].computed`, `0.0 → 9.961246986709384e-71`. It was exactly
+  zero — which the audit excludes as an integral-valued float, exact in
+  binary64 — and is now a small non-zero residual, so it **left the carve-out
+  and started being counted**. Nothing new entered the witness.
+
+  The correct producer fix is real but out of scope for a drain: that producer
+  emits **20** raw float64 fields and its own run warns about all of them
+  ("carry `mpmath.mpf` … serialize with `_precision.fmt`"). Doing it properly
+  is an mpf refactor changing the representation of 20 committed values.
+  Forcing this one field back to `0.0` would suppress a true residual to
+  satisfy a counter, which is the thing the ratchet exists to prevent.
+
+  Net on this gate the drain **removed 29 float64 fields** and added none —
+  including `qbeta-hoefsmit-tbeta-matrix-build-probe` going `1 → 0`, and one
+  real bare-float literal fixed at `wlambda_q0_continuation` (`"tolerance":
+  1e-2` → `"0.01"`).
+
+### Environment — an upgrade, not the degradation the scope predicted
+
+The scope warned that committing from this container would weaken the
+provenance stamp (mpmath 1.3.0, no clarabel). `pip install mpmath==1.4.1
+clarabel` succeeded, so nothing degraded. Better: several of these witnesses on
+`main` recorded **mpmath 1.3.0** themselves, so the drain moved them **up** to
+1.4.1 + clarabel 0.11.1. `main` is mixed on this field. `sympy` 1.14.0 pins
+`mpmath<1.4` and pip warns, but sympy was exercised and works.
