@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T15:06:30.027348+00:00",
-  "commitSha": "89e0a7c72a7116eb48941b47afc32631cdc2d12d",
+  "computedAt": "2026-08-29T15:53:00.010107+00:00",
+  "commitSha": "287d2d619d24fa126d57fb03cfc7bf53a65882d5",
   "assertions": [
     {
       "name": "bean_quoted_patterns_reproduced_over_all_partitions",
@@ -39,7 +39,7 @@
   "durationMs": 0,
   "computation": "delta-lambda-sign-vs-su4-isospin",
   "scriptFile": "delta_lambda_sign_vs_su4_isospin_probe.py",
-  "scriptHash": "3b1eaed5a6b9",
+  "scriptHash": "702d5da8417d",
   "scriptCommitSha": "89e0a7c72a7116eb48941b47afc32631cdc2d12d",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -425,8 +425,17 @@
       "caveats": [
         "T, not T3: the two-row label is the SU(2) Casimir; T3 is a weight varying WITHIN a multiplet and still cannot be a per-block quantity.",
         "The phase is n-dependent: (-1)^((n-2T)/2) is not a single grading in T.",
-        "Which SU(2)? Whether the two-row label is isospin or spin in the framework is NOT established here, and the bean's claim is about isospin. This is why this is not reported as a closure."
-      ]
+        "WHICH SU(2) -- RESOLVED 2026-08-29, NEGATIVELY. See which_su2_resolution below: the two-row label is the SU_q(2) / Temperley-Lieb spin of the braid substrate, not nucleon isospin."
+      ],
+      "which_su2_resolution": {
+        "verdict": "The two-row label is the SU_q(2) (Temperley-Lieb) spin of the braid substrate, NOT nucleon isospin. So the closed form, which is exact and stands, is a statement about the wrong SU(2) for bean qou-buxs.",
+        "evidence": [
+          "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md: 'the fibre V is the two-dimensional fundamental of SU_q(2), so no partition with three or more rows survives Schur-Weyl'.",
+          "Corpus grep for any identification of the SU_q(2) fundamental with isospin, over content/ and docs/: ZERO hits.",
+          "content/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.md: the p/n split comes from a CROSSING REVERSAL (Hopf antipode S(T_w)=T_{w^-1}), with sigma_1^3 - sigma_1^-3 = q^3 - q^-3 exactly. Flavour is a property of the braid WORD, not an index on the fibre."
+        ],
+        "scope": "Corpus-status finding, not a proof that no bridge could exist. The identification is UNSUPPORTED as the corpus stands, and the framework's own flavour mechanism is a different structure. A future bridge would have to be stated explicitly; nothing currently implies it."
+      }
     },
     "su4_frame_negative": "see per_n below; wrong frame, retained as the record",
     "per_n": {
@@ -1070,7 +1079,7 @@
     "blocks_with_no_su4_supermultiplet_total": 3,
     "second_arity_problem": "The bean's quoted splits (n=3: 1+/2-, n=6: 6+/5-) count ALL partitions. SU(4) represents only those with at most 4 rows, so at n=6 two blocks -- [2,1,1,1,1] and [1,1,1,1,1,1] -- carry a proved Delta_lambda sign while having NO Wigner supermultiplet at all. For those the identification cannot even be POSED, independently of the f(T) refutation below.",
     "sign_is_isospin_valued_at_any_n": false,
-    "verdict": "SURVIVES on the physical stratum, with an exact closed form. Under convention D's Lean-proved two-row cap the live blocks are lambda=(n-k,k), where n(lambda)=k gives sgn=(-1)^k and the GL(2) Schur-Weyl label is T=(n-2k)/2, so sgn(Delta_lambda) = (-1)^((n-2T)/2) exactly, verified n=2..10. This settles bean qou-ubsl ROAST (ii) in favour of GL(2) over GL(4). IN THE SU(4) FRAME IT FAILS -- the same isospin value occurs in blocks of opposite sign -- but that frame is not the physical one, so the negative excludes nothing; it is retained as the record of a wrong-frame computation. NOT A CLOSURE, for three stated reasons: the result is about T and the bean claims T3 (a weight, still not per-block); the phase is n-dependent rather than a single grading in T; and whether the two-row SU(2) is isospin or spin in this framework is not established here. Separately, the bean's own stated test still cannot run: its input, the derived T3 of bean qou-tdrd, is status `todo` and has never been derived."
+    "verdict": "SURVIVES on the physical stratum, with an exact closed form. Under convention D's Lean-proved two-row cap the live blocks are lambda=(n-k,k), where n(lambda)=k gives sgn=(-1)^k and the GL(2) Schur-Weyl label is T=(n-2k)/2, so sgn(Delta_lambda) = (-1)^((n-2T)/2) exactly, verified n=2..10. This settles bean qou-ubsl ROAST (ii) in favour of GL(2) over GL(4). IN THE SU(4) FRAME IT FAILS -- the same isospin value occurs in blocks of opposite sign -- but that frame is not the physical one, so the negative excludes nothing; it is retained as the record of a wrong-frame computation. NOT A CLOSURE, for three stated reasons: the result is about T and the bean claims T3 (a weight, still not per-block); the phase is n-dependent rather than a single grading in T; and -- RESOLVED 2026-08-29, NEGATIVELY -- the two-row SU(2) is the SU_q(2)/Temperley-Lieb spin of the braid substrate, NOT nucleon isospin, so the exact closed form is about the wrong SU(2) for the bean's purpose (see which_su2_resolution). Separately, the bean's own stated test still cannot run: its input, the derived T3 of bean qou-tdrd, is status `todo` and has never been derived."
   },
   "context": {
     "axis": "Delta_lambda magnitude leg (Track-A blocker) -- qou-buxs, child of qou-20sx",
