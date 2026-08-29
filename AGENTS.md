@@ -13,7 +13,9 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 The repo owner is physically disabled and types with difficulty.
 Adapt ALL responses accordingly:
-- **Short answers.** One-liners when possible.
+- **Short answers.** One-liners when possible — but read this together
+  with **Terse ≠ compressed** below: "short" cuts ceremony, never
+  evidence, implications, or options.
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
@@ -130,6 +132,69 @@ Adapt ALL responses accordingly:
   `AskUserQuestion` calls all session while ending turn after turn with bare
   one-line decision gestures, because every rule it had was addressed to the
   tool rather than to the act.
+
+- **Terse ≠ compressed: "short" governs ceremony, never content (STRICT,
+  2026-08-25).** The *Short answers* rule at the top of this section is about
+  **the author's typing cost**, not about how much of what you measured reaches
+  them. Agents read it as licence to compress a finding into a headline and drop
+  the evidence, the implications and the options — and the author then has to
+  spend keystrokes asking for material the agent was already holding. In a repo
+  whose owner types with difficulty, **that round-trip is the single most
+  expensive failure mode there is.** A one-line answer that triggers three
+  follow-up questions cost four messages; the three-paragraph answer costs one.
+
+  **What "short" legitimately cuts** — cut all of it, always:
+
+  - preamble, restating the request back, narrating what you are about to do;
+  - status theatre, apologies, self-criticism, hedging, "great question";
+  - options you have already decided not to pursue;
+  - re-derivation of facts already established earlier in the session.
+
+  **What it must NEVER cut.** Every substantive report carries the same
+  four-part frame the `AskUserQuestion` rules above demand — because a finding
+  and a question need the same scaffolding to be actionable:
+
+  - **The claim**, stated flatly, with its number. Not "the tolerance moved" —
+    `1.9177226708e-06 → 1.9177218447e-06, rel 4.31e-7`.
+  - **The evidence.** File path and line, the exact command run, the value
+    *before* as well as after, the sample size, and whether the figure was
+    measured this session or carried from a prior one.
+  - **The implications** — what this changes for the corpus, the paper or the
+    next agent, in physics-and-paper terms rather than call-graph terms. Name
+    the consumers by file, and say which of them feeds something a reader sees.
+  - **The options**, each with cost / risk / what it forecloses, plus **a stated
+    recommendation marked as your judgement** rather than as a finding. Include
+    the no-op and say what happens if the author does nothing.
+
+  **Two triggers where terseness is always a defect**, because the compressed
+  form is not merely thin but *misleading*:
+
+  1. **Correcting your own earlier claim.** Say what you asserted, what is
+     actually true, how the new figure was measured, and — the part that gets
+     dropped — **what else that error may have contaminated**: which beans, PR
+     bodies, audit docs or content blocks repeated it. A bare "corrected" is
+     unusable, and this corpus has repeatedly had a wrong figure survive in five
+     other places after being fixed in one.
+  2. **Any negative or absence-of-evidence result.** *"I found no rationale in
+     the source"* and *"there is no rationale"* are different claims and only
+     one of them was measured. Say which, name the surface you searched, and say
+     what observation would separate them. Absence of a comment is not evidence
+     of absence of a reason — and a *measurement* you already have outranks the
+     silence of a source file.
+
+  **This applies to chat, commit messages, PR bodies and bean updates alike.**
+  The chat is ephemeral; the commit and the PR are what a reviewer and the next
+  agent read cold. A commit message that says "migrate X" over a change whose
+  whole point is that the previous recommendation was backwards is the same
+  defect as the terse chat answer, with a longer half-life.
+
+  History: added 2026-08-25 on owner instruction — *"you are as USUAL too terse
+  (PLEASE update Agents.md linked directives)"* — after an agent reported that
+  `aoperator_a5_crosscheck` (a probe cross-checking the A-operator at A=5)
+  "carries no muon rationale in its source" and stopped there, in a session that
+  had **already measured** that the producer's own assertions FAIL at the muon
+  anchor and PASS at the proton one. The absent comment and the present
+  measurement are not the same evidence, and only the weaker one was reported.
 
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
@@ -412,6 +477,13 @@ user's last message, not the most recently mentioned file.
      without a bean, say so and open one. That omission is the failure
      this exists to catch — a manifest-parser bug was found, fixed,
      tested and merged before anyone noticed it had never been claimed.
+   - **The 50-word cap is a cap on the LEDGER, not on the turn.** It
+     bounds this bean-status block so the author can scan it — it is
+     never a budget for the substantive report of what you found, which
+     is governed by **Terse ≠ compressed** in §User accessibility above.
+     A turn that measured something puts the claim, the evidence, the
+     implications and the options in the body of the reply, and uses
+     these lines only to say which beans that touched.
 
 4. **Parallelize independent tasks.** When two queued tasks have no
    dependency between them (e.g. one Lean fix + one .md edit on

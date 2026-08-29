@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-08-24T20:43:46Z
+updated_at: 2026-08-25T09:51:12Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -164,3 +164,64 @@ Pure policy: should they be muon-pinned? **No straddle risk either way**, becaus
 none has a second layer. `aoperator_a5_crosscheck` should still be held for its
 assertion. The other four are free to migrate on the directive alone, with the
 usual per-producer witness diff.
+
+TRANCHE A — PR #5755 (draft), branch claude/tranche-a-proton-assertion-check-2026-08-25.
+
+TWO COMMITS
+
+  1. computations/audits/proton_pin_assertion_check.py — a second tool, asking
+     what the anchor-flip test cannot: does this producer's OWN assertions
+     still pass at the proton pin? Sound regardless of whether the producer
+     carries a q of its own (the precondition 5 of my 7 earlier anchor-flip
+     verdicts violated, #5721). Verdicts PASSES-AT-PROTON / FAILS-AT-PROTON /
+     NO-WITNESS / UNKNOWN; a timeout reports UNKNOWN, never a pass.
+
+  2. aoperator_a5_crosscheck migrated ideal_muon -> physical_proton.
+
+MY HOLD WAS BACKWARDS. Measured, both legs:
+
+    physical  allPassed=True   failing=[]
+    ideal     allPassed=False  failing=['a5_per_lambda_max_abs_diff']
+
+It works at proton and FAILS at muon. I had recommended holding it because it
+"depends on the muon pin"; it depends on the proton pin. Worse than a
+mis-scoped hazard: sitting in ideal_muon, it ran AS CONFIGURED at the anchor
+where one of its own assertions fails, while its committed witness claimed
+allPassed=true. Both cannot be right.
+
+HOW IT WENT WRONG: I took the DIRECTION from the sign of a boolean flip
+without checking which leg was which. Seeing "/allPassed moves" I assumed it
+moved toward failure at proton. Only calibrating the new tool against a known
+answer surfaced it before it shipped as advice.
+
+RESULT: allPassed True->True; q0Anchor None->proton (was UNSTAMPED); 22s; no
+sibling churn. 14 non-ephemeral fields move, all cross-check residuals at
+1e-12..1e-15 against a ~1.9e-6 tolerance.
+
+FLAGGED, NOT EXPLAINED: the tolerance moves 1.9177226708e-06 -> 1.9177218447e-06,
+rel 4.31e-7 = 37x the 11.5 ppb mu-p tension. CONSISTENT WITH a high power of q
+(at A=5, lambda|-15) but I have NOT verified that mechanism and am not
+asserting it. Six orders of margin either way, so it does not affect the
+migration. Needs someone who knows what that tolerance is built from.
+
+VERIFICATION — precision-gates exits 1 AND THE RED IS NOT MINE. I claimed
+exit 0 before checking; corrected. Red is the raw-float64 ratchet at 4 NEW
+dirty witnesses (deltalambda/deuteron-interface-handle-curvature,
+qbeta/birkhoff-barodd-pythagoras-bridge, qbeta/a3-branching-asymmetry-vs-required,
+deltalambda/yekutieli-trefoil-surface2form-discretization) — all last touched
+2026-08-09, sixteen days ago, so a long-standing red on main, not today's
+sibling churn. Two proofs: git diff origin/main...HEAD reports all four
+IDENTICAL to origin/main, and the audit is a pure function of (witness tree,
+baseline) while this branch moves one witness at delta 0 and leaves the
+baseline alone. aoperator was ALREADY baselined; 15 -> 15 fields, delta 0.
+No baseline widened.
+
+NOT MIGRATED, DELIBERATELY
+  - binding_via_interface_knot fails identically at BOTH anchors in 2s on
+    data_loaded ("AME 2020 deuteron binding") — pre-existing broken, already
+    recorded allPassed:false in its committed witness. Re-pinning a producer
+    that cannot run buys nothing. (Also corrects my earlier claim that one leg
+    exceeded 1700s; on current main it exits in 2s.)
+  - block_swap_binding, gram_norm_binding_probe: UNKNOWN, >1500s. Need a real
+    budget, not a verdict.
+  - Remainder of Tranche A sequenced behind #5500.
