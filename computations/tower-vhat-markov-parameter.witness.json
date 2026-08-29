@@ -8,7 +8,8 @@
     "qou:QOU.BraidsAndKnots.vHat_eq_iff",
     "qou:QOU.BraidsAndKnots.markov_param_eq_half_h",
     "qou:QOU.BraidsAndKnots.markov_param_indep_of_weights",
-    "qou:QOU.BraidsAndKnots.trace_pair_sum_eq_h"
+    "qou:QOU.BraidsAndKnots.trace_pair_sum_eq_h",
+    "qou:QOU.BraidsAndKnots.identity_coeff_avg_eq_trace_full"
   ],
   "q": "1.1099785827513808076",
   "conventions": {
@@ -610,6 +611,30 @@
       "max_over_q_canonical_tower": "0.9591412230125039415",
       "max_over_q_mass_at_3A": "0.95056817782587260308"
     }
+  },
+  "pn_identity_coefficient_relation": {
+    "flavor_split_delta_solved_from_word": "0.0013757108070270960086",
+    "flavor_split_leading_closed_form": "0.0013757108070270960086",
+    "flavor_split_abs_difference": "3.8029213427316681001e-49",
+    "inter_nucleon_vHat_predicted_h_delta_over_4": "0.000071901628093368697589",
+    "inter_nucleon_vHat_measured": "0.000071901628093368697589",
+    "inter_nucleon_vHat_abs_difference": "1.9298587964105636288e-52",
+    "distinct_d_values": {
+      "0.0": 22,
+      "-0.10453014939781965772": 8,
+      "-0.20906029879563931543": 14,
+      "-0.10445824776972628902": 1
+    },
+    "beta_proton_gen1": "1.0883675333971881278",
+    "V_hat_neutron_gen1": "1.0883675333971881278",
+    "abs_difference": "2.6727647100921956461e-51",
+    "identity_lhs_beta_of_x_times_avg": "1.0883675333971881278",
+    "identity_rhs_trace_of_x_times_full": "1.0883675333971881278",
+    "identity_abs_difference": "0.0",
+    "h": "0.20906029879563931543",
+    "half_h": "0.10453014939781965772",
+    "factors_checked": 45,
+    "worst_factor_deviation_from_template": "3.708461035252921459e-50"
   },
   "lean_hypotheses_on_production_weights": [
     {
@@ -1431,15 +1456,35 @@
       "name": "CONCLUSION: Z_eff = h/2 exactly, and independently of n",
       "passed": true,
       "detail": "worst |Z - h/2| over n = 3, 6, 9 = 3.3409558876152445577e-52"
+    },
+    {
+      "name": "proton's identity coefficient EQUALS the neutron's V_hat (gen 1)",
+      "passed": true,
+      "detail": "|beta_p - V_n| = 2.6727647100921956461e-51"
+    },
+    {
+      "name": "and it is identity_coeff_avg_eq_trace_full, not a coincidence",
+      "passed": true,
+      "detail": "beta(x*(sigma - h/2)) vs trace(x*(sigma - h)) differ by 0.0"
+    },
+    {
+      "name": "every braid-word factor is (1, d) with d in the 4-value template",
+      "passed": true,
+      "detail": "45 factors checked across p, n, d; worst deviation 3.708461035252921459e-50"
+    },
+    {
+      "name": "the fourth template value IS the colour weighting (delta solved from the word == flavor_split_leading(q))",
+      "passed": true,
+      "detail": "solved 0.0013757108070270960086 vs closed form 0.0013757108070270960086, differ 3.8029213427316681001e-49 \u2014 this is the non-circular one; h*delta/4 == V_hat is an identity and proves nothing on its own. With the identification made, inter_nucleon_vHat says the p-n interface reaches the tower ONLY through the colour weighting and contributes exactly 0 under the colour-blind convention"
     }
   ],
   "all_checks_passed": true,
   "scriptFile": "tower_vhat_markov_parameter_probe.py",
-  "scriptHash": "586f12dde728",
-  "scriptCommitSha": "unknown",
-  "commitSha": "8f66eef584b752eb53ede2ef1c6d30579b99d6b1",
+  "scriptHash": "6f238b5fdded",
+  "scriptCommitSha": "2330002b851c122ca72a7504ceae53ad59838dc2",
+  "commitSha": "2330002b851c122ca72a7504ceae53ad59838dc2",
   "engine": "python",
-  "computedAt": "2026-08-29T08:25:45.294724+00:00",
+  "computedAt": "2026-08-29T08:35:45.222793+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

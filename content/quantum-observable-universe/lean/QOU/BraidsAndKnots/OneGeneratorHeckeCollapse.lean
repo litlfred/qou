@@ -182,4 +182,76 @@ theorem vHat_eq_iff {R : Type*} [Field R] (q b : R) {α : R} (hα : α ≠ 0) (z
   · intro h; linear_combination h
   · intro h; linear_combination h
 
+/-! ## Why the proton's identity coefficient equals the neutron's V̂
+
+Measured (`tower_vhat_markov_parameter_probe`, 60 dps, agreeing to ~50 digits):
+at generator 1 of the canonical atom words,
+
+    β(proton)  =  1.088367533397188127779206958658256570732…  =  V̂(neutron).
+
+That is not a coincidence and it is not numerology.  The two words differ in
+exactly one factor.  Reading them off `atom_braid_word_3A`, both are built from
+`σ + d` with `d ∈ {−h, −h/2}`, and at generator 1
+
+    proton   = (σ − h)³ · (σ − h/2)
+    neutron  = (σ − h)³ · (σ − h),
+
+so the question is what changes when the last factor's `d` moves from `−h/2` to
+`−h`.  `d = −h/2` is precisely `AveragedCrossingCollapse`'s averaged crossing,
+the value `2d = −h` at which the σ-coefficient vanishes.
+
+`identity_coeff_avg_eq_trace_full` answers it in general: **appending the
+averaged factor and reading off the identity coefficient is the same operation
+as appending the full factor and taking the Markov trace.**  Both compute
+`α − β·h/2`.  The measured equality is that identity at `x = (σ − h)³`, and it
+holds for every `x`, over any field — nothing about this particular word, this
+`q`, or this atom enters. -/
+
+/-- Appending the **averaged** factor `σ − h/2` and taking the identity
+coefficient equals appending the **full** factor `σ − h` and taking the Markov
+trace at `z = h/2`.
+
+The `h/2` in the trace is not a free choice: it is the Markov parameter forced
+by `markov_param_eq_half_h` for any normalised transpose-symmetric weighting,
+which is what the production weight scheme is. -/
+theorem identity_coeff_avg_eq_trace_full
+    {R : Type*} [Field R] (h : R) (two_ne : (2 : R) ≠ 0) (x : R × R) :
+    (collapseStep h x (1, -(h / 2))).2
+      = vHat (h / 2) (collapseStep h x (1, -h)) := by
+  simp only [collapseStep, vHat]
+  field_simp
+  ring
+
+/-! ## The inter-nucleon generator contributes exactly the colour weighting
+
+`atom_braid_word_3A`'s docstring states its crossing template:
+`{0, −h, −h/2, −h(½ − δ/4)}` with `δ = flavor_split_leading(q)`.  The first
+three are the ones the intra-nucleon chains use.  The fourth appears **once** in
+the whole deuteron word — at the single inter-nucleon generator — and is the
+colour-weighted p–n interface (`pn_convention = "bring_color_weighted"`, made
+canonical by the owner ruling of 2026-08-15, R3).  Its colour-blind sibling is
+`strict_averaged`, i.e. `δ = 0`, which is the averaged crossing `−h/2`.
+
+That generator carries a single factor, so its collapse is the factor itself and
+its V̂ is computable in closed form.  `inter_nucleon_vHat` does it: the answer is
+`h·δ/4`, and in particular it is **zero** when `δ = 0`.
+
+So under the colour-blind convention the inter-nucleon generator contributes
+nothing to the tower at all, and everything it does contribute is the colour
+weighting.  Measured at 50 dps: `V̂ = 7.190162809336869…e-5`, which is the
+7.19e-5 by which that generator's `d` sits away from `−h/2`. -/
+
+/-- The single-factor inter-nucleon generator's V̂ is exactly `h·δ/4`.
+
+`δ = 0` is the colour-blind `strict_averaged` convention, and there the
+contribution vanishes identically — the p–n interface reaches the tower only
+through the colour weighting. -/
+theorem inter_nucleon_vHat {R : Type*} [Field R] (h δ : R) (four_ne : (4 : R) ≠ 0) :
+    vHat (h / 2) (collapseStep h (0, 1) (1, -(h * (1 / 2 - δ / 4))))
+      = h * δ / 4 := by
+  have two_ne : (2 : R) ≠ 0 := fun hc => four_ne (by rw [show (4:R) = 2*2 by norm_num, hc]; ring)
+  simp only [collapseStep, vHat]
+  field_simp
+  ring
+
 end QOU.BraidsAndKnots
