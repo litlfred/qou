@@ -199,7 +199,7 @@ def main() -> None:
     )
     w.add_assertion(
         "sum_y_lambda_chi_lambda_diff_matches_tau_M",
-        computed=float(abs(tau_diff - (-0.14207293))),
+        computed=abs(tau_diff - (-0.14207293)),
         expected=0,
         tolerance=1e-7,
         source="Σ y_λ · χ_λ(β_n - β_p) = τ_M(β_n - β_p) at q_0",

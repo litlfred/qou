@@ -284,7 +284,7 @@ def main() -> int:
     alpha_witness = mp.mpf("-0.052336120268228838798864526889934170613048317006391339462842709574")
     builder.add_assertion(
         "alpha_q0_matches_probe_n3_witness",
-        computed=float(abs(alpha_q0 - alpha_witness)),
+        computed=abs(alpha_q0 - alpha_witness),
         expected=0.0,
         tolerance=1e-30,
         source=("α(q_0) computed from symbolic α = (z-1)·h/2 should "
