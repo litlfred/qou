@@ -179,6 +179,35 @@ file (which cites 6990 as the pre-eviction count). A tree evicted from 6990
 down to 2919 would have read as *healthy* under the old row. Re-measure;
 do not treat any number here as a threshold.
 
+## TRAP — v4.24.0 module moves + subscript ± are notation tokens
+
+Two authoring mistakes that block a NEW file but are trivial, correct fixes
+(no statement/witness change) — seen 2026-08-29 on
+`QOU/MassTheory/MagnusPairingSignStructure.lean`:
+
+- `import Mathlib.Data.Matrix.Notation` **does not exist** in mathlib
+  v4.24.0. The `!![a,b;c,d]` matrix literal notation lives in
+  `Mathlib.LinearAlgebra.Matrix.Notation`. (`Mathlib.Data.Matrix.Notation`
+  has neither olean nor source in the tree; the olean error is a red
+  herring for "cache is partial" — the module is gone, not uncached.)
+- Under a full `import Mathlib.Tactic`, `₊`/`₋` (U+208A/U+208B subscript
+  plus/minus) are **notation tokens** (PosPart etc.), so a bound-variable
+  name like `ρ₊` fails to lex: `unexpected token '₊'; expected ','`. Rename
+  the binder (`ρ₊`→`ρp`) — pure alpha-renaming, the proposition is
+  identical. Fine in comments/docstrings, not in identifiers.
+
+## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
+
+`lake-cache/qou-v4-24-0` (25 parts) extracts to `$ROOT/.lake/` (root
+workspace layout: `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`).
+Measured 2026-08-29: **3407 mathlib oleans** + 2275 QOU-library oleans,
+`Mathlib.Tactic.olean` and `Matrix/Trace.olean` present. The pre-existing
+`content/quantum-observable-universe/lean/.lake/packages/**` tree is a
+**partial decoy** (~726 mathlib, QOU lib = 0) — do NOT point LEAN_PATH at
+it. Build LEAN_PATH from the ROOT `.lake` package `build/lib/lean` dirs.
+(The prior log's "6990 mathlib" was not what THIS restore produced; 3407 is
+the QOU-cone partial and it is sufficient for QOU + Mathlib.Tactic files.)
+
 ---
 
 ## Session log
@@ -187,15 +216,17 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
-- 2026-08-29 (cool-johnson): gate task. GitHub orphan-branch restore WORKS
-  (`git ls-remote`/`git fetch origin lake-cache/qou-v4-24-0` exit 0) — the
-  blocked host is Azure blob `lakecache.blob.core.windows.net`, NOT the git
-  restore path; the restore does not use it. 1.6 G tarball, `tar xzf` exceeds
-  a 2-min Bash timeout — stream parts direct to `tar xzf -` and give it ~7 min
-  (extraction is the slow part, not the fetch). Cache carries deps AND the full
-  QOU library (942 QOU oleans incl. `QOU/Basic`, `QOU/BraidTwistFlip`; 6990
-  mathlib). lean-direct verified both `braids-and-knots/braid-twist-flip.lean`
-  (imports `QOU.Basic`) and `lean/QOU/BraidTwistFlip.lean` (imports
-  `Mathlib.Tactic`): EXIT 0. Confirmed cold-cache TRAP (chapter file 1m3s wall /
-  4.6s user; lib file warm 4s). Confirmed sidecar TRAP: chapter-dir file HAS a
-  `.qa.json`; library file does not.
+- 2026-08-29 (magnus-verify): verified NEW file
+  `QOU/MassTheory/MagnusPairingSignStructure.lean` (3 thms). Restore →
+  lean-direct EXIT 0 (3.5s warm) → `#print axioms` clean (only
+  `propext/Classical.choice/Quot.sound`, no `sorryAx`). Two in-place fixes,
+  no statement/witness change: import `Data.Matrix.Notation` →
+  `LinearAlgebra.Matrix.Notation`; binder `ρ₊ ρ₋` → `ρp ρn` (subscript ±
+  are notation tokens). Added the two TRAPs above. Restore layout: ROOT
+  `.lake`, 3407 mathlib oleans (per-paper tree is a decoy). Did NOT lake
+  build; did NOT seed (single new leaf, lean-direct → no traces).
+- 2026-08-29 (cool-johnson): orphan-branch restore WORKS (`git fetch origin
+  lake-cache/qou-v4-24-0` exit 0); blocked host is Azure blob
+  `lakecache.blob.core.windows.net`, NOT the git path. Stream parts to
+  `tar xzf -` (extraction is the slow part). Verified `QOU.Basic`- and
+  `Mathlib.Tactic`-importing files EXIT 0. Confirmed cold-cache + sidecar TRAPs.
