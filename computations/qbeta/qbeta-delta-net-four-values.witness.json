@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:37:49.699122+00:00",
-  "commitSha": "f79afa92a40c91f652901340a441b8d0d64f153f",
+  "computedAt": "2026-08-29T07:46:48.970500+00:00",
+  "commitSha": "8953d00897d8bef7d5a4f8bfb0bcdf9b2b4c6d77",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 315755,
+  "durationMs": 318804,
   "computation": "qbeta-delta-net-four-values",
   "scriptFile": "qbeta_delta_net_four_values_probe.py",
-  "scriptHash": "4c9cbc2579b2",
-  "scriptCommitSha": "f79afa92a40c91f652901340a441b8d0d64f153f",
+  "scriptHash": "bdace0d3aafb",
+  "scriptCommitSha": "8953d00897d8bef7d5a4f8bfb0bcdf9b2b4c6d77",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -96,10 +96,15 @@
     "the_10_digit_anchor_EXCLUDES_hecke_core_at_EVERY_z": true,
     "constructed_z_reaching_anchor": "0.498365626911747247723480047925041979412851768218155661786887",
     "the_constructed_model_reaches_the_anchor_near_z_C": true,
+    "hecke_parabola_A": "-(q - 1)*(q + 1)*(q**4 + 1)/(4*q**3)",
+    "hecke_parabola_vertex_z": "-q*(q - 1)*(q + 1)/(q**4 + 1)",
+    "hecke_parabola_max": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q*(q**4 + 1))",
+    "the_exclusion_is_a_THEOREM_in_q_not_a_number_at_q0": true,
+    "the_cause_is_the_VANISHING_L_minus_and_e_minus_not_integrality": true,
     "scope": "a",
     "adjudicates": false,
-    "checks_passed": 17,
-    "checks_total": 17
+    "checks_passed": 19,
+    "checks_total": 19
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
