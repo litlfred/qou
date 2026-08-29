@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T15:20:16Z
+updated_at: 2026-08-29T15:53:37Z
 ---
 
 ## Summary
@@ -366,3 +366,36 @@ that identification; rows one and two do not.
 of the two claims to keep — surjection-not-isomorphism, or drop the
 involution. That changes what the block asserts about the trefoil group, so
 it is the author's call, not a typo fix. Left unrepaired deliberately.
+
+
+## RETRACTION: §8.2 is void; §8.1 stands; A7 replaces it (2026-08-29 15:50Z)
+
+main landed 7adab17a3d 'revert to S3 3-cycle — braid-twist-flip V4 was the
+wrong def' at 15:44Z. My §8 was filed at 15:23Z, 21 minutes earlier. NO
+causal claim — qou-3nva/qou-htv4 were on the same block independently.
+
+**§8.1 STANDS.** The revert did not touch the isomorphism sentences, and the
+argument was never about which finite order: exponent sum is a homomorphism
+B_3 -> Z, sigma_1 sigma_2 has exponent sum 2 hence infinite order, so no
+isomorphism can carry it to a torsion element. Order 2 before, order 3 now —
+same contradiction. 'Exactly the trefoil-knot group' is what cannot stand.
+Repair: surjection, not isomorphism.
+
+**§8.2 RETRACTED.** All three rows rested on the reverted V_4 text: the
+four-mode formula is gone, there is no V_4 to collide with 4 not dividing 6,
+and the cited permutation is no longer asserted. §8.3's cardinality caution
+goes with it.
+
+**A7 replaces it, positively.** The six computed local monodromies are TWO
+distinct transpositions (0 1) and (0 2); composing two distinct ones gives a
+3-cycle of order exactly 3 either way. rem:holonomy-trefoil says H_1,H_2 are
+holonomies around two DISTINCT branch points with H_1H_2 a 3-cycle in S_3,
+(H_1H_2)^3 = id. Each loop here IS such a holonomy — the corrected block is
+exactly what this computation produces. The arithmetic obstruction to
+prop:color-elliptic's closing sentence is gone: a 3-cycle sits inside the
+computed S_3 where a V_4 could not. CONSISTENT, not derived — no map is
+exhibited.
+
+**Lesson (§8.4):** §8.1 was stated against an invariant and survived a change
+to the quantity a direct argument would have keyed on; §8.2 was stated against
+three quoted numbers and died with them. Same block, same hour.
