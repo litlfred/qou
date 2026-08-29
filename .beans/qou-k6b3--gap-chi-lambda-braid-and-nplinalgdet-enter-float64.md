@@ -1,11 +1,11 @@
 ---
 # qou-k6b3
 title: 'GAP: chi_lambda_braid and np.linalg.det enter float64 — blocks 2 producers from the proton migration'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T09:40:22Z
-updated_at: 2026-08-29T09:40:59Z
+updated_at: 2026-08-29T10:45:34Z
 ---
 
 Parent: qou-cds3. Surfaced by the proton migration (PR #5992), which had to
@@ -81,3 +81,62 @@ Downstream care: chi_lambda_he4_full_partition_table sorts and takes ratios on
 `abs_chi` (lines 185-192) and prints with `:>+18.6f`, so an mpf conversion must
 keep a sortable numeric internally and serialize with `_precision.fmt` at write
 time rather than casting at the point of use.
+
+
+## 2026-08-29 — FIXED (PR #6001), and it completed the cds3 direct-reader set
+
+### The fix
+
+`mp.det` is LU-based and runs directly on the mpmath matrices these already
+are — the determinants never needed the numpy round trip. The h6 site's comment
+declared all FOUR telemetry fields "float64 by construction"; that is true of
+`cond` (a binary64 SVD) and NOT of `det`. Only the two cond fields keep the
+declaration.
+
+For the characters, `chi_lambda_braid(..., precision="mpfr_50dps")` — the fix
+f64_into_mpmath_audit's own test cases name. The mpfr path returns a decimal
+STRING so nothing is lost crossing the boundary; re-enter mpmath from it.
+
+Measured drain, reported by the ratchet as DRAINED not merely non-regressing:
+
+    chi-lambda-he4-full-partition-table   194 -> 1
+    option-e-phase1-gram-h6               130 -> 59
+
+The field that started it — chi_lambda at partition 76 of 12:
+
+    before (f64):  1.000000000000009
+    after  (mpfr): 1.0000000000000000000000000000000000000000000000000000000
+
+exactly 1 to 59 digits. Determinants that read -0.9999999999999999 are now
+-1.000000000000000000000000000000000000000000000000003 (error 1e-16 -> 3e-51).
+
+The h6 residue of 59 is the CONDITION NUMBERS. Draining those needs an mpmath
+SVD and is a genuinely separate change; not attempted.
+
+### Three things that bit, worth keeping
+
+1. **`w0_det` comes back `mpc`.** The first version serialized `1.3675... +
+   0.0j`. `_real_det` now REFUSES a non-negligible imaginary part rather than
+   silently taking the real part — the discipline `_eval_matrix` already
+   applies entrywise.
+2. **The wrapper returns a STRING at mpfr precision, not an mpf.** Deliberate
+   (no precision lost at the boundary), but `abs()` on it raises.
+3. **Downstream arithmetic on now-serialized fields.** Sort key, ratio, sums,
+   AND a T-conjugate cross-check at :242 doing
+   `abs(r["chi_lambda_he4"] - r_T["chi_lambda_he4"])`. Unserialized `_chi_mp` /
+   `_abs_mp` keys carry the arithmetic and are popped before save. The
+   consumer `probe_option_e_h6_entry_point.py` also needed `mp.mpf(repr(d))` ->
+   `mp.mpf(str(d))`, since `repr` of a str adds quotes.
+
+### What it unblocked, and a finding in its own right
+
+Both deferred producers migrated to proton: **20 of 20 direct readers done.**
+
+And the migration exposed that **the source edit for
+chi_lambda_he4_full_partition_table had been on main since #5992 doing
+NOTHING** — the stem sat in `ideal_muon`, so `q_parameter` resolved muon and
+the witness kept stamping muon under migrated source. This is #5992's
+"half the change is a no-op" finding, observed live rather than reasoned about.
+
+`gram_matrix_seminormal_h6` was the mirror: in NEITHER list, so correct by the
+runtime DEFAULT rather than by declaration. Now declared explicitly.
