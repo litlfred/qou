@@ -48,10 +48,35 @@ THREE CAVEATS, each of which limits the claim
      T alone -- it carries an offset set by the body number n. Whether an
      n-dependent phase counts as "the chiral grading" is a framework question
      this probe does not settle.
-  3. WHICH SU(2)? The two-row stratum yields an SU(2) label; whether that SU(2)
-     is isospin or spin in the framework is NOT established here. The bean's
-     claim is specifically about isospin. This is the gap to close next, and it
-     is the honest reason this is not reported as a closure.
+  3. WHICH SU(2)? -- RESOLVED 2026-08-29, AND THE ANSWER IS NEGATIVE.
+     When first written this said the question was open and was "the gap to
+     close next". It is now closed, by corpus-grep rather than computation, and
+     it closes AGAINST the bean:
+
+       * `braids-and-knots/jones-markov-trace.md` states outright that "the
+         fibre V is the two-dimensional fundamental of SU_q(2), so no partition
+         with three or more rows survives Schur-Weyl". So the two-row label
+         T = (lambda_1 - lambda_2)/2 is the SU_q(2) / Temperley-Lieb spin --
+         the quantum group of the BRAID SUBSTRATE.
+       * The corpus nowhere identifies that SU_q(2) fundamental with nucleon
+         isospin. Grepped for it in content/ and docs/: zero hits.
+       * Nucleon flavour enters by a DIFFERENT mechanism entirely.
+         `mass-theory/flavor-split-habiro-derivation.md` derives the p/n split
+         from a CROSSING REVERSAL -- the Hopf antipode S(T_w) = T_{w^-1}, with
+         sigma_1^3 - sigma_1^-3 = q^3 - q^-3 exactly. Flavour is a property of
+         the braid WORD, not an index on the fibre.
+
+     So the T in sgn(Delta_lambda) = (-1)^{(n-2T)/2} is the wrong SU(2) for the
+     bean's purpose. The closed form is exact and stands as stated; what it is
+     a statement ABOUT is the substrate's SU_q(2) spin label, not weak isospin.
+     Identifying the two would need a bridge (SU_q(2) fundamental <-> nucleon
+     isospin doublet) that the corpus does not contain.
+
+     Scope: this is a CORPUS-STATUS finding, not a proof that no such bridge
+     could be built. It says the identification is unsupported as the corpus
+     stands, and that the framework's own flavour mechanism is a different
+     structure. Someone may yet construct the bridge; they would have to state
+     it, because nothing currently implies it.
 
 Method for the SU(4) leg: Schur-Weyl (C^4)^{x n} = sum_lambda S^lambda(C^4) (x)
 M_lambda; restrict SU(4) to SU(2)_S x SU(2)_T by evaluating the Schur polynomial
@@ -292,10 +317,34 @@ def main():
                     "T, not T3: the two-row label is the SU(2) Casimir; T3 is a weight "
                     "varying WITHIN a multiplet and still cannot be a per-block quantity.",
                     "The phase is n-dependent: (-1)^((n-2T)/2) is not a single grading in T.",
-                    "Which SU(2)? Whether the two-row label is isospin or spin in the "
-                    "framework is NOT established here, and the bean's claim is about "
-                    "isospin. This is why this is not reported as a closure.",
+                    "WHICH SU(2) -- RESOLVED 2026-08-29, NEGATIVELY. See "
+                    "which_su2_resolution below: the two-row label is the SU_q(2) / "
+                    "Temperley-Lieb spin of the braid substrate, not nucleon isospin.",
                 ],
+                "which_su2_resolution": {
+                    "verdict": (
+                        "The two-row label is the SU_q(2) (Temperley-Lieb) spin of the braid "
+                        "substrate, NOT nucleon isospin. So the closed form, which is exact "
+                        "and stands, is a statement about the wrong SU(2) for bean qou-buxs."),
+                    "evidence": [
+                        "content/quantum-observable-universe/braids-and-knots/"
+                        "jones-markov-trace.md: 'the fibre V is the two-dimensional "
+                        "fundamental of SU_q(2), so no partition with three or more rows "
+                        "survives Schur-Weyl'.",
+                        "Corpus grep for any identification of the SU_q(2) fundamental with "
+                        "isospin, over content/ and docs/: ZERO hits.",
+                        "content/quantum-observable-universe/mass-theory/"
+                        "flavor-split-habiro-derivation.md: the p/n split comes from a "
+                        "CROSSING REVERSAL (Hopf antipode S(T_w)=T_{w^-1}), with "
+                        "sigma_1^3 - sigma_1^-3 = q^3 - q^-3 exactly. Flavour is a property "
+                        "of the braid WORD, not an index on the fibre.",
+                    ],
+                    "scope": (
+                        "Corpus-status finding, not a proof that no bridge could exist. The "
+                        "identification is UNSUPPORTED as the corpus stands, and the "
+                        "framework's own flavour mechanism is a different structure. A future "
+                        "bridge would have to be stated explicitly; nothing currently implies it."),
+                },
             },
             "su4_frame_negative": "see per_n below; wrong frame, retained as the record",
             "per_n": per_n,
@@ -319,8 +368,10 @@ def main():
                 "excludes nothing; it is retained as the record of a wrong-frame computation. "
                 "NOT A CLOSURE, for three stated reasons: the result is about T and the bean "
                 "claims T3 (a weight, still not per-block); the phase is n-dependent rather "
-                "than a single grading in T; and whether the two-row SU(2) is isospin or spin "
-                "in this framework is not established here. Separately, the bean's own stated "
+                "than a single grading in T; and -- RESOLVED 2026-08-29, NEGATIVELY -- the "
+                "two-row SU(2) is the SU_q(2)/Temperley-Lieb spin of the braid substrate, NOT "
+                "nucleon isospin, so the exact closed form is about the wrong SU(2) for the "
+                "bean's purpose (see which_su2_resolution). Separately, the bean's own stated "
                 "test still cannot run: its input, the derived T3 of bean qou-tdrd, is status "
                 "`todo` and has never been derived."),
         },
