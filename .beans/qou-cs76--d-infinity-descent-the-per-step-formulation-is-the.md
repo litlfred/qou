@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T18:44:37Z
-updated_at: 2026-08-29T18:56:19Z
+updated_at: 2026-08-29T18:58:52Z
 parent: qou-ifot
 ---
 
@@ -40,3 +40,13 @@ SO THE OPEN SUB-QUESTION IS NOW SHARP: can a v = 0 block occur inside D_inf? If 
 Pattern worth noting: this repeats qou-4atn exactly -- the phenomenon exists in the domain and every witness found escapes D_inf. Two different questions, same shape of answer. That is now twice, which suggests D_inf is much thinner than the domain in a way nobody has characterised; a characterisation of D_inf would likely settle both.
 
 Verified: lean-direct exit 0 (one first-pass error, an unreduced phi 2 numeral cast, fixed with map_ofNat). Axioms: oddStep_of_qOdd_form [propext, Quot.sound], the other two standard. No sorryAx.
+
+SELF-CORRECTION 2026-08-29, before anyone acts on it. At the end of the previous turn I recommended characterising D_inf as the next target, saying it 'isn't obviously equivalent to the whole conjecture'. THAT IS WRONG, and qcz7 says so in the very route I was pointing at. A1 reads verbatim: 'Conjecture from the probe: D_inf = backward-orbit tree union_k C^{-k}(cycle). If proved, convergence is immediate (tautological).'
+
+Why it is equivalent: the backward-orbit tree IS {P : exists k, C^[k] P = attractor}. So 'D_inf subset of tree' is literally reaches_cycle on D_inf -- the conjecture. Only the reverse inclusion (tree subset of D_inf) is the easy half. Characterising D_inf is therefore not a stepping stone; it is the same problem wearing a different name.
+
+Deliberately NOT formalized as a Lean theorem: the equivalence is Iff.rfl once both sides are unfolded, and a rfl theorem asserting a tautology is precisely what AGENTS.md 'no trivial trues / no tautologies' bans. It is an observation about framing, so it belongs in prose, here.
+
+So the scoreboard for this arc is now: descent measure (any mu closes the conjecture), D_inf characterisation (equivalent to the conjecture), q=1 height (provably cannot reach the critical ratio, qou-n3xf), any valuation (provably cannot descend, qou-4atn). Three routes are the whole problem and one is provably dead.
+
+THE ONE GENUINELY BOUNDED OPEN ITEM LEFT in this arc is the v=0 question from the trichotomy: can two consecutive odd steps occur inside D_inf? It is not equivalent to the conjecture -- a NO makes the block decomposition total on D_inf (strengthening reaches_cycle_of_block_descent_domainStable's applicability), a YES forces a third case in the block accounting. Either answer is informative and neither closes anything. That is the honest recommendation, replacing the wrong one.
