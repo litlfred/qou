@@ -12,11 +12,14 @@ import qou_substrate.witness as w  # noqa: E402
 def test_env_override_muon():
     a, v = w.resolve_q0_anchor("whatever.py", env={"QOU_Q0_ANCHOR": "muon"})
     assert a == "muon"
-    # The muon pin as the COMPUTE path actually uses it. Do NOT "correct" this
-    # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
-    # computes with the witness string, so a derived label would disagree with
-    # the number the witness reports. See _q0_value_for_anchor's note.
-    assert v is None or v.startswith("1.109978595557")
+    # The muon pin as the COMPUTE path actually uses it. The original comment
+    # here warned against "correcting" this to a derived value, because a
+    # muon-tagged producer computes with the witness string and a derived label
+    # would disagree with the number the witness reports. That intent is kept
+    # and is now satisfied by construction: PR #5500 made the WITNESS ITSELF
+    # derive, so reading the same resolver the compute path reads IS the witness
+    # string, and the hard-coded prefix was the thing that had gone stale.
+    assert v is None or v == str(w._q0_value_for_anchor("muon"))
 
 
 def test_env_override_proton():
@@ -383,8 +386,21 @@ if __name__ == "__main__":
 # directly: that string IS the muon anchor's definition, 67 of the 85 are
 # absent from the manifest, and the manifest's runtime default is proton.
 
-_MUON = "1.10997859555733471989976322048322502665620840878015368660798114614493"
-_PROTON = "1.1099785827513808075916690956107688798744991218736"
+# DERIVED, not frozen (bean qou-y98b). These were literals, and the muon one
+# went stale the moment PR #5500 landed: it made the muon anchor DERIVE from the
+# live CODATA-2022 m_mu/m_e instead of reading a frozen string, so the pin moved
+# 1.109978595557... -> 1.109978595642... Five tests here then failed, and the two
+# payload-evidence ones failed in a way that reads as a logic bug rather than
+# stale data -- a payload carrying the OLD literal is no longer muon evidence,
+# so it fell through to proton and the assertion said `'proton' == 'muon'`.
+#
+# Re-freezing at the new value would reintroduce exactly what #5500 removed and
+# would break again at the next CODATA revision. Reading them from the same
+# resolver the compute path uses keeps these tests about BEHAVIOUR -- does
+# payload evidence outrank the manifest, does an explicit declaration win --
+# which is what they were always for.
+_MUON = str(w._q0_value_for_anchor("muon"))
+_PROTON = str(w._q0_value_for_anchor("proton"))
 # A REAL path (the stamper hashes the file) whose stem is absent from
 # `q0_anchor_manifest.json`, so it resolves to the runtime default, proton.
 _UNLISTED = __file__
@@ -397,7 +413,7 @@ def test_payload_evidence_beats_the_manifest_default():
         payload, script_path=_UNLISTED, engine="mpmath",
     )
     assert payload["q0Anchor"] == "muon"
-    assert payload["q0Value"].startswith("1.109978595557")
+    assert payload["q0Value"] == _MUON      # derived, see _MUON above
 
 
 def test_payload_evidence_is_read_before_serialisation():
