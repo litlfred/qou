@@ -261,6 +261,13 @@ gate.
   **exit 0** (the prior circularity result still holds on today's `main`).
 - **NO-FLOAT64:** mpmath end-to-end at dps 70, `float()` never called, every
   constant via `mpf(str(...))`. Proton `q₀` pin.
+- **The Lean claims above are read, not rebuilt.** `no_scalar_kernel_on_carrier`
+  and `kernel_coeff_existsUnique` are pre-existing on `main` and are not
+  modified here. "Sorry-free" is from source inspection — the only `sorry`
+  substrings in that file are the phrase *"sorry-free"* inside its own
+  docstring — plus the file's own claim. This session did **not** run
+  `lean`-direct or `#print axioms` on it, and that verification belongs to
+  whoever landed it, not to this branch.
 - `scripts/precision-gates.sh --changed` run. Its reds (`q0-anchor flip`,
   `q0-value drift ratchet`) and the six regenerated audit witnesses are
   **pre-existing on `main`; none of the movement is this branch's** — the new
