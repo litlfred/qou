@@ -18,7 +18,7 @@ $$
   \longmapsto
   |c_1, c_2,  t \oplus_q (c_1 \wedge_q c_2)\rangle.
 $$
-The symbol $\wedge_q$ denotes the Hecke-algebra q-AND amplitude $\Phi(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / 2(q+1)^2$. Each $\mathrm{Toff}_q$ executes in three Planck steps.
+The symbol $\wedge_q$ denotes the Hecke-algebra q-AND amplitude $\Phi(q) = (q - 1)(q^{3/2} + q^{1/2} - 1)(q^{3/2} + q + 1) / \bigl(2(q+1)^2\bigr)$. Each $\mathrm{Toff}_q$ executes in three Planck steps.
 
 2. **Superposition.** Cell states admit superpositions $|\psi_i\rangle = \alpha_i|0\rangle + \beta_i|1\rangle$ via Hadamard rotations $H \in \mathrm{End}(\mathcal{S}_{p_i})$. The set $\{\mathrm{Toff}_q, H\}$ is universal for quantum computation.
 
@@ -34,13 +34,13 @@ $$
 $$
 Ancilla qubits encode the neighbour sum. A ripple-carry adder of $O(|N(i)|)$ Toffoli gates computes the binary count $k$.
 
-4. **Reversibility and energy conservation.** Each $\mathrm{Toff}_q$ is unitary:
+4. **Reversibility.** Each $\mathrm{Toff}_q$ is invertible, with
 $$
-  \mathrm{Toff}_q^\dagger  \mathrm{Toff}_q
+  \sigma_i^{-1}
    = 
-  \mathbb{I}.
+  \sigma_i - (q - q^{-1})\cdot \mathbb{1},
 $$
-Consequently, $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is unitary. Classical dissipation is replaced by $q$-energy conservation. The $q$-energy $\mathfrak{E}_q = \langle \Psi | \hat{H}_{\mathrm{q\text{-}GoL}} | \Psi \rangle$ is conserved along the automaton orbit, where $\hat{H}_{\mathrm{q\text{-}GoL}} = i\hbar_q \ln \mathcal{U}_{\mathrm{q\text{-}GoL}}/t_P$ generates the unitary flow.
+so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is invertible and the automaton is reversible. It is **not** unitary away from the classical limit: the eigenvalues of $\sigma_i$ are $q$ and $-q^{-1}$, of modulus $\neq 1$ for $q \neq 1$, so no inner product makes $\mathrm{Toff}_q$ unitary, and the Markov trace form is degenerate under the production trace convention. Reversibility in the sense a reversible cellular automaton requires — invertibility of the tick — therefore holds throughout the stable regime, while unitarity holds only at $q = 1$.
 
 5. **Information bandwidth budget.** One generation advances in $3 |\mathcal{L}|$ Planck steps. The substrate bandwidth $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$ bounds the generation rate:
 $$
