@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-29T18:06:58Z
+updated_at: 2026-08-29T18:15:05Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -402,3 +402,58 @@ $E_{\mathrm{EM}}$ work never cited it. Both are about the same object.
 
 **Still open, and now sharply:** derive $k$ from the categorical side. Not a
 length chosen to match — that is the fit this probe exists to make visible.
+
+
+
+---
+
+**2026-08-29, attempt at deriving $k$ — NOT DERIVED. The target moved twice,
+both times because of an error of mine.**
+
+Reporting the negative plainly: **I did not derive $k$.** What changed is what a
+derivation must produce, and both changes were corrections.
+
+**Error 1 — wrong decomposition, off by 121×.** My previous pass inverted the
+**lattice** split of $m_n - m_p$ into QCD ($+2.29$) and QED ($-1.00$ MeV) and
+reported $k = 3.0$ MeV. **The framework does not build $\Delta m$ that way.**
+Its leading traced-volume term $\Delta m = \alpha|\Delta\Phi|$ predicts the
+**net** splitting and over-predicts by $+0.638\%$
+(`docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md`: $1.301589$ vs
+$1.293334$). The EM term owes that residual — **$0.008255$ MeV**, not
+$-1.00$ MeV. Importing an external decomposition the framework does not use put
+my target off by two orders of magnitude.
+
+**Error 2 — Euclidean import.** I wrote $k = \alpha_{\mathrm{EM}}\hbar c / r$
+and solved for a length ($r \approx 0.480$ fm), presupposing a $1/r$ Coulomb
+law. The framework's own EM corrections do not have that shape:
+`prop:meson-em-sinh-closed-form` writes its correction as
+$(\alpha_{\mathrm{em}}/\pi)\times$ a dimensionless function of $\hbar_q$.
+Solving for a length is **the same "unexamined Euclidean import" that
+`qou-17mq` flagged for the $\kappa(A)$ separation law** on the neighbouring
+front — I committed next door the defect main had just documented.
+
+**Corrected target, in the framework's native shape:**
+
+    dE = -m_p * (alpha_em/pi) * f(hbar_q) * gap        gap = 1/3, derived
+
+    k_required = 0.024765 MeV
+    f_required = 0.011363
+
+**One observation, and it is only that.** $f_{\mathrm{req}}$ is
+$O(\hbar_q^2)$ — $\hbar_q^2 = 0.0098172$, ratio $1.157$ — and
+$1/\hbar_q^2$ is structural in the mass formula. **Right order is not right
+value.** Choosing a function to close that 16 % is the fit this whole line is
+avoiding, and I have not done it. The meson block's own
+$f = 1 + \log(1+\hbar_q)$ is off by $96\times$ and is not reusable — it
+corrects a mass-**squared ratio**, a different object.
+
+**Why I stopped rather than continued.** Every remaining move I could see was
+choosing an $\hbar_q$-function to hit $0.011363$. That is numerology, and the
+corpus is explicit about it. A derivation has to come from the categorical side
+— what the EM sector *is* for a three-strand Borromean carrier — not from
+matching a number.
+
+**State of the bean, unchanged in kind but sharper:** charge structure, sign,
+evenness in $\bar\mu_{123}$, pairwise-blindness all derived; $f$ (hence $k$)
+not. The target it must hit is now the framework's own residual rather than an
+imported one.
