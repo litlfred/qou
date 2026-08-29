@@ -37,7 +37,7 @@ the per-λ bridge `hconv`, the `partitionShapeEquiv` reindex, and `telescope_gen
 theorem normalizedSum_eq_one_of_convBridge (n : ℕ) (q : ℝ) (hq2 : 1 < q ^ 2)
     (hgen : ∀ k : ℤ, k ≠ 0 → (q ^ 2) ^ k ≠ 1)
     (hconv : ∀ p : Nat.Partition n,
-        q ^ (-(contentSum (toList p))) / hookProd q (toList p)
+        q ^ (-(QPartitionCombinatorics.contentSum (toList p))) / hookProd q (toList p)
           = schurElement (q ^ 2) 0 (toList p) * (1 - q ^ 2) ^ n) :
     normalizedSum n q = 1 := by
   have hne : (1 : ℝ) - q ^ 2 ≠ 0 := by nlinarith
@@ -58,9 +58,7 @@ theorem normalizedSum_eq_one_of_convBridge (n : ℕ) (q : ℝ) (hq2 : 1 < q ^ 2)
     rw [QOU.MathlibExt.CarrierReindexBridge.numSTY_partitionShapeEquiv,
         QOU.MathlibExt.CarrierReindexBridge.rowLens_partitionShapeEquiv]
   -- (iii) telescope at X = 0
-  rw [hsum, hreindex, telescope_generalX n (q ^ 2) 0 hq2 hgen]
-  rw [sub_zero]
-  rw [div_pow, one_pow, ← mul_comm ((1 - q ^ 2) ^ n)]
-  rw [div_mul_cancel₀ _ (pow_ne_zero n hne)]
+  rw [hsum, hreindex, telescope_generalX n (q ^ 2) 0 hq2 hgen, sub_zero, div_pow, one_pow]
+  exact one_div_mul_cancel (pow_ne_zero n hne)
 
 end QOU.MathlibExt.NormalizedSumClosure
