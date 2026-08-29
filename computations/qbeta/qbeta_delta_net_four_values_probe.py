@@ -532,6 +532,72 @@ def main() -> int:
     print("    is merely rounded) or resolves it into an identifiable term.")
     w.add_data("blocker", "neutron NF vector recorded only to 4 dp")
 
+    # ---- the 10-digit gamma-gamma anchor EXCLUDES hecke_core at every z --
+    print("\n  the gamma-gamma 10-digit anchor (Step 6: Delta tr_M(n-p) = +0.0445860283)")
+    T10 = mp.mpf("0.0445860283")
+    HN = num(h)
+    dv = [num(hecke_word(_NEUTRON_G0, _NEUTRON_G1)[i]
+              - hecke_word(_PROTON_G0, _PROTON_G1)[i]) for i in range(N)]
+    # tr_M(z) = d0 + (d1+d2) z + (d3+d4) z^2 + d5 * z(h z + 1)
+    A = dv[3] + dv[4] + dv[5] * HN
+    Bc = dv[1] + dv[2] + dv[5]
+    C = dv[0]
+    print(f"    hecke_core Delta tr_M(z) = A z^2 + B z + C with "
+          f"A={mp.nstr(A, 8)} B={mp.nstr(Bc, 8)} C={mp.nstr(C, 8)}")
+    vert_z = -Bc / (2 * A)
+    vert_v = A * vert_z**2 + Bc * vert_z + C
+    print(f"    A < 0, so it has a MAXIMUM: {mp.nstr(vert_v, 12)} at "
+          f"z = {mp.nstr(vert_z, 8)}")
+    print(f"    range over ALL real z = (-inf, {mp.nstr(vert_v, 12)}]")
+    w.add_data("hecke_deltatrM_max_over_all_z", fmt(vert_v))
+    w.add_data("gamma_gamma_step6_target", fmt(T10))
+
+    check("the_10_digit_anchor_EXCLUDES_hecke_core_at_EVERY_z",
+          A < 0 and vert_v < -T10 and vert_v < T10,
+          f"the gamma-gamma block quotes Delta tr_M(n-p) = +0.0445860283 to "
+          f"TEN significant figures. hecke_core's Delta tr_M is a downward "
+          f"parabola in z whose maximum over all real z is "
+          f"{mp.nstr(vert_v, 10)} -- BELOW both +T and -T. So no Markov "
+          f"parameter whatsoever makes hecke_core's element produce that "
+          f"number. This is an exact bound, not a scan, and it is a far "
+          f"stronger exclusion than any net comparison: not 'disagrees under "
+          f"convention D', but 'impossible under every convention'", w)
+
+    # the constructed model DOES reach it
+    Qf_p, Qf_n = ONE, ONE
+    for d in (sp.Integer(0), -h / 2, -h / 2):
+        Qf_p = Qf_p * (L[0] + d * ONE)
+    for d in (-h, -h / 2, -h / 2):
+        Qf_n = Qf_n * (L[0] + d * ONE)
+    Lp_ = L[0] * L[1]
+    cp = [num(x) for x in sp.expand(Lp_ * B3 * Qf_p * basis_vec(0))]
+    cn = [num(x) for x in sp.expand(Lp_ * B3 * Qf_n * basis_vec(0))]
+    cd = [cn[i] - cp[i] for i in range(N)]
+    A2 = cd[3] + cd[4] + cd[5] * HN
+    B2 = cd[1] + cd[2] + cd[5]
+    C2 = cd[0]
+    disc = B2**2 - 4 * A2 * (C2 + T10)
+    zC_ = num(q)**mp.mpf("0.5") / (num(q) + 1)
+    roots = []
+    if disc >= 0:
+        for sgn in (1, -1):
+            roots.append((-B2 + sgn * mp.sqrt(disc)) / (2 * A2))
+    near = min(roots, key=lambda r: abs(r - zC_)) if roots else None
+    if near is not None:
+        print(f"    constructed model REACHES |T| at z = {mp.nstr(near, 12)}  "
+              f"({mp.nstr(abs(near - zC_) / zC_ * 100, 3)} % from z_C = "
+              f"{mp.nstr(zC_, 10)})")
+        w.add_data("constructed_z_reaching_anchor", fmt(near))
+    check("the_constructed_model_reaches_the_anchor_near_z_C",
+          near is not None and abs(near - zC_) / zC_ < mp.mpf("0.01"),
+          f"the constructed model attains the anchor's magnitude at "
+          f"z = {mp.nstr(near, 10)}, within "
+          f"{mp.nstr(abs(near - zC_) / zC_ * 100, 3)} % of z_C -- consistent "
+          f"with the gamma-gamma derivation being a convention-C-frame "
+          f"calculation, as AGENTS.md records the whole c_k ladder to be. "
+          f"So the 10-digit anchor is reachable by the construction and "
+          f"unreachable by hecke_core", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -540,12 +606,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 15 - len(_FAILURES)
-    print(f"\n  {npass}/15 checks passed")
+    npass = 17 - len(_FAILURES)
+    print(f"\n  {npass}/17 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 15)
+    w.add_data("checks_total", 17)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0

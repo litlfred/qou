@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T07:06:59Z
+updated_at: 2026-08-29T07:38:47Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -298,3 +298,50 @@ Until then the derivation is blocked on **data precision, not on mathematics**,
 which is a materially different and much smaller obstacle than "which of four
 values". That producer is not identified yet; finding it is the next concrete
 step.
+
+
+## 2026-08-29 (cont. 6) — MORE PRECISION FOUND, and it EXCLUDES hecke_core at every z
+
+Owner asked how to get more precision. The answer was already in the corpus:
+the γγ block's **Step 6** quotes
+
+    Delta tr_M(n-p) = +0.0445860283      <- TEN significant figures
+
+on the same two objects — against the NF table's four decimals. Using it:
+
+**hecke_core is excluded by an exact bound, not a scan.** Its Δtr_M as a
+function of the Markov parameter is a quadratic
+
+    A z^2 + B z + C,   A = -0.10681446,  B = -0.021853104,  C = -0.10453015
+
+with **A < 0**, so it has a *maximum*: **−0.103412421104**, at z = −0.1022947.
+Its range over ALL real z is `(-inf, -0.1034124211]`. Both **+T and −T lie
+above that maximum.**
+
+So **no Markov parameter whatsoever** makes `hecke_core`'s element produce the
+γγ number. This is qualitatively stronger than every previous comparison: not
+"disagrees under convention D", but **impossible under every convention**.
+
+**The constructed model reaches it**, at z = **0.4983656269** — **0.191 % from
+z_C** (0.4993203342). Consistent with the γγ derivation being a
+convention-C-frame calculation, which is what AGENTS.md records the whole c_k
+ladder to be. (Sign: my n−p is negative where the block writes +T, so a sign
+convention differs; the magnitude is what is tested.)
+
+### Standing position on Delta
+
+| | net (4 dp) | NF vector (6 comp) | γγ Δtr_M (10 s.f.) |
+|---|---|---|---|
+| constructed | 0.7975664 ✓ exact | **3/6** exact | **reachable**, 0.19 % from z_C |
+| hecke_core | 1.1132 ✗ | **0/6**, e⁻ = 0 exactly | **impossible at every z** |
+
+Three independent tests, increasing in precision, all pointing the same way.
+
+### Archaeology on the table's producer — BLOCKED, and why
+
+`categorical-neutron-table-data.ts` carries **no** `computation.script` or
+`computation.witness`; it is tagged `extracted-table`, i.e. extracted rather
+than produced. `git log --follow --diff-filter=A` returns 2026-08-26 — but the
+clone is **shallow (336 commits)**, so that is the fetch boundary, not the
+creation date. Exactly the hazard AGENTS.md records for `scriptCommitSha`.
+Deepening the clone is the next step.
