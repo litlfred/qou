@@ -63,7 +63,7 @@
     ],
     "reproduce": "python3 -u computations/aK_via_lp_dual_hecke_basis.py"
   },
-  "description": "Item B (B.1a-rev.5) \u2014 full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + \u03a3_{i \u2209 sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit \u00a77b at the only A where the full basis is tractable (A=1, 6 elements). A \u2265 2 requires the analytical C_\u03bb \u00b7 S_\u03bb factorisation per audit \u00a77d (H_6 = 720, H_9 = 360K elements).",
+  "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
     "q0": "1.109978595642739046681795129380001752700065561029",
@@ -133,11 +133,11 @@
         "a_K_chi_active": null,
         "a_K_C_closed": 1.0,
         "chi_vs_C_residual": null,
-        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) \u2014 a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
+        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
         "per_basis": [
           {
             "index": 0,
-            "name": "\u03b3",
+            "name": "γ",
             "word": [],
             "t_i": 1.0,
             "dominant_block": [
@@ -152,7 +152,7 @@
           },
           {
             "index": 1,
-            "name": "\u03c3\u2080",
+            "name": "σ₀",
             "word": [
               0
             ],
@@ -169,7 +169,7 @@
           },
           {
             "index": 2,
-            "name": "\u03c3\u2081",
+            "name": "σ₁",
             "word": [
               1
             ],
@@ -186,7 +186,7 @@
           },
           {
             "index": 3,
-            "name": "L\u208a",
+            "name": "L₊",
             "word": [
               0,
               1
@@ -205,7 +205,7 @@
           },
           {
             "index": 4,
-            "name": "L\u208b",
+            "name": "L₋",
             "word": [
               1,
               0
@@ -224,7 +224,7 @@
           },
           {
             "index": 5,
-            "name": "e\u207b",
+            "name": "e⁻",
             "word": [
               0,
               1,
@@ -304,11 +304,11 @@
         "a_K_chi_active": null,
         "a_K_C_closed": 1.0,
         "chi_vs_C_residual": null,
-        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) \u2014 a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
+        "a_K_chi_active_undefined_reason": "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12) — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined",
         "per_basis": [
           {
             "index": 0,
-            "name": "\u03b3",
+            "name": "γ",
             "word": [],
             "t_i": 1.0,
             "dominant_block": [
@@ -323,7 +323,7 @@
           },
           {
             "index": 1,
-            "name": "\u03c3\u2080",
+            "name": "σ₀",
             "word": [
               0
             ],
@@ -340,7 +340,7 @@
           },
           {
             "index": 2,
-            "name": "\u03c3\u2081",
+            "name": "σ₁",
             "word": [
               1
             ],
@@ -357,7 +357,7 @@
           },
           {
             "index": 3,
-            "name": "L\u208a",
+            "name": "L₊",
             "word": [
               0,
               1
@@ -376,7 +376,7 @@
           },
           {
             "index": 4,
-            "name": "L\u208b",
+            "name": "L₋",
             "word": [
               1,
               0
@@ -395,7 +395,7 @@
           },
           {
             "index": 5,
-            "name": "e\u207b",
+            "name": "e⁻",
             "word": [
               0,
               1,

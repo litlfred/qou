@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/binding_k_solver.py"
   },
-  "description": "Binding-K factorisation EVALUATOR (operator-selection LP / shadow-price / primal-dual / lp-duality fields emitted from the per-atom factorisation; NOT a search/optimisation step \u2014 the factorisation is computed deterministically from the presupposed T_w(\ud835\udd25) historical braid via braid-word concatenation `K_word = atom_word ++ cp_inv_word`, then evaluated per Wedderburn block at H_{3\u00b7A}(q_0); the actual search for K from substrate alone is in binding_k_enumerator.py).  Per the deliverable-4 binding-K factorisation finding (PR #610): T_w(\ud835\udd25) = K(\ud835\udd25) \u00b7 \u2297_i T_w(nucleon_i) at H_{3\u00b7A}(q_0).  Issue #604 items 1-5: extends the H_3-only rho-prefactor verifier to the atomic strand count n_0 = 3\u00b7A using `build_seminormal_matrices` (general-n Hoefsmit, wired through syt_prefix_cache.BlockCache to amortise the SYT-prefix construction overhead).  Computes K's per-Wedderburn-block PSD eigenvalues, dominant \u03bb* \u22a2 3\u00b7A by |y_\u03bb \u00b7 \u03c7_\u03bb(K)|, and tests the four candidate \u03c1 rules against observed \u03c1 for \u00b2H (n_0=6), \u00b3H (n_0=9, embedded 8_11), \u00b3He (n_0=9, embedded L6a4).  The natural Wedderburn-PSD constraint at the atomic strand count becomes \u03c1_\u03bb(K) \u2ab0 0 \u2014 the 'binding stability' certificate; per-atom witnesses include LP primal/dual (y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per AGENTS.md 'LP/SDP duals \u2014 first-class infra' rule.",
+  "description": "Binding-K factorisation EVALUATOR (operator-selection LP / shadow-price / primal-dual / lp-duality fields emitted from the per-atom factorisation; NOT a search/optimisation step — the factorisation is computed deterministically from the presupposed T_w(𝔥) historical braid via braid-word concatenation `K_word = atom_word ++ cp_inv_word`, then evaluated per Wedderburn block at H_{3·A}(q_0); the actual search for K from substrate alone is in binding_k_enumerator.py).  Per the deliverable-4 binding-K factorisation finding (PR #610): T_w(𝔥) = K(𝔥) · ⊗_i T_w(nucleon_i) at H_{3·A}(q_0).  Issue #604 items 1-5: extends the H_3-only rho-prefactor verifier to the atomic strand count n_0 = 3·A using `build_seminormal_matrices` (general-n Hoefsmit, wired through syt_prefix_cache.BlockCache to amortise the SYT-prefix construction overhead).  Computes K's per-Wedderburn-block PSD eigenvalues, dominant λ* ⊢ 3·A by |y_λ · χ_λ(K)|, and tests the four candidate ρ rules against observed ρ for ²H (n_0=6), ³H (n_0=9, embedded 8_11), ³He (n_0=9, embedded L6a4).  The natural Wedderburn-PSD constraint at the atomic strand count becomes ρ_λ(K) ⪰ 0 — the 'binding stability' certificate; per-atom witnesses include LP primal/dual (y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per AGENTS.md 'LP/SDP duals — first-class infra' rule.",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
     "q_0": 1.1099785827513808,
@@ -553,7 +553,7 @@
             -0.0,
             -0.0
           ],
-          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_\u03bb \u00b7 \u03c7_\u03bb(K)| picks the channel with maximum |y_\u03bb \u00b7 \u03c7_\u03bb| \u21d2 the dominant Wedderburn block \u03bb*(K) of the binding operator K \u2208 H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x \u2265 0, y_star[i] > 0 marks channels where the x_i \u2265 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 \u2014 channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 \u2014 NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, \u03c1(\ud835\udd25) = round(dim_q(\u03bb*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -561,7 +561,7 @@
             3,
             3
           ],
-          "binding_interpretation": "\u03c3_3^2 \u2014 Hopf link crossing strand 3 of proton with strand 4 of neutron in B_6.  Standard Hopf representation.",
+          "binding_interpretation": "σ_3^2 — Hopf link crossing strand 3 of proton with strand 4 of neutron in B_6.  Standard Hopf representation.",
           "K_alpha_gap_explicit": 0.0,
           "K_min_eig_overall_explicit": 0.8116537543657578,
           "dominant_lambda_K_explicit": [
@@ -1679,7 +1679,7 @@
             -0.0,
             -0.0
           ],
-          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_\u03bb \u00b7 \u03c7_\u03bb(K)| picks the channel with maximum |y_\u03bb \u00b7 \u03c7_\u03bb| \u21d2 the dominant Wedderburn block \u03bb*(K) of the binding operator K \u2208 H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x \u2265 0, y_star[i] > 0 marks channels where the x_i \u2265 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 \u2014 channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 \u2014 NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, \u03c1(\ud835\udd25) = round(dim_q(\u03bb*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -1689,7 +1689,7 @@
             6,
             7
           ],
-          "binding_interpretation": "\u03c3_3 \u03c3_4 \u03c3_6 \u03c3_7 \u2014 heuristic; the true 8_11-class binding link in B_9 involves more crossings.  Diagnostic only.",
+          "binding_interpretation": "σ_3 σ_4 σ_6 σ_7 — heuristic; the true 8_11-class binding link in B_9 involves more crossings.  Diagnostic only.",
           "K_alpha_gap_explicit": 0.744812854183386,
           "K_min_eig_overall_explicit": -0.744812854183386,
           "dominant_lambda_K_explicit": [
@@ -2791,7 +2791,7 @@
             -0.0,
             -0.0
           ],
-          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_\u03bb \u00b7 \u03c7_\u03bb(K)| picks the channel with maximum |y_\u03bb \u00b7 \u03c7_\u03bb| \u21d2 the dominant Wedderburn block \u03bb*(K) of the binding operator K \u2208 H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x \u2265 0, y_star[i] > 0 marks channels where the x_i \u2265 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 \u2014 channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 \u2014 NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, \u03c1(\ud835\udd25) = round(dim_q(\u03bb*(K)))."
+          "interpretation": "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is where x_i^* > 0).  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 marks channels where the x_i ≥ 0 constraint is TIGHT at the optimum (i.e., x_i^* = 0 — channels NOT selected).  The DOMINANT channel is therefore the one with x_i^* > 0 and y_star[i] = 0 — NOT in the active_set; the active_set complementary identifies it.  Per conj:rho-prefactor-structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         },
         "explicit_binding_k_heuristic": {
           "available": true,
@@ -2799,7 +2799,7 @@
             3,
             6
           ],
-          "binding_interpretation": "\u03c3_3 \u03c3_6 \u2014 heuristic: two Hopf-like crossings binding strand 3 of nucleon 1 to strand 4 of nucleon 2, AND strand 6 of nucleon 2 to strand 7 of nucleon 3 in B_9. The true L6a4 link has 3 components and a richer braid representation; this is a single-crossing surrogate for diagnostic comparison only.",
+          "binding_interpretation": "σ_3 σ_6 — heuristic: two Hopf-like crossings binding strand 3 of nucleon 1 to strand 4 of nucleon 2, AND strand 6 of nucleon 2 to strand 7 of nucleon 3 in B_9. The true L6a4 link has 3 components and a richer braid representation; this is a single-crossing surrogate for diagnostic comparison only.",
           "K_alpha_gap_explicit": 1.000000000000003,
           "K_min_eig_overall_explicit": -1.000000000000003,
           "dominant_lambda_K_explicit": [
@@ -2876,7 +2876,7 @@
       }
     },
     "summary": {
-      "framework_status": "operational \u2014 general-n Hoefsmit + binding-K factorisation + per-block \u03c1-rule evaluation + LP/SDP dual emission wired end-to-end at H_{3\u00b7A} for \u00b2H, \u00b3H, \u00b3He.",
+      "framework_status": "operational — general-n Hoefsmit + binding-K factorisation + per-block ρ-rule evaluation + LP/SDP dual emission wired end-to-end at H_{3·A} for ²H, ³H, ³He.",
       "n_atoms_evaluated": 3,
       "candidate_rules_evaluated": [
         "rule_A_exact_dim_q",
@@ -2887,16 +2887,16 @@
       "rules_consistent_with_all_observations": [],
       "n_K_psd_feasible_at_q0": 1,
       "all_lp_strong_duality_holds": true,
-      "verdict": "0 of 4 candidate rules reproduce \u03c1 at H_{3\u00b7A} for all 3 atoms.  Compare with the H_3-level evaluation (rho-prefactor-structural-verifier.witness.json, deliverable 4 of PR #610) which had 0/5 rules consistent due to the proton vs \u00b3He \u03c7-collision: that collision is resolved here by the H_{3\u00b7A} embedding via the binding operator K.",
+      "verdict": "0 of 4 candidate rules reproduce ρ at H_{3·A} for all 3 atoms.  Compare with the H_3-level evaluation (rho-prefactor-structural-verifier.witness.json, deliverable 4 of PR #610) which had 0/5 rules consistent due to the proton vs ³He χ-collision: that collision is resolved here by the H_{3·A} embedding via the binding operator K.",
       "what_remains_open": [
-        "Categorical uniqueness theorem for binding-K (deliverable 3): per atom, prove K(\ud835\udd25) is the unique PSD-feasible Hecke element satisfying the joint-tower SDP cross-level consistency constraints (4) of prop:joint-tower-sdp-confinement.  The constituent leg is closed by R5-minimal; the binding-K leg is the open core.",
-        "Generalise to \u2074He (B_? at H_12), \u2076Li (H_18), \u2077Li (H_21), \u03b1-cluster atoms \u2014 the same factorisation should apply.",
+        "Categorical uniqueness theorem for binding-K (deliverable 3): per atom, prove K(𝔥) is the unique PSD-feasible Hecke element satisfying the joint-tower SDP cross-level consistency constraints (4) of prop:joint-tower-sdp-confinement.  The constituent leg is closed by R5-minimal; the binding-K leg is the open core.",
+        "Generalise to ⁴He (B_? at H_12), ⁶Li (H_18), ⁷Li (H_21), α-cluster atoms — the same factorisation should apply.",
         "Symbolic-q evaluation of K's Wedderburn structure to discharge the rounding question categorically."
       ]
     }
   },
   "caveats": [
-    "Numerical evaluation at f64 precision; deuteron uses H_6 (11 partitions, max d_\u03bb = 16), tritium and \u00b3He use H_9 (30 partitions, max d_\u03bb = 42).  The Wenzl-Schur weights y_\u03bb(q_0) for n=6, 9 are loaded from y-lambda-wenzl-witness.json if present; otherwise a uniform 1/|P(n)| fallback is used (the dominant-\u03bb identification is dominated by \u03c7_\u03bb for typical knot elements).  K is computed via the braid-word concatenation T_atom \u00b7 cp^{-1}, NOT via per-block matrix inversion (avoids ill-conditioned blocks)."
+    "Numerical evaluation at f64 precision; deuteron uses H_6 (11 partitions, max d_λ = 16), tritium and ³He use H_9 (30 partitions, max d_λ = 42).  The Wenzl-Schur weights y_λ(q_0) for n=6, 9 are loaded from y-lambda-wenzl-witness.json if present; otherwise a uniform 1/|P(n)| fallback is used (the dominant-λ identification is dominated by χ_λ for typical knot elements).  K is computed via the braid-word concatenation T_atom · cp^{-1}, NOT via per-block matrix inversion (avoids ill-conditioned blocks)."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

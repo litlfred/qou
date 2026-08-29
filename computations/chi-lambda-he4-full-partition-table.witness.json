@@ -42,7 +42,7 @@
     ],
     "reproduce": "python3 -u computations/chi_lambda_he4_full_partition_table.py"
   },
-  "description": "Full \u03c7_\u03bb(\u03b2_\u2074He) table \u2014 all 77 partitions of 12 evaluated on the heuristic 4\u00b7Borromean tensor at q_0. Structural template for the canonical mass formula B(\u2074He) = m_e \u00b7 \u03a3_\u03bb y_\u03bb \u00b7 \u03c7_\u03bb when R5-full SDP supplies y_\u03bb. Shows the multi-block distribution that production's single-block \u03bd_SDP=2 projection discards.",
+  "description": "Full χ_λ(β_⁴He) table — all 77 partitions of 12 evaluated on the heuristic 4·Borromean tensor at q_0. Structural template for the canonical mass formula B(⁴He) = m_e · Σ_λ y_λ · χ_λ when R5-full SDP supplies y_λ. Shows the multi-block distribution that production's single-block ν_SDP=2 projection discards.",
   "parameters": {
     "q_0_f64": 1.109978595642739,
     "n_partitions": 77,

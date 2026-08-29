@@ -32,9 +32,9 @@
     ],
     "reproduce": "python3 -u computations/derive_m_baryon_volume_form.py"
   },
-  "description": "Topological mass formula (canonical Vol(K)\u00b7\u03c1(K)/\u210f_q\u00b2 framing; Borromean channel Vol(\u212c_3)/\u210f_q\u00b2 \u00b7 linking_weight + Skein) evaluated at 50 dps + the muon Vol(4_1)/\u210f_q\u00b2 cross-check prediction under the proton-pinned q_0.  Substrate-only inputs: CAL-1 (m_e), CAL-2 (q_0), topological constants Vol(4_1), Vol(\u212c_3).  Reports the linking_weight empirical closure targets as diagnostics (the linking_weight itself is PROVED via Family A, PR #1080) and verifies that the Skein-correction DIFFERENCE \u0394S(n \u2212 p) is substrate-derivable from CAL-1 + CAL-2 alone (via Q_\u03b2 closed form).",
+  "description": "Topological mass formula (canonical Vol(K)·ρ(K)/ℏ_q² framing; Borromean channel Vol(ℬ_3)/ℏ_q² · linking_weight + Skein) evaluated at 50 dps + the muon Vol(4_1)/ℏ_q² cross-check prediction under the proton-pinned q_0.  Substrate-only inputs: CAL-1 (m_e), CAL-2 (q_0), topological constants Vol(4_1), Vol(ℬ_3).  Reports the linking_weight empirical closure targets as diagnostics (the linking_weight itself is PROVED via Family A, PR #1080) and verifies that the Skein-correction DIFFERENCE ΔS(n − p) is substrate-derivable from CAL-1 + CAL-2 alone (via Q_β closed form).",
   "auditOnly": "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md (motivates this Vol-form chain as Option B per the user's 'can we use m_e as mass scaling factor' question); PR #487 (introduced the Borromean-baryon-interpretation block with the formula and the then-undefined scale factor, since proved as the linking_weight via Family A).",
-  "provenance_directives": "2026-05-11: introduce this script (m_e scaling factor \u00d7 Vol(K)/\u210f_q\u00b2 dimensionless multiplier; expose the scale factor as the open derivation).  Superseded in steps: 2026-05-24 rename to linking_weight (no legacy scale-factor symbol anywhere); PR #1080 proves the linking_weight via Family A; 2026-06-06 owner purge fixes the canonical framing as Vol(K)\u00b7\u03c1(K)/\u210f_q\u00b2.",
+  "provenance_directives": "2026-05-11: introduce this script (m_e scaling factor × Vol(K)/ℏ_q² dimensionless multiplier; expose the scale factor as the open derivation).  Superseded in steps: 2026-05-24 rename to linking_weight (no legacy scale-factor symbol anywhere); PR #1080 proves the linking_weight via Family A; 2026-06-06 owner purge fixes the canonical framing as Vol(K)·ρ(K)/ℏ_q².",
   "data": {
     "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "hbar_q_50dps": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
@@ -43,7 +43,7 @@
       "Vol_4_1_50dps": "2.02988321281930725004240510854904057483004159909893",
       "m_mu_over_m_e_via_volume_50dps": "206.7682827000000000000000000000000003001534477734993924360864995537525",
       "m_mu_over_m_e_codata": "206.7682827",
-      "agreement_assertion": "Vol(4_1)/\u210f_q\u00b2 PREDICTS CODATA m_\u03bc/m_e at the ~2e-7 level (9.5\u03c3 cross-check, NOT the anchor): q_0 is proton-anchored per the 2026-05-28 re-pin (q-pinning-50-digit.witness.json).  Exact agreement held only under the pre-re-pin muon anchor."
+      "agreement_assertion": "Vol(4_1)/ℏ_q² PREDICTS CODATA m_μ/m_e at the ~2e-7 level (9.5σ cross-check, NOT the anchor): q_0 is proton-anchored per the 2026-05-28 re-pin (q-pinning-50-digit.witness.json).  Exact agreement held only under the pre-re-pin muon anchor."
     },
     "borromean_common_factor": {
       "Vol_Borromean_50dps": "7.3277247534177521204368281194590728861931949942534",
@@ -53,16 +53,16 @@
     "linking_weight_closure_targets": {
       "proton_empirical_target": "2.45995279126013643291016020103474271434373808322857843448425615288911",
       "neutron_empirical_target": "2.463343638066562019964956564761751044855137125450395288616774613107738",
-      "interpretation": "Empirical linking_weight value required for the topological-mass formula to reproduce CODATA m_p / m_n.  THESE ARE VALIDATION VALUES \u2014 NOT inputs to the substrate derivation.  Post-PR #1080 framing: the linking_weight is the per-knot VolDensity(K)/Geom_leading(K) component, PROVED via Family A canonical Wedderburn (linking_weight_family_a in _li_2_q_util.py); these empirical targets are diagnostic only (what value would close the equation exactly).  Field renamed from `lambda_scale_closure_targets` per owner directive 2026-05-24."
+      "interpretation": "Empirical linking_weight value required for the topological-mass formula to reproduce CODATA m_p / m_n.  THESE ARE VALIDATION VALUES — NOT inputs to the substrate derivation.  Post-PR #1080 framing: the linking_weight is the per-knot VolDensity(K)/Geom_leading(K) component, PROVED via Family A canonical Wedderburn (linking_weight_family_a in _li_2_q_util.py); these empirical targets are diagnostic only (what value would close the equation exactly).  Field renamed from `lambda_scale_closure_targets` per owner directive 2026-05-24."
     },
     "skein_correction_n_minus_p": {
       "delta_skein_derived_from_CAL_1_CAL_2": "0.003394287236324974999452396531252074960700927767086072557464883387024351",
       "delta_skein_empirical_target": "0.003390846806425587054796363727008330511399042221816854132518460218627464",
-      "agreement_assertion": "\u0394S(n \u2212 p) = (Q_\u03b2 + m_e)/m_e / (Vol(\u212c_3)/\u210f_q\u00b2).  Substrate-derived from CAL-1 (m_e), CAL-2 (q_0 \u2192 Q_\u03b2 via prop:neutron-qvalue-symbolic), and topological constant Vol(\u212c_3).  Empirical target is (m_n \u2212 m_p)/m_e / (Vol(\u212c_3)/\u210f_q\u00b2); the two should agree since Q_\u03b2 = m_n \u2212 m_p \u2212 m_e by definition."
+      "agreement_assertion": "ΔS(n − p) = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²).  Substrate-derived from CAL-1 (m_e), CAL-2 (q_0 → Q_β via prop:neutron-qvalue-symbolic), and topological constant Vol(ℬ_3).  Empirical target is (m_n − m_p)/m_e / (Vol(ℬ_3)/ℏ_q²); the two should agree since Q_β = m_n − m_p − m_e by definition."
     },
     "open_R_and_D": {
-      "substrate_linking_weight": "RESOLVED post-PR #1080: the linking_weight component of VolDensity(K) for K = \u212c_3 is the PROVED Family A categorical identity (3q\u00b2 + 4 + 3q\u207b\u00b2)/4 = 5/2 + (3/4)h\u00b2 (see linking_weight_family_a in _li_2_q_util.py).  The older 'open R&D: derive \u03bb_scale from CAL-1 + CAL-2 + topological invariants of \u212c_3' framing is closed by this proof; only the ~2.89 % VolDensity(\ud835\udcd1\u2083) categorical-exactness refinement gap at h\u00b2 order remains open (see PR #1063 + audit 2026-05-24-low-isotope-mass-error-anatomy.md).  Field renamed from `substrate_lambda_scale` per owner directive 2026-05-24 (no \u03bb_scale anywhere).",
-      "substrate_skein_correction_per_orientation": "Derive S(p), S(n) (not just the difference) from the Borromean orientation partition (k positive, 3-k negative) via the Skein polynomial.  Empirical: |S(n) \u2212 S(p)| \u2248 0.00339 dimensionless; the difference IS substrate-derivable per \u0394S formula above.  Open: the individual S(p), S(n) anchored to a common substrate quantity."
+      "substrate_linking_weight": "RESOLVED post-PR #1080: the linking_weight component of VolDensity(K) for K = ℬ_3 is the PROVED Family A categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (see linking_weight_family_a in _li_2_q_util.py).  The older 'open R&D: derive λ_scale from CAL-1 + CAL-2 + topological invariants of ℬ_3' framing is closed by this proof; only the ~2.89 % VolDensity(𝓑₃) categorical-exactness refinement gap at h² order remains open (see PR #1063 + audit 2026-05-24-low-isotope-mass-error-anatomy.md).  Field renamed from `substrate_lambda_scale` per owner directive 2026-05-24 (no λ_scale anywhere).",
+      "substrate_skein_correction_per_orientation": "Derive S(p), S(n) (not just the difference) from the Borromean orientation partition (k positive, 3-k negative) via the Skein polynomial.  Empirical: |S(n) − S(p)| ≈ 0.00339 dimensionless; the difference IS substrate-derivable per ΔS formula above.  Open: the individual S(p), S(n) anchored to a common substrate quantity."
     }
   },
   "q0Anchor": "muon",

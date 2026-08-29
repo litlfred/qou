@@ -47,7 +47,7 @@
     ],
     "reproduce": "python3 -u computations/c_k_beta_decay_witness.py"
   },
-  "description": "Substrate-derived dampening rate c(K) for the \u03b2-decay operator class. From the per-braid-mass-tower bound |R_N| \u2264 \u210f_q^(2(N+1))/(1-\u210f_q\u00b2) and the substrate identity \u210f_q = (q_0-1)/q_0, the bound reads exactly C(K)\u00b7exp(-c(K)\u00b7N) with c(K) = -2 ln \u210f_q \u2248 4.624 and C(K) = \u210f_q\u00b2/(1-\u210f_q\u00b2) \u2248 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9\u00d7 headroom. The actual c(K) for the operator may be larger than this ceiling rate \u2014 pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_\u03b2) input \u2014 N=0 prediction comes from prop:neutron-qvalue-symbolic.",
+  "description": "Substrate-derived dampening rate c(K) for the β-decay operator class. From the per-braid-mass-tower bound |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) and the substrate identity ℏ_q = (q_0-1)/q_0, the bound reads exactly C(K)·exp(-c(K)·N) with c(K) = -2 ln ℏ_q ≈ 4.624 and C(K) = ℏ_q²/(1-ℏ_q²) ≈ 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9× headroom. The actual c(K) for the operator may be larger than this ceiling rate — pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_β) input — N=0 prediction comes from prop:neutron-qvalue-symbolic.",
   "contentBlock": "conj:archimedean-remainder-exponential-decay",
   "parameters": {
     "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",

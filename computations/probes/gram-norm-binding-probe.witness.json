@@ -10,7 +10,7 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-08",
-      "unit": "max rel diff of \u03a3 y_\u03bb tr(\u03c1_\u03bb(W)) vs 50-dps tr_m_atom_zn",
+      "unit": "max rel diff of Σ y_λ tr(ρ_λ(W)) vs 50-dps tr_m_atom_zn",
       "source": "float64 seminormal path vs canonical transfer (validation)."
     },
     {
@@ -19,8 +19,8 @@
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-10",
-      "unit": "max rel |tr_M(W^\u266f) \u2212 tr_M(W)|",
-      "source": "character symmetry \u03c7^\u03bb(T_{w\u207b\u00b9}) = \u03c7^\u03bb(T_w); the QUADRATIC Gram norm tr_M(W\u00b7W^\u266f) is the non-trivial diagnostic."
+      "unit": "max rel |tr_M(W^♯) − tr_M(W)|",
+      "source": "character symmetry χ^λ(T_{w⁻¹}) = χ^λ(T_w); the QUADRATIC Gram norm tr_M(W·W^♯) is the non-trivial diagnostic."
     }
   ],
   "allPassed": true,
@@ -51,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/probes/gram_norm_binding_probe.py"
   },
-  "description": "Exploratory operator-space Gram norm G(W)=tr_M(W\u00b7W^\u266f) vs binding residuals (q-bar / Baer-* norm discussion, 2026-07-03).",
+  "description": "Exploratory operator-space Gram norm G(W)=tr_M(W·W^♯) vs binding residuals (q-bar / Baer-* norm discussion, 2026-07-03).",
   "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
   "parameters": {
     "q0": 1.109978595642739,
@@ -62,7 +62,7 @@
       "3H",
       "3He"
     ],
-    "sharp_involution": "word reversal; fixes q and each letter c\u00b7\u03c3_g + d\u00b71"
+    "sharp_involution": "word reversal; fixes q and each letter c·σ_g + d·1"
   },
   "data": {
     "rows": [
