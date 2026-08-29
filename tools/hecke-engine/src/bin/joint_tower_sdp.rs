@@ -439,23 +439,44 @@ fn main() {
             let n_psd = cert
                 .wedderburn_blocks
                 .iter()
-                .filter(|b| b.psd_symmetric_part)
+                .filter(|b| b.psd_symmetric_part == Some(true))
                 .count();
+            let n_skipped = cert
+                .wedderburn_blocks
+                .iter()
+                .filter(|b| b.skipped_dim_cap)
+                .count();
+            // Fold over EVALUATED blocks only. A skipped block used to
+            // contribute a fabricated 0.0 here and print as `NOT PSD`.
             let min_eig = cert
                 .wedderburn_blocks
                 .iter()
-                .map(|b| b.min_eigenvalue)
+                .filter_map(|b| b.min_eigenvalue)
                 .fold(f64::INFINITY, f64::min);
             println!(
-                "  Wedderburn blocks: {}/{} PSD, global min eigenvalue {:+.4e}",
-                n_psd, n_blocks, min_eig
+                "  Wedderburn blocks: {}/{} PSD ({} skipped, d_λ > cap), \
+                 global min eigenvalue over evaluated blocks {:+.4e}",
+                n_psd,
+                n_blocks - n_skipped,
+                n_skipped,
+                min_eig
             );
             for b in &cert.wedderburn_blocks {
-                let flag = if b.psd_symmetric_part { "PSD" } else { "NOT PSD" };
-                println!(
-                    "    λ={:?} (d_λ={}): eigs ∈ [{:+.4e}, {:+.4e}]  {}",
-                    b.partition, b.d_lambda, b.min_eigenvalue, b.max_eigenvalue, flag
-                );
+                match (b.min_eigenvalue, b.max_eigenvalue, b.psd_symmetric_part) {
+                    (Some(lo), Some(hi), Some(psd)) => println!(
+                        "    λ={:?} (d_λ={}): eigs ∈ [{:+.4e}, {:+.4e}]  {}",
+                        b.partition,
+                        b.d_lambda,
+                        lo,
+                        hi,
+                        if psd { "PSD" } else { "NOT PSD" }
+                    ),
+                    _ => println!(
+                        "    λ={:?} (d_λ={}): SKIPPED (d_λ > --max-dim-psd); \
+                         PSD not determined",
+                        b.partition, b.d_lambda
+                    ),
+                }
             }
         }
         max_n_observed = max_n_observed.max(entry.native_strand_count);
@@ -543,6 +564,8 @@ fn main() {
         }
     }
 
+    // Bound before the struct literal: `certs` is moved into it below.
+    let n_certs = certs.len();
     let witness = cert::JointTowerSdpWitness {
         computation: "joint-tower-sdp-rust".to_string(),
         computed_at: Utc::now().to_rfc3339(),
@@ -560,10 +583,61 @@ fn main() {
             version: env!("CARGO_PKG_VERSION").to_string(),
             language: "rust".to_string(),
         },
-        q_0_numeric: 1.1097,
+        // Record what the run ACTUALLY evaluated at. This was the literal
+        // `1.1097` until 2026-08-29, while `args.q0` fed every call to
+        // `evaluate_all_blocks` / `solve_alpha_psd` -- so a `--q0` override
+        // produced a witness that misreported its own input (bean qou-ia6f).
+        q_0_numeric: args.q0,
+        precision_tier: "float64".to_string(),
+        deprecated: cert::DeprecationNote {
+            reason: "The PSD evaluation at q_0 is f64 and stays f64, because \
+                     its rounding is not the dominant error and is not close \
+                     to being it. The default q_0 = 1.1097 is 251 ppm from the \
+                     canonical proton pin 1.1099785827513808, so the INPUT \
+                     error exceeds binary64 rounding by ~12 orders of \
+                     magnitude; an mpmath rewrite would refine 1e-16 \
+                     arithmetic underneath a 2.5e-4 input. Measured on the \
+                     emitted spectra: 169 Wedderburn blocks, of which 118 were \
+                     actually evaluated (d_lambda 1..462) and 51 were SKIPPED \
+                     by --max-dim-psd (d_lambda 616..7700, empty eigenvalue \
+                     list). Over the 118 evaluated, the smallest NONZERO \
+                     |min_eigenvalue| is 0.4159 -- 7.5e15 ulps from zero -- so \
+                     f64 rounding cannot flip any of those PSD verdicts; a 251 \
+                     ppm shift in q_0 is the perturbation that could. Read the \
+                     numeric half as a shape check, never as a value. The \
+                     witness's EXACT half (filtration certificates, jet logs, \
+                     Wedderburn shapes, every coefficient_in_q as a Q(q) \
+                     string) is untouched by any of this -- and, grepped \
+                     2026-08-29, is read by NO Python consumer: it is \
+                     recorded, not consumed."
+                .to_string(),
+            not_production: "Reaches no production location on the \
+                             production-vs-exploratory decision tree. Five live \
+                             consumers, all probes or demos: \
+                             probe_4_li6_rectangular_conjecture, \
+                             probe_1_project_4he_on_dominant, \
+                             categorical_bypass_volmatch_demo, \
+                             alpha/alpha_star_dominant_partitions, \
+                             alpha/alpha_star_vs_binding_gap. Two of them name \
+                             mass-table-ppb, but both READ it for comparison \
+                             rather than feed it -- categorical_bypass's own \
+                             docstring records that its formula does NOT \
+                             reproduce those predictions. The only witness any \
+                             of them emits, \
+                             categorical-bypass-volmatch-demo.witness.json, is \
+                             read by nothing but its own producer. The \
+                             `consumed_by: prop:atom-knot-mass-derivation` \
+                             string above is a producer-side declaration with \
+                             nothing on the other end: all five blocks in that \
+                             proposition family cite d_from_scratch.py and \
+                             different witnesses, and the proposition's own \
+                             computation block is status: not_run."
+                .to_string(),
+        },
         per_atom_certificates: certs,
         summary: cert::WitnessSummary {
-            n_atoms: reg.len(),
+            n_atoms: n_certs,
+            n_atoms_in_registry: reg.len(),
             max_grade_observed,
             total_jet_steps: total_jet,
             total_hecke_relations_fired: total_hecke,
