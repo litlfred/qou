@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T07:38:55Z
+updated_at: 2026-08-29T08:35:14Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2375,3 +2375,60 @@ PROTON_NF/NEUTRON_NF give L+ = -9.98e-5, L- = -0.109 -- the right answer, from
 values whose basis convention this bean's own tail records as UNVERIFIED, and
 -9.98e-5 is small enough that "is it exactly zero?" is precisely what float64
 cannot answer.
+
+
+## 2026-08-29 (LATER) — CORRECTION to the entry above: it tested the wrong element
+
+The entry immediately above ("THE FORK IS FORCED") reported a real result by
+three wrong routes at once. **Its verdict stands and is now established
+properly**, but do not cite its reasoning. Corrected in
+computations/qbeta/qbeta_d1_eleven_crossing_exclusion_probe.py (14/14, rewritten).
+
+1. **It built a NINE-crossing element and called it eleven.** build_nucleon is
+   the transcription of pyhecke.atom.build_nucleon_nf: 3x(sigma_0, sigma_1^-1)
+   + 3 quark pairs = 9. That builder omits the 2-sigma_0 gluon dressing
+   deliberately — its own docstring says "No separate gluon dressing — B_3 IS
+   the gluon structure".
+
+2. **There is no single 11-crossing element.** pyhecke.atom carries THREE
+   mutually inconsistent nucleon constructions:
+
+     build_nucleon_nf     ( 9 crossings)      net = -0.1883216147
+     build_atom_nf_exact  (11, interleaved)   net = -0.2272041420
+     nucleon_gen_chains   (11, gen-grouped)   net = -0.2332458961
+
+   The two 11-crossing models carry the SAME multiset of typed crossings and
+   differ only in ORDER — build_atom_nf_exact interleaves gen-0/gen-1,
+   nucleon_gen_chains emits all gen-0 then all gen-1. H_3(q) is not commutative
+   across generators, so they are different elements and their nets differ by
+   2.6 %. **qou-bg3w's Delta_L (-0.233198) is the gen-grouped one**, which the
+   first version never touched.
+
+3. **It tested the wrong quantity.** (D1) is affine in z iff the **z^2
+   coefficient of tr_M** vanishes. With TR = [1, z, z, z^2, z^2, z(hz+1)] that
+   is d[L+] + d[L-] + h*d[e^-], a SUM — not L+ alone. **On qou-bg3w's actual
+   Delta_L, L+ is EXACTLY 0**, so the first version's stated reason ("L+ =
+   -h^5/4 shuts it cleanly") is FALSE for that element. The exclusion there
+   rides on L- instead.
+
+**The corrected exclusion**, exact symbolic in h, all three long models:
+
+     9-crossing       [z^2] = -h(h^2-h+1)(h^2+h+1)/2   real roots {0}
+     11 interleaved   [z^2] = -h(h^2+2)(2h^4+h^2+1)/4  real roots {0}
+     11 gen-grouped   [z^2] = -h(h^2+2)/4              real roots {0, +-i sqrt2}
+
+Each nonzero, each with h = 0 as its ONLY real root; substrate h ~ 0.209.
+Scope-(b), invariant cited (a polynomial with no real root but zero cannot
+vanish at a nonzero real point). So the fork is forced **against all three long
+candidates**, not against one 9-crossing element mislabelled as eleven.
+
+Both 11-crossing transcriptions are VALIDATED against pyhecke rather than
+trusted: nuc11_interleaved coordinate-by-coordinate against build_atom_nf_exact
+in exact Fraction arithmetic, nuc11_gen_grouped against the _PROTON_G0/_G1
+chains.
+
+**New, and it is a defect in the tree, not in this bean:** pyhecke.atom's three
+nucleon constructions disagree by up to 24 %, and different consumers read
+different ones. The exact atom/mass path uses build_atom_nf_exact; the module
+constants PROTON_NF/NEUTRON_NF are build_nucleon_nf; the fork-pricing probe
+reads _PROTON_G0/_G1. Not filed as its own bean yet.
