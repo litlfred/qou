@@ -494,7 +494,7 @@ def main() -> int:
     # Real invariant: the inversion reproduces the canonical proton target.
     wb.add_assertion(
         "c3_target_proton_matches_canonical",
-        computed=float(cp),
+        computed=cp,
         expected=-2.06934257711516783787971951725,
         tolerance=1e-12,
     )
