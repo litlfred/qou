@@ -79,8 +79,11 @@ This is a direct consequence of Markov axiom M3:
   τ_M(x σ_k) = z · τ_M(x)   for x ∈ H_{k}
 applied iteratively to stabilise the disjoint strands. -/
 
-/-- The Markov-Jones parameter z = 1 / (√q + 1/√q). -/
-noncomputable def markovZc (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
+/-- The Markov-Jones parameter `z = q³/(q²+1)` (convention D, canonical per the
+2026-08-15 owner ruling). At the proton pin `q₀` this is `0.6126880371`; the
+convention-C value `1/(√q + 1/√q) = 0.4993203342` is a different number and is
+not what this definition computes. -/
+noncomputable def markovZ (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- **Single-strand disjoint-stabilisation (Markov axiom M3).**
 
@@ -103,7 +106,7 @@ class MarkovDisjointStabilisation (q : ℝ) where
   /-- The single-strand Markov stabilisation map on trace values. -/
   stab : ℝ → ℝ
   /-- Markov M3: stabilising by one disjoint strand multiplies by `z`. -/
-  stab_spec : ∀ t : ℝ, stab t = t * markovZc q
+  stab_spec : ∀ t : ℝ, stab t = t * markovZ q
 
 /-- `k`-fold disjoint stabilisation: append `k` unlinked strands, each an
     independent application of the Markov-M3 map `stab` (iterated `k` times). -/
@@ -117,7 +120,7 @@ def stabIter (q : ℝ) [inst : MarkovDisjointStabilisation q] (k : ℕ) (t : ℝ
     the `z^k` factor is derived from the single-strand axiom
     (`stab t = t·z`), it is not the same statement and is not assumed. -/
 theorem stabIter_spec (q : ℝ) [inst : MarkovDisjointStabilisation q] (k : ℕ) (t : ℝ) :
-    stabIter q k t = t * (markovZc q) ^ k := by
+    stabIter q k t = t * (markovZ q) ^ k := by
   unfold stabIter
   induction k with
   | zero => simp
@@ -147,7 +150,7 @@ Markov trace factorises as product times z-power. -/
     computation, the right side its closed form. -/
 theorem inter_knot_decoupling (q : ℝ) [MarkovDisjointStabilisation q]
     (tau_K1 tau_K2 : ℝ) (k : ℕ) :
-    stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZc q) ^ k :=
+    stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZ q) ^ k :=
   stabIter_spec q k (tau_K1 * tau_K2)
 
 /-! ## Combined convergence theorem
@@ -169,7 +172,7 @@ theorem categorical_chain_convergence_mechanisms
     ∧
     -- Mechanism 2: inter-knot decoupling — joint trace = product · z^k
     (∀ (tau_K1 tau_K2 : ℝ) (k : ℕ),
-       stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZc q) ^ k) := by
+       stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZ q) ^ k) := by
   refine ⟨?_, ?_⟩
   · intro N
     exact cKBound_geometric_decay q hq_lower hq_upper N
