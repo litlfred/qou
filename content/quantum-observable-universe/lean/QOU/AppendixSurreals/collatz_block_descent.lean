@@ -159,4 +159,62 @@ theorem reaches_cycle_of_block_descent_domainStable {Skein : Type u}
       let ⟨n, hn⟩ := hblock P hP hne
       ⟨n, domainStable_iterate P hP n, hn⟩)
 
+
+/-! ## What actually follows an odd step — the block picture made precise
+
+The block decomposition above assumed the shape "one odd step, then a run of even
+steps". That shape is **not** automatic, and this section pins down exactly when
+it holds.
+
+A `q`-odd element is one with residue `-1` at the `[2]_q`-divisor, so it has the
+form `P = -1 + [2]_q·A`. The odd branch then simplifies completely: -/
+
+/-- **The odd branch on a `q`-odd element.** With `P = -1 + [2]_q·A`,
+
+      [3]_q·P + 1 = [2]_q·(-q + [3]_q·A),
+
+    so the branch's exact division is visible term by term and its output is
+    `C(P) = -q + [3]_q·A`. A pure ring identity — no hypothesis on `q` or `A`. -/
+theorem oddStep_of_qOdd_form {R : Type*} [CommRing R] (q A : R) :
+    (q ^ 2 + q + 1) * (-1 + (q + 1) * A) + 1
+      = (q + 1) * (-q + (q ^ 2 + q + 1) * A) := by
+  ring
+
+/-- **Residue of the odd branch's output.** At the divisor `q = -1`, the output
+    `-q + [3]_q·A` has residue `1 + A(-1)`. So what follows an odd step is
+    decided entirely by `A(-1)`:
+
+    * `A(-1) = -1` → residue `0` → the next step is **even** (the block continues);
+    * `A(-1) = -2` → residue `-1` → the next step is **odd** (a `v = 0` block);
+    * anything else → the orbit **leaves the domain**.
+
+    This is the trichotomy that makes "block" well defined. -/
+theorem oddStep_next_residue {R S : Type*} [CommRing R] [CommRing S]
+    (φ : R →+* S) (q A : R) (hq : φ q = -1) :
+    φ (-q + (q ^ 2 + q + 1) * A) = 1 + φ A := by
+  simp only [map_add, map_neg, map_mul, map_pow, map_one, hq]
+  ring
+
+/-- **Two consecutive odd steps are possible.** Taking `A = -2` gives a `q`-odd
+    element whose odd-branch image is again `q`-odd — so the "odd then even"
+    block shape is *not* a theorem about the map, only about orbits where
+    `A(-1) = -1`.
+
+    Concretely over `ℤ[q]` this is `P = -2q - 3 ↦ -2q² - 3q - 2`, both of residue
+    `-1`. Measured separately
+    (`computations/qcollatz_block_structure_probe.py`): of 1420 such
+    consecutive-odd starts, **none** reached the attractor cycle — every one left
+    the domain, 93 % of them within two steps. So no `v = 0` block has been
+    exhibited inside `D∞`, but none is excluded either: whether one can occur
+    there is **open**, and it is the precise obstacle to treating the block
+    decomposition as total. -/
+theorem consecutive_odd_steps_exist {R : Type*} [CommRing R]
+    (φ : R →+* ℤ) (q : R) (hq : φ q = -1) :
+    ∃ A : R, φ (-1 + (q + 1) * A) = -1 ∧ φ (-q + (q ^ 2 + q + 1) * A) = -1 := by
+  refine ⟨-2, ?_, ?_⟩
+  · simp only [map_add, map_neg, map_mul, map_one, map_ofNat, hq]
+    ring
+  · rw [oddStep_next_residue φ q (-2) hq, map_neg, map_ofNat]
+    norm_num
+
 end QOU.AppendixSurreals.CollatzBlockDescent
