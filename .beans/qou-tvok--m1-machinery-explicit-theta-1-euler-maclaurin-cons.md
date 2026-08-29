@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T01:34:20Z
-updated_at: 2026-08-29T02:52:33Z
+updated_at: 2026-08-29T06:32:28Z
 ---
 
 SCOPE UPDATE (2026-08-29): 'kink cancels => clean theta^{-1} bulk' is RETRACTED (qou-8quz refuted).
@@ -23,3 +23,12 @@ descent-DPP Richardson 9e-8. Lean: ContentVarianceLeadingConstant.vA_summand_par
 (sorry-free, the partial-fraction algebra over a char-0 field).
 REMAINING in qou-tvok: the remainder constant C_A + rate (bulk EM via CompositeEulerMaclaurin + Airy
 edge via Gaussian bounds); sub-leading exponent still open (PR #5939 retraction).
+
+STEP 2 (2026-08-29): the REMAINDER rate is RESOLVED. With v_A=8/pi^2 subtracted exactly,
+d(theta)=V_A/theta^2-8/pi^2 has exponent p in [0.95,1.02] over 5 doublings theta=1000..32000 =>
+theta^{-1} (unambiguous now the v_A confound is removed; this legitimately resolves what the #5939
+retraction left open). Sign: d<0 (from below). Coefficient c_1=lim theta*d ~ -0.0678 (measured;
+candidate -2/(3pi^2)=-0.06755 REJECTED, near-miss 2.2e-4; no clean closed form). Rigorous bound
+|d|<=C_A/theta NOT yet derived (needs EM bulk + Airy edge); target C_A~0.07-0.1. c_1 measured !=
+C_A bounded. Probe: wlambda_covariance_epic_M1_tvok_remainder_rate.py; audit:
+docs/audits/2026-08-29-covariance-kernel-M1-tvok-remainder-rate.md
