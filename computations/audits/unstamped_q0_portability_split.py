@@ -45,11 +45,15 @@ settled — check them before trusting any figure about this class:
   1. **`scriptFile` is TOP-LEVEL, not under a `witness` block.** Reading
      `payload["witness"]["scriptFile"]` finds nothing and reports every
      witness as unattributed (measured: 0 named, against a true 124).
-  2. **`scriptFile` holds a BARE BASENAME, not a repo-relative path.**
-     `Path(sf).exists()` is False for essentially all of them, which reads as
-     "the producer was deleted" (measured: 121 of 124 "missing", against a
-     true 43). Resolve by basename across the tree, preferring the
-     non-`_deprecated` copy.
+  2. **`scriptFile` USUALLY holds a bare basename, not a repo-relative path** —
+     but not always, and treating either shape as the rule is a trap.
+     `Path(sf).exists()` is False for essentially all the basename ones, which
+     reads as "the producer was deleted" (measured: 121 of 124 "missing",
+     against a true 41). Meanwhile `binding-additive-linked-cluster-scan`
+     records the full `computations/probes/...py` path, so a resolver that
+     assumes basename-only would miss the directory it is told. Take
+     `Path(sf).name` and resolve that across the tree, preferring the
+     non-`_deprecated` copy — that is correct for both shapes.
 
 BUCKET C IS A CANDIDATE SET, NOT A WORKLIST (measured 2026-08-28, `1j39`)
 -------------------------------------------------------------------------
