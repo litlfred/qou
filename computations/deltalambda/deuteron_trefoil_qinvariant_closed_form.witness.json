@@ -29,8 +29,13 @@
   },
   "exactness_threshold_rel_err": "1e-6",
   "verdict": "honest-negative: no 0-parameter closed-form q-invariant of the trefoil reproduces C_knot to exactness; nearest 0-knob is q0^17 (0.69%, ruled-out numerology #4556 s4); nearest structural single [3]_q! is 3.0% off; objects landing within ~2.5% carry a free level/color knob (= fit).",
-  "scriptHash": "c7a14060cd49",
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): inputs.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptHash": "2f6cf3eeba21",
+  "scriptFile": "deuteron_trefoil_qinvariant_closed_form_probe.py",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:24:04.244768+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -358,7 +358,19 @@ def main():
     for chunk in synthesis.split(". "):
         print(f"    {chunk.strip()}")
 
-    out_path = w.save()
+    # q₀-independent, declared at the producer (bean qou-y98b). This probe is
+    # pure structure -- polynomial degrees, the Klein syzygy, orbit values,
+    # Riemann-Hurwitz -- and its import cone reaches `_precision` and nothing
+    # that resolves q₀. The manifest lists the stem `ambiguous`, which means
+    # "depends on q₀ but the pin is undetermined"; that is not this probe, and
+    # a producer's own declaration outranks the manifest.
+    out_path = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "structural probe: Klein J-invariant degrees, syzygy, orbit "
+            "values and Riemann-Hurwitz; no q0 in the import cone"
+        ),
+    })
     print()
     print(f"  Wrote witness: {out_path}")
 

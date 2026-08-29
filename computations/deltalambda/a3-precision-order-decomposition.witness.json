@@ -5,7 +5,7 @@
   "description": "HOW to improve A=3 binding precision. The corpus model predicts B(\u00b3H)/B(\u00b2H)=3.8128 to 4.56%; the dominant graded baseline \u03c1_grad_G(3)=[3]_q is EXACT (87.6% of the ratio) and the derived leading Borromean cluster c\u2083=0.297 is 7.8%, so ALL the error is subleading. Order-separation: closing the 0.17377 miss by higher cluster orders needs an h\u2076 coefficient a\u2081\u224813.4 (13\u00d7 the O(1) natural size); a bounded (|a_k|\u22642) tail closes \u22640.7% of the ratio \u226a 4.56%. So the routine higher-order route is RULED OUT \u2014 precision needs a new leading-order (h\u2074) 3-body channel (the \u0394_\u03bb closure) or an anomalous fit-flag coefficient. A=3 ratio precision is \u0394_\u03bb-gated, NOT q\u2080-limited (scale cancels in the ratio). Report precision on the frame-independent physical ratio, not the \u03bc\u2083 residual (which amplifies ~8\u00d7). scope-(a); anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) precision-route pruning (order-separation of the higher-cluster route); no fit",
-  "scriptHash": "ac0b978242332a3a",
+  "scriptHash": "aec698139a33",
   "result": {
     "substrate": {
       "q0": "1.10997859555733471",
@@ -46,8 +46,12 @@
     "builds_on": "PR #4491 (\u03bc\u2083 frame-robustness, frame-independent ratio), #4364 (c\u2083 leading cluster), three-walls audit, Q_\u03b2 c\u2083 hypersensitivity (2026-07-12)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "a3_precision_order_decomposition_probe.py",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:24:02.514687+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

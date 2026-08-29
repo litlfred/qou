@@ -5,7 +5,7 @@
   "description": "The A=4 (\u2074He) order-separation diagnostic. Physical ratio B(\u2074He)/B(\u00b2H)=13.0316. The EXACT graded baseline [3][4]=15.740 OVERSHOOTS (+20.8%); adding the 4 positive 3-body clusters makes it worse (+29.9%). The fix is a large NEGATIVE 4-body saturation c\u2084\u2248\u22123.896 (\u221224.75% of baseline, |c\u2084|/c\u2083\u224813.1) \u2014 the \u03b1-cluster / closed [1\u2074] SU(4) supermultiplet (\u03bc\u2084 #4320). Order-separation: the bounded 3-body higher-order tail (\u22480.109) is \u226a |c\u2084| (36\u00d7), so A=4 precision needs a NEW leading-order 4-body channel, not a 3-body higher-order refinement. Two new facts beyond three-walls Route 3: (1) frame-independent magnitude \u2014 the A=4 discrepancy is ~5\u00d7 A=3's, localizing the accuracy loss to the saturation regime; (2) \u03bc\u2084 is even more frame-fragile (2.07\u00d7 vs \u03bc\u2083's 1.73\u00d7). A=3 (small +3-body) and A=4 (large \u22124-body) are opposite-sign regimes needing DISTINCT leading channels. scope-(a); anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) A=4 precision-route diagnostic (order-separation + frame-independent magnitude); no fit",
-  "scriptHash": "667cd3aa0bb4acea",
+  "scriptHash": "5009f9f348de",
   "result": {
     "substrate": {
       "q0": "1.10997859555733471",
@@ -53,8 +53,12 @@
     "builds_on": "the A=3 probe (a3_precision_order_decomposition), #4320 (\u03bc\u2084 simplex), three-walls Route 3 (\u03bc\u2084<0 sign-swap), PR #4491 (frame-robustness)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "a4_precision_order_decomposition_probe.py",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:24:02.670224+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -2,10 +2,10 @@
   "schema": "witness/v1",
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
   "scriptFile": "ksel2id_tropical_transport_probe.py",
-  "scriptHash": "5b70cf782558",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "3683889bab85",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "computation": "ksel2id-tropical-transport",
   "description": "KSel-2-ID tropical transport: the E-shift of the lattice class is exact algebra on moment ratios, dissolving the perturbation lemma",
   "auditOnly": "docs/audits/2026-08-01-ksel2id-tropical-transport.md",
@@ -137,5 +137,9 @@
       "residual": "ONE analytic statement \u2014 extremal support class = tropical class \u2014 which is the same input the pure SW core already requires (A_w zero asymptotics); the u1-promotion audit's \u00a74 gap 1 (perturbation lemma) is thereby dissolved, not proved",
       "scope": "scope-(a) throughout; nothing wired; the target conjecture is unchanged in kind"
     }
-  }
+  },
+  "computedAt": "2026-08-29T01:24:35.477224+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

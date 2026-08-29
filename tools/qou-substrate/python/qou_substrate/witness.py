@@ -1628,8 +1628,12 @@ class WitnessBuilder:
 
         * ``None`` (default) — resolve the anchor and stamp it.
         * a ``str`` — stamp that anchor, caller's declaration wins.
-        * ``False`` — **this witness does not depend on q₀; stamp no anchor
-          at all.**
+        * ``False`` — **this witness does not depend on q₀; stamp
+          ``q0Anchor: "independent"`` with a reason.** Note this DECLARES the
+          independence rather than omitting the field: an absent field cannot
+          be told apart from an unmigrated producer, and the q0Anchor ratchet
+          counts it as missing. It asserts no pin, so it is not an inert
+          anchor.
 
         The ``False`` case exists because the resolver ALWAYS produces an
         anchor, so a producer that never touches q₀ still got one — and an
@@ -1708,6 +1712,34 @@ class WitnessBuilder:
         # (I first wrote that `""` "falls through to resolution"; the test
         # below disagreed, and the test was right.)
         if q0_anchor is False:
+            # DECLARE the independence; do not merely omit the field.
+            #
+            # Omitting is byte-identical to never having asked, so a downstream
+            # reader cannot tell a producer that ANSWERED "I do not use q0" from
+            # one that was never migrated. Measured: `q0_anchor_ratchet.py`
+            # (bean qou-y98b) counts an absent field as Q0_ANCHOR_MISSING and
+            # fails --strict on it, so a correctly-migrated q0-independent
+            # producer was tripping the gate that exists to catch UNmigrated
+            # ones -- and re-running such a producer converted a stamped
+            # witness into an unstamped one, which reads as a regression.
+            #
+            # "independent" is not an inert anchor and does not reintroduce the
+            # problem this branch was added for (bean qou-iph3, ~196 of 287
+            # producers that never reach q0): it asserts no pin, so nothing can
+            # misread a proton/muon value off it. It is an established verdict
+            # in q0_anchor_consistency_audit.py (Q0_INDEPENDENT), which is why
+            # this needs no new vocabulary -- and that audit reports
+            # Q0_INDEPENDENT_NO_REASON separately, so the reason is required
+            # rather than decorative.
+            #
+            # setdefault, not assignment: a producer's own explicit declaration
+            # wins, the same precedence this function applies to q0Anchor below.
+            payload.setdefault("q0Anchor", "independent")
+            payload.setdefault(
+                "q0AnchorReason",
+                "producer declared q0-independent at the stamp site "
+                "(q0_anchor=False): no q0-dependent field in this witness",
+            )
             return payload
         if q0_anchor is None:
             # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
