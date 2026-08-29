@@ -1,22 +1,22 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:18:29.769422+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:31:46.844572+00:00",
+  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
       "computed": 0,
       "expected": 1,
       "passed": false,
-      "source": "tr_M(β_atom) @ q_0: the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) must agree to 1 ppQ (1e-15). Both evaluate the exact-in-q trace at the full 50-digit q_0. The Hoefsmit/Habiro legs are color-blind (informational). An atom with <2 color-weighted methods (⁴He: partial chi-cache, b0vf) is UNCERTIFIED — reported but not counted as a divergence."
+      "source": "tr_M(\u03b2_atom) @ q_0: the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) must agree to 1 ppQ (1e-15). Both evaluate the exact-in-q trace at the full 50-digit q_0. The Hoefsmit/Habiro legs are color-blind (informational). An atom with <2 color-weighted methods (\u2074He: partial chi-cache, b0vf) is UNCERTIFIED \u2014 reported but not counted as a divergence."
     },
     {
       "name": "character_engine_matches_closed_form",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "χ^{(n)}(β) = q_0^{w(β)} and χ^{(1ⁿ)}(β) = (−q_0^{-1})^{w(β)} for the two 1-dim Hecke irreps — an INDEPENDENT closed-form anchor on the character engine that feeds the chi-cache trace leg (agreement of the four paths is consistency, not correctness)"
+      "source": "\u03c7^{(n)}(\u03b2) = q_0^{w(\u03b2)} and \u03c7^{(1\u207f)}(\u03b2) = (\u2212q_0^{-1})^{w(\u03b2)} for the two 1-dim Hecke irreps \u2014 an INDEPENDENT closed-form anchor on the character engine that feeds the chi-cache trace leg (agreement of the four paths is consistency, not correctness)"
     }
   ],
   "allPassed": false,
@@ -24,7 +24,7 @@
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
   "scriptHash": "6f2e22f3b468",
-  "scriptCommitSha": "0d573e1cbdce05504fb0ba9f7082e21a902dcc98",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
-    "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. 1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) agreeing at q_0 (~1e-50); peel evaluates its exact-in-q trace at the full 50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind (sign-only) cross-checks: they diverge ~1.8e-4 at A≥2 by the color-weighting (informational, not gated). An atom with only one color-weighted method (⁴He: partial chi-cache, bean b0vf) is reported UNCERTIFIED, not divergent.",
+    "description": "Pairwise comparison of tr_M(\u03b2_atom) @ q_0 across four paths. 1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) agreeing at q_0 (~1e-50); peel evaluates its exact-in-q trace at the full 50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind (sign-only) cross-checks: they diverge ~1.8e-4 at A\u22652 by the color-weighting (informational, not gated). An atom with only one color-weighted method (\u2074He: partial chi-cache, bean b0vf) is reported UNCERTIFIED, not divergent.",
     "tolerance_1ppQ_exact_methods": "0.000000000000001",
     "tolerance_peel_float_check": "0.000000000001",
     "working_precision_dps": 50
@@ -206,7 +206,7 @@
     "character_closed_form_anchor": {
       "checks": [
         {
-          "braid": "proton (σ₁σ₂⁻¹)³",
+          "braid": "proton (\u03c3\u2081\u03c3\u2082\u207b\u00b9)\u00b3",
           "n_strands": 3,
           "writhe": 0,
           "chi_symmetric": "0.99999999999999999999999999999999999999999999999999",
@@ -217,7 +217,7 @@
           "ok": true
         },
         {
-          "braid": "neutron (σ₁⁻¹σ₂)³",
+          "braid": "neutron (\u03c3\u2081\u207b\u00b9\u03c3\u2082)\u00b3",
           "n_strands": 3,
           "writhe": 0,
           "chi_symmetric": "0.99999999999999999999999999999999999999999999999999",
@@ -228,7 +228,7 @@
           "ok": true
         },
         {
-          "braid": "σ₁³ (3 strands)",
+          "braid": "\u03c3\u2081\u00b3 (3 strands)",
           "n_strands": 3,
           "writhe": 3,
           "chi_symmetric": "1.367551884599874409400915056857333031186080871396",
@@ -239,7 +239,7 @@
           "ok": true
         },
         {
-          "braid": "σ₁σ₂ (3 strands)",
+          "braid": "\u03c3\u2081\u03c3\u2082 (3 strands)",
           "n_strands": 3,
           "writhe": 2,
           "chi_symmetric": "1.2320524827850271933881102217035379516342548501416",
@@ -250,7 +250,7 @@
           "ok": true
         },
         {
-          "braid": "σ₁ (2 strands)",
+          "braid": "\u03c3\u2081 (2 strands)",
           "n_strands": 2,
           "writhe": 1,
           "chi_symmetric": "1.109978595642739046681795129380001752700065561029",
@@ -261,7 +261,7 @@
           "ok": true
         },
         {
-          "braid": "σ₁⁻²σ₂ (3 strands)",
+          "braid": "\u03c3\u2081\u207b\u00b2\u03c3\u2082 (3 strands)",
           "n_strands": 3,
           "writhe": -1,
           "chi_symmetric": "0.90091827349242230005099486787808186671992839180313",

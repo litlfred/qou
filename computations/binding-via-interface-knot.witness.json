@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-28T20:18:11.312646+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T02:31:24.032356+00:00",
+  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3527,
+  "durationMs": 3862,
   "computation": "binding-via-interface-knot",
   "scriptFile": "binding_via_interface_knot.py",
   "scriptHash": "97abc18d496f",
-  "scriptCommitSha": "1dfe31ac4506a5bb117a5b5266d066f2dca983e6",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,12 +42,12 @@
     ],
     "reproduce": "python3 -u computations/binding_via_interface_knot.py"
   },
-  "description": "Categorical binding energy via interface-knot Δ_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 ≈ 1.1097 for some H_{3A>3} pairs).",
+  "description": "Categorical binding energy via interface-knot \u0394_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 \u2248 1.1097 for some H_{3A>3} pairs).",
   "parameters": {
     "Q_beta_CAL3_MeV": "0.7823334093099085",
     "m_e_CAL1_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "MeV_scale_factor": "E_0=Q_beta_CAL3",
-    "MeV_scale_note": "B_MeV_* fields use Q_beta as the dimensionful scale; pentagon-reduction-li2q.witness.json uses m_e. Same B_dim_* values, different MeV multipliers by ~m_e/E_0 ≈ 0.654×.",
+    "MeV_scale_note": "B_MeV_* fields use Q_beta as the dimensionful scale; pentagon-reduction-li2q.witness.json uses m_e. Same B_dim_* values, different MeV multipliers by ~m_e/E_0 \u2248 0.654\u00d7.",
     "q0_50dps": "1.109978595642739046681795129380001752700065561029010685236756785012502",
     "z_markov_50dps": "0.6126880506382724152208889276461106648319646313607787669303403432719917"
   },
@@ -253,14 +253,14 @@
       "tensor_product_max_over_min": "3.96000000000000000000000000000000000000000000000000000000000",
       "tensor_product_sign_correct": false,
       "tensor_product_failure_modes": [
-        "T/³He predicted UNBOUND (wrong sign)",
+        "T/\u00b3He predicted UNBOUND (wrong sign)",
         "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
-        "No interface knot in baseline (tensor → no inter-block crossing)"
+        "No interface knot in baseline (tensor \u2192 no inter-block crossing)"
       ],
       "this_first_order_max_over_min": "2.36929663428884660560527818585664150290129310186307555083153",
       "this_first_order_sign_correct": true
     },
-    "verdict": "IMPROVES — max/min^(1) = 2.369, signs correct. T3 now computed via pentagon-reduction (`pentagon_reduction_li2q.li_2_q_pentagon`); higher-order tower terms beyond T3 still pending."
+    "verdict": "IMPROVES \u2014 max/min^(1) = 2.369, signs correct. T3 now computed via pentagon-reduction (`pentagon_reduction_li2q.li_2_q_pentagon`); higher-order tower terms beyond T3 still pending."
   },
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

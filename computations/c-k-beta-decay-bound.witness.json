@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T02:22:14.940905+00:00",
-  "commitSha": "460ea31fb2958e1936c677828b4d10385f4ed2d3",
+  "computedAt": "2026-08-29T02:31:27.175306+00:00",
+  "commitSha": "581e74569b9d0cd8cbd14f3ebddec9560814cfe1",
   "assertions": [
     {
       "name": "geometric_form_equals_exponential_form_to_50dps",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "c-k-beta-decay-bound",
   "scriptFile": "c_k_beta_decay_witness.py",
   "scriptHash": "d22d05fa0643",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,7 +47,7 @@
     ],
     "reproduce": "python3 -u computations/c_k_beta_decay_witness.py"
   },
-  "description": "Substrate-derived dampening rate c(K) for the β-decay operator class. From the per-braid-mass-tower bound |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) and the substrate identity ℏ_q = (q_0-1)/q_0, the bound reads exactly C(K)·exp(-c(K)·N) with c(K) = -2 ln ℏ_q ≈ 4.624 and C(K) = ℏ_q²/(1-ℏ_q²) ≈ 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9× headroom. The actual c(K) for the operator may be larger than this ceiling rate — pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_β) input — N=0 prediction comes from prop:neutron-qvalue-symbolic.",
+  "description": "Substrate-derived dampening rate c(K) for the \u03b2-decay operator class. From the per-braid-mass-tower bound |R_N| \u2264 \u210f_q^(2(N+1))/(1-\u210f_q\u00b2) and the substrate identity \u210f_q = (q_0-1)/q_0, the bound reads exactly C(K)\u00b7exp(-c(K)\u00b7N) with c(K) = -2 ln \u210f_q \u2248 4.624 and C(K) = \u210f_q\u00b2/(1-\u210f_q\u00b2) \u2248 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9\u00d7 headroom. The actual c(K) for the operator may be larger than this ceiling rate \u2014 pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_\u03b2) input \u2014 N=0 prediction comes from prop:neutron-qvalue-symbolic.",
   "contentBlock": "conj:archimedean-remainder-exponential-decay",
   "parameters": {
     "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
