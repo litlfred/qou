@@ -43,6 +43,12 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). The literal below was the
+# SUPERSEDED muon pin A (1.10997859555733471...), retired as the muon anchor by
+# PR #5500's re-derivation to CODATA-2022. A frozen literal cannot follow an
+# anchor move. Resolves PROTON per the owner directive of 2026-08-15.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
 sys.path.insert(0, str(ROOT))
@@ -82,8 +88,11 @@ def main() -> int:
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     if q0 is None:
-        # fall back to the canonical muon q0 string used corpus-wide
-        q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+        # NOT a rare fallback -- free-neutron-decay.witness.json carries
+        # `parameters: null`, so this branch fires on EVERY run and the literal
+        # was the producer's real pin. It was the superseded muon value A;
+        # resolved to the proton pin (bean qou-1c4y).
+        q0 = mp.mpf(_Q0_RESOLVED)
     dn_mine = dnet_f(q0)
     print(f"  VALIDATE @ q0: Delta(net) mine = {mp.nstr(dn_mine, 12)}  witness = {mp.nstr(dn_wit, 12)}")
     assert abs(dn_mine - dn_wit) < mp.mpf("1e-6"), "Delta(net) reconstruction drifted"

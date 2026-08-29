@@ -249,8 +249,13 @@ def main() -> int:
         "factorisation per audit §7d (H_6 = 720, H_9 = 360K elements)."
     )
     w.set_content_block("prop:mass-coefficient-shadow-price")
-    w.add_parameter("q0", repr(Q))
-    w.add_parameter("h", repr(H))
+    # `mp.nstr`, not `repr`: repr(mpf) serialises as the STRING "mpf('1.1099...')",
+    # which is not a number and which `_q0_anchor_from_payload` cannot read. With
+    # no payload evidence and an unlisted stem, neither staleness test could fire
+    # and the witness inherited the SUPERSEDED muon value A from its previous run
+    # while computing at C -- a Q0_FLIP no re-run could clear (bean qou-1c4y).
+    w.add_parameter("q0", mp.nstr(Q, 50))
+    w.add_parameter("h", mp.nstr(H, 50))
     w.add_parameter("basis_size", 6)
     w.add_parameter("hecke_level", 3)
     w.add_parameter("lp_method", "scipy linprog highs (f64)")
@@ -287,7 +292,11 @@ def main() -> int:
             unit="absolute", source="primal_obj = dual_obj",
         )
 
-    out = w.save()
+    # DECLARED muon with the value actually used. Q is read from
+    # q-pinning-50-digit.witness.json's `derived_50_digit.q` (line 81), i.e. the
+    # canonical MUON anchor, so an auto-resolved stamp would say PROTON (the stem
+    # is unlisted) over muon arithmetic.
+    out = w.save({"q0Anchor": "muon", "q0Value": mp.nstr(Q, 50)})
     print(f"Witness emitted: {out.name}")
     print()
     for r in rows:

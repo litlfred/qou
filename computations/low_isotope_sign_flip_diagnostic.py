@@ -78,37 +78,51 @@ INPUT_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
-def _pearson_r(xs: list, ys: list):
-    """Pearson correlation coefficient (mpmath).  Returns NaN if degenerate.
+def _mpf(x):
+    """Coerce a witness field to mpf. Upstream witnesses serialize numbers as
+    STRINGS under the NO-FLOAT64 discipline (`_precision.fmt`), so `err_pct`
+    arrives as `"-1.234"`, not as a float. Reading it without this coercion is
+    what broke this producer: `sum(ys)` raised
+    `TypeError: unsupported operand type(s) for +: 'int' and 'str'`."""
+    return x if isinstance(x, mp.mpf) else mp.mpf(str(x))
 
-    mpmath rather than float: this aggregates a whole sample, and AGENTS.md
-    bans float64 accumulation in `computations/` scripts, probes included.
-    """
+
+def _pearson_r(xs, ys):
+    """Pearson correlation coefficient in mpf. Returns NaN if degenerate.
+
+    mpf, not float: AGENTS.md ("PROBES ARE NOT EXEMPT", 2026-08-18) bans
+    aggregating a sample in float64 -- `sum()`/`** 0.5` over a list of floats
+    accumulates error across the sample, and this function's output is an
+    ARGUMENT (an r^2 that decides a verdict), not a display value."""
     n = len(xs)
     if n < 2:
         return mp.nan
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    denx = mp.sqrt(sum((x - mx) ** 2 for x in xs))
-    deny = mp.sqrt(sum((y - my) ** 2 for y in ys))
+    xs = [_mpf(x) for x in xs]
+    ys = [_mpf(y) for y in ys]
+    mx = mp.fsum(xs) / n
+    my = mp.fsum(ys) / n
+    num = mp.fsum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    denx = mp.sqrt(mp.fsum((x - mx) ** 2 for x in xs))
+    deny = mp.sqrt(mp.fsum((y - my) ** 2 for y in ys))
     if denx == 0 or deny == 0:
         return mp.nan
     return num / (denx * deny)
 
 
-def _linear_fit(xs: list, ys: list):
-    """Returns (slope, intercept, R²) for y = slope·x + intercept (mpmath)."""
+def _linear_fit(xs, ys):
+    """Returns (slope, intercept, R2) for y = slope*x + intercept, in mpf."""
     r = _pearson_r(xs, ys)
     if not (r == r):  # NaN check
         return mp.nan, mp.nan, mp.nan
     n = len(xs)
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    cov = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / n
-    var = sum((x - mx) ** 2 for x in xs) / n
+    xs = [_mpf(x) for x in xs]
+    ys = [_mpf(y) for y in ys]
+    mx = mp.fsum(xs) / n
+    my = mp.fsum(ys) / n
+    cov = mp.fsum((x - mx) * (y - my) for x, y in zip(xs, ys)) / n
+    var = mp.fsum((x - mx) ** 2 for x in xs) / n
     if var == 0:
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     slope = cov / var
     intercept = my - slope * mx
     return slope, intercept, r ** 2
@@ -136,7 +150,10 @@ def main() -> int:
     src = record_upstream(INPUT_WITNESS, _UPSTREAM_RECORDS)
     rows_in = src["data"]["rows"]
     q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
-    h_q0 = float(q - 1 / q)  # h = q − q⁻¹ at substrate
+    # mpf, not float(): this feeds `signed_h_weight`, which is regressed
+    # against err_pct below -- a computation, not a display (AGENTS.md
+    # "PROBES ARE NOT EXEMPT").
+    h_q0 = q - 1 / q  # h = q - 1/q at substrate
 
     # Per-isotope rows
     rows_out = []
@@ -159,12 +176,11 @@ def main() -> int:
         rows_out.append({
             "Z": r["Z"], "N": r["N"], "A": r["A"],
             "atom_label": _atom_label(r["Z"], r["N"]),
-            # mpf at construction, not at each use: this field arrives from the
-            # upstream witness as a STRING (_precision.fmt), and every
-            # downstream consumer below compares or sums it. Converting here
-            # once is why lines that read `r["err_pct"] < 0` work at all.
-            "err_pct": mp.mpf(str(r["err_pct"])),
-            "err_MeV": mp.mpf(str(r["err_MeV"])),
+            # Coerced ONCE here, so every downstream comparison and regression
+            # sees a number. Upstream serializes these as strings under the
+            # NO-FLOAT64 discipline, which is what broke this producer.
+            "err_pct": _mpf(r["err_pct"]),
+            "err_MeV": _mpf(r["err_MeV"]),
             "prediction_type": r.get("prediction_type", "binding_energy"),
             "channels_pp": ch["pp"],
             "channels_pn": ch["pn"],
@@ -174,13 +190,8 @@ def main() -> int:
         })
 
     # Regress err_pct against each candidate predictor
-    # mpf, not float: witness numerics are serialized as STRINGS by
-    # _precision.fmt, so err_pct arrives as str (this crashed with
-    # "unsupported operand type(s) for +: 'int' and 'str'"). Converting with
-    # float() would fix the crash and introduce the defect AGENTS.md forbids in
-    # probes -- aggregating a sample in float64. Carry mpf end to end.
-    err_pcts = [r["err_pct"] for r in rows_out]          # already mpf
-    n_inters = [mp.mpf(str(r["n_inter_total"])) for r in rows_out]
+    err_pcts = [r["err_pct"] for r in rows_out]
+    n_inters = [mp.mpf(r["n_inter_total"]) for r in rows_out]
     h_weights = [r["signed_h_weight"] for r in rows_out]
 
     slope_n, intercept_n, r2_n = _linear_fit(n_inters, err_pcts)

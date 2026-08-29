@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-29T03:59:01.865693+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-29T04:41:47.437016+00:00",
+  "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -36,10 +36,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 54,
   "computation": "a-K-via-lp-dual-hecke-basis",
   "scriptFile": "aK_via_lp_dual_hecke_basis.py",
-  "scriptHash": "f1cc27d897e7",
+  "scriptHash": "126ba2e9e4e0",
   "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -66,8 +66,8 @@
   "description": "Item B (B.1a-rev.5) \u2014 full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {\ud835\udfd9, \u03c3_0, \u03c3_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + \u03a3_{i \u2209 sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit \u00a77b at the only A where the full basis is tractable (A=1, 6 elements). A \u2265 2 requires the analytical C_\u03bb \u00b7 S_\u03bb factorisation per audit \u00a77d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
-    "q0": "mpf('1.109978595642739046681795129380001752700065561029011556974045769999094996')",
-    "h": "mpf('0.2090603221503167466308002615019198859801371692258791137037392757061475367')",
+    "q0": "1.109978595642739046681795129380001752700065561029",
+    "h": "0.20906032215031674663080026150191988598013716922588",
     "basis_size": 6,
     "hecke_level": 3,
     "lp_method": "scipy linprog highs (f64)"
@@ -499,5 +499,5 @@
     ]
   },
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029"
 }

@@ -59,10 +59,17 @@ set_compute_dps()
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 
-# PIN: MUON (ideal CAL-2) -- 1.10997859555733471..., not the proton
-# 1.1099785827513808. Recorded because this literal carried no pin label;
-# re-pinning is bean qou-1c4y, not this drain.
-Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
 Q0 = mp.mpf(Q0_STR)
 H = Q0 - 1 / Q0
 
@@ -200,13 +207,12 @@ def main() -> None:
         "engine": "mpmath mpf (H₆ Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0": Q0_STR, "q0_pin": "proton (experimental pin, resolved)", "h": fmt(H),
             "q0_precision_note": (
-                "17 significant digits, recorded VERBATIM as computed with. The muon anchor's "
-                "full value is 1.10997859555733471989976..., so fmt()-padding this literal to "
-                "the serialization width appends zeros that are not merely fabricated but WRONG "
-                "from digit 18 -- caught by q0_value_drift_audit on this branch. q0Value must "
-                "equal what the producer computed with."),
+                "RESOLVED from substrate.q_parameter at run time, not frozen. It was a "
+                "17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal "
+                "cannot follow an anchor move, which is how this witness came to record "
+                "the superseded muon pin under the label \"muon\"."),
             "arithmetic": f"mpmath mpf at {mp.mp.dps} dps (no float64 anywhere)",
             "q_eq_1_reference": "exact classical Young seminormal limit (was q = 1 + 1e-7)",
             "deuteron_H6_word": "proton{σ0,σ1}·INTERFACE σ2·neutron{σ3,σ4}",

@@ -51,14 +51,20 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()
 
 # --- corpus constants (NOT recomputed here; from the option-e / A3 ledgers) ---
-# PIN: MUON (ideal CAL-2). This literal is 1.10997859555733471..., i.e. the muon
-# anchor -- it was commented "proton-pinned" until 2026-08-25, which was simply
-# wrong (the proton pin is 1.1099785827513808). The two derived readings below
-# are muon-derived too, so re-pinning Q0 alone would straddle the ideal and
-# experimental layers inside one witness; see AGENTS.md "Never straddle the two
-# layers inside one quantity". Re-pinning all three is bean qou-1c4y, not this
-# drain.
-Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+# The two derived readings below (H_LIT, HBAR_Q) are FUNCTIONS of Q0, not
+# independent literals, so they follow the re-pin automatically -- the
+# straddle this comment used to warn about cannot arise.
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
 Q0 = mp.mpf(Q0_STR)
 # The A3 crossterm probe's "h" reading is q0 - 1, NOT the Hecke h = q - 1/q
 # (which is 0.2090603...). Kept under its corpus name, derived rather than
@@ -141,15 +147,12 @@ def main() -> None:
         "engine": "mpmath mpf/mpc (structural demonstration; 0 free params)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)",
+            "q0": Q0_STR, "q0_pin": "proton (experimental pin, resolved)",
             "q0_precision_note": (
-                "17 significant digits, recorded VERBATIM as computed with. The muon anchor's "
-                "full value is 1.10997859555733471989976..., so fmt()-padding this literal to "
-                "the serialization width would append zeros that are not merely fabricated but "
-                "WRONG from digit 18. q0Value must equal what the producer computed with "
-                "(qou_substrate/witness.py::_q0_value_for_anchor). Quantities derived from it "
-                "below are exact functions of THIS literal, reproducible, but carry no more "
-                "physical accuracy than its 17 digits."),
+                "RESOLVED from substrate.q_parameter at run time, not frozen. It was a "
+                "17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal "
+                "cannot follow an anchor move, which is how this witness came to record "
+                "the superseded muon pin under the label \"muon\"."),
             "h": fmt(H_LIT), "h_definition": "q0 - 1 (the A3 crossterm probe's reading; NOT the Hecke h = q - 1/q)",
             "hbar_q": fmt(HBAR_Q),
             "mu3_MeV": MU3_STR, "c3_single_trace_MeV": C3_STR, "r_star": fmt(R_STAR),
