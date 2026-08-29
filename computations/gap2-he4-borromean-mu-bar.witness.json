@@ -1,0 +1,55 @@
+{
+  "engine": "python-magnus",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T06:52:39.438984+00:00",
+  "commitSha": "dd1b2f15b5caea5b6614b03ad19b613275226ac9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "gap2-he4-borromean-mu-bar",
+  "scriptFile": "gap2_he4_borromean_mu_bar.py",
+  "scriptHash": "6b3f533a1298",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gap2_he4_borromean_mu_bar.py"
+    ],
+    "reproduce": "python3 -u computations/gap2_he4_borromean_mu_bar.py"
+  },
+  "description": "GAP-2 open step (bean qou-klgu): Milnor mu-bar tower on ⁴He link models, counting the WELL-DEFINED irreducible triple count M3 (mu-bar_ijk != 0 with vanishing pairwise lk indeterminacy) and the 4-body M4. Tests whether the per-order 3-body energy e3*M3(⁴He) reproduces the 14.95 MeV magic surplus. e3 pinned per-order on the triton (anti-fit). EXPLORATORY, no wiring.",
+  "data": {
+    "per_order_energy_MeV": {
+      "e2": "2.22456620000000000000000000000000000000000000000000000000000",
+      "e3": "1.80809760000000000000000000000000000000000000000000000000000"
+    },
+    "he4_surplus_MeV": "14.9482652000000000000000000000000000000000000000000000000000",
+    "models": {
+      "⁴He (A) all-Hopf K4": {
+        "M3_irr": 0,
+        "M4": 0
+      },
+      "⁴He (B) Borromean-core + apex": {
+        "M3_irr": 1,
+        "M4": 0
+      },
+      "⁴He (C) Brunnian 4-body": {
+        "M3_irr": 1,
+        "M4": 0
+      }
+    },
+    "free_parameters": 0
+  }
+}

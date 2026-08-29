@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T06:16:39Z
-updated_at: 2026-08-29T06:28:01Z
+updated_at: 2026-08-29T06:53:59Z
 ---
 
 FINDING 2026-08-29 (honest, scope-a): the binding MAGNITUDE gap is GEOMETRIC, not algebraic, and the new 24h math does NOT close it.
@@ -14,3 +14,5 @@ FINDING 2026-08-29 (honest, scope-a): the binding MAGNITUDE gap is GEOMETRIC, no
 - sibling M1>0 (qou-k5r5) is a SEPARATE leg (Delta_lambda super-exp growth bound = Plancherel cov moment), does not touch magnitude.
 - MY Molien normalizer-log idea = REDISCOVERY of the already-Lean-proved B_sym (A-1) linear chain (BsymLinearChain.lean; 2026-06-16-b-sym-linear-chain-closed-form.md). Per-bond E0*|log(1+q0 zD-q0^2)|=3.36 MeV, extensive, zero-fit -- but +51% on deuteron, (A-1)->3x / C(A,2)->6x growth vs AME 12.72x. Touches the SOLVED 2-body piece only, NOT the open >=3-body cooperative alpha-unit magnitude.
 - Actionable magnitude frontier = GAP-2: run validated binding_mn_milnor_linking.py mu-bar tower on He4 link, count nonzero Borromean triples, test m_e a_D^(3) w_3 M3(He4) vs 14.95 MeV, no tuning (anti-fit: w_3 from na-Stokes+deuteron, NOT from He4 residual). Possible connection: fake-degree cyclotomic prod(1-u^d_i) <-> GAP-3 Habiro (q-1)^2 Phi kernel, but GAP-3 mostly done (join z2bn, don't parallel).
+
+GAP-2 done (qou-klgu): He4 magic surplus is NOT Milnor -- max-contact K4 has all lk=1 so higher mu-bar indeterminate mod 1 => M3_irr=M4=0 (scope-b, Milnor indeterminacy). Surplus lives in the non-link-invariant SU(4)[1^4] shell object. Milnor route works for loosely-bound low-lk terms (triton triple = Borromean +1), blind to tightly-bound He4.
