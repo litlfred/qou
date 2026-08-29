@@ -524,3 +524,87 @@ a reader checking the contract at the function they call would conclude C.
 
 The sweep this bean opened with -- "870 witnesses" -- was 222, of which the
 actionable part is now done except for what cds1 and one long compute gate.
+
+
+## 2026-08-29 — re-measured after merging main: most of my findings are DRAINED
+
+Five-day gap; main was 2635 commits ahead. Everything below is measured on the
+post-merge tree, not carried forward.
+
+**Main did the structural fix, and it is better than mine.** I corrected
+`_gap_a4_qsafe.py`'s false *"proton-mass-anchored"* label and left the literal,
+flagging intent as open. Main **replaced the literal with `Q_50_DIGIT_STR` from
+`q_parameter`**, so the value follows whatever anchor each importer is assigned
+and label and number cannot diverge again. Main's commit reaches the same
+diagnosis independently, naming the same consequence I found — that this is how
+the T5-T12 probes came to be tagged `physical_proton` with muon-valued witnesses.
+
+Main also re-declared the manifest: `ideal_muon` **120 → 21** (103 removals),
+`physical_proton` **514 → 704**.
+
+### What that does to the bindability findings
+
+| | before merge | after |
+|---|---|---|
+| `ideal_muon` contradicts | 7 | **0** |
+| `ideal_muon` declared | 152 | 21 |
+| `physical_proton` contradicts | 18 | **7** |
+| `physical_proton` declared | 514 | 704 |
+| label-vs-value mislabels | 10 | **8** |
+
+**The muon-layer seven are fully drained** — including the six that had been
+byte-identical across five revisions of the detector. They were real; main's
+re-declaration removed them. The proton-layer 18 lost the 14 `_gap_a4_qsafe`
+importers to main's structural fix, exactly as that fix predicts.
+
+### The 7 that survive — durable, and now the whole list
+
+They survived main's 293-stem re-declaration AND the helper fix, because each
+holds a muon value in its own right rather than through the shared helper:
+
+| stem | route |
+|---|---|
+| `gap_a4_T2_per_knot_vol_probe_perknot_rerun` | reads the pinning witness directly |
+| `gap_a4_T4_schur_weyl_icosahedral_probe_perknot_rerun` | ″ |
+| `per_atom_audit_witnesses` | ″ |
+| `probe_9b_perlambda_brane_tower` | ″ |
+| `lever1_binding_core_characterization` | hardcoded muon literal |
+| `lever1_trB_geometric_target` | hardcoded muon literal |
+| `lever1_trB_quantum_integer_form` | hardcoded muon literal |
+
+Hand-verified two, including the rule that burned me last week:
+- `lever1_trB_geometric_target.py:55` — `Q0 = mp.mpf("1.10997859555733471989…")`,
+  pin A hardcoded, declared `physical_proton`.
+- `per_atom_audit_witnesses.py:70` — reads `derived_50_digit.q` **directly** from
+  the pinning witness, not through `load_q_50dps`, so the default-argument trap
+  does not apply here.
+
+### The canonical pin has MOVED: A -> C
+
+`q-pinning-50-digit.witness.json` now holds **`1.109978595642739046681795`** —
+that is **C**, the CODATA-2022 closed form, not A. The *"adopt C"* ruling
+(`qou-bred:186-192`, and `qou-khac`'s unblocking) has landed in the data.
+
+This does not disturb the findings above: C sits **0.0769 ppb** from A and
+**11.54 ppb** from the proton pin, and this audit's `PIN_TOL_PPB = 1` was chosen
+precisely so the whole muon family classifies as muon — *"the question is WHICH
+LAYER, not which vintage."* Checked rather than assumed.
+
+It does mean `lever1_trB_geometric_target` and `lever1_trB_quantum_integer_form`
+now hardcode a **superseded vintage** as well as the wrong layer. Two defects in
+one line each, and the layer one is the larger.
+
+### Open disagreement from the merge, for a ruling
+
+I declared 32 stems `ideal_muon` on 2026-08-24 as stamp-only fixes. Main's later
+considered placement is **not** `ideal_muon` for 30 of them — **7 explicitly
+`physical_proton`**, 23 undeclared. I took main's manifest wholesale rather than
+union the sets, because a union would have silently reversed a deliberate
+293-stem sweep. The 7 where we actively disagree are a real conflict between
+main's judgement and my stamp-only reasoning, and are left for the owner.
+
+### Both audits are branch-only
+
+`q0_declaration_bindability_audit.py` and `q0_literal_label_vs_value_audit.py`
+are not on `main`. They are what found the durable 7 and the 8, and nothing on
+main asks either question.
