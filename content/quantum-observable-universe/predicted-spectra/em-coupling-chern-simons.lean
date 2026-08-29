@@ -181,4 +181,43 @@ class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
 -- assumption was invisible outside `#print axioms`.  Removed, not completed.
 -- Downstream results must take `[ChernSimonsCorrectionConjecture q hq]` as an explicit hypothesis.
 
+/-! ## The resummation, proved
+
+What separates the block's live form from the one its `.md` supersedes is not a
+value of `κ` — it is whether the correction tower may be summed in closed form at
+all. That question needs no `κ`, no CODATA and no anchor, so it is settled here
+rather than deferred with the rest.
+
+The two lemmas below are unconditional, sorry-free, and carry no fitted input.
+They do **not** close the conjecture: what stays open is which `κ` the Gram
+determinant actually yields, and that is the numerical tier this file's standing
+ruling defers. See the note on `ChernSimonsGramDeterminantIdentityHolds`. -/
+
+/-- **The correction tower resums.** For `|δκ| < 1`,
+
+    Σ_{j≥1} δ^j κ^{j-1} = δ / (1 - δκ)
+
+This is the content of the block's live statement `1 + δ_CS/(1 - δ_CS·κ)`: the
+closed form is not an approximation of the tower, it **is** the tower, so there
+is no truncation order to choose. That matters beyond tidiness — a chosen
+truncation order is a free parameter, and the superseded form had one. -/
+theorem csTower_resums (δ κ : ℝ) (h : |δ * κ| < 1) :
+    ∑' j : ℕ, δ ^ (j + 1) * κ ^ j = δ / (1 - δ * κ) := by
+  have hnorm : ‖δ * κ‖ < 1 := by rwa [Real.norm_eq_abs]
+  have hterm : ∀ j : ℕ, δ ^ (j + 1) * κ ^ j = δ * (δ * κ) ^ j := by
+    intro j; rw [mul_pow, pow_succ]; ring
+  rw [tsum_congr hterm, tsum_mul_left, tsum_geometric_of_norm_lt_one hnorm,
+    div_eq_mul_inv]
+
+/-- **The superseded form is the tower's second partial sum.** The order-`δ_CS²`
+expression `δ + κδ²` is exactly `Σ_{j=1}^{2} δ^j κ^{j-1}`.
+
+Stated so that "its second-order truncation" is a proved identity rather than a
+remark. Together with `csTower_resums` this makes the relationship between the
+two forms a theorem: same series, one summed and one cut. -/
+theorem csTower_partialSum_two (δ κ : ℝ) :
+    ∑ j ∈ Finset.range 2, δ ^ (j + 1) * κ ^ j = δ + κ * δ ^ 2 := by
+  simp [Finset.sum_range_succ]
+  ring
+
 end QOU.ArchimedeanUniverse
