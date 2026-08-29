@@ -102,6 +102,34 @@ real library declaration the ref would otherwise reach. Never create or
 keep one when the real formalisation exists. If the decl is in a mis-named
 library file, align the filename — do not paper over it with a stub.
 
+## TRAP — a slow first `lean`-direct run is COLD PAGE CACHE, not a rebuild
+
+Measured 2026-08-29 on one Mathlib-importing file: first run **2m50s wall but
+only 5.7s `user`**; second run **4.4s wall**. The wall time is faulting in
+~7000 Mathlib oleans, nothing more.
+
+**The discriminator is `user` time — always `time` the run.** Seeing three
+minutes and concluding "Mathlib is rebuilding from source" leads straight to
+`lake build` or a re-restore, and `lake build` is the thing that evicts the
+cache (TRAP above). The misdiagnosis causes the harm; the slow run is benign.
+
+## TRAP — a chapter-directory `.lean` DOES have a `.qa.json` sidecar
+
+The "nothing but you checks library Lean" exemption is scoped to
+`content/<paper>/lean/QOU/**`. A `.lean` sitting beside a `.ts`/`.md` in a
+**chapter directory** is a content-block sibling and **has** a sidecar, so
+editing it stales `source_hashes.lean` — and `lean_statement` too, since a
+rename reaches declaration types. Measured 2026-08-29 on
+`categorical-chain-convergence-mechanisms.lean`: `20d0f5b771ae → 74278be4c9f7`
+and `4803c6f9d272 → 33891c65fd26`.
+
+A green `lean`-direct verdict is **not** the whole preflight there. The sidecar
+wants `qa-sweep --only <crit>` and must never be hand-edited. Two cautions
+measured the same day: `qa-staleness`/`qa-sweep` take a **directory**, not a
+file (a file path dies `ENOTDIR`), and a chapter-scoped sweep rewrites **every**
+block's sidecar — 128 files for a one-block change — so revert all but the
+block you actually staled, or a rename PR silently becomes a chapter sweep.
+
 ## STABLE — the honest dispositions when a proof will not close
 
 Exactly three, per `AGENTS.md` §1a / §"Strict Lean Discipline":
@@ -121,76 +149,21 @@ claim, and an `axiom`/`class` substituting for a proof. If you cannot
 close it: `beans create "GAP: <what is open>" --type task` and report the
 gap. An honest bean is always acceptable.
 
-## STABLE — verification is the only merge gate; do not wait on the dead ones
+## STABLE — your verdict IS the gate; do not wait on the dead ones
 
-All three original Phase-4 gates are gone. Do not block on any:
+All three Phase-4 external gates are gone: **CI** (auto-triggers disabled
+repo-wide 2026-06-30, `build.yml` is `workflow_dispatch`-only, no `lean_ci.yml`
+exists), **Gemini** (sunset 2026-08-01), **Copilot** (measured n=5, never
+enqueues — `qou-gwe9`). `prepare-merge-auto` Phase 1b still prescribes a
+15-minute Copilot poll that can only expire; skip it and cite the bean. Full
+detail lives in `merge-coordinator`'s memory, which owns this.
 
-- **CI** — auto-triggers disabled repo-wide (owner directive 2026-06-30,
-  Actions billing). `build.yml` is `workflow_dispatch`-only; no
-  `lean_ci.yml` exists. Branches routinely show zero runs.
-- **Gemini review** — consumer Gemini Code Assist sunset 2026-08-01.
-- **Copilot review** — measured n=5 (bean `qou-gwe9`): zero reviews every
-  time, `get_check_runs` returns `total_count: 0`, nothing is enqueued.
-  `prepare-merge-auto` Phase 1b polls 15 min for a check run that is never
-  created — **skip it and record why**, citing `qou-gwe9`.
-
-So your `lean`-direct verdict *is* the gate. State the verification you
-actually ran. Never write "CI green" unless a run exists.
-
-For a **library** file under `content/<paper>/lean/QOU/**` there is no
-`.qa.json` sidecar and `lean-content-siblings.yml` does not cover it —
-nothing but you checks it.
-
-## STABLE — `lean`-direct recipe that works (verified 2026-08-29)
-
-From the repo root, for a file whose imports are Mathlib-only:
-
-```sh
-export PATH="$HOME/.elan/bin:$PATH"
-export LEAN_PATH=$(ls -d .lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$(pwd)/.lake/build/lib/lean
-lean <path/to/file.lean>; echo "EXIT=$?"
-```
-
-Globbing `.lake/packages/*/` picks up all eight dep packages (mathlib,
-batteries, aesop, Qq, proofwidgets, plausible, importGraph,
-LeanSearchClient) without hardcoding the list. `exit 0` with no diagnostics
-= the file checks. No `lake build`, so nothing is evicted.
-
-## STABLE — `#print axioms` on a file that is not an importable module
-
-A content-block sibling `.lean` (under `content/<paper>/<chapter>/`) is on
-no module path, so it cannot be `import`ed to audit it. Copy it to the
-scratchpad, append `#print axioms <Namespace>.<decl>` lines to the **copy**,
-`lean`-direct the copy. Never append to the tracked file. ~4 s warm. Clean =
-`depends on axioms: [propext, Classical.choice, Quot.sound]`; `sorryAx` is
-the failure.
-
-## TRAP — a slow first `lean`-direct run is COLD PAGE CACHE, not a rebuild
-
-Measured 2026-08-29 on one Mathlib-importing file: **2m50s** wall on the
-first run, **4.4s** on the second — with `user` time ~5s in *both*. The
-wall time is I/O, faulting in ~7000 mathlib oleans; `lean`-direct never
-compiles Mathlib.
-
-The misdiagnosis this prevents: seeing ~3 minutes, concluding "something is
-rebuilding Mathlib from source", and reaching for `lake build` or a
-re-restore — either of which is the actual harm. **Check `user` time before
-you conclude anything.** `user` ≈ seconds ⇒ waiting on disk; `user` ≈ wall
-and climbing for minutes ⇒ then you are genuinely compiling.
-
-## TRAP — editing a content-block sibling `.lean` staleifies its `.qa.json`
-
-The "no sidecar covers library Lean" rule is about
-`content/<paper>/lean/QOU/**`. A `.lean` beside a `.ts`/`.md` in a
-**chapter** directory *does* have a `<block>.qa.json`, whose
-`source_hashes.lean` (12-char sha256 prefix) drifts the moment you touch
-the file — as does `lean_statement` when the edit reaches a declaration's
-type, which a rename does. Verified 2026-08-29: a 5-token rename moved it
-`20d0f5b771ae` → `74278be4c9f7`.
-
-A green `lean`-direct verdict is **not** the whole preflight for these
-files. Report the sidecar stale and hand it to `qa-sweep`; never hand-edit
-the hash.
+So state the verification you actually ran and **never write "CI green"**
+unless a run exists. A **library** file under `content/<paper>/lean/QOU/**` has
+no `.qa.json` sidecar and `lean-content-siblings.yml` does not cover it —
+nothing but you checks it. **But see the sidecar TRAP above: that exemption is
+scoped to the library tree, and a chapter-directory `.lean` DOES have a
+sidecar.**
 
 ## BASELINE — re-measure, do not quote
 
