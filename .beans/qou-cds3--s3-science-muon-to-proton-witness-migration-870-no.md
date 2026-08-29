@@ -5,8 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T09:42:17Z
-updated_at: 2026-08-29T08:52:07Z
+updated_at: 2026-08-29T11:06:21Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -322,3 +321,57 @@ qbeta slice of it.
 
 The float64 ratchet was RED first pass and is green only after fixing
 qbeta_exponentiated_per_block_probe.py at the producer. No baseline widened.
+
+
+## 2026-08-29 (LATER) — the INDIRECT class, partitioned
+
+The direct-reader set is done (20/20, PRs #5992 + #6001). What #5989 called
+"~25 whose producers reach muon indirectly" is now measured and split, so the
+remaining work is enumerable rather than a gesture.
+
+**25 muon witnesses over 25 producers whose producer does NOT read
+q-pinning-50-digit.witness.json directly.** They partition:
+
+    13  listed in ideal_muon      -> THE MANIFEST IS THE LEVER
+         binding_via_interface_knot, block_swap_binding, wlambda_q0_continuation,
+         fivetwo_stokes_matrix_zq, gram_norm_binding_probe,
+         habiro_interpolation_wlambda, hadron_knot_table,
+         he3_tritium_cosh_asymmetry_diagnosis,
+         lever1_binding_habiro_single_element_test, theta_jet_gb_grading_probe,
+         + 3 qbeta c_k (see below)
+
+    10  UNLISTED                  -> muon comes from CODE; needs a cone trace
+         canonical_lepton_braid_words, derive_m_p_hecke_full_tower_50dps,
+         f_ell_derivation_via_per_braid_mass_tower, qbeta_c4even_exact_sseries_probe,
+         rho_k_h3a_residual_decomposition, t6_lepton_h3_3channel_convention,
+         t6_tau_h5_embedding_probe, t6_three_halves_factor_probes,
+         vhat_std_vs_full_tower_compare, xi_ell_phi_q_probe
+
+     2  DUAL-LAYER — do NOT migrate  (see below)
+         canonical_tr_m_via_chi_cache, markov_peel_atomic_witness
+
+**4 are cds1-gated** and must wait for the D re-derivation regardless of which
+bucket they sit in: qbeta_c4even_ladder_reconstruction_probe,
+qbeta_hoefsmit_tbeta_matrix_build_probe, qbeta_jacobi_anger_tower_general,
+qbeta_c4even_exact_sseries_probe.
+
+So the actionable remainder is **10 manifest moves + 10 cone traces**, not 25.
+
+### The 2 dual-layer ones are a ledger gap, not migration work
+
+Both emit ONE WITNESS PER ANCHOR with the muon layer `-muon`-suffixed, and both
+document why in their own source. markov_peel_atomic_witness INVERTS the
+sibling convention deliberately — six consumers of its base name are not
+anchor-aware, so making the base muon would hand them muon values, the very
+straddle the split closes.
+
+**The ledger's dual_layer class listed 2 members; there are 4.** Added the two.
+The originating regex (PR #5500) keys on an assert / a raise / prose demanding
+a muon run — and **a producer that simply writes both layers asserts nothing
+and raises nothing**, so it was structurally invisible. The detector that finds
+them keys on OUTPUT: a producer emitting two witnesses whose q0Anchor values
+DIFFER is dual-layer by construction. Recorded in the class rule.
+
+(My first pass also reported atomic_tr_m_mpfr_50dps as missing. It was not —
+dual_layer.members holds DICTS keyed `producer` and my parser looked for
+`stem`. The ledger was right; the reader was wrong.)
