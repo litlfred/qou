@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T11:09:27Z
+updated_at: 2026-08-29T11:59:55Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
@@ -120,3 +120,37 @@ binding constraint there by ~14 orders of magnitude. Draining it would change
 RECOMMENDATION (judgement, not a finding): do the 15, and treat the 43 as a
 separate bean. Folding a mathematical re-derivation into a drain labelled
 'remove float casts' is the same smuggling the zero-gain rule already refuses.
+
+
+## Bucket B has a single upstream cause (measured 2026-08-29)
+
+`computations/substrate/experimental_constants.py` casts every CODATA mass to
+binary64 at import (`M_E_MEV = float(_M_E_MEV)`, same for M_P/M_N). Every
+bucket-B producer that starts from those constants is float64 end to end no
+matter how much mpmath it calls afterwards — `channel_product_mass.py`, the
+corpus's single largest offender at 64 assertion fields, is exactly this.
+
+The cast's stated reason is HALF STALE. Measured in
+`computations/audits/experimental_constants_float64_rationale_probe.py` (6/6):
+
+  * "an mpf would break json.dumps" — TRUE for a bare `json.dumps`, FALSE for
+    the witness path, which is where the bucket-B fields come from.
+    `qou_substrate/witness.py` uses `json.dump(..., default=str)`.
+  * "importers' float arithmetic stays intact" — holds for arithmetic,
+    comparison, f-strings. The real hazard is `math.log(mpf)`, which does not
+    raise, it silently downcasts.
+  * "~266 importers" — actually 204 live (+4 generated mirror).
+
+DECISION NOT TAKEN — it is the owner's. Flipping three constants changes
+numbers across the mass sector.
+
+## Retracted this session
+
+Claimed 13 producers / 52 fields were misfiled B→A via a one-hop import-cone
+check. WRONG: the inherited `set_compute_dps()` in `mass_at_3A_proper` is
+inside a function. Classifier stays file-local; both wrong versions pinned in
+its selftest.
+
+Also: "round-trips through float64" is NOT proof of laundering. It flagged 55
+of the 302 already-drained fields; all 55 are exact k·2^-235 ULP residuals,
+and a power of two round-trips losslessly. Flag for reading, never decide.
