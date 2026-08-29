@@ -50,6 +50,40 @@ struct Args {
     /// for full ⁴He coverage at significant compute cost.
     #[arg(long, default_value_t = 500)]
     max_dim_psd: usize,
+
+    /// Elide the bulky structural detail (`jet_log`, and `by_grade` term
+    /// lists) so the witness stays repo-sized, recording the thresholds used
+    /// in the witness's `truncation` block.
+    ///
+    /// This reconstructs -- reproducibly -- the shape already carried by
+    /// `computations/joint-tower-sdp-rust.witness.json` on `main`, which no
+    /// committed producer could emit: 493 KB there against 13 MB from a plain
+    /// run. Nothing in the tree performed that compression, so it was a
+    /// one-off, uncommitted step (consistent with the witness's own
+    /// `scriptCommitSha: "unknown"`).
+    ///
+    /// The ORIGINAL thresholds are unknowable, and the defaults below are not
+    /// claimed to be them -- only to be inside the brackets the file permits,
+    /// and to reproduce its shape on every atom it contains. Measured per atom
+    /// on `main`: jet_log kept in full at 20 steps (helium3-3He) and
+    /// summarised at 238 (deuteron-canonical-3A), so the cut is in (20, 238];
+    /// by_grade kept in full at 14 terms (tritium-3H) and summarised at 28
+    /// (tritium-canonical-3A), so that cut is in (14, 28].
+    #[arg(long)]
+    truncate_for_repo: bool,
+
+    /// With `--truncate-for-repo`: keep `jet_log` in full when the atom has at
+    /// most this many reduction steps.
+    #[arg(long, default_value_t = 20)]
+    truncate_jet_log_max_steps: u64,
+
+    /// With `--truncate-for-repo`: keep `by_grade` term lists in full when the
+    /// atom's largest grade has at most this many terms. Per ATOM, not per
+    /// grade -- an atom is summarised wholly or not at all, which is what
+    /// `main` does (tritium-canonical-3A has all 9 grades summarised;
+    /// tritium-3H all 10 in full).
+    #[arg(long, default_value_t = 20)]
+    truncate_by_grade_max_terms: usize,
 }
 
 /// Braid representation: either a simple integer letter sequence
@@ -360,7 +394,8 @@ fn solve_per_atom(
         native_strand_count: entry.native_strand_count,
         braid_word: entry.braid.to_i32_for_serialize(),
         filtration_certificate: filt,
-        jet_log: e.jet_log,
+        jet_log: Some(e.jet_log),
+        jet_log_summary: None,
         n_steps,
         n_hecke_relations_fired: n_hecke,
         wedderburn_blocks: wedderburn,
@@ -588,6 +623,11 @@ fn main() {
         // `evaluate_all_blocks` / `solve_alpha_psd` -- so a `--q0` override
         // produced a witness that misreported its own input (bean qou-ia6f).
         q_0_numeric: args.q0,
+        truncation: cert::TruncationPolicy {
+            enabled: args.truncate_for_repo,
+            jet_log_max_steps: args.truncate_jet_log_max_steps,
+            by_grade_max_terms: args.truncate_by_grade_max_terms,
+        },
         precision_tier: "float64".to_string(),
         deprecated: cert::DeprecationNote {
             reason: "The PSD evaluation at q_0 is f64 and stays f64, because \
@@ -644,6 +684,38 @@ fn main() {
             max_native_strand_count: max_n_observed,
         },
     };
+
+    // Truncation is a SERIALISATION policy, applied here and nowhere earlier:
+    // every certificate above was computed and assembled in full, so enabling
+    // it can only remove detail from the file and can never change a number.
+    let mut witness = witness;
+    if args.truncate_for_repo {
+        let mut n_jet = 0usize;
+        let mut n_grades = 0usize;
+        for c in &mut witness.per_atom_certificates {
+            if c.n_steps > args.truncate_jet_log_max_steps {
+                c.jet_log = None;
+                c.jet_log_summary = Some(cert::JetLogSummary {
+                    n_steps_total: c.n_steps,
+                    truncated_for_repo: true,
+                });
+                n_jet += 1;
+            }
+            if c.filtration_certificate.max_terms_in_a_grade()
+                > args.truncate_by_grade_max_terms
+            {
+                c.filtration_certificate.summarise_all_grades();
+                n_grades += 1;
+            }
+        }
+        println!(
+            "  truncate-for-repo: {} jet logs summarised (> {} steps), \
+             {} atoms' by_grade summarised (> {} terms in a grade)",
+            n_jet, args.truncate_jet_log_max_steps, n_grades,
+            args.truncate_by_grade_max_terms
+        );
+    }
+    let witness = witness;
 
     let json = serde_json::to_string_pretty(&witness).expect("serialize");
     fs::write(&args.output, json).expect("write output");
