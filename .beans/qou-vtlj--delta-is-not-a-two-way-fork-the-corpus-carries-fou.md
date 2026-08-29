@@ -568,3 +568,48 @@ The predicate is pinned. What is missing to evaluate it for `H_3` is
 With those two, the selection rule (`minimize |tr_M|` over the feasible set)
 becomes evaluable, and Lead 2 — the neutron NF table's missing producer —
 unblocks with it.
+
+## Owner-authorised content corrections (2026-08-29)
+
+Owner selected all four options offered. Applied:
+
+1. **Neutron crossing count 13 → 11** (`categorical-neutron-properties.md`).
+   The block contradicted itself in consecutive paragraphs: para 2 says *a
+   single* Hopf link `L_-` restores stability; para 3 said *two* Hopf links,
+   4 gluon crossings, 13 total. Its own printed `+0.7976` is the
+   **eleven**-crossing value (k-ladder: 9 → 0.788010, **11 → 0.7975664**,
+   13 → 1.235859, the last appearing nowhere in the corpus). The 4-versus-2
+   proton asymmetry claim does not survive and was dropped; the `tr_M` depth
+   comparison it rested on is kept. Settles `qou-im4m` — it is the prose.
+
+2. **`N_ℓ = 84` marked unsourced** (`ilp-solution-count-unwrap.ts` author
+   note) and the **dead citation repaired** in
+   `docs/audits/2026-05-27-mass-formula-uniqueness-argument.md` §C5. The cited
+   `mass-endomorphism.witness.json` exists but carries zero fields equal to 84
+   and zero ILP-related keys; its subject is a Φ_q tower endomorphism
+   recording a 407 % error. Not a claim that 84 is wrong — a claim that
+   nothing now reproduces it.
+
+3. **σ₀ vs L₋ stabiliser disagreement flagged** on both
+   `stable-atom-properties.ts` and `categorical-proton-properties.ts`.
+   Same crossing count (2), different operator, neither block citing a
+   computation. Recorded, not adjudicated.
+
+4. **2-vs-3 crossings kept OUT of content**, per the owner's choice — it
+   rests on my reading of `(Gx)_γ` rather than on the corpus's arithmetic.
+   It stays here and in `qbeta_adjunction_ilp_probe.py`.
+
+Verification: `run-validate.ts` **✓ Valid**, 13 issues, all pre-existing on
+main (zero added — none of the four edited blocks appears in any warning).
+Render-QA preflight on the edited `.md`: `$` balanced (90), braces balanced,
+no `\operatorname`, no align-family env, no list-hijack inside `$$`.
+
+**A near-miss worth recording.** These edits were first written while the
+dispatched prepare-merge agent was mid-rebase. Worktrees share refs, so the
+branch tip moved ~100 commits forward under my working tree, and `git status`
+showed **2229 modified + 350 deleted** files — my stale tree read as a revert
+of all of main. Committing then would have reverted main wholesale. Caught by
+checking status before staging; edits were saved aside, the tree restored to
+HEAD, and each edit re-applied against the post-rebase base after verifying
+0 lines would be lost. Lesson: after dispatching a worktree agent onto the
+SAME branch, treat the local tree as stale and re-check HEAD before staging.
