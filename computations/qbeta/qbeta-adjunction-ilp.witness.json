@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-29T15:36:39.510139+00:00",
-  "commitSha": "e7923295bde8b9725339b922e3e43bc69359dd40",
+  "computedAt": "2026-08-29T15:42:29.044297+00:00",
+  "commitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1250,
+  "durationMs": 1169,
   "computation": "qbeta-adjunction-ilp",
   "scriptFile": "qbeta_adjunction_ilp_probe.py",
-  "scriptHash": "e06b043f7574",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "890709a55811",
+  "scriptCommitSha": "eb961f1482626e8ae41d0753f23ffdbb17f1da21",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,9 +60,11 @@
     "feasible_count_cap_5": 12,
     "feasible_count_cap_6": 19,
     "NO_two_gluon_crossing_adjunction_restores_proton_stability": true,
-    "N_l_eq_84_is_NOT_reproduced_and_the_filtration_is_why_it_may_not_be": true,
-    "confinement_filtration_implemented": false,
-    "scope": "(a) tension recorded; N_l not reproduced; J^l not implemented"
+    "N_l_eq_84_is_NOT_reproduced_and_the_filtration_does_NOT_excuse_it": true,
+    "confinement_filtration_levels_m": 1,
+    "confinement_filtration_restricts": false,
+    "E_lambda_2_1_at_q0": "0.165163593315",
+    "scope": "(a) tension recorded; N_l not reproduced; filtration trivial"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
