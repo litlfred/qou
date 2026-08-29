@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T16:39:15Z
+updated_at: 2026-08-29T16:57:22Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -114,3 +114,38 @@ This result says NOTHING about those — they are a different construction and I
 not look at them. But an appearance of phi that traces back to a z_C closed form is
 now a known failure mode, and checking is cheap: reconstruct from the recipe and
 swap z.
+
+
+## Two follow-ons from tracing the other phi appearances
+
+I said the corpus's other golden-ratio appearances were "different construction,
+not examined" and that checking was cheap. Checked. One is a defect, one is not
+mine to claim.
+
+### (A) fivefold-sheets-golden-ratio names the WRONG polynomial — measured
+
+The block reads: "The q-AND polynomial P_{7,6}(q) has a zero at q = 1/phi^2".
+
+    P_77(1/phi^2) = 0.0            <- zero, this is the DIAGONAL
+    P_76(1/phi^2) = 0.038196601    <- NOT zero
+    P_76's actual zero            = 0.465571231876768027, root of q^{3/2}+q^{1/2}-1
+
+So the zero belongs to the Toffoli diagonal P_77, not to the q-AND amplitude
+P_76 = Phi. A plain wrong-symbol defect, independent of any convention question,
+and it is in the paper. Corrected in place, and the C-frame scope added rather
+than leaving a C-frame identification stated unconditionally.
+
+### (B) golden-ratio-degeneration-brings is a SEPARATE construction — NOT claimed
+
+Its (s^2 + s - 1) comes from the Descartes/Bring Weierstrass coefficient
+(descartes-elliptic-curve.md: 5(s^2+s-1)(4s^4-s^3-4s^2+s+4)/(27 s^3)), not from
+the z*c + d recipe. Same quadratic in s = sqrt(q), different origin.
+
+So the same quadratic surfaces in two independent places, and only ONE of them is
+proved z_C-derived. Whether the elliptic curve's s is the same sqrt(q) and whether
+ITS phi is convention-dependent is a separate question I have NOT answered, and I
+am not asserting it. Recording the coincidence because it is the obvious next
+thing to check and because assuming it either way would be wrong.
+
+The beans qou-84in / qou-r4hg / qou-zpgk (golden window, SubstrateRegime.lean)
+were not examined at all.
