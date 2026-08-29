@@ -41,12 +41,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).parent
 
 M_E_MEV = mp.mpf("0.51099895069")
 AME_B = {
-    "deuteron": mp.mpf("2.2245662"),
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
     "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
     "helium-4": mp.mpf("28.29566"),

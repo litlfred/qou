@@ -42,11 +42,21 @@ from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps(30)                              # exploratory; ~%-level effect
 q0 = mp.mpf(str(Q0))
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 
-ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
+# Only "d" is routed: it is byte-exact. "t" and "3he" are 5-figure roundings
+# (8.4818 vs 8.4817962; 7.7180 vs 7.71804132) and routing them would CHANGE
+# a value -- the UNSAFE class, a reconciliation decision, not a sweep.
+ISO = {"d": (6, AME_B_DEUTERON_MEV_VALIDATION), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 
 
 def _mpf(v):

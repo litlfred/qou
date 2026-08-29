@@ -82,8 +82,15 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 # AME2020 deuteron binding, MeV.  COMPARISON TARGET ONLY — never inverted.
-B_AME_2H = mp.mpf("2.2245662")
+B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION
 
 
 # ---------------------------------------------------------------- the kernel

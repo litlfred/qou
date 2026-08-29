@@ -68,6 +68,13 @@ from _precision import set_compute_dps  # noqa: E402
 # proton unless for an explicit reason ... otherwise pin proton").
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 Q0_STR = _Q0_RESOLVED
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -77,7 +84,7 @@ Q0_STR = _Q0_RESOLVED
 set_compute_dps()
 
 ME_MEV = mp.mpf("0.51099895069")        # CODATA electron mass
-B_AME_2H = mp.mpf("2.2245662")          # AME2020 deuteron binding (diagnostic only)
+B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION          # AME2020 deuteron binding (diagnostic only)
 S_D_MASTER = mp.mpf("0.7438")           # |Sum_lambda y_lambda chi^lambda sgn f^lambda|(D)
                                         # committed master-Sigma signed sum (C_knot audit)
 

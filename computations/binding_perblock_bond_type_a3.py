@@ -55,6 +55,13 @@ from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
@@ -62,7 +69,9 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 # Bond types as 2-nucleon (Z,N) sub-braids, all at H_6.
 BOND_ZN = {"pn": (1, 1), "pp": (2, 0), "nn": (0, 2)}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
-AME = {"D": "2.2245662", "T": "8.4818", "3He": "7.7180", "4He": "28.29566"}
+# Only "D" is routed (byte-exact). T / 3He / 4He are 5-figure roundings and
+# routing them would change values -- UNSAFE, a decision not a sweep.
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": "8.4818", "3He": "7.7180", "4He": "28.29566"}
 
 _ydict = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
           for k, v in y_lambda_at(6, q0).items()}

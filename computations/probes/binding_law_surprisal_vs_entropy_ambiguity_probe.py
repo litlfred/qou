@@ -100,8 +100,15 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR as Q50
 from _precision import set_compute_dps  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 E0_STR = "4.1859813632944758969"
-DEUTERON = "2.2245662"
+DEUTERON = AME_B_DEUTERON_MEV_VALIDATION
 S0_VIRTUAL = "0.0736"
 
 

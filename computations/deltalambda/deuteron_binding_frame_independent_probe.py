@@ -66,10 +66,17 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# Byte-exact route (beans qou-n55l / fvxq): the literal string equals the
+# registry value exactly, so this is value-preserving, not a value change.
+# AME here is a measurement/comparison reference -- what a `_VALIDATION`
+# constant is for -- not a prediction input, which would be the 3-cal
+# violation fvxq warns about.
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
+
 set_compute_dps()
 Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
 ME_MEV = "0.51099895000"
-B_AME = "2.2245662"
+B_AME = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def main() -> int:
