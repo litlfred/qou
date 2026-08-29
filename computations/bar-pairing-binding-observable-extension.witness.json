@@ -1,6 +1,6 @@
 {
   "computation": "bar-pairing-binding-observable-extension",
-  "description": "Extension of PR #1742's bar-pairing observable to T, ³He, ⁴He using the PR #1748 patched Rust kernel.  Confirms or refutes the deuteron's 'mirror underbinds by ~70%' finding across the light series.",
+  "description": "Extension of PR #1742's bar-pairing observable to T, \u00b3He, \u2074He using the PR #1748 patched Rust kernel.  Confirms or refutes the deuteron's 'mirror underbinds by ~70%' finding across the light series.",
   "results": [
     {
       "atom": "deuteron",
@@ -8,20 +8,64 @@
       "N": 1,
       "A": 2,
       "n_strands": 6,
-      "B_arch_MeV": 2.3043266203187662,
-      "B_bar_MeV": 0.6596730118309209,
-      "AME_MeV": 2.224566,
-      "err_arch_pct": 3.585446344085374,
-      "err_bar_pct": -70.34599055137403,
+      "B_arch_MeV": "2.3300261991749270823765455821462643072055676659674",
+      "B_bar_MeV": "0.65444223472184281413043055461735655606152188237184",
+      "AME_MeV": "2.2245662",
+      "err_arch_pct": "4.7406995204245700746754842425576864022103575055414",
+      "err_bar_pct": "-70.581130167227982959984263241194775140361213688681",
       "growth_channels_free": 4,
       "growth_channels_atom": 5
+    },
+    {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "B_arch_MeV": "3.7195314674929695876560125181758626699094453918958",
+      "B_bar_MeV": "0.89911227945956196612024371448768594072795201786915",
+      "AME_MeV": "8.4817962",
+      "err_arch_pct": "-56.146889411313966873478844985972868931825485362454",
+      "err_bar_pct": "-89.399506210022330339412732948149756996897048553593",
+      "growth_channels_free": 16,
+      "growth_channels_atom": 16
+    },
+    {
+      "atom": "helium-3",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "B_arch_MeV": "3.737937770688650971716998783049138095119419153833",
+      "B_bar_MeV": "0.91737974709573035021323308056428589157918701496011",
+      "AME_MeV": "7.71804132",
+      "err_arch_pct": "-51.568829244248578709125143903101854666937450992644",
+      "err_bar_pct": "-88.11382695349795885501642947197533413076898356175",
+      "growth_channels_free": 16,
+      "growth_channels_atom": 12
+    },
+    {
+      "atom": "helium-4",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "B_arch_MeV": "4.6875949604603341269595015542314013856136283138101",
+      "B_bar_MeV": "0.71483922875595875235341819697094109451290590182473",
+      "AME_MeV": "28.2956624",
+      "err_arch_pct": "-83.433521031618139015683543233709908181497004594562",
+      "err_bar_pct": "-97.473679115015315024562145620697887975533289152387",
+      "growth_channels_free": 32,
+      "growth_channels_atom": 29
     }
   ],
-  "scriptHash": "1e9518e4eef9",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "rust+mpmath",
-  "computedAt": "2026-07-18T19:19:16.105127+00:00",
+  "scriptFile": "bar_pairing_binding_observable.py",
+  "scriptHash": "9c1db3abf010",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "f71a6eac93d3e04a41b4294bcca7be601846e658",
+  "engine": "python",
+  "computedAt": "2026-08-29T19:55:00.692093+00:00",
   "durationMs": 0,
-  "scriptFile": "bar_pairing_binding_observable.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
