@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T05:38:02Z
+updated_at: 2026-08-29T06:50:15Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -180,3 +180,67 @@ composition order and the quark-generator assignment are both my
 reconstruction, not corpus statements. What is established is that no reading
 I can find reaches the stated value, and the gap is 1000x the neutron's
 residual.
+
+
+## 2026-08-29 (cont. 4) — WHERE THE GLUON WENT (owner question)
+
+Owner asked: *"what happened to the gluon... shouldn't we see it in proton? it's
+in the γγ production history, no?"* — and that is the right question, because
+the γγ block's central identification **is** the gluon:
+
+- `c_3 = -2 = J_Hopf(q=1)` — *"classical-limit Jones polynomial of the
+  **Hopf-link substructure**"*
+- `c_4 = b^2 + 1/2` — *"Kashiwara + **half-Hopf** mixed"*
+- its own open question: *"formalising the 3-fold Markov closure →
+  **Hopf-link substructure** identification"*
+
+So `c_3`, which the whole published ladder rests on, IS the Hopf link.
+
+### Answer: the gluon is a NORMAL-FORM TERM, not an added factor
+
+`categorical-proton.md`: *"$B_3 = (\sigma_0\sigma_1^{-1})^3$ … **$B_3$ natively
+carries Hopf link content. This constitutes the intrinsic gluon field**"*.
+`categorical-neutron-properties.md`: *"establishing intrinsic Hopf link content
+**without an independent $L_H$ factor**"*.
+
+**This corrects my earlier framing.** I looked for the gluon as a *factor in
+the word* and reported "hecke_core's words contain no Hopf link". The corpus's
+own account is that the Hopf content lives in the `L_±` **coordinates of the
+reduced element** — the basis IS `[γ, σ₀, σ₁, L₊, L₋, e⁻]`.
+
+### And the corpus PINS the whole vector — `tbl:categorical-neutron-table-data`
+
+| basis | | corpus | constructed | hecke_core |
+|---|---|---|---|---|
+| **1** | γ | −0.0096 | +0.0092 | 0.4894 |
+| σ₀ | | −0.0481 | −0.0442 | 1.2978 |
+| σ₁ | | 0.0461 | **0.0461 ✓** | −0.1845 |
+| σ₀σ₁ | **L₊** | −0.2206 | **−0.2206 ✓** | −0.4894 |
+| σ₁σ₀ | **L₋** | +0.0189 | 0.0 | **0.0** |
+| σ₀σ₁σ₀ | **e⁻** | +1.0109 | **+1.0109 ✓** | **0.0** |
+
+Sums to 0.7976 = the stated net. **This is a six-component target, not one
+scalar** — a far stronger constraint than anything used before.
+
+**Construction: 3/6 exact** (240 variants scanned: 8 quark assignments × 5
+gluon words incl. `L₊L₋` × 6 compositions). max|err| 0.0189, and the residual
+is *structured* — the same 0.0189 displaced between γ and L₋.
+
+**hecke_core: 0/6, max|err| 1.35.** Decisively: its neutron has
+**e⁻ = 0.0 EXACTLY** — zero weight in the trefoil channel the block says
+*"dominates both nucleons"* at ≈ +1.0 — and **L₋ = 0.0**.
+
+### So, to the owner's question
+
+The gluon **is** in the corpus's proton/neutron — as `L₊`/`L₋` NF terms, both
+nonzero, exactly as the definition says. It is **absent from the word
+`hecke_core` traces**, along with the entire dominant trefoil channel. That is
+why `Delta_L` sits 0.34 from the blocks: not a convention, not an ordering, not
+a missing factor I could add — a different object.
+
+Which strengthens the standing conclusion: the derivable Delta is the
+constructed one. It now matches 3/6 components of a pinned vector; `hecke_core`
+matches none.
+
+**Still open:** the 0.0189 γ↔L₋ displacement and the 0.0039 on σ₀. No variant
+of 240 closes them, so one more structural element is unaccounted for.
