@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:40:02Z
-updated_at: 2026-08-29T16:40:43Z
+updated_at: 2026-08-29T18:12:33Z
 ---
 
 **Verified** by `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`
@@ -34,3 +34,30 @@ anywhere, and `ConditionalCorollaries.lean` binds the same five *names* in the
 
 `conj:levi-degeneracy` recorded in the same audit as a lesser instance: `leviForm`
 and `leviForm_symm` are inert, never related to `degeneracySet`.
+
+**Follow-on audit complete (2026-08-29).** All 51 conditional classes / 345
+fields in the chapter, via new `scripts/limit-claim-encoding-audit.py`
+(--selftest pins both known true positives).
+
+Corpus-wide: 11 candidates over 11,277 .lean files -> **1 genuine**, and it is
+NOT in this chapter.
+
+The six fluid-dynamics candidates are all FALSE POSITIVES: the limit is deferred
+to an opaque predicate (`jet_diverges`, `is_NS_singular`, `obstruction`), not
+missing -- the same device `q_ns_wellposedness` now uses for Smooth/IsSolution,
+and the iff-pair form AGENTS.md 3b-cond item 5 names as sanctioned. **The p2/p5
+defect does not recur in the q-NS chapter.**
+
+Genuine hit, left for the mass-tower owner (outside this branch's chapter, and
+the honest fix changes what the class demands):
+`Archimedean/MassTowerOpenProblemsClasses.lean::ChiralityFactorClass.kauffman_derivation`
+-- docstring claims `O(h^2)`, field bounds nothing, instance discharges it with
+`error_term := fun _ _ _ => 0`. Disclosed, but NOT reachable by
+`trivially-inhabiting-instance-census.py` (that keys on data fields; this is a
+Prop existential). Fix would be `exists C, forall .., |error_term ..| <= C` near
+h = 0, which the current instance would NOT discharge.
+
+Two of my own measurements were wrong before correction, both recorded in the
+audit: '53 classes / 2 zero-field carriers' (an enumerator that did not strip
+block comments matched docstring PROSE -- real: 51 / 345 / 0), and '0 candidates
+over 2000 files' (scope artifact; the corpus is 11,277).
