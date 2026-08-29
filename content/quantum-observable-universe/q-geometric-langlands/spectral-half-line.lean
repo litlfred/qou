@@ -97,4 +97,72 @@ theorem spectral_half_line
   rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
   exact mul_right_cancel₀ hlog hl
 
+/-! ## The spectral coordinate map
+
+`spectral_half_line` takes `spectral_coord` as a hypothesis. Two facts about
+that hypothesis are provable here and are worth separating from what is not
+(bean `qou-qspc`).
+
+**What is proved below.** Such a map always *exists* — `ρ := log α / log q` on
+the principal branch, using only `α ≠ 0`, which `LocalQZetaFunction` carries —
+and, more usefully, `Re(ρ)` is *independent of the branch*: any two exponents
+with the same `q`-power share a real part. So the conclusion `Re(ρᵢ) = 1/2` is
+well-posed even though the map `α ↦ ρ` is not, being determined only modulo
+`2πi / log q`.
+
+**What is NOT proved, and is the open part.** Nothing here identifies these `ρᵢ`
+with the spectrum of the Reeb derivation `ξ_q`. `spectral_coord` in
+`spectral_half_line` is doing double duty: it asserts a coordinate relation
+(supplied below) *and* that the exponents are Reeb eigenvalues (not supplied
+anywhere in the corpus). Existence does not close that gap — it isolates it. -/
+
+/-- A spectral coordinate map always exists: on the principal branch,
+    `ρ := log α / log q` satisfies `α = q^ρ`.
+
+    Uses only `q > 1` and `αᵢ ≠ 0`, the latter being a field of
+    `LocalQZetaFunction`. This supplies the *coordinate relation* of
+    `spectral_half_line`'s `spectral_coord` hypothesis, and nothing more —
+    see the section docstring. -/
+theorem exists_spectral_coord (Z : LocalQZetaFunction) (hq : Z.q > 1) :
+    ∃ ρ : Fin 8 → ℂ, ∀ i, Z.eigenvalues i = (Z.q : ℂ) ^ (ρ i) := by
+  have hq0 : (0 : ℝ) < Z.q := by linarith
+  have hlog : Real.log Z.q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hqC : (Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr (ne_of_gt hq0)
+  refine ⟨fun i => Complex.log (Z.eigenvalues i) / (Real.log Z.q : ℂ), fun i => ?_⟩
+  have hlogC : (Real.log Z.q : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hlog
+  show Z.eigenvalues i = (Z.q : ℂ) ^ (Complex.log (Z.eigenvalues i) / (Real.log Z.q : ℂ))
+  rw [Complex.cpow_def_of_ne_zero hqC, ← Complex.ofReal_log (le_of_lt hq0), mul_comm,
+      div_mul_cancel₀ _ hlogC, Complex.exp_log (Z.eigenvalues_ne_zero i)]
+
+/-- **The real part is branch-independent.** `α = q^ρ` pins `ρ` only modulo
+    `2πi / log q`, but every such `ρ` has the same real part — so
+    `Re(ρᵢ) = 1/2` is a well-posed conclusion despite the map `α ↦ ρ` not being
+    well-defined. -/
+theorem spectral_coord_re_unique
+    (q : ℝ) (hq : q > 1) (α : ℂ) (ρ ρ' : ℂ)
+    (h : (q : ℂ) ^ ρ = α) (h' : (q : ℂ) ^ ρ' = α) :
+    ρ.re = ρ'.re := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have e : q ^ ρ.re = q ^ ρ'.re := by
+    rw [← abs_cpow_ofReal_eq_rpow_re q hq0 ρ, ← abs_cpow_ofReal_eq_rpow_re q hq0 ρ',
+        h, h']
+  have hl := congrArg Real.log e
+  rw [Real.log_rpow hq0, Real.log_rpow hq0] at hl
+  exact mul_right_cancel₀ hlog hl
+
+/-- The real part produced by the principal branch, in closed form:
+    `Re(ρ) = log ‖α‖ / log q`. Combined with `spectral_coord_re_unique` this is
+    *the* real part of any spectral coordinate for `α`. -/
+theorem spectral_coord_re_eq
+    (q : ℝ) (hq : q > 1) (α : ℂ) (ρ : ℂ) (h : (q : ℂ) ^ ρ = α) :
+    ρ.re = Real.log ‖α‖ / Real.log q := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlog : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have e : q ^ ρ.re = ‖α‖ := by rw [← abs_cpow_ofReal_eq_rpow_re q hq0 ρ, h]
+  have hl := congrArg Real.log e
+  rw [Real.log_rpow hq0] at hl
+  rw [eq_div_iff hlog]
+  exact hl
+
 end QOU.AlgebraicSubstrate
