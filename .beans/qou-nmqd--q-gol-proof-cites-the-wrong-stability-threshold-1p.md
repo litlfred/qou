@@ -1,11 +1,11 @@
 ---
 # qou-nmqd
 title: q-GoL proof cites the wrong stability threshold (1/phi^2 belongs to P_77, not Phi) and asserts unitarity the Hecke eigenvalues forbid
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:07Z
-updated_at: 2026-08-29T16:24:57Z
+updated_at: 2026-08-29T18:08:34Z
 ---
 
 Found by adversarial review of the q-GoL blocks on `main` (owner asked for a
@@ -126,3 +126,33 @@ Filed rather than patched: Finding 2 changes what the proposition can claim, so
 it is a content decision, not an edit. Findings 1, 4 and the Finding 3 citations
 are mechanical and could ride on any info-theory pass.
 `q-game-of-life.ts` also carries `lean: { validation: "not_checked" }`.
+
+
+## 2026-08-29 — RESOLVED. Owner ruled: scope the 't Hooft reading
+
+The open item this bean left with the author ("whether the 't Hooft reading
+survives without energy conservation") was decided: scope it. Done in the
+interpretation block.
+
+**What made it a real scope change rather than a hedge.** 't Hooft's mechanism
+is not "a CA is quantum-mechanics-like"; it is that a deterministic evolution
+PERMUTES a distinguished ontological basis, so the induced operator on that
+span is automatically unitary and generates a Schrodinger flow. Unitarity is
+the load-bearing step, and Finding 2 removed it for `q != 1`. So the
+realization claim does not weaken gradually with `q` — it holds at `q = 1` and
+is simply unestablished away from it.
+
+**And the sharp consequence, now stated in the block:** `q = 1` is exactly
+where the q-Toffoli degenerates to the ordinary Toffoli. So the one place the
+'t Hooft embedding goes through is the one place the q-deformation contributes
+nothing — the classical limit realizes Pena et al.'s construction. The block
+now says that outright instead of leaving a reader to notice it.
+
+The Markov-trace-as-coarse-graining sentence was scoped the same way, from an
+achievement ("replaces ad hoc information loss") to a suggestion with its
+motivation stated and its status marked: a degenerate form has a radical and
+quotienting by a radical is an information loss rather than a postulate of one,
+but no such identification is derived. Observation, labelled as one.
+
+All five findings in this bean are now either fixed in content (1, 3, 4, 5) or
+resolved by ruling (2, and this). Nothing left open on it.
