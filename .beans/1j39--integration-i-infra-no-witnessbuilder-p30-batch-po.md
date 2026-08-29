@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-29T00:14:41Z
+updated_at: 2026-08-29T00:32:30Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -315,3 +315,56 @@ values are now known to be better: stamping forces a regeneration, and rewriting
 past-a-reviewer that AGENTS.md forbids *regardless of the direction*. It is now
 a justified deliberate refresh for whoever picks up `qou-b3l8`, on its own
 commit, citing the 3m44s window.
+
+
+### 8 of 16 stamped — and one bucket-C blocker was a DETECTOR bug, not a producer bug
+
+`qbeta_cal3_anchor_table_impact` was on the blocked list as "now fails its own
+assertions". It does not. **The producer was fine; its c_3 tripwire was
+over-flagging.**
+
+That script asserts *"no production table row uses c_3"* from a **live scan** of
+`canonical_mass.py` + `derived_masses.py` — deliberately falsifiable, so that
+wiring c_3 into production flips it red. It had gone red, with verdict
+*"INCONCLUSIVE — a factorization/wiring assertion failed; re-derive before
+citing"*, which points a reader straight at a c_3 wiring regression.
+
+**There is no regression.** The scan was a line-regex over source TEXT, and its
+only two hits in the entire production surface were `derived_masses.py:550` and
+`:552` — both inside the coefficient-tier **docstring**, both saying c_3 is not
+wired:
+
+    • c_3 = −2 : EMPIRICAL — near-match, REFUTED as a real-q fibre element
+                 (… no fixed real c_3 holds across anchors — SRigidityPrune).
+
+So writing the correct thing down in the production file was enough to fail the
+check that the thing has not been done. Same over-flagging class as the 141-hit
+prose grep I declined to ship earlier in this tranche — third instance on this
+branch of *a detector keying on text rather than on code*.
+
+**Fixed AST-based** (comments never enter the AST; string constants skipped
+explicitly), with a **`--selftest`** so the narrowing cannot quietly defang a
+tripwire that is supposed to be able to fire:
+
+    [PASS] wired: bare c_3 in code / order-3 truncation call / c[3] subscript
+    [PASS] clean: c_3 in a docstring / in a comment / inside a string / c_2 rung
+
+All five assertions pass, exit 0, and **the committed witness needed no
+substantive change** — it already recorded them passing. The producer had
+regressed away from a correct witness, not the reverse. Then stamped: two q0
+keys, zero numbers moved, anchor self-consistent.
+
+**Running total: 8 of 16 live bucket-C producers stamped.** Remaining 8 are
+4 `qou-fl9i` numeric movers, 1 `qou-b3l8` (float64→mpmath, identified),
+1 content drift (`qbeta_habiro_p8`, `check_q`→`u` rename), 1 that writes
+nothing (`binding_additive_linked_cluster_probe`), and the y_λ regenerator I
+will not run.
+
+**Adjacent, NOT fixed here.** That same docstring carries `dc_3/dq ≈ 4.6×10⁶`,
+which AGENTS.md corrects to **3.84e6**. Measured **~18 live sites**, including
+**three `.lean` files** (`SRigidityPrune`, `ImQAnchorCarrier`,
+`ThetaLipschitzObstruction`) and this production module — broader than
+AGENTS.md's own list (*"audit docs and `local/compute-author` §precedent-table"*),
+which names neither Lean nor `computations/`. A sibling already flagged the
+discrepancy in `docs/audits/2026-08-25-cheat-sheet-paper-alignment.md`. Left
+alone: corpus-wide doc-currency in a different domain.
