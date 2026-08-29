@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T16:27:27Z
+updated_at: 2026-08-29T18:06:34Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -658,3 +658,56 @@ framework's claim actually rests, and it already has a measurement waiting.
 STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; no fitting (owner,
 2026-08-25); do not close the D residual with any parameter; only CAL-1/2/3
 admissible.
+
+
+=== ITEM 1, ONE THIRD CLOSED (commit 63b99a84ba) ===
+
+Entered item 1 through the existing constructor probe, as the review proposed.
+
+DERIVED, not observed. Every tbl:atomic-braid-table1-data crossing has
+chirality ratio lam_sym/lam_alt equal to -q^2, -q^-2 or +-1:
+    pp,ee -> -q^2 (+2 units of ln q)   nn,pe -> -q^-2 (-2)   pn,ne -> +-1 (0)
+These are the three cases ALREADY PROVED sorry-free in
+QOU/BraidKnot/HeckeLinearReduction.lean (symAltRatio_zero/_full/_half) plus the
+identity. So Phi_3 is FORCED to be an EVEN integer multiple of ln q — no
+ordering, no M_i reading, no anchor needed.
+
+MEASURED. All 20 carried Phi_3 = w*ln q, integer w, every w even. Residuals are
+NOT noise: a constant RELATIVE 1.22e-5 = (1.10998 - q0_proton)/q0_proton. The
+producer used its own recorded 5-decimal q; at that q, |w - Phi_3/ln q| <= 4.3e-6
+on every row.
+
+REFUTED — do not quote. w = -Z(2N - Z + 1) matches 18/19 non-hydrogen rows and
+FAILS Ar (recorded -498, formula -486). Ar is the ONLY row with N-Z > 1; every
+other row is N=Z or N=Z+1. Read off a sample blind to the (N-Z) dependence, and
+the one row testing it kills it. Scope (a).
+
+STATUS
+  Phi_3 quantum ..... DERIVED (Lean, sorry-free)
+  Phi_3 integer w ... OPEN, one candidate refuted
+  Phi_1, Phi_2 ...... UNTOUCHED — neither is quantised, so this does not reach
+                      them. Phi_3 was the tractable third; the other two are not
+                      easier for this being done.
+
+NEXT for w, needing no new mathematics: w = 2*sum_j m_j*s_j, s_j the crossing
+sign, m_j the number of chains M_i containing crossing j. So w is a
+POSITION-WEIGHTED CROSSING COUNT, and finding it is a question about the
+ground-state ORDERING — the exponential minimisation this arc already flagged.
+The obstacle is one we already named, which is why I did not push further.
+
+=== A THIRD GATE CATEGORY, worth carrying forward ===
+
+`q0-anchor refill ratchet` was RED on the branch with "NEW (not in baseline): 1"
+and GREEN on clean main — so it read as mine. It was NEITHER mine NOR
+pre-existing: the branch was 37 commits behind, and a witness main had since
+stamped read as newly-unstamped against the newer baseline. MERGING MAIN
+CLEARED IT.
+
+So a gate red has THREE possible owners, not two: the branch's change, main's
+state, or the branch's STALENESS. Check the third before attributing. Final
+state here: this branch's five reds are byte-identical to clean main's five.
+
+Also caught: the stash/checkout dance for the baseline comparison left OTHER
+AGENTS' bean edits in my working tree. Reset to HEAD and re-applied only my own
+file. A baseline comparison that touches the tree can pick up neighbours' work —
+check `git status` before every commit, not just at the end.
