@@ -316,6 +316,24 @@ def main() -> int:
         {"manifold": "10_100", "tets": 14, "obstruction_class": 1, "geometric": True,
          "strategy": "modStd_finduni", "ideal_form": "nz", "milliseconds": 67043,
          "status": "ok", "dimension": 0, "eliminants": 15},
+        # THE CONTROL, and it is what turns "modStd is the lever" from an assertion
+        # into a measurement.  Same container, same manifold, same geometric class, same
+        # ideal form -- differing ONLY in modStd.  Plain finduni TIMES OUT at 1800s while
+        # modStd + finduni finishes.  So the finduni timeout the sibling probe recorded
+        # REPRODUCES: that measurement was right and only the conclusion drawn from it
+        # was wrong.  Without this row the reach result rests on two runs that differ in
+        # more than one variable, which is not a controlled comparison.
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 1, "geometric": True,
+         "strategy": "finduni", "ideal_form": "nz", "milliseconds": 1800111,
+         "status": "timeout", "dimension": None, "eliminants": 0,
+         "note": "CONTROL for the row above -- identical except modStd. Re-measured "
+                 "2026-08-25 on an idle machine, alongside the 42.0s modStd run."},
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 1, "geometric": True,
+         "strategy": "modStd_finduni", "ideal_form": "nz", "milliseconds": 42040,
+         "status": "ok", "dimension": 0, "eliminants": 15,
+         "note": "clean-machine re-measurement, fresh container. The 67043 ms row above "
+                 "was the same configuration under load and is kept as the conservative "
+                 "bound; both are real."},
         {"manifold": "10_100", "tets": 14, "obstruction_class": 0, "geometric": False,
          "strategy": "modStd_finduni", "ideal_form": "nz", "milliseconds": 46660,
          "status": "ok", "dimension": 0, "eliminants": 15,
