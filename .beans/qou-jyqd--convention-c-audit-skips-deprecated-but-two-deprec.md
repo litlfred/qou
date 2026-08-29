@@ -83,6 +83,35 @@ is the only check that would have caught it.
 
 - [x] Measure the blind spot
 - [x] Ship the cross-reference audit
-- [ ] Land `qou-jqjx` so `integer-lp-gluon.py` stops being a dependency on main
+- [x] Land `qou-jqjx` so `integer-lp-gluon.py` stops being a dependency on main
 - [ ] Decide whether the main audit should call this script, or whether the two
       stay separate and the arc reports two numbers
+
+
+---
+
+## Re-measured on the merged tree, 2026-08-29
+
+Main merged in (2,478 commits). Audit re-run:
+
+    deprecated .py producers                 568
+      carrying a convention-C shape          139
+      ...AND named by something in content/    2
+
+Unchanged at 2, and `integer-lp-gluon.py` now shows **four** content refs
+rather than three — the neutron `.md` joined the list, because the merged
+paragraph names the producer in prose while withdrawing it.
+
+**That is the transition this bean was opened for.** All four refs are now
+CITATIONS: blocks naming the producer as the source of a defect they have
+withdrawn. Before `qou-jqjx` the same producer was a DEPENDENCY — the corpus
+quoted its numbers as live results. Same file, same count, opposite meaning,
+and the count alone cannot tell them apart. That is why the script reports and
+does not adjudicate.
+
+`protium-witness.py` is unchanged: one hit, a QA sidecar recording a confirmed
+braid-word error. A citation.
+
+So the convention-C blind spot has **no live dependency today**. The detector
+stays, because the category will recur the next time a producer is deprecated
+while its numbers are already written into a block.

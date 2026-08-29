@@ -322,3 +322,50 @@ identical while provenance silently degrades. Every producer was run to confirm
 its new assertions pass, then its witness reverted. **The witnesses want
 regenerating in a properly provisioned environment** — that is the one
 outstanding task from this drain.
+
+
+---
+
+## Re-measured after merging main, 2026-08-29 — the impact set is EMPTY
+
+2,478 commits of main merged in. Census and impact triage both re-run:
+
+|  | 2026-08-25 | 2026-08-29 (merged) |
+|---|---|---|
+| files parsed | 3,253 | 3,538 |
+| `add_assertion` calls | 3,482 | 3,780 |
+| tautological | **266** (7.6%) | **229** (6.1%) |
+| files carrying one | 195 | 172 |
+| backing a content block | 14 | 2 |
+| **backing a block claiming `verified`** | **10** | **0** |
+
+The corpus grew by 285 files and 298 assertions, and the count still fell by
+37. The ten `verified` blocks drained in batches 1–4 stayed drained through the
+merge, and main introduced no new ones.
+
+**Zero blocks now claim `verified` on the strength of an assertion that cannot
+fail.** That was the whole point of triaging by impact rather than by count.
+
+### The two survivors that touch a block, and why neither is urgent
+
+- `conj:casimir-epsilon-vacuum` — `probes/casimir_hoefsmit_additivity_probe.py:190`,
+  block status `experimental`. An experimental status over an exploratory probe
+  is not a false claim.
+- `rem:hadron-level-knot-table` — `hadron_knot_table.py:258`, block status
+  `failed`. Worth fixing on its merits: it reads
+  `computed=r["tr_M"], expected=r["tr_M"]` under
+  `source="hecke_core.build_atom_nf -> nf_tr"`, i.e. it advertises a check
+  against a named producer while comparing the value to itself, and the LP
+  assertion four lines below is correctly written (`expected=1`).
+
+  **Not fixed here.** The remedy is to pin the tr_M values, which requires
+  running the producer, and it does not complete within 580s in this
+  container. Its block already says `failed`, so nothing false rests on it
+  meanwhile. Needs an environment that can run it.
+
+### Remaining
+
+229 sites across 172 files, none backing a `verified` claim. Machine-visible
+via `assertions_are_falsifiable` (folio-assistant, `critical`), so they surface
+at the gate rather than needing a census. The four remedies recorded above still
+apply; picking between them is still the work.
