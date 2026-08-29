@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:32:30Z
+updated_at: 2026-08-29T18:35:19Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -259,3 +259,52 @@ tau_n. That is not a change to make in the same turn as the finding. What is
 done here: the false docstring is corrected (no number moves), and the finding
 is recorded with its evidence. The remediation — and which of the 53 readers
 are on the volume path (fine) versus the word path (not) — is the next piece.
+
+
+## 2026-08-29 (later) — the reader split, and a fairness correction
+
+Measured over the 53 readers of `_PROTON_G0`/`_NEUTRON_G0`/`nucleon_gen_chains`
+(excluding `_deprecated/` and `pyhecke.atom` itself), classifying each by
+whether it CONCATENATES the chains into a `(c, d, gen)` word or feeds them to
+the per-generator volume path:
+
+    WORD-PATH   18   (16 live + 2 in the generated qou-mass mirror)
+    volume/other 35
+
+The 18 include the canonical mass/binding surface: `binding_canonical`,
+`closed_form_tau_M`, `binding_multibond_wenzl`, `binding_threebody_joint_trace`,
+`tau_M_proton_closed_form_phase5l1`, `mass_at_3A_proper`, `chi_4he_binding_lossless`.
+Heuristic classifier, spot-verified on two — see the correction below, which is
+one of them.
+
+### FAIRNESS CORRECTION to the entry above: "unlicensed" overstates it
+
+The previous entry called the concatenation a defect that "no relation
+licenses". The mathematics is unchanged — sigma_0 and sigma_1 do not commute,
+so re-sorting is a different element, and tr_M differs by 82 %. But calling it
+an accident is wrong, and `closed_form_tau_M` says so in its own words:
+
+    # The chain is (c, d, gen) and MONOTONE (all gen 0, then all gen 1),
+
+That is deliberate and documented. So the corpus does not contain one correct
+convention and one slip; it contains **two deliberate, mutually incompatible
+orderings** — braid order in `build_atom_nf`, monotone order in the tau_M /
+binding path — and they disagree by 82 % on the quantity that reaches the
+physics.
+
+That changes what the remediation IS. It is not swatting a bug: it is
+overturning a documented convention on the strength of the gamma-gamma/SDP
+criterion, which says the components are LR cross-level embedded rather than
+concatenated monotonically. Whoever executes it should expect the monotone
+ordering to have load-bearing justifications elsewhere that must be found and
+answered, not merely edited around.
+
+### Sequencing, unexecuted
+
+1. Establish why monotone was chosen — `closed_form_tau_M`'s comment asserts
+   it without a citation, exactly as `build_nucleon_nf`'s gluon docstring did.
+   That parallel is a reason for caution, not for confidence.
+2. Only then re-point the 18, with tau_p/tau_n moving ~82 %.
+3. The 35 volume-path readers are unaffected: `_chain_V_full` multiplies within
+   ONE generator and `atom_per_generator_volumes` adds, so ordering across
+   generators never arises there.
