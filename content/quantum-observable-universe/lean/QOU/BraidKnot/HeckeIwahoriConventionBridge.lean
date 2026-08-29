@@ -1,4 +1,5 @@
 import QOU.BraidKnot.HeckeBoundedJMComm
+import QOU.BraidKnot.HeckeStableScalarCascade
 
 /-!
 # Iwahori normalisation → the corpus's `σ` convention
@@ -138,5 +139,74 @@ theorem iwahori_jm_comm {n : ℕ} (q : R) (hq : q ≠ 0) (T : ℕ → A)
       = jmRawB (heckeGeneratorsBelow_of_iwahori q hq T hquad hbraid hfar) k
         * jmRawB (heckeGeneratorsBelow_of_iwahori q hq T hquad hbraid hfar) i :=
   jmRawB_comm _ i k hi hk
+
+/-! ## The bridge runs both ways, and here is a concrete instance
+
+Everything above is stated against a *hypothesised* Iwahori family.  A bridge nobody can feed is
+worth little, so this section closes the loop:
+
+* `iwahori_of_hecke` — the **inverse** rescaling.  A corpus-convention `σ` gives an
+  Iwahori-convention `T = q·σ` satisfying `(T − q²)(T + 1) = 0`.
+* `stdTwoIw` — the explicit `2×2` Young seminormal matrices of `HeckeStableScalarCascade`,
+  pushed into Iwahori normalisation.
+* `stdTwoIw_isHeckeGeneratorsBelow` — they satisfy the three Iwahori relations at `n = 3`, so the
+  bridge applies to them.
+* `stdTwoIw_roundTrip` — and what comes back out is `stdTwo` again, on the nose.
+
+The round trip is the falsifiability check: a bridge with the scaling inverted, or with `Q = q`
+instead of `q²`, would fail it. -/
+
+/-- **The inverse rescaling.**  If `S` satisfies the corpus relation at `q`, then `q·S` satisfies
+the Iwahori relation at `Q = q²`.
+
+No `q ≠ 0` needed, unlike `hecke_of_iwahori`: this direction multiplies by `q` rather than by
+`q⁻¹`, and the identity survives `q = 0` (where Lean's `q⁻¹ = 0` makes both sides collapse). -/
+theorem iwahori_of_hecke (q : R) (S : A)
+    (hS : S * S = (q - q⁻¹) • S + 1) :
+    (q • S - (q * q) • (1 : A)) * (q • S + 1) = 0 := by
+  have hcoef : q * q * (q - q⁻¹) + q - q * q * q = 0 := by field_simp; ring
+  have expand : (q • S - (q * q) • (1 : A)) * (q • S + 1)
+      = (q * q) • (S * S) + q • S - (q * q * q) • S - (q * q) • (1 : A) := by
+    simp only [sub_mul, mul_add, mul_one, one_mul, smul_mul_assoc, mul_smul_comm]
+    module
+  have collapse : (q * q) • ((q - q⁻¹) • S + 1) + q • S - (q * q * q) • S - (q * q) • (1 : A)
+      = (q * q * (q - q⁻¹) + q - q * q * q) • S := by module
+  rw [expand, hS, collapse, hcoef, zero_smul]
+
+variable {K : Type} [Field K]
+
+/-- The explicit `2×2` seminormal generators in **Iwahori** normalisation: `T i = q · σ i`. -/
+noncomputable def stdTwoIw (q : K) : ℕ → Matrix (Fin 2) (Fin 2) K
+  | 0 => q • stdTwo0 q
+  | 1 => q • stdTwo1 q
+  | _ => 1
+
+/-- They satisfy the Iwahori relations at `Q = q²`, so `heckeGeneratorsBelow_of_iwahori` applies —
+the bridge has a concrete `dim = 2` input, not merely a hypothesised one. -/
+noncomputable def stdTwoIw_isHeckeGeneratorsBelow (q : K) (hq : q ≠ 0) :
+    HeckeGeneratorsBelow K (Matrix (Fin 2) (Fin 2) K) q 3 :=
+  heckeGeneratorsBelow_of_iwahori q hq (stdTwoIw q)
+    (by
+      intro i hi
+      have hi2 : i < 2 := by omega
+      interval_cases i
+      · exact iwahori_of_hecke q _ (stdTwo_hecke0 hq)
+      · exact iwahori_of_hecke q _ (stdTwo_hecke1 hq))
+    (by
+      intro i hi
+      have hi1 : i < 1 := by omega
+      interval_cases i
+      · exact braid_of_scaled q _ _ (stdTwo_braid hq))
+    (by intro i j hij hjn; omega)
+
+/-- **The round trip.**  Rescaling `σ ↦ q·σ` into Iwahori normalisation and back through the bridge
+returns `σ`.  This is what would break if the scaling were inverted, or if the bridge used `Q = q`
+rather than `Q = q²`. -/
+theorem stdTwoIw_roundTrip (q : K) (hq : q ≠ 0) :
+    (stdTwoIw_isHeckeGeneratorsBelow q hq).σ 0 = stdTwo0 q
+      ∧ (stdTwoIw_isHeckeGeneratorsBelow q hq).σ 1 = stdTwo1 q := by
+  constructor <;>
+    · show q⁻¹ • (stdTwoIw q _) = _
+      simp only [stdTwoIw, smul_smul, inv_mul_cancel₀ hq, one_smul]
 
 end QOU.BraidKnot.Hecke
