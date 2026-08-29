@@ -223,4 +223,55 @@ theorem mulGen_mulGen_top (A : R) (x : Hecke R (n + 2)) :
       abel
   | single w c => exact mulGen_mulGen_single_top A w c
 
+/-! ## The bond factor, on the element itself
+
+Everything above states the generating function over an explicitly-supplied
+`Finset`. `gfOf` reads it straight off the element instead, which is what makes
+the two operations of a bridge -- promote, then add a multiple of the original
+-- composable in one expression.
+
+The result is the interface factor `(X + C d)` of `GradedGeneratingFunction`,
+now with both halves derived: the `X` from Hecke multiplication by the fresh
+generator, and the `C d` from the interface scalar. -/
+
+/-- The grade generating function of an element, read off its own support. -/
+noncomputable def gfOf (x : Hecke R m) : R[X] :=
+  x.sum fun w c => Polynomial.C c * X ^ length w
+
+theorem gfOf_eq_gf (x : Hecke R m) :
+    gfOf x = gf x.support (fun w => x w) length := rfl
+
+theorem gfOf_add (x y : Hecke R m) : gfOf (x + y) = gfOf x + gfOf y :=
+  Finsupp.sum_add_index' (fun w => by simp) (fun w a b => by simp [Polynomial.C_add, add_mul])
+
+theorem gfOf_smul (d : R) (x : Hecke R m) : gfOf (d • x) = Polynomial.C d * gfOf x := by
+  rw [gfOf, gfOf, Finsupp.sum_smul_index' (fun w => by simp)]
+  simp only [Finsupp.sum, Finset.mul_sum]
+  refine Finset.sum_congr rfl fun w _ => ?_
+  rw [smul_eq_mul, Polynomial.C_mul]
+  ring
+
+/-- Promotion, on the element: multiplying by the fresh generator multiplies the
+grade generating function by `X`. -/
+theorem gfOf_mulGen_top (A : R) (x : Hecke R (n + 2))
+    (hfix : ∀ w ∈ x.support, w top = top) :
+    gfOf (mulGen A sTop x) = X * gfOf x := by
+  rw [gfOf_eq_gf, gfOf_eq_gf]
+  exact gf_mulGen_top A x hfix
+
+/-- **The bond factor.** A bridge is: promote by the fresh generator, then add
+`d` times the original. Its grade generating function is `(X + C d)` times the
+original's -- the interface factor, with the `X` coming from Hecke
+multiplication and the `C d` from the interface scalar.
+
+`GradedGeneratingFunction.gf_bonds` then multiplies these across a list of
+bonds. What that composition still does NOT supply is the per-nucleon
+factorisation `G_1(x)^A` of the measured composition law; that is the block
+factorisation, a separate fact, not proved anywhere here. -/
+theorem gfOf_bridge (A d : R) (x : Hecke R (n + 2))
+    (hfix : ∀ w ∈ x.support, w top = top) :
+    gfOf (mulGen A sTop x + d • x) = (X + Polynomial.C d) * gfOf x := by
+  rw [gfOf_add, gfOf_mulGen_top A x hfix, gfOf_smul]
+  ring
+
 end QOU.Knot.HeckeTwBasis
