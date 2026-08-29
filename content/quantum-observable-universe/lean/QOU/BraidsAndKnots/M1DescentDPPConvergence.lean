@@ -68,7 +68,9 @@ No instance is provided: an instance would assert the open bulk-rate result. -/
 class DescentDPPMarginConvergence (rhoP sigRatio : ℕ → ℝ) (rhoInf sigRatioInf : ℝ) : Prop where
   /-- `ρ_P(n) → ρ_P∞`. -- Ref: [ivanov-olshanski2003] [borodin-okounkov-olshanski2000] -/
   rhoP_tendsto : Tendsto rhoP atTop (𝓝 rhoInf)
-  /-- `σ_D(n)/σ_A(n) → √(V_D/V_A)`. -- Ref: [johansson2001] [gorbunov2024] -/
+  /-- `σ_D(n)/σ_A(n) → √(V_D/V_A)`. The bulk rate is a Toeplitz-determinant Fisher–Hartwig asymptotic
+  (arc symbol ⇒ algebraic remainder), the remaining open computation.
+  -- Ref: [johansson2001] [gorbunov2024] [deift-its-krasovsky2012] -/
   sigRatio_tendsto : Tendsto sigRatio atTop (𝓝 sigRatioInf)
   /-- the leading margin is strictly positive. -- Ref: [manuscript] docs/audits/2026-08-29-covariance-kernel-M1-po72-leading-constants.md -/
   leading_margin_pos : sigRatioInf < rhoInf
