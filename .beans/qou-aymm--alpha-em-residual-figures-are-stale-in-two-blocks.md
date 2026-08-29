@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T05:21:15Z
-updated_at: 2026-08-29T05:34:02Z
+updated_at: 2026-08-29T06:26:47Z
 ---
 
 ## Finding: one un-propagated proton re-pin, not four wrong numbers
@@ -101,3 +101,66 @@ Fixed on `claude/coulomb-charge-channel-swap-2026-08-29` (PR #5956). Superseded
 figures kept and sourced in place, following the precedent the chern-simons
 block already set. run-validate 0 issues; three sidecars refreshed; render-QA
 battery clean.
+
+
+---
+
+# CORRECTION (same session): "2.1 ppm could not be sourced" was WRONG, and the fix was INCOMPLETE
+
+Two errors of mine, both found by writing a second detector rather than by
+being told.
+
+## 1. The 2.1 ppm IS sourceable
+
+I wrote above, and in a commit message and a public PR comment, that "2.1 ppm"
+matched no form at either pin and recorded it as unsourced. It is the
+Chern-Simons tower resummed with the Gram factor **kappa set to 1** -- i.e. the
+plain geometric sum `bare/(1 - delta_CS)`, no Gram correction at all --
+evaluated at the **muon** pin:
+
+    proton pin  bare/(1-d) = 137.035696697   -2.207 ppm
+    muon   pin  bare/(1-d) = 137.035707546   -2.128 ppm   <- the "2.1 ppm"
+
+The formula was written out in plain sight in
+`observations/substrate-consistency-window-table2-data.md`, whose alpha row
+literally displays `q[9]_q[10]_q/(1-delta_CS)`. I never opened that block
+because the Lean-silence scan does not flag it -- so "I could not source it"
+really meant "my detector did not point me at the block that says it".
+
+This makes the account CLEANER, not messier. All three figures are one
+quantity at three generations, each correct for its own generation:
+
+    -2.1 ppm    kappa = 1 (no Gram factor), muon pin    -> -2.128 ppm
+    -399 ppb    kappa = 1.722, order-2,     muon pin    -> -399.53 ppb
+    -468 ppb    kappa = 1.722, resummed,    proton pin  -> -467.6 ppb
+
+## 2. The fix shipped incomplete -- three more live sites
+
+I fixed the blocks the silence-scan pointed at. The NUMBER had propagated
+further. A second scan (cross-block disagreement on ppb/ppm agreement figures,
+v2 -- v1 could not cross `$` delimiters and so missed the very cascade it was
+written to find) shows `-2.1 ppm` live in three more blocks after my fix:
+
+  - `observations/fine-structure-observation-table1-data.md`
+  - `observations/substrate-consistency-window-table2-data.md`
+  - `predicted-spectra/hadron-half-life-fermi.md`  (also repeats the same
+    mis-citation of `prop:em-coupling-projection` that the hydrogen block had)
+
+All three now scoped/fixed in place.
+
+## 3. A false positive worth recording
+
+The scan also flagged `399` in `predicted-spectra/em-coupling-projection-table1-data.md`.
+Reading it first showed that block is EXEMPLARY: it carries -468 ppb and
+explains the 399 as the deliberately-recorded superseded order-2 truncation.
+Editing on the scan's say-so would have destroyed a correct historical record.
+
+## 4. Retracted sub-claim
+
+I also inferred that `fine-structure-observation-table1-data`'s cells were
+"a muon-era table". UNFOUNDED: at seven significant figures the two pins agree
+on q^-1, [9]_q, [10]_q, so those cells cannot distinguish a pin at all. What is
+true is narrower and is what the note now says -- the cells have drifted from
+the live values AND are internally inconsistent (the table's own
+10.36404 x 11.89501 = 123.280, not the 123.257 it shows). Cause not diagnosed;
+split out as its own bean rather than guessed at.
