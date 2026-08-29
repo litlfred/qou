@@ -268,6 +268,45 @@ def main() -> int:
           f"net(p): 1 - h/2 = {mp.nstr(num(1 - h / 2), 8)} (short block), "
           f"1.0065 (properties block), {mp.nstr(p_h, 8)} (hecke_core)", w)
 
+    # ---- WHY hecke_core is 0.34 off: its word has no Hopf link ----------
+    import collections
+    def multiset(g0, g1):
+        def nm(d):
+            if abs(d) < mp.mpf("1e-30"): return "0"
+            if abs(d + _HN) < mp.mpf("1e-30"): return "-h"
+            if abs(d + _HN / 2) < mp.mpf("1e-30"): return "-h/2"
+            return "?"
+        return collections.Counter([(0, nm(d)) for _, d in g0]
+                                   + [(1, nm(d)) for _, d in g1])
+
+    mp_ = multiset(_PROTON_G0, _PROTON_G1)
+    mn_ = multiset(_NEUTRON_G0, _NEUTRON_G1)
+    print("\n  hecke_core crossing multisets:")
+    print(f"    proton  {dict(mp_)}")
+    print(f"    neutron {dict(mn_)}")
+    w.add_data("hecke_proton_sigma1_pure", mp_[(1, "0")])
+    w.add_data("hecke_neutron_sigma1_pure", mn_[(1, "0")])
+
+    check("hecke_core_words_contain_NO_hopf_link",
+          mp_[(1, "0")] == 0 and mn_[(1, "0")] == 0,
+          "a Hopf link is L_- = sigma_1 sigma_0 (or L_+ = sigma_0 sigma_1); "
+          "either way it needs a sigma_1 crossing at shift d = 0. NEITHER "
+          "hecke_core nucleon word contains one -- proton has "
+          f"{mp_[(1, '0')]}, neutron {mn_[(1, '0')]}. So the words Delta_L "
+          "is built from lack the gluon the blocks call 'strictly required "
+          "by the LP dual' and 'the minimum additional structure capable of "
+          "restoring stability'. That is why they sit 0.34 from the stated "
+          "nets -- not ordering, not convention: a missing factor", w)
+
+    check("the_derivable_delta_is_the_CONSTRUCTED_one",
+          abs(ladder[1] - STATED_N) < mp.mpf("5e-5")
+          and (mp_[(1, "0")] == 0 and mn_[(1, "0")] == 0),
+          "the blocks' own recipe -- which DOES contain the Hopf link -- "
+          "reproduces the stated neutron net exactly at 11 crossings, while "
+          "hecke_core's word, which does not contain it, misses by 0.32. Of "
+          "the four values, the constructed one is the one with a derivation "
+          "behind it. Stated as a finding, NOT as an adjudication", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -276,12 +315,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 6 - len(_FAILURES)
-    print(f"\n  {npass}/6 checks passed")
+    npass = 8 - len(_FAILURES)
+    print(f"\n  {npass}/8 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 6)
+    w.add_data("checks_total", 8)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
