@@ -1,11 +1,11 @@
 ---
 # qou-3quc
 title: 'GAP(lean): general-n Molien/fake-degree q-analogue -- concrete n<=4 proved, general blocked on #SYT + coinvariant grading'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T02:52:38Z
+updated_at: 2026-08-29T06:47:05Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
