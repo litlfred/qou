@@ -1,10 +1,10 @@
 ---
 # qou-w4gn
 title: 'GAP: eps_m per-ELEMENT representative at m>=3 — residue-level lattice model shown insufficient (Addendum 25)'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-11T11:21:33Z
-updated_at: 2026-08-11T11:21:33Z
+updated_at: 2026-08-29T17:36:51Z
 ---
 
 
@@ -325,3 +325,21 @@ entry, not a task.
 `2412.04241v2` lands in `library/arxiv-2412.04241v2/`. Checked today —
 **still PDF-only**, no `.tex`. One grep settles the `f₁`/`f₅` reading and
 would either confirm Addendum 36 or overturn it.
+
+---
+
+## CLOSED 2026-08-29 (status: completed)
+
+The gap this bean names is answered for the α-line at the degree-1 place
+`v₁`: one invariant, `8 ∈ Z/24`, consistent across `m = 3, 6, 8, 12, 24`,
+with CGZ's descent explicitly constructed at `m = 8, 12, 24` and validated
+against four CGZ identities. `v₂` is vacuous for two independent reasons
+(Addendum 44). The review of the arc against `main` (+3292 commits) landed
+as PR #6027; all seven arc probes re-ran unchanged, 96/96.
+
+What is **not** closed, and is deliberately not queued here: whether `ε`
+itself varies across fields. The local signature varies three ways
+(Addendum 45), so it is possible — but answering needs a Bloch element per
+comparison field and there is no canonical construction. Open research with
+no cheap entry, not a task. A future agent opening this should open a fresh
+bean rather than reviving this one.

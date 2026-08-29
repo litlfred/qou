@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T19:42:33Z
+updated_at: 2026-08-29T16:37:57Z
 ---
 
 ## The defect
@@ -316,3 +316,25 @@ either number.
 ### THIS BEAN IS COMPLETE pending the merge of #5791
 #5766 obstruction proved; #5778 bounded class + dim>1 IsJMWeight witness; #5786
 theta tie-in; #5791 JM commutativity. Close on merge.
+
+
+---
+
+## Navigation note (2026-08-29) — read §SHARPNESS before the cascade paragraph above
+
+The paragraph above ("The ACTUAL obstruction, stated correctly") ends *"forcing **σ_1 scalar** —
+contradicting 2-dimensionality."* **That last clause is mine and it is too strong.** The cascade
+contradicts **irreducibility**, not dimension.
+
+The §SHARPNESS section further down says this correctly and proves it:
+`existsNonscalar_heckeGenerators` exhibits a genuine `HeckeGenerators` instance on 2×2 matrices
+with non-scalar generators, `σᵢ = diag(q, −q⁻¹)` — reducible, so it fails the Schur hypothesis
+and the exclusion never reaches it. `dim > 1` instances exist. Machine-checked,
+`[propext, Classical.choice, Quot.sound]`.
+
+Both statements are left standing per the retract-visibly convention, but they sit ~75 lines
+apart and a reader hitting the earlier one first gets the wrong claim. This pointer is here so
+that does not happen.
+
+Successors: `qou-0o6j` (bridge the arc onto the real H_n(q)), `qou-ayyi` (the `Quotient.lean`
+header defect found while scoping it).
