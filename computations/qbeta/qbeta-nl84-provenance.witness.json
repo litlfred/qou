@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T15:51:21.971860+00:00",
-  "commitSha": "8d1e9bd3f883fef7272476a8f1fe76fccb072c6c",
+  "computedAt": "2026-08-29T19:23:05.341089+00:00",
+  "commitSha": "79e2a903449ef29602f9de9eebfeda5264688c93",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 113,
+  "durationMs": 134,
   "computation": "qbeta-nl84-provenance",
   "scriptFile": "qbeta_nl84_provenance_probe.py",
-  "scriptHash": "ffec2e4f4336",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0ab9b13daf0e",
+  "scriptCommitSha": "ff36ee2ac99a0c5324fc195038f65b74878470ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -34,9 +34,9 @@
   },
   "description": "Provenance audit of N_l = 84: the block declares no producer, the one named witness does not contain the number, and the only ILP-counting code in the corpus is a deprecated heuristic capped at 3. The figure is unsourced, so the two failed reproductions on this branch cannot be read as evidence against their readings.",
   "data": {
-    "block_declares_computation": false,
+    "block_declares_computation": true,
     "used_block_declares_computation": false,
-    "neither_the_block_nor_what_it_uses_declares_a_producer": true,
+    "neither_the_block_nor_what_it_uses_declares_a_producer": false,
     "cited_witness_exists": true,
     "cited_witness_fields_equal_84": 0,
     "cited_witness_relevant_keys": [],
@@ -51,7 +51,9 @@
     "the_only_counting_code_CANNOT_return_84_and_is_orphaned": true,
     "grep_adjoin_loose": 50,
     "grep_adjoin_excluding_adjoint": 8,
-    "N_l_eq_84_is_an_UNSOURCED_FIGURE": true,
+    "N_l_eq_84_is_an_UNSOURCED_FIGURE": false,
     "scope": "(a) provenance only"
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's import cone -- it imports only stdlib and WitnessBuilder. This is provenance bookkeeping over an ILP solution count, with no substrate evaluation. It was declared `ambiguous` in the manifest, which the builder can never stamp, so the witness went out unstamped. Bean qou-fl0a."
 }
