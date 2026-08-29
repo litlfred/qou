@@ -874,6 +874,53 @@ def main() -> int:
         # is bound to a name here so this producer records which script
         # wrote it -- a re-run of an unstamped producer DELETES the
         # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        # DRAIN-ONLY, ENFORCED HERE rather than left to the operator.
+        #
+        # This file's own note has always said "the backlog is tolerated; it
+        # must only SHRINK. Regenerate ONLY when draining." Nothing enforced
+        # it. `--rebaseline` wrote the current counts verbatim, so a run made
+        # while ANY entry had grown silently banked that regression -- the
+        # precise move the note forbids, performed by the tool that carries
+        # the note.
+        #
+        # Caught on 2026-08-29: a rebaseline after the H_9 A-operator
+        # declaration would have banked `onepb-status-dashboard` at 5 -> 6.
+        # That 6 arrived from main's own `629e257818` ("mpmath was defaulting
+        # to dps=15") landing after the previous baseline was banked -- a
+        # GOOD fix, correctly flagged, which a blind rebaseline would have
+        # erased the evidence of. It was caught only because the operator
+        # happened to diff the two files by hand first, which is not a
+        # guarantee.
+        #
+        # Each entry is now floored at its previous value, and every entry
+        # that WOULD have grown is named on stdout. Flooring alone would be
+        # worse than the bug: it would keep the gate honest while hiding why,
+        # so the report is the other half of the fix.
+        _prev = {}
+        if baseline_path.exists():
+            try:
+                _prev = (json.loads(baseline_path.read_text())
+                         .get("files") or {})
+            except (json.JSONDecodeError, OSError):
+                _prev = {}
+        _banked, _would_grow = {}, []
+        for _f, _n in found.items():
+            _o = _prev.get(_f)
+            if _o is not None and _n > _o:
+                _would_grow.append((_f, _o, _n))
+                _banked[_f] = _o          # hold the floor
+            else:
+                _banked[_f] = _n
+        if _would_grow:
+            print(f"\n  NOT BANKED — {len(_would_grow)} entr"
+                  f"{'y' if len(_would_grow) == 1 else 'ies'} would have GROWN;"
+                  f" each held at its previous floor:")
+            for _f, _o, _n in sorted(_would_grow, key=lambda t: t[2] - t[1],
+                                     reverse=True):
+                print(f"    {_o:6d} -> {_n:<6d}  {_f}")
+            print("  Baselines drain, never grow. Fix at the producer; the\n"
+                  "  gate keeps reporting these until you do.")
+
         import os as _os  # noqa: E402 -- provenance stamp
         from qou_substrate.witness import WitnessBuilder as _WB
         _prov_payload_1 = {"note": "Witnesses known to carry raw float64, by count. The "
@@ -896,15 +943,18 @@ def main() -> int:
                              if scan_root is None else
                              f"whoever gated {args.scan_root} — see the gate "
                              f"entry in scripts/precision-gates.sh"),
-             "files_count": len(found),
-             "fields_count": total,
-             "files": dict(sorted(found.items()))}
+             "files_count": len(_banked),
+             "fields_count": sum(_banked.values()),
+             "files": dict(sorted(_banked.items()))}
         _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
         baseline_path.write_text(json.dumps(
             _prov_payload_1, indent=2) + "\n")
-        print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
+        print(f"\nRebaselined: {len(_banked)} files / "
+              f"{sum(_banked.values()):,} fields recorded."
+              + (f"  ({total - sum(_banked.values()):,} not banked — "
+                 f"held at floor above.)" if _would_grow else ""))
 
     out = HERE / _output_name(scan_root)
     if not EPHEMERAL_PROVENANCE_OK:
