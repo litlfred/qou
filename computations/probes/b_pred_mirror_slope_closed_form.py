@@ -156,13 +156,13 @@ def main() -> int:
                "vanishing eps correction, not the plateau")
     b.add_assertion(
         "closed_form_matches_measured_slopes",
-        computed=float(max_dev), expected=0.0, tolerance=1e-3,
+        computed=max_dev, expected=0.0, tolerance=1e-3,
         unit="max |closed − measured| over A=6..12",
         source="kappa-writhe-side-decomposition-probe.witness.json "
                "(measured values rounded to 3-4 dp)")
     b.add_assertion(
         "plateau_equals_pn_trace_ratio",
-        computed=float(plateau), expected=1.37181, tolerance=1e-4,
+        computed=plateau, expected=1.37181, tolerance=1e-4,
         unit="log_q0(tau_p/tau_n)",
         source="tr_M_via_wenzl_bridge_mpfr on canonical H_3 words at 50 dps")
     b.save()
