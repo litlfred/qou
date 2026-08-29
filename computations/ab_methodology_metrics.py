@@ -26,8 +26,8 @@ from __future__ import annotations
 
 import _path_bridge as _pb  # noqa: F401, E402 — substrate module bridge
 import json
-import statistics
 import sys
+from fractions import Fraction
 from collections import defaultdict
 from pathlib import Path
 
@@ -41,6 +41,60 @@ sys.path.insert(0, str(HERE))
 # (and that by a refactor commit, not a run). M1/M2/M4/M5 were not being
 # computed at all.
 REPO = HERE.parents[0]
+
+from mpmath import mpf  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+# `import _precision` does NOT set mp.dps (its own docstring says so) -- it
+# stays at mpmath's default 15, which is float64-grade. Set it explicitly.
+set_compute_dps()
+
+
+def _exact(num: int, den: int) -> str:
+    """Serialize an exact count-ratio without ever forming a float64.
+
+    Every metric here is a ratio of integer counts -- a pass rate is
+    `100*passes/total`, a mean score is `sum/n`, a median is a midpoint of
+    integers. These are exactly representable as `Fraction`, so the honest
+    route is Fraction -> mpf -> `fmt`, never `float`. The previous code used
+    `round(100.0*sum(xs)/len(xs), 1)` and `statistics.mean(...)`, both of which
+    land raw float64 in the witness and tripped the raw-float64 ratchet on six
+    fields (M1_pass_pct, M2_mean_score, M5_pass_pct across three cohorts).
+    """
+    f = Fraction(num, den)
+    return fmt(mpf(f.numerator) / mpf(f.denominator))
+
+
+def _short(v, places: int = 3) -> str:
+    """Console display only. The witness keeps the full serialized value; a
+    60-digit column is unreadable and the table is for a human. Truncates the
+    decimal string rather than re-rounding through a float, so this never
+    reintroduces the float64 the rest of this module exists to avoid."""
+    if v is None:
+        return "None"
+    t = str(v)
+    if "." not in t:
+        return t
+    head, tail = t.split(".", 1)
+    tail = tail.rstrip("0")[:places]
+    return f"{head}.{tail}" if tail else head
+
+
+def _mean_exact(xs: list[Fraction]) -> str:
+    """Mean of exact Fractions, still exact: sum/n as one Fraction."""
+    total = sum(xs, Fraction(0))
+    return _exact(total.numerator, total.denominator * len(xs))
+
+
+def _median_exact(xs: list[int]) -> str:
+    """Median of integers, exact. An even-length median is a half-integer, so
+    it is a Fraction with denominator 2 -- not a float."""
+    ys = sorted(xs)
+    n = len(ys)
+    if n % 2:
+        return _exact(ys[n // 2], 1)
+    return _exact(ys[n // 2 - 1] + ys[n // 2], 2)
+
 
 PASS = {"pass"}
 M1_CRIT = "proof-statement-integrity"
@@ -121,14 +175,18 @@ def main() -> int:
         if r["crit"] == M1_CRIT:
             c["m1"].append(r["result"] in PASS)
         if r["crit"].startswith("proof-rater-") and isinstance(r["score"], (int, float)):
-            c["m2"].append(float(r["score"]))
+            # Fraction(...) on a float is exact -- it takes the float's true
+            # binary value, it does not re-round. No precision is invented and
+            # none is lost; what the sidecar holds is what is carried.
+            c["m2"].append(Fraction(r["score"]))
         if r["to_green"] is not None:
             c["m4"].append(r["to_green"])
         if r["crit"] in M5_CRITS:
             c["m5"].append(r["result"] in PASS)
 
     def rate(xs):
-        return round(100.0 * sum(xs) / len(xs), 1) if xs else None
+        """Pass rate as an exact percentage, serialized -- never a float."""
+        return _exact(100 * sum(1 for x in xs if x), len(xs)) if xs else None
 
     table = []
     for month in sorted(cohorts):
@@ -138,9 +196,10 @@ def main() -> int:
             "n_blocks": len(c["blocks"]),
             "M1_pass_pct": rate(c["m1"]),
             "M1_n": len(c["m1"]),
-            "M2_mean_score": round(statistics.mean(c["m2"]), 3) if c["m2"] else None,
+            "M2_mean_score": _mean_exact(c["m2"]) if c["m2"] else None,
             "M2_n": len(c["m2"]),
-            "M4_median_revisions_to_green": statistics.median(c["m4"]) if c["m4"] else None,
+            "M4_median_revisions_to_green": (
+                _median_exact(c["m4"]) if c["m4"] else None),
             "M5_pass_pct": rate(c["m5"]),
         })
 
@@ -164,10 +223,10 @@ def main() -> int:
           f"{'M2 score':>9} {'(n)':>5} {'M4 med':>7} {'M5 pass%':>9}")
     for t in table:
         print(f" {t['cohort']:>8} {t['n_blocks']:>7} "
-              f"{str(t['M1_pass_pct']):>9} {t['M1_n']:>5} "
-              f"{str(t['M2_mean_score']):>9} {t['M2_n']:>5} "
-              f"{str(t['M4_median_revisions_to_green']):>7} "
-              f"{str(t['M5_pass_pct']):>9}")
+              f"{_short(t['M1_pass_pct']):>9} {t['M1_n']:>5} "
+              f"{_short(t['M2_mean_score']):>9} {t['M2_n']:>5} "
+              f"{_short(t['M4_median_revisions_to_green']):>7} "
+              f"{_short(t['M5_pass_pct']):>9}")
 
     from witness_base import WitnessBuilder
     builder = WitnessBuilder.wrap_legacy(
