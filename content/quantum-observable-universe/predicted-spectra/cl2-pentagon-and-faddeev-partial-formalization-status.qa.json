@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The AGENTS.md section id is gone: \"The §3b-cond scaffolding is structurally complete\" now reads \"The conditional-class scaffolding is structurally complete.\" The remaining \"## Closed content\" / \"## Remaining content\" / \"## Status\" headings report which Lean theorems are proved and which are open, which is the mathematics this block is about.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond scaffolding is structurally complete\" now reads \"The conditional-class scaffolding is structurally complete.\" The remaining \"## Closed content\" / \"## Remaining content\" / \"## Status\" headings report which Lean theorems are proved and which are open, which is the mathematics this block is about.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -607,7 +607,7 @@
           "in_degree": 0,
           "cone_size": 302,
           "depth": 55,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1297,5 +1297,6 @@
     "md": "ca50d83fab09",
     "ts": "cfa1f353effa"
   },
-  "updated_at": "2026-08-22T01:28:24.569Z"
+  "updated_at": "2026-08-22T01:28:24.569Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
