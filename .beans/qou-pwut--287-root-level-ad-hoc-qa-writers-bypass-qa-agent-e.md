@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T06:14:19Z
-updated_at: 2026-08-25T06:29:55Z
+updated_at: 2026-08-29T01:35:00Z
 ---
 
 ## What
@@ -71,3 +71,67 @@ verdicts come from a *third* writer (`local/qa-agent-drain`) that emits
 `field_hash`, `verdict`, `referee_argument` and `agent_model` — none of which
 `qa-agent-entry.ts` writes either. So there are **three** writer families, not
 two, and identifying the third one's source is the open task.
+
+---
+
+## ANSWER to OPEN 1 — the `da-*` writer, measured 2026-08-29 (bean `qou-aemx` tranche)
+
+OPEN 1 asked: *"Determine the writer behind the live `da-*` verdicts"*, and noted
+it *"gates whether the guard is sufficient"*. Measured across all **3,617**
+`content/**/*.qa.json` sidecars, **279,830** criterion entries:
+
+| reviewer.kind | carries `field_hash` | count |
+|---|---|---|
+| `script` | yes | **179,959** — all of them |
+| `agent` | yes | 46,450 |
+| `agent` | **no** | **53,293** |
+
+So the schema supports it and 46,450 agent verdicts do record it — **this is a
+producer defect, not a schema or conceptual limit.** Three reviewer ids account
+for 99.2 % of the gap:
+
+| `reviewer.id` | with `field_hash` | without |
+|---|---|---|
+| `local/qa-agent-drain` | 2,242 | **39,655** |
+| `local/qa-agent-drain-heuristic` | 10 | **10,245** |
+| `local/branch-jargon-sweep` | 0 | **2,967** |
+| `one-voice-audit` | 6,719 | **0** ✓ |
+| `agent:pq_*` (per-block agents) | all | **0** ✓ |
+
+**The answer to OPEN 1: the `da-*` path is `local/qa-agent-drain` and
+`local/qa-agent-drain-heuristic`** — *not* the 287 root-level ad-hoc scripts this
+bean tracks, and *not* `qa-agent-entry.ts`. All 13 `da-*` criteria sit at ~2,577
+unhashed entries each, i.e. essentially every block's devils-advocate verdicts.
+
+**Consequence, which is the thing OPEN 1 was gating: the PR #5745 evidence guard
+is NOT sufficient.** It lands on `qa-agent-entry.ts`, and the `da-*` adjudication
+does not go through it. Fixing the `da-*` path means fixing the two drain writers
+(or routing them through the canonical entry point), which is a different change
+from deciding the 287.
+
+**Scope note — do not merge these two numbers.** This bean's `301 unhashed` is the
+*empty-evidence* population from `qou-zsu6`. The 53,293 here is every agent entry
+lacking `field_hash`, a superset measured on a different axis. They are not the
+same count and neither supersedes the other.
+
+### Worked instance of the consequence
+
+Found by walking into it rather than by looking for it. On
+`predicted-spectra/em-coupling-chern-simons`, the criterion
+**`da-lean-narrative-divergence`** — defined in the registry as *"Lean proves
+something weaker/different/vacuously-implied vs the .md claim
+(proof-statement-integrity)"*, i.e. exactly the defect that block turned out to
+have — carries two `pass` verdicts from `local/qa-agent-drain`, dated 2026-07-07
+(*"Looks good. Heuristically verified."*) and 2026-07-13 (*"Reviewed
+interactively. Content is sound."*). Neither carries a `field_hash`.
+
+Those verdicts survived the block's `.md` correction in August **and** a `.lean`
+edit made in this tranche: re-running `qa-sweep` updated the sidecar's top-level
+`source_hashes.lean` and re-ran every `script` criterion, and left
+`da-lean-narrative-divergence` **untouched** — verified, the criterion does not
+appear in the sidecar diff at all.
+
+So the gate for this defect class exists and is correctly scoped; what fails is
+its **staleness model**. An agent verdict pinned to a commit sha rather than to
+the content it reviewed stays green through arbitrary later edits to that
+content.
