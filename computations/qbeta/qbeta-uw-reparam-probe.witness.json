@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T16:21:46.160788+00:00",
-  "commitSha": "aebde05f6b4c8095b705588e608d1941eb7dd7d3",
+  "computedAt": "2026-08-29T15:54:26.283320+00:00",
+  "commitSha": "b1d776b09dcefff755e54d11b827168193e7454b",
   "assertions": [
     {
       "name": "u-leading-eps-coefficient-is-zero",
@@ -27,7 +27,7 @@
     },
     {
       "name": "v-reconstruction-error-at-q-1p001",
-      "computed": 4.408167790739285e-24,
+      "computed": "4.408167791e-24",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-08",
@@ -35,7 +35,7 @@
     },
     {
       "name": "w-reconstruction-error-at-q-1p001",
-      "computed": 5.446930938679649e-26,
+      "computed": "5.446930939e-26",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-08",
@@ -43,11 +43,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 19,
   "computation": "qbeta-uw-reparam-probe",
   "scriptFile": "qbeta_uw_reparam_probe.py",
-  "scriptHash": "53d6b2121eaa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bff2590482ac",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -59,9 +59,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_uw_reparam_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_uw_reparam_probe.py"
   },
   "description": "Pre-archimedean coordinate-choice probe: u vs v=√u vs w=q-1/q near q=1; Taylor comparison on reference f(q) = 4q/(q+1)².",
   "data": {
