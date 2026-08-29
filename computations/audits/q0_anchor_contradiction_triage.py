@@ -132,7 +132,15 @@ def triage() -> list[dict]:
         vals = {m.group(0)[:14] for m in G.Q0_SHAPE.finditer(raw)}
         if not any(v != cur for v in vals):
             continue
-        if G.derived_output_exempt(raw, 12, cur):
+        # Signature is `(witness, max_sig=None)`. It was `(witness, ndigits,
+        # cur)` until 53aafb7795 ("compare at the recorded precision, not at a
+        # fixed width") -- the very fix the docstring above says this module
+        # inherits "with no edit". The edit it did need was here, and without
+        # it this audit raised TypeError on its first proton-anchored witness
+        # and could not run at all. Both dropped arguments are what that commit
+        # removed: `12` is the fixed width, and `cur` is `Q_50_DIGIT_STR[:14]`,
+        # a truncation of the live constant the detector now reads itself.
+        if G.derived_output_exempt(raw):
             continue
 
         flagged = [(p, v) for p, v in basin_paths(doc) if v != cur]
