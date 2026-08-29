@@ -187,7 +187,7 @@ def main() -> int:
         .add_data("per_test_results", results)
         .add_assertion(
             name="partition_sum_equals_recursive_reducer",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-10,
             unit=(
