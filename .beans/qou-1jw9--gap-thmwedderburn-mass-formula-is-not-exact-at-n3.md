@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-29T18:51:28Z
+updated_at: 2026-08-29T19:04:51Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -882,3 +882,52 @@ Phi_1 under D moves every published row of the mass table. Someone has to decide
 whether the table is regenerated (as beta3 was, PR #5781) or the C-frame
 provenance is documented and the table left as-is. The measurement needed to
 make that decision is done; the decision is not mine.
+
+
+=== CONVENTION D REGENERATION DONE (97fe14f6d7) — and it is 2.4x LESS ACCURATE ===
+
+Owner authorised 2026-08-29: "recompute Phi_1 (and anything else convention
+C -> D)". Done. Producer: computations/wedderburn_mass_table_convention_d.py
+
+TWO OF THE THREE STOPPED BEING CARRIES. Phi_2 and Phi_3 are no longer taken from
+the recovered witness at all — both are DERIVED:
+    Phi_3 = (-2Z - N(N-1)) * ln q
+    Phi_2 = Z*N * ln(1 + h^2/4)
+Both reproduced all 19 carried values exactly, so the swap is value-neutral, and
+both are CONVENTION-FREE (neither uses z) so C->D does not move them.
+Phi_1 is the only z-dependent invariant and is the only thing actually recomputed.
+
+MINIMISATION: exponential (C(40,20) = 1.4e11 at Ca), so swap hill-climbing with
+restarts — VALIDATED, not assumed: finds the exact global minimum on all five
+atoms where exhaustive enumeration is feasible (He, Li, Be, B, C). Rows record
+their regime: 5 exact, 14 local.
+
+THE RESULT:
+                        mean |err|     max |err|
+    published (conv C)   0.0745925 %   0.190854 %
+    recomputed (conv D)  0.182721  %   0.321365 %
+
+2.4x worse on the mean, 1.7x on the max. Every D row shifts POSITIVE, +11 to
++53 MeV. THE CONVENTION EXCISION COSTS ACCURACY ON THIS TABLE.
+
+WHAT IT DOES NOT MEAN: that convention C is right. The 2026-08-15 ruling settled
+that on other grounds, and a table fitting better in the superseded convention is
+exactly what you expect if it was BUILT in that convention. What it DOES mean:
+the published Z=1..20 accuracy figures were convention-C figures, and the honest
+D-frame numbers are the ones above.
+
+NOT DONE — OWNER DECISION: replacing the published table. This producer stands
+BESIDE the convention-C one rather than overwriting it, because swapping a
+20-row published table for one 2.4x less accurate is a content decision. The
+numbers needed to make it are in the producer's output.
+
+ARC STATUS
+  Phi_2 ..... DERIVED, convention-free, replaces the carry
+  Phi_3 ..... DERIVED, convention-free, replaces the carry
+  Phi_1 ..... RECOMPUTED under D; costs 2.4x accuracy
+  item 1 .... effectively CLOSED — nothing is carried any more
+  item 2 .... base masses; the D producer already uses CODATA, so this is
+              folded in here rather than outstanding separately
+
+NEXT: the owner call above (adopt the D table or keep C-frame with documented
+provenance). No research question is blocking.
