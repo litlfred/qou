@@ -178,6 +178,12 @@ non-trivial place for it to sit.
 
 ### 6.3 The gap here is narrower than §4's — the corpus supplies the identification
 
+> **🛑 CORRECTED below in §7. This section understates the identification.** It
+> says the sheets-to-colour link is carried by a `remark`. It is carried by a
+> **proposition**, and the link is now *computed* rather than read. Left standing
+> as written, with the correction below it, because the understatement is the
+> kind that gets quoted.
+
 §4 named the Milnor route's gap as the premise that `μ̄` *carries* the colour
 degree of freedom. The Bring route's corresponding premise — that the three
 sheets are the three colour degrees of freedom — is **already asserted by the
@@ -259,3 +265,108 @@ Per the (a)/(b) discipline this is a **positive** result, not a refutation: the
 sign character of the Bring fibre's monodromy is non-trivial, established by two
 independent exact arguments and confirmed numerically. Nothing here is a
 structural exclusion of anything, and nothing here derives statement B.
+
+
+## 7. The sheets ARE the colour tubes — computed, and §6.3 was too weak
+
+Added on the same day, working the §6.4 question. The answer to *"is the
+identification supplied or derived?"* is stronger than §6.3 records, and the
+route to it is arithmetic rather than exegesis.
+
+### 7.1 What §6.3 got wrong about its own strength
+
+§6.3 cites `rem:brings-qou-4tuple` — a **remark interpreting a definition** —
+and concludes the identification is "supplied rather than established". That
+was the weakest carrier in the corpus, and not the one that matters.
+
+[`prop:color-elliptic`](../../content/quantum-observable-universe/brings-surface/color-elliptic.md)
+is a **proposition**, and it states the colour elliptic equation to be
+
+$$X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1)=0,$$
+
+*the cubic §6 computes*, with `X = (x₂, x₃, x₄)` named in its own text as **the
+colour variable**. The identification is at proposition level, in the block that
+introduces the object.
+
+### 7.2 The apparent obstacle, and why it dissolves
+
+The colour tubes are not defined off that cubic directly.
+[`def:color-tube-fibers`](../../content/quantum-observable-universe/brings-surface/color-tube-fibers.md)
+defines `(r_z, g_z, b_z)` as the roots of a **different-looking** cubic,
+
+$$\mathbf{c}^3 + (4z+1)\mathbf{c}^2 + (6z^2+3z+1)\mathbf{c} + (4z^3+3z^2+2z+1) = 0,$$
+
+with `r_z = w₂ − z`, `g_z = w₃ − z`, `b_z = w₄ − z` in the Lagrange resolvents.
+Different coefficients, different-looking curve. The colour-tube-cubic block
+says it is obtained "by substituting `X = c + z`" — which is a claim, and
+checkable rather than quotable.
+
+**It checks, exactly** (fact **A6** of the probe, `sympy` over `ℚ[z]`):
+
+| | |
+|---|---|
+| chiral cubic with `X = c + z` | `c³ + (4z+1)c² + (6z²+3z+1)c + (4z³+3z²+2z+1)` |
+| the corpus's colour-tube cubic | identical, coefficient by coefficient |
+| `disc_c`(tube cubic) | `−(16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16)` |
+| `disc_X`(chiral cubic) | **the same polynomial**, not merely a scalar multiple |
+
+A translation of the fibre coordinate is an isomorphism at every `z`. So the two
+cubics are one curve, with the same six branch points and the **same monodromy
+representation**.
+
+### 7.3 Consequence
+
+**The three sheets whose monodromy §6 computes are `(r_z, g_z, b_z)` — the
+corpus's own named colour tubes.** Not an abstract triple carrying an `S₃`
+action, not a triple linked to colour by interpretation: the same three roots,
+by an exact change of variable, of a curve a proposition calls the colour fibre.
+
+So §6.2's conclusion sharpens. `Λ³` of the span of the colour tubes is a line
+carrying `det = sgn`, and the monodromy acting on it is the **full `S₃`**, so
+that line is non-trivial. `Alt` is a real place for the state to sit, and it is
+`Alt` **of the colour coordinates**, not of a proxy for them.
+
+### 7.4 The §6.4 question, as far as this settles it
+
+**Both sign lines are the sign representation of an `S₃` acting on the same
+three labelled objects.** Route 2's is now pinned to `{r_z, g_z, b_z}` by 7.2.
+Route 1's is the `S₃` permuting the three `𝓑₃` components, which
+`borromean-quark` says are "threaded through the color tubes `(r, g, b)`" — the
+same three labels.
+
+Since `sgn` is the unique one-dimensional representation of `S₃` on which
+transpositions act by `−1`, any two copies of it are isomorphic. **So "the same
+line" holds at the level of representation type, and the corpus carries one
+colour `S₃`, not two.** That is the useful half of the §6.4 answer, and it is
+the half that says the two routes are not independent evidence — they are one
+route with two derivations of its key step.
+
+**What is not settled** is whether the identification is *canonical*: whether
+`μ̄₁₂₃` and the Vandermonde `√Δ` are the same function under the corpus's
+identification of components with tubes, or merely two sections of isomorphic
+lines. That needs the Borromean link realised inside the fibration, which
+nothing here supplies. Isomorphic is not equal, and the difference is exactly
+where a sign convention could hide.
+
+### 7.5 A tension flagged, deliberately not adjudicated
+
+`prop:color-elliptic` closes by saying the monodromy of `𝓔_z` around the
+singular fibres *"recovers the holonomy generators `H₁, H₂`"*. On 2026-08-29
+`main` landed `7be95242b9`, correcting `H₁H₂ = σ₁σ₂ : w ↦ (w₃,w₄,w₁,w₂)` to the
+double transposition `(1 3)(2 4)` — an order-2 element of a `V₄`, acting on the
+**four** Lagrange resolvents `w₁…w₄`.
+
+Two things do not obviously fit, and both are arithmetic:
+
+1. The monodromy computed here is `S₃`, of order 6. `|V₄| = 4` and `4 ∤ 6`, so
+   `S₃` contains no `V₄`.
+2. The colour triple is `{w₂, w₃, w₄}`, with `w₁ − z` the space-like shift. But
+   `(1 3)(2 4)` sends `w₁ ↦ w₃`, so it does not stabilise `w₁` and does not
+   restrict to a permutation of the colour triple at all.
+
+These act on different sets — three roots versus four resolvents — so "recovers
+`H₁, H₂`" needs a stated map between them, and none is given in the block.
+**Flagged, not adjudicated:** I have read the block that *refers* to
+`rem:holonomy-trefoil`, not that remark's own definition of `H₁, H₂`, and the
+correction on `main` is hours old. Resolving it by assuming the reading that
+suits §7 would be the same error §6.4 item 2 was written to avoid.

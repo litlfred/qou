@@ -54,6 +54,15 @@
       "branch_points_needed_for_genus_4_at_degree_3": 12,
       "branch_points_needed_for_genus_4_at_degree_4": 14
     },
+    "A6_sheets_are_the_colour_tubes": {
+      "corpus_colour_tube_cubic": "c**3 + c**2*(4*z + 1) + c*(6*z**2 + 3*z + 1) + 4*z**3 + 3*z**2 + 2*z + 1",
+      "substitution": "X = c + z",
+      "chiral_cubic_shifted": "c**3 + c**2*(4*z + 1) + c*(6*z**2 + 3*z + 1) + 4*z**3 + 3*z**2 + 2*z + 1",
+      "identity_holds": true,
+      "discriminant_of_tube_cubic": "-16*z**6 - 24*z**5 - 35*z**4 - 50*z**3 - 35*z**2 - 24*z - 16",
+      "discriminants_identical": true,
+      "consequence": "the three sheets whose monodromy is computed here are the corpus's own colour tubes (r_z, g_z, b_z) = (w_2 - z, w_3 - z, w_4 - z), not an abstract triple: same curve, same six branch points, same monodromy"
+    },
     "monodromy_group": "S_3",
     "sgn_character_surjective": true
   },
@@ -204,11 +213,11 @@
       "eightfold-open-problems item 7 (colour antisymmetry)"
     ]
   },
-  "scriptHash": "56504ed88f3a",
-  "scriptCommitSha": "077660c93b508c00fdba130d606efee2367fcd74",
-  "commitSha": "2e4a4422ece409bb3b972fc463b6e9150e45c398",
+  "scriptHash": "fd4dc233de84",
+  "scriptCommitSha": "967cd2b8fb73e4088141b2ca8a7ac1fa915d76de",
+  "commitSha": "967cd2b8fb73e4088141b2ca8a7ac1fa915d76de",
   "engine": "python",
-  "computedAt": "2026-08-29T10:50:40.000809+00:00",
+  "computedAt": "2026-08-29T15:10:55.690195+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

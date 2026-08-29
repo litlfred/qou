@@ -157,6 +157,7 @@ Z_BASE_STR = "2"
 def exact_facts() -> dict:
     """A1-A4, in exact rational arithmetic. No floating point."""
     X, z = sp.symbols("X z")
+    c_sym = sp.Symbol("c")
     b = z + 1
     c = z**2 + z + 1
     d = z**3 + z**2 + z + 1
@@ -268,6 +269,39 @@ def exact_facts() -> dict:
         "branch_points_needed_for_genus_4_at_degree_4": 6 + 2 * 4,
     }
 
+    # A6 — the three sheets ARE the corpus's three colour tubes.
+    #
+    # `prop:color-elliptic` states the colour elliptic equation is exactly
+    # this cubic, with `X = (x_2, x_3, x_4)` named as THE COLOUR VARIABLE.
+    # `def:color-tube-fibers` then defines the colour tubes (r_z, g_z, b_z)
+    # as the roots of a DIFFERENT-LOOKING cubic,
+    #     c^3 + (4z+1)c^2 + (6z^2+3z+1)c + (4z^3+3z^2+2z+1),
+    # obtained "by substituting X = c + z". Verify that, rather than take
+    # it on trust: a translation of the fibre coordinate is an isomorphism
+    # at every z, so if it holds then the two cubics have the same
+    # discriminant, the same branch points and the SAME monodromy.
+    tube = (c_sym**3 + (4*z + 1)*c_sym**2 + (6*z**2 + 3*z + 1)*c_sym
+            + (4*z**3 + 3*z**2 + 2*z + 1))
+    shifted = sp.expand(f.subs(X, c_sym + z))
+    identity_holds = sp.expand(shifted - tube) == 0
+    disc_tube = sp.Poly(sp.expand(sp.discriminant(sp.Poly(tube, c_sym))), z)
+    disc_equal = (delta - disc_tube).is_zero
+
+    a6 = {
+        "corpus_colour_tube_cubic": sp.sstr(tube),
+        "substitution": "X = c + z",
+        "chiral_cubic_shifted": sp.sstr(sp.Poly(shifted, c_sym).as_expr()),
+        "identity_holds": bool(identity_holds),
+        "discriminant_of_tube_cubic": sp.sstr(disc_tube.as_expr()),
+        "discriminants_identical": bool(disc_equal),
+        "consequence": (
+            "the three sheets whose monodromy is computed here are the "
+            "corpus's own colour tubes (r_z, g_z, b_z) = (w_2 - z, w_3 - z, "
+            "w_4 - z), not an abstract triple: same curve, same six branch "
+            "points, same monodromy"
+        ),
+    }
+
     monodromy_group = (
         "S_3" if (a2["monodromy_transitive"]
                   and a3["local_monodromy_is_transposition"]) else "undetermined"
@@ -278,6 +312,7 @@ def exact_facts() -> dict:
         "A3_no_triple_root": a3,
         "A4_sign_line_nontrivial": a4,
         "A5_fibre_genus": a5,
+        "A6_sheets_are_the_colour_tubes": a6,
         "monodromy_group": monodromy_group,
         "sgn_character_surjective": monodromy_group == "S_3",
     }
@@ -525,6 +560,12 @@ def main() -> int:
           f"{a5['branch_points_needed_for_genus_4_at_degree_3']} of them at "
           f"degree 3, "
           f"{a5['branch_points_needed_for_genus_4_at_degree_4']} at degree 4")
+    a6 = exact["A6_sheets_are_the_colour_tubes"]
+    print(f"   A6  corpus colour-tube cubic under X = c+z reproduces this "
+          f"cubic: {a6['identity_holds']}; discriminants identical: "
+          f"{a6['discriminants_identical']}")
+    print(f"       => the three sheets ARE (r_z, g_z, b_z), the corpus's own "
+          f"colour tubes")
     print(f"   =>  monodromy group {exact['monodromy_group']}; sgn "
           f"surjective onto {{+1,-1}}: {exact['sgn_character_surjective']}")
 
