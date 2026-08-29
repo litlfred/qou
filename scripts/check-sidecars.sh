@@ -165,14 +165,39 @@ for f in "${files[@]}"; do
         # carries both a generic decl and its ℝ specialisation. Resolving this
         # conflict to either side alone would have silently dropped the other
         # half of the false-positive reduction.
-        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        #
+        # THIRD false-positive class (bean qou-aemx follow-on, 2026-08-29).
+        # `linarith`, `positivity`, `nlinarith` and `LinearOrdered` were STRONG,
+        # i.e. archimedean wherever they appear. All four work over ANY ordered
+        # field -- including the generic `[LinearOrder R] [IsStrictOrderedRing R]`
+        # that the §7c table itself offers as the alternative to ℝ ("Ordering
+        # `0 < q` -> ℝ (or `[LinearOrderedField R]`)"). So a fully compliant
+        # generic file that merely ran `positivity` was reported MIXED with no ℝ
+        # in it -- and the fix suggested, "split into two files per §7c", is the
+        # wrong edit to make on such a file.
+        #
+        # They are demoted to ORDERED, which counts only alongside RTYPE, exactly
+        # as WEAK already does. Safety argument: a genuine §7c violation is a
+        # GRATUITOUS ℝ, which by definition needs ℝ present (hasR=1), and when
+        # hasR=1 an ORDERED hit still counts -- so the demotion cannot hide one.
+        # Measured over the 2293 library files: MIXED 123 -> 79, clearing 44, and
+        # every one of the 44 has hasR=0.
+        #
+        # Orthogonal to both earlier fixes, and neither subsumes it: qou-mr3q's
+        # split cleared files whose only signal was a bare relational operator
+        # (hasS=0 there), and qou-akb4's pair detection clears files that DO carry
+        # ℝ. This class has hasS=1 and hasR=0, which neither reaches.
+        STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|CODATA|MeV)'
+        ORDERED='(\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered)'
         WEAK='(0\s*<|<\s*1|≤|≥)'
         printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
         printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
+        printf '%s\n' "$body" | grep -qE "$ORDERED" && hasO=1 || hasO=0
         printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
         printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
         # A weak operator justifies ℝ only when ℝ is there to justify.
-        if [ "$hasS" = 1 ] || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
+        if [ "$hasS" = 1 ] || { [ "$hasO" = 1 ] && [ "$hasR" = 1 ]; } \
+           || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
         # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
         # declaration `foo` sitting beside its archimedean specialisation
         # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the
