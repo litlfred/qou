@@ -1,11 +1,11 @@
 ---
 # qou-xx9f
 title: ""
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T18:07:20Z
-updated_at: 2026-08-11T00:46:59Z
+updated_at: 2026-08-29T17:36:51Z
 ---
 
 # GAP: GSWZ (287) input-series identification — printed digits unreproduced
@@ -240,3 +240,24 @@ candidate (3) eliminated (transcription, doubly);
 candidate (2) **under-determined by the printed source**. Reopens
 immediately given the arXiv LaTeX or the unprinted `Φ₁` coefficients —
 `arxiv.org/e-print/2412.04241v2` is 403-blocked from this sandbox.
+
+---
+
+## CLOSED 2026-08-29 (status: completed)
+
+Both items are settled against the printed source:
+
+- **Fibre identification** — the `(287)` subscript is a typo for `f₁`, not
+  `f₅` (Addendum 36, `gswz_287_f1_vs_f5_subscript_resolution_probe.py`,
+  12/12).
+- **Normalisation** — under-determined by the printed source; the parameter
+  count is measured, not guessed (Addendum 46,
+  `gswz_287_normalisation_underdetermined_probe.py`, 10/10). The honest
+  outcome is "stop, do not fit", and that is what is recorded.
+
+**Reopen trigger (cheap, one grep).** If the arXiv LaTeX for
+`2412.04241v2` ever lands in `library/arxiv-2412.04241v2/` — still PDF-only
+as of 2026-08-29 — one grep for the macro settles the `f₁`/`f₅` reading
+directly and would either confirm Addendum 36 or overturn it. Reopen this
+bean at that point rather than filing a new one; the analysis above is the
+context that grep would be checking.
