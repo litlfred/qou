@@ -85,6 +85,7 @@ if (!existsSync(blockMd)) {
 const dir = dirname(blockMd);
 const root = basename(blockMd, ".md");
 const tsPath = join(dir, `${root}.ts`);
+const leanPath = join(dir, `${root}.lean`);
 const qaPath = join(dir, `${root}.qa.json`);
 
 const sha12 = (s: string) =>
@@ -110,10 +111,28 @@ doc.$schema ??= "block-qa/v1";
 doc.criteria ??= {};
 doc.criteria[criterion] ??= [];
 
+// Hash every sibling that exists, `.lean` included.  A criterion that reads the
+// Lean -- `da-lean-narrative-divergence`, `da-vacuous`, `da-circular`,
+// `wall-side-correct`, `proof-statement-integrity` -- is not resolvable against
+// a block version unless the `.lean` is in its staleness key, so without this a
+// verdict about the Lean survives arbitrary later edits to that Lean.
+//
+// SCOPE, measured 2026-08-29, because the obvious reading over-states it: this
+// is a LATENT bug, not the explanation for any live incident.  Across all 3,617
+// sidecars, on Lean-reading criteria, agent verdicts that carry a field_hash on
+// blocks that have a `.lean`: 114 already record the key, 4 do not (all
+// `proof-statement-integrity`).  The other writers get it right; this entry
+// point is simply the one whose code does not.
+//
+// In particular this did NOT cause the em-coupling incident that prompted the
+// look (bean `qou-aemx`).  Those `da-lean-narrative-divergence` verdicts carry
+// NO field_hash at all -- they come from `local/qa-agent-drain`, which is the
+// separate defect tracked in `qou-pwut`, and which this change does not touch.
 const entry: any = {
   field_hash: {
     md: sha12(readFileSync(blockMd, "utf8")),
     ...(existsSync(tsPath) ? { ts: sha12(readFileSync(tsPath, "utf8")) } : {}),
+    ...(existsSync(leanPath) ? { lean: sha12(readFileSync(leanPath, "utf8")) } : {}),
   },
   result,
   reviewer: { kind: "agent", id: reviewerId, version: "v1" },
