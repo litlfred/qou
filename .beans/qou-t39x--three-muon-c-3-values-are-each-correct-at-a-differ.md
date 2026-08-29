@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T02:27:01Z
-updated_at: 2026-08-29T02:27:46Z
+updated_at: 2026-08-29T02:50:22Z
 ---
 
 Found chasing the root cause behind `qou-kt8o` (the `dc_3/dq ≈ 4.6e6`
@@ -78,3 +78,40 @@ was "~0.7 % stale because the muon anchor moved". **That was my own straddle**:
 **`dc_3/dq` is anchor-layer INVARIANT** (both legs move together), AGENTS.md's
 3.84e6 is right, and my "stale" claim is retracted. Recorded here because it is
 the same error the bean is about, committed while writing about it.
+
+
+## Landed 2026-08-29 (PR #5952)
+
+Three producers drained of the pre-#1422 `C3_EMP_MUON = -2.0097`, each getting
+the value extracted AT ITS OWN muon pin (there is no single 'muon c_3' — the
+three pins in use give -2.02018813 / -2.02020024 / -2.01986031). Extraction
+validated by reproducing the corpus PROTON value -2.06934257712 to 12 digits.
+
+A fourth file (`qbeta_ck_basis_constrained_pslq.py`) had a different defect —
+a slope dividing a proton-minus-muon Delta-c3 by a proton-minus-canonical
+Delta-q, which is where the corpus's 4657409.9 came from. Slope fixed; the
+mismatched constant KEPT at :196 where it deliberately measures inter-producer
+spread.
+
+The provenance was circular: the exponentiated probe cited the multiblock audit
+as its source, and that file's `Q0_MUON_PIN` held `Q_50_DIGIT_STR` — the
+PROTON pin. Renamed `Q0_PROTON_PIN`; dead constant, no number moves.
+
+Re-running the exponentiated probe turned the raw-float64 ratchet RED with one
+NEW dirty witness — mine, not pre-existing (the committed witness had a STRING
+"1e-35" while the producer emits the bare float literal, i.e. the file had
+drifted from its own producer). Fixed at the producer: mpf tolerance + mp.nstr
+serialization, mpf comparisons replacing float64 ones, and the `float(c[2])`
+cast that was reporting a 35-digit agreement as -1.0. Ratchet green after.
+Also killed three hardcoded '2.9%' empirical swings by interpolating the value
+the function already computes (2.38%).
+
+Two witnesses deliberately NOT regenerated, disclosed in the PR: the pslq one
+(unmodified main gives convention-D -974.38 vs committed convention-C -2.02) and
+the eigenphase one (unmodified main already fails its a2 assertion with computed
+0.9642627018922193 while the committed witness says passed: true). Source fixes
+land, contaminated witnesses do not.
+
+OPEN, not started: AGENTS.md's own site list for this figure ('five other sites
+... audit docs and local/compute-author') is wrong — measured 55 files, incl. 3
+.lean and several under computations/.
