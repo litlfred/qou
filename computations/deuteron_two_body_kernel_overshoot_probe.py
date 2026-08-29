@@ -311,11 +311,23 @@ def main():
 
     miss = locate_the_miss(me, q)
     # pin spread for the E_0 row
-    try:
-        from witness import _q0_value_for_anchor  # type: ignore
-        _MUON_PIN_STR = str(_q0_value_for_anchor("muon"))
-    except Exception:
-        _MUON_PIN_STR = "1.10997859555733471989976"
+    # `from witness import ...` (the previous spelling) names a module that
+    # exists nowhere on the path -- `_q0_value_for_anchor` lives in the
+    # qou_substrate PACKAGE. So that import always raised, the bare `except`
+    # swallowed it, and every run silently fell back to the hardcoded literal
+    # below, which is the SUPERSEDED muon pin A. This witness therefore
+    # published `q0Values.muon = A` no matter what the anchor said, and the
+    # q0-anchor audit correctly flagged it as a comparison mislabelling its
+    # own leg. Import the real module, and do NOT swallow a failure: a
+    # comparison that cannot read one of its legs must not invent it.
+    from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
+    _muon_pin = _q0_value_for_anchor("muon")
+    if not _muon_pin:
+        raise RuntimeError(
+            "cannot resolve the muon anchor; refusing to fall back to a "
+            "hardcoded pin -- that is how the superseded value A survived here"
+        )
+    _MUON_PIN_STR = str(_muon_pin)
     q_mu = mp.mpf(_MUON_PIN_STR)
     e0_mu = E_0(me, q_mu)
     pin_spread = abs(e0_mu - E_0(me, q)) / E_0(me, q)
