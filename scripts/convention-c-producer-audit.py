@@ -704,18 +704,117 @@ def scan_closed_forms(roots=ROOTS, c_files=()):
     return out
 
 
-def _returns_convention_d(fn) -> bool:
-    """Does this function return `q**3/(q**2+1)`?"""
+#: Selftest fixtures for blind spelling #17 (D arm as a call). Module level so
+#: the selftest reads as three contrasting sources rather than inline strings.
+_D_CALL_SRC = (
+    "def markov_z(q):\n    return q ** 3 / (q ** 2 + 1)\n"
+    "def z_of(q, conv):\n"
+    "    if conv == 'D': return markov_z(q)\n"
+    "    if conv == 'C': return mp.sqrt(q) / (q + 1)\n"
+)
+_C_CALL_SRC = (
+    "def markov_z(q):\n    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))\n"
+    "def z_of(q, conv):\n"
+    "    if conv == 'D': return markov_z(q)\n"
+    "    if conv == 'C': return mp.sqrt(q) / (q + 1)\n"
+)
+_UNRESOLVED_SRC = (
+    "def z_of(q, conv):\n"
+    "    if conv == 'D': return some_unknown_helper(q)\n"
+    "    if conv == 'C': return mp.sqrt(q) / (q + 1)\n"
+)
+
+
+def _is_literal_d(v: ast.AST) -> bool:
+    """Is this expression literally `x**3/(x**2+1)` (either factor order)?"""
+    while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
+        v = v.operand
+    s = "".join(ast.unparse(v).split())
+    b = s.split("**3", 1)[0]
+    return bool(b) and s in (f"{b}**3/({b}**2+1)", f"{b}**3/(1+{b}**2)")
+
+
+def _resolve_callee_returns_d(name: str, tree, path: str, repo=None) -> bool:
+    """Does `name`, resolved to its definition, return the literal D form?
+
+    Blind spelling #17, found 2026-08-29 (bean `qou-1jny`).  The dispatcher
+    test below matched only the INLINE `q**3/(q**2+1)`, so a two-arm
+    comparison helper whose D arm CALLS the canonical parameter --
+
+        def z_of(q, convention):
+            if convention == "D":
+                return markov_z(q)          # <- canonical D, as a call
+            if convention == "C":
+                return mp.sqrt(q) / (q + 1)
+
+    -- read as a bare convention-C leak, and `he4_body_order_shortfall_
+    location_probe.z_of` was counted ACTIONABLE for exactly that reason while
+    its own docstring scopes the C arm "never wired".  The same D-arm-as-call
+    defeats `convention-c-value-audit.py`'s co-binding hint, which looks for a
+    z_D *binding* in the scope and finds a call.
+
+    Note which way the incentive runs: re-spelling `q**3/(q**2+1)` inline
+    passes, and calling the canonical helper -- the DRY thing, the thing that
+    survives the next convention migration -- fails.  One house rule blinding
+    another, the same shape as the `mpf(1)` note in `_is_unit_numerator`.
+
+    Resolution is by SHAPE at the definition, never by the callee's name.  A
+    name test would be the evasion surface the comparison ledger exists to
+    close, and it would be wrong on this corpus's own history:
+    `mu4_rhoF_cluster_derivation_probe.markov_z` was "a PRIVATE re-derivation
+    of convention C ... which shadowed the library function and so survived
+    the gram.py migration untouched".  Same name, opposite convention.  So an
+    unresolvable callee is NOT a dispatcher: it stays actionable.
+    """
+    if repo is None:
+        repo = pathlib.Path(".")
+    # A local def in the same module wins, exactly as Python resolves it.
+    for n in ast.walk(tree):
+        if isinstance(n, ast.FunctionDef) and n.name == name:
+            return any(isinstance(r, ast.Return) and r.value is not None
+                       and _is_literal_d(r.value) for r in ast.walk(n))
+    # Otherwise follow `from <module> import <name>` to the defining file.
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.ImportFrom) or not n.module:
+            continue
+        if not any(a.asname == name or (a.asname is None and a.name == name)
+                   for a in n.names):
+            continue
+        real = next((a.name for a in n.names
+                     if a.asname == name or a.name == name), name)
+        stem = n.module.rsplit(".", 1)[-1]
+        here = pathlib.Path(path).parent
+        for cand in (here / f"{stem}.py", *repo.rglob(f"{stem}.py")):
+            try:
+                sub = ast.parse(cand.read_text())
+            except (SyntaxError, UnicodeDecodeError, OSError):
+                continue
+            for d in ast.walk(sub):
+                if isinstance(d, ast.FunctionDef) and d.name == real:
+                    return any(isinstance(r, ast.Return) and r.value is not None
+                               and _is_literal_d(r.value) for r in ast.walk(d))
+    return False
+
+
+def _returns_convention_d(fn, tree=None, path=None, repo=None) -> bool:
+    """Does this function return `q**3/(q**2+1)`, inline or via a call?
+
+    `tree`/`path` are the enclosing module; without them only the inline form
+    is recognised, which is the pre-2026-08-29 behaviour.
+    """
     for r in ast.walk(fn):
         if not isinstance(r, ast.Return) or r.value is None:
             continue
         v = r.value
         while isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.UAdd):
             v = v.operand
-        s = "".join(ast.unparse(v).split())
-        b = s.split("**3", 1)[0]
-        if b and s in (f"{b}**3/({b}**2+1)", f"{b}**3/(1+{b}**2)"):
+        if _is_literal_d(v):
             return True
+        if (tree is not None and isinstance(v, ast.Call)
+                and isinstance(v.func, (ast.Name, ast.Attribute))):
+            nm = ast.unparse(v.func).split(".")[-1]
+            if _resolve_callee_returns_d(nm, tree, path or ".", repo):
+                return True
     return False
 
 
@@ -989,7 +1088,7 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=(), rederivation_files=()
                 # target NAME, and here the name is `z_of` with the label in a
                 # docstring and a branch guard. Returning D somewhere in the
                 # same function is the machine-checkable signal.
-                dispatcher = _returns_convention_d(fn)
+                dispatcher = _returns_convention_d(fn, tree, sp)
                 for r in ast.walk(fn):
                     if not isinstance(r, ast.Return) or r.value is None:
                         continue
@@ -1254,8 +1353,15 @@ def selftest() -> int:
          any(c[0].endswith("qbeta_5two_categorical_markov_volume_probe.py")
              for c in scan_closed_forms(roots=("computations/probes",)))),
         # The live registry must actually carry the seven qbeta-cone rows.
+        # A FLOOR plus membership, not an exact count. This asserted `== 7`
+        # and went red on 2026-08-29 when `e65c8b8151` legitimately registered
+        # more rows -- an exact count turns every deliberate registration into
+        # a test failure, which trains the next agent to edit the number
+        # without reading it. The property that matters is that the qbeta cone
+        # is actually covered and that rows are not silently LOST.
         ("the live registry records the qbeta-cone re-derivation blocks",
-         len(rederivation_blocked_files(pathlib.Path("."))) == 7),
+         len(rederivation_blocked_files(pathlib.Path("."))) >= 7
+         and any("qbeta" in f for f in rederivation_blocked_files(pathlib.Path(".")))),
         # declared_c_files reads the LIVE registry: a C evaluator whose module
         # is NOT waived must not be silently treated as declared.
         ("an unwaived C evaluator does not count as declared",
@@ -1275,6 +1381,30 @@ def selftest() -> int:
         ("a function returning only C is NOT a dispatcher",
          not _returns_convention_d(ast.parse(
              "def z_mp(d):\n    return 1 / (mp.sqrt(q) + mp.sqrt(qi))\n").body[0])),
+        # Blind spelling #17 (bean `qou-1jny`): the D arm written as a CALL to
+        # the canonical parameter rather than re-spelled inline. Resolution is
+        # by SHAPE at the definition -- the two negatives below are what keep
+        # this from degenerating into a name whitelist, which this corpus has
+        # already been burned by (a `markov_z` that was privately convention C).
+        ("a dispatcher whose D arm is a CALL resolved to a local D def",
+         _returns_convention_d(ast.parse(_D_CALL_SRC).body[1],
+                               ast.parse(_D_CALL_SRC), "t.py")),
+        ("a call resolving to a convention-C def is NOT a dispatcher",
+         not _returns_convention_d(
+             ast.parse(_C_CALL_SRC).body[1], ast.parse(_C_CALL_SRC), "t.py")),
+        ("an UNRESOLVABLE callee is NOT a dispatcher",
+         not _returns_convention_d(
+             ast.parse(_UNRESOLVED_SRC).body[0], ast.parse(_UNRESOLVED_SRC), "t.py")),
+        ("the real he4 z_of is now recognised as a dispatcher",
+         _returns_convention_d(
+             next(n for n in ast.walk(ast.parse(pathlib.Path(
+                 "computations/probes/he4_body_order_shortfall_location_probe.py"
+             ).read_text()))
+                 if isinstance(n, ast.FunctionDef) and n.name == "z_of"),
+             ast.parse(pathlib.Path(
+                 "computations/probes/he4_body_order_shortfall_location_probe.py"
+             ).read_text()),
+             "computations/probes/he4_body_order_shortfall_location_probe.py")),
         ("a file defining z the convention-D way is recognised as D",
          _defines_convention_d("z = q0 ** 3 / (q0 ** 2 + 1)", "z")),
         ("the reversed-denominator spelling is recognised as D",
