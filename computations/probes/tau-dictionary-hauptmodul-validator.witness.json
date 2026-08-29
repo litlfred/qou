@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:56:35.442846+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-08-29T12:25:29.170672+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "control_tau0_passes",
@@ -44,11 +44,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 540,
+  "durationMs": 539,
   "computation": "tau-dictionary-hauptmodul-validator",
   "scriptFile": "tau_dictionary_hauptmodul_validator.py",
   "scriptHash": "273f61b7b733",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptCommitSha": "065cacc63b9c987bd2d1229bbd517ade14b5337c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
