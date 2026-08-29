@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-28T20:29:47Z
-updated_at: 2026-08-29T01:16:22Z
+updated_at: 2026-08-29T01:17:15Z
 ---
 
 MEASURED 2026-08-28 on branch `claude/witnessbuilder-provenance-migration-2026-08-28`.
@@ -75,6 +75,130 @@ is two, and I have not swept for more.
 2. Decide whether this probe is still wanted at all before regenerating it -- a
    regenerated exploratory witness that nothing consumes is churn, and the
    committed one at least records what was believed in June.
+
+
+---
+
+## DIAGNOSED 2026-08-29 — PR #5940, branch `claude/tower-e0-collapse-2026-08-29`
+
+Probe: `computations/probes/tower_e0_pole_conditioning_probe.py` (5/5 pass).
+
+### Root cause
+
+`phi_q_safe` clamps to `cap_frac * q` to hold its argument off the pole at
+`|z| = q`. With `cap_frac = 0.98` and `q = 1.1099785828` the cap is **1.0877790**.
+The proton's canonical `V_hat = [0.66295, 1.06463]`, and the larger entry is
+**95.91 % of q — BELOW the cap**. The clamp never fires; Phi_q is evaluated
+essentially at its singularity and returns **7.81e6** for that one generator,
+against the ~3.85 total the June witness implies.
+
+The cap does not regularise this. It bounds Phi_q at 2.66e7 — still seven orders
+above the June total — so it relocates the blow-up rather than removing it.
+Across the whole band it declares safe, `[0.90, cap]`, Phi_q spans a factor 303.
+
+### The point is ill-conditioned
+
+A **0.188 % change in V_hat moves Phi_q by 9.06 %** — a **48x** relative-error
+amplification, inherited whole by `E_0 = M_P / Phi_q`. Recomputed in mpmath at
+50 dps, not through the float64 function under test.
+
+### Causes EXCLUDED (checked, not assumed)
+
+1. **`8cf5569648`, the Lean towerTerm swap — NOT the cause.** It deliberately
+   pins the calibration to `term="phi_q"`, and `_tower_spec` threads `cap_frac`
+   faithfully. The calibration uses the same function June used.
+2. **Caches — not the cause.** `_E0_PI_CACHE` / `_E0_TOWER_CACHE` are both keyed
+   by `pair_mode`.
+3. **`full` == `adjacent` today is CORRECT, not a defect.** The calibration is
+   A=1, one generator, so there are no pairs and `pair_mode` is a no-op by
+   construction. June's two DISTINCT values (243.5284 / 249.4030) are the thing
+   that wants explaining.
+
+### The V_hat moved too
+
+Reproducing June's total via Phi_q needs `V_hat = 0.14317` (12.90 % of q), 7.4x
+smaller than today's 1.06463. `tower_term_li2q` on today's V_hat gives
+`E_0 = 649.44`. **Neither current term at today's V_hat reproduces the witness.**
+
+### Still open
+
+* **Which commit moved V_hat.** Bisect not done. `23b9c4f5ba perf(qou-9ohz): the
+  A>=3 V_hat is a scalar collapse` is a candidate but is scoped to A>=3 and the
+  calibration is A=1, so it is not an obvious fit.
+* **Whether Phi_q is the right form for the mass context at all.** Tightening
+  `cap_frac` does not obviously help — it only moves where the clamp bites, and
+  the clamped value is itself 7 orders from the target. `tower_term_li2q` gives
+  a sane 1.44 on the same V_hat. That is a design call for the owner, not a bug
+  fix, and I have not made it.
+
+### Method note
+
+My first draft claimed "0.09 % -> 9.1 %, ~100x". That compared a two-sided Phi_q
+change against a one-sided V_hat window and doubled the factor. The probe's own
+threshold (`amp > 50`) failed at 48.24 and forced the correction. Recorded in the
+module docstring so the wrong figure cannot be re-derived from an old draft.
+
+
+---
+
+## DIAGNOSED 2026-08-29 — PR #5940, branch `claude/tower-e0-collapse-2026-08-29`
+
+Probe: `computations/probes/tower_e0_pole_conditioning_probe.py` (5/5 pass).
+
+### Root cause
+
+`phi_q_safe` clamps to `cap_frac * q` to hold its argument off the pole at
+`|z| = q`. With `cap_frac = 0.98` and `q = 1.1099785828` the cap is **1.0877790**.
+The proton's canonical `V_hat = [0.66295, 1.06463]`, and the larger entry is
+**95.91 % of q — BELOW the cap**. The clamp never fires; Phi_q is evaluated
+essentially at its singularity and returns **7.81e6** for that one generator,
+against the ~3.85 total the June witness implies.
+
+The cap does not regularise this. It bounds Phi_q at 2.66e7 — still seven orders
+above the June total — so it relocates the blow-up rather than removing it.
+Across the whole band it declares safe, `[0.90, cap]`, Phi_q spans a factor 303.
+
+### The point is ill-conditioned
+
+A **0.188 % change in V_hat moves Phi_q by 9.06 %** — a **48x** relative-error
+amplification, inherited whole by `E_0 = M_P / Phi_q`. Recomputed in mpmath at
+50 dps, not through the float64 function under test.
+
+### Causes EXCLUDED (checked, not assumed)
+
+1. **`8cf5569648`, the Lean towerTerm swap — NOT the cause.** It deliberately
+   pins the calibration to `term="phi_q"`, and `_tower_spec` threads `cap_frac`
+   faithfully. The calibration uses the same function June used.
+2. **Caches — not the cause.** `_E0_PI_CACHE` / `_E0_TOWER_CACHE` are both keyed
+   by `pair_mode`.
+3. **`full` == `adjacent` today is CORRECT, not a defect.** The calibration is
+   A=1, one generator, so there are no pairs and `pair_mode` is a no-op by
+   construction. June's two DISTINCT values (243.5284 / 249.4030) are the thing
+   that wants explaining.
+
+### The V_hat moved too
+
+Reproducing June's total via Phi_q needs `V_hat = 0.14317` (12.90 % of q), 7.4x
+smaller than today's 1.06463. `tower_term_li2q` on today's V_hat gives
+`E_0 = 649.44`. **Neither current term at today's V_hat reproduces the witness.**
+
+### Still open
+
+* **Which commit moved V_hat.** Bisect not done. `23b9c4f5ba perf(qou-9ohz): the
+  A>=3 V_hat is a scalar collapse` is a candidate but is scoped to A>=3 and the
+  calibration is A=1, so it is not an obvious fit.
+* **Whether Phi_q is the right form for the mass context at all.** Tightening
+  `cap_frac` does not obviously help — it only moves where the clamp bites, and
+  the clamped value is itself 7 orders from the target. `tower_term_li2q` gives
+  a sane 1.44 on the same V_hat. That is a design call for the owner, not a bug
+  fix, and I have not made it.
+
+### Method note
+
+My first draft claimed "0.09 % -> 9.1 %, ~100x". That compared a two-sided Phi_q
+change against a one-sided V_hat window and doubled the factor. The probe's own
+threshold (`amp > 50`) failed at 48.24 and forced the correction. Recorded in the
+module docstring so the wrong figure cannot be re-derived from an old draft.
 
 
 ---
