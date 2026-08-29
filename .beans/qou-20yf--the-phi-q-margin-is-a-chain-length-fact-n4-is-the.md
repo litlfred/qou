@@ -1,11 +1,11 @@
 ---
 # qou-20yf
 title: 'The Phi_q margin is a chain-length fact: n=4 is the last even sigma-inverse chain inside the pole'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-29T09:45:01Z
-updated_at: 2026-08-29T09:45:33Z
+updated_at: 2026-08-29T10:48:57Z
 ---
 
 Measured 2026-08-29, branch claude/tower-gap-lean-and-infra-2026-08-29 (PR
