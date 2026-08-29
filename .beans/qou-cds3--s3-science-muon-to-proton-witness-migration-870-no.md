@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-29T11:06:21Z
+updated_at: 2026-08-29T12:14:48Z
 ---
 
 Parent: `qou-cdx1`. Related: `qou-1c4y` (the tracked migration), `tnjb`
@@ -375,3 +375,53 @@ DIFFER is dual-layer by construction. Recorded in the class rule.
 (My first pass also reported atomic_tr_m_mpfr_50dps as missing. It was not —
 dual_layer.members holds DICTS keyed `producer` and my parser looked for
 `stem`. The ledger was right; the reader was wrong.)
+
+
+## 2026-08-29 — indirect class, first half: 8 migrated, 2 held
+
+PR #6001. ideal_muon 31 -> 22. Each of the 8 verified BEFORE the move to have
+q_parameter reachable in its cone; otherwise the manifest is not the lever.
+
+  binding_via_interface_knot      gram_norm_binding_probe
+  block_swap_binding              he3_tritium_cosh_asymmetry_diagnosis
+  wlambda_q0_continuation         lever1_binding_habiro_single_element_test
+  fivetwo_stokes_matrix_zq        theta_jet_gb_grading_probe
+
+### hadron_knot_table — HELD, cannot be regenerated
+
+Its committed witness reads durationMs: 53, which is what made it look cheap.
+It is not. The three A=1 atoms finish in seconds, then it stalls on DEUTERIUM,
+the first bound atom — exactly what AGENTS.md records. Killed at 1297 s.
+
+Moving it in the manifest without a regenerated witness would leave the
+manifest asserting proton over a muon witness. Entry reverted; stays
+ideal_muon until someone has a route to compute it.
+
+### habiro_interpolation_wlambda — a COMPARISON, and two lessons
+
+Its cone does not reach q_parameter at all, which is what flagged it. Line 389
+loops over BOTH pins and reports the cross-pin swing of F_lambda. Migrating it
+would destroy the measurement.
+
+**`ambiguous` was my first answer and it was the wrong WORD.** Ambiguous means
+UNDETERMINED; this is the opposite — two pins, deliberately, with the
+difference as the result. The vocabulary reserves `comparison` for exactly
+this, producer-declared, because resolve_q0_anchor structurally cannot return
+an intent no manifest lookup can establish.
+
+**🛑 And a manifest entry is SILENTLY INERT for any producer whose
+WitnessBuilder is constructed without a script path.** This one is. It kept
+stamping `muon` through TWO full re-runs while the manifest said `ambiguous`
+and `resolve_q0_anchor(...) == ("ambiguous", None)` agreed. I only found out by
+re-running and watching it ignore both. Fixed by declaring at the producer via
+`q0_comparison(...)`.
+
+That generalises beyond this file and deserves a detector: any producer whose
+builder lacks a script path cannot be steered by the manifest at all, so a
+manifest entry for it is a false record. Not filed as its own bean yet.
+
+### Remaining
+
+  10  unlisted producers needing cone traces
+   4  cds1-gated qbeta c_k
+   1  hadron_knot_table (compute-blocked)
