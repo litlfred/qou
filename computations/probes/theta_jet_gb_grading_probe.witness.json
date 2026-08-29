@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T01:24:05.409247+00:00",
-  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "computedAt": "2026-08-29T03:12:05.225736+00:00",
+  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 19,
   "computation": "theta_jet_gb_grading_probe",
   "scriptFile": "theta_jet_gb_grading_probe.py",
-  "scriptHash": "4bcd523580d4",
-  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
+  "scriptHash": "78bf71b05c73",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,17 +34,17 @@
   },
   "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
   "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
-  "generated": "2026-08-29T01:24:04+00:00",
+  "generated": "2026-08-29T03:12:05+00:00",
   "parameters": {
     "dps": 60,
     "m_max": 200,
-    "q0": "1.1099785955573347199",
+    "q0": "1.1099785956427390467",
     "q0_anchor": "muon (computations layer canonical)"
   },
   "results": {
     "curvature_2nd_diff_theta": {
       "target_2a": "1/2",
-      "window_20_40": "0.540749665814",
+      "window_20_40": "0.540749665744",
       "window_140_180": "0.499980646728",
       "sd": "0.00168887",
       "drift": "0.00059225983",
@@ -53,8 +53,8 @@
     },
     "quadratic_fit_120_180": {
       "a_target_1_4": "0.250019262144",
-      "b_linear": "11.07160766",
-      "b_pred_framing_half_logq_inv_qm1": "10.57817728",
+      "b_linear": "11.07160765",
+      "b_pred_framing_half_logq_inv_qm1": "10.57817727",
       "c": "-97.4613"
     },
     "gs_bridge_leading": {
@@ -67,7 +67,7 @@
     },
     "slope_s_m_diagnostic_linear_polluted": {
       "window_20_40": "1.087462091",
-      "window_160_180": "0.6273839911",
+      "window_160_180": "0.627383991",
       "drift": "0.4600781",
       "note": "polluted by framing b; NOT the constancy invariant"
     },

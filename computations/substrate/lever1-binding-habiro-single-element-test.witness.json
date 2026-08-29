@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-28T21:02:33.885353+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T03:26:54.053067+00:00",
+  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lever1-binding-habiro-single-element-test",
   "scriptFile": "lever1_binding_habiro_single_element_test.py",
-  "scriptHash": "a07b3e1a0aab",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "e69ebf639722",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "script": "computations/substrate/lever1_binding_habiro_single_element_test.py"
   },
   "params": {
-    "q0": "1.10997858275138",
+    "q0": "1.109978595642739046681795129380001752700065561029",
     "MMAX": 10
   },
   "D_nonzero_indices": [
@@ -468,8 +468,8 @@
       ]
     }
   },
-  "verdict": "NEGATIVE (a)-scoped: NO single q-hypergeometric element of bidegree up to (q±3, X≤3), order 1, reproduces either the additive D(m) or the log-EGF L_m tower past the training window — every held-out test kills every fitted relation, and the literal contiguity template (one parameter a) fails held-out. This SHARPENS Stages 3-4: not only is S(m) not low-order q-holonomic, its Habiro CORRECTION towers are not single low-order q-hypergeometric elements either. The binding fibre kernel is a genuine cyclotomic-completion (Habiro-ring) object, not a ₂φ₁. Does NOT refute the Habiro class (per the AGENTS.md refuted-claim discipline): it constrains the element's order/shape.",
+  "verdict": "NEGATIVE (a)-scoped: NO single q-hypergeometric element of bidegree up to (q\u00b13, X\u22643), order 1, reproduces either the additive D(m) or the log-EGF L_m tower past the training window \u2014 every held-out test kills every fitted relation, and the literal contiguity template (one parameter a) fails held-out. This SHARPENS Stages 3-4: not only is S(m) not low-order q-holonomic, its Habiro CORRECTION towers are not single low-order q-hypergeometric elements either. The binding fibre kernel is a genuine cyclotomic-completion (Habiro-ring) object, not a \u2082\u03c6\u2081. Does NOT refute the Habiro class (per the AGENTS.md refuted-claim discipline): it constrains the element's order/shape.",
   "scope": "(a) scope-limited negative on the single-low-order-q-hypergeometric ansatz; the Habiro q-difference class is NOT excluded (no proved invariant forbids a higher-order/cyclotomic element). Constrains the kernel order/shape; nothing wired; no fit.",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

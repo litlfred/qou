@@ -2,8 +2,8 @@
   "description": "Laddered Qb reconstruction *using* the merged exact rung c_4^even in the even partial sum. Measurement 1: |c_k^even u^k| shrinks with k at u(q0), so c_4^even is a real sub-leading even rung. Measurement 2: the odd channel (R_exact/R_even) dominates the entire even ladder by ~O(10x) and controls accuracy vs CODATA. c_4^even's Qb effect (~1e-2 keV) is dwarfed by the odd-channel gap (~6 keV) -> cannot move beats_100x. auditOnly; no production wiring; no fit.",
   "audit_only": true,
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
-    "u_q0": "0.0085172363404849214399331129023",
+    "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "u_q0": "0.00851723635242482310735822116751",
     "c2_even": "-8.00641005870925442785865819785",
     "c3_even": "86.6611630646909942600690102713",
     "c4_even": "-1819.74067252288946759519576958",
@@ -11,17 +11,17 @@
     "Q_beta_codata_MeV": "0.78233341"
   },
   "measurement_1_even_rungs": {
-    "abs_c2_u2": "0.0005808115259447584727",
-    "abs_c3_u3": "0.000053545207835928372284",
-    "abs_c4_u4": "9.5764444921069879268e-6",
+    "abs_c2_u2": "0.00058081152757318164536",
+    "abs_c3_u3": "0.000053545208061115683635",
+    "abs_c4_u4": "9.576444545806005415e-6",
     "shrinks_with_k": true,
-    "qb_c4_incremental_keV": "0.0074930763567"
+    "qb_c4_incremental_keV": "0.0074930763972"
   },
   "measurement_2_odd_channel": {
-    "log_R_exact": "0.0067718915431060288177",
-    "log_R_even_N4": "-0.00053701297830235566816",
-    "log_odd_factor": "0.0073089045214083844858",
-    "odd_over_even_ratio": "13.6102940091",
+    "log_R_exact": "0.00677189154742578649",
+    "log_R_even_N4": "-0.00053701297976024947487",
+    "log_odd_factor": "0.0073089045271860359649",
+    "odd_over_even_ratio": "13.6102939829",
     "opposite_sign": true,
     "odd_dominates": true
   },
@@ -30,33 +30,33 @@
       "N": 1,
       "R_even": "1.0",
       "dlogR_from_rung": "0.0",
-      "Qb_pred_MeV": "0.7828614813338303"
+      "Qb_pred_MeV": "0.7828614811764823"
     },
     {
       "N": 2,
-      "R_even": "0.99941918847405524153",
+      "R_even": "0.99941918847242681835",
       "dlogR_from_rung": "-0.00058098026",
-      "Qb_pred_MeV": "0.7824067863622535"
+      "Qb_pred_MeV": "0.782406786203722"
     },
     {
       "N": 3,
-      "R_even": "0.99947270258221729968",
-      "dlogR_from_rung": "5.3543774e-5",
-      "Qb_pred_MeV": "0.7824486804962415"
+      "R_even": "0.99947270258081384584",
+      "dlogR_from_rung": "5.3543775e-5",
+      "Qb_pred_MeV": "0.7824486803378777"
     },
     {
       "N": 4,
-      "R_even": "0.99946313118735964492",
-      "dlogR_from_rung": "-9.5764903e-6",
-      "Qb_pred_MeV": "0.7824411874198848"
+      "R_even": "0.99946313118590253382",
+      "dlogR_from_rung": "-9.5764904e-6",
+      "Qb_pred_MeV": "0.7824411872614805"
     }
   ],
   "accuracy_vs_codata": {
-    "Qb_exact_MeV": "0.78818092539937079734",
-    "acc_exact_rel": "0.0074744544009322027299",
-    "acc_exact_ppb": "7474454.40093",
-    "Qb_even_MeV": "0.78244118741988476478",
-    "acc_even_rel": "0.00013776405111570625558"
+    "Qb_exact_MeV": "0.78818092524435835463",
+    "acc_exact_rel": "0.0074744542027910512376",
+    "acc_exact_ppb": "7474454.20279",
+    "Qb_even_MeV": "0.78244118726148049041",
+    "acc_even_rel": "0.00013776384863902260235"
   },
   "assertions": [
     {
@@ -73,12 +73,12 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "ed83ce667fa5",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "scriptHash": "6f74ee15a051",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "commitSha": "33f10ae846b0175aebddc3c4f9eb42f8254eaf78",
   "engine": "sympy",
-  "computedAt": "2026-08-28T20:53:47.574655+00:00",
-  "durationMs": 3396,
+  "computedAt": "2026-08-29T03:27:17.737258+00:00",
+  "durationMs": 3403,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
