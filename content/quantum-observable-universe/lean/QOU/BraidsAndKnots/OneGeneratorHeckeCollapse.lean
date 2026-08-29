@@ -254,4 +254,124 @@ theorem inter_nucleon_vHat {R : Type*} [Field R] (h δ : R) (four_ne : (4 : R) �
   field_simp
   ring
 
+/-! ## The Markov parameter `h/2` averages the two Hecke eigenvalues — and what that
+costs the tower
+
+Measured (`tower_vhat_chain_length_pole_margin_probe`): across every atom from
+A = 1 to A = 16, `per_generator_V_hat_3A`'s per-generator V̂ takes only **seven**
+distinct values, and `max |V̂|` **saturates** — it is `1.0883675333971881278`
+(98.05 % of `q`) for every atom containing a neutron, already at A = 1, and
+never grows with nucleon count.  (A proton-only system sits strictly further
+out, at `1.0551103188317245612`: the neutron's `dd` pair contributes a further
+`σ⁻¹` where the proton's `uu` pair contributes a `σ`.)  Reading the seven off,
+they are collapses of
+
+    σ⁻⁴,  σ⁻³·avg,  σ⁴·avg·σ²,  σ³·avg²·σ²,  σ⁻¹,  σ,  and the colour-weighted avg
+
+where `σ⁻¹ = σ − h` (the skein relation: `σ(σ − h) = σ² − hσ = 1`, immediate from
+`IsHeckeGen`) and `avg = σ − h/2 = (σ + σ⁻¹)/2` is the averaged crossing.  The
+maximum is attained at the pure chain `σ⁻⁴`.
+
+`vHat_half_h_eq_avg_evals` is why that chain has a closed form, and is the
+conceptual content of `markov_param_eq_half_h` in the other file: at `z = h/2`
+with `h = q − q⁻¹`, the Markov trace is exactly the **average of the two Hecke
+eigenvalue evaluations** `σ ↦ q` and `σ ↦ −q⁻¹`.  (That is also why
+transpose-pairing forced `h/2` there: transposition swaps the two eigenvalues,
+so pairing averages them.)
+
+Since `prod_eq_linear` says each evaluation is multiplicative, the chain's value
+follows immediately, and `vHat_invChain` records it:
+
+    V̂ₙ  =  ((q⁻¹)ⁿ + (−q)ⁿ) / 2.
+
+**The consequence is sharp and is not comfortable.**  `|(−q)ⁿ|` grows like `qⁿ`,
+so `|V̂ₙ| → ∞` and only finitely many chain lengths keep `Φ_q` finite at all.
+Measured at the substrate `q`:
+
+    n = 4   |V̂|/q = 0.98053   ← the length the word actually uses
+    n = 5   |V̂|/q = 0.49163
+    n = 6   |V̂|/q = 1.08331   ← PAST THE POLE
+
+So `n = 4` is the last even chain length for which the tower is defined, and one
+further same-sign crossing pair diverges it.  What that does **not** say is that
+the 4 is tuned: it is `3 + 1`, three from the `B₃` closure and one from the
+quark pair, and both are fixed by the construction upstream of any of this.
+What it does say is that the 1.95 % margin is the whole of the headroom, and
+that it is a fact about the chain length rather than robustness. -/
+
+/-- Evaluation of a collapsed element `α·σ + β` at a **scalar** root of the same
+Hecke quadratic.  `IsHeckeGen s h` is reused deliberately: `q` and `−q⁻¹` satisfy
+`s² = h·s + 1` for `h = q − q⁻¹` exactly as the generator does, which is what
+makes the evaluations multiplicative. -/
+def evalAt (s : R) (ab : R × R) : R := ab.1 * s + ab.2
+
+/-- Both Hecke eigenvalues are roots of the generator's own quadratic. -/
+theorem isHeckeGen_q {R : Type*} [Field R] {q : R} (hq : q ≠ 0) :
+    IsHeckeGen q (q - q⁻¹) ∧ IsHeckeGen (-q⁻¹) (q - q⁻¹) := by
+  constructor <;> · simp only [IsHeckeGen]; field_simp; ring
+
+/-- **The Markov parameter `h/2` is the average of the two eigenvalue
+evaluations.**  This is the conceptual content of `markov_param_eq_half_h`:
+transposing a shape swaps `q` and `−q⁻¹`, so pairing shapes with their
+transposes averages the two, and `h/2` is that average. -/
+theorem vHat_half_h_eq_avg_evals {R : Type*} [Field R] {q : R} (hq : q ≠ 0)
+    (two_ne : (2 : R) ≠ 0) (ab : R × R) :
+    vHat ((q - q⁻¹) / 2) ab = (evalAt q ab + evalAt (-q⁻¹) ab) / 2 := by
+  simp only [vHat, evalAt]
+  field_simp
+  ring
+
+/-- The `σ⁻¹` chain of length `n`: `σ⁻ⁿ`, since `σ − h = σ⁻¹`. -/
+def invChain (h : R) (n : ℕ) : R × R :=
+  collapseFold h (List.replicate n (1, -h))
+
+/-- `σ(σ − h) = 1` — the skein relation, and the reason `σ − h` is `σ⁻¹`. -/
+theorem sigma_mul_sub_h {σ h : R} (hσ : IsHeckeGen σ h) : σ * (σ - h) = 1 := by
+  have : σ * σ = h * σ + 1 := hσ
+  linear_combination this
+
+/-- A repeated factor evaluates to a power. -/
+theorem factorProd_replicate (σ : R) (cd : R × R) (n : ℕ) :
+    factorProd σ (List.replicate n cd) = (cd.1 * σ + cd.2) ^ n := by
+  have key : ∀ (m : ℕ) (acc : R),
+      List.foldl (fun a e => a * (e.1 * σ + e.2)) acc (List.replicate m cd)
+        = acc * (cd.1 * σ + cd.2) ^ m := by
+    intro m
+    induction m with
+    | zero => intro acc; simp
+    | succ k ih =>
+      intro acc
+      rw [List.replicate_succ, List.foldl_cons, ih]
+      ring
+  simpa [factorProd] using key n 1
+
+/-- **The closed form.**  `V̂ₙ = ((q⁻¹)ⁿ + (−q)ⁿ)/2`.
+
+Because `|−q| > 1` at the substrate, this grows without bound: only finitely
+many chain lengths leave `|V̂ₙ| < q`, and the production word's `n = 4` is the
+last even one.  The 1.95 % margin between `V̂₄` and the `Φ_q` pole is therefore
+the whole of the headroom — see the section note above for what this does and
+does not say about the choice of 4. -/
+theorem vHat_invChain {R : Type*} [Field R] {q : R} (hq : q ≠ 0)
+    (two_ne : (2 : R) ≠ 0) (n : ℕ) :
+    vHat ((q - q⁻¹) / 2) (invChain (q - q⁻¹) n)
+      = ((q⁻¹) ^ n + (-q) ^ n) / 2 := by
+  obtain ⟨hgq, hgn⟩ := isHeckeGen_q (R := R) hq
+  rw [vHat_half_h_eq_avg_evals hq two_ne]
+  have e₁ : evalAt q (invChain (q - q⁻¹) n) = (q⁻¹) ^ n := by
+    have := prod_eq_linear hgq (List.replicate n ((1 : R), -(q - q⁻¹)))
+    simp only [evalAt, invChain]
+    rw [← this, factorProd_replicate]
+    congr 1
+    field_simp
+    ring
+  have e₂ : evalAt (-q⁻¹) (invChain (q - q⁻¹) n) = (-q) ^ n := by
+    have := prod_eq_linear hgn (List.replicate n ((1 : R), -(q - q⁻¹)))
+    simp only [evalAt, invChain]
+    rw [← this, factorProd_replicate]
+    congr 1
+    field_simp
+    ring
+  rw [e₁, e₂]
+
 end QOU.BraidsAndKnots
