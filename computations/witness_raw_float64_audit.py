@@ -869,8 +869,14 @@ def main() -> int:
             print(f"    {was:6d} -> {now:<6d}  {f}")
 
     if args.rebaseline:
-        baseline_path.write_text(json.dumps(
-            {"note": "Witnesses known to carry raw float64, by count. The "
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload_1 = {"note": "Witnesses known to carry raw float64, by count. The "
                      "backlog is tolerated; it must only SHRINK. Regenerate "
                      "ONLY when draining. Adding a file here to silence a "
                      "failure defeats the gate — fix at the producer instead.",
@@ -892,7 +898,12 @@ def main() -> int:
                              f"entry in scripts/precision-gates.sh"),
              "files_count": len(found),
              "fields_count": total,
-             "files": dict(sorted(found.items()))}, indent=2) + "\n")
+             "files": dict(sorted(found.items()))}
+        _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+        baseline_path.write_text(json.dumps(
+            _prov_payload_1, indent=2) + "\n")
         print(f"\nRebaselined: {len(found)} files / {total:,} fields recorded.")
 
     out = HERE / _output_name(scan_root)
@@ -912,7 +923,14 @@ def main() -> int:
             file=sys.stderr)
         # SAME verdict as the write path below — the gate is unchanged.
         return 1 if (args.strict and (new_files or grew)) else 0
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload_2 = {
         "schema": "witness/v1",
         "name": "witness-raw-float64-audit",
         "description": "Witnesses carrying raw float64 JSON numbers. Enforces "
@@ -950,7 +968,11 @@ def main() -> int:
             "regressed": len(grew),
             "drained_files": len(drained),
         },
-    }, indent=2) + "\n")
+    }
+    _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
     print(f"\nWrote {out.name}")
     return 1 if (args.strict and (new_files or grew)) else 0
 

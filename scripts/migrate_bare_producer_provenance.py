@@ -199,6 +199,44 @@ def innermost_name(node: ast.AST):
         return None
 
 
+def inline_dict_node(node: ast.AST):
+    """The inline `Dict` a write call is dumping, through any wrappers.
+
+    Mirrors `innermost_name`'s walk but returns the NODE rather than the
+    sentinel, because hoisting needs the literal's own source span.
+    """
+    while True:
+        if isinstance(node, ast.Dict):
+            return node
+        if isinstance(node, ast.BinOp):
+            node = node.left
+            continue
+        if isinstance(node, ast.Call) and node.args:
+            node = node.args[0]
+            continue
+        return None
+
+
+def find_inline_writes(tree: ast.AST):
+    """Every write statement whose payload is a dict literal at the write site.
+
+    Returned newest-line-first so a caller rewriting them in order does not
+    invalidate the line numbers of the ones it has not reached yet.
+    """
+    out = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Expr) or not isinstance(node.value, ast.Call):
+            continue
+        f = node.value.func
+        if not (isinstance(f, ast.Attribute) and f.attr in ("dump", "write_text")
+                and node.value.args):
+            continue
+        d = inline_dict_node(node.value.args[0])
+        if d is not None:
+            out.append((node, d))
+    return sorted(out, key=lambda x: x[0].lineno, reverse=True)
+
+
 def find_write(tree: ast.AST):
     """(stmt, payload) for the statement writing the witness JSON.
 
@@ -464,6 +502,112 @@ def population_witness_first() -> dict[str, None]:
     return out
 
 
+def hoist_inline_dicts(path: pathlib.Path, check_only: bool = False):
+    """Bind each inline witness dict to a name, then stamp it before the write.
+
+        out.write_text(json.dumps({ ... }))                       # before
+
+        _prov_payload_1 = { ... }                                 # after
+        _prov_payload_1.setdefault("scriptFile", ...)
+        _WB.stamp_staleness_metadata(_prov_payload_1, ...)
+        out.write_text(json.dumps(_prov_payload_1))
+
+    Returns (n_rewritten, error). This is the migration the insertion pass could
+    not do: there is no variable at the write site to stamp, so the literal has
+    to be given a name first -- a structural edit rather than an insertion,
+    which is why these 27 files were held back rather than force-fitted.
+
+    THE LITERAL'S SOURCE IS HOISTED VERBATIM, indentation and all. That looks
+    wrong for a multi-line dict whose continuation lines keep their original
+    columns, but Python's implicit line joining makes indentation inside
+    brackets free-form, so the hoisted text parses to the same object. Verified
+    per site rather than assumed: the new binding's value is compared to the
+    original literal by `ast.dump`, and a mismatch aborts the file with nothing
+    written.
+    """
+    src = path.read_text(errors="ignore")
+    try:
+        tree = ast.parse(src)
+    except SyntaxError as exc:
+        return 0, f"unparseable: {exc}"
+    sites = find_inline_writes(tree)
+    if not sites:
+        return 0, None
+    q0 = reaches_q0(code_only(src))
+    lines = src.split("\n")
+    originals = []
+
+    for i, (stmt, dnode) in enumerate(sites):
+        n = len(sites) - i                      # bottom-up, so number top-down
+        var = f"_prov_payload_{n}" if len(sites) > 1 else "_prov_payload"
+        line = lines[stmt.lineno - 1]
+        pad = line[:len(line) - len(line.lstrip())]
+        if stmt.col_offset != len(pad):
+            # A compound one-liner (`with open(p) as f: json.dump({...}, f)`).
+            # Replacing the statement's line range would take the `with` header
+            # with it. Rare enough to report rather than guess at.
+            return 0, (f"write at line {stmt.lineno} is inside a compound "
+                       "one-liner; needs splitting by hand first")
+        dict_src = ast.get_source_segment(src, dnode)
+        stmt_src = ast.get_source_segment(src, stmt)
+        if dict_src is None or stmt_src is None:
+            return 0, f"no source segment for the write at line {stmt.lineno}"
+        if stmt_src.count(dict_src) != 1:
+            return 0, (f"the literal at line {stmt.lineno} is not uniquely "
+                       "locatable inside its write statement")
+        anchor = "None" if q0 else "False"
+        note = ("resolve and stamp the q0 anchor" if q0
+                else "no q0 in this producer's cone; stamp provenance only")
+        block = [
+            f"{pad}# Provenance stamp (bean qou-f1rs): the witness dict was built",
+            f"{pad}# INLINE at the write below, so there was nothing to stamp. It",
+            f"{pad}# is bound to a name here so this producer records which script",
+            f"{pad}# wrote it -- a re-run of an unstamped producer DELETES the",
+            f"{pad}# scriptFile a downstream pass had added. {note}.",
+            f"{pad}import os as _os  # noqa: E402 -- provenance stamp",
+            f"{pad}from qou_substrate.witness import WitnessBuilder as _WB",
+            f"{pad}{var} = {dict_src}",
+            f'{pad}{var}.setdefault("scriptFile", _os.path.basename(__file__))',
+            f"{pad}_WB.stamp_staleness_metadata(",
+            f"{pad}    {var}, script_path=__file__, engine=None, q0_anchor={anchor})",
+            # `get_source_segment` returns the statement WITHOUT its leading
+            # indentation, so splicing it back verbatim drops it to column 0
+            # inside an indented block. Only the first line needs `pad`: any
+            # continuation lines keep their original absolute columns, which is
+            # legal because they are inside brackets. This is what made 25 of
+            # the 27 files fail to re-parse on the first attempt -- and the two
+            # that passed were module-level, where `pad` is empty, so a sample
+            # of the successes would have shown nothing.
+            *[(pad + ln if i == 0 else ln) for i, ln
+              in enumerate(stmt_src.replace(dict_src, var).split("\n"))],
+        ]
+        lines[stmt.lineno - 1:stmt.end_lineno] = block
+        originals.append((var, dnode))
+
+    new_src = "\n".join(lines)
+    try:
+        new_tree = ast.parse(new_src)
+    except SyntaxError as exc:
+        return 0, f"rewrite does not parse: {exc}"
+
+    # The hoist is faithful only if the bound value IS the original literal.
+    bound = {}
+    for node in ast.walk(new_tree):
+        if (isinstance(node, ast.Assign) and len(node.targets) == 1
+                and isinstance(node.targets[0], ast.Name)
+                and node.targets[0].id.startswith("_prov_payload")):
+            bound[node.targets[0].id] = node.value
+    for var, dnode in originals:
+        if var not in bound:
+            return 0, f"{var} missing from the rewrite"
+        if ast.dump(bound[var]) != ast.dump(dnode):
+            return 0, f"{var} is not the original literal — hoist would change it"
+
+    if not check_only:
+        path.write_text(new_src)
+    return len(sites), None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--dry-run", action="store_true", default=True)
@@ -474,7 +618,36 @@ def main() -> int:
     ap.add_argument("--scan", choices=("writer", "witness"), default="writer",
                     help="how to build the population; 'witness' reproduces the "
                          "first pass and undercounts (see module docstring)")
+    ap.add_argument("--hoist-inline", action="store_true",
+                    help="bean qou-f1rs: bind inline witness dicts to a name and "
+                         "stamp them (the migration the insertion pass cannot do)")
     args = ap.parse_args()
+
+    if args.hoist_inline:
+        targets = sorted(
+            p for p in population_writer_first()
+            if find_inline_writes(ast.parse(pathlib.Path(p).read_text(errors="ignore")))
+        )
+        if args.only:
+            targets = [t for t in targets if args.only in t]
+        if args.limit:
+            targets = targets[:args.limit]
+        done = sites = 0
+        failed = []
+        for t in targets:
+            n, err = hoist_inline_dicts(pathlib.Path(t), check_only=not args.apply)
+            if err:
+                failed.append((t, err))
+            elif n:
+                done += 1
+                sites += n
+        verb = "would rewrite" if not args.apply else "rewrote"
+        print(f"  files with an inline witness dict : {len(targets)}")
+        print(f"  {verb:<32}: {done}  ({sites} write sites)")
+        print(f"  FAILED                            : {len(failed)}")
+        for t, err in failed:
+            print(f"      {pathlib.Path(t).name[:44]:<44} {err}")
+        return 1 if failed and args.apply else 0
 
     producers = (population_witness_first() if args.scan == "witness"
                  else population_writer_first())

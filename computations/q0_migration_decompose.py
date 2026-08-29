@@ -299,7 +299,18 @@ def main() -> int:
                    "sec": round(sec_m + sec_p, 1), "files": files,
                    "drift": drift, "anchor": anchor,
                    "err": (err_p or err_m)[:400]}
-        PROGRESS.write_text(json.dumps({"done": done}, indent=1) + "\n")
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"done": done}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+        PROGRESS.write_text(json.dumps(_prov_payload, indent=1) + "\n")
         # Keep the PROTON result -- that is the migration target. A refused
         # proton leg (a producer that needs muon by design) keeps nothing.
         if rc_p == 0:
