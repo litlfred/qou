@@ -1,11 +1,11 @@
 ---
 # qou-mdlv
 title: '`.md` vs `.lean` formula divergence is a CLASS, not a singleton — two confirmed, and the grep that finds them is a lower bound'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-29T00:45:00Z
-updated_at: 2026-08-29T01:05:00Z
+updated_at: 2026-08-29T07:10:00Z
 ---
 
 Follow-on to `qou-aemx`. PR #5931 found that `em-coupling-chern-simons`'s
@@ -117,3 +117,43 @@ not a plausible number. Fixed before the conclusion above was drawn — the
       This is what I would build first.
 - [ ] Decide whether `proof-statement-integrity` should carry either as a
       mechanical criterion. Author call — it would flag existing blocks.
+
+
+---
+
+## CLOSED 2026-08-29 — detector built, and the class is smaller than feared
+
+Owner approved building it. `content/pipeline/superseded-block-lean-audit.ts`
+implements the cheap half recommended above: find blocks whose `.md` *announces*
+a supersession, resolve their Lean, and hand the verdict to an agent. It does not
+compare content and does not pretend to.
+
+Both design points come from defects this arc actually hit. It **resolves library
+`lean.ref`s**, not only siblings — half the known positives are that shape, so a
+sibling-only scan misses them outright. And it prints **"this is a LOWER BOUND"**
+in its own output, because a silently-corrected block carries no such sentence.
+
+The refuted timestamp heuristic is recorded in the script's docstring so it is
+not re-attempted from scratch.
+
+### Result on `main`
+
+**8 candidates → 4 with Lean:**
+
+| block | verdict |
+|---|---|
+| `em-coupling-chern-simons` | **divergent** — fixed (#5931, #5946) |
+| `centered-hecke-variance-positive` | **divergent** — fixed (#5936); library-resolved |
+| `y-lambda-recipe-from-partition` | clean — migrated to D, migration documented in-file |
+| `qdifference-kernel-prolongation-symbol` | **clean** — new candidate, checked |
+
+The wider regex (`previously read`, `conjecture previously`) finds **8** where the
+hand-grep in this bean found 6. The new one is the sharpest possible version of
+this defect — its `.md` removes a clause it calls **"false as an identification of
+q-difference modules"** — and its `.lean` never carried it. A negative, and worth
+having as one.
+
+So the class is **2 confirmed, both now fixed**, with a standing detector for
+recurrence. What remains unmeasured is the silent-correction population, which by
+construction this cannot reach; the real content comparison stays the open item
+and is not attempted here.
