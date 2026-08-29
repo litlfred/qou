@@ -180,9 +180,9 @@ def main() -> int:
 
     # Family B comparison
     from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
-    M_E = mp.mpf(repr(_M_E_MEV))
+    M_E = mp.mpf(_M_E_MEV)
     from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
-    M_P = mp.mpf(repr(_M_P_MEV))
+    M_P = mp.mpf(_M_P_MEV)
     VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
     HBAR_Q = (Q0 - 1) / Q0
     lambda_B_target = float((M_P / M_E) * HBAR_Q**2 / VOL_B3)
