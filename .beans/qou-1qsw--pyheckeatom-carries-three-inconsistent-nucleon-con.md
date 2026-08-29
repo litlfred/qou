@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:53:06Z
+updated_at: 2026-08-29T19:02:31Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -528,3 +528,90 @@ opened here.
   consistently from the 3A word down. Not a defect.
 * **What I added** — `build_nucleon_nf_mp` (float-free, true q_0) and
   `nucleon_braid_word` (comparison object, marked not-canonical). Both additive.
+
+
+## 2026-08-29 — WHY the gluon component was dropped: it was not, on any stated
+## ground — and the term's own derivation is now stale
+
+Owner: *"why was it one component dropped. it should not have been, i dont
+think"*. Traced, and the owner's instinct is right in the way that matters —
+but the finding is larger than "someone dropped it".
+
+### The gluon term HAD a derivation, and it was a stability argument
+
+`computations/_deprecated/integer-lp-gluon.py`:
+
+    For each nucleon (proton uud, neutron udd), the 9-crossing element
+    B_3 x Delta_3(quarks) is LP UNSTABLE (Frobenius positivity Gx[gamma] < 0).
+    The integer LP enumerates all feasible gluon combinations from
+    {sigma_0, sigma_1, L+, L-} and selects the one with minimum |tr_M|
+    that is stable at every intermediate step.
+
+    Results:
+      Proton:  sigma_0 -> sigma_0  (2 crossings, 11 total), |tr_M| = 0.027
+      Neutron: L+ -> L-            (4 crossings, 13 total), |tr_M| = 0.112
+
+and the commit that validated it across 82 nuclides
+(`validate_isotope_nf_stability`) records the mechanism:
+
+    Path stability: 2/11 intermediate steps are unstable per nucleon —
+    the terminal gluon pair restores stability (this is by design per
+    integer-lp-gluon.py).
+
+So the gluon pair is **load-bearing**: it is what makes the per-nucleon path
+LP-stable. Dropping it leaves the nucleon at an LP-infeasible object. That is
+the sense in which it should not have been dropped, and `build_nucleon_nf`'s
+"B_3 IS the gluon structure" never engaged with any of it.
+
+### TWO further findings, and they cut the other way
+
+**(a) The neutron's ILP answer was never implemented.** The LP gives the
+neutron `L+ -> L-`, **4 crossings, 13 total** — a different gluon term from the
+proton's. Every live builder gives the neutron the proton's `2 sigma_0` instead:
+`nucleon_gen_chains` appends `(1,0)` twice unconditionally, and
+`build_atom_nf`'s neutron branch does the same. So the neutron has been carrying
+the proton's gluon term since the beginning.
+
+**(b) The ILP's premise does not reproduce under convention D.** Measured at
+50 dps with the current D Gram, checking Frobenius positivity at EVERY
+intermediate step (the LP's own criterion, not just the endpoint):
+
+    proton  uud   9  (no gluon)      unstable steps: NONE
+    proton  uud   11 (2 sigma_0)     unstable steps: NONE
+    proton  uud   13 (L+ then L-)    unstable steps: NONE
+    neutron udd   9  (no gluon)      unstable steps: NONE
+    neutron udd   11 (2 sigma_0)     unstable steps: NONE
+    neutron udd   13 (L+ then L-)    unstable steps: NONE
+
+Nothing is unstable, so **LP stability no longer selects a gluon term at all**.
+
+The reason is visible in the ILP's own source. It is built on two things the
+corpus has since retired:
+
+    line 29:  z = 1.0 / (q0**0.5 + qi0**0.5)     <- convention C
+    line 32:  # Corrected Gram matrix (tr_M(e-) = z^3)
+
+Convention C was excised 2026-08-15, and `tr_M(e-) = z^3` is exactly the trace
+rule `gram.py` marks `# fix 2026-05-19 (was _Z_FRAC ** 3)`. The file also sits
+in `_deprecated/` and computes in float64.
+
+### Where that leaves 9-vs-11
+
+The honest position is neither "9 is right" nor "11 is right":
+
+* The gluon term is **derived**, not decorative — so dropping it silently, on a
+  docstring assertion, was wrong. The owner is right about that.
+* But its derivation is **stale in both conventions**: convention C and the
+  pre-2026-05-19 trace rule. Under D its selecting argument evaporates.
+* And the derivation's own neutron result (13 crossings, L+L-) was never
+  implemented, so even on its own terms the corpus does not follow it.
+
+**What is needed is a re-run of the integer LP under convention D with the
+corrected trace rule.** Until then the gamma-gamma/SDP criterion cannot
+adjudicate 9 vs 11 — not because it is the wrong criterion, but because the
+computation that applied it is out of date. That is a bounded, well-specified
+piece of work: the LP is ~200 lines and the D Gram already exists
+(`gram_matrix_mp`).
+
+Not executed here: re-deriving it is a new compute artifact, not a correction,
+and it should be its own scoped piece rather than a tail on a review branch.
