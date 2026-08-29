@@ -1,10 +1,10 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "mpmath 1.4.1; sympy 1.14.0",
-  "computedAt": "2026-08-29T02:46:01.928544+00:00",
+  "computedAt": "2026-08-29T08:56:23.353280+00:00",
   "computation": "qbeta-exponentiated-per-block",
   "scriptFile": "qbeta_exponentiated_per_block_probe.py",
-  "commitSha": "0c3e2cc5d78758ba46b6d10a19e073359f0195ae",
+  "commitSha": "5ea6338121bebd9da568a2998279807aac19ad58",
   "description": "PROBE 6a (U1, PR #1585 queue item 2, never previously run): seeds the Q_beta scaling map as F = exp(N*Sum_lambda g_lambda(u_L)) with the per-Wedderburn-block Delta tr_M closed forms (paper closed forms, PR #1764; leading eps-coefficients -2/-1/-2), even-in-hbar projection onto the integer u_L = b*hbar_q^2 ladder (C13 bridge change of variable), UNIFORM weights, scale fixed ONLY by the proved c_2 = -1. Reads off c_3, c_4 symbolically (constants over b) and numerically at both q0 anchors (proton-pinned from qou_substrate.constants; muon canonical). Records the anchor-stability diagnostic and two structural collapses: uniform-weight exp(Sum per-block) = exp(total), and exp-vs-linear seeding share c_3 when the seed starts at u_L^2. NOT a fit; no scan; no wiring.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -164,7 +164,7 @@
   },
   "allPassed": true,
   "scriptHash": "f0191a26a905",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "119885a4c61eef38636020200895924142ee5621",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

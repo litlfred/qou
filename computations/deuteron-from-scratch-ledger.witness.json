@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:49:38.070630+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-08-29T07:03:41.389465+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "q0_pin_roundtrip",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 24,
   "computation": "deuteron-from-scratch-ledger",
   "scriptFile": "deuteron_from_scratch_ledger.py",
   "scriptHash": "adce60cf01ae",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -102,29 +102,29 @@
         "m_mu_MeV": "105.65839781134181393",
         "m_p_bare_MeV": "938.27208942732424736",
         "m_p_MeV": "938.27208942732424736",
-        "m_n_MeV": "939.56589306798113012",
-        "Q_beta_MeV": "0.78280468996688275735",
+        "m_n_MeV": "939.56589306782363428",
+        "Q_beta_MeV": "0.7828046898093869123",
         "F_Bor": "4.4691387357675225294",
         "err_m_mu_ppb": 211.16491436049168,
         "err_m_p_bare_ppb": -0.002851787521128886,
         "err_m_p_pin46_ppb": 242.2416589394774,
         "err_m_p_habiro_prod_ppb": 242.41707654313913,
         "err_m_p_ppb": -0.002851787521128886,
-        "err_m_n_ppb": 501.431800414008
+        "err_m_n_ppb": 501.43163278774017
       },
       "muon_anchor": {
         "m_mu_MeV": "105.65837549567328006",
         "m_p_bare_MeV": "938.27186062009365933",
         "m_p_MeV": "938.27186062009365933",
-        "m_n_MeV": "939.56566426075054209",
-        "Q_beta_MeV": "0.78280468996688275735",
+        "m_n_MeV": "939.56566426059304624",
+        "Q_beta_MeV": "0.7828046898093869123",
         "F_Bor": "4.469138596906816353",
         "err_m_mu_ppb": -0.04095008953644191,
         "err_m_p_bare_ppb": -243.86306372991615,
         "err_m_p_pin46_ppb": -1.61840700520789,
         "err_m_p_habiro_prod_ppb": -1.4429892958482546,
         "err_m_p_ppb": -243.86306372991615,
-        "err_m_n_ppb": 257.90726742768754
+        "err_m_n_ppb": 257.90709980141975
       },
       "mismatch_flags": [
         "producer (m_p_substrate_identity_50dps.py) still applies the FIT-TIER habiro dressing while the pin is RAW (owner ruling 2026-07-03) — at the raw pin the dressed m_p misses CODATA by ~+242 ppb; reconcile is #3280's owner options (bean 2i8g)",
@@ -154,20 +154,20 @@
       "available": true,
       "witness": "deuteron-real-sdp.witness.json",
       "full_space": {
-        "duality_gap": 43926.63578850925,
-        "primal_obj": -43926.64139405233,
-        "dual_obj": -0.005605543074008286,
-        "strong_duality_holds": false,
-        "diagnostic": "Real SDP UNBOUNDED at q_0 — Frobenius Gram is indefinite (negative-norm blocks forbidden). Phase B color-flavor constraints required for a well-posed bounded program."
+        "duality_gap": 3.675471791111477e-43,
+        "primal_obj": 3.675483346202144e-43,
+        "dual_obj": 1.155509066632219e-48,
+        "strong_duality_holds": true,
+        "diagnostic": "Real SDP bounded; strong duality holds."
       },
       "bounded_positive_norm_subspace": {
-        "duality_gap": 8.133288954092144e-43,
-        "primal_obj": -0.005596526576849293,
-        "dual_obj": -0.005596526576849293
+        "duality_gap": 1.3648726245612145e-42,
+        "primal_obj": 0.03696468028280623,
+        "dual_obj": 0.03696468028280623
       },
       "production_default_encoding": "5_lr_branching_canonical",
-      "tr_M_beta_D": 0.3883571887237822,
-      "frobenius_gram_indefinite": true,
+      "tr_M_beta_D": 0.5751722457697739,
+      "frobenius_gram_indefinite": false,
       "note": "ERROR SOURCE (structural, documented): the full-space real SDP at q₀ is UNBOUNDED (Frobenius Gram indefinite — negative-norm conjugate blocks, bar-involution signature); the bounded positive-norm program achieves duality gap 0. Per the witness the canonical LR-branching encoding (production default 5) does NOT yet reproduce B_D — that open item IS the Δ_λ gate, quantified at S5"
     },
     "S5_binding_routes": {
@@ -207,7 +207,7 @@
         "error_source": "link-volume route: error is the Kashaev linearization (tr ~ exp(Vol)) + the ρ-scale rule not yet derived for A>2"
       },
       "R4_diag_Qbeta_dtr": {
-        "B_MeV": "0.43540348160742937",
+        "B_MeV": "0.43540348160742938594",
         "err_rel_pct": -80.42748821736888,
         "ratio_AME_over_pred": 5.109206274114556,
         "tier": "DIAGNOSTIC (Q_β scale, self-labeled wrong-scale)",
@@ -225,95 +225,95 @@
     },
     "S6_composed_mass": {
       "proton_anchor": {
-        "nucleon_sum_MeV": "1877.8379824953053775",
+        "nucleon_sum_MeV": "1877.8379824951478816",
         "routes": {
           "R1_tower_level0_E0_dtr": {
-            "m_D_MeV": "1875.5082969190113463",
-            "err_m_D_ppm": -55.79407055577433,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1875.5082969188538505",
+            "err_m_D_ppm": -55.79407063974467,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": -0.10511937629403117
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1874.8734743637147143",
-            "err_m_D_ppm": -394.25545566667313,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1874.8734743635572185",
+            "err_m_D_ppm": -394.2554557506434,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": -0.7399419315906631
           },
           "R2_borromean_level0": {
-            "m_D_MeV": "1876.2213607571502939",
-            "err_m_D_ppm": 324.38236192184837,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1876.2213607569927981",
+            "err_m_D_ppm": 324.382361837878,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": 0.6079444618449165
           },
           "R2b_borromean_tower": {
-            "m_D_MeV": "1875.7749055454890527",
-            "err_m_D_ppm": 86.35072919538453,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1875.7749055453315568",
+            "err_m_D_ppm": 86.3507291114142,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": 0.16148925018367516
           },
           "R3_me_vol62": {
-            "m_D_MeV": "1875.5891616974040684",
-            "err_m_D_ppm": -12.68028281598983,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1875.5891616972465726",
+            "err_m_D_ppm": -12.680282899960165,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": -0.024254597901309065
           },
           "R4_diag_Qbeta_dtr": {
-            "m_D_MeV": "1877.4025790136979481",
-            "err_m_D_ppm": 954.1595553969415,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1877.4025790135404523",
+            "err_m_D_ppm": 954.1595553129712,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": 1.7891627183925707
           },
           "R5_rotational_mu0": {
-            "m_D_MeV": "1875.818399552173286",
-            "err_m_D_ppm": 109.53995211058111,
-            "error_from_nucleon_masses_MeV": 0.0004711253053774852,
+            "m_D_MeV": "1875.8183995520157902",
+            "err_m_D_ppm": 109.53995202661078,
+            "error_from_nucleon_masses_MeV": 0.0004711251478816402,
             "error_from_binding_MeV": 0.20498325686790853
           }
         }
       },
       "muon_anchor": {
-        "nucleon_sum_MeV": "1877.8375248808442014",
+        "nucleon_sum_MeV": "1877.8375248806867056",
         "routes": {
           "R1_tower_level0_E0_dtr": {
-            "m_D_MeV": "1875.5078393045501702",
-            "err_m_D_ppm": -56.038051843276094,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1875.5078393043926744",
+            "err_m_D_ppm": -56.03805192724643,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": -0.10511937629403117
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1874.8730167492535382",
-            "err_m_D_ppm": -394.4994369541749,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1874.8730167490960424",
+            "err_m_D_ppm": -394.49943703814523,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": -0.7399419315906631
           },
           "R2_borromean_level0": {
-            "m_D_MeV": "1876.2209031426891178",
-            "err_m_D_ppm": 324.1383806343466,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1876.220903142531622",
+            "err_m_D_ppm": 324.13838055037627,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": 0.6079444618449165
           },
           "R2b_borromean_tower": {
-            "m_D_MeV": "1875.7744479310278766",
-            "err_m_D_ppm": 86.10674790788276,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1875.7744479308703807",
+            "err_m_D_ppm": 86.10674782391243,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": 0.16148925018367516
           },
           "R3_me_vol62": {
-            "m_D_MeV": "1875.5887040829428924",
-            "err_m_D_ppm": -12.924264103491591,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1875.5887040827853965",
+            "err_m_D_ppm": -12.924264187461924,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": -0.024254597901309065
           },
           "R4_diag_Qbeta_dtr": {
-            "m_D_MeV": "1877.402121399236772",
-            "err_m_D_ppm": 953.9155741094397,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1877.4021213990792762",
+            "err_m_D_ppm": 953.9155740254694,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": 1.7891627183925707
           },
           "R5_rotational_mu0": {
-            "m_D_MeV": "1875.8179419377121099",
-            "err_m_D_ppm": 109.29597082307936,
-            "error_from_nucleon_masses_MeV": 1.3510844201418002e-05,
+            "m_D_MeV": "1875.8179419375546141",
+            "err_m_D_ppm": 109.29597073910902,
+            "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
             "error_from_binding_MeV": 0.20498325686790853
           }
         }

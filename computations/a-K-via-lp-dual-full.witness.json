@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-29T09:27:38.548550+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "computedAt": "2026-08-29T10:06:17.241323+00:00",
+  "commitSha": "85d4ee8bf9f089c29a0bec444f69ef02b40a0c40",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2298,
+  "durationMs": 2301,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
   "scriptHash": "50d3be1e17b7",
-  "scriptCommitSha": "a1b5edbfda0abadb45473f47433073c8c2513f74",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

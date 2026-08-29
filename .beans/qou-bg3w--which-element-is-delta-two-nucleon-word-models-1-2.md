@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-08-28T15:48:11Z
+updated_at: 2026-08-29T08:35:36Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -78,3 +78,48 @@ it is Delta_S. Neither result implies the other; do not merge them.
 An owner/corpus call on which element the decay channel is about, or a
 derivation that selects one. Until then the D-frame re-derivation cannot be
 posed, because the phase leg's status depends on the answer.
+
+
+## 2026-08-29 — the "possible THIRD model" is RESOLVED, and there is a FOURTH
+
+Probe: computations/qbeta/qbeta_d1_eleven_crossing_exclusion_probe.py (14/14).
+
+**The basis-convention check this bean asked for is done.** It said: *"Those
+constants are stored float64 and I did not verify that pyhecke uses the same
+basis ordering... Check the basis convention FIRST; do not treat -0.188291 as a
+measurement."*
+
+Checked. PROTON_NF/NEUTRON_NF are the output of pyhecke.atom.build_nucleon_nf,
+a **9-crossing** builder (3x(sigma_0, sigma_1^-1) = 6, plus 3 quark pairs; it
+omits the gluon dressing deliberately — "No separate gluon dressing — B_3 IS
+the gluon structure"). Its **exact** net is **-0.1883216147**. The stored
+float64 coordinate-sum difference is -0.188290601. **The coordinate sum IS net**
+and the residual is float64 h versus exact _H_FRAC. So the third model is real,
+it is the 9-crossing one, and -0.188291 is its net. The flag can come off.
+
+**A FOURTH construction exists and this bean conflates two of them.** There are
+three long models in pyhecke.atom, not one:
+
+     build_nucleon_nf     ( 9 crossings)      net = -0.1883216147
+     build_atom_nf_exact  (11, interleaved)   net = -0.2272041420
+     nucleon_gen_chains   (11, gen-grouped)   net = -0.2332458961
+
+The two 11-crossing builders carry the SAME multiset of typed crossings and
+differ only in ORDER — build_atom_nf_exact interleaves gen-0 and gen-1 within
+the B_3 block, nucleon_gen_chains emits all gen-0 then all gen-1. H_3(q) is not
+commutative across generators, so these are DIFFERENT ELEMENTS, and their nets
+differ by 2.6 %. This bean's Delta_L (-0.233198) is the **gen-grouped** one, via
+_PROTON_G0/_G1; the exact atom/mass pipeline uses the **interleaved** one.
+
+So the question this bean asks — *which element is Delta?* — has **four**
+candidates, not three, and two of them are 11-crossing.
+
+**What this does NOT change:** (D1) is unavailable for all three long models.
+The z^2 coefficient of tr_M is nonzero for each, with h = 0 as its only real
+root, against a substrate at h ~ 0.209. Details in the cds1 tail. Note in
+particular that **L+ vanishes exactly for this bean's Delta_L** — the exclusion
+there rides on L-, not L+.
+
+**Still open, and still the block on qou-cds1:** which element the decay channel
+is about. The candidate set is now measured and priced, but nothing here selects
+one.

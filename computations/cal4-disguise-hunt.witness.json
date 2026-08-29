@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T20:06:24.662058+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T07:02:59.567947+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [
     {
       "name": "no_unacknowledged_cal4_disguises_found",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "cal4-disguise-hunt",
   "scriptFile": "cal4_disguise_hunt.py",
   "scriptHash": "9c0a17d1e1a0",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,140 +24,198 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/cal4_disguise_hunt.py"
+    ],
+    "reproduce": "python3 -u computations/cal4_disguise_hunt.py"
   },
   "description": "Hunt for CAL-4 disguises beyond the literal pattern caught by fitted_labelled_canonical_audit. Three heuristics: (A) Möbius rational q-pencils, (B) PSLQ + substrate-claim + CODATA-target trifecta, (C) high-precision literals not in acknowledged CODATA/FITTED/VALIDATION slots. Exempts `# CAL-1/2/3/4`, `# FITTED_FROM_CODATA`, `# acknowledged`, `# noqa: P31/P32`, `_deprecated/`, and `codata_constants.py`.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
-    "scripts_scanned": 972,
-    "total_findings": 34,
+    "scripts_scanned": 3355,
+    "total_findings": 320,
     "findings_by_pattern": {
-      "C-unnamed-high-precision-literal": 33,
-      "A-mobius-pencil": 1
+      "C-unnamed-high-precision-literal": 243,
+      "A-mobius-pencil": 77
     },
     "findings": [
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
-        "line": 75,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v6_combined_canonical.py",
-        "line": 38,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v6_combined_canonical.py",
+        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
         "line": 41,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
+        "line": 52,
         "name": "Q_0",
         "value": "1.1097090249"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lepton_tower_bend_screening.py",
+        "line": 73,
+        "name": "M_E",
+        "value": "0.51099895000"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/gap_a3_overshoot_robustness_check.py",
+        "line": 66,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/a4_option_e_color_tube_closure.py",
+        "line": 29,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probe_kappa_normaliser_index_rule.py",
+        "line": 69,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_b2_bring_period_matrix_probe.py",
+        "line": 73,
+        "name": "MARKOV_NORM_WITNESS",
+        "value": "0.128620004175246883935741331662"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/a4_interface_kl_subpath_closure.py",
+        "line": 33,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/wedderburn_table_binding_recast.py",
+        "line": 69,
+        "name": "H1_BINDING_MEV",
+        "value": "13.598434599702"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/metallic_q_n4_character_sweep.py",
+        "line": 61,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probe_he4_canonical_tr_m_fingerprint.py",
+        "line": 98,
+        "name": "CITED_TR_M",
+        "value": "0.160974145442407381050787057621"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_two_loop_structure_probe.py",
+        "line": 64,
+        "name": "Q_P",
+        "value": "1.109978582751380808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lever1_sw_period_lw_rate_refine.py",
+        "line": 62,
+        "name": "TAU",
+        "value": "2.6423863133015"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/two_quark_active_set_mahler_sweep.py",
+        "line": 78,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probe_q6j_jm_spectral_delta_lambda.py",
+        "line": 46,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/generation_count_t29_truncation_probe.py",
+        "line": 78,
+        "name": "M_E",
+        "value": "0.51099895000"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_channel_split_loop_measure_probe.py",
+        "line": 111,
+        "name": "Q_P",
+        "value": "1.109978582751380808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/three_quark_borromean_lp_sweep.py",
+        "line": 51,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
+        "line": 52,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
+        "line": 54,
+        "name": "TRM_BETA_D",
+        "value": "0.38835725751524"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/whitehead_kashaev_volume.py",
+        "line": 53,
+        "name": "VOL_WHITEHEAD",
+        "value": "3.663862376708876060218414"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_q_reeb_phase_probe_v4.py",
+        "line": 40,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
         "file": "computations/su2_spinor_multiplicity_resolution.py",
-        "line": 83,
+        "line": 100,
         "name": "Q0",
         "value": "1.10997859561220225731080831999100762523924148"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
-        "line": 85,
-        "name": "VOL_7_SQ_1",
-        "value": "4.7494999818964"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v9_all_symmetries.py",
-        "line": 32,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v9_all_symmetries.py",
-        "line": 36,
-        "name": "Q_0",
-        "value": "1.1097090249"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd2_transcendental.py",
-        "line": 34,
-        "name": "VOL_41",
-        "value": "2.02988321281930725004240510854658"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/probe_full_theta_binding.py",
-        "line": 42,
-        "name": "M_E",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/probe_theta_carry_binding.py",
-        "line": 41,
-        "name": "M_E",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/e0_lambda_tryall.py",
-        "line": 60,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 56,
-        "name": "VOL_5_2",
-        "value": "2.82812208833"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 57,
-        "name": "VOL_6_1",
-        "value": "3.16396322648"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 58,
-        "name": "VOL_6_2",
-        "value": "4.40083251217"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 59,
-        "name": "VOL_6_3",
-        "value": "5.69302109614"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 60,
-        "name": "VOL_7_4",
-        "value": "5.13794120982"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/lambda_scale_rd4_k_p_search.py",
-        "line": 61,
-        "name": "VOL_8_1",
-        "value": "3.42720252426"
+        "file": "computations/em_linking_mirror_series_extension.py",
+        "line": 68,
+        "name": "PER_PAIR_UNIT",
+        "value": "0.237670225314853041078773435698"
       },
       {
         "pattern": "A-mobius-pencil",
@@ -168,115 +226,2068 @@
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_canonical_reeb_v5.py",
-        "line": 40,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
+        "file": "computations/alpha_em_schwinger_ladder_probe.py",
+        "line": 47,
+        "name": "Q_PROTON",
+        "value": "1.109978582751380808"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_canonical_reeb_v5.py",
-        "line": 41,
-        "name": "Q_0",
-        "value": "1.1097090249"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_deuteron_param_free_residual.py",
-        "line": 28,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_deuteron_param_free_residual.py",
-        "line": 32,
-        "name": "Q_0",
-        "value": "1.1097090249"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/probe_binding_measure_search.py",
-        "line": 45,
-        "name": "M_E",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_q_reeb_phase_probe_v4.py",
-        "line": 33,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/delta_lambda_full_variance_phase5e_1.py",
-        "line": 89,
-        "name": "M_E_MEV",
-        "value": "0.51099894999999995"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/delta_lambda_full_variance_phase5e_1.py",
-        "line": 222,
-        "name": "M_E_MEV",
-        "value": "0.51099894999999995"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v7_involution_aware.py",
-        "line": 37,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v7_involution_aware.py",
-        "line": 41,
-        "name": "Q_0",
-        "value": "1.1097090249"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
-        "line": 34,
-        "name": "M_E_MEV",
-        "value": "0.51099895069"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
-        "line": 38,
-        "name": "Q_0",
-        "value": "1.1097090249"
-      },
-      {
-        "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/probe_q6j_jm_spectral_delta_lambda.py",
+        "file": "computations/option_e_v9_all_symmetries.py",
         "line": 39,
         "name": "M_E_MEV",
         "value": "0.51099895069"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/audits/deuteron_delta_i_audit.py",
+        "file": "computations/option_e_v9_all_symmetries.py",
+        "line": 50,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
+        "line": 81,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_anchor_preference_probe.py",
+        "line": 47,
+        "name": "Q_PROTON",
+        "value": "1.109978582751380808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_anchor_preference_probe.py",
+        "line": 48,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probe_kappa_excess_convention_resolution.py",
+        "line": 71,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probe_kappa_excess_convention_resolution.py",
+        "line": 74,
+        "name": "M_E_MEV",
+        "value": "0.51099895000"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_canonical_reeb_v5.py",
+        "line": 47,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_canonical_reeb_v5.py",
+        "line": 55,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/binding_bstar_bridge.py",
+        "line": 54,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/delta_lambda_cancellation_ascaling_probe.py",
+        "line": 118,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/mmu_categorical_correction_refined_probe.py",
+        "line": 89,
+        "match": "(q) / (q + 1)",
+        "context": "return hbar ** 6 * hoefsmit_b(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v6_combined_canonical.py",
+        "line": 45,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v6_combined_canonical.py",
+        "line": 55,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 81,
+        "name": "VOL_5_2",
+        "value": "2.82812208833078316276389880928"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 82,
+        "name": "VOL_6_1",
+        "value": "3.16396322888314398399101471597"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 83,
+        "name": "VOL_6_2",
+        "value": "4.40083251612304610144120386564"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 84,
+        "name": "VOL_6_3",
+        "value": "5.69302109128130076511248327748"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 85,
+        "name": "VOL_7_4",
+        "value": "5.13794120187341776984134833947"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/lambda_scale_rd4_k_p_search.py",
+        "line": 86,
+        "name": "VOL_8_1",
+        "value": "3.42720524627401621986353959005"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em_b2_invariant_c_probe.py",
+        "line": 72,
+        "name": "ALPHA_EM",
+        "value": "0.0072973525693"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v7_involution_aware.py",
+        "line": 44,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_v7_involution_aware.py",
+        "line": 55,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/y_lambda_su_n.py",
+        "line": 275,
+        "name": "REG_ZC",
+        "value": "0.49932033418369445"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/y_lambda_su_n.py",
+        "line": 276,
+        "name": "REG_ZD",
+        "value": "0.61268803714646524"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/branching_q_threading_probe.py",
+        "line": 165,
+        "name": "BEAN_OLD",
+        "value": "0.5750908722902753612501"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/branching_q_threading_probe.py",
+        "line": 166,
+        "name": "TRANSFER_Q0",
+        "value": "0.5751722439177718708265353439861808891524943528928"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/m_tau_hecke_energy_route.py",
+        "line": 58,
+        "name": "VOL_41",
+        "value": "2.029883212819307"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_deuteron_param_free_residual.py",
+        "line": 36,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/option_e_deuteron_param_free_residual.py",
+        "line": 47,
+        "name": "Q_0",
+        "value": "1.1097090249"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/delta_lambda_qdim_route_probe.py",
+        "line": 131,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
+        "line": 67,
+        "name": "Q0",
+        "value": "1.1099785955573347117485528280749490295019743898536"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/deltalambda_parabolic_survivor_enumeration.py",
+        "line": 59,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/deltalambda/mirror_split_milnor_one_third_probe.py",
+        "line": 132,
+        "match": "(q)/(q+1)",
+        "context": "f_pp = sqrt(q)/(q+1)                                      = z_C"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
         "line": 112,
-        "name": "TR_M_PROTON_AT_Q0",
-        "value": "1.6331535640480814257473330892701240938276544598183"
+        "name": "TR_D_CACHED",
+        "value": "0.5751722439177718708265353439858617251768310907401"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/audits/deuteron_delta_i_audit.py",
-        "line": 113,
-        "name": "TR_M_NEUTRON_AT_Q0",
-        "value": "1.2482482717548397202242497985371807788067261625718"
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_sigmaD_leg_rate.py",
+        "line": 38,
+        "name": "LEAD_MARGIN",
+        "value": "0.300186614161"
       },
       {
         "pattern": "C-unnamed-high-precision-literal",
-        "file": "computations/audits/deuteron_delta_i_audit.py",
-        "line": 114,
-        "name": "TR_M_DEUTERON_AT_Q0",
-        "value": "0.3882864240747888"
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_sigmaD_leg_rate.py",
+        "line": 39,
+        "name": "LEAD_SIGRATIO",
+        "value": "0.679609581496"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_sigmaD_leg_rate.py",
+        "line": 40,
+        "name": "LEAD_RHO",
+        "value": "0.979796195657"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
+        "line": 65,
+        "name": "TR_P",
+        "value": "1.065306238075878215688040411687927620546686279347"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
+        "line": 66,
+        "name": "TR_N",
+        "value": "0.92323330514983772546573530276491123416377319107628"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
+        "line": 69,
+        "name": "MU_T",
+        "value": "4.444146924325849"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
+        "line": 70,
+        "name": "MU_3HE",
+        "value": "3.2918285794896933"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py",
+        "line": 111,
+        "name": "E_C_3HE_SPHERE",
+        "value": "0.8487393706040641"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py",
+        "line": 112,
+        "name": "E_C_3HE_PAIR",
+        "value": "0.7072828088367201"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_descent_dpp_variance_rate.py",
+        "line": 234,
+        "name": "RHO_INF",
+        "value": "0.979796195657"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/borromean_3body_cluster_sign_probe.py",
+        "line": 83,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/borromean_3body_cluster_sign_probe.py",
+        "line": 84,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/threerow_n12_isospin_control.py",
+        "line": 18,
+        "name": "Q0",
+        "value": "1.1099785827513808076"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_nonsaturating_mstar_diagnostic.py",
+        "line": 55,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_nonsaturating_mstar_diagnostic.py",
+        "line": 56,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_nonsaturating_mstar_diagnostic.py",
+        "line": 60,
+        "name": "TAU_P",
+        "value": "1.22036288908669305595736107223"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_nonsaturating_mstar_diagnostic.py",
+        "line": 61,
+        "name": "TRM_D",
+        "value": "0.7280918153466761555460727563"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/l1_ceiling_d_frame_remeasure.py",
+        "line": 80,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
+        "line": 43,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
+        "line": 55,
+        "name": "E_C_3HE_SPHERE",
+        "value": "0.8487393706040641"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
+        "line": 56,
+        "name": "E_C_3HE_PAIR",
+        "value": "0.7072828088367201"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/a3_units_consistency_probe.py",
+        "line": 79,
+        "name": "BCAT",
+        "value": "0.380132118905"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_debye_CA_investigation.py",
+        "line": 26,
+        "name": "RHO_INF",
+        "value": "0.979796195657"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/deuteron_naive_z_physical_probe.py",
+        "line": 78,
+        "name": "ME_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/deltalambda/a4_interface_operator_driver_search_probe.py",
+        "line": 103,
+        "match": "(q)/(q+1)",
+        "context": "\"z_C = sqrt(q)/(q+1) [conv-C, excised]\": mp.sqrt(q) / (q + 1),"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/deltalambda/a4_interface_operator_driver_search_probe.py",
+        "line": 103,
+        "match": "(q) / (q + 1)",
+        "context": "\"z_C = sqrt(q)/(q+1) [conv-C, excised]\": mp.sqrt(q) / (q + 1),"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_constant_C_landscape.py",
+        "line": 28,
+        "name": "M_INF",
+        "value": "0.300186614161"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
+        "line": 68,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
+        "line": 69,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
+        "line": 74,
+        "name": "TAU_P",
+        "value": "1.22036288908669305595736107223"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
+        "line": 75,
+        "name": "TRM_D",
+        "value": "0.7280918153466761555460727563"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_finite_n_cs_margin.py",
+        "line": 35,
+        "name": "LEAD_MARGIN",
+        "value": "0.300186614161"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_finite_n_cs_margin.py",
+        "line": 36,
+        "name": "LEAD_SIGRATIO",
+        "value": "0.679609581496"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/wlambda_covariance_epic_M1_finite_n_cs_margin.py",
+        "line": 37,
+        "name": "LEAD_RHO",
+        "value": "0.979796195657"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
+        "line": 88,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
+        "line": 89,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/schurweyl/ocneanu_weight_convention_d_support.py",
+        "line": 20,
+        "match": "(q)/(q+1)",
+        "context": "with two or more rows.  Convention C's z = sqrt(q)/(q+1) is not a member at any integer"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/schurweyl/ocneanu_weight_convention_d_support.py",
+        "line": 87,
+        "match": "(q) / (q + 1)",
+        "context": "zC = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/meson/satellite_degree_is_a_free_parameter_probe.py",
+        "line": 66,
+        "name": "TRM_2H_UNCABLED",
+        "value": "0.575172243918"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/spectrahedral_phase_collapse_frame_probe.py",
+        "line": 8,
+        "match": "(q)/(q+1)",
+        "context": "**convention-C** Gram (`z = sqrt(q)/(q+1)`, i.e. `u/(u^2+1)` with `u = sqrt q`)."
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_stokes_population_bridge_probe.py",
+        "line": 73,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_stokes_population_bridge_probe.py",
+        "line": 85,
+        "name": "O_PHI",
+        "value": "0.0109089607387"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/qbeta_fmap_power_class_prune.py",
+        "line": 89,
+        "match": "(q) / (1 + q)",
+        "context": "z = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/qbeta_fmap_power_class_prune.py",
+        "line": 162,
+        "match": "(q)/(1+q)",
+        "context": "\"explicit_weights\": \"y = (z, 1/2 - z, z), z = sqrt(q)/(1+q) (CanonicalMarkovWeightsH3.explicitInstance)\","
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 30,
+        "match": "(q)/(q+1)",
+        "context": "W4  `z_C = sqrt(q)/(q+1)` is not `z_r` for ANY r, identically in q:"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 59,
+        "match": "(q)/(q+1)",
+        "context": "every integer `r`, whereas `z_C = sqrt(q)/(q+1)` does not -- `x^2 - q` is"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 107,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 194,
+        "match": "(q)/(q+1)",
+        "context": "\"invariant\": \"z_r in Q(q) for all r; z_C = sqrt(q)/(q+1) not in Q(q)\","
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 345,
+        "match": "(q)/(q+1)",
+        "context": "(\"z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}\", sp.sqrt(q) / (q + 1),"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 345,
+        "match": "(q) / (q + 1)",
+        "context": "(\"z_C  = sqrt(q)/(q+1) = 1/[2]_{sqrt q}\", sp.sqrt(q) / (q + 1),"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_family.py",
+        "line": 404,
+        "match": "(q) / (q + 1)",
+        "context": "CONVENTION_Z = {\"D\": q**3 / (q**2 + 1), \"C\": sp.sqrt(q) / (q + 1)}"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
+        "line": 69,
+        "name": "Q0_CANONICAL",
+        "value": "1.1099785955573347198997632204832250266562084087802"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
+        "line": 71,
+        "name": "Q0_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_ck_basis_constrained_pslq.py",
+        "line": 72,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_3bp8_w2_direct_sheet_probe.py",
+        "line": 64,
+        "name": "TOWER_REF",
+        "value": "0.42764420131745803633"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/eunit_magnus_order2_probe.py",
+        "line": 126,
+        "match": "(q - 1) / (q + 1)",
+        "context": "t = (q - 1) / (q + 1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/eunit_magnus_order2_probe.py",
+        "line": 265,
+        "match": "(q - 1) / (q + 1)",
+        "context": "t = (q - 1) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_habiro_archimedean_action_setup_probe.py",
+        "line": 52,
+        "name": "VOL52",
+        "value": "2.8281220883307831627638988092766349427709813173006"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_route42_extended_bloch_anchor_probe.py",
+        "line": 92,
+        "name": "VOL_5_2",
+        "value": "2.828122088330783162"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/b4_connected_bar_parity_probe.py",
+        "line": 64,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_kashaev_vs_btower_phase_distinction_probe.py",
+        "line": 66,
+        "name": "Q0",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_n5_cable_qstar_probe.py",
+        "line": 59,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/ground_state_ordering_convention_independence_probe.py",
+        "line": 6,
+        "match": "(q)/(q+1)",
+        "context": "parameter `z = sqrt(q)/(q+1)` (convention C), which the 2026-08-15 owner ruling"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/ground_state_ordering_convention_independence_probe.py",
+        "line": 103,
+        "match": "(q) / (q + 1)",
+        "context": "zC = sp.sqrt(q) / (q + 1)      # convention C (excised 2026-08-15)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_higher_cable_qstar_probe.py",
+        "line": 59,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_higher_cable_qstar_probe.py",
+        "line": 60,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_higher_cable_qstar_probe.py",
+        "line": 61,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/interface_factor_categorical_derivation_probe.py",
+        "line": 53,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/gap_a3_plambda_bar_even_admissibility_probe.py",
+        "line": 89,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py",
+        "line": 53,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py",
+        "line": 55,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py",
+        "line": 57,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/keystone_framing_is_phase.py",
+        "line": 54,
+        "name": "Q0",
+        "value": "1.1099785955541805"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/ground_state_ordering_argmin_sweep.py",
+        "line": 93,
+        "match": "(q)/(q+1)",
+        "context": "self.z = +(q ** 3 / (q ** 2 + 1))   # convention D (was C: sqrt(q)/(q+1))"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_sigma3_anchor_test_probe.py",
+        "line": 61,
+        "name": "Q0_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_sigma3_anchor_test_probe.py",
+        "line": 63,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_one_instanton_nodd_probe.py",
+        "line": 54,
+        "name": "Q0",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_borel_conformal_pade_probe.py",
+        "line": 87,
+        "name": "A0_TRIAL",
+        "value": "0.617661555754"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py",
+        "line": 73,
+        "name": "VOL_41",
+        "value": "2.029883212819307"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_substrate_meridian_branchpoint_probe.py",
+        "line": 50,
+        "name": "Q0",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_quantum_volume_probe.py",
+        "line": 47,
+        "name": "VOL_5_2",
+        "value": "2.8281220883307831627638988092766349427709813173006"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_sigma3_nodd_shape_probe.py",
+        "line": 60,
+        "name": "Q0",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/keystone_lr_modulus_d2_collapse_test.py",
+        "line": 76,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/magic_a_truncation_overclaim_correction_probe.py",
+        "line": 37,
+        "name": "ME",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py",
+        "line": 64,
+        "name": "T_ODD_B3IX",
+        "value": "0.01916053432"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py",
+        "line": 65,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471989976322048322502665620840878015368"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_odd_two_route_confrontation_probe.py",
+        "line": 82,
+        "name": "IM_VB",
+        "value": "0.0585499951473"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/difference_knot_binding_probe.py",
+        "line": 92,
+        "name": "_Q0",
+        "value": "1.1099785955573347"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/stacked_interface_writhe_normalised_probe.py",
+        "line": 104,
+        "name": "E0",
+        "value": "4.1859813632944758969"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/interface_factor_enhancing_check_probe.py",
+        "line": 37,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_tower_verify.py",
+        "line": 37,
+        "match": "(q)/(q+1)",
+        "context": "* z_C = sqrt(q)/(q+1) is convention C (excised as canonical, but"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_tower_verify.py",
+        "line": 184,
+        "match": "(q) / (q + 1)",
+        "context": "z_C = mp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_tower_verify.py",
+        "line": 205,
+        "match": "(q)/(q+1)",
+        "context": "print(f\"  z_C = sqrt(q)/(q+1) = {mp.nstr(z_C, 30)}  -> r = {mp.nstr(r_C, 20)}\")"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/wenzl_level_tower_verify.py",
+        "line": 223,
+        "match": "(q)/(q+1)",
+        "context": "\"z_C\": {\"expr\": \"sqrt(q)/(q+1)\", \"value\": mp.nstr(z_C, 50),"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_phib_2loop_bdictionary_probe.py",
+        "line": 64,
+        "name": "Q0_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_phib_2loop_bdictionary_probe.py",
+        "line": 65,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/flavor_split_alpha_qbeta_amplification_probe.py",
+        "line": 41,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/gswz_program_convention_immunity_probe.py",
+        "line": 28,
+        "match": "(q)/(q+1)",
+        "context": "expressions sqrt(q)/(q+1) and q^3/(q^2+1) appear nowhere."
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/gswz_program_convention_immunity_probe.py",
+        "line": 88,
+        "match": "(q)/(q + 1)",
+        "context": "Z_TOKENS = (\"z_C\", \"z_D\", \"sqrt(q)/(q + 1)\", \"sqrt(q)/(q+1)\","
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/gswz_program_convention_immunity_probe.py",
+        "line": 88,
+        "match": "(q)/(q+1)",
+        "context": "Z_TOKENS = (\"z_C\", \"z_D\", \"sqrt(q)/(q + 1)\", \"sqrt(q)/(q+1)\","
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_qnnq_afree_theta_constraint_probe.py",
+        "line": 89,
+        "name": "THETA_T4_MUON",
+        "value": "0.058592016840059722"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_qnnq_afree_theta_constraint_probe.py",
+        "line": 90,
+        "name": "THETA_T4_PROTON",
+        "value": "0.20313250701827611"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_n6_cable_qstar_probe.py",
+        "line": 63,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_multiblock_ck_lambda_probe.py",
+        "line": 26,
+        "name": "Q_N2",
+        "value": "0.782334410277840137760143636388"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_order3_barodd_tail_probe.py",
+        "line": 85,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/aomega_o2_stokes_to_observable_mechanism.py",
+        "line": 62,
+        "name": "VOL_4_1",
+        "value": "2.02988321282"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/aomega_o2_stokes_to_observable_mechanism.py",
+        "line": 70,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/gap_a3_transpose_invariant_plambda_probe.py",
+        "line": 76,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_gk_bilinear_pairing_probe.py",
+        "line": 62,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/nastokes_surface_curvature_trefoil_probe.py",
+        "line": 66,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/keystone_colored_sigma235_wrt.py",
+        "line": 73,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_stokes_constant_kappa_amplitude_probe.py",
+        "line": 71,
+        "name": "LANDED_U0_AMPLITUDE",
+        "value": "2.75298149023"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_stokes_constant_kappa_amplitude_probe.py",
+        "line": 72,
+        "name": "LANDED_DEFORMED_IM",
+        "value": "0.0156406676018"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_g3_5two_qborel_theta_laplace.py",
+        "line": 69,
+        "name": "IM_VB",
+        "value": "0.0585499951473"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/borromean_tau_convention_frame_probe.py",
+        "line": 7,
+        "match": "(q)/(q+1)",
+        "context": "canonical and excises **C** (`z_C = sqrt(q)/(q+1)`).  Draining the C sites"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/borromean_tau_convention_frame_probe.py",
+        "line": 171,
+        "match": "(q)/(q+1)",
+        "context": "z_C = s / (Q + 1)            # 1/(sqrt q + 1/sqrt q) = sqrt(q)/(q+1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/borromean_tau_convention_frame_probe.py",
+        "line": 201,
+        "match": "(q)/(q+1)",
+        "context": "for tag, zv in ((\"z_C = sqrt(q)/(q+1)\", z_C), (\"z_D = q^3/(q^2+1)\", z_D)):"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_g3_5two_masbaum_barodd_profile.py",
+        "line": 66,
+        "name": "IM_VB",
+        "value": "0.0585499951473"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
+        "line": 185,
+        "name": "LEGACY_IM_V1",
+        "value": "1.3790860299"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_median_borel_resummation_probe.py",
+        "line": 67,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_n3_cable_arbitration_probe.py",
+        "line": 373,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/gap_a3_deuteron_p_lambda_channels_probe.py",
+        "line": 84,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_g3_5two_saddle_exact_predictions.py",
+        "line": 63,
+        "name": "VOL52",
+        "value": "2.82812208833078316276389880928"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_legacy_provenance_narrowing_probe.py",
+        "line": 42,
+        "name": "L1",
+        "value": "1.3790860299"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_phi_series_tau2_arbitration_probe.py",
+        "line": 69,
+        "name": "VOL_5_2",
+        "value": "2.8281220883307831627638988092766349427709813173006"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_additive_linked_cluster_probe.py",
+        "line": 48,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_additive_linked_cluster_probe.py",
+        "line": 50,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_additive_linked_cluster_probe.py",
+        "line": 54,
+        "name": "TAU_P",
+        "value": "1.22036288908669305595736107223"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_additive_linked_cluster_probe.py",
+        "line": 55,
+        "name": "TRM_D",
+        "value": "0.7280918153466761555460727563"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/aomega_6y1p_swing_reframe_not_tractable.py",
+        "line": 43,
+        "name": "Q_PROTON",
+        "value": "1.10997858275138"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/aomega_6y1p_swing_reframe_not_tractable.py",
+        "line": 44,
+        "name": "Q_MUON",
+        "value": "1.10997859555733"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
+        "line": 64,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
+        "line": 66,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/fivetwo_ak_state_integral.py",
+        "line": 82,
+        "name": "Q0_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/xq_habiro_target_slope_probe.py",
+        "line": 27,
+        "name": "Q_N2",
+        "value": "0.782334410277840137760143636388"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/probe_alpha.py",
+        "line": 3,
+        "match": "(q)/(1 + q)",
+        "context": "Convention **D**: z = q^3/(q^2 + 1). This read `z = sp.sqrt(q)/(1 + q)` —"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_c3_deformed_median_discontinuity_probe.py",
+        "line": 62,
+        "name": "IM_V_ONRAY_REF",
+        "value": "0.0585499951473"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/tau_binding_hitchin_wzw_wall_probe.py",
+        "line": 86,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/tower_e0_pole_conditioning_probe.py",
+        "line": 108,
+        "name": "JUNE_E0_FULL",
+        "value": "243.5284427694042"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/b4_antisym_hecke_exchange_derivation.py",
+        "line": 71,
+        "name": "E0",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/markov_reduction_h3_to_h4_verify.py",
+        "line": 42,
+        "match": "(q)/(q+1)",
+        "context": "`sqrt(q)/(q+1)` = 0.4993203342; the canonical convention since the"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/perknot_additive_sk_vs_kA_extensivity.py",
+        "line": 69,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/interface_4body_assembly_probe.py",
+        "line": 44,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/interface_4body_assembly_probe.py",
+        "line": 46,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_masbaum_block_row_probe.py",
+        "line": 72,
+        "name": "F_CONV_REF",
+        "value": "0.9861565521"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/per_channel_wenzl_level.py",
+        "line": 110,
+        "match": "(q)/(1+q)",
+        "context": "\"mpsqrt(q)/(1+q)   [= z_C]\","
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/per_channel_wenzl_level.py",
+        "line": 111,
+        "match": "(q) / (1 + q)",
+        "context": "lambda: mp.sqrt(q) / (1 + q)),"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/probes/per_channel_wenzl_level.py",
+        "line": 133,
+        "match": "(q) / (1 + q)",
+        "context": "guess = 2.5 if abs(z - mp.sqrt(q) / (1 + q)) < mp.mpf(\"1e-30\") else 2.0"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_habiro_tail_barodd_action_probe.py",
+        "line": 47,
+        "name": "VOL52_OVER_PI",
+        "value": "2.82812208833"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+        "line": 80,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+        "line": 81,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+        "line": 82,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/probes/qbeta_5two_colored_tower_barodd_qstar_probe.py",
+        "line": 83,
+        "name": "VOL_5_2",
+        "value": "2.8281220883307832"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/substrate/z2bn_tau_gauss_manin_sage_probe.py",
+        "line": 88,
+        "name": "Q0",
+        "value": "1.1099785955573347199"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/substrate/lever1_trB_quantum_integer_form.py",
+        "line": 60,
+        "name": "Q0",
+        "value": "1.1099785955573347198997632204832250266562084087802"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/substrate/zeropoint_unit_candidate_gate_probe.py",
+        "line": 43,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/substrate/lever1_trB_geometric_target.py",
+        "line": 55,
+        "name": "Q0",
+        "value": "1.1099785955573347198997632204832250266562084087802"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/alpha_em/alpha_em_nonD_index_route_probe.py",
+        "line": 86,
+        "name": "D_OBS_Q0",
+        "value": "11.356887025943677419"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/habiro/habiro_mass_table_convention_attribution_probe.py",
+        "line": 35,
+        "match": "(q)/(q+1)",
+        "context": "convention C: z = sqrt(q)/(q+1)        convention D: z = q^3/(q^2+1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/habiro/qbeta_h4_tower_branching_preflight.py",
+        "line": 66,
+        "name": "Q",
+        "value": "1.1099785955573347198997632204832250266562084087801536866079811461"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_eval_map_bar_decomposition_probe.py",
+        "line": 13,
+        "match": "(q)/(1+q)",
+        "context": "with h = q - 1/q the Hecke parameter and z = sqrt(q)/(1+q) the Markov loop"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_eval_map_bar_decomposition_probe.py",
+        "line": 48,
+        "match": "(q) / (1 + q)",
+        "context": "z = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py",
+        "line": 10,
+        "match": "(q)/(1+q)",
+        "context": "- z - 1/2 vanishes at q=1 to order exactly 2 (z = sqrt(q)/(1+q) is"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py",
+        "line": 68,
+        "match": "(q) / (1 + q)",
+        "context": "z = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py",
+        "line": 298,
+        "match": "(q) / (1 + q)",
+        "context": "zC = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_admissible_functionals_bracket_probe.py",
+        "line": 75,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_decay_channel_convention_status_probe.py",
+        "line": 79,
+        "match": "(q) / (1 + q)",
+        "context": "return mp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_bar_odd_sinh_partner_check_probe.py",
+        "line": 36,
+        "match": "(q-1) / (q+1)",
+        "context": "q -> -1/q   ->  q^3 (q-1) / (q+1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_crossing_weight_affine_probe.py",
+        "line": 14,
+        "match": "(q)/(1+q)",
+        "context": "crossing weights w, w0 bar-EVEN (z = sqrt(q)/(1+q) is bar-even, KC13)."
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step2_n4.py",
+        "line": 54,
+        "name": "H_Q_SUBSTRATE",
+        "value": "0.092250227040225014"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step2_n4.py",
+        "line": 56,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+        "line": 122,
+        "match": "(q) / (q + 1)",
+        "context": "for zname, z in ((\"C\", mp.sqrt(q) / (q + 1)), (\"D\", q**3 / (q**2 + 1))):"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
+        "line": 99,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
+        "line": 77,
+        "name": "M_E_MEV",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_alpha_commutator_floor_probe.py",
+        "line": 92,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py",
+        "line": 65,
+        "match": "(q) / (1 + q)",
+        "context": "return mp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_dladder_qborel_leroy_resummation_probe.py",
+        "line": 69,
+        "name": "VOL41_OVER_PI",
+        "value": "0.6461320971509606"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/gram_mp_path_convention_d_migration_probe.py",
+        "line": 24,
+        "match": "(q)/(q+1)",
+        "context": "`1/(sqrt(q) + 1/sqrt(q))` IS `sqrt(q)/(q+1)` exactly, so a grep for the"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/gram_mp_path_convention_d_migration_probe.py",
+        "line": 232,
+        "match": "(q)/(q+1)",
+        "context": "\"detector-blind 1/(sqrt(q)+1/sqrt(q)) = sqrt(q)/(q+1) catalogued in PR \""
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/gram_mp_path_convention_d_migration_probe.py",
+        "line": 101,
+        "name": "Z_C_PRE_MIGRATION",
+        "value": "0.49932033418369445241344272"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/kc21_kc22_glyph_and_anchor_robustness_check.py",
+        "line": 103,
+        "name": "RHO_PUBLISHED",
+        "value": "0.14279999664468968890572088577932032058109273315046"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
+        "line": 75,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
+        "line": 76,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
+        "line": 77,
+        "name": "Q_STAR",
+        "value": "1.10997859303152"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+        "line": 104,
+        "name": "Q0_PROTON",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+        "line": 105,
+        "name": "Q0_MUON",
+        "value": "1.10997859555418057528159407961"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_barodd_pole_cusp_phase_probe.py",
+        "line": 74,
+        "name": "Q0_MUON",
+        "value": "1.10997858275138080759166909561076887987"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_c3even_exact_sseries_probe.py",
+        "line": 8,
+        "match": "(q)/(q-1)",
+        "context": "Qb/me  = sgn * [Delta(net)(q)/(q-1)] / q      (regularised; finite at q=1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_sinh_partner_object_identification_probe.py",
+        "line": 131,
+        "match": "(q) / (q + 1)",
+        "context": "z_C = mp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
+        "line": 46,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_phase_block_resolution_probe.py",
+        "line": 77,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_frakv_transport_blocked_probe.py",
+        "line": 86,
+        "name": "Q0",
+        "value": "1.10997858275138080759166909561076887987449912187357873607281"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_frakv_transport_blocked_probe.py",
+        "line": 88,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_dladder_jackson_qborel_acceleration_probe.py",
+        "line": 84,
+        "name": "QSTAR",
+        "value": "1.109978593031523288402328"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/ck_qgevrey_slope_probe.py",
+        "line": 77,
+        "name": "Q0",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/ck_qgevrey_slope_probe.py",
+        "line": 78,
+        "name": "U",
+        "value": "0.008517234550156142"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_cross_anchor_exactness_probe.py",
+        "line": 41,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_cross_anchor_exactness_probe.py",
+        "line": 43,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_cross_anchor_exactness_probe.py",
+        "line": 44,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_utils.py",
+        "line": 71,
+        "match": "(q) / (1 + q)",
+        "context": "return mpsqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_utils.py",
+        "line": 152,
+        "match": "(q)/(1+q)",
+        "context": "visible to `grep`, which an inline `sqrt(q)/(1+q)` never was."
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py",
+        "line": 60,
+        "name": "VOL_4_1",
+        "value": "2.029883212819307250042405108549"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d_frame_eigenphase_bar_parity_probe.py",
+        "line": 119,
+        "match": "(q) / (1 + q)",
+        "context": "z_c = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d_frame_eigenphase_bar_parity_probe.py",
+        "line": 162,
+        "match": "(q) / (1 + q)",
+        "context": "z_c = mp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_dladder_ecalle_phib_resummation.py",
+        "line": 87,
+        "name": "QSTAR",
+        "value": "1.109978593031523288402328"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_ladder_required_phase_probe.py",
+        "line": 72,
+        "match": "(q) / (1 + q)",
+        "context": "return mp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/gram_convention_d_singularity_structural_probe.py",
+        "line": 30,
+        "match": "(q)/(q+1)",
+        "context": "`z_mp` hardcode `z = 1/(sqrt(q) + sqrt(1/q))`, which IS `sqrt(q)/(q+1)` -- one"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/xi_classical_limit_probe.py",
+        "line": 253,
+        "name": "CATALAN",
+        "value": "0.915965594177219015054603514932384110774"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/xi_classical_limit_probe.py",
+        "line": 299,
+        "name": "CATALAN",
+        "value": "0.915965594177219015054603514932384110774"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py",
+        "line": 51,
+        "name": "Q0",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d_frame_tl_quotient_phase_probe.py",
+        "line": 70,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+        "line": 59,
+        "name": "Q_PROTON",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+        "line": 60,
+        "name": "Q_MUON",
+        "value": "1.10997859555418057528159407961"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
+        "line": 71,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py",
+        "line": 59,
+        "match": "(q)/(1 + q)",
+        "context": "z_C, z_D = sqrt(q)/(1 + q), q**3/(q**2 + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_closure_piecewise_fibre_archimedean_probe.py",
+        "line": 87,
+        "name": "Q0_MP",
+        "value": "1.1099785955573347198997632204832250266562084087802"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+        "line": 100,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+        "line": 101,
+        "name": "Q_MUON",
+        "value": "1.10997859555"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+        "line": 488,
+        "name": "PHI2_TARGET",
+        "value": "1.46324616887618"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
+        "line": 59,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_imq_ratio_and_entropy_probe.py",
+        "line": 49,
+        "name": "QM",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_imq_ratio_and_entropy_probe.py",
+        "line": 50,
+        "name": "QP",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+        "line": 92,
+        "match": "(q) / (q + 1)",
+        "context": "\"z_C\": mp.sqrt(q) / (q + 1),"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_ck_coordinate_magnifier_probe.py",
+        "line": 79,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py",
+        "line": 132,
+        "match": "(q)/(1+q)",
+        "context": "C (full-Hecke Ocneanu/Wenzl):   sqrt(q)/(1+q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py",
+        "line": 137,
+        "match": "(q) / (1 + q)",
+        "context": "return mp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+        "line": 105,
+        "match": "(q) / (q + 1)",
+        "context": "z_C = mp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
+        "line": 91,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_z_convention_analytic_separation_probe.py",
+        "line": 15,
+        "match": "(q)/(q+1)",
+        "context": "Four properties that `z_C = sqrt(q)/(q+1)` has and `z_D = q^3/(q^2+1)` does not,"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_z_convention_analytic_separation_probe.py",
+        "line": 75,
+        "match": "(q) / (1 + q)",
+        "context": "Z_C = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+        "line": 65,
+        "name": "Q_PROTON",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+        "line": 66,
+        "name": "Q_MUON_FALSIF",
+        "value": "1.10997859555"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_borel_pade_deformed_meridian_probe.py",
+        "line": 59,
+        "name": "ODD_PARTIAL_3691",
+        "value": "0.0567896600197945"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_fmap_modular_dual_missing_probe.py",
+        "line": 67,
+        "name": "Q0",
+        "value": "1.10997859555733471989976322048322502665620840878015"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_which_algebra_the_decay_channel_lives_in_probe.py",
+        "line": 77,
+        "match": "(q) / (q + 1)",
+        "context": "Z_C = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/sdp_offset_quotient_reposing_probe.py",
+        "line": 88,
+        "name": "C_FRAME_SEPARATION",
+        "value": "0.35511896745886595067"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
+        "line": 39,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
+        "line": 40,
+        "name": "Q_MUON_50",
+        "value": "1.1099785955541805752815940796095093779932822799587"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_ladder_phase_from_wedderburn_weights.py",
+        "line": 340,
+        "match": "(q) / (1 + q)",
+        "context": "mp.nstr(at0((2 * sp.sqrt(q) / (1 + q) - h_sym) / two_q), 20),"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/c3_even_canonical_split_contradiction.py",
+        "line": 132,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/c3_even_canonical_split_contradiction.py",
+        "line": 133,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/c3_even_canonical_split_contradiction.py",
+        "line": 137,
+        "name": "VOL_41",
+        "value": "2.029883212819307"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d1_admissible_anchor_probe.py",
+        "line": 7,
+        "match": "(q)/(q+1)",
+        "context": "* \"excise convention C\"                     -- z_C = sqrt(q)/(q+1)"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d1_admissible_anchor_probe.py",
+        "line": 64,
+        "match": "(q) / (q + 1)",
+        "context": "zC = sp.sqrt(q) / (q + 1)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c_k_recursion_depth_sweep.py",
+        "line": 73,
+        "name": "Q_0",
+        "value": "1.1099785955573347198997632204832250266562084087802"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d_frame_markov_weights_probe.py",
+        "line": 120,
+        "match": "(q) / (1 + q)",
+        "context": "z_c = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+        "line": 105,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+        "line": 106,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+        "line": 107,
+        "name": "Q_MUON",
+        "value": "1.10997859555"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_d_frame_two_row_cap_prune_probe.py",
+        "line": 89,
+        "name": "M_E",
+        "value": "0.51099895069"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py",
+        "line": 91,
+        "match": "(q) / (1 + q)",
+        "context": "zC = lambda q: mp.sqrt(q) / (1 + q)        # noqa: E731"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
+        "line": 265,
+        "match": "(q) / (1 + q)",
+        "context": "zC = sp.sqrt(q) / (1 + q)"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
+        "line": 62,
+        "name": "U_SUBSTRATE_PROTON",
+        "value": "0.008517234550156142"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
+        "line": 63,
+        "name": "U_SUBSTRATE_MUON",
+        "value": "0.008517236340043958"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_barodd_nz_deformation_probe.py",
+        "line": 50,
+        "name": "Q_PROTON",
+        "value": "1.1099785827513808075916690956107688798744991218736"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_c3_barodd_nz_deformation_probe.py",
+        "line": 51,
+        "name": "Q_MUON",
+        "value": "1.10997859555733471"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
+        "line": 49,
+        "name": "Q_PROTON_50",
+        "value": "1.10997858275138080759166909561"
+      },
+      {
+        "pattern": "C-unnamed-high-precision-literal",
+        "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
+        "line": 51,
+        "name": "Q_MUON_50",
+        "value": "1.1099785955541805752815940796095093779932822799587"
+      },
+      {
+        "pattern": "A-mobius-pencil",
+        "file": "computations/qbeta/qbeta_d_frame_admissible_base_correction_search_probe.py",
+        "line": 83,
+        "match": "(q) / (q + 1)",
+        "context": "zC = mp.sqrt(q) / (q + 1)"
       }
     ]
   }

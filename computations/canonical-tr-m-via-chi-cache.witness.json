@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T20:18:15.488819+00:00",
-  "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+  "computedAt": "2026-08-29T07:03:01.261181+00:00",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 64,
+  "durationMs": 75,
   "computation": "canonical-tr-m-via-chi-cache",
   "scriptFile": "canonical_tr_m_via_chi_cache.py",
-  "scriptHash": "f024ad1573c4",
-  "scriptCommitSha": "0d573e1cbdce05504fb0ba9f7082e21a902dcc98",
+  "scriptHash": "9d323748543e",
+  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -146,7 +146,7 @@
       "tr_M_q0": "0.57517224391777187082653534398618088915249435289287",
       "abs_tr_M_q0": "0.57517224391777187082653534398618088915249435289287",
       "y_lambda_load_time_sec": "0.003",
-      "tr_m_sum_time_sec": "0.000",
+      "tr_m_sum_time_sec": "0.001",
       "per_lambda": [
         {
           "partition": [
@@ -274,7 +274,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.22931010210455650733209081026890887960280163645606",
       "abs_tr_M_q0": "0.22931010210455650733209081026890887960280163645606",
-      "y_lambda_load_time_sec": "0.010",
+      "y_lambda_load_time_sec": "0.011",
       "tr_m_sum_time_sec": "0.001",
       "per_lambda": [
         {
@@ -629,7 +629,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.4037670368514281703686702533334025411550870705919",
       "abs_tr_M_q0": "0.4037670368514281703686702533334025411550870705919",
-      "y_lambda_load_time_sec": "0.009",
+      "y_lambda_load_time_sec": "0.011",
       "tr_m_sum_time_sec": "0.001",
       "per_lambda": [
         {
@@ -984,7 +984,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
       "tr_M_q0": "0.16097414544240738182587344098071685392360735413344",
       "abs_tr_M_q0": "0.16097414544240738182587344098071685392360735413344",
-      "y_lambda_load_time_sec": "0.033",
+      "y_lambda_load_time_sec": "0.039",
       "tr_m_sum_time_sec": "0.003",
       "per_lambda": [
         {

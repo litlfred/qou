@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T03:01:01.395945+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T08:22:57.705849+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "polynomial_factor_not_cyclotomic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "qbeta-fsc-g-pattern-comparison",
   "scriptFile": "qbeta_fsc_g_pattern_comparison.py",
   "scriptHash": "1233493198f1",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,11 +56,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "6d3984f107c945d27de12b8e69707b07f266280845b19418caacaf267f261200",
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
         "size_bytes": 6238,
-        "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
-        "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
-        "computedAt": "2026-08-28T20:41:41.698540+00:00"
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
