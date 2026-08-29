@@ -129,6 +129,56 @@ def n_diff(X: FastHecke, Y: FastHecke) -> int:
                if X.terms.get(w, {}) != Y.terms.get(w, {}))
 
 
+def trace_by_zpower(E) -> dict:
+    """The Markov trace with z kept FREE, resolved by z-power.
+
+    tr(T_w) = z^(n - cycles(w)), so the trace is
+        sum_k z^(n-k) * (sum of coefficients over w with cycles(w) = k).
+    Returning {z-power: Laurent(q)} IS the trace, exactly, with z symbolic.
+    """
+    out: dict = {}
+    for w, c in E.terms.items():
+        seen, cyc = set(), 0
+        for s0 in range(len(w)):
+            if s0 in seen:
+                continue
+            cyc += 1
+            x = s0
+            while x not in seen:
+                seen.add(x)
+                x = w[x] - 1
+        k = E.n - cyc
+        out[k] = lau_add(out.get(k, {}), c)
+    return {k: v for k, v in out.items() if v}
+
+
+def coloured_trace_separates(E) -> dict:
+    """#5928 proved the UNCOLOURED trace cannot separate these at any z.
+    Does the canonical COLOURED bridge change that?"""
+    print("\n" + "=" * 74)
+    print("Does the COLOURED trace see what the uncoloured one provably cannot?")
+    print("=" * 74)
+    T = {k: trace_by_zpower(v) for k, v in E.items() if k != "np"}
+    for k in ("pn", "pp", "nn"):
+        print(f"    tr({k}) z-powers present: {sorted(T[k])}")
+    rows = {}
+    for k in ("pp", "nn"):
+        dz = sorted(z for z in set(T[k]) | set(T["pn"])
+                    if T[k].get(z, {}) != T["pn"].get(z, {}))
+        print(f"    tr({k}) == tr(pn): {T[k] == T['pn']}   z-powers differing: {dz}")
+        rows[k] = dz
+    print("\n    YES. And note tr(pp) has NO z^0 term at all -- the p-p interface")
+    print("    carries d = 0, so it contributes no scalar, and the identity")
+    print("    permutation drops out entirely.")
+    print()
+    print("    This closes the criterion derived in #5928: 'any p/n-sensitive")
+    print("    weighting must BREAK the block factorisation'. The canonical")
+    print("    convention does, and the trace sees the result. The uncoloured")
+    print("    blindness proved there was correctly scoped.")
+    assert all(rows.values()), "the coloured trace failed to separate -- rewrite this"
+    return rows
+
+
 def main():
     E = {"pn": bridged(P_A, N_B, "pn"), "np": bridged(N_A, P_B, "pn"),
          "pp": bridged(P_A, P_B, "pp"), "nn": bridged(N_A, N_B, "nn")}
@@ -141,7 +191,9 @@ def main():
     print("\n    Every bare-word bridge in this arc gave 28 == 28. The arc's")
     print("    negatives are scoped to bare-word bridges, not to the framework.")
     assert d_ppnn != d_pnnp, "tau not broken -- the docstring is now wrong"
-    return {"pp_vs_nn": d_ppnn, "pn_vs_np": d_pnnp, "tau_broken": True}
+    tr = coloured_trace_separates(E)
+    return {"pp_vs_nn": d_ppnn, "pn_vs_np": d_pnnp, "tau_broken": True,
+            "coloured_trace_separates": {k: v for k, v in tr.items()}}
 
 
 if __name__ == "__main__":
