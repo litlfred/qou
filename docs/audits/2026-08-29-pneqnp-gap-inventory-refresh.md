@@ -159,12 +159,49 @@ class-conditional into an outright theorem at every rank, which discharges the
 barrier — semisimplicity is a magnitude-axis fact — but it removes one of the
 two remaining cited classes from the conditional chain.
 
-**2. `qou-z0pr` — wire the proved n=2/3/4 semisimplicity into
-`PNeqNpEquivalence`.** Small, mechanical, and currently *not done*: the
-concrete instances exist (`H2TraceForm`, `HeckeH3Semisimple`,
-`HeckeH4Semisimple`) but `PNeqNpEquivalence` still consumes the cited class at
-those ranks. Low cost, immediate honesty gain — the conditional statement gets
-strictly smaller.
+**2. ~~`qou-z0pr` — wire the proved n=2/3/4 semisimplicity into
+`PNeqNpEquivalence`.~~ 🛑 ATTEMPTED AND CLOSED AS NOT ACHIEVABLE — see §3a.**
+I recommended this here as "small, mechanical". That was wrong, and the reason
+it is wrong is more useful than the item was.
+
+### §3a. `qou-z0pr` attempted — why it cannot be done, and what came out of it
+
+Worked 2026-08-29. The bean asks to *"replace cited `WenzlCriterion` class;
+`counting_faithfulness_of_one_lt` fully proved modulo complexity citations
+only"*. **It cannot be done, and not for a fixable reason.**
+
+1. **The consumer needs *all* ranks.** `counting_faithfulness_of_one_lt`
+   instantiates the cited layer's `semisimple` parameter at `(∀ n, ss n)`.
+   Finitely many proved ranks cannot entail a `∀ n` statement. This is not an
+   artifact of the encoding: JVW `#P`-hardness genuinely needs unbounded rank,
+   because the hard link family has unboundedly many strands.
+2. **The three proved ranks sit on three unrelated carrier types** — `H2 R q`
+   (an `AdjoinRoot`), `H3A`, `H4A`. There is no uniform object they are ranks
+   *of*.
+3. **The one uniform family was orphaned.** `QOU.Hecke.IwahoriHecke` builds
+   `H_{n+1}(q)` for general `n` as a `RingQuot` — and was imported by **no**
+   file, consumed by nothing, with zero isomorphisms to any concrete rank
+   (`import QOU.Hecke.IwahoriHecke` had zero hits tree-wide).
+
+**What was delivered instead.**
+[`QOU/Hecke/IwahoriHeckeRankOne.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/IwahoriHeckeRankOne.lean)
+— new, sorry-free, `lean`-direct exit 0, `#print axioms` showing only
+`propext / Classical.choice / Quot.sound`. It is the **first consumer of the
+uniform family**, and gives the first point of contact between it and a
+concrete rank: `toAdjoinRoot : IwahoriHecke K q 1 →ₐ[K] AdjoinRoot (X²-(q-1)X-q)`,
+with `toAdjoinRoot_σ` (non-degeneracy: `σ₀ ↦ root`) and `root_quad`.
+
+**It is deliberately not claimed to be an isomorphism.** The inverse is blocked
+on a named Mathlib gap, now bean `qou-vu2d`: `AdjoinRoot.liftHom` requires a
+**commutative** target; `IwahoriHecke K q 1` carries only `Ring`; `RingQuot`
+inherits `CommRing` solely from a `CommRing` base
+(`Mathlib/Algebra/RingQuot.lean:362`); and Mathlib has **no**
+`CommRing (FreeAlgebra K (Fin 1))` and no `FreeAlgebra K (Fin 1) ≃ₐ[K] K[X]` to
+transport one along. That is a small, self-contained, independently worthwhile
+Mathlib contribution — and a far better specified gap than "the `T_w` basis".
+
+No new class was introduced: discharging a class by adding another that assumes
+the same content is the anti-laundering failure.
 
 **3. `qou-h56b` — the `WedderburnDecomp*` name collision.** Three distinct
 objects share one name, and the middle one
