@@ -228,7 +228,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("sigma_pair_projection_consistent",
-                     computed=float(consA), expected=0.0, tolerance=1e-6,
+                     computed=consA, expected=0.0, tolerance=1e-6,
                      source="Im φ_σ1(x_sub): truncation = directional "
                             "resummation (both converged at |x| ≈ 0.104)")
     wb.add_assertion("tail_law_ranking_reproducible",
