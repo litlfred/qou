@@ -1,0 +1,53 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T06:41:18.541736+00:00",
+  "commitSha": "f009d6c904dcd09d72ced7dd85530ad87c96aab9",
+  "assertions": [
+    {
+      "name": "n3_wenzl_eq_molien",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Wenzl weights == Molien weights, exact Q(q,z), n=3"
+    },
+    {
+      "name": "n4_wenzl_eq_molien",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Wenzl weights == Molien weights, exact Q(q,z), n=4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "molien-wenzl-weight-identity",
+  "scriptFile": "molien_wenzl_weight_identity_probe.py",
+  "scriptHash": "b180beb85adf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/molien_wenzl_weight_identity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/molien_wenzl_weight_identity_probe.py"
+  },
+  "description": "bean qou-3quc/qou-idwf: the Molien-predicted Jones-Markov weights EQUAL the INDEPENDENT Wenzl Schur-principal weights y_lambda = s_lambda/Z as rational functions of (q,z), verified exact at n=3 and n=4. Supplies the independent general-z H_4 weight the n=4 full-identity Lean (n4_full_identity) needed; the two families share no inputs. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-molien-jones-markov-n3-identification.md",
+  "data": {
+    "wenzl_formula": "y_lambda = s_lambda/Z, s_lambda = Q^n(lam) prod(1-R Q^c)/prod(1-Q^h), R=qz/(1-q^2+qz)",
+    "free_parameters": 0
+  }
+}
