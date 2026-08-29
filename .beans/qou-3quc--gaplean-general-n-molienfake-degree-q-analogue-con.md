@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-29T07:04:56Z
+updated_at: 2026-08-29T07:34:41Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -153,3 +153,5 @@ Net verified outcome of THIS session:
  - No new theorem proved. The real gap (normalizedSum n q = 1 general n; the q-deformation) is UNCHANGED
    and remains a multi-week Mathlib project via coinvariant-algebra Poincare OR maj-Mahonian+q-RSK,
    neither in Mathlib v4.24.0.
+
+2026-08-29: general-n gap SHARPENED via induction route (qou-x4zl). normalizedSum n q=1 reduced (sorry-free, MolienFakeDegreeInduction.lean) to the one-step recursion normalizedSum(n+1)=normalizedSum(n), then to the addable-box hook identity (B) [verified n<=6] + SYT branching (A) [corpus infra exists]. (B) is more elementary than the coinvariant/maj-RSK routes -- no rep theory. Remaining: prove (B) in Lean (q-JM contents) + the Nat.Partition addable-box reindexing.

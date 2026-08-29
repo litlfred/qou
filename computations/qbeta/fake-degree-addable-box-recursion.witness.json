@@ -1,0 +1,61 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T07:33:01.686988+00:00",
+  "commitSha": "45b4d6824801ebb4f352a47b138bd48dace48857",
+  "assertions": [
+    {
+      "name": "main_identity_star",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum f^lam q^-kappa qDim = [n]_q!"
+    },
+    {
+      "name": "recursion_R",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "normalizedSum(n+1)=normalizedSum(n)"
+    },
+    {
+      "name": "addable_box_hook_identity_B",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum_addable q^-c(b) qDim(mu+b)/qDim(mu) = [|mu|+1]_q, all mu |mu|<=6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "fake-degree-addable-box-recursion",
+  "scriptFile": "fake_degree_addable_box_recursion_probe.py",
+  "scriptHash": "5081acd63e93",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/fake_degree_addable_box_recursion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/fake_degree_addable_box_recursion_probe.py"
+  },
+  "description": "bean qou-x4zl: the addable-box hook identity (B) Sum_{b addable to mu} q^-c(b) qDim(mu+b)/qDim(mu) = [|mu|+1]_q, verified exact for all mu with |mu|<=6. With SYT branching (A) it proves the one-step recursion normalizedSum(n+1)=normalizedSum(n), which (with base) closes the general-n fake-degree identity by induction (QOU.MathlibExt.MolienFakeDegreeInduction skeleton, sorry-free). (B) needs NO coinvariant algebra, no maj, no q-RSK -- a more elementary third route than the two named in MolienFakeDegreeGeneralN. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-21-molien-mining-the-correct-q-analogue-of-rsk.md",
+  "data": {
+    "identity_B": "Sum_{b addable to mu} q^{-c(b)} qDim(mu+b)/qDim(mu) = [|mu|+1]_q",
+    "verified_up_to_n": 6,
+    "free_parameters": 0
+  }
+}
