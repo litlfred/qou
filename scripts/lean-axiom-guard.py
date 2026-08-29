@@ -515,6 +515,15 @@ QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.IdealTriangulation.rotateAt
 QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_of_two_realisations | clean
 QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_rotateAt | clean
 QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_eq_sum_of_realises | clean
+#
+# MostowTriangulationBridge connects the corpus's TWO "volume of M" notions:
+# Encounter.MostowRigidity.volume (a per-type real, entered as a literal and synced
+# from a witness by codemod-leanval.ts) and MathlibExt.IdealTriangulation.volume
+# (the computed Bloch-Wigner sum). Before it they were unrelated. The compatibility
+# between them is an EXPLICIT hypothesis argument, deliberately not a class field.
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_literal_eq_triangulation_volume | clean
+QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
 
 """
 
