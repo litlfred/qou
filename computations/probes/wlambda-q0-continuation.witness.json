@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-08-29T03:05:59.601365+00:00",
-  "commitSha": "adb0c673114f637a5a6b70badc8fb14ab14ffff8",
+  "computedAt": "2026-08-29T03:34:14.857981+00:00",
+  "commitSha": "354099160e362ac9eff65f4feeff0d879fe2ffa1",
   "assertions": [
     {
       "name": "muon_block_folds_to_zero_at_root",
@@ -33,7 +33,7 @@
       "computed": "1.000, 4.110, 5.220, 6.220",
       "expected": "1.000, 4.110, 5.220, 6.220 (approx)",
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "value-map qi polynomials evaluated at t\u2080=q\u2080+q\u2080\u207b\u00b9; unfolds the bounded root (1,\u03c6,0,1)."
     }
   ],
@@ -41,7 +41,7 @@
   "durationMs": 0,
   "computation": "wlambda-q0-continuation",
   "scriptFile": "computations/probes/wlambda_q0_continuation.py",
-  "scriptHash": "862183f1d5df",
+  "scriptHash": "6384e0701263",
   "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "precisionMetadata": {
     "note": "structural facts exact (\u2124[\u03c6] / \u2124[t]); numeric table float64"

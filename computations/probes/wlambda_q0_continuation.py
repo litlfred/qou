@@ -163,7 +163,11 @@ assertions.append({
     "expected": "1.000, 4.110, 5.220, 6.220 (approx)",
     "passed": (abs(growing[0] - 1) < 1e-6 and abs(growing[1] - 4.110) < 1e-2
                and abs(growing[2] - 5.220) < 1e-2 and abs(growing[3] - 6.220) < 1e-2),
-    "tolerance": 1e-2,
+    # Exact decimal string, not the bare float `1e-2`: a raw float64 in a
+    # witness trips the raw-float64 ratchet, and a tolerance is a SPECIFICATION
+    # constant rather than a computed value, so it has an exact decimal form.
+    # Bean qou-3f7a.
+    "tolerance": "0.01",
     "source": "value-map qi polynomials evaluated at t₀=q₀+q₀⁻¹; unfolds the bounded root (1,φ,0,1).",
 })
 
