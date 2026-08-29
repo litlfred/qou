@@ -213,7 +213,7 @@ def main() -> None:
     w.add_data("taylor_coeffs_around_q1", taylor_data)
     w.add_assertion(
         "tau_M_via_blocks_matches_target",
-        computed=float(abs(tau_M_via_blocks - sp.Float("0.18689369"))),
+        computed=abs(tau_M_via_blocks - sp.Float("0.18689369")),
         expected=0,
         tolerance=1e-7,
         source="Σ y_λ · χ_λ(T_β) = τ_M(T_β) = Q_β/E_0 at q_0 (post-bug-fix)",
