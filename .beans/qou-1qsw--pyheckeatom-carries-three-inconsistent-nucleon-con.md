@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T18:39:58Z
+updated_at: 2026-08-29T18:48:48Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -388,3 +388,72 @@ The 18 word-path readers split further, and the split matters:
   that can take a non-monotone word. That is a real piece of work
   (the fine-Bratteli transfer matrix does not generalise for free), and it is
   the actual blocker behind the whole convention.
+
+
+## 2026-08-29 — RETRACTION: "braid order is canonical" is REFUTED by an independent route
+
+I attempted the gratuitous-consumer fix and it produced a result that refutes
+my own verdict two entries up. Recording it rather than the fix.
+
+### What I did
+
+Added `pyhecke.atom.nucleon_braid_word` (braid order, mp) and re-pointed
+`binding_canonical`'s closed-form path onto it. Deuteron, closed-form path:
+
+    BEFORE (monotone)     tr_M_atom = 0.575172243917772   B = 0.435403481607429
+    AFTER  (braid order)  tr_M_atom = 0.151968339204232   B = 0.115039528912109
+
+### Why it is reverted
+
+`binding_canonical`'s own comment says the monotone value is *"exactly that
+bean's bridge/peel value"* (qou-4e5k). Checked instead of taking it on trust —
+and the check goes against me. `binding_combiner_markov_peel_fallback.py`
+builds from **`atom_braid_word_3A`**, the 3A-strand word. It never passes
+through `nucleon_gen_chains`, so it shares no ordering assumption with the H_3
+form. Its committed witness carries
+
+    0.575172243917771870826535
+
+i.e. the **monotone** value, to 24 digits — not the braid-order one.
+
+So an independent route agrees with monotone and disagrees with braid order.
+The monotone form looks like the correct H_3 **reduction** of the 3A braid,
+even though it is demonstrably not the literal per-nucleon sub-braid.
+
+### What survives, and what does not
+
+SURVIVES:
+* The provenance. The monotone shape was chosen to satisfy `chi_all_lambda`'s
+  precondition; `closed_form_tau_M` says so and cites nothing else. That is
+  still the origin.
+* The measurement. The two orderings are different elements of H_3(q), 82 %
+  apart on tr_M, essentially all of it from B_3 (81.97 % on B_3 alone).
+* The 9-vs-11 finding, which is independent of ordering: the gamma-gamma SDP
+  decomposition has four components including the H_2 gluon self-coupling, so
+  the 9-crossing model drops a derived one.
+
+DOES NOT SURVIVE:
+* **"Canonical = the braid-order word."** Retracted. Provenance being
+  algorithmic does not make the result wrong, and I treated it as if it did —
+  the inference "chosen for convenience, therefore incorrect" is exactly the
+  genetic fallacy, and an independent route now contradicts its conclusion.
+* **"binding_canonical obeys the constraint gratuitously."** Half wrong for a
+  second reason: the path I patched is behind `use_closed_form`, and the
+  default run uses the TRANSFER path via `atom_braid_word_3A`. My first re-run
+  produced byte-identical output, which is how I found this. The default
+  binding numbers were never affected by the monotone question at all.
+
+### The real open question, restated
+
+Not "which ordering is right" but: **what is the correct H_3 reduction of the
+3A-strand nucleon, and why does the monotone form reproduce it?** The 3A word
+gives each nucleon its own strand triple, so the crossings may legitimately
+group by generator under the reduction. If that is so, the monotone shape is
+right for a structural reason and `chi_all_lambda`'s precondition merely
+happened to coincide with it — which would be worth writing down, because
+nothing currently records the reason and the next reader will re-run this
+whole investigation.
+
+`nucleon_braid_word` is kept as a comparison object, with a docstring that says
+plainly it is NOT established as the correct reduction and must not be swapped
+in.
