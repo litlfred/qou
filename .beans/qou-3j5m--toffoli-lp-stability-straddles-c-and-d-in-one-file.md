@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T18:26:19Z
+updated_at: 2026-08-29T18:36:04Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -336,3 +336,63 @@ _deprecated file and may itself be superseded by a derivation not in the tree.
 What is established is that the two disagree on three of four entries, that the
 key lemma is convention-dependent and false as the producer runs, and that the
 corpus does not record which side is current. That is an owner call.
+
+
+## WHICH OBJECT IS CURRENT — answered from the deprecation criteria themselves
+
+`computations/_deprecated/README.md` states the criteria for that directory:
+
+  "dead exploratory probes ... - no content block consumes them ... - no audit report
+   cites them - the witness body itself contains no assertions"
+
+So toffoli-braid.py was moved for being ORPHANED, not for being WRONG. That is a
+WIRING judgement, not a correctness one, and it inverts the natural reading of
+"deprecated".
+
+And the live producer does not derive anything. `toffoli-lp-stability.py` defines
+`toffoli_diagonal` and `q_and_amplitude` as HARD-CODED closed forms, evaluates them
+on a q-grid, computes `gram_matrix(q)` alongside, and NEVER connects the two — the
+Gram is used only for eigenvalues. So:
+
+  * published closed forms  -- transcribed literals in the content blocks AND in the
+                               live producer. NO derivation anywhere in the tree.
+  * the construction        -- derives all 64 entries from crossing coefficients,
+                               and its P_77 matches the published P_77 exactly.
+
+VERDICT. Derivable: the construction, uniquely — it is the only thing in the tree
+that computes these amplitudes from anything. Canonical: the construction has the
+stronger claim (it derives, it agrees on the one entry that can be checked, and its
+deprecation was about consumers). The three disagreements are most plausibly
+TRANSCRIPTION DRIFT in hand-written content blocks that nothing re-derived — which
+is also why the producer got orphaned: nothing consumed it, so nothing caught it.
+
+Caveats kept: the construction is z_C-based and A = 3 only, and an unrecorded
+derivation cannot be excluded. This is an owner call, not mine to close.
+
+## THE GOLDEN THRESHOLD ITSELF SURVIVES — a scope correction to my own framing
+
+I had been writing as though q_star = 1/phi^2 were C-frame. It is not. It has TWO
+independent sources in the corpus:
+
+  1. the root of s^2 + s - 1 in the Weierstrass coefficient of the Descartes curve
+     E_q (descartes-elliptic-curve.md: 5(s^2+s-1)(4s^4-s^3-4s^2+s+4)/(27 s^3)) --
+     NO z anywhere in it, hence convention-independent;
+  2. the zero of the Toffoli diagonal P_77 -- z_C-derived, and gone under D.
+
+So the threshold stands; the whole golden-ratio structure of the info-theory
+chapter (golden-ratio-transport, golden-threshold-time-marker, julia-set-reeb,
+golden-julia-dynamics) rests on (1) and is untouched. What convention D removes is
+the COINCIDENCE that the Toffoli diagonal also vanishes there. That is a far more
+contained claim than the one I was about to make, and getting it wrong would have
+mis-scoped a dozen blocks.
+
+## EXECUTED: the P_77 / q_star half of Option 1 (4 blocks)
+
+  toffoli-transfer-matrix.md              item 6 + a Convention scope note with the
+                                          derived P_77^D and the coincidence framing
+  toffoli-lp-stability.md                 the "P_77 vanishes at q_star" threshold row
+  fivefold-sheets-golden-ratio.md         replaced my earlier placeholder scope note
+                                          with the derived form
+  toffoli-transfer-matrix-interpretation  the P_77 table row, both frames
+
+NOT touched, per the audit above: Phi, q_Phi, P_66, P_67.
