@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-28T15:47:38Z
-updated_at: 2026-08-29T10:57:19Z
+updated_at: 2026-08-29T12:21:33Z
 ---
 
 Parent: `qou-cds1`. Surfaced by
@@ -175,3 +175,42 @@ only the two endpoints overlap. Union:
   hecke_core / nucleon_gen_chains (11, grouped) -0.233197711316
 
 **Six**, not four, and not two. Still unadjudicated; still an owner call.
+
+
+## 2026-08-29 (LATER STILL) — L+ and L- were reported SWAPPED
+
+PR #5958 caught it, by the strongest evidence available: they transcribed the
+SAME element independently and published all six NF components. Every value
+agrees — with slots 3 and 4 exchanged.
+
+`gram.py` is the canonical owner:
+
+    NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
+    NF_NAMES = ["gamma","sigma_0","sigma_1","L+","L-","e^-"]
+
+so canonical L+ = sigma_0 sigma_1 at index 3. But `hm_sym` puts sigma_0 sigma_1
+in slot **4** and sigma_1 sigma_0 in slot **3**. My probe reused NF_NAMES
+positionally and printed them backwards. Now pinned by `_assert_slots()`, which
+builds both words and asserts where they land.
+
+**Corrected claim.** The entries above say "L+ is exactly 0 for Delta_L, so the
+exclusion rides on L-". In canonical naming it is the REVERSE: **L- (sigma_1
+sigma_0) vanishes; the exclusion rides on L+.**
+
+**The exclusion is untouched.** The z^2 coefficient is d[L+] + d[L-] + h*d[e^-],
+SYMMETRIC in the two slots because TR weights both with z^2. A 3<->4 swap cannot
+move it. Every verdict and every polynomial stands.
+
+**Confirmed independently, and worth keeping:** e^- is identically 0 for BOTH
+nucleons in the gen-grouped model — I get this, and #5958 reports the same from
+the other side. So the whole z(hz+1) term drops out of tr_M(Delta_L); the L
+coordinates alone carry the z^2 there.
+
+### Four corrections to one probe in one day
+
+nine-crossing element called eleven; the wrong invariant; decimals at
+q = 111/100; swapped basis labels. Each caught by evidence rather than
+re-reading, three of four by measuring against something external, and NONE of
+them moved the conclusion. That is not luck: the verdict rests on a symmetric
+sum over the two L slots plus a degree argument in h, and no error of this
+class can reach either.
