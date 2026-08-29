@@ -322,6 +322,7 @@ import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.SWPeriodSuperExponential
+import QOU.Mathlib.YoungLatticeDifferential
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
