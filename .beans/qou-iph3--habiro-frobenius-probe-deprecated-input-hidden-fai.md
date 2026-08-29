@@ -1,11 +1,11 @@
 ---
 # qou-iph3
 title: 'habiro-frobenius probe: deprecated input, hidden failing test, half-integer full trace'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T22:55:17Z
-updated_at: 2026-08-23T17:35:00Z
+updated_at: 2026-08-28T18:39:38Z
 ---
 
 Split out of the `qou-lwyo` scoping pass (2026-08-22), which carries the full
@@ -187,6 +187,87 @@ running the cheap control that could kill it. The control was three lines and on
 field of the input witness. Run it first.
 
 
+## Option investigation 2026-08-23 — the framing on this bean was WRONG
+
+I recorded item 1 as *"the probe reads a `_deprecated/` witness that is DEEPER
+than the live one, so repointing loses primes"* — i.e. a staleness/depth
+trade-off. **Measured, that is not what the difference is.**
+
+### The coefficients differ from m = 0, not past a truncation point
+
+| atom | dep n | live n | first differing m |
+|---|---|---|---|
+| proton | 10 | 9 | **1** |
+| neutron | 9 | 9 | **0** |
+| deuteron | 14 | 13 | **0** |
+| tritium | 19 | 16 | **0** |
+| ³He | 20 | 16 | **0** |
+
+Neutron `a₀`: **8** (dep) vs **2** (live). Ratios are not constant across `m`
+(proton `a₁`: −240 vs −172; `a₂` leading: 1417 vs 865), so it is not a rescaling
+either. These are different series, and depth is a side effect.
+
+### The driver, and it is semantic
+
+`include_inter` differs — and `binding_canonical.py:306-308` says what it means:
+
+    atom_elem = build_atom_symbolic(Z, N, include_inter=True,  ...)   # BOUND
+    free_elem = build_atom_symbolic(Z, N, include_inter=False, ...)   # FREE
+
+so the flag is the **bound-vs-free** distinction, whose *difference* is the
+binding. Both settings are meaningful objects; neither is "old".
+
+    deprecated:  proton False   neutron False   deuteron/tritium/³He True
+    live:        all five True
+
+**The deprecated aggregate mixes the two conventions inside one file** — its A=1
+atoms are FREE, its composites are BOUND. The probe reads all five uniformly.
+
+### Three structural hypotheses, all REFUTED by exact symbolic test
+
+I eyeballed the live deuteron's `tr_M` as a product of the proton and neutron
+numerators and it is not. Tested with `sympy.simplify(together(...)) == 0`:
+
+- live deuteron = live proton × live neutron — **False**
+- live tritium = p·n², live ³He = p²·n — **False**
+- live deuteron = dep_proton × dep_neutron — **False**
+- dep proton = live proton, dep deuteron = live deuteron — **False** (so even
+  where the flag AGREES the traces differ; deprecated deuteron is an expanded
+  degree-52 ratio, live is a two-factor product form)
+
+So the generational difference is **not** explained by `include_inter` alone.
+Different producers, different eras, no simple relation.
+
+### One more constraint on the options
+
+`_habiro_coefficient_extract.py:288` **hardcodes** `"include_inter": True`. The
+live extractor structurally cannot emit the free variant, so "regenerate the
+deprecated file with the current producer" is not available without editing that
+line.
+
+## The three options, honestly
+
+**A — repoint the probe to the live per-atom witnesses.** Uniform (all BOUND),
+current, per-atom. Costs: shallower (proton 10→9, tritium 19→16, ³He 20→16), so
+the Pochhammer truncation mechanism covers fewer primes; and the A=1 atoms change
+meaning from free to bound, which changes what `frobenius_at` is a Frobenius *of*.
+
+**B — keep the deprecated aggregate.** Deeper, but its A=1 atoms are FREE while
+its composites are BOUND, so the probe's five-atom comparison is across two
+different object classes. Every current conclusion on this bean (`frob_num` ≠ 0
+at 45/45; numerator test 45/45 pass; full-trace 45/45 fail) is computed from that
+mixed file and inherits the mix.
+
+**C — regenerate all five uniformly with the current producer** (recommended).
+Requires un-hardcoding line 288 so the flag is a parameter again, then emitting
+both variants explicitly. Only option that yields a uniform, current, documented
+dataset — and it makes the bound/free pair available, which is what
+`binding_canonical` wants anyway.
+
+**This needs the author's call**, because A-vs-C is a question about what the
+motivic Frobenius should be built from — a free nucleon or a bound one — not a
+mechanical repoint. I have not changed any producer or witness.
+
 ## RESOLVED (option C run) — and TWO of my own claims here were wrong
 
 Ran the producer end-to-end: `python3 -u _habiro_coefficient_extract.py`,
@@ -312,3 +393,130 @@ mpmath downgraded) — the exact versions were installed and the run repeated.
 headline still omits `step2_full_trace_passed` (False at 45/45), and the uniform
 half-odd-integer full trace still wants a probe before it is read as a
 refutation.
+
+
+## RESOLVED for defects 1 and 2 — PR #5884 (2026-08-28)
+
+Branch `claude/habiro-probe-convention-d-2026-08-28`, two commits.
+
+**Defect 1 (deprecated input) — fixed.** Repointed to the symbolic-q
+aggregate `habiro-coefficients-atomic.witness.json`, with the fallback
+removed deliberately (a missing canonical source is now an error, not a
+silent substitution). The "which generation is canonical is an author
+call" framing in the bean body is now settled by measurement, not by
+judgement: on `cdbdc84af1` the symbolic-q aggregate matches the per-atom
+convention-D witnesses **5/5**; the deprecated fast path matches **0/5**.
+The deprecated file was never regenerated for convention D, so the depth
+advantage it had (proton 10 vs 9, etc.) was depth in superseded data.
+
+**Defect 2 (hidden failing test) — fixed.** The top-level summary now
+carries `step2_all_atoms_full_trace_compatible`,
+`n_atoms_step2_full_trace_passed`, `n_cells_truncated`,
+`n_cells_step2_full_trace_passed`, `cells_step2_full_trace_passed`, and a
+`summary_note` naming which of the two tests is the headline. Both print.
+
+This mattered more than the bean anticipated. The body says the full-trace
+test is "False at 45/45", so surfacing it would have surfaced a uniform
+negative. On convention-D data it is **2/45**: the proton and the neutron
+at p=2, both with `Tr(full) = -1`. The omission was hiding a signal, not a
+uniform false.
+
+**Defect 3 — DEAD, and so is its correction.** Both the original
+"uniform factor of 2" claim and the corrected denominator table above
+were measured on the deprecated pre-convention-D coefficients. On the
+convention-D data **17 of the 45 cells have an odd part 3** in the
+denominator — 192, 96, 768, 384, 3. The half-odd-integer pattern that
+made defect 3 "the one lead in this area with a visible pattern" does not
+exist in the canonical data. Do not carry it forward; it was an artifact.
+
+The scope-(a) framing in the bean body still stands and still applies:
+`step2_full_trace_compatible: false` on 43 of 45 cells is a scope-(a)
+negative about this normalisation as computed, not a structural exclusion.
+
+**Also fixed in passing:** a NO-FLOAT64 defect the repoint exposed —
+`frob_complex` / `abs_frob` went through `complex(...)`, collapsing 30 dps
+to binary64 and serializing raw floats. Fixed at the producer (`sp.N` at
+module dps, carry `mpmath.mpf`, serialize via `_precision.fmt`). No
+baseline touched. `precision-gates.sh --changed` clears the raw-float64
+ratchet; the two remaining REDs reproduce on pristine main.
+
+**Still open — the successor question.** `j=2` head divisibility: is
+`a_0 + a_1(1-zeta)` divisible by `(1-zeta)(1-zeta^2)` in Z[zeta_{2p}]?
+This feeds `QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd` (#5513, merged,
+sorry-free) and would upgrade the numerical "45/45 nonzero" observation to
+a proof at each p where it holds. Note `j=1` is vacuous for odd p —
+`1 - zeta_{2p}` is a unit there (`Norm = Phi_{2p}(1) = 1` for 2p not a
+prime power), which is exactly what `head_criterion_vacuous_of_isUnit`
+records. `j=2` is non-vacuous at every p because `1 - zeta_p` has norm p.
+Now answerable from the regenerated coefficients.
+
+
+## Defect 4 (the successor question) — ANSWERED, same PR #5884
+
+The j=2 head criterion resolves, and it gives more than the numerical
+sweep did.
+
+For odd p, Z[zeta_{2p}] = Z[zeta_p], the ramified prime is
+p = (1 - zeta_p) with residue field F_p in which zeta_{2p} = -1, and
+(1 - zeta) is a unit. So divisibility of the head H = a_0 + a_1(1 - zeta)
+by (zeta;zeta)_2 collapses to ONE INTEGER per atom:
+
+    A := a_0(-1) + 2*a_1(-1)     criterion fires  <=>  p does not divide A
+
+  atom       A       factors      silent at
+  proton     8       2^3          no odd prime
+  neutron    2       2            no odd prime
+  deuteron   192     2^6 * 3      p = 3 only
+  tritium    384     2^7 * 3      p = 3 only
+  3He        1536    2^9 * 3      p = 3 only
+
+So Frob_p != 0 for all five atoms at every prime p outside {2, 3}. At
+p = 2 the reduction does not apply (2p = 4 IS a prime power); done by
+exact Z[i] arithmetic, fires for the neutron only.
+
+This is strictly stronger than the frobenius sweep, which is bounded by
+coefficient depth and covers 9 primes. The criterion reads only a_0 and
+a_1, so it is depth-independent and covers infinitely many p.
+
+**Silence is not vanishing** — scope-(a), not scope-(b). Where the
+criterion is silent the sweep still measures nonzero (proton at p=2,
+frob_num = 16; deuteron at p=3, Tr(num) = 24). It is a sufficient
+condition for non-vanishing and nothing more should be read into its
+failing.
+
+Cross-checked against brute-force divisibility in Z[u]/Phi_{2p}(u) at 14
+primes: agree 70/70. That check validates the residue-field reduction,
+which is otherwise a hand argument.
+
+Landed: computations/probes/habiro_head_divisibility_probe.py (exact
+integer arithmetic, no float anywhere) plus three sorry-free Lean
+declarations in QOU/Habiro/CyclotomicEvaluation.lean — habiroEval_two,
+qPochDiag_two, habiroEval_ne_zero_of_head_not_dvd_two. Verified
+lean-direct exit 0 against the real import cone; #print axioms shows no
+sorryAx on any of the three.
+
+The j=1 vacuity I predicted is confirmed as the reason the shipped
+_one form was unusable: Norm(1 - zeta_n) = Phi_n(1) = 1 unless n is a
+prime power, so 1 - zeta_{2p} is a unit at every odd prime.
+
+
+## CLOSED — PR #5884 merged to main as ef261ff5b6 (2026-08-28)
+
+All three defects resolved or retracted, plus the successor question answered:
+
+- defect 1 (deprecated input) — fixed, repointed to the convention-D symbolic-q
+  witness with the fallback removed deliberately;
+- defect 2 (hidden failing test) — fixed, the full-trace test now reaches the
+  top-level summary, where it reads 2/45 rather than the uniform false the
+  bean expected;
+- defect 3 (half-odd-integer full trace) — RETRACTED as a stale-data artifact,
+  along with my own earlier correction to it. On convention-D data 17 of 45
+  cells carry an odd part 3;
+- defect 4 (j=2 head divisibility) — answered, and then some: Frob_p != 0 at
+  EVERY prime for the five on-disk atoms. Odd primes via the closed form
+  A(Z,N) = 2^(3Z+N) * 12^[mixed] (j=2 for p not dividing A, j=3 for p=3);
+  p=2 by direct exact evaluation in Z[i], where Frob_2 = -2^(1-2M) is never
+  zero.
+
+Successor bean qou-9w5z carries the structural follow-up (where the factor of
+3 comes from, why p=2 resists the criterion, and three further retractions).

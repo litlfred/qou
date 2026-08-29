@@ -1,0 +1,365 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1712.03058v3",
+ "source": {
+  "file": "1712.03058v3.pdf",
+  "sha256": "ba48c5bbb246737456538f59546e1946a6f6613203828797e55aa000af7900d2",
+  "bytes": 1666201,
+  "pages": 29,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1712.03058",
+   "version": "3",
+   "primary_class": "stat.ME",
+   "stamp_date": "28 Oct 2018"
+  },
+  "doi": null,
+  "title": "Iterated filtering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handbook",
+  "authors_raw": null,
+  "title_lines": [
+   "Iterated filtering methods for Markov process",
+   "epidemic models",
+   "Theresa Stocks1",
+   "1Department of Mathematics, Stockholm University, Sweden",
+   "This manuscript is a preprint of a Chapter to appear in the Handbook"
+  ],
+  "abstract": "Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding and prevention of infectious diseases. However, inference for these types of models can be di\ufb03cult because the disease spread is typically only partially observed e.g. in form of reported incidences in given time periods. This chapter discusses how to perform likelihood- based inference for partially observed Markov epidemic models when it is relatively easy to generate samples from the Markov transmission model while the likelihood function is intractable. The \ufb01rst part of the chapter reviews the theoretical back- ground of inference for partially observed Markov processes (POMP) via iterated \ufb01ltering. In the second part of the chapter the performance of the method and as- sociated practical di\ufb03culties are illustrated on two examples. In the \ufb01rst example a simulated outbreak data set consisting of the number of newly reported cases aggregated by week is \ufb01tted to a POMP where the underlying disease transmis- sion model is assumed to be a simple Markovian SIR model. The second example illustrates possible model extensions such as seasonal forcing and over-dispersion in both, the transmission and observation model, which can be used, e.g., when analysing routinely collected rotavirus surveillance data. Both examples are imple- mented using the R-package pomp (King et al., 2016) and the code is made available online. arXiv:1712.03058v3 [stat.ME] 28 Oct 2018",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181030010749Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Iterated filtering methods for POMP",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Likelihood-based inference",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "The likelihood approach",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Practical challenges",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2.2"
+  },
+  {
+   "level": 2,
+   "title": "Inference for partially observed Markov processes (POMP)",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "Likelihood of a POMP",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Evaluation of the likelihood",
+   "page": 7,
+   "source": "outline",
+   "number": "1.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Particle filter",
+   "page": 7,
+   "source": "outline",
+   "number": "1.3.3"
+  },
+  {
+   "level": 2,
+   "title": "Iterated filtering methods",
+   "page": 10,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 3,
+   "title": "Algorithm",
+   "page": 10,
+   "source": "outline",
+   "number": "1.4.1"
+  },
+  {
+   "level": 2,
+   "title": "Iterated filtering for SIR model given incidence data",
+   "page": 12,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 3,
+   "title": "The problem of interest",
+   "page": 12,
+   "source": "outline",
+   "number": "1.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Formulation of a POMP model",
+   "page": 12,
+   "source": "outline",
+   "number": "1.5.2"
+  },
+  {
+   "level": 3,
+   "title": "Inference",
+   "page": 14,
+   "source": "outline",
+   "number": "1.5.3"
+  },
+  {
+   "level": 3,
+   "title": "Practical advice",
+   "page": 17,
+   "source": "outline",
+   "number": "1.5.4"
+  },
+  {
+   "level": 2,
+   "title": "Extensions",
+   "page": 18,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Rotavirus example",
+   "page": 21,
+   "source": "outline",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "Concluding comments",
+   "page": 24,
+   "source": "outline",
+   "number": "1.8"
+  },
+  {
+   "level": 3,
+   "title": "Pros and cons of iterated filtering methods for outbreak data",
+   "page": 24,
+   "source": "outline",
+   "number": "1.8.1"
+  },
+  {
+   "level": 3,
+   "title": "Further reading",
+   "page": 25,
+   "source": "outline",
+   "number": "1.8.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-introduction",
+   "number": "1.1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1710,
+   "n_words": 259
+  },
+  {
+   "id": "sec-001-1-iterated-filtering-methods-for-pomp",
+   "number": "1",
+   "title": "Iterated filtering methods for POMP",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 354,
+   "n_words": 59
+  },
+  {
+   "id": "sec-002-12-likelihood-based-inference",
+   "number": "1.2",
+   "title": "Likelihood-based inference",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1086,
+   "n_words": 175
+  },
+  {
+   "id": "sec-003-121-the-likelihood-approach",
+   "number": "1.2.1",
+   "title": "The likelihood approach",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1582,
+   "n_words": 274
+  },
+  {
+   "id": "sec-004-122-practical-challenges",
+   "number": "1.2.2",
+   "title": "Practical challenges",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2758,
+   "n_words": 438
+  },
+  {
+   "id": "sec-005-131-likelihood-of-a-pomp",
+   "number": "1.3.1",
+   "title": "Likelihood of a POMP",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2956,
+   "n_words": 514
+  },
+  {
+   "id": "sec-006-132-evaluation-of-the-likelihood",
+   "number": "1.3.2",
+   "title": "Evaluation of the likelihood",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3571,
+   "n_words": 598
+  },
+  {
+   "id": "sec-007-14-iterated-filtering-methods",
+   "number": "1.4",
+   "title": "Iterated filtering methods",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3562,
+   "n_words": 605
+  },
+  {
+   "id": "sec-008-141-algorithm",
+   "number": "1.4.1",
+   "title": "Algorithm",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4033,
+   "n_words": 703
+  },
+  {
+   "id": "sec-009-151-the-problem-of-interest",
+   "number": "1.5.1",
+   "title": "The problem of interest",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1354,
+   "n_words": 224
+  },
+  {
+   "id": "sec-010-152-formulation-of-a-pomp-model",
+   "number": "1.5.2",
+   "title": "Formulation of a POMP model",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2502,
+   "n_words": 406
+  },
+  {
+   "id": "sec-011-153-inference",
+   "number": "1.5.3",
+   "title": "Inference",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5524,
+   "n_words": 922
+  },
+  {
+   "id": "sec-012-154-practical-advice",
+   "number": "1.5.4",
+   "title": "Practical advice",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 4270,
+   "n_words": 726
+  },
+  {
+   "id": "sec-013-16-extensions",
+   "number": "1.6",
+   "title": "Extensions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 7403,
+   "n_words": 1247
+  },
+  {
+   "id": "sec-014-17-rotavirus-example",
+   "number": "1.7",
+   "title": "Rotavirus example",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 4898,
+   "n_words": 822
+  },
+  {
+   "id": "sec-015-18-concluding-comments",
+   "number": "1.8",
+   "title": "Concluding comments",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2856,
+   "n_words": 451
+  },
+  {
+   "id": "sec-016-182-further-reading",
+   "number": "1.8.2",
+   "title": "Further reading",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 8610,
+   "n_words": 1240
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 17,
+  "chars_total": 59029
+ }
+}

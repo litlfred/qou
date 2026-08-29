@@ -7,7 +7,7 @@ section_number: 4.6
 pages: 52-54
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
-doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
 ---
 we need to specify the brane structures on the Lagrangians L(d). Since L(d) ﬁbers
 over a curve in the base, and its intersection with each ﬁber is a curv e, the tangent

@@ -16,7 +16,7 @@
       "computed": "0.00815851",
       "expected": "-2.85173e-10",
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "m_qCLT_approx − CODATA mass = the m_p gap (binding cancels)"
     },
     {
@@ -45,7 +45,7 @@
       "computed": "1.08333",
       "expected": "1.0",
       "passed": true,
-      "tolerance": 0.25,
+      "tolerance": "0.25",
       "source": "max over {T,³He} of max(miss,1/miss) for B=E₀·(A−1)·L̄_comp; derived inputs (E₀, bond-type sub-braid traces), no fitted coeff."
     }
   ],

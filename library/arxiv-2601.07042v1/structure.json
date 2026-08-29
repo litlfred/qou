@@ -1,0 +1,337 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2601.07042v1",
+ "source": {
+  "file": "2601.07042v1.pdf",
+  "sha256": "c2f3e302624e7abbb7516137ad7e9faa828eda570f211604863674015ae4352e",
+  "bytes": 487308,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2601.07042",
+   "version": "1",
+   "primary_class": "math.NT",
+   "stamp_date": "11 Jan 2026"
+  },
+  "doi": null,
+  "title": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+  "authors_raw": "ALEXANDER BERTOLONI MELI AND PETER DILLERY",
+  "title_lines": [
+   "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
+  ],
+  "abstract": "We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha\u2019s Galois gerbeE Kal. We then classify and write down the simple objects inRigIsoc F , all of which come from elliptic twisted Levi subgroups ofGLn.",
+  "docinfo": {
+   "Author": "Alexander Bertoloni Meli; Peter Dillery",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "A Tannakian description of the local Kaletha gerbe"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Motivation and overview",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Preliminary notation",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 3,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Construction of Tannakian Categories",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Products of gerbes",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Limits of gerbes",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Modules",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Descent",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Concrete Tannakian categories",
+   "page": 12,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Transition maps",
+   "page": 14,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "The category RigIsocF",
+   "page": 16,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "The structure of RigIsocF",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Newton map",
+   "page": 17,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Comparison with isocrystals",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Comparison with Fargues' extended isocrystals",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Reduction to Newton centralizers",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Classification of simple objects",
+   "page": 22,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-motivation-and-overview",
+   "number": "1.1",
+   "title": "Motivation and overview",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8142,
+   "n_words": 1291
+  },
+  {
+   "id": "sec-002-12-preliminary-notation",
+   "number": "1.2",
+   "title": "Preliminary notation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 639,
+   "n_words": 97
+  },
+  {
+   "id": "sec-003-13-acknowledgments",
+   "number": "1.3",
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 301,
+   "n_words": 46
+  },
+  {
+   "id": "sec-004-2-construction-of-tannakian-categories",
+   "number": "2",
+   "title": "Construction of Tannakian Categories",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-21-products-of-gerbes",
+   "number": "2.1",
+   "title": "Products of gerbes",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 6455,
+   "n_words": 999
+  },
+  {
+   "id": "sec-006-22-limits-of-gerbes",
+   "number": "2.2",
+   "title": "Limits of gerbes",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3636,
+   "n_words": 580
+  },
+  {
+   "id": "sec-007-23-modules",
+   "number": "2.3",
+   "title": "Modules",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6381,
+   "n_words": 994
+  },
+  {
+   "id": "sec-008-24-descent",
+   "number": "2.4",
+   "title": "Descent",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 8358,
+   "n_words": 1370
+  },
+  {
+   "id": "sec-009-25-concrete-tannakian-categories",
+   "number": "2.5",
+   "title": "Concrete Tannakian categories",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5139,
+   "n_words": 814
+  },
+  {
+   "id": "sec-010-26-transition-maps",
+   "number": "2.6",
+   "title": "Transition maps",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 10824,
+   "n_words": 1679
+  },
+  {
+   "id": "sec-011-31-the-newton-map",
+   "number": "3.1",
+   "title": "The Newton map",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2935,
+   "n_words": 442
+  },
+  {
+   "id": "sec-012-32-comparison-with-isocrystals",
+   "number": "3.2",
+   "title": "Comparison with isocrystals",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 6296,
+   "n_words": 1015
+  },
+  {
+   "id": "sec-013-34-reduction-to-newton-centralizers",
+   "number": "3.4",
+   "title": "Reduction to Newton centralizers",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 5386,
+   "n_words": 858
+  },
+  {
+   "id": "sec-014-35-classification-of-simple-objects",
+   "number": "3.5",
+   "title": "Classification of simple objects",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 10552,
+   "n_words": 1598
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2920,
+   "n_words": 305
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "sections": 16,
+  "chars_total": 77964
+ }
+}

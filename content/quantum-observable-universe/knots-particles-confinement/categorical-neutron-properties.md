@@ -6,17 +6,21 @@ As in the [proton](#def:categorical-proton) construction, we find $\mathrm{net}(
 **Step 2: Typed crossings + Hopf gluon stabilisation.**
 The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton. The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
 
-*(Withdrawn 2026-08-24 — the two struck paragraphs below.)*
+*(Partly withdrawn — see below. Two independent corrections, four days apart.)*
 
-~~The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing. A single Hopf link $L_- = \sigma_1\sigma_0$ restores structural stability.~~
+~~The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ remains LP unstable. The $\sigma_0$ channel violates Frobenius positivity following the second quark crossing.~~ A single Hopf link $L_- = \sigma_1\sigma_0$ is what the construction applies.
 
-~~The integer LP dual selects $L_+ \to L_-$ (two Hopf links, 4 gluon crossings) as the minimum-action stabiliser. The neutron requires more gluon crossings than the proton (4 versus 2) because the $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability ($\mathrm{tr}_M = -0.132$ versus $-0.006$). This yields a total of 13 crossings (6 from $\mathcal{B}_3$, 3 from quarks, 4 from gluons).~~
+The integer LP dual selects $L_-$ as the minimum-action stabiliser, for a total of **11 crossings** (6 from $\mathcal{B}_3$, 3 from quarks, 2 from gluons) — [`qou-vtlj`](#rem:gluon-stabiliser-ledger), which rebuilt the block's own recipe and found the stated $\mathrm{net}(\mathfrak{n}) = +0.7976$ is the eleven-crossing value. The earlier "$L_+ \to L_-$, 4 gluon crossings, 13 total" was wrong on its own terms, independently of anything below.
 
-Both rest on $\mathrm{tr}_M(e^-) = z^3$, retired on 2026-05-19 in favour of the Markov-recursion value $h z^2 + z$. Under the live convention the bare element is $+0.408$, not $-0.132$, and the $\sigma_0$ channel is positive at *every* step of the typed build — so there is no instability, deeper or otherwise. The quoted $L_+ \to L_-$ falls to rank 26 of 41 at $|\mathrm{tr}_M| = 0.690$, losing to the bare element itself.
+~~The $\mathfrak{d}\mathfrak{d}$ crossing creates a deeper instability than the proton's ($\mathrm{tr}_M = -0.132$ versus $-0.006$), a difference in depth rather than in the number of gluon crossings required.~~
 
-**The 4-versus-2 asymmetry does not survive, and it was load-bearing.** Under the $|\mathrm{tr}_M|$ tiebreak the optimum is a single $\sigma_0$ at one crossing for the neutron and one for the proton — a ratio of $1{:}1$; under the minimum-crossing objective that [the ILP algorithm](#def:universal-ilp-algorithm) actually states it is $0{:}0$, since bare is feasible for both. So $m_n - m_p$ loses the mechanism this paragraph gave it. Nothing is offered in its place: the derivation needs re-deriving rather than patching. The [gluon ledger](#rem:gluon-stabiliser-ledger) carries the full measurement.
+**The remaining depth claim does not survive either** (`qou-jqjx`). Those two figures come from `computations/_deprecated/integer-lp-gluon.py`, which computes the Markov trace on convention C with $\mathrm{tr}_M(e^-) = z^3$ — a weight retired on 2026-05-19 in favour of the Markov-recursion value $h z^2 + z$. Reproduced on the retired convention the numbers come out at $-0.132224$ and $-0.005936$, matching what was published. On the live convention the same elements are $+0.408$ and $+0.544$, and the $\sigma_0$ channel is positive at *every* step of the typed build. There is no instability, deeper or otherwise, and so no depth difference to carry a mass split.
 
-What survives is the *scope* of the enumeration: the proton's feasible set, every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, admissible and simply losing the minimisation.
+Note the sequence, because it is the point: correcting the crossing count removed the $4$-versus-$2$ asymmetry and moved the surviving claim onto the two numbers that are themselves convention artefacts. Both corrections are needed; neither alone finishes the paragraph.
+
+What replaces it is open. Nothing is offered here — the derivation needs re-deriving rather than patching, and the [gluon ledger](#rem:gluon-stabiliser-ledger) carries the full measurement.
+
+What survives unchanged is the *scope* of the enumeration: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, admissible and simply losing the minimisation.
 
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:
@@ -63,4 +67,4 @@ $$
   1 \cdot (+\tfrac{2}{3}) + 2 \cdot (-\tfrac{1}{3}) = 0.
 $$
 
-The neutron achieves precise electrical neutrality: its single positive-orientation unknot ($\mathfrak{u}$) cancels two negative-orientation unknots ($\mathfrak{d}$). The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings. This produces an attractive enhancement, supplying the categorical expression of electric neutrality.
+The sum vanishes, and the arithmetic is the Standard Model's. What it is **not** is a consequence of the crossing-orientation mechanism. This block previously read that the single positive-orientation unknot $\mathfrak{u}$ *cancels* two negative-orientation unknots $\mathfrak{d}$; one object cannot cancel two of equal magnitude. The cancellation above works only because $|Q_{\mathfrak{u}}| = 2|Q_{\mathfrak{d}}|$, and orientation reversal is a mirror, so it forces the two magnitudes to be *equal* ([down quark](#def:down-quark)). Writing $Q(\mathfrak{u}) = a$ and hence $Q(\mathfrak{d}) = -a$, the neutron carries $a - 2a = -a$ and the proton $2a - a = +a$: the mechanism makes the neutron the proton's exact opposite, and a neutral neutron forces every quark charge to vanish (`QOU.Braiding.mirror_odd_neutral_neutron_forces_zero`, sorry-free). The quark charges are therefore an adopted input here, not a derived one. The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings.

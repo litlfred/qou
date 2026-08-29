@@ -65,12 +65,20 @@ from sublemma_2_1_A_operator_extract_h12_nn import (  # noqa: E402
     make_h3_test_words as _make_h3_test_words_orig,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 H = float(Q0 - 1 / Q0)
 
 INTERFACE_COEFS = {
     "pp": (1.0, 0.0),
-    "pn": (1.0, -H / 2),
+    "pn": (1.0, _pn_d(H)),   # colour-weighted
     "nn": (1.0, -H),
 }
 

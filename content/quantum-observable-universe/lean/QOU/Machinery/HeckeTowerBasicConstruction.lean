@@ -150,6 +150,31 @@ theorem jonesIdempotent_h2 (q : R) (hd : q + q⁻¹ ≠ 0) :
   rw [mul_comm, ← sub_neg_eq_add, sub_neg_eq_add, add_comm]
   exact mul_inv_cancel₀ (by rwa [add_comm] at hd)
 
+/-- **Rank-bounded braided presentation.** The three Hecke relations, each
+guarded so it only speaks about generators that exist at rank `n`:
+`σ₀, …, σ_{n-2}` for `H_n`.
+
+Compare `HeckeBraidedCategory.HeckeBraidedPresentation`, whose unguarded `∀ i`
+forces an infinite generator family — the reason it has no contentful instance.
+The guards here are exactly what makes a finite algebra able to satisfy it. -/
+class HeckeBraidedPresentationOfRank (q : R) (n : ℕ) (H : Type*)
+    [Ring H] [Algebra R H] (σ : ℕ → H) : Prop where
+  /-- Hecke quadratic, for generators present at rank `n`. -/
+  hecke_quadratic : ∀ i, i + 1 < n → σ i * σ i = (q - q⁻¹) • σ i + 1
+  /-- Braid relation, for adjacent pairs both present at rank `n`. -/
+  braid_adjacent : ∀ i, i + 2 < n → σ i * σ (i + 1) * σ i = σ (i + 1) * σ i * σ (i + 1)
+  /-- Far commutation, for non-adjacent pairs both present at rank `n`. -/
+  far_commute : ∀ i j, i + 1 < j → j + 1 < n → σ i * σ j = σ j * σ i
+
+/-- The unbounded class implies the bounded one at every rank — the guards only
+discard obligations. So existing consumers lose nothing by moving over. -/
+theorem ofRank_of_unbounded {q : R} {H : Type*} [Ring H] [Algebra R H]
+    {σ : ℕ → H} [inst : QOU.Machinery.HeckeBraidedCategory.HeckeBraidedPresentation R q H σ]
+    (n : ℕ) : HeckeBraidedPresentationOfRank q n H σ where
+  hecke_quadratic i _ := inst.hecke_quadratic i
+  braid_adjacent i _ := inst.braid_adjacent i
+  far_commute i j hij _ := inst.far_commute i j hij
+
 /-! ## OPEN layer — the tower data as §3b dependent conjecture classes
 
 None of the classes below carries an instance. Each binds
@@ -166,10 +191,9 @@ construction; for Hecke algebras it is classically built from the
 Kazhdan–Lusztig/word filtration (`ε` reads off the coefficient layer over
 the parabolic subalgebra), which is exactly what Mathlib lacks at
 general rank. OPEN — no instance. -/
-class HeckeConditionalExpectation (R : Type*) [Field R] (q : R)
+class HeckeConditionalExpectation (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn) : Prop where
   /-- `ε` retracts the tower inclusion: `ε (ι x) = x`. -/
   retract : ∀ x : Hn, ε (ι x) = x
@@ -184,12 +208,11 @@ projection `e = jonesIdempotent q (σn1 n)` absorbs through it:
 relation of the Jones basic construction `⟨Hn1, e⟩`; combined with the
 PROVED local layer (`jonesIdempotent_mul_self` at `σn1 n`) it generates
 the Temperley–Lieb quotient tower. OPEN — no instance. -/
-class JonesBasicConstruction (R : Type*) [Field R] (q : R)
+class JonesBasicConstruction (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (ε : Hn1 →ₗ[R] Hn)
-    [HeckeConditionalExpectation R q Hn Hn1 σn σn1 ι ε] (n : ℕ) : Prop where
+    [HeckeConditionalExpectation R q rank Hn Hn1 σn1 ι ε] (n : ℕ) : Prop where
   /-- Absorption: `e · y · e = ι (ε y) · e` with
   `e = jonesIdempotent q (σn1 n)`. -/
   absorb : ∀ y : Hn1,
@@ -203,18 +226,181 @@ trace is nondegenerate: if `Hn` is semisimple and `trn1` has no nonzero
 left kernel, then `Hn1` is semisimple. This is Wenzl's induction step
 [wenzl1988, Thm 2.2]; the proved rungs `isSemisimpleRing_H3A` (and the
 rank-2 `HeckeH2Wedderburn`) realize its conclusion concretely at
-`n = 2, 3` without the tower machinery. OPEN — no instance; proving this
-class's field for symmetric-group Coxeter data is exactly the general-`n`
-target the explicit-Wedderburn route cannot reach. -/
-class WenzlTowerStep (R : Type*) [Field R] (q : R)
+`n = 2, 3` without the tower machinery. Proving this class's field for
+symmetric-group Coxeter data at the *Markov* trace is the general-`n`
+target the explicit-Wedderburn route cannot reach; it is still open.
+
+**Mathlib does not supply the prerequisite; the CORPUS already does (measured
+2026-08-26, bean `qou-kzjl`).** Mathlib's `traceForm_nondegenerate` is
+
+    ∀ (K L) [Field K] [Field L] [Algebra K L] [FiniteDimensional K L]
+      [Algebra.IsSeparable K L], (traceForm K L).Nondegenerate
+
+which is wrong here in two independent ways: it runs *separable ⇒ nondegenerate*
+where this field needs the converse, and both `K` and `L` are fields where
+`H_n(q)` is non-commutative. Mathlib's `isSemisimpleRing_*` family is structural
+(`iff_jacobson`, `iff_isArtinianRing`, …), none of it trace-form based.
+
+That Mathlib measurement is correct and is NOT a reason to prove anything new
+here. The result — *a finite-dimensional algebra over a field with
+nondegenerate regular trace form is semisimple* — has been in this corpus since
+brick B3d (epic `qou-hnhg`) as
+`QOU.MathlibExt.isSemisimpleRing_of_regTraceForm_nondegenerate`, with its
+nilpotent-trace core in `QOU.MathlibExt.TraceNilpotent`. Recorded because the
+two questions are easy to conflate and one of them was: an exhaustive search of
+*Mathlib* says nothing about what the corpus holds.
+
+**What is instantiated, and what is not.**
+`QOU.Machinery.HeckeRank.wenzlTowerStep_regTrace` discharges this class's field
+at **general rank** for the *regular* trace `w ↦ trace (L_w)`, so the class is
+no longer instance-free. It contributes an adapter between two spellings of
+nondegeneracy, not a semisimplicity proof. Two things are worth reading off it
+rather than assuming. First, the ascent does not consume the `Hn`-semisimple
+hypothesis at all — nondegeneracy at level `n+1` is the whole of it, which makes
+hypothesis 1 of the field redundant for this trace. Second: the general-`n`
+Hecke target needs the field at the **Markov** trace — and that is not merely
+unproved here, it is **false on `H_n` at the canonical convention D**, so no
+instance of this class at the Markov trace on `H_n` can exist. The convention-D
+pin `z(q²+1) = q³` forces the antisymmetric Wedderburn weight `y₍₁³₎` to `0`,
+that block lies in the radical of the trace form, and `det G = 0` exactly —
+`QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` and
+`QOU.QBeta.MarkovGramDegenerate.gram_det_eq_zero_of_radical_combination`, both
+sorry-free. Independently: the closed-form `n = 3` determinant in
+`gram-matrix-h3-symbolic` carries the factor `(q²+1)z − q³`, which *is* the
+convention-D pin rearranged, so `det G` vanishes identically in `q` there.
+
+The Frobenius structure is real but lives on the quotient `H_n / rad τ ≅ TL_n(δ)`
+(`pairing_descends`, `mem_radical_of_pairing_zero`), matching
+`prop:markov-trace-frobenius-selection` (iii). Discharging this class at the
+Markov trace over that quotient is bean `qou-s7z2`; it is genuine work, since
+both the braided presentation and the tower inclusion must be restated for the
+quotient. The nearest abstract statement remains
+`QOU.MathlibExt.isSemisimpleRing_of_qGeneric`, which reaches semisimplicity from
+`q`-genericity but takes the Gram–factorial equivalence as a hypothesis, and
+whose own open input — the general `T_w`-basis determinant, the classical
+Schur-element product formula — is unchanged by any of this.
+
+-/
+class WenzlTowerStep (R : Type*) [Field R] (q : R) (rank : ℕ)
     (Hn Hn1 : Type*) [Ring Hn] [Ring Hn1] [Algebra R Hn] [Algebra R Hn1]
-    (σn : ℕ → Hn) (σn1 : ℕ → Hn1)
-    [HeckeBraidedPresentation R q Hn σn] [HeckeBraidedPresentation R q Hn1 σn1]
+    (σn1 : ℕ → Hn1) [HeckeBraidedPresentationOfRank q rank Hn1 σn1]
     (ι : Hn →ₐ[R] Hn1) (trn1 : Hn1 → R) : Prop where
   /-- Semisimplicity ascends along a nondegenerate Markov trace. -/
   semisimple_ascend :
     IsSemisimpleRing Hn →
     (∀ y : Hn1, y ≠ 0 → ∃ z : Hn1, trn1 (y * z) ≠ 0) →
     IsSemisimpleRing Hn1
+
+/-- **§3b DEPENDENT conjecture — the coset spanning decomposition (bean
+`qou-zm8z`).** GIVEN the two Hecke braided presentations and the tower
+inclusion `ιlow : Hlow →ₐ Hn`, every element of the larger algebra splits as
+
+  `w = ιlow a + Σᵢ ιlow (b i) · σn n · ιlow (c i)`
+
+i.e. `Hn = Hlow + Hlow · σₙ · Hlow` — the level-`n` algebra is spanned by the
+lower one together with its `σₙ`-double-coset. Classically this is Iwahori's
+basis theorem / the Coxeter length filtration: a reduced word either avoids the
+top generator (first summand) or factors through exactly one occurrence of it
+(the sum). Mathlib has neither at general rank, which is why this is a class.
+
+**This is the brick Ocneanu cyclicity induction actually runs on.** The
+inductive step reduces `tr(w₁w₂)` to words of the shape `u·g·v`, and reaching
+an ARBITRARY pair needs exactly this spanning statement to put a general `w`
+into that shape. Without it the induction is stated only for already-decomposed
+words. It was named as a deliverable of the W2 re-scope note (bean `qou-2017`)
+alongside `HeckeConditionalExpectation` and `JonesBasicConstruction` and, unlike
+those two, was never built.
+
+Independent of the conditional expectation: it mentions neither `ε` nor the
+Jones projection, so it can be discharged separately, and a proof of it does not
+need any trace at all. OPEN — no instance. -/
+class HeckeCosetSpanning (R : Type*) [Field R] (q : R) (rank : ℕ)
+    (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
+    (σn : ℕ → Hn) [HeckeBraidedPresentationOfRank q rank Hn σn]
+    (ιlow : Hlow →ₐ[R] Hn) (k : ℕ) : Prop where
+  /-- Every `w : Hn` decomposes over the lower algebra and its `σ k`-coset. -/
+  spanning : ∀ w : Hn, ∃ (a : Hlow) (s : Finset ℕ) (b c : ℕ → Hlow),
+    w = ιlow a + ∑ i ∈ s, ιlow (b i) * σn k * ιlow (c i)
+
+/-- **§3b DEPENDENT conjecture — the Markov property of the conditional
+expectation (bean `qou-zm8z`).** GIVEN a conditional expectation, `ε` collapses
+the `σₙ`-coset with a single scalar:
+
+  `ε (ιlow b · σₙ · ιlow c) = z • (b · c)`.
+
+This is the defining property of the Markov trace's `z` (the Ocneanu parameter)
+at the level of `ε` rather than of `tr`. `HeckeConditionalExpectation` does NOT
+imply it — that class has exactly `retract` and `bimodule`, neither of which
+says anything about what `ε` does to the top generator, and `bimodule` in
+particular only moves `ιlow`-factors across `ε`, leaving `ε σₙ` untouched.
+
+**This class ASSUMES the Markov property; it does not derive it.** Its value is
+that the assumption is now a named, content-bearing carrier with a stated
+dependency edge, instead of an anonymous hypothesis threaded through call sites
+— and that, combined with `HeckeCosetSpanning`, it is exactly enough to
+*compute* `ε` on an arbitrary element (see
+`MarkovTowerBridge.towerE_eq_of_spanning`). That computation is the new content;
+the assumption itself is relocated, not discharged. OPEN — no instance. -/
+class HeckeMarkovExpectation (R : Type*) [Field R] (q : R) (rank : ℕ)
+    (Hlow Hn : Type*) [Ring Hlow] [Ring Hn] [Algebra R Hlow] [Algebra R Hn]
+    (σn : ℕ → Hn) [HeckeBraidedPresentationOfRank q rank Hn σn]
+    (ιlow : Hlow →ₐ[R] Hn) (εlow : Hn →ₗ[R] Hlow)
+    [HeckeConditionalExpectation R q rank Hlow Hn σn ιlow εlow]
+    (n : ℕ) (z : R) : Prop where
+  /-- `ε` collapses the top-generator coset with the Ocneanu scalar `z`. -/
+  markov : ∀ b c : Hlow, εlow (ιlow b * σn n * ιlow c) = z • (b * c)
+
+/-! ## What `HeckeBraidedPresentation` does and does not force
+
+Recorded while trying to build a genuine `HeckeCosetSpanning` instance (bean
+`qou-zm8z`). The attempt failed, and it failed one level BELOW the spanning
+decomposition — which is worth knowing before anyone else tries.
+
+At the time of writing `HeckeBraidedPresentation` has **no instance anywhere in
+the corpus**. The two results below say why that is harder than it looks, and
+they are the only two facts needed to see it.
+
+**It is satisfiable, but weakly.** `constant_generator_presentation` gives an
+instance from a SINGLE element satisfying the quadratic, with `σ` constant. Both
+the braid relation and far-commutation are then `rfl`. So an instance of this
+class does not force two distinct generators, does not force the braid relation
+to have any content, and does not force anything to fail to commute. It is much
+weaker than "is a Hecke algebra".
+
+**And a finite Hecke algebra cannot satisfy it with its true generators.** The
+fields quantify over ALL `i : ℕ`, so `H_n` must supply `σ i` beyond its rank.
+`far_commute_zero` is the obstruction: `σ 0` must commute with `σ j` for every
+`j ≥ 2`. In `H₃` with `σ 0 = σ₁` and `σ 1 = σ₂` that rules out padding with the
+last real generator, since `σ₁` and `σ₂` do not commute; and no eventually
+periodic padding works either, for the same reason at the next index. The class
+describes `H_∞`, not `H_n`.
+
+So a genuine instance needs either the infinite tower, or the class re-stated
+with a rank bound (`σ : Fin n → H`, relations guarded by `i + 1 < n`). That is a
+change to a class three other classes bind, so it is not made here. -/
+
+/-- **The class is satisfiable — degenerately.** Any single element satisfying
+the Hecke quadratic yields an instance via the constant family; braid and
+far-commutation hold by `rfl`.
+
+Stated to pin down how weak the class is, not as a recommended instance: nothing
+conditional on a `HeckeBraidedPresentation` obtained this way carries Hecke
+content. -/
+theorem constant_generator_presentation {R : Type*} [Field R] {q : R}
+    {H : Type*} [Ring H] [Algebra R H] (s : H)
+    (hs : s * s = (q - q⁻¹) • s + 1) :
+    HeckeBraidedPresentation R q H (fun _ => s) where
+  hecke_quadratic := fun _ => hs
+  braid_adjacent := fun _ => rfl
+  far_commute := fun _ _ _ => rfl
+
+/-- **The obstruction to a finite-rank instance.** `far_commute` forces `σ 0` to
+commute with every `σ j` for `j ≥ 2` — so the generators past rank cannot be
+padded with a non-commuting real generator. -/
+theorem far_commute_zero {R : Type*} [Field R] {q : R}
+    {H : Type*} [Ring H] [Algebra R H] (σ : ℕ → H)
+    [inst : HeckeBraidedPresentation R q H σ] (j : ℕ) (hj : 2 ≤ j) :
+    σ 0 * σ j = σ j * σ 0 :=
+  inst.far_commute 0 j (by omega)
 
 end QOU.Machinery.HeckeTower

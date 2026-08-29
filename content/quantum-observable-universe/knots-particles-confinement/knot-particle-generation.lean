@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.GCD.Basic
 

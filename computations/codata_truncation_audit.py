@@ -258,7 +258,14 @@ def main(argv: list[str] | None = None) -> int:
     # cannot write its own witness. Emit the durable output first; the
     # printing is a courtesy and must not be able to prevent it.
     out = HERE / "codata-truncation-audit.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "engine": "python-stdlib",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "codata-truncation-audit",
@@ -276,7 +283,11 @@ def main(argv: list[str] | None = None) -> int:
         "by_constant": {k: len(v) for k, v in by_const.items()},
         "exact_duplicates": exact,
         "findings": rows,
-    }, indent=2) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+    out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
 
     print("=" * 74)
     print("CODATA TRUNCATION AUDIT — literals that are a SHORT prefix of the")

@@ -1,15 +1,15 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:09:32.943612+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:22:59.267439+00:00",
+  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
-      "computed": 0.4810394473391119,
+      "computed": "0.000000003219908421094947712797343061215999883379371213285278372663757764850474",
       "expected": 0.0,
-      "passed": false,
-      "tolerance": 1e-06
+      "passed": true,
+      "tolerance": "1e-06"
     },
     {
       "name": "u_levels_computed_for_deuteron",
@@ -24,11 +24,11 @@
       "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 8,
+  "allPassed": true,
+  "durationMs": 7,
   "computation": "iterative-lp-dual-h6-deuteron",
   "scriptFile": "iterative_lp_dual_h6_deuteron.py",
-  "scriptHash": "b097a16d92b4",
+  "scriptHash": "440022c9c345",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -44,7 +44,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -201,7 +201,7 @@
     },
     "sum_u_levels_MeV": 0.08376690257267344,
     "tr_M_check_at_q0": 0.5751722457697738,
-    "tr_M_check_rel_err": 0.4810394473391119,
+    "tr_M_check_rel_err": 3.2199084210949476e-09,
     "lean_uniqueness_ref": {
       "nucleus": "deuteron (²H)",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",

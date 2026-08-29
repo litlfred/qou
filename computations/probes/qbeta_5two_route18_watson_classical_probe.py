@@ -3,8 +3,8 @@
 
 Beans `qou-fivt`, `qou-abel`, `qou-0yqu`. Literature supplied 2026-08-08:
 `library/arxiv-hep-th-9408113v2/9408113v2.pdf` (Kirillov, *Dilogarithm identities*, hep-th/9408113) and
-`library/the-dilogarithm-function-514sniwxl7.pdf` (Zagier, *The Dilogarithm
-Function*).
+`[zagier-dilogarithm]` (Zagier, *The Dilogarithm Function*) -- cited by bib
+key because the PDF was never committed to this repo.
 
 THE CORRECTION THIS PROBE RECORDS
 ---------------------------------
@@ -190,6 +190,15 @@ def main() -> int:
     }
     dest = (pathlib.Path(__file__).resolve().parents[1]
             / "qbeta-5two-route18-watson-classical.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None, q0_anchor=False)
     dest.write_text(json.dumps(out, indent=2) + "\n")
     for g in gates:
         print(f"  {g['gate']}  pass={g['pass']}  {g['claim'][:86]}")

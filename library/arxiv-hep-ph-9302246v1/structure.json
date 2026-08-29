@@ -1,0 +1,618 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-9302246v1",
+ "source": {
+  "file": "9302246v1.pdf",
+  "sha256": "2d352297255be8de72594e79b5c2e828ec8636b3517794b4dcfc197715425401",
+  "bytes": 299835,
+  "pages": 44
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/9302246",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "11 Feb 1993"
+  },
+  "doi": null,
+  "title": null,
+  "authors_raw": null,
+  "abstract": "We present a calculation of the coupling constants in the massive spin -1 \ufb01eld chiral Lagrangian to chiral O(p3) in the context of the extended Nambu\u2013Jona-Lasinio model described in Ref. [1]. Phenomenological applications of this Lag rangian to anomalous and non-anomalous low-energy hadronic transitions in volving spin-1 particles are also discussed. January 1993 CPT-93/P.2871",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210728002952-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-ph/9302246v1  11 Feb 1993"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The low-energy chiral Lagrangians",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "K 0",
+   "page": 3,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "B0 (1 + O(M)). (2.7)",
+   "page": 3,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(x):",
+   "page": 5,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(x) \u2261",
+   "page": 5,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "K \u22170",
+   "page": 5,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "K +",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "K 0",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "C (2) tr (SA\u00b5 A\u00b5 ) + 1",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The ENJL cut-o\ufb00 model of QCD",
+   "page": 8,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u00b1 \u03b35) \u03a8. The couplings GS and GV are",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "W +",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(\u03a3 \u2212 \u03b35 \u2206) (3.11)",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The anomalous sector",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "U l \u00b5 U \u2020 r\u03bd U l \u03b1 U \u2020 r\u03b2 + i U \u2202\u00b5 l\u03bd l\u03b1 U \u2020 r\u03b2",
+   "page": 13,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u2212 gA)",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The non-anomalous sector",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Phenomenological applications",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Vector resonance decays",
+   "page": 19,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "In both cases we assume nonet",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The amplitude for \u03c9 \u2192 \u03c0+\u03c0\u2212\u03c00 has the form,",
+   "page": 23,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(p2 + k)\u03b1 pb",
+   "page": 25,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The decay \u03c00(\u03b7) \u2192 \u03b3\u2113+\u2113\u2212",
+   "page": 28,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "MeV. If we assume that the reported partial width for the decay a1 \u2192 (\u03c0\u03c0)S \u03c0 is",
+   "page": 31,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "H \u01eb\u00b5\u03bd\u03b1\u03b2 \u03b5\u00b5",
+   "page": 33,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "H 2 Ma1",
+   "page": 33,
+   "source": "inferred",
+   "number": "27"
+  },
+  {
+   "level": 2,
+   "title": "Given the poor experimental information we have on a1-decays, both sets of",
+   "page": 33,
+   "source": "inferred",
+   "number": "0.76"
+  },
+  {
+   "level": 2,
+   "title": "KL \u2192 \u03c00\u03b3\u2217\u03b3\u2217 \u2192 \u03c00e+e\u2212",
+   "page": 33,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "M 2",
+   "page": 35,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 35,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 36,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 379,
+   "n_words": 54
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1891,
+   "n_words": 338
+  },
+  {
+   "id": "sec-002-2-the-low-energy-chiral-lagrangians",
+   "number": "2",
+   "title": "The low-energy chiral Lagrangians",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 592,
+   "n_words": 145
+  },
+  {
+   "id": "sec-003-6-k-0",
+   "number": "6",
+   "title": "K 0",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 590,
+   "n_words": 134
+  },
+  {
+   "id": "sec-004-0-b0-1-om-27",
+   "number": "0",
+   "title": "B0 (1 + O(M)). (2.7)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2391,
+   "n_words": 525
+  },
+  {
+   "id": "sec-005-8-x",
+   "number": "8",
+   "title": "(x):",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3,
+   "n_words": 2
+  },
+  {
+   "id": "sec-006-8-x",
+   "number": "8",
+   "title": "(x) \u2261",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 56,
+   "n_words": 24
+  },
+  {
+   "id": "sec-007-6-k-0",
+   "number": "6",
+   "title": "K \u22170",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 198,
+   "n_words": 56
+  },
+  {
+   "id": "sec-008-1-k",
+   "number": "1",
+   "title": "K +",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 26,
+   "n_words": 10
+  },
+  {
+   "id": "sec-009-1-k-0",
+   "number": "1",
+   "title": "K 0",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 3383,
+   "n_words": 818
+  },
+  {
+   "id": "sec-010-2-c-2-tr-sa\u00b5-a\u00b5-1",
+   "number": "2",
+   "title": "C (2) tr (SA\u00b5 A\u00b5 ) + 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 198,
+   "n_words": 43
+  },
+  {
+   "id": "sec-011-3-the-enjl-cut-o\ufb00-model-of-qcd",
+   "number": "3",
+   "title": "The ENJL cut-o\ufb00 model of QCD",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 631,
+   "n_words": 150
+  },
+  {
+   "id": "sec-012-2-1-\u03b35-\u03c8-the-couplings-gs-and-gv-are",
+   "number": "2",
+   "title": "(1 \u00b1 \u03b35) \u03a8. The couplings GS and GV are",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 792,
+   "n_words": 175
+  },
+  {
+   "id": "sec-013-2-w",
+   "number": "2",
+   "title": "W +",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1022,
+   "n_words": 275
+  },
+  {
+   "id": "sec-014-2-\u03c3-\u03b35-311",
+   "number": "2",
+   "title": "(\u03a3 \u2212 \u03b35 \u2206) (3.11)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3239,
+   "n_words": 695
+  },
+  {
+   "id": "sec-015-4-the-anomalous-sector",
+   "number": "4",
+   "title": "The anomalous sector",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1094,
+   "n_words": 224
+  },
+  {
+   "id": "sec-016-4-u-l-\u00b5-u-r\u03bd-u-l-\u03b1-u-r\u03b2-i-u-\u00b5-l\u03bd-l\u03b1-u-r\u03b2",
+   "number": "4",
+   "title": "U l \u00b5 U \u2020 r\u03bd U l \u03b1 U \u2020 r\u03b2 + i U \u2202\u00b5 l\u03bd l\u03b1 U \u2020 r\u03b2",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2372,
+   "n_words": 572
+  },
+  {
+   "id": "sec-017-3-1-ga",
+   "number": "3",
+   "title": "(1 \u2212 gA)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3835,
+   "n_words": 774
+  },
+  {
+   "id": "sec-018-5-the-non-anomalous-sector",
+   "number": "5",
+   "title": "The non-anomalous sector",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 3068,
+   "n_words": 760
+  },
+  {
+   "id": "sec-019-6-phenomenological-applications",
+   "number": "6",
+   "title": "Phenomenological applications",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1081,
+   "n_words": 175
+  },
+  {
+   "id": "sec-020-61-vector-resonance-decays",
+   "number": "6.1",
+   "title": "Vector resonance decays",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 759,
+   "n_words": 177
+  },
+  {
+   "id": "sec-021-2-in-both-cases-we-assume-nonet",
+   "number": "2",
+   "title": "In both cases we assume nonet",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5230,
+   "n_words": 1185
+  },
+  {
+   "id": "sec-022-3-the-amplitude-for-\u03c9-\u03c0\u03c0\u03c00-has-the-form",
+   "number": "3",
+   "title": "The amplitude for \u03c9 \u2192 \u03c0+\u03c0\u2212\u03c00 has the form,",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 2574,
+   "n_words": 690
+  },
+  {
+   "id": "sec-023-1-p2-k\u03b1-pb",
+   "number": "1",
+   "title": "(p2 + k)\u03b1 pb",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 3829,
+   "n_words": 966
+  },
+  {
+   "id": "sec-024-62-the-decay-\u03c00\u03b7-\u03b3\u2113\u2113",
+   "number": "6.2",
+   "title": "The decay \u03c00(\u03b7) \u2192 \u03b3\u2113+\u2113\u2212",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 4766,
+   "n_words": 1098
+  },
+  {
+   "id": "sec-025-3-mev-if-we-assume-that-the-reported-partial-wid",
+   "number": "3",
+   "title": "MeV. If we assume that the reported partial width for the decay a1 \u2192 (\u03c0\u03c0)S \u03c0 is",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 1172,
+   "n_words": 318
+  },
+  {
+   "id": "sec-026-3-h-\u01eb\u00b5\u03bd\u03b1\u03b2-\u03b5\u00b5",
+   "number": "3",
+   "title": "H \u01eb\u00b5\u03bd\u03b1\u03b2 \u03b5\u00b5",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 84,
+   "n_words": 21
+  },
+  {
+   "id": "sec-027-27-h-2-ma1",
+   "number": "27",
+   "title": "H 2 Ma1",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 846,
+   "n_words": 209
+  },
+  {
+   "id": "sec-028-076-given-the-poor-experimental-information-we-h",
+   "number": "0.76",
+   "title": "Given the poor experimental information we have on a1-decays, both sets of",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 236,
+   "n_words": 42
+  },
+  {
+   "id": "sec-029-64-kl-\u03c00\u03b3\u03b3-\u03c00ee",
+   "number": "6.4",
+   "title": "KL \u2192 \u03c00\u03b3\u2217\u03b3\u2217 \u2192 \u03c00e+e\u2212",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 2269,
+   "n_words": 421
+  },
+  {
+   "id": "sec-030-9-m-2",
+   "number": "9",
+   "title": "M 2",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 868,
+   "n_words": 171
+  },
+  {
+   "id": "sec-031-7-conclusions",
+   "number": "7",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2301,
+   "n_words": 421
+  },
+  {
+   "id": "sec-032-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 425,
+   "n_words": 73
+  },
+  {
+   "id": "sec-033-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 44,
+   "n_chars": 4749,
+   "n_words": 1051
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 34,
+  "sections": 34,
+  "chars_total": 56949
+ }
+}

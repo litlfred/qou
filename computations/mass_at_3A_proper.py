@@ -183,7 +183,7 @@ def ocneanu_weights_3A(A: int, *, q: float = Q0_PROTON, z: float = Z_MARKOV):
              for shape in partitions_of(3 * A)]
 
 
-def normalized_plancherel_weights_3A(A: int):
+def normalized_plancherel_weights_3A(A: int, q=None):
     """ω_λ = w_λ^Planch / Σ w_μ^Planch — forces Σ ω_λ = 1.
 
     For q > 1, the naive Plancherel weights w_λ = d_q(λ)²/[n]_q!
@@ -194,11 +194,11 @@ def normalized_plancherel_weights_3A(A: int):
     [−1, 1] at our q₀, which is what the Φ_q tower needs.
     """
     n = 3 * A
-    nfac = qfac(n)
+    nfac = qfac(n, q)
     entries = []
     total = 0.0
     for shape in partitions_of(n):
-        dq = dim_q(shape)
+        dq = dim_q(shape, q)
         w = (dq * dq) / nfac
         entries.append((shape, w))
         total += w
@@ -434,7 +434,48 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted",
                          q=None, allow_float64: bool = False):
-    """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
+    """Full 3A-strand word as a list of (c, d, gen_idx) triples.
+
+    ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
+    A rename was considered and rejected: 685 call sites across 382 files. So the
+    name stays and this docstring carries the correction.
+
+    Each triple `(c, d, g)` denotes the HECKE ELEMENT `c*sigma_g + d*1`, not a braid
+    generator. The letters OUTSIDE the image of rho are exactly the AVERAGED ones,
+    `d in {-h/2, -h(1/2 - delta/4)}` -- NOT merely the `d != 0` ones. Under this
+    module's convention `sigma^-1 = sigma - h`, a `d == -h` letter IS a braid
+    generator (it is sigma^-1), as the next sentence's identity itself says. Measured
+    on 2H: of 23 letters, 11 are `d = 0` (sigma) and 7 are `d = -h` (sigma^-1), so 18
+    are braid generators and 5 are not -- and 5 = 2A + 1, the count this docstring
+    gives below. Getting this wrong invalidates the wrong objects: under a `d == 0`
+    rule the figure-eight `(s1 s2^-1)^2` -- the muon carrier, a genuine hyperbolic
+    LINK the mass law reads Vol from -- would read as "not a braid word".
+    The averaged interfaces are EXACTLY weight-1 averages over crossing sign:
+
+        sigma - (h/2)*1          == (sigma + sigma^-1)/2
+        sigma - h*(1/2 - d/4)*1  == (1/2 + d/4)*sigma + (1/2 - d/4)*sigma^-1
+
+    There are `2A + 1` such non-braid letters (two per nucleon, from its two `ud`
+    pairs, plus one per interface). So the returned object lies in `H_n(q)` and is
+    NOT in the image of `rho : B_n -> H_n(q)`.
+
+    WHAT FOLLOWS, and why it matters:
+
+      * `tr_M` of this object IS well defined -- the Markov trace is a linear
+        functional on all of `H_n(q)` and needs no closure. Every binding number
+        computed from it stands.
+      * But there is NO SINGLE LINK behind it. By linearity `tr_M` here is a
+        weighted sum of `2^(2A+1)` link invariants (32 for 2H), not the invariant
+        of one link.
+      * So NO TOPOLOGICAL quantity may be read off it -- not a volume, not a
+        crossing number, not a genus. Those are not linear and linearity is the
+        only thing transporting the sum.
+
+    Measured: all 32 branch closures for 2H are non-hyperbolic (each branch braid
+    is monotone, so its closure is a connected sum of (2,k) torus links; verified
+    32/32 against SnapPy deconnect_sum). Vol = 0 for every one.
+    See docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md and
+    content/.../braids-and-knots/markov-disambiguation.md.
 
     Matches the chain-walk convention of
     hecke_core.atom_per_generator_volumes (lines 3029–3079):
@@ -708,7 +749,7 @@ def _chi_of_word_dense(sigmas, dim, word) -> float:
     return float(np.trace(product))
 
 
-def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                       include_inter: bool = True,
                       verbose: bool = False) -> dict:
     """[DEPRECATED — Plancherel-weighted form] H_{3A} "Markov" trace.
@@ -740,14 +781,14 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     word = atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
                                 include_inter=include_inter)
 
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, q)
     total = 0.0
     per_partition = []
     for shape in partitions_of(n_strands):
         sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
-        dq = dim_q(shape)
+        dq = dim_q(shape, q)
         w = (dq * dq) / nfac
         chi = chi_lambda_of_word(sigmas, dim, word, n_gens)
         contrib = w * chi / dim
@@ -767,7 +808,7 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
-def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                              include_inter: bool = True,
                              weight_scheme: str = "normalized_plancherel",
                              # NOT changed to "jones_wenzl", and the attempt
@@ -825,7 +866,7 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         if 0 <= g < n_gens:
             word_by_gen[g].append((c, d))
 
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, q)
     # Under QOU_H3A_MPF the accumulator must NOT start as a float: `0.0 + mpf`
     # is fine, but `float(np.trace(M))` two lines down would still truncate the
     # mpf trace, so building the matrices at mpf would buy nothing. Both are
@@ -839,12 +880,47 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         weight_table = normalized_plancherel_weights_3A((Z + N))
     elif weight_scheme == "plancherel":
         for shape in partitions_of(n_strands):
-            dq = dim_q(shape)
+            dq = dim_q(shape, q)
             weight_table.append((shape, (dq * dq) / nfac))
     elif weight_scheme == "jones_wenzl":
         weight_table = ocneanu_weights_3A((Z + N))
     else:
         raise ValueError(f"unknown weight_scheme: {weight_scheme}")
+
+    # Per-generator SCALAR collapse, replacing a per-λ matrix product.
+    #
+    # Every factor accumulated at generator i is a polynomial in the SAME
+    # σ_i, so the factors commute, and σ_i obeys the Hecke quadratic relation
+    # σ² = (q − q⁻¹)σ + 1. Measured against the built matrices rather than
+    # assumed: max|σ² − ((q−q⁻¹)σ + 1)| = 6.661e-16 for (3,2,1) and
+    # (4,3,1,1), while the (q−1)σ + q alternative misses by 1.992e-01;
+    # eigenvalues are [−q⁻¹, q] = [−0.90091828, 1.10997858].
+    #
+    # So Π_k (c_k σ_i + d_k · 1) = α_i σ_i + β_i · 1 with (α, β) built by a
+    # scalar recursion, and χ_λ of it is α · tr σ_i^λ + β · dim λ — a diagonal
+    # sum, O(dim), no matmul at any point.
+    #
+    # This is what makes A ≥ 3 tractable, and the reason is dtype, not dim³:
+    # the word's coefficients are a MIX of int and mpf (19 of the 35 steps at
+    # A=3 carry one, and every generator hits one by step 0-4), so
+    # `c * sigmas[i] + d * I_lam` promoted the float64 seminormal matrix to
+    # dtype=object and each `M @ ...` ran as a Python-level loop — ~6e7 mpf
+    # mul+add per word-step sweep over λ ⊢ 9. Same defect ca8a629034 fixed in
+    # chi_lambda_of_word; that fix did not reach THIS function. Measured here:
+    # A=2 0.577s → 0.0009s, A=3 >20 min → 0.1 s, values unchanged to 9.107e-16.
+    #
+    # δ is taken at Q0_PROTON, NOT at the `q` parameter, because the matrices
+    # below are built at Q0_PROTON — the relation has to hold for the matrices
+    # actually in hand or the collapse is inconsistent with them. That the
+    # weight table above already honours `q` while `_cached_seminormal` does
+    # not is pre-existing and is left alone here.
+    _delta = Q0_PROTON - 1.0 / Q0_PROTON
+    _alpha_beta = []
+    for i in range(n_gens):
+        _a, _b = 0, 1                      # identity: 0·σ + 1·1
+        for (c, d) in word_by_gen[i]:
+            _a, _b = _a * c * _delta + _a * d + _b * c, _a * c + _b * d
+        _alpha_beta.append((_a, _b))
 
     for (shape, w_lam) in weight_table:
         sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
@@ -855,11 +931,6 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
         except ImportError:
             is_sparse = False
-        if is_sparse:
-            from scipy import sparse as sp_sparse
-            I_lam = sp_sparse.eye(dim, format='csr')
-        else:
-            I_lam = np.eye(dim)
         for i in range(n_gens):
             w_i_steps = word_by_gen[i]
             if not w_i_steps:
@@ -869,15 +940,13 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             if i >= len(sigmas):
                 # Shouldn't happen (len(sigmas) = n_strands - 1)
                 continue
-            M = I_lam
-            for (c, d) in w_i_steps:
-                M = M @ (c * sigmas[i] + d * I_lam)
+            _a, _b = _alpha_beta[i]
             if is_sparse:
-                _t = M.diagonal().sum()
-                tr = _t if _H3A_MPF else float(_t)
+                _s = sigmas[i].diagonal().sum()
             else:
-                _t = np.trace(M)
-                tr = _t if _H3A_MPF else float(_t)
+                _s = np.trace(sigmas[i])
+            _t = _a * _s + _b * dim
+            tr = _t if _H3A_MPF else float(_t)
             V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
@@ -1052,7 +1121,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
     return desc, single, cross, desc + single + cross
 
 
-def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                        E_0: float = E_0_CALIBRATION_MEV,
                        weight_scheme: str = "normalized_plancherel",
                        cap_frac: float = 0.98,
@@ -1079,10 +1148,10 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # mass_endomorphism; both expressions are equivalent at H_{3A}).
     from mass_tower_operator_valued import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
-        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        Z, N, q=q, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=True, weight_scheme=weight_scheme, verbose=verbose)
     vols_free = per_generator_V_hat_3A(
-        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        Z, N, q=q, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=False, weight_scheme=weight_scheme, verbose=verbose)
     if not vols_atom or not vols_free:
         return {"status": "trivial", "Z": Z, "N": N}
@@ -1113,7 +1182,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
-def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
+def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                 E_0: float = E_0_CALIBRATION_MEV,
                 verbose: bool = False) -> dict:
     """[DEPRECATED — Plancherel-weighted trace] Binding via H_{3A} pattern.
@@ -1131,9 +1200,9 @@ def binding_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     with W_free (include_inter=False) and W_atom (include_inter=True)
     on the same 3A-strand Iwahori–Hecke algebra.
     """
-    tr_atom = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+    tr_atom = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q=q,
                                 include_inter=True, verbose=verbose)
-    tr_free = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+    tr_free = markov_trace_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q=q,
                                 include_inter=False, verbose=verbose)
     B = E_0 * (abs(tr_free["total"]) - abs(tr_atom["total"]))
     return {
@@ -1268,5 +1337,14 @@ if __name__ == "__main__":
         "tower_path": results_tw,
     }
     out = Path(__file__).parent / "mass-at-3A-proper.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

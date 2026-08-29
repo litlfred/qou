@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:06:45.941882+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:56:32.651394+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "dilog_inversion_constant_is_minus_zeta2",
-      "computed": 5.4334074472960274e-71,
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Li₂(z)+Li₂(1/z)+½log²(−z) = −π²/6 (dilog inversion formula) — the cusp crossing x↔1/x forces this constant"
     },
     {
       "name": "faddeev_inversion_semiclassical_is_minus_zeta2",
-      "computed": 1.6449340668482264e-12,
+      "computed": "0.000000000001644934066848226436472415166646025189218949901206798437735575146109325",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "the Faddeev inversion constant iπ(b²+b⁻²)/12 at the Li₂ level (×2πib²) → −π²/6 as b→0 — the modular anomaly the bare partial product lacks and Φ_b carries"
     },
     {
@@ -30,18 +30,18 @@
     },
     {
       "name": "same_zeta2_is_extended_bloch_pairing",
-      "computed": 5.4334074472960274e-71,
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the inversion constant = the extended-Bloch/Rogers normalization pairing Li₂ ↔ Bloch–Wigner"
     }
   ],
   "allPassed": true,
-  "durationMs": 55,
+  "durationMs": 44,
   "computation": "dilog-archimedean-partB-cusp-derivation",
   "scriptFile": "dilog_archimedean_partB_cusp_derivation_probe.py",
-  "scriptHash": "e547d74df556",
+  "scriptHash": "5b9b856eb307",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

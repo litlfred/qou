@@ -297,10 +297,16 @@ def main() -> int:
     w.add_data("character_free_companion", cf)
     w.add_data("verdict", verdict)
     w.add_data("verdict_text", vtext)
-    # Falsifiable assertions: the SIGNS at the two physical endpoints, per isotope.
+    # These six were add_assertion(name, X, X) under a comment calling them
+    # "Falsifiable assertions". They were the opposite: computed and expected were the
+    # SAME expression, so each was `x == x` -- tautologically true and unable to fail.
+    # The sibling threerow_sign_crossing_probe carried the identical pattern and passed
+    # while its measured sign inverted from +/-1 to 0 across the convention change.
+    # A sign is a MEASUREMENT; it is recorded here, which is what add_data is for.
+    # Bean qou-ploj.
     for name in ("D", "T", "3He"):
-        w.add_assertion(f"{name}_sign_at_q0", iso[name]["sign_q0"], iso[name]["sign_q0"])
-        w.add_assertion(f"{name}_sign_at_qlo", iso[name]["sign_qlo"], iso[name]["sign_qlo"])
+        w.add_data(f"{name}_sign_at_q0_measured", iso[name]["sign_q0"])
+        w.add_data(f"{name}_sign_at_qlo_measured", iso[name]["sign_qlo"])
     w.add_caveat(
         "BEYOND-SUBSTRATE DIAGNOSTIC. Every 'diagnostic_' field reports F_K at q > q₀. "
         "The substrate modulus is q₀ ≈ 1.10998 (experimental proton anchor); q > q₀ is "

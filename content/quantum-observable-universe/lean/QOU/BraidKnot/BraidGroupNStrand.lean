@@ -194,13 +194,29 @@ the canonical extension. -/
     to `1 / (u + u⁻¹)`. Use this in new code instead of `markovZN_legacy`.
 
     Matches `markovZax` from `markov-axioms-primitive.lean` so the
-    `MarkovTraceInductiveLimit` bridge instance can interoperate. -/
+    `MarkovTraceInductiveLimit` bridge instance can interoperate.
+
+    **This is the KERNEL, not a Markov parameter — convention-C shaped, kept
+    deliberately** (bean `qou-cxjq`, 2026-08-26). It is convention-neutral *as a
+    function*; the convention lives in how it is instantiated. Convention D is
+    **not** this at any argument — `QOU.BraidKnot.no_kernel_instantiation_is_conventionD`
+    proves the kernel's real range is `[-1/2, 1/2]` while `z_D q > 1/2` for every
+    `q > 1` — it is the rescaling `q² · (this kernel at q)`. Consume the `_real`
+    shim below, which is convention D. -/
 def markovZN {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
 
 /-- Archimedean shim of `markovZN` with explicit positivity:
-    `markovZN_real q hq = markovZN (Real.sqrt q)`. -/
+    `markovZN_real q hq = markovZN (Real.sqrt q)`.
+
+    **Convention D** `z_D q = q³/(q²+1) = q² · (kernel at q)`, migrated from
+    convention C 2026-08-26 (bean `qou-cxjq`). This read `(kernel at √q)`, i.e.
+    `√q/(q+1)`. The rescaled shape is the only one available: no argument
+    reaches D (`no_kernel_instantiation_is_conventionD`); see
+    `QOU.BraidKnot.markovZD_eq_sq_mul_kernel`. The `0 < q` hypothesis is kept for
+    API compatibility and is now genuinely unused — convention D has no
+    `Real.sqrt` in it. -/
 noncomputable def markovZN_real (q : ℝ) (_hq : 0 < q) : ℝ :=
-  markovZN (Real.sqrt q)
+  q ^ 2 * markovZN q
 
 /-- **Legacy unsafe form** of `markovZN` — `Real.sqrt q` without the
     `0 < q` hypothesis. Kept for backward compatibility with the

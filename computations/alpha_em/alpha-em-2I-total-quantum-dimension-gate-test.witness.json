@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "D(q₀)=√(Σ_{λ⊢5} d_q²)=11.357 ∉ {8, 8π} (corpus-fixed n=5 data, no scan) => the naive S₀₀=1/D shared-wall identification is falsified on the observable side"
     }
   ],

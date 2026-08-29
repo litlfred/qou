@@ -421,13 +421,13 @@ def main() -> int:
 
     wb.add_assertion(
         "deuteron_bare_kappa_reproduced",
-        computed=float(kappas["y_dim"]["D"]),
+        computed=kappas["y_dim"]["D"],
         expected=6.0426, tolerance=0.01,
         source="B_D/(m_e·Σ y·dim·|Δθ|) from cached canonical witnesses "
                "(matches binding-a3plus-full-theta-assembly rho_need/m_e)")
     wb.add_assertion(
         "I1_uniform_scale_dispersion_y_dim",
-        computed=float(mp.mpf(prune["y_dim"]["dispersion_max_over_min"])),
+        computed=mp.mpf(prune["y_dim"]["dispersion_max_over_min"]),
         expected=10.4, tolerance=1.0,
         source="max/min of required 𝒜 across {D,T,³He,⁴He,mirror}, w=y·dim — "
                "≫ 1.18 band ⇒ scalar-𝒜 sub-class refuted (scope-(a))")
@@ -438,7 +438,7 @@ def main() -> int:
                "of all five required 𝒜's (corollary of I1)")
     wb.add_assertion(
         "geometric_in_A_pattern_ratio_scatter",
-        computed=float(max(steps.values()) / min(steps.values())),
+        computed=max(steps.values()) / min(steps.values()),
         expected=1.06, tolerance=0.05,
         source="per-added-nucleon 𝒜 ratios (3.14–3.32) agree within ~6 % — "
                "the geometric-extensivity CONSTRAINT (guarded; identification "

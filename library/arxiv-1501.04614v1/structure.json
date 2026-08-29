@@ -1,0 +1,155 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1501.04614v1",
+ "source": {
+  "file": "1501.04614v1.pdf",
+  "sha256": "ebebcae0c18232176f5306e63cc95112e6285f7707fdaf85432d955cc7a0f76c",
+  "bytes": 167760,
+  "pages": 14,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1501.04614",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "19 Jan 2015"
+  },
+  "doi": null,
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II",
+  "authors_raw": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "title_lines": [
+   "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+   "POLYNOMIAL II"
+  ],
+  "abstract": "We continue our study of the degree of the colored Jones polyn omial under knot cabling started in [8]. Under certain hypothesis on thi s degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis\u2019 Slope Conjecture and a conjecture of [8] for c ables of a two-parameter family of closed 3-braids called 2-fusion knots.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211110205121-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Jones slopes of cable knots",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Two-fusion knots",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The highest degree and the Jones slope.",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Calculating the linear term",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 13,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5075,
+   "n_words": 1026
+  },
+  {
+   "id": "sec-001-2-jones-slopes-of-cable-knots",
+   "number": "2",
+   "title": "Jones slopes of cable knots",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 7943,
+   "n_words": 2007
+  },
+  {
+   "id": "sec-002-3-two-fusion-knots",
+   "number": "3",
+   "title": "Two-fusion knots",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2163,
+   "n_words": 598
+  },
+  {
+   "id": "sec-003-31-the-highest-degree-and-the-jones-slope",
+   "number": "3.1",
+   "title": "The highest degree and the Jones slope.",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1310,
+   "n_words": 354
+  },
+  {
+   "id": "sec-004-32-calculating-the-linear-term",
+   "number": "3.2",
+   "title": "Calculating the linear term",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 6146,
+   "n_words": 1734
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1492,
+   "n_words": 230
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 24129
+ }
+}

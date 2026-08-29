@@ -1,11 +1,11 @@
 ---
 # qou-e15u
 title: 'main regression: theorem() with conj: label — motivic-perpetual-obstruction has not loaded since 1d3988bc31'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T20:53:15Z
-updated_at: 2026-08-22T20:53:43Z
+updated_at: 2026-08-23T07:43:11Z
 ---
 
 ## The defect

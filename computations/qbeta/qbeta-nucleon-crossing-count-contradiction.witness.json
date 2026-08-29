@@ -1,0 +1,62 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T01:37:25.014319+00:00",
+  "commitSha": "81de7a78be9ff14e2573f451ea3f047997e9e8a5",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "qbeta-nucleon-crossing-count-contradiction",
+  "scriptFile": "qbeta_nucleon_crossing_count_contradiction_probe.py",
+  "scriptHash": "f4329b63647e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nucleon_crossing_count_contradiction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nucleon_crossing_count_contradiction_probe.py"
+  },
+  "description": "qou-bg3w: categorical-neutron-properties derives a 13-crossing neutron (6 B_3 + 3 quark + 4 gluon, two Hopf links) while q-beta-gamma-gamma-canonical-derivation asserts 11 for both nucleons -- citing the very definition that derives 13 -- and hecke_core implements 11. The proton is consistent at 11 across all three. Scope-(a): establishes the mismatch, adjudicates nothing, changes no compute.",
+  "data": {
+    "proton_pure": 6,
+    "proton_inverted": 3,
+    "proton_averaged": 2,
+    "proton_other": 0,
+    "neutron_pure": 5,
+    "neutron_inverted": 4,
+    "neutron_averaged": 2,
+    "neutron_other": 0,
+    "proton_total_code": 11,
+    "neutron_total_code": 11,
+    "no_unrecognised_crossing_shift": true,
+    "code_proton_is_eleven": true,
+    "code_proton_decomposition_matches_the_c5_block": true,
+    "corpus_derives_a_thirteen_crossing_neutron": true,
+    "corpus_also_asserts_eleven_for_both": true,
+    "THE_CONTRADICTION_neutron_derived_13_implemented_11": true,
+    "the_citation_does_not_say_what_it_is_cited_for": true,
+    "scope": "a",
+    "adjudicates": false,
+    "modifies_compute": false,
+    "checks_passed": 7,
+    "checks_total": 7
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

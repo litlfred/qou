@@ -9,7 +9,7 @@
       "computed": 1.136,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.25,
+      "tolerance": "0.25",
       "source": "max over {T, ³He} of max(miss, 1/miss) for B_sym = E_0·ln(tr_free/tr_atom); exact log-trace at the DERIVED scale, no fit."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.945,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "⁴He B_AME / (2·m_e·A·8G); the doubly-magic specialization where no single hyperbolic knot (hence no per-knot trace) exists."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.88073135932078,
       "expected": 0.5,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "ratio of worst-case generic miss factors (E_0 over α_D); in [0,1] means the derived E_0 is the tighter anchor across D/T/³He."
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.083,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.25,
+      "tolerance": "0.25",
       "source": "max over {T, ³He} of max(miss, 1/miss) for the bond-type factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); no fitted coefficients — bond L's from 2-nucleon sub-braids."
     },
     {

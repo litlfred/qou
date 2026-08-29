@@ -33,6 +33,14 @@ from young_seminormal import chi_young, seminormal_sigma  # noqa: E402
 from lr_coefficients import partitions_of       # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 DPS = 50
 mp.mp.dps = 60
 
@@ -122,9 +130,9 @@ def verify_streaming_a4():
 
     worst = mp.mpf(0)
     for lam in [(10, 2), (11, 1), (7, 5)]:
-        full = finner + [(mp.mpf(1), -h / 2, 8)] + [(c, d, g + 9) for (c, d, g) in fblock]
+        full = finner + [(mp.mpf(1), _pn_d(h), 8)] + [(c, d, g + 9) for (c, d, g) in fblock]
         lhs = chi_young(lam, full, q)
-        blocks_full = rec.interface_blocks(lam, 9, 3, q_str, -h / 2, DPS)
+        blocks_full = rec.interface_blocks(lam, 9, 3, q_str, _pn_d(h), DPS)
         blocks = {k: info["A"] for k, info in blocks_full.items()}
         rhs = rxd.combiner_value_streaming(blocks, RB, finner, q_str, DPS)
         worst = max(worst, abs(lhs - rhs))

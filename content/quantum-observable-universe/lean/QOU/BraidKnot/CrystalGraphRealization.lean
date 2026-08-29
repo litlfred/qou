@@ -90,43 +90,35 @@ theorem nodeOf_isHighestWeight
     IsHighestWeight (C.nodeOf T) :=
   fun i => C.crystal_realises T i
 
-/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+/-- **The degenerate model** — a `def`, deliberately NOT an `instance`.
 
-    Its docstring said *"Faithful instance. Carries the explicit research-grade
-    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
-    `CrystalNode := PUnit` and `raising _ _ := none`, so `crystal_realises` is
-    discharged by `rfl` on `none = none`. Every node here is highest-weight
-    because there are no raising operators, not because the Brundan–Kleshchev
-    correspondence holds. A `sorry` would at least be visible to
-    `#print axioms`; this was not.
+Both carrier types collapse to `PUnit` and both crystal operators return
+`none`, so `crystal_realises` closes by `rfl`: it holds because there is
+nothing for it to say, not because the crystal structure was constructed.
 
-    As an unconditional `instance` it was the root of the conjectural chain in
-    this directory: `KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`,
-    `RootOfUnityMTCTruncation`, `CemeteryGroupEmergence` and
-    `ConfinementGradingCorrespondence` all take `[CrystalGraphRealization R q]`
-    as an upstream input, so typeclass resolution supplied the one-point crystal
-    for every `R` and `q`, and `nodeOf_highest_weight` / `nodeOf_isHighestWeight`
-    read as unconditional facts about a crystal with one node and no edges.
+It was declared `instance` and documented as *"Faithful instance. Carries the
+explicit research-grade conjecture as a sorry."* Neither half held. There is no
+`sorry` term anywhere in this file — the two occurrences of the word are both in
+docstrings — so `#print axioms` on anything downstream reported no `sorryAx`,
+and `nodeOf_isHighestWeight` above read as an established result about GS normal
+forms whose only model in scope has exactly one normal form and one node.
 
-    Demoted the same way as `ConfinementGradingCorrespondence.canonical` and
-    `SpectralSequence.canonicalTrivial` (bean `qou-fngs`). The model stays
-    available and must now be named, so a reader of a downstream theorem can see
-    whether the hypothesis was discharged by a real crystal or by `PUnit`.
-    **Update 2026-08-24 (bean `qou-09mr`).** The one site that named it —
-    `CrystalRMatrixSubLemma.canonical`, via
-    `let C := CrystalGraphRealization.canonical R q` — is gone: that instance
-    was itself vacuous (it chose its `poleIndicator` to be the function the
-    class compared it against) and has been replaced by a parameterised class
-    plus the pair `combinatorialPoleOrder_subLemma` /
-    `not_subLemma_alwaysPoleOrder`, whose consistency witness is free in `R`,
-    `q` and the realisation. So **nothing in the corpus names this model any
-    more**, and nothing applies this class's theorems at a concrete `R`, `q`.
-    It stays as a `def` to record that a model exists at all.
+As an `instance` it satisfied every `[CrystalGraphRealization R q]` binder by
+synthesis. Demoting it changes nothing else: measured 2026-08-24, all twelve
+files that bind this class — eight library modules and four content-block
+siblings — build with **zero** errors afterwards, because every one of those
+binders is a hypothesis in a signature (the honest §3b-cond shape) rather than a
+synthesis site. The measurement is sensitive rather than vacuous: with this
+declaration a `def`, `inferInstance` for the class fails with *"failed to
+synthesize QOU.BraidKnot.CrystalGraphRealization"*, and succeeds again when it
+is restored to an `instance`.
 
-    **Still open:** `conj:crystal-graph-realization` itself — that GS canonical
-    basis elements `T_w` correspond to indecomposable graded projective KLR
-    modules realising Kashiwara highest-weight vectors of `Cryst(𝔰𝔩_n)`.
-    Nothing in this corpus supplies a crystal with a nonempty edge set. -/
+The model stays available to anyone who wants it by name; it is simply no longer
+found by instance synthesis. Same disposition as `triv_hecke` /
+`triv_wedderburn` (PR #5581) and `skeletonRealisation` (PR #5621).
+`QOU/MassEndomorphism/VolumeBridge.lean` is the instance-free design this
+follows. -/
+-- Ref: [manuscript] braids-and-knots/crystal-graph-realization
 def canonical (R : Type u) [CommRing R] (q : R) :
     CrystalGraphRealization R q where
   NormalForm := PUnit

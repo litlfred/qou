@@ -1,32 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-11T11:02:39.299498+00:00",
-  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
+  "computedAt": "2026-08-29T11:31:57.818024+00:00",
+  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
   "assertions": [
     {
       "name": "paper_and_clean_forms_agree",
       "computed": 0.0,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Paper's (q²-1) form and clean (q+1)·ℏ_q form are symbolically equal"
     },
     {
       "name": "sum_y_lambda_chi_lambda_diff_matches_tau_M",
-      "computed": 0.015943095354596763,
+      "computed": "0.01594309549473549365874180063522721205845385681377250818520833353183956",
       "expected": 0,
       "passed": false,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "source": "Σ y_λ · χ_λ(β_n - β_p) = τ_M(β_n - β_p) at q_0"
     }
   ],
   "allPassed": false,
-  "durationMs": 89,
+  "durationMs": 95,
   "computation": "qbeta-per-block-paper-closed-forms",
   "scriptFile": "qbeta_per_block_paper_closed_forms.py",
-  "scriptHash": "be96cda61a46",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "4685b71b4c6f",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,10 +37,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_per_block_paper_closed_forms.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_per_block_paper_closed_forms.py"
   },
   "description": "Verifies the paper's per-Wedderburn-block closed forms for χ_λ(β_n - β_p) at H_3(q) and identifies the cleaner factored form: each block's character difference is LINEAR in ℏ_q = (q-1)/q at leading order. This provides the structural foundation for per-block c_k^(λ) extraction in the Q_β precision ladder.",
   "data": {
@@ -55,16 +62,16 @@
       "(1,1,1)": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5)"
     },
     "chi_at_q_0": {
-      "(3)": "-0.2603876773188875409678299384021051585713694975475",
-      "(2,1)": "-0.10681447001204184831103763732191695758011166823619",
-      "(1,1,1)": "-0.17153865926605784593979774906009395759912865147583"
+      "(3)": "-0.26038767755583283085971669733979481417635573593811",
+      "(2,1)": "-0.10681447009447515225950632218692177720363067120317",
+      "(1,1,1)": "-0.17153865936935875857650330951083230390747525350938"
     },
     "y_lambda_at_q_0": {
       "(3)": "0.50540422650393080318755870324047227566035119774981",
       "(2,1)": "0.2472978867480345984062206483797638621698244011251",
       "(1,1,1)": "0.0"
     },
-    "tau_M_diff_at_q_0": "-0.1580160253545967470056225422033879205358618620894635268731828134256788",
+    "tau_M_diff_at_q_0": "-0.1580160254947354798312959456493735549320271600364287581852083335318396",
     "taylor_coefficients_per_block_ε_order": {
       "(3)": [
         "0",

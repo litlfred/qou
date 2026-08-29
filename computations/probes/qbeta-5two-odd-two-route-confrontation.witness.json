@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:19:47.946609+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-29T11:28:27.061629+00:00",
+  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
   "assertions": [
     {
       "name": "sigma_pair_projection_consistent",
-      "computed": 4.084548134568633e-18,
+      "computed": "0.00000000000000000408454813456863315574484066601411477128178330353758839844757",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im φ_σ1(x_sub): truncation = directional resummation (both converged at |x| ≈ 0.104)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "three-model tail-law ranking (algebraic / stretched / quadratic) identical across the two tail windows on the exact T̂_n"
     }
   ],
@@ -25,8 +25,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-odd-two-route-confrontation",
   "scriptFile": "qbeta_5two_odd_two_route_confrontation_probe.py",
-  "scriptHash": "0a5c92c3d5ff",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "e17d94ffeab3",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_odd_two_route_confrontation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_odd_two_route_confrontation_probe.py"
   },
   "description": "A6.2: the two independent 5₂ odd-channel routes confronted at the substrate with NO scheme constant. A: the saddle-side σ-pair odd projection O_φ = Im φ_σ1(−ln q₀) (24-order basis; truncation vs Borel–Padé directional Laplace consistency-gated) — a derived, calibration-free odd number recorded scope-(a) against the Masbaum-face resummed D_odd and the anchor rows, with the function-level bridge (Stokes sector population on the real-q ray) explicitly named OPEN. B: a normalization-free structural tie — the soft-singularity exponent θ of the exact W9 q-Borel integer sequence, measured by a 3-parameter linear model (structural measurement, not a physics fit), vs the φ-side Gauss-prefactor prediction θ = 3/2. auditOnly; no c_k wired; no fit; no identification.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -111,8 +118,8 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-phi-series-engine.witness.json",
-        "sha256": "f866db7ad97ad2068716ed86f703443105f2bdf1e635450f0cec58c0a40ae963",
-        "size_bytes": 5970,
+        "sha256": "f4531337dafa8574bab3dac83440a1a11433a3b1ea5c8b09c662239aff2b67d2",
+        "size_bytes": 5978,
         "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
         "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
         "computedAt": "2026-08-01T15:17:51.390941+00:00"

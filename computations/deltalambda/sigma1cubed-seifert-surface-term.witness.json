@@ -1,0 +1,58 @@
+{
+  "witness_schema": "qou-probe/v1",
+  "name": "sigma1cubed-seifert-surface-term",
+  "description": "\u03c3\u2081\u00b3 deuteron NA-Stokes surface term: EMPIRICAL tessellation-independence check + value vs C_knot=5.853. Verdict: the surface state-sum is tessellation-INDEPENDENT (topological invariant, no per-cell DOF, not a fit) but at archimedean q\u2080 it is DEGENERATE (torus-knot Vol=0) and does NOT reproduce 5.853; the character-channel surface-ordering correction is identically 0 by trace cyclicity. The 5.853 content is fibre-level (root-of-unity WRT); the open wall is the fibre\u2192archimedean \u03c4-transfer, NOT a missing discretization. Honest negative.",
+  "computed_at": "2026-08-25T16:36:08Z",
+  "elapsed_sec": "0.001",
+  "data": {
+    "conventions": {
+      "q0": "1.1099785827513808076",
+      "A_eq_q0_pow_minus_half": "0.94916715280067582634",
+      "t_eq_A_minus4_eq_q0_sq": "1.2320524541667639313"
+    },
+    "tessellation_independence": {
+      "TESS_A_word": "sigma1^3 (3 crossings, 8 Kauffman states)",
+      "TESS_B_word": "sigma1^3 * (sigma1 sigma1^-1) (5 crossings, 32 states) \u2014 R2-refined SAME trefoil",
+      "f_TESS_A": "0.798068412281794198188271",
+      "f_TESS_B": "0.798068412281794198188271",
+      "relative_diff": "5.02356e-51",
+      "AGREE": true,
+      "meaning": "the writhe-normalised state-sum invariant is IDENTICAL on both tessellations \u2014 no per-cell DOF, refinement-invariant (the R2 plaquette = a sub-plaquette regulator). This is the owner's 'not a fit' evidence: invariance \u21d2 zero tunable DOF."
+    },
+    "jones_crosscheck": {
+      "V_right_trefoil_exact_minus_t4_plus_t3_plus_t": "0.798068412281794198188271",
+      "f_TESS_A": "0.798068412281794198188271",
+      "matches_exact": true
+    },
+    "value_vs_target": {
+      "tessellation_invariant_surface_statesum_at_q0": "0.79806841228179419819",
+      "C_knot_target": "5.853",
+      "ratio_value_over_target": "0.13635203",
+      "reproduces_5p853": false,
+      "meaning": "the tessellation-invariant scalar state-sum surface term for \u03c3\u2081\u00b3 at the ARCHIMEDEAN q\u2080 is the ordinary trefoil Jones value \u2014 nowhere near 5.853. Consistent with the torus-knot Vol=0 / pinched-octahedron degeneracy (PinchedOctahedronDegenerate.lean, geometric-qdilog-lifted-amplitude): the archimedean surface state-sum does NOT carry the deficit."
+    },
+    "scalar_surface_correction": {
+      "closure_ordered": "-2.0437062085325219894",
+      "closure_reordered": "-2.0437062085325219894",
+      "abs_difference": "0.0",
+      "correction_is_zero": true,
+      "meaning": "the surface-ordering correction to the CHARACTER channel is 0 (trace cyclicity: tr[A,B]=0). So the surface term cannot add to B(K)=m_e|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb \u0394_\u03bb| through \u03c7^\u03bb. The 5.853 deficit is NOT a scalar/character surface correction (scope-(b), invariant: trace annihilates commutators)."
+    },
+    "verdict": {
+      "tessellation_independent": true,
+      "converged_value_hits_5p853": false,
+      "scalar_surface_sector_is_null_in_chi_lambda": true,
+      "bottom_line": "TESSELLATION-INDEPENDENT: YES \u2014 the \u03c3\u2081\u00b3 surface state-sum is a topological (Reidemeister/Pachner-invariant) quantity; refining the tessellation (R2 sub-plaquette) leaves it EXACTLY unchanged, so it has no tunable per-cell DOF (not a fit). VALUE: it does NOT reproduce C_knot=5.853 \u2014 at the archimedean q\u2080 the surface state-sum for the \u03c3\u2081\u00b3 torus knot is degenerate (Vol=0, pinched octahedron). Independently, the surface-ordering CORRECTION to the character channel \u03c7^\u03bb is identically 0 (trace cyclicity). CONCLUSION: the deuteron 5.853 deficit is NOT in the tessellation-invariant scalar/archimedean surface sector. The 5.853-relevant content lives at the FIBRE (root-of-unity WRT) level; the open blocker is the fibre\u2192archimedean \u03c4-functor transfer of the pinched regular part (documented: geometric-qdilog-lifted-amplitude 'SHARPENED WALL'), NOT a missing surface discretization. HONEST NEGATIVE."
+    },
+    "locked_targets": {
+      "B_AME_deuteron_MeV": "2.224566",
+      "B_bare_categorical_MeV": "0.38",
+      "C_knot_target": "5.853",
+      "note": "B_AME diagnostic-only, never inverted; expectations locked before compute."
+    },
+    "free_parameters": 0,
+    "audit_only": true,
+    "nothing_wired": true
+  },
+  "scriptHash": "1b10dfa45f7d70e3"
+}

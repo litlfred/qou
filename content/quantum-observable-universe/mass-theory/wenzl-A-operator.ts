@@ -20,7 +20,6 @@ export default definition({
   label: "def:wenzl-A-operator",
   title:
     "Wenzl A-operator $A^\\lambda_{\\mu\\nu}(I)$: the $(\\mu, \\nu)$-block of an interface generator",
-  chapter: "mass-theory",
   uses: ["prop:lr-coefficient-hecke"],
   cites: ["wenzl1988", "hoefsmit1974"],
   defines: [],

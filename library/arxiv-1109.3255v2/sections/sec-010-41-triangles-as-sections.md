@@ -7,7 +7,7 @@ section_number: 4.1
 pages: 32-40
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
-doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
 ---
 schetz ﬁbration having as base a strip with a Z–family of critical values. Once this is
 done, we can apply a TQFT for counting sections of Lefschetz ﬁbra tions developed

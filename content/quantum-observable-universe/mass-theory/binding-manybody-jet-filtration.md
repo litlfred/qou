@@ -28,18 +28,46 @@ $G(qx;q)=R(q,x)\,G(x;q)$, whose Archimedean ($\tau$) image is a Dirac-type
 partial differential equation. Under this conjecture $\rho\cdot A$ is an
 **output** of the recursion, not a fitted constant.
 
-**Anchors.** The series is pinned at two body orders already derived without
-fitting: the $n=2$ deuteron term (single inter-nucleon bond) and the $n=4$
-magic-shell term [`magic-A-binding-formula`](#prop:magic-A-binding-formula),
-$B(^{4}\mathrm{He}) = 2\,m_e\,A\,\mathrm{Vol}(\mathrm{L6a4})$, which lands
-$^{4}\mathrm{He}$ within $+5.87\%$. The conjecture asserts that these are the
-$n=2$ and $n=4$ members of one filtration, with the $n=3$ term the genuine
-three-body contribution (not reducible to pairwise sums).
+**Anchors.** The series is referred to two body orders: the $n=2$ deuteron term
+(single inter-nucleon bond) and the $n=4$ magic-shell term
+[`magic-A-binding-formula`](#prop:magic-A-binding-formula),
+$B(^{4}\mathrm{He}) = \rho_F\,m_e\,A\,\mathrm{Vol}(\mathrm{L6a4})$ with
+$\rho_F = 2$, which lands $^{4}\mathrm{He}$ within $+5.87\%$. The conjecture
+asserts that these are the $n=2$ and $n=4$ members of one filtration, with the
+$n=3$ term the genuine three-body contribution (not reducible to pairwise sums).
 
-This is an open conjecture: the residue-sum form of each term and the two
-anchors are established, but the equality of the full binding to the complete
-jet-order filtration — and the $q$-difference origin of the scale rule — are
-not yet proved.
+**What the two anchors do and do not pin.** Read with the weight $w_n$ of the
+scope note below, the unknowns through $A=4$ are $w_2,w_3,w_4$ — three — against
+two anchor equations, so **one free parameter survives and the $n=3$ term is not
+determined**. The $n=2$ anchor fixes $w_2$; the $n=4$ anchor is a single equation
+in the two remaining unknowns, so for every $w_3$ there is exactly one
+$w_4 = (B_{\mathrm{magic}}/m_e - a_D^{(2)}w_2 - a_D^{(3)}w_3)/a_D^{(4)}$ holding
+both anchors identically. The $A=3$ prediction along that family,
+$B(^{3}\mathrm{H}) = m_e(a_D^{(2)}w_2 + a_D^{(3)}w_3)$, is unbounded in $w_3$, so
+$A=3$ cannot test the $n=3$ term — it defines it. Adding positivity and monotone
+growth $w_2 \leq w_3 \leq w_4$ narrows the induced $B(^{3}\mathrm{H})$ to a window
+$66$–$78\%$ of the observable's own magnitude, which the data does satisfy; that
+consistency is the one non-circular check the anchors support, and it carries
+that width. The count is unchanged if the $n=4$ anchor is instead read as pinning
+the $n=4$ term alone, since nothing then mentions $w_3$ at all.
+
+Neither anchor is parameter-free as stated. The prefactor $\rho_F = 2$ is
+**consumed as an input hypothesis**, not derived — see
+[the doubly-magic binding context](#rem:magic-A-binding-formula-context). And the
+$w_2 = 4.353$ used across the $w_n$ probes is $B_{\mathrm{AME}}(^{2}\mathrm{H})$
+inverted, an extraction; the *derived* single $p$–$n$ bond gives
+$\alpha L_{pn} \approx 2.833\ \mathrm{MeV}$, $+27.3\%$ above the measured
+$2.2246\ \mathrm{MeV}$, hence $w_2 \approx 5.544$ instead. Rigidity for $w_3$
+would have to come from the *derived* kernel $R(q,x)$, which is open. Measured in
+[`binding_n3_forcing_probe.py`](../../../computations/binding_n3_forcing_probe.py);
+scope-(a) analysis in
+[the n=3 forcing audit](../../../docs/audits/2026-08-26-n3-body-order-forcing.md).
+
+This is an open conjecture: the residue-sum form of each term is established
+and the two anchors are stated, but the anchors are conditional in the sense
+just described, they leave the $n=3$ term free, and the equality of the full
+binding to the complete jet-order filtration — together with the $q$-difference
+origin of the scale rule — is not proved.
 
 **Scope note on the weight $w_n(K)$.** A derive-or-refute probe of the
 weight kernel establishes what does *not* close.
@@ -47,7 +75,12 @@ Body-order weights $w_n$ (shared across knots $K$) are **admissible**: the raw
 $^{3}\mathrm{H}$/$^{3}\mathrm{He}$ binding split ($0.76\ \text{MeV}$, $9.9\%$) is
 almost entirely **Coulomb** — on the Coulomb-corrected strong binding
 $B_{\mathrm{strong}}$ the mirror pair agrees to $\sim 2.7\%$ (charge-symmetry
-breaking), so a $K$-independent $w_n$ is *not* excluded. But no parameter-free
+breaking), so a $K$-independent $w_n$ is *not* excluded. That $2.7\%$ is
+geometry-dependent: at the canonical *derived* $r_0 = \hbar c/m_\pi$ of
+`coulomb_energy.py` the correction overshoots and the residual is $\approx -1\%$
+with $^{3}\mathrm{He}$ the more bound partner, while the measured-charge-radius
+geometry gives $+1\%$; the spread across geometries is $0.16\ \mathrm{MeV}$,
+which does not affect the admissibility conclusion. But no parameter-free
 *constant-ratio* kernel $R(q,n)$ reproduces the extracted $w_2,w_3,w_4$ to $5\%$
 (geometric $22.7\%$, $[n]_q$ $29.4\%$, $[n]_q^2$ $6.9\%$ the lone near-miss), and
 a tuned recursion is the banned seventh $\Delta_\lambda$ ansatz. A fully
@@ -60,6 +93,28 @@ $(q-1)^2\Phi_3$ deviation, formalized in
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
+
+**How much is undetermined, exactly, and why no scalar $R(q,x)$ can supply it.**
+"Does not determine it" is now a count rather than a caution. With $R$ an
+unconstrained formal power series the shift relation determines exactly one
+kernel coefficient per body order, and conversely: for any body sequence with
+$B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
+([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean),
+sorry-free). So the unconstrained ansatz constrains *nothing*: it reparametrises
+the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
+the recursion" is false unless $R$ is independently pinned. All of the ansatz's
+content therefore lies in the **finiteness** of the Laurent window.
+
+That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
+carrier is the rank-$2$ module $\mathcal{K}$ of
+[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol),
+which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
+every rank-1 $q$-difference module has integer slope — so no scalar
+$R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this
+conjecture must be a $2\times2$ **matrix**, and a rank-$2$ recursion needs two
+base cases, so the $n=3$ term is required as an independent input rather than
+produced by the recursion. This is consistent with, and independent of, the
+one-free-parameter count recorded above.
 
 A multi-anchor test (D$\to{}^{12}$C, Coulomb-corrected) further shows that the
 full-tower reading — summing $B(K)=\sum_{n=2}^{A} m_e\,a_D^{(n)}\,w_n$ to the

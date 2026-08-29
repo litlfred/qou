@@ -41,7 +41,7 @@
       "computed": 5.2161532140519286e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 5e-07,
+      "tolerance": "5e-07",
       "source": "direct Faddeev-integral quadrature vs GK closed form (2) at b=1: |Δ| ≈ 5e-9 (double-precision tensor Gauss–Legendre)."
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.8920673032500315e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 5e-07,
+      "tolerance": "5e-07",
       "source": "assembled Cor 1.2 evaluation at b²=1/5 vs direct state integral ∫Φ_b(x)²e^{−πix²}dx — end-to-end gold check of the entire transcription (root of unity, Rogers branches, (1−z)^{13/10}, 1-loop (1+z)/(1−z), /D₅ branches, G₅⁺)."
     },
     {

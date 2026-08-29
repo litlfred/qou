@@ -7,7 +7,7 @@ section_number: 3.1
 pages: 51-55
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 This section sets up the framework for the whole chapter. The data are: M is
 an exact symplectic manifold. L0,L 1⊂M are exact Lagrangian submanifolds.

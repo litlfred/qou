@@ -6,8 +6,8 @@ Route C M3 (aomega_m3_adjoint_index_set.py) said the one cheap test left for
 H_Ad was a RANK-6 KNOT whose grading is not multiplicity-free, and reported that
 no such data existed in the 371-PDF corpus. That report was based on a sweep for
 "Stokes"; it missed Garoufalidis-Zagier "Knots and Their Related q-Series"
-(SIGMA 19 (2023) 082, uploads/2304.09377v2.pdf) -- the sequel [44] that
-uploads/2111.06645v3.pdf announces in its own abstract, which studies the
+(SIGMA 19 (2023) 082, library/arxiv-2111.06645/2304.09377v2.pdf) -- the sequel [44] that
+library/arxiv-2111.06645v3/2111.06645v3.pdf announces in its own abstract, which studies the
 (-2,3,7) pretzel knot in detail and mentions "Stokes" exactly once.
 
 What GZ S3.5 reports looks like the refutation: "a new phenomenon ... the weight
@@ -198,7 +198,7 @@ def main():
              "recorded so neither is quoted alone. Lean: "
              "sign_question_only_arises_at_level_two.")
 
-    # ---- T13-T16: Dimofte-Garoufalidis §6 signatures (uploads/1511.05628v1.pdf) ----
+    # ---- T13-T16: Dimofte-Garoufalidis §6 signatures (library/arxiv-1511.05628v1/1511.05628v1.pdf) ----
     # DG states trace fields in the SIGNATURE notation [r1,r2] -- the exact input the
     # Part-4 rule consumes -- for five knots. Glyph-verified from §6.1-§6.4.
     dg = {  # knot: (min-poly degree, r1 real, r2 pairs, discriminant as printed)
@@ -530,7 +530,7 @@ def main():
                        "s3_partitions":s3_partitions,"s3_dims":s3_dims,
                        "w0_multiplicities":w0_mult,
                        "lean":"QOU.QBeta.GZThirdKnotRankGrading",
-                       "sources":["uploads/2304.09377v2.pdf","uploads/2111.06645v3.pdf"]},
+                       "sources":["library/arxiv-2111.06645/2304.09377v2.pdf","library/arxiv-2111.06645v3/2111.06645v3.pdf"]},
          "data":{"erratum":"GZ 2304.09377 S3.5 prose dims (1,4,1) -> should be (4,1,1)",
                  "pk_sizes":pk,"verdict":verdict},
          "assertions":A}

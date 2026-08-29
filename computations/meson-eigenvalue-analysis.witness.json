@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:18:59.380207+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:05:23.578912+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "trace_ratio_computed",
-      "computed": 1.460935341988292,
+      "computed": "1.460935341988291934930693600237439510475484243776595488982008947102641",
       "expected": 1.461,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "|tr_M(sigma_1^5)|/|tr_M(sigma_1^3)|"
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 4,
   "computation": "meson-eigenvalue-analysis",
   "scriptFile": "meson_eigenvalue_analysis.py",
-  "scriptHash": "7c949938b755",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "5148bfed5fef",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_eigenvalue_analysis.py"
+    ],
+    "reproduce": "python3 -u computations/meson_eigenvalue_analysis.py"
   },
   "description": "Apply baryon eigenvalue structure (b*hbar^2, b^2=(h^2+3)/(h^2+4)) to mesons. Eigenvalue carries over (same H_3(q)), but trace ratio misses m_K/m_pi by 2.4x. Meson SDP selects different Wedderburn blocks than baryon (all-positive crossings → symmetric dominance).",
   "data": {

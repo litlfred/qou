@@ -1,0 +1,212 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "quaternioms",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "becedcbc858611dd5ff2f0e020829bed340ee4510739e990568df01009279cfd",
+  "file": "quaternioms.pdf"
+ },
+ "provenance": {
+  "title": "3.01.3",
+  "authors": "Quaternionic and Octonionic",
+  "arxiv": null,
+  "doi": "10.3390/quantum7040055"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "theorem": 4,
+   "proposition": 5,
+   "corollary": 2,
+   "lemma": 2,
+   "remark": 1
+  },
+  "formalization_candidates": 13
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": "Canonical tensor structure over H",
+   "statement": "Let (Hi, \u27e8\u00b7, \u00b7\u27e9i), i = 1, 2, 3, be right H-Hilbert",
+   "section_file": "sections/sec-016-quaternionic-model-structural-universality-and-s.md",
+   "section_title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": "Quaternionic universality via SU(2",
+   "statement": "+ entangler). Let G1 be any dense family",
+   "section_file": "sections/sec-016-quaternionic-model-structural-universality-and-s.md",
+   "section_title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "Polynomial simulation equivalence H \u2194 C",
+   "statement": "Any n-quaternionic qubit circuit of",
+   "section_file": "sections/sec-016-quaternionic-model-structural-universality-and-s.md",
+   "section_title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": "Complexity and fault-tolerance transfer",
+   "statement": "By Theorem 2, BQP-level algorithms",
+   "section_file": "sections/sec-016-quaternionic-model-structural-universality-and-s.md",
+   "section_title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": "Alignment with native SU(2",
+   "statement": "control). If a platform implements U \u2208 SU(2)",
+   "section_file": "sections/sec-016-quaternionic-model-structural-universality-and-s.md",
+   "section_title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": "Intrinsic path dependence via associators",
+   "statement": "For time-dependent H(t) \u2208 O, the prop-",
+   "section_file": "sections/sec-017-octonionic-model-formal-obstructions-and-limits.md",
+   "section_title": "Octonionic Model: Formal Obstructions and Limits",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": "No canonical multipartite tensor product in O",
+   "statement": "For right O-modules HA, HB, HC,",
+   "section_file": "sections/sec-017-octonionic-model-formal-obstructions-and-limits.md",
+   "section_title": "Octonionic Model: Formal Obstructions and Limits",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2",
+   "name": "No native, parenthesis-free wiring rule",
+   "statement": "Absent con\ufb01nement to associative",
+   "section_file": "sections/sec-017-octonionic-model-formal-obstructions-and-limits.md",
+   "section_title": "Octonionic Model: Formal Obstructions and Limits",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4",
+   "name": "Con\ufb01nement \u21d2 associativity",
+   "statement": "Fix an embedded copy H \u2282 O (e.g., an oriented",
+   "section_file": "sections/sec-018-mitigation-strategies-correctness-guarantees-and.md",
+   "section_title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5",
+   "name": "Syndrome detectability",
+   "statement": "Encoding into subspaces stabilized by Aut(O) \u223c= G2",
+   "section_file": "sections/sec-018-mitigation-strategies-correctness-guarantees-and.md",
+   "section_title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": "First-order cancellation of associator terms",
+   "statement": "Within a \ufb01xed associative sector",
+   "section_file": "sections/sec-018-mitigation-strategies-correctness-guarantees-and.md",
+   "section_title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6",
+   "name": "Associative-factor compilation",
+   "statement": "Any target transformation from an octo-",
+   "section_file": "sections/sec-018-mitigation-strategies-correctness-guarantees-and.md",
+   "section_title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7",
+   "name": "Complexity over H",
+   "statement": "By Theorem 2, the quaternionic model is a polynomially",
+   "section_file": "sections/sec-019-complexity-landscape-and-feasibility.md",
+   "section_title": "Complexity Landscape and Feasibility",
+   "pages": "19-20",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": "Octonionic costs and limits",
+   "statement": "In the octonionic setting, \u201cswitching associative sectors\u201d",
+   "section_file": "sections/sec-019-complexity-landscape-and-feasibility.md",
+   "section_title": "Complexity Landscape and Feasibility",
+   "pages": "19-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

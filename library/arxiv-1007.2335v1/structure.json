@@ -1,0 +1,120 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1007.2335v1",
+ "source": {
+  "file": "1007.2335v1.pdf",
+  "sha256": "a55d544d1740523fe4af458dc7fc07aa8723e99d3806dcc26753564cdfaebc48",
+  "bytes": 157209,
+  "pages": 11,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1007.2335",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Jul 2010"
+  },
+  "doi": null,
+  "title": "Hopf solitons in the Nicole model",
+  "authors_raw": "Mike Gillard and Paul Sutcliffe",
+  "title_lines": [
+   "Hopf solitons in the Nicole model"
+  ],
+  "abstract": "The Nicole model is a conformal \ufb01eld theory in three-dimensi onal space. It has topo- logical soliton solutions classi\ufb01ed by the integer-valued Hopf charge, and all currently known solitons are axially symmetric. A volume-preserving \ufb02ow is used to numerically construct soliton solutions for all Hopf charges from one to eight. It is found that the known axially symmetric solutions are unstable for Hopf cha rges greater than two and new lower energy solutions are obtained that include knots a nd links. A comparison with the Skyrme-Faddeev model suggests many universal feat ures, though there are some di\ufb00erences in the link types obtained in the two theories . 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "Tue Apr 21 11:05:09 2009",
+   "Creator": "gnuplot 4.2 patchlevel 3 ",
+   "Title": "t1.ps",
+   "Author": "paul,U-SPONGEBOB\\paul,S-1-5-21-633390969-3829690191-1315090866-1005"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Nicole model and volume-preserving flow",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Initial conditions",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Numerical results",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 10,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 12243,
+   "n_words": 2197
+  },
+  {
+   "id": "sec-001-3-initial-conditions",
+   "number": "3",
+   "title": "Initial conditions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3371,
+   "n_words": 703
+  },
+  {
+   "id": "sec-002-4-numerical-results",
+   "number": "4",
+   "title": "Numerical results",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6977,
+   "n_words": 1339
+  },
+  {
+   "id": "sec-003-5-conclusion",
+   "number": "5",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3634,
+   "n_words": 619
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 4,
+  "chars_total": 26225
+ }
+}

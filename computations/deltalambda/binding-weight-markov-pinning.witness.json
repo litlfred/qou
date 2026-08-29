@@ -5,10 +5,10 @@
   "description": "Pin the binding weighting convention. The binding is the Markov trace J_L=tr_M(\u03c1(\u03b2_L)) (\u00a77a), unique up to normalization, so its Wedderburn weight is DETERMINED: y_\u03bb (Wenzl, solved from the Markov axiom \u2014 canonical wedderburn_jones_markov module). The Schur-Weyl/Plancherel W_\u03bb=d_q\u00b2/[n]! is DOUBLY excluded: (a) 'NOT the Markov-trace weight' (canonical module) and y_\u03bb\u2260W_\u03bb (n=3 ratios 0.16\u20132.9); (b) W_\u03bb is CONJUGATION-SYMMETRIC (W_\u03bb=W_{\u03bb'} from hook-transpose invariance, verified \u2264n=7) while y_\u03bb is ASYMMETRIC (y_(3)=0.415\u2260y_(1,1,1)=0.023) \u2014 binding requires that chirality (GAP-1: symmetric \u0394_\u03bb \u21d2 g\u2082=0 for even A), so W_\u03bb washes it out (scope-b). Explains three-walls Route 1's 33\u00d7 W_\u03bb overshoot (wrong trace); flags the alpha_em_b2_scalar_c_probe:116 mislabel; and refines PR #4491's C_knot-not-universal (the 41\u00d7 was right-vs-wrong weight, not genuine ambiguity \u2014 with y_\u03bb pinned, C_knot=5.85 is well-posed, and is NOT a weight issue). DERIVED pinning + scope-(b) exclusion; NOT a \u0394_\u03bb magnitude derivation (open, bean qou-3q7t). No fit; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "DERIVED weight pinning (Markov axiom) + scope-(b) W_\u03bb exclusion (conjugation symmetry); no fit",
-  "scriptHash": "3a4086640cdab2fa",
+  "scriptHash": "3c3b9fd7f9bc",
   "result": {
     "substrate": {
-      "q0": "1.10997859555733471989976322048"
+      "q0": "1.10997858275138080759166909561"
     },
     "pinning": {
       "binding_trace": "J_L = tr_M(\u03c1(\u03b2_L)) \u2014 Markov trace (\u00a77a); unique up to normalization",
@@ -25,7 +25,7 @@
         },
         "(2, 1)": {
           "y_lambda": "0.24729789",
-          "W_lambda": "0.63134619",
+          "W_lambda": "0.6313462",
           "y_over_W": "0.391699"
         },
         "(1, 1, 1)": {
@@ -65,8 +65,12 @@
     "bean": "qou-3q7t",
     "no_fit": true
   },
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "binding_weight_markov_pinning_probe.py",
+  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "engine": "python",
+  "computedAt": "2026-08-29T04:22:33.820019+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -50,6 +50,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -66,7 +67,7 @@ TARGET_SIGNED = mp.mpf("-4.353")
 TARGET_PRECISE = mp.mpf("-2.2245") / mp.mpf("0.51099895069")
 
 # Canonical 50-dps q₀ — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 # ── Partitions + hook-length combinatorics ──

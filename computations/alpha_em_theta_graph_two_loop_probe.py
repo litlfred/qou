@@ -201,7 +201,7 @@ def main() -> int:
                      computed=1.0 if ok_L1 else 0.0, expected=1.0, tolerance=0.5,
                      source="L=1 grammar term (circle bare eval [2]_q over 8pi) is identically the working form-B H")
     wb.add_assertion("dictated_candidate_ratio_recorded",
-                     computed=float(best_ratio), expected=1.12, tolerance=0.05,
+                     computed=best_ratio, expected=1.12, tolerance=0.05,
                      source="-[3]_q/(8pi)^2 vs required TOTAL O(alpha^2): ratio ~1.12 (near-miss, outside 2 sigma) — "
                             "recorded as the constrained-class benchmark, not a derivation")
     wb.save()

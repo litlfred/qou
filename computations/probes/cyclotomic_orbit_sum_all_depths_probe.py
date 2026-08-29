@@ -110,7 +110,7 @@ def main() -> int:
         .add_data("per_N_per_n_results", results)
         .add_assertion(
             name="clausen_orbit_sum_closed_form_all_N_n",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

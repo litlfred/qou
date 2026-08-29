@@ -169,6 +169,15 @@ def is_data_field(cls: str, field: str, index: dict[str, dict[str, str]]) -> boo
     ty = index.get(cls, {}).get(field)
     if ty is None:
         return False
+    # Strip the ASCII function arrow FIRST. `->` is legal Lean and contains `>`,
+    # which is a Prop marker -- so `realisation : Nat → Nat → R`, a plain data
+    # field, reads as a proof obligation and its constant value is never
+    # flagged. Unicode `→` never tripped this because it is not a marker, so the
+    # bug was invisible in the corpus's dominant spelling; 4 field declarations
+    # under content/ use the ASCII form. It fails in the SAFE direction (missed
+    # candidates, not false ones), which is exactly why it would not have
+    # surfaced on its own.
+    ty = ty.replace("->", " ")
     return not any(mark in ty for mark in PROP_MARKERS)
 
 
@@ -239,7 +248,8 @@ def head_class(type_expr: str) -> str:
     return m.group(1).split(".")[-1] if m else ""
 
 
-def scan_file(path: Path, lines: list[str], index: dict[str, dict[str, str]]) -> list[dict]:
+def scan_file(path: Path, lines: list[str], index: dict[str, dict[str, str]],
+              corpus_classes: set[str]) -> list[dict]:
     hits = []
     for n, line in enumerate(lines):
         m = INSTANCE_HEAD.match(line)
@@ -259,8 +269,25 @@ def scan_file(path: Path, lines: list[str], index: dict[str, dict[str, str]]) ->
         if not cls:
             continue
 
-        # Guarded? Any instance-binder whose class is NOT the inhabited one.
-        guards = [b for b in bracket_binders(binders) if head_class(b.split(":")[-1]) != cls]
+        # Guarded? Only by a CONTENT CARRIER -- a class this corpus declares.
+        #
+        # An earlier version counted EVERY `[…]` binder as a guard, which is
+        # wrong and under-counts badly: `instance canonical {R} [CommRing R] {β} :
+        # MassEndomorphism R β` reads as "guarded by CommRing" and disappears,
+        # even though `CommRing` is ordinary structural machinery that constrains
+        # nothing about the conjecture. Measured, that hid the WORSE of the two
+        # `MassEndomorphism` instances -- the fully generic all-zeros one -- while
+        # keeping `trivial_int_zero`, which was visible only because it is pinned
+        # at concrete `ℤ` and so carries no `[CommRing]` binder at all.
+        #
+        # A guard is what makes `prop-rigid-monoidal`'s `canonical` inert:
+        # `[ctx : RigidMonoidalStructuralGapInvarianceAxiom α]`, a carrier with no
+        # instance of its own. Mathlib structure is not that.
+        guards = [
+            g
+            for b in bracket_binders(binders)
+            if (g := head_class(b.split(":")[-1])) != cls and g in corpus_classes
+        ]
 
         trivial_fields, real_fields = [], []
         for body_line in lines[end + 1 :]:
@@ -300,39 +327,94 @@ def consumers(cls: str, stripped: dict[Path, list[str]]) -> int:
     )
 
 
+FIXTURE = """\
+class Carrier (q : R) where
+  realisation : Nat → Nat → R
+  realisation_nonneg :
+    ∀ b s, 0 ≤ realisation b s
+
+class CarrierAxiom (q : R) : Prop where
+  bridge : ∀ b, realisation b = 0
+
+class Generic (R : Type*) [CommRing R] (b : Type*) where
+  q : R
+  coeff : Nat -> R
+  vol_eq : q = q
+
+instance unguarded (q : R) : Carrier q where
+  realisation := fun _ _ => 0
+  realisation_nonneg := fun _ _ => le_refl 0
+
+instance guarded (q : R) [ctx : CarrierAxiom q] : Carrier q where
+  realisation := fun _ _ => 0
+  realisation_nonneg := ctx.bridge
+
+instance structural {R : Type*} [CommRing R] {b : Type*} : Generic R b where
+  q := 0
+  coeff := fun _ => 0
+  vol_eq := by ring
+"""
+
+
 def self_test(rows: list[dict]) -> int:
-    """Four hand-read cases. A narrowing that loses any of them is not a
-    narrowing, it is the name-gate failure this whole audit exists to avoid."""
-    by = {(r["file"].split("/")[-1], r["instance_class"]): r for r in rows}
+    """Two halves, deliberately separated.
+
+    The FIXTURE half pins the criterion itself. It used to be pinned against
+    live declarations, and that was a design error I only saw when it fired:
+    `skeletonRealisation` was the positive case, PR #5621 demoted it to a `def`
+    -- the correct fix -- and the self-test failed because the corpus had been
+    REPAIRED. A regression test that depends on the corpus staying broken
+    deletes itself on success.
+
+    The CORPUS half keeps only what must remain absent (or present) in the real
+    tree, which is what a corpus assertion is actually for.
+    """
     fails = []
 
-    r = by.get(("phi-q-tower-jsj-bridge.lean", "TowerSummandRealization"))
-    if not r:
-        fails.append("MISS: skeletonRealisation (unconditional, fills `fun _ _ => 0`)")
-    else:
-        if r["guarded_by"]:
-            fails.append(f"skeletonRealisation must be UNGUARDED, got {r['guarded_by']}")
-        # The data/proof split, pinned on the one instance that exercises both.
-        if "realisation" not in r["trivial_fields"]:
-            fails.append("`realisation : … → ℝ` filled `fun _ _ => 0` must read as trivial DATA")
-        if "realisation_nonneg" in r["trivial_fields"]:
+    fx = scan_file(ROOT / "fixture.lean", FIXTURE.split("\n"),
+                   field_types(FIXTURE.split("\n")), {"Carrier", "CarrierAxiom", "Generic"})
+    fxby = {r["instance_class"] + ":" + str(r["line"]): r for r in fx}
+    byname = {}
+    for r in fx:
+        byname.setdefault(r["instance_class"], []).append(r)
+
+    ung = [r for r in fx if not r["guarded_by"]]
+    grd = [r for r in fx if r["guarded_by"]]
+
+    if not any("realisation" in r["trivial_fields"] for r in ung):
+        fails.append("fixture: `realisation := fun _ _ => 0` must read as trivial DATA")
+    if any("realisation_nonneg" in r["trivial_fields"] for r in fx):
+        fails.append(
+            "fixture: `realisation_nonneg` must read as a PROOF, not data -- its type "
+            "starts on the NEXT line, so an empty capture wrongly reads as data"
+        )
+    if not grd:
+        fails.append("fixture: `[ctx : CarrierAxiom q]` must count as a content-carrier GUARD")
+    # The bug this fix exists for: `[CommRing R]` is structural, not a guard.
+    # ASCII `->` in a data field's type must not make it read as a proof.
+    if gen := byname.get("Generic", []):
+        if "coeff" not in gen[0]["trivial_fields"]:
             fails.append(
-                "`realisation_nonneg : ∀ β S, 0 ≤ …` must read as a PROOF, not data "
-                "-- its type starts on the next line, so an empty capture reads as data"
+                "fixture: `coeff : Nat -> R` filled `fun _ => 0` must read as trivial DATA "
+                "-- the ASCII arrow contains `>`, a Prop marker, and must be stripped first"
             )
+    if not gen:
+        fails.append("fixture: the generic all-zeros instance must be detected at all")
+    elif gen[0]["guarded_by"]:
+        fails.append(
+            f"fixture: `[CommRing R]` must NOT count as a guard -- it is structural "
+            f"machinery, not a content carrier; got {gen[0]['guarded_by']}"
+        )
 
-    r = by.get(("prop-rigid-monoidal-structural-gap-invariance.lean", "RigidMonoidalStructuralGapInvariance"))
-    if not r:
-        fails.append("MISS: `canonical` -- it fills `categorical_trace _ := (0 : ℝ)`")
-    elif "RigidMonoidalStructuralGapInvarianceAxiom" not in r["guarded_by"]:
-        fails.append(f"`canonical` must read as GUARDED, got {r['guarded_by']}")
+    # -- corpus assertions: things that must stay fixed --------------------
+    # triv_hecke (PR #5581) and skeletonRealisation (PR #5621) were both demoted
+    # to `def`. Either reappearing as an `instance` is a regression.
+    for cls, pr in (("IwahoriHeckeAlgebra", "#5581"), ("TowerSummandRealization", "#5621")):
+        if any(r["instance_class"] == cls for r in rows):
+            fails.append(f"REGRESSION: {cls} is an `instance` again ({pr} demoted it)")
 
-    # triv_hecke was demoted to `def` in PR #5581; it must not reappear.
-    if any(r["instance_class"] == "IwahoriHeckeAlgebra" for r in rows):
-        fails.append("REGRESSION: triv_hecke is an `instance` again (PR #5581 demoted it)")
-
-    # he4's global instance discharges `strong_duality := by norm_num`, a
-    # checked certificate over concrete rationals -- never a trivial field.
+    # he4's global instance discharges `strong_duality := by norm_num`, a checked
+    # certificate over concrete rationals -- never a trivial field.
     for r in rows:
         if "he4" in r["file"] and "strong_duality" in r["trivial_fields"]:
             fails.append(f"FALSE POSITIVE: he4 strong_duality read as trivial ({r['file']})")
@@ -361,9 +443,17 @@ def main() -> int:
     index: dict[str, dict[str, str]] = {}
     for lines in stripped.values():
         index.update(field_types(lines))
+    # Every class/structure this corpus declares. A `[…]` binder counts as a
+    # guard only if it names one of these -- see the note in scan_file.
+    corpus_classes = {
+        m.group("name").split(".")[-1]
+        for lines in stripped.values()
+        for ln in lines
+        if (m := CARRIER_HEAD.match(ln))
+    }
     rows = []
     for p, lines in stripped.items():
-        rows.extend(scan_file(p, lines, index))
+        rows.extend(scan_file(p, lines, index, corpus_classes))
 
     if args.self_test:
         n = self_test(rows)

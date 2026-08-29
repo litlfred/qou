@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Data.Real.Basic
 /-
   Reeb bundle over the exceptional divisor.
 

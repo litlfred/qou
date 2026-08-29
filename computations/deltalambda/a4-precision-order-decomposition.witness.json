@@ -5,30 +5,30 @@
   "description": "The A=4 (\u2074He) order-separation diagnostic. Physical ratio B(\u2074He)/B(\u00b2H)=13.0316. The EXACT graded baseline [3][4]=15.740 OVERSHOOTS (+20.8%); adding the 4 positive 3-body clusters makes it worse (+29.9%). The fix is a large NEGATIVE 4-body saturation c\u2084\u2248\u22123.896 (\u221224.75% of baseline, |c\u2084|/c\u2083\u224813.1) \u2014 the \u03b1-cluster / closed [1\u2074] SU(4) supermultiplet (\u03bc\u2084 #4320). Order-separation: the bounded 3-body higher-order tail (\u22480.109) is \u226a |c\u2084| (36\u00d7), so A=4 precision needs a NEW leading-order 4-body channel, not a 3-body higher-order refinement. Two new facts beyond three-walls Route 3: (1) frame-independent magnitude \u2014 the A=4 discrepancy is ~5\u00d7 A=3's, localizing the accuracy loss to the saturation regime; (2) \u03bc\u2084 is even more frame-fragile (2.07\u00d7 vs \u03bc\u2083's 1.73\u00d7). A=3 (small +3-body) and A=4 (large \u22124-body) are opposite-sign regimes needing DISTINCT leading channels. scope-(a); anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) A=4 precision-route diagnostic (order-separation + frame-independent magnitude); no fit",
-  "scriptHash": "667cd3aa0bb4acea",
+  "scriptHash": "a38425bb450c",
   "result": {
     "substrate": {
-      "q0": "1.10997859555733471",
-      "h2": "0.0437062182329"
+      "q0": "1.109978582751380807591669095610768879874",
+      "h2": "0.0437062085325"
     },
     "physical_ratio_decomposition": {
       "rho_strong4_BHe4_over_BH2": "13.0316",
-      "rho_grad_G4_exact": "15.73957263",
+      "rho_grad_G4_exact": "15.73957214",
       "baseline_overshoot_pct": "20.78",
-      "model_3body_only": "16.92757263",
+      "model_3body_only": "16.92757214",
       "model_3body_overshoot_pct": "29.896",
       "note": "at A=4 the EXACT graded baseline OVERSHOOTS (+20.8%); adding the positive 3-body clusters makes it WORSE (+29.9%). Opposite regime to A=3 (baseline undershoots)."
     },
     "required_4body_channel": {
-      "c4_required": "-3.8959726",
+      "c4_required": "-3.8959721",
       "c4_frac_of_baseline_pct": "-24.753",
       "c4_over_c3_magnitude": "13.1178",
       "sign": "NEGATIVE (\u03b1-cluster saturation, closed [1\u2074] SU(4) supermultiplet)",
       "note": "the missing piece is a LEADING-order 4-body channel \u2014 negative, ~13\u00d7 the 3-body cluster magnitude, \u221224.75% of the baseline. This is the \u03bc\u2084 \u0394_\u03bb object (open)."
     },
     "order_separation": {
-      "bounded_3body_higher_order_tail": "0.10859213",
-      "abs_c4_required": "3.8959726",
+      "bounded_3body_higher_order_tail": "0.1085921",
+      "abs_c4_required": "3.8959721",
       "higher_order_route_ruled_out": true,
       "reading": "the bounded 3-body higher-order tail (\u22480.109) is \u226a |c\u2084| (\u22483.896) \u2014 36\u00d7 \u2014 so the A=4 miss is NOT a 3-body higher-order refinement; it is a NEW leading 4-body channel. Same prune as A=3, sharper."
     },
@@ -53,8 +53,13 @@
     "builds_on": "the A=3 probe (a3_precision_order_decomposition), #4320 (\u03bc\u2084 simplex), three-walls Route 3 (\u03bc\u2084<0 sign-swap), PR #4491 (frame-robustness)",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "a4_precision_order_decomposition_probe.py",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "engine": "python",
+  "computedAt": "2026-08-29T04:17:51.646596+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

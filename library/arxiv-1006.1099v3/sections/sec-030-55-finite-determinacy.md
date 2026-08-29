@@ -7,7 +7,7 @@ section_number: 5.5
 pages: 62-67
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 exterior algebra A = Λ ∗(V ). Suppose now V ∼= C3 is 3-dimensional, so A has graded summands
 A0 = C⊕ Λ 2(V ); A1 =V⊕ Λ 3(V ).

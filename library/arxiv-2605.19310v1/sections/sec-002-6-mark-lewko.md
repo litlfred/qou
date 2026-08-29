@@ -7,7 +7,7 @@ section_number: 6
 pages: 6-8
 source_pdf: 2605.19310v1.pdf
 source_sha256: 047d492babc63d2f
-doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM — We give an elementary, Fourier-free proof of Roth’s theorem."
+doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM MARK LEWKO — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 Lemma 7(Dense modular progression).Assume E(f)≥βm 3, with0 <
 β≲α 2, and choose an integerℓsatisfying

@@ -58,11 +58,48 @@ switch:
 
 Binding:
   B(Z, N) = E_0 · ( 𝔪^{(n)}(W_free) − 𝔪^{(n)}(W_atom) )
-  with E_0 calibrated by the **proton tower** as
-  E_0 = m_p_CODATA / m_proton_tower (MeV per categorical unit), per
-  `calibrate_E0_tower` below — NOT the β-decay Q-value 0.78233341 MeV
-  (that is the calibration used by `crt_markov.py` and other
-  Markov-trace scripts; this module is a separate calibration.)
+  with E_0 = `mass_at_3A_proper.E_0_CALIBRATION_MEV` = Q_β ≈ 0.78233 MeV
+  per categorical unit — the SAME scale `crt_markov.py` and the other
+  Markov-trace scripts use (17 consumers in `computations/`).
+
+  CHANGED 2026-08-29 (bean qou-0gqn). This module used to default to its
+  own proton-tower anchor, `E_0 = m_p_CODATA / m_proton_tower` via
+  `calibrate_E0_tower`, and this docstring said "NOT the β-decay Q-value
+  0.78233341 MeV". Both are now reversed, for two reasons:
+
+    1. That anchor was never the canonical one, and the module already
+       knew: its own inline note called it an "alt-calibration
+       (diagnostic) ... retained for per-block comparison only" while
+       naming `E_0_CALIBRATION_MEV` as canonical. Nothing outside this
+       file ever called it — measured, zero consumers.
+    2. It is measurably broken. It evaluates Φ_q at 95.91 % of the pole
+       at |z| = q, INSIDE the band `cap_frac = 0.98` declares safe, so
+       the clamp never fires; Φ_q returns 7.81e6 and E_0 ≈ 6.79e-5 MeV,
+       four orders too small, amplifying its input's relative error 48x.
+       See `probes/tower_e0_pole_conditioning_probe.py`.
+
+  Both calibrators remain callable (and now warn) so the comparison is
+  reproducible: pass `E_0=calibrate_E0_tower(...)` explicitly.
+
+  Scale sanity, from this module's own AME2020 comparison (pair_mode
+  "full", live run 2026-08-29):
+
+        Atom   A    B_AME     B_pred
+           D   2    2.225    +1.4330
+           T   3    8.482    +3.9965
+         3He   3    7.718    +4.0531
+         4He   4   28.296       (see witness)
+
+  Right ORDER OF MAGNITUDE, under-predicting by roughly 2x and worsening
+  with A — which the old default (~1e-4 MeV) and the June-2026 witness
+  (510–4573 MeV) both were not.
+
+  THIS IS A SCALE CHECK, NOT AN ACCURACY CLAIM. The residual is the V̂
+  definition (see SCOPE below) and is entirely unchanged by this commit:
+  fixing the units cannot fix the physics, and the ~2x shortfall that is
+  now visible was always there — it was previously buried under a scale
+  error four orders larger. Do not read the improved-looking table as
+  progress on binding; it is the same model, finally in the right units.
 
 The canonical Markov trace (tr_M_element) is used ONLY as a sanity
 check / comparison — the tower formula itself is a sum of Φ_q terms
@@ -105,6 +142,7 @@ from __future__ import annotations
 
 import sys
 import math
+import warnings
 import json
 import time
 from pathlib import Path
@@ -120,7 +158,8 @@ from mass_endomorphism import Phi_q, z_mark
 from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux)
 from hecke_3a_weights import partitions_of_n
-from mass_at_3A_proper import atom_braid_word_3A
+from mass_at_3A_proper import atom_braid_word_3A, E_0_CALIBRATION_MEV
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
@@ -143,10 +182,10 @@ def jm_eigenvalue_avg(n: int, k: int) -> float:
     """
     if n < 1:
         return 1.0
-    nfac = qfac(n)
+    nfac = qfac(n, Q0_PROTON)
     total = 0.0
     for shape in partitions_of(n):
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if dq == 0:
             continue
         # Use SYT enumeration from hecke_characters
@@ -234,6 +273,15 @@ def _save_mpm_disk(n: int):
         key = f"{shape_str}:{i}"
         payload[key] = [int(mp), int(mm)]
     try:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            payload, script_path=__file__, engine=None, q0_anchor=None)
         f.write_text(json.dumps(payload))
     except Exception:
         pass
@@ -453,9 +501,39 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     """Proton-tower calibration: E_0 such that canonical_tower_mass
     on free proton (Z=1, N=0) matches 938.272 MeV.
 
-    Matches hecke_core.E_0_CALIBRATION_MEV's SPIRIT but in the
-    canonical-V̂ tower basis.  Cached.
+    DEPRECATED (bean qou-0gqn) — do not use as a scale; it is not the
+    canonical one and it is measurably broken.
+
+    WHY. `phi_q_safe` clamps its argument to `cap_frac * q` to hold it off the
+    pole at |z| = q. With cap_frac = 0.98 and q = 1.1099785828 the cap is
+    1.0877790, and the proton's canonical V̂ is [0.66295, 1.06463] — the larger
+    entry is **95.91 % of q, BELOW the cap**. The clamp never fires, Φ_q is
+    evaluated essentially at its singularity and returns 7.81e6, giving
+    E_0 ≈ 6.79e-5 MeV where the framework's scale is 0.78233. The point is also
+    ill-conditioned: a 0.188 % change in V̂ moves Φ_q by 9.06 %, a 48x
+    relative-error amplification that E_0 = M_P/Φ_q inherits whole. Tightening
+    cap_frac does not fix it — that only moves where the clamp bites, and the
+    clamped value is itself seven orders from the target. Measured in
+    `probes/tower_e0_pole_conditioning_probe.py`.
+
+    USE INSTEAD: `E_0_CALIBRATION_MEV` (= Q_β ≈ 0.78233 MeV), imported from
+    `mass_at_3A_proper` and now the default for both binding entry points.
+
+    Kept callable — the conditioning probe measures it, and an explicit
+    `E_0=calibrate_E0_tower(...)` still reproduces the historical comparison.
+
+    Cached.
     """
+    warnings.warn(
+        "calibrate_E0_tower is a proton-tower ALT-calibration, not the "
+        "canonical scale, and it evaluates Φ_q at 95.91 % of its pole "
+        "(cap_frac=0.98 never fires) returning E_0 ≈ 6.79e-5 MeV — four "
+        "orders too small. Use E_0_CALIBRATION_MEV (= Q_β ≈ 0.78233 MeV), "
+        "which is now the default. See probes/"
+        "tower_e0_pole_conditioning_probe.py and bean qou-0gqn.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     key = pair_mode
     if key in _E0_TOWER_CACHE:
         return _E0_TOWER_CACHE[key]
@@ -468,8 +546,12 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     m_p = canonical_tower_mass(V_p, pair_mode=pair_mode, term="phi_q")
     if m_p["total"] <= 0 or not math.isfinite(m_p["total"]):
         return 1.0
-    # NOTE: alt-calibration (diagnostic). CAL-3 canonical E_0 is
-    # `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n). This proton-tower-
+    # NOTE: alt-calibration (diagnostic). The canonical E_0 is
+    # `mass_at_3A_proper.E_0_CALIBRATION_MEV` = Q_β. (Two corrections,
+    # bean qou-0gqn: there is no `hecke_core` module — the constant lives in
+    # `mass_at_3A_proper`; and Q_β is the **CAL-2** proxy, not CAL-3, per the
+    # 2026-06-26 decay-width ruling in AGENTS.md. CAL-3 is 𝔇_π, proxy m_π.)
+    # This proton-tower-
     # anchored variant is retained for per-block comparison only.
     E0 = float(M_P_MEV) / m_p["total"]
     _E0_TOWER_CACHE[key] = E0
@@ -494,7 +576,7 @@ def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     if A < 1:
         return {"status": "trivial"}
     n_strands = 3 * A
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, Q0_PROTON)
     m_atom_total = 0.0
     m_free_total = 0.0
     for shape in partitions_of(n_strands):
@@ -515,7 +597,20 @@ def binding_per_irrep_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     _save_mpm_disk(n_strands)
     # Calibrate E_0 via proton tower (A=1, n=3) using same pipeline
     if E_0 is None:
-        E_0 = _calibrate_E0_per_irrep(pair_mode=pair_mode)
+        # CANONICAL (bean qou-0gqn): the framework's own MeV-per-categorical-
+        # unit scale, `E_0_CALIBRATION_MEV` = Q_β ≈ 0.78233 MeV, with 17
+        # consumers across `computations/`.
+        #
+        # This used to default to `_calibrate_E0_per_irrep`, a proton-tower
+        # anchor this module's own note already called an "alt-calibration
+        # (diagnostic) ... retained for per-block comparison only" while never
+        # wiring the canonical one it named. That default was measurably
+        # broken: it evaluates Φ_q at 95.91 % of its pole (the `cap_frac=0.98`
+        # guard never fires, being ABOVE the input), returning 7.8e6 and an
+        # E_0 of 6.79e-5 -- four orders too small, and amplifying its input's
+        # relative error 48x. Measured in
+        # `probes/tower_e0_pole_conditioning_probe.py`.
+        E_0 = E_0_CALIBRATION_MEV
     B = E_0 * (m_free_total - m_atom_total)
     return {
         "Z": Z, "N": N, "A": A,
@@ -531,7 +626,23 @@ _E0_PI_CACHE: dict[str, float] = {}
 
 
 def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
-    """E_0 via proton tower in per-irrep formulation."""
+    """E_0 via proton tower in per-irrep formulation.
+
+    DEPRECATED (bean qou-0gqn). Not the canonical scale and measurably broken;
+    see `calibrate_E0_tower` for the full account. Kept callable so the
+    conditioning probe can keep measuring it and so an explicit
+    `E_0=_calibrate_E0_per_irrep(...)` comparison still works.
+    """
+    warnings.warn(
+        "_calibrate_E0_per_irrep is a proton-tower ALT-calibration, not the "
+        "canonical scale, and it evaluates Φ_q at 95.91 % of its pole "
+        "(cap_frac=0.98 never fires) returning E_0 ≈ 6.79e-5 MeV — four "
+        "orders too small. Use E_0_CALIBRATION_MEV (= Q_β ≈ 0.78233 MeV), "
+        "which is now the default. See probes/"
+        "tower_e0_pole_conditioning_probe.py and bean qou-0gqn.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     if pair_mode in _E0_PI_CACHE:
         return _E0_PI_CACHE[pair_mode]
     # MASS context (proton absolute vs M_P_MEV) even though it reuses the
@@ -542,7 +653,8 @@ def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
     if m_p <= 0 or not math.isfinite(m_p):
         return 1.0
     # NOTE: alt-calibration (diagnostic per-irrep variant). CAL-3
-    # canonical E_0 is `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n).
+    # canonical E_0 is `mass_at_3A_proper.E_0_CALIBRATION_MEV` = Q_β — the
+    # CAL-2 proxy, not CAL-3, and not in a `hecke_core` module (qou-0gqn).
     E_0 = float(M_P_MEV) / m_p
     _E0_PI_CACHE[pair_mode] = E_0
     return E_0
@@ -563,7 +675,9 @@ def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     if A < 1:
         return {"status": "trivial"}
     if E_0 is None:
-        E_0 = calibrate_E0_tower(pair_mode=pair_mode)
+        # CANONICAL — see the note on the same default in
+        # `binding_per_irrep_tower` above (bean qou-0gqn).
+        E_0 = E_0_CALIBRATION_MEV
     V_atom = per_gen_V_hat_canonical(
         Z, N, include_inter=True, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
     V_free = per_gen_V_hat_canonical(

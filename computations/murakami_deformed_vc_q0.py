@@ -43,10 +43,21 @@ mp.mp.dps = 60
 
 # ---------------------------------------------------------------------------
 # Inputs (documented pins — NOT fitted here; from the corpus).
-# Canonical muon-q0 (computations/q-pinning-50-digit.witness.json):
-Q0_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
-# Proton pin (tools/qou-substrate constants.py; value per the pin-sensitivity map):
-Q0_PROTON = mp.mpf("1.10997858275")
+# BOTH pins RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This producer's
+# subject IS the mu-p tension, so it reads both anchors on purpose -- but both
+# literals had gone wrong in different ways:
+#   * the muon literal was the SUPERSEDED pin A, retired as the muon anchor by
+#     PR #5500's re-derivation to CODATA-2022, so the "muon" leg of a tension
+#     adjudication was no longer the muon pin;
+#   * the proton literal was TRUNCATED to 12 digits ("1.10997858275") inside a
+#     file running at 60 dps -- ~0.1 ppb of fabricated error in a probe whose
+#     whole quantity is an 11.5 ppb gap, i.e. ~1 % of the effect being measured.
+# Resolved from the anchor resolver instead, so both follow the next CODATA
+# revision with no digit edited by hand.
+from qou_substrate.witness import _q0_value_for_anchor as _q0_pin  # noqa: E402
+
+Q0_MUON = mp.mpf(_q0_pin("muon"))
+Q0_PROTON = mp.mpf(_q0_pin("proton"))
 MU_P_GAP_PPB = mp.mpf("11.5")  # the tension to be adjudicated
 
 # Vol(4₁) = 2·Cl₂(π/3), the COMPLETE-structure volume (the α=1, u=0 limit).
@@ -210,7 +221,21 @@ def main() -> None:
         _d = _os.path.dirname(_d)
     _sys.path.insert(0, _os.path.join(_d, "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402
+    # DECLARED comparison. Both pins are read deliberately -- the mu-p gap IS the
+    # subject -- so there is no single pin to stamp, and an auto-resolved anchor
+    # plus the carry-forward of the previous run's value produced a Q0_FLIP on a
+    # witness whose numbers were fine. `comparison` names its legs, and the
+    # anchor audit re-checks each against its canonical pin, so the declaration
+    # is verifiable rather than taken on trust (bean qou-1c4y).
+    from qou_substrate.witness import q0_comparison  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(result, script_path=__file__, engine="mpmath")
+    result.update(q0_comparison(
+        muon=Q0_MUON, proton=Q0_PROTON,
+        reason=("adjudicates the mu-p substrate tension itself: the same "
+                "deformed-volume construction is evaluated at both pins and "
+                "the ~11.5 ppb gap between them is the measured quantity, so "
+                "each pin is read on purpose and reported under its own key")))
+    result.pop("q0Value", None)
     result["scriptFile"] = _os.path.basename(__file__)
     with open(out, "w") as f:
         json.dump(result, f, indent=2)

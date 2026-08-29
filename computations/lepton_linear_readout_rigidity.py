@@ -81,6 +81,9 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import markov_z, morgan_voyce_b  # noqa: E402
+
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -99,19 +102,13 @@ M_TAU = mpf("1776.86")
 WINDINGS = (3, 5, 7)
 
 
-def morgan_voyce_b(n_max: int, h):
-    """b_0..b_{n_max} at the substrate h, by the defining recurrence."""
-    b = [mpf(0), mpf(1)]
-    for _ in range(2, n_max + 1):
-        b.append(h * b[-1] + b[-2])
-    return b
 
 
 def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = q**3 / (q**2 + 1)          # canonical Markov parameter
+    z = markov_z(q)                          # canonical Markov parameter
 
     N = 15
     b = morgan_voyce_b(N, h)

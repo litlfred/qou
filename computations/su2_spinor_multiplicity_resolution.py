@@ -365,13 +365,14 @@ def main():
                 "value present in every m=2 space. Separation alone does not "
                 "nominate a copy; nominating one without this is a fit.",
     })
-    w.add_assertion(
-        "global_canonical_spin_selector_exists",
-        1.0 if global_spin_selector_exists else 0.0,
-        1.0 if global_spin_selector_exists else 0.0,  # RAW, not a target
-        tolerance=0,
-        source="is there a single spin value selecting one copy in EVERY m2 space?",
-    )
+    # The trailing comment below already said "RAW, not a target" -- so this was known
+    # not to be a check, yet used add_assertion, whose computed==expected made it
+    # `x == x`: tautologically true and rendered as "passed": true. Recording a raw
+    # value is what add_data is for. Bean qou-ploj.
+    w.add_data("global_canonical_spin_selector_exists_measured",
+               1.0 if global_spin_selector_exists else 0.0)  # RAW, not a target
+    w.add_data("global_canonical_spin_selector_exists_source",
+               "is there a single spin value selecting one copy in EVERY m2 space?")
     w.add_assertion(
         "final_2_1_block_spin_constant_one_half",
         1.0 if final_block_spin_constant else 0.0, 1.0, tolerance=0,
@@ -383,13 +384,12 @@ def main():
                                  for d in m2_detail.values())
     content_simple_everywhere = all(d["content_simple_on_this_space"]
                                     for d in m2_detail.values())
-    w.add_assertion(
-        "intermediate_H4_spin_simple_on_all_m2_spaces",
-        1.0 if spin_simple_everywhere else 0.0,
-        1.0 if spin_simple_everywhere else 0.0,  # report RAW (not a target)
-        tolerance=0,
-        source="RAW: does the path-spin (j of lam4) separate the 2 copies?",
-    )
+    # As above: the trailing comment already said "report RAW (not a target)".
+    # add_assertion with computed==expected is `x == x`. Bean qou-ploj.
+    w.add_data("intermediate_H4_spin_simple_on_all_m2_spaces_measured",
+               1.0 if spin_simple_everywhere else 0.0)  # report RAW (not a target)
+    w.add_data("intermediate_H4_spin_simple_on_all_m2_spaces_source",
+               "RAW: does the path-spin (j of lam4) separate the 2 copies?")
     w.add_assertion(
         "content_simple_on_all_m2_spaces",
         1.0 if content_simple_everywhere else 0.0, 1.0, tolerance=0,
@@ -443,10 +443,14 @@ def main():
                 "which copy embeds, not the h^4 value. No per-copy h^4 chosen "
                 "(would be a fit).",
     })
-    w.add_assertion(
-        "no_h4_fit_performed", 0.0, 0.0, tolerance=0,
-        source="discipline: no spin/content chosen to produce h^4",
-    )
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("no_h4_fit_performed",
+                    "0 (DISCIPLINE, not a measurement -- the source field already said so: "
+                    "no spin/content was chosen to produce h^4)")
 
     # -------------------------------------------------------------------
     # SUMMARY for the audit doc.

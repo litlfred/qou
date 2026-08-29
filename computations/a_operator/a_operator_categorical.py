@@ -128,6 +128,15 @@ def q0_mp(dps: int = 50) -> mp.mpf:
 # a_operator_gauge_align) keep working.
 from partition_utils import dim_lambda as partition_dim  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
+
 
 def verify_dimension_identity(n_inner: int, n_block: int) -> dict:
     """Preflight 1b: d_λ = Σ_{ξ,ν} c^λ_{ξν} d_ξ d_ν for every λ ⊢ n_inner+n_block.
@@ -509,7 +518,7 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
         P_in = _lagrange_projectors(C_in, ev, dim)   # keyed by ξ ⊢ 3
         P_bl = _lagrange_projectors(C_bl, ev, dim)   # keyed by ν ⊢ 3
         # Bridge interface I_pn = σ_3 (0-idx 2) with d = -h/2.
-        I_iface = mats[2] - (h / 2) * mp.eye(dim)
+        I_iface = mats[2] + _pn_d(h) * mp.eye(dim)
         # Π_{ξν} = P_in[ξ] · P_bl[ν]
         Pi = {(xi, nu): P_in[xi] * P_bl[nu]
               for xi in ev for nu in ev}
@@ -571,8 +580,29 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
 
 def categorical_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
                             nu: tuple[int, ...], interface: str,
-                            n_inner: int, dps: int = 50):
-    """TODO(closure-b): the categorical interface operator A^λ_{ξν}(I), I ≠ 1.
+                            n_inner: int, dps: int = 50, q_str: str = None):
+    """The categorical interface operator A^λ_{ξν}(I), I ≠ 1.
+
+    ⚠ THIS WAS A `raise NotImplementedError` STUB UNTIL 2026-08-24, AND IT WAS
+    STALE — the work it says is TODO had already been done, two files away. It
+    now DELEGATES to that implementation
+    (`a_operator_gauge_align.gauge_aligned_A_combiner_general`) rather than
+    raising, and the TODO spec below is kept only as documentation of what the
+    delegate builds.
+
+    It is retired as a stub because it actively misled: an agent (this repo,
+    PR #5619) read the `NotImplementedError` plus its zero callers as evidence
+    that A^λ COULD NOT be built at arbitrary q, and wrote a permanent refusal
+    into `canonical_tr_m_via_branching` on that basis. Every observation was
+    true; the inference was false — the design doc's own verification plan
+    records step 2 as DONE, exact, 891/891 PASS at 1e-25. **A stale stub is not
+    evidence of absence.** Deleting it outright would have left the same trap
+    for anyone grepping the design doc's function name, so it delegates instead.
+
+    Only the p-n interface at n_block = 3 is covered, which is what the
+    delegate constructs; anything else still raises.
+
+    ─── original spec, retained ───
 
     Spec (what this MUST return): the (d_ξ·d_ν)×(d_ξ·d_ν) matrix
 
@@ -595,11 +625,24 @@ def categorical_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
     already passing), match the full-rank H_6 deuteron extract entrywise (modulo
     the V_ξ⊗V_ν basis gauge), and reconstruct tr_M(D) at 1e-25.
     """
-    raise NotImplementedError(
-        "closure-b step 2: bridge-generator deformation not yet implemented; "
-        "preflight 1 (I=identity reduction) passes — see "
-        "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md"
-    )
+    if interface != "pn":
+        raise NotImplementedError(
+            f"interface={interface!r}: the delegate builds the p-n bridge "
+            f"I_pn = σ_{{n_inner-1}} − h(1/2 − δ/4)·1 only. See "
+            "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md"
+        )
+    import a_operator_gauge_align as _ga
+    if q_str is None:
+        from q_parameter import Q as _Q
+        q_str = mp.nstr(Q_MP, dps)
+    blocks = _ga.gauge_aligned_A_combiner_general(lam, n_inner, 3, q_str, dps)
+    key = (tuple(xi), tuple(nu))
+    if key not in blocks:
+        raise KeyError(
+            f"(ξ,ν)={key} is not an LR-admissible pair for λ={tuple(lam)} at "
+            f"n_inner={n_inner}; available: {sorted(blocks)}"
+        )
+    return blocks[key]["A"]
 
 
 def main() -> int:

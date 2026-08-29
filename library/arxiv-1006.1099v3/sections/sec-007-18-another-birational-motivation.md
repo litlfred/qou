@@ -7,7 +7,7 @@ section_number: 1.8
 pages: 7-7
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 which, whilst not used in this paper, is undoubtedly related to the g = 2 case of Theorem 1.1, and
 provided motivation for the result. Let’s say that a line l⊂Q0∩Q1 is generic if its normal bundle

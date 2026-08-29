@@ -53,6 +53,10 @@ from sublemma_2_1_A_operator_extract_h9 import (  # noqa: E402
     shape_dim,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # ──────────────────────────────────────────────────────────────────────
 # Atom braid composition (3+3+3 strand layout, pppnnn ordering)
@@ -94,7 +98,7 @@ def tritium_braid() -> list:
     """
     word = []
     word.extend(_proton_body())                                # β_p on 0..2
-    word.append((1.0, -H / 2, 2))                              # I_pn at strand 2
+    word.append((1.0, _pn_d(H), 2))                            # I_pn at strand 2
     word.extend([(c, d, g + 3) for (c, d, g) in _neutron_body()])  # β_n on 3..5
     word.append((1.0, -H, 5))                                  # I_nn at strand 5
     word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])  # β_n on 6..8
@@ -107,7 +111,7 @@ def he3_braid() -> list:
     word.extend(_proton_body())                                # β_p on 0..2
     word.append((1.0, 0.0, 2))                                 # I_pp at strand 2
     word.extend([(c, d, g + 3) for (c, d, g) in _proton_body()])   # β_p on 3..5
-    word.append((1.0, -H / 2, 5))                              # I_pn at strand 5
+    word.append((1.0, _pn_d(H), 5))                            # I_pn at strand 5
     word.extend([(c, d, g + 6) for (c, d, g) in _neutron_body()])  # β_n on 6..8
     return word
 
@@ -233,7 +237,7 @@ def main() -> int:
     if args.atom == "tritium":               # p · n · n
         beta_full = tritium_braid()
         inner_first, inner_second = _proton_body(), _neutron_body()
-        inner_iface_cd = (1.0, -H / 2)       # I_pn (averaged)
+        inner_iface_cd = (1.0, _pn_d(H))     # I_pn (colour-weighted)
         third_body = _neutron_body()
     else:                                     # he3: p · p · n
         beta_full = he3_braid()
@@ -492,13 +496,24 @@ def main() -> int:
         .add_data("n_underdetermined", n_underdet)
         .add_data("max_relative_residual_overdetermined", max_rel_overdet)
         .add_data("max_relative_residual_all", max_rel_all)
-        .add_assertion(
+    )
+    # Lifted OUT of the fluent chain above so it can be made conditional.
+    # n_overdet counts only the lambdas taking the `else` of `if underdet`, so
+    # zero means every lambda is under-determined -- a real Phase-2 state, not
+    # a missing input. Refusing would be wrong; asserting at 0 == 0 would
+    # record a Path A == Path B verification that never ran.
+    if n_overdet == 0:
+        builder.add_data("overdetermined_path_a_eq_path_b_not_applicable",
+                         "every lambda was under-determined; no overdetermined "
+                         "Path A vs Path B comparison was performed, so no "
+                         "assertion is made")
+    else:
+        builder.add_assertion(
             "overdetermined_path_a_eq_path_b_machine_eps",
             computed=n_overdet_pass,
             expected=n_overdet,
             source="iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3",
         )
-    )
     # See the H_6 frame guard block above. Recorded as data + assertion so the
     # check is auditable rather than only printed — the whole point of the bean
     # is that a loaded-but-unused input left no trace either way.

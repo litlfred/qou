@@ -38,7 +38,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -53,7 +53,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -68,7 +68,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -83,7 +83,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -98,7 +98,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -113,7 +113,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -128,7 +128,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -143,7 +143,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -161,7 +161,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -179,7 +179,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -197,7 +197,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -211,7 +211,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -224,7 +224,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -239,7 +239,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -254,7 +254,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -269,7 +269,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -284,7 +284,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -299,7 +299,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -314,7 +314,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -329,7 +329,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -344,7 +344,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -359,7 +359,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -374,7 +374,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -389,7 +389,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -404,7 +404,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -419,7 +419,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -428,13 +428,14 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound structural equivalence systematically grouping empirical relations practically across specific testable values.",
         "reviewed_at": "2026-07-08T14:45:44.000Z",
         "reviewed_sha": "9b5db072c5a752880860e2ba26cbe515cb814946",
         "reviewer": {
@@ -1291,7 +1292,7 @@
           "in_degree": 0,
           "cone_size": 303,
           "depth": 54,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 273,
           "edge_span_mean": 100.67,
           "worst_target": ""
@@ -1429,7 +1430,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed throughout. Statement heading \"**Conjecture (Rule 14 conditional adoption — owner authorised).**\" -> \"**Conjecture (conditional).**\", with the conditionality still spelled out in its own section; \"## Categorical home (driver x of the 13-driver menu)\" -> \"## Categorical home\", keeping the MacMahon partition-algebra identification and rewriting \"pulls $\\rho_F$ onto driver (x) and removes it from the Rule-14 escalation queue\" as \"identifies $\\rho_F$ as such a count\"; \"## Resolution of the Rule-14 escalation\" -> \"## Status of the density prefactor\", with the garbled \"Pre- the / the canonical formalism / formalism self-declared ...\" rebuilt and \"Owner authorised this adoption per Rule-14 procedure\" dropped; \"(when it lands; R&D in progress)\", \"Until R5-full SDP ships\", \"the R5-full canonical knot solver\" and \"deferred until R5-full SDP ships (owner-decided)\" all -> \"the full SDP solver\" / \"which does not yet exist\"; \"an auditable conjecture-conditional dependency\" -> \"an explicit conjectural dependency\"; \"## Consumers\" -> \"## Where $\\nu_{\\mathrm{SDP}}$ is used\". Every number and every hedge survives, including $\\rho_F({}^4\\mathrm{He}) \\approx 1.889$, the negative $^4$He finding, the Coulomb-corrected 1.94, and the scoping of the identity to the three census atoms.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed throughout. Statement heading \"**Conjecture (Rule 14 conditional adoption \u2014 owner authorised).**\" -> \"**Conjecture (conditional).**\", with the conditionality still spelled out in its own section; \"## Categorical home (driver x of the 13-driver menu)\" -> \"## Categorical home\", keeping the MacMahon partition-algebra identification and rewriting \"pulls $\\rho_F$ onto driver (x) and removes it from the Rule-14 escalation queue\" as \"identifies $\\rho_F$ as such a count\"; \"## Resolution of the Rule-14 escalation\" -> \"## Status of the density prefactor\", with the garbled \"Pre- the / the canonical formalism / formalism self-declared ...\" rebuilt and \"Owner authorised this adoption per Rule-14 procedure\" dropped; \"(when it lands; R&D in progress)\", \"Until R5-full SDP ships\", \"the R5-full canonical knot solver\" and \"deferred until R5-full SDP ships (owner-decided)\" all -> \"the full SDP solver\" / \"which does not yet exist\"; \"an auditable conjecture-conditional dependency\" -> \"an explicit conjectural dependency\"; \"## Consumers\" -> \"## Where $\\nu_{\\mathrm{SDP}}$ is used\". Every number and every hedge survives, including $\\rho_F({}^4\\mathrm{He}) \\approx 1.889$, the negative $^4$He finding, the Coulomb-corrected 1.94, and the scoping of the identity to the three census atoms.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1530,7 +1531,7 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not an integer categorical multiplicity.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not an integer categorical multiplicity.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1599,7 +1600,7 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "10 stylistic spaced dashes in 647 words (1.55/100w) — restructure into sentences"
+        "evidence": "10 stylistic spaced dashes in 647 words (1.55/100w) \u2014 restructure into sentences"
       },
       {
         "field_hash": {
@@ -1841,7 +1842,7 @@
         "reviewed_at": "2026-08-15T10:31:00.434Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+        "evidence": "2 sentence(s) over 60 words \u2014 written for the eye, not the ear; split"
       },
       {
         "field_hash": {
@@ -1882,5 +1883,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:26:48.738Z"
+  "updated_at": "2026-08-21T21:26:48.738Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

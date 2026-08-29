@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Frobenius h₂ == Newton (p₁²+p₂)/2 — the general formula reproduces the hand-derived Z=2 case (symmetrized_constituent_probe.py)."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Frobenius e₂ == Newton (p₁²−p₂)/2."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "h_1 = e_1 = p_1 = τ_p (one proton carries no exchange symmetry)."
     }
   ],

@@ -7,7 +7,7 @@ section_number: 6
 pages: 54-65
 source_pdf: 2301.08311v4.pdf
 source_sha256: 385139c69e18f5b0
-doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians."
+doc_brief: "FLOER COHOMOLOGY AND HIGHER MUTATIONS SOHAM CHANDA — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone"
 ---
 The aim of this section is to classify combinatorial types of rigid broken strips or rigid broken
 discs with the choice of perturbation scheme as done in Section 5. We will show that any rigid

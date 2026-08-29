@@ -7,7 +7,7 @@ section_number: 1
 pages: 3-7
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
-doc_brief: "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi"
+doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
 ---
 this product formula are called proper. The ﬁelds with a product formula of [ Cor97] are trivially
 proper adelic curves when the set of places is endowed with th e counting measure. Moreover in

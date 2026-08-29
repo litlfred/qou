@@ -7,7 +7,7 @@ section_number: 7.2
 pages: 64-68
 source_pdf: 1109.3255v2.pdf
 source_sha256: dd4579be8e9b7e25
-doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped"
+doc_brief: "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE — We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as"
 ---
 Floer cohomology in the mirrors of UL,U C, and UD.
 MIRROR OF THE PROJECTIVE PLANE 65

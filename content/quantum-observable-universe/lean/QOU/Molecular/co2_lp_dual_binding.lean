@@ -43,7 +43,7 @@ self-assuming-projection shape forbidden by AGENTS.md §3b-cond item 5):
 The single irreducibly-conjectural input is the **LP-dual ground-state
 selection** — the symmetric `(2,2)` configuration minimises `Φ₁` over
 the carbon-valence-feasible configurations. It is carried by the
-§3b-cond class `QIntegerMassFormula` as a *quantified hypothesis* the
+§3b-cond class `Co2SymmetricSelection` as a *quantified hypothesis* the
 theorem instantiates, never restated verbatim in the conclusion.
 
 ## Base ring (§7c)
@@ -106,7 +106,7 @@ class Co2LpDualBindingContext (R : Type*) [Preorder R] where
     symmetric `(2,2)` configuration is the `Φ₁`-minimiser over all
     carbon-valence-feasible configurations — as a quantified field, NOT
     any conclusion of the theorems below. -/
-class QIntegerMassFormula (ctx : Co2LpDualBindingContext R) : Prop where
+class Co2SymmetricSelection (ctx : Co2LpDualBindingContext R) : Prop where
   /-- The symmetric configuration minimises `Φ₁` over all feasible
       configurations (the ground-state selection hypothesis). -/
   symmetric_minimises :
@@ -130,7 +130,7 @@ theorem co2_strand_count (ctx : Co2LpDualBindingContext R) :
     ctx.n_strands = 66 := by
   norm_num [ctx.n_strands_def, ctx.strands_C_def, ctx.strands_O_def]
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the symmetric
+/-- **Theorem (conditional on `Co2SymmetricSelection`)** — the symmetric
     double-bond configuration `(2,2)` has `Φ₁` no greater than either
     asymmetric alternative `(3,1)` or `(1,3)`.
 
@@ -140,13 +140,13 @@ theorem co2_strand_count (ctx : Co2LpDualBindingContext R) :
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : Co2SymmetricSelection ctx] :
     ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym31 ∧
     ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym13 :=
   ⟨hc.symmetric_minimises Co2Config.asym31,
    hc.symmetric_minimises Co2Config.asym13⟩
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+/-- **Theorem (conditional on `Co2SymmetricSelection`)** — the resolving
     declaration for `lean.ref` `qou:QOU.Molecular.co2_lp_dual_binding`.
 
     Conjoins (1) the *derived* carbon-valence feasibility
@@ -159,7 +159,7 @@ theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext R)
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
 theorem co2_lp_dual_binding (ctx : Co2LpDualBindingContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : Co2SymmetricSelection ctx] :
     ctx.k1 + ctx.k2 ≤ 4 ∧
     ctx.n_strands = 66 ∧
     (ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym31 ∧

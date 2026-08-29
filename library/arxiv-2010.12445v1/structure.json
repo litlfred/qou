@@ -1,0 +1,254 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2010.12445v1",
+ "source": {
+  "file": "2010.12445v1.pdf",
+  "sha256": "16e9ca22ecc1f2967162d35c294851e0918e7b5dcdbd5f573b4ff97ae39e11ce",
+  "bytes": 422935,
+  "pages": 28,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2010.12445",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "22 Oct 2020"
+  },
+  "doi": null,
+  "title": "STACKS OF FIBER FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION FABIO TONINI",
+  "authors_raw": null,
+  "title_lines": [
+   "STACKS OF FIBER FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION",
+   "FABIO TONINI"
+  ],
+  "abstract": "Given a quasi-compact category \ufb01bered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect (X ), we are going to introduce the stack of \ufb01ber functors Fib X ,C with source C, which comes equipped with a map PC : X \u2192 FibX ,C and a functor G : C \u2192 Vect(FibX ,C). If C generates QCoh (X ) and X is an fpqc stack with quasi-a\ufb03ne diagonal, we show that PC : X \u2192 FibX ,C is an equivalence, as it happens by Tannaka\u2019s reconstructio n when X is an a\ufb03ne gerbe over a \ufb01eld. In general, under mild assumption o n C, e.g. C = Vect(X ), we show that Fib X ,C is a quasi-compact fpqc stack with a\ufb03ne diagonal and that the image G(C) generates QCoh (FibX ,C).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20201025204739-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Notation",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Monoidal functors and their sheafification",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Generalized frame bundles",
+   "page": 6,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "Pseudo-affine stacks",
+   "page": 10,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Tannaka Reconstruction",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Pseudo-Affine sheaves revisited",
+   "page": 17,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The stack of fiber functors",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 5.1",
+   "page": 20,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Comparing vector bundles",
+   "page": 23,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The case C={OX}",
+   "page": 25,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8518,
+   "n_words": 1631
+  },
+  {
+   "id": "sec-001-notation",
+   "number": null,
+   "title": "Notation",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2281,
+   "n_words": 439
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 388,
+   "n_words": 66
+  },
+  {
+   "id": "sec-003-1-preliminaries",
+   "number": "1",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6548,
+   "n_words": 1347
+  },
+  {
+   "id": "sec-004-12-generalized-frame-bundles",
+   "number": "1.2",
+   "title": "Generalized frame bundles",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 9291,
+   "n_words": 1986
+  },
+  {
+   "id": "sec-005-2-pseudo-affine-stacks",
+   "number": "2",
+   "title": "Pseudo-affine stacks",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 10564,
+   "n_words": 2238
+  },
+  {
+   "id": "sec-006-3-tannaka-reconstruction",
+   "number": "3",
+   "title": "Tannaka Reconstruction",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 14103,
+   "n_words": 3112
+  },
+  {
+   "id": "sec-007-5-the-stack-of-fiber-functors",
+   "number": "5",
+   "title": "The stack of fiber functors",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3527,
+   "n_words": 777
+  },
+  {
+   "id": "sec-008-51-proof-of-theorem-51",
+   "number": "5.1",
+   "title": "Proof of Theorem 5.1",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 12027,
+   "n_words": 2756
+  },
+  {
+   "id": "sec-009-52-comparing-vector-bundles",
+   "number": "5.2",
+   "title": "Comparing vector bundles",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 9950,
+   "n_words": 2096
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2268,
+   "n_words": 329
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 11,
+  "chars_total": 79465
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:42:43.414393+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T07:58:23.957283+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -71,5 +71,5 @@
     "outcome_class": "d",
     "outcome_description": "NO joint solution found anywhere on the Apollonius circle — ansatz cannot simultaneously fit CAL-2 + CAL-3 for ANY complex q"
   },
-  "timestamp": "2026-08-23T09:42:43+00:00"
+  "timestamp": "2026-08-29T07:58:23+00:00"
 }

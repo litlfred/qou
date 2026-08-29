@@ -14,7 +14,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The \"section lead\" pipeline label is gone from the .ts, which now carries no title field, and the prose describes the meson and nucleon constructions directly.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The \"section lead\" pipeline label is gone from the .ts, which now carries no title field, and the prose describes the meson and nucleon constructions directly.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -318,5 +318,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T03:41:32.909Z"
+  "updated_at": "2026-08-22T03:41:32.909Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

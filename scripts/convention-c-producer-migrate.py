@@ -55,7 +55,15 @@ import pathlib
 import re
 import sys
 
-DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+from convention_c_names import (  # noqa: E402
+    deliberate_c_kind, is_deliberate_c_name, selftest_rows)
+
+#: Shared with `convention-c-producer-audit.py` -- ONE definition, because this
+#: file and that one carried two copies of the same regex and both copies had
+#: the same `re.I` defect (bean `qou-4bq3`). See
+#: `scripts/lib/convention_c_names.py`.
+DELIBERATE = is_deliberate_c_name
 SKIP_PREFIXES = ("tools/pyhecke/",)
 
 
@@ -195,40 +203,96 @@ BAR_SITE = re.compile(r"(^|_)bar(_|$)|\bbar\s*\(|bar-symmetric|bar symmetric",
                       re.I)
 
 
-def _file_has_c_reference(tree: ast.AST) -> bool:
-    """G1: does anything in this file mention a deliberately C-named symbol?"""
+def _file_c_reference(tree: ast.AST):
+    """G1: the deliberately C-named symbol this file mentions, or None.
+
+    Returns the NAME, not a boolean, so a caller can report the basis of its
+    verdict. That is the fix for bean `qou-4bq3`: this guard reached
+    `convention-c-triage.py` as a bare bool, so a B3 "deliberate comparison --
+    leave it" verdict gave the reader no way to see it had fired on `__doc__`.
+    Eight of 24 B3 verdicts on `main` rested on such a collision.
+
+    Prefers a `z`-anchored match (`z_C`, `zc`) over a bare `_C_` token, since
+    the first is a Markov-parameter label and the second could be any
+    quantity's convention tag -- the caller then reports the strongest basis
+    present rather than whichever name `ast.walk` reached first.
+    """
+    best = None
     for node in ast.walk(tree):
         nm = None
         if isinstance(node, ast.Name):
             nm = node.id
         elif isinstance(node, ast.Attribute):
             nm = node.attr
-        if nm and DELIBERATE.search(nm):
-            return True
-    return False
+        if not nm:
+            continue
+        kind = deliberate_c_kind(nm)
+        if kind == "z_C":
+            return nm
+        if kind and best is None:
+            best = nm
+    return best
+
+
+def _file_has_c_reference(tree: ast.AST) -> bool:
+    """Boolean form of :func:`_file_c_reference` (kept for existing callers)."""
+    return _file_c_reference(tree) is not None
+
+
+def _additive_terms(node: ast.AST):
+    """Flatten a `+`/`-` chain into its terms; anything else yields itself."""
+    if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub)):
+        yield from _additive_terms(node.left)
+        yield from _additive_terms(node.right)
+    else:
+        yield node
 
 
 def _ladder_phase_targets(tree: ast.AST) -> set:
-    """G2: names `N` used as `(N - 1) * <anything> / 2` — the ladder phase."""
+    """G2: names `N` used as `(N - 1) * <anything> / 2` — the ladder phase.
+
+    The numerator is split into ADDITIVE TERMS before each is shape-tested.
+    This used to require the numerator to be a `Mult` outright, which made it
+    blind to the phase carrying a shift:
+
+        ((z - 1) * h - u) / 2          <- numerator is a Sub, so it bailed
+                                          before ever looking at (z - 1) * h
+
+    That is the same quantity — `(z-1)*h/2 - u/2` — and it is not a corner
+    case: PR #5748 establishes that the convention-D ladder target is `z_D -
+    h/2`, i.e. the phase is EXPECTED to carry a shift, so the unshifted form
+    the matcher required is the one that will get rarer.
+
+    Measured cost of the gap: `computations/qbeta/qbeta_eta_singularity_probe.py`
+    binds `aq = ((zq - 1) * hq - utq) / 2` at :182 (the numeric twin of the
+    symbolic `alpha` assembled at :126) and was triaged B4 — "emits a committed
+    witness, value change" — rather than B2. B4 is a work item and B2 is a
+    refusal, so the site was handed to the 2026-08-25 drain as migratable when
+    it is exactly the class that must be re-derived, not substituted
+    (bean `qou-cds1`).
+
+    Widening only: a bare `Mult` numerator is a single additive term, so every
+    site the old shape matched still matches.
+    """
     hits = set()
     for node in ast.walk(tree):
-        # match  X / 2  where X is a Mult
+        # match  X / 2  for any numerator X
         if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
             continue
         if not (isinstance(node.right, ast.Constant) and node.right.value == 2):
             continue
-        mult = node.left
-        if not (isinstance(mult, ast.BinOp) and isinstance(mult.op, ast.Mult)):
-            continue
-        for side in (mult.left, mult.right):
-            inner = side
-            while isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Mult):
-                inner = inner.left
-            if (isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Sub)
-                    and isinstance(inner.left, ast.Name)
-                    and isinstance(inner.right, ast.Constant)
-                    and inner.right.value == 1):
-                hits.add(inner.left.id)
+        for term in _additive_terms(node.left):
+            if not (isinstance(term, ast.BinOp) and isinstance(term.op, ast.Mult)):
+                continue
+            for side in (term.left, term.right):
+                inner = side
+                while isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Mult):
+                    inner = inner.left
+                if (isinstance(inner, ast.BinOp) and isinstance(inner.op, ast.Sub)
+                        and isinstance(inner.left, ast.Name)
+                        and isinstance(inner.right, ast.Constant)
+                        and inner.right.value == 1):
+                    hits.add(inner.left.id)
     return hits
 
 
@@ -262,7 +326,7 @@ def migrate_file(path: pathlib.Path, apply: bool):
         if "**3" in den_src:
             continue
         nm = names[0]
-        if DELIBERATE.search(nm):
+        if DELIBERATE(nm):
             skipped.append((n.lineno, nm, old_src, "deliberately C-named"))
             continue
         # G3: bar images -- see the note above BAR_SITE.

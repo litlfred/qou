@@ -9,7 +9,7 @@
       "computed": 1.5557538194652854e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "V₀' = 0 ⇔ (1−x)³ = x² at the geometric ξ₁ branch"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "engine P₁ = the agreed printed τ¹ (GGM@z = Peacock@ξ) at 1e-30"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "engine P₂ = the arbitrated Peacock-eq-76@ξ value at 1e-30 — independent re-confirmation of the misprint arbitration"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel nearest-singularity estimate within 20% of the GGM eq-81 ι₁₂ Stokes distance (resurgence gate)"
     }
   ],

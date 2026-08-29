@@ -7,7 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
-doc_brief: "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi"
+doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
 ---
 In this appendix we will sketch the construction of the inter polating polynomial δ of section 2. For
 all the details the reader can check [ Cor97].

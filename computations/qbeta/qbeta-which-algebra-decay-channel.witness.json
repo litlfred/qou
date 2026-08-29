@@ -1,0 +1,165 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T21:29:33.966694+00:00",
+  "commitSha": "e36ebc9ebe1c01bfb88d0d14b3d6cdca29be0b95",
+  "assertions": [
+    {
+      "name": "the_1cubed_central_idempotent_is_unique",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "it_is_idempotent_and_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_1cubed_ideal_is_one_dimensional",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_TRACE_descends_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_trace_does_NOT_descend_under_C_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_AUGMENTATION_descends",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_COORDINATE_SUM_does_NOT_descend",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_reproduces_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "delta_has_a_nonzero_1cubed_component",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "epsNPq_is_NOT_well_defined_on_the_quotient",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_GNS_representation_is_NOT_faithful_on_H_3_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3819,
+  "computation": "qbeta-which-algebra-decay-channel",
+  "scriptFile": "qbeta_which_algebra_the_decay_channel_lives_in_probe.py",
+  "scriptHash": "cb8a3d33412a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_which_algebra_the_decay_channel_lives_in_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_which_algebra_the_decay_channel_lives_in_probe.py"
+  },
+  "description": "The corpus's GNS proof already places the convention-D theory in the Temperley-Lieb quotient. Measured here: the trace and the augmentation descend to it; the coordinate sum `net` that the Q_beta ansatz evaluates does not.",
+  "data": {
+    "e_1cubed_coords": [
+      "q**6/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "-q**5/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "-q**5/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "q**4/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "q**4/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "-q**3/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+    ],
+    "net_of_e_1cubed_symbolic": "q**3*(q - 1)/((q**2 + 1)*(q**2 + q + 1))",
+    "net_of_e_1cubed_at_q0": "0.0201621592527849362538405077680228789999786410403595725756137",
+    "net_of_delta": "-0.187207194529378320729836545290980788975650514906299236406418",
+    "net_of_projected_delta": "-0.191445267296904124382100852307909839512350421046882720205254",
+    "corpus_answer": "Temperley-Lieb quotient — already stated in prf:algebraic-gns-embedding; qou-879g was premature",
+    "markov_convention": "D canonical, C carried as control",
+    "assertion_notes": [
+      {
+        "assertion": "the_1cubed_ideal_is_one_dimensional",
+        "note": "(the block is 1x1, so J = span{e} and descent is a single test)"
+      },
+      {
+        "assertion": "the_TRACE_descends_under_D",
+        "note": "(tr_M^{z_D} annihilates the whole ideal — this IS the corpus's Temperley-Lieb radical, at n=3)"
+      },
+      {
+        "assertion": "the_trace_does_NOT_descend_under_C_CONTROL",
+        "note": "(matches the GNS proof's parenthetical: under the excised convention C the radical collapses to 0)"
+      },
+      {
+        "assertion": "the_AUGMENTATION_descends",
+        "note": "(sigma -> q is the (3)-block character and kills every other block's ideal — so the Frobenius counit IS a functional on TL)"
+      },
+      {
+        "assertion": "the_COORDINATE_SUM_does_NOT_descend",
+        "note": "(net(e) = q**3*(q - 1)/((q**2 + 1)*(q**2 + q + 1)) != 0)"
+      },
+      {
+        "assertion": "delta_has_a_nonzero_1cubed_component",
+        "note": "(so the non-descent is not vacuous here — the ansatz's own element meets the ideal)"
+      },
+      {
+        "assertion": "epsNPq_is_NOT_well_defined_on_the_quotient",
+        "note": "(two representatives of the same TL class, two different values)"
+      },
+      {
+        "assertion": "the_GNS_representation_is_NOT_faithful_on_H_3_under_D",
+        "note": "(a NONZERO element the trace form cannot see; `prop:algebraic-gns-embedding` states a faithful embedding of H_inf(q), while its own proof qualifies faithfulness as holding 'in the trace-quotient')"
+      }
+    ],
+    "verdict": "ANSWERED FROM THE CORPUS, not by a new decision: prf:algebraic-gns-embedding already states that under production convention D the radical of the Markov trace is the >=3-row blocks -- the Temperley-Lieb radical -- and the GNS space is TL_inf(q), NOT H_inf(q). So qou-879g was premature and is answered TL. Verified here at n=3: the trace annihilates the (1,1,1) ideal under D and does not under C, exactly as that proof's parenthetical says. WHAT THAT EXPOSES: descent to a quotient is annihilation of the ideal, and the augmentation sigma -> q annihilates it while the COORDINATE SUM does not. Delta has a nonzero (1,1,1) component, so `epsNPq` takes different values on two representatives of one TL class -- the Q_beta ansatz evaluates a functional that is NOT defined on the space the framework's own GNS proof places the theory in. It would be defined there if it were the counit the corpus calls it, so the step-8 mislabelling is the obstruction, not a naming quibble. SEPARATELY: prop:algebraic-gns-embedding states a FAITHFUL embedding of H_inf(q) while its proof establishes it for H_inf/rad and qualifies faithfulness 'in the trace-quotient'; under D the radical is nonzero, witnessed here by a nonzero element the trace form cannot see, so the statement over-claims relative to its own proof. Scope-(a)."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

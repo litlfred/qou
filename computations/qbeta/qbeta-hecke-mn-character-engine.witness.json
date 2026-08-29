@@ -1,0 +1,143 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T07:45:43.597075+00:00",
+  "commitSha": "f205e33078b269858f3043e6468ba2ffd6007259",
+  "assertions": [
+    {
+      "name": "n2_trivial_on_sigma_is_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi^(2)_(2) = q"
+    },
+    {
+      "name": "n2_sign_on_sigma_is_minus_qinv",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi^(1,1)_(2) = -1/q"
+    },
+    {
+      "name": "dimension_is_syt_count_q_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "n = 2..6, all partitions"
+    },
+    {
+      "name": "classical_limit_matches_frobenius_route",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "n = 2..5, full tables"
+    },
+    {
+      "name": "column_orthogonality_q1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "n = 2..5"
+    },
+    {
+      "name": "h3_index_rep_is_q_to_the_length",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "h3_sign_rep_is_minus_qinv_to_the_length",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-hecke-mn-character-engine",
+  "scriptFile": "qbeta_hecke_mn_character_engine_probe.py",
+  "scriptHash": "2cc4b972e8ca",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_hecke_mn_character_engine_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_hecke_mn_character_engine_probe.py"
+  },
+  "description": "General-n Iwahori-Hecke character engine from the Jing-Liu Murnaghan-Nakayama rule (m=1), with five independent validations. Exact sympy over Q(q); no float, no Markov parameter.",
+  "data": {
+    "hecke_relation": "g^2 = (q - 1/q) g + 1  (matches the corpus sigma convention)",
+    "markov_convention": "not applicable — no z enters this computation",
+    "q0_anchor": "none — symbolic in q, never evaluated numerically",
+    "character_tables": {
+      "H_2": {
+        "(2,)|(2,)": "q",
+        "(2,)|(1, 1)": "1",
+        "(1, 1)|(2,)": "-1/q",
+        "(1, 1)|(1, 1)": "1"
+      },
+      "H_3": {
+        "(3,)|(3,)": "q**2",
+        "(3,)|(2, 1)": "q",
+        "(3,)|(1, 1, 1)": "1",
+        "(2, 1)|(3,)": "-1",
+        "(2, 1)|(2, 1)": "q - 1/q",
+        "(2, 1)|(1, 1, 1)": "2",
+        "(1, 1, 1)|(3,)": "q**(-2)",
+        "(1, 1, 1)|(2, 1)": "-1/q",
+        "(1, 1, 1)|(1, 1, 1)": "1"
+      },
+      "H_4": {
+        "(4,)|(4,)": "q**3",
+        "(4,)|(3, 1)": "q**2",
+        "(4,)|(2, 2)": "q**2",
+        "(4,)|(2, 1, 1)": "q",
+        "(4,)|(1, 1, 1, 1)": "1",
+        "(3, 1)|(4,)": "-q",
+        "(3, 1)|(3, 1)": "q**2 - 1",
+        "(3, 1)|(2, 2)": "q**2 - 2",
+        "(3, 1)|(2, 1, 1)": "2*q - 1/q",
+        "(3, 1)|(1, 1, 1, 1)": "3",
+        "(2, 2)|(4,)": "0",
+        "(2, 2)|(3, 1)": "-1",
+        "(2, 2)|(2, 2)": "(q**4 + 1)/q**2",
+        "(2, 2)|(2, 1, 1)": "q - 1/q",
+        "(2, 2)|(1, 1, 1, 1)": "2",
+        "(2, 1, 1)|(4,)": "1/q",
+        "(2, 1, 1)|(3, 1)": "-1 + q**(-2)",
+        "(2, 1, 1)|(2, 2)": "-2 + q**(-2)",
+        "(2, 1, 1)|(2, 1, 1)": "q - 2/q",
+        "(2, 1, 1)|(1, 1, 1, 1)": "3",
+        "(1, 1, 1, 1)|(4,)": "-1/q**3",
+        "(1, 1, 1, 1)|(3, 1)": "q**(-2)",
+        "(1, 1, 1, 1)|(2, 2)": "q**(-2)",
+        "(1, 1, 1, 1)|(2, 1, 1)": "-1/q",
+        "(1, 1, 1, 1)|(1, 1, 1, 1)": "1"
+      }
+    }
+  },
+  "caveats": [
+    "Characters are on the STANDARD elements T_{gamma_mu} indexed by cycle type. This does NOT evaluate an arbitrary braid word, so it does not reproduce chi_block_*, which are characters of the nucleon word difference beta_n - beta_p. That bridge is not claimed here."
+  ]
+}

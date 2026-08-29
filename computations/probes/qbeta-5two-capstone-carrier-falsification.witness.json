@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:26:14.809312+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:51:51.120487+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "gate_vol_5_2_validates",
-      "computed": 4.947704352032726e-50,
+      "computed": "4.947704352032725880255725006372517052445014682389514313366308978014736e-50",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "m=1 NZ saddle reproduces Vol(5₂)=2.82812 (merged witness gate)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "cross-anchor |d𝔙/dq| = O(1) reproduces the merged qbeta-5two-quantum-volume witness"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B(q) has 0 sign changes (Re and Im) on ±2e-8 grid straddling q*, |B(q*)| > 1e-10 — carrier constraint (2) fails"
     },
     {
@@ -33,31 +33,31 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "placing the zero in f instead needs log-slope > 1e6 across the anchor window — violates 'smooth O(1)'"
     },
     {
       "name": "writhe_D_odd_nonvanishing_at_qstar",
-      "computed": 0.21019936882842152,
+      "computed": "0.210199368828421512043394826272348324488255840352489880622916081850862",
       "expected": 0.21,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "capstone D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 (writhe-2, pre-#3892 6₂-braid era) — constraint-(2) failure"
     },
     {
       "name": "corrected_writhe4_D_odd_nonvanishing_at_qstar",
-      "computed": 0.4295857567411061,
+      "computed": "0.4295857567411061031029639442741416527534485225545571248375244289848667",
       "expected": 0.42,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "corrected 5₂ (braid [1,1,1,2,-1,2], writhe 4, #3892): ½(q*⁴−q*⁻⁴) ≈ 0.42 — same constraint-(2) failure"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qbeta-5two-capstone-carrier-falsification",
   "scriptFile": "qbeta_5two_capstone_carrier_falsification_probe.py",
-  "scriptHash": "80ba41f41678",
+  "scriptHash": "f0a7038ef191",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

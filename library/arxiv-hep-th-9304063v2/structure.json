@@ -1,0 +1,488 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9304063v2",
+ "source": {
+  "file": "9304063v2.pdf",
+  "sha256": "14a82437462eae238fe81fbb536e7c2ff5f15072a6a4edf26cad9ef06864d67d",
+  "bytes": 247765,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9304063",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "29 Jan 1999"
+  },
+  "doi": null,
+  "title": "Level Spacing Distributions and the Bessel Kernel Craig A. Tracy\u2217",
+  "authors_raw": "Department of Mathematics and Institute of Theoretical Dynamics",
+  "title_lines": [
+   "Level Spacing Distributions and the Bessel Kernel",
+   "Craig A. Tracy\u2217"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-th/9304063v2  29 Jan 1999",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126153955-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION AND STATEMENT OF RESULTS",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "KN(",
+   "page": 2,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b12 \u2212aj + 2v)q2",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The ordinary di\ufb00erential equation",
+   "page": 3,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "DIFFERENTIAL EQUATIONS",
+   "page": 6,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "(x \u2212y)",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) (I \u2212Kt)\u22121\u03c7J\u03c6 (y) \u2212",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) u \u2212",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) v \u2212",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(x \u2212\u03b12) \u03c6(x) = 0,",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) \u22121",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) \u2212x",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) + 1",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) v \u22121",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "P(x) u \u2212",
+   "page": 8,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Q(x) Q(y)",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b12 \u2212s) q + 1",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "ASYMPTOTICS",
+   "page": 12,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "The region x \u226a1",
+   "page": 14,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The region x \u226a1, \u221asx \u226b1",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "( 1+\u03b1",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The region \u221as x \u226b1, (1 \u2212x) s \u226b1",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The region x \u21921",
+   "page": 15,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Determination of a(s), b(s) and c(s)",
+   "page": 15,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotics of \u03bbi",
+   "page": 16,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction-and-statement-of-results",
+   "number": "I",
+   "title": "INTRODUCTION AND STATEMENT OF RESULTS",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 821,
+   "n_words": 135
+  },
+  {
+   "id": "sec-001-6-kn",
+   "number": "6",
+   "title": "KN(",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4625,
+   "n_words": 929
+  },
+  {
+   "id": "sec-002-4-\u03b12-aj-2vq2",
+   "number": "4",
+   "title": "(\u03b12 \u2212aj + 2v)q2",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 110,
+   "n_words": 22
+  },
+  {
+   "id": "sec-003-c-the-ordinary-di\ufb00erential-equation",
+   "number": "C",
+   "title": "The ordinary di\ufb00erential equation",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 5250,
+   "n_words": 1078
+  },
+  {
+   "id": "sec-004-ii-differential-equations",
+   "number": "II",
+   "title": "DIFFERENTIAL EQUATIONS",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 440,
+   "n_words": 79
+  },
+  {
+   "id": "sec-005-2-x-y",
+   "number": "2",
+   "title": "(x \u2212y)",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1690,
+   "n_words": 336
+  },
+  {
+   "id": "sec-006-4-qx-i-kt1\u03c7j\u03c6-y",
+   "number": "4",
+   "title": "Q(x) (I \u2212Kt)\u22121\u03c7J\u03c6 (y) \u2212",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1183,
+   "n_words": 238
+  },
+  {
+   "id": "sec-007-4-qx-u",
+   "number": "4",
+   "title": "Q(x) u \u2212",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 112,
+   "n_words": 23
+  },
+  {
+   "id": "sec-008-4-qx-v",
+   "number": "4",
+   "title": "Q(x) v \u2212",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 153,
+   "n_words": 31
+  },
+  {
+   "id": "sec-009-4-x-\u03b12-\u03c6x-0",
+   "number": "4",
+   "title": "(x \u2212\u03b12) \u03c6(x) = 0,",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 81,
+   "n_words": 19
+  },
+  {
+   "id": "sec-010-4-qx-1",
+   "number": "4",
+   "title": "Q(x) \u22121",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 20,
+   "n_words": 5
+  },
+  {
+   "id": "sec-011-4-qx-x",
+   "number": "4",
+   "title": "Q(x) \u2212x",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-012-4-qx-1",
+   "number": "4",
+   "title": "Q(x) + 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 177,
+   "n_words": 42
+  },
+  {
+   "id": "sec-013-2-qx-v-1",
+   "number": "2",
+   "title": "Q(x) v \u22121",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-4-px-u",
+   "number": "4",
+   "title": "P(x) u \u2212",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2604,
+   "n_words": 577
+  },
+  {
+   "id": "sec-015-4-qx-qy",
+   "number": "4",
+   "title": "Q(x) Q(y)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 739,
+   "n_words": 152
+  },
+  {
+   "id": "sec-016-4-\u03b12-s-q-1",
+   "number": "4",
+   "title": "(\u03b12 \u2212s) q + 1",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4852,
+   "n_words": 968
+  },
+  {
+   "id": "sec-017-iii-asymptotics",
+   "number": "III",
+   "title": "ASYMPTOTICS",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2840,
+   "n_words": 587
+  },
+  {
+   "id": "sec-018-1-the-region-x-1",
+   "number": "1",
+   "title": "The region x \u226a1",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 303,
+   "n_words": 64
+  },
+  {
+   "id": "sec-019-2-the-region-x-1-sx-1",
+   "number": "2",
+   "title": "The region x \u226a1, \u221asx \u226b1",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 152,
+   "n_words": 38
+  },
+  {
+   "id": "sec-020-2-1\u03b1",
+   "number": "2",
+   "title": "( 1+\u03b1",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 297,
+   "n_words": 79
+  },
+  {
+   "id": "sec-021-3-the-region-s-x-1-1-x-s-1",
+   "number": "3",
+   "title": "The region \u221as x \u226b1, (1 \u2212x) s \u226b1",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 643,
+   "n_words": 147
+  },
+  {
+   "id": "sec-022-4-the-region-x-1",
+   "number": "4",
+   "title": "The region x \u21921",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 262,
+   "n_words": 54
+  },
+  {
+   "id": "sec-023-5-determination-of-as-bs-and-cs",
+   "number": "5",
+   "title": "Determination of a(s), b(s) and c(s)",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1113,
+   "n_words": 251
+  },
+  {
+   "id": "sec-024-6-the-asymptotics-of-\u03bbi",
+   "number": "6",
+   "title": "The asymptotics of \u03bbi",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 4630,
+   "n_words": 994
+  },
+  {
+   "id": "sec-025-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 4095,
+   "n_words": 664
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 26,
+  "sections": 26,
+  "chars_total": 37192
+ }
+}

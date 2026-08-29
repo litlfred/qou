@@ -7,7 +7,7 @@ section_number: 1
 pages: 5-12
 source_pdf: roth_lemma.pdf
 source_sha256: c2f2b49f25f35919
-doc_brief: "ROTH’S LEMMA — 4 sections: Introduction; For a detailed study of the genera; Put w(A) a e'J<A) if A ^0, andW(O)"
+doc_brief: "Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows — 4 sections"
 ---
 ski, Math. Z. 4 (1919), 223-230.
 82 LECTURES ON DIOPHANTINE APPROXIMATIONS

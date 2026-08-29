@@ -65,7 +65,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
-from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()  # mp.mp.dps = COMPUTE_DPS (70) — matches witness metadata
 KAPPA = mp.sqrt(3) / 4          # |a₂|, cusp modulus τ = −i√3 (A-polynomial)
@@ -162,7 +162,7 @@ def main() -> int:
                                "iterates; limit real; cusp Im=√3/2 unreachable",
         "open": "u(q0) — required phase strictly interior, 0 < |arg m²| < π"})
     wb.add_assertion("pole_is_negative_of_magnitude",
-                     computed=float(mp.fabs(k0_res)), expected=0.0, tolerance=1e-45,
+                     computed=fmt(mp.fabs(k0_res)), expected=0.0, tolerance=1e-45,
                      source="1 + q^{2k+1}·x_k = 0 at x_k = −q^{-(2k+1)} (Φ_q pole)")
     wb.add_assertion("fixed_k_family_anchor_blind",
                      computed=float(0 if all_same_sign else 1), expected=0.0,

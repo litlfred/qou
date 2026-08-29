@@ -21,5 +21,8 @@ $$
    where $\ell_i$ is the word length of $b_i$. In particular $G$ is not positive
    definite.*
 
-4. *At the Markov weight $z = \sqrt{q}/(q+1)$ one has instead
-   $\det G \neq 0$ whenever $\sqrt{q} > 1$.*
+4. *At the excised convention-C weight $z = \sqrt{q}/(q+1)$ one has instead
+   $\det G \neq 0$ whenever $\sqrt{q} > 1$. This contrast is retained
+   deliberately: it is what identifies the vanishing in item 3 as a property of
+   the canonical weight rather than of the Gram construction. Convention C is
+   not available for use — see the convention-D ruling.*

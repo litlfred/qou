@@ -7,7 +7,7 @@ section_number: 1.1
 pages: 4-10
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 By an exact symplectic manifold we mean a compact manifold M with boundary,
 together with a symplectic form ω and a one-form θ satisfyingdθ =ω, such that

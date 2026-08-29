@@ -62,6 +62,10 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 import closed_form_tau_M as C  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 COMP = str(_COMP)
 
 
@@ -70,7 +74,7 @@ def main() -> int:
     z = C.markov_z(q)
     h = q - 1 / q
     g_pp = g_nn = z
-    g_pn = z - h / 2
+    g_pn = z + _pn_d(h)
 
     G = mp.matrix([
         [0, g_pp, g_pn, g_pn],

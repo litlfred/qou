@@ -9,7 +9,7 @@
       "computed": "0.75",
       "expected": "0.75",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "dJ_{4_1}/d(h²)|_0 = 1 − 1/(2√4) = 3/4"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "1.03280934182539968964952735759",
       "expected": "1.03280934182539968964952735759",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "J_{4_1} = h² + 3 − √(h²+4)"
     }
   ],

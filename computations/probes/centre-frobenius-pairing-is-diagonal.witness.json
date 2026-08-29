@@ -1,0 +1,74 @@
+{
+  "computation": "centre-frobenius-pairing-is-diagonal",
+  "scriptFile": "centre_frobenius_pairing_is_diagonal_probe.py",
+  "computedAt": "2026-08-26T07:13:29+00:00",
+  "bean": "qou-xsv8",
+  "kind": "exploratory-probe",
+  "engine": "sympy exact QQ(q); mpmath mpf for the single q0 evaluation",
+  "free_parameters": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "inputs": {
+    "n": 3,
+    "idempotent_source": "probe-h3-central-idempotents-exact.witness.json",
+    "word_basis": [
+      "1",
+      "s0",
+      "s1",
+      "s0s1",
+      "s1s0",
+      "s0s1s0"
+    ],
+    "inversion_permutation": [
+      0,
+      1,
+      2,
+      4,
+      3,
+      5
+    ],
+    "tau_rule": "tau(T_u T_v) = delta_{u, v^-1}  (AGENTS.md 7a convention)"
+  },
+  "results": {
+    "gram_offdiagonal": [
+      "0"
+    ],
+    "gram_diagonal": [
+      "1/(q**6 + 2*q**4 + 2*q**2 + 1)",
+      "2*q**2/(q**4 + q**2 + 1)",
+      "q**6/(q**6 + 2*q**4 + 2*q**2 + 1)"
+    ],
+    "diagonal_sum": "1",
+    "verdict": "The Frobenius pairing restricted to Z(H_3(q)) is DIAGONAL in the central-idempotent basis, with nonzero diagonal. So two DISTINCT curvature-rank strata -- each a span of idempotents -- pair to IDENTICALLY ZERO, and each stratum is SELF-dual. The asserted 'rank-l pairs with rank-(N-l)' is zero exactly where it claims to be perfect, whenever l != N-l. This is the qou-xsv8 defect, present in prf:spectral-sequence-collapse as well as in prf:quantum-dilogarithm-stratified Step 1.",
+    "scope": "(b) structural exclusion -- the invariant is e_l.e_m = 0 for l != m, which holds for every linear functional and every n, so no choice of filtration or of Frobenius form can restore a cross-stratum pairing on idempotent strata."
+  },
+  "assertions": [
+    {
+      "name": "A1_offdiagonal_identically_zero",
+      "passed": true,
+      "detail": "all 6 off-diagonal entries are 0 in QQ(q): ['0']"
+    },
+    {
+      "name": "A2_diagonal_nonzero",
+      "passed": true,
+      "detail": "tau(e_lambda) != 0 for all three lambda: (3) -> 1/(q**6 + 2*q**4 + 2*q**2 + 1); (2,1) -> 2*q**2/(q**4 + q**2 + 1); (1,1,1) -> q**6/(q**6 + 2*q**4 + 2*q**2 + 1)"
+    },
+    {
+      "name": "A3_completeness_selftest",
+      "passed": true,
+      "detail": "sum_lambda tau(e_lambda) = 1 (must be tau(1) = 1; this validates both the tau(T_u T_v) = delta_{u,v^-1} rule and the committed coefficients)"
+    },
+    {
+      "name": "A4_diagonal_is_Te_coefficient",
+      "passed": true,
+      "detail": "B(e_lambda, e_lambda) = tau(e_lambda) = the T_e coefficient, as it must be for an idempotent"
+    },
+    {
+      "name": "A5_diagonal_positive_at_q0",
+      "passed": true,
+      "detail": "at the proton pin q0 = 1.1099785827513808076: (3) -> 0.1194713236029717438645098; (2,1) -> 0.6570936427416463665943276; (1,1,1) -> 0.2234350336553818895411626  (numeric completeness sum = 1.0, |sum - 1| < 1e-45: True)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 333
+}

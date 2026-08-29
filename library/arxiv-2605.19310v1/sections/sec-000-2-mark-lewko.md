@@ -7,7 +7,7 @@ section_number: 2
 pages: 1-4
 source_pdf: 2605.19310v1.pdf
 source_sha256: 047d492babc63d2f
-doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM — We give an elementary, Fourier-free proof of Roth’s theorem."
+doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM MARK LEWKO — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 Abstract. We give an elementary, Fourier-free proof of Roth’s theorem.
 The proof follows Roth’s original density-increment strategy, but replaces

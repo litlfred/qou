@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:51:32.781405+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:05:18.472608+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "borromean_char_derived_from_hoefsmit",
-      "computed": 3.622271631530685e-71,
+      "computed": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] = 2 - 3h^4 - h^6"
     },
     {
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "m-p-spectral-corrected-50dps",
   "scriptFile": "m_p_spectral_corrected_50dps.py",
-  "scriptHash": "2e9d21dcce61",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "f3b725f4d355",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,8 +39,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/m_p_spectral_corrected_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/m_p_spectral_corrected_50dps.py"
   },
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",

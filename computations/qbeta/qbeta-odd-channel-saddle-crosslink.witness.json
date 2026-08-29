@@ -1,39 +1,39 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:56:25.725419+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:15:48.523069+00:00",
+  "commitSha": "cd38c4f3dd258b4e1f3d1004824fecdc92084191",
   "assertions": [
     {
       "name": "hessian_is_sqrt3_torsion",
-      "computed": 7.737175596588903e-71,
+      "computed": "7.7371755965889041027806430023848771304549551639300808193471200491699e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "−V''(z*) = −3/2 + i√3/2, |−V''| = √3"
     },
     {
       "name": "im_V_is_vol_4_1",
-      "computed": 3.622271631530685e-71,
+      "computed": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "Im V(z*) = Vol(4_1)"
     },
     {
       "name": "vol_over_4pi_in_odd_band",
-      "computed": 1.0,
+      "computed": true,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Vol(4_1)/(4π)=0.16153 ∈ [0.147,0.168] (#3810)"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-odd-channel-saddle-crosslink",
   "scriptFile": "qbeta_odd_channel_saddle_crosslink_check.py",
-  "scriptHash": "a6c7d74dd39d",
+  "scriptHash": "58c0884e880c",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

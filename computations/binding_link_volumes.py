@@ -188,7 +188,7 @@ def main():
 
     wb.add_assertion(
         "L6a4_is_borromean",
-        computed=float(fabs(vols["3He"]["vol"] - VOL_B3)),
+        computed=fabs(vols["3He"]["vol"] - VOL_B3),
         expected=0,
         tolerance=1e-6,
         source="Vol(L6a4) = 8G = Vol(Borromean)",

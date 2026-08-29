@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0503227v2",
+ "source_sha256": "4e83adfdef827103",
+ "brief": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an",
+ "extended": "**An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman**\n\n*Department of Mathematics, University of Southern Califor nia*\n\n14 pp, 5 sections.\n\n**Abstract.** Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of inde pendent, iden- tically distributed random variables. We modify this techn ique to prove a Berry-Esseen theorem for character ratios of a random repre sentation of the symmetric group on transpositions. An analogous result is p roved for Jack measure on partitions.\n\n**Outline.** 1 Introduction; 2 Central limit theorem for Plancherel measure; 3 Central limit theorem for Jack measure; 4 Acknowledgements; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 194
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-central-limit-theorem-for-plancherel-measure",
+   "title": "Central limit theorem for Plancherel measure",
+   "pages": "3-9"
+  },
+  {
+   "id": "sec-002-3-central-limit-theorem-for-jack-measure",
+   "title": "Central limit theorem for Jack measure",
+   "pages": "9-13"
+  },
+  {
+   "id": "sec-003-4-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "13-14"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

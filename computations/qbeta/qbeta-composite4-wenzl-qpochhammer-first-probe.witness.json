@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:47:27.001971+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:15.065040+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "composite4_qpochhammer_at_least_one_closes_10_ppm",
@@ -32,7 +32,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -41,66 +41,66 @@
     "reproduce": "python3 -u computations/qbeta/qbeta_composite4_wenzl_qpochhammer_first_probe.py"
   },
   "data": {
-    "q_substrate": "1.10997859555733471989976322048",
+    "q_substrate": "1.10997858275138080759166909561",
     "c3_target": "-2.06934257711516783787971951725",
-    "base_neg_q2_plus_qinv2": "-2.04370621823290131021824508554",
-    "wenzl_markov_p3_proxy": "3.04370621823290131021824508554",
+    "base_neg_q2_plus_qinv2": "-2.04370620853252198940201933568",
+    "wenzl_markov_p3_proxy": "3.04370620853252198940201933568",
     "qpochhammer_tower_qinv": {
-      "N=1": "0.0990817264382589590820994",
-      "N=2": "0.0186616730412363914946232",
-      "N=3": "0.00501562914652585182972176",
-      "N=4": "0.00171142401658363582492926",
-      "N=5": "0.000695679230383548389730404",
-      "N=6": "0.000323697668925042368847361"
+      "N=1": "0.0990817160442585078391771",
+      "N=2": "0.0186616692279341237483151",
+      "N=3": "0.00501562764933067700038961",
+      "N=4": "0.001711423353229397771961",
+      "N=5": "0.000695678902141906137335562",
+      "N=6": "0.000323697490445532183785523"
     },
     "per_candidate_results": {
       "P1. base·(1 + ℏ_q·(1-(q⁻¹;q⁻¹)_3))": {
-        "c3_pred": "-2.24518452415838113881616",
-        "miss_ppm": 84974.78812249217,
+        "c3_pred": "-2.24518449266912523972509",
+        "miss_ppm": 84974.77290545839,
         "passed": false
       },
       "P2. base·(1 + ℏ_q²·(q⁻¹;q⁻¹)_2)": {
-        "c3_pred": "-2.04408063576216759989956",
-        "miss_ppm": 12207.713518472829,
+        "c3_pred": "-2.0440806259049478723931",
+        "miss_ppm": 12207.718281927579,
         "passed": false
       },
       "P3. base·(2 - (q⁻¹;q⁻¹)_∞≈_6)": {
-        "c3_pred": "-4.08675089352699301636016",
-        "miss_ppm": 974903.0144753783,
+        "c3_pred": "-4.0867508744941340479626",
+        "miss_ppm": 974903.0052778394,
         "passed": false
       },
       "P4. base·(1 + ℏ_q·[3]_q·(q⁻¹;q⁻¹)_4/25)": {
-        "c3_pred": "-2.04374841045287554037247",
-        "miss_ppm": 12368.259825771647,
+        "c3_pred": "-2.04374840073138152695454",
+        "miss_ppm": 12368.264523637588,
         "passed": false
       },
       "P5. -[3]_q·(q⁻¹;q⁻¹)_2": {
-        "c3_pred": "-0.0568006502782405033022355",
-        "miss_ppm": 972551.3547604934,
+        "c3_pred": "-0.0568006384906434086906088",
+        "miss_ppm": 972551.3604567939,
         "passed": false
       },
       "P6. -[3]_q/(q⁻¹;q⁻¹)_3": {
-        "c3_pred": "-606.844351788083954457937",
-        "miss_ppm": 292254658.9912988,
+        "c3_pred": "-606.844531000760590987772",
+        "miss_ppm": 292254745.594976,
         "passed": false
       },
       "P7. base·(1 + ℏ_q·[3]_q/25 + (q⁻¹;q⁻¹)_5·ℏ_q³)": {
-        "c3_pred": "-2.06836088381465661487915",
-        "miss_ppm": 474.3986381799496,
+        "c3_pred": "-2.06836087133138554952437",
+        "miss_ppm": 474.4046706615713,
         "passed": false
       },
       "P8. base·(1 + (1-(q⁻¹;q⁻¹)_∞≈_6)·ℏ_q²·b)": {
-        "c3_pred": "-2.06110731258655036445088",
-        "miss_ppm": 3979.652581303432,
+        "c3_pred": "-2.06110729914896244606778",
+        "miss_ppm": 3979.659074954153,
         "passed": false
       }
     },
     "best_candidate_name": "P7. base·(1 + ℏ_q·[3]_q/25 + (q⁻¹;q⁻¹)_5·ℏ_q³)",
-    "best_candidate_miss_ppm": 474.3986381799496,
+    "best_candidate_miss_ppm": 474.4046706615713,
     "any_candidate_passes_10_ppm": false,
     "machinery_exercised": "QOU.Machinery.QPochhammer (PR #1791) — Python mirror of qPochhammerFinite / qPochhammerDiag",
     "interpretation": "Composite 4 first probe: 8 Wenzl × truncated-q-Pochhammer composites, best P7. base·(1 + ℏ_q·[3]_q/25 + (q⁻¹;q⁻¹)_5·ℏ_q³) at 474.4 ppm — NEGATIVE. The archimedean (real q₀ > 1) q-Pochhammer truncation does not supply residue A. The real Composite 4 is a FIBRE-level Habiro-ring element (formal q at roots of unity, pre-τ), gated on the pyhecke linear-combination tr_M extension. Cumulative NEGATIVE bracket: 42."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

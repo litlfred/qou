@@ -7,7 +7,7 @@ section_number: 0
 pages: 60-60
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 level. Let β be the map deﬁned at the end of Section 3.1. What (3.10) and
 Proposition 3.4 say is that b =β + (b−β), with b−β of order [3ǫ;∞), which is

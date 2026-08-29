@@ -486,6 +486,11 @@ w.add_assertion(
 # tension above a statement about the ANCHOR rather than about the framework.
 # Checked here against the committed 50-digit muon pin so the two layers stay
 # separable instead of being averaged into one number.
+# DELIBERATE MUON READ — do NOT reroute through q_parameter. This producer
+# computes at the proton pin throughout; the muon pin is read here, and only
+# here, so the ideal-layer identity above can be checked in its own layer.
+# Rerouting it would collapse the two layers being compared. Declared
+# `ambiguous` in q0_anchor_manifest.json for the same reason.
 _qm = _json.loads(
     (_Path(__file__).resolve().parent / "q-pinning-50-digit.witness.json")
     .read_text(encoding="utf-8")

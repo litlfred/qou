@@ -7,7 +7,7 @@ section_number: 0
 pages: 63-64
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 63
 for the chain map deﬁned by this. In view of Lemmas 2.29 and 3.2 (i) one can

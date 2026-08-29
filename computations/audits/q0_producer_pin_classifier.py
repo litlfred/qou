@@ -221,6 +221,85 @@ def _docstrings(mod: ast.Module) -> set[str]:
     return out
 
 
+def _message_string_ids(mod: ast.Module) -> set[int]:
+    """`id()` of every str Constant that is a MESSAGE rather than a value.
+
+    `_docstrings` above covers prose in docstrings.  It does not cover the other
+    place prose about q₀ lives: **runtime messages**.  A guard that refuses to
+    straddle reads
+
+        raise SystemExit(f"ANCHOR STRADDLE: this probe is declared PROTON ...")
+
+    and the string names a muon artifact — so the classifier counted the guard's
+    own warning as evidence that the producer reads the muon pin.  The prose it
+    matched exists precisely to prevent the thing it was taken to prove.
+    Measured on the 2026-08-26 tree: `qbeta_habiro_residual_probe` is declared
+    PROTON, carries that guard, and was reported `BOTH` on its strength.
+
+    Collected here: str constants inside an f-string, a `raise`, or a
+    `print`/`warn`/`log` call.  A string that is an argument to an OPERATIVE
+    call — `open`, `Path`, `read_text`, `mpf`, `Decimal`, `json.load` — is a
+    read or a value and is deliberately NOT demoted, because those strings do
+    do the thing rather than describe it.
+
+    Demotion is one-way and safe: it can only move evidence from `muon` to
+    `muon_prose`, and prose alone never decides a verdict.  It cannot
+    manufacture an `ideal_muon` entry, the only behaviourally live direction.
+    """
+    OPERATIVE = {"open", "Path", "read_text", "read_bytes", "mpf", "Decimal",
+                 "load", "loads", "mpmathify", "Fraction"}
+
+    operative_args: set[int] = set()
+    for n in ast.walk(mod):
+        if isinstance(n, ast.Call):
+            fname = (n.func.attr if isinstance(n.func, ast.Attribute)
+                     else n.func.id if isinstance(n.func, ast.Name) else "")
+            if fname in OPERATIVE:
+                for a in list(n.args) + [k.value for k in n.keywords]:
+                    for sub in ast.walk(a):
+                        if isinstance(sub, ast.Constant) and isinstance(sub.value, str):
+                            operative_args.add(id(sub))
+
+    MESSAGEY = {"print", "warn", "warning", "info", "debug", "error", "critical"}
+    out: set[int] = set()
+
+    def collect(node) -> None:
+        for sub in ast.walk(node):
+            if (isinstance(sub, ast.Constant) and isinstance(sub.value, str)
+                    and id(sub) not in operative_args):
+                out.add(id(sub))
+
+    for n in ast.walk(mod):
+        if isinstance(n, ast.JoinedStr):
+            collect(n)
+        elif isinstance(n, ast.Raise):
+            collect(n)
+        elif isinstance(n, ast.Call):
+            fname = (n.func.attr if isinstance(n.func, ast.Attribute)
+                     else n.func.id if isinstance(n.func, ast.Name) else "")
+            if fname in MESSAGEY:
+                for a in n.args:
+                    collect(a)
+    return out
+
+
+def _code_only_text(src: str) -> str:
+    """`src` with every comment and string literal removed.
+
+    The `env-like "muon"` branch below gated on `"ANCHOR" in src` — a raw
+    whole-source substring test, so a file that merely *discusses* anchors in a
+    comment satisfied it.  That is the same defect one level up: text that
+    describes the thing, matched as if it did the thing.
+    """
+    import io, tokenize as _tk
+    try:
+        toks = _tk.generate_tokens(io.StringIO(src).readline)
+        return " ".join(t.string for t in toks
+                        if t.type not in (_tk.COMMENT, _tk.STRING))
+    except Exception:
+        return src
+
+
 def classify(path: Path) -> tuple[str, list[str]]:
     try:
         src = path.read_text(encoding="utf-8")
@@ -231,6 +310,9 @@ def classify(path: Path) -> tuple[str, list[str]]:
     body = strip_main_block(tree)
     module = ast.Module(body=body, type_ignores=[])
     docs = _docstrings(module)
+    _scanned = ast.Module(body=body, type_ignores=[])
+    msg_ids = _message_string_ids(_scanned)
+    code_only = _code_only_text(src)
     proton: list[str] = []
     muon: list[str] = []
     # Prose mentions: reported so a reader can see WHY a file looked muon, but
@@ -279,7 +361,7 @@ def classify(path: Path) -> tuple[str, list[str]]:
                     proton.append(f"hardcoded proton FLOAT literal {n.value!r}")
             if isinstance(n.value, str):
                 s = n.value
-                is_prose = s in docs
+                is_prose = s in docs or id(n) in msg_ids
                 for art in MUON_ARTIFACTS:
                     if art in s:
                         # RESOLVE, do not assume (2026-08-23), composed with
@@ -300,7 +382,8 @@ def classify(path: Path) -> tuple[str, list[str]]:
                         else:
                             (muon_prose if is_prose else muon).append(
                                 f'"{s[:48]}"')
-                if s.strip().lower() in MUON_ENV and "ANCHOR" in src:
+                if (s.strip().lower() in MUON_ENV
+                        and "ANCHOR" in code_only and not is_prose):
                     muon.append(f'env-like "{s}"')
                 if _pin_of_literal(s) == "muon":
                     muon.append("hardcoded muon 50-digit")
@@ -368,12 +451,53 @@ def find_producer(script_name: str) -> Path | None:
     return hits[0]
 
 
+def _selftest() -> int:
+    """Assert the prose/code split on the two cases that motivated it.
+
+    Both are `BOTH` for independent reasons and stay `BOTH`; what is asserted
+    is that the FALSE evidence is gone.  A future narrowing of
+    `_message_string_ids` or a revert of the `code_only` gate silently restores
+    the over-flag, and the counts do not move when it does — this is the only
+    thing that notices.
+    """
+    checks = [
+        ("computations/probes/qbeta_habiro_residual_probe.py",
+         "ANCHOR STRADDLE",
+         "a guard's own raise-message must not indict the file it protects"),
+        ("computations/probes/su4_1111_markov_trace_probe.py",
+         'env-like "muon"',
+         'the "ANCHOR" gate must read code, not comments and strings'),
+    ]
+    bad = 0
+    for rel, forbidden, why in checks:
+        f = REPO / rel
+        if not f.exists():
+            print(f"  SKIP  {rel} (moved or renamed)")
+            continue
+        _, ev = classify(f)
+        joined = " ".join(ev)
+        # the forbidden item may legitimately survive as explicitly-marked prose
+        hit = forbidden in joined and "(prose only)" not in joined.split(forbidden)[0][-24:]
+        print(f"  {'FAIL' if hit else 'ok  '}  {rel}")
+        print(f"          {why}")
+        if hit:
+            print(f"          still cites: {forbidden!r} as operative evidence")
+            bad += 1
+    print(f"\n  selftest: {'FAILED' if bad else 'passed'} ({bad} regression(s))")
+    return 1 if bad else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--selftest", action="store_true",
+                    help="assert the prose/code split on its motivating cases")
     ap.add_argument("--show", type=int, default=20)
     ap.add_argument("--emit-proposal", type=str, default=None,
                     help="write the proposed manifest additions to this path")
     args = ap.parse_args(argv)
+
+    if args.selftest:
+        return _selftest()
 
     witnesses = [w for w in REPO.rglob("*.witness.json") if ".git" not in w.parts]
 
@@ -459,6 +583,15 @@ def main(argv: list[str] | None = None) -> int:
     print("                     producer, so it is a decision, not a sweep.")
 
     if args.emit_proposal:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        proposal.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            proposal, script_path=__file__, engine=None, q0_anchor=None)
         Path(args.emit_proposal).write_text(json.dumps(proposal, indent=2) + "\n")
         print(f"\n  proposal -> {args.emit_proposal}")
 

@@ -51,6 +51,9 @@ from itertools import combinations
 from pathlib import Path
 from typing import Optional
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 # ── Exact rational arithmetic ────────────────────────────────────
 
@@ -361,8 +364,17 @@ def main():
             "z": "4993/10000",
             "results": [asdict(r) for r in results],
         }
-        out = Path("computations/hecke-engine.witness.json")
+        out = Path(_HERE_W.parent / "hecke-engine.witness.json")
         with open(out, "w") as f:
+            # Provenance stamp (bean qou-4un2): this producer writes its
+            # witness directly, so nothing else records which script made
+            # it -- and a re-run of an unstamped producer DELETES the
+            # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+            import os as _os  # noqa: E402 -- provenance stamp
+            from qou_substrate.witness import WitnessBuilder as _WB
+            witness.setdefault("scriptFile", _os.path.basename(__file__))
+            _WB.stamp_staleness_metadata(
+                witness, script_path=__file__, engine=None, q0_anchor=False)
             json.dump(witness, f, indent=2)
         print(f"\nWitness: {out}")
 

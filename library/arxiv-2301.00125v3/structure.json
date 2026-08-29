@@ -1,0 +1,349 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2301.00125v3",
+ "source": {
+  "file": "2301.00125v3.pdf",
+  "sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
+  "bytes": 490032,
+  "pages": 35,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2301.00125",
+   "version": "3",
+   "primary_class": "math.CO",
+   "stamp_date": "3 May 2023"
+  },
+  "doi": null,
+  "title": "Generating Function for Pinsky\u2019s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd",
+  "authors_raw": "Bronx, NY 10468",
+  "title_lines": [
+   "Generating Function for Pinsky\u2019s Combinatorial Second Mom ent Formula",
+   "for the Generalized Ulam Problem",
+   "Samen Hossein",
+   "The Bronx High School of Science",
+   "75 Bronx Science Bvd"
+  ],
+  "abstract": "Given a uniform random permutation \u03c0\u2208Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k =|{(i1,...,i k)\u2208 Zk : 1 \u2264i1 <\u00b7\u00b7\u00b7 <i k\u2264n, \u03c0i1 <\u00b7\u00b7\u00b7 <\u03c0 ik}|. In an important paper, Ross Pinsky proved E [ Z 2 n,k ] is equal to \u2211 iA(k\u2212i,i )B(n, 2k\u2212i), where for any nonnegative integers N and j, we have B(N,j ) = (N j ) /j! and A(N,j ) is a particular nonnegative integer, which Pinsky characterized in two di\ufb00erent ways. One characterization of A(N,j ) involves the occupation time of the x-axis prior to a \ufb01rst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn =o(n2/5) asn\u2192\u221e . In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n\u2192\u221e . Here, we return to his combinatorial formula for the the second m oment of Zn,k, and we obtain a generating function for the A(N,j ) triangular array. We are motivated by the hope of applying spin glass techniques to the well-known Ulam\u2019s problem to see if this gives a new perspective.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20230503212647-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Extended abstract",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Set-up",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Higher moments for the generalized Ulam's problem",
+   "page": 3,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Motivation for exact solutions",
+   "page": 4,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Outline for the remainder of the paper",
+   "page": 4,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Pinsky's combinatorial second moment formula",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The diagonal (contour integral) method",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Main result",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Summary and outlook",
+   "page": 16,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A Bonferroni inequalities and Bell polynomials",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Review of the physicists' replica approach to the SK model",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 Mathematical physics and probability developments",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C Roots of a class of quadratic equations",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "D Contour integral alternative derivation of Lemma 2.2",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "E Pochhamer identities for -1/2 and negative integers",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "F Elementary proofs from the quadratic formula",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "G Elementary proofs from contour deformations",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "H Proof of lemmas related to the residue theorem",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "I Elliptic integrals and linear fractional transformations",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-extended-abstract",
+   "number": "1.1",
+   "title": "Extended abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2231,
+   "n_words": 430
+  },
+  {
+   "id": "sec-002-12-set-up",
+   "number": "1.2",
+   "title": "Set-up",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 7714,
+   "n_words": 1402
+  },
+  {
+   "id": "sec-003-14-motivation-for-exact-solutions",
+   "number": "1.4",
+   "title": "Motivation for exact solutions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2584,
+   "n_words": 448
+  },
+  {
+   "id": "sec-004-15-outline-for-the-remainder-of-the-paper",
+   "number": "1.5",
+   "title": "Outline for the remainder of the paper",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 9128,
+   "n_words": 1783
+  },
+  {
+   "id": "sec-005-3-the-diagonal-contour-integral-method",
+   "number": "3",
+   "title": "The diagonal (contour integral) method",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 6804,
+   "n_words": 1403
+  },
+  {
+   "id": "sec-006-4-main-result",
+   "number": "4",
+   "title": "Main result",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 10455,
+   "n_words": 2035
+  },
+  {
+   "id": "sec-007-5-summary-and-outlook",
+   "number": "5",
+   "title": "Summary and outlook",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2222,
+   "n_words": 377
+  },
+  {
+   "id": "sec-008-a-bonferroni-inequalities-and-bell-polynomials",
+   "number": null,
+   "title": "A Bonferroni inequalities and Bell polynomials",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 13055,
+   "n_words": 2539
+  },
+  {
+   "id": "sec-009-b1-mathematical-physics-and-probability-developm",
+   "number": null,
+   "title": "B.1 Mathematical physics and probability developments",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2567,
+   "n_words": 569
+  },
+  {
+   "id": "sec-010-c-roots-of-a-class-of-quadratic-equations",
+   "number": null,
+   "title": "C Roots of a class of quadratic equations",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 583,
+   "n_words": 127
+  },
+  {
+   "id": "sec-011-d-contour-integral-alternative-derivation-of-lem",
+   "number": null,
+   "title": "D Contour integral alternative derivation of Lemma 2.2",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 4854,
+   "n_words": 1052
+  },
+  {
+   "id": "sec-012-f-elementary-proofs-from-the-quadratic-formula",
+   "number": null,
+   "title": "F Elementary proofs from the quadratic formula",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 6055,
+   "n_words": 1376
+  },
+  {
+   "id": "sec-013-g-elementary-proofs-from-contour-deformations",
+   "number": null,
+   "title": "G Elementary proofs from contour deformations",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3410,
+   "n_words": 650
+  },
+  {
+   "id": "sec-014-h-proof-of-lemmas-related-to-the-residue-theorem",
+   "number": null,
+   "title": "H Proof of lemmas related to the residue theorem",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 6504,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-015-i-elliptic-integrals-and-linear-fractional-trans",
+   "number": null,
+   "title": "I Elliptic integrals and linear fractional transformations",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 35,
+   "n_chars": 10313,
+   "n_words": 1821
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 16,
+  "chars_total": 88479
+ }
+}

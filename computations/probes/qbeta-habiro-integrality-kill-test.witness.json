@@ -33,7 +33,7 @@
       "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "committed witness cross-check (q-beta-operator-valued-N3.witness.json)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": -8.656884150198534e-52,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "committed witness cross-check (q-beta-operator-valued-N3.witness.json)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": -6.568668276257924e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "committed witness cross-check (q-beta-operator-valued-N3.witness.json)"
     }
   ],

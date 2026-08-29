@@ -480,8 +480,8 @@ def main() -> int:
     docstring_ratio = mp.mpf("1.065") / mp.mpf("2.53")
     w.add_assertion(
         "proton_per_block_under_uniform_within_1pct",
-        computed=float(proton_ratio),
-        expected=float(docstring_ratio),
+        computed=proton_ratio,
+        expected=docstring_ratio,
         tolerance=1e-2,
     )
 

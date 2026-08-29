@@ -1,0 +1,113 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T16:42:19.512343+00:00",
+  "commitSha": "44db2b6ef6ef789f56688ca7228c23d56012429f",
+  "assertions": [
+    {
+      "name": "colour_tube_refinement_cannot_reach_required_trace",
+      "computed": "0.68271975402849273984",
+      "expected": "0.68272",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "max_b tr_M(beta_b) / sqrt(B_AME); < 1 means unreachable by any convex reweighting, per QOU.MassTheory.convex_comb_le_bound"
+    },
+    {
+      "name": "control_max_branch_trace_matches_front2",
+      "computed": "1.0182750826938523535",
+      "expected": "1.018275083",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "dimensionless",
+      "source": "two-remaining-fronts front2_max_branch_trace"
+    },
+    {
+      "name": "control_branch_count_unchanged",
+      "computed": "32",
+      "expected": "32",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "the refinement reweights arcs; it adds no strands"
+    },
+    {
+      "name": "sigma_avg_is_itself_a_convex_combination",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "sigma_avg = (sigma + sigma^-1)/2 has weights (1/2, 1/2)"
+    },
+    {
+      "name": "control_branches_spread_above_the_atom",
+      "computed": "1.770382855193330545",
+      "expected": "1.7704",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "max_b / tr_M(atom); > 1, so the bound is not trivially satisfied"
+    },
+    {
+      "name": "block_states_its_weights_are_nonneg_and_normalised",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "grep of inter-nucleon-channel-color-tube.md for 'W in Q_{>=0}' and 'normalised to sum W = 1'"
+    },
+    {
+      "name": "control_block_file_exists_and_is_nonempty",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "colour-tube-refinement-is-convexity-bounded",
+  "scriptFile": "colour_tube_refinement_is_convexity_bounded_probe.py",
+  "scriptHash": "2c6b9d30f9a1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/colour_tube_refinement_is_convexity_bounded_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/colour_tube_refinement_is_convexity_bounded_probe.py"
+  },
+  "description": "conj:inter-nucleon-channel-color-tube fixes W >= 0 normalised to sum W = 1, so the refined atom is a REWEIGHTING of the same 32 branches, not a new element. QOU.MassTheory.convex_comb_le_bound then bounds it by max_b tr_M = 1.018275 against a required 1.491498 -- unreachable, ratio 0.68272. The refinement cannot supply the deuteron binding MAGNITUDE. Scope (b); the escape is a larger index set, i.e. a satellite/cabling move (larger_index_set_escapes_the_bound).",
+  "data": {
+    "max_branch_trace": "1.01827508269385235353152",
+    "required_trace": "1.49149790479236007540919",
+    "ratio": "0.682719754028492739837038",
+    "branch_count": 32,
+    "lean_ref": "qou:QOU.MassTheory.convex_comb_le_bound",
+    "escape_lean_ref": "qou:QOU.MassTheory.larger_index_set_escapes_the_bound"
+  },
+  "caveats": [
+    "SCOPE (b): the invariant is branch convexity (measured in atom-branch-convexity-bound) plus convex_comb_le_bound (Lean, sorry-free). It bounds the MAGNITUDE only. It does NOT say the colour-tube refinement is wrong -- the p/n asymmetry and chirality sign structure it exists for are untouched.",
+    "The escape is a LARGER INDEX SET, exhibited in Lean by larger_index_set_escapes_the_bound: a satellite/cabling move puts the branches in a bigger algebra, outside the hypotheses. NOT claimed that such a construction DOES reach the target -- only that this theorem does not forbid it.",
+    "ONE isotope (deuteron), and the underlying max_b comes through binding_k_solver.per_block_evaluation, which is float64. The verdict turns on a 47 % gap, far above that resolution."
+  ]
+}

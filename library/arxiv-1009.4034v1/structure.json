@@ -1,0 +1,136 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1009.4034v1",
+ "source": {
+  "file": "1009.4034v1.pdf",
+  "sha256": "8f8d6d786b60c279c9e3998bcee79b896ac69c4f9b3e4656e97ebb87d0818cda",
+  "bytes": 1798241,
+  "pages": 23,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1009.4034",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "21 Sep 2010"
+  },
+  "doi": null,
+  "title": "KEROV\u2019S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER \u03b1 = 1/2 PIERRE-LO\u00cfC M\u00c9LIOT",
+  "authors_raw": null,
+  "title_lines": [
+   "KEROV\u2019S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL",
+   "MEASURES OF PARAMETER \u03b1 = 1/2",
+   "PIERRE-LO\u00cfC M\u00c9LIOT"
+  ],
+  "abstract": "In this article, we show that Kerov\u2019s central limit theorem related to the \ufb02uctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groupsSn on tensor products of vector spacesV \u2297n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use \u015aniady\u2019s theory of cumulants of observables (cf. [\u015a06]). Givena\ufb01nitegroup Ganda\ufb01nite-dimensionalcomplexlinearrepresentation V ofG, thedecomposition in irreducible componentsV =\u2a01 \u03bb\u2208 \u02c6Gm\u03bbV\u03bb yields a probability measure on the set\u02c6G of isomorphism classes of irreducible representations ofG: P V [ \u03bb\u2208 \u02c6G ] = m\u03bb dimV\u03bb dimV In particular, whenG = Sn is the symmetric group of permutations of[ [1,n ] ], a reducible representation of Sn yields a probability measure on the setPn = \u02c6Sn of integer partitions of sizen. WhenV = C Sn is the (left) regular representation, one obtains the so-called Plancherel measure, which has been extensively studied in the n \u2192 \u221easymptotic; see for instance [IO02]. In this paper, we focus on the Schur- W eyl measures that correspond to the representations(C N)n \u21b6 Sn, where Sn acts on the right by permutation of the letters of the simple tensors: (v1\u2297v2\u2297\u00b7\u00b7\u00b7\u2297 vn)\u00b7\u03c3 =v\u03c3(1)\u2297v\u03c3(2)\u2297\u00b7\u00b7\u00b7\u2297 v\u03c3(n) By Schur-Weyl reciprocity, the probability measure on partitions associated to this representation is also a probability measure on irreducible representations ofGL(N, C ). The \ufb01rst order asymptotic of these measures whenn1/2\u2243 cN and n goes to in\ufb01nity has been determined by P. Biane in [Bia01]; we shall recall this in \u00a71, and by using the Robinson-Schensted-Knuth correspondence, we will also give a \u201ccombinatorial model\u201d for these probability measures. The asymptotics of the Plancherel measures on partitions correspond to the casec = 0, and for Plancherel measur",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20211025211130Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Schur-Weyl measures of parameter =1/2",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Observables of diagrams",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Some computations around the limit shapes c",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Gaussian concentration of measures on partitions",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "An extension of Kerov's central limit theorem",
+   "page": 21,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-2-observables-of-diagrams",
+   "number": "2",
+   "title": "Observables of diagrams",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 12,
+   "n_chars": 16938,
+   "n_words": 3412
+  },
+  {
+   "id": "sec-001-4-gaussian-concentration-of-measures-on-partitio",
+   "number": "4",
+   "title": "Gaussian concentration of measures on partitions",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3935,
+   "n_words": 634
+  },
+  {
+   "id": "sec-002-5-moments-of-the-deviations-and-chebyshev-polyno",
+   "number": "5",
+   "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 23,
+   "n_chars": 19124,
+   "n_words": 3665
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 3765,
+   "n_words": 496
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 4,
+  "chars_total": 43762
+ }
+}

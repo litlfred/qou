@@ -1,11 +1,11 @@
 ---
 # rtqd
 title: 'GAP: qDimObj(Xᘁ)=qDimObj X general-object conjugation symmetry needs a pivotal structure Mathlib lacks'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-02T00:00:00Z
+updated_at: 2026-08-26T17:17:36Z
 ---
 
 Residual gap from bean `rtrb` (RT-1 ribbon extension), branch
@@ -90,3 +90,146 @@ Deligne/Yetter, Bakalov-Kirillov ch.2). NOT proved, NOT axiomatised, NOT sorry'd
 explicit hypothesis of the conditional theorems. So the state moved from "not expressible on the
 available data" to "expressible, and one named classical lemma from closing".
 Does NOT close bwse; nothing wired; L2 unchanged.
+
+
+
+## Progress 2026-08-26 (branch claude/8-fold-way-qou-k4e8ch)
+
+The gap narrowed by one named step, and it is worth recording exactly which step.
+
+**Closed: the isomorphism.** `QOU.MathlibExt.drinfeldIso` proves `X` is isomorphic to
+its double dual, unconditionally, in ANY braided right-rigid category:
+
+    noncomputable def drinfeldIso (X : C) : X = ((X : C)-dual : C)-dual :=
+      rightDualIso (BraidedCategory.exactPairing_swap X X-dual) (HasRightDual.exact (X := X-dual))
+
+Uniqueness of duals, twice: `exactPairing_swap` turns the pairing `X` / `X-dual` around,
+so `X` is a right dual OF `X-dual`; `X-dual-dual` is the chosen one; `rightDualIso`
+compares them. Sorry-free, `#print axioms` clean.
+
+**Still open: its NATURALITY.** `f >> drinfeldIso Y = drinfeldIso X >> ((f-mate)-mate)`
+is what a `PivotalCategory` instance needs and what the transport hypothesis consumes.
+Attempted; not obtained. `simp [drinfeldIso, rightDualIso, rightAdjointMate]` unfolds it
+to a ~20-term string-diagram identity of the same shape as Mathlib's own
+`coevaluation_evaluation_braided'` (a transcribed Whitney move built on `yang_baxter`).
+It is a real coherence proof, not a rewrite of the pieces. Mathlib has NO naturality
+lemma for `rightDualIso` at all -- the only lemma about it is `rightDualIso_id`.
+
+**Infrastructure now in place for whoever takes it.**
+`QOU/MathlibExt/PivotalCategory.lean` carries `rightDualFunctor : Cop => C`,
+`doubleDualFunctor : C => C`, and `PivotalCategory` in the shape Mathlib's own
+"Future work" list asks for (a natural iso `id C = double-dual`), plus
+`PivotalCategory.ofPointwise` so a pointwise string-diagram proof lands directly.
+`PivotalStructure` (the old pointwise class in `KeystonePivotalSpherical.lean`) is
+retired in its favour; it had zero consumers.
+
+**Cheapest concrete route** if the coherence proof stalls: `FGModuleCat K` is Mathlib's
+one `RightRigidCategory` instance, and there the pivotor is `Module.evalEquiv`, whose
+naturality is already available. That gives a genuine `PivotalCategory` instance without
+the general braided argument.
+
+
+
+## Correction to the "cheapest route", measured 2026-08-26
+
+I recommended `FGModuleCat K` as the cheap way to get a `PivotalCategory` instance
+without the braided coherence proof. **Measured, that recommendation is wrong, or at
+least not established** -- it is not obviously cheaper, and the reason is a second
+missing piece of Mathlib infrastructure, not the pivotor.
+
+**What is there.** `Module.evalEquiv K V : V = Dual K (Dual K V)` exists, and its
+naturality is `Module.Dual.eval_naturality (f) : f.dualMap.dualMap <o eval = eval <o f`
+-- proved by `rfl`. So the linear-algebra half is free.
+
+**What is missing, and it is not small.** There is no bridge between the categorical
+mate and the linear-algebra one. The lemma needed is
+
+    (rightAdjointMate f).hom = LinearMap.dualMap f.hom     -- for f : V => W in FGModuleCat K
+
+and `grep -rn "rightAdjointMate\|dualMap" Mathlib/Algebra/Category/FGModuleCat/*.lean`
+returns **nothing**. Probed directly: the statement typechecks (the carriers unify --
+`Vdual.obj` is defeq to `Module.Dual K V`), and `simp [rightAdjointMate]` reduces it to
+the five-step composite
+
+    lambda o (eps_W |> Vdual) o alpha^-1 o (Wdual <| f |> Vdual) o (Wdual <| eta_V) o rho^-1
+
+applied to `phi`, and then **stops**. It stops because `FGModuleCat`'s monoidal structure
+is *induced* on a full subcategory -- `instance : (ModuleCat.isFG R).IsMonoidal` -- so the
+`ModuleCat.MonoidalCategory.whiskerLeft_apply` / `whiskerRight_apply` /
+`associator_inv_apply` family does **not** fire on it, and
+`Algebra/Category/FGModuleCat/Basic.lean` supplies no element-level replacements
+(grep for `whiskerLeft` there: two hits, both `open MonoidalCategory`).
+
+So the route needs element-level computation lemmas for the induced monoidal structure on
+an `ObjectProperty` full subcategory FIRST, and only then the dual-basis expansion
+`phi o f = sum_i phi(f e_i) . e*_i` over `Basis.ofVectorSpace`. Two missing layers, not
+one.
+
+**Net: both routes to the instance are Mathlib-contribution-sized.** Neither is a
+tidy-up. Whoever takes this should pick on interest, not on expected cost -- and should
+know the FGModuleCat one begins with subcategory plumbing rather than with duality.
+
+
+
+## The pivotal structure now EXISTS (2026-08-26)
+
+`QOU.MathlibExt.pivotalOfBraided`: every braided right-rigid category is pivotal,
+unconditional and sorry-free, pivotor = drinfeldIso, naturality =
+drinfeldIso_naturality. See qou-knsx for why my "Whitney move" estimate was wrong.
+
+**This bean is NOT closed by that.** What it needs is the pivotal TRANSPORT identity
+qDimObj (Xdual) = leftQDim X, which is a statement about the two TRACES. Having the
+pivotor is a prerequisite for stating and proving it, not a proof of it. The
+hypothesis in qDim_conj_of_pivotalTransport is still carried, not discharged.
+
+What did change: the blocker recorded in KeystonePivotalSpherical.lean -- "a pivotal
+structure is required, and Mathlib provides no such class" -- is gone. The next step
+is the transport lemma itself, now expressible on data that exists.
+
+
+
+## CLOSED 2026-08-26, and the impossibility claim in this bean was WRONG
+
+qDimObj (Xdual) = qDimObj X is PROVED, unconditionally, in any braided right-rigid
+category. QOU.BraidKnot.Ribbon.qDim_conj_object, one line from
+QOU.MathlibExt.qDimWith_rightDual. Sorry-free, #print axioms clean.
+
+No pivotal hypothesis. No spherical hypothesis. No transport hypothesis.
+
+### What this bean got wrong
+
+It recorded the general-object case as not merely unproved but "NOT EXPRESSIBLE as a
+computation on the existing data" without a pivotal structure, because qDimObj (Xdual)
+traverses the double dual and a braided right-rigid category does not identify Xdualdual
+with X.
+
+The PREMISE is correct. The CONCLUSION does not follow from it. The dimension never needs
+the identification -- it needs only that a fixed object's dimension is the same whichever
+dual computes it, and X is ITSELF a right dual of Xdual via
+BraidedCategory.exactPairing_swap. Dual-INDEPENDENCE is strictly weaker than double-dual
+IDENTIFICATION, and it is what the trace consumes.
+
+### The proof, three steps
+
+  qDimWith_congr_dual  the quantum dimension does not depend on the choice of dual.
+                       rightDualIso is the comparison map; Mathlib's
+                       coevaluation_comp_rightAdjointMate and
+                       rightAdjointMate_comp_evaluation at f = id say it transports eta
+                       and epsilon; braiding naturality slides it across the crossing
+                       where the two occurrences cancel.
+  qDimWith_swap        against the swapped pairing, the swapped coevaluation's beta-inverse
+                       meets the trace's own beta and cancels, leaving qDim(X) exactly.
+  qDimWith_rightDual   both duals of Xdual give the same dimension; against the swapped one
+                       it is qDim(X).
+
+### What is NOT closed
+
+The pivotal TRANSPORT identity qDimObj (Xdual) = leftQDim X is still unproved and stays a
+hypothesis of KeystonePivotalSpherical's conditional theorems (bean qou-we9a). Sphericality
+is a separate condition, untouched. Those conditional theorems remain valid -- a conditional
+result is not invalidated by an unconditional proof of its conclusion.
+
+### What this bean got RIGHT and should be copied
+
+Refusing to sorry it, and refusing to axiomatise it as a class field. Both correct. The
+error was the impossibility claim, not the discipline around it.

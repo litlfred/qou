@@ -62,7 +62,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 Q0 = mp.mpf("1.11")           # substrate scale (q₀ ≈ 1.10998)
@@ -146,7 +146,7 @@ def main() -> int:
     # ---- 0. Part A anchor (q→1⁻ → Li₂) ----
     a_err = max(abs(partA_value(x, mp.mpf("1e-4")) - mp.polylog(2, x)) for x in XS)
     print(f"\n[A] anchor: max_x |(1−q)logΦ_n − Li₂(x)| at q→1⁻ (ε=1e−4) = {float(a_err):.1e}")
-    wb.add_assertion("partA_anchor_converges_to_Li2", computed=float(a_err),
+    wb.add_assertion("partA_anchor_converges_to_Li2", computed=a_err,
                      expected=0.0, tolerance=1e-3,
                      source="Part A (proved): q→1⁻ ⇒ (1−q)logΦ_n(x;q)→Li₂(x)")
 
@@ -186,11 +186,11 @@ def main() -> int:
     off_spread = max(offsets) - min(offsets)
     print(f"     offset spread over x = {float(off_spread):.1e} (x-INDEPENDENT); "
           f"mean offset vs −π²/3: {float(abs(sum(offsets)/len(offsets)+pi23)):.1e}")
-    wb.add_assertion("partB_reg_reproduces_Li2_xdependence", computed=float(worst_xdep),
+    wb.add_assertion("partB_reg_reproduces_Li2_xdependence", computed=worst_xdep,
                      expected=0.0, tolerance=5e-3,
                      source="pole-subtracted reg(x)→Li₂(x)−π²/3 (q→1⁺): the x-dependence "
                             "of Li₂(x) is reproduced EXACTLY up to the universal π²/3")
-    wb.add_assertion("partB_offset_is_x_independent", computed=float(off_spread),
+    wb.add_assertion("partB_offset_is_x_independent", computed=off_spread,
                      expected=0.0, tolerance=5e-3,
                      source="the offset reg−Li₂ is x-independent (= −π²/3): the "
                             "branch-cut/pole residue is a single universal constant")
@@ -200,7 +200,7 @@ def main() -> int:
     print(f"\n[B3] π²/3 = 2·(π²/6): Li₂(1)={mp.nstr(mp.pi**2/6,8)} (k≤k* branch point) + "
           f"Euler tail ∫₀^∞log(1−e^{{−s}})ds={mp.nstr(euler_tail,8)} (=−π²/6)")
     decomp_ok = abs(euler_tail + mp.pi ** 2 / 6) < mp.mpf("1e-15")
-    wb.add_assertion("pi2_over_3_decomposition", computed=float(abs(euler_tail + mp.pi**2/6)),
+    wb.add_assertion("pi2_over_3_decomposition", computed=fmt(abs(euler_tail + mp.pi**2/6)),
                      expected=0.0, tolerance=1e-12,
                      source="Euler negative-factor tail ∫₀^∞log(1−e^{−s})ds=−π²/6; with "
                             "the Li₂(1)=π²/6 branch point → offset −π²/3")
@@ -220,7 +220,7 @@ def main() -> int:
         print(f"     {float(x):>5} {mp.nstr(mp.re(t),12):>16} {mp.nstr(tgt,12):>16}")
     print(f"     ⇒ the genuine T_w mechanism leaves the SINGLE regulator constant "
           f"π²/6 = ζ(2) = Li₂(1) (the cusp/branch-point value).")
-    wb.add_assertion("Tw_truncation_reduces_offset_to_zeta2", computed=float(worst_trunc),
+    wb.add_assertion("Tw_truncation_reduces_offset_to_zeta2", computed=worst_trunc,
                      expected=0.0, tolerance=6e-3,
                      source="the stratified-truncation categorical object Φ^{[≤k*]} → "
                             "Li₂(x)−π²/6: T_w truncation removes the Euler-tail π²/6, "
@@ -241,7 +241,7 @@ def main() -> int:
     print(f"     Part B closes numerically: [T_w-trunc bulk: Li₂(x)−ζ(2)] + [cusp ζ(2)] "
           f"= Li₂(x).")
     wb.add_assertion("cusp_zeta2_is_extended_bloch_normalization",
-                     computed=float(max(eb_re, eb_im)), expected=0.0, tolerance=1e-30,
+                     computed=max(eb_re, eb_im), expected=0.0, tolerance=1e-30,
                      source="2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the residual cusp ζ(2)=π²/6 "
                             "is the extended-Bloch/Rogers-dilog normalization pairing the "
                             "algebraic (Li₂) and geometric (Bloch–Wigner Vol) halves")

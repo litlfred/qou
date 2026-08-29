@@ -53,6 +53,7 @@ from codata_constants import (
 from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV
 from q_parameter import Q as Q0
 from lr_coefficients import get_lr_table
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -151,11 +152,11 @@ def phi_k_from_dict(chi_dict: dict, n_strands: int, k: int) -> mp.mpf:
     witness — only 24 / 77 partitions cached, the high-weight ones).
     """
     total = mp.mpf(0)
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     for lam, chi in chi_dict.items():
         if len(lam) - 1 != k:
             continue
-        dq = dim_q(lam)
+        dq = dim_q(lam, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -288,7 +289,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) MeV",

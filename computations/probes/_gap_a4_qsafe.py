@@ -34,11 +34,20 @@ import mpmath as mp
 
 from partition_utils import hook_lengths
 
-# Substrate parameter (proton-mass-anchored q_0, 50 dps).
-# Authoritative source: T4-T8 use this exact 50-dps decimal; T9-T12
-# extend it without re-deriving.  Do not edit without updating the
-# whole probe series.
-Q_0_50DPS: str = "1.1099785955573347198997632204832250266562084087802"
+# Substrate parameter, 50 dps, RESOLVED THROUGH q_parameter.
+#
+# This was a literal, commented "proton-mass-anchored q_0" while holding the
+# MUON value 1.10997859555733471989… . The comment and the value disagreed,
+# and 22 modules import this name, so every one of them computed at muon while
+# its manifest entry said proton -- which is how the T5-T12 probes came to be
+# tagged `physical_proton` with muon-valued witnesses.
+#
+# Resolving through q_parameter makes the value follow the anchor each importer
+# is actually assigned, so the label cannot drift from the number again. Do not
+# replace this with a literal.
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+Q_0_50DPS: str = Q_50_DIGIT_STR
 
 
 def q_number(n: int, q: mp.mpf) -> mp.mpf:

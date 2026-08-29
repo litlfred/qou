@@ -1,0 +1,54 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9803007v2",
+ "source": {
+  "file": "9803007v2.pdf",
+  "sha256": "75f6484941ecbca0b8a455cbc48410ccd290d7be3cc5d27c67ccd13e69f92de9",
+  "bytes": 123714,
+  "pages": 4,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9803007",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "17 Jun 1998"
+  },
+  "doi": null,
+  "title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
+  "authors_raw": "Shinsuke M. Nishigaki1,\u2217, Poul H. Damgaard2,\u2020, and Tilo Wettig3,\u2021",
+  "title_lines": [
+   "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-th/9803007v2  17 Jun 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181027193258-04'00'"
+  }
+ },
+ "toc": [],
+ "toc_source": "none",
+ "sections": [
+  {
+   "id": "sec-000-document",
+   "number": null,
+   "title": "Document",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 14055,
+   "n_words": 2447
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "sections": 1,
+  "chars_total": 14055
+ }
+}

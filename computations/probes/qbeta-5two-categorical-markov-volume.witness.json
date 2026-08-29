@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "chi_(2,1) bar-even (q-exact) for 4_1 and 5_2 — self-conjugate block carries no chirality"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "4_1 (amphichiral, e=0) bar-odd datum = 0 — the control the raw-trace route fails; validates the block construction"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "5_2 (chiral, e=2) bar-odd = 1/2(q^2-q^-2) != 0, anchor-smooth O(10^0) — odd ingredient, value measurement-limited"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "block weights W_λ reproduce the Ocneanu trace on HELD-OUT elements (σ₁σ₂→z², σ₂σ₁σ₂→hz²+z, σ₂→z) — the weights are correct"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "framing-invariant 𝔙_q = 0-framing J_K: bar-odd(J_4_1)=0 (amphichiral control), bar-odd(J_5_2)!=0 chiral (CS channel), anchor-smooth — the knot-invariant assembly the framing normalization required"
     }
   ],

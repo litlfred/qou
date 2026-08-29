@@ -7,7 +7,7 @@ section_number: null
 pages: 18-22
 source_pdf: 978-3-98547-562-9-volume-4-chapter-5483.pdf
 source_sha256: 5e39a312cf8ed9d9
-doc_brief: "Floer cohomology, singularities, and birational geometry — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including singularity"
+doc_brief: "Floer cohomology , singularities, and birational geometry Mark McLean — We explain a few recent results concerning the application of various Floer theories to topics in algebraic geometry, including"
 ---
 [1] M. Audin and M. Damian, Morse theory and floer homology . Universitext,
 Springer, London; EDP Sciences, Les Ulis, 2014.

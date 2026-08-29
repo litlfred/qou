@@ -30,6 +30,9 @@ import sys
 import time
 from fractions import Fraction
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 N_MAX = 25
 
 
@@ -106,9 +109,17 @@ def main():
         "epic": "qou-x631", "attack": "qou-ogrk (A2), TAIL sub-target",
         "verdict": verdict, "per_n": rows, "runtime_s": f"{time.time() - t0:.3f}",
     }
-    path = ("computations/deltalambda/"
-            "wlambda-covariance-epic-A2-tail-first-instance.witness.json")
+    path = (_HERE_W / "wlambda-covariance-epic-A2-tail-first-instance.witness.json")
     with open(path, "w") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(out, fh, indent=1, default=str)
     print(f"\nall_ok={all_ok}  witness -> {path} ({time.time()-t0:.1f}s)")
     return 0 if all_ok else 1

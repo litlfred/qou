@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:47:16.956816+00:00",
-  "commitSha": "df0d837b80c050e2240268b2a7db952843eb9d6b",
+  "computedAt": "2026-08-29T10:52:00.673529+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "tr_M_reconstruction_from_chi",
-      "computed": 0.5751722439177719,
-      "expected": 0.5751722439177719,
+      "computed": "0.5751722439177718708265353439861808891524943528928512827699869325301815",
+      "expected": "0.57517224391777187082653534398618088915249435289286",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "trace value",
       "source": "chi-deuteron-h6-at-q0-50dps.witness.json"
     },
     {
       "name": "best_mapping_B_D_pred_within_1_percent",
-      "computed": 0.09760153545375076,
-      "expected": 2.22456607,
+      "computed": "0.09760153545375076306936241809533301895790959317227864716506468559241267",
+      "expected": "2.22456607",
       "passed": false,
       "tolerance": 0.0222456607,
       "unit": "MeV",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 178,
+  "durationMs": 161,
   "computation": "delta-lambda-categorical-verification",
   "scriptFile": "delta_lambda_categorical_verification.py",
-  "scriptHash": "2f655c24cad2",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "a699b9e161ba",
+  "scriptCommitSha": "57b271dbc66c8076b886fe28c1771a3d1ed35b80",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,10 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

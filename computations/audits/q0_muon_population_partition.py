@@ -34,11 +34,64 @@ from collections import Counter
 
 COMP = pathlib.Path(__file__).resolve().parent.parent
 
-# The two muon values, to enough digits to separate them (they share 11).
+# The THREE muon-family values, to enough digits to separate them.
+#
+#   A  current      1.109978595557334...   the frozen anchor as it stands
+#   B  superseded   1.109978595554180...   CODATA 2018
+#   C  CODATA 2022  1.109978595642739...   what the 2026-08-22 owner ruling
+#                                          re-derives the anchor to (PR #5500)
+#
+# A and B share 11 digits; C diverges from both at the 10th.  Every prefix
+# below is >= 13 significant digits, which is the shortest that separates A
+# from B -- a 12-digit prefix silently sums them.
 MUON_CURRENT = "1.109978595557334"
 MUON_OLD = "1.109978595554180"
-# Loose prefix: matches BOTH, and nothing proton (proton is 1.10997858275...).
+MUON_CODATA2022 = "1.109978595642739"
+# Loose prefix for the A/B pair.  Deliberately does NOT match C, so the
+# historical A/B/both/rounded tally and its TOTAL stay comparable across runs.
 MUON_LOOSE = "1.1099785955"
+# Loose prefix for the whole muon FAMILY including C.  Still excludes proton
+# (1.10997858275...), which diverges one digit earlier.
+MUON_FAMILY_LOOSE = "1.10997859"
+
+# 18-SIG-DIGIT CEILING -- do NOT lengthen these prefixes (measured 2026-08-28).
+#
+# The superseded value has TWO renderings in the corpus, diverging at the 19th
+# significant digit:
+#
+#     1.10997859555418057528...   107 files  (the ROUNDED form -- AGENTS.md,
+#                                             bean qou-khac, content .qa.json)
+#     1.10997859555418056776...     5 files  (the TRUNCATED form -- d-from-scratch,
+#                                             q0-value-drift-audit, 3 deprecated)
+#
+# |d| ~ 7e-19: three orders below the 3.15e-12 that makes superseded a distinct
+# pin at all, and below the 1 ppQ (1e-15) L1 target. It moves no observable --
+# it breaks DETECTORS. An exact-match scan built on the 19-char literal
+# "1.10997859555418057" reports 0 hits on nine of the nineteen genuine
+# candidates, all of which carry the value.
+#
+# CORRECTED 2026-08-28, twice over. This read "14 digits is the SHORTEST
+# prefix that separates superseded from current". Two faults:
+#
+#   UNIT. That 14 counted CHARACTERS INCLUDING THE DECIMAL POINT --
+#   "1.109978595554" is 14 characters but 13 digits. Right boundary,
+#   wrong unit.
+#
+#   CURRENCY. It compared against 1.10997859555733471..., which main's
+#   fca08de7d DEMOTED (muon anchor -> CODATA 2022, owner ruling). Three
+#   muon renderings are now in play, not two.
+#
+# Re-derived in SIGNIFICANT DIGITS:
+#
+#     vs demoted   1.10997859555733471...   12 common -> 13 needed
+#     vs canonical 1.10997859564273904...   10 common -> 11 needed
+#
+# CODATA-2022 moved the anchor at the 11th figure rather than the 13th,
+# so the window LOOSENS at the bottom: 11..18 against the canonical pin,
+# 13..18 against the demoted one. The 18 ceiling is unchanged -- it comes
+# from the superseded value's OWN two renderings diverging at digit 19,
+# which is independent of what the current value is. The 16 above sits
+# inside both windows, so the count of 19 stands under either reading.
 
 PIN_WITNESS = "q-pinning-50-digit"
 ROUTES_ANCHOR = re.compile(
@@ -48,23 +101,76 @@ ROUTES_ANCHOR = re.compile(
 READS_JSON = re.compile(r"(json\.load|read_text|open\()")
 
 
-def witness_populations() -> dict:
-    """Split every witness carrying a muon-family value by WHICH muon value."""
-    tally = Counter()
-    stamp_by_value = Counter()
+def classify_value(text: str) -> str:
+    """Which muon-family value does this witness blob CARRY?
+
+    The test is on the whole blob, not on `q0Value`, and that distinction is
+    the reason this function exists.  A witness can carry the pin anywhere --
+    in a `parameters` block, in an input echo, inside a nested result -- while
+    its `q0Value` stamp says something else or is absent entirely.  Counting
+    only the stamped ones under-reports the population that a re-pin actually
+    moves; see `stamp_vs_value()`.
+    """
+    cur = MUON_CURRENT in text
+    old = MUON_OLD in text
+    c22 = MUON_CODATA2022 in text
+    hits = [n for n, f in (("A", cur), ("B", old), ("C", c22)) if f]
+    if len(hits) > 1:
+        return "both"          # cross-anchor comparison, or a straddle
+    if hits:
+        return {"A": "current", "B": "old", "C": "codata2022"}[hits[0]]
+    return "rounded"
+
+
+def witness_rows() -> list[dict]:
+    """One row per witness carrying ANY muon-family value.
+
+    Scans on MUON_FAMILY_LOOSE so C is visible; `in_ab_scan` records whether
+    the row would also have been seen by the historical A/B-only prefix, so
+    the legacy tally and its TOTAL stay reproducible from the same pass.
+    """
+    rows = []
     for path in sorted(COMP.rglob("*.witness.json")):
         text = path.read_text(errors="replace")
-        if MUON_LOOSE not in text:
+        if MUON_FAMILY_LOOSE not in text:
             continue
-        cur, old = MUON_CURRENT in text, MUON_OLD in text
-        kind = "both" if (cur and old) else ("current" if cur else ("old" if old else "rounded"))
-        tally[kind] += 1
         try:
-            anchor = json.loads(text).get("q0Anchor")
+            doc = json.loads(text)
         except Exception:
-            anchor = None
-        stamp_by_value[(anchor, kind)] += 1
+            doc = {}
+        if not isinstance(doc, dict):
+            doc = {}
+        rows.append({
+            "path": str(path.relative_to(COMP)),
+            "value": classify_value(text),
+            "stamp": doc.get("q0Anchor"),
+            "q0Value": (doc.get("q0Value") or "")[:20] or None,
+            "in_ab_scan": MUON_LOOSE in text,
+        })
+    return rows
+
+
+def witness_populations(rows: list[dict] | None = None) -> dict:
+    """Split every witness carrying a muon-family value by WHICH muon value."""
+    rows = witness_rows() if rows is None else rows
+    tally = Counter()
+    stamp_by_value = Counter()
+    for r in rows:
+        if not r["in_ab_scan"]:
+            continue          # keeps the historical A/B tally comparable
+        tally[r["value"]] += 1
+        stamp_by_value[(r["stamp"], r["value"])] += 1
     return {"tally": tally, "stamp_by_value": stamp_by_value}
+
+
+def stamp_vs_value(rows: list[dict]) -> Counter:
+    """Cross-tab of the anchor STAMP against the value actually carried.
+
+    The off-diagonal is the point.  A migration scoped by
+    `q0Anchor == "muon"` moves only the stamped column; every other cell in
+    the A row is a witness that carries the pin and would be left behind.
+    """
+    return Counter((r["stamp"], r["value"]) for r in rows)
 
 
 # One-hop transitive path through `_li_2_q_util.load_q_50dps`.
@@ -210,7 +316,33 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list-contradictions", action="store_true",
                     help="list only the producers declared proton that pin muon")
+    ap.add_argument("--list", action="store_true",
+                    help="emit the per-witness LIST rather than a count")
+    ap.add_argument("--value", choices=("A", "B", "C", "both", "rounded"),
+                    help="restrict --list to one value class "
+                         "(A=current, B=superseded/CODATA-2018, C=CODATA-2022)")
+    ap.add_argument("--stamp", help="restrict --list to one q0Anchor stamp; "
+                                    "use 'none' for witnesses carrying no stamp")
+    ap.add_argument("--json", action="store_true",
+                    help="with --list, emit JSON instead of a table")
     args = ap.parse_args()
+
+    if args.list:
+        wanted = {"A": "current", "B": "old", "C": "codata2022",
+                  "both": "both", "rounded": "rounded"}.get(args.value)
+        rows = witness_rows()
+        if wanted:
+            rows = [r for r in rows if r["value"] == wanted]
+        if args.stamp:
+            want = None if args.stamp.lower() == "none" else args.stamp
+            rows = [r for r in rows if r["stamp"] == want]
+        if args.json:
+            print(json.dumps(rows, indent=2))
+        else:
+            for r in rows:
+                print(f"{r['value']:<11} {str(r['stamp'] or '-'):<12} {r['path']}")
+            print(f"\n{len(rows)} witness(es)")
+        return 0
 
     pins = direct_pinners()
     contradictions = [r for r, b, _, _ in pins if b == "physical_proton"]
@@ -220,7 +352,8 @@ def main() -> int:
             print(rel)
         return 1 if contradictions else 0
 
-    pops = witness_populations()
+    all_rows = witness_rows()
+    pops = witness_populations(all_rows)
     tally = pops["tally"]
     print("witness populations carrying a muon-family q₀ value")
     print(f"  current  {MUON_CURRENT}…  {tally['current']}")
@@ -231,6 +364,32 @@ def main() -> int:
     print()
     print("  NOTE: a grep for the 12-digit prefix sums the first two rows and")
     print("        reports one number.  They are different defects.")
+    print()
+    c22 = [r for r in all_rows if r["value"] == "codata2022"]
+    print(f"  CODATA-2022  {MUON_CODATA2022}…  {len(c22)}"
+          "   <- the re-pin target (PR #5500)")
+    print("    C diverges from A and B at the 10th digit, so the A/B loose")
+    print("    prefix above cannot see it and it is counted separately.")
+    for r in c22:
+        print(f"      {r['path']}")
+    print()
+    print("stamp x value cross-tab — the OFF-DIAGONAL is the migration's blind spot")
+    xt = stamp_vs_value(all_rows)
+    stamps = sorted({s for s, _ in xt}, key=lambda x: (x is None, str(x)))
+    kinds = ("current", "old", "codata2022", "both", "rounded")
+    print(f"    {'stamp':<14}" + "".join(f"{k:>12}" for k in kinds) + f"{'total':>8}")
+    for st in stamps:
+        cells = [xt[(st, k)] for k in kinds]
+        print(f"    {str(st or '(none)'):<14}"
+              + "".join(f"{c:>12}" for c in cells) + f"{sum(cells):>8}")
+    tot = [sum(xt[(st, k)] for st in stamps) for k in kinds]
+    print(f"    {'TOTAL':<14}" + "".join(f"{c:>12}" for c in tot) + f"{sum(tot):>8}")
+    print()
+    stamped_A = xt[("muon", "current")]
+    all_A = sum(xt[(st, "current")] for st in stamps)
+    print(f"  A carried by {all_A} witnesses; only {stamped_A} are STAMPED muon.")
+    print(f"  A migration scoped by q0Anchor==muon therefore misses "
+          f"{all_A - stamped_A}.")
     print()
     print(f"producers binding q₀ direct from {PIN_WITNESS}.witness.json")
     print("  (no anchor resolution — inherits whatever that witness carries)")

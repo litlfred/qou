@@ -74,7 +74,29 @@ The gluon count (2 for the proton) is the unique integer LP minimum
 over the 84 feasible integer solutions satisfying C4.
 
 **Source:** Exhaustive enumeration + LP shadow-price analysis.
-Witness: `mass-endomorphism.witness.json`.
+~~Witness: `mass-endomorphism.witness.json`.~~
+
+> **🛑 The witness citation above is DEAD — corrected 2026-08-29.**
+> `computations/mass-endomorphism.witness.json` exists, which is presumably
+> why the citation survived review, but it does **not** carry this number:
+> **zero** fields equal 84, and **zero** keys name ilp / solution / feasible /
+> count / gluon. Its subject is a different quantity — its own description
+> reads *"Mass endomorphism via Φ_q tower with z²-weighted cross-term.
+> m_p/m_e = 9310.3278 (CODATA: 1836.152, error 407.06%)"*.
+>
+> No other producer computes the figure either: `rem:ilp-solution-count-unwrap`
+> and `prop:stable-atom-decidable` declare no `computation:`, and the only
+> ILP-counting code in the corpus,
+> `computations/_deprecated/confinement_adaptive.py::ilp_solution_count_nucleon_level`,
+> is a magic-number heuristic returning at most 3 whose own docstring calls
+> it *"a categorical proxy"* for the real enumeration. It is orphaned.
+>
+> This does **not** assert that 84 is wrong. "Exhaustive enumeration" above may
+> well have been run and its result recorded by hand. What is established is
+> that nothing in the corpus now reproduces it, so it cannot be checked and a
+> mismatch against it cannot be interpreted. Probe:
+> [`qbeta_nl84_provenance_probe.py`](../../computations/qbeta/qbeta_nl84_provenance_probe.py)
+> (4/4). Bean `qou-vtlj`.
 
 **Lean status:** Not formalised (combinatorial search).
 

@@ -7,7 +7,7 @@ section_number: null
 pages: 9-10
 source_pdf: 2605.19310v1.pdf
 source_sha256: 047d492babc63d2f
-doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM — We give an elementary, Fourier-free proof of Roth’s theorem."
+doc_brief: "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM MARK LEWKO — We give an elementary, Fourier-free proof of Roth’s theorem."
 ---
 [1] D. H. J. Polymath,A new proof of the density Hales–Jewett theorem, Ann. of Math.
 (2)175(2012), no. 3, 1283–1327.

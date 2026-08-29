@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:51:27.753146+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T18:02:27.858510+00:00",
+  "commitSha": "6efb2b4d0f26c31bde0456850744681081cd7de8",
   "assertions": [
     {
       "name": "g_reeb_below_ceiling",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "b4-1four-reeb-flow-magnitude",
   "scriptFile": "b4_1four_reeb_flow_magnitude.py",
   "scriptHash": "f5054f1face8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -115,5 +115,7 @@
     "predecessor": "b4_1four_complete_graph_writhe_signs.py (+ witness)",
     "landed_source": "categorical_q_decay_ba_low_isotopes.py reeb-flow tier"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

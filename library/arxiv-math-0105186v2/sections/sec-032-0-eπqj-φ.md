@@ -7,7 +7,7 @@ section_number: 0
 pages: 48-51
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 where the ﬁrst summand is of order {−κ} and the second of order [−κ +α;∞).
 Moreover,φ is determined by the horizontal sections:

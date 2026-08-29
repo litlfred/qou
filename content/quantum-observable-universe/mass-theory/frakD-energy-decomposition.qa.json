@@ -789,7 +789,7 @@
         "reviewed_at": "2026-08-10T03:26:31.215Z",
         "reviewed_sha": "08a8affec24816376244e11fc156254784f5f50b",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/mass-theory/frakD-energy-decomposition.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner — demote to conjecture or add CAL-4 banner"
+        "evidence": "quantum-observable-universe/mass-theory/frakD-energy-decomposition.ts:1: block has CAL-4 caveat but is kind=proposition without acknowledgment banner \u2014 demote to conjecture or add CAL-4 banner"
       }
     ],
     "canonical-ck-tiered-not-binary": [
@@ -1018,7 +1018,7 @@
           "in_degree": 0,
           "cone_size": 9,
           "depth": 9,
-          "pagerank": 0.000078,
+          "pagerank": 7.8e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1177,7 +1177,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. \"(the landed data weakly favour a bar-even unit)\" -> \"(the available data weakly favour a bar-even unit)\"; the section \"## Already tabulated\" and \"The mass-binding dashboard's **Entanglement** table computes this split ... its `retained E` column ... its `emitted E` column\" -> \"## The split across the light nuclei\" and \"The split has been computed for every light nucleus: the retained energy is ... and the emitted energy is ...\". The 0.96 -> 1.00 ratio trend and the open parity assignment for the physical E_unit are unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"(the landed data weakly favour a bar-even unit)\" -> \"(the available data weakly favour a bar-even unit)\"; the section \"## Already tabulated\" and \"The mass-binding dashboard's **Entanglement** table computes this split ... its `retained E` column ... its `emitted E` column\" -> \"## The split across the light nuclei\" and \"The split has been computed for every light nucleus: the retained energy is ... and the emitted energy is ...\". The 0.96 -> 1.00 ratio trend and the open parity assignment for the physical E_unit are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1693,5 +1693,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:13:59.783Z"
+  "updated_at": "2026-08-21T16:13:59.783Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

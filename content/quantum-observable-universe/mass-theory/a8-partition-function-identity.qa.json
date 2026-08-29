@@ -38,7 +38,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -53,7 +53,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -68,7 +68,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -83,7 +83,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -98,7 +98,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -113,7 +113,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -128,7 +128,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -143,7 +143,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -161,7 +161,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -179,7 +179,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-07T23:27:02.000Z",
         "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
         "reviewer": {
@@ -197,7 +197,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -211,7 +211,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -224,7 +224,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -239,7 +239,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -254,7 +254,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -269,7 +269,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -284,7 +284,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -299,7 +299,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -314,7 +314,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -329,7 +329,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -344,7 +344,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -359,7 +359,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -374,7 +374,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -389,7 +389,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -404,7 +404,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -419,7 +419,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -434,7 +434,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:31:57.000Z",
         "reviewed_sha": "78784b373ddf249bba302c3ff13c3246237682e0",
         "reviewer": {
@@ -1586,7 +1586,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the word \"audit\" used for the project's review process, the workplan item ids (Phase N / Track N / P#.# / tranche), the follow-up / next-steps narration and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the `docs/audits/` and `docs/coordination/` links, the word \"audit\" used for the project's review process, the workplan item ids (Phase N / Track N / P#.# / tranche), the follow-up / next-steps narration and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2106,5 +2106,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T21:22:21.861Z"
+  "updated_at": "2026-08-19T21:22:21.861Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

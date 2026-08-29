@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T08:47:24.556917+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T17:14:19.802593+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [
     {
       "name": "composite_first_test_at_least_one_passes_10_ppm",
@@ -32,7 +32,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -42,7 +42,7 @@
   },
   "data": {
     "target_c_3": "-2.06934257711516783787971951725",
-    "q_substrate": "1.10997859555733471989976322048",
+    "q_substrate": "1.10997858275138080759166909561",
     "candidates_tested": [
       "C1. Demazure(2,1) x (q;q)_3",
       "C2. tr_M(p_3^JW) x (q;q)_3",
@@ -53,41 +53,41 @@
     ],
     "per_candidate_results": {
       "C1. Demazure(2,1) x (q;q)_3": {
-        "computed": "0.0571012702105553927097780370461",
-        "err_ppm": 1027593.918398064,
+        "computed": "0.0571012490307995752414380974324",
+        "err_ppm": 1027593.9081630473,
         "passed": false
       },
       "C2. tr_M(p_3^JW) x (q;q)_3": {
-        "computed": "-0.00308184158046242407751867919324",
-        "err_ppm": 998510.7146518201,
+        "computed": "-0.00308184045700292221620430665535",
+        "err_ppm": 998510.7151947266,
         "passed": false
       },
       "C3. tr_M(p_3^JW) + K_3^Kashaev": {
-        "computed": "0.319166599941672815001225232364",
-        "err_ppm": 1154235.747851193,
+        "computed": "0.319166604438136684062378805828",
+        "err_ppm": 1154235.7500240877,
         "passed": false
       },
       "C4. -SYT_maj(2,1) x (q;q)_3": {
-        "computed": "0.0219687676547116855499000941722",
-        "err_ppm": 1010616.3029252208,
+        "computed": "0.0219687591893769008921821183656",
+        "err_ppm": 1010616.2988343878,
         "passed": false
       },
       "C5. -(q^2 + q^-2) x (1 - 2*hbar_q^2)": {
-        "computed": "-2.00357931980970576554257358641",
-        "err_ppm": 31779.782638571818,
+        "computed": "-2.00357931871867530110746070207",
+        "err_ppm": 31779.783165807123,
         "passed": false
       },
       "C6. -Demazure(2,1) x J_Hopf(q) / 2": {
-        "computed": "12.3410206294395321371646406785",
-        "err_ppm": 6963739.772195632,
+        "computed": "12.3410205532419617064734940202",
+        "err_ppm": 6963739.735373517,
         "passed": false
       }
     },
     "best_candidate_name": "C5. -(q^2 + q^-2) x (1 - 2*hbar_q^2)",
-    "best_candidate_err_ppm": 31779.782638571818,
+    "best_candidate_err_ppm": 31779.783165807123,
     "any_candidate_passes_10_ppm": false,
     "interpretation": "Composite-operator first-test (6 candidates). Best: 'C5. -(q^2 + q^-2) x (1 - 2*hbar_q^2)' at 31779.78 ppm. NEGATIVE — simple 2-factor product space exhausted. Search becomes upstream-infra-gated (infinite Habiro products / KLR / Demazure)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+f64-seminormal",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T16:30:28.079590+00:00",
-  "commitSha": "167c644bf28bd5a8d066d95464b34807b6308273",
+  "computedAt": "2026-08-25T19:46:06.854892+00:00",
+  "commitSha": "a38f15b997d21381b8ec379af087ed53a42e67ca",
   "assertions": [
     {
       "name": "chi_convention_matches_witness",
@@ -11,15 +11,9 @@
       "passed": true
     },
     {
-      "name": "D_sign_qlo",
+      "name": "three_row_object_is_structural_zero",
       "computed": 1,
       "expected": 1,
-      "passed": true
-    },
-    {
-      "name": "D_sign_q0",
-      "computed": -1,
-      "expected": -1,
       "passed": true
     }
   ],
@@ -27,8 +21,8 @@
   "durationMs": 8,
   "computation": "threerow-sign-crossing",
   "scriptFile": "threerow_sign_crossing_probe.py",
-  "scriptHash": "be25220a4961",
-  "scriptCommitSha": "02397e4a8341a296ed12ef06e4b2bacce26f6f2d",
+  "scriptHash": "d390c1a9eb67",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,42 +34,51 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
-  "description": "Bean qou-prjo convergence-test of #4817+#4818. Tests whether sign(F_K(q)=\u03a3_{\u03bb\u22a23A,\u2113(\u03bb)\u22653} y_\u03bb(q)\u00b7\u03c7^\u03bb(\u03b2_K;q)\u00b7\u0394_\u03bb) crosses zero as q runs from the combinatorial limit q\u21921\u207a to the substrate q\u2080 (EXPERIMENTAL PROTON ANCHOR). \u0394_\u03bb=(\u22121)^{n(\u03bb)}\u00b7dim (PROVED value-only); y_\u03bb via live schur_principal_mpmath (proton anchor, NOT muon cache); \u03c7^\u03bb via q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure (both y_\u03bb and \u03c7^\u03bb at the same q). 0 free parameters; AME not used. Char-free companion G(q)=\u03a3 y_\u03bb\u00b7\u0394_\u03bb isolates the y_\u03bb weighting. Scope-(a)/(b) per verdict.",
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_sign_crossing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_sign_crossing_probe.py"
+  },
+  "description": "Bean qou-prjo convergence-test of #4817+#4818. Tests whether sign(F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ) crosses zero as q runs from the combinatorial limit q→1⁺ to the substrate q₀ (EXPERIMENTAL PROTON ANCHOR). Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (proton anchor, NOT muon cache); χ^λ via q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure (both y_λ and χ^λ at the same q). 0 free parameters; AME not used. Char-free companion G(q)=Σ y_λ·Δ_λ isolates the y_λ weighting. Scope-(a)/(b) per verdict.",
   "parameters": {
     "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
     "q_lo_combinatorial_surrogate": "1.0001",
-    "q0_pin": "experimental/proton (q_parameter.Q); live closed form y_\u03bb",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed form y_λ",
     "free_parameters": 0,
     "grid_npts": 13,
     "chi_precision": "f64 Hoefsmit seminormal (no mpfr kernel in sandbox)"
   },
   "data": {
-    "chi_vs_witness_max_rel_at_q0": "1.5255816694099963e-6",
+    "chi_vs_witness_max_rel_at_q0": "2.2085208156297387e-14",
     "primary_full_character_object": {
       "D": {
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "F_at_qlo": "8.0529125227220376e-5",
-        "F_at_q0": "-0.19496635114594539",
-        "sign_qlo": 1,
-        "sign_q0": -1,
-        "sign_crossed": true,
-        "n_crossings_on_grid": 1,
-        "crossing_q_values": [
-          "1.0536500613326059"
-        ]
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "max_abs_F_on_grid": "7.4978391954505519e-49",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "sign_crossed": false,
+        "n_crossings_on_grid": 0,
+        "crossing_q_values": []
       },
       "T": {
         "Z": 1,
         "N": 2,
         "n_strands": 9,
-        "F_at_qlo": "-0.00040591927367555483",
-        "F_at_q0": "-2.3181589081699395",
-        "sign_qlo": -1,
-        "sign_q0": -1,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "max_abs_F_on_grid": "3.7881469962579135e-48",
+        "sign_qlo": 0,
+        "sign_q0": 0,
         "sign_crossed": false,
         "n_crossings_on_grid": 0,
         "crossing_q_values": []
@@ -84,10 +87,11 @@
         "Z": 2,
         "N": 1,
         "n_strands": 9,
-        "F_at_qlo": "-0.00040590713943643502",
-        "F_at_q0": "-2.8064582609621747",
-        "sign_qlo": -1,
-        "sign_q0": -1,
+        "F_at_qlo": "0.0",
+        "F_at_q0": "0.0",
+        "max_abs_F_on_grid": "3.7879485335229285e-48",
+        "sign_qlo": 0,
+        "sign_q0": 0,
         "sign_crossed": false,
         "n_crossings_on_grid": 0,
         "crossing_q_values": []
@@ -95,34 +99,45 @@
     },
     "companion_character_free": {
       "6": {
-        "G_at_qlo": "-0.0000045645320673712437381628104418350135534904143068931",
-        "G_at_q0": "0.016357557243199131523558731245683684415842591437191",
-        "sign_qlo": -1,
-        "sign_q0": 1,
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
         "sign_crossed": true,
         "crossing_q_values": [
-          "1.02444723987578195793208004495120981395811742873"
+          "1.000139621528709258429993594530231494302260275649",
+          "1.0002147524771457319748790064407528020465995626288",
+          "1.0052872561600516177468256543447833116289311613259",
+          "1.0082994400346325102056087861484977405519374974658"
         ]
       },
       "9": {
-        "G_at_qlo": "-0.000030739207709852205963113129838381893389524441081502",
-        "G_at_q0": "-0.022912412753569795615575419874560498334809455241783",
-        "sign_qlo": -1,
-        "sign_q0": -1,
-        "sign_crossed": false,
-        "crossing_q_values": []
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "sign_crossed": true,
+        "crossing_q_values": [
+          "1.000139621528709258429993594530231494302260275649",
+          "1.0002147524771457319748790064407528020465995626288",
+          "1.0052872561600516177468256543447833116289311613259",
+          "1.0082994400346325102056087861484977405519374974658"
+        ]
       },
       "12": {
-        "G_at_qlo": "0.000080523901885255815434724291782443890824693416840982",
-        "G_at_q0": "0.018010744723102994492168200995711225684309963060924",
-        "sign_qlo": 1,
-        "sign_q0": 1,
-        "sign_crossed": false,
-        "crossing_q_values": []
+        "G_at_qlo": "0.0",
+        "G_at_q0": "0.0",
+        "sign_qlo": 0,
+        "sign_q0": 0,
+        "sign_crossed": true,
+        "crossing_q_values": [
+          "1.0014411917311899932255505087541974543466338279812",
+          "1.0019876201798828241694125520497551350512058398605"
+        ]
       }
     },
-    "any_isotope_sign_crossed": true,
-    "deuteron_sign_crossed": true,
+    "any_isotope_sign_crossed": false,
+    "deuteron_sign_crossed": false,
     "isotopes_evaluated": [
       "D",
       "T",
@@ -133,12 +148,12 @@
     ]
   },
   "caveats": [
-    "\u03c7^\u03bb(\u03b2_K;q) is f64-precision (pure-Python Hoefsmit seminormal; the mpfr Rust kernel is unavailable in this sandbox \u2014 disk quota, documented). y_\u03bb(q) is full 50-dps mpmath. The product is therefore f64-precision \u2014 DECISIVE for a SIGN question away from a crossing (|F|=O(1)); near any crossing the located q carries only f64 resolution.",
-    "\u2074He (n=12) is a documented SANDBOX COMPUTE LIMIT, not a proof gap: the pure-Python f64 Hoefsmit seminormal build for ~60 \u2113\u22653 partitions of 12 (dim in the thousands, GB-scale f64 matrices) exceeds >4 min/grid point with no mpfr Rust kernel available (disk quota). The character-free companion G(q) for n=12 IS computed (pure mpmath). Re-run with QOU_INCLUDE_4HE=1 on a host with pyhecke_native to fill in the full character object. n=6 (D) and n=9 (T,\u00b3He) fully answer the light-chain crossing question.",
-    "SERIALIZATION SPLIT (raw-float64 ratchet). Every numeric field is a decimal string, at the precision of its NARROWEST input. The PRIMARY block passes through the f64 \u03c7 kernel and is written at that kernel's round-trip width (17 significant digits) \u2014 the same digits the previous raw-float64 output carried, neither inflated nor lost. The COMPANION block is character-free and therefore full 50-dps mpmath, and now shows all of it where float64 was discarding ~34 digits. Note the two are NOT interchangeable: representational width is not accuracy, and the \u03c7 path's accuracy is the ~1.5e-6 recorded in chi_vs_witness_max_rel_at_q0, far looser than 17 digits.",
-    "value_only object: F_K is NOT a binding energy (\u0394_\u03bb is value-only; the extensive super-pairwise magnitude term is open). This probe tests ONLY the SIGN of the \u22653-row trace weighting, not the magnitude."
+    "χ^λ(β_K;q) is f64-precision (pure-Python Hoefsmit seminormal; the mpfr Rust kernel is unavailable in this sandbox — disk quota, documented). y_λ(q) is full 50-dps mpmath. The product is therefore f64-precision — DECISIVE for a SIGN question away from a crossing (|F|=O(1)); near any crossing the located q carries only f64 resolution.",
+    "⁴He (n=12) is a documented SANDBOX COMPUTE LIMIT, not a proof gap: the pure-Python f64 Hoefsmit seminormal build for ~60 ℓ≥3 partitions of 12 (dim in the thousands, GB-scale f64 matrices) exceeds >4 min/grid point with no mpfr Rust kernel available (disk quota). The character-free companion G(q) for n=12 IS computed (pure mpmath). Re-run with QOU_INCLUDE_4HE=1 on a host with pyhecke_native to fill in the full character object. n=6 (D) and n=9 (T,³He) fully answer the light-chain crossing question.",
+    "SERIALIZATION SPLIT (raw-float64 ratchet). Every numeric field is a decimal string, at the precision of its NARROWEST input. The PRIMARY block passes through the f64 χ kernel and is written at that kernel's round-trip width (17 significant digits) — the same digits the previous raw-float64 output carried, neither inflated nor lost. The COMPANION block is character-free and therefore full 50-dps mpmath, and now shows all of it where float64 was discarding ~34 digits. Note the two are NOT interchangeable: representational width is not accuracy, and the χ path's accuracy is the ~1.5e-6 recorded in chi_vs_witness_max_rel_at_q0, far looser than 17 digits.",
+    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only; the extensive super-pairwise magnitude term is open). This probe tests ONLY the SIGN of the ≥3-row trace weighting, not the magnitude."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

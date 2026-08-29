@@ -181,11 +181,11 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("splus_reproduces_committed_a2",
-                     computed=float(dev_s), expected=0.0, tolerance=1e-20,
+                     computed=dev_s, expected=0.0, tolerance=1e-20,
                      source="in-probe S⁺ assembly = the committed A2 witness "
                             "matrix (consistency gate)")
     wb.add_assertion("confrontation_completed",
-                     computed=float(n_comp), expected=float(n_comp),
+                     computed=n_comp, expected=n_comp,
                      tolerance=0.5,
                      source="pre-registered parameter-free confrontation ran "
                             "to completion; hits + near-misses recorded")

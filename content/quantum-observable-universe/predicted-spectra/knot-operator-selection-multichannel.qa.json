@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -605,7 +605,7 @@
           "in_degree": 0,
           "cone_size": 97,
           "depth": 29,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -1168,8 +1168,8 @@
         },
         "reviewed_at": "2026-08-22T04:02:33.329Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "The block-final sentence ('The elastic channel (T_{1,0}) is always present: photon--photon scattering without pair creation is the leading process, and pair creation is a threshold-activated subdominant channel.') adds two facts not already stated — the elastic channel's unconditional presence and the existence of a threshold — so it is not a restatement of the established thesis.",
-        "notes": "pass on the trap criterion. SEPARATE MATH/PHYSICS FINDING, not fixed inline: that same closing sentence asserts unconditionally that elastic photon--photon scattering 'is the leading process'. (a) It contradicts the proposition this remark interprets: prf:knot-operator-selection (iv) selects T_{2,3} (trefoil, e^-) as the dominant channel at q_0, i.e. lambda_* is the trefoil irrep, not the trivial one. (b) Physically the claim holds only BELOW the pair-production threshold; above it Breit--Wheeler is O(alpha^2) while light-by-light scattering is O(alpha^4), so the elastic channel is not leading. Proposed: qualify to 'below the pair-production threshold the elastic channel is the leading process', which also removes the clash with (iv). Two lesser notes on the same block: the channel sum runs over partitions of DIFFERENT sizes (Box |- 1, BoxBox |- 2, yng(2,1) |- 3) while prop clause (i) writes sum_{lambda |- r} at fixed r; and \\yng is not a KaTeX primitive — it survives the PDF only because main.tex:241 stubs it as \\newcommand{\\yng}[1]{{\\scriptsize[#1]}}, so the web/KaTeX render of this display degrades."
+        "evidence": "The block-final sentence ('The elastic channel (T_{1,0}) is always present: photon--photon scattering without pair creation is the leading process, and pair creation is a threshold-activated subdominant channel.') adds two facts not already stated \u2014 the elastic channel's unconditional presence and the existence of a threshold \u2014 so it is not a restatement of the established thesis.",
+        "notes": "pass on the trap criterion. SEPARATE MATH/PHYSICS FINDING, not fixed inline: that same closing sentence asserts unconditionally that elastic photon--photon scattering 'is the leading process'. (a) It contradicts the proposition this remark interprets: prf:knot-operator-selection (iv) selects T_{2,3} (trefoil, e^-) as the dominant channel at q_0, i.e. lambda_* is the trefoil irrep, not the trivial one. (b) Physically the claim holds only BELOW the pair-production threshold; above it Breit--Wheeler is O(alpha^2) while light-by-light scattering is O(alpha^4), so the elastic channel is not leading. Proposed: qualify to 'below the pair-production threshold the elastic channel is the leading process', which also removes the clash with (iv). Two lesser notes on the same block: the channel sum runs over partitions of DIFFERENT sizes (Box |- 1, BoxBox |- 2, yng(2,1) |- 3) while prop clause (i) writes sum_{lambda |- r} at fixed r; and \\yng is not a KaTeX primitive \u2014 it survives the PDF only because main.tex:241 stubs it as \\newcommand{\\yng}[1]{{\\scriptsize[#1]}}, so the web/KaTeX render of this display degrades."
       }
     ],
     "trap-performed-warmth": [
@@ -1301,5 +1301,6 @@
     "md": "562ebc23cb73",
     "ts": "3fbea563b423"
   },
-  "updated_at": "2026-08-22T04:02:33.329Z"
+  "updated_at": "2026-08-22T04:02:33.329Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

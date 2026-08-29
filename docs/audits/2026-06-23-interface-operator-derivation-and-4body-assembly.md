@@ -356,10 +356,17 @@ optional and never compiled in the default wheel.)
 - **Operator-cumulant cooperative binding** (`2026-06-17` workplan) — gated: realizing
   `Δ_coop` needs Borromean LP-selection, which `2026-06-17-...two-remaining-directions-closed.md`
   proved no continuous variational principle achieves without a fit.
-- **q-Reeb phase `|Δθ_λ|`** (sibling #2612) — a non-product, non-collapsed per-λ object
-  that reportedly closes A=3 to ~2%; diagnostic infrastructure exists but binding-wiring
-  is open. Worth checking whether `|Δθ_λ|` is the cooperative object (and whether it is
-  attractive) — but it is sibling-owned.
+- **q-Reeb phase `|Δθ_λ|`** (sibling #2612) — a non-product, non-collapsed per-λ object.
+  **🛑 CORRECTION (2026-08-29): the "~2%" this entry reported is RETRACTED and was
+  never a lead.** It came from `C_knot = 5.852 = B_AME/(m_e·|Σ|)`, a straight AME
+  anchor inversion — a fit
+  ([`2026-06-13-binding-method-reconciliation-and-defit-program.md`](2026-06-13-binding-method-reconciliation-and-defit-program.md);
+  PR #1417), and `computations/probe_theta_carry_binding.py` records the retraction in
+  its own docstring. This entry was written after that retraction and still carried the
+  figure, which is how a fitted number stayed on a "what's left" list for two months.
+  Re-measured 2026-08-29: relative error 92–98%, and the route's one predictive
+  relation is **falsified at ⁴He** (0.3485 vs 0.2065, +68.8%). The per-λ *structure*
+  may still matter; the closure figure does not.
 
 ## Two follow-ups: structured combiner + long-range triangle bond (✓ run, 0 fit)
 

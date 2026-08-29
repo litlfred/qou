@@ -86,40 +86,34 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
 
 /-- **Sanity inventory** — confirms the 8 upstream files
     contribute interlocking content.  This theorem is a
-    documentation handle: every named class below is in scope
-    and consumable.
+    documentation handle: every named class / instance below
+    is in scope and consumable.
 
-    **`Nonempty` here means "inhabited", and for the spectral
-    sequence that is all it means** (bean `qou-fngs`).  The witness
-    is `canonicalTrivial R` — the `PUnit`-valued model whose
-    differentials are the constant map, so its collapse holds by
-    `rfl`.  It is named explicitly rather than found by
-    `inferInstance`, because it *was* an instance until 2026-08-24,
-    and resolution silently supplying it is what made
-    `[GBFiltrationCollapsesAtE2 R]` free for every `R`.
+    Conditional on `[IwahoriHeckeAlgebra R 2 q]` (§3b-cond): the trivial
+    global `IwahoriHeckeAlgebra` instance was deliberately removed on
+    2026-08-23 (anti-laundering — a content-free `carrier = PUnit` instance
+    must not be fabricated to close it), so `Nonempty (IwahoriHeckeAlgebra
+    R 2 q)` is honestly available only *given* the class. `WedderburnIsomorphism
+    R 2 q` carries a real instance (`wedderburn_n2`) and stays unconditional.
 
-    Read this line as "the API is inhabited", never as "the GB
-    filtration collapses" — see
-    `SpectralSequence.collapse_is_definitional`.
+    **`GBFiltrationCollapsesAtE2 R` does not, and this line used to say it
+    did.** Its `canonical` is `ss := trivial R` with
+    `collapses := trivial_collapses_at_E2 R` — the TRIVIAL spectral sequence,
+    as its own docstring at `QOU/Mathlib/SpectralSequence.lean` states:
+    *"the trivial spectral sequence vacuously discharges the §3b-cond
+    hypothesis"*. It is an unconditional `instance`, so
+    `[GBFiltrationCollapsesAtE2 R]` is free for every `R` and every downstream
+    result taking it as a hypothesis is unconditional on a collapse nobody
+    proved.
 
-    **The Hecke line is the same shape, and this theorem had been red
-    since 2026-08-23** (found 2026-08-24).  `triv_hecke` was demoted
-    from `instance` to `def` on 2026-08-23 and its docstring recorded
-    the blast radius as *"one error, `triv_wedderburn` below, fixed in
-    place.  Nothing else in the corpus depended on the global
-    resolution."*  This theorem did.  It went unnoticed because
-    `Summary.olean` predated the demotion and nothing rebuilt this
-    cone, so `failed to synthesize IwahoriHeckeAlgebra R 2 q` was never
-    surfaced.  The witness is now named — `triv_hecke R 2 q`, the
-    `PUnit`-carrier model with all three relations `True` — and the
-    same reading applies: the API is inhabited; `H_2(q)` is not
-    constructed.
-
-    `WedderburnIsomorphism R 2 q` is deliberately still left to
-    `inferInstance`: `wedderburn_n2` is a real instance (blocks
-    `1² + 1² = 2 = 2!`, closed by `decide`), not a trivial model. -/
-theorem inventory_check (R : Type u) [CommRing R] (q : R) :
-    -- Spectral sequence — inhabited by the trivial model only
+    That is the same shape as the `IwahoriHeckeAlgebra` instance removed above
+    on 2026-08-23 for exactly this reason, and it is what
+    `lean-no-vacuous-instance-data` exists to catch. Recorded rather than fixed
+    here: demoting it changes every consumer, so it is a scoped change and not
+    a merge-time edit. -/
+theorem inventory_check (R : Type u) [CommRing R] (q : R)
+    [IwahoriHeckeAlgebra R 2 q] :
+    -- Spectral sequence
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
     -- Hecke algebra — inhabited by the trivial model only
     Nonempty (IwahoriHeckeAlgebra R 2 q) ∧

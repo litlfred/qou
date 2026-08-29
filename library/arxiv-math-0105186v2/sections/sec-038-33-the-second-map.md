@@ -7,7 +7,7 @@ section_number: 3.3
 pages: 60-63
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 From this point onwards, we add one more assumption to those i n Section 3.1:
 (VI) R is the function Rr which appears in the construction of exact Lefschetz

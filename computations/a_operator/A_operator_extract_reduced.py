@@ -62,11 +62,19 @@ from A_operator_extract_general import (  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 INTERFACES = {
     "pp":  (1.0, 0.0),
     "nn":  (1.0, -H),
-    "pn":  (1.0, -H / 2),
+    "pn":  (1.0, _pn_d(H)),      # colour-weighted
 }
 
 

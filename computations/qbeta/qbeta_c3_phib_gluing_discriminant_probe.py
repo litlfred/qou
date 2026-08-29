@@ -145,12 +145,12 @@ def main() -> int:
     min_all = min([d_complete, d_realaxis] + list(dists.values()))
     graze = float(min_all) < 1e-6
     wb.add_assertion("locus_is_O1_far_from_canonical_paths",
-                     computed=float(1.0 if not graze else 0.0), expected=1.0,
+                     computed=1.0 if not graze else 0.0, expected=1.0,
                      tolerance=0.1,
                      source=f"min distance {mp.nstr(min_all, 6)} >> anchor "
                             f"separation {dq:.1e} => no branch-point graze")
     wb.add_assertion("complete_structure_not_on_locus",
-                     computed=float(d_complete), expected=float(d_complete),
+                     computed=d_complete, expected=d_complete,
                      tolerance=1e-30,
                      source="recorded exact-locus distance from m=1 (informational)")
 

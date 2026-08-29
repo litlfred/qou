@@ -7,7 +7,7 @@ section_number: 2
 pages: 7-8
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
-doc_brief: "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmi"
+doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
 ---
 We ﬁx a proper adelic curve X = (K, Ω , φ) and an algebraic closure of K. In this section we recall the
 existence of an interpolating polynomial δ ∈ K[X1, . . . , XN ] associated to some elements α 1, . . . ,α n ∈

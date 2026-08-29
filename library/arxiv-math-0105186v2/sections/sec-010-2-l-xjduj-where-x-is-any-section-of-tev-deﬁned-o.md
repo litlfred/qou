@@ -7,7 +7,7 @@ section_number: 2
 pages: 24-24
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 bourhood of im( u) in E, such that u∗ ˜X = X. After choosing a torsion-free
 connection∇ on TE (away from Ecrit) which preserves the integrable subbun-

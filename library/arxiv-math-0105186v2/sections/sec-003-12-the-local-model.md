@@ -7,7 +7,7 @@ section_number: 1.2
 pages: 10-17
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 Consider T = T ∗Sn with its standard forms ωT ∈ Ω 2(T ), θT ∈ Ω 1(T ). For
 concrete computations we use the coordinates T ={(u,v )∈ Rn+1× Rn+1 :

@@ -7,7 +7,7 @@ section_number: 5.3
 pages: 56-59
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 pentagram spheres of Figure 1. We orient the spheres equivariant ly for the cyclic symmetry
 group which permutes them. Any two pentagram spheres are eithe r disjoint, meet transversely

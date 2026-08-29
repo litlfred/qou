@@ -121,9 +121,17 @@ def apply_T_w(v: np.ndarray, sigmas, word, h: float) -> np.ndarray:
     """
     out = v.copy()
     # T_w = M_1 · M_2 · ... · M_71; applied as M_1 (M_2 (... (M_71 v))).
+    # `c`/`d` arrive as mpmath.mpf since the exact-word change (PR #5745),
+    # whose own comment directs "consumers needing f64 (the numpy validation
+    # paths) cast at their own boundary, where the loss is visible". This IS
+    # that boundary: `sigmas` are scipy float64 CSR built by
+    # build_seminormal_fast, so an mpf coefficient makes `out` dtype=object
+    # and scipy refuses the next matvec outright. Casting here loses nothing
+    # the float64 σ had not already lost.
     for (c, d, g) in reversed(word):
+        cf, df = float(c), float(d)
         # M_g = c · σ_g + d · I.
-        out = c * (sigmas[g] @ out) + d * out
+        out = cf * (sigmas[g] @ out) + df * out
     return out
 
 
@@ -133,8 +141,10 @@ def apply_T_w_T(v: np.ndarray, sigmas_T, word, h: float) -> np.ndarray:
     Apply LEFTMOST FIRST (in original word).
     """
     out = v.copy()
+    # Same float64 boundary as apply_T_w above.
     for (c, d, g) in word:
-        out = c * (sigmas_T[g] @ out) + d * out
+        cf, df = float(c), float(d)
+        out = cf * (sigmas_T[g] @ out) + df * out
     return out
 
 

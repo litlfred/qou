@@ -1,0 +1,437 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1502.02882v2",
+ "source": {
+  "file": "1502.02882v2.pdf",
+  "sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
+  "bytes": 1207509,
+  "pages": 36,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1502.02882",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "20 Jul 2015"
+  },
+  "doi": null,
+  "title": "Fusion categories via string diagrams Bruce Bartlett",
+  "authors_raw": null,
+  "title_lines": [
+   "Fusion categories via string diagrams",
+   "Bruce Bartlett"
+  ],
+  "abstract": "We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories. These results include: the quadruple dual is canonically isomorphic to the identity, positivity of the paired dimensions, and Ocneanu rigidity. We introduce the pairing convention as a convenient graphical framework for working with fusion categories. We use this framework to express the pivotal operators as a product of the apex associator monodromy and the pivotal indicators. We also characterize pivotal structures as solutions of an explicit set of algebraic equations over the complex numbers.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20150721065857Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "String diagrams",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Conventions for general monoidal categories",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Conventions for fusion categories",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The pivotal operators on a fusion category",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Fusion and Frobenius-Peron dimensions",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The pairing convention",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Further graphical conventions",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2.1"
+  },
+  {
+   "level": 2,
+   "title": "The pivotal operators",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Positivity of paired dimensions",
+   "page": 14,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The pivotal operators as a monoidal functor",
+   "page": 16,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "The pivotal operators are the double dual functor",
+   "page": 18,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Explicit formula for the pivotal operators",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Monodromy interpretation of the pivotal operators",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The pivotal indicators",
+   "page": 21,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Formula for the pivotal operators",
+   "page": 24,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Pivotal structures",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Explicit equations for pivotal structures",
+   "page": 26,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Fusion homomorphisms",
+   "page": 27,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Sphericalization of a fusion category",
+   "page": 28,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Ocneanu rigidity",
+   "page": 30,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The tangent complex",
+   "page": 30,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Vanishing of cohomology",
+   "page": 32,
+   "source": "outline",
+   "number": "6.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5415,
+   "n_words": 899
+  },
+  {
+   "id": "sec-001-2-string-diagrams",
+   "number": "2",
+   "title": "String diagrams",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 598,
+   "n_words": 95
+  },
+  {
+   "id": "sec-002-21-conventions-for-general-monoidal-categories",
+   "number": "2.1",
+   "title": "Conventions for general monoidal categories",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3513,
+   "n_words": 611
+  },
+  {
+   "id": "sec-003-22-conventions-for-fusion-categories",
+   "number": "2.2",
+   "title": "Conventions for fusion categories",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2373,
+   "n_words": 461
+  },
+  {
+   "id": "sec-004-3-the-pivotal-operators-on-a-fusion-category",
+   "number": "3",
+   "title": "The pivotal operators on a fusion category",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-32-the-pairing-convention",
+   "number": "3.2",
+   "title": "The pairing convention",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 271,
+   "n_words": 44
+  },
+  {
+   "id": "sec-006-31-fusion-and-frobenius-peron-dimensions",
+   "number": "3.1",
+   "title": "Fusion and Frobenius-Peron dimensions",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 4866,
+   "n_words": 902
+  },
+  {
+   "id": "sec-007-321-further-graphical-conventions",
+   "number": "3.2.1",
+   "title": "Further graphical conventions",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 672,
+   "n_words": 135
+  },
+  {
+   "id": "sec-008-33-the-pivotal-operators",
+   "number": "3.3",
+   "title": "The pivotal operators",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 3548,
+   "n_words": 644
+  },
+  {
+   "id": "sec-009-34-positivity-of-paired-dimensions",
+   "number": "3.4",
+   "title": "Positivity of paired dimensions",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3034,
+   "n_words": 589
+  },
+  {
+   "id": "sec-010-35-the-pivotal-operators-as-a-monoidal-functor",
+   "number": "3.5",
+   "title": "The pivotal operators as a monoidal functor",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4012,
+   "n_words": 698
+  },
+  {
+   "id": "sec-011-36-the-pivotal-operators-are-the-double-dual-fun",
+   "number": "3.6",
+   "title": "The pivotal operators are the double dual functor",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2960,
+   "n_words": 533
+  },
+  {
+   "id": "sec-012-4-explicit-formula-for-the-pivotal-operators",
+   "number": "4",
+   "title": "Explicit formula for the pivotal operators",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 165,
+   "n_words": 26
+  },
+  {
+   "id": "sec-013-42-the-pivotal-indicators",
+   "number": "4.2",
+   "title": "The pivotal indicators",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 99,
+   "n_words": 16
+  },
+  {
+   "id": "sec-014-41-monodromy-interpretation-of-the-pivotal-opera",
+   "number": "4.1",
+   "title": "Monodromy interpretation of the pivotal operators",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 5193,
+   "n_words": 963
+  },
+  {
+   "id": "sec-015-43-formula-for-the-pivotal-operators",
+   "number": "4.3",
+   "title": "Formula for the pivotal operators",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2172,
+   "n_words": 376
+  },
+  {
+   "id": "sec-016-5-pivotal-structures",
+   "number": "5",
+   "title": "Pivotal structures",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 215,
+   "n_words": 33
+  },
+  {
+   "id": "sec-017-51-explicit-equations-for-pivotal-structures",
+   "number": "5.1",
+   "title": "Explicit equations for pivotal structures",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3374,
+   "n_words": 601
+  },
+  {
+   "id": "sec-018-52-fusion-homomorphisms",
+   "number": "5.2",
+   "title": "Fusion homomorphisms",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1946,
+   "n_words": 329
+  },
+  {
+   "id": "sec-019-53-sphericalization-of-a-fusion-category",
+   "number": "5.3",
+   "title": "Sphericalization of a fusion category",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3766,
+   "n_words": 705
+  },
+  {
+   "id": "sec-020-6-ocneanu-rigidity",
+   "number": "6",
+   "title": "Ocneanu rigidity",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 283,
+   "n_words": 45
+  },
+  {
+   "id": "sec-021-61-the-tangent-complex",
+   "number": "6.1",
+   "title": "The tangent complex",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2486,
+   "n_words": 479
+  },
+  {
+   "id": "sec-022-62-vanishing-of-cohomology",
+   "number": "6.2",
+   "title": "Vanishing of cohomology",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 6514,
+   "n_words": 1002
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 23,
+  "chars_total": 57475
+ }
+}

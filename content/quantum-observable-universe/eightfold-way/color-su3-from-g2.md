@@ -178,4 +178,7 @@ The physical interpretation:
 The 3 and $\bar{3}$ are complex conjugate (not self-dual), matching
 the Günaydin--Gürsey decomposition
 $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R} \oplus \mathbb{C}^3$
-under $\mathrm{SU}(3) \subset G_2$.
+under $\mathrm{SU}(3) \subset G_2$ \cite{gunaydin-gursey1973}.
+Non-self-duality is what the $\mathrm{Sym}^2$ gate consumes, so this is a
+load-bearing citation rather than an attribution: a self-dual $3$ would
+carry a singlet in $\mathrm{Sym}^2$ and fail the gate.

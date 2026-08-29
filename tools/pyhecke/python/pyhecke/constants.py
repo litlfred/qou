@@ -39,6 +39,7 @@ Symbols owned by this module:
 """
 
 from __future__ import annotations
+from typing import Literal
 
 import math
 
@@ -344,3 +345,107 @@ __all__ = [
     # Mass constants (re-exported for one-stop convenience)
     "M_E_MEV", "M_P_MEV", "M_N_MEV",
 ]
+
+
+# ── p-n interface convention ──────────────────────────────────────────────────
+#
+# The inter-nucleon (proton-neutron) bond carries the Hecke element
+#
+#     sigma_g - (h/2 - eps*h) * I,     trace factor  f_pn = z - h*(1/2 - eps)
+#
+# with z = q^3/(q^2+1) (convention D) and h = q - 1/q. Two values of the
+# weight offset eps are meaningful:
+#
+#     strict_averaged       eps = 0        f_pn = z - h/2
+#     bring_color_weighted  eps = delta/4  f_pn = z - h*(1/2 - delta/4)
+#
+# `strict_averaged` is the BAR-SYMMETRISER of z: z - h/2 = (z(q) + z(1/q))/2
+# exactly (QOU.MassTheory.strictPn_eq_barSymmetriser, sorry-free). It is
+# correct mathematics and the wrong p-n bond for this framework, because it
+# is COLOUR-BLIND -- it averages the two flavours 50/50 and so cannot see the
+# substrate flavour split at all.
+#
+# The owner ruling of 2026-08-15 (R3), reaffirmed 2026-08-26, makes
+# `bring_color_weighted` canonical.
+#
+# WHY THE WEIGHTING LIVES AT THE p-n BOND AND NOWHERE ELSE. f_pn is the
+# weighted MEAN of f_pp and f_nn, and those two are bar-conjugates of one
+# another (f_nn(q) = f_pp(1/q), QOU.MassTheory.fNN_eq_fPP_bar). A like-flavour
+# bond has no mean to tilt: averaging f_pp with itself returns f_pp for any
+# weights summing to one. Only the mixed bond has two distinct things to
+# weight.
+#
+# At the proton pin the two conventions differ by h*delta/4 = 7.190163e-05,
+# relative 1.415e-04 -- about 1e11 times the float64 floor, so any recorded
+# number identifies its own convention.
+
+PnConvention = Literal["strict_averaged", "bring_color_weighted"]
+
+#: The live convention. Flipping this one line flips every call site that
+#: routes through `pn_interface_offset` -- which is the point of having it.
+PN_CONVENTION: PnConvention = "bring_color_weighted"
+
+
+def flavor_split_leading(q):
+    """Substrate flavour split ``delta = Delta_m / M_N`` at leading order.
+
+        delta = (q - 1)^2 * (1 - q^-4) / 3 = hbar_q^2 * h_q * [2]_q / 3
+
+    Exact for a symbolic ``q`` as well as an ``mpf`` one. The reciprocal is
+    ``1 / q`` and not ``mpf(1) / q``: identical for an mpf argument, but for a
+    sympy ``q`` the latter drags a ``Float(1.0)`` in and the whole expression
+    inherits float contagion instead of staying a rational function.
+
+    Mirrors ``computations/_li_2_q_util.flavor_split_leading``; the two are
+    asserted equal to 50 dps by ``test_pn_convention.py``. The duplication is
+    deliberate -- ``pyhecke`` is Layer 2b and must not import Layer 3 -- and
+    the test is what keeps it from drifting.
+    """
+    qi = 1 / q
+    return (q - 1) ** 2 * (1 - qi ** 4) / 3
+
+
+def pn_interface_offset(q, convention: "PnConvention | None" = None):
+    """The ``d`` coefficient of the p-n crossing: ``-h*(1/2 - eps)``.
+
+    This is the number that goes into a ``(c, d)`` crossing pair, so callers
+    that wrote ``(1.0, -h / 2)`` become ``(1.0, pn_interface_offset(q))``.
+
+    Returns the OFFSET, not the trace factor. The trace factor is
+    ``markov_z(q) + pn_interface_offset(q)``.
+    """
+    conv = PN_CONVENTION if convention is None else convention
+    h = q - 1 / q
+    if conv == "strict_averaged":
+        return -(h / 2)
+    if conv == "bring_color_weighted":
+        # -h*(1/2 - delta/4), rearranged as -h*(1 - delta/2)/2 so that no
+        # Python `1/2` (a float 0.5) ever enters. Do NOT "simplify" this
+        # back: for a sympy q the float would contaminate the whole
+        # rational function, which is the trap flavor_split_leading's own
+        # docstring records.
+        return -(h * (1 - flavor_split_leading(q) / 2) / 2)
+    raise ValueError(f"unknown p-n convention: {conv!r}")
+
+
+def pn_interface_offset_from_h(h, convention: "PnConvention | None" = None):
+    """`pn_interface_offset` for a caller that has ``h`` but not ``q``.
+
+    Most p-n crossing sites in `computations/` bind the Hecke ``h`` at module
+    level and never keep ``q`` in scope, so requiring ``q`` would turn a
+    one-token edit into a hunt through nine files for whatever the local
+    name for the substrate modulus happens to be.
+
+    ``h = q - 1/q`` inverts to ``q = (h + sqrt(h^2 + 4)) / 2`` on the branch
+    ``q > 1``, which is the substrate branch (``q0 ~ 1.11``). The negative
+    root is ``-1/q`` and is not a modulus.
+
+    Python mirror of `color_weight.rs::pn_offset_from_h`, which exists for
+    the same reason on the Rust side.
+    """
+    conv = PN_CONVENTION if convention is None else convention
+    if conv == "strict_averaged":
+        return -(h / 2)          # no q needed on this branch
+    q = (h + (h * h + 4) ** 0.5) / 2 if isinstance(h, float) else \
+        (h + (h * h + 4) ** (type(h)(1) / 2)) / 2
+    return pn_interface_offset(q, conv)

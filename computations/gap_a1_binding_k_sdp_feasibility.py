@@ -62,6 +62,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from binding_k_solver import (  # noqa: E402
     per_block_evaluation, load_wenzl_weights,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -110,7 +111,7 @@ def main() -> int:
             "y_lambda": y,
             "y_chi": y * chi,
             "abs_y_chi": abs(y * chi),
-            "dim_q": float(dim_q(lam)),
+            "dim_q": float(dim_q(lam, Q0_PROTON)),
             "psd_within_tol": blk["psd_within_tol"],
         })
     per_lambda.sort(key=lambda r: r["abs_y_chi"], reverse=True)

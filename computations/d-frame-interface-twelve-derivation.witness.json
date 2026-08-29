@@ -1,0 +1,139 @@
+{
+  "computation": "d-frame-interface-twelve-derivation",
+  "description": "DERIVES the convention-D interface factor 12 that the prior probe only localised. The colour-weighted inter-nucleon crossing sigma - h*(1/2 - delta/4) has exact coefficient with denominator integer content 12 and numerator content 1, so nothing cancels; 12 = 4*3 is the colour-averaging quarter times delta's own third. The prefactor is the PRODUCT of per-crossing denominator contents, 2^(#averaged) * 12, verified on all six atoms. The colour-blind coefficient -h/2 has denominator 2, so the uniform 6 is exactly 12/2 -- the ratio of the two conventions' interface denominators. TRAP: atom_braid_word_3A labels that crossing with a ~60-dps FLOAT (5/12), so denominator content read off the WORD is 1 and the model appears to fail; the float is a template label and crossing_from_cd substitutes the exact form. Take the coefficient from d_for_ctype, never from the word. Scope-(a): these six configurations under bring_color_weighted.",
+  "convention": {
+    "markov_z": "q**3/(q**2 + 1)   (convention D, canonical per R1)",
+    "pn_convention": "bring_color_weighted (canonical per R3)",
+    "delta": "flavor_split_leading(q) = (q-1)^2 (1 - q^-4) / 3",
+    "anchor": "NONE enters: every measured number is an integer content of an exact rational function of symbolic q. Top-level q0Anchor/q0Value are the ambient WitnessBuilder stamp."
+  },
+  "interface_coefficient": {
+    "exact": "(q - 1)*(q + 1)*(q**6 - 2*q**5 - 5*q**4 - q**2 + 2*q - 1)/(12*q**5)",
+    "denominator_content": 12,
+    "numerator_content": 1,
+    "colour_blind_denominator_content": 2,
+    "ratio": 6
+  },
+  "reference_blocks": [
+    "def:markov-trace",
+    "prop:flavor-split-substrate",
+    "prop:atomic-braid-decomposition"
+  ],
+  "atoms": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "averaged_crossings": 2,
+      "two_pow_averaged": 4,
+      "interface_den_content": 1,
+      "predicted_prefactor": 4,
+      "measured_prefactor": 4,
+      "model_holds": true,
+      "elapsed_sec": "0.10"
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "averaged_crossings": 2,
+      "two_pow_averaged": 4,
+      "interface_den_content": 1,
+      "predicted_prefactor": 4,
+      "measured_prefactor": 4,
+      "model_holds": true,
+      "elapsed_sec": "0.08"
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "averaged_crossings": 4,
+      "two_pow_averaged": 16,
+      "interface_den_content": 12,
+      "predicted_prefactor": 192,
+      "measured_prefactor": 192,
+      "model_holds": true,
+      "elapsed_sec": "3.51"
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "averaged_crossings": 6,
+      "two_pow_averaged": 64,
+      "interface_den_content": 12,
+      "predicted_prefactor": 768,
+      "measured_prefactor": 768,
+      "model_holds": true,
+      "elapsed_sec": "13.62"
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "averaged_crossings": 6,
+      "two_pow_averaged": 64,
+      "interface_den_content": 12,
+      "predicted_prefactor": 768,
+      "measured_prefactor": 768,
+      "model_holds": true,
+      "elapsed_sec": "8.17"
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "averaged_crossings": 8,
+      "two_pow_averaged": 256,
+      "interface_den_content": 12,
+      "predicted_prefactor": 3072,
+      "measured_prefactor": 3072,
+      "model_holds": true,
+      "elapsed_sec": "61.91"
+    }
+  ],
+  "assertions": [
+    {
+      "name": "interface_denominator_is_twelve",
+      "passed": true,
+      "note": "12 = 4*3, the colour-averaging quarter in delta/4 times delta's own third: 1/2 - X/(3*4) = (6 - X)/12"
+    },
+    {
+      "name": "interface_numerator_content_is_one",
+      "passed": true,
+      "note": "nothing cancels the 12 -- this is what makes the denominator survive into the prefactor"
+    },
+    {
+      "name": "colour_blind_denominator_is_two",
+      "passed": true
+    },
+    {
+      "name": "uniform_six_is_the_denominator_ratio",
+      "passed": true,
+      "note": "12/2 = 6: the uniform 6 is the ratio of the two conventions' interface denominators"
+    },
+    {
+      "name": "product_model_holds_on_all_six",
+      "passed": true,
+      "note": "prefactor = 2^(#averaged) * den_content(d_iface); A=1 has no interface and gets 2^(2A) with no 12, as an arithmetic consequence rather than a measurement"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "ae93e14891fb",
+  "scriptCommitSha": "3375bc24f5f2fc77685929b0dd62f865b7e6787e",
+  "commitSha": "47424dec6ce53035e4c28c12acb27943cd3349c2",
+  "engine": "sympy",
+  "computedAt": "2026-08-24T17:06:02.083718+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/d_frame_interface_twelve_derivation_probe.py"
+}

@@ -94,6 +94,7 @@ from codata_constants import (
     M_P_MEV_VALIDATION as M_P_MEV,
     M_N_MEV_VALIDATION as M_N_MEV,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Constants
 Q0 = Q_MP
@@ -198,7 +199,7 @@ def term4_frobenius_codim_at_q0(A: int) -> mp.mpf:
     """Term 4 in raw units: Σ_λ 1/dim_q(λ) over partitions of 3A."""
     from hecke_characters import partitions_of, young_hooks, qfac
     n = 3 * A
-    nfac_val = mp.mpf(qfac(n))
+    nfac_val = mp.mpf(qfac(n, Q0_PROTON))
     qi = 1 / Q0
     denom = Q0 - qi
     total = mp.mpf(0)

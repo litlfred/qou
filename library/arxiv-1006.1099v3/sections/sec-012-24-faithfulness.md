@@ -7,7 +7,7 @@ section_number: 2.4
 pages: 13-16
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 Lemma 2.8 (Thurston). Let Σ g be a closed surface and σ ⊂ Σ g a separating simple closed
 curve. There is another separating simple closed curve σ′⊂ Σ g for which the products τ k

@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "hal-01215114",
+ "source_sha256": "c70f8b04a5542a1f",
+ "brief": "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials — In this paper we establish a new combinatorial formula for zonal polynomials in terms of",
+ "extended": "**FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials**\n\n*Valentin Féray1 and Piotr Śniady2,3*\n\n12 pp, 18 sections.\n\n**Abstract.** In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes.\n\n**Outline.** Introduction; Symmetric functions; Notations; Jack symmetric functions and zonal polynomials; Pair partitions; The main result; Zonal polynomials in terms of pair-partition; Application; Combinatorial interpretation; Links between pair-partitions and zonal charac; Proof of Theorem 3; Combinatorial lemmas; Orthogonality; Normalization; Combinatorial formulas for zonal characters; Via numbers of embeddings; In terms of free cumulants; Conclusion",
+ "tokens": {
+  "brief": 47,
+  "extended": 375
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-symmetric-functions",
+   "title": "Symmetric functions",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-notations",
+   "title": "Notations",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-jack-symmetric-functions-and-zonal-polynomials",
+   "title": "Jack symmetric functions and zonal polynomials",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-pair-partitions",
+   "title": "Pair partitions",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-the-main-result",
+   "title": "The main result",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-zonal-polynomials-in-terms-of-pair-partition",
+   "title": "Zonal polynomials in terms of pair-partition",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-007-application",
+   "title": "Application",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-008-combinatorial-interpretation",
+   "title": "Combinatorial interpretation",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-009-links-between-pair-partitions-and-zonal-characte",
+   "title": "Links between pair-partitions and zonal characters",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-010-proof-of-theorem-3",
+   "title": "Proof of Theorem 3",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-011-combinatorial-lemmas",
+   "title": "Combinatorial lemmas",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-012-orthogonality",
+   "title": "Orthogonality",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-013-normalization",
+   "title": "Normalization",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-014-combinatorial-formulas-for-zonal-characters",
+   "title": "Combinatorial formulas for zonal characters",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-015-via-numbers-of-embeddings",
+   "title": "Via numbers of embeddings",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-016-in-terms-of-free-cumulants",
+   "title": "In terms of free cumulants",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-017-conclusion",
+   "title": "Conclusion",
+   "pages": "11-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

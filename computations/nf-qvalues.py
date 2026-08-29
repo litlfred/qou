@@ -359,5 +359,10 @@ WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # script
 witness["scriptFile"] = Path(__file__).name
 out_path = Path(__file__).resolve().parent / "nf-qvalues.witness.json"
 with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
+    # `default=str` renders an mpf at full precision. Without it this
+    # hand-rolled dump raises "Object of type mpf is not JSON
+    # serializable" now that the CODATA constants are mpf; it is the
+    # same serialization the canonical WitnessBuilder path uses
+    # (qou_substrate/witness.py).
+    json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness → {out_path.name}")

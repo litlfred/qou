@@ -1,0 +1,271 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2406.02111v3",
+ "source": {
+  "file": "2406.02111v3.pdf",
+  "sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
+  "bytes": 749608,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2406.02111",
+   "version": "3",
+   "primary_class": "gr-qc",
+   "stamp_date": "29 Aug 2024"
+  },
+  "doi": null,
+  "title": "Categorical Quantum Volume Operator",
+  "authors_raw": "Alexander Hahn ,1,\u2217 Sebastian Murk ,2,\u2020 Sukhbinder Singh,3,\u2021 and Gavin K. Brennen 1,\u00a7",
+  "title_lines": [
+   "Categorical Quantum Volume Operator"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240830001340Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Categorical Quantum Volume Operator",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Volume Operator in Loop Quantum Gravity",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Spin networks and graph states",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum tetrahedron",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Volume operator",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Chakrabarti's derivation of the volume operator",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Categorification of the Volume Operator",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "String diagrams",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Derivation of the categorical volume operator",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Beyond ribbon fusion categories",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hermiticity of the categorical volume operator",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Recovering the Standard SU(2) Volume Operator",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Spectrum of the SU(2)k Volume Operator",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Discussion and Conclusions",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix: Basic Concepts in Category Theory",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 8292,
+   "n_words": 1306
+  },
+  {
+   "id": "sec-001-quantum-tetrahedron",
+   "number": null,
+   "title": "Quantum tetrahedron",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1811,
+   "n_words": 281
+  },
+  {
+   "id": "sec-002-volume-operator",
+   "number": null,
+   "title": "Volume operator",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1089,
+   "n_words": 175
+  },
+  {
+   "id": "sec-003-spin-networks-and-graph-states",
+   "number": null,
+   "title": "Spin networks and graph states",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 8640,
+   "n_words": 1527
+  },
+  {
+   "id": "sec-004-string-diagrams",
+   "number": null,
+   "title": "String diagrams",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3271,
+   "n_words": 639
+  },
+  {
+   "id": "sec-005-derivation-of-the-categorical-volume-operator",
+   "number": null,
+   "title": "Derivation of the categorical volume operator",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6469,
+   "n_words": 1286
+  },
+  {
+   "id": "sec-006-beyond-ribbon-fusion-categories",
+   "number": null,
+   "title": "Beyond ribbon fusion categories",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3449,
+   "n_words": 671
+  },
+  {
+   "id": "sec-007-hermiticity-of-the-categorical-volume-operator",
+   "number": null,
+   "title": "Hermiticity of the categorical volume operator",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 8963,
+   "n_words": 1743
+  },
+  {
+   "id": "sec-008-discussion-and-conclusions",
+   "number": null,
+   "title": "Discussion and Conclusions",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 4519,
+   "n_words": 704
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 18482,
+   "n_words": 3112
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 10,
+  "chars_total": 64985
+ }
+}

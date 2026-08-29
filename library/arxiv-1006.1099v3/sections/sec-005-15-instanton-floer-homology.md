@@ -7,7 +7,7 @@ section_number: 1.5
 pages: 4-6
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 section, deﬁned by a monodromy map h∈ Γ(Σ g,1) in the mapping class group of a once-marked
 surface f −1(pt). Up to isomorphism there is a unique non-trivial SO(3)-bundle E→ f −1(pt),

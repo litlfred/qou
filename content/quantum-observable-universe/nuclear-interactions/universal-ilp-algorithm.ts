@@ -27,7 +27,21 @@ export default definition({
     engine: "python",
     script: "computations/universal-ilp.py",
     witness: "computations/universal-ilp.witness.json",
-    status: "failed",
+    // `error`, not `failed`: main's vocabulary, kept. This merge briefly
+    // carried BOTH — my `failed` above main's `error` — which TypeScript
+    // accepts as a duplicate key with the last one silently winning. A
+    // conflict resolved by "keep both sides" is safe for an array of notes
+    // and is not safe for an object key.
+    // NOT "verified" — the producer cannot regenerate this witness (bean
+    // `qou-uilp`). `universal-ilp.py` calls `apply_atom_nf` at :191/:202 for
+    // LEVEL 4 (H₂ bond) and LEVEL 4b (C-C bond); that function has never been
+    // defined anywhere in the repo (`git log -S'def apply_atom_nf'` is empty),
+    // so the run raises NameError before `results['bond_HH']` is assigned.
+    // The committed witness (computedAt 2026-04-14) reports both bond values
+    // regardless. The `witness` link is KEPT — that file is genuinely the
+    // artifact this block refers to, and it is the only surviving record of
+    // the April computation. What was false is the status.
+    status: "error",
   },
   authorNotes: [
     {

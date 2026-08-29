@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Σ q^{k(k+1)}[n,k]_q = Σ q^{k(n+1)}[n,k]_{q⁻¹} machine-exactly — eq (161) in the (★) shape"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "H₀ = 1 and H₁ = −q²−q⁴ as printed in GGMW §4.2"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the corpus's C52(n), read as a q-series at q = a², equals GGMW eq (161) H_n^{5₂}(q) term-by-term as integer Laurent polynomials"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 11.0,
       "expected": 11.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "every level 0..N_MAX compared and classified"
     }
   ],

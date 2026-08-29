@@ -7,7 +7,7 @@ section_number: 4
 pages: 30-33
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 4.1. The F ukaya category of a quadric. Recall from Equation 1.2 we are supposed to identify,
 categorically, a pair of points S0 and a smooth even-dimensional quadric Q. For completeness,

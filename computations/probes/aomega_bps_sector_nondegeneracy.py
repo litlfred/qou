@@ -25,6 +25,9 @@ polynomial at t = -1 (calibrated on the trefoil against the KRSS worked example)
 import json
 import datetime
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 def det_from_alexander(coeffs_at_minus1):
     """|Δ_K(-1)| = knot determinant = rank of thin reduced HOMFLY/Kh homology
@@ -114,8 +117,17 @@ def main():
             "internal QOU-driver derivation still open (qou-qnnq)."
         ),
     }
-    out = "computations/probes/aomega-bps-sector-nondegeneracy.witness.json"
+    out = _HERE_W / "aomega-bps-sector-nondegeneracy.witness.json"
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print(f"open-sector 4_1 count = {open_count_4_1} (det); reproduces {{3,4}}? {open_reproduces}")
     print(f"closed-sector reduced-Stokes = {reduced_stokes} ∈ {ggm_dt_spectrum}? {closed_reproduces}")

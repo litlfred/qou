@@ -7,7 +7,7 @@ section_number: 3.4
 pages: 64-65
 source_pdf: 0105186v2.pdf
 source_sha256: e1552ceb6c82c27c
-doc_brief: "A long exact sequence for symplectic Floer cohomology — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
+doc_brief: "Along exact sequence for symplectic Floer cohomology Paul Seidel — 45 sections: Introduction; Dehn twists, and all that; Exact symplectic geometry and ﬁbra"
 ---
 At this point it becomes necessary to change the notation sli ghtly, in order to
 avoid conﬂicts. Thus, the ﬁbration used in Section 3.2 to deﬁ ne the map b will

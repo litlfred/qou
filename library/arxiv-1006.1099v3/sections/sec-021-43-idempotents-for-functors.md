@@ -7,7 +7,7 @@ section_number: 4.3
 pages: 36-37
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 categories. We begin by recalling the construction of a split-closure . An idempotent up to
 homotopy for an object Y ∈ A is an A∞-functor from K to A taking the unit of the ﬁeld to Y .
