@@ -61,21 +61,47 @@ is **both, and neither is news** — bean `qou-2wtx` had already bisected it:
 match `qou-2wtx`'s predicted regeneration to every digit. Re-running the leg on
 current `main` confirms the O(1) term is gone:
 
-| atom | before (C-era peel) | now |
-|---|---|---|
-| proton | — | 7.89e-08 |
-| neutron | — | 6.99e-08 |
-| deuteron | — | 1.52e-07 |
-| triton | **1.20e+00** | 1.98e-07 |
-| helium-3 | **9.55e-01** | 2.53e-07 |
+| atom | before (C-era peel) | now | wall |
+|---|---|---|---|
+| proton | — | 7.89e-08 | 0 s |
+| neutron | — | 6.99e-08 | 0 s |
+| deuteron | — | 1.52e-07 | 0 s |
+| triton | **1.20e+00** | 1.98e-07 | 1 s |
+| helium-3 | **9.55e-01** | 2.53e-07 | 1 s |
+| helium-4 | **1.91e+00** | **2.99e-07** | **1499 s** |
 
-A **10⁷× improvement**, from a fix that landed elsewhere. What remains is
-`qou-2wtx`'s *defect 2*, the pin straddle: the peel reference is stamped
-`proton` while this leg resolves `ideal_muon`. ~1e-7 is the μ–p tension
-accumulated across the word.
+Worst `|Δ|/ref` **1.91e+00 → 2.99e-07**, a **6.4e6× improvement**, from a fix
+that landed elsewhere. What remains is `qou-2wtx`'s *defect 2*, the pin
+straddle: the peel reference is stamped `proton` while this leg resolves
+`ideal_muon`. ~1e-7 is the μ–p tension accumulated across the word — and it is
+the same scale as the 2.9066e-07 the L1 cross-check reports for helium-4 in
+item 5, from the other direction.
 
 **It still FAILS its 1 ppQ assertion, and that is correct.** 1e-7 is eight
-orders above 1e-15. The honest state is a much smaller red, not a green.
+orders above 1e-15. `allPassed` moves True → False, which is the pass→fail
+regression `qou-2wtx` recorded, now landed with its cause removed rather than
+concealed. The honest state is a much smaller red, not a green.
+
+### The budget, measured — and it is NOT the 996 s on record
+
+**Total 1501 s (25.0 min); helium-4 alone is 1499 s, 99.9 % of it.** Bean
+`qou-2wtx` measured 996 s for the same producer on 2026-08-24. Both runs are
+real; the 1.5× difference is not explained here and should not be read as a
+regression. Two candidates, neither tested: this container is slower, or the
+convention-D peel regeneration changed the work. **Budget 1500 s, not 996 s**,
+and expect the whole cost to sit in the last atom.
+
+The practical note from `qou-2wtx` still holds and is worth repeating: the five
+cheap atoms take ~2 s combined **and every one of them fails too**, so any
+hypothesis about this producer is testable in seconds rather than 25 minutes.
+
+### It clears its `Q0_FLIP` honestly
+
+`q0Value` moves `1.109978595557334…` (**A**) → `1.109978595642739…` (**C**) with
+`q0Anchor` staying `muon` — the A→C re-pin, not a stamp change. This producer is
+on the **resolve** side of the partition (it reads `derived_50_digit.q` and
+asserts the C prefix), so the re-run migrates arithmetic and stamp together.
+`Q0_FLIP 3 → 2`, `Q0_OK 1032 → 1033`.
 
 ## 3 — the three `Q0_FLIP`: reproduced, and they are not re-stamping work
 
