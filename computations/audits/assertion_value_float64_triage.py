@@ -42,6 +42,7 @@ Writes no witness. Read-only over committed artifacts.
 from __future__ import annotations
 
 import argparse
+import ast
 import collections
 import glob
 import json
@@ -89,6 +90,18 @@ def is_intlike(v) -> bool:
 # as mpmath computations, which is its own defect -- but the fix is upstream
 # precision (mpf(str(CONST)) at the constant, plus a real dps), not a
 # serialization change at the assertion. Different job, different bean.
+#
+# 🛑 AND A VALUE THAT "ROUND-TRIPS THROUGH FLOAT64" IS NOT PROOF OF EITHER
+# BUCKET. This looks like the decisive runtime test the static split cannot
+# give you, and it is not. Measured over the 302 fields drained in the first
+# pass, the test flagged 55 -- and all 55 were EXACT residuals of the form
+# k * 2^-235 for k in {0.5, 1, 1.5, 2, 3}, the ULP scale of a ~71-dps
+# computation, meaning "the two sides agreed to within a few ULPs". A power of
+# two is exactly representable in binary64, so those values survive the round
+# trip losslessly however many decimal digits they take to write, and every
+# digit printed is true. "Rendered from a double" and "exactly representable
+# in a double" leave IDENTICAL numerical evidence; only provenance separates
+# them. Use the signal to flag for reading, never to decide.
 _DPS_RAISE = re.compile(
     r"mp\.dps\s*=\s*(\d+)|mp\.mp\.dps\s*=\s*(\d+)|set_compute_dps\s*\(")
 
@@ -104,8 +117,93 @@ def _producer_index() -> dict:
     return idx
 
 
+def _module_level_dps_raise(path) -> str | None:
+    """The dps raise this module performs AT IMPORT, or None.
+
+    NOT USED BY `classify_producer` -- read the note there before wiring it in.
+    Kept because it is the correct implementation of the question it asks, and
+    the two wrong implementations that preceded it are worth not writing again.
+
+    AST, not regex, and deliberately so. The regex version read the file
+    line-wise and skipped comments by testing `line[0] != "#"` -- which let
+    through a DOCSTRING line beginning with a backtick. `knot_volumes.py`
+    documents its API in prose containing the words `dps=100` and
+    `set_compute_dps`, and three producers were reclassified on the strength of
+    that sentence. An AST walk cannot match prose.
+
+    Module level ONLY, and `def`/`class` bodies are skipped: a module-level
+    `def go(): mp.dps = 90` DECLARES a raise, it does not perform one, so
+    walking into it would call the module an import-time raiser. (Both errors
+    were caught by this module's selftest, not by review.)
+    """
+    try:
+        tree = ast.parse(pathlib.Path(path).read_text(encoding="utf-8",
+                                                      errors="replace"))
+    except Exception:
+        return None
+    for node in tree.body:
+        # A def/class at module level DECLARES a body; it does not run it, so
+        # walking into it would count `def go(): mp.dps = 90` as an import side
+        # effect. (Caught by this module's own selftest, syn_fn_only.)
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef,
+                             ast.ClassDef)):
+            continue
+        for sub in ast.walk(node):
+            if (isinstance(sub, ast.Call) and isinstance(sub.func, ast.Name)
+                    and sub.func.id == "set_compute_dps"):
+                return "set_compute_dps()"
+            if isinstance(sub, ast.Assign):
+                for t in sub.targets:
+                    if isinstance(t, ast.Attribute) and t.attr == "dps":
+                        v = getattr(sub.value, "value", None)
+                        if isinstance(v, int) and v > 15:
+                            return f"mp.dps={v}"
+    return None
+
+
+def _imported_modules(path) -> list:
+    try:
+        tree = ast.parse(pathlib.Path(path).read_text(encoding="utf-8",
+                                                      errors="replace"))
+    except Exception:
+        return []
+    out = []
+    for n in ast.walk(tree):
+        if isinstance(n, ast.ImportFrom) and n.module:
+            out.append(n.module.split(".")[0])
+        elif isinstance(n, ast.Import):
+            out.extend(al.name.split(".")[0] for al in n.names)
+    return out
+
+
 def classify_producer(script_file, index) -> str:
-    """'A' (mpf real) / 'B' (float64-equivalent) / 'C' (producer not found)."""
+    """'A' (mpf real) / 'B' (float64-equivalent) / 'C' (producer not found).
+
+    🛑 THIS IS A STATIC HEURISTIC AND IT CANNOT SETTLE THE QUESTION. Read
+    before quoting its split (recorded 2026-08-29, after getting it wrong in
+    both directions in one sitting).
+
+    The A/B question is a RUNTIME property -- "did the mpf handed to the builder
+    carry more than binary64's digits?" -- and no reading of the source answers
+    it:
+
+      * File-local reading misses precision that arrives from elsewhere.
+      * So I added a one-hop import-cone check and reported 13 producers / 52
+        fields as misfiled. THAT NUMBER WAS WRONG and is retracted. Its top
+        entry inherited `set_compute_dps()` from `mass_at_3A_proper`, where the
+        call sits INSIDE A FUNCTION under a docstring saying callers must
+        invoke it themselves -- so importing raises nothing. The hits came from
+        an `ast.walk` that descended into `def` bodies.
+      * And the corrected version is not right either, only differently wrong:
+        a function-level raiser IS a real raise when the producer calls it, and
+        an import-side-effect test scores that as B.
+
+    So this stays FILE-LOCAL, which is the cheap approximation, and the honest
+    verdict lives at the drain: removing a cast and finding the emitted value
+    round-trips exactly through float64 proves it was float64-equivalent no
+    matter what the source looked like. Treat the A/B split below as a work
+    ORDER, never as evidence about any single producer.
+    """
     if not script_file:
         return "C"
     prod = index.get(os.path.basename(script_file))
@@ -227,9 +325,14 @@ def selftest() -> int:
 
     cases = [
         ("channel_product_mass.py", "B",
-         "the #1 offender: imports mpmath, never raises dps"),
+         "the #1 offender: imports mpmath, never raises dps — and its import "
+         "cone does not either, so the one-hop check must NOT rescue it"),
         ("probe_he4_canonical_tr_m_fingerprint.py", "A",
          "top of bucket A: dps genuinely raised"),
+        ("probe_9b_laurent_degree_10a5.py", "B",
+         "no dps raise of its own. A one-hop import check promoted it to A on "
+         "mass_at_3A_proper's set_compute_dps() — which is INSIDE A FUNCTION, "
+         "so importing raises nothing. Pinned as B to keep that retracted."),
     ]
     for name, want, why in cases:
         if name not in idx:
@@ -249,9 +352,26 @@ def selftest() -> int:
             "syn_low.py": ("B", "from mpmath import mp\nmp.dps = 15\n"),
             "syn_high.py": ("A", "from mpmath import mp\nmp.dps = 60\n"),
             "syn_helper.py": ("A", "from qou_substrate.precision import set_compute_dps\nset_compute_dps()\n"),
+            # --- the one-hop import cone -------------------------------------
+            "syn_dep_raises.py": (None, "from mpmath import mp\nmp.dps = 80\n"),
+            "syn_dep_prose.py": (None,
+                                 '"""Call `set_compute_dps()` yourself; this'
+                                 ' module does not.\n\n`mp.dps = 100` is the'
+                                 ' caller\'s job.\n"""\nX = 1\n'),
+            "syn_dep_infn.py": (None,
+                                "from mpmath import mp\n"
+                                "def go():\n    mp.dps = 90\n"),
+            # B, deliberately: the classifier is FILE-LOCAL. A one-hop import
+            # check that promoted this to A was tried and retracted — see
+            # classify_producer's note. Pinned so it is not silently re-added.
+            "syn_inherits.py": ("B", "import syn_dep_raises\nx = 1\n"),
+            "syn_prose_only.py": ("B", "import syn_dep_prose\nx = 1\n"),
+            "syn_fn_only.py": ("B", "import syn_dep_infn\nx = 1\n"),
         }
         local = {n: mk(n, s) for n, (_, s) in syn.items()}
         for n, (want, _) in syn.items():
+            if want is None:        # a dependency fixture, not a case
+                continue
             got = classify_producer(n, local)
             good = got == want
             ok &= good
