@@ -2052,6 +2052,13 @@ Do not regress either.
 >   it is tracked as bean `qou-961o` with the rename proposal and the
 >   `lean`-direct verification recipe.
 >
+>   **RESOLVED 2026-08-29 (session tender-keller).** The three C `markovZ` were
+>   renamed so bare `markovZ` now means convention D uniformly:
+>   `EigenphaseCarrierVacuity` and `q-beta-cos-resummation` → `markovZC`;
+>   `HoefsmitV21CosSymmetrization`'s convention-neutral kernel → `cosKernel`.
+>   All three are file-local (no cross-file consumers) and `lean`-direct clean;
+>   the 10 D declarations keep the `markovZ` name (one convention, no collision).
+>
 >   **And the `computations/` figure is NOT a measurement of the C surface.**
 >   26 → 9 is real drain, but both numbers count only what a shape-matcher can
 >   see. Measured by VALUE with
