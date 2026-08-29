@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-28T20:47:44Z
+updated_at: 2026-08-29T00:14:00Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -2217,3 +2217,34 @@ The (1^3)-weight numerator factors over any CommRing as (z-q)*((q^2+1)z-q^3), so
 admissible_markov_param_iff proves roots = {q, z_D} exactly and one_not_root proves
 z=1 (net) excluded on the substrate window. The base side of the re-derivation is
 now on a Lean foundation; the ladder/correction side (74x-257x) stays open.
+
+## 2026-08-29 — TAKEOVER of the ladder/correction side (owner directive)
+
+Owner: take over the cds1 ladder/correction side if not active in 2h. Checked:
+- #5897 (element-identity fork) last commit 2026-08-28T23:53Z (7 min) — ACTIVE, left alone.
+- #5337 (claude/qbeta-f-coordinate, the ladder/correction side) last commit
+  2026-08-19T20:30Z (9 days), still DRAFT, body says 'work starting, nothing
+  claimed yet'. Stale tip db4beedfa0. Its stated goal (fold the Wenzl two-row
+  cap into the D decay correction) is UNSTARTED — the F-coordinate bridge it
+  cites is already on main.
+Taking over the WORK on my own branch (claude/borel-alien-calculus-n24484,
+from main); NOT force-pushing #5337's branch. Goal: compute the parameter-free
+two-row-capped correction under D (base = admissible aug/tr_M, must close
+12.47%/43.16% residual), falsifiable, no fit.
+
+## 2026-08-29 — ladder/correction side: no parameter-free admissible correction (takeover result)
+
+Systematic enumeration of parameter-free correction candidates on BOTH admissible
+bases (probe qbeta_d_frame_admissible_base_correction_search_probe.py, audit
+2026-08-29-cds1-admissible-base-correction-search.md):
+- tr_M base (z_D): F_required=1.75924, closest q^6 at 6.31% => WALLED.
+- augmentation base (z=q): F_required=0.88913; sqrt(1-h)=0.889348 lands 0.025%
+  but is DIAGNOSED as the forbidden z=1 return — base ∝ affine trace
+  tr_M(Delta_S)=h^2/2-h*z, so F_required = the trace's z=q->z=1 ratio
+  (h/2-1)/(h/2-q) to 0.17% (net-vs-CODATA gap; base ratio agrees 1.3e-11).
+  Correcting aug back to CODATA = return to inadmissible net(z=1). Not adopted.
+VERDICT scope-(a): no parameter-free ADMISSIBLE correction; the sub-0.1% near-match
+is the forbidden z=1 return in disguise. Extends the two-row-cap prune (13.6x) to
+both bases; closes #5337's stated question. Open core sharpened: the accurate value
+lives at inadmissible z=1, so a genuinely different D construction (not tr_M(Delta)
+at a single z) is needed. Nothing wired.
