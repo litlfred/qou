@@ -16,7 +16,7 @@ The proof decomposes into:
 2. The partial-fraction decomposition of Z(B, t)⁻¹ via the eigenvalues
 3. Contour integration (residue sum) producing the spectral terms
 
-LaTeX: `\label{thm:explicit-formula}`
+LaTeX: `\label{conj:explicit-formula}`
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
