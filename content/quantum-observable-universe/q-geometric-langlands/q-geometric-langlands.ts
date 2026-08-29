@@ -130,7 +130,7 @@ export default chapter({
         "spectral-half-line",
         // P3 reorder (2026-05-19): unitary-stability moved before
         // geometric-rh-exposition. unitary-stability uses
-        // cor:spectral-half-line and thm:explicit-formula (both
+        // cor:spectral-half-line and conj:explicit-formula (both
         // already earlier); geometric-rh-exposition uses
         // unitary-stability for narrative interpretation. The
         // detangler-watcher flagged geometric-rh-exposition →
