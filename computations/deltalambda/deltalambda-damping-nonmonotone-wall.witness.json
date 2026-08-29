@@ -1,10 +1,10 @@
 {
  "engine": "mpmath",
  "engineVersion": "mpmath 1.4.1",
- "computedAt": "2026-08-28T20:24:30.903904+00:00",
- "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+ "computedAt": "2026-08-29T01:24:30.298935+00:00",
+ "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
  "scriptFile": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
- "scriptHash": "f68ae737f740",
+ "scriptHash": "046463073bf6",
  "assertions": [
   {
    "name": "A3_undershoot_no_damping_closes_it",
@@ -72,5 +72,9 @@
   "The exclusion is scope-(b) STRUCTURAL, cited invariant = monotone-≤1 action of a damping together with the q0 A=3 undershoot. It excludes the pure-DAMPING class only; per the permanence principle [A]_q! remains a valid ingredient — an additive many-body TERM that re-weights it (sign-changing in A) is NOT excluded and is the remaining open target.",
   "Fixed canonical q0 (muon-canonical computations layer). Setting q≈1.26 to reach A=3 with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob."
  ],
- "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md"
+ "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "durationMs": 0,
+ "q0Anchor": "independent",
+ "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/deltalambda_kappa_interface_residual_simplex_probe.py",
   "description": "\u0394_\u03bb frustration weight \u03ba: the #4316 bond\u2212frustration model (M(A)=s(edges\u2212\u03ba\u00b7triangles), s>0) is REFUTED at the deuteron \u2014 the DERIVED third point M(2)=0 (graded self-reference) forces its edge coefficient s=0, so \u03ba=t/s is ill-posed and the fitted \u03ba=2.385 is an A=3,4-only artefact. The exact 0-parameter simplex (Mayer) decomposition over the derived C(A,k) basis gives \u03bc\u2082(edge)=0, \u03bc\u2083(triangle)=+0.4708, \u03bc\u2084(tetra)=\u22124.591 \u2014 a PURE \u22653-body residual, tetrahedron-dominant-negative, matching the \u03c1_F full-binding Mayer b\u2084/b\u2082=4.16 dominance. VERDICT: WALL for \u03ba + redirect; derivation target is \u03bc\u2084 (4-body \u03b1-cluster residual), reachable via \u03c1_F cluster integrals (pyhecke_native present) but requiring the residual cluster-integral compute. Anti-fit STRICT: \u03ba=2.385 labelled a FIT; \u03bc\u2082=0 is the AME-independent derived fact; nothing wired.",
-  "scriptHash": "3f2c1a1464c5cd85",
+  "scriptHash": "1eb2095e0c07",
   "results": {
     "substrate": {
       "q0": "1.109978595557334719899763220483225026656"
@@ -64,8 +64,12 @@
       "anti_fit": "\u03ba=2.385 explicitly labelled a FIT (A=3,4-only, refuted at A=2). \u03bc\u2082,\u03bc\u2083,\u03bc\u2084 are the SAME AME residuals in the derived simplex basis; \u03bc\u2082=0 is the derived, AME-independent fact. Nothing wired."
     }
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595557334719899763220483225026656",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "deltalambda_kappa_interface_residual_simplex_probe.py",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:24:03.928029+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

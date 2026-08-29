@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T00:17:02.288719+00:00",
-  "commitSha": "897bfa7b5676eba8a8c65ac13dc04e0bc7b93513",
+  "computedAt": "2026-08-29T01:27:11.842526+00:00",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
   "assertions": [
     {
       "name": "klein_f_leading_coefficient_one",
@@ -38,10 +38,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "gap-a4-T11-klein-J-invariant-probe",
   "scriptFile": "gap_a4_T11_klein_J_invariant_probe.py",
-  "scriptHash": "113e4d7da00a",
+  "scriptHash": "63eeda2e0a89",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -111,5 +111,7 @@
       "formalize_first_discipline": "No h-coefficient candidate proposed.  Per AGENTS.md no-7th-ansatz rule, the icosahedral q-deformation is a concrete bounded computation but exceeds this scaffold's scope.  Defer to a dedicated probe series."
     },
     "synthesis_verdict": "T11 sets up the Klein J-invariant direction structurally and verifies (a) the polynomial degrees (f deg 12, H deg 20, T deg 30) with H = Hessian of f and T = Jacobian of f, H; (b) the Klein syzygy 1728·f^5 = T² + H³ at z = 0 (trivial check); (c) the J-invariant orbit values (J = 0 at vertex orbit, 1 at face orbit, ∞ at edge orbit); (d) the Riemann-Hurwitz identity 118 = 48 + 40 + 30 for the icosahedral covering ℂP¹ → ℂP¹/I. The h-deformation question stays OPEN: whether an icosahedral q-Klein invariant carries the Borromean h⁴ = −3/4 is NOT addressed in this scaffold per formalize-first discipline (no-7th-ansatz). Implementing the q-icosahedral analogue of the Eisenstein series would be a substantial follow-up (~500+ lines symbolic+numeric); deferred to a dedicated probe series if pursued."
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "structural probe: Klein J-invariant degrees, syzygy, orbit values and Riemann-Hurwitz; no q0 in the import cone"
 }

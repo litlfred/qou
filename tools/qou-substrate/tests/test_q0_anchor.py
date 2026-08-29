@@ -484,19 +484,31 @@ def test_payload_evidence_does_not_move_any_value():
 # ── q0_anchor=False: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
 
 
-def test_false_stamps_no_anchor_at_all():
-    """A producer that never touches q₀ gets no anchor, not a resolved one.
+def test_false_declares_independence_and_stamps_no_pin():
+    """A producer that never touches q₀ DECLARES that; it does not get a pin.
 
     The resolver has no "no anchor" outcome, so before this existed every
     caller got a pin whether or not the numbers depended on one — and an inert
-    stamp is byte-identical to a load-bearing one.
+    stamp is byte-identical to a load-bearing one. That is what this guards,
+    and it still holds: no proton, no muon, no q0Value.
+
+    CONTRACT CHANGED (bean qou-y98b): `False` now stamps
+    `q0Anchor: "independent"` rather than omitting the field. Omission was
+    byte-identical to never having asked, so a correctly-migrated
+    q0-independent producer was indistinguishable from an unmigrated one, and
+    `q0_anchor_ratchet.py --strict` counted it as Q0_ANCHOR_MISSING and failed
+    on it. "independent" asserts no pin, so it does not reintroduce the inert
+    anchor this branch exists to prevent — it is an established verdict of
+    `q0_anchor_consistency_audit.py` (Q0_INDEPENDENT).
     """
     payload = {"result": 42}
     w.WitnessBuilder.stamp_staleness_metadata(
         payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
     )
-    assert "q0Anchor" not in payload
-    assert "q0Value" not in payload
+    assert payload["q0Anchor"] == "independent"
+    assert payload["q0AnchorReason"]          # audit reports _NO_REASON otherwise
+    assert "q0Value" not in payload           # the original point: NO pin
+    assert payload["q0Anchor"] not in ("proton", "muon")
 
 
 def test_false_still_stamps_the_provenance_fields():
@@ -521,7 +533,10 @@ def test_false_beats_payload_evidence():
     w.WitnessBuilder.stamp_staleness_metadata(
         payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
     )
-    assert "q0Anchor" not in payload
+    # The declaration still wins over the payload's q₀-looking number: the
+    # result is "independent", NOT the muon pin that evidence would resolve to.
+    assert payload["q0Anchor"] == "independent"
+    assert "q0Value" not in payload
 
 
 def test_none_and_str_are_unchanged_by_the_new_branch():

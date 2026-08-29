@@ -1,10 +1,10 @@
 {
  "engine": "mpmath",
  "engineVersion": "mpmath 1.4.1",
- "computedAt": "2026-08-28T20:24:31.645365+00:00",
- "commitSha": "9609454ed84d6d6270e25699ea0e467cbe7bf63a",
+ "computedAt": "2026-08-29T01:24:30.524781+00:00",
+ "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
  "scriptFile": "computations/deltalambda/deltalambda_graded_two_anchor_nogo_probe.py",
- "scriptHash": "f7f5da7d8ed4",
+ "scriptHash": "85b3c0556d04",
  "assertions": [
   {
    "name": "step_lock_q4_ge_4_all_q_ge_1",
@@ -75,5 +75,9 @@
   "ρ_strong(3), ρ_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as bounds, never inverted. No fit; nothing wired.",
   "Invariants (S) step-lock and (M) monotonicity are q-independent / AME-independent (scope-(b), proved sorry-free in the companion Lean). (N) is a comparison no-go."
  ],
- "auditOnly": "docs/audits/2026-07-25-deltalambda-perpair-bond-scalar.md"
+ "auditOnly": "docs/audits/2026-07-25-deltalambda-perpair-bond-scalar.md",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "durationMs": 0,
+ "q0Anchor": "independent",
+ "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

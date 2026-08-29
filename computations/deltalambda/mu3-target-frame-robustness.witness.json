@@ -5,7 +5,7 @@
   "description": "Frame-robustness of the \u03bc\u2083 (A=3 magnitude) target. \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small residual (\u22480.47) that is a difference of two O(3.5) numbers, so \u2014 like g\u2082=1+r \u2014 it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline. Measured across three legitimate deuteron-normalized A-scaling baselines (graded coinvariant dimension = CORPUS #4300, balanced quantum dimension, classical q\u21921) the SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust but \u03bc\u2083's MAGNITUDE swings by a factor comparable to / exceeding the 1.6\u00d7 gap the closure attempts target. Hence the '1.6\u00d7 A=3 magnitude gap' is baseline-CLASS-relative, not absolute. scope-(a) CAVEAT (not a refutation of the principled graded-dimension route): closure attempts must state their baseline. Anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) frame-robustness measurement (baseline-class spread of the \u03bc\u2083 target); no fit; nothing wired",
-  "scriptHash": "b130535ac6e927dc",
+  "scriptHash": "9c5f61571fe3",
   "result": {
     "substrate": {
       "q0": "1.10997859555733471",
@@ -151,8 +151,12 @@
     "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
     "no_fit": true
   },
-  "scriptCommitSha": "b71822016e0c868380498baa597b9edd88a79026",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "mu3_target_frame_robustness_probe.py",
+  "commitSha": "c8f9fb47da234cfba4dd14c9b9a3802acb0dd116",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:24:04.418829+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
