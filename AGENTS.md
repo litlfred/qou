@@ -2026,7 +2026,9 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirteen** distinct detector-blind spellings, four of which were
+>   catalogues **sixteen** distinct detector-blind spellings (this said *thirteen*
+>   and was itself stale — the table already ran to 15 on 2026-08-26, and row 16
+>   landed 2026-08-29), several of which were
 >   found *by* detectors written to catch the previous blind spot. So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
