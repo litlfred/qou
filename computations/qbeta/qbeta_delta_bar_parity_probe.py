@@ -8,8 +8,22 @@ factors as
     N(q,z) = (q^2+1)z^2 - (2q^3+q)z + q^4 = (z - q)*((q^2+1)z - q^3),
 
 so tr_M^z descends to the two-row (Wenzl) quotient iff z is a root, i.e. iff
-z in {q, z_D}.  EXACTLY TWO admissible parameters; z_C and z = 1 (`net`) are
-both excluded, by the SAME criterion.
+z in {q, z_D}.  EXACTLY TWO admissible parameters; z_C and z = 1 are both
+excluded, by the SAME criterion.
+
+SCOPING NOTE (2026-08-29).  An earlier revision of this line wrote "z = 1
+(`net`)", i.e. treated `net` AS tr_M at z = 1.  That is FALSE in general:
+tr_M(z=1) weights the basis by [1,1,1,1,1,h+1] while `net` is the plain
+coordinate sum [1,1,1,1,1,1], so they differ by h times the `e_minus`
+coordinate.  They coincide for BOTH Delta models only because both happen to
+have that coordinate zero -- checked below, not assumed.
+
+And the corpus has a STRONGER, element-independent reason to exclude `net`
+which does not go through z at all: `net` is the functional sigma -> 1, and
+sigma^2 = h*sigma + 1 forces 1 = h + 1, i.e. h = 0.  So `net` is not an
+algebra map, while the augmentation sigma -> q is one (q^2 = hq + 1 exactly
+when h = q - 1/q).  That argument is `qbeta_epsnpq_functional_mismatch_probe`,
+which could not be RUN until PR #5943 fixed its import bootstrap.
 
 That leaves the ELEMENT side open: two objects are both called Delta,
 
@@ -279,6 +293,23 @@ def main() -> int:
           "chi^(2,1)(Delta_S) = 0 while chi^(2,1)(Delta_L) != 0, so no scalar "
           "multiple of one is the other - the fork is not a normalisation", w)
 
+    # net is NOT tr_M at z=1 in general -- only for elements with no e_minus
+    net_gap = sp.simplify(sp.expand(
+        sum(delta_s[i] * TR_BASIS[i].subs(Z, 1) for i in range(N)) - sum(delta_s)))
+    net_gap_l = sp.simplify(sp.expand(
+        sum(delta_l[i] * TR_BASIS[i].subs(Z, 1) for i in range(N)) - sum(delta_l)))
+    c5 = sp.symbols("c5")
+    generic_gap = sp.simplify(h * c5)
+    check("net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes",
+          net_gap == 0 and net_gap_l == 0
+          and sp.simplify(delta_s[5]) == 0 and sp.simplify(delta_l[5]) == 0
+          and generic_gap != 0,
+          "in GENERAL tr_M(z=1) - net = h * (e_minus coordinate), since "
+          "tr_M(z=1) weights the basis [1,1,1,1,1,h+1] and net weights it "
+          "[1,1,1,1,1,1]. Both Delta models have e_minus = 0, so they "
+          "coincide HERE -- but the identity is not general and must not be "
+          "quoted as one", w)
+
     # ---- 2. Q2 - the bar involution DOES separate them --------------------
     print("\n  2. Q2 - the Kazhdan-Lusztig bar involution.  It SEPARATES them.")
 
@@ -426,12 +457,12 @@ def main() -> int:
     w.add_data("adjudicates_the_fork", False)
     w.add_data("wires_anything", False)
 
-    npass = 14 - len(_FAILURES)
-    print(f"\n  {npass}/14 checks passed")
+    npass = 15 - len(_FAILURES)
+    print(f"\n  {npass}/15 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 14)
+    w.add_data("checks_total", 15)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
