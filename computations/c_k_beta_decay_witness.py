@@ -199,7 +199,12 @@ def main() -> int:
     )
     w.add_assertion(
         "geometric_form_equals_exponential_form_to_50dps",
-        computed=float(max_ge_ratio_dev),
+        # fmt(), not float(): this is a 50-dps residual and the cast collapsed
+        # it to binary64. Harmless while it happened to be exactly 0.0 (which
+        # the raw-float64 ratchet excuses as integral), and a REGRESSED gate
+        # the moment a re-run produced a real residual — 9.96e-71 here. The
+        # witness schema types `computed` as number|string precisely for this.
+        computed=fmt(max_ge_ratio_dev),
         expected=0.0,
         tolerance=1e-40,
     )
@@ -207,7 +212,7 @@ def main() -> int:
     # The observation must sit inside the bound (margin ≤ 1).
     w.add_assertion(
         "N0_observed_residual_within_per_braid_bound",
-        computed=float(margin),
+        computed=fmt(margin),
         expected=0.0,
         tolerance=1.0,
     )
