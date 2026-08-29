@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-29T01:22:39Z
-updated_at: 2026-08-29T01:23:27Z
+updated_at: 2026-08-29T01:47:03Z
 ---
 
 Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not
@@ -74,3 +74,56 @@ far more than AGENTS.md's "five other sites". Most are **dated audit docs**,
 which `qou-3nva` explicitly decided to leave as historical records of the
 analysis; that decision stands and I am not overriding it. This bean covers the
 machine-readable and live-code sites only.
+
+
+---
+
+## RESOLVED for the machine-readable + live-code + Lean sites (PR #5942)
+
+**Landed:**
+
+1. `docs/coordination/ck-dk-registry.json` — the c_3 rung note now reads
+   `-2.375%` / `3.84e6` with the correction's provenance inline. Its `.md`
+   twin had carried the fix since 2026-08-25; the JSON had not.
+2. `qbeta_qbessel_crossanchor_smoothness_refutation.py` — the inverted
+   AUTH/SCOPE labels swapped to `_LIVE`/`_SUPERSEDED`, the assertion re-pointed
+   at the live pair and the registry's 3.84e6, and a **second** assertion added
+   pinning what the superseded value produces, so the corpus's 4.6e6 stays
+   *traceable to its cause* rather than merely wrong. Both pass; the verdict is
+   untouched (the assertion the refutation rests on is `> 1e6`, indifferent to
+   which c_3 is used — the point of stating it at 1e6).
+3. `qbeta_habiro_residual_probe.py` — `2.98`/`4.6e6` -> `2.3748`/`3.84e6`.
+   Neither constant enters arithmetic, so no computed number moved.
+4. The **three Lean docstrings** (`SRigidityPrune`, `ImQAnchorCarrier`,
+   `ThetaLipschitzObstruction`). Docstring-only; `check-sidecars.sh` clean.
+
+**The nicest part: one of them had already caught this.**
+`ThetaLipschitzObstruction.lean`'s honesty boundary read *"Recomputing dS/dq
+from the tabulated anchor values gives 3.84e6; the registry quotes ~4.6e6 …
+they do not agree exactly and no attempt is made here to reconcile them."*
+Someone measured it, saw the registry disagree, flagged it instead of papering
+over it, and left it open. **That file was right and the registry was stale.**
+Question closed in place.
+
+## Still open
+
+* **Root cause, untouched:** `qbeta_eigenphase_taylor_in_u.py:91` carries
+  `C3_EMP_MUON = mpf("-2.0097")`. Changing it MOVES NUMBERS, so it needs its
+  own commit with the blast radius measured — not a currency fix.
+* **~50 prose sites** remain, mostly dated audit docs that `qou-3nva`
+  deliberately preserves as historical records. Not overriding that.
+* **AGENTS.md's own site list is wrong** (*"five other sites … audit docs and
+  `local/compute-author` §precedent-table"*) — measured 55 files: 7 .json,
+  3 .lean, 29 .md, 16 .py. It names neither Lean nor `computations/`. Worth a
+  one-line correction there.
+* **Nothing validates `ck-dk-registry.json` against its `.md` twin.** That is
+  why this drifted for four days after the .md was fixed, and it will drift
+  again. `kernel_constraints_registry_validate.py` covers a different file.
+
+## A second-order note
+
+AGENTS.md's corrected `3.8375e6` (route 1, secant) is now itself ~0.7 % stale:
+the muon anchor moved to CODATA 2022 in `fca08de7d`, so the live secant gives
+**3.812e6**. Route 2 (`2.37/u³`) is unaffected at **3.832e6** and reproduces
+AGENTS.md exactly. Nothing turns on it; recorded so the next person re-deriving
+does not think they have found a third figure.
