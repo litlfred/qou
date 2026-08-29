@@ -524,6 +524,32 @@ QOU.MathlibExt.ManifoldVolumeBridge | QOU.MathlibExt.HyperbolicVolumeBridge.vol_
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.mostow_volume_eq_triangulation_volume | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.figureEight_literal_eq_triangulation_volume | clean
 QOU.Encounter.MostowTriangulationBridge | QOU.Encounter.MostowTriangulationBridge.volumeInvariant_eq_of_two_realisations | clean
+#
+# HyperbolicQuotient supplies what H^3 was missing: a GROUP acting. The load-bearing
+# entry is `vaddInvariantMeasure` -- it is PROVED from the corpus's own
+# hypVolume_add_left, not assumed, which is what lets the quotient volume be derived
+# rather than entered. `isAddFundamentalDomain_slab` exhibits an actual fundamental
+# domain, so `hypVolume_eq_of_isAddFundamentalDomain` is applicable rather than
+# conditional over a possibly-empty hypothesis (the ManifoldVolumeBridge trap).
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.horizontal | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.height_eq_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_height | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_mem_upperHalfSpace | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vaddInvariantMeasure | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_right_injective | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.eq_zero_of_vadd_eq | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.vadd_ne_of_ne_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.hypVolume_eq_of_isAddFundamentalDomain | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.e₀_ne_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isHorizontal_closure | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isHorizontal_zmultiples | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.latticeE₀_ne_bot | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.zsmul_e₀_apply_zero | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.exists_zsmul_of_mem_latticeE₀ | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.ofInt_surjective | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.measurableSet_slab | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.isAddFundamentalDomain_slab | clean
+QOU.Archimedean.HyperbolicQuotient | QOU.Archimedean.HyperbolicQuotient.hypVolume_eq_slab_of_isAddFundamentalDomain | clean
 
 """
 
