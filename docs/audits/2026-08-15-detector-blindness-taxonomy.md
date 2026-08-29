@@ -624,3 +624,46 @@ Every count here is from a committed instrument, not a hand survey:
 R11's negative test injected the historical `TR_M[5] = z³` bug and confirmed the
 gate fires; the three published miscounts and one retraction in the table above
 are recorded in `qou-2ixd` and `qou-76a6` rather than quietly fixed.
+
+### 18 — the defect is an ABSENT field, not a wrong one
+
+Added 2026-08-29 (bean `qou-4lbh`), from the Roth's-Lemma arc.
+
+`limit-claim-encoding-audit.py` and `unbounded-quantifier-audit.py` are the two axes of the
+statement-strength question — *weaker than its prose*, *stronger than the truth* — and both
+scan `class|structure … where` and key on a field that is **present and wrong**.
+
+The Roth arc's `RothGammaFull` was defective twice (corrections 16 and 20) because it **lacked**
+a clause. Every field it carried was correct; `two_le` and `degPos` simply were not there, and
+without them `RothLemmaTheta` was **false at `m = 1`** — a counterexample exists and is recorded
+at `RothVariableSplit.RothLemma4`. A hypothesis structure missing a clause is a *weaker
+hypothesis*, hence a *stronger theorem*: the same direction as rows 1–17, reached by absence.
+
+No field-shaped matcher can see an absence. Confirmed rather than argued: the pre-fix
+`RothGammaFull` was reconstructed and both detectors reported **0**.
+
+### 19 — the carrier is a `def : Prop`, not a `class` or `structure`
+
+Same bean, same probe.
+
+`RothLemma4` and `RothLemmaTheta` are `def … : Prop` — which is how this corpus states Mahler's
+Lemma 4 and Roth's Lemma, because they are *statements to be proved*, not typeclasses to be
+instantiated. Every field-keyed scan in `scripts/` begins at `class|structure … where`, so a
+proposition-valued `def` is outside the tree the tools walk.
+
+Correction 25 lived there: `RothLemma4`'s `w`-encoding read `w = Ψ ∨ w² = Ψ`, whose second
+disjunct demands a **rational square root** of `Θ' + t`. In the regime §14 runs in (`Ψ < 1`,
+where the `√` branch is the operative one) nothing produces one, so the `def` was
+unsatisfiable — `False` was not derivable from it, it simply could not be proved. The pre-fix
+form was reconstructed and `unbounded-quantifier-audit.py` reported **0**.
+
+This is row 14 one level down. Row 14 was *a language never scanned*; this is **a declaration
+form never scanned**, inside a language the scanners do walk. The generalisation both rows
+share: the tool's reach is set by a syntactic anchor chosen for the first case it was built
+for, and the anchor is invisible in its own output — a `0` from a scan that never reached the
+declaration looks exactly like a `0` from a scan that cleared it.
+
+⚠ Practical consequence for `scripts/`: a run over the 18 Roth/Wronskian/Separated modules
+reports `0 candidate(s) over 18 file(s)` from both statement-strength detectors, and that number
+is true and means nothing. Neither script reports how many *declarations* it reached, only how
+many files it opened — so there is no signal in the output distinguishing the two cases.
