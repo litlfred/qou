@@ -1,11 +1,11 @@
 ---
 # qou-54tg
 title: 'LEAN/NARRATIVE DIVERGENCE: q-GoL reversibility assumes involutivity its own proof denies'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:54Z
-updated_at: 2026-08-29T16:25:31Z
+updated_at: 2026-08-29T17:58:32Z
 ---
 
 **Found 2026-08-29** reviewing what landed on `main`, from the SM arc (PR #5744).
@@ -71,3 +71,56 @@ this is not my content object):
 
 Deciding between them needs the $\mathrm{Toff}_q$ word, which the .md does not
 pin down explicitly. That is the measurement to make first.
+
+
+
+---
+
+**SETTLED 2026-08-29 — disposition (c): the involutivity hypothesis is
+unsatisfiable by the gate it names.**
+
+The bean said the measurement to make first was the $\mathrm{Toff}_q$ word.
+**It turned out not to be needed.** `prop:toffoli-transfer-matrix` supplies two
+properties that settle it without knowing the word or its row support:
+
+- **unitarity** — $\mathrm{Toff}_q^\dagger \mathrm{Toff}_q = \mathbb{I}$
+  (`q-game-of-life.md` property 4); entries are real for $q > 0$, so this is
+  orthogonality;
+- **antisymmetry** — $P_{67} = -P_{76}$ (`prop:toffoli-transfer-matrix` item 4).
+
+A real orthogonal involution equals its own transpose. Symmetric **and**
+antisymmetric forces the entry to zero. So $\mathrm{Toff}_q^2 = \mathrm{id}$
+requires $\Phi(q) = 0$.
+
+Lean, sorry-free, axiom-clean:
+`QOU/Information/AntisymmetricInvolutionForcesZero.lean` —
+`involutive_orthogonal_transpose_eq`,
+`entry_eq_zero_of_antisymm_of_involutive_orthogonal`,
+`not_involutive_of_antisymm_entry_ne_zero`. Non-vacuity: the 90° rotation is
+orthogonal with a **nonzero** antisymmetric entry, and the theorem correctly
+concludes it is no involution.
+
+**An over-claim of mine, caught by my own probe.** I first wrote that $\Phi$
+vanishes *"exactly in the classical limit"* on the strength of its $(q-1)$
+factor. **False** — $\Phi$ also vanishes at $q = u^2 \approx 0.4656$, $u$ the
+real root of $u^3 + u - 1$. Both zeros lie **at or below $q = 1$**, and the
+block's own stability condition is $q > 1$, so the conclusion survives on the
+regime the block declares; the phrasing did not. Corrected before commit.
+
+**Corroboration by an independent route** (`toffoli_involutivity_probe.py`,
+sympy exact throughout, no float64). Assuming row 7 is supported on $\{6,7\}$ as
+the classical Toffoli's is, $M^2 = I$ forces $P_{77}^2 - \Phi^2 = 1$;
+substituting $q = u^2$ gives a degree-16 polynomial with **zero real roots** by
+exact Sturm count. At the substrate $P_{77}^2 - \Phi^2 = 0.3016$, a shortfall of
+$0.698$ — not marginal. Same verdict, and it needs an assumption the theorem
+above does not.
+
+**Disposition for the block owner: (a) or (c) from the list above, not (b).**
+`qGameOfLife_reversible`'s hypothesis cannot be discharged for the gate at any
+$q > 1$. `qGameOfLife_unitary`, keyed on `Function.Bijective`, is sound and is
+what the block's proof supports.
+
+**Scope, and it matters.** This says the q-Toffoli is not an **involution**. It
+does **not** say the q-GoL tick is irreversible — a unitary gate is invertible,
+which is the property the automaton actually needs. The defect is that
+`_reversible` asks for the wrong one.
