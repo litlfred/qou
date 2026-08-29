@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-29T00:45:00Z
-updated_at: 2026-08-29T00:45:00Z
+updated_at: 2026-08-29T01:05:00Z
 ---
 
 Follow-on to `qou-aemx`. PR #5931 found that `em-coupling-chern-simons`'s
@@ -73,10 +73,47 @@ touched a `$$…$$` display block. That is mechanical and needs no semantics.
 
 Not attempted here. Recorded as the honest next step rather than done badly.
 
+## The cheap heuristic above is REFUTED — measured, 0 of 2 (2026-08-29)
+
+I proposed it in this bean two hours before testing it. It does not work, and
+the reason is worth more than the proposal was.
+
+Measured over all 931 content blocks that have a sibling `.lean`: 100 have an
+`.md` committed after their `.lean`. **Neither known positive is among them.**
+
+| known positive | why the heuristic misses it |
+|---|---|
+| `em-coupling-chern-simons` | `.lean` last commit **2026-08-28**, `.md` **2026-08-22** — the `.lean` is NEWER. It was touched in an earlier tranche of this very arc (an annotation commit) without its staleness being fixed, which reset its timestamp. |
+| `centered-hecke-variance-positive` | **no sibling `.lean`** — the decl is a library file reached via `lean.ref`, so the block is not in the 931 population at all. |
+
+**The generalisable failure: commit order measures who was edited last, not
+whether the two agree.** Any unrelated touch to a stale `.lean` — a lint pass,
+an import fix, a rename, an added docstring — resets its timestamp and makes it
+invisible. So the heuristic is *anti*-correlated with what it should find: the
+more a stale file is churned, the less likely it flags. Case 1 is exactly that,
+and the churn was mine.
+
+Scope of this refutation, per AGENTS.md: **scope-(a)**, this construction alone
+does not detect the class. It does not structurally exclude timestamp-based
+approaches — only *last-commit ordering* as the signal.
+
+(A harness bug also inflated the first run: `git show --format= -- <path>
+<commit>` puts the commit after `--`, so git reads it as a path and emits
+nothing, reporting 0 of 100 diffs as math-touching. Caught because 0 of 100 is
+not a plausible number. Fixed before the conclusion above was drawn — the
+0-of-2 result does not depend on it.)
+
 ## Open
 
-- [ ] Run the cheap heuristic above corpus-wide and see how many candidates it
-      yields. If it is a handful, triage them; if it is hundreds, it needs
-      narrowing before it is useful.
-- [ ] Decide whether `proof-statement-integrity` should carry it as a
+- [ ] A detector for this class has to compare **content**, not metadata. The
+      minimum viable version: extract the displayed formula(s) from the `.md`
+      and the stated proposition from its **resolved** `.lean` (sibling OR
+      library, per §0a — half the known positives are the library shape) and
+      compare. That is real work, not a one-liner.
+- [ ] A far cheaper partial: flag any `.md` containing a supersession sentence
+      (the grep at the top of this bean) whose block has Lean at all, and
+      require an agent verdict. Catches 2/2 known positives by construction,
+      6 candidates corpus-wide today, and is honest about being a lower bound.
+      This is what I would build first.
+- [ ] Decide whether `proof-statement-integrity` should carry either as a
       mechanical criterion. Author call — it would flag existing blocks.
