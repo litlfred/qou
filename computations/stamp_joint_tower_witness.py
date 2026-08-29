@@ -49,6 +49,35 @@ _PINS = {
 }
 
 
+def q0_anchor_reason(q: float | None, anchor: str) -> str:
+    """Say WHAT is undetermined, not merely that something is.
+
+    `q0_anchor_consistency_audit` flags this witness with: *"anchor=ambiguous
+    with no q0AnchorReason -- states that the pin is undetermined, but not WHAT
+    is undetermined, so nothing records how it could ever be resolved."* That is
+    a fair criticism and it is fixable here rather than by widening the audit's
+    tolerance. The committed witness on `main` carries the bare `"ambiguous"`
+    with no reason; this supplies one.
+    """
+    if anchor != "ambiguous":
+        return (f"producer evaluates at the {anchor} pin; q_0 = {q} matches it "
+                f"to within 1e-12 relative")
+    if q is None:
+        return "witness records no q_0_numeric, so no anchor can be resolved"
+    prot = float("1.1099785827513808")
+    ppm = abs(prot - q) / prot * 1e6
+    return (
+        f"q_0 = {q} matches NEITHER canonical pin: it is {ppm:.0f} ppm from the "
+        f"proton pin 1.1099785827513808 and a comparable distance from the muon "
+        f"pin 1.1099785955573347, so it is not an evaluation at either layer. "
+        f"This is the producer's hardcoded default (--q0), not a substrate "
+        f"determination. RESOLVABLE by re-running with `--q0 <pin>`; the "
+        f"resulting eigenvalues would move, which is why it is not done "
+        f"silently. Until then the numeric half is a shape check, not a value "
+        f"-- see the witness's `deprecated.reason`."
+    )
+
+
 def classify_q0(q: float | None) -> str:
     """Name the anchor, or say the modulus is neither pin.
 
@@ -83,6 +112,7 @@ def main(argv: list[str]) -> int:
         engine_version=f"hecke-engine {payload.get('engine', {}).get('version', '?')}",
         q0_anchor=anchor,
     )
+    payload["q0AnchorReason"] = q0_anchor_reason(payload.get("q_0_numeric"), anchor)
     # `engine` is an OBJECT here (name/version/language), not the string the
     # stamper writes. Restore the producer's own richer value rather than let
     # provenance stamping flatten it -- the same downgrade the stamper's own
@@ -97,6 +127,7 @@ def main(argv: list[str]) -> int:
     print(f"  scriptCommitSha  {payload['scriptCommitSha']}")
     print(f"  commitSha        {payload['commitSha']}")
     print(f"  q0Anchor         {payload['q0Anchor']}  (q_0 = {payload.get('q_0_numeric')})")
+    print(f"  q0AnchorReason   {payload['q0AnchorReason'][:76]}…")
     return 0
 
 
