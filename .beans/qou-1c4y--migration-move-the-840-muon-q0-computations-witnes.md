@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-28T15:47:01Z
+updated_at: 2026-08-29T01:09:43Z
 ---
 
 
@@ -1490,3 +1490,53 @@ in schema usage, not lost provenance. **No orphans bean is warranted.**
 dual-purpose 21→3 (substring), contradictions 2→11 (file-local), superseded-muon
 work 265→19 (population≠work), orphans 13→0 (`scriptFile`-only). Treat any count
 here as a hypothesis with a several-fold error bar until a member is read.
+
+
+## 2026-08-29 — the WITNESS count is not the migration's size; the SOURCE count is
+
+Found while merging #5892 with main, and it corrects a framing this bean's
+own title carries.
+
+This bean is scoped as *"move the ~840 muon-q0 **witnesses**"*. But a witness
+is an output — re-running its producer moves it only if the producer
+**consults** `q_parameter`. Measured with the corpus's own
+`computations/audits/q0_hardcoded_pin_audit.py` (which already existed; I
+nearly rebuilt it before grepping):
+
+    files mentioning a pin literal : 362
+    PROSE_ONLY (not a finding)     :  66
+    UNDECLARED (migration scope)   : 248
+    consistent / not reached       :  46
+    CONTRADICTS (defect)           :   2
+    OFF_PIN (neither pin, in code) :  10
+
+**248 sources hardcode a pin the manifest cannot reach.** For those, the
+manifest is inert and a re-run is a no-op — so the sweep is a *source* edit,
+not a *witness* regeneration, and any plan sized off the witness count
+understates it.
+
+Worked counterexample, and the reason this was found:
+`deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py` line 38 is a
+hardcoded frozen-muon literal. Its stem is in **neither** manifest list, so
+the standard inference ("not `ideal_muon` ⇒ resolves to proton") says proton
+— and the file never asks. Measured: its committed `z_markov` matches the
+frozen muon anchor to **1.7e-19**, i.e. 21.9 ppb from proton (11.5 ppb in q₀
+amplified by `d ln z/d ln q = 3 − 2q²/(q²+1) = 1.896`). A live pin, not a
+stale output.
+
+This invalidated a headline inference in #5892 ("all 19 GENUINE candidates
+resolve to proton on a run today"); that PR's body now carries the
+correction. The 265 → 19 population reduction is unaffected — it is a count,
+not an inference.
+
+**Not swept here.** Annotated only: the probe now records that its `LOCKED`
+means the anti-fit target and not the anchor, that nothing in it consults
+`q_parameter`, and that its verdict is robust to the eventual re-pin
+(11.5 ppb against a 0.6904 % miss). Constraints 1–4 above still gate the
+actual sweep.
+
+**Suggested re-scope for whoever runs this:** partition by *whether the
+producer resolves or hardcodes* before sizing. The resolving set is a
+re-run; the 248 hardcodes are edits, each one changing every number that
+producer prints — so each needs its own verdict-robustness check of the kind
+done above, not a blanket regeneration.
