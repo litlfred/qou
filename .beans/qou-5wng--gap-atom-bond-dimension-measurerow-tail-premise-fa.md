@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T21:47:28Z
-updated_at: 2026-08-29T21:53:09Z
+updated_at: 2026-08-29T21:58:05Z
 ---
 
 FOUND 2026-08-29 via the witnessless-consumer list added to
@@ -124,3 +124,46 @@ OF the cancellation, and a non-zero exit if anything ever clears the floor —
 that would mean the structural zero had stopped holding, which should not be
 silent. Negative control: spiking one ℓ≥3 weight to 0.01 marks it `ABOVE`, names
 `(4,1,1)`, and returns 1.
+
+
+## Third file: markov_trace_gibbs_dynamics_probe.py — CORRECT as committed, latently fragile
+
+Flagged with the `mu3_door_budget` signature (a `y < 0` filter plus row-hits).
+It is **not** that failure mode. The file is convention-D-aware — it states that
+the vanishing blocks are the ≥3-row ones under the level-2 Wenzl restriction,
+uses `negs` to report that NONE are negative, and cross-checks
+`ℓ(λ)≥3 ⟺ y_λ = 0`. Its verdict is properly scope-(b) with the invariant named
+(a Gibbs state of a finite Hamiltonian is faithful; this one annihilates 7 of 11
+blocks at n=6). Green as committed, and correct.
+
+**But it tested for the zero with `== 0`, and it is green by accident of
+spelling.** Measured at n=6, ambient dps 70, varying ONLY how q₀ is written:
+
+    mpf(str(Q50)) inside workdps(60)   ->  0.0          <- what the file does
+    float64 round-trip                 ->  0.0
+    full-precision Q_MP                ->  1.09e-72
+    mpf(Q50) at ambient dps            ->  2.19e-72
+
+Under either of the last two, `== 0` gives:
+
+    spelling                zeros(==0)  zeros(floor)  misfiled(==0)  misfiled(floor)  spurious E
+    mpf(str(Q50))@dps60          7           7              0               0             0
+    full-precision Q_MP          0           7              7               0             3
+    mpf(Q50)@ambient             0           7              7               0             4
+
+    correct answers:             7                          0                             0
+
+So: `zeros` collapses 7 → 0; `misfiled` reports **NO** — a false alarm that the
+vanishing blocks are not the ≥3-row ones, i.e. the file contradicting its own
+correct thesis; and the `yl > 0` loop fires on 3–4 annihilated blocks, printing
+`E_λ = -E₀ log(1e-72) ≈ 3000 MeV` as an energy level for a block carrying no
+weight. A nuclear-scale number manufactured from round-off, in a probe whose
+entire subject is which blocks carry weight.
+
+Fixed with the same noise floor used elsewhere in the arc
+(`max|y_λ| over ALL λ × 10^-(dps-8)`), applied to all three tests. Output is
+byte-identical under the file's own spelling — same counts, same energies, same
+verdict — and now correct (7 / 0 / 0) under all three spellings.
+
+NOT a live wrong number: nothing committed was wrong. This is a latent failure
+mode removed.
