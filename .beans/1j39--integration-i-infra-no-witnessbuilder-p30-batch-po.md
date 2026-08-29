@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-28T23:56:39Z
+updated_at: 2026-08-29T00:14:41Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -277,3 +277,41 @@ AST-located; a regex lands inside multi-line blocks"*. Redone with
 fixable producer defect rather than a fact about the witness. Five of the eight
 blockers were the same downstream-provenance bug. Check that before writing a
 candidate off.
+
+
+### CORRECTION to the entry above: the `sublemma_2_1_alpha_shift_extract` drift IS identified
+
+I wrote that its ~7e-5 move had a "different, unidentified cause". **It is
+identified, and the corpus was one grep away.** It is the **float64 -> mpmath
+port**, and the committed values are the OLD ones:
+
+    witness computedAt   2026-08-24T08:06:59
+    253e2ffaf5 landed    2026-08-24T08:10:43     <- 3 min 44 s later
+
+`253e2ffaf5` (*"sublemma alpha-shift solves in mpmath, and the FIRST fix was
+wrong"*) swapped `chi_lambda_fast` -> `chi_lambda_fast_mp` and `Q` (a Python
+float) -> `Q_MP` (an mpf). The committed numbers came out of the float64
+producer **minutes before it stopped existing**; a fresh run is the mpmath one.
+So the drift is a **correction**, the fresh values are the better ones, and my
+framing of it as a worrying unexplained move was wrong in sign.
+
+This is the same *"stamped minutes before the commit that superseded it"*
+signature as §0 of
+[`2026-08-23-pr5517-downstream-witness-attribution.md`](../docs/audits/2026-08-23-pr5517-downstream-witness-attribution.md)
+(there: seven minutes), and the same shape as its §1, where float64-floor
+values dropped ~55 orders once the rep was fixed upstream.
+
+**A near-miss worth recording.** §2 of that same audit attributes a **1.745e-7**
+move in this exact witness to a **muon -> proton re-pin** on regeneration
+(`qou-b3l8`). That is a real finding, it is about the right file, and it is
+**not** what I measured — the re-pin has since happened (`parameters.q_0` now
+reads the proton pin `1.10997858275138…`) and 7.19e-5 is ~400x that effect.
+Two different causes, five days apart, in one witness. Reaching the audit and
+stopping at §2 would have produced a confident wrong attribution.
+
+**Still not regenerated here**, and the reason is unchanged even though the
+values are now known to be better: stamping forces a regeneration, and rewriting
+92 lines of values under a provenance commit is the substantive-change-smuggled-
+past-a-reviewer that AGENTS.md forbids *regardless of the direction*. It is now
+a justified deliberate refresh for whoever picks up `qou-b3l8`, on its own
+commit, citing the 3m44s window.
