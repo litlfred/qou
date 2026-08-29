@@ -1,11 +1,11 @@
 ---
 # qou-p77d
 title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across 300 witnesses — the class #5910 deferred'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-08-29T18:13:23Z
+updated_at: 2026-08-29T18:29:56Z
 ---
 
 ## 2 of the 883 are already drained (PR #5952, bean `qou-t39x`) — 2026-08-29
