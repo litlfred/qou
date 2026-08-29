@@ -304,8 +304,39 @@ def run_producer(prod: Path, timeout: int, log_dir: Path | None):
     return rc, tail, time.monotonic() - t0
 
 
+# Producers that read the anchor-defining witness FILE directly do not go
+# through `q_parameter`, so QOU_Q0_ANCHOR does not reach them. Measured on
+# main 2026-08-29: 17 of the 32 `ideal_muon` stems. Raised from #5792, and
+# the count there (7 of 13) is a different subset, not a disagreement.
+_PIN_FILE_MARKERS = ("q-pinning-50-digit", "q_pinning_50_digit")
+
+
+def env_override_reaches(prod: Path) -> bool:
+    """False when this producer takes its pin from the file, not the manifest.
+
+    THIS IS THE DIFFERENCE BETWEEN A VERDICT AND A LIE. The check works by
+    setting QOU_Q0_ANCHOR=physical, which only `q_parameter` reads. A producer
+    that loads `q-pinning-50-digit.witness.json` itself gets MUON no matter
+    what the environment says — so it would run at muon, pass its muon-tuned
+    assertions, and be reported PASSES-AT-PROTON. A false pass on a migration
+    question is the worst output this tool can produce, worse than no answer,
+    because it is indistinguishable from a real one.
+    """
+    try:
+        src = prod.read_text(errors="replace")
+    except OSError:
+        return True                       # cannot tell; run it and find out
+    return not any(m in src for m in _PIN_FILE_MARKERS)
+
+
 def check(prod: Path, timeout: int, state: Path, log_dir: Path | None):
     """(verdict, detail, seconds) — does it pass its own assertions at proton?"""
+    if not env_override_reaches(prod):
+        return ("UNSOUND-ENV-BYPASS",
+                "reads q-pinning-50-digit.witness.json directly, so "
+                "QOU_Q0_ANCHOR never reaches it — running would measure the "
+                "MUON leg and report it as proton. Route it through "
+                "q_parameter first (qou-aj91 mechanism 5).", 0.0)
     snapshot(state)
     rc, tail, secs = run_producer(prod, timeout, log_dir)
     try:
@@ -319,16 +350,33 @@ def check(prod: Path, timeout: int, state: Path, log_dir: Path | None):
         if not wrote:
             return "NO-WITNESS", "writes nothing — no assertions to check", secs
 
-        bad = []
+        # READ THE VALUE, NOT THE DELTA — and distinguish false from absent.
+        # `True -> False`, `True -> null`, and the field going AWAY are three
+        # findings wearing one shape (#5805). `is False` alone silently passes
+        # the latter two.
+        bad, unclear = [], []
         for f, doc in wrote.items():
-            if doc.get("allPassed") is False:
-                bad.append(f"{f.name}: allPassed=false")
+            if "allPassed" in doc and doc["allPassed"] is not True:
+                (bad if doc["allPassed"] is False else unclear).append(
+                    f"{f.name}: allPassed={doc['allPassed']!r}")
             for a in doc.get("assertions", []):
-                if a.get("passed") is False:
-                    bad.append(f"{f.name}: assertion {a.get('name')!r} FAILED")
+                if a.get("passed") is not True:
+                    (bad if a.get("passed") is False else unclear).append(
+                        f"{f.name}: assertion {a.get('name')!r} "
+                        f"passed={a.get('passed')!r}")
         if bad:
             return "FAILS-AT-PROTON", "; ".join(bad[:3]), secs
+        if unclear:
+            return ("UNCLEAR", "neither true nor false: " +
+                    "; ".join(unclear[:3]), secs)
         n = sum(len(d.get("assertions", [])) for d in wrote.values())
+        if n == 0 and not any("allPassed" in d for d in wrote.values()):
+            # It wrote a witness but asserts nothing, so running it at proton
+            # established nothing. Reporting that as a pass would be the same
+            # false reassurance as the env-bypass case, one layer down.
+            return ("NO-ASSERTIONS",
+                    f"{len(wrote)} witness(es) written, 0 assertions — "
+                    f"nothing to pass or fail", secs)
         return ("PASSES-AT-PROTON",
                 f"{len(wrote)} witness(es), {n} assertion(s), all pass", secs)
     finally:
@@ -518,7 +566,11 @@ def main(argv=None) -> int:
             rc = 1
             continue
 
-        print(f"  running {stem} …", flush=True)
+        # Do not announce a run that is about to be refused — the tool said
+        # "running X" and then reported it had not run X, which is the kind of
+        # small untruth that makes a log unusable as evidence.
+        if env_override_reaches(path):
+            print(f"  running {stem} …", flush=True)
         ck["in_flight"] = stem
         save_ckpt(state, ck)
         v, d, secs = check(path, args.timeout, state, log_dir)
@@ -537,6 +589,9 @@ def main(argv=None) -> int:
     print("  PASSES-AT-PROTON -> safe to migrate (still diff its witness on the real move)")
     print("  FAILS-AT-PROTON  -> HOLD: it depends on the muon pin, whatever its source says")
     print("  UNKNOWN          -> untested; do NOT read as either")
+    print("  UNSOUND-ENV-BYPASS-> the pin override cannot reach it; not run")
+    print("  UNCLEAR          -> an assertion is neither true nor false")
+    print("  NO-ASSERTIONS    -> wrote a witness but asserts nothing")
     print(f"  resume/inspect:  {sys.argv[0]} --status --state {state}")
     return rc
 
