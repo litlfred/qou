@@ -1,10 +1,11 @@
 ---
 # qou-v7ro
 title: 'GAP: bridge Magnus coeff mu-bar(12..A)=+/-1 to the QOU Markov-trace deficit leading coefficient (close MilnorExactOrderConjecture)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-08-01T23:10:14Z
+updated_at: 2026-08-29T18:42:54Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -49,4 +50,3 @@ Magnus coefficient (large), or (b) leave `MilnorExactOrderConjecture` /
 `BrunnianVassilievBridge` instance-less and keep the honest conditional results.
 Do NOT fabricate an instance; do NOT wire `μ̄_A = (3/4)(−2)^{A−3}` as canonical
 (it is MEASURED, #4480).
-
