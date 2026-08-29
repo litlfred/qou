@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-29T00:32:30Z
+updated_at: 2026-08-29T00:40:21Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -368,3 +368,43 @@ AGENTS.md's own list (*"audit docs and `local/compute-author` §precedent-table"
 which names neither Lean nor `computations/`. A sibling already flagged the
 discrepancy in `docs/audits/2026-08-25-cheat-sheet-paper-alignment.md`. Left
 alone: corpus-wide doc-currency in a different domain.
+
+
+### 9 of 16. `qbeta_habiro_p8_identification_probe` — NOT stamped, and the reason is a notation collision
+
+Its re-run rewrites **14 recorded polynomial strings**, every one
+**coefficient-identical**:
+
+    committed  "check_q**8 + 2*check_q**7 + … - 2*check_q + 1"
+    fresh      "u**8 + 2*u**7 + … - 2*u + 1"
+
+So no mathematics moves. I still did **not** stamp it, for two reasons:
+
+1. **The new symbol collides.** In this producer `u` means `q^{1/2}` (line 264,
+   `h_q = u0 - 1/u0`; line 391, *"when u = q^{1/2}"*). Corpus-wide, `u` is the
+   c_k ladder variable `u = b·ℏ_q² ≈ 0.00852` — AGENTS.md's own Q_β banner.
+   Two different `u`, and stamping bakes the ambiguous one into a witness.
+   AGENTS.md §7aa is strict about exactly this (*"never conflate"*, *"rename
+   one"*). `check_q` (q̌) had no such collision.
+2. **The committed strings' provenance is unclear.** `git log -S"check_q"` on
+   this producer returns **no commit** — the string never appears in its
+   history. So the committed witness's `check_q` came from something other
+   than this file as it has ever stood. Overwriting it silently would destroy
+   the only surviving trace of that.
+
+Neither is a numeric problem, and neither is mine to settle: renaming the
+symbol back (or to something that does not collide) is an authoring decision in
+the q-β notation register.
+
+**Bucket C is now 9 witnesses / 8 producers.** What is left, all with a named
+owner:
+
+| producer | why not stamped | owner |
+|---|---|---|
+| 3 × `option_e_*` + `he3_pairknot_composite_lp_probe` | dps 50 -> canonical; witnesses never regenerated | `qou-fl9i` |
+| `sublemma_2_1_alpha_shift_extract` | float64 -> mpmath by 3m44s; provenance fixed, regeneration deferred | `qou-b3l8` |
+| `qbeta_habiro_p8_identification_probe` | symbol collision above | notation register |
+| `regenerate_y_lambda_orphans_conventionD` | rewrites the load-bearing y_λ tables | not run, deliberately |
+
+None of the remaining eight is blocked on `1j39` infrastructure. The
+`stamp_q0` mechanism is done for everything it can reach.
