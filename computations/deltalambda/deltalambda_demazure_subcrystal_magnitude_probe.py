@@ -109,7 +109,17 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
         sys.path.insert(0, _p)
 
 # muon-canonical q₀ (computations/ layer convention); matches #4012 + sibling probes.
-Q0_STR = "1.10997859555733471"
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
 
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:
