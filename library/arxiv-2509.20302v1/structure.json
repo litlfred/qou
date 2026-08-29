@@ -1,0 +1,215 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2509.20302v1",
+ "source": {
+  "file": "2509.20302v1.pdf",
+  "sha256": "59837f5b511c9e073be1d5f1f45fc5e259372e8c93f62f574f1949384fbebce4",
+  "bytes": 222709,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2509.20302",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "24 Sep 2025"
+  },
+  "doi": null,
+  "title": "Universality in the resurgence of generalized Tracy-Widom distributions",
+  "authors_raw": "Zoltan Bajnoka, Bercel Boldisa,b, Dennis le Plata",
+  "title_lines": [
+   "Universality in the resurgence of generalized Tracy-Widom distributions"
+  ],
+  "abstract": "We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables across all values of the \u2019t Hooft coupling in supersymmetric gauge theories. Previous approaches, based on integro-differential equations, have provided systematic strong-coupling expansions for the logarithms of these determinants, expressed through the moments of the symbol. The resulting asymptotic series, once completed with non-perturbative terms, allowed the leading resurgence relations to be tested. In this Letter we focus directly on the determinants themselves, and we uncover a strikingly simple non-perturbative structure: all trans-series correc- tions share a universal form, while the moments transform in a direct and intuitive way. This simplicity points to an underlying organizing principle for the non-perturbative dynamics of gauge theory observables.",
+  "docinfo": {
+   "Title": "Universality in the resurgence of generalized Tracy-Widom distributions",
+   "Author": "Zoltan Bajnok; Bercel Boldis; Dennis le Plat",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:)"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Observables",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Trans-series expansion",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Resurgence relations between D{} and D{1}",
+   "page": 3,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Generic relations",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Example",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 5,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 6,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 803,
+   "n_words": 112
+  },
+  {
+   "id": "sec-001-2-observables",
+   "number": "2",
+   "title": "Observables",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4806,
+   "n_words": 774
+  },
+  {
+   "id": "sec-003-3-trans-series-expansion",
+   "number": "3",
+   "title": "Trans-series expansion",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3939,
+   "n_words": 709
+  },
+  {
+   "id": "sec-004-31-resurgence-relations-between-d-and-d1",
+   "number": "3.1",
+   "title": "Resurgence relations between D{} and D{1}",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2541,
+   "n_words": 446
+  },
+  {
+   "id": "sec-005-32-generic-relations",
+   "number": "3.2",
+   "title": "Generic relations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3258,
+   "n_words": 554
+  },
+  {
+   "id": "sec-006-33-example",
+   "number": "3.3",
+   "title": "Example",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 651,
+   "n_words": 90
+  },
+  {
+   "id": "sec-007-4-conclusions",
+   "number": "4",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1478,
+   "n_words": 225
+  },
+  {
+   "id": "sec-008-5-acknowledgements",
+   "number": "5",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 407,
+   "n_words": 60
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 6487,
+   "n_words": 863
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 24370
+ }
+}

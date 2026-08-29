@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T08:57:11.441765+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-24T14:08:59.098076+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4500,
+  "durationMs": 5253,
   "computation": "chi-at-q0-rust-lossless-helium-4",
   "scriptFile": "chi_4he_via_rust_lossless.py",
   "scriptHash": "2dfa4abf5e5f",
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -38,7 +38,7 @@
     "n_strands": 12,
     "n_partitions": 77,
     "tr_M_at_q0": "2.899588321399905688670703766653494368140061643608610474185328210206333",
-    "cache_path": "/tmp/qou-mine/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+    "cache_path": "/home/user/qou/computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
     "lean_uniqueness_ref": {
       "nucleus": "helium-4",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",

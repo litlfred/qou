@@ -59,6 +59,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 try:
     from qou_substrate.constants import q_at, q_muon_at
+    from qou_substrate.witness import q0_comparison
 except ImportError:
     print("ERROR: qou_substrate not importable", file=sys.stderr)
     sys.exit(1)
@@ -202,7 +203,21 @@ def main() -> int:
         "no production change."
     ))
 
-    out = wb.save()
+    # DECLARED comparison, not a single pin. This probe reads BOTH anchors on
+    # purpose (q_p = q_at(), q_m = q_muon_at() above) and its whole subject is
+    # the swing between them, so there is no one pin to stamp. Without the
+    # declaration `save()` auto-resolved a single anchor and then INHERITED the
+    # previous run's `q0Value`, which was the superseded muon pin A -- a
+    # Q0_FLIP manufactured by the stamping path, on a witness whose numbers were
+    # correct. `comparison` is also the one label the anchor audit can VERIFY
+    # rather than take on trust: it names its legs and each is re-checked
+    # against its canonical pin (bean qou-1c4y).
+    out = wb.save(q0_comparison(
+        muon=q_m, proton=q_p,
+        reason=("measures the cross-anchor RIGIDITY of the 3-rung Habiro "
+                "candidate: the same closed form is evaluated at both pins and "
+                "its swing compared to the empirical c_3 swing, so both pins "
+                "are read deliberately and each is reported under its own key")))
     print()
     print(f"✓ Witness: {out.name}  ({len(wb.assertions)} assertions, "
           f"{'all passed' if all(a.passed for a in wb.assertions) else 'FAILURES'})")

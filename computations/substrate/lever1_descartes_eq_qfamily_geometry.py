@@ -46,7 +46,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 def main() -> int:
@@ -95,9 +95,9 @@ def main() -> int:
 
     w.add_assertion("j_at_q1_eq_128", computed=int(j1), expected=128, tolerance=0,
                     source="descartes-elliptic-curve.md classical limit j(1)=128")
-    w.add_assertion("j_at_q0_eq_129_86", computed=float(mp.nstr(jq0, 6)), expected=129.86,
+    w.add_assertion("j_at_q0_eq_129_86", computed=fmt(mp.nstr(jq0, 6)), expected=129.86,
                     tolerance=0.05, source="descartes-elliptic-curve.md j(q₀)=129.9")
-    w.add_assertion("golden_cusp_j_eq_1728", computed=float(mp.nstr(j_cusp, 8)), expected=1728.0,
+    w.add_assertion("golden_cusp_j_eq_1728", computed=fmt(mp.nstr(j_cusp, 8)), expected=1728.0,
                     tolerance=1e-4, source="s=1/φ cusp (golden-ratio degeneration) is the j=1728 CM point")
     w.add_assertion("six_singular_fibres_in_q", computed=int(deg_s) // 2, expected=6, tolerance=0,
                     source="deg_s(Δ-core)=12 in s ⇒ 6 in q; matches color six-fibre count")

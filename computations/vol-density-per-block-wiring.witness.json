@@ -9,7 +9,7 @@
       "computed": "2.3775132125143812701",
       "expected": "1.0",
       "passed": false,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "ratio linking_weight / tr_M(proton) — PASS iff == 1"
     }
   ],

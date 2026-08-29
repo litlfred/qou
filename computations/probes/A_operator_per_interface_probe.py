@@ -91,6 +91,17 @@ def extract_per_interface(n1: int, n2: int) -> dict:
     parts_2 = partitions_of(n2)
     parts_sum = partitions_of(n1 + n2)
     lr_table = get_lr_table(n1, n2)
+    # GUARD (upstream): an empty LR table makes EVERY lambda hit the
+    # `if not support: continue` below, so n_linearity_total stays 0 and the
+    # linearity assertion passes vacuously at 0 == 0. That is a missing input,
+    # not a result.
+    if not lr_table:
+        raise SystemExit(
+            f"REFUSING to run: get_lr_table({n1}, {n2}) returned an empty "
+            f"Littlewood-Richardson table, so every lambda would be skipped "
+            f"and linearity_identity_holds_at_chi_level would pass vacuously "
+            f"at 0 == 0."
+        )
 
     test_1 = make_test_words(n1)
     test_2 = make_test_words(n2)
@@ -249,12 +260,22 @@ def main() -> int:
     w.add_data("n_resolved_per_interface", n_resolved)
     w.add_data("n_linearity_ok_at_chi_level", n_linearity_ok)
     w.add_data("n_linearity_total", n_linearity_total)
-    w.add_assertion(
-        name="linearity_identity_holds_at_chi_level",
-        computed=n_linearity_ok,
-        expected=n_linearity_total,
-        source="A_operator_per_interface_probe",
-    )
+    # Zero here can no longer mean "no LR table" (guarded above), so it means
+    # every lambda was `panel_too_small` -- a legitimate per-lambda outcome
+    # already recorded in `results`. Refusing would be wrong; asserting
+    # 0 == 0 would claim a verification that did not happen. So record the
+    # empty scope and do not assert.
+    if n_linearity_total == 0:
+        w.add_data("linearity_identity_not_applicable",
+                   "every lambda was panel_too_small (n_equations < n_unknowns); "
+                   "no linearity check was performed, so no assertion is made")
+    else:
+        w.add_assertion(
+            name="linearity_identity_holds_at_chi_level",
+            computed=n_linearity_ok,
+            expected=n_linearity_total,
+            source="A_operator_per_interface_probe",
+        )
     w.save()
     return 0 if n_linearity_ok == n_linearity_total else 1
 

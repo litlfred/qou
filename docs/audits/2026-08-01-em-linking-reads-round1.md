@@ -423,3 +423,56 @@ not directly verified. Both corrections rest on Komendarczyk's statement
 of it — unambiguous on both the per-component indexing and the
 complement constraint — cross-checked against Khesin Rmk 3.5 and Thm
 3.6. Acquiring FH 1991 §*Definition of ac* would close it.
+
+---
+
+## Round 6 — O2 is applied at last, and it excludes the contest's winner
+
+Full record:
+[`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
+(bean `qou-17mq`, opened here on 2026-08-01 and untouched until now).
+
+**O2 had never been applied to anything.** `neutralis*` / `neutraliz*` appears
+at four sites corpus-wide, all inside this file, and at zero sites in
+`computations/`. O1 shaped every subsequent route; O2 was recorded and left.
+
+Applying it: on a finite-volume quotient the admissible pair kernel is the
+*zero-mean* Green's function, and a zero-mean function that is not identically
+zero must take both signs. `coth(α)` is strictly positive and monotone, so **no
+admissible kernel is a positive saturating function of the separation** — and
+saturation (`κ → +1`) is precisely the qualitative feature that separated
+`H_coth` from its rivals in the round-5 contest. The unsubtracted kernel is
+outside the admissible family.
+
+Re-scoring the same 29-pair series under the admissible family
+`coth(α) − c₀`, `c₀ = ⟨coth⟩_M > 1`: scatter rises **monotonically** with
+neutralisation (3.505 % at the inadmissible `c₀ = 0`; 11.15 % at the `c₀ = 1`
+infinite-volume boundary; 22.32 % at `c₀ = 7.5`), the best admissible member
+carries residual structure `r = −0.904` — *more* than the `r = +0.799` that
+counted against `H_FH_Z` in `em-linking-residual-structure.witness.json` — and
+48 of 140 scanned members predict a `κ` zero-crossing inside the measured
+`A ∈ [3, 63]`, where every measured `κ` exceeds 1.
+
+**Net effect on this thread.** Round 5 withdrew the warrant from the two
+`H_FH` hypotheses; round 6 removes the remaining one from the admissible
+family. No member of that contest carried a live structural warrant when it
+was scored, so its ranking is not support for hyperbolic-saturation. The
+metric Coulomb pairing `⟨A₁, J₂⟩` survives as the route exactly as round 3
+left it — what fails is this parameterisation of it, and the sharpened next
+question is the zero-mean Green's function of the actual fibre rather than a
+one-term stand-in for it.
+
+**Addendum, same day — the test could not have discriminated either.** A
+reachability check computed from the contest's own fitted constants: the series
+spans `α ∈ [0.317, 0.873]`, while `coth` comes within 10 % of its limit only at
+`α = 1.522`, i.e. **`A = 334`** — past the heaviest known nuclide (`A = 294`).
+Saturation is therefore unreachable in any nucleus, so `qou-i6rg`'s *"needs NO
+new theory, only more AME data"* is not the situation: more data cannot help.
+Over the measured range `coth` agrees with its two-term expansion
+`1/α + α/3` to 0.97 % against the 3.505 % scatter, so `H_coth`'s advantage
+tracks the curvature term, not saturation; and the two hypotheses' predictions
+differ by at most 6.285 % = 1.79 × that scatter. Details, plus an
+O2-independent derivation of the same subtraction from the `H³` boundary
+condition (`G = −(coth r − 1)/4π` is the decaying Green's function; the
+saturating form is the non-decaying choice of the additive constant), in the
+addendum to the round-6 record.

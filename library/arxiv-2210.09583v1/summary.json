@@ -1,0 +1,86 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2210.09583v1",
+ "source_sha256": "38fc6fa465a06a7b",
+ "brief": "A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT — There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by",
+ "extended": "**A NEW PRESENTATION OF THE osp(1|2)-POL YNOMIAL LINK INVARIANT**\n\n*AND CATEGORIFICATION*\n\n17 pp, 13 sections.\n\n**Abstract.** There is a known connection between the osp(1|2n) polynomial knot invariant J n K and the so(2n + 1) knot invariant soJ n K studied by Clark [ 10] and Blumen [ 4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2 = − 1. W e deﬁne a skein relation similar to the Kauﬀman bracket, and use that to recover an oriented link invariant which coincides with Clark’s uncolored osp(1|2)-link invariant. This deﬁnition also comes from the representation theory of Uq,π (sl2), but using diﬀerent methods from Clark. W e show that our invariant is easily categoriﬁed by a slightly modiﬁed ve rsion of Khovanov homology equipped with an extra /CI 4-grading. W e also construct a similarly modiﬁed version of P utyra’s covering Khovanov homology [ 28].\n\n**Outline.** 1 Introduction; 1.1 Results; 1.2 Acknowledgements; 2 osp(1|2) braid invariant; 3 Explanation using representation theory; 3.2 Quantum covering group; 3.1 Parameters; 4 Two Categorifications; 4.1 Normal Khovanov Homology; 4.2 e-graded Khovanov Homology; 4.2.1 R1; 4.3 e-graded Covering Khovanov Homology; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 314
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-results",
+   "title": "Results",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-12-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-2-osp12-braid-invariant",
+   "title": "osp(1|2) braid invariant",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-004-3-explanation-using-representation-theory",
+   "title": "Explanation using representation theory",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-32-quantum-covering-group",
+   "title": "Quantum covering group",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-31-parameters",
+   "title": "Parameters",
+   "pages": "6-12"
+  },
+  {
+   "id": "sec-007-4-two-categorifications",
+   "title": "Two Categorifications",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-008-41-normal-khovanov-homology",
+   "title": "Normal Khovanov Homology",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-009-42-e-graded-khovanov-homology",
+   "title": "e-graded Khovanov Homology",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-010-421-r1",
+   "title": "R1",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-011-43-e-graded-covering-khovanov-homology",
+   "title": "e-graded Covering Khovanov Homology",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "16-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

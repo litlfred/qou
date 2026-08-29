@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath+fractions",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:41:17.686996+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-29T07:39:19.635268+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "f1_exact_qd_favard_depth25",
@@ -17,7 +17,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-300,
+      "tolerance": "1e-300",
       "source": "mpf qd at r = 6/5 (q = 2.0736), dps 400, K = 48: beta_k > 0 all k, moment reproduction rel < 1e-300 (measured 8.53e-401), and agreement with the exact-Q qd (K = 12) to rel < 1e-350"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "r = 6/5: truncation eigenvalues lambda_j(N) strictly decrease in N for every j (polynomials are a form core of the Friedrichs extension => min-max; the truncation limit IS J_F, [simon1998] / [pedersen1995]); lambda_min(48) = 0.336681762134, Cauchy rel 2.07e-7 (N = 42 vs 48): lambda_F in (0.33, 0.34) STRICTLY POSITIVE — the Friedrichs measure has no support near 0"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "r = 6/5, N = 48 Gauss-Radau truncation with node pinned at 0 (boundary shift t_N = P_N(0)/P_{N-1}(0)) — the canonical solution with 0 in supp = the KREIN extension measure ([pedersen1995]): pinned eigenvalue < 1e-80, all other atoms > 0 and Cauchy (rel < 1e-4), mass at 0 = 1/sum_{k<48} p_k(0)^2 to < 1e-25, sum p_k(0)^2 convergent (indeterminacy corroboration), and the positive Krein atoms INTERLACE the Friedrichs atoms"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "r = 6/5: Friedrichs atom spacing in qtilde-steps decreases monotonically to 2 (last window value 2.001223) — the extremal supports are asymptotically q-LATTICES, incommensurate with the u-continuum's qtilde-grids; the qtilde-class of the Friedrichs atoms Aitken-extrapolates to 0.805336 vs the u = 1 class phi_1 = 0.805241 (circ dist 9.45e-5; half-shifted class rejected, dist 0.5), and the Krein class extrapolates to 0.805085 (dist 0.000156) — F and K asymptotically occupy complementary q-sublattices of the ONE u = 1 qtilde-grid; the LOW Friedrichs atoms are off that grid (lambda_0 class dist 0.209 > 0.1)"
     },
     {
@@ -57,7 +57,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "both q0 pins (muon + proton), K = 24: qd beta_k > 0, moment reproduction < 1e-150, lambda_min(N) strictly decreasing and positive (N = 16/20/24), Radau pin at 0 < 1e-40, Radau mass-at-0 identity < 1e-20. The pins sit deep in the pre-asymptotic window (qtilde - 1 ~ 0.054): asymptotic grid classes are read at the strong-deformation leg (F5), stated as such — no class claim is made at the pins"
     },
     {
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 73736,
+  "durationMs": 80638,
   "computation": "ksel2id-friedrichs-selection",
   "scriptFile": "ksel2id_friedrichs_selection_probe.py",
   "scriptHash": "5f222659ca10",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "0aaae20308e9cca7"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -223,8 +223,8 @@
       "muon": {
         "lambda_min_N16_20_24": [
           "0.1027179104",
-          "0.08815866039",
-          "0.07884523194"
+          "0.08815866041",
+          "0.07884523196"
         ],
         "krein_first_pos_atoms": [
           "0.2027959",
@@ -232,7 +232,7 @@
           "1.4408523"
         ],
         "mass_at_zero_N24": "0.055206109",
-        "repro_worst": "3.66e-501"
+        "repro_worst": "2.44e-501"
       },
       "proton": {
         "lambda_min_N16_20_24": [
@@ -261,18 +261,18 @@
       "verdict": "the closing question's premise ('if the bar reflection exchanges Friedrichs and Krein...') FAILS in the pushforward reading — scope-(b) via the bounded-support / superexponential-moment invariant; a NON-pushforward action on the Nevanlinna parameter remains open (scope-(a), not constructed here)"
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon); qou_substrate.constants.Q_50_DIGIT_STR (proton)"
     },
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   }

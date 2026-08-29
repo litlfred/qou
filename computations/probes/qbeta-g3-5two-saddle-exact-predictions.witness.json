@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "printed (73) root + Vol(5_2) + iota_12 = Vol/pi + saddle residuals (mod 2pi i, per the C/2pi^2 Z-valued V) all reproduced"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "iota_13 genuinely complex at u=0 (CS != 0)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "deformed pole-phase deviation from kinematic well above the 4_1 null floor"
     }
   ],

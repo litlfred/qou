@@ -1,10 +1,10 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-24T15:16:16.509Z",
+  "generated": "2026-08-26T14:00:41.478Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3115,
-  "files_flagged": 155,
-  "total_defects": 135,
+  "scanned_files": 3193,
+  "files_flagged": 154,
+  "total_defects": 134,
   "total_exempt": 59,
   "total_promoted_from_exempt": 66,
   "categories": {
@@ -12,10 +12,10 @@
     "proof-docstring-sorry-mismatch": 12,
     "proof-claims-unencoded": 6,
     "proof-no-decide-masking": 1,
-    "proof-no-provable-axiom": 3
+    "proof-no-provable-axiom": 2
   },
   "conjecture_graph": {
-    "total": 245,
+    "total": 243,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -401,11 +401,6 @@
         "name": "GradedMarkovTraceDescent",
         "file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.lean",
         "line": 63
-      },
-      {
-        "name": "GradedTraceResidueSplit",
-        "file": "content/quantum-observable-universe/mass-theory/graded-trace-residue-split.lean",
-        "line": 67
       },
       {
         "name": "GSOrderMatch",
@@ -870,7 +865,7 @@
       {
         "name": "QSchurYLambdaClosedFormClaim",
         "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
-        "line": 171
+        "line": 176
       },
       {
         "name": "QuantumAPolynomial",
@@ -1066,11 +1061,6 @@
         "name": "TowerSummandRealization",
         "file": "content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean",
         "line": 55
-      },
-      {
-        "name": "TowerSummandRealization",
-        "file": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean",
-        "line": 53
       },
       {
         "name": "TrackCReducedAxiom",
@@ -1659,7 +1649,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean": [
       {
-        "line": 91,
+        "line": 93,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem graded_trace_residue_split",
@@ -2718,16 +2708,6 @@
         "pattern": "uncited-axiom",
         "snippet": "axiom parallelogramIntegral_inv_sub_eq_two_pi_i (ω₁ ω₂ z₀ w : ℂ)",
         "decl": "parallelogramIntegral_inv_sub_eq_two_pi_i",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mathlib/SDPDuality.lean": [
-      {
-        "line": 39,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom traceInner_nonneg_of_posSemidef (n : ℕ)",
-        "decl": "traceInner_nonneg_of_posSemidef",
         "severity": "critical"
       }
     ],

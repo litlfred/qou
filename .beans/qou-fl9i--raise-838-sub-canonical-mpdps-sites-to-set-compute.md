@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-23T08:04:50Z
-updated_at: 2026-08-23T12:26:41Z
+updated_at: 2026-08-28T20:47:12Z
 ---
 
 ## The defect, with evidence
@@ -263,3 +263,64 @@ The Li_2^q consumer set was built with a loose regex; a strict `\bli_2_q\b` scan
 finds ~19 further witness producers not in the re-run set, including
 `derive_m_p_hecke_full_tower_50dps.py` and `m_p_m_e_li2q.py` — proton-mass paths.
 Their witnesses were computed with the truncated series too. Not run here.
+
+
+---
+
+## 2026-08-28 — the source fix landed; THE WITNESSES WERE NEVER REGENERATED (PR #5923)
+
+Found incidentally while sweeping bucket-C producers for `1j39`. This bean's
+fix (`34b2a75d43`, "raise 822 sub-canonical mp.dps sites") changed the
+**producers**. It did not change the **witnesses they had already written**, so
+the committed values are still the sub-canonical ones and a fresh run now
+disagrees with them.
+
+**Measured, 4 for 4.** I re-ran 14 hand-rolled producers looking for something
+else. Exactly four showed numeric drift, and they are exactly the four files
+`34b2a75d43` touched:
+
+    option_e_canonical_reeb_v5           B_pred_MeV  0.004095810714… -> 0.004095813747…
+    option_e_deuteron_param_free_residual B_pred_MeV 0.3666138140786… -> 0.3666138576346…
+    option_e_v6_combined_canonical       Σ_rot_y     0.002507650032… -> 0.002507651889…
+    he3_pairknot_composite_lp_probe      spurious_tower_asymmetry_MeV
+                                                     1.16501847427 -> 1.16501862315
+
+The diff in each is precisely this bean's fix: `- mp.dps = 50` /
+`+ set_compute_dps()`. Nothing else in these files changed.
+
+**Two competing explanations ruled out before attributing it here:**
+
+  * **Nondeterminism** — no. Each producer reproduces itself byte-identically
+    across two consecutive runs (the `PYTHONHASHSEED` set-iteration class).
+  * **Environment** — no. I installed **mpmath 1.3.0** beside the container's
+    1.4.1 and re-ran `option_e_deuteron_param_free_residual` under it: the
+    output is **identical** to the 1.4.1 run, to the last digit. So the
+    environment hazard AGENTS.md describes as "not yet measured here" is still
+    unconfirmed, and it is not what this is. Their inputs
+    (`atom-chi-rust-d`, `chi-deuteron-h6-at-q0-50dps`) last changed
+    2026-08-19 and 2026-08-15, both BEFORE the witnesses' `computedAt`
+    2026-08-23, so it is not input drift either.
+
+**What I did NOT establish.** The divergence appears at the **9th significant
+digit**, while the inputs carry 50 digits and the change is 50 -> 65 dps. A
+naive reading of that change predicts agreement to ~50 digits, not 9. So
+either these quantities lose ~40 digits to cancellation (they are residuals —
+`sum_signed_m_e`, `unaccounted_m_e` — so this is the natural suspect), or
+something else is also moving. **Not measured; do not repeat the 50->65
+explanation as if it accounted for the magnitude.**
+
+**A second defect, visible on the same files and squarely this bean's subject.**
+`option-e-deuteron-param-free-residual.witness.json` declares
+
+    "precisionMetadata": {"compute_dps": 50, "output_dps": 30}
+
+and then serializes `B_pred_MeV` to **70 digits**. That is 40 digits past its
+own declared output precision and 20 past its declared compute precision — the
+same over-serialization this bean documents, in a file that states the correct
+numbers in its own metadata block.
+
+**Consequence for this bean's scope.** "Replace the sites" is half the job; the
+witnesses those sites wrote are stale-at-lower-precision until regenerated, and
+they will keep reading as reproducible failures to anyone who re-runs them. I
+did **not** regenerate them here — that is a value change on 4+ committed
+witnesses and belongs to this bean, with whatever batch discipline it chooses.

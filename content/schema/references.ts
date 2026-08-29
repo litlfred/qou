@@ -435,7 +435,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2506.10206v2",
       dir: "library/arxiv-2506.10206v2",
-      pdf: "library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf",
+      pdf: "library/arxiv-2506.10206v2/2506.10206v2.pdf",
       stage: "candidates",
       pages: 40,
       sections: 64,
@@ -446,7 +446,7 @@ export const references: Reference[] = [
     author: [{ family: "Hakimoglu-Brown", given: "Cetin" }],
     issued: { "date-parts": [[2025]] },
     URL: "https://arxiv.org/abs/2506.10206",
-    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
+    note: "arXiv:2506.10206v2 (2025), MSC 33B30/33B15. A beta-integral technique giving analytic proofs of two-term Li₂ relations and ladder identities with arguments in ℚ(√2), ℚ(√3), ℚ(√5), ℚ(√−7), plus single-term dilogarithm evaluations. Supplies the analytic backing for the golden-ratio (ℚ(√5)) value Li₂(φ⁻²) = π²/15 − ln²φ used to evaluate the 4₁ real-q Habiro-tail resurgent action A₀ = π²/5 (QOU/QBeta/HabiroTailAction.lean; probe qbeta\\_fourone\\_habiro\\_tail\\_action). PDF read in-sandbox 2026-07-18 (library/arxiv-2506.10206v2/2506.10206v2.pdf); the Rogers L-function (eq 4), Euler reflection (6), Landen (7) match the corpus derivation.",
   }),
 
   // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
@@ -1723,6 +1723,23 @@ export const references: Reference[] = [
     page: "1067-1084",
     issued: { "date-parts": [[1962]] },
     DOI: "10.1103/PhysRev.125.1067",
+  }),
+
+  ref({
+    id: "gellmannoakesrenner1968",
+    type: "article-journal",
+    title: "Behavior of Current Divergences under SU(3) x SU(3)",
+    author: [
+      { family: "Gell-Mann", given: "Murray" },
+      { family: "Oakes", given: "R. J." },
+      { family: "Renner", given: "B." },
+    ],
+    "container-title": "Physical Review",
+    volume: "175",
+    issue: "5",
+    page: "2195-2199",
+    issued: { "date-parts": [[1968]] },
+    DOI: "10.1103/PhysRev.175.2195",
   }),
   ref({
     id: "colemanglashow1961",
@@ -7987,6 +8004,23 @@ export const references: Reference[] = [
     note: "The canonical survey of the octonions. §4.1 identifies the derivation algebra of the octonions with the compact exceptional Lie algebra $\\mathfrak{g}_2$: $\\mathrm{Der}(\\mathbb{O})\\cong\\mathfrak{g}_2$, a 14-dimensional space. Cited by QOU/MathlibExt/OctonionDerivationsBound.lean for the upper bound $\\dim\\mathrm{Der}(\\mathbb{O})\\le 14$ (the lower bound and the rank-nullity reduction are machine-verified there).",
   }),
 
+  // ── Günaydin–Gürsey 1973 — quark structure and octonions ──────
+  ref({
+    id: "gunaydin-gursey1973",
+    type: "article-journal",
+    title: "Quark structure and octonions",
+    author: [
+      { family: "Günaydin", given: "Murat" },
+      { family: "Gürsey", given: "Feza" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    volume: "14",
+    issue: "11",
+    page: "1651-1667",
+    issued: { "date-parts": [[1973]] },
+    note: "The source of the decomposition the colour-algebra section depends on: fixing one imaginary unit reduces $\\mathrm{Aut}(\\mathbb{O}) = G_2$ to the stabilizer $\\mathrm{SU}(3)$, under which $\\mathrm{Im}(\\mathbb{O})$ splits as $\\mathbb{R}\\oplus\\mathbb{C}^3$ with the quark triplet and antitriplet as complex-conjugate (NOT self-dual) summands. That non-self-duality is the input the $\\mathrm{Sym}^2$ gate consumes: a self-dual 3 would carry a singlet in $\\mathrm{Sym}^2$ and fail. Added 2026-08-25 — the corpus named 'the Günaydin–Gürsey decomposition' in 7+ places (color-su3-from-g2.md, schur-weyl-eightfold.md, sm-colour-stabilizer-action.md, OctonionSU3Stabilizer.lean, OctonionSU3BracketClosure.lean, ColourComplexStructure.lean) with NO bibliography entry, and OctonionSU3Stabilizer.lean backed it with '-- Ref: [manuscript]' pointing at the corpus's own audit doc. NO DOI RECORDED: api.crossref.org is blocked by the sandbox proxy (403), so the DOI could not be verified from a primary source and is deliberately omitted rather than written from memory. The volume/issue/page above are corroborated by three independent in-repo bibliographies that cite this work: library/arxiv-2306.13098v2 ref [7], library/arxiv-2202.06733v1 ref [69], and library/arxiv-1205.4619v1 ref [7]. Accessible modern restatement: library/arxiv-2403.00360v2 §2.3.",
+  }),
+
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
   ref({
     id: "murasugi1996",
@@ -11078,6 +11112,236 @@ export const references: Reference[] = [
     note: "PDF library/arxiv-math-0304010v1/",
   }),
 
+  // ── Borodin–Okounkov–Olshanski 2000 (descent DPP / discrete Bessel kernel) ──
+  ref({
+    id: "borodin-okounkov-olshanski2000",
+    library: {
+      docId: "arxiv-math-9905032v2",
+      dir: "library/arxiv-math-9905032v2",
+      pdf: "library/arxiv-math-9905032v2/9905032v2.pdf",
+      stage: "sections",
+      pages: 43,
+      sections: 43,
+      arxiv: "math/9905032v2",
+    },
+    type: "article-journal",
+    title: "Asymptotics of Plancherel measures for symmetric groups",
+    author: [
+      { family: "Borodin", given: "Alexei" },
+      { family: "Okounkov", given: "Andrei" },
+      { family: "Olshanski", given: "Grigori" },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: "13",
+    page: "481-515",
+    issue: "3",
+    issued: { "date-parts": [[2000]] },
+    DOI: "10.1090/S0894-0347-00-00337-4",
+    URL: "https://arxiv.org/abs/math/9905032",
+    note: "The descent set D(λ)={λ_i−i} is a determinantal point process with the discrete Bessel kernel (Thm 1/eq 1.8-1.9); Thm 3 gives the bulk discrete-sine-kernel limit (rate-free); Remark 1.6 identifies the Toeplitz-determinant structure (Widom). Published twin s0894-0347-00-00337-4. PDF library/arxiv-math-9905032v2/.",
+  }),
+
+  // ── Johansson 2001 (discrete OPE ensembles / Plancherel edge + Bessel bounds) ──
+  ref({
+    id: "johansson2001",
+    library: {
+      docId: "arxiv-math-9906120v3",
+      dir: "library/arxiv-math-9906120v3",
+      pdf: "library/arxiv-math-9906120v3/9906120v3.pdf",
+      stage: "sections",
+      pages: 38,
+      sections: 14,
+      arxiv: "math/9906120v3",
+    },
+    type: "article-journal",
+    title: "Discrete orthogonal polynomial ensembles and the Plancherel measure",
+    author: [{ family: "Johansson", given: "Kurt" }],
+    "container-title": "Annals of Mathematics",
+    volume: "153",
+    page: "259-296",
+    issue: "1",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.2307/2661375",
+    URL: "https://arxiv.org/abs/math/9906120",
+    note: "Lemma 3.9 (eq 3.41): explicit super-exponential Bessel tail bound past the edge (the Olver-free tail). Lemma 3.8 (eq 3.38): de-Poissonization with explicit C/N^2 error. Bulk sine-kernel stated as a limit (defers to BOO). PDF library/arxiv-math-9906120v3/.",
+  }),
+
+  // ── Gorbunov 2024 (Berry–Esseen rate for the Bessel-kernel DPP) ──
+  ref({
+    id: "gorbunov2024",
+    library: {
+      docId: "sm10137-eng",
+      dir: "library/sm10137-eng",
+      pdf: "library/sm10137-eng/sm10137_eng.pdf",
+      stage: "sections",
+      pages: 26,
+      sections: 43,
+    },
+    type: "article-journal",
+    title:
+      "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+    author: [{ family: "Gorbunov", given: "Sergei M." }],
+    "container-title": "Sbornik: Mathematics",
+    volume: "215",
+    page: "1607-1632",
+    issue: "12",
+    issued: { "date-parts": [[2024]] },
+    DOI: "10.4213/sm10137e",
+    note: "Berry–Esseen rate for linear statistics of the (continuous hard-edge) Bessel-kernel DPP via the Kac–Akhiezer variance formula (Basor–Ehrhardt) and the Borodin–Okounkov Toeplitz identity; framed as the continuous analogue of the discrete (Toeplitz) case. PDF library/sm10137-eng/.",
+  }),
+
+  // ── Deift–Its–Krasovsky 2012 (Toeplitz determinant asymptotics with error terms) ──
+  ref({
+    id: "deift-its-krasovsky2012",
+    library: {
+      docId: "arxiv-1207.4990v3",
+      dir: "library/arxiv-1207.4990v3",
+      pdf: "library/arxiv-1207.4990v3/1207.4990v3.pdf",
+      stage: "sections",
+      pages: 70,
+      sections: 10,
+      arxiv: "1207.4990v3",
+    },
+    type: "article",
+    title:
+      "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+    author: [
+      { family: "Deift", given: "Percy" },
+      { family: "Its", given: "Alexander" },
+      { family: "Krasovsky", given: "Igor" },
+    ],
+    "container-title": "Communications on Pure and Applied Mathematics",
+    volume: "66",
+    page: "1360-1438",
+    issue: "9",
+    issued: { "date-parts": [[2013]] },
+    DOI: "10.1002/cpa.21467",
+    URL: "https://arxiv.org/abs/1207.4990",
+    note: "Survey of Toeplitz-determinant asymptotics WITH error terms: the strong Szegő limit theorem (smooth symbol → exponentially small remainder via the Borodin–Okounkov identity), Fisher–Hartwig singularities (jump/arc symbol → ALGEBRAIC power-law remainder), Toeplitz+Hankel, double-scaling. §11 (p49–53) treats the moving soft edge as a DOUBLE-SCALING limit (Painlevé II/Airy) and identifies the Poissonized Plancherel determinant (Gessel) as exactly this problem, citing Baik–Deift–Johansson. PDF library/arxiv-1207.4990v3/.",
+  }),
+
+  // ── Baik–Deift–Johansson 1999 (longest increasing subsequence / edge double-scaling) ──
+  ref({
+    id: "baik-deift-johansson1999",
+    library: {
+      docId: "arxiv-math-9810105v2",
+      dir: "library/arxiv-math-9810105v2",
+      pdf: "library/arxiv-math-9810105v2/9810105v2.pdf",
+      stage: "sections",
+      pages: 60,
+      sections: 57,
+      arxiv: "math/9810105v2",
+    },
+    type: "article-journal",
+    title:
+      "On the distribution of the length of the longest increasing subsequence of random permutations",
+    author: [
+      { family: "Baik", given: "Jinho" },
+      { family: "Deift", given: "Percy" },
+      { family: "Johansson", given: "Kurt" },
+    ],
+    "container-title": "Journal of the American Mathematical Society",
+    volume: "12",
+    page: "1119-1178",
+    issue: "4",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.1090/S0894-0347-99-00307-0",
+    URL: "https://arxiv.org/abs/math/9810105",
+    note: "The foundational EDGE result: (λ₁ − 2√θ)/θ^{1/6} → Tracy–Widom (Airy), with convergence of moments, via the Riemann–Hilbert double-scaling analysis of the Plancherel Toeplitz determinant. Supplies the RH double-scaling METHOD + the edge half of the asymptotic — NOT the global linear-statistic (Kerov-CLT) variance rate the qou-k5r5 (CS) margin needs. PDF library/arxiv-math-9810105v2/.",
+  }),
+
+  // ── Baik–Rains 2001 (symmetrized permutations / edge symmetry classes) ──
+  ref({
+    id: "baik-rains2001",
+    library: {
+      docId: "arxiv-math-9910019v1",
+      dir: "library/arxiv-math-9910019v1",
+      pdf: "library/arxiv-math-9910019v1/9910019v1.pdf",
+      stage: "sections",
+      pages: 17,
+      sections: 4,
+      arxiv: "math/9910019v1",
+    },
+    type: "article",
+    title: "Symmetrized random permutations",
+    author: [
+      { family: "Baik", given: "Jinho" },
+      { family: "Rains", given: "Eric M." },
+    ],
+    issued: { "date-parts": [[2001]] },
+    URL: "https://arxiv.org/abs/math/9910019",
+    note: "Edge (λ₁) fluctuations for symmetry classes of random permutations (the β=1,4 / GOE, GSE analogues). Edge regime. PDF library/arxiv-math-9910019v1/.",
+  }),
+
+  // ── Baik 2022 (KPZ limit theorems — modern review) ──
+  ref({
+    id: "baik2022kpz",
+    library: {
+      docId: "arxiv-2206.14086v3",
+      dir: "library/arxiv-2206.14086v3",
+      pdf: "library/arxiv-2206.14086v3/2206.14086v3.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 19,
+      arxiv: "2206.14086v3",
+    },
+    type: "article",
+    title: "KPZ limit theorems",
+    author: [{ family: "Baik", given: "Jinho" }],
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2206.14086",
+    note: "Modern survey of the KPZ universality class and edge (Airy-process) limit theorems, with the Plancherel/longest-increasing-subsequence case as a central example. Edge regime. PDF library/arxiv-2206.14086v3/.",
+  }),
+
+  // ── Charlier–Claeys 2015 (Toeplitz determinants, perturbation of an arc symbol with a gap; sine-kernel determinant) ──
+  ref({
+    id: "charlier-claeys2015",
+    library: {
+      docId: "arxiv-1409.0435v2",
+      dir: "library/arxiv-1409.0435v2",
+      pdf: "library/arxiv-1409.0435v2/1409.0435v2.pdf",
+      stage: "sections",
+      pages: 28,
+      sections: 14,
+      arxiv: "1409.0435v2",
+    },
+    type: "article",
+    title:
+      "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+    author: [
+      { family: "Charlier", given: "Christophe" },
+      { family: "Claeys", given: "Tom" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    issued: { "date-parts": [[2015]] },
+    URL: "https://arxiv.org/abs/1409.0435",
+    note: "Rigorous Riemann–Hilbert analysis of Dn(f) for a symbol that jumps at e^{±iθ0} and tends to zero on the complementary arc at rate s = e^{-xn}. Theorem 1.1 extends Widom's arc asymptotic (1.3) — n² ln sin(θ0/2) + n f̂W_0 − (1/4) ln n + Σ k f̂W_k f̂W_{-k} − (1/4) ln cos(θ0/2) + (1/12) ln 2 + 3ζ'(−1) + o(1) — into the double-scaling regime 0 ≤ s ≤ e^{-xc n}, with error O(n^{-1/2} e^{xc n} s). Application 2 re-derives, rigorously, the sine-kernel Fredholm determinant asymptotic ln det(1−(1−s)K_y) = −π²y²/2 − (1/4) ln πy + c + O(y^{-1}), c = (1/12) ln 2 + 3ζ'(−1). The RH local (modified Bessel) vs global parametrix matching P = (I + O(n^{-1}))P^∞ (eq 4.22) is the structural source of the 1/n correction. RELEVANCE to qou-k5r5: this is the CONTINUOUS sine-kernel GAP-PROBABILITY (CUE arc-counting), NOT the Plancherel discrete-kernel LINEAR-STATISTIC variance — same kernel neighbourhood, adjacent functional; it supplies the rigorous limit object + the rate MECHANISM, not the Σ|c| variance constant. PDF library/arxiv-1409.0435v2/.",
+  }),
+
+  // ── Corwin–Deift–Its 2022 (survey of Widom's random-matrix work; sine-kernel determinant references) ──
+  ref({
+    id: "corwin-deift-its2022",
+    library: {
+      docId: "arxiv-2201.05665v1",
+      dir: "library/arxiv-2201.05665v1",
+      pdf: "library/arxiv-2201.05665v1/2201.05665v1.pdf",
+      stage: "sections",
+      pages: 16,
+      sections: 8,
+      arxiv: "2201.05665v1",
+    },
+    type: "article",
+    title: "Harold Widom's work in random matrix theory",
+    author: [
+      { family: "Corwin", given: "Ivan Z." },
+      { family: "Deift", given: "Percy A." },
+      { family: "Its", given: "Alexander R." },
+    ],
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2201.05665",
+    note: "Survey of Widom's random-matrix work, opening with the sine-kernel Fredholm determinant (the bulk emptiness-formation probability) and Widom's asymptotic answering Dyson, then the Tracy–Widom edge distributions and ASEP. Used in qou-k5r5 as the pin for Widom's sine-kernel determinant references and the sine-vs-Airy (bulk-vs-edge) regime split. Context/survey, not a primary rate computation for the Plancherel linear statistic. PDF library/arxiv-2201.05665v1/.",
+  }),
+
   ref({
     id: "tsoukalas-etal2026",
     library: {
@@ -12005,7 +12269,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-1810.11563v1",
       dir: "library/arxiv-1810.11563v1",
-      pdf: "library/arxiv-1810.11563v1/1810.11563v1 (1).pdf",
+      pdf: "library/arxiv-1810.11563v1/1810.11563v1.pdf",
       stage: "candidates",
       pages: 84,
       sections: 44,
@@ -12061,6 +12325,7 @@ export const references: Reference[] = [
       pages: 37,
       sections: 17,
       arxiv: "1910.09966v1",
+      alternates: ["symmetry-11-01298"],
     },
     type: "article",
     title: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics",
@@ -12327,7 +12592,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2304.12545v1",
       dir: "library/arxiv-2304.12545v1",
-      pdf: "library/arxiv-2304.12545v1/2304.12545v1 (1).pdf",
+      pdf: "library/arxiv-2304.12545v1/2304.12545v1.pdf",
       stage: "candidates",
       pages: 19,
       sections: 7,
@@ -12412,7 +12677,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-2402.04839v2",
       dir: "library/arxiv-2402.04839v2",
-      pdf: "library/arxiv-2402.04839v2/2402.04839v2 (1).pdf",
+      pdf: "library/arxiv-2402.04839v2/2402.04839v2.pdf",
       stage: "candidates",
       pages: 28,
       sections: 22,
@@ -12650,7 +12915,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-math-0401068v1",
       dir: "library/arxiv-math-0401068v1",
-      pdf: "library/arxiv-math-0401068v1/0401068v1 (1).pdf",
+      pdf: "library/arxiv-math-0401068v1/0401068v1.pdf",
       stage: "candidates",
       pages: 12,
       sections: 4,
@@ -13161,7 +13426,7 @@ export const references: Reference[] = [
     library: {
       docId: "arxiv-hep-th-9308100v1",
       dir: "library/arxiv-hep-th-9308100v1",
-      pdf: "library/arxiv-hep-th-9308100v1/9308100v1 (1).pdf",
+      pdf: "library/arxiv-hep-th-9308100v1/9308100v1.pdf",
       stage: "candidates",
       pages: 22,
       sections: 14,
@@ -14398,6 +14663,509 @@ export const references: Reference[] = [
       "from the key. UNVERIFIED: volume and the article-number/page field, plus DOI — " +
       "omitted rather than guessed. Registered by the dangling-citation drain, bean " +
       "qou-ghy5.",
+  }),
+
+  // ── Chiral perturbation theory — thirteen-document library tranche (2026-08-24) ──
+  // All thirteen were ingested together under library/; metadata below was read
+  // off page 1 of each PDF, not taken from the extracted `metadata.title`, which
+  // for several of them picks up an affiliation line or a journal masthead.
+  // Report numbers and venue lines are quoted from page 1 in each `note`.
+
+  ref({
+    id: "gasser-leutwyler-1985",
+    library: {
+      docId: "np-b250-1985-465",
+      dir: "library/np-b250-1985-465",
+      pdf: "library/np-b250-1985-465/NP_B250_1985_465.pdf",
+      stage: "candidates",
+      pages: 52,
+      sections: 22,
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark",
+    author: [
+      { family: "Gasser", given: "J." },
+      { family: "Leutwyler", given: "H." },
+    ],
+    "container-title": "Nuclear Physics B",
+    volume: "250",
+    page: "465-516",
+    issued: { "date-parts": [[1985]] },
+    DOI: "10.1016/0550-3213(85)90492-4",
+    note:
+      "PDF library/np-b250-1985-465/ — " +
+      "The SU(3) companion to Gasser-Leutwyler 1984; the primary source for the " +
+      "O(p^4) chiral expansion of the pseudoscalar octet masses and decay " +
+      "constants. Page 1 masthead: 'Nuclear Physics B250 (1985) 465-516, " +
+      "North-Holland Publishing Company'; received 3 July 1984, revised 27 " +
+      "September 1984. Leading-order eigenvalues at eq. (5.18), p. 478; the " +
+      "Goldstone statement at p. 470. CAUTION: this is a scanned journal PDF " +
+      "with a moderate-quality text layer — subscripts and Greek are mangled " +
+      "throughout the extracted sections (e.g. 'M~' for M_eta, 'rn~' for m_s), " +
+      "so quote from the PDF page, not from library/np-b250-1985-465/sections/. " +
+      "Registered from library intake; DOI supplied by the author, title/authors/" +
+      "volume/pages verified against the page-1 masthead.",
+  }),
+
+  ref({
+    id: "prades-1993",
+    library: {
+      docId: "arxiv-hep-ph-9302246v1",
+      dir: "library/arxiv-hep-ph-9302246v1",
+      pdf: "library/arxiv-hep-ph-9302246v1/9302246v1.pdf",
+      stage: "candidates",
+      pages: 44,
+      sections: 34,
+      arxiv: "hep-ph/9302246v1",
+    },
+    type: "article",
+    title: "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD",
+    author: [{ family: "Prades", given: "Joaquim" }],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9302246",
+    note:
+      "PDF library/arxiv-hep-ph-9302246v1/ — " +
+      "arXiv:hep-ph/9302246v1, stamped 11 Feb 1993; report number CPT-93/P.2871, " +
+      "dated January 1993 on page 1. Computes the couplings of the massive " +
+      "spin-1 chiral Lagrangian to O(p^3) in the extended NJL model. Registered " +
+      "from library intake; metadata read off page 1 of the PDF.",
+  }),
+
+  ref({
+    id: "tanabashi-1993",
+    library: {
+      docId: "arxiv-hep-ph-9306237v1",
+      dir: "library/arxiv-hep-ph-9306237v1",
+      pdf: "library/arxiv-hep-ph-9306237v1/9306237v1.pdf",
+      stage: "candidates",
+      pages: 14,
+      sections: 23,
+      arxiv: "hep-ph/9306237v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation to One Loop Including the rho Meson",
+    author: [{ family: "Tanabashi", given: "Masaharu" }],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9306237",
+    note:
+      "PDF library/arxiv-hep-ph-9306237v1/ — " +
+      "arXiv:hep-ph/9306237v1, stamped 7 Jun 1993; report numbers KEK-TH-349 and " +
+      "KEK preprint 92-169, dated April 1993 on page 1. One-loop ChPT with the " +
+      "rho as a hidden-local-symmetry gauge boson; the abstract states matching " +
+      "conditions 'to the conventional chiral perturbation of Gasser and " +
+      "Leutwyler in the chiral limit in a renormalization scale independent " +
+      "manner'. Registered from library intake; metadata read off page 1.",
+  }),
+
+  ref({
+    id: "herrero-ruizmorales-1993",
+    library: {
+      docId: "arxiv-hep-ph-9308276v1",
+      dir: "library/arxiv-hep-ph-9308276v1",
+      pdf: "library/arxiv-hep-ph-9308276v1/9308276v1.pdf",
+      stage: "candidates",
+      pages: 24,
+      sections: 29,
+      arxiv: "hep-ph/9308276v1",
+    },
+    type: "article",
+    title: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+    author: [
+      { family: "Herrero", given: "Maria J." },
+      { family: "Ruiz Morales", given: "Ester" },
+    ],
+    issued: { "date-parts": [[1993]] },
+    URL: "https://arxiv.org/abs/hep-ph/9308276",
+    note:
+      "PDF library/arxiv-hep-ph-9308276v1/ — " +
+      "arXiv:hep-ph/9308276v1, stamped 14 Aug 1993. ELECTROWEAK, not QCD: the " +
+      "chiral Lagrangian here is the SU(2)_L x U(1)_Y one, and the 'chiral " +
+      "parameters' are non-decoupling effects of a heavy Higgs, not quark-mass " +
+      "expansions. It shares only the effective-Lagrangian machinery with the " +
+      "rest of this tranche. Registered from library intake; metadata read off " +
+      "page 1.",
+  }),
+
+  ref({
+    id: "pich-1995",
+    library: {
+      docId: "arxiv-hep-ph-9502366v1",
+      dir: "library/arxiv-hep-ph-9502366v1",
+      pdf: "library/arxiv-hep-ph-9502366v1/9502366v1.pdf",
+      stage: "candidates",
+      pages: 57,
+      sections: 67,
+      arxiv: "hep-ph/9502366v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory",
+    author: [{ family: "Pich", given: "Antonio" }],
+    "container-title": "Reports on Progress in Physics",
+    issued: { "date-parts": [[1995]] },
+    URL: "https://arxiv.org/abs/hep-ph/9502366",
+    note:
+      "PDF library/arxiv-hep-ph-9502366v1/ — " +
+      "arXiv:hep-ph/9502366v1, stamped 22 Feb 1995; report numbers FTUV/95-4 and " +
+      "IFIC/95-4; page 1 states 'To be published in Reports on Progress in " +
+      "Physics, February 1995'. The most usable review in this tranche for the " +
+      "chiral-limit question: the tree-level pseudoscalar masses are eq. (3.25), " +
+      "the Gell-Mann-Oakes-Renner relation eq. (3.27) and the current-algebra " +
+      "mass ratios eq. (3.28), all on PDF pp. 9-10; the O(p^4) corrections and " +
+      "the Gell-Mann-Okubo deviation are section 5.4, PDF p. 19, attributed " +
+      "there to Gasser and Leutwyler 1985 (= [gasser-leutwyler-1985] in this " +
+      "bibliography). Volume/pages of the published version not verified — " +
+      "omitted rather than guessed. Registered from library intake.",
+  }),
+
+  ref({
+    id: "borasoy-meissner-1995",
+    library: {
+      docId: "arxiv-hep-ph-9511320v1",
+      dir: "library/arxiv-hep-ph-9511320v1",
+      pdf: "library/arxiv-hep-ph-9511320v1/9511320v1.pdf",
+      stage: "candidates",
+      pages: 26,
+      sections: 40,
+      arxiv: "hep-ph/9511320v1",
+    },
+    type: "article",
+    title: "Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields",
+    author: [
+      { family: "Borasoy", given: "B." },
+      { family: "Meissner", given: "Ulf-G." },
+    ],
+    issued: { "date-parts": [[1995]] },
+    URL: "https://arxiv.org/abs/hep-ph/9511320",
+    note:
+      "PDF library/arxiv-hep-ph-9511320v1/ — " +
+      "arXiv:hep-ph/9511320v1, stamped 15 Nov 1995; report number TK 95 31. " +
+      "Vector-versus-tensor field formulations for spin-1 fields coupled to " +
+      "baryons, the origin of the Weinberg term in pion-nucleon scattering. " +
+      "Author name is spelled 'Meissner' here; the PDF prints the umlaut form. " +
+      "Registered from library intake; metadata read off page 1.",
+  }),
+
+  ref({
+    id: "portoles-2007-largeNC",
+    library: {
+      docId: "arxiv-hep-ph-0702179v1",
+      dir: "library/arxiv-hep-ph-0702179v1",
+      pdf: "library/arxiv-hep-ph-0702179v1/0702179v1.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 4,
+      arxiv: "hep-ph/0702179v1",
+    },
+    type: "paper-conference",
+    title: "Large-N_C estimate of the chiral low-energy constants",
+    author: [{ family: "Portoles", given: "J." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/hep-ph/0702179",
+    note:
+      "PDF library/arxiv-hep-ph-0702179v1/ — " +
+      "arXiv:hep-ph/0702179v1, stamped 18 Feb 2007. Page 1: 'IFIC/07-10 report. " +
+      "Talk given at the Final Euridice Meeting, 24th-27th August 2006, " +
+      "Kazimierz (Poland).' Distinct from [portoles-2007-status] despite a " +
+      "reused introduction — library-find-duplicates scores the pair at 0.361 " +
+      "and it is a false positive. Registered from library intake.",
+  }),
+
+  ref({
+    id: "ecker-2007",
+    library: {
+      docId: "arxiv-hep-ph-0702263v1",
+      dir: "library/arxiv-hep-ph-0702263v1",
+      pdf: "library/arxiv-hep-ph-0702263v1/0702263v1.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 6,
+      arxiv: "hep-ph/0702263v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Low-Energy Constants",
+    author: [{ family: "Ecker", given: "Gerhard" }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/hep-ph/0702263",
+    note:
+      "PDF library/arxiv-hep-ph-0702263v1/ — " +
+      "arXiv:hep-ph/0702263v1, stamped 26 Feb 2007; report number UWThPh-2007-2. " +
+      "Page 1: 'Presented at The Final Euridice Meeting, Kazimierz, Poland, Aug. " +
+      "2006.' Reviews the determination of the mesonic chiral Lagrangian's " +
+      "coupling constants across the Eurodaphne/Euridice networks. Registered " +
+      "from library intake.",
+  }),
+
+  ref({
+    id: "mateu-2007",
+    library: {
+      docId: "arxiv-0709.3157v1",
+      dir: "library/arxiv-0709.3157v1",
+      pdf: "library/arxiv-0709.3157v1/0709.3157v1.pdf",
+      stage: "candidates",
+      pages: 7,
+      sections: 7,
+      arxiv: "0709.3157v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Lagrangians with tensor sources",
+    author: [{ family: "Mateu", given: "V." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/0709.3157",
+    note:
+      "PDF library/arxiv-0709.3157v1/ — " +
+      "arXiv:0709.3157v1 [hep-ph], stamped 20 Sep 2007. Page 1: 'Talk given at " +
+      "the 4th International Worshop on Quantum ChromoDynamics, Theory and " +
+      "experiment, June 16-20, 2007. Martina Franca - Valle d'Itria - Italy. " +
+      "IFIC-07-54, FTUV-07-0920.' (The misspelling 'Worshop' is the PDF's.) " +
+      "Adds the tensor quark bilinear as an external source; ~100 new operators " +
+      "at O(p^6) and the question of whether that set is a basis. Registered " +
+      "from library intake.",
+  }),
+
+  ref({
+    id: "portoles-2007-status",
+    library: {
+      docId: "arxiv-0710.4405v1",
+      dir: "library/arxiv-0710.4405v1",
+      pdf: "library/arxiv-0710.4405v1/0710.4405v1.pdf",
+      stage: "candidates",
+      pages: 8,
+      sections: 4,
+      arxiv: "0710.4405v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Low-Energy Constants: Status and Prospects",
+    author: [{ family: "Portoles", given: "J." }],
+    issued: { "date-parts": [[2007]] },
+    URL: "https://arxiv.org/abs/0710.4405",
+    note:
+      "PDF library/arxiv-0710.4405v1/ — " +
+      "arXiv:0710.4405v1 [hep-ph], stamped 24 Oct 2007. Page 1: 'IFIC/07-63. " +
+      "Talk given at the 31st International Conference of Theoretical Physics: " +
+      "Matter To The Deepest: Recent Development in Physics of Fundamental " +
+      "Interactions, 5-11 Sep 2007, Ustron, Katowice (Poland).' Distinct from " +
+      "[portoles-2007-largeNC]; see the note there. Registered from library " +
+      "intake.",
+  }),
+
+  ref({
+    id: "scherer-2009",
+    library: {
+      docId: "arxiv-0908.3425v1",
+      dir: "library/arxiv-0908.3425v1",
+      pdf: "library/arxiv-0908.3425v1/0908.3425v1.pdf",
+      stage: "candidates",
+      pages: 85,
+      sections: 47,
+      arxiv: "0908.3425v1",
+    },
+    type: "article",
+    title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+    author: [{ family: "Scherer", given: "S." }],
+    issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0908.3425",
+    note:
+      "PDF library/arxiv-0908.3425v1/ — " +
+      "arXiv:0908.3425v1 [hep-ph], stamped 24 Aug 2009; dated 10 April 2009 on " +
+      "page 1. An 85-page pedagogical review, and the cleanest extracted text in " +
+      "this tranche. For the chiral-limit question: the lowest-order Goldstone " +
+      "masses are eqs. (105)-(107) on p. 26; the sentence naming them 'the " +
+      "Gell-Mann, Oakes, and Renner relations', together with B_0 = " +
+      "-<qq>_0/(3 F_0^2) at eq. (103), is on p. 27; " +
+      "the O(q^4) masses with their chiral logarithms are eqs. (162)-(164), " +
+      "pp. 44-45. Registered from library intake.",
+  }),
+
+  ref({
+    id: "bijnens-2013",
+    library: {
+      docId: "arxiv-1301.6953v1",
+      dir: "library/arxiv-1301.6953v1",
+      pdf: "library/arxiv-1301.6953v1/1301.6953v1.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 12,
+      arxiv: "1301.6953v1",
+    },
+    type: "paper-conference",
+    title: "Chiral Perturbation Theory and Mesons",
+    author: [{ family: "Bijnens", given: "Johan" }],
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1301.6953",
+    note:
+      "PDF library/arxiv-1301.6953v1/ — " +
+      "arXiv:1301.6953v1 [hep-ph], stamped 29 Jan 2013; report number LU TP " +
+      "13-03. Page 1: 'To be published in the proceedings of: The 7th " +
+      "International Workshop on Chiral Dynamics, August 6-10, 2012, Jefferson " +
+      "Lab, Newport News, Virginia, USA.' Carries the two-flavour NLO pion mass " +
+      "with its chiral logarithm at eq. (2.4), p. 4. Registered from library " +
+      "intake.",
+  }),
+
+  ref({
+    id: "aleksejevs-barkanova-2013",
+    library: {
+      docId: "arxiv-1309.3313v1",
+      dir: "library/arxiv-1309.3313v1",
+      pdf: "library/arxiv-1309.3313v1/1309.3313v1.pdf",
+      stage: "candidates",
+      pages: 9,
+      sections: 1,
+      arxiv: "1309.3313v1",
+    },
+    type: "paper-conference",
+    title: "Hadron Structure in Chiral Perturbation Theory",
+    author: [
+      { family: "Aleksejevs", given: "A." },
+      { family: "Barkanova", given: "S." },
+    ],
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1309.3313",
+    note:
+      "PDF library/arxiv-1309.3313v1/ — " +
+      "arXiv:1309.3313v1 [hep-ph], stamped 12 Sep 2013. Meson and baryon form " +
+      "factors and electric/magnetic polarizabilities of the SU(3) octet from " +
+      "semi-automatised relativistic ChPT. The PDF has no outline and its text " +
+      "extracts as a single section. Registered from library intake; metadata " +
+      "read off page 1.",
+  }),
+  // ── Bennequin 1983 — the self-linking inequality sl <= -chi ──
+  ref({
+    id: "bennequin1983",
+    type: "article-journal",
+    title: "Entrelacements et \u00e9quations de Pfaff",
+    author: [{ family: "Bennequin", given: "Daniel" }],
+    "container-title": "Ast\u00e9risque",
+    issued: { "date-parts": [[1983]] },
+    volume: "107-108",
+    page: "87-161",
+    note: "Source of the self-linking (Bennequin) inequality sl(L) <= -chi(L). For a closed braid on n strands with exponent sum e, sl = e - n, so the c-component unlink (maximal Euler characteristic c, being c disjoint disks) gives e <= n - c. Cited by QOU.Knot.MFWSkeinInduction: together with the classical fact that a descending diagram is an unlink (lickorish1997), this discharges the DescendingWrithe base-case hypothesis of the MFW skein induction. Not circular: Bennequin (1983) predates HOMFLY (1985) and MFW (1987), and its proof is contact-geometric, independent of the skein induction it is used in here. No DOI recorded -- Asterisque 107-108 predates DOI assignment; deliberately left absent rather than guessed.",
+  }),
+  ref({
+    id: "ito2008",
+    library: {
+      docId: "arxiv-0805.1447v2",
+      dir: "library/arxiv-0805.1447v2",
+      pdf: "library/arxiv-0805.1447v2/0805.1447v2.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 8,
+      arxiv: "0805.1447v2",
+    },
+    type: "article",
+    title: "Braid ordering and the geometry of closed braid",
+    author: [{ family: "Ito", given: "Tetsuya" }],
+    issued: { "date-parts": [[2008]] },
+    URL: "https://arxiv.org/abs/0805.1447",
+    note: "PDF library/arxiv-0805.1447v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Theorem 2 is the reason this is registered: for a braid beta in B_n whose closure is a knot and whose Dehornoy floor is at least 3, beta is periodic iff its closure is a torus knot, reducible iff satellite, and pseudo-Anosov iff HYPERBOLIC. That converts the question 'is this closed braid word hyperbolic?' — which the canonical-knot-id work has to answer per braid word — into a Nielsen-Thurston classification of the word itself. The Dehornoy-floor hypothesis is the catch: short words have small floor and the theorem simply does not apply to them.",
+  }),
+  ref({
+    id: "gresnigt2019",
+    library: {
+      docId: "arxiv-1901.01312v1",
+      dir: "library/arxiv-1901.01312v1",
+      pdf: "library/arxiv-1901.01312v1/1901.01312v1.pdf",
+      stage: "candidates",
+      pages: 10,
+      sections: 22,
+      arxiv: "1901.01312v1",
+    },
+    type: "article",
+    title: "Braided fermions from Hurwitz algebras",
+    author: [{ family: "Gresnigt", given: "Niels G." }],
+    issued: { "date-parts": [[2019]] },
+    URL: "https://arxiv.org/abs/1901.01312",
+    note: "PDF library/arxiv-1901.01312v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Identifies the braid groups representable over the four normed division algebras as exactly B_2 and B_3^c, the two needed for one generation of fermions as three-strand ribbon braids, and matches those braid states to the minimal left ideals of Cl(6).",
+  }),
+  ref({
+    id: "krasnov2021",
+    library: {
+      docId: "arxiv-2104.01786v1",
+      dir: "library/arxiv-2104.01786v1",
+      pdf: "library/arxiv-2104.01786v1/2104.01786v1.pdf",
+      stage: "candidates",
+      pages: 27,
+      sections: 22,
+      arxiv: "2104.01786v1",
+    },
+    type: "article",
+    title: "Spin(11, 3), particles and octonions",
+    author: [{ family: "Krasnov", given: "Kirill" }],
+    issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2104.01786",
+    note: "PDF library/arxiv-2104.01786v1/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. One generation of Standard Model fermions, Lorentz spinor degrees of freedom included, as the real 64-dimensional semi-spinor S+ of Spin(11,3), modelled as O tensor split-O; the subgroup commuting with both complex structures is Spin(6) x Spin(4) x Spin(1,3).",
+  }),
+  ref({
+    id: "gresnigt2023",
+    library: {
+      docId: "arxiv-2306.13098v2",
+      dir: "library/arxiv-2306.13098v2",
+      pdf: "library/arxiv-2306.13098v2/2306.13098v2.pdf",
+      stage: "candidates",
+      pages: 18,
+      sections: 12,
+      arxiv: "2306.13098v2",
+      alternates: ["s10052-023-11923-y-a"],
+    },
+    type: "article-journal",
+    title: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+    author: [
+      { family: "Gresnigt", given: "Niels" },
+      { family: "Gourlay", given: "Liam" },
+      { family: "Varma", given: "Abhinav" },
+    ],
+    "container-title": "The European Physical Journal C",
+    volume: "83",
+    page: "747",
+    issued: { "date-parts": [[2023]] },
+    DOI: "10.1140/epjc/s10052-023-11923-y",
+    URL: "https://arxiv.org/abs/2306.13098",
+    note: "PDF library/arxiv-2306.13098v2/ (canonical) — the library also holds the published copy at library/s10052-023-11923-y-a/, marked duplicate_of the arXiv one. Volume, page and DOI were read off that published copy, so unlike the neighbouring intake entries they are verified against the publisher record rather than extracted from a preprint.",
+  }),
+  ref({
+    id: "nath2006",
+    library: {
+      docId: "arxiv-hep-ph-0601023v3",
+      dir: "library/arxiv-hep-ph-0601023v3",
+      pdf: "library/arxiv-hep-ph-0601023v3/0601023v3.pdf",
+      stage: "candidates",
+      pages: 258,
+      sections: 101,
+      arxiv: "hep-ph/0601023v3",
+    },
+    type: "article",
+    title: "Proton Stability in Grand Unified Theories, in Strings and in Branes",
+    author: [
+      { family: "Nath", given: "Pran" },
+      { family: "Fileviez Perez", given: "Pavel" },
+    ],
+    issued: { "date-parts": [[2006]] },
+    URL: "https://arxiv.org/abs/hep-ph/0601023",
+    note: "PDF library/arxiv-hep-ph-0601023v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record. Year is the arXiv submission year the identifier encodes; the copy held is v3, stamped 23 Apr 2007. A 258-page review of proton decay across non-SUSY, SUSY/SUGRA, extra-dimensional and string/M-theory unification.",
+  }),
+  ref({
+    id: "ruamunoz2025",
+    library: {
+      docId: "quaternioms",
+      dir: "library/quaternioms",
+      pdf: "library/quaternioms/quaternioms.pdf",
+      stage: "candidates",
+      pages: 41,
+      sections: 40,
+    },
+    type: "article-journal",
+    title: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+    author: [
+      { family: "Rua Munoz", given: "Johan Heriberto" },
+      { family: "Mahecha Gomez", given: "Jorge Eduardo" },
+      { family: "Pineda Montoya", given: "Santiago" },
+    ],
+    "container-title": "Quantum Reports",
+    volume: "7",
+    page: "55",
+    issued: { "date-parts": [[2025]] },
+    DOI: "10.3390/quantum7040055",
+    note: "PDF library/quaternioms/ — registered from library intake. Volume, article number and year are from the article's own running head ('Quantum Rep. 2025, 7, 55'); the DOI is on the cover page. The extracted title was '3.01.3', the MDPI reprint cover's section number, so the title here comes from a hand-verified override (docs/audits/library-title-overrides.json).",
   }),
 ];
 

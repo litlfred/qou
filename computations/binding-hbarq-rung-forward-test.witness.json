@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:47:18.751540+00:00",
-  "commitSha": "bdfdcbafed10215758141a963f98c8643b30f382",
+  "computedAt": "2026-08-28T15:03:58.910366+00:00",
+  "commitSha": "cdbdc84af1332800dae14cf6ce68b7bf476eb78f",
   "assertions": [
     {
       "name": "rho_over_hbarsq_is_M_need_and_binding_is_M_hbarsq_not_universal_hbarsq",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "binding-hbarq-rung-forward-test",
   "scriptFile": "binding_hbarq_rung_forward_test.py",
-  "scriptHash": "fc59b67a9036",
-  "scriptCommitSha": "137e6161d8a8cbb02065e73c3de22ef0f6c8391a",
+  "scriptHash": "67411960987b",
+  "scriptCommitSha": "42ca55b1c94c773ad011a96bb1c229ee02deeb85",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -41,7 +41,7 @@
     ],
     "reproduce": "python3 -u computations/binding_hbarq_rung_forward_test.py"
   },
-  "description": "Forward test + critical-distance re-scope of the Lane 2 b_αα result. Test 1: ρ_implied/ℏ_q² = M_need = B/(m_e·Vol) is a DEFINITIONAL identity, so 'ρ_αα≈ℏ_q²' is just M_need(single α–α bond)≈1, NOT a universal binding law — multi-bond M_need = 2.00 (³H), 2.06 (³He), 7.56 (⁴He). Corrects Lane 2's 'binding is ℏ_q²-suppressed' over-claim to ρ_binding = M·ℏ_q². Test 2 (non-circular survivor): the mass multiplier m_p/(m_e·Vol)=ρ_p/ℏ_q²≈258 is O(1/ℏ_q²) with ρ_p=linking_weight≈2.53 finite/O(1) as ℏ_q→0 (classical), while the binding multiplier M_need is O(1) so ρ_binding=M·ℏ_q²→0 (quantum) — a two-scale separation ~1/ℏ_q² that is a SCALING statement, not a magnitude coincidence. Test 3: M_need=z=A−1 in the linear-chain regime (Lane 1 tie) ⇒ ρ_binding=(A−1)·ℏ_q². Lane 2 Result 1 (259× overshoot) stands. Open: why mass carries linking_weight/ℏ_q² and binding the bare coordination count M. No fit; no wiring; q₀ proton-anchored.",
+  "description": "Forward test + critical-distance re-scope of the Lane 2 b_αα result. Test 1: ρ_implied/ℏ_q² = M_need = B/(m_e·Vol) is a DEFINITIONAL identity, so 'ρ_αα≈ℏ_q²' is just M_need(single α–α bond)≈1, NOT a universal binding law — multi-bond M_need = 2.00 (³H), 2.06 (³He), 7.56 (⁴He). Corrects Lane 2's 'binding is ℏ_q²-suppressed' over-claim to ρ_binding = M·ℏ_q². Test 2 (non-circular survivor): the mass multiplier m_p/(m_e·Vol) ≈ 250.58 MEASURED is ~2 orders above the binding multiplier M_need ≈ 1…7.6, and mass_mult·ℏ_q² = 2.460 is O(1). CORRECTED 2026-08-28: this previously read '=ρ_p/ℏ_q²≈258' — a false equality. The two differ by 2.961 %, which is exactly the deprecated Vol(𝓑₃)·λ_A/ℏ_q² form's own error, so the O(1) residue is NOT λ_A (2.460 vs 2.5328). The ℏ_q→0 SCALING language is also dropped: every number here is at one q₀ and a single point cannot determine an exponent. What is claimed is a magnitude comparison at fixed q₀. Test 3: M_need=z=A−1 in the linear-chain regime (Lane 1 tie) ⇒ ρ_binding=(A−1)·ℏ_q². Lane 2 Result 1 (259× overshoot) stands. Open: why mass carries linking_weight/ℏ_q² and binding the bare coordination count M. No fit; no wiring; q₀ proton-anchored.",
   "parameters": {
     "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
   },

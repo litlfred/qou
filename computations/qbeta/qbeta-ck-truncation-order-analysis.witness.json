@@ -9,7 +9,7 @@
       "computed": 13.36,
       "expected": 6.02,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "At N=3 (c_3 = J_Hopf(q=1) = -2 near-match) the Q_β residual is +6.0 ppb < 7.8 ppb (100× experimental target). The c_3 near-match status (q₀-dependent) is a SEPARATE fact from the experimental match — both reported, neither suppressed."
     }
   ],

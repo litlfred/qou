@@ -132,6 +132,21 @@ to be validated, not a result. Harness:
 > [`audits/2026-05-28-mu-p-tension-substrate-floor.md`](audits/2026-05-28-mu-p-tension-substrate-floor.md).
 > The μ-p 240 ppb is the floor of the *current low-order shell*; it is
 > *derivable-below* (lower N residual), but *not fittable-below*.
+>
+> **The floor is CONVENTION-INDEPENDENT — do not spend a tranche
+> re-deriving it (proved 2026-08-24).** The C→D migration moved the Markov
+> parameter `z` by **+22.70 %** and moved α\* by 14.741 %, so re-deriving the
+> two q₀ pins under D looks like obvious due diligence. It is a **no-op**:
+> the **muon** pin `q = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` contains no Markov
+> parameter at all, and the **proton** pin's closed-form trace
+> `|tr_M(β_Bor)| = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` is **already convention D** —
+> `raw_Ocneanu(z = q³/(q²+1)) − closed_form ≡ 0` exactly, symbolically, for
+> all `q`, while convention C leaves a nonzero residual carrying half-integer
+> powers of `q`. So 11.537118 ppb in q₀ / ~240 ppb in m_p *is* the D-frame
+> number. This makes the tension a **more** robust target, not less: it
+> cannot be explained away as an artifact of a superseded trace convention.
+> Proof + method:
+> [`audits/2026-08-24-mu-p-tension-is-already-convention-d.md`](audits/2026-08-24-mu-p-tension-is-already-convention-d.md).
 
 ## L1 — compute precision (default 1 ppQ)
 

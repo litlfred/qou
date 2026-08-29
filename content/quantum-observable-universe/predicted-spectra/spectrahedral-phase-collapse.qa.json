@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -170,16 +170,18 @@
           "lean": "2827aea7e5cf",
           "lean_statement": "711267b2b8a4"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d33e313ad147",
-          "script_commit_sha": "b6cda04f9cd5b281913ebfc2128e5805eefce52a"
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
         },
-        "reviewed_at": "2026-08-24T19:34:05.921Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
+        "reviewed_at": "2026-08-24T06:59:45.728Z",
+        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md:32: So the theorem above is true, non-vacuous and permanent **as a convention-C result** — but the phase-transition *reading* of it is frame-dependent and must not be restated as a property of the canonic"
       }
     ],
     "voice-title-scholarly": [
@@ -901,10 +903,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "3e7fa473352a"
         },
-        "reviewed_at": "2026-08-24T19:34:05.921Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
+        "reviewed_at": "2026-08-24T06:59:45.728Z",
+        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -922,10 +924,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "3e7fa473352a"
         },
-        "reviewed_at": "2026-08-24T19:34:05.921Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
+        "reviewed_at": "2026-08-24T06:59:45.728Z",
+        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -943,10 +945,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "3e7fa473352a"
         },
-        "reviewed_at": "2026-08-24T19:34:05.921Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
+        "reviewed_at": "2026-08-24T06:59:45.728Z",
+        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -964,10 +966,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "3e7fa473352a"
         },
-        "reviewed_at": "2026-08-24T19:34:05.921Z",
-        "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
+        "reviewed_at": "2026-08-24T06:59:45.728Z",
+        "reviewed_sha": "7aa29fce3837ce6f2a214bc23115915549044413"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1178,7 +1180,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1267,7 +1269,7 @@
       },
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1282,7 +1284,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1300,7 +1302,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1318,7 +1320,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1336,7 +1338,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1351,7 +1353,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1366,7 +1368,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1381,7 +1383,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1396,7 +1398,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1411,7 +1413,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1446,7 +1448,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1481,7 +1483,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1516,7 +1518,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1546,11 +1548,12 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Spectrahedral collapse and conformal rigidity' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Spectrahedral collapse and conformal rigidity' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1585,7 +1588,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1620,7 +1623,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1650,11 +1653,12 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1689,7 +1693,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1724,7 +1728,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1759,7 +1763,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1794,7 +1798,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1824,11 +1828,12 @@
         "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1860,11 +1865,12 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -1958,7 +1964,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1973,7 +1979,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T02:52:53.000Z",
         "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
         "reviewer": {
@@ -2527,5 +2533,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T19:34:05.921Z"
+  "updated_at": "2026-08-24T06:59:45.728Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

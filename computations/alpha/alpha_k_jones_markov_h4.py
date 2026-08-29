@@ -65,6 +65,7 @@ from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_characters import dim_q  # noqa: E402
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # noqa: E402
 from codata_constants import M_E_MEV as m_e  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 def partitions_of(n):
@@ -138,9 +139,9 @@ def main():
         data[shape] = {
             "sigmas": sigmas_dense,
             "dim": d_lam,
-            "dim_q": float(dim_q(shape)),
+            "dim_q": float(dim_q(shape, Q0_PROTON)),
         }
-        print(f"    {shape}: dim = {d_lam}, dim_q = {float(dim_q(shape)):.6f}")
+        print(f"    {shape}: dim = {d_lam}, dim_q = {float(dim_q(shape, Q0_PROTON)):.6f}")
     print()
 
     # Constraint elements: 5 unknowns (y_λ for the 5 partitions of 4)
@@ -244,7 +245,7 @@ def main():
         else:
             sigmas3_dense = list(sigmas3)
         data3[shape] = {"sigmas": sigmas3_dense, "dim": d_lam3,
-                        "dim_q": float(dim_q(shape))}
+                        "dim_q": float(dim_q(shape, Q0_PROTON))}
     constraint_words3 = {
         "1": [],
         "s0": [(0, 1)],

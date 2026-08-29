@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "All flagged items are gone: the \"## Audit\" heading is now \"## Discussion\", and the \"Task P1.5\" workplan id and the docs/audits link have been removed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] All flagged items are gone: the \"## Audit\" heading is now \"## Discussion\", and the \"Task P1.5\" workplan id and the docs/audits link have been removed.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -605,7 +605,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 0.000078,
+          "pagerank": 7.8e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -939,7 +939,7 @@
         "reviewed_at": "2026-08-15T10:30:59.331Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not a fourth input.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not a fourth input.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1289,5 +1289,6 @@
     "md": "d91842398510",
     "ts": "903a708d09a7"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

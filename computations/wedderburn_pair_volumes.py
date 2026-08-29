@@ -45,12 +45,17 @@ from hecke_core import (  # noqa: E402
 # LP-dual emission deps (witness __main__ path). Imported at module
 # level right after the sys.path setup per repo import convention —
 # hecke_core's own bootstrap has already put pyhecke on sys.path.
+import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import (  # noqa: E402
     TR_M as _TR_M, gram_matrix as _gram_matrix,
     nf_of_word as _nf_of_word, nf_net as _nf_net,
 )
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 
 def atom_per_generator_full_matrices(
@@ -139,7 +144,7 @@ def atom_per_generator_full_matrices(
                 base_cross = (1.0, -h)
                 m_this = m_nn if m_nn is not None else crossings_per_pair
             else:
-                base_cross = (1.0, -h / 2)
+                base_cross = (1.0, _pn_d(h))
                 m_this = m_pn if m_pn is not None else crossings_per_pair
             for _ in range(m_this):
                 apply_crossing(i, *base_cross)
@@ -225,8 +230,13 @@ if __name__ == "__main__":
     print(f"  n_pairs = {n}")
     print(f"  first 3 pairs:")
     for p in pairs[:3]:
-        print(f"    ({p['i']}, {p['j']}): sym={p['sym']:.4f}  std={p['std']:.4f}  "
-              f"alt={p['alt']:.4f}  full={p['full']:.4f}")
+        # mp.nstr, not an f-string :.4f -- these are mpmath.mpf and mpf has no
+        # __format__ for the float presentation types, so `:.4f` raises
+        # TypeError. AGENTS.md permits float(x) only inside an f-string for
+        # display and prefers mp.nstr; this is display, so mp.nstr it is.
+        print(f"    ({p['i']}, {p['j']}): "
+              f"sym={mp.nstr(p['sym'], 5)}  std={mp.nstr(p['std'], 5)}  "
+              f"alt={mp.nstr(p['alt'], 5)}  full={mp.nstr(p['full'], 5)}")
 
     # ── Witness emission ─────────────────────────────────────────
     from witness_base import WitnessBuilder  # noqa: E402

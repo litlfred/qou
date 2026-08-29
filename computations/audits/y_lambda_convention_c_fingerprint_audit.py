@@ -174,6 +174,15 @@ def main() -> int:
         print("\n  A hit is about the WITNESS, not the producer. Re-run the producer to")
         print("  tell a stale payload from a live source defect; the latter is worse.")
     if args.json:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        report.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            report, script_path=__file__, engine=None, q0_anchor=False)
         pathlib.Path(args.json).write_text(json.dumps(report, indent=2) + "\n")
         print(f"\n  wrote {args.json}")
     return 0

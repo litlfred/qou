@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 # QOU.AppendixSurreals.VacuumEpsilon — conjectural class (placeholder)
 
 **§3b-cond class axiomatisation** for content block
-[`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md): *Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$*.
+[`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md): *Infinitesimal vacuum: $\\mathrm{Geom}(\\bigcirc) = \\varepsilon$*.
 
 This is a **conjecture**: the class `VacuumEpsilon` is a primary conjecture
 carrier with **no instance** — the honest open state per AGENTS.md §3b-tax.
@@ -20,7 +20,7 @@ formalisation matures.
 
 namespace QOU.AppendixSurreals
 
-/-- Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$
+/-- Infinitesimal vacuum: $\\mathrm{Geom}(\\bigcirc) = \\varepsilon$
 
     Conjectural class — see [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md). -/
 class VacuumEpsilon where
@@ -30,7 +30,7 @@ class VacuumEpsilon where
       The Hoefsmit scattering pipeline assigns to each link $L$ a
 *geometric energy* $\mathrm{Geom}(L) \in \mathbb{R}$
 ([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline)).
-The vacuum normalisation requires $\mathrm{Geom}(\unicode{9737}) = 0$
+The vacuum normalisation requires $\mathrm{Geom}(\bigcirc) = 0$
 on the unknot, so that the empty link contributes nothing to
 particle masses.
 

@@ -32,18 +32,18 @@ This methodology is fully axiomatic. It invokes only the Hecke quadratic relatio
 
 ## Numerical witness
 
-Evaluation gives:
+Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the Step-4 closed form and evaluating at the substrate parameter $q_0$ gives:
 
 $$
-  \mathrm{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.63315\,357\ldots
+  \mathrm{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.884319\,467\ldots
 $$
 
-The `char_fast` cross-check (the `markov_chars` function computed via Hoefsmit seminormal ascent) gives $\approx 1.6334$. This matches to $4$ significant digits. The minor discrepancy reflects floating-point roundoff in the seminormal eigenvalue route. The axiomatic form is exact in $\mathbb{Q}(q)$.
+in agreement with the statement. Step 4 is an identity in $\mathbb{Q}(q)$, so the only approximation entering this line is the decimal evaluation of $q_0$ itself; the seminormal route's agreement with it is recorded in the statement.
 
 The categorical-mass formula $M(K) = m_e \cdot \rho_K \cdot |\mathrm{tr}_M(\mathcal{B}_K)|$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)) yields the following for the proton ($K = $ proton, $\mathcal{B}_K = \sigma_1^7\sigma_2^4$):
 
 $$
-  \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\mathrm{tr}_M(\mathcal{B}_p)|(q_0)} \;\approx\; \frac{1836.15}{1.63315} \;\approx\; 1124.3.
+  \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\mathrm{tr}_M(\mathcal{B}_p)|(q_0)} \;\approx\; \frac{1836.15}{1.88432} \;\approx\; 974.44.
 $$
 
 ## References

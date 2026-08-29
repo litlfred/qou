@@ -88,5 +88,14 @@
         "real_value": "0.51099895"
       }
     ]
-  }
+  },
+  "scriptFile": "witness_float64_padding_audit.py",
+  "scriptHash": "ba7a8bbc7be0",
+  "scriptCommitSha": "unknown",
+  "commitSha": "19c22712bb5c535b1483138fcdc36afe77a3d02a",
+  "engine": "python",
+  "computedAt": "2026-08-29T07:01:39.105676+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -1,11 +1,11 @@
 ---
 # qou-324i
 title: The `independent` q0 disposition tests override-sensitivity, not q0-independence — 7 false positives
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-08-23T08:32:24Z
+updated_at: 2026-08-28T15:46:30Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -140,3 +140,72 @@ Note the standing AGENTS.md posture was already right about this and should
 stay: *"treat the remaining C surface as UNMEASURED rather than clear."* A
 clean detector run was never evidence the surface was clear, and this is the
 fourth spelling found by a detector written to catch the previous blind spot.
+
+
+## ADJUDICATED 2026-08-28 — PR #5895, on main at cdbdc84af1
+
+This bean's thesis is CONFIRMED, on a live file, and its numbers have moved.
+
+**The worked confirmation.** `probes/lambda_scale_substrate_probe` reads
+`q-pinning-50-digit.witness.json` DIRECTLY. Re-running the flip experiment its
+own `q0AnchorReason` cites as proof reports `clean` -- while the producer is
+hard-pinned to muon, and `q0_anchor_manifest.json` says `ideal_muon`. That is
+this bean's defeater #2, live, with the false negative it predicts. Relabelled
+`muon`.
+
+**The numbers have moved since 2026-08-23; do not quote the old table.** This
+bean recorded 6 producers with a HARDCODED muon literal. Measured today through
+`_source_normalise.code_only`, four of those six (`probe_he4_magic_baryeven_prune`,
+`qbeta_c3_rung_structure_analysis`, `qbeta_habiro_f_from_shape_collapse`,
+`qbeta_rung1_div25_framing_squared_test`) carry NO q0 literal in code -- they
+import `Q_50_DIGIT_STR` from `q_parameter`. Main moved, not my edits: I had
+changed nothing when I measured. The live count is 2 flip-blind
+(`markov_identity_symbolic_probe`, literals; `lambda_scale_substrate_probe`,
+pin-witness) after carving out auditor-marked producers.
+
+**A THIRD defeater, which this bean did not have.** A q0-bearing name imported
+from a PEER PRODUCER. The override resolves in the peer, at the peer's layer.
+This is the inheritance path `qou-1c4y` records as "an unaudited inheritance
+path ... worth its own pass; not attempted here" -- it is now audited.
+
+**AND ITS FALSE POSITIVE, which is the reason the guard exists.**
+`hoefsmit_symbolic.Q` is `sp.symbols('q', positive=True)`. A peer-import scan
+keyed on the NAME indicts `chi_content_eigenbasis_probe` and
+`eigenbasis_structural_lemmas_probe`, whose dispositions are CORRECT -- the flip
+confirms both `clean` independently. I had these two on a suspect list before
+reading line 57 of the module they import from. Symbolic-RHS guard + `--selftest`
+pinning both directions now in `q0_independence_checker`.
+
+**The strengthening this bean asked for is implemented**: `--flip-validity`
+reports, per `independent` witness, whether the override can see its q0 at all,
+names which defeater applies (the repair differs for each), and flags the case
+where the witness's own reason CITES the flip while being blind to it.
+
+Scope note: the source check is now available but is NOT yet a required half of
+the disposition anywhere, because nothing invokes `q0_independence_checker` at
+all -- `scripts/staleness-gates.sh` runs `anchor_flip_straddle_audit`, not this.
+Wiring it is the remaining work on this bean.
+
+---
+
+## RE-MEASURED 2026-08-28 — narrowed, NOT closed
+
+Detector half is **done** (`_is_unit_numerator` on main, PR #5494). The **primary**
+claim — that `independent` tests *override-sensitivity* rather than
+q₀-independence — is **still live**:
+
+    witnesses stamped independent : 53   (was 37 on 2026-08-23)
+      ... still carrying muon digits:  4   (was 9)
+
+`fitted_labelled_canonical_audit`, `hardcoded_q0_literal_families_audit`,
+`lambda_scale_substrate_probe`, `markov_identity_symbolic_probe`.
+
+**Caveat:** `hardcoded_q0_literal_families_audit` is an audit whose SUBJECT is
+hardcoded q₀ literals, so it legitimately contains them — very likely a false
+positive of this test. Actionable is **≤ 3** until each is read individually. A
+count from a detector is a hypothesis until one of its members has been opened by
+hand; that is the lesson this arc kept re-learning.
+
+Remaining work: require the env-invariance **and** a source check (no q₀-shaped
+literal, no direct pinning-witness read). Both halves exist as scripts —
+`q0_hardcoded_pin_audit.py` and `q0_muon_population_partition.py`.

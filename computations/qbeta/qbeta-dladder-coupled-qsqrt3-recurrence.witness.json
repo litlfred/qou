@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "v2(den(b_k)) = 0 ⟺ k odd, and v2(den(a_k)) ≤ 1 ⟺ k even, exactly for k=1..KMAX — the ℤ/2 arithmetic shadow of the sinh/cosh bar-parity split (refines #3716's denominator alternation)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact rational null space is trivial for all tested (r≤4, D≤4) ⇒ d_k is not coupled-ℚ(√3) P-finite at accessible order (extends #3716's separated-ℚ negative)"
     }
   ],

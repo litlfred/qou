@@ -373,6 +373,8 @@ def main():
         # module only puts tools/qou-substrate/python on sys.path, not
         # computations/, so the shim is not importable from here.
         from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(witness, script_path=__file__,
                                      engine="mpmath")
     except Exception as _exc:  # noqa: BLE001

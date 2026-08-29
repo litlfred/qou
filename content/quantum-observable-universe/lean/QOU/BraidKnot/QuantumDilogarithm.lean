@@ -49,7 +49,7 @@ universe u
     Axiomatised here pending a Lean infinite-product implementation;
     the value at z = 0 is fixed by the empty-product convention. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Quantum-dilogarithm form
-axiom phi_q_residual : ℝ → ℝ → ℝ
+opaque phi_q_residual : ℝ → ℝ → ℝ
 
 /-- Quantum dilogarithm encoded as the empty-product baseline `1`
     plus a `z`-multiplied residual factor. The `phi_q_residual`
@@ -84,7 +84,7 @@ theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
     mass-endomorphism tower. The series has empty first term at
     z = 0, giving Li_2^q(q, 0) = 0. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Trace-vs-evaluation note
-axiom li2_q_residual : ℝ → ℝ → ℝ
+opaque li2_q_residual : ℝ → ℝ → ℝ
 
 /-- Symmetric q-dilogarithm encoded as the empty-sum baseline `0`
     plus a `z`-multiplied residual factor. The `li2_q_residual` axiom

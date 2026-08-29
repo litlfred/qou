@@ -148,7 +148,7 @@ def main() -> int:
     print(f"\n  PREFLIGHT (B_pred ≡ residual-audit table): max|Δ|="
           f"{float(maxpref):.2e} → {'PASS' if pref_ok else 'CHECK'}")
     w.add_assertion("B_pred_matches_residual_audit_table",
-                    computed=float(maxpref), expected=0.0, tolerance=1e-3,
+                    computed=maxpref, expected=0.0, tolerance=1e-3,
                     source="E₀·(|tr_free|−|tr_atom|) vs 2026-06-09 residual audit")
     # is e_pred ≈ 10A−5 (preflight on the residual law itself)?
     print("  READ: e_pred≈10A−5 confirms the residual law. If e_late≈0 (or "

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "HS(proton)/HS(muon)~+1.0000 at every geometric mu (0/1/z/near-pole) vs target ratio -4.08; no flip"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|HS(q)-HS(1/q)| << |HS(q)+HS(1/q)| at mu in {0,1}; S is bar-ODD (fig8Trace_im_odd) so a real bar-even resolvent cannot carry it"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "max |dlambda| ~3e-8 << min eigen gap O(0.1); no level/zero crossing => no geometric pole enters the anchor window without a ~1e-8 fit"
     }
   ],

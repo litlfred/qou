@@ -53,7 +53,8 @@ from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noq
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.
@@ -282,7 +283,7 @@ def main() -> int:
     lam_p_A = mp.mpf(proton["lambda_emp_A_phase4_jsj"])
     w.add_assertion(
         "proton_lambda_emp_matches_documented_value",
-        computed=float(lam_p_A),
+        computed=lam_p_A,
         expected=2.460,
         tolerance=2e-3,
         source=(

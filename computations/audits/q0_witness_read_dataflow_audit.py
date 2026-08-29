@@ -394,7 +394,14 @@ def main(argv=None) -> int:
             print(f"       … and {len(transitive) - args.show} more")
 
     if args.emit:
-        Path(args.emit).write_text(json.dumps({
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {
             "schema": "q0-witness-read-dataflow/v1",
             "note": "CANDIDATES. Reachability through the filesystem, not proof "
                     "that a q0 moved. One hop only.",
@@ -403,7 +410,11 @@ def main(argv=None) -> int:
             "straddle_deliberate": delib,
             "straddle_silent": silent,
             "transitive": transitive,
-        }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        }
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+        Path(args.emit).write_text(json.dumps(_prov_payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print(f"\n  written: {args.emit}")
 
     print("\n" + "=" * 72)

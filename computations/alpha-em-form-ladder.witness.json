@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "proton-anchored quadratic residual 1.67 ppb exceeds the L2 100x target sigma_a/100 = 0.0015 ppb by ~1115x. The cubic (+Schwinger) form reaches 0.313 ppb, still ~209x short -- see alpha_em_schwinger_ladder_probe.py, which supersedes this probe's best number."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "quadratic fixed-point residual is 1.67 ppb at the proton (default) pin vs 80.5 ppb at the muon pin -- the mu-p substrate tension, not an intrinsic scale"
     }
   ],

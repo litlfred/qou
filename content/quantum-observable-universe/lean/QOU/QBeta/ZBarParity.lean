@@ -52,23 +52,40 @@ namespace QOU.QBeta
 
 variable {R : Type*} [CommRing R]
 
-/-! ## §1. The Markov parameter `z = s/(1+s²)` is bar-invariant (`s² = q`) -/
+/-! ## §1. **Convention C** (`z_C = √q/(1+q)`) — EXCISED, kept as the record
 
-/-- Numerator of the Markov parameter `z = √q/(1+q)` in the half-power
-    coordinate `s` (`s² = q`): `zNum s = s`. -/
-def zNum (s : R) : R := s
+🛑 **This section is convention C, which the owner excised (2026-08-09,
+re-affirmed 2026-08-15 and 2026-08-26). The canonical Markov parameter is
+convention D, `z_D = q³/(q²+1)` — see §1b.** The `C` results below are correct
+*as statements about `z_C`* and are retained because registry row **KC13** and
+the `ea56` class-`Z2` exclusion cite them, and because
+`MarkovZFullBarCondition` / `LadderPhaseMirrorCovariance` consume
+`z_bar_invariant_field` as a proof term. They are **not** statements about the
+canonical parameter, and §1b shows the key one does not transfer.
 
-/-- Denominator of the Markov parameter: `zDen s = 1 + s²` (`= 1 + q`). -/
-def zDen (s : R) : R := 1 + s ^ 2
+The defining constants now carry the convention in their names, so no reader
+can pick up an unlabelled `z` from this file and assume it is canonical.
+-/
 
-/-- **`z` is exactly bar-EVEN (division-free, over any `CommRing`).** Under the
+/-- Numerator of the **convention-C** Markov parameter `z_C = √q/(1+q)` in the
+    half-power coordinate `s` (`s² = q`): `zCNum s = s`. **Excised convention** —
+    the canonical parameter is `zDNum`/`zDDen` in §1b. -/
+def zCNum (s : R) : R := s
+
+/-- Denominator of the **convention-C** Markov parameter: `zCDen s = 1 + s²`
+    (`= 1 + q`). **Excised convention** — see §1b. -/
+def zCDen (s : R) : R := 1 + s ^ 2
+
+/-- **`z_C` is exactly bar-EVEN (division-free, over any `CommRing`).** 🛑 A
+    statement about the **excised convention C** only — `bar(z_D) = q⁻⁴·z_D`,
+    see `zD_bar_twist` in §1b. Under the
     bar involution `s ↦ s⁻¹` — witnessed by `s·si = 1` — the cross-multiplied
     identity `zNum si · zDen s = zNum s · zDen si` holds, i.e. `z(s⁻¹) = z(s)`
     with twist exactly `1`. In `q`-language: `z(q⁻¹) = z(q)` for
     `z = √q/(1+q)`. -/
 theorem z_bar_invariant (s si : R) (h : s * si = 1) :
-    zNum si * zDen s = zNum s * zDen si := by
-  unfold zNum zDen
+    zCNum si * zCDen s = zCNum s * zCDen si := by
+  unfold zCNum zCDen
   linear_combination (s - si) * h
 
 /-- `Field` corollary of `z_bar_invariant` in literal `a/b` form. Only
@@ -83,6 +100,52 @@ theorem z_bar_invariant_field {F : Type*} [Field F] (s : F) (hs : s ≠ 0) :
   have hmul : s⁻¹ * s ^ 2 = s := by
     field_simp
   rw [key, div_div_eq_mul_div, hmul]
+
+/-! ## §1b. **Convention D** (`z_D = q³/(q²+1)`) — the canonical Markov parameter
+
+Owner ruling 2026-08-09, re-affirmed 2026-08-15 and 2026-08-26: convention D is
+canonical and C is excised. The parity is **genuinely different**, which is why
+§1's exclusion cannot simply be re-read at `z_D`.
+-/
+
+/-- Numerator of the **canonical convention-D** Markov parameter
+    `z_D = q³/(q²+1)`. -/
+def zDNum (q : R) : R := q ^ 3
+
+/-- Denominator of the canonical convention-D Markov parameter:
+    `zDDen q = q² + 1`. -/
+def zDDen (q : R) : R := q ^ 2 + 1
+
+/-- **`z_D` is bar-even only up to the monomial twist `q⁻⁴` — it is NOT
+    bar-invariant.** Division-free over any `CommRing`, in the `(q, qi)`
+    encoding (`q·qi = 1`): the cross-multiplied form of `z_D(q⁻¹) = q⁻⁴·z_D(q)`.
+
+    **This is the statement that breaks KC13's transfer.** §1's `Z2` exclusion
+    — no scalar rational function of `z` alone can source the bar-ODD channel —
+    runs through "the bar-fixed locus is a subring and `z` lies in it"
+    (`bar_fixed_add` / `bar_fixed_mul` / `bar_fixed_pow`). Under D, `z_D` is
+    **not** bar-fixed, so it is not in that subring and the argument does not
+    apply. Re-examination under D is open (bean `qou-cds1`); the C exclusion is
+    **not** evidence about the canonical convention. -/
+theorem zD_bar_twist (q qi : R) (h : q * qi = 1) :
+    zDNum qi * zDDen q = qi ^ 4 * (zDNum q * zDDen qi) := by
+  unfold zDNum zDDen
+  linear_combination
+    (-(qi * (q * qi) ^ 2 + qi ^ 3 * (1 + q * qi + (q * qi) ^ 2))) * h
+
+/-- **The sharp form: `q⁻²·z_D` IS exactly bar-even (twist `1`).** Since
+    `q⁻²·z_D = q/(q²+1) = 1/[2]_q`, the canonical parameter factors as
+    `z_D = q² · (bar-even core)`. Division-free cross-multiplied statement:
+    `ζ(q) = q/(q²+1)` satisfies `ζ(q⁻¹) = ζ(q)`.
+
+    So D's parity defect is carried entirely by an explicit `q²`, not by the
+    core — which is what makes the twist exponent `−4` in `zD_bar_twist`
+    (`−4 = −2·2`) rather than an unstructured function of `q`. -/
+theorem zD_core_bar_even (q qi : R) (h : q * qi = 1) :
+    qi * zDDen q = q * zDDen qi := by
+  unfold zDDen
+  linear_combination (q - qi) * h
+
 
 /-! ## §2. The ladder variable's parity: `ℏ_q` bar-odd (twist `−q`), `ℏ_q²` bar-even (twist `q²`) -/
 

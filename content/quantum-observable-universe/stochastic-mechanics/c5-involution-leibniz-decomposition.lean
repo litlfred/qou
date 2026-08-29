@@ -186,7 +186,7 @@ theorem c5RationalMap_le_neg_five_quarters (h : ℝ) :
     have hsq : h^2 ≥ 0 := sq_nonneg h
     linarith
   have hinv : 1 / (h^2 + 4) ≤ 1 / 4 := by
-    rw [div_le_div_iff hpos (by norm_num : (4:ℝ) > 0)]
+    rw [div_le_div_iff₀ hpos (by norm_num : (4:ℝ) > 0)]
     linarith
   linarith
 
@@ -239,7 +239,7 @@ theorem c5OfHSquared_antitone_on_nonneg
   have hx4 : (0 : ℝ) < x + 4 := by linarith
   have hy4 : (0 : ℝ) < y + 4 := by linarith
   have hinv : (1 : ℝ) / (y + 4) ≤ 1 / (x + 4) := by
-    rw [div_le_div_iff hy4 hx4]
+    rw [div_le_div_iff₀ hy4 hx4]
     linarith
   linarith
 
@@ -312,9 +312,8 @@ theorem quantumTwo_at_silver_ratio_squared :
   -- 1/(1+√2) = √2 - 1 since (1+√2)(√2-1) = √2·√2 - 1 = 1, so
   -- (1+√2) + 1/(1+√2) = 2√2 and its square is 4·(√2·√2) = 8.
   have hinv : (1 + Real.sqrt 2)⁻¹ = Real.sqrt 2 - 1 := by
-    rw [eq_comm, eq_inv_iff_mul_eq_one₀ h_ne]
-    ring_nf
-    linarith [h2]
+    field_simp
+    linear_combination -h2
   rw [one_div, hinv]
   have : (1 + Real.sqrt 2 + (Real.sqrt 2 - 1)) = 2 * Real.sqrt 2 := by ring
   rw [this]

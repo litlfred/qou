@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "max rel residual 6.55e-15 < 1e-25 over the (m,e) grid at internal x-order 1600"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "residual at (1,1) drops x8.503e+12 when internal order rises 1600->2400 (>= 10 required: truncation-limited, not structural)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "max rel residual 59.2 < 1e-18 at 12 (m,w) points, all arguments inside the annulus"
     }
   ],

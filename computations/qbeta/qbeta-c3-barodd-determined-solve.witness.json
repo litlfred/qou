@@ -1,0 +1,115 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T15:39:30.073637+00:00",
+  "commitSha": "6f08f40d95e8ce16b88e81733d3922ea24293ec3",
+  "assertions": [
+    {
+      "name": "d_ladder_form_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "D-ladder two-variable form holds at all valid orders"
+    },
+    {
+      "name": "substrate_borel_anchor_blind",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "D_opt identical at muon/proton to <1e-6 while S sign-flips"
+    },
+    {
+      "name": "qbeta_100x_closure",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "tolerance": 0,
+      "source": "c₃^odd from Borel sum vs empirical at 7.8 ppb"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 22,
+  "computation": "qbeta-c3-barodd-determined-solve",
+  "scriptFile": "qbeta_c3_barodd_determined_solve_probe.py",
+  "scriptHash": "22a32f9a23a9",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "88833bbb2bd7f717"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_determined_solve_probe.py",
+      "43"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_determined_solve_probe.py 43"
+  },
+  "description": "Odd-channel determined solve: Borel-sum the exact d_k at the substrate (ORD 43, k_max=21) → D(ũ) → S = h·D → extract c₃^odd. NEGATIVE: the substrate Borel sum is anchor-blind (D_opt ≈ -0.016674918 at both anchors), while S sign-flips (+0.0097 vs −0.0395). The perturbative sum cannot determine the anchor-dependent c₃^odd. The open piece is the fibre-branch Δ_ω (Stokes datum at |q|=1). No fit, no laundering, no c_k wired.",
+  "data": {
+    "T1_optimal_truncation": {
+      "proton": {
+        "u_tilde": "0.0094539500312413462487",
+        "h": "0.20906032199559367898",
+        "Nstar": 21,
+        "at_edge": true,
+        "delta_np": "4.918133148e-27",
+        "D_opt": "-0.0166749175685411",
+        "S_opt": "-0.00348606363613",
+        "S_target": "-0.03945936",
+        "c3_odd_from_borel": "-4125.678702",
+        "c3_odd_empirical": "-46699.27406",
+        "gap_S": "0.0359733",
+        "delta_S_stokes": "1.02819e-27",
+        "gap_over_delta": "3.499e+25"
+      },
+      "muon": {
+        "u_tilde": "0.0094539500452217903694",
+        "h": "0.20906032215031674663",
+        "Nstar": 21,
+        "at_edge": true,
+        "delta_np": "4.918133301e-27",
+        "D_opt": "-0.0166749175954548",
+        "S_opt": "-0.00348606364434",
+        "S_target": "0.00968298",
+        "c3_odd_from_borel": "-4125.678693",
+        "c3_odd_empirical": "11459.5912",
+        "gap_S": "0.013169",
+        "delta_S_stokes": "1.02819e-27",
+        "gap_over_delta": "1.281e+25"
+      }
+    },
+    "T3_anchor_blindness": {
+      "D_opt_diff_muon_proton": "2.6913709e-11",
+      "S_opt_diff_muon_proton": "8.206583e-12",
+      "S_target_diff_muon_proton": "0.04914234",
+      "anchor_blind": true,
+      "reading": "Borel sum at substrate is anchor-blind; S sign-flips ⇒ the anchor-dependent c₃ is NOT the substrate perturbative sum. It is the fibre-branch Stokes datum Δ_ω."
+    },
+    "T5_qbeta_closure": {
+      "c3_odd_borel_proton": "-4125.678702",
+      "c3_odd_target_proton": "-46699.27406",
+      "ppb_deviation": "9.11654e+8",
+      "closes_100x_target": false
+    },
+    "verdict": "NEGATIVE (scope-(a)): The substrate-branch optimal-truncation Borel sum of the exact d_k (ORD 43, k_max=21) gives D_opt ≈ -0.016674918 — ANCHOR-BLIND to ~2.7e-11 (muon ≈ proton). Meanwhile the empirical S sign-flips (+0.0097 vs −0.0395). So the substrate Borel sum ALONE does NOT determine c₃^odd. The perturbative acceleration at ũ ≈ 0.0095 (the substrate meridian) gives only an anchor-blind floor — NOT the anchor-dependent c₃. The genuine open piece is the fibre-branch Δ_ω datum (the Stokes/alien-derivative at |q|=1 where ũ ∼ O(1) and the non-perturbative jump is unsuppressed). No fit, no laundering, no c_k wired.",
+    "open_piece": {
+      "what": "fibre-branch Δ_ω — the Stokes/alien-derivative datum at |q|=1",
+      "why": "at the substrate (ũ ≈ 0.0095) the non-perturbative jump exp(−ρ/ũ) is ∼ 10⁻³⁹ — far too small for the O(0.01) anchor residual. On the fibre (|q|=1, ũ ∼ O(1)) the jump is unsuppressed.",
+      "status": "OPEN — not produced by any substrate-branch computation"
+    }
+  }
+}

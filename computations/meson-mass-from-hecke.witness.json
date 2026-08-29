@@ -1,18 +1,18 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-23T22:56:06.184723+00:00",
+  "computedAt": "2026-08-25T03:00:16.107659+00:00",
   "computation": "meson-mass-from-hecke",
   "scriptFile": "meson_mass_from_hecke.py",
   "description": "Systematic probe of pion and kaon mass predictions following the same generic structure as the leptonic (CAL-2: m_\u03bc/m_e = Vol(4_1)/\u210f_q\u00b2) and hadronic (Q_\u03b2 = m_e\u00b7|q\u00b2-2q-1|\u00b7(q+1)/(2q\u00b3)) derivation instances. Tests 10+ candidate formulas for absolute m_\u03c0 and ratio m_K/m_\u03c0.",
   "contentBlock": "prop:meson-mass-hecke-prediction",
   "parameters": {
-    "q0": "1.1099785955541805752815940796095093779932822799587",
-    "h_q": "0.20906032198987946110160842229792190646175630391646",
+    "q0": "1.109978595642739046681795129380001752700065561029",
+    "h_q": "0.20906032215031674663080026150191988598013716922588",
     "Vol_4_1": "2.0298832128193072500424051085490405718833786150606",
     "m_e_MeV": "0.51099895069",
-    "meson_net": "1.5146703164970138724391081641599980729994281389935",
-    "E_0_MeV": "4.1859808277148382589215485966238822965145252092945"
+    "meson_net": "1.5146703169730890468937256085321258122748543534975",
+    "E_0_MeV": "4.185980824010171367799724430485258393389751702537"
   },
   "generic_structure": {
     "description": "Two calibration instances in QOU share a generic pattern: a mass observable is determined by an algebraic function of q_0 built from Hecke-algebra eigenvalues and hyperbolic-knot invariants.",
@@ -21,60 +21,60 @@
       "transition_knot": "4_1 (figure-eight)",
       "transition_braid": "(\u03c3_1 \u03c3_2^{-1})^2 in B_3",
       "connects": "T_{2,3} (electron) \u2192 T_{2,5} (muon)",
-      "predicted": "206.768283",
-      "observed": "206.768283",
+      "predicted": "206.7682827",
+      "observed": "206.7682827",
       "err_ppb": 0.0
     },
     "instance_2_hadronic": {
       "formula": "Q_\u03b2 = m_e \u00b7 |q\u00b2 - 2q - 1| \u00b7 (q+1) / (2q\u00b3)",
       "transition": "proton \u2192 neutron flavor flip",
       "connects": "uud \u2192 udd (Borromean typed-crossing shift)",
-      "predicted_MeV": "0.7836458039031040783772303020421648203718892222428",
+      "predicted_MeV": "0.78364580374074883745817700758184390541900023458492",
       "observed_MeV": "0.78233341",
-      "err_ppm": 1677.53784553836
+      "err_ppm": 1677.5376380114426
     },
     "instance_3_mesonic": {
       "formula": "m_K/m_\u03c0 = ??? (probing)",
       "transition": "pion (ud-bar) \u2192 kaon (us-bar)",
       "connects": "d = T_{2,3}^\u03c3 \u2192 s = T_{2,5}^\u03c3 (same pair as e\u2192\u03bc, mirrored)",
       "best_candidate": "H: [2]_q\u00b2",
-      "best_value": 4.043706218230512,
-      "best_err_ppm": 143220.47396143162,
+      "best_value": 4.0437062182975945,
+      "best_err_ppm": 143220.4739803968,
       "all_candidates": [
         {
           "name": "H: [2]_q\u00b2",
-          "value": 4.043706218230512,
-          "err_ppm": 143220.47396143162
+          "value": 4.0437062182975945,
+          "err_ppm": 143220.4739803968
         },
         {
           "name": "H2: [2]_q",
-          "value": 2.010896869118482,
-          "err_ppm": 431487.2674387394
+          "value": 2.0108968691351614,
+          "err_ppm": 431487.2674340238
         },
         {
           "name": "F: (1+h)\u00b2",
-          "value": 1.461826862210271,
-          "err_ppm": 586718.1471464869
+          "value": 1.4618268625982278,
+          "err_ppm": 586718.1470368053
         },
         {
           "name": "I: net_K/net_\u03c0",
-          "value": 1.308523749796389,
-          "err_ppm": 630059.3908905125
+          "value": 1.3085237500485258,
+          "err_ppm": 630059.3908192294
         },
         {
           "name": "G: q\u2080\u00b2",
-          "value": 1.2320524825884311,
-          "err_ppm": 651679.0421766954
+          "value": 1.2320524827850272,
+          "err_ppm": 651679.0421211146
         },
         {
           "name": "J: (m_\u03bc/m_e)^{1/3}",
-          "value": 5.91327360074029,
-          "err_ppm": 671777.0984510652
+          "value": 5.913273597880434,
+          "err_ppm": 671777.0976425384
         },
         {
           "name": "E1: Vol/\u210f_q\u00b3",
-          "value": 2086.8457831544397,
-          "err_ppm": 588984706.2446105
+          "value": 2086.8457786127346,
+          "err_ppm": 588984704.9605978
         }
       ]
     }
@@ -82,23 +82,23 @@
   "pion_absolute_mass": {
     "strategy_A": {
       "formula": "net\u00b7E_0",
-      "predicted_MeV": "6.3403809051652661646680068634448015529315866052402",
-      "err_ppm": 954572.1631560586
+      "predicted_MeV": "6.3403809015467587432308306376670751791954778568841",
+      "err_ppm": 954572.1631819847
     },
     "strategy_B": {
       "formula": "m_e\u00b7net\u00b7Vol/\u210f_q",
-      "predicted_MeV": "15.856802226251947298039969167030182601499505704789",
-      "err_ppm": 886388.4938184099
+      "predicted_MeV": "15.85680221973257659958389695790160015481596127263",
+      "err_ppm": 886388.4938651201
     },
     "strategy_C": {
       "formula": "m_e\u00b7net\u00b7(q+1)\u00b2/(2q)",
-      "predicted_MeV": "1.5522069455352217930137840236982356222787568557835",
-      "err_ppm": 988878.6801732429
+      "predicted_MeV": "1.5522069460295500693953966471330486864091883998478",
+      "err_ppm": 988878.6801697011
     },
     "strategy_D": {
       "formula": "m_e\u00b7|tr_M|\u00b7[2]_q\u00b2/4",
-      "predicted_MeV": "0.25707212990854883054199959791808407457696996468643",
-      "err_ppm": 998158.118423911
+      "predicted_MeV": "0.2570721299879479016911958077414936518586618576086",
+      "err_ppm": 998158.1184233421
     }
   },
   "assertions": [
@@ -116,10 +116,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "c307a7c4891a",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
-  "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio rather than reading an anchor, so no manifest entry describes it. The result, 1.10997859564273904668, is value C of qou-khac -- which the owner RULED canonical for the muon anchor on 2026-08-22 (PR #5500, 'A --> CODATA 2022'). This is ambiguous only transitionally: main's anchor witness still holds A, so a 'muon' stamp would read as a Q0_FLIP until #5500 lands. Revisit then; the correct label at that point is 'muon'.",
+  "scriptHash": "43de8e3c5b1f",
+  "scriptCommitSha": "2c10b9f30cd2fc0c1c3a60cb236bc6c3d3e14828",
+  "commitSha": "7bcdd6e995995e4605439291bd9313105096ba32",
+  "durationMs": 0
 }

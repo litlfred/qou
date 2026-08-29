@@ -1,34 +1,34 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:28:28.370156+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:06:04.681429+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "Λ(π/4) = G/2 (exact identity, to numerical precision)",
-      "computed": 9.079301521129947e-112,
+      "computed": "9.079301521129945959374005895725158621564971701031301401778250017208691627236263373314257219790262611128339686e-112",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "relative",
       "source": "Λ(π/4) = G/2 classical identity (see Lewin 1981 §1)"
     },
     {
       "name": "Vol(𝓑₃) via Lobachevsky == 8·G (at 100 dps)",
-      "computed": 9.079301521129947e-112,
+      "computed": "9.079301521129945959374005895725158621564971701031301401778250017208691627236263373314257219790262611128339686e-112",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "unit": "relative",
       "source": "Adams 1985 + Λ(π/4) = G/2; both sides should agree exactly"
     }
   ],
   "allPassed": true,
-  "durationMs": 67,
+  "durationMs": 57,
   "computation": "borromean-volume-100dps",
   "scriptFile": "borromean_volume_100dps.py",
-  "scriptHash": "3bfcbd8ba174",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "c21d8daf1eec",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/borromean_volume_100dps.py"
+    ],
+    "reproduce": "python3 -u computations/borromean_volume_100dps.py"
   },
   "description": "Vol(𝓑₃) at 100 dps via Lobachevsky-Catalan identity. Tests the audit claim that Vol(𝓑₃) and 8·G differ at the 7th digit. Computes Λ(π/4) numerically, mpmath.catalan to 100 dps, and 16·Λ(π/4) vs 8·G.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",

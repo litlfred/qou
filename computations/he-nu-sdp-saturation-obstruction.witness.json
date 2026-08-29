@@ -9,80 +9,80 @@
       "D": {
         "bounded_support_size": 1,
         "nu_canonical": 1,
-        "neg_norm_blocks": 3,
+        "neg_norm_blocks": 0,
         "support": [
           [
             [
-              3,
               2,
-              1
+              2,
+              2
             ],
-            0.12578235772282598
+            0.12615900422710985
           ]
         ]
       },
       "T": {
-        "bounded_support_size": 1,
+        "bounded_support_size": 0,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": [
-          [
-            [
-              3,
-              2,
-              2,
-              1,
-              1
-            ],
-            0.031476907548863564
-          ]
-        ]
+        "neg_norm_blocks": 0,
+        "support": []
       },
       "3He": {
-        "bounded_support_size": 1,
+        "bounded_support_size": 0,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": [
-          [
-            [
-              3,
-              2,
-              2,
-              1,
-              1
-            ],
-            0.03157928461429216
-          ]
-        ]
+        "neg_norm_blocks": 0,
+        "support": []
       }
     },
     "q₀ (indefinite)": {
       "D": {
-        "bounded_support_size": 0,
-        "nu_canonical": 1,
-        "neg_norm_blocks": 3,
-        "support": []
-      },
-      "T": {
-        "bounded_support_size": 0,
-        "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": []
-      },
-      "3He": {
         "bounded_support_size": 1,
-        "nu_canonical": 2,
-        "neg_norm_blocks": 10,
+        "nu_canonical": 1,
+        "neg_norm_blocks": 0,
         "support": [
           [
             [
               2,
               2,
-              2,
-              2,
+              2
+            ],
+            0.5751723309916856
+          ]
+        ]
+      },
+      "T": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 0,
+        "support": [
+          [
+            [
+              4,
+              1,
+              1,
+              1,
+              1,
               1
             ],
-            0.20654085857249782
+            0.22931014717238246
+          ]
+        ]
+      },
+      "3He": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 0,
+        "support": [
+          [
+            [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            0.40376713846544077
           ]
         ]
       }
@@ -90,8 +90,8 @@
   },
   "q1_saturation_sizes": {
     "D": 1,
-    "T": 1,
-    "3He": 1
+    "T": 0,
+    "3He": 0
   },
   "verdict": "OBSTRUCTED",
   "conclusion": "No principled Markov-trace SDP saturation yields ν_SDP=1,2,2. The kashaev 'MacMahon SDP-multiplicity' categorical home is aspirational; ρ_F=2 (⁴He) is an underived acknowledged input, not a derived structural quantity.",
@@ -101,10 +101,12 @@
     "computations/deuteron_real_sdp.py"
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptHash": "e3a821f96e1e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:17.802942+00:00",
+  "scriptFile": "he_nu_sdp_saturation_obstruction.py",
+  "scriptHash": "9188325fdad3",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-08-29T07:37:02.682184+00:00",
   "durationMs": 0,
-  "scriptFile": "he_nu_sdp_saturation_obstruction.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

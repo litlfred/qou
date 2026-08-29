@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:45.054156+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:27:54.307955+00:00",
+  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
   "assertions": [
     {
       "name": "jonquiere_master_identity_all_K_n",
-      "computed": 5.4334074472960274e-71,
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over (K ∈ 2..8, n ∈ 2..5) of |Li_n(ζ_K) − (−1)^{n−1} Li_n(ζ_K^{−1}) − [−(2πi)^n / n! · B_n(1/K)]|",
       "source": "Jonquière inversion formula (Lewin 1991 §7) for Li_n(z) ↔ Li_n(z^{-1}) at z = e^{2πi/K}; the principal-log offset gives the half-shift B_n(1/K) inside the Bernoulli polynomial."
     }
   ],
   "allPassed": true,
-  "durationMs": 362,
+  "durationMs": 290,
   "computation": "jonquiere-cyclotomic-tate-rationality-probe",
   "scriptFile": "jonquiere_cyclotomic_tate_rationality_probe.py",
-  "scriptHash": "78128d79c73d",
+  "scriptHash": "fb1e7391f131",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -34,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

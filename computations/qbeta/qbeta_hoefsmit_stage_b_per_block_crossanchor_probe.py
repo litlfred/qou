@@ -110,7 +110,7 @@ def main() -> int:
         # For a truly localised block, fraction is all we need.
         # But Q_codata,λ = Q_codata * fraction.
         # Let's see if c_3,λ matches the full c_3 target:
-        sub = substrate_ladder_quantities(q_val)
+        sub = substrate_ladder_quantities(q_val, convention="C")
         Q_A = m_e * sub["Q_A_over_me"] * fraction
         Q_codata_lam = q_codata * fraction
         
@@ -171,8 +171,8 @@ def main() -> int:
         # Compare to full Δtr_M
         # The canonical formula for full Δtr_M:
         # (q^2-2q-1)(q+1) / (2q^3) / const?
-        sub_p = substrate_ladder_quantities(q_p)
-        sub_m = substrate_ladder_quantities(q_m)
+        sub_p = substrate_ladder_quantities(q_p, convention="C")
+        sub_m = substrate_ladder_quantities(q_m, convention="C")
         
         # Let's evaluate Q_A_over_me
         qa_p = sub_p["Q_A_over_me"]

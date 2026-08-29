@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:40:50.578641+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T20:49:44.971969+00:00",
+  "commitSha": "71cd069f4b9b57bd73c9f8e93b0c934c554f4e11",
   "assertions": [
     {
       "name": "no_parameter_free_graph_invariant_matches_all_four",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "deltalambda-k4-complete-graph-collective-magnitude",
   "scriptFile": "deltalambda_k4_complete_graph_collective_magnitude_probe.py",
   "scriptHash": "d267303f8911",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,10 +61,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -321,5 +321,7 @@
     "no_ame_inversion": true,
     "q0_convention": "muon-canonical (computations/ layer)"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

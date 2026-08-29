@@ -232,8 +232,11 @@ def main() -> int:
     w = WitnessBuilder("mu3-frechet-perblock", engine="pyhecke_native",
                        output_dir=Path(__file__).resolve().parent)
     w.add_assertion("linearity_gate", 1 if all_gates else 0, 1)
-    w.add_assertion("frechet_violator_found", 1 if any_viol else 0,
-                    1 if any_viol else 0)
+    # Was an add_assertion(name, X, X) -- computed and expected the SAME expression,
+    # so it read as a check while being `x == x`: tautologically true, unable to fail,
+    # and rendered as "passed": true for the QA pipeline. It is a RECORDED FINDING
+    # with no independent expectation, so it belongs in add_data. Bean qou-ploj.
+    w.add_data("frechet_violator_found", 1 if any_viol else 0)
     w.add_parameter("q0", mp.nstr(q0, 20))
     w.add_parameter("E0_MeV", mp.nstr(E0, 20))
     w.add_data("results", results)

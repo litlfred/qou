@@ -1,100 +1,91 @@
-import { describe, expect, test } from "bun:test";
-import { spawnSync } from "child_process";
-import { mkdtempSync, writeFileSync, readFileSync, existsSync } from "fs";
-import { tmpdir } from "os";
-import { join } from "path";
-
 /**
- * An agent `fail`/`warn` with no evidence asserts a defect nobody can check,
- * re-adjudicate, or act on — and it survives every `qa-sweep` run, because the
- * sweep re-runs SCRIPT criteria only.
+ * The writer must refuse a verdict that asserts a violation without saying
+ * what it found.
  *
- * `block-qa.schema.json` already states the contract, on `result`: "fail =
- * violated (evidence must cite file:line + verbatim quote)". But that is
- * prose — `evidence` is absent from the entry's `required` list, and the only
- * consumer that reads the schema at all is `qa-flag-preservation-audit.ts`. So
- * nothing checked it, and by 2026-08-24 **303 of the corpus's 1,442 agent
- * fail/warn verdicts carried an empty evidence string**, six criteria at 100 %
- * (`expo-milnor-clarity` 210/210, `da-referee-verdict` 16/16,
- * `da-lean-narrative-divergence` 9/9, `fit-section-chapter` 7/7).
+ * `block-qa.schema.json` already states the rule on `result` — "fail =
+ * violated (evidence must cite file:line + verbatim quote)" — but it lives in
+ * a `description` string, and `evidence` is absent from the entry's `required`
+ * list. The writer then did `if (evidence) entry.evidence = evidence;` and
+ * wrote the verdict either way, so the corpus accumulated fail/warn entries
+ * whose reason is nowhere on record.
  *
- * This is the agent-side mirror of the rule the platform already pins for
- * script checkers in `checker-missing-evidence.test.ts`: a checker that cannot
- * read its evidence has not verified anything.
+ * These tests pin the guard at the only place that can prevent more of them:
+ * the writer. They are the agent-side counterpart of the rule already pinned
+ * for script checkers — a checker that cannot read its evidence has not
+ * verified anything.
  *
- * The bar is NON-EMPTY, not quote-shaped, and that is deliberate: some
- * legitimate evidence is a bare `file.lean:1` pointer, and demanding a quote
- * would push authors toward inventing one. Whether evidence is *quotable* is
- * measured separately and advisorily by `scripts/qa-stale-agent-evidence.py`.
+ * @module content/pipeline/qa-agent-entry.guard.test
  */
-const ENTRY = join(import.meta.dir, "qa-agent-entry.ts");
+import { describe, expect, test } from "bun:test";
+import { spawnSync } from "node:child_process";
+import { mkdtempSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
-function run(args: string[], cwd: string) {
-  return spawnSync("bun", ["run", ENTRY, ...args], {
-    cwd,
-    encoding: "utf-8",
-    timeout: 60_000,
-  });
+const WRITER = join(import.meta.dir, "qa-agent-entry.ts");
+
+/** Run the writer against a throwaway block; return exit code + stderr. */
+function run(result: string, evidence?: string) {
+  const dir = mkdtempSync(join(tmpdir(), "qa-guard-"));
+  const md = join(dir, "b.md");
+  writeFileSync(md, "# block\n");
+  const argv = [
+    "run", WRITER,
+    "--block", md,
+    "--criterion", "da-overclaim",
+    "--result", result,
+  ];
+  if (evidence !== undefined) argv.push("--evidence", evidence);
+  const r = spawnSync("bun", argv, { encoding: "utf8" });
+  const qa = join(dir, "b.qa.json");
+  return {
+    code: r.status,
+    stderr: r.stderr ?? "",
+    wrote: existsSync(qa),
+    doc: existsSync(qa) ? JSON.parse(readFileSync(qa, "utf8")) : null,
+  };
 }
 
-/** A block .md + .ts pair the writer will accept, in a throwaway dir. */
-function fixture(): { dir: string; md: string } {
-  const dir = mkdtempSync(join(tmpdir(), "qa-agent-entry-"));
-  const md = join(dir, "sample-block.md");
-  writeFileSync(md, "A statement about the mathematics.\n");
-  writeFileSync(
-    join(dir, "sample-block.ts"),
-    'export default { kind: "lemma", label: "lem:sample-block", title: "Sample" };\n',
-  );
-  return { dir, md };
-}
-
-describe("qa-agent-entry refuses an evidence-free fail/warn", () => {
+describe("qa-agent-entry evidence guard", () => {
   for (const result of ["fail", "warn"]) {
-    test(`--result ${result} with no --evidence exits non-zero`, () => {
-      const { dir, md } = fixture();
-      const r = run(["--block", md, "--criterion", "trap-superlative", "--result", result], dir);
-      expect(r.status).not.toBe(0);
+    test(`${result} without --evidence is refused, and writes nothing`, () => {
+      const r = run(result);
+      expect(r.code).toBe(2);
       expect(r.stderr).toContain("requires --evidence");
-      // and it must not have written a sidecar
-      expect(existsSync(join(dir, "sample-block.qa.json"))).toBe(false);
+      // The refusal must be total: a rejected verdict that still landed in
+      // the sidecar would be the very thing this guard exists to prevent.
+      expect(r.wrote).toBe(false);
     });
 
-    test(`--result ${result} with whitespace-only --evidence also exits non-zero`, () => {
-      const { dir, md } = fixture();
-      const r = run(
-        ["--block", md, "--criterion", "trap-superlative", "--result", result, "--evidence", "   "],
-        dir,
-      );
-      expect(r.status).not.toBe(0);
-      expect(r.stderr).toContain("requires --evidence");
+    test(`${result} with whitespace-only --evidence is refused`, () => {
+      // "   " is non-empty as a string but says exactly as much as "".
+      const r = run(result, "   ");
+      expect(r.code).toBe(2);
+      expect(r.wrote).toBe(false);
+    });
+
+    test(`${result} with real evidence is accepted and recorded`, () => {
+      const r = run(result, "b.md:1 — claims 'exact' on a float64 agreement");
+      expect(r.code).toBe(0);
+      expect(r.doc.criteria["da-overclaim"][0].evidence).toContain("float64");
     });
   }
 
-  test("--result fail WITH evidence is accepted and records it", () => {
-    const { dir, md } = fixture();
-    const r = run(
-      [
-        "--block", md, "--criterion", "trap-superlative", "--result", "fail",
-        "--evidence", "sample-block.md:1 'A statement about the mathematics.'",
-      ],
-      dir,
-    );
-    expect(r.status).toBe(0);
-    const sidecar = join(dir, "sample-block.qa.json");
-    expect(existsSync(sidecar)).toBe(true);
-    const d = JSON.parse(readFileSync(sidecar, "utf-8"));
-    const entry = d.criteria["trap-superlative"].at(-1);
-    expect(entry.result).toBe("fail");
-    expect(entry.evidence).toContain("sample-block.md:1");
-  });
-
-  // The guard must not spread to verdicts that have nothing to evidence.
+  // The other half of the rule: a verdict that found nothing has nothing to
+  // evidence. Spreading the guard to pass/n-a would hollow out the sweep from
+  // the opposite side, so these must keep working bare.
   for (const result of ["pass", "n/a"]) {
-    test(`--result ${result} with no --evidence is still accepted`, () => {
-      const { dir, md } = fixture();
-      const r = run(["--block", md, "--criterion", "trap-superlative", "--result", result], dir);
-      expect(r.status).toBe(0);
+    test(`${result} without --evidence still succeeds`, () => {
+      const r = run(result);
+      expect(r.code).toBe(0);
+      expect(r.doc.criteria["da-overclaim"][0].result).toBe(result);
+      expect(r.doc.criteria["da-overclaim"][0].evidence).toBeUndefined();
     });
   }
+
+  test("an empty --evidence string is never recorded as a field", () => {
+    const r = run("pass", "");
+    expect(r.code).toBe(0);
+    expect("evidence" in r.doc.criteria["da-overclaim"][0]).toBe(false);
+  });
 });

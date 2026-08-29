@@ -61,7 +61,7 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Wedderburn
     Hecke-algebra element.  The map respects the Hecke and braid
     relations (a downstream `axiom`). -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (braid-word → Hecke element evaluation)
-axiom braidWordEval :
+opaque braidWordEval :
     ∀ (n : ℕ) (_w : List Int), WedderburnDecomposition n
 
 /-- **Even-power proxy is necessary for block PSD.**

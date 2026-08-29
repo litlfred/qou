@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T16:24:32.274010+00:00",
-  "commitSha": "1edde3a7b35b87ec23915ed96c120bc8f62f1aba",
+  "computedAt": "2026-08-28T15:45:19.821207+00:00",
+  "commitSha": "895ffb822720b0a5f1b50b54343fed14205eccf0",
   "assertions": [
     {
       "name": "published_near_misses_1plusq_2sqrtq_are_bar_odd_excluded",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "probe-he4-magic-baryeven-prune",
   "scriptFile": "probe_he4_magic_baryeven_prune.py",
-  "scriptHash": "0f3d5379f28f",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "2506325537de",
+  "scriptCommitSha": "9436374e9ec5ed5a2952575111671cd5496e2b4a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -43,7 +43,7 @@
   "description": "EXPLORATORY structural pruning: the ⁴He magic-closure factor must be bar-even (q↦q⁻¹ invariant) because ⁴He is self-mirror (N=Z=2); this structurally excludes the published near-misses 1+q and 2√q (bar-odd). No closed form proposed; no near-match promoted (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-06-25-he4-magic-factor-bar-even-pruning.md",
   "parameters": {
-    "q0": "1.1099785955573347",
+    "q0": "1.10997858275138080759166909561",
     "target_f_he4_over_ZN": "2.0715"
   },
   "data": {
@@ -58,6 +58,7 @@
       "cosh(2 ln q) + 1": "-2.40%"
     }
   },
-  "q0Anchor": "independent",
-  "q0AnchorReason": "Reads no substrate value. PROVED by running this producerunder QOU_Q0_ANCHOR=muon and =proton and diffing the emittedwitness: the only non-ephemeral leaves that differ areq0Anchor and q0Value THEMSELVES -- every substantive field isbyte-identical, so the pin changes the label and nothing else.Its previous `muon` label was therefore a false claim thatthis producer computed at that anchor. `independent` is thehonest disposition; a q0_anchor_manifest entry would be theWRONG fix, promoting a false claim into a declared one. Beanqou-o922, class (ii)."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Resolves q0 through `q_parameter` -- `Q0 = mp.mpf(Q_50_DIGIT_STR)` at module scope -- and EVALUATES at it: `f(Q0)` is the bar-even predicate that decides the prune, and `f(Q0)` is tabulated. The stem is listed `physical_proton` in q0_anchor_manifest.json, so that is the anchor it computes at. CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was `independent`, justified by: \"PROVED by running this producer under QOU_Q0_ANCHOR=muon and =proton ... every substantive field is byte-identical\". Re-running that experiment refutes it -- `/parameters/q0` moves -- so the stated proof does not hold even on its own terms, and the manifest already said proton. The SUBSTANTIVE outputs are indeed stable: the bar-even booleans survive the 11.54 ppb shift between the two anchors comfortably. That makes the old text right about the ROBUSTNESS and wrong about the DISPOSITION: a compute whose answer is insensitive to the pin still reads the pin, and `independent` asserts that it does not."
 }

@@ -103,7 +103,19 @@ def word_length_parity_D():
 def main() -> int:
     bound, bd = _load("chi-deuteron-h6-at-q0-50dps.witness.json")
     free, _ = _load("chi-deuteron-free-h6-at-q0-50dps.witness.json")
-    qinv, _ = _load("chi-deuteron-h6-at-qinv-50dps.witness.json")
+    # MATCHED FRAME (bean qou-1oxx, owner decision 2026-08-26 option 1).
+    # This read the colour-BLIND at-qinv witness while `bound` above is
+    # colour-WEIGHTED, so relation 2 below compared f_canon(q0) against
+    # f_strict(1/q0) -- two DIFFERENT functions. Measured, the four
+    # pairings of the deuteron bar-conjugate law are:
+    #     blind(q0)  vs blind(1/q0)  = 1.48e-49   <- EXACT at 50 dps
+    #     canon(q0)  vs canon(1/q0)  = 5.86e-04   <- reported now
+    #     canon(q0)  vs blind(1/q0)  = 2.63e-04   <- the old mixed value
+    #     blind(q0)  vs canon(1/q0)  = 3.23e-04
+    # The blind form IS the bar-symmetriser and the law holds in it
+    # EXACTLY, so the residual is the colour weighting and nothing else.
+    qinv, _ = _load(
+        "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json")
 
     m_e = mp.mpf(str(M_E_MEV))
     B_AME = mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))
@@ -146,12 +158,17 @@ def main() -> int:
         chi_qi = mp.mpf(str(qinv[p]["chi_lambda"]))
         match = mp.mpf(str(bound[cj]["chi_lambda"])) if cj in bound else None
         if match is not None and sign is not None:
-            resid = float(abs(chi_qi - sign * match) / (abs(match) + 1))
+            # mpf, not float(): the ratchet is about the FIELD, not the
+            # magnitude. Serialised via mp.nstr so it never enters float64.
+            resid = abs(chi_qi - sign * match) / (abs(match) + 1)
             barconj.append({"lambda": list(p), "conj": list(cj),
                             "chi_qinv": mp.nstr(chi_qi, 10),
                             "signed_chi_conj_q": mp.nstr(sign * match, 10),
-                            "rel_resid": resid})
-    barconj_max = max((b["rel_resid"] for b in barconj), default=None)
+                            "rel_resid": mp.nstr(resid, 20),
+                            "_resid_mpf": resid})
+    barconj_max = max((b["_resid_mpf"] for b in barconj), default=None)
+    for _b in barconj:
+        del _b["_resid_mpf"]
 
     # zeros + dominance
     zeros = [r["lambda"] for r in rows if abs(mp.mpf(r["chi_bound"])) < mp.mpf("1e-9")]
@@ -170,10 +187,10 @@ def main() -> int:
               f"{r['chi_bound']:>13}{r['delta_chi']:>13}{r['trM_term']:>13}"
               f"{r['binding_term_y_dchi']:>13}{'  ✓' if r['self_conj'] else '':>9}")
     print(f"\n  Σ y_λ χ_bound = {mp.nstr(sum_contrib,12)}  (= tr_M ✓ "
-          f"resid {float(abs(sum_contrib-tr_M)):.1e})")
+          f"resid {mp.nstr(abs(sum_contrib-tr_M), 2)})")
     print(f"  Σ y_λ Δχ (scalar binding trace diff) = {mp.nstr(dtr,12)}")
     print(f"\n  [rel 2] bar-conjugate χ^λ(1/q) = (−1)^L χ^{{λ'}}(q), L parity "
-          f"{Lpar}: max rel-resid = {barconj_max:.2e}"
+          f"{Lpar}: max rel-resid = {mp.nstr(barconj_max, 4)}"
           if barconj_max is not None else "  [rel 2] word length unavailable")
     print(f"  [rel 3] χ_bound zeros: {zeros or 'none'}")
     print(f"  [rel 4] self-conjugate block: (3,2,1)")
@@ -208,15 +225,22 @@ def main() -> int:
           .add_data("uniform_delta_magnitude", mp.nstr(uniform_delta, 20)))
     wb.add_assertion(
         "wedderburn_closure",
-        computed=float(abs(sum_contrib - tr_M)), expected=0.0,
-        tolerance=1e-9,
+        computed=mp.nstr(abs(sum_contrib - tr_M), 20), expected="0",
+        tolerance="1e-9",
         source="Σ_λ y_λ χ^λ(β_D) = tr_M(β_D) (witness cross-check)")
     if barconj_max is not None:
-        # The bar-conjugate law holds only APPROXIMATELY (≈2.6e-4) for the
-        # deuteron: the colour-weighted p-n interface carries the q₀-baked
-        # flavor split, breaking the clean q↔q⁻¹ symmetry at ~the same order
-        # as the convention-D trace gap (1.955e-4). Recorded as a finding,
-        # not a hard pass — the breaking IS the colour-weighting signature.
+        # The bar-conjugate law holds only APPROXIMATELY for the deuteron:
+        # the colour-weighted p-n interface breaks the clean q↔q⁻¹ symmetry.
+        # CORRECTED 2026-08-26 (bean qou-1oxx): this said "≈2.6e-4" and called
+        # it "the colour-weighting signature". 2.6e-4 was the MIXED pairing
+        # f_canon(q0) vs f_strict(1/q0) — two different functions. In a
+        # consistent canonical frame the residual is 5.86e-04, and in the
+        # colour-BLIND frame the law is EXACT (1.48e-49 at 50 dps), because
+        # the blind form IS the bar-symmetriser. So the breaking is indeed
+        # the colour weighting — but its honest size is 5.86e-04, and the
+        # coincidence with the convention-D trace gap (1.955e-4) that the old
+        # comment leaned on does not survive the correction. Recorded as a
+        # finding, not a hard pass.
         wb.add_assertion(
             "bar_conjugate_law_broken_by_colour_weighting",
             computed=bool(1e-6 < barconj_max < 1e-2), expected=True,

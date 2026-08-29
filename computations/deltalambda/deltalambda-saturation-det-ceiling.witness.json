@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:40:51.746311+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T21:06:35.709591+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "closed_form_det_matches_mp_det_A2_to_12",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 112,
+  "durationMs": 124,
   "computation": "deltalambda-saturation-det-ceiling",
   "scriptFile": "deltalambda_saturation_det_ceiling_probe.py",
   "scriptHash": "741f0e19514d",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -89,7 +89,7 @@
       "q0": "1.10997858275",
       "E0_MeV": "4.1859814",
       "g_reeb": "0.446727067906",
-      "z_naive_1/[2]_v": "0.499320334184",
+      "z_naive_1/[2]_v": "0.612688037146",
       "ceiling_1/sqrt5": "0.4472135955"
     },
     "part0_algebraic_preflight": {
@@ -347,12 +347,12 @@
           "b4_MeV_at_this_m": "3.88249"
         },
         "z_naive": {
-          "m": "0.499320334184",
-          "rho_pred_3": "2.40992",
-          "rho_pred_4": "4.04458",
-          "vs_target_3_ratio_pred/strong": "0.63206",
-          "vs_target_4_ratio_pred/strong": "0.31023",
-          "b4_MeV_at_this_m": "4.85528"
+          "m": "0.612688037146",
+          "rho_pred_3": "2.33122",
+          "rho_pred_4": "3.82993",
+          "vs_target_3_ratio_pred/strong": "0.61142",
+          "vs_target_4_ratio_pred/strong": "0.29377",
+          "b4_MeV_at_this_m": "7.54503"
         }
       },
       "any_parameter_free_m_hits_both_within_5pct": false,
@@ -367,5 +367,7 @@
     "no_ame_inversion": true,
     "q0_convention": "muon-canonical (computations/ layer)"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

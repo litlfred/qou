@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2607.10525v1",
+ "source_sha256": "b893cb4c87ea1d66",
+ "brief": "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC.",
+ "extended": "**FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES**\n\n*CÉSAR GALINDO, CLAUDIA GALLEGO, AND YIBY MORALES*\n\n34 pp, 11 sections.\n\n**Abstract.** LetGbe a finite group acting on a finite tensor categoryC. We classify fiber functors on the equivariantizationCG in terms of equivariant exact module categories overC, indexed by subgroups ofG. The data are a subgroupH⊆G and anH-equivariantC-module categoryMwhose underlyingC-module category is indecomposable, exact, and semisimple; they give a fiber functor precisely whenH acts transitively on the simple objects ofMand the stabilizer cocycle of one, hence every, simple object is non-degenerate. Through Tannaka–Krein reconstruction this describes realizations ofC G as the representation category of a finite-dimensional Hopf algebra, with no semisimplicity hypothesis onC. As applications, for odd primespwe determine the fiber functors onRep(Hp), whereHp denotes Nikshych’s semisimple Hopf algebra of dimension4p2 [Nik08]: there is one equivalence class if p≡3 (mod 4)and two ifp≡1 (mod 4).\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Finite tensor categories and their module ; 2.2 Equivariant tensor categories and their mo; 3.1 The correspondence between fiber functors ; 3.2 Rank-one equivariantizations; 3.3 Classification of fiber functors; 4.1 Tambara–Yamagami categories and fiber func; 5 Fiber functors on gaugings; 5.1 First reductions for small radical gauging; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: LetGbe a finite group acting on a finite tensor categoryC. Fiber\n- Theorem 1.1: Here and throughout,Cn denotes the cyclic group of ordern.\n- Theorem 1.2: Letpbe an odd prime, and letH p be Nikshych’s semisimple Hopf\n- Theorem 2.4: LetGbe a finite group acting on a finite tensor categoryC. Let\n- Theorem 3.6: LetGact on a finite tensor categoryC. Fiber functors onC G are in\n- Theorem 4.4: Letpbe an odd prime, and letH p be Nikshych’s semisimple Hopf",
+ "tokens": {
+  "brief": 31,
+  "extended": 493
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-finite-tensor-categories-and-their-module-cat",
+   "title": "Finite tensor categories and their module categories",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-22-equivariant-tensor-categories-and-their-modul",
+   "title": "Equivariant tensor categories and their module categories",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-004-31-the-correspondence-between-fiber-functors-and",
+   "title": "The correspondence between fiber functors and rank-one module categories",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-32-rank-one-equivariantizations",
+   "title": "Rank-one equivariantizations",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-33-classification-of-fiber-functors",
+   "title": "Classification of fiber functors",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-41-tambarayamagami-categories-and-fiber-functors",
+   "title": "Tambara–Yamagami categories and fiber functors",
+   "pages": "12-18"
+  },
+  {
+   "id": "sec-008-5-fiber-functors-on-gaugings",
+   "title": "Fiber functors on gaugings",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-009-51-first-reductions-for-small-radical-gaugings",
+   "title": "First reductions for small radical gaugings",
+   "pages": "21-33"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "33-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

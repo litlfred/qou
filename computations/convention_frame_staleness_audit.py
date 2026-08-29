@@ -149,7 +149,12 @@ def main() -> int:
     w = (WitnessBuilder("convention-frame-staleness-audit", engine="static-scan")
          .add_parameter("d_migration_date", D_MIGRATION)
          .add_parameter("detector", "D-form bound to a Markov-named variable"))
-    w.add_assertion("scan_completed", "1", "1", tolerance="0")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("scan_completed", "1 (reached-this-line flag: no witness is written unless the scan completes, so it can never be false)")
     w.add_data("producers_with_d_form", len({r["producer"] for r in rows}))
     w.add_data("witnesses_examined", len(rows))
     w.add_data("suspect_count", len(suspect))

@@ -144,7 +144,7 @@ def ck_target_at(q: mpf, q_codata: mpf, m_e: mpf, k_max: int = 5) -> list[mpf]:
     Precondition (inherited from substrate_ladder_quantities):
     `q > 0` and `q ≠ 1` (else u = 0 ⇒ division by zero).
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     if sub["u"] == 0:
         raise ValueError(f"ck_target_at: u(q) = 0 at q={q!s}")
     Q_A = m_e * sub["Q_A_over_me"]
@@ -169,7 +169,7 @@ def make_candidates(q: mpf) -> dict[str, Callable[[mpf], mpf]]:
     pre-enumerated; α(q) is a closed-form function of the categorical
     scalars (h, η, b, ℏ_q, z, [n]_q) — no free parameters.
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     h, eta, b, hbar_q, z = (
         sub["h"], log(q), sub["b"], sub["hbar_q"], sub["z"],
     )

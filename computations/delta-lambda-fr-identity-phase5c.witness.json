@@ -9,7 +9,7 @@
       "computed": 1.1387742954796927e-15,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "rel_err",
       "source": "τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos σ) · (z-h)^(# neg σ⁻¹) per Markov axiom + Hecke skein σ⁻¹ = σ − h·1 (prop:interface-knot-markov-z). Verified across 4 atoms (D, T, ³He, ⁴He); max rel.err. 0.00×10⁻⁸ (well below the f64 numerical floor)."
     },

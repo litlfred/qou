@@ -1,0 +1,89 @@
+{
+  "computation": "tower-e0-pole-conditioning",
+  "description": "Why canonical-with-proper-tower does not reproduce: the E_0 calibration evaluates \u03a6_q at 95.91% of its pole, below the cap_frac=0.98 clamp, which therefore never fires. \u03a6_q = 7.81e6 vs the ~3.85 implied; 0.188% in V\u0302 -> 9.06% in \u03a6_q (48\u00d7). scope-(a). bean qou-0gqn.",
+  "audit_only": true,
+  "tier": "measured (numerical conditioning)",
+  "q0Anchor": "proton",
+  "result": {
+    "q": "1.1099785827513808",
+    "cap": "1.087779011096353184",
+    "proton_V_hat": [
+      "0.6629533727041369",
+      "1.0646262153778452"
+    ],
+    "max_V_over_q": "0.959141223013",
+    "cap_fires": false,
+    "phi_q_total_float64_as_production_computes": "7816850.32308",
+    "e0_now": "0.000120031977231",
+    "e0_june_committed": "243.5284427694042",
+    "e0_june_adjacent_committed": "249.4029733",
+    "relative_error_amplification": "48.23801302",
+    "subcap_band_ratio": "303.5066336",
+    "tower_term_e0": "649.4437255934171",
+    "v_hat_needed_to_reproduce_june": "0.1431656622190514",
+    "verdict": "MEASURED (scope-(a)): `canonical-with-proper-tower.witness.json` does not reproduce because its E_0 calibration evaluates \u03a6_q at 95.91 % of the pole, inside the band `cap_frac=0.98` declares safe, so the clamp never fires. \u03a6_q = 7.81e6 there against the ~3.85 the witness implies, and the point is ill-conditioned: a 0.188 % change in V\u0302 moves \u03a6_q by 9.06 %, a 48\u00d7 amplification that E_0 = M_P/\u03a6_q inherits whole. The term split of 8cf5569648 is NOT the cause \u2014 the calibration is deliberately pinned to the historical `phi_q` \u2014 and neither current term reproduces June at today's V\u0302, so the V\u0302 moved too. This does NOT say which numbers are right, that the tower formula is wrong, or which commit moved V\u0302; that bisect is not done."
+  },
+  "context": {
+    "bean": "qou-0gqn",
+    "excluded_causes": [
+      "8cf5569648 term split \u2014 the calibration is deliberately pinned to term='phi_q', the historical form",
+      "_E0_PI_CACHE / _E0_TOWER_CACHE \u2014 both keyed by pair_mode",
+      "full vs adjacent now identical \u2014 correct, A=1 has no pairs"
+    ],
+    "not_established": [
+      "which set of numbers is right",
+      "that the tower formula is wrong",
+      "which commit moved V\u0302 (bisect not done)"
+    ]
+  },
+  "assertions": [
+    {
+      "name": "cap_does_not_fire_at_the_calibration_point",
+      "passed": true,
+      "v_max": "1.06462621538",
+      "cap": "1.0877790111",
+      "fraction_of_q": "0.95914122",
+      "source": "phi_q_safe clamps to cap_frac*q; the proton's larger V\u0302 is BELOW that cap, so the clamp is inert and \u03a6_q is evaluated at 95.91% of its singularity"
+    },
+    {
+      "name": "phi_q_at_the_calibration_point_is_enormous",
+      "passed": true,
+      "total": "7.81685e+06",
+      "e0": "0.000120032",
+      "source": "\u03a6_q summed over the proton's two generators exceeds 1e6, against the ~3.85 the June witness implies"
+    },
+    {
+      "name": "calibration_is_ill_conditioned",
+      "passed": true,
+      "amplification": "48.238013",
+      "phi_lo": "7485530.029",
+      "phi_hi": "8163865.936",
+      "source": "a 0.188% change in V\u0302 moves \u03a6_q by 9.06%, so E_0 = M_P/\u03a6_q amplifies its input's relative error by 48\u00d7; computed in mpmath, not through the float64 function under test"
+    },
+    {
+      "name": "the_cap_does_not_regularise",
+      "passed": true,
+      "band_low": "87657.94864",
+      "band_high": "26604768.9",
+      "ratio": "303.50663",
+      "source": "across the whole band the cap declares safe, \u03a6_q spans a factor ~300 \u2014 the cap bounds the blow-up, it does not remove it, and its bound is still 7 orders above the June total"
+    },
+    {
+      "name": "neither_current_term_reproduces_june",
+      "passed": true,
+      "tower_term_e0": "649.4437256",
+      "june_e0": "243.5284428",
+      "v_hat_needed_for_june": "0.1431656622",
+      "v_hat_actual": "1.064626215",
+      "source": "tower_term gives E_0 = 649.44 and phi_q gives 6.79e-5; neither is June's 243.53. Reaching it through \u03a6_q would need V\u0302 = 0.1432 (12.9% of q), 7.4\u00d7 smaller than today's 1.0646 \u2014 so the V\u0302 moved as well as the term"
+    }
+  ],
+  "allPassed": true,
+  "scriptFile": "tower_e0_pole_conditioning_probe.py",
+  "scriptHash": "d17e1506d0d9",
+  "scriptCommitSha": "unknown",
+  "commitSha": "c732f02d3ea46d36b9286fb8cd1f971ef1c011a3",
+  "engine": "python",
+  "computedAt": "2026-08-29T01:14:03.620200+00:00",
+  "durationMs": 0
+}

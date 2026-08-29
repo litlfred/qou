@@ -77,7 +77,11 @@ def _consts(dps: int = 50):
     me = mp.mpf(str(M_E))
     qi = mp.mpf(1) / q
     E0 = me / (q * (q - 1))
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)), excised.
+    # The pair augmentation below is exactly z^2, so this scales it by
+    # (z_D/z_C)^2 = 1.505637 -- and it overshoots; see the commit message.
+    z = q ** 3 / (q ** 2 + 1)
     return q, qi, me, E0, z
 
 

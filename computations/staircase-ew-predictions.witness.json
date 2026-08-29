@@ -9,7 +9,7 @@
       "computed": 0.00127,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.005
+      "tolerance": "0.005"
     },
     {
       "name": "rho3_correction_helps",
@@ -46,14 +46,14 @@
       "computed": 0.302,
       "expected": 0.302,
       "passed": true,
-      "tolerance": 0.05
+      "tolerance": "0.05"
     },
     {
       "name": "rho3_hook_ratio_not_cot_w_30pct_off",
       "computed": 0.303,
       "expected": 0.303,
       "passed": true,
-      "tolerance": 0.05
+      "tolerance": "0.05"
     }
   ],
   "allPassed": true,

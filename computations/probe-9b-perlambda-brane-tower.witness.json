@@ -1,39 +1,39 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T07:51:25.513615+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-29T10:51:44.713782+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
-      "computed": 1.8111358157653425e-71,
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "τ closed form = [4]/[2]³·1 + 1/[2]²·(2−3h⁴−h⁶) exactly (SU(2)/TL weights, (1³) killed)"
     },
     {
       "name": "chi21_closed_form_vs_seminormal",
-      "computed": 5.4334074472960274e-71,
+      "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "χ^{(2,1)}((σ1σ2⁻¹)³) = 2−3h⁴−h⁶ vs direct Hoefsmit seminormal matrix product at 50 dps"
     },
     {
       "name": "markov_m3_both_conventions",
-      "computed": 1.8111358157653425e-71,
+      "computed": "1.8111358157653424735018238581775583561365062396278276379165229779871e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Σ y_λ d_λ = 1 under both Jones/TL and Wenzl weights"
     },
     {
       "name": "trace_convention_gap_recorded",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.00019554,
       "passed": false,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the Jones/TL trace, NOT the corpus-canonical Wenzl z-trace"
     },
     {
@@ -62,27 +62,27 @@
     },
     {
       "name": "scalar_baseline_matches_committed_witness",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "scalar Jones tower vs borromean-binding-recompute.witness.json per-isotope B_tower (q-string precision difference only)"
     },
     {
       "name": "perlambda_does_not_close_16O",
-      "computed": 6.591900993946354e-07,
+      "computed": 6.861016731418701e-07,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "max per-λ tower shift vs scalar < 1% across all isotopes and all three collapse-last variants — the ¹⁶O 2.3× normalization is untouched (REFUTED-scope-(a) for this un-collapsed (y_λ, χ^λ) weighting alone)"
     }
   ],
   "allPassed": false,
-  "durationMs": 14,
+  "durationMs": 16,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
-  "scriptHash": "fdff391037a7",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "9b24bdac0958",
+  "scriptCommitSha": "b7df510f2a3d529278a3ae33d305846556349fc9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -167,29 +167,29 @@
         "N": 1,
         "B_AME": 2.224573,
         "scalar_jones": {
-          "B_can0": 2.0898131460941918,
-          "B_tower": 2.480296257394451,
-          "errT_AME_over_B": 0.8968980997201165
+          "B_can0": 1.6166217381550836,
+          "B_tower": 2.063076949816325,
+          "errT_AME_over_B": 1.0782792179409755
         },
         "perl_jones": {
-          "B_can0": 2.0898131460941918,
-          "B_tower": 2.4802959902889214,
-          "errT_AME_over_B": 0.8968981963079603
+          "B_can0": 1.6166217381550836,
+          "B_tower": 2.0630766338738735,
+          "errT_AME_over_B": 1.0782793830701682
         },
         "scalar_wenzl": {
-          "B_can0": 2.0898131460941918,
-          "B_tower": 2.480296257394451,
-          "errT_AME_over_B": 0.8968980997201165
+          "B_can0": 1.6166217381550836,
+          "B_tower": 2.063076949816325,
+          "errT_AME_over_B": 1.0782792179409755
         },
         "perl_wenzl": {
-          "B_can0": 2.0898131460941918,
-          "B_tower": 2.4802959902889214,
-          "errT_AME_over_B": 0.8968981963079603
+          "B_can0": 1.6166217381550836,
+          "B_tower": 2.0630766338738735,
+          "errT_AME_over_B": 1.0782793830701682
         },
         "ambient_h6": {
-          "B_can0": 2.0898131460941918,
-          "B_tower": 2.480296148301379,
-          "errT_AME_over_B": 0.8968981391691836
+          "B_can0": 1.6166217381550836,
+          "B_tower": 2.063076820778841,
+          "errT_AME_over_B": 1.0782792853831742
         }
       },
       "3H": {
@@ -197,29 +197,29 @@
         "N": 2,
         "B_AME": 8.481821,
         "scalar_jones": {
-          "B_can0": 3.5638784901553384,
-          "B_tower": 4.919026059345178,
-          "errT_AME_over_B": 1.7242886900113519
+          "B_can0": 3.137225560748612,
+          "B_tower": 4.741966424926435,
+          "errT_AME_over_B": 1.7886716690811624
         },
         "perl_jones": {
-          "B_can0": 3.5638784901553384,
-          "B_tower": 4.919025165434855,
-          "errT_AME_over_B": 1.7242890033578806
+          "B_can0": 3.137225560748612,
+          "B_tower": 4.7419653230216054,
+          "errT_AME_over_B": 1.7886720847202102
         },
         "scalar_wenzl": {
-          "B_can0": 3.5638784901553384,
-          "B_tower": 4.919026059345178,
-          "errT_AME_over_B": 1.7242886900113519
+          "B_can0": 3.137225560748612,
+          "B_tower": 4.741966424926435,
+          "errT_AME_over_B": 1.7886716690811624
         },
         "perl_wenzl": {
-          "B_can0": 3.5638784901553384,
-          "B_tower": 4.919025165434855,
-          "errT_AME_over_B": 1.7242890033578806
+          "B_can0": 3.137225560748612,
+          "B_tower": 4.7419653230216054,
+          "errT_AME_over_B": 1.7886720847202102
         },
         "ambient_h6": {
-          "B_can0": 3.5638784901553384,
-          "B_tower": 4.919025694243982,
-          "errT_AME_over_B": 1.7242888179919527
+          "B_can0": 3.137225560748612,
+          "B_tower": 4.74196597488021,
+          "errT_AME_over_B": 1.7886718388387983
         }
       },
       "3He": {
@@ -227,29 +227,29 @@
         "N": 1,
         "B_AME": 7.718058,
         "scalar_jones": {
-          "B_can0": 3.128794173475609,
-          "B_tower": 4.300243507376386,
-          "errT_AME_over_B": 1.7947955707068437
+          "B_can0": 2.6033579456523555,
+          "B_tower": 3.94272358063608,
+          "errT_AME_over_B": 1.9575447890655437
         },
         "perl_jones": {
-          "B_can0": 3.128794173475609,
-          "B_tower": 4.300242706059798,
-          "errT_AME_over_B": 1.7947959051529578
+          "B_can0": 2.6033579456523555,
+          "B_tower": 3.9427226328087257,
+          "errT_AME_over_B": 1.9575452596577387
         },
         "scalar_wenzl": {
-          "B_can0": 3.128794173475609,
-          "B_tower": 4.300243507376386,
-          "errT_AME_over_B": 1.7947955707068437
+          "B_can0": 2.6033579456523555,
+          "B_tower": 3.94272358063608,
+          "errT_AME_over_B": 1.9575447890655437
         },
         "perl_wenzl": {
-          "B_can0": 3.128794173475609,
-          "B_tower": 4.300242706059798,
-          "errT_AME_over_B": 1.7947959051529578
+          "B_can0": 2.6033579456523555,
+          "B_tower": 3.9427226328087257,
+          "errT_AME_over_B": 1.9575452596577387
         },
         "ambient_h6": {
-          "B_can0": 3.128794173475609,
-          "B_tower": 4.300243180097169,
-          "errT_AME_over_B": 1.7947957073036045
+          "B_can0": 2.6033579456523555,
+          "B_tower": 3.942723193523628,
+          "errT_AME_over_B": 1.9575449812651795
         }
       },
       "4He": {
@@ -257,29 +257,29 @@
         "N": 2,
         "B_AME": 28.295673,
         "scalar_jones": {
-          "B_can0": 3.860766193486161,
-          "B_tower": 6.387363096576777,
-          "errT_AME_over_B": 4.429945906028841
+          "B_can0": 3.531353053597401,
+          "B_tower": 6.475459552758949,
+          "errT_AME_over_B": 4.3696779772092444
         },
         "perl_jones": {
-          "B_can0": 3.860766193486161,
-          "B_tower": 6.3873614013498665,
-          "errT_AME_over_B": 4.429947081751185
+          "B_can0": 3.531353053597401,
+          "B_tower": 6.475457503026765,
+          "errT_AME_over_B": 4.369679360380948
         },
         "scalar_wenzl": {
-          "B_can0": 3.860766193486161,
-          "B_tower": 6.387363096576777,
-          "errT_AME_over_B": 4.429945906028841
+          "B_can0": 3.531353053597401,
+          "B_tower": 6.475459552758949,
+          "errT_AME_over_B": 4.3696779772092444
         },
         "perl_wenzl": {
-          "B_can0": 3.860766193486161,
-          "B_tower": 6.3873614013498665,
-          "errT_AME_over_B": 4.429947081751185
+          "B_can0": 3.531353053597401,
+          "B_tower": 6.475457503026765,
+          "errT_AME_over_B": 4.369679360380948
         },
         "ambient_h6": {
-          "B_can0": 3.860766193486161,
-          "B_tower": 6.387362404196365,
-          "errT_AME_over_B": 4.42994638622827
+          "B_can0": 3.531353053597401,
+          "B_tower": 6.475458715600271,
+          "errT_AME_over_B": 4.369678542128889
         }
       },
       "6Li": {
@@ -287,29 +287,29 @@
         "N": 3,
         "B_AME": 31.994564,
         "scalar_jones": {
-          "B_can0": 4.106471248016275,
-          "B_tower": 10.514812623387348,
-          "errT_AME_over_B": 3.042808763784984
+          "B_can0": 3.994499199157953,
+          "B_tower": 11.487453061658872,
+          "errT_AME_over_B": 2.7851747317938336
         },
         "perl_jones": {
-          "B_can0": 4.106471248016275,
-          "B_tower": 10.514808339023203,
-          "errT_AME_over_B": 3.0428100036079413
+          "B_can0": 3.994499199157953,
+          "B_tower": 11.487447860289674,
+          "errT_AME_over_B": 2.7851759928852644
         },
         "scalar_wenzl": {
-          "B_can0": 4.106471248016275,
-          "B_tower": 10.514812623387348,
-          "errT_AME_over_B": 3.042808763784984
+          "B_can0": 3.994499199157953,
+          "B_tower": 11.487453061658872,
+          "errT_AME_over_B": 2.7851747317938336
         },
         "perl_wenzl": {
-          "B_can0": 4.106471248016275,
-          "B_tower": 10.514808339023203,
-          "errT_AME_over_B": 3.0428100036079413
+          "B_can0": 3.994499199157953,
+          "B_tower": 11.487447860289674,
+          "errT_AME_over_B": 2.7851759928852644
         },
         "ambient_h6": {
-          "B_can0": 4.106471248016275,
-          "B_tower": 10.514810873525326,
-          "errT_AME_over_B": 3.0428092701655136
+          "B_can0": 3.994499199157953,
+          "B_tower": 11.487450937295293,
+          "errT_AME_over_B": 2.785175246853597
         }
       },
       "7Li": {
@@ -317,29 +317,29 @@
         "N": 4,
         "B_AME": 39.244533,
         "scalar_jones": {
-          "B_can0": 4.131415349896913,
-          "B_tower": 13.433750098936727,
-          "errT_AME_over_B": 2.921338621827287
+          "B_can0": 4.081357830856327,
+          "B_tower": 15.049168650906994,
+          "errT_AME_over_B": 2.6077542162194307
         },
         "perl_jones": {
-          "B_can0": 4.131415349896913,
-          "B_tower": 13.433743934158201,
-          "errT_AME_over_B": 2.9213399624368512
+          "B_can0": 4.081357830856327,
+          "B_tower": 15.04916109165066,
+          "errT_AME_over_B": 2.6077555261052416
         },
         "scalar_wenzl": {
-          "B_can0": 4.131415349896913,
-          "B_tower": 13.433750098936727,
-          "errT_AME_over_B": 2.921338621827287
+          "B_can0": 4.081357830856327,
+          "B_tower": 15.049168650906994,
+          "errT_AME_over_B": 2.6077542162194307
         },
         "perl_wenzl": {
-          "B_can0": 4.131415349896913,
-          "B_tower": 13.433743934158201,
-          "errT_AME_over_B": 2.9213399624368512
+          "B_can0": 4.081357830856327,
+          "B_tower": 15.04916109165066,
+          "errT_AME_over_B": 2.6077555261052416
         },
         "ambient_h6": {
-          "B_can0": 4.131415349896913,
-          "B_tower": 13.433747581050332,
-          "errT_AME_over_B": 2.921339169373586
+          "B_can0": 4.081357830856327,
+          "B_tower": 15.049165563517187,
+          "errT_AME_over_B": 2.607754751209477
         }
       },
       "12C": {
@@ -347,29 +347,29 @@
         "N": 6,
         "B_AME": 92.161728,
         "scalar_jones": {
-          "B_can0": 4.1141933587637505,
-          "B_tower": 32.641552233916784,
-          "errT_AME_over_B": 2.823448080518601
+          "B_can0": 4.111993208477736,
+          "B_tower": 37.55866561603116,
+          "errT_AME_over_B": 2.4538073035444214
         },
         "perl_jones": {
-          "B_can0": 4.1141933587637505,
-          "B_tower": 32.64153321604582,
-          "errT_AME_over_B": 2.8234497255384876
+          "B_can0": 4.111993208477736,
+          "B_tower": 37.558642452667236,
+          "errT_AME_over_B": 2.4538088168693943
         },
         "scalar_wenzl": {
-          "B_can0": 4.1141933587637505,
-          "B_tower": 32.641552233916784,
-          "errT_AME_over_B": 2.823448080518601
+          "B_can0": 4.111993208477736,
+          "B_tower": 37.55866561603116,
+          "errT_AME_over_B": 2.4538073035444214
         },
         "perl_wenzl": {
-          "B_can0": 4.1141933587637505,
-          "B_tower": 32.64153321604582,
-          "errT_AME_over_B": 2.8234497255384876
+          "B_can0": 4.111993208477736,
+          "B_tower": 37.558642452667236,
+          "errT_AME_over_B": 2.4538088168693943
         },
         "ambient_h6": {
-          "B_can0": 4.1141933587637505,
-          "B_tower": 32.64154446644432,
-          "errT_AME_over_B": 2.823448752394138
+          "B_can0": 4.111993208477736,
+          "B_tower": 37.558656155550615,
+          "errT_AME_over_B": 2.4538079216228788
         }
       },
       "16O": {
@@ -377,29 +377,29 @@
         "N": 8,
         "B_AME": 127.619,
         "scalar_jones": {
-          "B_can0": 4.090710075887598,
-          "B_tower": 56.092234020012434,
-          "errT_AME_over_B": 2.275163438034371
+          "B_can0": 4.090571050647856,
+          "B_tower": 65.09570286743161,
+          "errT_AME_over_B": 1.9604827105085267
         },
         "perl_jones": {
-          "B_can0": 4.090710075887598,
-          "B_tower": 56.09219937472433,
-          "errT_AME_over_B": 2.275164843286682
+          "B_can0": 4.090571050647856,
+          "B_tower": 65.09566064016812,
+          "errT_AME_over_B": 1.9604839822648799
         },
         "scalar_wenzl": {
-          "B_can0": 4.090710075887598,
-          "B_tower": 56.092234020012434,
-          "errT_AME_over_B": 2.275163438034371
+          "B_can0": 4.090571050647856,
+          "B_tower": 65.09570286743161,
+          "errT_AME_over_B": 1.9604827105085267
         },
         "perl_wenzl": {
-          "B_can0": 4.090710075887598,
-          "B_tower": 56.09219937472433,
-          "errT_AME_over_B": 2.275164843286682
+          "B_can0": 4.090571050647856,
+          "B_tower": 65.09566064016812,
+          "errT_AME_over_B": 1.9604839822648799
         },
         "ambient_h6": {
-          "B_can0": 4.090710075887598,
-          "B_tower": 56.092219869828334,
-          "errT_AME_over_B": 2.275164011981731
+          "B_can0": 4.090571050647856,
+          "B_tower": 65.09568562078788,
+          "errT_AME_over_B": 1.9604832299246224
         }
       },
       "56Fe": {
@@ -408,44 +408,44 @@
         "B_AME": 492.254,
         "scalar_jones": {
           "B_can0": 3.861919751291598,
-          "B_tower": 685.1146435044327,
-          "errT_AME_over_B": 0.7184987281574797
+          "B_tower": 806.8411704090365,
+          "errT_AME_over_B": 0.6101002502765777
         },
         "perl_jones": {
           "B_can0": 3.861919751291598,
-          "B_tower": 685.1141918836428,
-          "errT_AME_over_B": 0.7184992017850399
+          "B_tower": 806.8406168339595,
+          "errT_AME_over_B": 0.6101006688676673
         },
         "scalar_wenzl": {
           "B_can0": 3.861919751291598,
-          "B_tower": 685.1146435044327,
-          "errT_AME_over_B": 0.7184987281574797
+          "B_tower": 806.8411704090365,
+          "errT_AME_over_B": 0.6101002502765777
         },
         "perl_wenzl": {
           "B_can0": 3.861919751291598,
-          "B_tower": 685.1141918836428,
-          "errT_AME_over_B": 0.7184992017850399
+          "B_tower": 806.8406168339595,
+          "errT_AME_over_B": 0.6101006688676673
         },
         "ambient_h6": {
           "B_can0": 3.861919751291598,
-          "B_tower": 685.1144590485403,
-          "errT_AME_over_B": 0.718498921601542
+          "B_tower": 806.8409443151197,
+          "errT_AME_over_B": 0.6101004212395862
         }
       }
     },
     "max_tower_shift_vs_scalar": {
-      "perl_jones": 6.591900993946354e-07,
-      "perl_wenzl": 6.591900993946354e-07,
-      "ambient_h6": 2.692336152909647e-07
+      "perl_jones": 6.861016731418701e-07,
+      "perl_wenzl": 6.861016731418701e-07,
+      "ambient_h6": 2.8022109566094855e-07
     },
     "upstream_witness_hashes": [
       {
         "path": "borromean-binding-recompute.witness.json",
-        "sha256": "1759e55bf97b2654b0f6e25dffca0928893ce8261b1bf84a6d09ae246beae64e",
-        "size_bytes": 2719,
-        "commitSha": "82900c72a9ea9f2d71d502f2c9c2e66127bddee6",
-        "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
-        "computedAt": "2026-08-09T00:55:41.371670+00:00"
+        "sha256": "61769e5a2df581c8c933e136db452658813a2ffe6c5633098213b2d06f4f6a67",
+        "size_bytes": 2937,
+        "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+        "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+        "computedAt": "2026-08-25T01:19:55.168022+00:00"
       }
     ]
   },

@@ -76,13 +76,14 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
     M_HE4_MEV_VALIDATION as M_HE4_MEV,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps muon-anchored q₀ (q-pinning-50-digit.witness.json),
 # identical to the original probe.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # Per-knot hyperbolic volumes — identical to the original probe.
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
@@ -303,7 +304,7 @@ def main() -> int:
         / lambda_empirical(M_P_MEV, VOL_BORROMEAN_8G, q_0)
     w.add_assertion(
         "L1a_lambdaA_proton_gap_matches_documented",
-        computed=float(proton_rel),
+        computed=proton_rel,
         expected=0.0296,
         tolerance=2e-3,
         source=(
@@ -313,7 +314,7 @@ def main() -> int:
     )
     w.add_assertion(
         "L1a_lambdaA_worst_at_4He_matches_documented",
-        computed=float(worst["L1a_lambdaA"][1]),
+        computed=worst["L1a_lambdaA"][1],
         expected=-0.556,
         tolerance=5e-3,
         source="PR #1874 L1a worst-rel ~ -55.6% at 4He (lambda_A constant vs growing lambda_emp).",

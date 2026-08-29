@@ -18,7 +18,7 @@
       "computed": 1.5506492837245145,
       "expected": 1.551,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "unit": "variance",
       "source": "K_3* = 4_1 baseline (FR at k=3 only) computed here: 1.5506×; PR #826 reported 1.551×. Cross-validates the FR-pullback formula implementation."
     },
@@ -27,7 +27,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "unit": "percent_regression",
       "source": "Best (K_1*, K_2*) variance 1.5428× vs K_3*-only baseline 1.5506×: improvement = +0.50% (positive = better; negative = regression — would fail this assertion)."
     }

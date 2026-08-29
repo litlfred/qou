@@ -95,7 +95,15 @@ def main() -> int:
     q_wit = w.add_upstream(Q_WITNESS_PATH)
     p = tower["data"]["particles"]["proton"]
 
-    q_str = q_wit["derived_50_digit"]["q"]
+    # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+    # §"q₀ anchor convention": the experimental (proton) anchor is the default
+    # for all production compute; the owner authorisation recorded there covers
+    # this sweep. A direct read of the anchor-defining witness computes at MUON
+    # whatever the manifest or `QOU_Q0_ANCHOR` says — the two pins differ by
+    # 11.54 ppb, the μ–p substrate tension itself. The upstream/path reference is
+    # kept for provenance; it is no longer the source of this q₀.
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
+    q_str = _Q50_PROTON
     q = mpf(q_str)
     print("=" * 76)
     print("  Hydrogen (¹H) step-by-step mass trace — canonical-form tower")

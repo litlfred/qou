@@ -1,0 +1,232 @@
+{
+ "computation": "deuteron-interface-handle-curvature",
+ "scriptFile": "deuteron_interface_handle_curvature_probe.py",
+ "computedAt": "2026-08-29T04:32:32.995829+00:00",
+ "engine": "mpmath mpf (H\u2086 Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
+ "free_parameters": 0,
+ "inputs": {
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_pin": "proton (experimental pin, resolved)",
+  "h": "0.209060298795639315430846213129674943859757495263063078255215",
+  "q0_precision_note": "RESOLVED from substrate.q_parameter at run time, not frozen. It was a 17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal cannot follow an anchor move, which is how this witness came to record the superseded muon pin under the label \"muon\".",
+  "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
+  "q_eq_1_reference": "exact classical Young seminormal limit (was q = 1 + 1e-7)",
+  "deuteron_H6_word": "proton{\u03c30,\u03c31}\u00b7INTERFACE \u03c32\u00b7neutron{\u03c33,\u03c34}",
+  "interface_operator": "\u03c32 = \u03c3 \u2212 h(\u00bd\u2212\u03b4/4)\u00b7I (bring_color_weighted; dressing central \u21d2 drops out)",
+  "handles": "A_a=\u03c1_\u03bb(\u03c32) [interface], A_b=\u03c1_\u03bb(\u03c33) [neutron-adjacent] \u2014 the unique non-abelian pair"
+ },
+ "results": {
+  "per_partition": [
+   {
+    "lambda": [
+     6
+    ],
+    "dim": 1,
+    "y_lambda": "838.839356673727688754389372192597596580337186222121065947743",
+    "Fq_raw_fro2": "0.0",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.0",
+    "dFq2_over_h4": "0.0",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.0",
+    "dFq2_over_h4_q_to_1_limit_times_9": "0.0"
+   },
+   {
+    "lambda": [
+     5,
+     1
+    ],
+    "dim": 5,
+    "y_lambda": "30.7796990370468818307715610090988257762319725815584585065711",
+    "Fq_raw_fro2": "6.08741241706504397880403867135477661953642792142704443248569",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000831817261969403934350413240361913409822544233864383352254002",
+    "dFq2_over_h4": "0.435453375664747620857939672021788339569959787998836543161189",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     4,
+     2
+    ],
+    "dim": 9,
+    "y_lambda": "8.97245613955269178144135691200292513641723819813436581669421",
+    "Fq_raw_fro2": "18.2622372511951319364121160140643298586092837642811332974571",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00167203807062400449194881729092259269388628469907130927472093",
+    "dFq2_over_h4": "0.875305978105531741940541877631029334466757302962209142665105",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.888888888888888888888888888888888888888888888888888888888889",
+    "dFq2_over_h4_q_to_1_limit_times_9": "8.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     4,
+     1,
+     1
+    ],
+    "dim": 10,
+    "y_lambda": "7.36932042488156912599445210342891825848084464197725306999756",
+    "Fq_raw_fro2": "18.2622372511951319364121160140643298586092837642811332974571",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00249545178590821180305123972108574022946763270159315005676201",
+    "dFq2_over_h4": "1.30636012699424286257381901606536501870987936399650962948357",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.33333333333333333333333333333333333333333333333333333333333",
+    "dFq2_over_h4_q_to_1_limit_times_9": "12.0000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     3,
+     3
+    ],
+    "dim": 5,
+    "y_lambda": "28.2558147897639132798413864634224252277394686122764901521281",
+    "Fq_raw_fro2": "12.1748248341300879576080773427095532390728558428540888649714",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000840220808654600557598404050560679284063740465206925922466924",
+    "dFq2_over_h4": "0.439852602440784121082602205609240994896797514963372599503916",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     3,
+     2,
+     1
+    ],
+    "dim": 16,
+    "y_lambda": "2.78834528236937368076365613566199469232501357683057056616532",
+    "Fq_raw_fro2": "36.5244745023902638728242320281286597172185675285622665949142",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00334407614124800898389763458184518538777256939814261854944185",
+    "dFq2_over_h4": "1.75061195621106348388108375526205866893351460592441828533021",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.77777777777777777777777777777777777777777777777777777777778",
+    "dFq2_over_h4_q_to_1_limit_times_9": "16.0000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     3,
+     1,
+     1,
+     1
+    ],
+    "dim": 10,
+    "y_lambda": "7.36932042488156912599445210342891825848084464197725306999756",
+    "Fq_raw_fro2": "18.2622372511951319364121160140643298586092837642811332974571",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00249545178590821180305123972108574022946763270159315005676201",
+    "dFq2_over_h4": "1.30636012699424286257381901606536501870987936399650962948357",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "1.33333333333333333333333333333333333333333333333333333333333",
+    "dFq2_over_h4_q_to_1_limit_times_9": "12.0000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     2
+    ],
+    "dim": 5,
+    "y_lambda": "28.2558147897639132798413864634224252277394686122764901521281",
+    "Fq_raw_fro2": "12.1748248341300879576080773427095532390728558428540888649714",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000840220808654600557598404050560679284063740465206925922466924",
+    "dFq2_over_h4": "0.439852602440784121082602205609240994896797514963372599503916",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     1,
+     1
+    ],
+    "dim": 9,
+    "y_lambda": "8.97245613955269178144135691200292513641723819813436581669421",
+    "Fq_raw_fro2": "18.2622372511951319364121160140643298586092837642811332974571",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.00167203807062400449194881729092259269388628469907130927472093",
+    "dFq2_over_h4": "0.875305978105531741940541877631029334466757302962209142665105",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.888888888888888888888888888888888888888888888888888888888889",
+    "dFq2_over_h4_q_to_1_limit_times_9": "8.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     2,
+     1,
+     1,
+     1,
+     1
+    ],
+    "dim": 5,
+    "y_lambda": "30.7796990370468818307715610090988257762319725815584585065711",
+    "Fq_raw_fro2": "6.08741241706504397880403867135477661953642792142704443248569",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.000831817261969403934350413240361913409822544233864383352254002",
+    "dFq2_over_h4": "0.435453375664747620857939672021788339569959787998836543161189",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.444444444444444444444444444444444444444444444444444444444444",
+    "dFq2_over_h4_q_to_1_limit_times_9": "4.00000000000000000000000000000000000000000000000000000000000"
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "dim": 1,
+    "y_lambda": "838.839356673727688754389372192597596580337186222121065947743",
+    "Fq_raw_fro2": "0.0",
+    "Fq_trace_abs": "0.0",
+    "dFq_deformation_fro2": "0.0",
+    "dFq2_over_h4": "0.0",
+    "far_commute_s0_s3_fro2": "0.0",
+    "dFq2_over_h4_q_to_1_limit": "0.0",
+    "dFq2_over_h4_q_to_1_limit_times_9": "0.0"
+   }
+  ],
+  "all_Fq_traceless": true,
+  "all_proton_neutron_far_commute": true,
+  "singlet_reps_zero_curvature": true,
+  "wedderburn_weighted_Fq_raw_fro2": "1761.47428306648247154218698403276178452582890083771734433273",
+  "wedderburn_weighted_dFq_deformation_fro2": "0.174797000125583772802297971096881615987998702239789106904499",
+  "dFq_scales_as_h_squared": true,
+  "dFq2_over_h4_limits_are_exact_ninths": true,
+  "dFq2_over_h4_limit_numerators_over_9": [
+   "0.0",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "8.00000000000000000000000000000000000000000000000000000000000",
+   "12.0000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "16.0000000000000000000000000000000000000000000000000000000000",
+   "12.0000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "8.00000000000000000000000000000000000000000000000000000000000",
+   "4.00000000000000000000000000000000000000000000000000000000000",
+   "0.0"
+  ],
+  "dFq2_over_h4_limit_note": "lim_{q->1} ||dF_q||^2/h^4 = 4k/9 exactly, k in {0,1,2,3,4}, verified to 22 digits and conjugation-symmetric. The ratio is NOT constant: at q0 it spans 0.4355..1.7506 across partitions. The '1.77' previously recorded is 16/9, the LIMIT for (3,2,1) alone -- the maximum over partitions, not a q0 value."
+ },
+ "verdict": "Interface handle holonomies COMPUTED in the real H\u2086 seminormal rep: F_q=[\u03c3\u2082,\u03c3\u2083] is nonzero, EXACTLY traceless (\u21d2 binding enters in quadrature, matching the A=3 Pythagorean bridge s\u00b2), \u03b4-independent (dressing central, Lean-proved). Proton\u2013neutron far-commutativity confirmed (only \u03c3\u2082 non-abelian); color-singlets give 0. The genuine q-curvature dF_q=F_q(q)\u2212F_q(1) scales as h\u00b2 (\u2016dF_q\u2016\u00b2~1.77\u00b7h\u2074) \u2014 the order-2 surface term the bean predicted. This is the qou-jqof/qou-dp32 'absent' object, now grounded and characterized.",
+ "scope": "scope-(a): computes + characterizes the interface germ curvature (the missing handle holonomies). Does NOT close the deuteron MeV binding \u2014 needs the pairing tr_M(\u03c1_deuteron\u00b7dF_q) (raw trace is 0) + \u03bb-weighting (open). No fit; nothing wired.",
+ "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
+ "wired": false,
+ "notes": "Feeds surface2Form(V_trefoil,[A_a,A_b])=[A_a,A_b]=F_q (Lean). Remaining: the canonical binding pairing (qou-jqof/qou-dp32).",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "scriptHash": "f5e9ac24b2fe",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+ "durationMs": 0
+}

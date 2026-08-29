@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the μ-invariant appearance of b₁ is exactly ζ_{Δ₁}(0)=−b₁ (area-free, #3834)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "μ=m^{−1/b₁} reproduces ANY target measure m incl 1/(8π) => flat-torus determinant cannot discriminate 1/(π b₁); μ-tune is the forbidden fitting trap"
     }
   ],

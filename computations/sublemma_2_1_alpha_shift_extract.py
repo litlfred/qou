@@ -52,6 +52,14 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
 # result READ as 50-digit while carrying 53 bits, which fmt() then pads.
 from q_parameter import Q_MP as Q0  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # ── Test braid words for β_p- and β_n-position ────────────────
 # Each is a list of (c, d, gen_idx) for an H_3 element. We'll
@@ -93,7 +101,7 @@ def disjoint(beta1: list, beta2: list) -> list:
 
 def with_interface(beta1: list, beta2: list,
                     interface_c: float = 1.0,
-                    interface_d: float = -H/2) -> list:
+                    interface_d: float = _pn_d(H)) -> list:
     """β_1 · I · β_2 in H_6 with I = c·σ_2 + d·1 (single inter-block
     crossing; default = averaged σ_2 - h/2 matching the atomic-braid
     proton-neutron interface)."""
@@ -289,6 +297,53 @@ def main() -> int:
                 print(f"    λ = {lam}, (μ, ν) = ({mu}, {nu}), c^λ = {c}")
 
     witness = {
+        # Provenance the producer emits ITSELF (bean `1j39`). These three keys
+        # were previously added DOWNSTREAM, so re-running this script silently
+        # STRIPPED them from the witness — including the `scriptFile` that every
+        # provenance-keyed audit uses to attribute this witness at all.
+        # NOTE: the audit doc moved to `_deprecated/`; the committed witness
+        # still pointed at the pre-move path, so this pointer was DANGLING.
+        # Nothing checks `auditOnly` resolves. Corrected here.
+        #
+        # 🛑 NOT STAMPED, unlike the four sibling producers fixed alongside it.
+        # `stamp_q0` would be safe only if a re-run changed nothing but
+        # provenance. Measured 2026-08-28, a re-run of THIS producer moves 92
+        # lines of numbers — `value_re` shifts in the 4th significant digit
+        # (1.00544843… -> 1.00552033…) and `max_relative_residual` goes
+        # 25.3556 -> 25.5245, a ~7.19e-5 change.
+        #
+        # THE CAUSE IS THE FLOAT64 -> MPMATH PORT, and the committed values are
+        # the OLD ones. The witness is stamped
+        #     computedAt   2026-08-24T08:06:59
+        # and `253e2ffaf5` ("sublemma alpha-shift solves in mpmath, and the
+        # FIRST fix was wrong") landed at
+        #     2026-08-24T08:10:43
+        # — **3 minutes 44 seconds later**. That commit swapped
+        # `chi_lambda_fast` -> `chi_lambda_fast_mp` and `Q` (a Python float)
+        # -> `Q_MP` (an mpf). So the committed numbers came out of the float64
+        # producer, minutes before it stopped existing, and a fresh run is the
+        # mpmath one. The drift is a CORRECTION and the fresh values are the
+        # better ones — the same shape as the A-operator case in
+        # docs/audits/2026-08-23-pr5517-downstream-witness-attribution.md §1,
+        # and the same "stamped minutes before the commit that superseded it"
+        # signature as its §0.
+        #
+        # NOT the cause, though the corpus records it and it is easy to reach
+        # for: §2 of that audit attributes a 1.745e-7 move here to a muon ->
+        # proton re-pin on regeneration (`qou-b3l8`). That has since HAPPENED —
+        # this witness's `parameters.q_0` already reads the proton pin
+        # 1.10997858275138…, and 7.19e-5 is ~400x that effect anyway.
+        #
+        # So the committed witness is left exactly as it is. Adding the stamp
+        # here would force a regeneration that rewrites 92 lines of values
+        # under a commit message about provenance — a substantive change
+        # smuggled past a reviewer, which AGENTS.md forbids regardless of the
+        # values being better. Regeneration IS now justified, deliberately and
+        # on its own commit, by whoever picks up `qou-b3l8`; the provenance
+        # keys above will land with it.
+        "scriptFile": Path(__file__).name,
+        "engine": "python",
+        "auditOnly": "docs/audits/_deprecated/2026-05-04-sublemma-2-1-categorical-proof.md",
         "computation": "sublemma-2-1-alpha-shift-extract",
         "description": (
             "Extracts α_shift(I; λ, μ, ν) per λ ⊢ 6 in the deuteron "
@@ -323,6 +378,15 @@ def main() -> int:
         "n_matrix_valued": len(multiplicity_geq_2),
     }
     out = HERE / "sublemma-2-1-alpha-shift-extract.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(_serialize(witness), indent=2))
     print(f"\n  Witness: {out}")
     return 0

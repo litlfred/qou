@@ -46,6 +46,9 @@ import sys
 import sympy as sp
 from sympy.utilities.iterables import partitions
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 q = sp.symbols("q")
 
 
@@ -172,7 +175,16 @@ witness = {
     "zeta_fibre_values": fibres,
     "scope": "scope-(a): gate exercised on the corpus binding Habiro tails; classical-ring membership automatic for Z[q,1/q]; twisted test queued (qou-9p9y)",
 }
-with open("computations/probes/habiro_tail_membership_gate.witness.json", "w") as f:
+with open(_HERE_W / "habiro_tail_membership_gate.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

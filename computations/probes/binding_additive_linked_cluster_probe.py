@@ -39,6 +39,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
 
 set_compute_dps()
 REPO = Path(__file__).resolve().parents[2]
@@ -154,8 +155,21 @@ def main():
                  "ame_scaling_4He_D": mp.nstr(sc_ame, 8),
                  "closest_form": best[0]},
     }
+    # Hand-rolled write: never reaches WitnessBuilder.build(), so it never
+    # stamped q0Anchor and no re-run would add one (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out = COMP / "binding-additive-linked-cluster-scan.witness.json"
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=1, default=str)
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0

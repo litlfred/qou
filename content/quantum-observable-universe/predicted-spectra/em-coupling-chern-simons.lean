@@ -79,9 +79,36 @@ the **balanced** quantum integer (see the note above). -/
 noncomputable def deltaCS_gluonOctet (q : ℝ) : ℝ :=
   ((1 - 1/q) ^ 4) * qIntBal q 5
 
-/-- The κ coefficient in the gluon-octet form is empirically `8q`.
-    The "8 = dim(su(3)) = gluon octet" interpretation is post-hoc;
-    no structural derivation links su(3) gluon dimension to α_EM. -/
+/-- The κ coefficient in the gluon-octet form is `8q`.
+
+    **The "8 = dim(su(3)) = gluon octet" reading is post-hoc** — no structural
+    derivation links the su(3) gluon dimension to α_EM, and this docstring said
+    so, correctly.
+
+    **But the corpus supplies a different and exact reading of the same 8**
+    (found 2026-08-28, bean `qou-aemx`). The Borromean rings `L6a4` — the
+    nucleon knot of this framework — have hyperbolic volume
+
+        Vol(𝓑₃) = 2 · V_oct = 8G,      G = Catalan's constant,
+
+    since a regular ideal octahedron has `V_oct = 4G`. Verified to 30 digits.
+    That identity is already live and load-bearing elsewhere in the corpus —
+    the nucleon row of `fundamental-knots-operator-basis`, and the binding
+    scale `α = m_e · 8G` in `binding-knots-visual-inventory` — and it is the
+    reading `computations/_deprecated/alpha_em_q9_q10_derivation.py` gives:
+    `κ = 8q = q · Vol(𝓑₃)/G`.
+
+    So `8` here is not a fitted integer; it is `Vol(𝓑₃)/G`, exactly. The
+    su(3)-octet gloss was the wrong gloss on a right number.
+
+    **What is still NOT derived, and must not be read as closed.** Why the
+    combination is `q · Vol(𝓑₃)/G` rather than `Vol(𝓑₃)/G` or `q² · Vol(𝓑₃)/G`
+    is unaddressed; and why the *nucleon* knot's volume should set a coefficient
+    in an *electromagnetic* coupling needs its own argument. Measured, the κ
+    window admitting |err| < 100 ppb against CODATA is `[8.474, 9.265]`, which
+    also contains the integer 9 — so `8q` is IN RANGE, not FORCED. Bare `κ = 8`
+    does miss it (−220 ppb), which is consistent with the `q` belonging to the
+    structure rather than being a fudge, but is not a derivation of it. -/
 noncomputable def gluonOctetKappa (q : ℝ) : ℝ := 8 * q
 
 /-- The corrected inverse fine structure constant via gluon-octet form. -/
@@ -105,11 +132,31 @@ class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
 
 /-- The **Chern-Simons-form** conjecture (distinct from the
     PSLQ gluon-octet form above). States the algebraic identity
-    `1/α = q · [9]_q · [10]_q · (1 + δ_CS + κ · δ_CS²)`, where
-    `κ` is a Gram-determinant ratio from the Chern-Simons
+
+        1/α = q · [9]_q · [10]_q · (1 + δ_CS/(1 − δ_CS·κ))
+
+    where `κ` is a Gram-determinant ratio from the Chern-Simons
     pairing on Bring's surface. Per `conj:em-coupling-chern-
     simons`, the algebraic content is the existence of such a
     Gram-determinant `κ` making the identity hold.
+
+    **Docstring corrected 2026-08-29** (bean `qou-aemx`). This read
+    `(1 + δ_CS + κ · δ_CS²)`, which the block's `.md` names as the form
+    it *previously* displayed. The live `.md` gives the resummed form
+    above: the tower `Σ_{j≥1} δ_CS^j κ^{j−1}` is geometric with ratio
+    `δ_CS·κ ≈ 2.7e-3`, so it sums in closed form and **has no truncation
+    order to choose** — which is the point of resumming, since a chosen
+    truncation order is a free parameter.
+
+    Re-derived at 50 dps at the proton-pinned `q₀`, with the Witten-1988
+    `κ ≈ 1.722`: resummed `137.0359352` (−466.7 ppb vs CODATA-2022),
+    truncated `137.0359337` (−477.8 ppb). The truncation costs
+    **11.07 ppb**, reproducing the `.md`'s stated `11.06`.
+
+    Only this docstring changed. The `opaque` Prop below is untouched and
+    still has **no instance** — what the conjecture asserts, which `κ` it
+    asserts it of, and whether the claim is algebraic or numerical are
+    author decisions, not a docstring repair. See the note after the class.
 
     Per `AGENTS.md §3b-cond`, encoded as opaque Prop + class
     field. Algebraic tier only — numerical CODATA match deferred
@@ -133,5 +180,44 @@ class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
 -- instance, so every downstream `[ChernSimonsCorrectionConjecture q hq]` resolved for free and the
 -- assumption was invisible outside `#print axioms`.  Removed, not completed.
 -- Downstream results must take `[ChernSimonsCorrectionConjecture q hq]` as an explicit hypothesis.
+
+/-! ## The resummation, proved
+
+What separates the block's live form from the one its `.md` supersedes is not a
+value of `κ` — it is whether the correction tower may be summed in closed form at
+all. That question needs no `κ`, no CODATA and no anchor, so it is settled here
+rather than deferred with the rest.
+
+The two lemmas below are unconditional, sorry-free, and carry no fitted input.
+They do **not** close the conjecture: what stays open is which `κ` the Gram
+determinant actually yields, and that is the numerical tier this file's standing
+ruling defers. See the note on `ChernSimonsGramDeterminantIdentityHolds`. -/
+
+/-- **The correction tower resums.** For `|δκ| < 1`,
+
+    Σ_{j≥1} δ^j κ^{j-1} = δ / (1 - δκ)
+
+This is the content of the block's live statement `1 + δ_CS/(1 - δ_CS·κ)`: the
+closed form is not an approximation of the tower, it **is** the tower, so there
+is no truncation order to choose. That matters beyond tidiness — a chosen
+truncation order is a free parameter, and the superseded form had one. -/
+theorem csTower_resums (δ κ : ℝ) (h : |δ * κ| < 1) :
+    ∑' j : ℕ, δ ^ (j + 1) * κ ^ j = δ / (1 - δ * κ) := by
+  have hnorm : ‖δ * κ‖ < 1 := by rwa [Real.norm_eq_abs]
+  have hterm : ∀ j : ℕ, δ ^ (j + 1) * κ ^ j = δ * (δ * κ) ^ j := by
+    intro j; rw [mul_pow, pow_succ]; ring
+  rw [tsum_congr hterm, tsum_mul_left, tsum_geometric_of_norm_lt_one hnorm,
+    div_eq_mul_inv]
+
+/-- **The superseded form is the tower's second partial sum.** The order-`δ_CS²`
+expression `δ + κδ²` is exactly `Σ_{j=1}^{2} δ^j κ^{j-1}`.
+
+Stated so that "its second-order truncation" is a proved identity rather than a
+remark. Together with `csTower_resums` this makes the relationship between the
+two forms a theorem: same series, one summed and one cut. -/
+theorem csTower_partialSum_two (δ κ : ℝ) :
+    ∑ j ∈ Finset.range 2, δ ^ (j + 1) * κ ^ j = δ + κ * δ ^ 2 := by
+  simp [Finset.sum_range_succ]
+  ring
 
 end QOU.ArchimedeanUniverse

@@ -32,6 +32,11 @@ import mpmath as mp
 from phase5_n8_dim_q_table import hook_lengths  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from chi_free_via_lr import chi_free_lr  # noqa: E402
+# Frobenius route: identical values (agree to 1.3e-67 per
+# chi-free-via-frobenius.witness.json) and far faster as A grows —
+# 31x at 6Li, 104x at 7Li — because it needs O(A^2) cycle types where
+# the LR route enumerates O(3^A) tuples.
+from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
@@ -67,7 +72,7 @@ def main() -> int:
     print("  iso |  E_defect_info  |  r_raw = B_AME-B(q0) |  ratio")
     for iso, (z, nn) in ISOTOPES.items():
         _, _, chi_atom, _ = tr_m_atom_zn(z, nn, dps=COMPUTE_DPS)
-        chi_free = chi_free_lr(z, nn, dps=COMPUTE_DPS)
+        chi_free = chi_free_frobenius(z, nn, dps=COMPUTE_DPS)
         n = 3 * (z + nn)
         y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
         w = {lam: y[lam] * (chi_free.get(lam, mp.mpf(0)) - chi_atom.get(lam, mp.mpf(0)))

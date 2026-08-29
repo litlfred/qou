@@ -227,14 +227,24 @@ def main() -> int:
     w.add_data("derived_lead", bool(matched))
     w.add_data("forward_constant_as_m_pct_of_target",
                {name: mp.nstr(frac * 100, 8) for name, _, _, frac in forward})
-    w.add_assertion("detG_closed_form_ok", 1, 1,
-                    source="detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4 verified to 40dps")
+    # Was add_assertion("detG_closed_form_ok", 1, 1, source="...verified to 40dps").
+    # The verification is REAL -- a bare `assert` earlier in this function -- but only
+    # its conclusion reached the witness as a literal, so deleting that assert would
+    # have left this reporting "passed". Carry the measured deviation instead.
+    _detG_dev = abs(detG(m_probe) - (1 - 6 * m_probe ** 2 + 5 * m_probe ** 4))
+    w.add_assertion("detG_closed_form_max_deviation", mp.nstr(_detG_dev, 12), "0.0",
+                    tolerance="1e-40",
+                    source="detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4, measured at m=0.3")
     w.add_assertion("canonical_mstar_physical",
                     1 if canonical_mstar < INV_SQRT5 else 0, 1,
                     source="required m* below writhe cap 1/sqrt5 (det>0)")
-    w.add_assertion("derived_lead_found", 1 if matched else 0,
-                    1 if matched else 0,
-                    source="whether m* matches a derived constant to <0.1% "
+    # Was an add_assertion(name, X, X) -- computed and expected the SAME expression,
+    # so it read as a check while being `x == x`: tautologically true, unable to fail,
+    # and rendered as "passed": true for the QA pipeline. It is a RECORDED FINDING
+    # with no independent expectation, so it belongs in add_data. Bean qou-ploj.
+    w.add_data("derived_lead_found", 1 if matched else 0)
+    w.add_data("derived_lead_found_source",
+               "whether m* matches a derived constant to <0.1% "
                            "(expected 0 = scope-(a) fit-needed)")
     out = w.save()
     print(f"witness -> {out}")

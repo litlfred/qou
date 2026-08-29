@@ -87,7 +87,7 @@ content block was renamed without updating the witness.
 
 | Witness | Self-claimed `contentBlock` | Real label (closest match) |
 |---|---|---|
-| `chi-sym-alt-closed-form` | `rem:chi-sym-alt-closed-form` | (no match — likely intended to be a new `remark` block) |
+| `chi-sym-alt-closed-form` | ~~`rem:chi-sym-alt-closed-form`~~ → `prop:chi-sym-alt-closed-form` | **RESOLVED 2026-08-26.** The block now exists, as a **proposition** rather than the `remark` guessed here: the `.lean` sibling proves it sorry-free, and `proposition` is the kind that takes a `.lean` sibling — which also un-orphans `chi-sym-alt-closed-form.lean`, until then a Lean file in a content chapter directory with no `.ts`/`.md` and therefore no `.qa.json`. Producer updated. |
 | `qvalue-representation-theory` | `prop:spectral-decomposition-qvalue` | `cor:spectral-decomposition-qvalue` (`content/quantum-observable-universe/descartes-universe/spectral-decomposition-qvalue.ts:4`) — wrong prefix |
 | `rosso-jones-qvalues` | `prop:spectral-decomposition-qvalue` | same as above; both witnesses target the same corollary |
 | `topological-mass-table` | `rem:amc-calculations` | `prose:amc-calculations` (`content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-calculations.ts:4`) — wrong kind prefix |

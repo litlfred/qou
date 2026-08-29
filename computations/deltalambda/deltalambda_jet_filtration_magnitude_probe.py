@@ -98,10 +98,28 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-# muon-canonical q₀ (computations/ layer convention); matches the sibling
-# deltalambda probes.  The ESCAPE result is q-independent (q=1 ratio already
-# exceeds the cap), so the q₀ pin only affects the (failing) landing test.
-Q0_STR = "1.10997859555733471"
+# q₀ RESOLVED, not frozen (2026-08-29, bean qou-1c4y).  This was the literal
+# "1.10997859555733471" -- the SUPERSEDED muon pin A, which stopped being the
+# muon anchor when PR #5500 re-derived it to CODATA-2022 (C, ...5642739...).
+# A frozen literal cannot follow an anchor move, so the witness went on
+# recording A under the label "muon" and the anchor audit scored it Q0_FLIP;
+# re-running the producer could not clear it, because the producer WAS the
+# source of the stale number.
+#
+# It resolves to the PROTON pin, per the owner directive of 2026-08-15
+# ("we want proton unless for an explicit reason ... otherwise pin proton").
+# There is no such reason here: the file's own note below records that the
+# ESCAPE result is q-INDEPENDENT, so the pin choice cannot move the verdict.
+# Measured: q0 moves 11.54 ppb and the escape/landing assertions are unchanged.
+#
+# This probe is the HEAD of a five-producer chain -- a3/a4_precision_order_
+# decomposition, deltalambda_damping_nonmonotone_wall, deltalambda_graded_two_
+# anchor_nogo and mu3_target_frame_robustness all read q0 out of the witness
+# this file emits -- so the frozen literal was reaching five further witnesses
+# that carry no literal of their own.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:
@@ -278,7 +296,7 @@ def main() -> int:
         "nothing wired.")
     wb.set_content_block("conj:binding-manybody-eq-jet-filtration")
     wb.add_parameter("q0", Q0_STR)
-    wb.add_parameter("q0_convention", "muon-canonical (computations/ layer)")
+    wb.add_parameter("q0_convention", "proton (experimental pin, resolved via substrate.q_parameter; owner directive 2026-08-15)")
     wb.add_data("strong_targets", {"rho_strong_3": mp.nstr(T3, 8),
                                    "rho_strong_4": mp.nstr(T4, 8),
                                    "construction": "AME2020 + Lean #3986/#3990 Coulomb premise"})

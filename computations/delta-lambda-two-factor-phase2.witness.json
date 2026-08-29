@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:41:57.225017+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-29T11:06:06.062748+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "tr_M_data_loaded",
-      "computed": 0.3883571225623544,
+      "computed": "0.388357122562354370867093397843250892",
       "expected": 0.3882864715477132,
       "passed": false,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "tr_M(D) at q_0",
       "source": "delta-lambda-empirical-tabulation.witness.json"
     }
@@ -18,8 +18,8 @@
   "durationMs": 5,
   "computation": "delta-lambda-two-factor-phase2",
   "scriptFile": "delta_lambda_two_factor_phase2.py",
-  "scriptHash": "d61bd5c4f433",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "93110f197e56",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_two_factor_phase2.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_two_factor_phase2.py"
   },
   "description": "Phase 2 of the closed-forms-first-principles workplan: tests the two-factor closure form Δ_λ(K) = V(K) · c_λ across 8 candidate per-knot factors V(K), looking for K-independent residue c_λ. Atoms: D, T, ³He, ⁴He.",
   "parameters": {

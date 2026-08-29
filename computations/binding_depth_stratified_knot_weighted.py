@@ -58,6 +58,7 @@ from codata_constants import (
     M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -93,7 +94,7 @@ def phi_k_knot_weighted(
     Z(β, K) ensures Σ ~w_λ^{knot} = Σ ~w_λ within each depth k stratum
     (renormalisation, not absolute reweighting).
     """
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     closure_chi_map = {tuple(c["partition"]): mp.mpf(str(c["chi_lambda"]))
                        for c in closure_chi}
 
@@ -105,7 +106,7 @@ def phi_k_knot_weighted(
             shape = tuple(p["partition"])
             if len(shape) - 1 != k:
                 continue
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             w = mp.mpf(str(dq * dq)) / qfact
             Z_norm_uniform += w
             chi_K = mp.fabs(closure_chi_map.get(shape, mp.mpf(0)))
@@ -123,7 +124,7 @@ def phi_k_knot_weighted(
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -238,7 +239,7 @@ def main() -> int:
           f"{all_results[best_beta]['max_over_min']:.4f})")
 
     builder.add_assertion(
-        "data_loaded", computed=float(B_AME["D"]), expected=2.22456607,
+        "data_loaded", computed=B_AME["D"], expected=2.22456607,
         tolerance=1e-10, unit="B(D) MeV", source="AME 2020",
     )
     builder.save()

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "unit tests: infeasibility detection + certified duality"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exactly one (sigma, eps) of 12 reproduces alpha-independent chi on all 4 m004 vertex surfaces"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "GHHR Ex 10.23/A.10: 4 once-punctured Klein bottles, chi = -1"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.25,
       "expected": 0.25,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "max-min angle s* = 1/4 exactly (> 0 = strict; GHRS Rmk 1.10 guarantees existence for link complements)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "rational arithmetic; strong duality verified exactly (prop:operator-selection-lp contract)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 11.0,
       "expected": 11.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Neumann: dim of generalized angle structures = N + r"
     },
     {
@@ -57,7 +57,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "GHHR Prop A.3 pairing constant over 6 generalized angle structures for all 52 surfaces"
     },
     {
@@ -65,7 +65,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "chi in Z for all 52 vertex classes (values -1, -2)"
     },
     {
@@ -73,7 +73,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "no chi >= 0 vertex class — Farkas-consistent with the strict angle structure (GHHR Thm A.11)"
     },
     {
@@ -81,7 +81,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "LP dual optimum = nonneg combination of 3 vertex surfaces + free tetrahedral classes (exact)"
     }
   ],

@@ -34,16 +34,39 @@ accurate statement is `ρ_binding = M·ℏ_q²`, and only the single α–α bon
 The definitional identity is trivial, but the comparison to the MASS scale is not. At fixed
 (m_e·Vol) normalisation:
 
-  mass:     m_p/(m_e·Vol(𝓑₃))   = ρ_p/ℏ_q²  ≈ 258       (ρ_p = linking_weight ≈ 2.53, O(1))
-  binding:  B/(m_e·Vol)         = M_need    ≈ 1 … 7.6
+  mass:     m_p/(m_e·Vol(𝓑₃))   ≈ 250.58              (measured: CODATA m_p/m_e ÷ Vol(𝓑₃))
+  binding:  B/(m_e·Vol)         = M_need   ≈ 1 … 7.6   (measured: AME binding ÷ same normalisation)
 
-So the mass multiplier is O(1/ℏ_q²) while the binding multiplier is O(1) — a **measured two-scale
-separation of ~1/ℏ_q²** at fixed volume. Crucially this is a statement about ℏ_q→0 SCALING, not a
-magnitude coincidence: the proton density ρ_p = linking_weight_family_a is **finite and O(1) as
-ℏ_q→0** (→ 2.5, the classical Wedderburn dimension average), whereas the binding density M·ℏ_q²
-**→ 0 as ℏ_q→0**. Rest mass is classical (survives ℏ_q→0); nuclear binding is an O(ℏ_q²) quantum
-correction (vanishes classically). That is the defensible, non-circular content — and it is the
-real form of the "one rung below" language.
+**CORRECTED 2026-08-28 — these two lines previously asserted a false equality.** They read
+`m_p/(m_e·Vol(𝓑₃)) = ρ_p/ℏ_q² ≈ 258` with `ρ_p = linking_weight_family_a`. The two sides are not
+equal:
+
+    measured    m_p/(m_e·Vol(𝓑₃))  = 250.58
+    the ansatz  λ_A/ℏ_q²           = 257.99
+                                     ------ 2.961 % apart
+
+That 2.961 % is not rounding. It is *precisely* the error AGENTS.md's guardrail banner attributes
+to the deprecated `m_e·Vol(𝓑₃)·λ_A/ℏ_q²` absolute-mass form — the one that yields m_p ≈ 966
+(+2.96 %) with λ_A a CODATA-implied FIT. So the old line wrote `=` across a gap that *is* the
+deprecated form's known failure, and then quoted the fitted side (258) as though it were the
+measured normalised mass. `canonical_mass_status_guard` flagged this line; bean `qou-uma4` judged
+the hit a false positive and proposed allowlisting it. Both were wrong — it was a true positive.
+
+Note the guard now passes on this file for a *different and legitimate* reason: the scope marker
+added to the docstring summary tells it the comparison is exploratory rather than a live status
+claim. That answers the guard's question. It does not fix arithmetic, and did not.
+
+**What survives, stated only from the measured side.** The mass multiplier is ≈ 250.6 and the
+binding multiplier ≈ 1 … 7.6, so there is a two-scale separation of ~2 orders at fixed volume, and
+multiplying the mass multiplier by ℏ_q² gives 2.460 — an O(1) number, while the binding multiplier
+is already O(1) with no such factor. The qualitative reading is unchanged: rest mass carries an
+extra 1/ℏ_q², nuclear binding does not.
+
+**What does NOT survive, and is not claimed here.** (i) Identifying that O(1) residue with
+`linking_weight_family_a` is false at the 2.961 % level (2.460 vs 2.5328) — that was the deprecated
+form's error, not a match. (ii) The ℏ_q→0 *scaling* language of the earlier text was an assertion,
+not a measurement: every number here sits at the single substrate q₀, and one point cannot
+determine an exponent. Read this as a magnitude comparison at fixed q₀, which is what is computed.
 
 ## Test 3 — connection to Lane 1
 
@@ -121,10 +144,19 @@ def main() -> int:
     print("    NOT a universal law — multi-bond M_need = 2.0 (³H,³He), 7.6 (⁴He).")
 
     print("\n--- Test 2: mass vs binding two-scale separation (non-circular) ---")
-    mass_mult = m_p / (me * vol_b3)          # = ρ_p/ℏ_q² ≈ 258
-    print(f"  mass    m_p/(m_e·Vol(𝓑₃))   = {mp.nstr(mass_mult,6)}   (= ρ_p/ℏ_q²; ρ_p=lw={mp.nstr(lw,5)}, O(1))")
+    # MEASURED, ≈ 250.58. This is NOT λ_A/ℏ_q² (≈ 257.99): those differ by 2.961 %, which is the
+    # deprecated Vol(𝓑₃)·λ_A/ℏ_q² form's own error. The gap is printed rather than elided.
+    mass_mult = m_p / (me * vol_b3)
+    lam_over_h2 = lw / hbar2
+    gap_pct = 100 * (lam_over_h2 - mass_mult) / mass_mult
+    print(f"  mass    m_p/(m_e·Vol(𝓑₃))   = {mp.nstr(mass_mult,6)}   (measured)")
+    print(f"          λ_A/ℏ_q²            = {mp.nstr(lam_over_h2,6)}   (the ansatz — NOT equal, "
+          f"{mp.nstr(gap_pct,4)} % off; the deprecated form's error)")
+    print(f"          mass_mult·ℏ_q²      = {mp.nstr(mass_mult*hbar2,6)}   (the O(1) residue; λ_A = {mp.nstr(lw,6)})")
     print(f"  binding B/(m_e·Vol) = M_need = {mp.nstr(min(rows.values()),4)} … {mp.nstr(max(rows.values()),4)}   (O(1))")
-    print(f"  ⇒ mass multiplier O(1/ℏ_q²)≈{mp.nstr(mass_mult,4)}, binding multiplier O(1): separation ~1/ℏ_q².")
+    print(f"  ⇒ at fixed q₀: mass multiplier ≈{mp.nstr(mass_mult,4)} vs binding O(1) — ~2 orders apart.")
+    print("    (Stated as a magnitude comparison at one q₀, NOT an ℏ_q→0 scaling law: one point")
+    print("     cannot determine an exponent.)")
     # classical-limit scaling check: linking_weight is finite & O(1) as ℏ_q→0 (q→1)
     lw_near1 = linking_weight_family_a(mp.mpf("1.000001"), 1 / mp.mpf("1.000001"))
     print(f"  ρ_p(q→1) = {mp.nstr(lw_near1,5)} (finite, O(1) ⇒ mass classical); binding ρ=M·ℏ_q²→0 (quantum).")
@@ -135,8 +167,12 @@ def main() -> int:
     print("\n### Net (critical distance on my own Lane 2):")
     print("  • ρ/ℏ_q² = M_need is DEFINITIONAL ⇒ 'binding is ℏ_q²-suppressed' (Lane 2) OVER-CLAIMED;")
     print("    corrected: ρ_binding = M·ℏ_q², only the single α–α bond (M≈1) gives ℏ_q².")
-    print("  • Survives (non-circular): mass multiplier O(1/ℏ_q²) vs binding O(1) — a two-scale")
-    print("    separation ~1/ℏ_q²; mass is classical (ρ_p O(1) at ℏ_q→0), binding O(ℏ_q²) quantum.")
+    print("  • Survives (non-circular): at fixed q₀ the mass multiplier ≈250.58 sits ~2 orders above")
+    print("    the binding multiplier (1…7.6); mass_mult·ℏ_q² = 2.460 is O(1).")
+    print("  • CORRECTED 2026-08-28: this was written 'mass multiplier = λ_A/ℏ_q² ≈ 258'. False —")
+    print("    250.58 vs 257.99 is 2.961 % apart, exactly the deprecated Vol(𝓑₃)·λ_A/ℏ_q² form's")
+    print("    error, so the O(1) residue is NOT λ_A (2.460 vs 2.533). The ℏ_q→0 scaling claim is")
+    print("    also withdrawn: one q₀ cannot determine an exponent.")
     print("  • Lane 1 tie: M = z = A−1 in the linear-chain regime ⇒ ρ_binding = (A−1)·ℏ_q².")
     print("  • Lane 2 Result 1 (259× overshoot) stands. No fit; no wiring.")
 
@@ -150,10 +186,13 @@ def main() -> int:
         "= M_need = B/(m_e·Vol) is a DEFINITIONAL identity, so 'ρ_αα≈ℏ_q²' is just M_need(single α–α "
         "bond)≈1, NOT a universal binding law — multi-bond M_need = 2.00 (³H), 2.06 (³He), 7.56 "
         "(⁴He). Corrects Lane 2's 'binding is ℏ_q²-suppressed' over-claim to ρ_binding = M·ℏ_q². "
-        "Test 2 (non-circular survivor): the mass multiplier m_p/(m_e·Vol)=ρ_p/ℏ_q²≈258 is O(1/ℏ_q²) "
-        "with ρ_p=linking_weight≈2.53 finite/O(1) as ℏ_q→0 (classical), while the binding multiplier "
-        "M_need is O(1) so ρ_binding=M·ℏ_q²→0 (quantum) — a two-scale separation ~1/ℏ_q² that is a "
-        "SCALING statement, not a magnitude coincidence. Test 3: M_need=z=A−1 in the linear-chain "
+        "Test 2 (non-circular survivor): the mass multiplier m_p/(m_e·Vol) ≈ 250.58 MEASURED is "
+        "~2 orders above the binding multiplier M_need ≈ 1…7.6, and mass_mult·ℏ_q² = 2.460 is O(1). "
+        "CORRECTED 2026-08-28: this previously read '=ρ_p/ℏ_q²≈258' — a false equality. The two "
+        "differ by 2.961 %, which is exactly the deprecated Vol(𝓑₃)·λ_A/ℏ_q² form's own error, so "
+        "the O(1) residue is NOT λ_A (2.460 vs 2.5328). The ℏ_q→0 SCALING language is also dropped: "
+        "every number here is at one q₀ and a single point cannot determine an exponent. What is "
+        "claimed is a magnitude comparison at fixed q₀. Test 3: M_need=z=A−1 in the linear-chain "
         "regime (Lane 1 tie) ⇒ ρ_binding=(A−1)·ℏ_q². Lane 2 Result 1 (259× overshoot) stands. Open: "
         "why mass carries linking_weight/ℏ_q² and binding the bare coordination count M. No fit; no "
         "wiring; q₀ proton-anchored.")

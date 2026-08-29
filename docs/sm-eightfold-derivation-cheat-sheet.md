@@ -339,17 +339,71 @@ split. One invariant, two fronts. The framework's only derived EM mechanism
 is the open object. Smallest scope of the three, and the only one that yields a
 new comparable number without touching `SU(3)`.
 
+> **State of the route, corrected 2026-08-25 (`qou-17mq`).** The route is
+> identified — the metric Coulomb pairing `⟨A₁, J₂⟩` on the `H³` scalar Green's
+> function — but the **kernel is not**, and the contest that appeared to have
+> selected one does not support that reading. Its winner `H_coth` is scored on
+> an *unsubtracted* `coth(α)`, which the same audit's own **O2** obstruction
+> (finite-volume neutrality, `∫Δu = 0`) excludes: an admissible kernel has zero
+> mean, hence takes both signs, so no admissible kernel saturates at `κ → +1` —
+> and saturation is exactly what separated `H_coth` from its rivals. Its two
+> rivals had already lost their warrant in round 5. So **no member of that
+> contest carried a live structural warrant when it was scored.** Re-scored
+> under the admissible family, scatter rises monotonically with neutralisation
+> (3.5 % → 11.2 % → 22.3 %) and the best admissible member carries *more*
+> residual structure than the hypothesis rejected for carrying structure.
+> Do **not** cite hyperbolic-saturation as the selected mechanism. **Nor was
+> the contest capable of selecting one:** the series spans `α ∈ [0.317, 0.873]`
+> while `coth` reaches within 10 % of its limit only at `α = 1.522`, i.e.
+> `A = 334` — past the heaviest known nuclide (`A = 294`). Saturation is
+> unreachable in any nucleus, `coth` is within 0.97 % of `1/α + α/3` over the
+> measured range against 3.505 % scatter, and the two hypotheses differ by at
+> most 1.79 × that scatter. So **more AME data cannot settle it** — which was
+> `qou-i6rg`'s stated premise. **And the separation law is itself imported:**
+> `α ∝ A^{1/3}` is the Euclidean liquid-drop nuclear radius, fed into a kernel
+> that is hyperbolic by construction; using the geometry consistently
+> (`H³` volume growth gives `R ~ ½ ln V`, so `α ∝ ln A`) costs **2.64×** in
+> fit. The corpus cannot adjudicate — it holds hyperbolic link volumes at
+> `A = 2, 3` only. Deflationary but honest: `κ(A)` is close to plain Coulomb
+> in a Euclidean nucleus (5.499 %), with the hyperbolic curvature term worth
+> a factor 1.57 (→ 3.505 %) on one shared parameter — suggestive, not
+> decisive. Rank 1 is unchanged: 4-B is still the smallest-scope gating
+> object, but the front carries **three** distinct gaps, not one — the route
+> is identified, the kernel is not, and the separation law is imported.
+> [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
+
 ### 4-C. A third flavour grade (strangeness / charm Cartan)
 
 **Gates:** the charmed-hadron observable spectrum, `m_s`/`m_c`, the `D`-meson
 mass, `Y = B + S` on strange states, and thereby `sin²θ_W`'s normalisation.
 
+> **🛑 THE TITLE OF THIS ROW IS WRONG — no third flavour grade is missing
+> (corrected 2026-08-25, `qou-17mq`).** `orderedContent_injective` is proved
+> **sorry-free, `by decide`**, on `main`: `D̄⁰ (−5,+3)` and `K⁰ (+3,−5)` collide
+> **only as multisets**, and the ordering is the quark/antiquark strand
+> orientation — the same `signedWrithe` datum that gives `T₃`, *"topological
+> strand-orientation data, not a fit"* per its own docstring. The arity slip:
+> `mass_from_graded_content_cannot_separate` quantifies over
+> `f : Multiset ℤ → ℚ`, i.e. **symmetric** functions of the *unordered*
+> content; it does not say the content cannot carry the mass, and the ordered
+> complement is injective. **So 4-C does NOT reduce into 4-A** — that
+> dependency, the load-bearing claim of the sentence below, is not there.
+> What remains is `qou-qpj9`'s Obstruction A: a canonical, parameter-free map
+> from the ordered content to a hyperbolic braid word at `H₃(q)` — geometric,
+> and needing no `SU(3)`, flavour or colour. **Not** thereby solved:
+> injectivity gives a factorisation, never a derivation of the factorising
+> map, and fitting through five injectively-labelled points is the per-state
+> fit the J/ψ attack already recorded as worthless.
+> [`2026-08-25-4c-no-third-flavour-grade-is-missing.md`](audits/2026-08-25-4c-no-third-flavour-grade-is-missing.md)
+
 **State — partly derived.** `(n, T₃)` separates all six quarks (§3.2,
-sorry-free), but **still collides** `D̄⁰{c̄,u}` with `K⁰{d̄,s}` (same multiset).
-`mass_from_graded_content_cannot_separate` is proved: the mass is **not** a
-function of `(n, T₃)`. The missing grade is the **flavour** `SU(3)` Cartan —
-distinct from the excluded **colour** `SU(3)` (#4564, gauge). So 4-C reduces
-into 4-A, but with a much more concrete target.
+sorry-free), but the symmetric-multiset content **collides** `D̄⁰{c̄,u}` with
+`K⁰{d̄,s}`. `mass_from_graded_content_cannot_separate` is proved for symmetric
+`f`. ~~The missing grade is the **flavour** `SU(3)` Cartan — distinct from the
+excluded **colour** `SU(3)` (#4564, gauge). So 4-C reduces into 4-A, but with a
+much more concrete target.~~ **Struck 2026-08-25** — see the banner above; the
+ordered content is injective, so no grade is missing and the 4-A dependency
+does not hold.
 
 Second blocker on the same front: the **canonical meson flux-tube braid word**
 (`qou-qpj9`) — resolved to an honest negative (#4614): the Y-junction 3→2
@@ -466,7 +520,7 @@ ranking is an agent's judgement, not a corpus fact; argue with it.
 | Rank | Target | Why near-term | Blocker |
 |---|---|---|---|
 | 1 | **Two-like-charge EM-linking invariant** (4-B) | Smallest scope of the three gating objects; needs **no** `SU(3)`. Closes `m_d − m_u` **and** 69 % of the ³He mirror residual together. Stage-1 scoping already done and well-posed | intra-nucleon EM self-energy is genuinely underived |
-| 2 | **Third flavour grade** (4-C) | `(n, T₃)` already separates all six quarks, sorry-free; the residual collision (`D̄⁰` vs `K⁰`) is precisely stated; `mass_from_graded_content_cannot_separate` tells you exactly what *won't* work | reduces into 4-A, but with a concrete target |
+| 2 | **Content → hyperbolic braid map** (4-C, *retitled* 2026-08-25) | `(n, T₃)` separates all six quarks sorry-free, and `orderedContent_injective` (`by decide`) separates all five mesons — **no third flavour grade is missing**; the `D̄⁰`/`K⁰` collision is a symmetric-multiset artefact | `qou-qpj9` Obstruction A — geometric, and **not** gated on 4-A |
 | 3 | **GMO deviation ≈ 6 %** | Uniquely well-posed: a specific number, a specific mechanism (second-order octet breaking + `η`–`η'` mixing), and a live falsification (framework currently predicts 0; producing a *different* value falsifies) | needs a second-order term; conditional on `N=3` for the octet itself |
 | 4 | **Non-neutral Tannakian gerbe** (4-A) | The whole eightfold surface has collapsed onto **one** question; seven routes are excluded with cited invariants, so the search is narrow | hardest of the three; a **refutation is equally valuable** and would settle the corpus position |
 | 5 | **`α_EM` per-loop measure** | Would move the corpus's best number from `partial` toward closed | its own witness calls it *"highest-value but long-horizon conjectural close, not near-term"* — believe the witness |

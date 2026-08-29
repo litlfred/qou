@@ -1,0 +1,135 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-26T22:42:36.070385+00:00",
+  "commitSha": "4df598b769fb242d5dab12a182f56d87aa6321fb",
+  "assertions": [
+    {
+      "name": "n3_ocneanu_trace_is_UNIQUELY_determined",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "n3_identity_HOLDS_defect_is_exactly_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "n4_ocneanu_trace_is_UNIQUELY_determined",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "n4_identity_FAILS",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "n4_failure_is_BROAD_not_a_near_miss",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "n4_trace_at_z1_is_NOT_constant_off_w0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3036,
+  "computation": "qbeta-rank-one-identity-n3-only",
+  "scriptFile": "qbeta_rank_one_identity_is_n3_only_probe.py",
+  "scriptHash": "2446c27b8848",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_rank_one_identity_is_n3_only_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_rank_one_identity_is_n3_only_probe.py"
+  },
+  "description": "Scope correction: `net = tr_M^{z=1} - h*delta_{w_0}` holds at n=3 and fails at n=4, where the difference is nonzero on 11 of 24 basis elements. The rank-one form is an accident of H_3.",
+  "data": {
+    "n3_dim": 6,
+    "n3_support_of_net_minus_trace": 1,
+    "n3_distinct_defect_values": [
+      "-(q - 1)*(q + 1)/q"
+    ],
+    "n3_distinct_trace_values_at_z1": [
+      "1",
+      "q + 1 - 1/q"
+    ],
+    "n3_identity_holds": true,
+    "n4_dim": 24,
+    "n4_support_of_net_minus_trace": 11,
+    "n4_distinct_defect_values": [
+      "-(q - 1)*(q + 1)*(q**2 + 2*q - 1)/q**2",
+      "-(q - 1)*(q + 1)*(q**2 + q - 1)/q**2",
+      "-(q - 1)*(q + 1)*(q**4 + q**3 - q + 1)/q**3",
+      "-(q - 1)*(q + 1)/q"
+    ],
+    "n4_distinct_trace_values_at_z1": [
+      "(q**6 + q**5 - q**4 - q**3 + q**2 + q - 1)/q**3",
+      "1",
+      "q + 1 - 1/q",
+      "q**2 + 2*q - 1 - 2/q + q**(-2)",
+      "q**2 + q - 1 - 1/q + q**(-2)"
+    ],
+    "n4_identity_holds": false,
+    "markov_convention": "convention-free — no Markov parameter is specialised",
+    "assertion_notes": [
+      {
+        "assertion": "n3_ocneanu_trace_is_UNIQUELY_determined",
+        "note": "(rank 6/6, 0 free — unital + cyclic + full Markov at every level of the chain)"
+      },
+      {
+        "assertion": "n3_identity_HOLDS_defect_is_exactly_minus_h",
+        "note": "(supported on w_0 alone, defect ['-(q - 1)*(q + 1)/q'])"
+      },
+      {
+        "assertion": "n4_ocneanu_trace_is_UNIQUELY_determined",
+        "note": "(rank 24/24, 0 free — unital + cyclic + full Markov at every level of the chain)"
+      },
+      {
+        "assertion": "n4_identity_FAILS",
+        "note": "(nonzero on 11 of 24 basis elements, not 1; 4 distinct values)"
+      },
+      {
+        "assertion": "n4_failure_is_BROAD_not_a_near_miss",
+        "note": "(11/24 — so the rank-one form is not almost right)"
+      },
+      {
+        "assertion": "n4_trace_at_z1_is_NOT_constant_off_w0",
+        "note": "(5 distinct values, vs 2 at n=3)"
+      }
+    ],
+    "verdict": "`net = tr_M^{z=1} - h*delta_{w_0}` is an n = 3 fact, NOT a characterisation of the two functionals. At n = 4 the difference is nonzero on 11 of 24 basis elements with four distinct values, and the trace at z = 1 is not constant off w_0 either. Every conclusion drawn from the identity STANDS, because each is evaluated on Delta and Delta lives in H_3(q): eps(Delta) = tr_M^{z=1}(Delta) follows from Delta's SUPPORT; the phase is a transport within one family; the z-free floor is net(dC) = -h*y_(2,1)(1). What does not stand is the unscoped sentence, now corrected wherever it appears. Recorded rather than quietly patched: a sibling PR warned about generalising an n = 3 coincidence on this very bean, and I had done it. Also worth keeping: imposing the Markov property only at the top generator leaves the trace UNDERDETERMINED (rank 5 of 6 at n = 3)."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

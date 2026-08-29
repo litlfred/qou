@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "T4 = Σ 1/dim_q V_λ is dominated by λ = (1,1,1) at 82.3% of total (since dim_q V_(1,1,1) = 1 exactly). Confirms ALGEBRAIC structure visible on crystal bases."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "PR #1289 predicts dominant λ* = (A,A,A) for canonical T_w. For proton (A=1): predicts (1,1,1). T4 dominant: (1,1,1). Match: True."
     }
   ],

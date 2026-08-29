@@ -60,6 +60,25 @@ def r2(y, pred):
     return float(1 - np.sum((y - pred) ** 2) / np.sum((y - y.mean()) ** 2))
 
 
+def _cell(x):
+    """Read one `all-nuclides-wedderburn-spectral-v2` row cell as a float.
+
+    Those cells changed type when that producer's float64 was drained: the
+    `*_log10` columns and `B_AME_MeV` were JSON floats (`round(v, 4)`) and
+    are now decimal strings (`f"{v:.4f}"`), carrying the same digits. This
+    reads either, so this analysis gives the same answer against a pre-drain
+    and a post-drain witness alike — a consumer that only handles the shape
+    it was written against is the usual reason producer type-fixes get
+    avoided. `None` (the zero-sign branch) propagates as `None`.
+
+    Kept as `float` deliberately, NOT promoted to mpf: everything downstream
+    here is numpy (`np.polyfit`, `np.log10`) and is float64 by construction.
+    Draining THIS producer is separate work; converting at the read would
+    dress a float64 analysis in digits it does not have.
+    """
+    return None if x is None else float(x)
+
+
 def main() -> int:
     t0 = time.monotonic()
     src = json.loads(V2.read_text())
@@ -70,12 +89,12 @@ def main() -> int:
     # only the alt-channel weight enters the dominant-channel Δ scale.
     log_y_alt = float(mp.log10(abs(mp.mpf(yw["(1,1,1)"]))))
 
-    r = [x for x in rows_in if x["A"] >= 2 and x["B_AME_MeV"] > 0]
+    r = [x for x in rows_in if x["A"] >= 2 and _cell(x["B_AME_MeV"]) > 0]
     A = np.array([x["A"] for x in r], float)
     T = np.array([x["T_crossings"] for x in r], float)
-    B = np.array([x["B_AME_MeV"] for x in r], float)
-    trL = np.array([x["trM_log10"] for x in r], float)   # log10|tr_M(a)|
-    altL = np.array([x["alt_log10"] for x in r], float)   # log10|χ_alt(a)|
+    B = np.array([_cell(x["B_AME_MeV"]) for x in r], float)
+    trL = np.array([_cell(x["trM_log10"]) for x in r], float)   # log10|tr_M(a)|
+    altL = np.array([_cell(x["alt_log10"]) for x in r], float)   # log10|χ_alt(a)|
 
     # ── (1) quadratic crossing-count law for log10|tr_M| ──────────────
     Xq = np.vstack([A * A, A, np.ones_like(A)]).T
@@ -112,8 +131,8 @@ def main() -> int:
             "log10_chi_sym": x["sym_log10"], "log10_chi_alt": x["alt_log10"],
             "log10_absTrM": x["trM_log10"],
             "log10_required_Delta_alt": round(
-                float(np.log10(x["B_AME_MeV"] / M_E_MEV)
-                      - (log_y_alt + x["alt_log10"])), 3),
+                float(np.log10(_cell(x["B_AME_MeV"]) / M_E_MEV)
+                      - (log_y_alt + _cell(x["alt_log10"]))), 3),
         })
 
     w = WitnessBuilder("delta-lambda-feed-analysis", engine="python",

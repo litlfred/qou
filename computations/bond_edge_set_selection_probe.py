@@ -44,6 +44,8 @@ from __future__ import annotations
 
 import json
 import math
+
+import mpmath as mp
 import sys
 import time
 from pathlib import Path
@@ -53,6 +55,13 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# The float64 drain in this PR put mpmath into a probe that had none. Without
+# this call every mp.mpf/mp.log below would run at mpmath's DEFAULT dps=15 --
+# i.e. the drain would have swapped binary64 for a decimal type of the same
+# width and changed nothing. Caught by never_raises_dps_audit, not by eye.
+set_compute_dps()
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -60,25 +69,64 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 
+def _dp(x, places: int):
+    """Serialize one enumeration cell at its declared width, as a STRING.
+
+    Replaces `round(x, n)`, which emitted a JSON float. 1,879 of them: the
+    full `pp/pn/nn` edge-multiset enumeration is written out per atom.
+    """
+    return None if x is None else f"{x:.{places}f}"
+
+
 def _constants():
-    from q_parameter import Q as q0, HA as h
+    """Substrate constants for the bond-edge enumeration, in exact arithmetic.
+
+    Every one of these was `float(...)`-ed on arrival: `q0`, `h`, `me` and
+    `delta` all arrive as `mpf` and were downcast on the first line, so the
+    Markov parameter `z`, the energy scale `E0` and the per-bond logs were
+    binary64 from the outset. AGENTS.md's 2026-08-18 directive is explicit
+    that a probe is not exempt from this: a probe conclusion becomes an
+    argument in a bean, an audit doc and a content block, where nothing
+    re-derives it.
+
+    `Q`/`HA` are the f64 module aliases; `Q_MP`/`HA_MP` are the same
+    constants at full precision, which is what this now reads.
+
+    NOTE on `1.0 - 0.0`: `E0 = me / (q0 * (q0 - 1))` had a `1.0` literal
+    inside an otherwise-exact expression. Harmless for an `mpf` (mpmath
+    promotes an exact binary literal losslessly), but written as `1` so the
+    expression contains no float at all.
+    """
+    from q_parameter import Q_MP as q0, HA_MP as h
     from codata_constants import M_E_MEV as me
-    q0, h, me = float(q0), float(h), float(me)
-    z = q0**3 / (q0**2 + 1)
+    z = q0**3 / (q0**2 + 1)          # convention D
     try:
         from canonical_braid_crossings import _avg_color_delta
-        delta = float(_avg_color_delta())
+        delta = mp.mpf(_avg_color_delta())
     except Exception:
-        delta = 0.0
-    E0 = me / (q0 * (q0 - 1.0))
+        delta = mp.mpf(0)
+    E0 = me / (q0 * (q0 - 1))
     return q0, h, z, delta, me, E0
 
 
 def main() -> int:
     t0 = time.time()
     q0, h, z, delta, me, E0 = _constants()
-    f = {"pp": z, "nn": z - h, "pn": z - h * (0.5 - delta / 4.0)}
-    lg = {k: math.log(1.0 / v) for k, v in f.items()}  # per-bond log
+    # The p-n bond's colour-weighted offset. Written as `h*(2 - delta)/4`
+    # rather than `h*(0.5 - delta/4.0)`: algebraically identical, but the
+    # second spelling puts a Python float `0.5` into an otherwise-exact
+    # expression, which is the contamination `pyhecke.constants` documents
+    # for the sympy case and which is pointless here either way.
+    #
+    # FINDING, deliberately not changed in this commit: this OPEN-CODES the
+    # p-n interface offset that `543e30adfd` centralised into
+    # `pyhecke.constants.pn_interface_offset_from_h` precisely so it would
+    # stop being repeated per site. Re-routing it is a convention change,
+    # not a precision fix, and mixing the two is how a drain quietly becomes
+    # a physics edit. Recorded for follow-up; the numbers here are compared
+    # in the commit message.
+    f = {"pp": z, "nn": z - h, "pn": z - h * (2 - delta) / 4}
+    lg = {k: mp.log(1 / v) for k, v in f.items()}  # per-bond log
 
     bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = {(r["Z"], r["N"]): r for r in bc["data"]["results"]
@@ -88,7 +136,11 @@ def main() -> int:
     joint_closure_possible = True
     for (Z, N), r in sorted(res.items(), key=lambda kv: (kv[0][0] + kv[0][1], kv[0])):
         A = Z + N
-        B_ame = float(r["B_AME_MeV"])
+        # `B_AME_MeV` arrives from `binding-canonical.witness.json`, which
+        # may carry it as a decimal string or a number depending on that
+        # producer's drain state. Read either, exactly.
+        _b = r["B_AME_MeV"]
+        B_ame = mp.mpmathify(_b) if isinstance(_b, str) else mp.mpf(repr(_b))
         L_req = B_ame / E0
         max_pp, max_pn, max_nn = Z * (Z - 1) // 2, Z * N, N * (N - 1) // 2
 
@@ -99,25 +151,29 @@ def main() -> int:
             for npn in range(max_pn + 1):
                 for nnn in range(max_nn + 1):
                     L = npp * lg["pp"] + npn * lg["pn"] + nnn * lg["nn"]
-                    miss = (B_ame / (E0 * L)) if L > 0 else float("inf")
+                    miss = (B_ame / (E0 * L)) if L > 0 else None
                     combos.append({"pp": npp, "pn": npn, "nn": nnn,
-                                   "L": round(L, 4),
-                                   "miss_x": round(miss, 3) if L > 0 else None})
+                                   "L": _dp(L, 4),
+                                   "miss_x": _dp(miss, 3)})
                     if L > 0 and (best is None or
-                                  abs(math.log(miss)) < abs(math.log(best["miss_x"]))):
+                                  abs(mp.log(miss)) < abs(mp.log(mp.mpmathify(best["miss_x"])))):
                         best = combos[-1]
         L_complete = max_pp * lg["pp"] + max_pn * lg["pn"] + max_nn * lg["nn"]
-        closable = any(c["L"] > 0 and 0.95 <= c["miss_x"] <= 1.05 for c in combos)
+        # cells are decimal strings now; compare the values, not their text
+        closable = any(c["miss_x"] is not None
+                       and mp.mpf("0.95") <= mp.mpmathify(c["miss_x"])
+                       <= mp.mpf("1.05")
+                       for c in combos)
         if not closable:
             joint_closure_possible = False
 
         rows.append({
             "atom": r["atom"], "Z": Z, "N": N, "A": A,
-            "B_AME_MeV": round(B_ame, 4),
-            "L_required": round(L_req, 4),
+            "B_AME_MeV": _dp(B_ame, 4),
+            "L_required": _dp(L_req, 4),
             "edge_box": {"pp": max_pp, "pn": max_pn, "nn": max_nn},
-            "L_complete_graph": round(L_complete, 4),
-            "complete_vs_required": round(L_req / L_complete, 3) if L_complete else None,
+            "L_complete_graph": _dp(L_complete, 4),
+            "complete_vs_required": _dp(L_req / L_complete, 3) if L_complete else None,
             "n_integer_edge_sets": len(combos),
             "best_integer_edge_set": best,
             "closable_within_5pct": closable,
@@ -140,9 +196,9 @@ def main() -> int:
         "static closure is what fails. Formalize-first refutation of the "
         "static-graph class; no fit attempted."
     )
-    w.add_parameter("E_0_MeV", round(E0, 4))
-    w.add_data("per_bond_log", {k: round(v, 4) for k, v in lg.items()})
-    w.add_data("per_bond_energy_MeV", {k: round(E0 * v, 4) for k, v in lg.items()})
+    w.add_parameter("E_0_MeV", _dp(E0, 4))
+    w.add_data("per_bond_log", {k: _dp(v, 4) for k, v in lg.items()})
+    w.add_data("per_bond_energy_MeV", {k: _dp(E0 * v, 4) for k, v in lg.items()})
     w.add_data("rows", [{k: v for k, v in r.items() if k != "all_combos"}
                         for r in rows])
     w.add_data("full_enumeration", {r["atom"]: r["all_combos"] for r in rows})
@@ -165,13 +221,14 @@ def main() -> int:
     he4_row = [r for r in rows if r["A"] == 4][0]
     w.add_assertion(
         name="deuteron_not_closable_by_integer_edge_set",
-        computed=bool(d_row["closable_within_5pct"]), expected=False,
-        tolerance=0.0,
+        computed="0" if not d_row["closable_within_5pct"] else "1",
+        expected="0", tolerance="0",
         source="exact enumeration of {0,1}-pn edge sets for D: none within 5%.",
     )
     w.add_assertion(
         name="he4_requires_more_than_complete_graph",
-        computed=he4_row["complete_vs_required"], expected=1.2, tolerance=0.05,
+        computed=he4_row["complete_vs_required"], expected="1.2",
+        tolerance="0.05",
         source="L_required/L_complete for ⁴He ≈ 1.20 > 1: even the complete "
                "graph under-binds; pairwise-additive closure impossible.",
     )
@@ -189,9 +246,13 @@ def main() -> int:
         b = r["best_integer_edge_set"]
         bs = f"({b['pp']},{b['pn']},{b['nn']})"
         eb = r["edge_box"]
-        print(f" {r['atom']:>7}{r['A']:>3}{r['L_required']:>8.3f}"
-              f"{str((eb['pp'], eb['pn'], eb['nn'])):>15}{r['L_complete_graph']:>11.3f}"
-              f"{r['complete_vs_required']:>10.2f}{bs:>16}{b['miss_x']:>9.2f}×"
+        # row cells are decimal strings; float() only for the display width
+        _lr, _lc = float(r['L_required']), float(r['L_complete_graph'])
+        _cv = float(r['complete_vs_required']) if r['complete_vs_required'] else 0.0
+        _mx = float(b['miss_x']) if b['miss_x'] else 0.0
+        print(f" {r['atom']:>7}{r['A']:>3}{_lr:>8.3f}"
+              f"{str((eb['pp'], eb['pn'], eb['nn'])):>15}{_lc:>11.3f}"
+              f"{_cv:>10.2f}{bs:>16}{_mx:>9.2f}×"
               f"{str(r['closable_within_5pct']):>9}")
     print(" " + "-" * 86)
     print(" VERDICT: no static integer edge set closes jointly —")

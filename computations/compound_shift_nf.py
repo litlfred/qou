@@ -124,8 +124,16 @@ ATOMS_TO_VERIFY: list[tuple[int, int, str]] = [
 
 # Per-nucleon NF shifts at H_3 level (from
 # shift-from-nf-basis.witness.json; integer values, exact).
-SHIFT_NF_PROTON_H3 = 19   # build_nucleon_nf_sym_atomic + tr_M u-pole
-SHIFT_NF_NEUTRON_H3 = 15
+#
+# UPDATED 2026-08-24 (qou-cds1): 19 -> 18 and 15 -> 14, following the
+# convention-D migration of `substrate/hecke_core_symbolic` (a24fdac8a1).
+# These are TRANSCRIBED from the source witness, so they do not move when that
+# witness moves -- this module's own witness showed "0 fields moved" under the
+# conversion, which read as convention-INDEPENDENT and is actually
+# convention-FROZEN. Re-read the source witness rather than trusting these if
+# the trace convention changes again.
+SHIFT_NF_PROTON_H3 = 18   # build_nucleon_nf_sym_atomic + tr_M u-pole
+SHIFT_NF_NEUTRON_H3 = 14
 
 # Interface α(I) values per prop:alpha-shift-torus-knot (simplest
 # interface case): pp = 0, pn = 1, nn = 0.  These are the αcontributions

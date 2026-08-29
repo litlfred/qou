@@ -7,7 +7,7 @@ $$
   \cdot g_{ijk}^{(n)}.
 $$
 
-*Thus, the twisted Cech $2$-cocycle equation*
+*Thus, the twisted Čech $2$-cocycle equation*
 
 $$
   d(g_{ijk}^{(n)})

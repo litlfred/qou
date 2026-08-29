@@ -1,0 +1,60 @@
+{
+  "engine": "python-magnus",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T09:56:16.046057+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "gap2-he4-borromean-mu-bar",
+  "scriptFile": "gap2_he4_borromean_mu_bar.py",
+  "scriptHash": "e74d57e928ca",
+  "scriptCommitSha": "1e4afe69fd7e4e284d9a737db592f7d797879c02",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gap2_he4_borromean_mu_bar.py"
+    ],
+    "reproduce": "python3 -u computations/gap2_he4_borromean_mu_bar.py"
+  },
+  "description": "GAP-2 open step (bean qou-klgu): Milnor mu-bar tower on ⁴He link models, counting the WELL-DEFINED irreducible triple count M3 (mu-bar_ijk != 0 with vanishing pairwise lk indeterminacy) and the 4-body M4. Tests whether the per-order 3-body energy e3*M3(⁴He) reproduces the 14.95 MeV magic surplus. e3 pinned per-order on the triton (anti-fit). EXPLORATORY, no wiring.",
+  "data": {
+    "per_order_energy_MeV": {
+      "e2": "2.22456620000000000000000000000000000000000000000000000000000",
+      "e3": "1.80809760000000000000000000000000000000000000000000000000000"
+    },
+    "he4_surplus_MeV": "14.9482652000000000000000000000000000000000000000000000000000",
+    "models": {
+      "⁴He (A) all-Hopf K4": {
+        "M3_irr": 0,
+        "M4": 0
+      },
+      "⁴He (B) Borromean-core + apex": {
+        "M3_irr": 1,
+        "M4": 0
+      },
+      "⁴He (C) Brunnian 4-body": {
+        "M3_irr": 1,
+        "M4": 0
+      }
+    },
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: this producer never references q_0 at all. Its only path to `qou_substrate.constants` is the CODATA mass table reached via `codata_2022_source`, and importing a table is not computing at a pin."
+}

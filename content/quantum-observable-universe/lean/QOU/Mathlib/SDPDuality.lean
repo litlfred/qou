@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.LinearAlgebra.Matrix.Spectrum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Tactic.Linarith
@@ -33,13 +34,57 @@ lemma traceInner_finset_sum_left (s : Finset (Fin m))
     traceInner (∑ i ∈ s, f i) Y = ∑ i ∈ s, traceInner (f i) Y := by
   simp only [traceInner, Finset.sum_mul, trace_sum]
 
-/-- MATHLIB GAP: tr(SX) ≥ 0 for PSD S and X. Standard result, but Mathlib lacks
-    matrix square root, so the proof `tr(SX) = tr(S^{1/2} X S^{1/2}) ≥ 0` is
-    not formalizable yet. -/
-axiom traceInner_nonneg_of_posSemidef (n : ℕ)
+/-- `tr(diag(d) * M) = ∑ dᵢ Mᵢᵢ`. -/
+private lemma trace_diagonal_mul' [DecidableEq (Fin n)]
+    (d : Fin n → ℝ) (M : Matrix (Fin n) (Fin n) ℝ) :
+    (diagonal d * M).trace = ∑ i, d i * M i i := by
+  simp only [Matrix.trace, Matrix.diag, diagonal_mul]
+
+/-- Diagonal entries of a PSD matrix are nonneg: `Mᵢᵢ ≥ 0`. -/
+private lemma psd_diag_nonneg
+    (M : Matrix (Fin n) (Fin n) ℝ) (hM : M.PosSemidef) (i : Fin n) :
+    0 ≤ M i i := by
+  have h := hM.2 (fun j => if j = i then 1 else 0)
+  simp only [star_trivial, dotProduct, mulVec] at h
+  have key : ∀ x : Fin n, (if x = i then (1 : ℝ) else 0) *
+      ∑ y : Fin n, M x y * (if y = i then 1 else 0) =
+      if x = i then M i i else 0 := by
+    intro x
+    by_cases hx : x = i
+    · subst hx; simp [Finset.sum_ite_eq']
+    · simp [hx]
+  simp_rw [key] at h
+  simp [Finset.sum_ite_eq'] at h
+  exact h
+
+/-- **`tr(SX) ≥ 0` for PSD S and X.**
+    Proof: spectral decomposition `S = U diag(λ) U*` with `λᵢ ≥ 0`,
+    trace cyclicity gives `tr(SX) = tr(diag(λ) · U*XU)`,
+    `U*XU` is PSD (by `conjTranspose_mul_mul_same`),
+    then `Σ λᵢ (U*XU)ᵢᵢ ≥ 0` since both factors are nonneg. -/
+theorem traceInner_nonneg_of_posSemidef
     (S X : Matrix (Fin n) (Fin n) ℝ)
     (hS : Matrix.PosSemidef S) (hX : Matrix.PosSemidef X) :
-    0 ≤ traceInner S X
+    0 ≤ traceInner S X := by
+  classical
+  unfold traceInner
+  let ev := hS.1.eigenvalues
+  let U : Matrix (Fin n) (Fin n) ℝ := hS.1.eigenvectorUnitary
+  have hev_nn : ∀ i, 0 ≤ ev i := hS.eigenvalues_nonneg
+  have hspec : S = U * diagonal ev * star U := by
+    have := hS.1.spectral_theorem
+    rw [show RCLike.ofReal ∘ ev = ev from funext fun _ => rfl] at this
+    exact this
+  have hP : (star U * X * U).PosSemidef := by
+    show (Uᴴ * X * U).PosSemidef
+    exact hX.conjTranspose_mul_mul_same U
+  have key : (S * X).trace = (diagonal ev * (star U * X * U)).trace := by
+    conv_lhs => rw [hspec]
+    simp only [mul_assoc]
+    rw [trace_mul_comm U]
+    simp only [mul_assoc]
+  rw [key, trace_diagonal_mul']
+  exact Finset.sum_nonneg fun i _ => mul_nonneg (hev_nn i) (psd_diag_nonneg _ hP i)
 
 /-- **Weak SDP duality.** -/
 theorem weak_duality
@@ -62,7 +107,7 @@ theorem weak_duality
     _ = traceInner (C - S) X := by rw [eq_sub_of_add_eq hy_feas]
     _ = traceInner C X - traceInner S X := traceInner_sub_left C S X
     _ ≤ traceInner C X := by
-        linarith [traceInner_nonneg_of_posSemidef n S X hS_psd hX_psd]
+        linarith [traceInner_nonneg_of_posSemidef S X hS_psd hX_psd]
 
 /-- **Strong SDP duality** (complementary slackness certificate). -/
 theorem strong_duality

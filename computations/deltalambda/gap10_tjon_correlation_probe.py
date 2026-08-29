@@ -86,13 +86,36 @@ from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-set_compute_dps(30)
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
+DPS = 30
+set_compute_dps(DPS)
 q0 = mp.mpf(str(Q0))
-q0f = float(Q0)
-H = float(q0 - 1 / q0)
+# The kernel entry takes q as a DECIMAL STRING, not a double: the f64 entry
+# `chi_q_atomic_all_partitions` capped every character at ~15-16 significant
+# digits while this probe serialises its results at 58, i.e. ~42 digits of
+# noise. `H` stays an `mpf` for the same reason and for one more: it is passed
+# to `pn_interface_offset_from_h`, which branches on `isinstance(h, float)`
+# and takes an f64 sqrt on that branch -- handing it a float silently selected
+# the lossy path. Bean `qou-k6b3`.
+Q0_STR = mp.nstr(q0, DPS)
+H = q0 - 1 / q0
 
 # nature, in units of B(D) — the corpus's rho_strong (Coulomb-corrected)
 RHO_STRONG = {2: mp.mpf(1), 3: mp.mpf("3.8128"), 4: mp.mpf("13.0316")}
+
+
+def sfmt(v):
+    """`fmt` pinned to THIS probe's compute precision.
+
+    Bare `fmt` serialises at the corpus `OUTPUT_DPS` (60 decimals) no matter
+    what `mp.dps` is. The corpus design has compute ABOVE serialisation (65
+    compute / 50 output); this probe sets compute to 30, which inverts it, so
+    every witness field was padded with ~30 digits of noise -- independently of
+    the f64 kernel entry fixed above, and still there after it. `fmt` takes a
+    per-call `dps`, so the honest width is the one actually computed.
+    """
+    return fmt(v, dps=DPS)
 
 _Y = {}
 _t0 = time.time()
@@ -104,18 +127,27 @@ def perblock(n_strands, word):
         _Y[n_strands] = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
                          for k, v in y_lambda_at(n_strands, q0).items()}
     Y = _Y[n_strands]
-    factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
-    cp = pyhecke_native.chi_q_atomic_all_partitions(n_strands, factors, q0f)
+    # `atom_braid_word_3A` already returns `mpf` coefficients (it takes
+    # `allow_float64=False` by default and goes to trouble to keep them exact);
+    # casting them to `float` here threw that away one line before the kernel.
+    factors = [(mp.nstr(mp.mpf(c), DPS), mp.nstr(mp.mpf(d), DPS), int(g) + 1)
+               for (c, d, g) in word]
+    cp = pyhecke_native.chi_q_atomic_all_partitions_mpfr(
+        n_strands, factors, Q0_STR, DPS)
     _n[0] += 1
     print(f"      [trace {_n[0]:2d}]  n={n_strands:2d}  {time.time() - _t0:6.1f}s", flush=True)
-    return sum(Y[tuple(s)] * abs(mp.mpf(repr(chi))) for s, chi in cp if tuple(s) in Y)
+    # `mp.mpf(chi)` directly: the MPFR entry returns a decimal STRING, so the
+    # `repr()` the f64 path needed (shortest round-trip of a Python float)
+    # would now wrap it in quotes and raise.
+    return sum(Y[tuple(s)] * abs(mp.mpf(chi)) for s, chi in cp if tuple(s) in Y)
 
 
 def band_word(i, j, c, d):
     """BKL band bonding non-adjacent nucleons i<j (GAP-8's construction)."""
     carry = list(range(3 * j - 1, 3 * i + 2, -1))
-    return ([(1.0, 0.0, g) for g in carry] + [(c, d, 3 * i + 2)]
-            + [(1.0, -H, g) for g in reversed(carry)])
+    one, zero = mp.mpf(1), mp.mpf(0)
+    return ([(one, zero, g) for g in carry] + [(c, d, 3 * i + 2)]
+            + [(one, -H, g) for g in reversed(carry)])
 
 
 def M_op(A, Z, N, complete):
@@ -123,16 +155,23 @@ def M_op(A, Z, N, complete):
     ns = 3 * A
     full = atom_braid_word_3A(Z, N, include_inter=True)
     ifaces = {x[2]: x for x in full if x[2] % 3 == 2}
-    d_by_gen = {g: float(ifaces[g][1]) for g in sorted(ifaces)}
-    nz = [d for d in d_by_gen.values() if d != 0.0]
-    pn_d = min(nz, key=lambda d: abs(abs(d) - H / 2)) if nz else -H / 2
+    d_by_gen = {g: mp.mpf(ifaces[g][1]) for g in sorted(ifaces)}
+    nz = [d for d in d_by_gen.values() if d != 0]
+    # Nearest-match against the CANONICAL p-n offset, not -H/2. The word
+    # now carries `-h*(1/2 - delta/4)`; the nearest-match happens to pick
+    # the same entry either way (the alternatives are 0 and -H, orders
+    # further off), but the reference and the fallback were both the
+    # colour-blind value and would silently mis-select if the spread ever
+    # narrowed.
+    _d_pn = _pn_d(H)
+    pn_d = min(nz, key=lambda d: abs(abs(d) - abs(_d_pn))) if nz else _d_pn
 
     free = [x for x in full if x[2] % 3 != 2]           # no interfaces at all
     allb = list(full)                                    # every adjacent interface
     if complete:
         for (i, j) in combinations(range(A), 2):
             if j > i + 1:
-                allb = allb + band_word(i, j, 1.0, pn_d)
+                allb = allb + band_word(i, j, mp.mpf(1), pn_d)
     return perblock(ns, allb) - perblock(ns, free)
 
 
@@ -153,8 +192,8 @@ def main() -> int:
     print(f"   μ₄ = {float(nat_mu4):+.4f}   fractional Tjon deviation μ₄/M(4) = "
           f"{float(nat_frac):+.4f}")
 
-    results = {"nature": {"ladder": [fmt(nat[a]) for a in (2, 3, 4)],
-                          "mu4": fmt(nat_mu4), "frac_tjon_dev": fmt(nat_frac)}}
+    results = {"nature": {"ladder": [sfmt(nat[a]) for a in (2, 3, 4)],
+                          "mu4": sfmt(nat_mu4), "frac_tjon_dev": sfmt(nat_frac)}}
     scores = {}
 
     for label, complete in (("complete graph (C(A,2) bonds: 1,3,6)", True),
@@ -189,20 +228,20 @@ def main() -> int:
             sign_ok = (frac > 0) == (nat_frac > 0)
             print(f"        sign matches nature: {bool(sign_ok)}   "
                   f"|ratio| {float(abs(frac / nat_frac)):.2f}×")
-            scores[label] = {"frac": fmt(frac), "sign_ok": bool(sign_ok),
-                             "ratio_to_nature": fmt(abs(frac / nat_frac)),
+            scores[label] = {"frac": sfmt(frac), "sign_ok": bool(sign_ok),
+                             "ratio_to_nature": sfmt(abs(frac / nat_frac)),
                              "_f": float(frac),          # printing only
                              "_r": float(abs(frac / nat_frac))}
         results[label] = {
-            "M_op": {str(a): fmt(M[a]) for a in (2, 3, 4)},
-            "ladder_normalised": ({str(a): fmt(ladder[a]) for a in (2, 3, 4)}
+            "M_op": {str(a): sfmt(M[a]) for a in (2, 3, 4)},
+            "ladder_normalised": ({str(a): sfmt(ladder[a]) for a in (2, 3, 4)}
                                   if ladder else None),
             "_ladder_f": ({str(a): float(ladder[a]) for a in (2, 3, 4)}
                           if ladder else None),          # printing only
             "_M_op_f": {str(a): float(M[a]) for a in (2, 3, 4)},
-            "tjon_two_point_prediction": fmt(4 * M[3] - 6 * M[2]),
-            "mu4_op": fmt(mu4_op),
-            "frac_tjon_deviation": fmt(frac) if frac is not None else None}
+            "tjon_two_point_prediction": sfmt(4 * M[3] - 6 * M[2]),
+            "mu4_op": sfmt(mu4_op),
+            "frac_tjon_deviation": sfmt(frac) if frac is not None else None}
 
     # SIGN CONVENTION (corrected) — the corpus binding proxy is the DEFICIT
     pos = {k: all(v <= 0 for v in results[k]["_M_op_f"].values())
@@ -279,10 +318,15 @@ def main() -> int:
     wb.add_data("tjon_correlation", {
         "lean": ("QOU.MassTheory.TjonSimplexForm: tjon_deviation_eq_mu4, mu4_eq_zero_iff_tjon, "
                  "mu4_neg_of_below_tjon, additive_higher_moments_vanish"),
-        "rho_strong": {str(a): fmt(RHO_STRONG[a]) for a in (2, 3, 4)},
+        "rho_strong": {str(a): sfmt(RHO_STRONG[a]) for a in (2, 3, 4)},
         "results": results, "scores": scores, "verdict": verdict})
     wb.add_assertion("three_mass_numbers_measured", str(len(results) >= 3), "True")
-    wb.add_assertion("tjon_identity_is_lean_backed", "True", "True")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    wb.add_parameter("tjon_identity_is_lean_backed", "True (a claim about the LEAN CORPUS, not verified from this probe; the declarations are named in data.tjon_correlation.lean)")
     wb.save()
     print("\nwitness → gap10-tjon-correlation.witness.json")
     print("STRUCTURAL ASSERTIONS PASS")

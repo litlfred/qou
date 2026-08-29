@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The AGENTS.md section tag is gone from the body; the Gauss-sum paragraph now reads \"We have established that structural scaffold\" with no policy-section reference.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section tag is gone from the body; the Gauss-sum paragraph now reads \"We have established that structural scaffold\" with no policy-section reference.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -749,7 +749,7 @@
           "in_degree": 0,
           "cone_size": 135,
           "depth": 24,
-          "pagerank": 0.000076,
+          "pagerank": 7.6e-05,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -992,7 +992,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1023,7 +1023,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1055,13 +1055,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No false claims identified in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy': mathematical reasoning is consistent.",
+        "notes": "No false claims identified in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1090,12 +1090,12 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The claims in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' are non-vacuous as they make concrete conjectures about '$\\Delta\\theta \\approx +2.1^\\circ$ of the H–S–H angle above t...'.",
+        "notes": "The claims in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' are non-vacuous as they make concrete conjectures about '$\\Delta\\theta \\approx +2.1^\\circ$ of the H\u2013S\u2013H angle above t...'.",
         "severity": "minor"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1124,13 +1124,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1159,12 +1159,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The prose in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "notes": "The prose in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' presents the result as established, but the Lean formalization is incomplete (has sorry).",
+        "severity": "minor",
+        "evidence": "The prose in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1193,13 +1194,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1234,7 +1235,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1263,12 +1264,12 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean uses a class-conjecture pattern, matching the conjectural nature of 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
+        "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean uses a class-conjecture pattern, matching the conjectural nature of 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy'.",
         "severity": "minor"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1297,13 +1298,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No citations are present in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1332,13 +1333,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1367,13 +1368,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1402,13 +1403,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The physical concepts described in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1437,13 +1438,13 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The derivation steps and formal definitions in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' are reproducible.",
+        "notes": "The derivation steps and formal definitions in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.ts:1"
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1474,12 +1475,13 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "referee_argument": "The conjectured algebraic or physical relations in 'H\u2082S bond-angle residual $=$ chiral $S^3$ braid holonomy' remain unproven and are represented as sorry stubs in the formalization.",
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -1513,7 +1515,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1528,7 +1530,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1543,7 +1545,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1558,7 +1560,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1573,7 +1575,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1588,7 +1590,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1603,7 +1605,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1618,7 +1620,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1636,7 +1638,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1654,7 +1656,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1669,7 +1671,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:34:31.000Z",
         "reviewed_sha": "03c7d88faae30945079f00d2e2382641665c7dbd",
         "reviewer": {
@@ -2230,5 +2232,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T20:22:03.063Z"
+  "updated_at": "2026-08-23T20:22:03.063Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

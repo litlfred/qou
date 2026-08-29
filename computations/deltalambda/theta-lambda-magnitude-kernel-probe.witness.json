@@ -1,22 +1,22 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-13T15:49:31.296553+00:00",
-  "commitSha": "de85558354ad57c989a000763ef956d77741d9d2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T10:44:14.897007+00:00",
+  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
   "assertions": [
     {
       "name": "deuteron_bare_kappa_reproduced",
-      "computed": 6.0426992254061815,
+      "computed": "6.416146162391632038578130889739644583602734160382343056492710538587202",
       "expected": 6.0426,
-      "passed": true,
-      "tolerance": 0.01,
+      "passed": false,
+      "tolerance": "0.01",
       "source": "B_D/(m_e·Σ y·dim·|Δθ|) from cached canonical witnesses (matches binding-a3plus-full-theta-assembly rho_need/m_e)"
     },
     {
       "name": "I1_uniform_scale_dispersion_y_dim",
-      "computed": 10.434319,
+      "computed": "15.209877",
       "expected": 10.4,
-      "passed": true,
+      "passed": false,
       "tolerance": 1.0,
       "source": "max/min of required 𝒜 across {D,T,³He,⁴He,mirror}, w=y·dim — ≫ 1.18 band ⇒ scalar-𝒜 sub-class refuted (scope-(a))"
     },
@@ -30,10 +30,10 @@
     },
     {
       "name": "geometric_in_A_pattern_ratio_scatter",
-      "computed": 1.0564698109728798,
+      "computed": "1.462072494678767113820861802605340579374914420712843715639514324092364",
       "expected": 1.06,
-      "passed": true,
-      "tolerance": 0.05,
+      "passed": false,
+      "tolerance": "0.05",
       "source": "per-added-nucleon 𝒜 ratios (3.14–3.32) agree within ~6 % — the geometric-extensivity CONSTRAINT (guarded; identification of the ratio constant is degenerate)"
     },
     {
@@ -45,12 +45,12 @@
       "source": "pre-named kernel e^{Vol·N_λ/2π} violates the deuteron +0.19%/−9% inter-scheme band (I2 predicted this: fibre-level growth applied at the real-q₀ observable level)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 16,
+  "allPassed": false,
+  "durationMs": 4,
   "computation": "theta-lambda-magnitude-kernel-probe",
   "scriptFile": "theta_lambda_magnitude_kernel_probe.py",
-  "scriptHash": "6bd2b3267a2a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ec231fc59271",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/theta_lambda_magnitude_kernel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/theta_lambda_magnitude_kernel_probe.py"
   },
   "description": "Derive-or-refute the A≥3 per-rep θ_λ magnitude (cheat-sheet 🔴 gate). Formalize-first: (I1) cross-observable rigidity — the required dimensionless amplification 𝒜 = B/(m_e·Σ w_λ|Δθ_λ|) is computed for D/T/³He/⁴He + the ³H−³He mirror under two fixed Markov weightings; its dispersion (~10×) refutes the ENTIRE scalar-𝒜 sub-class (any single derived constant: 1/ℏ_q², e^{Vol}/2π, [n]_q!, F_Bor, …) at once, scope-(a). The '~270×' mirror undershoot is shown to be convention-dependent (13×–662×), so 'find a derived 270' is ill-posed. (I2) evaluation-level: the Kashaev growth e^{Vol·N/2π} is a |q|=1 fibre asymptotic, not a real-q₀ observable growth; the pre-named per-color kernel 𝒜_λ = e^{Vol·N_λ/2π} (N_λ = λ₁−λ₂+1) is probed anyway on cached data and fails the deuteron ±9 % inter-scheme band. Guarded datum: 𝒜_req(D, y·dim) ≈ [3]_q! (+1.3 %), single-point, not a closure. NO fit; no production wiring.",
   "data": {
@@ -74,60 +84,60 @@
     },
     "required_amplifications": {
       "y": {
-        "D": "51.2560092",
-        "T": "829.0440727",
-        "3He": "860.056679",
-        "4He": "21982.8144",
-        "mirror": "607.6306426",
+        "D": "50.18659594",
+        "T": "545.0493127",
+        "3He": "604.7799784",
+        "4He": "10587.93753",
+        "mirror": "272.7903911",
         "_S_bare": {
-          "D": "0.08493379645",
-          "T": "0.02002120471",
-          "3He": "0.01756143571",
-          "4He": "0.002518932697"
+          "D": "0.08674362886",
+          "T": "0.03045313645",
+          "3He": "0.02497409077",
+          "4He": "0.005229841012"
         },
-        "_dS_mirror": "0.002459768994"
+        "_dS_mirror": "0.005479045681"
       },
       "y_dim": {
-        "D": "6.042699225",
-        "T": "18.99041622",
-        "3He": "19.90866299",
-        "4He": "63.05145026",
-        "mirror": "12.95309798",
+        "D": "6.416146162",
+        "T": "17.97110414",
+        "3He": "24.57021373",
+        "4He": "73.59430021",
+        "mirror": "4.838586307",
         "_S_bare": {
-          "D": "0.7204342447",
-          "T": "0.8740440915",
-          "3He": "0.758656173",
-          "4He": "0.8782229389"
+          "D": "0.6785019141",
+          "T": "0.923619437",
+          "3He": "0.6147211515",
+          "4He": "0.7524119366"
         },
-        "_dS_mirror": "0.1153879185"
+        "_dS_mirror": "0.3088982855"
       }
     },
     "mirror_convention_family": {
       "y*(theta_atom diff)": {
-        "m_e_S_MeV": "0.0011587784",
-        "amplification_needed": "659.10348"
+        "m_e_S_MeV": "0.00015912667",
+        "amplification_needed": "4799.666"
       },
       "y*(dtheta diff)": {
-        "m_e_S_MeV": "0.0039601929",
-        "amplification_needed": "192.858"
+        "m_e_S_MeV": "0.0080476321",
+        "amplification_needed": "94.904298"
       },
       "y*|theta_atom diff|": {
-        "m_e_S_MeV": "0.0044442947",
-        "amplification_needed": "171.85064"
+        "m_e_S_MeV": "0.01125824",
+        "amplification_needed": "67.839633"
       },
       "y*dim*(|dtheta| diff)": {
-        "m_e_S_MeV": "0.058963105",
-        "amplification_needed": "12.953098"
+        "m_e_S_MeV": "0.1578467",
+        "amplification_needed": "4.8385863"
       }
     },
     "invariant_I1_uniform_scale_prune": {
       "y": {
-        "dispersion_max_over_min": "428.88268",
+        "dispersion_max_over_min": "210.97142",
         "band_allowed": "1.18",
         "uniform_class_refuted": true
       },
       "y_dim": {
-        "dispersion_max_over_min": "10.434319",
+        "dispersion_max_over_min": "15.209877",
         "band_allowed": "1.18",
         "uniform_class_refuted": true
       }
@@ -174,7 +184,9 @@
       "F_Bor": {
         "value": "4.469138736",
         "structural_tie": "Borromean Hecke factor (mass chain)",
-        "matches": [],
+        "matches": [
+          "mirror"
+        ],
         "matches_all_observables": false
       },
       "Vol(B3)": {
@@ -186,7 +198,9 @@
       "Vol(B3)/hbar_q": {
         "value": "73.95637708",
         "structural_tie": "composite; no single-object tie",
-        "matches": [],
+        "matches": [
+          "4He"
+        ],
         "matches_all_observables": false
       },
       "exp(Vol(B3))/2pi": {
@@ -198,9 +212,7 @@
       "exp(Vol(8_11))/2pi": {
         "value": "631.7158897",
         "structural_tie": "same objection (I2)",
-        "matches": [
-          "mirror(y)"
-        ],
+        "matches": [],
         "matches_all_observables": false
       },
       "exp(Vol(B3)/2pi)": {
@@ -211,36 +223,36 @@
       }
     },
     "guarded_datum_kappaD_vs_q3fact": {
-      "kappa_D_y_dim": "6.042699225",
+      "kappa_D_y_dim": "6.416146162",
       "q3_factorial": "6.120579278",
-      "rel_diff": "0.0127243",
+      "rel_diff": "0.0482907",
       "status": "datum only — single observable, breaks at A≥3"
     },
     "kashaev_color_kernel_probe": {
       "D": {
-        "B_pred_MeV": "26.69105654",
+        "B_pred_MeV": "29.55899635",
         "B_AME_MeV": "2.2245662",
-        "rel_err": "10.99832"
+        "rel_err": "12.287533"
       },
       "T": {
-        "B_pred_MeV": "1011.731775",
+        "B_pred_MeV": "1814.976424",
         "B_AME_MeV": "8.4817962",
-        "rel_err": "118.28273"
+        "rel_err": "212.98491"
       },
       "3He": {
-        "B_pred_MeV": "401.0717045",
+        "B_pred_MeV": "623.3156024",
         "B_AME_MeV": "7.71804132",
-        "rel_err": "50.965478"
+        "rel_err": "79.760853"
       },
       "4He": {
-        "B_pred_MeV": "344967680.0",
+        "B_pred_MeV": "1225472764.0",
         "B_AME_MeV": "28.2956624",
-        "rel_err": "12191538.0"
+        "rel_err": "43309562.0"
       },
       "mirror": {
-        "split_pred_MeV": "610.6600704",
+        "split_pred_MeV": "1191.660821",
         "split_AME_MeV": "0.76375488",
-        "rel_err": "798.54981"
+        "rel_err": "1559.2661"
       }
     },
     "volumes": {
@@ -251,10 +263,10 @@
     },
     "guarded_pattern_geometric_in_A": {
       "per_step_ratios": {
-        "T/D": "3.1427042",
-        "3He/D": "3.2946639",
-        "4He/T": "3.3201721",
-        "4He/3He": "3.1670359"
+        "T/D": "2.8009188",
+        "3He/D": "3.8294349",
+        "4He/T": "4.0951463",
+        "4He/3He": "2.995265"
       },
       "ratio_identification_candidates": {
         "pi": "3.1415927",
@@ -266,31 +278,31 @@
         "D": {
           "A": 2,
           "pred": "6.1205793",
-          "required": "6.0426992",
-          "rel_diff": "0.0128883"
+          "required": "6.4161462",
+          "rel_diff": "-0.0460661"
         },
         "T": {
           "A": 3,
           "pred": "19.646523",
-          "required": "18.990416",
-          "rel_diff": "0.0345493"
+          "required": "17.971104",
+          "rel_diff": "0.0932285"
         },
         "3He": {
           "A": 3,
           "pred": "19.646523",
-          "required": "19.908663",
-          "rel_diff": "-0.0131671"
+          "required": "24.570214",
+          "rel_diff": "-0.200393"
         },
         "4He": {
           "A": 4,
           "pred": "63.063615",
-          "required": "63.05145",
-          "rel_diff": "0.000192932"
+          "required": "73.5943",
+          "rel_diff": "-0.143091"
         },
         "mirror": {
-          "split_pred_MeV": "1.15842",
+          "split_pred_MeV": "3.1011388",
           "split_AME_MeV": "0.76375488",
-          "rel_diff": "0.516743"
+          "rel_diff": "3.06038"
         }
       },
       "status": "GUARDED DATUM — post-hoc shape selection at 4 points with degenerate ratio identification; a constraint on any future derivation (𝒜 grows geometrically in A, ratio ≈ 3.2), NOT a closure; the mirror difference does not close; falsifiable next at A=6 (𝒜(⁶Li) ≈ 650 predicted)"

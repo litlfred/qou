@@ -112,7 +112,7 @@ def load_abs_tr_M(w: "WitnessBuilder | None" = None) -> dict[str, mp.mpf]:
     (``witness_dependency_drift.py``) to walk.
     """
     out: dict[str, mp.mpf] = {}
-    for legacy_name in ["atomic-tr-m-mpfr-50dps.witness.json"]:
+    for legacy_name in ["atomic-tr-m-mpfr-50dps-proton.witness.json"]:
         f = HERE / legacy_name
         if f.exists():
             d = w.add_upstream(f) if w is not None else \
@@ -123,7 +123,13 @@ def load_abs_tr_M(w: "WitnessBuilder | None" = None) -> dict[str, mp.mpf]:
                 if atom is not None and tr_str is not None:
                     out[atom] = abs(mp.mpf(tr_str))
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
-        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
+        # Skip BOTH layers of the primary reference: the proton one is
+        # already loaded above, and the muon one must NOT come in through this
+        # glob -- `atomic-tr-m-*` matches it, so a guard naming only one layer
+        # lets the other in as an "extension" and silently reintroduces the
+        # straddle this file was just fixed for.
+        if ext.name in ("atomic-tr-m-mpfr-50dps-proton.witness.json",
+                        "atomic-tr-m-mpfr-50dps.witness.json"):
             continue
         try:
             d = w.add_upstream(ext) if w is not None else \

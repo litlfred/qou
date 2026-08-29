@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:49:21.879395+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:31:54.275946+00:00",
+  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
   "assertions": [
     {
       "name": "index_trace_equals_b1_exact",
-      "computed": 8.000000087760949,
-      "expected": 8.0,
+      "computed": "8.000000087760949367747275749805909596448341577740308451613864307722285",
+      "expected": 8,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Tr_{H1}(1)=-zeta_{Delta1}(0)=-b1*E_L(0)=2g=8, integer/area-free/q-independent (Epstein E_L(0)=-1 machinery, merged #3834)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "D(q0)=11.357 and D(zeta) in {1.663..3.804} all not in {8,8pi}: D is the wrong object (transcendental dimension, not an integer index)"
     },
     {
@@ -25,15 +25,15 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the count reading gives the exact integer b1=8 where every D object misses; the reciprocal FORM + pi remain the residual wall (orthogonal, open)"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "alpha-em-nonD-index-route",
   "scriptFile": "alpha_em_nonD_index_route_probe.py",
-  "scriptHash": "4e767df70ef8",
+  "scriptHash": "566b727984e7",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

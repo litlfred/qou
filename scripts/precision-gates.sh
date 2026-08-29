@@ -59,6 +59,16 @@ cd "$ROOT"
 # name|script|args|self-test?|blocking?
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
+  # The gate above fires on CONTRADICTIONS (Q0_FLIP) only — its --strict
+  # ignores the 1678 witnesses carrying no q0Anchor at all, which its own
+  # header calls "pre-backfill; not a failure". Correct for a contradiction
+  # detector, but it left the INFLOW ungated: measured on witness files newly
+  # added to main, ~50% arrive unstamped (60/101, 20/44, 16/31 over the last
+  # 500/250/100 commits), so the population refills as fast as it drains.
+  # This ratchet tolerates the backlog and blocks NEW arrivals. Blocking is
+  # safe: it is green at its own baseline, so it can only ever fire on a new
+  # regression. Bean qou-y98b.
+  "q0-anchor refill ratchet|computations/audits/q0_anchor_ratchet.py|--strict|yes|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
   "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "never-raises-dps ratchet|computations/never_raises_dps_audit.py|--strict|yes|yes"

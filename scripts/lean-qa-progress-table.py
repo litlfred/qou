@@ -158,6 +158,54 @@ def sorry_refs(p: Path):
     return out
 
 
+def _entries(e):
+    """Normalise a criterion's value to a list of entry dicts."""
+    if isinstance(e, list):
+        return [x for x in e if isinstance(x, dict)]
+    return [e] if isinstance(e, dict) else []
+
+
+def latest_attributable(e):
+    """The criterion's latest verdict IF it records which block version it
+    judged; otherwise ``None`` (state unknown).
+
+    An entry with no ``field_hash`` -- or an empty ``field_hash: {}`` --
+    records no block version, so its verdict cannot be attributed to the
+    current ``.md``/``.ts``/``.lean``.  The drain agrees: its freshness test
+    is ``e.field_hash?.md === curmd``, and both shapes give ``undefined``,
+    never equal.
+
+    Deliberately does NOT reach back to an older versioned entry.  Doing so
+    was tried and rejected: measured on this corpus, 7,374 criteria have a
+    versioned entry underneath an unversioned latest, and 952 of those are
+    failures (904 of them ``da-*``).  Surfacing them would assert as live a
+    failure that the later -- unattributable, but possibly genuine -- review
+    may have cleared, trading one over-claim for a larger one.  They are
+    counted separately as ``qa_masked``: not live failures, but not clean
+    either, and they are the right re-review queue.
+
+    Measured split of 276,149 criteria: 221,191 attributable (1,789 fail),
+    54,958 unversioned, of which 47,584 have no versioned verdict at all.
+    """
+    es = _entries(e)
+    if not es:
+        return None
+    last = es[-1]
+    return last if last.get("field_hash") else None
+
+
+def masked_fail(e):
+    """True when an unattributable latest verdict sits on top of a versioned
+    FAIL -- the criterion is not clean, but the failure is not live either."""
+    es = _entries(e)
+    if not es or es[-1].get("field_hash"):
+        return False
+    for x in reversed(es):
+        if x.get("field_hash"):
+            return x.get("result") == "fail"
+    return False
+
+
 def collect():
     rows, drill, sorries = [], {}, []
     for num, ch in enumerate(CHAPTERS, 1):
@@ -167,6 +215,7 @@ def collect():
         s = dict(blocks=0, thm=0, lem=0, prop=0, cor=0, prov=0,
                  proved=0, sorry=0, stub=0, missing=0,
                  qa_side=0, qa_fail_blocks=0, qa_fail_crit=0, qa_stale=0,
+                 qa_nover=0, qa_masked=0,
                  da_fail=0)
         fails_here = []
         for ts in sorted(d.glob("*.ts")):
@@ -186,7 +235,7 @@ def collect():
                 s["prov"] += 1
                 lp = resolve_lean(ts, src)
                 if lp is None:
-                    print(f"BINGO: {ch} / {ts.name}")
+                    print(f"unresolved lean.ref: {ch}/{ts.name}", file=sys.stderr)
                     s["missing"] += 1
                 else:
                     cls = classify_lean(lp)
@@ -200,8 +249,13 @@ def collect():
             except Exception:
                 continue
             s["qa_side"] += 1
-            failing = [c for c, e in (data.get("criteria") or {}).items()
-                       if e and (e[-1].get("result") == "fail" if isinstance(e, list) else e.get("result") == "fail")]
+            crits = (data.get("criteria") or {}).items()
+            crits = list(crits)
+            failing = [c for c, e in crits
+                       if (latest_attributable(e) or {}).get("result") == "fail"]
+            s["qa_nover"] += sum(1 for c, e in crits
+                                 if _entries(e) and latest_attributable(e) is None)
+            s["qa_masked"] += sum(1 for c, e in crits if masked_fail(e))
             s["qa_fail_crit"] += len(failing)
             s["da_fail"] += sum(1 for c in failing if c.startswith("da-"))
             if failing:
@@ -226,7 +280,7 @@ def fail_by_criterion():
         except Exception:
             continue
         for c, e in (data.get("criteria") or {}).items():
-            if e and (e[-1].get("result") == "fail" if isinstance(e, list) else e.get("result") == "fail"):
+            if (latest_attributable(e) or {}).get("result") == "fail":
                 out[c] = out.get(c, 0) + 1
     return out
 
@@ -257,14 +311,14 @@ def main():
                  "drafted with `sorry`; **stub** = trivial `: True` "
                  "placeholder; **none** = provable block with no resolvable "
                  "Lean. QA columns read the latest entry per criterion in "
-                 "each `<block>.qa.json`; **stale** = sidecar source hashes "
+                 "each `<block>.qa.json` **that records a field_hash**; **unversioned** = criteria whose only verdicts record no block version, and so are reported as unadjudicated rather than as a live pass or fail; **masked fail** = an unversioned latest verdict sitting on top of a versioned FAIL (re-review queue, not a live failure); **stale** = sidecar source hashes "
                  "drifted from current `.md`/`.ts`.\n")
         L.append("## Per-chapter table\n")
-        L.append("| # | Chapter | blocks | thm/lem/prop/cor | prov | proved | sorry | stub | none | QA sidecars | QA fail blocks | QA fail crit | da-* fails | stale |")
+        L.append("| # | Chapter | blocks | thm/lem/prop/cor | prov | proved | sorry | stub | none | QA sidecars | QA fail blocks | QA fail crit | da-* fails | stale | unversioned | masked fail |")
         L.append("|--:|---|--:|:-:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
         for num, ch, s in rows:
-            L.append(f'| {num} | {ch} | {s["blocks"]} | {s["thm"]}/{s["lem"]}/{s["prop"]}/{s["cor"]} | {s["prov"]} | {s["proved"]} | {s["sorry"]} | {s["stub"]} | {s["missing"]} | {s["qa_side"]} | {s["qa_fail_blocks"]} | {s["qa_fail_crit"]} | {s["da_fail"]} | {s["qa_stale"]} |')
-        L.append(f'| | **TOTAL** | **{T["blocks"]}** | **{T["thm"]}/{T["lem"]}/{T["prop"]}/{T["cor"]}** | **{T["prov"]}** | **{T["proved"]}** | **{T["sorry"]}** | **{T["stub"]}** | **{T["missing"]}** | **{T["qa_side"]}** | **{T["qa_fail_blocks"]}** | **{T["qa_fail_crit"]}** | **{T["da_fail"]}** | **{T["qa_stale"]}** |')
+            L.append(f'| {num} | {ch} | {s["blocks"]} | {s["thm"]}/{s["lem"]}/{s["prop"]}/{s["cor"]} | {s["prov"]} | {s["proved"]} | {s["sorry"]} | {s["stub"]} | {s["missing"]} | {s["qa_side"]} | {s["qa_fail_blocks"]} | {s["qa_fail_crit"]} | {s["da_fail"]} | {s["qa_stale"]} | {s["qa_nover"]} | {s["qa_masked"]} |')
+        L.append(f'| | **TOTAL** | **{T["blocks"]}** | **{T["thm"]}/{T["lem"]}/{T["prop"]}/{T["cor"]}** | **{T["prov"]}** | **{T["proved"]}** | **{T["sorry"]}** | **{T["stub"]}** | **{T["missing"]}** | **{T["qa_side"]}** | **{T["qa_fail_blocks"]}** | **{T["qa_fail_crit"]}** | **{T["da_fail"]}** | **{T["qa_stale"]}** | **{T["qa_nover"]}** | **{T["qa_masked"]}** |')
         L.append("\n## Failing criteria, corpus-wide\n")
         L.append("| Fails | Criterion |")
         L.append("|--:|---|")
@@ -303,19 +357,21 @@ def main():
 
     hdr = ["#", "chapter", "blocks", "thm/lem/prop/cor", "prov", "proved",
            "sorry", "stub", "none", "qa_side", "qa_fail_blocks",
-           "qa_fail_crit", "da_fail", "qa_stale"]
+           "qa_fail_crit", "da_fail", "qa_stale", "qa_nover", "qa_masked"]
     print("\t".join(hdr))
     for num, ch, s in rows:
         print("\t".join(str(x) for x in [
             num, ch, s["blocks"],
             f'{s["thm"]}/{s["lem"]}/{s["prop"]}/{s["cor"]}', s["prov"],
             s["proved"], s["sorry"], s["stub"], s["missing"], s["qa_side"],
-            s["qa_fail_blocks"], s["qa_fail_crit"], s["da_fail"], s["qa_stale"]]))
+            s["qa_fail_blocks"], s["qa_fail_crit"], s["da_fail"], s["qa_stale"],
+            s["qa_nover"], s["qa_masked"]]))
     print("\t".join(str(x) for x in [
         "", "TOTAL", T["blocks"],
         f'{T["thm"]}/{T["lem"]}/{T["prop"]}/{T["cor"]}', T["prov"],
         T["proved"], T["sorry"], T["stub"], T["missing"], T["qa_side"],
-        T["qa_fail_blocks"], T["qa_fail_crit"], T["da_fail"], T["qa_stale"]]))
+        T["qa_fail_blocks"], T["qa_fail_crit"], T["da_fail"], T["qa_stale"],
+        T["qa_nover"], T["qa_masked"]]))
 
 
 if __name__ == "__main__":

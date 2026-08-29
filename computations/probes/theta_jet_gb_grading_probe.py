@@ -52,8 +52,10 @@ from mpmath import mp, mpf, log
 
 mp.dps = 60
 
-Q0 = mpf("1.10997859555733471989976322048322502665620840878015")  # muon-q0 canonical
 M_MAX = 200
+# Q0 is bound BELOW, after the path bridge -- it is read from the anchor now
+# rather than frozen as a literal, and q_parameter is not importable until the
+# bridge has run. See the note at its assignment.
 
 
 # Path bridge — keeps flat-namespace imports (`from witness_base import …`)
@@ -65,6 +67,15 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Was `Q0 = mpf("1.109978595557334…")  # muon-q0 canonical` above the bridge.
+# That literal is the SUPERSEDED pin A, and the comment calling it "canonical"
+# is what made it look maintained. This producer's stem is listed `ideal_muon`,
+# so q_parameter rebinds q_at to the muon closure; reading it here keeps the
+# arithmetic and the witness stamp on the same pin, and follows the next CODATA
+# revision automatically. Bean qou-3f7a.
+from q_parameter import q_at  # noqa: E402
+Q0 = mpf(str(q_at(mp.dps)))
 
 import time as _time  # noqa: E402
 _T0 = _time.monotonic()

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T13:34:19.361716+00:00",
-  "commitSha": "8f5f8d94574bcf6aabe3291eca6c39f29ca2f3fd",
+  "computedAt": "2026-08-24T21:06:58.833110+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "I1_polynomial_identity",
@@ -20,9 +20,9 @@
     },
     {
       "name": "I3_g_equals_sin_arctan_z",
-      "computed": "True",
+      "computed": "False",
       "expected": "True",
-      "passed": true
+      "passed": false
     },
     {
       "name": "det_form_deuteron_needs_supercritical_g",
@@ -31,12 +31,12 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 2,
   "computation": "reeb-g-structural-identity",
   "scriptFile": "reeb_g_structural_identity_probe.py",
   "scriptHash": "ad76764d3923",
-  "scriptCommitSha": "a66995b53850c1ff451324e88c388fb211102bd3",
+  "scriptCommitSha": "0d97cb2c98208bb798ae49535a8e9626b7bb5930",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,10 +48,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -66,7 +66,7 @@
       "q0": "1.10997858275",
       "v": "1.05355521106",
       "[2]_v": "2.00272236386",
-      "z=1/[2]_v": "0.499320334184",
+      "z=1/[2]_v": "0.612688037146",
       "g_landed": "0.446727067905661",
       "E0_MeV": "4.1859814"
     },
@@ -81,8 +81,8 @@
       "classical_limit_v=1": "1/sqrt(5)"
     },
     "I3_projection": {
-      "g=z/sqrt(1+z^2)": "0.446727067905661",
-      "theta=arctan_z_rad": "0.4631037285",
+      "g=z/sqrt(1+z^2)": "0.522428669015885",
+      "theta=arctan_z_rad": "0.5496967408",
       "reading": "g = sin(theta), z = tan(theta); 1-g^2 = cos^2(theta) is the A=2 det factor"
     },
     "headroom_vs_deformation": {
@@ -98,5 +98,7 @@
     },
     "remaining_assumption": "ONE physical identification: magnitude = arc-length-normalized transverse component (I3) ≡ deformed-criticality value (I2). This replaces the three unsubstantiated #3407 'routes'."
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

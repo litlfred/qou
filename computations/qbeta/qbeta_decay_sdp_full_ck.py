@@ -169,28 +169,28 @@ def main() -> None:
     ))
     w.add_assertion(
         "c_4_extracted_matches_empirical",
-        computed=float(abs(c_k[4] - mpf("-1.143537"))),
+        computed=abs(c_k[4] - mpf("-1.143537")),
         expected=0,
         tolerance=1e-5,
         source="SDP-T_β extraction matches empirical sweep c_4",
     )
     w.add_assertion(
         "c_5_extracted_matches_empirical",
-        computed=float(abs(c_k[5] - mpf("-1.222913"))),
+        computed=abs(c_k[5] - mpf("-1.222913")),
         expected=0,
         tolerance=1e-5,
         source="SDP-T_β extraction matches empirical sweep c_5",
     )
     w.add_assertion(
         "c_6_extracted_matches_empirical",
-        computed=float(abs(c_k[6] - mpf("3.497562"))),
+        computed=abs(c_k[6] - mpf("3.497562")),
         expected=0,
         tolerance=1e-5,
         source="SDP-T_β extraction matches empirical sweep c_6",
     )
     w.add_assertion(
         "c_7_extracted_matches_empirical",
-        computed=float(abs(c_k[7] - mpf("57.149243"))),
+        computed=abs(c_k[7] - mpf("57.149243")),
         expected=0,
         tolerance=1e-3,
         source="SDP-T_β extraction matches empirical sweep c_7",

@@ -77,7 +77,7 @@ def S(q):
 
 def Phi(q):
     """Closed-form shape Φ(q) with Φ(q*) = Q_codata/m_e. Elementary + Vol41 constant."""
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     u = sub["u"]
     return (
         sub["Q_A_over_me"]

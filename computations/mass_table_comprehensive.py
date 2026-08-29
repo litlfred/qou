@@ -55,7 +55,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -75,6 +75,53 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
+
+
+def _dp(x, places: int = 6):
+    """Serialize one table cell at its declared decimal width, as a STRING.
+
+    Replaces `round(x, <places>)`, which emitted a JSON float. This table is
+    the single largest raw-float64 witness in the corpus — 75,112 of the
+    487,597 fields in `raw-float64-baseline.json`, 15.4 % of the whole
+    backlog — and 74,850 of those are five columns of `round(..., 6)` over
+    14,972 rows.
+
+    **This is a TYPE fix, not a precision gain, and the two should not be
+    conflated.** The arithmetic upstream of it is now `mpf` end to end (that
+    is the other half of this change), but the values here are quantities of
+    order 1e0–1e5 MeV serialized to six decimal places — ~1e-10 relative,
+    six orders above binary64's floor. So the float64 that was in the
+    arithmetic could not reach these digits, and the expected outcome of the
+    whole drain is that **not one printed digit moves**. That is a checkable
+    prediction, and it was checked; see the PR.
+
+    Full-width serialization (`_precision.fmt`, 60 significant digits) was
+    considered and rejected *here specifically*: it would roughly double a
+    9.9 MB witness to print digits this file's own `set_description` says are
+    meaningless — the per-generator Wedderburn volumes use H_3 weights at
+    every A, so for A > 1 the weights are systematically wrong and these rows
+    are "a coarse diagnostic, not a precision prediction"
+    (docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md). Six decimals is a
+    declared display convention, and it is now declared in one place instead
+    of twenty-three call sites.
+
+    `mpf` implements `__format__`, so `f"{x:.6f}"` is exact-then-round on the
+    full-precision value rather than round-of-a-double.
+    """
+    return None if x is None else f"{x:.{places}f}"
+
+
+def _fmt_or_none(x):
+    """`_precision.fmt`, but preserving `None`.
+
+    `fmt` short-circuits every non-mpf to `str(value)`, so `fmt(None)` is the
+    four-character string `"None"` — which JSON-encodes as a *value*, not a
+    null. Two of the summary fields below are `.get()` misses on the
+    substrate-identity path (documented in the NOTE beside them), so they are
+    `None` on every run of this producer.
+    """
+    return None if x is None else fmt(x)
+
 
 # AME 2020 binding energies (MeV) — used for comparison only.
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
@@ -104,13 +151,16 @@ AME_BINDING = {
 }
 
 # CODATA masses (MeV) for cross-check
+# The five `M_*_MEV_VALIDATION` constants are already `mpf`; `float(...)`
+# downcast the reference values that every `m_err_pct` in the table is
+# measured AGAINST, which is the last place to spend precision.
 CODATA_MASS = {
-    "p": float(M_P_MEV_VALIDATION),
-    "n": float(M_N_MEV_VALIDATION),
-    "D": float(M_D_MEV_VALIDATION),
-    "T": float(M_T_MEV_VALIDATION),
+    "p": M_P_MEV_VALIDATION,
+    "n": M_N_MEV_VALIDATION,
+    "D": M_D_MEV_VALIDATION,
+    "T": M_T_MEV_VALIDATION,
     "3He": None,  # not in codata_constants; derive from AME
-    "4He": float(M_HE4_MEV_VALIDATION),
+    "4He": M_HE4_MEV_VALIDATION,
 }
 
 # Atlas methodology tags (from recursive-atom-knot-atlas.md)
@@ -191,8 +241,11 @@ def borromean_mass_prediction(
     _source = "canonical_mass facade (muon-anchored Hecke energy)"
     linking_weight = linking_weight_family_a(q)   # reported for diagnostics only
 
-    # Base definition (q-CLT statistical average)
-    m_nucleus_unbound_approx = Z * float(m_p_pred) + N * float(m_n_pred)
+    # Base definition (q-CLT statistical average). The two operands are mpf
+    # by construction three lines up; `float(...)` on each of them collapsed
+    # them to binary64 immediately after the `mp.mpf(str(...))` that had just
+    # parsed them faithfully, so the sum was a double for no reason.
+    m_nucleus_unbound_approx = Z * m_p_pred + N * m_n_pred
 
     # TRUTH-TRACKING OVERRIDE (per-knot VolDensity, symbolic top-down)
     m_nucleus_unbound_symbolic = None
@@ -213,7 +266,7 @@ def borromean_mass_prediction(
                     tr_M_K = closed_form_tau_M(Z, N, q, tau_p_H3, tau_n_H3)
                     vol_K_used = mp.mpf(str(vol_data[vol_key]))
                     m_pb = m_e * per_knot_density_per_block(vol_K_used, tr_M_K, q)
-                    m_nucleus_unbound_symbolic = float(m_pb)
+                    m_nucleus_unbound_symbolic = m_pb
                     _source += " [OVERRIDE: per-knot VolDensity]"
                 else:
                     _source += " [ERROR: missing Vol(K)]"
@@ -223,15 +276,18 @@ def borromean_mass_prediction(
             _source += f" [ERROR: {e}]"
 
     m_avg = (m_p_pred + m_n_pred) / 2
+    # Every value below stays `mpf`. This is an INTERNAL dict — the caller
+    # decides the serialized width (`_dp`) — so casting to `float` here only
+    # threw away digits on the way between two places that both wanted them.
     return {
-        "linking_weight_family_a": float(linking_weight),
+        "linking_weight_family_a": linking_weight,
         "source": _source,
-        "m_avg_MeV": float(m_avg),
-        "m_p_pred_MeV": float(m_p_pred),
-        "m_n_pred_MeV": float(m_n_pred),
-        "m_nucleus_unbound_approx_MeV": float(m_nucleus_unbound_approx),
-        "m_nucleus_unbound_symbolic_MeV": float(m_nucleus_unbound_symbolic) if m_nucleus_unbound_symbolic is not None else None,
-        "vol_K": float(vol_K_used) if vol_K_used else None,
+        "m_avg_MeV": m_avg,
+        "m_p_pred_MeV": m_p_pred,
+        "m_n_pred_MeV": m_n_pred,
+        "m_nucleus_unbound_approx_MeV": m_nucleus_unbound_approx,
+        "m_nucleus_unbound_symbolic_MeV": m_nucleus_unbound_symbolic,
+        "vol_K": vol_K_used,
         "is_per_knot": m_nucleus_unbound_symbolic is not None,
     }
 
@@ -266,9 +322,11 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
 
     try:
         from binding_canonical import binding_canonical
+        # `Q_BETA_MEV` is already an `mpf`; `float(Q_BETA_MEV)` downcast the
+        # MeV-dimensioned multiplier of the whole formula before it entered.
         r = binding_canonical(
             Z, N,
-            Q_beta_n_mev=float(Q_BETA_MEV),
+            Q_beta_n_mev=Q_BETA_MEV,
             use_closed_form=True,
             verbose=False,
         )
@@ -279,11 +337,20 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
 
         # E₀×q⁻¹ scale (PR #1361): B = E₀ × Δtr × (1-ℏ_q)
         # where E₀ = m_e/(q₀(q₀-1)), (1-ℏ_q) = q₀⁻¹
+        #
+        # Three `float(...)` casts used to sit inside this two-line
+        # calculation, one of them around a product of two mpf values
+        # (`q_val * (q_val - 1)`) that had to be computed at full precision
+        # first in order to be thrown away. `q_str` is the 50-digit q₀
+        # string; there is no reason for the scale built from it to be a
+        # double.
         import mpmath as _mp
         q_val = _mp.mpf(q_str)
-        E_0 = float(M_E_MEV) / float(q_val * (q_val - 1))
-        scale_ratio = E_0 / float(Q_BETA_MEV) * float(1 / q_val)
-        B_E0 = B_qbeta * scale_ratio if B_qbeta else None
+        E_0 = M_E_MEV / (q_val * (q_val - 1))
+        scale_ratio = E_0 / Q_BETA_MEV / q_val
+        # `if B_qbeta` (the previous guard) also nulls a legitimately ZERO
+        # binding; the question being asked is whether the value exists.
+        B_E0 = B_qbeta * scale_ratio if B_qbeta is not None else None
 
         return {
             "B_pred_MeV": B_E0,  # use E₀×q⁻¹ as primary
@@ -310,14 +377,24 @@ def try_binding_symbolic_log_trace(Z: int, N: int) -> dict | None:
         if r.get("status") != "solved":
             return None
             
-        tr = float(r["tr_M_atom"])
+        # `tr_M_atom` is the decimal string `binding_canonical` serializes at
+        # the compute dps. `float(...)` read that decimal as a binary64 and
+        # discarded ~34 of its digits before `log` ever saw it — the same
+        # defect `binding_factor_f_sequence.py` documents at length for these
+        # exact two fields. `mpmathify` parses a decimal as a decimal.
+        # (`use_closed_form=True` traces are real by construction, so a
+        # complex repr cannot reach here; the strip is defensive.)
+        tr_s = str(r["tr_M_atom"]).replace("(", "").replace(")", "")
+        tr = mp.mpmathify(tr_s.split("+")[0] if "j" in tr_s else tr_s)
         if tr <= 0:
             return None
-            
-        # B = -alpha * ln|tau_M|
-        alpha = float(M_E_MEV) * 8.0 * float(mp.catalan)
-        B_pred = -alpha * math.log(tr)
-        
+
+        # B = -alpha * ln|tau_M|.  `float(mp.catalan)` truncated a constant
+        # mpmath will supply at any precision, to 17 digits, in order to
+        # multiply it by an m_e that was itself already mpf.
+        alpha = M_E_MEV * 8 * mp.catalan
+        B_pred = -alpha * mp.log(tr)
+
         return {
             "B_pred_MeV": B_pred,
             "method": "Exact symbolic (-alpha * ln|tau_M|)"
@@ -336,14 +413,24 @@ def try_binding_q_clt_proxy(Z: int, N: int) -> dict | None:
         from codata_constants import M_E_MEV
         
         vols = atom_per_generator_volumes(Z, N, include_inter=True)
-        sum_log_V = 0.0
+        # This accumulates 3A logs — up to ~1254 terms at A = 418 — and it did
+        # so in binary64. Be precise about what moving it to mpf buys and what
+        # it does not: `atom_per_generator_volumes` may itself hand back
+        # doubles, in which case the INPUTS are still f64 and no digit is
+        # recovered. What is fixed is the SUMMATION, whose error grew with A
+        # and so was worst exactly where the table is least checked. Claiming
+        # more than that would be the "float64 agreement reported as exact"
+        # error AGENTS.md forbids.
+        sum_log_V = mp.mpf(0)
+        _tiny = mp.mpf("1e-30")
         for v in vols:
             x = v["full"] if isinstance(v, dict) else v
-            if abs(x) > 1e-30:
-                sum_log_V += math.log(abs(x))
-                
+            xm = mp.mpmathify(x) if isinstance(x, str) else mp.mpf(x)
+            if abs(xm) > _tiny:
+                sum_log_V += mp.log(abs(xm))
+
         # Binding energy is the negative of the mass correction
-        alpha = float(M_E_MEV) * 8.0 * float(mp.catalan)
+        alpha = M_E_MEV * 8 * mp.catalan
         B_pred = -alpha * sum_log_V
         
         return {
@@ -458,9 +545,9 @@ def main() -> int:
         if m_observed is None and B_AME > 0:
             # Derive from AME: m = Z·m_p + N·m_n - B_AME (using CODATA nucleon masses)
             m_observed = (
-                Z * float(M_P_MEV_VALIDATION)
-                + N * float(M_N_MEV_VALIDATION)
-                - B_AME
+                Z * M_P_MEV_VALIDATION
+                + N * M_N_MEV_VALIDATION
+                - mp.mpf(repr(B_AME))
             )
 
         # Errors against Observed
@@ -492,15 +579,21 @@ def main() -> int:
         row = {
             "atom": name,
             "Z": Z, "N": N, "A": A,
-            "m_approx_MeV": round(m_approx, 6) if m_approx else None,
-            "m_symbolic_MeV": round(m_symbolic, 6) if m_symbolic else None,
-            "m_observed_MeV": round(m_observed, 6) if m_observed else None,
-            "m_err_pct_approx": round(m_err_pct_approx, 4) if m_err_pct_approx is not None else None,
-            "m_err_pct_sym": round(m_err_pct_sym, 4) if m_err_pct_sym is not None else None,
-            "B_pred_MeV": round(B_pred, 6) if B_pred else None,
-            "B_qCLT_MeV": round(B_qCLT, 6) if B_qCLT else None,
-            "B_AME_MeV": round(B_AME, 6),
-            "B_err_pct": round(B_err_pct, 4) if B_err_pct is not None else None,
+            # Decimal strings at the declared width — see `_dp`. The truthiness
+            # guards are kept EXACTLY as they were (`if m_approx`, not
+            # `is not None`) so that which cells are null does not change:
+            # this commit is meant to move the type and nothing else, and a
+            # null/not-null flip would be indistinguishable from one in a diff
+            # of 14,972 rows.
+            "m_approx_MeV": _dp(m_approx) if m_approx else None,
+            "m_symbolic_MeV": _dp(m_symbolic) if m_symbolic else None,
+            "m_observed_MeV": _dp(m_observed) if m_observed else None,
+            "m_err_pct_approx": _dp(m_err_pct_approx, 4) if m_err_pct_approx is not None else None,
+            "m_err_pct_sym": _dp(m_err_pct_sym, 4) if m_err_pct_sym is not None else None,
+            "B_pred_MeV": _dp(B_pred) if B_pred else None,
+            "B_qCLT_MeV": _dp(B_qCLT) if B_qCLT else None,
+            "B_AME_MeV": _dp(B_AME),
+            "B_err_pct": _dp(B_err_pct, 4) if B_err_pct is not None else None,
             "binding_method": B_method,
             "atlas_methodology_tag": atlas_tag,
             "caveats": caveats,
@@ -526,7 +619,10 @@ def main() -> int:
     # Summary
     print()
     n_computed = sum(1 for r in rows if r["m_approx_MeV"] is not None)
-    n_binding = sum(1 for r in rows if r["B_pred_MeV"] and r["B_pred_MeV"] > 0)
+    # `r["B_pred_MeV"]` is now a decimal STRING, so `> 0` would compare a str
+    # to an int and raise. Compare the value, not its serialization.
+    n_binding = sum(1 for r in rows
+                    if r["B_pred_MeV"] and mp.mpf(r["B_pred_MeV"]) > 0)
     n_gated = sum(1 for r in rows if any("gated" in c for c in r["caveats"]))
     print(f"Summary: {n_computed}/{len(rows)} masses computed; "
           f"{n_binding}/{len(rows)} binding energies computed; "
@@ -548,11 +644,16 @@ def main() -> int:
             "path",
             "family_a" if "linking_weight_family_a" in nucleon else "substrate_identity",
         ),
-        "linking_weight_family_a": nucleon.get("linking_weight_family_a"),
-        "vol_density_borromean_q": nucleon.get("vol_density_borromean_q"),
-        "delta_m_over_M_N": nucleon.get("delta_m_over_M_N"),
-        "m_p_pred_MeV": m_p_pred,
-        "m_n_pred_MeV": m_n_pred,
+        # These three come straight out of `borromean_mass_prediction`, which
+        # now returns mpf. `fmt` is the canonical serializer and is used here
+        # rather than `_dp` because these are single scalars, not 14,972-row
+        # columns — the file-size argument that justifies six decimals in the
+        # table does not apply to three fields, so they keep their digits.
+        "linking_weight_family_a": _fmt_or_none(nucleon.get("linking_weight_family_a")),
+        "vol_density_borromean_q": _fmt_or_none(nucleon.get("vol_density_borromean_q")),
+        "delta_m_over_M_N": _fmt_or_none(nucleon.get("delta_m_over_M_N")),
+        "m_p_pred_MeV": _fmt_or_none(m_p_pred),
+        "m_n_pred_MeV": _fmt_or_none(m_n_pred),
         "production_tier": (
             "VolDensity(𝓑₃, q) via PROVED Family A linking_weight "
             "+ flavor-split (PROVED) — PR #1080 canonical framing"
@@ -563,14 +664,20 @@ def main() -> int:
         ),
     })
 
+    # The last three raw float64 fields in this witness. `add_assertion`
+    # documents strings as the drained convention (`passed` coerces with
+    # `float()` either way), and this particular assertion is a BOOLEAN that
+    # was being projected onto a float — there was never a real number here to
+    # lose, only a type. With these three gone the witness carries no raw
+    # float64 at all, down from 75,112.
     builder.add_assertion(
         name="all_A_leq_4_masses_computed",
-        computed=float(all(
+        computed="1" if all(
             r["m_approx_MeV"] is not None
             for r in rows if r["A"] <= 4
-        )),
-        expected=1.0,
-        tolerance=0.0,
+        ) else "0",
+        expected="1",
+        tolerance="0",
         source="All A ≤ 4 isotopes have absolute mass predictions",
     )
 

@@ -85,8 +85,14 @@ def main() -> int:
 
     d_wit = json.loads((ROOT / "free-neutron-decay.witness.json").read_text())
     params = d_wit.get("parameters")
+    # The upstream read is the intended path, but free-neutron-decay.witness.json
+    # carries `parameters: null`, so it NEVER fires and the fallback below ran on
+    # every invocation -- silently pinning the arithmetic to the superseded value
+    # A while the witness stamp (q0Value, taken from the anchor) said otherwise.
+    # Fall back to the ANCHOR, not to a frozen digit string. Bean qou-3f7a.
+    from q_parameter import q_at  # noqa: E402
     q0 = mp.mpf(str(params["q"])) if params and "q" in params else \
-        mp.mpf("1.1099785955573347198997632204832250266562084087802")
+        mp.mpf(str(q_at(mp.dps)))
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     dn_mine = dnet_f(q0)

@@ -1,0 +1,163 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1312.3086v1",
+ "source": {
+  "file": "1312.3086v1.pdf",
+  "sha256": "ff328e7c7cbdc70c7f95dfdf726276f9afbb82b13af28c795e2cd43db608734e",
+  "bytes": 522391,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1312.3086",
+   "version": "1",
+   "primary_class": "quant-ph",
+   "stamp_date": "11 Dec 2013"
+  },
+  "doi": null,
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities",
+  "authors_raw": "E. Brion, F. Carlier, V. M. Akulin",
+  "title_lines": [
+   "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210123083211-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The sequence",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "At the end of this sequence, the states of the subn-",
+   "page": 5,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "P+\u221e",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 14853,
+   "n_words": 2493
+  },
+  {
+   "id": "sec-001-2-the-sequence",
+   "number": "2",
+   "title": "The sequence",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 5180,
+   "n_words": 1047
+  },
+  {
+   "id": "sec-002-iv-at-the-end-of-this-sequence-the-states-of-the",
+   "number": "IV",
+   "title": "At the end of this sequence, the states of the subn-",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 11149,
+   "n_words": 1999
+  },
+  {
+   "id": "sec-003-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2648,
+   "n_words": 458
+  },
+  {
+   "id": "sec-004-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1086,
+   "n_words": 167
+  },
+  {
+   "id": "sec-005-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1347,
+   "n_words": 271
+  },
+  {
+   "id": "sec-006-2-p",
+   "number": "2",
+   "title": "P+\u221e",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4056,
+   "n_words": 802
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 40319
+ }
+}

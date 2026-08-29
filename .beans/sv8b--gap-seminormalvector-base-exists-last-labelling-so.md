@@ -1,11 +1,11 @@
 ---
 # sv8b
 title: 'GAP: seminormalVector_base_exists — the last labelling sorry (brick-5 OV)'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-07T22:10:00Z
-updated_at: 2026-08-07T22:10:00Z
+updated_at: 2026-08-25T11:12:14Z
 ---
 
 ## Priority escalation (2026-08-08) — this blocks BOTH PlancherelSnData axioms
@@ -185,3 +185,61 @@ dependents (built from an older source tree), so `#print axioms` reported a
 phantom `sorryAx` that vanished after rebuilding the cone from source. Rebuild
 the cone with `-DautoImplicit=false` (matching the lakefile) before believing any
 axiom query.
+
+
+---
+
+## CLOSED 2026-08-25 — the gap no longer exists. Measured, not read.
+
+`seminormalVector_base_exists` is **proved**, sorry-free. Found by attempting to work this
+bean, not by auditing it.
+
+Verified per this bean's own caveat — the root Mathlib cache here is restored
+(`oleans=6990 traces=0`), so the whole transitive `QOU.*` cone was **rebuilt from source**
+with `lean -o` in topological order before printing anything:
+
+    CONE_REBUILD_DONE  files=115  failures=0
+    EXTRA_DONE         files=4    failures=0
+
+`#print axioms` against that fresh cone — all `[propext, Classical.choice, Quot.sound]`,
+**no `sorryAx`**:
+
+    SeminormalBaseExists.seminormalVector_base_exists'
+    JucysMurphy.seminormalVector_base_exists
+    SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplit
+    OVTopAssembly.identityB_general
+    PlancherelSnDataGeneral.plancherelSnDataGeneral
+    PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general
+    PlancherelSnDataGeneral.twoM_eq_plancherel_hook_sum_general
+
+### Why a grep for `sorry` in JucysMurphy.lean disagrees with this bean
+
+It cannot be discharged in place. The proof runs through
+`ColSuperstandardEigen.jm_eigen_colSuperstandard'`, which is DOWNSTREAM of the statement, so
+`SeminormalBaseExists.lean` restates and proves it there and the upstream declaration
+delegates. The five files that did the work — `ColSuperstandardTableau`, `ColSuperstandardSYT`,
+`ColSuperstandardEigen`, `SeminormalBaseExists`, `JucysMurphyOV` — did not exist when this bean
+was written.
+
+### What else closed with it
+
+- **The §3b-cond carrier is inhabited.** `SnIsotypicSpechtSplit` has an instance for every
+  char-0 field, so everything carrying `[SnIsotypicSpechtSplit ℚ]` is unconditional.
+- **Identity I holds at every `n` with NO hypothesis.** `PlancherelSnDataGeneral`. The per-`n`
+  `decide` instances (2…12) stay registered and stay the resolvable ones in range;
+  `plancherelSnDataGeneral` is deliberately a `def`, since `PlancherelSnData` carries data and a
+  competing general instance would make `h.parts` / `h.dim` resolution-dependent.
+
+### Corrected as durable artifacts
+
+- `docs/coordination/s5-so3-keystone.md` — "only the general-`n` discharge remains open" struck
+  and replaced with the measurement.
+- `docs/coordination/2026-06-29-ov-standard-basis-brick4.md` — its `identityB_general` axiom
+  record (`sorryAx` present) annotated as accurate-when-written but superseded.
+- `docs/audits/2026-08-25-ov-general-n-chain-is-closed.md` — the measurement.
+
+**The lesson:** a HIGH-priority bean pointing at closed work costs the next agent a session.
+This one nearly did. Beans go stale exactly as source-file `## Status` notes do, and the same
+rule applies — the corpus is the source of truth, and the corpus means a source-rebuilt
+`#print axioms`, not a docstring and not a bean. This bean's own caveat warned about this class
+of error, about its own file.
