@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9212088v1",
+ "source_sha256": "ecb2c02ec6fe11bd",
+ "brief": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition",
+ "extended": "**Random matrix theory and spectral sum rules for the Dirac operator in QCD1**\n\n*E.V. Shuryak and J.J.M. Verbaarschot*\n\n18 pp, 10 sections.\n\n**Abstract.** We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga. This equivalence holds for an arbitrary number of ﬂavors and any value of the QCD vacuum angle. In this model, moments of the inverse squares of the eigenvalues of the Dirac operator obey sum rules, which we conjecture to be universal. In other words, the validity of the sum rules depends only on the symmetries of the theory but not on its details. To illustrate this point we show that the sum rules hold for an interacting liquid of instantons. The physical interpretation is that the way the thermodynamic limit of the spectral density near zero is approached is universal. However, its value, i.e. the chiral condensate, is not. SUNY-NTG-92/45 December 1992 1Dedicated to Hans Weidenm¨uller’s 60th birthday.\n\n**Outline.** Abstract; 1 Introduction; 2 Random matrix model; 3 Calculation of the partition function; 4 Sum rules for one and two ﬂavors; 5 Sum rules in the instanton liquid; 6 Discussion and conclusions; Acknowledgements; 2 (σ −i¯σ −m); References",
+ "tokens": {
+  "brief": 48,
+  "extended": 320
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-random-matrix-model",
+   "title": "Random matrix model",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-3-calculation-of-the-partition-function",
+   "title": "Calculation of the partition function",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-004-4-sum-rules-for-one-and-two-ﬂavors",
+   "title": "Sum rules for one and two ﬂavors",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-005-5-sum-rules-in-the-instanton-liquid",
+   "title": "Sum rules in the instanton liquid",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-006-6-discussion-and-conclusions",
+   "title": "Discussion and conclusions",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-007-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-008-2-σ-iσ-m",
+   "title": "(σ −i¯σ −m)",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "16-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

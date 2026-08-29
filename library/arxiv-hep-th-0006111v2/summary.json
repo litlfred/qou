@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0006111v2",
+ "source_sha256": "e024febd3d0886a3",
+ "brief": "Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard — 5 sections: (ζ, {µ}) = ζ; (ζ) = ζ; (ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i",
+ "extended": "**Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard**\n\n*The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark*\n\n6 pp, 5 sections.\n\n**Outline.** 1 (ζ, {µ}) = ζ; 1 (ζ) = ζ; 1 (ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i −j)Ii+j+3; 1 (ζ) = 1; 1 (ζ)",
+ "tokens": {
+  "brief": 37,
+  "extended": 70
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-ζ-µ-ζ",
+   "title": "(ζ, {µ}) = ζ",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-001-1-ζ-ζ",
+   "title": "(ζ) = ζ",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-1-ζ-const-ζ3ν2eζ28-pf-i-jiij3ζ",
+   "title": "(ζ) = const. ζ(3−ν)/2e−ζ2/8 Pf [(i −j)Ii+j+3(ζ)] ,",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-1-ζ-1",
+   "title": "(ζ) = 1",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-1-ζ",
+   "title": "(ζ)",
+   "pages": "4-6"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
