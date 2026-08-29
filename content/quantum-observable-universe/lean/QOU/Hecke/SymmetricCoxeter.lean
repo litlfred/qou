@@ -52,8 +52,19 @@ surjective half of that bridge.
 the three families, so `|(Aₙ n).Group| ≤ (n+1)!`.
 
 That is the classical hard half of the presentation theorem for `S_n`, and
-nothing here bears on it.  It is normally obtained from a length/exchange
-argument or the geometric representation.  **Do not read this file as
+nothing here bears on it.  It is normally obtained from an order bound
+(`|W(Aₙ)| ≤ (n+1)!` by induction over parabolics) or the geometric
+representation.
+
+**How hard: Mathlib has never done it for any group.**  Measured — the only
+`CoxeterSystem` values in all of Mathlib are the tautological
+`CoxeterMatrix.toCoxeterSystem` (the system *on the presented group itself*) and
+`CoxeterSystem.map` (transport along an existing `MulEquiv`); there are **zero**
+`IsCoxeterGroup` instances.  So Mathlib carries the whole theory —
+length, inversions, the exchange property — with **no concrete group** ever
+plugged into it.  Completing this bridge is therefore a genuine Mathlib
+contribution, not a repo chore, and the surjection above is the first half of
+something upstream does not have.  **Do not read this file as
 `CoxeterSystem (Aₙ n) (Perm (Fin (n+1)))`** — it is the surjection only.
 
 Scope note (AGENTS.md): the above is a **scope-(a)** statement about what this
@@ -177,5 +188,36 @@ theorem toPerm_surjective (n : ℕ) : Function.Surjective (toPerm n) := by
   | mul x y _ _ hx hy =>
       obtain ⟨a, rfl⟩ := hx; obtain ⟨b, rfl⟩ := hy
       exact ⟨a * b, map_mul _ _ _⟩
+
+/-! ### The parabolic inclusion
+
+The order-bound route to injectivity (`|W(Aₙ)| ≤ (n+1)!` by induction) needs the
+smaller presented group to sit inside the larger one.  That map is built here;
+the induction itself is not done — see the header. -/
+
+/-- The `Aₙ` matrix entries depend only on the underlying naturals, so the
+    inclusion `Fin n ↪ Fin (n+1)` preserves them. -/
+theorem An_castSucc (n : ℕ) (i j : Fin n) :
+    Aₙ (n + 1) i.castSucc j.castSucc = Aₙ n i j := by
+  simp only [Aₙ, Matrix.of_apply]
+  by_cases h : i = j
+  · subst h; simp
+  · have h' : i.castSucc ≠ j.castSucc := by simpa [Fin.ext_iff] using h
+    simp [h, h']
+
+/-- The parabolic inclusion `W(Aₙ) →* W(A_{n+1})`. -/
+def incl (n : ℕ) : (Aₙ n).Group →* (Aₙ (n + 1)).Group :=
+  PresentedGroup.toGroup (f := fun i : Fin n => CoxeterMatrix.simple (Aₙ (n+1)) i.castSucc) (by
+    rintro r ⟨⟨i, j⟩, rfl⟩
+    show (FreeGroup.lift fun i : Fin n =>
+      CoxeterMatrix.simple (Aₙ (n+1)) i.castSucc) (CoxeterMatrix.relation (Aₙ n) i j) = 1
+    have h : ((FreeGroup.lift fun i : Fin n =>
+        CoxeterMatrix.simple (Aₙ (n+1)) i.castSucc) (CoxeterMatrix.relation (Aₙ n) i j))
+        = (CoxeterMatrix.simple (Aₙ (n+1)) i.castSucc *
+           CoxeterMatrix.simple (Aₙ (n+1)) j.castSucc) ^ (Aₙ n i j) := by
+      simp [CoxeterMatrix.relation]
+    rw [h, ← An_castSucc n i j]
+    exact (Aₙ (n+1)).toCoxeterSystem.simple_mul_simple_pow _ _)
+
 
 end QOU.Hecke.SymmetricCoxeter
