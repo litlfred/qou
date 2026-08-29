@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-21T21:43:00Z
+updated_at: 2026-08-29T01:40:51Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -81,3 +81,14 @@ PATTERN WORTH RECORDING: three times this arc I wrote 'the corpus lacks X' after
 checking only the obvious upstream -- the Webster-Williamson citation (it was
 cited), qBracket (it existed, definitionally identical to my draft's balQInt),
 and now #SYT. Grep content/**/*.lean before writing a scope note.
+
+## 2026-08-29 — n=3 template established (qou-sf1t / PR pending)
+
+The Molien<->Jones-Markov identification is now EXACT for n=3: y_lambda =
+M_nu(u=q^2, t=qz/(q^2-qz-1)) * (q^2-qz-1)^2, u=q^2 FORCED by an overdetermined
+elimination (not fitted). General-n is the open target this bean names. The n=4
+test: does the same monomial u=q^2 and a perfect-square normaliser Z_n reproduce the
+S_4 Jones-Markov weights from the general S_n Molien series? Template + Lean
+(MolienJonesMarkovN3.lean) + probe (molien_jones_markov_n3_identification_probe.py)
+ready to generalise. Note: the refuted f^l q^-k/[n]! form had the WRONG normaliser;
+the right one is the Molien Z, so the general-n normaliser is a Poincare series.
