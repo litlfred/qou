@@ -116,3 +116,52 @@ is not orphaned (this arc had 11 orphaned modules once).
 
 **Still open, and unchanged:** steps 1–3 above — hyperbolic 3-manifolds in Mathlib,
 Mostow rigidity, Thurston hyperbolisation. This bean stays open for those.
+
+### 2026-08-29 (later) — the reuse pass found the corpus already had a SECOND volume
+
+Running the prepare-merge reuse pass against 114 new commits on main turned up
+something the first pass of this bean missed entirely, and it changes what the
+bean's second clause ("connect it to the triangulation volume") means.
+
+**`QOU.Encounter.MostowRigidity` already carries a manifold-side volume**, and it
+has *instances*: `figureEight` sets `volume := 2.02988321281930`, a decimal
+literal kept in sync with `hyperbolic-volumes.witness.json` by
+`codemod-leanval.ts`. So `volumeInvariant FigureEight = 2.0298…` holds by `rfl`.
+
+That is the SAME disease this bean is about, one file over: the number is
+**entered**, not computed, and nothing in that module mentions a triangulation.
+So the corpus had two carriers for one quantity, in different namespaces, with no
+theorem relating them — and this arc was about to add the second without noticing
+the first. Whichever a reader picks, nothing tells them the other exists.
+
+**Not a duplicate, but it needed connecting.** New
+`QOU/Encounter/MostowTriangulationBridge.lean` (layering: Encounter imports
+MathlibExt, never the reverse) spends the bridge's transport on the Mostow
+invariant:
+
+- `mostow_volume_eq_triangulation_volume` — the invariant equals the
+  Bloch–Wigner sum, composed from three inputs, projecting none.
+- `figureEight_literal_eq_triangulation_volume` — what the bridge buys: under it
+  the entered literal *is* the sum of a realising triangulation. It does **not**
+  verify the literal; `compat` remains assumed.
+- `volumeInvariant_eq_of_two_realisations` — well-definedness in the form the
+  Mostow module can consume.
+
+`compat` (that the two notions agree) is an **explicit hypothesis argument, not a
+class field**, deliberately: a field would be inferred silently at every use site
+and would read as established.
+
+**A distinction worth keeping straight, since this arc recorded its sibling.**
+The corollary `ManifoldVolumeBridge` could not state was over a hypothesis
+**provably uninhabited** (`IdealTetrahedron.im_pos`) — vacuous. The hypotheses
+here are **open**: no instance exists, but nothing proves none can. Same shape on
+the page, opposite epistemic status.
+
+Verified: `lean`-direct exit 0 on both modules; `#print axioms` on all 10
+declarations = `[propext, Classical.choice, Quot.sound]`, zero `sorryAx`; all 9
+registry entries confirmed by `lean-axiom-guard.py` against freshly-rebuilt
+oleans (the guard refuses to report on a stale olean set, which is why the
+rebuild came first).
+
+**Still open, unchanged:** hyperbolic 3-manifolds in Mathlib, Mostow
+hyperbolisation, Thurston. The bean stays open.
