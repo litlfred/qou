@@ -1,6 +1,6 @@
 ---
 # qou-prop3b
-title: '157 provable blocks sit downstream of a conjecture, and the audit that checks this cannot run here'
+title: 'CORRECTED: 34 propagation violators, not ~150 — my screen inverted the answer; 9 platform scripts unrunnable'
 status: todo
 type: task
 priority: high
@@ -105,3 +105,89 @@ upstream and the authoritative list replaces my screen.
 3. **Then** fix `crystal-basis-resolves-mass-tower-open-problems`, whose Lean is
    a self-assuming projection regardless of which policy wins — that part is a
    defect under any reading.
+
+---
+
+## 🛑 CORRECTION 2026-08-29 — I ran the real audit, and it INVERTS this bean
+
+I fixed `requirePaper()` locally and ran
+`conjectural-propagation-audit.ts quantum-observable-universe`. The authoritative
+result:
+
+```
+Class-axiomatised conjectures (§3b-cond eligible)          : 145
+Violators (cone touches a NON-class-axiomatised conjecture):  34
+Conditional-on-class (cone fully class-axiomatised)        : 121
+```
+
+**121 of 155 are FINE.** "Conditional-on-class" is a *recognised, non-violating*
+status — AGENTS.md §3b-cond says the audit "reports such blocks separately as
+conditional-on-class rather than as violations." The actionable population is
+**34**, not ~150.
+
+My screen said the opposite: 1 compliant in a sample of 15. **It was measuring
+the wrong thing.** §3b-cond eligibility turns on whether the *upstream
+conjectures in the cone are class-axiomatised* — an upstream property. I tested
+two downstream markers (an instance binder in the block's own `.lean`, a banner
+in its own `.md`) and read their absence as non-compliance. Those are
+requirements 2 and 3 of five; the audit's classification is the cone condition.
+Different question, inverted answer.
+
+Two specific retractions:
+
+- **"All five in the KL cone fail the screen" is wrong.**
+  `prop:bloch-group-quotient-construction` is in the conditional-on-class list.
+- **`prop:crystal-basis-resolves-mass-tower-open-problems` is NOT a propagation
+  violator.** It does not appear among the 34; its cone conjecture
+  `conj:kazhdan-lusztig-classical-limit` is class-axiomatised.
+
+**What survives, and it is the part that matters for that block.** The
+self-assuming projection is a defect *independent* of propagation:
+
+```lean
+class CrystalBasisCorrespondence where
+  reduction_holds : Prop
+  reduction_holds_proof : reduction_holds
+theorem crystal_basis_reduction [ctx] : ctx.reduction_holds := ctx.reduction_holds_proof
+```
+
+That is §3b-cond **item 5** (non-degeneracy) and `proof-statement-integrity` —
+the class carries the conclusion plus its proof and the theorem projects it;
+`⟨True, trivial⟩` inhabits it. The propagation audit does not check item 5, so
+being classified conditional-on-class does not clear it. Fix that block on its
+own merits, not as part of a tranche.
+
+**And the policy question I raised is smaller than I said.** 34 blocks, listed by
+the audit with the offending conjecture named for each, is a reviewable tranche —
+not a decision about a fifth of the paper.
+
+## The platform defect is 9 scripts, not 2
+
+Also undercounted. Bare `requirePaper()` — unrunnable wherever a folio holds more
+than one paper:
+
+```
+audit-wiring.ts                     prune-transitive-deps.ts
+conditional-class-banner-audit.ts   qa-agent-drain-queue.ts
+conjectural-propagation-audit.ts    validate-references.ts
+conjectural-propagation-sweep.ts    wall-violations-sweep.ts
+generate-index.ts
+```
+
+Nine, and they include **both** §3b-cond enforcers (propagation *and* the
+conditional-class banner audit), the bibliography cross-check, and the §7c wall
+sweep. The idiom to fix them already exists in the same directory —
+`find-dangling-remarks.ts` calls `requirePaper(process.argv[2])`.
+
+Patched six locally to prove it; the propagation audit then ran first time and
+produced the numbers above. Not pushed — a second repository, awaiting the
+owner.
+
+## Lesson, recorded because it is the fifth time this session
+
+I substituted a hand-rolled proxy for an authoritative tool that was one
+one-line fix away, and quoted the proxy. I had already written "sample before
+quoting" into a detector docstring earlier in the same session. The rule needed
+here is stronger: **when a corpus tool exists for the question, fix the tool
+rather than approximate it** — the approximation was not merely imprecise, it
+pointed the opposite way.
