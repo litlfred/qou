@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T02:54:22Z
+updated_at: 2026-08-29T03:25:06Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -105,3 +105,41 @@ Still **scope-(a)** — this is stated as a finding, not an adjudication.
 Nothing is wired, `hecke_core` is untouched. But `qou-bg3w` is now a much
 smaller question than it was: not "which of four" but "is the missing Hopf
 link in `hecke_core` a defect, or is the block's Hopf-link requirement wrong?"
+
+
+## 2026-08-29 (cont. 2) — the missing Hopf link is NOT a one-crossing slip [REFUTED]
+
+Natural next hypothesis: `hecke_core` has the RIGHT shift multiset but assigns
+every pure crossing to `sigma_0`, while the Hopf link needs one on `sigma_1`.
+Confirmed on the multiset side —
+
+    hecke_core proton, minus B_3's 3x(s0,0)+3x(s1,-h):  3 pure + 2 half
+    blocks' proton,    minus B_3:  quark{1 pure, 2 half} + Hopf{2 pure} = 3 pure + 2 half
+
+same shift multiset, differing only in generator assignment. So: does moving
+ONE pure `sigma_0` crossing onto `sigma_1` — the minimal repair that gives the
+word a Hopf link — reproduce the stated nets?
+
+**No, at any position.**
+
+    proton   target 1.0065   closest of 6 edits = 1.007188697   |err| 6.9e-4
+    neutron  target 0.7976   closest of 5 edits = 0.799581945   |err| 2.0e-3
+
+So `hecke_core`'s word is **not one crossing away** from the blocks'
+construction; the divergence is structural, not a mis-assigned generator.
+A tempting route, closed. Recorded as a negative because the next reader will
+reach for exactly this.
+
+## Standing summary of the Delta push
+
+**Derivable:** the CONSTRUCTED Delta, from the blocks' own recipe
+(`B_3 = (s0(s1-h))^3`, typed quark shifts, one Hopf `L_-`), 11 crossings.
+Reproduces the stated neutron net **exactly**; net = −0.2137638.
+
+**Not derivable from the corpus:** `Delta_L`. Its word lacks the Hopf link the
+blocks call strictly required, and is not one edit away from having it.
+
+**Still open, and now the whole question:** the proton. No generator
+assignment reproduces the stated 1.0065 (closest 1.0067901, err 2.9e-4),
+while the neutron's 0.7976 is reproduced exactly by two of eight. That
+asymmetry — neutron exact, proton never — is the sharpest remaining lead.

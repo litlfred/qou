@@ -307,6 +307,49 @@ def main() -> int:
           "the four values, the constructed one is the one with a derivation "
           "behind it. Stated as a finding, NOT as an adjudication", w)
 
+    # ---- and the missing Hopf link is NOT a one-crossing slip ------------
+    def _nm(d):
+        if abs(d) < mp.mpf("1e-30"): return "0"
+        if abs(d + _HN) < mp.mpf("1e-30"): return "-h"
+        if abs(d + _HN / 2) < mp.mpf("1e-30"): return "-h/2"
+        return "?"
+
+    def _sym(t):
+        return {"0": sp.Integer(0), "-h": -h, "-h/2": -h / 2}[t]
+
+    def _ev(word):
+        M = ONE
+        for g, t in word:
+            M = M * (L[g] + _sym(t) * ONE)
+        return num(sum(sp.expand(M * basis_vec(0))))
+
+    print("\n  minimal-edit test: move ONE pure sigma_0 crossing onto sigma_1")
+    any_hit = False
+    for who, g0, g1, tgt in (("proton", _PROTON_G0, _PROTON_G1, STATED_P),
+                             ("neutron", _NEUTRON_G0, _NEUTRON_G1, STATED_N)):
+        base = [(0, _nm(d)) for _, d in g0] + [(1, _nm(d)) for _, d in g1]
+        vals = []
+        for i, (g, t) in enumerate(base):
+            if g == 0 and t == "0":
+                wrd = list(base)
+                wrd[i] = (1, "0")
+                vals.append(_ev(wrd))
+        closest = min(vals, key=lambda v: abs(v - tgt))
+        hit = any(abs(v - tgt) < mp.mpf("5e-5") for v in vals)
+        any_hit = any_hit or hit
+        print(f"    {who:<8} target {mp.nstr(tgt, 6)}  closest of "
+              f"{len(vals)} edits = {mp.nstr(closest, 10)}  "
+              f"|err| = {mp.nstr(abs(closest - tgt), 4)}")
+        w.add_data(f"{who}_best_single_edit", fmt(closest))
+
+    check("the_missing_hopf_link_is_NOT_a_one_crossing_slip",
+          not any_hit,
+          "moving any single pure sigma_0 crossing onto sigma_1 -- the "
+          "minimal repair that would give the word a Hopf link -- "
+          "reproduces NEITHER stated net, at any position. So hecke_core's "
+          "word is not one crossing away from the blocks' construction; the "
+          "divergence is structural. A tempting route, closed", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -315,12 +358,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 8 - len(_FAILURES)
-    print(f"\n  {npass}/8 checks passed")
+    npass = 9 - len(_FAILURES)
+    print(f"\n  {npass}/9 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 8)
+    w.add_data("checks_total", 9)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
