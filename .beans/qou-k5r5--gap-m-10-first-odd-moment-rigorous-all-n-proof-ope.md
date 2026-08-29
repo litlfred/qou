@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T00:29:06Z
+updated_at: 2026-08-29T00:41:48Z
 ---
 
 
@@ -396,3 +396,19 @@ Finite part (n<=78) certified exact. A VERIFIED explicit C NOT produced this ses
 declined to launder the empirical 0.087 as rigorous. Gap reduced to that one constant.
 NEXT: the Olver/Debye C_A computation, or accept the honest 'rigorous modulo one explicit
 constant' resting point.
+
+## 2026-08-29 — Debye C_A investigation + verdict (branch claude/m1-debye-CA-investigation)
+
+Large-theta investigation (exact Bessel sums, no partitions): V_A/theta^2 -> 0.810557 at
+exponent a~1.18 (NOT theta^-1/2), C_A^emp=0.0076; rho_P -> rho_inf at theta^-1 (const 0.13);
+fixed-n margin const ~0.087. True convergence theta^-1..theta^-1.18, far faster than the
+theta^-1/2 worst case; headroom vs C<=2.668 target is 30-300x.
+
+VERDICT (recommended): ACCEPT 'rigorous modulo one explicit constant'. Closing outright would
+succeed (Olver bounds sharp, true coefficient 30-300x under target) but the VERIFIED C needs the
+multi-page Olver/Debye remainder -> x^2-weighted bulk sum -> ratio propagation, too error-prone to
+assert rigorous in-session without an independent check. A wrong rigorous C is worse than honest open.
+
+RESTING STATE: M_1>0 proved for n<=78 (exact), reduced for n>78 to one explicit constant
+(Olver/Debye C_A) in a validated three-region+de-poissonization scheme with 30-300x measured
+headroom. Strong publishable state. Close-outright is a well-scoped follow-on, not a new idea.
