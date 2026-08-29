@@ -79,7 +79,11 @@ q0 = mp.mpf(q0_str)
 block_invertibility = []
 all_invertible = True
 for pname, pdata in h6["blocks"].items():
-    dets = [mp.mpf(repr(d)) for d in pdata["sigma_k_dets"]]
+    # `str`, not `repr`: `sigma_k_dets` is now a serialized numeric STRING
+    # (exact via mp.det -- bean `qou-k6b3`), and `repr` of a str would wrap it
+    # in quotes. `str` is the identity on a str and the shortest round-trip on
+    # a float, so it reads both the new and any older witness.
+    dets = [mp.mpf(str(d)) for d in pdata["sigma_k_dets"]]
     conds = [mp.mpf(repr(c)) for c in pdata["sigma_k_conds"]]
     min_abs_det = min(abs(d) for d in dets)
     max_cond = max(conds)

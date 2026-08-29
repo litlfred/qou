@@ -59,7 +59,7 @@ from sympy.utilities.iterables import partitions as _sp_partitions
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()  # canonical compute precision per qou_substrate.precision
 
@@ -233,13 +233,40 @@ def per_block_data(n: int, q_sym: sp.Symbol, q_val: float) -> dict[tuple, dict]:
             return _np.array([[float(v.real) for v in row] for row in M],
                              dtype=_np.float64)
 
-        sigma_k_dets = [float(_np.linalg.det(_np_real(M))) for M in sigma_k_at_q0]
+        def _real_det(M):
+            """det(M) as a real mpf, refusing a non-negligible imaginary part.
+
+            The seminormal construction is real over real q, so any imaginary
+            residue is a sqrt-branch artefact -- the same reasoning
+            `_eval_matrix` applies entrywise, applied to the determinant.
+            """
+            d = mp.det(M)
+            im = abs(mp.im(d))
+            if im > mp.mpf("1e-40"):
+                raise ValueError(
+                    f"det has a non-negligible imaginary part {im} "
+                    "(sqrt-branch artefact or bug)")
+            return mp.re(d)
+
+        # DETERMINANTS are exact; only the CONDITION NUMBERS need float64.
+        # The comment above lumped the four fields together as "float64 by
+        # construction", but that is true only of `cond`, which is a binary64
+        # SVD. `mp.det` is LU-based and runs directly on the mpmath matrices
+        # these already are — so the dets never needed the `_np_real` round
+        # trip. It mattered: rho_lam(sigma_k) is a representation of an
+        # invertible braid generator, so several of these determinants are
+        # exactly +-1, and float64 returned -0.9999999999999999. The
+        # raw-float64 ratchet cannot see that error while the true value is
+        # whole (its integral carve-out skips an exact -1.0), so it stayed
+        # hidden until an anchor change pushed the results off the integers.
+        # Bean `qou-k6b3`.
+        sigma_k_dets = [fmt(_real_det(M)) for M in sigma_k_at_q0]
         sigma_k_conds = [
             (float(_np.linalg.cond(_np_real(M))) if dim > 1 else 1.0)
             for M in sigma_k_at_q0
         ]
         w0_arr = _np_real(w0_at_q0)
-        w0_det = float(_np.linalg.det(w0_arr))
+        w0_det = fmt(_real_det(w0_at_q0))
         w0_cond = float(_np.linalg.cond(w0_arr)) if dim > 1 else 1.0
 
         # q → 1 classical-limit check (recorded as data, not asserted).

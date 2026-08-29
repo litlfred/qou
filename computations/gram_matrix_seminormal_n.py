@@ -42,6 +42,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from _precision import fmt  # noqa: E402
 from hoefsmit_symbolic import build_seminormal_matrices_symbolic  # noqa: E402
 
 
@@ -59,6 +60,37 @@ def _hoefsmit_with_module_q(lam: Union[list, tuple]):
     """
     matrices, dim = build_seminormal_matrices_symbolic(tuple(lam))
     return matrices, dim
+
+
+def _eval_matrix_mp(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val,
+                    dps: int = 60) -> "mp.matrix":
+    """`_eval_matrix`'s mpmath twin — same substitution, no float64 round.
+
+    `_eval_matrix` returns float64 because its output feeds numpy (condition
+    numbers, downstream consumers). A DETERMINANT must not go that way: rho_lam
+    is a representation of an invertible braid generator, so these determinants
+    are algebraic numbers that are frequently exactly +-1, and float64 delivers
+    them as 0.9999999999999998. That error is invisible to
+    `witness_raw_float64_audit` precisely when the true value is whole — the
+    integral-valued carve-out does not count an exact 1.0 — so it hid here
+    until an anchor change pushed the results off the integers. Bean qou-k6b3.
+    """
+    with mp.workdps(dps):
+        rows, cols = M_sym.shape
+        out = mp.matrix(rows, cols)
+        for i in range(rows):
+            for j in range(cols):
+                v = sp.N(M_sym[i, j].subs(q_sym, sp.nsimplify(str(q_val))), dps)
+                out[i, j] = mp.mpf(str(sp.re(v)))
+        return out
+
+
+def _exact_det(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val, dps: int = 60):
+    """det(rho_lam(.)) at `dps` digits, as an `mpmath.mpf`."""
+    if M_sym.shape[0] == 0:
+        return mp.mpf(1)
+    with mp.workdps(dps):
+        return mp.det(_eval_matrix_mp(M_sym, q_sym, q_val, dps))
 
 
 def _eval_matrix(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val: float,
@@ -187,12 +219,13 @@ def gram_matrix_seminormal_block(
     # as per-block diagnostic for downstream consumers; this is the
     # "11 invertible matrices with det + cond" line item from the
     # Phase-1 scope doc.
-    sigma_k_dets = [float(np.linalg.det(M)) for M in sigma_k_at_q]
+    # EXACT (60 dps), not `float(np.linalg.det(...))` — see `_exact_det`.
+    sigma_k_dets = [fmt(_exact_det(M, q_sym, q_val)) for M in matrices_sym]
     sigma_k_conds = [
         float(np.linalg.cond(M)) if dim > 1 else 1.0
         for M in sigma_k_at_q
     ]
-    w0_det = float(np.linalg.det(w0_at_q))
+    w0_det = fmt(_exact_det(w0_sym, q_sym, q_val))
     w0_cond = float(np.linalg.cond(w0_at_q)) if dim > 1 else 1.0
 
     return {
