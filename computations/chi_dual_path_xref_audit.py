@@ -95,11 +95,12 @@ ideal-layer artifact and 257 ideal_muon producers read it; flipping it to
 proton straddles the ideal layer in the other direction. Measured: with y_λ on
 the proton pin, `atomic_tr_m_mpfr_50dps` (ideal_muon) moved 49 fields. AGENTS.md
 gives the intended route for experimental-anchor compute — call the live closed
-form `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` rather than reading
-the muon-built cache — and warns that
-`wedderburn_jones_markov.y_lambda_at(n, q)` serves that cache whenever
-`|q − q_parameter.Q| < 1e-12`, which a caller passing `q_parameter.Q` satisfies
-trivially, with no signal that a boundary was crossed.
+form `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)`.
+
+It used to add that `wedderburn_jones_markov.y_lambda_at(n, q)` serves a
+muon-built cache whenever `|q − q_parameter.Q| < 1e-12`, a gate a caller passing
+`q_parameter.Q` satisfies trivially. CORRECTED 2026-08-29: that mechanism is dead. `y_lambda_at`'s live body reads no file at all -- it delegates to `y_lambda_su_n` at whatever q it is handed. The `1e-12` cache gate survives only inside `_y_lambda_at_convention_C_HISTORICAL` (dead, convention C, excised 2026-08-09), and the cache FILE was re-derived to convention D and re-pinned to proton in the same cascade. Verified by reading the body, not inferred. This file's CHOICE is unaffected; only the reason was stale. The μ₃ straddle described
+above is real history and is unaffected — only its mechanism is obsolete.
 
 Which anchor the χ family should carry is **owner-gated** (AGENTS.md; bean
 `tnjb`), so this audit reports the split and does not resolve it.
