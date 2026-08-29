@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T03:49:43.916928+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-08-29T11:09:27.241199+00:00",
+  "commitSha": "436b1fcb3e20b485fdd88708c52cd6d97c7c755b",
   "assertions": [
     {
       "name": "proton_lambda_emp_matches_documented_value",
-      "computed": 2.4599522717037905,
+      "computed": "2.4599522717037903606248228146718146326842258827788",
       "expected": 2.46,
       "passed": true,
       "tolerance": "0.002",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 343,
+  "durationMs": 254,
   "computation": "gap-a4-T2-per-knot-vol-probe",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe.py",
-  "scriptHash": "e977620d2e8a",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "7a8c8182787b",
+  "scriptCommitSha": "5e545bc88e6644de6b66424fbc0a088e129b58b3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
