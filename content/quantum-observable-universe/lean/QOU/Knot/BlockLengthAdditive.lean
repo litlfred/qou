@@ -236,4 +236,44 @@ theorem length_blockProd {b : ℕ → ℕ} (hb : Monotone b)
       rw [blockProd, length_mul (lowerOnly_blockProd hb hlow n) (hup n),
         length_blockProd hb hlow hup n, Finset.sum_range_succ]
 
+/-! ## The hypotheses are exactly "each block acts inside its own block"
+
+`length_blockProd` takes `hlow` and `hup` separately, which leaves open whether
+anything satisfies both at once. It does, and the condition is the natural one:
+a permutation supported in the half-open interval `[a, b)` is lower-only at `b`
+and upper-only at `a` simultaneously.
+
+Stating this matters for the same reason the Hecke-relation instantiation did.
+A theorem whose hypotheses no interesting family satisfies proves nothing about
+the object it names, and the two-sided form is what a nucleon block actually
+is: block `i` moves strands `3i, 3i+1, 3i+2` and nothing else. -/
+
+/-- `w` moves only points in the half-open interval `[a, b)`. -/
+def SupportedIn (a b : ℕ) (w : Equiv.Perm (Fin m)) : Prop :=
+  ∀ x : Fin m, x.val < a ∨ b ≤ x.val → w x = x
+
+theorem lowerOnly_of_supportedIn {a b : ℕ} {w : Equiv.Perm (Fin m)}
+    (h : SupportedIn a b w) : LowerOnly b w :=
+  fun x hx => h x (Or.inr hx)
+
+theorem upperOnly_of_supportedIn {a b : ℕ} {w : Equiv.Perm (Fin m)}
+    (h : SupportedIn a b w) : UpperOnly a w :=
+  fun x hx => h x (Or.inl hx)
+
+/-- **Length is additive over any family of block-supported permutations.**
+This is `length_blockProd` with its two hypotheses replaced by the single
+condition that each `w i` acts inside its own block — the form a nucleon
+decomposition actually supplies. -/
+theorem length_blockProd_of_supportedIn {b : ℕ → ℕ} (hb : Monotone b)
+    {w : ℕ → Equiv.Perm (Fin m)} (hs : ∀ i, SupportedIn (b i) (b (i + 1)) (w i)) :
+    ∀ A, length (blockProd w A) = ∑ i ∈ Finset.range A, length (w i) :=
+  length_blockProd hb (fun i => lowerOnly_of_supportedIn (hs i))
+    (fun i => upperOnly_of_supportedIn (hs i))
+
+/-- The condition is satisfiable non-trivially: a permutation fixing everything
+outside `[a, b)` is block-supported there, and the identity is the degenerate
+case rather than the only one. -/
+theorem supportedIn_one {a b : ℕ} : SupportedIn a b (1 : Equiv.Perm (Fin m)) :=
+  fun _ _ => rfl
+
 end QOU.Knot.BlockLengthAdditive
