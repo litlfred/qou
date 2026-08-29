@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T18:10:41Z
+updated_at: 2026-08-29T18:20:03Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -243,3 +243,46 @@ element of H_3 traces to sum_w c_w z^{|w|} on the normal-form basis [(), (0,), (
 (0,1), (1,0), (0,1,0)], so the element gives all four coefficients at once and the
 D form immediately. Reconstructing the 3-strand Toffoli transfer matrix from the
 braid is the open work, and it is real work, not a sweep.
+
+
+## UN-RETRACTION 2026-08-29 — the construction exists, and it settles the diagonal
+
+My retraction was correct given only the published closed form, and over-cautious
+given the corpus. `computations/_deprecated/toffoli-braid.py` records the
+construction the content blocks report:
+
+    V_i     = z*a_i + b_i     (a_i, b_i) from chain_reduce -- RATIONAL in q, no z
+    P_{k,k} = prod_i V_i      over range(A-1); for A = 3, TWO factors
+
+So the diagonal is (z a_0 + b_0)(z a_1 + b_1): degree exactly 2, and whether a
+constant appears is DECIDED by the ordering, not assumed. Computing it for state
+7 = |111> (all-pp, every crossing (c,d) = (1,0)):
+
+    P_77 = z + h z^2,  h = q - 1/q,  CONSTANT TERM ZERO
+
+and at z_C that reproduces the published (q + q^{1/2} - 1)/(q + 1) EXACTLY
+(symbolic zero). So:
+
+    P_77_D(q) = q^3 (q^4 + 1) / (q^2 + 1)^2,  positive for every q > 0
+
+The rival z + (q-1)/(q+1) (0.6648 at q0 vs 0.6912) is excluded by the construction.
+
+FOUR POSITIONS ON ONE QUESTION, recorded because the pattern is the lesson:
+  v1 conditional     -- a fit with no backing. Right to be cautious.
+  v2 derived         -- right answer, wrong reasoning (an identity at z_C does not
+                        single out a decomposition).
+  v3 undetermined    -- correct given ONLY the closed form; 2 equations, 4 unknowns.
+  v4 derived         -- from the construction. A NEW SOURCE, not v2's argument again.
+
+The general lesson: when a decomposition is underdetermined by the data, do not
+stop at "undetermined" -- look for the construction. It was in the tree, in a
+_deprecated file, and neither the content blocks nor the live producer cite it.
+
+A DISCREPANCY I CANNOT RESOLVE, reported: the same construction does NOT reproduce
+the published P_66 = (q^4 + q^{7/2} + 2q^{3/2} + q^{1/2} - 1)/(2(q+1)^2) for ANY of
+the eight 3-strand orderings. Residual -0.186 at q0, -2.23 at q = 2 -- far outside
+rounding. P_77 from the same code matches exactly, so the construction is the
+credible side, but what the published P_66 IS remains open. Someone should look.
+
+OPTION 1 IS NOW COMPLETABLE for both thresholds: q_Phi (via Phi_D) and q_star (via
+P_77_D). P_66's interpretation-table entry needs the discrepancy settled first.

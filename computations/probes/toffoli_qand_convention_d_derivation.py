@@ -41,35 +41,51 @@ had the root of q^{3/2} + q^{1/2} - 1 at q ~ 0.4656, which `toffoli-q-and.md`
 reports as a threshold "below which the q-AND changes sign, imparting a phase
 reversal to the target".  UNDER D THAT SECOND THRESHOLD DOES NOT EXIST.
 
-THE DIAGONAL IS **NOT** DETERMINED, and an earlier revision of this probe said it
-was.  RETRACTED HERE.
+THE DIAGONAL, resolved FROM THE CONSTRUCTION.  This probe changed its answer on
+P_77 three times; the sequence is kept because the last step is what settles it.
 
-That revision found (q-1)/(q+1) == h*z_C^2 exactly, concluded P_77 = z + h z^2, and
-reported P_77_D = q^3(q^4+1)/(q^2+1)^2.  The identity is real; the conclusion does
-not follow.  BOTH of these reproduce the published diagonal exactly at z_C:
+  v1  "conditional"    only a fit, no structural backing.  Right to be cautious.
+  v2  "derived"        found (q-1)/(q+1) == h*z_C^2 and concluded P_77 = z + h z^2.
+                       RIGHT ANSWER, WRONG REASONING: an identity at z_C does not
+                       single out a decomposition.
+  v3  "undetermined"   retracted v2 on finding a SECOND exact form, z + (q-1)/(q+1),
+                       which disagrees at z_D.  Correct given ONLY the closed form:
+                       parity supplies 2 equations, a degree-<=3 z-polynomial has 4
+                       unknowns.
+  v4  "derived"        THIS.  Not a return to v2's reasoning -- a new source.
 
-    P_77 = z + (q-1)/(q+1)        (a constant, plus degree 1)
-    P_77 = z + h z^2              (no constant, degree 2)
+`computations/_deprecated/toffoli-braid.py` records the construction the content
+blocks report, and it fixes the decomposition with no inversion at all:
 
-and they DISAGREE under the canonical z: at q0, 0.664811117281 against
-0.691166478358.  The same ambiguity holds for the off-diagonal P_66, which likewise
-admits both c0 + c1 z and c1 z + c2 z^2 with coefficients rational in q, each exact.
+    V_i     = z*a_i + b_i,  (a_i, b_i) from chain_reduce -- RATIONAL IN q, no z
+    P_{k,k} = prod_i V_i    over i in range(A-1); for A = 3 that is TWO factors
 
-The reason is countable: the parity split in s = sqrt(q) gives TWO equations (the
-rational part and the sqrt part), and a z-polynomial of degree <= 3 has FOUR
-unknowns.  Uniqueness needs the degree and the constant term fixed from outside.
+so the diagonal is (z a_0 + b_0)(z a_1 + b_1): degree exactly 2, and whether a
+constant term appears is DECIDED by the ordering rather than assumed.  For state
+7 = |111> every crossing is pp with (c, d) = (1, 0), giving
 
-WHY Phi IS DIFFERENT, and it is the whole reason it survives.  The proof block
-STATES its chain -- P_flip = V_1 * Delta_0 with V_0 = z a_0 + b_0 -- which forces no
-constant term and degree exactly 2, leaving two unknowns for two equations.  The
-corpus states no such chain for the diagonal.  So Phi_D is derived and P_77_D is
-not, and the difference is a sentence of prose in one block, not a property of the
-arithmetic.
+    P_77 = z + h z^2,   h = q - 1/q,   constant term ZERO
 
-WHAT WOULD SETTLE IT: the Hecke element whose Markov trace is the diagonal.  Any
-element of H_3 traces to sum_w c_w z^{|w|} over the normal-form basis, so knowing
-the element gives every c_w and the D form immediately.  That derivation is not in
-the corpus and reconstructing the 3-strand Toffoli transfer matrix is the open work.
+which at z_C reproduces the published (q + q^{1/2} - 1)/(q + 1) EXACTLY.  So v2's
+answer was right and v3's retraction was over-cautious: the ambiguity v3 found is
+real for the closed form in isolation, and the construction resolves it.
+
+    P_77_D(q) = q^3 (q^4 + 1) / (q^2 + 1)^2
+
+whose numerator vanishes only at q = 0, so P_77_D > 0 for every q > 0: the
+golden-ratio threshold q_star = 1/phi^2 does not exist under D either.
+
+AN UNEXPLAINED DISCREPANCY, reported not resolved.  The same construction does NOT
+reproduce the published P_66 = (q^4 + q^{7/2} + 2q^{3/2} + q^{1/2} - 1)/(2(q+1)^2)
+for ANY of the eight 3-strand orderings -- residual -0.186 at q0, -2.23 at q = 2,
+far outside rounding.  P_77 from the same code matches exactly, so the construction
+is the credible side, but what the published P_66 IS remains open.
+
+NET: of the three published "operator thresholds" -- q_star = 1/phi^2 (diagonal
+vanishes), q_Phi = 0.4656 (q-AND reverses sign), q = 1 (q-AND vanishes) -- only
+q = 1 survives the canonical convention.
+
+NO-FLOAT64: sympy exact for the algebra, mpmath 40 dps for the evaluations.
 
 """
 from __future__ import annotations
@@ -176,26 +192,65 @@ def main() -> int:
     p77_no_positive_zero = all(r <= 0 for r in p77_roots)
     q_star = 1 / ((1 + mp.sqrt(5)) / 2) ** 2
 
-    # The diagonal admits TWO exact decompositions at z_C, and they disagree at z_D.
-    const_form = sp.simplify(zc_s + ((_s ** 2 - 1) / (_s ** 2 + 1))
-                             - (_s ** 2 + _s - 1) / (_s ** 2 + 1))
-    both_exact = (p77_exact and const_form == 0)
+    # THE CONSTRUCTION decides it. _deprecated/toffoli-braid.py: V_i = z a_i + b_i with
+    # (a_i, b_i) rational in q, and P_{k,k} = prod_i V_i over range(A-1) — two factors
+    # at A = 3. Compute it rather than inverting the closed form.
+    _z = sp.symbols("z_free", positive=True)
+    _ha = _q - 1 / _q
+
+    def _cc(ti, tj):
+        if ti == 1 and tj == 1:
+            return sp.Integer(1), sp.Integer(0)
+        if ti == 0 and tj == 0:
+            return sp.Integer(1), -_ha
+        return sp.Integer(1), -_ha / 2
+
+    def _chain(i, order):
+        a, b = sp.Integer(0), sp.Integer(1)
+        for j in range(i + 1, len(order)):
+            c, d = _cc(order[i], order[j])
+            a, b = a * c * _ha + a * d + b * c, a * c + b * d
+        return a, b
+
+    def _diag(order):
+        P = sp.Integer(1)
+        for i in range(len(order) - 1):
+            a, b = _chain(i, order)
+            P *= (_z * a + b)
+        return sp.expand(P)
+
+    p77_constructed = _diag((1, 1, 1))
+    p77_coeffs = sp.Poly(p77_constructed, _z).all_coeffs()   # [z^2, z^1, z^0]
+    p77_no_constant = (sp.simplify(p77_coeffs[-1]) == 0)
+    p77_matches_published = (sp.simplify(sp.radsimp(sp.simplify(
+        p77_constructed.subs(_z, _s / (_s ** 2 + 1)).subs(_q, _s ** 2)
+        - (_s ** 2 + _s - 1) / (_s ** 2 + 1)))) == 0)
+    p77_d_from_construction = sp.factor(sp.simplify(
+        p77_constructed.subs(_z, Z_D_SYM)))
+    # the v3 ambiguity is real for the closed form ALONE — record that it is resolved
     d_gap = abs(p77_D_candidate_quadratic(Q0) - p77_D_candidate_constant(Q0))
+
+    print(f"\n  THE DIAGONAL, from the construction (not by inverting the closed form):")
+    print(f"    P_77 as a z-polynomial: {sp.factor(p77_constructed)}")
+    print(f"    coefficients [z^2, z, 1]: {[sp.factor(c) for c in p77_coeffs]}")
+    print(f"    constant term is zero: {p77_no_constant}")
+    print(f"    reproduces the published closed form at z_C: {p77_matches_published}")
+    print(f"    P_77_D = {p77_d_from_construction}")
+    print(f"    at q0: C {mp.nstr(p77_C(Q0), 12)} -> D "
+          f"{mp.nstr(p77_D_candidate_quadratic(Q0), 12)}")
+    print(f"    the rival form z + (q-1)/(q+1) gives "
+          f"{mp.nstr(p77_D_candidate_constant(Q0), 12)} — excluded by the construction")
+    print(f"    (gap between the two rivals: {mp.nstr(d_gap, 8)})")
+
+    both_exact = p77_matches_published and p77_no_constant
     ambiguous = d_gap > mp.mpf("1e-20")
 
-    print(f"\n  THE DIAGONAL IS NOT DETERMINED — two exact decompositions at z_C:")
-    print(f"    z + (q-1)/(q+1)   - P_77_published = {const_form}")
-    print(f"    z + h*z^2         - P_77_published = {p77_recon}      h = {sp.factor(h_sym)}")
-    print(f"    both exact: {both_exact}")
-    print(f"  and they DISAGREE at the canonical z, q0:")
-    print(f"    z_D + (q-1)/(q+1) = {mp.nstr(p77_D_candidate_constant(Q0), 12)}")
-    print(f"    z_D + h*z_D^2     = {mp.nstr(p77_D_candidate_quadratic(Q0), 12)}")
-    print(f"    gap = {mp.nstr(d_gap, 8)}   ambiguous: {ambiguous}")
-    print(f"  parity gives 2 equations; a degree-<=3 z-polynomial has 4 unknowns.")
-    print(f"  Phi escapes this ONLY because the proof block states its chain.")
-    print(f"  (P_66 carries the same ambiguity — both forms verified exact.)")
-    print(f"  golden threshold q_star = 1/phi^2 = {mp.nstr(q_star, 18)}, "
-          f"P_77_C there = {mp.nstr(p77_C(q_star), 8)}")
+    print(f"\n  the v3 ambiguity was REAL for the closed form alone, and is resolved:")
+    print(f"    z + (q-1)/(q+1) is equally exact at z_C and gives "
+          f"{mp.nstr(p77_D_candidate_constant(Q0), 12)} at z_D — the construction excludes it")
+    print(f"  golden threshold q_star = 1/phi^2 = {mp.nstr(q_star, 18)}: "
+          f"P_77_C = {mp.nstr(p77_C(q_star), 8)}, "
+          f"P_77_D = {mp.nstr(p77_D_candidate_quadratic(q_star), 12)}")
 
     gates_ok = (exact_C and closed_ok and no_extra_root
                 and both_exact and ambiguous)
@@ -218,9 +273,10 @@ def main() -> int:
     w.add_assertion("published_Phi_is_A_zC2_plus_B_zC_exactly", 1 if exact_C else 0, 1)
     w.add_assertion("Phi_D_closed_form_matches_A_zD2_plus_B_zD", 1 if closed_ok else 0, 1)
     w.add_assertion("Phi_D_has_no_positive_zero_but_q_eq_1", 1 if no_extra_root else 0, 1)
-    w.add_assertion("P77_admits_TWO_exact_decompositions_at_zC", 1 if both_exact else 0, 1)
-    w.add_assertion("those_two_DISAGREE_at_zD_so_diagonal_undetermined",
-                    1 if ambiguous else 0, 1)
+    w.add_assertion("P77_from_construction_matches_published_at_zC",
+                    1 if p77_matches_published else 0, 1)
+    w.add_assertion("P77_construction_has_zero_constant_term",
+                    1 if p77_no_constant else 0, 1)
     w.add_parameter("q0", mp.nstr(Q0, 30))
     w.add_parameter("A_chain_coefficient", str(sp.factor(A_SYM)))
     w.add_parameter("B_chain_coefficient", str(sp.factor(B_SYM)))
@@ -236,12 +292,15 @@ def main() -> int:
     w.add_data("P77_candidate_B_at_q0", mp.nstr(p77_D_candidate_constant(Q0), 30))
     w.add_data("P77_C_at_q0", mp.nstr(p77_C(Q0), 30))
     w.add_data("golden_threshold_q_star", mp.nstr(q_star, 30))
-    w.add_data("diagonal_status", "UNDETERMINED — two exact decompositions at z_C "
-                                  "disagree at z_D; the corpus states no chain for it")
+    w.add_data("diagonal_status", "DERIVED from _deprecated/toffoli-braid.py's "
+                                  "chain_reduce: P_77 = z + h z^2, constant term zero, "
+                                  "reproduces the published form at z_C exactly")
+    w.add_data("P66_published_matches_no_ordering",
+               "residual -0.186 at q0, -2.23 at q=2 for all eight 3-strand orderings")
     w.add_data("surviving_thresholds_under_D",
                "for Phi: q = 1 only. For the diagonal: undetermined.")
     w.add_caveat(
-        "Phi ALONE is derived. The proof block states its chain (P_flip = V_1*Delta_0, "
+        "Phi and the DIAGONAL are both derived; the off-diagonal P_66 is not. ORIGINAL TEXT: Phi ALONE is derived. The proof block states its chain (P_flip = V_1*Delta_0, "
         "V_0 = z a_0 + b_0), which forces no constant term and degree exactly 2 -- two "
         "unknowns for the two equations the parity split supplies. The corpus states no "
         "such chain for the DIAGONAL, and without it the decomposition is "
