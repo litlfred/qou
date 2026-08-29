@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-28T20:39:59Z
+updated_at: 2026-08-29T00:13:09Z
 ---
 
 
@@ -356,3 +356,26 @@ theorems -- the one remaining analytic step, fully scoped.
 
 STATE: both #5924 next-steps done. Remaining to CLOSE qou-k5r5: write the BOO bulk-sine +
 Airy-edge + de-poissonization estimate out rigorously (all ingredients in-corpus).
+
+## 2026-08-29 — rigorous finite-n bound written out (PR #5929)
+
+The last open (CS) step written as a rigorous finite-n bound + its algebraic core proved in Lean.
+
+Audit docs/audits/2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md:
+descent-DPP variance split tail (Olver, ~1e-8) + bulk (BOO Thm 3 sine kernel +
+Euler-Maclaurin) + Airy sliver (BDJ, theta^-1/3 of domain), plus BOO/Costin-Lebowitz
+de-poissonization. Weight-specific power-counting (new): |u|-kink weight of Sum|c|
+costs half an order => V_A ~ n^-1/2 is the bottleneck (smooth V_S2, Cov ~ n^-1).
+Gives |F_n-F_inf| <= C n^-1/2 => margin m(n) >= 0.30 - C n^-1/2 > 0 for n>=N0,
+3<=n<N0 by exact table (M_1>0 to n=78). Exponents validated numerically (exit 0,
+NO float64): Var(Sum c^2)/theta^3 and Cov diff-slope 1.00; tail 1e-8;
+Var(Sum|c|)/theta^2 converging consistent with n^-1/2.
+
+Lean YoungDiagramKernelCSMargin.lean (sorry-free, lean-direct exit 0):
+m1_pos_of_cs_margin derives M_1>0 from the (CS) inputs as explicit hypotheses by
+real algebra (non-degenerate §3b-cond); m1_pos_all_of_base_and_tail the composition
+skeleton. Generic ordered comm ring, no R.
+
+REMAINING (the one mechanical step): pin the explicit constant C (=> explicit N0,
+check N0<=78) by tracking constants through Olver/Debye/BDJ + the Euler-Maclaurin
+kink term. Real analysis, no new idea. Gap OPEN until then.
