@@ -910,6 +910,7 @@ import QOU.Archimedean.MatrixSchurCommutant
 import QOU.Archimedean.SchurInvariantFormProportional
 import QOU.Archimedean.InvariantFormTransport
 import QOU.Archimedean.GaugeGroupThreeScale
+import QOU.Archimedean.GramDetRatioCongruence
 import QOU.Archimedean.SchwingerMeasureShape
 import QOU.Molecular.PalindromicityOrbitalType
 import QOU.Molecular.ShellCapacitySelfSquare
