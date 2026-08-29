@@ -7,6 +7,7 @@ section_number: 28
 pages: 78-79
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 written. Using these formulas we get:
 : ψ(λ) ˜ψ(˜λ) : = : eφ(˜λ)−φ(λ) : = : e

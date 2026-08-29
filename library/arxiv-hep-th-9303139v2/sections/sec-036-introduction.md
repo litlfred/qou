@@ -7,6 +7,7 @@ section_number: null
 pages: 4-25
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 The purpose of these notes is to review one of the branches of modern string
 theory: the theory of matrix models with the emphasize on their intrinsic

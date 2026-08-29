@@ -7,6 +7,7 @@ section_number: 14
 pages: 35-39
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 prefer L2n, because it emphasises the property of the model to be 2-reduction of KP
 hierarchy (to KdV), see section 4 below.

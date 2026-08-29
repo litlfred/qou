@@ -7,6 +7,7 @@ section_number: 18
 pages: 46-60
 source_pdf: 9303139v2.pdf
 source_sha256: 79b9a45fd4c5b4aa
+doc_brief: "ITFA 93-10 March 1993 A.Morozov — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies."
 ---
 knows from example of the Wilson lattice QCD) which are highly less trivial to deal with,
 though these are also integrable in some broader sense of the word - within the (yet non-
