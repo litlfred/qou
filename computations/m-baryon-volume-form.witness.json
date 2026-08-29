@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T02:51:47.471860+00:00",
-  "commitSha": "396b8400ce3154cdef865dac1a47db92de4d4fad",
+  "computedAt": "2026-08-29T09:27:59.819159+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "m-baryon-volume-form",
   "scriptFile": "derive_m_baryon_volume_form.py",
-  "scriptHash": "315d7a8663c3",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "ef763fe38f1c",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,28 +36,28 @@
   "auditOnly": "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md (motivates this Vol-form chain as Option B per the user's 'can we use m_e as mass scaling factor' question); PR #487 (introduced the Borromean-baryon-interpretation block with the formula and the then-undefined scale factor, since proved as the linking_weight via Family A).",
   "provenance_directives": "2026-05-11: introduce this script (m_e scaling factor × Vol(K)/ℏ_q² dimensionless multiplier; expose the scale factor as the open derivation).  Superseded in steps: 2026-05-24 rename to linking_weight (no legacy scale-factor symbol anywhere); PR #1080 proves the linking_weight via Family A; 2026-06-06 owner purge fixes the canonical framing as Vol(K)·ρ(K)/ℏ_q².",
   "data": {
-    "q_0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-    "hbar_q_50dps": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
-    "hbar_q_squared_50dps": "0.009817188527722425437750202432517666656054200594570201864112973133249281",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q_50dps": "0.09908171604425850783917711751890606398525837338946307825521469634167789",
+    "hbar_q_squared_50dps": "0.009817186454275073810569057179564252889049284575401366262467054677136015",
     "muon_cross_check": {
       "Vol_4_1_50dps": "2.02988321281930725004240510854904057483004159909893",
-      "m_mu_over_m_e_via_volume_50dps": "206.7682827000000000000000000000000003001534477734993924360864995537525",
+      "m_mu_over_m_e_via_volume_50dps": "206.7683263706738902896095864099026762386117157186257522342233527884741",
       "m_mu_over_m_e_codata": "206.7682827",
       "agreement_assertion": "Vol(4_1)/ℏ_q² PREDICTS CODATA m_μ/m_e at the ~2e-7 level (9.5σ cross-check, NOT the anchor): q_0 is proton-anchored per the 2026-05-28 re-pin (q-pinning-50-digit.witness.json).  Exact agreement held only under the pre-re-pin muon anchor."
     },
     "borromean_common_factor": {
       "Vol_Borromean_50dps": "7.3277247534177521204368281194590728861931949942534",
-      "Vol_Borromean_over_hbar_q_squared": "746.417849950139892881577682309264700241672687235945960379359132716493",
+      "Vol_Borromean_over_hbar_q_squared": "746.4180075979671389879351092645748142151241075416414246399122459522483",
       "interpretation": "Dimensionless 'common Borromean factor' shared by all Borromean baryons; physical baryon mass ratio is this value times the linking_weight (proved Family A VolDensity component) plus Skein correction."
     },
     "linking_weight_closure_targets": {
-      "proton_empirical_target": "2.45995279126013643291016020103474271434373808322857843448425615288911",
-      "neutron_empirical_target": "2.463343638066562019964956564761751044855137125450395288616774613107738",
+      "proton_empirical_target": "2.459952271703790360624822814671814632684225882777625192358075454956462",
+      "neutron_empirical_target": "2.463343117794049367940140423052274718225091184074899479296060049087941",
       "interpretation": "Empirical linking_weight value required for the topological-mass formula to reproduce CODATA m_p / m_n.  THESE ARE VALIDATION VALUES — NOT inputs to the substrate derivation.  Post-PR #1080 framing: the linking_weight is the per-knot VolDensity(K)/Geom_leading(K) component, PROVED via Family A canonical Wedderburn (linking_weight_family_a in _li_2_q_util.py); these empirical targets are diagnostic only (what value would close the equation exactly).  Field renamed from `lambda_scale_closure_targets` per owner directive 2026-05-24."
     },
     "skein_correction_n_minus_p": {
-      "delta_skein_derived_from_CAL_1_CAL_2": "0.003394287236324974999452396531252074960700927767086072557464883387024351",
-      "delta_skein_empirical_target": "0.003390846806425587054796363727008330511399042221816854132518460218627464",
+      "delta_skein_derived_from_CAL_1_CAL_2": "0.003394286581394803936338610092577308028777317255486660038591645992157839",
+      "delta_skein_empirical_target": "0.003390846090259007315317608380460085540865301297274286937984594131478679",
       "agreement_assertion": "ΔS(n − p) = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²).  Substrate-derived from CAL-1 (m_e), CAL-2 (q_0 → Q_β via prop:neutron-qvalue-symbolic), and topological constant Vol(ℬ_3).  Empirical target is (m_n − m_p)/m_e / (Vol(ℬ_3)/ℏ_q²); the two should agree since Q_β = m_n − m_p − m_e by definition."
     },
     "open_R_and_D": {
@@ -65,7 +65,6 @@
       "substrate_skein_correction_per_orientation": "Derive S(p), S(n) (not just the difference) from the Borromean orientation partition (k positive, 3-k negative) via the Skein polynomial.  Empirical: |S(n) − S(p)| ≈ 0.00339 dimensionless; the difference IS substrate-derivable per ΔS formula above.  Open: the individual S(p), S(n) anchored to a common substrate quantity."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

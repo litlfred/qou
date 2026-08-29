@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T06:21:17.420869+00:00",
-  "commitSha": "ee94bdb8a6be696ba58f94c78a5404016af3522d",
+  "computedAt": "2026-08-29T09:30:53.624095+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "fc1197d7a4e8",
-  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
+  "scriptHash": "e964cd8e8874",
+  "scriptCommitSha": "21869ac876eb58bc08cd1863f51d751a78d9664d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,8 +45,8 @@
   "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot VolDensity refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
   "parameters": {
     "input_witness": "low-isotope-mass-table.witness.json",
-    "q_0_at_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-    "h_q0": "0.2090603221503167466308002615019198859801371692258791137037392757061475",
+    "q_0_at_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "h_q0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "channel_d_coefficients": "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), SIGMA_INV=(1,-h))"
   },
   "data": {
@@ -91,7 +91,7 @@
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 1,
-        "signed_h_weight": "-0.1045301610751583733154001307509599429900685846129395568518696378530738"
+        "signed_h_weight": "-0.1045301493978196577154231065648374719298787476315315391276073481708389"
       },
       {
         "Z": 1,
@@ -105,7 +105,7 @@
         "channels_pn": 1,
         "channels_nn": 1,
         "n_inter_total": 2,
-        "signed_h_weight": "-0.3135904832254751199462003922528798289702057538388186705556089135592213"
+        "signed_h_weight": "-0.3135904481934589731462693196945124157896362428945946173828220445125168"
       },
       {
         "Z": 2,
@@ -119,7 +119,7 @@
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 2,
-        "signed_h_weight": "-0.1045301610751583733154001307509599429900685846129395568518696378530738"
+        "signed_h_weight": "-0.1045301493978196577154231065648374719298787476315315391276073481708389"
       }
     ],
     "linear_fit_err_pct_vs_n_inter": {
@@ -128,7 +128,7 @@
       "R_squared": "0.2652944812197065394440946509926375860363483685828766583837015970373011"
     },
     "linear_fit_err_pct_vs_signed_h_weight": {
-      "slope": "0.4962732570090684274542516316154114141163362291329356535333015287537943",
+      "slope": "0.4962733124490630220642022263143564530525338721467569320808587213738262",
       "intercept_pct": "-0.3549043252241506684008624786831069107049438105370996616880353692818992",
       "R_squared": "0.001755323664814371212330776706436980268798858336873637913838476698317553"
     },
@@ -187,6 +187,6 @@
   "caveats": [
     "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

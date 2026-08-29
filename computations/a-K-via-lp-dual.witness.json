@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T03:58:58.304453+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "computedAt": "2026-08-29T09:19:53.276738+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [
     {
       "name": "a_K_R_finite[deuteron]",
@@ -65,8 +65,8 @@
   "durationMs": 16,
   "computation": "a-K-via-lp-dual",
   "scriptFile": "aK_via_lp_dual.py",
-  "scriptHash": "f9ba6676796e",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "6a6f74d86bae",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,8 +92,8 @@
   "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:mass-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
-    "q0_50dps": "1.1099785956427390467",
-    "h_q": "0.20906032215031674663",
+    "q0_50dps": "1.1099785827513808076",
+    "h_q": "0.20906029879563931543",
     "dps": 50
   },
   "data": {
@@ -230,11 +230,11 @@
         "N": 1,
         "A": 2,
         "a_K_R_ratio": "0.50822978937673896258",
-        "a_K_C_closed": "1.2090603221503167466",
+        "a_K_C_closed": "1.2090602987956393154",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -579648.9388777138,
-        "D_chi_vs_C_ppm": 654177.1848430152,
+        "R_vs_C_ppm": -579648.9307580496,
+        "D_chi_vs_C_ppm": 654177.216795743,
         "n_active_chirality_blocks": 4,
         "active_chirality_partitions": [
           [
@@ -414,11 +414,11 @@
         "N": 2,
         "A": 3,
         "a_K_R_ratio": "0.20513564044864976893",
-        "a_K_C_closed": "0.95629378170240578107",
+        "a_K_C_closed": "0.9562937914674780106",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -785488.8901573062,
-        "D_chi_vs_C_ppm": 1091407.5133266847,
+        "R_vs_C_ppm": -785488.8923477591,
+        "D_chi_vs_C_ppm": 1091407.4919705433,
         "n_active_chirality_blocks": 5,
         "active_chirality_partitions": [
           [
@@ -885,11 +885,11 @@
         "N": 1,
         "A": 3,
         "a_K_R_ratio": "0.31138631207259565241",
-        "a_K_C_closed": "0.95629378170240578107",
+        "a_K_C_closed": "0.9562937914674780106",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -674382.1636921428,
-        "D_chi_vs_C_ppm": 1091407.5133266847,
+        "R_vs_C_ppm": -674382.1670171479,
+        "D_chi_vs_C_ppm": 1091407.4919705433,
         "n_active_chirality_blocks": 5,
         "active_chirality_partitions": [
           [
@@ -1356,11 +1356,11 @@
         "N": 2,
         "A": 4,
         "a_K_R_ratio": "0.12568415289526626941",
-        "a_K_C_closed": "0.91449779692268852185",
+        "a_K_C_closed": "0.91449781559924431915",
         "a_K_D_sc_signed": "2.0",
         "a_K_D_chi_abs": "2.0",
-        "R_vs_C_ppm": -862564.8379709639,
-        "D_chi_vs_C_ppm": 1186992.6933996535,
+        "R_vs_C_ppm": -862564.8407777671,
+        "D_chi_vs_C_ppm": 1186992.6487352592,
         "n_active_chirality_blocks": 7,
         "active_chirality_partitions": [
           [
@@ -2580,15 +2580,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "297c7d458877f22454e61e69a17ac3295f6afcdec80f329456d950c68ce112b0",
-        "size_bytes": 6237,
-        "commitSha": "7cc59c8d4b28987c78c841552aed73ee77e18b2b",
-        "scriptCommitSha": "23ba4d1bb1204cee953e5bd365bb2fa964445846",
-        "computedAt": "2026-08-22T21:11:04.185076+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

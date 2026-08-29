@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:27:11.627031+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T09:27:39.863187+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "delta-S-chain-audit",
   "scriptFile": "audit_delta_S_chain.py",
-  "scriptHash": "e5bca470bcc5",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "02d531aab54d",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,27 +19,38 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audit_delta_S_chain.py"
+    ],
+    "reproduce": "python3 -u computations/audit_delta_S_chain.py"
   },
   "description": "Audit of the ΔS = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) derivation chain. Verifies algebraically that the 1015 ppm ΔS residual in `derive_m_baryon_volume_form.py` is NOT coincidental — it equals the Q_β closed-form residual damped by the algebraic factor Q_β/(Q_β + m_e) ≈ 0.605. Implication: tightening Q_β's closed form propagates directly to ΔS precision.",
   "data": {
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
-    "Vol_Borromean_over_hbar_q_squared": "746.417850994545302378902428433970967768474418161662714067040",
-    "Q_beta_AME_MeV": "0.782333409310000000000000000000000000000000000000032617304163",
-    "Q_beta_predicted_closed_form_MeV": "0.783645803897321549598876481706747791098067082582636731957896",
-    "eps_Q_pct": 0.1677538721603429,
-    "eps_Q_ppm": 1677.538721603429,
-    "delta_S_target_dimensionless": "0.00339084640841246948388959238831054125481209618949419940269366",
-    "delta_S_derived_dimensionless": "0.00339428723198610931883227964387735634717608588380568571601900",
-    "eps_delta_S_pct": 0.10147388466500208,
-    "eps_delta_S_ppm": 1014.7388466500208,
-    "damping_factor_Q_beta_over_Q_beta_plus_m_e": "0.604897421193420073398611939161562461794430010241151427731763",
-    "predicted_eps_delta_S_from_damping_x_eps_Q": "0.00101473884665002088007484921103171894505684724582634040171198",
-    "predicted_eps_delta_S_ppm": 1014.7388466500208,
-    "chain_match_relative_error": "1.53383784094958612129398396922745311335315720324753458422278e-69",
+    "q_0_50dps": "1.10997858275138080759166909561076887987449912187360000000000",
+    "Vol_Borromean_over_hbar_q_squared": "746.418007597967138987935109264574814215124107541641424639912",
+    "Q_beta_AME_MeV": "0.782333559310000000000000000000000000000000000000113734969017",
+    "Q_beta_predicted_closed_form_MeV": "0.783645827374621213074939751341396890525736441030255893897934",
+    "eps_Q_pct": 0.1677376675210767,
+    "eps_Q_ppm": 1677.376675210767,
+    "delta_S_target_dimensionless": "0.00339084609025900731531760838046008554086530129727428693798459",
+    "delta_S_derived_dimensionless": "0.00339428658139480393633861009257730802877731725548666003859165",
+    "eps_delta_S_pct": 0.10146409020687287,
+    "eps_delta_S_ppm": 1014.6409020687287,
+    "damping_factor_Q_beta_over_Q_beta_plus_m_e": "0.604897467017201941363091537844355277205550179821927305406576",
+    "predicted_eps_delta_S_from_damping_x_eps_Q": "0.00101464090206872869447915705868778518970070661112666452267814",
+    "predicted_eps_delta_S_ppm": 1014.6409020687287,
+    "chain_match_relative_error": "2.12666227637993922944264158869914761464203779336275222505641e-69",
     "verdict": "CHAIN VERIFIED EXACTLY: ε_ΔS = (Q_β/(Q_β+m_e)) · ε_Q. The 1015 ppm ΔS residual is the Q_β closed-form residual damped by Q_β/(Q_β+m_e) ≈ 0.605. NOT a coincidence.",
-    "Q_beta_precision_for_1_ppb_on_delta_S": 0.0016531728603290626
-  }
+    "Q_beta_precision_for_1_ppb_on_delta_S": 0.0016531727350935696
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

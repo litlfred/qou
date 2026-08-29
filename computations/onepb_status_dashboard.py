@@ -51,7 +51,7 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 # Idempotent, at module scope: mpmath defaults to dps=15, and this file now
 # does mpf arithmetic on 50-digit inputs.  Without it the `max_rel_delta`
 # reduction would silently round to float64 precision -- the defect this
@@ -351,7 +351,14 @@ def main() -> None:
         max_gap = max(d.get("duality_gap", 0) for d in lp_summary["dual_values"])
         builder.add_assertion(
             name="lp_max_duality_gap",
-            computed=max_gap,
+            # Serialized, not passed raw: `duality_gap` reaches here as a
+            # float64 out of the LP-dual block, where `LP_DUAL_F64_FIELDS`
+            # excuses it -- but that carve-out is keyed on the field NAME, so
+            # copying the value into `computed` re-exposes it and the
+            # raw-float64 ratchet counts it. The sibling assertion below is
+            # already a string for the same reason. Fixed 2026-08-29; the
+            # regression came in with 755ab8a5b7 (0.0 -> 7.31e-50).
+            computed=fmt(max_gap),
             expected=0.0,
             tolerance=1e-9,
             source="prop:operator-selection-lp strong duality",
