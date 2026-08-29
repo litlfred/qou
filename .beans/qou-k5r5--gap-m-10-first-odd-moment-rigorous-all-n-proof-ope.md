@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T10:09:18Z
+updated_at: 2026-08-29T10:26:17Z
 ---
 
 
@@ -454,3 +454,5 @@ corpus checked at the source. Status:
 2026-08-29 (formalize-first, cited): added the 4 literature citations to references.ts (borodin-okounkov-olshanski2000, johansson2001, gorbunov2024; ivanov-olshanski2003 already there) and a Lean carrier M1DescentDPPConvergence.lean (sorry-free, lean-direct exit 0, #print axioms clean). class DescentDPPMarginConvergence (Prop, content-bearing Filter.Tendsto to the exact limits + strict leading gap, CITED, NO instance) + sorry-free theorems cs_margin_eventually and m1_pos_eventually deriving eventual M_1>0 from the assumed convergence via the CS core. Honest: axiomatizing the cited results is assuming them; the bulk-rate step stays open; eventual->all-n closed by gorbunov2024 explicit threshold + exact table via the existing m1_pos_all_of_base_and_tail. NOT a proof. Gap OPEN.
 
 2026-08-29 (leading margin PROVED): discharged the ONE class field not gated on the bulk rate. leading_margin_pos = (sqrt(V_D/V_A) < 2sqrt6/5) = (V_D < 64/(75pi^2)) after pi cancels. V_D (no closed form) bounded RIGOROUSLY: certified mp.iv interval partial sum k=3..999 + explicit elementary tail majorant R(K)<=a^2/(2K^4)+b^2/(3K^6), R(999)<=1.05e-11 => V_D < 0.0415974806 < 0.0864607, margin 0.0449. Upgrades m_inf>0 from measured to PROVED. Lean leading_margin_pos_of_VD_ceiling (sorry-free, axiom-clean) reduces the field to the certified ceiling. 1 of 3 class fields closed with rigor; only the two bulk-rate Tendsto remain open. Probe: wlambda_covariance_epic_M1_VD_ceiling_rigorous.py.
+
+2026-08-29 (2nd lit batch + bulk-rate probe): owner uploaded 23 papers (ae1c51be). Pointwise bulk kernel probe = HONEST NEGATIVE: |J-S| does not decay cleanly (oscillatory + density rounding), so the bulk rate must be argued at the INTEGRATED/determinant level (variance theta^{-1} already measured). Batch routing: Tracy-Widom edge kernels (Airy hep-th-9211141, Bessel hep-th-9304063) give the Painleve/Fredholm-determinant METHOD but for the EDGE/hard-edge, not the BULK; chiral-RMT Dirac cluster (Verbaarschot etc) is hard-edge Bessel in QCD; several off-topic (stars, magnetars, quantum repeater, epidemic, theorem-proving). NEED LIT answer: YES for the bulk specifically -- most direct missing citation is Widom's discrete-sine Toeplitz asymptotics (BOO Rem 1.6 ref [41]) or Tracy-Widom sine-kernel hep-th/9303139 (NOT uploaded); or DERIVE via Gorbunov Kac-Akhiezer + Borodin-Okounkov applied to the discrete descent variance. Audit: docs/audits/2026-08-29-covariance-kernel-M1-k5r5-second-lit-batch-routing.md. Gap OPEN.
