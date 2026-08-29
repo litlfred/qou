@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T13:04:40Z
-updated_at: 2026-08-23T13:05:10Z
+updated_at: 2026-08-29T20:04:43Z
 ---
 
 Found while running `scripts/check-sidecars.sh` as the pre-commit preflight on
@@ -150,3 +150,10 @@ per-block targeting **is** a no-op for label-less `prose()` blocks — confirmed
 two (`blocks: 0`), against `blocks: 1` for a labelled sibling. Of the 51, **45 are
 labelled** (directly targetable) and **5 are label-less**. So the enumeration gap
 is real; what was wrong was calling it the cause of the 325.
+
+
+## Re-measured 2026-08-29 (main +3323 commits)
+
+3614 blocks · **330** top-level stale · **23** criterion-level stale · **307** false positives.
+Was 3612 / 376 / 51 / 325. Real backlog 51 -> 23; false-positive rate **86 % -> 93 %** — the finding
+is stronger. See [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md) §4.
