@@ -40,13 +40,18 @@ identity** (item 4, foundational). 3a is done; 3b should be retired.
 1. **Merge items 1+2 → derive the magic-shell regime switch** (`z=A−1` chain ↔ M≈2 magic). In
    scope (does not route through the forever-gated q₀). `BondExtensiveBinding` is the slot the
    derived law must fill. Deepest, highest value.
-2. **Item 4 — OWNER RULED A (2026-08-29); now compute the 2-body binding via Gram/SDP.**
+2. **Item 4 — OWNER RULED A (2026-08-29); Gram/SDP compute done → scope-(a) negative.**
    [`2026-08-29-deuteron-knot-owner-decision.md`](../audits/2026-08-29-deuteron-knot-owner-decision.md).
-   Deuteron binding is *not* a volume term; the mechanism is the **Gram/Frobenius pairing (⟨g,g⟩)
-   + confinement SDP** (the operator-selection LP/SDP dual — `lp_dual_solver.solve_psd_operator_selection_sdp`;
-   the active demand channels `y_star[i] > 0` are the binding shadow prices). **In flight** this
-   session (corpus + compute investigation). Gated on the convention-D status of the Gram
-   (`qou-cds2`, priority 3 below), since an SDP built on a convention-C Gram is C-frame.
+   Deuteron binding is *not* a volume term; the mechanism tested is the **Gram/Frobenius pairing
+   (⟨g,g⟩) + confinement SDP**. **Computed** (`deuteron_real_sdp.py`, H₆): the block-diagonal Gram
+   SDP is degenerate (~3.7e-43), and **0 of 6 off-diagonal constraint encodings derive the binding**
+   — five give 0 / infeasible / ansatz; the only non-zero (2.22456607) is the AME value *fed in* as
+   the constraint (circular). This is the **intensive/extensive gap** (a per-nucleus block-selection
+   SDP is intensive; binding is extensive) — the same missing term the Δ_λ magnitude gate is open on.
+   Full: [`2026-08-29-deuteron-binding-via-gram-sdp-compute.md`](../audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md).
+   Remaining sub-route: the un-run full H₆ off-diagonal Hecke Gram (720 elements) — **negative
+   prior** (still per-nucleus), do not run speculatively. All numbers convention-inherited
+   (`qou-cds2`).
 3. **Gate the arc's `b_αα`/deuteron numbers on `qou-cds2`** (engine-level D migration) before any
    canonical use.
 4. **Retire 3b** to a scope-(a) negative; **keep `qou-brng`** (prove saturated binding fraction is
