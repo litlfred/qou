@@ -165,7 +165,20 @@ def main() -> int:
                     source="Sum f schurElement(q^2,0) = (1/(1-q^2))^n, exact n<=5")
     w.add_assertion("normalizedSum_eq_one", 1 if norm_ok else 0, 1,
                     source="chain closes normalizedSum n q = 1, exact n<=5")
-    out = w.save()
+    # q0Anchor DECLARED, not defaulted. `resolve_q0_anchor` returns "proton" for
+    # any stem absent from the manifest -- the runtime DEFAULT, not evidence -- so
+    # an undeclared witness goes out asserting a pin it never used, and
+    # `q0_anchor_ratchet --strict` counts it as unstamped. Declared 2026-08-29,
+    # bean `qou-6u53`, on an import-cone trace plus the absence of any q_0 value
+    # in the payload.
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "q0-independent: q_0 is unreachable from this producer's entire import "
+            "cone. The fake-degree telescope is combinatorics on partitions; no "
+            "substrate evaluation enters it."
+        ),
+    })
     print(f"witness -> {out}")
     return 0 if ok else 1
 
