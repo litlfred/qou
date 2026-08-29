@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",
@@ -743,7 +743,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 2,
           "edge_span_mean": 1.5,
           "worst_target": ""
@@ -1010,7 +1010,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1041,7 +1041,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1067,7 +1067,7 @@
         "scope": "structural",
         "ruling": "rebutted",
         "referee_argument": "Brunnian.lean:83 opaque isUnlink, :94-95 class field = conclusion, :111-114 theorem = exact le.brunnian_borromean (self-assuming projection).",
-        "rebuttal": "rebutted — explicit AGENTS.md §3b-cond-sanctioned conditional-on-class conjecture; block kind conjecture, validation:stub, sorry carries -- Ref:[kawauchi1996], status banners honestly state the Mathlib R-move gap. Within policy.",
+        "rebuttal": "rebutted \u2014 explicit AGENTS.md \u00a73b-cond-sanctioned conditional-on-class conjecture; block kind conjecture, validation:stub, sorry carries -- Ref:[kawauchi1996], status banners honestly state the Mathlib R-move gap. Within policy.",
         "evidence": [
           {
             "text": "Brunnian.lean:83,94-95,111-114"
@@ -1135,7 +1135,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1158,7 +1158,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "borromean-topological-confinement.md:18-20 'quarks never observed in isolation is exactly the Brunnian property ... no separate dynamical assumption required'.",
-        "rebuttal": "partial→survived — Brunnian-ness is a kinematic analogy; real confinement is dynamical (energetic). Contained by the remark/interprets kind + the explicit deferral of the energetic cost to the mass-formula/Bloch conjectures (lines 22-28), but 'exactly ... no dynamical assumption' overstates — recommend softening 'exactly'.",
+        "rebuttal": "partial\u2192survived \u2014 Brunnian-ness is a kinematic analogy; real confinement is dynamical (energetic). Contained by the remark/interprets kind + the explicit deferral of the energetic cost to the mass-formula/Bloch conjectures (lines 22-28), but 'exactly ... no dynamical assumption' overstates \u2014 recommend softening 'exactly'.",
         "evidence": [
           {
             "text": "borromean-topological-confinement.md:18-20"
@@ -1226,7 +1226,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1248,8 +1248,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "Linking-number-zero / Milnor μ-bar_123≠0 characterization not stated.",
-        "rebuttal": "rebutted — the deletion arithmetic ((σ0σ1^-1)^3 -> σ0^-3 -> negative trefoil) and the L6a4 closure are correct; kawauchi1996 is a valid Brunnian reference; no counterexample.",
+        "referee_argument": "Linking-number-zero / Milnor \u03bc-bar_123\u22600 characterization not stated.",
+        "rebuttal": "rebutted \u2014 the deletion arithmetic ((\u03c30\u03c31^-1)^3 -> \u03c30^-3 -> negative trefoil) and the L6a4 closure are correct; kawauchi1996 is a valid Brunnian reference; no counterexample.",
         "evidence": [
           {
             "text": "Brunnian.lean:104-105"
@@ -1316,7 +1316,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1337,7 +1337,7 @@
         },
         "result": "pass",
         "verdict": "clean",
-        "referee_argument": "The borromean_brunnian 'theorem' is a one-line projection off an opaque isUnlink and a conjectural class whose single field is the conclusion — so the Lean proves nothing; and the physics remark asserts confinement 'with no separate dynamical assumption required', promoting a topological metaphor toward derived physics.",
+        "referee_argument": "The borromean_brunnian 'theorem' is a one-line projection off an opaque isUnlink and a conjectural class whose single field is the conclusion \u2014 so the Lean proves nothing; and the physics remark asserts confinement 'with no separate dynamical assumption required', promoting a topological metaphor toward derived physics.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1399,7 +1399,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1481,7 +1481,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1565,7 +1565,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1647,7 +1647,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1732,7 +1732,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1814,7 +1814,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1896,7 +1896,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -1978,7 +1978,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -2060,7 +2060,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -2142,7 +2142,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -2178,7 +2178,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -2212,7 +2212,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2227,7 +2227,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2242,7 +2242,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2257,7 +2257,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2272,7 +2272,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2287,7 +2287,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2302,7 +2302,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2320,7 +2320,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -2398,7 +2398,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -2413,7 +2413,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:50:33.000Z",
         "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
         "reviewer": {
@@ -2531,7 +2531,7 @@
         },
         "reviewed_at": "2026-08-15T12:14:46.810Z",
         "reviewed_sha": "98cf20212d83f110cc718c3ca9f806cb0ca240a5",
-        "evidence": "'does not immediately yield the empty braid' — technical caveat about strand deletion, factual",
+        "evidence": "'does not immediately yield the empty braid' \u2014 technical caveat about strand deletion, factual",
         "notes": "pass-with-note: load-bearing caveat; see anomaly flag on the trefoil claim"
       }
     ],
@@ -2862,5 +2862,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

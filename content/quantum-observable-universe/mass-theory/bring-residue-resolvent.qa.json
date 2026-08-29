@@ -1142,7 +1142,7 @@
       },
       {
         "result": "pass",
-        "notes": "Lean file checked on branch. No 'proof-no-decide-masking' issue detected. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-decide-masking' issue detected. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:39:08.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1242,7 +1242,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1359,7 +1359,7 @@
       },
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1374,7 +1374,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1392,7 +1392,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1410,7 +1410,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1428,7 +1428,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1443,7 +1443,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1458,7 +1458,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1473,7 +1473,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1488,7 +1488,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1554,7 +1554,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1620,7 +1620,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1686,7 +1686,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1749,7 +1749,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1804,7 +1804,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1837,7 +1837,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1870,7 +1870,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1903,7 +1903,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1936,7 +1936,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -1969,7 +1969,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -2002,7 +2002,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -2035,7 +2035,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -2068,7 +2068,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -2083,7 +2083,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -2099,7 +2099,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic formulation rigorously testing established continuous derivations carefully alongside structural bounds.",
         "reviewed_at": "2026-07-08T14:44:51.000Z",
         "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
         "reviewer": {
@@ -2174,7 +2174,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -2735,5 +2735,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-26T04:16:27.787Z"
+  "updated_at": "2026-08-26T04:16:27.787Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

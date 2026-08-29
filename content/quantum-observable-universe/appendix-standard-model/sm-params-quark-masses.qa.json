@@ -14,7 +14,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. \"nothing in the corpus addresses the heavy flavours\" is now \"the heavy flavours are untouched here\". The two admissions survive verbatim in substance: no construction extracts the individual current-quark masses, and no knot or braid identification exists for s, c, b or t.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"nothing in the corpus addresses the heavy flavours\" is now \"the heavy flavours are untouched here\". The two admissions survive verbatim in substance: no construction extracts the individual current-quark masses, and no knot or braid identification exists for s, c, b or t.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -573,7 +573,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -976,7 +976,7 @@
         "reviewed_at": "2026-08-15T10:31:01.510Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "7 stylistic spaced dashes in 403 words (1.74/100w) — restructure into sentences"
+        "evidence": "7 stylistic spaced dashes in 403 words (1.74/100w) \u2014 restructure into sentences"
       },
       {
         "field_hash": {
@@ -1271,5 +1271,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T12:50:43.803Z"
+  "updated_at": "2026-08-19T12:50:43.803Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

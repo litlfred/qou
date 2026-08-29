@@ -15,7 +15,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. The chapter no longer reads as a governance record. The dated owner-ruling heading becomes \"**Convention — M = endomorphism; the mass functional is m**\", with \"Ruling:\" → \"Convention:\" and \"Scope of the ruling\" → \"Scope of the convention\"; the dated agent-rule heading \"(STRICT — recurring-mistake rule, 2026-08-01)\" is dropped from the photon/unknot section title. All four rename dates are gone, restated as what still appears in older text: \"canonized 2026-07-12\" (twice), \"renamed this from r on 2026-06-04\", \"retired Habiro u = q^{1/2} on 2026-06-04\", and \"renamed this from r_W in the May 2026 notation cleanup\" (whose trailing instruction to migrate old code/docs is also dropped). \"overloaded three ways across the corpus\" is now \"in the literature and in earlier text\", and \"Where the corpus writes tau into a different target\" is now \"Where tau is written into a different target\". The open work item is restated as a fact rather than a follow-up: the Askey-two-saddle Phi_q collision is unresolved, with no distinct glyph reserved, so the reader disambiguates from context. The B_lambda status cell \"Delta_lambda-gated\" is now \"open (the Delta_lambda magnitude)\". Every convention, distinction and violation rule is unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The chapter no longer reads as a governance record. The dated owner-ruling heading becomes \"**Convention — M = endomorphism; the mass functional is m**\", with \"Ruling:\" → \"Convention:\" and \"Scope of the ruling\" → \"Scope of the convention\"; the dated agent-rule heading \"(STRICT — recurring-mistake rule, 2026-08-01)\" is dropped from the photon/unknot section title. All four rename dates are gone, restated as what still appears in older text: \"canonized 2026-07-12\" (twice), \"renamed this from r on 2026-06-04\", \"retired Habiro u = q^{1/2} on 2026-06-04\", and \"renamed this from r_W in the May 2026 notation cleanup\" (whose trailing instruction to migrate old code/docs is also dropped). \"overloaded three ways across the corpus\" is now \"in the literature and in earlier text\", and \"Where the corpus writes tau into a different target\" is now \"Where tau is written into a different target\". The open work item is restated as a fact rather than a follow-up: the Askey-two-saddle Phi_q collision is unresolved, with no distinct glyph reserved, so the reader disambiguates from context. The B_lambda status cell \"Delta_lambda-gated\" is now \"open (the Delta_lambda magnitude)\". Every convention, distinction and violation rule is unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1011,5 +1011,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T16:33:39.755Z"
+  "updated_at": "2026-08-23T16:33:39.755Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

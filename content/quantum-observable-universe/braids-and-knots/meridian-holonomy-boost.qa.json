@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The \"(§7c)\" tag after the Lean lemma names `holonomy_hyperbola`, `barEven_mul`, `barOdd_mul` is gone.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The \"(§7c)\" tag after the Lean lemma names `holonomy_hyperbola`, `barEven_mul`, `barOdd_mul` is gone.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1689,5 +1689,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
