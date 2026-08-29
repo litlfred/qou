@@ -144,18 +144,56 @@ asserts, without a carrier, that it globalises.* Since Hasse-Weil holds at every
 place unconditionally for curves and RH is nonetheless open, the assembly step is
 carrying the entire difficulty. Naming it is the first work.
 
-### 4. Eight open conjectures in the chapter
+### 4. Eight open conjectures in the chapter — and a sorry count of my own that was wrong
 
 `conj:q-geometric-langlands`, `conj:q-gl-fiber-functor`, `conj:q-gl-classical-limit`,
 `conj:q-gl-kummer-filtration`, `conj:q-oper-hecke` (no Lean carrier);
 `conj:quantum-langlands-dual`, `conj:mirror-3d-3d-correspondence`,
-`conj:modular-s-transform-q-q-tilde` (content-bearing class carriers, sorry =
-conjecture per §3b). `thm:tannaka-krein-isomorphism` carries a `sorry` and two
-`axiom`-declared types.
+`conj:modular-s-transform-q-q-tilde` (class carriers). These are Langlands-side,
+not RH-side: none is on the four-step spine, and none is what blocks the arc.
 
-These are Langlands-side, not RH-side: none of them is on the four-step spine
-above. They are open in the ordinary sense of being hard open problems, and are
-not what is blocking the RH arc.
+**CORRECTION.** An earlier version of this section said
+`thm:tannaka-krein-isomorphism` "carries a `sorry`", and the survey table behind
+it reported sorries in four chapter files. **All of those were docstring
+mentions.** Measured with a comment-stripping counter: the chapter has **6 raw
+`sorry` matches and 0 real ones** — every hit is prose of the form *"the class
+instance is the conjectural witness (sorry = conjecture)"*, and one is in
+docstring text I wrote myself. The chapter is sorry-free.
+
+Two real findings survive that correction:
+
+- **`tannaka-krein-isomorphism.lean` is content-free, and this is already
+  known.** `axiom RepLoc : Type` and `axiom ComodH : Type` are unconstrained
+  opaque types; `tannaka_krein_isomorphism_axiom : Nonempty (RepLoc ≃ ComodH)`
+  then asserts a bijection between two arbitrary types, which is consistent and
+  says nothing about representation categories. Per the corpus-grep checklist
+  this is **not a new finding**:
+  [`2026-07-02-lean-proof-progress-qa-table.md`](2026-07-02-lean-proof-progress-qa-table.md)
+  line 729 already flags the block `da-vacuous` alongside
+  `da-lean-narrative-divergence`. Recorded here because it is load-bearing —
+  `conj:explicit-formula` cites it in `uses[]`.
+
+- **Two of the three chapter conjecture carriers assert nothing.**
+  `Mirror3d3dCorrespondence` and `QuantumLanglandsDual` each have the single
+  field `holds : Prop`, which `⟨True⟩` inhabits, so a `[C]`-conditional theorem
+  proves nothing modulo `C` — the `proof-claims-unencoded` / `true-class-field`
+  shape. The third, `ModularSTransformQQTilde`, is the model of how it should
+  look: a conjectural continuation `F : ℂ → ℂ`, a `nondegenerate` field, and the
+  `s_automorphy` law. Three carriers, one chapter, two dispositions.
+
+**Corpus-wide, `holds : Prop` is 23 files — not the 52 a first grep reported.**
+A naive grep matches 38 files, of which **15 are prose only**: docstrings
+describing a stub that was already replaced. `modular-s-transform-q-q-tilde.lean`
+is itself one of those false positives, its docstring recording that it *"replac[ed]
+the former `holds : Prop` stub"*. A 39 % false-positive rate, removed entirely by
+stripping comments before matching — the same error class as the sorry count
+above, in the same session.
+
+Not fixed here. Giving `QuantumLanglandsDual` real content means deciding what
+the conjecture claims about `QOU.Hecke.HeckeAlgebra` — a mathematical judgment
+about the author's intent, not a mechanical repair, and an encoding restricted to
+parameter-level facts about `ℝ` would be *provable*, which would misrepresent an
+open conjecture as closed. That is a worse outcome than the stub. Bean `qou-hprp`.
 
 ## What can be chipped away, in order
 
@@ -175,9 +213,16 @@ not what is blocking the RH arc.
    local-critical-line-at-every-place `=>` classical RH would put the arc's actual
    claim where it can be read and attacked, instead of in a subordinate clause.
    Per §3b it may carry a `sorry`; per §3b-tax it is a *primary* conjecture.
-4. **Write the over-quantified-axiom detector.** Two instances found in eight days
-   (`qou-rhax`, `qou-hwax`), both in the same chapter cluster, both caught by
-   reading rather than by any checker. The shape is mechanically recognisable.
+4. **The detector exists as of this review** —
+   [`scripts/lean-overclaim-audit.py`](../../scripts/lean-overclaim-audit.py),
+   with a `--selftest` that includes a negative fixture so a future narrowing
+   cannot report a clean tree by reading prose. Its calibration is in its own
+   docstring and is worth reading before quoting it: the first run said 172
+   candidates, the corrected run 131, and the difference was a bug of mine —
+   the binder classifier keyed on the name rather than the type, so `(hq : 1 < q)`
+   counted as a data parameter. `contentless-carrier` (39) is the trustworthy
+   family; `overclaim-structure` (78) still over-flags on hypothesis-carrying
+   structures and its precision is not established.
 
 ## Verification
 
