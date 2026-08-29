@@ -421,6 +421,64 @@ def main() -> int:
           f"{mp.nstr(ladder[1] - mp.mpf(str(num(sum(built('p', (0, 0, 0), 1))))), 10)}. "
           f"NOT proved: an incomplete reading of the recipe remains open", w)
 
+    # ---- the corpus PINS the neutron NF vector; compare all six ----------
+    #      tbl:categorical-neutron-table-data, predicted-spectra/
+    print("\n  the corpus's own neutron NF vector (6 components, not 1 scalar)")
+    TGT = [mp.mpf(x) for x in ("-0.0096", "-0.0481", "0.0461",
+                               "-0.2206", "0.0189", "1.0109")]
+    print(f"    target sums to {mp.nstr(sum(TGT), 8)} = the stated net 0.7976")
+    for i, nm in enumerate(BASIS_NAMES):
+        w.add_data(f"corpus_neutron_nf_{nm}", fmt(TGT[i]))
+
+    best_v, best_e = None, None
+    for gens in itertools.product([0, 1], repeat=3):
+        for G in (L_MINUS, L[0] * L[1], L_MINUS * L_MINUS,
+                  (L[0] * L[1]) * L_MINUS, L_MINUS * (L[0] * L[1])):
+            for order in ("BQG", "BGQ", "QBG", "GBQ", "QGB", "GQB"):
+                Qf = ONE
+                for g, d in zip(gens, QUARKS["n"]):
+                    Qf = Qf * (L[g] + d * ONE)
+                M = {"BQG": B3 * Qf * G, "BGQ": B3 * G * Qf,
+                     "QBG": Qf * B3 * G, "GBQ": G * B3 * Qf,
+                     "QGB": Qf * G * B3, "GQB": G * Qf * B3}[order]
+                v = [num(x) for x in sp.expand(M * basis_vec(0))]
+                e = max(abs(v[i] - TGT[i]) for i in range(N))
+                if best_e is None or e < best_e:
+                    best_v, best_e = v, e
+    exact = sum(1 for i in range(N) if abs(best_v[i] - TGT[i]) < mp.mpf("5e-4"))
+    print(f"    best construction of 240 variants: {exact}/6 components match "
+          f"to the quoted 4dp;  max|err| = {mp.nstr(best_e, 4)}")
+    w.add_data("construction_components_matching", exact)
+    w.add_data("construction_max_component_err", fmt(best_e))
+
+    hv = [num(x) for x in hecke_word(_NEUTRON_G0, _NEUTRON_G1)]
+    h_exact = sum(1 for i in range(N) if abs(hv[i] - TGT[i]) < mp.mpf("5e-4"))
+    h_err = max(abs(hv[i] - TGT[i]) for i in range(N))
+    print(f"    hecke_core neutron:                {h_exact}/6;  "
+          f"max|err| = {mp.nstr(h_err, 4)}")
+    for i, nm in enumerate(BASIS_NAMES):
+        w.add_data(f"hecke_neutron_nf_{nm}", fmt(hv[i]))
+
+    check("the_construction_reproduces_half_the_NF_vector_hecke_core_none",
+          exact >= 3 and h_exact == 0,
+          f"against the corpus's own six-component target the stated "
+          f"construction matches {exact}/6 to the quoted precision -- "
+          f"including sigma_1, L_plus = -0.2206 and e_minus = 1.0109 -- while "
+          f"hecke_core matches {h_exact}/6 with max|err| {mp.nstr(h_err, 3)}. "
+          f"The construction is close and imperfect; hecke_core is a "
+          f"different object", w)
+
+    check("hecke_core_has_ZERO_weight_in_the_dominant_trefoil_channel",
+          abs(hv[5]) < mp.mpf("1e-30") and abs(TGT[5]) > mp.mpf("1"),
+          f"the corpus puts e_minus (the trefoil channel) at +1.0109 and says "
+          f"it 'dominates both nucleons'; hecke_core's neutron has "
+          f"e_minus = {mp.nstr(hv[5], 6)} EXACTLY. It also has L_minus = "
+          f"{mp.nstr(hv[4], 6)} against the corpus's +0.0189. So the gluon "
+          f"IS visible in the corpus -- as the L_pm normal-form terms the "
+          f"definition calls 'the intrinsic gluon field' -- and is absent "
+          f"from the word hecke_core traces, along with the whole trefoil "
+          f"channel", w)
+
     print("\n  scope")
     print("    SCOPE-(a). Adjudicates NOTHING. No net is declared right, no")
     print("    c_k proposed, hecke_core and every content block untouched.")
@@ -429,12 +487,12 @@ def main() -> int:
     w.add_data("scope", "a")
     w.add_data("adjudicates", False)
 
-    npass = 11 - len(_FAILURES)
-    print(f"\n  {npass}/11 checks passed")
+    npass = 13 - len(_FAILURES)
+    print(f"\n  {npass}/13 checks passed")
     if _FAILURES:
         print(f"  FAILURES: {', '.join(_FAILURES)}")
     w.add_data("checks_passed", npass)
-    w.add_data("checks_total", 11)
+    w.add_data("checks_total", 13)
     out = w.save()
     print(f"\n  witness -> {out}")
     return 1 if _FAILURES else 0
