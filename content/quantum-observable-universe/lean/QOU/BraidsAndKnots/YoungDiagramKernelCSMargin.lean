@@ -83,4 +83,41 @@ theorem m1_pos_all_of_base_and_tail {R : Type*} [CommRing R] [LinearOrder R] [Is
   · exact pos_lt n h
   · exact pos_ge n h
 
+/-- **The M₁>0 all-`n` reduction skeleton (sorry-free) — `[analytic (CS) inputs] ⟹ M₁>0 ∀n`.**
+
+This is the honest §3b-cond terminal form of the `M₁>0` arc: it **derives** `M₁(n) > 0` for *every*
+`n` from two supplied certificates, chaining `m1_pos_of_cs_margin` (the Cauchy–Schwarz core) with the
+base/tail split. It is **non-degenerate** — none of the hypotheses is the conclusion; the conclusion
+is composed from them by real algebra:
+
+- **Finite base** `base` : `M₁(n) > 0` for `n < N₀`. Supplied by the exact `Fraction`/`decide`
+  table (`YoungDiagramKernel.m1_pos_of_le_eight` and its extension; certified to `n = 78`).
+- **Tail, via the (CS) inputs** for each `n ≥ N₀`: the Fulman split `M₁ n = P n − N n`, the
+  factorisation `P n = ρ_P n · σ_A n · σ_W n`, the Cauchy–Schwarz bound `N n ≤ σ_D n · σ_W n`,
+  positivity `0 < σ_W n`, and — the one genuinely analytic input — the **(CS) margin**
+  `σ_D n < ρ_P n · σ_A n`.
+
+That margin hypothesis `hCS` is **exactly** what a rigorous Bessel/Debye/Euler–Maclaurin bound on the
+descent-DPP variance ingredients would discharge (for an explicit `N₀`); everything else here is
+either a definition, the universal Cauchy–Schwarz inequality, or the exact table. So this theorem
+states precisely **what is assumed versus proved**: `M₁>0` for all `n` is *proved* modulo the single
+analytic margin certificate — it is the reduction, not the closure. See
+`docs/audits/2026-08-29-covariance-kernel-M1-rigorous-finite-n-bound.md` for the scheme that would
+supply `hCS`, and the `qou-cav1` epic for the machinery still to be built.
+
+Base ring: generic ordered commutative ring (no `ℝ`, no division); `linarith` over it is
+base-ring-minimal (the `check-sidecars` "§7c MIXED" flag is the documented false positive). -/
+theorem m1_pos_all_of_cs_inputs {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
+    (M1 P N sigA sigD sigW rhoP : ℕ → R) (N0 : ℕ)
+    (base : ∀ n, n < N0 → 0 < M1 n)
+    (hP : ∀ n, N0 ≤ n → P n = rhoP n * sigA n * sigW n)
+    (hN : ∀ n, N0 ≤ n → N n ≤ sigD n * sigW n)
+    (hM1 : ∀ n, N0 ≤ n → M1 n = P n - N n)
+    (hsigW : ∀ n, N0 ≤ n → 0 < sigW n)
+    (hCS : ∀ n, N0 ≤ n → sigD n < rhoP n * sigA n) :
+    ∀ n, 0 < M1 n := by
+  refine m1_pos_all_of_base_and_tail M1 N0 base (fun n hn => ?_)
+  exact m1_pos_of_cs_margin (P n) (N n) (M1 n) (sigA n) (sigD n) (sigW n) (rhoP n)
+    (hP n hn) (hN n hn) (hM1 n hn) (hsigW n hn) (hCS n hn)
+
 end QOU.BraidsAndKnots.YoungDiagramKernelCSMargin
