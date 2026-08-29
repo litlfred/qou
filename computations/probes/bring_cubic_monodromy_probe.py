@@ -477,6 +477,35 @@ def numeric_monodromy(exact: dict) -> dict:
 
     perms = [tuple(L["permutation"]) for L in loops]
     generated = _generate(perms)
+
+    # A7 — the corpus's own H_1 H_2 claim, checked against these numbers.
+    # `rem:holonomy-trefoil` says H_1, H_2 are the holonomies around two
+    # DISTINCT branch points and that their composite "acts as a 3-cycle in
+    # the symmetric-group holonomy S_3", with (H_1 H_2)^3 = id. Each loop
+    # here IS such a holonomy, so composing two distinct ones tests that
+    # claim directly rather than taking it on trust.
+    distinct = sorted(set(perms))
+    composites = []
+    for a, b in itertools.permutations(distinct, 2):
+        pr = _compose(a, b)
+        composites.append({
+            "left": list(a), "right": list(b), "product": list(pr),
+            "cycle_type": _cycle_type(pr), "order": _order(pr),
+        })
+    a7 = {
+        "distinct_local_monodromies": [list(x) for x in distinct],
+        "composites_of_two_distinct": composites,
+        "all_composites_are_3_cycles": bool(
+            composites and all(c["cycle_type"] == "3-cycle" for c in composites)),
+        "all_composites_have_order_3": bool(
+            composites and all(c["order"] == 3 for c in composites)),
+        "corroborates_corpus_claim": (
+            "rem:holonomy-trefoil (as reverted on main by 7adab17a3d) states "
+            "H_1 H_2 acts as a 3-cycle in S_3 with (H_1 H_2)^3 = id. Two "
+            "distinct transpositions sharing a letter compose to a 3-cycle, "
+            "and these do."
+        ),
+    }
     return {
         "base_point": Z_BASE_STR,
         "dps": mp.dps,
@@ -492,6 +521,7 @@ def numeric_monodromy(exact: dict) -> dict:
         "group_order_generated": len(generated),
         "group_generated": "S_3" if len(generated) == 6 else (
             "A_3" if len(generated) == 3 else f"order-{len(generated)}"),
+        "A7_composite_is_a_3_cycle": a7,
         "sgn_of_the_six_generators": sorted({L["sgn"] for L in loops}),
         "sgn_image_of_the_group": (
             [-1, 1] if any(L["sgn"] == -1 for L in loops) else [1]),
@@ -505,6 +535,15 @@ def _cycle_type(perm: tuple) -> str:
     if fixed == 1:
         return "transposition"
     return "3-cycle"
+
+
+def _order(p: tuple) -> int:
+    """Order of a permutation of three letters."""
+    n, q = 1, p
+    while q != (0, 1, 2):
+        q = _compose(q, p)
+        n += 1
+    return n
 
 
 def _compose(a: tuple, b: tuple) -> tuple:
@@ -586,6 +625,12 @@ def main() -> int:
     print(f"   worst (step / separation) guard ratio over every step of "
           f"every loop: {numeric['worst_guard_ratio_over_all_loops']} "
           f"(safe: {numeric['guard_is_safe']})")
+    a7 = numeric["A7_composite_is_a_3_cycle"]
+    print(f"   A7  distinct local monodromies "
+          f"{a7['distinct_local_monodromies']}; composing two distinct ones "
+          f"gives a 3-cycle of order 3: "
+          f"{a7['all_composites_are_3_cycles'] and a7['all_composites_have_order_3']}"
+          f"  -> corroborates rem:holonomy-trefoil's (H_1 H_2)^3 = id")
     print(f"   all six loops are transpositions: "
           f"{numeric['all_transpositions']}; they generate "
           f"{numeric['group_generated']}; sgn on the generators "

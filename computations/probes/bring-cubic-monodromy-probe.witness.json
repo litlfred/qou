@@ -189,6 +189,63 @@
     "all_transpositions": true,
     "group_order_generated": 6,
     "group_generated": "S_3",
+    "A7_composite_is_a_3_cycle": {
+      "distinct_local_monodromies": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "composites_of_two_distinct": [
+        {
+          "left": [
+            1,
+            0,
+            2
+          ],
+          "right": [
+            2,
+            1,
+            0
+          ],
+          "product": [
+            2,
+            0,
+            1
+          ],
+          "cycle_type": "3-cycle",
+          "order": 3
+        },
+        {
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "product": [
+            1,
+            2,
+            0
+          ],
+          "cycle_type": "3-cycle",
+          "order": 3
+        }
+      ],
+      "all_composites_are_3_cycles": true,
+      "all_composites_have_order_3": true,
+      "corroborates_corpus_claim": "rem:holonomy-trefoil (as reverted on main by 7adab17a3d) states H_1 H_2 acts as a 3-cycle in S_3 with (H_1 H_2)^3 = id. Two distinct transpositions sharing a letter compose to a 3-cycle, and these do."
+    },
     "sgn_of_the_six_generators": [
       -1
     ],
@@ -213,11 +270,11 @@
       "eightfold-open-problems item 7 (colour antisymmetry)"
     ]
   },
-  "scriptHash": "fd4dc233de84",
-  "scriptCommitSha": "967cd2b8fb73e4088141b2ca8a7ac1fa915d76de",
-  "commitSha": "967cd2b8fb73e4088141b2ca8a7ac1fa915d76de",
+  "scriptHash": "af013e959dca",
+  "scriptCommitSha": "cf7bb47e10fe758fe5e7a3c8686871dee3243659",
+  "commitSha": "b83ae9b98bcd85941e4123ee624b741b31a08d7c",
   "engine": "python",
-  "computedAt": "2026-08-29T15:10:55.690195+00:00",
+  "computedAt": "2026-08-29T15:50:21.008883+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
