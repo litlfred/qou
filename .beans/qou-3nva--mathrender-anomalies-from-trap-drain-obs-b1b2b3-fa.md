@@ -4280,3 +4280,21 @@ is a reframing that touches the block title, its `s3` tag, and 3 sentences —
 left for the author. If V₄ is correct, the block should be retitled and the
 two "S₃" sentences rewritten; if S₃ is intended, the Lean/definition and the
 "generate V₄" clause are what need revisiting.
+
+## 2026-08-29 (later) — S3-vs-V4 RESOLVED by owner: S3 canonical; #6012 holonomy fix REVERTED
+
+The "new flag" above (S3-vs-V4 framing) turned out deeper than a label: the
+block `uses` TWO contradictory definitions. `def:su2-generators` builds the
+correct S3 ≅ D3 → Dic3 holonomy with α an explicit order-3 3-cycle;
+`def:braid-twist-flip` builds commuting involutions → V4. Verified the V4
+generators FAIL the braid relation, so they are not a B3/trefoil rep at all.
+My #6012 fix had aligned `holonomy-trefoil` to the WRONG (V4) definition.
+
+Owner ruling: **S3 is canonical.** Corrected `rem:holonomy-trefoil`
+(now "acts as a 3-cycle … (H1H2)^3 = id", wrong explicit V4 map dropped) and
+`rem:rho-s3-holonomy-exposition` ("generate S3 ≅ D3 … αβ is a 3-cycle").
+The root cause — `def:braid-twist-flip`'s V4 definition + its proved
+`twist_flip_comm` Lean, plus the α notation overload — is filed as **qou-htv4**
+(real formalization work; a proved theorem becomes false). Until qou-htv4 lands,
+`def:braid-twist-flip` still says V4 while its blocks say S3: a KNOWN, filed
+transient inconsistency.

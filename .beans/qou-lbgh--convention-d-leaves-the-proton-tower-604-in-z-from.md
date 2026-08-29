@@ -1,11 +1,11 @@
 ---
 # qou-lbgh
 title: Convention D leaves the proton tower 6.04% in z from the Phi_q pole
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T08:43:43Z
-updated_at: 2026-08-29T08:44:28Z
+updated_at: 2026-08-29T10:48:58Z
 ---
 
 Measured 2026-08-29, branch claude/tower-gap-lean-and-infra-2026-08-29 (PR
