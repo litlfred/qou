@@ -177,3 +177,50 @@ framework's own volume↔mass / zero-volume↔carrier boundary.
 either a structural argument for why a mass-channel invariant may enter a
 force-carrier coupling, or an explicit statement that only the integer is
 meant. That is an owner/structural call, which is why this bean stays open.
+
+## 2026-08-29 — RETRACTION of the cross-sector dilemma: the block's .lean is STALE vs its own .md
+
+I spent two tranches analysing `em-coupling-chern-simons.lean` without checking
+it against `em-coupling-chern-simons.md`. They state **different formulas**.
+
+| | formula | κ | value |
+|---|---|---|---|
+| **`.md`** (live) | `q·[9]_q·[10]_q·(1 + δ/(1−δκ))` | Gram ratio ≈ **1.7216** | 137.035935093976 |
+| **`.lean`** | `45·[3]_q·(1 + δ + κδ²)` | **`8q`** ≈ 8.8798 | 137.035999531717 |
+
+**470.2 ppb apart.** The `.md` reproduces the production compute *exactly*
+(137.035935093976, byte-for-byte). And the `.md` names the `.lean`'s form as
+its own **superseded** version: *"The order-δ² form … **which this proposition
+previously displayed** … costs 11.06 ppb."*
+
+**So the cross-sector dilemma is WITHDRAWN as a statement about the framework.**
+The live formula uses **torus knots** `T_{2,9}`, `T_{3,5}`, and the `.md` says
+outright: *"non-hyperbolic. Their τ-image geometric invariant is the
+Chern–Simons functional, **not the hyperbolic volume**."* Zero volume, CS
+invariant — exactly what the sector rule prescribes for a carrier. No nucleon
+volume in the live formula at all.
+
+**What survives:** `Vol(𝓑₃)/G = 8` is still exact and non-generic; `8q` is
+forced within its ansatz family (below). Both are true statements about a
+**superseded** coefficient.
+
+**What is derivable** (measured on the superseded form; window `[8.4744, 9.2648]`):
+`κ = c·q` → **c = 8 unique**; `κ = 8·q^n` → **n = 1 unique**; both free → three
+pairs land, (8,1) best by ~13×.
+
+**The lesson, and it is the corpus-grep discipline one level in:** a block's
+`.lean` is not a primary source for the block's claim — the `.md` is. AGENTS.md
+says as much ("the narrative/authoritative human-readable face"); I treated the
+Lean as authoritative for two tranches and built a dilemma on it.
+
+**The live block is honest about its own gap** — κ *"unproved"*, *"not computed
+end-to-end"*, fit value *"≈ 1.8878"*, *"the entire ansatz uses the wrong
+decomposition"* — matching this arc's independent finding that the Gram κ misses
+(needs ≈ 1.9153). No over-claim there.
+
+## Now open, and it is a different item
+
+The defect is a **stale Lean sibling** (`proof-statement-integrity`): the `.lean`
+does not state its `.md`'s claim. Fixing it means formalising the resummed
+Gram-κ form. Not done here — it is a real content change and the target κ is
+itself an unproved conjecture class, so the shape of the fix is an author call.
