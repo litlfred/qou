@@ -2435,6 +2435,74 @@ reads _PROTON_G0/_G1. Not filed as its own bean yet.
 ## 2026-08-29 — workflow: ALL 5 Q_beta/c3 lanes converge on this bean as the blocker
 Adversarially-verified (audit 2026-08-29-convention-d-qbeta-front). Key results: (1) proved-lean STRUCTURAL VERDICT (both lenses survive): the C ladder does NOT survive under D; z_D IS the two-row/TL trace (y_(1^3)=0 IFF z=z_D; qou-06wh/PR#5925 proves roots {q,z_D}, net excluded); C->D not a z-swap. Next brick = owner-call qou-99qc (a counit eps that DESCENDS to TL_inf AND reduces to the mass-channel eps; current net(e) != 0 on J_(1^3)). (2) c2 under D is OPEN, NOT -1 and NOT -9.299: the C-frame expression 1-u^2 is z-free (docstring, symbolic-exact) but whether the D-REBUILT N=2 factor = 1-u^2 is OPEN; -9.299 is a CODATA data-inversion (Q_exp/Q_N1^D-1)/u^2, scope-(a) non-structural. (3) -974 cost framing corrected: it is a 1/u^3 amplifier; D phase residual 0.895x (better than C) -- 'measures the amplifier, not the physics'. Mass three-row forcing is COMPATIBLE with a genuine D ladder (must factor through TL, co-located with mass channel).
 
+
+## 2026-08-29 — an ADJACENT class exclusion from the #5337 branch, and that branch closing out
+
+Recorded by the agent who opened #5337 (closed unmerged; the takeover was
+correct — the branch was stale and its named route was already pruned). One
+result from it is worth keeping, and it is **not** a re-derivation of the
+2026-08-18 prune above: it excludes a different class, by a bound rather than
+by a measurement.
+
+**Not the same object.** The 2026-08-18 entry prunes
+`F = two-row restriction fraction of the n=3 trace` — the correction taken to
+BE the dropped weight, `dim.y_(1^3) = 0.0227449`, 13.6x the target. The class
+below instead keeps Form B's functional shape and resolves it per block:
+
+    g(zeta) := ln(1 + zeta.h)/zeta          (Form B's integrand)
+    F_blocks := Sum_lambda p_lambda . g(zeta_lambda)
+
+where `zeta_lambda := chi_lambda(sigma)/f^lambda` is the block's own loop value
+and `p_lambda := f^lambda.y_lambda`. This is a **Jensen gap** — Form B as
+written evaluates `g` AT the mean, this averages `g` — not a restriction
+fraction. Nothing above covers it.
+
+**The identity underneath it, symbolically exact (sympy, over Q(q)).** With
+characters `chi_(3) = q`, `chi_(2,1) = h`, `chi_(1^3) = -1/q` (the Hecke
+generator's eigenvalues `q` and `-1/q`, §7a):
+
+    Sum_lambda y_lambda . chi_lambda(sigma)  =  q^3/(q^2+1)  =  z_D   EXACTLY
+
+So `z` is not an independent convention knob at all: it is the MEAN of the
+per-block loop values under `p_lambda`. This is the n=3 shadow of the
+now-proved `y_(1^3) = 0 <=> z = z_D` (qou-06wh / PR #5925), reached
+independently and before that landed, and it is a third route to the
+`Sum dim.y = 1` normalisation the 2026-08-18 entry reports.
+
+**The exclusion, and why it is a class statement.** A convex combination lies
+in the convex hull of its arguments, so for ANY weights whatsoever
+`F_blocks in [min_lambda g, max_lambda g]`. Measured at 65 dps, proton pin:
+
+    convention D   hull = [0.786985113907, 0.865697506066] MeV
+    convention C   hull = [0.786985113907, 0.969606940981] MeV
+    Q_codata       = 0.782 MeV                       BELOW BOTH HULLS
+
+The lower edge is identical in the two frames because it is set by the same
+block, `(2,1)`, which both retain. So **no block-resolved Form B reaches the
+measured Q-value in either convention, under any weighting** — the weights
+never enter. Scope-(b) for the class as stated, with the invariant cited
+(convexity); scope-(a) as to the physics, since the hull is evaluated
+numerically at one anchor and the per-block `1/zeta` normalisation is an
+assumption the corpus does not derive.
+
+For completeness, the derived weights themselves (they are inside their own
+hull by construction, and far from the target):
+
+    frame  mean_form      blocks_full    blocks_logonly   (rel. to Q_codata)
+    D      +5.2549e-02    +5.5708e-02    +1.4436e-02
+    C      +6.3990e-02    +6.7785e-02    +8.2005e-03
+
+all 1-6 % objects, consistent with the F-coordinate audit's finding that the
+bridge is a ~5e-2 object while the cos factor is ~1e-6 — i.e. this class is the
+wrong SIZE for the correction, independently of the hull.
+
+**The probe was never committed.** It lived on `claude/qbeta-f-coordinate-2026-08-19`
+as an uncommitted file and is not being landed: the route is settled, and a
+witness for a pruned class is maintenance surface with no consumer. The
+argument above is ten lines to reproduce from this text.
+
+**That agent is off this bean.** No claim held; the takeover stands.
+
 ## 2026-08-30 — a LEAD on where the D-frame re-derivation should start (NOT a finding)
 
 Stating this as a lead because I can measure the identity but cannot yet
