@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:33:50Z
-updated_at: 2026-08-29T18:20:03Z
+updated_at: 2026-08-29T18:26:19Z
 ---
 
 FOUND 2026-08-29 while reviewing what landed on main for the y_lambda/convention-D
@@ -286,3 +286,53 @@ credible side, but what the published P_66 IS remains open. Someone should look.
 
 OPTION 1 IS NOW COMPLETABLE for both thresholds: q_Phi (via Phi_D) and q_star (via
 P_77_D). P_66's interpretation-table entry needs the discrepancy settled first.
+
+
+## 2026-08-29 — OPTION 1 IS BLOCKED, and P_66 was the smallest part of it
+
+Chasing the P_66 discrepancy found that it is not a P_66 problem. Probe:
+computations/probes/toffoli_published_vs_construction_audit.py (4/4).
+
+The ONLY construction the corpus records is
+`computations/_deprecated/toffoli-braid.py` — a file neither the content blocks
+nor the live producer cite. An independent reconstruction of it (written from the
+content block's prose) reproduces that producer EXACTLY, symbolic zero on both
+diagonals. So the recipe is the framework's, not my paraphrase.
+
+Against it, of the four published entries ONE matches, at q = 111/100:
+
+    P_77   construction  0.5514527845   published  0.5514527845   MATCH
+    P_66   construction  0.4153790120   published  0.6010         NO
+    P_76   construction -0.1415316448   published +0.0495 (=Phi)  NO
+    P_67   construction +0.1415316448   published -0.0495         NO
+
+WORSE, THE PROOF BLOCK'S KEY LEMMA IS CONVENTION-DEPENDENT. "Target-flip
+blindness of the control crossing", Delta_1 = 0, is what reduces the 1-jet to
+P_flip = V_1 * Delta_0 and hence to c * Phi. chain_reduce pairs generator i with
+every j > i, so generator 1 is the crossing (1,2) — control-control only if the
+TARGET IS STRAND 0. The producer's toffoli_output flips `k & 1`, the LAST strand.
+
+    target = last  (producer)       Delta_1 = -0.1045   NOT zero
+    target = first (block's prose)  Delta_1 =  0        zero
+
+AND EVEN UNDER THE BLOCK'S OWN CONVENTION the chain does not give the published
+Phi: V_1^par * Delta_0 = -0.0466748 against Phi = +0.0495489, ratio -0.942 — 6% in
+magnitude and a sign flip.
+
+WHAT THIS DOES TO THE CONVENTION WORK. The Phi derivation upstream (A z^2 + B z,
+A and B rational) is still correct AS ALGEBRA about the published closed form, and
+P_77 is safe because it matches its construction. But for Phi, P_66 and P_67 the
+prior question is now open: the published closed form is not what the recorded
+construction produces, so migrating it to convention D would carry the discrepancy
+to a new value and make it harder to see.
+
+SO OPTION 1 SPLITS:
+  * P_77 / q_star = 1/phi^2  -- CAN be corrected. Derived, matches its construction.
+  * Phi / q_Phi = 0.4656     -- SHOULD NOT be, until the discrepancy is adjudicated.
+  * P_66, P_67                -- same.
+
+NOT CLAIMED: that the published forms are wrong. The construction is in a
+_deprecated file and may itself be superseded by a derivation not in the tree.
+What is established is that the two disagree on three of four entries, that the
+key lemma is convention-dependent and false as the producer runs, and that the
+corpus does not record which side is current. That is an owner call.
