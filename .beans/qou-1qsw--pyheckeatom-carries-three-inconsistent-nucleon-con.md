@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T16:24:57Z
-updated_at: 2026-08-29T17:47:17Z
+updated_at: 2026-08-29T18:21:39Z
 ---
 
 Surfaced by the `qou-cds1` takeover work (`74a52d3486`), which recorded it as
@@ -130,3 +130,42 @@ omits gluon dressing **by design** — and re-pointing 53 readers on my own
 judgement would be exactly the kind of unilateral move the anti-laundering rules
 exist to prevent. The measurement is the deliverable here; the ruling is the
 owner's.
+
+
+## 2026-08-29 — the float64 half is DONE; the convention half is what remains
+
+`build_nucleon_nf_mp` added to `pyhecke.atom` (float-free, at the true 50-dps
+`q_0`), additive, no consumer moved.
+
+**The trap worth recording, because the one-line fix is the wrong one.** The
+module already has a float-free path — `hm_exact` over `Fraction` — and routing
+this builder through it is a two-character change. It would have been a
+regression of about eleven orders of magnitude:
+
+    float64 builder vs mp at true q_0    1.4e-16 relative  (proton)
+    Fraction path  vs mp at true q_0     1.66e-5 relative  = 16.6 ppm
+
+because `_Q_FRAC = Fraction(111, 100)`, i.e. the Fraction path is exact
+arithmetic at `q = 1.11`, not at `q_0 = 1.1099785827513808`. gram.py documents
+the 1.93e-5 gap on `q` itself at `_Z_FRAC`; the 1.66e-5 above is what that
+propagates to on this builder's output, measured. **Float-free and correct are
+different properties**, and a NO-FLOAT64 sweep that reaches for the nearest
+Fraction path will silently trade 1e-16 for 1e-5. The docstring says this at
+the site where the next person will reach for `hm_exact`.
+
+Also checked rather than assumed: `_hm_mp` tests `nf[si] == 0` where the float
+`hm` tests `abs(nf[si]) < 1e-15`. Had the mp twin inherited that cutoff the
+whole mp path would have been capped at float64 no matter the dps.
+
+**Nothing moved.** The float builder was already correct to its own precision,
+so this extends precision rather than fixing a value; `PROTON_NF`/`NEUTRON_NF`
+and all 53 readers are untouched.
+
+### What is left on this bean
+
+Only the convention question, and it is unchanged: which of the three nucleon
+constructions is canonical, given that the 9-crossing model omits gluon
+dressing by design. That needs the owner. When it is settled, the mp builder is
+the precision-correct base to re-point onto — and the same warning applies to
+whatever is done for the two 11-crossing models: build them on `hm_mp`, not on
+`hm_exact`.
