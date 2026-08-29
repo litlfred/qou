@@ -441,7 +441,7 @@ def main() -> int:
 
     builder.add_assertion(
         "block_multiplicativity_calibration_loaded",
-        computed=float(factors["v_p"]),
+        computed=factors["v_p"],
         expected=0.7084,
         tolerance=1e-3,
         unit="block factor v_p",
